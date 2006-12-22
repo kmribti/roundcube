@@ -95,11 +95,12 @@ else
 
 
 // catch some url/post parameters
-$_task = get_input_value('_task', RCUBE_INPUT_GPC);
-$_action = get_input_value('_action', RCUBE_INPUT_GPC);
+$_task = strip_quotes(get_input_value('_task', RCUBE_INPUT_GPC));
+$_action = strip_quotes(get_input_value('_action', RCUBE_INPUT_GPC));
 $_framed = (!empty($_GET['_framed']) || !empty($_POST['_framed']));
 
-if (empty($_task))
+// use main task if empty or invalid value
+if (empty($_task) || !in_array($_task, $MAIN_TASKS))
   $_task = 'mail';
 
 if (!empty($_GET['_remote']))
@@ -348,9 +349,7 @@ if ($_task=='settings')
 
 
 // parse main template
-// only allow these templates to be included
-if (in_array($_task, $MAIN_TASKS))
-  parse_template($_task);
+parse_template($_task);
 
 
 // if we arrive here, something went wrong
