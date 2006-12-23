@@ -2185,9 +2185,7 @@ function rcube_webmail()
     {
     if (!this.gui_objects.attachmentlist)
       return false;
-      
-      alert(content);
-      
+
     var li = document.createElement('LI');
     li.id = name;
     li.innerHTML = content;

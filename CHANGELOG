@@ -1,6 +1,12 @@
 CHANGELOG RoundCube Webmail
 ---------------------------
 
+2006/12/22 (thomasb)
+----------
+- Applied security fixes for XSS vulnerabilites
+- Removed javascript alert (Ticket #1484182)
+
+
 2006/08/04 (thomasb)
 ----------
 - Fixed Bug in saving identities (Ticket #1483915)
