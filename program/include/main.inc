@@ -1193,7 +1193,9 @@ function parse_template($name='main', $exit=TRUE)
   
   // add debug console
   if ($CONFIG['debug_level'] & 8)
-    $OUTPUT->footer = '<div style="position:absolute;top:5px;left:5px;width:400px;opacity:0.8;z-index:9000;"><form name="debugform"><textarea name="console" rows="15" cols="40" style="width:400px;border:none;font-size:x-small"></textarea></form>';
+    $OUTPUT->add_footer('<div style="position:absolute;top:5px;left:5px;width:400px;background:white;opacity:0.8;z-index:9000">
+      <a href="#toggle" onclick="con=document.getElementById(\'dbgconsole\');con.style.display=(con.style.display==\'none\'?\'block\':\'none\');return false">console</a>
+      <form action="/" name="debugform"><textarea name="console" id="dbgconsole" rows="20" cols="40" wrap="off" style="width:400px;border:none;font-size:x-small"></textarea></form></div>');
 
   $OUTPUT->write(trim(parse_with_globals($output)), $skin_path);
 

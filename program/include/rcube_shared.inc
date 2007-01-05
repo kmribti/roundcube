@@ -89,6 +89,15 @@ class rcube_html_page
       $this->scripts[$position] .= "\n$script";
     }
 
+  function add_header($str)
+    {
+    $this->header .= "\n".$str;
+    }
+
+  function add_footer($str)
+    {
+    $this->footer .= "\n".$str;
+    }
 
   function set_title($t)
     {
@@ -121,6 +130,8 @@ class rcube_html_page
     $this->script_files = array();
     $this->scripts = array();
     $this->title = '';
+    $this->header = '';
+    $this->footer = '';
     }
 
 
@@ -150,28 +161,25 @@ class rcube_html_page
       foreach ($this->script_files['head'] as $file)
         $__page_header .= sprintf($this->script_tag_file, $this->scripts_path, $file);
 
-   if (is_array($this->external_scripts['head']))
-   {
+    if (is_array($this->external_scripts['head']))
       foreach ($this->external_scripts['head'] as $xscript)
-      {
-         $__page_header .= sprintf($this->tag_format_external_script, $xscript);
-      }
-   }
+        $__page_header .= sprintf($this->tag_format_external_script, $xscript);
 
     if (!empty($this->scripts['head']))
       $__page_header .= sprintf($this->script_tag, $this->scripts['head']);
-          
+
+    if (!empty($this->header))
+      $__page_header .= $this->header;
+
     if (is_array($this->script_files['foot']))
-      {
       foreach ($this->script_files['foot'] as $file)
         $__page_footer .= sprintf($this->script_tag_file, $this->scripts_path, $file);
-      }
 
     if (!empty($this->scripts['foot']))
       $__page_footer .= sprintf($this->script_tag, $this->scripts['foot']);
       
-    if ($this->footer)
-      $__page_footer .= "\n" . $this->footer;
+    if (!empty($this->footer))
+      $__page_footer .= $this->footer;
 
     $__page_header .= $this->css->show();
   
@@ -217,7 +225,7 @@ class rcube_html_page
     $output_lc = rc_strtolower($output);
     if(($fpos = strrstr($output_lc, '</body>')) ||
        ($fpos = strrstr($output_lc, '</html>')))
-      $output = rc_substr($output,0,$fpos) . "$__page_footer\n" . rc_substr($output,$fpos);
+      $output = substr($output,0,$fpos) . "$__page_footer\n" . substr($output,$fpos);
     else
       $output .= "\n$__page_footer";
   
@@ -1438,7 +1446,7 @@ function rc_strtolower($str)
   }
 
 // wrapper function for substr
-function rc_substr($str, $start, $len)
+function rc_substr($str, $start, $len=null)
   {
   if (function_exists('mb_substr'))
     return mb_substr($str, $start, $len);

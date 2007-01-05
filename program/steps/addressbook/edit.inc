@@ -5,7 +5,7 @@
  | program/steps/addressbook/edit.inc                                    |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
+ | Copyright (C) 2005-2006, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -20,30 +20,17 @@
 */
 
 
-if (($_GET['_cid'] || $_POST['_cid']) && $_action=='edit')
-  {
-  $cid = $_POST['_cid'] ? $_POST['_cid'] : $_GET['_cid'];
-  $DB->query("SELECT * FROM ".get_table_name('contacts')."
-             WHERE  contact_id=?
-             AND    user_id=?
-             AND    del<>1",
-             $cid,
-             $_SESSION['user_id']);
-  
-  $CONTACT_RECORD = $DB->fetch_assoc();
-
-  if (is_array($CONTACT_RECORD))
-    $OUTPUT->add_script(sprintf("%s.set_env('cid', '%s');", $JS_OBJECT_NAME, $CONTACT_RECORD['contact_id']));
-  }
-
+if (($cid = get_input_value('_cid', RCUBE_INPUT_GPC)) && ($result = $CONTACTS->get_record($cid)))
+  $OUTPUT->add_script(sprintf("%s.set_env('cid', '%s');", $JS_OBJECT_NAME, $result['ID']));
 
 
 function rcmail_contact_editform($attrib)
   {
-  global $CONTACT_RECORD, $JS_OBJECT_NAME;
+  global $CONTACTS, $JS_OBJECT_NAME;
 
-  if (!$CONTACT_RECORD && $GLOBALS['_action']!='add')
-    return rcube_label('contactnotfound');
+  // check if we have a valid result
+  if (!($record = $CONTACTS->get_result()) && $GLOBALS['_action'] != 'add')
+    return show_message('contactnotfound');
 
   // add some labels to client
   rcube_add_label('noemailwarning');
@@ -51,13 +38,13 @@ function rcmail_contact_editform($attrib)
 
   list($form_start, $form_end) = get_form_tags($attrib);
   unset($attrib['form']);
-  
+
 
   // a specific part is requested
   if ($attrib['part'])
     {
     $out = $form_start;
-    $out .= rcmail_get_edit_field($attrib['part'], $CONTACT_RECORD[$attrib['part']], $attrib); 
+    $out .= rcmail_get_edit_field($attrib['part'], $record[$attrib['part']], $attrib); 
     return $out;
     }
 
@@ -69,11 +56,10 @@ function rcmail_contact_editform($attrib)
   foreach ($a_show_cols as $col)
     {
     $attrib['id'] = 'rcmfd_'.$col;
-    $title = rcube_label($col);
-    $value = rcmail_get_edit_field($col, $CONTACT_RECORD[$col], $attrib);
+    $value = rcmail_get_edit_field($col, $record[$col], $attrib);
     $out .= sprintf("<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
                     $attrib['id'],
-                    $title,
+                    Q(rcube_label($col)),
                     $value);
     }
 
@@ -86,8 +72,9 @@ function rcmail_contact_editform($attrib)
 // similar function as in /steps/settings/edit_identity.inc
 function get_form_tags($attrib)
   {
-  global $CONTACT_RECORD, $OUTPUT, $JS_OBJECT_NAME, $EDIT_FORM, $SESS_HIDDEN_FIELD;  
+  global $CONTACTS, $OUTPUT, $JS_OBJECT_NAME, $EDIT_FORM, $SESS_HIDDEN_FIELD;  
 
+  $record = $CONTACTS->get_result();
   $form_start = '';
   if (!strlen($EDIT_FORM))
     {
@@ -97,8 +84,8 @@ function get_form_tags($attrib)
     if ($GLOBALS['_framed'])
       $hiddenfields->add(array('name' => '_framed', 'value' => 1));
     
-    if ($CONTACT_RECORD['contact_id'])
-      $hiddenfields->add(array('name' => '_cid', 'value' => $CONTACT_RECORD['contact_id']));
+    if (isset($record['ID']))
+      $hiddenfields->add(array('name' => '_cid', 'value' => $record['ID']));
     
     $form_start = !strlen($attrib['form']) ? '<form name="form" action="./" method="post">' : '';
     $form_start .= "\n$SESS_HIDDEN_FIELD\n";
@@ -118,7 +105,7 @@ function get_form_tags($attrib)
 
 
 
-if (!$CONTACT_RECORD && template_exists('addcontact'))
+if (!$CONTACTS->get_result() && template_exists('addcontact'))
   parse_template('addcontact');
 
 // this will be executed if no template for addcontact exists

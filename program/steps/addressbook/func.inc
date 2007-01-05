@@ -19,113 +19,89 @@
 
 */
 
-$CONTACTS_LIST = array();
+require_once('include/rcube_contacts.inc');
+
+$CONTACTS = new rcube_contacts($DB, $_SESSION['user_id']);
+$CONTACTS->set_pagesize($CONFIG['pagesize']);
 
 // set list properties and session vars
-if (strlen($_GET['_page']))
+if (!empty($_GET['_page']))
   {
-  $CONTACTS_LIST['page'] = $_GET['_page'];
+  $CONTACTS->set_page(intval($_GET['_page']));
   $_SESSION['page'] = $_GET['_page'];
   }
 else
-  $CONTACTS_LIST['page'] = $_SESSION['page'] ? $_SESSION['page'] : 1;
+  $CONTACTS->set_page(isset($_SESSION['page']) ?$_SESSION['page'] : 1);
 
 // disable the ldap public search button if there's no servers configured
 $enable_ldap = 'true';
 if (!$CONFIG['ldap_public'])
   $enable_ldap = 'false';
   
-$OUTPUT->add_script("$JS_OBJECT_NAME.set_env('ldappublicsearch', $enable_ldap);");  
+$OUTPUT->add_script("$JS_OBJECT_NAME.set_env('ldappublicsearch', $enable_ldap);");
+
 
 // return the message list as HTML table
 function rcmail_contacts_list($attrib)
   {
-  global $DB, $CONFIG, $OUTPUT, $CONTACTS_LIST, $JS_OBJECT_NAME;
-  
-  //$skin_path = $CONFIG['skin_path'];
-  //$image_tag = '<img src="%s%s" alt="%s" border="0" />';
+  global $CONTACTS, $OUTPUT, $JS_OBJECT_NAME;
   
   // count contacts for this user
-  $sql_result = $DB->query("SELECT COUNT(contact_id) AS rows
-                            FROM ".get_table_name('contacts')."
-                            WHERE  del<>1
-                            AND    user_id=?",
-                            $_SESSION['user_id']);
-
-  $sql_arr = $DB->fetch_assoc($sql_result);
-  $rowcount = $sql_arr['rows'];
-
-  if ($rowcount)
-    {
-    $start_row = ($CONTACTS_LIST['page']-1) * $CONFIG['pagesize'];
-
-    // get contacts from DB
-    $sql_result = $DB->limitquery("SELECT * FROM ".get_table_name('contacts')."
-                                   WHERE  del<>1
-                                   AND    user_id= ?
-                                   ORDER BY name",
-                                   $start_row,
-                                   $CONFIG['pagesize'],
-                                   $_SESSION['user_id']);
-    }
-  else
-    $sql_result = NULL;
-
-
+  $result = $CONTACTS->list_records();
+  $rowcount = $result['count'];
+  $firstrow = $result['first'];
+  
+  unset($result['count'], $result['first']);
+  
   // add id to message list table if not specified
   if (!strlen($attrib['id']))
     $attrib['id'] = 'rcmAddressList';
-
+  
   // define list of cols to be displayed
   $a_show_cols = array('name', 'email');
-
+  
   // create XHTML table  
-  $out = rcube_table_output($attrib, $sql_result, $a_show_cols, 'contact_id');
-
+  $out = rcube_table_output($attrib, $result, $a_show_cols, $CONTACTS->primary_key);
+  
   // set client env
   $javascript = sprintf("%s.gui_object('contactslist', '%s');\n", $JS_OBJECT_NAME, $attrib['id']);
-  $javascript .= sprintf("%s.set_env('current_page', %d);\n", $JS_OBJECT_NAME, $CONTACTS_LIST['page']);
-  $javascript .= sprintf("%s.set_env('pagecount', %d);\n", $JS_OBJECT_NAME, ceil($rowcount/$CONFIG['pagesize']));
+  $javascript .= sprintf("%s.set_env('current_page', %d);\n", $JS_OBJECT_NAME, $CONTACTS->list_page);
+  $javascript .= sprintf("%s.set_env('pagecount', %d);\n", $JS_OBJECT_NAME, ceil($rowcount/$CONTACTS->page_size));
   $javascript .= "rcmail.set_env('newcontact', '" . rcube_label('newcontact') . "');";
-  //$javascript .= sprintf("%s.set_env('contacts', %s);", $JS_OBJECT_NAME, array2js($a_js_message_arr));
   
   $OUTPUT->add_script($javascript);  
   $OUTPUT->include_script('list.js');
-
+  
   // add some labels to client
   rcube_add_label('deletecontactconfirm');
-
+  
   return $out;
   }
 
 
-
-function rcmail_js_contacts_list($sql_result, $obj_name='this')
+function rcmail_js_contacts_list($result, $obj_name='this')
   {
-  global $DB;
-
   $commands = '';
   
-  if (!$sql_result)
-    return '';
+  if (empty($result) || $result['count'] == 0)
+    return $commands;
 
+  unset($result['count'], $result['first']);
+  
   // define list of cols to be displayed
   $a_show_cols = array('name', 'email');
-    
-  while ($sql_arr = $DB->fetch_assoc($sql_result))
+  
+  foreach ($result as $i => $row)
     {
     $a_row_cols = array();
-            
+    
     // format each col
     foreach ($a_show_cols as $col)
-      {
-      $cont = Q($sql_arr[$col]);
-      $a_row_cols[$col] = $cont;
-      }
-  
+      $a_row_cols[$col] = Q($row[$col]);
+    
     $commands .= sprintf("%s.add_contact_row(%s, %s);\n",
                          $obj_name,
-                         $sql_arr['contact_id'],
+                         $row['ID'],
                          array2js($a_row_cols));
     }
     
@@ -175,28 +151,23 @@ function rcmail_rowcount_display($attrib)
 
 function rcmail_get_rowcount_text($max=NULL)
   {
-  global $CONTACTS_LIST, $CONFIG, $DB;
+  global $CONTACTS;
   
-  $start_row = ($CONTACTS_LIST['page']-1) * $CONFIG['pagesize'] + 1;
-
-  // get nr of contacts
-  if ($max===NULL)
-    {
-    $sql_result = $DB->query("SELECT 1 FROM ".get_table_name('contacts')."
-                              WHERE  del<>1
-                              AND    user_id=?",
-                              $_SESSION['user_id']);
-
-    $max = $DB->num_rows($sql_result);
-    }
-
-  if ($max==0)
+  // read nr of contacts
+  $result = $CONTACTS->get_result();
+  if (!$result)
+    $result = $CONTACTS->count();
+  
+  if ($result['count'] == 0)
     $out = rcube_label('nocontactsfound');
   else
-    $out = rcube_label(array('name' => 'contactsfromto',
-                             'vars' => array('from'  => $start_row,
-                                             'to'    => min($max, $start_row + $CONFIG['pagesize'] - 1),
-                                             'count' => $max)));
+    $out = rcube_label(array(
+      'name' => 'contactsfromto',
+      'vars' => array(
+        'from'  => $result['first'] + 1,
+        'to'    => min($result['count'], $result['first'] + $CONTACTS->page_size),
+        'count' => $result['count'])
+      ));
 
   return $out;
   }

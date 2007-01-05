@@ -5,7 +5,7 @@
  | program/steps/addressbook/list.inc                                    |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
+ | Copyright (C) 2005-2006, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -21,36 +21,17 @@
 
 $REMOTE_REQUEST = TRUE;
 
-// count contacts for this user
-$sql_result = $DB->query("SELECT COUNT(contact_id) AS rows
-                          FROM ".get_table_name('contacts')."
-                          WHERE  del<>1
-                          AND    user_id=?",
-                          $_SESSION['user_id']);
-                                   
-$sql_arr = $DB->fetch_assoc($sql_result);
-$rowcount = $sql_arr['rows'];    
+// get contacts for this user
+$result = $CONTACTS->list_records();
 
 // update message count display
-$pages = ceil($rowcount/$CONFIG['pagesize']);
 $commands = sprintf("this.set_rowcount('%s');\n", rcmail_get_rowcount_text($rowcount));
-$commands .= sprintf("this.set_env('pagecount', %d);\n", $pages);
+$commands .= sprintf("this.set_env('pagecount', %d);\n", ceil($result['count'] / $CONTACTS->page_size));
 
-$start_row = ($CONTACTS_LIST['page']-1) * $CONFIG['pagesize'];
-
-// get contacts from DB
-$sql_result = $DB->limitquery("SELECT * FROM ".get_table_name('contacts')."
-                               WHERE  del<>1
-                               AND    user_id=?
-                               ORDER BY name",
-                               $start_row,
-                               $CONFIG['pagesize'],
-                               $_SESSION['user_id']);
-                                 
-$commands .= rcmail_js_contacts_list($sql_result);
+// create javascript list
+$commands .= rcmail_js_contacts_list($result);
   
 // send response
 rcube_remote_response($commands);
 
-exit;
 ?>

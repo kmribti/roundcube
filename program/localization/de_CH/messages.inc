@@ -56,6 +56,8 @@ $messages['encryptedmessage'] = 'Dies ist eine verschlüsselte Nachricht und kan
 
 $messages['nocontactsfound'] = 'Keine Kontakte gefunden';
 
+$messages['contactnotfound'] = 'Die gewählte Adresse wurde nicht gefunden';
+
 $messages['sendingfailed'] = 'Versand der Nachricht fehlgeschlagen';
 
 $messages['errorsaving'] = 'Beim Speichern ist ein Fehler aufgetreten';

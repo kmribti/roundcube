@@ -67,8 +67,8 @@ if (($search_request = $_GET['_search']) && $IMAP->search_set)
 // update message count display
 $msg_count = $IMAP->messagecount();
 $pages = ceil($msg_count / $IMAP->page_size);
-$commands = sprintf("this.set_rowcount('%s');\n", rcmail_get_messagecount_text($msg_count));
-$commands .= sprintf("this.set_env('pagecount', %d);\n", $pages);
+$commands = sprintf("this.set_env('pagecount', %d);\n", $pages);
+$commands .= sprintf("this.set_rowcount('%s');\n", rcmail_get_messagecount_text($msg_count));
 
 
 // update mailboxlist
