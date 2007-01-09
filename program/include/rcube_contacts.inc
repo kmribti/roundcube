@@ -106,7 +106,7 @@ class rcube_contacts
 
     // get contacts from DB
     if ($this->result['count'])
-      {
+    {
       $start_row = $subset < 0 ? $this->result['first'] + $this->page_size + $subset : $this->result['first'];
       $length = $subset != 0 ? abs($subset) : $this->page_size;
       
@@ -119,7 +119,7 @@ class rcube_contacts
         $start_row,
         $length,
         $this->user_id);
-      }
+    }
 
     while ($sql_result && ($sql_arr = $this->db->fetch_assoc($sql_result)))
     {
@@ -149,13 +149,13 @@ class rcube_contacts
       $add_where[] = $this->db->quoteIdentifier($col)."=".$this->db->quote($value);
     
     if (!empty($add_where))
-      {
+    {
       $this->filter = join(' OR ', $add_where);
       if ($select)
         $this->list_records();
       else
         $this->result = $this->count();
-      }
+    }
    
     return $this->result; 
   }
@@ -231,13 +231,13 @@ class rcube_contacts
     $insert_id = false;
     $a_insert_cols = $a_insert_values = array();
     foreach ($save_cols as $col => $value)
-      {
+    {
       $a_insert_cols[] = $this->db->quoteIdentifier($col);
       $a_insert_values[] = $this->db->quote($value);
-      }
+    }
     
     if (!empty($a_insert_cols))
-      {
+    {
       $this->db->query(
         "INSERT INTO ".$this->db_name."
          (user_id, changed, del, ".join(', ', $a_insert_cols).")
@@ -245,7 +245,7 @@ class rcube_contacts
         $this->user_id);
       
       $insert_id = $this->db->insert_id(get_sequence_name('contacts'));
-      }
+    }
     
     return $insert_id;
   }
@@ -266,7 +266,7 @@ class rcube_contacts
       $write_sql[] = sprintf("%s=%s", $this->db->quoteIdentifier($col), $this->db->quote($value));
 
     if (!empty($write_sql))
-      {
+    {
       $this->db->query(
         "UPDATE ".$this->db_name."
          SET    changed=".$this->db->now().", ".join(', ', $write_sql)."
@@ -277,7 +277,7 @@ class rcube_contacts
         $this->user_id);
 
       $updated = $this->db->affected_rows();
-      }
+    }
     
     return $updated;
   }

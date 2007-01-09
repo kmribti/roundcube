@@ -1909,7 +1909,7 @@ function rcube_webmail()
   this.add_contact = function(value)
     {
     if (value)
-      this.http_request('addcontact', '_address='+value);
+      this.http_post('addcontact', '_address='+value);
     
     return true;
     };
@@ -3188,20 +3188,45 @@ function rcube_webmail()
     // send request
     if (request_obj)
       {
-      // prompt('request', this.env.comm_path+'&_action='+urlencode(action)+'&'+querystring);
       console('HTTP request: '+this.env.comm_path+'&_action='+action+'&'+querystring);
 
       if (lock)
         this.set_busy(true);
 
+      var rcm = this;
       request_obj.__lock = lock ? true : false;
       request_obj.__action = action;
-      request_obj.onerror = function(o){ rcube_webmail_client.http_error(o); };
-      request_obj.oncomplete = function(o){ rcube_webmail_client.http_response(o); };
+      request_obj.onerror = function(o){ rcm.http_error(o); };
+      request_obj.oncomplete = function(o){ rcm.http_response(o); };
       request_obj.GET(this.env.comm_path+'&_action='+action+'&'+querystring);
       }
     };
 
+    // send a http POST request to the server
+    this.http_post = function(action, postdata, lock)
+      {
+      var request_obj;
+      if (postdata && typeof(postdata) == 'object')
+        postdata._remote = 1;
+      else
+        postdata += (postdata ? '&' : '') + '_remote=1';
+
+      // send request
+      if (request_obj = this.get_request_obj())
+        {
+        console('HTTP POST: '+this.env.comm_path+'&_action='+action);
+
+        if (lock)
+          this.set_busy(true);
+
+        var rcm = this;
+        request_obj.__lock = lock ? true : false;
+        request_obj.__action = action;
+        request_obj.onerror = function(o){ rcm.http_error(o); };
+        request_obj.oncomplete = function(o){ rcm.http_response(o); };
+        request_obj.POST(this.env.comm_path+'&_action='+action, postdata);
+        }
+      };
 
   // handle HTTP response
   this.http_response = function(request_obj)
@@ -3397,7 +3422,10 @@ function rcube_http_request()
     if (window.XMLHttpRequest)
       this.xmlhttp = new XMLHttpRequest();
     else if (window.ActiveXObject)
-      this.xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      {
+      try { this.xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); }
+      catch(e) { this.xmlhttp = null; }
+      }
     else
       {
       
@@ -3428,8 +3456,8 @@ function rcube_http_request()
   this.POST = function(url, body, contentType)
     {
     // default value for contentType if not provided
-    contentType = typeof(contentType) != 'undefined' ?
-      contentType : 'application/x-www-form-urlencoded';
+    if (typeof(contentType) == 'undefined')
+      contentType = 'application/x-www-form-urlencoded';
 
     this.build();
     
@@ -3438,15 +3466,23 @@ function rcube_http_request()
        this.onerror(this);
        return false;
     }
+    
+    var req_body = body;
+    if (typeof(body) == 'object')
+    {
+      req_body = '';
+      for (var p in body)
+        req_body += (req_body ? '&' : '') + p+'='+urlencode(body[p]);
+    }
 
-    var ref=this;
+    var ref = this;
     this.url = url;
     this.busy = true;
     
     this.xmlhttp.onreadystatechange = function() { ref.xmlhttp_onreadystatechange(); };
     this.xmlhttp.open('POST', url, true);
     this.xmlhttp.setRequestHeader('Content-Type', contentType);
-    this.xmlhttp.send(body);
+    this.xmlhttp.send(req_body);
     };
 
 

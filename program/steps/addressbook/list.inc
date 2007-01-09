@@ -25,8 +25,8 @@ $REMOTE_REQUEST = TRUE;
 $result = $CONTACTS->list_records();
 
 // update message count display
-$commands = sprintf("this.set_rowcount('%s');\n", rcmail_get_rowcount_text($rowcount));
-$commands .= sprintf("this.set_env('pagecount', %d);\n", ceil($result['count'] / $CONTACTS->page_size));
+$commands = sprintf("this.set_env('pagecount', %d);\n", ceil($result['count'] / $CONTACTS->page_size));
+$commands .= sprintf("this.set_rowcount('%s');\n", rcmail_get_rowcount_text($rowcount));
 
 // create javascript list
 $commands .= rcmail_js_contacts_list($result);

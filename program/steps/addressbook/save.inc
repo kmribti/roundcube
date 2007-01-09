@@ -35,12 +35,13 @@ if ((!get_input_value('_name', RCUBE_INPUT_POST) || !get_input_value('_email', R
   return;
   }
 
+
 // setup some vars we need
 $a_save_cols = array('name', 'firstname', 'surname', 'email');
 $a_record = array();
 $cid = get_input_value('_cid', RCUBE_INPUT_POST);
 
-
+// read POST values into hash array
 foreach ($a_save_cols as $col)
   {
   $fname = '_'.$col;
@@ -68,7 +69,6 @@ if (!empty($cid))
                           $JS_OBJECT_NAME,
                           $cid,
                           array2js($a_js_cols)));
-
       }
       
     // show confirmation
