@@ -880,13 +880,19 @@ function format_email_recipient($email, $name='')
   }
 
 
-function rcmail_charset_pulldown($selected='ISO-8859-1')
-  {
-  $select = new select();
-  
-  
-  return $select->show($selected);
-  }
+
+// register UI objects
+$OUTPUT->add_handlers(array(
+  'composeheaders' => 'rcmail_compose_headers',
+  'composesubject' => 'rcmail_compose_subject',
+  'composebody' => 'rcmail_compose_body',
+  'composeattachmentlist' => 'rcmail_compose_attachment_list',
+  'composeattachmentform' => 'rcmail_compose_attachment_form',
+  'composeattachment' => 'rcmail_compose_attachment_field',
+  'priorityselector' => 'rcmail_priority_selector',
+  'editorselector' => 'rcmail_editor_selector',
+  'receiptcheckbox' => 'rcmail_receipt_checkbox',
+));
 
 
 /****** get contacts for this user and add them to client scripts ********/

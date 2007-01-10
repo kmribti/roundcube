@@ -5,7 +5,7 @@
  | program/steps/mail/func.inc                                           |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
+ | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -25,9 +25,8 @@ require_once('lib/enriched.inc');
 
 $EMAIL_ADDRESS_PATTERN = '/([a-z0-9][a-z0-9\-\.\+\_]*@[a-z0-9]([a-z0-9\-][.]?)*[a-z0-9]\\.[a-z]{2,5})/i';
 
-if (empty($_SESSION['mbox'])){
+if (empty($_SESSION['mbox']))
   $_SESSION['mbox'] = $IMAP->get_mailbox_name();
-}
 
 // set imap properties and session vars
 if (strlen($_GET['_mbox']))
@@ -63,21 +62,21 @@ if (strlen($_GET['_uid']))
 
 
 // set current mailbox in client environment
-$OUTPUT->add_script(sprintf("%s.set_env('mailbox', '%s');", $JS_OBJECT_NAME, $IMAP->get_mailbox_name()));
+$OUTPUT->set_env('mailbox', $IMAP->get_mailbox_name());
+$OUTPUT->set_pagetitle(rcube_charset_convert($IMAP->get_mailbox_name(), 'UTF-7', 'UTF-8'));
 
 if ($CONFIG['trash_mbox'])
-  $OUTPUT->add_script(sprintf("%s.set_env('trash_mailbox', '%s');", $JS_OBJECT_NAME, $CONFIG['trash_mbox']));
-
+  $OUTPUT->set_env('trash_mailbox', $CONFIG['trash_mbox']);
 if ($CONFIG['drafts_mbox'])
-  $OUTPUT->add_script(sprintf("%s.set_env('drafts_mailbox', '%s');", $JS_OBJECT_NAME, $CONFIG['drafts_mbox']));
-
+  $OUTPUT->set_env('drafts_mailbox', $CONFIG['drafts_mbox']);
 if ($CONFIG['junk_mbox'])
-  $OUTPUT->add_script(sprintf("%s.set_env('junk_mailbox', '%s');", $JS_OBJECT_NAME, $CONFIG['junk_mbox']));
+  $OUTPUT->set_env('junk_mailbox', $CONFIG['junk_mbox']);
+
 
 // return the mailboxlist in HTML
 function rcmail_mailbox_list($attrib)
   {
-  global $IMAP, $CONFIG, $OUTPUT, $JS_OBJECT_NAME, $COMM_PATH;
+  global $IMAP, $CONFIG, $OUTPUT, $COMM_PATH;
   static $s_added_script = FALSE;
   static $a_mailboxes;
 
@@ -136,7 +135,7 @@ function rcmail_mailbox_list($attrib)
 
 
   if ($type=='ul')
-    $OUTPUT->add_script(sprintf("%s.gui_object('mailboxlist', '%s');", $JS_OBJECT_NAME, $attrib['id']));
+    $OUTPUT->add_gui_object('mailboxlist', $attrib['id']);
 
   return $out . "</$type>";
   }
@@ -176,7 +175,7 @@ function rcmail_build_folder_tree(&$arrFolders, $folder, $delm='/', $path='')
 // return html for a structured list <ul> for the mailbox tree
 function rcmail_render_folder_tree_html(&$arrFolders, &$special, &$mbox_name, $maxlength, $nestLevel=0)
   {
-  global $JS_OBJECT_NAME, $COMM_PATH, $IMAP, $CONFIG, $OUTPUT;
+  global $COMM_PATH, $IMAP, $CONFIG, $OUTPUT;
 
   $idx = 0;
   $out = '';
@@ -232,13 +231,13 @@ function rcmail_render_folder_tree_html(&$arrFolders, &$special, &$mbox_name, $m
                     $folder['id']==$mbox_name ? ' selected' : '',
                     $COMM_PATH,
                     urlencode($folder['id']),
-                    $JS_OBJECT_NAME,
+                    JS_OBJECT_NAME,
                     $js_name,
-                    $JS_OBJECT_NAME,
+                    JS_OBJECT_NAME,
                     $js_name,
-                    $JS_OBJECT_NAME,
+                    JS_OBJECT_NAME,
                     $js_name,
-                    $JS_OBJECT_NAME,
+                    JS_OBJECT_NAME,
                     $js_name,
                     $title,
                     Q($foldername));
@@ -293,7 +292,7 @@ function rcmail_render_folder_tree_select(&$arrFolders, &$special, &$mbox_name, 
 // return the message list as HTML table
 function rcmail_message_list($attrib)
   {
-  global $IMAP, $CONFIG, $COMM_PATH, $OUTPUT, $JS_OBJECT_NAME;
+  global $IMAP, $CONFIG, $COMM_PATH, $OUTPUT;
 
   $skin_path = $CONFIG['skin_path'];
   $image_tag = '<img src="%s%s" alt="%s" border="0" />';
@@ -358,28 +357,30 @@ function rcmail_message_list($attrib)
         // asc link
         if (!empty($attrib['sortascbutton']))
           {
-          $sort .= rcube_button(array('command' => 'sort',
-                                      'prop' => $col.'_ASC',
-                                      'image' => $attrib['sortascbutton'],
-                                      'align' => 'absmiddle',
-                                      'title' => 'sortasc'));
+          $sort .= $OUTPUT->button(array(
+            'command' => 'sort',
+            'prop' => $col.'_ASC',
+            'image' => $attrib['sortascbutton'],
+            'align' => 'absmiddle',
+            'title' => 'sortasc'));
           }       
         
         // desc link
         if (!empty($attrib['sortdescbutton']))
           {
-          $sort .= rcube_button(array('command' => 'sort',
-                                      'prop' => $col.'_DESC',
-                                      'image' => $attrib['sortdescbutton'],
-                                      'align' => 'absmiddle',
-                                      'title' => 'sortdesc'));        
+          $sort .= $OUTPUT->button(array(
+            'command' => 'sort',
+            'prop' => $col.'_DESC',
+            'image' => $attrib['sortdescbutton'],
+            'align' => 'absmiddle',
+            'title' => 'sortdesc'));
           }
         }
       // just add a link tag to the header
       else
         {
         $col_name = sprintf('<a href="./#sort" onclick="return %s.command(\'sort\',\'%s\',this)" title="%s">%s</a>',
-                            $JS_OBJECT_NAME,
+                            JS_OBJECT_NAME,
                             $col,
                             rcube_label('sortby'),
                             $col_name);
@@ -477,26 +478,26 @@ function rcmail_message_list($attrib)
   $message_count = $IMAP->messagecount();
   
   // set client env
-  $javascript .= sprintf("%s.gui_object('mailcontframe', '%s');\n", $JS_OBJECT_NAME, 'mailcontframe');
-  $javascript .= sprintf("%s.gui_object('messagelist', '%s');\n", $JS_OBJECT_NAME, $attrib['id']);
-  $javascript .= sprintf("%s.set_env('messagecount', %d);\n", $JS_OBJECT_NAME, $message_count);
-  $javascript .= sprintf("%s.set_env('current_page', %d);\n", $JS_OBJECT_NAME, $IMAP->list_page);
-  $javascript .= sprintf("%s.set_env('pagecount', %d);\n", $JS_OBJECT_NAME, ceil($message_count/$IMAP->page_size));
-  $javascript .= sprintf("%s.set_env('sort_col', '%s');\n", $JS_OBJECT_NAME, $sort_col);
-  $javascript .= sprintf("%s.set_env('sort_order', '%s');\n", $JS_OBJECT_NAME, $sort_order);
+  $javascript .= sprintf("%s.gui_object('mailcontframe', '%s');\n", JS_OBJECT_NAME, 'mailcontframe');
+  $javascript .= sprintf("%s.gui_object('messagelist', '%s');\n", JS_OBJECT_NAME, $attrib['id']);
+  $javascript .= sprintf("%s.set_env('messagecount', %d);\n", JS_OBJECT_NAME, $message_count);
+  $javascript .= sprintf("%s.set_env('current_page', %d);\n", JS_OBJECT_NAME, $IMAP->list_page);
+  $javascript .= sprintf("%s.set_env('pagecount', %d);\n", JS_OBJECT_NAME, ceil($message_count/$IMAP->page_size));
+  $javascript .= sprintf("%s.set_env('sort_col', '%s');\n", JS_OBJECT_NAME, $sort_col);
+  $javascript .= sprintf("%s.set_env('sort_order', '%s');\n", JS_OBJECT_NAME, $sort_order);
   
   if ($attrib['messageicon'])
-    $javascript .= sprintf("%s.set_env('messageicon', '%s%s');\n", $JS_OBJECT_NAME, $skin_path, $attrib['messageicon']);
+    $javascript .= sprintf("%s.set_env('messageicon', '%s%s');\n", JS_OBJECT_NAME, $skin_path, $attrib['messageicon']);
   if ($attrib['deletedicon'])
-    $javascript .= sprintf("%s.set_env('deletedicon', '%s%s');\n", $JS_OBJECT_NAME, $skin_path, $attrib['deletedicon']);
+    $javascript .= sprintf("%s.set_env('deletedicon', '%s%s');\n", JS_OBJECT_NAME, $skin_path, $attrib['deletedicon']);
   if ($attrib['unreadicon'])
-    $javascript .= sprintf("%s.set_env('unreadicon', '%s%s');\n", $JS_OBJECT_NAME, $skin_path, $attrib['unreadicon']);
+    $javascript .= sprintf("%s.set_env('unreadicon', '%s%s');\n", JS_OBJECT_NAME, $skin_path, $attrib['unreadicon']);
   if ($attrib['repliedicon'])
-    $javascript .= sprintf("%s.set_env('repliedicon', '%s%s');\n", $JS_OBJECT_NAME, $skin_path, $attrib['repliedicon']);
+    $javascript .= sprintf("%s.set_env('repliedicon', '%s%s');\n", JS_OBJECT_NAME, $skin_path, $attrib['repliedicon']);
   if ($attrib['attachmenticon'])
-    $javascript .= sprintf("%s.set_env('attachmenticon', '%s%s');\n", $JS_OBJECT_NAME, $skin_path, $attrib['attachmenticon']);
+    $javascript .= sprintf("%s.set_env('attachmenticon', '%s%s');\n", JS_OBJECT_NAME, $skin_path, $attrib['attachmenticon']);
     
-  $javascript .= sprintf("%s.set_env('messages', %s);", $JS_OBJECT_NAME, array2js($a_js_message_arr));
+  $javascript .= sprintf("%s.set_env('messages', %s);", JS_OBJECT_NAME, array2js($a_js_message_arr));
   
   $OUTPUT->add_script($javascript);  
   $OUTPUT->include_script('list.js');
@@ -564,7 +565,7 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE)
 // return an HTML iframe for loading mail content
 function rcmail_messagecontent_frame($attrib)
   {
-  global $OUTPUT, $JS_OBJECT_NAME;
+  global $OUTPUT;
   
   if (empty($attrib['id']))
     $attrib['id'] = 'rcmailcontentwindow';
@@ -577,7 +578,7 @@ function rcmail_messagecontent_frame($attrib)
          $framename,
          $attrib_str);
 
-  $OUTPUT->add_script("$JS_OBJECT_NAME.set_env('contentframe', '$framename');");
+  $OUTPUT->set_env('contentframe', $framename);
 
   return $out;
   }
@@ -585,7 +586,7 @@ function rcmail_messagecontent_frame($attrib)
 // return code for search function
 function rcmail_search_form($attrib)
   {
-  global $OUTPUT, $JS_OBJECT_NAME;
+  global $OUTPUT;
 
   // add some labels to client
   rcube_add_label('searching');
@@ -598,15 +599,13 @@ function rcmail_search_form($attrib)
   $input_q = new textfield($attrib);
   $out = $input_q->show();
 
-  $OUTPUT->add_script(sprintf("%s.gui_object('qsearchbox', '%s');",
-                              $JS_OBJECT_NAME,
-                              $attrib['id']));
+  $OUTPUT->add_gui_object('qsearchbox', $attrib['id']);
 
   // add form tag around text field
   if (empty($attrib['form']))
     $out = sprintf('<form name="rcmqsearchform" action="./" '.
                    'onsubmit="%s.command(\'search\');return false" style="display:inline;">%s</form>',
-                   $JS_OBJECT_NAME,
+                   JS_OBJECT_NAME,
                    $out);
 
   return $out;
@@ -615,14 +614,12 @@ function rcmail_search_form($attrib)
 
 function rcmail_messagecount_display($attrib)
   {
-  global $IMAP, $OUTPUT, $JS_OBJECT_NAME;
+  global $IMAP, $OUTPUT;
   
   if (!$attrib['id'])
     $attrib['id'] = 'rcmcountdisplay';
 
-  $OUTPUT->add_script(sprintf("%s.gui_object('countdisplay', '%s');",
-                              $JS_OBJECT_NAME,
-                              $attrib['id']));
+  $OUTPUT->add_gui_object('countdisplay', $attrib['id']);
 
   // allow the following attributes to be added to the <span> tag
   $attrib_str = create_attrib_string($attrib, array('style', 'class', 'id'));
@@ -637,12 +634,12 @@ function rcmail_messagecount_display($attrib)
 
 function rcmail_quota_display($attrib)
   {
-  global $OUTPUT, $JS_OBJECT_NAME, $COMM_PATH;
+  global $OUTPUT, $COMM_PATH;
 
   if (!$attrib['id'])
     $attrib['id'] = 'rcmquotadisplay';
 
-  $OUTPUT->add_script(sprintf("%s.gui_object('quotadisplay', '%s');", $JS_OBJECT_NAME, $attrib['id']));
+  $OUTPUT->add_gui_object('quotadisplay', $attrib['id']);
 
   // allow the following attributes to be added to the <span> tag
   $attrib_str = create_attrib_string($attrib, array('style', 'class', 'id'));
@@ -719,7 +716,7 @@ function rcmail_get_messagecount_text($count=NULL, $page=NULL)
 
 function rcmail_print_body($part, $safe=FALSE, $plain=FALSE)
   {
-  global $IMAP, $REMOTE_OBJECTS, $JS_OBJECT_NAME;
+  global $IMAP, $REMOTE_OBJECTS;
   
   $body = is_array($part->replaces) ? strtr($part->body, $part->replaces) : $part->body;
 
@@ -783,7 +780,7 @@ function rcmail_print_body($part, $safe=FALSE, $plain=FALSE)
     $convert_replaces[] = "rcmail_str_replacement('\\1<a href=\"http://\\2\\3\" target=\"_blank\">\\2\\3</a>', \$replace_strings)";
     
     $convert_patterns[] = '/([a-z0-9][a-z0-9\-\.\+\_]*@[a-z0-9]([a-z0-9\-][.]?)*[a-z0-9]\\.[a-z]{2,5})/ie';
-    $convert_replaces[] = "rcmail_str_replacement('<a href=\"mailto:\\1\" onclick=\"return $JS_OBJECT_NAME.command(\'compose\',\'\\1\',this)\">\\1</a>', \$replace_strings)";
+    $convert_replaces[] = "rcmail_str_replacement('<a href=\"mailto:\\1\" onclick=\"return ".JS_OBJECT_NAME.".command(\'compose\',\'\\1\',this)\">\\1</a>', \$replace_strings)";
     
     if ($part->ctype_parameters['format'] != 'flowed')
       $body = wordwrap(trim($body), 80);
@@ -1088,7 +1085,7 @@ function rcmail_message_headers($attrib, $headers=NULL)
 
 function rcmail_message_body($attrib)
   {
-  global $CONFIG, $OUTPUT, $MESSAGE, $IMAP, $GET_URL, $REMOTE_OBJECTS, $JS_OBJECT_NAME;
+  global $CONFIG, $OUTPUT, $MESSAGE, $IMAP, $GET_URL, $REMOTE_OBJECTS;
   
   if (!is_array($MESSAGE['parts']) && !$MESSAGE['body'])
     return '';
@@ -1168,7 +1165,7 @@ function rcmail_message_body($attrib)
   
   // tell client that there are blocked remote objects
   if ($REMOTE_OBJECTS && !$safe_mode)
-    $OUTPUT->add_script(sprintf("%s.set_env('blockedobjects', true);", $JS_OBJECT_NAME));
+    $OUTPUT->set_env('blockedobjects', true);
 
   $out .= "\n</div>";
   return $out;
@@ -1256,7 +1253,7 @@ function rcmail_alter_html_link($in)
 
   if (stristr((string)$attrib['href'], 'mailto:'))
     $attrib['onclick'] = sprintf("return %s.command('compose','%s',this)",
-                                 $GLOBALS['JS_OBJECT_NAME'],
+                                 JS_OBJECT_NAME,
                                  JQ(substr($attrib['href'], 7)));
   else if (!empty($attrib['href']) && $attrib['href']{0}!='#')
     $attrib['target'] = '_blank';
@@ -1378,7 +1375,7 @@ function rcmail_first_text_part($message_struct)
 // decode address string and re-format it as HTML links
 function rcmail_address_string($input, $max=NULL, $addicon=NULL)
   {
-  global $IMAP, $PRINT_MODE, $CONFIG, $OUTPUT, $JS_OBJECT_NAME, $EMAIL_ADDRESS_PATTERN;
+  global $IMAP, $PRINT_MODE, $CONFIG, $OUTPUT, $EMAIL_ADDRESS_PATTERN;
   
   $a_parts = $IMAP->decode_address_list($input);
 
@@ -1398,14 +1395,14 @@ function rcmail_address_string($input, $max=NULL, $addicon=NULL)
       {
       $out .= sprintf('<a href="mailto:%s" onclick="return %s.command(\'compose\',\'%s\',this)" class="rcmContactAddress" title="%s">%s</a>',
                       $part['mailto'],
-                      $JS_OBJECT_NAME,
+                      JS_OBJECT_NAME,
                       $part['mailto'],
                       $part['mailto'],
                       Q($part['name']));
                       
       if ($addicon)
         $out .= sprintf('&nbsp;<a href="#add" onclick="return %s.command(\'add-contact\',\'%s\',this)" title="%s"><img src="%s%s" alt="add" border="0" /></a>',
-                        $JS_OBJECT_NAME,
+                        JS_OBJECT_NAME,
                         urlencode($part['string']),
                         rcube_label('addtoaddressbook'),
                         $CONFIG['skin_path'],
@@ -1498,6 +1495,20 @@ function rcmail_compose_cleanup()
   
   unset($_SESSION['compose']);
   }
-  
-  
+
+
+// register UI objects
+$OUTPUT->add_handlers(array(
+  'mailboxlist' => 'rcmail_mailbox_list',
+  'messages' => 'rcmail_message_list',
+  'messagecountdisplay' => 'rcmail_messagecount_display',
+  'quotadisplay' => 'rcmail_quota_display',
+  'messageheaders' => 'rcmail_message_headers',
+  'messagebody' => 'rcmail_message_body',
+  'messagecontentframe' => 'rcmail_messagecontent_frame',
+  'messagepartframe' => 'rcmail_message_part_frame',
+  'messagepartcontrols' => 'rcmail_message_part_controls',
+  'searchform' => 'rcmail_search_form',
+));
+
 ?>

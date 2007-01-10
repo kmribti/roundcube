@@ -5,7 +5,7 @@
  | program/steps/settings/manage_folders.inc                             |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
+ | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -116,7 +116,7 @@ else if ($_action=='delete-folder')
 // build table with all folders listed by server
 function rcube_subscription_form($attrib)
   {
-  global $IMAP, $CONFIG, $OUTPUT, $JS_OBJECT_NAME;
+  global $IMAP, $CONFIG, $OUTPUT;
 
   list($form_start, $form_end) = get_form_tags($attrib, 'folders');
   unset($attrib['form']);
@@ -147,7 +147,7 @@ function rcube_subscription_form($attrib)
   $a_subscribed = $IMAP->list_mailboxes();
   $a_js_folders = array();
  
-  $checkbox_subscribe = new checkbox(array('name' => '_subscribed[]', 'onclick' => "$JS_OBJECT_NAME.command(this.checked?'subscribe':'unsubscribe',this.value)"));
+  $checkbox_subscribe = new checkbox(array('name' => '_subscribed[]', 'onclick' => JS_OBJECT_NAME.".command(this.checked?'subscribe':'unsubscribe',this.value)"));
   
   if (!empty($attrib['deleteicon']))
     $del_button = sprintf('<img src="%s%s" alt="%s" border="0" />', $CONFIG['skin_path'], $attrib['deleteicon'], rcube_label('delete'));
@@ -186,11 +186,11 @@ function rcube_subscription_form($attrib)
     if (!$protected)
       $out .= sprintf('<td><a href="#rename" onclick="%s.command(\'rename-folder\',\'%s\')" title="%s">%s</a>'.
                       '<td><a href="#delete" onclick="%s.command(\'delete-folder\',\'%s\')" title="%s">%s</a></td>',
-                      $JS_OBJECT_NAME,
+                      JS_OBJECT_NAME,
                       $folder_js,
                       rcube_label('renamefolder'),
                       $edit_button,
-                      $JS_OBJECT_NAME,
+                      JS_OBJECT_NAME,
                       $folder_js,
                       rcube_label('deletefolder'),
                       $del_button);
@@ -203,10 +203,8 @@ function rcube_subscription_form($attrib)
   $out .= "</tbody>\n</table>";
   $out .= "\n$form_end";
 
-
-  $javascript = sprintf("%s.gui_object('subscriptionlist', '%s');\n", $JS_OBJECT_NAME, $attrib['id']);
-  $javascript .= sprintf("%s.set_env('subscriptionrows', %s);", $JS_OBJECT_NAME, array2js($a_js_folders));
-  $OUTPUT->add_script($javascript);
+  $OUTPUT->add_gui_object('subscriptionlist', $attrib['id']);
+  $OUTPUT->set_env('subscriptionrows', $a_js_folders);
 
   return $out;  
   }
@@ -214,8 +212,6 @@ function rcube_subscription_form($attrib)
 
 function rcube_create_folder_form($attrib)
   {
-  global $JS_OBJECT_NAME;
-
   list($form_start, $form_end) = get_form_tags($attrib, 'create-folder');
   unset($attrib['form']);
 
@@ -230,7 +226,7 @@ function rcube_create_folder_form($attrib)
     {
     $button = new input_field(array('type' => 'button',
                                     'value' => rcube_label('create'),
-                                    'onclick' => "$JS_OBJECT_NAME.command('create-folder',this.form)"));
+                                    'onclick' => JS_OBJECT_NAME.".command('create-folder',this.form)"));
     $out .= $button->show();
     }
 
@@ -241,7 +237,7 @@ function rcube_create_folder_form($attrib)
 
 function rcube_rename_folder_form($attrib)
   {
-  global $CONFIG, $IMAP, $JS_OBJECT_NAME;
+  global $CONFIG, $IMAP;
 
   list($form_start, $form_end) = get_form_tags($attrib, 'rename-folder');
   unset($attrib['form']);
@@ -270,7 +266,7 @@ function rcube_rename_folder_form($attrib)
     {
     $button = new input_field(array('type' => 'button',
                                     'value' => rcube_label('rename'),
-                                    'onclick' => "$JS_OBJECT_NAME.command('rename-folder',this.form)"));
+                                    'onclick' => JS_OBJECT_NAME.".command('rename-folder',this.form)"));
     $out .= $button->show();
     }
 
@@ -279,6 +275,13 @@ function rcube_rename_folder_form($attrib)
   return $out;
   }
 
+
+// register UI objects
+$OUTPUT->add_handlers(array(
+  'foldersubscription' => 'rcube_subscription_form',
+  'createfolder' => 'rcube_create_folder_form',
+  'renamefolder' => 'rcube_rename_folder_form'
+));
 
 // add some labels to client
 rcube_add_label('deletefolderconfirm');

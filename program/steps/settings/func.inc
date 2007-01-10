@@ -5,7 +5,7 @@
  | program/steps/settings/func.inc                                       |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
+ | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -26,7 +26,7 @@ $sql_result = $DB->query("SELECT username, mail_host FROM ".get_table_name('user
                           $_SESSION['user_id']);
                                  
 if ($USER_DATA = $DB->fetch_assoc($sql_result))
-  $PAGE_TITLE = sprintf('%s %s@%s', rcube_label('settingsfor'), $USER_DATA['username'], $USER_DATA['mail_host']);
+  $OUTPUT->set_pagetitle(sprintf('%s %s@%s', rcube_label('settingsfor'), $USER_DATA['username'], $USER_DATA['mail_host']));
 
 
 
@@ -264,6 +264,13 @@ function get_form_tags($attrib, $action, $add_hidden=array())
 
   return array($form_start, $form_end);  
   }
+
+
+// register UI objects
+$OUTPUT->add_handlers(array(
+  'userprefs' => 'rcmail_user_prefs_form',
+  'itentitieslist' => 'rcmail_identities_list',
+));
 
 
 ?>

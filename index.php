@@ -2,9 +2,9 @@
 /*
  +-----------------------------------------------------------------------+
  | RoundCube Webmail IMAP Client                                         |
- | Version 0.1-20061206                                                  |
+ | Version 0.1-20070110                                                  |
  |                                                                       |
- | Copyright (C) 2005-2006, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | Redistribution and use in source and binary forms, with or without    |
@@ -40,12 +40,13 @@
 
 */
 
-define('RCMAIL_VERSION', '0.1-20061206');
+define('RCMAIL_VERSION', '0.1-20070110');
+define('JS_OBJECT_NAME', 'rcmail');
 
 // define global vars
 $CHARSET = 'UTF-8';
 $OUTPUT_TYPE = 'html';
-$JS_OBJECT_NAME = 'rcmail';
+$JS_OBJECT_NAME = JS_OBJECT_NAME;  // deprecated, use constant instead
 $INSTALL_PATH = dirname(__FILE__);
 $MAIN_TASKS = array('mail','settings','addressbook','logout');
 
@@ -136,16 +137,14 @@ load_gui();
 // check DB connections and exit on failure
 if ($err_str = $DB->is_error())
   {
-  raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
+  raise_error(array('code' => 603, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
                     'message' => $err_str), FALSE, TRUE);
   }
 
 
 // error steps
 if ($_action=='error' && !empty($_GET['_code']))
-  {
   raise_error(array('code' => hexdec($_GET['_code'])), FALSE, TRUE);
-  }
 
 // handle HTML->text conversion
 if ($_action=='html2text')
@@ -188,7 +187,7 @@ if ($_action=='login' && $_task=='mail')
   }
 
 // end session
-else if ($_action=='logout' && isset($_SESSION['user_id']))
+else if (($_task=='logout' || $_action=='logout') && isset($_SESSION['user_id']))
   {
   show_message('loggedout');
   rcmail_kill_session();
@@ -235,11 +234,9 @@ if (empty($_SESSION['user_id']))
 
 
 // set task and action to client
-$script = sprintf("%s.set_env('task', '%s');", $JS_OBJECT_NAME, $_task);
+$OUTPUT->set_env('task', $_task);
 if (!empty($_action))
-  $script .= sprintf("\n%s.set_env('action', '%s');", $JS_OBJECT_NAME, $_action);
-
-$OUTPUT->add_script($script);
+  $OUTPUT->set_env('action', $_action);
 
 
 

@@ -5,7 +5,7 @@
  | program/steps/addressbook/show.inc                                    |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005-2006, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -62,6 +62,8 @@ function rcmail_contact_details($attrib)
   
   return $out;  
   }
+
+$OUTPUT->add_handler('contactdetails', 'rcmail_contact_details');
 
 
 parse_template('showcontact');

@@ -5,7 +5,7 @@
  | program/steps/addressbook/func.inc                                    |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
+ | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -33,18 +33,11 @@ if (!empty($_GET['_page']))
 else
   $CONTACTS->set_page(isset($_SESSION['page']) ?$_SESSION['page'] : 1);
 
-// disable the ldap public search button if there's no servers configured
-$enable_ldap = 'true';
-if (!$CONFIG['ldap_public'])
-  $enable_ldap = 'false';
-  
-$OUTPUT->add_script("$JS_OBJECT_NAME.set_env('ldappublicsearch', $enable_ldap);");
-
 
 // return the message list as HTML table
 function rcmail_contacts_list($attrib)
   {
-  global $CONTACTS, $OUTPUT, $JS_OBJECT_NAME;
+  global $CONTACTS, $OUTPUT;
   
   // count contacts for this user
   $result = $CONTACTS->list_records();
@@ -60,16 +53,13 @@ function rcmail_contacts_list($attrib)
   // define list of cols to be displayed
   $a_show_cols = array('name', 'email');
   
-  // create XHTML table  
+  // create XHTML table
   $out = rcube_table_output($attrib, $result, $a_show_cols, $CONTACTS->primary_key);
   
   // set client env
-  $javascript = sprintf("%s.gui_object('contactslist', '%s');\n", $JS_OBJECT_NAME, $attrib['id']);
-  $javascript .= sprintf("%s.set_env('current_page', %d);\n", $JS_OBJECT_NAME, $CONTACTS->list_page);
-  $javascript .= sprintf("%s.set_env('pagecount', %d);\n", $JS_OBJECT_NAME, ceil($rowcount/$CONTACTS->page_size));
-  $javascript .= "rcmail.set_env('newcontact', '" . rcube_label('newcontact') . "');";
-  
-  $OUTPUT->add_script($javascript);  
+  $OUTPUT->add_gui_object('contactslist', $attrib['id']);
+  $OUTPUT->set_env('current_page', (int)$CONTACTS->list_page);
+  $OUTPUT->set_env('pagecount', ceil($rowcount/$CONTACTS->page_size));
   $OUTPUT->include_script('list.js');
   
   // add some labels to client
@@ -112,35 +102,31 @@ function rcmail_js_contacts_list($result, $obj_name='this')
 // similar function as /steps/settings/identities.inc::rcmail_identity_frame()
 function rcmail_contact_frame($attrib)
   {
-  global $OUTPUT, $JS_OBJECT_NAME;
+  global $OUTPUT;
 
   if (!$attrib['id'])
     $attrib['id'] = 'rcmcontactframe';
     
   $attrib['name'] = $attrib['id'];
-
-  $OUTPUT->add_script(sprintf("%s.set_env('contentframe', '%s');", $JS_OBJECT_NAME, $attrib['name']));
-
   $attrib_str = create_attrib_string($attrib, array('name', 'id', 'class', 'style', 'src', 'width', 'height', 'frameborder'));
-  $out = '<iframe'. $attrib_str . '></iframe>';
-    
-  return $out;
+
+  $OUTPUT->set_env('contentframe', $attrib['name']);
+  return '<iframe'. $attrib_str . '></iframe>';
   }
 
 
 function rcmail_rowcount_display($attrib)
   {
-  global $OUTPUT, $JS_OBJECT_NAME;
+  global $OUTPUT;
   
   if (!$attrib['id'])
     $attrib['id'] = 'rcmcountdisplay';
 
-  $OUTPUT->add_script(sprintf("%s.gui_object('countdisplay', '%s');", $JS_OBJECT_NAME, $attrib['id']));
+  $OUTPUT->add_gui_object('countdisplay', $attrib['id']);
 
   // allow the following attributes to be added to the <span> tag
   $attrib_str = create_attrib_string($attrib, array('style', 'class', 'id'));
 
-  
   $out = '<span' . $attrib_str . '>';
   $out .= rcmail_get_rowcount_text();
   $out .= '</span>';
@@ -171,5 +157,13 @@ function rcmail_get_rowcount_text($max=NULL)
 
   return $out;
   }
+  
+  
+// register UI objects
+$OUTPUT->add_handlers(array(
+  'addresslist' => 'rcmail_contacts_list',
+  'addressframe' => 'rcmail_contact_frame',
+  'recordscountdisplay' => 'rcmail_rowcount_display',
+));
 
 ?>

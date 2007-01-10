@@ -5,7 +5,7 @@
  | program/steps/mail/show.inc                                           |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
+ | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -47,6 +47,7 @@ if ($_GET['_uid'])
     }
 
   $MESSAGE['subject'] = $IMAP->decode_header($MESSAGE['headers']->subject);
+  $OUTPUT->set_pagetitle($MESSAGE['subject']);
   
   if ($MESSAGE['structure'])
     list($MESSAGE['parts'], $MESSAGE['attachments']) = rcmail_parse_message(
@@ -160,6 +161,11 @@ function rcmail_remote_objects_msg($attrib)
   $OUTPUT->add_script(sprintf("%s.gui_object('remoteobjectsmsg', '%s');", $JS_OBJECT_NAME, $attrib['id']));
   return $out;
   }
+
+
+$OUTPUT->add_handlers(array(
+  'messageattachments' => 'rcmail_message_attachments',
+  'blockedobjects' => 'rcmail_remote_objects_msg'));
 
 
 if ($_action=='print' && template_exists('printmessage'))

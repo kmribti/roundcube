@@ -46,8 +46,6 @@ if ($REMOTE_REQUEST)
 
 
 // go to identities page
-$_action = 'identities';
+rcmail_overwrite_action('identities');
 
-// overwrite action variable  
-$OUTPUT->add_script(sprintf("\n%s.set_env('action', '%s');", $JS_OBJECT_NAME, $_action));
 ?>

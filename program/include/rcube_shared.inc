@@ -5,7 +5,7 @@
  | rcube_shared.inc                                                      |
  |                                                                       |
  | This file is part of the RoundCube PHP suite                          |
- | Copyright (C) 2005-2006, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | CONTENTS:                                                             |
@@ -84,9 +84,9 @@ class rcube_html_page
   function add_script($script, $position='head')
     {
     if (!isset($this->scripts[$position]))
-      $this->scripts[$position] = "\n$script";
+      $this->scripts[$position] = "\n".rtrim($script);
     else
-      $this->scripts[$position] .= "\n$script";
+      $this->scripts[$position] .= "\n".rtrim($script);
     }
 
   function add_header($str)
@@ -165,8 +165,9 @@ class rcube_html_page
       foreach ($this->external_scripts['head'] as $xscript)
         $__page_header .= sprintf($this->tag_format_external_script, $xscript);
 
-    if (!empty($this->scripts['head']))
-      $__page_header .= sprintf($this->script_tag, $this->scripts['head']);
+    $head_script = $this->scripts['head_top'] . $this->scripts['head'];
+    if (!empty($head_script))
+      $__page_header .= sprintf($this->script_tag, $head_script);
 
     if (!empty($this->header))
       $__page_header .= $this->header;

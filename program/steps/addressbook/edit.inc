@@ -5,7 +5,7 @@
  | program/steps/addressbook/edit.inc                                    |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005-2006, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -21,12 +21,12 @@
 
 
 if (($cid = get_input_value('_cid', RCUBE_INPUT_GPC)) && ($result = $CONTACTS->get_record($cid)))
-  $OUTPUT->add_script(sprintf("%s.set_env('cid', '%s');", $JS_OBJECT_NAME, $result['ID']));
+  $OUTPUT->add_script(sprintf("%s.set_env('cid', '%s');", JS_OBJECT_NAME, $result['ID']));
 
 
 function rcmail_contact_editform($attrib)
   {
-  global $CONTACTS, $JS_OBJECT_NAME;
+  global $CONTACTS;
 
   // check if we have a valid result
   if (!($record = $CONTACTS->get_result()) && $GLOBALS['_action'] != 'add')
@@ -68,11 +68,13 @@ function rcmail_contact_editform($attrib)
   return $out;  
   }
 
+$OUTPUT->add_handler('contacteditform', 'rcmail_contact_editform');
+
 
 // similar function as in /steps/settings/edit_identity.inc
 function get_form_tags($attrib)
   {
-  global $CONTACTS, $OUTPUT, $JS_OBJECT_NAME, $EDIT_FORM, $SESS_HIDDEN_FIELD;  
+  global $CONTACTS, $OUTPUT, $EDIT_FORM, $SESS_HIDDEN_FIELD;  
 
   $record = $CONTACTS->get_result();
   $form_start = '';
@@ -96,7 +98,7 @@ function get_form_tags($attrib)
   $form_name = strlen($attrib['form']) ? $attrib['form'] : 'form';
   
   if (!strlen($EDIT_FORM))
-    $OUTPUT->add_script("$JS_OBJECT_NAME.gui_object('editform', '$form_name');");
+    $OUTPUT->add_gui_object('editform', $form_name);
   
   $EDIT_FORM = $form_name;
 
