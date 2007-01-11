@@ -2464,7 +2464,7 @@ class rcube_imap
 
       foreach ($sub_a as $k => $v)
         {
-        if ((strpos($v, '@') > 0) && (strpos($v, '.') > 0)) 
+        if (($p = strpos($v, '@')) > 0 && strpos($v, '.') > $p)
           $result[$key]['address'] = str_replace('<', '', str_replace('>', '', $v));
         else
           $result[$key]['name'] .= (empty($result[$key]['name'])?'':' ').str_replace("\"",'',stripslashes($v));
