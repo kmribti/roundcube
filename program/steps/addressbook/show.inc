@@ -22,12 +22,12 @@
 
 // read contact record
 if (($cid = get_input_value('_cid', RCUBE_INPUT_GPC)) && ($result = $CONTACTS->get_record($cid)))
-  $OUTPUT->add_script(sprintf("%s.set_env('cid', '%s');", $JS_OBJECT_NAME, $result['ID']));
+  $OUTPUT->set_env('cid', $result['ID']);
 
 
 function rcmail_contact_details($attrib)
   {
-  global $CONTACTS, $JS_OBJECT_NAME;
+  global $CONTACTS;
 
   // check if we have a valid result
   if (!($record = $CONTACTS->get_result()))
@@ -46,7 +46,7 @@ function rcmail_contact_details($attrib)
     if ($col=='email' && !empty($record[$col]))
       $value = sprintf(
         '<a href="#compose" onclick="%s.command(\'compose\', \'%s\')" title="%s">%s</a>',
-        $JS_OBJECT_NAME,
+        JS_OBJECT_NAME,
         JQ($record[$col]),
         rcube_label('composeto'),
         Q($record[$col]));

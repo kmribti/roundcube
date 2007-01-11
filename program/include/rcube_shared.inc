@@ -185,13 +185,13 @@ class rcube_html_page
     $__page_header .= $this->css->show();
   
     // find page header
-    if($hpos = rc_strpos(rc_strtolower($output), '</head>'))
+    if($hpos = strpos(strtolower($output), '</head>'))
       $__page_header .= "\n";
     else 
       {
       if (!is_numeric($hpos))
-        $hpos = rc_strpos(rc_strtolower($output), '<body');
-      if (!is_numeric($hpos) && ($hpos = rc_strpos(rc_strtolower($output), '<html')))
+        $hpos = strpos(strtolower($output), '<body');
+      if (!is_numeric($hpos) && ($hpos = strpos(strtolower($output), '<html')))
         {
         while($output[$hpos]!='>')
         $hpos++;
@@ -203,27 +203,27 @@ class rcube_html_page
   
     // add page hader
     if($hpos)
-      $output = rc_substr($output,0,$hpos) . $__page_header . rc_substr($output,$hpos,rc_strlen($output));
+      $output = substr($output,0,$hpos) . $__page_header . substr($output,$hpos,strlen($output));
     else
       $output = $__page_header . $output;
   
   
     // find page body
-    if($bpos = rc_strpos(rc_strtolower($output), '<body'))
+    if($bpos = strpos(strtolower($output), '<body'))
       {
       while($output[$bpos]!='>') $bpos++;
       $bpos++;
       }
     else
-      $bpos = rc_strpos(rc_strtolower($output), '</head>')+7;
+      $bpos = strpos(strtolower($output), '</head>')+7;
   
     // add page body
     if($bpos && $__page_body)
-      $output = rc_substr($output,0,$bpos) . "\n$__page_body\n" . rc_substr($output,$bpos,rc_strlen($output));
+      $output = substr($output,0,$bpos) . "\n$__page_body\n" . substr($output,$bpos,strlen($output));
   
   
     // find and add page footer
-    $output_lc = rc_strtolower($output);
+    $output_lc = strtolower($output);
     if(($fpos = strrstr($output_lc, '</body>')) ||
        ($fpos = strrstr($output_lc, '</html>')))
       $output = substr($output,0,$fpos) . "$__page_footer\n" . substr($output,$fpos);
@@ -1023,10 +1023,10 @@ class select extends base_form_element
       {
       $selected = ((!empty($option['value']) && in_array($option['value'], $select, TRUE)) ||
                    (in_array($option['text'], $select, TRUE))) ? $this->_conv_case(' selected', 'attrib') : '';
-                  
+                   
       $options_str .= sprintf("<%s%s%s>%s</%s>\n",
                              $this->_conv_case('option', 'tag'),
-                             !empty($option['value']) ? sprintf($value_str, $option['value']) : '',
+                             !empty($option['value']) ? sprintf($value_str, Q($option['value'])) : '',
                              $selected, 
                              Q($option['text'], 'strict', FALSE),
                              $this->_conv_case('option', 'tag'));

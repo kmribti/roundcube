@@ -2,7 +2,7 @@
 /*
  +-----------------------------------------------------------------------+
  | RoundCube Webmail IMAP Client                                         |
- | Version 0.1-20070110                                                  |
+ | Version 0.1-20070111                                                  |
  |                                                                       |
  | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
@@ -40,13 +40,13 @@
 
 */
 
-define('RCMAIL_VERSION', '0.1-20070110');
+// application constants
+define('RCMAIL_VERSION', '0.1-20070111');
+define('RCMAIL_CHARSET', 'UTF-8');
 define('JS_OBJECT_NAME', 'rcmail');
 
 // define global vars
-$CHARSET = 'UTF-8';
 $OUTPUT_TYPE = 'html';
-$JS_OBJECT_NAME = JS_OBJECT_NAME;  // deprecated, use constant instead
 $INSTALL_PATH = dirname(__FILE__);
 $MAIN_TASKS = array('mail','settings','addressbook','logout');
 
@@ -82,7 +82,6 @@ require_once('include/rcube_imap.inc');
 require_once('include/bugs.inc');
 require_once('include/main.inc');
 require_once('include/cache.inc');
-require_once('lib/html2text.inc');
 require_once('PEAR.php');
 
 
@@ -131,7 +130,7 @@ if ($_framed)
 
 
 // init necessary objects for GUI
-load_gui();
+rcmail_load_gui();
 
 
 // check DB connections and exit on failure
@@ -145,20 +144,6 @@ if ($err_str = $DB->is_error())
 // error steps
 if ($_action=='error' && !empty($_GET['_code']))
   raise_error(array('code' => hexdec($_GET['_code'])), FALSE, TRUE);
-
-// handle HTML->text conversion
-if ($_action=='html2text')
-  {
-  $htmlText = $HTTP_RAW_POST_DATA;
-  $converter = new html2text($htmlText);
-
-  // TODO possibly replace with rcube_remote_response()
-  header('Content-Type: text/plain');
-  $plaintext = $converter->get_text();
-  print $plaintext;
-
-  exit;
-  }
 
 
 // try to log in
@@ -308,9 +293,6 @@ if ($_task=='mail')
   if ($_action=='rss')
     include('program/steps/mail/rss.inc');
     
-  if ($_action=='quotaimg')
-    include('program/steps/mail/quotaimg.inc');
-
   if ($_action=='quotadisplay')
     include('program/steps/mail/quotadisplay.inc');
 

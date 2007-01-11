@@ -44,7 +44,7 @@ Code Layout:
 ------------
 
 Basic sequence (index.php):
-  - index.php -> load_gui -> parse_template
+  - index.php -> rcmail_load_gui -> parse_template
   - authentication details in this sequence
 
 Tasks
@@ -56,6 +56,7 @@ Tasks
 program/include/rcube_shared.inc
   - defines rcube_html_page, class that lays out a roundcube web page
   - defines form control classes
+  - provides common functions
 
 
 Installation:

@@ -232,6 +232,16 @@ a.button-logout
   background-position: 1px center;
 }
 
+.radios-left label
+{
+  padding-left: 0.3em;
+}
+
+.radios-left input
+{
+  padding-left: 1em;
+}
+
 
 /***** common table settings ******/
 

@@ -668,8 +668,7 @@ function rcmail_quota_content($display)
     if ($display == 'image' && function_exists('imagegif'))
       {
       $attrib = array('width' => 100, 'height' => 14);
-      $quota_text = sprintf('<img src="%s&amp;_action=quotaimg&amp;u=%s&amp;q=%d&amp;w=%d&amp;h=%d" width="%d" height="%d" alt="%s" title="%s / %s" />',
-                            $COMM_PATH,
+      $quota_text = sprintf('<img src="./bin/quotaimg.php?u=%s&amp;q=%d&amp;w=%d&amp;h=%d" width="%d" height="%d" alt="%s" title="%s / %s" />',
                             $quota['used'], $quota['total'],
                             $attrib['width'], $attrib['height'],
                             $attrib['width'], $attrib['height'],

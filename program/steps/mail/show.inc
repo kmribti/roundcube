@@ -65,8 +65,8 @@ if ($_GET['_uid'])
     $IMAP->set_flag($_GET['_uid'], 'SEEN');
 
   // give message uid to the client
-  $javascript = sprintf("%s.set_env('uid', '%s');\n", $JS_OBJECT_NAME, $MESSAGE['UID']);
-  $javascript .= sprintf("%s.set_env('safemode', '%b');", $JS_OBJECT_NAME, $_GET['_safe']);
+  $OUTPUT->set_env('uid', $MESSAGE['UID']);
+  $OUTPUT->set_env('safemode', (bool)$_GET['_safe']);
 
   $next = $prev = -1;
   // get previous, first, next and last message UID
@@ -94,22 +94,20 @@ if ($_GET['_uid'])
     }
   
   if ($prev > 0)
-    $javascript .= sprintf("\n%s.set_env('prev_uid', '%s');", $JS_OBJECT_NAME, $prev);
+    $OUTPUT->set_env('prev_uid', $prev);
   if ($first >0)
-    $javascript .= sprintf("\n%s.set_env('first_uid', '%s');", $JS_OBJECT_NAME, $first);
+    $OUTPUT->set_env('first_uid', $first);
   if ($next > 0)
-    $javascript .= sprintf("\n%s.set_env('next_uid', '%s');", $JS_OBJECT_NAME, $next);
+    $OUTPUT->set_env('next_uid', $next);
   if ($last >0)
-    $javascript .= sprintf("\n%s.set_env('last_uid', '%s');", $JS_OBJECT_NAME, $last);
-
-  $OUTPUT->add_script($javascript);
+    $OUTPUT->set_env('last_uid', $last);
   }
 
 
 
 function rcmail_message_attachments($attrib)
   {
-  global $CONFIG, $OUTPUT, $PRINT_MODE, $MESSAGE, $GET_URL, $JS_OBJECT_NAME;
+  global $CONFIG, $OUTPUT, $PRINT_MODE, $MESSAGE, $GET_URL;
 
   if (sizeof($MESSAGE['attachments']))
     {
@@ -127,7 +125,7 @@ function rcmail_message_attachments($attrib)
         $out .= sprintf('<li><a href="%s&amp;_part=%s" onclick="return %s.command(\'load-attachment\',{part:\'%s\', mimetype:\'%s\'},this)">%s</a></li>'."\n",
                         htmlspecialchars($GET_URL),
                         $attach_prop->mime_id,
-                        $JS_OBJECT_NAME,
+                        JS_OBJECT_NAME,
                         $attach_prop->mime_id,
                         $attach_prop->mimetype,
                         $attach_prop->filename);
@@ -142,7 +140,7 @@ function rcmail_message_attachments($attrib)
 
 function rcmail_remote_objects_msg($attrib)
   {
-  global $CONFIG, $OUTPUT, $JS_OBJECT_NAME;
+  global $CONFIG, $OUTPUT;
   
   if (!$attrib['id'])
     $attrib['id'] = 'rcmremoteobjmsg';
@@ -153,12 +151,12 @@ function rcmail_remote_objects_msg($attrib)
   
   $out .= sprintf('%s&nbsp;<a href="#loadimages" onclick="%s.command(\'load-images\')">%s</a>',
                   Q(rcube_label('blockedimages')),
-                  $JS_OBJECT_NAME,
+                  JS_OBJECT_NAME,
                   Q(rcube_label('showimages')));
   
   $out .= '</div>';
   
-  $OUTPUT->add_script(sprintf("%s.gui_object('remoteobjectsmsg', '%s');", $JS_OBJECT_NAME, $attrib['id']));
+  $OUTPUT->add_gui_object('remoteobjectsmsg', $attrib['id']);
   return $out;
   }
 

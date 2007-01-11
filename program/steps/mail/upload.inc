@@ -54,14 +54,14 @@ foreach ($_FILES['_attachments']['tmp_name'] as $i => $filepath)
       $button = Q(rcube_label('delete'));
 
     $content = sprintf('<a href="#delete" onclick="return %s.command(\\\'remove-attachment\\\', \\\'rcmfile%d\\\', this)" title="%s">%s</a>%s',
-                       $JS_OBJECT_NAME,
+                       JS_OBJECT_NAME,
                        $id,
                        Q(rcube_label('delete')),
                        $button,
                        Q($_FILES['_attachments']['name'][$i]));
 
     $response .= sprintf('parent.%s.add2attachment_list(\'rcmfile%d\',\'%s\');',
-                         $JS_OBJECT_NAME,
+                         JS_OBJECT_NAME,
                          $id,
                          $content);
     }
@@ -73,18 +73,15 @@ foreach ($_FILES['_attachments']['tmp_name'] as $i => $filepath)
     else
       $msg = rcube_label('fileuploaderror');
     
-    $response = sprintf("parent.%s.display_message('%s', 'error');", $JS_OBJECT_NAME, JQ($msg));
+    $response = sprintf("parent.%s.display_message('%s', 'error');", JS_OBJECT_NAME, JQ($msg));
     }
   }
 
 
 // send html page with JS calls as response
-$frameout = <<<EOF
-$response
-parent.$JS_OBJECT_NAME.show_attachment_form(false);
-parent.$JS_OBJECT_NAME.auto_save_start();
-EOF;
+$response .= "\nparent.".JS_OBJECT_NAME.".show_attachment_form(false);\n"
+  . 'parent.'.JS_OBJECT_NAME.".auto_save_start();";
 
-rcube_iframe_response($frameout);
+rcube_iframe_response($response);
 
 ?>

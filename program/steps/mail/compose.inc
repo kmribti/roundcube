@@ -36,7 +36,7 @@ if ($_action=='remove-attachment' && preg_match('/^rcmfile([0-9]+)$/', $_GET['_f
     {
     @unlink($_SESSION['compose']['attachments'][$id]['path']);
     $_SESSION['compose']['attachments'][$id] = NULL;
-    $commands = sprintf("parent.%s.remove_from_attachment_list('rcmfile%d');\n", $JS_OBJECT_NAME, $id);
+    $commands = sprintf("parent.%s.remove_from_attachment_list('rcmfile%d');\n", JS_OBJECT_NAME, $id);
     rcube_remote_response($commands);  
     exit;
     }
@@ -61,7 +61,7 @@ if (!is_array($_SESSION['compose']) || $_SESSION['compose']['id'] != get_input_v
 rcube_add_label('nosubject', 'norecipientwarning', 'nosubjectwarning', 'nobodywarning', 'notsentwarning', 'savingmessage', 'sendingmessage', 'messagesaved', 'converting');
 
 // add config parameter to client script
-$OUTPUT->add_script(sprintf("%s.set_env('draft_autosave', %d);", $JS_OBJECT_NAME, !empty($CONFIG['drafts_mbox']) ? $CONFIG['draft_autosave'] : 0));
+$OUTPUT->add_script(sprintf("%s.set_env('draft_autosave', %d);", JS_OBJECT_NAME, !empty($CONFIG['drafts_mbox']) ? $CONFIG['draft_autosave'] : 0));
 
 
 // get reference message and set compose mode
@@ -246,7 +246,7 @@ function rcmail_compose_headers($attrib)
 
 function rcmail_compose_header_from($attrib)
   {
-  global $IMAP, $MESSAGE, $DB, $OUTPUT, $JS_OBJECT_NAME, $compose_mode;
+  global $IMAP, $MESSAGE, $DB, $OUTPUT, $compose_mode;
     
   // pass the following attributes to the form class
   $field_attrib = array('name' => '_from');
@@ -291,7 +291,7 @@ function rcmail_compose_header_from($attrib)
     $from_id = 0;
     $a_signatures = array();
 
-    $field_attrib['onchange'] = "$JS_OBJECT_NAME.change_identity(this)";
+    $field_attrib['onchange'] = JS_OBJECT_NAME.".change_identity(this)";
     $select_from = new select($field_attrib);
 
     while ($sql_arr = $DB->fetch_assoc($sql_result))
@@ -330,7 +330,7 @@ function rcmail_compose_header_from($attrib)
     $out = $select_from->show($from_id);
 
     // add signatures to client
-    $OUTPUT->add_script(sprintf("%s.set_env('signatures', %s);", $JS_OBJECT_NAME, array2js($a_signatures)));  
+    $OUTPUT->set_env('signatures', $a_signatures);
     }
   else
     {
@@ -348,7 +348,7 @@ function rcmail_compose_header_from($attrib)
 
 function rcmail_compose_body($attrib)
   {
-  global $CONFIG, $OUTPUT, $MESSAGE, $JS_OBJECT_NAME, $compose_mode;
+  global $CONFIG, $OUTPUT, $MESSAGE, $compose_mode;
   
   list($form_start, $form_end) = get_form_tags($attrib);
   unset($attrib['form']);
@@ -470,7 +470,7 @@ function rcmail_compose_body($attrib)
       $lang_set,
       substr($_SESSION['user_lang'], 0, 2),
       $attrib['id'],
-      $JS_OBJECT_NAME), 'foot');
+      JS_OBJECT_NAME), 'foot');
 
     rcube_add_label('checking');
     }
@@ -671,7 +671,7 @@ function rcmail_compose_subject($attrib)
 
 function rcmail_compose_attachment_list($attrib)
   {
-  global $OUTPUT, $JS_OBJECT_NAME, $CONFIG;
+  global $OUTPUT, $CONFIG;
   
   // add ID if not given
   if (!$attrib['id'])
@@ -695,14 +695,14 @@ function rcmail_compose_attachment_list($attrib)
     foreach ($_SESSION['compose']['attachments'] as $id => $a_prop)
       $out .= sprintf('<li id="rcmfile%d"><a href="#delete" onclick="return %s.command(\'remove-attachment\',\'rcmfile%d\', this)" title="%s">%s</a>%s</li>',
                       $id,
-                      $JS_OBJECT_NAME,
+                      JS_OBJECT_NAME,
                       $id,
                       Q(rcube_label('delete')),
                       $button,
                       Q($a_prop['name']));
     }
 
-  $OUTPUT->add_script(sprintf("%s.gui_object('attachmentlist', '%s');", $JS_OBJECT_NAME, $attrib['id']));  
+  $OUTPUT->add_gui_object('attachmentlist', $attrib['id']);
     
   $out .= '</ul>';
   return $out;
@@ -712,7 +712,7 @@ function rcmail_compose_attachment_list($attrib)
 
 function rcmail_compose_attachment_form($attrib)
   {
-  global $OUTPUT, $JS_OBJECT_NAME, $SESS_HIDDEN_FIELD;
+  global $OUTPUT, $SESS_HIDDEN_FIELD;
 
   // add ID if not given
   if (!$attrib['id'])
@@ -723,6 +723,7 @@ function rcmail_compose_attachment_form($attrib)
   $input_field = rcmail_compose_attachment_field(array());
   $label_send = rcube_label('upload');
   $label_close = rcube_label('close');
+  $js_instance = JS_OBJECT_NAME;
   
   $out = <<<EOF
 <div$attrib_str>
@@ -730,13 +731,13 @@ function rcmail_compose_attachment_form($attrib)
 $SESS_HIDDEN_FIELD
 $input_field<br />
 <input type="button" value="$label_close" class="button" onclick="document.getElementById('$attrib[id]').style.visibility='hidden'" />
-<input type="button" value="$label_send" class="button" onclick="$JS_OBJECT_NAME.command('send-attachment', this.form)" />
+<input type="button" value="$label_send" class="button" onclick="$js_instance.command('send-attachment', this.form)" />
 </form>
 </div>
 EOF;
 
   
-  $OUTPUT->add_script(sprintf("%s.gui_object('uploadbox', '%s');", $JS_OBJECT_NAME, $attrib['id']));  
+  $OUTPUT->add_gui_object('uploadbox', $attrib['id']);
   return $out;
   }
 
@@ -834,7 +835,7 @@ function rcmail_editor_selector($attrib)
 
     $attrib['id'] = '_' . $value;
     $rb = new radiobutton($attrib);
-    $selector .= sprintf("<td>%s</td><td class=\"title\"><label for=\"%s\">%s</label></td>",
+    $selector .= sprintf("%s<label for=\"%s\">%s</label>",
                          $rb->show($value),
                          $attrib['id'],
                          rcube_label($text));
@@ -846,7 +847,7 @@ function rcmail_editor_selector($attrib)
 
 function get_form_tags($attrib)
   {
-  global $CONFIG, $OUTPUT, $JS_OBJECT_NAME, $MESSAGE_FORM, $SESS_HIDDEN_FIELD;  
+  global $CONFIG, $OUTPUT, $MESSAGE_FORM, $SESS_HIDDEN_FIELD;  
 
   $form_start = '';
   if (!strlen($MESSAGE_FORM))
@@ -863,7 +864,7 @@ function get_form_tags($attrib)
   $form_name = !empty($attrib['form']) ? $attrib['form'] : 'form';
   
   if (!strlen($MESSAGE_FORM))
-    $OUTPUT->add_script("$JS_OBJECT_NAME.gui_object('messageform', '$form_name');");
+    $OUTPUT->add_gui_object('messageform', $form_name);
   
   $MESSAGE_FORM = $form_name;
 
@@ -908,7 +909,7 @@ if ($DB->num_rows($sql_result))
     if ($sql_arr['email'])
       $a_contacts[] = format_email_recipient($sql_arr['email'], JQ($sql_arr['name']));
   
-  $OUTPUT->add_script(sprintf("$JS_OBJECT_NAME.set_env('contacts', %s);", array2js($a_contacts)));
+  $OUTPUT->set_env('contacts', $a_contacts);
   }
 
 

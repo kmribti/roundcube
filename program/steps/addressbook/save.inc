@@ -65,8 +65,8 @@ if (!empty($cid))
 
       // update the changed col in list
       $OUTPUT->add_script(sprintf("if(parent.%s)parent.%s.update_contact_row('%d', %s);",
-                          $JS_OBJECT_NAME,
-                          $JS_OBJECT_NAME,
+                          JS_OBJECT_NAME,
+                          JS_OBJECT_NAME,
                           $cid,
                           array2js($a_js_cols)));
       }
@@ -106,17 +106,17 @@ else
       $CONTACTS->reset();
       $result = $CONTACTS->search($CONTACTS->primary_key, $insert_id);
       
-      $commands = "if(parent.$JS_OBJECT_NAME){\n";
-      $commands .= "parent." . rcmail_js_contacts_list($result, $JS_OBJECT_NAME);
+      $commands = "if(parent.".JS_OBJECT_NAME."){\n";
+      $commands .= "parent." . rcmail_js_contacts_list($result, JS_OBJECT_NAME);
 
       $commands .= sprintf("parent.%s.contact_list.select('%s');\n",
-                           $JS_OBJECT_NAME,
+                           JS_OBJECT_NAME,
                            $insert_id);
 
       // update record count display
       $CONTACTS->reset();
       $commands .= sprintf("parent.%s.set_rowcount('%s');\n",
-                           $JS_OBJECT_NAME,
+                           JS_OBJECT_NAME,
                            rcmail_get_rowcount_text());
 
       $commands .= '}';

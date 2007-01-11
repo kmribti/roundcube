@@ -39,7 +39,7 @@ if (!isset($_SESSION['compose']['id']))
 
 function rcmail_get_identity($id)
   {
-  global $DB, $CHARSET, $OUTPUT;
+  global $DB, $OUTPUT;
   
   // get identity record
   $sql_result = $DB->query("SELECT *, email AS mailto
@@ -55,7 +55,7 @@ function rcmail_get_identity($id)
     $out = $sql_arr;
     $name = strpos($sql_arr['name'], ",") ? '"'.$sql_arr['name'].'"' : $sql_arr['name'];
     $out['string'] = sprintf('%s <%s>',
-                             rcube_charset_convert($name, $CHARSET, $OUTPUT->get_charset()),
+                             rcube_charset_convert($name, RCMAIL_CHARSET, $OUTPUT->get_charset()),
                              $sql_arr['mailto']);
     return $out;
     }
@@ -169,7 +169,7 @@ if (empty($identity_arr['string']))
 
 // compose headers array
 $headers = array('Date' => date('D, j M Y H:i:s O'),
-                 'From' => rcube_charset_convert($identity_arr['string'], $CHARSET, $message_charset),
+                 'From' => rcube_charset_convert($identity_arr['string'], RCMAIL_CHARSET, $message_charset),
                  'To'   => rcube_charset_convert($mailto, $input_charset, $message_charset));
 
 // additional recipients
@@ -305,7 +305,7 @@ $msg_subject = $headers['Subject'];
 
 if ($MBSTRING && function_exists("mb_encode_mimeheader"))
 {
-  mb_internal_encoding($CHARSET);
+  mb_internal_encoding(RCMAIL_CHARSET);
   $headers['Subject'] = mb_encode_mimeheader($headers['Subject'], $message_charset, 'Q');
 }
 
@@ -442,10 +442,10 @@ if ($savedraft)
   $frameout .= sprintf("foundid.value = '%s';\n", str_replace(array('<','>'), "", $message_id));
 
   // update the "cmp_hash" to prevent "Unsaved changes" warning
-  $frameout .= sprintf("parent.%s.cmp_hash = parent.%s.compose_field_hash();\n", $JS_OBJECT_NAME, $JS_OBJECT_NAME);
+  $frameout .= sprintf("parent.%s.cmp_hash = parent.%s.compose_field_hash();\n", JS_OBJECT_NAME, JS_OBJECT_NAME);
 
   // start the auto-save timer again
-  $frameout .= sprintf("parent.%s.auto_save_start();", $JS_OBJECT_NAME);
+  $frameout .= sprintf("parent.%s.auto_save_start();", JS_OBJECT_NAME);
 
   // send html page with JS calls as response
   rcube_iframe_response($frameout);
@@ -469,7 +469,8 @@ else
     }
 
   rcmail_compose_cleanup();
-  rcube_iframe_response(sprintf("parent.$JS_OBJECT_NAME.sent_successfully('%s');",
+  rcube_iframe_response(sprintf("parent.%s.sent_successfully('%s');",
+                                JS_OBJECT_NAME,
                                 JQ(rcube_label('messagesent'))));
   }
 

@@ -147,7 +147,7 @@ class rcmail_template extends rcube_html_page
     $output = $this->parse_xml($this->parse_conditions($templ));
 
     // write all env variables to client
-    $this->add_script(JS_OBJECT_NAME.".env = ".array2js($this->js_env), 'head_top');
+    $this->add_script(JS_OBJECT_NAME.'.set_env('.array2js($this->js_env).')', 'head_top');
 
     // add debug console
     if ($this->config['debug_level'] & 8)
@@ -182,7 +182,7 @@ class rcmail_template extends rcube_html_page
         $attrib = parse_attrib_string($matches[2]);
         if (isset($attrib['condition']))
         {
-          $condmet = $this->xml_condition($attrib['condition']);
+          $condmet = $this->check_condition($attrib['condition']);
           $submatches = preg_split('/<roundcube:(elseif|else|endif)\s+([^>]+)>/is', $matches[3], 2, PREG_SPLIT_DELIM_CAPTURE);
 
           if ($condmet)
@@ -209,7 +209,7 @@ class rcmail_template extends rcube_html_page
    *
    * @return True if condition is valid, False is not
    */
-  function xml_condition($condition)
+  function check_condition($condition)
   {
     $condition = preg_replace(
         array('/session:([a-z0-9_]+)/i', '/config:([a-z0-9_]+)/i', '/env:([a-z0-9_]+)/i', '/request:([a-z0-9_]+)/ie'),
@@ -246,7 +246,7 @@ class rcmail_template extends rcube_html_page
     $attrib = parse_attrib_string($str_attrib) + $add_attrib;
 
     // empty output if required condition is not met
-    if (!empty($attrib['condition']) && !$this->xml_condition($attrib['condition']))
+    if (!empty($attrib['condition']) && !$this->check_condition($attrib['condition']))
       return '';
 
     // execute command
@@ -322,7 +322,7 @@ class rcmail_template extends rcube_html_page
    */
   function button($attrib)
     {
-    global $CONFIG, $OUTPUT, $BROWSER, $COMM_PATH, $MAIN_TASKS;
+    global $CONFIG, $OUTPUT, $BROWSER, $MAIN_TASKS;
     static $sa_buttons = array();
     static $s_button_count = 100;
 
@@ -410,9 +410,9 @@ class rcmail_template extends rcube_html_page
 
       // make valid href to specific buttons
       if (in_array($attrib['command'], $MAIN_TASKS))
-        $attrib['href'] = htmlentities(ereg_replace('_task=[a-z]+', '_task='.$attrib['command'], $COMM_PATH));
+        $attrib['href'] = Q(rcmail_self_url(null, null, $attrib['command']));
       else if (in_array($attrib['command'], $a_static_commands))
-        $attrib['href'] = htmlentities($COMM_PATH.'&_action='.$attrib['command']);
+        $attrib['href'] = Q(rcmail_self_url($attrib['command']));
     }
 
     // overwrite attributes

@@ -357,7 +357,7 @@ function rcube_language_prop($lang, $prop='lang')
   
 
 // init output object for GUI and add common scripts
-function load_gui()
+function rcmail_load_gui()
   {
   global $CONFIG, $OUTPUT, $sess_user_lang;
 
@@ -397,7 +397,7 @@ function load_gui()
 // set localization charset based on the given language
 function rcmail_set_locale($lang)
   {
-  global $OUTPUT, $CHARSET, $MBSTRING;
+  global $OUTPUT, $MBSTRING;
   static $s_mbstring_loaded = NULL;
   
   // settings for mbstring module (by Tadashi Jokagi)
@@ -407,7 +407,7 @@ function rcmail_set_locale($lang)
     $MBSTRING = $s_mbstring_loaded = FALSE;
     
   if ($MBSTRING)
-    mb_internal_encoding($CHARSET);
+    mb_internal_encoding(RCMAIL_CHARSET);
 
   $OUTPUT->set_charset(rcube_language_prop($lang, 'charset'));
   }
@@ -586,7 +586,7 @@ function rcmail_create_user($user, $host)
               $user,
               $host,
               $user_email,
-		      $_SESSION['user_lang']);
+              $_SESSION['user_lang']);
 
   if ($user_id = $DB->insert_id(get_sequence_name('users')))
     {
@@ -598,7 +598,7 @@ function rcmail_create_user($user, $host)
     $user_name = $user!=$user_email ? $user : '';
 
     // try to resolve the e-mail address from the virtuser table
-	if (!empty($CONFIG['virtuser_query']) &&
+    if (!empty($CONFIG['virtuser_query']) &&
         ($sql_result = $DB->query(preg_replace('/%u/', $user, $CONFIG['virtuser_query']))) &&
         ($DB->num_rows()>0))
       while ($sql_arr = $DB->fetch_array($sql_result))
@@ -747,6 +747,24 @@ function rcmail_overwrite_action($action)
   }
 
 
+// compose a URL to the given action
+function rcmail_self_url($action, $p=array(), $task=null)
+{
+  global $MAIN_TASKS, $COMM_PATH;
+  $qstring = '';
+  $base = $COMM_PATH;
+  
+  if ($task && in_array($task, $MAIN_TASKS))
+    $base = ereg_replace('_task=[a-z]+', '_task='.$task, $COMM_PATH);
+  
+  if (is_array($p))
+    foreach ($p as $key => $val)
+      $qstring .= '&'.urlencode($key).'='.urlencode($val);
+  
+  return $base . ($action ? '&_action='.$action : '') . $qstring;
+}
+
+
 function show_message($message, $type='notice', $vars=NULL)
   {
   global $OUTPUT, $REMOTE_REQUEST;
@@ -802,19 +820,19 @@ function get_des_key()
 // send correct response on a remote request
 function rcube_remote_response($js_code, $flush=FALSE)
   {
-  global $OUTPUT, $CHARSET;
+  global $OUTPUT;
   static $s_header_sent = FALSE;
   
   if (!$s_header_sent)
     {
     $s_header_sent = TRUE;
     send_nocacheing_headers();
-    header('Content-Type: application/x-javascript; charset='.$CHARSET);
+    header('Content-Type: application/x-javascript; charset='.RCMAIL_CHARSET);
     print '/** remote response ['.date('d/M/Y h:i:s O')."] **/\n";
     }
 
   // send response code
-  print rcube_charset_convert($js_code, $CHARSET, $OUTPUT->get_charset());
+  print rcube_charset_convert($js_code, RCMAIL_CHARSET, $OUTPUT->get_charset());
 
   if ($flush)  // flush the output buffer
     flush();
@@ -922,7 +940,7 @@ function rcmail_message_cache_gc()
  *
  * @param  string Input string
  * @param  string Suspected charset of the input string
- * @param  string Target charset to convert to; defaults to $GLOBALS['CHARSET']
+ * @param  string Target charset to convert to; defaults to RCMAIL_CHARSET
  * @return Converted string
  */
 function rcube_charset_convert($str, $from, $to=NULL)
@@ -930,7 +948,7 @@ function rcube_charset_convert($str, $from, $to=NULL)
   global $MBSTRING;
 
   $from = strtoupper($from);
-  $to = $to==NULL ? strtoupper($GLOBALS['CHARSET']) : strtoupper($to);
+  $to = $to==NULL ? strtoupper(RCMAIL_CHARSET) : strtoupper($to);
 
   if ($from==$to || $str=='' || empty($from))
     return $str;
@@ -1062,7 +1080,7 @@ function rep_specialchars_output($str, $enctype='', $mode='', $newlines=TRUE)
   if ($enctype=='js')
     {
     if ($OUTPUT->get_charset()!='UTF-8')
-      $str = rcube_charset_convert($str, $GLOBALS['CHARSET'], $OUTPUT->get_charset());
+      $str = rcube_charset_convert($str, RCMAIL_CHARSET, $OUTPUT->get_charset());
       
     return addslashes(preg_replace(array("/\r\n/", "/\r/"), array('\n', '\n'), strtr($str, $js_rep_table)));
     }

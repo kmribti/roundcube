@@ -49,12 +49,18 @@ function rcube_webmail()
   this.env.keep_alive = 60;        // seconds
   this.env.request_timeout = 180;  // seconds
   this.env.draft_autosave = 0;     // seconds
+  this.env.comm_path = './';
+  this.env.bin_path = './bin/';
 
 
-  // set environment variable
-  this.set_env = function(name, value)
+  // set environment variable(s)
+  this.set_env = function(p, value)
     {
-    this.env[name] = value;
+    if (p != null && typeof(p) == 'object' && !value)
+      for (var n in p)
+        this.env[n] = p[n];
+    else
+      this.env[p] = value;
     };
 
 
@@ -3039,14 +3045,14 @@ function rcube_webmail()
     };
 
   // replace content of quota display
-   this.set_quota = function()
-     {
-     if (this.gui_objects.quotadisplay &&
-         this.gui_objects.quotadisplay.attributes.getNamedItem('display') &&
-         this.gui_objects.quotadisplay.attributes.getNamedItem('id'))
-       this.http_request('quotadisplay', '_display='+
-         this.gui_objects.quotadisplay.attributes.getNamedItem('display').nodeValue+
-         '&_id='+this.gui_objects.quotadisplay.attributes.getNamedItem('id').nodeValue, false);
+  this.set_quota = function()
+    {
+    if (this.gui_objects.quotadisplay &&
+        this.gui_objects.quotadisplay.attributes.getNamedItem('display') &&
+        this.gui_objects.quotadisplay.attributes.getNamedItem('id'))
+      this.http_request('quotadisplay', '_display='+
+      this.gui_objects.quotadisplay.attributes.getNamedItem('display').nodeValue+
+      '&_id='+this.gui_objects.quotadisplay.attributes.getNamedItem('id').nodeValue, false);
      };
 
 
