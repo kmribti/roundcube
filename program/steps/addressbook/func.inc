@@ -33,6 +33,28 @@ if (!empty($_GET['_page']))
 else
   $CONTACTS->set_page(isset($_SESSION['page']) ?$_SESSION['page'] : 1);
 
+// set message set for search result
+if (!empty($_GET['_search']) && isset($_SESSION['search'][$_GET['_search']]))
+  $CONTACTS->set_search_set($_SESSION['search'][$_GET['_search']]);
+
+
+function rcmail_directory_list($attrib)
+{
+  global $CONFIG, $OUTPUT;
+  
+  if (!$attrib['id'])
+    $attrib['id'] = 'rcmdirectorylist';
+
+  // allow the following attributes to be added to the <ul> tag
+  $out = '<ul' . create_attrib_string($attrib, array('style', 'class', 'id')) . ">\n";
+  
+  $out .= '<li><a href="#">' . rcube_label('personaladrbook') .  "</a></li>\n";
+
+  $OUTPUT->add_gui_object('directorylist', $attrib['id']);
+  
+  return $out;
+}
+
 
 // return the message list as HTML table
 function rcmail_contacts_list($attrib)
@@ -135,7 +157,7 @@ function rcmail_rowcount_display($attrib)
 
 
 
-function rcmail_get_rowcount_text($max=NULL)
+function rcmail_get_rowcount_text()
   {
   global $CONTACTS;
   
@@ -161,9 +183,11 @@ function rcmail_get_rowcount_text($max=NULL)
   
 // register UI objects
 $OUTPUT->add_handlers(array(
+  'directorylist' => 'rcmail_directory_list',
   'addresslist' => 'rcmail_contacts_list',
   'addressframe' => 'rcmail_contact_frame',
   'recordscountdisplay' => 'rcmail_rowcount_display',
+  'searchform' => 'rcmail_search_form'
 ));
 
 ?>

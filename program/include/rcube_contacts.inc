@@ -5,7 +5,7 @@
  | program/include/rcube_contacts.inc                                    |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2006, RoundCube Dev. - Switzerland                      |
+ | Copyright (C) 2006-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -26,6 +26,8 @@ class rcube_contacts
   var $user_id = 0;
   var $filter = '1';
   var $result = null;
+  var $search_fields;
+  var $search_string;
   
   /** public properties */
   var $primary_key = 'contact_id';
@@ -80,15 +82,39 @@ class rcube_contacts
   {
     $this->page_size = (int)$size;
   }
+
+
+  /**
+   * Save a search string for future listings
+   *
+   * @param  string SQL params to use in listing method
+   */
+  function set_search_set($filter)
+  {
+    $this->filter = $filter;
+  }
   
   
+  /**
+   * Getter for saved search properties
+   *
+   * @return mixed Search properties used by this class
+   */
+  function get_search_set()
+  {
+    return $this->filter;
+  }
+
+
   /**
    * Reset all saved results and search parameters
    */
   function reset()
   {
-    $this->result = NULL;
+    $this->result = null;
     $this->filter = '1';
+    $this->search_fields = null;
+    $this->search_string = null;
   }
   
   
@@ -120,7 +146,7 @@ class rcube_contacts
         $length,
         $this->user_id);
     }
-
+    
     while ($sql_result && ($sql_arr = $this->db->fetch_assoc($sql_result)))
     {
       $sql_arr['ID'] = $sql_arr[$this->primary_key];
@@ -146,11 +172,11 @@ class rcube_contacts
     
     $add_where = array();
     foreach ($fields as $col)
-      $add_where[] = $this->db->quoteIdentifier($col)."=".$this->db->quote($value);
+      $add_where[] = $this->db->quoteIdentifier($col)." LIKE ".$this->db->quote(strlen($value)>2 ? "%$value%" : "$value%");
     
     if (!empty($add_where))
     {
-      $this->filter = join(' OR ', $add_where);
+      $this->set_search_set(join(' OR ', $add_where));
       if ($select)
         $this->list_records();
       else

@@ -1591,6 +1591,36 @@ function rcmail_charset_selector($attrib)
   }
 
 
+// return code for search function
+function rcmail_search_form($attrib)
+  {
+  global $OUTPUT;
+
+  // add some labels to client
+  rcube_add_label('searching');
+
+  $attrib['name'] = '_q';
+
+  if (empty($attrib['id']))
+    $attrib['id'] = 'rcmqsearchbox';
+
+  $input_q = new textfield($attrib);
+  $out = $input_q->show();
+
+  $OUTPUT->add_gui_object('qsearchbox', $attrib['id']);
+
+  // add form tag around text field
+  if (empty($attrib['form']))
+    $out = sprintf(
+      '<form name="rcmqsearchform" action="./" '.
+      'onsubmit="%s.command(\'search\');return false" style="display:inline;">%s</form>',
+      JS_OBJECT_NAME,
+      $out);
+
+  return $out;
+  } 
+
+
 /****** debugging functions ********/
 
 

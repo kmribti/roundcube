@@ -3,7 +3,7 @@
  | RoundCube Webmail Client Script                                       |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005-2006, RoundCube Dev, - Switzerland                 |
+ | Copyright (C) 2005-2007, RoundCube Dev, - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
@@ -244,6 +244,8 @@ function rcube_webmail()
 
         if ((this.env.action=='add' || this.env.action=='edit') && this.gui_objects.editform)
           this.enable_command('save', true);
+        else
+          this.enable_command('search', 'reset-search', true);
 
         this.enable_command('list', 'add', true);
 
@@ -883,16 +885,20 @@ function rcube_webmail()
         if (!props && this.gui_objects.qsearchbox)
           props = this.gui_objects.qsearchbox.value;
         if (props)
-          this.qsearch(urlencode(props), this.env.mailbox);
-        break;
+        {
+          this.qsearch(props, this.env.mailbox);
+          break;
+        }
 
       // reset quicksearch        
       case 'reset-search':
         var s = this.env.search_request;
         this.reset_qsearch();
         
-        if (s)
+        if (s && this.env.mailbox)
           this.list_mailbox(this.env.mailbox);
+        else if (s && this.task == 'addressbook')
+          this.list_contacts();
         break;
 
       // ldap search
@@ -1920,14 +1926,18 @@ function rcube_webmail()
     return true;
     };
 
-  // send remote request to search mail
+  // send remote request to search mail or contacts
   this.qsearch = function(value, mbox)
     {
-    if (value && mbox)
+    if (value != '')
       {
-      this.message_list.clear();
+      if (this.message_list)
+        this.message_list.clear();
+      else if (this.contact_list)
+        this.contact_list.clear();
+
       this.set_busy(true, 'searching');
-      this.http_request('search', '_search='+value+'&_mbox='+mbox, true);
+      this.http_request('search', '_search='+urlencode(value)+(mbox ? '&_mbox='+mbox : ''), true);
       }
     return true;
     };
@@ -2225,6 +2235,10 @@ function rcube_webmail()
       add_url = '&_framed=1';
       }
 
+    // also send search request to get the correct listing
+    if (this.env.search_request)
+      add_url += '&_search='+this.env.search_request;
+
     this.set_busy(true, 'loading');
     target.location.href = this.env.comm_path+(page ? '&_page='+page : '')+add_url;
     };
@@ -2238,6 +2252,11 @@ function rcube_webmail()
 
     // send request to server
     var url = page ? '&_page='+page : '';
+    
+    // also send search request to get the correct listing
+    if (this.env.search_request)
+      url += '&_search='+this.env.search_request;
+
     this.set_busy(true, 'loading');
     this.http_request('list', url, true);
     };
