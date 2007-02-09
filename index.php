@@ -2,7 +2,7 @@
 /*
  +-----------------------------------------------------------------------+
  | RoundCube Webmail IMAP Client                                         |
- | Version 0.1-20070201                                                  |
+ | Version 0.1-20070209                                                  |
  |                                                                       |
  | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
@@ -41,7 +41,7 @@
 */
 
 // application constants
-define('RCMAIL_VERSION', '0.1-20070201');
+define('RCMAIL_VERSION', '0.1-20070209');
 define('RCMAIL_CHARSET', 'UTF-8');
 define('JS_OBJECT_NAME', 'rcmail');
 
@@ -98,9 +98,6 @@ $_framed = (!empty($_GET['_framed']) || !empty($_POST['_framed']));
 if (empty($_task) || !in_array($_task, $MAIN_TASKS))
   $_task = 'mail';
 
-if (!empty($_GET['_remote']))
-  $REMOTE_REQUEST = TRUE;
-  
 
 // set output buffering
 if ($_action != 'get' && $_action != 'viewsource')
@@ -124,7 +121,7 @@ $SESS_HIDDEN_FIELD = '';
 // add framed parameter
 if ($_framed)
   {
-  $COMM_PATH .= '&amp;_framed=1';
+  $COMM_PATH .= '&_framed=1';
   $SESS_HIDDEN_FIELD .= "\n".'<input type="hidden" name="_framed" value="1" />';
   }
 
@@ -154,7 +151,7 @@ if ($_action=='login' && $_task=='mail')
   // check if client supports cookies
   if (empty($_COOKIE))
     {
-    show_message("cookiesdisabled", 'warning');
+    $OUTPUT->show_message("cookiesdisabled", 'warning');
     }
   else if (isset($_POST['_user']) && isset($_POST['_pass']) &&
            rcmail_login(get_input_value('_user', RCUBE_INPUT_POST),
@@ -166,7 +163,7 @@ if ($_action=='login' && $_task=='mail')
     }
   else
     {
-    show_message("loginfailed", 'warning');
+    $OUTPUT->show_message("loginfailed", 'warning');
     $_SESSION['user_id'] = '';
     }
   }
@@ -174,7 +171,7 @@ if ($_action=='login' && $_task=='mail')
 // end session
 else if (($_task=='logout' || $_action=='logout') && isset($_SESSION['user_id']))
   {
-  show_message('loggedout');
+  $OUTPUT->show_message('loggedout');
   rcmail_kill_session();
   }
 
@@ -184,7 +181,7 @@ else if ($_action!='login' && $_SESSION['user_id'])
   if (!rcmail_authenticate_session() ||
       (!empty($CONFIG['session_lifetime']) && isset($SESS_CHANGED) && $SESS_CHANGED + $CONFIG['session_lifetime']*60 < mktime()))
     {
-    $message = show_message('sessionerror', 'error');
+    $OUTPUT->show_message('sessionerror', 'error');
     rcmail_kill_session();
     }
   }
@@ -196,7 +193,7 @@ if (!empty($_SESSION['user_id']) && $_task=='mail')
   $conn = $IMAP->connect($_SESSION['imap_host'], $_SESSION['username'], decrypt_passwd($_SESSION['password']), $_SESSION['imap_port'], $_SESSION['imap_ssl']);
   if (!$conn)
     {
-    show_message('imaperror', 'error');
+    $OUTPUT->show_message('imaperror', 'error');
     $_SESSION['user_id'] = '';
     }
   else
@@ -207,11 +204,8 @@ if (!empty($_SESSION['user_id']) && $_task=='mail')
 // not logged in -> set task to 'login
 if (empty($_SESSION['user_id']))
   {
-  if ($REMOTE_REQUEST)
-    {
-    $message .= "setTimeout(\"location.href='\"+this.env.comm_path+\"'\", 2000);";
-    rcube_remote_response($message);
-    }
+  if ($OUTPUT->ajax_call)
+    $OUTPUT->remote_response("setTimeout(\"location.href='\"+this.env.comm_path+\"'\", 2000);");
   
   $_task = 'login';
   }
@@ -228,7 +222,7 @@ if (!empty($_action))
 // not logged in -> show login page
 if (!$_SESSION['user_id'])
   {
-  parse_template('login');
+  $OUTPUT->send('login');
   exit;
   }
 
@@ -236,7 +230,8 @@ if (!$_SESSION['user_id'])
 // handle keep-alive signal
 if ($_action=='keep-alive')
   {
-  rcube_remote_response('');
+  $OUTPUT->reset();
+  $OUTPUT->send('');
   exit;
   }
 
@@ -358,7 +353,7 @@ if ($_task=='settings')
 
 
 // parse main template
-parse_template($_task);
+$OUTPUT->send($_task);
 
 
 // if we arrive here, something went wrong

@@ -511,9 +511,8 @@ function rcmail_message_list($attrib)
 // return javascript commands to add rows to the message list
 function rcmail_js_message_list($a_headers, $insert_top=FALSE)
   {
-  global $CONFIG, $IMAP;
+  global $CONFIG, $IMAP, $OUTPUT;
 
-  $commands = '';
   $a_show_cols = is_array($CONFIG['list_cols']) ? $CONFIG['list_cols'] : array('subject');
 
   // show 'to' instead of from in sent messages
@@ -521,7 +520,7 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE)
       && ($f = array_search('from', $a_show_cols)) && !array_search('to', $a_show_cols))
     $a_show_cols[$f] = 'to';
 
-  $commands .= sprintf("this.set_message_coltypes(%s);\n", array2js($a_show_cols)); 
+  $OUTPUT->command('set_message_coltypes', $a_show_cols);
 
   // loop through message headers
   for ($n=0; $a_headers[$n]; $n++)
@@ -550,15 +549,13 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE)
     $a_msg_flags['deleted'] = $header->deleted ? 1 : 0;
     $a_msg_flags['unread'] = $header->seen ? 0 : 1;
     $a_msg_flags['replied'] = $header->answered ? 1 : 0;
-    $commands .= sprintf("this.add_message_row(%s, %s, %s, %b, %b);\n",
-                         $header->uid,
-                         array2js($a_msg_cols),
-                         array2js($a_msg_flags),
-                         preg_match("/multipart\/m/i", $header->ctype),
-                         $insert_top);
+    $OUTPUT->command('add_message_row',
+      $header->uid,
+      $a_msg_cols,
+      $a_msg_flags,
+      preg_match("/multipart\/m/i", $header->ctype),
+      $insert_top);
     }
-
-  return $commands;
   }
 
 

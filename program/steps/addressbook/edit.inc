@@ -21,16 +21,19 @@
 
 
 if (($cid = get_input_value('_cid', RCUBE_INPUT_GPC)) && ($result = $CONTACTS->get_record($cid)))
-  $OUTPUT->add_script(sprintf("%s.set_env('cid', '%s');", JS_OBJECT_NAME, $result['ID']));
+  $OUTPUT->set_env('cid', $result['ID']);
 
 
 function rcmail_contact_editform($attrib)
-  {
-  global $CONTACTS;
+{
+  global $CONTACTS, $OUTPUT;
 
   // check if we have a valid result
   if (!($record = $CONTACTS->get_result()) && $GLOBALS['_action'] != 'add')
-    return show_message('contactnotfound');
+  {
+    $OUTPUT->show_message('contactnotfound');
+    return false;
+  }
 
   // add some labels to client
   rcube_add_label('noemailwarning');
@@ -42,11 +45,11 @@ function rcmail_contact_editform($attrib)
 
   // a specific part is requested
   if ($attrib['part'])
-    {
+  {
     $out = $form_start;
     $out .= rcmail_get_edit_field($attrib['part'], $record[$attrib['part']], $attrib); 
     return $out;
-    }
+  }
 
 
   // return the complete address edit form as table
@@ -54,19 +57,19 @@ function rcmail_contact_editform($attrib)
 
   $a_show_cols = array('name', 'firstname', 'surname', 'email');
   foreach ($a_show_cols as $col)
-    {
+  {
     $attrib['id'] = 'rcmfd_'.$col;
     $value = rcmail_get_edit_field($col, $record[$col], $attrib);
     $out .= sprintf("<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
                     $attrib['id'],
                     Q(rcube_label($col)),
                     $value);
-    }
+  }
 
   $out .= "\n</table>$form_end";
 
   return $out;  
-  }
+}
 
 $OUTPUT->add_handler('contacteditform', 'rcmail_contact_editform');
 

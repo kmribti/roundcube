@@ -47,8 +47,8 @@ function rcmail_directory_list($attrib)
 
   // allow the following attributes to be added to the <ul> tag
   $out = '<ul' . create_attrib_string($attrib, array('style', 'class', 'id')) . ">\n";
-  
   $out .= '<li><a href="#">' . rcube_label('personaladrbook') .  "</a></li>\n";
+  $out .= '</ul>';
 
   $OUTPUT->add_gui_object('directorylist', $attrib['id']);
   
@@ -91,12 +91,12 @@ function rcmail_contacts_list($attrib)
   }
 
 
-function rcmail_js_contacts_list($result, $obj_name='this')
+function rcmail_js_contacts_list($result, $prefix='')
   {
-  $commands = '';
-  
+  global $OUTPUT;
+
   if (empty($result) || $result['count'] == 0)
-    return $commands;
+    return;
 
   unset($result['count'], $result['first']);
   
@@ -109,15 +109,10 @@ function rcmail_js_contacts_list($result, $obj_name='this')
     
     // format each col
     foreach ($a_show_cols as $col)
-      $a_row_cols[$col] = Q($row[$col]);
+      $a_row_cols[$col] = $row[$col];
     
-    $commands .= sprintf("%s.add_contact_row(%s, %s);\n",
-                         $obj_name,
-                         $row['ID'],
-                         array2js($a_row_cols));
+    $OUTPUT->command($prefix.'add_contact_row', $row['ID'], $a_row_cols);
     }
-    
-  return $commands;
   }
 
 

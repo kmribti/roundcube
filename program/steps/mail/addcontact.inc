@@ -21,8 +21,7 @@
 
 require_once('include/rcube_contacts.inc');
 
-$REMOTE_REQUEST = TRUE;
-$commands = '';
+$done = false;
 
 if (!empty($_POST['_address']))
 {
@@ -36,16 +35,15 @@ if (!empty($_POST['_address']))
     
     // check for existing contacts
     $existing = $CONTACTS->search('email', $contact['email'], false);
-    if ($existing['count'])
-      $commands = show_message('contactexists', 'warning');
-    else if ($CONTACTS->insert($contact))
-      $commands = show_message('addedsuccessfully', 'confirmation');
+    if ($done = $existing['count'])
+      $OUTPUT->show_message('contactexists', 'warning');
+    else if ($done = $CONTACTS->insert($contact))
+      $OUTPUT->show_message('addedsuccessfully', 'confirmation');
   }
 }
 
-if (empty($commands))
-  $commands = show_message('errorsavingcontact', 'warning');
+if (!$done)
+  $OUTPUT->show_message('errorsavingcontact', 'warning');
 
-rcube_remote_response($commands);  
-exit;
+$OUTPUT->send();
 ?>

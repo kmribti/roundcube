@@ -36,7 +36,7 @@ if ($_GET['_uid'])
   // go back to list if message not found (wrong UID)
   if (!$MESSAGE['headers'] || !$MESSAGE['structure'])
     {
-    show_message('messageopenerror', 'error');
+    $OUTPUT->show_message('messageopenerror', 'error');
     if ($_action=='preview' && template_exists('messagepreview'))
         parse_template('messagepreview');
     else

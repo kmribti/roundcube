@@ -19,8 +19,6 @@
 
 */
 
-$REMOTE_REQUEST = $_GET['_remote'] ? TRUE : FALSE;
-
 if ($_GET['_iid'] && preg_match('/^[0-9]+(,[0-9]+)*$/',$_GET['_iid']))
   {
   $DB->query("UPDATE ".get_table_name('identities')."
@@ -31,17 +29,15 @@ if ($_GET['_iid'] && preg_match('/^[0-9]+(,[0-9]+)*$/',$_GET['_iid']))
 
   $count = $DB->affected_rows();
   if ($count)
-    {
-    $commands = show_message('deletedsuccessfully', 'confirmation');
-    }
+    $OUTPUT->show_message('deletedsuccessfully', 'confirmation');
 
   // send response
-  if ($REMOTE_REQUEST)
-    rcube_remote_response($commands);
+  if ($OUTPUT->ajax_call)
+    $OUTPUT->send();
   }
 
 
-if ($REMOTE_REQUEST)
+if ($OUTPUT->ajax_call)
   exit;
 
 

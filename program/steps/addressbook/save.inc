@@ -5,7 +5,7 @@
  | program/steps/addressbook/save.inc                                    |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
+ | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -22,7 +22,7 @@
 // cannot edit record
 if ($CONTACTS->readonly)
   {
-  show_message('contactreadonly', 'error');
+  $OUTPUT->show_message('contactreadonly', 'error');
   rcmail_overwrite_action(empty($_POST['_cid']) ? 'add' : 'show');
   return;
   }
@@ -30,7 +30,7 @@ if ($CONTACTS->readonly)
 // check input
 if ((!get_input_value('_name', RCUBE_INPUT_POST) || !get_input_value('_email', RCUBE_INPUT_POST)) && $_framed)
   {
-  show_message('formincomplete', 'warning');
+  $OUTPUT->show_message('formincomplete', 'warning');
   rcmail_overwrite_action(empty($_POST['_cid']) ? 'add' : 'show');
   return;
   }
@@ -64,21 +64,17 @@ if (!empty($cid))
         $a_js_cols[] = (string)$record[$col];
 
       // update the changed col in list
-      $OUTPUT->add_script(sprintf("if(parent.%s)parent.%s.update_contact_row('%d', %s);",
-                          JS_OBJECT_NAME,
-                          JS_OBJECT_NAME,
-                          $cid,
-                          array2js($a_js_cols)));
+      $OUTPUT->command('parent.update_contact_row', $cid, $a_js_cols);
       }
       
     // show confirmation
-    show_message('successfullysaved', 'confirmation');    
+    $OUTPUT->show_message('successfullysaved', 'confirmation');    
     rcmail_overwrite_action('show');
     }
   else
     {
     // show error message
-    show_message('errorsaving', 'error');
+    $OUTPUT->show_message('errorsaving', 'error');
     rcmail_overwrite_action('show');
     }
   }
@@ -92,7 +88,7 @@ else
   // show warning message
   if ($existing['count'])
     {
-    show_message('contactexists', 'warning');
+    $OUTPUT->show_message('contactexists', 'warning');
     rcmail_overwrite_action('add');
     return;
     }
@@ -106,32 +102,23 @@ else
       $CONTACTS->reset();
       $result = $CONTACTS->search($CONTACTS->primary_key, $insert_id);
       
-      $commands = "if(parent.".JS_OBJECT_NAME."){\n";
-      $commands .= "parent." . rcmail_js_contacts_list($result, JS_OBJECT_NAME);
-
-      $commands .= sprintf("parent.%s.contact_list.select('%s');\n",
-                           JS_OBJECT_NAME,
-                           $insert_id);
+      rcmail_js_contacts_list($result, 'parent.');
+      $OUTPUT->command('parent.contact_list.select', $insert_id);
 
       // update record count display
       $CONTACTS->reset();
-      $commands .= sprintf("parent.%s.set_rowcount('%s');\n",
-                           JS_OBJECT_NAME,
-                           rcmail_get_rowcount_text());
-
-      $commands .= '}';
-      $OUTPUT->add_script($commands);
+      $OUTPUT->command('parent.set_rowcount', rcmail_get_rowcount_text());
       }
 
     // show confirmation
-    show_message('successfullysaved', 'confirmation');
+    $OUTPUT->show_message('successfullysaved', 'confirmation');
     rcmail_overwrite_action('show');
     $_GET['_cid'] = $insert_id;
     }
   else
     {
     // show error message
-    show_message('errorsaving', 'error');
+    $OUTPUT->show_message('errorsaving', 'error');
     rcmail_overwrite_action('add');
     }
   }

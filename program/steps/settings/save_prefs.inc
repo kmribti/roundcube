@@ -43,7 +43,7 @@ if (isset($_POST['_language']))
   }
 
 if (rcmail_save_user_prefs($a_user_prefs))
-  show_message('successfullysaved', 'confirmation');
+  $OUTPUT->show_message('successfullysaved', 'confirmation');
 
 
 // go to next step

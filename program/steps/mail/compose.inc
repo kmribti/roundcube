@@ -36,8 +36,8 @@ if ($_action=='remove-attachment' && preg_match('/^rcmfile([0-9]+)$/', $_GET['_f
     {
     @unlink($_SESSION['compose']['attachments'][$id]['path']);
     $_SESSION['compose']['attachments'][$id] = NULL;
-    $commands = sprintf("parent.%s.remove_from_attachment_list('rcmfile%d');\n", JS_OBJECT_NAME, $id);
-    rcube_remote_response($commands);  
+    $OUTPUT->command('remove_from_attachment_list', "rcmfile$id");
+    $OUTPUT->send();
     exit;
     }
   }
@@ -61,7 +61,7 @@ if (!is_array($_SESSION['compose']) || $_SESSION['compose']['id'] != get_input_v
 rcube_add_label('nosubject', 'norecipientwarning', 'nosubjectwarning', 'nobodywarning', 'notsentwarning', 'savingmessage', 'sendingmessage', 'messagesaved', 'converting');
 
 // add config parameter to client script
-$OUTPUT->add_script(sprintf("%s.set_env('draft_autosave', %d);", JS_OBJECT_NAME, !empty($CONFIG['drafts_mbox']) ? $CONFIG['draft_autosave'] : 0));
+$OUTPUT->set_env('draft_autosave', !empty($CONFIG['drafts_mbox']) ? $CONFIG['draft_autosave'] : 0);
 
 
 // get reference message and set compose mode

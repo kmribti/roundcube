@@ -386,7 +386,7 @@ function rcube_webmail()
       this.set_caret2start(input_message);
 
     // get summary of all field values
-    this.cmp_hash = this.compose_field_hash();
+    this.compose_field_hash(true);
  
     // start the auto-save timer
     this.auto_save_start();
@@ -1689,10 +1689,17 @@ function rcube_webmail()
 
   this.set_spellcheck_state = function(s)
     {
-  this.spellcheck_ready = (s=='check_spelling' || s=='ready');
+    this.spellcheck_ready = (s=='check_spelling' || s=='ready');
     this.enable_command('spellcheck', this.spellcheck_ready);
-  };
+    };
 
+
+  this.set_draft_id = function(id)
+    {
+    var f;
+    if (f = rcube_find_object('_draft_saveid'))
+      f.value = id;
+    };
 
   this.auto_save_start = function()
     {
@@ -1701,7 +1708,7 @@ function rcube_webmail()
     };
 
 
-  this.compose_field_hash = function()
+  this.compose_field_hash = function(save)
     {
     // check input fields
     var input_to = rcube_find_object('_to');
@@ -1721,7 +1728,10 @@ function rcube_webmail()
       str += input_subject.value+':';
     if (input_message && input_message.value)
       str += input_message.value;
-
+    
+    if (save)
+      this.cmp_hash = str;
+    
     return str;
     };
     
@@ -2900,6 +2910,10 @@ function rcube_webmail()
   // display a system message
   this.display_message = function(msg, type, hold)
     {
+    // pass command to parent window
+    if (this.env.framed && parent.rcmail )
+      return parent.rcmail.display_message(msg, type, hold);
+
     this.set_busy(false);
     if (!this.loaded)  // save message in order to display after page loaded
       {

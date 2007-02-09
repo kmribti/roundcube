@@ -26,7 +26,7 @@ $a_boolean_cols = array('standard', 'html_signature');
 // check input
 if (empty($_POST['_name']) || empty($_POST['_email']))
   {
-  show_message('formincomplete', 'warning');
+  $OUTPUT->show_message('formincomplete', 'warning');
   rcmail_overwrite_action('edit-identitiy');
   return;
   }
@@ -74,7 +74,7 @@ if ($_POST['_iid'])
        
   if ($updated)
     {
-    show_message('successfullysaved', 'confirmation');
+    $OUTPUT->show_message('successfullysaved', 'confirmation');
 
     // mark all other identities as 'not-default'
     if (!empty($_POST['_standard']))
@@ -95,7 +95,7 @@ if ($_POST['_iid'])
   else if ($DB->is_error())
     {
     // show error message
-    show_message('errorsaving', 'error');
+    $OUTPUT->show_message('errorsaving', 'error');
     rcmail_overwrite_action('edit-identitiy');
     }
   }
@@ -138,13 +138,13 @@ else
   else
     {
     // show error message
-    show_message('errorsaving', 'error');
+    $OUTPUT->show_message('errorsaving', 'error');
     rcmail_overwrite_action('edit-identity');
     }
   }
 
 
 // go to next step
-rcmail_overwrite_action($_POST['_framed'] ? 'edit-identity' : 'identities');
+rcmail_overwrite_action($_framed ? 'edit-identity' : 'identities');
 
 ?>

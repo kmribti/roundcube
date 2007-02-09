@@ -19,19 +19,17 @@
 
 */
 
-$REMOTE_REQUEST = TRUE;
-
 // get contacts for this user
 $result = $CONTACTS->list_records();
 
 // update message count display
-$commands = sprintf("this.set_env('pagecount', %d);\n", ceil($result['count'] / $CONTACTS->page_size));
-$commands .= sprintf("this.set_rowcount('%s');\n", rcmail_get_rowcount_text($rowcount));
+$OUTPUT->set_env('pagecount', ceil($result['count'] / $CONTACTS->page_size));
+$OUTPUT->command('set_rowcount', rcmail_get_rowcount_text($rowcount));
 
 // create javascript list
-$commands .= rcmail_js_contacts_list($result);
+rcmail_js_contacts_list($result);
   
 // send response
-rcube_remote_response($commands);
+$OUTPUT->send();
 
 ?>

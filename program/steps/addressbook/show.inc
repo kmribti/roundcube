@@ -27,15 +27,18 @@ if (($cid = get_input_value('_cid', RCUBE_INPUT_GPC)) && ($result = $CONTACTS->g
 
 function rcmail_contact_details($attrib)
   {
-  global $CONTACTS;
+  global $CONTACTS, $OUTPUT;
 
   // check if we have a valid result
   if (!($record = $CONTACTS->get_result()))
-    return show_message('contactnotfound');
+  {
+    $OUTPUT->show_message('contactnotfound');
+    return false;
+  }
   
   // a specific part is requested
   if ($attrib['part'])
-    return rep_specialchars_output($record[$attrib['part']]);
+    return Q($record[$attrib['part']]);
 
   // return the complete address record as table
   $out = "<table>\n\n";
@@ -63,8 +66,8 @@ function rcmail_contact_details($attrib)
   return $out;  
   }
 
+
+//$OUTPUT->framed = $_framed;
 $OUTPUT->add_handler('contactdetails', 'rcmail_contact_details');
-
-
-parse_template('showcontact');
+$OUTPUT->send('showcontact');
 ?>

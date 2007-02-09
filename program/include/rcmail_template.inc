@@ -27,9 +27,12 @@ class rcmail_template extends rcube_html_page
 {
   var $config;
   var $task = '';
+  var $framed = false;
+  var $ajax_call = false;
   var $pagetitle = '';
   var $env = array();
   var $js_env = array();
+  var $js_commands = array();
   var $object_handlers = array();
 
 
@@ -40,18 +43,22 @@ class rcmail_template extends rcube_html_page
     
     $this->task = $task;
     $this->config = $config;
+    $this->ajax_call = !empty($_GET['_remote']) || !empty($_POST['_remote']);
     
     // add common javascripts
-    $javascript = "var ".JS_OBJECT_NAME." = new rcube_webmail();";
+    if (!$this->ajax_call)
+    {
+      $javascript = "var ".JS_OBJECT_NAME." = new rcube_webmail();";
 
-    // don't wait for page onload. Call init at the bottom of the page (delayed)
-    $javascript_foot = "if (window.call_init)\n call_init('".JS_OBJECT_NAME."');";
+      // don't wait for page onload. Call init at the bottom of the page (delayed)
+      $javascript_foot = "if (window.call_init)\n call_init('".JS_OBJECT_NAME."');";
 
-    $this->add_script($javascript, 'head_top');
-    $this->add_script($javascript_foot, 'foot');
-    $this->scripts_path = 'program/js/';
-    $this->include_script('common.js');
-    $this->include_script('app.js');
+      $this->add_script($javascript, 'head_top');
+      $this->add_script($javascript_foot, 'foot');
+      $this->scripts_path = 'program/js/';
+      $this->include_script('common.js');
+      $this->include_script('app.js');
+    }
   }
 
   // PHP 4 compatibility
@@ -112,7 +119,111 @@ class rcmail_template extends rcube_html_page
   {
     $this->add_script(JS_OBJECT_NAME.".gui_object('$obj', '$id');");
   }
+
+
+  /**
+   * Call a client method
+   *
+   * @param string Method to call
+   * @param ... Additional arguments
+   */
+  function command()
+  {
+    $this->js_commands[] = func_get_args();
+  }
+
+
+  /**
+   * Invoke display_message command
+   */
+  function show_message($message, $type='notice', $vars=NULL)
+  {
+    $this->command(
+      'display_message',
+      rcube_label(array('name' => $message, 'vars' => $vars)),
+      $type);
+  }
+
+
+  /**
+   * Delete all stored env variables and commands
+   */
+  function reset()
+  {
+    $this->env = array();
+    $this->js_env = array();
+    $this->js_commands = array();
+    $this->object_handlers = array();    
+    parent::reset();
+  }
+
+  /**
+   * Send the request output to the client.
+   * This will either parse a skin tempalte or send an AJAX response
+   *
+   * @param string  Template name
+   * @param boolean True if script should terminate (default)
+   */
+  function send($templ=null, $exit=true)
+  {
+    if ($this->ajax_call)
+      $this->remote_response('', !$exit);
+    else if ($templ != 'iframe')
+      $this->parse($templ, false);
+    else
+    {
+      $this->framed = $templ == 'iframe' ? true : $this->framed;
+      $this->write();
+    }
+    
+    if ($exit)
+      exit;
+  }
+
+
+  /**
+   * Send an AJAX response with executable JS code
+   * 
+   * @param string  Additional JS code
+   * @param boolean True if output buffer should be flushed
+   */
+  function remote_response($add='', $flush=false)
+  {
+    static $s_header_sent = FALSE;
+
+    if (!$s_header_sent)
+    {
+      $s_header_sent = TRUE;
+      send_nocacheing_headers();
+      header('Content-Type: application/x-javascript; charset='.RCMAIL_CHARSET);
+      print '/** ajax response ['.date('d/M/Y h:i:s O')."] **/\n";
+    }
+    
+    // unset default env vars
+    unset($this->js_env['task'], $this->js_env['action'], $this->js_env['comm_path']);
+
+    // send response code
+    print rcube_charset_convert($this->get_js_commands() . $add, RCMAIL_CHARSET, $this->get_charset());
+
+    if ($flush)  // flush the output buffer
+      flush();
+  }
   
+  
+  /**
+   * @override
+   */
+  function write($template='')
+  {
+    // write all env variables to client
+    $js = $this->framed ? "if(window.parent) {\n" : '';
+    $js .= $this->get_js_commands() . ($this->framed ? ' }' : '');
+    $this->add_script($js, 'head_top');
+
+    // call super method
+    parent::write($template, $this->config['skin_path']);
+  }
+
 
   /**
    * Parse a specific skin template and deliver to stdout
@@ -135,19 +246,17 @@ class rcmail_template extends rcube_html_page
     }
     else
     {
-      raise_error(array('code' => 501,
-                        'type' => 'php',
-                        'line' => __LINE__,
-                        'file' => __FILE__,
-                        'message' => "Error loading template for '$name'"), TRUE, TRUE);
+      raise_error(array(
+        'code' => 501,
+        'type' => 'php',
+        'line' => __LINE__,
+        'file' => __FILE__,
+        'message' => "Error loading template for '$name'"), TRUE, TRUE);
       return FALSE;
     }
 
     // parse for specialtags
     $output = $this->parse_xml($this->parse_conditions($templ));
-
-    // write all env variables to client
-    $this->add_script(JS_OBJECT_NAME.'.set_env('.array2js($this->js_env).')', 'head_top');
 
     // add debug console
     if ($this->config['debug_level'] & 8)
@@ -160,9 +269,43 @@ class rcmail_template extends rcube_html_page
     if ($exit)
       exit;
   }
+
+
+  /**
+   * Return executable javascript code for all registered commands
+   * @private
+   */
+  function get_js_commands()
+  {
+    $out = '';
+    if (!$this->framed)
+      $out .= ($this->ajax_call ? 'this' : JS_OBJECT_NAME) . '.set_env('.json_serialize($this->js_env).");\n";
+    
+    foreach ($this->js_commands as $i => $args)
+    {
+      $method = array_shift($args);
+      foreach ($args as $i => $arg)
+        $args[$i] = json_serialize($arg);
+
+      $parent = $this->framed || preg_match('/^parent\./', $method);
+      $out .= sprintf(
+        "%s.%s(%s);\n",
+        $this->ajax_call ? 'this' : ($parent ? 'parent.' : '') . JS_OBJECT_NAME,
+        preg_replace('/^parent\./', '', $method),
+        join(',', $args));
+    }
+    
+    return $out;
+  }
+
+
+
+  /*****  Template parsing methods  *****/
   
-  
-  // replace all strings ($varname) with the content of the according global variable
+  /**
+   * Replace all strings ($varname) with the content
+   * of the according global variable.
+   */
   function parse_with_globals($input)
   {
     $GLOBALS['__comm_path'] = $GLOBALS['COMM_PATH'];
@@ -170,7 +313,9 @@ class rcmail_template extends rcube_html_page
   }
   
   
-  // parse conditional code
+  /**
+   * Parse for conditional tags
+   */
   function parse_conditions($input)
   {
     if (($matches = preg_split('/<roundcube:(if|elseif|else|endif)\s+([^>]+)>/is', $input, 2, PREG_SPLIT_DELIM_CAPTURE)) && count($matches)==4)
@@ -472,8 +617,7 @@ class rcmail_template extends rcube_html_page
 
     return $out;
   }
-  
-  
+
 }
 
 ?>

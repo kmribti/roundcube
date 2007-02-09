@@ -18,24 +18,23 @@
 
 */
 
-$REMOTE_REQUEST = TRUE;
-
-$a_flags_map = array('undelete' => 'UNDELETED',
-                     'delete' => 'DELETED',
-                     'read' => 'SEEN',
-                     'unread' => 'UNSEEN');
+$a_flags_map = array(
+  'undelete' => 'UNDELETED',
+  'delete' => 'DELETED',
+  'read' => 'SEEN',
+  'unread' => 'UNSEEN');
 
 if ($_GET['_uid'] && $_GET['_flag'])
-  {
+{
   $flag = $a_flags_map[$_GET['_flag']] ? $a_flags_map[$_GET['_flag']] : strtoupper($_GET['_flag']);
-  $marked = $IMAP->set_flag($_GET['_uid'], $flag);
+  $marked = $IMAP->set_flag(get_input_value('_uid', RCUBE_INPUT_GET), $flag);
   if ($marked != -1)
-    {
+  {
     $mbox_name = $IMAP->get_mailbox_name();
-    $commands = sprintf("this.set_unread_count('%s', %d);\n", $mbox_name, $IMAP->messagecount($mbox_name, 'UNSEEN'));
-    rcube_remote_response($commands);
-    }
+    $OUTPUT->command('set_unread_count', $mbox_name, $IMAP->messagecount($mbox_name, 'UNSEEN'));
+    $OUTPUT->send();
   }
+}
   
 exit;
 ?>

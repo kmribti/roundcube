@@ -205,7 +205,7 @@ function rcmail_authenticate_session()
 // create IMAP object and connect to server
 function rcmail_imap_init($connect=FALSE)
   {
-  global $CONFIG, $DB, $IMAP;
+  global $CONFIG, $DB, $IMAP, $OUTPUT;
 
   $IMAP = new rcube_imap($DB);
   $IMAP->debug_level = $CONFIG['debug_level'];
@@ -216,7 +216,7 @@ function rcmail_imap_init($connect=FALSE)
   if ($connect)
     {
     if (!($conn = $IMAP->connect($_SESSION['imap_host'], $_SESSION['username'], decrypt_passwd($_SESSION['password']), $_SESSION['imap_port'], $_SESSION['imap_ssl'])))
-      show_message('imaperror', 'error');
+      $OUTPUT->show_message('imaperror', 'error');
       
     rcmail_set_imap_prop();
     }
@@ -765,23 +765,11 @@ function rcmail_self_url($action, $p=array(), $task=null)
 }
 
 
+// @deprecated
 function show_message($message, $type='notice', $vars=NULL)
   {
-  global $OUTPUT, $REMOTE_REQUEST;
-  
-  $framed = $GLOBALS['_framed'];
-  $command = sprintf("display_message('%s', '%s');",
-                     JQ(rcube_label(array('name' => $message, 'vars' => $vars))),
-                     $type);
-                     
-  if ($REMOTE_REQUEST)
-    return 'this.'.$command;
-  
-  else
-    $OUTPUT->add_script(sprintf("%s%s.%s\n",
-                                $framed ? sprintf('if(parent.%s)parent.', JS_OBJECT_NAME) : '',
-                                JS_OBJECT_NAME,
-                                $command));
+  global $OUTPUT;
+  $OUTPUT->show_message($message, $type, $vars);
   }
 
 
@@ -814,43 +802,6 @@ function get_des_key()
     substr($key, 0, 24);
   
   return $key;
-  }
-
-
-// send correct response on a remote request
-function rcube_remote_response($js_code, $flush=FALSE)
-  {
-  global $OUTPUT;
-  static $s_header_sent = FALSE;
-  
-  if (!$s_header_sent)
-    {
-    $s_header_sent = TRUE;
-    send_nocacheing_headers();
-    header('Content-Type: application/x-javascript; charset='.RCMAIL_CHARSET);
-    print '/** remote response ['.date('d/M/Y h:i:s O')."] **/\n";
-    }
-
-  // send response code
-  print rcube_charset_convert($js_code, RCMAIL_CHARSET, $OUTPUT->get_charset());
-
-  if ($flush)  // flush the output buffer
-    flush();
-  else         // terminate script
-    exit;
-  }
-
-
-// send correctly formatted response for a request posted to an iframe
-function rcube_iframe_response($js_code='')
-  {
-  global $OUTPUT;
-
-  if (!empty($js_code))
-    $OUTPUT->add_script("if(parent.".JS_OBJECT_NAME."){\n" . $js_code . "\n}");
-
-  $OUTPUT->write();
-  exit;
   }
 
 
@@ -888,10 +839,7 @@ function rcube_add_label()
   
   $arg_list = func_get_args();
   foreach ($arg_list as $i => $name)
-    $OUTPUT->add_script(sprintf("%s.add_label('%s', '%s');",
-                                JS_OBJECT_NAME,
-                                $name,
-                                JQ(rcube_label($name))));
+    $OUTPUT->command('add_label', $name, rcube_label($name));
   }
 
 
@@ -1082,13 +1030,13 @@ function rep_specialchars_output($str, $enctype='', $mode='', $newlines=TRUE)
     if ($OUTPUT->get_charset()!='UTF-8')
       $str = rcube_charset_convert($str, RCMAIL_CHARSET, $OUTPUT->get_charset());
       
-    return addslashes(preg_replace(array("/\r\n/", "/\r/"), array('\n', '\n'), strtr($str, $js_rep_table)));
+    return preg_replace(array("/\r?\n/", "/\r/"), array('\n', '\n'), addslashes(strtr($str, $js_rep_table)));
     }
 
   // no encoding given -> return original string
   return $str;
   }
-
+  
 /**
  * Quote a given string. Alias function for rep_specialchars_output
  * @see rep_specialchars_output
@@ -1195,6 +1143,7 @@ function template_exists($name)
 
 
 // Wrapper for rcmail_template::parse()
+// @deprecated
 function parse_template($name='main', $exit=TRUE)
   {
   global $OUTPUT;
