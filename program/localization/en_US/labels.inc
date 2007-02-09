@@ -5,7 +5,7 @@
  | language/en_US/labels.inc                                             |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005, RoundQube Dev. - Switzerland                      |
+ | Copyright (C) 2005-2007, RoundQube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
@@ -180,6 +180,9 @@ $labels['previouspage']   = 'Show previous set';
 $labels['firstpage']      = 'Show first set';
 $labels['nextpage']       = 'Show next set';
 $labels['lastpage']       = 'Show last set';
+
+$labels['groups'] = 'Groups';
+$labels['personaladrbook'] = 'Personal Addresses';
 
 
 // LDAP search
