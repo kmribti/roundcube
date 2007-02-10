@@ -19,13 +19,18 @@
 
 */
 
+$REMOTE_REQUEST = TRUE;
+
 $a_folders = $IMAP->list_mailboxes();
 
 if (!empty($a_folders))
-{
+  {
   foreach ($a_folders as $mbox_row)
-    $OUTPUT->command('set_unread_count', $mbox_row, $IMAP->messagecount($mbox_row, 'UNSEEN'));
-}
+    {
+    $commands = sprintf("this.set_unread_count('%s', %d);\n", addslashes($mbox_row), $IMAP->messagecount($mbox_row, 'UNSEEN'));
+    rcube_remote_response($commands, TRUE);
+    }
+  }
 
-$OUTPUT->send();
+exit;
 ?>

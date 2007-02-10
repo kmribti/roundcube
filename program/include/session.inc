@@ -45,7 +45,7 @@ function sess_read($key)
 
   if ($sql_arr = $DB->fetch_assoc($sql_result))
     {
-    $SESS_CHANGED = $sql_arr['changed'];
+    $SESS_CHANGED = mktime(); //$sql_arr['changed'];
 
     if (strlen($sql_arr['vars']))
       return $sql_arr['vars'];
@@ -70,7 +70,7 @@ function sess_write($key, $vars)
     session_decode($vars);
     $DB->query("UPDATE ".get_table_name('session')."
                 SET    vars=?,
-                       changed=".$DB->now()."
+                       changed=now()
                 WHERE  sess_id=?",
                 $vars,
                 $key);
@@ -79,7 +79,7 @@ function sess_write($key, $vars)
     {
     $DB->query("INSERT INTO ".get_table_name('session')."
                 (sess_id, vars, ip, created, changed)
-                VALUES (?, ?, ?, ".$DB->now().", ".$DB->now().")",
+                VALUES (?, ?, ?, now(), now())",
                 $key,
                 $vars,
                 $_SERVER['REMOTE_ADDR']);
@@ -105,6 +105,7 @@ function sess_destroy($key)
               WHERE sess_id=?",
               $key);
 
+  rcmail_clear_session_temp($key);
   return TRUE;
   }
 
@@ -117,7 +118,7 @@ function sess_gc($maxlifetime)
   // get all expired sessions  
   $sql_result = $DB->query("SELECT sess_id
                             FROM ".get_table_name('session')."
-                            WHERE ".$DB->unixtimestamp($DB->now())."-".$DB->unixtimestamp('changed')." > ?",
+                            WHERE ".$DB->unixtimestamp('now()')."-".$DB->unixtimestamp('changed')." > ?",
                             $maxlifetime);
                                    
   $a_exp_sessions = array();
@@ -136,9 +137,12 @@ function sess_gc($maxlifetime)
                 WHERE sess_id IN ('".join("','", $a_exp_sessions)."')");
     }
 
+  // remove session specific temp dirs
+  foreach ($a_exp_sessions as $key)
+    rcmail_clear_session_temp($key);
+
   // also run message cache GC
   rcmail_message_cache_gc();
-  rcmail_temp_gc();
 
   return TRUE;
   }

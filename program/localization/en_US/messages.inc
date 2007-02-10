@@ -58,8 +58,6 @@ $messages['encryptedmessage'] = 'This is an encrypted message and can not be dis
 
 $messages['nocontactsfound'] = 'No contacts found';
 
-$messages['contactnotfound'] = 'The requested contact was not found';
-
 $messages['sendingfailed'] = 'Failed to send message';
 
 $messages['errorsaving'] = 'An error occured while saving';
@@ -69,8 +67,6 @@ $messages['errormoving'] = 'Could not move the message';
 $messages['errordeleting'] = 'Could not delete the message';
 
 $messages['deletecontactconfirm']  = 'Do you really want to delete the selected contact(s)?';
-
-$messages['deletemessagesconfirm'] = 'Do you really want to delete the selected message(s)?';
 
 $messages['deletefolderconfirm']  = 'Do you really want to delete this folder?';
 
@@ -110,14 +106,5 @@ $messages['nospellerrors'] = 'No spelling errors found';
 
 $messages['folderdeleted'] = 'Folder successfully deleted';
 
-$messages['deletedsuccessfully'] = "Successfully deleted";
-
-$messages['converting'] = 'Removing formatting from message...';
-
-$messages['messageopenerror'] = 'Could not load message from server';
-
-$messages['fileuploaderror'] = 'File upload failed';
-
-$messages['filesizeerror'] = 'The uploaded file exceeds the maximum size of $size';
 
 ?>

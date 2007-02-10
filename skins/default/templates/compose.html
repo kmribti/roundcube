@@ -97,18 +97,17 @@ function rcmail_toggle_display(id)
 <td style="width:100%; height:98%; vertical-align:top;">
 <roundcube:object name="composeBody" id="compose-body" form="form" cols="80" rows="20" wrap="virtual" tabindex="7" />
 
-<table border="0" cellspacing="0" width="100%" summary=""><tbody>
-<tr>
+<table border="0" cellspacing="0" width="100%" summary=""><tbody><tr>
+
 <td>
 <roundcube:button type="input" command="send" class="button" label="sendmessage" />
 <roundcube:button type="input" command="list" class="button" label="cancel" />
 </td>
 <td align="right">
- <roundcube:label name="editortype" />:&nbsp;
- <span class="radios-left"><roundcube:object name="editorSelector" tabindex="9" /></span>
+<roundcube:label name="charset" />:&nbsp;<roundcube:object name="charsetSelector" tabindex="8" />
 </td>
-</tr>
-</tbody></table>
+
+</tr></tbody></table>
 
 </td>
 
@@ -134,9 +133,6 @@ function rcmail_toggle_display(id)
 var cc_field = document.form._cc;
 if (cc_field && cc_field.value!='')
   rcmail_toggle_display('compose-cc');
-var bcc_field = document.form._bcc;
-if (bcc_field && bcc_field.value!='')
-  rcmail_toggle_display('compose-bcc');
 
 //-->
 </script>

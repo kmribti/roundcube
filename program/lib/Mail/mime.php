@@ -198,16 +198,6 @@ class Mail_mime
     }
 
     /**
-    * returns the HTML body portion of the message
-    * @return string HTML body of the message
-    * @access public
-    */
-    function getHTMLBody()
-    {
-       return $this->_htmlbody;
-    }
-    
-    /**
      * Adds an image to the list of embedded images.
      *
      * @param  string  $file       The image file name OR image data itself
@@ -216,13 +206,11 @@ class Mail_mime
      *                             Only use if $file is the image data
      * @param  bool    $isfilename Whether $file is a filename or not
      *                             Defaults to true
-     * @param  string  $contentid  Desired Content-ID of MIME part
-     *                             Defaults to generated unique ID
      * @return mixed   true on success or PEAR_Error object
      * @access public
      */
     function addHTMLImage($file, $c_type='application/octet-stream',
-                          $name = '', $isfilename = true, $contentid = '')
+                          $name = '', $isfilename = true)
     {
         $filedata = ($isfilename === true) ? $this->_file2str($file)
                                            : $file;
@@ -234,14 +222,11 @@ class Mail_mime
         if (PEAR::isError($filedata)) {
             return $filedata;
         }
-        if ($contentid == '') {
-           $contentid = md5(uniqid(time()));
-        }
         $this->_html_images[] = array(
                                       'body'   => $filedata,
                                       'name'   => $filename,
                                       'c_type' => $c_type,
-                                      'cid'    => $contentid
+                                      'cid'    => md5(uniqid(time()))
                                      );
         return true;
     }
@@ -802,83 +787,109 @@ class Mail_mime
      */
     function _encodeHeaders($input)
     {
-        $maxlen = 73;
         foreach ($input as $hdr_name => $hdr_value) {
-            // if header contains e-mail addresses
-            if (preg_match('/\s<.+@[a-z0-9\-\.]+\.[a-z]+>/U', $hdr_value))
-                $chunks = $this->_explode_quoted_string(',', $hdr_value);
-            else
-               $chunks = array($hdr_value);
-
-            $hdr_value = '';
-            $line_len = 0;
-
-            foreach ($chunks as $i => $value) {
-                $value = trim($value);
-
+            if (function_exists('iconv_mime_encode') && preg_match('#[\x80-\xFF]{1}#', $hdr_value)){
+                $imePref = array();
+                if ($this->_build_params['head_encoding'] == 'base64'){
+                    $imePrefs['scheme'] = 'B';
+                }else{
+                    $imePrefs['scheme'] = 'Q';
+                }
+                $imePrefs['input-charset']  = $this->_build_params['head_charset'];
+                $imePrefs['output-charset'] = $this->_build_params['head_charset'];
+                $hdr_value = iconv_mime_encode($hdr_name, $hdr_value, $imePrefs);
+                $hdr_value = preg_replace("#^{$hdr_name}\:\ #", "", $hdr_value);
+            }elseif (preg_match('#[\x80-\xFF]{1}#', $hdr_value)){
                 //This header contains non ASCII chars and should be encoded.
-                if (preg_match('#[\x80-\xFF]{1}#', $value)) {
-                    $suffix = '';
-                    // Don't encode e-mail address
-                    if (preg_match('/(.+)\s(<.+@[a-z0-9\-\.]+>)$/Ui', $value, $matches)) {
-                        $value = $matches[1];
-                        $suffix = ' '.$matches[2];
+                switch ($this->_build_params['head_encoding']) {
+                case 'base64':
+                    //Base64 encoding has been selected.
+                    
+                    //Generate the header using the specified params and dynamicly 
+                    //determine the maximum length of such strings.
+                    //75 is the value specified in the RFC. The -2 is there so 
+                    //the later regexp doesn't break any of the translated chars.
+                    $prefix = '=?' . $this->_build_params['head_charset'] . '?B?';
+                    $suffix = '?=';
+                    $maxLength = 75 - strlen($prefix . $suffix) - 2;
+                    $maxLength1stLine = $maxLength - strlen($hdr_name);
+                    
+                    //Base64 encode the entire string
+                    $hdr_value = base64_encode($hdr_value);
+
+                    //This regexp will break base64-encoded text at every 
+                    //$maxLength but will not break any encoded letters.
+                    $reg1st = "|.{0,$maxLength1stLine}[^\=][^\=]|";
+                    $reg2nd = "|.{0,$maxLength}[^\=][^\=]|";
+                    break;
+                case 'quoted-printable':
+                default:
+                    //quoted-printable encoding has been selected
+                    
+                    //Generate the header using the specified params and dynamicly 
+                    //determine the maximum length of such strings.
+                    //75 is the value specified in the RFC. The -2 is there so 
+                    //the later regexp doesn't break any of the translated chars.
+                    $prefix = '=?' . $this->_build_params['head_charset'] . '?Q?';
+                    $suffix = '?=';
+                    $maxLength = 75 - strlen($prefix . $suffix) - 2;
+                    $maxLength1stLine = $maxLength - strlen($hdr_name);
+                    
+                    //Replace all special characters used by the encoder.
+                    $search  = array("=",   "_",   "?",   " ");
+                    $replace = array("=3D", "=5F", "=3F", "_");
+                    $hdr_value = str_replace($search, $replace, $hdr_value);
+                    
+                    //Replace all extended characters (\x80-xFF) with their
+                    //ASCII values.
+                    $hdr_value = preg_replace(
+                        '#([\x80-\xFF])#e',
+                        '"=" . strtoupper(dechex(ord("\1")))',
+                        $hdr_value
+                    );
+                    //This regexp will break QP-encoded text at every $maxLength
+                    //but will not break any encoded letters.
+                    $reg1st = "|(.{0,$maxLength})[^\=]|";
+                    $reg2nd = "|(.{0,$maxLength})[^\=]|";
+                    break;
+                }
+                //Begin with the regexp for the first line.
+                $reg = $reg1st;
+                $output = "";
+                while ($hdr_value) {
+                    //Split translated string at every $maxLength
+                    //But make sure not to break any translated chars.
+                    $found = preg_match($reg, $hdr_value, $matches);
+                    
+                    //After this first line, we need to use a different
+                    //regexp for the first line.
+                    $reg = $reg2nd;
+
+                    //Save the found part and encapsulate it in the
+                    //prefix & suffix. Then remove the part from the
+                    //$hdr_value variable.
+                    if ($found){
+                        $part = $matches[0];
+                        $hdr_value = substr($hdr_value, strlen($matches[0]));
+                    }else{
+                        $part = $hdr_value;
+                        $hdr_value = "";
                     }
-
-                    switch ($this->_build_params['head_encoding']) {
-                    case 'base64':
-                        // Base64 encoding has been selected.
-                        $mode = 'B';
-                        $encoded = base64_encode($value);
-                        break;
-
-                    case 'quoted-printable':
-                    default:
-                        // quoted-printable encoding has been selected
-                        $mode = 'Q';
-                        $encoded = preg_replace('/([\x20-\x25\x2C\x80-\xFF])/e', "'='.sprintf('%02X', ord('\\1'))", $value);
-                        // replace spaces with _
-                        $encoded = str_replace('=20', '_', $encoded);
+                    
+                    //RFC 2047 specifies that any split header should be seperated
+                    //by a CRLF SPACE. 
+                    if ($output){
+                        $output .=  "\r\n ";
                     }
-
-                $value = '=?' . $this->_build_params['head_charset'] . '?' . $mode . '?' . $encoded . '?=' . $suffix;
+                    $output .= $prefix . $part . $suffix;
                 }
-
-                // add chunk to output string by regarding the header maxlen
-                $len = strlen($value);
-                if ($line_len + $len < $maxlen) {
-                    $hdr_value .= ($i>0?', ':'') . $value;
-                    $line_len += $len + ($i>0?2:0);
-                }
-                else {
-                    $hdr_value .= ($i>0?', ':'') . "\n " . $value;
-                    $line_len = $len;
-                }
+                $hdr_value = $output;
             }
-
             $input[$hdr_name] = $hdr_value;
         }
 
         return $input;
     }
-
-
-  function _explode_quoted_string($delimiter, $string)
-    {
-    $quotes = explode("\"", $string);
-    foreach ($quotes as $key => $val)
-      if (($key % 2) == 1)
-        $quotes[$key] = str_replace($delimiter, "_!@!_", $quotes[$key]);
-
-    $string = implode("\"", $quotes);
-
-    $result = explode($delimiter, $string);
-    foreach ($result as $key => $val) 
-      $result[$key] = str_replace("_!@!_", $delimiter, $result[$key]);
-
-    return $result;
-    }
-
 
     /**
      * Set the object's end-of-line and define the constant if applicable

@@ -760,7 +760,7 @@ class Net_SMTP
      * @access public
      * @since  1.0
      */
-    function data(&$data)
+    function data($data)
     {
         /* RFC 1870, section 3, subsection 3 states "a value of zero
          * indicates that no fixed maximum message size is in force".
@@ -784,8 +784,7 @@ class Net_SMTP
             return $error;
         }
 
-        $data .= "\r\n.\r\n";
-        if (PEAR::isError($result = $this->_send($data))) {
+        if (PEAR::isError($result = $this->_send($data . "\r\n.\r\n"))) {
             return $result;
         }
         if (PEAR::isError($error = $this->_parseResponse(250))) {

@@ -3,7 +3,7 @@ RoundCube Webmail (http://roundcube.net)
 
 ATTENTION
 ---------
-This is just a snapshot of the current SVN repository and is NOT A STABLE
+This is just a snapshot of the current CVS repository and is NOT A STABLE
 version of RoundCube. There have been major changes since the latest release
 so please read the update instructions carefully. It's not recommended to
 replace an existing installation of RoundCube with this version. Also using
@@ -13,11 +13,10 @@ a separate database or this installation is highly recommended.
 Introduction:
 -------------
 RoundCube Webmail is a browser-based multilingual IMAP client with an
-application-like user interface. It provides full functionality you expect
-from an e-mail client, including MIME support, address book, folder manipulation,
-message searching and spell checking. RoundCube Webmail is written in PHP and
-requires the MySQL or Postgres database. The user interface is fully skinnable
-using XHTML and CSS 2.
+application-like user interface. It provides full functionality you expect from
+an e-mail client, including MIME support, address book, folder manipulation and
+message filters. RoundCube Webmail is written in PHP and requires the MySQL
+database. The user interface is fully skinnable using XHTML and CSS 2.
 
 This project is meant to be a modern webmail solution which is easy to
 install/configure and that runs on a standard PHP plus MySQL or Postgres
@@ -44,7 +43,7 @@ Code Layout:
 ------------
 
 Basic sequence (index.php):
-  - index.php -> rcmail_load_gui -> parse_template
+  - index.php -> load_gui -> parse_template
   - authentication details in this sequence
 
 Tasks
@@ -56,7 +55,6 @@ Tasks
 program/include/rcube_shared.inc
   - defines rcube_html_page, class that lays out a roundcube web page
   - defines form control classes
-  - provides common functions
 
 
 Installation:
@@ -74,7 +72,7 @@ LICENSE for more information about our license.
 Contact:
 --------
 For any bug reports or feature requests please refer to the tracking system
-at trac.roundcube.net (http://trac.roundcube.net/trac.cgi/report) or 
+at sourceforge.net (http://sourceforge.net/tracker/?group_id=139281) or 
 subscribe to our mailing list. See http://www.roundcube.net/?p=mailinglists
 for details.
 

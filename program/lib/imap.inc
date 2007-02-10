@@ -39,7 +39,6 @@
 		- Added BCC and REFERENCE to the list of headers to fetch in iil_C_FetchHeaders()
 		- Leave messageID unchanged in iil_C_FetchHeaders()
 		- Avoid stripslahes in iil_Connect()
-		- Escape quotes and backslashes in iil_C_Login()
 		- Added patch to iil_SortHeaders() by Richard Green
 		- Removed <br> from error messages (better for logging)
 		- Added patch to iil_C_Sort() enabling UID SORT commands
@@ -47,7 +46,6 @@
 		- Casting date parts in iil_StrToTime() to avoid mktime() warnings
 		- Also acceppt LIST responses in iil_C_ListSubscribed()
 		- Sanity check of $message_set in iil_C_FetchHeaders(), iil_C_FetchHeaderIndex(), iil_C_FetchThreadHeaders()
-		- Implemented UID FETCH in iil_C_FetchHeaders()
 		- Removed some debuggers (echo ...)
 
 ********************************************************/
@@ -57,7 +55,10 @@
 include_once("lib/icl_commons.inc");
 
 
-if (!$IMAP_USE_HEADER_DATE) $IMAP_USE_INTERNAL_DATE = true;
+if (isset($IMAP_USE_HEADER_DATE) && $IMAP_USE_HEADER_DATE === false)
+{
+    $IMAP_USE_INTERNAL_DATE = true;
+}
 $IMAP_MONTHS=array("Jan"=>1,"Feb"=>2,"Mar"=>3,"Apr"=>4,"May"=>5,"Jun"=>6,"Jul"=>7,"Aug"=>8,"Sep"=>9,"Oct"=>10,"Nov"=>11,"Dec"=>12);
 $IMAP_SERVER_TZ = date('Z');
 
@@ -226,9 +227,8 @@ function iil_C_Authenticate(&$conn, $user, $pass, $encChallenge){
 
 function iil_C_Login(&$conn, $user, $password){
 
-    $password = strtr($password, array('"'=>'\\"', '\\' => '\\\\'));  
     fputs($conn->fp, "a001 LOGIN $user \"$password\"\r\n");
-
+		
 	do{
 	    $line = iil_ReadReply($conn->fp);
 	}while(!iil_StartsWith($line, "a001 "));
@@ -1198,7 +1198,7 @@ function iil_IndexThreads(&$tree){
 	return $t_index;
 }
 
-function iil_C_FetchHeaders(&$conn, $mailbox, $message_set, $uidfetch=false){
+function iil_C_FetchHeaders(&$conn, $mailbox, $message_set){
 	global $IMAP_USE_INTERNAL_DATE;
 	
 	$c=0;
@@ -1234,8 +1234,7 @@ function iil_C_FetchHeaders(&$conn, $mailbox, $message_set, $uidfetch=false){
 
 	/* FETCH date,from,subject headers */
 	$key="fh".($c++);
-	$prefix=$uidfetch?" UID":"";
-	$request=$key.$prefix." FETCH $message_set (BODY.PEEK[HEADER.FIELDS (DATE FROM TO SUBJECT REPLY-TO IN-REPLY-TO CC BCC CONTENT-TRANSFER-ENCODING CONTENT-TYPE MESSAGE-ID REFERENCE)])\r\n";
+	$request=$key." FETCH $message_set (BODY.PEEK[HEADER.FIELDS (DATE FROM TO SUBJECT REPLY-TO IN-REPLY-TO CC BCC CONTENT-TRANSFER-ENCODING CONTENT-TYPE MESSAGE-ID REFERENCE)])\r\n";
 
 	if (!fputs($fp, $request)) return false;
 	do{
@@ -1313,7 +1312,7 @@ function iil_C_FetchHeaders(&$conn, $mailbox, $message_set, $uidfetch=false){
 		Sample reply line: "* 3 FETCH (UID 2417 RFC822.SIZE 2730 FLAGS (\Seen \Deleted))"
 	*/
 	$command_key="fh".($c++);
-	$request= $command_key.$prefix." FETCH $message_set (UID RFC822.SIZE FLAGS INTERNALDATE)\r\n";
+	$request= $command_key." FETCH $message_set (UID RFC822.SIZE FLAGS INTERNALDATE)\r\n";
 	if (!fputs($fp, $request)) return false;
 	do{
 		$line=chop(iil_ReadLine($fp, 200));
@@ -1405,10 +1404,10 @@ function iil_C_FetchHeaders(&$conn, $mailbox, $message_set, $uidfetch=false){
 }
 
 
-function iil_C_FetchHeader(&$conn, $mailbox, $id, $uidfetch=false){
+function iil_C_FetchHeader(&$conn, $mailbox, $id){
 	$fp = $conn->fp;
-	$a=iil_C_FetchHeaders($conn, $mailbox, $id, $uidfetch);
-	if (is_array($a)) return array_shift($a);
+	$a=iil_C_FetchHeaders($conn, $mailbox, $id);
+	if (is_array($a)) return $a[$id];
 	else return false;
 }
 
@@ -1889,7 +1888,7 @@ function iil_C_HandlePartBody(&$conn, $mailbox, $id, $part, $mode){
                 $remaining = $bytes - $received;
                 $line = iil_ReadLine($fp, 1024);
                 $len = strlen($line);
-                if ($len > $remaining) $line = substr($line, 0, $remaining);
+                if ($len > $remaining) substr($line, 0, $remaining);
                 $received += strlen($line);
                 if ($mode==1) $result .= chop($line)."\n";
                 else if ($mode==2){ echo chop($line)."\n"; flush(); }

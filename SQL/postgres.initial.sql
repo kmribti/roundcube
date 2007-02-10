@@ -69,8 +69,7 @@ CREATE TABLE identities (
     email character varying(128) NOT NULL,
     "reply-to" character varying(128),
     bcc character varying(128),
-    signature text,
-    html_signature integer DEFAULT 0 NOT NULL
+    signature text
 );
 
 
@@ -164,7 +163,6 @@ CREATE TABLE "messages" (
     date timestamp with time zone NOT NULL,
     size integer DEFAULT 0 NOT NULL,
     headers text NOT NULL,
-    structure text
+    body text
 );
 
-ALTER TABLE "messages" ADD UNIQUE (cache_key, uid);

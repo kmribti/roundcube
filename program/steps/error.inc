@@ -53,7 +53,7 @@ else if ($ERROR_CODE==401)
 else if ($ERROR_CODE==404)
   {
   $__error_title = "REQUEST FAILED/FILE NOT FOUND";
-  $request_url = htmlentities($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+  $request_url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
   $__error_text  = <<<EOF
 The requested page was not found!<br />
 Please contact your server-administrator.
@@ -63,26 +63,17 @@ http://$request_url</p>
 EOF;
   }
 
-// database connection error
-else if ($ERROR_CODE==603)
-  {
-  $__error_title = "DATABASE ERROR: CONNECTION FAILED!";
-  $__error_text  =  <<<EOF
-Unable to connect to the database!<br /> 
-Please contact your server-administrator. 
-EOF;
-  }
 
 // system error
 else
   {
   $__error_title = "SERVICE CURRENTLY NOT AVAILABLE!";
   $__error_text  = "Please contact your server-administrator.";
-
+  
   if (($CONFIG['debug_level'] & 4) && $ERROR_MESSAGE)
     $__error_text = $ERROR_MESSAGE;
   else
-    $__error_text = sprintf('Error No. [0x%04X]', $ERROR_CODE);
+    $__error_text = 'Error No. '.dechex($ERROR_CODE).')';
   }
 
 

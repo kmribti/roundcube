@@ -4,7 +4,6 @@
 <title><roundcube:object name="pagetitle" /></title>
 <roundcube:include file="/includes/links.html" />
 <link rel="stylesheet" type="text/css" href="/mail.css" />
-<script type="text/javascript" src="/splitter.js"></script>
 </head>
 <body>
 
@@ -26,11 +25,9 @@
 </div>
 
 <div id="messagecountbar">
-<roundcube:button command="firstpage" imageSel="/images/buttons/first_sel.png" imageAct="/images/buttons/first_act.png" imagePas="/images/buttons/first_pas.png" width="11" height="11" title="firstmessages" />
 <roundcube:button command="previouspage" imageSel="/images/buttons/previous_sel.png" imageAct="/images/buttons/previous_act.png" imagePas="/images/buttons/previous_pas.png" width="11" height="11" title="previousmessages" />
 &nbsp;<roundcube:object name="messageCountDisplay" />&nbsp;
 <roundcube:button command="nextpage" imageSel="/images/buttons/next_sel.png" imageAct="/images/buttons/next_act.png" imagePas="/images/buttons/next_pas.png" width="11" height="11" title="nextmessages" />
-<roundcube:button command="lastpage" imageSel="/images/buttons/last_sel.png" imageAct="/images/buttons/last_act.png" imagePas="/images/buttons/last_pas.png" width="11" height="11" title="lastmessages" />
 </div>
 
 <div id="mailboxlist-header"><roundcube:label name="mailboxlist" /></div>
@@ -55,29 +52,12 @@
   attachmentIcon="/images/icons/attachment.png" />
 </div>
 
-<roundcube:if condition="config:preview_pane == true" />
-<script type="text/javascript">
-  var mailviewsplit = new rcube_splitter({id:'mailviewsplitter', p1: 'mailcontframe', p2: 'mailpreviewframe', orientation: 'h'});
-  rcmail.add_onload('mailviewsplit.init()');
-</script>
-<div id="mailpreviewframe">
-<roundcube:object name="messagecontentframe" id="messagecontframe" width="100%" height="100%" frameborder="0" src="/watermark.html" />
-</div>
-
-<style type="text/css">
-#mailcontframe {
-  bottom: auto;
-  height: 208px;
-}
-</style>
-<roundcube:endif />
-
 <div id="listcontrols">
 <roundcube:label name="select" />:&nbsp;
 <roundcube:button command="select-all" label="all" classAct="active" />&nbsp;
 <roundcube:button command="select-all" prop="unread" label="unread" classAct="active" />&nbsp;
 <roundcube:button command="select-none" label="none" classAct="active" /> &nbsp;&nbsp;&nbsp;
-<roundcube:label name="quota" />: <roundcube:object name="quotaDisplay" display="image" width="120" id="quotadisplay" />
+<roundcube:label name="quota" />: <roundcube:object name="quotaDisplay" />
 </div>
 
 </body>

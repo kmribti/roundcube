@@ -18,40 +18,44 @@
  $Id$
 */
 
+$REMOTE_REQUEST = TRUE;
 $mbox_name = $IMAP->get_mailbox_name();
+
 
 // send EXPUNGE command
 if ($_action=='expunge')
-{
+  {
   $success = $IMAP->expunge($_GET['_mbox']);
 
   // reload message list if current mailbox  
   if ($success && $_GET['_reload'])
-  {
-    $OUTPUT->command('message_list.clear');
+    {
+    rcube_remote_response('this.clear_message_list();', TRUE);
     $_action = 'list';
     return;
-  }
+    }
   else
     $commands = "// expunged: $success\n";
-}
+  }
 
 // clear mailbox
 else if ($_action=='purge')
-{
+  {
   $success = $IMAP->clear_mailbox($_GET['_mbox']);
   
   if ($success && $_GET['_reload'])
-  {
-    $OUTPUT->set_env('messagecount', 0);
-    $OUTPUT->set_env('pagecount', 0);
-    $OUTPUT->command('message_list.clear');
-    $OUTPUT->command('set_rowcount', rcmail_get_messagecount_text());
-    $OUTPUT->command('set_unread_count', $mbox_name, 0);
-  }
+    {
+    $commands = "this.clear_message_list();\n";
+    $commands .= "this.set_env('messagecount', 0);\n";
+    $commands .= "this.set_env('pagecount', 0);\n";
+    $commands .= sprintf("this.set_rowcount('%s');\n", rcmail_get_messagecount_text());
+    $commands .= sprintf("this.set_unread_count('%s', 0);\n", addslashes($mbox_name));
+    }
   else
     $commands = "// purged: $success";
-}
+  }
 
-$OUTPUT->send($commands);
+
+
+rcube_remote_response($commands);
 ?>

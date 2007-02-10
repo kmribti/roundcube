@@ -3,7 +3,7 @@
  | RoundCube common js library                                           |
  |                                                                       |
  | This file is part of the RoundCube web development suite              |
- | Copyright (C) 2005-2006, RoundCube Dev, - Switzerland                 |
+ | Copyright (C) 2005, RoundCube Dev, - Switzerland                      |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
@@ -13,16 +13,8 @@
  $Id$
 */
 
-// Constants
-var CONTROL_KEY = 1;
-var SHIFT_KEY = 2;
-var CONTROL_SHIFT_KEY = 3;
 
-
-/**
- * Default browser check class
- * @construcotr
- */
+// default browsercheck
 function roundcube_browser()
   {
   this.ver = parseFloat(navigator.appVersion);
@@ -100,118 +92,10 @@ function roundcube_browser()
   }
 
 
-// static functions for event handling
-var rcube_event = {
-
-/**
- * returns modifier key (constants defined at top of file)
- */
-get_modifier: function(e)
-{
-  var opcode = 0;
-  e = e || window.event;
-
-  if (bw.mac && e)
-    {
-    opcode += (e.metaKey && CONTROL_KEY) + (e.shiftKey && SHIFT_KEY);
-    return opcode;    
-    }
-  if (e)
-    {
-    opcode += (e.ctrlKey && CONTROL_KEY) + (e.shiftKey && SHIFT_KEY);
-    return opcode;
-    }
-},
-
-/**
- * Return absolute mouse position of an event
- */
-get_mouse_pos: function(e)
-{
-  if (!e) e = window.event;
-  var mX = (e.pageX) ? e.pageX : e.clientX;
-  var mY = (e.pageY) ? e.pageY : e.clientY;
-
-  if (document.body && document.all)
-  {
-    mX += document.body.scrollLeft;
-    mY += document.body.scrollTop;
-  }
-
-  return { x:mX, y:mY };
-},
-
-/**
- * Add an object method as event listener to a certain element
- */
-add_listener: function(p)
-{
-  if (!p.object || !p.method)  // not enough arguments
-    return;
-  if (!p.element)
-    p.element = document;
-
-  if (!p.object._rc_events)
-    p.object._rc_events = [];
-  
-  var key = p.event + '*' + p.method;
-  if (!p.object._rc_events[key])
-    p.object._rc_events[key] = function(e){ return p.object[p.method](e); };
-
-  if (p.element.addEventListener)
-    p.element.addEventListener(p.event, p.object._rc_events[key], false);
-  else if (p.element.attachEvent)
-    p.element.attachEvent('on'+p.event, p.object._rc_events[key]);
-  else
-    p.element['on'+p.event] = p.object._rc_events[key];
-},
-
-/**
- * Remove event listener
- */
-remove_listener: function(p)
-{
-  if (!p.element)
-    p.element = document;
-
-  var key = p.event + '*' + p.method;
-  if (p.object && p.object._rc_events && p.object._rc_events[key]) {
-    if (p.element.removeEventListener)
-      p.element.removeEventListener(p.event, p.object._rc_events[key], false);
-    else if (p.element.detachEvent)
-      p.element.detachEvent('on'+p.event, p.object._rc_events[key]);
-    else
-      p.element['on'+p.event] = null;
-  }
-},
-
-/**
- * Prevent event propagation and bubbeling
- */
-cancel: function(evt)
-{
-  var e = evt ? evt : window.event;
-  if (e.preventDefault)
-    e.preventDefault();
-  if (e.stopPropagation)
-    e.stopPropagation();
-
-  e.cancelBubble = true;
-  e.returnValue = false;
-  return false;
-}
-
-};
 
 
 var rcube_layer_objects = new Array();
 
-
-/**
- * RoundCube generic layer (floating box) class
- *
- * @constructor
- */
 function rcube_layer(id, attributes)
   {
   this.name = id;
@@ -379,7 +263,6 @@ function rcube_layer(id, attributes)
     }
   }
 
-
 // check if input is a valid email address
 // By Cal Henderson <cal@iamcal.com>
 // http://code.iamcal.com/php/rfc822/
@@ -460,13 +343,6 @@ function find_in_array()
   }
 
 
-// make a string URL safe
-function urlencode(str)
-{
-  return window.encodeURIComponent ? encodeURIComponent(str) : escape(str);
-}
-
-
 // get any type of html objects by id/name
 function rcube_find_object(id, d)
   {
@@ -530,33 +406,6 @@ function rcube_get_object_pos(obj)
 
   return {x:iX, y:iY};
   }
-
-
-/**
- * Return the currently applied value of a css property
- *
- * @param {Object} html_element  Node reference
- * @param {String} css_property  Property name to read in Javascript notation (eg. 'textAlign')
- * @param {String} mozilla_equivalent  Equivalent property name in CSS notation (eg. 'text-align')
- * @return CSS property value
- * @type String
- */
-function get_elements_computed_style(html_element, css_property, mozilla_equivalent)
-  {
-  if (arguments.length==2)
-    mozilla_equivalent = css_property;
-
-  var el = html_element;
-  if (typeof(html_element)=='string')
-    el = nex_get_object(html_element);
-
-  if (el && el.currentStyle)
-    return el.currentStyle[css_property];
-  else if (el && document.defaultView && document.defaultView.getComputedStyle)
-    return document.defaultView.getComputedStyle(el, null).getPropertyValue(mozilla_equivalent);
-  else
-    return false;
-  }
   
 
 // cookie functions by GoogieSpell
@@ -569,8 +418,6 @@ function setCookie(name, value, expires, path, domain, secure)
       (secure ? "; secure" : "");
   document.cookie = curCookie;
   }
-
-roundcube_browser.prototype.set_cookie = setCookie;
 
 function getCookie(name)
   {
@@ -589,8 +436,6 @@ function getCookie(name)
     end = dc.length;
   return unescape(dc.substring(begin + prefix.length, end));
   }
-
-roundcube_browser.prototype.get_cookie = getCookie;
 
 
 var bw = new roundcube_browser();

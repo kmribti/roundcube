@@ -19,14 +19,14 @@
 
 */
 
-$a_save_cols = array('name', 'email', 'organization', 'reply-to', 'bcc', 'standard', 'signature', 'html_signature');
+$a_save_cols = array('name', 'email', 'organization', 'reply-to', 'bcc', 'standard', 'signature');
 $a_html_cols = array('signature');
-$a_boolean_cols = array('standard', 'html_signature');
+
 
 // check input
 if (empty($_POST['_name']) || empty($_POST['_email']))
   {
-  $OUTPUT->show_message('formincomplete', 'warning');
+  show_message('formincomplete', 'warning');
   rcmail_overwrite_action('edit-identitiy');
   return;
   }
@@ -48,17 +48,6 @@ if ($_POST['_iid'])
                              $DB->quote(get_input_value($fname, RCUBE_INPUT_POST, in_array($col, $a_html_cols))));
     }
 
-  // set "off" values for checkboxes that were not checked, and therefore
-  // not included in the POST body.
-  foreach ($a_boolean_cols as $col)
-    {
-    $fname = '_' . $col;
-    if (!isset($_POST[$fname]))
-      {
-      $a_write_sql[] = sprintf("%s=0", $DB->quoteIdentifier($col));
-      }
-    }
-
   if (sizeof($a_write_sql))
     {
     $DB->query("UPDATE ".get_table_name('identities')."
@@ -66,25 +55,24 @@ if ($_POST['_iid'])
                 WHERE  identity_id=?
                 AND    user_id=?
                 AND    del<>1",
-                get_input_value('_iid', RCUBE_INPUT_POST),
+                $_POST['_iid'],
                 $_SESSION['user_id']);
                        
     $updated = $DB->affected_rows();
     }
        
-  if ($updated)
+  if ($updated && !empty($_POST['_standard']))
     {
-    $OUTPUT->show_message('successfullysaved', 'confirmation');
+    show_message('successfullysaved', 'confirmation');
 
     // mark all other identities as 'not-default'
-    if (!empty($_POST['_standard']))
-      $DB->query("UPDATE ".get_table_name('identities')."
-                  SET ".$DB->quoteIdentifier('standard')."='0'
-                  WHERE  user_id=?
-                  AND    identity_id<>?
-                  AND    del<>1",
-                  $_SESSION['user_id'],
-                  get_input_value('_iid', RCUBE_INPUT_POST));
+    $DB->query("UPDATE ".get_table_name('identities')."
+                SET ".$DB->quoteIdentifier('standard')."='0'
+                WHERE  user_id=?
+                AND    identity_id<>?
+                AND    del<>1",
+                $_SESSION['user_id'],
+                $_POST['_iid']);
     
     if ($_POST['_framed'])
       {
@@ -95,7 +83,7 @@ if ($_POST['_iid'])
   else if ($DB->is_error())
     {
     // show error message
-    $OUTPUT->show_message('errorsaving', 'error');
+    show_message('errorsaving', 'error');
     rcmail_overwrite_action('edit-identitiy');
     }
   }
@@ -138,13 +126,13 @@ else
   else
     {
     // show error message
-    $OUTPUT->show_message('errorsaving', 'error');
+    show_message('errorsaving', 'error');
     rcmail_overwrite_action('edit-identity');
     }
   }
 
 
 // go to next step
-rcmail_overwrite_action($_framed ? 'edit-identity' : 'identities');
+rcmail_overwrite_action($_POST['_framed'] ? 'edit-identity' : 'identities');
 
 ?>

@@ -126,18 +126,19 @@ class html2text
         '/(<table[^>]*>|<\/table>)/i',           // <table> and </table>
         '/(<tr[^>]*>|<\/tr>)/i',                 // <tr> and </tr>
         '/<td[^>]*>(.+?)<\/td>/i',               // <td> and </td>
-        '/<th[^>]*>(.+?)<\/th>/ie',              // <th> and </th>
+        '/<th[^>]*>(.+?)<\/th>/i',               // <th> and </th>
         '/&nbsp;/i',
         '/&quot;/i',
         '/&gt;/i',
         '/&lt;/i',
-        '/&(amp|#38);/i',
+        '/&amp;/i',
         '/&copy;/i',
         '/&trade;/i',
         '/&#8220;/',
         '/&#8221;/',
         '/&#8211;/',
-        '/&#(8217|39);/',
+        '/&#8217;/',
+        '/&#38;/',
         '/&#169;/',
         '/&#8482;/',
         '/&#151;/',
@@ -164,7 +165,7 @@ class html2text
         '$this->_build_link_list("\\1", "\\2")', // <a href="">
         "strtoupper(\"\n\n\\1\n\n\")",          // H1 - H3
         "ucwords(\"\n\n\\1\n\n\")",             // H4 - H6
-        "\n",                                   // <P>
+        "\n\n\t",                               // <P>
         "\n",                                   // <br>
         'strtoupper("\\1")',                    // <b>
         '_\\1_',                                // <i>
@@ -187,6 +188,7 @@ class html2text
         '"',
         '-',
         "'",
+        '&',
         '(c)',
         '(tm)',
         '--',
@@ -232,15 +234,6 @@ class html2text
      *  @see _build_link_list()
      */
     var $_link_list = array();
-    
-    /**
-     * Boolean flag, true if a table of link URLs should be listed after the text.
-     * 
-     * @var boolean $_do_links
-     * @access private
-     * @see html2text()
-     */
-    var $_do_links = true;
 
     /**
      *  Constructor.
@@ -251,17 +244,15 @@ class html2text
      *
      *  @param string $source HTML content
      *  @param boolean $from_file Indicates $source is a file to pull content from
-     *  @param boolean $do_link_table indicate whether a table of link URLs is desired
      *  @access public
      *  @return void
      */
-    function html2text( $source = '', $from_file = false, $do_link_table = true )
+    function html2text( $source = '', $from_file = false )
     {
         if ( !empty($source) ) {
             $this->set_html($source, $from_file);
         }
         $this->set_base_url();
-        $this->_do_links = $produce_link_table;
     }
 
     /**
@@ -420,8 +411,6 @@ class html2text
     */
     function _build_link_list($link, $display)
       {
-      if (! $this->_do_links) return $display;
-
       $link_lc = strtolower($link);
       
       if (substr($link_lc, 0, 7) == 'http://' || substr($link_lc, 0, 8) == 'https://' || substr($link_lc, 0, 7) == 'mailto:')

@@ -56,8 +56,6 @@ $messages['encryptedmessage'] = 'Dies ist eine verschlüsselte Nachricht und kan
 
 $messages['nocontactsfound'] = 'Keine Kontakte gefunden';
 
-$messages['contactnotfound'] = 'Die gewählte Adresse wurde nicht gefunden';
-
 $messages['sendingfailed'] = 'Versand der Nachricht fehlgeschlagen';
 
 $messages['errorsaving'] = 'Beim Speichern ist ein Fehler aufgetreten';
@@ -67,8 +65,6 @@ $messages['errormoving'] = 'Nachricht konnte nicht verschoben werden';
 $messages['errordeleting'] = 'Nachricht konnte nicht gelöscht werden';
 
 $messages['deletecontactconfirm']  = 'Wollen Sie die ausgewählten Kontakte wirklich löschen';
-
-$messages['deletemessagesconfirm'] = 'Wollen Sie die ausgewählten Nachrichten wirklich löschen?';
 
 $messages['deletefolderconfirm']  = 'Wollen Sie diesen Ordner wirklich löschen?';
 
@@ -108,14 +104,5 @@ $messages['nospellerrors'] = 'Keine Rechtschreibfehler gefunden';
 
 $messages['folderdeleted'] = 'Ordner erfolgreich gelöscht';
 
-$messages['deletedsuccessfully'] = "Erfolgreich gelöscht";
-
-$messages['converting'] = 'Entferne Formatierungen...';
-
-$messages['messageopenerror'] = 'Die Nachricht konnte nicht vom Server geladen werden';
-
-$messages['fileuploaderror'] = 'Der Dateiupload ist fehlgeschlagen';
-
-$messages['filesizeerror'] = 'Die Datei überschreitet die maximale Grösse von $size';
 
 ?>

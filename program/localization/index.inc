@@ -28,7 +28,7 @@
 	'bg'    => 'Bulgarian',
 	'bs_BA' => 'Bosnian (Bosanski)',
 	'tw'    => 'Chinese (BIG5)',
-	'zh_CN' => 'Chinese (GB2312)',
+	'cn'    => 'Chinese (GB2312)',
 	'cz'    => 'Czech',
  	'ca'    => 'Català',
 	'da'    => 'Dansk',
@@ -61,7 +61,6 @@
 	'se'    => 'Svenska',
 	'si'    => 'Slovenian',
 	'sk'    => 'Slovak',
-	'sr'    => 'Serbian',
 	'tr'    => 'Turkish',
 	'vn'    => 'Vietnamese'
 );
@@ -69,7 +68,6 @@
 $rcube_language_aliases = array(
 	'ee' => 'et_EE',
 	'bs' => 'bs_BA',
-  'cn' => 'zh_CN',
 	'de' => 'de_DE',
 	'en' => 'en_US',
 	'nl' => 'nl_NL',

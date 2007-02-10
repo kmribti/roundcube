@@ -59,15 +59,14 @@ class rcube_db
    * @param  string  DSN for read/write operations
    * @param  string  Optional DSN for read only operations
    */
-  function __construct($db_dsnw, $db_dsnr='', $pconn=false)
+  function __construct($db_dsnw, $db_dsnr='')
     {
     if ($db_dsnr=='')
       $db_dsnr=$db_dsnw;
 
     $this->db_dsnw = $db_dsnw;
     $this->db_dsnr = $db_dsnr;
-    $this->db_pconn = $pconn;
-    
+
     $dsn_array = MDB2::parseDSN($db_dsnw);
     $this->db_provider = $dsn_array['phptype'];
     }
@@ -94,7 +93,7 @@ class rcube_db
   function dsn_connect($dsn)
     {
     // Use persistent connections if available
-    $dbh = MDB2::connect($dsn, array('persistent' => $this->db_pconn, 'portability' => MDB2_PORTABILITY_ALL ^ MDB2_PORTABILITY_EMPTY_TO_NULL));
+    $dbh = MDB2::connect($dsn, array('persistent' => TRUE, 'portability' => MDB2_PORTABILITY_ALL ^ MDB2_PORTABILITY_EMPTY_TO_NULL));
 
     if (PEAR::isError($dbh))
       {
@@ -104,14 +103,13 @@ class rcube_db
       raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
                         'message' => $dbh->getMessage()), TRUE, FALSE);
       }
+
     else if ($this->db_provider=='sqlite')
       {
       $dsn_array = MDB2::parseDSN($dsn);
       if (!filesize($dsn_array['database']) && !empty($this->sqlite_initials))
         $this->_sqlite_create_database($dbh, $this->sqlite_initials);
       }
-    else
-      $dbh->setCharset('utf8');
 
     return $dbh;
     }
@@ -287,7 +285,7 @@ class rcube_db
     if (!$this->db_handle)
       return FALSE;
 
-    return $this->_get_result($result);
+    return $result;
     }
 
 
@@ -413,25 +411,6 @@ class rcube_db
 
 
   /**
-   * Return SQL function for current time and date
-   *
-   * @return string SQL function to use in query
-   * @access public
-   */
-  function now()
-    {
-    switch($this->db_provider)
-      {
-      case 'mssql':
-        return "getdate()";
-
-      default:
-        return "now()";
-      }
-    }
-
-
-  /**
    * Return SQL statement to convert a field value into a unix timestamp
    *
    * @param  string  Field name
@@ -445,9 +424,6 @@ class rcube_db
       case 'pgsql':
         return "EXTRACT (EPOCH FROM $field)";
         break;
-
-      case 'mssql':
-        return "datediff(s, '1970-01-01 00:00:00', $field)";
 
       default:
         return "UNIX_TIMESTAMP($field)";

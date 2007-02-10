@@ -49,9 +49,9 @@ $SMTP_CONN = null;
  * @return bool  Returns TRUE on success, or FALSE on error
  * @access public
  */
-function smtp_mail($from, $recipients, &$headers, &$body, &$response)
+function smtp_mail($from, $recipients, &$headers, &$body)
   {
-  global $SMTP_CONN, $CONFIG;
+  global $SMTP_CONN, $CONFIG, $SMTP_ERROR;
   $smtp_timeout = null;
   $smtp_host = $CONFIG['smtp_server'];
   $smtp_port = is_numeric($CONFIG['smtp_port']) ? $CONFIG['smtp_port'] : 25;
@@ -85,7 +85,7 @@ function smtp_mail($from, $recipients, &$headers, &$body, &$response)
     if (PEAR::isError($result))
       {
       $SMTP_CONN = null;
-      $response[] = "Connection failed: ".$result->getMessage();
+      $SMTP_ERROR .= "Connection failed: ".$result->getMessage()."\n";
       return FALSE;
       }
       
@@ -93,22 +93,22 @@ function smtp_mail($from, $recipients, &$headers, &$body, &$response)
     if ($CONFIG['smtp_user'] && $CONFIG['smtp_pass'])
       {
       if (strstr($CONFIG['smtp_user'], '%u'))
-        $smtp_user = str_replace('%u', $_SESSION['username'], $CONFIG['smtp_user']);
+		$smtp_user = str_replace('%u', $_SESSION['username'], $CONFIG['smtp_user']);
       else
-        $smtp_user = $CONFIG['smtp_user'];
+		$smtp_user = $CONFIG['smtp_user'];
 
-      if (strstr($CONFIG['smtp_pass'], '%p'))
-        $smtp_pass = str_replace('%p', decrypt_passwd($_SESSION['password']), $CONFIG['smtp_pass']);
+	  if (strstr($CONFIG['smtp_pass'], '%p'))
+		$smtp_pass = str_replace('%p', decrypt_passwd($_SESSION['password']), $CONFIG['smtp_pass']);
       else
-        $smtp_pass = $CONFIG['smtp_pass'];
+		$smtp_pass = $CONFIG['smtp_pass'];
 
-      $smtp_auth_type = empty($CONFIG['smtp_auth_type']) ? NULL : $CONFIG['smtp_auth_type'];
-      $result = $SMTP_CONN->auth($smtp_user, $smtp_pass, $smtp_auth_type);
-    
+	  $smtp_auth_type = empty($CONFIG['smtp_auth_type']) ? NULL : $CONFIG['smtp_auth_type'];
+	  $result = $SMTP_CONN->auth($smtp_user, $smtp_pass, $smtp_auth_type);
+	  
       if (PEAR::isError($result))
         {
         smtp_reset();
-        $response[] .= "Authentication failure: ".$result->getMessage();
+        $SMTP_ERROR .= "Authentication failure: ".$result->getMessage()."\n";
         return FALSE;
         }
       }
@@ -132,7 +132,7 @@ function smtp_mail($from, $recipients, &$headers, &$body, &$response)
   else
     {
     smtp_reset();
-    $response[] .= "Invalid message headers";
+    $SMTP_ERROR .= "Invalid message headers\n";
     return FALSE;
     }
 
@@ -140,7 +140,7 @@ function smtp_mail($from, $recipients, &$headers, &$body, &$response)
   if (!isset($from))
     {
     smtp_reset();
-    $response[] .= "No From address has been provided";
+    $SMTP_ERROR .= "No From address has been provided\n";
     return FALSE;
     }
 
@@ -149,7 +149,7 @@ function smtp_mail($from, $recipients, &$headers, &$body, &$response)
   if (PEAR::isError($SMTP_CONN->mailFrom($from)))
     {
     smtp_reset();
-    $response[] .= "Failed to set sender '$from'";
+    $SMTP_ERROR .= "Failed to set sender '$from'\n";
     return FALSE;
     }
 
@@ -169,30 +169,21 @@ function smtp_mail($from, $recipients, &$headers, &$body, &$response)
     if (PEAR::isError($SMTP_CONN->rcptTo($recipient)))
       {
       smtp_reset();
-      $response[] .= "Failed to add recipient '$recipient'";
+      $SMTP_ERROR .= "Failed to add recipient '$recipient'\n";
       return FALSE;
       }
     }
 
 
-  // Concatenate headers and body so it can be passed by reference to SMTP_CONN->data
-  // so preg_replace in SMTP_CONN->quotedata will store a reference instead of a copy. 
-  // We are still forced to make another copy here for a couple ticks so we don't really 
-  // get to save a copy in the method call.
-  $data = $text_headers . "\r\n" . $body;
-
-  // unset old vars to save data and so we can pass into SMTP_CONN->data by reference.
-  unset($text_headers, $body);
-   
   // Send the message's headers and the body as SMTP data.
-  if (PEAR::isError($SMTP_CONN->data($data)))
+  if (PEAR::isError($SMTP_CONN->data("$text_headers\r\n$body")))
     {
     smtp_reset();
-    $response[] .= "Failed to send data";
+    $SMTP_ERROR .= "Failed to send data\n";
     return FALSE;
     }
 
-  $response[] = join(': ', $SMTP_CONN->getResponse());
+
   return TRUE;
   }
 
@@ -327,9 +318,9 @@ function smtp_parse_rfc822($recipients)
   reset($recipients);
   while (list($k, $recipient) = each($recipients))
     {
-  $a = explode(" ", $recipient);
-  while (list($k2, $word) = each($a))
-    {
+	$a = explode(" ", $recipient);
+	while (list($k2, $word) = each($a))
+	  {
       if ((strpos($word, "@") > 0) && (strpos($word, "\"")===false))
         {
         $word = ereg_replace('^<|>$', '', trim($word));
@@ -349,13 +340,13 @@ function smtp_explode_quoted_str($delimiter, $string)
     if (($key % 2) == 1) 
       $quotes[$key] = str_replace($delimiter, "_!@!_", $quotes[$key]);
     $string=implode("\"", $quotes);
-  
+	
     $result=explode($delimiter, $string);
     while (list($key, $val) = each($result))
       $result[$key] = str_replace("_!@!_", $delimiter, $result[$key]);
 
   return $result;
-  } 
+  }	
 
 
 ?>

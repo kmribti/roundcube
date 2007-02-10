@@ -5,7 +5,7 @@
  | rcube_shared.inc                                                      |
  |                                                                       |
  | This file is part of the RoundCube PHP suite                          |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | CONTENTS:                                                             |
@@ -15,7 +15,7 @@
  | Author: Thomas Bruederli <roundcube@gmail.com>                        |
  +-----------------------------------------------------------------------+
 
- $Id$
+ $Id: rcube_shared.inc 288 2006-07-31 22:51:23Z thomasb $
 
 */
 
@@ -23,20 +23,18 @@
 // ********* round cube schared classes *********
 
 class rcube_html_page
-  {
+{
   var $css;
   
   var $scripts_path = '';
   var $script_files = array();
-  var $external_scripts = array();
   var $scripts = array();
   var $charset = 'ISO-8859-1';
   
   var $script_tag_file = "<script type=\"text/javascript\" src=\"%s%s\"></script>\n";
   var $script_tag      = "<script type=\"text/javascript\">\n<!--\n%s\n\n//-->\n</script>\n";
-  var $default_template = "<html>\n<head><title></title></head>\n<body></body>\n</html>";
-  var $tag_format_external_script = "<script type=\"text/javascript\" src=\"%s\"></script>\n";
-
+  var $default_template = "<html>\n<body></body>\n</html>";
+  
   var $title = '';
   var $header = '';
   var $footer = '';
@@ -71,33 +69,15 @@ class rcube_html_page
     $this->script_files[$position][] = $file;
     }
     
-  function include_external_script($script_location, $position='head')
-  {
-     if (!is_array($this->external_scripts[$position]))
-     {
-        $this->external_scripts[$position] = array();
-     }
-     
-     $this->external_scripts[$position][] = $script_location;
-  }
-
+  
   function add_script($script, $position='head')
     {
     if (!isset($this->scripts[$position]))
-      $this->scripts[$position] = "\n".rtrim($script);
-    else
-      $this->scripts[$position] .= "\n".rtrim($script);
+      $this->scripts[$position] = '';
+
+    $this->scripts[$position] .= "\n$script";
     }
 
-  function add_header($str)
-    {
-    $this->header .= "\n".$str;
-    }
-
-  function add_footer($str)
-    {
-    $this->footer .= "\n".$str;
-    }
 
   function set_title($t)
     {
@@ -130,21 +110,19 @@ class rcube_html_page
     $this->script_files = array();
     $this->scripts = array();
     $this->title = '';
-    $this->header = '';
-    $this->footer = '';
     }
 
 
   function write($templ='', $base_path='')
     {
     $output = empty($templ) ? $this->default_template : trim($templ);
-    
+  
     // set default page title
-    if (empty($this->title))
+    if (!strlen($this->title))
       $this->title = 'RoundCube Mail';
   
     // replace specialchars in content
-    $__page_title = Q($this->title, 'show', FALSE);
+    $__page_title = rep_specialchars_output($this->title, 'html', 'show', FALSE);
     $__page_header = $__page_body = $__page_footer = '';
     
     
@@ -161,28 +139,19 @@ class rcube_html_page
       foreach ($this->script_files['head'] as $file)
         $__page_header .= sprintf($this->script_tag_file, $this->scripts_path, $file);
 
-    if (is_array($this->external_scripts['head']))
-      foreach ($this->external_scripts['head'] as $xscript)
-        $__page_header .= sprintf($this->tag_format_external_script, $xscript);
-
-    $head_script = $this->scripts['head_top'] . $this->scripts['head'];
-    if (!empty($head_script))
-      $__page_header .= sprintf($this->script_tag, $head_script);
-
-    if (!empty($this->header))
-      $__page_header .= $this->header;
-
+    if (strlen($this->scripts['head']))
+      $__page_header .= sprintf($this->script_tag, $this->scripts['head']);
+          
     if (is_array($this->script_files['foot']))
       foreach ($this->script_files['foot'] as $file)
         $__page_footer .= sprintf($this->script_tag_file, $this->scripts_path, $file);
 
-    if (!empty($this->scripts['foot']))
+    if (strlen($this->scripts['foot']))
       $__page_footer .= sprintf($this->script_tag, $this->scripts['foot']);
-      
-    if (!empty($this->footer))
-      $__page_footer .= $this->footer;
+
 
     $__page_header .= $this->css->show();
+
   
     // find page header
     if($hpos = strpos(strtolower($output), '</head>'))
@@ -223,10 +192,8 @@ class rcube_html_page
   
   
     // find and add page footer
-    $output_lc = strtolower($output);
-    if(($fpos = strrstr($output_lc, '</body>')) ||
-       ($fpos = strrstr($output_lc, '</html>')))
-      $output = substr($output,0,$fpos) . "$__page_footer\n" . substr($output,$fpos);
+    if(($fpos = strpos(strtolower($output), '</body>')) || ($fpos = strpos(strtolower($output), '</html>')))
+      $output = substr($output,0,$fpos) . "$__page_footer\n" . substr($output,$fpos,strlen($output));
     else
       $output .= "\n$__page_footer";
   
@@ -235,7 +202,7 @@ class rcube_html_page
     $__page_header = $__page_footer = '';
   
   
-    // correct absolute paths in images and other tags
+    // correct absolute pathes in images and other tags
     $output = preg_replace('/(src|href|background)=(["\']?)(\/[a-z0-9_\-]+)/Ui', "\\1=\\2$base_path\\3", $output);
     $output = str_replace('$__skin_path', $base_path, $output);
   
@@ -734,7 +701,7 @@ class base_form_element
 
       // encode textarea content
       if ($key=='value')
-        $value = Q($value, 'strict', FALSE);
+        $value = rep_specialchars_output($value, 'html', 'replace', FALSE);
 
       // attributes with no value
       if (in_array($key, array('checked', 'multiple', 'disabled', 'selected')))
@@ -887,9 +854,9 @@ class textarea extends base_form_element
     if (isset($this->attrib['value']))
       unset($this->attrib['value']);
 
-    if (!empty($value) && !isset($this->attrib['mce_editable']))
-      $value = Q($value, 'strict', FALSE);
-
+    if (strlen($value))
+      $value = rep_specialchars_output($value, 'html', 'replace', FALSE);
+    
     // return final tag
     return sprintf('<%s%s>%s</%s>%s',
                    $this->_conv_case('textarea', 'tag'),
@@ -1021,14 +988,14 @@ class select extends base_form_element
     
     foreach ($this->options as $option)
       {
-      $selected = ((!empty($option['value']) && in_array($option['value'], $select, TRUE)) ||
+      $selected = ((strlen($option['value']) && in_array($option['value'], $select, TRUE)) ||
                    (in_array($option['text'], $select, TRUE))) ? $this->_conv_case(' selected', 'attrib') : '';
-                   
+                  
       $options_str .= sprintf("<%s%s%s>%s</%s>\n",
                              $this->_conv_case('option', 'tag'),
-                             !empty($option['value']) ? sprintf($value_str, Q($option['value'])) : '',
+                             strlen($option['value']) ? sprintf($value_str, $option['value']) : '',
                              $selected, 
-                             Q($option['text'], 'strict', FALSE),
+                             rep_specialchars_output($option['text'], 'html', 'replace', FALSE),
                              $this->_conv_case('option', 'tag'));
       }
                              
@@ -1047,255 +1014,265 @@ class select extends base_form_element
 
 // ********* rcube schared functions *********
 
+class rcMisc
+{
+    private function __construct() {}
 
-// provide details about the client's browser
-function rcube_browser()
-  {
-  $HTTP_USER_AGENT = $_SERVER['HTTP_USER_AGENT'];
-
-  $bw['ver'] = 0;
-  $bw['win'] = stristr($HTTP_USER_AGENT, 'win');
-  $bw['mac'] = stristr($HTTP_USER_AGENT, 'mac');
-  $bw['linux'] = stristr($HTTP_USER_AGENT, 'linux');
-  $bw['unix']  = stristr($HTTP_USER_AGENT, 'unix');
-
-  $bw['ns4'] = stristr($HTTP_USER_AGENT, 'mozilla/4') && !stristr($HTTP_USER_AGENT, 'msie');
-  $bw['ns']  = ($bw['ns4'] || stristr($HTTP_USER_AGENT, 'netscape'));
-  $bw['ie']  = stristr($HTTP_USER_AGENT, 'msie');
-  $bw['mz']  = stristr($HTTP_USER_AGENT, 'mozilla/5');
-  $bw['opera'] = stristr($HTTP_USER_AGENT, 'opera');
-  $bw['safari'] = stristr($HTTP_USER_AGENT, 'safari');
-
-  if($bw['ns'])
+    // provide details about the client's browser
+    static function rcube_browser()
     {
-    $test = eregi("mozilla\/([0-9\.]+)", $HTTP_USER_AGENT, $regs);
-    $bw['ver'] = $test ? (float)$regs[1] : 0;
-    }
-  if($bw['mz'])
-    {
-    $test = ereg("rv:([0-9\.]+)", $HTTP_USER_AGENT, $regs);
-    $bw['ver'] = $test ? (float)$regs[1] : 0;
-    }
-  if($bw['ie'])
-    {
-    $test = eregi("msie ([0-9\.]+)", $HTTP_USER_AGENT, $regs);
-    $bw['ver'] = $test ? (float)$regs[1] : 0;
-    }
-  if($bw['opera'])
-    {
-    $test = eregi("opera ([0-9\.]+)", $HTTP_USER_AGENT, $regs);
-    $bw['ver'] = $test ? (float)$regs[1] : 0;
-    }
+        $HTTP_USER_AGENT = $_SERVER['HTTP_USER_AGENT'];
 
-  if(eregi(" ([a-z]{2})-([a-z]{2})", $HTTP_USER_AGENT, $regs))
-    $bw['lang'] =  $regs[1];
-  else
-    $bw['lang'] =  'en';
+        $bw['ver'] = 0;
+        $bw['win'] = stristr($HTTP_USER_AGENT, 'win');
+        $bw['mac'] = stristr($HTTP_USER_AGENT, 'mac');
+        $bw['linux'] = stristr($HTTP_USER_AGENT, 'linux');
+        $bw['unix']  = stristr($HTTP_USER_AGENT, 'unix');
 
-  $bw['dom'] = ($bw['mz'] || $bw['safari'] || ($bw['ie'] && $bw['ver']>=5) || ($bw['opera'] && $bw['ver']>=7));
-  $bw['pngalpha'] = $bw['mz'] || $bw['safari'] || ($bw['ie'] && $bw['ver']>=5.5) ||
+        $bw['ns4'] = stristr($HTTP_USER_AGENT, 'mozilla/4') && !stristr($HTTP_USER_AGENT, 'msie');
+        $bw['ns']  = ($bw['ns4'] || stristr($HTTP_USER_AGENT, 'netscape'));
+        $bw['ie']  = stristr($HTTP_USER_AGENT, 'msie');
+        $bw['mz']  = stristr($HTTP_USER_AGENT, 'mozilla/5');
+        $bw['opera'] = stristr($HTTP_USER_AGENT, 'opera');
+        $bw['safari'] = stristr($HTTP_USER_AGENT, 'safari');
+
+        if($bw['ns'])
+        {
+            $test = eregi("mozilla\/([0-9\.]+)", $HTTP_USER_AGENT, $regs);
+            $bw['ver'] = $test ? (float)$regs[1] : 0;
+        }
+        if($bw['mz'])
+        {
+            $test = ereg("rv:([0-9\.]+)", $HTTP_USER_AGENT, $regs);
+            $bw['ver'] = $test ? (float)$regs[1] : 0;
+        }
+        if($bw['ie'])
+        {
+            $test = eregi("msie ([0-9\.]+)", $HTTP_USER_AGENT, $regs);
+            $bw['ver'] = $test ? (float)$regs[1] : 0;
+        }
+        if($bw['opera'])
+        {
+            $test = eregi("opera ([0-9\.]+)", $HTTP_USER_AGENT, $regs);
+            $bw['ver'] = $test ? (float)$regs[1] : 0;
+        }
+        if(eregi(" ([a-z]{2})-([a-z]{2})", $HTTP_USER_AGENT, $regs))
+            $bw['lang'] =  $regs[1];
+        else
+            $bw['lang'] =  'en';
+
+        $bw['dom'] = ($bw['mz'] || $bw['safari'] || ($bw['ie'] && $bw['ver']>=5) || ($bw['opera'] && $bw['ver']>=7));
+        $bw['pngalpha'] = $bw['mz'] || $bw['safari'] || ($bw['ie'] && $bw['ver']>=5.5) ||
                     ($bw['ie'] && $bw['ver']>=5 && $bw['mac']) || ($bw['opera'] && $bw['ver']>=7) ? TRUE : FALSE;
 
-  return $bw;
-  }
-
-
-// get text in the desired language from the language file
-function rcube_label($attrib)
-  {
-  global $sess_user_lang, $INSTALL_PATH, $OUTPUT;
-  static $sa_text_data, $s_language, $utf8_decode;
-
-  // extract attributes
-  if (is_string($attrib))
-    $attrib = array('name' => $attrib);
-    
-  $nr = is_numeric($attrib['nr']) ? $attrib['nr'] : 1;
-  $vars = isset($attrib['vars']) ? $attrib['vars'] : '';
-
-  $command_name = !empty($attrib['command']) ? $attrib['command'] : NULL;
-  $alias = $attrib['name'] ? $attrib['name'] : ($command_name && $command_label_map[$command_name] ? $command_label_map[$command_name] : '');
-
-
-  // load localized texts
-  if (!$sa_text_data || $s_language != $sess_user_lang)
-    {
-    $sa_text_data = array();
-    
-    // get english labels (these should be complete)
-    @include($INSTALL_PATH.'program/localization/en_US/labels.inc');
-    @include($INSTALL_PATH.'program/localization/en_US/messages.inc');
-
-    if (is_array($labels))
-      $sa_text_data = $labels;
-    if (is_array($messages))
-      $sa_text_data = array_merge($sa_text_data, $messages);
-    
-    // include user language files
-    if ($sess_user_lang!='en' && is_dir($INSTALL_PATH.'program/localization/'.$sess_user_lang))
-      {
-      include_once($INSTALL_PATH.'program/localization/'.$sess_user_lang.'/labels.inc');
-      include_once($INSTALL_PATH.'program/localization/'.$sess_user_lang.'/messages.inc');
-
-      if (is_array($labels))
-        $sa_text_data = array_merge($sa_text_data, $labels);
-      if (is_array($messages))
-        $sa_text_data = array_merge($sa_text_data, $messages);
-      }
-      
-    $s_language = $sess_user_lang;
+        return $bw;
     }
 
-  // text does not exist
-  if (!($text_item = $sa_text_data[$alias]))
+
+    // get text in the desired language from the language file
+    static function rcube_label($attrib)
     {
-    /*
+        global $sess_user_lang, $INSTALL_PATH, $OUTPUT;
+        static $sa_text_data, $s_language, $utf8_decode;
+
+        // extract attributes
+        if (is_string($attrib))
+            $attrib = array('name' => $attrib);
+    
+        $nr = is_numeric($attrib['nr']) ? $attrib['nr'] : 1;
+        $vars = isset($attrib['vars']) ? $attrib['vars'] : '';
+
+        $command_name = strlen($attrib['command']) ? $attrib['command'] : NULL;
+        $alias = $attrib['name'] ? $attrib['name'] : ($command_name && $command_label_map[$command_name] ? $command_label_map[$command_name] : '');
+
+
+        // load localized texts
+        if (!$sa_text_data || $s_language != $sess_user_lang)
+        {
+            $sa_text_data = array();
+    
+            // get english labels (these should be complete)
+            @include($INSTALL_PATH . 'program/localization/en_US/labels.inc');
+            @include($INSTALL_PATH . 'program/localization/en_US/messages.inc');
+
+            if (is_array($labels))
+                $sa_text_data = $labels;
+            if (is_array($messages))
+                $sa_text_data = array_merge($sa_text_data, $messages);
+    
+            // include user language files
+            if ($sess_user_lang!='en' && is_dir($INSTALL_PATH.'program/localization/'.$sess_user_lang))
+            {
+                include_once($INSTALL_PATH.'program/localization/'.$sess_user_lang.'/labels.inc');
+                include_once($INSTALL_PATH.'program/localization/'.$sess_user_lang.'/messages.inc');
+
+                if (is_array($labels))
+                    $sa_text_data = array_merge($sa_text_data, $labels);
+                if (is_array($messages))
+                    $sa_text_data = array_merge($sa_text_data, $messages);
+            }
+      
+            $s_language = $sess_user_lang;
+        }
+
+        // text does not exist
+        if (!($text_item = $sa_text_data[$alias]))
+        {
+            /*
     raise_error(array('code' => 500,
                       'type' => 'php',
                       'line' => __LINE__,
                       'file' => __FILE__,
                       'message' => "Missing localized text for '$alias' in '$sess_user_lang'"), TRUE, FALSE);
     */
-    return "[$alias]";
-    }
+            return "[$alias]";
+        }
 
-  // make text item array 
-  $a_text_item = is_array($text_item) ? $text_item : array('single' => $text_item);
+        // make text item array 
+        $a_text_item = is_array($text_item) ? $text_item : array('single' => $text_item);
 
-  // decide which text to use
-  if ($nr==1)
-    $text = $a_text_item['single'];
-  else if ($nr>0)
-    $text = $a_text_item['multiple'];
-  else if ($nr==0)
-    {
-    if ($a_text_item['none'])
-      $text = $a_text_item['none'];
-    else if ($a_text_item['single'])
-      $text = $a_text_item['single'];
-    else if ($a_text_item['multiple'])
-      $text = $a_text_item['multiple'];
-    }
+        // decide which text to use
+        if ($nr==1)
+            $text = $a_text_item['single'];
+        else if ($nr>0)
+            $text = $a_text_item['multiple'];
+        else if ($nr==0)
+        {
+            if ($a_text_item['none'])
+                $text = $a_text_item['none'];
+            else if ($a_text_item['single'])
+                $text = $a_text_item['single'];
+            else if ($a_text_item['multiple'])
+                $text = $a_text_item['multiple'];
+        }
 
-  // default text is single
-  if ($text=='')
-    $text = $a_text_item['single'];
+        // default text is single
+        if ($text=='')
+            $text = $a_text_item['single'];
 
-  // replace vars in text
-  if (is_array($attrib['vars']))
-    {
-    foreach ($attrib['vars'] as $var_key=>$var_value)
-      $a_replace_vars[substr($var_key, 0, 1)=='$' ? substr($var_key, 1) : $var_key] = $var_value;
-    }
+        // replace vars in text
+        if (is_array($attrib['vars']))
+        {
+            foreach ($attrib['vars'] as $var_key=>$var_value)
+                $a_replace_vars[substr($var_key, 0, 1)=='$' ? substr($var_key, 1) : $var_key] = $var_value;
+        }
 
-  if ($a_replace_vars)
-    $text = preg_replace('/\${?([_a-z]{1}[_a-z0-9]*)}?/ei', '$a_replace_vars["\1"]', $text);
+        if ($a_replace_vars)
+            $text = preg_replace('/\${?([_a-z]{1}[_a-z0-9]*)}?/ei', '$a_replace_vars["\1"]', $text);
 
-  // remove variables in text which were not available in arg $vars and $nr
-  eval("\$text = <<<EOF
+        // remove variables in text which were not available in arg $vars and $nr
+        eval("\$text = <<<EOF
 $text
 EOF;
 ");
 
-  // format output
-  if (($attrib['uppercase'] && strtolower($attrib['uppercase']=='first')) || $attrib['ucfirst'])
-    return ucfirst($text);
-  else if ($attrib['uppercase'])
-    return strtoupper($text);
-  else if ($attrib['lowercase'])
-    return strtolower($text);
-  else
-    return $text;
+        // format output
+        if (($attrib['uppercase'] && strtolower($attrib['uppercase']=='first')) || $attrib['ucfirst'])
+            return ucfirst($text);
+        else if ($attrib['uppercase'])
+            return strtoupper($text);
+        else if ($attrib['lowercase'])
+            return strtolower($text);
+        else
+            return $text;
 
-  return $text;
-  }
-
-
-// send HTTP header for no-cacheing steps
-function send_nocacheing_headers()
-  {
-  if (headers_sent())
-    return;
-
-  header("Expires: ".gmdate("D, d M Y H:i:s")." GMT");
-  header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
-  header("Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0");
-  header("Pragma: no-cache");
-  }
+        return $text;
+    }
 
 
-// send header with expire date 30 days in future
-function send_future_expire_header()
-  {
-  if (headers_sent())
-    return;
-
-  header("Expires: ".gmdate("D, d M Y H:i:s", mktime()+2600000)." GMT");
-  header("Cache-Control: ");
-  header("Pragma: ");
-  }
-
-
-/**
- * Convert a variable into a javascript notation string
- */
-function json_serialize($var)
-  {
-    if (is_object($var))
-      $var = get_object_vars($var);
-
-    if (is_array($var))
+    // send HTTP header for no-cacheing steps
+    static function send_nocacheing_headers()
     {
-      // empty array
-      if (!sizeof($var))
-        return '[]';
-      else
+        if (headers_sent())
+            return;
+
+        header("Expires: ".gmdate("D, d M Y H:i:s")." GMT");
+        header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
+        header("Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0");
+        header("Pragma: no-cache");
+    }
+
+
+    // send header with expire date 30 days in future
+    static function send_future_expire_header()
+    {
+        if (!headers_sent())
+            header("Expires: ".gmdate("D, d M Y H:i:s", mktime()+2600000)." GMT");
+    }
+
+
+    // function to convert an array to a javascript array
+    static function array2js($arr, $type='')
+    {
+        if (!$type)
+            $type = 'mixed';
+
+  if (is_array($arr))
+    {
+    // no items in array
+    if (!sizeof($arr))
+      return 'new Array()';
+    else
       {
-        $keys_arr = array_keys($var);
-        $is_assoc = $have_numeric = 0;
+      $a_pairs = array();
+      $keys_arr = array_keys($arr);
+      $is_assoc = $have_numeric = 0;
 
-        for ($i=0; $i<sizeof($keys_arr); ++$i)
+      for ($i=0; $i<sizeof($keys_arr); ++$i)
         {
-          if (is_numeric($keys_arr[$i]))
-            $have_numeric = 1;
-          if (!is_numeric($keys_arr[$i]) || $keys_arr[$i] != $i)
-            $is_assoc = 1;
-          if ($is_assoc && $have_numeric)
-            break;
-        }
-        
-        $brackets = $is_assoc ? '{}' : '[]';
-        $pairs = array();
-
-        foreach ($var as $key => $value)
-        {
-          // enclose key with quotes if it is not variable-name conform
-          if (!ereg("^[_a-zA-Z]{1}[_a-zA-Z0-9]*$", $key) /* || is_js_reserved_word($key) */)
-            $key = "'$key'";
-
-          $pairs[] = sprintf("%s%s", $is_assoc ? "$key:" : '', json_serialize($value));
+        if(is_numeric($keys_arr[$i]))
+          $have_numeric = 1;
+        if (!is_numeric($keys_arr[$i]) || $keys_arr[$i]!=$i)
+          $is_assoc = 1;
+        if($is_assoc && $have_numeric)
+          break;
         }
 
-        return $brackets{0} . implode(',', $pairs) . $brackets{1};
+      $previous_was_array = false;
+      while (list($key, $value) = each($arr))
+        {
+        // enclose key with quotes if it is not variable-name conform
+        if (!ereg("^[_a-zA-Z]{1}[_a-zA-Z0-9]*$", $key) /* || is_js_reserved_word($key) */)
+          $key = "'$key'";
+
+        if (!is_array($value))
+          {
+          $value = str_replace("\r\n", '\n', $value);
+          $value = str_replace("\n", '\n', $value);
+          }
+
+        $is_string = false;
+        if (!is_array($value))
+          {
+          if ($type=='string')
+            $is_string = true;
+          else if ((($type=='mixed' && is_numeric($value)) || $type=='int') && strlen($value)<16)   // js interprets numbers with digits >15 as ...e+... 
+            $is_string = FALSE;
+          else
+            $is_string = TRUE;
+          }
+
+        if ($is_string)
+          $value = "'".preg_replace("/(?<!\\\)'/", "\'", $value)."'";
+
+        $a_pairs[] = sprintf("%s%s",
+                             $is_assoc ? "$key:" : '',
+                             is_array($value) ? array2js($value, $type) : $value);
+        }
+
+      if ($a_pairs)
+        {
+        if ($is_assoc)
+          $return = '{'.implode(',', $a_pairs).'}';
+        else
+          $return = '['.implode(',', $a_pairs).']';
+        }
+
+      return $return;
       }
     }
-    else if (is_numeric($var) && strval(intval($var)) === strval($var))
-      return $var;
-    else if (is_bool($var))
-      return $var ? '1' : '0';
-    else
-      return "'".JQ($var)."'";
-  
-  }
-
-// function to convert an array to a javascript array
-// @deprecated
-function array2js($arr, $type='')
-  {
-  if (!$type)
-    $type = 'mixed';
-
-  return json_serialize($arr);
+  else
+    return $arr;
   }
 
 
@@ -1324,51 +1301,12 @@ function get_boolean($str)
   }
 
 
-// parse a human readable string for a number of bytes
-function parse_bytes($str)
+function show_bytes($numbytes)
   {
-  if (is_numeric($str))
-    return intval($str);
-    
-  if (preg_match('/([0-9]+)([a-z])/i', $str, $regs))
-    {
-      $bytes = floatval($regs[1]);
-      switch (strtolower($regs[2]))
-      {
-        case 'g':
-          $bytes *= 1073741824;
-          break;
-        case 'm':
-          $bytes *= 1048576;
-          break;
-        case 'k':
-          $bytes *= 1024;
-          break;
-      }
-    }
-
-  return intval($bytes);
-  }
-    
-// create a human readable string for a number of bytes
-function show_bytes($bytes)
-  {
-  if ($bytes > 1073741824)
-    {
-    $gb = $bytes/1073741824;
-    $str = sprintf($gb>=10 ? "%d GB" : "%.1f GB", $gb);
-    }
-  else if ($bytes > 1048576)
-    {
-    $mb = $bytes/1048576;
-    $str = sprintf($mb>=10 ? "%d MB" : "%.1f MB", $mb);
-    }
-  else if ($bytes > 1024)
-    $str = sprintf("%d KB",  round($bytes/1024));
+  if ($numbytes > 1024)
+    return sprintf('%d KB', round($numbytes/1024));
   else
-    $str = sprintf('%d B', $bytes);
-
-  return $str;
+    return sprintf('%d B', $numbytes);
   }
 
 
@@ -1409,63 +1347,17 @@ function make_absolute_url($path, $base_url)
     }
 
 
-// wrapper function for strlen
-function rc_strlen($str)
-  {
-    if (function_exists('mb_strlen'))
-      return mb_strlen($str);
-    else
-      return strlen($str);
-  }
-  
-// wrapper function for strtolower
-function rc_strtolower($str)
-  {
-    if (function_exists('mb_strtolower'))
-      return mb_strtolower($str);
-    else
-      return strtolower($str);
-  }
-
-// wrapper function for substr
-function rc_substr($str, $start, $len=null)
-  {
-  if (function_exists('mb_substr'))
-    return mb_substr($str, $start, $len);
-  else
-    return substr($str, $start, $len);
-  }
-
-// wrapper function for strpos
-function rc_strpos($haystack, $needle, $offset=0)
-  {
-  if (function_exists('mb_strpos'))
-    return mb_strpos($haystack, $needle, $offset);
-  else
-    return strpos($haystack, $needle, $offset);
-  }
-
-// wrapper function for strrpos
-function rc_strrpos($haystack, $needle, $offset=0)
-  {
-  if (function_exists('mb_strrpos'))
-    return mb_strrpos($haystack, $needle, $offset);
-  else
-    return strrpos($haystack, $needle, $offset);
-  }
-
-
 // replace the middle part of a string with ...
 // if it is longer than the allowed length
 function abbrevate_string($str, $maxlength, $place_holder='...')
   {
-  $length = rc_strlen($str);
-  $first_part_length = floor($maxlength/2) - rc_strlen($place_holder);
+  $length = strlen($str);
+  $first_part_length = floor($maxlength/2) - strlen($place_holder);
   
   if ($length > $maxlength)
     {
     $second_starting_location = $length - $maxlength + $first_part_length + 1;
-    $str = rc_substr($str, 0, $first_part_length) . $place_holder . rc_substr($str, $second_starting_location, $length);
+    $str = substr($str, 0, $first_part_length) . $place_holder . substr($str, $second_starting_location, $length);
     }
 
   return $str;
@@ -1473,10 +1365,10 @@ function abbrevate_string($str, $maxlength, $place_holder='...')
 
 
 // make sure the string ends with a slash
-function slashify($str)
-  {
-  return unslashify($str).'/';
-  }
+    function slashify($str)
+    {
+        return unslashify($str).'/';
+    }
 
 
 // remove slash at the end of the string
@@ -1533,32 +1425,5 @@ function get_offset_time($offset_str, $factor=1)
   return $ts;
   }
 
-
-/**
- * strrstr
- *
- * return the last occurence of a string in another string
- * @param haystack string string in which to search
- * @param needle string string for which to search
- * @return index of needle within haystack, or false if not found
- */
-function strrstr($haystack, $needle)
-  {
-    $pver = phpversion();
-    if ($pver[0] >= 5)
-      {
-        return strrpos($haystack, $needle);
-      }
-    else
-      {
-        $index = strpos(strrev($haystack), strrev($needle));
-        if($index === false) {
-            return false;
-        }
-        $index = strlen($haystack) - strlen($needle) - $index;
-        return $index;
-      }
-  }
-
-
+}
 ?>

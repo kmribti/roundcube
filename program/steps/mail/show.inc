@@ -5,7 +5,7 @@
  | program/steps/mail/show.inc                                           |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -23,91 +23,78 @@ require_once('Mail/mimeDecode.php');
 
 $PRINT_MODE = $_action=='print' ? TRUE : FALSE;
 
-// allow this request to be cached
-send_future_expire_header();
 
 // similar code as in program/steps/mail/get.inc
 if ($_GET['_uid'])
   {
-  $MESSAGE = array('UID' => get_input_value('_uid', RCUBE_INPUT_GET));
-  $MESSAGE['headers'] = $IMAP->get_headers($MESSAGE['UID']);
-  $MESSAGE['structure'] = $IMAP->get_structure($MESSAGE['UID']);
+  $MESSAGE = array();
+  $MESSAGE['headers'] = $IMAP->get_headers($_GET['_uid']);
+  $MESSAGE['source'] = rcmail_message_source($_GET['_uid']);
   
   // go back to list if message not found (wrong UID)
-  if (!$MESSAGE['headers'] || !$MESSAGE['structure'])
+  if (!$MESSAGE['headers'] || !$MESSAGE['source'])
     {
-    $OUTPUT->show_message('messageopenerror', 'error');
-    if ($_action=='preview' && template_exists('messagepreview'))
-        parse_template('messagepreview');
-    else
-      {
-      $_action = 'list';
-      return;
-      }
+    $_action = 'list';
+    return;
     }
 
-  $MESSAGE['subject'] = $IMAP->decode_header($MESSAGE['headers']->subject);
-  $OUTPUT->set_pagetitle($MESSAGE['subject']);
-  
+  $mmd = new Mail_mimeDecode($MESSAGE['source']);
+  $MESSAGE['structure'] = $mmd->decode(array('include_bodies' => TRUE,
+                                             'decode_headers' => FALSE,
+                                             'decode_bodies' => FALSE));
+                                             
+  $mmd->getMimeNumbers($MESSAGE['structure']);
+
+  $MESSAGE['subject'] = $IMAP->decode_header($MESSAGE['structure']->headers['subject']);
+
   if ($MESSAGE['structure'])
-    list($MESSAGE['parts'], $MESSAGE['attachments']) = rcmail_parse_message(
-      $MESSAGE['structure'],
-      array('safe' => (bool)$_GET['_safe'],
-            'prefer_html' => $CONFIG['prefer_html'],
-            'get_url' => $GET_URL.'&_part=%s')
-      );
+    list($MESSAGE['parts'], $MESSAGE['attachments']) = rcmail_parse_message($MESSAGE['structure'],
+                                                                           array('safe' => (bool)$_GET['_safe'],
+                                                                                 'prefer_html' => $CONFIG['prefer_html'],
+                                                                                 'get_url' => $GET_URL.'&_part=%s'));
   else
-    $MESSAGE['body'] = $IMAP->get_body($MESSAGE['UID']);
+    $MESSAGE['body'] = $IMAP->get_body($_GET['_uid']);
 
 
   // mark message as read
-  if (!$MESSAGE['headers']->seen && $_action != 'preview')
+  if (!$MESSAGE['headers']->seen)
     $IMAP->set_flag($_GET['_uid'], 'SEEN');
 
   // give message uid to the client
-  $OUTPUT->set_env('uid', $MESSAGE['UID']);
-  $OUTPUT->set_env('safemode', (bool)$_GET['_safe']);
+  $javascript = sprintf("%s.set_env('uid', '%s');\n", $JS_OBJECT_NAME, $_GET['_uid']);
+  $javascript .= sprintf("%s.set_env('safemode', '%b');", $JS_OBJECT_NAME, $_GET['_safe']);
 
   $next = $prev = -1;
-  // get previous, first, next and last message UID
+  // get previous and next message UID
   if (!($_SESSION['sort_col'] == 'date' && $_SESSION['sort_order'] == 'DESC') && 
-      $IMAP->get_capability('sort')) 
-    {
-    // Only if we use custom sorting
-    $a_msg_index = $IMAP->message_index(NULL, $_SESSION['sort_col'], $_SESSION['sort_order']);
+      $IMAP->get_capability('sort')) {
+      // Only if we use custom sorting
+      $a_msg_index = $IMAP->message_index(NULL, $_SESSION['sort_col'], $_SESSION['sort_order']);
  
-    $MESSAGE['index'] = array_search((string)$MESSAGE['UID'], $a_msg_index, TRUE);
-    $prev = isset($a_msg_index[$MESSAGE['index']-1]) ? $a_msg_index[$MESSAGE['index']-1] : -1 ;
-    $first = count($a_msg_index)>0 ? $a_msg_index[0] : -1;
-    $next = isset($a_msg_index[$MESSAGE['index']+1]) ? $a_msg_index[$MESSAGE['index']+1] : -1 ;
-    $last = count($a_msg_index)>0 ? $a_msg_index[count($a_msg_index)-1] : -1;
-    }
-  else
-    {
-    // this assumes that we are sorted by date_DESC
-    $seq = $IMAP->get_id($MESSAGE['UID']);
-    $prev = $IMAP->get_uid($seq + 1);
-    $first = $IMAP->get_uid($IMAP->messagecount());
-    $next = $IMAP->get_uid($seq - 1);
-    $last = $IMAP->get_uid(1);
-    $MESSAGE['index'] = $IMAP->messagecount() - $seq;
-    }
+      $MESSAGE['index'] = array_search((string)$_GET['_uid'], $a_msg_index, TRUE);
+      $prev = isset($a_msg_index[$MESSAGE['index']-1]) ? $a_msg_index[$MESSAGE['index']-1] : -1 ;
+      $next = isset($a_msg_index[$MESSAGE['index']+1]) ? $a_msg_index[$MESSAGE['index']+1] : -1 ;
+  } else {
+      // this assumes that we are sorted by date_DESC
+      $seq = $IMAP->get_id($_GET['_uid']);
+      $prev = $IMAP->get_uid($seq + 1);
+      $next = $IMAP->get_uid($seq - 1);
+      $MESSAGE['index'] = $IMAP->messagecount() - $seq;
+  }
   
   if ($prev > 0)
-    $OUTPUT->set_env('prev_uid', $prev);
-  if ($first >0)
-    $OUTPUT->set_env('first_uid', $first);
+    $javascript .= sprintf("\n%s.set_env('prev_uid', '%s');", $JS_OBJECT_NAME, $prev);
   if ($next > 0)
-    $OUTPUT->set_env('next_uid', $next);
-  if ($last >0)
-    $OUTPUT->set_env('last_uid', $last);
+    $javascript .= sprintf("\n%s.set_env('next_uid', '%s');", $JS_OBJECT_NAME, $next);
+
+  $OUTPUT->add_script($javascript);
   }
 
 
 
 function rcmail_message_attachments($attrib)
   {
-  global $CONFIG, $OUTPUT, $PRINT_MODE, $MESSAGE, $GET_URL;
+  global $CONFIG, $OUTPUT, $PRINT_MODE, $MESSAGE, $GET_URL, $JS_OBJECT_NAME;
 
   if (sizeof($MESSAGE['attachments']))
     {
@@ -119,16 +106,16 @@ function rcmail_message_attachments($attrib)
       {
       if ($PRINT_MODE)
         $out .= sprintf('<li>%s (%s)</li>'."\n",
-                        $attach_prop->filename,
-                        show_bytes($attach_prop->size));
+                        $attach_prop['filename'],
+                        show_bytes($attach_prop['size']));
       else
         $out .= sprintf('<li><a href="%s&amp;_part=%s" onclick="return %s.command(\'load-attachment\',{part:\'%s\', mimetype:\'%s\'},this)">%s</a></li>'."\n",
-                        htmlspecialchars($GET_URL),
-                        $attach_prop->mime_id,
-                        JS_OBJECT_NAME,
-                        $attach_prop->mime_id,
-                        $attach_prop->mimetype,
-                        $attach_prop->filename);
+                        htmlentities($GET_URL),
+                        $attach_prop['part_id'],
+                        $JS_OBJECT_NAME,
+                        $attach_prop['part_id'],
+                        $attach_prop['mimetype'],
+                        $attach_prop['filename']);
       }
 
     $out .= "</ul>";
@@ -138,9 +125,31 @@ function rcmail_message_attachments($attrib)
 
 
 
+// return an HTML iframe for loading mail content
+function rcmail_messagecontent_frame($attrib)
+  {
+  global $COMM_PATH, $OUTPUT, $GET_URL, $JS_OBJECT_NAME;
+  
+  // allow the following attributes to be added to the <iframe> tag
+  $attrib_str = create_attrib_string($attrib);
+  $framename = 'rcmailcontentwindow';
+  
+  $out = sprintf('<iframe src="%s" name="%s"%s>%s</iframe>'."\n",
+         $GET_URL,
+         $framename,
+         $attrib_str,
+         rcube_label('loading'));
+
+
+  $OUTPUT->add_script("$JS_OBJECT_NAME.set_env('contentframe', '$framename');");
+
+  return $out;
+  }
+
+
 function rcmail_remote_objects_msg($attrib)
   {
-  global $CONFIG, $OUTPUT;
+  global $CONFIG, $OUTPUT, $JS_OBJECT_NAME;
   
   if (!$attrib['id'])
     $attrib['id'] = 'rcmremoteobjmsg';
@@ -149,27 +158,21 @@ function rcmail_remote_objects_msg($attrib)
   $attrib_str = create_attrib_string($attrib, array('style', 'class', 'id'));
   $out = '<div' . $attrib_str . ">";
   
-  $out .= sprintf('%s&nbsp;<a href="#loadimages" onclick="%s.command(\'load-images\')">%s</a>',
-                  Q(rcube_label('blockedimages')),
-                  JS_OBJECT_NAME,
-                  Q(rcube_label('showimages')));
+  $out .= rep_specialchars_output(sprintf('%s&nbsp;<a href="#loadimages" onclick="%s.command(\'load-images\')" title="%s">%s</a>',
+                                  rcube_label('blockedimages'),
+                                  $JS_OBJECT_NAME,
+                                  rcube_label('showimages'),
+                                  rcube_label('showimages')));
   
   $out .= '</div>';
   
-  $OUTPUT->add_gui_object('remoteobjectsmsg', $attrib['id']);
+  $OUTPUT->add_script(sprintf("%s.gui_object('remoteobjectsmsg', '%s');", $JS_OBJECT_NAME, $attrib['id']));
   return $out;
   }
 
 
-$OUTPUT->add_handlers(array(
-  'messageattachments' => 'rcmail_message_attachments',
-  'blockedobjects' => 'rcmail_remote_objects_msg'));
-
-
-if ($_action=='print' && template_exists('printmessage'))
+if ($_action=='print')
   parse_template('printmessage');
-else if ($_action=='preview' && template_exists('messagepreview'))
-    parse_template('messagepreview');
 else
   parse_template('message');
 ?>

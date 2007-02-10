@@ -19,6 +19,8 @@
 
 */
 
+$REMOTE_REQUEST = TRUE;
+
 $a_mailboxes = $IMAP->list_mailboxes();
 
 foreach ($a_mailboxes as $mbox_name)
@@ -30,10 +32,10 @@ foreach ($a_mailboxes as $mbox_name)
       $count = $IMAP->messagecount();
       $unread_count = $IMAP->messagecount(NULL, 'UNSEEN', TRUE);
 
-      $OUTPUT->set_env('messagecount', $count);
-      $OUTPUT->command('set_unread_count', $mbox_name, $unread_count);
-      $OUTPUT->command('set_rowcount', rcmail_get_messagecount_text());
-      $OUTPUT->command('set_quota', $IMAP->get_quota());
+      $commands .= sprintf("this.set_unread_count('%s', %d);\n", addslashes($mbox_name), $unread_count);
+      $commands .= sprintf("this.set_env('messagecount', %d);\n", $count);
+      $commands .= sprintf("this.set_rowcount('%s');\n", rcmail_get_messagecount_text());
+      $commands .= sprintf("this.set_quota('%s');\n", $IMAP->get_quota());
 
       // add new message headers to list
       $a_headers = array();
@@ -44,16 +46,15 @@ foreach ($a_mailboxes as $mbox_name)
           $a_headers[] = $header;
         }
 
-      rcmail_js_message_list($a_headers, TRUE);
+      $commands .= rcmail_js_message_list($a_headers, TRUE);
       }
     }
   else
     {
     if ($IMAP->messagecount($mbox_name, 'RECENT'))
-      $OUTPUT->command('set_unread_count', $mbox_name, $IMAP->messagecount($mbox_name, 'UNSEEN'));
+      $commands .= sprintf("this.set_unread_count('%s', %d);\n", addslashes($mbox_name), $IMAP->messagecount($mbox_name, 'UNSEEN'));
     }
   }
 
-$OUTPUT->send();
-
+rcube_remote_response($commands);
 ?>

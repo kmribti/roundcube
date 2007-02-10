@@ -5,7 +5,7 @@
  | program/include/rcube_imap.inc                                        |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005-2006, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -26,6 +26,7 @@
  */
 require_once('lib/imap.inc');
 require_once('lib/mime.inc');
+require_once('lib/utf7.inc');
 
 
 /**
@@ -35,7 +36,7 @@ require_once('lib/mime.inc');
  *
  * @package    RoundCube Webmail
  * @author     Thomas Bruederli <roundcube@gmail.com>
- * @version    1.36
+ * @version    1.31
  * @link       http://ilohamail.org
  */
 class rcube_imap
@@ -60,10 +61,6 @@ class rcube_imap
   var $msg_headers = array();
   var $capabilities = array();
   var $skip_deleted = FALSE;
-  var $search_set = NULL;
-  var $search_subject = '';
-  var $search_string = '';
-  var $search_charset = '';
   var $debug_level = 1;
 
 
@@ -136,10 +133,11 @@ class rcube_imap
                        'message' => $GLOBALS['iil_error']), TRUE, FALSE);
       }
 
-    // get server properties
+    // get account namespace
     if ($this->conn)
       {
       $this->_parse_capability($this->conn->capability);
+      iil_C_NameSpace($this->conn);
       
       if (!empty($this->conn->delimiter))
         $this->delimiter = $this->conn->delimiter;
@@ -268,36 +266,6 @@ class rcube_imap
   function set_pagesize($size)
     {
     $this->page_size = (int)$size;
-    }
-    
-
-  /**
-   * Save a set of message ids for future message listing methods
-   *
-   * @param  array  List of IMAP fields to search in
-   * @param  string Search string
-   * @param  array  List of message ids or NULL if empty
-   */
-  function set_search_set($subject, $str=null, $msgs=null, $charset=null)
-    {
-    if (is_array($subject) && $str == null && $msgs == null)
-      list($subject, $str, $msgs, $charset) = $subject;
-    if ($msgs != null && !is_array($msgs))
-      $msgs = split(',', $msgs);
-      
-    $this->search_subject = $subject;
-    $this->search_string = $str;
-    $this->search_set = is_array($msgs) ? $msgs : NULL;
-    $this->search_charset = $charset;
-    }
-
-
-  /**
-   * Return the saved search set as hash array
-   */
-  function get_search_set()
-    {
-    return array($this->search_subject, $this->search_string, $this->search_set, $this->search_charset);
     }
 
 
@@ -436,10 +404,6 @@ class rcube_imap
 
     if (empty($mailbox))
       $mailbox = $this->mailbox;
-      
-    // count search set
-    if ($this->search_set && $mailbox == $this->mailbox && $mode == 'ALL')
-      return count($this->search_set);
 
     $a_mailbox_cache = $this->get_cache('messagecount');
     
@@ -519,11 +483,7 @@ class rcube_imap
     {
     if (!strlen($mailbox))
       return array();
-
-    // use saved message set
-    if ($this->search_set && $mailbox == $this->mailbox)
-      return $this->_list_header_set($mailbox, $this->search_set, $page, $sort_field, $sort_order);
-
+      
     if ($sort_field!=NULL)
       $this->sort_field = $sort_field;
     if ($sort_order!=NULL)
@@ -534,10 +494,10 @@ class rcube_imap
 
     list($begin, $end) = $this->_get_message_range($max, $page);
 
-    // mailbox is empty
+  	// mailbox is empty
     if ($begin >= $end)
       return array();
-      
+
     $headers_sorted = FALSE;
     $cache_key = $mailbox.'.msg';
     $cache_status = $this->check_cache_status($mailbox, $cache_key);
@@ -656,14 +616,14 @@ class rcube_imap
     $this->_fetch_headers($mailbox, join(',', $msgs), $a_msg_headers, NULL);
 
     // return empty array if no messages found
-    if (!is_array($a_msg_headers) || empty($a_msg_headers))
-      return array();
+	if (!is_array($a_msg_headers) || empty($a_msg_headers))
+		return array();
 
     // if not already sorted
     $a_msg_headers = iil_SortHeaders($a_msg_headers, $this->sort_field, $this->sort_order);
 
-    // only return the requested part of the set
-    return array_slice(array_values($a_msg_headers), $start_msg, min($max-$start_msg, $this->page_size));
+	// only return the requested part of the set
+	return array_slice(array_values($a_msg_headers), $start_msg, min($max-$start_msg, $this->page_size));
     }
 
 
@@ -750,14 +710,7 @@ class rcube_imap
     }
     
   
-  /**
-   * Return sorted array of message UIDs
-   *
-   * @param string Mailbox to get index from
-   * @param string Sort column
-   * @param string Sort order [ASC, DESC]
-   * @return array Indexed array with message ids
-   */
+  // return sorted array of message UIDs
   function message_index($mbox_name='', $sort_field=NULL, $sort_order=NULL)
     {
     if ($sort_field!=NULL)
@@ -828,6 +781,7 @@ class rcube_imap
       // message in cache at correct position
       if ($cache_index[$id] == $uid)
         {
+// console("$id / $uid: OK");
         unset($cache_index[$id]);
         continue;
         }
@@ -835,16 +789,20 @@ class rcube_imap
       // message in cache but in wrong position
       if (in_array((string)$uid, $cache_index, TRUE))
         {
+// console("$id / $uid: Moved");
         unset($cache_index[$id]);        
         }
       
       // other message at this position
       if (isset($cache_index[$id]))
         {
+// console("$id / $uid: Delete");
         $this->remove_message_cache($cache_key, $id);
         unset($cache_index[$id]);
         }
         
+
+// console("$id / $uid: Add");
 
       // fetch complete headers and add to cache
       $headers = iil_C_FetchHeader($this->conn, $mailbox, $id);
@@ -872,28 +830,15 @@ class rcube_imap
   function search($mbox_name='', $criteria='ALL', $str=NULL, $charset=NULL)
     {
     $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
-
-    // have an array of criterias => execute multiple searches
-    if (is_array($criteria) && $str)
-      {
-      $results = array();
-      foreach ($criteria as $crit)
-        $results = array_merge($results, $this->search($mbox_name, $crit, $str, $charset));
-      
-      $results = array_unique($results);
-      $this->set_search_set($criteria, $str, $results, $charset);
-      return $results;
-      }
-    else if ($str && $criteria)
+    if ($str && $criteria)
       {
       $search = (!empty($charset) ? "CHARSET $charset " : '') . sprintf("%s {%d}\r\n%s", $criteria, strlen($str), $str);
       $results = $this->_search_index($mailbox, $search);
 
-      // try search with ISO charset (should be supported by server)
-      if (empty($results) && !empty($charset) && $charset!='ISO-8859-1')
-        $results = $this->search($mbox_name, $criteria, rcube_charset_convert($str, $charset, 'ISO-8859-1'), 'ISO-8859-1');
+      // try search without charset (probably not supported by server)
+      if (empty($results))
+        $results = $this->_search_index($mailbox, "$criteria $str");
       
-      $this->set_search_set($criteria, $str, $results, $charset);
       return $results;
       }
     else
@@ -921,311 +866,46 @@ class rcube_imap
         
     return $a_messages;
     }
-    
-  
-  /**
-   * Refresh saved search set
-   */
-  function refresh_search()
-    {
-    if (!empty($this->search_subject) && !empty($this->search_string))
-      $this->search_set = $this->search('', $this->search_subject, $this->search_string, $this->search_charset);
-      
-    return $this->get_search_set();
-    }
 
 
-  /**
-   * Return message headers object of a specific message
-   *
-   * @param int     Message ID
-   * @param string  Mailbox to read from 
-   * @param boolean True if $id is the message UID
-   * @return object Message headers representation
-   */
   function get_headers($id, $mbox_name=NULL, $is_uid=TRUE)
     {
     $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
-    $uid = $is_uid ? $id : $this->_id2uid($id);
 
     // get cached headers
-    if ($uid && ($headers = &$this->get_cached_message($mailbox.'.msg', $uid)))
+    if ($is_uid && ($headers = $this->get_cached_message($mailbox.'.msg', $id)))
       return $headers;
 
-    $headers = iil_C_FetchHeader($this->conn, $mailbox, $id, $is_uid);
+    $msg_id = $is_uid ? $this->_uid2id($id) : $id;
+    $headers = iil_C_FetchHeader($this->conn, $mailbox, $msg_id);
 
     // write headers cache
     if ($headers)
-      {
-      if ($is_uid)
-        $this->uid_id_map[$mbox_name][$uid] = $headers->id;
-
-      $this->add_message_cache($mailbox.'.msg', $headers->id, $headers);
-      }
+      $this->add_message_cache($mailbox.'.msg', $msg_id, $headers);
 
     return $headers;
     }
 
 
-  /**
-   * Fetch body structure from the IMAP server and build
-   * an object structure similar to the one generated by PEAR::Mail_mimeDecode
-   *
-   * @param Int Message UID to fetch
-   * @return object Standard object tree or False on failure
-   */
-  function &get_structure($uid)
+  function get_body($uid, $part=1)
     {
-    $cache_key = $this->mailbox.'.msg';
-    $headers = &$this->get_cached_message($cache_key, $uid, true);
-
-    // return cached message structure
-    if (is_object($headers) && is_object($headers->structure))
-      return $headers->structure;
-    
-    // resolve message sequence number
     if (!($msg_id = $this->_uid2id($uid)))
       return FALSE;
 
 	$structure_str = iil_C_FetchStructureString($this->conn, $this->mailbox, $msg_id); 
 	$structure = iml_GetRawStructureArray($structure_str);
-	$struct = false;
-	
-    // parse structure and add headers
-    if (!empty($structure))
-      {
-      $this->_msg_id = $msg_id;
-      $headers = $this->get_headers($msg_id, NULL, FALSE);
-      
-      $struct = &$this->_structure_part($structure);
-      $struct->headers = get_object_vars($headers);
+    $body = iil_C_FetchPartBody($this->conn, $this->mailbox, $msg_id, $part);
 
-      // don't trust given content-type
-      if (empty($struct->parts) && !empty($struct->headers['ctype']))
-        {
-        $struct->mime_id = '1';
-        $struct->mimetype = strtolower($struct->headers['ctype']);
-        list($struct->ctype_primary, $struct->ctype_secondary) = explode('/', $struct->mimetype);
-        }
-
-      // write structure to cache
-      if ($this->caching_enabled)
-        $this->add_message_cache($cache_key, $msg_id, $headers, $struct);
-      }
-	
-	return $struct;
-	}
-
-  
-  /**
-   * Build message part object
-   *
-   * @access private
-   */
-  function &_structure_part($part, $count=0, $parent='')
-    {
-    $struct = new rcube_message_part;
-    $struct->mime_id = empty($parent) ? (string)$count : "$parent.$count";
+    $encoding = iml_GetPartEncodingCode($structure, $part);
     
-    // multipart
-    if (is_array($part[0]))
-      {
-      $struct->ctype_primary = 'multipart';
-      
-      // find first non-array entry
-      for ($i=1; count($part); $i++)
-        if (!is_array($part[$i]))
-          {
-          $struct->ctype_secondary = strtolower($part[$i]);
-          break;
-          }
-          
-      $struct->mimetype = 'multipart/'.$struct->ctype_secondary;
-
-      $struct->parts = array();
-      for ($i=0, $count=0; $i<count($part); $i++)
-        if (is_array($part[$i]) && count($part[$i]) > 5)
-          $struct->parts[] = $this->_structure_part($part[$i], ++$count, $struct->mime_id);
-
-      return $struct;      
-      }
-    
-    
-    // regular part
-    $struct->ctype_primary = strtolower($part[0]);
-    $struct->ctype_secondary = strtolower($part[1]);
-    $struct->mimetype = $struct->ctype_primary.'/'.$struct->ctype_secondary;
-	
-    // read content type parameters
-	if (is_array($part[2]))
-	  {
-	  $struct->ctype_parameters = array();
-      for ($i=0; $i<count($part[2]); $i+=2)
-        $struct->ctype_parameters[strtolower($part[2][$i])] = $part[2][$i+1];
-        
-      if (isset($struct->ctype_parameters['charset']))
-        $struct->charset = $struct->ctype_parameters['charset'];
-	  }
-	  
-	// read content encoding
-	if (!empty($part[5]) && $part[5]!='NIL')
-	  {
-	  $struct->encoding = strtolower($part[5]);
-	  $struct->headers['content-transfer-encoding'] = $struct->encoding;
-	  }
-	  
-	// get part size
-	if (!empty($part[6]) && $part[6]!='NIL')
-	  $struct->size = intval($part[6]);
-
-	// read part disposition
-    $di = count($part) - 2;
-    if ((is_array($part[$di]) && count($part[$di]) == 2 && is_array($part[$di][1])) ||
-        (is_array($part[--$di]) && count($part[$di]) == 2))
-      {
-      $struct->disposition = strtolower($part[$di][0]);
-
-      if (is_array($part[$di][1]))
-        for ($n=0; $n<count($part[$di][1]); $n+=2)
-          $struct->d_parameters[strtolower($part[$di][1][$n])] = $part[$di][1][$n+1];
-      }
-      
-    // get child parts
-    if (is_array($part[8]) && $di != 8)
-      {
-      $struct->parts = array();
-      for ($i=0, $count=0; $i<count($part[8]); $i++)
-        if (is_array($part[8][$i]) && count($part[8][$i]) > 5)
-          $struct->parts[] = $this->_structure_part($part[8][$i], ++$count, $struct->mime_id);
-      }
-      
-	// get part ID
-	if (!empty($part[3]) && $part[3]!='NIL')
-	  {
-	  $struct->content_id = $part[3];
-	  $struct->headers['content-id'] = $part[3];
-	  
-	  if (empty($struct->disposition))
-	    $struct->disposition = 'inline';
-	  }
-
-    // fetch message headers if message/rfc822
-    if ($struct->ctype_primary=='message')
-      {
-      $headers = iil_C_FetchPartBody($this->conn, $this->mailbox, $this->_msg_id, $struct->mime_id.'.HEADER');
-      $struct->headers = $this->_parse_headers($headers);
-      }
-  
-  	return $struct;
-    }
-    
-  
-  /**
-   * Return a flat array with references to all parts, indexed by part numbmers
-   *
-   * @param object Message body structure
-   * @return Array with part number -> object pairs
-   */
-  function get_mime_numbers(&$structure)
-    {
-    $a_parts = array();
-    $this->_get_part_numbers($structure, $a_parts);
-    return $a_parts;
-    }
-  
-  
-  /**
-   * Helper method for recursive calls
-   *
-   * @access 
-   */
-  function _get_part_numbers(&$part, &$a_parts)
-    {
-    if ($part->mime_id)
-      $a_parts[$part->mime_id] = &$part;
-      
-    if (is_array($part->parts))
-      for ($i=0; $i<count($part->parts); $i++)
-        $this->_get_part_numbers($part->parts[$i], $a_parts);
-    }
-  
-
-  /**
-   * Fetch message body of a specific message from the server
-   *
-   * @param  int    Message UID
-   * @param  string Part number
-   * @param  object Part object created by get_structure()
-   * @param  mixed  True to print part, ressource to write part contents in
-   * @return Message/part body if not printed
-   */
-  function &get_message_part($uid, $part=1, $o_part=NULL, $print=NULL)
-    {
-    if (!($msg_id = $this->_uid2id($uid)))
-      return FALSE;
-    
-    // get part encoding if not provided
-    if (!is_object($o_part))
-      {
-      $structure_str = iil_C_FetchStructureString($this->conn, $this->mailbox, $msg_id); 
-      $structure = iml_GetRawStructureArray($structure_str);
-      $part_type = iml_GetPartTypeCode($structure, $part);
-      $o_part = new rcube_message_part;
-      $o_part->ctype_primary = $part_type==0 ? 'text' : ($part_type==2 ? 'message' : 'other');
-      $o_part->encoding = strtolower(iml_GetPartEncodingString($structure, $part));
-      $o_part->charset = iml_GetPartCharset($structure, $part);
-      }
-      
-    // TODO: Add caching for message parts
-
-    if ($print)
-      {
-      iil_C_HandlePartBody($this->conn, $this->mailbox, $msg_id, $part, ($o_part->encoding=='base64'?3:2));
-      $body = TRUE;
-      }
-    else
-      {
-      $body = iil_C_HandlePartBody($this->conn, $this->mailbox, $msg_id, $part, 1);
-
-      // decode part body
-      if ($o_part->encoding=='base64' || $o_part->encoding=='quoted-printable')
-        $body = $this->mime_decode($body, $o_part->encoding);
-
-      // convert charset (if text or message part)
-      if ($o_part->ctype_primary=='text' || $o_part->ctype_primary=='message')
-        {
-        // assume ISO-8859-1 if no charset specified
-        if (empty($o_part->charset))
-          $o_part->charset = 'ISO-8859-1';
-
-        $body = rcube_charset_convert($body, $o_part->charset);
-        }
-      }
+    if ($encoding==3) $body = $this->mime_decode($body, 'base64');
+    else if ($encoding==4) $body = $this->mime_decode($body, 'quoted-printable');
 
     return $body;
     }
 
 
-  /**
-   * Fetch message body of a specific message from the server
-   *
-   * @param  int    Message UID
-   * @return Message/part body
-   * @see    ::get_message_part()
-   */
-  function &get_body($uid, $part=1)
-    {
-    return $this->get_message_part($uid, $part);
-    }
-
-
-  /**
-   * Returns the whole message source as string
-   *
-   * @param int  Message UID
-   * @return Message source string
-   */
-  function &get_raw_body($uid)
+  function get_raw_body($uid)
     {
     if (!($msg_id = $this->_uid2id($uid)))
       return FALSE;
@@ -1235,31 +915,10 @@ class rcube_imap
 
     return $body;    
     }
-    
-
-  /**
-   * Sends the whole message source to stdout
-   *
-   * @param int  Message UID
-   */ 
-  function print_raw_body($uid)
-    {
-    if (!($msg_id = $this->_uid2id($uid)))
-      return FALSE;
-
-	print iil_C_FetchPartHeader($this->conn, $this->mailbox, $msg_id, NULL);
-	flush();
-	iil_C_HandlePartBody($this->conn, $this->mailbox, $msg_id, NULL, 2);
-    }
 
 
-  /**
-   * Set message flag to one or several messages
-   *
-   * @param mixed  Message UIDs as array or as comma-separated string
-   * @param string Flag to set: SEEN, UNDELETED, DELETED, RECENT, ANSWERED, DRAFT
-   * @return True on success, False on failure
-   */
+  // set message flag to one or several messages
+  // possible flags are: SEEN, UNDELETED, DELETED, RECENT, ANSWERED, DRAFT
   function set_flag($uids, $flag)
     {
     $flag = strtoupper($flag);
@@ -1370,10 +1029,6 @@ class rcube_imap
       $this->_clear_messagecount($from_mbox);
       $this->_clear_messagecount($to_mbox);
       }
-      
-    // remove message ids from search set
-    if ($moved && $this->search_set && $from_mbox == $this->mailbox)
-      $this->search_set = array_diff($this->search_set, $a_mids);
 
     // update cached message headers
     $cache_key = $from_mbox.'.msg';
@@ -1382,8 +1037,8 @@ class rcube_imap
       $start_index = 100000;
       foreach ($a_uids as $uid)
         {
-        if (($index = array_search($uid, $a_cache_index)) !== FALSE)
-          $start_index = min($index, $start_index);
+        if(($index = array_search($uid, $a_cache_index)) !== FALSE)
+	  $start_index = min($index, $start_index);
         }
 
       // clear cache from the lowest index on
@@ -1422,10 +1077,6 @@ class rcube_imap
       $this->_expunge($mailbox, FALSE);
       $this->_clear_messagecount($mailbox);
       }
-
-    // remove message ids from search set
-    if ($moved && $this->search_set && $mailbox == $this->mailbox)
-      $this->search_set = array_diff($this->search_set, $a_mids);
 
     // remove deleted messages from cache
     $cache_key = $mailbox.'.msg';
@@ -1539,8 +1190,12 @@ class rcube_imap
   function get_quota()
     {
     if ($this->get_capability('QUOTA'))
-      return iil_C_GetQuota($this->conn);
-	
+      {
+      $result = iil_C_GetQuota($this->conn);
+      if ($result["total"])
+        return sprintf("%.2fMB / %.2fMB (%.0f%%)", $result["used"] / 1000.0, $result["total"] / 1000.0, $result["percent"]);       
+      }
+
     return FALSE;
     }
 
@@ -1576,11 +1231,7 @@ class rcube_imap
 
 
   /**
-   * Create a new mailbox on the server and register it in local cache
-   *
-   * @param string  New mailbox name (as utf-7 string)
-   * @param boolean True if the new mailbox should be subscribed
-   * @param string  Name of the created mailbox, false on error
+   * create a new mailbox on the server and register it in local cache
    */
   function create_mailbox($name, $subscribe=FALSE)
     {
@@ -1589,10 +1240,12 @@ class rcube_imap
     // replace backslashes
     $name = preg_replace('/[\\\]+/', '-', $name);
 
-    // reduce mailbox name to 100 chars
-    $name = substr($name, 0, 100);
+    $name_enc = UTF7EncodeString($name);
 
-    $abs_name = $this->_mod_mailbox($name);
+    // reduce mailbox name to 100 chars
+    $name_enc = substr($name_enc, 0, 100);
+
+    $abs_name = $this->_mod_mailbox($name_enc);
     $a_mailbox_cache = $this->get_cache('mailboxes');
 
     if (strlen($abs_name) && (!is_array($a_mailbox_cache) || !in_array_nocase($abs_name, $a_mailbox_cache)))
@@ -1600,18 +1253,14 @@ class rcube_imap
 
     // try to subscribe it
     if ($subscribe)
-      $this->subscribe($name);
+      $this->subscribe($name_enc);
 
     return $result ? $name : FALSE;
     }
 
 
   /**
-   * Set a new name to an existing mailbox
-   *
-   * @param string Mailbox to rename (as utf-7 string)
-   * @param string New mailbox name (as utf-7 string)
-   * @param string Name of the renames mailbox, false on error
+   * set a new name to an existing mailbox
    */
   function rename_mailbox($mbox_name, $new_name)
     {
@@ -1621,33 +1270,21 @@ class rcube_imap
     $name = preg_replace('/[\\\]+/', '-', $new_name);
         
     // encode mailbox name and reduce it to 100 chars
-    $name = substr($new_name, 0, 100);
+    $name_enc = substr(UTF7EncodeString($new_name), 0, 100);
 
     // make absolute path
     $mailbox = $this->_mod_mailbox($mbox_name);
-    $abs_name = $this->_mod_mailbox($name);
+    $abs_name = $this->_mod_mailbox($name_enc);
     
-    // check if mailbox is subscribed
-    $a_subscribed = $this->_list_mailboxes();
-    $subscribed = in_array($mailbox, $a_subscribed);
-    
-    // unsubscribe folder
-    if ($subscribed)
-      iil_C_UnSubscribe($this->conn, $mailbox);
-
     if (strlen($abs_name))
       $result = iil_C_RenameFolder($this->conn, $mailbox, $abs_name);
-
+    
     // clear cache
     if ($result)
       {
       $this->clear_message_cache($mailbox.'.msg');
-      $this->clear_cache('mailboxes');      
+      $this->clear_cache('mailboxes');
       }
-
-    // try to subscribe it
-    if ($result && $subscribed)
-      iil_C_Subscribe($this->conn, $abs_name);
 
     return $result ? $name : FALSE;
     }
@@ -1836,7 +1473,7 @@ class rcube_imap
       {
       $this->db->query(
         "UPDATE ".get_table_name('cache')."
-         SET    created=".$this->db->now().",
+         SET    created=now(),
                 data=?
          WHERE  user_id=?
          AND    cache_key=?",
@@ -1850,7 +1487,7 @@ class rcube_imap
       $this->db->query(
         "INSERT INTO ".get_table_name('cache')."
          (created, user_id, cache_key, data)
-         VALUES (".$this->db->now().", ?, ?, ?)",
+         VALUES (now(), ?, ?, ?)",
         $_SESSION['user_id'],
         $key,
         $data);
@@ -1944,16 +1581,18 @@ class rcube_imap
     }
 
 
-  function &get_cached_message($key, $uid, $struct=false)
+  function get_cached_message($key, $uid, $body=FALSE)
     {
     if (!$this->caching_enabled)
       return FALSE;
 
     $internal_key = '__single_msg';
-    if ($this->caching_enabled && (!isset($this->cache[$internal_key][$uid]) ||
-        ($struct && empty($this->cache[$internal_key][$uid]->structure))))
+    if ($this->caching_enabled && (!isset($this->cache[$internal_key][$uid]) || $body))
       {
-      $sql_select = "idx, uid, headers" . ($struct ? ", structure" : '');
+      $sql_select = "idx, uid, headers";
+      if ($body)
+        $sql_select .= ", body";
+      
       $sql_result = $this->db->query(
         "SELECT $sql_select
          FROM ".get_table_name('messages')."
@@ -1963,12 +1602,14 @@ class rcube_imap
         $_SESSION['user_id'],
         $key,
         $uid);
-
+      
       if ($sql_arr = $this->db->fetch_assoc($sql_result))
         {
-        $this->cache[$internal_key][$uid] = unserialize($sql_arr['headers']);
-        if (is_object($this->cache[$internal_key][$uid]) && !empty($sql_arr['structure']))
-          $this->cache[$internal_key][$uid]->structure = unserialize($sql_arr['structure']);
+        $headers = unserialize($sql_arr['headers']);
+        if (is_object($headers) && !empty($sql_arr['body']))
+          $headers->body = $sql_arr['body'];
+
+        $this->cache[$internal_key][$uid] = $headers;
         }
       }
 
@@ -2004,55 +1645,25 @@ class rcube_imap
     }
 
 
-  function add_message_cache($key, $index, $headers, $struct=null)
+  function add_message_cache($key, $index, $headers)
     {
-    if (empty($key) || !is_object($headers) || empty($headers->uid))
+    if (!$key || !is_object($headers) || empty($headers->uid))
       return;
-      
-    // check for an existing record (probly headers are cached but structure not)
-    $sql_result = $this->db->query(
-        "SELECT message_id
-         FROM ".get_table_name('messages')."
-         WHERE  user_id=?
-         AND    cache_key=?
-         AND    uid=?
-         AND    del<>1",
-        $_SESSION['user_id'],
-        $key,
-        $headers->uid);
 
-    // update cache record
-    if ($sql_arr = $this->db->fetch_assoc($sql_result))
-      {
-      $this->db->query(
-        "UPDATE ".get_table_name('messages')."
-         SET   idx=?, headers=?, structure=?
-         WHERE message_id=?",
-        $index,
-        serialize($headers),
-        is_object($struct) ? serialize($struct) : NULL,
-        $sql_arr['message_id']
-        );
-      }
-    else  // insert new record
-      {
-      $this->db->query(
-        "INSERT INTO ".get_table_name('messages')."
-         (user_id, del, cache_key, created, idx, uid, subject, ".$this->db->quoteIdentifier('from').", ".$this->db->quoteIdentifier('to').", cc, date, size, headers, structure)
-         VALUES (?, 0, ?, ".$this->db->now().", ?, ?, ?, ?, ?, ?, ".$this->db->fromunixtime($headers->timestamp).", ?, ?, ?)",
-        $_SESSION['user_id'],
-        $key,
-        $index,
-        $headers->uid,
-        (string)substr($this->decode_header($headers->subject, TRUE), 0, 128),
-        (string)substr($this->decode_header($headers->from, TRUE), 0, 128),
-        (string)substr($this->decode_header($headers->to, TRUE), 0, 128),
-        (string)substr($this->decode_header($headers->cc, TRUE), 0, 128),
-        (int)$headers->size,
-        serialize($headers),
-        is_object($struct) ? serialize($struct) : NULL
-        );
-      }
+    $this->db->query(
+      "INSERT INTO ".get_table_name('messages')."
+       (user_id, del, cache_key, created, idx, uid, subject, ".$this->db->quoteIdentifier('from').", ".$this->db->quoteIdentifier('to').", cc, date, size, headers)
+       VALUES (?, 0, ?, now(), ?, ?, ?, ?, ?, ?, ".$this->db->fromunixtime($headers->timestamp).", ?, ?)",
+      $_SESSION['user_id'],
+      $key,
+      $index,
+      $headers->uid,
+      (string)substr($this->decode_header($headers->subject, TRUE), 0, 128),
+      (string)substr($this->decode_header($headers->from, TRUE), 0, 128),
+      (string)substr($this->decode_header($headers->to, TRUE), 0, 128),
+      (string)substr($this->decode_header($headers->cc, TRUE), 0, 128),
+      (int)$headers->size,
+      serialize($headers));
     }
     
     
@@ -2429,31 +2040,9 @@ class rcube_imap
     }
 
 
-  // split RFC822 header string into an associative array
-  function _parse_headers($headers)
-    {
-    $a_headers = array();
-    $lines = explode("\n", $headers);
-    $c = count($lines);
-    for ($i=0; $i<$c; $i++)
-      {
-      if ($p = strpos($lines[$i], ': '))
-        {
-        $field = strtolower(substr($lines[$i], 0, $p));
-        $value = trim(substr($lines[$i], $p+1));
-        if (!empty($value))
-          $a_headers[$field] = $value;
-        }
-      }
-    
-    return $a_headers;
-    }
-
-
   function _parse_address_list($str)
     {
-    // remove any newlines and carriage returns before
-    $a = $this->_explode_quoted_string(',', preg_replace( "/[\r\n]/", " ", $str));
+    $a = $this->_explode_quoted_string(',', $str);
     $result = array();
     
     foreach ($a as $key => $val)
@@ -2464,7 +2053,7 @@ class rcube_imap
 
       foreach ($sub_a as $k => $v)
         {
-        if (($p = strpos($v, '@')) > 0 && strpos($v, '.') > $p)
+        if ((strpos($v, '@') > 0) && (strpos($v, '.') > 0)) 
           $result[$key]['address'] = str_replace('<', '', str_replace('>', '', $v));
         else
           $result[$key]['name'] .= (empty($result[$key]['name'])?'':' ').str_replace("\"",'',stripslashes($v));
@@ -2495,25 +2084,6 @@ class rcube_imap
     }
   }
 
-
-/**
- * Class representing a message part
- */
-class rcube_message_part
-{
-  var $mime_id = '';
-  var $ctype_primary = 'text';
-  var $ctype_secondary = 'plain';
-  var $mimetype = 'text/plain';
-  var $disposition = '';
-  var $encoding = '8bit';
-  var $charset = '';
-  var $size = 0;
-  var $headers = array();
-  var $d_parameters = array();
-  var $ctype_parameters = array();
-
-}
 
 
 /**
@@ -2654,6 +2224,5 @@ function quoted_printable_encode($input, $line_max=76, $space_conv=false)
 
   return trim($output);
   }
-
 
 ?>
