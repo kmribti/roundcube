@@ -66,6 +66,10 @@ $iil_error;
 $iil_errornum;
 $iil_selected;
 
+/**
+ * create empty classes to 
+ * 'host' variables - but why?
+ */
 class iilConnection{
 	var $fp;
 	var $error;
@@ -126,14 +130,19 @@ function iil_xor($string, $string2){
     return $result;
 }
 
-function iil_ReadLine($fp, $size){
-	$line="";
-	if ($fp){
-		do{
-			$buffer = fgets($fp, 2048);
-			$line.=$buffer;
-		}while($buffer[strlen($buffer)-1]!="\n");
+function iil_ReadLine($fp, $size)
+{
+	$line = (string) '';
+    if (!is_resource($fp))
+    {
+        return $line;
+    }
+    do
+    {
+		$buffer = fgets($fp, 2048);
+		$line.=$buffer;
 	}
+    while($buffer[strlen($buffer)-1]!="\n");
 	return $line;
 }
 
@@ -197,9 +206,12 @@ function iil_StartsWithI($string, $match){
 function iil_C_Authenticate(&$conn, $user, $pass, $encChallenge){
     
     // initialize ipad, opad
-    for ($i=0;$i<64;$i++){
-        $ipad.=chr(0x36);
-        $opad.=chr(0x5C);
+    $ipad = (string) '';
+    $opad = (string) '';
+    for ($i=0;$i<64;$i++)
+    {
+        $ipad.= chr(0x36);
+        $opad.= chr(0x5C);
     }
     // pad $pass so it's 64 bytes
     $padLen = 64 - strlen($pass);
@@ -258,15 +270,28 @@ function iil_ParseNamespace2($str, &$i, $len=0, $l){
 			$i++;
 			$data[$elem] = iil_ParseNamespace2($str, $i, $len, $l++);
 			$elem++;
-		}else if ($c==')' && !$in_quotes) return $data;
-		else if ($c=="\\"){
+		}
+        else if ($c==')' && !$in_quotes)
+        {
+            return $data;
+		}
+        else if ($c=="\\")
+        {
 			$i++;
 			if ($in_quotes) $data[$elem].=$c.$str[$i];
-		}else if ($c=='"'){
+		}
+        else if ($c=='"')
+        {
 			$in_quotes = !$in_quotes;
-			if (!$in_quotes) $elem++;
-		}else if ($in_quotes){
-			$data[$elem].=$c;
+			if (!$in_quotes)
+                $elem++;
+		}
+        else if ($in_quotes)
+        {
+            if (!isset($data[$elem]))
+                $data[$elem] = (string) '';
+
+			$data[$elem] .= $c;
 		}
 	}
 	return $data;
@@ -305,7 +330,8 @@ function iil_C_NameSpace(&$conn){
 
 }
 
-function iil_Connect($host, $user, $password){	
+function iil_Connect($host, $user, $password){
+	
     global $iil_error, $iil_errornum;
 	global $ICL_SSL, $ICL_PORT;
 	global $IMAP_NO_CACHE;
@@ -337,7 +363,7 @@ function iil_Connect($host, $user, $password){
 	$conn->user = $user;
 	$conn->host = $host;
 	$conn->cache = array();
-	$conn->do_cache = (function_exists("cache_write")&&!$IMAP_NO_CACHE);
+	$conn->do_cache = (function_exists('cache_write')&& $IMAP_NO_CACHE === false);
 	$conn->cache_dirty = array();
 	
 	if ($my_prefs['sort_field']=='INTERNALDATE') $IMAP_USE_INTERNAL_DATE = true;
@@ -363,11 +389,11 @@ function iil_Connect($host, $user, $password){
         $iil_errornum = -1;
 		return false;
 	}
-
 	$iil_error.="Socket connection established\r\n";
 	$line=iil_ReadLine($conn->fp, 300);
 
-	if (strcasecmp($auth_method, "check")==0){
+	if (strcasecmp($auth_method, "check")==0)
+    {
 		//check for supported auth methods
 		
 		//default to plain text auth
@@ -376,8 +402,8 @@ function iil_Connect($host, $user, $password){
 		//check for CRAM-MD5
 		fputs($conn->fp, "cp01 CAPABILITY\r\n");
 		do{
-		$line = trim(chop(iil_ReadLine($conn->fp, 100)));
-		$conn->message.="$line\n";
+		    $line = trim(chop(iil_ReadLine($conn->fp, 100)));
+		    $conn->message.="$line\n";
 			$a = explode(" ", $line);
 			if ($line[0]=="*"){
 				while ( list($k, $w) = each($a) ){
@@ -391,7 +417,7 @@ function iil_Connect($host, $user, $password){
 			}
 		}while($a[0]!="cp01");
 	}
-
+    $auth = (string) '';
 	if (strcasecmp($auth_method, "auth")==0){
 		$conn->message.="Trying CRAM-MD5\n";
 		//do CRAM-MD5 authentication

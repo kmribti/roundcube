@@ -156,8 +156,10 @@ class rcCore
         }
 
         // reset some session parameters when changing task
-        if ($_SESSION['task'] != $task)
+        if (isset($_SESSION['task']) && $_SESSION['task'] != $task)
+        {
             unset($_SESSION['page']);
+        }
 
         // set current task to session
         $_SESSION['task'] = $task;
@@ -501,7 +503,7 @@ class rcCore
             throw new rcException('Unknown host.');
         }
         // parse $host URL
-        var_dump($host);
+        //var_dump($host);
         $a_host = @parse_url($host);
         if ($a_host === false)
         {
@@ -641,7 +643,7 @@ class rcCore
               $user_email,
 		      $_SESSION['user_lang']);
 
-        if ($user_id = $this->DB->insert_id(get_sequence_name('users')))
+        if ($user_id = $this->DB->insert_id($this->get_sequence_name('users')))
         {
             $mail_domain = $host;
             if (is_array($this->CONFIG['mail_domain']))
@@ -675,7 +677,7 @@ class rcCore
 
                        
             // get existing mailboxes
-            $a_mailboxes = $IMAP->list_mailboxes();
+            $a_mailboxes = $this->IMAP->list_mailboxes();
         }
         else
         {
@@ -843,7 +845,7 @@ class rcCore
     // encrypt IMAP password using DES encryption
     function encrypt_passwd($pass)
     {
-        $cypher = des(get_des_key(), $pass, 1, 0, NULL);
+        $cypher = des(rcCore::get_des_key(), $pass, 1, 0, NULL);
         return base64_encode($cypher);
     }
 
@@ -851,7 +853,7 @@ class rcCore
     // decrypt IMAP password using DES encryption
     static function decrypt_passwd($cypher)
     {
-        $pass = des(get_des_key(), base64_decode($cypher), 0, 0, NULL);
+        $pass = des(rcCore::get_des_key(), base64_decode($cypher), 0, 0, NULL);
         return preg_replace('/\x00/', '', $pass);
     }
 

@@ -69,7 +69,7 @@ switch($call)
         break;
 
     case 'formauth.login':
-        $r = '[ { _user: "THE_USER", _pass: "THE_PASS", _host: "" } ]';
+        $r = '[ { _user: "foo", _pass: "bar", _host: "" } ]';
         $data = $sj->decode($r);
 
         $_user = $data[0]->_user;

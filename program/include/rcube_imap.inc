@@ -213,7 +213,7 @@ class rcube_imap
       $this->default_folders_lc = array();
 
       // add inbox if not included
-      if (!in_array_nocase('INBOX', $this->default_folders))
+      if (!rcMisc::in_array_nocase('INBOX', $this->default_folders))
         array_unshift($this->default_folders, 'INBOX');
 
       // create a second list with lower cased names
@@ -336,7 +336,7 @@ class rcube_imap
       }
 
     // INBOX should always be available
-    if (!in_array_nocase('INBOX', $a_out))
+    if (!rcMisc::in_array_nocase('INBOX', $a_out))
       array_unshift($a_out, 'INBOX');
 
     // sort mailboxes
@@ -1248,7 +1248,7 @@ class rcube_imap
     $abs_name = $this->_mod_mailbox($name_enc);
     $a_mailbox_cache = $this->get_cache('mailboxes');
 
-    if (strlen($abs_name) && (!is_array($a_mailbox_cache) || !in_array_nocase($abs_name, $a_mailbox_cache)))
+    if (strlen($abs_name) && (!is_array($a_mailbox_cache) || !rcMisc::in_array_nocase($abs_name, $a_mailbox_cache)))
       $result = iil_C_CreateFolder($this->conn, $abs_name);
 
     // try to subscribe it
@@ -1339,9 +1339,9 @@ class rcube_imap
     foreach ($this->default_folders as $folder)
       {
       $abs_name = $this->_mod_mailbox($folder);
-      if (!in_array_nocase($abs_name, $a_subscribed))
+      if (!rcMisc::in_array_nocase($abs_name, $a_subscribed))
         {
-        if (!in_array_nocase($abs_name, $a_folders))
+        if (!rcMisc::in_array_nocase($abs_name, $a_folders))
           $this->create_mailbox($folder, TRUE);
         else
           $this->subscribe($folder);
@@ -1356,33 +1356,32 @@ class rcube_imap
    * --------------------------------*/
 
 
-  function set_caching($set)
+    function set_caching($set)
     {
-    if ($set && is_object($this->db))
-      $this->caching_enabled = TRUE;
-    else
-      $this->caching_enabled = FALSE;
+        if ($set && is_object($this->db))
+            $this->caching_enabled = TRUE;
+        else
+            $this->caching_enabled = FALSE;
     }
 
 
-  function get_cache($key)
+    function get_cache($key)
     {
-    // read cache
-    if (!isset($this->cache[$key]) && $this->caching_enabled)
-      {
-      $cache_data = $this->_read_cache_record('IMAP.'.$key);
-      $this->cache[$key] = strlen($cache_data) ? unserialize($cache_data) : FALSE;
-      }
-    
-    return $this->cache[$key];
+        // read cache
+        if (!isset($this->cache[$key]) && $this->caching_enabled)
+        {
+            $cache_data = $this->_read_cache_record('IMAP.'.$key);
+            $this->cache[$key] = strlen($cache_data) ? unserialize($cache_data) : FALSE;
+        }
+        return isset($this->cache[$key])?$this->cache[$key]:array();
     }
 
 
-  function update_cache($key, $data)
+    function update_cache($key, $data)
     {
-    $this->cache[$key] = $data;
-    $this->cache_changed = TRUE;
-    $this->cache_changes[$key] = TRUE;
+        $this->cache[$key] = $data;
+        $this->cache_changed = TRUE;
+        $this->cache_changes[$key] = TRUE;
     }
 
 
@@ -1420,77 +1419,79 @@ class rcube_imap
 
 
 
-  function _read_cache_record($key)
+    function _read_cache_record($key)
     {
-    $cache_data = FALSE;
+        $cache_data = FALSE;
     
-    if ($this->db)
-      {
-      // get cached data from DB
-      $sql_result = $this->db->query(
-        "SELECT cache_id, data
-         FROM ".get_table_name('cache')."
-         WHERE  user_id=?
-         AND    cache_key=?",
-        $_SESSION['user_id'],
-        $key);
-
-      if ($sql_arr = $this->db->fetch_assoc($sql_result))
+        if ($this->db)
         {
-        $cache_data = $sql_arr['data'];
-        $this->cache_keys[$key] = $sql_arr['cache_id'];
-        }
-      }
+            // get cached data from DB
+            $sql_result = $this->db->query(
+                "SELECT cache_id, data
+                 FROM " . $GLOBALS['rcCore']->get_table_name('cache') . "
+                 WHERE  user_id=?
+                 AND    cache_key=?",
+                $_SESSION['user_id'],
+                $key
+            );
 
-    return $cache_data;    
+            if ($sql_arr = $this->db->fetch_assoc($sql_result))
+            {
+                $cache_data = $sql_arr['data'];
+                $this->cache_keys[$key] = $sql_arr['cache_id'];
+            }
+        }
+        return $cache_data;    
     }
     
 
-  function _write_cache_record($key, $data)
+    // TODO: get rid of $GLOBALS
+    function _write_cache_record($key, $data)
     {
-    if (!$this->db)
-      return FALSE;
+        if (!$this->db)
+            return FALSE;
 
-    // check if we already have a cache entry for this key
-    if (!isset($this->cache_keys[$key]))
-      {
-      $sql_result = $this->db->query(
-        "SELECT cache_id
-         FROM ".get_table_name('cache')."
-         WHERE  user_id=?
-         AND    cache_key=?",
-        $_SESSION['user_id'],
-        $key);
-                                     
-      if ($sql_arr = $this->db->fetch_assoc($sql_result))
-        $this->cache_keys[$key] = $sql_arr['cache_id'];
-      else
-        $this->cache_keys[$key] = FALSE;
-      }
+        // check if we already have a cache entry for this key
+        if (!isset($this->cache_keys[$key]))
+        {
+            $sql_result = $this->db->query(
+                            "SELECT cache_id
+                            FROM ".$GLOBALS['rcCore']->get_table_name('cache')."
+                            WHERE  user_id=?
+                            AND    cache_key=?",
+                            $_SESSION['user_id'],
+                            $key
+            );
+            if ($sql_arr = $this->db->fetch_assoc($sql_result))
+                $this->cache_keys[$key] = $sql_arr['cache_id'];
+            else
+                $this->cache_keys[$key] = FALSE;
+        }
 
-    // update existing cache record
-    if ($this->cache_keys[$key])
-      {
-      $this->db->query(
-        "UPDATE ".get_table_name('cache')."
-         SET    created=now(),
-                data=?
-         WHERE  user_id=?
-         AND    cache_key=?",
-        $data,
-        $_SESSION['user_id'],
-        $key);
-      }
-    // add new cache record
-    else
-      {
-      $this->db->query(
-        "INSERT INTO ".get_table_name('cache')."
-         (created, user_id, cache_key, data)
-         VALUES (now(), ?, ?, ?)",
-        $_SESSION['user_id'],
-        $key,
-        $data);
+        // update existing cache record
+        if ($this->cache_keys[$key])
+        {
+            $this->db->query(
+                    "UPDATE ".$GLOBALS['rcCore']->get_table_name('cache')."
+                    SET    created=now(),
+                    data=?
+                    WHERE  user_id=?
+                    AND    cache_key=?",
+                    $data,
+                    $_SESSION['user_id'],
+                    $key
+            );
+        }
+        // add new cache record
+        else
+        {
+            $this->db->query(
+            "INSERT INTO ". $GLOBALS['rcCore']->get_table_name('cache')."
+            (created, user_id, cache_key, data)
+            VALUES (now(), ?, ?, ?)",
+            $_SESSION['user_id'],
+            $key,
+            $data);
       }
     }
 
@@ -1498,7 +1499,7 @@ class rcube_imap
   function _clear_cache_record($key)
     {
     $this->db->query(
-      "DELETE FROM ".get_table_name('cache')."
+      "DELETE FROM ". $GLOBALS['rcCore']->get_table_name('cache')."
        WHERE  user_id=?
        AND    cache_key=?",
       $_SESSION['user_id'],
@@ -1560,7 +1561,7 @@ class rcube_imap
       $this->cache[$cache_key] = array();
       $sql_result = $this->db->limitquery(
         "SELECT idx, uid, headers
-         FROM ".get_table_name('messages')."
+         FROM ". $GLOBALS['rcCore']->get_table_name('messages')."
          WHERE  user_id=?
          AND    cache_key=?
          ORDER BY ".$this->db->quoteIdentifier($sort_field)." ".
@@ -1595,7 +1596,7 @@ class rcube_imap
       
       $sql_result = $this->db->query(
         "SELECT $sql_select
-         FROM ".get_table_name('messages')."
+         FROM ". $GLOBALS['rcCore']->get_table_name('messages')."
          WHERE  user_id=?
          AND    cache_key=?
          AND    uid=?",
@@ -1631,7 +1632,7 @@ class rcube_imap
     $sa_message_index[$key] = array();
     $sql_result = $this->db->query(
       "SELECT idx, uid
-       FROM ".get_table_name('messages')."
+       FROM ". $GLOBALS['rcCore']->get_table_name('messages')."
        WHERE  user_id=?
        AND    cache_key=?
        ORDER BY ".$this->db->quote_identifier($sort_col)." ".$sort_order,
@@ -1651,7 +1652,7 @@ class rcube_imap
       return;
 
     $this->db->query(
-      "INSERT INTO ".get_table_name('messages')."
+      "INSERT INTO ". $GLOBALS['rcCore']->get_table_name('messages')."
        (user_id, del, cache_key, created, idx, uid, subject, ".$this->db->quoteIdentifier('from').", ".$this->db->quoteIdentifier('to').", cc, date, size, headers)
        VALUES (?, 0, ?, now(), ?, ?, ?, ?, ?, ?, ".$this->db->fromunixtime($headers->timestamp).", ?, ?)",
       $_SESSION['user_id'],
@@ -1670,7 +1671,7 @@ class rcube_imap
   function remove_message_cache($key, $index)
     {
     $this->db->query(
-      "DELETE FROM ".get_table_name('messages')."
+      "DELETE FROM ". $GLOBALS['rcCore']->get_table_name('messages')."
        WHERE  user_id=?
        AND    cache_key=?
        AND    idx=?",
@@ -1683,7 +1684,7 @@ class rcube_imap
   function clear_message_cache($key, $start_index=1)
     {
     $this->db->query(
-      "DELETE FROM ".get_table_name('messages')."
+      "DELETE FROM ". $GLOBALS['rcCore']->get_table_name('messages')."
        WHERE  user_id=?
        AND    cache_key=?
        AND    idx>=?",
@@ -1930,71 +1931,72 @@ class rcube_imap
     }
 
 
-  // parse string or array of server capabilities and put them in internal array
-  function _parse_capability($caps)
+    // parse string or array of server capabilities and put them in internal array
+    function _parse_capability($caps)
     {
-    if (!is_array($caps))
-      $cap_arr = explode(' ', $caps);
-    else
-      $cap_arr = $caps;
+        if (!is_array($caps))
+            $cap_arr = explode(' ', $caps);
+        else
+            $cap_arr = $caps;
     
-    foreach ($cap_arr as $cap)
-      {
-      if ($cap=='CAPABILITY')
-        continue;
-
-      if (strpos($cap, '=')>0)
+        foreach ($cap_arr as $cap)
         {
-        list($key, $value) = explode('=', $cap);
-        if (!is_array($this->capabilities[$key]))
-          $this->capabilities[$key] = array();
+            if ($cap=='CAPABILITY')
+                continue;
+
+            if (strpos($cap, '=')>0)
+            {
+                list($key, $value) = explode('=', $cap);
+                if (isset($this->capabilities[$key]) && !is_array($this->capabilities[$key]))
+                    $this->capabilities[$key] = array();
           
-        $this->capabilities[$key][] = $value;
+                $this->capabilities[$key][] = $value;
+            }
+            else
+            {
+                $this->capabilities[$cap] = TRUE;
+            }
         }
-      else
-        $this->capabilities[$cap] = TRUE;
-      }
     }
 
 
-  // subscribe/unsubscribe a list of mailboxes and update local cache
-  function _change_subscription($a_mboxes, $mode)
+    // subscribe/unsubscribe a list of mailboxes and update local cache
+    function _change_subscription($a_mboxes, $mode)
     {
-    $updated = FALSE;
+        $updated = FALSE;
     
-    if (is_array($a_mboxes))
-      foreach ($a_mboxes as $i => $mbox_name)
+        if (is_array($a_mboxes))
+            foreach ($a_mboxes as $i => $mbox_name)
+            {
+                $mailbox = $this->_mod_mailbox($mbox_name);
+                $a_mboxes[$i] = $mailbox;
+
+                if ($mode=='subscribe')
+                    $result = iil_C_Subscribe($this->conn, $mailbox);
+                else if ($mode=='unsubscribe')
+                    $result = iil_C_UnSubscribe($this->conn, $mailbox);
+
+                if ($result>=0)
+                    $updated = TRUE;
+            }
+        
+        // get cached mailbox list    
+        if ($updated)
         {
-        $mailbox = $this->_mod_mailbox($mbox_name);
-        $a_mboxes[$i] = $mailbox;
+            $a_mailbox_cache = $this->get_cache('mailboxes');
+            if (!is_array($a_mailbox_cache))
+                return $updated;
 
-        if ($mode=='subscribe')
-          $result = iil_C_Subscribe($this->conn, $mailbox);
-        else if ($mode=='unsubscribe')
-          $result = iil_C_UnSubscribe($this->conn, $mailbox);
-
-        if ($result>=0)
-          $updated = TRUE;
+            // modify cached list
+            if ($mode=='subscribe')
+                $a_mailbox_cache = array_merge($a_mailbox_cache, $a_mboxes);
+            else if ($mode=='unsubscribe')
+                $a_mailbox_cache = array_diff($a_mailbox_cache, $a_mboxes);
+        
+            // write mailboxlist to cache
+            $this->update_cache('mailboxes', $this->_sort_mailbox_list($a_mailbox_cache));
         }
-        
-    // get cached mailbox list    
-    if ($updated)
-      {
-      $a_mailbox_cache = $this->get_cache('mailboxes');
-      if (!is_array($a_mailbox_cache))
         return $updated;
-
-      // modify cached list
-      if ($mode=='subscribe')
-        $a_mailbox_cache = array_merge($a_mailbox_cache, $a_mboxes);
-      else if ($mode=='unsubscribe')
-        $a_mailbox_cache = array_diff($a_mailbox_cache, $a_mboxes);
-        
-      // write mailboxlist to cache
-      $this->update_cache('mailboxes', $this->_sort_mailbox_list($a_mailbox_cache));
-      }
-
-    return $updated;
     }
 
 
