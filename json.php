@@ -1,29 +1,6 @@
 <?php
 // RC STUFF
-require_once dirname(__FILE__) . '/etc/main.cfg.php';
-
-$sj = new Services_JSON;
-if (Pear::isError($sj))
-{
-    die('Unexpected error.');
-}
-
-$component = ((isset($_REQUEST['component']) && !empty($_REQUEST['component']))?$_REQUEST['component']:null);
-if (is_null($component))
-{
-    echo $sj->encode('error');
-    exit;
-}
-$action = ((isset($_REQUEST['action']) && !empty($_REQUEST['action']))?$_REQUEST['action']:null);
-if (is_null($action))
-{
-    echo $sh->encode('error');
-    exit;
-}
-
-$call = sprintf('%s.%s', $component, $action);
-
-$err    = null;
+require_once dirname(__FILE__) . '/program/etc/main.cfg.php';
 
 try
 {
@@ -31,52 +8,46 @@ try
 }
 catch(rcException $e)
 {
-    var_dump($e);
+    echo $e->getMessage();
     exit;
 }
 
-function sendError($reason, $token, $data = null)
+$component = rcCore::get_input_value('component', RCUBE_INPUT_GET);
+if (is_null($component))
 {
-    $errObj = new stdClass;
-    $errObj->status = 'failure';
-    $errObj->reason = $reason;
-    $errObj->token  = $token;
-    $errObj->data   = $data;
-
-    return $GLOBALS['sj']->encode($errObj);
+    echo $rcCore->sendError('unknown', 'Unknown component.');
+    exit;
 }
-
-function sendSuccess($token, $data)
+$action = rcCore::get_input_value('action', RCUBE_INPUT_GET);
+if (is_null($action))
 {
-    $respObj = new stdClass;
-    $respObj->status = 'ok';
-    $respObj->token  = $token;
-    $respObj->data   = $data;
-
-    return $GLOBALS['sj']->encode($respObj);
+    echo $rcCore->sendError($component, 'Unknown action.');
+    exit;
 }
-
+/*
+$json = rcCore::get_input_value('json', RCUBE_INPUT_GPC);
+if (!is_null($json))
+{
+    echo $rcCore->sendError($component, 'No JSON calls supplied.');
+}
+*/
+$call = sprintf('%s.%s', $component, $action);
+$err  = null;
 
 switch($call)
 {
     default:
-        if (empty($call)):
-            $err = array(0 => 'No action');
-        else:
-            $err = array(0 => $action);
-        endif;
-        echo $sj->encode($err);
+        echo $rcCore->sendError($component, sprintf('Unknown component/action: %s', $call));
         break;
 
     case 'formauth.login':
-        $r = '[ { _user: "foo", _pass: "bar", _host: "" } ]';
-        $data = $sj->decode($r);
+        $data = $rcCore->json->decode($json);
 
         $_user = $data[0]->_user;
         $_pass = $data[0]->_pass;
         $_host = $data[0]->_host;
 
-        $host = ((isset($_host) && !empty($_host))?$_host:$rcCore->CONFIG['default_host']);
+        $host = ((isset($_host) && !empty($_host))?$_host:null);
 
         try
         {
@@ -85,48 +56,65 @@ switch($call)
         }
         catch(rcException $e)
         {
-            var_dump($e); exit;
+            echo $rcCore->sendError($component, $e->getMessage());
+            exit;
         }
-        var_dump($status);
+        if ($status === false)
+        {
+            echo $rcCore->sendError($component, 'Unknown response from login.');
+        }
+        echo $status;
         break;
 
-    /*
-    case 'brennan':
+    case 'webmail.deleteMessage':
         $o = new stdClass;
-        $o->developer = true;
-        $o->location = 'U.S.';
-        $o->props = array('gender' => 'male', 'skin' => 'white');
-        echo $sj->encode($o);
-        break;
-
-    case 'till':
-        $a = array('this', 'is', 'till');
-        echo $sj->encode($a);
-        break;
-
-    case 'instructions':
+        $o->requests = new stdClass;
+        
         $a = array();
+        
+        $ao = new stdClass;
+        $ao->component  = 'webmail';
+        $ao->action     = 'deleteMessage';
+        $ao->messageId  = '123';
+        $ao->mailbox    = 'INBOX';
 
-        $o = new stdClass;
-        $o->instruction = 'addControlTrayButton';
-        $o->name = 'Four';
-        $o->action = 'alert("4");';
-        $a[] = $o;
+        $a[] = $ao;
 
-        $o = new stdClass;
-        $o->instruction = 'addControlTrayButton';
-        $o->name = 'Five';
-        $o->action = 'alert("5");';
-        $a[] = $o;
+        $ao = new stdClass;
+        $ao->component  = 'webmail';
+        $ao->action     = 'deleteMessage';
+        $ao->messageId  = '456';
+        $ao->mailbox    = 'INBOX';
 
-        $o = new stdClass;
-        $o->instruction = 'addControlTrayButton';
-        $o->name = 'Six';
-        $o->action = 'alert("6");';
-        $a[] = $o;
+        $a[] = $ao;
 
-        echo $sj->encode($a);
+        $o->requests = $a;
+
+        var_dump($o->requests); exit;
+
+
+        $data = $rcCore->decode($json);
+        try 
+        {
+            $status = $rcCore->imap_deleteMessages($uids, $mailbox);
+        }
+        catch(rcException $e)
+        {
+            echo $rcCore->sendError($component, $e->getMessage());
+        }
+        echo $status;
         break;
-    */
+
+    case 'webmail.getUpdates':
+        $data = $rcCore->decode($json);
+        try
+        {
+            $status = $rcCore->imap_getMessages($mailbox);
+        }
+        catch(rcException $e)
+        {
+            echo $rcCore->sendError($component, $e->getMessage());
+        }
+        break;
 }
 ?>

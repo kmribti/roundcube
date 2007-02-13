@@ -48,7 +48,7 @@ session_start();
 
 // include base files
 require_once ROOT . '/program/include/rcube_shared.inc.php';
-require_once ROOT . '/program/include/rcube_imap.inc';
+require_once ROOT . '/program/include/rcube_imap.inc.php';
 require_once ROOT . '/program/include/bugs.inc';
 require_once ROOT . '/program/include/main.inc.php';
 require_once ROOT . '/program/include/cache.inc';

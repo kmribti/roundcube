@@ -16,7 +16,7 @@
  | Author: Thomas Bruederli <roundcube@gmail.com>                        |
  +-----------------------------------------------------------------------+
 
- $Id$
+ $Id: rcube_imap.inc 476 2007-02-10 21:26:22Z till $
 
 */
 
@@ -40,10 +40,10 @@ require_once('lib/utf7.inc');
  * @link       http://ilohamail.org
  */
 class rcube_imap
-  {
-  var $db;
-  var $conn;
-  var $root_ns = '';
+{
+    var $db;
+    var $conn;
+    var $root_ns = '';
   var $root_dir = '';
   var $mailbox = 'INBOX';
   var $list_page = 1;
@@ -323,248 +323,245 @@ class rcube_imap
    * @return  array   List of mailboxes/folders
    * @access  public
    */
-  function list_mailboxes($root='', $filter='*')
+    function list_mailboxes($root='', $filter='*')
     {
-    $a_out = array();
-    $a_mboxes = $this->_list_mailboxes($root, $filter);
+        $a_out = array();
+        $a_mboxes = $this->_list_mailboxes($root, $filter);
 
-    foreach ($a_mboxes as $mbox_row)
-      {
-      $name = $this->_mod_mailbox($mbox_row, 'out');
-      if (strlen($name))
-        $a_out[] = $name;
-      }
-
-    // INBOX should always be available
-    if (!rcMisc::in_array_nocase('INBOX', $a_out))
-      array_unshift($a_out, 'INBOX');
-
-    // sort mailboxes
-    $a_out = $this->_sort_mailbox_list($a_out);
-
-    return $a_out;
-    }
-
-
-  /**
-   * Private method for mailbox listing
-   *
-   * @return  array   List of mailboxes/folders
-   * @access  private
-   * @see     rcube_imap::list_mailboxes
-   */
-  function _list_mailboxes($root='', $filter='*')
-    {
-    $a_defaults = $a_out = array();
-    
-    // get cached folder list    
-    $a_mboxes = $this->get_cache('mailboxes');
-    if (is_array($a_mboxes))
-      return $a_mboxes;
-
-    // retrieve list of folders from IMAP server
-    $a_folders = iil_C_ListSubscribed($this->conn, $this->_mod_mailbox($root), $filter);
-    
-    if (!is_array($a_folders) || !sizeof($a_folders))
-      $a_folders = array();
-
-    // write mailboxlist to cache
-    $this->update_cache('mailboxes', $a_folders);
-    
-    return $a_folders;
-    }
-
-
-  /**
-   * Get message count for a specific mailbox
-   *
-   * @param   string   Mailbox/folder name
-   * @param   string   Mode for count [ALL|UNSEEN|RECENT]
-   * @param   boolean  Force reading from server and update cache
-   * @return  number   Number of messages
-   * @access  public   
-   */
-  function messagecount($mbox_name='', $mode='ALL', $force=FALSE)
-    {
-    $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
-    return $this->_messagecount($mailbox, $mode, $force);
-    }
-
-
-  /**
-   * Private method for getting nr of messages
-   *
-   * @access  private
-   * @see     rcube_imap::messagecount
-   */
-  function _messagecount($mailbox='', $mode='ALL', $force=FALSE)
-    {
-    $a_mailbox_cache = FALSE;
-    $mode = strtoupper($mode);
-
-    if (empty($mailbox))
-      $mailbox = $this->mailbox;
-
-    $a_mailbox_cache = $this->get_cache('messagecount');
-    
-    // return cached value
-    if (!$force && is_array($a_mailbox_cache[$mailbox]) && isset($a_mailbox_cache[$mailbox][$mode]))
-      return $a_mailbox_cache[$mailbox][$mode];
-
-    // RECENT count is fetched abit different      
-    if ($mode == 'RECENT')
-       $count = iil_C_CheckForRecent($this->conn, $mailbox);
-
-    // use SEARCH for message counting
-    else if ($this->skip_deleted)
-      {
-      $search_str = "ALL UNDELETED";
-
-      // get message count and store in cache
-      if ($mode == 'UNSEEN')
-        $search_str .= " UNSEEN";
-
-      // get message count using SEARCH
-      // not very performant but more precise (using UNDELETED)
-      $count = 0;
-      $index = $this->_search_index($mailbox, $search_str);
-      if (is_array($index))
+        foreach ($a_mboxes as $mbox_row)
         {
-        $str = implode(",", $index);
-        if (!empty($str))
-          $count = count($index);
+            $name = $this->_mod_mailbox($mbox_row, 'out');
+            if (strlen($name))
+                $a_out[] = $name;
         }
-      }
-    else
-      {
-      if ($mode == 'UNSEEN')
-        $count = iil_C_CountUnseen($this->conn, $mailbox);
-      else
-        $count = iil_C_CountMessages($this->conn, $mailbox);
-      }
 
-    if (!is_array($a_mailbox_cache[$mailbox]))
-      $a_mailbox_cache[$mailbox] = array();
-      
-    $a_mailbox_cache[$mailbox][$mode] = (int)$count;
+        // INBOX should always be available
+        if (!rcMisc::in_array_nocase('INBOX', $a_out))
+            array_unshift($a_out, 'INBOX');
 
-    // write back to cache
-    $this->update_cache('messagecount', $a_mailbox_cache);
+        // sort mailboxes
+        $a_out = $this->_sort_mailbox_list($a_out);
 
-    return (int)$count;
+        return $a_out;
     }
 
 
-  /**
-   * Public method for listing headers
-   * convert mailbox name with root dir first
-   *
-   * @param   string   Mailbox/folder name
-   * @param   number   Current page to list
-   * @param   string   Header field to sort by
-   * @param   string   Sort order [ASC|DESC]
-   * @return  array    Indexed array with message header objects
-   * @access  public   
-   */
-  function list_headers($mbox_name='', $page=NULL, $sort_field=NULL, $sort_order=NULL)
+    /**
+     * Private method for mailbox listing
+     *
+     * @return  array   List of mailboxes/folders
+     * @access  private
+     * @see     rcube_imap::list_mailboxes
+     */
+    function _list_mailboxes($root='', $filter='*')
     {
-    $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
-    return $this->_list_headers($mailbox, $page, $sort_field, $sort_order);
+        $a_defaults = $a_out = array();
+    
+        // get cached folder list    
+        $a_mboxes = $this->get_cache('mailboxes');
+        if (is_array($a_mboxes))
+            return $a_mboxes;
+
+        // retrieve list of folders from IMAP server
+        $a_folders = iil_C_ListSubscribed($this->conn, $this->_mod_mailbox($root), $filter);
+    
+        if (!is_array($a_folders) || !sizeof($a_folders))
+            $a_folders = array();
+
+        // write mailboxlist to cache
+        $this->update_cache('mailboxes', $a_folders);
+    
+        return $a_folders;
     }
 
 
-  /**
-   * Private method for listing message headers
-   *
-   * @access  private
-   * @see     rcube_imap::list_headers
-   */
-  function _list_headers($mailbox='', $page=NULL, $sort_field=NULL, $sort_order=NULL, $recursive=FALSE)
+    /**
+     * Get message count for a specific mailbox
+     *
+     * @param   string   Mailbox/folder name
+     * @param   string   Mode for count [ALL|UNSEEN|RECENT]
+     * @param   boolean  Force reading from server and update cache
+     * @return  number   Number of messages
+     * @access  public   
+     */
+    function messagecount($mbox_name='', $mode='ALL', $force=FALSE)
     {
-    if (!strlen($mailbox))
-      return array();
-      
-    if ($sort_field!=NULL)
-      $this->sort_field = $sort_field;
-    if ($sort_order!=NULL)
-      $this->sort_order = strtoupper($sort_order);
+        $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
+        return $this->_messagecount($mailbox, $mode, $force);
+    }
 
-    $max = $this->_messagecount($mailbox);
-    $start_msg = ($this->list_page-1) * $this->page_size;
 
-    list($begin, $end) = $this->_get_message_range($max, $page);
+    /**
+     * Private method for getting nr of messages
+     *
+     * @access  private
+     * @see     rcube_imap::messagecount
+     */
+    private function _messagecount($mailbox='', $mode='ALL', $force=FALSE)
+    {
+        $a_mailbox_cache = FALSE;
+        $mode = strtoupper($mode);
 
-  	// mailbox is empty
-    if ($begin >= $end)
-      return array();
+        if (empty($mailbox))
+            $mailbox = $this->mailbox;
 
-    $headers_sorted = FALSE;
-    $cache_key = $mailbox.'.msg';
-    $cache_status = $this->check_cache_status($mailbox, $cache_key);
+        $a_mailbox_cache = $this->get_cache('messagecount');
+    
+        // return cached value
+        if (!$force && is_array($a_mailbox_cache[$mailbox]) && isset($a_mailbox_cache[$mailbox][$mode]))
+            return $a_mailbox_cache[$mailbox][$mode];
 
-    // cache is OK, we can get all messages from local cache
-    if ($cache_status>0)
-      {
-      $a_msg_headers = $this->get_message_cache($cache_key, $start_msg, $start_msg+$this->page_size, $this->sort_field, $this->sort_order);
-      $headers_sorted = TRUE;
-      }
-    // cache is dirty, sync it
-    else if ($this->caching_enabled && $cache_status==-1 && !$recursive)
-      {
-      $this->sync_header_index($mailbox);
-      return $this->_list_headers($mailbox, $page, $this->sort_field, $this->sort_order, TRUE);
-      }
-    else
-      {
-      // retrieve headers from IMAP
-      if ($this->get_capability('sort') && ($msg_index = iil_C_Sort($this->conn, $mailbox, $this->sort_field, $this->skip_deleted ? 'UNDELETED' : '')))
-        {        
-        $msgs = $msg_index[$begin];
-        for ($i=$begin+1; $i < $end; $i++)
-          $msgs = $msgs.','.$msg_index[$i];
-        }
-      else
+        // RECENT count is fetched abit different      
+        if ($mode == 'RECENT')
+            $count = iil_C_CheckForRecent($this->conn, $mailbox);
+
+        // use SEARCH for message counting
+        else if ($this->skip_deleted)
         {
-        $msgs = sprintf("%d:%d", $begin+1, $end);
+            $search_str = "ALL UNDELETED";
 
-        $i = 0;
-        for ($msg_seqnum = $begin; $msg_seqnum <= $end; $msg_seqnum++)
-          $msg_index[$i++] = $msg_seqnum;
+            // get message count and store in cache
+            if ($mode == 'UNSEEN')
+                $search_str .= " UNSEEN";
+
+            // get message count using SEARCH
+            // not very performant but more precise (using UNDELETED)
+            $count = 0;
+            $index = $this->_search_index($mailbox, $search_str);
+            if (is_array($index))
+            {
+                $str = implode(",", $index);
+                if (!empty($str))
+                    $count = count($index);
+            }
+        }
+        else
+        {
+            if ($mode == 'UNSEEN')
+                $count = iil_C_CountUnseen($this->conn, $mailbox);
+            else
+                $count = iil_C_CountMessages($this->conn, $mailbox);
         }
 
-      // use this class for message sorting
-      $sorter = new rcube_header_sorter();
-      $sorter->set_sequence_numbers($msg_index);
+        if (!is_array($a_mailbox_cache[$mailbox]))
+            $a_mailbox_cache[$mailbox] = array();
+      
+        $a_mailbox_cache[$mailbox][$mode] = (int)$count;
 
-      // fetch reuested headers from server
-      $a_msg_headers = array();
-      $deleted_count = $this->_fetch_headers($mailbox, $msgs, $a_msg_headers, $cache_key);
+        // write back to cache
+        $this->update_cache('messagecount', $a_mailbox_cache);
 
-      // delete cached messages with a higher index than $max
-      $this->clear_message_cache($cache_key, $max);
-
-
-      // kick child process to sync cache
-      // ...
-
-      }
+        return (int)$count;
+    }
 
 
-    // return empty array if no messages found
-	if (!is_array($a_msg_headers) || empty($a_msg_headers))
-		return array();
+    /**
+     * Public method for listing headers
+     * convert mailbox name with root dir first
+     *
+     * @param   string   Mailbox/folder name
+     * @param   number   Current page to list
+     * @param   string   Header field to sort by
+     * @param   string   Sort order [ASC|DESC]
+     * @return  array    Indexed array with message header objects
+     * @access  public   
+     */
+    function list_headers($mbox_name='', $page=NULL, $sort_field=NULL, $sort_order=NULL)
+    {
+        $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
+        return $this->_list_headers($mailbox, $page, $sort_field, $sort_order);
+    }
 
 
-    // if not already sorted
-    if (!$headers_sorted)
-      {
-      $sorter->sort_headers($a_msg_headers);
+    /**
+     * Private method for listing message headers
+     *
+     * @access  private
+     * @see     rcube_imap::list_headers
+     */
+    function _list_headers($mailbox='', $page=NULL, $sort_field=NULL, $sort_order=NULL, $recursive=FALSE)
+    {
+        if (!strlen($mailbox))
+            return array();
+      
+        if ($sort_field!=NULL)
+            $this->sort_field = $sort_field;
+        if ($sort_order!=NULL)
+            $this->sort_order = strtoupper($sort_order);
 
-      if ($this->sort_order == 'DESC')
-        $a_msg_headers = array_reverse($a_msg_headers);
-      }
+        $max = $this->_messagecount($mailbox);
+        $start_msg = ($this->list_page-1) * $this->page_size;
 
-    return array_values($a_msg_headers);
+        list($begin, $end) = $this->_get_message_range($max, $page);
+
+  	    // mailbox is empty
+        if ($begin >= $end)
+            return array();
+
+        $headers_sorted = FALSE;
+        $cache_key = $mailbox.'.msg';
+        $cache_status = $this->check_cache_status($mailbox, $cache_key);
+
+        // cache is OK, we can get all messages from local cache
+        if ($cache_status>0)
+        {
+            $a_msg_headers = $this->get_message_cache($cache_key, $start_msg, $start_msg+$this->page_size, $this->sort_field, $this->sort_order);
+            $headers_sorted = TRUE;
+        }
+        // cache is dirty, sync it
+        else if ($this->caching_enabled && $cache_status==-1 && !$recursive)
+        {
+            $this->sync_header_index($mailbox);
+            return $this->_list_headers($mailbox, $page, $this->sort_field, $this->sort_order, TRUE);
+        }
+        else
+        {
+            // retrieve headers from IMAP
+            if ($this->get_capability('sort') && ($msg_index = iil_C_Sort($this->conn, $mailbox, $this->sort_field, $this->skip_deleted ? 'UNDELETED' : '')))
+            {
+                $msgs = $msg_index[$begin];
+                for ($i=$begin+1; $i < $end; $i++)
+                    $msgs = $msgs.','.$msg_index[$i];
+            }
+            else
+            {
+                $msgs = sprintf("%d:%d", $begin+1, $end);
+
+                $i = 0;
+                for ($msg_seqnum = $begin; $msg_seqnum <= $end; $msg_seqnum++)
+                    $msg_index[$i++] = $msg_seqnum;
+            }
+
+            // use this class for message sorting
+            $sorter = new rcube_header_sorter();
+            $sorter->set_sequence_numbers($msg_index);
+
+            // fetch reuested headers from server
+            $a_msg_headers = array();
+            $deleted_count = $this->_fetch_headers($mailbox, $msgs, $a_msg_headers, $cache_key);
+
+            // delete cached messages with a higher index than $max
+            $this->clear_message_cache($cache_key, $max);
+
+
+            // kick child process to sync cache
+            // ...
+        }
+
+        // return empty array if no messages found
+	    if (!is_array($a_msg_headers) || empty($a_msg_headers))
+		    return array();
+
+
+        // if not already sorted
+        if (!$headers_sorted)
+        {
+            $sorter->sort_headers($a_msg_headers);
+
+            if ($this->sort_order == 'DESC')
+                $a_msg_headers = array_reverse($a_msg_headers);
+        }
+        return array_values($a_msg_headers);
     }
 
 
@@ -1049,51 +1046,52 @@ class rcube_imap
     }
 
 
-  // mark messages as deleted and expunge mailbox
-  function delete_message($uids, $mbox_name='')
+    // mark messages as deleted and expunge mailbox
+    function delete_message($uids, $mbox_name='')
     {
-    $mbox_name = stripslashes($mbox_name);
-    $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
+        $mbox_name = stripslashes($mbox_name);
+        $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
 
-    // convert the list of uids to array
-    $a_uids = is_string($uids) ? explode(',', $uids) : (is_array($uids) ? $uids : NULL);
+         // convert the list of uids to array
+        $a_uids = is_string($uids) ? explode(',', $uids) : (is_array($uids) ? $uids : NULL);
     
-    // exit if no message uids are specified
-    if (!is_array($a_uids))
-      return false;
-
-
-    // convert uids to message ids
-    $a_mids = array();
-    foreach ($a_uids as $uid)
-      $a_mids[] = $this->_uid2id($uid, $mailbox);
-        
-    $deleted = iil_C_Delete($this->conn, $mailbox, join(',', $a_mids));
-    
-    // send expunge command in order to have the deleted message
-    // really deleted from the mailbox
-    if ($deleted)
-      {
-      $this->_expunge($mailbox, FALSE);
-      $this->_clear_messagecount($mailbox);
-      }
-
-    // remove deleted messages from cache
-    $cache_key = $mailbox.'.msg';
-    if ($deleted && ($a_cache_index = $this->get_message_cache_index($cache_key)))
-      {
-      $start_index = 100000;
-      foreach ($a_uids as $uid)
+        // exit if no message uids are specified
+        if (!is_array($a_uids))
         {
-        $index = array_search($uid, $a_cache_index);
-        $start_index = min($index, $start_index);
+            throw new rcException('Unknown a_uids format.');
         }
 
-      // clear cache from the lowest index on
-      $this->clear_message_cache($cache_key, $start_index);
-      }
+        // convert uids to message ids
+        $a_mids = array();
+        foreach ($a_uids as $uid)
+        {
+            $a_mids[] = $this->_uid2id($uid, $mailbox);
+        }
+        $deleted = iil_C_Delete($this->conn, $mailbox, join(',', $a_mids));
+    
+        // send expunge command in order to have the deleted message
+        // really deleted from the mailbox
+        if ($deleted)
+        {
+            $this->_expunge($mailbox, FALSE);
+            $this->_clear_messagecount($mailbox);
+        }
 
-    return $deleted;
+        // remove deleted messages from cache
+        $cache_key = $mailbox.'.msg';
+        if ($deleted && ($a_cache_index = $this->get_message_cache_index($cache_key)))
+        {
+            $start_index = 100000;
+            foreach ($a_uids as $uid)
+            {
+                $index = array_search($uid, $a_cache_index);
+                $start_index = min($index, $start_index);
+            }
+
+            // clear cache from the lowest index on
+            $this->clear_message_cache($cache_key, $start_index);
+        }
+        return $deleted;
     }
 
 

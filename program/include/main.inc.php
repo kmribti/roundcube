@@ -22,7 +22,9 @@
 /**
  * rcException
  *
- * @uses Pear_Exception
+ * @author Till Klampaeckel <klampaeckel@lagged.de>
+ * @desc   Wrapper to possibly add more methods later on.
+ * @uses   Pear_Exception
  */
 class rcException extends PEAR_Exception { }
 
@@ -33,6 +35,8 @@ require_once('lib/utf8.class.php');
 
 include_once('config/main.inc.php');
 include_once('config/db.inc.php');
+include_once('program/include/session.inc');
+
 
 // define constannts for input reading
 define('RCUBE_INPUT_GET', 0x0101);
@@ -41,6 +45,14 @@ define('RCUBE_INPUT_GPC', 0x0103);
 
 /**
  * rcCore
+ *
+ * @author Thomas Bruederli <roundcube@gmail.com>
+ * @author Till Klampaeckel <klampaeckel@lagged.de>
+ * @desc   Container for most rcmail_*() and rcube_*() calls
+ * @uses   Services_JSON
+ * @see    rcException
+ * @todo   A lot!
+ * @since  vNext
  */
 class rcCore
 {
@@ -60,14 +72,45 @@ class rcCore
     var $sess_auth;
     var $sess_user_lang;
 
+    var $json;
+
+    /**
+     * enforce calling of factory method
+     */
     private function __construct() {}
 
+    /**
+     * PHP4 equivalent to __construct
+     */
+    function rcCore() {}
+
     // TODO: remove references to $GLOBALS
+    // TODO: check for PHP5 json extension and use it instead of Services_JSON
+    /**
+     * factory
+     *
+     * @access static
+     * @return mixed  rcException or rcCore class object
+     */
     static function factory()
     {
         //var_dump($GLOBALS['rcmail_config']);
+        //throw new rcException('Error: this is a test');
+
+        $json = new Services_JSON;
+        if (Services_JSON::isError($json))
+        {
+            throw new rcException($json->getMessage());
+        }
+        if (!is_object($json))
+        {
+            throw new rcException('Could not initialize "Services_JSON"');
+        }
 
         $cls = new rcCore;
+
+        $cls->json = $json;
+
         $cls->CONFIG = (isset($GLOBALS['rc_mail_config']) && is_array($GLOBALS['rcmail_config'])) ? $GLOBALS['rcmail_config'] : array();
         $cls->CONFIG['skin_path'] = isset($cls->CONFIG['skin_path']) && !empty($cls->CONFIG['skin_path']) ? rcMisc::unslashify($cls->CONFIG['skin_path']) : 'skins/default';
         $cls->CONFIG = array_merge($cls->CONFIG, $GLOBALS['rcmail_config']);
@@ -98,7 +141,7 @@ class rcCore
         {
             ini_set('display_errors', 0);
         }
-
+        
         // set session garbage collecting time according to session_lifetime
         if (!empty($cls->CONFIG['session_lifetime']))
         {
@@ -123,8 +166,10 @@ class rcCore
         }
         $cls->DB = $DB;
 
+        $rcSession = rcSession::factory($DB);
+
         // we can use the database for storing session data
-        include_once('include/session.inc');
+        //include_once('include/session.inc');
         //return 'foo';
         //session_start();
 
@@ -133,6 +178,66 @@ class rcCore
         $cls->JS_OBJECT_NAME = $GLOBALS['JS_OBJECT_NAME'];
         
         return $cls;
+    }
+
+    /**
+     * sendError
+     *
+     * @access public
+     * @param  string $component
+     * @param  string $reason
+     * @return JSON
+     * @since  vNext
+     */
+    public function sendError($component, $reason)
+    {
+        $errObj = new stdClass;
+        $errObj->status = 'failure';
+
+        if (!is_array($component))
+        {
+            $component = array($component);
+        }
+        if (!is_array($reason))
+        {
+            $reason = array($reason);
+        }
+
+        $errObj->responses    = array();
+        for ($i=0; $i<count($component); $i++)
+        {
+            $errObj->responses[$i] = new stdClass;
+            $errObj->responses[$i]->component = $component[$i];
+            $errObj->responses[$i]->actions   = array(
+                                                'action' => 'showWarning',
+                                                'warning' => ((isset($reason[$i]) && !empty($reason[$i]))?$reason[$i]:'unknown')
+            );
+        }
+        return $this->json->encode($errObj);
+    }
+
+    /**
+     * sendSuccess
+     *
+     * @access public
+     * @param  string $token
+     * @param  array  $data
+     * @return JSON
+     * @since  vNext
+     */
+    function sendSuccess($component, $data)
+    {
+        $respObj = new stdClass;
+        $respObj->status = 'ok';
+        $respObj->responses = array();
+
+        $o = new stdClass;
+        $o->component = $component;
+        $o->actions   = $data;
+
+        $respObj->responses[] = $o;
+
+        return $this->json->encode($respObj);
     }
 
     // register session and connect to server
@@ -326,15 +431,31 @@ class rcCore
         session_destroy();
     }
 
-
-    // return correct name for a specific database table
+    /**
+     * return correct name for a specific database table
+     *
+     * @access static, protected
+     * @param  string $table
+     * @return string $table
+     */
     function get_table_name($table)
     {
+        $cls = null;
+        if (!isset($this) || !is_object($this))
+        {
+            $cls = rcCore::factory();
+        }
+        else
+        {
+            $cls = $this;
+        }
         // return table name if configured
         $config_key = 'db_table_' . $table;
 
-        if (strlen($this->CONFIG[$config_key]))
-            return $this->CONFIG[$config_key];
+        if (strlen($cls->CONFIG[$config_key]))
+        {
+            return $cls->CONFIG[$config_key];
+        }
   
         return $table;
     }
@@ -575,7 +696,9 @@ class rcCore
 
         // exit if IMAP login failed
         if (!($imap_login  = $this->IMAP->connect($host, $user, $pass, $imap_port, $imap_ssl)))
-            return FALSE;
+        {
+            return $this->sendError('formauth', sprintf('Could not connect to IMAP server: %s', $host));
+        }
 
         // user already registered
         if ($user_id && !empty($sql_arr))
@@ -619,9 +742,18 @@ class rcCore
             $this->IMAP->clear_cache('mailboxes');
             $this->IMAP->create_default_folders();
 
-            return TRUE;
+            $actions = array();
+
+            $data             = new stdClass;
+            $data->action     = 'confirmLogin';
+            $data->token      = 'foo';
+            $data->expiration = 'foo';
+
+            $actions[] = $data;
+
+            return $this->sendSuccess('formauth', $actions);
         }
-        return FALSE;
+        return $this->sendError('formauth', 'Could not login.');
     }
 
 
@@ -1137,6 +1269,7 @@ class rcCore
      * Read input value and convert it for internal use
      * Performs stripslashes() and charset conversion if necessary
      * 
+     * @access static
      * @param  string   Field name to read
      * @param  int      Source to get value from (GPC)
      * @param  boolean  Allow HTML tags in field value
@@ -1170,10 +1303,12 @@ class rcCore
             $value = strip_tags($value);
   
         // convert to internal charset
-        if (is_object($this->OUTPUT))
-            return rcube_charset_convert($value, $this->OUTPUT->get_charset(), $charset);
+        /*if (is_object($this->OUTPUT))
+            return $this->rcube_charset_convert($value, $this->OUTPUT->get_charset(), $charset);
         else
             return $value;
+        */
+        return $value;
     }
 
     /**
@@ -1779,6 +1914,9 @@ class rcCore
     }
 
 
+    /**
+     * @deprecated vNext - 2007/02/07
+     */
     // return code for the webmail login form
     function rcmail_login_form($attrib)
     {
@@ -1850,6 +1988,9 @@ EOF;
     }
 
 
+    /**
+     * @deprecated vNext - 2007/02/12
+     */
     function rcmail_charset_selector($attrib)
     {
         // pass the following attributes to the form class
@@ -1904,6 +2045,57 @@ EOF;
             $label = 'Timer '.$print_count;
   
         console(sprintf("%s: %0.4f sec", $label, $diff));
+    }
+
+    /**
+     * imap_delete_messages
+     *
+     * Wrapper for delete_message call to internal IMAP object.
+     *
+     * @access public
+     * @param  mixed  $uids
+     * @param  string $mailbox
+     * @see    rcube_imap::delete_message
+     * @return mixed
+     * @since  vNext
+     */
+    public function imap_delete_messages($uids, $mailbox='')
+    {
+        if (empty($uids))
+        {
+            throw new rcException('No message ids.');
+        }
+        if (!is_array($uids) && strstr($uids, ',') !== false)
+        {
+            $uids = explode(',', $uids);
+        }
+        if (!is_array($uids))
+        {
+            $uids = array($uids);
+        }
+        $this->IMAP->delete_message($uids, $mbox_name='');
+
+        $actions = array(); 
+   
+        for ($i=0; $i<count($uids); $i++)
+        {
+            $data             = new stdClass;
+            $data->action     = 'confirmDeleteMessage';
+            $data->messageId  = $uids[$i];
+
+            $actions[] = $data;
+        }
+        return $this->sendSuccess('webmail', $actions);
+    }
+
+    /**
+     * @access public
+     * @todo   Implement
+     * @since  vNext
+     */
+    function imap_get_messages($mailbox)
+    {
+        return true;
     }
 }
 ?>
