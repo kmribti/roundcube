@@ -20,8 +20,14 @@
 */
 
 require_once('include/rcube_contacts.inc');
+require_once('include/rcube_ldap.inc');
 
-$CONTACTS = new rcube_contacts($DB, $_SESSION['user_id']);
+// instantiate a contacts object according to the given source
+if (($source = get_input_value('_source', RCUBE_INPUT_GPC)) && isset($CONFIG['ldap_public'][$source]))
+  $CONTACTS = new rcube_ldap($CONFIG['ldap_public'][$source]);
+else
+  $CONTACTS = new rcube_contacts($DB, $_SESSION['user_id']);
+
 $CONTACTS->set_pagesize($CONFIG['pagesize']);
 
 // set list properties and session vars
@@ -37,6 +43,9 @@ else
 if (!empty($_GET['_search']) && isset($_SESSION['search'][$_GET['_search']]))
   $CONTACTS->set_search_set($_SESSION['search'][$_GET['_search']]);
 
+// set data source env
+$OUTPUT->set_env('source', $source ? $source : '0');
+
 
 function rcmail_directory_list($attrib)
 {
@@ -45,12 +54,52 @@ function rcmail_directory_list($attrib)
   if (!$attrib['id'])
     $attrib['id'] = 'rcmdirectorylist';
 
+  $local_id = '0';
+  $current = get_input_value('_source', RCUBE_INPUT_GPC);
+  $line_templ = '<li id="%s" class="%s"><a href="%s"' .
+    ' onclick="return %s.command(\'list\',\'%s\',this)"' .
+    ' onmouseover="return %s.focus_folder(\'%s\')"' .
+    ' onmouseout="return %s.unfocus_folder(\'%s\')"' .
+    ' onmouseup="return %s.folder_mouse_up(\'%s\')">%s'.
+    "</a></li>\n";
+
   // allow the following attributes to be added to the <ul> tag
   $out = '<ul' . create_attrib_string($attrib, array('style', 'class', 'id')) . ">\n";
-  $out .= '<li><a href="#">' . rcube_label('personaladrbook') .  "</a></li>\n";
+  $out .= sprintf($line_templ,
+    'rcmli'.$local_id,
+    !$current ? 'selected' : '',
+    Q(rcmail_self_url('list', array('_source' => 0))),
+    JS_OBJECT_NAME,
+    $local_id,
+    JS_OBJECT_NAME,
+    $local_id,
+    JS_OBJECT_NAME,
+    $local_id,
+    JS_OBJECT_NAME,
+    $local_id,
+    rcube_label('personaladrbook'));
+  
+  foreach ((array)$CONFIG['ldap_public'] as $id => $prop)
+  {
+    $js_id = JQ($id);
+    $out .= sprintf($line_templ,
+      'rcmli'.preg_replace('/[^a-z0-9\-_]/i', '', $id),
+      $current == $id ? 'selected' : '',
+      Q(rcmail_self_url('list', array('_source' => $id))),
+      JS_OBJECT_NAME,
+      $js_id,
+      JS_OBJECT_NAME,
+      $js_id,
+      JS_OBJECT_NAME,
+      $js_id,
+      JS_OBJECT_NAME,
+      $js_id,
+      !empty($prop['name']) ? Q($prop['name']) : Q($id));
+  }
+  
   $out .= '</ul>';
 
-  $OUTPUT->add_gui_object('directorylist', $attrib['id']);
+  $OUTPUT->add_gui_object('folderlist', $attrib['id']);
   
   return $out;
 }
@@ -73,7 +122,7 @@ function rcmail_contacts_list($attrib)
     $attrib['id'] = 'rcmAddressList';
   
   // define list of cols to be displayed
-  $a_show_cols = array('name', 'email');
+  $a_show_cols = array('name');
   
   // create XHTML table
   $out = rcube_table_output($attrib, $result, $a_show_cols, $CONTACTS->primary_key);
@@ -101,7 +150,7 @@ function rcmail_js_contacts_list($result, $prefix='')
   unset($result['count'], $result['first']);
   
   // define list of cols to be displayed
-  $a_show_cols = array('name', 'email');
+  $a_show_cols = array('name');
   
   foreach ($result as $i => $row)
     {
@@ -128,6 +177,7 @@ function rcmail_contact_frame($attrib)
   $attrib_str = create_attrib_string($attrib, array('name', 'id', 'class', 'style', 'src', 'width', 'height', 'frameborder'));
 
   $OUTPUT->set_env('contentframe', $attrib['name']);
+  $OUTPUT->set_env('blankpage', $attrib['src'] ? $OUTPUT->abs_url($attrib['src']) : 'program/blank.gif');
   return '<iframe'. $attrib_str . '></iframe>';
   }
 

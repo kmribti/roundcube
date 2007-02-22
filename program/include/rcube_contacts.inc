@@ -150,6 +150,9 @@ class rcube_contacts
     while ($sql_result && ($sql_arr = $this->db->fetch_assoc($sql_result)))
     {
       $sql_arr['ID'] = $sql_arr[$this->primary_key];
+      // make sure we have a name to display
+      if (empty($sql_arr['name']))
+        $sql_arr['name'] = $sql_arr['email'];
       $this->result[] = $sql_arr;
     }
     

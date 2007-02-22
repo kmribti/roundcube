@@ -63,7 +63,7 @@ if (strlen($_GET['_uid']))
 
 // set current mailbox in client environment
 $OUTPUT->set_env('mailbox', $IMAP->get_mailbox_name());
-$OUTPUT->set_pagetitle(rcube_charset_convert($IMAP->get_mailbox_name(), 'UTF-7', 'UTF-8'));
+//$OUTPUT->set_pagetitle(rcube_charset_convert($IMAP->get_mailbox_name(), 'UTF-7', 'UTF-8'));
 
 if ($CONFIG['trash_mbox'])
   $OUTPUT->set_env('trash_mailbox', $CONFIG['trash_mbox']);
@@ -206,7 +206,8 @@ function rcmail_render_folder_tree_html(&$arrFolders, &$special, &$mbox_name, $m
       $foldername .= sprintf(' (%d)', $unread_count);
 
     // make folder name safe for ids and class names
-    $folder_css = $class_name = preg_replace('/[^a-z0-9\-_]/', '', $folder_lc);
+    $folder_id = preg_replace('/[^A-Za-z0-9\-_]/', '', $folder['id']);
+    $class_name = preg_replace('/[^a-z0-9\-_]/', '', $folder_lc);
 
     // set special class for Sent, Drafts, Trash and Junk
     if ($folder['id']==$CONFIG['sent_mbox'])
@@ -219,18 +220,17 @@ function rcmail_render_folder_tree_html(&$arrFolders, &$special, &$mbox_name, $m
       $class_name = 'junk';
 
     $js_name = htmlspecialchars(JQ($folder['id']));
-    $out .= sprintf('<li id="rcmbx%s" class="mailbox %s %s%s%s"><a href="%s&amp;_mbox=%s"'.
-                    ' onclick="return %s.command(\'list\',\'%s\')"'.
-                    ' onmouseover="return %s.focus_mailbox(\'%s\')"' .            
-                    ' onmouseout="return %s.unfocus_mailbox(\'%s\')"' .
-                    ' onmouseup="return %s.mbox_mouse_up(\'%s\')"%s>%s</a>',
-                    $folder_css,
+    $out .= sprintf('<li id="rcmli%s" class="mailbox %s %s%s%s"><a href="%s"'.
+                    ' onclick="return %s.command(\'list\',\'%s\',this)"'.
+                    ' onmouseover="return %s.focus_folder(\'%s\')"' .
+                    ' onmouseout="return %s.unfocus_folder(\'%s\')"' .
+                    ' onmouseup="return %s.folder_mouse_up(\'%s\')"%s>%s</a>',
+                    $folder_id,
                     $class_name,
                     $zebra_class,
                     $unread_count ? ' unread' : '',
                     $folder['id']==$mbox_name ? ' selected' : '',
-                    $COMM_PATH,
-                    urlencode($folder['id']),
+                    Q(rcmail_self_url('', array('_mbox' => $folder['id']))),
                     JS_OBJECT_NAME,
                     $js_name,
                     JS_OBJECT_NAME,
@@ -576,6 +576,7 @@ function rcmail_messagecontent_frame($attrib)
          $attrib_str);
 
   $OUTPUT->set_env('contentframe', $framename);
+  $OUTPUT->set_env('blankpage', $attrib['src'] ? $OUTPUT->abs_url($attrib['src']) : 'program/blank.gif');
 
   return $out;
   }

@@ -117,12 +117,14 @@ init_row: function(row)
 /**
  *
  */
-clear: function()
+clear: function(sel)
 {
   var tbody = document.createElement('TBODY');
   this.list.insertBefore(tbody, this.list.tBodies[0]);
   this.list.removeChild(this.list.tBodies[1]);
-  this.rows = new Array();  
+  this.rows = new Array();
+  
+  if (sel) this.clear_selection();
 },
 
 

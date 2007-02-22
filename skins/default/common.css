@@ -283,8 +283,6 @@ table.records-table tr.selected td
 
 table.records-table tr.focused td
 {
-  border-bottom: thin dotted;
-  border-top: thin dotted;
 }
 
 table.records-table tr.unfocused td

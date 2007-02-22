@@ -297,6 +297,14 @@ class rcmail_template extends rcube_html_page
     
     return $out;
   }
+  
+  /**
+   * Make URLs starting with a slash point to skin directory
+   */
+  function abs_url($str)
+  {
+    return preg_replace('/^\//', $this->config['skin_path'].'/', $str);
+  }
 
 
 

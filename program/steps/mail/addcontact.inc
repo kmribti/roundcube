@@ -32,7 +32,11 @@ if (!empty($_POST['_address']))
   {
     $contact = array('email' => $contact_arr[1]['mailto'],
                      'name' => $contact_arr[1]['name']);
-    
+                     
+    // use email address part for name
+    if (empty($contact['name']) || $contact['name'] == $contact['email'])
+      $contact['name'] = ucfirst(preg_replace('/[\.\-]/', ' ', substr($contact['email'], 0, strpos($contact['email'], '@'))));
+
     // check for existing contacts
     $existing = $CONTACTS->search('email', $contact['email'], false);
     if ($done = $existing['count'])

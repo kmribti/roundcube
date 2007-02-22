@@ -76,6 +76,24 @@
   text-decoration: none;
 }
 
+#directorylist li.selected
+{
+  background-color: #929292;
+  border-bottom: 1px solid #898989;
+}
+
+#directorylist li.selected a
+{
+  color: #FFF;
+  font-weight: bold;
+}
+
+#directorylist li.droptarget
+{
+  background-color: #FFFFA6;
+}
+
+
 #contacts-table
 {
   width: 100%;
