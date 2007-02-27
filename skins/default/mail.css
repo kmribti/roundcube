@@ -186,20 +186,6 @@ html>body*#messagecontframe
   font-weight: bold;
 }
 
-#rcmdraglayer
-{
-  width: 300px;
-  border: 1px solid #999999;
-  background-color: #F9F9F9;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  font-size: 11px;
-  opacity: 0.6;
-  -moz-opacity: 0.6;
-}
-
 
 /** mailbox list styles */
 

@@ -340,6 +340,20 @@ html>body*#quicksearchbar #quicksearchbox { width: 180px; top:0px; right: 1px; l
 
 /***** roundcube webmail pre-defined classes *****/
 
+#rcmdraglayer
+{
+  width: 300px;
+  border: 1px solid #999999;
+  background-color: #F9F9F9;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 11px;
+  opacity: 0.6;
+  -moz-opacity: 0.6;
+}
+
 a.rcmContactAddress
 {
   text-decoration: none;

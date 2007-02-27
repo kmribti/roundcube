@@ -39,7 +39,7 @@ if (!empty($_POST['_address']))
 
     // check for existing contacts
     $existing = $CONTACTS->search('email', $contact['email'], false);
-    if ($done = $existing['count'])
+    if ($done = $existing->count)
       $OUTPUT->show_message('contactexists', 'warning');
     else if ($done = $CONTACTS->insert($contact))
       $OUTPUT->show_message('addedsuccessfully', 'confirmation');

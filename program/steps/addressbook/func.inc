@@ -45,6 +45,7 @@ if (!empty($_GET['_search']) && isset($_SESSION['search'][$_GET['_search']]))
 
 // set data source env
 $OUTPUT->set_env('source', $source ? $source : '0');
+$OUTPUT->set_env('readonly', $CONTACTS->readonly, false);
 
 
 function rcmail_directory_list($attrib)
@@ -62,6 +63,8 @@ function rcmail_directory_list($attrib)
     ' onmouseout="return %s.unfocus_folder(\'%s\')"' .
     ' onmouseup="return %s.folder_mouse_up(\'%s\')">%s'.
     "</a></li>\n";
+    
+  $js_list = array("$local_id" => array('id' => $local_id, 'readonly' => false));
 
   // allow the following attributes to be added to the <ul> tag
   $out = '<ul' . create_attrib_string($attrib, array('style', 'class', 'id')) . ">\n";
@@ -82,8 +85,9 @@ function rcmail_directory_list($attrib)
   foreach ((array)$CONFIG['ldap_public'] as $id => $prop)
   {
     $js_id = JQ($id);
+    $dom_id = preg_replace('/[^a-z0-9\-_]/i', '', $id);
     $out .= sprintf($line_templ,
-      'rcmli'.preg_replace('/[^a-z0-9\-_]/i', '', $id),
+      'rcmli'.$dom_id,
       $current == $id ? 'selected' : '',
       Q(rcmail_self_url('list', array('_source' => $id))),
       JS_OBJECT_NAME,
@@ -95,11 +99,14 @@ function rcmail_directory_list($attrib)
       JS_OBJECT_NAME,
       $js_id,
       !empty($prop['name']) ? Q($prop['name']) : Q($id));
+      
+    $js_list[$dom_id] = array('id' => $id, 'readonly' => !$prop['writeable']);
   }
   
   $out .= '</ul>';
 
   $OUTPUT->add_gui_object('folderlist', $attrib['id']);
+  $OUTPUT->set_env('address_sources', $js_list);
   
   return $out;
 }
@@ -112,10 +119,6 @@ function rcmail_contacts_list($attrib)
   
   // count contacts for this user
   $result = $CONTACTS->list_records();
-  $rowcount = $result['count'];
-  $firstrow = $result['first'];
-  
-  unset($result['count'], $result['first']);
   
   // add id to message list table if not specified
   if (!strlen($attrib['id']))
@@ -123,14 +126,14 @@ function rcmail_contacts_list($attrib)
   
   // define list of cols to be displayed
   $a_show_cols = array('name');
-  
+
   // create XHTML table
-  $out = rcube_table_output($attrib, $result, $a_show_cols, $CONTACTS->primary_key);
+  $out = rcube_table_output($attrib, $result->records, $a_show_cols, $CONTACTS->primary_key);
   
   // set client env
   $OUTPUT->add_gui_object('contactslist', $attrib['id']);
   $OUTPUT->set_env('current_page', (int)$CONTACTS->list_page);
-  $OUTPUT->set_env('pagecount', ceil($rowcount/$CONTACTS->page_size));
+  $OUTPUT->set_env('pagecount', ceil($result->count/$CONTACTS->page_size));
   $OUTPUT->include_script('list.js');
   
   // add some labels to client
@@ -144,15 +147,13 @@ function rcmail_js_contacts_list($result, $prefix='')
   {
   global $OUTPUT;
 
-  if (empty($result) || $result['count'] == 0)
+  if (empty($result) || $result->count == 0)
     return;
 
-  unset($result['count'], $result['first']);
-  
   // define list of cols to be displayed
   $a_show_cols = array('name');
   
-  foreach ($result as $i => $row)
+  while ($row = $result->next())
     {
     $a_row_cols = array();
     
@@ -211,15 +212,15 @@ function rcmail_get_rowcount_text()
   if (!$result)
     $result = $CONTACTS->count();
   
-  if ($result['count'] == 0)
+  if ($result->count == 0)
     $out = rcube_label('nocontactsfound');
   else
     $out = rcube_label(array(
       'name' => 'contactsfromto',
       'vars' => array(
-        'from'  => $result['first'] + 1,
-        'to'    => min($result['count'], $result['first'] + $CONTACTS->page_size),
-        'count' => $result['count'])
+        'from'  => $result->first + 1,
+        'to'    => min($result->count, $result->first + $CONTACTS->page_size),
+        'count' => $result->count)
       ));
 
   return $out;

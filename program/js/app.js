@@ -224,9 +224,11 @@ function rcube_webmail()
       case 'addressbook':
         if (this.gui_objects.contactslist)
           {
-          this.contact_list = new rcube_list_widget(this.gui_objects.contactslist, {multiselect:true, draggable:false, keyboard:true});
+          this.contact_list = new rcube_list_widget(this.gui_objects.contactslist, {multiselect:true, draggable:true, keyboard:true});
           this.contact_list.addEventListener('keypress', function(o){ p.contactlist_keypress(o); });
           this.contact_list.addEventListener('select', function(o){ p.contactlist_select(o); });
+          this.contact_list.addEventListener('dragstart', function(o){ p.drag_active = true; });
+          this.contact_list.addEventListener('dragend', function(o){ p.drag_active = false; });
           this.contact_list.init();
 
           if (this.env.cid)
@@ -249,7 +251,7 @@ function rcube_webmail()
         if ((this.env.action=='add' || this.env.action=='edit') && this.gui_objects.editform)
           this.enable_command('save', true);
         else
-          this.enable_command('search', 'reset-search', true);
+          this.enable_command('search', 'reset-search', 'moveto', true);
 
         this.enable_command('list', 'add', true);
         break;
@@ -637,7 +639,10 @@ function rcube_webmail()
       // mail task commands
       case 'move':
       case 'moveto':
-        this.move_messages(props);
+        if (this.task == 'mail')
+          this.move_messages(props);
+        else if (this.task == 'addressbook' && this.drag_active)
+          this.copy_contact(null, props);
         break;
         
       case 'toggle_status':
@@ -865,7 +870,7 @@ function rcube_webmail()
           props = this.gui_objects.qsearchbox.value;
         if (props)
         {
-          this.qsearch(props, this.env.mailbox);
+          this.qsearch(props);
           break;
         }
 
@@ -1119,7 +1124,7 @@ function rcube_webmail()
   this.msglist_get_preview = function()
   {
     var uid = this.get_single_uid();
-    if (uid && this.env.contentframe)
+    if (uid && this.env.contentframe && !this.drag_active)
       this.show_message(uid, false, true);
     else if (this.env.contentframe)
       this.show_contentframe(false);
@@ -1131,7 +1136,7 @@ function rcube_webmail()
     if (this.task == 'mail')
       return (id != this.env.mailbox);
     else if (this.task == 'addressbook')
-      return (id != this.env.source);
+      return (id != this.env.source && this.env.address_sources[id] && !this.env.address_sources[id].readonly);
   };
 
 
@@ -1904,7 +1909,7 @@ function rcube_webmail()
     };
 
   // send remote request to search mail or contacts
-  this.qsearch = function(value, mbox)
+  this.qsearch = function(value)
     {
     if (value != '')
       {
@@ -1916,7 +1921,7 @@ function rcube_webmail()
       }
 
       this.set_busy(true, 'searching');
-      this.http_request('search', '_search='+urlencode(value)+(mbox ? '&_mbox='+mbox : ''), true);
+      this.http_request('search', '_search='+urlencode(value)+(this.env.mailbox ? '&_mbox='+this.env.mailbox : '')+(this.env.source ? '&_source='+urlencode(this.env.source) : ''), true);
       }
     return true;
     };
@@ -2178,11 +2183,14 @@ function rcube_webmail()
 
   this.contactlist_select = function(list)
     {
-      var id, frame;
+      if (this.preview_timer)
+        clearTimeout(this.preview_timer);
+
+      var id, frame, ref = this;
       if (id = list.get_single_selection())
-        this.load_contact(id, 'show');
-      else if (frame = document.getElementById(this.env.contentframe))
-        frame.style.visibility = 'hidden';
+        this.preview_timer = setTimeout(function(){ ref.load_contact(id, 'show'); }, this.dblclick_time + 10);
+      else if (this.env.contentframe)
+        this.show_contentframe(false);
 
       this.enable_command('edit', id?true:false);
 
@@ -2269,13 +2277,23 @@ function rcube_webmail()
     else if (framed)
       return false;
 
-    if (action && (cid || action=='add'))
+    if (action && (cid || action=='add') && !this.drag_active)
       {
       this.set_busy(true);
-      target.location.href = this.env.comm_path+'&_action='+action+'&_cid='+cid+add_url;
+      target.location.href = this.env.comm_path+'&_action='+action+'&_source='+urlencode(this.env.source)+'&_cid='+cid+add_url;
       }
     return true;
     };
+
+  // copy a contact to the specified target (group or directory)
+  this.copy_contact = function(cid, to)
+  {
+    if (!cid)
+      cid = this.contact_list.get_selection().join(',');
+
+    if (to != this.env.source && cid && this.env.address_sources[to] && !this.env.address_sources[to].readonly)
+      this.http_post('copy', '_cid='+cid+'&_source='+urlencode(this.env.source)+'&_to='+urlencode(to));
+  };
 
 
   this.delete_contacts = function()

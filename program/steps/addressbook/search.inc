@@ -25,7 +25,7 @@ $search_request = md5('addr'.$search);
 // get contacts for this user
 $result = $CONTACTS->search(array('name','email'), $search);
 
-if ($result['count'] > 0)
+if ($result->count > 0)
 {
   // save search settings in session
   $_SESSION['search'][$search_request] = $CONTACTS->get_search_set();

@@ -30,10 +30,11 @@ class rcube_ldap
   var $search_string;
   
   /** public properties */
-  var $primary_key = 'contact_id';
+  var $primary_key = 'ID';
   var $readonly = true;
   var $list_page = 1;
   var $page_size = 10;
+  var $ready = false;
   
   
   /**
@@ -86,7 +87,9 @@ class rcube_ldap
       }
     }
     
-    if (!is_resource($this->conn))
+    if (is_resource($this->conn))
+      $this->ready = true;
+    else
       raise_error(array('type' => "ldap",
                         'message' => "Could not connect to any LDAP server, tried $host:{$this->prop[port]} last"),
                   true);
@@ -174,7 +177,7 @@ class rcube_ldap
     $this->result = $this->count();
 
     // TODO
-    
+
     return $this->result;
   }
 
@@ -191,7 +194,7 @@ class rcube_ldap
   {
     // TODO
     
-    $this->set_search_set(join(' OR ', $add_where));
+    //$this->set_search_set();
     if ($select)
       $this->list_records();
     else
@@ -208,9 +211,9 @@ class rcube_ldap
    */
   function count()
   {
-    // TODO
     $count = 0;
-    return array('count' => $count, 'first' => ($this->list_page-1) * $this->page_size);
+    // TODO
+    return new rcube_result_set($count, ($this->list_page-1) * $this->page_size);;
   }
 
 
@@ -231,14 +234,11 @@ class rcube_ldap
    * @param mixed record identifier
    * @return Hash array with all record fields or False if not found
    */
-  function get_record($id)
+  function get_record($id, $assoc=false)
   {
     // TODO
 
-    //if ($this->result = $this->db->fetch_assoc())
-    //    $this->result['ID'] = $this->result[$this->primary_key];
-
-    return $this->result;
+    return $assoc && $sql_arr ? $sql_arr : $this->result;
   }
   
   

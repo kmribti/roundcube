@@ -20,8 +20,8 @@
 */
 
 
-if (($cid = get_input_value('_cid', RCUBE_INPUT_GPC)) && ($result = $CONTACTS->get_record($cid)))
-  $OUTPUT->set_env('cid', $result['ID']);
+if (($cid = get_input_value('_cid', RCUBE_INPUT_GPC)) && ($record = $CONTACTS->get_record($cid, true)))
+  $OUTPUT->set_env('cid', $record['ID']);
 
 
 function rcmail_contact_editform($attrib)
@@ -29,7 +29,7 @@ function rcmail_contact_editform($attrib)
   global $CONTACTS, $OUTPUT;
 
   // check if we have a valid result
-  if (!($record = $CONTACTS->get_result()) && $GLOBALS['_action'] != 'add')
+  if ($GLOBALS['_action'] != 'add' && !(($result = $CONTACTS->get_result()) && ($record = $result->first())))
   {
     $OUTPUT->show_message('contactnotfound');
     return false;
@@ -41,7 +41,6 @@ function rcmail_contact_editform($attrib)
 
   list($form_start, $form_end) = get_form_tags($attrib);
   unset($attrib['form']);
-
 
   // a specific part is requested
   if ($attrib['part'])
@@ -79,7 +78,7 @@ function get_form_tags($attrib)
   {
   global $CONTACTS, $OUTPUT, $EDIT_FORM, $SESS_HIDDEN_FIELD;  
 
-  $record = $CONTACTS->get_result();
+  $result = $CONTACTS->get_result();
   $form_start = '';
   if (!strlen($EDIT_FORM))
     {
@@ -89,7 +88,7 @@ function get_form_tags($attrib)
     if ($GLOBALS['_framed'])
       $hiddenfields->add(array('name' => '_framed', 'value' => 1));
     
-    if (isset($record['ID']))
+    if ($record = $result->first())
       $hiddenfields->add(array('name' => '_cid', 'value' => $record['ID']));
     
     $form_start = !strlen($attrib['form']) ? '<form name="form" action="./" method="post">' : '';

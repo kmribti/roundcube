@@ -28,13 +28,15 @@ class rcube_contacts
   var $result = null;
   var $search_fields;
   var $search_string;
+  var $table_cols = array('name', 'email', 'firstname', 'surname');
   
   /** public properties */
   var $primary_key = 'contact_id';
   var $readonly = false;
   var $list_page = 1;
   var $page_size = 10;
-  
+  var $ready = false;
+
   
   /**
    * Object constructor
@@ -47,6 +49,7 @@ class rcube_contacts
     $this->db = $dbconn;
     $this->db_name = get_table_name('contacts');
     $this->user_id = $user;
+    $this->ready = $this->db && !$this->db->is_error();
   }
 
   /**
@@ -131,9 +134,9 @@ class rcube_contacts
     $sql_result = NULL;
 
     // get contacts from DB
-    if ($this->result['count'])
+    if ($this->result->count)
     {
-      $start_row = $subset < 0 ? $this->result['first'] + $this->page_size + $subset : $this->result['first'];
+      $start_row = $subset < 0 ? $this->result->first + $this->page_size + $subset : $this->result->first;
       $length = $subset != 0 ? abs($subset) : $this->page_size;
       
       $sql_result = $this->db->limitquery(
@@ -153,7 +156,7 @@ class rcube_contacts
       // make sure we have a name to display
       if (empty($sql_arr['name']))
         $sql_arr['name'] = $sql_arr['email'];
-      $this->result[] = $sql_arr;
+      $this->result->add($sql_arr);
     }
     
     return $this->result;
@@ -172,10 +175,18 @@ class rcube_contacts
   {
     if (!is_array($fields))
       $fields = array($fields);
-    
+      
     $add_where = array();
     foreach ($fields as $col)
-      $add_where[] = $this->db->quoteIdentifier($col)." LIKE ".$this->db->quote(strlen($value)>2 ? "%$value%" : "$value%");
+    {
+      if ($col == 'ID' || $col == $this->primary_key)
+      {
+        $ids = !is_array($value) ? split(',', $value) : $value;
+        $add_where[] = $this->primary_key." IN (".join(',', $ids).")";
+      }
+      else
+        $add_where[] = $this->db->quoteIdentifier($col)." LIKE ".$this->db->quote(strlen($value)>2 ? "%$value%" : "$value%");
+    }
     
     if (!empty($add_where))
     {
@@ -207,7 +218,7 @@ class rcube_contacts
       $this->user_id);
 
     $sql_arr = $this->db->fetch_assoc($sql_result);
-    return array('count' => (int)$sql_arr['rows'], 'first' => ($this->list_page-1) * $this->page_size);
+    return new rcube_result_set($sql_arr['rows'], ($this->list_page-1) * $this->page_size);;
   }
 
 
@@ -216,7 +227,7 @@ class rcube_contacts
    *
    * @return Result array or NULL if nothing selected yet
    */
-  function get_result()
+  function get_result($as_res=true)
   {
     return $this->result;
   }
@@ -225,14 +236,14 @@ class rcube_contacts
   /**
    * Get a specific contact record
    *
-   * @param mixed record identifier
-   * @return Hash array with all record fields or False if not found
+   * @param mixed record identifier(s)
+   * @return Result object with all record fields or False if not found
    */
-  function get_record($id)
+  function get_record($id, $assoc=false)
   {
     // return cached result
-    if ($this->result && $this->result[$this->primary_key] == $id)
-      return $this->result;
+    if ($this->result && ($first = $this->result->first()) && $first[$this->primary_key] == $id)
+      return $assoc ? $first : $this->result;
       
     $this->db->query(
       "SELECT * FROM ".$this->db_name."
@@ -242,10 +253,14 @@ class rcube_contacts
       $id,
       $this->user_id);
 
-    if ($this->result = $this->db->fetch_assoc())
-        $this->result['ID'] = $this->result[$this->primary_key];
+    if ($sql_arr = $this->db->fetch_assoc())
+    {
+      $sql_arr['ID'] = $sql_arr[$this->primary_key];
+      $this->result = new rcube_result_set(1);
+      $this->result->add($sql_arr);
+    }
 
-    return $this->result;
+    return $assoc && $sql_arr ? $sql_arr : $this->result;
   }
   
   
@@ -253,30 +268,53 @@ class rcube_contacts
    * Create a new contact record
    *
    * @param array Assoziative array with save data
-   * @return The create record ID on success, False on error
+   * @return The created record ID on success, False on error
    */
-  function insert($save_cols)
+  function insert($save_data, $check=false)
   {
-    $insert_id = false;
+    if (is_object($save_data) && is_a($save_data, rcube_result_set))
+      return $this->insert_recset($save_data, $check);
+
+    $insert_id = $existing = false;
+
+    if ($check)
+      $existing = $this->search('email', $save_data['email'], false);
+
     $a_insert_cols = $a_insert_values = array();
-    foreach ($save_cols as $col => $value)
-    {
-      $a_insert_cols[] = $this->db->quoteIdentifier($col);
-      $a_insert_values[] = $this->db->quote($value);
-    }
+    foreach ($this->table_cols as $col)
+      if (isset($save_data[$col]))
+      {
+        $a_insert_cols[] = $this->db->quoteIdentifier($col);
+        $a_insert_values[] = $this->db->quote($save_data[$col]);
+      }
     
-    if (!empty($a_insert_cols))
+    if (!$existing->count && !empty($a_insert_cols))
     {
       $this->db->query(
         "INSERT INTO ".$this->db_name."
          (user_id, changed, del, ".join(', ', $a_insert_cols).")
          VALUES (?, ".$this->db->now().", 0, ".join(', ', $a_insert_values).")",
         $this->user_id);
-      
+        
       $insert_id = $this->db->insert_id(get_sequence_name('contacts'));
     }
     
     return $insert_id;
+  }
+
+
+  /**
+   * Insert new contacts for each row in set
+   */
+  function insert_recset($result, $check=false)
+  {
+    $ids = array();
+    while ($row = $result->next())
+    {
+      if ($insert = $this->insert($row, $check))
+        $ids[] = $insert;
+    }
+    return $ids;
   }
   
   
@@ -291,8 +329,9 @@ class rcube_contacts
   {
     $updated = false;
     $write_sql = array();
-    foreach ($save_cols as $col => $value)
-      $write_sql[] = sprintf("%s=%s", $this->db->quoteIdentifier($col), $this->db->quote($value));
+    foreach ($this->table_cols as $col)
+      if (isset($save_cols[$col]))
+        $write_sql[] = sprintf("%s=%s", $this->db->quoteIdentifier($col), $this->db->quote($save_cols[$col]));
 
     if (!empty($write_sql))
     {
@@ -333,5 +372,58 @@ class rcube_contacts
   }
 
 }
+
+
+/**
+ * RoundCube result set class.
+ * Representing an address directory result set.
+ */
+class rcube_result_set
+{
+  var $count = 0;
+  var $first = 0;
+  var $current = 0;
+  var $records = array();
+  
+  function __construct($c=0, $f=0)
+  {
+    $this->count = (int)$c;
+    $this->first = (int)$f;
+  }
+  
+  function rcube_result_set($c=0, $f=0)
+  {
+    $this->__construct($c, $f);
+  }
+  
+  function add($rec)
+  {
+    $this->records[] = $rec;
+  }
+  
+  function iterate()
+  {
+    return $this->records[$this->current++];
+  }
+  
+  function first()
+  {
+    $this->current = 0;
+    return $this->records[$this->current++];
+  }
+  
+  // alias
+  function next()
+  {
+    return $this->iterate();
+  }
+  
+  function seek($i)
+  {
+    $this->current = $i;
+  }
+  
+}
+
 
 ?>

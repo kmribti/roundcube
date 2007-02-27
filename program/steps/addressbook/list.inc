@@ -23,7 +23,7 @@
 $result = $CONTACTS->list_records();
 
 // update message count display
-$OUTPUT->set_env('pagecount', ceil($result['count'] / $CONTACTS->page_size));
+$OUTPUT->set_env('pagecount', ceil($result->count / $CONTACTS->page_size));
 $OUTPUT->command('set_rowcount', rcmail_get_rowcount_text($rowcount));
 
 // create javascript list

@@ -390,7 +390,8 @@ function rcmail_load_gui()
   ));
 
   // add some basic label to client
-  rcube_add_label('loading','checkingmail');
+  if (!$OUTPUT->ajax_call)
+    rcube_add_label('loading');
   }
 
 

@@ -120,4 +120,8 @@ $messages['fileuploaderror'] = 'File upload failed';
 
 $messages['filesizeerror'] = 'The uploaded file exceeds the maximum size of $size';
 
+$messages['copysuccess'] = 'Successfully copied $nr addresses';
+
+$messages['copyerror'] = 'Could not copy any addresses';
+
 ?>

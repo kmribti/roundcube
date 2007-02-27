@@ -2,7 +2,7 @@
 /*
  +-----------------------------------------------------------------------+
  | RoundCube Webmail IMAP Client                                         |
- | Version 0.1-20070209                                                  |
+ | Version 0.1-20070222                                                  |
  |                                                                       |
  | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
@@ -41,7 +41,7 @@
 */
 
 // application constants
-define('RCMAIL_VERSION', '0.1-20070209');
+define('RCMAIL_VERSION', '0.1-20070222');
 define('RCMAIL_CHARSET', 'UTF-8');
 define('JS_OBJECT_NAME', 'rcmail');
 
@@ -320,8 +320,8 @@ if ($_task=='addressbook')
   if ($_action=='search')
     include('program/steps/addressbook/search.inc');
 
-  if ($_action=='ldappublicsearch')
-    include('program/steps/addressbook/ldapsearchform.inc');
+  if ($_action=='copy')
+    include('program/steps/addressbook/copy.inc');
   }
 
 

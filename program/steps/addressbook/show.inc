@@ -21,8 +21,8 @@
 
 
 // read contact record
-if (($cid = get_input_value('_cid', RCUBE_INPUT_GPC)) && ($result = $CONTACTS->get_record($cid)))
-  $OUTPUT->set_env('cid', $result['ID']);
+if (($cid = get_input_value('_cid', RCUBE_INPUT_GPC)) && ($record = $CONTACTS->get_record($cid, true)))
+  $OUTPUT->set_env('cid', $record['ID']);
 
 
 function rcmail_contact_details($attrib)
@@ -30,7 +30,7 @@ function rcmail_contact_details($attrib)
   global $CONTACTS, $OUTPUT;
 
   // check if we have a valid result
-  if (!($record = $CONTACTS->get_result()))
+  if (!(($result = $CONTACTS->get_result()) && ($record = $result->first())))
   {
     $OUTPUT->show_message('contactnotfound');
     return false;

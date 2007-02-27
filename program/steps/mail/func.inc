@@ -72,6 +72,9 @@ if ($CONFIG['drafts_mbox'])
 if ($CONFIG['junk_mbox'])
   $OUTPUT->set_env('junk_mailbox', $CONFIG['junk_mbox']);
 
+if (!$OUTPUT->ajax_call)
+  rcube_add_label('checkingmail');
+
 
 // return the mailboxlist in HTML
 function rcmail_mailbox_list($attrib)

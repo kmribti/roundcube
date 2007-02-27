@@ -32,16 +32,13 @@ if (($cid = get_input_value('_cid', RCUBE_INPUT_GPC)) && preg_match('/^[0-9]+(,[
   $result = $CONTACTS->count();
 
   // update message count display
-  $OUTPUT->set_env('pagecount', ceil($result['count'] / $CONTACTS->page_size));
-  $OUTPUT->command('set_rowcount', rcmail_get_rowcount_text($result['count']));
+  $OUTPUT->set_env('pagecount', ceil($result->count / $CONTACTS->page_size));
+  $OUTPUT->command('set_rowcount', rcmail_get_rowcount_text($result->count));
 
   // add new rows from next page (if any)
-  $pages = ceil($result['count']+$deleted / $CONTACTS->page_size);
+  $pages = ceil(($result->count + $deleted) / $CONTACTS->page_size);
   if ($_GET['_from'] != 'show' && $pages > 1 && $CONTACTS->list_page < $pages)
-    {
-    $result = $CONTACTS->list_records(null, -$deleted);
-    rcmail_js_contacts_list($result);
-    }
+    rcmail_js_contacts_list($CONTACTS->list_records(null, -$deleted));
 
   // send response
   $OUTPUT->send();
