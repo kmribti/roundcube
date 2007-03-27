@@ -260,9 +260,17 @@ class rcube_ldap
     }
     
     $filter = '(|';
-    foreach ((array)$fields as $field)
-      if ($f = $this->_map_field($field))
-        $filter .= "($f=*" . rcube_ldap::quote_string($value) . "*)";
+    if (is_array($this->prop['search_fields']))
+    {
+      foreach ($this->prop['search_fields'] as $k => $field)
+        $filter .= "($field=*" . rcube_ldap::quote_string($value) . "*)";
+    }
+    else
+    {
+      foreach ((array)$fields as $field)
+        if ($f = $this->_map_field($field))
+          $filter .= "($f=*" . rcube_ldap::quote_string($value) . "*)";
+    }
     $filter .= ')';
 
     // set filter string and execute search
