@@ -23,11 +23,13 @@ class rcube_ldap
 {
   var $conn;
   var $prop = array();
+  var $fieldmap = array();
   
-  var $filter = '1';
+  var $filter = '';
+  var $idmap = array();
   var $result = null;
-  var $search_fields;
-  var $search_string;
+  var $ldap_result = null;
+  var $sort_col = '';
   
   /** public properties */
   var $primary_key = 'ID';
@@ -46,6 +48,12 @@ class rcube_ldap
   function __construct($p)
   {
     $this->prop = $p;
+    
+    foreach ($p as $prop => $value)
+      if (preg_match('/^(.+)_field$/', $prop, $matches))
+        $this->fieldmap[$matches[1]] = $value;
+    
+    // $this->filter = "(dn=*)";
     $this->connect();
   }
 
@@ -54,7 +62,7 @@ class rcube_ldap
    *
    * @see  rcube_ldap::__construct
    */
-  function rcube_contacts($p)
+  function rcube_ldap($p)
   {
     $this->__construct($p);
   }
@@ -66,9 +74,7 @@ class rcube_ldap
   function connect()
   {
     if (!function_exists('ldap_connect'))
-      raise_error(array('type' => "ldap",
-                        'message' => "No ldap support in this installation of PHP"),
-                  true);
+      raise_error(array('type' => 'ldap', 'message' => "No ldap support in this installation of PHP"), true);
 
     if (is_resource($this->conn))
       return true;
@@ -80,7 +86,7 @@ class rcube_ldap
     {
       if ($lc = @ldap_connect($host, $this->prop['port']))
       {
-        @ldap_set_option($lc, LDAP_OPT_PROTOCOL_VERSION, $this->prop['port']);
+        ldap_set_option($lc, LDAP_OPT_PROTOCOL_VERSION, $this->prop['port']);
         $this->prop['host'] = $host;
         $this->conn = $lc;
         return true;
@@ -90,10 +96,43 @@ class rcube_ldap
     if (is_resource($this->conn))
       $this->ready = true;
     else
-      raise_error(array('type' => "ldap",
-                        'message' => "Could not connect to any LDAP server, tried $host:{$this->prop[port]} last"),
-                  true);
+      raise_error(array('type' => 'ldap', 'message' => "Could not connect to any LDAP server, tried $host:{$this->prop[port]} last"), true);
   }
+
+
+  /**
+   * Merge with connect()?
+   */
+  function bind($dn=null, $pass=null)
+  {
+    if ($this->conn)
+    {
+      if ($dn)
+      {
+        if (@ldap_bind($this->conn, $dn, $pass))
+          return true;
+        else
+          raise_error(array('code' => ldap_errno($this->conn),
+                            'type' => 'ldap',
+                            'message' => "Bind failed for dn=$dn: ".ldap_error($this->conn)),
+                      true);
+      }
+      else
+      {
+        if (@ldap_bind($this->conn))
+          return true;
+        else
+          raise_error(array('code' => ldap_errno($this->conn),
+                            'type' => 'ldap',
+                            'message' => "Anonymous bind failed: ".ldap_error($this->conn)),
+                      true);
+        }
+    }
+    else
+      raise_error(array('type' => 'ldap', 'message' => "Attempted bind on nonexistent connection"), true);
+      
+    return false;
+    }
 
 
   /**
@@ -135,9 +174,10 @@ class rcube_ldap
    *
    * @param string ??
    */
-  function set_search_set($filter)
+  function set_search_set($p)
   {
-    // TODO
+    $this->filter = $p['filter'];
+    $this->idmap = $p['ids'];
   }
   
   
@@ -148,7 +188,7 @@ class rcube_ldap
    */
   function get_search_set()
   {
-    // TODO
+    return array('filter' => $this->filter, 'ids' => $this->idmap);
   }
 
 
@@ -157,11 +197,10 @@ class rcube_ldap
    */
   function reset()
   {
-    // TODO
     $this->result = null;
-    $this->filter = '1';
-    $this->search_fields = null;
-    $this->search_string = null;
+    $this->ldap_result = null;
+    $this->filter = '';
+    $this->idmap = array();
   }
   
   
@@ -173,10 +212,23 @@ class rcube_ldap
    */
   function list_records($cols=null, $subset=0)
   {
+    // exec LDAP search if no result resource is stored
+    if ($this->conn && !$this->ldap_result)
+      $this->_exec_search();
+    
     // count contacts for this user
     $this->result = $this->count();
-
-    // TODO
+    
+    // we have a search result resource
+    if ($this->ldap_result && $this->result->count > 0)
+    {
+      if ($this->sort_col && $this->prop['scope'] !== "base")
+        @ldap_sort($this->conn, $this->ldap_result, $this->sort_col);
+        
+      $entries = ldap_get_entries($this->conn, $this->ldap_result);
+      for ($i = $this->result->first; $i < min($entries['count'], $this->result->first + $this->page_size); $i++)
+        $this->result->add($this->_ldap2result($entries[$i]));
+    }
 
     return $this->result;
   }
@@ -192,9 +244,31 @@ class rcube_ldap
    */
   function search($fields, $value, $select=true)
   {
-    // TODO
+    // special treatment for ID-based search
+    if ($fields == 'ID' || $fields == $this->primary_key)
+    {
+      $ids = explode(',', $value);
+      $this->result = new rcube_result_set();
+      foreach ($ids as $id)
+        if ($rec = $this->get_record($id, true))
+        {
+          $this->result->add($rec);
+          $this->result->count++;
+        }
+      
+      return $this->result;
+    }
     
-    //$this->set_search_set();
+    $filter = '(|';
+    foreach ((array)$fields as $field)
+      if ($f = $this->_map_field($field))
+        $filter .= "($f=*" . rcube_ldap::quote_string($value) . "*)";
+    $filter .= ')';
+
+    // set filter string and execute search
+    $this->filter = $filter;
+    $this->_exec_search();
+    
     if ($select)
       $this->list_records();
     else
@@ -212,8 +286,10 @@ class rcube_ldap
   function count()
   {
     $count = 0;
-    // TODO
-    return new rcube_result_set($count, ($this->list_page-1) * $this->page_size);;
+    if ($this->conn && $this->ldap_result)
+      $count = ldap_count_entries($this->conn, $this->ldap_result);
+
+    return new rcube_result_set($count, ($this->list_page-1) * $this->page_size);
   }
 
 
@@ -236,9 +312,21 @@ class rcube_ldap
    */
   function get_record($id, $assoc=false)
   {
-    // TODO
+    $res = null;
+    if ($this->conn && ($dn = $this->idmap[$id]))
+    {
+      $this->ldap_result = @ldap_read($this->conn, $dn, "(objectclass=*)", array_values($this->fieldmap));
+      $entry = @ldap_first_entry($this->conn, $this->ldap_result);
+      
+      if ($entry && ($rec = ldap_get_attributes($this->conn, $entry)))
+      {
+        $res = $this->_ldap2result($rec);
+        $this->result = new rcube_result_set(1);
+        $this->result->add($res);
+      }
+    }
 
-    return $assoc && $sql_arr ? $sql_arr : $this->result;
+    return $assoc && $res ? $res : $this->result;
   }
   
   
@@ -279,6 +367,73 @@ class rcube_ldap
     // TODO
     return false;
   }
+
+
+  /**
+   * Execute the LDAP search based on the stored credentials
+   *
+   * @private
+   */
+  function _exec_search()
+  {
+    if ($this->conn && $this->filter)
+    {
+      $limit = $this->page_size * $this->list_page;
+      $function = $this->prop['scope'] == 'sub' ? 'ldap_search' : ($this->prop['scope'] == 'base' ? 'ldap_read' : 'ldap_list');
+
+      $this->ldap_result = @$function($this->conn, $this->prop['base_dn'], $this->filter, array_values($this->fieldmap), 0, $limit);
+      return true;
+    }
+    else
+      return false;
+  }
+  
+  
+  /**
+   * @private
+   */
+  function _ldap2result($rec)
+  {
+    $out = array();
+    $id = count($this->idmap) + 1;
+    
+    if ($rec['dn'])
+    {
+      $dn_hash = $id++; // md5($rec['dn']);
+      $out[$this->primary_key] = $dn_hash;
+      $this->idmap[$dn_hash] = $rec['dn'];
+    }
+    
+    foreach ($this->fieldmap as $rf => $lf)
+    {
+      if ($rec[$lf]['count'])
+      {
+        unset($rec[$lf]['count']);
+        $out[$rf] = join(' ', $rec[$lf]);
+      }
+    }
+    
+    return $out;
+  }
+  
+  
+  /**
+   * @private
+   */
+  function _map_field($field)
+  {
+    return $this->fieldmap[$field];
+  }
+  
+  
+  /**
+   * @static
+   */
+  function quote_string($str)
+  {
+    return strtr($str, array('*'=>'\2a', '('=>'\28', ')'=>'\29', '\\'=>'\5c'));
+  }
+
 
 }
 

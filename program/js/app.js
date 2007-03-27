@@ -1238,10 +1238,6 @@ function rcube_webmail()
       this.show_contentframe(false);
       }
     
-    // also send search request to get the right messages
-    if (this.env.search_request)
-      add_url += '&_search='+this.env.search_request;
-      
     this.select_folder(mbox, this.env.mailbox);
     this.env.mailbox = mbox;
 
@@ -1257,6 +1253,10 @@ function rcube_webmail()
       target = window.frames[this.env.contentframe];
       add_url += '&_framed=1';
       }
+
+    // also send search request to get the right messages
+    if (this.env.search_request)
+      add_url += '&_search='+this.env.search_request;
 
     // load message list to target frame/window
     if (mbox)
@@ -1419,10 +1419,6 @@ function rcube_webmail()
 
       this.message_list.select_next();
       }
-
-    // also send search request to get the right messages
-    if (this.env.search_request)
-      add_url += '&_search='+this.env.search_request;
 
     // send request to server
     this.http_request(action, '_uid='+a_uids.join(',')+'&_mbox='+urlencode(this.env.mailbox)+add_url, lock);
@@ -2254,10 +2250,6 @@ function rcube_webmail()
     var url = (src ? '&_source='+urlencode(src) : '') + (page ? '&_page='+page : '');
     this.env.source = src;
 
-    // also send search request to get the correct listing
-    if (this.env.search_request)
-      url += '&_search='+this.env.search_request;
-
     this.set_busy(true, 'loading');
     this.http_request('list', url, true);
     };
@@ -2276,6 +2268,9 @@ function rcube_webmail()
       }
     else if (framed)
       return false;
+      
+    if (this.env.search_request)
+      add_url += '&_search='+this.env.search_request;
 
     if (action && (cid || action=='add') && !this.drag_active)
       {
@@ -3166,10 +3161,14 @@ function rcube_webmail()
     if (bw.safari)
       querystring += '&_ts='+(new Date().getTime());
 
+    // also send search request to get the right messages
+    if (this.env.search_request)
+      querystring += '&_search='+this.env.search_request;
+
     // send request
     if (request_obj)
       {
-      console('HTTP request: '+this.env.comm_path+'&_action='+action+'&'+querystring);
+      console.log('HTTP request: '+this.env.comm_path+'&_action='+action+'&'+querystring);
 
       if (lock)
         this.set_busy(true);
@@ -3192,10 +3191,13 @@ function rcube_webmail()
       else
         postdata += (postdata ? '&' : '') + '_remote=1';
 
+      if (this.env.search_request)
+        postdata += '&_search='+this.env.search_request;
+
       // send request
       if (request_obj = this.get_request_obj())
         {
-        console('HTTP POST: '+this.env.comm_path+'&_action='+action);
+        console.log('HTTP POST: '+this.env.comm_path+'&_action='+action);
 
         if (lock)
           this.set_busy(true);
@@ -3221,7 +3223,7 @@ function rcube_webmail()
 
     this.set_busy(false);
 
-  console(request_obj.get_text());
+    console.log(request_obj.get_text());
 
     // if we get javascript code from server -> execute it
     if (request_obj.get_text() && (ctype=='text/javascript' || ctype=='application/x-javascript'))
@@ -3527,9 +3529,23 @@ function call_init(o)
     setTimeout(o+'.init()', 200);
   }
 
-function console(str)
-  {
-  if (document.debugform && document.debugform.console)
-    document.debugform.console.value += str+'\n--------------------------------------\n';
-  }
 
+function rcube_console()
+{
+  this.box = rcube_find_object('console');
+  
+  this.log = function(msg)
+  {
+    if (this.box)
+      this.box.value += str+'\n--------------------------------------\n';
+  };
+  
+  this.reset = function()
+  {
+    if (this.box)
+      this.box.value = '';
+  };
+}
+
+if (!window.console)
+  console = new rcube_console();

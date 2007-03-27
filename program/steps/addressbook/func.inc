@@ -40,8 +40,8 @@ else
   $CONTACTS->set_page(isset($_SESSION['page']) ?$_SESSION['page'] : 1);
 
 // set message set for search result
-if (!empty($_GET['_search']) && isset($_SESSION['search'][$_GET['_search']]))
-  $CONTACTS->set_search_set($_SESSION['search'][$_GET['_search']]);
+if (!empty($_REQUEST['_search']) && isset($_SESSION['search'][$_REQUEST['_search']]))
+  $CONTACTS->set_search_set($_SESSION['search'][$_REQUEST['_search']]);
 
 // set data source env
 $OUTPUT->set_env('source', $source ? $source : '0');
