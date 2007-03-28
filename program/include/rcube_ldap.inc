@@ -245,15 +245,15 @@ class rcube_ldap
     if ($fields == 'ID' || $fields == $this->primary_key)
     {
       $ids = explode(',', $value);
-      $this->result = new rcube_result_set();
+      $result = new rcube_result_set();
       foreach ($ids as $id)
         if ($rec = $this->get_record($id, true))
         {
-          $this->result->add($rec);
-          $this->result->count++;
+          $result->add($rec);
+          $result->count++;
         }
       
-      return $this->result;
+      return $result;
     }
     
     $filter = '(|';
