@@ -19,7 +19,10 @@
 
 */
 
-$search = trim(get_input_value('_search', RCUBE_INPUT_GET));
+$CONTACTS->set_page(1);
+$_SESSION['page'] = 1;
+
+$search = trim(get_input_value('_q', RCUBE_INPUT_GET));
 $search_request = md5('addr'.$search);
 
 // get contacts for this user
@@ -41,7 +44,7 @@ else
 
 // update message count display
 $OUTPUT->set_env('search_request', $search_request);
-$OUTPUT->set_env('pagecount', ceil($result['count'] / $CONTACTS->page_size));
+$OUTPUT->set_env('pagecount', ceil($result->count / $CONTACTS->page_size));
 $OUTPUT->command('set_rowcount', rcmail_get_rowcount_text());
   
 // send response

@@ -26,7 +26,6 @@ class rcube_ldap
   var $fieldmap = array();
   
   var $filter = '';
-  var $idmap = array();
   var $result = null;
   var $ldap_result = null;
   var $sort_col = '';
@@ -174,10 +173,9 @@ class rcube_ldap
    *
    * @param string ??
    */
-  function set_search_set($p)
+  function set_search_set($filter)
   {
-    $this->filter = $p['filter'];
-    $this->idmap = $p['ids'];
+    $this->filter = $filter;
   }
   
   
@@ -188,7 +186,7 @@ class rcube_ldap
    */
   function get_search_set()
   {
-    return array('filter' => $this->filter, 'ids' => $this->idmap);
+    return $this->filter;
   }
 
 
@@ -200,7 +198,6 @@ class rcube_ldap
     $this->result = null;
     $this->ldap_result = null;
     $this->filter = '';
-    $this->idmap = array();
   }
   
   
@@ -260,21 +257,22 @@ class rcube_ldap
     }
     
     $filter = '(|';
+    $wc = $this->prop['fuzzy_search'] ? '*' : '';
     if (is_array($this->prop['search_fields']))
     {
       foreach ($this->prop['search_fields'] as $k => $field)
-        $filter .= "($field=*" . rcube_ldap::quote_string($value) . "*)";
+        $filter .= "($field=$wc" . rcube_ldap::quote_string($value) . "$wc)";
     }
     else
     {
       foreach ((array)$fields as $field)
         if ($f = $this->_map_field($field))
-          $filter .= "($f=*" . rcube_ldap::quote_string($value) . "*)";
+          $filter .= "($f=$wc" . rcube_ldap::quote_string($value) . "$wc)";
     }
     $filter .= ')';
 
     // set filter string and execute search
-    $this->filter = $filter;
+    $this->set_search_set($filter);
     $this->_exec_search();
     
     if ($select)
@@ -318,12 +316,12 @@ class rcube_ldap
    * @param mixed record identifier
    * @return Hash array with all record fields or False if not found
    */
-  function get_record($id, $assoc=false)
+  function get_record($dn, $assoc=false)
   {
     $res = null;
-    if ($this->conn && ($dn = $this->idmap[$id]))
+    if ($this->conn && $dn)
     {
-      $this->ldap_result = @ldap_read($this->conn, $dn, "(objectclass=*)", array_values($this->fieldmap));
+      $this->ldap_result = @ldap_read($this->conn, base64_decode($dn), "(objectclass=*)", array_values($this->fieldmap));
       $entry = @ldap_first_entry($this->conn, $this->ldap_result);
       
       if ($entry && ($rec = ldap_get_attributes($this->conn, $entry)))
@@ -386,10 +384,8 @@ class rcube_ldap
   {
     if ($this->conn && $this->filter)
     {
-      $limit = $this->page_size * $this->list_page;
       $function = $this->prop['scope'] == 'sub' ? 'ldap_search' : ($this->prop['scope'] == 'base' ? 'ldap_read' : 'ldap_list');
-
-      $this->ldap_result = @$function($this->conn, $this->prop['base_dn'], $this->filter, array_values($this->fieldmap), 0, $limit);
+      $this->ldap_result = @$function($this->conn, $this->prop['base_dn'], $this->filter, array_values($this->fieldmap), 0, 0);
       return true;
     }
     else
@@ -403,22 +399,14 @@ class rcube_ldap
   function _ldap2result($rec)
   {
     $out = array();
-    $id = count($this->idmap) + 1;
     
     if ($rec['dn'])
-    {
-      $dn_hash = $id++; // md5($rec['dn']);
-      $out[$this->primary_key] = $dn_hash;
-      $this->idmap[$dn_hash] = $rec['dn'];
-    }
+      $out[$this->primary_key] = base64_encode($rec['dn']);
     
     foreach ($this->fieldmap as $rf => $lf)
     {
       if ($rec[$lf]['count'])
-      {
-        unset($rec[$lf]['count']);
-        $out[$rf] = join(' ', $rec[$lf]);
-      }
+        $out[$rf] = $rec[$lf][0];
     }
     
     return $out;

@@ -95,7 +95,7 @@ init: function()
 init_row: function(row)
 {
   // make references in internal array and set event handlers
-  if (row && String(row.id).match(/rcmrow([0-9]+)/))
+  if (row && String(row.id).match(/rcmrow([a-z0-9\-_=]+)/i))
   {
     var p = this;
     var uid = RegExp.$1;

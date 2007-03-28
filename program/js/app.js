@@ -864,7 +864,7 @@ function rcube_webmail()
         this.add_contact(props);
         break;
       
-      // mail quicksearch
+      // quicksearch
       case 'search':
         if (!props && this.gui_objects.qsearchbox)
           props = this.gui_objects.qsearchbox.value;
@@ -1227,6 +1227,10 @@ function rcube_webmail()
     // add sort to url if set
     if (sort)
       add_url += '&_sort=' + sort;
+
+    // also send search request to get the right messages
+    if (this.env.search_request)
+      add_url += '&_search='+this.env.search_request;
       
     // set page=1 if changeing to another mailbox
     if (!page && mbox != this.env.mailbox)
@@ -1253,10 +1257,6 @@ function rcube_webmail()
       target = window.frames[this.env.contentframe];
       add_url += '&_framed=1';
       }
-
-    // also send search request to get the right messages
-    if (this.env.search_request)
-      add_url += '&_search='+this.env.search_request;
 
     // load message list to target frame/window
     if (mbox)
@@ -1419,6 +1419,10 @@ function rcube_webmail()
 
       this.message_list.select_next();
       }
+      
+    // also send search request to get the right messages 
+    if (this.env.search_request) 
+      add_url += '&_search='+this.env.search_request;
 
     // send request to server
     this.http_request(action, '_uid='+a_uids.join(',')+'&_mbox='+urlencode(this.env.mailbox)+add_url, lock);
@@ -1916,8 +1920,10 @@ function rcube_webmail()
         this.show_contentframe(false);
       }
 
+      // reset vars
+      this.env.current_page = 1;
       this.set_busy(true, 'searching');
-      this.http_request('search', '_search='+urlencode(value)+(this.env.mailbox ? '&_mbox='+this.env.mailbox : '')+(this.env.source ? '&_source='+urlencode(this.env.source) : ''), true);
+      this.http_request('search', '_q='+urlencode(value)+(this.env.mailbox ? '&_mbox='+this.env.mailbox : '')+(this.env.source ? '&_source='+urlencode(this.env.source) : ''), true);
       }
     return true;
     };
@@ -2249,6 +2255,10 @@ function rcube_webmail()
     // send request to server
     var url = (src ? '&_source='+urlencode(src) : '') + (page ? '&_page='+page : '');
     this.env.source = src;
+    
+    // also send search request to get the right messages 
+    if (this.env.search_request) 
+      url += '&_search='+this.env.search_request;
 
     this.set_busy(true, 'loading');
     this.http_request('list', url, true);
@@ -2269,13 +2279,10 @@ function rcube_webmail()
     else if (framed)
       return false;
       
-    if (this.env.search_request)
-      add_url += '&_search='+this.env.search_request;
-
     if (action && (cid || action=='add') && !this.drag_active)
       {
       this.set_busy(true);
-      target.location.href = this.env.comm_path+'&_action='+action+'&_source='+urlencode(this.env.source)+'&_cid='+cid+add_url;
+      target.location.href = this.env.comm_path+'&_action='+action+'&_source='+urlencode(this.env.source)+'&_cid='+urlencode(cid) + add_url;
       }
     return true;
     };
@@ -2287,7 +2294,7 @@ function rcube_webmail()
       cid = this.contact_list.get_selection().join(',');
 
     if (to != this.env.source && cid && this.env.address_sources[to] && !this.env.address_sources[to].readonly)
-      this.http_post('copy', '_cid='+cid+'&_source='+urlencode(this.env.source)+'&_to='+urlencode(to));
+      this.http_post('copy', '_cid='+urlencode(cid)+'&_source='+urlencode(this.env.source)+'&_to='+urlencode(to));
   };
 
 
@@ -2318,7 +2325,7 @@ function rcube_webmail()
       }
 
     // send request to server
-    this.http_request('delete', '_cid='+a_cids.join(',')+'&_from='+(this.env.action ? this.env.action : ''));
+    this.http_request('delete', '_cid='+urlencode(a_cids.join(','))+'&_from='+(this.env.action ? this.env.action : ''));
     return true;
     };
 
@@ -3161,10 +3168,6 @@ function rcube_webmail()
     if (bw.safari)
       querystring += '&_ts='+(new Date().getTime());
 
-    // also send search request to get the right messages
-    if (this.env.search_request)
-      querystring += '&_search='+this.env.search_request;
-
     // send request
     if (request_obj)
       {
@@ -3190,9 +3193,6 @@ function rcube_webmail()
         postdata._remote = 1;
       else
         postdata += (postdata ? '&' : '') + '_remote=1';
-
-      if (this.env.search_request)
-        postdata += '&_search='+this.env.search_request;
 
       // send request
       if (request_obj = this.get_request_obj())

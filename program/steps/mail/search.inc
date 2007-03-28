@@ -25,7 +25,7 @@ $_SESSION['page'] = 1;
 $imap_charset = 'UTF-8';
 
 // get search string
-$str = get_input_value('_search', RCUBE_INPUT_GET);
+$str = get_input_value('_q', RCUBE_INPUT_GET);
 $mbox = get_input_value('_mbox', RCUBE_INPUT_GET);
 $search_request = md5($mbox.$str);
 
