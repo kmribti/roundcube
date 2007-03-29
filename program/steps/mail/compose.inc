@@ -874,14 +874,15 @@ $OUTPUT->add_handlers(array(
 
 /****** get contacts for this user and add them to client scripts ********/
 
-$sql_result = $DB->query("SELECT name, email
-                          FROM ".get_table_name('contacts')." WHERE  user_id=?
-                          AND  del<>1",$_SESSION['user_id']);
+require_once('include/rcube_contacts.inc');
+
+$CONTACTS = new rcube_contacts($DB, $_SESSION['user_id']);
+$CONTACTS->set_pagesize(1000);
                                    
-if ($DB->num_rows($sql_result))
+if ($result = $CONTACTS->list_records())
   {        
   $a_contacts = array();
-  while ($sql_arr = $DB->fetch_assoc($sql_result))
+  while ($sql_arr = $result->iterate())
     if ($sql_arr['email'])
       $a_contacts[] = format_email_recipient($sql_arr['email'], JQ($sql_arr['name']));
   
