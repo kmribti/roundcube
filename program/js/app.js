@@ -730,40 +730,42 @@ function rcube_webmail()
           var uid;
           if (uid = this.get_single_uid())
             url += '&_draft_uid='+uid+'&_mbox='+urlencode(this.env.mailbox);
-          } 
+          }
         // modify url if we're in addressbook
         else if (this.task=='addressbook')
           {
-          url = this.get_task_url('mail', url);            
-          var a_cids = new Array();
+          // switch to mail compose step directly
+          if (props && props.indexOf('@') > 0)
+          {
+            url = this.get_task_url('mail', url);
+            this.redirect(url + '&_to='+urlencode(props));
+            break;
+          }
           
           // use contact_id passed as command parameter
+          var a_cids = new Array();
           if (props)
             a_cids[a_cids.length] = props;
           // get selected contacts
-          else
+          else if (this.contact_list)
             {
             var selection = this.contact_list.get_selection();
             for (var n=0; n<selection.length; n++)
               a_cids[a_cids.length] = selection[n];
             }
+            
           if (a_cids.length)
-            url += '&_to='+a_cids.join(',');
-          else
-            break;
+            this.http_request('mailto', '_cid='+urlencode(a_cids.join(','))+'&_source='+urlencode(this.env.source), true);
+
+          break;
           }
         else if (props)
            url += '&_to='+urlencode(props);
 
         // don't know if this is necessary...
         url = url.replace(/&_framed=1/, "");
-        this.set_busy(true);
 
-        // need parent in case we are coming from the contact frame
-        if (this.env.framed)
-          parent.location.href = url;
-        else
-          location.href = url;
+        this.redirect(url);
         break;
         
       case 'spellcheck':
@@ -998,8 +1000,7 @@ function rcube_webmail()
     if (task=='mail')
       url += '&_mbox=INBOX';
 
-    this.set_busy(true);
-    location.href = url;
+    this.redirect(url);
     };
 
 
@@ -3128,6 +3129,14 @@ function rcube_webmail()
   /*********        remote request methods        *********/
   /********************************************************/
 
+  this.redirect = function(url)
+    {
+    this.set_busy(true);
+    if (this.env.framed && window.parent)
+      parent.location.href = url;
+    else  
+      location.href = url;
+    };
 
   this.goto_url = function(action, query, lock)
     {
@@ -3135,7 +3144,7 @@ function rcube_webmail()
     this.set_busy(true);
 
     var querystring = query ? '&'+query : '';
-    location.href = this.env.comm_path+'&_action='+action+querystring;
+    this.redirect(this.env.comm_path+'&_action='+action+querystring);
     };
 
 

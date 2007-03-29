@@ -125,24 +125,10 @@ function rcmail_compose_headers($attrib)
     case 'to':
       $fname = '_to';
       $header = 'to';
-
-      // we have contact id's as get parameters
-      if (!empty($_GET['_to']) && preg_match('/^[0-9]+(,[0-9]+)*$/', $_GET['_to']))
-        {
-        $a_recipients = array();
-        $sql_result = $DB->query("SELECT name, email
-                                  FROM ".get_table_name('contacts')."
-                                  WHERE user_id=?
-                                  AND    del<>1
-                                  AND    contact_id IN (".$_GET['_to'].")",
-                                  $_SESSION['user_id']);
-                                         
-        while ($sql_arr = $DB->fetch_assoc($sql_result))
-          $a_recipients[] = format_email_recipient($sql_arr['email'], $sql_arr['name']);
-          
-        if (sizeof($a_recipients))
-          $fvalue = join(', ', $a_recipients);
-        }
+      
+      // we have a set of recipients stored is session
+      if (($mailto_id = get_input_value('_mailto', RCUBE_INPUT_GET)) && $_SESSION['mailto'][$mailto_id])
+        $fvalue = $_SESSION['mailto'][$mailto_id];
       else if (!empty($_GET['_to']))
         $fvalue = get_input_value('_to', RCUBE_INPUT_GET);
         
@@ -870,16 +856,6 @@ function get_form_tags($attrib)
 
   return array($form_start, $form_end);  
   }
-
-
-function format_email_recipient($email, $name='')
-  {
-  if ($name && $name != $email)
-    return sprintf('%s <%s>', strpos($name, ",") ? '"'.$name.'"' : $name, $email);
-  else
-    return $email;
-  }
-
 
 
 // register UI objects

@@ -2,14 +2,14 @@
 
 /*
  +-----------------------------------------------------------------------+
- | program/steps/addressbook/copy.inc                                    |
+ | program/steps/addressbook/mailto.inc                                  |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
  | Copyright (C) 2007, RoundCube Dev. - Switzerland                      |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
- |   Copy a contact record from one direcotry to another                 |
+ |   Compose a recipient list with all selected contacts                 |
  |                                                                       |
  +-----------------------------------------------------------------------+
  | Author: Thomas Bruederli <roundcube@gmail.com>                        |
@@ -19,25 +19,29 @@
 
 */
 
-$cid = get_input_value('_cid', RCUBE_INPUT_POST);
-$target = get_input_value('_to', RCUBE_INPUT_POST);
-if ($cid && preg_match('/^[a-z0-9\-_=]+(,[a-z0-9\-_=]+)*$/i', $cid) && strlen($target) && $target != $source)
-{
-  if ($target != '0')
-    $TARGET = new rcube_ldap($CONFIG['ldap_public'][$target]);
-  else
-    $TARGET = new rcube_contacts($DB, $_SESSION['user_id']);
-    
-  $success = false;  
-  if ($TARGET && $TARGET->ready && !$TARGET->readonly)
-    $success = $TARGET->insert($CONTACTS->search($CONTACTS->primary_key, $cid), true);
+$cid = get_input_value('_cid', RCUBE_INPUT_GET);
+$recipients = null;
+$mailto = array();
 
-  if (empty($success))
-    $OUTPUT->show_message('copyerror', 'error');
-  else
-    $OUTPUT->show_message('copysuccess', 'notice', array('nr' => count($success)));
+if ($cid && preg_match('/^[a-z0-9\-_=]+(,[a-z0-9\-_=]+)*$/i', $cid) && $CONTACTS->ready)
+{
+  $recipients = $CONTACTS->search($CONTACTS->primary_key, $cid);
+
+  while (is_object($recipients) && ($rec = $recipients->iterate()))
+    $mailto[] = format_email_recipient($rec['email'], $rec['name']);
 }
-  
+
+if (!empty($mailto))
+{
+  $mailto_str = join(', ', $mailto);
+  $mailto_id = substr(md5($mailto_str), 0, 16);
+  $_SESSION['mailto'][$mailto_id] = $mailto_str;
+  $OUTPUT->command('redirect', rcmail_self_url('compose', array('_mailto' => $mailto_id), 'mail'));
+}
+else
+  $OUTPUT->show_message('nocontactsfound', 'warning');
+
+
 // send response
 $OUTPUT->send();
 
