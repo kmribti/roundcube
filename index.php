@@ -322,6 +322,9 @@ if ($_task=='addressbook')
 
   if ($_action=='copy')
     include('program/steps/addressbook/copy.inc');
+
+  if ($_action=='mailto')
+    include('program/steps/addressbook/mailto.inc');
   }
 
 
