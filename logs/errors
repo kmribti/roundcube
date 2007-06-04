@@ -1,0 +1,27 @@
+[29-May-2007 12:38:49 +0100] DB Error: MDB2 Error: insufficient permissions in /www/workspaces/till/sites/webmail/program/include/rcube_mdb2.inc on line 104
+[29-May-2007 13:29:10 +0100] DB Error: MDB2 Error: insufficient permissions in /www/workspaces/till/sites/webmail/program/include/rcube_mdb2.inc on line 104
+[29-May-2007 14:16:58 +0100] DB Error: MDB2 Error: connect failed in /www/workspaces/till/sites/webmail/program/include/rcube_mdb2.inc on line 104
+[29-May-2007 14:16:59 +0100] DB Error: MDB2 Error: connect failed in /www/workspaces/till/sites/webmail/program/include/rcube_mdb2.inc on line 104
+[29-May-2007 13:21:14] PHP Fatal error:  Can't use method return value in write context in /www/workspaces/till/sites/webmail/program/include/rcube_mdb2.inc on line 103
+[29-May-2007 13:21:15] PHP Fatal error:  Can't use method return value in write context in /www/workspaces/till/sites/webmail/program/include/rcube_mdb2.inc on line 103
+[29-May-2007 13:21:15] PHP Fatal error:  Can't use method return value in write context in /www/workspaces/till/sites/webmail/program/include/rcube_mdb2.inc on line 103
+[29-May-2007 13:21:16] PHP Fatal error:  Can't use method return value in write context in /www/workspaces/till/sites/webmail/program/include/rcube_mdb2.inc on line 103
+[03-Jun-2007 16:47:44] PHP Warning:  Cannot modify header information - headers already sent in /www/workspaces/till/sites/webmail/program/include/rcube_shared.inc on line 154
+[03-Jun-2007 17:02:59] PHP Warning:  Cannot modify header information - headers already sent in /www/workspaces/till/sites/webmail/program/include/rcube_shared.inc on line 154
+[03-Jun-2007 17:11:37] PHP Warning:  Cannot modify header information - headers already sent in /www/workspaces/till/sites/webmail/program/include/rcube_shared.inc on line 154
+[03-Jun-2007 17:13:50] PHP Warning:  Cannot modify header information - headers already sent in /www/workspaces/till/sites/webmail/program/include/rcube_shared.inc on line 154
+[03-Jun-2007 17:55:47] PHP Warning:  Cannot modify header information - headers already sent in /www/workspaces/till/sites/webmail/program/include/rcube_shared.inc on line 154
+[03-Jun-2007 21:49:29 +0100] IMAP Error: Could not connect to ssl://webmail.macnews.de at port 993: Die Wartezeit für die Verbindung ist abgelaufen in  on line 0
+[04-Jun-2007 10:04:42 +0100] IMAP Error: Authentication for marc@@macbay.de failed (AUTH): "a000 NO incorrect E-mail address
+"Authentication for marc@@macbay.de failed (LOGIN): "a001 NO incorrect E-mail address" in  on line 0
+[04-Jun-2007 10:04:48 +0100] IMAP Error: Authentication for marc@@macbay.de failed (AUTH): "a000 NO incorrect E-mail address
+"Authentication for marc@@macbay.de failed (LOGIN): "a001 NO incorrect E-mail address" in  on line 0
+[04-Jun-2007 10:04:56 +0100] IMAP Error: Authentication for m12101@@macbay.de failed (AUTH): "a000 NO incorrect E-mail address
+"Authentication for m12101@@macbay.de failed (LOGIN): "a001 NO incorrect E-mail address" in  on line 0
+[04-Jun-2007 10:05:07 +0100] IMAP Error: Authentication for till@@macbay.de failed (AUTH): "a000 NO incorrect E-mail address
+"Authentication for till@@macbay.de failed (LOGIN): "a001 NO incorrect E-mail address" in  on line 0
+[04-Jun-2007 10:05:22 +0100] IMAP Error: Authentication for marc@@macbay.de failed (AUTH): "a000 NO incorrect E-mail address
+"Authentication for marc@@macbay.de failed (LOGIN): "a001 NO incorrect E-mail address" in  on line 0
+[04-Jun-2007 10:05:28 +0100] IMAP Error: Authentication for marc@@macbay.de failed (AUTH): "a000 NO incorrect E-mail address
+"Authentication for marc@@macbay.de failed (LOGIN): "a001 NO incorrect E-mail address" in  on line 0
+[04-Jun-2007 09:07:42] PHP Warning:  mb_convert_encoding() [<a href='function.mb-convert-encoding'>function.mb-convert-encoding</a>]: Illegal character encoding specified in /www/workspaces/till/sites/webmail/program/include/main.inc on line 932

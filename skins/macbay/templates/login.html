@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+<style type="text/css">
+
+#login-form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 380px;
+  /* border: 1px solid #999; */
+}
+
+#login-form table td.title
+{
+  color: #666;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.boxcontent {
+  padding: 20px 20px 10px 20px;
+}
+
+</style>
+</head>
+<body>
+
+<roundcube:include file="/includes/header.html" />
+
+<div class="clrLeft">&nbsp;</div>
+
+<div id="wrapper-webmail">
+
+    <div id="login-form">
+
+        <h2><roundcube:label name="welcome" /></h2>
+
+        <div class="boxcontent">
+
+            <form id="loginForm" name="form" action="./" method="post">
+            <roundcube:object name="loginform" form="form" />
+
+            <div class="btn btn-active-big frRight">
+        		<div class="icon icon-active-writemail">&nbsp;</div>
+        		<p><span onclick="$('#loginForm').submit();"><roundcube:label name="login" /></span></p>
+        	</div>
+
+        </form>
+        </div>
+    </div>
+
+</div>
+
+<roundcube:include file="/includes/footer.html" />
+
+</body>
+</html>

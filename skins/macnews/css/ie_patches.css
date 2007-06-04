@@ -1,0 +1,316 @@
+/*
+	File: ie_patches.css
+  Media type: screen
+  
+	PATCHES FOR IE 6 / IE 7
+
+*/
+
+/*
+		basic.css
+*/
+
+
+div#mainContent	 { 
+	padding-left: 20px; /* IE */
+	width: 920px; /*IE6 boxmodel-bug*/
+} 
+
+#mainnav fieldset input.searchbtn {
+	padding-bottom: 4px;
+}
+
+
+#wrapper-footer .broad {
+	width: 346px;
+}
+
+
+
+/*
+		modules.css
+
+*/
+
+
+#content div.defined {
+	width: 688px;
+}
+
+
+.wrapper-box-half {
+	width: 348px; /*IE6*/
+}
+.leftBox {
+	margin-right: 24px;
+}
+.wrapper-box-half .wrapper-box-header {
+	width: 348px;  /*IE6*/
+}
+
+.box,
+.box-inner,
+.box-inner-small,
+.box-inner-half {
+	display: inline-block; /* IE */
+	width: 910px;
+	
+}
+.box-inner {
+    width: 875px;
+}
+.box-inner-small {
+    width: 710px;
+}
+.box-inner-half {
+	width: 410px;
+}
+
+.wrapper-box-half .box {
+	width: 338px;
+}
+
+
+/*  HALF BOX  */
+.box-inner-halfsize {
+	width: 335px;
+}
+
+.box ul li {
+	display: inline-block;	
+}
+.box ul.buddies {
+	display: inline-block;		
+	width: 315px;
+}
+
+.box ul.buddies li {
+	width: 314px;
+	margin-bottom: -2px;
+}
+
+.options ul,
+ul.tools,
+.options li,
+ul.tools li {
+		border-color: #E4EBEE;
+		border-style: solid;
+}
+
+
+.wrapper-box-half .options {
+	width: 319px;
+}
+.wrapper-box-half .options li {
+	font-size: 1em;
+}
+
+/*   THIRD BOX  */
+.box ul.toplist li {
+	margin-bottom: -2px;
+}
+
+/*		
+			COMMUNITY PROFILE
+*/
+
+.profile .container {
+    width: 338px;
+    padding: 0 5px 0 10px;
+}
+.profile div.inner-img {
+    padding-bottom: 1px;
+}
+.profile div.inner-img {
+		height: 332px;    
+}
+
+
+/*
+
+		tables.css
+*/
+
+div#content .wrapper-box-half table {
+	width: 319px;
+}
+
+table td {
+	padding: 1px 8px 1px 8px;  /*IE6*/
+	border-bottom: 1px solid #E4EBEE; /*IE*/
+}
+
+
+table th {
+	padding-left: 8px;
+	padding-bottom: 3px;
+	border-bottom: 1px solid #E4EBEE; /*IE*/
+}
+
+table td span.extrashort {
+	width: 80px;
+}
+table td span.short {
+	width: 120px;
+}
+table.buddies td span.short {
+	width: 70px;
+}
+
+div#content .wrapper-box-half table td span.short {
+	width: 207px;
+}
+table td span.medium {
+	width: 220px;
+}
+
+table td span.long {
+	width: 290px;
+}
+table td span.extralong {
+	width: 330px;
+}
+
+
+td.icon {
+	padding-left: 10px;
+	ppadding-right: 10px;
+}	
+
+/*
+		forms.css
+*/
+
+.box fieldset legend {
+	padding-left: 0;
+}
+/* IE-bug, legend shows black line, if display:none */
+.box fieldset legend.hide {
+	display: inline;
+	padding: 0;
+	color: #FFF;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+}
+
+.formrow {
+	display: inline-block; /* IE */
+}
+
+
+.formrow label {
+	padding: 8px 0 10px 6px;		/* WIN IE/FF */
+}
+.formrow input,
+.formrow select {
+	margin-top: 5px;	
+}
+
+.formrow img.mod {
+	padding-right: 10px; /* IE 6*/	
+}
+.formrow-indent img.mod {
+	padding-right: 10px; /* IE 6*/	
+}
+
+form.halfsize fieldset {
+	width: 335px; 
+}
+form.halfsize .formrow {
+	width: 335px;
+}
+
+
+
+/*
+			buttons.css
+*/
+
+
+.btn-mod-fL {
+	margin-left: 1px ; /*IE*/
+}
+.btn-mod-fR {
+	margin-right: 5px; /*IE*/
+	
+}
+
+div.btn-ajax-error {
+	width: 105px;
+
+	white-space: nowrap;
+}
+
+div.btn-size2 {
+	width: 65px;
+}
+
+
+/*
+			ajax.css
+
+*/
+div.ajax-status div.mod {
+	display: inline-block;
+}
+ul.buddies li.ajax {
+	width: 309px;	/* 318 + 2*3 - 2*5 */
+}
+
+
+.autocomplete {
+	margin-left: -156px;
+	margin-top: 22px;
+}
+.autocomplete ul li {
+	margin-bottom: -2px;	
+}
+
+
+/*
+			FILEBROWSER
+*/
+
+.filebrowser-maxi .item p.desc {
+    border-style: solid;
+}
+
+/* 
+		IFRAMES 
+*/
+
+ul.mininav {
+	margin-top: -2px;
+}
+
+
+/*
+		SMS TIMER
+*/
+
+.box-tabs ul.mininav {
+	margin-top: 0;
+}
+
+
+/*
+		WEBMAIL
+*/
+
+.navBarBottom select {
+
+	height: 19px;
+}
+table#messagelist {
+	border: none;
+	border-bottom: 1px solid #D0E3FF;	
+}
+
+table#messagelist tbody tr .icon1 {
+	border-left: 1px solid #D0E3FF;
+	
+}
+table#messagelist tbody tr .icon2 {
+	border-right: 1px solid #D0E3FF;	
+}

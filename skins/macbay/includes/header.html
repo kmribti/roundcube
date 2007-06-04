@@ -1,0 +1,37 @@
+<div id="wrapper">
+	<div id="networknav">
+		<p>Unser Netzwerk:</p>
+		<ul>
+			<li><a href="#" title="">macnews.de</a></li>
+			<li><a href="#" title="">ipodnews.de</a></li>
+			<li><a href="#" title="">maccommunity.de</a></li>
+			<li class="selected"><a href="" title="">macbay.de</a></li>
+			<li><a href="#" title="">macdeals.de</a></li>
+		</ul>
+		<div id="sessionbox">
+			<p>Hi, usernamegalwielang <roundcube:button command="logout" image="/img/icon_logout.gif" alt="logout" />
+		</div>
+	</div>
+	<div id="wrapper-inner">
+		<div id="header">
+			<a name="top" id="top"></a>
+			<a href="/" title="Zur Startseite"><img src="http://icke.till.workspace.macnews.local/incl/img/header_macbay.gif" alt="" /></a>
+			<ul id="sitenavi">
+				<li class="first"><a href="/config/" title="Meine Startseite"><span>Meine Startseite</span></a></li>
+				<li><a href="/config/organizer" title="Organizer" class="selected"><span>Organizer</span></a></li>
+				<li><a href="/config/filebrowser" title="Disk"><span>Disk</span></a></li>
+				<li><a href="/config/account/plan" title="Account"><span>Account</span></a></li>
+				<li><a href="/config/administration/user" title="Verwaltung"><span>Verwaltung</span></a></li>
+			</ul>
+		</div>
+  	     <div id="content">
+			<div class="box">
+				<ul class="tabBar">
+					<li><a href="/config/organizer/" title="&Uuml;bersicht">&Uuml;bersicht</a></li>
+					<li class="selected">E-Mail</li>
+					<li><a href="/config/organizer/calendar" title="E-Mail">Kalender</a></li>
+					<li><a href="/config/organizer/addressbook" title="Adressbuch">Adressbuch</a></li>
+					<li><a href="/config/organizer/bookmarks" title="Bookmarks">Bookmarks</a></li>
+					<li><a href="/config/organizer/sms" title="SMS / Fax / UMS">SMS / Fax / UMS</a></li>
+					<li><roundcube:object name="message" id="message" /></li>
+				</ul>

@@ -1,0 +1,190 @@
+/*
+	File: ajax.css
+	Media type: screen
+	
+	
+  AJAX STYLES 
+  
+*/
+
+
+
+
+
+
+
+.box-savemode {
+	border-color: #FFA800;	
+	height: 300px;
+	background-color: #000;
+}
+.box-successmode {
+	border-color: #68B500;	
+	height: 300px;
+	background-color: #000;
+}
+.box-errormode {
+	border-color: #F43133;	
+	height: 300px;
+	background-color: #000;
+}
+
+
+/* buddylist ajax states */
+ul.buddies li.ajax {
+	border: 5px solid;
+	padding: 0;
+	width: 314px;	/* 318 + 2*3 - 2*5 */
+	height: 33px;
+}
+ul.buddies li.ajax p {
+	padding: 9px 0 0 45px;
+	width: 100%;
+}
+ul.buddies li.ajax-add {
+	border-color: #F7D66A;
+	background: #FFF6D8 url(/incl/img/icon_add_friend.gif) no-repeat;
+	color: #06C;
+}
+ul.buddies li.ajax-add a,
+ul.buddies li.ajax-add span.ajaxfakelink {
+	color: #06C;
+}
+
+ul.buddies li.ajax-addSuccess {
+	border-color: #F7D66A;
+	background: #FFF6D8 url(/incl/img/icon_add_friend_success.gif) no-repeat;
+	color: #68B500;
+}
+
+/* toplist */
+ul.toplist li.ajax {
+	border: 5px solid;
+	padding: 0;
+	width: 203px;
+	height: 31px;
+}
+ul.toplist li.ajax p {
+	padding: 1px 4px 0 39px;
+
+}
+ul.toplist li.ajax-add {
+	border-color: #F7D66A;
+	background: #FFF6D8 url(/incl/img/icon_add_friend.gif) no-repeat;
+	color: #06C;
+}
+ul.toplist li.ajax-add a {
+	color: #06C;
+}
+
+ul.toplist li.ajax-addSuccess {
+	border-color: #F7D66A;
+	background: #FFF6D8 url(/incl/img/icon_add_friend_success.gif) no-repeat;
+	color: #68B500;
+}
+
+
+
+
+
+/* boxes */
+
+div.ajax-status {
+	position: relative;
+	margin: auto;
+	width: 380px;
+	opacity: 1.0;
+	color: #FFF;
+	overflow: hidden;
+}
+
+div.ajax-saving {
+	top: 40%;
+	background: #FFA800 url(/incl/img/indicator_orange.gif) no-repeat 13px 13px;
+}
+
+div.ajax-success {
+	top: 40%;
+	background: #68B500 url(/incl/img/ajax_activity_success.gif) no-repeat 18px 16px;
+}
+
+div.ajax-error {
+	top: 30%;
+	background: #F43133 url(/incl/img/ajax_activity_error.gif) no-repeat 13px 17px;
+}
+div.ajax-status p.msg {
+	padding: 19px 0 19px 60px;
+	color: #FFF;
+	font-weight: 600;
+	font-size: 1.4em;	
+}
+div.ajax-status div.mod {
+	padding-left: 56px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+div.ajax-status p.mod {
+	float: left;
+	padding: 0 8px 0 10px;
+}
+
+
+/*.ajax * {
+	opacity: 0.5;
+}*/
+
+/********    ********/
+
+
+/*
+		AUTO COMPLETER
+*/
+
+.autocomplete {
+	position: absolute;
+	z-index: 100;
+	margin-left: 115px;
+	margin-top: 0;
+	opacity: 0.9;
+}
+
+.autocomplete ul.medium {
+	width: 150px;
+	border: 1px solid #E5ECEF;
+	border-bottom: 0;
+}
+.autocomplete ul li a {
+	display: block;
+	padding: 3px;
+	border-bottom: 1px solid #E5ECEF;
+	color: #000;
+	background-color: #FFF;
+}
+.autocomplete ul li a:hover {
+	color: #666;
+	background-color: #E5ECEF;
+	text-decoration: none;	
+}
+
+
+div#loading {
+    position: relative;
+    right: 10px;
+    float: right;
+    width: 16px;
+    margin-top: -38px;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

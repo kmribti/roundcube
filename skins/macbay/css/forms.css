@@ -1,0 +1,504 @@
+/*
+	File: forms.css
+	Media type: screen
+
+
+  FORMS (only within content)
+
+*/
+
+textarea,
+select,
+input {
+	font-size: 1em;
+	border: 1px solid #CCC;
+}
+
+input {
+	padding: 3px 0 0 3px;
+	height: 16px;
+}
+input.checkbox {
+	border: 0;
+	padding: 0;
+}
+input.radio {
+	border: none;
+}
+select {
+	padding: 1px 0 0 0;
+	height: 19px;
+}
+select.multiple {
+    height: auto;
+    padding: 1px 0 0 2px;
+
+}
+textarea {
+	padding: 3px 0 0 3px;
+}
+
+
+
+/*
+		LOGIN
+*/
+
+form#logbox * {
+	margin-left: 5px;
+	float: left;
+}
+form#logbox input.text {
+	width: 60px;
+	height: 15px;
+	margin-top: 4px;
+	padding: 2px;
+}
+form#logbox label {
+	margin-top: 8px;
+}
+form#logbox input#loginsubmit {
+	border: none;
+	margin-top: 5px;
+	padding: 0;
+	height: 17px;
+}
+
+
+.box form.selector {
+	background-color: #E7F1FF;
+	padding: 6px 0 6px 13px;
+}
+.box form.mTop {
+	margin-top: 3px;
+}
+
+.box form.selector-light {
+	padding: 6px 0 6px 13px;
+}
+
+.box form.selector select,
+.box form.selector-light select,
+.box form.selector-light input {
+	margin-left: 5px;
+}
+.box form.selector label.second,
+.box form.selector-light label.second {
+	margin-left: 62px;
+}
+.box form.selector-light label.single {
+	margin-left: 340px;
+}
+
+.box fieldset {
+	margin: 7px 10px 3px 10px;
+	border-bottom: 1px solid #EEE;
+	border-top: 0;
+	margin-bottom: 15px;
+}
+
+.box fieldset legend {
+	padding: 4px 0 8px 6px;
+	color: #69C;
+	font-size: 1em;
+	line-height: 1em;
+	font-weight: bold;
+}
+.box fieldset legend.icon {
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 15px;
+}
+
+.formrow {
+	border-top: 1px solid #EEE;
+	overflow: hidden;		/* non-IE */
+	wwidth: 700px;
+}
+.box-inner-half .formrow {
+	border-top: none;
+}
+
+.formrow-editmode {
+	background-color: #FFEDD5;
+}
+
+.formrow-first {
+	border-top: none;
+}
+
+#content .formrow-indent {
+	padding-left: 26px;
+	background: url(http://icke.till.workspace.macnews.local/incl/img/arrow_twisted_grey.gif) no-repeat 8px center;
+	/*width: 96.3%; */ /*Safari fluid */
+	wwidth: 674px;
+}
+
+#content .formrow-big-indent {
+	background-position: 8px 10px;
+	vertical-align: top;
+}
+
+
+.formrow label {
+	display: block;
+	float: left;
+	wwidth: 168px;
+	width: 220px;
+	padding: 8px 0 5px 6px;
+}
+.formrow label.additional {	/* right from checkboxes etc. */
+	width: auto;
+	padding-left: 0;
+}
+.formrow label.medium {	/* right from checkboxes with fix width */
+	width: 140px;
+	padding-left: 0;
+}
+
+
+.formrow-indent label {
+	wwidth: 142px;
+	width: 194px;
+}
+.formrow input,
+.formrow select {
+	float: left;
+	margin: 4px 8px 4px 0;
+
+}
+.formrow input.checkbox {
+	margin: 7px 8px 5px 0;
+	height: 16px;
+	width: 16px;
+	padding: 0;
+}
+.formrow textarea {
+    margin: 4px 0;
+}
+
+textarea.height1 {
+    height: 50px;
+}
+textarea.height2 {
+    height: 65px;
+}
+textarea.height3 {
+    height: 80px;
+}
+textarea.height4 {
+    height: 155px;
+}
+
+
+form .extrashort {
+	width: 47px;
+}
+
+form .short {
+	width: 67px;
+}
+
+form .medium {
+	width: 147px;
+}
+form .long {
+	width: 225px;
+}
+form .extralong {
+	width: 304px;
+}
+.formrow select.extrashort {
+	width: 52px;
+}
+.formrow select.short {
+	width: 72px;
+}
+.formrow select.medium {
+	width: 150px;
+}
+.formrow select.long {
+	width: 229px;
+}
+.formrow select.extralong {
+	width: 308px;
+}
+
+.formrow .lightTxt {
+	color: #666;
+}
+
+/*
+			ERROR HANDLING
+*/
+
+.formrow .errorMsg {
+	color: #F43133;
+	padding: 8px 0 0 0;
+	display: block;
+	float: right;
+	width: 170px;
+
+	overflow: hidden;
+}
+
+.formrow span.error {
+	border: 4px solid #F43133;
+	float: left;
+	margin-right: 1px;
+}
+
+.formrow span.error input,
+.formrow span.error select {
+	margin: 0;
+}
+
+
+/*
+			IMAGES/ICONS
+*/
+
+.formrow img {
+	float: left;
+	margin: 8px 0 0 0;
+}
+.formrow img.mod {
+	float: right;
+	padding-right: 10px;
+}
+.formrow-indent img.mod {
+	padding-right: 10px;
+}
+
+
+
+/*
+			FORM HALF SIZE
+*/
+
+form.halfsize {
+	float: left;
+}
+form.halfsize fieldset {
+	width: 340px;
+}
+form.halfsize .formrow {
+	width: 340px;
+	height: 30px;
+}
+form.halfsize label {
+	width: auto;
+}
+form.halfsize .formrow input,
+form.halfsize .formrow select {
+	margin-left: 25px;
+}
+
+
+/*
+			GALLERY
+ */
+
+.formrow .gallery-image {
+    float: left;
+    margin: 0 8px 6px 0;
+    width: 157px;
+    height: 157px;
+    overflow: hidden;
+}
+.formrow .gallery-image img {
+	margin: 4px 0;
+}
+
+.formrow .gallery-content label {
+    padding: 4px 0 0 0;
+}
+
+/*
+        FILEBROWSER
+*/
+
+.filebrowser-maxi textarea {
+    height: 72px;
+    width: 210px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+.filebrowser-maxi select {
+    width: 214px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+.filebrowser-maxi input {
+    width: 210px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+
+/*
+        SMS TIMER
+*/
+
+.box-sms-editmode fieldset {
+	margin-left: 4px;
+}
+
+form.sms fieldset,
+form.sms .formrow {
+	border: none;
+}
+form.sms .formrow div,
+form.sms .formrow label {
+	float: left;
+}
+
+form.sms .formrow input,
+form.sms .formrow textarea,
+form.sms .formrow select {
+	color: #666;
+	float: left;
+}
+
+form.sms .formrow p {
+	padding: 5px 0;
+}
+form.sms .formrow img {
+	cursor: pointer;
+}
+form.sms .formrow div p {
+	float: left;
+}
+
+
+form.sms label {
+	display: block;
+	width: auto;
+	margin-top: 12px;
+}
+form.sms label.info {
+	width: 157px;
+	margin-top: 0;
+	padding: 8px 0 5px 0;
+}
+form.sms label.newPad {
+	margin-top: 0;
+	padding: 7px 6px 5px 0;
+}
+form.sms label.radio {
+	padding-top: 4px;
+	padding-right: 20px;
+}
+
+form.sms .formrow div.form-right {
+	overflow: hidden;
+	width: 200px;
+	margin-left: 8px;
+}
+
+form.sms .formrow div.form-right input {
+	text-align: right;
+	padding-right: 2px;
+	width: 27px;
+}
+
+form.sms .formrow .long {
+	width: 275px;
+}
+form.sms .formrow select.short {
+	width: 60px;
+}
+.box-sms .formrow select.extrashort {
+	width: 48px;
+}
+form.sms .formrow select.long {
+	width: 280px;
+}
+
+
+
+
+label.noMargin {
+	margin-left: 0;
+}
+
+
+/*	fixed width for label (ajax autocomplete)*/
+label.fixedMedium {
+	float: left;
+	display: block;
+	overflow: hidden;
+	width: 110px;
+	padding-top: 3px;
+	white-space: nowrap;
+}
+
+
+
+/* COMPOSE MESSAGE  */
+form#composemessage {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	min-height: 570px;
+	border: 1px solid #D0E3FF;
+	background-color: #E7F1FF;
+
+}
+form#composemessage fieldset {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	border: none;
+}
+form#composemessage .formrow {
+	border-bottom: 1px solid #D0E3FF;
+	border-top: none;
+}
+
+form#composemessage label {
+	padding: 5px 15px 0 0;
+	width: 80px;
+	text-align: right;
+}
+form#composemessage input {
+	margin: 2px 0;
+	width: 480px;
+	border: 1px solid #D0E3FF;
+}
+form#composemessage textarea {
+	margin: 2px 0;
+	width: 480px;
+	height: 40px;
+	border: 1px solid #D0E3FF;
+}
+form#composemessage textarea#compose-body {
+	margin: 10px;
+	padding: 10px;
+	width: 670px;
+	height: 300px;
+	border: 1px solid #D0E3FF;
+	font-family: "Courier New", Courier, monospace;
+}
+form#composemessage input.checkbox {
+	width: auto;
+	margin: 4px 4px 0 5px;
+	border: none;
+}
+form#composemessage label.additional {
+	float: left;
+	width: 90px;
+	text-align: left;
+}
+form#composemessage fieldset.attachments .upload {
+	float: left;
+	margin: 2px 10px;
+	padding: 0;
+	width: 240px;
+  height: auto;
+}
+
+
+
+
+

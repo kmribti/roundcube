@@ -1,0 +1,170 @@
+/*
+	File: ie6_patches.css
+  Media type: screen
+  
+	PATCHES FOR IE 6 
+
+*/
+
+/*
+
+		modules.css
+*/
+
+.container-inner-right {
+	width: 150px;
+}
+
+.wrapper-box-half .options {
+	width: 319px;
+	margin-left: 5px;
+}
+
+/*  HALF BOX  */
+.box-inner-halfsize {
+	width: 340px;
+	margin: 0 5px;
+}
+/*   THIRD BOX  */
+.toplist-first {
+	margin-left: 10px;
+}
+
+
+.header-profile {
+	display: inline-block;
+}
+
+
+
+
+
+/*
+
+		tables.css
+*/
+
+
+
+table.full {
+	width: 890px;
+}
+
+
+
+/*
+		buttons.css 
+*/
+
+#content div.btn span {
+	width: 1%;
+}
+
+#content table div.btn span {
+	width: auto;
+}
+
+
+/* iframes */
+.iframe1 {
+	width: 176px;
+}
+.iframe2 {
+	width: 316px;
+}
+.iframe2-small {
+	width: 316px;
+}
+.iframe3 {
+	width: 354px;
+}
+#wrapper-iframes .iframe3-edit {
+	width: 338px;
+	height: 384px;
+}
+
+ul.width1 {
+	width: 178px;
+}
+ul.width2 {
+	width: 318px;
+}
+ul.width3 {
+	width: 354px;
+}
+
+/*sms timer box */
+.IEclrRight {
+	clear: right;
+}
+.box-sms form {
+	padding-left: 5px;
+	padding-bottom: 10px;
+}
+
+.box-sms {
+	margin-left: 5px;
+}
+.box-tabs ul.tabnav li {
+	font-weight: normal;
+}
+.box-tabs ul.tabnav li.selected {
+	font-weight: bold;
+}
+.box-tabs ul.tabnav li.selected {
+	cursor: default;
+}
+
+/*sms settings*/
+
+.settings ul {
+	margin-bottom: -7px;
+}
+
+
+/* Webmailer NavBar */
+
+.navBar,
+.navBarBottom,
+.navBarTop {
+	display: inline-block;
+}
+.navBarBottom p {
+	padding-left: 5px;
+}
+
+.navBarLeft {
+	margin: 0 10px 0 5px;
+}
+
+#wrapper-webmail {
+	padding-top: 0;
+	display: inline-block;	
+}
+ul.mailboxlist {
+	height: 470px;
+}
+table#messagelist {
+	margin-left: 0;
+}
+
+#messageframe,
+#messagebody  {
+	display: inline-block;
+}
+#messagebody {
+	height: 435px;
+}
+form#composemessage .formrow {
+	padding-bottom: 2px;
+}
+form#composemessage textarea {
+	margin-left: -2px;
+}
+fieldset.attachments ul {
+	border-top-style: solid;
+}
+
+fieldset.attachments ul li {
+	border-bottom-style: solid;
+}

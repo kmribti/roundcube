@@ -1,0 +1,3307 @@
+
+
+2007-06-03 17:07:40
+array (
+  '_task' => 'mail',
+  '_action' => 'send',
+  '_priority' => 'Normal',
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'Re: ',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => '
+
+On ,  wrote:
+> DIES IST EINE AUTOMATISCH ERSTELLTE NACHRICHT, BITTE NICHT ANTWORTEN.
+> 
+> Die nachstehende Aufgabe wurde geändert (Details siehe unten).
+> Vollständige Informationen über Änderungen erreichen Sie über die
+> angegebene URL unter dem Tab \\"Verlauf\\".
+> 
+> FS#279 - Adressbuch: Autocomplete
+> User der dies getan hat:: Katrin Ackermann (katrin)
+> Aufgabendetails geändert:
+> -------
+> Ist im Firefox \\"hinter\\" den Iframes.
+> 
+> ->  das autocomplete-div sollte in diesem Fall am besten direkt hinter die
+> tabBar-ul bzw. hinter das loading-Icon.
+> Momentan ist es im div sortBar und das hat eine zu geringe Höhe. Das
+> passt das autocomplete nicht rein.
+> (siehe MACB_adressbuch_basic.html)
+> -------
+> 
+> Mehr Informationen können unter der folgenden URL abgerufen werden:
+> http://bugs.macbay.de/?do=details&task_id=279
+> 
+> Sie erhalten diese Nachricht, weil Sie in Flyspray Benachrichtigungen
+> aktiviert haben. Wenn Sie zukünftig keine solchen Benachrichtigungen mehr
+> erhalten wollen, können Sie die Einstellungen für Benachrichtigungen
+> über die obenstehende URL ändern.',
+)
+
+2007-06-03 17:08:30
+array (
+  '_task' => 'mail',
+  '_action' => 'send',
+  '_priority' => 'Normal',
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'Re: ',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => '
+
+On ,  wrote:
+> DIES IST EINE AUTOMATISCH ERSTELLTE NACHRICHT, BITTE NICHT ANTWORTEN.
+> 
+> Die nachstehende Aufgabe wurde geändert (Details siehe unten).
+> Vollständige Informationen über Änderungen erreichen Sie über die
+> angegebene URL unter dem Tab \\"Verlauf\\".
+> 
+> FS#279 - Adressbuch: Autocomplete
+> User der dies getan hat:: Katrin Ackermann (katrin)
+> Aufgabendetails geändert:
+> -------
+> Ist im Firefox \\"hinter\\" den Iframes.
+> 
+> ->  das autocomplete-div sollte in diesem Fall am besten direkt hinter die
+> tabBar-ul bzw. hinter das loading-Icon.
+> Momentan ist es im div sortBar und das hat eine zu geringe Höhe. Das
+> passt das autocomplete nicht rein.
+> (siehe MACB_adressbuch_basic.html)
+> -------
+> 
+> Mehr Informationen können unter der folgenden URL abgerufen werden:
+> http://bugs.macbay.de/?do=details&task_id=279
+> 
+> Sie erhalten diese Nachricht, weil Sie in Flyspray Benachrichtigungen
+> aktiviert haben. Wenn Sie zukünftig keine solchen Benachrichtigungen mehr
+> erhalten wollen, können Sie die Einstellungen für Benachrichtigungen
+> über die obenstehende URL ändern.',
+)
+
+2007-06-03 17:08:30
+Yay, sendmail.inc reached!
+
+2007-06-03 17:10:10
+array (
+  '_task' => 'mail',
+  '_action' => 'send',
+  '_priority' => 'Normal',
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'Re: ',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => '
+
+On ,  wrote:
+> DIES IST EINE AUTOMATISCH ERSTELLTE NACHRICHT, BITTE NICHT ANTWORTEN.
+> 
+> Die nachstehende Aufgabe wurde geändert (Details siehe unten).
+> Vollständige Informationen über Änderungen erreichen Sie über die
+> angegebene URL unter dem Tab \\"Verlauf\\".
+> 
+> FS#279 - Adressbuch: Autocomplete
+> User der dies getan hat:: Katrin Ackermann (katrin)
+> Aufgabendetails geändert:
+> -------
+> Ist im Firefox \\"hinter\\" den Iframes.
+> 
+> ->  das autocomplete-div sollte in diesem Fall am besten direkt hinter die
+> tabBar-ul bzw. hinter das loading-Icon.
+> Momentan ist es im div sortBar und das hat eine zu geringe Höhe. Das
+> passt das autocomplete nicht rein.
+> (siehe MACB_adressbuch_basic.html)
+> -------
+> 
+> Mehr Informationen können unter der folgenden URL abgerufen werden:
+> http://bugs.macbay.de/?do=details&task_id=279
+> 
+> Sie erhalten diese Nachricht, weil Sie in Flyspray Benachrichtigungen
+> aktiviert haben. Wenn Sie zukünftig keine solchen Benachrichtigungen mehr
+> erhalten wollen, können Sie die Einstellungen für Benachrichtigungen
+> über die obenstehende URL ändern.',
+)
+
+2007-06-03 17:10:11
+Yay, sendmail.inc reached!
+
+2007-06-03 17:10:11
+Still here!
+
+2007-06-03 17:10:11
+Passed definition of class rc_mail_send.
+
+2007-06-03 17:10:11
+Draft?: 
+
+2007-06-03 17:10:11
+Passed some checks! Right before charset!
+
+2007-06-03 17:11:13
+array (
+  '_task' => 'mail',
+  '_action' => 'send',
+  '_priority' => 'Normal',
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'Re: ',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => '
+
+On ,  wrote:
+> DIES IST EINE AUTOMATISCH ERSTELLTE NACHRICHT, BITTE NICHT ANTWORTEN.
+> 
+> Die nachstehende Aufgabe wurde geändert (Details siehe unten).
+> Vollständige Informationen über Änderungen erreichen Sie über die
+> angegebene URL unter dem Tab \\"Verlauf\\".
+> 
+> FS#279 - Adressbuch: Autocomplete
+> User der dies getan hat:: Katrin Ackermann (katrin)
+> Aufgabendetails geändert:
+> -------
+> Ist im Firefox \\"hinter\\" den Iframes.
+> 
+> ->  das autocomplete-div sollte in diesem Fall am besten direkt hinter die
+> tabBar-ul bzw. hinter das loading-Icon.
+> Momentan ist es im div sortBar und das hat eine zu geringe Höhe. Das
+> passt das autocomplete nicht rein.
+> (siehe MACB_adressbuch_basic.html)
+> -------
+> 
+> Mehr Informationen können unter der folgenden URL abgerufen werden:
+> http://bugs.macbay.de/?do=details&task_id=279
+> 
+> Sie erhalten diese Nachricht, weil Sie in Flyspray Benachrichtigungen
+> aktiviert haben. Wenn Sie zukünftig keine solchen Benachrichtigungen mehr
+> erhalten wollen, können Sie die Einstellungen für Benachrichtigungen
+> über die obenstehende URL ändern.',
+)
+
+2007-06-03 17:11:14
+Yay, sendmail.inc reached!
+
+2007-06-03 17:11:14
+Still here!
+
+2007-06-03 17:11:14
+Passed definition of class rc_mail_send.
+
+2007-06-03 17:11:14
+Draft?: true
+
+2007-06-03 17:11:14
+Passed some checks! Right before charset!
+
+2007-06-03 17:11:40
+array (
+  '_task' => 'mail',
+  '_action' => 'send',
+  '_priority' => 'Normal',
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'Re: ',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => '
+
+On ,  wrote:
+> DIES IST EINE AUTOMATISCH ERSTELLTE NACHRICHT, BITTE NICHT ANTWORTEN.
+> 
+> Die nachstehende Aufgabe wurde geändert (Details siehe unten).
+> Vollständige Informationen über Änderungen erreichen Sie über die
+> angegebene URL unter dem Tab \\"Verlauf\\".
+> 
+> FS#279 - Adressbuch: Autocomplete
+> User der dies getan hat:: Katrin Ackermann (katrin)
+> Aufgabendetails geändert:
+> -------
+> Ist im Firefox \\"hinter\\" den Iframes.
+> 
+> ->  das autocomplete-div sollte in diesem Fall am besten direkt hinter die
+> tabBar-ul bzw. hinter das loading-Icon.
+> Momentan ist es im div sortBar und das hat eine zu geringe Höhe. Das
+> passt das autocomplete nicht rein.
+> (siehe MACB_adressbuch_basic.html)
+> -------
+> 
+> Mehr Informationen können unter der folgenden URL abgerufen werden:
+> http://bugs.macbay.de/?do=details&task_id=279
+> 
+> Sie erhalten diese Nachricht, weil Sie in Flyspray Benachrichtigungen
+> aktiviert haben. Wenn Sie zukünftig keine solchen Benachrichtigungen mehr
+> erhalten wollen, können Sie die Einstellungen für Benachrichtigungen
+> über die obenstehende URL ändern.',
+)
+
+2007-06-03 17:11:41
+Yay, sendmail.inc reached!
+
+2007-06-03 17:11:41
+Still here!
+
+2007-06-03 17:11:41
+Passed definition of class rc_mail_send.
+
+2007-06-03 17:11:41
+Draft?: false
+
+2007-06-03 17:11:41
+Passed some checks! Right before charset!
+
+2007-06-03 17:13:00
+array (
+  '_task' => 'mail',
+  '_action' => 'send',
+  '_priority' => 'Normal',
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'Re: ',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => '
+
+On ,  wrote:
+> DIES IST EINE AUTOMATISCH ERSTELLTE NACHRICHT, BITTE NICHT ANTWORTEN.
+> 
+> Die nachstehende Aufgabe wurde geändert (Details siehe unten).
+> Vollständige Informationen über Änderungen erreichen Sie über die
+> angegebene URL unter dem Tab \\"Verlauf\\".
+> 
+> FS#279 - Adressbuch: Autocomplete
+> User der dies getan hat:: Katrin Ackermann (katrin)
+> Aufgabendetails geändert:
+> -------
+> Ist im Firefox \\"hinter\\" den Iframes.
+> 
+> ->  das autocomplete-div sollte in diesem Fall am besten direkt hinter die
+> tabBar-ul bzw. hinter das loading-Icon.
+> Momentan ist es im div sortBar und das hat eine zu geringe Höhe. Das
+> passt das autocomplete nicht rein.
+> (siehe MACB_adressbuch_basic.html)
+> -------
+> 
+> Mehr Informationen können unter der folgenden URL abgerufen werden:
+> http://bugs.macbay.de/?do=details&task_id=279
+> 
+> Sie erhalten diese Nachricht, weil Sie in Flyspray Benachrichtigungen
+> aktiviert haben. Wenn Sie zukünftig keine solchen Benachrichtigungen mehr
+> erhalten wollen, können Sie die Einstellungen für Benachrichtigungen
+> über die obenstehende URL ändern.',
+)
+
+2007-06-03 17:13:00
+Yay, sendmail.inc reached!
+
+2007-06-03 17:13:00
+Still here!
+
+2007-06-03 17:13:00
+Passed definition of class rc_mail_send.
+
+2007-06-03 17:13:00
+Draft?: false
+
+2007-06-03 17:13:00
+Passed some checks! Right before charset!
+
+2007-06-03 17:14:07
+array (
+  '_task' => 'mail',
+  '_action' => 'send',
+  '_priority' => 'Normal',
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'Re: ',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => '
+
+On ,  wrote:
+> DIES IST EINE AUTOMATISCH ERSTELLTE NACHRICHT, BITTE NICHT ANTWORTEN.
+> 
+> Die nachstehende Aufgabe wurde geändert (Details siehe unten).
+> Vollständige Informationen über Änderungen erreichen Sie über die
+> angegebene URL unter dem Tab \\"Verlauf\\".
+> 
+> FS#279 - Adressbuch: Autocomplete
+> User der dies getan hat:: Katrin Ackermann (katrin)
+> Aufgabendetails geändert:
+> -------
+> Ist im Firefox \\"hinter\\" den Iframes.
+> 
+> ->  das autocomplete-div sollte in diesem Fall am besten direkt hinter die
+> tabBar-ul bzw. hinter das loading-Icon.
+> Momentan ist es im div sortBar und das hat eine zu geringe Höhe. Das
+> passt das autocomplete nicht rein.
+> (siehe MACB_adressbuch_basic.html)
+> -------
+> 
+> Mehr Informationen können unter der folgenden URL abgerufen werden:
+> http://bugs.macbay.de/?do=details&task_id=279
+> 
+> Sie erhalten diese Nachricht, weil Sie in Flyspray Benachrichtigungen
+> aktiviert haben. Wenn Sie zukünftig keine solchen Benachrichtigungen mehr
+> erhalten wollen, können Sie die Einstellungen für Benachrichtigungen
+> über die obenstehende URL ändern.',
+)
+
+2007-06-03 17:14:07
+Yay, sendmail.inc reached!
+
+2007-06-03 17:14:07
+Still here!
+
+2007-06-03 17:14:07
+Passed definition of class rc_mail_send.
+
+2007-06-03 17:14:07
+Draft?: false
+
+2007-06-03 17:14:07
+Passed some checks! Right before charset!
+
+2007-06-03 17:14:07
+We just replaced line endings.
+
+2007-06-03 17:14:48
+array (
+  '_task' => 'mail',
+  '_action' => 'send',
+  '_priority' => 'Normal',
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'Re: ',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => '
+
+On ,  wrote:
+> DIES IST EINE AUTOMATISCH ERSTELLTE NACHRICHT, BITTE NICHT ANTWORTEN.
+> 
+> Die nachstehende Aufgabe wurde geändert (Details siehe unten).
+> Vollständige Informationen über Änderungen erreichen Sie über die
+> angegebene URL unter dem Tab \\"Verlauf\\".
+> 
+> FS#279 - Adressbuch: Autocomplete
+> User der dies getan hat:: Katrin Ackermann (katrin)
+> Aufgabendetails geändert:
+> -------
+> Ist im Firefox \\"hinter\\" den Iframes.
+> 
+> ->  das autocomplete-div sollte in diesem Fall am besten direkt hinter die
+> tabBar-ul bzw. hinter das loading-Icon.
+> Momentan ist es im div sortBar und das hat eine zu geringe Höhe. Das
+> passt das autocomplete nicht rein.
+> (siehe MACB_adressbuch_basic.html)
+> -------
+> 
+> Mehr Informationen können unter der folgenden URL abgerufen werden:
+> http://bugs.macbay.de/?do=details&task_id=279
+> 
+> Sie erhalten diese Nachricht, weil Sie in Flyspray Benachrichtigungen
+> aktiviert haben. Wenn Sie zukünftig keine solchen Benachrichtigungen mehr
+> erhalten wollen, können Sie die Einstellungen für Benachrichtigungen
+> über die obenstehende URL ändern.',
+)
+
+2007-06-03 17:14:49
+Yay, sendmail.inc reached!
+
+2007-06-03 17:14:49
+Still here!
+
+2007-06-03 17:14:49
+Passed definition of class rc_mail_send.
+
+2007-06-03 17:14:49
+Draft?: false
+
+2007-06-03 17:14:49
+Passed some checks! Right before charset!
+
+2007-06-03 17:14:49
+We just replaced line endings.
+
+2007-06-03 17:14:49
+To: array (
+  1 => 
+  array (
+    'name' => 'till@php.net',
+    'mailto' => 'till@php.net',
+    'string' => 'till@php.net',
+  ),
+)
+
+2007-06-03 17:15:29
+array (
+  '_task' => 'mail',
+  '_action' => 'send',
+  '_priority' => 'Normal',
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'Re: ',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => '
+
+On ,  wrote:
+> DIES IST EINE AUTOMATISCH ERSTELLTE NACHRICHT, BITTE NICHT ANTWORTEN.
+> 
+> Die nachstehende Aufgabe wurde geändert (Details siehe unten).
+> Vollständige Informationen über Änderungen erreichen Sie über die
+> angegebene URL unter dem Tab \\"Verlauf\\".
+> 
+> FS#279 - Adressbuch: Autocomplete
+> User der dies getan hat:: Katrin Ackermann (katrin)
+> Aufgabendetails geändert:
+> -------
+> Ist im Firefox \\"hinter\\" den Iframes.
+> 
+> ->  das autocomplete-div sollte in diesem Fall am besten direkt hinter die
+> tabBar-ul bzw. hinter das loading-Icon.
+> Momentan ist es im div sortBar und das hat eine zu geringe Höhe. Das
+> passt das autocomplete nicht rein.
+> (siehe MACB_adressbuch_basic.html)
+> -------
+> 
+> Mehr Informationen können unter der folgenden URL abgerufen werden:
+> http://bugs.macbay.de/?do=details&task_id=279
+> 
+> Sie erhalten diese Nachricht, weil Sie in Flyspray Benachrichtigungen
+> aktiviert haben. Wenn Sie zukünftig keine solchen Benachrichtigungen mehr
+> erhalten wollen, können Sie die Einstellungen für Benachrichtigungen
+> über die obenstehende URL ändern.',
+)
+
+2007-06-03 17:15:30
+Yay, sendmail.inc reached!
+
+2007-06-03 17:15:30
+Still here!
+
+2007-06-03 17:15:30
+Passed definition of class rc_mail_send.
+
+2007-06-03 17:15:30
+Draft?: false
+
+2007-06-03 17:15:30
+Passed some checks! Right before charset!
+
+2007-06-03 17:15:30
+We just replaced line endings.
+
+2007-06-03 17:15:30
+To: array (
+  1 => 
+  array (
+    'name' => 'till@php.net',
+    'mailto' => 'till@php.net',
+    'string' => 'till@php.net',
+  ),
+)
+
+2007-06-03 17:15:30
+Identity: 
+
+2007-06-03 17:16:33
+array (
+  '_task' => 'mail',
+  '_action' => 'send',
+  '_priority' => 'Normal',
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'Re: ',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => '
+
+On ,  wrote:
+> DIES IST EINE AUTOMATISCH ERSTELLTE NACHRICHT, BITTE NICHT ANTWORTEN.
+> 
+> Die nachstehende Aufgabe wurde geändert (Details siehe unten).
+> Vollständige Informationen über Änderungen erreichen Sie über die
+> angegebene URL unter dem Tab \\"Verlauf\\".
+> 
+> FS#279 - Adressbuch: Autocomplete
+> User der dies getan hat:: Katrin Ackermann (katrin)
+> Aufgabendetails geändert:
+> -------
+> Ist im Firefox \\"hinter\\" den Iframes.
+> 
+> ->  das autocomplete-div sollte in diesem Fall am besten direkt hinter die
+> tabBar-ul bzw. hinter das loading-Icon.
+> Momentan ist es im div sortBar und das hat eine zu geringe Höhe. Das
+> passt das autocomplete nicht rein.
+> (siehe MACB_adressbuch_basic.html)
+> -------
+> 
+> Mehr Informationen können unter der folgenden URL abgerufen werden:
+> http://bugs.macbay.de/?do=details&task_id=279
+> 
+> Sie erhalten diese Nachricht, weil Sie in Flyspray Benachrichtigungen
+> aktiviert haben. Wenn Sie zukünftig keine solchen Benachrichtigungen mehr
+> erhalten wollen, können Sie die Einstellungen für Benachrichtigungen
+> über die obenstehende URL ändern.',
+)
+
+2007-06-03 17:16:33
+Yay, sendmail.inc reached!
+
+2007-06-03 17:16:33
+Still here!
+
+2007-06-03 17:16:33
+Passed definition of class rc_mail_send.
+
+2007-06-03 17:16:33
+Draft?: false
+
+2007-06-03 17:16:33
+Passed some checks! Right before charset!
+
+2007-06-03 17:16:33
+We just replaced line endings.
+
+2007-06-03 17:16:33
+To: array (
+  1 => 
+  array (
+    'name' => 'till@php.net',
+    'mailto' => 'till@php.net',
+    'string' => 'till@php.net',
+  ),
+)
+
+2007-06-03 17:16:33
+Identity: SELECT *, email AS mailto FROM identities WHERE identity_id=? AND user_id=? AND del<>1
+
+2007-06-03 17:16:33
+We got identity.
+
+2007-06-03 17:16:33
+array (
+)
+
+2007-06-03 17:16:33
+Right before sending/draft if!
+
+2007-06-03 17:16:33
+Not a draft. We try to send mail.
+
+2007-06-03 17:18:46
+array (
+  '_action' => 'login',
+  '_user' => 'tfk@macnews.de',
+  '_pass' => '123test123',
+)
+
+2007-06-03 17:19:16
+array (
+  '_action' => 'login',
+  '_user' => 'tfk@macnews.de',
+  '_pass' => '123test123',
+)
+
+2007-06-03 17:19:41
+array (
+  '_action' => 'login',
+  '_user' => 'tfk@macnews.de',
+  '_pass' => '123test123',
+)
+
+2007-06-03 17:19:54
+array (
+  '_task' => 'mail',
+  '_action' => 'send',
+  '_priority' => 'Normal',
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'Re: ',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => '
+
+On ,  wrote:
+> DIES IST EINE AUTOMATISCH ERSTELLTE NACHRICHT, BITTE NICHT ANTWORTEN.
+> 
+> Die nachstehende Aufgabe wurde geändert (Details siehe unten).
+> Vollständige Informationen über Änderungen erreichen Sie über die
+> angegebene URL unter dem Tab \\"Verlauf\\".
+> 
+> FS#279 - Adressbuch: Autocomplete
+> User der dies getan hat:: Katrin Ackermann (katrin)
+> Aufgabendetails geändert:
+> -------
+> Ist im Firefox \\"hinter\\" den Iframes.
+> 
+> ->  das autocomplete-div sollte in diesem Fall am besten direkt hinter die
+> tabBar-ul bzw. hinter das loading-Icon.
+> Momentan ist es im div sortBar und das hat eine zu geringe Höhe. Das
+> passt das autocomplete nicht rein.
+> (siehe MACB_adressbuch_basic.html)
+> -------
+> 
+> Mehr Informationen können unter der folgenden URL abgerufen werden:
+> http://bugs.macbay.de/?do=details&task_id=279
+> 
+> Sie erhalten diese Nachricht, weil Sie in Flyspray Benachrichtigungen
+> aktiviert haben. Wenn Sie zukünftig keine solchen Benachrichtigungen mehr
+> erhalten wollen, können Sie die Einstellungen für Benachrichtigungen
+> über die obenstehende URL ändern.',
+)
+
+2007-06-03 17:19:55
+Yay, sendmail.inc reached!
+
+2007-06-03 17:19:55
+Still here!
+
+2007-06-03 17:19:55
+Passed definition of class rc_mail_send.
+
+2007-06-03 17:19:55
+Draft?: false
+
+2007-06-03 17:19:55
+Passed some checks! Right before charset!
+
+2007-06-03 17:19:55
+We just replaced line endings.
+
+2007-06-03 17:19:55
+To: array (
+  1 => 
+  array (
+    'name' => 'till@php.net',
+    'mailto' => 'till@php.net',
+    'string' => 'till@php.net',
+  ),
+)
+
+2007-06-03 17:19:55
+Identity: SELECT *, email AS mailto FROM identities WHERE identity_id=? AND user_id=? AND del<>1
+
+2007-06-03 17:19:55
+We got identity.
+
+2007-06-03 17:19:55
+Errors anyone?: array (
+)
+
+2007-06-03 17:19:55
+Right before sending/draft if!
+
+2007-06-03 17:19:55
+Not a draft. We try to send mail.
+
+2007-06-03 17:19:55
+We try to send using mail().
+
+2007-06-03 17:19:55
+mail(): failed
+
+2007-06-03 17:21:46
+array (
+  '_task' => 'mail',
+  '_action' => 'send',
+  '_priority' => 'Normal',
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'Re: ',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => '
+
+On ,  wrote:
+> DIES IST EINE AUTOMATISCH ERSTELLTE NACHRICHT, BITTE NICHT ANTWORTEN.
+> 
+> Die nachstehende Aufgabe wurde geändert (Details siehe unten).
+> Vollständige Informationen über Änderungen erreichen Sie über die
+> angegebene URL unter dem Tab \\"Verlauf\\".
+> 
+> FS#279 - Adressbuch: Autocomplete
+> User der dies getan hat:: Katrin Ackermann (katrin)
+> Aufgabendetails geändert:
+> -------
+> Ist im Firefox \\"hinter\\" den Iframes.
+> 
+> ->  das autocomplete-div sollte in diesem Fall am besten direkt hinter die
+> tabBar-ul bzw. hinter das loading-Icon.
+> Momentan ist es im div sortBar und das hat eine zu geringe Höhe. Das
+> passt das autocomplete nicht rein.
+> (siehe MACB_adressbuch_basic.html)
+> -------
+> 
+> Mehr Informationen können unter der folgenden URL abgerufen werden:
+> http://bugs.macbay.de/?do=details&task_id=279
+> 
+> Sie erhalten diese Nachricht, weil Sie in Flyspray Benachrichtigungen
+> aktiviert haben. Wenn Sie zukünftig keine solchen Benachrichtigungen mehr
+> erhalten wollen, können Sie die Einstellungen für Benachrichtigungen
+> über die obenstehende URL ändern.',
+)
+
+2007-06-03 17:21:46
+Yay, sendmail.inc reached!
+
+2007-06-03 17:21:46
+Still here!
+
+2007-06-03 17:21:46
+Passed definition of class rc_mail_send.
+
+2007-06-03 17:21:46
+Draft?: false
+
+2007-06-03 17:21:46
+Passed some checks! Right before charset!
+
+2007-06-03 17:21:46
+We just replaced line endings.
+
+2007-06-03 17:21:46
+To: array (
+  1 => 
+  array (
+    'name' => 'till@php.net',
+    'mailto' => 'till@php.net',
+    'string' => 'till@php.net',
+  ),
+)
+
+2007-06-03 17:21:46
+Identity: SELECT *, email AS mailto FROM identities WHERE identity_id=? AND user_id=? AND del<>1
+
+2007-06-03 17:21:46
+We got identity.
+
+2007-06-03 17:21:46
+Errors anyone?: array (
+)
+
+2007-06-03 17:21:46
+Right before sending/draft if!
+
+2007-06-03 17:21:46
+Not a draft. We try to send mail.
+
+2007-06-03 17:21:46
+Because we can: SMTP.
+
+2007-06-03 17:21:47
+array (
+  0 => '250: 72118364 message accepted for delivery',
+)
+
+2007-06-03 17:32:56
+array (
+  '_action' => 'login',
+  '_user' => 'tfk@macnews.de',
+  '_pass' => '123test123',
+)
+
+2007-06-03 17:35:04
+array (
+  '_from' => '2',
+  '_to' => 'klimpong@gmail.com',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'test123',
+  '_priority' => 'Normal',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => 'sdadassdadsadsa',
+  '_attachments' => 
+  array (
+    0 => '',
+  ),
+)
+
+2007-06-03 17:35:34
+array (
+  '_from' => '2',
+  '_to' => 'klimpong@gmail.com',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'test123',
+  '_priority' => 'Normal',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => 'sdadassdadsadsa',
+  '_attachments' => 
+  array (
+    0 => '',
+  ),
+)
+
+2007-06-03 17:38:59
+array (
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'test123',
+  '_priority' => 'Normal',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => '',
+  '_attachments' => 
+  array (
+    0 => '',
+  ),
+)
+
+2007-06-03 17:42:09
+array (
+  '_from' => '2',
+  '_to' => 'tfk@macnews.de',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'test123',
+  '_priority' => 'Normal',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => 'JKLJlksadjkldjlk',
+  '_attachments' => 
+  array (
+    0 => '',
+  ),
+)
+
+2007-06-03 17:45:55
+array (
+  '_from' => '2',
+  '_to' => 'tfk@macnews.de',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'test123',
+  '_priority' => 'Normal',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => 'JKLJlksadjkldjlk',
+  '_attachments' => 
+  array (
+    0 => '',
+  ),
+)
+
+2007-06-03 17:47:43
+array (
+  '_task' => 'mail',
+  '_action' => 'send',
+  '_priority' => 'Normal',
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => '(kein Betreff)',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => 'JKLJlksadjkldjlk',
+)
+
+2007-06-03 17:47:44
+Yay, sendmail.inc reached!
+
+2007-06-03 17:47:44
+Still here!
+
+2007-06-03 17:47:44
+Passed definition of class rc_mail_send.
+
+2007-06-03 17:47:44
+Draft?: false
+
+2007-06-03 17:47:44
+Passed some checks! Right before charset!
+
+2007-06-03 17:47:44
+We just replaced line endings.
+
+2007-06-03 17:47:44
+To: array (
+  1 => 
+  array (
+    'name' => 'till@php.net',
+    'mailto' => 'till@php.net',
+    'string' => 'till@php.net',
+  ),
+)
+
+2007-06-03 17:47:44
+Identity: SELECT *, email AS mailto FROM identities WHERE identity_id=? AND user_id=? AND del<>1
+
+2007-06-03 17:47:44
+We got identity.
+
+2007-06-03 17:47:44
+Errors anyone?: array (
+)
+
+2007-06-03 17:47:44
+Right before sending/draft if!
+
+2007-06-03 17:47:44
+Not a draft. We try to send mail.
+
+2007-06-03 17:47:44
+Because we can: SMTP.
+
+2007-06-03 17:47:44
+array (
+  0 => '250: 72119413 message accepted for delivery',
+)
+
+2007-06-03 17:59:42
+array (
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'test123',
+  '_priority' => 'Normal',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => 'dfeadsdsdsa',
+)
+
+2007-06-03 18:02:06
+array (
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'test123',
+  '_priority' => 'Normal',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => 'dfeadsdsdsa',
+)
+
+2007-06-03 18:02:58
+array (
+  '_task' => 'mail',
+  '_action' => 'send',
+  '_priority' => 'Normal',
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'test',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => '',
+)
+
+2007-06-03 18:02:59
+Yay, sendmail.inc reached!
+
+2007-06-03 18:02:59
+Still here!
+
+2007-06-03 18:02:59
+Passed definition of class rc_mail_send.
+
+2007-06-03 18:02:59
+Draft?: false
+
+2007-06-03 18:02:59
+Passed some checks! Right before charset!
+
+2007-06-03 18:02:59
+We just replaced line endings.
+
+2007-06-03 18:02:59
+To: array (
+  1 => 
+  array (
+    'name' => 'till@php.net',
+    'mailto' => 'till@php.net',
+    'string' => 'till@php.net',
+  ),
+)
+
+2007-06-03 18:02:59
+Identity: SELECT *, email AS mailto FROM identities WHERE identity_id=? AND user_id=? AND del<>1
+
+2007-06-03 18:02:59
+We got identity.
+
+2007-06-03 18:02:59
+Errors anyone?: array (
+)
+
+2007-06-03 18:02:59
+Right before sending/draft if!
+
+2007-06-03 18:02:59
+Not a draft. We try to send mail.
+
+2007-06-03 18:02:59
+Because we can: SMTP.
+
+2007-06-03 18:02:59
+array (
+  0 => '250: 72119862 message accepted for delivery',
+)
+
+2007-06-03 18:11:36
+array (
+  '_from' => '2',
+  '_to' => 'till@php.net',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'test123',
+  '_priority' => 'Normal',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => 'Eine Nachricht!',
+  '_task' => 'mail',
+  '_action' => 'send',
+)
+
+2007-06-03 18:11:36
+Yay, sendmail.inc reached!
+
+2007-06-03 18:11:36
+Still here!
+
+2007-06-03 18:11:36
+Passed definition of class rc_mail_send.
+
+2007-06-03 18:11:36
+Draft?: false
+
+2007-06-03 18:11:36
+Passed some checks! Right before charset!
+
+2007-06-03 18:11:36
+We just replaced line endings.
+
+2007-06-03 18:11:36
+To: array (
+  1 => 
+  array (
+    'name' => 'till@php.net',
+    'mailto' => 'till@php.net',
+    'string' => 'till@php.net',
+  ),
+)
+
+2007-06-03 18:11:36
+Identity: SELECT *, email AS mailto FROM identities WHERE identity_id=? AND user_id=? AND del<>1
+
+2007-06-03 18:11:36
+We got identity.
+
+2007-06-03 18:11:36
+Errors anyone?: array (
+)
+
+2007-06-03 18:11:36
+Right before sending/draft if!
+
+2007-06-03 18:11:36
+Not a draft. We try to send mail.
+
+2007-06-03 18:11:36
+Because we can: SMTP.
+
+2007-06-03 18:11:37
+array (
+  0 => '250: 72120135 message accepted for delivery',
+)
+
+2007-06-03 18:13:49
+array (
+  '_from' => '2',
+  '_to' => 'macbaylist@macnews.de',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'Hallo aus unserem neuen Webmail',
+  '_priority' => 'Normal',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => ';) Ich sag Euch.',
+  '_task' => 'mail',
+  '_action' => 'send',
+)
+
+2007-06-03 18:13:49
+Yay, sendmail.inc reached!
+
+2007-06-03 18:13:49
+Still here!
+
+2007-06-03 18:13:49
+Passed definition of class rc_mail_send.
+
+2007-06-03 18:13:49
+Draft?: false
+
+2007-06-03 18:13:49
+Passed some checks! Right before charset!
+
+2007-06-03 18:13:49
+We just replaced line endings.
+
+2007-06-03 18:13:49
+To: array (
+  1 => 
+  array (
+    'name' => 'macbaylist@macnews.de',
+    'mailto' => 'macbaylist@macnews.de',
+    'string' => 'macbaylist@macnews.de',
+  ),
+)
+
+2007-06-03 18:13:49
+Identity: SELECT *, email AS mailto FROM identities WHERE identity_id=? AND user_id=? AND del<>1
+
+2007-06-03 18:13:49
+We got identity.
+
+2007-06-03 18:13:49
+Errors anyone?: array (
+)
+
+2007-06-03 18:13:49
+Right before sending/draft if!
+
+2007-06-03 18:13:49
+Not a draft. We try to send mail.
+
+2007-06-03 18:13:49
+Because we can: SMTP.
+
+2007-06-03 18:13:50
+array (
+  0 => '250: 72120213 message accepted for delivery',
+)
+
+2007-06-03 18:15:59
+array (
+  '_uid' => '65806',
+  '_mbox' => 'INBOX',
+  '_target_mbox' => 'macbaylist',
+  '_from' => 'show',
+  '_remote' => '1',
+)
+
+2007-06-03 18:55:46
+array (
+  '_from' => '2',
+  '_to' => 'mk@macnews.de',
+  '_cc' => '',
+  '_bcc' => '',
+  '_replyto' => '',
+  '_subject' => 'Sicherheit Nord',
+  '_priority' => 'Normal',
+  '_draft_saveid' => '',
+  '_draft' => '',
+  '_is_html' => '0',
+  '_message' => 'Aeh, die wissen in (inzwischen) 3 von 5 Anrufen nicht wir fuer ne Abspreche (von wegen Code) mit denen haben.
+
+Wollte es nur mal gesagt haben. ;-)
+
+Gruss,
+Till',
+  '_task' => 'mail',
+  '_action' => 'send',
+)
+
+2007-06-03 18:55:46
+Yay, sendmail.inc reached!
+
+2007-06-03 18:55:46
+Still here!
+
+2007-06-03 18:55:46
+Passed definition of class rc_mail_send.
+
+2007-06-03 18:55:46
+Draft?: false
+
+2007-06-03 18:55:46
+Passed some checks! Right before charset!
+
+2007-06-03 18:55:46
+We just replaced line endings.
+
+2007-06-03 18:55:46
+To: array (
+  1 => 
+  array (
+    'name' => 'mk@macnews.de',
+    'mailto' => 'mk@macnews.de',
+    'string' => 'mk@macnews.de',
+  ),
+)
+
+2007-06-03 18:55:46
+Identity: SELECT *, email AS mailto FROM identities WHERE identity_id=? AND user_id=? AND del<>1
+
+2007-06-03 18:55:46
+We got identity.
+
+2007-06-03 18:55:46
+Errors anyone?: array (
+)
+
+2007-06-03 18:55:46
+Right before sending/draft if!
+
+2007-06-03 18:55:46
+Not a draft. We try to send mail.
+
+2007-06-03 18:55:46
+Because we can: SMTP.
+
+2007-06-03 18:55:46
+array (
+  0 => '250: 72121835 message accepted for delivery',
+)
+
+2007-06-03 19:12:58
+We got uid: 65805
+
+2007-06-03 19:12:58
+Compose mode: 262
+
+2007-06-03 19:14:35
+We got uid: 65805
+
+2007-06-03 19:14:35
+Compose mode: 262
+
+2007-06-03 19:14:35
+Reference message: array (
+  'UID' => '65805',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1396',
+     'uid' => '65805',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '4344',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen Answered',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => true,
+     'junk' => NULL,
+     'internaldate' => '03-Jun-2007 16:07:54',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '0',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => '8bit',
+     'charset' => '',
+     'size' => 3371,
+     'headers' => 
+    array (
+      'id' => '1396',
+      'uid' => '65805',
+      'subject' => 'PHP posting confirmation for tfk@macnews.de',
+      'from' => 'PHP Automoderator <confirm@php.net>',
+      'to' => 'tfk@macnews.de',
+      'cc' => '',
+      'replyto' => '<confirm@php.net>',
+      'in_reply_to' => '',
+      'date' => 'Sun, 03 Jun 2007 18:07:55 +0200',
+      'messageID' => '<auto-000072118407@macnews.de>',
+      'size' => '4344',
+      'encoding' => '',
+      'ctype' => '',
+      'flags' => 'Seen Answered',
+      'timestamp' => 1180883275,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => true,
+      'junk' => NULL,
+      'internaldate' => '03-Jun-2007 16:07:54',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+  ),
+)
+
+2007-06-03 19:20:15
+We got uid: 65805
+
+2007-06-03 19:20:15
+Compose mode: 262
+
+2007-06-03 19:28:47
+We got uid: 65805
+
+2007-06-03 19:28:47
+Compose mode: 262
+
+2007-06-03 19:28:47
+Reference message: array (
+  'UID' => '65805',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1396',
+     'uid' => '65805',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '4344',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen Answered',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => true,
+     'junk' => NULL,
+     'internaldate' => '03-Jun-2007 16:07:54',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '0',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => '8bit',
+     'charset' => '',
+     'size' => 3371,
+     'headers' => 
+    array (
+      'id' => '1396',
+      'uid' => '65805',
+      'subject' => 'PHP posting confirmation for tfk@macnews.de',
+      'from' => 'PHP Automoderator <confirm@php.net>',
+      'to' => 'tfk@macnews.de',
+      'cc' => '',
+      'replyto' => '<confirm@php.net>',
+      'in_reply_to' => '',
+      'date' => 'Sun, 03 Jun 2007 18:07:55 +0200',
+      'messageID' => '<auto-000072118407@macnews.de>',
+      'size' => '4344',
+      'encoding' => '',
+      'ctype' => '',
+      'flags' => 'Seen Answered',
+      'timestamp' => 1180883275,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => true,
+      'junk' => NULL,
+      'internaldate' => '03-Jun-2007 16:07:54',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+  ),
+)
+
+2007-06-03 19:28:47
+Passed require for rcmail_compose functions.
+
+2007-06-03 19:28:56
+We got uid: 65805
+
+2007-06-03 19:28:56
+Compose mode: 262
+
+2007-06-03 19:28:56
+Reference message: array (
+  'UID' => '65805',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1396',
+     'uid' => '65805',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '4344',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen Answered',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => true,
+     'junk' => NULL,
+     'internaldate' => '03-Jun-2007 16:07:54',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '0',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => '8bit',
+     'charset' => '',
+     'size' => 3371,
+     'headers' => 
+    array (
+      'id' => '1396',
+      'uid' => '65805',
+      'subject' => 'PHP posting confirmation for tfk@macnews.de',
+      'from' => 'PHP Automoderator <confirm@php.net>',
+      'to' => 'tfk@macnews.de',
+      'cc' => '',
+      'replyto' => '<confirm@php.net>',
+      'in_reply_to' => '',
+      'date' => 'Sun, 03 Jun 2007 18:07:55 +0200',
+      'messageID' => '<auto-000072118407@macnews.de>',
+      'size' => '4344',
+      'encoding' => '',
+      'ctype' => '',
+      'flags' => 'Seen Answered',
+      'timestamp' => 1180883275,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => true,
+      'junk' => NULL,
+      'internaldate' => '03-Jun-2007 16:07:54',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+  ),
+)
+
+2007-06-03 19:28:56
+Passed require for rcmail_compose functions.
+
+2007-06-03 19:56:10
+We got uid: 65805
+
+2007-06-03 19:56:10
+Compose mode: 262
+
+2007-06-03 19:56:10
+Reference message: array (
+  'UID' => '65805',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1396',
+     'uid' => '65805',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '4344',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen Answered',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => true,
+     'junk' => NULL,
+     'internaldate' => '03-Jun-2007 16:07:54',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '0',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => '8bit',
+     'charset' => '',
+     'size' => 3371,
+     'headers' => 
+    array (
+      'id' => '1396',
+      'uid' => '65805',
+      'subject' => 'PHP posting confirmation for tfk@macnews.de',
+      'from' => 'PHP Automoderator <confirm@php.net>',
+      'to' => 'tfk@macnews.de',
+      'cc' => '',
+      'replyto' => '<confirm@php.net>',
+      'in_reply_to' => '',
+      'date' => 'Sun, 03 Jun 2007 18:07:55 +0200',
+      'messageID' => '<auto-000072118407@macnews.de>',
+      'size' => '4344',
+      'encoding' => '',
+      'ctype' => '',
+      'flags' => 'Seen Answered',
+      'timestamp' => 1180883275,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => true,
+      'junk' => NULL,
+      'internaldate' => '03-Jun-2007 16:07:54',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+  ),
+)
+
+2007-06-03 19:56:10
+Passed require for rcmail_compose functions.
+
+2007-06-03 20:00:52
+We got uid: 65805
+
+2007-06-03 20:00:52
+Compose mode: 262
+
+2007-06-03 20:00:52
+Reference message: array (
+  'UID' => '65805',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1396',
+     'uid' => '65805',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '4344',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen Answered',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => true,
+     'junk' => NULL,
+     'internaldate' => '03-Jun-2007 16:07:54',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '0',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => '8bit',
+     'charset' => '',
+     'size' => 3371,
+     'headers' => 
+    array (
+      'id' => '1396',
+      'uid' => '65805',
+      'subject' => 'PHP posting confirmation for tfk@macnews.de',
+      'from' => 'PHP Automoderator <confirm@php.net>',
+      'to' => 'tfk@macnews.de',
+      'cc' => '',
+      'replyto' => '<confirm@php.net>',
+      'in_reply_to' => '',
+      'date' => 'Sun, 03 Jun 2007 18:07:55 +0200',
+      'messageID' => '<auto-000072118407@macnews.de>',
+      'size' => '4344',
+      'encoding' => '',
+      'ctype' => '',
+      'flags' => 'Seen Answered',
+      'timestamp' => 1180883275,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => true,
+      'junk' => NULL,
+      'internaldate' => '03-Jun-2007 16:07:54',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+  ),
+)
+
+2007-06-03 20:00:52
+Passed require for rcmail_compose functions.
+
+2007-06-03 20:06:15
+We got uid: 65805
+
+2007-06-03 20:06:15
+Compose mode: 262
+
+2007-06-03 20:06:15
+Reference message: array (
+  'UID' => '65805',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1396',
+     'uid' => '65805',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '4344',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen Answered',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => true,
+     'junk' => NULL,
+     'internaldate' => '03-Jun-2007 16:07:54',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '0',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => '8bit',
+     'charset' => '',
+     'size' => 3371,
+     'headers' => 
+    array (
+      'id' => '1396',
+      'uid' => '65805',
+      'subject' => 'PHP posting confirmation for tfk@macnews.de',
+      'from' => 'PHP Automoderator <confirm@php.net>',
+      'to' => 'tfk@macnews.de',
+      'cc' => '',
+      'replyto' => '<confirm@php.net>',
+      'in_reply_to' => '',
+      'date' => 'Sun, 03 Jun 2007 18:07:55 +0200',
+      'messageID' => '<auto-000072118407@macnews.de>',
+      'size' => '4344',
+      'encoding' => '',
+      'ctype' => '',
+      'flags' => 'Seen Answered',
+      'timestamp' => 1180883275,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => true,
+      'junk' => NULL,
+      'internaldate' => '03-Jun-2007 16:07:54',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+  ),
+)
+
+2007-06-03 20:06:15
+Passed require for rcmail_compose functions.
+
+2007-06-03 20:43:48
+We got uid: 65805
+
+2007-06-03 20:43:48
+Compose mode: 262
+
+2007-06-03 20:43:48
+Reference message: array (
+  'UID' => '65805',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1396',
+     'uid' => '65805',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '4344',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen Answered',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => true,
+     'junk' => NULL,
+     'internaldate' => '03-Jun-2007 16:07:54',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '0',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => '8bit',
+     'charset' => '',
+     'size' => 3371,
+     'headers' => 
+    array (
+      'id' => '1396',
+      'uid' => '65805',
+      'subject' => 'PHP posting confirmation for tfk@macnews.de',
+      'from' => 'PHP Automoderator <confirm@php.net>',
+      'to' => 'tfk@macnews.de',
+      'cc' => '',
+      'replyto' => '<confirm@php.net>',
+      'in_reply_to' => '',
+      'date' => 'Sun, 03 Jun 2007 18:07:55 +0200',
+      'messageID' => '<auto-000072118407@macnews.de>',
+      'size' => '4344',
+      'encoding' => '',
+      'ctype' => '',
+      'flags' => 'Seen Answered',
+      'timestamp' => 1180883275,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => true,
+      'junk' => NULL,
+      'internaldate' => '03-Jun-2007 16:07:54',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+  ),
+)
+
+2007-06-03 20:43:48
+Passed require for rcmail_compose functions.
+
+2007-06-03 20:46:10
+We got uid: 65805
+
+2007-06-03 20:46:10
+Compose mode: 262
+
+2007-06-03 20:46:10
+Reference message: array (
+  'UID' => '65805',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1396',
+     'uid' => '65805',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '4344',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen Answered',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => true,
+     'junk' => NULL,
+     'internaldate' => '03-Jun-2007 16:07:54',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '0',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => '8bit',
+     'charset' => '',
+     'size' => 3371,
+     'headers' => 
+    array (
+      'id' => '1396',
+      'uid' => '65805',
+      'subject' => 'PHP posting confirmation for tfk@macnews.de',
+      'from' => 'PHP Automoderator <confirm@php.net>',
+      'to' => 'tfk@macnews.de',
+      'cc' => '',
+      'replyto' => '<confirm@php.net>',
+      'in_reply_to' => '',
+      'date' => 'Sun, 03 Jun 2007 18:07:55 +0200',
+      'messageID' => '<auto-000072118407@macnews.de>',
+      'size' => '4344',
+      'encoding' => '',
+      'ctype' => '',
+      'flags' => 'Seen Answered',
+      'timestamp' => 1180883275,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => true,
+      'junk' => NULL,
+      'internaldate' => '03-Jun-2007 16:07:54',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+  ),
+)
+
+2007-06-03 20:46:10
+Passed require for rcmail_compose functions.
+
+2007-06-03 20:48:33
+We got uid: 65805
+
+2007-06-03 20:48:33
+Compose mode: 262
+
+2007-06-03 20:48:33
+Reference message: array (
+  'UID' => '65805',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1396',
+     'uid' => '65805',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '4344',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen Answered',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => true,
+     'junk' => NULL,
+     'internaldate' => '03-Jun-2007 16:07:54',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '0',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => '8bit',
+     'charset' => '',
+     'size' => 3371,
+     'headers' => 
+    array (
+      'id' => '1396',
+      'uid' => '65805',
+      'subject' => 'PHP posting confirmation for tfk@macnews.de',
+      'from' => 'PHP Automoderator <confirm@php.net>',
+      'to' => 'tfk@macnews.de',
+      'cc' => '',
+      'replyto' => '<confirm@php.net>',
+      'in_reply_to' => '',
+      'date' => 'Sun, 03 Jun 2007 18:07:55 +0200',
+      'messageID' => '<auto-000072118407@macnews.de>',
+      'size' => '4344',
+      'encoding' => '',
+      'ctype' => '',
+      'flags' => 'Seen Answered',
+      'timestamp' => 1180883275,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => true,
+      'junk' => NULL,
+      'internaldate' => '03-Jun-2007 16:07:54',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+  ),
+)
+
+2007-06-03 20:48:33
+Passed require for rcmail_compose functions.
+
+2007-06-03 20:53:44
+We got uid: 65805
+
+2007-06-03 20:53:44
+Compose mode: 262
+
+2007-06-03 20:53:44
+Reference message: array (
+  'UID' => '65805',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1396',
+     'uid' => '65805',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '4344',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen Answered',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => true,
+     'junk' => NULL,
+     'internaldate' => '03-Jun-2007 16:07:54',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '0',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => '8bit',
+     'charset' => '',
+     'size' => 3371,
+     'headers' => 
+    array (
+      'id' => '1396',
+      'uid' => '65805',
+      'subject' => 'PHP posting confirmation for tfk@macnews.de',
+      'from' => 'PHP Automoderator <confirm@php.net>',
+      'to' => 'tfk@macnews.de',
+      'cc' => '',
+      'replyto' => '<confirm@php.net>',
+      'in_reply_to' => '',
+      'date' => 'Sun, 03 Jun 2007 18:07:55 +0200',
+      'messageID' => '<auto-000072118407@macnews.de>',
+      'size' => '4344',
+      'encoding' => '',
+      'ctype' => '',
+      'flags' => 'Seen Answered',
+      'timestamp' => 1180883275,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => true,
+      'junk' => NULL,
+      'internaldate' => '03-Jun-2007 16:07:54',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+  ),
+)
+
+2007-06-03 20:53:44
+Passed require for rcmail_compose functions.
+
+2007-06-03 21:07:39
+We got uid: 65798
+
+2007-06-03 21:07:39
+Compose mode: 262
+
+2007-06-03 21:07:39
+Reference message: array (
+  'UID' => '65798',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1394',
+     'uid' => '65798',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '1614',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen Answered',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => true,
+     'junk' => NULL,
+     'internaldate' => '02-Jun-2007 18:23:51',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '1',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => 'quoted-printable',
+     'charset' => 'ISO-8859-1',
+     'size' => 822,
+     'headers' => 
+    array (
+      'id' => '1394',
+      'uid' => '65798',
+      'subject' => 'Re: Adressbuch (v2) ;-)',
+      'from' => 'Thomas Lohner <T.Lohner@macnews.de>',
+      'to' => 'tfk@macnews.de',
+      'cc' => 'Katrin Ackermann <post@superaircraft.de>',
+      'replyto' => '',
+      'in_reply_to' => '4661B0ED.9070300@macnews.de',
+      'date' => 'Sat, 2 Jun 2007 20:24:00 +0200',
+      'messageID' => '<3C477961-9812-44D3-96B9-BF2767ABFAD5@macnews.de>',
+      'size' => '1614',
+      'encoding' => 'quoted-printable',
+      'ctype' => 'text/plain',
+      'flags' => 'Seen Answered',
+      'timestamp' => 1180805040,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => true,
+      'junk' => NULL,
+      'internaldate' => '02-Jun-2007 18:23:51',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+      'charset' => 'ISO-8859-1',
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+      'charset' => 'ISO-8859-1',
+      'delsp' => 'yes',
+      'format' => 'flowed',
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+    1 => 
+    rcube_message_part::__set_state(array(
+       'mime_id' => '1',
+       'ctype_primary' => 'text',
+       'ctype_secondary' => 'plain',
+       'mimetype' => 'text/plain',
+       'disposition' => '',
+       'filename' => '',
+       'encoding' => 'quoted-printable',
+       'charset' => 'ISO-8859-1',
+       'size' => 822,
+       'headers' => 
+      array (
+        'id' => '1394',
+        'uid' => '65798',
+        'subject' => 'Re: Adressbuch (v2) ;-)',
+        'from' => 'Thomas Lohner <T.Lohner@macnews.de>',
+        'to' => 'tfk@macnews.de',
+        'cc' => 'Katrin Ackermann <post@superaircraft.de>',
+        'replyto' => '',
+        'in_reply_to' => '4661B0ED.9070300@macnews.de',
+        'date' => 'Sat, 2 Jun 2007 20:24:00 +0200',
+        'messageID' => '<3C477961-9812-44D3-96B9-BF2767ABFAD5@macnews.de>',
+        'size' => '1614',
+        'encoding' => 'quoted-printable',
+        'ctype' => 'text/plain',
+        'flags' => 'Seen Answered',
+        'timestamp' => 1180805040,
+        'f' => NULL,
+        'seen' => true,
+        'deleted' => false,
+        'recent' => false,
+        'answered' => true,
+        'junk' => NULL,
+        'internaldate' => '02-Jun-2007 18:23:51',
+        'is_reply' => NULL,
+        'bcc' => '',
+        'reference' => NULL,
+        'charset' => 'ISO-8859-1',
+      ),
+       'd_parameters' => 
+      array (
+      ),
+       'ctype_parameters' => 
+      array (
+        'charset' => 'ISO-8859-1',
+        'delsp' => 'yes',
+        'format' => 'flowed',
+      ),
+    )),
+  ),
+)
+
+2007-06-03 21:07:39
+Passed require for rcmail_compose functions.
+
+2007-06-03 21:09:30
+We got uid: 65803
+
+2007-06-03 21:09:30
+Compose mode: 262
+
+2007-06-03 21:09:31
+Reference message: array (
+  'UID' => '65803',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1395',
+     'uid' => '65803',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '1861',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => false,
+     'junk' => NULL,
+     'internaldate' => '03-Jun-2007 10:20:30',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '1',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => '8bit',
+     'charset' => 'utf-8',
+     'size' => 1057,
+     'headers' => 
+    array (
+      'id' => '1395',
+      'uid' => '65803',
+      'subject' => '[Macbay v.4 Kundeninterface:] #279',
+      'from' => 'Macbay v.4 Kundeninterface <feedback@macbay.de>',
+      'to' => 'tfk@macnews.de',
+      'cc' => '',
+      'replyto' => 'Macbay v.4 Kundeninterface <feedback@macbay.de>',
+      'in_reply_to' => 'FS279@bugs.macbay.de',
+      'date' => 'Sun, 03 Jun 2007 12:20:25 +0200',
+      'messageID' => '<auto-000072106608@macnews.de>',
+      'size' => '1861',
+      'encoding' => '8bit',
+      'ctype' => 'text/plain',
+      'flags' => 'Seen',
+      'timestamp' => 1180862425,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => false,
+      'junk' => NULL,
+      'internaldate' => '03-Jun-2007 10:20:30',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+      'charset' => 'UTF-8',
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+      'charset' => 'utf-8',
+      'format' => 'flowed',
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+    1 => 
+    rcube_message_part::__set_state(array(
+       'mime_id' => '1',
+       'ctype_primary' => 'text',
+       'ctype_secondary' => 'plain',
+       'mimetype' => 'text/plain',
+       'disposition' => '',
+       'filename' => '',
+       'encoding' => '8bit',
+       'charset' => 'utf-8',
+       'size' => 1057,
+       'headers' => 
+      array (
+        'id' => '1395',
+        'uid' => '65803',
+        'subject' => '[Macbay v.4 Kundeninterface:] #279',
+        'from' => 'Macbay v.4 Kundeninterface <feedback@macbay.de>',
+        'to' => 'tfk@macnews.de',
+        'cc' => '',
+        'replyto' => 'Macbay v.4 Kundeninterface <feedback@macbay.de>',
+        'in_reply_to' => 'FS279@bugs.macbay.de',
+        'date' => 'Sun, 03 Jun 2007 12:20:25 +0200',
+        'messageID' => '<auto-000072106608@macnews.de>',
+        'size' => '1861',
+        'encoding' => '8bit',
+        'ctype' => 'text/plain',
+        'flags' => 'Seen',
+        'timestamp' => 1180862425,
+        'f' => NULL,
+        'seen' => true,
+        'deleted' => false,
+        'recent' => false,
+        'answered' => false,
+        'junk' => NULL,
+        'internaldate' => '03-Jun-2007 10:20:30',
+        'is_reply' => NULL,
+        'bcc' => '',
+        'reference' => NULL,
+        'charset' => 'UTF-8',
+      ),
+       'd_parameters' => 
+      array (
+      ),
+       'ctype_parameters' => 
+      array (
+        'charset' => 'utf-8',
+        'format' => 'flowed',
+      ),
+    )),
+  ),
+)
+
+2007-06-03 21:09:31
+Passed require for rcmail_compose functions.
+
+2007-06-03 21:09:31
+From: 
+
+2007-06-03 21:12:26
+We got uid: 65805
+
+2007-06-03 21:12:26
+Compose mode: 262
+
+2007-06-03 21:12:26
+
+
+2007-06-03 21:12:26
+
+
+2007-06-03 21:12:26
+Reference message: array (
+  'UID' => '65805',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1396',
+     'uid' => '65805',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '4344',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen Answered',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => true,
+     'junk' => NULL,
+     'internaldate' => '03-Jun-2007 16:07:54',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '0',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => '8bit',
+     'charset' => '',
+     'size' => 3371,
+     'headers' => 
+    array (
+      'id' => '1396',
+      'uid' => '65805',
+      'subject' => 'PHP posting confirmation for tfk@macnews.de',
+      'from' => 'PHP Automoderator <confirm@php.net>',
+      'to' => 'tfk@macnews.de',
+      'cc' => '',
+      'replyto' => '<confirm@php.net>',
+      'in_reply_to' => '',
+      'date' => 'Sun, 03 Jun 2007 18:07:55 +0200',
+      'messageID' => '<auto-000072118407@macnews.de>',
+      'size' => '4344',
+      'encoding' => '',
+      'ctype' => '',
+      'flags' => 'Seen Answered',
+      'timestamp' => 1180883275,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => true,
+      'junk' => NULL,
+      'internaldate' => '03-Jun-2007 16:07:54',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+  ),
+)
+
+2007-06-03 21:12:26
+Passed require for rcmail_compose functions.
+
+2007-06-03 21:12:26
+From: 
+
+2007-06-03 21:14:02
+We got uid: 65798
+
+2007-06-03 21:14:02
+Compose mode: 262
+
+2007-06-03 21:14:02
+Reference message: array (
+  'UID' => '65798',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1394',
+     'uid' => '65798',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '1614',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen Answered',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => true,
+     'junk' => NULL,
+     'internaldate' => '02-Jun-2007 18:23:51',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '1',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => 'quoted-printable',
+     'charset' => 'ISO-8859-1',
+     'size' => 822,
+     'headers' => 
+    array (
+      'id' => '1394',
+      'uid' => '65798',
+      'subject' => 'Re: Adressbuch (v2) ;-)',
+      'from' => 'Thomas Lohner <T.Lohner@macnews.de>',
+      'to' => 'tfk@macnews.de',
+      'cc' => 'Katrin Ackermann <post@superaircraft.de>',
+      'replyto' => '',
+      'in_reply_to' => '4661B0ED.9070300@macnews.de',
+      'date' => 'Sat, 2 Jun 2007 20:24:00 +0200',
+      'messageID' => '<3C477961-9812-44D3-96B9-BF2767ABFAD5@macnews.de>',
+      'size' => '1614',
+      'encoding' => 'quoted-printable',
+      'ctype' => 'text/plain',
+      'flags' => 'Seen Answered',
+      'timestamp' => 1180805040,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => true,
+      'junk' => NULL,
+      'internaldate' => '02-Jun-2007 18:23:51',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+      'charset' => 'ISO-8859-1',
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+      'charset' => 'ISO-8859-1',
+      'delsp' => 'yes',
+      'format' => 'flowed',
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+    1 => 
+    rcube_message_part::__set_state(array(
+       'mime_id' => '1',
+       'ctype_primary' => 'text',
+       'ctype_secondary' => 'plain',
+       'mimetype' => 'text/plain',
+       'disposition' => '',
+       'filename' => '',
+       'encoding' => 'quoted-printable',
+       'charset' => 'ISO-8859-1',
+       'size' => 822,
+       'headers' => 
+      array (
+        'id' => '1394',
+        'uid' => '65798',
+        'subject' => 'Re: Adressbuch (v2) ;-)',
+        'from' => 'Thomas Lohner <T.Lohner@macnews.de>',
+        'to' => 'tfk@macnews.de',
+        'cc' => 'Katrin Ackermann <post@superaircraft.de>',
+        'replyto' => '',
+        'in_reply_to' => '4661B0ED.9070300@macnews.de',
+        'date' => 'Sat, 2 Jun 2007 20:24:00 +0200',
+        'messageID' => '<3C477961-9812-44D3-96B9-BF2767ABFAD5@macnews.de>',
+        'size' => '1614',
+        'encoding' => 'quoted-printable',
+        'ctype' => 'text/plain',
+        'flags' => 'Seen Answered',
+        'timestamp' => 1180805040,
+        'f' => NULL,
+        'seen' => true,
+        'deleted' => false,
+        'recent' => false,
+        'answered' => true,
+        'junk' => NULL,
+        'internaldate' => '02-Jun-2007 18:23:51',
+        'is_reply' => NULL,
+        'bcc' => '',
+        'reference' => NULL,
+        'charset' => 'ISO-8859-1',
+      ),
+       'd_parameters' => 
+      array (
+      ),
+       'ctype_parameters' => 
+      array (
+        'charset' => 'ISO-8859-1',
+        'delsp' => 'yes',
+        'format' => 'flowed',
+      ),
+    )),
+  ),
+)
+
+2007-06-03 21:14:02
+Passed require for rcmail_compose functions.
+
+2007-06-03 21:14:02
+From: 
+
+2007-06-03 21:14:47
+We got uid: 65805
+
+2007-06-03 21:14:47
+Compose mode: 262
+
+2007-06-03 21:14:47
+Reference message: array (
+  'UID' => '65805',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1396',
+     'uid' => '65805',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '4344',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen Answered',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => true,
+     'junk' => NULL,
+     'internaldate' => '03-Jun-2007 16:07:54',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '0',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => '8bit',
+     'charset' => '',
+     'size' => 3371,
+     'headers' => 
+    array (
+      'id' => '1396',
+      'uid' => '65805',
+      'subject' => 'PHP posting confirmation for tfk@macnews.de',
+      'from' => 'PHP Automoderator <confirm@php.net>',
+      'to' => 'tfk@macnews.de',
+      'cc' => '',
+      'replyto' => '<confirm@php.net>',
+      'in_reply_to' => '',
+      'date' => 'Sun, 03 Jun 2007 18:07:55 +0200',
+      'messageID' => '<auto-000072118407@macnews.de>',
+      'size' => '4344',
+      'encoding' => '',
+      'ctype' => '',
+      'flags' => 'Seen Answered',
+      'timestamp' => 1180883275,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => true,
+      'junk' => NULL,
+      'internaldate' => '03-Jun-2007 16:07:54',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+  ),
+)
+
+2007-06-03 21:14:47
+Passed require for rcmail_compose functions.
+
+2007-06-03 21:14:47
+From: PHP Automoderator <confirm@php.net>
+
+2007-06-03 21:19:24
+We got uid: 65805
+
+2007-06-03 21:19:24
+Compose mode: 262
+
+2007-06-03 21:19:24
+Passed require for rcmail_compose functions.
+
+2007-06-03 21:20:41
+We got uid: 65805
+
+2007-06-03 21:20:41
+Compose mode: 262
+
+2007-06-03 21:20:41
+Passed require for rcmail_compose functions.
+
+2007-06-03 21:22:24
+We got uid: 65805
+
+2007-06-03 21:22:24
+Compose mode: 262
+
+2007-06-03 21:22:24
+Passed require for rcmail_compose functions.
+
+2007-06-03 21:22:49
+We got uid: 65803
+
+2007-06-03 21:22:49
+Compose mode: 262
+
+2007-06-03 21:22:50
+Passed require for rcmail_compose functions.
+
+2007-06-03 21:23:20
+We got uid: 65803
+
+2007-06-03 21:23:20
+Compose mode: 262
+
+2007-06-03 21:23:20
+Passed require for rcmail_compose functions.
+
+2007-06-03 21:23:20
+array (
+  'UID' => '65803',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1395',
+     'uid' => '65803',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '1861',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => false,
+     'junk' => NULL,
+     'internaldate' => '03-Jun-2007 10:20:30',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '1',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => '8bit',
+     'charset' => 'utf-8',
+     'size' => 1057,
+     'headers' => 
+    array (
+      'id' => '1395',
+      'uid' => '65803',
+      'subject' => '[Macbay v.4 Kundeninterface:] #279',
+      'from' => 'Macbay v.4 Kundeninterface <feedback@macbay.de>',
+      'to' => 'tfk@macnews.de',
+      'cc' => '',
+      'replyto' => 'Macbay v.4 Kundeninterface <feedback@macbay.de>',
+      'in_reply_to' => 'FS279@bugs.macbay.de',
+      'date' => 'Sun, 03 Jun 2007 12:20:25 +0200',
+      'messageID' => '<auto-000072106608@macnews.de>',
+      'size' => '1861',
+      'encoding' => '8bit',
+      'ctype' => 'text/plain',
+      'flags' => 'Seen',
+      'timestamp' => 1180862425,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => false,
+      'junk' => NULL,
+      'internaldate' => '03-Jun-2007 10:20:30',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+      'charset' => 'UTF-8',
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+      'charset' => 'utf-8',
+      'format' => 'flowed',
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+    1 => 
+    rcube_message_part::__set_state(array(
+       'mime_id' => '1',
+       'ctype_primary' => 'text',
+       'ctype_secondary' => 'plain',
+       'mimetype' => 'text/plain',
+       'disposition' => '',
+       'filename' => '',
+       'encoding' => '8bit',
+       'charset' => 'utf-8',
+       'size' => 1057,
+       'headers' => 
+      array (
+        'id' => '1395',
+        'uid' => '65803',
+        'subject' => '[Macbay v.4 Kundeninterface:] #279',
+        'from' => 'Macbay v.4 Kundeninterface <feedback@macbay.de>',
+        'to' => 'tfk@macnews.de',
+        'cc' => '',
+        'replyto' => 'Macbay v.4 Kundeninterface <feedback@macbay.de>',
+        'in_reply_to' => 'FS279@bugs.macbay.de',
+        'date' => 'Sun, 03 Jun 2007 12:20:25 +0200',
+        'messageID' => '<auto-000072106608@macnews.de>',
+        'size' => '1861',
+        'encoding' => '8bit',
+        'ctype' => 'text/plain',
+        'flags' => 'Seen',
+        'timestamp' => 1180862425,
+        'f' => NULL,
+        'seen' => true,
+        'deleted' => false,
+        'recent' => false,
+        'answered' => false,
+        'junk' => NULL,
+        'internaldate' => '03-Jun-2007 10:20:30',
+        'is_reply' => NULL,
+        'bcc' => '',
+        'reference' => NULL,
+        'charset' => 'UTF-8',
+      ),
+       'd_parameters' => 
+      array (
+      ),
+       'ctype_parameters' => 
+      array (
+        'charset' => 'utf-8',
+        'format' => 'flowed',
+      ),
+    )),
+  ),
+  'FROM' => 
+  array (
+    0 => 'tfk@macnews.de',
+  ),
+)
+
+2007-06-03 21:23:24
+We got uid: 65803
+
+2007-06-03 21:23:24
+Compose mode: 262
+
+2007-06-03 21:23:25
+Passed require for rcmail_compose functions.
+
+2007-06-03 21:23:25
+array (
+  'UID' => '65803',
+  'headers' => 
+  iilBasicHeader::__set_state(array(
+     'id' => '1395',
+     'uid' => '65803',
+     'subject' => '',
+     'from' => NULL,
+     'to' => NULL,
+     'cc' => NULL,
+     'replyto' => NULL,
+     'in_reply_to' => NULL,
+     'date' => NULL,
+     'messageID' => NULL,
+     'size' => '1861',
+     'encoding' => NULL,
+     'ctype' => NULL,
+     'flags' => 'Seen',
+     'timestamp' => NULL,
+     'f' => NULL,
+     'seen' => true,
+     'deleted' => false,
+     'recent' => false,
+     'answered' => false,
+     'junk' => NULL,
+     'internaldate' => '03-Jun-2007 10:20:30',
+     'is_reply' => NULL,
+  )),
+  'structure' => 
+  rcube_message_part::__set_state(array(
+     'mime_id' => '1',
+     'ctype_primary' => 'text',
+     'ctype_secondary' => 'plain',
+     'mimetype' => 'text/plain',
+     'disposition' => '',
+     'filename' => '',
+     'encoding' => '8bit',
+     'charset' => 'utf-8',
+     'size' => 1057,
+     'headers' => 
+    array (
+      'id' => '1395',
+      'uid' => '65803',
+      'subject' => '[Macbay v.4 Kundeninterface:] #279',
+      'from' => 'Macbay v.4 Kundeninterface <feedback@macbay.de>',
+      'to' => 'tfk@macnews.de',
+      'cc' => '',
+      'replyto' => 'Macbay v.4 Kundeninterface <feedback@macbay.de>',
+      'in_reply_to' => 'FS279@bugs.macbay.de',
+      'date' => 'Sun, 03 Jun 2007 12:20:25 +0200',
+      'messageID' => '<auto-000072106608@macnews.de>',
+      'size' => '1861',
+      'encoding' => '8bit',
+      'ctype' => 'text/plain',
+      'flags' => 'Seen',
+      'timestamp' => 1180862425,
+      'f' => NULL,
+      'seen' => true,
+      'deleted' => false,
+      'recent' => false,
+      'answered' => false,
+      'junk' => NULL,
+      'internaldate' => '03-Jun-2007 10:20:30',
+      'is_reply' => NULL,
+      'bcc' => '',
+      'reference' => NULL,
+      'charset' => 'UTF-8',
+    ),
+     'd_parameters' => 
+    array (
+    ),
+     'ctype_parameters' => 
+    array (
+      'charset' => 'utf-8',
+      'format' => 'flowed',
+    ),
+  )),
+  'subject' => '',
+  'parts' => 
+  array (
+    1 => 
+    rcube_message_part::__set_state(array(
+       'mime_id' => '1',
+       'ctype_primary' => 'text',
+       'ctype_secondary' => 'plain',
+       'mimetype' => 'text/plain',
+       'disposition' => '',
+       'filename' => '',
+       'encoding' => '8bit',
+       'charset' => 'utf-8',
+       'size' => 1057,
+       'headers' => 
+      array (
+        'id' => '1395',
+        'uid' => '65803',
+        'subject' => '[Macbay v.4 Kundeninterface:] #279',
+        'from' => 'Macbay v.4 Kundeninterface <feedback@macbay.de>',
+        'to' => 'tfk@macnews.de',
+        'cc' => '',
+        'replyto' => 'Macbay v.4 Kundeninterface <feedback@macbay.de>',
+        'in_reply_to' => 'FS279@bugs.macbay.de',
+        'date' => 'Sun, 03 Jun 2007 12:20:25 +0200',
+        'messageID' => '<auto-000072106608@macnews.de>',
+        'size' => '1861',
+        'encoding' => '8bit',
+        'ctype' => 'text/plain',
+        'flags' => 'Seen',
+        'timestamp' => 1180862425,
+        'f' => NULL,
+        'seen' => true,
+        'deleted' => false,
+        'recent' => false,
+        'answered' => false,
+        'junk' => NULL,
+        'internaldate' => '03-Jun-2007 10:20:30',
+        'is_reply' => NULL,
+        'bcc' => '',
+        'reference' => NULL,
+        'charset' => 'UTF-8',
+      ),
+       'd_parameters' => 
+      array (
+      ),
+       'ctype_parameters' => 
+      array (
+        'charset' => 'utf-8',
+        'format' => 'flowed',
+      ),
+    )),
+  ),
+  'FROM' => 
+  array (
+    0 => 'tfk@macnews.de',
+  ),
+)
+
+2007-06-03 21:37:32
+We got uid: 65805
+
+2007-06-03 21:37:32
+Compose mode: 262
+
+2007-06-03 21:37:33
+Passed require for rcmail_compose functions.
+
+2007-06-03 21:37:45
+We got uid: 65805
+
+2007-06-03 21:37:45
+Compose mode: 262
+
+2007-06-03 21:37:46
+Passed require for rcmail_compose functions.
+
+2007-06-04 09:28:07
+array (
+  '_action' => 'login',
+  '_user' => 'lola@macnews.de',
+  '_pass' => 'hotrod1..',
+)
+
+2007-06-04 10:04:41
+array (
+  '_action' => 'login',
+  '_user' => 'marc',
+  '_pass' => '311po8311po8',
+)
+
+2007-06-04 10:04:48
+array (
+  '_action' => 'login',
+  '_user' => 'marc',
+  '_pass' => '311po8311po8',
+)
+
+2007-06-04 10:04:56
+array (
+  '_action' => 'login',
+  '_user' => 'm12101',
+  '_pass' => '311po8311po8',
+)
+
+2007-06-04 10:05:07
+array (
+  '_action' => 'login',
+  '_user' => 'till',
+  '_pass' => 'test123',
+)
+
+2007-06-04 10:05:21
+array (
+  '_action' => 'login',
+  '_user' => 'marc',
+  '_pass' => '311po8',
+)
+
+2007-06-04 10:05:28
+array (
+  '_action' => 'login',
+  '_user' => 'marc',
+  '_pass' => '311po8311po8',
+)
+
+2007-06-04 10:06:28
+array (
+  '_action' => 'login',
+  '_user' => 'lola@macnews.de',
+  '_pass' => 'hotrod1..',
+)
+
+2007-06-04 10:07:03
+array (
+  '_action' => 'login',
+  '_user' => 'm.korthaus@macnews.de',
+  '_pass' => '311po8311po8',
+)
+
+2007-06-04 10:07:58
+array (
+  '_mbox' => 'INBOX',
+  '_reload' => '1',
+  '_remote' => '1',
+)
+
+2007-06-04 10:08:57
+We got uid: 171865
+
+2007-06-04 10:08:57
+Compose mode: 262
+
+2007-06-04 10:08:57
+Passed require for rcmail_compose functions.
+
+2007-06-04 10:09:19
+Passed require for rcmail_compose functions.
+
+2007-06-04 10:10:01
+Passed require for rcmail_compose functions.

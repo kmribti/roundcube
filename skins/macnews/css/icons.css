@@ -1,0 +1,251 @@
+/*
+	File: icons.css
+	Media type: screen
+
+
+  ICONS
+
+
+*/
+
+/*
+				BUTTON ICONS
+*/
+
+
+.icon-active-dummy {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_blue_dummy.gif);
+}
+.icon-inactive-dummy {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_lightblue_dummy.gif);
+}
+.icon-active-key {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_blue_key.gif);
+}
+
+
+/* Calendar*/
+.icon-active-todo {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_blue_todo.gif);
+	width: 15px !important;
+}
+.icon-inactive-todo {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_grey_todo.gif);
+	width: 15px !important;
+}
+.icon-active-soon {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_blue_soon.gif);
+	width: 23px !important;
+}
+.icon-inactive-soon {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_grey_soon.gif);
+	width: 23px !important;
+}
+.icon-active-year {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_blue_year.gif);
+	width: 23px !important;
+}
+.icon-inactive-year {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_grey_year.gif);
+	width: 23px !important;
+}
+.icon-active-month {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_blue_month.gif);
+	width: 23px !important;
+}
+.icon-inactive-month {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_grey_month.gif);
+	width: 23px !important;
+}
+.icon-active-week {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_blue_week.gif);
+	width: 23px !important;
+}
+.icon-inactive-week {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_grey_week.gif);
+	width: 23px !important;
+}
+.icon-active-day {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_blue_day.gif);
+	width: 23px !important;
+}
+.icon-inactive-day {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_grey_day.gif);
+	width: 23px !important;
+}
+
+/* Webmail */
+.icon-active-getmail {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_blue_getmail.gif);
+}
+.icon-active-writemail {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_blue_writemail.gif);
+}
+.icon-active-reply {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_blue_reply.gif);
+}
+.icon-active-replyall {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_blue_replyall.gif);
+}
+.icon-active-fwd {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_blue_fwd.gif);
+}
+.icon-active-delete {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_blue_delete.gif);
+}
+.icon-active-abc {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_blue_abc.gif);
+}
+.icon-active-savedraft {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/btn_icon_blue_savedraft.gif);
+}
+
+
+
+/*
+			ICONS
+*/
+
+.arrow-blue-open {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/icon_arrow_blue_open.gif);
+}
+
+.arrow-blue-closed {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/icon_arrow_blue_closed.gif);
+}
+
+.icon-key_add {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/key_add.gif);
+}
+.icon-add {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/add.gif);
+}
+.icon-delete {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/delete.gif);
+}
+
+.icon-home {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/house.gif);
+}
+
+.icon-star {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/star.gif);
+}
+
+.icon-stop {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/stop.gif);
+}
+
+.icon-usercomment {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/user_comment.gif);
+}
+
+
+.icon-settings {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/pencil.gif);
+}
+
+
+.icon-delete {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/bin.gif);
+}
+.icon-contact-add {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/add.gif);
+}
+.icon-vcard-add {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/vcard_add.gif);
+}
+.icon-vcard-edit {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/vcard_edit.gif);
+}
+.icon-vcard-download {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/tick.gif);
+}
+.icon-xing-refresh {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/arrow_refresh.gif);
+}
+.icon-xing {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/world_add.gif);
+}
+.icon-group-add {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/group_add.gif);
+}
+.icon-group-rename {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/group_edit.gif);
+}
+.icon-group-publish {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/group_go.gif);
+}
+
+.icon-info {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/information.gif);
+}
+.icon-timer {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/clock.gif);
+}
+.icon-timer-edit {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/clock_edit.gif);
+}
+
+.icon-warning {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/error.gif);
+}
+.icon-tick {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/tick.gif);
+}
+
+
+/* CALENDAR */
+
+.icon-new-app {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/icon_new_app.gif);
+}
+
+.icon-new-todo {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/icon_new_todo.gif);
+}
+
+.icon-new-cal {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/icon_new_cal.gif);
+}
+
+/* WEBMAIL */
+.icon-mail-inbox {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/folder-inbox.png);
+}
+.icon-mail-trash {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/folder-trash.png);
+}
+.icon-mail-draft {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/folder-drafts.png);
+}
+.icon-mail-sent {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/folder-sent.png);
+}
+.icon-mail-spam {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/folder-junk.png);
+}
+.icon-mail-folder {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/folder-closed.png);
+}
+
+.icon-folder-add {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/icon_folder_add.gif);
+}
+
+.icon-folder-edit {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/icon_folder_edit.gif);
+}
+
+.icon-folder-zip {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/icon_folder_zip.gif);
+}
+
+
+
+.DEV-ICON {
+	background-image: url(http://icke.till.workspace.macnews.local/incl/img/dummy.gif);
+}
+
+
+

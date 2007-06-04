@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><roundcube:object name="productname" /> :: <roundcube:label name="compose" /></title>
+<roundcube:include file="/includes/links.html" />
+<link rel="stylesheet" type="text/css" href="/mail.css" />
+<link rel="stylesheet" type="text/css" href="/googiespell.css" />
+<script type="text/javascript">
+<!--
+
+function rcmail_toggle_display(id) {
+  var row, disp;
+  if (row = document.getElementById(id)) {
+    disp = (!row.style.display || row.style.display=='none') ? ((document.all && !window.opera) ? 'block' : 'table-row') : 'none';
+    row.style.display = disp;
+  }
+
+  return false;
+}
+
+//-->
+</script>
+</head>
+<body>
+
+<roundcube:include file="/includes/taskbar.html" />
+<roundcube:include file="/includes/header.html" />
+
+<div class="navBarLeft">
+	<div class="navBarTop">
+		<div class="btn btn-active-big">
+			<div class="icon icon-active-getmail">&nbsp;</div>
+			<p><span><roundcube:button command="list" label="backtolist" /></span></p>
+		</div>
+	</div>
+</div>
+
+<div class="navBarRight">
+    <div class="navBarTop">
+        <div class="btn btn-active-big">
+    		<div class="icon icon-active-writemail">&nbsp;</div>
+    		<p><span><roundcube:button command="send" label="sendmessage" /></span></p>
+    	</div>
+    	<div class="btn btn-active-big">
+    		<div class="icon icon-active-savedraft">&nbsp;</div>
+    		<p><span><roundcube:button command="savedraft" label="savemessage" /></span></p>
+    	</div>
+    	<roundcube:button command="settings" label="settings" class="icon-settings" />
+    </div>
+</div>
+
+<div class="clrLeft">&nbsp;</div>
+
+<div id="wrapper-webmail">
+    <div class="container-mailboxes">
+    &nbsp;
+    </div>
+    <div class="container-mailcont">
+        <form name="form" id="composemessage" action="./" method="post">
+            <fieldset>
+                <div class="formrow">
+                    <label for="rcmcomposefrom"><roundcube:label name="from" /></label>
+                    <roundcube:object name="composeHeaders" part="from" form="form" id="rcmcomposefrom" tabindex="1" />
+                </div>
+                <div class="formrow">
+                    <label for="rcmcomposeto"><roundcube:label name="to" /></label>
+                    <roundcube:object name="composeHeaders" part="to" form="form" id="rcmcomposeto" cols="80" rows="2" tabindex="2" />
+                    <a href="#" onclick="return rcmail_toggle_display('compose-cc')" class="additional" for="copy">[Cc]</a>
+                    <a href="#" onclick="return rcmail_toggle_display('compose-bcc')">[Bcc]</a>
+                </div>
+                <div class="formrow" id="compose-cc">
+                    <label for="rcmcomposecc"><roundcube:label name="cc" /></label>
+                    <roundcube:object name="composeHeaders" part="cc" form="form" id="rcmcomposecc" cols="80" rows="2" tabindex="3" />
+                </div>
+                <div class="formrow" id="compose-bcc">
+                    <label for="rcmcomposebcc"><roundcube:label name="bcc" /></label>
+                    <roundcube:object name="composeHeaders" part="bcc" form="form" id="rcmcomposebcc" cols="80" rows="2" tabindex="4" />
+                </div>
+                <div class="formrow" id="compose-replyto">
+                    <label for="rcmcomposereplyto"><roundcube:label name="replyto" /></label>
+                    <roundcube:object name="composeHeaders" part="replyto" form="form" id="rcmcomposereplyto" size="80" tabindex="5" />
+                </div>
+                <div class="formrow">
+                    <label for="compose-subject"><roundcube:label name="subject" /></label>
+                    <roundcube:object name="composeSubject" id="compose-subject" form="form" tabindex="6" />
+                </div>
+                <div class="formrow" id="priority-selector">
+                    <label for="rcmcomposepriority"><roundcube:label name="priority" />:</label>
+                    <roundcube:object name="prioritySelector" form="form" id="rcmcomposepriority" />
+                </div>
+                <div class="formrow" id="receipt-selector">
+                    <label for="rcmcomposereceipt"><roundcube:label name="returnreceipt" /></label>
+                    <roundcube:object style="width:auto !important;" name="receiptCheckBox" form="form" id="rcmcomposereceipt" />&nbsp;
+                </div>
+    		</fieldset>
+            <fieldset>
+                <roundcube:object name="composeBody" id="compose-body" form="form" cols="80" rows="20" wrap="virtual" tabindex="7" />
+            </fieldset>
+            <!-- macbay hack: roundcube should do this by itself -->
+            <input name="_task" value="mail" type="hidden" />
+            <input name="_action" value="send" type="hidden" />
+            <!-- /macbay hack -->
+
+        </form>
+        <!-- attachment form here -->
+    </div>
+</div>
+
+<script type="text/javascript">
+<!--
+
+var cc_field = document.form._cc;
+if (cc_field && cc_field.value!='') {
+    rcmail_toggle_display('compose-cc');
+}
+var bcc_field = document.form._bcc;
+if (bcc_field && bcc_field.value!='') {
+    rcmail_toggle_display('compose-bcc');
+}
+//-->
+</script>
+
+<roundcube:include file="/includes/footer.html" />
+
+</body>
+</html>
