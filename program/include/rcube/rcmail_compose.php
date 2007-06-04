@@ -53,24 +53,35 @@ function rcmail_compose_headers($attrib)
             break;
     }
 
+    /**
+     * Init local variables to keep overview in following control-flow.
+     * @ignore
+     */
+    $reply_to = (string) @$MESSAGE['headers']->replyto;
+    $from     = (string) @$MESSAGE['headers']->from;
+    $to       = (string) @$MESSAGE['headers']->to;
+    $cc       = (string) @$MESSAGE['headers']->cc;
+    $bcc      = (string) @$MESSAGE['headers']->bcc;
+
     if ($fname && !empty($_POST[$fname])) {
         $fvalue = get_input_value($fname, RCUBE_INPUT_POST, TRUE);
     }
     else if ($header && $compose_mode == RCUBE_COMPOSE_REPLY) {
         // get recipent address(es) out of the message headers
-        if ($header=='to' && !empty($MESSAGE['structure']->headers['replyto'])) {
-            $fvalue = $MESSAGE['headers']->replyto;
+        if ($header=='to' && !empty($reply_to)) {
+            $fvalue = $reply_to;
         }
-        else if ($header=='to' && !empty($MESSAGE['structure']->headers['from'])) {
-            $fvalue = $MESSAGE['structure']->headers['from'];
+        else if ($header=='to' && !empty($from)) {
+            $fvalue = $from;
         }
         // add recipent of original message if reply to all
         else if ($header=='cc' && !empty($MESSAGE['reply_all'])) {
-            if ($v = $MESSAGE['structure']->headers['to'])
+            if ($v = $to) {
                 $fvalue .= $v;
-
-            if ($v = $MESSAGE['structure']->headers['cc'])
+            }
+            if ($v = $cc) {
                 $fvalue .= (!empty($fvalue) ? ', ' : '') . $v;
+            }
         }
 
         // split recipients and put them back together in a unique way
@@ -87,14 +98,14 @@ function rcmail_compose_headers($attrib)
     }
     else if ($header && $compose_mode == RCUBE_COMPOSE_DRAFT) {
         // get drafted headers
-        if ($header=='to' && !empty($MESSAGE['structure']->headers['to'])) {
-            $fvalue = $IMAP->decode_header($MESSAGE['structure']->headers['to']);
+        if ($header=='to' && !empty($to)) {
+            $fvalue = $IMAP->decode_header($to);
         }
-        if ($header=='cc' && !empty($MESSAGE['structure']->headers['cc'])) {
-            $fvalue = $IMAP->decode_header($MESSAGE['structure']->headers['cc']);
+        if ($header=='cc' && !empty($cc)) {
+            $fvalue = $IMAP->decode_header($cc);
         }
-        if ($header=='bcc' && !empty($MESSAGE['structure']->headers['bcc'])) {
-            $fvalue = $IMAP->decode_header($MESSAGE['structure']->headers['bcc']);
+        if ($header=='bcc' && !empty($bcc)) {
+            $fvalue = $IMAP->decode_header($bcc);
         }
     }
 
@@ -109,7 +120,7 @@ function rcmail_compose_headers($attrib)
         }
         // create teaxtarea object
         $input = new $field_type($field_attrib);
-        $out = $input->show($fvalue);
+        $out   = $input->show($fvalue);
     }
 
     if ($form_start) {
@@ -357,8 +368,8 @@ function rcmail_create_reply_body($body, $bodyIsHtml)
 {
     global $IMAP, $MESSAGE;
 
-    $_date = $MESSAGE['structure']->headers['date'];
-    $_from = $MESSAGE['structure']->headers['from'];
+    $_date = $MESSAGE['headers']->date;
+    $_from = $MESSAGE['headers']->from;
 
     //tfk_debug('From: ' . $_from);
 
@@ -401,7 +412,7 @@ function rcmail_create_reply_body($body, $bodyIsHtml)
         $_msg.= "style=\"padding-left: 5px; border-left: #1010ff 2px solid; ";
         $_msg.= "margin-left: 5px; width: 100%%\">";
         $prefix = sprintf(
-                        $_smg,
+                        $_msg,
                         $_date,
                         $_from
         );
@@ -412,46 +423,49 @@ function rcmail_create_reply_body($body, $bodyIsHtml)
 
 
 function rcmail_create_forward_body($body, $bodyIsHtml)
-  {
-  global $IMAP, $MESSAGE;
+{
+    global $IMAP, $MESSAGE;
 
 
-  $_date    = $MESSAGE['structure']->headers['date'];
-  $_from    = $MESSAGE['structure']->headers['from'];
-  $_subject = $MESSAGE['structure']->headers['subject'];
-  $_to      = $MESSAGE['structure']->headers['to'];
+    $_date    = $MESSAGE['headers']->date;
+    $_from    = $MESSAGE['headers']->from;
+    $_subject = $MESSAGE['headers']->subject;
+    $_to      = $MESSAGE['headers']->to;
 
-  if (! $bodyIsHtml) {
-    // soft-wrap message first
-    $body = wordwrap($body, 80);
+    if (! $bodyIsHtml) {
+        // soft-wrap message first
+        $body = wordwrap($body, 80);
 
-    $prefix = sprintf("\n\n\n-------- Original Message --------\nSubject: %s\nDate: %s\nFrom: %s\nTo: %s\n\n",
-                     $_subject,
-                     $_date,
-                     $IMAP->decode_header($_from),
-                     $IMAP->decode_header($_to));
-  }
-  else {
-      $prefix = sprintf(
-        "<br><br>-------- Original Message --------" .
-        "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tbody>" .
-        "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">Subject: </th><td>%s</td></tr>" .
-        "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">Date: </th><td>%s</td></tr>" .
-        "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">From: </th><td>%s</td></tr>" .
-        "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">To: </th><td>%s</td></tr>" .
-        "</tbody></table><br>",
-                     Q($_subject),
-                     Q($_date),
-                     Q($IMAP->decode_header($_from)),
-                     Q($IMAP->decode_header($_to)));
-  }
+        $prefix = sprintf(
+                    "\n\n\n-------- Original Message --------\nSubject: %s\nDate: %s\nFrom: %s\nTo: %s\n\n",
+                    $_subject,
+                    $_date,
+                    $IMAP->decode_header($_from),
+                    $IMAP->decode_header($_to)
+        );
+    }
+    else {
+        $prefix = sprintf(
+                "<br><br>-------- Original Message --------" .
+                "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tbody>" .
+                "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">Subject: </th><td>%s</td></tr>" .
+                "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">Date: </th><td>%s</td></tr>" .
+                "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">From: </th><td>%s</td></tr>" .
+                "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">To: </th><td>%s</td></tr>" .
+                "</tbody></table><br>",
+                Q($_subject),
+                Q($_date),
+                Q($IMAP->decode_header($_from)),
+                Q($IMAP->decode_header($_to))
+        );
+    }
 
-  // add attachments
-  if (!isset($_SESSION['compose']['forward_attachments']) && is_array($MESSAGE['parts']))
-    rcmail_write_compose_attachments($MESSAGE);
-
-  return $prefix.$body;
-  }
+    // add attachments
+    if (!isset($_SESSION['compose']['forward_attachments']) && is_array($MESSAGE['parts'])) {
+        rcmail_write_compose_attachments($MESSAGE);
+    }
+    return $prefix.$body;
+}
 
 
 function rcmail_create_draft_body($body, $bodyIsHtml)
@@ -530,11 +544,7 @@ function rcmail_compose_subject($attrib)
 
     $subject  = '';
 
-    /**
-     * Apparently the structure changed?
-     * @ignore
-     */
-    $_subject = $MESSAGE['structure']->headers['subject'];
+    $_subject = $MESSAGE['headers']->subject;
 
     // use subject from post
     if (isset($_POST['_subject'])) {
@@ -627,19 +637,19 @@ function rcmail_compose_attachment_list($attrib)
  * @todo Move attachment form into a template
  */
 function rcmail_compose_attachment_form($attrib)
-  {
-  global $OUTPUT, $SESS_HIDDEN_FIELD;
+{
+    global $OUTPUT, $SESS_HIDDEN_FIELD;
 
-  // add ID if not given
-  if (!$attrib['id'])
-    $attrib['id'] = 'rcmUploadbox';
-
-  // allow the following attributes to be added to the <div> tag
-  $attrib_str = create_attrib_string($attrib, array('id', 'class', 'style'));
-  $input_field = rcmail_compose_attachment_field(array('style="height:15px;"'));
-  $label_send = rcube_label('upload');
-  $label_close = rcube_label('close');
-  $js_instance = JS_OBJECT_NAME;
+    // add ID if not given
+    if (!$attrib['id']) {
+        $attrib['id'] = 'rcmUploadbox';
+    }
+    // allow the following attributes to be added to the <div> tag
+    $attrib_str = create_attrib_string($attrib, array('id', 'class', 'style'));
+    $input_field = rcmail_compose_attachment_field(array('style="height:15px;"'));
+    $label_send = rcube_label('upload');
+    $label_close = rcube_label('close');
+    $js_instance = JS_OBJECT_NAME;
 
 
 
@@ -659,9 +669,9 @@ $input_field<br />
 </div>
 EOF;
 
-  $OUTPUT->add_gui_object('uploadbox', $attrib['id']);
-  return $out;
-  }
+    $OUTPUT->add_gui_object('uploadbox', $attrib['id']);
+    return $out;
+}
 
 
 function rcmail_compose_attachment_field($attrib)

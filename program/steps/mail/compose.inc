@@ -97,12 +97,13 @@ if (empty($msg_uid) === false) {
 
     // similar as in program/steps/mail/show.inc
     $MESSAGE = array('UID' => $msg_uid);
-    $MESSAGE['headers']   = $IMAP->get_headers($msg_uid);
     $MESSAGE['structure'] = $IMAP->get_structure($msg_uid);
+    $MESSAGE['headers']   = $MESSAGE['structure']->headers; //$IMAP->get_headers($msg_uid);
     $MESSAGE['subject']   = $IMAP->decode_header($MESSAGE['headers']->subject);
     $MESSAGE['parts']     = $IMAP->get_mime_numbers($MESSAGE['structure']);
 
-    //tfk_debug('Reference message: ' . var_export($MESSAGE, true));
+
+    tfk_debug('Reference message: ' . var_export($MESSAGE, true));
 
     if ($compose_mode == RCUBE_COMPOSE_REPLY) {
         $_SESSION['compose']['reply_uid']   = $msg_uid;
@@ -124,7 +125,7 @@ if (empty($msg_uid) === false) {
 }
 
 /****** compose mode functions ********/
-require_once 'lib/rcube/rcmail_compose.php';
+require_once 'include/rcube/rcmail_compose.php';
 
 tfk_debug('Passed require for rcmail_compose functions.');
 

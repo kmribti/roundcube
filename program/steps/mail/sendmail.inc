@@ -36,7 +36,7 @@ if (!isset($_SESSION['compose']['id'])) {
 tfk_debug('Still here!');
 
 /****** message sending functions ********/
-require_once 'lib/rcube/rcmail_send.php';
+require_once 'include/rcube/rcmail_send.php';
 
 tfk_debug('Passed require of class rc_mail_send.');
 
@@ -323,7 +323,7 @@ if ($savedraft === false) {
     tfk_debug('Not a draft. We try to send mail.');
 
     // send thru SMTP server using custom SMTP library
-    if (empty($CONFIG['smtp_server']) === false) {
+    if ($_SESSION['smtp_server'] != 'phpMail') {
 
         tfk_debug('Because we can: SMTP.');
 

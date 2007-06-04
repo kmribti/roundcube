@@ -316,7 +316,6 @@ if ($_task=='mail') {
         case 'purge':
             $_name.= 'folders';
             break;
-
         case 'list':
             if (isset($_REQUEST['_remote']) === true) {
                 $_name.= 'list';

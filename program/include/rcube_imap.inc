@@ -815,321 +815,339 @@ class rcube_imap
     }
 
 
-  function sync_header_index($mailbox)
+    function sync_header_index($mailbox)
     {
-    $cache_key = $mailbox.'.msg';
-    $cache_index = $this->get_message_cache_index($cache_key);
-    $msg_count = $this->_messagecount($mailbox);
+        $cache_key = $mailbox.'.msg';
+        $cache_index = $this->get_message_cache_index($cache_key);
+        $msg_count = $this->_messagecount($mailbox);
 
-    // fetch complete message index
-    $a_message_index = iil_C_FetchHeaderIndex($this->conn, $mailbox, "1:$msg_count", 'UID');
+        // fetch complete message index
+        $a_message_index = iil_C_FetchHeaderIndex($this->conn, $mailbox, "1:$msg_count", 'UID');
 
-    foreach ($a_message_index as $id => $uid)
-      {
-      // message in cache at correct position
-      if ($cache_index[$id] == $uid)
-        {
-        unset($cache_index[$id]);
-        continue;
+        foreach ($a_message_index as $id => $uid) {
+            // message in cache at correct position
+            if ($cache_index[$id] == $uid) {
+                unset($cache_index[$id]);
+                continue;
+            }
+
+            // message in cache but in wrong position
+            if (in_array((string)$uid, $cache_index, TRUE)) {
+                unset($cache_index[$id]);
+            }
+
+            // other message at this position
+            if (isset($cache_index[$id])) {
+                $this->remove_message_cache($cache_key, $id);
+                unset($cache_index[$id]);
+            }
+
+
+            // fetch complete headers and add to cache
+            $headers = iil_C_FetchHeader($this->conn, $mailbox, $id);
+            $this->add_message_cache($cache_key, $headers->id, $headers);
         }
 
-      // message in cache but in wrong position
-      if (in_array((string)$uid, $cache_index, TRUE))
-        {
-        unset($cache_index[$id]);
+        // those ids that are still in cache_index have been deleted
+        if (empty($cache_index) === false) {
+            foreach ($cache_index as $id => $uid) {
+                $this->remove_message_cache($cache_key, $id);
+            }
         }
+    }
 
-      // other message at this position
-      if (isset($cache_index[$id]))
-        {
-        $this->remove_message_cache($cache_key, $id);
-        unset($cache_index[$id]);
+
+    /**
+     * Invoke search request to IMAP server
+     *
+     * @param  string  mailbox name to search in
+     * @param  string  search criteria (ALL, TO, FROM, SUBJECT, etc)
+     * @param  string  search string
+     * @return array   search results as list of message ids
+     * @access public
+     */
+    function search($mbox_name='', $criteria='ALL', $str=NULL, $charset=NULL)
+    {
+        $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
+
+        // have an array of criterias => execute multiple searches
+        if (is_array($criteria) && $str) {
+            $results = array();
+            foreach ($criteria as $crit) {
+                if ($search_result = $this->search($mbox_name, $crit, $str, $charset)) {
+                    $results = array_merge($results, $search_result);
+                }
+            }
+            $results = array_unique($results);
+            $this->set_search_set($criteria, $str, $results, $charset);
+            return $results;
         }
+        if ($str && $criteria) {
+            $search = (!empty($charset) ? "CHARSET $charset " : '');
+            $search.= sprintf("%s {%d}\r\n%s", $criteria, strlen($str), $str);
+            $results = $this->_search_index($mailbox, $search);
 
-
-      // fetch complete headers and add to cache
-      $headers = iil_C_FetchHeader($this->conn, $mailbox, $id);
-      $this->add_message_cache($cache_key, $headers->id, $headers);
-      }
-
-    // those ids that are still in cache_index have been deleted
-    if (!empty($cache_index))
-      {
-      foreach ($cache_index as $id => $uid)
-        $this->remove_message_cache($cache_key, $id);
-      }
+            // try search with ISO charset (should be supported by server)
+            if (empty($results) && !empty($charset) && $charset!='ISO-8859-1') {
+                $results = $this->search(
+                                $mbox_name,
+                                $criteria,
+                                rcube_charset_convert($str, $charset, 'ISO-8859-1'),
+                                'ISO-8859-1'
+                );
+            }
+            $this->set_search_set($criteria, $str, $results, $charset);
+            return $results;
+        }
+        return $this->_search_index($mailbox, $criteria);
     }
 
 
-  /**
-   * Invoke search request to IMAP server
-   *
-   * @param  string  mailbox name to search in
-   * @param  string  search criteria (ALL, TO, FROM, SUBJECT, etc)
-   * @param  string  search string
-   * @return array   search results as list of message ids
-   * @access public
-   */
-  function search($mbox_name='', $criteria='ALL', $str=NULL, $charset=NULL)
+    /**
+     * Private search method
+     *
+     * @return array   search results as list of message ids
+     * @access private
+     * @see rcube_imap::search()
+     */
+    function _search_index($mailbox, $criteria='ALL')
     {
-    $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
-
-    // have an array of criterias => execute multiple searches
-    if (is_array($criteria) && $str)
-      {
-      $results = array();
-      foreach ($criteria as $crit)
-        if ($search_result = $this->search($mbox_name, $crit, $str, $charset))
-          $results = array_merge($results, $search_result);
-
-      $results = array_unique($results);
-      $this->set_search_set($criteria, $str, $results, $charset);
-      return $results;
-      }
-    else if ($str && $criteria)
-      {
-      $search = (!empty($charset) ? "CHARSET $charset " : '') . sprintf("%s {%d}\r\n%s", $criteria, strlen($str), $str);
-      $results = $this->_search_index($mailbox, $search);
-
-      // try search with ISO charset (should be supported by server)
-      if (empty($results) && !empty($charset) && $charset!='ISO-8859-1')
-        $results = $this->search($mbox_name, $criteria, rcube_charset_convert($str, $charset, 'ISO-8859-1'), 'ISO-8859-1');
-
-      $this->set_search_set($criteria, $str, $results, $charset);
-      return $results;
-      }
-    else
-      return $this->_search_index($mailbox, $criteria);
+        $a_messages = iil_C_Search($this->conn, $mailbox, $criteria);
+        // clean message list (there might be some empty entries)
+        if (is_array($a_messages) === false) {
+            return $a_messages;
+        }
+        foreach ($a_messages as $i => $val) {
+            if (empty($val)) {
+                unset($a_messages[$i]);
+            }
+        }
+        return $a_messages;
     }
 
 
-  /**
-   * Private search method
-   *
-   * @return array   search results as list of message ids
-   * @access private
-   * @see rcube_imap::search()
-   */
-  function _search_index($mailbox, $criteria='ALL')
+    /**
+     * Refresh saved search set
+     */
+    function refresh_search()
     {
-    $a_messages = iil_C_Search($this->conn, $mailbox, $criteria);
-    // clean message list (there might be some empty entries)
-    if (is_array($a_messages))
-      {
-      foreach ($a_messages as $i => $val)
-        if (empty($val))
-          unset($a_messages[$i]);
-      }
-
-    return $a_messages;
+        if (!empty($this->search_subject) && !empty($this->search_string)) {
+            $this->search_set = $this->search(
+                                    '',
+                                    $this->search_subject,
+                                    $this->search_string,
+                                    $this->search_charset
+            );
+        }
+        return $this->get_search_set();
     }
 
 
-  /**
-   * Refresh saved search set
-   */
-  function refresh_search()
+    /**
+     * Return message headers object of a specific message
+     *
+     * @param int     Message ID
+     * @param string  Mailbox to read from
+     * @param boolean True if $id is the message UID
+     * @return object Message headers representation
+     * @deprecated
+     */
+    function get_headers($id, $mbox_name=NULL, $is_uid=TRUE)
     {
-    if (!empty($this->search_subject) && !empty($this->search_string))
-      $this->search_set = $this->search('', $this->search_subject, $this->search_string, $this->search_charset);
+        $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
+        $uid = $is_uid ? $id : $this->_id2uid($id);
 
-    return $this->get_search_set();
-    }
-
-
-  /**
-   * Return message headers object of a specific message
-   *
-   * @param int     Message ID
-   * @param string  Mailbox to read from
-   * @param boolean True if $id is the message UID
-   * @return object Message headers representation
-   */
-  function get_headers($id, $mbox_name=NULL, $is_uid=TRUE)
-    {
-    $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
-    $uid = $is_uid ? $id : $this->_id2uid($id);
-
-    // get cached headers
-    if ($uid && ($headers = &$this->get_cached_message($mailbox.'.msg', $uid)))
-      return $headers;
-
-    $headers = iil_C_FetchHeader($this->conn, $mailbox, $id, $is_uid);
-
-    // write headers cache
-    if ($headers)
-      {
-      if ($is_uid)
-        $this->uid_id_map[$mbox_name][$uid] = $headers->id;
-
-      $this->add_message_cache($mailbox.'.msg', $headers->id, $headers);
-      }
+        // get cached headers
+        if ($uid && ($headers = &$this->get_cached_message($mailbox.'.msg', $uid))) {
+            return $headers;
+        }
+        $headers = iil_C_FetchHeader($this->conn, $mailbox, $id, $is_uid);
+        //tfk_debug(var_export($headers, true));
+        // write headers cache
+        if ($headers) {
+            if ($is_uid) {
+                $this->uid_id_map[$mbox_name][$uid] = $headers->id;
+            }
+            $this->add_message_cache($mailbox.'.msg', $headers->id, $headers);
+        }
         //tfk_debug(var_export($headers));
-    return $headers;
+        return $headers;
     }
 
 
-  /**
-   * Fetch body structure from the IMAP server and build
-   * an object structure similar to the one generated by PEAR::Mail_mimeDecode
-   *
-   * @param Int Message UID to fetch
-   * @return object Standard object tree or False on failure
-   */
-  function &get_structure($uid)
+    /**
+     * Fetch body structure from the IMAP server and build
+     * an object structure similar to the one generated by PEAR::Mail_mimeDecode
+     *
+     * @param Int Message UID to fetch
+     * @return object Standard object tree or False on failure
+     */
+    function &get_structure($uid)
     {
-    $cache_key = $this->mailbox.'.msg';
-    $headers = &$this->get_cached_message($cache_key, $uid, true);
+        $cache_key = $this->mailbox.'.msg';
+        $headers = &$this->get_cached_message($cache_key, $uid, true);
 
-    // return cached message structure
-    if (is_object($headers) && is_object($headers->structure))
-      return $headers->structure;
+        // return cached message structure
+        if (is_object($headers) && is_object($headers->structure)) {
+            return $headers->structure;
+        }
+        // resolve message sequence number
+        if (!($msg_id = $this->_uid2id($uid))) {
+            return FALSE;
+        }
+        $structure_str = iil_C_FetchStructureString($this->conn, $this->mailbox, $msg_id);
+        $structure     = iml_GetRawStructureArray($structure_str);
+        $struct        = false;
 
-    // resolve message sequence number
-    if (!($msg_id = $this->_uid2id($uid)))
-      return FALSE;
+        // parse structure and add headers
+        if (empty($structure) === true) {
+            return $struct;
+        }
+        $this->_msg_id = $msg_id;
+        $headers = $this->get_headers($msg_id, NULL, FALSE);
 
-    $structure_str = iil_C_FetchStructureString($this->conn, $this->mailbox, $msg_id);
-    $structure = iml_GetRawStructureArray($structure_str);
-    $struct = false;
-
-    // parse structure and add headers
-    if (!empty($structure))
-      {
-      $this->_msg_id = $msg_id;
-      $headers = $this->get_headers($msg_id, NULL, FALSE);
-
-      $struct = &$this->_structure_part($structure);
-      $struct->headers = get_object_vars($headers);
-
-      // don't trust given content-type
-      if (empty($struct->parts) && !empty($struct->headers['ctype']))
-        {
-        $struct->mime_id = '1';
-        $struct->mimetype = strtolower($struct->headers['ctype']);
-        list($struct->ctype_primary, $struct->ctype_secondary) = explode('/', $struct->mimetype);
+        $struct = &$this->_structure_part($structure);
+        //$struct->headers = get_object_vars($headers);
+        $struct->headers = $headers;
+        // don't trust given content-type
+        if (empty($struct->parts) && !empty($struct->headers->ctype)) {
+            $struct->mime_id = '1';
+            $struct->mimetype = strtolower($struct->headers->ctype);
+            list($struct->ctype_primary, $struct->ctype_secondary) = explode('/', $struct->mimetype);
         }
 
-      // write structure to cache
-      if ($this->caching_enabled)
-        $this->add_message_cache($cache_key, $msg_id, $headers, $struct);
-      }
-
-    return $struct;
+        // write structure to cache
+        if ($this->caching_enabled) {
+            $this->add_message_cache($cache_key, $msg_id, $headers, $struct);
+        }
+        return $struct;
     }
 
 
-  /**
-   * Build message part object
-   *
-   * @access private
-   */
-  function &_structure_part($part, $count=0, $parent='')
+    /**
+     * Build message part object
+     *
+     * @access private
+     */
+    function &_structure_part($part, $count=0, $parent='')
     {
-    $struct = new rcube_message_part;
-    $struct->mime_id = empty($parent) ? (string)$count : "$parent.$count";
+        $struct = new rcube_message_part;
+        $struct->mime_id = empty($parent) ? (string)$count : "$parent.$count";
 
-    // multipart
-    if (is_array($part[0]))
-      {
-      $struct->ctype_primary = 'multipart';
+        // multipart
+        if (is_array($part[0])) {
+            $struct->ctype_primary = 'multipart';
 
-      // find first non-array entry
-      for ($i=1; count($part); $i++)
-        if (!is_array($part[$i]))
-          {
-          $struct->ctype_secondary = strtolower($part[$i]);
-          break;
-          }
+            // find first non-array entry
+            for ($i=1; count($part); $i++) {
+                if (!is_array($part[$i])) {
+                    $struct->ctype_secondary = strtolower($part[$i]);
+                    break;
+                }
+            }
+            $struct->mimetype = 'multipart/'.$struct->ctype_secondary;
 
-      $struct->mimetype = 'multipart/'.$struct->ctype_secondary;
+            $struct->parts = array();
+            for ($i=0, $count=0; $i<count($part); $i++) {
+                if (is_array($part[$i]) && count($part[$i]) > 5) {
+                    $struct->parts[] = $this->_structure_part(
+                                                    $part[$i],
+                                                    ++$count,
+                                                    $struct->mime_id
+                    );
+                }
+            }
+            return $struct;
+        }
 
-      $struct->parts = array();
-      for ($i=0, $count=0; $i<count($part); $i++)
-        if (is_array($part[$i]) && count($part[$i]) > 5)
-          $struct->parts[] = $this->_structure_part($part[$i], ++$count, $struct->mime_id);
 
-      return $struct;
-      }
+        // regular part
+        $struct->ctype_primary = strtolower($part[0]);
+        $struct->ctype_secondary = strtolower($part[1]);
+        $struct->mimetype = $struct->ctype_primary.'/'.$struct->ctype_secondary;
 
+        // read content type parameters
+        if (is_array($part[2])) {
+            $struct->ctype_parameters = array();
+            for ($i=0; $i<count($part[2]); $i+=2) {
+                $struct->ctype_parameters[strtolower($part[2][$i])] = $part[2][$i+1];
+            }
+            if (isset($struct->ctype_parameters['charset'])) {
+                $struct->charset = $struct->ctype_parameters['charset'];
+            }
+        }
 
-    // regular part
-    $struct->ctype_primary = strtolower($part[0]);
-    $struct->ctype_secondary = strtolower($part[1]);
-    $struct->mimetype = $struct->ctype_primary.'/'.$struct->ctype_secondary;
+        // read content encoding
+        if (!empty($part[5]) && $part[5]!='NIL') {
+            $struct->encoding = strtolower($part[5]);
+            $struct->headers['content-transfer-encoding'] = $struct->encoding;
+        }
 
-    // read content type parameters
-    if (is_array($part[2]))
-      {
-      $struct->ctype_parameters = array();
-      for ($i=0; $i<count($part[2]); $i+=2)
-        $struct->ctype_parameters[strtolower($part[2][$i])] = $part[2][$i+1];
+        // get part size
+        if (!empty($part[6]) && $part[6]!='NIL') {
+            $struct->size = intval($part[6]);
+        }
+        // read part disposition
+        $di = count($part) - 2;
+        if ((is_array($part[$di]) && count($part[$di]) == 2 && is_array($part[$di][1])) ||
+        (is_array($part[--$di]) && count($part[$di]) == 2)
+        ) {
+            $struct->disposition = strtolower($part[$di][0]);
 
-      if (isset($struct->ctype_parameters['charset']))
-        $struct->charset = $struct->ctype_parameters['charset'];
-      }
+            if (is_array($part[$di][1])) {
+                for ($n=0; $n<count($part[$di][1]); $n+=2) {
+                    $struct->d_parameters[strtolower($part[$di][1][$n])] = $part[$di][1][$n+1];
+                }
+            }
+        }
 
-    // read content encoding
-    if (!empty($part[5]) && $part[5]!='NIL')
-      {
-      $struct->encoding = strtolower($part[5]);
-      $struct->headers['content-transfer-encoding'] = $struct->encoding;
-      }
+        // get child parts
+        if (is_array($part[8]) && $di != 8) {
+            $struct->parts = array();
+            for ($i=0, $count=0; $i<count($part[8]); $i++) {
+                if (is_array($part[8][$i]) && count($part[8][$i]) > 5) {
+                    $struct->parts[] = $this->_structure_part($part[8][$i], ++$count, $struct->mime_id);
+                }
+            }
+        }
 
-    // get part size
-    if (!empty($part[6]) && $part[6]!='NIL')
-      $struct->size = intval($part[6]);
+        // get part ID
+        if (!empty($part[3]) && $part[3]!='NIL') {
+            $struct->content_id = $part[3];
+            $struct->headers['content-id'] = $part[3];
 
-    // read part disposition
-    $di = count($part) - 2;
-    if ((is_array($part[$di]) && count($part[$di]) == 2 && is_array($part[$di][1])) ||
-        (is_array($part[--$di]) && count($part[$di]) == 2))
-      {
-      $struct->disposition = strtolower($part[$di][0]);
+            if (empty($struct->disposition)) {
+                $struct->disposition = 'inline';
+            }
+        }
 
-      if (is_array($part[$di][1]))
-        for ($n=0; $n<count($part[$di][1]); $n+=2)
-          $struct->d_parameters[strtolower($part[$di][1][$n])] = $part[$di][1][$n+1];
-      }
+        // fetch message headers if message/rfc822
+        if ($struct->ctype_primary=='message') {
+            $headers = iil_C_FetchPartBody(
+                        $this->conn,
+                        $this->mailbox,
+                        $this->_msg_id,
+                        $struct->mime_id.'.HEADER'
+            );
+            $struct->headers = $this->_parse_headers($headers);
 
-    // get child parts
-    if (is_array($part[8]) && $di != 8)
-      {
-      $struct->parts = array();
-      for ($i=0, $count=0; $i<count($part[8]); $i++)
-        if (is_array($part[8][$i]) && count($part[8][$i]) > 5)
-          $struct->parts[] = $this->_structure_part($part[8][$i], ++$count, $struct->mime_id);
-      }
+            if (is_array($part[8]) && empty($struct->parts)) {
+                $struct->parts[] = $this->_structure_part($part[8], ++$count, $struct->mime_id);
+            }
+        }
 
-    // get part ID
-    if (!empty($part[3]) && $part[3]!='NIL')
-      {
-      $struct->content_id = $part[3];
-      $struct->headers['content-id'] = $part[3];
+        // normalize filename property
+        if (!empty($struct->d_parameters['filename'])) {
+            $struct->filename = $this->decode_mime_string($struct->d_parameters['filename']);
+        }
+        else if (!empty($struct->ctype_parameters['name'])) {
+            $struct->filename = $this->decode_mime_string($struct->ctype_parameters['name']);
+        }
+        else if (!empty($struct->headers['content-description'])) {
+            $struct->filename = $this->decode_mime_string($struct->headers['content-description']);
+        }
 
-      if (empty($struct->disposition))
-        $struct->disposition = 'inline';
-      }
-
-    // fetch message headers if message/rfc822
-    if ($struct->ctype_primary=='message')
-      {
-      $headers = iil_C_FetchPartBody($this->conn, $this->mailbox, $this->_msg_id, $struct->mime_id.'.HEADER');
-      $struct->headers = $this->_parse_headers($headers);
-
-      if (is_array($part[8]) && empty($struct->parts))
-        $struct->parts[] = $this->_structure_part($part[8], ++$count, $struct->mime_id);
-      }
-
-    // normalize filename property
-    if (!empty($struct->d_parameters['filename']))
-      $struct->filename = $this->decode_mime_string($struct->d_parameters['filename']);
-    else if (!empty($struct->ctype_parameters['name']))
-      $struct->filename = $this->decode_mime_string($struct->ctype_parameters['name']);
-    else if (!empty($struct->headers['content-description']))
-      $struct->filename = $this->decode_mime_string($struct->headers['content-description']);
-
-    return $struct;
+        return $struct;
     }
 
 

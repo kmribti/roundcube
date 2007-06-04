@@ -21,37 +21,44 @@
 $mbox_name = $IMAP->get_mailbox_name();
 
 // send EXPUNGE command
-if ($_action=='expunge' && ($mbox = get_input_value('_mbox', RCUBE_INPUT_POST)))
-{
-  $success = $IMAP->expunge($mbox);
+if ($_action=='expunge' && ($mbox = get_input_value('_mbox', RCUBE_INPUT_POST))) {
+    $success = $IMAP->expunge($mbox);
 
-  // reload message list if current mailbox  
-  if ($success && !empty($_REQUEST['_reload']))
-  {
-    $OUTPUT->command('message_list.clear');
-    $_action = 'list';
-    return;
-  }
-  else
-    $commands = "// expunged: $success\n";
+    tfk_debug('Expung: ' . $mbox);
+
+    // reload message list if current mailbox
+    if ($success && empty($_REQUEST['_reload']) === false) {
+        $OUTPUT->command('message_list.clear');
+        $_action = 'list';
+
+        tfk_debug('Trying to reload list.');
+
+        $_file = dirname(__FILE__);
+        $_file.= '/list.inc';
+        include $_file;
+
+        //$OUTPUT->send($_task);
+
+        return;
+    }
+    else {
+        $commands = "// expunged: $success\n";
+    }
 }
-
 // clear mailbox
-else if ($_action=='purge' && ($mbox = get_input_value('_mbox', RCUBE_INPUT_POST)))
-{
-  $success = $IMAP->clear_mailbox($mbox);
-  
-  if ($success && !empty($_REQUEST['_reload']))
-  {
-    $OUTPUT->set_env('messagecount', 0);
-    $OUTPUT->set_env('pagecount', 0);
-    $OUTPUT->command('message_list.clear');
-    $OUTPUT->command('set_rowcount', rcmail_get_messagecount_text());
-    $OUTPUT->command('set_unread_count', $mbox_name, 0);
-  }
-  else
-    $commands = "// purged: $success";
-}
+elseif ($_action=='purge' && ($mbox = get_input_value('_mbox', RCUBE_INPUT_POST))) {
+    $success = $IMAP->clear_mailbox($mbox);
 
+    if ($success && !empty($_REQUEST['_reload'])) {
+        $OUTPUT->set_env('messagecount', 0);
+        $OUTPUT->set_env('pagecount', 0);
+        $OUTPUT->command('message_list.clear');
+        $OUTPUT->command('set_rowcount', rcmail_get_messagecount_text());
+        $OUTPUT->command('set_unread_count', $mbox_name, 0);
+    }
+    else {
+        $commands = "// purged: $success";
+    }
+}
 $OUTPUT->send($commands);
 ?>
