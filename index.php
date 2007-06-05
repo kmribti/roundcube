@@ -112,6 +112,7 @@ require_once 'include/rcube_imap.inc';
 require_once 'include/bugs.inc';
 require_once 'include/main.inc';
 require_once 'include/cache.inc';
+require_once 'lib/html2text.inc';
 require_once 'PEAR.php';
 
 
@@ -175,9 +176,26 @@ if ($_action=='error' && !empty($_GET['_code'])) {
     raise_error(array('code' => hexdec($_GET['_code'])), FALSE, TRUE);
 }
 
+// handle HTML->text conversion
+if ($_action=='html2text') {
+    $htmlText  = $HTTP_RAW_POST_DATA;
+ 	$converter = new html2text($htmlText);
+
+ 	// TODO possibly replace with rcube_remote_response()
+ 	header('Content-Type: text/plain');
+ 	$plaintext = $converter->get_text();
+ 	echo $plaintext;
+ 	exit;
+}
+
 // try to log in
 if ($_action=='login' && $_task=='mail') {
+
+    tfk_debug('Here we go, a login.');
+
     $host = rcmail_autoselect_host();
+
+    tfk_debug('Selected host: ' . $host);
 
     // check if client supports cookies
     if (empty($_COOKIE)) {
@@ -197,6 +215,8 @@ if ($_action=='login' && $_task=='mail') {
         unset($_SESSION['temp']);
         sess_regenerate_id();
 
+        tfk_debug('Yay, we log in.');
+
         // send auth cookie if necessary
         rcmail_authenticate_session();
 
@@ -205,6 +225,11 @@ if ($_action=='login' && $_task=='mail') {
         exit;
     }
     else {
+
+        tfk_debug('Oops, failed.');
+        //tfk_debug(var_export($_SESSION, true));
+        tfk_debug(date('Y-m-d H:i:s', $_SESSION['auth_time']));
+
         $OUTPUT->show_message("loginfailed", 'warning');
         $_SESSION['user_id'] = '';
     }

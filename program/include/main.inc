@@ -1439,199 +1439,199 @@ function format_email_recipient($email, $name='')
 
 
 function rcmail_message_container($attrib)
-  {
-  global $OUTPUT;
+{
+    global $OUTPUT;
 
-  if (!$attrib['id'])
-    $attrib['id'] = 'rcmMessageContainer';
+    if (!$attrib['id']) {
+        $attrib['id'] = 'rcmMessageContainer';
+    }
+    // allow the following attributes to be added to the <table> tag
+    $attrib_str = create_attrib_string($attrib, array('style', 'class', 'id'));
+    $out = '<div' . $attrib_str . "></div>";
 
-  // allow the following attributes to be added to the <table> tag
-  $attrib_str = create_attrib_string($attrib, array('style', 'class', 'id'));
-  $out = '<div' . $attrib_str . "></div>";
+    $OUTPUT->add_gui_object('message', $attrib['id']);
 
-  $OUTPUT->add_gui_object('message', $attrib['id']);
-
-  return $out;
-  }
+    return $out;
+}
 
 
 // return the IMAP username of the current session
 function rcmail_current_username($attrib)
-  {
-  global $DB;
-  static $s_username;
+{
+    global $DB;
+    static $s_username;
 
-  // alread fetched
-  if (!empty($s_username))
-    return $s_username;
-
-  // get e-mail address form default identity
-  $sql_result = $DB->query("SELECT email AS mailto
-                            FROM ".get_table_name('identities')."
-                            WHERE  user_id=?
-                            AND    standard=1
-                            AND    del<>1",
-                            $_SESSION['user_id']);
-
-  if ($DB->num_rows($sql_result))
-    {
-    $sql_arr = $DB->fetch_assoc($sql_result);
-    $s_username = $sql_arr['mailto'];
+    // alread fetched
+    if (!empty($s_username)) {
+        return $s_username;
     }
-  else if (strstr($_SESSION['username'], '@'))
-    $s_username = $_SESSION['username'];
-  else
-    $s_username = $_SESSION['username'].'@'.$_SESSION['imap_host'];
+    // get e-mail address form default identity
+    $_query = "SELECT email AS mailto";
+    $_query.= " FROM " . get_table_name('identities');
+    $_query.= " WHERE user_id=?";
+    $_query.= " AND standard=1";
+    $_query.= " AND del<>1";
+    $sql_result = $DB->query(
+                        $_query,
+                        $_SESSION['user_id']
+    );
 
-  return $s_username;
-  }
+    if ($DB->num_rows($sql_result)) {
+        $sql_arr = $DB->fetch_assoc($sql_result);
+        $s_username = $sql_arr['mailto'];
+    }
+    elseif (strstr($_SESSION['username'], '@')) {
+        $s_username = $_SESSION['username'];
+    }
+    else {
+        $s_username = $_SESSION['username'].'@'.$_SESSION['imap_host'];
+    }
+    return $s_username;
+}
 
 
 // return code for the webmail login form
 function rcmail_login_form($attrib)
-  {
-  global $CONFIG, $OUTPUT, $SESS_HIDDEN_FIELD;
+{
+    global $CONFIG, $OUTPUT, $SESS_HIDDEN_FIELD;
 
-  $labels = array();
-  $labels['user'] = rcube_label('username');
-  $labels['pass'] = rcube_label('password');
-  $labels['host'] = rcube_label('server');
+    $_SESSION['temp'] = true;
 
-  $input_user = new textfield(array('name' => '_user', 'id' => 'rcmloginuser', 'size' => 30, 'autocomplete' => 'off'));
-  $input_pass = new passwordfield(array('name' => '_pass', 'id' => 'rcmloginpwd', 'size' => 30));
-  $input_action = new hiddenfield(array('name' => '_action', 'value' => 'login'));
+    $labels = array();
+    $labels['user'] = rcube_label('username');
+    $labels['pass'] = rcube_label('password');
+    $labels['host'] = rcube_label('server');
 
-  $fields = array();
-  $fields['user'] = $input_user->show(get_input_value('_user', RCUBE_INPUT_POST));
-  $fields['pass'] = $input_pass->show();
-  $fields['action'] = $input_action->show();
+    $input_user = new textfield(array('name' => '_user', 'id' => 'rcmloginuser', 'size' => 30, 'autocomplete' => 'off'));
+    $input_pass = new passwordfield(array('name' => '_pass', 'id' => 'rcmloginpwd', 'size' => 30));
+    $input_action = new hiddenfield(array('name' => '_action', 'value' => 'login'));
 
-  if (is_array($CONFIG['default_host']))
-    {
-    $select_host = new select(array('name' => '_host', 'id' => 'rcmloginhost'));
+    $fields = array();
+    $fields['user'] = $input_user->show(get_input_value('_user', RCUBE_INPUT_POST));
+    $fields['pass'] = $input_pass->show();
+    $fields['action'] = $input_action->show();
 
-    foreach ($CONFIG['default_host'] as $key => $value)
-    {
-      if (!is_array($value))
-        $select_host->add($value, (is_numeric($key) ? $value : $key));
-      else
-        {
-        unset($select_host);
-        break;
+    if (is_array($CONFIG['default_host'])) {
+        $select_host = new select(array('name' => '_host', 'id' => 'rcmloginhost'));
+
+        foreach ($CONFIG['default_host'] as $key => $value) {
+            if (!is_array($value)) {
+                $select_host->add($value, (is_numeric($key) ? $value : $key));
+            }
+            else {
+                unset($select_host);
+                break;
+            }
         }
+        $fields['host'] = isset($select_host) ? $select_host->show($_POST['_host']) : null;
+    }
+    else if (!strlen($CONFIG['default_host'])) {
+        $input_host = new textfield(array('name' => '_host', 'id' => 'rcmloginhost', 'size' => 30));
+        $fields['host'] = $input_host->show($_POST['_host']);
     }
 
-    $fields['host'] = isset($select_host) ? $select_host->show($_POST['_host']) : null;
+    $form_name  = strlen($attrib['form']) ? $attrib['form'] : 'form';
+    $form_start = !strlen($attrib['form']) ? '<form name="form" action="./" method="post">' : '';
+    $form_end   = !strlen($attrib['form']) ? '</form>' : '';
+    $form_host  = '';
+
+    if ($fields['host']) {
+        $form_host.= "</tr><tr>";
+        $form_host.= "<td class=\"title\"><label for=\"rcmloginhost\">$labels[host]</label></td>";
+        $form_host.= "<td>$fields[host]</td>";
+
     }
-  else if (!strlen($CONFIG['default_host']))
-    {
-    $input_host = new textfield(array('name' => '_host', 'id' => 'rcmloginhost', 'size' => 30));
-    $fields['host'] = $input_host->show($_POST['_host']);
-    }
+    $OUTPUT->add_gui_object('loginform', $form_name);
 
-  $form_name = strlen($attrib['form']) ? $attrib['form'] : 'form';
-  $form_start = !strlen($attrib['form']) ? '<form name="form" action="./" method="post">' : '';
-  $form_end = !strlen($attrib['form']) ? '</form>' : '';
+    $out = '';
+    $out.= $form_start;
+    $out.= $SESS_HIDDEN_FIELD;
+    $out.= $fields[action];
+    $out.= '<table><tr>';
+    $out.= '<td class="title"><label for="rcmloginuser">';
+    $out.= "$labels[user]</label></td>";
+    $out.= "<td>$fields[user]</td>";
+    $out.= '</tr><tr>';
+    $out.= '<td class="title"><label for="rcmloginpwd">';
+    $out.= "$labels[pass]</label></td>";
+    $out.= "<td>$fields[pass]</td>";
+    $out.= $form_host;
+    $out.= '</tr></table>';
+    $out.= $form_end;
 
-  if ($fields['host'])
-    $form_host = <<<EOF
-
-</tr><tr>
-
-<td class="title"><label for="rcmloginhost">$labels[host]</label></td>
-<td>$fields[host]</td>
-
-EOF;
-
-  $OUTPUT->add_gui_object('loginform', $form_name);
-
-  $out = <<<EOF
-$form_start
-$SESS_HIDDEN_FIELD
-$fields[action]
-<table><tr>
-
-<td class="title"><label for="rcmloginuser">$labels[user]</label></td>
-<td>$fields[user]</td>
-
-</tr><tr>
-
-<td class="title"><label for="rcmloginpwd">$labels[pass]</label></td>
-<td>$fields[pass]</td>
-$form_host
-</tr></table>
-$form_end
-EOF;
-
-  return $out;
-  }
+    return $out;
+}
 
 
 function rcmail_charset_selector($attrib)
-  {
-  global $OUTPUT;
+{
+    global $OUTPUT;
 
-  // pass the following attributes to the form class
-  $field_attrib = array('name' => '_charset');
-  foreach ($attrib as $attr => $value)
-    if (in_array($attr, array('id', 'class', 'style', 'size', 'tabindex')))
-      $field_attrib[$attr] = $value;
-
-  $charsets = array(
-    'US-ASCII'     => 'ASCII (English)',
-    'EUC-JP'       => 'EUC-JP (Japanese)',
-    'EUC-KR'       => 'EUC-KR (Korean)',
-    'BIG5'         => 'BIG5 (Chinese)',
-    'GB2312'       => 'GB2312 (Chinese)',
-    'ISO-2022-JP'  => 'ISO-2022-JP (Japanese)',
-    'ISO-8859-1'   => 'ISO-8859-1 (Latin-1)',
-    'ISO-8859-2'   => 'ISO-8895-2 (Central European)',
-    'ISO-8859-7'   => 'ISO-8859-7 (Greek)',
-    'ISO-8859-9'   => 'ISO-8859-9 (Turkish)',
-    'Windows-1251' => 'Windows-1251 (Cyrillic)',
-    'Windows-1252' => 'Windows-1252 (Western)',
-    'Windows-1255' => 'Windows-1255 (Hebrew)',
-    'Windows-1256' => 'Windows-1256 (Arabic)',
-    'Windows-1257' => 'Windows-1257 (Baltic)',
-    'UTF-8'        => 'UTF-8'
+    // pass the following attributes to the form class
+    $field_attrib = array('name' => '_charset');
+    foreach ($attrib as $attr => $value) {
+        if (in_array($attr, array('id', 'class', 'style', 'size', 'tabindex'))) {
+            $field_attrib[$attr] = $value;
+        }
+    }
+    $charsets = array(
+        'US-ASCII'     => 'ASCII (English)',
+        'EUC-JP'       => 'EUC-JP (Japanese)',
+        'EUC-KR'       => 'EUC-KR (Korean)',
+        'BIG5'         => 'BIG5 (Chinese)',
+        'GB2312'       => 'GB2312 (Chinese)',
+        'ISO-2022-JP'  => 'ISO-2022-JP (Japanese)',
+        'ISO-8859-1'   => 'ISO-8859-1 (Latin-1)',
+        'ISO-8859-2'   => 'ISO-8895-2 (Central European)',
+        'ISO-8859-7'   => 'ISO-8859-7 (Greek)',
+        'ISO-8859-9'   => 'ISO-8859-9 (Turkish)',
+        'Windows-1251' => 'Windows-1251 (Cyrillic)',
+        'Windows-1252' => 'Windows-1252 (Western)',
+        'Windows-1255' => 'Windows-1255 (Hebrew)',
+        'Windows-1256' => 'Windows-1256 (Arabic)',
+        'Windows-1257' => 'Windows-1257 (Baltic)',
+        'UTF-8'        => 'UTF-8'
     );
 
-  $select = new select($field_attrib);
-  $select->add(array_values($charsets), array_keys($charsets));
+    $select = new select($field_attrib);
+    $select->add(array_values($charsets), array_keys($charsets));
 
-  $set = $_POST['_charset'] ? $_POST['_charset'] : $OUTPUT->get_charset();
-  return $select->show($set);
-  }
+    $set = $_POST['_charset'] ? $_POST['_charset'] : $OUTPUT->get_charset();
+    return $select->show($set);
+}
 
 
 // return code for search function
 function rcmail_search_form($attrib)
-  {
-  global $OUTPUT;
+{
+    global $OUTPUT;
 
-  // add some labels to client
-  rcube_add_label('searching');
+    // add some labels to client
+    rcube_add_label('searching');
 
-  $attrib['name'] = '_q';
+    $attrib['name'] = '_q';
 
-  if (empty($attrib['id']))
-    $attrib['id'] = 'rcmqsearchbox';
+    if (empty($attrib['id'])) {
+        $attrib['id'] = 'rcmqsearchbox';
+    }
+    $input_q = new textfield($attrib);
+    $out = $input_q->show();
 
-  $input_q = new textfield($attrib);
-  $out = $input_q->show();
+    $OUTPUT->add_gui_object('qsearchbox', $attrib['id']);
 
-  $OUTPUT->add_gui_object('qsearchbox', $attrib['id']);
-
-  // add form tag around text field
-  if (empty($attrib['form']))
-    $out = sprintf(
-      '<form name="rcmqsearchform" action="./" '.
-      'onsubmit="%s.command(\'search\');return false" style="display:inline;">%s</form>',
-      JS_OBJECT_NAME,
-      $out);
-
-  return $out;
-  }
+    // add form tag around text field
+    if (empty($attrib['form'])) {
+        $_html = '<form name="rcmqsearchform" action="./" ';
+        $_html.= 'onsubmit="%s.command(\'search\');return false" ';
+        $_html.= ' style="display:inline;">%s</form>';
+        $out = sprintf(
+                $_html,
+                JS_OBJECT_NAME,
+                $out
+        );
+    }
+    return $out;
+}
 
 
 /****** debugging functions ********/
@@ -1643,21 +1643,23 @@ function rcmail_search_form($attrib)
  * @param mixed Debug message or data
  */
 function console($msg)
-  {
-  if (!is_string($msg))
-    $msg = var_export($msg, true);
-
-  if (!($GLOBALS['CONFIG']['debug_level'] & 4))
-    write_log('console', $msg);
-  else if ($GLOBALS['REMOTE_REQUEST'])
-    print "/*\n $msg \n*/\n";
-  else
-    {
-    print '<div style="background:#eee; border:1px solid #ccc; margin-bottom:3px; padding:6px"><pre>';
-    print $msg;
-    print "</pre></div>\n";
+{
+    if (!is_string($msg)) {
+        $msg = var_export($msg, true);
     }
-  }
+    if (!($GLOBALS['CONFIG']['debug_level'] & 4)) {
+        write_log('console', $msg);
+    }
+    elseif ($GLOBALS['REMOTE_REQUEST']) {
+        echo "/*\n $msg \n*/\n";
+    }
+    else {
+        echo '<div style="background:#eee; border:1px solid #ccc; ';
+        echo 'margin-bottom:3px; padding:6px"><pre>';
+        echo $msg;
+        echo "</pre></div>\n";
+    }
+}
 
 
 /**
@@ -1668,47 +1670,46 @@ function console($msg)
  * @param $line Line to append
  */
 function write_log($name, $line)
-  {
-  global $CONFIG;
+{
+    global $CONFIG;
 
-  if (!is_string($line))
-    $line = var_export($line, true);
-
-  $log_entry = sprintf("[%s]: %s\n",
+    if (!is_string($line)) {
+        $line = var_export($line, true);
+    }
+    $log_entry = sprintf("[%s]: %s\n",
                  date("d-M-Y H:i:s O", mktime()),
                  $line);
 
-  if (empty($CONFIG['log_dir']))
-    $CONFIG['log_dir'] = $INSTALL_PATH.'logs';
-
-  // try to open specific log file for writing
-  if ($fp = @fopen($CONFIG['log_dir'].'/'.$name, 'a'))
-    {
-    fwrite($fp, $log_entry);
-    fclose($fp);
+    if (empty($CONFIG['log_dir'])) {
+        $CONFIG['log_dir'] = $INSTALL_PATH.'logs';
     }
-  }
+    // try to open specific log file for writing
+    if ($fp = @fopen($CONFIG['log_dir'].'/'.$name, 'a')) {
+        fwrite($fp, $log_entry);
+        fclose($fp);
+    }
+}
 
 
 function rcube_timer()
-  {
-  list($usec, $sec) = explode(" ", microtime());
-  return ((float)$usec + (float)$sec);
-  }
+{
+    list($usec, $sec) = explode(" ", microtime());
+    return ((float)$usec + (float)$sec);
+}
 
 
 function rcube_print_time($timer, $label='Timer')
-  {
-  static $print_count = 0;
+{
+    static $print_count = 0;
 
-  $print_count++;
-  $now = rcube_timer();
-  $diff = $now-$timer;
+    $print_count++;
+    $now = rcube_timer();
+    $diff = $now-$timer;
 
-  if (empty($label))
-    $label = 'Timer '.$print_count;
-
-  console(sprintf("%s: %0.4f sec", $label, $diff));
-  }
+    if (empty($label)) {
+        $label = 'Timer '.$print_count;
+    }
+    console(sprintf("%s: %0.4f sec", $label, $diff));
+}
 
 ?>
