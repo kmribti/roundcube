@@ -1237,50 +1237,50 @@ class rcube_imap
     }
 
 
-  /**
-   * Fetch message body of a specific message from the server
-   *
-   * @param  int    Message UID
-   * @return Message/part body
-   * @see    ::get_message_part()
-   */
-  function &get_body($uid, $part=1)
+    /**
+     * Fetch message body of a specific message from the server
+     *
+     * @param  int    Message UID
+     * @return Message/part body
+     * @see    ::get_message_part()
+     */
+    function &get_body($uid, $part=1)
     {
-    return $this->get_message_part($uid, $part);
+        return $this->get_message_part($uid, $part);
     }
 
 
-  /**
-   * Returns the whole message source as string
-   *
-   * @param int  Message UID
-   * @return Message source string
-   */
-  function &get_raw_body($uid)
+    /**
+     * Returns the whole message source as string
+     *
+     * @param int  Message UID
+     * @return Message source string
+     */
+    function &get_raw_body($uid)
     {
-    if (!($msg_id = $this->_uid2id($uid)))
-      return FALSE;
+        if (!($msg_id = $this->_uid2id($uid))) {
+            return FALSE;
+        }
+        $body = iil_C_FetchPartHeader($this->conn, $this->mailbox, $msg_id, NULL);
+        $body .= iil_C_HandlePartBody($this->conn, $this->mailbox, $msg_id, NULL, 1);
 
-	$body = iil_C_FetchPartHeader($this->conn, $this->mailbox, $msg_id, NULL);
-	$body .= iil_C_HandlePartBody($this->conn, $this->mailbox, $msg_id, NULL, 1);
-
-    return $body;
+        return $body;
     }
 
 
-  /**
-   * Sends the whole message source to stdout
-   *
-   * @param int  Message UID
-   */
-  function print_raw_body($uid)
+    /**
+     * Sends the whole message source to stdout
+     *
+     * @param int  Message UID
+     */
+    function print_raw_body($uid)
     {
-    if (!($msg_id = $this->_uid2id($uid)))
-      return FALSE;
-
-	print iil_C_FetchPartHeader($this->conn, $this->mailbox, $msg_id, NULL);
-	flush();
-	iil_C_HandlePartBody($this->conn, $this->mailbox, $msg_id, NULL, 2);
+        if (!($msg_id = $this->_uid2id($uid))) {
+            return FALSE;
+        }
+        print iil_C_FetchPartHeader($this->conn, $this->mailbox, $msg_id, NULL);
+	    flush();
+	    iil_C_HandlePartBody($this->conn, $this->mailbox, $msg_id, NULL, 2);
     }
 
 
