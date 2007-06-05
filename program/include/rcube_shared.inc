@@ -1104,111 +1104,136 @@ function rcube_browser()
 
 // get text in the desired language from the language file
 function rcube_label($attrib)
-  {
-  global $sess_user_lang, $INSTALL_PATH, $OUTPUT;
-  static $sa_text_data, $s_language, $utf8_decode;
+{
+    global $sess_user_lang, $INSTALL_PATH, $OUTPUT;
+    static $sa_text_data, $s_language, $utf8_decode;
 
-  // extract attributes
-  if (is_string($attrib))
-    $attrib = array('name' => $attrib);
+    // extract attributes
+    if (is_string($attrib)) {
+        $attrib = array('name' => $attrib);
+    }
+    $nr = is_numeric($attrib['nr']) ? $attrib['nr'] : 1;
+    $vars = isset($attrib['vars']) ? $attrib['vars'] : '';
 
-  $nr = is_numeric($attrib['nr']) ? $attrib['nr'] : 1;
-  $vars = isset($attrib['vars']) ? $attrib['vars'] : '';
-
-  $command_name = !empty($attrib['command']) ? $attrib['command'] : NULL;
-  $alias = $attrib['name'] ? $attrib['name'] : ($command_name && $command_label_map[$command_name] ? $command_label_map[$command_name] : '');
+    $command_name = !empty($attrib['command']) ? $attrib['command'] : NULL;
+    $alias = $attrib['name'] ? $attrib['name'] : ($command_name && $command_label_map[$command_name] ? $command_label_map[$command_name] : '');
 
 
-  // load localized texts
-  if (!$sa_text_data || $s_language != $sess_user_lang)
-    {
-    $sa_text_data = array();
+    // load localized texts
+    if (!$sa_text_data || $s_language != $sess_user_lang) {
+        $sa_text_data = array();
 
-    // get english labels (these should be complete)
-    @include($INSTALL_PATH.'program/localization/en_US/labels.inc');
-    @include($INSTALL_PATH.'program/localization/en_US/messages.inc');
+        // get english labels (these should be complete)
+        @include($INSTALL_PATH.'program/localization/en_US/labels.inc');
+        @include($INSTALL_PATH.'program/localization/en_US/messages.inc');
 
-    if (is_array($labels))
-      $sa_text_data = $labels;
-    if (is_array($messages))
-      $sa_text_data = array_merge($sa_text_data, $messages);
+        if (is_array($labels)) {
+            $sa_text_data = $labels;
+        }
+        if (is_array($messages)) {
+            $sa_text_data = array_merge($sa_text_data, $messages);
+        }
+        // include user language files
+        if ($sess_user_lang!='en' && is_dir($INSTALL_PATH.'program/localization/'.$sess_user_lang)) {
+            include_once($INSTALL_PATH.'program/localization/'.$sess_user_lang.'/labels.inc');
+            include_once($INSTALL_PATH.'program/localization/'.$sess_user_lang.'/messages.inc');
 
-    // include user language files
-    if ($sess_user_lang!='en' && is_dir($INSTALL_PATH.'program/localization/'.$sess_user_lang))
-      {
-      include_once($INSTALL_PATH.'program/localization/'.$sess_user_lang.'/labels.inc');
-      include_once($INSTALL_PATH.'program/localization/'.$sess_user_lang.'/messages.inc');
-
-      if (is_array($labels))
-        $sa_text_data = array_merge($sa_text_data, $labels);
-      if (is_array($messages))
-        $sa_text_data = array_merge($sa_text_data, $messages);
-      }
-
-    $s_language = $sess_user_lang;
+            if (is_array($labels)) {
+                $sa_text_data = array_merge($sa_text_data, $labels);
+            }
+            if (is_array($messages)) {
+                $sa_text_data = array_merge($sa_text_data, $messages);
+            }
+        }
+        $s_language = $sess_user_lang;
     }
 
-  // text does not exist
-  if (!($text_item = $sa_text_data[$alias]))
-    {
-    /*
-    raise_error(array('code' => 500,
-                      'type' => 'php',
-                      'line' => __LINE__,
-                      'file' => __FILE__,
-                      'message' => "Missing localized text for '$alias' in '$sess_user_lang'"), TRUE, FALSE);
-    */
-    return "[$alias]";
+    // text does not exist
+    if (!($text_item = $sa_text_data[$alias])) {
+        /*
+        raise_error(
+            array(
+                'code' => 500,
+                'type' => 'php',
+                'line' => __LINE__,
+                'file' => __FILE__,
+                'message' => "Missing localized text for '$alias' in '$sess_user_lang'"
+            ),
+            TRUE,
+            FALSE
+        );
+        */
+        /**
+         * We got as far - so let's see if $_SESSION contains what we are
+         * looking for.
+         *
+         * @author Till Klampaeckel <till@php.net>
+         */
+        if (substr($alias, 0, 3) == 'RC_') {
+
+            $_sess_ident = substr($alias, 3);
+
+            if (isset($_SESSION[$_sess_ident]) === true) {
+                return $_SESSION[$_sess_ident];
+            }
+        }
+        return "[$alias]";
     }
 
-  // make text item array
-  $a_text_item = is_array($text_item) ? $text_item : array('single' => $text_item);
+    // make text item array
+    $a_text_item = is_array($text_item) ? $text_item : array('single' => $text_item);
 
-  // decide which text to use
-  if ($nr==1)
-    $text = $a_text_item['single'];
-  else if ($nr>0)
-    $text = $a_text_item['multiple'];
-  else if ($nr==0)
-    {
-    if ($a_text_item['none'])
-      $text = $a_text_item['none'];
-    else if ($a_text_item['single'])
-      $text = $a_text_item['single'];
-    else if ($a_text_item['multiple'])
-      $text = $a_text_item['multiple'];
+    // decide which text to use
+    if ($nr==1) {
+        $text = $a_text_item['single'];
+    }
+    elseif ($nr>0) {
+        $text = $a_text_item['multiple'];
+    }
+    elseif ($nr==0) {
+        if ($a_text_item['none']) {
+            $text = $a_text_item['none'];
+        }
+        elseif ($a_text_item['single']) {
+            $text = $a_text_item['single'];
+        }
+        elseif ($a_text_item['multiple']) {
+            $text = $a_text_item['multiple'];
+        }
     }
 
-  // default text is single
-  if ($text=='')
-    $text = $a_text_item['single'];
+    // default text is single
+    if ($text=='')
+        $text = $a_text_item['single'];
 
-  // replace vars in text
-  if (is_array($attrib['vars']))
-    {
-    foreach ($attrib['vars'] as $var_key=>$var_value)
-      $a_replace_vars[substr($var_key, 0, 1)=='$' ? substr($var_key, 1) : $var_key] = $var_value;
+    // replace vars in text
+    if (is_array($attrib['vars'])) {
+        foreach ($attrib['vars'] as $var_key=>$var_value) {
+            $a_replace_vars[substr($var_key, 0, 1)=='$' ? substr($var_key, 1) : $var_key] = $var_value;
+        }
     }
 
-  if ($a_replace_vars)
-    $text = preg_replace('/\${?([_a-z]{1}[_a-z0-9]*)}?/ei', '$a_replace_vars["\1"]', $text);
-
-  // remove variables in text which were not available in arg $vars and $nr
-  eval("\$text = <<<EOF
+    if ($a_replace_vars) {
+        $text = preg_replace('/\${?([_a-z]{1}[_a-z0-9]*)}?/ei', '$a_replace_vars["\1"]', $text);
+    }
+    // remove variables in text which were not available in arg $vars and $nr
+    eval("\$text = <<<EOF
 $text
 EOF;
 ");
 
-  // format output
-  if (($attrib['uppercase'] && strtolower($attrib['uppercase']=='first')) || $attrib['ucfirst'])
-    return ucfirst($text);
-  else if ($attrib['uppercase'])
-    return strtoupper($text);
-  else if ($attrib['lowercase'])
-    return strtolower($text);
-
-  return $text;
-  }
+    // format output
+    if (($attrib['uppercase'] && strtolower($attrib['uppercase']=='first')) || $attrib['ucfirst']) {
+        return ucfirst($text);
+    }
+    elseif ($attrib['uppercase']) {
+        return strtoupper($text);
+    }
+    elseif ($attrib['lowercase']) {
+        return strtolower($text);
+    }
+    return $text;
+}
 
 
 // send HTTP header for no-cacheing steps
