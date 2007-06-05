@@ -408,13 +408,11 @@ if ($savedraft === false) {
             $OUTPUT->send('iframe');
             return;
         }
-
-
-        // set repliead flag
-        if ($_SESSION['compose']['reply_uid']) {
-            $IMAP->set_flag($_SESSION['compose']['reply_uid'], 'ANSWERED');
-        }
     } // End of SMTP Delivery Block
+    // set repliead flag
+    if ($_SESSION['compose']['reply_uid']) {
+        $IMAP->set_flag($_SESSION['compose']['reply_uid'], 'ANSWERED');
+    }
 }
 // Determine which folder to save message
 if ($savedraft) {

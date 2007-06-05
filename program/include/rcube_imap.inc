@@ -1284,81 +1284,81 @@ class rcube_imap
     }
 
 
-  /**
-   * Set message flag to one or several messages
-   *
-   * @param mixed  Message UIDs as array or as comma-separated string
-   * @param string Flag to set: SEEN, UNDELETED, DELETED, RECENT, ANSWERED, DRAFT
-   * @return True on success, False on failure
-   */
-  function set_flag($uids, $flag)
+    /**
+     * Set message flag to one or several messages
+     *
+     * @param mixed  Message UIDs as array or as comma-separated string
+     * @param string Flag to set: SEEN, UNDELETED, DELETED, RECENT, ANSWERED, DRAFT
+     * @return True on success, False on failure
+     */
+    function set_flag($uids, $flag)
     {
-    $flag = strtoupper($flag);
-    $msg_ids = array();
-    if (!is_array($uids))
-      $uids = explode(',',$uids);
-
-    foreach ($uids as $uid) {
-      $msg_ids[$uid] = $this->_uid2id($uid);
-    }
-
-    if ($flag=='UNDELETED')
-      $result = iil_C_Undelete($this->conn, $this->mailbox, join(',', array_values($msg_ids)));
-    else if ($flag=='UNSEEN')
-      $result = iil_C_Unseen($this->conn, $this->mailbox, join(',', array_values($msg_ids)));
-    else
-      $result = iil_C_Flag($this->conn, $this->mailbox, join(',', array_values($msg_ids)), $flag);
-
-    // reload message headers if cached
-    $cache_key = $this->mailbox.'.msg';
-    if ($this->caching_enabled)
-      {
-      foreach ($msg_ids as $uid => $id)
-        {
-        if ($cached_headers = $this->get_cached_message($cache_key, $uid))
-          {
-          $this->remove_message_cache($cache_key, $id);
-          //$this->get_headers($uid);
-          }
+        $flag = strtoupper($flag);
+        $msg_ids = array();
+        if (!is_array($uids)) {
+            $uids = explode(',',$uids);
+        }
+        foreach ($uids as $uid) {
+            $msg_ids[$uid] = $this->_uid2id($uid);
         }
 
-      // close and re-open connection
-      // this prevents connection problems with Courier
-      $this->reconnect();
-      }
+        if ($flag=='UNDELETED') {
+            $result = iil_C_Undelete($this->conn, $this->mailbox, join(',', array_values($msg_ids)));
+        }
+        elseif ($flag=='UNSEEN') {
+            $result = iil_C_Unseen($this->conn, $this->mailbox, join(',', array_values($msg_ids)));
+        }
+        else {
+            $result = iil_C_Flag($this->conn, $this->mailbox, join(',', array_values($msg_ids)), $flag);
+        }
+        //tfk_debug($result);
+        // reload message headers if cached
+        $cache_key = $this->mailbox.'.msg';
+        if ($this->caching_enabled) {
+            foreach ($msg_ids as $uid => $id) {
+                if ($cached_headers = $this->get_cached_message($cache_key, $uid)) {
+                    $this->remove_message_cache($cache_key, $id);
+                    //$this->get_headers($uid);
+                }
+            }
 
-    // set nr of messages that were flaged
-    $count = count($msg_ids);
+            // close and re-open connection
+            // this prevents connection problems with Courier
+            $this->reconnect();
+        }
 
-    // clear message count cache
-    if ($result && $flag=='SEEN')
-      $this->_set_messagecount($this->mailbox, 'UNSEEN', $count*(-1));
-    else if ($result && $flag=='UNSEEN')
-      $this->_set_messagecount($this->mailbox, 'UNSEEN', $count);
-    else if ($result && $flag=='DELETED')
-      $this->_set_messagecount($this->mailbox, 'ALL', $count*(-1));
+        // set nr of messages that were flaged
+        $count = count($msg_ids);
 
-    return $result;
+        // clear message count cache
+        if ($result && $flag=='SEEN') {
+            $this->_set_messagecount($this->mailbox, 'UNSEEN', $count*(-1));
+        }
+        elseif ($result && $flag=='UNSEEN') {
+            $this->_set_messagecount($this->mailbox, 'UNSEEN', $count);
+        }
+        elseif ($result && $flag=='DELETED') {
+            $this->_set_messagecount($this->mailbox, 'ALL', $count*(-1));
+        }
+        return $result;
     }
 
 
-  // append a mail message (source) to a specific mailbox
-  function save_message($mbox_name, &$message)
+    // append a mail message (source) to a specific mailbox
+    function save_message($mbox_name, &$message)
     {
-    $mbox_name = stripslashes($mbox_name);
-    $mailbox = $this->_mod_mailbox($mbox_name);
+        $mbox_name = stripslashes($mbox_name);
+        $mailbox = $this->_mod_mailbox($mbox_name);
 
-    // make sure mailbox exists
-    if (in_array($mailbox, $this->_list_mailboxes()))
-      $saved = iil_C_Append($this->conn, $mailbox, $message);
-
-    if ($saved)
-      {
-      // increase messagecount of the target mailbox
-      $this->_set_messagecount($mailbox, 'ALL', 1);
-      }
-
-    return $saved;
+        // make sure mailbox exists
+        if (in_array($mailbox, $this->_list_mailboxes())) {
+            $saved = iil_C_Append($this->conn, $mailbox, $message);
+        }
+        if ($saved) {
+            // increase messagecount of the target mailbox
+            $this->_set_messagecount($mailbox, 'ALL', 1);
+        }
+        return $saved;
     }
 
 
