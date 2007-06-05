@@ -112,7 +112,7 @@ function rcmail_load_config()
     global $INSTALL_PATH;
 
     // load config file
-    include_once 'config/main.inc.php';
+    @include_once 'config/main.inc.php';
     $conf = is_array($rcmail_config) ? $rcmail_config : array();
 
     // load host-specific configuration
@@ -121,7 +121,7 @@ function rcmail_load_config()
     $conf['skin_path'] = $conf['skin_path'] ? unslashify($conf['skin_path']) : 'skins/default';
 
     // load db conf
-    include_once 'config/db.inc.php';
+    @include_once 'config/db.inc.php';
     $conf = array_merge($conf, $rcmail_config);
 
     if (empty($conf['log_dir'])) {
