@@ -296,12 +296,15 @@ function rcmail_compose_body($attrib) {
         $body = rcmail_create_draft_body($body, $isHtml);
     }
     $out = $form_start ? "$form_start\n" : '';
+
+    //tfk_debug($MESSAGE['headers']);
+
     $saveid = new hiddenfield(
                     array(
                         'name' => '_draft_saveid',
                         'value' => $compose_mode==RCUBE_COMPOSE_DRAFT ? str_replace(array('<','>'),
                         "",
-                        $MESSAGE['structure']->headers['messageID']) : ''
+                        $MESSAGE['headers']->messageID) : ''
                     )
     );
     $out .= $saveid->show();
