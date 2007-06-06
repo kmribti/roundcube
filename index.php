@@ -68,14 +68,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 // application constants
-define('RCMAIL_VERSION', '0.1-rc1');
+define('RCMAIL_VERSION', 'devel-vnext (0.1-rc1)');
 define('RCMAIL_CHARSET', 'UTF-8');
 define('JS_OBJECT_NAME', 'rcmail');
 
 // define global vars
-$OUTPUT_TYPE = 'html';
+$OUTPUT_TYPE  = 'html';
 $INSTALL_PATH = dirname(__FILE__);
-$MAIN_TASKS = array('mail','settings','addressbook','logout');
+$MAIN_TASKS   = array(
+                    'mail',
+                    'settings',
+                    'logout'
+); // addressbook
 
 if (empty($INSTALL_PATH)) {
     $INSTALL_PATH = './';
@@ -298,12 +302,16 @@ if ($_action=='keep-alive') {
 $_name = '';
 
 // include task specific files
-if ($_task=='mail') {
+if ($_task == 'mail') {
     include_once 'program/steps/mail/func.inc';
 
     switch($_action) {
         default:
             $_name.= $_action;
+            break;
+
+        case 'check-recent':
+            $_name.= 'check_recent';
             break;
 
         case 'preview':
@@ -340,7 +348,7 @@ if ($_task=='mail') {
 }
 
 // include task specific files
-if ($_task=='addressbook') {
+if ($_task == 'addressbook') {
     include_once 'program/steps/addressbook/func.inc';
 
     switch($_action) {
@@ -361,7 +369,7 @@ if ($_task=='addressbook') {
 }
 
 // include task specific files
-if ($_task=='settings') {
+if ($_task == 'settings') {
     include_once 'program/steps/settings/func.inc';
 
     $_name = '';
@@ -393,6 +401,9 @@ if (empty($_name) === false) {
     $_file.= $_name . '.inc';
     if (file_exists($_file) === true) {
         include $_file;
+    }
+    else {
+        tfk_debug('Does not exist: ' . $_file);
     }
 }
 
