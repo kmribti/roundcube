@@ -491,141 +491,140 @@ class rcube_imap
     }
 
 
-  /**
-   * Public method for listing headers
-   * convert mailbox name with root dir first
-   *
-   * @param   string   Mailbox/folder name
-   * @param   number   Current page to list
-   * @param   string   Header field to sort by
-   * @param   string   Sort order [ASC|DESC]
-   * @return  array    Indexed array with message header objects
-   * @access  public
-   */
-  function list_headers($mbox_name='', $page=NULL, $sort_field=NULL, $sort_order=NULL)
+    /**
+     * Public method for listing headers
+     * convert mailbox name with root dir first
+     *
+     * @param   string   Mailbox/folder name
+     * @param   number   Current page to list
+     * @param   string   Header field to sort by
+     * @param   string   Sort order [ASC|DESC]
+     * @return  array    Indexed array with message header objects
+     * @access  public
+     */
+    function list_headers($mbox_name='', $page=NULL, $sort_field=NULL, $sort_order=NULL)
     {
-    $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
-    return $this->_list_headers($mailbox, $page, $sort_field, $sort_order);
+        $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
+        return $this->_list_headers($mailbox, $page, $sort_field, $sort_order);
     }
 
 
-  /**
-   * Private method for listing message headers
-   *
-   * @access  private
-   * @see     rcube_imap::list_headers
-   */
-  function _list_headers($mailbox='', $page=NULL, $sort_field=NULL, $sort_order=NULL, $recursive=FALSE)
+    /**
+     * Private method for listing message headers
+     *
+     * @access  private
+     * @see     rcube_imap::list_headers
+     */
+    function _list_headers($mailbox='', $page=NULL, $sort_field=NULL, $sort_order=NULL, $recursive=FALSE)
     {
-    if (!strlen($mailbox))
-      return array();
-
-    // use saved message set
-    if ($this->search_set && $mailbox == $this->mailbox)
-      return $this->_list_header_set($mailbox, $this->search_set, $page, $sort_field, $sort_order);
-
-    if ($sort_field!=NULL)
-      $this->sort_field = $sort_field;
-    if ($sort_order!=NULL)
-      $this->sort_order = strtoupper($sort_order);
-
-    $max = $this->_messagecount($mailbox);
-    $start_msg = ($this->list_page-1) * $this->page_size;
-
-    list($begin, $end) = $this->_get_message_range($max, $page);
-
-    // mailbox is empty
-    if ($begin >= $end)
-      return array();
-
-    $headers_sorted = FALSE;
-    $cache_key = $mailbox.'.msg';
-    $cache_status = $this->check_cache_status($mailbox, $cache_key);
-
-    // cache is OK, we can get all messages from local cache
-    if ($cache_status>0)
-      {
-      $a_msg_headers = $this->get_message_cache($cache_key, $start_msg, $start_msg+$this->page_size, $this->sort_field, $this->sort_order);
-      $headers_sorted = TRUE;
-      }
-    // cache is dirty, sync it
-    else if ($this->caching_enabled && $cache_status==-1 && !$recursive)
-      {
-      $this->sync_header_index($mailbox);
-      return $this->_list_headers($mailbox, $page, $this->sort_field, $this->sort_order, TRUE);
-      }
-    else
-      {
-      // retrieve headers from IMAP
-      if ($this->get_capability('sort') && ($msg_index = iil_C_Sort($this->conn, $mailbox, $this->sort_field, $this->skip_deleted ? 'UNDELETED' : '')))
-        {
-        $msgs = $msg_index[$begin];
-        for ($i=$begin+1; $i < $end; $i++)
-          $msgs = $msgs.','.$msg_index[$i];
+        if (!strlen($mailbox)) {
+            return array();
         }
-      else
-        {
-        $msgs = sprintf("%d:%d", $begin+1, $end);
-
-        $i = 0;
-        for ($msg_seqnum = $begin; $msg_seqnum <= $end; $msg_seqnum++)
-          $msg_index[$i++] = $msg_seqnum;
+        // use saved message set
+        if ($this->search_set && $mailbox == $this->mailbox) {
+            return $this->_list_header_set($mailbox, $this->search_set, $page, $sort_field, $sort_order);
+        }
+        if (is_null($sort_field) === FALSE) {
+            $this->sort_field = $sort_field;
+        }
+        if (is_null($sort_order) === FALSE) {
+            $this->sort_order = strtoupper($sort_order);
         }
 
-      // use this class for message sorting
-      $sorter = new rcube_header_sorter();
-      $sorter->set_sequence_numbers($msg_index);
+        $max = $this->_messagecount($mailbox);
+        $start_msg = ($this->list_page-1) * $this->page_size;
 
-      // fetch reuested headers from server
-      $a_msg_headers = array();
-      $deleted_count = $this->_fetch_headers($mailbox, $msgs, $a_msg_headers, $cache_key);
+        list($begin, $end) = $this->_get_message_range($max, $page);
 
-      // delete cached messages with a higher index than $max+1
-      // Changed $max to $max+1 to fix this bug : #1484295
-      $this->clear_message_cache($cache_key, $max + 1);
+        // mailbox is empty
+        if ($begin >= $end) {
+            return array();
+        }
+
+        $headers_sorted = FALSE;
+        $cache_key = $mailbox.'.msg';
+        $cache_status = $this->check_cache_status($mailbox, $cache_key);
+
+        // cache is OK, we can get all messages from local cache
+        if ($cache_status>0) {
+            $a_msg_headers = $this->get_message_cache($cache_key, $start_msg, $start_msg+$this->page_size, $this->sort_field, $this->sort_order);
+            $headers_sorted = TRUE;
+        }
+        // cache is dirty, sync it
+        elseif ($this->caching_enabled && $cache_status==-1 && !$recursive) {
+            $this->sync_header_index($mailbox);
+            return $this->_list_headers($mailbox, $page, $this->sort_field, $this->sort_order, TRUE);
+        }
+        else {
+            // retrieve headers from IMAP
+            if ($this->get_capability('sort') && ($msg_index = iil_C_Sort($this->conn, $mailbox, $this->sort_field, $this->skip_deleted ? 'UNDELETED' : ''))) {
+                $msgs = $msg_index[$begin];
+                for ($i=$begin+1; $i < $end; $i++) {
+                    $msgs = $msgs.','.$msg_index[$i];
+                }
+            }
+            else {
+                $msgs = sprintf("%d:%d", $begin+1, $end);
+
+                $i = 0;
+                for ($msg_seqnum = $begin; $msg_seqnum <= $end; $msg_seqnum++) {
+                    $msg_index[$i++] = $msg_seqnum;
+                }
+            }
+
+            // use this class for message sorting
+            $sorter = new rcube_header_sorter();
+            $sorter->set_sequence_numbers($msg_index);
+
+            // fetch reuested headers from server
+            $a_msg_headers = array();
+            $deleted_count = $this->_fetch_headers($mailbox, $msgs, $a_msg_headers, $cache_key);
+
+            // delete cached messages with a higher index than $max+1
+            // Changed $max to $max+1 to fix this bug : #1484295
+            $this->clear_message_cache($cache_key, $max + 1);
 
 
-      // kick child process to sync cache
-      // ...
+            // kick child process to sync cache
+            // ...
 
-      }
-
-
-    // return empty array if no messages found
-	if (!is_array($a_msg_headers) || empty($a_msg_headers))
-		return array();
+        }
 
 
-    // if not already sorted
-    if (!$headers_sorted)
-      {
-      $sorter->sort_headers($a_msg_headers);
+        // return empty array if no messages found
+	    if (!is_array($a_msg_headers) || empty($a_msg_headers)) {
+		    return array();
+        }
 
-      if ($this->sort_order == 'DESC')
-        $a_msg_headers = array_reverse($a_msg_headers);
-      }
+        // if not already sorted
+        if (!$headers_sorted) {
+            $sorter->sort_headers($a_msg_headers);
 
-    return array_values($a_msg_headers);
+            if ($this->sort_order == 'DESC') {
+                $a_msg_headers = array_reverse($a_msg_headers);
+            }
+        }
+        return array_values($a_msg_headers);
     }
 
 
 
-  /**
-   * Public method for listing a specific set of headers
-   * convert mailbox name with root dir first
-   *
-   * @param   string   Mailbox/folder name
-   * @param   array    List of message ids to list
-   * @param   number   Current page to list
-   * @param   string   Header field to sort by
-   * @param   string   Sort order [ASC|DESC]
-   * @return  array    Indexed array with message header objects
-   * @access  public
-   */
-  function list_header_set($mbox_name='', $msgs, $page=NULL, $sort_field=NULL, $sort_order=NULL)
+    /**
+     * Public method for listing a specific set of headers
+     * convert mailbox name with root dir first
+     *
+     * @param   string   Mailbox/folder name
+     * @param   array    List of message ids to list
+     * @param   number   Current page to list
+     * @param   string   Header field to sort by
+     * @param   string   Sort order [ASC|DESC]
+     * @return  array    Indexed array with message header objects
+     * @access  public
+     */
+    function list_header_set($mbox_name='', $msgs, $page=NULL, $sort_field=NULL, $sort_order=NULL)
     {
-    $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
-    return $this->_list_header_set($mailbox, $msgs, $page, $sort_field, $sort_order);
+        $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
+        return $this->_list_header_set($mailbox, $msgs, $page, $sort_field, $sort_order);
     }
 
 
@@ -668,39 +667,41 @@ class rcube_imap
     }
 
 
-  /**
-   * Helper function to get first and last index of the requested set
-   *
-   * @param  number  message count
-   * @param  mixed   page number to show, or string 'all'
-   * @return array   array with two values: first index, last index
-   * @access private
-   */
-  function _get_message_range($max, $page)
+    /**
+     * Helper function to get first and last index of the requested set
+     *
+     * @param  number  message count
+     * @param  mixed   page number to show, or string 'all'
+     * @return array   array with two values: first index, last index
+     * @access private
+     */
+    function _get_message_range($max, $page)
     {
-    $start_msg = ($this->list_page-1) * $this->page_size;
+        $start_msg = ($this->list_page-1) * $this->page_size;
 
-    if ($page=='all')
-      {
-      $begin = 0;
-      $end = $max;
-      }
-    else if ($this->sort_order=='DESC')
-      {
-      $begin = $max - $this->page_size - $start_msg;
-      $end =   $max - $start_msg;
-      }
-    else
-      {
-      $begin = $start_msg;
-      $end   = $start_msg + $this->page_size;
-      }
+        if ($page=='all') {
+            $begin = 0;
+            $end   = $max;
+        }
+        elseif ($this->sort_order=='DESC') {
+            $begin = $max - $this->page_size - $start_msg;
+            $end   = $max - $start_msg;
+        }
+        else {
+            $begin = $start_msg;
+            $end   = $start_msg + $this->page_size;
+        }
 
-    if ($begin < 0) $begin = 0;
-    if ($end < 0) $end = $max;
-    if ($end > $max) $end = $max;
-
-    return array($begin, $end);
+        if ($begin < 0) {
+            $begin = 0;
+        }
+        if ($end < 0) {
+            $end = $max;
+        }
+        if ($end > $max) {
+            $end = $max;
+        }
+        return array($begin, $end);
     }
 
 
