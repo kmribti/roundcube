@@ -1009,55 +1009,67 @@ function rcmail_parse_message(&$structure, $arg=array(), $recursive=FALSE)
 
 // return table with message headers
 function rcmail_message_headers($attrib, $headers=NULL)
-  {
-  global $IMAP, $OUTPUT, $MESSAGE;
-  static $sa_attrib;
-  
-  // keep header table attrib
-  if (is_array($attrib) && !$sa_attrib)
-    $sa_attrib = $attrib;
-  else if (!is_array($attrib) && is_array($sa_attrib))
-    $attrib = $sa_attrib;
-  
-  
-  if (!isset($MESSAGE))
-    return FALSE;
+{
+    global $IMAP, $OUTPUT, $MESSAGE;
+    static $sa_attrib;
 
-  // get associative array of headers object
-  if (!$headers)
-    $headers = is_object($MESSAGE['headers']) ? get_object_vars($MESSAGE['headers']) : $MESSAGE['headers'];
+    tfk_debug('rcmail_message_headers: hello? hello!');
   
-  $header_count = 0;
+    // keep header table attrib
+    if (is_array($attrib) && !$sa_attrib) {
+        $sa_attrib = $attrib;
+    }
+    elseif (!is_array($attrib) && is_array($sa_attrib)) {
+        $attrib = $sa_attrib;
+    }
   
-  // allow the following attributes to be added to the <table> tag
-  $attrib_str = create_attrib_string($attrib, array('style', 'class', 'id', 'cellpadding', 'cellspacing', 'border', 'summary'));
-  $out = '<table' . $attrib_str . ">\n";
-
-  // show these headers
-  $standard_headers = array('subject', 'from', 'organization', 'to', 'cc', 'bcc', 'reply-to', 'date');
-  
-  foreach ($standard_headers as $hkey)
-    {
-    if (!$headers[$hkey])
-      continue;
-
-    if ($hkey=='date' && !empty($headers[$hkey]))
-      $header_value = format_date(strtotime($headers[$hkey]));
-    else if (in_array($hkey, array('from', 'to', 'cc', 'bcc', 'reply-to')))
-      $header_value = Q(rcmail_address_string($headers[$hkey], NULL, $attrib['addicon']), 'show');
-    else
-      $header_value = Q(rcube_imap::decode_mime_string($headers[$hkey], $headers['charset']));
-
-    $out .= "\n<tr>\n";
-    $out .= '<td class="header-title">'.Q(rcube_label($hkey)).":&nbsp;</td>\n";
-    $out .= '<td class="'.$hkey.'" width="90%">'.$header_value."</td>\n</tr>";
-    $header_count++;
+    if (isset($MESSAGE) === false) {
+        tfk_debug('rcmail_message_headers: no $MESSAGE :(');
+        return FALSE;
     }
 
-  $out .= "\n</table>\n\n";
+    tfk_debug('MESSAGE: ' . var_export($MESSAGE, true));
 
-  return $header_count ? $out : '';  
-  }
+    // get associative array of headers object
+    if (is_null($headers) === true) {
+        $headers = is_object($MESSAGE['structure']->headers) ? get_object_vars($MESSAGE['structure']->headers) : $MESSAGE['structure']->headers;
+    }
+    $header_count = 0;
+  
+    // allow the following attributes to be added to the <table> tag
+    $attrib_str = create_attrib_string($attrib, array('style', 'class', 'id', 'cellpadding', 'cellspacing', 'border', 'summary'));
+    $out = '<table' . $attrib_str . ">\n";
+
+    // show these headers
+    $standard_headers = array('subject', 'from', 'organization', 'to', 'cc', 'bcc', 'reply-to', 'date');
+
+    tfk_debug('rcmail_message_headers: ' . var_export($headers, true));
+  
+    foreach ($standard_headers as $hkey) {
+        if (isset($headers[$hkey]) === false) {
+            continue;
+        }
+        if ($hkey=='date' && empty($headers[$hkey]) === false) {
+            $header_value = format_date(strtotime($headers[$hkey]));
+        }
+        elseif(in_array($hkey, array('from', 'to', 'cc', 'bcc', 'reply-to'))) {
+            $header_value = Q(rcmail_address_string($headers[$hkey], NULL, $attrib['addicon']), 'show');
+        }
+        else {
+            $header_value = Q(rcube_imap::decode_mime_string($headers[$hkey], $headers['charset']));
+        }
+        $out .= "\n<tr>\n";
+        $out .= '<td class="header-title">'.Q(rcube_label($hkey)).":&nbsp;</td>\n";
+        $out .= '<td class="'.$hkey.'" width="90%">'.$header_value."</td>\n</tr>";
+        $header_count++;
+    }
+
+    $out .= "\n</table>\n\n";
+
+    //tfk_debug('rcmail_message_headers, count: ' . $header_count);
+
+    return $header_count ? $out : '';  
+}
 
 
 
@@ -1358,60 +1370,65 @@ function rcmail_first_text_part($message_struct)
 
 // decode address string and re-format it as HTML links
 function rcmail_address_string($input, $max=NULL, $addicon=NULL)
-  {
-  global $IMAP, $PRINT_MODE, $CONFIG, $OUTPUT, $EMAIL_ADDRESS_PATTERN;
+{
+    global $IMAP, $PRINT_MODE, $CONFIG, $OUTPUT, $EMAIL_ADDRESS_PATTERN;
   
-  $a_parts = $IMAP->decode_address_list($input);
+    $a_parts = $IMAP->decode_address_list($input);
 
-  if (!sizeof($a_parts))
-    return $input;
+    if (!sizeof($a_parts)) {
+        return $input;
+    }
+    $c = count($a_parts);
+    $j = 0;
+    $out = '';
 
-  $c = count($a_parts);
-  $j = 0;
-  $out = '';
+    foreach ($a_parts as $part) {
 
-  foreach ($a_parts as $part)
-    {
-    $j++;
-    if ($PRINT_MODE)
-      $out .= sprintf('%s &lt;%s&gt;', Q($part['name']), $part['mailto']);
-    else if (preg_match($EMAIL_ADDRESS_PATTERN, $part['mailto']))
-      {
-      $out .= sprintf('<a href="mailto:%s" onclick="return %s.command(\'compose\',\'%s\',this)" class="rcmContactAddress" title="%s">%s</a>',
-                      Q($part['mailto']),
-                      JS_OBJECT_NAME,
-                      JQ($part['mailto']),
-                      Q($part['mailto']),
-                      Q($part['name']));
-                      
-      if ($addicon)
-        $out .= sprintf('&nbsp;<a href="#add" onclick="return %s.command(\'add-contact\',\'%s\',this)" title="%s"><img src="%s%s" alt="add" border="0" /></a>',
+        $j++;
+        if ($PRINT_MODE) {
+            $out .= sprintf('%s &lt;%s&gt;', Q($part['name']), $part['mailto']);
+        }
+        elseif (preg_match($EMAIL_ADDRESS_PATTERN, $part['mailto'])) {
+            $out .= sprintf(
+                        '<a href="mailto:%s" onclick="return %s.command(\'compose\',\'%s\',this)" class="rcmContactAddress" title="%s">%s</a>',
+                        Q($part['mailto']),
+                        JS_OBJECT_NAME,
+                        JQ($part['mailto']),
+                        Q($part['mailto']),
+                        Q($part['name']));
+            /**
+             * Build icon to allow adding to addressbook.
+             * @ignore
+             */
+            /*
+            if ($addicon) {
+                $out .= sprintf('&nbsp;<a href="#add" onclick="return %s.command(\'add-contact\',\'%s\',this)" title="%s"><img src="%s%s" alt="add" border="0" /></a>',
                         JS_OBJECT_NAME,
                         urlencode($part['string']),
                         rcube_label('addtoaddressbook'),
                         $CONFIG['skin_path'],
                         $addicon);
-      }
-    else
-      {
-      if ($part['name'])
-        $out .= Q($part['name']);
-      if ($part['mailto'])
-        $out .= (strlen($out) ? ' ' : '') . sprintf('&lt;%s&gt;', Q($part['mailto']));
-      }
+            }*/
+        }
+        else {
+            if ($part['name']) {
+                $out .= Q($part['name']);
+            }
+            if ($part['mailto']) {
+                $out .= (strlen($out) ? ' ' : '') . sprintf('&lt;%s&gt;', Q($part['mailto']));
+            }
+        }
       
-    if ($c>$j)
-      $out .= ','.($max ? '&nbsp;' : ' ');
-        
-    if ($max && $j==$max && $c>$j)
-      {
-      $out .= '...';
-      break;
-      }        
+        if ($c>$j) {
+            $out .= ','.($max ? '&nbsp;' : ' ');
+        }
+        if ($max && $j==$max && $c>$j) {
+            $out .= '...';
+            break;
+        }
     }
-    
-  return $out;
-  }
+    return $out;
+}
 
 
 function rcmail_message_part_controls()
