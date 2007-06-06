@@ -816,8 +816,6 @@ function rcube_webmail()
         var form = this.gui_objects.messageform;
         form.target = "savetarget";
 
-        /*alert(form.task);*/
-
         form._draft.value = '';
         form.submit();
 
@@ -829,10 +827,10 @@ function rcube_webmail()
         this.show_attachment_form(true);
 
       case 'send-attachment':
-        // Reset the auto-save timer
-        self.clearTimeout(this.save_timer);
+            // Reset the auto-save timer
+            self.clearTimeout(this.save_timer);
 
-        this.upload_file(props)
+            this.upload_file(props)
         break;
 
       case 'remove-attachment':
@@ -1823,83 +1821,89 @@ function rcube_webmail()
     };
 
 
-  this.show_attachment_form = function(a)
+    this.show_attachment_form = function(a)
     {
-    if (!this.gui_objects.uploadbox)
-      return false;
+        if (!this.gui_objects.uploadbox) {
+            return false;
+        }
+        var elm, list;
+        if (elm = this.gui_objects.uploadbox) {
+            if (a &&  (list = this.gui_objects.attachmentlist)) {
+                var pos = rcube_get_object_pos(list);
+                var left = pos.x;
+                var top = pos.y + list.offsetHeight + 10;
 
-    var elm, list;
-    if (elm = this.gui_objects.uploadbox)
-      {
-      if (a &&  (list = this.gui_objects.attachmentlist))
-        {
-        var pos = rcube_get_object_pos(list);
-        var left = pos.x;
-        var top = pos.y + list.offsetHeight + 10;
-
-        elm.style.top = top+'px';
-        elm.style.left = left+'px';
+                elm.style.top = top+'px';
+                elm.style.left = left+'px';
+            }
+            $(elm).slideToggle('slow');
         }
 
-      elm.style.visibility = a ? 'visible' : 'hidden';
-      }
-
-    // clear upload form
-    if (!a && this.gui_objects.attachmentform && this.gui_objects.attachmentform!=this.gui_objects.messageform)
-      this.gui_objects.attachmentform.reset();
-
-    return true;
+        // clear upload form
+        if (!a && this.gui_objects.attachmentform && this.gui_objects.attachmentform!=this.gui_objects.messageform) {
+            $('#attachmentUploadForm').children('input[@type=file]').each(function(){
+                $(this).attr('value', '');
+            });
+        }
+        return true;
     };
 
 
-  // upload attachment file
-  this.upload_file = function(form)
+    // upload attachment file
+    this.upload_file = function(form)
     {
-
-    if (!form)
-      return false;
-
-    // get file input fields
-    var send = false;
-    for (var n=0; n<form.elements.length; n++)
-      if (form.elements[n].type=='file' && form.elements[n].value)
-        {
-        send = true;
-        break;
+        if (!form) {
+            return false;
         }
 
-    // create hidden iframe and post upload form
-    if (send)
-      {
-      var ts = new Date().getTime();
-      var frame_name = 'rcmupload'+ts;
+        // get file input fields
+        var send = false;
+        $(form).children('input[@type=file]').each(function(){
+            if ($(this).val() != '') {
+                send = true;
+            }
+        });
 
-      // have to do it this way for IE
-      // otherwise the form will be posted to a new window
-      if(document.all && !window.opera)
-        {
-        var html = '<iframe name="'+frame_name+'" src="program/blank.gif" style="width:0;height:0;visibility:hidden;"></iframe>';
-        document.body.insertAdjacentHTML('BeforeEnd',html);
-        }
-      else  // for standards-compilant browsers
-        {
-        var frame = document.createElement('IFRAME');
-        frame.name = frame_name;
-        frame.width = 10;
-        frame.height = 10;
-        frame.style.visibility = 'hidden';
-        document.body.appendChild(frame);
+        /*
+        for (var n=0; n<form.elements.length; n++) {
+            if (form.elements[n].type=='file' && form.elements[n].value) {
+                send = true;
+                break;
+            }
+        }*/
+
+        if (send == false) {
+            alert('Nothing to send.');
+            return;
         }
 
-      form.target = frame_name;
-      form.action = this.env.comm_path+'&_action=upload';
-      form.setAttribute('enctype', 'multipart/form-data');
-      form.submit();
-      }
+        // create hidden iframe and post upload form
+        var ts = new Date().getTime();
+        var frame_name = 'rcmupload'+ts;
 
-    // set reference to the form object
-    this.gui_objects.attachmentform = form;
-    return true;
+        // have to do it this way for IE
+        // otherwise the form will be posted to a new window
+        if(document.all && !window.opera) {
+            var html = '<iframe name="'+frame_name+'" src="program/blank.gif" style="width:0;height:0;visibility:hidden;"></iframe>';
+            document.body.insertAdjacentHTML('BeforeEnd',html);
+        }
+        else { // for standards-compilant browsers
+            var frame = document.createElement('IFRAME');
+            frame.name = frame_name;
+            frame.width = 10;
+            frame.height = 10;
+            frame.style.visibility = 'hidden';
+            document.body.appendChild(frame);
+        }
+
+        $(form).attr('target', frame_name);
+        $(form).attr('action', this.env.comm_path+'&_action=upload');
+        $(form).attr('enctype', 'multipart/form-data');
+        $(form).submit();
+      
+        // set reference to the form object
+        this.gui_objects.attachmentform = form;
+        return true;
     };
 
 
@@ -3324,39 +3328,39 @@ function rcube_webmail()
     };
 
 
-  // handle HTTP request errors
-  this.http_error = function(request_obj)
+    // handle HTTP request errors
+    this.http_error = function(request_obj)
     {
-    //alert('Error sending request: '+request_obj.url);
+        //alert('Error sending request: '+request_obj.url);
 
-    if (request_obj.__lock)
-      this.set_busy(false);
-
-    request_obj.reset();
-    request_obj.__lock = false;
+        if (request_obj.__lock) {
+            this.set_busy(false);
+        }
+        request_obj.reset();
+        request_obj.__lock = false;
     };
 
 
-  // use an image to send a keep-alive siganl to the server
-  this.send_keep_alive = function()
+    // use an image to send a keep-alive siganl to the server
+    this.send_keep_alive = function()
     {
-    var d = new Date();
-    this.http_request('keep-alive', '_t='+d.getTime());
+        var d = new Date();
+        this.http_request('keep-alive', '_t='+d.getTime());
     };
 
 
-  // send periodic request to check for recent messages
-  this.check_for_recent = function()
+    // send periodic request to check for recent messages
+    this.check_for_recent = function()
     {
-    if (this.busy)
-      {
-      this.send_keep_alive();
-      return;
-      }
+        if (this.busy)
+        {
+            this.send_keep_alive();
+            return;
+        }
 
-    this.set_busy(true, 'checkingmail');
-    var d = new Date();
-    this.http_request('check-recent', '_t='+d.getTime());
+        this.set_busy(true, 'checkingmail');
+        var d = new Date();
+        this.http_request('check-recent', '_t='+d.getTime());
     };
 
 

@@ -868,7 +868,7 @@ div.message-part blockquote blockquote blockquote
   left: 20px;
   z-index: 200;
   padding: 8px;
-  visibility: hidden;
+  display: none;
   border: 1px solid #CCCCCC;
   background-color: #F9F9F9;
 }

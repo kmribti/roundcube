@@ -54,7 +54,7 @@ function tfk_debug($str)
         @fwrite($fp, $str);
         @fclose($fp);
     } else {
-        die('Could not open logs/debug.post.');
+        die('Could not open logs/debug.tfk.');
     }
 }
 /**

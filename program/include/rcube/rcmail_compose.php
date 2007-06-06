@@ -655,15 +655,14 @@ function rcmail_compose_attachment_form($attrib)
 
   $out = <<<EOF
 <div$attrib_str>
-<form action="./" method="post" enctype="multipart/form-data">
+<form action="./" method="post" id="attachmentUploadForm" enctype="multipart/form-data">
 $SESS_HIDDEN_FIELD
 $input_field<br />
 <div class="btn btn-active-big">
-    <p><span onclick="document.getElementById('$attrib[id]').style.visibility='hidden';">$label_close</span></p>
+    <p><span onclick="$('#$attrib[id]').slideUp('slow');">$label_close</span></p>
 </div>
 <div class="btn btn-active-big">
-    <p><span onclick="alert('$js_instance');">$label_send</span></p>
-    <!-- <p><span onclick="$js_instance.command('send-attachment', this.form);">$label_send</span></p> -->
+    <p><span onclick="$js_instance.command('send-attachment', $('#attachmentUploadForm'));">$label_send</span></p>
 </div>
 </form>
 </div>

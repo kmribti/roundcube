@@ -696,66 +696,61 @@ function rcmail_get_messagecount_text($count=NULL, $page=NULL)
 
 
 function rcmail_print_body($part, $safe=FALSE, $plain=FALSE)
-  {
-  global $IMAP, $REMOTE_OBJECTS;
+{
+    global $IMAP, $REMOTE_OBJECTS;
   
-  $body = is_array($part->replaces) ? strtr($part->body, $part->replaces) : $part->body;
+    $body = is_array($part->replaces) ? strtr($part->body, $part->replaces) : $part->body;
 
-  // convert html to text/plain
-  if ($part->ctype_secondary=='html' && $plain)
-    {
-    $txt = new html2text($body, false, true);
-    $body = $txt->get_text();
-    $part->ctype_secondary = 'plain';
+    // convert html to text/plain
+    if ($part->ctype_secondary=='html' && $plain) {
+        $txt = new html2text($body, false, true);
+        $body = $txt->get_text();
+        $part->ctype_secondary = 'plain';
     }
     
-  // text/html
-  if ($part->ctype_secondary=='html')
-    {
-    // remove charset specification in HTML message
-    $body = preg_replace('/charset=[a-z0-9\-]+/i', '', $body);
+    // text/html
+    if ($part->ctype_secondary=='html') {
+        // remove charset specification in HTML message
+        $body = preg_replace('/charset=[a-z0-9\-]+/i', '', $body);
 
-    if (!$safe)  // remove remote images and scripts
-      {
-      $remote_patterns = array('/<img\s+(.*)src=(["\']?)([hftps]{3,5}:\/{2}[^"\'\s]+)(\2|\s|>)/Ui',
-                               '/(src|background)=(["\']?)([hftps]{3,5}:\/{2}[^"\'\s]+)(\2|\s|>)/Ui',
-                               '/(<base.*href=["\']?)([hftps]{3,5}:\/{2}[^"\'\s]+)([^<]*>)/i',
-                               '/(<link.*href=["\']?)([hftps]{3,5}:\/{2}[^"\'\s]+)([^<]*>)/i',
-                               '/url\s*\(["\']?([hftps]{3,5}:\/{2}[^"\'\s]+)["\']?\)/i',
-                               '/url\s*\(["\']?([\.\/]+[^"\'\s]+)["\']?\)/i',
-                               '/<script.+<\/script>/Umis');
-
-      $remote_replaces = array('<img \\1src=\\2./program/blocked.gif\\4',
-                               '',
-                               '',
-                               '',
-                               'none',
-                               'none',
-                               '');
-      
-      // set flag if message containes remote obejcts that where blocked
-      foreach ($remote_patterns as $pattern)
+        if (!$safe)  // remove remote images and scripts
         {
-        if (preg_match($pattern, $body))
-          {
-          $REMOTE_OBJECTS = TRUE;
-          break;
-          }
+            $remote_patterns = array(
+                                '/<img\s+(.*)src=(["\']?)([hftps]{3,5}:\/{2}[^"\'\s]+)(\2|\s|>)/Ui',
+                                '/(src|background)=(["\']?)([hftps]{3,5}:\/{2}[^"\'\s]+)(\2|\s|>)/Ui',
+                                '/(<base.*href=["\']?)([hftps]{3,5}:\/{2}[^"\'\s]+)([^<]*>)/i',
+                                '/(<link.*href=["\']?)([hftps]{3,5}:\/{2}[^"\'\s]+)([^<]*>)/i',
+                                '/url\s*\(["\']?([hftps]{3,5}:\/{2}[^"\'\s]+)["\']?\)/i',
+                                '/url\s*\(["\']?([\.\/]+[^"\'\s]+)["\']?\)/i',
+                                '/<script.+<\/script>/Umis'
+            );
+
+            $remote_replaces = array(
+                                '<img \\1src=\\2./program/blocked.gif\\4',
+                                '',
+                                '',
+                                '',
+                                'none',
+                                'none',
+                                '');
+      
+            // set flag if message containes remote obejcts that where blocked
+            foreach ($remote_patterns as $pattern) {
+                if (preg_match($pattern, $body)) {
+                    $REMOTE_OBJECTS = TRUE;
+                    break;
+                }
+            }
+
+            $body = preg_replace($remote_patterns, $remote_replaces, $body);
         }
-
-      $body = preg_replace($remote_patterns, $remote_replaces, $body);
-      }
-
-    return Q($body, 'show', FALSE);
+        return Q($body, 'show', FALSE);
     }
 
-  // text/enriched
-  if ($part->ctype_secondary=='enriched')
-    {
-    return Q(enriched_to_html($body), 'show');
+    // text/enriched
+    if ($part->ctype_secondary=='enriched') {
+        return Q(enriched_to_html($body), 'show');
     }
-  else
-    {
     // make links and email-addresses clickable
     $convert_patterns = $convert_replaces = $replace_strings = array();
     
@@ -771,9 +766,9 @@ function rcmail_print_body($part, $safe=FALSE, $plain=FALSE)
     $convert_patterns[] = '/([a-z0-9][a-z0-9\-\.\+\_]*@[a-z0-9]([a-z0-9\-][.]?)*[a-z0-9]\\.[a-z]{2,5})/ie';
     $convert_replaces[] = "rcmail_str_replacement('<a href=\"mailto:\\1\" onclick=\"return ".JS_OBJECT_NAME.".command(\'compose\',\'\\1\',this)\">\\1</a>', \$replace_strings)";
     
-    if ($part->ctype_parameters['format'] != 'flowed')
-      $body = wordwrap(trim($body), 80);
-
+    if ($part->ctype_parameters['format'] != 'flowed') {
+        $body = wordwrap(trim($body), 80);
+    }
     $body = preg_replace($convert_patterns, $convert_replaces, $body);
 
     // split body into single lines
@@ -781,35 +776,33 @@ function rcmail_print_body($part, $safe=FALSE, $plain=FALSE)
     $quote_level = 0;
 
     // colorize quoted parts
-    for($n=0; $n<sizeof($a_lines); $n++)
-      {
-      $line = $a_lines[$n];
-      $quotation = '';
-      $q = 0;
+    for ($n=0; $n<sizeof($a_lines); $n++) {
+        $line = $a_lines[$n];
+        $quotation = '';
+        $q = 0;
       
-      if (preg_match('/^(>+\s*)/', $line, $regs))
-        {
-        $q = strlen(preg_replace('/\s/', '', $regs[1]));
-        $line = substr($line, strlen($regs[1]));
+        if (preg_match('/^(>+\s*)/', $line, $regs)) {
+            $q = strlen(preg_replace('/\s/', '', $regs[1]));
+            $line = substr($line, strlen($regs[1]));
 
-        if ($q > $quote_level)
-          $quotation = str_repeat('<blockquote>', $q - $quote_level);
-        else if ($q < $quote_level)
-          $quotation = str_repeat("</blockquote>", $quote_level - $q);
+            if ($q > $quote_level) {
+                $quotation = str_repeat('<blockquote>', $q - $quote_level);
+            }
+            elseif ($q < $quote_level) {
+                $quotation = str_repeat("</blockquote>", $quote_level - $q);
+            }
         }
-      else if ($quote_level > 0)
-        $quotation = str_repeat("</blockquote>", $quote_level);
-
-      $quote_level = $q;
-      $a_lines[$n] = $quotation . Q($line, 'replace', FALSE);
-      }
+        elseif ($quote_level > 0) {
+            $quotation = str_repeat("</blockquote>", $quote_level);
+        }
+        $quote_level = $q;
+        $a_lines[$n] = $quotation . Q($line, 'replace', FALSE);
+    }
 
     // insert the links for urls and mailtos
     $body = preg_replace("/##string_replacement\{([0-9]+)\}##/e", "\$replace_strings[\\1]", join("\n", $a_lines));
-    
     return "<div class=\"pre\">".$body."\n</div>";
-    }
-  }
+}
 
 
 
