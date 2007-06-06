@@ -65,6 +65,9 @@ class rcRegistry
 
     function getAll()
     {
+        if (isset($GLOBALS['rcRegistry']) === false) {
+            return false;
+        }
         return $GLOBALS['rcRegistry'];
     }
 }
