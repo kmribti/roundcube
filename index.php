@@ -64,6 +64,7 @@ function tfk_debug($str)
  */
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     tfk_debug(var_export($_POST, true));
+    tfk_debug(var_export($_GET, true));
 }
 
 
