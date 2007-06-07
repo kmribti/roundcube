@@ -219,8 +219,21 @@ if ($_action=='login' && $_task=='mail') {
     else {
 
         tfk_debug('Oops, failed.');
-        //tfk_debug(var_export($_SESSION, true));
-        tfk_debug(date('Y-m-d H:i:s', $_SESSION['auth_time']));
+        if (empty($_POST['_user']) === true) {
+            tfk_debug('Login: no _user');
+        }
+        if (isset($_POST['_pass']) === false) {
+            tfk_debug('Login: no _pass');
+        }
+        $status = rcmail_login(
+                    get_input_value('_user', RCUBE_INPUT_POST),
+                    get_input_value('_pass', RCUBE_INPUT_POST, true, 'ISO-8859-1'),
+                    $host
+        );
+        tfk_debug('Login: status: ' . $status);
+
+        tfk_debug(var_export($_SESSION['temp'], true));
+        //tfk_debug(date('Y-m-d H:i:s', $_SESSION['auth_time']));
 
         $OUTPUT->show_message("loginfailed", 'warning');
         $_SESSION['user_id'] = '';
