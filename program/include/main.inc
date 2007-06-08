@@ -43,14 +43,20 @@ function rcmail_startup($task = 'mail')
     global $sess_id, $sess_user_lang;
     global $CONFIG, $INSTALL_PATH, $BROWSER, $OUTPUT, $_SESSION, $IMAP, $DB;
 
+    tfk_debug('Start me up.');
+
     // check client
     $BROWSER = rcube_browser();
+
+    tfk_debug('// load browser');
 
     // load configuration
     $CONFIG = rcmail_load_config();
 
+    tfk_debug('// load config');
+
     // set session garbage collecting time according to session_lifetime
-    if (!empty($CONFIG['session_lifetime'])) {
+    if (empty($CONFIG['session_lifetime']) === FALSE) {
         ini_set('session.gc_maxlifetime', ($CONFIG['session_lifetime']) * 120);
     }
     // prepare DB connection
@@ -59,6 +65,8 @@ function rcmail_startup($task = 'mail')
     $DB = new rcube_db($CONFIG['db_dsnw'], $CONFIG['db_dsnr'], $CONFIG['db_persistent']);
     $DB->sqlite_initials = $INSTALL_PATH.'SQL/sqlite.initial.sql';
     $DB->db_connect('w');
+
+    tfk_debug('// init db');
 
     // use database for storing session data
     include_once 'include/session.inc';
@@ -112,7 +120,10 @@ function rcmail_load_config()
     global $INSTALL_PATH;
 
     // load config file
-    @include_once 'config/main.inc.php';
+    $status = @include_once 'config/main.inc.php';
+    if ($status === FALSE) {
+        die('Could not open config/main.inc.php.');
+    }
     $conf = is_array($rcmail_config) ? $rcmail_config : array();
 
     // load host-specific configuration

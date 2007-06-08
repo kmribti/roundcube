@@ -39,455 +39,488 @@ require_once('lib/mime.inc');
  * @link       http://ilohamail.org
  */
 class rcube_imap
-  {
-  var $db;
-  var $conn;
-  var $root_ns = '';
-  var $root_dir = '';
-  var $mailbox = 'INBOX';
-  var $list_page = 1;
-  var $page_size = 10;
-  var $sort_field = 'date';
-  var $sort_order = 'DESC';
-  var $delimiter = NULL;
-  var $caching_enabled = FALSE;
-  var $default_folders = array('INBOX');
-  var $default_folders_lc = array('inbox');
-  var $cache = array();
-  var $cache_keys = array();
-  var $cache_changes = array();
-  var $uid_id_map = array();
-  var $msg_headers = array();
-  var $capabilities = array();
-  var $skip_deleted = FALSE;
-  var $search_set = NULL;
-  var $search_subject = '';
-  var $search_string = '';
-  var $search_charset = '';
-  var $debug_level = 1;
+{
+    var $db;
+    var $conn;
+    var $root_ns = '';
+    var $root_dir = '';
+    var $mailbox = 'INBOX';
+    var $list_page = 1;
+    var $page_size = 10;
+    var $sort_field = 'date';
+    var $sort_order = 'DESC';
+    var $delimiter = NULL;
+    var $caching_enabled = FALSE;
+    var $default_folders = array('INBOX');
+    var $default_folders_lc = array('inbox');
+    var $cache = array();
+    var $cache_keys = array();
+    var $cache_changes = array();
+    var $uid_id_map = array();
+    var $msg_headers = array();
+    var $capabilities = array();
+    var $skip_deleted = FALSE;
+    var $search_set = NULL;
+    var $search_subject = '';
+    var $search_string = '';
+    var $search_charset = '';
+    var $debug_level = 1;
 
 
-  /**
-   * Object constructor
-   *
-   * @param  object  Database connection
-   */
-  function __construct($db_conn)
+    /**
+     * Object constructor
+     *
+     * @acccess public
+     * @param   object  Database connection
+     */
+    function __construct($db_conn)
     {
-    $this->db = $db_conn;
+        $this->db = $db_conn;
     }
 
 
-  /**
-   * PHP 4 object constructor
-   *
-   * @see  rcube_imap::__construct
-   */
-  function rcube_imap($db_conn)
+    /**
+     * PHP 4 object constructor
+     *
+     * @access public
+     * @see    rcube_imap::__construct
+     */
+    function rcube_imap($db_conn)
     {
-    $this->__construct($db_conn);
+        $this->__construct($db_conn);
     }
 
 
-  /**
-   * Connect to an IMAP server
-   *
-   * @param  string   Host to connect
-   * @param  string   Username for IMAP account
-   * @param  string   Password for IMAP account
-   * @param  number   Port to connect to
-   * @param  boolean  Use SSL connection
-   * @return boolean  TRUE on success, FALSE on failure
-   * @access public
-   */
-  function connect($host, $user, $pass, $port=143, $use_ssl=FALSE)
+    /**
+     * Connect to an IMAP server
+     *
+     * @param  string   Host to connect
+     * @param  string   Username for IMAP account
+     * @param  string   Password for IMAP account
+     * @param  number   Port to connect to
+     * @param  boolean  Use SSL connection
+     * @return boolean  TRUE on success, FALSE on failure
+     * @access public
+     */
+    function connect($host, $user, $pass, $port=143, $use_ssl=FALSE)
     {
-    global $ICL_SSL, $ICL_PORT, $IMAP_USE_INTERNAL_DATE;
+        global $ICL_SSL, $ICL_PORT, $IMAP_USE_INTERNAL_DATE;
 
-    // check for Open-SSL support in PHP build
-    if ($use_ssl && in_array('openssl', get_loaded_extensions()))
-      $ICL_SSL = TRUE;
-    else if ($use_ssl)
-      {
-      raise_error(array('code' => 403, 'type' => 'imap', 'file' => __FILE__,
-                        'message' => 'Open SSL not available;'), TRUE, FALSE);
-      $port = 143;
-      }
+        // check for Open-SSL support in PHP build
+        if ($use_ssl && in_array('openssl', get_loaded_extensions())) {
+            $ICL_SSL = TRUE;
+        }
+        elseif ($use_ssl) {
+            raise_error(
+                array(
+                    'code' => 403,
+                    'type' => 'imap',
+                    'file' => __FILE__,
+                    'message' => 'Open SSL not available;'
+                ),
+                TRUE,
+                FALSE
+            );
+            $port = 143;
+        }
 
-    $ICL_PORT = $port;
-    $IMAP_USE_INTERNAL_DATE = false;
+        $ICL_PORT = $port;
+        $IMAP_USE_INTERNAL_DATE = false;
 
-    $this->conn = iil_Connect($host, $user, $pass, array('imap' => 'check'));
-    $this->host = $host;
-    $this->user = $user;
-    $this->pass = $pass;
-    $this->port = $port;
-    $this->ssl = $use_ssl;
+        $this->conn = iil_Connect($host, $user, $pass, array('imap' => 'check'));
+        $this->host = $host;
+        $this->user = $user;
+        $this->pass = $pass;
+        $this->port = $port;
+        $this->ssl = $use_ssl;
 
-    // print trace mesages
-    if ($this->conn && ($this->debug_level & 8))
-      console($this->conn->message);
-
-    // write error log
-    else if (!$this->conn && $GLOBALS['iil_error'])
-      {
-      raise_error(array('code' => 403,
+        // print trace mesages
+        if ($this->conn && ($this->debug_level & 8)) {
+            console($this->conn->message);
+        }
+        // write error log
+        else if (!$this->conn && $GLOBALS['iil_error']) {
+            raise_error(array('code' => 403,
                        'type' => 'imap',
                        'message' => $GLOBALS['iil_error']), TRUE, FALSE);
-      }
-
-    // get server properties
-    if ($this->conn)
-      {
-      $this->_parse_capability($this->conn->capability);
-
-      if (!empty($this->conn->delimiter))
-        $this->delimiter = $this->conn->delimiter;
-      if (!empty($this->conn->rootdir))
-        {
-        $this->set_rootdir($this->conn->rootdir);
-        $this->root_ns = ereg_replace('[\.\/]$', '', $this->conn->rootdir);
         }
-      }
 
-    return $this->conn ? TRUE : FALSE;
-    }
-
-
-  /**
-   * Close IMAP connection
-   * Usually done on script shutdown
-   *
-   * @access public
-   */
-  function close()
-    {
-    if ($this->conn)
-      iil_Close($this->conn);
-    }
-
-
-  /**
-   * Close IMAP connection and re-connect
-   * This is used to avoid some strange socket errors when talking to Courier IMAP
-   *
-   * @access public
-   */
-  function reconnect()
-    {
-    $this->close();
-    $this->connect($this->host, $this->user, $this->pass, $this->port, $this->ssl);
-    }
-
-
-  /**
-   * Set a root folder for the IMAP connection.
-   *
-   * Only folders within this root folder will be displayed
-   * and all folder paths will be translated using this folder name
-   *
-   * @param  string   Root folder
-   * @access public
-   */
-  function set_rootdir($root)
-    {
-    if (ereg('[\.\/]$', $root)) //(substr($root, -1, 1)==='/')
-      $root = substr($root, 0, -1);
-
-    $this->root_dir = $root;
-
-    if (empty($this->delimiter))
-      $this->get_hierarchy_delimiter();
-    }
-
-
-  /**
-   * This list of folders will be listed above all other folders
-   *
-   * @param  array  Indexed list of folder names
-   * @access public
-   */
-  function set_default_mailboxes($arr)
-    {
-    if (is_array($arr))
-      {
-      $this->default_folders = $arr;
-      $this->default_folders_lc = array();
-
-      // add inbox if not included
-      if (!in_array_nocase('INBOX', $this->default_folders))
-        array_unshift($this->default_folders, 'INBOX');
-
-      // create a second list with lower cased names
-      foreach ($this->default_folders as $mbox)
-        $this->default_folders_lc[] = strtolower($mbox);
-      }
-    }
-
-
-  /**
-   * Set internal mailbox reference.
-   *
-   * All operations will be perfomed on this mailbox/folder
-   *
-   * @param  string  Mailbox/Folder name
-   * @access public
-   */
-  function set_mailbox($new_mbox)
-    {
-    $mailbox = $this->_mod_mailbox($new_mbox);
-
-    if ($this->mailbox == $mailbox)
-      return;
-
-    $this->mailbox = $mailbox;
-
-    // clear messagecount cache for this mailbox
-    $this->_clear_messagecount($mailbox);
-    }
-
-
-  /**
-   * Set internal list page
-   *
-   * @param  number  Page number to list
-   * @access public
-   */
-  function set_page($page)
-    {
-    $this->list_page = (int)$page;
-    }
-
-
-  /**
-   * Set internal page size
-   *
-   * @param  number  Number of messages to display on one page
-   * @access public
-   */
-  function set_pagesize($size)
-    {
-    $this->page_size = (int)$size;
-    }
-
-
-  /**
-   * Save a set of message ids for future message listing methods
-   *
-   * @param  array  List of IMAP fields to search in
-   * @param  string Search string
-   * @param  array  List of message ids or NULL if empty
-   */
-  function set_search_set($subject, $str=null, $msgs=null, $charset=null)
-    {
-    if (is_array($subject) && $str == null && $msgs == null)
-      list($subject, $str, $msgs, $charset) = $subject;
-    if ($msgs != null && !is_array($msgs))
-      $msgs = split(',', $msgs);
-
-    $this->search_subject = $subject;
-    $this->search_string = $str;
-    $this->search_set = is_array($msgs) ? $msgs : NULL;
-    $this->search_charset = $charset;
-    }
-
-
-  /**
-   * Return the saved search set as hash array
-   */
-  function get_search_set()
-    {
-    return array($this->search_subject, $this->search_string, $this->search_set, $this->search_charset);
-    }
-
-
-  /**
-   * Returns the currently used mailbox name
-   *
-   * @return  string Name of the mailbox/folder
-   * @access  public
-   */
-  function get_mailbox_name()
-    {
-    return $this->conn ? $this->_mod_mailbox($this->mailbox, 'out') : '';
-    }
-
-
-  /**
-   * Returns the IMAP server's capability
-   *
-   * @param   string  Capability name
-   * @return  mixed   Capability value or TRUE if supported, FALSE if not
-   * @access  public
-   */
-  function get_capability($cap)
-    {
-    $cap = strtoupper($cap);
-    return $this->capabilities[$cap];
-    }
-
-
-  /**
-   * Returns the delimiter that is used by the IMAP server for folder separation
-   *
-   * @return  string  Delimiter string
-   * @access  public
-   */
-  function get_hierarchy_delimiter()
-    {
-    if ($this->conn && empty($this->delimiter))
-      $this->delimiter = iil_C_GetHierarchyDelimiter($this->conn);
-
-    if (empty($this->delimiter))
-      $this->delimiter = '/';
-
-    return $this->delimiter;
-    }
-
-
-  /**
-   * Public method for mailbox listing.
-   *
-   * Converts mailbox name with root dir first
-   *
-   * @param   string  Optional root folder
-   * @param   string  Optional filter for mailbox listing
-   * @return  array   List of mailboxes/folders
-   * @access  public
-   */
-  function list_mailboxes($root='', $filter='*')
-    {
-    $a_out = array();
-    $a_mboxes = $this->_list_mailboxes($root, $filter);
-
-    foreach ($a_mboxes as $mbox_row)
-      {
-      $name = $this->_mod_mailbox($mbox_row, 'out');
-      if (strlen($name))
-        $a_out[] = $name;
-      }
-
-    // INBOX should always be available
-    if (!in_array_nocase('INBOX', $a_out))
-      array_unshift($a_out, 'INBOX');
-
-    // sort mailboxes
-    $a_out = $this->_sort_mailbox_list($a_out);
-
-    return $a_out;
-    }
-
-
-  /**
-   * Private method for mailbox listing
-   *
-   * @return  array   List of mailboxes/folders
-   * @access  private
-   * @see     rcube_imap::list_mailboxes
-   */
-  function _list_mailboxes($root='', $filter='*')
-    {
-    $a_defaults = $a_out = array();
-
-    // get cached folder list
-    $a_mboxes = $this->get_cache('mailboxes');
-    if (is_array($a_mboxes))
-      return $a_mboxes;
-
-    // retrieve list of folders from IMAP server
-    $a_folders = iil_C_ListSubscribed($this->conn, $this->_mod_mailbox($root), $filter);
-
-    if (!is_array($a_folders) || !sizeof($a_folders))
-      $a_folders = array();
-
-    // write mailboxlist to cache
-    $this->update_cache('mailboxes', $a_folders);
-
-    return $a_folders;
-    }
-
-
-  /**
-   * Get message count for a specific mailbox
-   *
-   * @param   string   Mailbox/folder name
-   * @param   string   Mode for count [ALL|UNSEEN|RECENT]
-   * @param   boolean  Force reading from server and update cache
-   * @return  number   Number of messages
-   * @access  public
-   */
-  function messagecount($mbox_name='', $mode='ALL', $force=FALSE)
-    {
-    $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
-    return $this->_messagecount($mailbox, $mode, $force);
-    }
-
-
-  /**
-   * Private method for getting nr of messages
-   *
-   * @access  private
-   * @see     rcube_imap::messagecount
-   */
-  function _messagecount($mailbox='', $mode='ALL', $force=FALSE)
-    {
-    $a_mailbox_cache = FALSE;
-    $mode = strtoupper($mode);
-
-    if (empty($mailbox))
-      $mailbox = $this->mailbox;
-
-    // count search set
-    if ($this->search_set && $mailbox == $this->mailbox && $mode == 'ALL')
-      return count($this->search_set);
-
-    $a_mailbox_cache = $this->get_cache('messagecount');
-
-    // return cached value
-    if (!$force && is_array($a_mailbox_cache[$mailbox]) && isset($a_mailbox_cache[$mailbox][$mode]))
-      return $a_mailbox_cache[$mailbox][$mode];
-
-    // RECENT count is fetched abit different
-    if ($mode == 'RECENT')
-       $count = iil_C_CheckForRecent($this->conn, $mailbox);
-
-    // use SEARCH for message counting
-    else if ($this->skip_deleted)
-      {
-      $search_str = "ALL UNDELETED";
-
-      // get message count and store in cache
-      if ($mode == 'UNSEEN')
-        $search_str .= " UNSEEN";
-
-      // get message count using SEARCH
-      // not very performant but more precise (using UNDELETED)
-      $count = 0;
-      $index = $this->_search_index($mailbox, $search_str);
-      if (is_array($index))
-        {
-        $str = implode(",", $index);
-        if (!empty($str))
-          $count = count($index);
+        // get server properties
+        if ($this->conn === FALSE) {
+            return FALSE;
         }
-      }
-    else
-      {
-      if ($mode == 'UNSEEN')
-        $count = iil_C_CountUnseen($this->conn, $mailbox);
-      else
-        $count = iil_C_CountMessages($this->conn, $mailbox);
-      }
+        $this->_parse_capability($this->conn->capability);
 
-    if (!is_array($a_mailbox_cache[$mailbox]))
-      $a_mailbox_cache[$mailbox] = array();
+        if (empty($this->conn->delimiter) === FALSE) {
+            $this->delimiter = $this->conn->delimiter;
+        }
+        if (empty($this->conn->rootdir) === FALSE) {
+            $this->set_rootdir($this->conn->rootdir);
+            $this->root_ns = ereg_replace('[\.\/]$', '', $this->conn->rootdir);
+        }
+        return TRUE;
+    }
 
-    $a_mailbox_cache[$mailbox][$mode] = (int)$count;
 
-    // write back to cache
-    $this->update_cache('messagecount', $a_mailbox_cache);
+    /**
+     * Close IMAP connection
+     * Usually done on script shutdown
+     *
+     * @access public
+     */
+    function close()
+    {
+        if ($this->conn) {
+            iil_Close($this->conn);
+        }
+    }
 
-    return (int)$count;
+
+    /**
+     * Close IMAP connection and re-connect
+     * This is used to avoid some strange socket errors when talking to Courier IMAP
+     *
+     * @access public
+     */
+    function reconnect()
+    {
+        $this->close();
+        $this->connect($this->host, $this->user, $this->pass, $this->port, $this->ssl);
+    }
+
+
+    /**
+     * Set a root folder for the IMAP connection.
+     *
+     * Only folders within this root folder will be displayed
+     * and all folder paths will be translated using this folder name
+     *
+     * @param  string   Root folder
+     * @access public
+     * @return void
+     */
+    function set_rootdir($root)
+    {
+        if (ereg('[\.\/]$', $root)) {
+            // (substr($root, -1, 1)==='/')
+            $root = substr($root, 0, -1);
+        }
+        $this->root_dir = $root;
+
+        if (empty($this->delimiter)) {
+            $this->get_hierarchy_delimiter();
+        }
+    }
+
+
+    /**
+     * This list of folders will be listed above all other folders
+     *
+     * @param  array  Indexed list of folder names
+     * @access public
+     */
+    function set_default_mailboxes($arr)
+    {
+        if (is_array($arr)) {
+            $this->default_folders = $arr;
+            $this->default_folders_lc = array();
+
+            // add inbox if not included
+            if (!in_array_nocase('INBOX', $this->default_folders)) {
+                array_unshift($this->default_folders, 'INBOX');
+            }
+            // create a second list with lower cased names
+            foreach ($this->default_folders as $mbox) {
+                $this->default_folders_lc[] = strtolower($mbox);
+            }
+        }
+    }
+
+
+    /**
+     * Set internal mailbox reference.
+     *
+     * All operations will be perfomed on this mailbox/folder
+     *
+     * @param  string  Mailbox/Folder name
+     * @access public
+     */
+    function set_mailbox($new_mbox)
+    {
+        $mailbox = $this->_mod_mailbox($new_mbox);
+
+        if ($this->mailbox == $mailbox) {
+            return;
+        }
+        $this->mailbox = $mailbox;
+
+        // clear messagecount cache for this mailbox
+        $this->_clear_messagecount($mailbox);
+    }
+
+
+    /**
+     * Set internal list page
+     *
+     * @param  number  Page number to list
+     * @access public
+     */
+    function set_page($page)
+    {
+        $this->list_page = (int)$page;
+    }
+
+
+    /**
+     * Set internal page size
+     *
+     * @param  number  Number of messages to display on one page
+     * @access public
+     */
+    function set_pagesize($size)
+    {
+        $this->page_size = (int)$size;
+    }
+
+
+    /**
+     * Save a set of message ids for future message listing methods
+     *
+     * @param  array  List of IMAP fields to search in
+     * @param  string Search string
+     * @param  array  List of message ids or NULL if empty
+     */
+    function set_search_set($subject, $str=null, $msgs=null, $charset=null)
+    {
+        if (is_array($subject) && $str == null && $msgs == null) {
+            list($subject, $str, $msgs, $charset) = $subject;
+        }
+        if ($msgs != null && !is_array($msgs)) {
+            $msgs = split(',', $msgs);
+        }
+        $this->search_subject = $subject;
+        $this->search_string = $str;
+        $this->search_set = is_array($msgs) ? $msgs : NULL;
+        $this->search_charset = $charset;
+    }
+
+
+    /**
+     * Return the saved search set as hash array
+     */
+    function get_search_set()
+    {
+        return array(
+                $this->search_subject,
+                $this->search_string,
+                $this->search_set,
+                $this->search_charset
+        );
+    }
+
+
+    /**
+     * Returns the currently used mailbox name
+     *
+     * @return  string Name of the mailbox/folder
+     * @access  public
+     */
+    function get_mailbox_name()
+    {
+        return $this->conn ? $this->_mod_mailbox($this->mailbox, 'out') : '';
+    }
+
+
+    /**
+     * Returns the IMAP server's capability
+     *
+     * @param   string  Capability name
+     * @return  mixed   Capability value or TRUE if supported, FALSE if not
+     * @access  public
+     */
+    function get_capability($cap)
+    {
+        $cap = strtoupper($cap);
+        return $this->capabilities[$cap];
+    }
+
+
+    /**
+     * Returns the delimiter that is used by the IMAP server for folder separation
+     *
+     * @return  string  Delimiter string
+     * @access  public
+     */
+    function get_hierarchy_delimiter()
+    {
+        if ($this->conn && empty($this->delimiter)) {
+            $this->delimiter = iil_C_GetHierarchyDelimiter($this->conn);
+        }
+        if (empty($this->delimiter)) {
+            $this->delimiter = '/';
+        }
+        return $this->delimiter;
+    }
+
+
+    /**
+     * Public method for mailbox listing.
+     *
+     * Converts mailbox name with root dir first
+     *
+     * @param   string  Optional root folder
+     * @param   string  Optional filter for mailbox listing
+     * @return  array   List of mailboxes/folders
+     * @access  public
+     */
+    function list_mailboxes($root='', $filter='*')
+    {
+        $a_out = array();
+        $a_mboxes = $this->_list_mailboxes($root, $filter);
+
+        foreach ($a_mboxes as $mbox_row) {
+            $name = $this->_mod_mailbox($mbox_row, 'out');
+            if (empty($name) === false) {
+                $a_out[] = $name;
+            }
+            else {
+                tfk_debug('Filtered out: ' . $mbox_row);
+            }
+        }
+
+        // INBOX should always be available
+        if (!in_array_nocase('INBOX', $a_out)) {
+            array_unshift($a_out, 'INBOX');
+        }
+
+        // sort mailboxes
+        $a_out = $this->_sort_mailbox_list($a_out);
+
+        return $a_out;
+    }
+
+
+    /**
+     * Private method for mailbox listing
+     *
+     * @return  array   List of mailboxes/folders
+     * @access  private
+     * @see     rcube_imap::list_mailboxes
+     */
+    function _list_mailboxes($root='', $filter='*')
+    {
+        global $CONFIG;
+
+        $a_defaults = $a_out = array();
+
+        // get cached folder list
+        $a_mboxes = $this->get_cache('mailboxes');
+        if (is_array($a_mboxes) === true) {
+            return $a_mboxes;
+        }
+        if (isset($CONFIG['display_all_mailboxes']) === false || $CONFIG['display_all_mailboxes'] == FALSE) {
+            // retrieve list of folders from IMAP server
+            $a_folders = iil_C_ListSubscribed(
+                            $this->conn,
+                            $this->_mod_mailbox($root),
+                            $filter
+            );
+            if (is_array($a_folders) === false || !sizeof($a_folders)) {
+                $a_folders = array();
+            }
+        }
+        else {
+            $a_folders = $this->list_unsubscribed($root);
+        }
+        // write mailboxlist to cache
+        $this->update_cache('mailboxes', $a_folders);
+
+        return $a_folders;
+    }
+
+
+    /**
+     * Get message count for a specific mailbox
+     *
+     * @param   string   Mailbox/folder name
+     * @param   string   Mode for count [ALL|UNSEEN|RECENT]
+     * @param   boolean  Force reading from server and update cache
+     * @return  number   Number of messages
+     * @access  public
+     */
+    function messagecount($mbox_name='', $mode='ALL', $force=FALSE)
+    {
+        $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
+        return $this->_messagecount($mailbox, $mode, $force);
+    }
+
+
+    /**
+     * Private method for getting nr of messages
+     *
+     * @access  private
+     * @see     rcube_imap::messagecount
+     */
+    function _messagecount($mailbox='', $mode='ALL', $force=FALSE)
+    {
+        $a_mailbox_cache = FALSE;
+        $mode = strtoupper($mode);
+
+        if (empty($mailbox)) {
+            $mailbox = $this->mailbox;
+        }
+        // count search set
+        if ($this->search_set && $mailbox == $this->mailbox && $mode == 'ALL') {
+            return count($this->search_set);
+        }
+        $a_mailbox_cache = $this->get_cache('messagecount');
+
+        // return cached value
+        if (!$force && is_array($a_mailbox_cache[$mailbox]) && isset($a_mailbox_cache[$mailbox][$mode])) {
+            return $a_mailbox_cache[$mailbox][$mode];
+        }
+        // RECENT count is fetched abit different
+        if ($mode == 'RECENT') {
+            $count = iil_C_CheckForRecent($this->conn, $mailbox);
+        }
+        // use SEARCH for message counting
+        else if ($this->skip_deleted)
+        {
+            $search_str = "ALL UNDELETED";
+
+            // get message count and store in cache
+            if ($mode == 'UNSEEN') {
+                $search_str .= " UNSEEN";
+            }
+            // get message count using SEARCH
+            // not very performant but more precise (using UNDELETED)
+            $count = 0;
+            $index = $this->_search_index($mailbox, $search_str);
+            if (is_array($index) === TRUE) {
+                $str = implode(",", $index);
+                if (!empty($str)) {
+                    $count = count($index);
+                }
+            }
+        }
+        else {
+            if ($mode == 'UNSEEN') {
+                $count = iil_C_CountUnseen($this->conn, $mailbox);
+            }
+            else {
+                $count = iil_C_CountMessages($this->conn, $mailbox);
+            }
+        }
+
+        if (!is_array($a_mailbox_cache[$mailbox])) {
+            $a_mailbox_cache[$mailbox] = array();
+        }
+        $a_mailbox_cache[$mailbox][$mode] = (int)$count;
+
+        // write back to cache
+        $this->update_cache('messagecount', $a_mailbox_cache);
+
+        return (int)$count;
     }
 
 
@@ -628,42 +661,56 @@ class rcube_imap
     }
 
 
-  /**
-   * Private method for listing a set of message headers
-   *
-   * @access  private
-   * @see     rcube_imap::list_header_set
-   */
-  function _list_header_set($mailbox, $msgs, $page=NULL, $sort_field=NULL, $sort_order=NULL)
+    /**
+     * Private method for listing a set of message headers
+     *
+     * @access  private
+     * @see     rcube_imap::list_header_set
+     */
+    function _list_header_set($mailbox, $msgs, $page=NULL, $sort_field=NULL, $sort_order=NULL)
     {
-    // also accept a comma-separated list of message ids
-    if (is_string($msgs))
-      $msgs = split(',', $msgs);
+        // also accept a comma-separated list of message ids
+        if (is_string($msgs)) {
+            $msgs = split(',', $msgs);
+        }
+        if (!strlen($mailbox) || empty($msgs)) {
+            return array();
+        }
+        if ($sort_field!=NULL) {
+            $this->sort_field = $sort_field;
+        }
+        if ($sort_order!=NULL) {
+            $this->sort_order = strtoupper($sort_order);
+        }
+        $max = count($msgs);
+        $start_msg = ($this->list_page-1) * $this->page_size;
 
-    if (!strlen($mailbox) || empty($msgs))
-      return array();
+        // fetch reuested headers from server
+        $a_msg_headers = array();
+        $this->_fetch_headers(
+                    $mailbox,
+                    join(',', $msgs),
+                    $a_msg_headers,
+                    NULL
+        );
 
-    if ($sort_field!=NULL)
-      $this->sort_field = $sort_field;
-    if ($sort_order!=NULL)
-      $this->sort_order = strtoupper($sort_order);
+        // return empty array if no messages found
+        if (!is_array($a_msg_headers) || empty($a_msg_headers))
+            return array();
 
-    $max = count($msgs);
-    $start_msg = ($this->list_page-1) * $this->page_size;
+        // if not already sorted
+        $a_msg_headers = iil_SortHeaders(
+                            $a_msg_headers,
+                            $this->sort_field,
+                            $this->sort_order
+        );
 
-    // fetch reuested headers from server
-    $a_msg_headers = array();
-    $this->_fetch_headers($mailbox, join(',', $msgs), $a_msg_headers, NULL);
-
-    // return empty array if no messages found
-    if (!is_array($a_msg_headers) || empty($a_msg_headers))
-      return array();
-
-    // if not already sorted
-    $a_msg_headers = iil_SortHeaders($a_msg_headers, $this->sort_field, $this->sort_order);
-
-    // only return the requested part of the set
-    return array_slice(array_values($a_msg_headers), $start_msg, min($max-$start_msg, $this->page_size));
+        // only return the requested part of the set
+        return array_slice(
+                    array_values($a_msg_headers),
+                    $start_msg,
+                    min($max-$start_msg, $this->page_size)
+        );
     }
 
 
@@ -1535,33 +1582,33 @@ class rcube_imap
    * --------------------------------*/
 
 
-  /**
-   * Get a list of all folders available on the IMAP server
-   *
-   * @param string IMAP root dir
-   * @return array Inbdexed array with folder names
-   */
-  function list_unsubscribed($root='')
+    /**
+     * Get a list of all folders available on the IMAP server
+     *
+     * @param string IMAP root dir
+     * @return array Inbdexed array with folder names
+     */
+    function list_unsubscribed($root='')
     {
-    static $sa_unsubscribed;
+        static $sa_unsubscribed;
 
-    if (is_array($sa_unsubscribed))
-      return $sa_unsubscribed;
+        if (is_array($sa_unsubscribed)) {
+            return $sa_unsubscribed;
+        }
+        // retrieve list of folders from IMAP server
+        $a_mboxes = iil_C_ListMailboxes($this->conn, $this->_mod_mailbox($root), '*');
 
-    // retrieve list of folders from IMAP server
-    $a_mboxes = iil_C_ListMailboxes($this->conn, $this->_mod_mailbox($root), '*');
+        // modify names with root dir
+        foreach ($a_mboxes as $mbox_name) {
+            $name = $this->_mod_mailbox($mbox_name, 'out');
+            if (empty($name) === false) {
+                $a_folders[] = $name;
+            }
+        }
 
-    // modify names with root dir
-    foreach ($a_mboxes as $mbox_name)
-      {
-      $name = $this->_mod_mailbox($mbox_name, 'out');
-      if (strlen($name))
-        $a_folders[] = $name;
-      }
-
-    // filter folders and sort them
-    $sa_unsubscribed = $this->_sort_mailbox_list($a_folders);
-    return $sa_unsubscribed;
+        // filter folders and sort them
+        $sa_unsubscribed = $this->_sort_mailbox_list($a_folders);
+        return $sa_unsubscribed;
     }
 
 
@@ -1608,34 +1655,34 @@ class rcube_imap
     }
 
 
-  /**
-   * Create a new mailbox on the server and register it in local cache
-   *
-   * @param string  New mailbox name (as utf-7 string)
-   * @param boolean True if the new mailbox should be subscribed
-   * @param string  Name of the created mailbox, false on error
-   */
-  function create_mailbox($name, $subscribe=FALSE)
+    /**
+     * Create a new mailbox on the server and register it in local cache
+     *
+     * @param string  New mailbox name (as utf-7 string)
+     * @param boolean True if the new mailbox should be subscribed
+     * @param string  Name of the created mailbox, false on error
+     */
+    function create_mailbox($name, $subscribe=FALSE)
     {
-    $result = FALSE;
+        $result = FALSE;
 
-    // replace backslashes
-    $name = preg_replace('/[\\\]+/', '-', $name);
+        // replace backslashes
+        $name = preg_replace('/[\\\]+/', '-', $name);
 
-    // reduce mailbox name to 100 chars
-    $name = substr($name, 0, 100);
+        // reduce mailbox name to 100 chars
+        $name = substr($name, 0, 100);
 
-    $abs_name = $this->_mod_mailbox($name);
-    $a_mailbox_cache = $this->get_cache('mailboxes');
+        $abs_name = $this->_mod_mailbox($name);
+        $a_mailbox_cache = $this->get_cache('mailboxes');
 
-    if (strlen($abs_name) && (!is_array($a_mailbox_cache) || !in_array_nocase($abs_name, $a_mailbox_cache)))
-      $result = iil_C_CreateFolder($this->conn, $abs_name);
+        if (strlen($abs_name) && (!is_array($a_mailbox_cache) || !in_array_nocase($abs_name, $a_mailbox_cache)))
+            $result = iil_C_CreateFolder($this->conn, $abs_name);
 
-    // try to subscribe it
-    if ($subscribe)
-      $this->subscribe($name);
+        // try to subscribe it
+        if ($subscribe)
+            $this->subscribe($name);
 
-    return $result ? $name : FALSE;
+        return $result ? $name : FALSE;
     }
 
 

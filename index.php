@@ -66,7 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     tfk_debug(var_export($_POST, true));
     tfk_debug(var_export($_GET, true));
 }
-
+else {
+    tfk_debug('We are GET.');
+}
 
 // application constants
 define('RCMAIL_VERSION', 'devel-vnext (0.1-rc1)');
@@ -97,7 +99,12 @@ if (!defined('PATH_SEPARATOR')) {
 // RC include folders MUST be included FIRST to avoid other
 // possible not compatible libraries (i.e PEAR) to be included
 // instead the ones provided by RC
-ini_set('include_path', $INSTALL_PATH.PATH_SEPARATOR.$INSTALL_PATH.'program'.PATH_SEPARATOR.$INSTALL_PATH.'program/lib'.PATH_SEPARATOR.ini_get('include_path'));
+$include_path = $INSTALL_PATH . PATH_SEPARATOR;
+$include_path.= $INSTALL_PATH . 'program' . PATH_SEPARATOR;
+$include_path.= $INSTALL_PATH . 'program/lib' . PATH_SEPARATOR;
+$include_path.= ini_get('include_path');
+
+ini_set('include_path', $include_path);
 
 ini_set('session.name', 'sessid');
 ini_set('session.use_cookies', 1);
@@ -111,6 +118,8 @@ if (!ini_get('safe_mode')) {
     @set_time_limit(120);
 }
 
+tfk_debug('About to include files.');
+
 // include base files
 require_once 'include/rcube_shared.inc';
 require_once 'include/rcube_imap.inc';
@@ -119,13 +128,14 @@ require_once 'include/main.inc';
 require_once 'include/cache.inc';
 require_once 'PEAR.php';
 
+tfk_debug('Passed!');
 
 // set PEAR error handling
 // PEAR::setErrorHandling(PEAR_ERROR_TRIGGER, E_USER_NOTICE);
 
 
 // catch some url/post parameters
-$_task = strip_quotes(get_input_value('_task', RCUBE_INPUT_GPC));
+$_task   = strip_quotes(get_input_value('_task', RCUBE_INPUT_GPC));
 $_action = strip_quotes(get_input_value('_action', RCUBE_INPUT_GPC));
 $_framed = (!empty($_GET['_framed']) || !empty($_POST['_framed']));
 
@@ -148,6 +158,8 @@ if ($_action != 'get' && $_action != 'viewsource') {
 
 // start session with requested task
 rcmail_startup($_task);
+
+tfk_debug('// rcmail_startup');
 
 // set session related variables
 $COMM_PATH = sprintf('./?_task=%s', $_task);
@@ -356,6 +368,8 @@ if ($_task == 'mail') {
             }
             break;
     }
+
+    tfk_debug('Mail: ' . $_name);
 
     // make sure the message count is refreshed
     $IMAP->messagecount($_SESSION['mbox'], 'ALL', TRUE);
