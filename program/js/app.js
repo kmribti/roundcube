@@ -1680,7 +1680,7 @@ function rcube_webmail()
       }
 
     // check for empty body
-    if ((input_message.value=='')&&(tinyMCE.getContent()==''))
+    if (input_message.value=='')
       {
       if (!confirm(this.get_label('nobodywarning')))
         {
