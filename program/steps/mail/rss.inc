@@ -1,5 +1,4 @@
 <?php
-
 /*
  +-----------------------------------------------------------------------+
  | program/steps/mail/rss.inc                                            |
@@ -19,29 +18,41 @@
 
 */
 
-require_once('Mail/mimeDecode.php');
+require_once 'Mail/mimeDecode.php';
 
 
-function rss_encode($string){
-	$string = rep_specialchars_output($string, 'xml');
+/**
+ * rss_encode
+ *
+ * @access public
+ * @param  string $string
+ * @uses   rc_main::rep_specialchars_output()
+ * @return string
+ */
+function rss_encode($string) {
+	$string = rc_main::rep_specialchars_output($string, 'xml');
 	return $string;
 }
-
-
 
 $REMOTE_REQUEST = TRUE;
 $OUTPUT_TYPE = 'rss';
 
-$webmail_url = 'http';
-if (strstr('HTTPS', $_SERVER['SERVER_PROTOCOL'] )!== FALSE)
-  $webmail_url .= 's';
-$webmail_url .= '://'.$_SERVER['SERVER_NAME'];
-if ($_SERVER['SERVER_PORT'] != '80')
-	$webmail_url .= ':'.$_SERVER['SERVER_PORT'];
-$webmail_url .= '/';
-if (dirname($_SERVER['SCRIPT_NAME']) != '/')
-	$webmail_url .= dirname($_SERVER['SCRIPT_NAME']).'/';
+$registry = rc_registry::getInstance();
+$registry->set('REMOTE_REQUEST', $REMOTE_REQUEST, 'core');
+$registry->set('OUTPUT_TYPE', $OUTPUT_TYPE, 'core');
 
+$webmail_url = 'http';
+if (strstr('HTTPS', $_SERVER['SERVER_PROTOCOL'] )!== FALSE) {
+  $webmail_url .= 's';
+}
+$webmail_url .= '://'.$_SERVER['SERVER_NAME'];
+if ($_SERVER['SERVER_PORT'] != '80') {
+	$webmail_url .= ':'.$_SERVER['SERVER_PORT'];
+}
+$webmail_url .= '/';
+if (dirname($_SERVER['SCRIPT_NAME']) != '/') {
+	$webmail_url .= dirname($_SERVER['SCRIPT_NAME']).'/';
+}
 $webmail_url .= '?_task=mail';
 
 $messagecount_unread = $IMAP->messagecount('INBOX', 'UNSEEN', TRUE);
@@ -78,26 +89,26 @@ echo '
 		</image>';
 
 // Check if the user wants to override the default sortingmethode
-if (isset($_GET['_sort']))
-  list($sort_col, $sort_order) = explode('_', $_GET['_sort']);
+if (isset($_GET['_sort'])) {
+    list($sort_col, $sort_order) = explode('_', $_GET['_sort']);
+}
 
 // Add message to output
-if ($messagecount > 0)
-  {
-  $items = $IMAP->list_headers('INBOX', null, $sort_col, $sort_order);
-  foreach ($items as $item)
+if ($messagecount > 0) {
+    $items = $IMAP->list_headers('INBOX', null, $sort_col, $sort_order);
+    foreach ($items as $item)
     {
 
-    // Convert '"name" <email>' to 'email (name)'
-    if (strstr($item->from, '<'))
-      $item->from = preg_replace('~"?([^"]*)"? <([^>]*)>~', '\2 (\1)', $item->from);
+        // Convert '"name" <email>' to 'email (name)'
+        if (strstr($item->from, '<')) {
+            $item->from = preg_replace('~"?([^"]*)"? <([^>]*)>~', '\2 (\1)', $item->from);
+        }
+        $item->link = $webmail_url.'&_task=mail&_action=show&_uid='.$item->uid.'&_mbox=INBOX';
 
-    $item->link = $webmail_url.'&_task=mail&_action=show&_uid='.$item->uid.'&_mbox=INBOX';
+        $item->body = $IMAP->get_body($item->uid);
 
-    $item->body = $IMAP->get_body($item->uid);
-
-    // Print the actual messages
-    echo '
+        // Print the actual messages
+        echo '
 			<item>
 				<title>'.rss_encode($item->subject).'</title>
 				<link>'.rss_encode($item->link).'</link>
@@ -108,7 +119,7 @@ if ($messagecount > 0)
 				<pubDate>'.date('r', $item->timestamp).'</pubDate>
 			</item>';
     }
-  }
+}
 
 echo '</channel>
 </rss>';

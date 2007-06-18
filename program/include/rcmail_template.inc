@@ -20,7 +20,7 @@
 
 */
 
-require_once 'include/rcube_shared.inc';
+require_once dirname(__FILE__) . '/rcube_shared.inc';
 
 /**
  * rcmail_template
@@ -52,7 +52,7 @@ class rcmail_template extends rcube_html_page
      * @param  string $task
      * @todo   Use jQuery's $(document).ready() here.
      */
-    function __construct(&$config, $task)
+    function __construct($config, $task)
     {
         parent::__construct();
 
@@ -75,11 +75,12 @@ class rcmail_template extends rcube_html_page
         }
     }
 
+    /*
     // PHP 4 compatibility
     function rcmail_template(&$config, $task)
     {
         $this->__construct($config, $task);
-    }
+    }*/
 
 
     /**
@@ -181,21 +182,20 @@ class rcmail_template extends rcube_html_page
    * @param string  Template name
    * @param boolean True if script should terminate (default)
    */
-  function send($templ=null, $exit=true)
-  {
-    if ($this->ajax_call)
-      $this->remote_response('', !$exit);
-    else if ($templ != 'iframe')
-      $this->parse($templ, false);
-    else
+    function send($templ=null, $exit=true)
     {
-      $this->framed = $templ == 'iframe' ? true : $this->framed;
-      $this->write();
-    }
+        if ($this->ajax_call)
+            $this->remote_response('', !$exit);
+        else if ($templ != 'iframe')
+            $this->parse($templ, false);
+        else {
+            $this->framed = $templ == 'iframe' ? true : $this->framed;
+            $this->write();
+        }
 
-    if ($exit)
-      exit;
-  }
+        if ($exit)
+            exit;
+    }
 
 
   /**
@@ -256,6 +256,8 @@ class rcmail_template extends rcube_html_page
     function parse($name='main', $exit=true)
     {
         $skin_path = $this->config['skin_path'];
+
+        //rc_main::tfk_debug(var_export($this->config, true));
 
         // read template file
         $templ = '';
@@ -363,7 +365,7 @@ class rcmail_template extends rcube_html_page
             if (preg_match('/^(else|endif)$/i', $matches[1])) {
                 return $matches[0] . $this->parse_conditions($matches[3]);
             }
-            $attrib = parse_attrib_string($matches[2]);
+            $attrib = rc_main::parse_attrib_string($matches[2]);
             if (isset($attrib['condition'])) {
                 $condmet = $this->check_condition($attrib['condition']);
                 $submatches = preg_split('/<roundcube:(elseif|else|endif)\s+([^>]+)>/is', $matches[3], 2, PREG_SPLIT_DELIM_CAPTURE);
@@ -435,7 +437,7 @@ class rcmail_template extends rcube_html_page
     function xml_command($command, $str_attrib, $add_attrib=array())
     {
         $command = strtolower($command);
-        $attrib = parse_attrib_string($str_attrib) + $add_attrib;
+        $attrib  = rc_main::parse_attrib_string($str_attrib) + $add_attrib;
 
         // empty output if required condition is not met
         if (!empty($attrib['condition']) && !$this->check_condition($attrib['condition'])) {
@@ -453,7 +455,7 @@ class rcmail_template extends rcube_html_page
             // show a label
             case 'label':
                 if ($attrib['name'] || $attrib['command'])
-                    return Q(rcube_label($attrib + array('vars' => array('product' => $this->config['product_name']))));
+                    return rc_main::Q(rcube_label($attrib + array('vars' => array('product' => $this->config['product_name']))));
                 break;
 
             // include a file
@@ -479,7 +481,7 @@ class rcmail_template extends rcube_html_page
                 }
                 if ($object=='productname') {
                     $name = !empty($this->config['product_name']) ? $this->config['product_name'] : 'RoundCube Webmail';
-                    return Q($name);
+                    return rc_main::Q($name);
                 }
                 if ($object=='version') {
                     return (string)RCMAIL_VERSION;
@@ -495,7 +497,7 @@ class rcmail_template extends rcube_html_page
                     else
                         $title .= ucfirst($task);
 
-                    return Q($title);
+                    return rc_main::Q($title);
                 }
                 break;
         }
@@ -567,13 +569,13 @@ class rcmail_template extends rcube_html_page
         }
         // get localized text for labels and titles
         if ($attrib['title']) {
-            $attrib['title'] = Q(rcube_label($attrib['title']));
+            $attrib['title'] = rc_main::Q(rcube_label($attrib['title']));
         }
         if ($attrib['label']) {
-            $attrib['label'] = Q(rcube_label($attrib['label']));
+            $attrib['label'] = rc_main::Q(rcube_label($attrib['label']));
         }
         if ($attrib['alt']) {
-            $attrib['alt'] = Q(rcube_label($attrib['alt']));
+            $attrib['alt'] = rc_main::Q(rcube_label($attrib['alt']));
         }
         // set title to alt attribute for IE browsers
         if ($BROWSER['ie'] && $attrib['title'] && !$attrib['alt']) {
@@ -604,10 +606,10 @@ class rcmail_template extends rcube_html_page
 
             // make valid href to specific buttons
             if (in_array($attrib['command'], $MAIN_TASKS)) {
-                $attrib['href'] = Q(rcmail_url(null, null, $attrib['command']));
+                $attrib['href'] = rc_main::Q(rcmail_url(null, null, $attrib['command']));
             }
             else if (in_array($attrib['command'], $a_static_commands)) {
-                $attrib['href'] = Q(rcmail_url($attrib['command']));
+                $attrib['href'] = rc_main::Q(rcmail_url($attrib['command']));
             }
         }
 

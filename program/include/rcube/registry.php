@@ -1,8 +1,9 @@
 <?php
 /**
- * rcRegistry
+ * rc_registry
  *
- * Implements a singleton.
+ * Implements a singleton-style registry for roundcube and plugins
+ * to store variables not in the global scope.
  *
  * @final
  * @author Till Klampaeckel <till@php.net>
@@ -10,17 +11,18 @@
  */
 class rc_registry
 {
-    var $holder = null;
+    /**
+     * @var    rc_registry
+     * @access private
+     * @access static
+     */
+    private static $registry;
 
     /**
-     * rc_registry
-     *
-     * @return false
+     * @access protected
+     * @var    array
      */
-    function rc_registry()
-    {
-        return false;
-    }
+    protected $holder = null;
 
     /**
      * __construct
@@ -28,9 +30,8 @@ class rc_registry
      * @uses   rc_registry::rc_registry()
      * @return false
      */
-    function __construct()
+    private function __construct()
     {
-        return $this->rc_registry();
     }
 
     /**
@@ -41,14 +42,13 @@ class rc_registry
      * @access static
      * @return rc_registry
      */
-    function getInstance()
+    static function getInstance()
     {
-        static $registry = null;
-        if (is_null($registry) === true)
+        if (is_null(self::$registry) === true)
         {
-            $registry = new rc_registry;
+            self::$registry = new rc_registry;
         }
-        return $registry;
+        return self::$registry;
     }
 
     /**
@@ -57,29 +57,28 @@ class rc_registry
      * Saves a variable (by name and value) into the registry. Also takes an
      * optional argument $ns (namespace).
      *
-     * Returns boolean - true on success, false if things go wrong.
+     * Returns boolean (false) if things go wrong, otherwise the value of the
+     * variable.
      *
      * @access public
      * @param  string $var
      * @param  mixed $val
      * @param  string $ns
-     * @return boolean
+     * @return mixed
      * @uses   rc_registry::$holder
      */
-    function set($var, $val = '', $ns = null)
+    public function set($var, $val = '', $ns = null)
     {
         if (empty($var) === true) {
             return false;
         }
         if (is_null($ns) === true) {
-            $this->holder[$var] = $val;
-            return true;
+            return $this->holder[$var] = $val;
         }
         if (isset($this->holder[$ns]) === false) {
             $this->holder[$ns] = array();
         }
-        $this->holder[$ns][$var] = $val;
-        return true;
+        return $this->holder[$ns][$var] = $val;
     }
 
     /**
@@ -95,19 +94,19 @@ class rc_registry
      * @return mixed
      * @uses   rc_registry::$holder
      */
-    function get($var, $ns = null)
+    public function get($var, $ns = null)
     {
         if (empty($var) === true) {
             return false;
         }
         if (is_null($ns) === true) {
             if (isset($this->holder[$var]) === false) {
-                return false;
+                return null;
             }
             return $this->holder[$var];
         }
         if (isset($this->holder[$ns]) === false) {
-            return false;
+            return null;
         }
         if (isset($this->holder[$ns][$var]) === false) {
             return false;
@@ -125,7 +124,7 @@ class rc_registry
      * @uses   rc_registry::$holder
      * @see    rc_registry::__destruct
      */
-    function purge()
+    public function purge()
     {
         $this->holder = null;
         return true;
@@ -139,7 +138,7 @@ class rc_registry
      * @access public
      * @return mixed
      */
-    function getAll()
+    public function getAll()
     {
         if (is_null($this->holder) === true) {
             return false;
@@ -153,7 +152,7 @@ class rc_registry
      * @return boolean
      * @uses   rc_registry::purge()
      */
-    function __destruct()
+    public function __destruct()
     {
         return $this->purge();
     }

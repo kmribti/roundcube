@@ -40,85 +40,8 @@
 
 */
 
-/**
- * tfk_debug
- *
- * @param string $str
- * @ignore
- */
-function tfk_debug($str)
-{
-    $str = "\n\n" . @date('Y-m-d H:i:s') . "\n" . $str;
-    $fp = @fopen(dirname(__FILE__) . '/logs/debug.tfk', 'a');
-    if ($fp !== false) {
-        @fwrite($fp, $str);
-        @fclose($fp);
-    } else {
-        die('Could not open logs/debug.tfk.');
-    }
-}
-/**
- * log all $_POST
- * @author Till Klampaeckel <till@php.net>
- * @ignore
- */
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    tfk_debug(var_export($_POST, true));
-    tfk_debug(var_export($_GET, true));
-}
-else {
-    tfk_debug('We are GET.');
-}
-
-// application constants
-define('RCMAIL_VERSION', 'devel-vnext (0.1-rc1)');
-define('RCMAIL_CHARSET', 'UTF-8');
-define('JS_OBJECT_NAME', 'rcmail');
-
-// define global vars
-$OUTPUT_TYPE  = 'html';
 $INSTALL_PATH = dirname(__FILE__);
-$MAIN_TASKS   = array(
-                    'mail',
-                    'settings',
-                    'logout'
-); // addressbook
-
-if (empty($INSTALL_PATH)) {
-    $INSTALL_PATH = './';
-}
-else {
-    $INSTALL_PATH .= '/';
-}
-
-// make sure path_separator is defined
-if (!defined('PATH_SEPARATOR')) {
-    define('PATH_SEPARATOR', (eregi('win', PHP_OS) ? ';' : ':'));
-}
-
-// RC include folders MUST be included FIRST to avoid other
-// possible not compatible libraries (i.e PEAR) to be included
-// instead the ones provided by RC
-$include_path = $INSTALL_PATH . PATH_SEPARATOR;
-$include_path.= $INSTALL_PATH . 'program' . PATH_SEPARATOR;
-$include_path.= $INSTALL_PATH . 'program/lib' . PATH_SEPARATOR;
-$include_path.= ini_get('include_path');
-
-ini_set('include_path', $include_path);
-
-ini_set('session.name', 'sessid');
-ini_set('session.use_cookies', 1);
-ini_set('session.gc_maxlifetime', 21600);
-ini_set('session.gc_divisor', 500);
-ini_set('error_reporting', E_ALL&~E_NOTICE);
-
-// increase maximum execution time for php scripts
-// (does not work in safe mode)
-if (!ini_get('safe_mode')) {
-    @set_time_limit(120);
-}
-
-tfk_debug('About to include files.');
+require_once dirname(__FILE__) . '/program/include/bootstrap.php';
 
 // include base files
 require_once 'include/rcube_shared.inc';
@@ -128,15 +51,33 @@ require_once 'include/main.inc';
 require_once 'include/cache.inc';
 require_once 'PEAR.php';
 
-tfk_debug('Passed!');
+$registry = rc_registry::getInstance();
+$registry->set('INSTALL_PATH', $INSTALL_PATH, 'core');
+$registry->set('s_mbstring_loaded', null, 'core');
+$registry->set('sa_languages', null, 'core');
+
+/**
+ * log all $_POST
+ * @author Till Klampaeckel <till@php.net>
+ * @ignore
+ */
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    rc_main::tfk_debug(var_export($_POST, true));
+    rc_main::tfk_debug(var_export($_GET, true));
+}
+else {
+    rc_main::tfk_debug('We are GET.');
+}
+
+rc_main::tfk_debug('Included all files!');
 
 // set PEAR error handling
 // PEAR::setErrorHandling(PEAR_ERROR_TRIGGER, E_USER_NOTICE);
 
 
 // catch some url/post parameters
-$_task   = strip_quotes(get_input_value('_task', RCUBE_INPUT_GPC));
-$_action = strip_quotes(get_input_value('_action', RCUBE_INPUT_GPC));
+$_task   = rc_main::strip_quotes(rc_main::get_input_value('_task', RCUBE_INPUT_GPC));
+$_action = rc_main::strip_quotes(rc_main::get_input_value('_action', RCUBE_INPUT_GPC));
 $_framed = (!empty($_GET['_framed']) || !empty($_POST['_framed']));
 
 // use main task if empty or invalid value
@@ -157,9 +98,9 @@ if ($_action != 'get' && $_action != 'viewsource') {
 
 
 // start session with requested task
-rcmail_startup($_task);
+rc_main::rcmail_startup($_task);
 
-tfk_debug('// rcmail_startup');
+rc_main::tfk_debug('// rcmail_startup');
 
 // set session related variables
 $COMM_PATH = sprintf('./?_task=%s', $_task);
@@ -171,11 +112,17 @@ if ($_framed) {
     $COMM_PATH .= '&_framed=1';
     $SESS_HIDDEN_FIELD .= "\n".'<input type="hidden" name="_framed" value="1" />';
 }
-
+$registry->set('COMM_PATH', $COMM_PATH, 'core');
+$registry->set('SESS_HIDDEN_FIELD', $SESS_HIDDEN_FIELD, 'core');
+$registry->set('s_username', '', 'core');
 
 // init necessary objects for GUI
-rcmail_load_gui();
+rc_main::rcmail_load_gui();
 
+rc_main::tfk_debug('// rcmail_load_gui');
+
+$OUTPUT     = $registry->get('OUTPUT', 'core');
+$DB         = $registry->get('DB', 'core');
 
 // check DB connections and exit on failure
 if ($err_str = $DB->is_error()) {
@@ -184,22 +131,29 @@ if ($err_str = $DB->is_error()) {
         'type' => 'db',
         'message' => $err_str), FALSE, TRUE
     );
+
+    rc_main::tfk_debug('// DB ERROR');
 }
 
+rc_main::tfk_debug('// NO DB ERROR');
 
 // error steps
 if ($_action=='error' && !empty($_GET['_code'])) {
     raise_error(array('code' => hexdec($_GET['_code'])), FALSE, TRUE);
 }
 
+rc_main::tfk_debug('// going');
+
+rc_main::tfk_debug("task {$_task} / action {$_action}");
+
 // try to log in
 if ($_action=='login' && $_task=='mail') {
 
-    tfk_debug('Here we go, a login.');
+    rc_main::tfk_debug('Here we go, a login.');
 
-    $host = rcmail_autoselect_host();
+    $host = rc_main::rcmail_autoselect_host();
 
-    tfk_debug('Selected host: ' . $host);
+    rc_main::tfk_debug('Selected host: ' . $host);
 
     // check if client supports cookies
     if (empty($_COOKIE)) {
@@ -209,9 +163,9 @@ if ($_action=='login' && $_task=='mail') {
         $_SESSION['temp']
         && !empty($_POST['_user'])
         && isset($_POST['_pass'])
-        && rcmail_login(
-                get_input_value('_user', RCUBE_INPUT_POST),
-                get_input_value('_pass', RCUBE_INPUT_POST, true, 'ISO-8859-1'),
+        && rc_main::rcmail_login(
+                rc_main::get_input_value('_user', RCUBE_INPUT_POST),
+                rc_main::get_input_value('_pass', RCUBE_INPUT_POST, true, 'ISO-8859-1'),
                 $host
         )
     ) {
@@ -219,10 +173,10 @@ if ($_action=='login' && $_task=='mail') {
         unset($_SESSION['temp']);
         sess_regenerate_id();
 
-        tfk_debug('Yay, we log in.');
+        rc_main::tfk_debug('Yay, we log in.');
 
         // send auth cookie if necessary
-        rcmail_authenticate_session();
+        rc_main::rcmail_authenticate_session();
 
         // send redirect
         header("Location: $COMM_PATH");
@@ -230,22 +184,22 @@ if ($_action=='login' && $_task=='mail') {
     }
     else {
 
-        tfk_debug('Oops, failed.');
+        rc_main::tfk_debug('Oops, failed.');
         if (empty($_POST['_user']) === true) {
-            tfk_debug('Login: no _user');
+            rc_main::tfk_debug('Login: no _user');
         }
         if (isset($_POST['_pass']) === false) {
-            tfk_debug('Login: no _pass');
+            rc_main::tfk_debug('Login: no _pass');
         }
-        $status = rcmail_login(
-                    get_input_value('_user', RCUBE_INPUT_POST),
-                    get_input_value('_pass', RCUBE_INPUT_POST, true, 'ISO-8859-1'),
+        $status = rc_main::rcmail_login(
+                    rc_main::get_input_value('_user', RCUBE_INPUT_POST),
+                    rc_main::get_input_value('_pass', RCUBE_INPUT_POST, true, 'ISO-8859-1'),
                     $host
         );
-        tfk_debug('Login: status: ' . $status);
+        rc_main::tfk_debug('Login: status: ' . $status);
 
-        tfk_debug(var_export($_SESSION['temp'], true));
-        //tfk_debug(date('Y-m-d H:i:s', $_SESSION['auth_time']));
+        rc_main::tfk_debug(var_export($_SESSION['temp'], true));
+        //rc_main::tfk_debug(date('Y-m-d H:i:s', $_SESSION['auth_time']));
 
         $OUTPUT->show_message("loginfailed", 'warning');
         $_SESSION['user_id'] = '';
@@ -255,24 +209,31 @@ if ($_action=='login' && $_task=='mail') {
 // end session
 else if (($_task=='logout' || $_action=='logout') && isset($_SESSION['user_id'])) {
     $OUTPUT->show_message('loggedout');
-    rcmail_kill_session();
+    rc_main::rcmail_kill_session();
 }
 
 // check session and auth cookie
 else if ($_action != 'login' && $_SESSION['user_id'] && $_action != 'send') {
-    if (!rcmail_authenticate_session()) {
+    if (!rc_main::rcmail_authenticate_session()) {
         $OUTPUT->show_message('sessionerror', 'error');
-        rcmail_kill_session();
+        rc_main::rcmail_kill_session();
     }
 }
 
+rc_main::tfk_debug('// going #2');
+
+$IMAP = $registry->get('IMAP', 'core');
+rc_main::tfk_debug(var_export($IMAP, true) . "\n\nIMAP LOADED.");
 
 // log in to imap server
 if (!empty($_SESSION['user_id']) && $_task=='mail') {
+
+    rc_main::tfk_debug('// trying to login');
+
     $conn = $IMAP->connect(
                 $_SESSION['imap_host'],
                 $_SESSION['username'],
-                decrypt_passwd($_SESSION['password']),
+                rc_main::decrypt_passwd($_SESSION['password']),
                 $_SESSION['imap_port'],
                 $_SESSION['imap_ssl']
     );
@@ -281,21 +242,23 @@ if (!empty($_SESSION['user_id']) && $_task=='mail') {
         $_SESSION['user_id'] = '';
     }
     else {
-        rcmail_set_imap_prop();
-
+        rc_main::rcmail_set_imap_prop();
     }
 }
 
 
 // not logged in -> set task to 'login
 if (empty($_SESSION['user_id'])) {
+
+    rc_main::tfk_debug('// we need a login');
+
     if ($OUTPUT->ajax_call){
         $OUTPUT->remote_response("setTimeout(\"location.href='\"+this.env.comm_path+\"'\", 2000);");
     }
     $_task = 'login';
 }
 
-
+rc_main::tfk_debug("// task {$_task} action {$_action}");
 
 // set task and action to client
 $OUTPUT->set_env('task', $_task);
@@ -306,6 +269,9 @@ if (!empty($_action)) {
 
 // not logged in -> show login page
 if (!$_SESSION['user_id']) {
+
+    rc_main::tfk_debug('// finally: login');
+
     $OUTPUT->task = 'login';
     $OUTPUT->send('login');
     exit;
@@ -369,7 +335,7 @@ if ($_task == 'mail') {
             break;
     }
 
-    tfk_debug('Mail: ' . $_name);
+    rc_main::tfk_debug('Mail: ' . $_name);
 
     // make sure the message count is refreshed
     $IMAP->messagecount($_SESSION['mbox'], 'ALL', TRUE);
@@ -431,7 +397,7 @@ if (empty($_name) === false) {
         include $_file;
     }
     else {
-        tfk_debug('Does not exist: ' . $_file);
+        rc_main::tfk_debug('Does not exist: ' . $_file);
     }
 }
 

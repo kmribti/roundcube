@@ -24,8 +24,8 @@
 /**
  * Obtain classes from the Iloha IMAP library
  */
-require_once('lib/imap.inc');
-require_once('lib/mime.inc');
+require_once 'lib/imap.inc';
+require_once 'lib/mime.inc';
 
 
 /**
@@ -1876,7 +1876,7 @@ class rcube_imap
       // get cached data from DB
       $sql_result = $this->db->query(
         "SELECT cache_id, data
-         FROM ".get_table_name('cache')."
+         FROM ". rc_main::get_table_name('cache')."
          WHERE  user_id=?
          AND    cache_key=?",
         $_SESSION['user_id'],
@@ -1903,7 +1903,7 @@ class rcube_imap
       {
       $sql_result = $this->db->query(
         "SELECT cache_id
-         FROM ".get_table_name('cache')."
+         FROM ".rc_main::get_table_name('cache')."
          WHERE  user_id=?
          AND    cache_key=?",
         $_SESSION['user_id'],
@@ -1919,7 +1919,7 @@ class rcube_imap
     if ($this->cache_keys[$key])
       {
       $this->db->query(
-        "UPDATE ".get_table_name('cache')."
+        "UPDATE ".rc_main::get_table_name('cache')."
          SET    created=".$this->db->now().",
                 data=?
          WHERE  user_id=?
@@ -1932,7 +1932,7 @@ class rcube_imap
     else
       {
       $this->db->query(
-        "INSERT INTO ".get_table_name('cache')."
+        "INSERT INTO ". rc_main::get_table_name('cache')."
          (created, user_id, cache_key, data)
          VALUES (".$this->db->now().", ?, ?, ?)",
         $_SESSION['user_id'],
@@ -1945,7 +1945,7 @@ class rcube_imap
   function _clear_cache_record($key)
     {
     $this->db->query(
-      "DELETE FROM ".get_table_name('cache')."
+      "DELETE FROM ". rc_main::get_table_name('cache')."
        WHERE  user_id=?
        AND    cache_key=?",
       $_SESSION['user_id'],
@@ -2007,7 +2007,7 @@ class rcube_imap
       $this->cache[$cache_key] = array();
       $sql_result = $this->db->limitquery(
         "SELECT idx, uid, headers
-         FROM ".get_table_name('messages')."
+         FROM ". rc_main::get_table_name('messages')."
          WHERE  user_id=?
          AND    cache_key=?
          ORDER BY ".$this->db->quoteIdentifier($sort_field)." ".
@@ -2040,7 +2040,7 @@ class rcube_imap
       $sql_select = "idx, uid, headers" . ($struct ? ", structure" : '');
       $sql_result = $this->db->query(
         "SELECT $sql_select
-         FROM ".get_table_name('messages')."
+         FROM ". rc_main::get_table_name('messages')."
          WHERE  user_id=?
          AND    cache_key=?
          AND    uid=?",
@@ -2074,7 +2074,7 @@ class rcube_imap
     $sa_message_index[$key] = array();
     $sql_result = $this->db->query(
       "SELECT idx, uid
-       FROM ".get_table_name('messages')."
+       FROM ". rc_main::get_table_name('messages')."
        WHERE  user_id=?
        AND    cache_key=?
        ORDER BY ".$this->db->quote_identifier($sort_col)." ".$sort_order,
@@ -2096,7 +2096,7 @@ class rcube_imap
     // check for an existing record (probly headers are cached but structure not)
     $sql_result = $this->db->query(
         "SELECT message_id
-         FROM ".get_table_name('messages')."
+         FROM ". rc_main::get_table_name('messages')."
          WHERE  user_id=?
          AND    cache_key=?
          AND    uid=?
@@ -2109,7 +2109,7 @@ class rcube_imap
     if ($sql_arr = $this->db->fetch_assoc($sql_result))
       {
       $this->db->query(
-        "UPDATE ".get_table_name('messages')."
+        "UPDATE ". rc_main::get_table_name('messages')."
          SET   idx=?, headers=?, structure=?
          WHERE message_id=?",
         $index,
@@ -2121,7 +2121,7 @@ class rcube_imap
     else  // insert new record
       {
       $this->db->query(
-        "INSERT INTO ".get_table_name('messages')."
+        "INSERT INTO ". rc_main::get_table_name('messages')."
          (user_id, del, cache_key, created, idx, uid, subject, ".$this->db->quoteIdentifier('from').", ".$this->db->quoteIdentifier('to').", cc, date, size, headers, structure)
          VALUES (?, 0, ?, ".$this->db->now().", ?, ?, ?, ?, ?, ?, ".$this->db->fromunixtime($headers->timestamp).", ?, ?, ?)",
         $_SESSION['user_id'],
@@ -2143,7 +2143,7 @@ class rcube_imap
   function remove_message_cache($key, $index)
     {
     $this->db->query(
-      "DELETE FROM ".get_table_name('messages')."
+      "DELETE FROM ". rc_main::get_table_name('messages')."
        WHERE  user_id=?
        AND    cache_key=?
        AND    idx=?",
@@ -2156,7 +2156,7 @@ class rcube_imap
   function clear_message_cache($key, $start_index=1)
     {
     $this->db->query(
-      "DELETE FROM ".get_table_name('messages')."
+      "DELETE FROM ". rc_main::get_table_name('messages')."
        WHERE  user_id=?
        AND    cache_key=?
        AND    idx>=?",

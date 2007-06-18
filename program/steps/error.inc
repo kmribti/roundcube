@@ -22,9 +22,9 @@
 
 // browser is not compatible with this application
 if ($ERROR_CODE==409)
-  {
-  $user_agent = $GLOBALS['HTTP_SERVER_VARS']['HTTP_USER_AGENT'];
-  $__error_title = 'Your browser does not suit the requirements for this application';
+{
+    $user_agent = $GLOBALS['HTTP_SERVER_VARS']['HTTP_USER_AGENT'];
+    $__error_title = 'Your browser does not suit the requirements for this application';
   $__error_text = <<<EOF
 <i>Supported browsers:</i><br />
 &raquo; &nbsp;Netscape 7+<br />
@@ -48,7 +48,7 @@ else if ($ERROR_CODE==401)
   $__error_text  = "Could not verify that you are authorized to access this service!<br />\n".
                    "Please contact your server-administrator.";
   }
-  
+
 // failed request (wrong step in URL)
 else if ($ERROR_CODE==404)
   {
@@ -68,22 +68,22 @@ else if ($ERROR_CODE==603)
   {
   $__error_title = "DATABASE ERROR: CONNECTION FAILED!";
   $__error_text  =  <<<EOF
-Unable to connect to the database!<br /> 
-Please contact your server-administrator. 
+Unable to connect to the database!<br />
+Please contact your server-administrator.
 EOF;
   }
 
 // system error
 else
-  {
-  $__error_title = "SERVICE CURRENTLY NOT AVAILABLE!";
-  $__error_text  = "Please contact your server-administrator.";
+{
+    $__error_title = "SERVICE CURRENTLY NOT AVAILABLE!";
+    $__error_text  = "Please contact your server-administrator.";
 
-  if (($CONFIG['debug_level'] & 4) && $ERROR_MESSAGE)
-    $__error_text = $ERROR_MESSAGE;
-  else
-    $__error_text = sprintf('Error No. [0x%04X]', $ERROR_CODE);
-  }
+    if (($CONFIG['debug_level'] & 4) && $ERROR_MESSAGE)
+        $__error_text = $ERROR_MESSAGE;
+    else
+        $__error_text = sprintf('Error No. [0x%04X]', $ERROR_CODE);
+}
 
 
 // compose page content
@@ -97,12 +97,12 @@ EOF;
 
 
 
-if (template_exists('error'))
-  {
-  $OUTPUT->scripts = array();
-  $OUTPUT->script_files = array();
-  parse_template('error');
-  }
+if (rc_main::template_exists('error'))
+{
+    $OUTPUT->scripts = array();
+    $OUTPUT->script_files = array();
+    rc_main::parse_template('error');
+}
 
 
 // print system error page
