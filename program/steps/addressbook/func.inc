@@ -19,8 +19,8 @@
 
 */
 
-require_once('include/rcube_contacts.inc');
-require_once('include/rcube_ldap.inc');
+require_once 'include/rcube_contacts.inc';
+require_once 'include/rcube_ldap.inc';
 
 // instantiate a contacts object according to the given source
 if (($source = get_input_value('_source', RCUBE_INPUT_GPC)) && isset($CONFIG['ldap_public'][$source]))
@@ -71,11 +71,11 @@ function rcmail_directory_list($attrib)
     "</a></li>\n";
     
   // allow the following attributes to be added to the <ul> tag
-  $out = '<ul' . create_attrib_string($attrib, array('style', 'class', 'id')) . ">\n";
+  $out = '<ul' . rc_main::create_attrib_string($attrib, array('style', 'class', 'id')) . ">\n";
   $out .= sprintf($line_templ,
     'rcmli'.$local_id,
     !$current ? 'selected' : '',
-    Q(rcmail_url('list', array('_source' => 0))),
+    rc_main::Q(rc_main::rcmail_url('list', array('_source' => 0))),
     JS_OBJECT_NAME,
     $local_id,
     JS_OBJECT_NAME,
@@ -88,12 +88,12 @@ function rcmail_directory_list($attrib)
   
   foreach ((array)$CONFIG['ldap_public'] as $id => $prop)
   {
-    $js_id = JQ($id);
+    $js_id = rc_main_::JQ($id);
     $dom_id = preg_replace('/[^a-z0-9\-_]/i', '', $id);
     $out .= sprintf($line_templ,
       'rcmli'.$dom_id,
       $current == $id ? 'selected' : '',
-      Q(rcmail_url('list', array('_source' => $id))),
+      rc_main::Q(rc_main::rcmail_url('list', array('_source' => $id))),
       JS_OBJECT_NAME,
       $js_id,
       JS_OBJECT_NAME,
@@ -102,7 +102,7 @@ function rcmail_directory_list($attrib)
       $js_id,
       JS_OBJECT_NAME,
       $js_id,
-      !empty($prop['name']) ? Q($prop['name']) : Q($id));
+      !empty($prop['name']) ? rc_main::Q($prop['name']) : rc_main::Q($id));
   }
   
   $out .= '</ul>';
@@ -176,7 +176,7 @@ function rcmail_contact_frame($attrib)
     $attrib['id'] = 'rcmcontactframe';
     
   $attrib['name'] = $attrib['id'];
-  $attrib_str = create_attrib_string($attrib, array('name', 'id', 'class', 'style', 'src', 'width', 'height', 'frameborder'));
+  $attrib_str = rc_main::create_attrib_string($attrib, array('name', 'id', 'class', 'style', 'src', 'width', 'height', 'frameborder'));
 
   $OUTPUT->set_env('contentframe', $attrib['name']);
   $OUTPUT->set_env('blankpage', $attrib['src'] ? $OUTPUT->abs_url($attrib['src']) : 'program/blank.gif');
@@ -194,7 +194,7 @@ function rcmail_rowcount_display($attrib)
   $OUTPUT->add_gui_object('countdisplay', $attrib['id']);
 
   // allow the following attributes to be added to the <span> tag
-  $attrib_str = create_attrib_string($attrib, array('style', 'class', 'id'));
+  $attrib_str = rc_main::create_attrib_string($attrib, array('style', 'class', 'id'));
 
   $out = '<span' . $attrib_str . '>';
   $out .= rcmail_get_rowcount_text();

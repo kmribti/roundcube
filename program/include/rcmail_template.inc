@@ -75,14 +75,6 @@ class rcmail_template extends rcube_html_page
         }
     }
 
-    /*
-    // PHP 4 compatibility
-    function rcmail_template(&$config, $task)
-    {
-        $this->__construct($config, $task);
-    }*/
-
-
     /**
      * Set environment variable
      */
@@ -220,7 +212,7 @@ class rcmail_template extends rcube_html_page
     unset($this->js_env['task'], $this->js_env['action'], $this->js_env['comm_path']);
 
     // send response code
-    print rcube_charset_convert($this->get_js_commands() . $add, RCMAIL_CHARSET, $this->get_charset());
+    echo rc_main::rcube_charset_convert($this->get_js_commands() . $add, RCMAIL_CHARSET, $this->get_charset());
 
     if ($flush)  // flush the output buffer
       flush();
@@ -347,7 +339,10 @@ class rcmail_template extends rcube_html_page
      */
     function parse_with_globals($input)
     {
-        $GLOBALS['__comm_path'] = $GLOBALS['COMM_PATH'];
+        $registry  = rc_registry::getInstance();
+        $COMM_PATH = $registry->get('COMM_PATH', 'core');
+
+        $GLOBALS['__comm_path'] = $COMM_PATH;
         return preg_replace('/\$(__[a-z0-9_\-]+)/e', '$GLOBALS["\\1"]', $input);
     }
 
@@ -515,7 +510,12 @@ class rcmail_template extends rcube_html_page
      */
     function button($attrib)
     {
-        global $CONFIG, $OUTPUT, $BROWSER, $MAIN_TASKS;
+        $registry   = rc_registry::getInstance();
+        $CONFIG     = $registry->get('CONFIG', 'core');
+        $OUTPUT     = $registry->get('OUTPUT', 'core');
+        $BROWSER    = $registry->get('BROWSER', 'core');
+        $MAIN_TASKS = $registry->get('MAIN_TASKS', 'core');
+
         static $sa_buttons = array();
         static $s_button_count = 100;
 
@@ -606,10 +606,10 @@ class rcmail_template extends rcube_html_page
 
             // make valid href to specific buttons
             if (in_array($attrib['command'], $MAIN_TASKS)) {
-                $attrib['href'] = rc_main::Q(rcmail_url(null, null, $attrib['command']));
+                $attrib['href'] = rc_main::Q(rc_main::rcmail_url(null, null, $attrib['command']));
             }
             else if (in_array($attrib['command'], $a_static_commands)) {
-                $attrib['href'] = rc_main::Q(rcmail_url($attrib['command']));
+                $attrib['href'] = rc_main::Q(rc_main::rcmail_url($attrib['command']));
             }
         }
 
@@ -659,7 +659,14 @@ class rcmail_template extends rcube_html_page
 
         // generate image tag
         if ($attrib['type']=='image') {
-            $attrib_str = create_attrib_string($attrib, array('style', 'class', 'id', 'width', 'height', 'border', 'hspace', 'vspace', 'align', 'alt'));
+            $attrib_str = rc_main::create_attrib_string(
+                                $attrib,
+                                array(
+                                    'style', 'class', 'id', 'width',
+                                    'height', 'border', 'hspace',
+                                    'vspace', 'align', 'alt'
+                                )
+            );
             $img_tag = sprintf('<img src="%%s"%s />', $attrib_str);
             $btn_content = sprintf($img_tag, $skin_path.$attrib['image']);
             if ($attrib['label']) {
@@ -677,13 +684,19 @@ class rcmail_template extends rcube_html_page
             if ($attrib['label'])
                 $attrib['value'] = $attrib['label'];
 
-            $attrib_str = create_attrib_string($attrib, array('type', 'value', 'onclick', 'id', 'class', 'style'));
+            $attrib_str = rc_main::create_attrib_string(
+                                $attrib,
+                                array(
+                                    'type', 'value', 'onclick',
+                                    'id', 'class', 'style'
+                                )
+            );
             $out = sprintf('<input%s disabled="disabled" />', $attrib_str);
         }
 
         // generate html code for button
         if ($btn_content) {
-            $attrib_str = create_attrib_string($attrib, $link_attrib);
+            $attrib_str = rc_main::create_attrib_string($attrib, $link_attrib);
             $out = sprintf('<a%s>%s</a>', $attrib_str, $btn_content);
         }
 

@@ -19,11 +19,11 @@
 
 */
 
-tfk_debug('About to get some mailboxes.');
+rc_main::tfk_debug('About to get some mailboxes.');
 
 $a_mailboxes = $IMAP->list_mailboxes();
 
-tfk_debug('Mailboxes: ' . var_export($a_mailboxes, true));
+rc_main::tfk_debug('Mailboxes: ' . var_export($a_mailboxes, true));
 
 foreach ($a_mailboxes as $mbox_name) {
     if ($mbox_name == $IMAP->get_mailbox_name()) {

@@ -13,7 +13,7 @@
 
 */
 
-$REMOTE_REQUEST = TRUE;
+$REMOTE_REQUEST = $registry->set('REMOTE_REQUEST', TRUE, 'core');
 
 // reset list_page and old search results
 $IMAP->set_page(1);
@@ -25,77 +25,68 @@ $_SESSION['page'] = 1;
 $imap_charset = 'UTF-8';
 
 // get search string
-$str = get_input_value('_q', RCUBE_INPUT_GET);
-$mbox = get_input_value('_mbox', RCUBE_INPUT_GET);
+$str  = rc_main::get_input_value('_q', RCUBE_INPUT_GET);
+$mbox = rc_main::get_input_value('_mbox', RCUBE_INPUT_GET);
 $search_request = md5($mbox.$str);
 
 
 // Check the search string for type of search
-if (preg_match("/^from:/i", $str))
-{
-  list(,$srch) = explode(":", $str);
-  $subject =  "HEADER FROM";
-  $search = trim($srch);
+if (preg_match("/^from:/i", $str)) {
+    list(,$srch) = explode(":", $str);
+    $subject =  "HEADER FROM";
+    $search = trim($srch);
 }
-else if (preg_match("/^to:/i", $str))
-{
-  list(,$srch) = explode(":", $str);
-  $subject = "HEADER TO";
-  $search = trim($srch);
+else if (preg_match("/^to:/i", $str)) {
+    list(,$srch) = explode(":", $str);
+    $subject = "HEADER TO";
+    $search = trim($srch);
 }
-else if (preg_match("/^cc:/i", $str))
-{
-  list(,$srch) = explode(":", $str);
-  $subject = "HEADER CC";
-  $search = trim($srch);
+else if (preg_match("/^cc:/i", $str)) {
+    list(,$srch) = explode(":", $str);
+    $subject = "HEADER CC";
+    $search = trim($srch);
 }
-else if (preg_match("/^subject:/i", $str))
-{
-  list(,$srch) = explode(":", $str);
-  $subject = "HEADER SUBJECT";
-  $search = trim($srch);
+else if (preg_match("/^subject:/i", $str)) {
+    list(,$srch) = explode(":", $str);
+    $subject = "HEADER SUBJECT";
+    $search = trim($srch);
 }
-else if (preg_match("/^body:/i", $str))
-{
-  list(,$srch) = explode(":", $str);
-  $subject = "TEXT";
-  $search = trim($srch);
+else if (preg_match("/^body:/i", $str)) {
+    list(,$srch) = explode(":", $str);
+    $subject = "TEXT";
+    $search = trim($srch);
 }
 // search in subject and sender by default
-else
-{
-  $subject = array("HEADER SUBJECT", "HEADER FROM");
-  $search = trim($str);
+else {
+    $subject = array("HEADER SUBJECT", "HEADER FROM");
+    $search = trim($str);
 }
 
 
 // execute IMAP search
 $result = $IMAP->search($mbox, $subject, $search, $imap_charset);
 $count = 0;
-  
+
 // Make sure our $result is legit..
-if (is_array($result) && $result[0] != '')
-{
-  // Get the headers
-  $result_h = $IMAP->list_header_set($mbox, $result, 1, $_SESSION['sort_col'], $_SESSION['sort_order']);
-  $count = count($result_h);
+if (is_array($result) && $result[0] != '') {
+    // Get the headers
+    $result_h = $IMAP->list_header_set($mbox, $result, 1, $_SESSION['sort_col'], $_SESSION['sort_order']);
+    $count = count($result_h);
 
-  // save search results in session
-  if (!is_array($_SESSION['search']))
-    $_SESSION['search'] = array();
-
-  // Make sure we got the headers
-  if ($result_h != NULL)
-  {
-    $_SESSION['search'][$search_request] = $IMAP->get_search_set();
-    rcmail_js_message_list($result_h);
-    $OUTPUT->show_message('searchsuccessful', 'confirmation', array('nr' => $count));
-  }
+    // save search results in session
+    if (!is_array($_SESSION['search'])) {
+        $_SESSION['search'] = array();
+    }
+    // Make sure we got the headers
+    if ($result_h != NULL) {
+        $_SESSION['search'][$search_request] = $IMAP->get_search_set();
+        rcmail_js_message_list($result_h);
+        $OUTPUT->show_message('searchsuccessful', 'confirmation', array('nr' => $count));
+    }
 }
-else
-{
-  $OUTPUT->show_message('searchnomatch', 'warning');
-  $search_request = -1;
+else {
+    $OUTPUT->show_message('searchnomatch', 'warning');
+    $search_request = -1;
 }
 
 // update message count display

@@ -227,15 +227,15 @@ EOF;
 
 // send HTTP header for no-cacheing steps
 function send_nocacheing_headers()
-  {
-  if (headers_sent())
-    return;
-
-  header("Expires: ".gmdate("D, d M Y H:i:s")." GMT");
-  header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
-  header("Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0");
-  header("Pragma: no-cache");
-  }
+{
+    if (headers_sent()) {
+        return;
+    }
+    header("Expires: ".gmdate("D, d M Y H:i:s")." GMT");
+    header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
+    header("Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0");
+    header("Pragma: no-cache");
+}
 
 
 // send header with expire date 30 days in future
@@ -253,31 +253,40 @@ function send_future_expire_header($offset=2600000)
 // check request for If-Modified-Since and send an according response
 function send_modified_header($mdate, $etag=null)
 {
-  if (headers_sent())
-    return;
+    if (headers_sent()) {
+        rc_main::tfk_debug("/ Headerz sent?!");
+        return;
+    }
+    $iscached = false;
+    if (
+        $_SERVER['HTTP_IF_MODIFIED_SINCE']
+        && strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) >= $mdate
+    ) {
+        $iscached = true;
+    }
 
-  $iscached = false;
-  if ($_SERVER['HTTP_IF_MODIFIED_SINCE'] && strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) >= $mdate)
-    $iscached = true;
+    $etag = $etag ? "\"$etag\"" : null;
+    if ($etag && $_SERVER['HTTP_IF_NONE_MATCH'] == $etag) {
+        $iscached = true;
+    }
+    if ($iscached) {
+        header("HTTP/1.x 304 Not Modified");
+    }
+    else {
+        header("Last-Modified: ".gmdate("D, d M Y H:i:s", $mdate)." GMT");
+    }
+    header("Cache-Control: max-age=0");
+    header("Expires: ");
+    header("Pragma: ");
 
-  $etag = $etag ? "\"$etag\"" : null;
-  if ($etag && $_SERVER['HTTP_IF_NONE_MATCH'] == $etag)
-    $iscached = true;
-
-  if ($iscached)
-    header("HTTP/1.x 304 Not Modified");
-  else
-    header("Last-Modified: ".gmdate("D, d M Y H:i:s", $mdate)." GMT");
-
-  header("Cache-Control: max-age=0");
-  header("Expires: ");
-  header("Pragma: ");
-
-  if ($etag)
-    header("Etag: $etag");
-
-  if ($iscached)
-    exit;
+    if ($etag) {
+        header("Etag: $etag");
+    }
+    $iscached = FALSE;
+    if ($iscached) {
+        rc_main::tfk_debug("/ serving from cache");
+        exit;
+    }
 }
 
 

@@ -41,7 +41,7 @@ require_once 'include/rcube/rcmail_send.php';
 tfk_debug('Passed require of class rc_mail_send.');
 
 if (strlen($_POST['_draft_saveid']) > 3) {
-    $olddraftmessageid = get_input_value('_draft_saveid', RCUBE_INPUT_POST);
+    $olddraftmessageid = rc_main::get_input_value('_draft_saveid', RCUBE_INPUT_POST);
 }
 $message_id = sprintf(
                 '<%s@%s>',
@@ -79,7 +79,7 @@ $mailto_replace = array(', ', ', ', '', ',');
 $mailto = preg_replace(
             $mailto_regexp,
             $mailto_replace,
-            get_input_value('_to', RCUBE_INPUT_POST, TRUE, $message_charset)
+            rc_main::get_input_value('_to', RCUBE_INPUT_POST, TRUE, $message_charset)
 );
 
 tfk_debug('We just replaced line endings.');
@@ -106,7 +106,7 @@ if (empty($identity_arr['string'])) {
 // compose headers array
 $headers = array(
             'Date' => date('D, j M Y H:i:s O'),
-            'From' => rcube_charset_convert($identity_arr['string'], RCMAIL_CHARSET, $message_charset),
+            'From' => rc_main::rcube_charset_convert($identity_arr['string'], RCMAIL_CHARSET, $message_charset),
             'To'   => $mailto
 );
 
@@ -115,7 +115,7 @@ if (!empty($_POST['_cc'])) {
     $headers['Cc'] = preg_replace(
                         $mailto_regexp,
                         $mailto_replace,
-                        get_input_value(
+                        rc_main::get_input_value(
                             '_cc',
                             RCUBE_INPUT_POST,
                             TRUE, $message_charset
@@ -125,14 +125,14 @@ if (!empty($_POST['_cc'])) {
 if (!empty($_POST['_bcc'])) {
     $headers['Bcc'] = preg_replace(
                         $mailto_regexp, $mailto_replace,
-                        get_input_value('_bcc', RCUBE_INPUT_POST, TRUE, $message_charset)
+                        rc_main::get_input_value('_bcc', RCUBE_INPUT_POST, TRUE, $message_charset)
     );
 }
 if (empty($identity_arr['bcc']) === false) {
-  $headers['Bcc'] = ($headers['Bcc'] ? $headers['Bcc'].', ' : '') . $identity_arr['bcc'];
+     $headers['Bcc'] = ($headers['Bcc'] ? $headers['Bcc'].', ' : '') . $identity_arr['bcc'];
 }
 // add subject
-$headers['Subject'] = trim(get_input_value('_subject', RCUBE_INPUT_POST, FALSE, $message_charset));
+$headers['Subject'] = trim(rc_main::get_input_value('_subject', RCUBE_INPUT_POST, FALSE, $message_charset));
 
 if (empty($identity_arr['organization']) === false) {
     $headers['Organization'] = $identity_arr['organization'];
@@ -167,7 +167,7 @@ if (!empty($CONFIG['useragent'])) {
     $headers['User-Agent'] = $CONFIG['useragent'];
 }
 // fetch message body
-$message_body = get_input_value('_message', RCUBE_INPUT_POST, TRUE, $message_charset);
+$message_body = rc_main::get_input_value('_message', RCUBE_INPUT_POST, TRUE, $message_charset);
 
 // append generic footer to all messages
 if (!empty($CONFIG['generic_message_footer'])) {
@@ -175,7 +175,8 @@ if (!empty($CONFIG['generic_message_footer'])) {
     if(($fp = @fopen($file, 'r')) !== false) {
         $content = fread($fp, filesize($file));
         fclose($fp);
-        $message_body .= "\r\n" . rcube_charset_convert($content, 'UTF-8', $message_charset);
+        $message_body .= "\r\n";
+        $message_body .= rc_main::rcube_charset_convert($content, 'UTF-8', $message_charset);
     }
 }
 
@@ -194,7 +195,7 @@ else {
     $header_delm = "\n";
 }
 
-$isHtmlVal = strtolower(get_input_value('_is_html', RCUBE_INPUT_POST));
+$isHtmlVal = strtolower(rc_main::get_input_value('_is_html', RCUBE_INPUT_POST));
 $isHtml = ($isHtmlVal == "1");
 
 // create extended PEAR::Mail_mime instance

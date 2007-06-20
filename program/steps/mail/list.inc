@@ -18,9 +18,16 @@
 
 */
 
+$registry = rc_registry::getInstance();
+$OUTPUT   = $registry->get('OUTPUT', 'core');
+$IMAP     = $registry->get('IMAP', 'core');
+
+
 $OUTPUT_TYPE = 'js';
+$registry->set('OUTPUT_TYPE', $OUTPUT_TYPE, 'core');
+
 // is there a sort type for this request?
-if ($sort = get_input_value('_sort', RCUBE_INPUT_GET)) {
+if ($sort = rc_main::get_input_value('_sort', RCUBE_INPUT_GET)) {
     // yes, so set the sort vars
     list($sort_col, $sort_order) = explode('_', $sort);
 

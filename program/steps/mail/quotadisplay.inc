@@ -20,8 +20,8 @@
 */
 
 $display = isset($_GET['_display']) ? $_GET['_display'] : 'text';
-$id = isset($_GET['_id']) ? $_GET['_id'] : 'rcmquotadisplay';
-$quota = rcmail_quota_content($display);
+$id      = isset($_GET['_id']) ? $_GET['_id'] : 'rcmquotadisplay';
+$quota   = rcmail_quota_content($display);
 $OUTPUT->remote_response(sprintf("this.gui_objects.%s.innerHTML = '%s';\n", $id, $quota));
 
 exit;

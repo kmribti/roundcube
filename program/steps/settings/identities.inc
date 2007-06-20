@@ -37,7 +37,7 @@ function rcmail_identity_frame($attrib)
 
     $OUTPUT->set_env('contentframe', $attrib['name']);
 
-    $attrib_str = create_attrib_string($attrib, array('name', 'id', 'class', 'style', 'src', 'width', 'height', 'frameborder'));
+    $attrib_str = rc_main::create_attrib_string($attrib, array('name', 'id', 'class', 'style', 'src', 'width', 'height', 'frameborder'));
     $out = '<iframe'. $attrib_str . '></iframe>';
 
     return $out;

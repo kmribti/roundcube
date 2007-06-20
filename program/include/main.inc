@@ -63,9 +63,6 @@ class rc_main
      */
     static function rcmail_startup($task = 'mail')
     {
-        //global $sess_id, $sess_user_lang;
-        //global $CONFIG, $INSTALL_PATH, $BROWSER, $OUTPUT, $_SESSION, $IMAP, $DB;
-
         $registry     = rc_registry::getInstance();
         $INSTALL_PATH = $registry->get('INSTALL_PATH', 'core');
 
@@ -73,6 +70,7 @@ class rc_main
 
         // check client
         $BROWSER = rcube_browser();
+        $registry->set('BROWSER', $BROWSER, 'core');
 
         self::tfk_debug('// load browser');
 
@@ -103,6 +101,7 @@ class rc_main
         // init session
         session_start();
         $sess_id = session_id();
+        $registry->set('sess_id', $sess_id, 'core');
 
         // create session and set session vars
         if (!isset($_SESSION['auth_time'])) {
@@ -113,12 +112,13 @@ class rc_main
 
         // set session vars global
         $sess_user_lang = self::rcube_language_prop($_SESSION['user_lang']);
-
+        $registry->set('sess_user_lang', $sess_user_lang, 'core');
 
         // overwrite config with user preferences
         if (is_array($_SESSION['user_prefs'])) {
             $CONFIG = array_merge($CONFIG, $_SESSION['user_prefs']);
         }
+        $registry->set('CONFIG', $CONFIG, 'core');
 
         // reset some session parameters when changing task
         if ($_SESSION['task'] != $task) {
@@ -140,13 +140,6 @@ class rc_main
             setlocale(LC_ALL, $sess_user_lang);
         }
         register_shutdown_function(array('rc_main', 'rcmail_shutdown'));
-
-        $registry->set('sess_id', $sess_id, 'core');
-        $registry->set('sess_user_lang', $sess_user_lang, 'core');
-        $registry->set('CONFIG', $CONFIG, 'core');
-        $registry->set('BROWSER', $BROWSER, 'core');
-
-        //global $OUTPUT, $IMAP
     }
 
 
@@ -204,8 +197,8 @@ class rc_main
         else if (!empty($config['include_host_config'])) {
             $fname = preg_replace('/[^a-z0-9\.\-_]/i', '', $_SERVER['HTTP_HOST']) . '.inc.php';
         }
-        if ($fname && is_file('config/'.$fname)) {
-            include('config/'.$fname);
+        if ($fname && is_file('config/' . $fname)) {
+            include('config/' . $fname);
             $config = array_merge($config, $rcmail_config);
         }
         return $config;
@@ -385,7 +378,7 @@ class rc_main
         $CONFIG   = $registry->get('CONFIG', 'core');
 
         // return table name if configured
-        $config_key = 'db_table_'.$table;
+        $config_key = 'db_table_' . $table;
 
         if (strlen($CONFIG[$config_key])) {
             return $CONFIG[$config_key];
@@ -402,7 +395,7 @@ class rc_main
         $CONFIG   = $registry->get('CONFIG', 'core');
 
         // return table name if configured
-        $config_key = 'db_sequence_'.$sequence;
+        $config_key = 'db_sequence_' . $sequence;
 
         if (strlen($CONFIG[$config_key])) {
             return $CONFIG[$config_key];
@@ -533,13 +526,28 @@ class rc_main
     }
 
 
-    // auto-select IMAP host based on the posted login information
+    /**
+     * auto-select IMAP host based on the posted login information
+     *
+     * @access static
+     * @link   ./index.php
+     * @todo   Remove reference to $_POST superglobal.
+     */
     static function rcmail_autoselect_host()
     {
         $registry = rc_registry::getInstance();
         $CONFIG   = $registry->get('CONFIG', 'core');
 
-        $host = isset($_POST['_host']) ? self::get_input_value('_host', RCUBE_INPUT_POST) : $CONFIG['default_host'];
+        $host = '';
+        if (isset($_POST['_host']) && empty($_POST['_host']) === false) {
+            $host .= self::get_input_value('_host', RCUBE_INPUT_POST);
+        }
+        else {
+            $host .= $CONFIG['default_host'];
+        }
+        //self::tfk_debug('/ POST: ' . $_POST['_host']);
+        //self::tfk_debug('/ default host: ' . var_export($CONFIG['default_host'], true));
+
         if (is_array($host)) {
             list($user, $domain) = explode('@', self::get_input_value('_user', RCUBE_INPUT_POST));
             if (!empty($domain)) {
@@ -556,6 +564,7 @@ class rc_main
                 $host = array_shift($host);
             }
         }
+        self::tfk_debug($host);
         return $host;
     }
 
@@ -1179,14 +1188,23 @@ class rc_main
         }
         // encode for HTML output
         if ($enctype=='html') {
-            if (is_null($html_encode_arr)) {
+
+            //self::tfk_debug('/ html :-)');
+
+            if (empty($html_encode_arr)) {
                 $html_encode_arr = get_html_translation_table(HTML_SPECIALCHARS);
                 unset($html_encode_arr['?']);
-                $registry->set('html_encode_arr', $html_encode_arr, 'core');
+                $registry->set(
+                            'html_encode_arr',
+                            $html_encode_arr,
+                            'core'
+                );
             }
 
             $ltpos = strpos($str, '<');
             $encode_arr = $html_encode_arr;
+
+            //self::tfk_debug(var_export($encode_arr, true));
 
             // don't replace quotes and html tags
             if (
@@ -1215,7 +1233,7 @@ class rc_main
             return rawurlencode($str);
         }
         // if the replace tables for XML and JS are not yet defined
-        if (is_null($js_rep_table)) {
+        if (empty($js_rep_table)) {
             $js_rep_table = $xml_rep_table = array();
             $xml_rep_table['&'] = '&amp;';
 
@@ -1292,7 +1310,7 @@ class rc_main
     {
         $registry = rc_registry::getInstance();
         $OUTPUT   = $registry->get('OUTPUT', 'core');
-        $value = NULL;
+        $value    = NULL;
 
         if ($source == RCUBE_INPUT_GET && isset($_GET[$fname])) {
             $value = $_GET[$fname];
@@ -1301,12 +1319,15 @@ class rc_main
             $value = $_POST[$fname];
         }
         else if ($source == RCUBE_INPUT_GPC) {
-            if (isset($_POST[$fname]))
+            if (isset($_POST[$fname])) {
                 $value = $_POST[$fname];
-            else if (isset($_GET[$fname]))
+            }
+            else if (isset($_GET[$fname])) {
                 $value = $_GET[$fname];
-            else if (isset($_COOKIE[$fname]))
+            }
+            else if (isset($_COOKIE[$fname])) {
                 $value = $_COOKIE[$fname];
+            }
         }
 
         // strip slashes if magic_quotes enabled
@@ -1322,7 +1343,7 @@ class rc_main
             return self::rcube_charset_convert($value, $OUTPUT->get_charset(), $charset);
         }
         return $value;
-      }
+    }
 
     /**
      * Remove single and double quotes from given string

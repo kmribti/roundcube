@@ -108,18 +108,18 @@ else if ($_action=='delete-folder')
 
 // build table with all folders listed by server
 function rcube_subscription_form($attrib)
-  {
-  global $IMAP, $CONFIG, $OUTPUT;
+{
+    global $IMAP, $CONFIG, $OUTPUT;
 
-  list($form_start, $form_end) = get_form_tags($attrib, 'folders');
-  unset($attrib['form']);
+    list($form_start, $form_end) = get_form_tags($attrib, 'folders');
+    unset($attrib['form']);
   
   
   if (!$attrib['id'])
     $attrib['id'] = 'rcmSubscriptionlist';
 
   // allow the following attributes to be added to the <table> tag
-  $attrib_str = create_attrib_string($attrib, array('style', 'class', 'id', 'cellpadding', 'cellspacing', 'border', 'summary'));
+  $attrib_str = rc_main::create_attrib_string($attrib, array('style', 'class', 'id', 'cellpadding', 'cellspacing', 'border', 'summary'));
 
   $out = "$form_start\n<table" . $attrib_str . ">\n";
 

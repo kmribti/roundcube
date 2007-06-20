@@ -41,9 +41,9 @@ function sess_read($key)
     $SESS_CHANGED   = $registry->get('SESS_CHANGED', 'core');
     $SESS_CLIENT_IP = $registry->get('SESS_CLIENT_IP', 'core');
 
-    if ($DB->is_error())
+    if ($DB->is_error()) {
         return FALSE;
-
+    }
     $_query = "SELECT vars, ip, ".$DB->unixtimestamp('changed')." AS changed";
     $_query.= " FROM " . rc_main::get_table_name('session');
     $_query.= " WHERE sess_id=?";
@@ -146,18 +146,19 @@ function sess_gc($maxlifetime)
 
     if (sizeof($a_exp_sessions)) {
         // delete session cache records
-        $DB->query("DELETE FROM ".rc_main::get_table_name('cache')."
-                WHERE  session_id IN ('".join("','", $a_exp_sessions)."')");
+        $_query = "DELETE FROM " . rc_main::get_table_name('cache');
+        $_query.= " WHERE session_id IN ('" . join("','", $a_exp_sessions) . "')";
+        $DB->query($_query);
 
         // delete session records
-        $DB->query("DELETE FROM ".rc_main::get_table_name('session')."
-                WHERE sess_id IN ('".join("','", $a_exp_sessions)."')");
+        $_query = "DELETE FROM " . rc_main::get_table_name('session');
+        $_query.= " WHERE sess_id IN ('" . join("','", $a_exp_sessions) . "')";
+        $DB->query($_query);
     }
 
     // also run message cache GC
-    rcmail_message_cache_gc();
-    rcmail_temp_gc();
-
+    rc_main::rcmail_message_cache_gc();
+    rc_main::rcmail_temp_gc();
     return TRUE;
 }
 

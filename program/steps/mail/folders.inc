@@ -21,17 +21,17 @@
 $mbox_name = $IMAP->get_mailbox_name();
 
 // send EXPUNGE command
-if ($_action=='expunge' && ($mbox = get_input_value('_mbox', RCUBE_INPUT_POST))) {
+if ($_action=='expunge' && ($mbox = rc_main::get_input_value('_mbox', RCUBE_INPUT_POST))) {
     $success = $IMAP->expunge($mbox);
 
-    tfk_debug('Expung: ' . $mbox);
+    rc_main::tfk_debug('Expung: ' . $mbox);
 
     // reload message list if current mailbox
     if ($success && empty($_REQUEST['_reload']) === false) {
         $OUTPUT->command('message_list.clear');
         $_action = 'list';
 
-        tfk_debug('Trying to reload list.');
+        rc_main::tfk_debug('Trying to reload list.');
 
         $_file = dirname(__FILE__);
         $_file.= '/list.inc';
@@ -46,7 +46,7 @@ if ($_action=='expunge' && ($mbox = get_input_value('_mbox', RCUBE_INPUT_POST)))
     }
 }
 // clear mailbox
-elseif ($_action=='purge' && ($mbox = get_input_value('_mbox', RCUBE_INPUT_POST))) {
+elseif ($_action=='purge' && ($mbox = rc_main::get_input_value('_mbox', RCUBE_INPUT_POST))) {
     $success = $IMAP->clear_mailbox($mbox);
 
     if ($success && !empty($_REQUEST['_reload'])) {

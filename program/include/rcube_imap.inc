@@ -409,7 +409,8 @@ class rcube_imap
      */
     function _list_mailboxes($root='', $filter='*')
     {
-        global $CONFIG;
+        $registry = rc_registry::getInstance();
+        $CONFIG   = $registry->get('CONFIG', 'core');
 
         $a_defaults = $a_out = array();
 
@@ -940,7 +941,7 @@ class rcube_imap
                 $results = $this->search(
                                 $mbox_name,
                                 $criteria,
-                                rcube_charset_convert($str, $charset, 'ISO-8859-1'),
+                                rc_main::rcube_charset_convert($str, $charset, 'ISO-8859-1'),
                                 'ISO-8859-1'
                 );
             }
@@ -1277,7 +1278,7 @@ class rcube_imap
         if (empty($o_part->charset))
           $o_part->charset = 'ISO-8859-1';
 
-        $body = rcube_charset_convert($body, $o_part->charset);
+        $body = rc_main::rcube_charset_convert($body, $o_part->charset);
         }
       }
 
@@ -2246,7 +2247,7 @@ class rcube_imap
       }
 
     // no encoding information, use fallback
-    return rcube_charset_convert($input, !empty($fallback) ? $fallback : 'ISO-8859-1');
+    return rc_main::rcube_charset_convert($input, !empty($fallback) ? $fallback : 'ISO-8859-1');
     }
 
 
@@ -2274,7 +2275,7 @@ class rcube_imap
         $rest = quoted_printable_decode($rest);
         }
 
-      return rcube_charset_convert($rest, $a[0]);
+      return rc_main::rcube_charset_convert($rest, $a[0]);
       }
     else
       return $str;    // we dont' know what to do with this
@@ -2325,10 +2326,10 @@ class rcube_imap
   function charset_decode($body, $ctype_param)
     {
     if (is_array($ctype_param) && !empty($ctype_param['charset']))
-      return rcube_charset_convert($body, $ctype_param['charset']);
+      return rc_main::rcube_charset_convert($body, $ctype_param['charset']);
 
     // defaults to what is specified in the class header
-    return rcube_charset_convert($body,  'ISO-8859-1');
+    return rc_main::rcube_charset_convert($body,  'ISO-8859-1');
     }
 
 

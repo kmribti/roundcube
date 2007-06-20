@@ -21,20 +21,21 @@
 
 
 // similar code as in program/steps/mail/get.inc
-if ($uid = get_input_value('_uid', RCUBE_INPUT_GET))
-  {
-  header('Content-Type: text/plain');
-  //@ob_end_clean();
-  $IMAP->print_raw_body($uid);
-  }
-else
-  {
-  raise_error(array('code' => 500,
-                    'type' => 'php',
-                    'message' => 'Message UID '.$uid.' not found'),
-              TRUE,
-              TRUE);
-  }
-
+if ($uid = rc_main::get_input_value('_uid', RCUBE_INPUT_GET)) {
+    header('Content-Type: text/plain');
+    //@ob_end_clean();
+    $IMAP->print_raw_body($uid);
+}
+else {
+    raise_error(
+        array(
+            'code' => 500,
+            'type' => 'php',
+            'message' => 'Message UID '.$uid.' not found'
+        ),
+        TRUE,
+        TRUE
+    );
+}
 exit;
 ?>

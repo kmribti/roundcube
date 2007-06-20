@@ -55,6 +55,7 @@ $registry = rc_registry::getInstance();
 $registry->set('INSTALL_PATH', $INSTALL_PATH, 'core');
 $registry->set('s_mbstring_loaded', null, 'core');
 $registry->set('sa_languages', null, 'core');
+$registry->set('MAIN_TASKS', $MAIN_TASKS, 'core');
 
 /**
  * log all $_POST
@@ -223,7 +224,7 @@ else if ($_action != 'login' && $_SESSION['user_id'] && $_action != 'send') {
 rc_main::tfk_debug('// going #2');
 
 $IMAP = $registry->get('IMAP', 'core');
-rc_main::tfk_debug(var_export($IMAP, true) . "\n\nIMAP LOADED.");
+//rc_main::tfk_debug(var_export($IMAP, true) . "\n\nIMAP LOADED.");
 
 // log in to imap server
 if (!empty($_SESSION['user_id']) && $_task=='mail') {
@@ -293,6 +294,8 @@ if ($_action=='keep-alive') {
  */
 $_name = '';
 
+rc_main::tfk_debug("testing: $_task / $_action");
+
 // include task specific files
 if ($_task == 'mail') {
     include_once 'program/steps/mail/func.inc';
@@ -339,6 +342,7 @@ if ($_task == 'mail') {
 
     // make sure the message count is refreshed
     $IMAP->messagecount($_SESSION['mbox'], 'ALL', TRUE);
+    $registry->set('IMAP', $IMAP, 'core');
 }
 
 // include task specific files
@@ -400,6 +404,8 @@ if (empty($_name) === false) {
         rc_main::tfk_debug('Does not exist: ' . $_file);
     }
 }
+
+rc_main::tfk_debug('We included?');
 
 // parse main template
 $OUTPUT->send($_task);

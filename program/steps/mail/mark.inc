@@ -19,23 +19,24 @@
 */
 
 $a_flags_map = array(
-  'undelete' => 'UNDELETED',
-  'delete' => 'DELETED',
-  'read' => 'SEEN',
-  'unread' => 'UNSEEN');
+    'undelete' => 'UNDELETED',
+    'delete' => 'DELETED',
+    'read' => 'SEEN',
+    'unread' => 'UNSEEN'
+);
 
-if (($uids = get_input_value('_uid', RCUBE_INPUT_POST)) && ($flag = get_input_value('_flag', RCUBE_INPUT_POST)))
-{
-  $flag = $a_flags_map[$flag] ? $a_flags_map[$flag] : strtoupper($flag);
-  $marked = $IMAP->set_flag($uids, $flag);
+if (
+    ($uids = rc_main::get_input_value('_uid', RCUBE_INPUT_POST))
+    && ($flag = rc_main::get_input_value('_flag', RCUBE_INPUT_POST))
+) {
+    $flag = $a_flags_map[$flag] ? $a_flags_map[$flag] : strtoupper($flag);
+    $marked = $IMAP->set_flag($uids, $flag);
 
-  if ($marked != -1)
-  {
-    $mbox_name = $IMAP->get_mailbox_name();
-    $OUTPUT->command('set_unread_count', $mbox_name, $IMAP->messagecount($mbox_name, 'UNSEEN'));
-    $OUTPUT->send();
-  }
+    if ($marked != -1) {
+        $mbox_name = $IMAP->get_mailbox_name();
+        $OUTPUT->command('set_unread_count', $mbox_name, $IMAP->messagecount($mbox_name, 'UNSEEN'));
+        $OUTPUT->send();
+    }
 }
-  
 exit;
 ?>

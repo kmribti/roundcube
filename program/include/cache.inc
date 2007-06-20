@@ -21,86 +21,88 @@
 
 
 function rcube_read_cache($key)
-  {
-  global $DB, $CACHE_KEYS;
-  
-  // query db
-  $sql_result = $DB->query("SELECT cache_id, data
-                            FROM ".get_table_name('cache')."
-                            WHERE  user_id=?
-                            AND    cache_key=?",
-                            $_SESSION['user_id'],
-                            $key);
+{
+    $registry   = rc_registry::getInstance();
+    $DB         = $registry->get('DB', 'core');
+    $CACHE_KEYS = $registry->get('CACHE_KEYS', 'core');
 
-  // get cached data
-  if ($sql_arr = $DB->fetch_assoc($sql_result))
-    {
-    $data = $sql_arr['data'];
-    $CACHE_KEYS[$key] = $sql_arr['cache_id'];
+    // query db
+    $_query = "SELECT cache_id, data";
+    $_query.= " FROM " . rc_main::get_table_name('cache');
+    $_query.= " WHERE user_id=?";
+    $_query.= " AND cache_key=?";
+    $sql_result = $DB->query($_query, $_SESSION['user_id'], $key);
+
+    // get cached data
+    if ($sql_arr = $DB->fetch_assoc($sql_result)) {
+        $data = $sql_arr['data'];
+        $CACHE_KEYS[$key] = $sql_arr['cache_id'];
     }
-  else
-    $data = FALSE;
-
-  return $data;
-  }
+    else {
+        $data = FALSE;
+    }
+    $registry->set('CACHE_KEYS', $CACHE_KEYS, 'core');
+    return $data;
+}
 
 
 function rcube_write_cache($key, $data, $session_cache=FALSE)
-  {
-  global $DB, $CACHE_KEYS, $sess_id;
-  
-  // check if we already have a cache entry for this key
-  if (!isset($CACHE_KEYS[$key]))
-    {
-    $sql_result = $DB->query("SELECT cache_id
-                              FROM ".get_table_name('cache')."
-                              WHERE  user_id=?
-                              AND    cache_key=?",
-                              $_SESSION['user_id'],
-                              $key);
-                                     
-    if ($sql_arr = $DB->fetch_assoc($sql_result))
-      $CACHE_KEYS[$key] = $sql_arr['cache_id'];
-    else
-      $CACHE_KEYS[$key] = FALSE;
+{
+    $registry   = rc_registry::getInstance();
+    $DB         = $registry->get('DB', 'core');
+    $CACHE_KEYS = $registry->get('CACHE_KEYS', 'core');
+    $sess_id    = $registry->get('sess_id', 'core');
+
+    // check if we already have a cache entry for this key
+    if (!isset($CACHE_KEYS[$key])) {
+        $_query = "SELECT cache_id";
+        $_query.= " FROM " . rc_main::get_table_name('cache');
+        $_query.= " WHERE user_id=?";
+        $_query.= " AND cache_key=?";
+        $sql_result = $DB->query($_query, $_SESSION['user_id'], $key);
+
+        if ($sql_arr = $DB->fetch_assoc($sql_result)) {
+            $CACHE_KEYS[$key] = $sql_arr['cache_id'];
+        }
+        else {
+            $CACHE_KEYS[$key] = FALSE;
+        }
+        $registry->set('CACHE_KEYS', $CACHE_KEYS, 'core');
     }
 
-  // update existing cache record
-  if ($CACHE_KEYS[$key])
-    {
-    $DB->query("UPDATE ".get_table_name('cache')."
-                SET    created=now(),
-                       data=?
-                WHERE  user_id=?
-                AND    cache_key=?",
-                $data,
-                $_SESSION['user_id'],
-                $key);
+    // update existing cache record
+    if ($CACHE_KEYS[$key]) {
+        $_query = "UPDATE " . rc_main::get_table_name('cache');
+        $_query.= " SET created=now(),";
+        $_query.= " data=?";
+        $_query.= " WHERE user_id=?";
+        $_query.= " AND cache_key=?";
+        $DB->query($_query, $data, $_SESSION['user_id'], $key);
     }
-  // add new cache record
-  else
-    {
-    $DB->query("INSERT INTO ".get_table_name('cache')."
-                (created, user_id, session_id, cache_key, data)
-                VALUES (now(), ?, ?, ?, ?)",
+    // add new cache record
+    else {
+        $_query = "INSERT INTO " . rc_main::get_table_name('cache');
+        $_query.= " (created, user_id, session_id, cache_key, data)";
+        $_query.= " VALUES (now(), ?, ?, ?, ?)";
+        $DB->query(
+                $_query,
                 $_SESSION['user_id'],
                 $session_cache ? $sess_id : 'NULL',
                 $key,
-                $data);
+                $data
+        );
     }
-  }
+}
 
 
 function rcube_clear_cache($key)
-  {
-  global $DB;
+{
+    $registry = rc_registry::getInstance();
+    $DB       = $registry->get('DB', 'core');
 
-  $DB->query("DELETE FROM ".get_table_name('cache')."
-              WHERE  user_id=?
-              AND    cache_key=?",
-              $_SESSION['user_id'],
-              $key);
-  }
-
-
+    $_query = "DELETE FROM " . rc_main::get_table_name('cache');
+    $_query.= " WHERE user_id=?";
+    $_query.= " AND cache_key=?";
+    $DB->query($_query, $_SESSION['user_id'], $key);
+}
 ?>

@@ -1482,6 +1482,9 @@ function rcube_webmail()
   {
     // mark all message rows as read/unread
     var icn_src;
+    if (typeof(this.message_list) == 'undefined') {
+        return;
+    }
     var rows = this.message_list.rows;
     for (var i=0; i<a_uids.length; i++)
       {
@@ -1900,7 +1903,7 @@ function rcube_webmail()
         $(form).attr('action', this.env.comm_path+'&_action=upload');
         $(form).attr('enctype', 'multipart/form-data');
         $(form).submit();
-      
+
         // set reference to the form object
         this.gui_objects.attachmentform = form;
         return true;

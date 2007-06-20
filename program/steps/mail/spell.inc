@@ -22,43 +22,42 @@
 
 */
 
-$REMOTE_REQUEST = TRUE;
+$REMOTE_REQUEST = $registry->set('REMOTE_REQUEST', TRUE, 'core');
+$CONFIG         = $registry->get('CONFIG', 'core');
 
 // default settings
 $host = "ssl://www.google.com";
 $port = 443;
-$lang = get_input_value('lang', RCUBE_INPUT_GET);
+$lang = rc_main::get_input_value('lang', RCUBE_INPUT_GET);
 $path = "/tbproxy/spell?lang=$lang";
 
 // spell check uri is configured
-if (!empty($CONFIG['spellcheck_uri']))
-  {
-  $a_uri = parse_url($CONFIG['spellcheck_uri']);
-  $ssl = ($a_uri['scheme']=='https' || $a_uri['scheme']=='ssl');
-  $port = $a_uri['port'] ? $a_uri['port'] : ($ssl ? 443 : 80);
-  $host = ($ssl ? 'ssl://' : '') . $a_uri['host'];
-  $path = $a_uri['path'] . ($a_uri['query'] ? '?'.$a_uri['query'] : '') . $lang;
-  }
+if (!empty($CONFIG['spellcheck_uri'])) {
+    $a_uri = parse_url($CONFIG['spellcheck_uri']);
+    $ssl = ($a_uri['scheme']=='https' || $a_uri['scheme']=='ssl');
+    $port = $a_uri['port'] ? $a_uri['port'] : ($ssl ? 443 : 80);
+    $host = ($ssl ? 'ssl://' : '') . $a_uri['host'];
+    $path = $a_uri['path'] . ($a_uri['query'] ? '?'.$a_uri['query'] : '') . $lang;
+}
 
-$data = file_get_contents('php://input');
+$data  = file_get_contents('php://input');
 $store = "";
 
-if ($fp = fsockopen($host, $port, $errno, $errstr, 30))
-  {
-  $out = "POST $path HTTP/1.0\r\n";
-  $out .= "Host: $host\r\n";
-  $out .= "Content-Length: " . strlen($data) . "\r\n";
-  $out .= "Content-type: application/x-www-form-urlencoded\r\n";
-  $out .= "Connection: Close\r\n\r\n";
-  $out .= $data;
-  fwrite($fp, $out);
-  
-  while (!feof($fp))
-    $store .= fgets($fp, 128);
-  fclose($fp);
-  }
+if ($fp = fsockopen($host, $port, $errno, $errstr, 30)) {
+    $out = "POST $path HTTP/1.0\r\n";
+    $out .= "Host: $host\r\n";
+    $out .= "Content-Length: " . strlen($data) . "\r\n";
+    $out .= "Content-type: application/x-www-form-urlencoded\r\n";
+    $out .= "Connection: Close\r\n\r\n";
+    $out .= $data;
+    fwrite($fp, $out);
 
-print $store;  
+    while (!feof($fp)) {
+        $store .= fgets($fp, 128);
+    }
+    fclose($fp);
+}
+echo $store;
 exit;
 
 ?>
