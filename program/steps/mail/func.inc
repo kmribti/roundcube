@@ -290,13 +290,21 @@ function rcmail_render_folder_tree_html(&$arrFolders, &$special, &$mbox_name, $m
                     JS_OBJECT_NAME,
                     $js_name,
                     $title,
-                    rc_main::Q($foldername));
+                    rc_main::Q($foldername)
+        );
+        /**
+         * Close <li> Element.
+         */
+        $out .= "</li>\n";
 
+        /**
+         * Append a new list if it has subfolders.
+         */
         if (!empty($folder['folders'])) {
             $out .= "\n<ul>\n";
             $out .= rcmail_render_folder_tree_html($folder['folders'], $special, $mbox_name, $maxlength, $nestLevel+1) . "</ul>\n";
         }
-        $out .= "</li>\n";
+
         $idx++;
     }
 
