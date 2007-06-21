@@ -134,88 +134,93 @@ class rcube_html_page
         }
 
 
-    // definition of the code to be placed in the document header and footer
-    if (is_array($this->script_files['head']))
-      foreach ($this->script_files['head'] as $file)
-        $__page_header .= sprintf($this->script_tag_file, $this->scripts_path, $file);
-
-    if (is_array($this->external_scripts['head']))
-      foreach ($this->external_scripts['head'] as $xscript)
-        $__page_header .= sprintf($this->tag_format_external_script, $xscript);
-
-    $head_script = $this->scripts['head_top'] . $this->scripts['head'];
-    if (!empty($head_script))
-      $__page_header .= sprintf($this->script_tag, $head_script);
-
-    if (!empty($this->header))
-      $__page_header .= $this->header;
-
-    if (is_array($this->script_files['foot']))
-      foreach ($this->script_files['foot'] as $file)
-        $__page_footer .= sprintf($this->script_tag_file, $this->scripts_path, $file);
-
-    if (!empty($this->scripts['foot']))
-      $__page_footer .= sprintf($this->script_tag, $this->scripts['foot']);
-
-    if (!empty($this->footer))
-      $__page_footer .= $this->footer;
-
-    $__page_header .= $this->css->show();
-
-    // find page header
-    if($hpos = strpos(strtolower($output), '</head>'))
-      $__page_header .= "\n";
-    else
-      {
-      if (!is_numeric($hpos))
-        $hpos = strpos(strtolower($output), '<body');
-      if (!is_numeric($hpos) && ($hpos = strpos(strtolower($output), '<html')))
-        {
-        while($output[$hpos]!='>')
-        $hpos++;
-        $hpos++;
+        // definition of the code to be placed in the document header and footer
+        if (is_array($this->script_files['head'])) {
+            foreach ($this->script_files['head'] as $file) {
+                $__page_header .= sprintf($this->script_tag_file, $this->scripts_path, $file);
+            }
         }
 
-      $__page_header = "<head>\n<title>$__page_title</title>\n$__page_header\n</head>\n";
-      }
+        if (is_array($this->external_scripts['head'])) {
+            foreach ($this->external_scripts['head'] as $xscript) {
+                $__page_header .= sprintf($this->tag_format_external_script, $xscript);
+            }
+        }
 
-    // add page hader
-    if($hpos)
-      $output = substr($output,0,$hpos) . $__page_header . substr($output,$hpos,strlen($output));
-    else
-      $output = $__page_header . $output;
+        $head_script = $this->scripts['head_top'] . $this->scripts['head'];
+        if (!empty($head_script))
+            $__page_header .= sprintf($this->script_tag, $head_script);
+
+        if (!empty($this->header))
+            $__page_header .= $this->header;
+
+        if (is_array($this->script_files['foot']))
+            foreach ($this->script_files['foot'] as $file)
+                $__page_footer .= sprintf($this->script_tag_file, $this->scripts_path, $file);
+
+        if (!empty($this->scripts['foot']))
+            $__page_footer .= sprintf($this->script_tag, $this->scripts['foot']);
+
+        if (!empty($this->footer))
+            $__page_footer .= $this->footer;
+
+        $__page_header .= $this->css->show();
+
+        // find page header
+        if($hpos = strpos(strtolower($output), '</head>')) {
+            $__page_header .= "\n";
+        }
+        else {
+            if (!is_numeric($hpos)) {
+                $hpos = strpos(strtolower($output), '<body');
+            }
+            if (!is_numeric($hpos) && ($hpos = strpos(strtolower($output), '<html'))) {
+                while($output[$hpos]!='>')
+                    $hpos++;
+                $hpos++;
+            }
+
+            $__page_header = "<head>\n<title>$__page_title</title>\n$__page_header\n</head>\n";
+        }
+
+        // add page hader
+        if($hpos) {
+            $output = substr($output,0,$hpos) . $__page_header . substr($output,$hpos,strlen($output));
+        }
+        else {
+            $output = $__page_header . $output;
+        }
+
+        // find page body
+        if($bpos = strpos(strtolower($output), '<body')) {
+            while($output[$bpos]!='>') $bpos++;
+            $bpos++;
+        }
+        else {
+            $bpos = strpos(strtolower($output), '</head>')+7;
+        }
+
+        // add page body
+        if($bpos && $__page_body) {
+            $output = substr($output,0,$bpos) . "\n$__page_body\n" . substr($output,$bpos,strlen($output));
+        }
+
+        // find and add page footer
+        $output_lc = strtolower($output);
+        if(($fpos = strrstr($output_lc, '</body>')) ||
+                ($fpos = strrstr($output_lc, '</html>')))
+            $output = substr($output, 0, $fpos) . "$__page_footer\n" . substr($output, $fpos);
+        else
+            $output .= "\n$__page_footer";
 
 
-    // find page body
-    if($bpos = strpos(strtolower($output), '<body'))
-      {
-      while($output[$bpos]!='>') $bpos++;
-      $bpos++;
-      }
-    else
-      $bpos = strpos(strtolower($output), '</head>')+7;
-
-    // add page body
-    if($bpos && $__page_body)
-      $output = substr($output,0,$bpos) . "\n$__page_body\n" . substr($output,$bpos,strlen($output));
+        // reset those global vars
+        $__page_header = $__page_footer = '';
 
 
-    // find and add page footer
-    $output_lc = strtolower($output);
-    if(($fpos = strrstr($output_lc, '</body>')) ||
-       ($fpos = strrstr($output_lc, '</html>')))
-      $output = substr($output, 0, $fpos) . "$__page_footer\n" . substr($output, $fpos);
-    else
-      $output .= "\n$__page_footer";
-
-
-    // reset those global vars
-    $__page_header = $__page_footer = '';
-
-
-    // correct absolute paths in images and other tags
-    $output = preg_replace('/(src|href|background)=(["\']?)(\/[a-z0-9_\-]+)/Ui', "\\1=\\2$base_path\\3", $output);
-    $output = str_replace('$__skin_path', $base_path, $output);
+        // correct absolute paths in images and other tags
+        $output = preg_replace('/(src|href|background)=(["\']?)(\/[a-z0-9_\-]+)/Ui', "\\1=\\2$base_path\\3", $output);
+        $output = str_replace('$__skin_path', $base_path, $output);
 
         print rc_main::rcube_charset_convert($output, 'UTF-8', $this->charset);
     }

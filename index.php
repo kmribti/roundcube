@@ -101,7 +101,7 @@ if ($_action != 'get' && $_action != 'viewsource') {
 // start session with requested task
 rc_main::rcmail_startup($_task);
 
-rc_main::tfk_debug('// rcmail_startup');
+//rc_main::tfk_debug('// rcmail_startup');
 
 // set session related variables
 $COMM_PATH = sprintf('./?_task=%s', $_task);
@@ -120,10 +120,10 @@ $registry->set('s_username', '', 'core');
 // init necessary objects for GUI
 rc_main::rcmail_load_gui();
 
-rc_main::tfk_debug('// rcmail_load_gui');
+//rc_main::tfk_debug('// rcmail_load_gui');
 
-$OUTPUT     = $registry->get('OUTPUT', 'core');
-$DB         = $registry->get('DB', 'core');
+$OUTPUT = $registry->get('OUTPUT', 'core');
+$DB     = $registry->get('DB', 'core');
 
 // check DB connections and exit on failure
 if ($err_str = $DB->is_error()) {
@@ -133,28 +133,28 @@ if ($err_str = $DB->is_error()) {
         'message' => $err_str), FALSE, TRUE
     );
 
-    rc_main::tfk_debug('// DB ERROR');
+    //rc_main::tfk_debug('// DB ERROR');
 }
 
-rc_main::tfk_debug('// NO DB ERROR');
+//rc_main::tfk_debug('// NO DB ERROR');
 
 // error steps
 if ($_action=='error' && !empty($_GET['_code'])) {
     raise_error(array('code' => hexdec($_GET['_code'])), FALSE, TRUE);
 }
 
-rc_main::tfk_debug('// going');
+//rc_main::tfk_debug('// going');
 
 rc_main::tfk_debug("task {$_task} / action {$_action}");
 
 // try to log in
 if ($_action=='login' && $_task=='mail') {
 
-    rc_main::tfk_debug('Here we go, a login.');
+    //rc_main::tfk_debug('Here we go, a login.');
 
     $host = rc_main::rcmail_autoselect_host();
 
-    rc_main::tfk_debug('Selected host: ' . $host);
+    //rc_main::tfk_debug('Selected host: ' . $host);
 
     // check if client supports cookies
     if (empty($_COOKIE)) {
@@ -174,7 +174,7 @@ if ($_action=='login' && $_task=='mail') {
         unset($_SESSION['temp']);
         sess_regenerate_id();
 
-        rc_main::tfk_debug('Yay, we log in.');
+        //rc_main::tfk_debug('Yay, we log in.');
 
         // send auth cookie if necessary
         rc_main::rcmail_authenticate_session();
@@ -185,7 +185,7 @@ if ($_action=='login' && $_task=='mail') {
     }
     else {
 
-        rc_main::tfk_debug('Oops, failed.');
+        //rc_main::tfk_debug('Oops, failed.');
         if (empty($_POST['_user']) === true) {
             rc_main::tfk_debug('Login: no _user');
         }
@@ -199,7 +199,7 @@ if ($_action=='login' && $_task=='mail') {
         );
         rc_main::tfk_debug('Login: status: ' . $status);
 
-        rc_main::tfk_debug(var_export($_SESSION['temp'], true));
+        //rc_main::tfk_debug(var_export($_SESSION['temp'], true));
         //rc_main::tfk_debug(date('Y-m-d H:i:s', $_SESSION['auth_time']));
 
         $OUTPUT->show_message("loginfailed", 'warning');
@@ -221,7 +221,7 @@ else if ($_action != 'login' && $_SESSION['user_id'] && $_action != 'send') {
     }
 }
 
-rc_main::tfk_debug('// going #2');
+//rc_main::tfk_debug('// going #2');
 
 $IMAP = $registry->get('IMAP', 'core');
 //rc_main::tfk_debug(var_export($IMAP, true) . "\n\nIMAP LOADED.");
@@ -229,7 +229,7 @@ $IMAP = $registry->get('IMAP', 'core');
 // log in to imap server
 if (!empty($_SESSION['user_id']) && $_task=='mail') {
 
-    rc_main::tfk_debug('// trying to login');
+    //rc_main::tfk_debug('// trying to login');
 
     $conn = $IMAP->connect(
                 $_SESSION['imap_host'],
@@ -251,7 +251,7 @@ if (!empty($_SESSION['user_id']) && $_task=='mail') {
 // not logged in -> set task to 'login
 if (empty($_SESSION['user_id'])) {
 
-    rc_main::tfk_debug('// we need a login');
+    //rc_main::tfk_debug('// we need a login');
 
     if ($OUTPUT->ajax_call){
         $OUTPUT->remote_response("setTimeout(\"location.href='\"+this.env.comm_path+\"'\", 2000);");
@@ -263,7 +263,7 @@ rc_main::tfk_debug("// task {$_task} action {$_action}");
 
 // set task and action to client
 $OUTPUT->set_env('task', $_task);
-if (!empty($_action)) {
+if (empty($_action) === FALSE) {
     $OUTPUT->set_env('action', $_action);
 }
 
@@ -271,7 +271,7 @@ if (!empty($_action)) {
 // not logged in -> show login page
 if (!$_SESSION['user_id']) {
 
-    rc_main::tfk_debug('// finally: login');
+    //rc_main::tfk_debug('// finally: login');
 
     $OUTPUT->task = 'login';
     $OUTPUT->send('login');
@@ -294,7 +294,7 @@ if ($_action=='keep-alive') {
  */
 $_name = '';
 
-rc_main::tfk_debug("testing: $_task / $_action");
+//rc_main::tfk_debug("testing: $_task / $_action");
 
 // include task specific files
 if ($_task == 'mail') {
@@ -403,9 +403,8 @@ if (empty($_name) === false) {
     else {
         rc_main::tfk_debug('Does not exist: ' . $_file);
     }
+    rc_main::tfk_debug('We included!');
 }
-
-rc_main::tfk_debug('We included?');
 
 // parse main template
 $OUTPUT->send($_task);

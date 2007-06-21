@@ -22,12 +22,12 @@ class rcmail_send
 
         // get identity record
         $_query = "SELECT *, email AS mailto";
-        $_query.= " FROM " . get_table_name('identities');
+        $_query.= " FROM " . rc_main::get_table_name('identities');
         $_query.= " WHERE identity_id=?";
         $_query.= " AND user_id=?";
         $_query.= " AND del<>1";
 
-        rc_main::tfk_debug('Identity: ' . $_query);
+        //rc_main::tfk_debug('Identity: ' . $_query);
 
         $sql_result = $DB->query($_query, $id, $_SESSION['user_id']);
         if ($DB->db_error === true) {
@@ -80,8 +80,8 @@ class rcmail_send
 
         // find emoticon image tags
         while ($pos = strpos($body, $searchstr, $last_img_pos)) {
-            $pos2 = strpos($body, '"', $pos);
-            $body_pre = substr($body, 0, $pos);
+            $pos2       = strpos($body, '"', $pos);
+            $body_pre   = substr($body, 0, $pos);
             $image_name = substr(
                             $body,
                             $pos + strlen($searchstr),

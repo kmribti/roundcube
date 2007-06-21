@@ -1014,7 +1014,8 @@ class rc_main
         $INSTALL_PATH = $registry->get('INSTALL_PATH', 'core');
         $sa_languages = $registry->get('sa_languages', 'core');
 
-        if (is_null($sa_languages)) {
+        if (empty($sa_languages)) {
+            $sa_languages = array();
             @include($INSTALL_PATH.'program/localization/index.inc');
 
             if ($dh = @opendir($INSTALL_PATH.'program/localization')) {
@@ -1038,6 +1039,7 @@ class rc_main
     {
         $registry = rc_registry::getInstance();
         $OUTPUT   = $registry->get('OUTPUT', 'core');
+
         $arg_list = func_get_args();
         foreach ($arg_list as $i => $name) {
             $OUTPUT->command('add_label', $name, rcube_label($name));
@@ -1497,7 +1499,7 @@ class rc_main
     static function rcmail_mail_domain($host)
     {
         $registry = rc_registry::getInstance();
-        $CONFIG   = $regisry->get('CONFIG', 'core');
+        $CONFIG   = $registry->get('CONFIG', 'core');
 
         $domain = $host;
         if (is_array($CONFIG['mail_domain'])) {

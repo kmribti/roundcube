@@ -25,7 +25,7 @@ $registry = rc_registry::getInstance();
 
 // show loading page
 if ($_GET['_preload']) {
-    $url = str_replace('&_preload=1', '', $_SERVER['REQUEST_URI']);
+    $url     = str_replace('&_preload=1', '', $_SERVER['REQUEST_URI']);
     $message = rcube_label('loadingdata');
 
     echo "<html>\n<head>\n";
@@ -39,16 +39,16 @@ if ($_GET['_preload']) {
 
 // similar code as in program/steps/mail/show.inc
 if ($_GET['_uid']) {
-    $MESSAGE = array('UID' => rc_main::get_input_value('_uid', RCUBE_INPUT_GET));
+    $MESSAGE              = array('UID' => rc_main::get_input_value('_uid', RCUBE_INPUT_GET));
     $MESSAGE['structure'] = $IMAP->get_structure($MESSAGE['UID']);
-    $MESSAGE['parts'] = $IMAP->get_mime_numbers($MESSAGE['structure']);
+    $MESSAGE['parts']     = $IMAP->get_mime_numbers($MESSAGE['structure']);
     $registry->set('MESSAGE', $MESSAGE, 'core');
 }
 
 
 // show part page
 if ($_GET['_frame']) {
-    parse_template('messagepart');
+    rc_main::parse_template('messagepart');
     exit;
 }
 else if ($pid = rc_main::get_input_value('_part', RCUBE_INPUT_GET)) {

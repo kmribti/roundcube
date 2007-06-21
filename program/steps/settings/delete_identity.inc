@@ -19,30 +19,29 @@
 
 */
 
-if (($ids = get_input_value('_iid', RCUBE_INPUT_GET)) && preg_match('/^[0-9]+(,[0-9]+)*$/', $ids))
-{
-  $DB->query(
-    "UPDATE ".get_table_name('identities')."
-     SET    del=1
-     WHERE  user_id=?
-     AND    identity_id IN (".$ids.")",
-    $_SESSION['user_id']);
+if (
+    ($ids = rc_main::get_input_value('_iid', RCUBE_INPUT_GET))
+    && preg_match('/^[0-9]+(,[0-9]+)*$/', $ids)
+) {
+    $_query = "UPDATE " . rc_main::get_table_name('identities');
+    $_query.= " SET del=1";
+    $_query.= " WHERE user_id=?";
+    $_query.= " AND identity_id IN (" . $ids . ")";
+    $DB->query($_query, $_SESSION['user_id']);
 
-  $count = $DB->affected_rows();
-  if ($count)
-    $OUTPUT->show_message('deletedsuccessfully', 'confirmation');
-
-  // send response
-  if ($OUTPUT->ajax_call)
-    $OUTPUT->send();
+    $count = $DB->affected_rows();
+    if ($count) {
+        $OUTPUT->show_message('deletedsuccessfully', 'confirmation');
+    }
+    // send response
+    if ($OUTPUT->ajax_call) {
+        $OUTPUT->send();
+    }
+}
+if ($OUTPUT->ajax_call) {
+    exit;
 }
 
-
-if ($OUTPUT->ajax_call)
-  exit;
-
-
 // go to identities page
-rcmail_overwrite_action('identities');
-
+rc_main::rcmail_overwrite_action('identities');
 ?>

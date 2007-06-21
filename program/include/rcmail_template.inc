@@ -56,8 +56,8 @@ class rcmail_template extends rcube_html_page
     {
         parent::__construct();
 
-        $this->task = $task;
-        $this->config = $config;
+        $this->task      = $task;
+        $this->config    = $config;
         $this->ajax_call = !empty($_GET['_remote']) || !empty($_POST['_remote']);
 
         // add common javascripts
@@ -176,17 +176,21 @@ class rcmail_template extends rcube_html_page
    */
     function send($templ=null, $exit=true)
     {
-        if ($this->ajax_call)
+        if ($this->ajax_call) {
             $this->remote_response('', !$exit);
-        else if ($templ != 'iframe')
+        }
+        elseif ($templ != 'iframe') {
+            rc_main::tfk_debug("/Parsing $templ");
             $this->parse($templ, false);
+        }
         else {
             $this->framed = $templ == 'iframe' ? true : $this->framed;
             $this->write();
         }
 
-        if ($exit)
+        if ($exit) {
             exit;
+        }
     }
 
 
@@ -222,16 +226,16 @@ class rcmail_template extends rcube_html_page
   /**
    * @override
    */
-  function write($template='')
-  {
-    // write all env variables to client
-    $js = $this->framed ? "if(window.parent) {\n" : '';
-    $js .= $this->get_js_commands() . ($this->framed ? ' }' : '');
-    $this->add_script($js, 'head_top');
+    function write($template='')
+    {
+        // write all env variables to client
+        $js = $this->framed ? "if(window.parent) {\n" : '';
+        $js .= $this->get_js_commands() . ($this->framed ? ' }' : '');
+        $this->add_script($js, 'head_top');
 
-    // call super method
-    parent::write($template, $this->config['skin_path']);
-  }
+        // call super method
+        parent::write($template, $this->config['skin_path']);
+    }
 
 
     /**
@@ -249,20 +253,25 @@ class rcmail_template extends rcube_html_page
     {
         $skin_path = $this->config['skin_path'];
 
-        //rc_main::tfk_debug(var_export($this->config, true));
+        //rc_main::tfk_debug(var_export($this->config['skin_path'], true));
 
         // read template file
         $templ = '';
         $path = "$skin_path/templates/$name.html";
 
         if(($fp = @fopen($path, 'r')) === false) {
+            $message = '';
+            ob_start();
+            fopen($path, 'r');
+            $message.= ob_get_contents();
+            ob_end_clean();
             raise_error(
                 array(
                     'code' => 501,
                     'type' => 'php',
                     'line' => __LINE__,
                     'file' => __FILE__,
-                    'message' => "Error loading template for '$name'"
+                    'message' => "Error loading template for '$name': $message"
                 ),
                 TRUE,
                 TRUE
@@ -270,10 +279,13 @@ class rcmail_template extends rcube_html_page
             return FALSE;
         }
         $templ = fread($fp, filesize($path));
-        fclose($fp);
+        @fclose($fp);
+
+        rc_main::tfk_debug("// parsed: $path");
 
         // parse for specialtags
-        $output = $this->parse_xml($this->parse_conditions($templ));
+        $output = $this->parse_conditions($templ);
+        $output = $this->parse_xml($output);
 
         // add debug console
         if ($this->config['debug_level'] & 8) {
@@ -282,7 +294,8 @@ class rcmail_template extends rcube_html_page
                             <form action="/" name="debugform"><textarea name="console" id="dbgconsole" rows="20" cols="40" wrap="off" style="display:none;width:400px;border:none;font-size:x-small"></textarea></form></div>'
             );
         }
-        $this->write(trim($this->parse_with_globals($output)), $skin_path);
+        $output = $this->parse_with_globals($output);
+        $this->write(trim($output), $skin_path);
         if ($exit) {
             exit;
         }
@@ -356,17 +369,28 @@ class rcmail_template extends rcube_html_page
      */
     function parse_conditions($input)
     {
-        if (($matches = preg_split('/<roundcube:(if|elseif|else|endif)\s+([^>]+)>/is', $input, 2, PREG_SPLIT_DELIM_CAPTURE)) && count($matches)==4) {
+        $matches = preg_split(
+                        '/<roundcube:(if|elseif|else|endif)\s+([^>]+)>/is',
+                        $input,
+                        2,
+                        PREG_SPLIT_DELIM_CAPTURE
+        );
+        if ($matches && count($matches)==4) {
             if (preg_match('/^(else|endif)$/i', $matches[1])) {
                 return $matches[0] . $this->parse_conditions($matches[3]);
             }
             $attrib = rc_main::parse_attrib_string($matches[2]);
             if (isset($attrib['condition'])) {
                 $condmet = $this->check_condition($attrib['condition']);
-                $submatches = preg_split('/<roundcube:(elseif|else|endif)\s+([^>]+)>/is', $matches[3], 2, PREG_SPLIT_DELIM_CAPTURE);
-
+                $submatches = preg_split(
+                                '/<roundcube:(elseif|else|endif)\s+([^>]+)>/is',
+                                $matches[3],
+                                2,
+                                PREG_SPLIT_DELIM_CAPTURE
+                );
                 if ($condmet) {
-                    $result = $submatches[0] . ($submatches[1] != 'endif' ? preg_replace('/.*<roundcube:endif\s+[^>]+>/Uis', '', $submatches[3], 1) : $submatches[3]);
+                    $result = $submatches[0];
+                    $result.= ($submatches[1] != 'endif' ? preg_replace('/.*<roundcube:endif\s+[^>]+>/Uis', '', $submatches[3], 1) : $submatches[3]);
                 }
                 else {
                     $result = "<roundcube:$submatches[1] $submatches[2]>" . $submatches[3];

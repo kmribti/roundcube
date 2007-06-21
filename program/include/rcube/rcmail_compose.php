@@ -13,7 +13,7 @@ function rcmail_compose_headers($attrib)
     $compose_mode  = $registry->get('compose_mode', 'core');
     $sa_recipients = $registry->get('sa_recipients', 'core');
 
-    if (is_null($sa_recipients)) {
+    if (empty($sa_recipients)) {
         $sa_recipients = array();
     }
 
@@ -95,9 +95,19 @@ function rcmail_compose_headers($attrib)
         if (!empty($fvalue)) {
             $to_addresses = $IMAP->decode_address_list($fvalue);
             $fvalue = '';
+
+            rc_main::tfk_debug("/ test: " . var_export($sa_recipients, true));
+
             foreach ($to_addresses as $addr_part) {
-                if (!empty($addr_part['mailto']) && !in_array($addr_part['mailto'], $sa_recipients) && (!$MESSAGE['FROM'] || !in_array($addr_part['mailto'], $MESSAGE['FROM']))) {
-                    $fvalue .= (strlen($fvalue) ? ', ':'').$addr_part['string'];
+                if (
+                    !empty($addr_part['mailto'])
+                    && !in_array($addr_part['mailto'], $sa_recipients)
+                    && (
+                        !$MESSAGE['FROM']
+                        || !in_array($addr_part['mailto'], $MESSAGE['FROM'])
+                    )
+                ) {
+                    $fvalue .= (strlen($fvalue) ? ', ':'') . $addr_part['string'];
                     $sa_recipients[] = $addr_part['mailto'];
                 }
             }

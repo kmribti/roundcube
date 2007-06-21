@@ -1,5 +1,4 @@
 <?php
-
 /*
  +-----------------------------------------------------------------------+
  | program/steps/mail/spell.inc                                          |
@@ -22,6 +21,7 @@
 
 */
 
+$registry       = rc_registry::getInstance();
 $REMOTE_REQUEST = $registry->set('REMOTE_REQUEST', TRUE, 'core');
 $CONFIG         = $registry->get('CONFIG', 'core');
 
@@ -59,5 +59,4 @@ if ($fp = fsockopen($host, $port, $errno, $errstr, 30)) {
 }
 echo $store;
 exit;
-
 ?>

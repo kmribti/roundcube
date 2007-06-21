@@ -19,18 +19,18 @@
 */
 
 if (($_GET['_iid'] || $_POST['_iid']) && $_action=='edit-identity') {
-    $_query = "SELECT * FROM " . get_table_name('identities');
+    $_query = "SELECT * FROM " . rc_main::get_table_name('identities');
     $_query.= " WHERE identity_id=?";
     $_query.= " AND user_id=?";
     $_query.= " AND del<>1";
     $DB->query(
             $_query,
-            get_input_value('_iid', RCUBE_INPUT_GPC),
+            rc_main::get_input_value('_iid', RCUBE_INPUT_GPC),
             $_SESSION['user_id']
     );
-  
+
     $IDENTITY_RECORD = $DB->fetch_assoc();
-  
+    $registry->set('IDENTITY_RECORD', $IDENTITY_RECORD, 'core');
     if (is_array($IDENTITY_RECORD)) {
         $OUTPUT->set_env('iid', $IDENTITY_RECORD['identity_id']);
     }
@@ -43,8 +43,9 @@ $OUTPUT->include_script('list.js');
 
 function rcube_identity_form($attrib)
 {
-    global $IDENTITY_RECORD, $OUTPUT;
-
+    $registry        = rc_registry::getInstance();
+    $IDENTITY_RECORD = $registry->get('IDENTITY_RECORD', 'core');
+    $OUTPUT          = $registry->get('OUTPUT', 'core');
 /*
   $OUTPUT->include_script('tiny_mce/tiny_mce_src.js');
   $OUTPUT->add_script("tinyMCE.init({ mode : 'specific_textareas'," .
@@ -63,8 +64,7 @@ function rcube_identity_form($attrib)
         return rcube_label('notfound');
     }
     // add some labels to client
-    rcube_add_label('noemailwarning', 'nonamewarning');
-
+    rc_main::rcube_add_label('noemailwarning', 'nonamewarning');
 
     list($form_start, $form_end) = get_form_tags($attrib, 'save-identity', array('name' => '_iid', 'value' => $IDENTITY_RECORD['identity_id']));
     unset($attrib['form']);
@@ -87,7 +87,12 @@ function rcube_identity_form($attrib)
         $colprop = $a_show_cols[$attrib['part']];
         if (is_array($colprop)) {
             $out = $form_start;
-            $out.= rcmail_get_edit_field($attrib['part'], $IDENTITY_RECORD[$attrib['part']], $attrib, $colprop['type']); 
+            $out.= rc_main::rcmail_get_edit_field(
+                        $attrib['part'],
+                        $IDENTITY_RECORD[$attrib['part']],
+                        $attrib,
+                        $colprop['type']
+            );
             return $out;
         }
         else {
@@ -121,23 +126,28 @@ function rcube_identity_form($attrib)
         }
 
         $label = strlen($colprop['label']) ? $colprop['label'] : $col;
-        $value = rcmail_get_edit_field($col, $IDENTITY_RECORD[$col], $attrib, $colprop['type']);
+        $value = rc_main::rcmail_get_edit_field(
+                        $col,
+                        $IDENTITY_RECORD[$col],
+                        $attrib,
+                        $colprop['type']
+        );
 
         $out .= sprintf(
                     "<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
                     $attrib['id'],
-                    Q(rcube_label($label)),
+                    rc_main::Q(rcube_label($label)),
                     $value);
     }
     $out .= "\n</table>$form_end";
 
-    return $out;  
+    return $out;
 }
 
 $OUTPUT->add_handler('identityform', 'rcube_identity_form');
 
-if ($_action=='add-identity' && template_exists('addidentity')) {
-    parse_template('addidentity');
+if ($_action=='add-identity' && rc_main::template_exists('addidentity')) {
+    rc_main::parse_template('addidentity');
 }
-parse_template('editidentity');
+rc_main::parse_template('editidentity');
 ?>

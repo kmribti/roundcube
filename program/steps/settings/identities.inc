@@ -18,9 +18,19 @@
  $Id: identities.inc 543 2007-04-28 18:07:12Z thomasb $
 
 */
+$registry = rc_registry::getInstance();
+$DB       = $registry->get('DB', 'core');
+$OUTPUT   = $registry->get('OUTPUT', 'core');
 
 if ($USER_DATA = $DB->fetch_assoc($sql_result)) {
-    $OUTPUT->set_pagetitle(sprintf('%s (%s@%s)', rcube_label('identities'), $USER_DATA['username'], $USER_DATA['mail_host']));
+    $OUTPUT->set_pagetitle(
+                sprintf(
+                    '%s (%s@%s)',
+                    rcube_label('identities'),
+                    $USER_DATA['username'],
+                    $USER_DATA['mail_host']
+                )
+    );
 }
 $OUTPUT->include_script('list.js');
 
@@ -37,7 +47,13 @@ function rcmail_identity_frame($attrib)
 
     $OUTPUT->set_env('contentframe', $attrib['name']);
 
-    $attrib_str = rc_main::create_attrib_string($attrib, array('name', 'id', 'class', 'style', 'src', 'width', 'height', 'frameborder'));
+    $attrib_str = rc_main::create_attrib_string(
+                        $attrib,
+                        array(
+                            'name', 'id', 'class', 'style',
+                            'src', 'width', 'height', 'frameborder'
+                        )
+    );
     $out = '<iframe'. $attrib_str . '></iframe>';
 
     return $out;
@@ -45,5 +61,5 @@ function rcmail_identity_frame($attrib)
 
 $OUTPUT->add_handler('identityframe', 'rcmail_identity_frame');
 
-parse_template('identities');
+rc_main::parse_template('identities');
 ?>

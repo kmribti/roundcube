@@ -97,13 +97,21 @@ function smtp_mail($from, $recipients, &$headers, &$body, &$response)
             else
                 $smtp_user = $CONFIG['smtp_user'];
 
-            if (strstr($CONFIG['smtp_pass'], '%p'))
-                $smtp_pass = str_replace('%p', decrypt_passwd($_SESSION['password']), $CONFIG['smtp_pass']);
-            else
+            if (strstr($CONFIG['smtp_pass'], '%p')) {
+                $smtp_pass = str_replace(
+                                '%p',
+                                rc_main::decrypt_passwd(
+                                    $_SESSION['password']
+                                ),
+                                $CONFIG['smtp_pass']
+                );
+            }
+            else {
                 $smtp_pass = $CONFIG['smtp_pass'];
-
+            }
             $smtp_auth_type = empty($CONFIG['smtp_auth_type']) ? NULL : $CONFIG['smtp_auth_type'];
-            $result = $SMTP_CONN->auth($smtp_user, $smtp_pass, $smtp_auth_type);
+            $result         = $SMTP_CONN->auth($smtp_user, $smtp_pass, $smtp_auth_type);
+
             $registry->set('SMTP_CONN', $SMTP_CONN, 'core');
 
             if (PEAR::isError($result)) {

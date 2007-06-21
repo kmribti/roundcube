@@ -47,7 +47,7 @@ function rcmail_user_prefs_form($attrib)
     $no_override = is_array($CONFIG['dont_override']) ? array_flip($CONFIG['dont_override']) : array();
 
     // add some labels to client
-    rcube_add_label('nopagesizewarning');
+    rc_main::rcube_add_label('nopagesizewarning');
 
     list($form_start, $form_end) = get_form_tags($attrib, 'save-prefs');
     unset($attrib['form']);
@@ -60,7 +60,7 @@ function rcmail_user_prefs_form($attrib)
 
     // show language selection
     if (!isset($no_override['language'])) {
-        $a_lang = rcube_list_languages();
+        $a_lang = rc_main::rcube_list_languages();
         asort($a_lang);
 
         $field_id    = 'rcmfd_lang';
@@ -191,7 +191,7 @@ function rcmail_user_prefs_form($attrib)
     $input_preview = new checkbox(array('name' => '_preview_pane', 'id' => $field_id, 'value' => 1));
     $out .= sprintf("<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
                     $field_id,
-                    Q(rcube_label('previewpane')),
+                    rc_main::Q(rcube_label('previewpane')),
                     $input_preview->show($CONFIG['preview_pane']?1:0));
     }
 
@@ -248,7 +248,12 @@ function rcmail_identities_list($attrib)
     $a_show_cols = array('name', 'email', 'organization', 'reply-to');
 
     // create XHTML table
-    $out = rcube_table_output($attrib, $sql_result, $a_show_cols, 'identity_id');
+    $out = rc_main::rcube_table_output(
+                $attrib,
+                $sql_result,
+                $a_show_cols,
+                'identity_id'
+    );
 
     // set client env
     $OUTPUT->add_gui_object('identitieslist', $attrib['id']);
