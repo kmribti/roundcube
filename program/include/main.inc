@@ -1052,7 +1052,7 @@ class rc_main
     {
         $registry = rc_registry::getInstance();
         $CONFIG   = $registry->get('CONFIG', 'core');
-        $tmp      = self::unslashify($CONFIG['temp_dir']);
+        $tmp      = unslashify($CONFIG['temp_dir']);
         $expire   = mktime() - 172800;  // expire in 48 hours
 
         if (($dir = opendir($tmp)) === false) {

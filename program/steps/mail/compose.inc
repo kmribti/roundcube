@@ -27,6 +27,8 @@ define('RCUBE_COMPOSE_REPLY',   0x0106);
 define('RCUBE_COMPOSE_FORWARD', 0x0107);
 define('RCUBE_COMPOSE_DRAFT',   0x0108);
 
+$registry = rc_registry::getInstance();
+$CONFIG   = $registry->get('CONFIG', 'core');
 
 // remove an attachment
 if ($_action == 'remove-attachment' && preg_match('/^rcmfile([0-9]+)$/', $_POST['_file'], $regs)) {
@@ -45,6 +47,8 @@ if ($_action == 'remove-attachment' && preg_match('/^rcmfile([0-9]+)$/', $_POST[
 
 // this version does not support HTML mails
 $CONFIG['htmleditor'] = false;
+$CONFIG = $registry->set('CONFIG', $CONFIG, 'core');
+
 
 $MESSAGE_FORM = $registry->set('MESSAGE_FORM', NULL, 'core');
 $MESSAGE      = $registry->set('MESSAGE', NULL, 'core');
@@ -96,8 +100,8 @@ $registry->set('compose_mode', $compose_mode, 'core');
 
 if (empty($msg_uid) === false) {
 
-    rc_main::tfk_debug('We got uid: ' . $msg_uid);
-    rc_main::tfk_debug('Compose mode: '  . $compose_mode);
+    //rc_main::tfk_debug('We got uid: ' . $msg_uid);
+    //rc_main::tfk_debug('Compose mode: '  . $compose_mode);
 
     // similar as in program/steps/mail/show.inc
     $MESSAGE = array('UID' => $msg_uid);
@@ -107,7 +111,7 @@ if (empty($msg_uid) === false) {
     $MESSAGE['parts']     = $IMAP->get_mime_numbers($MESSAGE['structure']);
 
 
-    rc_main::tfk_debug('Reference message: ' . var_export($MESSAGE, true));
+    //rc_main::tfk_debug('Reference message: ' . var_export($MESSAGE, true));
 
     if ($compose_mode == RCUBE_COMPOSE_REPLY) {
         $_SESSION['compose']['reply_uid']   = $msg_uid;
@@ -132,7 +136,7 @@ $registry->set('MESSAGE', $MESSAGE, 'core');
 /****** compose mode functions ********/
 require_once 'include/rcube/rcmail_compose.php';
 
-rc_main::tfk_debug('Passed require for rcmail_compose functions.');
+//rc_main::tfk_debug('Passed require for rcmail_compose functions.');
 
 // register UI objects
 $OUTPUT->add_handlers(

@@ -1539,7 +1539,7 @@ function rcmail_sanitize_html($body, $container_id)
 function rcmail_alter_html_link($in)
 {
     $in = preg_replace('/=([^("|\'|\s)]+)(\s|$)/', '="\1"', $in);
-    $attrib = parse_attrib_string($in);
+    $attrib = rc_main::parse_attrib_string($in);
 
     if (stristr((string)$attrib['href'], 'mailto:')) {
         $attrib['onclick'] = sprintf(

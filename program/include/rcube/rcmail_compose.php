@@ -31,7 +31,10 @@ function rcmail_compose_headers($attrib)
             $header = 'to';
 
             // we have a set of recipients stored is session
-            if (($mailto_id = rc_main::get_input_value('_mailto', RCUBE_INPUT_GET)) && $_SESSION['mailto'][$mailto_id]) {
+            if (
+                ($mailto_id = rc_main::get_input_value('_mailto', RCUBE_INPUT_GET))
+                && $_SESSION['mailto'][$mailto_id]
+            ) {
                 $fvalue = $_SESSION['mailto'][$mailto_id];
             }
             elseif (!empty($_GET['_to'])) {
@@ -96,7 +99,7 @@ function rcmail_compose_headers($attrib)
             $to_addresses = $IMAP->decode_address_list($fvalue);
             $fvalue = '';
 
-            rc_main::tfk_debug("/ test: " . var_export($sa_recipients, true));
+            //rc_main::tfk_debug("/ test: " . var_export($sa_recipients, true));
 
             foreach ($to_addresses as $addr_part) {
                 if (
@@ -217,7 +220,13 @@ function rcmail_compose_header_from($attrib)
 
     while ($sql_arr = $DB->fetch_assoc($sql_result)) {
         $identity_id = $sql_arr['identity_id'];
-        $select_from->add(rc_main::format_email_recipient($sql_arr['email'], $sql_arr['name']), $identity_id);
+        $select_from->add(
+                rc_main::format_email_recipient(
+                        $sql_arr['email'],
+                        $sql_arr['name']
+                ),
+                $identity_id
+        );
 
         // add signature to array
         if (!empty($sql_arr['signature'])) {
@@ -231,9 +240,9 @@ function rcmail_compose_header_from($attrib)
         }
 
         // set identity if it's one of the reply-message recipients
-        if (in_array($sql_arr['email'], $a_recipients))
+        if (in_array($sql_arr['email'], $a_recipients)) {
             $from_id = $sql_arr['identity_id'];
-
+        }
         if ($compose_mode == RCUBE_COMPOSE_REPLY && is_array($MESSAGE['FROM'])) {
             $MESSAGE['FROM'][] = $sql_arr['email'];
         }
@@ -405,7 +414,7 @@ function rcmail_create_reply_body($body, $bodyIsHtml)
     $MESSAGE  = $registry->get('MESSAGE', 'core');
 
     $_date = $MESSAGE['headers']->date;
-    $_from = $MESSAGE['headers']->from;
+    $_from = $IMAP->decode_header($MESSAGE['headers']->from);
 
     //tfk_debug('From: ' . $_from);
 
@@ -491,10 +500,10 @@ function rcmail_create_forward_body($body, $bodyIsHtml)
                 "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">From: </th><td>%s</td></tr>" .
                 "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">To: </th><td>%s</td></tr>" .
                 "</tbody></table><br>",
-                Q($_subject),
-                Q($_date),
-                Q($IMAP->decode_header($_from)),
-                Q($IMAP->decode_header($_to))
+                rc_main::Q($_subject),
+                rc_main::Q($_date),
+                rc_main::Q($IMAP->decode_header($_from)),
+                rc_main::Q($IMAP->decode_header($_to))
         );
     }
 
@@ -580,6 +589,7 @@ function rcmail_compose_subject($attrib)
     $CONFIG       = $registry->get('CONFIG', 'core');
     $MESSAGE      = $registry->get('MESSAGE', 'core');
     $compose_mode = $registry->get('compose_mode', 'core');
+    $IMAP         = $registry->get('IMAP', 'core');
 
     list($form_start, $form_end) = get_form_tags($attrib);
     unset($attrib['form']);
@@ -590,6 +600,7 @@ function rcmail_compose_subject($attrib)
     $subject  = '';
 
     $_subject = $MESSAGE['headers']->subject;
+    $_subject = $IMAP->decode_mime_string($_subject);
 
     // use subject from post
     if (isset($_POST['_subject'])) {
@@ -665,9 +676,9 @@ function rcmail_compose_attachment_list($attrib)
                         $id,
                         JS_OBJECT_NAME,
                         $id,
-                        Q(rcube_label('delete')),
+                        rc_main::Q(rcube_label('delete')),
                         $button,
-                        Q($a_prop['name'])
+                        rc_main::Q($a_prop['name'])
             );
         }
     }
@@ -740,12 +751,16 @@ function rcmail_priority_selector($attrib)
     $attrib['name'] = '_priority';
     $selector = new select($attrib);
 
-    $selector->add(array(rcube_label('lowest'),
-                       rcube_label('low'),
-                       rcube_label('normal'),
-                       rcube_label('high'),
-                       rcube_label('highest')),
-                 array(5, 4, 0, 2, 1));
+    $selector->add(
+                array(
+                    rcube_label('lowest'),
+                    rcube_label('low'),
+                    rcube_label('normal'),
+                    rcube_label('high'),
+                    rcube_label('highest')
+                ),
+                array(5, 4, 0, 2, 1)
+    );
 
     $sel = isset($_POST['_priority']) ? $_POST['_priority'] : 0;
 

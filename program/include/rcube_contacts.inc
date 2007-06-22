@@ -19,249 +19,255 @@
 
 */
 
+/**
+ * Include rcube_result_set
+ * @ignore
+ */
+require_once dirname(__FILE__) . '/rcube/result_set.php';
+
+/**
+ * rcube_contacts
+ *
+ * @final
+ */
 class rcube_contacts
 {
-    var $db = null;
-    var $db_name = '';
-    var $user_id = 0;
-    var $filter = null;
-    var $result = null;
-    var $search_fields;
-    var $search_string;
-    var $table_cols = array('name', 'email', 'firstname', 'surname');
+    protected $db = null;
+    protected $db_name = '';
+    protected $user_id = 0;
+    protected $filter = null;
+    protected $result = null;
+    protected $search_fields;
+    protected $search_string;
+    protected $table_cols = array('name', 'email', 'firstname', 'surname');
 
     /** public properties */
-    var $primary_key = 'contact_id';
-    var $readonly = false;
-    var $list_page = 1;
-    var $page_size = 10;
-    var $ready = false;
-
+    public $primary_key = 'contact_id';
+    public $readonly = false;
+    public $list_page = 1;
+    public $page_size = 10;
+    public $ready = false;
 
     /**
      * Object constructor
      *
-     * @param object  Instance of the rcube_db class
-     * @param integer User-ID
+     * @access public
+     * @param  object  Instance of the rcube_db class
+     * @param  integer User-ID
      */
-    function __construct($dbconn, $user)
+    public function __construct($dbconn, $user)
     {
-        $this->db = $dbconn;
+        $this->db      = $dbconn;
         $this->db_name = rc_main::get_table_name('contacts');
         $this->user_id = $user;
-        $this->ready = $this->db && !$this->db->is_error();
+        $this->ready   = $this->db && !$this->db->is_error();
     }
 
-  /**
-   * PHP 4 object constructor
-   *
-   * @see  rcube_contacts::__construct
-   */
-  function rcube_contacts($dbconn, $user)
-  {
-    $this->__construct($dbconn, $user);
-  }
-
-
-  /**
-   * Set internal list page
-   *
-   * @param  number  Page number to list
-   * @access public
-   */
-  function set_page($page)
-  {
-    $this->list_page = (int)$page;
-  }
-
-
-  /**
-   * Set internal page size
-   *
-   * @param  number  Number of messages to display on one page
-   * @access public
-   */
-  function set_pagesize($size)
-  {
-    $this->page_size = (int)$size;
-  }
-
-
-  /**
-   * Save a search string for future listings
-   *
-   * @param  string SQL params to use in listing method
-   */
-  function set_search_set($filter)
-  {
-    $this->filter = $filter;
-  }
-
-
-  /**
-   * Getter for saved search properties
-   *
-   * @return mixed Search properties used by this class
-   */
-  function get_search_set()
-  {
-    return $this->filter;
-  }
-
-
-  /**
-   * Reset all saved results and search parameters
-   */
-  function reset()
-  {
-    $this->result = null;
-    $this->filter = null;
-    $this->search_fields = null;
-    $this->search_string = null;
-  }
-
-
-  /**
-   * List the current set of contact records
-   *
-   * @param  array  List of cols to show
-   * @return array  Indexed list of contact records, each a hash array
-   */
-  function list_records($cols=null, $subset=0)
-  {
-    // count contacts for this user
-    $this->result = $this->count();
-    $sql_result = NULL;
-
-    // get contacts from DB
-    if ($this->result->count)
+    /**
+     * Set internal list page
+     *
+     * @param  number  Page number to list
+     * @access public
+     */
+    function set_page($page)
     {
-      $start_row = $subset < 0 ? $this->result->first + $this->page_size + $subset : $this->result->first;
-      $length = $subset != 0 ? abs($subset) : $this->page_size;
-
-      $sql_result = $this->db->limitquery(
-        "SELECT * FROM ".$this->db_name."
-         WHERE  del<>1
-         AND    user_id=?" .
-        ($this->filter ? " AND (".$this->filter.")" : "") .
-        " ORDER BY name",
-        $start_row,
-        $length,
-        $this->user_id);
+        $this->list_page = (int)$page;
     }
 
-    while ($sql_result && ($sql_arr = $this->db->fetch_assoc($sql_result)))
+
+    /**
+     * Set internal page size
+     *
+     * @param  number  Number of messages to display on one page
+     * @access public
+     */
+    function set_pagesize($size)
     {
-      $sql_arr['ID'] = $sql_arr[$this->primary_key];
-      // make sure we have a name to display
-      if (empty($sql_arr['name']))
-        $sql_arr['name'] = $sql_arr['email'];
-      $this->result->add($sql_arr);
+        $this->page_size = (int)$size;
     }
 
-    return $this->result;
-  }
 
-
-  /**
-   * Search contacts
-   *
-   * @param array   List of fields to search in
-   * @param string  Search value
-   * @param boolean True if results are requested, False if count only
-   * @return Indexed list of contact records and 'count' value
-   */
-  function search($fields, $value, $select=true)
-  {
-    if (!is_array($fields))
-      $fields = array($fields);
-
-    $add_where = array();
-    foreach ($fields as $col)
+    /**
+     * Save a search string for future listings
+     *
+     * @param  string SQL params to use in listing method
+     */
+    function set_search_set($filter)
     {
-      if ($col == 'ID' || $col == $this->primary_key)
-      {
-        $ids = !is_array($value) ? split(',', $value) : $value;
-        $add_where[] = $this->primary_key." IN (".join(',', $ids).")";
-      }
-      else
-        $add_where[] = $this->db->quoteIdentifier($col)." LIKE ".$this->db->quote(strlen($value)>2 ? "%$value%" : "$value%");
+        $this->filter = $filter;
     }
 
-    if (!empty($add_where))
+
+    /**
+     * Getter for saved search properties
+     *
+     * @return mixed Search properties used by this class
+     */
+    function get_search_set()
     {
-      $this->set_search_set(join(' OR ', $add_where));
-      if ($select)
-        $this->list_records();
-      else
+        return $this->filter;
+    }
+
+
+    /**
+     * Reset all saved results and search parameters
+     */
+    function reset()
+    {
+        $this->result = null;
+        $this->filter = null;
+        $this->search_fields = null;
+        $this->search_string = null;
+    }
+
+
+    /**
+     * List the current set of contact records
+     *
+     * @param  array  List of cols to show
+     * @return array  Indexed list of contact records, each a hash array
+     */
+    function list_records($cols=null, $subset=0)
+    {
+        // count contacts for this user
         $this->result = $this->count();
+        $sql_result = NULL;
+
+        // get contacts from DB
+        if ($this->result->count) {
+            $start_row = $subset < 0 ? $this->result->first + $this->page_size + $subset : $this->result->first;
+            $length    = $subset != 0 ? abs($subset) : $this->page_size;
+
+            $_query = "SELECT * FROM " . $this->db_name;
+            $_query.= " WHERE del<>1";
+            $_qiery.= " AND user_id=?";
+            $_query.= ($this->filter ? " AND (".$this->filter.")" : "");
+            $_query.= " ORDER BY name";
+
+            $sql_result = $this->db->limitquery(
+                                $_query,
+                                $start_row,
+                                $length,
+                                $this->user_id
+            );
+        }
+
+        while ($sql_result && ($sql_arr = $this->db->fetch_assoc($sql_result))) {
+            $sql_arr['ID'] = $sql_arr[$this->primary_key];
+            // make sure we have a name to display
+            if (empty($sql_arr['name'])) {
+                $sql_arr['name'] = $sql_arr['email'];
+            }
+            $this->result->add($sql_arr);
+        }
+        return $this->result;
     }
 
-    return $this->result;
-  }
 
-
-  /**
-   * Count number of available contacts in database
-   *
-   * @return Result array with values for 'count' and 'first'
-   */
-  function count()
-  {
-    // count contacts for this user
-    $sql_result = $this->db->query(
-      "SELECT COUNT(contact_id) AS rows
-       FROM ".$this->db_name."
-       WHERE  del<>1
-       AND    user_id=?".
-       ($this->filter ? " AND (".$this->filter.")" : ""),
-      $this->user_id);
-
-    $sql_arr = $this->db->fetch_assoc($sql_result);
-    return new rcube_result_set($sql_arr['rows'], ($this->list_page-1) * $this->page_size);;
-  }
-
-
-  /**
-   * Return the last result set
-   *
-   * @return Result array or NULL if nothing selected yet
-   */
-  function get_result($as_res=true)
-  {
-    return $this->result;
-  }
-
-
-  /**
-   * Get a specific contact record
-   *
-   * @param mixed record identifier(s)
-   * @return Result object with all record fields or False if not found
-   */
-  function get_record($id, $assoc=false)
-  {
-    // return cached result
-    if ($this->result && ($first = $this->result->first()) && $first[$this->primary_key] == $id)
-      return $assoc ? $first : $this->result;
-
-    $this->db->query(
-      "SELECT * FROM ".$this->db_name."
-       WHERE  contact_id=?
-       AND    user_id=?
-       AND    del<>1",
-      $id,
-      $this->user_id);
-
-    if ($sql_arr = $this->db->fetch_assoc())
+    /**
+     * Search contacts
+     *
+     * @param array   List of fields to search in
+     * @param string  Search value
+     * @param boolean True if results are requested, False if count only
+     * @return Indexed list of contact records and 'count' value
+     */
+    function search($fields, $value, $select=true)
     {
-      $sql_arr['ID'] = $sql_arr[$this->primary_key];
-      $this->result = new rcube_result_set(1);
-      $this->result->add($sql_arr);
+        if (!is_array($fields)) {
+            $fields = array($fields);
+        }
+        $add_where = array();
+        foreach ($fields as $col) {
+            if ($col == 'ID' || $col == $this->primary_key) {
+                $ids         = !is_array($value) ? split(',', $value) : $value;
+                $add_where[] = $this->primary_key." IN (".join(',', $ids).")";
+            }
+            else {
+                $_where = $this->db->quoteIdentifier($col);
+                $_where.= " LIKE " . $this->db->quote(strlen($value)>2 ? "%$value%" : "$value%");
+                $add_where[] = $_where;
+            }
+        }
+
+        if (!empty($add_where)) {
+            $this->set_search_set(join(' OR ', $add_where));
+            if ($select) {
+                $this->list_records();
+            }
+            else {
+                $this->result = $this->count();
+            }
+        }
+        return $this->result;
     }
 
-    return $assoc && $sql_arr ? $sql_arr : $this->result;
-  }
+
+    /**
+     * Count number of available contacts in database
+     *
+     * @return Result array with values for 'count' and 'first'
+     */
+    function count()
+    {
+        $_query = "SELECT COUNT(contact_id) AS rows";
+        $_query.= " FROM " . $this->db_name;
+        $_query.= " WHERE del<>1";
+        $_query.= " AND user_id=?";
+        $_query.= ($this->filter ? " AND (".$this->filter.")" : "");
+
+        // count contacts for this user
+        $sql_result = $this->db->query($_query, $this->user_id);
+        $sql_arr    = $this->db->fetch_assoc($sql_result);
+        return new rcube_result_set(
+                        $sql_arr['rows'],
+                        ($this->list_page-1) * $this->page_size
+        );
+    }
+
+
+    /**
+     * Return the last result set
+     *
+     * @return Result array or NULL if nothing selected yet
+     */
+    function get_result($as_res=true)
+    {
+        return $this->result;
+    }
+
+
+    /**
+     * Get a specific contact record
+     *
+     * @param mixed record identifier(s)
+     * @return Result object with all record fields or False if not found
+     */
+    function get_record($id, $assoc=false)
+    {
+        // return cached result
+        if (
+            $this->result
+            && ($first = $this->result->first())
+            && $first[$this->primary_key] == $id
+        ) {
+            return $assoc ? $first : $this->result;
+        }
+
+        $_query = "SELECT * FROM ".$this->db_name;
+        $_query.= " WHERE contact_id=?";
+        $_query.= " AND user_id=?";
+        $_query.= " AND del<>1";
+
+        $this->db->query($_query, $id, $this->user_id);
+
+        if ($sql_arr = $this->db->fetch_assoc()) {
+            $sql_arr['ID'] = $sql_arr[$this->primary_key];
+            $this->result = new rcube_result_set(1);
+            $this->result->add($sql_arr);
+        }
+        return $assoc && $sql_arr ? $sql_arr : $this->result;
+    }
 
 
   /**
@@ -301,130 +307,69 @@ class rcube_contacts
         }
 
         return $insert_id;
-  }
-
-
-  /**
-   * Insert new contacts for each row in set
-   */
-  function insert_recset($result, $check=false)
-  {
-    $ids = array();
-    while ($row = $result->next())
-    {
-      if ($insert = $this->insert($row, $check))
-        $ids[] = $insert;
-    }
-    return $ids;
-  }
-
-
-  /**
-   * Update a specific contact record
-   *
-   * @param mixed Record identifier
-   * @param array Assoziative array with save data
-   * @return True on success, False on error
-   */
-  function update($id, $save_cols)
-  {
-    $updated = false;
-    $write_sql = array();
-    foreach ($this->table_cols as $col)
-      if (isset($save_cols[$col]))
-        $write_sql[] = sprintf("%s=%s", $this->db->quoteIdentifier($col), $this->db->quote($save_cols[$col]));
-
-    if (!empty($write_sql))
-    {
-      $this->db->query(
-        "UPDATE ".$this->db_name."
-         SET    changed=".$this->db->now().", ".join(', ', $write_sql)."
-         WHERE  contact_id=?
-         AND    user_id=?
-         AND    del<>1",
-        $id,
-        $this->user_id);
-
-      $updated = $this->db->affected_rows();
     }
 
-    return $updated;
-  }
+
+    /**
+     * Insert new contacts for each row in set
+     */
+    function insert_recset($result, $check=false)
+    {
+        $ids = array();
+        while ($row = $result->next()) {
+            if ($insert = $this->insert($row, $check)) {
+                $ids[] = $insert;
+            }
+        }
+        return $ids;
+    }
 
 
-  /**
-   * Mark one or more contact records as deleted
-   *
-   * @param array  Record identifiers
-   */
-  function delete($ids)
-  {
-    if (is_array($ids))
-      $ids = join(',', $ids);
+    /**
+     * Update a specific contact record
+     *
+     * @param mixed Record identifier
+     * @param array Assoziative array with save data
+     * @return True on success, False on error
+     */
+    function update($id, $save_cols)
+    {
+        $updated = false;
+        $write_sql = array();
+        foreach ($this->table_cols as $col) {
+            if (isset($save_cols[$col])) {
+                $write_sql[] = sprintf("%s=%s", $this->db->quoteIdentifier($col), $this->db->quote($save_cols[$col]));
+            }
+        }
+        if (!empty($write_sql)) {
+            $_query= "UPDATE " . $this->db_name;
+            $_query.= " SET changed=" . $this->db->now() . ",";
+            $_query.= " " . join(', ', $write_sql);
+            $_query.= " WHERE contact_id=?";
+            $_query.= " AND user_id=?";
+            $_query.= " AND del<>1";
+            $this->db->query($_query, $id, $this->user_id);
 
-    $this->db->query(
-      "UPDATE ".$this->db_name."
-       SET    del=1
-       WHERE  user_id=?
-       AND    contact_id IN (".$ids.")",
-      $this->user_id);
+            $updated = $this->db->affected_rows();
+        }
+        return $updated;
+    }
 
-    return $this->db->affected_rows();
-  }
 
+    /**
+     * Mark one or more contact records as deleted
+     *
+     * @param array  Record identifiers
+     */
+    function delete($ids)
+    {
+        if (is_array($ids)) {
+            $ids = join(',', $ids);
+        }
+        $_query =
+        $this->db->query($_query, $this->user_id);
+
+        return $this->db->affected_rows();
+    }
 }
-
-
-/**
- * RoundCube result set class.
- * Representing an address directory result set.
- */
-class rcube_result_set
-{
-  var $count = 0;
-  var $first = 0;
-  var $current = 0;
-  var $records = array();
-
-  function __construct($c=0, $f=0)
-  {
-    $this->count = (int)$c;
-    $this->first = (int)$f;
-  }
-
-  function rcube_result_set($c=0, $f=0)
-  {
-    $this->__construct($c, $f);
-  }
-
-  function add($rec)
-  {
-    $this->records[] = $rec;
-  }
-
-  function iterate()
-  {
-    return $this->records[$this->current++];
-  }
-
-  function first()
-  {
-    $this->current = 0;
-    return $this->records[$this->current++];
-  }
-
-  // alias
-  function next()
-  {
-    return $this->iterate();
-  }
-
-  function seek($i)
-  {
-    $this->current = $i;
-  }
-
-}
-
-
 ?>

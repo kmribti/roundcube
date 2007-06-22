@@ -19,37 +19,61 @@
 
 */
 
-require_once('include/rcube_contacts.inc');
+require_once 'include/rcube_contacts.inc';
+
+$registry = rc_registry::getInstance();
+$IMAP     = $registry->get('IMAP', 'core');
+$DB       = $registry->get('DB', 'core');
+$OUTPUT   = $registry->get('OUTPUT', 'core');
 
 $done = false;
 
-if (!empty($_POST['_address']))
-{
-  $CONTACTS = new rcube_contacts($DB, $_SESSION['user_id']);
-  $contact_arr = $IMAP->decode_address_list(get_input_value('_address', RCUBE_INPUT_POST, true), 1, false);
-  
-  if (!empty($contact_arr[1]['mailto']))
-  {
-    $contact = array(
-      'email' => $contact_arr[1]['mailto'],
-      'name' => $contact_arr[1]['name']
+if (!empty($_POST['_address'])) {
+    $CONTACTS = new rcube_contacts($DB, $_SESSION['user_id']);
+    $contact_arr = $IMAP->decode_address_list(
+                    rc_main::get_input_value(
+                        '_address',
+                        RCUBE_INPUT_POST,
+                        true
+                    ),
+                    1,
+                    false
     );
-    
-    // use email address part for name
-    if (empty($contact['name']) || $contact['name'] == $contact['email'])
-      $contact['name'] = ucfirst(preg_replace('/[\.\-]/', ' ', substr($contact['email'], 0, strpos($contact['email'], '@'))));
 
-    // check for existing contacts
-    $existing = $CONTACTS->search('email', $contact['email'], false);
-    if ($done = $existing->count)
-      $OUTPUT->show_message('contactexists', 'warning');
-    else if ($done = $CONTACTS->insert($contact))
-      $OUTPUT->show_message('addedsuccessfully', 'confirmation');
-  }
+    if (!empty($contact_arr[1]['mailto'])) {
+        $contact = array(
+            'email' => $contact_arr[1]['mailto'],
+            'name' => $contact_arr[1]['name']
+        );
+
+        // use email address part for name
+        if (empty($contact['name']) || $contact['name'] == $contact['email']) {
+            $contact['name'] = ucfirst(
+                                preg_replace(
+                                    '/[\.\-]/',
+                                    ' ',
+                                    substr(
+                                        $contact['email'],
+                                        0,
+                                        strpos($contact['email'], '@')
+                                    )
+                                )
+            );
+        }
+
+        // check for existing contacts
+        $existing = $CONTACTS->search('email', $contact['email'], false);
+        if ($done = $existing->count) {
+            $OUTPUT->show_message('contactexists', 'warning');
+        }
+        else if ($done = $CONTACTS->insert($contact)) {
+            $OUTPUT->show_message('addedsuccessfully', 'confirmation');
+        }
+    }
 }
 
-if (!$done)
-  $OUTPUT->show_message('errorsavingcontact', 'warning');
-
+if (!$done) {
+    $OUTPUT->show_message('errorsavingcontact', 'warning');
+}
 $OUTPUT->send();
 ?>

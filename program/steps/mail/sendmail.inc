@@ -265,6 +265,9 @@ else {
 // add stored attachments, if any
 if (is_array($_SESSION['compose']['attachments'])) {
     foreach ($_SESSION['compose']['attachments'] as $attachment) {
+        if (empty($attachment['path'])) {
+            continue;
+        }
         $status = $MAIL_MIME->addAttachment(
                         $attachment['path'],
                         $attachment['mimetype'],
@@ -275,7 +278,10 @@ if (is_array($_SESSION['compose']['attachments'])) {
                         $message_charset
         );
         if (PEAR::isError($status)) {
-            array_push($error_msg, $status->getMessage());
+            array_push(
+                $error_msg,
+                $status->getMessage() . "\n" . var_export($attachment, true)
+            );
         }
     }
 }
@@ -292,7 +298,10 @@ if (is_array($_FILES['_attachments']['tmp_name'])) {
                         $message_charset
         );
         if (PEAR::isError($status)) {
-            array_push($error_msg, $status->getMessage());
+            array_push(
+                $error_msg,
+                $status->getMessage() . "\n" . var_export($files, true)
+            );
         }
     }
 }
