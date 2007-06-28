@@ -103,6 +103,8 @@ class rc_main
         $sess_id = session_id();
         $registry->set('sess_id', $sess_id, 'core');
 
+        self::tfk_debug('// session');
+
         // create session and set session vars
         if (!isset($_SESSION['auth_time'])) {
             $_SESSION['user_lang'] = self::rcube_language_prop($CONFIG['locale_string']);
@@ -149,12 +151,17 @@ class rc_main
         $registry     = rc_registry::getInstance();
         $INSTALL_PATH = $registry->get('INSTALL_PATH', 'core');
 
+        self::tfk_debug("// rcmail_load_config");
+
         // load config file
         $status = @include_once 'config/main.inc.php';
         if ($status === FALSE) {
-            die('Could not open config/main.inc.php.');
+            self::tfk_debug('Could not open config/main.inc.php.');
+            exit;
         }
         $conf = is_array($rcmail_config) ? $rcmail_config : array();
+
+        self::tfk_debug("// test");
 
         // load host-specific configuration
         $conf = self::rcmail_load_host_config($conf);
@@ -162,7 +169,11 @@ class rc_main
         $conf['skin_path'] = $conf['skin_path'] ? unslashify($conf['skin_path']) : 'skins/default';
 
         // load db conf
-        @include_once 'config/db.inc.php';
+        $status = @include_once 'config/db.inc.php';
+        if ($status === FALSE) {
+            self::tfk_debug('Could not open config/db.inc.php.');
+            exit;
+        }
         $conf = array_merge($conf, $rcmail_config);
 
         if (empty($conf['log_dir'])) {
@@ -1310,9 +1321,15 @@ class rc_main
      */
     static function get_input_value($fname, $source, $allow_html=FALSE, $charset=NULL)
     {
-        $registry = rc_registry::getInstance();
-        $OUTPUT   = $registry->get('OUTPUT', 'core');
-        $value    = NULL;
+        try {
+            $registry = rc_registry::getInstance();
+            $OUTPUT   = $registry->get('OUTPUT', 'core');
+        }
+        catch (rc_registry_exception $e) {
+            $OUTPUT = NULL;
+        }
+
+        $value = NULL;
 
         if ($source == RCUBE_INPUT_GET && isset($_GET[$fname])) {
             $value = $_GET[$fname];

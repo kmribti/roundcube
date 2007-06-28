@@ -3051,19 +3051,20 @@ function rcube_webmail()
                (flags.unread && this.env.unreadicon ? this.env.unreadicon :
                (flags.replied && this.env.repliedicon ? this.env.repliedicon : this.env.messageicon));
 
-        //var col = document.createElement('TD');
-        //col.className = 'icon1';
-        //col.innerHTML = icon ? '<img src="' + icon + '" alt="" border="0" />' : '';
-        //row.appendChild(col);
-        $(row).append('<td class="icon1">' + (icon ? '<img src="' + icon + '" alt="" border="0" />' : '') + '</td>');
+        var col = document.createElement('TD');
+        col.className = 'icon1';
+        col.innerHTML = icon ? '<img src="' + icon + '" alt="" border="0" />' : '';
+        row.appendChild(col);
+        //$(row).append('<td class="icon1">' + (icon ? '<img src="' + icon + '" alt="" border="0" />' : '') + '</td>');
 
         // add each submitted col
         for (var n = 0; n < this.coltypes.length; n++) {
             var c = this.coltypes[n];
-            //col = document.createElement('TD');
-            //col.className = String(c).toLowerCase();
-            //col.innerHTML = cols[c];
+            col = document.createElement('TD');
+            col.className = String(c).toLowerCase();
+            col.innerHTML = cols[c];
 
+            /*
             var theclass = String(c).toLowerCase();
             var therev   = new String;
 
@@ -3075,16 +3076,16 @@ function rcube_webmail()
                 col += cols[c];
             }
             col += '</td>'
-
-            $(row).append(col);
-            //row.appendChild(col);
+            */
+            //$(row).append(col);
+            row.appendChild(col);
         }
-        //col = document.createElement('TD');
-        //col.className = 'icon2';
-        //col.innerHTML = attachment && this.env.attachmenticon ? '<img src="'+this.env.attachmenticon+'" alt="" border="0" />' : '';
-        //row.appendChild(col);
+        col = document.createElement('TD');
+        col.className = 'icon2';
+        col.innerHTML = attachment && this.env.attachmenticon ? '<img src="'+this.env.attachmenticon+'" alt="" border="0" />' : '';
+        row.appendChild(col);
 
-        $(row).append('<td class="icon2">' + (attachment && this.env.attachmenticon ? '<img src="'+this.env.attachmenticon+'" alt="" border="0" />' : '') + '</td>');
+        //$(row).append('<td class="icon2">' + (attachment && this.env.attachmenticon ? '<img src="'+this.env.attachmenticon+'" alt="" border="0" />' : '') + '</td>');
 
         this.message_list.insert_row(row, attop);
     };

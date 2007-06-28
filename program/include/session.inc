@@ -38,8 +38,8 @@ function sess_read($key)
 {
     $registry       = rc_registry::getInstance();
     $DB             = $registry->get('DB', 'core');
-    $SESS_CHANGED   = $registry->get('SESS_CHANGED', 'core');
-    $SESS_CLIENT_IP = $registry->get('SESS_CLIENT_IP', 'core');
+    $SESS_CHANGED   = $registry->get('SESS_CHANGED', 'core', null);
+    $SESS_CLIENT_IP = $registry->get('SESS_CLIENT_IP', 'core', null);
 
     if ($DB->is_error()) {
         return FALSE;

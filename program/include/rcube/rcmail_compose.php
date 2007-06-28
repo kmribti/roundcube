@@ -270,12 +270,12 @@ function rcmail_compose_header_from($attrib)
 
 function rcmail_compose_body($attrib)
 {
-    $registry      = rc_registry::getInstance();
-    $CONFIG        = $registry->get('CONFIG', 'core');
-    $MESSAGE       = $registry->get('MESSAGE', 'core');
-    $OUTPUT        = $registry->get('OUTPUT', 'core');
-    $compose_mode  = $registry->get('compose_mode', 'core');
-    $COMM_PATH     = $registry->get('COMM_PATH', 'core');
+    $registry     = rc_registry::getInstance();
+    $CONFIG       = $registry->get('CONFIG', 'core');
+    $MESSAGE      = $registry->get('MESSAGE', 'core');
+    $OUTPUT       = $registry->get('OUTPUT', 'core');
+    $compose_mode = $registry->get('compose_mode', 'core');
+    $COMM_PATH    = $registry->get('COMM_PATH', 'core');
 
     list($form_start, $form_end) = get_form_tags($attrib);
     unset($attrib['form']);

@@ -1,5 +1,12 @@
 <?php
 /**
+ * Include rc_registry_exception
+ * @ignore
+ */
+require_once dirname(__FILE__) . '/registry/exception.php';
+
+
+/**
  * rc_registry
  *
  * Implements a singleton-style registry for roundcube and plugins
@@ -70,7 +77,7 @@ class rc_registry
     public function set($var, $val = '', $ns = null)
     {
         if (empty($var) === true) {
-            return false;
+            throw new rc_registry_exception('set: please supply a variable name');
         }
         if (is_null($ns) === true) {
             return $this->holder[$var] = $val;
@@ -94,22 +101,25 @@ class rc_registry
      * @return mixed
      * @uses   rc_registry::$holder
      */
-    public function get($var, $ns = null)
+    public function get($var, $ns = null, $default = null)
     {
         if (empty($var) === true) {
-            return false;
+            throw new rc_registry_exception('get: please supply a variable name');
         }
         if (is_null($ns) === true) {
             if (isset($this->holder[$var]) === false) {
                 return null;
+                //throw new rc_registry_exception('get: not set');
             }
             return $this->holder[$var];
         }
         if (isset($this->holder[$ns]) === false) {
+            //throw new rc_registry_exception('get: unknown namespace');
             return null;
         }
         if (isset($this->holder[$ns][$var]) === false) {
-            return false;
+            //throw new rc_registry_exception('get: not set');
+            return null;
         }
         return $this->holder[$ns][$var];
     }
@@ -141,7 +151,7 @@ class rc_registry
     public function getAll()
     {
         if (is_null($this->holder) === true) {
-            return false;
+            throw new rc_registry_exception('getAll: nothing to return');
         }
         return $this->holder;
     }
