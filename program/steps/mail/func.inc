@@ -26,6 +26,9 @@ require_once 'lib/enriched.inc';
 $EMAIL_ADDRESS_PATTERN = '/([a-z0-9][a-z0-9\-\.\+\_]*@[a-z0-9]([a-z0-9\-][.]?)*[a-z0-9]\\.[a-z]{2,5})/i';
 $registry = rc_registry::getInstance();
 $registry->set('EMAIL_ADDRESS_PATTERN', $EMAIL_ADDRESS_PATTERN, 'core');
+$CONFIG = $registry->get('CONFIG', 'core');
+$IMAP   = $registry->get('IMAP', 'core');
+$OUTPUT = $registry->get('OUTPUT', 'core');
 
 if (empty($_SESSION['mbox'])) {
     $_SESSION['mbox'] = $IMAP->get_mailbox_name();
@@ -707,7 +710,7 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE)
     $OUTPUT   = $registry->get('OUTPUT', 'core');
 
     $a_show_cols = is_array($CONFIG['list_cols']) ? $CONFIG['list_cols'] : array('subject');
-    $mbox = $IMAP->get_mailbox_name();
+    $mbox        = $IMAP->get_mailbox_name();
 
     // show 'to' instead of from in sent messages
     if (
@@ -1815,12 +1818,11 @@ function rcmail_message_part_frame($attrib)
     $ctype_primary = strtolower($part->ctype_primary);
 
     $attrib['src'] = './?';
-    $attrib['src'] = str_replace(
+    $attrib['src'].= str_replace(
                         '_frame=',
                         ($ctype_primary=='text' ? '_show=' : '_preload='),
                         $_SERVER['QUERY_STRING']
     );
-
     $attrib_str = rc_main::create_attrib_string($attrib, array('id', 'class', 'style', 'src', 'width', 'height'));
     $out = '<iframe '. $attrib_str . "></iframe>";
 

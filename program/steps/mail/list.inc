@@ -21,7 +21,7 @@
 $registry = rc_registry::getInstance();
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 $IMAP     = $registry->get('IMAP', 'core');
-
+$CONFIG   = $registry->get('CONFIG', 'core');
 
 $OUTPUT_TYPE = 'js';
 $registry->set('OUTPUT_TYPE', $OUTPUT_TYPE, 'core');
@@ -57,7 +57,6 @@ $OUTPUT->command('set_rowcount', rcmail_get_messagecount_text($count));
 
 // update mailboxlist
 $OUTPUT->command('set_unread_count', $mbox_name, $unseen);
-
 
 // add message rows
 if (isset($a_headers) && count($a_headers)) {

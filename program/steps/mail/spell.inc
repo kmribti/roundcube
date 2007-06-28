@@ -50,12 +50,15 @@ if ($fp = fsockopen($host, $port, $errno, $errstr, 30)) {
     $out .= "Content-type: application/x-www-form-urlencoded\r\n";
     $out .= "Connection: Close\r\n\r\n";
     $out .= $data;
-    fwrite($fp, $out);
-
-    while (!feof($fp)) {
-        $store .= fgets($fp, 128);
+    if (fwrite($fp, $out) !== false) {
+        while (!feof($fp)) {
+            $resp = @fgets($fp, 128);
+            if ($resp !== false) {
+                $store.= $resp;
+            }
+        }
     }
-    fclose($fp);
+    @fclose($fp);
 }
 echo $store;
 exit;

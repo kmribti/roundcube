@@ -20,135 +20,134 @@
 var rcube_webmail_client;
 
 function rcube_webmail()
-  {
-  this.env = new Object();
-  this.labels = new Object();
-  this.buttons = new Object();
-  this.gui_objects = new Object();
-  this.commands = new Object();
-  this.onloads = new Array();
+{
+    this.env = new Object();
+    this.labels = new Object();
+    this.buttons = new Object();
+    this.gui_objects = new Object();
+    this.commands = new Object();
+    this.onloads = new Array();
 
-  // create protected reference to myself
-  rcube_webmail_client = this;
-  this.ref = 'rcube_webmail_client';
-  var ref = this;
+    // create protected reference to myself
+    rcube_webmail_client = this;
+    this.ref = 'rcube_webmail_client';
+    var ref = this;
 
-  // webmail client settings
-  this.dblclick_time = 500;
-  this.message_time = 5000;
+    // webmail client settings
+    this.dblclick_time = 500;
+    this.message_time = 5000;
 
-  this.identifier_expr = new RegExp('[^0-9a-z\-_]', 'gi');
+    this.identifier_expr = new RegExp('[^0-9a-z\-_]', 'gi');
 
-  // mimetypes supported by the browser (default settings)
-  this.mimetypes = new Array('text/plain', 'text/html', 'text/xml',
+    // mimetypes supported by the browser (default settings)
+    this.mimetypes = new Array('text/plain', 'text/html', 'text/xml',
                              'image/jpeg', 'image/gif', 'image/png',
                              'application/x-javascript', 'application/pdf',
                              'application/x-shockwave-flash');
 
-  // default environment vars
-  this.env.keep_alive = 60;        // seconds
-  this.env.request_timeout = 180;  // seconds
-  this.env.draft_autosave = 0;     // seconds
-  this.env.comm_path = './';
-  this.env.bin_path = './bin/';
-  this.env.blankpage = 'program/blank.gif';
+    // default environment vars
+    this.env.keep_alive = 60;        // seconds
+    this.env.request_timeout = 180;  // seconds
+    this.env.draft_autosave = 0;     // seconds
+    this.env.comm_path = './';
+    this.env.bin_path = './bin/';
+    this.env.blankpage = 'program/blank.gif';
 
 
-  // set environment variable(s)
-  this.set_env = function(p, value)
-    {
-    if (p != null && typeof(p) == 'object' && !value)
-      for (var n in p)
-        this.env[n] = p[n];
-    else
-      this.env[p] = value;
-    };
-
-
-  // add a localized label to the client environment
-  this.add_label = function(key, value)
-    {
-    this.labels[key] = value;
-    };
-
-
-  // add a button to the button list
-  this.register_button = function(command, id, type, act, sel, over)
-    {
-    if (!this.buttons[command])
-      this.buttons[command] = new Array();
-
-    var button_prop = {id:id, type:type};
-    if (act) button_prop.act = act;
-    if (sel) button_prop.sel = sel;
-    if (over) button_prop.over = over;
-
-    this.buttons[command][this.buttons[command].length] = button_prop;
-    };
-
-  // register a specific gui object
-  this.gui_object = function(name, id)
-    {
-    this.gui_objects[name] = id;
-    };
-
-  // execute the given script on load
-  this.add_onload = function(f)
-    {
-      this.onloads[this.onloads.length] = f;
-    };
-
-  // initialize webmail client
-  this.init = function()
-    {
-    var p = this;
-    this.task = this.env.task;
-
-    // check browser
-    if (!bw.dom || !bw.xmlhttp_test())
-      {
-      this.goto_url('error', '_code=0x199');
-      return;
-      }
-
-    // find all registered gui objects
-    for (var n in this.gui_objects)
-      this.gui_objects[n] = rcube_find_object(this.gui_objects[n]);
-
-    // tell parent window that this frame is loaded
-    if (this.env.framed && parent.rcmail && parent.rcmail.set_busy)
-      parent.rcmail.set_busy(false);
-
-    // enable general commands
-    this.enable_command('logout', 'mail', 'addressbook', 'settings', true);
-
-    switch (this.task)
-      {
-      case 'mail':
-        if (this.gui_objects.messagelist)
-          {
-          this.message_list = new rcube_list_widget(this.gui_objects.messagelist, {multiselect:true, draggable:true, keyboard:true, dblclick_time:this.dblclick_time});
-          this.message_list.row_init = function(o){ p.init_message_row(o); };
-          this.message_list.addEventListener('dblclick', function(o){ p.msglist_dbl_click(o); });
-          this.message_list.addEventListener('keypress', function(o){ p.msglist_keypress(o); });
-          this.message_list.addEventListener('select', function(o){ p.msglist_select(o); });
-          this.message_list.addEventListener('dragstart', function(o){ p.drag_active = true; });
-          this.message_list.addEventListener('dragend', function(o){ p.drag_active = false; });
-
-          this.message_list.init();
-          this.enable_command('toggle_status', true);
-
-          if (this.gui_objects.mailcontframe)
-            {
-            this.gui_objects.mailcontframe.onmousedown = function(e){ return p.click_on_list(e); };
-            document.onmouseup = function(e){ return p.doc_mouse_up(e); };
+    // set environment variable(s)
+    this.set_env = function(p, value) {
+        if (p != null && typeof(p) == 'object' && !value) {
+            for (var n in p) {
+                this.env[n] = p[n];
             }
-          else
-            this.message_list.focus();
-          }
+        }
+        else {
+            this.env[p] = value;
+        }
+    };
 
-        // enable mail commands
-        this.enable_command('list', 'checkmail', 'compose', 'add-contact', 'search', 'reset-search', true);
+
+    // add a localized label to the client environment
+    this.add_label = function(key, value) {
+        this.labels[key] = value;
+    };
+
+
+    // add a button to the button list
+    this.register_button = function(command, id, type, act, sel, over)
+    {
+        if (!this.buttons[command])
+            this.buttons[command] = new Array();
+
+        var button_prop = {id:id, type:type};
+        if (act) button_prop.act = act;
+        if (sel) button_prop.sel = sel;
+        if (over) button_prop.over = over;
+
+        this.buttons[command][this.buttons[command].length] = button_prop;
+    };
+
+    // register a specific gui object
+    this.gui_object = function(name, id) {
+        this.gui_objects[name] = id;
+    };
+
+    // execute the given script on load
+    this.add_onload = function(f) {
+        this.onloads[this.onloads.length] = f;
+    };
+
+    // initialize webmail client
+    this.init = function() {
+        var p = this;
+        this.task = this.env.task;
+
+        // check browser
+        if (!bw.dom || !bw.xmlhttp_test()) {
+            this.goto_url('error', '_code=0x199');
+            return;
+        }
+
+        // find all registered gui objects
+        for (var n in this.gui_objects) {
+            this.gui_objects[n] = rcube_find_object(this.gui_objects[n]);
+        }
+        // tell parent window that this frame is loaded
+        if (this.env.framed && parent.rcmail && parent.rcmail.set_busy) {
+            parent.rcmail.set_busy(false);
+        }
+        // enable general commands
+        this.enable_command('logout', 'mail', 'addressbook', 'settings', true);
+
+        switch (this.task) {
+            case 'mail':
+                if (this.gui_objects.messagelist) {
+                    this.message_list = new rcube_list_widget(this.gui_objects.messagelist, {multiselect:true, draggable:true, keyboard:true, dblclick_time:this.dblclick_time});
+                    this.message_list.row_init = function(o){ p.init_message_row(o); };
+                    this.message_list.addEventListener('dblclick', function(o){ p.msglist_dbl_click(o); });
+                    this.message_list.addEventListener('keypress', function(o){ p.msglist_keypress(o); });
+                    this.message_list.addEventListener('select', function(o){ p.msglist_select(o); });
+                    this.message_list.addEventListener('dragstart', function(o){ p.drag_active = true; });
+                    this.message_list.addEventListener('dragend', function(o){ p.drag_active = false; });
+
+                    this.message_list.init();
+                    this.enable_command('toggle_status', true);
+
+                    if (this.gui_objects.mailcontframe) {
+                        this.gui_objects.mailcontframe.onmousedown = function(e){ return p.click_on_list(e); };
+                        document.onmouseup = function(e){ return p.doc_mouse_up(e); };
+                    }
+                    else {
+                        this.message_list.focus();
+                    }
+                }
+
+                // enable mail commands
+                this.enable_command(
+                            'list', 'checkmail', 'compose',
+                            'add-contact', 'search', 'reset-search',
+                            true
+                );
 
         if (this.env.action=='show' || this.env.action=='preview')
           {
@@ -426,32 +425,29 @@ function rcube_webmail()
   /*********************************************************/
 
 
-  // execute a specific command on the web client
-  this.command = function(command, props, obj)
-    {
-    if (obj && obj.blur)
-      obj.blur();
-
-    if (this.busy)
-      return false;
-
-    // command not supported or allowed
-    if (!this.commands[command])
-      {
-      // pass command to parent window
-      if (this.env.framed && parent.rcmail && parent.rcmail.command)
-        parent.rcmail.command(command, props);
-
-      return false;
-      }
-
-
-   // check input before leaving compose step
-   if (this.task=='mail' && this.env.action=='compose' && (command=='list' || command=='mail' || command=='addressbook' || command=='settings'))
-     {
-     if (this.cmp_hash != this.compose_field_hash() && !confirm(this.get_label('notsentwarning')))
-        return false;
-     }
+    // execute a specific command on the web client
+    this.command = function(command, props, obj) {
+        if (obj && obj.blur) {
+            obj.blur();
+        }
+        if (this.busy) {
+            //alert('we be busy');
+            return false;
+        }
+        // command not supported or allowed
+        if (!this.commands[command]) {
+            // pass command to parent window
+            if (this.env.framed && parent.rcmail && parent.rcmail.command) {
+                parent.rcmail.command(command, props);
+            }
+            console.log('not enabled command: ' + command);
+            return false;
+        }
+        // check input before leaving compose step
+        if (this.task=='mail' && this.env.action=='compose' && (command=='list' || command=='mail' || command=='addressbook' || command=='settings')) {
+            if (this.cmp_hash != this.compose_field_hash() && !confirm(this.get_label('notsentwarning')))
+                return false;
+        }
 
 
     // process command
@@ -550,9 +546,10 @@ function rcube_webmail()
 
       case 'purge':
       case 'empty-mailbox':
-        if (this.env.messagecount)
-          this.purge_mailbox(this.env.mailbox);
-        break;
+            if (this.env.messagecount) {
+                this.purge_mailbox(this.env.mailbox);
+            }
+            break;
 
 
       // common commands used in multiple tasks
@@ -939,62 +936,62 @@ function rcube_webmail()
     };
 
 
-  // set command enabled or disabled
-  this.enable_command = function()
-    {
-    var args = arguments;
-    if(!args.length) return -1;
+    // set command enabled or disabled
+    this.enable_command = function() {
+        var args = arguments;
+        if(!args.length) {
+            return -1;
+        }
 
-    var command;
-    var enable = args[args.length-1];
+        var command;
+        var enable = args[args.length-1];
 
-    for(var n=0; n<args.length-1; n++)
-      {
-      command = args[n];
-      this.commands[command] = enable;
-      this.set_button(command, (enable ? 'act' : 'pas'));
-      }
-      return true;
+        for(var n=0; n<args.length-1; n++) {
+            command = args[n];
+            this.commands[command] = enable;
+            this.set_button(command, (enable ? 'act' : 'pas'));
+        }
+        return true;
     };
 
 
-  // lock/unlock interface
-  this.set_busy = function(a, message)
-    {
-    if (a && message)
-      {
-      var msg = this.get_label(message);
-      if (msg==message)
-        msg = 'Loading...';
+    // lock/unlock interface
+    this.set_busy = function(a, message) {
+        if (a && message) {
+            var msg = this.get_label(message);
+            if (msg==message)
+                msg = 'Loading...';
 
-      this.display_message(msg, 'loading', true);
-      }
-    else if (!a)
-      this.hide_message();
+            this.display_message(msg, 'loading', true);
+        }
+        else if (!a) {
+            this.hide_message();
+        }
+        this.busy = a;
+        //document.body.style.cursor = a ? 'wait' : 'default';
 
-    this.busy = a;
-    //document.body.style.cursor = a ? 'wait' : 'default';
-
-    if (this.gui_objects.editform)
-      this.lock_form(this.gui_objects.editform, a);
-
-    // clear pending timer
-    if (this.request_timer)
-      clearTimeout(this.request_timer);
-
-    // set timer for requests
-    if (a && this.env.request_timeout)
-      this.request_timer = setTimeout(function(){ ref.request_timed_out(); }, this.env.request_timeout * 1000);
+        if (this.gui_objects.editform) {
+            this.lock_form(this.gui_objects.editform, a);
+        }
+        // clear pending timer
+        if (this.request_timer) {
+            clearTimeout(this.request_timer);
+        }
+        // set timer for requests
+        if (a && this.env.request_timeout) {
+            this.request_timer = setTimeout(function(){ ref.request_timed_out(); }, this.env.request_timeout * 1000);
+        }
     };
 
 
-  // return a localized string
-  this.get_label = function(name)
-    {
-    if (this.labels[name])
-      return this.labels[name];
-    else
-      return name;
+    // return a localized string
+    this.get_label = function(name) {
+        if (this.labels[name]) {
+            return this.labels[name];
+        }
+        else {
+            return name;
+        }
     };
 
 
@@ -1083,28 +1080,26 @@ function rcube_webmail()
     };
 
 
-  this.msglist_select = function(list)
+    this.msglist_select = function(list)
     {
-    if (this.preview_timer)
-      clearTimeout(this.preview_timer);
+        if (this.preview_timer)
+            clearTimeout(this.preview_timer);
 
-    var selected = list.selection.length==1;
-    if (this.env.mailbox == this.env.drafts_mailbox)
-      {
-      this.enable_command('show', selected);
-      this.enable_command('delete', 'moveto', list.selection.length>0 ? true : false);
-      }
-    else
-      {
-      this.enable_command('show', 'reply', 'reply-all', 'forward', 'print', selected);
-      this.enable_command('delete', 'moveto', list.selection.length>0 ? true : false);
-      }
+        var selected = list.selection.length==1;
+        if (this.env.mailbox == this.env.drafts_mailbox) {
+            this.enable_command('show', selected);
+            this.enable_command('delete', 'moveto', list.selection.length>0 ? true : false);
+        }
+        else {
+            this.enable_command('show', 'reply', 'reply-all', 'forward', 'print', selected);
+            this.enable_command('delete', 'moveto', list.selection.length>0 ? true : false);
+        }
 
-    // start timer for message preview (wait for double click)
-    if (selected && this.env.contentframe)
-      this.preview_timer = setTimeout(function(){ ref.msglist_get_preview(); }, this.dblclick_time + 10);
-    else if (this.env.contentframe)
-      this.show_contentframe(false);
+        // start timer for message preview (wait for double click)
+        if (selected && this.env.contentframe)
+            this.preview_timer = setTimeout(function(){ ref.msglist_get_preview(); }, this.dblclick_time + 10);
+        else if (this.env.contentframe)
+            this.show_contentframe(false);
     };
 
 
@@ -1697,18 +1692,16 @@ function rcube_webmail()
     };
 
 
-  this.set_spellcheck_state = function(s)
-    {
-    this.spellcheck_ready = (s=='check_spelling' || s=='ready');
-    this.enable_command('spellcheck', this.spellcheck_ready);
+    this.set_spellcheck_state = function(s) {
+        this.spellcheck_ready = (s=='check_spelling' || s=='ready');
+        this.enable_command('spellcheck', this.spellcheck_ready);
     };
 
 
-  this.set_draft_id = function(id)
-    {
-    var f;
-    if (f = rcube_find_object('_draft_saveid'))
-      f.value = id;
+    this.set_draft_id = function(id) {
+        var f;
+        if (f = rcube_find_object('_draft_saveid'))
+            f.value = id;
     };
 
   this.auto_save_start = function()
@@ -3032,63 +3025,78 @@ function rcube_webmail()
 
   };
 
-  // create a table row in the message list
-  this.add_message_row = function(uid, cols, flags, attachment, attop)
-    {
-    if (!this.gui_objects.messagelist || !this.message_list)
-      return false;
+    // create a table row in the message list
+    this.add_message_row = function(uid, cols, flags, attachment, attop) {
+        if (!this.gui_objects.messagelist || !this.message_list) {
+            return false;
+        }
 
-    var tbody = this.gui_objects.messagelist.tBodies[0];
-    var rowcount = tbody.rows.length;
-    var even = rowcount%2;
+        var tbody = this.gui_objects.messagelist.tBodies[0];
+        var rowcount = tbody.rows.length;
+        var even = rowcount%2;
 
-    this.env.messages[uid] = {deleted:flags.deleted?1:0,
-                              replied:flags.replied?1:0,
-                              unread:flags.unread?1:0};
+        this.env.messages[uid] = {
+                                    deleted:flags.deleted?1:0,
+                                    replied:flags.replied?1:0,
+                                    unread:flags.unread?1:0};
 
-    var row = document.createElement('TR');
-    row.id = 'rcmrow'+uid;
-    row.className = 'message '+(even ? 'even' : 'odd')+(flags.unread ? ' unread' : '')+(flags.deleted ? ' deleted' : '');
+        var row = document.createElement('TR');
+        row.id = 'rcmrow'+uid;
+        row.className = 'message '+(even ? 'even' : 'odd')+(flags.unread ? ' unread' : '')+(flags.deleted ? ' deleted' : '');
 
-    if (this.message_list.in_selection(uid))
-      row.className += ' selected';
-
-    var icon = flags.deleted && this.env.deletedicon ? this.env.deletedicon:
+        if (this.message_list.in_selection(uid)) {
+            row.className += ' selected';
+        }
+        var icon = flags.deleted && this.env.deletedicon ? this.env.deletedicon:
                (flags.unread && this.env.unreadicon ? this.env.unreadicon :
                (flags.replied && this.env.repliedicon ? this.env.repliedicon : this.env.messageicon));
 
-    var col = document.createElement('TD');
-    col.className = 'icon';
-    col.innerHTML = icon ? '<img src="'+icon+'" alt="" border="0" />' : '';
-    row.appendChild(col);
+        //var col = document.createElement('TD');
+        //col.className = 'icon1';
+        //col.innerHTML = icon ? '<img src="' + icon + '" alt="" border="0" />' : '';
+        //row.appendChild(col);
+        $(row).append('<td class="icon1">' + (icon ? '<img src="' + icon + '" alt="" border="0" />' : '') + '</td>');
 
-    // add each submitted col
-    for (var n = 0; n < this.coltypes.length; n++)
-      {
-      var c = this.coltypes[n];
-      col = document.createElement('TD');
-      col.className = String(c).toLowerCase();
-      col.innerHTML = cols[c];
-      row.appendChild(col);
-      }
+        // add each submitted col
+        for (var n = 0; n < this.coltypes.length; n++) {
+            var c = this.coltypes[n];
+            //col = document.createElement('TD');
+            //col.className = String(c).toLowerCase();
+            //col.innerHTML = cols[c];
 
-    col = document.createElement('TD');
-    col.className = 'icon';
-    col.innerHTML = attachment && this.env.attachmenticon ? '<img src="'+this.env.attachmenticon+'" alt="" border="0" />' : '';
-    row.appendChild(col);
+            var theclass = String(c).toLowerCase();
+            var therev   = new String;
 
-    this.message_list.insert_row(row, attop);
+            var col = '<td rev="' + rev + '" class="' + theclass + '">';
+            if (theclass == 'from' || theclass == 'subject') {
+                col += '<span>' + cols[c] + '</span>';
+            }
+            else {
+                col += cols[c];
+            }
+            col += '</td>'
+
+            $(row).append(col);
+            //row.appendChild(col);
+        }
+        //col = document.createElement('TD');
+        //col.className = 'icon2';
+        //col.innerHTML = attachment && this.env.attachmenticon ? '<img src="'+this.env.attachmenticon+'" alt="" border="0" />' : '';
+        //row.appendChild(col);
+
+        $(row).append('<td class="icon2">' + (attachment && this.env.attachmenticon ? '<img src="'+this.env.attachmenticon+'" alt="" border="0" />' : '') + '</td>');
+
+        this.message_list.insert_row(row, attop);
     };
 
 
-  // replace content of row count display
-  this.set_rowcount = function(text)
-    {
-    if (this.gui_objects.countdisplay)
-      this.gui_objects.countdisplay.innerHTML = text;
-
-    // update page navigation buttons
-    this.set_page_buttons();
+    // replace content of row count display
+    this.set_rowcount = function(text) {
+        if (this.gui_objects.countdisplay) {
+            this.gui_objects.countdisplay.innerHTML = text;
+        }
+        // update page navigation buttons
+        this.set_page_buttons();
     };
 
   // replace content of quota display
@@ -3289,45 +3297,48 @@ function rcube_webmail()
         }
       };
 
-  // handle HTTP response
-  this.http_response = function(request_obj)
-    {
-    var ctype = request_obj.get_header('Content-Type');
-    if (ctype){
-      ctype = String(ctype).toLowerCase();
-      var ctype_array=ctype.split(";");
-      ctype = ctype_array[0];
-    }
+    // handle HTTP response
+    this.http_response = function(request_obj) {
+        var ctype = request_obj.get_header('Content-Type');
+        if (ctype){
+            ctype = String(ctype).toLowerCase();
+            var ctype_array=ctype.split(";");
+            ctype = ctype_array[0];
+        }
 
-    this.set_busy(false);
+        this.set_busy(false);
 
-    console.log(request_obj.get_text());
+        console.log(request_obj.get_text());
 
-    // if we get javascript code from server -> execute it
-    if (request_obj.get_text() && (ctype=='text/javascript' || ctype=='application/x-javascript'))
-      eval(request_obj.get_text());
+        // if we get javascript code from server -> execute it
+        if (request_obj.get_text() && (ctype=='text/javascript' || ctype=='application/x-javascript'))
+            eval(request_obj.get_text());
 
-    // process the response data according to the sent action
-    switch (request_obj.__action)
-      {
-      case 'delete':
-      case 'moveto':
-        if (this.env.action=='show')
-          this.command('list');
-        else if (this.message_list)
-          this.message_list.init();
-        break;
+        // process the response data according to the sent action
+        switch (request_obj.__action) {
+            case 'delete':
+            case 'moveto':
+                if (this.env.action=='show')
+                    this.command('list');
+                else if (this.message_list)
+                    this.message_list.init();
+                break;
 
-      case 'list':
-        if (this.env.messagecount)
-          this.enable_command('purge', (this.env.mailbox==this.env.trash_mailbox || this.env.mailbox==this.env.junk_mailbox));
-
-      case 'expunge':
-        this.enable_command('select-all', 'select-none', 'expunge', this.env.messagecount ? true : false);
-        break;
-      }
-
-    request_obj.reset();
+            case 'list':
+                console.log('Trying to enable purge.');
+                console.log('Message count: ' + this.env.messagecount);
+                console.log((this.env.mailbox==this.env.trash_mailbox || this.env.mailbox==this.env.junk_mailbox));
+                console.log('Mailbox: ' + this.env.mailbox);
+                console.log('Trash: ' + this.env.trash_mailbox);
+                console.log('Junk: ' + this.env.junk_mailbox);
+                if (this.env.messagecount) {
+                    this.enable_command('purge', (this.env.mailbox==this.env.trash_mailbox || this.env.mailbox==this.env.junk_mailbox));
+                }
+            case 'expunge':
+                this.enable_command('select-all', 'select-none', 'expunge', this.env.messagecount ? true : false);
+                break;
+        }
+        request_obj.reset();
     };
 
 

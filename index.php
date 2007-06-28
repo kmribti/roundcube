@@ -63,14 +63,14 @@ $registry->set('MAIN_TASKS', $MAIN_TASKS, 'core');
  * @ignore
  */
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    rc_main::tfk_debug(var_export($_POST, true));
-    rc_main::tfk_debug(var_export($_GET, true));
+    //rc_main::tfk_debug(var_export($_POST, true));
+    //rc_main::tfk_debug(var_export($_GET, true));
 }
 else {
-    rc_main::tfk_debug('We are GET.');
+    //rc_main::tfk_debug('We are GET.');
 }
 
-rc_main::tfk_debug('Included all files!');
+//rc_main::tfk_debug('Included all files!');
 
 // set PEAR error handling
 // PEAR::setErrorHandling(PEAR_ERROR_TRIGGER, E_USER_NOTICE);
@@ -145,7 +145,7 @@ if ($_action=='error' && !empty($_GET['_code'])) {
 
 //rc_main::tfk_debug('// going');
 
-rc_main::tfk_debug("task {$_task} / action {$_action}");
+//rc_main::tfk_debug("task {$_task} / action {$_action}");
 
 // try to log in
 if ($_action=='login' && $_task=='mail') {

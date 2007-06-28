@@ -1,5 +1,4 @@
 <?php
-
 /*
  +-----------------------------------------------------------------------+
  | program/steps/mail/move_del.inc                                       |
@@ -19,6 +18,10 @@
 
 */
 
+$registry = rc_registry::getInstance();
+$IMAP     = $registry->get('IMAP', 'core');
+$OUTPUT   = $registry->get('OUTPUT', 'core');
+
 // move messages
 if ($_action=='moveto' && !empty($_POST['_uid']) && !empty($_POST['_target_mbox'])) {
     $count  = sizeof(explode(',', ($uids = rc_main::get_input_value('_uid', RCUBE_INPUT_POST))));
@@ -36,7 +39,7 @@ if ($_action=='moveto' && !empty($_POST['_uid']) && !empty($_POST['_target_mbox'
 // delete messages
 else if ($_action=='delete' && !empty($_POST['_uid'])) {
     $count = sizeof(explode(',', ($uids = rc_main::get_input_value('_uid', RCUBE_INPUT_POST))));
-    $del = $IMAP->delete_message($uids, rc_main::get_input_value('_mbox', RCUBE_INPUT_POST));
+    $del   = $IMAP->delete_message($uids, rc_main::get_input_value('_mbox', RCUBE_INPUT_POST));
 
     if (!$del) {
         // send error message
@@ -77,7 +80,7 @@ if ($_action=='moveto' && $target) {
 $OUTPUT->command('set_quota', $IMAP->get_quota());
 
 // add new rows from next page (if any)
-if ($_POST['_from']!='show' && $pages>1 && $IMAP->list_page < $pages) {
+if ($_POST['_from'] != 'show' && $pages > 1 && $IMAP->list_page < $pages) {
     $sort_col   = isset($_SESSION['sort_col'])   ? $_SESSION['sort_col']   : $CONFIG['message_sort_col'];
     $sort_order = isset($_SESSION['sort_order']) ? $_SESSION['sort_order'] : $CONFIG['message_sort_order'];
 

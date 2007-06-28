@@ -17,7 +17,8 @@
 
  $Id: folders.inc 573 2007-05-18 11:29:25Z thomasb $
 */
-
+$registry  = rc_registry::getInstance();
+$IMAP      = $registry->get('IMAP', 'core');
 $mbox_name = $IMAP->get_mailbox_name();
 
 // send EXPUNGE command

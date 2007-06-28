@@ -359,7 +359,7 @@ class rc_main
         ) {
             $a_user_prefs['message_sort_col'] = $_SESSION['sort_col'];
             $a_user_prefs['message_sort_order'] = $_SESSION['sort_order'];
-            rcmail_save_user_prefs($a_user_prefs);
+            self::rcmail_save_user_prefs($a_user_prefs);
         }
 
         $_SESSION = array(

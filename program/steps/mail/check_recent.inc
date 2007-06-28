@@ -1,5 +1,4 @@
 <?php
-
 /*
  +-----------------------------------------------------------------------+
  | program/steps/mail/check_recent.inc                                   |
@@ -19,16 +18,19 @@
 
 */
 
-rc_main::tfk_debug('About to get some mailboxes.');
-
+$registry    = rc_registry::getInstance();
+$IMAP        = $registry->get('IMAP', 'core');
+$OUTPUT      = $registry->get('OUTPUT', 'core');
 $a_mailboxes = $IMAP->list_mailboxes();
 
-rc_main::tfk_debug('Mailboxes: ' . var_export($a_mailboxes, true));
+//rc_main::tfk_debug('About to get some mailboxes.');
+//rc_main::tfk_debug('Mailboxes: ' . var_export($a_mailboxes, true));
 
 foreach ($a_mailboxes as $mbox_name) {
     if ($mbox_name == $IMAP->get_mailbox_name()) {
         if ($recent_count = $IMAP->messagecount(NULL, 'RECENT', TRUE)) {
-            $count = $IMAP->messagecount(NULL, 'ALL', TRUE);
+
+            $count        = $IMAP->messagecount(NULL, 'ALL', TRUE);
             $unread_count = $IMAP->messagecount(NULL, 'UNSEEN', TRUE);
 
             $OUTPUT->set_env('messagecount', $count);
@@ -40,8 +42,9 @@ foreach ($a_mailboxes as $mbox_name) {
             $a_headers = array();
             for ($i=$recent_count, $id=$count-$recent_count+1; $i>0; $i--, $id++) {
                 $header = $IMAP->get_headers($id, NULL, FALSE);
-                if ($header->recent)
+                if ($header->recent) {
                     $a_headers[] = $header;
+                }
             }
             rcmail_js_message_list($a_headers, TRUE);
         }
