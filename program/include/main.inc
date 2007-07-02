@@ -72,13 +72,13 @@ class rc_main
         $BROWSER = rcube_browser();
         $registry->set('BROWSER', $BROWSER, 'core');
 
-        self::tfk_debug('// load browser');
+        //self::tfk_debug('// load browser');
 
         // load configuration
         $CONFIG = self::rcmail_load_config();
         $registry->set('CONFIG', $CONFIG, 'core');
 
-        self::tfk_debug('// load config');
+        //self::tfk_debug('// load config');
 
         // set session garbage collecting time according to session_lifetime
         if (empty($CONFIG['session_lifetime']) === FALSE) {
@@ -93,7 +93,7 @@ class rc_main
 
         $registry->set('DB', $DB, 'core');
 
-        self::tfk_debug('// init db');
+        //self::tfk_debug('// init db');
 
         // use database for storing session data
         include_once 'include/session.inc';
@@ -103,7 +103,7 @@ class rc_main
         $sess_id = session_id();
         $registry->set('sess_id', $sess_id, 'core');
 
-        self::tfk_debug('// session');
+        //self::tfk_debug('// session');
 
         // create session and set session vars
         if (!isset($_SESSION['auth_time'])) {
@@ -161,7 +161,7 @@ class rc_main
         }
         $conf = is_array($rcmail_config) ? $rcmail_config : array();
 
-        self::tfk_debug("// test");
+        //self::tfk_debug("// test");
 
         // load host-specific configuration
         $conf = self::rcmail_load_host_config($conf);
@@ -286,7 +286,7 @@ class rc_main
             $conn = $IMAP->connect(
                             $_SESSION['imap_host'],
                             $_SESSION['username'],
-                            decrypt_passwd($_SESSION['password']),
+                            self::decrypt_passwd($_SESSION['password']),
                             $_SESSION['imap_port'],
                             $_SESSION['imap_ssl']
             );

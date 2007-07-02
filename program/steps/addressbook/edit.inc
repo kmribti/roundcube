@@ -19,6 +19,9 @@
 
 */
 
+$registry = rc_registry::getInstance();
+$CONTACTS = $registry->get('CONTACTS', 'core');
+$OUTPUT   = $registry->get('OUTPUT', 'core');
 
 if (($cid = rc_main::get_input_value('_cid', RCUBE_INPUT_GPC)) && ($record = $CONTACTS->get_record($cid, true))) {
     $OUTPUT->set_env('cid', $record['ID']);
@@ -53,7 +56,7 @@ function rcmail_contact_editform($attrib)
     // a specific part is requested
     if ($attrib['part']) {
         $out = $form_start;
-        $out .= rcmail_get_edit_field($attrib['part'], $record[$attrib['part']], $attrib); 
+        $out .= rcmail_get_edit_field($attrib['part'], $record[$attrib['part']], $attrib);
         return $out;
     }
 
@@ -73,7 +76,7 @@ function rcmail_contact_editform($attrib)
         );
     }
     $out .= "\n</table>$form_end";
-    return $out;  
+    return $out;
 }
 
 $OUTPUT->add_handler('contacteditform', 'rcmail_contact_editform');
@@ -99,7 +102,7 @@ function get_form_tags($attrib)
                             'source' => rc_main::get_input_value('_source', RCUBE_INPUT_GPC)
                         )
         );
-    
+
         if (($result = $CONTACTS->get_result()) && ($record = $result->first())) {
             $hiddenfields->add(array('name' => '_cid', 'value' => $record['ID']));
         }
@@ -107,20 +110,18 @@ function get_form_tags($attrib)
         $form_start .= "\n$SESS_HIDDEN_FIELD\n";
         $form_start .= $hiddenfields->show();
     }
-    
+
     $form_end  = (strlen($EDIT_FORM) && !strlen($attrib['form'])) ? '</form>' : '';
     $form_name = strlen($attrib['form']) ? $attrib['form'] : 'form';
-  
+
     if (!strlen($EDIT_FORM)) {
         $OUTPUT->add_gui_object('editform', $form_name);
     }
     $EDIT_FORM = $form_name;
     $registry->set('EDIT_FORM', $EDIT_FORM, 'core');
 
-    return array($form_start, $form_end);  
+    return array($form_start, $form_end);
 }
-
-
 
 if (!$CONTACTS->get_result() && template_exists('addcontact')) {
     rc_main::parse_template('addcontact');

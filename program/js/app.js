@@ -867,9 +867,9 @@ function rcube_webmail()
           }
         break;
 
-      case 'add-contact':
-        this.add_contact(props);
-        break;
+        case 'add-contact':
+            this.add_contact(props);
+            break;
 
       // quicksearch
       case 'search':
@@ -1936,13 +1936,13 @@ function rcube_webmail()
     return true;
     };
 
-  // send remote request to add a new contact
-  this.add_contact = function(value)
+    // send remote request to add a new contact
+    this.add_contact = function(value)
     {
-    if (value)
-      this.http_post('addcontact', '_address='+value);
-
-    return true;
+        if (value) {
+            this.http_post('addcontact', '_address='+value);
+        }
+        return true;
     };
 
   // send remote request to search mail or contacts

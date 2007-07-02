@@ -1280,7 +1280,7 @@ function rcmail_message_headers($attrib, $headers=NULL)
     $MESSAGE   = $registry->get('MESSAGE', 'core');
     $sa_attrib = $registry->get('sa_attrib', 'core');
 
-    rc_main::tfk_debug('rcmail_message_headers: hello? hello!');
+    //rc_main::tfk_debug('rcmail_message_headers: hello? hello!');
 
     // keep header table attrib
     if (is_array($attrib) && !$sa_attrib) {
@@ -1296,7 +1296,7 @@ function rcmail_message_headers($attrib, $headers=NULL)
         return FALSE;
     }
 
-    rc_main::tfk_debug('MESSAGE: ' . var_export($MESSAGE, true));
+    //rc_main::tfk_debug('MESSAGE: ' . var_export($MESSAGE, true));
 
     // get associative array of headers object
     if (is_null($headers) === true) {
@@ -1311,7 +1311,7 @@ function rcmail_message_headers($attrib, $headers=NULL)
     // show these headers
     $standard_headers = array('subject', 'from', 'organization', 'to', 'cc', 'bcc', 'reply-to', 'date');
 
-    rc_main::tfk_debug('rcmail_message_headers: ' . var_export($headers, true));
+    //rc_main::tfk_debug('rcmail_message_headers: ' . var_export($headers, true));
 
     foreach ($standard_headers as $hkey) {
         if (isset($headers[$hkey]) === false) {
@@ -1717,11 +1717,6 @@ function rcmail_address_string($input, $max=NULL, $addicon=NULL)
                         rc_main::JQ($part['mailto']),
                         rc_main::Q($part['mailto']),
                         rc_main::Q($part['name']));
-            /**
-             * Build icon to allow adding to addressbook.
-             * @ignore
-             */
-            /*
             if ($addicon) {
                 $out .= sprintf(
                             '&nbsp;<a href="#add" onclick="return %s.command(\'add-contact\',\'%s\',this)" title="%s"><img src="%s%s" alt="add" border="0" /></a>',
@@ -1731,7 +1726,7 @@ function rcmail_address_string($input, $max=NULL, $addicon=NULL)
                             $CONFIG['skin_path'],
                             $addicon
                 );
-            }*/
+            }
         }
         else {
             if ($part['name']) {
