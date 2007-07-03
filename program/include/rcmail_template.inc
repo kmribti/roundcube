@@ -458,10 +458,14 @@ class rcmail_template extends rcube_html_page
         $command = strtolower($command);
         $attrib  = rc_main::parse_attrib_string($str_attrib) + $add_attrib;
 
+        rc_main::tfk_debug("// $command");
+
         // empty output if required condition is not met
         if (!empty($attrib['condition']) && !$this->check_condition($attrib['condition'])) {
             return '';
         }
+
+        rc_main::tfk_debug("// $command #2");
 
         // execute command
         switch ($command) {
@@ -480,6 +484,10 @@ class rcmail_template extends rcube_html_page
             // include a file
             case 'include':
                 $path = realpath($this->config['skin_path'].$attrib['file']);
+                if ($path === FALSE) {
+                    rc_main::tfk_debug("Does not exist.");
+                    return $this->parse_xml('');
+                }
                 if (($tpl_filesize = filesize($path)) == 0) {
                     return $this->parse_xml('');
                 }
@@ -488,6 +496,23 @@ class rcmail_template extends rcube_html_page
                     fclose($fp);
                     return $this->parse_xml($incl);
                 }
+                break;
+
+            case 'plugin.include':
+                //rc_main::tfk_debug(var_export($this->config['skin_path'], true));
+                $path = realpath($this->config['skin_path'].$attrib['file']);
+                if ($path === FALSE) {
+                    rc_main::tfk_debug("Does not exist:");
+                    rc_main::tfk_debug($this->config['skin_path']);
+                    rc_main::tfk_debug($attrib['file']);
+                    rc_main::tfk_debug($path);
+                }
+                $incl = file_get_contents($path);
+                if ($incl === FALSE) {
+                    rc_main::tfk_debug("Could not read template.");
+                    return $this->parse_xml('');
+                }
+                return $this->parse_xml($incl);
                 break;
 
             // return code for a specific application object

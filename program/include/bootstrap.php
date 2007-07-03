@@ -9,7 +9,8 @@ $OUTPUT_TYPE  = 'html';
 $MAIN_TASKS   = array(
                     'mail',
                     'settings',
-                    'logout'
+                    'logout',
+                    'plugin'
 ); // addressbook
 
 if (isset($INSTALL_PATH) === false || empty($INSTALL_PATH) === true) {

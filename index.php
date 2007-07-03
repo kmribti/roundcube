@@ -393,6 +393,19 @@ if ($_task == 'settings') {
     $_name = str_replace('-', '_', $_name);
 }
 
+if ($_task == 'plugin') {
+    $_name   = '';
+    $_plugin = dirname(__FILE__) . '/plugins/' . $_action;
+    if (file_exists($_plugin) !== TRUE) {
+        rc_main::tfk_debug("$_plugin does not exist.");
+        $_plugin = '';
+    }
+    else {
+        require $_plugin;
+        exit;
+    }
+}
+
 if (empty($_name) === false) {
     $_file = dirname(__FILE__) . '/program/steps/';
     $_file.= $_task . '/';
@@ -403,7 +416,6 @@ if (empty($_name) === false) {
     else {
         rc_main::tfk_debug('Does not exist: ' . $_file);
     }
-    rc_main::tfk_debug('We included!');
 }
 
 // parse main template

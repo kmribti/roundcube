@@ -155,10 +155,14 @@ $OUTPUT->add_handlers(
 
 /****** get contacts for this user and add them to client scripts ********/
 require_once 'include/rcube_contacts.inc';
-require_once 'include/rcube_contacts_macbay.inc';
 
 if (isset($CONFIG['addressbook_plugin'])) {
-    $CONTACTS = new rcube_contacts_macbay($_SESSION['username'], $_SESSION['password']);
+    require_once 'plugins/addressbook/rcube_contacts_' . $CONFIG['addressbook_plugin'] . '.inc';
+    $abook_class = 'rcube_contacts_' . $CONFIG['addressbook_plugin'];
+    $CONTACTS = new $abook_class (
+                        $_SESSION['username'],
+                        $_SESSION['password']
+    );
 }
 else {
     $DB = $registry->get('DB', 'core');

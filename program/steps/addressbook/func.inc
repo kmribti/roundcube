@@ -21,7 +21,6 @@
 
 require_once 'include/rcube_contacts.inc';
 require_once 'include/rcube_ldap.inc';
-require_once 'include/rcube_contacts_macbay.inc';
 
 $registry = rc_registry::getInstance();
 $CONFIG   = $registry->get('CONFIG', 'core');
@@ -35,7 +34,9 @@ if (($source = get_input_value('_source', RCUBE_INPUT_GPC)) && isset($CONFIG['ld
 }
 else {
     if (isset($CONFIG['addressbook_plugin']) && empty($CONFIG['addressbook_plugin']) === FALSE) {
-        $CONTACTS = new rcube_contacts_macbay(
+        require_once 'plugins/addressbook/rcube_contacts_' . $CONFIG['addressbook_plugin'] . '.inc';
+        $abook_class = 'rcube_contacts_' . $CONFIG['addressbook_plugin'];
+        $CONTACTS = new $abook_class (
                             $_SESSION['username'],
                             $_SESSION['password']
         );

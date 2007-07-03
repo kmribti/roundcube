@@ -23,13 +23,23 @@ require_once 'include/rcube_contacts.inc';
 
 $registry = rc_registry::getInstance();
 $IMAP     = $registry->get('IMAP', 'core');
-$DB       = $registry->get('DB', 'core');
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 
 $done = false;
 
 if (!empty($_POST['_address'])) {
-    $CONTACTS = new rcube_contacts($DB, $_SESSION['user_id']);
+    if (isset($CONFIG['addressbook_plugin']) && empty($CONFIG['addressbook_plugin']) === FALSE) {
+        require_once 'plugins/addressbook/rcube_contacts_' . $CONFIG['addressbook_plugin'] . '.inc';
+        $abook_class = 'rcube_contacts_' . $CONFIG['addressbook_plugin'];
+        $CONTACTS = new $abook_class (
+                            $_SESSION['username'],
+                            $_SESSION['password']
+        );
+    }
+    else {
+        $DB       = $registry->get('DB', 'core');
+        $CONTACTS = new rcube_contacts($DB, $_SESSION['user_id']);
+    }
     $contact_arr = $IMAP->decode_address_list(
                     rc_main::get_input_value(
                         '_address',

@@ -29,14 +29,16 @@ require_once 'Zend/XmlRpc/Client.php';
  * Include rcube_result_set
  * @ignore
  */
-require_once dirname(__FILE__) . '/rcube/result_set.php';
+require_once 'include/rcube/result_set.php';
 
 /**
- * rcube_contacts
+ * rcube_contacts_macbay
  *
  * @final
+ * @author Till Klampaeckel <till@php.net>
+ * @since  0.1-rc1
  */
-class rcube_contacts_macbay
+final class rcube_contacts_macbay
 {
     protected $db = null;
     protected $db_name = '';
@@ -229,6 +231,7 @@ class rcube_contacts_macbay
      */
     public function search($fields, $value, $select=true)
     {
+        return false;
     }
 
 
@@ -239,6 +242,10 @@ class rcube_contacts_macbay
      */
     public function count()
     {
+        if (isset($this->result->count)) {
+            return $this->result->count;
+        }
+        return false;
     }
 
 
@@ -259,7 +266,7 @@ class rcube_contacts_macbay
      * @param  mixed record identifier(s)
      * @return Result object with all record fields or False if not found
      */
-    function get_record($id, $assoc=false)
+    public function get_record($id, $assoc=false)
     {
     }
 
@@ -267,49 +274,80 @@ class rcube_contacts_macbay
     /**
      * Create a new contact record
      *
+     * @access public
      * @param  array Assoziative array with save data
+     * @param  boolean $check
      * @return The created record ID on success, False on error
      */
     public function insert($save_data, $check=false)
     {
-        /*
-        if (is_object($save_data) && is_a($save_data, rcube_result_set)) {
-            return $this->insert_recset($save_data, $check);
-        }
-        $insert_id = $existing = false;
+        //rc_main::tfk_debug(var_export($save_data, true));
 
-        if ($check) {
-            $existing = $this->search('email', $save_data['email'], false);
-        }
-        $a_insert_cols = $a_insert_values = array();
-        foreach ($this->table_cols as $col) {
-            if (isset($save_data[$col])) {
-                $a_insert_cols[] = $this->db->quoteIdentifier($col);
-                $a_insert_values[] = $this->db->quote($save_data[$col]);
+        $params = array();
+        array_push($params, $this->username);
+        array_push($params, rc_main::decrypt_passwd($this->password));
+
+        $Email = array(
+                    'label' => '_$!<Other>!$_',
+                    'value' => $save_data['email']
+        );
+
+        $first = '';
+        $last  = '';
+        if (strstr($save_data['name'], ' ')) {
+            $name = explode(' ', $save_data['name']);
+            if (empty($name) || count($name) == 1) {
+                $first.= '';
+                $last .= $save_data['name'];
+            }
+            else {
+                if (count($name) == 2) {
+                    $first.= $name[0];
+                    $last .= $name[1];
+                }
+                else {
+                    $first.= $name[0];
+                    for ($x=1; $x<count($name); $x++) {
+                        $last .= $name[$x] . ' ';
+                    }
+                }
             }
         }
+        else {
+            $first.= '';
+            $last .= $save_data['name'];
+        }
+        $contact_data = array();
+        $contact_data['First'] = trim($first);
+        $contact_data['Last']  = trim($last);
+        $contact_data['Email'] = array();
+        array_push($contact_data['Email'], $Email);
 
-        if (!$existing->count && !empty($a_insert_cols)) {
-            $_query = "INSERT INTO " . $this->db_name;
-            $_query.= " (user_id, changed, del, " . join(', ', $a_insert_cols).")";
-            $_query.= " VALUES (?, " . $this->db->now() . ", 0, ";
-            $_query.= join(', ', $a_insert_values).")";
-            $this->db->query($_query, $this->user_id);
+        array_push($params, $contact_data);
 
-            $insert_id = $this->db->insert_id(
-                                rc_main::get_sequence_name('contacts')
+        //rc_main::tfk_debug(var_export($params, true));
+        try {
+            $resp = $this->xmlrpc_client->call(
+                            'Addressbook.createContact',
+                            $params
             );
         }
-
-        return $insert_id;
-        */
+        catch (Zend_Exception $e) {
+            rc_main::tfk_debug(var_export($e, true));
+            return false;
+        }
+        if (isset($resp['result'])) {
+            return true;
+        }
+        rc_main::tfk_debug(var_export($resp, true));
+        return false;
     }
 
 
     /**
      * Insert new contacts for each row in set
      */
-    function insert_recset($result, $check=false)
+    public function insert_recset($result, $check=false)
     {
         $ids = array();
         while ($row = $result->next()) {
@@ -324,11 +362,12 @@ class rcube_contacts_macbay
     /**
      * Update a specific contact record
      *
-     * @param mixed Record identifier
-     * @param array Assoziative array with save data
+     * @todo   Implement.
+     * @param  mixed Record identifier
+     * @param  array Assoziative array with save data
      * @return True on success, False on error
      */
-    function update($id, $save_cols)
+    public function update($id, $save_cols)
     {
     }
 
@@ -336,10 +375,12 @@ class rcube_contacts_macbay
     /**
      * Mark one or more contact records as deleted
      *
+     * @todo  Implement.
      * @param array  Record identifiers
      */
-    function delete($ids)
+    public function delete($ids)
     {
+
     }
 }
 ?>

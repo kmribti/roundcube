@@ -1551,6 +1551,7 @@ class rc_main
     // convert a HTML attribute string attributes to an associative array (name => value)
     function parse_attrib_string($str)
     {
+        //self::tfk_debug($str);
         $attrib = array();
         preg_match_all(
                 '/\s*([-_a-z]+)=(["\'])([^"]+)\2/Ui',
