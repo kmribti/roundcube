@@ -1,6 +1,9 @@
 <?php
-//$INSTALL_PATH = str_replace("/plugins/macbay_filter", '', dirname(__FILE__));
-//require_once dirname(__FILE__) . '/../../program/include/bootstrap.php';
+/**
+ * @author Till Klampaeckel <till@php.net>
+ * @link   http://www.stalker.com/CommuniGatePro/QueueRules.html
+ */
+
 require_once dirname(__FILE__) . '/bootstrap.php';
 
 try {
