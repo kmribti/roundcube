@@ -51,11 +51,21 @@ require_once 'include/main.inc';
 require_once 'include/cache.inc';
 require_once 'PEAR.php';
 
+$RC_URI = str_replace(
+                $_SERVER['QUERY_STRING'],
+                '',
+                $_SERVER['REQUEST_URI']
+);
+if (substr($RC_URI, -1, 1) == '?') {
+    $RC_URI = substr($RC_URI, 0, -1);
+}
+
 $registry = rc_registry::getInstance();
 $registry->set('INSTALL_PATH', $INSTALL_PATH, 'core');
 $registry->set('s_mbstring_loaded', null, 'core');
 $registry->set('sa_languages', null, 'core');
 $registry->set('MAIN_TASKS', $MAIN_TASKS, 'core');
+$registry->set('RC_URI', $RC_URI, 'core');
 
 /**
  * log all $_POST
@@ -393,6 +403,9 @@ if ($_task == 'settings') {
     $_name = str_replace('-', '_', $_name);
 }
 
+/**
+ * plugin hook
+ */
 if ($_task == 'plugin') {
     $_name   = '';
     $_plugin = dirname(__FILE__) . '/plugins/' . $_action;
@@ -401,7 +414,10 @@ if ($_task == 'plugin') {
         $_plugin = '';
     }
     else {
-        require $_plugin;
+        $status = @include $_plugin;
+        if ($status === FALSE) {
+            rc_main::tfk_debug("Could not include: $_plugin");
+        }
         exit;
     }
 }

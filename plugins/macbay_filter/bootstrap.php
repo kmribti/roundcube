@@ -6,18 +6,6 @@
  */
 
 /**
- * RC's main.inc
- * @ignore
- */
-//require_once 'include/main.inc';
-
-/**
- * Call rcmail_startup to initialize variables for this call.
- * @ignore
- */
-//rc_main::rcmail_startup('plugin');
-
-/**
  * add to include path
  * @ignore
  */

@@ -1,42 +1,19 @@
 <?php
-if (isset($_mb_filter_name) === false) {
-    $_mb_filter_name = 'Neuer Filter';
-}
 if (isset($_mb_filter_form_id) === false) {
     $_mb_filter_form_id = "filter_" . time();
 }
-//var_dump($_mb_filter_name, $_mb_filter_prio);
+$cond_count = 'new';
 ?>
-<!-- START Filter -->
 <div id="<?php echo $_mb_filter_form_id; ?>" class="formrow">
-	<label for="filter1"><?php echo $_mb_filter_name; ?></label>
-	<a href="#" title="entfernen"><img class="mod" border="0" src="skins/macbay/img/delete.gif" alt="Icon: entfernen" /></a>
+	<h2>Neuer Filter</h2>
 </div>
-<!-- Bedingungen -->
-<?php
-if (isset($mb_rule[2])):
-    $cond_count = 0;
-    foreach ($mb_rule[2] AS $mb_rule_cond):
-        $_left  = $mb_rule_cond[0];
-        $_to    = @$mb_rule_cond[1];
-        $_right = @$mb_rule_cond[2];
-
-        //echo "<!-- " . var_export($mb_rule_cond, true) . " -->";
-        //echo "<!-- $_left $_to $_right -->";
-?>
-<div class="formrow formrow-indent">
-    <?php if($cond_count == 0): ?>
-	   <label onchange="repopulateMode(<?php echo $cond_count; ?>);" for="cond_<?php echo $cond_count; ?>">Bedingungen</label>
-	<?php else: ?>
-	   <label>&nbsp;</label>
-	<?php endif; ?>
-	<select id="cond_<?php echo $cond_count; ?>" class="medium" tabindex="">
+<div id="<?php echo $cond_count; ?>" class="formrow formrow-indent">
+	<label for="cond_<?php echo $cond_count; ?>">Bedingungen</label>
+	<select onchange="repopulateMode('<?php echo $cond_count; ?>');" id="cond_<?php echo $cond_count; ?>" class="medium" tabindex="">
 <?php
     foreach($mb_data['types'] AS $r=>$hr):
-        $_selected = (($r == $_left)?' selected="selected"':'');
 ?>
-        <option value="<?php echo $r; ?>"<?php echo $_selected; ?>>
-		<?php echo $hr; ?></option>
+        <option value="<?php echo $r; ?>"<?php echo $_selected; ?>><?php echo $hr; ?></option>
 <?php endforeach; ?>
 	</select>
 <?php
@@ -72,31 +49,29 @@ else:
     endif;
 endif;
 ?>
-	</select>
 	<input type="text" value="<?php echo $_right; ?>" class="medium lightTxt" id="value_<?php echo $cond_count; ?>" tabindex="" />
-	<a href="#" title="entfernen"><img class="mod" border="0" src="skins/macbay/img/delete.gif" alt="Icon: entfernen" /></a>
+	<span onclick="addRow('<?php echo $cond_count; ?>', 'cond');" title="entfernen">
+	   <img class="mod" border="0" src="skins/macbay/img/add.gif" alt="Icon: hinzufuegen" />
+	</span>
 </div>
-<?php
-        $cond_count++;
-    endforeach;
-endif;
-?>
+<div id="cond_<?php echo $cond_count; ?>_add"></div>
 
-
-<!-- Aktionen -->
 <div class="formrow formrow-indent">
-	<label for="aktion1">Aktionen</label>
-	<select id="aktion1" class="medium" tabindex="">
-		<option value="">Betreff der Nachricht</option>
-		<option value=""></option>
-		<option value=""></option>
+	<label for="action_<?php echo $cond_count; ?>">Aktionen</label>
+	<select id="action_<?php echo $cond_count; ?>" class="medium" tabindex="">
+	<?php foreach ($mb_data['actions'] AS $r=>$hr): ?>
+		<option value="<?php echo $r; ?>"><?php echo $hr; ?></option>
+	<?php endforeach; ?>
 	</select>
-	<input type="text" class="medium lightTxt" name="" id="" tabindex="" />
-	<select class="medium" tabindex="">
-		<option value="">beinhaltet</option>
-		<option value=""></option>
-		<option value=""></option>
-	</select>
-	<a href="#" title="hinzuf&uuml;gen"><img class="mod" border="0" src="skins/macbay/img/add.gif" alt="Icon: hinzuf&uuml;gen" /></a>
+	<textarea class="extralong lightTxt" id="action_add_<?php echo $cond_count; ?>" tabindex=""></textarea>
+	<span onclick="addRow('<?php echo $cond_count; ?>', 'action');" title="hinzuf&uuml;gen">
+	   <img class="mod" border="0" src="skins/macbay/img/add.gif" alt="Icon: hinzuf&uuml;gen" />
+	</span>
 </div>
-<!-- END Filter -->
+<div id="action_<?php echo $cond_count; ?>_add"></div>
+<br clear="left" />
+<div id="saveNewBtn">
+	<div class="btn btn-active-big">
+		<p><span id="saveNewButton">Neuen Regelsatz anlegen</span></p>
+	</div>
+</div>

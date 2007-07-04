@@ -32,7 +32,9 @@ $OUTPUT   = $registry->get('OUTPUT', 'core');
 //echo '</pre>';
 ?>
 <?php echo $OUTPUT->parse('header_small', false); ?>
-    <form id="currentRules" onsubmit="return false;" style="width:780px;">
+<!-- #content needed to make CSS work - we override inline -->
+<div id="content" style="width:780px !important;">
+    <form id="currentRules" onsubmit="return false;" style="margin:0 0 0 0 !important;width:760px;">
         <fieldset>
         	<h2>Filter</h2>
         	<?php
@@ -51,23 +53,32 @@ $OUTPUT   = $registry->get('OUTPUT', 'core');
         	?>
         </fieldset>
     </form>
+    <?php if (count($mb_rules) > 0): ?>
     <div id="saveBtn">
 		<div class="btn btn-active-big">
 			<p><span id="saveButton">&Auml;nderungen speichern</span></p>
 		</div>
 	</div>
+	<?php endif; ?>
 	<br clear="left" />
-	<div id="#newFormWrapper">
-    <form>
-        <?php include dirname(__FILE__) . '/filter_neu.php'; ?>
-    </form>
+	<span onclick="slideInOrOut($(this));" class="ajaxfakelink">Neuen Regelsatz anlegen.</span>
+	<div id="newFormWrapper" style="padding-top:20px;">
+        <form id="newRule" style="margin:none;width:760px;">
+            <?php require dirname(__FILE__) . '/filter_neu.php'; ?>
+        </form>
     </div>
+</div>
 <script type="text/javascript">
 /* <![CDATA[ */
 $(document).ready(function(){
-   $('#saveButton').bind('click', function(){ÊsaveForm(); });
+   $('#saveButton').bind('click', function(){ saveForm(); });
    $('#newFormWrapper').hide();
+   $('#saveNewButton').bind('click', function(){ addForm(); });
 });
+
+/**
+ * @global mb_modes
+ */
 var mb_modes = new Array();
 <?php
 foreach($mb_data['modes'] AS $cat=>$modes):
@@ -81,43 +92,54 @@ foreach($mb_data['modes'] AS $cat=>$modes):
     endforeach;
 endforeach;
 ?>
-function repopulateMode(theid) {
-    var cond = $('#cond_' + theid).val();
-    if (typeof(mb_modes[cond]) == 'undefined') {
-        var modes = mb_modes['default'];
-    }
-    else {
-        var modes = mb_modes[cond];
-    }
-    var html = new String;
-    for (var x=0; x<modes.length; x++) {
-        var themode = modes[x];
-        html+= '<option value="' + themode.r + '">'
-        html+= themode.hr + '</option>' + "\n";
-    }
-    if (html == '') {
-        html += '<option value="">Ja</option>';
-    }
-    $('#mode_' + theid).html('').ready(function(){
-        $('#mode_' + theid).html(html);
-    });
-}
-function saveForm()
-{
-    $('#currentRules .formrow').each(function(n){
-        var theid = $(this).attr('id');
-        if (typeof(theid) == 'undefined') {
-            return true;
-        }
-        var cond = $('#cond_' + theid).val();
-        var mode = $('#mode_' + theid).val();
-        var val  = $('#value_' + theid).val();
 
-        if (cond == null) {
-            return true;
+function slideInOrOut(obj)
+{
+    var text = $(obj).text();
+    if (text == 'Neuen Regelsatz anlegen.') {
+        $('#newFormWrapper').slideDown('slow');
+        $(obj).text('Nein, doch nicht.');
+        return;
+    }
+    $('#newFormWrapper').slideUp('slow');
+    $(obj).text('Neuen Regelsatz anlegen.');
+    return;
+}
+
+/**
+ * local functions, because we need the URI in them.
+ */
+function addRow(filterId, ruleType)
+{
+    var wrapper = new String(ruleType + '_' + filterId + '_add');
+    $.post(
+        '<?php echo $RC_URI; ?>?_task=plugin&_action=macbay_filter/ajax/new_' + ruleType + '.php',
+        function(data) {
+            $(document.getElementById(wrapper)).append(data);
+            return;
         }
-        console.log(cond + '/' + mode + '/' + val);
-    });
+    );
+}
+function deleteFilter(filterName, formId)
+{
+    var status = confirm('Wollen Sie den Regelsatz "' + filterName + '" wirklich entfernen?');
+    if (status != true) {
+        return;
+    }
+    $.post(
+        '<?php echo $registry->get('RC_URI', 'core'); ?>?_task=plugin&_action=macbay_filter/delete.php',
+        {filterName: filterName},
+        function(data) {
+            if (data == 'ok') {
+                $('#' + formId).slideUp('slow').ready(function(){
+                    $('#' + formId).remove();
+                });
+                return;
+            }
+            alert('Der Regelsatz konnte nicht entfernt werden.');
+            return;
+        }
+    )
 }
 /* ]]> */
 </script>
