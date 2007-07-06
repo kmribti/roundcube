@@ -18,7 +18,7 @@
 // |          Damian Alejandro Fernandez Sosa <damlists@cnba.uba.ar>      |
 // +----------------------------------------------------------------------+
 //
-// $Id: SMTP.php,v 1.58 2007/03/28 04:53:34 chagenbu Exp $
+// $Id: SMTP.php 399 2006-12-06 21:37:37Z thomasb $
 
 require_once 'PEAR.php';
 require_once 'Net/Socket.php';
@@ -36,6 +36,7 @@ require_once 'Net/Socket.php';
  */
 class Net_SMTP
 {
+
     /**
      * The server to connect to.
      * @var string
@@ -123,7 +124,7 @@ class Net_SMTP
         if (isset($port)) $this->port = $port;
         if (isset($localhost)) $this->localhost = $localhost;
 
-        $this->_socket = new Net_Socket();
+        $this->_socket = &new Net_Socket();
 
         /*
          * Include the Auth_SASL package.  If the package is not available,
@@ -268,8 +269,7 @@ class Net_SMTP
             }
         }
 
-        return PEAR::raiseError('Invalid response code received from server',
-                                $this->_code);
+        return PEAR::raiseError('Invalid response code received from server');
     }
 
     /**
@@ -425,31 +425,7 @@ class Net_SMTP
     function auth($uid, $pwd , $method = '')
     {
         if (empty($this->_esmtp['AUTH'])) {
-            if (version_compare(PHP_VERSION, '5.1.0', '>=')) {
-                if (!isset($this->_esmtp['STARTTLS'])) {
-                    return PEAR::raiseError('SMTP server does not support authentication');
-                }
-                if (PEAR::isError($result = $this->_put('STARTTLS'))) {
-                    return $result;
-                }
-                if (PEAR::isError($result = $this->_parseResponse(220))) {
-                    return $result;
-                }
-                if (PEAR::isError($result = $this->_socket->enableCrypto(true, STREAM_CRYPTO_METHOD_TLS_CLIENT))) {
-                    return $result;
-                } elseif ($result !== true) {
-                    return PEAR::raiseError('STARTTLS failed');
-                }
-
-                /* Send EHLO again to recieve the AUTH string from the
-                 * SMTP server. */
-                $this->_negotiate();
-                if (empty($this->_esmtp['AUTH'])) {
-                    return PEAR::raiseError('SMTP server does not support authentication');
-                }
-            } else {
-                return PEAR::raiseError('SMTP server does not support authentication');
-            }
+            return PEAR::raiseError('SMTP server does no support authentication');
         }
 
         /* If no method has been specified, get the name of the best
@@ -467,25 +443,21 @@ class Net_SMTP
         }
 
         switch ($method) {
-        case 'DIGEST-MD5':
-            $result = $this->_authDigest_MD5($uid, $pwd);
-            break;
-
-        case 'CRAM-MD5':
-            $result = $this->_authCRAM_MD5($uid, $pwd);
-            break;
-
-        case 'LOGIN':
-            $result = $this->_authLogin($uid, $pwd);
-            break;
-
-        case 'PLAIN':
-            $result = $this->_authPlain($uid, $pwd);
-            break;
-
-        default:
-            $result = PEAR::raiseError("$method is not a supported authentication method");
-            break;
+            case 'DIGEST-MD5':
+                $result = $this->_authDigest_MD5($uid, $pwd);
+                break;
+            case 'CRAM-MD5':
+                $result = $this->_authCRAM_MD5($uid, $pwd);
+                break;
+            case 'LOGIN':
+                $result = $this->_authLogin($uid, $pwd);
+                break;
+            case 'PLAIN':
+                $result = $this->_authPlain($uid, $pwd);
+                break;
+            default:
+                $result = PEAR::raiseError("$method is not a supported authentication method");
+                break;
         }
 
         /* If an error was encountered, return the PEAR_Error object. */
@@ -694,41 +666,34 @@ class Net_SMTP
     /**
      * Send the MAIL FROM: command.
      *
-     * @param string $sender    The sender (reverse path) to set.
-     * @param string $params    String containing additional MAIL parameters,
-     *                          such as the NOTIFY flags defined by RFC 1891
-     *                          or the VERP protocol.
+     * @param string The sender (reverse path) to set.
      *
-     *                          If $params is an array, only the 'verp' option
-     *                          is supported.  If 'verp' is true, the XVERP
-     *                          parameter is appended to the MAIL command.  If
-     *                          the 'verp' value is a string, the full
-     *                          XVERP=value parameter is appended.
+     * @param array optional arguments. Currently supported:
+     *        verp   boolean or string. If true or string
+     *               verp is enabled. If string the characters
+     *               are considered verp separators.
      *
      * @return mixed Returns a PEAR_Error with an error message on any
      *               kind of failure, or true on success.
      * @access public
      * @since  1.0
      */
-    function mailFrom($sender, $params = null)
+    function mailFrom($sender, $args = array())
     {
-        $args = "FROM:<$sender>";
+        $argstr = '';
 
-        /* Support the deprecated array form of $params. */
-        if (is_array($params) && isset($params['verp'])) {
+        if (isset($args['verp'])) {
             /* XVERP */
-            if ($params['verp'] === true) {
-                $args .= ' XVERP';
+            if ($args['verp'] === true) {
+                $argstr .= ' XVERP';
 
             /* XVERP=something */
-            } elseif (trim($params['verp'])) {
-                $args .= ' XVERP=' . $params['verp'];
+            } elseif (trim($args['verp'])) {
+                $argstr .= ' XVERP=' . $args['verp'];
             }
-        } elseif (is_string($params)) {
-            $args .= ' ' . $params;
         }
 
-        if (PEAR::isError($error = $this->_put('MAIL', $args))) {
+        if (PEAR::isError($error = $this->_put('MAIL', "FROM:<$sender>$argstr"))) {
             return $error;
         }
         if (PEAR::isError($error = $this->_parseResponse(250))) {
@@ -741,24 +706,16 @@ class Net_SMTP
     /**
      * Send the RCPT TO: command.
      *
-     * @param string $recipient The recipient (forward path) to add.
-     * @param string $params    String containing additional RCPT parameters,
-     *                          such as the NOTIFY flags defined by RFC 1891.
+     * @param string The recipient (forward path) to add.
      *
      * @return mixed Returns a PEAR_Error with an error message on any
      *               kind of failure, or true on success.
-     *
      * @access public
      * @since  1.0
      */
-    function rcptTo($recipient, $params = null)
+    function rcptTo($recipient)
     {
-        $args = "TO:<$recipient>";
-        if (is_string($params)) {
-            $args .= ' ' . $params;
-        }
-
-        if (PEAR::isError($error = $this->_put('RCPT', $args))) {
+        if (PEAR::isError($error = $this->_put('RCPT', "TO:<$recipient>"))) {
             return $error;
         }
         if (PEAR::isError($error = $this->_parseResponse(array(250, 251)))) {
@@ -803,7 +760,7 @@ class Net_SMTP
      * @access public
      * @since  1.0
      */
-    function data($data)
+    function data(&$data)
     {
         /* RFC 1870, section 3, subsection 3 states "a value of zero
          * indicates that no fixed maximum message size is in force".
@@ -827,7 +784,8 @@ class Net_SMTP
             return $error;
         }
 
-        if (PEAR::isError($result = $this->_send($data . "\r\n.\r\n"))) {
+        $data .= "\r\n.\r\n";
+        if (PEAR::isError($result = $this->_send($data))) {
             return $result;
         }
         if (PEAR::isError($error = $this->_parseResponse(250))) {
