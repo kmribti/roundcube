@@ -1126,7 +1126,7 @@ class rc_main
             $from = $from=="UTF-7" ? "UTF7-IMAP": $from;
 
             // return if convert succeeded
-            if (($out = mb_convert_encoding($str, $to, $from)) != '') {
+            if (($out = @mb_convert_encoding($str, $to, $from)) != '') {
                 return $out;
             }
         }
