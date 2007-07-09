@@ -403,6 +403,8 @@ if ($_task == 'settings') {
     $_name = str_replace('-', '_', $_name);
 }
 
+rc_main::tfk_debug($_task);
+
 /**
  * plugin hook
  */
@@ -410,7 +412,7 @@ if ($_task == 'plugin') {
     $_name   = '';
     $_plugin = dirname(__FILE__) . '/plugins/' . $_action;
     if (file_exists($_plugin) !== TRUE) {
-        //rc_main::tfk_debug("$_plugin does not exist.");
+        rc_main::tfk_debug("$_plugin does not exist.");
         $_plugin = '';
     }
     else {

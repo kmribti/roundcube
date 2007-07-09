@@ -9,7 +9,7 @@ switch($_plugin_action) {
         break;
 
     case 'save':
-        var_dump($_POST);
+        echo '<pre style="font-size:8pt;">'; var_dump($_POST); echo '</pre>';
         break;
 
     default:

@@ -25,7 +25,7 @@ $OUTPUT   = $registry->get('OUTPUT', 'core');
 <?php echo $OUTPUT->parse('header_small', false); ?>
 <!-- #content needed to make CSS work - we override inline -->
 <div id="content" style="width:780px !important;">
-    <form id="currentRules" action="<?php echo $RC_URI; ?>?_task=plugin&_action=macbay_filter/form.php" style="margin:0 0 0 0 !important;width:760px;">
+    <form id="currentRules" method="post" action="<?php echo $RC_URI; ?>?_task=plugin&_action=macbay_filter/form.php" style="margin:0 0 0 0 !important;width:760px;">
         <fieldset>
         	<h2>Filter</h2>
         	<?php
