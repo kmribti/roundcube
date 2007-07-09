@@ -111,7 +111,7 @@ Class utf8{
   //Error handler
   function onError($err_code,$err_text){
     //print($err_code . " : " . $err_text . "<hr>\n");
-    raise_error(array('code' => 500,
+    rc_bugs::raise_error(array('code' => 500,
                       'file' => __FILE__,
                       'message' => $err_text), TRUE, FALSE);
   }

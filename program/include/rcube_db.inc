@@ -85,37 +85,43 @@ class rcube_db
     }
 
 
-  /**
-   * Connect to specific database
-   *
-   * @param  string  DSN for DB connections
-   * @return object  PEAR database handle
-   * @access private
-   */
-  function dsn_connect($dsn)
+    /**
+     * Connect to specific database
+     *
+     * @param  string  DSN for DB connections
+     * @return object  PEAR database handle
+     * @access private
+     */
+    function dsn_connect($dsn)
     {
-    // Use persistent connections if available
-    $dbh = DB::connect($dsn, array('persistent' => $this->db_pconn));
+        // Use persistent connections if available
+        $dbh = DB::connect($dsn, array('persistent' => $this->db_pconn));
         
-    if (DB::isError($dbh))
-      {
-      $this->db_error = TRUE;
-      $this->db_error_msg = $dbh->getMessage();
+        if (DB::isError($dbh)) {
+            $this->db_error = TRUE;
+            $this->db_error_msg = $dbh->getMessage();
 
-      raise_error(array('code' => 603, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
-                        'message' => $this->db_error_msg), TRUE, FALSE);
+            rc_bugs::raise_error(
+                    array(
+                        'code' => 603,
+                        'type' => 'db',
+                        'line' => __LINE__,
+                        'file' => __FILE__,
+                        'message' => $this->db_error_msg
+                    ),
+                    TRUE,
+                    FALSE
+            );
                         
-      return FALSE;
-      }
-
-    else if ($this->db_provider=='sqlite')
-      {
-      $dsn_array = DB::parseDSN($dsn);
-      if (!filesize($dsn_array['database']) && !empty($this->sqlite_initials))
-        $this->_sqlite_create_database($dbh, $this->sqlite_initials);
-      }
-        
-    return $dbh;
+            return FALSE;
+        }
+        else if ($this->db_provider=='sqlite') {
+            $dsn_array = DB::parseDSN($dsn);
+            if (!filesize($dsn_array['database']) && !empty($this->sqlite_initials)) {
+                $this->_sqlite_create_database($dbh, $this->sqlite_initials);
+            }
+        }
+        return $dbh;
     }
 
 
@@ -276,32 +282,35 @@ class rcube_db
     }
 
 
-  /**
-   * Get last inserted record ID
-   * For Postgres databases, a sequence name is required
-   *
-   * @param  string  Sequence name for increment
-   * @return mixed   ID or FALSE on failure
-   * @access public
-   */
-  function insert_id($sequence = '')
+    /**
+     * Get last inserted record ID
+     * For Postgres databases, a sequence name is required
+     *
+     * @param  string  Sequence name for increment
+     * @return mixed   ID or FALSE on failure
+     * @access public
+     */
+    function insert_id($sequence = '')
     {
-    if (!$this->db_handle || $this->db_mode=='r')
-      return FALSE;
-
-    switch($this->db_provider)
-      {
-      case 'pgsql':
-        $result = &$this->db_handle->getOne("SELECT CURRVAL('$sequence')");
-        if (DB::isError($result))
-          raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__, 
-                            'message' => $result->getMessage()), TRUE, FALSE);
-        return $result;
+        if (!$this->db_handle || $this->db_mode=='r') {
+            return FALSE;
+        }
+        switch($this->db_provider) {
+            case 'pgsql':
+                $result = &$this->db_handle->getOne("SELECT CURRVAL('$sequence')");
+                if (DB::isError($result)) {
+                    rc_bugs::raise_error(
+                        array(
+                            'code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__, 
+                            'message' => $result->getMessage()), TRUE, FALSE
+                    );
+                }
+                return $result;
 
       case 'mssql':
         $result = &$this->db_handle->getOne("SELECT @@IDENTITY");
         if (DB::isError($result))
-          raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__, 
+          rc_bugs::raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__, 
                             'message' => $result->getMessage()), TRUE, FALSE);
         return $result;
                 
@@ -362,7 +371,7 @@ class rcube_db
     {
     if (!$result || DB::isError($result))
       {
-      raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
+      rc_bugs::raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
                         'message' => $this->db_link->getMessage()), TRUE, FALSE);
       return FALSE;
       }
@@ -502,7 +511,7 @@ class rcube_db
     // sql error occured
     if (DB::isError($res))
       {
-      raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
+      rc_bugs::raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
                         'message' => $res->getMessage() . " Query: " . substr(preg_replace('/[\r\n]+\s*/', ' ', $res->userinfo), 0, 512)), TRUE, FALSE);
       return FALSE;
       }

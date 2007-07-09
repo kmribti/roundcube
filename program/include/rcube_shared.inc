@@ -140,7 +140,7 @@ function rcube_label($attrib)
     // text does not exist
     if (!($text_item = $sa_text_data[$alias])) {
         /*
-        raise_error(
+        rc_bugs::raise_error(
             array(
                 'code' => 500,
                 'type' => 'php',

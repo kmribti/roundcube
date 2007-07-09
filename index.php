@@ -137,7 +137,7 @@ $DB     = $registry->get('DB', 'core');
 
 // check DB connections and exit on failure
 if ($err_str = $DB->is_error()) {
-    raise_error(array(
+    rc_bugs::raise_error(array(
         'code' => 603,
         'type' => 'db',
         'message' => $err_str), FALSE, TRUE
@@ -150,7 +150,7 @@ if ($err_str = $DB->is_error()) {
 
 // error steps
 if ($_action=='error' && !empty($_GET['_code'])) {
-    raise_error(array('code' => hexdec($_GET['_code'])), FALSE, TRUE);
+    rc_bugs::raise_error(array('code' => hexdec($_GET['_code'])), FALSE, TRUE);
 }
 
 //rc_main::tfk_debug('// going');
@@ -410,10 +410,27 @@ if ($_task == 'plugin') {
     $_name   = '';
     $_plugin = dirname(__FILE__) . '/plugins/' . $_action;
     if (file_exists($_plugin) !== TRUE) {
-        rc_main::tfk_debug("$_plugin does not exist.");
+        //rc_main::tfk_debug("$_plugin does not exist.");
         $_plugin = '';
     }
     else {
+        $_plugin  = realpath($_plugin);
+        $path_len = strlen(dirname(__FILE__) . '/plugins/');
+        if (substr($_plugin, 0, $path_len) != dirname(__FILE__). '/plugins/') {
+            rc_bugs::raise_error(
+                array(
+                    'code'    => 500,
+                    'type'    => 'php',
+                    'line'    => __LINE__,
+                    'file'    => __FILE__,
+                    'message' => 'Plugin request not within webmail directory.'
+                ),
+                TRUE,
+                TRUE
+            );
+            rc_main::tfk_debug('Possible hack.');
+            exit;
+        }
         $status = @include $_plugin;
         if ($status === FALSE) {
             rc_main::tfk_debug("Could not include: $_plugin");
@@ -438,7 +455,7 @@ if (empty($_name) === false) {
 $OUTPUT->send($_task);
 
 // if we arrive here, something went wrong
-raise_error(
+rc_bugs::raise_error(
     array(
         'code' => 404,
         'type' => 'php',

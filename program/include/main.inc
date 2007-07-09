@@ -813,7 +813,7 @@ class rc_main
             $a_mailboxes = $IMAP->list_mailboxes();
         }
         else {
-            raise_error(
+            rc_bugs::raise_error(
                 array(
                     'code' => 500,
                     'type' => 'php',

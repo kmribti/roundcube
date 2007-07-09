@@ -27,7 +27,7 @@ if ($uid = rc_main::get_input_value('_uid', RCUBE_INPUT_GET)) {
     $IMAP->print_raw_body($uid);
 }
 else {
-    raise_error(
+    rc_bugs::raise_error(
         array(
             'code' => 500,
             'type' => 'php',

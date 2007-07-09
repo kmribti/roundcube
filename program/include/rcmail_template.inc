@@ -265,7 +265,7 @@ class rcmail_template extends rcube_html_page
             fopen($path, 'r');
             $message.= ob_get_contents();
             ob_end_clean();
-            raise_error(
+            rc_bugs::raise_error(
                 array(
                     'code' => 501,
                     'type' => 'php',
@@ -397,7 +397,7 @@ class rcmail_template extends rcube_html_page
                 }
                 return $matches[0] . $this->parse_conditions($result);
             }
-            raise_error(
+            rc_bugs::raise_error(
                 array(
                     'code' => 500,
                     'type' => 'php',

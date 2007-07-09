@@ -309,7 +309,7 @@ if (is_array($_FILES['_attachments']['tmp_name'])) {
 //rc_main::tfk_debug('Errors anyone?: ' . var_export($error_msg, true));
 
 if (count($error_msg) > 0) {
-    raise_error(
+    rc_bugs::raise_error(
         array(
             'code' => 800,
             'type' => 'smtp',
@@ -392,7 +392,7 @@ if ($savedraft === false) {
         //rc_main::tfk_debug(var_export($smtp_response, true));
         // log error
         if (!$sent) {
-            raise_error(
+            rc_bugs::raise_error(
                 array(
                     'code' => 800,
                     'type' => 'smtp',
@@ -480,7 +480,7 @@ if ($CONFIG[$store_target]) {
     }
     // raise error if saving failed
     if (!$saved) {
-        raise_error(
+        rc_bugs::raise_error(
             array(
                 'code' => 800,
                 'type' => 'imap',
@@ -507,7 +507,7 @@ if ($CONFIG[$store_target]) {
         );
         // raise error if deletion of old draft failed
         if (!$deleted) {
-            raise_error(
+            rc_bugs::raise_error(
                     array(
                         'code' => 800,
                         'type' => 'imap',

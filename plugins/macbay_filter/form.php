@@ -4,37 +4,28 @@
  * @link   http://www.stalker.com/CommuniGatePro/QueueRules.html
  */
 
+/**
+ * Include this plugin's bootstrap for all necessary goodness.
+ * @ignore
+ */
 require_once dirname(__FILE__) . '/bootstrap.php';
 
-try {
-    $params = array();
-    array_push($params, $_SESSION['username']);
-    array_push($params, rc_main::decrypt_passwd($_SESSION['password']));
-    $mb_rules = $mb_client->call('cli.getRules', $params);
-    $mb_data  = $mb_client->call('cli.getRuleMeta', array());
+/**
+ * handle $_plugin_action calls
+ * @ignore
+ */
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    require dirname(__FILE__) . '/bin/plugin_action.php';
 }
-catch(Zend_Exception $e) {
-    rc_main::tfk_debug(var_export($e, true));
-    echo "Message: {$e->getMessage()}<br />";
-    echo "Code: {$e->getCode()}";
-    echo '</div></div>';
-    echo '</body></html>';
-    exit;
-}
+require dirname(__FILE__) . '/bin/get.php';
+
 $registry = rc_registry::getInstance();
 $OUTPUT   = $registry->get('OUTPUT', 'core');
-//$_header  = $OUTPUT->xml_command('plugin.include', 'file="/includes/header.html"');
-//$_footer  = $OUTPUT->xml_command('plugin.include', 'file="/includes/footer.html"');
-//echo '<pre style="font-size:8pt;">';
-//var_dump($mb_data['actions']);
-//var_dump($_header);
-//var_dump($mb_rules);
-//echo '</pre>';
 ?>
 <?php echo $OUTPUT->parse('header_small', false); ?>
 <!-- #content needed to make CSS work - we override inline -->
 <div id="content" style="width:780px !important;">
-    <form id="currentRules" onsubmit="return false;" style="margin:0 0 0 0 !important;width:760px;">
+    <form id="currentRules" action="<?php echo $RC_URI; ?>?_task=plugin&_action=macbay_filter/form.php" style="margin:0 0 0 0 !important;width:760px;">
         <fieldset>
         	<h2>Filter</h2>
         	<?php
@@ -43,15 +34,20 @@ $OUTPUT   = $registry->get('OUTPUT', 'core');
             	   $_mb_filter_name = $mb_rule[1];
             	   $_mb_filter_prio = $mb_rule[0];
             	   include dirname(__FILE__) . '/filter.php';
+
+            	   /**
+            	    * garbage collection
+            	    */
+            	   unset($_mb_filter_name);
+        	       unset($_mb_filter_prio);
+        	       unset($mb_rule);
         	   endforeach;
         	else:
-                echo 'Sie haben noch keine Regeln.';
+                echo 'Sie haben noch keine Regeln angelegt.';
         	endif;
-        	unset($_mb_filter_name);
-        	unset($_mb_filter_prio);
-        	unset($mb_rule);
         	?>
         </fieldset>
+        <input type="hidden" name="_plugin_action" value="save" />
     </form>
     <?php if (count($mb_rules) > 0): ?>
     <div id="saveBtn">
@@ -59,21 +55,23 @@ $OUTPUT   = $registry->get('OUTPUT', 'core');
 			<p><span id="saveButton">&Auml;nderungen speichern</span></p>
 		</div>
 	</div>
+	<br clear="left" />
 	<?php endif; ?>
 	<br clear="left" />
-	<span onclick="slideInOrOut($(this));" class="ajaxfakelink">Neuen Regelsatz anlegen.</span>
+	<span onclick="slideInOrOut($(this));" class="ajaxfakelink" style="padding-bottom:15px;">Neuen Regelsatz anlegen.</span>
 	<div id="newFormWrapper" style="padding-top:20px;">
-        <form id="newRule" style="margin:none;width:760px;">
+        <form action="<?php echo $RC_URI; ?>?_task=plugin&_action=macbay_filter/form.php" id="newRule" method="post" style="margin:none;width:760px;">
             <?php require dirname(__FILE__) . '/filter_neu.php'; ?>
+            <input type="hidden" name="_plugin_action" value="add" />
         </form>
     </div>
 </div>
 <script type="text/javascript">
 /* <![CDATA[ */
 $(document).ready(function(){
-   $('#saveButton').bind('click', function(){ saveForm(); });
+   $('#saveButton').bind('click', function(){ $('#currentRules').submit(); });
    $('#newFormWrapper').hide();
-   $('#saveNewButton').bind('click', function(){ addForm(); });
+   $('#saveNewButton').bind('click', function(){ $('#newRule').submit(); });
 });
 
 /**

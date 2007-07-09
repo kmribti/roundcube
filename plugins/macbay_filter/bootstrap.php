@@ -23,4 +23,21 @@ $endpoint = 'http://preview.macbay.de/config/xmlrpc/cli';
  * @ignore
  */
 $mb_client = new Zend_XmlRpc_Client($endpoint);
+
+/**
+ * macbay_filter
+ */
+require_once dirname(__FILE__) . '/lib/macbay_filter.class.php';
+$params = array();
+array_push($params, $_SESSION['username']);
+array_push($params, rc_main::decrypt_passwd($_SESSION['password']));
+$macbay_filter = new macbay_filter($mb_client, $params);
+
+
+/**
+ * MACBAY_FILTER_MADNESS
+ *
+ * @ignore
+ */
+define('MACBAY_FILTER_MADNESS', md5($_SERVER['HTTP_HOST'].time().$_SESSION['user_id']));
 ?>

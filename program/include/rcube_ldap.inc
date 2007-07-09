@@ -73,7 +73,7 @@ class rcube_ldap
   function connect()
   {
     if (!function_exists('ldap_connect'))
-      raise_error(array('type' => 'ldap', 'message' => "No ldap support in this installation of PHP"), true);
+      rc_bugs::raise_error(array('type' => 'ldap', 'message' => "No ldap support in this installation of PHP"), true);
 
     if (is_resource($this->conn))
       return true;
@@ -99,7 +99,7 @@ class rcube_ldap
         $this->ready = $this->bind($this->prop['bind_dn'], $this->prop['bind_pass']);
     }
     else
-      raise_error(array('type' => 'ldap', 'message' => "Could not connect to any LDAP server, tried $host:{$this->prop[port]} last"), true);
+      rc_bugs::raise_error(array('type' => 'ldap', 'message' => "Could not connect to any LDAP server, tried $host:{$this->prop[port]} last"), true);
   }
 
 
@@ -115,7 +115,7 @@ class rcube_ldap
       return true;
     else
     {
-      raise_error(array(
+      rc_bugs::raise_error(array(
         'code' => ldap_errno($this->conn),
         'type' => 'ldap',
         'message' => "Bind failed for dn=$dn: ".ldap_error($this->conn)),

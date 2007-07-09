@@ -111,7 +111,7 @@ class rcube_imap
             $ICL_SSL = TRUE;
         }
         elseif ($use_ssl) {
-            raise_error(
+            rc_bugs::raise_error(
                 array(
                     'code' => 403,
                     'type' => 'imap',
@@ -140,7 +140,7 @@ class rcube_imap
         }
         // write error log
         else if (!$this->conn && $GLOBALS['iil_error']) {
-            raise_error(array('code' => 403,
+            rc_bugs::raise_error(array('code' => 403,
                        'type' => 'imap',
                        'message' => $GLOBALS['iil_error']), TRUE, FALSE);
         }

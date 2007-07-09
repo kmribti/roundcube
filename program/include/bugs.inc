@@ -1,5 +1,4 @@
 <?php
-
 /*
  +-----------------------------------------------------------------------+
  | program/include/bugs.inc                                              |
@@ -19,17 +18,32 @@
 
 */
 
-
-// throw system error and show error page
-function raise_error($arg=array(), $log=FALSE, $terminate=FALSE)
+/**
+ * rc_bugs
+ *
+ * @final
+ */
+class rc_bugs
 {
-    $registry       = rc_registry::getInstance();
-    $__page_content = $registry->get('registry', 'core');
-    $CONFIG         = $registry->get('CONFIG', 'core');
-    $OUTPUT         = $registry->get('OUTPUT', 'core');
-    $ERROR_CODE     = $registry->get('ERROR_CODE', 'core');
-    $ERROR_MESSAGE  = $registry->get('ERROR_MESSAGE', 'core');
-  
+    /**
+     * throw system error and show error page
+     *
+     * @access static
+     * @param  array $arg
+     * @param  boolean $log
+     * @param  boolean $terminate
+     * @uses   rc_registry::getInstance()
+     * @return void
+     */
+    static function raise_error($arg=array(), $log=FALSE, $terminate=FALSE)
+    {
+        $registry       = rc_registry::getInstance();
+        $__page_content = $registry->get('registry', 'core');
+        $CONFIG         = $registry->get('CONFIG', 'core');
+        $OUTPUT         = $registry->get('OUTPUT', 'core');
+        $ERROR_CODE     = $registry->get('ERROR_CODE', 'core');
+        $ERROR_MESSAGE  = $registry->get('ERROR_MESSAGE', 'core');
+
   /* $arg keys:
        int     code
        string  type (php, xpath, db, imap, javascript)
@@ -38,94 +52,101 @@ function raise_error($arg=array(), $log=FALSE, $terminate=FALSE)
        int     line
   */
 
-    // report bug (if not incompatible browser)
-    if ($log && $arg['type'] && $arg['message']) {
-        log_bug($arg);
+        // report bug (if not incompatible browser)
+        if ($log && $arg['type'] && $arg['message']) {
+            self::log_bug($arg);
+        }
+        // display error page and terminate script
+        if ($terminate) {
+            $ERROR_CODE    = $arg['code'];
+            $ERROR_MESSAGE = $arg['message'];
+
+            $registry->set('ERROR_CODE', $ERROR_CODE, 'core');
+            $registry->set('ERROR_MESSAGE', $ERROR_MESSAGE, 'core');
+
+            include 'program/steps/error.inc';
+            exit;
+        }
     }
-    // display error page and terminate script
-    if ($terminate) {
-        $ERROR_CODE    = $arg['code'];
-        $ERROR_MESSAGE = $arg['message'];
-
-        $registry->set('ERROR_CODE', $ERROR_CODE, 'core');
-        $registry->set('ERROR_MESSAGE', $ERROR_MESSAGE, 'core');
-
-        include 'program/steps/error.inc';
-        exit;
-    }
-}
 
 
-// report error
-function log_bug($arg_arr)
-{
-    $registry     = rc_registry::getInstance();
-    $CONFIG       = $registry->get('CONFIG', 'core');
-    $INSTALL_PATH = $registry->get('INSTALL_PATH', 'core');
+    /**
+     * report error
+     *
+     * @access static
+     * @uses   rc_registry::getInstance()
+     * @return void
+     */
+    static function log_bug($arg_arr)
+    {
+        $registry     = rc_registry::getInstance();
+        $CONFIG       = $registry->get('CONFIG', 'core');
+        $INSTALL_PATH = $registry->get('INSTALL_PATH', 'core');
 
-    $program = $arg_arr['type']=='xpath' ? 'XPath' : strtoupper($arg_arr['type']);
+        $program = $arg_arr['type']=='xpath' ? 'XPath' : strtoupper($arg_arr['type']);
 
-    // write error to local log file
-    if ($CONFIG['debug_level'] & 1) {
-        $log_entry = sprintf(
+        // write error to local log file
+        if ($CONFIG['debug_level'] & 1) {
+            $log_entry = sprintf(
                         "[%s] %s Error: %s in %s on line %d\n",
                         date('d-M-Y H:i:s O'),
                         $program,
                         $arg_arr['message'],
                         $arg_arr['file'],
                         $arg_arr['line']
-        );
-                 
-        if (empty($CONFIG['log_dir'])) {
-            $CONFIG['log_dir'] = $INSTALL_PATH.'logs';
-            $registry->set('CONFIG', $CONFIG, 'core');
+            );
+
+            if (empty($CONFIG['log_dir'])) {
+                $CONFIG['log_dir'] = $INSTALL_PATH.'logs';
+                $registry->set('CONFIG', $CONFIG, 'core');
+            }
+
+            // try to open specific log file for writing
+            if ($fp = @fopen($CONFIG['log_dir'].'/errors', 'a')) {
+                fwrite($fp, $log_entry);
+                fclose($fp);
+            }
+            else {
+                // send error to PHPs error handler
+                trigger_error($arg_arr['message']);
+            }
         }
 
-        // try to open specific log file for writing
-        if ($fp = @fopen($CONFIG['log_dir'].'/errors', 'a')) {
-            fwrite($fp, $log_entry);
-            fclose($fp);
+        /*
+        // resport the bug to the global bug reporting system
+        if ($CONFIG['debug_level'] & 2) {
+            $delm = '%AC';
+            http_request(
+                sprintf(
+                    'http://roundcube.net/log/bug.php?_type=%s&_domain=%s&_server_ip=%s&_client_ip=%s&_useragent=%s&_url=%s%%3A//%s&_errors=%s%s%s%s%s',
+                    $arg_arr['type'],
+                	$GLOBALS['HTTP_HOST'],
+                    $GLOBALS['SERVER_ADDR'],
+                    $GLOBALS['REMOTE_ADDR'],
+                    rawurlencode($GLOBALS['HTTP_USER_AGENT']),
+               		$GLOBALS['SERVER_PORT']==43 ? 'https' : 'http',
+               		$GLOBALS['HTTP_HOST'].$GLOBALS['REQUEST_URI'],
+           	    	$arg_arr['file'], $delm,
+                    $arg_arr['line'], $delm,
+                    rawurlencode($arg_arr['message'])
+                )
+            );
         }
-        else {
-            // send error to PHPs error handler
-            trigger_error($arg_arr['message']);
+        */
+
+        // show error if debug_mode is on
+        if ($CONFIG['debug_level'] & 4) {
+            echo "<b>$program Error";
+
+            if (!empty($arg_arr['file']) && !empty($arg_arr['line'])) {
+                echo " in {$arg_arr['file']} ({$arg_arr['line']})";
+            }
+
+            echo ':</b>&nbsp;';
+            echo nl2br($arg_arr['message']);
+            echo '<br />';
+            flush();
         }
-    }
-
-    /*
-    // resport the bug to the global bug reporting system
-    if ($CONFIG['debug_level'] & 2) {
-        $delm = '%AC';
-        http_request(
-            sprintf(
-                'http://roundcube.net/log/bug.php?_type=%s&_domain=%s&_server_ip=%s&_client_ip=%s&_useragent=%s&_url=%s%%3A//%s&_errors=%s%s%s%s%s',
-                $arg_arr['type'],
-            	$GLOBALS['HTTP_HOST'],
-                $GLOBALS['SERVER_ADDR'],
-                $GLOBALS['REMOTE_ADDR'],
-                rawurlencode($GLOBALS['HTTP_USER_AGENT']),
-           		$GLOBALS['SERVER_PORT']==43 ? 'https' : 'http',
-           		$GLOBALS['HTTP_HOST'].$GLOBALS['REQUEST_URI'],
-           		$arg_arr['file'], $delm,
-                $arg_arr['line'], $delm,
-                rawurlencode($arg_arr['message'])
-            )
-        );
-    }
-    */
-
-    // show error if debug_mode is on
-    if ($CONFIG['debug_level'] & 4) {
-        echo "<b>$program Error";
-
-        if (!empty($arg_arr['file']) && !empty($arg_arr['line'])) {
-            echo " in {$arg_arr['file']} ({$arg_arr['line']})";
-        }
-
-        echo ':</b>&nbsp;';
-        echo nl2br($arg_arr['message']);
-        echo '<br />';
-        flush();
     }
 }
 ?>
