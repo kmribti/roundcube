@@ -8,9 +8,11 @@ $_mb_filter_form_id = "filter_" . md5($_mb_filter_name) . '_' . time();
 <div id="<?php echo $_mb_filter_form_id; ?>" class="formrow">
 	<label>
 	   <span class="ajaxfakelink" onclick="$('#content_<?php echo $_mb_filter_form_id; ?>').slideToggle('slow');">
-	       <?php echo $_mb_filter_name; ?>
+	       <?php echo $_mb_filter_name; ?> (Priorit&auml;t: <?php echo $_mb_filter_prio; ?>)
 	   </span>
 	</label>
+    <input type="hidden" name="filter_name[<?php echo $_mb_filter_form_id; ?>]" value="<?php echo $_mb_filter_name; ?>" />
+    <input type="hidden" name="filter_prio[<?php echo $_mb_filter_form_id; ?>]" value="<?php echo $_mb_filter_prio; ?>" />
 <?php if ($_mb_filter_name != 'Neuer Filter'): ?>
 	<span onclick="deleteFilter('<?php echo $_mb_filter_name; ?>', '<?php echo $_mb_filter_form_id; ?>');" title="entfernen">
 	   <img class="mod" border="0" src="skins/macbay/img/delete.gif" alt="Icon: entfernen" />
@@ -38,7 +40,7 @@ $_mb_filter_form_id = "filter_" . md5($_mb_filter_name) . '_' . time();
     <div id="<?php echo $_suffix; ?>" class="formrow formrow-indent">
     	<label>&nbsp;</label>
     <?php endif; ?>
-    	<select onchange="repopulateMode('<?php echo $_suffix; ?>');" name="cond_<?php echo $_suffix; ?>" class="medium" tabindex="">
+    	<select onchange="repopulateMode('<?php echo $_suffix; ?>');" name="rule_cond[<?php echo $_suffix; ?>]" class="medium" tabindex="">
     <?php
         foreach($mb_data['types'] AS $r=>$hr):
             $_selected = (($r == $_left)?' selected="selected"':'');
@@ -49,11 +51,12 @@ $_mb_filter_form_id = "filter_" . md5($_mb_filter_name) . '_' . time();
     <?php
     if (isset($mb_data['modes'][$_left]) === FALSE):
     ?>
-        <select name="mode_<?php echo $_suffix; ?>" class="medium" tabindex="">
+        <select id="" name="rule_mode[<?php echo $_suffix; ?>]" class="medium" tabindex="">
     <?php
         foreach($mb_data['modes']['default'] AS $r=>$hr):
+            $_selected = (($r == $_to)?' selected="selected"':'');
     ?>
-            <option value="<?php echo $r; ?>"><?php echo $hr; ?></option>
+            <option value="<?php echo $r; ?>"<?php echo $_selected; ?>><?php echo $hr; ?></option>
     <?php
         endforeach;
     ?>
@@ -62,11 +65,12 @@ $_mb_filter_form_id = "filter_" . md5($_mb_filter_name) . '_' . time();
     else:
         if (empty($mb_data['modes'][$_left]) === false):
     ?>
-        <select name="mode_<?php echo $_suffix; ?>" class="medium" tabindex="">
+        <select name="rule_mode[<?php echo $_suffix; ?>]" class="medium" tabindex="">
     <?php
         foreach($mb_data['modes'][$_left] AS $r=>$hr):
+            $_selected = (($r == $_to)?' selected="selected"':'');
     ?>
-            <option value="<?php echo $r; ?>"><?php echo $hr; ?></option>
+            <option value="<?php echo $r; ?>"<?php echo $_selected; ?>><?php echo $hr; ?></option>
     <?php
         endforeach;
     ?>
@@ -80,7 +84,7 @@ $_mb_filter_form_id = "filter_" . md5($_mb_filter_name) . '_' . time();
     endif;
     ?>
     	</select>
-    	<input type="text" value="<?php echo $_right; ?>" class="medium lightTxt" name="value_<?php echo $_suffix; ?>" tabindex="" />
+    	<input type="text" value="<?php echo $_right; ?>" class="medium lightTxt" name="rule_value[<?php echo $_suffix; ?>]" tabindex="" />
     	<?php if ($cond_count == 0): ?>
     	   <span onclick="addRow('<?php echo $_mb_filter_form_id; ?>', 'cond');" title="hinzufuegen">
     	       <img class="mod" border="0" src="skins/macbay/img/add.gif" alt="Icon: hinzufuegn" />
@@ -96,7 +100,7 @@ $_mb_filter_form_id = "filter_" . md5($_mb_filter_name) . '_' . time();
         endforeach;
     endif;
     ?>
-    <div name="cond_<?php echo $_mb_filter_form_id; ?>_add"></div>
+    <div id="cond_<?php echo $_mb_filter_form_id; ?>_add"></div>
     <?php
     if (isset($mb_rule[3])):
         $action_count = 0;
@@ -113,7 +117,7 @@ $_mb_filter_form_id = "filter_" . md5($_mb_filter_name) . '_' . time();
     <div name="<?php echo $_suffix; ?>" class="formrow formrow-indent">
        <label for="action_<?php echo $_suffix; ?>">&nbsp;</label>
     <?php endif; ?>
-    	<select name="action_<?php echo $_suffix; ?>" class="medium" tabindex="">
+    	<select name="rule_action[<?php echo $_suffix; ?>]" class="medium" tabindex="">
     <?php
         foreach ($mb_data['actions'] AS $r=>$hr):
             $_selected = (($_left == $r)?' selected="selected"':'');
@@ -121,7 +125,7 @@ $_mb_filter_form_id = "filter_" . md5($_mb_filter_name) . '_' . time();
             <option value="<?php echo $r; ?>"<?php echo $_selected; ?>><?php echo $hr; ?></option>
     <?php endforeach; ?>
     	</select>
-    	<textarea class="extralong lightTxt" name="action_add_<?php echo $_suffix; ?>" tabindex=""><?php echo htmlentities($_right); ?></textarea>
+    	<textarea class="extralong lightTxt" name="rule_action_value[<?php echo $_suffix; ?>]" tabindex=""><?php echo htmlentities($_right); ?></textarea>
     	<?php if ($action_count == 0): ?>
     	   <span onclick="addRow('<?php echo $_mb_filter_form_id; ?>', 'action');" title="hinzuf&uuml;gen">
     	       <img class="mod" border="0" src="skins/macbay/img/add.gif" alt="Icon: hinzuf&uuml;gen" />

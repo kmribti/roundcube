@@ -25,11 +25,63 @@ final class macbay_filter
 
     public function saveRules($data)
     {
+        //echo '<pre>'; var_dump($data); echo '</pre>';
+        $keep = array();
+        foreach ($data['filter_name'] AS $filter_key=>$filter_name) {
+            $rule_cond         = array();
+            $rule_mode         = array();
+            $rule_value        = array();
+            $rule_action       = array();
+            $rule_action_value = array();
+
+            foreach($data['rule_cond'] AS $key=>$value) {
+                if (strstr($key, $filter_key) === FALSE) {
+                    continue;
+                }
+                $rule_cond[$key]  = $value;
+                $rule_mode[$key]  = $data['rule_mode'][$key];
+                $rule_value[$key] = $data['rule_value'][$key];
+            }
+
+            foreach($data['rule_action'] AS $key=>$value) {
+                if (strstr($key, $filter_key) === FALSE) {
+                    continue;
+                }
+                $rule_action[$key] = $value;
+
+                if (
+                    isset($data['rule_action_value'][$key])
+                    && empty($data['rule_action_value'][$key]) === FALSE
+                ) {
+                    $rule_action_value[$key] = $data['rule_action_value'][$key];
+                }
+            }
+
+            array_push(
+                $keep,
+                array(
+                    'filter_name_new'     => $filter_name,
+                    'filter_priority_new' => @$data['filter_prio'][$filter_key],
+                    'rule_cond'           => $rule_cond,
+                    'rule_mode'           => $rule_mode,
+                    'rule_value'          => $rule_value,
+                    'rule_action'         => $rule_action,
+                    'rule_action_value'   => $rule_action_value
+                )
+            );
+        }
+        //echo '<pre>'; var_dump($keep); echo '</pre>';
+        //return;
+
         try {
             $rules = array();
-            for ($x=0; $x<count($data); $x++) {
-                array_push($rules, $this->buildRule($data[$x]));
+            for ($x=0; $x<count($keep); $x++) {
+                array_push($rules, $this->buildRule($keep[$x]));
             }
+            //echo '<b>RULEZ:</b><br />';
+            //echo '<pre style="font-size:8pt;">'; var_dump($rules); echo '</pre>';
+            //return;
+
             $params = $this->params;
             array_push($params, $rules);
             return $this->client->call('cli.saveRules', $params);
@@ -92,14 +144,16 @@ final class macbay_filter
 
         // conditions
         $new_rule[2] = array();
-        array_push(
-            $new_rule[2],
-            array(
-                $post_data['cond_new'],
-                $post_data['mode_new'],
-                $post_data['value_new']
-            )
-        );
+        if (isset($post_data['cond_new']) === TRUE) {
+            array_push(
+                $new_rule[2],
+                array(
+                    $post_data['cond_new'],
+                    $post_data['mode_new'],
+                    $post_data['value_new']
+                )
+            );
+        }
         if (empty($post_data['rule_cond']) === FALSE) {
             foreach($post_data['rule_cond'] AS $rule_id=>$rule_cond_value) {
                 array_push(
@@ -115,13 +169,15 @@ final class macbay_filter
 
         // actions
         $new_rule[3] = array();
-        array_push(
-            $new_rule[3],
-            array(
-                $post_data['action_new'],
-                $post_data['action_add_new']
-            )
-        );
+        if (isset($post_data['action_new'])) {
+            array_push(
+                $new_rule[3],
+                array(
+                    $post_data['action_new'],
+                    $post_data['action_add_new']
+                )
+            );
+        }
         if (empty($post_data['rule_action']) === FALSE) {
             foreach($post_data['rule_action'] AS $action_id=>$rule_action_value) {
                 if (isset($post_data['rule_action_value'][$action_id])) {

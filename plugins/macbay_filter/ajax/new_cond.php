@@ -1,6 +1,10 @@
-<?php $add_id = 'cond_' . time(); ?>
+<?php
+$add_id = $_POST['id'];
+$add_id = str_replace('_add', '', $add_id);
+$add_id.= '_' . time();
+?>
 <div id="<?php echo $add_id; ?>" class="formrow formrow-indent">
-	<label for="cond_<?php echo $add_id; ?>">Bedingungen</label>
+	<label for="cond_<?php echo $add_id; ?>">&nbsp;</label>
 	<select name="rule_cond[<?php echo $add_id; ?>]" onchange="repopulateMode('<?php echo $add_id; ?>');" id="cond_<?php echo $add_id; ?>" class="medium" tabindex="">
         <option value="Subject">Betreff</option>
         <option value="Sender">Versender</option>
@@ -20,7 +24,7 @@
         <option value="Each Recipient">Jeder Empf&auml;nger</option>
         <option value="Security">Sicherheit</option>
 	</select>
-    <select name="rule_mode[<?php echo $add_id; ?>]" class="medium" tabindex="">
+    <select name="rule_mode[<?php echo $add_id; ?>]" id="mode_<?php echo $add_id; ?>" class="medium" tabindex="">
         <option value="in">enh&auml;lt</option>
         <option value="not in">enth&auml;lt nicht</option>
         <option value="is">entspricht</option>

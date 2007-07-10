@@ -61,7 +61,7 @@ else:
     endif;
 endif;
 ?>
-	<input type="text" value="<?php echo $_right; ?>" class="medium lightTxt" name="value_<?php echo $cond_count; ?>" tabindex="" />
+	<input type="text" value="" class="medium lightTxt" name="value_<?php echo $cond_count; ?>" tabindex="" />
 	<span onclick="addRow('<?php echo $cond_count; ?>', 'cond');" title="entfernen">
 	   <img class="mod" border="0" src="skins/macbay/img/add.gif" alt="Icon: hinzufuegen" />
 	</span>

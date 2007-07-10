@@ -5,11 +5,13 @@ if (defined('MACBAY_FILTER_MADNESS') === FALSE) {
 $_plugin_action = (string) @$_POST['_plugin_action'];
 switch($_plugin_action) {
     case 'add':
+        echo '<pre>'; var_dump($_POST); echo '</pre>';
         $macbay_filter->addRule($_POST);
         break;
 
     case 'save':
-        echo '<pre style="font-size:8pt;">'; var_dump($_POST); echo '</pre>';
+        $macbay_filter->saveRules($_POST);
+        //echo '<pre style="font-size:8pt;">'; var_dump($_POST); echo '</pre>';
         break;
 
     default:

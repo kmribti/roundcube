@@ -19,6 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 require dirname(__FILE__) . '/bin/get.php';
 
+//echo '<pre>'; var_dump($mb_rules); echo '</pre>'; exit;
+
 $registry = rc_registry::getInstance();
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 ?>
@@ -112,6 +114,7 @@ function addRow(filterId, ruleType)
     var wrapper = new String(ruleType + '_' + filterId + '_add');
     $.post(
         '<?php echo $RC_URI; ?>?_task=plugin&_action=macbay_filter/ajax/new_' + ruleType + '.php',
+        {id: wrapper},
         function(data) {
             $(document.getElementById(wrapper)).append(data);
             return;
@@ -126,7 +129,7 @@ function deleteFilter(filterName, formId)
     }
     $.post(
         '<?php echo $registry->get('RC_URI', 'core'); ?>?_task=plugin&_action=macbay_filter/delete.php',
-        {filterName: filterName},
+        {filterName: filterName },
         function(data) {
             if (data == 'ok') {
                 $('#' + formId).slideUp('slow').ready(function(){
