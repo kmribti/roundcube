@@ -14,6 +14,7 @@ require_once dirname(__FILE__) . '/bootstrap.php';
  * handle $_plugin_action calls
  * @ignore
  */
+$error_msg = array();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require dirname(__FILE__) . '/bin/plugin_action.php';
 }
@@ -28,6 +29,14 @@ echo $OUTPUT->parse('header_small', false);
 ?>
 <!-- #content needed to make CSS work - we override inline -->
 <div id="content" style="width:780px !important;">
+<?php
+if (empty($error_msg) === false):
+    echo '<div style="width:300px;margin:10px;padding:10px;border:1px solid #ff0000;">';
+    echo '<strong>Fehler aufgetreten</strong><br />';
+    echo implode('<br />', $error_msg);
+    echo '</div>';
+endif;
+?>
     <div class="navBar">
         <ul>
             <li class="icon icon-add"><span onclick="slideInOrOut($(this));" class="ajaxfakelink" style="padding-bottom:15px;">Neuen Regelsatz anlegen.</span></li>

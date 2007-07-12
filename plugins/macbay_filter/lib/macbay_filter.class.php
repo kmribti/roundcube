@@ -25,7 +25,6 @@ final class macbay_filter
 
     public function saveRules($data)
     {
-        //echo '<pre>'; var_dump($data); echo '</pre>';
         $keep = array();
         foreach ($data['filter_name'] AS $filter_key=>$filter_name) {
             $rule_cond         = array();
@@ -70,24 +69,17 @@ final class macbay_filter
                 )
             );
         }
-        //echo '<pre>'; var_dump($keep); echo '</pre>';
-        //return;
-
         try {
             $rules = array();
             for ($x=0; $x<count($keep); $x++) {
                 array_push($rules, $this->buildRule($keep[$x]));
             }
-            //echo '<b>RULEZ:</b><br />';
-            //echo '<pre style="font-size:8pt;">'; var_dump($rules); echo '</pre>';
-            //return;
-
             $params = $this->params;
             array_push($params, $rules);
             return $this->client->call('cli.saveRules', $params);
         }
         catch(Exception $e) {
-            self::handleError($e, __LINE__);
+            return self::handleError($e, __LINE__);
         }
     }
 
@@ -114,7 +106,7 @@ final class macbay_filter
             return $this->client->call('cli.addRule', $params);
         }
         catch(Exception $e) {
-            self::handleError($e, __LINE__);
+            return self::handleError($e, __LINE__);
         }
     }
 
@@ -206,17 +198,25 @@ final class macbay_filter
             return $this->client->call('cli.getRules', $this->params);
         }
         catch(Exception $e) {
-            self::handleError($e, __LINE__);
+            return self::handleError($e, __LINE__);
         }
     }
 
+    /**
+     * getMeta
+     *
+     * Returns info needed to build the forms.
+     *
+     * @return mixed
+     * @uses   macbay_filter::handleError()
+     */
     public function getMeta()
     {
         try {
             return $this->client->call('cli.getRuleMeta', array());
         }
         catch(Exception $e) {
-            self::handleError($e, __LINE__);
+            return self::handleError($e, __LINE__);
         }
     }
 
@@ -243,6 +243,6 @@ final class macbay_filter
             ),
             TRUE
         );
-        exit;
+        return false;
     }
 }

@@ -6,12 +6,17 @@ $_plugin_action = (string) @$_POST['_plugin_action'];
 switch($_plugin_action) {
     case 'add':
         //echo '<pre>'; var_dump($_POST); echo '</pre>';
-        $macbay_filter->addRule($_POST);
+        $status = $macbay_filter->addRule($_POST);
+        if ($status !== true) {
+            array_push($error_msg, 'Der Regelsatz konnte nicht gespeichert werden.');
+        }
         break;
 
     case 'save':
-        $macbay_filter->saveRules($_POST);
-        //echo '<pre style="font-size:8pt;">'; var_dump($_POST); echo '</pre>';
+        $status = $macbay_filter->saveRules($_POST);
+        if ($status !== true) {
+            array_push('Ihre &Auml;nderungen konnten leider nicht gespeichert werden.');
+        }
         break;
 
     default:

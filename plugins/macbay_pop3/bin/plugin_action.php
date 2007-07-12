@@ -9,11 +9,16 @@ $_plugin_action = (string) @$_POST['_plugin_action'];
 switch($_plugin_action) {
     case 'add':
         $status = $macbay_pop3->saveRpop($_POST['rpop_new']);
+        if ($status !== true) {
+            array_push($error_msg, 'Der Sammeldienst konnte nicht angelegt werden.');
+        }
         break;
 
     case 'delete':
         $status = $macbay_pop3->deleteRpop($_POST['rpop_id']);
-        //var_dump($status);
+        if ($status !== true) {
+            array_push($error_msg, 'Der Sammeldienst konnte nicht gel&ouml;scht werden.');
+        }
         break;
 
     default:

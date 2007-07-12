@@ -11,6 +11,7 @@
  */
 require_once dirname(__FILE__) . '/bootstrap.php';
 
+$error_msg = array();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require dirname(__FILE__) . '/bin/plugin_action.php';
 }
@@ -26,7 +27,16 @@ echo $OUTPUT->parse('header_small', false);
 ?>
 <!-- #content needed to make CSS work - we override inline -->
 <div id="content" style="width:760px !important;">
-<?php if ($rpop_left > 0): ?>
+
+<?php
+if (empty($error_msg) === false):
+    echo '<div style="width:300px;margin:10px;padding:10px;border:1px solid #ff0000;">';
+    echo '<strong>Fehler aufgetreten</strong><br />';
+    echo implode('<br />', $error_msg);
+    echo '</div>';
+endif;
+
+if ($rpop_left > 0): ?>
     <div class="navBar">
         <ul>
             <li class="icon icon-add">

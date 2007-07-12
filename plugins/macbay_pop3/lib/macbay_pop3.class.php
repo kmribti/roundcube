@@ -62,7 +62,7 @@ final class macbay_pop3
             return $data;
         }
         catch (Exception $e) {
-            self::handleError($e);
+            return self::handleError($e);
         }
     }
 
@@ -80,13 +80,16 @@ final class macbay_pop3
      */
     public function saveRpop($rpop)
     {
+        if (is_array($rpop)) {
+            return false;
+        }
         try {
             $params = $this->params;
             array_push($params, $rpop);
             return $this->client->call('cli.saveRpop', $params);
         }
         catch(Exception $e) {
-            self::handleError($e);
+            return self::handleError($e);
         }
     }
 
@@ -109,7 +112,7 @@ final class macbay_pop3
             return $this->client->call('cli.deleteRpop', $params);
         }
         catch (Exception $e) {
-            self::handleError($e);
+            return self::handleError($e);
         }
     }
 
@@ -136,6 +139,6 @@ final class macbay_pop3
             ),
             TRUE
         );
-        exit;
+        return false;
     }
 }
