@@ -1,17 +1,19 @@
 <?php
-if (defined('MACBAY_FILTER_MADNESS') === FALSE) {
+if (defined('MACBAY_POP3_MADNESS') === FALSE) {
     die('no go.');
 }
+
+//echo '<pre>'; var_dump($_POST); echo '</pre>'; exit;
+
 $_plugin_action = (string) @$_POST['_plugin_action'];
 switch($_plugin_action) {
     case 'add':
-        //echo '<pre>'; var_dump($_POST); echo '</pre>';
-        $macbay_filter->addRule($_POST);
+        $status = $macbay_pop3->saveRpop($_POST['rpop_new']);
         break;
 
-    case 'save':
-        $macbay_filter->saveRules($_POST);
-        //echo '<pre style="font-size:8pt;">'; var_dump($_POST); echo '</pre>';
+    case 'delete':
+        $status = $macbay_pop3->deleteRpop($_POST['rpop_id']);
+        //var_dump($status);
         break;
 
     default:
@@ -24,6 +26,5 @@ switch($_plugin_action) {
                 ),
                 TRUE
         );
+        break;
 }
-//var_dump($_POST); exit;
-?>
