@@ -18,13 +18,15 @@
 
 */
 
+rc_main::tfk_debug('recent!');
+
 $registry    = rc_registry::getInstance();
 $IMAP        = $registry->get('IMAP', 'core');
 $OUTPUT      = $registry->get('OUTPUT', 'core');
 $a_mailboxes = $IMAP->list_mailboxes();
 
 //rc_main::tfk_debug('About to get some mailboxes.');
-//rc_main::tfk_debug('Mailboxes: ' . var_export($a_mailboxes, true));
+rc_main::tfk_debug('Mailboxes: ' . var_export($a_mailboxes, true));
 
 foreach ($a_mailboxes as $mbox_name) {
     if ($mbox_name == $IMAP->get_mailbox_name()) {

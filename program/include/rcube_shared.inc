@@ -254,7 +254,7 @@ function send_future_expire_header($offset=2600000)
 function send_modified_header($mdate, $etag=null)
 {
     if (headers_sent()) {
-        rc_main::tfk_debug("/ Headerz sent?!");
+        //rc_main::tfk_debug("/ Headerz sent?!");
         return;
     }
     $iscached = false;
@@ -284,7 +284,7 @@ function send_modified_header($mdate, $etag=null)
     }
     $iscached = FALSE;
     if ($iscached) {
-        rc_main::tfk_debug("/ serving from cache");
+        //rc_main::tfk_debug("/ serving from cache");
         exit;
     }
 }

@@ -180,7 +180,7 @@ class rcmail_template extends rcube_html_page
             $this->remote_response('', !$exit);
         }
         elseif ($templ != 'iframe') {
-            rc_main::tfk_debug("/Parsing $templ");
+            //rc_main::tfk_debug("/Parsing $templ");
             $this->parse($templ, false);
         }
         else {
@@ -281,7 +281,7 @@ class rcmail_template extends rcube_html_page
         $templ = fread($fp, filesize($path));
         @fclose($fp);
 
-        rc_main::tfk_debug("// parsed: $path");
+        //rc_main::tfk_debug("// parsed: $path");
 
         // parse for specialtags
         $output = $this->parse_conditions($templ);
@@ -458,14 +458,14 @@ class rcmail_template extends rcube_html_page
         $command = strtolower($command);
         $attrib  = rc_main::parse_attrib_string($str_attrib) + $add_attrib;
 
-        rc_main::tfk_debug("// $command");
+        //rc_main::tfk_debug("// $command");
 
         // empty output if required condition is not met
         if (!empty($attrib['condition']) && !$this->check_condition($attrib['condition'])) {
             return '';
         }
 
-        rc_main::tfk_debug("// $command #2");
+        //rc_main::tfk_debug("// $command #2");
 
         // execute command
         switch ($command) {
@@ -485,7 +485,7 @@ class rcmail_template extends rcube_html_page
             case 'include':
                 $path = realpath($this->config['skin_path'].$attrib['file']);
                 if ($path === FALSE) {
-                    rc_main::tfk_debug("Does not exist.");
+                    //rc_main::tfk_debug("Does not exist.");
                     return $this->parse_xml('');
                 }
                 if (($tpl_filesize = filesize($path)) == 0) {
@@ -502,14 +502,14 @@ class rcmail_template extends rcube_html_page
                 //rc_main::tfk_debug(var_export($this->config['skin_path'], true));
                 $path = realpath($this->config['skin_path'].$attrib['file']);
                 if ($path === FALSE) {
-                    rc_main::tfk_debug("Does not exist:");
-                    rc_main::tfk_debug($this->config['skin_path']);
-                    rc_main::tfk_debug($attrib['file']);
-                    rc_main::tfk_debug($path);
+                    //rc_main::tfk_debug("Does not exist:");
+                    //rc_main::tfk_debug($this->config['skin_path']);
+                    //rc_main::tfk_debug($attrib['file']);
+                    //rc_main::tfk_debug($path);
                 }
                 $incl = file_get_contents($path);
                 if ($incl === FALSE) {
-                    rc_main::tfk_debug("Could not read template.");
+                    //rc_main::tfk_debug("Could not read template.");
                     return $this->parse_xml('');
                 }
                 return $this->parse_xml($incl);

@@ -192,10 +192,27 @@ final class macbay_filter
         return $new_rule;
     }
 
+    /**
+     * getRules
+     *
+     * Retrieves the rules from XMLRPC service, filters through them
+     * to modify "#Vacation".
+     *
+     * @access public
+     * @return mixed
+     */
     public function getRules()
     {
         try {
-            return $this->client->call('cli.getRules', $this->params);
+            $rules = $this->client->call('cli.getRules', $this->params);
+            //echo '<pre>'; var_dump($rules); echo '</pre>';
+            /*
+            for ($x=0; $x<count($rules); $x++) {
+                if ($rules[$x][1] == '#Vacation') {
+                    $rules[$x][1] = 'Autoresponder';
+                }
+            }*/
+            return $rules;
         }
         catch(Exception $e) {
             return self::handleError($e, __LINE__);

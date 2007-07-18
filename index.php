@@ -60,6 +60,8 @@ if (substr($RC_URI, -1, 1) == '?') {
     $RC_URI = substr($RC_URI, 0, -1);
 }
 
+//rc_main::tfk_debug($RC_URI);
+
 $registry = rc_registry::getInstance();
 $registry->set('INSTALL_PATH', $INSTALL_PATH, 'core');
 $registry->set('s_mbstring_loaded', null, 'core');
@@ -109,7 +111,7 @@ if ($_action != 'get' && $_action != 'viewsource') {
 
 
 // start session with requested task
-rc_main::rcmail_startup($_task);
+//rc_main::rcmail_startup($_task);
 
 //rc_main::tfk_debug('// rcmail_startup');
 
@@ -197,17 +199,17 @@ if ($_action=='login' && $_task=='mail') {
 
         //rc_main::tfk_debug('Oops, failed.');
         if (empty($_POST['_user']) === true) {
-            rc_main::tfk_debug('Login: no _user');
+            //rc_main::tfk_debug('Login: no _user');
         }
         if (isset($_POST['_pass']) === false) {
-            rc_main::tfk_debug('Login: no _pass');
+            //rc_main::tfk_debug('Login: no _pass');
         }
         $status = rc_main::rcmail_login(
                     rc_main::get_input_value('_user', RCUBE_INPUT_POST),
                     rc_main::get_input_value('_pass', RCUBE_INPUT_POST, true, 'ISO-8859-1'),
                     $host
         );
-        rc_main::tfk_debug('Login: status: ' . $status);
+        //rc_main::tfk_debug('Login: status: ' . $status);
 
         //rc_main::tfk_debug(var_export($_SESSION['temp'], true));
         //rc_main::tfk_debug(date('Y-m-d H:i:s', $_SESSION['auth_time']));
@@ -269,7 +271,7 @@ if (empty($_SESSION['user_id'])) {
     $_task = 'login';
 }
 
-rc_main::tfk_debug("// task {$_task} action {$_action}");
+//rc_main::tfk_debug("// task {$_task} action {$_action}");
 
 // set task and action to client
 $OUTPUT->set_env('task', $_task);
@@ -317,6 +319,7 @@ if ($_task == 'mail') {
 
         case 'check-recent':
             $_name.= 'check_recent';
+            rc_main::tfk_debug('We check recent!');
             break;
 
         case 'preview':
@@ -348,7 +351,7 @@ if ($_task == 'mail') {
             break;
     }
 
-    rc_main::tfk_debug('Mail: ' . $_name);
+    //rc_main::tfk_debug('Mail: ' . $_name);
 
     // make sure the message count is refreshed
     $IMAP->messagecount($_SESSION['mbox'], 'ALL', TRUE);
@@ -403,7 +406,7 @@ if ($_task == 'settings') {
     $_name = str_replace('-', '_', $_name);
 }
 
-rc_main::tfk_debug($_task);
+//rc_main::tfk_debug($_task);
 
 /**
  * plugin hook
@@ -412,7 +415,7 @@ if ($_task == 'plugin') {
     $_name   = '';
     $_plugin = dirname(__FILE__) . '/plugins/' . $_action;
     if (file_exists($_plugin) !== TRUE) {
-        rc_main::tfk_debug("$_plugin does not exist.");
+        //rc_main::tfk_debug("$_plugin does not exist.");
         $_plugin = '';
     }
     else {
@@ -430,12 +433,12 @@ if ($_task == 'plugin') {
                 TRUE,
                 TRUE
             );
-            rc_main::tfk_debug('Possible hack.');
+            //rc_main::tfk_debug('Possible hack.');
             exit;
         }
         $status = @include $_plugin;
         if ($status === FALSE) {
-            rc_main::tfk_debug("Could not include: $_plugin");
+            //rc_main::tfk_debug("Could not include: $_plugin");
         }
         exit;
     }
@@ -449,7 +452,7 @@ if (empty($_name) === false) {
         include $_file;
     }
     else {
-        rc_main::tfk_debug('Does not exist: ' . $_file);
+        //rc_main::tfk_debug('Does not exist: ' . $_file);
     }
 }
 
