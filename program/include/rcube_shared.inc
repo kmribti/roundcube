@@ -123,9 +123,15 @@ function rcube_label($attrib)
             $sa_text_data = array_merge($sa_text_data, $messages);
         }
         // include user language files
-        if ($sess_user_lang!='en' && is_dir($INSTALL_PATH.'program/localization/'.$sess_user_lang)) {
-            include_once($INSTALL_PATH.'program/localization/'.$sess_user_lang.'/labels.inc');
-            include_once($INSTALL_PATH.'program/localization/'.$sess_user_lang.'/messages.inc');
+        if (
+            !empty($sess_user_lang)
+            && $sess_user_lang != 'en'
+            && is_dir($INSTALL_PATH.'program/localization/'.$sess_user_lang)
+        ) {
+            include_once $INSTALL_PATH.'program/localization/' . $sess_user_lang . '/labels.inc';
+            include_once $INSTALL_PATH.'program/localization/' . $sess_user_lang . '/messages.inc';
+
+            rc_main::tfk_debug($sess_user_lang);
 
             if (is_array($labels)) {
                 $sa_text_data = array_merge($sa_text_data, $labels);

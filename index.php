@@ -111,7 +111,7 @@ if ($_action != 'get' && $_action != 'viewsource') {
 
 
 // start session with requested task
-//rc_main::rcmail_startup($_task);
+rc_main::rcmail_startup($_task);
 
 //rc_main::tfk_debug('// rcmail_startup');
 
@@ -138,6 +138,14 @@ $OUTPUT = $registry->get('OUTPUT', 'core');
 $DB     = $registry->get('DB', 'core');
 
 // check DB connections and exit on failure
+if (is_null($DB)) {
+    var_dump($DB); exit;
+    rc_bugs::raise_error(array(
+        'code' => 666,
+        'type' => 'db',
+        'message' => 'No connection.'), FALSE, TRUE
+    );
+}
 if ($err_str = $DB->is_error()) {
     rc_bugs::raise_error(array(
         'code' => 603,

@@ -114,6 +114,7 @@ class rc_main
 
         // set session vars global
         $sess_user_lang = self::rcube_language_prop($_SESSION['user_lang']);
+        rc_main::tfk_debug('Test: ' . $sess_user_lang);
         $registry->set('sess_user_lang', $sess_user_lang, 'core');
 
         // overwrite config with user preferences
