@@ -217,7 +217,7 @@ $rcmail_config['javascript_config'] = array('read_when_deleted', 'flag_for_delet
 $rcmail_config['include_host_config'] = FALSE;
 
 // always display all mailboxes - if subscribed or not
-$rcmail_config['display_all_mailboxes'] = FALSE;
+$rcmail_config['display_all_mailboxes'] = FALSE;
 
 
 /***** these settings can be overwritten by user's preferences *****/
