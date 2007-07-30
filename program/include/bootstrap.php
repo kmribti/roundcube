@@ -39,8 +39,9 @@ $include_path.= ini_get('include_path');
 
 //echo 'Before: ' . $include_path;
 $status = ini_set('include_path', $include_path);
+$status = set_include_path($include_path);
 if ($status === false) {
-    die('Fatal error: ini_set does not work.');
+    die('Fatal error: ini_set/set_include_path does not work.');
 }
 
 ini_set('session.name', 'sessid');
