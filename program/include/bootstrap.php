@@ -37,7 +37,11 @@ $include_path.= $INSTALL_PATH . 'program/lib' . PATH_SEPARATOR;
 $include_path.= '/usr/share/Zend-SVN/library' . PATH_SEPARATOR;
 $include_path.= ini_get('include_path');
 
-ini_set('include_path', $include_path);
+//echo 'Before: ' . $include_path;
+$status = ini_set('include_path', $include_path);
+if ($status === false) {
+    die('Fatal error: ini_set does not work.');
+}
 
 ini_set('session.name', 'sessid');
 ini_set('session.use_cookies', 1);
