@@ -1852,7 +1852,7 @@ $OUTPUT->add_handlers(array(
   'messagecontentframe' => 'rcmail_messagecontent_frame',
   'messagepartframe' => 'rcmail_message_part_frame',
   'messagepartcontrols' => 'rcmail_message_part_controls',
-  'searchform' => 'rcmail_search_form'
+  'searchform' => array('rc_main', 'rcmail_search_form')
 ));
 
 ?>

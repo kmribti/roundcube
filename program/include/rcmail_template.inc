@@ -523,6 +523,15 @@ class rcmail_template extends rcube_html_page
                 if ($this->object_handlers[$object] && function_exists($this->object_handlers[$object])) {
                     return call_user_func($this->object_handlers[$object], $attrib);
                 }
+                else {
+                    // we are calling a class/method
+                    if ($this->object_handlers[$object] && is_array($this->object_handlers[$object])) {
+                        if (class_exists($this->object_handlers[$object][0])) {
+                            return call_user_func($this->object_handlers[$object], $attrib);
+                        }
+                        rc_main::tfk_debug('Unknown handler: ' . var_export($this->object_handlers[$object], true));
+                    }
+                }
                 if ($object=='productname') {
                     $name = !empty($this->config['product_name']) ? $this->config['product_name'] : 'RoundCube Webmail';
                     return rc_main::Q($name);
