@@ -327,7 +327,7 @@ if ($_task == 'mail') {
 
         case 'check-recent':
             $_name.= 'check_recent';
-            rc_main::tfk_debug('We check recent!');
+            //rc_main::tfk_debug('We check recent!');
             break;
 
         case 'preview':
