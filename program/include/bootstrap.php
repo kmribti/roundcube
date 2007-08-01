@@ -10,8 +10,9 @@ $MAIN_TASKS   = array(
                     'mail',
                     'settings',
                     'logout',
-                    'plugin'
-); // addressbook
+                    'plugin',
+                    'addressbook'
+);
 
 if (isset($INSTALL_PATH) === false || empty($INSTALL_PATH) === true) {
     $INSTALL_PATH = './';
@@ -38,7 +39,7 @@ $include_path.= '/usr/share/Zend-SVN/library' . PATH_SEPARATOR;
 $include_path.= ini_get('include_path');
 
 //echo 'Before: ' . $include_path;
-$status = ini_set('include_path', $include_path);
+//$status = ini_set('include_path', $include_path);
 $status = set_include_path($include_path);
 if ($status === false) {
     die('Fatal error: ini_set/set_include_path does not work.');
