@@ -207,6 +207,9 @@ $rcmail_config['mail_header_delimiter'] = NULL;
  *  'fuzzy_search'  => true);   // server allows wildcard search
  */
 
+// addressbook plugin? ;-)
+$rcmail_config['addressbook_plugin'] = '';
+
 // don't allow these settings to be overriden by the user
 $rcmail_config['dont_override'] = array();
 
