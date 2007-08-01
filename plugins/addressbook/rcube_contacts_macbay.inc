@@ -2,20 +2,20 @@
 
 /*
  +-----------------------------------------------------------------------+
- | program/include/rcube_contacts.inc                                    |
+ | plugins/addressbook/rcube_contacts_macbay.inc                         |
  |                                                                       |
- | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2006-2007, RoundCube Dev. - Switzerland                 |
- | Licensed under the GNU GPL                                            |
+ | This is a plugin example for an addressbook plugin. It heavily relies |
+ | on Zend Framework componsents (http://framework.zend.com) in your     |
+ | include_path and will only work with Macbay (http://www.macbay.de).   |
  |                                                                       |
  | PURPOSE:                                                              |
- |   Interface to the local address book database                        |
+ |   This is a plugin for the macbay.de addressbook service.             |
  |                                                                       |
  +-----------------------------------------------------------------------+
- | Author: Thomas Bruederli <roundcube@gmail.com>                        |
+ | Author: Till Klampaeckel <till@php.net>                               |
  +-----------------------------------------------------------------------+
 
- $Id: rcube_contacts.inc 328 2006-08-30 17:41:21Z thomasb $
+ $Id: $
 
 */
 
@@ -78,10 +78,9 @@ final class rcube_contacts_macbay
         else {
             try {
                 $this->xmlrpc_client = new Zend_XmlRpc_Client('https://www.macbay.de/sync2/XMLRPCServer');
-                //$this->xmlrpc_client = new Zend_XmlRpc_Client('http://10.0.1.112:8080/sync/XMLRPCServer');
             }
             catch(Zend_Exception $e) {
-                rc_main::tfk_debug(var_export($e, true));
+                rc_main::tfk_debug('Addressbook Exception: ' . var_export($e, true));
             }
         }
     }
@@ -213,7 +212,7 @@ final class rcube_contacts_macbay
             $this->result->first = 0;
         }
         catch(Zend_Exception $e) {
-            //rc_main::tfk_debug(var_export($e, true));
+            rc_main::tfk_debug('Addressbook Exception: ' . var_export($e, true));
             //$resp = array();
         }
         //rc_main::tfk_debug(var_export($this->result, true));
@@ -333,7 +332,7 @@ final class rcube_contacts_macbay
             );
         }
         catch (Zend_Exception $e) {
-            rc_main::tfk_debug(var_export($e, true));
+            rc_main::tfk_debug('Addressbook Exception: ' . var_export($e, true));
             return false;
         }
         if (isset($resp['result'])) {
