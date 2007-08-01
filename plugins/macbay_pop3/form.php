@@ -40,7 +40,7 @@ if ($rpop_left > 0): ?>
     <div class="navBar">
         <ul>
             <li class="icon icon-add">
-                <span id="rpop_new_trigger" class="ajaxfakelink">Neuen Sammeldienst anlegen</span>
+                <span id="rpop_new_trigger" class="ajaxfakelink" style="margin-left:14px""">Neuen Sammeldienst anlegen</span>
             </li>
         </ul>
     </div><br />
@@ -53,12 +53,12 @@ if ($rpop_left > 0): ?>
         Bitte l&ouml;schen Sie zuerst einen Sammeldienst, um einen neuen anzulegen.
     </div>
 <?php endif; ?>
-    <div>
+    <div class="rpop_txt">
         <h2>Sammeldienste Konfigurieren</h2>
 <?php
 if (count($rpops['rpop']) > 0):
 ?>
-    <p>Die folgenden Sammeldienste werden 4x pro Stunde ausgef&uuml;hrt.</p><br />
+    <p >Die folgenden Sammeldienste werden 4x pro Stunde ausgef&uuml;hrt.</p><br /><br />
     <table border="0" width="100%">
     <thead>
         <tr>

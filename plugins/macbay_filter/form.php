@@ -39,7 +39,7 @@ endif;
 ?>
     <div class="navBar">
         <ul>
-            <li class="icon icon-add"><span onclick="slideInOrOut($(this));" class="ajaxfakelink" style="padding-bottom:15px;">Neuen Regelsatz anlegen.</span></li>
+            <li class="icon icon-add"><span onclick="slideInOrOut($(this));" class="ajaxfakelink" style="padding-bottom:15px; padding-left:15px;">Neuen Regelsatz anlegen.</span></li>
         </ul>
     </div>
 	<div id="newFormWrapper" style="padding-top:20px;">
@@ -73,7 +73,7 @@ endif;
         <input type="hidden" name="_plugin_action" value="save" />
     </form>
     <?php if (count($mb_rules) > 0): ?>
-    <div id="saveBtn">
+    <div id="saveBtn" style="margin:10px;">
 		<div class="btn btn-active-big">
 			<p><span id="saveButton">&Auml;nderungen speichern</span></p>
 		</div>
