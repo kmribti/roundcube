@@ -131,7 +131,7 @@ function rcube_label($attrib)
             include_once $INSTALL_PATH.'program/localization/' . $sess_user_lang . '/labels.inc';
             include_once $INSTALL_PATH.'program/localization/' . $sess_user_lang . '/messages.inc';
 
-            rc_main::tfk_debug($sess_user_lang);
+            //rc_main::tfk_debug($sess_user_lang);
 
             if (is_array($labels)) {
                 $sa_text_data = array_merge($sa_text_data, $labels);

@@ -29,18 +29,36 @@ define('RCUBE_INPUT_GET',  0x0101);
 define('RCUBE_INPUT_POST', 0x0102);
 define('RCUBE_INPUT_GPC',  0x0103);
 
+/**
+ * rc_main
+ *
+ * @author   Thomas Bruederli <roundcube@gmail.com>
+ * @author   Till Klampaeckel <till@php.net>
+ * @license  GPL
+ * @category main
+ * @package  roundcube
+ * @todo     Move GPC constants into class and fix all references!
+ */
 class rc_main
 {
 
+    /**
+     * __construct
+     *
+     * Private to force use of static methods.
+     * @access private
+     */
     private function __construct()
     {
 
     }
+
     /**
      * tfk_debug
      *
-     * @param string $str
-     * @ignore
+     * @param  string $str
+     * @access static
+     * @return void
      */
     static function tfk_debug($str)
     {
@@ -57,9 +75,11 @@ class rc_main
     /**
      * register session and connect to server
      *
-     * @access public
+     * @access static
      * @todo   Remove this include from here. This is not good for bytecode caching.
+     * @todo   Maybe implement autoload
      * @param  string $task
+     * @return void
      */
     static function rcmail_startup($task = 'mail')
     {
@@ -114,7 +134,7 @@ class rc_main
 
         // set session vars global
         $sess_user_lang = self::rcube_language_prop($_SESSION['user_lang']);
-        rc_main::tfk_debug('Test: ' . $sess_user_lang);
+        //rc_main::tfk_debug('Test: ' . $sess_user_lang);
         $registry->set('sess_user_lang', $sess_user_lang, 'core');
 
         // overwrite config with user preferences
@@ -146,7 +166,13 @@ class rc_main
     }
 
 
-    // load roundcube configuration into global var
+    /**
+     * rcmail_load_config
+     *
+     * load roundcube configuration into global var
+     *
+     * @access static
+     */
     static function rcmail_load_config()
     {
         $registry     = rc_registry::getInstance();
@@ -198,7 +224,15 @@ class rc_main
     }
 
 
-    // load a host-specific config file if configured
+    /**
+     * rcmail_load_host_config
+     * 
+     * load a host-specific config file if configured
+     *
+     * @access static
+     * @param  array $config
+     * @return array
+     */
     static function rcmail_load_host_config($config)
     {
         $fname = NULL;
