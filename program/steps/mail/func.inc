@@ -219,7 +219,9 @@ function rcmail_build_folder_tree(&$arrFolders, $folder, $delm='/', $path='')
 }
 
 
-// return html for a structured list <ul> for the mailbox tree
+/**
+ * return html for a structured list <ul> for the mailbox tree
+ */
 function rcmail_render_folder_tree_html(&$arrFolders, &$special, &$mbox_name, $maxlength, $nestLevel=0)
 {
     $registry  = rc_registry::getInstance();
@@ -259,14 +261,18 @@ function rcmail_render_folder_tree_html(&$arrFolders, &$special, &$mbox_name, $m
         $class_name = preg_replace('/[^a-z0-9\-_]/', '', $folder_lc);
 
         // set special class for Sent, Drafts, Trash and Junk
-        if ($folder['id']==$CONFIG['sent_mbox'])
+        if ($folder['id']==$CONFIG['sent_mbox']) {
             $class_name = 'sent';
-        else if ($folder['id']==$CONFIG['drafts_mbox'])
+        }
+        else if ($folder['id']==$CONFIG['drafts_mbox']) {
             $class_name = 'drafts';
-        else if ($folder['id']==$CONFIG['trash_mbox'])
+        }
+        else if ($folder['id']==$CONFIG['trash_mbox']) {
             $class_name = 'trash';
-        else if ($folder['id']==$CONFIG['junk_mbox'])
+        }
+        else if ($folder['id']==$CONFIG['junk_mbox']) {
             $class_name = 'junk';
+        }
 
         $js_name = htmlspecialchars(rc_main::JQ($folder['id']));
 
@@ -302,10 +308,17 @@ function rcmail_render_folder_tree_html(&$arrFolders, &$special, &$mbox_name, $m
 
         /**
          * Append a new list if it has subfolders.
+         *
+         * Work with a seperate list-entry (<li>) to combat giant
+         * onmouseover fuckups.
+         *
+         * @ignore
          */
         if (!empty($folder['folders'])) {
-            $out .= "\n<ul>\n";
-            $out .= rcmail_render_folder_tree_html($folder['folders'], $special, $mbox_name, $maxlength, $nestLevel+1) . "</ul>\n";
+            $out .= '<li class="mailboxsub">' . "\n<ul>\n";
+            $out .= rcmail_render_folder_tree_html($folder['folders'], $special, $mbox_name, $maxlength, $nestLevel+1);
+            $out .= "</ul>\n";
+            $out .= '</li>' . "\n";
         }
 
         $idx++;
@@ -1292,7 +1305,7 @@ function rcmail_message_headers($attrib, $headers=NULL)
     $registry->set('sa_attrib', $sa_attrib, 'core');
 
     if (isset($MESSAGE) === false) {
-        rc_main::tfk_debug('rcmail_message_headers: no $MESSAGE :(');
+        //rc_main::tfk_debug('rcmail_message_headers: no $MESSAGE :(');
         return FALSE;
     }
 

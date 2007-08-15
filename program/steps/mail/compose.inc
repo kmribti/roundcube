@@ -36,7 +36,7 @@ if ($_action == 'remove-attachment' && preg_match('/^rcmfile([0-9]+)$/', $_POST[
     if (is_array($_SESSION['compose']['attachments'][$id]) !== false) {
         $status = @unlink($_SESSION['compose']['attachments'][$id]['path']);
         if ($status === false) {
-            rc_main::tfk_debug('Could not delete attachment.');
+            //rc_main::tfk_debug('Could not delete attachment.');
         }
         $_SESSION['compose']['attachments'][$id] = NULL;
         $OUTPUT->command('remove_from_attachment_list', "rcmfile$id");

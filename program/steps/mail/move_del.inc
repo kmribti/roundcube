@@ -51,7 +51,7 @@ else if ($_action=='delete' && !empty($_POST['_uid'])) {
 }
 // unknown action or missing query param
 else {
-    rc_main::tfk_debug('/ unknown action');
+    //rc_main::tfk_debug('/ unknown action');
     exit;
 }
 
