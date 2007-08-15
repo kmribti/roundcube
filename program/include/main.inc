@@ -24,7 +24,10 @@ require_once 'lib/utf8.class.php';
 require_once 'include/rcmail_template.inc';
 
 
-// define constannts for input reading
+/**
+ * define constannts for input reading
+ * @todo Move in rc_main
+ */
 define('RCUBE_INPUT_GET',  0x0101);
 define('RCUBE_INPUT_POST', 0x0102);
 define('RCUBE_INPUT_GPC',  0x0103);
@@ -38,6 +41,7 @@ define('RCUBE_INPUT_GPC',  0x0103);
  * @category main
  * @package  roundcube
  * @todo     Move GPC constants into class and fix all references!
+ * @since    0.1-rc1
  */
 class rc_main
 {
@@ -417,7 +421,14 @@ class rc_main
     }
 
 
-    // return correct name for a specific database table
+    /**
+     * return correct name for a specific database table
+     *
+     * @access static
+     * @param  string $string table name
+     * @return string
+     * @uses   rc_registry::getInstance()
+     */
     static function get_table_name($table)
     {
         $registry = rc_registry::getInstance();
@@ -534,10 +545,10 @@ class rc_main
         // register common UI objects
         $OUTPUT->add_handlers(
                 array(
-                    'loginform' => 'rcmail_login_form',
-                    'username'  => 'rcmail_current_username',
-                    'message' => 'rcmail_message_container',
-                    'charsetselector' => 'rcmail_charset_selector',
+                    'loginform'       => array('rc_main', 'rcmail_login_form'),
+                    'username'        => array('rc_main', 'rcmail_current_username'),
+                    'message'         => array('rc_main', 'rcmail_message_container'),
+                    'charsetselector' => array('rc_main', 'rcmail_charset_selector'),
                 )
         );
         // add some basic label to client
@@ -1437,10 +1448,23 @@ class rc_main
         $OUTPUT->parse($name, $exit);
     }
 
+    /**
+     * Return an XHTML table from supplied data.
+     *
+     * @access static
+     * @param  array            $attrib
+     * @param  SQL Result|array $table_data
+     * @param  array            $a_show_cols
+     * @param  string           $id_col
+     * @return string           $table
+     * @uses   rc_registry::getInstance()
+     * @uses   rc_main::Q()
+     */
     static function rcube_table_output($attrib, $table_data, $a_show_cols, $id_col)
     {
         $registry = rc_registry::getInstance();
         $DB       = $registry->get('DB', 'core');
+        $OUTPUT   = null;
 
         // allow the following attributes to be added to the <table> tag
         $attrib_str = self::create_attrib_string(
@@ -1496,8 +1520,19 @@ class rc_main
 
                 // format each col
                 foreach ($a_show_cols as $col) {
-                    $cont = self::Q($row_data[$col]);
-                    $table .= '<td class="'.$col.'">' . $cont . "</td>\n";
+                    $cont = $row_data[$col];
+                    if (strstr($cont, '<roundcube')) {
+                        if (is_null($OUTPUT) === true) {
+                            $OUTPUT = $registry->get('OUTPUT','core');
+                        }
+                        // parse tags/conditions
+                        $cont = $OUTPUT->just_parse($cont);
+                        //var_dump($cont); exit;
+                    }
+                    else {
+                        $cont = self::Q($row_data[$col]);
+                    }
+                    $table .= '<td class="' . $col . '">' . $cont . "</td>\n";
                 }
 
                 $table .= "</tr>\n";
@@ -1728,20 +1763,28 @@ class rc_main
 
 
 
+    /**
+     * Prints the message container.
+     *
+     * @access static
+     * @param  array $attrib
+     * @return string $out
+     */
     static function rcmail_message_container($attrib)
     {
         $registry = rc_registry::getInstance();
-        $OUPUT    = $registry->get('OUTPUT', 'core');
+        $OUTPUT   = $registry->get('OUTPUT', 'core');
 
-        if (!$attrib['id']) {
+        if (isset($attrib['id']) === false) {
             $attrib['id'] = 'rcmMessageContainer';
         }
+
         // allow the following attributes to be added to the <table> tag
         $attrib_str = self::create_attrib_string(
                             $attrib,
                             array('style', 'class', 'id')
         );
-        $out = '<div' . $attrib_str . "></div>";
+        $out = '<div' . $attrib_str . '></div>';
 
         $OUTPUT->add_gui_object('message', $attrib['id']);
 
@@ -1786,7 +1829,7 @@ class rc_main
 
 
     // return code for the webmail login form
-    function rcmail_login_form($attrib)
+    static function rcmail_login_form($attrib)
     {
         $registry          = rc_registry::getInstance();
         $CONFIG            = $registry->get('CONFIG', 'core');
@@ -1834,9 +1877,10 @@ class rc_main
         $form_host  = '';
 
         if ($fields['host']) {
-            $form_host.= "</tr><tr>";
-            $form_host.= "<td class=\"title\"><label for=\"rcmloginhost\">$labels[host]</label></td>";
-            $form_host.= "<td>$fields[host]</td>";
+            $form_host.= '</tr><tr>';
+            $form_host.= '<td class="title"><label for="rcmloginhost">';
+            $form_host.= $labels[host] . '</label></td>';
+            $form_host.= '<td>' . $fields['host'] . '</td>';
 
         }
         $OUTPUT->add_gui_object('loginform', $form_name);
