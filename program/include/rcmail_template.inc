@@ -27,7 +27,6 @@ require_once dirname(__FILE__) . '/rcube_shared.inc';
  *
  * @todo Documentation
  * @todo CS
- * @todo Remove globals
  * @todo PHP5?
  * @uses rcube_html_page
  */
@@ -109,71 +108,86 @@ class rcmail_template extends rcube_html_page
         $this->object_handlers[$obj] = $func;
     }
 
-  /**
-   * Register a list of template object handlers
-   *
-   * @param array Hash array with object=>handler pairs
-   */
-  function add_handlers($arr)
-  {
-    $this->object_handlers = array_merge($this->object_handlers, $arr);
-  }
+    /**
+     * Register a list of template object handlers
+     *
+     * @param  array Hash array with object=>handler pairs
+     * @return void
+     */
+    function add_handlers($arr)
+    {
+        $this->object_handlers = array_merge($this->object_handlers, $arr);
+    }
 
-  /**
-   * Register a GUI object to the client script
-   *
-   * @param string Object name
-   * @param string Object ID
-   */
-  function add_gui_object($obj, $id)
-  {
-    $this->add_script(JS_OBJECT_NAME.".gui_object('$obj', '$id');");
-  }
+    /**
+     * Register a GUI object to the client script
+     *
+     * @param  string Object name
+     * @param  string Object ID
+     * @return void
+     */
+    function add_gui_object($obj, $id)
+    {
+        $this->add_script(JS_OBJECT_NAME.".gui_object('$obj', '$id');");
+    }
 
+    /**
+     * Call a client method
+     *
+     * @param string Method to call
+     * @param ... Additional arguments
+     */
+    function command()
+    {
+        $this->js_commands[] = func_get_args();
+    }
 
-  /**
-   * Call a client method
-   *
-   * @param string Method to call
-   * @param ... Additional arguments
-   */
-  function command()
-  {
-    $this->js_commands[] = func_get_args();
-  }
+    /**
+     * Invoke display_message command
+     *
+     * @param  string $message
+     * @param  string $type
+     * @param  mixed  $vars
+     * @return void
+     * @uses   self::command()
+     */
+    function show_message($message, $type='notice', $vars=NULL)
+    {
+        $this->command(
+                'display_message',
+                rcube_label(array('name' => $message, 'vars' => $vars)),
+                $type
+        );
+    }
 
+    /**
+     * Delete all stored env variables and commands
+     *
+     * @access public
+     * @return void
+     * @uses   rcube_html::reset()
+     * @uses   self::$env
+     * @uses   self::$js_env
+     * @uses   self::$js_commands
+     * @uses   self::$object_handlers
+     */
+    public function reset()
+    {
+        $this->env = array();
+        $this->js_env = array();
+        $this->js_commands = array();
+        $this->object_handlers = array();
+        parent::reset();
+    }
 
-  /**
-   * Invoke display_message command
-   */
-  function show_message($message, $type='notice', $vars=NULL)
-  {
-    $this->command(
-      'display_message',
-      rcube_label(array('name' => $message, 'vars' => $vars)),
-      $type);
-  }
-
-
-  /**
-   * Delete all stored env variables and commands
-   */
-  function reset()
-  {
-    $this->env = array();
-    $this->js_env = array();
-    $this->js_commands = array();
-    $this->object_handlers = array();
-    parent::reset();
-  }
-
-  /**
-   * Send the request output to the client.
-   * This will either parse a skin tempalte or send an AJAX response
-   *
-   * @param string  Template name
-   * @param boolean True if script should terminate (default)
-   */
+    /**
+     * Send the request output to the client.
+     * This will either parse a skin tempalte or send an AJAX response
+     *
+     * @access public
+     * @param  string  $templ Template name
+     * @param  boolean $exit True if script should terminate (default)
+     */
     function send($templ=null, $exit=true)
     {
         if ($this->ajax_call) {
@@ -194,38 +208,42 @@ class rcmail_template extends rcube_html_page
     }
 
 
-  /**
-   * Send an AJAX response with executable JS code
-   *
-   * @param string  Additional JS code
-   * @param boolean True if output buffer should be flushed
-   */
-  function remote_response($add='', $flush=false)
-  {
-    static $s_header_sent = FALSE;
-
-    if (!$s_header_sent)
+    /**
+     * Send an AJAX response with executable JS code
+     *
+     * @param  string  Additional JS code
+     * @param  boolean True if output buffer should be flushed
+     * @return void
+     */
+    function remote_response($add='', $flush=false)
     {
-      $s_header_sent = TRUE;
-      send_nocacheing_headers();
-      header('Content-Type: application/x-javascript; charset='.RCMAIL_CHARSET);
-      print '/** ajax response ['.date('d/M/Y h:i:s O')."] **/\n";
+        static $s_header_sent = FALSE;
+
+        if (!$s_header_sent) {
+            $s_header_sent = TRUE;
+            send_nocacheing_headers();
+            header('Content-Type: application/x-javascript; charset='.RCMAIL_CHARSET);
+            print '/** ajax response ['.date('d/M/Y h:i:s O')."] **/\n";
+        }
+
+        // unset default env vars
+        unset($this->js_env['task'], $this->js_env['action'], $this->js_env['comm_path']);
+
+        // send response code
+        echo rc_main::rcube_charset_convert(
+                $this->get_js_commands() . $add,
+                RCMAIL_CHARSET,
+                $this->get_charset()
+        );
+
+        if ($flush) {  // flush the output buffer
+            flush();
+        }
     }
 
-    // unset default env vars
-    unset($this->js_env['task'], $this->js_env['action'], $this->js_env['comm_path']);
-
-    // send response code
-    echo rc_main::rcube_charset_convert($this->get_js_commands() . $add, RCMAIL_CHARSET, $this->get_charset());
-
-    if ($flush)  // flush the output buffer
-      flush();
-  }
-
-
-  /**
-   * @override
-   */
+    /**
+     * @override
+     */
     function write($template='')
     {
         // write all env variables to client
@@ -236,7 +254,6 @@ class rcmail_template extends rcube_html_page
         // call super method
         parent::write($template, $this->config['skin_path']);
     }
-
 
     /**
      * Parse a specific skin template and deliver to stdout
@@ -359,6 +376,19 @@ class rcmail_template extends rcube_html_page
         return preg_replace('/\$(__[a-z0-9_\-]+)/e', '$GLOBALS["\\1"]', $input);
     }
 
+    /**
+     * Public wrapper to dipp into template parsing.
+     *
+     * @access public
+     * @param  string $input
+     * @return string
+     * @uses   rcmail_template::parse_conditions()
+     * @since  0.1-rc1
+     */
+    public function just_parse($input)
+    {
+        return $this->parse_xml($input);
+    }
 
     /**
      * Parse for conditional tags
@@ -367,7 +397,7 @@ class rcmail_template extends rcube_html_page
      * @param  string $input
      * @return string
      */
-    function parse_conditions($input)
+    protected function parse_conditions($input)
     {
         $matches = preg_split(
                         '/<roundcube:(if|elseif|else|endif)\s+([^>]+)>/is',
@@ -439,7 +469,7 @@ class rcmail_template extends rcube_html_page
     * @return Altered input string
     * @todo   Maybe a cache.
     */
-   function parse_xml($input)
+   protected function parse_xml($input)
    {
         return preg_replace('/<roundcube:([-_a-z]+)\s+([^>]+)>/Uie', "\$this->xml_command('\\1', '\\2')", $input);
    }
@@ -453,10 +483,11 @@ class rcmail_template extends rcube_html_page
      * @param  string Attribute string
      * @return Tag/Object content string
      */
-    function xml_command($command, $str_attrib, $add_attrib=array())
+    protected function xml_command($command, $str_attrib, $add_attrib=array())
     {
         $command = strtolower($command);
         $attrib  = rc_main::parse_attrib_string($str_attrib) + $add_attrib;
+        //var_dump($attrib); exit;
 
         //rc_main::tfk_debug("// $command");
 
@@ -471,14 +502,20 @@ class rcmail_template extends rcube_html_page
         switch ($command) {
             // return a button
             case 'button':
-                if ($attrib['command'])
-                return $this->button($attrib);
+                if ($attrib['command']) {
+                    return $this->button($attrib);
+                }
                 break;
 
             // show a label
             case 'label':
-                if ($attrib['name'] || $attrib['command'])
-                    return rc_main::Q(rcube_label($attrib + array('vars' => array('product' => $this->config['product_name']))));
+                if ($attrib['name'] || $attrib['command']) {
+                    return rc_main::Q(
+                                rcube_label(
+                                    $attrib + array('vars' => array('product' => $this->config['product_name']))
+                                )
+                    );
+                }
                 break;
 
             // include a file
@@ -518,6 +555,9 @@ class rcmail_template extends rcube_html_page
             // return code for a specific application object
             case 'object':
                 $object = strtolower($attrib['name']);
+
+                rc_main::tfk_debug("// object: $object");
+                rc_main::tfk_debug(var_export($this->object_handlers[$object], true));
 
                 // execute object handler function
                 if ($this->object_handlers[$object] && function_exists($this->object_handlers[$object])) {
@@ -561,12 +601,13 @@ class rcmail_template extends rcube_html_page
     /**
      * Create and register a button
      *
+     * @access public
      * @param  array Button attributes
      * @return HTML button
      * @todo   Remove all inline JS calls and use jQuery instead.
      * @todo   Remove all sprintf()'s - they are pretty, but also slow.
      */
-    function button($attrib)
+    public function button($attrib)
     {
         $registry   = rc_registry::getInstance();
         $CONFIG     = $registry->get('CONFIG', 'core');
@@ -754,6 +795,9 @@ class rcmail_template extends rcube_html_page
 
         // generate html code for button
         if ($btn_content) {
+            if ($command == 'logout') {
+                $btn_content = '<span>Hallo ' . $_SESSION['username'] . ', ' . $btn_content . '</span>';
+            }            
             $attrib_str = rc_main::create_attrib_string($attrib, $link_attrib);
             $out = sprintf('<a%s>%s</a>', $attrib_str, $btn_content);
         }
