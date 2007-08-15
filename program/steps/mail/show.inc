@@ -19,7 +19,7 @@
 
 */
 
-rc_main::tfk_debug('/ show :-)');
+//rc_main::tfk_debug('/ show :-)');
 
 require_once 'Mail/mimeDecode.php';
 
@@ -29,7 +29,7 @@ $registry->set('PRINT_MODE', $PRINT_MODE, 'core');
 // similar code as in program/steps/mail/get.inc
 if ($_GET['_uid']) {
 
-    rc_main::tfk_debug("/ uid: {$_GET['_uid']}");
+    //rc_main::tfk_debug("/ uid: {$_GET['_uid']}");
 
     $MESSAGE            = array('UID' => rc_main::get_input_value('_uid', RCUBE_INPUT_GET));
     $MESSAGE['headers'] = $IMAP->get_headers($MESSAGE['UID']);
@@ -53,7 +53,7 @@ if ($_GET['_uid']) {
     // calculate Etag for this request
     $etag = md5($MESSAGE['UID'] . $IMAP->get_mailbox_name() . session_id(). ($PRINT_MODE?1:0));
 
-    rc_main::tfk_debug("/ etag: $etag");
+    //rc_main::tfk_debug("/ etag: $etag");
     //rc_main::tfk_debug(var_export($MESSAGE, true));
 
     // allow caching, unless remote images are present
@@ -64,7 +64,7 @@ if ($_GET['_uid']) {
         send_modified_header($_SESSION['login_time'], $etag);
     }
 
-    rc_main::tfk_debug("/ send headerz");
+    //rc_main::tfk_debug("/ send headerz");
 
     $MESSAGE['subject'] = rcube_imap::decode_mime_string(
                                 $MESSAGE['headers']->subject,
@@ -140,7 +140,7 @@ if ($_GET['_uid']) {
     }
 }
 
-rc_main::tfk_debug("/ hallo");
+//rc_main::tfk_debug("/ hallo");
 
 function rcmail_message_attachments($attrib)
 {
