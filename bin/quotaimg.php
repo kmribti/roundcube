@@ -19,11 +19,32 @@
 
 */
 
-$used  = ((isset($_GET['u']) && !empty($_GET['u'])) || $_GET['u']=='0')?(int)$_GET['u']:'??';
-$quota = ((isset($_GET['q']) && !empty($_GET['q'])) || $_GET['q']=='0')?(int)$_GET['q']:'??';
-$width = empty($_GET['w']) ? 100 : (int)$_GET['w'];
+$used   = ((isset($_GET['u']) && !empty($_GET['u'])) || $_GET['u']=='0')?(int)$_GET['u']:'??';
+$quota  = ((isset($_GET['q']) && !empty($_GET['q'])) || $_GET['q']=='0')?(int)$_GET['q']:'??';
+$width  = empty($_GET['w']) ? 100 : (int)$_GET['w'];
 $height = empty($_GET['h']) ? 14 : (int)$_GET['h'];
 
+/**
+ * genQuota
+ *
+ * Takes the parameters and attempts to output an image displaying
+ * the percentage used.
+ *
+ * Also added support to actually display the used (in MB or GB)
+ * and total quota (in MB or GB) along with the image.
+ *
+ * @todo   Move in rc_main
+ * @todo   Move doc from within the table to docblock.
+ * @todo   Create config vars for this.
+ * @access static
+ * @param  mixed $used
+ * @param  mixed $total
+ * @param  int $width
+ * @param  int $height
+ * @return void
+ * @author Brett Patterson <brett2@umbc.edu>
+ * @author Till Klampaeckel <till@php.net>
+ */
 function genQuota($used, $total, $width, $height)
 {
 	/**
@@ -149,7 +170,24 @@ function genQuota($used, $total, $width, $height)
 		$quota_width = $quota / 100 * $width;
 		imagefilledrectangle($im, $border, 0, $quota, $height-2*$border, $fill);
 
-		$string = $quota.'%';
+        $used_gb  = $used / 1024;
+        if ($used_gb >= 1000) {
+            $used_gb = $used_gb / 1024;
+            $used_gb = round($used_gb, 2) . 'GB';
+        }
+        else {
+            $used_gb = round($used_gb, 0) . 'MB';
+        }
+        $total_gb = $total / 1024;
+        if ($total_gb >= 1000) {
+            $total_gb = $total_gb / 1024;
+            $total_gb = round($total_gb, 0) . 'GB';
+        }
+        else {
+            $total_gb = round($total_gb, 2) . 'MB';
+        }
+
+		$string = $quota.'% (' . $used_gb . '/' . $total_gb . ')';
 		$mid = floor(($width-(strlen($string)*imagefontwidth($font)))/2)+1;
 		imagestring($im, $font, $mid, $padding, $string, $text); // Print percent in black
 	}
