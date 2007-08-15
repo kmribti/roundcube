@@ -20,7 +20,7 @@
 
 */
 
-rc_main::tfk_debug('Yay, sendmail.inc reached!');
+//rc_main::tfk_debug('Yay, sendmail.inc reached!');
 
 
 $registry = rc_registry::getInstance();
@@ -352,7 +352,7 @@ if ($MBSTRING && function_exists("mb_encode_mimeheader")) {
     mb_internal_encoding(RCMAIL_CHARSET);
 }
 
-rc_main::tfk_debug('Right before sending/draft if!');
+//rc_main::tfk_debug('Right before sending/draft if!');
 
 // Begin SMTP Delivery Block
 if ($savedraft === false) {
