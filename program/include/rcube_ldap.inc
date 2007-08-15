@@ -182,45 +182,51 @@ class rcube_ldap
   }
 
 
-  /**
-   * Reset all saved results and search parameters
-   */
-  function reset()
-  {
-    $this->result = null;
-    $this->ldap_result = null;
-    $this->filter = '';
-  }
-  
-  
-  /**
-   * List the current set of contact records
-   *
-   * @param  array  List of cols to show
-   * @return array  Indexed list of contact records, each a hash array
-   */
-  function list_records($cols=null, $subset=0)
-  {
-    // exec LDAP search if no result resource is stored
-    if ($this->conn && !$this->ldap_result)
-      $this->_exec_search();
-    
-    // count contacts for this user
-    $this->result = $this->count();
-    
-    // we have a search result resource
-    if ($this->ldap_result && $this->result->count > 0)
+    /**
+     * Reset all saved results and search parameters
+     */
+    function reset()
     {
-      if ($this->sort_col && $this->prop['scope'] !== "base")
-        @ldap_sort($this->conn, $this->ldap_result, $this->sort_col);
-        
-      $entries = ldap_get_entries($this->conn, $this->ldap_result);
-      for ($i = $this->result->first; $i < min($entries['count'], $this->result->first + $this->page_size); $i++)
-        $this->result->add($this->_ldap2result($entries[$i]));
+        $this->result = null;
+        $this->ldap_result = null;
+        $this->filter = '';
     }
+  
+    /**
+     * List the current set of contact records
+     *
+     * @param  array  List of cols to show
+     * @return array  Indexed list of contact records, each a hash array
+     */
+    function list_records($cols=null, $subset=0)
+    {
+        // add general filter to query
+        if (!empty($this->prop['filter'])) {
+            $filter = $this->prop['filter'];
+        }
+        $this->set_search_set($filter);
 
-    return $this->result;
-  }
+        // exec LDAP search if no result resource is stored
+        if ($this->conn && !$this->ldap_result) {
+            $this->_exec_search();
+        }
+
+        // count contacts for this user
+        $this->result = $this->count();
+    
+        // we have a search result resource
+        if ($this->ldap_result && $this->result->count > 0) {
+            if ($this->sort_col && $this->prop['scope'] !== "base") {
+                @ldap_sort($this->conn, $this->ldap_result, $this->sort_col);
+            }
+
+            $entries = ldap_get_entries($this->conn, $this->ldap_result);
+            for ($i = $this->result->first; $i < min($entries['count'], $this->result->first + $this->page_size); $i++) {
+                $this->result->add($this->_ldap2result($entries[$i]));
+            }
+        }
+        return $this->result;
+    }
 
 
   /**
