@@ -459,25 +459,24 @@ class rcube_db
     }
 
 
-  /**
-   * Return SQL statement to convert from a unix timestamp
-   *
-   * @param  string  Field name
-   * @return string  SQL statement to use in query
-   * @access public
-   */
-  function fromunixtime($timestamp)
+    /**
+     * Return SQL statement to convert from a unix timestamp
+     *
+     * @param  string  Field name
+     * @return string  SQL statement to use in query
+     * @access public
+     */
+    function fromunixtime($timestamp)
     {
-    switch($this->db_provider)
-      {
-      case 'mysqli':
-      case 'mysql':
-      case 'sqlite':
-        return "FROM_UNIXTIME($timestamp)";
+        switch($this->db_provider) {
+            case 'mysqli':
+            case 'mysql':
+            case 'sqlite':
+                return "FROM_UNIXTIME($timestamp)";
 
-      default:
-        return date("'Y-m-d H:i:s'", $timestamp);
-      }
+            default:
+                return date("'Y-m-d H:i:s'", $timestamp);
+        }
     }
 
 
