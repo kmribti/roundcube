@@ -38,7 +38,8 @@ $OUTPUT->include_script('list.js');
 // similar function as /steps/addressbook/func.inc::rcmail_contact_frame()
 function rcmail_identity_frame($attrib)
 {
-    global $OUTPUT;
+    $registry = rc_registry::getInstance();
+    $OUTPUT   = $registry->get('OUTPUT', 'core');
 
     if (!$attrib['id']) {
         $attrib['id'] = 'rcmIdentityFrame';

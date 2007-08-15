@@ -240,17 +240,33 @@ function rcmail_identities_list($attrib)
     $_query.= " ORDER BY standard DESC, name ASC";
     $sql_result = $DB->query($_query, $_SESSION['user_id']);
 
+    $identities_data = array();
+    /**
+     * macbay hack
+     */
+    while ($sql_result && ($sql_arr = $DB->fetch_assoc($sql_result))) {
+        $sql_arr['edit'] = '';
+        //$sql_arr['edit'].= '<img scr="/webmail/img/pencil.gif" alt="Bearbeiten" />';
+        //$sql_arr['edit'].= '<img src="/webmail/skins/macbay/img/delete.gif" alt="L&ouml;schen" />';
+        $sql_arr['edit'].= '<roundcube:button id="identities_edit_' . $sql_arr['identity_id'] . '" command="edit" type="image" image="/img/pencil.gif" title="edit" />';
+        //$sql_arr['edit'].= '<roundcube:button id="identities_delete_' . $sql_arr['identity_id'] . '" command="delete" type="image" style="padding-left:10px;" image="/img/delete.gif" title="delete" />';
+
+        array_push($identities_data, $sql_arr);
+        //echo '<pre>'; var_dump($sql_arr); echo '</pre>';
+    }
+    //exit;
+
     // add id to message list table if not specified
     if (!strlen($attrib['id'])) {
         $attrib['id'] = 'rcmIdentitiesList';
     }
     // define list of cols to be displayed
-    $a_show_cols = array('name', 'email', 'organization', 'reply-to');
+    $a_show_cols = array('name', 'email', 'organization', 'reply-to', 'edit');
 
     // create XHTML table
     $out = rc_main::rcube_table_output(
                 $attrib,
-                $sql_result,
+                $identities_data, //$sql_result,
                 $a_show_cols,
                 'identity_id'
     );
