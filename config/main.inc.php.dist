@@ -255,5 +255,9 @@ $rcmail_config['draft_autosave'] = 300;
 // default setting if preview pane is enabled
 $rcmail_config['preview_pane'] = FALSE;
 
+// external logout, imagine you have another app to logout off
+// when a user terminates his webmail session
+$rcmail_config['external_logout'] = '';
+
 // end of config file
 ?>
