@@ -15,7 +15,7 @@ switch($_plugin_action) {
     case 'save':
         $status = $macbay_filter->saveRules($_POST);
         if ($status !== true) {
-            array_push('Ihre &Auml;nderungen konnten leider nicht gespeichert werden.');
+            array_push($error_msg, 'Ihre &Auml;nderungen konnten leider nicht gespeichert werden.');
         }
         break;
 

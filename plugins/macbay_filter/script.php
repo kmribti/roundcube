@@ -10,8 +10,6 @@ require_once dirname(__FILE__) . '/bootstrap.php';
 require_once 'program/include/main.inc';
 
 try {
-
-
     if (isset($mb_data['types']) === true) {
         $types = $mb_data['types'];
         echo 'var mb_rules_types = new Array;' . "\n";

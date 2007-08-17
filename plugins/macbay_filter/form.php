@@ -10,6 +10,8 @@
  */
 require_once dirname(__FILE__) . '/bootstrap.php';
 
+//echo '1';
+
 /**
  * handle $_plugin_action calls
  * @ignore
@@ -18,7 +20,12 @@ $error_msg = array();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require dirname(__FILE__) . '/bin/plugin_action.php';
 }
+
+//echo '2';
+
 require dirname(__FILE__) . '/bin/get.php';
+
+//echo '3';
 
 //echo '<pre>'; var_dump($mb_rules); echo '</pre>'; exit;
 
@@ -36,6 +43,10 @@ if (empty($error_msg) === false):
     echo implode('<br />', $error_msg);
     echo '</div>';
 endif;
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($error_msg)) {
+    echo '<span>Ihre &Auml;nderungen wurden gespeichert.';
+}
+
 ?>
     <div class="navBar">
         <ul>
