@@ -382,7 +382,7 @@ class rcmail_template extends rcube_html_page
      * @access public
      * @param  string $input
      * @return string
-     * @uses   rcmail_template::parse_conditions()
+     * @uses   rcmail_template::parse_xml()
      * @since  0.1-rc1
      */
     public function just_parse($input)
@@ -446,14 +446,26 @@ class rcmail_template extends rcube_html_page
     /**
      * Determines if a given condition is met
      *
+     * @access protected
      * @todo   Get rid off eval() once I understand what this does.
+     * @todo   Extend this to allow real conditions, not just "set"
      * @return True if condition is valid, False is not
      */
-    function check_condition($condition)
+    protected function check_condition($condition)
     {
         $condition = preg_replace(
-                array('/session:([a-z0-9_]+)/i', '/config:([a-z0-9_]+)/i', '/env:([a-z0-9_]+)/i', '/request:([a-z0-9_]+)/ie'),
-                array("\$_SESSION['\\1']", "\$this->config['\\1']", "\$this->env['\\1']", "get_input_value('\\1', RCUBE_INPUT_GPC)"),
+                array(
+                    '/session:([a-z0-9_]+)/i',
+                    '/config:([a-z0-9_]+)/i',
+                    '/env:([a-z0-9_]+)/i',
+                    '/request:([a-z0-9_]+)/ie'
+                ),
+                array(
+                    "\$_SESSION['\\1']",
+                    "\$this->config['\\1']",
+                    "\$this->env['\\1']",
+                    "get_input_value('\\1', RCUBE_INPUT_GPC)"
+                ),
                 $condition
         );
         return @eval("return (".$condition.");");
