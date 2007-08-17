@@ -1,5 +1,4 @@
 <?php
-
 /*
  +-----------------------------------------------------------------------+
  | plugins/addressbook/rcube_contacts_macbay.inc                         |

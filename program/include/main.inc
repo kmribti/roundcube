@@ -90,7 +90,7 @@ class rc_main
         $registry     = rc_registry::getInstance();
         $INSTALL_PATH = $registry->get('INSTALL_PATH', 'core');
 
-        self::tfk_debug('Start me up.');
+        //self::tfk_debug('Start me up.');
 
         // check client
         $BROWSER = rcube_browser();
@@ -182,7 +182,7 @@ class rc_main
         $registry     = rc_registry::getInstance();
         $INSTALL_PATH = $registry->get('INSTALL_PATH', 'core');
 
-        self::tfk_debug("// rcmail_load_config");
+        //self::tfk_debug("// rcmail_load_config");
 
         // load config file
         $status = @include_once 'config/main.inc.php';
@@ -791,7 +791,14 @@ class rc_main
     }
 
 
-    // create new entry in users and identities table
+    /**
+     * create new entry in users and identities table
+     *
+     * @access static
+     * @param  string $user
+     * @param  string $host
+     * @return int    $user_id
+     */
     static function rcmail_create_user($user, $host)
     {
         $registry = rc_registry::getInstance();
@@ -802,19 +809,27 @@ class rc_main
         $user_email = '';
 
         // try to resolve user in virtusertable
-        if (!empty($CONFIG['virtuser_file']) && strstr($user, '@')==FALSE) {
+        if (!empty($CONFIG['virtuser_file']) && strstr($user, '@') === FALSE) {
             $user_email = self::rcmail_user2email($user);
+        }
+        else { // failover
+            $user_email = $user;
         }
         $_query = "INSERT INTO " . self::get_table_name('users');
         $_query.= " (created, last_login, username, mail_host, alias, language)";
-        $_query.= " VALUES (" . $DB->now() . ", " . $DB->now() . ", ?, ?, ?, ?)";
-        $DB->query(
-                $_query,
-                self::strip_newlines($user),
-                self::strip_newlines($host),
-                self::strip_newlines($user_email),
-                $_SESSION['user_lang']
+        $_query.= " VALUES (" . $DB->now() . ", " . $DB->now() . ", %s, %s, %s, %s)";
+
+        $_query = sprintf(
+                    $_query,
+                    $DB->quote(self::strip_newlines($user)),
+                    $DB->quote(self::strip_newlines($host)),
+                    $DB->quote(self::strip_newlines($user_email)),
+                    $DB->quote($_SESSION['user_lang'])
         );
+        rc_main::tfk_debug($_query);
+
+
+        $DB->query($_query);
 
         if ($user_id = $DB->insert_id(self::get_sequence_name('users'))) {
             $mail_domain = self::rcmail_mail_domain($host);

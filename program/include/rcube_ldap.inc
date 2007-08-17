@@ -171,15 +171,15 @@ class rcube_ldap
   }
   
   
-  /**
-   * Getter for saved search properties
-   *
-   * @return mixed Search properties used by this class
-   */
-  function get_search_set()
-  {
-    return $this->filter;
-  }
+    /**
+     * Getter for saved search properties
+     *
+     * @return mixed Search properties used by this class
+     */
+    function get_search_set()
+    {
+        return $this->filter;
+    }
 
 
     /**

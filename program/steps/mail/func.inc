@@ -1841,8 +1841,9 @@ function rcmail_message_part_frame($attrib)
 // clear message composing settings
 function rcmail_compose_cleanup()
 {
-    if (!isset($_SESSION['compose']))
+    if (!isset($_SESSION['compose'])) {
         return;
+    }
 
     // remove attachment files from temp dir
     if (is_array($_SESSION['compose']['attachments'])) {

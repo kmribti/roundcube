@@ -23,6 +23,7 @@ $DB       = $registry->get('DB', 'core');
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 
 if ($USER_DATA = $DB->fetch_assoc($sql_result)) {
+    rc_main::tfk_debug(var_export($USER_DATA, true));
     $OUTPUT->set_pagetitle(
                 sprintf(
                     '%s (%s@%s)',
@@ -33,7 +34,6 @@ if ($USER_DATA = $DB->fetch_assoc($sql_result)) {
     );
 }
 $OUTPUT->include_script('list.js');
-
 
 // similar function as /steps/addressbook/func.inc::rcmail_contact_frame()
 function rcmail_identity_frame($attrib)

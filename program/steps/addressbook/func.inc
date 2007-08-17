@@ -26,7 +26,7 @@ $registry = rc_registry::getInstance();
 $CONFIG   = $registry->get('CONFIG', 'core');
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 
-//rc_main::tfk_debug("ABOOK PLUGIN? " . $CONFIG['addressbook_plugin']);
+rc_main::tfk_debug("ABOOK PLUGIN? " . $CONFIG['addressbook_plugin']);
 
 // instantiate a contacts object according to the given source
 if (($source = get_input_value('_source', RCUBE_INPUT_GPC)) && isset($CONFIG['ldap_public'][$source])) {

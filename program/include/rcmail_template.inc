@@ -556,8 +556,8 @@ class rcmail_template extends rcube_html_page
             case 'object':
                 $object = strtolower($attrib['name']);
 
-                rc_main::tfk_debug("// object: $object");
-                rc_main::tfk_debug(var_export($this->object_handlers[$object], true));
+                //rc_main::tfk_debug("// object: $object");
+                //rc_main::tfk_debug(var_export($this->object_handlers[$object], true));
 
                 // execute object handler function
                 if ($this->object_handlers[$object] && function_exists($this->object_handlers[$object])) {

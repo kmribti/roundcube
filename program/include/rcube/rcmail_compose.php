@@ -152,8 +152,6 @@ function rcmail_compose_headers($attrib)
     return $out;
 }
 
-
-
 function rcmail_compose_header_from($attrib)
 {
     $registry      = rc_registry::getInstance();
@@ -197,6 +195,8 @@ function rcmail_compose_header_from($attrib)
     $_query.= " WHERE user_id=?";
     $_query.= " AND del<>1";
     $_query.= " ORDER BY " . $DB->quoteIdentifier('standard')." DESC, name ASC";
+
+    //rc_main::tfk_debug($_query);
 
     $sql_result = $DB->query($_query, $_SESSION['user_id']);
 
@@ -265,8 +265,6 @@ function rcmail_compose_header_from($attrib)
     }
     return $out;
 }
-
-
 
 function rcmail_compose_body($attrib)
 {
