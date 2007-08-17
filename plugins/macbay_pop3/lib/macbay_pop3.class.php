@@ -80,13 +80,14 @@ final class macbay_pop3
      */
     public function saveRpop($rpop)
     {
-        if (is_array($rpop)) {
+        if (!is_array($rpop)) {
             return false;
         }
         try {
             $params = $this->params;
             array_push($params, $rpop);
-            return $this->client->call('cli.saveRpop', $params);
+            $status = $this->client->call('cli.saveRpop', $params);
+            return $status;
         }
         catch(Exception $e) {
             return self::handleError($e);

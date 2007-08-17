@@ -16,7 +16,7 @@ switch($_plugin_action) {
 
     case 'delete':
         $status = $macbay_pop3->deleteRpop($_POST['rpop_id']);
-        if ($status !== true) {
+        if ($status === false) {
             array_push($error_msg, 'Der Sammeldienst konnte nicht gel&ouml;scht werden.');
         }
         break;
