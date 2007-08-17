@@ -207,7 +207,7 @@ function smtp_reset()
     $SMTP_CONN = $registry->get('SMTP_CONN', 'core');
 
     if (is_object($SMTP_CONN)) {
-        $SMTP_CONN->reset();
+        //$SMTP_CONN->reset();
         smtp_disconnect();
     }
 }
