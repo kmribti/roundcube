@@ -21,13 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require dirname(__FILE__) . '/bin/plugin_action.php';
 }
 
-//echo '2';
-
 require dirname(__FILE__) . '/bin/get.php';
-
-//echo '3';
-
-//echo '<pre>'; var_dump($mb_rules); echo '</pre>'; exit;
 
 $registry = rc_registry::getInstance();
 $OUTPUT   = $registry->get('OUTPUT', 'core');
@@ -119,7 +113,7 @@ endforeach;
 
 function slideInOrOut(obj)
 {
-    var text = $(obj).text();
+    /* var text = $(obj).text();
     if (text == 'Neuen Regelsatz anlegen.') {
         $('#newFormWrapper').slideDown('slow');
         $(obj).text('Nein, doch nicht.');
@@ -131,6 +125,8 @@ function slideInOrOut(obj)
     $(obj).text('Neuen Regelsatz anlegen.');
     $(obj).parent().addClass('icon-add');
     $(obj).parent().removeClass('icon-stop');
+    */
+    $('#newFormWrapper').slideToggle('slow');
     return;
 }
 

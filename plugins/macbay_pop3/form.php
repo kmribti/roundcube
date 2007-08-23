@@ -47,6 +47,13 @@ if ($rpop_left > 0): ?>
     <div id="rpop_new_wrapper" style="display:none;">
         <?php include dirname(__FILE__) . '/ajax/new_rpop.php'; ?>
     </div>
+<?php elseif ($rpops['maxRpop'] == 0): ?>
+    <div class="navBar">Ihr Zugang beinhaltet keine Sammeldienste</div>
+    </div>
+</div>
+</body>
+</html>
+<?php exit; ?>
 <?php else: ?>
     <div class="navBar">
         Sie haben <?php $rpops['maxRpop']; ?> Sammeldienste angelegt.<br />

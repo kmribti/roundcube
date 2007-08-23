@@ -86,3 +86,6 @@ endif;
 		<p><span id="saveNewButton">Neuen Regelsatz anlegen</span></p>
 	</div>
 </div>
+<div class="btn btn-active-big">
+    <p><span onclick="$('#newFormWrapper').slideUp('slow');">Abbrechen</span></p>
+</div>
