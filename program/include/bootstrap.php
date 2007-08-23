@@ -35,7 +35,7 @@ if (!defined('PATH_SEPARATOR')) {
 $include_path = $INSTALL_PATH . PATH_SEPARATOR;
 $include_path.= $INSTALL_PATH . 'program' . PATH_SEPARATOR;
 $include_path.= $INSTALL_PATH . 'program/lib' . PATH_SEPARATOR;
-$include_path.= '/usr/share/Zend-SVN/library' . PATH_SEPARATOR;
+// $include_path.= '/usr/share/Zend-SVN/library' . PATH_SEPARATOR;
 $include_path.= ini_get('include_path');
 
 //echo 'Before: ' . $include_path;

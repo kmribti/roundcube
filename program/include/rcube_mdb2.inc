@@ -22,9 +22,9 @@
 
 
 /**
- * Obtain the PEAR::DB class that is used for abstraction
+ * Obtain the PEAR::MDB2 class that is used for abstraction
  */
-require_once('MDB2.php');
+require_once 'MDB2.php';
 
 
 /**
@@ -170,41 +170,41 @@ class rcube_db
     }
 
 
-  /**
-   * Execute a SQL query
-   *
-   * @param  string  SQL query to execute
-   * @param  mixed   Values to be inserted in query
-   * @return number  Query handle identifier
-   * @access public
-   */
-  function query()
+    /**
+     * Execute a SQL query
+     *
+     * @param  string  SQL query to execute
+     * @param  mixed   Values to be inserted in query
+     * @return number  Query handle identifier
+     * @access public
+     */
+    function query()
     {
-    $params = func_get_args();
-    $query = array_shift($params);
+        $params = func_get_args();
+        $query = array_shift($params);
 
-    return $this->_query($query, 0, 0, $params);
+        return $this->_query($query, 0, 0, $params);
     }
 
 
-  /**
-   * Execute a SQL query with limits
-   *
-   * @param  string  SQL query to execute
-   * @param  number  Offset for LIMIT statement
-   * @param  number  Number of rows for LIMIT statement
-   * @param  mixed   Values to be inserted in query
-   * @return number  Query handle identifier
-   * @access public
-   */
-  function limitquery()
+    /**
+     * Execute a SQL query with limits
+     *
+     * @param  string  SQL query to execute
+     * @param  number  Offset for LIMIT statement
+     * @param  number  Number of rows for LIMIT statement
+     * @param  mixed   Values to be inserted in query
+     * @return number  Query handle identifier
+     * @access public
+     */
+    function limitquery()
     {
-    $params = func_get_args();
-    $query = array_shift($params);
-    $offset = array_shift($params);
-    $numrows = array_shift($params);
+        $params = func_get_args();
+        $query = array_shift($params);
+        $offset = array_shift($params);
+        $numrows = array_shift($params);
 
-    return $this->_query($query, $offset, $numrows, $params);
+        return $this->_query($query, $offset, $numrows, $params);
     }
 
 
@@ -218,45 +218,52 @@ class rcube_db
    * @return number  Query handle identifier
    * @access private
    */
-  function _query($query, $offset, $numrows, $params)
+    function _query($query, $offset, $numrows, $params)
     {
-    // Read or write ?
-    if (strtolower(trim(substr($query,0,6)))=='select')
-      $mode='r';
-    else
-      $mode='w';
-
-    $this->db_connect($mode);
-
-    if ($this->db_provider == 'sqlite')
-      $this->_sqlite_prepare();
-
-    if ($numrows || $offset)
-      $result = $this->db_handle->setLimit($numrows,$offset);
-
-    if (empty($params))
-        $result = $this->db_handle->query($query);
-    else
-      {
-      $params = (array)$params;
-      $q = $this->db_handle->prepare($query);
-      if ($this->db_handle->isError($q))
-        {
-        $this->db_error = TRUE;
-        $this->db_error_msg = $q->userinfo;
-
-        rc_bugs::raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
-                          'message' => $this->db_error_msg), TRUE, TRUE);
+        // Read or write ?
+        if (strtolower(trim(substr($query,0,6)))=='select') {
+            $mode='r';
         }
-      else
-        {
-        $result = $q->execute($params);
-        $q->free();
+        else {
+            $mode='w';
         }
-      }
+        $this->db_connect($mode);
 
-    // add result, even if it's an error
-    return $this->_add_result($result);
+        if ($this->db_provider == 'sqlite') {
+            $this->_sqlite_prepare();
+        }
+
+        if ($numrows || $offset) {
+            $result = $this->db_handle->setLimit($numrows,$offset);
+        }
+        if (empty($params)) {
+            $result = $this->db_handle->query($query);
+        }
+        else {
+            $params = (array)$params;
+            $q = $this->db_handle->prepare($query);
+            if ($this->db_handle->isError($q)) {
+                $this->db_error = TRUE;
+                $this->db_error_msg = $q->userinfo . "\n" . $q->getDebugInfo();
+
+                rc_bugs::raise_error(
+                    array(
+                        'code' => 500,
+                        'type' => 'db',
+                        'line' => __LINE__,
+                        'file' => __FILE__,
+                        'message' => $this->db_error_msg
+                    ), TRUE, TRUE
+                );
+            }
+            else {
+                $result = $q->execute($params);
+                $q->free();
+            }
+        }
+
+        // add result, even if it's an error
+        return $this->_add_result($result);
     }
 
 

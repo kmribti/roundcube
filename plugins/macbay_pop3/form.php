@@ -77,7 +77,7 @@ if (count($rpops['rpop']) > 0):
     <tr>
         <td><?php echo $rpop_data['servername']; ?></td>
         <td><?php echo $rpop_data['username']; ?></td>
-        <td><?php echo $rpop_data['password']; ?></td>
+        <td>***<?php //echo $rpop_data['password']; ?></td>
         <td><?php echo (($rpop_data['leave'] == 1)?'Nein':'Ja'); ?></td>
         <td><?php echo $rpop_data['status']; ?></td>
         <td>

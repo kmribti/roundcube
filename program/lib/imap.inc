@@ -1490,35 +1490,41 @@ function iil_C_Expunge(&$conn, $mailbox){
 }
 
 function iil_C_ModFlag(&$conn, $mailbox, $messages, $flag, $mod){
-	if ($mod!="+" && $mod!="-") return -1;
-	
+	if ($mod!="+" && $mod!="-") {
+        return -1;
+    }
 	$fp = $conn->fp;
-	$flags=array(
-                    "SEEN"=>"\\Seen",
-                    "DELETED"=>"\\Deleted",
-                    "RECENT"=>"\\Recent",
-                    "ANSWERED"=>"\\Answered",
-                    "DRAFT"=>"\\Draft",
-					"FLAGGED"=>"\\Flagged"
-                   );
-	$flag=strtoupper($flag);
-	$flag=$flags[$flag];
-	if (iil_C_Select($conn, $mailbox)){
+	$flags = array(
+                "SEEN"     => "\\Seen",
+                "DELETED"  => "\\Deleted",
+                "RECENT"   =>"\\Recent",
+                "ANSWERED" =>"\\Answered",
+                "DRAFT"    =>"\\Draft",
+				"FLAGGED"  =>"\\Flagged"
+    );
+	$flag = strtoupper($flag);
+	$flag = $flags[$flag];
+	if (iil_C_Select($conn, $mailbox)) {
 		$c=0;
-		fputs($fp, "flg STORE $messages ".$mod."FLAGS (".$flag.")\r\n");
-		do{
+		fputs(
+            $fp,
+            "flg STORE $messages ".$mod."FLAGS (".$flag.")\r\n"
+        );
+		do {
 			$line=chop(iil_ReadLine($fp, 100));
 			if ($line[0]=="*") $c++;
-		}while (!iil_StartsWith($line, "flg"));
+		} while (!iil_StartsWith($line, "flg"));
 
-		if (iil_ParseResult($line) == 0){
+		if (iil_ParseResult($line) == 0) {
 			iil_C_ExpireCachedItems($conn, $mailbox, $messages);
 			return $c;
-		}else{
+		}
+        else {
 			$conn->error = $line;
 			return -1;
 		}
-	}else{
+	}
+    else {
 		$conn->error = "Select failed";
 		return -1;
 	}
@@ -1546,16 +1552,31 @@ function iil_C_Unseen(&$conn, $mailbox, $messages){
 }
 
 
+/**
+ * iil_C_Copy
+ *
+ * Copies an email from one mailbox to another.
+ *
+ * @access 
+ * @param  iil_Conn
+ * @param  array $messages
+ * @param  string $from
+ * @param  string $to
+ * @return int
+ */
 function iil_C_Copy(&$conn, $messages, $from, $to){
 	$fp = $conn->fp;
 
-	if (empty($from) || empty($to)) return -1;
-
-	if (iil_C_Select($conn, $from)){
+	if (empty($from) || empty($to)) {
+        return -1;
+    }
+	if (iil_C_Select($conn, $from)) {
 		$c=0;
 		
 		fputs($fp, "cpy1 COPY $messages \"$to\"\r\n");
 		$line=iil_ReadReply($fp);
+        //rc_main::tfk_debug($line);
+
 		return iil_ParseResult($line);
 	}else{
 		return -1;
@@ -1574,19 +1595,28 @@ function iil_FormatSearchDate($month, $day, $year){
 
 function iil_C_CountUnseen(&$conn, $folder){
 	$index = iil_C_Search($conn, $folder, "ALL UNSEEN");
-	if (is_array($index)){
+	if (is_array($index)) {
 		$str = implode(",", $index);
-		if (empty($str)) return false;
-		else return count($index);
-	}else return false;
+		if (empty($str)) {
+            return false;
+        }
+		else {
+            return count($index);
+        }
+	}
+    else {
+        return false;
+    }
 }
 
 function iil_C_UID2ID(&$conn, $folder, $uid){
-	if ($uid > 0){
+	if ($uid > 0) {
 		$id_a = iil_C_Search($conn, $folder, "UID $uid");
-		if (is_array($id_a)){
+		if (is_array($id_a)) {
 			$count = count($id_a);
-			if ($count > 1) return false;
+			if ($count > 1) {
+                return false;
+            }
 			else return $id_a[0];
 		}
 	}
@@ -1614,27 +1644,31 @@ function iil_C_ID2UID(&$conn, $folder, $id){
 
 function iil_C_Search(&$conn, $folder, $criteria){
 	$fp = $conn->fp;
-	if (iil_C_Select($conn, $folder)){
+	if (iil_C_Select($conn, $folder)) {
 		$c=0;
 		
 		$query = "srch1 SEARCH ".chop($criteria)."\r\n";
 		fputs($fp, $query);
-		do{
+		do {
 			$line=trim(chop(iil_ReadLine($fp, 10000)));
 			if (eregi("^\* SEARCH", $line)){
 				$str = trim(substr($line, 8));
 				$messages = explode(" ", $str);
 			}
-		}while(!iil_StartsWith($line, "srch1"));
+		}
+        while(!iil_StartsWith($line, "srch1"));
 		
 		$result_code=iil_ParseResult($line);
-		if ($result_code==0) return $messages;
-		else{
+		if ($result_code==0) {
+            return $messages;
+        }
+		else {
 			$conn->error = "iil_C_Search: ".$line."\n";
 			return false;
 		}
 		
-	}else{
+	}
+    else {
 		$conn->error = "iil_C_Search: Couldn't select \"$folder\"\n";
 		return false;
 	}
@@ -1643,7 +1677,10 @@ function iil_C_Search(&$conn, $folder, $criteria){
 function iil_C_Move(&$conn, $messages, $from, $to){
 	$fp = $conn->fp;
 	
-	if (!$from || !$to) return -1;
+	if (!$from || !$to) {
+        rc_main::tfk_debug('No from or to: ' . $from . '/' . $to);
+        return -1;
+    }
 	
 	$r=iil_C_Copy($conn, $messages, $from,$to);
 	if ($r==0){

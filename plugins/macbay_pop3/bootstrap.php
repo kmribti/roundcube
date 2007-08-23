@@ -9,7 +9,7 @@
  * add to include path
  * @ignore
  */
-set_include_path(get_include_path() . PATH_SEPARATOR . '/usr/share/Zend-SVN/library/');
+# set_include_path(get_include_path() . PATH_SEPARATOR . '/usr/share/Zend-SVN/library/');
 
 /**
  * Zend_XmlRpc_Client

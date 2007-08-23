@@ -28,6 +28,8 @@ if ($_action=='moveto' && !empty($_POST['_uid']) && !empty($_POST['_target_mbox'
     $target = rc_main::get_input_value('_target_mbox', RCUBE_INPUT_POST);
     $moved  = $IMAP->move_message($uids, $target, rc_main::get_input_value('_mbox', RCUBE_INPUT_POST));
 
+    rc_main::tfk_debug('Moved?: ' . $target . '/' . $uids . '/' . $moved);
+
     if (!$moved) {
         // send error message
         $OUTPUT->command('list_mailbox');

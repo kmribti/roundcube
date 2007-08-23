@@ -167,6 +167,7 @@ final class rcube_contacts_macbay
         try {
             $resp   = $this->xmlrpc_client->call('Addressbook.listContacts', $params);
             if (isset($resp['error'])) {
+		rc_main::tfk_debug('Adressbook Exception: '.var_export($resp,true));
                 throw new Zend_Exception($resp['error'], $resp['resultcode']);
             }
             //rc_main::tfk_debug(var_export($resp, true));

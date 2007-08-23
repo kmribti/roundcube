@@ -384,7 +384,7 @@ class rcube_imap
                 $a_out[] = $name;
             }
             else {
-                tfk_debug('Filtered out: ' . $mbox_row);
+                rc_main::tfk_debug('Filtered out: ' . $mbox_row);
             }
         }
 
@@ -1411,67 +1411,72 @@ class rcube_imap
     }
 
 
-  // move a message from one mailbox to another
-  function move_message($uids, $to_mbox, $from_mbox='')
+    /**
+     * move a message from one mailbox to another
+     */
+    function move_message($uids, $to_mbox, $from_mbox='')
     {
-    $to_mbox = stripslashes($to_mbox);
-    $from_mbox = stripslashes($from_mbox);
-    $to_mbox = $this->_mod_mailbox($to_mbox);
-    $from_mbox = $from_mbox ? $this->_mod_mailbox($from_mbox) : $this->mailbox;
+        $to_mbox = stripslashes($to_mbox);
+        $from_mbox = stripslashes($from_mbox);
+        $to_mbox = $this->_mod_mailbox($to_mbox);
+        $from_mbox = $from_mbox ? $this->_mod_mailbox($from_mbox) : $this->mailbox;
 
-    // make sure mailbox exists
-    if (!in_array($to_mbox, $this->_list_mailboxes()))
-      {
-      if (in_array(strtolower($to_mbox), $this->default_folders))
-        $this->create_mailbox($to_mbox, TRUE);
-      else
-        return FALSE;
-      }
-
-    // convert the list of uids to array
-    $a_uids = is_string($uids) ? explode(',', $uids) : (is_array($uids) ? $uids : NULL);
-
-    // exit if no message uids are specified
-    if (!is_array($a_uids))
-      return false;
-
-    // convert uids to message ids
-    $a_mids = array();
-    foreach ($a_uids as $uid)
-      $a_mids[] = $this->_uid2id($uid, $from_mbox);
-
-    $iil_move = iil_C_Move($this->conn, join(',', $a_mids), $from_mbox, $to_mbox);
-    $moved = !($iil_move === false || $iil_move < 0);
-
-    // send expunge command in order to have the moved message
-    // really deleted from the source mailbox
-    if ($moved)
-      {
-      $this->_expunge($from_mbox, FALSE);
-      $this->_clear_messagecount($from_mbox);
-      $this->_clear_messagecount($to_mbox);
-      }
-
-    // remove message ids from search set
-    if ($moved && $this->search_set && $from_mbox == $this->mailbox)
-      $this->search_set = array_diff($this->search_set, $a_mids);
-
-    // update cached message headers
-    $cache_key = $from_mbox.'.msg';
-    if ($moved && ($a_cache_index = $this->get_message_cache_index($cache_key)))
-      {
-      $start_index = 100000;
-      foreach ($a_uids as $uid)
-        {
-        if (($index = array_search($uid, $a_cache_index)) !== FALSE)
-          $start_index = min($index, $start_index);
+        // make sure mailbox exists
+        if (!in_array($to_mbox, $this->_list_mailboxes())) {
+            if (in_array(strtolower($to_mbox), $this->default_folders)) {
+                $this->create_mailbox($to_mbox, TRUE);
+            }
+            else {
+                return FALSE;
+            }
         }
 
-      // clear cache from the lowest index on
-      $this->clear_message_cache($cache_key, $start_index);
-      }
+        // convert the list of uids to array
+        $a_uids = is_string($uids) ? explode(',', $uids) : (is_array($uids) ? $uids : NULL);
 
-    return $moved;
+        // exit if no message uids are specified
+        if (!is_array($a_uids))
+            return false;
+
+        // convert uids to message ids
+        $a_mids = array();
+        foreach ($a_uids as $uid) {
+            $a_mids[] = $this->_uid2id($uid, $from_mbox);
+        }
+    
+        $iil_move = iil_C_Move($this->conn, join(',', $a_mids), $from_mbox, $to_mbox);
+        $moved = !($iil_move === false || $iil_move < 0);
+
+        rc_main::tfk_debug('Iil_move: ' . $iil_move);
+        rc_main::tfk_debug('Moved? (#2): ' . $moved);
+
+        // send expunge command in order to have the moved message
+        // really deleted from the source mailbox
+        if ($moved) {
+            $this->_expunge($from_mbox, FALSE);
+            $this->_clear_messagecount($from_mbox);
+            $this->_clear_messagecount($to_mbox);
+        }
+
+        // remove message ids from search set
+        if ($moved && $this->search_set && $from_mbox == $this->mailbox) {
+            $this->search_set = array_diff($this->search_set, $a_mids);
+        }
+
+        // update cached message headers
+        $cache_key = $from_mbox.'.msg';
+        if ($moved && ($a_cache_index = $this->get_message_cache_index($cache_key))) {
+            $start_index = 100000;
+            foreach ($a_uids as $uid) {
+                if (($index = array_search($uid, $a_cache_index)) !== FALSE)
+                    $start_index = min($index, $start_index);
+            }
+
+            // clear cache from the lowest index on
+            $this->clear_message_cache($cache_key, $start_index);
+        }
+
+        return $moved;
     }
 
 

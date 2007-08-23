@@ -44,8 +44,9 @@ final class macbay_pop3
     {
         try {
             $data = $this->client->call('cli.getRpop', $this->params);
-            if (empty($data['rpop'])) {
-                return $data;
+            if (empty($data['rpop']) || !is_array($data['rpop'])) {
+                $data['rpop'] = array();
+		return $data;
             }
             $keep = array();
             foreach($data['rpop'] AS $rpop_id=>$rpop_data) {
@@ -62,6 +63,7 @@ final class macbay_pop3
             return $data;
         }
         catch (Exception $e) {
+	    // var_dump($e);
             return self::handleError($e);
         }
     }
