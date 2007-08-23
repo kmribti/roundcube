@@ -78,19 +78,6 @@ class rcube_imap
         $this->db = $db_conn;
     }
 
-
-    /**
-     * PHP 4 object constructor
-     *
-     * @access public
-     * @see    rcube_imap::__construct
-     */
-    function rcube_imap($db_conn)
-    {
-        $this->__construct($db_conn);
-    }
-
-
     /**
      * Connect to an IMAP server
      *
@@ -1200,89 +1187,90 @@ class rcube_imap
     }
 
 
-  /**
-   * Return a flat array with references to all parts, indexed by part numbers
-   *
-   * @param object Message body structure
-   * @return Array with part number -> object pairs
-   */
-  function get_mime_numbers(&$structure)
+    /**
+     * Return a flat array with references to all parts, indexed by part numbers
+     *
+     * @param object Message body structure
+     * @return Array with part number -> object pairs
+     */
+    function get_mime_numbers(&$structure)
     {
-    $a_parts = array();
-    $this->_get_part_numbers($structure, $a_parts);
-    return $a_parts;
+        $a_parts = array();
+        $this->_get_part_numbers($structure, $a_parts);
+        return $a_parts;
     }
 
 
-  /**
-   * Helper method for recursive calls
-   *
-   * @access
-   */
-  function _get_part_numbers(&$part, &$a_parts)
+    /**
+     * Helper method for recursive calls
+     *
+     * @access private
+     * @return void
+     */
+    function _get_part_numbers(&$part, &$a_parts)
     {
-    if ($part->mime_id)
-      $a_parts[$part->mime_id] = &$part;
-
-    if (is_array($part->parts))
-      for ($i=0; $i<count($part->parts); $i++)
-        $this->_get_part_numbers($part->parts[$i], $a_parts);
-    }
-
-
-  /**
-   * Fetch message body of a specific message from the server
-   *
-   * @param  int    Message UID
-   * @param  string Part number
-   * @param  object Part object created by get_structure()
-   * @param  mixed  True to print part, ressource to write part contents in
-   * @return Message/part body if not printed
-   */
-  function &get_message_part($uid, $part=1, $o_part=NULL, $print=NULL)
-    {
-    if (!($msg_id = $this->_uid2id($uid)))
-      return FALSE;
-
-    // get part encoding if not provided
-    if (!is_object($o_part))
-      {
-      $structure_str = iil_C_FetchStructureString($this->conn, $this->mailbox, $msg_id);
-      $structure = iml_GetRawStructureArray($structure_str);
-      $part_type = iml_GetPartTypeCode($structure, $part);
-      $o_part = new rcube_message_part;
-      $o_part->ctype_primary = $part_type==0 ? 'text' : ($part_type==2 ? 'message' : 'other');
-      $o_part->encoding = strtolower(iml_GetPartEncodingString($structure, $part));
-      $o_part->charset = iml_GetPartCharset($structure, $part);
-      }
-
-    // TODO: Add caching for message parts
-
-    if ($print)
-      {
-      iil_C_HandlePartBody($this->conn, $this->mailbox, $msg_id, $part, ($o_part->encoding=='base64'?3:2));
-      $body = TRUE;
-      }
-    else
-      {
-      $body = iil_C_HandlePartBody($this->conn, $this->mailbox, $msg_id, $part, 1);
-
-      // decode part body
-      if ($o_part->encoding=='base64' || $o_part->encoding=='quoted-printable')
-        $body = $this->mime_decode($body, $o_part->encoding);
-
-      // convert charset (if text or message part)
-      if ($o_part->ctype_primary=='text' || $o_part->ctype_primary=='message')
-        {
-        // assume ISO-8859-1 if no charset specified
-        if (empty($o_part->charset))
-          $o_part->charset = 'ISO-8859-1';
-
-        $body = rc_main::rcube_charset_convert($body, $o_part->charset);
+        if ($part->mime_id) {
+            $a_parts[$part->mime_id] = &$part;
         }
-      }
+        if (is_array($part->parts)) {
+            for ($i=0; $i<count($part->parts); $i++) {
+                $this->_get_part_numbers($part->parts[$i], $a_parts);
+            }
+        }
+    }
 
-    return $body;
+
+    /**
+     * Fetch message body of a specific message from the server
+     *
+     * @param  int    Message UID
+     * @param  string Part number
+     * @param  object Part object created by get_structure()
+     * @param  mixed  True to print part, ressource to write part contents in
+     * @return Message/part body if not printed
+     */
+    function &get_message_part($uid, $part=1, $o_part=NULL, $print=NULL)
+    {
+        if (!($msg_id = $this->_uid2id($uid))) {
+            return FALSE;
+        }
+
+        // get part encoding if not provided
+        if (!is_object($o_part)) {
+            $structure_str = iil_C_FetchStructureString($this->conn, $this->mailbox, $msg_id);
+            $structure = iml_GetRawStructureArray($structure_str);
+            $part_type = iml_GetPartTypeCode($structure, $part);
+
+            $o_part = new rcube_message_part;
+            $o_part->ctype_primary = $part_type==0 ? 'text' : ($part_type==2 ? 'message' : 'other');
+            $o_part->encoding = strtolower(iml_GetPartEncodingString($structure, $part));
+            $o_part->charset = iml_GetPartCharset($structure, $part);
+        }
+
+        // TODO: Add caching for message parts
+
+        if ($print) {
+            iil_C_HandlePartBody($this->conn, $this->mailbox, $msg_id, $part, ($o_part->encoding=='base64'?3:2));
+            $body = TRUE;
+        }
+        else {
+            $body = iil_C_HandlePartBody($this->conn, $this->mailbox, $msg_id, $part, 1);
+
+            // decode part body
+            if ($o_part->encoding=='base64' || $o_part->encoding=='quoted-printable') {
+                $body = $this->mime_decode($body, $o_part->encoding);
+            }
+
+            // convert charset (if text or message part)
+            if ($o_part->ctype_primary=='text' || $o_part->ctype_primary=='message') {
+                // assume ISO-8859-1 if no charset specified
+                if (empty($o_part->charset)) {
+                    $o_part->charset = 'ISO-8859-1';
+                }
+                $body = rc_main::rcube_charset_convert($body, $o_part->charset);
+            }
+        }
+        return $body;
     }
 
 
@@ -1480,112 +1468,111 @@ class rcube_imap
     }
 
 
-  // mark messages as deleted and expunge mailbox
-  function delete_message($uids, $mbox_name='')
+    /**
+     * mark messages as deleted and expunge mailbox
+     */
+    function delete_message($uids, $mbox_name='')
     {
-    $mbox_name = stripslashes($mbox_name);
-    $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
+        $mbox_name = stripslashes($mbox_name);
+        $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
 
-    // convert the list of uids to array
-    $a_uids = is_string($uids) ? explode(',', $uids) : (is_array($uids) ? $uids : NULL);
+        // convert the list of uids to array
+        $a_uids = is_string($uids) ? explode(',', $uids) : (is_array($uids) ? $uids : NULL);
 
-    // exit if no message uids are specified
-    if (!is_array($a_uids))
-      return false;
-
-
-    // convert uids to message ids
-    $a_mids = array();
-    foreach ($a_uids as $uid)
-      $a_mids[] = $this->_uid2id($uid, $mailbox);
-
-    $deleted = iil_C_Delete($this->conn, $mailbox, join(',', $a_mids));
-
-    // send expunge command in order to have the deleted message
-    // really deleted from the mailbox
-    if ($deleted)
-      {
-      $this->_expunge($mailbox, FALSE);
-      $this->_clear_messagecount($mailbox);
-      }
-
-    // remove message ids from search set
-    if ($moved && $this->search_set && $mailbox == $this->mailbox)
-      $this->search_set = array_diff($this->search_set, $a_mids);
-
-    // remove deleted messages from cache
-    $cache_key = $mailbox.'.msg';
-    if ($deleted && ($a_cache_index = $this->get_message_cache_index($cache_key)))
-      {
-      $start_index = 100000;
-      foreach ($a_uids as $uid)
-        {
-        if (($index = array_search($uid, $a_cache_index)) !== FALSE)
-          $start_index = min($index, $start_index);
+        // exit if no message uids are specified
+        if (!is_array($a_uids)) {
+            return false;
         }
 
-      // clear cache from the lowest index on
-      $this->clear_message_cache($cache_key, $start_index);
-      }
 
-    return $deleted;
-    }
+        // convert uids to message ids
+        $a_mids = array();
+        foreach ($a_uids as $uid) {
+            $a_mids[] = $this->_uid2id($uid, $mailbox);
+        }
+        $deleted = iil_C_Delete($this->conn, $mailbox, join(',', $a_mids));
 
-
-  // clear all messages in a specific mailbox
-  function clear_mailbox($mbox_name=NULL)
-    {
-    $mbox_name = stripslashes($mbox_name);
-    $mailbox = !empty($mbox_name) ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
-    $msg_count = $this->_messagecount($mailbox, 'ALL');
-
-    if ($msg_count>0)
-      {
-      $cleared = iil_C_ClearFolder($this->conn, $mailbox);
-
-      // make sure the message count cache is cleared as well
-      if ($cleared)
-        {
-        $this->clear_message_cache($mailbox.'.msg');
-        $a_mailbox_cache = $this->get_cache('messagecount');
-        unset($a_mailbox_cache[$mailbox]);
-        $this->update_cache('messagecount', $a_mailbox_cache);
+        // send expunge command in order to have the deleted message
+        // really deleted from the mailbox
+        if ($deleted) {
+            $this->_expunge($mailbox, FALSE);
+            $this->_clear_messagecount($mailbox);
         }
 
-      return $cleared;
-      }
-    else
-      return 0;
+        // remove message ids from search set
+        if ($moved && $this->search_set && $mailbox == $this->mailbox) {
+            $this->search_set = array_diff($this->search_set, $a_mids);
+        }
+
+        // remove deleted messages from cache
+        $cache_key = $mailbox.'.msg';
+        if ($deleted && ($a_cache_index = $this->get_message_cache_index($cache_key))) {
+            $start_index = 100000;
+            foreach ($a_uids as $uid) {
+                if (($index = array_search($uid, $a_cache_index)) !== FALSE) {
+                    $start_index = min($index, $start_index);
+                }
+            }
+
+            // clear cache from the lowest index on
+            $this->clear_message_cache($cache_key, $start_index);
+        }
+        return $deleted;
     }
 
 
-  // send IMAP expunge command and clear cache
-  function expunge($mbox_name='', $clear_cache=TRUE)
+    // clear all messages in a specific mailbox
+    function clear_mailbox($mbox_name=NULL)
     {
-    $mbox_name = stripslashes($mbox_name);
-    $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
-    return $this->_expunge($mailbox, $clear_cache);
+        $mbox_name = stripslashes($mbox_name);
+        $mailbox = !empty($mbox_name) ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
+        $msg_count = $this->_messagecount($mailbox, 'ALL');
+
+        if ($msg_count>0) {
+            $cleared = iil_C_ClearFolder($this->conn, $mailbox);
+
+            // make sure the message count cache is cleared as well
+            if ($cleared) {
+                $this->clear_message_cache($mailbox.'.msg');
+                $a_mailbox_cache = $this->get_cache('messagecount');
+                unset($a_mailbox_cache[$mailbox]);
+                $this->update_cache('messagecount', $a_mailbox_cache);
+            }
+            return $cleared;
+        }
+        return 0;
     }
 
 
-  // send IMAP expunge command and clear cache
-  function _expunge($mailbox, $clear_cache=TRUE)
+    /**
+     * send IMAP expunge command and clear cache
+     */
+    function expunge($mbox_name='', $clear_cache=TRUE)
     {
-    $result = iil_C_Expunge($this->conn, $mailbox);
-
-    if ($result>=0 && $clear_cache)
-      {
-      //$this->clear_message_cache($mailbox.'.msg');
-      $this->_clear_messagecount($mailbox);
-      }
-
-    return $result;
+        $mbox_name = stripslashes($mbox_name);
+        $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
+        return $this->_expunge($mailbox, $clear_cache);
     }
 
 
-  /* --------------------------------
-   *        folder managment
-   * --------------------------------*/
+    /**
+     * send IMAP expunge command and clear cache
+     */
+    function _expunge($mailbox, $clear_cache=TRUE)
+    {
+        $result = iil_C_Expunge($this->conn, $mailbox);
+
+        if ($result>=0 && $clear_cache) {
+            //$this->clear_message_cache($mailbox.'.msg');
+            $this->_clear_messagecount($mailbox);
+        }
+        return $result;
+    }
+
+
+    /* --------------------------------
+     *        folder managment
+     * --------------------------------*/
 
 
     /**
@@ -1618,16 +1605,16 @@ class rcube_imap
     }
 
 
-  /**
-   * Get quota
-   * added by Nuny
-   */
-  function get_quota()
+    /**
+     * Get quota
+     * added by Nuny
+     */
+    function get_quota()
     {
-    if ($this->get_capability('QUOTA'))
-      return iil_C_GetQuota($this->conn);
-
-    return FALSE;
+        if ($this->get_capability('QUOTA')) {
+            return iil_C_GetQuota($this->conn);
+        }
+        return FALSE;
     }
 
 
@@ -1646,18 +1633,19 @@ class rcube_imap
     }
 
 
-  /**
-   * unsubscribe mailboxes
-   */
-  function unsubscribe($mbox_name)
+    /**
+     * unsubscribe mailboxes
+     */
+    function unsubscribe($mbox_name)
     {
-    if (is_array($mbox_name))
-      $a_mboxes = $mbox_name;
-    else if (is_string($mbox_name) && strlen($mbox_name))
-      $a_mboxes = explode(',', $mbox_name);
-
-    // let this common function do the main work
-    return $this->_change_subscription($a_mboxes, 'unsubscribe');
+        if (is_array($mbox_name)) {
+            $a_mboxes = $mbox_name;
+        }
+        else if (is_string($mbox_name) && strlen($mbox_name)) {
+            $a_mboxes = explode(',', $mbox_name);
+        }
+        // let this common function do the main work
+        return $this->_change_subscription($a_mboxes, 'unsubscribe');
     }
 
 
