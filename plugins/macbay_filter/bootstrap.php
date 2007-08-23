@@ -16,7 +16,7 @@ set_include_path(get_include_path() . PATH_SEPARATOR . '/usr/share/Zend-SVN/libr
  * @ignore
  */
 require_once 'Zend/XmlRpc/Client.php';
-$endpoint = 'http://preview.macbay.de/config/xmlrpc/cli';
+$endpoint = 'http://www.macbay.de/config/xmlrpc/cli';
 
 /**
  * Create a Zend_XmlRpc_Client for later use.

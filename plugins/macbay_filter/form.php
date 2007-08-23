@@ -155,20 +155,22 @@ function deleteFilter(filterName, formId)
     if (status != true) {
         return;
     }
-    $.post(
-        '<?php echo $registry->get('RC_URI', 'core'); ?>?_task=plugin&_action=macbay_filter/delete.php',
-        {filterName: filterName },
-        function(data) {
-            if (data == 'ok') {
-                $('#' + formId).slideUp('slow').ready(function(){
-                    $('#' + formId).remove();
-                });
+    $('#content_' + formId).slideUp('slow').ready(function(){
+        $.post(
+            '<?php echo $registry->get('RC_URI', 'core'); ?>?_task=plugin&_action=macbay_filter/delete.php',
+            {filterName: filterName },
+            function(data) {
+                if (data == 'ok') {
+                    $('#' + formId).slideUp('slow').ready(function(){
+                        $('#' + formId).remove();
+                    });
+                    return;
+                }
+                alert('Der Regelsatz konnte nicht entfernt werden.');
                 return;
             }
-            alert('Der Regelsatz konnte nicht entfernt werden.');
-            return;
-        }
-    )
+        )
+    });
 }
 /* ]]> */
 </script>
