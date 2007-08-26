@@ -34,19 +34,20 @@ require_once 'include/rcube/result_set.php';
  * rcube_contacts_macbay
  *
  * @final
- * @author Till Klampaeckel <till@php.net>
- * @since  0.1-rc1
+ * @author  Till Klampaeckel <till@php.net>
+ * @since   0.1-rc1
+ * @license 
  */
 final class rcube_contacts_macbay
 {
-    protected $db = null;
-    protected $db_name = '';
-    protected $user_id = 0;
-    protected $filter = null;
-    protected $result = null;
+    protected $db            = null;
+    protected $db_name       = '';
+    protected $user_id       = 0;
+    protected $filter        = null;
+    protected $result        = null;
     protected $search_fields;
     protected $search_string;
-    protected $table_cols = array('name', 'email', 'firstname', 'surname');
+    protected $table_cols    = array('name', 'email', 'firstname', 'surname');
 
     protected $username;
     protected $password;
@@ -62,9 +63,18 @@ final class rcube_contacts_macbay
     /**
      * Object constructor
      *
+     * Creates Zend_Xmlrpc_Client which is used later on
+     * for XMLRPC calls.
+     *
      * @access public
      * @param  object  Instance of the rcube_db class
      * @param  integer User-ID
+     * @uses   self::$xmlrpc_client
+     * @uses   self::$username
+     * @uses   self::$password
+     * @uses   rc_main::tfk_debug()
+     * @todo   Check for Zend_Xmlrpc_Client (instead of is_null())
+     * @todo   Replace call to rc_main::tfk_debug() with RC's logger
      */
     public function __construct($username, $password, $xmlrpc_client = null)
     {
@@ -76,9 +86,11 @@ final class rcube_contacts_macbay
         }
         else {
             try {
-                $this->xmlrpc_client = new Zend_XmlRpc_Client('https://www.macbay.de/sync2/XMLRPCServer');
+                $this->xmlrpc_client = new Zend_XmlRpc_Client(
+                                        'http://sync.dbnet.macnews.intern:8082/SyncServer2/XMLRPCServer'
+                );
             }
-            catch(Zend_Exception $e) {
+            catch (Zend_Exception $e) {
                 rc_main::tfk_debug('Addressbook Exception: ' . var_export($e, true));
             }
         }
@@ -338,7 +350,7 @@ final class rcube_contacts_macbay
         if (isset($resp['result'])) {
             return true;
         }
-        rc_main::tfk_debug(var_export($resp, true));
+        //rc_main::tfk_debug(var_export($resp, true));
         return false;
     }
 
@@ -382,4 +394,4 @@ final class rcube_contacts_macbay
 
     }
 }
-?>
+
