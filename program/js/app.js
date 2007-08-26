@@ -1009,20 +1009,20 @@ function rcube_webmail()
     };
 
 
-  this.get_task_url = function(task, url)
+    this.get_task_url = function(task, url)
     {
-    if (!url)
-      url = this.env.comm_path;
-
-    return url.replace(/_task=[a-z]+/, '_task='+task);
+        if (!url) {
+            url = this.env.comm_path;
+        }
+        return url.replace(/_task=[a-z]+/, '_task='+task);
     };
 
 
-  // called when a request timed out
-  this.request_timed_out = function()
+    // called when a request timed out
+    this.request_timed_out = function()
     {
-    this.set_busy(false);
-    this.display_message('Request timed out!', 'error');
+        this.set_busy(false);
+        this.display_message('Request timed out!', 'error');
     };
 
 
@@ -1965,21 +1965,21 @@ function rcube_webmail()
     return true;
     };
 
-  // reset quick-search form
-  this.reset_qsearch = function()
+    // reset quick-search form
+    this.reset_qsearch = function()
     {
-    if (this.gui_objects.qsearchbox)
-      this.gui_objects.qsearchbox.value = '';
-
-    this.env.search_request = null;
-    return true;
+        if (this.gui_objects.qsearchbox) {
+            this.gui_objects.qsearchbox.value = '';
+        }
+        this.env.search_request = null;
+        return true;
     };
 
 
-  this.sent_successfully = function(msg)
+    this.sent_successfully = function(msg)
     {
-    this.list_mailbox();
-    this.display_message(msg, 'confirmation', true);
+        this.list_mailbox();
+        this.display_message(msg, 'confirmation', true);
     }
 
 
@@ -2915,50 +2915,60 @@ function rcube_webmail()
     };
 
 
-  // display a system message
-  this.display_message = function(msg, type, hold)
+    // display a system message
+    this.display_message = function(msg, type, hold)
     {
-    // pass command to parent window
-    if (this.env.framed && parent.rcmail )
-      return parent.rcmail.display_message(msg, type, hold);
+        // pass command to parent window
+        if (this.env.framed && parent.rcmail ) {
+            return parent.rcmail.display_message(msg, type, hold);
+        }
 
-    this.set_busy(false);
-    if (!this.loaded)  // save message in order to display after page loaded
-      {
-      this.pending_message = new Array(msg, type);
-      return true;
-      }
+        this.set_busy(false);
+        if (!this.loaded)  // save message in order to display after page loaded
+        {
+            this.pending_message = new Array(msg, type);
+            return true;
+        }
 
-    if (!this.gui_objects.message)
-      return false;
+        if (!this.gui_objects.message) {
+            return false;
+        }
 
-    if (this.message_timer)
-      clearTimeout(this.message_timer);
+        if (this.message_timer) {
+            clearTimeout(this.message_timer);
+        }
 
-    var cont = msg;
-    if (type)
-      cont = '<div class="'+type+'">'+cont+'</div>';
+        var cont = msg;
+        if (type) {
+            cont = '<div class="'+type+'">'+cont+'</div>';
+        }
+        this.gui_objects.message._rcube = this;
+        this.gui_objects.message.innerHTML = cont;
+        this.gui_objects.message.style.display = 'block';
 
-    this.gui_objects.message._rcube = this;
-    this.gui_objects.message.innerHTML = cont;
-    this.gui_objects.message.style.display = 'block';
+        // ajax loading animation
+        $('#loading').show();
 
-    if (type!='loading')
-      this.gui_objects.message.onmousedown = function(){ this._rcube.hide_message(); return true; };
+        if (type != 'loading') {
+            this.gui_objects.message.onmousedown = function(){
+                this._rcube.hide_message(); return true;
+            };
+        }
 
-    if (!hold)
-      this.message_timer = setTimeout(function(){ ref.hide_message(); }, this.message_time);
+        if (!hold) {
+            this.message_timer = setTimeout(function(){ ref.hide_message(); }, this.message_time);
+        }
     };
 
 
-  // make a message row disapear
-  this.hide_message = function()
+    // make a message row disapear
+    this.hide_message = function()
     {
-    if (this.gui_objects.message)
-      {
-      this.gui_objects.message.style.display = 'none';
-      this.gui_objects.message.onmousedown = null;
-      }
+        if (this.gui_objects.message) {
+            this.gui_objects.message.style.display = 'none';
+            this.gui_objects.message.onmousedown = null;
+        }
+        $('#loading').hide();
     };
 
 

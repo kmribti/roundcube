@@ -20,6 +20,10 @@
 
 */
 
+/**
+ * rcube_shared function library
+ * @ignore
+ */
 require_once dirname(__FILE__) . '/rcube_shared.inc';
 
 /**
@@ -51,7 +55,7 @@ class rcmail_template extends rcube_html_page
      * @param  string $task
      * @todo   Use jQuery's $(document).ready() here.
      */
-    function __construct($config, $task)
+    public function __construct($config, $task)
     {
         parent::__construct();
 
