@@ -232,6 +232,7 @@ else if (($_task=='logout' || $_action=='logout') && isset($_SESSION['user_id'])
     $CONFIG = $registry->get('CONFIG', 'core');
     if (isset($CONFIG['external_logout']) && empty($CONFIG['external_logout']) === false) {
         rc_main::rcmail_kill_session();
+        //session_destroy();
         header('Location:' . $CONFIG['external_logout']);
         exit;
     }

@@ -41,6 +41,9 @@ define('RCUBE_INPUT_GPC',  0x0103);
  * @category main
  * @package  roundcube
  * @todo     Move GPC constants into class and fix all references!
+ * @todo     Remove "rcmail_" prefix to classes.
+ * @todo     Docs, docs, docs!
+ * @todo     Maybe unit tests.
  * @since    0.1-rc1
  */
 class rc_main
@@ -50,12 +53,11 @@ class rc_main
      * __construct
      *
      * Private to force use of static methods.
+     *
      * @access private
      */
     private function __construct()
-    {
-
-    }
+    {}
 
     /**
      * tfk_debug
@@ -71,7 +73,8 @@ class rc_main
         if ($fp !== false) {
             @fwrite($fp, $str);
             @fclose($fp);
-        } else {
+        }
+        else {
             die('Could not open logs/debug.tfk.');
         }
     }
@@ -373,7 +376,9 @@ class rc_main
     }
 
 
-    // do these things on script shutdown
+    /**
+     * do these things on script shutdown
+     */
     static function rcmail_shutdown()
     {
         $registry = rc_registry::getInstance();
@@ -388,7 +393,12 @@ class rc_main
         session_write_close();
     }
 
-    // destroy session data and remove cookie
+    /**
+     * destroy session data and remove cookie
+     *
+     * @access static
+     * @rturn  void
+     */
     static function rcmail_kill_session()
     {
         // save user preferences
@@ -418,6 +428,7 @@ class rc_main
                         'temp' => true
         );
         setcookie('sessauth', '-del-', time()-60);
+        session_destroy();
     }
 
 
