@@ -296,8 +296,9 @@ class rcube_db
      * @param  string  Sequence name for increment
      * @return mixed   ID or FALSE on failure
      * @access public
+     * @todo   Remove die() and use exceptions
      */
-    function insert_id($sequence = '')
+    public function insert_id($sequence = '')
     {
         if (!$this->db_handle || $this->db_mode=='r') {
             return FALSE;
@@ -308,33 +309,43 @@ class rcube_db
                 if (DB::isError($result)) {
                     rc_bugs::raise_error(
                         array(
-                            'code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__, 
-                            'message' => $result->getMessage()), TRUE, FALSE
+                            'code' => 500,
+                            'type' => 'db',
+                            'line' => __LINE__,
+                            'file' => __FILE__, 
+                            'message' => $result->getMessage()
+                        ), TRUE, FALSE
                     );
                 }
                 return $result;
 
-      case 'mssql':
-        $result = &$this->db_handle->getOne("SELECT @@IDENTITY");
-        if (DB::isError($result))
-          rc_bugs::raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__, 
-                            'message' => $result->getMessage()), TRUE, FALSE);
-        return $result;
+            case 'mssql':
+                $result = &$this->db_handle->getOne("SELECT @@IDENTITY");
+                if (DB::isError($result)) {
+                    rc_bugs::raise_error(
+                        array(
+                            'code' => 500,
+                            'type' => 'db',
+                            'line' => __LINE__,
+                            'file' => __FILE__, 
+                            'message' => $result->getMessage()
+                        ), TRUE, FALSE);
+                }
+                return $result;
                 
-      case 'mysql': // This is unfortuneate
-        return mysql_insert_id($this->db_handle->connection);
+            case 'mysql': // This is unfortuneate
+                return mysql_insert_id($this->db_handle->connection);
 
-      case 'mysqli':
-        return mysqli_insert_id($this->db_handle->connection);
+            case 'mysqli':
+                return mysqli_insert_id($this->db_handle->connection);
 
-      case 'sqlite':
-        return sqlite_last_insert_rowid($this->db_handle->connection);
+            case 'sqlite':
+                return sqlite_last_insert_rowid($this->db_handle->connection);
 
-      default:
-        die("portability issue with this database, please have the developer fix");
-      }
+            default:
+                die("portability issue with this database, please have the developer fix");
+        }
     }
-
 
     /**
      * Get an associative array for one row
