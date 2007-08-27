@@ -1,5 +1,4 @@
 <?php
-
 /*
  +-----------------------------------------------------------------------+
  | program/include/rcube_db.inc                                          |
@@ -24,8 +23,9 @@
 
 /**
  * Obtain the PEAR::DB class that is used for abstraction
+ * @ignore
  */
-require_once('DB.php');
+require_once 'DB.php';
 
 
 /**
@@ -38,52 +38,47 @@ require_once('DB.php');
  * @author     Thomas Bruederli <roundcube@gmail.com>
  * @version    1.17
  * @link       http://pear.php.net/package/DB
+ * @license
+ * @todo       Fix CS
  */
 class rcube_db
-  {
-  var $db_dsnw;               // DSN for write operations
-  var $db_dsnr;               // DSN for read operations
-  var $db_connected = false;  // Already connected ?
-  var $db_mode = '';          // Connection mode
-  var $db_handle = 0;         // Connection handle
-  var $db_pconn = false;      // Use persistent connections
-  var $db_error = false;
-  var $db_error_msg = '';
+{
+    var $db_dsnw;               // DSN for write operations
+    var $db_dsnr;               // DSN for read operations
+    var $db_connected = false;  // Already connected ?
+    var $db_mode      = '';          // Connection mode
+    var $db_handle    = 0;         // Connection handle
+    var $db_pconn     = false;      // Use persistent connections
+    var $db_error     = false;
+    var $db_error_msg = '';
 
-  var $a_query_results = array('dummy');
-  var $last_res_id = 0;
+    var $a_query_results = array('dummy');
+    var $last_res_id     = 0;
 
 
-  /**
-   * Object constructor
-   *
-   * @param  string  DSN for read/write operations
-   * @param  string  Optional DSN for read only operations
-   */
-  function __construct($db_dsnw, $db_dsnr='', $pconn=false)
+    /**
+     * Object constructor
+     *
+     * @access public
+     * @param  string  DSN for read/write operations
+     * @param  string  Optional DSN for read only operations
+     * @param  bool    Persistant connection
+     * @return void
+     * @uses   DB::parseDSN()
+     */
+    public function __construct($db_dsnw, $db_dsnr='', $pconn=false)
     {
-    if ($db_dsnr=='')
-      $db_dsnr=$db_dsnw;
+        if ($db_dsnr=='') {
+            $db_dsnr=$db_dsnw;
+        }
         
-    $this->db_dsnw = $db_dsnw;
-    $this->db_dsnr = $db_dsnr;
-    $this->db_pconn = $pconn;
+        $this->db_dsnw = $db_dsnw;
+        $this->db_dsnr = $db_dsnr;
+        $this->db_pconn = $pconn;
         
-    $dsn_array = DB::parseDSN($db_dsnw);
-    $this->db_provider = $dsn_array['phptype'];        
+        $dsn_array = DB::parseDSN($db_dsnw);
+        $this->db_provider = $dsn_array['phptype'];        
     }
-
-
-  /**
-   * PHP 4 object constructor
-   *
-   * @see  rcube_db::__construct
-   */
-  function rcube_db($db_dsnw, $db_dsnr='', $pconn=false)
-    {
-    $this->__construct($db_dsnw, $db_dsnr, $pconn);
-    }
-
 
     /**
      * Connect to specific database
@@ -92,7 +87,7 @@ class rcube_db
      * @return object  PEAR database handle
      * @access private
      */
-    function dsn_connect($dsn)
+    private function dsn_connect($dsn)
     {
         // Use persistent connections if available
         $dbh = DB::connect($dsn, array('persistent' => $this->db_pconn));
@@ -125,160 +120,172 @@ class rcube_db
     }
 
 
-  /**
-   * Connect to appropiate databse
-   * depending on the operation
-   *
-   * @param  string  Connection mode (r|w)
-   * @access public
-   */
-  function db_connect($mode)
+    /**
+     * Connect to appropiate databse
+     * depending on the operation
+     *
+     * @param  string  Connection mode (r|w)
+     * @access public
+     */
+    public function db_connect($mode)
     {
-    $this->db_mode = $mode;
+        $this->db_mode = $mode;
 
-    // Already connected
-    if ($this->db_connected)
-      {
-      // no replication, current connection is ok
-      if ($this->db_dsnw==$this->db_dsnr)
-        return;
+        // Already connected
+        if ($this->db_connected) {
+            // no replication, current connection is ok
+            if ($this->db_dsnw==$this->db_dsnr) {
+                return;
+            }
             
-      // connected to master, current connection is ok
-      if ($this->db_mode=='w')
-        return;
+            // connected to master, current connection is ok
+            if ($this->db_mode=='w') {
+                return;
+            }
 
-      // Same mode, current connection is ok
-      if ($this->db_mode==$mode)
-        return;
-      }
+            // Same mode, current connection is ok
+            if ($this->db_mode==$mode) {
+                return;
+            }
+        }
      
-    if ($mode=='r')
-      $dsn = $this->db_dsnr;
-    else
-      $dsn = $this->db_dsnw;
+        if ($mode=='r') {
+            $dsn = $this->db_dsnr;
+        }
+        else {
+            $dsn = $this->db_dsnw;
+        }
 
-    $this->db_handle = $this->dsn_connect($dsn);
-    $this->db_connected = $this->db_handle ? TRUE : FALSE;
+        $this->db_handle = $this->dsn_connect($dsn);
+        $this->db_connected = $this->db_handle ? TRUE : FALSE;
     }
     
     
-  /**
-   * Getter for error state
-   *
-   * @param  boolean  True on error
-   */
-  function is_error()
+    /**
+     * Getter for error state
+     *
+     * @access public
+     * @param  boolean  True on error
+     * @return mixed
+     */
+    public function is_error()
     {
-    return $this->db_error ? $this->db_error_msg : FALSE;
+        return $this->db_error ? $this->db_error_msg : FALSE;
     }
 
 
-  /**
-   * Execute a SQL query
-   *
-   * @param  string  SQL query to execute
-   * @param  mixed   Values to be inserted in query
-   * @return number  Query handle identifier
-   * @access public
-   */
-  function query()
+    /**
+     * Execute a SQL query
+     *
+     * @param  string  SQL query to execute
+     * @param  mixed   Values to be inserted in query
+     * @return number  Query handle identifier
+     * @access public
+     */
+    public function query()
     {
-    $params = func_get_args();
-    $query = array_shift($params);
+        $params = func_get_args();
+        $query = array_shift($params);
 
-    return $this->_query($query, 0, 0, $params);
+        return $this->_query($query, 0, 0, $params);
     }
 
 
-  /**
-   * Execute a SQL query with limits
-   *
-   * @param  string  SQL query to execute
-   * @param  number  Offset for LIMIT statement
-   * @param  number  Number of rows for LIMIT statement
-   * @param  mixed   Values to be inserted in query
-   * @return number  Query handle identifier
-   * @access public
-   */
-  function limitquery()
+    /**
+     * Execute a SQL query with limits
+     *
+     * @param  string  SQL query to execute
+     * @param  number  Offset for LIMIT statement
+     * @param  number  Number of rows for LIMIT statement
+     * @param  mixed   Values to be inserted in query
+     * @return number  Query handle identifier
+     * @access public
+     */
+    public function limitquery()
     {
-    $params = func_get_args();
-    $query = array_shift($params);
-    $offset = array_shift($params);
-    $numrows = array_shift($params);
+        $params = func_get_args();
+        $query = array_shift($params);
+        $offset = array_shift($params);
+        $numrows = array_shift($params);
 		
-    return $this->_query($query, $offset, $numrows, $params);
+        return $this->_query($query, $offset, $numrows, $params);
     }
 
 
-  /**
-   * Execute a SQL query with limits
-   *
-   * @param  string  SQL query to execute
-   * @param  number  Offset for LIMIT statement
-   * @param  number  Number of rows for LIMIT statement
-   * @param  array   Values to be inserted in query
-   * @return number  Query handle identifier
-   * @access private
-   */
-  function _query($query, $offset, $numrows, $params)
+    /**
+     * Execute a SQL query with limits
+     *
+     * @param  string  SQL query to execute
+     * @param  number  Offset for LIMIT statement
+     * @param  number  Number of rows for LIMIT statement
+     * @param  array   Values to be inserted in query
+     * @return number  Query handle identifier
+     * @access private
+     */
+    private function _query($query, $offset, $numrows, $params)
     {
-    // Read or write ?
-    if (strtolower(trim(substr($query,0,6)))=='select')
-      $mode='r';
-    else
-      $mode='w';
+        // Read or write ?
+        if (strtolower(trim(substr($query,0,6)))=='select') {
+            $mode='r';
+        }
+        else {
+            $mode='w';
+        }
         
-    $this->db_connect($mode);
+        $this->db_connect($mode);
     
-    if (!$this->db_connected)
-      return FALSE;
+        if (!$this->db_connected) {
+            return FALSE;
+        }
 
-    if ($this->db_provider == 'sqlite')
-      $this->_sqlite_prepare();
+        if ($this->db_provider == 'sqlite') {
+            $this->_sqlite_prepare();
+        }
 
-    if ($numrows || $offset)
-      $result = $this->db_handle->limitQuery($query,$offset,$numrows,$params);
-    else    
-      $result = $this->db_handle->query($query, $params);
+        if ($numrows || $offset) {
+            $result = $this->db_handle->limitQuery($query,$offset,$numrows,$params);
+        }
+        else {
+            $result = $this->db_handle->query($query, $params);
+        }
 	
-    // add result, even if it's an error
-    return $this->_add_result($result);
+        // add result, even if it's an error
+        return $this->_add_result($result);
     }
 
 
-  /**
-   * Get number of rows for a SQL query
-   * If no query handle is specified, the last query will be taken as reference
-   *
-   * @param  number  Optional query handle identifier
-   * @return mixed   Number of rows or FALSE on failure
-   * @access public
-   */
-  function num_rows($res_id=NULL)
+    /**
+     * Get number of rows for a SQL query
+     * If no query handle is specified, the last query will be taken as reference
+     *
+     * @param  number  Optional query handle identifier
+     * @return mixed   Number of rows or FALSE on failure
+     * @access public
+     */
+    public function num_rows($res_id=NULL)
     {
-    if (!$this->db_handle)
-      return FALSE;
-
-    if ($result = $this->_get_result($res_id))    
-      return $result->numRows();
-    else
-      return FALSE;
+        if (!$this->db_handle) {
+            return FALSE;
+        }
+        if ($result = $this->_get_result($res_id)) {
+            return $result->numRows();
+        }
+        return FALSE;
     }
 
 
-  /**
-   * Get number of affected rows fort he last query
-   *
-   * @return mixed   Number of rows or FALSE on failure
-   * @access public
-   */
-  function affected_rows()
+    /**
+     * Get number of affected rows fort he last query
+     *
+     * @return mixed   Number of rows or FALSE on failure
+     * @access public
+     */
+    public function affected_rows()
     {
-    if (!$this->db_handle)
-      return FALSE;
-
-    return $this->db_handle->affectedRows();
+        if (!$this->db_handle) {
+            return FALSE;
+        }
+        return $this->db_handle->affectedRows();
     }
 
 
@@ -329,264 +336,265 @@ class rcube_db
     }
 
 
-  /**
-   * Get an associative array for one row
-   * If no query handle is specified, the last query will be taken as reference
-   *
-   * @param  number  Optional query handle identifier
-   * @return mixed   Array with col values or FALSE on failure
-   * @access public
-   */
-  function fetch_assoc($res_id=NULL)
+    /**
+     * Get an associative array for one row
+     * If no query handle is specified, the last query will be taken as reference
+     *
+     * @param  number  Optional query handle identifier
+     * @return mixed   Array with col values or FALSE on failure
+     * @access public
+     * @uses   self::_get_result()
+     * @uses   self::_fetch_row()
+     */
+    public function fetch_assoc($res_id=NULL)
     {
-    $result = $this->_get_result($res_id);
-    return $this->_fetch_row($result, DB_FETCHMODE_ASSOC);
+        $result = $this->_get_result($res_id);
+        return $this->_fetch_row($result, DB_FETCHMODE_ASSOC);
     }
 
 
-  /**
-   * Get an index array for one row
-   * If no query handle is specified, the last query will be taken as reference
-   *
-   * @param  number  Optional query handle identifier
-   * @return mixed   Array with col values or FALSE on failure
-   * @access public
-   */
-  function fetch_array($res_id=NULL)
+    /**
+     * Get an index array for one row
+     * If no query handle is specified, the last query will be taken as reference
+     *
+     * @param  number  Optional query handle identifier
+     * @return mixed   Array with col values or FALSE on failure
+     * @access public
+     * @uses   self::_fetch_row()
+     */
+    public function fetch_array($res_id=NULL)
     {
-    $result = $this->_get_result($res_id);
-    return $this->_fetch_row($result, DB_FETCHMODE_ORDERED);
+        $result = $this->_get_result($res_id);
+        return $this->_fetch_row($result, DB_FETCHMODE_ORDERED);
     }
 
 
-  /**
-   * Get co values for a result row
-   *
-   * @param  object  Query result handle
-   * @param  number  Fetch mode identifier
-   * @return mixed   Array with col values or FALSE on failure
-   * @access private
-   */
-  function _fetch_row($result, $mode)
+    /**
+     * Get co values for a result row
+     *
+     * @param  object  Query result handle
+     * @param  number  Fetch mode identifier
+     * @return mixed   Array with col values or FALSE on failure
+     * @access private
+     */
+    private function _fetch_row($result, $mode)
     {
-    if (!$result || DB::isError($result))
-      {
-      rc_bugs::raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
+        if (!$result || DB::isError($result)) {
+            rc_bugs::raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
                         'message' => $this->db_link->getMessage()), TRUE, FALSE);
-      return FALSE;
-      }
-      elseif (!is_object($result))
-      return FALSE;
-                         
-    return $result->fetchRow($mode);
+            return FALSE;
+        }
+        elseif (!is_object($result)) {
+            return FALSE;
+        }
+        return $result->fetchRow($mode);
     }
-    
 
-  /**
-   * Formats input so it can be safely used in a query
-   *
-   * @param  mixed   Value to quote
-   * @return string  Quoted/converted string for use in query
-   * @access public
-   */
-  function quote($input)
+    /**
+     * Formats input so it can be safely used in a query
+     *
+     * @param  mixed   Value to quote
+     * @return string  Quoted/converted string for use in query
+     * @access public
+     */
+    public function quote($input)
     {
-    // create DB handle if not available
-    if (!$this->db_handle)
-      $this->db_connect('r');
-      
-    // escape pear identifier chars
-    $rep_chars = array('?' => '\?',
-                       '!' => '\!',
-                       '&' => '\&');
-      
-    return $this->db_handle->quoteSmart(strtr($input, $rep_chars));
+        // create DB handle if not available
+        if (!$this->db_handle) {
+            $this->db_connect('r');
+        }
+        // escape pear identifier chars
+        $rep_chars = array(
+                        '?' => '\?',
+                        '!' => '\!',
+                        '&' => '\&'
+        );
+        return $this->db_handle->quoteSmart(strtr($input, $rep_chars));
     }
-    
 
-  /**
-   * Quotes a string so it can be safely used as a table or column name
-   *
-   * @param  string  Value to quote
-   * @return string  Quoted string for use in query
-   * @deprecated     Replaced by rcube_db::quote_identifier
-   * @see            rcube_db::quote_identifier
-   * @access public
-   */
-  function quoteIdentifier($str)
+    /**
+     * Quotes a string so it can be safely used as a table or column name
+     *
+     * @param  string  Value to quote
+     * @return string  Quoted string for use in query
+     * @deprecated     Replaced by rcube_db::quote_identifier
+     * @see            rcube_db::quote_identifier
+     * @access public
+     */
+    public function quoteIdentifier($str)
 	{
-    return $this->quote_identifier($str);
+        return $this->quote_identifier($str);
 	}
 
 
-  /**
-   * Quotes a string so it can be safely used as a table or column name
-   *
-   * @param  string  Value to quote
-   * @return string  Quoted string for use in query
-   * @access public
-   */
-  function quote_identifier($str)
+    /**
+     * Quotes a string so it can be safely used as a table or column name
+     *
+     * @param  string  Value to quote
+     * @return string  Quoted string for use in query
+     * @access public
+     */
+    public function quote_identifier($str)
     {
-    if (!$this->db_handle)
-      $this->db_connect('r');
-			
-    return $this->db_handle->quoteIdentifier($str);
+        if (!$this->db_handle) {
+            $this->db_connect('r');
+	    }
+        return $this->db_handle->quoteIdentifier($str);
     }
 
 
-  /*
-   * Return SQL function for current time and date
-   *
-   * @return string SQL function to use in query
-   * @access public
-   */
-  function now()
+    /**
+     * Return SQL function for current time and date
+     *
+     * @return string SQL function to use in query
+     * @access public
+     */
+    public function now()
     {
-    switch($this->db_provider)
-      {
-      case 'mssql':
-        return "getdate()";
+        switch ($this->db_provider) {
+            case 'mssql':
+                return "getdate()";
 
-      default:
-        return "now()";
-      }
+            default:
+                return "now()";
+        }
     }
 
 
-  /**
-   * Return SQL statement to convert a field value into a unix timestamp
-   *
-   * @param  string  Field name
-   * @return string  SQL statement to use in query
-   * @access public
-   */
-  function unixtimestamp($field)
+    /**
+     * Return SQL statement to convert a field value into a unix timestamp
+     *
+     * @param  string  Field name
+     * @return string  SQL statement to use in query
+     * @access public
+     */
+    public function unixtimestamp($field)
     {
-    switch($this->db_provider)
-      {
-      case 'pgsql':
-        return "EXTRACT (EPOCH FROM $field)";
+        switch ($this->db_provider) {
+            case 'pgsql':
+                return "EXTRACT (EPOCH FROM $field)";
 
-      case 'mssql':
-        return "datediff(s, '1970-01-01 00:00:00', $field)";
+            case 'mssql':
+                return "datediff(s, '1970-01-01 00:00:00', $field)";
 
-      default:
-        return "UNIX_TIMESTAMP($field)";
-      }
+            default:
+                return "UNIX_TIMESTAMP($field)";
+        }
     }
 
-
-  /**
-   * Return SQL statement to convert from a unix timestamp
-   *
-   * @param  string  Field name
-   * @return string  SQL statement to use in query
-   * @access public
-   */
-  function fromunixtime($timestamp)
+    /**
+     * Return SQL statement to convert from a unix timestamp
+     *
+     * @param  string  Field name
+     * @return string  SQL statement to use in query
+     * @access public
+     */
+    public function fromunixtime($timestamp)
     {
-    switch($this->db_provider)
-      {
-      case 'mysqli':
-      case 'mysql':
-      case 'sqlite':
-        return sprintf("FROM_UNIXTIME(%d)", $timestamp);
+        if (empty($timestamp)) {
+            $timestamp = mktime();
+        }
+        switch ($this->db_provider) {
+            case 'mysqli':
+            case 'mysql':
+            case 'sqlite':
+                return sprintf("FROM_UNIXTIME(%d)", $timestamp);
 
-      default:
-        return date("'Y-m-d H:i:s'", $timestamp);
-      }
+            default:
+                return date("'Y-m-d H:i:s'", $timestamp);
+        }
     }
 
-
-  /**
-   * Adds a query result and returns a handle ID
-   *
-   * @param  object  Query handle
-   * @return mixed   Handle ID or FALE on failure
-   * @access private
-   */
-  function _add_result($res)
+    /**
+     * Adds a query result and returns a handle ID
+     *
+     * @param  object  Query handle
+     * @return mixed   Handle ID or FALSE on failure
+     * @access private
+     */
+    private function _add_result($res)
     {
-    // sql error occured
-    if (DB::isError($res))
-      {
-      rc_bugs::raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
-                        'message' => $res->getMessage() . " Query: " . substr(preg_replace('/[\r\n]+\s*/', ' ', $res->userinfo), 0, 512)), TRUE, FALSE);
-      return FALSE;
-      }
-    else
-      {
-      $res_id = sizeof($this->a_query_results);
-      $this->a_query_results[$res_id] = $res;
-      $this->last_res_id = $res_id;
-      return $res_id;
-      }
+        // sql error occured
+        if (DB::isError($res)) {
+            rc_bugs::raise_error(
+                array(
+                    'code' => 500,
+                    'type' => 'db',
+                    'line' => __LINE__,
+                    'file' => __FILE__,
+                    'message' => $res->getDebugInfo() . " Query: " . substr(preg_replace('/[\r\n]+\s*/', ' ', $res->userinfo), 0, 512)
+                ),
+                TRUE,
+                FALSE
+            );
+            return FALSE;
+        }
+        $res_id = sizeof($this->a_query_results);
+        $this->a_query_results[$res_id] = $res;
+        $this->last_res_id = $res_id;
+        return $res_id;
     }
 
-
-  /**
-   * Resolves a given handle ID and returns the according query handle
-   * If no ID is specified, the last ressource handle will be returned
-   *
-   * @param  number  Handle ID
-   * @return mixed   Ressource handle or FALE on failure
-   * @access private
-   */
-  function _get_result($res_id=NULL)
+    /**
+     * Resolves a given handle ID and returns the according query handle
+     * If no ID is specified, the last ressource handle will be returned
+     *
+     * @param  number  Handle ID
+     * @return mixed   Ressource handle or FALE on failure
+     * @access private
+     */
+    private function _get_result($res_id=NULL)
     {
-    if ($res_id==NULL)
-      $res_id = $this->last_res_id;
-    
-     if ($res_id && isset($this->a_query_results[$res_id]))
-       return $this->a_query_results[$res_id];
-     else
-       return FALSE;
+        if ($res_id==NULL) {
+            $res_id = $this->last_res_id;
+        }
+        if ($res_id && isset($this->a_query_results[$res_id])) {
+            return $this->a_query_results[$res_id];
+        }
+        return FALSE;
     }
 
-
-  /**
-   * Create a sqlite database from a file
-   *
-   * @param  object  SQLite database handle
-   * @param  string  File path to use for DB creation
-   * @access private
-   */
-  function _sqlite_create_database($dbh, $file_name)
+    /**
+     * Create a sqlite database from a file
+     *
+     * @param  object  SQLite database handle
+     * @param  string  File path to use for DB creation
+     * @access private
+     * @return void
+     * @todo   Add return value.
+     */
+    private function _sqlite_create_database($dbh, $file_name)
     {
-    if (empty($file_name) || !is_string($file_name))
-      return;
+        if (empty($file_name) || !is_string($file_name)) {
+            return;
+        }
 
-    $data = '';
-    if ($fd = fopen($file_name, 'r'))
-      {
-      $data = fread($fd, filesize($file_name));
-      fclose($fd);
-      }
+        $data = '';
+        if ($fd = fopen($file_name, 'r')) {
+            $data = fread($fd, filesize($file_name));
+            fclose($fd);
+        }
 
-    if (strlen($data))
-      sqlite_exec($dbh->connection, $data);
+        if (strlen($data)) {
+            sqlite_exec($dbh->connection, $data);
+        }
     }
 
-
-  /**
-   * Add some proprietary database functions to the current SQLite handle
-   * in order to make it MySQL compatible
-   *
-   * @access private
-   */
-  function _sqlite_prepare()
+    /**
+     * Add some proprietary database functions to the current SQLite handle
+     * in order to make it MySQL compatible
+     *
+     * @access private
+     * @return void
+     */
+    private function _sqlite_prepare()
     {
-    include_once('include/rcube_sqlite.inc');
+        include_once('include/rcube_sqlite.inc');
 
-    // we emulate via callback some missing MySQL function
-    sqlite_create_function($this->db_handle->connection, "from_unixtime", "rcube_sqlite_from_unixtime");
-    sqlite_create_function($this->db_handle->connection, "unix_timestamp", "rcube_sqlite_unix_timestamp");
-    sqlite_create_function($this->db_handle->connection, "now", "rcube_sqlite_now");
-    sqlite_create_function($this->db_handle->connection, "md5", "rcube_sqlite_md5");    
+        // we emulate via callback some missing MySQL function
+        sqlite_create_function($this->db_handle->connection, "from_unixtime", "rcube_sqlite_from_unixtime");
+        sqlite_create_function($this->db_handle->connection, "unix_timestamp", "rcube_sqlite_unix_timestamp");
+        sqlite_create_function($this->db_handle->connection, "now", "rcube_sqlite_now");
+        sqlite_create_function($this->db_handle->connection, "md5", "rcube_sqlite_md5");    
     }
-
-
-  }  // end class rcube_db
-
-?>
+}  // end class rcube_db
