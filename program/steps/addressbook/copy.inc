@@ -19,26 +19,38 @@
 
 */
 
-$cid = get_input_value('_cid', RCUBE_INPUT_POST);
-$target = get_input_value('_to', RCUBE_INPUT_POST);
-if ($cid && preg_match('/^[a-z0-9\-_=]+(,[a-z0-9\-_=]+)*$/i', $cid) && strlen($target) && $target != $source)
-{
-  if ($target != '0')
-    $TARGET = new rcube_ldap($CONFIG['ldap_public'][$target]);
-  else
-    $TARGET = new rcube_contacts($DB, $_SESSION['user_id']);
-    
-  $success = false;  
-  if ($TARGET && $TARGET->ready && !$TARGET->readonly)
-    $success = $TARGET->insert($CONTACTS->search($CONTACTS->primary_key, $cid), true);
+$registry = rc_registry::getInstance();
+$OUTPUT   = $registry->get('OUTPUT', 'core');
+$CONTACTS = $registry->get('CONTACTS', 'core');
 
-  if (empty($success))
-    $OUTPUT->show_message('copyerror', 'error');
-  else
-    $OUTPUT->show_message('copysuccess', 'notice', array('nr' => count($success)));
+$cid    = rc_main::get_input_value('_cid', RCUBE_INPUT_POST);
+$target = rc_main::get_input_value('_to', RCUBE_INPUT_POST);
+if (
+    $cid
+    && preg_match('/^[a-z0-9\-_=]+(,[a-z0-9\-_=]+)*$/i', $cid)
+    && strlen($target)
+    && $target != $source
+) {
+    if ($target != '0') {
+        $TARGET = new rcube_ldap($CONFIG['ldap_public'][$target]);
+    }
+    else {
+        $TARGET = new rcube_contacts($DB, $_SESSION['user_id']);
+    }
+
+    $success = false;  
+    if ($TARGET && $TARGET->ready && !$TARGET->readonly) {
+        $success = $TARGET->insert($CONTACTS->search($CONTACTS->primary_key, $cid), true);
+    }
+
+    if (empty($success)) {
+        $OUTPUT->show_message('copyerror', 'error');
+    }
+    else {
+        $OUTPUT->show_message('copysuccess', 'notice', array('nr' => count($success)));
+    }
 }
-  
+
 // send response
 $OUTPUT->send();
-
 ?>

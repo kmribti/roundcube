@@ -19,6 +19,10 @@
 
 */
 
+$registry = rc_registry::getInstance();
+$OUTPUT   = $registry->get('OUTPUT', 'core');
+$CONTACTS = $registry->get('CONTACTS', 'core');
+
 // get contacts for this user
 $result = $CONTACTS->list_records();
 
@@ -31,5 +35,4 @@ rcmail_js_contacts_list($result);
   
 // send response
 $OUTPUT->send();
-
 ?>

@@ -19,6 +19,10 @@
 
 */
 
+$registry = rc_registry::getInstance();
+$OUTPUT   = $registry->get('OUTPUT', 'core');
+$CONTACTS = $registry->get('CONTACTS', 'core');
+
 $cid        = rc_main::get_input_value('_cid', RCUBE_INPUT_GET);
 $recipients = null;
 $mailto     = array();
