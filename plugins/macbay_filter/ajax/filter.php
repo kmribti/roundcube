@@ -5,7 +5,7 @@
 $_mb_filter_form_id = "filter_" . md5($_mb_filter_name) . '_' . time();
 ?>
 <!-- START Filter -->
-<div id="<?php echo $_mb_filter_form_id; ?>" class="formrow">
+<div id="<?php echo $_mb_filter_form_id; ?>" class="formrow<?php echo ((isset($_class) && !empty($_class))?$_class:''); ?>">
 	<label>
 	   <span class="ajaxfakelink" onclick="$('#content_<?php echo $_mb_filter_form_id; ?>').slideToggle('slow');">
 	       <?php echo $_mb_filter_name; ?> (Priorit&auml;t: <?php echo $_mb_filter_prio; ?>)

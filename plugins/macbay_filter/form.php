@@ -53,23 +53,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($error_msg)) {
             <input type="hidden" name="_plugin_action" value="add" />
         </form>
     </div><br clear="left" />
-    <form id="currentRules" method="post" action="<?php echo $RC_URI; ?>?_task=plugin&_action=macbay_filter/form.php" style="margin:0 0 0 0 !important;width:760px;">
+    <div class="rpop_txt">
+    	<form id="currentRules" method="post" action="<?php echo $RC_URI; ?>?_task=plugin&_action=macbay_filter/form.php" style="margin:0 0 0 0 !important;width:760px;">
         <fieldset>
         	<h2>Filter und Regeln konfigurieren</h2>
         	<?php
         	if (count($mb_rules) > 0):
+                $_class = '';
             	foreach($mb_rules AS $mb_rule):
-            	   $_mb_filter_name = $mb_rule[1];
-            	   $_mb_filter_prio = $mb_rule[0];
-            	   include dirname(__FILE__) . '/ajax/filter.php';
+                    $_class = (($_class == '')?' odd':'');
 
-            	   /**
-            	    * garbage collection
-            	    */
-            	   unset($_mb_filter_name);
-        	       unset($_mb_filter_prio);
-        	       unset($mb_rule);
-        	   endforeach;
+            	    $_mb_filter_name = $mb_rule[1];
+            	    $_mb_filter_prio = $mb_rule[0];
+            	    include dirname(__FILE__) . '/ajax/filter.php';
+
+            	    /**
+            	     * garbage collection
+            	     */
+            	    unset($_mb_filter_name);
+        	        unset($_mb_filter_prio);
+        	        unset($mb_rule);
+        	    endforeach;
         	else:
                 echo 'Sie haben noch keine Regeln angelegt.';
         	endif;
@@ -77,6 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($error_msg)) {
         </fieldset>
         <input type="hidden" name="_plugin_action" value="save" />
     </form>
+    </div>
     <?php if (count($mb_rules) > 0): ?>
     <div id="saveBtn" style="margin:10px;">
 		<div class="btn btn-active-big">
