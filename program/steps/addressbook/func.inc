@@ -1,5 +1,4 @@
 <?php
-
 /*
  +-----------------------------------------------------------------------+
  | program/steps/addressbook/func.inc                                    |
@@ -19,21 +18,44 @@
 
 */
 
+/**
+ * rcube_contacts
+ * @ignore
+ */
 require_once 'include/rcube_contacts.inc';
+
+/**
+ * rcube_ldap
+ * @ignore
+ */
 require_once 'include/rcube_ldap.inc';
 
 $registry = rc_registry::getInstance();
 $CONFIG   = $registry->get('CONFIG', 'core');
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 
-rc_main::tfk_debug("ABOOK PLUGIN? " . $CONFIG['addressbook_plugin']);
+/**
+ * @todo Create a class file from local functions
+ * @todo Add documentation to this file.
+ */
+
+//rc_main::tfk_debug("ABOOK PLUGIN? " . $CONFIG['addressbook_plugin']);
 
 // instantiate a contacts object according to the given source
-if (($source = get_input_value('_source', RCUBE_INPUT_GPC)) && isset($CONFIG['ldap_public'][$source])) {
+if (
+    ($source = rc_main::get_input_value('_source', RCUBE_INPUT_GPC))
+    && isset($CONFIG['ldap_public'][$source])
+) {
     $CONTACTS = new rcube_ldap($CONFIG['ldap_public'][$source]);
 }
 else {
-    if (isset($CONFIG['addressbook_plugin']) && empty($CONFIG['addressbook_plugin']) === FALSE) {
+    /**
+     * @todo resolve conditional include (maybe autoload)
+     */
+    if (
+        isset($CONFIG['addressbook_plugin'])
+        && empty($CONFIG['addressbook_plugin']) === FALSE
+    ) {
         require_once 'plugins/addressbook/rcube_contacts_' . $CONFIG['addressbook_plugin'] . '.inc';
         $abook_class = 'rcube_contacts_' . $CONFIG['addressbook_plugin'];
         $CONTACTS = new $abook_class (
@@ -144,7 +166,16 @@ function rcmail_directory_list($attrib)
 }
 
 
-// return the message list as HTML table
+/**
+ * return the message list as HTML table
+ *
+ * @access public
+ * @param  array $attrib
+ * @return string
+ * @uses   rc_registry::getInstance()
+ * @uses   rc_main::rcube_table_output()
+ * @uses   rc_main::rcube_add_label()
+ */
 function rcmail_contacts_list($attrib)
 {
     $registry = rc_registry::getInstance();
@@ -176,7 +207,7 @@ function rcmail_contacts_list($attrib)
     $OUTPUT->include_script('list.js');
 
     // add some labels to client
-    rcube_add_label('deletecontactconfirm');
+    rc_main::rcube_add_label('deletecontactconfirm');
 
     return $out;
 }
@@ -205,7 +236,14 @@ function rcmail_js_contacts_list($result, $prefix='')
 }
 
 
-// similar function as /steps/settings/identities.inc::rcmail_identity_frame()
+/**
+ * rcmail_contract_from
+ *
+ * @access public
+ * @param  array $attrib
+ * @return string
+ * @see    rcmail_identity_frame()
+ */
 function rcmail_contact_frame($attrib)
 {
     $registry = rc_registry::getInstance();
