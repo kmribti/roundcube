@@ -140,7 +140,7 @@ class rcube_contacts
 
             $_query = "SELECT * FROM " . $this->db_name;
             $_query.= " WHERE del<>1";
-            $_qiery.= " AND user_id=?";
+            $_query.= " AND user_id=?";
             $_query.= ($this->filter ? " AND (".$this->filter.")" : "");
             $_query.= " ORDER BY name";
 
