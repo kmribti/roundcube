@@ -4,12 +4,12 @@ if (isset($_mb_filter_form_id) === false) {
 }
 $cond_count = 'new';
 ?>
-<div id="<?php echo $_mb_filter_form_id; ?>" class="formrow">
+<div id="<?php echo $_mb_filter_form_id; ?>">
 	<h2>Neuen Regelsatz anlegen</h2>
 </div>
 <div class="formrow">
     <label for="filter_priority_new">Priorit&auml;t</label>
-    <select id="filter_priority_new" class="normal" name="filter_priority_new">
+    <select id="filter_priority_new" name="filter_priority_new" style="width:40px;">
 <?php for($x=9; $x>=1; $x--): ?>
         <option value="<?php echo $x; ?>"><?php echo $x; ?></option>
 <?php endfor; ?>
@@ -88,4 +88,4 @@ endif;
 </div>
 <div class="btn btn-active-big">
     <p><span onclick="$('#newFormWrapper').slideUp('slow');">Abbrechen</span></p>
-</div>
+</div><br/><br/>
