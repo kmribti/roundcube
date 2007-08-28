@@ -27,6 +27,15 @@
 require_once 'lib/imap.inc';
 require_once 'lib/mime.inc';
 
+/**
+ * rcube_message_part
+ */
+require_once dirname(__FILE__) . '/rcube/message_part.php';
+
+/**
+ * rcube_header_sorter
+ */
+require_once dirname(__FILE__) . '/rcube/header_sorter.php';
 
 /**
  * Interface class for accessing an IMAP server
@@ -294,6 +303,8 @@ class rcube_imap
 
     /**
      * Return the saved search set as hash array
+     *
+     * @return array
      */
     function get_search_set()
     {
@@ -371,7 +382,7 @@ class rcube_imap
                 $a_out[] = $name;
             }
             else {
-                rc_main::tfk_debug('Filtered out: ' . $mbox_row);
+                //rc_main::tfk_debug('Filtered out: ' . $mbox_row);
             }
         }
 
@@ -1435,8 +1446,8 @@ class rcube_imap
         $iil_move = iil_C_Move($this->conn, join(',', $a_mids), $from_mbox, $to_mbox);
         $moved = !($iil_move === false || $iil_move < 0);
 
-        rc_main::tfk_debug('Iil_move: ' . $iil_move);
-        rc_main::tfk_debug('Moved? (#2): ' . $moved);
+        //rc_main::tfk_debug('Iil_move: ' . $iil_move);
+        //rc_main::tfk_debug('Moved? (#2): ' . $moved);
 
         // send expunge command in order to have the moved message
         // really deleted from the source mailbox
@@ -2082,255 +2093,276 @@ class rcube_imap
     }
 
 
-  function add_message_cache($key, $index, $headers, $struct=null)
+    /**
+     * add_message_cache
+     * @todo docs
+     */
+    function add_message_cache($key, $index, $headers, $struct=null)
     {
-    if (!$this->caching_enabled || empty($key) || !is_object($headers) || empty($headers->uid))
-      return;
-
-    // check for an existing record (probly headers are cached but structure not)
-    $sql_result = $this->db->query(
-        "SELECT message_id
-         FROM ". rc_main::get_table_name('messages')."
-         WHERE  user_id=?
-         AND    cache_key=?
-         AND    uid=?
-         AND    del<>1",
-        $_SESSION['user_id'],
-        $key,
-        $headers->uid);
-
-    // update cache record
-    if ($sql_arr = $this->db->fetch_assoc($sql_result))
-      {
-      $this->db->query(
-        "UPDATE ". rc_main::get_table_name('messages')."
-         SET   idx=?, headers=?, structure=?
-         WHERE message_id=?",
-        $index,
-        serialize($headers),
-        is_object($struct) ? serialize($struct) : NULL,
-        $sql_arr['message_id']
-        );
-      }
-    else  // insert new record
-      {
-      $this->db->query(
-        "INSERT INTO ". rc_main::get_table_name('messages')."
-         (user_id, del, cache_key, created, idx, uid, subject, ".$this->db->quoteIdentifier('from').", ".$this->db->quoteIdentifier('to').", cc, date, size, headers, structure)
-         VALUES (?, 0, ?, ".$this->db->now().", ?, ?, ?, ?, ?, ?, ".$this->db->fromunixtime($headers->timestamp).", ?, ?, ?)",
-        $_SESSION['user_id'],
-        $key,
-        $index,
-        $headers->uid,
-        (string)substr($this->decode_header($headers->subject, TRUE), 0, 128),
-        (string)substr($this->decode_header($headers->from, TRUE), 0, 128),
-        (string)substr($this->decode_header($headers->to, TRUE), 0, 128),
-        (string)substr($this->decode_header($headers->cc, TRUE), 0, 128),
-        (int)$headers->size,
-        serialize($headers),
-        is_object($struct) ? serialize($struct) : NULL
-        );
-      }
-    }
-
-
-  function remove_message_cache($key, $index)
-    {
-    $this->db->query(
-      "DELETE FROM ". rc_main::get_table_name('messages')."
-       WHERE  user_id=?
-       AND    cache_key=?
-       AND    idx=?",
-      $_SESSION['user_id'],
-      $key,
-      $index);
-    }
-
-
-  function clear_message_cache($key, $start_index=1)
-    {
-    $this->db->query(
-      "DELETE FROM ". rc_main::get_table_name('messages')."
-       WHERE  user_id=?
-       AND    cache_key=?
-       AND    idx>=?",
-      $_SESSION['user_id'],
-      $key,
-      $start_index);
-    }
-
-
-
-
-  /* --------------------------------
-   *   encoding/decoding methods
-   * --------------------------------*/
-
-
-  function decode_address_list($input, $max=null, $decode=true)
-    {
-    $a = $this->_parse_address_list($input, $decode);
-    $out = array();
-
-    if (!is_array($a))
-      return $out;
-
-    $c = count($a);
-    $j = 0;
-
-    foreach ($a as $val)
-      {
-      $j++;
-      $address = $val['address'];
-      $name = preg_replace(array('/^[\'"]/', '/[\'"]$/'), '', trim($val['name']));
-      if ($name && $address && $name != $address)
-        $string = sprintf('%s <%s>', strpos($name, ',')!==FALSE ? '"'.$name.'"' : $name, $address);
-      else if ($address)
-        $string = $address;
-      else if ($name)
-        $string = $name;
-
-      $out[$j] = array('name' => $name,
-                       'mailto' => $address,
-                       'string' => $string);
-
-      if ($max && $j==$max)
-        break;
-      }
-
-    return $out;
-    }
-
-
-  function decode_header($input, $remove_quotes=FALSE)
-    {
-    $str = $this->decode_mime_string((string)$input);
-    if ($str{0}=='"' && $remove_quotes)
-      $str = str_replace('"', '', $str);
-
-    return $str;
-    }
-
-
-  /**
-   * Decode a mime-encoded string to internal charset
-   *
-   * @access static
-   */
-  function decode_mime_string($input, $fallback=null)
-    {
-    $out = '';
-
-    $pos = strpos($input, '=?');
-    if ($pos !== false)
-      {
-      $out = substr($input, 0, $pos);
-
-      $end_cs_pos = strpos($input, "?", $pos+2);
-      $end_en_pos = strpos($input, "?", $end_cs_pos+1);
-      $end_pos = strpos($input, "?=", $end_en_pos+1);
-
-      $encstr = substr($input, $pos+2, ($end_pos-$pos-2));
-      $rest = substr($input, $end_pos+2);
-
-      $out .= rcube_imap::_decode_mime_string_part($encstr);
-      $out .= rcube_imap::decode_mime_string($rest, $fallback);
-
-      return $out;
-      }
-
-    // no encoding information, use fallback
-    return rc_main::rcube_charset_convert($input, !empty($fallback) ? $fallback : 'ISO-8859-1');
-    }
-
-
-  /**
-   * Decode a part of a mime-encoded string
-   *
-   * @access static
-   */
-  function _decode_mime_string_part($str)
-    {
-    $a = explode('?', $str);
-    $count = count($a);
-
-    // should be in format "charset?encoding?base64_string"
-    if ($count >= 3)
-      {
-      for ($i=2; $i<$count; $i++)
-        $rest.=$a[$i];
-
-      if (($a[1]=="B")||($a[1]=="b"))
-        $rest = base64_decode($rest);
-      else if (($a[1]=="Q")||($a[1]=="q"))
-        {
-        $rest = str_replace("_", " ", $rest);
-        $rest = quoted_printable_decode($rest);
+        if (!$this->caching_enabled || empty($key) || !is_object($headers) || empty($headers->uid)) {
+            return;
         }
 
-      return rc_main::rcube_charset_convert($rest, $a[0]);
-      }
-    else
-      return $str;    // we dont' know what to do with this
+        // check for an existing record (probly headers are cached but structure not)
+        $_query = "SELECT message_id FROM " . rc_main::get_table_name('messages');
+        $_query.= " WHERE user_id=?";
+        $_query.= " AND cache_key=?";
+        $_query.= " AND uid=?";
+        $_query.= " AND del<>1";
+
+        $sql_result = $this->db->query(
+                        $_query,
+                        $_SESSION['user_id'],
+                        $key,
+                        $headers->uid
+        );
+
+        //rc_main::tfk_debug(var_export($headers, true));
+
+        // update cache record
+        if ($sql_arr = $this->db->fetch_assoc($sql_result)) {
+            $_query = "UPDATE " . rc_main::get_table_name('messages');
+            $_query.= " SET idx=?, headers=?, structure=?";
+            $_query.= " WHERE message_id=?";
+            $this->db->query(
+                $_query,
+                $index,
+                serialize($headers),
+                is_object($struct) ? serialize($struct) : NULL,
+                $sql_arr['message_id']
+            );
+            return;
+        }
+
+        if (!isset($headers->timestamp) || empty($headers->timestamp)) {
+            rc_main::tfk_debug('NO TIMESTAMP: ' . var_export($headers, true));
+            $headers->timestamp = mktime();
+        }
+
+        // insert new record
+        $_query = "INSERT INTO " . rc_main::get_table_name('messages');
+        $_query.= " (user_id, del, cache_key, created, idx, uid, subject,";
+        $_query.= " " . $this->db->quoteIdentifier('from') . ",";
+        $_query.= " " . $this->db->quoteIdentifier('to').",";
+        $_query.= " cc, date, size, headers, structure)";
+        $_query.= " VALUES (?, 0, ?,";
+        $_query.= " " . $this->db->now() . ", ?, ?, ?, ?, ?, ?,";
+        $_query.= " " . $this->db->fromunixtime($headers->timestamp) . ",";
+        $_query.= " ?, ?, ?)";
+        $this->db->query(
+                $_query,
+                $_SESSION['user_id'],
+                $key,
+                $index,
+                $headers->uid,
+                (string)substr($this->decode_header($headers->subject, TRUE), 0, 128),
+                (string)substr($this->decode_header($headers->from, TRUE), 0, 128),
+                (string)substr($this->decode_header($headers->to, TRUE), 0, 128),
+                (string)substr($this->decode_header($headers->cc, TRUE), 0, 128),
+                (int)$headers->size,
+                serialize($headers),
+                is_object($struct) ? serialize($struct) : NULL
+        );
     }
 
-
-  function mime_decode($input, $encoding='7bit')
+    function remove_message_cache($key, $index)
     {
-    switch (strtolower($encoding))
-      {
-      case '7bit':
-        return $input;
-        break;
-
-      case 'quoted-printable':
-        return quoted_printable_decode($input);
-        break;
-
-      case 'base64':
-        return base64_decode($input);
-        break;
-
-      default:
-        return $input;
-      }
+        $this->db->query(
+            "DELETE FROM ". rc_main::get_table_name('messages')."
+            WHERE  user_id=?
+            AND    cache_key=?
+            AND    idx=?",
+            $_SESSION['user_id'],
+            $key,
+            $index
+        );
     }
 
 
-  function mime_encode($input, $encoding='7bit')
+    function clear_message_cache($key, $start_index=1)
     {
-    switch ($encoding)
-      {
-      case 'quoted-printable':
-        return quoted_printable_encode($input);
-        break;
-
-      case 'base64':
-        return base64_encode($input);
-        break;
-
-      default:
-        return $input;
-      }
+        $this->db->query(
+            "DELETE FROM ". rc_main::get_table_name('messages')."
+            WHERE  user_id=?
+            AND    cache_key=?
+            AND    idx>=?",
+            $_SESSION['user_id'],
+            $key,
+            $start_index
+        );
     }
 
 
-  // convert body chars according to the ctype_parameters
-  function charset_decode($body, $ctype_param)
+
+
+    /* --------------------------------
+     *   encoding/decoding methods
+     * --------------------------------*/
+
+
+    function decode_address_list($input, $max=null, $decode=true)
     {
-    if (is_array($ctype_param) && !empty($ctype_param['charset']))
-      return rc_main::rcube_charset_convert($body, $ctype_param['charset']);
+        $a = $this->_parse_address_list($input, $decode);
+        $out = array();
 
-    // defaults to what is specified in the class header
-    return rc_main::rcube_charset_convert($body,  'ISO-8859-1');
+        if (!is_array($a)) {
+            return $out;
+        }
+
+        $c = count($a);
+        $j = 0;
+
+        foreach ($a as $val) {
+            $j++;
+            $address = $val['address'];
+            $name    = preg_replace(array('/^[\'"]/', '/[\'"]$/'), '', trim($val['name']));
+
+            if ($name && $address && $name != $address) {
+                $string = sprintf('%s <%s>', strpos($name, ',')!==FALSE ? '"'.$name.'"' : $name, $address);
+            }
+            else if ($address) {
+                $string = $address;
+            }
+            else if ($name) {
+                $string = $name;
+            }
+
+            $out[$j] = array(
+                        'name' => $name,
+                        'mailto' => $address,
+                        'string' => $string
+            );
+
+            if ($max && $j==$max) {
+                break;
+            }
+        }
+        return $out;
     }
 
 
+    function decode_header($input, $remove_quotes=FALSE)
+    {
+        $str = $this->decode_mime_string((string)$input);
+        if ($str{0}=='"' && $remove_quotes) {
+            $str = str_replace('"', '', $str);
+        }
+        return $str;
+    }
 
 
-  /* --------------------------------
-   *         private methods
-   * --------------------------------*/
+    /**
+     * Decode a mime-encoded string to internal charset
+     *
+     * @access static
+     */
+    static function decode_mime_string($input, $fallback=null)
+    {
+        $out = '';
+
+        $pos = strpos($input, '=?');
+        if ($pos !== false) {
+            $out = substr($input, 0, $pos);
+
+            $end_cs_pos = strpos($input, "?", $pos+2);
+            $end_en_pos = strpos($input, "?", $end_cs_pos+1);
+            $end_pos = strpos($input, "?=", $end_en_pos+1);
+
+            $encstr = substr($input, $pos+2, ($end_pos-$pos-2));
+            $rest = substr($input, $end_pos+2);
+
+            $out .= rcube_imap::_decode_mime_string_part($encstr);
+            $out .= rcube_imap::decode_mime_string($rest, $fallback);
+
+            return $out;
+        }
+
+        // no encoding information, use fallback
+        return rc_main::rcube_charset_convert($input, !empty($fallback) ? $fallback : 'ISO-8859-1');
+    }
+
+
+    /**
+     * Decode a part of a mime-encoded string
+     *
+     * @access static
+     */
+    static function _decode_mime_string_part($str)
+    {
+        $a = explode('?', $str);
+        $count = count($a);
+
+        // should be in format "charset?encoding?base64_string"
+        if ($count >= 3) {
+            for ($i=2; $i<$count; $i++) {
+                $rest.=$a[$i];
+            }
+
+            if (($a[1]=="B")||($a[1]=="b")) {
+                $rest = base64_decode($rest);
+            }
+            else if (($a[1]=="Q")||($a[1]=="q")) {
+                $rest = str_replace("_", " ", $rest);
+                $rest = quoted_printable_decode($rest);
+            }
+
+            return rc_main::rcube_charset_convert($rest, $a[0]);
+        }
+        return $str;    // we dont' know what to do with this
+    }
+
+    function mime_decode($input, $encoding='7bit')
+    {
+        switch (strtolower($encoding)) {
+            case '7bit':
+                return $input;
+                break;
+
+            case 'quoted-printable':
+                return quoted_printable_decode($input);
+                break;
+
+            case 'base64':
+                return base64_decode($input);
+                break;
+
+            default:
+                return $input;
+        }
+    }
+
+    function mime_encode($input, $encoding='7bit')
+    {
+        switch ($encoding) {
+            case 'quoted-printable':
+                return quoted_printable_encode($input);
+                break;
+
+            case 'base64':
+                return base64_encode($input);
+                break;
+
+            default:
+                return $input;
+        }
+    }
+
+
+    // convert body chars according to the ctype_parameters
+    function charset_decode($body, $ctype_param)
+    {
+        if (is_array($ctype_param) && !empty($ctype_param['charset'])) {
+            return rc_main::rcube_charset_convert($body, $ctype_param['charset']);
+        }
+
+        // defaults to what is specified in the class header
+        return rc_main::rcube_charset_convert($body,  'ISO-8859-1');
+    }
+
+
+    /* --------------------------------
+     *         private methods
+     * --------------------------------*/
 
 
   function _mod_mailbox($mbox_name, $mode='in')
@@ -2577,101 +2609,6 @@ class rcube_imap
     $result[] = substr($string, $p);
     return $result;
     }
-  }
-
-
-/**
- * Class representing a message part
- */
-class rcube_message_part
-{
-  var $mime_id = '';
-  var $ctype_primary = 'text';
-  var $ctype_secondary = 'plain';
-  var $mimetype = 'text/plain';
-  var $disposition = '';
-  var $filename = '';
-  var $encoding = '8bit';
-  var $charset = '';
-  var $size = 0;
-  var $headers = array();
-  var $d_parameters = array();
-  var $ctype_parameters = array();
-
-}
-
-
-/**
- * rcube_header_sorter
- *
- * Class for sorting an array of iilBasicHeader objects in a predetermined order.
- *
- * @author Eric Stadtherr
- */
-class rcube_header_sorter
-{
-   var $sequence_numbers = array();
-
-   /**
-    * set the predetermined sort order.
-    *
-    * @param array $seqnums numerically indexed array of IMAP message sequence numbers
-    */
-   function set_sequence_numbers($seqnums)
-   {
-      $this->sequence_numbers = $seqnums;
-   }
-
-   /**
-    * sort the array of header objects
-    *
-    * @param array $headers array of iilBasicHeader objects indexed by UID
-    */
-   function sort_headers(&$headers)
-   {
-      /*
-       * uksort would work if the keys were the sequence number, but unfortunately
-       * the keys are the UIDs.  We'll use uasort instead and dereference the value
-       * to get the sequence number (in the "id" field).
-       *
-       * uksort($headers, array($this, "compare_seqnums"));
-       */
-       uasort($headers, array($this, "compare_seqnums"));
-   }
-
-   /**
-    * get the position of a message sequence number in my sequence_numbers array
-    *
-    * @param integer $seqnum message sequence number contained in sequence_numbers
-    */
-   function position_of($seqnum)
-   {
-      $c = count($this->sequence_numbers);
-      for ($pos = 0; $pos <= $c; $pos++)
-      {
-         if ($this->sequence_numbers[$pos] == $seqnum)
-            return $pos;
-      }
-      return -1;
-   }
-
-   /**
-    * Sort method called by uasort()
-    */
-   function compare_seqnums($a, $b)
-   {
-      // First get the sequence number from the header object (the 'id' field).
-      $seqa = $a->id;
-      $seqb = $b->id;
-
-      // then find each sequence number in my ordered list
-      $posa = $this->position_of($seqa);
-      $posb = $this->position_of($seqb);
-
-      // return the relative position as the comparison value
-      $ret = $posa - $posb;
-      return $ret;
-   }
 }
 
 
@@ -2684,61 +2621,55 @@ class rcube_header_sorter
  * @return encoded string
  */
 function quoted_printable_encode($input, $line_max=76, $space_conv=false)
-  {
-  $hex = array('0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F');
-  $lines = preg_split("/(?:\r\n|\r|\n)/", $input);
-  $eol = "\r\n";
-  $escape = "=";
-  $output = "";
+{
+    $hex = array('0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F');
+    $lines = preg_split("/(?:\r\n|\r|\n)/", $input);
+    $eol = "\r\n";
+    $escape = "=";
+    $output = "";
 
-  while( list(, $line) = each($lines))
-    {
-    //$line = rtrim($line); // remove trailing white space -> no =20\r\n necessary
-    $linlen = strlen($line);
-    $newline = "";
-    for($i = 0; $i < $linlen; $i++)
-      {
-      $c = substr( $line, $i, 1 );
-      $dec = ord( $c );
-      if ( ( $i == 0 ) && ( $dec == 46 ) ) // convert first point in the line into =2E
-        {
-        $c = "=2E";
-        }
-      if ( $dec == 32 )
-        {
-        if ( $i == ( $linlen - 1 ) ) // convert space at eol only
-          {
-          $c = "=20";
-          }
-        else if ( $space_conv )
-          {
-          $c = "=20";
-          }
-        }
-      else if ( ($dec == 61) || ($dec < 32 ) || ($dec > 126) )  // always encode "\t", which is *not* required
-        {
-        $h2 = floor($dec/16);
-        $h1 = floor($dec%16);
-        $c = $escape.$hex["$h2"].$hex["$h1"];
-        }
-
-      if ( (strlen($newline) + strlen($c)) >= $line_max )  // CRLF is not counted
-        {
-        $output .= $newline.$escape.$eol; // soft line break; " =\r\n" is okay
+    while( list(, $line) = each($lines)) {
+        //$line = rtrim($line); // remove trailing white space -> no =20\r\n necessary
+        $linlen = strlen($line);
         $newline = "";
-        // check if newline first character will be point or not
-        if ( $dec == 46 )
-          {
-          $c = "=2E";
-          }
-        }
-      $newline .= $c;
-      } // end of for
-    $output .= $newline.$eol;
+        for($i = 0; $i < $linlen; $i++) {
+            $c = substr( $line, $i, 1 );
+            $dec = ord( $c );
+            if ( ( $i == 0 ) && ( $dec == 46 ) ) {
+                // convert first point in the line into =2E
+                $c = "=2E";
+            }
+            if ( $dec == 32 )
+            {
+                if ( $i == ( $linlen - 1 ) ) // convert space at eol only
+                {
+                $c = "=20";
+                }
+                else if ( $space_conv )
+                {
+                    $c = "=20";
+                }
+            }
+            else if ( ($dec == 61) || ($dec < 32 ) || ($dec > 126) )  // always encode "\t", which is *not* required
+            {
+                $h2 = floor($dec/16);
+                $h1 = floor($dec%16);
+                $c = $escape.$hex["$h2"].$hex["$h1"];
+            }
+
+            if ( (strlen($newline) + strlen($c)) >= $line_max )  // CRLF is not counted
+            {
+                $output .= $newline.$escape.$eol; // soft line break; " =\r\n" is okay
+                $newline = "";
+                // check if newline first character will be point or not
+                if ( $dec == 46 ) {
+                    $c = "=2E";
+                }
+            }
+            $newline .= $c;
+        } // end of for
+        $output .= $newline.$eol;
     } // end of while
 
-  return trim($output);
-  }
-
-
-?>
+    return trim($output);
+}
