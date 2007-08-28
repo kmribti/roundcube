@@ -1,9 +1,12 @@
 <?php
+/**
+ * to counter a direct call
+ */
 if (defined('MACBAY_FILTER_MADNESS') === FALSE) {
     die('no go.');
 }
 $_plugin_action = (string) @$_POST['_plugin_action'];
-switch($_plugin_action) {
+switch ($_plugin_action) {
     case 'add':
         //echo '<pre>'; var_dump($_POST); echo '</pre>';
         $status = $macbay_filter->addRule($_POST);

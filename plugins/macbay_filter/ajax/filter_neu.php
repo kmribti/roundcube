@@ -8,14 +8,6 @@ $cond_count = 'new';
 	<h2>Neuen Regelsatz anlegen</h2>
 </div>
 <div class="formrow">
-    <label for="filter_priority_new">Priorit&auml;t</label>
-    <select id="filter_priority_new" name="filter_priority_new" style="width:40px;">
-<?php for($x=9; $x>=1; $x--): ?>
-        <option value="<?php echo $x; ?>"><?php echo $x; ?></option>
-<?php endfor; ?>
-    </select>
-</div>
-<div class="formrow">
     <label for="filter_name_new">Name</label>
     <input type="text" id="filter_name_new" name="filter_name_new" value="Neuer Filter <?php echo time(); ?>" />
 </div>

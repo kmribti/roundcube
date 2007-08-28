@@ -60,7 +60,7 @@ final class macbay_filter
                 $keep,
                 array(
                     'filter_name_new'     => $filter_name,
-                    'filter_priority_new' => @$data['filter_prio'][$filter_key],
+                    'filter_priority_new' => 5, // @$data['filter_prio'][$filter_key],
                     'rule_cond'           => $rule_cond,
                     'rule_mode'           => $rule_mode,
                     'rule_value'          => $rule_value,
