@@ -1020,8 +1020,9 @@ function rcmail_print_body($part, $safe=FALSE, $plain=FALSE)
     }
     else {
         /**
-         * 'flowed' hints at 72 characters, and it's
-         * flawed anyway
+         * @author Till Klampaeckel <till@php.net>
+         * @desc   'flowed' hints at 72 characters, and it's flawed anyway.
+         * @link   http://www.holgermetzger.de/mailundnews.html#33
          */
         $body = wordwrap(trim($body), 72);
     }
