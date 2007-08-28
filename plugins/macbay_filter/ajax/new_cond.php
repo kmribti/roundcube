@@ -3,7 +3,7 @@ $add_id = $_POST['id'];
 $add_id = str_replace('_add', '', $add_id);
 $add_id.= '_' . time();
 ?>
-<div id="<?php echo $add_id; ?>" class="formrow formrow-indent">
+<div id="<?php echo $add_id; ?>" class="formrow-indent">
 	<label for="cond_<?php echo $add_id; ?>">&nbsp;</label>
 	<select name="rule_cond[<?php echo $add_id; ?>]" onchange="repopulateMode('<?php echo $add_id; ?>');" id="cond_<?php echo $add_id; ?>" class="medium" tabindex="">
         <option value="Subject">Betreff</option>

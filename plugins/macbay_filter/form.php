@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($error_msg)) {
         </ul>
     </div>
 	<div id="newFormWrapper" style="padding-top:20px;">
-        <form action="<?php echo $RC_URI; ?>?_task=plugin&_action=macbay_filter/form.php" id="newRule" method="post" style="margin:none;width:760px;">
+        <form action="<?php echo $RC_URI; ?>?_task=plugin&_action=macbay_filter/form.php" id="newRule" method="post" style="margin:0 0 0 10px;width:760px;">
             <?php require dirname(__FILE__) . '/ajax/filter_neu.php'; ?>
             <input type="hidden" name="_plugin_action" value="add" />
         </form>
