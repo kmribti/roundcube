@@ -38,7 +38,7 @@ function rcube_webmail()
 
     // webmail client settings
     this.dblclick_time = 500;
-    this.message_time = 5000;
+    this.message_time  = 3000;
 
     this.identifier_expr = new RegExp('[^0-9a-z\-_]', 'gi');
 
@@ -696,7 +696,7 @@ function rcube_webmail()
             }
           }
 
-        this.goto_url('get', qstring+'&_download=1');
+        this.goto_url('get', qstring+'&_download=1', false);
         break;
 
       case 'select-all':
@@ -1051,37 +1051,40 @@ function rcube_webmail()
       this.set_classname(li, 'droptarget', true);
     }
 
-  this.unfocus_folder = function(id)
+    this.unfocus_folder = function(id)
     {
-    var li;
-    if (this.drag_active && (li = this.get_folder_li(id)))
-      this.set_classname(li, 'droptarget', false);
+        var li;
+        if (this.drag_active && (li = this.get_folder_li(id))) {
+            this.set_classname(li, 'droptarget', false);
+        }
     }
 
-  // onmouseup handler for folder list item
-  this.folder_mouse_up = function(id)
+    // onmouseup handler for folder list item
+    this.folder_mouse_up = function(id)
     {
-    if (this.drag_active)
-      {
-      this.unfocus_folder(id);
-      this.command('moveto', id);
-      }
+        if (this.drag_active) {
+            this.unfocus_folder(id);
+            this.command('moveto', id);
+        }
 
-    return false;
+        // Hide message command buttons until a message is selected  
+        this.enable_command('reply', 'reply-all', 'forward', 'delete', 'print', false);  
+
+        return false;
     };
 
-  this.click_on_list = function(e)
+    this.click_on_list = function(e)
     {
-    if (this.message_list)
-      this.message_list.focus();
-    else if (this.contact_list)
-        this.contact_list.focus();
+        if (this.message_list)
+            this.message_list.focus();
+        else if (this.contact_list)
+            this.contact_list.focus();
 
-    var mbox_li;
-    if (mbox_li = this.get_folder_li())
-      this.set_classname(mbox_li, 'unfocused', true);
+        var mbox_li;
+        if (mbox_li = this.get_folder_li())
+            this.set_classname(mbox_li, 'unfocused', true);
 
-    rcube_event.cancel(e);
+        rcube_event.cancel(e);
     };
 
 
@@ -1091,13 +1094,14 @@ function rcube_webmail()
             clearTimeout(this.preview_timer);
 
         var selected = list.selection.length==1;
+
+        // Hide certain command buttons when Drafts folder is selected
         if (this.env.mailbox == this.env.drafts_mailbox) {
-            this.enable_command('show', selected);
-            this.enable_command('delete', 'moveto', list.selection.length>0 ? true : false);
+            this.enable_command('reply', 'reply-all', 'forward', false); 
+            this.enable_command('show', 'delete', 'moveto', selected); 
         }
         else {
-            this.enable_command('show', 'reply', 'reply-all', 'forward', 'print', selected);
-            this.enable_command('delete', 'moveto', list.selection.length>0 ? true : false);
+            this.enable_command('show', 'reply', 'reply-all', 'forward', 'print', 'delete', 'moveto', selected);
         }
 
         // start timer for message preview (wait for double click)
@@ -1681,17 +1685,19 @@ function rcube_webmail()
         }
       }
 
-    // check for empty body
-    if ((input_message.value=='')) //&&(tinyMCE.getContent()=='')
-      {
-      if (!confirm(this.get_label('nobodywarning')))
-        {
-        input_message.focus();
-        return false;
+        // check for empty body
+        if (
+            (input_message.value=='')
+            && (tinyMCE == null ? true : (tinyMCE.getContent()=='' || tinyMCE.getContent() == null))
+        ) {
+            if (!confirm(this.get_label('nobodywarning')))
+            {
+                input_message.focus();
+                return false;
+            }
         }
-      }
 
-    return true;
+        return true;
     };
 
 
@@ -3220,26 +3226,30 @@ function rcube_webmail()
   /*********        remote request methods        *********/
   /********************************************************/
 
-  this.redirect = function(url)
+    this.redirect = function(url, lock)
     {
-    this.set_busy(true);
-    if (this.env.framed && window.parent)
-      parent.location.href = url;
-    else
-      location.href = url;
+        if (lock || lock == null) { 
+            this.set_busy(true); 
+        }
+        if (this.env.framed && window.parent) {
+            parent.location.href = url;
+        }
+        else {
+            location.href = url;
+        }
     };
 
-  this.goto_url = function(action, query, lock)
+    this.goto_url = function(action, query, lock)
     {
-    if (lock)
-    this.set_busy(true);
+        if (lock) {
+            this.set_busy(true);
+        }
 
-    var querystring = query ? '&'+query : '';
-    this.redirect(this.env.comm_path+'&_action='+action+querystring);
+        var querystring = query ? '&'+query : '';
+        this.redirect(this.env.comm_path+'&_action='+action+querystring, lock);
     };
 
-
-  this.http_sockets = new Array();
+    this.http_sockets = new Array();
 
   // find a non-busy socket or create a new one
   this.get_request_obj = function()
