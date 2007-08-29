@@ -30,6 +30,9 @@ require_once dirname(__FILE__) . '/rcube/base_form_element.php';
 require_once dirname(__FILE__) . '/rcube/form_elements.php';
 
 
+/**
+ * @todo create class file
+ */
 
 
 // ********* rcube schared functions *********
@@ -300,90 +303,92 @@ function send_modified_header($mdate, $etag=null)
  * Convert a variable into a javascript notation string
  */
 function json_serialize($var)
-  {
-    if (is_object($var))
-      $var = get_object_vars($var);
-
-    if (is_array($var))
-    {
-      // empty array
-      if (!sizeof($var))
-        return '[]';
-      else
-      {
-        $keys_arr = array_keys($var);
-        $is_assoc = $have_numeric = 0;
-
-        for ($i=0; $i<sizeof($keys_arr); ++$i)
-        {
-          if (is_numeric($keys_arr[$i]))
-            $have_numeric = 1;
-          if (!is_numeric($keys_arr[$i]) || $keys_arr[$i] != $i)
-            $is_assoc = 1;
-          if ($is_assoc && $have_numeric)
-            break;
-        }
-
-        $brackets = $is_assoc ? '{}' : '[]';
-        $pairs = array();
-
-        foreach ($var as $key => $value)
-        {
-          // enclose key with quotes if it is not variable-name conform
-          if (!ereg("^[_a-zA-Z]{1}[_a-zA-Z0-9]*$", $key) /* || is_js_reserved_word($key) */)
-            $key = "'$key'";
-
-          $pairs[] = sprintf("%s%s", $is_assoc ? "$key:" : '', json_serialize($value));
-        }
-
-        return $brackets{0} . implode(',', $pairs) . $brackets{1};
-      }
+{
+    if (is_object($var)) {
+        $var = get_object_vars($var);
     }
-    else if (is_numeric($var) && strval(intval($var)) === strval($var))
-      return $var;
-    else if (is_bool($var))
-      return $var ? '1' : '0';
-    else
-      return "'" . rc_main::JQ($var) . "'";
+    if (is_array($var)) {
+        // empty array
+        if (!sizeof($var)) {
+            return '[]';
+        }
+        else {
+            $keys_arr = array_keys($var);
+            $is_assoc = $have_numeric = 0;
 
-  }
+            for ($i=0; $i<sizeof($keys_arr); ++$i) {
+                if (is_numeric($keys_arr[$i])) {
+                    $have_numeric = 1;
+                }
+                if (!is_numeric($keys_arr[$i]) || $keys_arr[$i] != $i) {
+                    $is_assoc = 1;
+                }
+                if ($is_assoc && $have_numeric) {
+                    break;
+                }
+            }
+
+            $brackets = $is_assoc ? '{}' : '[]';
+            $pairs = array();
+
+            foreach ($var as $key => $value) {
+                // enclose key with quotes if it is not variable-name conform
+                if (!ereg("^[_a-zA-Z]{1}[_a-zA-Z0-9]*$", $key) /* || is_js_reserved_word($key) */)
+                    $key = "'$key'";
+
+                $pairs[] = sprintf("%s%s", $is_assoc ? "$key:" : '', json_serialize($value));
+            }
+            return $brackets{0} . implode(',', $pairs) . $brackets{1};
+        }
+    }
+    else if (is_numeric($var) && strval(intval($var)) === strval($var)) {
+        return $var;
+    }
+    else if (is_bool($var)) {
+        return $var ? '1' : '0';
+    }
+    else {
+        return "'" . rc_main::JQ($var) . "'";
+    }
+}
 
 /**
  * function to convert an array to a javascript array
  * @deprecated
  */
 function array2js($arr, $type='')
-  {
-  return json_serialize($arr);
-  }
+{
+    return json_serialize($arr);
+}
 
 
 /**
  * Similar function as in_array() but case-insensitive
  */
 function in_array_nocase($needle, $haystack)
-  {
-  foreach ($haystack as $value)
-    {
-    if (strtolower($needle)===strtolower($value))
-      return TRUE;
+{
+    foreach ($haystack as $value) {
+        if (strtolower($needle)===strtolower($value)) {
+            return TRUE;
+        }
     }
-
-  return FALSE;
-  }
+    return FALSE;
+}
 
 
 /**
  * Find out if the string content means TRUE or FALSE
  */
 function get_boolean($str)
-  {
-  $str = strtolower($str);
-  if(in_array($str, array('false', '0', 'no', 'nein', ''), TRUE))
-    return FALSE;
-  else
-    return TRUE;
-  }
+{
+    $str = strtolower($str);
+    if(in_array($str, array('false', '0', 'no', 'nein', ''), TRUE)) {
+        return FALSE;
+    }
+    else {
+        return TRUE;
+    }
+}
 
 
 // parse a human readable string for a number of bytes
