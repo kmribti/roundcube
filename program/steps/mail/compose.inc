@@ -156,7 +156,7 @@ $OUTPUT->add_handlers(
 /****** get contacts for this user and add them to client scripts ********/
 require_once 'include/rcube_contacts.inc';
 
-if (isset($CONFIG['addressbook_plugin'])) {
+if (isset($CONFIG['addressbook_plugin']) && !empty($CONFIG['addressbook_plugin'])) {
     require_once 'plugins/addressbook/rcube_contacts_' . $CONFIG['addressbook_plugin'] . '.inc';
     $abook_class = 'rcube_contacts_' . $CONFIG['addressbook_plugin'];
     $CONTACTS = new $abook_class (
