@@ -16,7 +16,7 @@
  | Author: Thomas Bruederli <roundcube@gmail.com>                        |
  +-----------------------------------------------------------------------+
 
- $Id: index.inc 560 2007-05-17 15:01:26Z thomasb $
+ $Id: index.inc 672 2007-08-10 14:46:53Z thomasb $
  
  */
  
@@ -27,8 +27,8 @@
 	'am'    => 'Armenian',
 	'bg'    => 'Bulgarian',
 	'bs_BA' => 'Bosnian (Bosanski)',
-	'zh_TW' => 'Chinese (BIG5)',
-	'zh_CN' => 'Chinese (GB2312)',
+	'zh_TW' => 'Chinese (Traditional)',
+	'zh_CN' => 'Chinese (Simplified)',
  	'ca'    => 'Català',
 	'cz'    => 'Czech',
 	'da'    => 'Dansk',
@@ -38,7 +38,8 @@
  	'et_EE' => 'Estonian',
 	'eu'    => 'Euskara',
 	'fr'    => 'Français', 
-	'ga'    => 'Galician',
+	'gl'    => 'Galician',
+	'ga_IE' => 'Irish',
 	'el'    => 'Greek',
 	'hi'    => 'Hindi',
 	'hr'    => 'Hrvatski',
@@ -50,6 +51,7 @@
 	'kur_KU' => 'Kurdish (Kurmancî)',
 	'lv'    => 'Latvian',
 	'lt'    => 'Lithuanian',
+	'mk'    => 'Macedonian (Slavic FYROM)',
 	'nl_NL' => 'Nederlands',
 	'nl_BE' => 'Flemish',
 	'nb_NO' => 'Norsk (bokmål)',
@@ -69,6 +71,7 @@
 	'sr_cyrillic' => 'Serbian Cyrillic',
 	'tr'    => 'Turkish',
 	'th'    => 'Thai',
+	'uk'    => 'Ukrainian',
 	'vn'    => 'Vietnamese'
 );
 
@@ -78,6 +81,7 @@ $rcube_language_aliases = array(
   'cn' => 'zh_CN',
 	'de' => 'de_DE',
 	'en' => 'en_US',
+	'ga' => 'ga_IE',
 	'nl' => 'nl_NL',
 	'no' => 'nn_NO',
 	'pt' => 'pt_PT',

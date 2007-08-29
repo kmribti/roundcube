@@ -14,7 +14,7 @@
  |         Simo <sim6@graciasensefils.net>                               |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 560 2007-05-17 15:01:26Z thomasb $
+ @version $Id: messages.inc 643 2007-07-07 20:25:44Z yllar $
 
 */
 

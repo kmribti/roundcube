@@ -16,7 +16,7 @@
  |         http://david.grajal.net                                       |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 552 2007-05-03 20:48:00Z yllar $
+ @version $Id: labels.inc 643 2007-07-07 20:25:44Z yllar $
 
 */
 
