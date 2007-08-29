@@ -53,9 +53,6 @@ if ($_GET['_uid']) {
     // calculate Etag for this request
     $etag = md5($MESSAGE['UID'] . $IMAP->get_mailbox_name() . session_id(). ($PRINT_MODE?1:0));
 
-    //rc_main::tfk_debug("/ etag: $etag");
-    //rc_main::tfk_debug(var_export($MESSAGE, true));
-
     // allow caching, unless remote images are present
     if ((bool)rc_main::get_input_value('_safe', RCUBE_INPUT_GET)) {
         send_nocacheing_headers();
@@ -63,8 +60,6 @@ if ($_GET['_uid']) {
     else {
         send_modified_header($_SESSION['login_time'], $etag);
     }
-
-    //rc_main::tfk_debug("/ send headerz");
 
     $MESSAGE['subject'] = rcube_imap::decode_mime_string(
                                 $MESSAGE['headers']->subject,
@@ -169,8 +164,12 @@ function rcmail_message_attachments($attrib)
                 );
             }
             else {
+                $out_str = '<li><a href="%s&amp;_part=%s"';
+                $out_str.= ' onclick="return %s.command(\'load-attachment\',{part:\'%s\',';
+                $out_str.= ' mimetype:\'%s\'},this)">%s</a></li>' . "\n";
+
                 $out .= sprintf(
-                            '<li><a href="%s&amp;_part=%s" onclick="return %s.command(\'load-attachment\',{part:\'%s\', mimetype:\'%s\'},this)">%s</a></li>'."\n",
+                            $out_str,
                             htmlspecialchars($GET_URL),
                             $attach_prop->mime_id,
                             JS_OBJECT_NAME,
@@ -185,8 +184,6 @@ function rcmail_message_attachments($attrib)
         return $out;
     }
 }
-
-
 
 function rcmail_remote_objects_msg($attrib)
 {
@@ -218,7 +215,7 @@ function rcmail_remote_objects_msg($attrib)
 $OUTPUT->add_handlers(
             array(
                 'messageattachments' => 'rcmail_message_attachments',
-                'blockedobjects' => 'rcmail_remote_objects_msg'
+                'blockedobjects'     => 'rcmail_remote_objects_msg'
             )
 );
 

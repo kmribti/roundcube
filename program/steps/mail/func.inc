@@ -1291,9 +1291,14 @@ function rcmail_parse_message(&$structure, $arg=array(), $recursive=FALSE)
 }
 
 
-
-
-// return table with message headers
+/**
+ * return table with message headers
+ *
+ * @access static
+ * @param  mixed  $attrib
+ * @param  mixed  $headers
+ * @return string $out
+ */
 function rcmail_message_headers($attrib, $headers=NULL)
 {
     $registry  = rc_registry::getInstance();
@@ -1301,8 +1306,6 @@ function rcmail_message_headers($attrib, $headers=NULL)
     $OUTPUT    = $registry->get('OUTPUT', 'core');
     $MESSAGE   = $registry->get('MESSAGE', 'core');
     $sa_attrib = $registry->get('sa_attrib', 'core');
-
-    //rc_main::tfk_debug('rcmail_message_headers: hello? hello!');
 
     // keep header table attrib
     if (is_array($attrib) && !$sa_attrib) {
@@ -1314,11 +1317,8 @@ function rcmail_message_headers($attrib, $headers=NULL)
     $registry->set('sa_attrib', $sa_attrib, 'core');
 
     if (isset($MESSAGE) === false) {
-        //rc_main::tfk_debug('rcmail_message_headers: no $MESSAGE :(');
         return FALSE;
     }
-
-    //rc_main::tfk_debug('MESSAGE: ' . var_export($MESSAGE, true));
 
     // get associative array of headers object
     if (is_null($headers) === true) {
@@ -1359,6 +1359,9 @@ function rcmail_message_headers($attrib, $headers=NULL)
                                     $headers['charset']
                                 )
             );
+        }
+        if (empty($header_value)) {
+            continue;
         }
         $out .= "\n<tr>\n";
         $out .= '<td class="header-title">' . rc_main::Q(rcube_label($hkey));
