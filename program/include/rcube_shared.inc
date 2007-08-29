@@ -94,21 +94,24 @@ function rcube_browser()
  *
  * @access static
  * @param  string $name Header name
- * @return string Header value or null if not available
+ * @return mixed  Header value or null if not available
  */
 function rc_request_header($name)
 {
     if (function_exists('getallheaders')) {
         $hdrs = getallheaders();
-        return $hdrs[$name];
+        $hdrs = array_change_key_case($hdrs, CASE_UPPER);
+        $key  = strtoupper($name);
     }
-    $key = 'HTTP_' . strtoupper(strtr($name, '-', '_'));
-    if (isset($_SERVER[$key])) {
-        return $_SERVER[$key];
+    else {
+        $key  = 'HTTP_' . strtoupper(strtr($name, '-', '_'));
+        $hdrs = array_change_key_case($_SERVER[$key], CASE_UPPER);
+    }
+    if (isset($hdrs[$key])) {
+        return $hdrs[$key];
     }
     return null;
 }
-
 
 // get text in the desired language from the language file
 function rcube_label($attrib)
