@@ -19,14 +19,17 @@
 
 var rcube_webmail_client;
 
+/**
+ * rcube_webmail
+ */
 function rcube_webmail()
 {
-    this.env = new Object();
-    this.labels = new Object();
-    this.buttons = new Object();
+    this.env         = new Object();
+    this.labels      = new Object();
+    this.buttons     = new Object();
     this.gui_objects = new Object();
-    this.commands = new Object();
-    this.onloads = new Array();
+    this.commands    = new Object();
+    this.onloads     = new Array();
 
     // create protected reference to myself
     rcube_webmail_client = this;
@@ -40,10 +43,12 @@ function rcube_webmail()
     this.identifier_expr = new RegExp('[^0-9a-z\-_]', 'gi');
 
     // mimetypes supported by the browser (default settings)
-    this.mimetypes = new Array('text/plain', 'text/html', 'text/xml',
-                             'image/jpeg', 'image/gif', 'image/png',
-                             'application/x-javascript', 'application/pdf',
-                             'application/x-shockwave-flash');
+    this.mimetypes = new Array(
+                            'text/plain', 'text/html', 'text/xml',
+                            'image/jpeg', 'image/gif', 'image/png',
+                            'application/x-javascript', 'application/pdf',
+                            'application/x-shockwave-flash'
+    );
 
     // default environment vars
     this.env.keep_alive = 60;        // seconds
@@ -55,7 +60,8 @@ function rcube_webmail()
 
 
     // set environment variable(s)
-    this.set_env = function(p, value) {
+    this.set_env = function(p, value)
+    {
         if (p != null && typeof(p) == 'object' && !value) {
             for (var n in p) {
                 this.env[n] = p[n];
@@ -88,17 +94,20 @@ function rcube_webmail()
     };
 
     // register a specific gui object
-    this.gui_object = function(name, id) {
+    this.gui_object = function(name, id)
+    {
         this.gui_objects[name] = id;
     };
 
     // execute the given script on load
-    this.add_onload = function(f) {
+    this.add_onload = function(f)
+    {
         this.onloads[this.onloads.length] = f;
     };
 
     // initialize webmail client
-    this.init = function() {
+    this.init = function()
+    {
         var p = this;
         this.task = this.env.task;
 
@@ -149,75 +158,71 @@ function rcube_webmail()
                             true
                 );
 
-        if (this.env.action=='show' || this.env.action=='preview')
-          {
-          this.enable_command('show', 'reply', 'reply-all', 'forward', 'moveto', 'delete', 'viewsource', 'print', 'load-attachment', true);
-          if (this.env.next_uid)
-            {
-            this.enable_command('nextmessage', true);
-            this.enable_command('lastmessage', true);
-            }
-          if (this.env.prev_uid)
-            {
-            this.enable_command('previousmessage', true);
-            this.enable_command('firstmessage', true);
-            }
-          }
+                if (this.env.action=='show' || this.env.action=='preview') {
+                    this.enable_command('show', 'reply', 'reply-all', 'forward', 'moveto', 'delete', 'viewsource', 'print', 'load-attachment', true);
+                    if (this.env.next_uid) {
+                        this.enable_command('nextmessage', true);
+                        this.enable_command('lastmessage', true);
+                    }
+                    if (this.env.prev_uid) {
+                        this.enable_command('previousmessage', true);
+                        this.enable_command('firstmessage', true);
+                    }
+                }
 
-        // make preview/message frame visible
-        if (this.env.action == 'preview' && this.env.framed && parent.rcmail)
-          {
-          this.enable_command('compose', 'add-contact', false);
-          parent.rcmail.show_contentframe(true);
-          parent.rcmail.mark_message('read', this.env.uid);
-          }
+                // make preview/message frame visible
+                if (this.env.action == 'preview' && this.env.framed && parent.rcmail) {
+                    this.enable_command('compose', 'add-contact', false);
+                    parent.rcmail.show_contentframe(true);
+                    parent.rcmail.mark_message('read', this.env.uid);
+                }
 
-        if ((this.env.action=='show' || this.env.action=='preview') && this.env.blockedobjects)
-          {
-          if (this.gui_objects.remoteobjectsmsg)
-            this.gui_objects.remoteobjectsmsg.style.display = 'block';
-          this.enable_command('load-images', true);
-          }
+                if ((this.env.action=='show' || this.env.action=='preview') && this.env.blockedobjects) {
+                    if (this.gui_objects.remoteobjectsmsg) {
+                        this.gui_objects.remoteobjectsmsg.style.display = 'block';
+                    }
+                    this.enable_command('load-images', true);
+                }
 
-        if (this.env.action=='compose')
-          {
-          this.enable_command('add-attachment', 'send-attachment', 'remove-attachment', 'send', true);
-          if (this.env.spellcheck)
-            {
-            this.env.spellcheck.spelling_state_observer = function(s){ ref.set_spellcheck_state(s); };
-            this.set_spellcheck_state('ready');
-            }
-          if (this.env.drafts_mailbox)
-            this.enable_command('savedraft', true);
-          }
+                if (this.env.action=='compose') {
+                    this.enable_command('add-attachment', 'send-attachment', 'remove-attachment', 'send', true);
+                    if (this.env.spellcheck) {
+                        this.env.spellcheck.spelling_state_observer = function(s){ ref.set_spellcheck_state(s); };
+                        this.set_spellcheck_state('ready');
+                    }
+                    if (this.env.drafts_mailbox) {
+                        this.enable_command('savedraft', true);
+                    }
+                }
 
-        if (this.env.messagecount)
-          this.enable_command('select-all', 'select-none', 'sort', 'expunge', true);
+                if (this.env.messagecount) {
+                    this.enable_command('select-all', 'select-none', 'sort', 'expunge', true);
+                }
 
-        if (this.env.messagecount && (this.env.mailbox==this.env.trash_mailbox || this.env.mailbox==this.env.junk_mailbox))
-          this.enable_command('purge', true);
+                if (this.env.messagecount && (this.env.mailbox==this.env.trash_mailbox || this.env.mailbox==this.env.junk_mailbox)) {
+                    this.enable_command('purge', true);
+                }
+                this.set_page_buttons();
 
-        this.set_page_buttons();
+                // focus this window
+                window.focus();
 
-        // focus this window
-        window.focus();
+                // init message compose form
+                if (this.env.action=='compose') {
+                    this.init_messageform();
+                }
 
-        // init message compose form
-        if (this.env.action=='compose')
-          this.init_messageform();
+                // show printing dialog
+                if (this.env.action=='print') {
+                    window.print();
+                }
 
-        // show printing dialog
-        if (this.env.action=='print')
-          window.print();
-
-        // get unread count for each mailbox
-        if (this.gui_objects.mailboxlist)
-        {
-          this.gui_objects.folderlist = this.gui_objects.mailboxlist;
-          this.http_request('getunread', '');
-        }
-
-        break;
+                // get unread count for each mailbox
+                if (this.gui_objects.mailboxlist) {
+                    this.gui_objects.folderlist = this.gui_objects.mailboxlist;
+                    this.http_request('getunread', '');
+                }
+                break;
 
 
       case 'addressbook':
@@ -1274,58 +1279,56 @@ function rcube_webmail()
     };
 
 
-  // send remote request to load message list
-  this.list_mailbox_remote = function(mbox, page, add_url)
+    // send remote request to load message list
+    this.list_mailbox_remote = function(mbox, page, add_url)
     {
-    // clear message list first
-    this.message_list.clear();
+        // clear message list first
+        this.message_list.clear();
 
-    // send request to server
-    var url = '_mbox='+urlencode(mbox)+(page ? '&_page='+page : '');
-    this.set_busy(true, 'loading');
-    this.http_request('list', url+add_url, true);
+        // send request to server
+        var url = '_mbox='+urlencode(mbox)+(page ? '&_page='+page : '');
+        this.set_busy(true, 'loading');
+        this.http_request('list', url+add_url, true);
     };
 
 
-  this.expunge_mailbox = function(mbox)
+    this.expunge_mailbox = function(mbox)
     {
-    var lock = false;
-    var add_url = '';
+        var lock = false;
+        var add_url = '';
 
-    // lock interface if it's the active mailbox
-    if (mbox == this.env.mailbox)
-       {
-       lock = true;
-       this.set_busy(true, 'loading');
-       add_url = '&_reload=1';
-       }
+        // lock interface if it's the active mailbox
+        if (mbox == this.env.mailbox) {
+            lock = true;
+            this.set_busy(true, 'loading');
+            add_url = '&_reload=1';
+        }
 
-    // send request to server
-    var url = '_mbox='+urlencode(mbox);
-    this.http_post('expunge', url+add_url, lock);
+        // send request to server
+        var url = '_mbox='+urlencode(mbox);
+        this.http_post('expunge', url+add_url, lock);
     };
 
 
-  this.purge_mailbox = function(mbox)
+    this.purge_mailbox = function(mbox)
     {
-    var lock = false;
-    var add_url = '';
+        var lock = false;
+        var add_url = '';
 
-    if (!confirm(this.get_label('purgefolderconfirm')))
-      return false;
+        if (!confirm(this.get_label('purgefolderconfirm')))
+            return false;
 
-    // lock interface if it's the active mailbox
-    if (mbox == this.env.mailbox)
-       {
-       lock = true;
-       this.set_busy(true, 'loading');
-       add_url = '&_reload=1';
-       }
+        // lock interface if it's the active mailbox
+        if (mbox == this.env.mailbox) {
+            lock = true;
+            this.set_busy(true, 'loading');
+            add_url = '&_reload=1';
+        }
 
-    // send request to server
-    var url = '_mbox='+urlencode(mbox);
-    this.http_post('purge', url+add_url, lock);
-    return true;
+        // send request to server
+        var url = '_mbox='+urlencode(mbox);
+        this.http_post('purge', url+add_url, lock);
+        return true;
     };
 
 
