@@ -939,9 +939,8 @@ function rcmail_get_messagecount_text($count=NULL, $page=NULL)
 
 function rcmail_print_body($part, $safe=FALSE, $plain=FALSE)
 {
-    $registry       = rc_registry::getInstance();
-    $REMOTE_OBJECTS = $registry->get('REMOTE_OBJECTS', 'core');
-    $IMAP           = $registry->get('IMAP', 'core');
+    $registry = rc_registry::getInstance();
+    $IMAP     = $registry->get('IMAP', 'core');
 
     $body = is_array($part->replaces) ? strtr($part->body, $part->replaces) : $part->body;
 
@@ -960,8 +959,8 @@ function rcmail_print_body($part, $safe=FALSE, $plain=FALSE)
         if ($safe !== FALSE) {
             return rc_main::Q($body, 'show', FALSE);
         }
-        // remove remote images and scripts
 
+        // remove remote images and scripts
         $remote_patterns = array(
                             '/<img\s+(.*)src=(["\']?)([hftps]{3,5}:\/{2}[^"\'\s]+)(\2|\s|>)/Ui',
                             '/(src|background)=(["\']?)([hftps]{3,5}:\/{2}[^"\'\s]+)(\2|\s|>)/Ui',
@@ -985,7 +984,11 @@ function rcmail_print_body($part, $safe=FALSE, $plain=FALSE)
         foreach ($remote_patterns as $pattern) {
             if (preg_match($pattern, $body)) {
                 $REMOTE_OBJECTS = TRUE;
-                $registry->set('REMOTE_OBJECTS', true, 'core');
+                $registry->set(
+                        'REMOTE_OBJECTS',
+                        $REMOTE_OBJECTS,
+                        'core'
+                );
                 break;
             }
         }
@@ -1014,7 +1017,6 @@ function rcmail_print_body($part, $safe=FALSE, $plain=FALSE)
     $convert_patterns[] = '/([a-z0-9][a-z0-9\-\.\+\_]*@[a-z0-9]([a-z0-9\-][.]?)*[a-z0-9]\\.[a-z]{2,5})/ie';
     $convert_replaces[] = "rcmail_str_replacement('<a href=\"mailto:\\1\" onclick=\"return ".JS_OBJECT_NAME.".command(\'compose\',\'\\1\',this)\">\\1</a>', \$replace_strings)";
 
-    rc_main::tfk_debug(var_export($part->ctype_parameters['format'], true));
     if ($part->ctype_parameters['format'] != 'flowed') {
         $body = wordwrap(trim($body), 80);
     }
@@ -1065,9 +1067,14 @@ function rcmail_print_body($part, $safe=FALSE, $plain=FALSE)
     return '<div class="pre">' . $body . "\n</div>";
 }
 
-
-
-// add a string to the replacement array and return a replacement string
+/**
+ * add a string to the replacement array and return a replacement string
+ *
+ * @access static
+ * @param  string $str
+ * @param  array  $rep
+ * @return string $resp
+ */
 function rcmail_str_replacement($str, &$rep)
 {
     $registry  = rc_registry::getInstance();
@@ -1078,15 +1085,12 @@ function rcmail_str_replacement($str, &$rep)
     }
     $rep[$rpl_count] = stripslashes($str);
     $resp = "##string_replacement{" . $rpl_count . "}##";
-    //rc_main::tfk_debug("replace: $resp");
-    //rc_main::tfk_debug("/ str: $str, count: $rpl_count, total: " . var_export($rep, true));
 
     $rpl_count++;
     $registry->set('rpl_count', $rpl_count, 'core');
 
     return $resp;
 }
-
 
 function rcmail_parse_message(&$structure, $arg=array(), $recursive=FALSE)
 {
@@ -1333,8 +1337,6 @@ function rcmail_message_headers($attrib, $headers=NULL)
     // show these headers
     $standard_headers = array('subject', 'from', 'organization', 'to', 'cc', 'bcc', 'reply-to', 'date');
 
-    //rc_main::tfk_debug('rcmail_message_headers: ' . var_export($headers, true));
-
     foreach ($standard_headers as $hkey) {
         if (isset($headers[$hkey]) === false) {
             continue;
@@ -1373,13 +1375,16 @@ function rcmail_message_headers($attrib, $headers=NULL)
 
     $out .= "\n</table>\n\n";
 
-    //rc_main::tfk_debug('rcmail_message_headers, count: ' . $header_count);
-
     return $header_count ? $out : '';
 }
 
-
-
+/**
+ * rcmail_message_body
+ *
+ * @access static
+ * @param  array  $attrib
+ * @return string $out
+ */
 function rcmail_message_body($attrib)
 {
     $registry       = rc_registry::getInstance();
@@ -1388,7 +1393,6 @@ function rcmail_message_body($attrib)
     $MESSAGE        = $registry->get('MESSAGE', 'core');
     $IMAP           = $registry->get('IMAP', 'core');
     $GET_URL        = $registry->get('GET_URL', 'core');
-    $REMOTE_OBJECTS = $registry->get('REMOTE_OBJECTS', 'core');
 
     if (!is_array($MESSAGE['parts']) && !$MESSAGE['body']) {
         return '';
@@ -1431,7 +1435,11 @@ function rcmail_message_body($attrib)
                 if (!isset($part->body))
                     $part->body = $IMAP->get_message_part($MESSAGE['UID'], $part->mime_id, $part);
 
-                $body = rcmail_print_body($part, $safe_mode, !$CONFIG['prefer_html']);
+                $body = rcmail_print_body(
+                            $part,
+                            $safe_mode,
+                            !$CONFIG['prefer_html']
+                );
                 //$out .= '<div class="message-part">';
 
                 if ($part->ctype_secondary != 'plain')
@@ -1470,6 +1478,8 @@ function rcmail_message_body($attrib)
             }
         }
     }
+
+    $REMOTE_OBJECTS = $registry->get('REMOTE_OBJECTS', 'core');
 
     // tell client that there are blocked remote objects
     if ($REMOTE_OBJECTS && !$safe_mode) {

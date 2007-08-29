@@ -185,6 +185,17 @@ function rcmail_message_attachments($attrib)
     }
 }
 
+/**
+ * rcmail_remote_objects_msg
+ *
+ * This displays a message when objects (especially images)
+ * in the displayed message were blocked.
+ *
+ * @access static
+ * @param  array  $attrib
+ * @return string $out
+ * @uses   rc_registry::getInstance()
+ */
 function rcmail_remote_objects_msg($attrib)
 {
     $registry   = rc_registry::getInstance();
@@ -196,15 +207,14 @@ function rcmail_remote_objects_msg($attrib)
     }
     // allow the following attributes to be added to the <div> tag
     $attrib_str = rc_main::create_attrib_string($attrib, array('style', 'class', 'id'));
-    $out = '<div' . $attrib_str . ">";
 
+    $out = '<div' . $attrib_str . ">";
     $out .= sprintf(
                 '%s&nbsp;<a href="#loadimages" onclick="%s.command(\'load-images\')">%s</a>',
                 rc_main::Q(rcube_label('blockedimages')),
                 JS_OBJECT_NAME,
                 rc_main::Q(rcube_label('showimages'))
     );
-
     $out .= '</div>';
 
     $OUTPUT->add_gui_object('remoteobjectsmsg', $attrib['id']);
