@@ -89,6 +89,26 @@ function rcube_browser()
   return $bw;
   }
 
+/**
+ * Read a specific HTTP request header
+ *
+ * @access static
+ * @param  string $name Header name
+ * @return string Header value or null if not available
+ */
+function rc_request_header($name)
+{
+    if (function_exists('getallheaders')) {
+        $hdrs = getallheaders();
+        return $hdrs[$name];
+    }
+    $key = 'HTTP_' . strtoupper(strtr($name, '-', '_'));
+    if (isset($_SERVER[$key])) {
+        return $_SERVER[$key];
+    }
+    return null;
+}
+
 
 // get text in the desired language from the language file
 function rcube_label($attrib)
