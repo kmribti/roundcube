@@ -45,7 +45,7 @@ if ($status === false) {
     die('Fatal error: ini_set/set_include_path does not work.');
 }
 
-ini_set('session.name', 'sessid');
+ini_set('session.name', 'roundcube_sessid');
 ini_set('session.use_cookies', 1);
 ini_set('session.gc_maxlifetime', 21600);
 ini_set('session.gc_divisor', 500);
