@@ -36,7 +36,7 @@ foreach ((array)$CONFIG['dont_override'] as $p) {
 }
 
 // force min size
-if ($a_user_prefs['pagesize'] == < 1) {
+if ($a_user_prefs['pagesize'] < 1) {
     $a_user_prefs['pagesize'] = 10;
 }
 
