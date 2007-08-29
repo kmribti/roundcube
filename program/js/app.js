@@ -3515,57 +3515,56 @@ function rcube_http_request()
       }
     }
 
-  // send GET request
-  this.GET = function(url)
-    {
-    this.build();
+    // send GET request
+    this.GET = function(url) {
+        this.build();
 
-    if (!this.xmlhttp)
-      {
-      this.onerror(this);
-      return false;
-      }
+        if (!this.xmlhttp) {
+            this.onerror(this);
+            return false;
+        }
 
-    var ref = this;
-    this.url = url;
-    this.busy = true;
+        var ref   = this;
+        this.url  = url;
+        this.busy = true;
 
-    this.xmlhttp.onreadystatechange = function(){ ref.xmlhttp_onreadystatechange(); };
-    this.xmlhttp.open('GET', url);
-    this.xmlhttp.send(null);
+        this.xmlhttp.onreadystatechange = function(){ ref.xmlhttp_onreadystatechange(); };
+        this.xmlhttp.open('GET', url);
+        this.xmlhttp.setRequestHeader('X-RoundCube-Referer', bw.get_cookie('sessid'));
+        this.xmlhttp.send(null);
     };
 
 
-  this.POST = function(url, body, contentType)
-    {
-    // default value for contentType if not provided
-    if (typeof(contentType) == 'undefined')
-      contentType = 'application/x-www-form-urlencoded';
+    this.POST = function(url, body, contentType) {
+        // default value for contentType if not provided
+        if (typeof(contentType) == 'undefined') {
+            contentType = 'application/x-www-form-urlencoded';
+        }
+        this.build();
 
-    this.build();
+        if (!this.xmlhttp) {
+            this.onerror(this);
+            return false;
+        }
 
-    if (!this.xmlhttp)
-    {
-       this.onerror(this);
-       return false;
-    }
+        var req_body = body;
+        if (typeof(body) == 'object') {
+            req_body = '';
 
-    var req_body = body;
-    if (typeof(body) == 'object')
-    {
-      req_body = '';
-      for (var p in body)
-        req_body += (req_body ? '&' : '') + p+'='+urlencode(body[p]);
-    }
+            for (var p in body) {
+                req_body += (req_body ? '&' : '') + p+'='+urlencode(body[p]);
+            }
+        }
 
-    var ref = this;
-    this.url = url;
-    this.busy = true;
+        var ref   = this;
+        this.url  = url;
+        this.busy = true;
 
-    this.xmlhttp.onreadystatechange = function() { ref.xmlhttp_onreadystatechange(); };
-    this.xmlhttp.open('POST', url, true);
-    this.xmlhttp.setRequestHeader('Content-Type', contentType);
-    this.xmlhttp.send(req_body);
+        this.xmlhttp.onreadystatechange = function() { ref.xmlhttp_onreadystatechange(); };
+        this.xmlhttp.open('POST', url, true);
+        this.xmlhttp.setRequestHeader('Content-Type', contentType);
+        this.xmlhttp.setRequestHeader('X-RoundCube-Referer', bw.get_cookie('sessid'));
+        this.xmlhttp.send(req_body);
     };
 
 

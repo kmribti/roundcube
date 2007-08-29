@@ -288,6 +288,14 @@ if (empty($_SESSION['user_id'])) {
 
 //rc_main::tfk_debug("// task {$_task} action {$_action}");
 
+// check client X-header to verify request origin
+if ($OUTPUT->ajax_call) {
+    if (empty($CONFIG['devel_mode']) && !rc_request_header('X-RoundCube-Referer')) {
+        header('HTTP/1.1 404 Not Found');
+        die("Invalid Request");
+    }
+}
+
 // set task and action to client
 $OUTPUT->set_env('task', $_task);
 if (empty($_action) === FALSE) {
