@@ -93,19 +93,13 @@ class rc_main
         $registry     = rc_registry::getInstance();
         $INSTALL_PATH = $registry->get('INSTALL_PATH', 'core');
 
-        //self::tfk_debug('Start me up.');
-
         // check client
         $BROWSER = rcube_browser();
         $registry->set('BROWSER', $BROWSER, 'core');
 
-        //self::tfk_debug('// load browser');
-
         // load configuration
         $CONFIG = self::rcmail_load_config();
         $registry->set('CONFIG', $CONFIG, 'core');
-
-        //self::tfk_debug('// load config');
 
         // set session garbage collecting time according to session_lifetime
         if (empty($CONFIG['session_lifetime']) === FALSE) {
@@ -120,8 +114,6 @@ class rc_main
 
         $registry->set('DB', $DB, 'core');
 
-        //self::tfk_debug('// init db');
-
         // use database for storing session data
         include_once 'include/session.inc';
 
@@ -130,13 +122,11 @@ class rc_main
         $sess_id = session_id();
         $registry->set('sess_id', $sess_id, 'core');
 
-        //self::tfk_debug('// session');
-
         // create session and set session vars
-        if (!isset($_SESSION['auth_time'])) {
+        if (isset($_SESSION['auth_time']) !== true) {
             $_SESSION['user_lang'] = self::rcube_language_prop($CONFIG['locale_string']);
             $_SESSION['auth_time'] = time();
-            $_SESSION['temp'] = true;
+            $_SESSION['temp']      = true;
         }
 
         // set session vars global
@@ -310,8 +300,15 @@ class rc_main
         return $valid;
     }
 
-
-    // create IMAP object and connect to server
+    /**
+     * create IMAP object and connects to server if param
+     * is set to true.
+     *
+     * @access static
+     * @param  bool $connect
+     * @return void
+     * @uses   rc_registry::getInstance()
+     */
     static function rcmail_imap_init($connect=FALSE)
     {
         $registry = rc_registry::getInstance();
@@ -320,7 +317,8 @@ class rc_main
         $OUTPUT   = $registry->get('OUTPUT', 'core');
 
         $IMAP = new rcube_imap($DB);
-        $IMAP->debug_level = $CONFIG['debug_level'];
+
+        $IMAP->debug_level  = $CONFIG['debug_level'];
         $IMAP->skip_deleted = $CONFIG['skip_deleted'];
 
         // connect with stored session data
@@ -350,9 +348,14 @@ class rc_main
         $registry->set('IMAP', $IMAP, 'core');
     }
 
-
-    // set root dir and last stored mailbox
-    // this must be done AFTER connecting to the server
+    /**
+     * rcmail_set_imap_prop
+     *
+     * set root dir and last stored mailbox
+     * this must be done AFTER connecting to the server
+     *
+     * @access static
+     */
     static function rcmail_set_imap_prop()
     {
         $registry = rc_registry::getInstance();
