@@ -224,8 +224,19 @@ function rcube_subscription_form($attrib)
         $protected   = ($CONFIG['protect_default_folders'] == TRUE && in_array($folder,$CONFIG['default_imap_folders']));
         $zebra_class = $i%2 ? 'even' : 'odd';
         $folder_js   = rc_main::JQ($folder);
-        $folder_html = $CONFIG['protect_default_folders'] && in_array($folder, $CONFIG['default_imap_folders']) ? rcube_label(strtolower($folder)) : rc_main::rcube_charset_convert($folder, 'UTF-7');
-    
+        $folder_html = '';
+        if (
+            $CONFIG['protect_default_folders']
+            && in_array($folder, $CONFIG['default_imap_folders'])
+        ) {
+            $folder_html.= rcube_label(strtolower($folder));
+        }
+        else {
+            $folder_html.= rc_main::rcube_charset_convert($folder, 'UTF-7');
+        }
+        if (strlen($folder_html) > 40) {
+            $folder_html = substr($folder_html, 0, 27) . '...';
+        }
         if (!$protected) {
             $a_js_folders['rcmrow'.($i+1)] = array($folder, rc_main::rcube_charset_convert($folder, 'UTF-7'));
         }
