@@ -519,8 +519,6 @@ function rcmail_message_list($attrib)
     // create row for each message
     foreach ($a_headers as $i => $header) {
 
-
-
         $message_icon = $attach_icon = '';
         $js_row_arr = array();
 
@@ -559,7 +557,7 @@ function rcmail_message_list($attrib)
             $attach_icon = $attrib['attachmenticon'];
         }
         $out .= sprintf(
-                    '<tr id="rcmrow%d" class="message%s%s %s">'."\n",
+                    '<tr id="rcmrow%d" class="message%s%s %s">' . "\n",
                     $header->uid,
                     $header->seen ? '' : ' unread',
                     $header->deleted ? ' deleted' : '',
