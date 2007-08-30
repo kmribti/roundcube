@@ -303,7 +303,12 @@ rcube_list_widget.prototype = {
      */
     select_row: function(id, mod_key, with_mouse)
     {
+        //console.log('Selecting... Multiselect: ' + this.multiselect);
+        //console.log('mod_key: ' + mod_key);
+
         var select_before = this.selection.join(',');
+
+        //console.log('Already selected: ' + select_before);
         if (!this.multiselect) {
             mod_key = 0;
         }
@@ -483,8 +488,8 @@ rcube_list_widget.prototype = {
             }
             else // unselect row
             {
-                var p = find_in_array(id, this.selection);
-                var a_pre = this.selection.slice(0, p);
+                var p      = find_in_array(id, this.selection);
+                var a_pre  = this.selection.slice(0, p);
                 var a_post = this.selection.slice(p+1, this.selection.length);
 
                 this.selection = a_pre.concat(a_post);
