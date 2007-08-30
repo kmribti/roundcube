@@ -1,0 +1,567 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title></title>
+<style>
+<!--
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+th {
+	background-color: #ECFFF8;
+	text-align: left;
+}
+
+th , td {
+	font-size: 0.8em;
+	padding-left: 5px;
+}
+
+.alt-row {
+	background-color: #EEEEEE;
+}
+
+.column-ascending , .column-descending {
+	font-style: italic;
+}
+
+.column-mouse-over {
+	background-color: #FFFFE0;
+	cursor: pointer;
+}
+
+.number-column {
+	padding: 0px 5px 0px 0px;
+	text-align: right;
+}
+
+.number-column , .selector-column {
+	background-color: ButtonFace;
+	color: WindowText;
+}
+
+.row-selected {
+	background-color: Highlight;
+	color: HighlightText;
+}
+
+.selector-column {
+	padding: 0px;
+}
+-->
+</style>
+<script type="text/javascript" src="http://www.haloscan.com/load/papasi"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.easydom.js"></script>
+<script type="text/javascript" src="jquery.strip_alternate_row.js"></script>
+<script type="text/javascript" src="jquery.tablesort.compressed.js"></script>
+<script type="text/javascript">
+var words = "lorem ipsum dolor sit amet consectetuer adipiscing elit donec hendrerit tempor tellus donec pretium posuere tellus proin quam nisl tincidunt et mattis eget convallis nec purus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus nulla posuere Donec vitae dolor nullam tristique diam non turpis cras placerat accumsan nulla nullam rutrum Nam vestibulum accumsan nisl".split(" ");
+
+function randomWord () {
+  return words[Math.floor(Math.random() * words.length)];
+}
+function randomFloat () {
+  return Math.random() * 99.9;
+}
+function randomInt () {
+  return Math.floor(Math.random() * 1000);
+}
+function capitalize (str) {
+  return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
+}
+
+var cleanTable;
+
+function regenerateTable(rows) {
+  var tbody = $.create(["tbody"]);
+  for (var i = 0; i < rows; i++)
+    tbody.appendChild($.create(
+      ["tr", "id", ("id_" + i),
+       ["td", randomInt()],
+       ["td", randomWord()],
+       ["td", randomFloat()],
+       ["td", randomWord()],
+       ["td", randomInt()]]));
+  $("#container").empty().append(
+    $.create(["table", "cellspacing", 0,
+              ["thead",
+               ["tr",
+                ["th", capitalize(randomWord())],
+                ["th", capitalize(randomWord())],
+                ["th", capitalize(randomWord())],
+                ["th", capitalize(randomWord())],
+                ["th", capitalize(randomWord())]]],
+              tbody]));
+  $('#status').html("Table is rebuilt.");
+  $('table > tbody').stripAlternateRow('alt-row');
+  cleanTable = $("#container").html();
+}
+
+function afterSortCallback(table, sortedColumn, ascending) {
+  $("tbody", table).stripAlternateRow('alt-row');
+  $('#status').html("Column #" + (sortedColumn+1) + " is sorted " +
+                    (ascending ? "ascendingly" : "descendingly"));
+}
+
+function selectorCallback(checked, tableRow){
+  if (checked)
+	$(tableRow).addClass("row-selected");
+  else
+	$(tableRow).removeClass("row-selected");
+  $('#status').html("Table row id = " + tableRow.id + 
+                    " is " +
+                    (checked ? "checked." : "not checked."));
+}
+
+function makeTableSortable(settings) {
+  settings = $.extend({afterSortCallback: afterSortCallback}, settings);
+  $("#container").html(cleanTable);
+  $('thead > tr > th').hover(
+    function(){$(this).addClass('column-mouse-over');},
+    function(){$(this).removeClass('column-mouse-over');});
+  $('table').makeTableSortable(settings);
+  $('#status').html("Table is now sortable.");
+}
+
+$(document).ready(function(){
+  $('table > tbody').stripAlternateRow('alt-row');
+  cleanTable = $("#container").html();
+  $('#btn0').click(function(){
+    //$("#container").html(cleanTable);
+    $('#status').html("Building table, this is going to take a while...");  
+	setTimeout(function(){regenerateTable(parseInt($("#row-count").val()))},0);    
+  });
+  $('#btn1').click(makeTableSortable);
+  $('#btn2').click(function(){makeTableSortable({addNumberColumn:true})});
+  $('#btn3').click(function(){makeTableSortable({addSelectorColumn:true,selectorCallback:selectorCallback})});
+  $('#btn4').click(function(){makeTableSortable({addNumberColumn:true,addSelectorColumn:true,selectorCallback:selectorCallback})});
+});
+</script>
+</head>
+<body>
+<p>I needed a grid control like ActiveWidget's with column selector and number column. However, AW's column sorting is too slow for practical use. </p>
+<p>Currently, documentation is lacking because I'm still working on it.</p>
+<pre>usage : $(&quot;table&quot;).makeTableSortable(options);</pre>
+<pre>options : 
+   {
+   // arguments : (/* tableObject */ obj, 
+   //              /* int */         sortedColumn, 
+   //              /* boolean */     ascending)
+   afterSortCallback : null,
+   // a number column
+   addNumberColumn: false, 
+   numberColumnClass: &quot;number-column&quot;,
+   // a checkbox column 
+   addSelectorColumn: false,
+   selectorColumnClass: &quot;selector-column&quot;,
+   // arguments : (/* boolean */        checked, 
+   //              /* tableRowObject */ obj)
+   selectorCallback: null,
+   columnAscendingClass: &quot;column-ascending&quot;,
+   columnDescendingClass: &quot;column-descending&quot;,
+   // Whether to append an image to the &lt;th&gt; to show if the
+   // column is sorted
+   addIndicatorImages: true,
+   indicatorImages: {
+ 	  nosort: &quot;1x1.gif&quot;, 
+ 	  ascending: &quot;asc.png&quot;, 
+ 	  descending: &quot;desc.png&quot;
+   },
+   // This is optional. Useful if not all images are of same size
+   indicatorImageHeight: 15,
+   indicatorImageWidth: 19
+   };
+ </pre>
+<p>Todo:</p>
+<ul>
+  <li>specify which  columns are sortable</li>
+  <li>performance</li>
+</ul>
+<p><a href="../jquery.tablesort.tar.gz">Download</a></p>
+<p><a href="javascript:HaloScan('tablesort');" target="_self"><script type="text/javascript">postCount('tablesort');</script></a></p>
+<p>Demo:</p>
+<div>
+  <select id="row-count">
+    <option value="50" selected="selected">50</option>
+    <option value="200">200 (this will take a while to rebuild)</option>
+    <option value="1000">1000 (warning : this might timeout your script, click continue to let it run...)</option>
+  </select>
+  <input id='btn0' type="button" value="Rebuild table"/>
+</div>
+<div>
+  <input id='btn1' type="button" value="Make table sortable"/>
+  <input id='btn2' type="button" value="with number column"/>
+  <input id='btn3' type="button" value="with selector column"/>
+  <input id='btn4' type="button" value="with number & selector column"/>
+</div>
+<p id='status'>&nbsp;</p>
+<hr>
+<div id="container">
+  <table cellspacing="0">
+    <thead>
+      <tr>
+        <th>Nulla </th>
+        <th>Nascetur </th>
+        <th>Nam </th>
+        <th>Convallis </th>
+        <th>Donec </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id='id_0'>
+        <td>116 </td>
+        <td>ridiculus </td>
+        <td>39.050304 </td>
+        <td>eget </td>
+        <td>456 </td>
+      </tr>
+      <tr id='id_1'>
+        <td>141 </td>
+        <td>mus </td>
+        <td>97.30971 </td>
+        <td>purus </td>
+        <td>989 </td>
+      </tr>
+      <tr id='id_2'>
+        <td>167 </td>
+        <td>donec </td>
+        <td>67.71875 </td>
+        <td>pretium </td>
+        <td>373 </td>
+      </tr>
+      <tr id='id_3'>
+        <td>885 </td>
+        <td>tincidunt </td>
+        <td>46.224266 </td>
+        <td>tellus </td>
+        <td>451 </td>
+      </tr>
+      <tr id='id_4'>
+        <td>490 </td>
+        <td>donec </td>
+        <td>17.276482 </td>
+        <td>cras </td>
+        <td>5 </td>
+      </tr>
+      <tr id='id_5'>
+        <td>73 </td>
+        <td>adipiscing </td>
+        <td>59.344826 </td>
+        <td>nisl </td>
+        <td>400 </td>
+      </tr>
+      <tr id='id_6'>
+        <td>686 </td>
+        <td>nulla </td>
+        <td>10.614404 </td>
+        <td>amet </td>
+        <td>711 </td>
+      </tr>
+      <tr id='id_7'>
+        <td>99 </td>
+        <td>donec </td>
+        <td>18.294416 </td>
+        <td>tellus </td>
+        <td>465 </td>
+      </tr>
+      <tr id='id_8'>
+        <td>887 </td>
+        <td>penatibus </td>
+        <td>93.229515 </td>
+        <td>accumsan </td>
+        <td>164 </td>
+      </tr>
+      <tr id='id_9'>
+        <td>118 </td>
+        <td>elit </td>
+        <td>35.915985 </td>
+        <td>donec </td>
+        <td>156 </td>
+      </tr>
+      <tr id='id_10'>
+        <td>172 </td>
+        <td>nisl </td>
+        <td>14.482926 </td>
+        <td>convallis </td>
+        <td>100 </td>
+      </tr>
+      <tr id='id_11'>
+        <td>411 </td>
+        <td>nullam </td>
+        <td>68.80669 </td>
+        <td>rutrum </td>
+        <td>246 </td>
+      </tr>
+      <tr id='id_12'>
+        <td>187 </td>
+        <td>turpis </td>
+        <td>93.764824 </td>
+        <td>nullam </td>
+        <td>588 </td>
+      </tr>
+      <tr id='id_13'>
+        <td>34 </td>
+        <td>convallis </td>
+        <td>60.94374 </td>
+        <td>rutrum </td>
+        <td>700 </td>
+      </tr>
+      <tr id='id_14'>
+        <td>383 </td>
+        <td>nec </td>
+        <td>13.317451 </td>
+        <td>cum </td>
+        <td>348 </td>
+      </tr>
+      <tr id='id_15'>
+        <td>994 </td>
+        <td>tristique </td>
+        <td>24.604332 </td>
+        <td>dolor </td>
+        <td>775 </td>
+      </tr>
+      <tr id='id_16'>
+        <td>592 </td>
+        <td>tristique </td>
+        <td>56.381306 </td>
+        <td>penatibus </td>
+        <td>114 </td>
+      </tr>
+      <tr id='id_17'>
+        <td>345 </td>
+        <td>elit </td>
+        <td>97.62765 </td>
+        <td>donec </td>
+        <td>932 </td>
+      </tr>
+      <tr id='id_18'>
+        <td>786 </td>
+        <td>cum </td>
+        <td>56.950176 </td>
+        <td>pretium </td>
+        <td>34 </td>
+      </tr>
+      <tr id='id_19'>
+        <td>443 </td>
+        <td>cum </td>
+        <td>5.3416667 </td>
+        <td>donec </td>
+        <td>124 </td>
+      </tr>
+      <tr id='id_20'>
+        <td>54 </td>
+        <td>quam </td>
+        <td>72.18482 </td>
+        <td>ridiculus </td>
+        <td>910 </td>
+      </tr>
+      <tr id='id_21'>
+        <td>557 </td>
+        <td>purus </td>
+        <td>4.535867 </td>
+        <td>et </td>
+        <td>979 </td>
+      </tr>
+      <tr id='id_22'>
+        <td>869 </td>
+        <td>donec </td>
+        <td>18.79195 </td>
+        <td>turpis </td>
+        <td>635 </td>
+      </tr>
+      <tr id='id_23'>
+        <td>137 </td>
+        <td>ipsum </td>
+        <td>90.63807 </td>
+        <td>donec </td>
+        <td>983 </td>
+      </tr>
+      <tr id='id_24'>
+        <td>722 </td>
+        <td>mattis </td>
+        <td>98.097015 </td>
+        <td>placerat </td>
+        <td>994 </td>
+      </tr>
+      <tr id='id_25'>
+        <td>972 </td>
+        <td>penatibus </td>
+        <td>79.30468 </td>
+        <td>convallis </td>
+        <td>140 </td>
+      </tr>
+      <tr id='id_26'>
+        <td>851 </td>
+        <td>posuere </td>
+        <td>36.380745 </td>
+        <td>et </td>
+        <td>66 </td>
+      </tr>
+      <tr id='id_27'>
+        <td>925 </td>
+        <td>placerat </td>
+        <td>41.64566 </td>
+        <td>posuere </td>
+        <td>341 </td>
+      </tr>
+      <tr id='id_28'>
+        <td>295 </td>
+        <td>nullam </td>
+        <td>66.461815 </td>
+        <td>quam </td>
+        <td>207 </td>
+      </tr>
+      <tr id='id_29'>
+        <td>986 </td>
+        <td>sociis </td>
+        <td>39.800095 </td>
+        <td>donec </td>
+        <td>770 </td>
+      </tr>
+      <tr id='id_30'>
+        <td>511 </td>
+        <td>tellus </td>
+        <td>0.9545546 </td>
+        <td>ipsum </td>
+        <td>909 </td>
+      </tr>
+      <tr id='id_31'>
+        <td>187 </td>
+        <td>posuere </td>
+        <td>44.04942 </td>
+        <td>tellus </td>
+        <td>676 </td>
+      </tr>
+      <tr id='id_32'>
+        <td>233 </td>
+        <td>nullam </td>
+        <td>16.732204 </td>
+        <td>nullam </td>
+        <td>511 </td>
+      </tr>
+      <tr id='id_33'>
+        <td>500 </td>
+        <td>ipsum </td>
+        <td>44.868713 </td>
+        <td>nam </td>
+        <td>914 </td>
+      </tr>
+      <tr id='id_34'>
+        <td>231 </td>
+        <td>dolor </td>
+        <td>47.660423 </td>
+        <td>montes </td>
+        <td>828 </td>
+      </tr>
+      <tr id='id_35'>
+        <td>997 </td>
+        <td>turpis </td>
+        <td>64.32823 </td>
+        <td>donec </td>
+        <td>356 </td>
+      </tr>
+      <tr id='id_36'>
+        <td>489 </td>
+        <td>mattis </td>
+        <td>33.399586 </td>
+        <td>ridiculus </td>
+        <td>334 </td>
+      </tr>
+      <tr id='id_37'>
+        <td>273 </td>
+        <td>pretium </td>
+        <td>18.700335 </td>
+        <td>natoque </td>
+        <td>576 </td>
+      </tr>
+      <tr id='id_38'>
+        <td>904 </td>
+        <td>nulla </td>
+        <td>62.384254 </td>
+        <td>nisl </td>
+        <td>99 </td>
+      </tr>
+      <tr id='id_39'>
+        <td>613 </td>
+        <td>nec </td>
+        <td>40.510647 </td>
+        <td>sociis </td>
+        <td>834 </td>
+      </tr>
+      <tr id='id_40'>
+        <td>63 </td>
+        <td>nulla </td>
+        <td>29.64806 </td>
+        <td>donec </td>
+        <td>167 </td>
+      </tr>
+      <tr id='id_41'>
+        <td>20 </td>
+        <td>donec </td>
+        <td>12.6233225 </td>
+        <td>dolor </td>
+        <td>905 </td>
+      </tr>
+      <tr id='id_42'>
+        <td>67 </td>
+        <td>natoque </td>
+        <td>92.65036 </td>
+        <td>purus </td>
+        <td>12 </td>
+      </tr>
+      <tr id='id_43'>
+        <td>807 </td>
+        <td>turpis </td>
+        <td>23.543335 </td>
+        <td>penatibus </td>
+        <td>738 </td>
+      </tr>
+      <tr id='id_44'>
+        <td>613 </td>
+        <td>adipiscing </td>
+        <td>56.583557 </td>
+        <td>sit </td>
+        <td>931 </td>
+      </tr>
+      <tr id='id_45'>
+        <td>467 </td>
+        <td>tempor </td>
+        <td>16.078829 </td>
+        <td>dis </td>
+        <td>317 </td>
+      </tr>
+      <tr id='id_46'>
+        <td>833 </td>
+        <td>natoque </td>
+        <td>52.01944 </td>
+        <td>consectetuer </td>
+        <td>647 </td>
+      </tr>
+      <tr id='id_47'>
+        <td>163 </td>
+        <td>donec </td>
+        <td>79.021774 </td>
+        <td>elit </td>
+        <td>33 </td>
+      </tr>
+      <tr id='id_48'>
+        <td>423 </td>
+        <td>vestibulum </td>
+        <td>53.35486 </td>
+        <td>dolor </td>
+        <td>783 </td>
+      </tr>
+      <tr id='id_49'>
+        <td>562 </td>
+        <td>tempor </td>
+        <td>94.98938 </td>
+        <td>magnis </td>
+        <td>417 </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
