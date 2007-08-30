@@ -246,6 +246,10 @@ rcube_list_widget.prototype = {
         this.drag_start = false;
         this.in_selection_before = false;
 
+        //console.log('Rows?: ' + this.rows);
+        //console.log('Dblclicked?: ' + dblclicked);
+        //console.log('Selected?: ' + this.in_selection(id));
+
         // row was double clicked
         if (this.rows && dblclicked && this.in_selection(id)) {
             this.trigger_event('dblclick');
