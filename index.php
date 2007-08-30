@@ -137,6 +137,17 @@ rc_main::rcmail_load_gui();
 $OUTPUT = $registry->get('OUTPUT', 'core');
 $DB     = $registry->get('DB', 'core');
 
+
+if ($OUTPUT->ajax_call) {
+
+}
+else {
+    $OUTPUT->include_script('jquery-1.1.4.js');
+    $OUTPUT->include_script('tablesort/jquery.easydom.js');
+    $OUTPUT->include_script('tablesort/jquery.strip_alternate_row.js');
+    $OUTPUT->include_script('tablesort/jquery.tablesort.compressed.js');
+}
+
 // check DB connections and exit on failure
 if (is_null($DB)) {
     var_dump($DB); exit;
