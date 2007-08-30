@@ -193,12 +193,18 @@ $message_body = rc_main::get_input_value(
 );
 
 // append generic footer to all messages
-if (
-    !$savedraft
-    && !empty($CONFIG['generic_message_footer'])
-    && ($footer = file_get_contents(realpath($CONFIG['generic_message_footer'])))
-) {
-    $message_body .= "\r\n" . rcube_charset_convert($footer, 'UTF-8', $message_charset); 
+if (!$savedraft) {
+    if (!empty($CONFIG['generic_message_footer'])) {
+        $footer = @file_get_contents(realpath($CONFIG['generic_message_footer']));
+        if ($footer !== FALSE) {
+            $message_body .= "\r\n";
+            $message_body .= rcube_charset_convert(
+                                $footer,
+                                'UTF-8',
+                                $message_charset
+            ); 
+        }
+    }
 }
 
 // try to autodetect operating system and use the correct line endings
