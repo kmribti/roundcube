@@ -1117,10 +1117,12 @@ function rcube_webmail()
         // Hide certain command buttons when Drafts folder is selected
         if (this.env.mailbox == this.env.drafts_mailbox) {
             this.enable_command('reply', 'reply-all', 'forward', false); 
-            this.enable_command('show', 'delete', 'moveto', selected); 
+            this.enable_command('show', selected);
+            this.enable_command('delete', 'moveto', (list.selection.length > 0 ? true : false));
         }
         else {
-            this.enable_command('show', 'reply', 'reply-all', 'forward', 'print', 'delete', 'moveto', selected);
+            this.enable_command('show', 'reply', 'reply-all', 'forward', 'print', selected);
+            this.enable_command('delete', 'moveto', (list.selection.length > 0 ? true : false));
         }
 
         // start timer for message preview (wait for double click)
