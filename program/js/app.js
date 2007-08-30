@@ -363,7 +363,6 @@ function rcube_webmail()
     this.init_message_row = function(row)
     {
         var uid = row.uid;
-        //console.log('We init on row: ' + uid);
         if (uid && this.env.messages[uid]) {
             row.deleted = this.env.messages[uid].deleted ? true : false;
             row.unread  = this.env.messages[uid].unread ? true : false;
@@ -1090,7 +1089,6 @@ function rcube_webmail()
     this.click_on_list = function(e)
     {
         if (this.message_list) {
-            console.log('We clicked.');
             this.message_list.focus();
         }
         else if (this.contact_list) {
@@ -1137,10 +1135,12 @@ function rcube_webmail()
 
     this.msglist_dbl_click = function(list)
     {
-        if (this.preview_timer)
+        if (this.preview_timer) {
             clearTimeout(this.preview_timer);
+        }
 
         var uid = list.get_single_selection();
+
         if (uid && this.env.mailbox == this.env.drafts_mailbox) {
             this.goto_url('compose', '_draft_uid='+uid+'&_mbox='+urlencode(this.env.mailbox), true);
         }
@@ -1208,10 +1208,10 @@ function rcube_webmail()
             if (action == 'preview' && String(target.location.href).indexOf(url) >= 0) {
                 this.show_contentframe(true);
             }
-        }
-        else {
-            this.set_busy(true, 'loading');
-            target.location.href = this.env.comm_path+url;
+            else {
+                this.set_busy(true, 'loading');
+                target.location.href = this.env.comm_path+url;
+            }
         }
     };
 
@@ -3242,24 +3242,20 @@ function rcube_webmail()
     };
 
 
-  this.toggle_editor = function(checkbox, textElementName)
+    this.toggle_editor = function(checkbox, textElementName)
     {
-    var ischecked = checkbox.checked;
-    if (ischecked)
-      {
-        tinyMCE.execCommand('mceAddControl', true, textElementName);
-      }
-    else
-      {
-        tinyMCE.execCommand('mceRemoveControl', true, textElementName);
-      }
+        var ischecked = checkbox.checked;
+        if (ischecked) {
+            tinyMCE.execCommand('mceAddControl', true, textElementName);
+        }
+        else {
+            tinyMCE.execCommand('mceRemoveControl', true, textElementName);
+        }
     };
 
-
-
-  /********************************************************/
-  /*********        remote request methods        *********/
-  /********************************************************/
+    /********************************************************/
+    /*********        remote request methods        *********/
+    /********************************************************/
 
     this.redirect = function(url, lock)
     {
@@ -3286,75 +3282,77 @@ function rcube_webmail()
 
     this.http_sockets = new Array();
 
-  // find a non-busy socket or create a new one
-  this.get_request_obj = function()
+    // find a non-busy socket or create a new one
+    this.get_request_obj = function()
     {
-    for (var n=0; n<this.http_sockets.length; n++)
-      {
-      if (!this.http_sockets[n].busy)
-        return this.http_sockets[n];
-      }
+        for (var n=0; n<this.http_sockets.length; n++) {
+            if (!this.http_sockets[n].busy) {
+                return this.http_sockets[n];
+            }
+        }
 
-    // create a new XMLHTTP object
-    var i = this.http_sockets.length;
-    this.http_sockets[i] = new rcube_http_request();
+        // create a new XMLHTTP object
+        var i = this.http_sockets.length;
+        this.http_sockets[i] = new rcube_http_request();
 
-    return this.http_sockets[i];
+        return this.http_sockets[i];
     };
 
-
-  // send a http request to the server
-  this.http_request = function(action, querystring, lock)
+    // send a http request to the server
+    this.http_request = function(action, querystring, lock)
     {
-    var request_obj = this.get_request_obj();
-    querystring += (querystring ? '&' : '') + '_remote=1';
+        var request_obj = this.get_request_obj();
+        querystring += (querystring ? '&' : '') + '_remote=1';
 
-    // add timestamp to request url to avoid cacheing problems in Safari
-    if (bw.safari)
-      querystring += '&_ts='+(new Date().getTime());
+        // add timestamp to request url to avoid cacheing problems in Safari
+        if (bw.safari) {
+            querystring += '&_ts='+(new Date().getTime());
+        }
 
-    // send request
-    if (request_obj)
-      {
-      console.log('HTTP request: '+this.env.comm_path+'&_action='+action+'&'+querystring);
+        // send request
+        if (request_obj) {
+            console.log('HTTP request: '+this.env.comm_path+'&_action='+action+'&'+querystring);
 
-      if (lock)
-        this.set_busy(true);
+            if (lock) {
+                this.set_busy(true);
+            }
 
-      var rcm = this;
-      request_obj.__lock = lock ? true : false;
-      request_obj.__action = action;
-      request_obj.onerror = function(o){ ref.http_error(o); };
-      request_obj.oncomplete = function(o){ ref.http_response(o); };
-      request_obj.GET(this.env.comm_path+'&_action='+action+'&'+querystring);
-      }
+            var rcm = this;
+            request_obj.__lock = lock ? true : false;
+            request_obj.__action = action;
+            request_obj.onerror = function(o){ ref.http_error(o); };
+            request_obj.oncomplete = function(o){ ref.http_response(o); };
+            request_obj.GET(this.env.comm_path+'&_action='+action+'&'+querystring);
+        }
     };
 
     // send a http POST request to the server
     this.http_post = function(action, postdata, lock)
-      {
-      var request_obj;
-      if (postdata && typeof(postdata) == 'object')
-        postdata._remote = 1;
-      else
-        postdata += (postdata ? '&' : '') + '_remote=1';
-
-      // send request
-      if (request_obj = this.get_request_obj())
-        {
-        console.log('HTTP POST: '+this.env.comm_path+'&_action='+action);
-
-        if (lock)
-          this.set_busy(true);
-
-        var rcm = this;
-        request_obj.__lock = lock ? true : false;
-        request_obj.__action = action;
-        request_obj.onerror = function(o){ rcm.http_error(o); };
-        request_obj.oncomplete = function(o){ rcm.http_response(o); };
-        request_obj.POST(this.env.comm_path+'&_action='+action, postdata);
+    {
+        var request_obj;
+        if (postdata && typeof(postdata) == 'object') {
+            postdata._remote = 1;
         }
-      };
+        else {
+            postdata += (postdata ? '&' : '') + '_remote=1';
+        }
+
+        // send request
+        if (request_obj = this.get_request_obj()) {
+            console.log('HTTP POST: '+this.env.comm_path+'&_action='+action);
+
+            if (lock) {
+                this.set_busy(true);
+            }
+
+            var rcm = this;
+            request_obj.__lock = lock ? true : false;
+            request_obj.__action = action;
+            request_obj.onerror = function(o){ rcm.http_error(o); };
+            request_obj.oncomplete = function(o){ rcm.http_response(o); };
+            request_obj.POST(this.env.comm_path+'&_action='+action, postdata);
+        }
+    };
 
     // handle HTTP response
     this.http_response = function(request_obj) {
