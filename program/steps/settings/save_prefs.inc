@@ -19,6 +19,9 @@
 
 */
 
+$registry = rc_registry::getInstance();
+$CONFIG   = $registry->get('CONFIG', 'core');
+
 $a_user_prefs = array(
     'timezone'       => isset($_POST['_timezone']) ? floatval(rc_main::get_input_value('_timezone', RCUBE_INPUT_POST)) : $CONFIG['timezone'],
     'dst_active'     => isset($_POST['_dst_active']) ? TRUE : FALSE,
@@ -35,9 +38,16 @@ foreach ((array)$CONFIG['dont_override'] as $p) {
     $a_user_prefs[$p] = $CONFIG[$p];
 }
 
-// force min size
+// force min and max size
 if ($a_user_prefs['pagesize'] < 1) {
     $a_user_prefs['pagesize'] = 10;
+}
+rc_main::tfk_debug($a_user_prefs['pagesize']);
+rc_main::tfk_debug($CONFIG['max_pagesize']);
+if (isset($CONFIG['max_pagesize']) && empty($CONFIG['max_pagesize']) !== TRUE) {
+    if ($a_user_prefs['pagesize'] > $CONFIG['max_pagesize']) {
+        $a_user_prefs['pagesize'] = $CONFIG['max_pagesize'];
+    }
 }
 
 // switch UI language

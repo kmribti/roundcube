@@ -229,6 +229,9 @@ $rcmail_config['display_all_mailboxes'] = FALSE;
 // show up to X items in list view
 $rcmail_config['pagesize'] = 40;
 
+// don't let users set pagesize to more than this value if set
+$rcmail_config['max_pagesize'] = 200;
+
 // use this timezone to display date/time
 $rcmail_config['timezone'] = 1;
 
