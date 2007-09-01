@@ -82,7 +82,7 @@ class rcube_imap
      * @acccess public
      * @param   object  Database connection
      */
-    function __construct($db_conn)
+    public function __construct($db_conn)
     {
         $this->db = $db_conn;
     }
@@ -98,7 +98,7 @@ class rcube_imap
      * @return boolean  TRUE on success, FALSE on failure
      * @access public
      */
-    function connect($host, $user, $pass, $port=143, $use_ssl=FALSE)
+    public function connect($host, $user, $pass, $port=143, $use_ssl=FALSE)
     {
         global $ICL_SSL, $ICL_PORT, $IMAP_USE_INTERNAL_DATE;
 
@@ -164,7 +164,7 @@ class rcube_imap
      *
      * @access public
      */
-    function close()
+    public function close()
     {
         if ($this->conn) {
             iil_Close($this->conn);
@@ -241,7 +241,7 @@ class rcube_imap
      * @param  string  Mailbox/Folder name
      * @access public
      */
-    function set_mailbox($new_mbox)
+    public function set_mailbox($new_mbox)
     {
         $mailbox = $this->_mod_mailbox($new_mbox);
 
@@ -323,7 +323,7 @@ class rcube_imap
      * @return  string Name of the mailbox/folder
      * @access  public
      */
-    function get_mailbox_name()
+    public function get_mailbox_name()
     {
         return $this->conn ? $this->_mod_mailbox($this->mailbox, 'out') : '';
     }
@@ -371,7 +371,7 @@ class rcube_imap
      * @return  array   List of mailboxes/folders
      * @access  public
      */
-    function list_mailboxes($root='', $filter='*')
+    public function list_mailboxes($root='', $filter='*')
     {
         $a_out = array();
         $a_mboxes = $this->_list_mailboxes($root, $filter);
@@ -447,7 +447,7 @@ class rcube_imap
      * @return  number   Number of messages
      * @access  public
      */
-    function messagecount($mbox_name='', $mode='ALL', $force=FALSE)
+    public function messagecount($mbox_name='', $mode='ALL', $force=FALSE)
     {
         $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
         return $this->_messagecount($mailbox, $mode, $force);
@@ -534,7 +534,7 @@ class rcube_imap
      * @return  array    Indexed array with message header objects
      * @access  public
      */
-    function list_headers($mbox_name='', $page=NULL, $sort_field=NULL, $sort_order=NULL)
+    public function list_headers($mbox_name='', $page=NULL, $sort_field=NULL, $sort_order=NULL)
     {
         $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
         return $this->_list_headers($mailbox, $page, $sort_field, $sort_order);
@@ -653,7 +653,7 @@ class rcube_imap
      * @return  array    Indexed array with message header objects
      * @access  public
      */
-    function list_header_set($mbox_name='', $msgs, $page=NULL, $sort_field=NULL, $sort_order=NULL)
+    public function list_header_set($mbox_name='', $msgs, $page=NULL, $sort_field=NULL, $sort_order=NULL)
     {
         $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
         return $this->_list_header_set($mailbox, $msgs, $page, $sort_field, $sort_order);
@@ -798,69 +798,73 @@ class rcube_imap
     }
 
 
-  /**
-   * Return sorted array of message UIDs
-   *
-   * @param string Mailbox to get index from
-   * @param string Sort column
-   * @param string Sort order [ASC, DESC]
-   * @return array Indexed array with message ids
-   */
-  function message_index($mbox_name='', $sort_field=NULL, $sort_order=NULL)
+    /**
+     * Return sorted array of message UIDs
+     *
+     * @param string Mailbox to get index from
+     * @param string Sort column
+     * @param string Sort order [ASC, DESC]
+     * @return array Indexed array with message ids
+     */
+    public function message_index($mbox_name='', $sort_field=NULL, $sort_order=NULL)
     {
-    if ($sort_field!=NULL)
-      $this->sort_field = $sort_field;
-    if ($sort_order!=NULL)
-      $this->sort_order = strtoupper($sort_order);
+        if ($sort_field!=NULL) {
+            $this->sort_field = $sort_field;
+        }
+        if ($sort_order!=NULL) {
+            $this->sort_order = strtoupper($sort_order);
+        }
 
-    $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
-    $key = "$mbox:".$this->sort_field.":".$this->sort_order.".msgi";
+        $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
+        $key = "$mbox:".$this->sort_field.":".$this->sort_order.".msgi";
 
-    // have stored it in RAM
-    if (isset($this->cache[$key]))
-      return $this->cache[$key];
+        // have stored it in RAM
+        if (isset($this->cache[$key])) {
+            return $this->cache[$key];
+        }
 
-    // check local cache
-    $cache_key = $mailbox.'.msg';
-    $cache_status = $this->check_cache_status($mailbox, $cache_key);
+        // check local cache
+        $cache_key = $mailbox.'.msg';
+        $cache_status = $this->check_cache_status($mailbox, $cache_key);
 
-    // cache is OK
-    if ($cache_status>0)
-      {
-      $a_index = $this->get_message_cache_index($cache_key, TRUE, $this->sort_field, $this->sort_order);
-      return array_values($a_index);
-      }
+        // cache is OK
+        if ($cache_status > 0) {
+            $a_index = $this->get_message_cache_index($cache_key, TRUE, $this->sort_field, $this->sort_order);
+            return array_values($a_index);
+        }
 
+        // fetch complete message index
+        $msg_count = $this->_messagecount($mailbox);
+        if ($this->get_capability('sort') && ($a_index = iil_C_Sort($this->conn, $mailbox, $this->sort_field, '', TRUE))) {
+            if ($this->sort_order == 'DESC') {
+                $a_index = array_reverse($a_index);
+            }
+            $this->cache[$key] = $a_index;
+        }
+        else {
+            $a_index = iil_C_FetchHeaderIndex(
+                        $this->conn,
+                        $mailbox,
+                        "1:$msg_count",
+                        $this->sort_field
+            );
+            $a_uids = iil_C_FetchUIDs($this->conn, $mailbox);
 
-    // fetch complete message index
-    $msg_count = $this->_messagecount($mailbox);
-    if ($this->get_capability('sort') && ($a_index = iil_C_Sort($this->conn, $mailbox, $this->sort_field, '', TRUE)))
-      {
-      if ($this->sort_order == 'DESC')
-        $a_index = array_reverse($a_index);
+            if ($this->sort_order == 'ASC') {
+                asort($a_index);
+            }
+            else if ($this->sort_order=="DESC") {
+                arsort($a_index);
+            }
 
-      $this->cache[$key] = $a_index;
-
-      }
-    else
-      {
-      $a_index = iil_C_FetchHeaderIndex($this->conn, $mailbox, "1:$msg_count", $this->sort_field);
-      $a_uids = iil_C_FetchUIDs($this->conn, $mailbox);
-
-      if ($this->sort_order=="ASC")
-        asort($a_index);
-      else if ($this->sort_order=="DESC")
-        arsort($a_index);
-
-      $i = 0;
-      $this->cache[$key] = array();
-      foreach ($a_index as $index => $value)
-        $this->cache[$key][$i++] = $a_uids[$index];
-      }
-
-    return $this->cache[$key];
+            $i = 0;
+            $this->cache[$key] = array();
+            foreach ($a_index as $index => $value) {
+                $this->cache[$key][$i++] = $a_uids[$index];
+            }
+        }
+        return $this->cache[$key];
     }
-
 
     function sync_header_index($mailbox)
     {
@@ -903,7 +907,6 @@ class rcube_imap
         }
     }
 
-
     /**
      * Invoke search request to IMAP server
      *
@@ -913,7 +916,7 @@ class rcube_imap
      * @return array   search results as list of message ids
      * @access public
      */
-    function search($mbox_name='', $criteria='ALL', $str=NULL, $charset=NULL)
+    public function search($mbox_name='', $criteria='ALL', $str=NULL, $charset=NULL)
     {
         $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
 
@@ -1392,7 +1395,9 @@ class rcube_imap
     }
 
 
-    // append a mail message (source) to a specific mailbox
+    /**
+     * append a mail message (source) to a specific mailbox
+     */
     function save_message($mbox_name, &$message)
     {
         $mbox_name = stripslashes($mbox_name);
@@ -2365,70 +2370,86 @@ class rcube_imap
      * --------------------------------*/
 
 
-  function _mod_mailbox($mbox_name, $mode='in')
+    /**
+     * _mod_mailbox
+     *
+     * @access private
+     * @param  string  $mbox_name
+     * @param  string  $mode
+     * @return string  $mbox_name
+     */
+    private function _mod_mailbox($mbox_name, $mode='in')
     {
-    if (empty($mbox_name) || (!empty($this->root_ns) && $this->root_ns == $mbox_name) || $mbox_name == 'INBOX')
-      return $mbox_name;
+        if ((!empty($this->root_ns) && $this->root_ns == $mbox_name) || $mbox_name == 'INBOX') {
+            return $mbox_name;
+        }
 
-    if (!empty($this->root_dir) && $mode=='in')
-      $mbox_name = $this->root_dir.$this->delimiter.$mbox_name;
-    else if (strlen($this->root_dir) && $mode=='out')
-      $mbox_name = substr($mbox_name, strlen($this->root_dir)+1);
-
-    return $mbox_name;
+        if (!empty($this->root_dir) && $mode=='in') {
+            $mbox_name = $this->root_dir.$this->delimiter.$mbox_name;
+        }
+        else if (strlen($this->root_dir) && $mode=='out') {
+            $mbox_name = substr($mbox_name, strlen($this->root_dir)+1);
+        }
+        return $mbox_name;
     }
 
-
-  // sort mailboxes first by default folders and then in alphabethical order
-  function _sort_mailbox_list($a_folders)
+    /**
+     * sort mailboxes first by default folders and then in alphabethical order
+     */
+    function _sort_mailbox_list($a_folders)
     {
-    $a_out = $a_defaults = array();
+        $a_out = $a_defaults = array();
 
-    // find default folders and skip folders starting with '.'
-    foreach($a_folders as $i => $folder)
-      {
-      if ($folder{0}=='.')
-      	continue;
+        // find default folders and skip folders starting with '.'
+        foreach($a_folders as $i => $folder) {
+            if ($folder{0}=='.') {
+      	        continue;
+            }
 
-      if (($p = array_search(strtolower($folder), $this->default_folders_lc))!==FALSE)
-      	$a_defaults[$p] = $folder;
-      else
-        $a_out[] = $folder;
-      }
+            if (($p = array_search(strtolower($folder), $this->default_folders_lc))!==FALSE) {
+      	        $a_defaults[$p] = $folder;
+            }
+            else {
+                $a_out[] = $folder;
+            }
+        }
 
-    sort($a_out);
-    ksort($a_defaults);
+        sort($a_out);
+        ksort($a_defaults);
 
-    return array_merge($a_defaults, $a_out);
+        return array_merge($a_defaults, $a_out);
     }
 
-  function get_id($uid, $mbox_name=NULL)
+    function get_id($uid, $mbox_name=NULL)
     {
-      return $this->_uid2id($uid, $this->_mod_mailbox($mbox_name));
+        $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox; 
+        return $this->_uid2id($uid, $mailbox);
     }
 
-  function get_uid($id,$mbox_name=NULL)
+    function get_uid($id,$mbox_name=NULL)
     {
-      return $this->_id2uid($id, $this->_mod_mailbox($mbox_name));
+        $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
+        return $this->_id2uid($id, $mailbox);
     }
 
-  function _uid2id($uid, $mbox_name=NULL)
+    function _uid2id($uid, $mbox_name=NULL)
     {
-    if (!$mbox_name)
-      $mbox_name = $this->mailbox;
+        if (!$mbox_name) {
+            $mbox_name = $this->mailbox;
+        }
 
-    if (!isset($this->uid_id_map[$mbox_name][$uid]))
-      $this->uid_id_map[$mbox_name][$uid] = iil_C_UID2ID($this->conn, $mbox_name, $uid);
-
-    return $this->uid_id_map[$mbox_name][$uid];
+        if (!isset($this->uid_id_map[$mbox_name][$uid])) {
+            $this->uid_id_map[$mbox_name][$uid] = iil_C_UID2ID($this->conn, $mbox_name, $uid);
+        }
+        return $this->uid_id_map[$mbox_name][$uid];
     }
 
-  function _id2uid($id, $mbox_name=NULL)
+    function _id2uid($id, $mbox_name=NULL)
     {
-    if (!$mbox_name)
-      $mbox_name = $this->mailbox;
-
-    return iil_C_ID2UID($this->conn, $mbox_name, $id);
+        if (!$mbox_name) {
+            $mbox_name = $this->mailbox;
+        }
+        return iil_C_ID2UID($this->conn, $mbox_name, $id);
     }
 
 

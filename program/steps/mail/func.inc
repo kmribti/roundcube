@@ -602,15 +602,13 @@ function rcmail_message_list($attrib)
                     $cont_normalized.= $cont;
                 }
                 $cont = sprintf(
-                            '<a href="%s" onclick="return false">%s</a>',
-                            rc_main::Q(
-                                rc_main::rcmail_url(
-                                    $action,
-                                    array($uid_param=>$header->uid, '_mbox'=>$mbox)
-                                )
-                            ),
+                            '<a href="%s" onclick="return rcube_event.cancel(event)">%s</a>',
+                            rc_main::Q(rc_main::rcmail_url(
+                                $action,
+                                array($uid_param=>$header->uid, '_mbox'=>$mbox)
+                            )),
                             $cont
-                );
+                ); 
             }
             else if ($col=='size') {
                 $cont_normalized.= $header->$col;
@@ -752,13 +750,11 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE)
                     $cont = rc_main::Q(rcube_label('nosubject'));
                 }
                 $cont = sprintf(
-                            '<a href="%s" onclick="return false">%s</a>',
-                            rc_main::Q(
-                                rc_main::rcmail_url(
-                                    $action,
-                                    array($uid_param=>$header->uid, '_mbox'=>$mbox)
-                                )
-                            ),
+                            '<a href="%s" onclick="return rcube_event.cancel(event)">%s</a>',
+                            rc_main::Q(rc_main::rcmail_url(
+                                $action,
+                                array($uid_param=>$header->uid, '_mbox'=>$mbox)
+                            )),
                             $cont
                 );
             }

@@ -1690,43 +1690,38 @@ function rcube_webmail()
     // checks the input fields before sending a message
     this.check_compose_input = function()
     {
-    // check input fields
-    var input_to = rcube_find_object('_to');
-    var input_subject = rcube_find_object('_subject');
-    var input_message = rcube_find_object('_message');
+        // check input fields
+        var input_to = rcube_find_object('_to');
+        var input_subject = rcube_find_object('_subject');
+        var input_message = rcube_find_object('_message');
 
-    // check for empty recipient
-    if (input_to && !rcube_check_email(input_to.value, true))
-      {
-      alert(this.get_label('norecipientwarning'));
-      input_to.focus();
-      return false;
-      }
-
-    // display localized warning for missing subject
-    if (input_subject && input_subject.value == '')
-      {
-      var subject = prompt(this.get_label('nosubjectwarning'), this.get_label('nosubject'));
-
-      // user hit cancel, so don't send
-      if (!subject && subject !== '')
-        {
-        input_subject.focus();
-        return false;
+        // check for empty recipient
+        if (input_to && !rcube_check_email(input_to.value, true)) {
+            alert(this.get_label('norecipientwarning'));
+            input_to.focus();
+            return false;
         }
-      else
-        {
-        input_subject.value = subject ? subject : this.get_label('nosubject');
+
+        // display localized warning for missing subject
+        if (input_subject && input_subject.value == '') {
+            var subject = prompt(this.get_label('nosubjectwarning'), this.get_label('nosubject'));
+
+            // user hit cancel, so don't send
+            if (!subject && subject !== '') {
+                input_subject.focus();
+                return false;
+            }
+            else {
+                input_subject.value = subject ? subject : this.get_label('nosubject');
+            }
         }
-      }
 
         // check for empty body
         if (
-            (input_message.value=='')
-            && (tinyMCE == null ? true : (tinyMCE.getContent()=='' || tinyMCE.getContent() == null))
+            (input_message.value == '')
+            && (tinyMCE == null ? true : (tinyMCE.getContent() == '' || tinyMCE.getContent() == null))
         ) {
-            if (!confirm(this.get_label('nobodywarning')))
-            {
+            if (!confirm(this.get_label('nobodywarning'))) {
                 input_message.focus();
                 return false;
             }
@@ -1735,12 +1730,10 @@ function rcube_webmail()
         return true;
     };
 
-
     this.set_spellcheck_state = function(s) {
         this.spellcheck_ready = (s=='check_spelling' || s=='ready');
         this.enable_command('spellcheck', this.spellcheck_ready);
     };
-
 
     this.set_draft_id = function(id) {
         var f;
