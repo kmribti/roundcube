@@ -54,10 +54,11 @@
 
 
 // changed path to work within roundcube webmail
-include_once("lib/icl_commons.inc");
+include_once 'lib/icl_commons.inc';
 
-
-if (!$IMAP_USE_HEADER_DATE) $IMAP_USE_INTERNAL_DATE = true;
+if (!isset($IMAP_USE_HEADER_DATE)) {
+    $IMAP_USE_INTERNAL_DATE = true;
+}
 $IMAP_MONTHS=array("Jan"=>1,"Feb"=>2,"Mar"=>3,"Apr"=>4,"May"=>5,"Jun"=>6,"Jul"=>7,"Aug"=>8,"Sep"=>9,"Oct"=>10,"Nov"=>11,"Dec"=>12);
 $IMAP_SERVER_TZ = date('Z');
 
