@@ -639,11 +639,20 @@ class rc_main
         return $host;
     }
 
-
-    // perfom login to the IMAP server and to the webmail service
+    /**
+     * perfom login to the IMAP server and to the webmail service
+     *
+     * @access static
+     * @param  string $user
+     * @param  string $pass
+     * @param  mixed  $host
+     * @return bool
+     * @todo   Refactor code, this function is already to long.
+     */
     static function rcmail_login($user, $pass, $host=NULL)
     {
         $user_id = NULL;
+        $user    = strtolower($user); // force lowercase: #1484473
 
         $registry       = rc_registry::getInstance();
         $CONFIG         = $registry->get('CONFIG', 'core');
