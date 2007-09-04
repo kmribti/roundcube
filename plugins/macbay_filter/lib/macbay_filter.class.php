@@ -250,6 +250,7 @@ final class macbay_filter
      */
     static function handleError($e, $line)
     {
+        rc_main::tfk_debug($e->getMessage());
         rc_bugs::raise_error(
             array(
                 'code' => $e->getCode(),

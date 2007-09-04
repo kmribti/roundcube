@@ -3,8 +3,6 @@ if (defined('MACBAY_POP3_MADNESS') === FALSE) {
     die('no go.');
 }
 
-//echo '<pre>'; var_dump($_POST); echo '</pre>'; exit;
-
 $_plugin_action = (string) @$_POST['_plugin_action'];
 switch($_plugin_action) {
     case 'add':

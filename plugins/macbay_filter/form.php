@@ -10,8 +10,6 @@
  */
 require_once dirname(__FILE__) . '/bootstrap.php';
 
-//echo '1';
-
 /**
  * handle $_plugin_action calls
  * @ignore
