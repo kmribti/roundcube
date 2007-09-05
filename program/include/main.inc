@@ -567,7 +567,7 @@ class rc_main
         );
         // add some basic label to client
         if (!$OUTPUT->ajax_call) {
-            self::rcube_add_label('loading');
+            self::rcube_add_label('loading', 'movingmessage');
         }
     }
 
