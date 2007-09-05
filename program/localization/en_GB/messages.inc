@@ -13,7 +13,7 @@
  | Author: Weiran Zhang (weiran@weiran.co.uk)                            |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 466 2007-02-06 09:17:01Z tomekp $
+ @version $Id: messages.inc 778 2007-09-05 20:08:25Z yllar $
 
 */
 
@@ -60,5 +60,6 @@ $messages['searching'] = 'Searching...';
 $messages['checking'] = 'Checking...';
 $messages['nospellerrors'] = 'No spelling errors found';
 $messages['folderdeleted'] = 'Folder successfully deleted';
+$messages['movingmessage'] = 'Moving message...';
 
 ?>

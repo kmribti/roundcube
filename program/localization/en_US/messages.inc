@@ -13,7 +13,7 @@
  | Author: Thomas Bruederli <roundcube@gmail.com>                        |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 543 2007-04-28 18:07:12Z thomasb $
+ @version $Id: messages.inc 778 2007-09-05 20:08:25Z yllar $
 
 */
 
@@ -75,5 +75,5 @@ $messages['copysuccess'] = 'Successfully copied $nr addresses';
 $messages['copyerror'] = 'Could not copy any addresses';
 $messages['sourceisreadonly'] = 'This address source is read only';
 $messages['errorsavingcontact'] = 'Could not save the contact address';
-
+$messages['movingmessage'] = 'Moving message...';
 ?>
