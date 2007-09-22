@@ -26,18 +26,18 @@ require_once 'Mail/mimeDecode.php';
  *
  * @access public
  * @param  string $string
- * @uses   rc_main::rep_specialchars_output()
+ * @uses   rcube::rep_specialchars_output()
  * @return string
  */
 function rss_encode($string) {
-	$string = rc_main::rep_specialchars_output($string, 'xml');
+	$string = rcube::rep_specialchars_output($string, 'xml');
 	return $string;
 }
 
 $REMOTE_REQUEST = TRUE;
 $OUTPUT_TYPE = 'rss';
 
-$registry = rc_registry::getInstance();
+$registry = rcube_registry::get_instance();
 $registry->set('REMOTE_REQUEST', $REMOTE_REQUEST, 'core');
 $registry->set('OUTPUT_TYPE', $OUTPUT_TYPE, 'core');
 

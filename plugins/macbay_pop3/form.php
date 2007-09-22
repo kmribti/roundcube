@@ -19,11 +19,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $rpops     = $macbay_pop3->getRpop();
 $rpop_left = (intval($rpops['maxRpop'])-count($rpops['rpop']));
 
-$registry = rc_registry::getInstance();
+$registry = rcube_registry::get_instance();
 $OUTPUT   = $registry->get('OUTPUT', 'core');
-$RC_URI   = $registry->get('RC_URI', 'core');
+$BASE_URI   = $registry->get('BASE_URI', 'core');
 
-echo $OUTPUT->parse('header_small', false);
+echo $OUTPUT->send('header_small', false);
 ?>
 <!-- #content needed to make CSS work - we override inline -->
 <div id="content" style="width:760px !important;">

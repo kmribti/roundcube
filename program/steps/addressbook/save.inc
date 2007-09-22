@@ -19,27 +19,27 @@
 
 */
 
-$registry = rc_registry::getInstance();
+$registry = rcube_registry::get_instance();
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 $CONTACTS = $registry->get('CONTACTS', 'core');
 
 // cannot edit record
 if ($CONTACTS->readonly) {
     $OUTPUT->show_message('contactreadonly', 'error');
-    rc_main::rcmail_overwrite_action(empty($_POST['_cid']) ? 'add' : 'show');
+    rcube::override_action(empty($_POST['_cid']) ? 'add' : 'show');
     return;
 }
 
 // check input
 if (
     (
-        !rc_main::get_input_value('_name', RCUBE_INPUT_POST)
-        || !rc_main::get_input_value('_email', RCUBE_INPUT_POST)
+        !rcube::get_input_value('_name', rcube::INPUT_POST)
+        || !rcube::get_input_value('_email', rcube::INPUT_POST)
     )
     && $_framed
 ) {
     $OUTPUT->show_message('formincomplete', 'warning');
-    rc_main::rcmail_overwrite_action(empty($_POST['_cid']) ? 'add' : 'show');
+    rcube::override_action(empty($_POST['_cid']) ? 'add' : 'show');
     return;
 }
 
@@ -47,13 +47,13 @@ if (
 // setup some vars we need
 $a_save_cols = array('name', 'firstname', 'surname', 'email');
 $a_record    = array();
-$cid         = rc_main::get_input_value('_cid', RCUBE_INPUT_POST);
+$cid         = rcube::get_input_value('_cid', rcube::INPUT_POST);
 
 // read POST values into hash array
 foreach ($a_save_cols as $col) {
     $fname = '_'.$col;
     if (isset($_POST[$fname])) {
-        $a_record[$col] = rc_main::get_input_value($fname, RCUBE_INPUT_POST);
+        $a_record[$col] = rcube::get_input_value($fname, rcube::INPUT_POST);
     }
 }
 
@@ -75,12 +75,12 @@ if (!empty($cid)) {
       
         // show confirmation
         $OUTPUT->show_message('successfullysaved', 'confirmation');    
-        rc_main::rcmail_overwrite_action('show');
+        rcube::override_action('show');
     }
     else {
         // show error message
         $OUTPUT->show_message('errorsaving', 'error');
-        rc_main::rcmail_overwrite_action('show');
+        rcube::override_action('show');
     }
 }
 // insert a new contact
@@ -91,7 +91,7 @@ else {
     // show warning message
     if ($existing->count) {
         $OUTPUT->show_message('contactexists', 'warning');
-        rc_main::rcmail_overwrite_action('add');
+        rcube::override_action('add');
         return;
     }
 
@@ -112,13 +112,13 @@ else {
 
         // show confirmation
         $OUTPUT->show_message('successfullysaved', 'confirmation');
-        rc_main::rcmail_overwrite_action('show');
+        rcube::override_action('show');
         $_GET['_cid'] = $insert_id;
     }
     else {
         // show error message
         $OUTPUT->show_message('errorsaving', 'error');
-        rc_main::rcmail_overwrite_action('add');
+        rcube::override_action('add');
     }
 }
 ?>

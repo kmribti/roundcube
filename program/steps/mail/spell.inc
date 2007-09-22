@@ -21,14 +21,14 @@
 
 */
 
-$registry       = rc_registry::getInstance();
+$registry       = rcube_registry::get_instance();
 $REMOTE_REQUEST = $registry->set('REMOTE_REQUEST', TRUE, 'core');
-$CONFIG         = $registry->get('CONFIG', 'core');
+$CONFIG         = $registry->get_all('config');
 
 // default settings
 $host = "ssl://www.google.com";
 $port = 443;
-$lang = rc_main::get_input_value('lang', RCUBE_INPUT_GET);
+$lang = rcube::get_input_value('lang', rcube::INPUT_GET);
 $path = "/tbproxy/spell?lang=$lang";
 
 // spell check uri is configured

@@ -2,7 +2,7 @@
 
 /*
  +-----------------------------------------------------------------------+
- | program/lib/rc_mime.inc                                               |
+ | program/lib/rcube_mail_mime.php                                       |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
  | Copyright (C) 2007, RoundCube Dev. - Switzerland                      |
@@ -19,11 +19,13 @@
 
 */
 
-// require Mail_mime class 1.4.0
-require_once('Mail/mime.php');
 
-
-class rc_mail_mime extends Mail_mime
+/**
+ * Class extending PEAR::Mail_mime with some missing methods
+ *
+ * @package Mail
+ */
+class rcube_mail_mime extends Mail_mime
 {
   
   /**

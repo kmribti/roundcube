@@ -26,8 +26,8 @@ $a_flags_map = array(
 );
 
 if (
-    ($uids = rc_main::get_input_value('_uid', RCUBE_INPUT_POST))
-    && ($flag = rc_main::get_input_value('_flag', RCUBE_INPUT_POST))
+    ($uids = rcube::get_input_value('_uid', rcube::INPUT_POST))
+    && ($flag = rcube::get_input_value('_flag', rcube::INPUT_POST))
 ) {
     $flag = $a_flags_map[$flag] ? $a_flags_map[$flag] : strtoupper($flag);
     $marked = $IMAP->set_flag($uids, $flag);

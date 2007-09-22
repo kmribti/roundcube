@@ -19,7 +19,7 @@
 
 */
 
-//rc_main::tfk_debug('/ show :-)');
+//rcube::tfk_debug('/ show :-)');
 
 require_once 'Mail/mimeDecode.php';
 
@@ -29,20 +29,20 @@ $registry->set('PRINT_MODE', $PRINT_MODE, 'core');
 // similar code as in program/steps/mail/get.inc
 if ($_GET['_uid']) {
 
-    //rc_main::tfk_debug("/ uid: {$_GET['_uid']}");
+    //rcube::tfk_debug("/ uid: {$_GET['_uid']}");
 
-    $MESSAGE            = array('UID' => rc_main::get_input_value('_uid', RCUBE_INPUT_GET));
+    $MESSAGE            = array('UID' => rcube::get_input_value('_uid', rcube::INPUT_GET));
     $MESSAGE['headers'] = $IMAP->get_headers($MESSAGE['UID']);
 
     $registry->set('MESSAGE', $MESSAGE, 'core');
 
-    //rc_main::tfk_debug(var_export($MESSAGE, true));
+    //rcube::tfk_debug(var_export($MESSAGE, true));
 
     // go back to list if message not found (wrong UID)
     if (!$MESSAGE['headers']) {
         $OUTPUT->show_message('messageopenerror', 'error');
         if ($_action=='preview' && template_exists('messagepreview')) {
-            rc_main::parse_template('messagepreview');
+            rcube::parse_template('messagepreview');
         }
         else {
             $_action = 'list';
@@ -54,7 +54,7 @@ if ($_GET['_uid']) {
     $etag = md5($MESSAGE['UID'] . $IMAP->get_mailbox_name() . session_id(). ($PRINT_MODE?1:0));
 
     // allow caching, unless remote images are present
-    if ((bool)rc_main::get_input_value('_safe', RCUBE_INPUT_GET)) {
+    if ((bool)rcube::get_input_value('_safe', rcube::INPUT_GET)) {
         send_nocacheing_headers();
     }
     else {
@@ -135,12 +135,12 @@ if ($_GET['_uid']) {
     }
 }
 
-//rc_main::tfk_debug("/ hallo");
+//rcube::tfk_debug("/ hallo");
 
 function rcmail_message_attachments($attrib)
 {
-    $registry   = rc_registry::getInstance();
-    $CONFIG     = $registry->get('CONFIG', 'core');
+    $registry   = rcube_registry::get_instance();
+    $CONFIG     = $registry->get_all('config');
     $OUTPUT     = $registry->get('OUTPUT', 'core');
     $PRINT_MODE = $registry->get('PRINT_MODE', 'core');
     $MESSAGE    = $registry->get('MESSAGE', 'core');
@@ -149,7 +149,7 @@ function rcmail_message_attachments($attrib)
 
     if (sizeof($MESSAGE['attachments'])) {
         // allow the following attributes to be added to the <ul> tag
-        $attrib_str = rc_main::create_attrib_string(
+        $attrib_str = rcube::create_attrib_string(
                             $attrib,
                             array('style', 'class', 'id')
         );
@@ -194,26 +194,26 @@ function rcmail_message_attachments($attrib)
  * @access static
  * @param  array  $attrib
  * @return string $out
- * @uses   rc_registry::getInstance()
+ * @uses   rcube_registry::get_instance()
  */
 function rcmail_remote_objects_msg($attrib)
 {
-    $registry   = rc_registry::getInstance();
-    $CONFIG     = $registry->get('CONFIG', 'core');
+    $registry   = rcube_registry::get_instance();
+    $CONFIG     = $registry->get_all('config');
     $OUTPUT     = $registry->get('OUTPUT', 'core');
 
     if (!$attrib['id']) {
         $attrib['id'] = 'rcmremoteobjmsg';
     }
     // allow the following attributes to be added to the <div> tag
-    $attrib_str = rc_main::create_attrib_string($attrib, array('style', 'class', 'id'));
+    $attrib_str = rcube::create_attrib_string($attrib, array('style', 'class', 'id'));
 
     $out = '<div' . $attrib_str . ">";
     $out .= sprintf(
                 '%s&nbsp;<a href="#loadimages" onclick="%s.command(\'load-images\')">%s</a>',
-                rc_main::Q(rcube_label('blockedimages')),
+                Q(rcube::gettext('blockedimages')),
                 JS_OBJECT_NAME,
-                rc_main::Q(rcube_label('showimages'))
+                Q(rcube::gettext('showimages'))
     );
     $out .= '</div>';
 
@@ -229,13 +229,13 @@ $OUTPUT->add_handlers(
             )
 );
 
-if ($_action=='print' && rc_main::template_exists('printmessage')) {
-    rc_main::parse_template('printmessage');
+if ($_action=='print' && rcube::template_exists('printmessage')) {
+    rcube::parse_template('printmessage');
 }
-elseif ($_action=='preview' && rc_main::template_exists('messagepreview')) {
-    rc_main::parse_template('messagepreview');
+elseif ($_action=='preview' && rcube::template_exists('messagepreview')) {
+    rcube::parse_template('messagepreview');
 }
 else {
-    rc_main::parse_template('message');
+    rcube::parse_template('message');
 }
 ?>

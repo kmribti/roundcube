@@ -17,22 +17,22 @@
 
  $Id: folders.inc 573 2007-05-18 11:29:25Z thomasb $
 */
-$registry  = rc_registry::getInstance();
+$registry  = rcube_registry::get_instance();
 $IMAP      = $registry->get('IMAP', 'core');
 $mbox_name = $IMAP->get_mailbox_name();
 
 // send EXPUNGE command
-if ($_action=='expunge' && ($mbox = rc_main::get_input_value('_mbox', RCUBE_INPUT_POST))) {
+if ($_action=='expunge' && ($mbox = rcube::get_input_value('_mbox', rcube::INPUT_POST))) {
     $success = $IMAP->expunge($mbox);
 
-    //rc_main::tfk_debug('Expung: ' . $mbox);
+    //rcube::tfk_debug('Expung: ' . $mbox);
 
     // reload message list if current mailbox
     if ($success && empty($_REQUEST['_reload']) === false) {
         $OUTPUT->command('message_list.clear');
         $_action = 'list';
 
-        //rc_main::tfk_debug('Trying to reload list.');
+        //rcube::tfk_debug('Trying to reload list.');
 
         $_file = dirname(__FILE__);
         $_file.= '/list.inc';
@@ -47,7 +47,7 @@ if ($_action=='expunge' && ($mbox = rc_main::get_input_value('_mbox', RCUBE_INPU
     }
 }
 // clear mailbox
-elseif ($_action=='purge' && ($mbox = rc_main::get_input_value('_mbox', RCUBE_INPUT_POST))) {
+elseif ($_action=='purge' && ($mbox = rcube::get_input_value('_mbox', rcube::INPUT_POST))) {
     $success = $IMAP->clear_mailbox($mbox);
 
     if ($success && !empty($_REQUEST['_reload'])) {

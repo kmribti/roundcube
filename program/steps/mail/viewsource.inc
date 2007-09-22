@@ -21,13 +21,13 @@
 
 
 // similar code as in program/steps/mail/get.inc
-if ($uid = rc_main::get_input_value('_uid', RCUBE_INPUT_GET)) {
+if ($uid = rcube::get_input_value('_uid', rcube::INPUT_GET)) {
     header('Content-Type: text/plain');
     //@ob_end_clean();
     $IMAP->print_raw_body($uid);
 }
 else {
-    rc_bugs::raise_error(
+    rcube_error::raise(
         array(
             'code' => 500,
             'type' => 'php',

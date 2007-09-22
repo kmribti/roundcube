@@ -18,13 +18,13 @@ switch ($_plugin_action) {
     case 'save':
         $status = $macbay_filter->saveRules($_POST);
         if ($status !== true) {
-            rc_main::tfk_debug('Response: ' . $status);
+            rcube::tfk_debug('Response: ' . $status);
             array_push($error_msg, 'Ihre &Auml;nderungen konnten leider nicht gespeichert werden.');
         }
         break;
 
     default:
-        rc_bugs::raise_error(
+        rcube_error::raise(
                 array(
                     'code'    => 666,
                     'message' => 'Unknown plugin_action',

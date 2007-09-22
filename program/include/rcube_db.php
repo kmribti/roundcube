@@ -96,7 +96,7 @@ class rcube_db
             $this->db_error = TRUE;
             $this->db_error_msg = $dbh->getMessage();
 
-            rc_bugs::raise_error(
+            rcube_error::raise(
                     array(
                         'code' => 603,
                         'type' => 'db',
@@ -307,7 +307,7 @@ class rcube_db
             case 'pgsql':
                 $result = &$this->db_handle->getOne("SELECT CURRVAL('$sequence')");
                 if (DB::isError($result)) {
-                    rc_bugs::raise_error(
+                    rcube_error::raise(
                         array(
                             'code' => 500,
                             'type' => 'db',
@@ -322,7 +322,7 @@ class rcube_db
             case 'mssql':
                 $result = &$this->db_handle->getOne("SELECT @@IDENTITY");
                 if (DB::isError($result)) {
-                    rc_bugs::raise_error(
+                    rcube_error::raise(
                         array(
                             'code' => 500,
                             'type' => 'db',
@@ -391,7 +391,7 @@ class rcube_db
     private function _fetch_row($result, $mode)
     {
         if (!$result || DB::isError($result)) {
-            rc_bugs::raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
+            rcube_error::raise(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
                         'message' => $this->db_link->getMessage()), TRUE, FALSE);
             return FALSE;
         }
@@ -527,7 +527,7 @@ class rcube_db
     {
         // sql error occured
         if (DB::isError($res)) {
-            rc_bugs::raise_error(
+            rcube_error::raise(
                 array(
                     'code' => 500,
                     'type' => 'db',

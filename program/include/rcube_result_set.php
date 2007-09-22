@@ -1,7 +1,10 @@
 <?php
+
 /**
  * RoundCube result set class.
  * Representing an address directory result set.
+ *
+ * @package Addressbook
  */
 class rcube_result_set
 {
@@ -43,4 +46,4 @@ class rcube_result_set
         $this->current = $i;
     }
 }
-?>
+

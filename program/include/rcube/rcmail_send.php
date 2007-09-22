@@ -16,18 +16,18 @@ class rcmail_send
      */
     function get_identity($id)
     {
-        $registry = rc_registry::getInstance();
+        $registry = rcube_registry::get_instance();
         $DB       = $registry->get('DB', 'core');
         $OUTPUT   = $registry->get('OUTPUT', 'core');
 
         // get identity record
         $_query = "SELECT *, email AS mailto";
-        $_query.= " FROM " . rc_main::get_table_name('identities');
+        $_query.= " FROM " . rcube::get_table_name('identities');
         $_query.= " WHERE identity_id=?";
         $_query.= " AND user_id=?";
         $_query.= " AND del<>1";
 
-        //rc_main::tfk_debug('Identity: ' . $_query);
+        //rcube::tfk_debug('Identity: ' . $_query);
 
         $sql_result = $DB->query($_query, $id, $_SESSION['user_id']);
         if ($DB->db_error === true) {
@@ -39,7 +39,7 @@ class rcmail_send
             $name = strpos($sql_arr['name'], ",") ? '"'.$sql_arr['name'].'"' : $sql_arr['name'];
             $out['string'] = sprintf(
                                 '%s <%s>',
-                                rc_main::rcube_charset_convert($name, RCMAIL_CHARSET, $OUTPUT->get_charset()),
+                                rcube::charset_convert($name, RCMAIL_CHARSET, $OUTPUT->get_charset()),
                                 $sql_arr['mailto']
             );
             return $out;
@@ -62,9 +62,8 @@ class rcmail_send
      */
     function attach_emoticons(&$mime_message)
     {
-        $registry     = rc_registry::getInstance();
-        $INSTALL_PATH = $registry->get('INSTALL_PATH', 'core');
-        $CONFIG       = $registry->get('CONFIG', 'core');
+        $registry     = rcube_registry::get_instance();
+        $CONFIG       = $registry->get_all('config');
 
         $htmlContents = $mime_message->getHtmlBody();
 
@@ -94,7 +93,7 @@ class rcmail_send
 
             if (! in_array($image_name, $included_images)) {
                 // add the image to the MIME message
-                $img_file = $INSTALL_PATH . '/' . $searchstr . $image_name;
+                $img_file = INSTALL_PATH . '/' . $searchstr . $image_name;
                 $status   = $mime_message->addHTMLImage(
                                     $img_file,
                                     'image/gif',

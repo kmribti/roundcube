@@ -18,17 +18,17 @@
 
 */
 
-$registry = rc_registry::getInstance();
+$registry = rcube_registry::get_instance();
 $IMAP     = $registry->get('IMAP', 'core');
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 
 // move messages
 if ($_action=='moveto' && !empty($_POST['_uid']) && !empty($_POST['_target_mbox'])) {
-    $count  = sizeof(explode(',', ($uids = rc_main::get_input_value('_uid', RCUBE_INPUT_POST))));
-    $target = rc_main::get_input_value('_target_mbox', RCUBE_INPUT_POST);
-    $moved  = $IMAP->move_message($uids, $target, rc_main::get_input_value('_mbox', RCUBE_INPUT_POST));
+    $count  = sizeof(explode(',', ($uids = rcube::get_input_value('_uid', rcube::INPUT_POST))));
+    $target = rcube::get_input_value('_target_mbox', rcube::INPUT_POST);
+    $moved  = $IMAP->move_message($uids, $target, rcube::get_input_value('_mbox', rcube::INPUT_POST));
 
-    //rc_main::tfk_debug('Moved?: ' . $target . '/' . $uids . '/' . $moved);
+    //rcube::tfk_debug('Moved?: ' . $target . '/' . $uids . '/' . $moved);
 
     if (!$moved) {
         // send error message
@@ -40,8 +40,8 @@ if ($_action=='moveto' && !empty($_POST['_uid']) && !empty($_POST['_target_mbox'
 }
 // delete messages
 else if ($_action=='delete' && !empty($_POST['_uid'])) {
-    $count = sizeof(explode(',', ($uids = rc_main::get_input_value('_uid', RCUBE_INPUT_POST))));
-    $del   = $IMAP->delete_message($uids, rc_main::get_input_value('_mbox', RCUBE_INPUT_POST));
+    $count = sizeof(explode(',', ($uids = rcube::get_input_value('_uid', rcube::INPUT_POST))));
+    $del   = $IMAP->delete_message($uids, rcube::get_input_value('_mbox', rcube::INPUT_POST));
 
     if (!$del) {
         // send error message
@@ -53,13 +53,13 @@ else if ($_action=='delete' && !empty($_POST['_uid'])) {
 }
 // unknown action or missing query param
 else {
-    //rc_main::tfk_debug('/ unknown action');
+    //rcube::tfk_debug('/ unknown action');
     exit;
 }
 
 // refresh saved seach set after moving some messages
 if (
-    ($search_request = rc_main::get_input_value('_search', RCUBE_INPUT_GPC))
+    ($search_request = rcube::get_input_value('_search', rcube::INPUT_GPC))
     && $IMAP->search_set
 ) {
     $_SESSION['search'][$search_request] = $IMAP->refresh_search();

@@ -19,12 +19,12 @@
 
 */
 
-$registry = rc_registry::getInstance();
+$registry = rcube_registry::get_instance();
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 $CONTACTS = $registry->get('CONTACTS', 'core');
 
-$cid    = rc_main::get_input_value('_cid', RCUBE_INPUT_POST);
-$target = rc_main::get_input_value('_to', RCUBE_INPUT_POST);
+$cid    = rcube::get_input_value('_cid', rcube::INPUT_POST);
+$target = rcube::get_input_value('_to', rcube::INPUT_POST);
 if (
     $cid
     && preg_match('/^[a-z0-9\-_=]+(,[a-z0-9\-_=]+)*$/i', $cid)

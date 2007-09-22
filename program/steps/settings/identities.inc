@@ -18,16 +18,16 @@
  $Id: identities.inc 543 2007-04-28 18:07:12Z thomasb $
 
 */
-$registry = rc_registry::getInstance();
+$registry = rcube_registry::get_instance();
 $DB       = $registry->get('DB', 'core');
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 
 if ($USER_DATA = $DB->fetch_assoc($sql_result)) {
-    rc_main::tfk_debug(var_export($USER_DATA, true));
+    rcube::tfk_debug(var_export($USER_DATA, true));
     $OUTPUT->set_pagetitle(
                 sprintf(
                     '%s (%s@%s)',
-                    rcube_label('identities'),
+                    rcube::gettext('identities'),
                     $USER_DATA['username'],
                     $USER_DATA['mail_host']
                 )
@@ -38,7 +38,7 @@ $OUTPUT->include_script('list.js');
 // similar function as /steps/addressbook/func.inc::rcmail_contact_frame()
 function rcmail_identity_frame($attrib)
 {
-    $registry = rc_registry::getInstance();
+    $registry = rcube_registry::get_instance();
     $OUTPUT   = $registry->get('OUTPUT', 'core');
 
     if (!$attrib['id']) {
@@ -48,7 +48,7 @@ function rcmail_identity_frame($attrib)
 
     $OUTPUT->set_env('contentframe', $attrib['name']);
 
-    $attrib_str = rc_main::create_attrib_string(
+    $attrib_str = rcube::create_attrib_string(
                         $attrib,
                         array(
                             'name', 'id', 'class', 'style',
@@ -62,5 +62,5 @@ function rcmail_identity_frame($attrib)
 
 $OUTPUT->add_handler('identityframe', 'rcmail_identity_frame');
 
-rc_main::parse_template('identities');
+rcube::parse_template('identities');
 ?>

@@ -1,37 +1,47 @@
 <?php
+
+/*
+ +-----------------------------------------------------------------------+
+ | class rcube_html_page                                                 |
+ |                                                                       |
+ | This file is part of the RoundCube PHP suite                          |
+ | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Licensed under the GNU GPL                                            |
+ |                                                                       |
+ | CONTENTS:                                                             |
+ |   Class to build XHTML page output                                    |
+ |                                                                       |
+ +-----------------------------------------------------------------------+
+ | Author: Thomas Bruederli <roundcube@gmail.com>                        |
+ +-----------------------------------------------------------------------+
+
+ $Id:  $
+
+*/
+
 class rcube_html_page
 {
-    var $css;
+    protected $scripts_path = '';
+    protected $script_files = array();
+    protected $external_scripts = array();
+    protected $scripts = array();
+    protected $charset = 'ISO-8859-1';
 
-    var $scripts_path = '';
-    var $script_files = array();
-    var $external_scripts = array();
-    var $scripts = array();
-    var $charset = 'ISO-8859-1';
+    protected $script_tag_file = "<script type=\"text/javascript\" src=\"%s%s\"></script>\n";
+    protected $script_tag      = "<script type=\"text/javascript\">\n<!--\n%s\n\n//-->\n</script>\n";
+    protected $default_template = "<html>\n<head><title></title></head>\n<body></body>\n</html>";
+    protected $tag_format_external_script = "<script type=\"text/javascript\" src=\"%s\"></script>\n";
 
-    var $script_tag_file = "<script type=\"text/javascript\" src=\"%s%s\"></script>\n";
-    var $script_tag      = "<script type=\"text/javascript\">\n<!--\n%s\n\n//-->\n</script>\n";
-    var $default_template = "<html>\n<head><title></title></head>\n<body></body>\n</html>";
-    var $tag_format_external_script = "<script type=\"text/javascript\" src=\"%s\"></script>\n";
-
-    var $title = '';
-    var $header = '';
-    var $footer = '';
-    var $body = '';
-    var $body_attrib = array();
-    var $meta_tags = array();
+    protected $title = '';
+    protected $header = '';
+    protected $footer = '';
+    protected $body = '';
 
 
     // PHP 5 constructor
     function __construct()
     {
-        $this->css = new rcube_css();
-    }
 
-    // PHP 4 compatibility
-    function rcube_html_page()
-    {
-        $this->__construct();
     }
 
 
@@ -82,19 +92,9 @@ class rcube_html_page
         $this->title = $t;
     }
 
-
     function set_charset($charset)
     {
-        $registry = rc_registry::getInstance();
-        $MBSTRING = $registry->get('MBSTRING', 'core');
-
         $this->charset = $charset;
-
-        if ($MBSTRING && function_exists("mb_internal_encoding")) {
-            if(!@mb_internal_encoding($charset)) {
-                $MBSTRING = FALSE;
-            }
-        }
     }
 
     function get_charset()
@@ -105,7 +105,6 @@ class rcube_html_page
 
     function reset()
     {
-        $this->css = new rcube_css();
         $this->script_files = array();
         $this->scripts = array();
         $this->title = '';
@@ -116,6 +115,8 @@ class rcube_html_page
 
     function write($templ='', $base_path='')
     {
+        global $__page_content;
+        
         $output = empty($templ) ? $this->default_template : trim($templ);
 
         // set default page title
@@ -123,7 +124,7 @@ class rcube_html_page
             $this->title = 'RoundCube Mail';
         }
         // replace specialchars in content
-        $__page_title = rc_main::Q($this->title, 'show', FALSE);
+        $__page_title = Q($this->title, 'show', FALSE);
         $__page_header = $__page_body = $__page_footer = '';
 
 
@@ -171,8 +172,6 @@ class rcube_html_page
 
         if (!empty($this->footer))
             $__page_footer .= $this->footer;
-
-        $__page_header .= $this->css->show();
 
         // find page header
         if($hpos = strpos(strtolower($output), '</head>')) {
@@ -230,7 +229,7 @@ class rcube_html_page
         $output = preg_replace('/(src|href|background)=(["\']?)(\/[a-z0-9_\-]+)/Ui', "\\1=\\2$base_path\\3", $output);
         $output = str_replace('$__skin_path', $base_path, $output);
 
-        print rc_main::rcube_charset_convert($output, 'UTF-8', $this->charset);
+        print rcube::charset_convert($output, 'UTF-8', $this->charset);
     }
 
 

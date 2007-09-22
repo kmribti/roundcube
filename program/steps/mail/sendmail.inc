@@ -20,44 +20,43 @@
 
 */
 
-//rc_main::tfk_debug('Yay, sendmail.inc reached!');
+//rcube::tfk_debug('Yay, sendmail.inc reached!');
 
 
-$registry = rc_registry::getInstance();
+$registry = rcube_registry::get_instance();
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 $MBSTRING = $registry->get('MBSTRING', 'core');
-$CONFIG   = $registry->get('CONFIG', 'core');
+$CONFIG   = $registry->get_all('config');
 $IMAP     = $registry->get('IMAP', 'core');
 
 //require_once('lib/smtp.inc');
-require_once 'include/rcube_smtp.inc';
+require_once 'include/rcube_smtp.php';
 require_once 'lib/html2text.inc';
-require_once 'lib/rc_mail_mime.inc';
 
 
 if (!isset($_SESSION['compose']['id'])) {
-    rc_main::rcmail_overwrite_action('list');
+    rcube::override_action('list');
     return;
 }
 
-//rc_main::tfk_debug('Still here!');
+//rcube::tfk_debug('Still here!');
 
 /****** message sending functions ********/
 require_once 'include/rcube/rcmail_send.php';
 
-//rc_main::tfk_debug('Passed require of class rc_mail_send.');
+//rcube::tfk_debug('Passed require of class rc_mail_send.');
 
 if (strlen($_POST['_draft_saveid']) > 3) {
-    $olddraftmessageid = rc_main::get_input_value('_draft_saveid', RCUBE_INPUT_POST);
+    $olddraftmessageid = rcube::get_input_value('_draft_saveid', rcube::INPUT_POST);
 }
 $message_id = sprintf(
                 '<%s@%s>',
                 md5(uniqid('rcmail' . rand(),true)),
-                rc_main::rcmail_mail_domain($_SESSION['imap_host'])
+                rcube::mail_domain($_SESSION['imap_host'])
 );
 $savedraft = ((empty($_POST['_draft']) === false) ? TRUE : FALSE);
 
-//rc_main::tfk_debug('Draft?: ' . var_export($savedraft, true));
+//rcube::tfk_debug('Draft?: ' . var_export($savedraft, true));
 
 // remove all scripts and act as called in frame
 $OUTPUT->reset();
@@ -73,7 +72,7 @@ if (!$savedraft && empty($_POST['_to']) && empty($_POST['_subject']) && $_POST['
     return;
 }
 
-//rc_main::tfk_debug('Passed some checks! Right before charset!');
+//rcube::tfk_debug('Passed some checks! Right before charset!');
 
 // set default charset
 $input_charset = $OUTPUT->get_charset();
@@ -86,23 +85,23 @@ $mailto_replace = array(', ', ', ', '', ',');
 $mailto = preg_replace(
             $mailto_regexp,
             $mailto_replace,
-            rc_main::get_input_value('_to', RCUBE_INPUT_POST, TRUE, $message_charset)
+            rcube::get_input_value('_to', rcube::INPUT_POST, TRUE, $message_charset)
 );
 
-//rc_main::tfk_debug('We just replaced line endings.');
+//rcube::tfk_debug('We just replaced line endings.');
 
 // decode address strings
 $to_address_arr = $IMAP->decode_address_list($mailto);
-//rc_main::tfk_debug('To: ' . var_export($to_address_arr, true));
+//rcube::tfk_debug('To: ' . var_export($to_address_arr, true));
 
-$identity_arr = rcmail_send::get_identity(rc_main::get_input_value('_from', RCUBE_INPUT_POST));
+$identity_arr = rcmail_send::get_identity(rcube::get_input_value('_from', rcube::INPUT_POST));
 if ($identity_arr === false) {
     $OUTPUT->show_message("sendingfailed", 'error');
     $OUTPUT->send('iframe');
     return;
 }
 
-//rc_main::tfk_debug('We got identity.');
+//rcube::tfk_debug('We got identity.');
 
 $from = $identity_arr['mailto'];
 $first_to = is_array($to_address_arr[0]) ? $to_address_arr[0]['mailto'] : $mailto;
@@ -113,7 +112,7 @@ if (empty($identity_arr['string'])) {
 // compose headers array
 $headers = array(
             'Date' => date('D, j M Y H:i:s O'),
-            'From' => rc_main::rcube_charset_convert($identity_arr['string'], RCMAIL_CHARSET, $message_charset),
+            'From' => rcube::charset_convert($identity_arr['string'], RCMAIL_CHARSET, $message_charset),
             'To'   => $mailto
 );
 
@@ -122,9 +121,9 @@ if (!empty($_POST['_cc'])) {
     $headers['Cc'] = preg_replace(
                         $mailto_regexp,
                         $mailto_replace,
-                        rc_main::get_input_value(
+                        rcube::get_input_value(
                             '_cc',
-                            RCUBE_INPUT_POST,
+                            rcube::INPUT_POST,
                             TRUE, $message_charset
                         )
     );
@@ -132,7 +131,7 @@ if (!empty($_POST['_cc'])) {
 if (!empty($_POST['_bcc'])) {
     $headers['Bcc'] = preg_replace(
                         $mailto_regexp, $mailto_replace,
-                        rc_main::get_input_value('_bcc', RCUBE_INPUT_POST, TRUE, $message_charset)
+                        rcube::get_input_value('_bcc', rcube::INPUT_POST, TRUE, $message_charset)
     );
 }
 if (empty($identity_arr['bcc']) === false) {
@@ -140,9 +139,9 @@ if (empty($identity_arr['bcc']) === false) {
 }
 // add subject
 $headers['Subject'] = trim(
-                        rc_main::get_input_value(
+                        rcube::get_input_value(
                             '_subject',
-                            RCUBE_INPUT_POST,
+                            rcube::INPUT_POST,
                             FALSE,
                             $message_charset
                         )
@@ -185,9 +184,9 @@ if (!empty($CONFIG['useragent'])) {
     $headers['User-Agent'] = $CONFIG['useragent'];
 }
 // fetch message body
-$message_body = rc_main::get_input_value(
+$message_body = rcube::get_input_value(
                     '_message',
-                    RCUBE_INPUT_POST,
+                    rcube::INPUT_POST,
                     TRUE,
                     $message_charset
 );
@@ -198,7 +197,7 @@ if (!$savedraft) {
         $footer = @file_get_contents(realpath($CONFIG['generic_message_footer']));
         if ($footer !== FALSE) {
             $message_body .= "\r\n";
-            $message_body .= rcube_charset_convert(
+            $message_body .= rcube::charset_convert(
                                 $footer,
                                 'UTF-8',
                                 $message_charset
@@ -222,11 +221,11 @@ else {
     $header_delm = "\n";
 }
 
-$isHtmlVal = strtolower(rc_main::get_input_value('_is_html', RCUBE_INPUT_POST));
+$isHtmlVal = strtolower(rcube::get_input_value('_is_html', rcube::INPUT_POST));
 $isHtml    = ($isHtmlVal == "1");
 
 // create extended PEAR::Mail_mime instance
-$MAIL_MIME = new rc_mail_mime($header_delm);
+$MAIL_MIME = new rcube_mail_mime($header_delm);
 
 // For HTML-formatted messages, construct the MIME message with both
 // the HTML part and the plain-text part
@@ -306,10 +305,10 @@ if (is_array($_FILES['_attachments']['tmp_name'])) {
     }
 }
 
-//rc_main::tfk_debug('Errors anyone?: ' . var_export($error_msg, true));
+//rcube::tfk_debug('Errors anyone?: ' . var_export($error_msg, true));
 
 if (count($error_msg) > 0) {
-    rc_bugs::raise_error(
+    rcube_error::raise(
         array(
             'code' => 800,
             'type' => 'smtp',
@@ -352,17 +351,17 @@ if ($MBSTRING && function_exists("mb_encode_mimeheader")) {
     mb_internal_encoding(RCMAIL_CHARSET);
 }
 
-//rc_main::tfk_debug('Right before sending/draft if!');
+//rcube::tfk_debug('Right before sending/draft if!');
 
 // Begin SMTP Delivery Block
 if ($savedraft === false) {
 
-    //rc_main::tfk_debug('Not a draft. We try to send mail.');
+    //rcube::tfk_debug('Not a draft. We try to send mail.');
 
     // send thru SMTP server using custom SMTP library
     if ($_SESSION['smtp_server'] != 'phpMail') {
 
-        //rc_main::tfk_debug('Because we can: SMTP.');
+        //rcube::tfk_debug('Because we can: SMTP.');
 
         // generate list of recipients
         $a_recipients = array($mailto);
@@ -389,10 +388,10 @@ if ($savedraft === false) {
                     $msg_body,
                     $smtp_response
         );
-        //rc_main::tfk_debug(var_export($smtp_response, true));
+        //rcube::tfk_debug(var_export($smtp_response, true));
         // log error
         if (!$sent) {
-            rc_bugs::raise_error(
+            rcube_error::raise(
                 array(
                     'code' => 800,
                     'type' => 'smtp',
@@ -407,7 +406,7 @@ if ($savedraft === false) {
     }
     else { // send mail using PHP's mail() function
 
-        //rc_main::tfk_debug('We try to send using mail().');
+        //rcube::tfk_debug('We try to send using mail().');
 
         // unset some headers because they will be added by the mail() function
         $headers_enc = $MAIL_MIME->headers($headers);
@@ -440,7 +439,7 @@ if ($savedraft === false) {
         }
         // return to compose page if sending failed
         if ($sent === false) {
-            //rc_main::tfk_debug('mail(): failed');
+            //rcube::tfk_debug('mail(): failed');
             $OUTPUT->show_message("sendingfailed", 'error');
             $OUTPUT->send('iframe');
             return;
@@ -480,7 +479,7 @@ if ($CONFIG[$store_target]) {
     }
     // raise error if saving failed
     if (!$saved) {
-        rc_bugs::raise_error(
+        rcube_error::raise(
             array(
                 'code' => 800,
                 'type' => 'imap',
@@ -507,7 +506,7 @@ if ($CONFIG[$store_target]) {
         );
         // raise error if deletion of old draft failed
         if (!$deleted) {
-            rc_bugs::raise_error(
+            rcube_error::raise(
                     array(
                         'code' => 800,
                         'type' => 'imap',
@@ -551,7 +550,7 @@ else {
         }
     }
     rcmail_compose_cleanup();
-    $OUTPUT->command('sent_successfully', rcube_label('messagesent'));
+    $OUTPUT->command('sent_successfully', rcube::gettext('messagesent'));
     $OUTPUT->send('iframe');
 }
 ?>

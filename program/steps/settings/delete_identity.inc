@@ -20,10 +20,10 @@
 */
 
 if (
-    ($ids = rc_main::get_input_value('_iid', RCUBE_INPUT_GET))
+    ($ids = rcube::get_input_value('_iid', rcube::INPUT_GET))
     && preg_match('/^[0-9]+(,[0-9]+)*$/', $ids)
 ) {
-    $_query = "UPDATE " . rc_main::get_table_name('identities');
+    $_query = "UPDATE " . rcube::get_table_name('identities');
     $_query.= " SET del=1";
     $_query.= " WHERE user_id=?";
     $_query.= " AND identity_id IN (" . $ids . ")";
@@ -43,5 +43,5 @@ if ($OUTPUT->ajax_call) {
 }
 
 // go to identities page
-rc_main::rcmail_overwrite_action('identities');
+rcube::override_action('identities');
 ?>

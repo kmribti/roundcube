@@ -18,20 +18,9 @@
 
 */
 
-/**
- * rcube_contacts
- * @ignore
- */
-require_once 'include/rcube_contacts.inc';
 
-/**
- * rcube_ldap
- * @ignore
- */
-require_once 'include/rcube_ldap.inc';
-
-$registry = rc_registry::getInstance();
-$CONFIG   = $registry->get('CONFIG', 'core');
+$registry = rcube_registry::get_instance();
+$CONFIG   = $registry->get_all('config');
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 
 /**
@@ -39,11 +28,11 @@ $OUTPUT   = $registry->get('OUTPUT', 'core');
  * @todo Add documentation to this file.
  */
 
-//rc_main::tfk_debug("ABOOK PLUGIN? " . $CONFIG['addressbook_plugin']);
+//rcube::tfk_debug("ABOOK PLUGIN? " . $CONFIG['addressbook_plugin']);
 
 // instantiate a contacts object according to the given source
 if (
-    ($source = rc_main::get_input_value('_source', RCUBE_INPUT_GPC))
+    ($source = rcube::get_input_value('_source', rcube::INPUT_GPC))
     && isset($CONFIG['ldap_public'][$source])
 ) {
     $CONTACTS = new rcube_ldap($CONFIG['ldap_public'][$source]);
@@ -99,8 +88,8 @@ $OUTPUT->set_env('address_sources', $js_list);
 
 function rcmail_directory_list($attrib)
 {
-    $registry = rc_registry::getInstance();
-    $CONFIG   = $registry->get('CONFIG', 'core');
+    $registry = rcube_registry::get_instance();
+    $CONFIG   = $registry->get_all('config');
     $OUTPUT   = $registry->get('OUTPUT', 'core');
 
     if (!$attrib['id']) {
@@ -108,7 +97,7 @@ function rcmail_directory_list($attrib)
     }
 
     $local_id = '0';
-    $current = rc_main::get_input_value('_source', RCUBE_INPUT_GPC);
+    $current = rcube::get_input_value('_source', rcube::INPUT_GPC);
 
     $line_templ = '<li id="%s" class="%s"><a href="%s"';
     $line_templ.= ' onclick="return %s.command(\'list\',\'%s\',this)"';
@@ -118,15 +107,15 @@ function rcmail_directory_list($attrib)
     $line_templ.= "</a></li>\n";
 
     // allow the following attributes to be added to the <ul> tag
-    $out = '<ul' . rc_main::create_attrib_string($attrib, array('style', 'class', 'id')) . ">\n";
+    $out = '<ul' . rcube::create_attrib_string($attrib, array('style', 'class', 'id')) . ">\n";
 
-    //rc_main::tfk_debug($out);
+    //rcube::tfk_debug($out);
 
     $out.= sprintf(
                 $line_templ,
                 'rcmli'.$local_id,
                 !$current ? 'selected' : '',
-                rc_main::Q(rc_main::rcmail_url('list', array('_source' => 0))),
+                Q(rcube::url('list', array('_source' => 0))),
                 JS_OBJECT_NAME,
                 $local_id,
                 JS_OBJECT_NAME,
@@ -135,17 +124,17 @@ function rcmail_directory_list($attrib)
                 $local_id,
                 JS_OBJECT_NAME,
                 $local_id,
-                rcube_label('personaladrbook')
+                rcube::gettext('personaladrbook')
     );
 
     foreach ((array)$CONFIG['ldap_public'] as $id => $prop) {
-        $js_id = rc_main_::JQ($id);
+        $js_id = JQ($id);
         $dom_id = preg_replace('/[^a-z0-9\-_]/i', '', $id);
         $out .= sprintf(
                     $line_templ,
                     'rcmli'.$dom_id,
                     $current == $id ? 'selected' : '',
-                    rc_main::Q(rc_main::rcmail_url('list', array('_source' => $id))),
+                    Q(rcube::url('list', array('_source' => $id))),
                     JS_OBJECT_NAME,
                     $js_id,
                     JS_OBJECT_NAME,
@@ -154,7 +143,7 @@ function rcmail_directory_list($attrib)
                     $js_id,
                     JS_OBJECT_NAME,
                     $js_id,
-                    !empty($prop['name']) ? rc_main::Q($prop['name']) : rc_main::Q($id)
+                    !empty($prop['name']) ? Q($prop['name']) : Q($id)
         );
     }
 
@@ -172,13 +161,13 @@ function rcmail_directory_list($attrib)
  * @access public
  * @param  array $attrib
  * @return string
- * @uses   rc_registry::getInstance()
- * @uses   rc_main::rcube_table_output()
- * @uses   rc_main::rcube_add_label()
+ * @uses   rcube_registry::get_instance()
+ * @uses   rcube::table_output()
+ * @uses   rcube_template::add_label()
  */
-function rcmail_contacts_list($attrib)
+function rcube_contacts_list($attrib)
 {
-    $registry = rc_registry::getInstance();
+    $registry = rcube_registry::get_instance();
     $CONTACTS = $registry->get('CONTACTS', 'core');
     $OUTPUT   = $registry->get('OUTPUT', 'core');
 
@@ -193,7 +182,7 @@ function rcmail_contacts_list($attrib)
     $a_show_cols = array('name');
 
     // create XHTML table
-    $out = rc_main::rcube_table_output(
+    $out = rcube::table_output(
                 $attrib,
                 $result->records,
                 $a_show_cols,
@@ -207,7 +196,7 @@ function rcmail_contacts_list($attrib)
     $OUTPUT->include_script('list.js');
 
     // add some labels to client
-    rc_main::rcube_add_label('deletecontactconfirm');
+    $OUTPUT->add_label('deletecontactconfirm');
 
     return $out;
 }
@@ -215,7 +204,7 @@ function rcmail_contacts_list($attrib)
 
 function rcmail_js_contacts_list($result, $prefix='')
 {
-    $registry = rc_registry::getInstance();
+    $registry = rcube_registry::get_instance();
     $OUTPUT   = $registry->get('OUTPUT', 'core');
 
     if (empty($result) || $result->count == 0) {
@@ -246,14 +235,14 @@ function rcmail_js_contacts_list($result, $prefix='')
  */
 function rcmail_contact_frame($attrib)
 {
-    $registry = rc_registry::getInstance();
+    $registry = rcube_registry::get_instance();
     $OUTPUT   = $registry->get('OUTPUT', 'core');
 
     if (!$attrib['id']) {
         $attrib['id'] = 'rcmcontactframe';
     }
     $attrib['name'] = $attrib['id'];
-    $attrib_str = rc_main::create_attrib_string(
+    $attrib_str = rcube::create_attrib_string(
                         $attrib,
                         array(
                             'name',
@@ -275,7 +264,7 @@ function rcmail_contact_frame($attrib)
 
 function rcmail_rowcount_display($attrib)
 {
-    $registry = rc_registry::getInstance();
+    $registry = rcube_registry::get_instance();
     $OUTPUT   = $registry->get('OUTPUT', 'core');
 
     if (!$attrib['id']) {
@@ -284,7 +273,7 @@ function rcmail_rowcount_display($attrib)
     $OUTPUT->add_gui_object('countdisplay', $attrib['id']);
 
     // allow the following attributes to be added to the <span> tag
-    $attrib_str = rc_main::create_attrib_string($attrib, array('style', 'class', 'id'));
+    $attrib_str = rcube::create_attrib_string($attrib, array('style', 'class', 'id'));
 
     $out = '<span' . $attrib_str . '>';
     $out .= rcmail_get_rowcount_text();
@@ -296,7 +285,7 @@ function rcmail_rowcount_display($attrib)
 
 function rcmail_get_rowcount_text()
 {
-    $registry = rc_registry::getInstance();
+    $registry = rcube_registry::get_instance();
     $CONTACTS = $registry->get('CONTACTS', 'core');
 
     // read nr of contacts
@@ -305,10 +294,10 @@ function rcmail_get_rowcount_text()
         $result = $CONTACTS->count();
     }
     if ($result->count == 0) {
-        $out = rcube_label('nocontactsfound');
+        $out = rcube::gettext('nocontactsfound');
     }
     else {
-        $out = rcube_label(array(
+        $out = rcube::gettext(array(
                     'name' => 'contactsfromto',
                     'vars' => array(
                                 'from'  => $result->first + 1,
@@ -325,10 +314,10 @@ function rcmail_get_rowcount_text()
 $OUTPUT->add_handlers(
     array(
         'directorylist'       => 'rcmail_directory_list',
-        'addresslist'         => 'rcmail_contacts_list',
+        'addresslist'         => 'rcube_contacts_list',
         'addressframe'        => 'rcmail_contact_frame',
         'recordscountdisplay' => 'rcmail_rowcount_display',
-        'searchform'          => 'rcmail_search_form'
+        'searchform'          => array($OUTPUT, 'search_form'),
     )
 );
 ?>

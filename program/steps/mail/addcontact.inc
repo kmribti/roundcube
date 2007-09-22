@@ -19,9 +19,7 @@
 
 */
 
-require_once 'include/rcube_contacts.inc';
-
-$registry = rc_registry::getInstance();
+$registry = rcube_registry::get_instance();
 $IMAP     = $registry->get('IMAP', 'core');
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 
@@ -41,9 +39,9 @@ if (!empty($_POST['_address'])) {
         $CONTACTS = new rcube_contacts($DB, $_SESSION['user_id']);
     }
     $contact_arr = $IMAP->decode_address_list(
-                    rc_main::get_input_value(
+                    rcube::get_input_value(
                         '_address',
-                        RCUBE_INPUT_POST,
+                        rcube::INPUT_POST,
                         true
                     ),
                     1,

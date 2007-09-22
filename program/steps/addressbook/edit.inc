@@ -19,23 +19,23 @@
 
 */
 
-$registry = rc_registry::getInstance();
+$registry = rcube_registry::get_instance();
 $CONTACTS = $registry->get('CONTACTS', 'core');
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 
-if (($cid = rc_main::get_input_value('_cid', RCUBE_INPUT_GPC)) && ($record = $CONTACTS->get_record($cid, true))) {
+if (($cid = rcube::get_input_value('_cid', rcube::INPUT_GPC)) && ($record = $CONTACTS->get_record($cid, true))) {
     $OUTPUT->set_env('cid', $record['ID']);
 }
 // adding not allowed here
 if ($CONTACTS->readonly) {
     $OUTPUT->show_message('sourceisreadonly');
-    rcmail_overwrite_action('show');
+    override_action('show');
     return;
 }
 
 function rcmail_contact_editform($attrib)
 {
-    $registry = rc_registry::getInstance();
+    $registry = rcube_registry::get_instance();
     $CONTACTS = $registry->get('CONTACTS', 'core');
     $OUTPUT   = $registry->get('OUTPUT', 'core');
 
@@ -47,8 +47,8 @@ function rcmail_contact_editform($attrib)
     }
 
     // add some labels to client
-    rcube_add_label('noemailwarning');
-    rcube_add_label('nonamewarning');
+    $OUTPUT->add_label('noemailwarning');
+    $OUTPUT->add_label('nonamewarning');
 
     list($form_start, $form_end) = get_form_tags($attrib);
     unset($attrib['form']);
@@ -56,7 +56,7 @@ function rcmail_contact_editform($attrib)
     // a specific part is requested
     if ($attrib['part']) {
         $out = $form_start;
-        $out .= rcmail_get_edit_field($attrib['part'], $record[$attrib['part']], $attrib);
+        $out .= rcube::get_edit_field($attrib['part'], $record[$attrib['part']], $attrib);
         return $out;
     }
 
@@ -67,11 +67,11 @@ function rcmail_contact_editform($attrib)
     $a_show_cols = array('name', 'firstname', 'surname', 'email');
     foreach ($a_show_cols as $col) {
         $attrib['id'] = 'rcmfd_'.$col;
-        $value = rcmail_get_edit_field($col, $record[$col], $attrib);
+        $value = rcube::get_edit_field($col, $record[$col], $attrib);
         $out .= sprintf(
                     "<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
                     $attrib['id'],
-                    rc_main::Q(rcube_label($col)),
+                    Q(rcube::gettext($col)),
                     $value
         );
     }
@@ -85,7 +85,7 @@ $OUTPUT->add_handler('contacteditform', 'rcmail_contact_editform');
 // similar function as in /steps/settings/edit_identity.inc
 function get_form_tags($attrib)
 {
-    $registry          = rc_registry::getInstance();
+    $registry          = rcube_registry::get_instance();
     $CONTACTS          = $registry->get('CONTACTS', 'core');
     $OUTPUT            = $registry->get('OUTPUT', 'core');
     $EDIT_FORM         = $registry->get('EDIT_FORM', 'core');
@@ -94,12 +94,12 @@ function get_form_tags($attrib)
     $result = $CONTACTS->get_result();
     $form_start = '';
     if (!strlen($EDIT_FORM)) {
-        $hiddenfields = new hiddenfield(array('name' => '_task', 'value' => $GLOBALS['_task']));
+        $hiddenfields = new html_hiddenfield(array('name' => '_task', 'value' => $registry->get('task', 'core')));
         $hiddenfields->add(
                         array(
                             'name' => '_action',
                             'value' => 'save',
-                            'source' => rc_main::get_input_value('_source', RCUBE_INPUT_GPC)
+                            'source' => rcube::get_input_value('_source', rcube::INPUT_GPC)
                         )
         );
 
@@ -124,8 +124,8 @@ function get_form_tags($attrib)
 }
 
 if (!$CONTACTS->get_result() && template_exists('addcontact')) {
-    rc_main::parse_template('addcontact');
+    rcube::parse_template('addcontact');
 }
 // this will be executed if no template for addcontact exists
-rc_main::parse_template('editcontact');
+rcube::parse_template('editcontact');
 ?>

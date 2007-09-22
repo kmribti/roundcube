@@ -2,10 +2,10 @@
 
 /*
  +-----------------------------------------------------------------------+
- | program/include/rcube_smtp.inc                                        |
+ | program/include/rcube_smtp.php                                        |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
+ | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -33,27 +33,23 @@ $SMTP_CONN = $registry->set('SMTP_CONN', NULL, 'core');
  * Function for sending mail using SMTP.
  *
  * @param string Sender e-Mail address
- *
  * @param mixed  Either a comma-seperated list of recipients
  *               (RFC822 compliant), or an array of recipients,
  *               each RFC822 valid. This may contain recipients not
  *               specified in the headers, for Bcc:, resending
  *               messages, etc.
- *
  * @param mixed  The message headers to send with the mail
  *               Either as an associative array or a finally
  *               formatted string
- *
  * @param string The full text of the message body, including any Mime parts, etc.
- *
  * @return bool  Returns TRUE on success, or FALSE on error
  * @access public
  */
 function smtp_mail($from, $recipients, &$headers, &$body, &$response)
 {
-    $registry  = rc_registry::getInstance();
+    $registry  = rcube_registry::get_instance();
     $SMTP_CONN = $registry->get('SMTP_CONN', 'core');
-    $CONFIG    = $registry->get('CONFIG', 'core');
+    $CONFIG    = $registry->get_all('config');
 
     $smtp_timeout = null;
     $smtp_host = $CONFIG['smtp_server'];
@@ -100,7 +96,7 @@ function smtp_mail($from, $recipients, &$headers, &$body, &$response)
             if (strstr($CONFIG['smtp_pass'], '%p')) {
                 $smtp_pass = str_replace(
                                 '%p',
-                                rc_main::decrypt_passwd(
+                                rcube::decrypt_passwd(
                                     $_SESSION['password']
                                 ),
                                 $CONFIG['smtp_pass']
@@ -203,7 +199,7 @@ function smtp_mail($from, $recipients, &$headers, &$body, &$response)
  */
 function smtp_reset()
 {
-    $registry  = rc_registry::getInstance();
+    $registry  = rcube_registry::get_instance();
     $SMTP_CONN = $registry->get('SMTP_CONN', 'core');
 
     if (is_object($SMTP_CONN)) {
@@ -220,7 +216,7 @@ function smtp_reset()
  */
 function smtp_disconnect()
 {
-    $registry  = rc_registry::getInstance();
+    $registry  = rcube_registry::get_instance();
     $SMTP_CONN = $registry->get('SMTP_CONN', 'core');
 
     if (is_object($SMTP_CONN)) {

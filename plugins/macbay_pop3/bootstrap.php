@@ -30,7 +30,7 @@ $mb_client = new Zend_XmlRpc_Client($endpoint);
 require_once dirname(__FILE__) . '/lib/macbay_pop3.class.php';
 $params = array();
 array_push($params, $_SESSION['username']);
-array_push($params, rc_main::decrypt_passwd($_SESSION['password']));
+array_push($params, rcube::decrypt_passwd($_SESSION['password']));
 $macbay_pop3 = new macbay_pop3($mb_client, $params);
 
 

@@ -127,12 +127,12 @@ final class macbay_pop3
      * @access static
      * @param  Exception $e
      * @param  int $line
-     * @uses   rc_bugs::raise_error()
+     * @uses   rcube_error::raise()
      * @return void
      */
     static function handleError($e, $line)
     {
-        rc_bugs::raise_error(
+        rcube_error::raise(
             array(
                 'code' => $e->getCode(),
                 'type' => 'xmlrpc',

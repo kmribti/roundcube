@@ -2,7 +2,7 @@
 
 /*
  +-----------------------------------------------------------------------+
- | program/include/rcube_imap.inc                                        |
+ | program/include/rcube_imap.php                                        |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
  | Copyright (C) 2005-2006, RoundCube Dev. - Switzerland                 |
@@ -27,22 +27,13 @@
 require_once 'lib/imap.inc';
 require_once 'lib/mime.inc';
 
-/**
- * rcube_message_part
- */
-require_once dirname(__FILE__) . '/rcube/message_part.php';
-
-/**
- * rcube_header_sorter
- */
-require_once dirname(__FILE__) . '/rcube/header_sorter.php';
 
 /**
  * Interface class for accessing an IMAP server
  *
  * This is a wrapper that implements the Iloha IMAP Library (IIL)
  *
- * @package    RoundCube Webmail
+ * @package    Mail
  * @author     Thomas Bruederli <roundcube@gmail.com>
  * @version    1.36
  * @link       http://ilohamail.org
@@ -98,7 +89,7 @@ class rcube_imap
      * @return boolean  TRUE on success, FALSE on failure
      * @access public
      */
-    public function connect($host, $user, $pass, $port=143, $use_ssl=FALSE)
+    public function connect($host, $user, $pass, $port=143, $use_ssl=false)
     {
         global $ICL_SSL, $ICL_PORT, $IMAP_USE_INTERNAL_DATE;
 
@@ -107,7 +98,7 @@ class rcube_imap
             $ICL_SSL = TRUE;
         }
         elseif ($use_ssl) {
-            rc_bugs::raise_error(
+            rcube_error::raise(
                 array(
                     'code' => 403,
                     'type' => 'imap',
@@ -132,11 +123,11 @@ class rcube_imap
 
         // print trace mesages
         if ($this->conn && ($this->debug_level & 8)) {
-            console($this->conn->message);
+            rcube::console($this->conn->message);
         }
         // write error log
         else if (!$this->conn && $GLOBALS['iil_error']) {
-            rc_bugs::raise_error(array('code' => 403,
+            rcube_error::raise(array('code' => 403,
                        'type' => 'imap',
                        'message' => $GLOBALS['iil_error']), TRUE, FALSE);
         }
@@ -382,7 +373,7 @@ class rcube_imap
                 $a_out[] = $name;
             }
             else {
-                //rc_main::tfk_debug('Filtered out: ' . $mbox_row);
+                //rcube::tfk_debug('Filtered out: ' . $mbox_row);
             }
         }
 
@@ -407,8 +398,8 @@ class rcube_imap
      */
     function _list_mailboxes($root='', $filter='*')
     {
-        $registry = rc_registry::getInstance();
-        $CONFIG   = $registry->get('CONFIG', 'core');
+        $registry = rcube_registry::get_instance();
+        $CONFIG   = $registry->get_all('config');
 
         $a_defaults = $a_out = array();
 
@@ -942,7 +933,7 @@ class rcube_imap
                 $results = $this->search(
                                 $mbox_name,
                                 $criteria,
-                                rc_main::rcube_charset_convert($str, $charset, 'ISO-8859-1'),
+                                rcube::charset_convert($str, $charset, 'ISO-8859-1'),
                                 'ISO-8859-1'
                 );
             }
@@ -1281,7 +1272,7 @@ class rcube_imap
                 if (empty($o_part->charset)) {
                     $o_part->charset = 'ISO-8859-1';
                 }
-                $body = rc_main::rcube_charset_convert($body, $o_part->charset);
+                $body = rcube::charset_convert($body, $o_part->charset);
             }
         }
         return $body;
@@ -1451,8 +1442,8 @@ class rcube_imap
         $iil_move = iil_C_Move($this->conn, join(',', $a_mids), $from_mbox, $to_mbox);
         $moved = !($iil_move === false || $iil_move < 0);
 
-        //rc_main::tfk_debug('Iil_move: ' . $iil_move);
-        //rc_main::tfk_debug('Moved? (#2): ' . $moved);
+        //rcube::tfk_debug('Iil_move: ' . $iil_move);
+        //rcube::tfk_debug('Moved? (#2): ' . $moved);
 
         // send expunge command in order to have the moved message
         // really deleted from the source mailbox
@@ -1886,7 +1877,7 @@ class rcube_imap
       // get cached data from DB
       $sql_result = $this->db->query(
         "SELECT cache_id, data
-         FROM ". rc_main::get_table_name('cache')."
+         FROM ". rcube::get_table_name('cache')."
          WHERE  user_id=?
          AND    cache_key=?",
         $_SESSION['user_id'],
@@ -1913,7 +1904,7 @@ class rcube_imap
       {
       $sql_result = $this->db->query(
         "SELECT cache_id
-         FROM ".rc_main::get_table_name('cache')."
+         FROM ".rcube::get_table_name('cache')."
          WHERE  user_id=?
          AND    cache_key=?",
         $_SESSION['user_id'],
@@ -1929,7 +1920,7 @@ class rcube_imap
     if ($this->cache_keys[$key])
       {
       $this->db->query(
-        "UPDATE ".rc_main::get_table_name('cache')."
+        "UPDATE ".rcube::get_table_name('cache')."
          SET    created=".$this->db->now().",
                 data=?
          WHERE  user_id=?
@@ -1942,7 +1933,7 @@ class rcube_imap
     else
       {
       $this->db->query(
-        "INSERT INTO ". rc_main::get_table_name('cache')."
+        "INSERT INTO ". rcube::get_table_name('cache')."
          (created, user_id, cache_key, data)
          VALUES (".$this->db->now().", ?, ?, ?)",
         $_SESSION['user_id'],
@@ -1955,7 +1946,7 @@ class rcube_imap
   function _clear_cache_record($key)
     {
     $this->db->query(
-      "DELETE FROM ". rc_main::get_table_name('cache')."
+      "DELETE FROM ". rcube::get_table_name('cache')."
        WHERE  user_id=?
        AND    cache_key=?",
       $_SESSION['user_id'],
@@ -1980,7 +1971,7 @@ class rcube_imap
     $msg_count = $this->_messagecount($mailbox);
     $cache_count = count($cache_index);
 
-    // console("Cache check: $msg_count !== ".count($cache_index));
+    // rcube::console("Cache check: $msg_count !== ".count($cache_index));
 
     if ($cache_count==$msg_count)
       {
@@ -2017,7 +2008,7 @@ class rcube_imap
       $this->cache[$cache_key] = array();
       $sql_result = $this->db->limitquery(
         "SELECT idx, uid, headers
-         FROM ". rc_main::get_table_name('messages')."
+         FROM ". rcube::get_table_name('messages')."
          WHERE  user_id=?
          AND    cache_key=?
          ORDER BY ".$this->db->quoteIdentifier($sort_field)." ".
@@ -2050,7 +2041,7 @@ class rcube_imap
       $sql_select = "idx, uid, headers" . ($struct ? ", structure" : '');
       $sql_result = $this->db->query(
         "SELECT $sql_select
-         FROM ". rc_main::get_table_name('messages')."
+         FROM ". rcube::get_table_name('messages')."
          WHERE  user_id=?
          AND    cache_key=?
          AND    uid=?",
@@ -2084,7 +2075,7 @@ class rcube_imap
     $sa_message_index[$key] = array();
     $sql_result = $this->db->query(
       "SELECT idx, uid
-       FROM ". rc_main::get_table_name('messages')."
+       FROM ". rcube::get_table_name('messages')."
        WHERE  user_id=?
        AND    cache_key=?
        ORDER BY ".$this->db->quote_identifier($sort_col)." ".$sort_order,
@@ -2109,7 +2100,7 @@ class rcube_imap
         }
 
         // check for an existing record (probly headers are cached but structure not)
-        $_query = "SELECT message_id FROM " . rc_main::get_table_name('messages');
+        $_query = "SELECT message_id FROM " . rcube::get_table_name('messages');
         $_query.= " WHERE user_id=?";
         $_query.= " AND cache_key=?";
         $_query.= " AND uid=?";
@@ -2122,11 +2113,11 @@ class rcube_imap
                         $headers->uid
         );
 
-        //rc_main::tfk_debug(var_export($headers, true));
+        //rcube::tfk_debug(var_export($headers, true));
 
         // update cache record
         if ($sql_arr = $this->db->fetch_assoc($sql_result)) {
-            $_query = "UPDATE " . rc_main::get_table_name('messages');
+            $_query = "UPDATE " . rcube::get_table_name('messages');
             $_query.= " SET idx=?, headers=?, structure=?";
             $_query.= " WHERE message_id=?";
             $this->db->query(
@@ -2140,12 +2131,12 @@ class rcube_imap
         }
 
         if (!isset($headers->timestamp) || empty($headers->timestamp)) {
-            rc_main::tfk_debug('NO TIMESTAMP: ' . var_export($headers, true));
+            rcube::tfk_debug('NO TIMESTAMP: ' . var_export($headers, true));
             $headers->timestamp = mktime();
         }
 
         // insert new record
-        $_query = "INSERT INTO " . rc_main::get_table_name('messages');
+        $_query = "INSERT INTO " . rcube::get_table_name('messages');
         $_query.= " (user_id, del, cache_key, created, idx, uid, subject,";
         $_query.= " " . $this->db->quoteIdentifier('from') . ",";
         $_query.= " " . $this->db->quoteIdentifier('to').",";
@@ -2173,7 +2164,7 @@ class rcube_imap
     function remove_message_cache($key, $index)
     {
         $this->db->query(
-            "DELETE FROM ". rc_main::get_table_name('messages')."
+            "DELETE FROM ". rcube::get_table_name('messages')."
             WHERE  user_id=?
             AND    cache_key=?
             AND    idx=?",
@@ -2187,7 +2178,7 @@ class rcube_imap
     function clear_message_cache($key, $start_index=1)
     {
         $this->db->query(
-            "DELETE FROM ". rc_main::get_table_name('messages')."
+            "DELETE FROM ". rcube::get_table_name('messages')."
             WHERE  user_id=?
             AND    cache_key=?
             AND    idx>=?",
@@ -2283,7 +2274,7 @@ class rcube_imap
         }
 
         // no encoding information, use fallback
-        return rc_main::rcube_charset_convert($input, !empty($fallback) ? $fallback : 'ISO-8859-1');
+        return rcube::charset_convert($input, !empty($fallback) ? $fallback : 'ISO-8859-1');
     }
 
 
@@ -2311,7 +2302,7 @@ class rcube_imap
                 $rest = quoted_printable_decode($rest);
             }
 
-            return rc_main::rcube_charset_convert($rest, $a[0]);
+            return rcube::charset_convert($rest, $a[0]);
         }
         return $str;    // we dont' know what to do with this
     }
@@ -2357,11 +2348,11 @@ class rcube_imap
     function charset_decode($body, $ctype_param)
     {
         if (is_array($ctype_param) && !empty($ctype_param['charset'])) {
-            return rc_main::rcube_charset_convert($body, $ctype_param['charset']);
+            return rcube::charset_convert($body, $ctype_param['charset']);
         }
 
         // defaults to what is specified in the class header
-        return rc_main::rcube_charset_convert($body,  'ISO-8859-1');
+        return rcube::charset_convert($body,  'ISO-8859-1');
     }
 
 

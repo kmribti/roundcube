@@ -24,11 +24,6 @@
  */
 require_once 'Zend/XmlRpc/Client.php';
 
-/**
- * Include rcube_result_set
- * @ignore
- */
-require_once 'include/rcube/result_set.php';
 
 /**
  * rcube_contacts_macbay
@@ -72,9 +67,9 @@ final class rcube_contacts_macbay
      * @uses   self::$xmlrpc_client
      * @uses   self::$username
      * @uses   self::$password
-     * @uses   rc_main::tfk_debug()
+     * @uses   rcube::tfk_debug()
      * @todo   Check for Zend_Xmlrpc_Client (instead of is_null())
-     * @todo   Replace call to rc_main::tfk_debug() with RC's logger
+     * @todo   Replace call to rcube::tfk_debug() with RC's logger
      */
     public function __construct($username, $password, $xmlrpc_client = null)
     {
@@ -91,7 +86,7 @@ final class rcube_contacts_macbay
                 );
             }
             catch (Zend_Exception $e) {
-                rc_main::tfk_debug('Addressbook Exception: ' . var_export($e, true));
+                rcube::tfk_debug('Addressbook Exception: ' . var_export($e, true));
             }
         }
     }
@@ -161,7 +156,7 @@ final class rcube_contacts_macbay
      * @return array  Indexed list of contact records, each a hash array
      * @uses   self::$username
      * @uses   self::$password
-     * @uses   rc_main::decrypt_passwd()
+     * @uses   rcube::decrypt_passwd()
      */
     public function list_records($cols=null, $subset=0)
     {
@@ -171,18 +166,18 @@ final class rcube_contacts_macbay
 
         $params = array();
         array_push($params, $this->username);
-        array_push($params, rc_main::decrypt_passwd($this->password));
+        array_push($params, rcube::decrypt_passwd($this->password));
         array_push($params, 'sort2');
 
-        //rc_main::tfk_debug(var_export($params, true));
+        //rcube::tfk_debug(var_export($params, true));
 
         try {
             $resp   = $this->xmlrpc_client->call('Addressbook.listContacts', $params);
             if (isset($resp['error'])) {
-		rc_main::tfk_debug('Adressbook Exception: '.var_export($resp,true));
+		rcube::tfk_debug('Adressbook Exception: '.var_export($resp,true));
                 throw new Zend_Exception($resp['error'], $resp['resultcode']);
             }
-            //rc_main::tfk_debug(var_export($resp, true));
+            //rcube::tfk_debug(var_export($resp, true));
             if (isset($resp['result']) === false) {
                 throw new Zend_Exception('Unknown response.');
             }
@@ -190,7 +185,7 @@ final class rcube_contacts_macbay
             $z = 0;
             foreach ($resp AS $foo=>$_contact) {
 
-                //rc_main::tfk_debug("CONTACT: " . var_export($_contact, true));
+                //rcube::tfk_debug("CONTACT: " . var_export($_contact, true));
 
                 if (isset($_contact['Email']['values']) === false) {
                     continue;
@@ -224,10 +219,10 @@ final class rcube_contacts_macbay
             $this->result->first = 0;
         }
         catch(Zend_Exception $e) {
-            rc_main::tfk_debug('Addressbook Exception: ' . var_export($e, true));
+            rcube::tfk_debug('Addressbook Exception: ' . var_export($e, true));
             //$resp = array();
         }
-        //rc_main::tfk_debug(var_export($this->result, true));
+        //rcube::tfk_debug(var_export($this->result, true));
         return $this->result;
     }
 
@@ -292,11 +287,11 @@ final class rcube_contacts_macbay
      */
     public function insert($save_data, $check=false)
     {
-        //rc_main::tfk_debug(var_export($save_data, true));
+        //rcube::tfk_debug(var_export($save_data, true));
 
         $params = array();
         array_push($params, $this->username);
-        array_push($params, rc_main::decrypt_passwd($this->password));
+        array_push($params, rcube::decrypt_passwd($this->password));
 
         $Email = array(
                     'label' => '_$!<Other>!$_',
@@ -336,7 +331,7 @@ final class rcube_contacts_macbay
 
         array_push($params, $contact_data);
 
-        //rc_main::tfk_debug(var_export($params, true));
+        //rcube::tfk_debug(var_export($params, true));
         try {
             $resp = $this->xmlrpc_client->call(
                             'Addressbook.createContact',
@@ -344,13 +339,13 @@ final class rcube_contacts_macbay
             );
         }
         catch (Zend_Exception $e) {
-            rc_main::tfk_debug('Addressbook Exception: ' . var_export($e, true));
+            rcube::tfk_debug('Addressbook Exception: ' . var_export($e, true));
             return false;
         }
         if (isset($resp['result'])) {
             return true;
         }
-        //rc_main::tfk_debug(var_export($resp, true));
+        //rcube::tfk_debug(var_export($resp, true));
         return false;
     }
 

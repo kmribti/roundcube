@@ -47,19 +47,19 @@ foreach ($_FILES['_attachments']['tmp_name'] as $i => $filepath) {
             $button = sprintf(
                         '<img src="%s/images/icons/remove-attachment.png" alt="%s" border="0" style="padding-right:2px;vertical-align:middle" />',
                         $CONFIG['skin_path'],
-                        rc_main::Q(rcube_label('delete'))
+                        Q(rcube::gettext('delete'))
             );
         }
         else {
-            $button = rc_main::Q(rcube_label('delete'));
+            $button = Q(rcube::gettext('delete'));
         }
         $content = sprintf(
                     '<a href="#delete" onclick="return %s.command(\'remove-attachment\', \'rcmfile%d\', this)" title="%s">%s</a>%s',
                     JS_OBJECT_NAME,
                     $id,
-                    rc_main::Q(rcube_label('delete')),
+                    Q(rcube::gettext('delete')),
                     $button,
-                    rc_main::Q($_FILES['_attachments']['name'][$i])
+                    Q($_FILES['_attachments']['name'][$i])
         );
         $OUTPUT->command('add2attachment_list', "rcmfile$id", $content);
     }
@@ -67,10 +67,10 @@ foreach ($_FILES['_attachments']['tmp_name'] as $i => $filepath) {
     {
         $err = $_FILES['_attachments']['error'][$i];
         if ($err == UPLOAD_ERR_INI_SIZE || $err == UPLOAD_ERR_FORM_SIZE) {
-            $msg = rcube_label(array('name' => 'filesizeerror', 'vars' => array('size' => show_bytes(parse_bytes(ini_get('upload_max_filesize'))))));
+            $msg = rcube::gettext(array('name' => 'filesizeerror', 'vars' => array('size' => show_bytes(parse_bytes(ini_get('upload_max_filesize'))))));
         }
         else {
-            $msg = rcube_label('fileuploaderror');
+            $msg = rcube::gettext('fileuploaderror');
         }
         $OUTPUT->command('display_message', $msg, 'error');
     }

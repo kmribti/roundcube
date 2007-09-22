@@ -105,7 +105,7 @@ class rcube_db
           $this->db_error_msg = $dbh->getMessage();
         }
 
-      rc_bugs::raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
+      rcube_error::raise(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
                         'message' => $this->db_error_msg), TRUE, FALSE);
       }
     else if ($this->db_provider=='sqlite')
@@ -246,7 +246,7 @@ class rcube_db
                 $this->db_error = TRUE;
                 $this->db_error_msg = $q->userinfo . "\n" . $q->getDebugInfo();
 
-                rc_bugs::raise_error(
+                rcube_error::raise(
                     array(
                         'code' => 500,
                         'type' => 'db',
@@ -361,7 +361,7 @@ class rcube_db
     {
     if (PEAR::isError($result))
       {
-      rc_bugs::raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
+      rcube_error::raise(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
                         'message' => $this->db_link->getMessage()), TRUE, FALSE);
       return FALSE;
       }
@@ -499,7 +499,7 @@ class rcube_db
     // sql error occured
     if (PEAR::isError($res))
       {
-      rc_bugs::raise_error(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
+      rcube_error::raise(array('code' => 500, 'type' => 'db', 'line' => __LINE__, 'file' => __FILE__,
                         'message' => $res->getMessage() . " Query: " . substr(preg_replace('/[\r\n]+\s*/', ' ', $res->userinfo), 0, 512)), TRUE, FALSE);
       return FALSE;
       }

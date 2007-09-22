@@ -1576,7 +1576,7 @@ function iil_C_Copy(&$conn, $messages, $from, $to){
 		
 		fputs($fp, "cpy1 COPY $messages \"$to\"\r\n");
 		$line=iil_ReadReply($fp);
-        //rc_main::tfk_debug($line);
+        //rcube::tfk_debug($line);
 
 		return iil_ParseResult($line);
 	}else{
@@ -1679,7 +1679,7 @@ function iil_C_Move(&$conn, $messages, $from, $to){
 	$fp = $conn->fp;
 	
 	if (!$from || !$to) {
-        rc_main::tfk_debug('No from or to: ' . $from . '/' . $to);
+        rcube::tfk_debug('No from or to: ' . $from . '/' . $to);
         return -1;
     }
 	

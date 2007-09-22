@@ -21,7 +21,7 @@
 
 
 // get user record
-$_query = "SELECT username, mail_host FROM " . rc_main::get_table_name('users');
+$_query = "SELECT username, mail_host FROM " . rcube::get_table_name('users');
 $_query.= " WHERE user_id=?";
 $sql_result = $DB->query($_query, $_SESSION['user_id']);
 
@@ -29,7 +29,7 @@ if ($USER_DATA = $DB->fetch_assoc($sql_result)) {
     $OUTPUT->set_pagetitle(
                 sprintf(
                     '%s %s@%s',
-                    rcube_label('settingsfor'),
+                    rcube::gettext('settingsfor'),
                     $USER_DATA['username'],
                     $USER_DATA['mail_host']
                 )
@@ -39,39 +39,40 @@ if ($USER_DATA = $DB->fetch_assoc($sql_result)) {
 
 function rcmail_user_prefs_form($attrib)
 {
-    $registry       = rc_registry::getInstance();
-    $DB             = $registry->get('DB', 'core');
-    $CONFIG         = $registry->get('CONFIG', 'core');
-    $sess_user_lang = $registry->get('sess_user_lang', 'core');
+    $registry  = rcube_registry::get_instance();
+    $DB        = $registry->get('DB', 'core');
+    $OUTPUT    = $registry->get('OUTPUT', 'core');
+    $CONFIG    = $registry->get_all('config');
+    $user_lang = $registry->get('user_lang', 'core');
 
     $no_override = is_array($CONFIG['dont_override']) ? array_flip($CONFIG['dont_override']) : array();
 
     // add some labels to client
-    rc_main::rcube_add_label('nopagesizewarning');
+    $OUTPUT->add_label('nopagesizewarning');
 
     list($form_start, $form_end) = get_form_tags($attrib, 'save-prefs');
     unset($attrib['form']);
 
     // allow the following attributes to be added to the <table> tag
-    $attrib_str = rc_main::create_attrib_string($attrib, array('style', 'class', 'id', 'cellpadding', 'cellspacing', 'border', 'summary'));
+    $attrib_str = rcube::create_attrib_string($attrib, array('style', 'class', 'id', 'cellpadding', 'cellspacing', 'border', 'summary'));
 
     // return the complete edit form as table
     $out = "$form_start<table" . $attrib_str . ">\n\n";
 
     // show language selection
     if (!isset($no_override['language'])) {
-        $a_lang = rc_main::rcube_list_languages();
+        $a_lang = rcube::list_languages();
         asort($a_lang);
 
         $field_id    = 'rcmfd_lang';
-        $select_lang = new select(array('name' => '_language', 'id' => $field_id));
+        $select_lang = new html_select(array('name' => '_language', 'id' => $field_id));
         $select_lang->add(array_values($a_lang), array_keys($a_lang));
 
         $out .= sprintf(
                     "<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
                     $field_id,
-                    rc_main::Q(rcube_label('language')),
-                    $select_lang->show($sess_user_lang)
+                    Q(rcube::gettext('language')),
+                    $select_lang->show($user_lang)
         );
     }
 
@@ -79,7 +80,7 @@ function rcmail_user_prefs_form($attrib)
     // show page size selection
     if (!isset($no_override['timezone'])) {
         $field_id = 'rcmfd_timezone';
-        $select_timezone = new select(array('name' => '_timezone', 'id' => $field_id));
+        $select_timezone = new html_select(array('name' => '_timezone', 'id' => $field_id));
         $select_timezone->add('(GMT -11:00) Midway Island, Samoa', '-11');
         $select_timezone->add('(GMT -10:00) Hawaii', '-10');
         $select_timezone->add('(GMT -9:00) Alaska', '-9');
@@ -117,7 +118,7 @@ function rcmail_user_prefs_form($attrib)
         $out .= sprintf(
                     "<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
                     $field_id,
-                    rc_main::Q(rcube_label('timezone')),
+                    Q(rcube::gettext('timezone')),
                     $select_timezone->show($CONFIG['timezone'])
         );
     }
@@ -125,11 +126,11 @@ function rcmail_user_prefs_form($attrib)
     // daylight savings
     if (!isset($no_override['dst_active'])) {
         $field_id  = 'rcmfd_dst';
-        $input_dst = new checkbox(array('name' => '_dst_active', 'id' => $field_id, 'value' => 1));
+        $input_dst = new html_checkbox(array('name' => '_dst_active', 'id' => $field_id, 'value' => 1));
         $out .= sprintf(
                     "<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
                     $field_id,
-                    rc_main::Q(rcube_label('dstactive')),
+                    Q(rcube::gettext('dstactive')),
                     $input_dst->show($CONFIG['dst_active'])
         );
     }
@@ -137,12 +138,12 @@ function rcmail_user_prefs_form($attrib)
     // show page size selection
     if (!isset($no_override['pagesize'])) {
         $field_id = 'rcmfd_pgsize';
-        $input_pagesize = new textfield(array('name' => '_pagesize', 'id' => $field_id, 'size' => 5));
+        $input_pagesize = new html_inputfield(array('name' => '_pagesize', 'id' => $field_id, 'size' => 5));
 
         $out .= sprintf(
                     "<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
                     $field_id,
-                    rc_main::Q(rcube_label('pagesize')),
+                    Q(rcube::gettext('pagesize')),
                     $input_pagesize->show($CONFIG['pagesize'])
         );
     }
@@ -150,12 +151,12 @@ function rcmail_user_prefs_form($attrib)
     // MM: Show checkbox for toggling 'pretty dates'
     if (!isset($no_override['prettydate'])) {
         $field_id = 'rcmfd_prettydate';
-        $input_prettydate = new checkbox(array('name' => '_pretty_date', 'id' => $field_id, 'value' => 1));
+        $input_prettydate = new html_checkbox(array('name' => '_pretty_date', 'id' => $field_id, 'value' => 1));
 
         $out .= sprintf(
                     "<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
                     $field_id,
-                    rc_main::Q(rcube_label('prettydate')),
+                    Q(rcube::gettext('prettydate')),
                     $input_prettydate->show($CONFIG['prettydate']?1:0)
         );
     }
@@ -163,12 +164,12 @@ function rcmail_user_prefs_form($attrib)
     // show checkbox for HTML/plaintext messages
     if (!isset($no_override['prefer_html'])) {
         $field_id = 'rcmfd_htmlmsg';
-        $input_pagesize = new checkbox(array('name' => '_prefer_html', 'id' => $field_id, 'value' => 1));
+        $input_pagesize = new html_checkbox(array('name' => '_prefer_html', 'id' => $field_id, 'value' => 1));
 
         $out .= sprintf(
                     "<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
                     $field_id,
-                    rc_main::Q(rcube_label('preferhtml')),
+                    Q(rcube::gettext('preferhtml')),
                     $input_pagesize->show($CONFIG['prefer_html']?1:0)
         );
     }
@@ -176,11 +177,11 @@ function rcmail_user_prefs_form($attrib)
     // Show checkbox for HTML Editor
     if (false && !isset($no_override['htmleditor'])) {
         $field_id = 'rcmfd_htmleditor';
-        $input_htmleditor = new checkbox(array('name' => '_htmleditor', 'id' => $field_id, 'value' => 1));
+        $input_htmleditor = new html_checkbox(array('name' => '_htmleditor', 'id' => $field_id, 'value' => 1));
         $out .= sprintf(
                     "<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
                     $field_id,
-                    rc_main::Q(rcube_label('htmleditor')),
+                    Q(rcube::gettext('htmleditor')),
                     $input_htmleditor->show($CONFIG['htmleditor']?1:0)
         );
     }
@@ -188,20 +189,20 @@ function rcmail_user_prefs_form($attrib)
     // show config parameter for preview pane
     if (false && !isset($no_override['preview_pane'])) {
     $field_id = 'rcmfd_preview';
-    $input_preview = new checkbox(array('name' => '_preview_pane', 'id' => $field_id, 'value' => 1));
+    $input_preview = new html_checkbox(array('name' => '_preview_pane', 'id' => $field_id, 'value' => 1));
     $out .= sprintf("<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
                     $field_id,
-                    rc_main::Q(rcube_label('previewpane')),
+                    Q(rcube::gettext('previewpane')),
                     $input_preview->show($CONFIG['preview_pane']?1:0));
     }
 
     if (!empty($CONFIG['drafts_mbox']) && !isset($no_override['draft_autosave'])) {
         $field_id = 'rcmfd_autosave';
-        $select_autosave = new select(array('name' => '_draft_autosave', 'id' => $field_id));
-        $select_autosave->add(rcube_label('never'), 0);
+        $select_autosave = new html_select(array('name' => '_draft_autosave', 'id' => $field_id));
+        $select_autosave->add(rcube::gettext('never'), 0);
         foreach (array(3, 5, 10) as $i => $min) {
             $select_autosave->add(
-                                rcube_label(
+                                rcube::gettext(
                                     array(
                                         'name' => 'everynminutes',
                                         'vars' => array('n' => $min)
@@ -213,7 +214,7 @@ function rcmail_user_prefs_form($attrib)
         $out .= sprintf(
                     "<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
                     $field_id,
-                    rc_main::Q(rcube_label('autosavedraft')),
+                    Q(rcube::gettext('autosavedraft')),
                     $select_autosave->show($CONFIG['draft_autosave'])
         );
     }
@@ -227,14 +228,14 @@ function rcmail_user_prefs_form($attrib)
 
 function rcmail_identities_list($attrib)
 {
-    $registry = rc_registry::getInstance();
+    $registry = rcube_registry::get_instance();
     $DB       = $registry->get('DB', 'core');
-    $CONFIG   = $registry->get('CONFIG', 'core');
+    $CONFIG   = $registry->get_all('config');
     $OUTPUT   = $registry->get('OUTPUT', 'core');
 
 
     // get contacts from DB
-    $_query = "SELECT * FROM " . rc_main::get_table_name('identities');
+    $_query = "SELECT * FROM " . rcube::get_table_name('identities');
     $_query.= " WHERE del<>1";
     $_query.= " AND user_id=?";
     $_query.= " ORDER BY standard DESC, name ASC";
@@ -264,7 +265,7 @@ function rcmail_identities_list($attrib)
     $a_show_cols = array('name', 'email', 'organization', 'reply-to', 'edit');
 
     // create XHTML table
-    $out = rc_main::rcube_table_output(
+    $out = rcube::table_output(
                 $attrib,
                 $identities_data, //$sql_result,
                 $a_show_cols,
@@ -282,14 +283,14 @@ function rcmail_identities_list($attrib)
 // similar function as in /steps/addressbook/edit.inc
 function get_form_tags($attrib, $action, $add_hidden=array())
 {
-    $registry          = rc_registry::getInstance();
+    $registry          = rcube_registry::get_instance();
     $EDIT_FORM         = $registry->get('EDIT_FORM', 'core');
     $SESS_HIDDEN_FIELD = $registry->get('SESS_HIDDEN_FIELD', 'core');
     $OUTPUT            = $registry->get('OUTPUT', 'core');
 
     $form_start = '';
     if (!strlen($EDIT_FORM)) {
-        $hiddenfields = new hiddenfield(array('name' => '_task', 'value' => $GLOBALS['_task']));
+        $hiddenfields = new html_hiddenfield(array('name' => '_task', 'value' => $registry->get('task', 'core')));
         $hiddenfields->add(array('name' => '_action', 'value' => $action));
 
         if ($add_hidden) {

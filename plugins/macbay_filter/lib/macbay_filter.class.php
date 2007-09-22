@@ -245,13 +245,13 @@ final class macbay_filter
      * @access static
      * @param  Exception $e
      * @param  int $line
-     * @uses   rc_bugs::raise_error()
+     * @uses   rcube_error::raise()
      * @return void
      */
     static function handleError($e, $line)
     {
-        rc_main::tfk_debug($e->getMessage());
-        rc_bugs::raise_error(
+        rcube::tfk_debug($e->getMessage());
+        rcube_error::raise(
             array(
                 'code' => $e->getCode(),
                 'type' => 'xmlrpc',

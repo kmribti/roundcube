@@ -27,8 +27,8 @@ define('RCUBE_COMPOSE_REPLY',   0x0106);
 define('RCUBE_COMPOSE_FORWARD', 0x0107);
 define('RCUBE_COMPOSE_DRAFT',   0x0108);
 
-$registry = rc_registry::getInstance();
-$CONFIG   = $registry->get('CONFIG', 'core');
+$registry = rcube_registry::get_instance();
+$CONFIG   = $registry->get_all('config');
 
 // remove an attachment
 if ($_action == 'remove-attachment' && preg_match('/^rcmfile([0-9]+)$/', $_POST['_file'], $regs)) {
@@ -36,7 +36,7 @@ if ($_action == 'remove-attachment' && preg_match('/^rcmfile([0-9]+)$/', $_POST[
     if (is_array($_SESSION['compose']['attachments'][$id]) !== false) {
         $status = @unlink($_SESSION['compose']['attachments'][$id]['path']);
         if ($status === false) {
-            //rc_main::tfk_debug('Could not delete attachment.');
+            //rcube::tfk_debug('Could not delete attachment.');
         }
         $_SESSION['compose']['attachments'][$id] = NULL;
         $OUTPUT->command('remove_from_attachment_list', "rcmfile$id");
@@ -60,14 +60,14 @@ $MESSAGE      = $registry->set('MESSAGE', NULL, 'core');
 
 if (
     !is_array($_SESSION['compose'])
-    || $_SESSION['compose']['id'] != rc_main::get_input_value('_id', RCUBE_INPUT_GET)
+    || $_SESSION['compose']['id'] != rcube::get_input_value('_id', rcube::INPUT_GET)
 ) {
     rcmail_compose_cleanup();
     $_SESSION['compose'] = array('id' => uniqid(rand()));
 }
 
 // add some labels to client
-rc_main::rcube_add_label(
+$OUTPUT->add_label(
     'nosubject',
     'norecipientwarning',
     'nosubjectwarning',
@@ -87,21 +87,21 @@ $OUTPUT->set_env(
 
 
 // get reference message and set compose mode
-if ($msg_uid = rc_main::get_input_value('_reply_uid', RCUBE_INPUT_GET)) {
+if ($msg_uid = rcube::get_input_value('_reply_uid', rcube::INPUT_GET)) {
     $compose_mode = RCUBE_COMPOSE_REPLY;
 }
-elseif ($msg_uid = rc_main::get_input_value('_forward_uid', RCUBE_INPUT_GET)) {
+elseif ($msg_uid = rcube::get_input_value('_forward_uid', rcube::INPUT_GET)) {
     $compose_mode = RCUBE_COMPOSE_FORWARD;
 }
-elseif ($msg_uid = rc_main::get_input_value('_draft_uid', RCUBE_INPUT_GET)) {
+elseif ($msg_uid = rcube::get_input_value('_draft_uid', rcube::INPUT_GET)) {
     $compose_mode = RCUBE_COMPOSE_DRAFT;
 }
 $registry->set('compose_mode', $compose_mode, 'core');
 
 if (empty($msg_uid) === false) {
 
-    //rc_main::tfk_debug('We got uid: ' . $msg_uid);
-    //rc_main::tfk_debug('Compose mode: '  . $compose_mode);
+    //rcube::tfk_debug('We got uid: ' . $msg_uid);
+    //rcube::tfk_debug('Compose mode: '  . $compose_mode);
 
     // similar as in program/steps/mail/show.inc
     $MESSAGE = array('UID' => $msg_uid);
@@ -111,7 +111,7 @@ if (empty($msg_uid) === false) {
     $MESSAGE['parts']     = $IMAP->get_mime_numbers($MESSAGE['structure']);
 
 
-    //rc_main::tfk_debug('Reference message: ' . var_export($MESSAGE, true));
+    //rcube::tfk_debug('Reference message: ' . var_export($MESSAGE, true));
 
     if ($compose_mode == RCUBE_COMPOSE_REPLY) {
         $_SESSION['compose']['reply_uid']   = $msg_uid;
@@ -136,7 +136,7 @@ $registry->set('MESSAGE', $MESSAGE, 'core');
 /****** compose mode functions ********/
 require_once 'include/rcube/rcmail_compose.php';
 
-//rc_main::tfk_debug('Passed require for rcmail_compose functions.');
+//rcube::tfk_debug('Passed require for rcmail_compose functions.');
 
 // register UI objects
 $OUTPUT->add_handlers(
@@ -154,7 +154,6 @@ $OUTPUT->add_handlers(
 
 
 /****** get contacts for this user and add them to client scripts ********/
-require_once 'include/rcube_contacts.inc';
 
 if (isset($CONFIG['addressbook_plugin']) && !empty($CONFIG['addressbook_plugin'])) {
     require_once 'plugins/addressbook/rcube_contacts_' . $CONFIG['addressbook_plugin'] . '.inc';
@@ -174,13 +173,13 @@ if ($result = $CONTACTS->list_records()) {
     $a_contacts = array();
     while ($sql_arr = $result->iterate()) {
         if ($sql_arr['email']) {
-            $a_contacts[] = rc_main::format_email_recipient(
+            $a_contacts[] = rcube::format_email_recipient(
                                 $sql_arr['email'],
-                                rc_main::JQ($sql_arr['name'])
+                                JQ($sql_arr['name'])
             );
         }
     }
     $OUTPUT->set_env('contacts', $a_contacts);
 }
-$OUTPUT->parse('compose', true);
+$OUTPUT->send('compose', true);
 ?>

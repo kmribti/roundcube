@@ -19,7 +19,7 @@
 
 */
 
-$registry = rc_registry::getInstance();
+$registry = rcube_registry::get_instance();
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 $CONTACTS = $registry->get('CONTACTS', 'core');
 

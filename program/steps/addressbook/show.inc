@@ -20,14 +20,14 @@
 */
 
 
-$registry = rc_registry::getInstance();
-$CONFIG   = $registry->get('CONFIG', 'core');
+$registry = rcube_registry::get_instance();
+$CONFIG   = $registry->get_all('config');
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 
 
 // read contact record
 if (
-    ($cid = rc_main::get_input_value('_cid', RCUBE_INPUT_GPC))
+    ($cid = rcube::get_input_value('_cid', rcube::INPUT_GPC))
     && ($record = $CONTACTS->get_record($cid, true))
 ) {
     $OUTPUT->set_env('cid', $record['ID']);
@@ -36,7 +36,7 @@ if (
 
 function rcmail_contact_details($attrib)
 {
-    $registry = rc_registry::getInstance();
+    $registry = rcube_registry::get_instance();
     $CONTACTS = $registry->get('CONTACTS', 'core');
     $OUTPUT   = $registry->get('OUTPUT', 'core');
 
@@ -48,7 +48,7 @@ function rcmail_contact_details($attrib)
   
     // a specific part is requested
     if ($attrib['part']) {
-        return rc_main::Q($record[$attrib['part']]);
+        return Q($record[$attrib['part']]);
     }
 
     // return the complete address record as table
@@ -60,17 +60,17 @@ function rcmail_contact_details($attrib)
             $value = sprintf(
                 '<a href="#compose" onclick="%s.command(\'compose\', \'%s\')" title="%s">%s</a>',
                 JS_OBJECT_NAME,
-                rc_main::JQ($record[$col]),
-                rcube_label('composeto'),
-                rc_main::Q($record[$col]));
+                JQ($record[$col]),
+                rcube::gettext('composeto'),
+                Q($record[$col]));
         }
         else {
-            $value = rc_main::Q($record[$col]);
+            $value = Q($record[$col]);
         }
     
         $out .= sprintf(
                     '<tr><td class="title">%s</td><td>%s</td></tr>'. "\n",
-                    rc_main::Q(rcube_label($col)),
+                    Q(rcube::gettext($col)),
                     $value
         );
     }

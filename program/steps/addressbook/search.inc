@@ -18,7 +18,7 @@
  $Id: search.inc 456 2007-01-10 12:34:33Z thomasb $
 
 */
-$registry = rc_registry::getInstance();
+$registry = rcube_registry::get_instance();
 $CONTACTS = $registry->get('CONTACTS', 'core');
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 
@@ -26,7 +26,7 @@ $OUTPUT   = $registry->get('OUTPUT', 'core');
 $CONTACTS->set_page(1);
 $_SESSION['page'] = 1;
 
-$search = trim(rc_main::get_input_value('_q', RCUBE_INPUT_GET));
+$search = trim(rcube::get_input_value('_q', rcube::INPUT_GET));
 $search_request = md5('addr'.$search);
 
 // get contacts for this user

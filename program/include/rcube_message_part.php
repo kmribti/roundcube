@@ -1,6 +1,9 @@
 <?php
+
 /**
  * Class representing a message part
+ *
+ * @package Mail
  */
 class rcube_message_part
 {
@@ -17,3 +20,4 @@ class rcube_message_part
     var $d_parameters = array();
     var $ctype_parameters = array();
 }
+

@@ -19,14 +19,12 @@
 
 */
 
-require_once 'Mail/mimeDecode.php';
-
-$registry = rc_registry::getInstance();
+$registry = rcube_registry::get_instance();
 
 // show loading page
 if ($_GET['_preload']) {
     $url     = str_replace('&_preload=1', '', $_SERVER['REQUEST_URI']);
-    $message = rcube_label('loadingdata');
+    $message = rcube::gettext('loadingdata');
 
     echo "<html>\n<head>\n";
     echo '<meta http-equiv="refresh" content="0; url=' . htmlspecialchars($url).'">';
@@ -39,7 +37,7 @@ if ($_GET['_preload']) {
 
 // similar code as in program/steps/mail/show.inc
 if ($_GET['_uid']) {
-    $MESSAGE              = array('UID' => rc_main::get_input_value('_uid', RCUBE_INPUT_GET));
+    $MESSAGE              = array('UID' => rcube::get_input_value('_uid', rcube::INPUT_GET));
     $MESSAGE['structure'] = $IMAP->get_structure($MESSAGE['UID']);
     $MESSAGE['parts']     = $IMAP->get_mime_numbers($MESSAGE['structure']);
     $registry->set('MESSAGE', $MESSAGE, 'core');
@@ -48,10 +46,10 @@ if ($_GET['_uid']) {
 
 // show part page
 if ($_GET['_frame']) {
-    rc_main::parse_template('messagepart');
+    rcube::parse_template('messagepart');
     exit;
 }
-else if ($pid = rc_main::get_input_value('_part', RCUBE_INPUT_GET)) {
+else if ($pid = rcube::get_input_value('_part', rcube::INPUT_GET)) {
     if ($part = $MESSAGE['parts'][$pid]) {
         $ctype_primary = strtolower($part->ctype_primary);
         $ctype_secondary = strtolower($part->ctype_secondary);

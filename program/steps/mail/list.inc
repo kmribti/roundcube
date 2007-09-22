@@ -18,16 +18,16 @@
 
 */
 
-$registry = rc_registry::getInstance();
+$registry = rcube_registry::get_instance();
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 $IMAP     = $registry->get('IMAP', 'core');
-$CONFIG   = $registry->get('CONFIG', 'core');
+$CONFIG   = $registry->get_all('config');
 
 $OUTPUT_TYPE = 'js';
 $registry->set('OUTPUT_TYPE', $OUTPUT_TYPE, 'core');
 
 // is there a sort type for this request?
-if ($sort = rc_main::get_input_value('_sort', RCUBE_INPUT_GET)) {
+if ($sort = rcube::get_input_value('_sort', rcube::INPUT_GET)) {
     // yes, so set the sort vars
     list($sort_col, $sort_order) = explode('_', $sort);
 

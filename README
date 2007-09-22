@@ -46,14 +46,14 @@ will be allowed.
 Code Layout:
 ------------
 Basic sequence (index.php):
-  - index.php -> rcmail_load_gui -> new rcmail_template -> rcmail_template::send
+  - index.php -> load_gui -> new rcube_template -> rcube_template::send
   - authentication details in this sequence
 
 Tasks
   - index.php limits tasks to set list
   - can see task in roundcube link when you mouse over it
   - task templates stored in skins/default/templates
-  - templates "roundcube:" tokens that get replaced in rcmail_template class
+  - templates "roundcube:" tokens that get replaced in rcube_template class
 
 program/include/rcube_shared.inc
   - defines rcube_html_page, class that lays out a roundcube web page

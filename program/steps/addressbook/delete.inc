@@ -18,11 +18,11 @@
  $Id: delete.inc 573 2007-05-18 11:29:25Z thomasb $
 
 */
-$registry = rc_registry::getInstance();
+$registry = rcube_registry::get_instance();
 $CONTACTS = $registry->get('CONTACTS', 'core');
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 
-if (($cid = get_input_value('_cid', RCUBE_INPUT_POST)) && preg_match('/^[0-9]+(,[0-9]+)*$/', $cid)) {
+if (($cid = get_input_value('_cid', rcube::INPUT_POST)) && preg_match('/^[0-9]+(,[0-9]+)*$/', $cid)) {
     $deleted = $CONTACTS->delete($cid);
     if (!$deleted) {
         // send error message

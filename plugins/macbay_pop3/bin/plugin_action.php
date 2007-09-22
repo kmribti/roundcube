@@ -20,7 +20,7 @@ switch($_plugin_action) {
         break;
 
     default:
-        rc_bugs::raise_error(
+        rcube_error::raise(
                 array(
                     'code'    => 666,
                     'message' => 'Unknown plugin_action',

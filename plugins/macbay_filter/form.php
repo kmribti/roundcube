@@ -21,10 +21,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 require dirname(__FILE__) . '/bin/get.php';
 
-$registry = rc_registry::getInstance();
+$registry = rcube_registry::get_instance();
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 
-echo $OUTPUT->parse('header_small', false);
+echo $OUTPUT->send('header_small', false);
 ?>
 <!-- #content needed to make CSS work - we override inline -->
 <div id="content" style="width:780px !important;">
@@ -46,13 +46,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($error_msg)) {
         </ul>
     </div>
 	<div id="newFormWrapper" style="padding-top:20px;">
-        <form action="<?php echo $RC_URI; ?>?_task=plugin&_action=macbay_filter/form.php" id="newRule" method="post" style="margin:0 0 0 10px;width:760px;">
+        <form action="<?php echo $BASE_URI; ?>?_task=plugin&_action=macbay_filter/form.php" id="newRule" method="post" style="margin:0 0 0 10px;width:760px;">
             <?php require dirname(__FILE__) . '/ajax/filter_neu.php'; ?>
             <input type="hidden" name="_plugin_action" value="add" />
         </form>
     </div><br clear="left" />
     <div class="rpop_txt">
-    	<form id="currentRules" method="post" action="<?php echo $RC_URI; ?>?_task=plugin&_action=macbay_filter/form.php" style="margin:0 0 0 0 !important;width:760px;">
+    	<form id="currentRules" method="post" action="<?php echo $BASE_URI; ?>?_task=plugin&_action=macbay_filter/form.php" style="margin:0 0 0 0 !important;width:760px;">
         <fieldset>
         	<h2>Filter und Regeln konfigurieren</h2>
         	<?php
@@ -140,7 +140,7 @@ function addRow(filterId, ruleType)
 {
     var wrapper = new String(ruleType + '_' + filterId + '_add');
     $.post(
-        '<?php echo $RC_URI; ?>?_task=plugin&_action=macbay_filter/ajax/new_' + ruleType + '.php',
+        '<?php echo $BASE_URI; ?>?_task=plugin&_action=macbay_filter/ajax/new_' + ruleType + '.php',
         {id: wrapper},
         function(data) {
             $(document.getElementById(wrapper)).append(data);
@@ -156,7 +156,7 @@ function deleteFilter(filterName, formId)
     }
     $('#content_' + formId).slideUp('slow').ready(function(){
         $.post(
-            '<?php echo $registry->get('RC_URI', 'core'); ?>?_task=plugin&_action=macbay_filter/delete.php',
+            '<?php echo $registry->get('BASE_URI', 'core'); ?>?_task=plugin&_action=macbay_filter/delete.php',
             {filterName: filterName },
             function(data) {
                 if (data == 'ok') {

@@ -19,18 +19,18 @@
 
 */
 
-$registry = rc_registry::getInstance();
-$CONFIG   = $registry->get('CONFIG', 'core');
+$registry = rcube_registry::get_instance();
+$CONFIG   = $registry->get_all('config');
 
 $a_user_prefs = array(
-    'timezone'       => isset($_POST['_timezone']) ? floatval(rc_main::get_input_value('_timezone', RCUBE_INPUT_POST)) : $CONFIG['timezone'],
+    'timezone'       => isset($_POST['_timezone']) ? floatval(rcube::get_input_value('_timezone', rcube::INPUT_POST)) : $CONFIG['timezone'],
     'dst_active'     => isset($_POST['_dst_active']) ? TRUE : FALSE,
-    'pagesize'       => is_numeric($_POST['_pagesize']) ? intval(rc_main::get_input_value('_pagesize', RCUBE_INPUT_POST)) : $CONFIG['pagesize'],
+    'pagesize'       => is_numeric($_POST['_pagesize']) ? intval(rcube::get_input_value('_pagesize', rcube::INPUT_POST)) : $CONFIG['pagesize'],
     'prettydate'     => isset($_POST['_pretty_date']) ? TRUE : FALSE,
     'prefer_html'    => isset($_POST['_prefer_html']) ? TRUE : FALSE,
     'htmleditor'     => isset($_POST['_htmleditor']) ? TRUE : FALSE,
     'preview_pane'   => isset($_POST['_preview_pane']) ? TRUE : FALSE,
-    'draft_autosave' => isset($_POST['_draft_autosave']) ? intval(rc_main::get_input_value('_draft_autosave', RCUBE_INPUT_POST)) : 0
+    'draft_autosave' => isset($_POST['_draft_autosave']) ? intval(rcube::get_input_value('_draft_autosave', rcube::INPUT_POST)) : 0
 );
 
 // don't override these parameters
@@ -42,8 +42,8 @@ foreach ((array)$CONFIG['dont_override'] as $p) {
 if ($a_user_prefs['pagesize'] < 1) {
     $a_user_prefs['pagesize'] = 10;
 }
-rc_main::tfk_debug($a_user_prefs['pagesize']);
-rc_main::tfk_debug($CONFIG['max_pagesize']);
+rcube::tfk_debug($a_user_prefs['pagesize']);
+rcube::tfk_debug($CONFIG['max_pagesize']);
 if (isset($CONFIG['max_pagesize']) && empty($CONFIG['max_pagesize']) !== TRUE) {
     if ($a_user_prefs['pagesize'] > $CONFIG['max_pagesize']) {
         $a_user_prefs['pagesize'] = $CONFIG['max_pagesize'];
@@ -52,14 +52,14 @@ if (isset($CONFIG['max_pagesize']) && empty($CONFIG['max_pagesize']) !== TRUE) {
 
 // switch UI language
 if (isset($_POST['_language'])) {
-    $sess_user_lang = $_SESSION['user_lang'] = rc_main::get_input_value('_language', RCUBE_INPUT_POST);
-    rc_main::rcmail_set_locale($sess_user_lang);
+    $user_lang = $_SESSION['user_lang'] = rcube::get_input_value('_language', rcube::INPUT_POST);
+    rcube::set_locale($user_lang);
 }
 
-if (rc_main::rcmail_save_user_prefs($a_user_prefs)) {
+if (rcube::save_user_prefs($a_user_prefs)) {
     $OUTPUT->show_message('successfullysaved', 'confirmation');
 }
 
 // go to next step
-rc_main::rcmail_overwrite_action('preferences');
+rcube::override_action('preferences');
 ?>

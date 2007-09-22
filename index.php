@@ -2,7 +2,7 @@
 /*
  +-----------------------------------------------------------------------+
  | RoundCube Webmail IMAP Client                                         |
- | Version 0.1-rc1                                                       |
+ | Version 0.1-devel-vnext                                               |
  |                                                                       |
  | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
@@ -40,57 +40,25 @@
 
 */
 
-$INSTALL_PATH = dirname(__FILE__);
-require_once dirname(__FILE__) . '/program/include/bootstrap.php';
+// bootstrap
+require_once 'program/include/bootstrap.php';
 
-// include base files
-require_once 'include/rcube_shared.inc';
-require_once 'include/rcube_imap.inc';
-require_once 'include/bugs.inc';
-require_once 'include/main.inc';
-require_once 'include/cache.inc';
-require_once 'PEAR.php';
+$BASE_URI = str_replace($_SERVER['QUERY_STRING'], '', $_SERVER['REQUEST_URI']);
+if (substr($BASE_URI, -1, 1) == '?') {
+    $BASE_URI = substr($BASE_URI, 0, -1);
+}
 
-$RC_URI = str_replace(
-                $_SERVER['QUERY_STRING'],
-                '',
-                $_SERVER['REQUEST_URI']
+$MAIN_TASKS = array(
+    'mail',
+    'settings',
+    'logout',
+    'plugin',
+    'addressbook',
 );
-if (substr($RC_URI, -1, 1) == '?') {
-    $RC_URI = substr($RC_URI, 0, -1);
-}
-
-//rc_main::tfk_debug($RC_URI);
-
-$registry = rc_registry::getInstance();
-$registry->set('INSTALL_PATH', $INSTALL_PATH, 'core');
-$registry->set('s_mbstring_loaded', null, 'core');
-$registry->set('sa_languages', null, 'core');
-$registry->set('MAIN_TASKS', $MAIN_TASKS, 'core');
-$registry->set('RC_URI', $RC_URI, 'core');
-
-/**
- * log all $_POST
- * @author Till Klampaeckel <till@php.net>
- * @ignore
- */
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    //rc_main::tfk_debug(var_export($_POST, true));
-    //rc_main::tfk_debug(var_export($_GET, true));
-}
-else {
-    //rc_main::tfk_debug('We are GET.');
-}
-
-//rc_main::tfk_debug('Included all files!');
-
-// set PEAR error handling
-// PEAR::setErrorHandling(PEAR_ERROR_TRIGGER, E_USER_NOTICE);
-
 
 // catch some url/post parameters
-$_task   = rc_main::strip_quotes(rc_main::get_input_value('_task', RCUBE_INPUT_GPC));
-$_action = rc_main::strip_quotes(rc_main::get_input_value('_action', RCUBE_INPUT_GPC));
+$_task   = strip_quotes(rcube::get_input_value('_task', rcube::INPUT_GPC));
+$_action = strip_quotes(rcube::get_input_value('_action', rcube::INPUT_GPC));
 $_framed = (!empty($_GET['_framed']) || !empty($_POST['_framed']));
 
 // use main task if empty or invalid value
@@ -98,106 +66,96 @@ if (empty($_task) || !in_array($_task, $MAIN_TASKS)) {
     $_task = 'mail';
 }
 
-// set output buffering
-if ($_action != 'get' && $_action != 'viewsource') {
-    // use gzip compression if supported
-    if (function_exists('ob_gzhandler') && ini_get('zlib.output_compression')) {
-        ob_start('ob_gzhandler');
-    }
-    else {
-        ob_start();
-    }
-}
-
-
 // start session with requested task
-rc_main::rcmail_startup($_task);
+rcube::startup($_task);
 
-//rc_main::tfk_debug('// rcmail_startup');
+//rcube::tfk_debug('// startup');
 
 // set session related variables
-$COMM_PATH = sprintf('./?_task=%s', $_task);
+$COMM_PATH = sprintf('%s?_task=%s', $BASE_URI, $_task);
 $SESS_HIDDEN_FIELD = '';
-
 
 // add framed parameter
 if ($_framed) {
     $COMM_PATH .= '&_framed=1';
-    $SESS_HIDDEN_FIELD .= "\n".'<input type="hidden" name="_framed" value="1" />';
+    $SESS_HIDDEN_FIELD .= "\n" . html::tag('input', array('type' => "hidden", 'name' => "_framed", 'value' => 1));
 }
+
+// set some global properties
+$registry = rcube_registry::get_instance();
+$registry->set('MAIN_TASKS', $MAIN_TASKS, 'core');
+$registry->set('BASE_URI', $BASE_URI, 'core');
 $registry->set('COMM_PATH', $COMM_PATH, 'core');
+$registry->set('OUTPUT_TYPE', 'html', 'core');
+$registry->set('OUTPUT_CHARSET', RCMAIL_CHARSET, 'core');
 $registry->set('SESS_HIDDEN_FIELD', $SESS_HIDDEN_FIELD, 'core');
-$registry->set('s_username', '', 'core');
 
-// init necessary objects for GUI
-rc_main::rcmail_load_gui();
 
-//rc_main::tfk_debug('// rcmail_load_gui');
+// init output class
+if (!empty($_GET['_remote']) || !empty($_POST['_remote'])) {
+    $registry->set('ajax_call', true, 'core');
+    rcube::init_json();
+}
+else {
+    $registry->set('ajax_call', false, 'core');
+    rcube::load_gui();
+}
+
 
 $OUTPUT = $registry->get('OUTPUT', 'core');
 $DB     = $registry->get('DB', 'core');
 
 
-if ($OUTPUT->ajax_call) {
+$OUTPUT->set_env('comm_path', $COMM_PATH);
 
-}
-else {
-    $OUTPUT->include_script('jquery-1.1.4.js');
-    $OUTPUT->include_script('tablesort/jquery.easydom.js');
-    $OUTPUT->include_script('tablesort/jquery.strip_alternate_row.js');
-    $OUTPUT->include_script('tablesort/jquery.tablesort.compressed.js');
-}
 
 // check DB connections and exit on failure
 if (is_null($DB)) {
-    var_dump($DB); exit;
-    rc_bugs::raise_error(array(
-        'code' => 666,
+    rcube_error::raise(array(
+        'code' => 603,
         'type' => 'db',
-        'message' => 'No connection.'), FALSE, TRUE
+        'message' => 'No connection.'), false, true
     );
 }
 if ($err_str = $DB->is_error()) {
-    rc_bugs::raise_error(array(
+    rcube_error::raise(array(
         'code' => 603,
         'type' => 'db',
-        'message' => $err_str), FALSE, TRUE
+        'message' => $err_str), false, true
     );
-
-    //rc_main::tfk_debug('// DB ERROR');
 }
 
-//rc_main::tfk_debug('// NO DB ERROR');
+//rcube::tfk_debug('// NO DB ERROR');
 
 // error steps
 if ($_action=='error' && !empty($_GET['_code'])) {
-    rc_bugs::raise_error(array('code' => hexdec($_GET['_code'])), FALSE, TRUE);
+    rcube_error::raise(array('code' => hexdec($_GET['_code'])), false, true);
 }
 
-//rc_main::tfk_debug('// going');
+//rcube::tfk_debug('// going');
 
-//rc_main::tfk_debug("task {$_task} / action {$_action}");
+//rcube::tfk_debug("task {$_task} / action {$_action}");
 
 // try to log in
 if ($_action=='login' && $_task=='mail') {
 
-    //rc_main::tfk_debug('Here we go, a login.');
+    //rcube::tfk_debug('Here we go, a login.');
 
-    $host = rc_main::rcmail_autoselect_host();
+    $host = rcube::autoselect_host();
 
-    //rc_main::tfk_debug('Selected host: ' . $host);
+    //rcube::tfk_debug('Selected host: ' . $host);
 
     // check if client supports cookies
     if (empty($_COOKIE)) {
         $OUTPUT->show_message("cookiesdisabled", 'warning');
     }
-    elseif (
+    else if (
         $_SESSION['temp']
         && !empty($_POST['_user'])
         && isset($_POST['_pass'])
-        && rc_main::rcmail_login(
-                rc_main::get_input_value('_user', RCUBE_INPUT_POST),
-                rc_main::get_input_value('_pass', RCUBE_INPUT_POST, true, 'ISO-8859-1'),
+        && rcube::login(
+                rcube::get_input_value('_user', rcube::INPUT_POST),
+                rcube::get_input_value('_pass', rcube::INPUT_POST, true, 'ISO-8859-1'),
                 $host
         )
     ) {
@@ -205,10 +163,10 @@ if ($_action=='login' && $_task=='mail') {
         unset($_SESSION['temp']);
         sess_regenerate_id();
 
-        //rc_main::tfk_debug('Yay, we log in.');
+        //rcube::tfk_debug('Yay, we log in.');
 
         // send auth cookie if necessary
-        rc_main::rcmail_authenticate_session();
+        rcube::authenticate_session();
 
         // send redirect
         header("Location: $COMM_PATH");
@@ -216,22 +174,22 @@ if ($_action=='login' && $_task=='mail') {
     }
     else {
 
-        //rc_main::tfk_debug('Oops, failed.');
+        //rcube::tfk_debug('Oops, failed.');
         if (empty($_POST['_user']) === true) {
-            //rc_main::tfk_debug('Login: no _user');
+            //rcube::tfk_debug('Login: no _user');
         }
         if (isset($_POST['_pass']) === false) {
-            //rc_main::tfk_debug('Login: no _pass');
+            //rcube::tfk_debug('Login: no _pass');
         }
-        $status = rc_main::rcmail_login(
-                    rc_main::get_input_value('_user', RCUBE_INPUT_POST),
-                    rc_main::get_input_value('_pass', RCUBE_INPUT_POST, true, 'ISO-8859-1'),
+        $status = rcube::login(
+                    rcube::get_input_value('_user', rcube::INPUT_POST),
+                    rcube::get_input_value('_pass', rcube::INPUT_POST, true, 'ISO-8859-1'),
                     $host
         );
-        //rc_main::tfk_debug('Login: status: ' . $status);
+        //rcube::tfk_debug('Login: status: ' . $status);
 
-        //rc_main::tfk_debug(var_export($_SESSION['temp'], true));
-        //rc_main::tfk_debug(date('Y-m-d H:i:s', $_SESSION['auth_time']));
+        //rcube::tfk_debug(var_export($_SESSION['temp'], true));
+        //rcube::tfk_debug(date('Y-m-d H:i:s', $_SESSION['auth_time']));
 
         $OUTPUT->show_message("loginfailed", 'warning');
         $_SESSION['user_id'] = '';
@@ -240,48 +198,48 @@ if ($_action=='login' && $_task=='mail') {
 
 // end session
 else if (($_task=='logout' || $_action=='logout') && isset($_SESSION['user_id'])) {
-    $CONFIG = $registry->get('CONFIG', 'core');
-    if (isset($CONFIG['external_logout']) && empty($CONFIG['external_logout']) === false) {
-        rc_main::rcmail_kill_session();
-        //session_destroy();
-        header('Location:' . $CONFIG['external_logout']);
+    $external_logout = $registry->get('external_logout', 'config');
+    if (empty($external_logout) === false) {
+        rcube::kill_session();
+        header('Location:' . $external_logout);
         exit;
     }
+    
     $OUTPUT->show_message('loggedout');
-    rc_main::rcmail_kill_session();
+    rcube::kill_session();
 }
 
 // check session and auth cookie
 else if ($_action != 'login' && $_SESSION['user_id'] && $_action != 'send') {
-    if (!rc_main::rcmail_authenticate_session()) {
+    if (!rcube::authenticate_session()) {
         $OUTPUT->show_message('sessionerror', 'error');
-        rc_main::rcmail_kill_session();
+        rcube::kill_session();
     }
 }
 
-//rc_main::tfk_debug('// going #2');
+//rcube::tfk_debug('// going #2');
 
 $IMAP = $registry->get('IMAP', 'core');
-//rc_main::tfk_debug(var_export($IMAP, true) . "\n\nIMAP LOADED.");
+//rcube::tfk_debug(var_export($IMAP, true) . "\n\nIMAP LOADED.");
 
 // log in to imap server
-if (!empty($_SESSION['user_id']) && $_task=='mail') {
+if (!empty($_SESSION['user_id']) && $_task == 'mail') {
 
-    //rc_main::tfk_debug('// trying to login');
+    //rcube::tfk_debug('// trying to login');
 
     $conn = $IMAP->connect(
-                $_SESSION['imap_host'],
-                $_SESSION['username'],
-                rc_main::decrypt_passwd($_SESSION['password']),
-                $_SESSION['imap_port'],
-                $_SESSION['imap_ssl']
+        $_SESSION['imap_host'],
+        $_SESSION['username'],
+        rcube::decrypt_passwd($_SESSION['password']),
+        $_SESSION['imap_port'],
+        $_SESSION['imap_ssl']
     );
     if (!$conn) {
         $OUTPUT->show_message('imaperror', 'error');
         $_SESSION['user_id'] = '';
     }
     else {
-        rc_main::rcmail_set_imap_prop();
+        rcube::set_imap_prop();
     }
 }
 
@@ -289,19 +247,20 @@ if (!empty($_SESSION['user_id']) && $_task=='mail') {
 // not logged in -> set task to 'login
 if (empty($_SESSION['user_id'])) {
 
-    //rc_main::tfk_debug('// we need a login');
+    //rcube::tfk_debug('// we need a login');
 
     if ($OUTPUT->ajax_call){
+        $OUTPUT->reset();
         $OUTPUT->remote_response("setTimeout(\"location.href='\"+this.env.comm_path+\"'\", 2000);");
     }
     $_task = 'login';
 }
 
-//rc_main::tfk_debug("// task {$_task} action {$_action}");
+//rcube::tfk_debug("// task {$_task} action {$_action}");
 
 // check client X-header to verify request origin
 if ($OUTPUT->ajax_call) {
-    if (empty($CONFIG['devel_mode']) && !rc_request_header('X-RoundCube-Referer')) {
+    if (!$registry->get('devel_mode', 'config') && !rcube::get_request_header('X-RoundCube-Referer')) {
         header('HTTP/1.1 404 Not Found');
         die("Invalid Request");
     }
@@ -313,11 +272,10 @@ if (empty($_action) === FALSE) {
     $OUTPUT->set_env('action', $_action);
 }
 
-
 // not logged in -> show login page
 if (!$_SESSION['user_id']) {
 
-    //rc_main::tfk_debug('// finally: login');
+    rcube::tfk_debug('// finally: login');
 
     $OUTPUT->task = 'login';
     $OUTPUT->send('login');
@@ -340,7 +298,7 @@ if ($_action=='keep-alive') {
  */
 $_name = '';
 
-//rc_main::tfk_debug("testing: $_task / $_action");
+//rcube::tfk_debug("testing: $_task / $_action");
 
 // include task specific files
 if ($_task == 'mail') {
@@ -353,7 +311,7 @@ if ($_task == 'mail') {
 
         case 'check-recent':
             $_name.= 'check_recent';
-            //rc_main::tfk_debug('We check recent!');
+            //rcube::tfk_debug('We check recent!');
             break;
 
         case 'preview':
@@ -385,11 +343,10 @@ if ($_task == 'mail') {
             break;
     }
 
-    //rc_main::tfk_debug('Mail: ' . $_name);
+    //rcube::tfk_debug('Mail: ' . $_name);
 
     // make sure the message count is refreshed
     $IMAP->messagecount($_SESSION['mbox'], 'ALL', TRUE);
-    $registry->set('IMAP', $IMAP, 'core');
 }
 
 // include task specific files
@@ -440,7 +397,7 @@ if ($_task == 'settings') {
     $_name = str_replace('-', '_', $_name);
 }
 
-//rc_main::tfk_debug($_task);
+//rcube::tfk_debug($_task);
 
 /**
  * plugin hook
@@ -449,14 +406,14 @@ if ($_task == 'plugin') {
     $_name   = '';
     $_plugin = dirname(__FILE__) . '/plugins/' . $_action;
     if (file_exists($_plugin) !== TRUE) {
-        //rc_main::tfk_debug("$_plugin does not exist.");
+        //rcube::tfk_debug("$_plugin does not exist.");
         $_plugin = '';
     }
     else {
         $_plugin  = realpath($_plugin);
         $path_len = strlen(dirname(__FILE__) . '/plugins/');
         if (substr($_plugin, 0, $path_len) != dirname(__FILE__). '/plugins/') {
-            rc_bugs::raise_error(
+            rcube_error::raise(
                 array(
                     'code'    => 500,
                     'type'    => 'php',
@@ -467,12 +424,12 @@ if ($_task == 'plugin') {
                 TRUE,
                 TRUE
             );
-            //rc_main::tfk_debug('Possible hack.');
+            //rcube::tfk_debug('Possible hack.');
             exit;
         }
         $status = @include $_plugin;
         if ($status === FALSE) {
-            //rc_main::tfk_debug("Could not include: $_plugin");
+            //rcube::tfk_debug("Could not include: $_plugin");
         }
         exit;
     }
@@ -486,7 +443,7 @@ if (empty($_name) === false) {
         include $_file;
     }
     else {
-        //rc_main::tfk_debug('Does not exist: ' . $_file);
+        //rcube::tfk_debug('Does not exist: ' . $_file);
     }
 }
 
@@ -494,7 +451,7 @@ if (empty($_name) === false) {
 $OUTPUT->send($_task);
 
 // if we arrive here, something went wrong
-rc_bugs::raise_error(
+rcube_error::raise(
     array(
         'code' => 404,
         'type' => 'php',

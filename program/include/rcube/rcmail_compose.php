@@ -6,7 +6,7 @@
 
 function rcmail_compose_headers($attrib)
 {
-    $registry      = rc_registry::getInstance();
+    $registry      = rcube_registry::get_instance();
     $IMAP          = $registry->get('IMAP', 'core');
     $MESSAGE       = $registry->get('MESSAGE', 'core');
     $DB            = $registry->get('DB', 'core');
@@ -32,13 +32,13 @@ function rcmail_compose_headers($attrib)
 
             // we have a set of recipients stored is session
             if (
-                ($mailto_id = rc_main::get_input_value('_mailto', RCUBE_INPUT_GET))
+                ($mailto_id = rcube::get_input_value('_mailto', rcube::INPUT_GET))
                 && $_SESSION['mailto'][$mailto_id]
             ) {
                 $fvalue = $_SESSION['mailto'][$mailto_id];
             }
             elseif (!empty($_GET['_to'])) {
-                $fvalue = rc_main::get_input_value('_to', RCUBE_INPUT_GET);
+                $fvalue = rcube::get_input_value('_to', rcube::INPUT_GET);
             }
 
         case 'cc':
@@ -52,14 +52,14 @@ function rcmail_compose_headers($attrib)
                 $header = 'bcc';
             }
             $allow_attrib = array('id', 'class', 'style', 'cols', 'rows', 'wrap', 'tabindex');
-            $field_type = 'textarea';
+            $field_type = 'html_textarea';
             break;
 
         case 'replyto':
         case 'reply-to':
             $fname = '_replyto';
             $allow_attrib = array('id', 'class', 'style', 'size', 'tabindex');
-            $field_type = 'textfield';
+            $field_type = 'html_inputfield';
             break;
     }
 
@@ -74,7 +74,7 @@ function rcmail_compose_headers($attrib)
     $bcc      = (string) @$MESSAGE['headers']->bcc;
 
     if ($fname && !empty($_POST[$fname])) {
-        $fvalue = rc_main::get_input_value($fname, RCUBE_INPUT_POST, TRUE);
+        $fvalue = rcube::get_input_value($fname, rcube::INPUT_POST, TRUE);
     }
     else if ($header && $compose_mode == RCUBE_COMPOSE_REPLY) {
         // get recipent address(es) out of the message headers
@@ -99,7 +99,7 @@ function rcmail_compose_headers($attrib)
             $to_addresses = $IMAP->decode_address_list($fvalue);
             $fvalue = '';
 
-            //rc_main::tfk_debug("/ test: " . var_export($sa_recipients, true));
+            //rcube::tfk_debug("/ test: " . var_export($sa_recipients, true));
 
             foreach ($to_addresses as $addr_part) {
                 if (
@@ -154,7 +154,7 @@ function rcmail_compose_headers($attrib)
 
 function rcmail_compose_header_from($attrib)
 {
-    $registry      = rc_registry::getInstance();
+    $registry      = rcube_registry::get_instance();
     $MESSAGE       = $registry->get('MESSAGE', 'core');
     $DB            = $registry->get('DB', 'core');
     $compose_mode  = $registry->get('compose_mode', 'core');
@@ -191,18 +191,18 @@ function rcmail_compose_header_from($attrib)
 
     // get this user's identities
     $_query = "SELECT identity_id, name, email, signature, html_signature";
-    $_query.= " FROM " . rc_main::get_table_name('identities');
+    $_query.= " FROM " . rcube::get_table_name('identities');
     $_query.= " WHERE user_id=?";
     $_query.= " AND del<>1";
     $_query.= " ORDER BY " . $DB->quoteIdentifier('standard')." DESC, name ASC";
 
-    //rc_main::tfk_debug($_query);
+    //rcube::tfk_debug($_query);
 
     $sql_result = $DB->query($_query, $_SESSION['user_id']);
 
 
     if ($DB->num_rows($sql_result) == 0) {
-        $input_from = new textfield($field_attrib);
+        $input_from = new html_inputfield($field_attrib);
         $out        = $input_from->show($_POST['_from']);
 
         if ($form_start) {
@@ -216,12 +216,12 @@ function rcmail_compose_header_from($attrib)
     $a_signatures = array();
 
     $field_attrib['onchange'] = JS_OBJECT_NAME.".change_identity(this)";
-    $select_from = new select($field_attrib);
+    $select_from = new html_select($field_attrib);
 
     while ($sql_arr = $DB->fetch_assoc($sql_result)) {
         $identity_id = $sql_arr['identity_id'];
         $select_from->add(
-                rc_main::format_email_recipient(
+                rcube::format_email_recipient(
                         $sql_arr['email'],
                         $sql_arr['name']
                 ),
@@ -253,7 +253,7 @@ function rcmail_compose_header_from($attrib)
 
     // overwrite identity selection with post parameter
     if (isset($_POST['_from'])) {
-        $from_id = rc_main::get_input_value('_from', RCUBE_INPUT_POST);
+        $from_id = rcube::get_input_value('_from', rcube::INPUT_POST);
     }
     $out = $select_from->show($from_id);
 
@@ -268,8 +268,8 @@ function rcmail_compose_header_from($attrib)
 
 function rcmail_compose_body($attrib)
 {
-    $registry     = rc_registry::getInstance();
-    $CONFIG       = $registry->get('CONFIG', 'core');
+    $registry     = rcube_registry::get_instance();
+    $CONFIG       = $registry->get_all('config');
     $MESSAGE      = $registry->get('MESSAGE', 'core');
     $OUTPUT       = $registry->get('OUTPUT', 'core');
     $compose_mode = $registry->get('compose_mode', 'core');
@@ -293,7 +293,7 @@ function rcmail_compose_body($attrib)
 
     // use posted message body
     if (!empty($_POST['_message'])) {
-        $body = rc_main::get_input_value('_message', RCUBE_INPUT_POST, TRUE);
+        $body = rcube::get_input_value('_message', rcube::INPUT_POST, TRUE);
     }
     // compose reply-body
     elseif ($compose_mode == RCUBE_COMPOSE_REPLY) {
@@ -337,7 +337,7 @@ function rcmail_compose_body($attrib)
 
     //tfk_debug($MESSAGE['headers']);
 
-    $saveid = new hiddenfield(
+    $saveid = new html_hiddenfield(
                     array(
                         'name' => '_draft_saveid',
                         'value' => $compose_mode==RCUBE_COMPOSE_DRAFT ? str_replace(array('<','>'),
@@ -347,17 +347,17 @@ function rcmail_compose_body($attrib)
     );
     $out .= $saveid->show();
 
-    $drafttoggle = new hiddenfield(array('name' => '_draft', 'value' => 'yes'));
+    $drafttoggle = new html_hiddenfield(array('name' => '_draft', 'value' => 'yes'));
     $out .= $drafttoggle->show();
 
-    $msgtype = new hiddenfield(array('name' => '_is_html', 'value' => ($isHtml?"1":"0")));
+    $msgtype = new html_hiddenfield(array('name' => '_is_html', 'value' => ($isHtml?"1":"0")));
     $out .= $msgtype->show();
 
     // If desired, set this text area to be editable by TinyMCE
     if ($isHtml) {
         $attrib['mce_editable'] = "true";
     }
-    $textarea = new textarea($attrib);
+    $textarea = new html_textarea($attrib);
     $out .= $textarea->show($body);
     $out .= $form_end ? "\n$form_end" : '';
 
@@ -380,17 +380,17 @@ function rcmail_compose_body($attrib)
                       "googie.decorateTextarea('%s');\n".
                       "%s.set_env('spellcheck', googie);",
                       $COMM_PATH,
-                      rc_main::JQ(rc_main::Q(rcube_label('checkspelling'))),
-                      rc_main::JQ(rc_main::Q(rcube_label('resumeediting'))),
-                      rc_main::JQ(rc_main::Q(rcube_label('close'))),
-                      rc_main::JQ(rc_main::Q(rcube_label('revertto'))),
-                      rc_main::JQ(rc_main::Q(rcube_label('nospellerrors'))),
+                      JQ(Q(rcube::gettext('checkspelling'))),
+                      JQ(Q(rcube::gettext('resumeediting'))),
+                      JQ(Q(rcube::gettext('close'))),
+                      JQ(Q(rcube::gettext('revertto'))),
+                      JQ(Q(rcube::gettext('nospellerrors'))),
                       $lang_set,
                       substr($_SESSION['user_lang'], 0, 2),
                       $attrib['id'],
                       JS_OBJECT_NAME), 'foot'
         );
-        rc_main::rcube_add_label('checking');
+        $OUTPUT->add_label('checking');
     }
     $out .= "\n".'<iframe name="savetarget" src="program/blank.gif" style="width:0;height:0;visibility:hidden;"></iframe>';
 
@@ -407,7 +407,7 @@ function rcmail_compose_body($attrib)
  */
 function rcmail_create_reply_body($body, $bodyIsHtml)
 {
-    $registry = rc_registry::getInstance();
+    $registry = rcube_registry::get_instance();
     $IMAP     = $registry->get('IMAP', 'core');
     $MESSAGE  = $registry->get('MESSAGE', 'core');
 
@@ -467,7 +467,7 @@ function rcmail_create_reply_body($body, $bodyIsHtml)
 
 function rcmail_create_forward_body($body, $bodyIsHtml)
 {
-    $registry = rc_registry::getInstance();
+    $registry = rcube_registry::get_instance();
     $IMAP     = $registry->get('IMAP', 'core');
     $MESSAGE  = $registry->get('MESSAGE', 'core');
 
@@ -498,10 +498,10 @@ function rcmail_create_forward_body($body, $bodyIsHtml)
                 "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">From: </th><td>%s</td></tr>" .
                 "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">To: </th><td>%s</td></tr>" .
                 "</tbody></table><br>",
-                rc_main::Q($_subject),
-                rc_main::Q($_date),
-                rc_main::Q($IMAP->decode_header($_from)),
-                rc_main::Q($IMAP->decode_header($_to))
+                Q($_subject),
+                Q($_date),
+                Q($IMAP->decode_header($_from)),
+                Q($IMAP->decode_header($_to))
         );
     }
 
@@ -515,7 +515,7 @@ function rcmail_create_forward_body($body, $bodyIsHtml)
 
 function rcmail_create_draft_body($body, $bodyIsHtml)
 {
-    $registry = rc_registry::getInstance();
+    $registry = rcube_registry::get_instance();
     $IMAP     = $registry->get('IMAP', 'core');
     $MESSAGE  = $registry->get('MESSAGE', 'core');
 
@@ -533,8 +533,8 @@ function rcmail_create_draft_body($body, $bodyIsHtml)
 
 function rcmail_write_compose_attachments(&$message)
 {
-    $registry = rc_registry::getInstance();
-    $CONFIG   = $registry->get('CONFIG', 'core');
+    $registry = rcube_registry::get_instance();
+    $CONFIG   = $registry->get_all('config');
     $IMAP     = $registry->get('IMAP', 'core');
 
     $temp_dir = unslashify($CONFIG['temp_dir']);
@@ -583,8 +583,8 @@ function rcmail_write_compose_attachments(&$message)
  */
 function rcmail_compose_subject($attrib)
 {
-    $registry     = rc_registry::getInstance();
-    $CONFIG       = $registry->get('CONFIG', 'core');
+    $registry     = rcube_registry::get_instance();
+    $CONFIG       = $registry->get_all('config');
     $MESSAGE      = $registry->get('MESSAGE', 'core');
     $compose_mode = $registry->get('compose_mode', 'core');
     $IMAP         = $registry->get('IMAP', 'core');
@@ -593,7 +593,7 @@ function rcmail_compose_subject($attrib)
     unset($attrib['form']);
 
     $attrib['name'] = '_subject';
-    $textfield = new textfield($attrib);
+    $inputfield = new html_inputfield($attrib);
 
     $subject  = '';
 
@@ -602,7 +602,7 @@ function rcmail_compose_subject($attrib)
 
     // use subject from post
     if (isset($_POST['_subject'])) {
-        $subject = rc_main::get_input_value('_subject', RCUBE_INPUT_POST, TRUE);
+        $subject = rcube::get_input_value('_subject', rcube::INPUT_POST, TRUE);
     }
     // create a reply-subject
     else if ($compose_mode == RCUBE_COMPOSE_REPLY) {
@@ -627,7 +627,7 @@ function rcmail_compose_subject($attrib)
         $subject = $_subject;
     }
     $out = $form_start ? "$form_start\n" : '';
-    $out .= $textfield->show($subject);
+    $out .= $inputfield->show($subject);
     $out .= $form_end ? "\n$form_end" : '';
 
     return $out;
@@ -643,8 +643,8 @@ function rcmail_compose_subject($attrib)
  */
 function rcmail_compose_attachment_list($attrib)
 {
-    $registry = rc_registry::getInstance();
-    $CONFIG   = $registry->get('CONFIG', 'core');
+    $registry = rcube_registry::get_instance();
+    $CONFIG   = $registry->get_all('config');
     $OUTPUT   = $registry->get('OUTPUT', 'core');
 
     // add ID if not given
@@ -652,7 +652,7 @@ function rcmail_compose_attachment_list($attrib)
         $attrib['id'] = 'rcmAttachmentList';
     }
     // allow the following attributes to be added to the <ul> tag
-    $attrib_str = rc_main::create_attrib_string($attrib, array('id', 'class', 'style'));
+    $attrib_str = rcube::create_attrib_string($attrib, array('id', 'class', 'style'));
 
     $out = '<ul'. $attrib_str . ">\n";
 
@@ -662,11 +662,11 @@ function rcmail_compose_attachment_list($attrib)
                         '<img src="%s%s" alt="%s" border="0" style="padding-right:2px;vertical-align:middle" />',
                         $CONFIG['skin_path'],
                         $attrib['deleteicon'],
-                        rcube_label('delete')
+                        rcube::gettext('delete')
             );
         }
         else {
-            $button = rcube_label('delete');
+            $button = rcube::gettext('delete');
         }
         foreach ($_SESSION['compose']['attachments'] as $id => $a_prop) {
             $out .= sprintf(
@@ -674,9 +674,9 @@ function rcmail_compose_attachment_list($attrib)
                         $id,
                         JS_OBJECT_NAME,
                         $id,
-                        rc_main::Q(rcube_label('delete')),
+                        Q(rcube::gettext('delete')),
                         $button,
-                        rc_main::Q($a_prop['name'])
+                        Q($a_prop['name'])
             );
         }
     }
@@ -694,7 +694,7 @@ function rcmail_compose_attachment_list($attrib)
  */
 function rcmail_compose_attachment_form($attrib)
 {
-    $registry          = rc_registry::getInstance();
+    $registry          = rcube_registry::get_instance();
     $OUTPUT            = $registry->get('OUTPUT', 'core');
     $SESS_HIDDEN_FIELD = $registry->get('SESS_HIDDEN_FIELD', 'core');
 
@@ -703,10 +703,10 @@ function rcmail_compose_attachment_form($attrib)
         $attrib['id'] = 'rcmUploadbox';
     }
     // allow the following attributes to be added to the <div> tag
-    $attrib_str  = rc_main::create_attrib_string($attrib, array('id', 'class', 'style'));
+    $attrib_str  = rcube::create_attrib_string($attrib, array('id', 'class', 'style'));
     $input_field = rcmail_compose_attachment_field(array('style="height:15px;"'));
-    $label_send  = rcube_label('upload');
-    $label_close = rcube_label('close');
+    $label_send  = rcube::gettext('upload');
+    $label_close = rcube::gettext('close');
     $js_instance = JS_OBJECT_NAME;
 
 
@@ -734,7 +734,7 @@ EOF;
 function rcmail_compose_attachment_field($attrib)
 {
     // allow the following attributes to be added to the <input> tag
-    $attrib_str = rc_main::create_attrib_string($attrib, array('id', 'class', 'style', 'size'));
+    $attrib_str = rcube::create_attrib_string($attrib, array('id', 'class', 'style', 'size'));
 
     $out = '<input type="file" name="_attachments[]"'. $attrib_str . " />";
     return $out;
@@ -747,15 +747,15 @@ function rcmail_priority_selector($attrib)
     unset($attrib['form']);
 
     $attrib['name'] = '_priority';
-    $selector = new select($attrib);
+    $selector = new html_select($attrib);
 
     $selector->add(
                 array(
-                    rcube_label('lowest'),
-                    rcube_label('low'),
-                    rcube_label('normal'),
-                    rcube_label('high'),
-                    rcube_label('highest')
+                    rcube::gettext('lowest'),
+                    rcube::gettext('low'),
+                    rcube::gettext('normal'),
+                    rcube::gettext('high'),
+                    rcube::gettext('highest')
                 ),
                 array(5, 4, 0, 2, 1)
     );
@@ -780,7 +780,7 @@ function rcmail_receipt_checkbox($attrib)
 
     $attrib['name'] = '_receipt';
     $attrib['value'] = '1';
-    $checkbox = new checkbox($attrib);
+    $checkbox = new html_checkbox($attrib);
 
     $out = $form_start ? "$form_start\n" : '';
     $out .= $checkbox->show(0);
@@ -792,8 +792,8 @@ function rcmail_receipt_checkbox($attrib)
 
 function rcmail_editor_selector($attrib)
 {
-    $registry     = rc_registry::getInstance();
-    $CONFIG       = $registry->get('CONFIG', 'core');
+    $registry     = rcube_registry::get_instance();
+    $CONFIG       = $registry->get_all('config');
     $MESSAGE      = $registry->get('MESSAGE', 'core');
     $compose_mode = $registry->get('compose_mode', 'core');
 
@@ -830,12 +830,12 @@ function rcmail_editor_selector($attrib)
             unset($attrib['checked']);
         }
         $attrib['id'] = '_' . $value;
-        $rb = new radiobutton($attrib);
+        $rb = new html_radiobutton($attrib);
         $selector .= sprintf(
                         "%s<label for=\"%s\">%s</label>",
                         $rb->show($value),
                         $attrib['id'],
-                        rcube_label($text)
+                        rcube::gettext($text)
         );
     }
     return $selector;
@@ -843,15 +843,15 @@ function rcmail_editor_selector($attrib)
 
 function get_form_tags($attrib)
 {
-    $registry          = rc_registry::getInstance();
-    $CONFIG            = $registry->get('CONFIG', 'core');
+    $registry          = rcube_registry::get_instance();
+    $CONFIG            = $registry->get_all('config');
     $MESSAGE_FORM      = $registry->get('MESSAGE_FORM', 'core');
     $OUTPUT            = $registry->get('OUTPUT', 'core');
     $SESS_HIDDEN_FIELD = $registry->get('SESS_HIDDEN_FIELD', 'core');
 
     $form_start = '';
     if (!strlen($MESSAGE_FORM)) {
-        $hiddenfields = new hiddenfield(array('name' => '_task', 'value' => $GLOBALS['_task']));
+        $hiddenfields = new html_hiddenfield(array('name' => '_task', 'value' => $registry->get('task', 'core')));
         $hiddenfields->add(array('name' => '_action', 'value' => 'send'));
 
         $form_start = empty($attrib['form']) ? '<form name="form" action="./" method="post">' : '';

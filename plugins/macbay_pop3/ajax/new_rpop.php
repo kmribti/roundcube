@@ -1,4 +1,4 @@
-<form action="<?php echo $RC_URI; ?>?_task=plugin&_action=macbay_pop3/form.php" id="form_rpop_new" method="post">
+<form action="<?php echo $BASE_URI; ?>?_task=plugin&_action=macbay_pop3/form.php" id="form_rpop_new" method="post">
 <p>Sie k&ouml;nnen noch <?php echo (($rpop_left > 1)?$rpop_left . ' Sammeldienste':' einen Sammeldienst'); ?> anlegen.</p>
 <p>Bitte beachten Sie, dass wir die Einstellungen nicht f&uuml;r Sie &uuml;berpr&uuml;fen.</p><br />
 <div class="formrow">

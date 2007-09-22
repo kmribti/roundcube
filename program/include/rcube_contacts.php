@@ -2,7 +2,7 @@
 
 /*
  +-----------------------------------------------------------------------+
- | program/include/rcube_contacts.inc                                    |
+ | program/include/rcube_contacts.php                                    |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
  | Copyright (C) 2006-2007, RoundCube Dev. - Switzerland                 |
@@ -20,15 +20,9 @@
 */
 
 /**
- * Include rcube_result_set
- * @ignore
- */
-require_once dirname(__FILE__) . '/rcube/result_set.php';
-
-/**
- * rcube_contacts
+ * Model class for the local address book database
  *
- * @final
+ * @package Addressbook
  */
 class rcube_contacts
 {
@@ -58,7 +52,7 @@ class rcube_contacts
     public function __construct($dbconn, $user)
     {
         $this->db      = $dbconn;
-        $this->db_name = rc_main::get_table_name('contacts');
+        $this->db_name = rcube::get_table_name('contacts');
         $this->user_id = $user;
         $this->ready   = $this->db && !$this->db->is_error();
     }
@@ -302,7 +296,7 @@ class rcube_contacts
             $this->db->query($_query, $this->user_id);
 
             $insert_id = $this->db->insert_id(
-                                rc_main::get_sequence_name('contacts')
+                                rcube::get_sequence_name('contacts')
             );
         }
 

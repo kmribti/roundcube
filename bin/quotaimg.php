@@ -33,7 +33,7 @@ $height = empty($_GET['h']) ? 14 : (int)$_GET['h'];
  * Also added support to actually display the used (in MB or GB)
  * and total quota (in MB or GB) along with the image.
  *
- * @todo   Move in rc_main
+ * @todo   Move in rcmail
  * @todo   Move doc from within the table to docblock.
  * @todo   Create config vars for this.
  * @access static

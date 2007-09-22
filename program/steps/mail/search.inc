@@ -25,8 +25,8 @@ $_SESSION['page'] = 1;
 $imap_charset = 'UTF-8';
 
 // get search string
-$str  = rc_main::get_input_value('_q', RCUBE_INPUT_GET);
-$mbox = rc_main::get_input_value('_mbox', RCUBE_INPUT_GET);
+$str  = rcube::get_input_value('_q', rcube::INPUT_GET);
+$mbox = rcube::get_input_value('_mbox', rcube::INPUT_GET);
 $search_request = md5($mbox.$str);
 
 

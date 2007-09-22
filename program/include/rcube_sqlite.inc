@@ -65,7 +65,7 @@ function rcube_sqlite_md5($str)
 
 function rcube_sqlite_debug($str)
   {
-	//console($str);
+	//rcube::console($str);
   }
 	
 ?>

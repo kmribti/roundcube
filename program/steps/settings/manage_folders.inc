@@ -20,21 +20,21 @@
 */
 
 // init IMAP connection
-rc_main::rcmail_imap_init(TRUE);
+rcube::imap_init(TRUE);
 
-$registry = rc_registry::getInstance();
+$registry = rcube_registry::get_instance();
 $OUTPUT   = $registry->get('OUTPUT', 'core');
 $IMAP     = $registry->get('IMAP', 'core');
 
-//rc_main::tfk_debug('DEBUG: ' . $_action);
-//rc_main::tfk_debug('MAILBOX: ' . $_POST['_mboxes']);
-//rc_main::tfk_debug('AJAX?: ' . $OUTPUT->ajax_call);
+//rcube::tfk_debug('DEBUG: ' . $_action);
+//rcube::tfk_debug('MAILBOX: ' . $_POST['_mboxes']);
+//rcube::tfk_debug('AJAX?: ' . $OUTPUT->ajax_call);
 
 // subscribe to one or more mailboxes
 if ($_action=='subscribe') {
-    if ($mboxes = rc_main::get_input_value('_mboxes', RCUBE_INPUT_POST)) {
+    if ($mboxes = rcube::get_input_value('_mboxes', rcube::INPUT_POST)) {
         $status = $IMAP->subscribe(array($mboxes));
-        //rc_main::tfk_debug('Status: ' . $status);
+        //rcube::tfk_debug('Status: ' . $status);
     }
     if ($OUTPUT->ajax_call) {
         $OUTPUT->remote_response('// subscribed');
@@ -43,9 +43,9 @@ if ($_action=='subscribe') {
 
 // unsubscribe one or more mailboxes
 else if ($_action=='unsubscribe') {
-    if ($mboxes = rc_main::get_input_value('_mboxes', RCUBE_INPUT_POST)) {
+    if ($mboxes = rcube::get_input_value('_mboxes', rcube::INPUT_POST)) {
         $status = $IMAP->unsubscribe(array($mboxes));
-        //rc_main::tfk_debug('Status: ' . $status);
+        //rcube::tfk_debug('Status: ' . $status);
     }
     if ($OUTPUT->ajax_call) {
         $OUTPUT->remote_response('// unsubscribed');
@@ -57,7 +57,7 @@ else if ($_action=='create-folder') {
     if (!empty($_POST['_name'])) {
         $create = $IMAP->create_mailbox(
                     trim(
-                        rc_main::get_input_value('_name', RCUBE_INPUT_POST, FALSE, 'UTF-7')
+                        rcube::get_input_value('_name', rcube::INPUT_POST, FALSE, 'UTF-7')
                     ),
                     TRUE
         );
@@ -66,7 +66,7 @@ else if ($_action=='create-folder') {
         $OUTPUT->command(
             'add_folder_row',
             $create,
-            rc_main::rcube_charset_convert($create, 'UTF-7')
+            rcube::charset_convert($create, 'UTF-7')
         );
         $OUTPUT->send();
     }
@@ -83,8 +83,8 @@ else if ($_action=='create-folder') {
 else if ($_action=='rename-folder') {
     if (!empty($_POST['_folder_oldname']) && !empty($_POST['_folder_newname'])) {
 
-        $oldname         = rc_main::get_input_value('_folder_oldname', RCUBE_INPUT_POST);
-        $_folder_newname = trim(rc_main::get_input_value('_folder_newname', RCUBE_INPUT_POST, FALSE, 'UTF-7'));
+        $oldname         = rcube::get_input_value('_folder_oldname', rcube::INPUT_POST);
+        $_folder_newname = trim(rcube::get_input_value('_folder_newname', rcube::INPUT_POST, FALSE, 'UTF-7'));
 
         $rename = $IMAP->rename_mailbox(
                         $oldname,
@@ -96,7 +96,7 @@ else if ($_action=='rename-folder') {
                     'replace_folder_row',
                     $oldname,
                     $rename,
-                    rc_main::rcube_charset_convert($rename, 'UTF-7')
+                    rcube::charset_convert($rename, 'UTF-7')
         );
         $OUTPUT->command('reset_folder_rename');
         $OUTPUT->send();
@@ -113,12 +113,12 @@ else if ($_action=='rename-folder') {
 
 // delete an existing IMAP mailbox
 elseif ($_action=='delete-folder') {
-    if ($mboxes = rc_main::get_input_value('_mboxes', RCUBE_INPUT_POST)) {
+    if ($mboxes = rcube::get_input_value('_mboxes', rcube::INPUT_POST)) {
         $deleted = $IMAP->delete_mailbox(array($mboxes));
     }
 
     if ($OUTPUT->ajax_call && $deleted) {
-        $OUTPUT->command('remove_folder_row', rc_main::get_input_value('_mboxes', RCUBE_INPUT_POST));
+        $OUTPUT->command('remove_folder_row', rcube::get_input_value('_mboxes', rcube::INPUT_POST));
         $OUTPUT->show_message('folderdeleted', 'confirmation');
         $OUTPUT->send();
     }
@@ -134,15 +134,15 @@ elseif ($_action=='delete-folder') {
  * @access static
  * @param  array $attrib
  * @return string
- * @uses   rc_registry::getInstance()
- * @uses   rcube_label()
+ * @uses   rcube_registry::get_instance()
+ * @uses   rcube::gettext()
  * @uses   get_form_tags()
  */
 function rcube_subscription_form($attrib)
 {
-    $registry = rc_registry::getInstance();
+    $registry = rcube_registry::get_instance();
     $IMAP     = $registry->get('IMAP', 'core');
-    $CONFIG   = $registry->get('CONFIG', 'core');
+    $CONFIG   = $registry->get_all('config');
     $OUTPUT   = $registry->get('OUTPUT', 'core');
 
     list($form_start, $form_end) = get_form_tags($attrib, 'folders');
@@ -154,7 +154,7 @@ function rcube_subscription_form($attrib)
     }
 
     // allow the following attributes to be added to the <table> tag
-    $attrib_str = rc_main::create_attrib_string(
+    $attrib_str = rcube::create_attrib_string(
                     $attrib,
                     array(
                         'style',
@@ -175,8 +175,8 @@ function rcube_subscription_form($attrib)
     $out .= sprintf(
                     '<td class="name">%s</td><td class="subscribed">%s</td>'.
                     '<td class="rename">&nbsp;</td><td class="delete">&nbsp;</td>',
-                    rcube_label('foldername'),
-                    rcube_label('subscribed')
+                    rcube::gettext('foldername'),
+                    rcube::gettext('subscribed')
     );
     $out .= "\n</tr></thead>\n<tbody>\n";
 
@@ -188,7 +188,7 @@ function rcube_subscription_form($attrib)
     $a_subscribed   = $IMAP->list_mailboxes();
     $a_js_folders   = array();
  
-    $checkbox_subscribe = new checkbox(
+    $checkbox_subscribe = new html_checkbox(
                             array(
                                 'name' => '_subscribed[]',
                                 'onclick' => JS_OBJECT_NAME.".command(this.checked?'subscribe':'unsubscribe',this.value)"
@@ -199,11 +199,11 @@ function rcube_subscription_form($attrib)
                         '<img src="%s%s" alt="%s" border="0" />',
                         $CONFIG['skin_path'],
                         $attrib['deleteicon'],
-                        rcube_label('delete')
+                        rcube::gettext('delete')
         );
     }
     else {
-        $del_button = rcube_label('delete');
+        $del_button = rcube::gettext('delete');
     }
 
     if (!empty($attrib['renameicon'])) {
@@ -211,11 +211,11 @@ function rcube_subscription_form($attrib)
                         '<img src="%s%s" alt="%s" border="0" />',
                         $CONFIG['skin_path'],
                         $attrib['renameicon'],
-                        rcube_label('rename')
+                        rcube::gettext('rename')
         );
     }
     else {
-        $del_button = rcube_label('rename');
+        $del_button = rcube::gettext('rename');
     }
 
     // create list of available folders
@@ -223,28 +223,28 @@ function rcube_subscription_form($attrib)
         $subscribed  = in_array($folder, $a_subscribed);
         $protected   = ($CONFIG['protect_default_folders'] == TRUE && in_array($folder,$CONFIG['default_imap_folders']));
         $zebra_class = $i%2 ? 'even' : 'odd';
-        $folder_js   = rc_main::JQ($folder);
+        $folder_js   = JQ($folder);
         $folder_html = '';
         if (
             $CONFIG['protect_default_folders']
             && in_array($folder, $CONFIG['default_imap_folders'])
         ) {
-            $folder_html.= rcube_label(strtolower($folder));
+            $folder_html.= rcube::gettext(strtolower($folder));
         }
         else {
-            $folder_html.= rc_main::rcube_charset_convert($folder, 'UTF-7');
+            $folder_html.= rcube::charset_convert($folder, 'UTF-7');
         }
         if (strlen($folder_html) > 40) {
             $folder_html = substr($folder_html, 0, 27) . '...';
         }
         if (!$protected) {
-            $a_js_folders['rcmrow'.($i+1)] = array($folder, rc_main::rcube_charset_convert($folder, 'UTF-7'));
+            $a_js_folders['rcmrow'.($i+1)] = array($folder, rcube::charset_convert($folder, 'UTF-7'));
         }
         $out .= sprintf(
                     '<tr id="rcmrow%d" class="%s"><td>%s</td>',
                     $i+1,
                     $zebra_class,
-                    rc_main::Q($folder_html)
+                    Q($folder_html)
         );
                     
         if ($protected) {
@@ -263,11 +263,11 @@ function rcube_subscription_form($attrib)
                         '<td><a href="#delete" onclick="%s.command(\'delete-folder\',\'%s\')" title="%s">%s</a></td>',
                         JS_OBJECT_NAME,
                         $folder_js,
-                        rcube_label('renamefolder'),
+                        rcube::gettext('renamefolder'),
                         $edit_button,
                         JS_OBJECT_NAME,
                         $folder_js,
-                        rcube_label('deletefolder'),
+                        rcube::gettext('deletefolder'),
                         $del_button
             );
         }
@@ -300,14 +300,14 @@ function rcube_create_folder_form($attrib)
     // return the complete edit form as table
     $out = "$form_start\n";
 
-    $input = new textfield(array('name' => '_folder_name'));
+    $input = new html_inputfield(array('name' => '_folder_name'));
     $out .= $input->show();
   
     if (get_boolean($attrib['button'])) {
         $button = new input_field(
                         array(
                             'type'    => 'button',
-                            'value'   => rcube_label('create'),
+                            'value'   => rcube::gettext('create'),
                             'onclick' => JS_OBJECT_NAME.".command('create-folder',this.form)"
                         )
         );
@@ -323,12 +323,12 @@ function rcube_create_folder_form($attrib)
  * @access static
  * @param  array $attrib
  * @return string
- * @uses   rc_registry::getInstance()
+ * @uses   rcube_registry::get_instance()
  */
 function rcube_rename_folder_form($attrib)
 {
-    $registry = rc_registry::getInstance();
-    $CONFIG   = $registry->get('CONFIG', 'core');
+    $registry = rcube_registry::get_instance();
+    $CONFIG   = $registry->get_all('config');
     $IMAP     = $registry->get('IMAP', 'core');
 
     list($form_start, $form_end) = get_form_tags($attrib, 'rename-folder');
@@ -338,7 +338,7 @@ function rcube_rename_folder_form($attrib)
     $out = "$form_start\n";
 
     $a_unsubscribed = $IMAP->list_unsubscribed();
-    $select_folder = new select(array('name' => '_folder_oldname', 'id' => 'rcmfd_oldfolder'));
+    $select_folder = new html_select(array('name' => '_folder_oldname', 'id' => 'rcmfd_oldfolder'));
 
     foreach ($a_unsubscribed as $i => $folder) {
         if ($CONFIG['protect_default_folders'] == TRUE && in_array($folder,$CONFIG['default_imap_folders'])) {
@@ -350,12 +350,12 @@ function rcube_rename_folder_form($attrib)
     $out .= $select_folder->show();
 
     $out .= " to ";
-    $inputtwo = new textfield(array('name' => '_folder_newname'));
+    $inputtwo = new html_inputfield(array('name' => '_folder_newname'));
     $out .= $inputtwo->show();
 
     if (get_boolean($attrib['button'])) {
         $button = new input_field(array('type' => 'button',
-                                    'value' => rcube_label('rename'),
+                                    'value' => rcube::gettext('rename'),
                                     'onclick' => JS_OBJECT_NAME.".command('rename-folder',this.form)"));
         $out .= $button->show();
     }
@@ -374,7 +374,7 @@ $OUTPUT->add_handlers(array(
 ));
 
 // add some labels to client
-rc_main::rcube_add_label('deletefolderconfirm');
+$OUTPUT->add_label('deletefolderconfirm');
 
 $OUTPUT->send('managefolders');
 ?>
