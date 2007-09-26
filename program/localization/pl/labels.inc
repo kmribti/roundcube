@@ -15,7 +15,7 @@
  |         Janusz Zamecki   <janusz@zamecki.eu>                          |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 628 2007-06-28 11:41:06Z tomekp $
+ @version $Id: labels.inc 819 2007-09-26 08:26:58Z tomekp $
 
 */
 
@@ -77,6 +77,7 @@ $labels['replytomessage'] = 'Odpowiedz nadawcy';
 $labels['replytoallmessage'] = 'Odpowiedz wszystkim';
 $labels['forwardmessage'] = 'Prześlij dalej';
 $labels['deletemessage'] = 'Usuń';
+$labels['movemessagetotrash'] = 'Przenieś do Kosza';
 $labels['printmessage'] = 'Drukuj';
 $labels['previousmessage'] = 'Pokaż poprzednią';
 $labels['previousmessages'] = 'Pokaż poprzednie';
@@ -93,7 +94,7 @@ $labels['all'] = 'Zaznacz wszystkie';
 $labels['none'] = 'Anuluj zaznaczenie';
 $labels['unread'] = 'Zaznacz nieprzeczytane';
 $labels['compact'] = 'Kompaktuj';
-$labels['empty'] = 'Pusty';
+$labels['empty'] = 'Opróżnij';
 $labels['purge'] = 'Oczyść';
 $labels['quota'] = 'Użyte miejsce';
 $labels['unknown'] = 'nieznane';
@@ -101,8 +102,8 @@ $labels['unlimited'] = 'bez limitu';
 $labels['quicksearch'] = 'Szybkie wyszukiwanie';
 $labels['resetsearch'] = 'Wyczyść filtr';
 $labels['compose'] = 'Utwórz wiadomość';
-$labels['sendmessage'] = 'Wyślij teraz';
 $labels['savemessage'] = 'Zapisz kopię roboczą';
+$labels['sendmessage'] = 'Wyślij teraz';
 $labels['addattachment'] = 'Dołącz plik';
 $labels['charset'] = 'Kodowanie znaków';
 $labels['editortype'] = 'Typ edytora';
