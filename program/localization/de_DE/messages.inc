@@ -13,7 +13,7 @@
  | Author: Stephan Diehl <info@sd-edv.de>                                |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 557 2007-05-15 06:41:32Z yllar $
+ @version $Id: messages.inc 778 2007-09-05 20:08:25Z yllar $
 
 */
 

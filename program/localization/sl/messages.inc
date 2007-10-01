@@ -14,7 +14,7 @@
  |         Andrej Mocilnik <amocilnik@dotcom.ts.it>                                     |
  +--------------------------------------------------------------------------------------+
 
- @version $Id: messages.inc 557 2007-05-15 06:41:32Z yllar $
+ @version $Id: messages.inc 584 2007-05-24 03:49:19Z estadtherr $
 
 */
 
@@ -74,4 +74,5 @@ $messages['copysuccess'] = 'Število prepisanih naslovov: $nr';
 $messages['copyerror'] = 'Ne morem prepisati nobenega naslova';
 $messages['sourceisreadonly'] = 'Izvirnik naslova je samo berljiv';
 $messages['errorsavingcontact'] = 'Ne morem shraniti vizitke';
+
 ?>

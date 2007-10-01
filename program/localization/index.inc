@@ -16,7 +16,7 @@
  | Author: Thomas Bruederli <roundcube@gmail.com>                        |
  +-----------------------------------------------------------------------+
 
- $Id: index.inc 672 2007-08-10 14:46:53Z thomasb $
+ $Id: index.inc 826 2007-09-26 15:50:24Z thomasb $
  
  */
  
@@ -78,14 +78,15 @@
 $rcube_language_aliases = array(
 	'ee' => 'et_EE',
 	'bs' => 'bs_BA',
-  	'cn' => 'zh_CN',
+	'cn' => 'zh_CN',
 	'de' => 'de_DE',
 	'en' => 'en_US',
 	'ga' => 'ga_IE',
 	'nl' => 'nl_NL',
 	'no' => 'nn_NO',
 	'pt' => 'pt_PT',
-  	'tw' => 'zh_TW'
+	'th' => 'th_TH',
+	'tw' => 'zh_TW'
 );
 
 $rcube_charsets = array();

@@ -13,7 +13,7 @@
  | Author: Mark Moses <mark@katmoda.com>                                 |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 558 2007-05-15 06:53:08Z robin $
+ @version $Id: labels.inc 817 2007-09-26 08:19:55Z robin $
 
 */
 
@@ -153,6 +153,10 @@ $labels['showimages'] = 'Toon afbeeldingen';
 
 $labels['htmltoggle'] = 'HTML';
 $labels['plaintoggle'] = 'Gewone tekst';
+
+$labels['addcc'] = 'Kopie toevoegen'; 
+$labels['addbcc'] = 'Bcc toevoegen'; 
+$labels['addreplyto'] = 'Antwoord-aan toevoegen';
 
 // address boook
 $labels['name']      = 'Naam';

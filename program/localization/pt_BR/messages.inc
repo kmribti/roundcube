@@ -15,7 +15,7 @@
  | Updated by: Alessandro Lenzi <alessandro@mistymountain.com.br>        |
  +-----------------------------------------------------------------------+
 
- $Id: messages.inc 559 2007-05-17 14:33:01Z thomasb $
+ $Id: messages.inc 830 2007-09-27 04:33:46Z tomekp $
 
 */
 

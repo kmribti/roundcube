@@ -15,7 +15,7 @@
  |         Lito Jornero <jornero@gmail.com>                              |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 643 2007-07-07 20:25:44Z yllar $
+ @version $Id: messages.inc 841 2007-10-01 08:32:11Z yllar $
 
 */
 
@@ -69,8 +69,8 @@ $messages['folderdeleted'] = 'Carpeta eliminada exitosamente';
 $messages['deletedsuccessfully'] = 'Eliminado exitosamente';
 $messages['converting'] = 'Removiendo el formato del mensaje...';
 $messages['messageopenerror'] = 'No puedo descargar el mensaje del servidor';
-$messages['fileuploaderror'] = 'Fallo en la subida de ficheros';
-$messages['filesizeerror'] = 'El fichero excede el tamaño maximo ($size)';
+$messages['fileuploaderror'] = 'Fallo en la subida de archivos';
+$messages['filesizeerror'] = 'El archivo excede el tamaño maximo ($size)';
 $messages['copysuccess'] = '$nr direcciones copiadas con éxito';
 $messages['copyerror'] = 'No se pudo copiar ninguna dirección';
 $messages['sourceisreadonly'] = 'Esta dirección es de sólo-lectura';

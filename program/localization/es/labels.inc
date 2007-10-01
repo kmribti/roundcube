@@ -16,7 +16,7 @@
  |         http://david.grajal.net                                       |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 643 2007-07-07 20:25:44Z yllar $
+ @version $Id: labels.inc 841 2007-10-01 08:32:11Z yllar $
 
 */
 
@@ -169,7 +169,7 @@ $labels['never'] = 'nunca';
 $labels['folder'] = 'Bandeja';
 $labels['folders'] = 'Bandejas';
 $labels['foldername'] = 'Nombre de bandeja';
-$labels['subscribed'] = 'Suscribipta';
+$labels['subscribed'] = 'Suscrita';
 $labels['create'] = 'Crear';
 $labels['createfolder'] = 'Crear nueva bandeja';
 $labels['rename'] = 'Renombrar';

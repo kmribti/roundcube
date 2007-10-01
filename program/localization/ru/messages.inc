@@ -14,7 +14,7 @@
  |         Vladimir Kulev <me@lightoze.net>                              |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 560 2007-05-17 15:01:26Z thomasb $
+ @version $Id: messages.inc 584 2007-05-24 03:49:19Z estadtherr $
 
 */
 

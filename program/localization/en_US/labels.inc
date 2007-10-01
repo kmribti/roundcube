@@ -13,7 +13,7 @@
  | Author: Thomas Bruederli <roundcube@gmail.com>                        |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 543 2007-04-28 18:07:12Z thomasb $
+ @version $Id: labels.inc 816 2007-09-26 08:13:21Z thomasb $
 
 */
 
@@ -96,7 +96,8 @@ $labels['writenewmessage']  = 'Create a new message';
 $labels['replytomessage']   = 'Reply to the message';
 $labels['replytoallmessage'] = 'Reply to sender and all recipients';
 $labels['forwardmessage']   = 'Forward the message';
-$labels['deletemessage']    = 'Move message to trash';
+$labels['deletemessage']    = 'Delete message';
+$labels['movemessagetotrash'] = 'Move message to trash';
 $labels['printmessage']     = 'Print this message';
 $labels['previousmessage']  = 'Show the previous message';
 $labels['previousmessages'] = 'Show previous set of messages';
@@ -128,8 +129,8 @@ $labels['resetsearch']  = 'Reset search';
 
 // message compose
 $labels['compose']        = 'Compose a message';
+$labels['savemessage']    = 'Save this draft';
 $labels['sendmessage']    = 'Send the message now';
-$labels['savemessage']  = 'Save this draft';
 $labels['addattachment']  = 'Attach a file';
 $labels['charset']        = 'Charset';
 $labels['editortype']     = 'Editor type';
@@ -154,6 +155,10 @@ $labels['showimages'] = 'Display images';
 
 $labels['htmltoggle'] = 'HTML';
 $labels['plaintoggle'] = 'Plain text';
+
+$labels['addcc'] = 'Add Cc';
+$labels['addbcc'] = 'Add Bcc';
+$labels['addreplyto'] = 'Add Reply-To';
 
 
 // address boook

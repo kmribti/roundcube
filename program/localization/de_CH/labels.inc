@@ -14,7 +14,7 @@
  | Corrections: Alexander Stiebing <ja.stiebing[NOSPAM]@web.de>          |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 549 2007-05-01 18:53:56Z thomasb $
+ @version $Id: labels.inc 816 2007-09-26 08:13:21Z thomasb $
 
 */
 
@@ -97,8 +97,9 @@ $labels['writenewmessage']  = 'Neue Nachricht schreiben';
 $labels['replytomessage']   = 'Antwort verfassen';
 $labels['replytoallmessage'] = 'Antwort an Absender und alle Empfänger';
 $labels['forwardmessage']   = 'Nachricht weiterleiten';
-$labels['deletemessage']    = 'In den Papierkorb verschieben';
-$labels['printmessage']     = 'Drucken';
+$labels['deletemessage']    = 'Nachricht löschen';
+$labels['movemessagetotrash'] = 'Nachricht in den Papierkorb verschieben';
+$labels['printmessage']     = 'Diese Nachricht drucken';
 $labels['previousmessage']  = 'Vorherige Nachricht anzeigen';
 $labels['previousmessages'] = 'Vorherige Nachrichten anzeigen';
 $labels['firstmessage']     = 'Die erste Nachricht anzeigen';
@@ -155,6 +156,10 @@ $labels['showimages'] = 'Bilder anzeigen';
 
 $labels['htmltoggle'] = 'HTML';
 $labels['plaintoggle'] = 'Klartext';
+
+$labels['addcc'] = 'Cc hinzufügen';
+$labels['addbcc'] = 'Bcc hinzufügen';
+$labels['addreplyto'] = 'Antwortadresse hinzufügen';
 
 
 // address book // Adressbuch

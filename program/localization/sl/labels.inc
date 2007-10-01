@@ -14,7 +14,7 @@
  |         Andrej Mocilnik <amocilnik@dotcom.ts.it>                                     |
  +--------------------------------------------------------------------------------------+
 
- @version $Id: labels.inc 557 2007-05-15 06:41:32Z yllar $
+ @version $Id: labels.inc 584 2007-05-24 03:49:19Z estadtherr $
 
 */
 
@@ -177,4 +177,5 @@ $labels['managefolders'] = 'Urejaj mape';
 $labels['sortby'] = 'Uredi po';
 $labels['sortasc'] = 'Uredi naraščajoče';
 $labels['sortdesc'] = 'Uredi padajoče';
+
 ?>

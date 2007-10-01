@@ -13,7 +13,7 @@
  | Author: Stephan Diehl <info@sd-edv.de>                                |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 549 2007-05-01 18:53:56Z thomasb $
+ @version $Id: labels.inc 789 2007-09-09 18:49:23Z thomasb $
 
 */
 
@@ -37,12 +37,12 @@ $labels['from'] = 'Absender';
 $labels['to'] = 'Empfänger';
 $labels['cc'] = 'Kopie';
 $labels['bcc'] = 'Blindkopie';
-$labels['replyto'] = 'Antworten';
+$labels['replyto'] = 'Antwort an';
 $labels['date'] = 'Datum';
 $labels['size'] = 'Größe';
 $labels['priority'] = 'Priorität';
 $labels['organization'] = 'Organisation';
-$labels['reply-to'] = 'Antworten';
+$labels['reply-to'] = 'Antwort an';
 $labels['mailboxlist'] = 'Ordner';
 $labels['messagesfromto'] = 'Nachrichten $from bis $to von $count';
 $labels['messagenrof'] = 'Nachricht $nr von $count';
@@ -69,13 +69,14 @@ $labels['thursday'] = 'Donnerstag';
 $labels['friday'] = 'Freitag';
 $labels['saturday'] = 'Samstag';
 $labels['today'] = 'Heute';
-$labels['checkmail'] = 'E-Mails abrufen';
-$labels['writenewmessage'] = 'E-Mail schreiben';
-$labels['replytomessage'] = 'Antworten';
-$labels['replytoallmessage'] = 'Allen antworten';
-$labels['forwardmessage'] = 'Weiterleiten';
-$labels['deletemessage'] = 'L&ouml;schen';
-$labels['printmessage'] = 'Drucken';
+$labels['checkmail'] = 'Auf neue Nachrichten überprüfen';
+$labels['writenewmessage'] = 'Neue Nachricht schreiben';
+$labels['replytomessage'] = 'Antwort verfassen';
+$labels['replytoallmessage'] = 'Antwort an Absender und alle Empfänger';
+$labels['forwardmessage'] = 'Nachricht weiterleiten';
+$labels['deletemessage']    = 'Nachricht löschen';
+$labels['movemessagetotrash'] = 'Nachricht in den Papierkorb verschieben';
+$labels['printmessage'] = 'Diese Nachricht drucken';
 $labels['previousmessage'] = 'Vorherige Nachricht anzeigen';
 $labels['previousmessages'] = 'Vorherige Nachrichten anzeigen';
 $labels['firstmessage'] = 'Die erste Nachricht anzeigen';
@@ -91,7 +92,7 @@ $labels['all'] = 'Alle';
 $labels['none'] = 'Keine';
 $labels['unread'] = 'Ungelesene';
 $labels['compact'] = 'Packen';
-$labels['empty'] = 'Papierkorb leeren';
+$labels['empty'] = 'Leeren';
 $labels['purge'] = 'Bereinigen';
 $labels['quota'] = 'Speicherplatz';
 $labels['unknown'] = 'unbekannt';
@@ -104,10 +105,10 @@ $labels['savemessage'] = 'Nachricht speichern';
 $labels['addattachment'] = 'Datei anfügen';
 $labels['charset'] = 'Zeichensatz';
 $labels['editortype'] = 'Editor Typ';
-$labels['returnreceipt'] = 'Best&auml;tigung';
-$labels['checkspelling'] = 'Rechtschreibung &uuml;berpr&uuml;fen';
-$labels['resumeediting'] = 'Bearbeitung fortsetzen';
-$labels['revertto'] = 'Zur&uuml;ck zu';
+$labels['returnreceipt'] = 'Empfangsbestätigung';
+$labels['checkspelling'] = 'Rechtschreibung prüfen';
+$labels['resumeediting'] = 'Bearbeitung fortzetzen';
+$labels['revertto'] = 'Zurück zu';
 $labels['attachments'] = 'Anhänge';
 $labels['upload'] = 'Hochladen';
 $labels['close'] = 'Schließen';

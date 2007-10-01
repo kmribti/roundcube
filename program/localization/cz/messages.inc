@@ -14,12 +14,11 @@
  |        joe <joe@humlak.cz>                                            |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 553 2007-05-13 16:31:19Z thomasb $
+ @version $Id: messages.inc 584 2007-05-24 03:49:19Z estadtherr $
 
 */
 
 $messages = array();
-
 $messages['loginfailed']  = 'Přihlášení selhalo';
 $messages['cookiesdisabled'] = 'Váš prohlížeč nepodporuje cookies, které jsou pro přihlášení nezbytné';
 $messages['sessionerror'] = 'Vaše přihlášení je neplatné nebo vypršelo';
@@ -59,7 +58,6 @@ $messages['checkingmail'] = 'Kontroluji nové zprávy...';
 $messages['savingmessage'] = 'Ukládám zprávu...';
 $messages['messagesaved'] = 'Zpráva uložena do Rozepsané';
 $messages['folderdeleted'] = 'Složka byla úspěšně vymazána';
-
 $messages['contactnotfound'] = 'Požadovaný kontakt nebyl nalezen.';
 $messages['deletecontactconfirm']  = 'Opravdu chcete smazat označené kontakty?';
 $messages['deletemessagesconfirm'] = 'Opravdu chcete smazat označené zprávy?';

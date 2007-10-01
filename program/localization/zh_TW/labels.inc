@@ -14,7 +14,7 @@
  |         Ting-Hung Chiu <earrl@mmlab.cse.yzu.edu.tw>                   |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 560 2007-05-17 15:01:26Z thomasb $
+ @version $Id: labels.inc 584 2007-05-24 03:49:19Z estadtherr $
 
 */
 

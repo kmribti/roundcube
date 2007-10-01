@@ -3,7 +3,7 @@
 /*
 
  +-----------------------------------------------------------------------+
- | language/en/messages.inc                                              |
+ | language/en_US/messages.inc                                           |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
  | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
@@ -13,7 +13,7 @@
  | Author: Thomas Bruederli <roundcube@gmail.com>                        |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 778 2007-09-05 20:08:25Z yllar $
+ @version $Id: messages.inc 794 2007-09-11 11:22:05Z ihug $
 
 */
 
@@ -39,7 +39,6 @@ $messages['blockedimages'] = 'To protect your privacy, remote images are blocked
 $messages['encryptedmessage'] = 'This is an encrypted message and can not be displayed. Sorry!';
 $messages['nocontactsfound'] = 'No contacts found';
 $messages['contactnotfound'] = 'The requested contact was not found';
-
 $messages['sendingfailed'] = 'Failed to send message';
 $messages['errorsaving'] = 'An error occured while saving';
 $messages['errormoving'] = 'Could not move the message';
@@ -70,10 +69,10 @@ $messages['converting'] = 'Removing formatting from message...';
 $messages['messageopenerror'] = 'Could not load message from server';
 $messages['fileuploaderror'] = 'File upload failed';
 $messages['filesizeerror'] = 'The uploaded file exceeds the maximum size of $size';
-
 $messages['copysuccess'] = 'Successfully copied $nr addresses';
 $messages['copyerror'] = 'Could not copy any addresses';
 $messages['sourceisreadonly'] = 'This address source is read only';
 $messages['errorsavingcontact'] = 'Could not save the contact address';
 $messages['movingmessage'] = 'Moving message...';
+
 ?>
