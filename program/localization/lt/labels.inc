@@ -13,7 +13,7 @@
  | Author: Martynas Bendorius <martynas@e-vaizdas.net>                   |
  +-----------------------------------------------------------------------+'
 
- @version $Id: labels.inc 557 2007-05-15 06:41:32Z yllar $
+ @version $Id: labels.inc 853 2007-10-03 19:47:40Z yllar $
 
 */
 
@@ -75,6 +75,7 @@ $labels['replytomessage'] = 'Atsakyti į lašką';
 $labels['replytoallmessage'] = 'Atsakyti visiems';
 $labels['forwardmessage'] = 'Persiųsti laišką';
 $labels['deletemessage'] = 'Ištrinti laišką';
+$labels['movemessagetotrash'] = 'Perkelti laišką į šiukšliadėžę';
 $labels['printmessage'] = 'Atspausdinti laišką';
 $labels['previousmessage'] = 'Rodyti ankstesnį laišką';
 $labels['previousmessages'] = 'Rodyti ankstesius laiškus';
@@ -99,8 +100,8 @@ $labels['unlimited'] = 'neribotas';
 $labels['quicksearch'] = 'Greita paieška';
 $labels['resetsearch'] = 'Atšaukti paiešką';
 $labels['compose'] = 'Rašyti nauja laiška';
-$labels['sendmessage'] = 'Išsiųsti laiską';
 $labels['savemessage'] = 'Išsaugoti šį juodraštį';
+$labels['sendmessage'] = 'Išsiųsti laiską';
 $labels['addattachment'] = 'Prisegti bylą';
 $labels['charset'] = 'Koduotė';
 $labels['editortype'] = 'Redagavimo tipas';
@@ -120,6 +121,9 @@ $labels['nosubject'] = '(nėra temos)';
 $labels['showimages'] = 'Rodyti paveikslėlius';
 $labels['htmltoggle'] = 'HTML';
 $labels['plaintoggle'] = 'Paprastas tekstas';
+$labels['addcc'] = 'Pridėti Cc';
+$labels['addbcc'] = 'Pridėti Bcc';
+$labels['addreplyto'] = 'Pridėti Reply-To';
 $labels['name'] = 'Rodomas vardas';
 $labels['firstname'] = 'Vardas';
 $labels['surname'] = 'Pavardė';

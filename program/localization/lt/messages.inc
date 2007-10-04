@@ -13,7 +13,7 @@
  | Author: Martynas Bendorius <martynas@e-vaizdas.net>                   |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 557 2007-05-15 06:41:32Z yllar $
+ @version $Id: messages.inc 853 2007-10-03 19:47:40Z yllar $
 
 */
 
@@ -73,5 +73,6 @@ $messages['copysuccess'] = 'Sėkmingai nukopijuoti $nr adresai';
 $messages['copyerror'] = 'Adresų kopijuoti negalima';
 $messages['sourceisreadonly'] = 'Šis adreso šaltinis yra tik skaitymui';
 $messages['errorsavingcontact'] = 'Kontakto adreso išsaugoti negalima';
+$messages['movingmessage'] = 'Perkeliamas laiškas...';
 
 ?>

@@ -5,7 +5,7 @@
  | program/localization/index.inc                                        |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005, RoundCube Dev, - Switzerland                      |
+ | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -16,7 +16,7 @@
  | Author: Thomas Bruederli <roundcube@gmail.com>                        |
  +-----------------------------------------------------------------------+
 
- $Id: index.inc 826 2007-09-26 15:50:24Z thomasb $
+ $Id: index.inc 852 2007-10-03 14:27:54Z yllar $
  
  */
  
@@ -52,6 +52,7 @@
 	'lv'    => 'Latvian',
 	'lt'    => 'Lithuanian',
 	'mk'    => 'Macedonian (Slavic FYROM)',
+	'ms_MY'	=> 'Malay',
 	'nl_NL' => 'Nederlands',
 	'nl_BE' => 'Flemish',
 	'nb_NO' => 'Norsk (bokmål)',
@@ -90,6 +91,5 @@ $rcube_language_aliases = array(
 );
 
 $rcube_charsets = array();
-
 
 ?>
