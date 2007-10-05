@@ -16,7 +16,7 @@
  | Author: Thomas Bruederli <roundcube@gmail.com>                        |
  +-----------------------------------------------------------------------+
 
- $Id: index.inc 852 2007-10-03 14:27:54Z yllar $
+ $Id: index.inc 859 2007-10-05 06:08:21Z tomekp $
  
  */
  
@@ -34,6 +34,7 @@
 	'da'    => 'Dansk',
  	'de_DE' => 'Deutsch (Deutsch)',
  	'de_CH' => 'Deutsch (Schweiz)',
+    'eo'	=> 'Esperanto',
  	'es'    => 'Español',
  	'et_EE' => 'Estonian',
 	'eu'    => 'Euskara',
@@ -91,5 +92,6 @@ $rcube_language_aliases = array(
 );
 
 $rcube_charsets = array();
+
 
 ?>
