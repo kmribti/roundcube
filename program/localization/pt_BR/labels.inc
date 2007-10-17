@@ -15,7 +15,7 @@
  | Updated by: Alessandro Lenzi <alessandro@mistymountain.com.br>        |
  +-----------------------------------------------------------------------+
 
- $Id: labels.inc 830 2007-09-27 04:33:46Z tomekp $
+ $Id: labels.inc 870 2007-10-16 06:50:49Z thomasb $
 
 */
 
@@ -215,7 +215,7 @@ $labels['signature'] = 'Assinatura';
 $labels['dstactive']  = 'Horário de Verão';
 $labels['htmleditor'] = 'Criar mensagens em HTML';
 $labels['htmlsignature'] = 'Assinatura em HTML';
-$labels['previewpane'] = 'Exibir Pré-Vizualização';
+$labels['previewpane'] = 'Exibir Pré-Visualização';
 
 $labels['autosavedraft']  = 'Salvar Rascunho automaticamente';
 $labels['everynminutes']  = 'a cada $n minutos';

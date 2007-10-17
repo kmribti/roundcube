@@ -15,7 +15,7 @@
  |          Fernando Silva <fernando.silva@openquest.pt>                 |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 562 2007-05-17 15:22:33Z thomasb $
+ @version $Id: labels.inc 873 2007-10-16 19:06:34Z yllar $
 
 */
 
@@ -75,8 +75,9 @@ $labels['checkmail'] = 'Verificar novas mensagens';
 $labels['writenewmessage'] = 'Criar nova mensagem';
 $labels['replytomessage'] = 'Responder';
 $labels['replytoallmessage'] = 'Responder a todos';
-$labels['forwardmessage'] = 'Encaminhar';
-$labels['deletemessage'] = 'Mover para lixeira';
+$labels['forwardmessage'] = 'Reencaminhar';
+$labels['deletemessage'] = 'Apagar';
+$labels['movemessagetotrash'] = 'Mover para lixeira';
 $labels['printmessage'] = 'Imprimir';
 $labels['previousmessage'] = 'Mensagem anterior';
 $labels['previousmessages'] = 'Página anterior';
@@ -101,8 +102,8 @@ $labels['unlimited'] = 'ilimitado';
 $labels['quicksearch'] = 'Pesquisa rápida';
 $labels['resetsearch'] = 'Limpar pesquisa';
 $labels['compose'] = 'Escrever mensagem';
-$labels['sendmessage'] = 'Enviar';
 $labels['savemessage'] = 'Salvar rascunho';
+$labels['sendmessage'] = 'Enviar';
 $labels['addattachment'] = 'Anexar';
 $labels['charset'] = 'Charset';
 $labels['editortype'] = 'Tipo de editor';
@@ -122,6 +123,9 @@ $labels['nosubject'] = '(sem assunto)';
 $labels['showimages'] = 'Exibir imagens';
 $labels['htmltoggle'] = 'HTML';
 $labels['plaintoggle'] = 'Texto simples';
+$labels['addcc'] = 'Adicionar Cc';
+$labels['addbcc'] = 'Adicionar Bcc';
+$labels['addreplyto'] = 'Adicionar "Responder para"';
 $labels['name'] = 'Nome completo';
 $labels['firstname'] = 'Primeiro nome';
 $labels['surname'] = 'Apelido';

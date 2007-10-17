@@ -14,7 +14,7 @@
  |         Simo <sim6@graciasensefils.net>                               |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 643 2007-07-07 20:25:44Z yllar $
+ @version $Id$
 
 */
 
@@ -74,5 +74,6 @@ $messages['copysuccess'] = 'S\'ha copiat $nr adreces correctament';
 $messages['copyerror'] = 'No s\'ha pogut copiar cap adreça';
 $messages['sourceisreadonly'] = 'Aquesta adreça és només de lectura.';
 $messages['errorsavingcontact'] = 'No s\'ha pogut guardar l\'adreça de contacte';
+$messages['movingmessage'] = 'Movent el missatge...';
 
 ?>

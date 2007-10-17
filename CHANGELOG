@@ -1,6 +1,9 @@
 CHANGELOG RoundCube Webmail
 ---------------------------
 
+2007/10/17 (tomekp)
+- MFH: update ca, cz, es, it, pt_BR, pt_PT localizations
+
 2007/10/05
 - MFH: add Esperanto localization
 - MFH: update German localization

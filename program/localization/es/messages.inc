@@ -15,7 +15,7 @@
  |         Lito Jornero <jornero@gmail.com>                              |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 841 2007-10-01 08:32:11Z yllar $
+ @version $Id: messages.inc 873 2007-10-16 19:06:34Z yllar $
 
 */
 
@@ -75,5 +75,6 @@ $messages['copysuccess'] = '$nr direcciones copiadas con éxito';
 $messages['copyerror'] = 'No se pudo copiar ninguna dirección';
 $messages['sourceisreadonly'] = 'Esta dirección es de sólo-lectura';
 $messages['errorsavingcontact'] = 'No se pudo guardar la dirección de contacto';
+$messages['movingmessage'] = 'Moviendo mensaje...';
 
 ?>

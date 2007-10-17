@@ -14,7 +14,7 @@
  |          João Vale <jpvale@gmail.com>                                 |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 562 2007-05-17 15:22:33Z thomasb $
+ @version $Id: messages.inc 873 2007-10-16 19:06:34Z yllar $
 
 */
 
@@ -74,5 +74,6 @@ $messages['copysuccess'] = 'Foram copiados $nr endereços com sucesso';
 $messages['copyerror'] = 'Não foi possível copiar os endereços';
 $messages['sourceisreadonly'] = 'Esta fonte de endereços é só de leitura';
 $messages['errorsavingcontact'] = 'Não foi possível guardar o endereço de contacto';
+$messages['movingmessage'] = 'Movendo mensagem...';
 
 ?>
