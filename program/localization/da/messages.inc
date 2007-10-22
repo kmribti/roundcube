@@ -15,7 +15,7 @@
  |         Søren Aggeboe <soren@aggeboe.dk>                              |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 553 2007-05-13 16:31:19Z thomasb $
+ @version $Id: messages.inc 886 2007-10-19 07:24:53Z yllar $
 
 */
 
@@ -75,5 +75,6 @@ $messages['copysuccess'] = 'Det lykkedes at kopiere $nr adresser';
 $messages['copyerror'] = 'Kunne ikke kopiere adresserne';
 $messages['sourceisreadonly'] = 'Denne adressekilde er kun til læsning';
 $messages['errorsavingcontact'] = 'Kunne ikke gemme kontakt adressen';
+$messages['movingmessage'] = 'Flytter besked...';
 
 ?>

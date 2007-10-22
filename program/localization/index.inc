@@ -16,7 +16,7 @@
  | Author: Thomas Bruederli <roundcube@gmail.com>                        |
  +-----------------------------------------------------------------------+
 
- $Id: index.inc 859 2007-10-05 06:08:21Z tomekp $
+ $Id: index.inc 886 2007-10-19 07:24:53Z yllar $
  
  */
  
@@ -34,12 +34,12 @@
 	'da'    => 'Dansk',
  	'de_DE' => 'Deutsch (Deutsch)',
  	'de_CH' => 'Deutsch (Schweiz)',
-    'eo'	=> 'Esperanto',
+	'eo'	=> 'Esperanto',
  	'es'    => 'Español',
  	'et_EE' => 'Estonian',
 	'eu'    => 'Euskara',
 	'fr'    => 'Français', 
-	'gl'    => 'Galician',
+	'gl'    => 'Galego',
 	'ga_IE' => 'Irish',
 	'el'    => 'Greek',
 	'hi'    => 'Hindi',
