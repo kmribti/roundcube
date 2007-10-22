@@ -26,9 +26,7 @@
  * @author Thomas Bruederli <roundcube@gmail.com>
  */
 
-require_once('lib/des.inc');
 require_once('lib/utf7.inc');
-require_once('lib/utf8.class.php');
 require_once('include/rcube_shared.inc');
 require_once('include/rcmail_template.inc');
 
@@ -929,7 +927,12 @@ function show_message($message, $type='notice', $vars=NULL)
  */
 function encrypt_passwd($pass)
   {
-  $cypher = des(get_des_key(), $pass, 1, 0, NULL);
+  $td = mcrypt_module_open(MCRYPT_TripleDES, "", MCRYPT_MODE_ECB, "");
+  $iv = mcrypt_create_iv(mcrypt_enc_get_iv_size($td), MCRYPT_RAND);
+  mcrypt_generic_init($td, get_des_key(), $iv);
+  $cypher = mcrypt_generic($td, $pass);
+  mcrypt_generic_deinit($td);
+  mcrypt_module_close($td);
   return base64_encode($cypher);
   }
 
@@ -942,7 +945,12 @@ function encrypt_passwd($pass)
  */
 function decrypt_passwd($cypher)
   {
-  $pass = des(get_des_key(), base64_decode($cypher), 0, 0, NULL);
+  $td = mcrypt_module_open(MCRYPT_TripleDES, "", MCRYPT_MODE_ECB, "");
+  $iv = mcrypt_create_iv(mcrypt_enc_get_iv_size($td), MCRYPT_RAND);
+  mcrypt_generic_init($td, get_des_key(), $iv);
+  $pass = mdecrypt_generic($td, base64_decode($cypher));
+  mcrypt_generic_deinit($td);
+  mcrypt_module_close($td);
   return preg_replace('/\x00/', '', $pass);
   }
 
@@ -1092,29 +1100,17 @@ function rcube_charset_convert($str, $from, $to=NULL)
       return $out;
     }
 
-  $conv = new utf8();
-
   // convert string to UTF-8
   if ($from=='UTF-7')
     $str = utf7_to_utf8($str);
   else if (($from=='ISO-8859-1') && function_exists('utf8_encode'))
     $str = utf8_encode($str);
-  else if ($from!='UTF-8')
-    {
-    $conv->loadCharset($from);
-    $str = $conv->strToUtf8($str);
-    }
 
   // encode string for output
   if ($to=='UTF-7')
     return utf8_to_utf7($str);
   else if ($to=='ISO-8859-1' && function_exists('utf8_decode'))
     return utf8_decode($str);
-  else if ($to!='UTF-8')
-    {
-    $conv->loadCharset($to);
-    return $conv->utf8ToStr($str);
-    }
 
   // return UTF-8 string
   return $str;
