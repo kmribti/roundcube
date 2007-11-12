@@ -14,7 +14,7 @@
  |         Andrej Mocilnik <amocilnik@dotcom.ts.it>                                     |
  +--------------------------------------------------------------------------------------+
 
- @version $Id: labels.inc 584 2007-05-24 03:49:19Z estadtherr $
+ @version $Id: labels.inc 842 2007-10-01 13:55:02Z tomekp $
 
 */
 

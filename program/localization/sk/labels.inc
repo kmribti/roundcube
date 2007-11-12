@@ -14,7 +14,7 @@
  |         Marek Kutnar marek19@zmail.sk>                                |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 569 2007-05-17 19:42:17Z thomasb $
+ @version $Id: labels.inc 842 2007-10-01 13:55:02Z tomekp $
 
 */
 

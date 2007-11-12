@@ -13,7 +13,7 @@
  | Author: Thomas Bruederli <roundcube@gmail.com>                        |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 816 2007-09-26 08:13:21Z thomasb $
+ @version $Id: labels.inc 842 2007-10-01 13:55:02Z tomekp $
 
 */
 

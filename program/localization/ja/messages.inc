@@ -14,7 +14,7 @@
  |         Takashi Takamatsu <taka717@gmail.com>                         |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 778 2007-09-05 20:08:25Z yllar $
+ @version $Id: messages.inc 842 2007-10-01 13:55:02Z tomekp $
 
 */
 

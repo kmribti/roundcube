@@ -1,6 +1,9 @@
 CHANGELOG RoundCube Webmail
 ---------------------------
 
+2007/11/12 (tomekp)
+- MFH: ar, ca, de_DE, en_GB, en_US, eu, fa, fr, ja, lt, ru, se, sk, sl localizations
+
 2007/10/22 (tomekp)
 - MFH: da, eo, gl, hu, ru localizations
 

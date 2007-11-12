@@ -13,7 +13,7 @@
  | Author: Thomas Bruederli <roundcube@gmail.com>                        |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 794 2007-09-11 11:22:05Z ihug $
+ @version $Id: messages.inc 842 2007-10-01 13:55:02Z tomekp $
 
 */
 

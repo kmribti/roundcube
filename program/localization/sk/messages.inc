@@ -14,7 +14,7 @@
  |         Marek Kutnar marek19@zmail.sk>                                |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 569 2007-05-17 19:42:17Z thomasb $
+ @version $Id: messages.inc 842 2007-10-01 13:55:02Z tomekp $
 
 */
 

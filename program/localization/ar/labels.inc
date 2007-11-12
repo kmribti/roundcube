@@ -13,7 +13,7 @@
  | Author: Ossama Khayat <okhayat@yahoo.com>                             |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 798 2007-09-14 07:23:55Z thomasb $
+ @version $Id: labels.inc 904 2007-10-24 12:45:25Z yllar $
 
 */
 
@@ -75,6 +75,7 @@ $labels['replytomessage'] = 'الرد على الرسالة';
 $labels['replytoallmessage'] = 'الرد على المرسل وجميع مستقبلي الرسالة';
 $labels['forwardmessage'] = 'تمرير الرسالة';
 $labels['deletemessage'] = 'حذف الرسالة إلى المهملات';
+$labels['movemessagetotrash'] = 'انقل الرسالة إلى سلة المهملات';
 $labels['printmessage'] = 'طباعة هذه الرسالة';
 $labels['previousmessage'] = 'عرض الرسالة السابقة';
 $labels['previousmessages'] = 'عرض المجموعة السابقة من الرسائل';
@@ -99,8 +100,8 @@ $labels['unlimited'] = 'غير محدود';
 $labels['quicksearch'] = 'البحث السريع';
 $labels['resetsearch'] = 'استعادة البحث للافتراضي';
 $labels['compose'] = 'إنشاء رسالة';
-$labels['sendmessage'] = 'إرسال الرسالة الآن';
 $labels['savemessage'] = 'حفظ هذه المسودة';
+$labels['sendmessage'] = 'إرسال الرسالة الآن';
 $labels['addattachment'] = 'إرفاق ملف';
 $labels['charset'] = 'مجموعة المحارف';
 $labels['editortype'] = 'نوع المُحرّر';
@@ -120,6 +121,9 @@ $labels['nosubject'] = '(دون موضوع)';
 $labels['showimages'] = 'إظهار الصور';
 $labels['htmltoggle'] = 'HTML';
 $labels['plaintoggle'] = 'نص مجرد';
+$labels['addcc'] = 'أضف CC';
+$labels['addbcc'] = 'أضف BCC';
+$labels['addreplyto'] = 'أضيف Reply-To';
 $labels['name'] = 'اسم العرض';
 $labels['firstname'] = 'الإسم الأول';
 $labels['surname'] = 'الإسم الأخير';

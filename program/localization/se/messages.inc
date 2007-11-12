@@ -14,7 +14,7 @@
  |         Andreas Henriksson <andreas@fatal.se>                         |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 557 2007-05-15 06:41:32Z yllar $
+ @version $Id: messages.inc 842 2007-10-01 13:55:02Z tomekp $
 
 */
 

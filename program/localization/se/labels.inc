@@ -14,7 +14,7 @@
  |         Andreas Henriksson <andreas@fatal.se>                         |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 612 2007-06-12 18:17:21Z thomasb $
+ @version $Id: labels.inc 842 2007-10-01 13:55:02Z tomekp $
 
 */
 

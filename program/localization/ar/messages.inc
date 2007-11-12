@@ -13,7 +13,7 @@
  | Author: Ossama Khayat <okhayat@yahoo.com>                             |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 798 2007-09-14 07:23:55Z thomasb $
+ @version $Id: messages.inc 904 2007-10-24 12:45:25Z yllar $
 
 */
 
@@ -73,5 +73,6 @@ $messages['copysuccess'] = 'تم نسخ $nr رسائل بنجاح';
 $messages['copyerror'] = 'لم يمكن نسخ أية عناوين';
 $messages['sourceisreadonly'] = 'لا يمكن تعديل مصدر العنوان هذا';
 $messages['errorsavingcontact'] = 'تعذر حفظ عنوان المراسل';
+$messages['movingmessage'] = 'جاري نقل الرسالة...';
 
 ?>
