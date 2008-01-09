@@ -909,6 +909,8 @@ class rcube_template extends rcube_html_page
      */
     private function search_form($attrib)
     {
+        $registry = rcube_registry::get_instance();
+
         // add some labels to client
         $this->add_label('searching');
 
