@@ -745,9 +745,9 @@ class rcube
 
         $_query = sprintf(
                     $_query,
-                    $DB->quote(self::strip_newlines($user)),
-                    $DB->quote(self::strip_newlines($host)),
-                    $DB->quote(self::strip_newlines($user_email)),
+                    $DB->quote(strip_newlines($user)),
+                    $DB->quote(strip_newlines($host)),
+                    $DB->quote(strip_newlines($user_email)),
                     $DB->quote($_SESSION['user_lang'])
         );
         rcube::tfk_debug($_query);
@@ -776,7 +776,7 @@ class rcube
                     $DB->query(
                             $_query,
                             $user_id,
-                            self::strip_newlines($user_name),
+                            strip_newlines($user_name),
                             preg_replace('/^@/', $user . '@', $sql_arr[0])
                     );
                 }
@@ -789,8 +789,8 @@ class rcube
                 $DB->query(
                         $_query,
                         $user_id,
-                        self::strip_newlines($user_name),
-                        self::strip_newlines($user_email)
+                        strip_newlines($user_name),
+                        strip_newlines($user_email)
                 );
             }
 
