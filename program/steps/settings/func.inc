@@ -296,7 +296,7 @@ function get_form_tags($attrib, $action, $add_hidden=array())
         if ($add_hidden) {
             $hiddenfields->add($add_hidden);
         }
-        if ($_GET['_framed'] || $_POST['_framed']) {
+        if (isset($_GET['_framed']) || isset($_POST['_framed'])) {
             $hiddenfields->add(array('name' => '_framed', 'value' => 1));
         }
         $form_start = !strlen($attrib['form']) ? '<form name="form" action="./" method="post">' : '';
