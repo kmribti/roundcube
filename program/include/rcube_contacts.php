@@ -114,11 +114,17 @@ class rcube_contacts
         $this->search_string = null;
     }
 
+	/**
+	 * Close connection to source
+	 * Called on script shutdown
+	 */
+    function close() {}
 
     /**
      * List the current set of contact records
      *
      * @param  array  List of cols to show
+     * @param  int    Only return this number of records, use negative values for tail
      * @return array  Indexed list of contact records, each a hash array
      */
     function list_records($cols=null, $subset=0)
@@ -166,7 +172,7 @@ class rcube_contacts
      * @param boolean True if results are requested, False if count only
      * @return Indexed list of contact records and 'count' value
      */
-    function search($fields, $value, $select=true)
+    function search($fields, $value, $strict = false, $select = true)
     {
         if (!is_array($fields)) {
             $fields = array($fields);
@@ -176,6 +182,9 @@ class rcube_contacts
             if ($col == 'ID' || $col == $this->primary_key) {
                 $ids         = !is_array($value) ? split(',', $value) : $value;
                 $add_where[] = $this->primary_key." IN (".join(',', $ids).")";
+            }
+            elseif ($strict) {
+                $add_where[] = $this->db->quoteIdentifier($col)."=".$this->db->quote($value);
             }
             else {
                 $_where = $this->db->quoteIdentifier($col);
@@ -278,7 +287,7 @@ class rcube_contacts
         $insert_id = $existing = false;
 
         if ($check) {
-            $existing = $this->search('email', $save_data['email'], false);
+            $existing = $this->search('email', $save_data['email'], true, false);
         }
         $a_insert_cols = $a_insert_values = array();
         foreach ($this->table_cols as $col) {

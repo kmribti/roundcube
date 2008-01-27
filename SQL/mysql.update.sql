@@ -1,6 +1,8 @@
 -- RoundCube Webmail update script for MySQL databases
 -- Updates from version 0.1-beta and 0.1-beta2
 
+TRUNCATE TABLE `messages`;
+
 ALTER TABLE `messages`
   DROP `body`,
   DROP INDEX `cache_key`,
@@ -9,6 +11,8 @@ ALTER TABLE `messages`
 
 ALTER TABLE `identities`
   ADD `html_signature` tinyint(1) default 0 NOT NULL;
+
+ALTER TABLE `session` CHANGE `ip` `ip` VARCHAR(40);
 
 -- Uncomment these lines if you're using MySQL 4.1 or higher
 -- ALTER TABLE `users`

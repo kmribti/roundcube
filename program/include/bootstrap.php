@@ -50,53 +50,47 @@ ini_set('session.name', 'roundcube_sessid');
 ini_set('session.use_cookies', 1);
 ini_set('session.gc_maxlifetime', 21600);
 ini_set('session.gc_divisor', 500);
-ini_set('error_reporting', E_ALL&~E_NOTICE);
+ini_set('error_reporting', E_ALL|E_STRICT);
 set_magic_quotes_runtime(0);
 
 // increase maximum execution time for php scripts
 // (does not work in safe mode)
 if (!ini_get('safe_mode')) {
-    @set_time_limit(120);
+    set_time_limit(120);
 }
-
 
 /**
  * Use PHP5 autoload for dynamic class loading
  */
-function __autoload($classname)
-{
+function __autoload($classname) {
     $filename = preg_replace(
         array('/MDB2_(.+)/', '/Mail_(.+)/', '/^html_.+/'),
         array("MDB2/\\1", "Mail/\\1", "html"),
         $classname
     );
 
-    @include_once($filename. ".php");
+    include_once $filename. '.php';
 }
-
 
 // include global functions
 require_once 'globals.php';
 
-
 /**
  * Local callback function for PEAR errors
  */
-function rcube_pear_error($err)
-{
+function rcube_pear_error($err) {
   error_log(sprintf("%s (%s): %s",
     $err->getMessage(),
     $err->getCode(),
     $err->getUserinfo()), 0);
 }
 
-
 // set PEAR error handling
 PEAR::setErrorHandling(PEAR_ERROR_CALLBACK, 'rcube_pear_error');
-
 
 // create registry and set some global properties
 $registry = rcube_registry::get_instance();
 $registry->set('mbstring_loaded', null, 'core');
 
 
+?>

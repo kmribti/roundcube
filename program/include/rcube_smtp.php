@@ -5,7 +5,7 @@
  | program/include/rcube_smtp.php                                        |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2006-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -69,7 +69,7 @@ function smtp_mail($from, $recipients, &$headers, &$body, &$response)
 
     // create Net_SMTP object and connect to server
     if (!is_object($smtp_conn)) {
-        $helo_host = !empty($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : 'localhost';
+        $helo_host = empty($CONFIG['smtp_helo_host']) ? ((empty($_SERVER['SERVER_NAME']) ? 'localhost' : $_SERVER['SERVER_NAME'])) : $CONFIG['smtp_helo_host'];
         $SMTP_CONN = new Net_SMTP($smtp_host, $smtp_port, $helo_host);
 
         // set debugging

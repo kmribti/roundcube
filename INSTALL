@@ -1,17 +1,30 @@
+INTRODUCTION
+============
+
+This file describes the basic steps to install RoundCube Webmail on your
+web server. For additional information, please also consult the project's
+wiki page at
+
+     http://trac.roundcube.net/wiki
+
 
 REQUIREMENTS
 ============
 
-* The Apache Webserver
+* The Apache or Lighttpd Webserver
 * .htaccess support allowing overrides for DirectoryIndex
-* PHP Version 4.3.1 or greater
-* PCRE (perl compatible regular expression) installed with PHP
+* PHP Version 4.3.1 or greater including
+   - PCRE (perl compatible regular expression)
+   - libiconv (recommended)
+   - mbstring (optional)
 * php.ini options:
    - error_reporting E_ALL & ~E_NOTICE (or lower)
    - file_uploads on (for attachment upload features)
    - memory_limit (increase as suitable to support large attachments)
+* PHP compiled with Open SSL to connect to IMAPS and to use the spell checker
 * A MySQL or PostgreSQL database engine or the SQLite extension for PHP
-* A database with permission to create tables
+* One of the above databases with permission to create tables
+* An SMTP server or PHP configured for mail delivery
 
 
 INSTALLATION
@@ -80,19 +93,20 @@ webserver can write to the file.
 
 * PostgreSQL
 ------------
-To use RoundCube with PostgreSQL support you have to follow the next
-simple steps, which have to be done with the postgres system user (or
+
+To use RoundCube with PostgreSQL support you have to follow these
+simple steps, which have to be done as the postgres system user (or
 which ever is the database superuser):
 
-$ createuser roundcubemail
-$ createdb -O roundcubemail roundcubemail
+$ createuser roundcube
+$ createdb -O roundcube roundcubemail
 $ psql roundcubemail
 
 roundcubemail =# ALTER USER roundcube WITH PASSWORD 'the_new_password';
-roundcubemail =# \c - roundcubemail
+roundcubemail =# \c - roundcube
 roundcubemail => \i SQL/postgres.initial.sql
 
-All this has been tested with PostgreSQL 8.0.x and 7.4.x. Older
+All this has been tested with PostgreSQL 8.x and 7.4.x. Older
 versions don't have a -O option for the createdb, so if you are
 using that version you'll have to change ownership of the DB later.
 
@@ -100,9 +114,13 @@ using that version you'll have to change ownership of the DB later.
 CONFIGURATION
 =============
 
-Change the files in config/* according your to environment and your needs.
-Details about the config parameters can be found in the config files
-or in the wiki: http://trac.roundcube.net/trac.cgi/wiki/Howto_Config
+First of all, rename the files config/*.inc.php.dist to config/*.inc.php.
+You can then change these files according to your environment and your needs.
+Details about the config parameters can be found in the config files.
+
+You can also modify the default .htaccess file. This is necessary to
+increase the allowed size of file attachments, for example:
+       php_value       upload_max_filesize     2M
 
 
 UPGRADING
@@ -110,5 +128,4 @@ UPGRADING
 
 If you already have a previous version of RoundCube installed,
 please refer to the instructions in UPGRADING guide.
-
 

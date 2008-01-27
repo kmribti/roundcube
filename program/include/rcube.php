@@ -24,7 +24,6 @@ require_once 'lib/des.inc';
 require_once 'lib/utf7.inc';
 require_once 'lib/utf8.class.php';
 
-
 /**
  * rcube
  *
@@ -37,8 +36,7 @@ require_once 'lib/utf8.class.php';
  * @todo     Maybe unit tests.
  * @since    0.1-rc1
  */
-class rcube
-{
+class rcube {
     const INPUT_GET  = 0x0101;
     const INPUT_POST = 0x0102;
     const INPUT_GPC  = 0x0103;
@@ -52,8 +50,7 @@ class rcube
      * @param  string $task
      * @return void
      */
-    static function startup($task = 'mail')
-    {
+    static function startup($task = 'mail') {
         $registry = rcube_registry::get_instance();
         $registry->set('task', $task, 'core');
 

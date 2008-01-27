@@ -73,7 +73,7 @@ CREATE TABLE `session` (
   `sess_id` varchar(40) NOT NULL default '',
   `created` datetime NOT NULL default '0000-00-00 00:00:00',
   `changed` datetime NOT NULL default '0000-00-00 00:00:00',
-  `ip` VARCHAR(15) NOT NULL default '',
+  `ip` VARCHAR(40) NOT NULL default '',
   `vars` text NOT NULL,
   PRIMARY KEY  (`sess_id`)
 );
@@ -92,7 +92,7 @@ CREATE TABLE `users` (
   `created` datetime NOT NULL default '0000-00-00 00:00:00',
   `last_login` datetime NOT NULL default '0000-00-00 00:00:00',
   `language` varchar(5) NOT NULL default 'en',
-  `preferences` text NOT NULL default '',
+  `preferences` text,
   PRIMARY KEY  (`user_id`)
 );
 

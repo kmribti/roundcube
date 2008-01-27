@@ -5,7 +5,7 @@
  | program/include/session.inc                                           |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005-2007, RoundCube Dev, - Switzerland                 |
+ | Copyright (C) 2006-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -20,21 +20,18 @@
 */
 
 
-function sess_open($save_path, $session_name)
-{
+function sess_open($save_path, $session_name) {
     return true;
 }
 
 
-function sess_close()
-{
+function sess_close() {
     return true;
 }
 
 
 // read session data
-function sess_read($key)
-{
+function sess_read($key) {
     $registry       = rcube_registry::get_instance();
     $DB             = $registry->get('DB', 'core');
     $SESS_CHANGED   = $registry->get('SESS_CHANGED', 'core', null);
@@ -65,12 +62,12 @@ function sess_read($key)
 
 
 // save session data
-function sess_write($key, $vars)
-{
+function sess_write($key, $vars) {
     $DB = rcube_registry::get_instance()->get('DB', 'core');
 
-    if (!is_object($DB) || $DB->is_error())
+    if (!is_object($DB) || $DB->is_error()) {
         return false;
+    }
 
     $sql_result = $DB->query(
         "SELECT 1
@@ -87,8 +84,7 @@ function sess_write($key, $vars)
              WHERE  sess_id=?",
             $vars,
             $key);
-    }
-    else {
+    } else {
         $DB->query(
             "INSERT INTO " . rcube::get_table_name('session') . "
              (sess_id, vars, ip, created, changed)
@@ -103,8 +99,7 @@ function sess_write($key, $vars)
 
 
 // handler for session_destroy()
-function sess_destroy($key)
-{
+function sess_destroy($key) {
     $DB = rcube_registry::get_instance()->get('DB', 'core');
 
     if (!is_object($DB) || $DB->is_error())
@@ -126,8 +121,7 @@ function sess_destroy($key)
 
 
 // garbage collecting function
-function sess_gc($maxlifetime)
-{
+function sess_gc($maxlifetime) {
     $DB = rcube_registry::get_instance()->get('DB', 'core');
 
     if (!is_object($DB) || $DB->is_error())
@@ -164,8 +158,7 @@ function sess_gc($maxlifetime)
 }
 
 
-function sess_regenerate_id()
-{
+function sess_regenerate_id() {
     $randlen = 32;
     $randval = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     $random = "";
@@ -182,6 +175,8 @@ function sess_regenerate_id()
     session_id($random);
     $cookie = session_get_cookie_params();
     setcookie(session_name(), $random, $cookie['lifetime'], $cookie['path']);
+    setcookie(session_name(), '', time() - 3600);
+    setcookie(session_name(), $random, $cookie['lifetime'] ? time() + $cookie['lifetime'] : 0, $cookie['path']);
 
     return true;
 }
