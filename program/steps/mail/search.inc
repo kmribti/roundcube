@@ -33,33 +33,29 @@ $search_request = md5($mbox.$str);
 // Check the search string for type of search
 if (preg_match("/^from:/i", $str)) {
     list(,$srch) = explode(":", $str);
-    $subject =  "HEADER FROM";
-    $search = trim($srch);
-}
-else if (preg_match("/^to:/i", $str)) {
+    $subject     = "HEADER FROM";
+    $search      = trim($srch);
+} else if (preg_match("/^to:/i", $str)) {
     list(,$srch) = explode(":", $str);
-    $subject = "HEADER TO";
-    $search = trim($srch);
-}
-else if (preg_match("/^cc:/i", $str)) {
+    $subject     = "HEADER TO";
+    $search      = trim($srch);
+} else if (preg_match("/^cc:/i", $str)) {
     list(,$srch) = explode(":", $str);
-    $subject = "HEADER CC";
-    $search = trim($srch);
-}
-else if (preg_match("/^subject:/i", $str)) {
+    $subject     = "HEADER CC";
+    $search      = trim($srch);
+} else if (preg_match("/^subject:/i", $str)) {
     list(,$srch) = explode(":", $str);
-    $subject = "HEADER SUBJECT";
-    $search = trim($srch);
-}
-else if (preg_match("/^body:/i", $str)) {
+    $subject     = "HEADER SUBJECT";
+    $search      = trim($srch);
+} else if (preg_match("/^body:/i", $str)) {
     list(,$srch) = explode(":", $str);
-    $subject = "TEXT";
-    $search = trim($srch);
-}
-// search in subject and sender by default
-else {
-    $subject = array("HEADER SUBJECT", "HEADER FROM");
-    $search = trim($str);
+    $subject     = "TEXT";
+    $search      = trim($srch);
+} else {
+    // search in subject and sender by default
+    $from    = ($mbox == $CONFIG['sent_mbox'] || $mbox == $CONFIG['drafts_mbox']) ? "TO" : "FROM";
+    $subject = array("HEADER SUBJECT", "HEADER $from");
+    $search  = trim($str);
 }
 
 
@@ -71,7 +67,7 @@ $count = 0;
 if (is_array($result) && $result[0] != '') {
     // Get the headers
     $result_h = $IMAP->list_header_set($mbox, $result, 1, $_SESSION['sort_col'], $_SESSION['sort_order']);
-    $count = count($result_h);
+    $count    = $IMAP->messagecount();
 
     // save search results in session
     if (!is_array($_SESSION['search'])) {

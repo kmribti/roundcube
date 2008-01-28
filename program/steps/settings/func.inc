@@ -19,23 +19,10 @@
 
 */
 
-
-// get user record
-$_query = "SELECT username, mail_host FROM " . rcube::get_table_name('users');
-$_query.= " WHERE user_id=?";
-$sql_result = $DB->query($_query, $_SESSION['user_id']);
-
-if ($USER_DATA = $DB->fetch_assoc($sql_result)) {
-    $OUTPUT->set_pagetitle(
-                sprintf(
-                    '%s %s@%s',
-                    rcube::gettext('settingsfor'),
-                    $USER_DATA['username'],
-                    $USER_DATA['mail_host']
-                )
-    );
+if ($USER->ID) {
+	$OUTPUT->set_pagetitle(
+		rcube::gettext('settingsfor') . ' ' . $USER->get_username());
 }
-
 
 function rcmail_user_prefs_form($attrib)
 {
@@ -175,7 +162,7 @@ function rcmail_user_prefs_form($attrib)
     }
 
     // Show checkbox for HTML Editor
-    if (false && !isset($no_override['htmleditor'])) {
+    if (!isset($no_override['htmleditor'])) {
         $field_id = 'rcmfd_htmleditor';
         $input_htmleditor = new html_checkbox(array('name' => '_htmleditor', 'id' => $field_id, 'value' => 1));
         $out .= sprintf(
@@ -187,10 +174,16 @@ function rcmail_user_prefs_form($attrib)
     }
 
     // show config parameter for preview pane
-    if (false && !isset($no_override['preview_pane'])) {
-    $field_id = 'rcmfd_preview';
-    $input_preview = new html_checkbox(array('name' => '_preview_pane', 'id' => $field_id, 'value' => 1));
-    $out .= sprintf("<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
+    if (!isset($no_override['preview_pane'])) {
+    	$field_id       = 'rcmfd_preview';
+	    $input_preview  = new html_checkbox(
+	    	array(
+	    		'name'  => '_preview_pane',
+	    		'id'    => $field_id,
+	    		'value' => 1));
+	    		
+    	$out .= sprintf(
+    				"<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
                     $field_id,
                     Q(rcube::gettext('previewpane')),
                     $input_preview->show($CONFIG['preview_pane']?1:0));
@@ -232,30 +225,22 @@ function rcmail_identities_list($attrib)
     $DB       = $registry->get('DB', 'core');
     $CONFIG   = $registry->get_all('config');
     $OUTPUT   = $registry->get('OUTPUT', 'core');
-
+	$USER     = $registry->get('USER', 'core');
 
     // get contacts from DB
-    $_query = "SELECT * FROM " . rcube::get_table_name('identities');
-    $_query.= " WHERE del<>1";
-    $_query.= " AND user_id=?";
-    $_query.= " ORDER BY standard DESC, name ASC";
+    $_query	    = "SELECT * FROM " . rcube::get_table_name('identities');
+    $_query	   .= " WHERE del<>1";
+    $_query	   .= " AND user_id=?";
+    $_query	   .= " ORDER BY standard DESC, name ASC";
     $sql_result = $DB->query($_query, $_SESSION['user_id']);
 
     $identities_data = array();
-    /**
-     * macbay hack
-     */
     while ($sql_result && ($sql_arr = $DB->fetch_assoc($sql_result))) {
         $sql_arr['edit'] = '';
-        //$sql_arr['edit'].= '<img scr="/webmail/img/pencil.gif" alt="Bearbeiten" />';
-        //$sql_arr['edit'].= '<img src="/webmail/skins/macbay/img/delete.gif" alt="L&ouml;schen" />';
         $sql_arr['edit'].= '<roundcube:button id="identities_edit_' . $sql_arr['identity_id'] . '" command="edit" type="image" image="/img/pencil.gif" title="edit" />';
-        //$sql_arr['edit'].= '<roundcube:button id="identities_delete_' . $sql_arr['identity_id'] . '" command="delete" type="image" style="padding-left:10px;" image="/img/delete.gif" title="delete" />';
 
         array_push($identities_data, $sql_arr);
-        //echo '<pre>'; var_dump($sql_arr); echo '</pre>';
     }
-    //exit;
 
     // add id to message list table if not specified
     if (!strlen($attrib['id'])) {

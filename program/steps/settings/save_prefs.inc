@@ -42,8 +42,7 @@ foreach ((array)$CONFIG['dont_override'] as $p) {
 if ($a_user_prefs['pagesize'] < 1) {
     $a_user_prefs['pagesize'] = 10;
 }
-rcube::tfk_debug($a_user_prefs['pagesize']);
-rcube::tfk_debug($CONFIG['max_pagesize']);
+
 if (isset($CONFIG['max_pagesize']) && empty($CONFIG['max_pagesize']) !== TRUE) {
     if ($a_user_prefs['pagesize'] > $CONFIG['max_pagesize']) {
         $a_user_prefs['pagesize'] = $CONFIG['max_pagesize'];
@@ -56,7 +55,16 @@ if (isset($_POST['_language'])) {
     rcube::set_locale($user_lang);
 }
 
-if (rcube::save_user_prefs($a_user_prefs)) {
+// force min size
+if ($a_user_prefs['pagesize'] < 1) {
+	$a_user_prefs['pagesize'] = 10;
+}
+if (isset($CONFIG['max_pagesize'])
+	&& ($a_user_prefs['pagesize'] > $CONFIG['max_pagesize'])) {
+	$a_user_prefs['pagesize'] = (int) $CONFIG['max_pagesize'];
+}
+
+if ($USER->save_prefs($a_user_prefs)) {
     $OUTPUT->show_message('successfullysaved', 'confirmation');
 }
 

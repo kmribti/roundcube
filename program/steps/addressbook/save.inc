@@ -31,13 +31,10 @@ if ($CONTACTS->readonly) {
 }
 
 // check input
-if (
-    (
-        !rcube::get_input_value('_name', rcube::INPUT_POST)
-        || !rcube::get_input_value('_email', rcube::INPUT_POST)
-    )
-    && $_framed
-) {
+if ((
+	!rcube::get_input_value('_name', rcube::INPUT_POST)
+    || !rcube::get_input_value('_email', rcube::INPUT_POST)
+    ) && $_framed) {
     $OUTPUT->show_message('formincomplete', 'warning');
     rcube::override_action(empty($_POST['_cid']) ? 'add' : 'show');
     return;
@@ -76,17 +73,17 @@ if (!empty($cid)) {
         // show confirmation
         $OUTPUT->show_message('successfullysaved', 'confirmation');    
         rcube::override_action('show');
-    }
-    else {
+    } else {
         // show error message
         $OUTPUT->show_message('errorsaving', 'error');
         rcube::override_action('show');
     }
-}
-// insert a new contact
-else {
+} else { // insert a new contact
     // check for existing contacts
-    $existing = $CONTACTS->search('email', $a_record['email'], false);
+    $existing = $CONTACTS->search('email',
+    	$a_record['email'],
+    	true,
+    	false);
   
     // show warning message
     if ($existing->count) {
@@ -114,11 +111,9 @@ else {
         $OUTPUT->show_message('successfullysaved', 'confirmation');
         rcube::override_action('show');
         $_GET['_cid'] = $insert_id;
-    }
-    else {
+    } else {
         // show error message
         $OUTPUT->show_message('errorsaving', 'error');
         rcube::override_action('add');
     }
 }
-?>

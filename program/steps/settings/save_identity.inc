@@ -22,11 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     echo 'Method not allowed.';
     exit;
 }
-$a_save_cols    = array(
-                    'name', 'email', 'organization',
-                    'reply-to', 'bcc', 'standard',
-                    'signature', 'html_signature'
-);
+$a_save_cols = array(
+	'name', 'email', 'organization',
+	'reply-to', 'bcc', 'standard',
+	'signature', 'html_signature');
+	
 $a_html_cols    = array('signature');
 $a_boolean_cols = array('standard', 'html_signature');
 $updated        = $default_id = false;
@@ -38,53 +38,30 @@ if (empty($_POST['_name']) || empty($_POST['_email'])) {
     return;
 }
 
+$save_data = array();
+foreach ($a_save_cols as $col) {
+	$fname = '_'.$col;
+	if (isset($_POST[$fname])) {
+		$save_data[$col] = rcube::get_input_value($fname,
+			rcube::INPUT_POST, in_array($col, $a_html_cols));
+    }
+}
 
-// update an existing contact
+// set "off" values for checkboxes that were not checked, and therefore
+// not included in the POST body.
+foreach ($a_boolean_cols as $col) {
+	$fname = '_' . $col;
+	if (!isset($_POST[$fname])) {
+		$save_data[$col] = 0;
+	}
+}
+
 if ($_POST['_iid']) {
-    $a_write_sql = array();
-
-    foreach ($a_save_cols as $col) {
-        $fname = '_'.$col;
-        if (isset($_POST[$fname])) {
-            $a_write_sql[] = sprintf(
-                                "%s=%s",
-                                $DB->quoteIdentifier($col),
-                                $DB->quote(
-                                    rcube::get_input_value(
-                                        $fname,
-                                        rcube::INPUT_POST,
-                                        in_array($col, $a_html_cols)
-                                    )
-                                )
-            );
-        }
-    }
-
-    // set "off" values for checkboxes that were not checked, and therefore
-    // not included in the POST body.
-    foreach ($a_boolean_cols as $col) {
-        $fname = '_' . $col;
-        if (!isset($_POST[$fname])) {
-            $a_write_sql[] = sprintf("%s=0", $DB->quoteIdentifier($col));
-        }
-    }
-
-    if (sizeof($a_write_sql)) {
-        $_query = "UPDATE " . rcube::get_table_name('identities');
-        $_query.= " SET " . join(', ', $a_write_sql);
-        $_query.= " WHERE identity_id=?";
-        $_query.= " AND user_id=?";
-        $_query.= " AND del<>1";
-        $DB->query(
-                $_query,
-                rcube::get_input_value('_iid', rcube::INPUT_POST),
-                $_SESSION['user_id']
-        );
-
-        $updated = $DB->affected_rows();
-    }
-
-    if ($updated) {
+	$updated = $USER->update_identity(
+		rcube::get_input_value('_iid', rcube::INPUT_POST),
+		$save_data);
+		
+	if ($updated) {
         $OUTPUT->show_message('successfullysaved', 'confirmation');
 
         if (!empty($_POST['_standard'])) {
@@ -94,42 +71,14 @@ if ($_POST['_iid']) {
             // update the changed col in list
             // ...
         }
-    }
-    else if ($DB->is_error()) {
+    } else if ($DB->is_error()) {
         // show error message
         $OUTPUT->show_message('errorsaving', 'error');
         rcube::override_action('edit-identitiy');
         return;
     }
-}
-// insert a new contact
-else {
-    $a_insert_cols = $a_insert_values = array();
-
-    foreach ($a_save_cols as $col) {
-        $fname = '_'.$col;
-        if (!isset($_POST[$fname])) {
-            continue;
-        }
-        $a_insert_cols[]   = $DB->quoteIdentifier($col);
-        $a_insert_values[] = $DB->quote(
-                                rcube::get_input_value(
-                                    $fname,
-                                    rcube::INPUT_POST,
-                                    in_array($col, $a_html_cols)
-                                )
-        );
-    }
-    if (sizeof($a_insert_cols)) {
-        $_query = "INSERT INTO " . rcube::get_table_name('identities');
-        $_query.= " (user_id, " . join(', ', $a_insert_cols).")";
-        $_query.= " VALUES (?, " . join(', ', $a_insert_values).")";
-        $DB->query($_query, $_SESSION['user_id']);
-
-        $insert_id = $DB->insert_id(rcube::get_sequence_name('identities'));
-    }
-
-    if ($insert_id) {
+} else { // insert a new contact
+	if ($insert_id = $USER->insert_identity($save_data)) {
         $_GET['_iid'] = $insert_id;
 
         if (!empty($_POST['_standard'])) {
@@ -139,8 +88,7 @@ else {
             // add contact row or jump to the page where it should appear
             // ....
         }
-    }
-    else {
+    } else {
         // show error message
         $OUTPUT->show_message('errorsaving', 'error');
         rcube::override_action('edit-identity');
@@ -148,15 +96,9 @@ else {
     }
 }
 
-
 // mark all other identities as 'not-default'
 if ($default_id) {
-    $_query = "UPDATE " . rcube::get_table_name('identities');
-    $_query.= " SET " . $DB->quoteIdentifier('standard') . "='0'";
-    $_query.= " WHERE user_id=?";
-    $_query.= " AND identity_id<>?";
-    $_query.= " AND del<>1";
-    $DB->query($_query, $_SESSION['user_id'], $default_id);
+	$USER->set_default($default_id);
 }
 // go to next step
 rcube::override_action($_framed ? 'edit-identity' : 'identities');

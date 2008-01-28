@@ -29,10 +29,7 @@ $MBSTRING = $registry->get('MBSTRING', 'core');
 $CONFIG   = $registry->get_all('config');
 $IMAP     = $registry->get('IMAP', 'core');
 
-//require_once('lib/smtp.inc');
-require_once 'include/rcube_smtp.php';
 require_once 'lib/html2text.inc';
-
 
 if (!isset($_SESSION['compose']['id'])) {
     rcube::override_action('list');
@@ -50,9 +47,9 @@ if (strlen($_POST['_draft_saveid']) > 3) {
     $olddraftmessageid = rcube::get_input_value('_draft_saveid', rcube::INPUT_POST);
 }
 $message_id = sprintf(
-                '<%s@%s>',
-                md5(uniqid('rcmail' . rand(),true)),
-                rcube::mail_domain($_SESSION['imap_host'])
+    '<%s@%s>',
+    md5(uniqid('rcmail' . rand(),true)),
+    rcube::mail_domain($_SESSION['imap_host'])
 );
 $savedraft = ((empty($_POST['_draft']) === false) ? TRUE : FALSE);
 
@@ -75,17 +72,17 @@ if (!$savedraft && empty($_POST['_to']) && empty($_POST['_subject']) && $_POST['
 //rcube::tfk_debug('Passed some checks! Right before charset!');
 
 // set default charset
-$input_charset = $OUTPUT->get_charset();
+$input_charset   = $OUTPUT->get_charset();
 $message_charset = isset($_POST['_charset']) ? $_POST['_charset'] : $input_charset;
 
-$mailto_regexp = array('/[,;]\s*[\r\n]+/', '/[\r\n]+/', '/[,;]\s*$/m', '/;/');
+$mailto_regexp  = array('/[,;]\s*[\r\n]+/', '/[\r\n]+/', '/[,;]\s*$/m', '/;/');
 $mailto_replace = array(', ', ', ', '', ',');
 
 // replace new lines and strip ending ', '
 $mailto = preg_replace(
-            $mailto_regexp,
-            $mailto_replace,
-            rcube::get_input_value('_to', rcube::INPUT_POST, TRUE, $message_charset)
+    $mailto_regexp,
+    $mailto_replace,
+    rcube::get_input_value('_to', rcube::INPUT_POST, TRUE, $message_charset)
 );
 
 //rcube::tfk_debug('We just replaced line endings.');
@@ -103,7 +100,7 @@ if ($identity_arr === false) {
 
 //rcube::tfk_debug('We got identity.');
 
-$from = $identity_arr['mailto'];
+$from     = $identity_arr['mailto'];
 $first_to = is_array($to_address_arr[0]) ? $to_address_arr[0]['mailto'] : $mailto;
 
 if (empty($identity_arr['string'])) {
@@ -111,40 +108,40 @@ if (empty($identity_arr['string'])) {
 }
 // compose headers array
 $headers = array(
-            'Date' => date('D, j M Y H:i:s O'),
-            'From' => rcube::charset_convert($identity_arr['string'], RCMAIL_CHARSET, $message_charset),
-            'To'   => $mailto
+    'Date' => date('D, j M Y H:i:s O'),
+    'From' => rcube::charset_convert($identity_arr['string'], RCMAIL_CHARSET, $message_charset),
+    'To'   => $mailto
 );
 
 // additional recipients
 if (!empty($_POST['_cc'])) {
     $headers['Cc'] = preg_replace(
-                        $mailto_regexp,
-                        $mailto_replace,
-                        rcube::get_input_value(
-                            '_cc',
-                            rcube::INPUT_POST,
-                            TRUE, $message_charset
-                        )
+        $mailto_regexp,
+        $mailto_replace,
+        rcube::get_input_value(
+            '_cc',
+            rcube::INPUT_POST,
+            TRUE, $message_charset
+        )
     );
 }
 if (!empty($_POST['_bcc'])) {
     $headers['Bcc'] = preg_replace(
-                        $mailto_regexp, $mailto_replace,
-                        rcube::get_input_value('_bcc', rcube::INPUT_POST, TRUE, $message_charset)
+        $mailto_regexp, $mailto_replace,
+        rcube::get_input_value('_bcc', rcube::INPUT_POST, TRUE, $message_charset)
     );
 }
 if (empty($identity_arr['bcc']) === false) {
-     $headers['Bcc'] = ($headers['Bcc'] ? $headers['Bcc'].', ' : '') . $identity_arr['bcc'];
+    $headers['Bcc'] = ($headers['Bcc'] ? $headers['Bcc'].', ' : '') . $identity_arr['bcc'];
 }
 // add subject
 $headers['Subject'] = trim(
-                        rcube::get_input_value(
-                            '_subject',
-                            rcube::INPUT_POST,
-                            FALSE,
-                            $message_charset
-                        )
+    rcube::get_input_value(
+        '_subject',
+        rcube::INPUT_POST,
+        FALSE,
+        $message_charset
+    )
 );
 
 if (empty($identity_arr['organization']) === false) {
@@ -250,8 +247,7 @@ if ($isHtml) {
         $OUTPUT->send('iframe');
         return;
     }
-}
-else {
+} else {
     $message_body = wordwrap($message_body, 75, "\r\n");
     $message_body = wordwrap($message_body, 998, "\r\n", true);
     $status = $MAIL_MIME->setTXTBody($message_body, FALSE, TRUE);
@@ -268,13 +264,13 @@ if (is_array($_SESSION['compose']['attachments'])) {
             continue;
         }
         $status = $MAIL_MIME->addAttachment(
-                        $attachment['path'],
-                        $attachment['mimetype'],
-                        $attachment['name'],
-                        true,
-                        'base64',
-                        'attachment',
-                        $message_charset
+            $attachment['path'],
+            $attachment['mimetype'],
+            $attachment['name'],
+            true,
+            'base64',
+            'attachment',
+            $message_charset
         );
         if (PEAR::isError($status)) {
             array_push(
@@ -288,13 +284,13 @@ if (is_array($_SESSION['compose']['attachments'])) {
 if (is_array($_FILES['_attachments']['tmp_name'])) {
     foreach ($_FILES['_attachments']['tmp_name'] as $i => $filepath) {
         $status = $MAIL_MIME->addAttachment(
-                        $filepath,
-                        $files['type'][$i],
-                        $files['name'][$i],
-                        true,
-                        'base64',
-                        'attachment',
-                        $message_charset
+            $filepath,
+            $files['type'][$i],
+            $files['name'][$i],
+            true,
+            'base64',
+            'attachment',
+            $message_charset
         );
         if (PEAR::isError($status)) {
             array_push(
@@ -403,8 +399,7 @@ if ($savedraft === false) {
                 FALSE
             );
         }
-    }
-    else { // send mail using PHP's mail() function
+    } else { // send mail using PHP's mail() function
 
         //rcube::tfk_debug('We try to send using mail().');
 
@@ -427,8 +422,7 @@ if ($savedraft === false) {
                         $msg_body,
                         $header_str
             );
-        }
-        else {
+        } else {
             $sent = mail(
                         $headers_enc['To'],
                         $headers_enc['Subject'],
@@ -453,8 +447,7 @@ if ($savedraft === false) {
 // Determine which folder to save message
 if ($savedraft) {
     $store_target = 'drafts_mbox';
-}
-else {
+} else {
   $store_target = 'sent_mbox';
 }
 
@@ -465,8 +458,7 @@ if ($CONFIG[$store_target]) {
     // check if mailbox exists
     if (!in_array_nocase($CONFIG[$store_target], $IMAP->list_mailboxes())) {
         $store_folder = $IMAP->create_mailbox($CONFIG[$store_target], TRUE);
-    }
-    else {
+    } else {
         $store_folder = TRUE;
     }
 
@@ -532,16 +524,15 @@ if ($savedraft) {
     $OUTPUT->command('auto_save_start');
 
     $OUTPUT->send('iframe');
-}
-else {
+} else {
     if ($CONFIG['smtp_log'] === true) {
         $log_entry = sprintf(
-                        "[%s] User: %d on %s; Message for %s; %s\n",
-                        date("d-M-Y H:i:s O", mktime()),
-                        $_SESSION['user_id'],
-                        $_SERVER['REMOTE_ADDR'],
-                        $mailto,
-                        !empty($smtp_response) ? join('; ', $smtp_response) : ''
+            "[%s] User: %d on %s; Message for %s; %s\n",
+            date("d-M-Y H:i:s O", mktime()),
+            $_SESSION['user_id'],
+            $_SERVER['REMOTE_ADDR'],
+            $mailto,
+            !empty($smtp_response) ? join('; ', $smtp_response) : ''
         );
 
         if ($fp = @fopen($CONFIG['log_dir'].'/sendmail', 'a')) {

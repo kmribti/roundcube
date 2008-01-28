@@ -5,7 +5,7 @@
  | program/steps/mail/show.inc                                           |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -51,35 +51,35 @@ if ($_GET['_uid']) {
     }
 
     // calculate Etag for this request
-    $etag = md5($MESSAGE['UID'] . $IMAP->get_mailbox_name() . session_id(). ($PRINT_MODE?1:0));
+    $etag  = $MESSAGE['UID'] . $IMAP->get_mailbox_name() . session_id();
+    $etag .= intval($MESSAGE['headers']->mdn_sent) . intval($PRINT_MODE);
+    $etag  = md5($etag);
 
     // allow caching, unless remote images are present
     if ((bool)rcube::get_input_value('_safe', rcube::INPUT_GET)) {
         send_nocacheing_headers();
-    }
-    else {
+    } else if (empty($CONFIG['devel_mode'])) {
         send_modified_header($_SESSION['login_time'], $etag);
     }
 
     $MESSAGE['subject'] = rcube_imap::decode_mime_string(
-                                $MESSAGE['headers']->subject,
-                                $MESSAGE['headers']->charset
+        $MESSAGE['headers']->subject,
+        $MESSAGE['headers']->charset
     );
     $registry->set('MESSAGE', $MESSAGE, 'core');
     $OUTPUT->set_pagetitle($MESSAGE['subject']);
 
     if ($MESSAGE['structure'] = $IMAP->get_structure($MESSAGE['UID'])) {
         $_message_parts = rcmail_parse_message(
-                                  $MESSAGE['structure'],
-                                  array(
-                                        'safe'        => (bool)$_GET['_safe'],
-                                        'prefer_html' => $CONFIG['prefer_html'],
-                                        'get_url'     => $GET_URL.'&_part=%s'
-                                  )
+            $MESSAGE['structure'],
+            array(
+                'safe'        => intval($_GET['_safe']),
+                'prefer_html' => $CONFIG['prefer_html'],
+                'get_url'     => $GET_URL.'&_part=%s'
+            )
         );
         list($MESSAGE['parts'], $MESSAGE['attachments']) = $_message_parts;
-    }
-    else {
+    } else {
         $MESSAGE['body'] = $IMAP->get_body($MESSAGE['UID']);
     }
     $registry->set('MESSAGE', $MESSAGE, 'core');
@@ -90,7 +90,12 @@ if ($_GET['_uid']) {
     }
     // give message uid to the client
     $OUTPUT->set_env('uid', $MESSAGE['UID']);
-    $OUTPUT->set_env('safemode', (bool)$_GET['_safe']);
+    $OUTPUT->set_env('safemode', intval($_GET['_safe']));
+    // check for unset disposition notification
+    if ($MESSAGE['headers']->mdn_to && !$MESSAGE['headers']->mdn_sent) {
+        rcube::gettext('mdnrequest');
+        $OUTPUT->set_env('mdn_request', true);
+    }
 
     $next = $prev = -1;
     // get previous, first, next and last message UID

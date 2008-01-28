@@ -19,18 +19,10 @@
 
 */
 
-if (
-    ($ids = rcube::get_input_value('_iid', rcube::INPUT_GET))
-    && preg_match('/^[0-9]+(,[0-9]+)*$/', $ids)
-) {
-    $_query = "UPDATE " . rcube::get_table_name('identities');
-    $_query.= " SET del=1";
-    $_query.= " WHERE user_id=?";
-    $_query.= " AND identity_id IN (" . $ids . ")";
-    $DB->query($_query, $_SESSION['user_id']);
+$ids = rcube::get_input_value('_iid', rcube::INPUT_GET);
 
-    $count = $DB->affected_rows();
-    if ($count) {
+if ($ids && preg_match('/^[0-9]+(,[0-9]+)*$/', $ids)) {
+    if ($USER->delete_identity($ids)) {
         $OUTPUT->show_message('deletedsuccessfully', 'confirmation');
     }
     // send response
@@ -44,4 +36,3 @@ if ($OUTPUT->ajax_call) {
 
 // go to identities page
 rcube::override_action('identities');
-?>

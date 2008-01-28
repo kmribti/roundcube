@@ -36,15 +36,11 @@ if (
     && isset($CONFIG['ldap_public'][$source])
 ) {
     $CONTACTS = new rcube_ldap($CONFIG['ldap_public'][$source]);
-}
-else {
+} else {
     /**
      * @todo resolve conditional include (maybe autoload)
      */
-    if (
-        isset($CONFIG['addressbook_plugin'])
-        && empty($CONFIG['addressbook_plugin']) === FALSE
-    ) {
+    if (isset($CONFIG['addressbook_plugin']) && !empty($CONFIG['addressbook_plugin'])) {
         require_once 'plugins/addressbook/rcube_contacts_' . $CONFIG['addressbook_plugin'] . '.inc';
         $abook_class = 'rcube_contacts_' . $CONFIG['addressbook_plugin'];
         $CONTACTS = new $abook_class (
@@ -62,10 +58,8 @@ $registry->set('CONTACTS', $CONTACTS, 'core');
 
 // set list properties and session vars
 if (!empty($_GET['_page'])) {
-    $CONTACTS->set_page(intval($_GET['_page']));
-    $_SESSION['page'] = $_GET['_page'];
-}
-else {
+    $CONTACTS->set_page(($_SESSION['page'] = intval($_GET['_page'])));
+} else {
     $CONTACTS->set_page(isset($_SESSION['page']) ?$_SESSION['page'] : 1);
 }
 $CONTACTS = $registry->set('CONTACTS', $CONTACTS, 'core');
@@ -74,6 +68,7 @@ $CONTACTS = $registry->set('CONTACTS', $CONTACTS, 'core');
 if (!empty($_REQUEST['_search']) && isset($_SESSION['search'][$_REQUEST['_search']])) {
     $CONTACTS->set_search_set($_SESSION['search'][$_REQUEST['_search']]);
 }
+
 // set data source env
 $OUTPUT->set_env('source', $source ? $source : '0');
 $OUTPUT->set_env('readonly', $CONTACTS->readonly, false);
@@ -84,7 +79,6 @@ foreach ((array)$CONFIG['ldap_public'] as $id => $prop) {
     $js_list[$id] = array('id' => $id, 'readonly' => !$prop['writeable']);
 }
 $OUTPUT->set_env('address_sources', $js_list);
-
 
 function rcmail_directory_list($attrib)
 {
@@ -153,7 +147,6 @@ function rcmail_directory_list($attrib)
 
     return $out;
 }
-
 
 /**
  * return the message list as HTML table

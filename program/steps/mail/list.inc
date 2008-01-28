@@ -4,7 +4,7 @@
  | program/steps/mail/list.inc                                           |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                      |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -44,9 +44,10 @@ else {
 $mbox_name = $IMAP->get_mailbox_name();
 
 // fetch message headers
-if ($count = $IMAP->messagecount($mbox_name, 'ALL', !empty($_REQUEST['_refresh']))) {
+if ($IMAP->messagecount($mbox_name, 'ALL', !empty($_REQUEST['_refresh']))) {
     $a_headers = $IMAP->list_headers($mbox_name, NULL, $sort_col, $sort_order);
 }
+$count  = $IMAP->messagecount($mbox_name);
 $unseen = $IMAP->messagecount($mbox_name, 'UNSEEN', !empty($_REQUEST['_refresh']));
 
 // update message count display
@@ -61,8 +62,8 @@ $OUTPUT->command('set_unread_count', $mbox_name, $unseen);
 // add message rows
 if (isset($a_headers) && count($a_headers)) {
     rcmail_js_message_list($a_headers);
+} else {
+    $OUTPUT->show_message('nomessagesfound', 'notice');
 }
-
 // send response
 $OUTPUT->send();
-?>

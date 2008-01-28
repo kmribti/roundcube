@@ -5,7 +5,7 @@
  | program/steps/mail/compose.inc                                        |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -45,10 +45,16 @@ if ($_action == 'remove-attachment' && preg_match('/^rcmfile([0-9]+)$/', $_POST[
     }
 }
 
-// this version does not support HTML mails
-$CONFIG['htmleditor'] = false;
-$CONFIG = $registry->set('CONFIG', $CONFIG, 'core');
-
+if ($_action=='display-attachment' && preg_match('/^rcmfile([0-9]+)$/', $_GET['_file'], $regs)) {
+    $id = $regs[1];
+    if (is_array($_SESSION['compose']['attachments'][$id])) {
+        $apath = $_SESSION['compose']['attachments'][$id]['path'];
+        header('Content-Type: ' . $_SESSION['compose']['attachments'][$id]['mimetype']);
+        header('Content-Length: ' . filesize($apath));
+        readfile($apath);
+    }
+    exit;
+}
 
 $MESSAGE_FORM = $registry->set('MESSAGE_FORM', NULL, 'core');
 $MESSAGE      = $registry->set('MESSAGE', NULL, 'core');
@@ -116,9 +122,7 @@ if (empty($msg_uid) === false) {
     if ($compose_mode == RCUBE_COMPOSE_REPLY) {
         $_SESSION['compose']['reply_uid']   = $msg_uid;
         $_SESSION['compose']['reply_msgid'] = $MESSAGE['headers']->messageID;
-        $_SESSION['compose']['references']  = $MESSAGE['headers']->reference;
-        $_SESSION['compose']['references'] .= !empty($MESSAGE['headers']->reference) ? ' ' : '';
-        $_SESSION['compose']['references'] .= $MESSAGE['headers']->messageID;
+        $_SESSION['compose']['references']  = trim($MESSAGE['headers']->references . " " . $MESSAGE['headers']->messageID);
 
         if (!empty($_GET['_all'])) {
             $MESSAGE['reply_all'] = 1;
@@ -140,16 +144,17 @@ require_once 'include/rcube/rcmail_compose.php';
 
 // register UI objects
 $OUTPUT->add_handlers(
-            array(
-                'composeheaders'        => 'rcmail_compose_headers',
-                'composesubject'        => 'rcmail_compose_subject',
-                'composebody'           => 'rcmail_compose_body',
-                'composeattachmentlist' => 'rcmail_compose_attachment_list',
-                'composeattachmentform' => 'rcmail_compose_attachment_form',
-                'composeattachment'     => 'rcmail_compose_attachment_field',
-                'priorityselector'      => 'rcmail_priority_selector',
-                'receiptcheckbox'       => 'rcmail_receipt_checkbox',
-            )
+    array(
+        'composeheaders'        => 'rcmail_compose_headers',
+        'composesubject'        => 'rcmail_compose_subject',
+        'composebody'           => 'rcmail_compose_body',
+        'composeattachmentlist' => 'rcmail_compose_attachment_list',
+        'composeattachmentform' => 'rcmail_compose_attachment_form',
+        'composeattachment'     => 'rcmail_compose_attachment_field',
+        'priorityselector'      => 'rcmail_priority_selector',
+        'editorselector'        => 'rcmail_editor_selector',
+        'receiptcheckbox'       => 'rcmail_receipt_checkbox',
+    )
 );
 
 
@@ -159,14 +164,13 @@ if (isset($CONFIG['addressbook_plugin']) && !empty($CONFIG['addressbook_plugin']
     require_once 'plugins/addressbook/rcube_contacts_' . $CONFIG['addressbook_plugin'] . '.inc';
     $abook_class = 'rcube_contacts_' . $CONFIG['addressbook_plugin'];
     $CONTACTS = new $abook_class (
-                        $_SESSION['username'],
-                        $_SESSION['password']
+        $_SESSION['username'],
+        $_SESSION['password']
     );
-}
-else {
+} else {
     $DB = $registry->get('DB', 'core');
 
-    $CONTACTS = new rcube_contacts($DB, $_SESSION['user_id']);
+    $CONTACTS = new rcube_contacts($DB, $USER->ID);
     $CONTACTS->set_pagesize(1000);
 }
 if ($result = $CONTACTS->list_records()) {

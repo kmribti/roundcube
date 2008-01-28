@@ -70,7 +70,7 @@ if (!empty($_POST['_address'])) {
         }
 
         // check for existing contacts
-        $existing = $CONTACTS->search('email', $contact['email'], false);
+        $existing = $CONTACTS->search('email', $contact['email'], true, false);
         if ($done = $existing->count) {
             $OUTPUT->show_message('contactexists', 'warning');
         }

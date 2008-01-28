@@ -19,25 +19,15 @@
 */
 
 if (($_GET['_iid'] || $_POST['_iid']) && $_action=='edit-identity') {
-    $_query = "SELECT * FROM " . rcube::get_table_name('identities');
-    $_query.= " WHERE identity_id=?";
-    $_query.= " AND user_id=?";
-    $_query.= " AND del<>1";
-    $DB->query(
-            $_query,
-            rcube::get_input_value('_iid', rcube::INPUT_GPC),
-            $_SESSION['user_id']
-    );
-
-    $IDENTITY_RECORD = $DB->fetch_assoc();
+    $IDENTITY_RECORD = $USER->get_identity(
+    	rcube::get_input_value('_iid', rcube::INPUT_GPC));
     $registry->set('IDENTITY_RECORD', $IDENTITY_RECORD, 'core');
     if (is_array($IDENTITY_RECORD)) {
         $OUTPUT->set_env('iid', $IDENTITY_RECORD['identity_id']);
     }
     $OUTPUT->set_pagetitle(rcube::gettext('edititem'));
-}
-else {
-  $OUTPUT->set_pagetitle(rcube::gettext('newitem'));
+} else {
+    $OUTPUT->set_pagetitle(rcube::gettext('newitem'));
 }
 $OUTPUT->include_script('list.js');
 
@@ -46,20 +36,19 @@ function rcube_identity_form($attrib)
     $registry        = rcube_registry::get_instance();
     $IDENTITY_RECORD = $registry->get('IDENTITY_RECORD', 'core');
     $OUTPUT          = $registry->get('OUTPUT', 'core');
-/*
-  $OUTPUT->include_script('tiny_mce/tiny_mce_src.js');
-  $OUTPUT->add_script("tinyMCE.init({ mode : 'specific_textareas'," .
-                                    "apply_source_formatting : true," .
-                                    "content_css : '\$__skin_path' + '/editor_content.css'," .
-                                    "popups_css : '\$__skin_path' + '/editor_popups.css'," .
-                                    "editor_css : '\$__skin_path' + '/editor_ui.css'," .
-                                    "theme : 'advanced'," .
-                                    "theme_advanced_toolbar_location : 'top'," .
-                                    "theme_advanced_toolbar_align : 'left'," .
-                                    "theme_advanced_buttons1 : 'bold,italic,underline,strikethrough,justifyleft,justifycenter,justifyright,justifyfull,separator,outdent,indent,charmap,hr'," .
-                                    "theme_advanced_buttons2 : 'link,unlink,code,forecolor,fontselect,fontsizeselect'," .
-                                    "theme_advanced_buttons3 : '' });");
-*/
+    
+    $OUTPUT->include_script('tiny_mce/tiny_mce_src.js');
+    $OUTPUT->add_script("tinyMCE.init({ mode : 'specific_textareas'," .
+        "apply_source_formatting : true," .
+        "content_css : '\$__skin_path' + '/editor_content.css'," .
+        "editor_css : '\$__skin_path' + '/editor_ui.css'," .
+        "theme : 'advanced'," .
+        "theme_advanced_toolbar_location : 'top'," .
+        "theme_advanced_toolbar_align : 'left'," .
+        "theme_advanced_buttons1 : 'bold,italic,underline,strikethrough,justifyleft,justifycenter,justifyright,justifyfull,separator,outdent,indent,charmap,hr'," .
+        "theme_advanced_buttons2 : 'link,unlink,code,forecolor,fontselect,fontsizeselect'," .
+        "theme_advanced_buttons3 : '' });");
+
     if (!$IDENTITY_RECORD && $GLOBALS['_action']!='add-identity') {
         return rcube::gettext('notfound');
     }
@@ -69,17 +58,16 @@ function rcube_identity_form($attrib)
     list($form_start, $form_end) = get_form_tags($attrib, 'save-identity', array('name' => '_iid', 'value' => $IDENTITY_RECORD['identity_id']));
     unset($attrib['form']);
 
-
     // list of available cols
     $a_show_cols = array(
-                        'name'         => array('type' => 'text'),
-                        'email'        => array('type' => 'text'),
-                        'organization' => array('type' => 'text'),
-                        'reply-to'     => array('type' => 'text', 'label' => 'replyto'),
-                        'bcc'          => array('type' => 'text'),
-                        'signature'	  => array('type' => 'textarea', 'size' => "40", 'rows' => "4"),
-                   //   'html_signature'=>array('type' => 'checkbox', 'label' => 'htmlsignature', 'onclick' => 'return rcmail.toggle_editor(this, \'_signature\');'),
-                        'standard'     => array('type' => 'checkbox', 'label' => 'setdefault'));
+        'name'           => array('type' => 'text'),
+        'email'          => array('type' => 'text'),
+        'organization'   => array('type' => 'text'),
+        'reply-to'       => array('type' => 'text', 'label' => 'replyto'),
+        'bcc'            => array('type' => 'text'),
+        'signature'	     => array('type' => 'textarea', 'size' => "40", 'rows' => "6"),
+        'html_signature' => array('type' => 'checkbox', 'label' => 'htmlsignature', 'onclick' => 'return rcmail.toggle_editor(this, \'_signature\');'),
+        'standard'       => array('type' => 'checkbox', 'label' => 'setdefault'));
 
 
     // a specific part is requested
@@ -91,26 +79,21 @@ function rcube_identity_form($attrib)
                         $attrib['part'],
                         $IDENTITY_RECORD[$attrib['part']],
                         $attrib,
-                        $colprop['type']
-            );
+                        $colprop['type']);
             return $out;
         }
-        else {
-            return '';
-        }
+        return '';
     }
-
 
     // return the complete edit form as table
     $out = "$form_start<table>\n\n";
 
     foreach ($a_show_cols as $col => $colprop) {
-        $attrib['id'] = 'rcmfd_'.$col;
+        $attrib['id'] = 'rcmfd_' . $col;
 
         if (strlen($colprop['onclick'])) {
             $attrib['onclick'] = $colprop['onclick'];
-        }
-        else {
+        } else {
             unset($attrib['onclick']);
         }
 
@@ -118,8 +101,7 @@ function rcube_identity_form($attrib)
             $attrib['size'] = $colprop['size'];
             $attrib['rows'] = $colprop['rows'];
             $attrib['mce_editable'] = $IDENTITY_RECORD['html_signature'] ? "true" : "false";
-        }
-        else {
+        } else {
             unset($attrib['size']);
             unset($attrib['rows']);
             unset($attrib['mce_editable']);
@@ -127,17 +109,16 @@ function rcube_identity_form($attrib)
 
         $label = strlen($colprop['label']) ? $colprop['label'] : $col;
         $value = rcube::get_edit_field(
-                        $col,
-                        $IDENTITY_RECORD[$col],
-                        $attrib,
-                        $colprop['type']
-        );
+            $col,
+            $IDENTITY_RECORD[$col],
+            $attrib,
+            $colprop['type']);
 
         $out .= sprintf(
-                    "<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
-                    $attrib['id'],
-                    Q(rcube::gettext($label)),
-                    $value);
+            "<tr><td class=\"title\"><label for=\"%s\">%s</label></td><td>%s</td></tr>\n",
+            $attrib['id'],
+            Q(rcube::gettext($label)),
+            $value);
     }
     $out .= "\n</table>$form_end";
 
@@ -150,4 +131,3 @@ if ($_action=='add-identity' && rcube::template_exists('addidentity')) {
     rcube::parse_template('addidentity');
 }
 rcube::parse_template('editidentity');
-?>

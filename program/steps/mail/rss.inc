@@ -4,7 +4,7 @@
  | program/steps/mail/rss.inc                                            |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                      |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -35,7 +35,7 @@ function rss_encode($string) {
 }
 
 $REMOTE_REQUEST = TRUE;
-$OUTPUT_TYPE = 'rss';
+$OUTPUT_TYPE    = 'rss';
 
 $registry = rcube_registry::get_instance();
 $registry->set('REMOTE_REQUEST', $REMOTE_REQUEST, 'core');
@@ -45,10 +45,12 @@ $webmail_url = 'http';
 if (strstr('HTTPS', $_SERVER['SERVER_PROTOCOL'] )!== FALSE) {
   $webmail_url .= 's';
 }
+
 $webmail_url .= '://'.$_SERVER['SERVER_NAME'];
-if ($_SERVER['SERVER_PORT'] != '80') {
+if ($_SERVER['SERVER_PORT'] != '80') {
 	$webmail_url .= ':'.$_SERVER['SERVER_PORT'];
 }
+
 $webmail_url .= '/';
 if (dirname($_SERVER['SCRIPT_NAME']) != '/') {
 	$webmail_url .= dirname($_SERVER['SCRIPT_NAME']).'/';
@@ -63,8 +65,8 @@ $sort_order = 'DESC';
 
 // Send global XML output
 header('Content-type: text/xml');
-echo '<?xml version="1.0" encoding="UTF-8"?>
-	<rss version="2.0"
+echo '<?xml version="1.0" encoding="UTF-8"?>';
+echo '<rss version="2.0"
 	 xmlns:dc="http://purl.org/dc/elements/1.1/"
 	 xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
 	 xmlns:admin="http://webns.net/mvcb/"
@@ -90,14 +92,14 @@ echo '
 
 // Check if the user wants to override the default sortingmethode
 if (isset($_GET['_sort'])) {
-    list($sort_col, $sort_order) = explode('_', $_GET['_sort']);
+    list($sort_col, $sort_order) = explode('_',
+        rcube::get_input_value('_sort', rcube::INPUT_GET));
 }
 
 // Add message to output
 if ($messagecount > 0) {
     $items = $IMAP->list_headers('INBOX', null, $sort_col, $sort_order);
-    foreach ($items as $item)
-    {
+    foreach ($items as $item) {
 
         // Convert '"name" <email>' to 'email (name)'
         if (strstr($item->from, '<')) {

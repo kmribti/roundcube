@@ -5,7 +5,7 @@
  | program/steps/mail/get.inc                                            |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                      |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -27,7 +27,7 @@ if ($_GET['_preload']) {
     $message = rcube::gettext('loadingdata');
 
     echo "<html>\n<head>\n";
-    echo '<meta http-equiv="refresh" content="0; url=' . htmlspecialchars($url).'">';
+    echo '<meta http-equiv="refresh" content="0; url=' . Q($url).'">';
     echo "\n</head>\n<body>";
     echo $message;
     echo "\n</body>\n</html>";
@@ -48,8 +48,7 @@ if ($_GET['_uid']) {
 if ($_GET['_frame']) {
     rcube::parse_template('messagepart');
     exit;
-}
-else if ($pid = rcube::get_input_value('_part', rcube::INPUT_GET)) {
+} else if ($pid = rcube::get_input_value('_part', rcube::INPUT_GET)) {
     if ($part = $MESSAGE['parts'][$pid]) {
         $ctype_primary = strtolower($part->ctype_primary);
         $ctype_secondary = strtolower($part->ctype_secondary);
@@ -64,8 +63,7 @@ else if ($pid = rcube::get_input_value('_part', rcube::INPUT_GET)) {
         if ($_GET['_download']) {
             header("Cache-Control: private", false);
             header("Content-Type: application/octet-stream");
-        }
-        else {
+        } else {
             header("Content-Type: $mimetype");
         }
         // We need to set the following headers to make downloads work using IE in HTTPS mode.
@@ -99,25 +97,22 @@ else if ($pid = rcube::get_input_value('_part', rcube::INPUT_GET)) {
                 $part->body = $IMAP->get_message_part($MESSAGE['UID'], $part->mime_id, $part);
             }
             $OUTPUT = new rcube_html_page();
-            $OUTPUT->write(rcmail_print_body($part, (bool)$_GET['_safe']));
-        }
-        else {
+            $OUTPUT->write(rcmail_print_body($part, intval($_GET['_safe'])));
+        } else {
             header(
                 sprintf(
                     'Content-Disposition: %s; filename="%s";',
-                    $part->disposition ? $part->disposition : 'attachment',
+                    $_GET['_download'] ? 'attachment' : 'inline',
                     $part->filename ? $part->filename : "roundcube.$ctype_secondary"
                 )
             );
 
             // turn off output buffering and print part content
-            $IMAP->get_message_part($MESSAGE['UID'], $part->mime_id, $part->encoding, true);
+            $IMAP->get_message_part($MESSAGE['UID'], $part->mime_id, $part, true);
         }
         exit;
     }
-}
-// print message
-else {
+} else { // print message
     $ctype_primary = strtolower($MESSAGE['structure']->ctype_primary);
     $ctype_secondary = strtolower($MESSAGE['structure']->ctype_secondary);
     $mimetype = sprintf('%s/%s', $ctype_primary, $ctype_secondary);
@@ -127,11 +122,11 @@ else {
 
     $cont = '';
     list($MESSAGE['parts']) = rcmail_parse_message(
-                                    $MESSAGE['structure'],
-                                    array(
-                                        'safe' => (bool)$_GET['_safe'],
-                                        'get_url' => $GET_URL.'&_part=%s'
-                                    )
+        $MESSAGE['structure'],
+        array(
+            'safe' => intval($_GET['_safe']),
+            'get_url' => $GET_URL.'&_part=%s'
+        )
     );
 
     $cont = "<html>\n<head><title></title>\n</head>\n<body>";

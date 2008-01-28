@@ -5,7 +5,7 @@
  | program/steps/mail/folders.inc                                        |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -41,13 +41,11 @@ if ($_action=='expunge' && ($mbox = rcube::get_input_value('_mbox', rcube::INPUT
         //$OUTPUT->send($_task);
 
         return;
-    }
-    else {
+    } else {
         $commands = "// expunged: $success\n";
     }
-}
-// clear mailbox
-elseif ($_action=='purge' && ($mbox = rcube::get_input_value('_mbox', rcube::INPUT_POST))) {
+} elseif ($_action=='purge' && ($mbox = rcube::get_input_value('_mbox', rcube::INPUT_POST))) {
+    // clear mailbox
     $success = $IMAP->clear_mailbox($mbox);
 
     if ($success && !empty($_REQUEST['_reload'])) {
@@ -56,8 +54,7 @@ elseif ($_action=='purge' && ($mbox = rcube::get_input_value('_mbox', rcube::INP
         $OUTPUT->command('message_list.clear');
         $OUTPUT->command('set_rowcount', rcmail_get_messagecount_text());
         $OUTPUT->command('set_unread_count', $mbox_name, 0);
-    }
-    else {
+    } else {
         $commands = "// purged: $success";
     }
 }

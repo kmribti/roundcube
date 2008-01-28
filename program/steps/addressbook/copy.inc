@@ -26,15 +26,12 @@ $CONTACTS = $registry->get('CONTACTS', 'core');
 $cid    = rcube::get_input_value('_cid', rcube::INPUT_POST);
 $target = rcube::get_input_value('_to', rcube::INPUT_POST);
 if (
-    $cid
-    && preg_match('/^[a-z0-9\-_=]+(,[a-z0-9\-_=]+)*$/i', $cid)
-    && strlen($target)
-    && $target != $source
+    $cid && preg_match('/^[a-z0-9\-_=]+(,[a-z0-9\-_=]+)*$/i', $cid)
+    && strlen($target) && $target != $source
 ) {
     if ($target != '0') {
         $TARGET = new rcube_ldap($CONFIG['ldap_public'][$target]);
-    }
-    else {
+    } else {
         $TARGET = new rcube_contacts($DB, $_SESSION['user_id']);
     }
 
@@ -45,10 +42,12 @@ if (
 
     if (empty($success)) {
         $OUTPUT->show_message('copyerror', 'error');
-    }
-    else {
+    } else {
         $OUTPUT->show_message('copysuccess', 'notice', array('nr' => count($success)));
     }
+    
+    // close connection to second address directory
+	$TARGET->close();
 }
 
 // send response
