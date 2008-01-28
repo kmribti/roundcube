@@ -3,18 +3,19 @@
 /*
 
  +-----------------------------------------------------------------------+
- | language/ru/labels.inc                                                |
+ | language/ru_RU/labels.inc                                             |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
  | Author: Maxim Zenin <maxx@webmechanics.ru>                            |
  |         Vladimir Kulev <me@lightoze.net>                              |
+ |         Artur Smolkin <admin@roundcube.ru>                            |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 910 2007-11-05 09:11:53Z webmechanics $
+ @version $Id: labels.inc 950 2008-01-04 08:04:53Z tomekp $
 
 */
 
@@ -125,6 +126,10 @@ $labels['plaintoggle'] = 'Обычный текст';
 $labels['addcc'] = 'Копия';
 $labels['addbcc'] = 'Скрытая копия';
 $labels['addreplyto'] = 'Обратный адрес';
+$labels['mdnrequest'] = 'Отправитель этого сообщения запросил уведомление о прочтении. Отправить уведомление?';
+$labels['receiptread'] = 'Уведомление о прочтении';
+$labels['yourmessage'] = 'Это уведомление о прочтении вашего сообщения';
+$labels['receiptnote'] = 'Это уведомление означает только, что сообщение было открыто получателем, и не гарантирует того, что оно было прочитано и (или) понято.';
 $labels['name'] = 'Отображаемое имя';
 $labels['firstname'] = 'Имя';
 $labels['surname'] = 'Фамилия';

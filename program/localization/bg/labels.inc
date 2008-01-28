@@ -6,7 +6,7 @@
  | language/bg/labels.inc                                                |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2007 RoundCube Dev. - Switzerland                  |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
@@ -74,7 +74,8 @@ $labels['writenewmessage'] = 'Създай ново писмо';
 $labels['replytomessage'] = 'Отговори на писмото';
 $labels['replytoallmessage'] = 'Отговори до всички получатели';
 $labels['forwardmessage'] = 'Препрати писмото';
-$labels['deletemessage'] = 'Премести писмото в кошчето';
+$labels['deletemessage'] = 'Изтрий писмото';
+$labels['movemessagetotrash'] = 'Премести писмото в кошчето';
 $labels['printmessage'] = 'Разпечатай писмото';
 $labels['previousmessage'] = 'Предно писмо';
 $labels['previousmessages'] = 'Предна страница';
@@ -99,13 +100,13 @@ $labels['unlimited'] = 'няма ограничение';
 $labels['quicksearch'] = 'Бързо търсене';
 $labels['resetsearch'] = 'Изчисти търсенето и покажи всички писма';
 $labels['compose'] = 'Ново писмо';
-$labels['sendmessage'] = 'Изпрати писмото';
 $labels['savemessage'] = 'Запиши в Чернови';
+$labels['sendmessage'] = 'Изпрати писмото';
 $labels['addattachment'] = 'Прикачи файл';
-$labels['charset'] = 'Charset';
+$labels['charset'] = 'Кодировка';
 $labels['editortype'] = 'Вид редактор';
 $labels['returnreceipt'] = 'Обратна разписка';
-$labels['checkspelling'] = 'Проверка на правописа';
+$labels['checkspelling'] = 'Провери правописа';
 $labels['resumeediting'] = 'Продължи черновата';
 $labels['revertto'] = 'Върни се към';
 $labels['attachments'] = 'Прикачени файлове';
@@ -119,8 +120,11 @@ $labels['highest'] = '*****';
 $labels['nosubject'] = '(няма заглавие)';
 $labels['showimages'] = 'Виж изображенията';
 $labels['htmltoggle'] = 'HTML';
-$labels['plaintoggle'] = 'тесктов';
-$labels['name'] = 'Прякор';
+$labels['plaintoggle'] = 'текстов';
+$labels['addcc'] = 'Копие до';
+$labels['addbcc'] = 'Скрито копие до';
+$labels['addreplyto'] = 'Отговор на';
+$labels['name'] = 'Кратко име';
 $labels['firstname'] = 'Име';
 $labels['surname'] = 'Фамилия';
 $labels['email'] = 'E-Mail';
@@ -129,13 +133,13 @@ $labels['editcontact'] = 'Редактирай';
 $labels['edit'] = 'Редактирай';
 $labels['cancel'] = 'Отказ';
 $labels['save'] = 'Запиши';
-$labels['delete'] = 'Изтрии';
+$labels['delete'] = 'Изтрий';
 $labels['newcontact'] = 'Нов контакт';
-$labels['deletecontact'] = 'Изтрии маркираните контакти';
+$labels['deletecontact'] = 'Изтрий маркираните контакти';
 $labels['composeto'] = 'Напиши писмо до';
 $labels['contactsfromto'] = 'Контакти $from до $to от $count';
 $labels['print'] = 'Разпечатай';
-$labels['export'] = 'Експорт';
+$labels['export'] = 'Експортиране';
 $labels['previouspage'] = 'Предна страница';
 $labels['firstpage'] = 'Първа страница';
 $labels['nextpage'] = 'Следваща страница';

@@ -6,7 +6,7 @@
  | language/et_EE/messages.inc                                           |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
@@ -74,5 +74,6 @@ $messages['copyerror'] = 'Ühegi aadressi kopeerimine ei õnnestunud ';
 $messages['sourceisreadonly'] = 'Aadressi asukohas puuduvad kirjutusõigused';
 $messages['errorsavingcontact'] = 'Kontakti aadressi salvestamine ebaõnnestus';
 $messages['movingmessage'] = 'Kirja liigutamine...';
-
+$messages['receiptsent'] = 'Kättesaamiskinnitus saadetud';
+$messages['errorsendingreceipt'] = 'Ei õnnestunud kättesaamiskinnitust saata';
 ?>

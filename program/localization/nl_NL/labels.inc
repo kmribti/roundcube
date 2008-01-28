@@ -6,14 +6,14 @@
  | language/nl_NL/labels.inc                                             |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
  | Author: Mark Moses <mark@katmoda.com>                                 |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 844 2007-10-02 05:33:18Z tomekp $
+ @version $Id: labels.inc 950 2008-01-04 08:04:53Z tomekp $
 
 */
 

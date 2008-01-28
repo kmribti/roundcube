@@ -5,14 +5,14 @@
  | language/eu/messages.inc                                              |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
  | Author: pi <pi@beobide.net>                                           |
  +-----------------------------------------------------------------------+
 
- $Id: messages.inc 842 2007-10-01 13:55:02Z tomekp $
+ @version $Id: messages.inc 950 2008-01-04 08:04:53Z tomekp $
 
 */
 

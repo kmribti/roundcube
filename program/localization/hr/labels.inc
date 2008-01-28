@@ -6,14 +6,14 @@
  | language/hr/labels.inc                                                |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
  | Author: Edi Budimilic <edifreak@gmail.com>                            |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 627 2007-06-27 07:07:02Z tomekp $
+ @version $Id: labels.inc 950 2008-01-04 08:04:53Z tomekp $
 
 */
 

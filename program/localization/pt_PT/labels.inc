@@ -6,7 +6,7 @@
  | language/pt_PT/labels.inc                                             |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
@@ -15,7 +15,7 @@
  |          Fernando Silva <fernando.silva@openquest.pt>                 |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 873 2007-10-16 19:06:34Z yllar $
+ @version $Id: labels.inc 950 2008-01-04 08:04:53Z tomekp $
 
 */
 

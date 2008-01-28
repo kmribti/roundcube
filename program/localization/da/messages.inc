@@ -6,8 +6,8 @@
  | language/da/messages.inc                                              |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
- | All rights reserved.                                                  |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
+ | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
  | Author : Martin Moeller <martin@liga.dk>                              |
@@ -15,7 +15,7 @@
  |         Søren Aggeboe <soren@aggeboe.dk>                              |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 886 2007-10-19 07:24:53Z yllar $
+ @version $Id: messages.inc 950 2008-01-04 08:04:53Z tomekp $
 
 */
 

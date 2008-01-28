@@ -6,15 +6,15 @@
  | language/lv/messages.inc                                              |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
  | Author: Rudolfs Osins <dev.random@gmail.com>                          |
- | Updated for 0.1-rc1: Mikelis Zalais <mik@prog.lv>                     |
+ |         Mikelis Zalais <mik@prog.lv>                                  |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 557 2007-05-15 06:41:32Z yllar $
+ @version $Id: messages.inc 950 2008-01-04 08:04:53Z tomekp $
 
 */
 

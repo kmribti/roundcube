@@ -2,19 +2,19 @@
 
 /*
 
- +--------------------------------------------------------------------------------------+
- | language/si/labels.inc                                                               |
- |                                                                                      |
- | Language file of the RoundCube Webmail client                                        |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                                |
- | Licensed under the GNU GPL                                                           |
- |                                                                                      |
- +--------------------------------------------------------------------------------------+
- | Author: Andrej Sossi <asossi@dotcom.ts.it>                                           |
- |         Andrej Mocilnik <amocilnik@dotcom.ts.it>                                     |
- +--------------------------------------------------------------------------------------+
+ +-----------------------------------------------------------------------+
+ | language/si/labels.inc                                                |
+ |                                                                       |
+ | Language file of the RoundCube Webmail client                         |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
+ | Licensed under the GNU GPL                                            |
+ |                                                                       |
+ +-----------------------------------------------------------------------+
+ | Author: Andrej Sossi <asossi@dotcom.ts.it>                            |
+ |         Andrej Mocilnik <amocilnik@dotcom.ts.it>                      |
+ +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 842 2007-10-01 13:55:02Z tomekp $
+ @version $Id: labels.inc 950 2008-01-04 08:04:53Z tomekp $
 
 */
 

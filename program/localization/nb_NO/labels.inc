@@ -6,14 +6,14 @@
  | language/nb_NO/labels.inc                                             |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
- | All rights reserved.                                                  |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
+ | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
  | Author: Kjetil Waage - Nextline AS <kjetil@nextline.no>               |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 553 2007-05-13 16:31:19Z thomasb $
+ @version $Id: labels.inc 950 2008-01-04 08:04:53Z tomekp $
 
 */
 

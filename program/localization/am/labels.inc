@@ -6,14 +6,14 @@
  | language/am/labels.inc                                                |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
  | Author: Vahan Yerkanian <vahan@arminco.com>                           |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 584 2007-05-24 03:49:19Z estadtherr $
+ @version $Id: labels.inc 950 2008-01-04 08:04:53Z tomekp $
 
 */
 

@@ -6,7 +6,7 @@
  | language/el/labels.inc                                                |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
@@ -14,7 +14,7 @@
  |         John Economou <hsoc@irc.gr>                                   | 
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 612 2007-06-12 18:17:21Z thomasb $
+ @version $Id: labels.inc 950 2008-01-04 08:04:53Z tomekp $
 
 */
 

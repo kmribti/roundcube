@@ -6,14 +6,14 @@
  | language/nl_BE/labels.inc                                             |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
  | Author: Dennis Heeren <dennis.heeren@gmail.com>                       |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 466 2007-02-06 09:17:01Z tomekp $
+ @version $Id: labels.inc 950 2008-01-04 08:04:53Z tomekp $
 
 */
 

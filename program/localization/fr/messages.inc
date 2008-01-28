@@ -6,7 +6,7 @@
  | language/fr/messages.inc                                              |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
@@ -75,5 +75,8 @@ $messages['copysuccess'] = 'Succès de la copie des $nr adresses';
 $messages['copyerror'] = 'Ne peut pas copier les adresses';
 $messages['sourceisreadonly'] = 'Cette source d\'adresse est en lecture seule';
 $messages['errorsavingcontact'] = 'Ne peut pas enregistrer l\'adresse du contact';
+$messages['movingmessage'] = 'Déplacement du message...';
+$messages['receiptsent'] = 'L\'accusé de réception a bien été envoyé';
+$messages['errorsendingreceipt'] = 'L\'accusé de réception n\'a pas pu être envoyé';
 
 ?>

@@ -5,12 +5,14 @@
  | language/mk/messages.inc                                              |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2007, RoundQube Dev. - Switzerland                      |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
  | Author:  Ivan Mishev - mishevivan@gmail.com                           |
  +-----------------------------------------------------------------------+
+
+ @version $Id$
 
 */
 
@@ -70,5 +72,8 @@ $messages['copysuccess'] = 'Успешно се копирани $nr имиња'
 $messages['copyerror'] = 'Неможе да се копираат адресите';
 $messages['sourceisreadonly'] = 'Изворот на оваа адреса неможе да се промени';
 $messages['errorsavingcontact'] = 'Името неможе да се сними';
+$messages['movingmessage'] = 'Пораката се преместува...';
+$messages['receiptsent'] = 'Известувањето е успешно пратено';
+$messages['errorsendingreceipt'] = 'Известувањето не е пратено';
 
 ?>

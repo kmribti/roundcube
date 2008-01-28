@@ -6,16 +6,16 @@
  | language/pt_BR/messages.inc                                           |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
  | Author: Anderson S. Ferreira <anderson@cnpm.embrapa.br>               |
- | Updated by: Robson F. Ramaldes <rframaldes@gmail.com>                 |
- | Updated by: Alessandro Lenzi <alessandro@mistymountain.com.br>        |
+ |         Robson F. Ramaldes <rframaldes@gmail.com>                     |
+ |         Alessandro Lenzi <alessandro@mistymountain.com.br>            |
  +-----------------------------------------------------------------------+
 
- $Id: messages.inc 830 2007-09-27 04:33:46Z tomekp $
+ @version $Id: messages.inc 950 2008-01-04 08:04:53Z tomekp $
 
 */
 

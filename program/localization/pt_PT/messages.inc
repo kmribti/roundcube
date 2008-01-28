@@ -6,7 +6,7 @@
  | language/pt_PT/messages.inc                                           |
  |                                                                       |
  | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
@@ -14,7 +14,7 @@
  |          João Vale <jpvale@gmail.com>                                 |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 873 2007-10-16 19:06:34Z yllar $
+ @version $Id: messages.inc 950 2008-01-04 08:04:53Z tomekp $
 
 */
 
