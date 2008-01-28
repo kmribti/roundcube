@@ -17,82 +17,89 @@ Last Modified: 28/04/06 16:28:09
 **/
 
 var AJS = {
-////
-// Accessor functions
-////
-  /**
-   * @returns The element with the id
-   */
-  getElement: function(id) {
-    if(typeof(id) == "string") 
-      return document.getElementById(id);
-    else
-      return id;
-  },
+    ////
+    // Accessor functions
+    ////
+    /**
+     * @returns The element with the id
+     */
+    getElement: function(id)
+    {
+        if (typeof(id) == "string") {
+            return document.getElementById(id);
+        } else {
+            return id;
+        }
+    },
 
-  /**
-   * @returns The elements with the ids
-   */
-  getElements: function(/*id1, id2, id3*/) {
-    var elements = new Array();
-      for (var i = 0; i < arguments.length; i++) {
-        var element = this.getElement(arguments[i]);
-        elements.push(element);
-      }
-      return elements;
-  },
+    /**
+     * @returns The elements with the ids
+     */
+    getElements: function(/*id1, id2, id3*/)
+    {
+        var elements = new Array();
+        for (var i = 0; i < arguments.length; i++) {
+            var element = this.getElement(arguments[i]);
+            elements.push(element);
+        }
+        return elements;
+    },
 
-  /**
-   * @returns The GET query argument
-   */
-  getQueryArgument: function(var_name) {
-    var query = window.location.search.substring(1);
-    var vars = query.split("&");
-    for (var i=0;i<vars.length;i++) {
-      var pair = vars[i].split("=");
-      if (pair[0] == var_name) {
-        return pair[1];
-      }
-    }
-    return null;
-  },
+    /**
+     * @returns The GET query argument
+     */
+    getQueryArgument: function(var_name)
+    {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == var_name) {
+                return pair[1];
+            }
+        }
+        return null;
+    },
 
-  /**
-   * @returns If the browser is Internet Explorer
-   */
-  isIe: function() {
-    return (navigator.userAgent.toLowerCase().indexOf("msie") != -1 && navigator.userAgent.toLowerCase().indexOf("opera") == -1);
-  },
+    /**
+     * @returns If the browser is Internet Explorer
+     */
+    isIe: function()
+    {
+        return (navigator.userAgent.toLowerCase().indexOf("msie") != -1 && navigator.userAgent.toLowerCase().indexOf("opera") == -1);
+    },
 
-  /**
-   * @returns The document body   
-   */
-  getBody: function() {
-    return this.getElementsByTagAndClassName('body')[0] 
-  },
+    /**
+     * @returns The document body   
+     */
+    getBody: function() {
+        return this.getElementsByTagAndClassName('body')[0] 
+    },
 
-  /**
-   * @returns All the elements that have a specific tag name or class name
-   */
-  getElementsByTagAndClassName: function(tag_name, class_name, /*optional*/ parent) {
-    var class_elements = new Array();
-    if(!this.isDefined(parent))
-      parent = document;
-    if(!this.isDefined(tag_name))
-      tag_name = '*';
-
-    var els = parent.getElementsByTagName(tag_name);
-    var els_len = els.length;
-    var pattern = new RegExp("(^|\\s)" + class_name + "(\\s|$)");
-
-    for (i = 0, j = 0; i < els_len; i++) {
-      if ( pattern.test(els[i].className) || class_name == null ) {
-        class_elements[j] = els[i];
-        j++;
-      }
-    }
-    return class_elements;
-  },
+    /**
+     * @returns All the elements that have a specific tag name or class name
+     */
+    getElementsByTagAndClassName: function(tag_name, class_name, /*optional*/ parent) {
+        var class_elements = new Array();
+        if (!this.isDefined(parent)) {
+            parent = document;
+        }
+        if (!this.isDefined(tag_name)) {
+            tag_name = '*';
+        }
+        
+        var els = parent.getElementsByTagName(tag_name);
+        var els_len = els.length;
+        var pattern = new RegExp("(^|\\s)" + class_name + "(\\s|$)");
+    
+        for (i = 0, j = 0; i < els_len; i++) {
+            if ( pattern.test(els[i].className) || class_name == null ) {
+                class_elements[j] = els[i];
+                j++;
+            }
+        }
+        return class_elements;
+    },
 
 
 ////

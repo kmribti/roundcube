@@ -34,13 +34,15 @@ function rcube_list_widget(list, p)
   
     this.shiftkey  = false;
 
-    this.multiselect = false;
-    this.draggable   = false;
-    this.keyboard    = false;
-  
+    this.multiselect  = false;
+    this.draggable    = false;
+    this.keyboard     = false;
+    this.toggleselect = false;
+      
     this.dont_select         = false;
     this.drag_active         = false;
     this.last_selected       = 0;
+    this.shift_start         = 0;
     this.in_selection_before = false;
     this.focused             = false;
     this.drag_mouse_start    = null;
@@ -131,12 +133,16 @@ rcube_list_widget.prototype = {
     /**
      * 'remove' message row from list (just hide it)
      */
-    remove_row: function(uid)
+    remove_row: function(uid, sel_next)
     {
         if (this.rows[uid].obj) {
             this.rows[uid].obj.style.display = 'none';
         }
 
+        if (sel_next) {
+            this.select_next();
+        }
+        
         this.rows[uid] = null;
     },
 
@@ -316,7 +322,11 @@ rcube_list_widget.prototype = {
         if (!this.multiselect) {
             mod_key = 0;
         }
-
+        
+        if (!this.shift_start) {
+            this.shift_start = id;
+        }
+        
         if (!mod_key) {
             this.shift_start = id;
             this.highlight_row(id, false);
@@ -352,9 +362,20 @@ rcube_list_widget.prototype = {
         if (this.last_selected != 0 && this.rows[this.last_selected]) {
             this.set_classname(this.rows[this.last_selected].obj, 'focused', false);
         }
+        
+        // unselect if toggleselect is active and the same row was clicked again
+        if (this.toggleselect && this.last_selected == id) {
+            this.clear_selection();
+            id = null;
+        } else {
+            this.set_classname(this.rows[id].obj, 'focused', true);
+        }
+        
+        if (!this.selection.length) {
+            this.shift_start = null;
+        }
 
         this.last_selected = id;
-        this.set_classname(this.rows[id].obj, 'focused', true);        
     },
 
     /**
@@ -428,7 +449,8 @@ rcube_list_widget.prototype = {
             return false;
         }
 
-        // reset selection first
+        // reset but remember selection first
+        var select_before = this.selection.join(',');
         this.clear_selection();
 
         for (var n in this.rows) {
@@ -437,6 +459,12 @@ rcube_list_widget.prototype = {
                 this.highlight_row(n, true);
             }
         }
+        
+        // trigger event if selection changed
+        if (this.selection.join(',') != select_before) {
+            this.trigger_event('select');
+        }
+
         return true;  
     },
 
@@ -445,6 +473,7 @@ rcube_list_widget.prototype = {
      */
     clear_selection: function()
     {
+        var num_select = this.selection.length;
         for(var n=0; n<this.selection.length; n++) {
             if (this.rows[this.selection[n]]) {
                 this.set_classname(this.rows[this.selection[n]].obj, 'selected', false);
@@ -452,6 +481,10 @@ rcube_list_widget.prototype = {
             }
         }
         this.selection = new Array();    
+        
+        if (num_select) {
+            this.trigger_event('select');
+        }
     },
 
     /**
@@ -512,8 +545,6 @@ rcube_list_widget.prototype = {
             return true;
         }
 
-        this.shiftkey = e.shiftKey;
-
         var keyCode = document.layers ? e.which : document.all ? event.keyCode : document.getElementById ? e.keyCode : 0;
         var mod_key = rcube_event.get_modifier(e);
 
@@ -524,6 +555,7 @@ rcube_list_widget.prototype = {
                 break;
 
             default:
+                this.shiftkey    = e.shiftKey;
                 this.key_pressed = keyCode;
                 this.trigger_event('keypress');
         }

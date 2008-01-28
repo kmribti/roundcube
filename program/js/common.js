@@ -3,7 +3,7 @@
  | RoundCube common js library                                           |
  |                                                                       |
  | This file is part of the RoundCube web development suite              |
- | Copyright (C) 2005-2006, RoundCube Dev, - Switzerland                 |
+ | Copyright (C) 2005-2007, RoundCube Dev, - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
@@ -24,80 +24,73 @@ var CONTROL_SHIFT_KEY = 3;
  * @construcotr
  */
 function roundcube_browser()
-  {
-  this.ver = parseFloat(navigator.appVersion);
-  this.appver = navigator.appVersion;
-  this.agent = navigator.userAgent;
-  this.name = navigator.appName;
-  this.vendor = navigator.vendor ? navigator.vendor : '';
-  this.vendver = navigator.vendorSub ? parseFloat(navigator.vendorSub) : 0;
-  this.product = navigator.product ? navigator.product : '';
-  this.platform = String(navigator.platform).toLowerCase();
-  this.lang = (navigator.language) ? navigator.language.substring(0,2) :
-              (navigator.browserLanguage) ? navigator.browserLanguage.substring(0,2) :
-              (navigator.systemLanguage) ? navigator.systemLanguage.substring(0,2) : 'en';
+{
+    this.ver = parseFloat(navigator.appVersion);
+    this.appver = navigator.appVersion;
+    this.agent = navigator.userAgent;
+    this.name = navigator.appName;
+    this.vendor = navigator.vendor ? navigator.vendor : '';
+    this.vendver = navigator.vendorSub ? parseFloat(navigator.vendorSub) : 0;
+    this.product = navigator.product ? navigator.product : '';
+    this.platform = String(navigator.platform).toLowerCase();
+    this.lang = (navigator.language) ? navigator.language.substring(0,2) :
+                (navigator.browserLanguage) ? navigator.browserLanguage.substring(0,2) :
+                (navigator.systemLanguage) ? navigator.systemLanguage.substring(0,2) : 'en';
 
-  this.win = (this.platform.indexOf('win')>=0) ? true : false;
-  this.mac = (this.platform.indexOf('mac')>=0) ? true : false;
-  this.linux = (this.platform.indexOf('linux')>=0) ? true : false;
-  this.unix = (this.platform.indexOf('unix')>=0) ? true : false;
+    this.win = (this.platform.indexOf('win')>=0) ? true : false;
+    this.mac = (this.platform.indexOf('mac')>=0) ? true : false;
+    this.linux = (this.platform.indexOf('linux')>=0) ? true : false;
+    this.unix = (this.platform.indexOf('unix')>=0) ? true : false;
 
-  this.dom = document.getElementById ? true : false;
-  this.dom2 = (document.addEventListener && document.removeEventListener);
+    this.dom = document.getElementById ? true : false;
+    this.dom2 = (document.addEventListener && document.removeEventListener);
 
-  this.ie = (document.all) ? true : false;
-  this.ie4 = (this.ie && !this.dom);
-  this.ie5 = (this.dom && this.appver.indexOf('MSIE 5')>0);
-  this.ie6 = (this.dom && this.appver.indexOf('MSIE 6')>0);
+    this.ie = (document.all) ? true : false;
+    this.ie4 = (this.ie && !this.dom);
+    this.ie5 = (this.dom && this.appver.indexOf('MSIE 5')>0);
+    this.ie6 = (this.dom && this.appver.indexOf('MSIE 6')>0);
 
-  this.mz = (this.dom && this.ver>=5);  // (this.dom && this.product=='Gecko')
-  this.ns = ((this.ver<5 && this.name=='Netscape') || (this.ver>=5 && this.vendor.indexOf('Netscape')>=0));
-  this.ns4 = (this.ns && parseInt(this.ver)==4);
-  this.ns6 = (this.ns && parseInt(this.vendver)==6);  // (this.mz && this.ns) ? true : false;
-  this.ns7 = (this.ns && parseInt(this.vendver)==7);  // this.agent.indexOf('Netscape/7')>0);
-  this.safari = (this.agent.toLowerCase().indexOf('safari')>0 || this.agent.toLowerCase().indexOf('applewebkit')>0);
-  this.konq   = (this.agent.toLowerCase().indexOf('konqueror')>0);
+    this.mz = (this.dom && this.ver>=5);  // (this.dom && this.product=='Gecko')
+    this.ns = ((this.ver<5 && this.name=='Netscape') || (this.ver>=5 && this.vendor.indexOf('Netscape')>=0));
+    this.ns6 = (this.ns && parseInt(this.vendver)==6);  // (this.mz && this.ns) ? true : false;
+    this.ns7 = (this.ns && parseInt(this.vendver)==7);  // this.agent.indexOf('Netscape/7')>0);
+    this.safari = (this.agent.toLowerCase().indexOf('safari')>0 || this.agent.toLowerCase().indexOf('applewebkit')>0);
+    this.konq   = (this.agent.toLowerCase().indexOf('konqueror')>0);
 
-  this.opera = (window.opera) ? true : false;
-  this.opera5 = (this.opera5 && this.agent.indexOf('Opera 5')>0) ? true : false;
-  this.opera6 = (this.opera && this.agent.indexOf('Opera 6')>0) ? true : false;
-  this.opera7 = (this.opera && this.agent.indexOf('Opera 7')>0) ? true : false;
+    this.opera = (window.opera) ? true : false;
 
-  if(this.opera && window.RegExp)
-    this.vendver = (/opera(\s|\/)([0-9\.]+)/i.test(navigator.userAgent)) ? parseFloat(RegExp.$2) : -1;
-  else if(!this.vendver && this.safari)
-    this.vendver = (/(safari|applewebkit)\/([0-9]+)/i.test(this.agent)) ? parseInt(RegExp.$2) : 0;
-  else if((!this.vendver && this.mz) || this.agent.indexOf('Camino')>0)
-    this.vendver = (/rv:([0-9\.]+)/.test(this.agent)) ? parseFloat(RegExp.$1) : 0;
-  else if(this.ie && window.RegExp)
-    this.vendver = (/msie\s+([0-9\.]+)/i.test(this.agent)) ? parseFloat(RegExp.$1) : 0;
-  else if(this.konq && window.RegExp)
-    this.vendver = (/khtml\/([0-9\.]+)/i.test(this.agent)) ? parseFloat(RegExp.$1) : 0;
-
-
-  // get real language out of safari's user agent
-  if(this.safari && (/;\s+([a-z]{2})-[a-z]{2}\)/i.test(this.agent)))
-    this.lang = RegExp.$1;
-
-  this.dhtml = ((this.ie4 && this.win) || this.ie5 || this.ie6 || this.ns4 || this.mz);
-  this.layers = this.ns4;  // (document.layers);
-  this.div = (this.ie4 || this.dom);
-  this.vml = (this.win && this.ie && this.dom && !this.opera);
-  this.linkborder = (this.ie || this.mz);
-  this.rollover = (this.ver>=4 || (this.ns && this.ver>=3));  // (document.images) ? true : false;
-  this.pngalpha = (this.mz || (this.opera && this.vendver>=6) || (this.ie && this.mac && this.vendver>=5) ||
-                   (this.ie && this.win && this.vendver>=5.5) || this.safari);
-  this.opacity = (this.mz || (this.ie && this.vendver>=5.5 && !this.opera) || (this.safari && this.vendver>=100));
-  this.cookies = navigator.cookieEnabled;
-  
-  // test for XMLHTTP support
-  this.xmlhttp_test = function()
-    {
-    var activeX_test = new Function("try{var o=new ActiveXObject('Microsoft.XMLHTTP');return true;}catch(err){return false;}");
-    this.xmlhttp = (window.XMLHttpRequest || (window.ActiveXObject && activeX_test())) ? true : false;
-    return this.xmlhttp;
+    if (this.opera && window.RegExp) {
+        this.vendver = (/opera(\s|\/)([0-9\.]+)/i.test(navigator.userAgent)) ? parseFloat(RegExp.$2) : -1;
+    } else if(!this.vendver && this.safari) {
+        this.vendver = (/(safari|applewebkit)\/([0-9]+)/i.test(this.agent)) ? parseInt(RegExp.$2) : 0;
+    } else if((!this.vendver && this.mz) || this.agent.indexOf('Camino')>0) {
+        this.vendver = (/rv:([0-9\.]+)/.test(this.agent)) ? parseFloat(RegExp.$1) : 0;
+    } else if(this.ie && window.RegExp) {
+        this.vendver = (/msie\s+([0-9\.]+)/i.test(this.agent)) ? parseFloat(RegExp.$1) : 0;
+    } else if(this.konq && window.RegExp) {
+        this.vendver = (/khtml\/([0-9\.]+)/i.test(this.agent)) ? parseFloat(RegExp.$1) : 0;
     }
-  }
+
+    // get real language out of safari's user agent
+    if(this.safari && (/;\s+([a-z]{2})-[a-z]{2}\)/i.test(this.agent))) {
+        this.lang = RegExp.$1;
+    }
+
+    this.dhtml = ((this.ie4 && this.win) || this.ie5 || this.ie6 || this.ns4 || this.mz);
+    this.vml = (this.win && this.ie && this.dom && !this.opera);
+    this.pngalpha = (this.mz || (this.opera && this.vendver>=6) || (this.ie && this.mac && this.vendver>=5) ||
+                    (this.ie && this.win && this.vendver>=5.5) || this.safari);
+    this.opacity = (this.mz || (this.ie && this.vendver>=5.5 && !this.opera) || (this.safari && this.vendver>=100));
+    this.cookies = navigator.cookieEnabled;
+  
+    // test for XMLHTTP support
+    this.xmlhttp_test = function()
+    {
+        var activeX_test = new Function("try{var o=new ActiveXObject('Microsoft.XMLHTTP');return true;}catch(err){return false;}");
+        this.xmlhttp = (window.XMLHttpRequest || (window.ActiveXObject && activeX_test())) ? true : false;
+        return this.xmlhttp;
+    }
+}
 
 
 // static functions for event handling
@@ -393,63 +386,28 @@ function rcube_layer(id, attributes)
 // By Cal Henderson <cal@iamcal.com>
 // http://code.iamcal.com/php/rfc822/
 function rcube_check_email(input, inline)
-  {
-  if (input && window.RegExp)
-    {
-    var no_ws_ctl    = "[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x7f]";
-    var alpha        = "[\\x41-\\x5a\\x61-\\x7a]";
-    var digit        = "[\\x30-\\x39]";
-    var cr        = "\\x0d";
-    var lf        = "\\x0a";
-    var crlf        = "(" + cr + lf + ")";
-
-    var obs_char    = "[\\x00-\\x09\\x0b\\x0c\\x0e-\\x7f]";
-    var obs_text    = "("+lf+"*"+cr+"*("+obs_char+lf+"*"+cr+"*)*)";
-    var text        = "([\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f]|"+obs_text+")";
-    var obs_qp        = "(\\x5c[\\x00-\\x7f])";
-    var quoted_pair    = "(\\x5c"+text+"|"+obs_qp+")";
-
-    var wsp        = "[\\x20\\x09]";
-    var obs_fws    = "("+wsp+"+("+crlf+wsp+"+)*)";
-    var fws        = "((("+wsp+"*"+crlf+")?"+wsp+"+)|"+obs_fws+")";
-    var ctext        = "("+no_ws_ctl+"|[\\x21-\\x27\\x2A-\\x5b\\x5d-\\x7e])";
-    var ccontent    = "("+ctext+"|"+quoted_pair+")";
-    var comment    = "(\\x28("+fws+"?"+ccontent+")*"+fws+"?\\x29)";
-    var cfws        = "(("+fws+"?"+comment+")*("+fws+"?"+comment+"|"+fws+"))";
-    var cfws        = fws+"*";
-
-    var atext        = "("+alpha+"|"+digit+"|[\\x21\\x23-\\x27\\x2a\\x2b\\x2d\\x2e\\x3d\\x3f\\x5e\\x5f\\x60\\x7b-\\x7e])";
-    var atom        = "("+cfws+"?"+atext+"+"+cfws+"?)";
-
-    var qtext        = "("+no_ws_ctl+"|[\\x21\\x23-\\x5b\\x5d-\\x7e])";
-    var qcontent    = "("+qtext+"|"+quoted_pair+")";
-    var quoted_string    = "("+cfws+"?\\x22("+fws+"?"+qcontent+")*"+fws+"?\\x22"+cfws+"?)";
-    var word        = "("+atom+"|"+quoted_string+")";
-
-    var obs_local_part    = "("+word+"(\\x2e"+word+")*)";
-    var obs_domain    = "("+atom+"(\\x2e"+atom+")*)";
-
-    var dot_atom_text    = "("+atext+"+(\\x2e"+atext+"+)*)";
-    var dot_atom    = "("+cfws+"?"+dot_atom_text+cfws+"?)";
-
-    var dtext        = "("+no_ws_ctl+"|[\\x21-\\x5a\\x5e-\\x7e])";
-    var dcontent    = "("+dtext+"|"+quoted_pair+")";
-    var domain_literal    = "("+cfws+"?\\x5b("+fws+"?"+dcontent+")*"+fws+"?\\x5d"+cfws+"?)";
-
-    var local_part    = "("+dot_atom+"|"+quoted_string+"|"+obs_local_part+")";
-    var domain        = "("+dot_atom+"|"+domain_literal+"|"+obs_domain+")";
-    var addr_spec    = "("+local_part+"\\x40"+domain+")";
-
-    var reg1 = inline ? new RegExp(addr_spec, 'i') : new RegExp('^'+addr_spec+'$', 'i');
-    return reg1.test(input) ? true : false;
+{
+    if (input && window.RegExp) {
+        var qtext = '[^\\x0d\\x22\\x5c\\x80-\\xff]';
+        var dtext = '[^\\x0d\\x5b-\\x5d\\x80-\\xff]';
+        var atom = '[^\\x00-\\x20\\x22\\x28\\x29\\x2c\\x2e\\x3a-\\x3c\\x3e\\x40\\x5b-\\x5d\\x7f-\\xff]+';
+        var quoted_pair = '\\x5c[\\x00-\\x7f]';
+        var domain_literal = '\\x5b('+dtext+'|'+quoted_pair+')*\\x5d';
+        var quoted_string = '\\x22('+qtext+'|'+quoted_pair+')*\\x22';
+        var sub_domain = '('+atom+'|'+domain_literal+')';
+        var word = '('+atom+'|'+quoted_string+')';
+        var domain = sub_domain+'(\\x2e'+sub_domain+')*';
+        var local_part = word+'(\\x2e'+word+')*';
+        var addr_spec = local_part+'\\x40'+domain;
+        var reg1 = inline ? new RegExp('(^|<)'+addr_spec+'(>|$)', 'i') : new RegExp('^'+addr_spec+'$', 'i');
+        return reg1.test(input) ? true : false;
     }
-  return false;
-  }
+    return false;
+}
   
-
 // find a value in a specific array and returns the index
 function find_in_array()
-  {
+{
   var args = find_in_array.arguments;
   if(!args.length) return -1;
 
@@ -622,5 +580,13 @@ function rcube_console()
 
 var bw = new roundcube_browser();
 
-if (!window.console)
-  console = new rcube_console();
+if (!window.console) {
+    console = new rcube_console();
+}
+
+// Add escape() method to RegExp object
+// http://dev.rubyonrails.org/changeset/7271
+RegExp.escape = function(str)
+{
+    return String(str).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
+}
