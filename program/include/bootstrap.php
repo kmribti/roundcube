@@ -61,6 +61,8 @@ if (!ini_get('safe_mode')) {
 
 /**
  * Use PHP5 autoload for dynamic class loading
+ * 
+ * @todo Make Zend, PEAR etc play with this
  */
 function __autoload($classname) {
     $filename = preg_replace(
@@ -68,7 +70,6 @@ function __autoload($classname) {
         array("MDB2/\\1", "Mail/\\1", "html"),
         $classname
     );
-
     include_once $filename. '.php';
 }
 
@@ -91,6 +92,3 @@ PEAR::setErrorHandling(PEAR_ERROR_CALLBACK, 'rcube_pear_error');
 // create registry and set some global properties
 $registry = rcube_registry::get_instance();
 $registry->set('mbstring_loaded', null, 'core');
-
-
-?>
