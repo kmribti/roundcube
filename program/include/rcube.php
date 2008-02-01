@@ -17,7 +17,7 @@
 
  $Id: main.inc 567 2007-05-17 18:41:24Z thomasb $
 
-*/
+ */
 
 
 require_once 'lib/des.inc';
@@ -40,8 +40,7 @@ class rcube {
     const INPUT_GET  = 0x0101;
     const INPUT_POST = 0x0102;
     const INPUT_GPC  = 0x0103;
-    
-    
+
     /**
      * register session and connect to server
      *
@@ -50,7 +49,7 @@ class rcube {
      * @param  string $task
      * @return void
      */
-    static function startup($task = 'mail') {
+    public static function startup($task = 'mail') {
         $registry = rcube_registry::get_instance();
         $registry->set('task', $task, 'core');
 
@@ -62,14 +61,17 @@ class rcube {
             ini_set('session.gc_maxlifetime', ($CONFIG['session_lifetime']) * 120);
         }
 
-        $DB = new rcube_db($CONFIG['db_dsnw'], $CONFIG['db_dsnr'], $CONFIG['db_persistent']);
+        $dbclass = 'rcube_' . (empty($CONFIG['db_backend']) ? 'db' : $CONFIG['db_backend']);
+        require_once 'include/'.$dbclass.'.inc';
+
+        $DB = new $dbclass($CONFIG['db_dsnw'], $CONFIG['db_dsnr'], $CONFIG['db_persistent']);
         $DB->sqlite_initials = INSTALL_PATH . 'SQL/sqlite.initial.sql';
         $DB->db_connect('w');
 
         $registry->set('DB', $DB, 'core');
 
         // use database for storing session data
-        include_once 'include/session.inc';
+        require_once 'include/session.inc';
 
         // init session
         session_start();
@@ -86,11 +88,15 @@ class rcube {
         $user_lang = rcube::language_prop($_SESSION['user_lang']);
         $registry->set('user_lang', $user_lang, 'core');
 
+        // create user object
+        $USER = new rcube_user($_SESSION['user_id']);
+        $registry->set('USER', $USER, 'core');
+
         // overwrite config with user preferences
         if (is_array($_SESSION['user_prefs'])) {
-            foreach ($_SESSION['user_prefs'] as $key => $prop)
+            foreach ($_SESSION['user_prefs'] as $key => $prop) {
                 $registry->set($key, $prop, 'config');
-            
+            }
             $CONFIG = array_merge($CONFIG, $_SESSION['user_prefs']);
         }
         $registry->set('CONFIG', $CONFIG, 'core');
@@ -110,24 +116,21 @@ class rcube {
         // set localization
         if ($CONFIG['locale_string']) {
             setlocale(LC_ALL, $CONFIG['locale_string']);
-        }
-        else if ($user_lang) {
+        } else if ($user_lang) {
             setlocale(LC_ALL, $user_lang);
         }
-        
+
         register_shutdown_function(array('rcube', 'shutdown'));
     }
-
 
     /**
      * Load roundcube configuration array
      *
      * @return array Named configuration parameters
      */
-    static function load_config()
-    {
+    private static function load_config() {
         // load config file (throw php error if fails)
-        include_once INSTALL_PATH . 'config/main.inc.php';
+        require_once INSTALL_PATH . 'config/main.inc.php';
         $conf = is_array($rcmail_config) ? $rcmail_config : array();
 
         // load host-specific configuration
@@ -136,13 +139,12 @@ class rcube {
         $conf['skin_path'] = $conf['skin_path'] ? unslashify($conf['skin_path']) : 'skins/default';
 
         // load db conf
-        include_once INSTALL_PATH . 'config/db.inc.php';
+        require_once INSTALL_PATH.'config/db.inc.php';
         $conf = array_merge($conf, $rcmail_config);
 
         if (empty($conf['log_dir'])) {
-            $conf['log_dir'] = INSTALL_PATH . 'logs';
-        }
-        else {
+            $conf['log_dir'] = INSTALL_PATH.'logs';
+        } else {
             $conf['log_dir'] = unslashify($conf['log_dir']);
         }
         // set PHP error logging according to config
@@ -152,44 +154,41 @@ class rcube {
         }
         if ($conf['debug_level'] & 4) {
             ini_set('display_errors', 1);
-        }
-        else {
+        } else {
             ini_set('display_errors', 0);
         }
-        
+
         // copy all config parameters to registry
         $registry = rcube_registry::get_instance();
-        foreach ($conf as $key => $prop)
+        foreach ($conf as $key => $prop) {
             $registry->set($key, $prop, 'config');
-        
+        }
+
         return $conf;
     }
-
 
     /**
      * Load a host-specific config file if configured
      * This will merge the host specific configuration with the given one
      *
-     * @param array Global configuration parameters
+     * @param array global configuration parameters
+     * @return array global configuration parameters
      */
-    static function load_host_config($config)
-    {
+    private static function load_host_config($config = array()) {
         $fname = null;
 
         if (is_array($config['include_host_config'])) {
             $fname = $config['include_host_config'][$_SERVER['HTTP_HOST']];
-        }
-        else if (!empty($config['include_host_config'])) {
+        } else if (!empty($config['include_host_config'])) {
             $fname = preg_replace('/[^a-z0-9\.\-_]/i', '', $_SERVER['HTTP_HOST']) . '.inc.php';
         }
-        if ($fname && is_file(INSTALL_PATH . 'config/' . $fname)) {
-            include(INSTALL_PATH . 'config/' . $fname);
+
+        if ($fname && is_file(INSTALL_PATH.'config/'.$fname)) {
+            require_once INSTALL_PATH.'config/' . $fname;
             $config = array_merge($config, $rcmail_config);
         }
-        
         return $config;
     }
-
 
     /**
      * Create unique authorization hash
@@ -198,17 +197,16 @@ class rcube {
      * @param int Timestamp
      * @return string The generated auth hash
      */
-    static function auth_hash($sess_id, $ts)
-    {
+    private static function auth_hash($sess_id = null, $ts = null) {
         $registry = rcube_registry::get_instance();
         $CONFIG   = $registry->get_all('config');
 
         $auth_string = sprintf(
                             'rcmail*sess%sR%s*Chk:%s;%s',
-                            $sess_id,
-                            $ts,
-                            $CONFIG['ip_check'] ? $_SERVER['REMOTE_ADDR'] : '***.***.***.***',
-                            $_SERVER['HTTP_USER_AGENT']
+        $sess_id,
+        $ts,
+        $CONFIG['ip_check'] ? $_SERVER['REMOTE_ADDR'] : '***.***.***.***',
+        $_SERVER['HTTP_USER_AGENT']
         );
 
         if (function_exists('sha1')) {
@@ -217,14 +215,12 @@ class rcube {
         return md5($auth_string);
     }
 
-
     /**
      * Check the auth hash sent by the client against the local session credentials
      *
      * @return boolean True if valid, False if not
      */
-    static function authenticate_session()
-    {
+    public static function authenticate_session() {
         $registry       = rcube_registry::get_instance();
         $CONFIG         = $registry->get_all('config');
         $SESS_CLIENT_IP = $registry->get('SESS_CLIENT_IP', 'core');
@@ -234,7 +230,7 @@ class rcube {
         if ($CONFIG['double_auth']) {
             $now = time();
             $valid = ($_COOKIE['sessauth'] == self::auth_hash(session_id(), $_SESSION['auth_time']) ||
-                  $_COOKIE['sessauth'] == self::auth_hash(session_id(), $_SESSION['last_auth']));
+            $_COOKIE['sessauth'] == self::auth_hash(session_id(), $_SESSION['last_auth']));
 
             // renew auth cookie every 5 minutes (only for GET requests)
             if (!$valid || ($_SERVER['REQUEST_METHOD']!='POST' && $now-$_SESSION['auth_time'] > 300)) {
@@ -242,8 +238,7 @@ class rcube {
                 $_SESSION['auth_time'] = $now;
                 setcookie('sessauth', self::auth_hash(session_id(), $now));
             }
-        }
-        else {
+        } else {
             $valid = $CONFIG['ip_check'] ? $_SERVER['REMOTE_ADDR'] == $SESS_CLIENT_IP : true;
         }
         // check session filetime
@@ -261,8 +256,7 @@ class rcube {
      * @return void
      * @uses   rcube_registry::get_instance()
      */
-    static function imap_init($connect=FALSE)
-    {
+    public static function imap_init($connect=FALSE) {
         $registry = rcube_registry::get_instance();
         $CONFIG   = $registry->get_all('config');
         $DB       = $registry->get('DB', 'core');
@@ -276,11 +270,11 @@ class rcube {
         // connect with stored session data
         if ($connect) {
             $conn = $IMAP->connect(
-                $_SESSION['imap_host'],
-                $_SESSION['username'],
-                self::decrypt_passwd($_SESSION['password']),
-                $_SESSION['imap_port'],
-                $_SESSION['imap_ssl']
+            $_SESSION['imap_host'],
+            $_SESSION['username'],
+            self::decrypt_passwd($_SESSION['password']),
+            $_SESSION['imap_port'],
+            $_SESSION['imap_ssl']
             );
             $registry->set('IMAP', $IMAP, 'core');
             if ($conn === false) {
@@ -297,7 +291,7 @@ class rcube {
         if (isset($CONFIG['pagesize'])) {
             $IMAP->set_pagesize($CONFIG['pagesize']);
         }
-        
+
         $registry->set('IMAP', $IMAP, 'core');
     }
 
@@ -305,8 +299,7 @@ class rcube {
      * Set root dir and last stored mailbox
      * This must be done AFTER connecting to the server!
      */
-    static function set_imap_prop()
-    {
+    public static function set_imap_prop() {
         $registry         = rcube_registry::get_instance();
         $IMAP             = $registry->get('IMAP', 'core');
         $imap_root        = $registry->get('imap_root', 'config');
@@ -330,17 +323,22 @@ class rcube {
 
     /**
      * Do these things on script shutdown
+     * @return void
      */
-    static function shutdown()
-    {
+    //TODO check if this needs to be public
+    public static function shutdown() {
         $registry = rcube_registry::get_instance();
         $IMAP     = $registry->get('IMAP', 'core');
+        $CONTACTS = $registry->get('CONTACTS', 'core');
 
         if (is_object($IMAP)) {
             $IMAP->close();
             $IMAP->write_cache();
         }
 
+        if (is_object($CONTACTS)) {
+            $CONTACTS->close();
+        }
         // before closing the database connection, write session data
         session_write_close();
     }
@@ -348,27 +346,22 @@ class rcube {
     /**
      * Destroy session data and remove cookie
      */
-    static function kill_session()
-    {
-        // save user preferences
-        $a_user_prefs = $_SESSION['user_prefs'];
-        if (!is_array($a_user_prefs)) {
-            $a_user_prefs = array();
-        }
+    public static function kill_session() {
+        $registry = rcube_registry::get_instance();
+        $USER = $registry->get('USRE', 'core');
         if (
-            (
-                isset($_SESSION['sort_col'])
-                && $_SESSION['sort_col'] != $a_user_prefs['message_sort_col']
-            )
-            ||
-            (
-                isset($_SESSION['sort_order'])
-                && $_SESSION['sort_order'] != $a_user_prefs['message_sort_order']
-            )
+        (
+        isset($_SESSION['sort_col'])
+        && $_SESSION['sort_col'] != $a_user_prefs['message_sort_col']
+        )
+        ||
+        (
+        isset($_SESSION['sort_order'])
+        && $_SESSION['sort_order'] != $a_user_prefs['message_sort_order']
+        )
         ) {
-            $a_user_prefs['message_sort_col'] = $_SESSION['sort_col'];
-            $a_user_prefs['message_sort_order'] = $_SESSION['sort_order'];
-            self::save_user_prefs($a_user_prefs);
+            $a_user_prefs = array('message_sort_col' => $_SESSION['sort_col'], 'message_sort_order' => $_SESSION['sort_order']);
+            $USER->save_prefs($a_user_prefs);
         }
 
         $_SESSION = array(
@@ -377,9 +370,9 @@ class rcube {
                         'temp' => true
         );
         setcookie('sessauth', '-del-', time()-60);
+        $USER->reset();
         session_destroy();
     }
-
 
     /**
      * return correct name for a specific database table
@@ -388,8 +381,7 @@ class rcube {
      * @return string Translated table name
      * @uses   rcube_registry::get_instance()
      */
-    static function get_table_name($table)
-    {
+    public static function get_table_name($table) {
         $registry = rcube_registry::get_instance();
         $CONFIG   = $registry->get_all('config');
 
@@ -402,7 +394,6 @@ class rcube {
         return $table;
     }
 
-
     /**
      * Return correct name for a specific database sequence
      * (used for Postres only)
@@ -410,14 +401,13 @@ class rcube {
      * @param string Secuence name
      * @return string Translated sequence name
      */
-    static function get_sequence_name($sequence)
-    {
+    public static function get_sequence_name($sequence) {
         $registry = rcube_registry::get_instance();
 
         if ($seq = $registry->get('db_sequence_' . $sequence, 'config')) {
             return $seq;
         }
-        
+
         // return table name if not configured
         return $table;
     }
@@ -428,8 +418,7 @@ class rcube {
      * This will instantiate a rcube_template object and set
      * environment vars according to the current session and configuration
      */
-    static function load_gui()
-    {
+    public static function load_gui() {
         $registry  = rcube_registry::get_instance();
         $config    = $registry->get_all('config');
 
@@ -448,55 +437,55 @@ class rcube {
 
         // add some basic label to client
         $OUTPUT->add_label('loading', 'movingmessage');
-        
+
         $registry->set('OUTPUT', $OUTPUT, 'core');
-        
+
         // set locale setting
         self::set_locale($registry->get('user_lang', 'core'));
     }
-    
-    
+
+
     /**
      * Create an output object for JSON responses
      * and register it to the global registry
      */
-    static function init_json()
-    {
+    public static function init_json() {
         $registry  = rcube_registry::get_instance();
-        
+
         $OUTPUT = new rcube_json_output();
         $registry->set('OUTPUT', $OUTPUT, 'core');
-        
+
         // set locale setting
         self::set_locale($registry->get('user_lang', 'core'));
     }
 
 
-    // set localization charset based on the given language
-    static function set_locale($lang)
-    {
+    /**
+     * Set localization charset based on the given language.
+     * This also creates a global property for mbstring usage.
+     */
+    //TODO the variable $lang is not used
+    public static function set_locale($lang) {
         $registry        = rcube_registry::get_instance();
         $charset         = $registry->get('charset', 'config', RCMAIL_CHARSET);
         $OUTPUT          = $registry->get('OUTPUT', 'core');
         $MBSTRING        = $registry->get('MBSTRING', 'core');
         $mbstring_loaded = $registry->get('mbstring_loaded', 'core');
-        
+
         // settings for mbstring module (by Tadashi Jokagi)
         if (is_null($mbstring_loaded)) {
-            $MBSTRING = $mbstring_loaded = extension_loaded("mbstring");
-        }
-        else {
+            $MBSTRING = $mbstring_loaded = extension_loaded('mbstring');
+        } else {
             $MBSTRING = $mbstring_loaded = FALSE;
         }
 
         if ($MBSTRING) {
             mb_internal_encoding($charset);
         }
-        
+
         $registry->set('MBSTRING', $MBSTRING, 'core');
         $registry->set('mbstring_loaded', $mbstring_loaded, 'core');
         $registry->set('OUTPUT_CHARSET', $charset, 'core');
-
         $OUTPUT->set_charset($charset);
     }
 
@@ -507,16 +496,14 @@ class rcube {
      * @link   ./index.php
      * @todo   Remove reference to $_POST superglobal.
      */
-    static function autoselect_host()
-    {
+    public static function autoselect_host() {
         $registry = rcube_registry::get_instance();
         $default_host = $registry->get('default_host', 'config');
 
         $host = '';
         if (isset($_POST['_host']) && empty($_POST['_host']) === false) {
             $host .= rcube::get_input_value('_host', rcube::INPUT_POST);
-        }
-        else {
+        } else {
             $host .= $default_host;
         }
 
@@ -549,14 +536,14 @@ class rcube {
      * @param string IMAP host
      * @return boolean True on success, False on failure
      */
-    static function login($user, $pass, $host=null)
-    {
+    public static function login($user = null, $pass = null, $host = null) {
         $user_id = null;
 
         $registry  = rcube_registry::get_instance();
         $CONFIG    = $registry->get_all('config');
         $IMAP      = $registry->get('IMAP', 'core');
         $DB        = $registry->get('DB', 'core');
+        $USER        = $registry->get('USER', 'core');
         $user_lang = $registry->get('user_lang', 'core');
 
         if (is_null($host) === true) {
@@ -577,8 +564,7 @@ class rcube {
             if (!$allowed) {
                 return false;
             }
-        }
-        else if (!empty($CONFIG['default_host']) && $host != $CONFIG['default_host']) {
+        } else if (!empty($CONFIG['default_host']) && $host != $CONFIG['default_host']) {
             return false;
         }
 
@@ -588,8 +574,7 @@ class rcube {
             $host = $a_host['host'];
             $imap_ssl = (isset($a_host['scheme']) && in_array($a_host['scheme'], array('ssl','imaps','tls'))) ? true : false;
             $imap_port = isset($a_host['port']) ? $a_host['port'] : ($imap_ssl ? 993 : $CONFIG['default_port']);
-        }
-        else {
+        } else {
             $imap_port = $CONFIG['default_port'];
         }
 
@@ -612,69 +597,66 @@ class rcube {
 
         // try to resolve email address from virtuser table
         if (!empty($CONFIG['virtuser_file']) && strstr($user, '@')) {
-            $user = rcube::email2user($user);
+            $user = rcube_user::email2user($user);
         }
-
+        // lowercase username if it's an e-mail address (#1484473)
+        if (strpos($user, '@')) {
+            $user = strtolower($user);
+        }
         // query if user already registered
-        $_query = "SELECT user_id, username, language, preferences";
-        $_query.= " FROM " . self::get_table_name('users');
-        $_query.= " WHERE mail_host=?";
-        $_query.= " AND (username=? OR alias=?)";
-
-        $sql_result = $DB->query(
-                            $_query,
-                            $host,
-                            $user,
-                            $user
-        );
-        if ($DB->db_error === true) {
-            return FALSE;
+        if ($existing = rcube_user::query($user, $host)) {
+            $USER = $existing;
         }
         // user already registered -> overwrite username
-        if ($sql_arr = $DB->fetch_assoc($sql_result)) {
-            $user_id = $sql_arr['user_id'];
-            $user    = $sql_arr['username'];
+        if ($USER->ID) {
+            $user_id = $USER->ID;
+            $user = $USER->data['username'];
         }
-
         // exit if IMAP login failed
         if (!($imap_login  = $IMAP->connect($host, $user, $pass, $imap_port, $imap_ssl))) {
-            return FALSE;
-        }
-        // user already registered
-        if ($user_id && !empty($sql_arr)) {
-            // get user prefs
-            if (strlen($sql_arr['preferences'])) {
-                $user_prefs = unserialize($sql_arr['preferences']);
-                $_SESSION['user_prefs'] = $user_prefs;
-                array_merge($CONFIG, $user_prefs);
-            }
-
-
-            // set user specific language
-            if (strlen($sql_arr['language'])) {
-                $user_lang = $_SESSION['user_lang'] = $sql_arr['language'];
-            }
-            // update user's record
-            $_query = "UPDATE " . self::get_table_name('users');
-            $_query.= " SET last_login=" . $DB->now();
-            $_query.= " WHERE user_id=?";
-            $DB->query($_query, $user_id);
-        }
-        // create new system user
-        else if ($CONFIG['auto_create_user']) {
-            $user_id = self::create_user($user, $host);
-        }
-
-        //tfk_debug('User id: ' . $user_id);
-
-        if (empty($user_id) === true) {
             return false;
         }
-        $_SESSION['user_id']    = $user_id;
+        // user already registered
+        if ($USER->ID) {
+            // get user prefs
+            $_SESSION['user_prefs'] = $USER->get_prefs();
+            array_merge($CONFIG, $_SESSION['user_prefs']);
+            // set user specific language
+            if (!empty($USER->data['language'])) {
+                $sess_user_lang = $_SESSION['user_lang'] = $USER->data['language'];
+            }
+            // update user's record
+            $USER->touch();
+        } else if ($CONFIG['auto_create_user']) {
+            // create new system user
+            if ($created = rcube_user::create($user, $host)) {
+                $USER = $created;
+                // get existing mailboxes
+                $a_mailboxes = $IMAP->list_mailboxes();
+            }
+        } else {
+            rcube_error::raise(array(
+					'code' => 600,
+					'type' => 'php',
+					'file' => "config/main.inc.php",
+					'message' => "Acces denied for new user $user. 'auto_create_user' is disabled"
+                    ),
+                    true,
+                    false
+            );
+        }
+        //tfk_debug('User id: ' . $user_id);
+
+        // login false if no user id
+        if (empty($USER->ID) === true) {
+            return false;
+        }
+
+        $_SESSION['user_id']    = $USER->ID;
+        $_SESSION['username']   = $USER->data['username'];
         $_SESSION['imap_host']  = $host;
         $_SESSION['imap_port']  = $imap_port;
         $_SESSION['imap_ssl']   = $imap_ssl;
-        $_SESSION['username']   = $user;
         $_SESSION['user_lang']  = $user_lang;
         $_SESSION['password']   = self::encrypt_passwd($pass);
         $_SESSION['login_time'] = mktime();
@@ -687,19 +669,16 @@ class rcube {
          * @author Brett Patterson <brett@bpatterson.net>
          * @author Till Klampaeckel <till@php.net>
          */
-        if(is_array($CONFIG['smtp_server']) === true) {
+        if (is_array($CONFIG['smtp_server']) === true) {
             if (isset($CONFIG['smtp_server'][$host]) === true) {
                 $_SESSION['smtp_server'] = $CONFIG['smtp_server'][$host];
-            }
-            else {
+            } else {
                 $_SESSION['smtp_server'] = 'phpMail';
             }
-        }
-        else {
+        } else {
             if (empty($CONFIG['smtp_server']) === false) {
                 $_SESSION['smtp_server'] = $CONFIG['smtp_server'];
-            }
-            else {
+            } else {
                 $_SESSION['smtp_server'] = 'phpMail';
             }
         }
@@ -707,11 +686,12 @@ class rcube {
         // force reloading complete list of subscribed mailboxes
         self::set_imap_prop();
         $IMAP->clear_cache('mailboxes');
-        $IMAP->create_default_folders();
 
-        return TRUE;
+        if ($CONFIG['create_default_folders']) {
+            $IMAP->create_default_folders();
+        }
+        return true;
     }
-
 
     /**
      * Create new entry in users and identities table
@@ -720,6 +700,7 @@ class rcube {
      * @param string IMAP host
      * @return mixed New user ID or False on failure
      */
+    //TODO check this with rcube_user function
     static function create_user($user, $host)
     {
         $registry = rcube_registry::get_instance();
@@ -741,11 +722,11 @@ class rcube {
         $_query.= " VALUES (" . $DB->now() . ", " . $DB->now() . ", %s, %s, %s, %s)";
 
         $_query = sprintf(
-                    $_query,
-                    $DB->quote(strip_newlines($user)),
-                    $DB->quote(strip_newlines($host)),
-                    $DB->quote(strip_newlines($user_email)),
-                    $DB->quote($_SESSION['user_lang'])
+        $_query,
+        $DB->quote(strip_newlines($user)),
+        $DB->quote(strip_newlines($host)),
+        $DB->quote(strip_newlines($user_email)),
+        $DB->quote($_SESSION['user_lang'])
         );
         rcube::tfk_debug($_query);
 
@@ -762,19 +743,19 @@ class rcube {
 
             // try to resolve the e-mail address from the virtuser table
             if (
-                !empty($CONFIG['virtuser_query'])
-                && ($sql_result = $DB->query(preg_replace('/%u/', $user, $CONFIG['virtuser_query'])))
-                && ($DB->num_rows()>0)
+            !empty($CONFIG['virtuser_query'])
+            && ($sql_result = $DB->query(preg_replace('/%u/', $user, $CONFIG['virtuser_query'])))
+            && ($DB->num_rows()>0)
             ) {
                 while ($sql_arr = $DB->fetch_array($sql_result)) {
                     $_query = "INSERT INTO " . self::get_table_name('identities');
                     $_query.= " (user_id, del, standard, name, email)";
                     $_query.= " VALUES (?, 0, 1, ?, ?)";
                     $DB->query(
-                            $_query,
-                            $user_id,
-                            strip_newlines($user_name),
-                            preg_replace('/^@/', $user . '@', $sql_arr[0])
+                    $_query,
+                    $user_id,
+                    strip_newlines($user_name),
+                    preg_replace('/^@/', $user . '@', $sql_arr[0])
                     );
                 }
             }
@@ -784,10 +765,10 @@ class rcube {
                 $_query.= " (user_id, del, standard, name, email)";
                 $_query.= " VALUES (?, 0, 1, ?, ?)";
                 $DB->query(
-                        $_query,
-                        $user_id,
-                        strip_newlines($user_name),
-                        strip_newlines($user_email)
+                $_query,
+                $user_id,
+                strip_newlines($user_name),
+                strip_newlines($user_email)
                 );
             }
 
@@ -796,20 +777,19 @@ class rcube {
         }
         else {
             rcube_error::raise(
-                array(
+            array(
                     'code' => 500,
                     'type' => 'php',
                     'line' => __LINE__,
                     'file' => __FILE__,
                     'message' => "Failed to create new user"
-                ),
-                TRUE,
-                FALSE
-            );
+                    ),
+                    TRUE,
+                    FALSE
+                    );
         }
         return $user_id;
     }
-
 
     /**
      * Load virtuser table in array
@@ -828,10 +808,9 @@ class rcube {
         return $a_lines;
     }
 
-
     /**
      * Find matches of the given pattern in virtuser table
-     * 
+     *
      * @param string Regular expression to search for
      * @return array Matching entries
      */
@@ -855,13 +834,13 @@ class rcube {
         return $result;
     }
 
-
     /**
      * Resolve username using a virtuser table
      *
      * @param string E-mail address to resolve
      * @return string Resolved IMAP username
      */
+    //TODO check this with rcube_user function
     static function email2user($email)
     {
         $user = $email;
@@ -878,13 +857,13 @@ class rcube {
         return $user;
     }
 
-
     /**
      * Resolve e-mail address from virtuser table
      *
      * @param string User name
      * @return string Resolved e-mail address
      */
+    //TODO check this with rcube_user function
     static function user2email($user)
     {
         $email = "";
@@ -901,13 +880,13 @@ class rcube {
         return $email;
     }
 
-
     /**
      * Write the given user prefs to the user's record
      *
      * @param mixed User prefs to save
      * @return boolean True on success, False on failure
      */
+    //TODO check this with rcube_user function
     static function save_user_prefs($a_user_prefs)
     {
         $registry       = rcube_registry::get_instance();
@@ -920,22 +899,21 @@ class rcube {
         $_query.= " language=?";
         $_query.= " WHERE user_id=?";
         $DB->query(
-            $_query,
-            serialize($a_user_prefs),
-            $user_lang,
-            $_SESSION['user_id']
+        $_query,
+        serialize($a_user_prefs),
+        $user_lang,
+        $_SESSION['user_id']
         );
 
         if ($DB->affected_rows()) {
             $_SESSION['user_prefs'] = $a_user_prefs;
             foreach ($a_user_prefs as $key => $value)
-                $registry->set($key, $value, 'config');
+            $registry->set($key, $value, 'config');
             return true;
         }
 
         return false;
     }
-
 
     /**
      * Overwrite action variable
@@ -949,7 +927,6 @@ class rcube {
         $GLOBALS['_action'] = $action;
         $OUTPUT->set_env('action', $action);
     }
-
 
     /**
      * Compose an URL for a specific action
@@ -979,7 +956,6 @@ class rcube {
         return $base . ($action ? '&_action='.$action : '') . $qstring;
     }
 
-
     /**
      * Encrypt IMAP password using DES encryption
      *
@@ -1004,7 +980,6 @@ class rcube {
         return preg_replace('/\x00/', '', $pass);
     }
 
-
     /**
      * Return a 24 byte key for the DES encryption
      *
@@ -1027,7 +1002,6 @@ class rcube {
         return $key;
     }
 
-
     /**
      * Garbage collector function for temp files.
      * Remove temp files older than two days
@@ -1044,10 +1018,10 @@ class rcube {
         }
         while (($fname = readdir($dir)) !== false) {
             if ($fname{0} == '.')
-                continue;
+            continue;
 
             if (filemtime($tmp.'/'.$fname) < $expire)
-                @unlink($tmp.'/'.$fname);
+            @unlink($tmp.'/'.$fname);
         }
         closedir($dir);
     }
@@ -1124,8 +1098,8 @@ class rcube {
 
         // allow the following attributes to be added to the <table> tag
         $attrib_str = rcube::create_attrib_string(
-                        $attrib,
-                        array(
+        $attrib,
+        array(
                             'style',
                             'class',
                             'id',
@@ -1133,79 +1107,79 @@ class rcube {
                             'cellspacing',
                             'border',
                             'summary'
-                        )
-        );
-        $table = '<table' . $attrib_str . ">\n";
+                            )
+                            );
+                            $table = '<table' . $attrib_str . ">\n";
 
-        // add table title
-        $table .= "<thead><tr>\n";
+                            // add table title
+                            $table .= "<thead><tr>\n";
 
-        foreach ($a_show_cols as $col) {
-            $table .= '<td class="'.$col.'">' . Q(rcube::gettext($col)) . "</td>\n";
-        }
-        $table .= "</tr></thead>\n<tbody>\n";
+                            foreach ($a_show_cols as $col) {
+                                $table .= '<td class="'.$col.'">' . Q(rcube::gettext($col)) . "</td>\n";
+                            }
+                            $table .= "</tr></thead>\n<tbody>\n";
 
-        $c = 0;
-        if (!is_array($table_data)) {
-            while ($table_data && ($sql_arr = $DB->fetch_assoc($table_data))) {
-                $zebra_class = $c%2 ? 'even' : 'odd';
+                            $c = 0;
+                            if (!is_array($table_data)) {
+                                while ($table_data && ($sql_arr = $DB->fetch_assoc($table_data))) {
+                                    $zebra_class = $c%2 ? 'even' : 'odd';
 
-                $table .= sprintf(
+                                    $table .= sprintf(
                             '<tr id="rcmrow%d" class="contact '.$zebra_class.'">'."\n",
-                            $sql_arr[$id_col]
-                );
+                                    $sql_arr[$id_col]
+                                    );
 
-                // format each col
-                foreach ($a_show_cols as $col) {
-                    $cont = Q($sql_arr[$col]);
-                    $table .= '<td class="'.$col.'">' . $cont . "</td>\n";
-                }
+                                    // format each col
+                                    foreach ($a_show_cols as $col) {
+                                        $cont = Q($sql_arr[$col]);
+                                        $table .= '<td class="'.$col.'">' . $cont . "</td>\n";
+                                    }
 
-                $table .= "</tr>\n";
-                $c++;
-            }
-        }
-        else {
-            foreach ($table_data as $row_data) {
-                $zebra_class = $c%2 ? 'even' : 'odd';
+                                    $table .= "</tr>\n";
+                                    $c++;
+                                }
+                            }
+                            else {
+                                foreach ($table_data as $row_data) {
+                                    $zebra_class = $c%2 ? 'even' : 'odd';
 
-                $table .= sprintf(
+                                    $table .= sprintf(
                             '<tr id="rcmrow%d" class="contact '.$zebra_class.'">'."\n",
-                            $row_data[$id_col]
-                );
+                                    $row_data[$id_col]
+                                    );
 
-                // format each col
-                foreach ($a_show_cols as $col) {
-                    $cont = $row_data[$col];
-                    if (strstr($cont, '<roundcube')) {
-                        if (is_null($OUTPUT) === true) {
-                            $OUTPUT = $registry->get('OUTPUT','core');
-                        }
-                        // parse tags/conditions
-                        $cont = $OUTPUT->just_parse($cont);
-                        //var_dump($cont); exit;
-                    }
-                    else {
-                        $cont = Q($row_data[$col]);
-                    }
-                    $table .= '<td class="' . $col . '">' . $cont . "</td>\n";
-                }
+                                    // format each col
+                                    foreach ($a_show_cols as $col) {
+                                        $cont = $row_data[$col];
+                                        if (strstr($cont, '<roundcube')) {
+                                            if (is_null($OUTPUT) === true) {
+                                                $OUTPUT = $registry->get('OUTPUT','core');
+                                            }
+                                            // parse tags/conditions
+                                            $cont = $OUTPUT->just_parse($cont);
+                                            //var_dump($cont); exit;
+                                        }
+                                        else {
+                                            $cont = Q($row_data[$col]);
+                                        }
+                                        $table .= '<td class="' . $col . '">' . $cont . "</td>\n";
+                                    }
 
-                $table .= "</tr>\n";
-                $c++;
-            }
-        }
+                                    $table .= "</tr>\n";
+                                    $c++;
+                                }
+                            }
 
-        // complete message table
-        $table .= "</tbody></table>\n";
+                            // complete message table
+                            $table .= "</tbody></table>\n";
 
-        return $table;
+                            return $table;
     }
 
 
     /**
      * Create an edit field for inclusion on a form
-     * 
+     *
      * @param string col field name
      * @param string value field value
      * @param array attrib HTML element attributes for field
@@ -1302,39 +1276,39 @@ class rcube {
         $now_date = getdate($now);
 
         $today_limit = mktime(
-                        0, 0, 0,
-                        $now_date['mon'],
-                        $now_date['mday'],
-                        $now_date['year']
+        0, 0, 0,
+        $now_date['mon'],
+        $now_date['mday'],
+        $now_date['year']
         );
         $week_limit  = mktime(
-                        0, 0, 0,
-                        $now_date['mon'],
-                        $now_date['mday']-6,
-                        $now_date['year']
+        0, 0, 0,
+        $now_date['mon'],
+        $now_date['mday']-6,
+        $now_date['year']
         );
 
         // define date format depending on current time
         if (
-            $CONFIG['prettydate']
-            && !$format
-            && $timestamp > $today_limit
-            && $timestamp < $now
+        $CONFIG['prettydate']
+        && !$format
+        && $timestamp > $today_limit
+        && $timestamp < $now
         ) {
             return sprintf(
                     '%s %s',
-                    rcube::gettext('today'),
-                    date(
-                        $CONFIG['date_today'] ? $CONFIG['date_today'] : 'H:i',
-                        $timestamp
-                    )
+            rcube::gettext('today'),
+            date(
+            $CONFIG['date_today'] ? $CONFIG['date_today'] : 'H:i',
+            $timestamp
+            )
             );
         }
         elseif (
-            $CONFIG['prettydate']
-            && !$format
-            && $timestamp > $week_limit
-            && $timestamp < $now
+        $CONFIG['prettydate']
+        && !$format
+        && $timestamp > $week_limit
+        && $timestamp < $now
         ) {
             $format = $CONFIG['date_short'] ? $CONFIG['date_short'] : 'D H:i';
         }
@@ -1352,19 +1326,19 @@ class rcube {
             // write char "as-is"
             if ($format{$i}==' ' || $format{$i-1}=='\\') {
                 $out .= $format{$i};
-            // weekday (short)
+                // weekday (short)
             }
             elseif ($format{$i}=='D') {
                 $out .= rcube::gettext(strtolower(date('D', $timestamp)));
-            // weekday long
+                // weekday long
             }
             elseif ($format{$i}=='l') {
                 $out .= rcube::gettext(strtolower(date('l', $timestamp)));
-            // month name (short)
+                // month name (short)
             }
             elseif ($format{$i}=='M') {
                 $out .= rcube::gettext(strtolower(date('M', $timestamp)));
-            // month name (long)
+                // month name (long)
             }
             elseif ($format{$i}=='F') {
                 $out .= rcube::gettext(strtolower(date('F', $timestamp)));
@@ -1393,9 +1367,9 @@ class rcube {
             return $email;
         }
     }
-    
-    
-    
+
+
+
     /**
      * Check the given string and returns language properties
      *
@@ -1452,8 +1426,8 @@ class rcube {
 
         return $lang;
     }
-    
-    
+
+
     /**
      * Read directory program/localization and return a list of available languages
      *
@@ -1471,10 +1445,10 @@ class rcube {
             if ($dh = @opendir(INSTALL_PATH . 'program/localization')) {
                 while (($name = readdir($dh)) !== false) {
                     if ($name{0}=='.' || !is_dir(INSTALL_PATH . 'program/localization/' . $name))
-                        continue;
+                    continue;
 
                     if ($label = $rcube_languages[$name])
-                        $localizations[$name] = $label ? $label : $name;
+                    $localizations[$name] = $label ? $label : $name;
                 }
                 closedir($dh);
             }
@@ -1482,8 +1456,8 @@ class rcube {
         }
         return $localizations;
     }
-    
-    
+
+
     /**
      * Get localized text in the desired language
      *
@@ -1493,7 +1467,7 @@ class rcube {
     static function gettext($attrib)
     {
         static $sa_text_data, $s_language, $utf8_decode;
-        
+
         $registry = rcube_registry::get_instance();
         $lang     = $registry->get('user_lang', 'core');
 
@@ -1524,9 +1498,9 @@ class rcube {
             }
             // include user language files
             if (
-                !empty($lang)
-                && $lang != 'en'
-                && is_dir(INSTALL_PATH . 'program/localization/'.$lang)
+            !empty($lang)
+            && $lang != 'en'
+            && is_dir(INSTALL_PATH . 'program/localization/'.$lang)
             ) {
                 include_once(INSTALL_PATH . 'program/localization/' . $lang . '/labels.inc');
                 include_once(INSTALL_PATH . 'program/localization/' . $lang . '/messages.inc');
@@ -1544,18 +1518,18 @@ class rcube {
         // text does not exist
         if (!($text_item = $sa_text_data[$alias])) {
             /*
-            rcube_error::raise(
-                array(
-                    'code' => 500,
-                    'type' => 'php',
-                    'line' => __LINE__,
-                    'file' => __FILE__,
-                    'message' => "Missing localized text for '$alias' in '$lang'"
-                ),
-                TRUE,
-                FALSE
-            );
-            */
+             rcube_error::raise(
+             array(
+             'code' => 500,
+             'type' => 'php',
+             'line' => __LINE__,
+             'file' => __FILE__,
+             'message' => "Missing localized text for '$alias' in '$lang'"
+             ),
+             TRUE,
+             FALSE
+             );
+             */
             /**
              * We got as far - so let's see if $_SESSION contains what we are
              * looking for.
@@ -1597,7 +1571,7 @@ class rcube {
 
         // default text is single
         if ($text=='')
-            $text = $a_text_item['single'];
+        $text = $a_text_item['single'];
 
         // replace vars in text
         if (is_array($attrib['vars'])) {
@@ -1622,8 +1596,8 @@ class rcube {
         }
         return $text;
     }
-    
-    
+
+
     /**
      * Read input value and convert it for internal use
      * Performs stripslashes() and charset conversion if necessary
@@ -1666,7 +1640,7 @@ class rcube {
 
         // strip slashes if magic_quotes enabled
         if ((bool)get_magic_quotes_gpc())
-            $value = stripslashes($value);
+        $value = stripslashes($value);
 
         // remove HTML tags if not allowed
         if (!$allow_html) {
@@ -1678,8 +1652,8 @@ class rcube {
         }
         return $value;
     }
-    
-    
+
+
     /**
      * Read a specific HTTP request header
      *
@@ -1702,8 +1676,8 @@ class rcube {
         }
         return null;
     }
-    
-    
+
+
     /**
      * Convert a string from one charset to another.
      * Uses mbstring and iconv functions if possible
@@ -1737,7 +1711,7 @@ class rcube {
 
         // convert charset using iconv module
         if (function_exists('iconv') && $from!='UTF-7' && $to!='UTF-7')
-            return iconv($from, $to, $str);
+        return iconv($from, $to, $str);
 
         $conv = new utf8();
 
@@ -1782,7 +1756,7 @@ class rcube {
     static function rep_specialchars_output($str, $enctype='', $mode='', $newlines=TRUE)
     {
         static $html_encode_arr, $js_rep_table, $xml_rep_table;
-        
+
         $out_charset = rcube_registry::get_instance()->get('OUTPUT_CHARSET', 'core');
 
         if (!$enctype) {
@@ -1794,10 +1768,10 @@ class rcube {
             return str_replace(
                 "\r\n",
                 "\n",
-                $mode=='remove' ? strip_tags($str) : $str
+            $mode=='remove' ? strip_tags($str) : $str
             );
         }
-        
+
         // encode for HTML output
         if ($enctype == 'html') {
             if (empty($html_encode_arr)) {
@@ -1810,9 +1784,9 @@ class rcube {
 
             // don't replace quotes and html tags
             if (
-                ($mode == 'show' || $mode == '')
-                && $ltpos!==false
-                && strpos($str, '>', $ltpos)!==false
+            ($mode == 'show' || $mode == '')
+            && $ltpos!==false
+            && strpos($str, '>', $ltpos)!==false
             ) {
                 unset($encode_arr['"']);
                 unset($encode_arr['<']);
@@ -1826,7 +1800,7 @@ class rcube {
             $out = preg_replace(
                 '/&amp;([a-z]{2,5}|#[0-9]{2,4});/',
                 '&\\1;',
-                strtr($str, $encode_arr)
+            strtr($str, $encode_arr)
             );
             return $newlines ? nl2br($out) : $out;
         }
@@ -1834,7 +1808,7 @@ class rcube {
         if ($enctype == 'url') {
             return rawurlencode($str);
         }
-        
+
         // if the replace tables for XML and JS are not yet defined
         if (empty($js_rep_table)) {
             $js_rep_table = $xml_rep_table = array();
@@ -1855,24 +1829,24 @@ class rcube {
         if ($enctype == 'xml') {
             return strtr($str, $xml_rep_table);
         }
-        
+
         // encode for javascript use
         if ($enctype == 'js') {
             if ($out_charset != 'UTF-8') {
                 $str = self::charset_convert($str, RCMAIL_CHARSET, $out_charset);
             }
             return preg_replace(
-                array("/\r?\n/", "/\r/"),
-                array('\n', '\n'),
-                addslashes(strtr($str, $js_rep_table))
+            array("/\r?\n/", "/\r/"),
+            array('\n', '\n'),
+            addslashes(strtr($str, $js_rep_table))
             );
         }
-        
+
         // no encoding given -> return original string
         return $str;
     }
-    
-    
+
+
     /**
      * Compose a valid attribute string for HTML tags
      *
@@ -1899,9 +1873,9 @@ class rcube {
         $attrib = array();
         preg_match_all(
             '/\s*([-_a-z]+)=(["\'])([^"]+)\2/Ui',
-            stripslashes($str),
-            $regs,
-            PREG_SET_ORDER
+        stripslashes($str),
+        $regs,
+        PREG_SET_ORDER
         );
 
         // convert attributes to an associative array (name => value)
@@ -1912,8 +1886,8 @@ class rcube {
         }
         return $attrib;
     }
-    
-    
+
+
     /****** debugging functions ********/
 
 
@@ -1935,7 +1909,7 @@ class rcube {
             die('Could not open logs/debug.tfk.');
         }
     }
-    
+
 
     /**
      * Print or write debug messages
@@ -1981,8 +1955,8 @@ class rcube {
         }
         $log_entry = sprintf(
             "[%s]: %s\n",
-            date("d-M-Y H:i:s O", mktime()),
-            $line
+        date("d-M-Y H:i:s O", mktime()),
+        $line
         );
 
         if (empty($log_dir)) {
@@ -2015,7 +1989,7 @@ class rcube {
         }
         rcube::console(sprintf("%s: %0.4f sec", $label, $diff));
     }
-    
-    
+
+
 }
 
