@@ -161,6 +161,10 @@ function rcube_webmail()
                             true
                 );
 
+                if (this.env.search_text != null && document.getElementById('quicksearchbox') != null) {
+                    document.getElementById('quicksearchbox').value = this.env.search_text;
+                }
+
                 if (this.env.action == 'show' || this.env.action == 'preview') {
                     this.enable_command(
                             'show', 'reply', 'reply-all',
@@ -495,8 +499,10 @@ function rcube_webmail()
       case 'list':
         if (this.task=='mail')
           {
-          if (this.env.search_request<0 || (this.env.search_request && props != this.env.mailbox))
-            this.reset_qsearch();
+          if (this.env.search_request<0 || (props != '' && (this.env.search_request && props != this.env.mailbox))) {
+              this.reset_qsearch();
+          }
+            
 
           this.list_mailbox(props);
           }
@@ -1203,12 +1209,16 @@ function rcube_webmail()
             add_url = '&_safe=1';
         }
 
+        // also send search request to get the right messages
+        if (this.env.search_request) {
+            add_url += '&_search='+this.env.search_request;
+        }
+
         if (id) {
             var url = '&_action='+action+'&_uid='+id+'&_mbox='+urlencode(this.env.mailbox)+add_url;
             if (action == 'preview' && String(target.location.href).indexOf(url) >= 0) {
                 this.show_contentframe(true);
-            }
-            else {
+            } else {
                 this.set_busy(true, 'loading');
                 target.location.href = this.env.comm_path+url;
             }

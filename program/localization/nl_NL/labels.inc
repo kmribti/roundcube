@@ -13,7 +13,7 @@
  | Author: Mark Moses <mark@katmoda.com>                                 |
  +-----------------------------------------------------------------------+
 
- @version $Id: labels.inc 950 2008-01-04 08:04:53Z tomekp $
+ @version $Id: labels.inc 975 2008-01-31 09:03:02Z robin $
 
 */
 
@@ -124,6 +124,10 @@ $labels['plaintoggle'] = 'Gewone tekst';
 $labels['addcc'] = 'Kopie toevoegen';
 $labels['addbcc'] = 'Bcc toevoegen';
 $labels['addreplyto'] = 'Antwoord-aan toevoegen';
+$labels['mdnrequest'] = 'De afzender van dit bericht heeft gevraagd of er een melding kan worden verzonden als dit bericht is ontvangen. Wilt u de een melding verzenden?';
+$labels['receiptread'] = 'Ontvangstbevestiging (gelezen)';
+$labels['yourmessage'] = 'Dit is een ontvangstbevestiging voor uw bericht';
+$labels['receiptnote'] = 'Let op: Deze bevestigt alleen dat uw bericht bij de geaddresseerde is binnen gekomen. Er is geen garantie dat de geaddresseerde het bericht daadwerkelijk heeft gelezen of de inhoud heeft begrepen.';
 $labels['name'] = 'Naam';
 $labels['firstname'] = 'Voornaam';
 $labels['surname'] = 'Achternaam';

@@ -17,7 +17,7 @@
 
  $Id: show.inc 543 2007-04-28 18:07:12Z thomasb $
 
-*/
+ */
 
 //rcube::tfk_debug('/ show :-)');
 
@@ -63,22 +63,22 @@ if ($_GET['_uid']) {
     }
 
     $MESSAGE['subject'] = rcube_imap::decode_mime_string(
-        $MESSAGE['headers']->subject,
-        $MESSAGE['headers']->charset
+    $MESSAGE['headers']->subject,
+    $MESSAGE['headers']->charset
     );
     $registry->set('MESSAGE', $MESSAGE, 'core');
     $OUTPUT->set_pagetitle($MESSAGE['subject']);
 
     if ($MESSAGE['structure'] = $IMAP->get_structure($MESSAGE['UID'])) {
         $_message_parts = rcmail_parse_message(
-            $MESSAGE['structure'],
-            array(
+        $MESSAGE['structure'],
+        array(
                 'safe'        => intval($_GET['_safe']),
                 'prefer_html' => $CONFIG['prefer_html'],
                 'get_url'     => $GET_URL.'&_part=%s'
-            )
-        );
-        list($MESSAGE['parts'], $MESSAGE['attachments']) = $_message_parts;
+                )
+                );
+                list($MESSAGE['parts'], $MESSAGE['attachments']) = $_message_parts;
     } else {
         $MESSAGE['body'] = $IMAP->get_body($MESSAGE['UID']);
     }
@@ -88,6 +88,13 @@ if ($_GET['_uid']) {
     if (!$MESSAGE['headers']->seen && $_action != 'preview') {
         $IMAP->set_flag($MESSAGE['UID'], 'SEEN');
     }
+
+    // set message set for search result
+    if (!empty($_REQUEST['_search']) && isset($_SESSION['search'][$_REQUEST['_search']])) {
+        $IMAP->set_search_set($_SESSION['search'][$_REQUEST['_search']]);
+        $OUTPUT->set_env('search_request', $_REQUEST['_search']);
+    }
+
     // give message uid to the client
     $OUTPUT->set_env('uid', $MESSAGE['UID']);
     $OUTPUT->set_env('safemode', intval($_GET['_safe']));
@@ -97,15 +104,8 @@ if ($_GET['_uid']) {
         $OUTPUT->set_env('mdn_request', true);
     }
 
-    $next = $prev = -1;
-    // get previous, first, next and last message UID
-    if (
-        !(
-            $_SESSION['sort_col'] == 'date'
-            && $_SESSION['sort_order'] == 'DESC'
-        )
-        && $IMAP->get_capability('sort')
-    ) {
+    $next = $prev = $first = $last = -1;
+    if ((!($_SESSION['sort_col'] == 'date' && $_SESSION['sort_order'] == 'DESC') && $IMAP->get_capability('sort')) && !(!empty($_REQUEST['_search']) && isset($_SESSION['search'][$_REQUEST['_search']]))) {
         // Only if we use custom sorting
         $a_msg_index = $IMAP->message_index(NULL, $_SESSION['sort_col'], $_SESSION['sort_order']);
 
@@ -114,8 +114,22 @@ if ($_GET['_uid']) {
         $first            = count($a_msg_index)>0 ? $a_msg_index[0] : -1;
         $next             = isset($a_msg_index[$MESSAGE['index']+1]) ? $a_msg_index[$MESSAGE['index']+1] : -1 ;
         $last             = count($a_msg_index)>0 ? $a_msg_index[count($a_msg_index)-1] : -1;
-    }
-    else {
+    } elseif (!empty($_REQUEST['_search']) && isset($_SESSION['search'][$_REQUEST['_search']])) {
+        $search_data = $_SESSION['search'][$_REQUEST['_search']];
+        $result = $IMAP->search(NULL, $search_data[0], $search_data[1],$search_data[3]);
+        $result = array_reverse($result);
+        foreach ($result as $key=>$rid) {
+            $result[$key] = $IMAP->get_uid($rid);
+            if ($MESSAGE['UID'] == $result[$key]) {
+                $seq = $key;
+            }
+        }
+        $prev = isset($result[$seq-1]) ? $result[$seq-1] : -1 ;
+        $first = count($result)>0 ? $result[0] : -1;
+        $next = isset($result[$seq+1]) ? $result[$seq+1] : -1 ;
+        $last = count($result)>0 ? $result[count($result)-1] : -1;
+        $MESSAGE['index'] = $seq;
+    } else {
         // this assumes that we are sorted by date_DESC
         $seq              = $IMAP->get_id($MESSAGE['UID']);
         $prev             = $IMAP->get_uid($seq + 1);
@@ -124,6 +138,7 @@ if ($_GET['_uid']) {
         $last             = $IMAP->get_uid(1);
         $MESSAGE['index'] = $IMAP->messagecount() - $seq;
     }
+
     $registry->set('MESSAGE', $MESSAGE, 'core');
 
     if ($prev > 0) {
@@ -155,8 +170,8 @@ function rcmail_message_attachments($attrib)
     if (sizeof($MESSAGE['attachments'])) {
         // allow the following attributes to be added to the <ul> tag
         $attrib_str = rcube::create_attrib_string(
-                            $attrib,
-                            array('style', 'class', 'id')
+        $attrib,
+        array('style', 'class', 'id')
         );
         $out = '<ul' . $attrib_str . ">\n";
 
@@ -164,8 +179,8 @@ function rcmail_message_attachments($attrib)
             if ($PRINT_MODE) {
                 $out .= sprintf(
                             '<li>%s (%s)</li>'."\n",
-                            $attach_prop->filename,
-                            show_bytes($attach_prop->size)
+                $attach_prop->filename,
+                show_bytes($attach_prop->size)
                 );
             }
             else {
@@ -174,13 +189,13 @@ function rcmail_message_attachments($attrib)
                 $out_str.= ' mimetype:\'%s\'},this)">%s</a></li>' . "\n";
 
                 $out .= sprintf(
-                            $out_str,
-                            htmlspecialchars($GET_URL),
-                            $attach_prop->mime_id,
-                            JS_OBJECT_NAME,
-                            $attach_prop->mime_id,
-                            $attach_prop->mimetype,
-                            $attach_prop->filename
+                $out_str,
+                htmlspecialchars($GET_URL),
+                $attach_prop->mime_id,
+                JS_OBJECT_NAME,
+                $attach_prop->mime_id,
+                $attach_prop->mimetype,
+                $attach_prop->filename
                 );
             }
         }
@@ -216,9 +231,9 @@ function rcmail_remote_objects_msg($attrib)
     $out = '<div' . $attrib_str . ">";
     $out .= sprintf(
                 '%s&nbsp;<a href="#loadimages" onclick="%s.command(\'load-images\')">%s</a>',
-                Q(rcube::gettext('blockedimages')),
-                JS_OBJECT_NAME,
-                Q(rcube::gettext('showimages'))
+    Q(rcube::gettext('blockedimages')),
+    JS_OBJECT_NAME,
+    Q(rcube::gettext('showimages'))
     );
     $out .= '</div>';
 
@@ -228,19 +243,19 @@ function rcmail_remote_objects_msg($attrib)
 
 
 $OUTPUT->add_handlers(
-            array(
+array(
                 'messageattachments' => 'rcmail_message_attachments',
                 'blockedobjects'     => 'rcmail_remote_objects_msg'
-            )
-);
+                )
+                );
 
-if ($_action=='print' && rcube::template_exists('printmessage')) {
-    rcube::parse_template('printmessage');
-}
-elseif ($_action=='preview' && rcube::template_exists('messagepreview')) {
-    rcube::parse_template('messagepreview');
-}
-else {
-    rcube::parse_template('message');
-}
-?>
+                if ($_action=='print' && rcube::template_exists('printmessage')) {
+                    rcube::parse_template('printmessage');
+                }
+                elseif ($_action=='preview' && rcube::template_exists('messagepreview')) {
+                    rcube::parse_template('messagepreview');
+                }
+                else {
+                    rcube::parse_template('message');
+                }
+                ?>

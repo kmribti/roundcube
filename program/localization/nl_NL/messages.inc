@@ -13,7 +13,7 @@
  | Author: Mark Moses <mark@katmoda.com>                                 |
  +-----------------------------------------------------------------------+
 
- @version $Id: messages.inc 950 2008-01-04 08:04:53Z tomekp $
+ @version $Id: messages.inc 974 2008-01-31 08:04:59Z robin $
 
 */
 
@@ -74,5 +74,7 @@ $messages['copyerror'] = 'Kan geen adressen kopiëren';
 $messages['sourceisreadonly'] = 'Het adres kan niet worden opgeslagen';
 $messages['errorsavingcontact'] = 'Kan het ontvanger-adres niet opslaan';
 $messages['movingmessage'] = 'Bericht verplaatsen...';
+$messages['receiptsent'] = 'Ontvangstbevestiging is verstuurd';
+$messages['errorsendingreceipt'] = 'Kan de ontvangstbevestiging niet versturen';
 
 ?>
