@@ -1,5 +1,4 @@
 <?php
-
 /*
  +-----------------------------------------------------------------------+
  | globals.php                                                           |
@@ -68,6 +67,8 @@ function strip_newlines($str) {
 
 /**
  * Send HTTP headers to prevent caching this page
+ * 
+ * @return void
  */
 function send_nocacheing_headers() {
     if (headers_sent()) {
@@ -84,6 +85,7 @@ function send_nocacheing_headers() {
  * Send header with expire date 30 days in future
  *
  * @param int Expiration time in seconds
+ * @return void
  */
 function send_future_expire_header($offset = 2600000) {
     if (headers_sent()) {
@@ -102,13 +104,15 @@ function send_future_expire_header($offset = 2600000) {
  *
  * @param int Modified date as unix timestamp
  * @param string Etag value for caching
+ * @return void
  */
 function send_modified_header($mdate, $etag = null) {
     if (headers_sent()) {
         return;
     }
     $iscached = false;
-    if ($_SERVER['HTTP_IF_MODIFIED_SINCE'] && strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) >= $mdate) {
+    if ($_SERVER['HTTP_IF_MODIFIED_SINCE']
+        && strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) >= $mdate) {
         $iscached = true;
     }
 
@@ -170,9 +174,9 @@ function json_serialize($var) {
 
             foreach ($var as $key => $value) {
                 // enclose key with quotes if it is not variable-name conform
-                if (!ereg('^[_a-zA-Z]{1}[_a-zA-Z0-9]*$', $key) /* || is_js_reserved_word($key) */)
-                $key = "'$key'";
-
+                if (!ereg('^[_a-zA-Z]{1}[_a-zA-Z0-9]*$', $key) /* || is_js_reserved_word($key) */) {
+                    $key = "'$key'";
+                }
                 $pairs[] = sprintf("%s%s", $is_assoc ? $key.':' : '', json_serialize($value));
             }
             return $brackets{0} . implode(',', $pairs) . $brackets{1};
@@ -224,9 +228,8 @@ function get_boolean($str) {
     $str = strtolower($str);
     if(in_array($str, array('false', '0', 'no', 'nein', ''), TRUE)) {
         return FALSE;
-    } else {
-        return TRUE;
     }
+    return TRUE;
 }
 
 
@@ -244,15 +247,15 @@ function parse_bytes($str) {
     if (preg_match('/([0-9]+)([a-z])/i', $str, $regs)) {
         $bytes = floatval($regs[1]);
         switch (strtolower($regs[2])) {
-            case 'g':
-                $bytes *= 1073741824;
-                break;
-            case 'm':
-                $bytes *= 1048576;
-                break;
-            case 'k':
-                $bytes *= 1024;
-                break;
+        case 'g':
+            $bytes *= 1073741824;
+            break;
+        case 'm':
+            $bytes *= 1048576;
+            break;
+        case 'k':
+            $bytes *= 1024;
+            break;
         }
     }
 
@@ -268,10 +271,10 @@ function parse_bytes($str) {
  */
 function show_bytes($bytes) {
     if ($bytes > 1073741824) {
-        $gb = $bytes/1073741824;
+        $gb  = $bytes/1073741824;
         $str = sprintf($gb>=10 ? "%d GB" : "%.1f GB", $gb);
     } else if ($bytes > 1048576) {
-        $mb = $bytes/1048576;
+        $mb  = $bytes/1048576;
         $str = sprintf($mb>=10 ? "%d MB" : "%.1f MB", $mb);
     } else if ($bytes > 1024) {
         $str = sprintf("%d KB",  round($bytes/1024));
@@ -326,9 +329,8 @@ function make_absolute_url($path, $base_url) {
 function rc_strlen($str) {
     if (function_exists('mb_strlen')) {
         return mb_strlen($str);
-    } else {
-        return strlen($str);
     }
+    return strlen($str);
 }
 
 /**
@@ -337,8 +339,8 @@ function rc_strlen($str) {
 function rc_strtolower($str) {
     if (function_exists('mb_strtolower')) {
         return mb_strtolower($str);
-    } else {
-        return strtolower($str);
+    }
+    return strtolower($str);
     }
 }
 
@@ -348,9 +350,8 @@ function rc_strtolower($str) {
 function rc_substr($str, $start, $len = null) {
     if (function_exists('mb_substr')) {
         return mb_substr($str, $start, $len);
-    } else {
-        return substr($str, $start, $len);
     }
+    return substr($str, $start, $len);
 }
 
 /**
@@ -359,9 +360,8 @@ function rc_substr($str, $start, $len = null) {
 function rc_strpos($haystack, $needle, $offset = 0) {
     if (function_exists('mb_strpos')) {
         return mb_strpos($haystack, $needle, $offset);
-    } else {
-        return strpos($haystack, $needle, $offset);
     }
+	return strpos($haystack, $needle, $offset);
 }
 
 /**
@@ -370,9 +370,8 @@ function rc_strpos($haystack, $needle, $offset = 0) {
 function rc_strrpos($haystack, $needle, $offset = 0) {
     if (function_exists('mb_strrpos')) {
         return mb_strrpos($haystack, $needle, $offset);
-    } else {
-        return strrpos($haystack, $needle, $offset);
     }
+	return strrpos($haystack, $needle, $offset);
 }
 
 
@@ -443,6 +442,7 @@ function clear_directory($dir_path) {
  * @param string String representation of the offset (e.g. 20min, 5h, 2days)
  * @param int Factor to multiply with the offset
  * @return int Unix timestamp
+ * @todo Check the switch() - it looks weird.
  */
 function get_offset_time($offset_str, $factor = 1) {
     if (preg_match('/^([0-9]+)\s*([smhdw])/i', $offset_str, $regs)) {
@@ -455,16 +455,16 @@ function get_offset_time($offset_str, $factor = 1) {
 
     $ts = mktime();
     switch ($unit) {
-        case 'w':
-            $amount *= 7;
-        case 'd':
-            $amount *= 24;
-        case 'h':
-            $amount *= 60;
-        case 'm':
-            $amount *= 60;
-        case 's':
-            $ts += $amount * $factor;
+    case 'w':
+        $amount *= 7;
+    case 'd':
+        $amount *= 24;
+    case 'h':
+        $amount *= 60;
+    case 'm':
+        $amount *= 60;
+    case 's':
+        $ts += $amount * $factor;
     }
 
     return $ts;
@@ -482,14 +482,11 @@ function strrstr($haystack, $needle) {
     $pver = phpversion();
     if ($pver[0] >= 5) {
         return strrpos($haystack, $needle);
-    } else {
-        $index = strpos(strrev($haystack), strrev($needle));
-        if ($index === false) {
-            return false;
-        }
-        $index = strlen($haystack) - strlen($needle) - $index;
-        return $index;
     }
+    $index = strpos(strrev($haystack), strrev($needle));
+    if ($index === false) {
+        return false;
+    }
+    $index = strlen($haystack) - strlen($needle) - $index;
+    return $index;
 }
-
-?>

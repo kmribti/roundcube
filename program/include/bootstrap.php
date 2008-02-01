@@ -12,7 +12,7 @@
  |   Setup the application envoronment required to process               |
  |   any request.                                                        |
  +-----------------------------------------------------------------------+
- | Author: Tll Klampaeckel <till@php.net>                                |
+ | Author: Till Klampaeckel <till@php.net>                               |
  |         Thomas Bruederli <roundcube@gmail.com>                        |
  +-----------------------------------------------------------------------+
 
