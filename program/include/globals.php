@@ -26,23 +26,34 @@
 
 
 /**
- * Quote a given string. Alias function for rep_specialchars_output
+ * Quote a given string.
+ * Shortcut function for rep_specialchars_output
  *
+ * @return string HTML-quoted string
  * @see rcube::rep_specialchars_output()
  */
-function Q($str, $mode = 'strict', $newlines = TRUE) {
+function Q($str = '', $mode = 'strict', $newlines = TRUE) {
     return rcube::rep_specialchars_output($str, 'html', $mode, $newlines);
 }
 
 /**
- * Quote a given string. Alias function for rep_specialchars_output
+ * Quote a given string for javascript output.
+ * Shortcut function for rep_specialchars_output
  *
+ * @return string JS-quoted string
  * @see rcube::rep_specialchars_output()
  */
-function JQ($str) {
+function JQ($str = '') {
     return rcube::rep_specialchars_output($str, 'js');
 }
 
+/**
+ * Remove all non-ascii and non-word chars
+ * except . and -
+ */
+function asciiwords($str = '') {
+    return preg_replace('/[^a-z0-9.-_]/i', '', $str);
+}
 
 /**
  * Remove single and double quotes from given string
@@ -50,7 +61,7 @@ function JQ($str) {
  * @param string Input value
  * @return string Dequoted string
  */
-function strip_quotes($str) {
+function strip_quotes($str = '') {
     return preg_replace('/[\'"]/', '', $str);
 }
 
@@ -60,10 +71,9 @@ function strip_quotes($str) {
  * @param string Input value
  * @return string Stripped string
  */
-function strip_newlines($str) {
+function strip_newlines($str = '') {
     return preg_replace('/[\r\n]/', '', $str);
 }
-
 
 /**
  * Send HTTP headers to prevent caching this page
@@ -341,7 +351,6 @@ function rc_strtolower($str) {
         return mb_strtolower($str);
     }
     return strtolower($str);
-    }
 }
 
 /**
@@ -374,7 +383,6 @@ function rc_strrpos($haystack, $needle, $offset = 0) {
 	return strrpos($haystack, $needle, $offset);
 }
 
-
 /**
  * Replace the middle part of a string with ...
  * if it is longer than the allowed length
@@ -392,10 +400,8 @@ function abbrevate_string($str, $maxlength, $place_holder = '...') {
         $second_starting_location = $length - $maxlength + $first_part_length + 1;
         $str = rc_substr($str, 0, $first_part_length) . $place_holder . rc_substr($str, $second_starting_location, $length);
     }
-
     return $str;
 }
-
 
 /**
  * Make sure the string ends with a slash
@@ -404,14 +410,12 @@ function slashify($str) {
     return unslashify($str).'/';
 }
 
-
 /**
  * Remove slash at the end of the string
  */
 function unslashify($str) {
     return preg_replace('/\/$/', '', $str);
 }
-
 
 /**
  * Delete all files within a folder
@@ -434,7 +438,6 @@ function clear_directory($dir_path) {
     closedir($dir);
     return true;
 }
-
 
 /**
  * Create a unix timestamp with a specified offset from now
@@ -490,3 +493,5 @@ function strrstr($haystack, $needle) {
     $index = strlen($haystack) - strlen($needle) - $index;
     return $index;
 }
+
+?>

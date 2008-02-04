@@ -18,8 +18,7 @@
 
  $Id: rcube_user.inc 933 2007-11-29 14:17:32Z thomasb $
 
- */
-
+*/
 
 /**
  * Class representing a system user
@@ -27,41 +26,29 @@
  * @package    core
  * @author     Thomas Bruederli <roundcube@gmail.com>
  */
-class rcube_user
-{
-    var $ID = null;
-    var $data = null;
+class rcube_user {
+    public $ID = null;
+    public $data = null;
 
     /**
      * Object constructor
      *
      * @param object DB Database connection
      */
-    function __construct($id = null, $sql_arr = null)
-    {
-        global $DB;
+    public function __construct($id = null, $sql_arr = null) {
 
-        if ($id && !$sql_arr)
-        {
-            $sql_result = $DB->query("SELECT * FROM ".get_table_name('users')." WHERE  user_id=?", $id);
+        if (!empty($id) && empty($sql_arr)) {
+            $registry  = rcube_registry::get_instance();
+            $DB        = $registry->get('DB', 'core');
+            
+            $sql_result = $DB->query('SELECT * FROM '.rcube::get_table_name('users').' WHERE  user_id = ?', $id);
             $sql_arr = $DB->fetch_assoc($sql_result);
         }
 
-        if (!empty($sql_arr))
-        {
+        if (!empty($sql_arr)) {
             $this->ID = $sql_arr['user_id'];
             $this->data = $sql_arr;
         }
-    }
-
-    /**
-     * PHP 4 object constructor
-     *
-     * @see  rcube_user::__construct
-     */
-    function rcube_user($id = null, $sql_arr = null)
-    {
-        $this->__construct($id, $sql_arr);
     }
 
     /**
@@ -69,23 +56,21 @@ class rcube_user
      *
      * @return string Full user name
      */
-    function get_username()
-    {
-        return $this->data['username'] ? $this->data['username'] . (!strpos($this->data['username'], '@') ? '@'.$this->data['mail_host'] : '') : false;
+    public static function get_username() {
+        return self::$data['username'] ? self::$data['username'] . (!strpos(self::$data['username'], '@') ? '@'.self::$data['mail_host'] : '') : false;
     }
-
 
     /**
      * Get the preferences saved for this user
      *
      * @return array Hash array with prefs
      */
-    function get_prefs()
-    {
-        if ($this->ID && $this->data['preferences'])
-        return unserialize($this->data['preferences']);
-        else
-        return array();
+    public static function get_prefs() {
+        if (self::$ID && self::$data['preferences']) {
+            return unserialize(self::$data['preferences']);
+        } else {
+            return array();
+        }
     }
 
 
@@ -95,31 +80,25 @@ class rcube_user
      * @param mixed User prefs to save
      * @return boolean True on success, False on failure
      */
-    function save_prefs($a_user_prefs)
-    {
-        global $DB, $CONFIG, $sess_user_lang;
+    public static function save_prefs($a_user_prefs) {
+        $registry  = rcube_registry::get_instance();
+        $DB        = $registry->get('DB', 'core');
+        $CONFIG    = $registry->get_all('config');
+        $user_lang = $registry->get('user_lang', 'core');
 
-        if (!$this->ID)
-        return false;
+        $_query = 'UPDATE '.rcube::get_table_name('users');
+        $_query.= ' SET preferences=?,';
+        $_query.= ' language=?';
+        $_query.= ' WHERE user_id=?';
+        $DB->query($_query, serialize($a_user_prefs), $user_lang, $_SESSION['user_id']);
 
-        // merge (partial) prefs array with existing settings
-        $a_user_prefs += (array)$this->get_prefs();
-
-        $DB->query(
-      "UPDATE ".get_table_name('users')."
-       SET    preferences=?,
-              language=?
-       WHERE  user_id=?",
-        serialize($a_user_prefs),
-        $sess_user_lang,
-        $this->ID);
-
-        if ($DB->affected_rows())
-        {
-            $CONFIG = array_merge($CONFIG, $a_user_prefs);
+        if ($DB->affected_rows()) {
+            $_SESSION['user_prefs'] = $a_user_prefs;
+            foreach ($a_user_prefs as $key => $value) {
+                $registry->set($key, $value, 'config');
+            }
             return true;
         }
-
         return false;
     }
 
@@ -129,35 +108,32 @@ class rcube_user
      * @param int  Identity ID. If empty, the default identity is returned
      * @return array Hash array with all cols of the
      */
-    function get_identity($id = null)
-    {
-        global $DB;
+    public static function get_identity($identity_id = null) {
+        $registry  = rcube_registry::get_instance();
+        $DB        = $registry->get('DB', 'core');
 
-        $sql_result = $this->list_identities($id ? sprintf('AND identity_id=%d', $id) : '');
+        $sql_result = self::list_identities($identity_id ? sprintf('AND identity_id=%d', $identity_id) : '');
         return $DB->fetch_assoc($sql_result);
     }
-
 
     /**
      * Return a list of all identities linked with this user
      *
      * @return array List of identities
      */
-    function list_identities($sql_add = '')
-    {
-        global $DB;
+    public static function list_identities($sql_add = '') {
+        $registry  = rcube_registry::get_instance();
+        $DB        = $registry->get('DB', 'core');
 
+        $_query = 'SELECT * FROM '.rcube::get_table_name('identities');
+        $_query.= ' WHERE del <> 1';
+        $_query.= ' AND user_id=?';
+        $_query.= (!empty($sql_add) ? ' '.$sql_add : '');
+        $_query.= ' ORDER BY '.$DB->quoteIdentifier('standard').' DESC, name ASC';
         // get contacts from DB
-        $sql_result = $DB->query(
-      "SELECT * FROM ".get_table_name('identities')."
-        WHERE  del<>1
-        AND    user_id=?
-        $sql_add
-        ORDER BY ".$DB->quoteIdentifier('standard')." DESC, name ASC",
-        $this->ID);
-
-        return $sql_result;
+        return $DB->query($_query, self::$ID);
     }
+
     /**
      * Update a specific identity record
      *
@@ -165,31 +141,26 @@ class rcube_user
      * @param array  Hash array with col->value pairs to save
      * @return boolean True if saved successfully, false if nothing changed
      */
-    function update_identity($iid, $data)
-    {
-        global $DB;
+    public static function update_identity($identity_id = null, $data = array()) {
+        if (empty(self::$ID) || empty($identity_id) || empty($data) || !is_array($data)) {
+            return false;
+        }
 
-        if (!$this->ID)
-        return false;
+        $registry  = rcube_registry::get_instance();
+        $DB        = $registry->get('DB', 'core');
 
         $write_sql = array();
 
-        foreach ((array)$data as $col => $value)
-        {
-            $write_sql[] = sprintf("%s=%s",
-            $DB->quoteIdentifier($col),
-            $DB->quote($value));
+        foreach ((array)$data as $col => $value) {
+            $write_sql[] = sprintf("%s=%s", $DB->quoteIdentifier($col), $DB->quote($value));
         }
 
-        $DB->query(
-      "UPDATE ".get_table_name('identities')."
-       SET ".join(', ', $write_sql)."
-       WHERE  identity_id=?
-       AND    user_id=?
-       AND    del<>1",
-        $iid,
-        $this->ID);
-
+        $_query = 'UPDATE '.rcube::get_table_name('identities');
+        $_query.= ' SET '.implode(', ', $write_sql);
+        $_query.= ' WHERE identity_id=?';
+        $_query.= ' AND user_id=?';
+        $_query.= ' AND del <> 1';
+        $DB->query($_query, $identity_id, self::$ID);
         return $DB->affected_rows();
     }
 
@@ -200,27 +171,25 @@ class rcube_user
      * @param array  Hash array with col->value pairs to save
      * @return int  The inserted identity ID or false on error
      */
-    function insert_identity($data)
-    {
-        global $DB;
+    public static function insert_identity($data = array()) {
+        if (!self::$ID || empty($data) || !is_array($data)) {
+            return false;
+        }
 
-        if (!$this->ID)
-        return false;
+        $registry  = rcube_registry::get_instance();
+        $DB        = $registry->get('DB', 'core');
 
         $insert_cols = $insert_values = array();
-        foreach ((array)$data as $col => $value)
-        {
+        foreach ((array)$data as $col => $value) {
             $insert_cols[] = $DB->quoteIdentifier($col);
             $insert_values[] = $DB->quote($value);
         }
+        $_query = 'INSERT INTO '.rcube::get_table_name('identities');
+        $_query.= ' (user_id, '.implode(', ', $insert_cols).')';
+        $_query.= ' VALUES (?, '.implode(', ', $insert_values).')';
 
-        $DB->query(
-      "INSERT INTO ".get_table_name('identities')."
-        (user_id, ".join(', ', $insert_cols).")
-       VALUES (?, ".join(', ', $insert_values).")",
-        $this->ID);
-
-        return $DB->insert_id(get_sequence_name('identities'));
+        $DB->query($_query, self::$ID);
+        return $DB->insert_id(rcube::get_sequence_name('identities'));
     }
 
     /**
@@ -229,44 +198,40 @@ class rcube_user
      * @param int  Identity ID
      * @return boolean True if deleted successfully, false if nothing changed
      */
-    function delete_identity($iid)
-    {
-        global $DB;
+    public static function delete_identity($identity_id = null) {
+        if (!self::$ID || empty($identity_id)) {
+            return false;
+        }
 
-        if (!$this->ID)
-        return false;
+        $registry  = rcube_registry::get_instance();
+        $DB        = $registry->get('DB', 'core');
 
-        $DB->query(
-      "UPDATE ".get_table_name('identities')."
-       SET    del=1
-       WHERE  user_id=?
-       AND    identity_id=?",
-        $this->ID,
-        $iid);
+        $_query = 'UPDATE '.rcube::get_table_name('identities');
+        $_query.= ' SET del = 1';
+        $_query.= ' WHERE user_id = ?';
+        $_query.= ' AND identity_id = ?';
 
+        $DB->query($_query, self::$ID, $identity_id);
         return $DB->affected_rows();
     }
-
 
     /**
      * Make this identity the default one for this user
      *
      * @param int The identity ID
      */
-    function set_default($iid)
-    {
-        global $DB;
+    public static function set_default($identity_id = null) {
 
-        if ($this->ID && $iid)
-        {
-            $DB->query(
-        "UPDATE ".get_table_name('identities')."
-         SET ".$DB->quoteIdentifier('standard')."='0'
-         WHERE  user_id=?
-         AND    identity_id<>?
-         AND    del<>1",
-            $this->ID,
-            $iid);
+        if (!empty(self::$ID) && !empty($identity_id)) {
+            $registry  = rcube_registry::get_instance();
+            $DB        = $registry->get('DB', 'core');
+
+            $_query = 'UPDATE '.rcube::get_table_name('identities');
+            $_query.= ' SET '.$DB->quoteIdentifier('standard').'="0"';
+            $_query.= ' WHERE user_id = ?';
+            $_query.= ' AND identity_id <> ?';
+            $_query.= ' AND del <> 1';
+            $DB->query($_query, self::$ID, $identity_id);
         }
     }
 
@@ -274,28 +239,25 @@ class rcube_user
     /**
      * Update user's last_login timestamp
      */
-    function touch()
-    {
-        global $DB;
+    public static function touch() {
+        if (!empty(self::$ID)) {
+            $registry  = rcube_registry::get_instance();
+            $DB        = $registry->get('DB', 'core');
 
-        if ($this->ID)
-        {
-            $DB->query(
-        "UPDATE ".get_table_name('users')."
-         SET    last_login=".$DB->now()."
-         WHERE  user_id=?",
-            $this->ID);
+            $_query = 'UPDATE '.rcube::get_table_name('users');
+            $_query.= ' SET last_login = '.$DB->now();
+            $_query.= ' WHERE user_id = ?';
+            
+            $DB->query($_query, self::$ID);
         }
     }
     /**
      * Clear the saved object state
      */
-    function reset()
-    {
-        $this->ID = null;
-        $this->data = null;
+    public static function reset() {
+        self::$ID = null;
+        self::$data = null;
     }
-
 
     /**
      * Find a user record matching the given name and host
@@ -305,24 +267,24 @@ class rcube_user
      * @return object rcube_user New user instance
      * @static
      */
-    function query($user, $host)
-    {
-        global $DB;
+    public static function query($user = null, $host = null) {
+        $registry  = rcube_registry::get_instance();
+        $DB        = $registry->get('DB', 'core');
 
         // query if user already registered
-        $sql_result = $DB->query(
-      "SELECT * FROM ".get_table_name('users')."
-       WHERE  mail_host=? AND (username=? OR alias=?)",
-        $host,
-        $user,
-        $user);
+        $_query = 'SELECT * FROM '.rcube::get_table_name('users');
+        $_query.= ' WHERE mail_host = ?';
+        $_query.= ' AND (username = ? OR alias = ?)';
+        $sql_result = $DB->query($_query, $host, $user, $user);
 
         // user already registered -> overwrite username
-        if ($sql_arr = $DB->fetch_assoc($sql_result))
-        return new rcube_user($sql_arr['user_id'], $sql_arr);
-        else
-        return false;
+        if ($sql_arr = $DB->fetch_assoc($sql_result)) {
+            return new rcube_user($sql_arr['user_id'], $sql_arr);
+        } else {
+            return false;
+        }
     }
+
     /**
      * Create a new user record and return a rcube_user instance
      *
@@ -331,129 +293,174 @@ class rcube_user
      * @return object rcube_user New user instance
      * @static
      */
-    function create($user, $host)
-    {
-        global $DB, $CONFIG;
+    public static function create($user, $host) {
+        $registry = rcube_registry::get_instance();
+        $DB       = $registry->get('DB', 'core');
+        $CONFIG   = $registry->get_all('config');
+        $IMAP     = $registry->get('IMAP', 'core');
 
         $user_email = '';
 
         // try to resolve user in virtusertable
-        if (!empty($CONFIG['virtuser_file']) && !strpos($user, '@'))
-        $user_email = self::user2email($user);
+        if (!empty($CONFIG['virtuser_file']) && strstr($user, '@') === FALSE) {
+            $user_email = self::user2email($user);
+        } else { // failover
+            $user_email = $user;
+        }
 
-        $DB->query(
-      "INSERT INTO ".get_table_name('users')."
-        (created, last_login, username, mail_host, alias, language)
-       VALUES (".$DB->now().", ".$DB->now().", ?, ?, ?, ?)",
-        strip_newlines($user),
-        strip_newlines($host),
-        strip_newlines($user_email),
-        $_SESSION['user_lang']);
+        $_query = 'INSERT INTO '.rcube::get_table_name('users');
+        $_query.= ' (created, last_login, username, mail_host, alias, language)';
+        $_query.= ' VALUES ('.$DB->now().', '.$DB->now().', %s, %s, %s, %s)';
 
-        if ($user_id = $DB->insert_id(get_sequence_name('users')))
-        {
-            $mail_domain = rcmail_mail_domain($host);
+        $_query = sprintf(
+        $_query,
+        $DB->quote(strip_newlines($user)),
+        $DB->quote(strip_newlines($host)),
+        $DB->quote(strip_newlines($user_email)),
+        $DB->quote($_SESSION['user_lang'])
+        );
+        rcube::tfk_debug($_query);
+        // query
+        $DB->query($_query);
 
-            if ($user_email=='')
-            $user_email = strpos($user, '@') ? $user : sprintf('%s@%s', $user, $mail_domain);
+        if ($user_id = $DB->insert_id(rcube::get_sequence_name('users'))) {
+            $mail_domain = rcube::mail_domain($host);
 
-            $user_name = $user != $user_email ? $user : '';
+            if ($user_email=='') {
+                $user_email = strstr($user, '@') ? $user : sprintf('%s@%s', $user, $mail_domain);
+            }
+            $user_name = ($user != $user_email) ? $user : '';
 
             // try to resolve the e-mail address from the virtuser table
-            if (!empty($CONFIG['virtuser_query']) &&
-            ($sql_result = $DB->query(preg_replace('/%u/', $DB->escapeSimple($user), $CONFIG['virtuser_query']))) &&
-            ($DB->num_rows()>0))
-            {
-                while ($sql_arr = $DB->fetch_array($sql_result))
-                {
+            // TODO there was $DB->escapeSimple($user) in trunk, don't know what to use instead
+            if (
+            !empty($CONFIG['virtuser_query'])
+            && ($sql_result = $DB->query(preg_replace('/%u/', $user, $CONFIG['virtuser_query'])))
+            && ($DB->num_rows() > 0)
+            ) {
+                while ($sql_arr = $DB->fetch_array($sql_result)) {
+                    $_query = 'INSERT INTO '.rcube::get_table_name('identities');
+                    $_query.= ' (user_id, del, standard, name, email)';
+                    $_query.= ' VALUES (?, 0, 1, ?, ?)';
                     $DB->query(
-            "INSERT INTO ".get_table_name('identities')."
-              (user_id, del, standard, name, email)
-             VALUES (?, 0, 1, ?, ?)",
+                    $_query,
                     $user_id,
                     strip_newlines($user_name),
-                    preg_replace('/^@/', $user . '@', $sql_arr[0]));
+                    preg_replace('/^@/', $user . '@', $sql_arr[0])
+                    );
                 }
-            }
-            else
-            {
+            } else {
                 // also create new identity records
+                $_query = 'INSERT INTO '.rcube::get_table_name('identities');
+                $_query.= ' (user_id, del, standard, name, email)';
+                $_query.= ' VALUES (?, 0, 1, ?, ?)';
                 $DB->query(
-          "INSERT INTO ".get_table_name('identities')."
-            (user_id, del, standard, name, email)
-           VALUES (?, 0, 1, ?, ?)",
+                $_query,
                 $user_id,
                 strip_newlines($user_name),
-                strip_newlines($user_email));
+                strip_newlines($user_email)
+                );
             }
-        }
-        else
-        {
-            rcube_error::raise(
-                    array(
-                    	'code' => 500,
-                    	'type' => 'php',
-                    	'line' => __LINE__,
-                    	'file' => __FILE__,
-                    	'message' => 'Failed to create new user'),
-                    true,
-                    false);
-        }
 
-        return $user_id ? new rcube_user($user_id) : false;
+            // get existing mailboxes
+            $a_mailboxes = $IMAP->list_mailboxes();
+        } else {
+            rcube_error::raise(
+            array(
+                    'code' => 500,
+                    'type' => 'php',
+                    'line' => __LINE__,
+                    'file' => __FILE__,
+                    'message' => "Failed to create new user"
+                    ),
+                    TRUE,
+                    FALSE
+                    );
+        }
+        return $user_id;
     }
 
+    /**
+     * Load virtuser table in array
+     *
+     * @return array Virtuser table entries
+     */
+    public static function get_virtualfile() {
+        $registry = rcube_registry::get_instance();
+        $CONFIG   = $registry->get_all('config');
+
+        if (empty($CONFIG['virtuser_file']) || !is_file($CONFIG['virtuser_file'])) {
+            return false;
+        }
+        // read file
+        $a_lines = file($CONFIG['virtuser_file']);
+        return $a_lines;
+    }
+
+    /**
+     * Find matches of the given pattern in virtuser table
+     *
+     * @param string Regular expression to search for
+     * @return array Matching entries
+     */
+    public static function find_in_virtual($pattern) {
+        $result  = array();
+        $virtual = self::get_virtualfile();
+        if ($virtual == false) {
+            return $result;
+        }
+        // check each line for matches
+        foreach ($virtual as $line) {
+            $line = trim($line);
+            if (empty($line) || $line{0}=='#') {
+                continue;
+            }
+            if (eregi($pattern, $line)) {
+                $result[] = $line;
+            }
+        }
+        return $result;
+    }
 
     /**
      * Resolve username using a virtuser table
      *
      * @param string E-mail address to resolve
      * @return string Resolved IMAP username
-     * @static
      */
-    function email2user($email)
-    {
+    public static function email2user($email = null) {
         $user = $email;
-        $r = rcmail_findinvirtual("^$email");
+        $r = self::find_in_virtual("^$email");
 
-        for ($i=0; $i<count($r); $i++)
-        {
+        for ($i=0, $size = count($r); $i < $size; $i++) {
             $data = $r[$i];
             $arr = preg_split('/\s+/', $data);
-            if (count($arr) > 0)
-            {
+            if (count($arr) > 0) {
                 $user = trim($arr[count($arr)-1]);
                 break;
             }
         }
-
         return $user;
     }
-
 
     /**
      * Resolve e-mail address from virtuser table
      *
      * @param string User name
      * @return string Resolved e-mail address
-     * @static
      */
-    function user2email($user)
-    {
-        $email = "";
-        $r = rcmail_findinvirtual("$user$");
+    public static function user2email($user) {
+        $email = '';
+        $r = self::find_in_virtual("$user$");
 
-        for ($i=0; $i<count($r); $i++)
-        {
-            $data = $r[$i];
+        for ($i=0, $size = count($r); $i < $size; $i++) {
+            $data=$r[$i];
             $arr = preg_split('/\s+/', $data);
-            if (count($arr) > 0)
-            {
+            if (count($arr) > 0) {
                 $email = trim($arr[0]);
                 break;
             }
         }
-
         return $email;
     }
 }

@@ -412,7 +412,6 @@ class rcube {
         return $table;
     }
 
-
     /**
      * Init output object for GUI and add common scripts.
      * This will instantiate a rcube_template object and set
@@ -444,7 +443,6 @@ class rcube {
         self::set_locale($registry->get('user_lang', 'core'));
     }
 
-
     /**
      * Create an output object for JSON responses
      * and register it to the global registry
@@ -458,7 +456,6 @@ class rcube {
         // set locale setting
         self::set_locale($registry->get('user_lang', 'core'));
     }
-
 
     /**
      * Set localization charset based on the given language.
@@ -488,7 +485,6 @@ class rcube {
         $registry->set('OUTPUT_CHARSET', $charset, 'core');
         $OUTPUT->set_charset($charset);
     }
-
 
     /**
      * auto-select IMAP host based on the posted login information
@@ -523,7 +519,6 @@ class rcube {
                 $host = array_shift($host);
             }
         }
-
         return $host;
     }
 
@@ -543,7 +538,7 @@ class rcube {
         $CONFIG    = $registry->get_all('config');
         $IMAP      = $registry->get('IMAP', 'core');
         $DB        = $registry->get('DB', 'core');
-        $USER        = $registry->get('USER', 'core');
+        $USER      = $registry->get('USER', 'core');
         $user_lang = $registry->get('user_lang', 'core');
 
         if (is_null($host) === true) {
@@ -694,234 +689,11 @@ class rcube {
     }
 
     /**
-     * Create new entry in users and identities table
-     *
-     * @param string User name
-     * @param string IMAP host
-     * @return mixed New user ID or False on failure
-     */
-    //TODO check this with rcube_user function
-    static function create_user($user, $host)
-    {
-        $registry = rcube_registry::get_instance();
-        $DB       = $registry->get('DB', 'core');
-        $CONFIG   = $registry->get_all('config');
-        $IMAP     = $registry->get('IMAP', 'core');
-
-        $user_email = '';
-
-        // try to resolve user in virtusertable
-        if (!empty($CONFIG['virtuser_file']) && strstr($user, '@') === FALSE) {
-            $user_email = self::user2email($user);
-        }
-        else { // failover
-            $user_email = $user;
-        }
-        $_query = "INSERT INTO " . self::get_table_name('users');
-        $_query.= " (created, last_login, username, mail_host, alias, language)";
-        $_query.= " VALUES (" . $DB->now() . ", " . $DB->now() . ", %s, %s, %s, %s)";
-
-        $_query = sprintf(
-        $_query,
-        $DB->quote(strip_newlines($user)),
-        $DB->quote(strip_newlines($host)),
-        $DB->quote(strip_newlines($user_email)),
-        $DB->quote($_SESSION['user_lang'])
-        );
-        rcube::tfk_debug($_query);
-
-
-        $DB->query($_query);
-
-        if ($user_id = $DB->insert_id(self::get_sequence_name('users'))) {
-            $mail_domain = self::mail_domain($host);
-
-            if ($user_email=='') {
-                $user_email = strstr($user, '@') ? $user : sprintf('%s@%s', $user, $mail_domain);
-            }
-            $user_name = $user!=$user_email ? $user : '';
-
-            // try to resolve the e-mail address from the virtuser table
-            if (
-            !empty($CONFIG['virtuser_query'])
-            && ($sql_result = $DB->query(preg_replace('/%u/', $user, $CONFIG['virtuser_query'])))
-            && ($DB->num_rows()>0)
-            ) {
-                while ($sql_arr = $DB->fetch_array($sql_result)) {
-                    $_query = "INSERT INTO " . self::get_table_name('identities');
-                    $_query.= " (user_id, del, standard, name, email)";
-                    $_query.= " VALUES (?, 0, 1, ?, ?)";
-                    $DB->query(
-                    $_query,
-                    $user_id,
-                    strip_newlines($user_name),
-                    preg_replace('/^@/', $user . '@', $sql_arr[0])
-                    );
-                }
-            }
-            else {
-                // also create new identity records
-                $_query = "INSERT INTO " . self::get_table_name('identities');
-                $_query.= " (user_id, del, standard, name, email)";
-                $_query.= " VALUES (?, 0, 1, ?, ?)";
-                $DB->query(
-                $_query,
-                $user_id,
-                strip_newlines($user_name),
-                strip_newlines($user_email)
-                );
-            }
-
-            // get existing mailboxes
-            $a_mailboxes = $IMAP->list_mailboxes();
-        }
-        else {
-            rcube_error::raise(
-            array(
-                    'code' => 500,
-                    'type' => 'php',
-                    'line' => __LINE__,
-                    'file' => __FILE__,
-                    'message' => "Failed to create new user"
-                    ),
-                    TRUE,
-                    FALSE
-                    );
-        }
-        return $user_id;
-    }
-
-    /**
-     * Load virtuser table in array
-     *
-     * @return array Virtuser table entries
-     */
-    function get_virtualfile()
-    {
-        $registry = rcube_registry::get_instance();
-        $registry->get_all('config');
-        if (empty($CONFIG['virtuser_file']) || !is_file($CONFIG['virtuser_file'])) {
-            return FALSE;
-        }
-        // read file
-        $a_lines = file($CONFIG['virtuser_file']);
-        return $a_lines;
-    }
-
-    /**
-     * Find matches of the given pattern in virtuser table
-     *
-     * @param string Regular expression to search for
-     * @return array Matching entries
-     */
-    static function find_in_virtual($pattern)
-    {
-        $result  = array();
-        $virtual = self::get_virtualfile();
-        if ($virtual==FALSE) {
-            return $result;
-        }
-        // check each line for matches
-        foreach ($virtual as $line) {
-            $line = trim($line);
-            if (empty($line) || $line{0}=='#') {
-                continue;
-            }
-            if (eregi($pattern, $line)) {
-                $result[] = $line;
-            }
-        }
-        return $result;
-    }
-
-    /**
-     * Resolve username using a virtuser table
-     *
-     * @param string E-mail address to resolve
-     * @return string Resolved IMAP username
-     */
-    //TODO check this with rcube_user function
-    static function email2user($email)
-    {
-        $user = $email;
-        $r = self::find_in_virtual("^$email");
-
-        for ($i=0; $i<count($r); $i++) {
-            $data = $r[$i];
-            $arr = preg_split('/\s+/', $data);
-            if (count($arr)>0) {
-                $user = trim($arr[count($arr)-1]);
-                break;
-            }
-        }
-        return $user;
-    }
-
-    /**
-     * Resolve e-mail address from virtuser table
-     *
-     * @param string User name
-     * @return string Resolved e-mail address
-     */
-    //TODO check this with rcube_user function
-    static function user2email($user)
-    {
-        $email = "";
-        $r = self::find_in_virtual("$user$");
-
-        for ($i=0; $i<count($r); $i++) {
-            $data=$r[$i];
-            $arr = preg_split('/\s+/', $data);
-            if (count($arr)>0) {
-                $email = trim($arr[0]);
-                break;
-            }
-        }
-        return $email;
-    }
-
-    /**
-     * Write the given user prefs to the user's record
-     *
-     * @param mixed User prefs to save
-     * @return boolean True on success, False on failure
-     */
-    //TODO check this with rcube_user function
-    static function save_user_prefs($a_user_prefs)
-    {
-        $registry       = rcube_registry::get_instance();
-        $DB             = $registry->get('DB', 'core');
-        $CONFIG         = $registry->get_all('config');
-        $user_lang = $registry->get('user_lang', 'core');
-
-        $_query = "UPDATE " . self::get_table_name('users');
-        $_query.= " SET preferences=?,";
-        $_query.= " language=?";
-        $_query.= " WHERE user_id=?";
-        $DB->query(
-        $_query,
-        serialize($a_user_prefs),
-        $user_lang,
-        $_SESSION['user_id']
-        );
-
-        if ($DB->affected_rows()) {
-            $_SESSION['user_prefs'] = $a_user_prefs;
-            foreach ($a_user_prefs as $key => $value)
-            $registry->set($key, $value, 'config');
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
      * Overwrite action variable
      *
      * @param string New action value
      */
-    static function override_action($action)
-    {
+    public static function override_action($action = null) {
         $registry = rcube_registry::get_instance();
         $OUTPUT   = $registry->get('OUTPUT', 'core');
         $GLOBALS['_action'] = $action;
@@ -936,8 +708,7 @@ class rcube {
      * @param string  Request task (omit if the same)
      * @return The application URL
      */
-    static function url($action, $p=array(), $task=null)
-    {
+    public static function url($action = null, $p = array(), $task = null) {
         $registry   = rcube_registry::get_instance();
         $COMM_PATH  = $registry->get('COMM_PATH', 'core');
         $MAIN_TASKS = $registry->get('MAIN_TASKS', 'core');
@@ -945,10 +716,11 @@ class rcube {
         $qstring = '';
         $base = $COMM_PATH;
 
-        if ($task && in_array($task, $MAIN_TASKS)) {
-            $base = ereg_replace('_task=[a-z]+', '_task='.$task, $COMM_PATH);
+        if (!empty($task) && in_array($task, $MAIN_TASKS)) {
+            $base = preg_replace('/_task=[a-z]+/', '_task='.$task, $COMM_PATH);
         }
-        if (is_array($p)) {
+
+        if (is_array($p) && !empty($p)) {
             foreach ($p as $key => $val) {
                 $qstring .= '&'.urlencode($key).'='.urlencode($val);
             }
@@ -962,8 +734,7 @@ class rcube {
      * @param string Password to encrypt
      * @return string Encryprted string
      */
-    static function encrypt_passwd($pass)
-    {
+    private static function encrypt_passwd($pass) {
         $cypher = des(self::get_des_key(), $pass, 1, 0, NULL);
         return base64_encode($cypher);
     }
@@ -974,8 +745,7 @@ class rcube {
      * @param string Encrypted password
      * @return string Plain password
      */
-    static function decrypt_passwd($cypher)
-    {
+    public static function decrypt_passwd($cypher) {
         $pass = des(self::get_des_key(), base64_decode($cypher), 0, 0, NULL);
         return preg_replace('/\x00/', '', $pass);
     }
@@ -985,18 +755,16 @@ class rcube {
      *
      * @return string DES encryption key
      */
-    static function get_des_key()
-    {
+    private static function get_des_key() {
         $registry = rcube_registry::get_instance();
         $CONFIG   = $registry->get_all('config');
         $key = !empty($CONFIG['des_key']) ? $CONFIG['des_key'] : 'rcmail?24BitPwDkeyF**ECB';
         $len = strlen($key);
 
         // make sure the key is exactly 24 chars long
-        if ($len<24) {
+        if ($len < 24) {
             $key .= str_repeat('_', 24-$len);
-        }
-        else if ($len>24) {
+        } else if ($len > 24) {
             substr($key, 0, 24);
         }
         return $key;
@@ -1006,8 +774,7 @@ class rcube {
      * Garbage collector function for temp files.
      * Remove temp files older than two days
      */
-    function temp_gc()
-    {
+    public function temp_gc() {
         $registry = rcube_registry::get_instance();
         $CONFIG   = $registry->get_all('config');
         $tmp      = unslashify($CONFIG['temp_dir']);
@@ -1017,22 +784,22 @@ class rcube {
             return false;
         }
         while (($fname = readdir($dir)) !== false) {
-            if ($fname{0} == '.')
-            continue;
+            if ($fname{0} == '.') {
+                continue;
+            }
 
-            if (filemtime($tmp.'/'.$fname) < $expire)
-            @unlink($tmp.'/'.$fname);
+            if (filemtime($tmp.'/'.$fname) < $expire) {
+                unlink($tmp.'/'.$fname);
+            }
         }
         closedir($dir);
     }
-
 
     /**
      * Garbage collector for cache entries.
      * Remove all expired message cache records
      */
-    static function message_cache_gc()
-    {
+    public static function message_cache_gc() {
         $registry = rcube_registry::get_instance();
         $DB       = $registry->get('DB', 'core');
         $CONFIG   = $registry->get_all('config');
@@ -1049,21 +816,18 @@ class rcube {
         $DB->query($_query);
     }
 
-
     /**
      * Check if a specific template exists
      *
      * @param string Template name
      * @return bool True if template exists
      */
-    static function template_exists($name)
-    {
+    public static function template_exists($name) {
         $registry = rcube_registry::get_instance();
         $CONFIG   = $registry->get_all('config');
-        $skin_path = $CONFIG['skin_path'];
 
         // check template file
-        return is_file("$skin_path/templates/$name.html");
+        return is_file($CONFIG['skin_path'].'/templates/'.$name.'html');
     }
 
 
@@ -1072,8 +836,7 @@ class rcube {
      *
      * @deprecated
      */
-    static function parse_template($name='main', $exit=true)
-    {
+    static function parse_template($name='main', $exit=true) {
         $registry = rcube_registry::get_instance();
         $OUTPUT   = $registry->get('OUTPUT', 'core');
         $OUTPUT->send($name, $exit);
@@ -1204,7 +967,7 @@ class rcube {
         }
         // use value from post
         if (!empty($_POST[$fname])) {
-            $value = $_POST[$fname];
+            $value = self::get_input_value($fname, RCUBE_INPUT_POST);
         }
         $out = $input->show($value);
 
@@ -1218,8 +981,7 @@ class rcube {
      * @param string IMAP host
      * @return string Resolved SMTP host
      */
-    static function mail_domain($host)
-    {
+    public static function mail_domain($host) {
         $registry = rcube_registry::get_instance();
         $CONFIG   = $registry->get_all('config');
 
@@ -1228,8 +990,7 @@ class rcube {
             if (isset($CONFIG['mail_domain'][$host])) {
                 $domain = $CONFIG['mail_domain'][$host];
             }
-        }
-        else if (!empty($CONFIG['mail_domain'])) {
+        } else if (!empty($CONFIG['mail_domain'])) {
             $domain = $CONFIG['mail_domain'];
         }
         return $domain;
@@ -1587,11 +1348,9 @@ class rcube {
         // format output
         if (($attrib['uppercase'] && strtolower($attrib['uppercase']=='first')) || $attrib['ucfirst']) {
             return ucfirst($text);
-        }
-        elseif ($attrib['uppercase']) {
+        } elseif ($attrib['uppercase']) {
             return strtoupper($text);
-        }
-        elseif ($attrib['lowercase']) {
+        } elseif ($attrib['lowercase']) {
             return strtolower($text);
         }
         return $text;
@@ -1608,13 +1367,11 @@ class rcube {
      * @param  string   Charset to convert into
      * @return string   Field value or NULL if not available
      */
-    static function get_input_value($fname, $source, $allow_html=false, $charset=null)
-    {
+    public static function get_input_value($fname, $source, $allow_html=false, $charset=null) {
         try {
             $registry = rcube_registry::get_instance();
             $output   = $registry->get('OUTPUT', 'core');
-        }
-        catch (rcube_registry_exception $e) {
+        } catch (rcube_registry_exception $e) {
             $output = NULL;
         }
 
@@ -1622,25 +1379,22 @@ class rcube {
 
         if ($source == rcube::INPUT_GET && isset($_GET[$fname])) {
             $value = $_GET[$fname];
-        }
-        else if ($source == rcube::INPUT_POST && isset($_POST[$fname])) {
+        } else if ($source == rcube::INPUT_POST && isset($_POST[$fname])) {
             $value = $_POST[$fname];
-        }
-        else if ($source == rcube::INPUT_GPC) {
+        } else if ($source == rcube::INPUT_GPC) {
             if (isset($_POST[$fname])) {
                 $value = $_POST[$fname];
-            }
-            else if (isset($_GET[$fname])) {
+            } else if (isset($_GET[$fname])) {
                 $value = $_GET[$fname];
-            }
-            else if (isset($_COOKIE[$fname])) {
+            } else if (isset($_COOKIE[$fname])) {
                 $value = $_COOKIE[$fname];
             }
         }
 
         // strip slashes if magic_quotes enabled
-        if ((bool)get_magic_quotes_gpc())
-        $value = stripslashes($value);
+        if ((bool)get_magic_quotes_gpc()) {
+            $value = stripslashes($value);
+        }
 
         // remove HTML tags if not allowed
         if (!$allow_html) {
@@ -1660,17 +1414,16 @@ class rcube {
      * @param  string $name Header name
      * @return mixed  Header value or null if not available
      */
-    static function get_request_header($name)
-    {
+    public static function get_request_header($name) {
         if (function_exists('getallheaders')) {
             $hdrs = getallheaders();
             $hdrs = array_change_key_case($hdrs, CASE_UPPER);
             $key  = strtoupper($name);
-        }
-        else {
+        } else {
             $key  = 'HTTP_' . strtoupper(strtr($name, '-', '_'));
             $hdrs = array_change_key_case($_SERVER, CASE_UPPER);
         }
+
         if (isset($hdrs[$key])) {
             return $hdrs[$key];
         }
@@ -1687,54 +1440,51 @@ class rcube {
      * @param  string Target charset to convert to; defaults to RCMAIL_CHARSET
      * @return Converted string
      */
-    static function charset_convert($str, $from, $to=NULL)
-    {
+    public static function charset_convert($str, $from, $to=NULL) {
+        $from = strtoupper($from);
+        $to = ($to == NULL ? strtoupper(RCMAIL_CHARSET) : strtoupper($to));
+
+        if ($from == $to || $str == '' || empty($from)) {
+            return $str;
+        }
+
+        // convert charset using iconv module
+        if (function_exists('iconv') && $from != 'UTF-7' && $to != 'UTF-7') {
+            $iconv_map = array('KS_C_5601-1987' => 'EUC-KR');
+            return iconv(($iconv_map[$from] ? $iconv_map[$from] : $from), ($iconv_map[$to] ? $iconv_map[$to] : $to) . "//IGNORE", $str);
+        }
+
         $registry = rcube_registry::get_instance();
         $MBSTRING = $registry->get('MBSTRING', 'core');
 
-        $from = strtoupper($from);
-        $to = $to==NULL ? strtoupper(RCMAIL_CHARSET) : strtoupper($to);
-
-        if ($from==$to || $str=='' || empty($from)) {
-            return $str;
-        }
         // convert charset using mbstring module
         if ($MBSTRING) {
-            $to = $to=="UTF-7" ? "UTF7-IMAP" : $to;
-            $from = $from=="UTF-7" ? "UTF7-IMAP": $from;
+            $mb_map = array('UTF-7' => 'UTF7-IMAP', 'KS_C_5601-1987' => 'EUC-KR');
 
             // return if convert succeeded
-            if (($out = @mb_convert_encoding($str, $to, $from)) != '') {
+            if (($out = mb_convert_encoding($str, ($mb_map[$to] ? $mb_map[$to] : $to), ($mb_map[$from] ? $mb_map[$from] : $from))) != '') {
                 return $out;
             }
         }
 
-        // convert charset using iconv module
-        if (function_exists('iconv') && $from!='UTF-7' && $to!='UTF-7')
-        return iconv($from, $to, $str);
-
         $conv = new utf8();
 
         // convert string to UTF-8
-        if ($from=='UTF-7') {
+        if ($from == 'UTF-7') {
             $str = utf7_to_utf8($str);
-        }
-        else if (($from=='ISO-8859-1') && function_exists('utf8_encode')) {
+        } else if (($from == 'ISO-8859-1') && function_exists('utf8_encode')) {
             $str = utf8_encode($str);
-        }
-        else if ($from!='UTF-8') {
+        } else if ($from != 'UTF-8') {
             $conv->loadCharset($from);
             $str = $conv->strToUtf8($str);
         }
 
         // encode string for output
-        if ($to=='UTF-7') {
+        if ($to == 'UTF-7') {
             return utf8_to_utf7($str);
-        }
-        else if ($to=='ISO-8859-1' && function_exists('utf8_decode')) {
+        } else if ($to == 'ISO-8859-1' && function_exists('utf8_decode')) {
             return utf8_decode($str);
-        }
-        else if ($to!='UTF-8') {
+        } else if ($to!='UTF-8') {
             $conv->loadCharset($to);
             return $conv->utf8ToStr($str);
         }
@@ -1753,8 +1503,7 @@ class rcube {
      * @param  boolean Convert newlines
      * @return The quoted string
      */
-    static function rep_specialchars_output($str, $enctype='', $mode='', $newlines=TRUE)
-    {
+    public static function rep_specialchars_output($str, $enctype='', $mode='', $newlines=TRUE) {
         static $html_encode_arr, $js_rep_table, $xml_rep_table;
 
         $out_charset = rcube_registry::get_instance()->get('OUTPUT_CHARSET', 'core');
@@ -1765,11 +1514,7 @@ class rcube {
 
         // encode for plaintext
         if ($enctype == 'text') {
-            return str_replace(
-                "\r\n",
-                "\n",
-            $mode=='remove' ? strip_tags($str) : $str
-            );
+            return str_replace("\r\n", "\n", ($mode =='remove' ? strip_tags($str) : $str));
         }
 
         // encode for HTML output
@@ -1792,16 +1537,11 @@ class rcube {
                 unset($encode_arr['<']);
                 unset($encode_arr['>']);
                 unset($encode_arr['&']);
-            }
-            else if ($mode == 'remove') {
+            } else if ($mode == 'remove') {
                 $str = strip_tags($str);
             }
             // avoid douple quotation of &
-            $out = preg_replace(
-                '/&amp;([a-z]{2,5}|#[0-9]{2,4});/',
-                '&\\1;',
-            strtr($str, $encode_arr)
-            );
+            $out = preg_replace('/&amp;([a-z]{2,5}|#[0-9]{2,4});/', '&\\1;', strtr($str, $encode_arr));
             return $newlines ? nl2br($out) : $out;
         }
 
@@ -1814,8 +1554,8 @@ class rcube {
             $js_rep_table = $xml_rep_table = array();
             $xml_rep_table['&'] = '&amp;';
 
-            for ($c=160; $c<256; $c++)  // can be increased to support more charsets
-            {
+            // can be increased to support more charsets
+            for ($c=160; $c<256; $c++)   {
                 $xml_rep_table[Chr($c)] = "&#$c;";
 
                 if ($out_charset == 'ISO-8859-1') {
@@ -1835,17 +1575,12 @@ class rcube {
             if ($out_charset != 'UTF-8') {
                 $str = self::charset_convert($str, RCMAIL_CHARSET, $out_charset);
             }
-            return preg_replace(
-            array("/\r?\n/", "/\r/"),
-            array('\n', '\n'),
-            addslashes(strtr($str, $js_rep_table))
-            );
+            return preg_replace(array("/\r?\n/", "/\r/"), array('\n', '\n'), addslashes(strtr($str, $js_rep_table)));
         }
 
         // no encoding given -> return original string
         return $str;
     }
-
 
     /**
      * Compose a valid attribute string for HTML tags
@@ -1856,8 +1591,7 @@ class rcube {
      * @uses html::attrib_string
      * @deprecated
      */
-    static function create_attrib_string($attrib, $allowed=array('id', 'class', 'style'))
-    {
+    public static function create_attrib_string($attrib, $allowed=array('id', 'class', 'style')) {
         return html::attrib_string($attrib, $allowed);
     }
 
@@ -1868,15 +1602,9 @@ class rcube {
      * @param string Input string
      * @return array Key-value pairs of parsed attributes
      */
-    function parse_attrib_string($str)
-    {
+    public function parse_attrib_string($str = '') {
         $attrib = array();
-        preg_match_all(
-            '/\s*([-_a-z]+)=(["\'])([^"]+)\2/Ui',
-        stripslashes($str),
-        $regs,
-        PREG_SET_ORDER
-        );
+        preg_match_all('/\s*([-_a-z]+)=(["\'])([^"]+)\2/Ui', stripslashes($str), $regs, PREG_SET_ORDER);
 
         // convert attributes to an associative array (name => value)
         if ($regs) {
@@ -1890,34 +1618,29 @@ class rcube {
 
     /****** debugging functions ********/
 
-
     /**
      * tfk_debug
      *
      * @param  string $str
      * @return void
      */
-    static function tfk_debug($str)
-    {
-        $str = "\n\n" . @date('Y-m-d H:i:s') . "\n" . $str;
-        $fp = @fopen(dirname(__FILE__) . '/../../logs/debug.tfk', 'a');
+    public static function tfk_debug($str = '') {
+        $str = "\n\n" . date('Y-m-d H:i:s') . "\n" . $str;
+        $fp = fopen(dirname(__FILE__) . '/../../logs/debug.tfk', 'a');
         if ($fp !== false) {
-            @fwrite($fp, $str);
-            @fclose($fp);
-        }
-        else {
+            fwrite($fp, $str);
+            fclose($fp);
+        } else {
             die('Could not open logs/debug.tfk.');
         }
     }
-
 
     /**
      * Print or write debug messages
      *
      * @param mixed Debug message or data
      */
-    function console($msg)
-    {
+    public function console($msg = '') {
         $registry = rcube_registry::get_instance();
         $CONFIG   = $registry->get_all('config');
         if (!is_string($msg)) {
@@ -1925,18 +1648,15 @@ class rcube {
         }
         if (!($CONFIG['debug_level'] & 4)) {
             write_log('console', $msg);
-        }
-        elseif ($GLOBALS['REMOTE_REQUEST']) {
+        } elseif ($GLOBALS['REMOTE_REQUEST']) {
             echo "/*\n $msg \n*/\n";
-        }
-        else {
+        } else {
             echo '<div style="background:#eee; border:1px solid #ccc; ';
             echo 'margin-bottom:3px; padding:6px"><pre>';
             echo $msg;
             echo "</pre></div>\n";
         }
     }
-
 
     /**
      * Append a line to a logfile in the logs directory.
@@ -1945,39 +1665,35 @@ class rcube {
      * @param string Name of logfile
      * @param string Line to append
      */
-    function write_log($name, $line)
-    {
+    private function write_log($name, $line) {
         $registry = rcube_registry::get_instance();
         $log_dir  = $registry->get('log_dir', 'config');
 
         if (!is_string($line)) {
             $line = var_export($line, true);
         }
-        $log_entry = sprintf(
-            "[%s]: %s\n",
-        date("d-M-Y H:i:s O", mktime()),
-        $line
-        );
+        $log_entry = sprintf("[%s]: %s\n", date("d-M-Y H:i:s O", mktime()), $line);
 
         if (empty($log_dir)) {
             $log_dir = INSTALL_PATH . 'logs';
         }
         // try to open specific log file for writing
-        if ($fp = @fopen($log_dir . '/' . $name, 'a')) {
+        if ($fp = fopen($log_dir . '/' . $name, 'a')) {
             fwrite($fp, $log_entry);
             fclose($fp);
         }
     }
 
 
-    static function timer()
-    {
-        list($usec, $sec) = explode(" ", microtime());
+    public static function timer() {
+        list($usec, $sec) = explode(' ', microtime());
         return ((float)$usec + (float)$sec);
     }
 
-    static function print_time($timer, $label='Timer')
-    {
+    /**
+     * not used
+     */
+    private static function print_time($timer, $label='Timer') {
         static $print_count = 0;
 
         $print_count++;
@@ -1993,3 +1709,4 @@ class rcube {
 
 }
 
+?>
