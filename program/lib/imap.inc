@@ -126,6 +126,7 @@ class iilBasicHeader
 	var $f;
 	var $internaldate;
 	var $references;
+	var $priority;
 	var $mdn_to;
 	var $mdn_sent = false;
 	var $is_reply = false;
@@ -161,11 +162,12 @@ function iil_ReadLine($fp, $size) {
 	$line = '';
 	if ($fp) {
 		do {
+		    // FIXME: hardcode size?
 			$buffer = fgets($fp, 2048);
 			if ($buffer === false) {
 				break;
             }
-			$line.=$buffer;
+			$line .= $buffer;
 		} while ($buffer[strlen($buffer)-1]!="\n");
 	}
 	return $line;
@@ -175,12 +177,14 @@ function iil_MultLine($fp, $line) {
 	$line = chop($line);
 	if (ereg('\{[0-9]+\}$', $line)) {
 		$out = '';
+        
 		preg_match_all('/(.*)\{([0-9]+)\}$/', $line, $a);
 		$bytes = $a[2][0];
-		while (strlen($out)<$bytes) {
-			$out.=chop(iil_ReadLine($fp, 1024));
+		while (strlen($out) < $bytes) {
+		    $line = iil_ReadLine($fp, 1024); 
+			$out .= chop($line);
 		}
-		$line = $a[1][0]."\"$out\"";
+		$line = $a[1][0] . "\"$out\"";
 	}
 	return $line;
 }
@@ -1515,7 +1519,7 @@ function iil_C_FetchHeaders(&$conn, $mailbox, $message_set, $uidfetch=false) {
     $request .= " FETCH $message_set (BODY.PEEK[HEADER.FIELDS ";
     $request .= "(DATE FROM TO SUBJECT REPLY-TO IN-REPLY-TO CC BCC ";
     $request .= "CONTENT-TRANSFER-ENCODING CONTENT-TYPE MESSAGE-ID ";
-    $request .= "REFERENCES DISPOSITION-NOTIFICATION-TO)])\r\n";
+    $request .= "REFERENCES DISPOSITION-NOTIFICATION-TO X-PRIORITY)])\r\n";
 
 	if (!fputs($fp, $request)) {
 	    return false;
@@ -1624,6 +1628,10 @@ function iil_C_FetchHeaders(&$conn, $mailbox, $message_set, $uidfetch=false) {
 						break;
 					case 'message-id':
 						$result[$id]->messageID = $string;
+						break;
+					case 'x-priority':
+						if (preg_match('/^(\d+)/', $string, $matches))
+							$result[$id]->priority = intval($matches[1]);
 						break;
     				} // end switch ()
     			} // end while ()
@@ -2579,3 +2587,5 @@ function iil_C_ClearFolder(&$conn, $folder) {
     }
 	return (iil_C_Expunge($conn, $folder) >= 0);
 }
+
+?>

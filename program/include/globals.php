@@ -32,7 +32,7 @@
  * @return string HTML-quoted string
  * @see rcube::rep_specialchars_output()
  */
-function Q($str = '', $mode = 'strict', $newlines = TRUE) {
+function Q($str = '', $mode = 'strict', $newlines = true) {
     return rcube::rep_specialchars_output($str, 'html', $mode, $newlines);
 }
 
@@ -77,19 +77,18 @@ function strip_newlines($str = '') {
 
 /**
  * Send HTTP headers to prevent caching this page
- * 
+ *
  * @return void
  */
 function send_nocacheing_headers() {
     if (headers_sent()) {
         return;
     }
-    header("Expires: ".gmdate("D, d M Y H:i:s")." GMT");
-    header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
-    header("Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0");
-    header("Pragma: no-cache");
+    header('Expires: '.gmdate('D, d M Y H:i:s').' GMT');
+    header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
+    header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
+    header('Pragma: no-cache');
 }
-
 
 /**
  * Send header with expire date 30 days in future
@@ -121,8 +120,7 @@ function send_modified_header($mdate, $etag = null) {
         return;
     }
     $iscached = false;
-    if ($_SERVER['HTTP_IF_MODIFIED_SINCE']
-        && strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) >= $mdate) {
+    if ($_SERVER['HTTP_IF_MODIFIED_SINCE'] && strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) >= $mdate) {
         $iscached = true;
     }
 
@@ -130,6 +128,7 @@ function send_modified_header($mdate, $etag = null) {
     if ($etag && $_SERVER['HTTP_IF_NONE_MATCH'] == $etag) {
         $iscached = true;
     }
+
     if ($iscached) {
         header('HTTP/1.x 304 Not Modified');
     } else {
@@ -140,14 +139,13 @@ function send_modified_header($mdate, $etag = null) {
     header('Pragma: ');
 
     if ($etag) {
-        header("Etag: $etag");
+        header('Etag: '.$etag);
     }
 
     if ($iscached) {
         exit;
     }
 }
-
 
 /**
  * Convert a variable into a javascript object notation
@@ -184,7 +182,7 @@ function json_serialize($var) {
 
             foreach ($var as $key => $value) {
                 // enclose key with quotes if it is not variable-name conform
-                if (!ereg('^[_a-zA-Z]{1}[_a-zA-Z0-9]*$', $key) /* || is_js_reserved_word($key) */) {
+                if (!preg_match('/^[_a-zA-Z]{1}[_a-zA-Z0-9]*$/', $key) /* || is_js_reserved_word($key) */) {
                     $key = "'$key'";
                 }
                 $pairs[] = sprintf("%s%s", $is_assoc ? $key.':' : '', json_serialize($value));
@@ -201,17 +199,6 @@ function json_serialize($var) {
 }
 
 /**
- * Function to convert an array to a javascript array
- * Actually an alias function for json_serialize()
- * @deprecated
- */
-// TODO is it really not used? rcmail_compose line 368
-function array2js($arr, $type='') {
-    return json_serialize($arr);
-}
-
-
-/**
  * Similar function as in_array() but case-insensitive
  *
  * @param mixed Needle value
@@ -221,10 +208,10 @@ function array2js($arr, $type='') {
 function in_array_nocase($needle, $haystack) {
     foreach ($haystack as $value) {
         if (strtolower($needle) === strtolower($value)) {
-            return TRUE;
+            return true;
         }
     }
-    return FALSE;
+    return false;
 }
 
 
@@ -234,14 +221,13 @@ function in_array_nocase($needle, $haystack) {
  * @param string Input value
  * @return boolean Imagine what!
  */
+//TODO wtf? purge this
 function get_boolean($str) {
-    $str = strtolower($str);
-    if(in_array($str, array('false', '0', 'no', 'nein', ''), TRUE)) {
-        return FALSE;
+    if (in_array(strtolower($str), array('false', '0', 'no', 'nein', ''), true)) {
+        return false;
     }
-    return TRUE;
+    return true;
 }
-
 
 /**
  * Parse a human readable string for a number of bytes
@@ -257,15 +243,15 @@ function parse_bytes($str) {
     if (preg_match('/([0-9]+)([a-z])/i', $str, $regs)) {
         $bytes = floatval($regs[1]);
         switch (strtolower($regs[2])) {
-        case 'g':
-            $bytes *= 1073741824;
-            break;
-        case 'm':
-            $bytes *= 1048576;
-            break;
-        case 'k':
-            $bytes *= 1024;
-            break;
+            case 'g':
+                $bytes *= 1073741824;
+                break;
+            case 'm':
+                $bytes *= 1048576;
+                break;
+            case 'k':
+                $bytes *= 1024;
+                break;
         }
     }
 
@@ -306,6 +292,10 @@ function make_absolute_url($path, $base_url) {
     $host_url = $base_url;
     $abs_path = $path;
 
+    // check if path is an absolute URL
+    if (preg_match('/^[fhtps]+:\/\//', $path)) {
+        return $path;
+    }
     // cut base_url to the last directory
     if (strpos($base_url, '/') > 7) {
         $host_url = substr($base_url, 0, strpos($base_url, '/'));
@@ -370,7 +360,7 @@ function rc_strpos($haystack, $needle, $offset = 0) {
     if (function_exists('mb_strpos')) {
         return mb_strpos($haystack, $needle, $offset);
     }
-	return strpos($haystack, $needle, $offset);
+    return strpos($haystack, $needle, $offset);
 }
 
 /**
@@ -380,7 +370,7 @@ function rc_strrpos($haystack, $needle, $offset = 0) {
     if (function_exists('mb_strrpos')) {
         return mb_strrpos($haystack, $needle, $offset);
     }
-	return strrpos($haystack, $needle, $offset);
+    return strrpos($haystack, $needle, $offset);
 }
 
 /**
@@ -431,7 +421,7 @@ function clear_directory($dir_path) {
 
     while ($file = readdir($dir)) {
         if (strlen($file) > 2) {
-            unlink("$dir_path/$file");
+            unlink($dir_path.'/'.$file);
         }
     }
 
@@ -458,40 +448,35 @@ function get_offset_time($offset_str, $factor = 1) {
 
     $ts = mktime();
     switch ($unit) {
-    case 'w':
-        $amount *= 7;
-    case 'd':
-        $amount *= 24;
-    case 'h':
-        $amount *= 60;
-    case 'm':
-        $amount *= 60;
-    case 's':
-        $ts += $amount * $factor;
+        case 'w':
+            $amount *= 7;
+        case 'd':
+            $amount *= 24;
+        case 'h':
+            $amount *= 60;
+        case 'm':
+            $amount *= 60;
+        case 's':
+            $ts += $amount * $factor;
     }
 
     return $ts;
 }
 
+function explode_quoted_string($delimiter, $string) {
+    $result = array();
+    $strlen = strlen($string);
+    for ($q=$p=$i=0; $i < $strlen; $i++) {
+        if ($string{$i} == "\"" && $string{$i-1} != "\\") {
+        $q = $q ? false : true;
+        } else if (!$q && preg_match("/$delimiter/", $string{$i})) {
+            $result[] = substr($string, $p, $i - $p);
+            $p = $i + 1;
+        }
+    }
 
-/**
- * Return the last occurence of a string in another string
- *
- * @param haystack string string in which to search
- * @param needle string string for which to search
- * @return index of needle within haystack, or false if not found
- */
-function strrstr($haystack, $needle) {
-    $pver = phpversion();
-    if ($pver[0] >= 5) {
-        return strrpos($haystack, $needle);
-    }
-    $index = strpos(strrev($haystack), strrev($needle));
-    if ($index === false) {
-        return false;
-    }
-    $index = strlen($haystack) - strlen($needle) - $index;
-    return $index;
+    $result[] = substr($string, $p);
+    return $result;
 }
 
 ?>

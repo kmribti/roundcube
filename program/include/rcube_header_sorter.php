@@ -7,27 +7,24 @@
  * @author  Eric Stadtherr
  * @license GPL
  */
-class rcube_header_sorter
-{
-    var $sequence_numbers = array();
+class rcube_header_sorter {
+    private $sequence_numbers = array();
 
     /**
-     * set the predetermined sort order.
+     * Set the predetermined sort order.
      *
-     * @param array $seqnums numerically indexed array of IMAP message sequence numbers
+     * @param array Numerically indexed array of IMAP message sequence numbers
      */
-    public function set_sequence_numbers($seqnums)
-    {
+    public function set_sequence_numbers($seqnums = array()) {
         $this->sequence_numbers = $seqnums;
     }
 
     /**
-     * sort the array of header objects
+     * Sort the array of header objects
      *
-     * @param array $headers array of iilBasicHeader objects indexed by UID
+     * @param array Array of iilBasicHeader objects indexed by UID
      */
-    public function sort_headers(&$headers)
-    {
+    public function sort_headers($headers) {
         /**
          * uksort would work if the keys were the sequence number, but unfortunately
          * the keys are the UIDs.  We'll use uasort instead and dereference the value
@@ -35,18 +32,17 @@ class rcube_header_sorter
          *
          * uksort($headers, array($this, "compare_seqnums"));
          */
-        uasort($headers, array($this, "compare_seqnums"));
+        uasort($headers, array($this, 'compare_seqnums'));
     }
 
     /**
-     * get the position of a message sequence number in my sequence_numbers array
+     * Get the position of a message sequence number in my sequence_numbers array
      *
-     * @param integer $seqnum message sequence number contained in sequence_numbers
+     * @param int Message sequence number contained in sequence_numbers
+     * @return int Position, -1 if not found
      */
-    public function position_of($seqnum)
-    {
-        $c = count($this->sequence_numbers);
-        for ($pos = 0; $pos <= $c; $pos++) {
+    public function position_of($seqnum) {
+        for ($pos = 0, $c = count($this->sequence_numbers); $pos <= $c; $pos++) {
             if ($this->sequence_numbers[$pos] == $seqnum) {
                 return $pos;
             }
@@ -57,8 +53,7 @@ class rcube_header_sorter
     /**
      * Sort method called by uasort()
      */
-    public function compare_seqnums($a, $b)
-    {
+    public function compare_seqnums($a, $b) {
         // First get the sequence number from the header object (the 'id' field).
         $seqa = $a->id;
         $seqb = $b->id;
@@ -72,3 +67,5 @@ class rcube_header_sorter
         return $ret;
     }
 }
+
+?>

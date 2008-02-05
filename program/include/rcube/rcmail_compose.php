@@ -351,7 +351,7 @@ function rcmail_compose_body($attrib)
     if (!empty($CONFIG['enable_spellcheck']) && !$isHtml) {
         $lang_set = '';
         if (!empty($CONFIG['spellcheck_languages']) && is_array($CONFIG['spellcheck_languages'])) {
-            $lang_set = "googie.setLanguages(".array2js($CONFIG['spellcheck_languages']).");\n";
+            $lang_set = "googie.setLanguages(".json_serialize($CONFIG['spellcheck_languages']).");\n";
         }
         $OUTPUT->include_script('googiespell.js');
         $OUTPUT->add_script(
@@ -427,7 +427,7 @@ function rcmail_create_reply_body($body, $bodyIsHtml)
         );
 
         // try to remove the signature
-        if ($sp = strrstr($body, '-- ')) {
+        if ($sp = strrpos($body, '-- ')) {
             if ($body{$sp+3}==' ' || $body{$sp+3}=="\n" || $body{$sp+3}=="\r") {
                 $body = substr($body, 0, $sp-1);
             }

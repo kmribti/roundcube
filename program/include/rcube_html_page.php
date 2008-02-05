@@ -194,7 +194,7 @@ class rcube_html_page {
 
         // find and add page footer
         $output_lc = strtolower($output);
-        if (($fpos = strrstr($output_lc, '</body>')) || ($fpos = strrstr($output_lc, '</html>'))) {
+        if (($fpos = strrpos($output_lc, '</body>')) || ($fpos = strrpos($output_lc, '</html>'))) {
             $output = substr($output, 0, $fpos) . "$__page_footer\n" . substr($output, $fpos);
         } else {
             $output .= "\n".$__page_footer;

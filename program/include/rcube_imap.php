@@ -38,8 +38,7 @@ require_once 'lib/mime.inc';
  * @version    1.40
  * @link       http://ilohamail.org
  */
-class rcube_imap
-{
+class rcube_imap {
     var $db;
     var $conn;
     var $root_ns = '';
@@ -1936,13 +1935,13 @@ class rcube_imap
         $_query.= ' ' . $this->db->fromunixtime($headers->timestamp) . ',';
         $_query.= ' ?, ?, ?)';
         $this->db->query($_query, $_SESSION['user_id'], $key, $index, $headers->uid,
-            (string)substr($this->decode_header($headers->subject, true), 0, 128),
-            (string)substr($this->decode_header($headers->from, true), 0, 128),
-            (string)substr($this->decode_header($headers->to, true), 0, 128),
-            (string)substr($this->decode_header($headers->cc, true), 0, 128),
-            (int)$headers->size,
-            serialize($headers),
-            (is_object($struct) ? serialize($struct) : null));
+        (string)substr($this->decode_header($headers->subject, true), 0, 128),
+        (string)substr($this->decode_header($headers->from, true), 0, 128),
+        (string)substr($this->decode_header($headers->to, true), 0, 128),
+        (string)substr($this->decode_header($headers->cc, true), 0, 128),
+        (int)$headers->size,
+        serialize($headers),
+        (is_object($struct) ? serialize($struct) : null));
     }
 
     private function remove_message_cache($key, $index) {
@@ -1991,7 +1990,7 @@ class rcube_imap
             $name    = preg_replace(array('/^[\'"]/', '/[\'"]$/'), '', trim($val['name']));
 
             if ($name && $address && $name != $address) {
-                $string = sprintf('%s <%s>', strpos($name, ',')!==FALSE ? '"'.$name.'"' : $name, $address);
+                $string = sprintf('%s <%s>', strpos($name, ',') !== false ? '"'.$name.'"' : $name, $address);
             } else if ($address) {
                 $string = $address;
             } else if ($name) {
@@ -2007,11 +2006,16 @@ class rcube_imap
         return $out;
     }
 
-
-    function decode_header($input, $remove_quotes=FALSE)
-    {
+    /**
+     * Decode a message header value
+     *
+     * @param string  Header value
+     * @param boolean Remove quotes if necessary
+     * @return string Decoded string
+     */
+    public function decode_header($input, $remove_quotes = false) {
         $str = $this->decode_mime_string((string)$input);
-        if ($str{0}=='"' && $remove_quotes) {
+        if ($str{0} == '"' && $remove_quotes) {
             $str = str_replace('"', '', $str);
         }
         return $str;
@@ -2021,29 +2025,29 @@ class rcube_imap
     /**
      * Decode a mime-encoded string to internal charset
      *
-     * @access static
+     * @param string  Header value
+     * @param string  Fallback charset if none specified
+     * @return string Decoded string
      */
-    static function decode_mime_string($input, $fallback=null)
-    {
+    public static function decode_mime_string($input, $fallback = null) {
         $out = '';
 
         $pos = strpos($input, '=?');
         if ($pos !== false) {
             $out = substr($input, 0, $pos);
 
-            $end_cs_pos = strpos($input, "?", $pos+2);
-            $end_en_pos = strpos($input, "?", $end_cs_pos+1);
-            $end_pos = strpos($input, "?=", $end_en_pos+1);
+            $end_cs_pos = strpos($input, '?', $pos+2);
+            $end_en_pos = strpos($input, '?', $end_cs_pos+1);
+            $end_pos = strpos($input, '?=', $end_en_pos+1);
 
             $encstr = substr($input, $pos+2, ($end_pos-$pos-2));
             $rest = substr($input, $end_pos+2);
 
-            $out .= rcube_imap::_decode_mime_string_part($encstr);
-            $out .= rcube_imap::decode_mime_string($rest, $fallback);
+            $out .= self::_decode_mime_string_part($encstr);
+            $out .= self::decode_mime_string($rest, $fallback);
 
             return $out;
         }
-
         // no encoding information, use fallback
         return rcube::charset_convert($input, !empty($fallback) ? $fallback : 'ISO-8859-1');
     }
@@ -2051,25 +2055,21 @@ class rcube_imap
 
     /**
      * Decode a part of a mime-encoded string
-     *
-     * @access static
      */
-    static function _decode_mime_string_part($str)
-    {
+    private static function _decode_mime_string_part($str) {
         $a = explode('?', $str);
         $count = count($a);
 
         // should be in format "charset?encoding?base64_string"
         if ($count >= 3) {
-            for ($i=2; $i<$count; $i++) {
-                $rest.=$a[$i];
+            for ($i = 2; $i < $count; $i++) {
+                $rest .= $a[$i];
             }
 
-            if (($a[1]=="B")||($a[1]=="b")) {
+            if (($a[1] == 'B') || ($a[1] == 'b')) {
                 $rest = base64_decode($rest);
-            }
-            else if (($a[1]=="Q")||($a[1]=="q")) {
-                $rest = str_replace("_", " ", $rest);
+            } else if (($a[1] == 'Q') || ($a[1] == 'q')) {
+                $rest = str_replace('_', ' ', $rest);
                 $rest = quoted_printable_decode($rest);
             }
 
@@ -2078,46 +2078,34 @@ class rcube_imap
         return $str;    // we dont' know what to do with this
     }
 
-    function mime_decode($input, $encoding='7bit')
-    {
+    /**
+     * Decode a mime part
+     *
+     * @param string Input string
+     * @param string Part encoding
+     * @return string Decoded string
+     */
+    private function mime_decode($input, $encoding = '7bit') {
         switch (strtolower($encoding)) {
             case '7bit':
                 return $input;
-                break;
-
             case 'quoted-printable':
                 return quoted_printable_decode($input);
-                break;
-
             case 'base64':
                 return base64_decode($input);
-                break;
-
             default:
                 return $input;
         }
     }
 
-    function mime_encode($input, $encoding='7bit')
-    {
-        switch ($encoding) {
-            case 'quoted-printable':
-                return quoted_printable_encode($input);
-                break;
-
-            case 'base64':
-                return base64_encode($input);
-                break;
-
-            default:
-                return $input;
-        }
-    }
-
-
-    // convert body chars according to the ctype_parameters
-    function charset_decode($body, $ctype_param)
-    {
+    /**
+     * Convert body charset to UTF-8 according to the ctype_parameters
+     *
+     * @param string Part body to decode
+     * @param string Charset to convert from
+     * @return string Content converted to internal charset
+     */
+    function charset_decode($body, $ctype_param) {
         if (is_array($ctype_param) && !empty($ctype_param['charset'])) {
             return rcube::charset_convert($body, $ctype_param['charset']);
         }
@@ -2126,40 +2114,69 @@ class rcube_imap
         return rcube::charset_convert($body,  'ISO-8859-1');
     }
 
-
     /* --------------------------------
      *         private methods
      * --------------------------------*/
 
+    /**
+     * Translate UID to message ID
+     *
+     * @param int    Message UID
+     * @param string Mailbox name
+     * @return int   Message ID
+     */
+    public function get_id($uid, $mbox_name = null) {
+        return $this->_uid2id($uid, ($mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox));
+    }
+
+    /**
+     * Validate the given input and save to local properties
+     */
+    private function _set_sort_order($sort_field = null, $sort_order = null) {
+        if ($sort_field != null) {
+            $this->sort_field = asciiwords($sort_field);
+        }
+        if ($sort_order != null) {
+            $this->sort_order = strtoupper($sort_order) == 'DESC' ? 'DESC' : 'ASC';
+        }
+    }
+
+    /**
+     * Translate message number to UID
+     *
+     * @param int    Message ID
+     * @param string Mailbox name
+     * @return int   Message UID
+     */
+    public function get_uid($id, $mbox_name = null) {
+        return $this->_id2uid($id, ($mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox));
+    }
 
     /**
      * _mod_mailbox
      *
-     * @access private
      * @param  string  $mbox_name
      * @param  string  $mode
      * @return string  $mbox_name
      */
-    private function _mod_mailbox($mbox_name, $mode='in')
-    {
+    private function _mod_mailbox($mbox_name, $mode = 'in') {
         if ((!empty($this->root_ns) && $this->root_ns == $mbox_name) || $mbox_name == 'INBOX') {
             return $mbox_name;
         }
 
         if (!empty($this->root_dir) && $mode=='in') {
             $mbox_name = $this->root_dir.$this->delimiter.$mbox_name;
-        }
-        else if (strlen($this->root_dir) && $mode=='out') {
+        } else if (strlen($this->root_dir) && $mode=='out') {
             $mbox_name = substr($mbox_name, strlen($this->root_dir)+1);
         }
         return $mbox_name;
     }
 
     /**
-     * sort mailboxes first by default folders and then in alphabethical order
+     * Sort mailboxes first by default folders and then in alphabethical order
+     * @access private
      */
-    function _sort_mailbox_list($a_folders)
-    {
+    private function _sort_mailbox_list($a_folders) {
         $a_out = $a_defaults = array();
 
         // find default folders and skip folders starting with '.'
@@ -2168,34 +2185,20 @@ class rcube_imap
                 continue;
             }
 
-            if (($p = array_search(strtolower($folder), $this->default_folders_lc))!==FALSE) {
+            if (($p = array_search(strtolower($folder), $this->default_folders_lc)) !== false && !$a_defaults[$p]) {
                 $a_defaults[$p] = $folder;
-            }
-            else {
+            } else {
                 $a_out[] = $folder;
             }
         }
 
-        sort($a_out);
+        natcasesort($a_out);
         ksort($a_defaults);
 
         return array_merge($a_defaults, $a_out);
     }
 
-    function get_id($uid, $mbox_name=NULL)
-    {
-        $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
-        return $this->_uid2id($uid, $mailbox);
-    }
-
-    function get_uid($id,$mbox_name=NULL)
-    {
-        $mailbox = $mbox_name ? $this->_mod_mailbox($mbox_name) : $this->mailbox;
-        return $this->_id2uid($id, $mailbox);
-    }
-
-    function _uid2id($uid, $mbox_name=NULL)
-    {
+    private function _uid2id($uid, $mbox_name = null) {
         if (!$mbox_name) {
             $mbox_name = $this->mailbox;
         }
@@ -2206,190 +2209,174 @@ class rcube_imap
         return $this->uid_id_map[$mbox_name][$uid];
     }
 
-    function _id2uid($id, $mbox_name=NULL)
-    {
+    private function _id2uid($id, $mbox_name = null) {
         if (!$mbox_name) {
             $mbox_name = $this->mailbox;
         }
-        return iil_C_ID2UID($this->conn, $mbox_name, $id);
+        $index = array_flip((array)$this->uid_id_map[$mbox_name]);
+        if (isset($index[$id])) {
+            $uid = $index[$id];
+        } else {
+            $uid = iil_C_ID2UID($this->conn, $mbox_name, $id);
+            $this->uid_id_map[$mbox_name][$uid] = $id;
+        }
+
+        return $uid;
     }
 
+    /**
+     * Parse string or array of server capabilities and put them in internal array
+     */
+    private function _parse_capability($caps) {
+        if (!is_array($caps)) {
+            $cap_arr = explode(' ', $caps);
+        } else {
+            $cap_arr = $caps;
+        }
 
-    // parse string or array of server capabilities and put them in internal array
-    function _parse_capability($caps)
-    {
-        if (!is_array($caps))
-        $cap_arr = explode(' ', $caps);
-        else
-        $cap_arr = $caps;
-
-        foreach ($cap_arr as $cap)
-        {
-            if ($cap=='CAPABILITY')
-            continue;
-
-            if (strpos($cap, '=')>0)
-            {
-                list($key, $value) = explode('=', $cap);
-                if (!is_array($this->capabilities[$key]))
-                $this->capabilities[$key] = array();
-
-                $this->capabilities[$key][] = $value;
+        foreach ($cap_arr as $cap) {
+            if ($cap == 'CAPABILITY') {
+                continue;
             }
-            else
-            $this->capabilities[$cap] = TRUE;
+
+            if (strpos($cap, '=') > 0) {
+                list($key, $value) = explode('=', $cap);
+                if (!is_array($this->capabilities[$key])) {
+                    $this->capabilities[$key] = array();
+                }
+                $this->capabilities[$key][] = $value;
+            } else {
+                $this->capabilities[$cap] = true;
+            }
         }
     }
 
+    /**
+     * Subscribe/unsubscribe a list of mailboxes and update local cache
+     */
+    private function _change_subscription($a_mboxes, $mode) {
+        $updated = false;
 
-    // subscribe/unsubscribe a list of mailboxes and update local cache
-    function _change_subscription($a_mboxes, $mode)
-    {
-        $updated = FALSE;
-
-        if (is_array($a_mboxes))
-        foreach ($a_mboxes as $i => $mbox_name)
-        {
-            $mailbox = $this->_mod_mailbox($mbox_name);
-            $a_mboxes[$i] = $mailbox;
-
-            if ($mode=='subscribe')
-            $result = iil_C_Subscribe($this->conn, $mailbox);
-            else if ($mode=='unsubscribe')
-            $result = iil_C_UnSubscribe($this->conn, $mailbox);
-
-            if ($result>=0)
-            $updated = TRUE;
+        if (is_array($a_mboxes)) {
+            foreach ($a_mboxes as $i => $mbox_name) {
+                $mailbox = $this->_mod_mailbox($mbox_name);
+                $a_mboxes[$i] = $mailbox;
+    
+                if ($mode == 'subscribe') {
+                    $result = iil_C_Subscribe($this->conn, $mailbox);
+                } else if ($mode == 'unsubscribe') {
+                    $result = iil_C_UnSubscribe($this->conn, $mailbox);
+                }
+    
+                if ($result >= 0) {
+                    $updated = true;
+                }
+            }
         }
 
         // get cached mailbox list
-        if ($updated)
-        {
+        if ($updated) {
             $a_mailbox_cache = $this->get_cache('mailboxes');
-            if (!is_array($a_mailbox_cache))
-            return $updated;
+            if (!is_array($a_mailbox_cache)) {
+                return $updated;
+            }
 
             // modify cached list
-            if ($mode=='subscribe')
-            $a_mailbox_cache = array_merge($a_mailbox_cache, $a_mboxes);
-            else if ($mode=='unsubscribe')
-            $a_mailbox_cache = array_diff($a_mailbox_cache, $a_mboxes);
+            if ($mode == 'subscribe') {
+                $a_mailbox_cache = array_merge($a_mailbox_cache, $a_mboxes);
+            } else if ($mode == 'unsubscribe') {
+                $a_mailbox_cache = array_diff($a_mailbox_cache, $a_mboxes);
+            }
 
             // write mailboxlist to cache
             $this->update_cache('mailboxes', $this->_sort_mailbox_list($a_mailbox_cache));
         }
-
         return $updated;
     }
 
 
-    // increde/decrese messagecount for a specific mailbox
-    function _set_messagecount($mbox_name, $mode, $increment)
-    {
-        $a_mailbox_cache = FALSE;
+    /**
+     * Increde/decrese messagecount for a specific mailbox
+     */
+    private function _set_messagecount($mbox_name, $mode, $increment) {
+        $a_mailbox_cache = false;
         $mailbox = $mbox_name ? $mbox_name : $this->mailbox;
         $mode = strtoupper($mode);
 
         $a_mailbox_cache = $this->get_cache('messagecount');
 
-        if (!is_array($a_mailbox_cache[$mailbox]) || !isset($a_mailbox_cache[$mailbox][$mode]) || !is_numeric($increment))
-        return FALSE;
+        if (!is_array($a_mailbox_cache[$mailbox]) || !isset($a_mailbox_cache[$mailbox][$mode]) || !is_numeric($increment)) {
+            return false;
+        }
 
         // add incremental value to messagecount
         $a_mailbox_cache[$mailbox][$mode] += $increment;
-
         // there's something wrong, delete from cache
-        if ($a_mailbox_cache[$mailbox][$mode] < 0)
-        unset($a_mailbox_cache[$mailbox][$mode]);
-
+        if ($a_mailbox_cache[$mailbox][$mode] < 0) {
+            unset($a_mailbox_cache[$mailbox][$mode]);
+        }
         // write back to cache
         $this->update_cache('messagecount', $a_mailbox_cache);
-
-        return TRUE;
+        return true;
     }
 
-
-    // remove messagecount of a specific mailbox from cache
-    function _clear_messagecount($mbox_name='')
-    {
-        $a_mailbox_cache = FALSE;
+    /**
+     * Remove messagecount of a specific mailbox from cache
+     */
+    function _clear_messagecount($mbox_name = '') {
+        $a_mailbox_cache = false;
         $mailbox = $mbox_name ? $mbox_name : $this->mailbox;
 
         $a_mailbox_cache = $this->get_cache('messagecount');
 
-        if (is_array($a_mailbox_cache[$mailbox]))
-        {
+        if (is_array($a_mailbox_cache[$mailbox])) {
             unset($a_mailbox_cache[$mailbox]);
             $this->update_cache('messagecount', $a_mailbox_cache);
         }
     }
 
-
-    // split RFC822 header string into an associative array
-    function _parse_headers($headers)
-    {
+    /**
+     * Split RFC822 header string into an associative array
+     */
+    private function _parse_headers($headers) {
         $a_headers = array();
         $lines = explode("\n", $headers);
-        $c = count($lines);
-        for ($i=0; $i<$c; $i++)
-        {
-            if ($p = strpos($lines[$i], ': '))
-            {
+
+        for ($i = 0, $c = count($lines); $i < $c; $i++) {
+            if ($p = strpos($lines[$i], ': ')) {
                 $field = strtolower(substr($lines[$i], 0, $p));
                 $value = trim(substr($lines[$i], $p+1));
-                if (!empty($value))
-                $a_headers[$field] = $value;
+                if (!empty($value)) {
+                    $a_headers[$field] = $value;
+                }
             }
         }
-
         return $a_headers;
     }
 
 
-    function _parse_address_list($str, $decode=true)
-    {
+    private function _parse_address_list($str, $decode = true) {
         // remove any newlines and carriage returns before
-        $a = $this->_explode_quoted_string('[,;]', preg_replace( "/[\r\n]/", " ", $str));
+        $a = explode_quoted_string('[,;]', preg_replace( "/[\r\n]/", " ", $str));
         $result = array();
 
-        foreach ($a as $key => $val)
-        {
+        foreach ($a as $key => $val) {
             $val = preg_replace("/([\"\w])</", "$1 <", $val);
-            $sub_a = $this->_explode_quoted_string(' ', $decode ? $this->decode_header($val) : $val);
+            $sub_a = explode_quoted_string(' ', $decode ? $this->decode_header($val) : $val);
             $result[$key]['name'] = '';
 
-            foreach ($sub_a as $k => $v)
-            {
-                if (strpos($v, '@') > 0)
-                $result[$key]['address'] = str_replace('<', '', str_replace('>', '', $v));
-                else
-                $result[$key]['name'] .= (empty($result[$key]['name'])?'':' ').str_replace("\"",'',stripslashes($v));
+            foreach ($sub_a as $k => $v) {
+                if (strpos($v, '@') > 0) {
+                    $result[$key]['address'] = str_replace('<', '', str_replace('>', '', $v));
+                } else {
+                    $result[$key]['name'] .= (empty($result[$key]['name'])?'':' ').str_replace("\"",'',stripslashes($v));
+                }
             }
 
-            if (empty($result[$key]['name']))
-            $result[$key]['name'] = $result[$key]['address'];
-        }
-
-        return $result;
-    }
-
-
-    function _explode_quoted_string($delimiter, $string)
-    {
-        $result = array();
-        $strlen = strlen($string);
-        for ($q=$p=$i=0; $i < $strlen; $i++)
-        {
-            if ($string{$i} == "\"" && $string{$i-1} != "\\")
-            $q = $q ? false : true;
-            else if (!$q && preg_match("/$delimiter/", $string{$i}))
-            {
-                $result[] = substr($string, $p, $i - $p);
-                $p = $i + 1;
+            if (empty($result[$key]['name'])) {
+                $result[$key]['name'] = $result[$key]['address'];
             }
         }
-
-        $result[] = substr($string, $p);
         return $result;
     }
 }
@@ -2398,55 +2385,49 @@ class rcube_imap
 /**
  * Add quoted-printable encoding to a given string
  *
- * @param string  $input      string to encode
- * @param int     $line_max   add new line after this number of characters
- * @param boolena $space_conf true if spaces should be converted into =20
- * @return encoded string
+ * @param string   String to encode
+ * @param int      Add new line after this number of characters
+ * @param boolean  True if spaces should be converted into =20
+ * @return string Encoded string
  */
-function quoted_printable_encode($input, $line_max=76, $space_conv=false)
-{
+function quoted_printable_encode($input, $line_max = 76, $space_conv = false) {
     $hex = array('0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F');
     $lines = preg_split("/(?:\r\n|\r|\n)/", $input);
     $eol = "\r\n";
-    $escape = "=";
-    $output = "";
+    $escape = '=';
+    $output = '';
 
-    while( list(, $line) = each($lines)) {
+    while (list(, $line) = each($lines)) {
         //$line = rtrim($line); // remove trailing white space -> no =20\r\n necessary
         $linlen = strlen($line);
-        $newline = "";
-        for($i = 0; $i < $linlen; $i++) {
+        $newline = '';
+        for ($i = 0; $i < $linlen; $i++) {
             $c = substr( $line, $i, 1 );
             $dec = ord( $c );
             if ( ( $i == 0 ) && ( $dec == 46 ) ) {
                 // convert first point in the line into =2E
-                $c = "=2E";
+                $c = '=2E';
             }
-            if ( $dec == 32 )
-            {
-                if ( $i == ( $linlen - 1 ) ) // convert space at eol only
-                {
-                    $c = "=20";
+            if ( $dec == 32 ) {
+                // convert space at eol only
+                if ( $i == ( $linlen - 1 ) || $space_conv) {
+                    $c = '=20';
                 }
-                else if ( $space_conv )
-                {
-                    $c = "=20";
-                }
-            }
-            else if ( ($dec == 61) || ($dec < 32 ) || ($dec > 126) )  // always encode "\t", which is *not* required
-            {
+            } else if ( ($dec == 61) || ($dec < 32 ) || ($dec > 126) ) {
+                // always encode "\t", which is *not* required
                 $h2 = floor($dec/16);
                 $h1 = floor($dec%16);
-                $c = $escape.$hex["$h2"].$hex["$h1"];
+                $c = $escape.$hex[$h2].$hex[$h1];
             }
 
-            if ( (strlen($newline) + strlen($c)) >= $line_max )  // CRLF is not counted
-            {
-                $output .= $newline.$escape.$eol; // soft line break; " =\r\n" is okay
-                $newline = "";
+            // CRLF is not counted
+            if ( (strlen($newline) + strlen($c)) >= $line_max ) {
+                // soft line break; " =\r\n" is okay
+                $output .= $newline.$escape.$eol;
+                $newline = '';
                 // check if newline first character will be point or not
                 if ( $dec == 46 ) {
-                    $c = "=2E";
+                    $c = '=2E';
                 }
             }
             $newline .= $c;
@@ -2456,3 +2437,5 @@ function quoted_printable_encode($input, $line_max=76, $space_conv=false)
 
     return trim($output);
 }
+
+?>
