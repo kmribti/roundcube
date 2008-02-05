@@ -18,8 +18,6 @@
 
 */
 
-require_once 'lib/rc_mail_mime.inc';
-
 if (!empty($_POST['_uid'])) {
     $MESSAGE = array('UID' => rcube::get_input_value('_uid', rcube::INPUT_POST));
     
@@ -32,7 +30,7 @@ if (!empty($_POST['_uid'])) {
         $recipient = array_shift($IMAP->decode_address_list($MESSAGE['headers']->mdn_to));
         $mailto    = $recipient['mailto'];
 
-        $COMPOSE = new rc_mail_mime(rcmail_header_delm());
+        $COMPOSE = new rcube_mail_mime(rcube::header_delm());
         $COMPOSE->setParam(array(
             'text_encoding' => 'quoted-printable',
             'html_encoding' => 'quoted-printable',
@@ -47,7 +45,7 @@ if (!empty($_POST['_uid'])) {
             'From'         => $sender,
             'To'           => $MESSAGE['headers']->mdn_to,
             'Subject'      => rcube::gettext('receiptread') . ': ' . $MESSAGE['subject'],
-            'Message-ID'   => sprintf('<%s@%s>', md5(uniqid('rcmail'.rand(),true)), rcmail_mail_domain($_SESSION['imap_host'])),
+            'Message-ID'   => sprintf('<%s@%s>', md5(uniqid('rcmail'.rand(),true)), rcube::mail_domain($_SESSION['imap_host'])),
             'X-Sender'     => $identity['email'],
             'Content-Type' => 'multipart/report; report-type=disposition-notification');
 
@@ -55,19 +53,19 @@ if (!empty($_POST['_uid'])) {
             $headers['User-Agent'] = $CONFIG['useragent'];
         }
 
-        $body  = rcube::gettext("yourmessage") . "\r\n\r\n";
-        $body .= "\t" . rcube_label("to") . ': ';
+        $body  = rcube::gettext('yourmessage') . "\r\n\r\n";
+        $body .= "\t" . rcube::gettext('to') . ': ';
         $body .= rcube_imap::decode_mime_string(
             $MESSAGE['headers']->to,
             $MESSAGE['headers']->charset) . "\r\n";
-        $body .= "\t" . rcube_label("subject") . ': ' . $MESSAGE['subject'] . "\r\n";
-        $body .= "\t" . rcube_label("sent") . ': ';
+        $body .= "\t" . rcube::gettext('subject') . ': ' . $MESSAGE['subject'] . "\r\n";
+        $body .= "\t" . rcube::gettext('sent') . ': ';
         $body .= format_date(
             strtotime($MESSAGE['headers']->date),
             $CONFIG['date_long']) . "\r\n";
-        $body .= "\r\n" . rcube_label("receiptnote") . "\r\n";
+        $body .= "\r\n" . rcube::gettext('receiptnote') . "\r\n";
    
-        $report = "Reporting-UA: RoundCube Webmail (Version ".RCMAIL_VERSION.")\r\n";
+        $report = 'Reporting-UA: RoundCube Webmail (Version '.RCMAIL_VERSION.')'."\r\n";
 
         if ($MESSAGE['headers']->to) {
             $report .= "Original-Recipient: {$MESSAGE['headers']->to}\r\n";
@@ -99,3 +97,5 @@ if (!empty($_POST['_uid'])) {
 // Error if arrive here
 $OUTPUT->show_message('errorsendingreceipt', 'error');
 $OUTPUT->send();
+
+?>

@@ -635,9 +635,9 @@ class rcube {
 					'type' => 'php',
 					'file' => "config/main.inc.php",
 					'message' => "Acces denied for new user $user. 'auto_create_user' is disabled"
-                    ),
-                    true,
-                    false
+            ),
+            true,
+            false
             );
         }
         //tfk_debug('User id: ' . $user_id);
@@ -1706,7 +1706,280 @@ class rcube {
         rcube::console(sprintf("%s: %0.4f sec", $label, $diff));
     }
 
+    /**
+     * Replace all css definitions with #container [def]
+     *
+     * @param string CSS source code
+     * @param string Container ID to use as prefix
+     * @return string Modified CSS source
+     */
+    public static function mod_css_styles($source, $container_id, $base_url = '') {
+        $a_css_values = array();
+        $last_pos = 0;
 
+        // cut out all contents between { and }
+        while (($pos = strpos($source, '{', $last_pos)) && ($pos2 = strpos($source, '}', $pos))) {
+            $key = sizeof($a_css_values);
+            $a_css_values[$key] = substr($source, $pos+1, $pos2-($pos+1));
+            $source = substr($source, 0, $pos+1) . "<<str_replacement[$key]>>" . substr($source, $pos2, strlen($source)-$pos2);
+            $last_pos = $pos+2;
+        }
+
+        // remove html commends and add #container to each tag selector.
+        // also replace body definition because we also stripped off the <body> tag
+        $styles = preg_replace(
+        array(
+          '/(^\s*<!--)|(-->\s*$)/',
+          '/(^\s*|,\s*|\}\s*)([a-z0-9\._#][a-z0-9\.\-_]*)/im',
+          '/@import\s+(url\()?[\'"]?([^\)\'"]+)[\'"]?(\))?/ime',
+          '/<<str_replacement\[([0-9]+)\]>>/e',
+          "/$container_id\s+body/i"
+        ),
+        array(
+          '',
+          "\\1#$container_id \\2",
+          "sprintf(\"@import url('./bin/modcss.php?u=%s&c=%s')\", urlencode(make_absolute_url('\\2','$base_url')), urlencode($container_id))",
+          "\$a_css_values[\\1]",
+          "$container_id div.rcmBody"
+        ),
+        $source);
+
+        return $styles;
+    }
+
+    /**
+     * Try to autodetect operating system and find the correct line endings
+     *
+     * @return string The appropriate mail header delimiter
+     */
+    public static function rcmail_header_delm() {
+        $registry = rcube_registry::get_instance();
+        $CONFIG   = $registry->get_all('config');
+
+        // use the configured delimiter for headers
+        if (!empty($CONFIG['mail_header_delimiter'])) {
+            return $CONFIG['mail_header_delimiter'];
+        } else if (strtolower(substr(PHP_OS, 0, 3) == 'win') || strtolower(substr(PHP_OS, 0, 3) == 'mac')) {
+            return "\r\n";
+        } else {
+            return "\n";
+        }
+    }
+
+    /**
+     * Return the mailboxlist in HTML
+     *
+     * @param array Named parameters
+     * @return string HTML code for the gui object
+     */
+    public static function mailbox_list($attrib) {
+        $registry   = rcube_registry::get_instance();
+        $CONFIG     = $registry->get_all('config');
+        $OUTPUT     = $registry->get('OUTPUT', 'core');
+        $IMAP       = $registry->get('IMAP', 'core');
+        $COMM_PATH  = $registry->get('COMM_PATH', 'core');
+
+        static $s_added_script = FALSE;
+        static $a_mailboxes;
+
+        // add some labels to client
+        $OUTPUT->add_label('purgefolderconfirm', 'deletemessagesconfirm');
+
+        $type = $attrib['type'] ? $attrib['type'] : 'ul';
+        $add_attrib = ($type == 'select' ? array('style', 'class', 'id', 'name', 'onchange') : array('style', 'class', 'id'));
+
+        if ($type=='ul' && !$attrib['id']) {
+            $attrib['id'] = 'rcmboxlist';
+        }
+
+        // allow the following attributes to be added to the <ul> tag
+        $attrib_str = self::create_attrib_string($attrib, $add_attrib);
+
+        $out = '<' . $type . $attrib_str . ">\n";
+
+        // add no-selection option
+        if ($type=='select' && $attrib['noselection']) {
+            $out .= sprintf('<option value="0">%s</option>'."\n", self::gettext($attrib['noselection']));
+        }
+
+        // get mailbox list
+        $mbox_name = $IMAP->get_mailbox_name();
+
+        // for these mailboxes we have localized labels
+        $special_mailboxes = array('inbox', 'sent', 'drafts', 'trash', 'junk');
+
+        // build the folders tree
+        if (empty($a_mailboxes)) {
+            // get mailbox list
+            $a_folders = $IMAP->list_mailboxes();
+            $delimiter = $IMAP->get_hierarchy_delimiter();
+            $a_mailboxes = array();
+
+            // rcube_print_time($mboxlist_start, 'list_mailboxes()');
+
+            foreach ($a_folders as $folder) {
+                self::build_folder_tree($a_mailboxes, $folder, $delimiter);
+            }
+        }
+
+        // var_dump($a_mailboxes);
+
+        if ($type=='select') {
+            $out .= self::render_folder_tree_select($a_mailboxes, $special_mailboxes, $mbox_name, $attrib['maxlength']);
+        } else {
+            $out .= self::render_folder_tree_html($a_mailboxes, $special_mailboxes, $mbox_name, $attrib['maxlength']);
+        }
+
+        // rcube_print_time($mboxlist_start, 'render_folder_tree()');
+
+        if ($type == 'ul') {
+            $OUTPUT->add_gui_object('mailboxlist', $attrib['id']);
+        }
+
+        return $out . "</$type>";
+    }
+
+    /**
+     * Create a hierarchical array of the mailbox list
+     */
+    private static function build_folder_tree(&$arrFolders, $folder, $delm='/', $path='') {
+        $pos = strpos($folder, $delm);
+        if ($pos !== false) {
+            $subFolders = substr($folder, $pos+1);
+            $currentFolder = substr($folder, 0, $pos);
+        } else {
+            $subFolders = false;
+            $currentFolder = $folder;
+        }
+
+        $path .= $currentFolder;
+
+        if (!isset($arrFolders[$currentFolder])) {
+            $arrFolders[$currentFolder] = array('id' => $path,
+                                        'name' => self::charset_convert($currentFolder, 'UTF-7'),
+                                        'folders' => array());
+        }
+
+        if (!empty($subFolders)) {
+            self::build_folder_tree($arrFolders[$currentFolder]['folders'], $subFolders, $delm, $path.$delm);
+        }
+    }
+
+    /**
+     * Return html for a structured list &lt;ul&gt; for the mailbox tree
+     */
+    private static function render_folder_tree_html(&$arrFolders, &$special, &$mbox_name, $maxlength, $nestLevel=0) {
+        $registry   = rcube_registry::get_instance();
+        $CONFIG     = $registry->get_all('config');
+        $IMAP       = $registry->get('IMAP', 'core');
+
+        $idx = 0;
+        $out = '';
+        foreach ($arrFolders as $key => $folder) {
+            $zebra_class = ($nestLevel*$idx)%2 ? 'even' : 'odd';
+            $title = '';
+
+            $folder_lc = strtolower($folder['id']);
+            if (in_array($folder_lc, $special)) {
+                $foldername = self::gettext($folder_lc);
+            } else {
+                $foldername = $folder['name'];
+
+                // shorten the folder name to a given length
+                if ($maxlength && $maxlength>1) {
+                    $fname = abbrevate_string($foldername, $maxlength);
+                    if ($fname != $foldername) {
+                        $title = ' title="'.Q($foldername).'"';
+                    }
+                    $foldername = $fname;
+                }
+            }
+
+            // add unread message count display
+            if ($unread_count = $IMAP->messagecount($folder['id'], 'RECENT', ($folder['id']==$mbox_name))) {
+                $foldername .= sprintf(' (%d)', $unread_count);
+            }
+
+            // make folder name safe for ids and class names
+            $folder_id = preg_replace('/[^A-Za-z0-9\-_]/', '', $folder['id']);
+            $class_name = preg_replace('/[^a-z0-9\-_]/', '', $folder_lc);
+
+            // set special class for Sent, Drafts, Trash and Junk
+            if ($folder['id']==$CONFIG['sent_mbox']) {
+                $class_name = 'sent';
+            } else if ($folder['id']==$CONFIG['drafts_mbox']) {
+                $class_name = 'drafts';
+            } else if ($folder['id']==$CONFIG['trash_mbox']) {
+                $class_name = 'trash';
+            } else if ($folder['id']==$CONFIG['junk_mbox']) {
+                $class_name = 'junk';
+            }
+
+            $js_name = htmlspecialchars(JQ($folder['id']));
+            $out .= sprintf('<li id="rcmli%s" class="mailbox %s %s%s%s"><a href="%s"'.
+                    ' onclick="return %s.command(\'list\',\'%s\',this)"'.
+                    ' onmouseover="return %s.focus_folder(\'%s\')"' .
+                    ' onmouseout="return %s.unfocus_folder(\'%s\')"' .
+                    ' onmouseup="return %s.folder_mouse_up(\'%s\')"%s>%s</a>',
+            $folder_id,
+            $class_name,
+            $zebra_class,
+            $unread_count ? ' unread' : '',
+            $folder['id']==$mbox_name ? ' selected' : '',
+            Q(self::url('', array('_mbox' => $folder['id']))),
+            JS_OBJECT_NAME,
+            $js_name,
+            JS_OBJECT_NAME,
+            $js_name,
+            JS_OBJECT_NAME,
+            $js_name,
+            JS_OBJECT_NAME,
+            $js_name,
+            $title,
+            Q($foldername));
+
+            if (!empty($folder['folders'])) {
+                $out .= "\n<ul>\n" . self::render_folder_tree_html($folder['folders'], $special, $mbox_name, $maxlength, $nestLevel+1) . "</ul>\n";
+            }
+
+            $out .= "</li>\n";
+            $idx++;
+        }
+        return $out;
+    }
+
+    /**
+     * Return html for a flat list <select> for the mailbox tree
+     * @access private
+     */
+    private static function render_folder_tree_select(&$arrFolders, &$special, &$mbox_name, $maxlength, $nestLevel=0) {
+        $idx = 0;
+        $out = '';
+        foreach ($arrFolders as $key => $folder) {
+            $folder_lc = strtolower($folder['id']);
+            if (in_array($folder_lc, $special)) {
+                $foldername = self::gettext($folder_lc);
+            } else {
+                $foldername = $folder['name'];
+
+                // shorten the folder name to a given length
+                if ($maxlength && $maxlength>1) {
+                    $foldername = abbrevate_string($foldername, $maxlength);
+                }
+            }
+
+            $out .= sprintf('<option value="%s">%s%s</option>'."\n",
+            htmlspecialchars($folder['id']),
+            str_repeat('&nbsp;', $nestLevel*4),
+            Q($foldername));
+
+            if (!empty($folder['folders'])) {
+                $out .= self::render_folder_tree_select($folder['folders'], $special, $mbox_name, $maxlength, $nestLevel+1);
+            }
+            $idx++;
+        }
+        return $out;
+    }
 }
 
 ?>

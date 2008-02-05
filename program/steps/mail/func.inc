@@ -1209,7 +1209,7 @@ function rcmail_sanitize_html($body, $container_id)
         $pos = strpos($body_lc, '>', $pos)+1;
 
         // replace all css definitions with #container [def]
-        $styles = rcmail_mod_css_styles(
+        $styles = rcube::mod_css_styles(
             substr($body, $pos, $pos2-$pos),
             $container_id,
             $base_url);
