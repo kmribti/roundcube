@@ -5,7 +5,7 @@ TRUNCATE TABLE `messages`;
 
 ALTER TABLE `messages`
   DROP INDEX `idx`,
-  DROP INDEX `uid`
+  DROP INDEX `uid`;
 
 ALTER TABLE `cache`
   DROP INDEX `cache_key`,
