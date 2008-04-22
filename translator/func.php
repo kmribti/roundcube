@@ -10,16 +10,16 @@ define('ORIGINAL', 'en_US'); // always up-to-date language
 
 function get_input_value($fname)
 {
-  $value = !empty($_REQUEST[$fname]) ? $_REQUEST[$fname] : "";
-  
-  // strip slashes if magic_quotes enabled
-  if ((bool)get_magic_quotes_gpc())
-    $value = stripslashes($value);
+	$value = !empty($_REQUEST[$fname]) ? $_REQUEST[$fname] : "";
 
-	// remove HTML tags if not allowed    
-  $value = strip_tags($value);
-  
-   return $value;
+	// strip slashes if magic_quotes enabled
+	if ((bool)get_magic_quotes_gpc())
+		$value = stripslashes($value);
+
+	// remove HTML tags if not allowed
+	$value = strip_tags($value);
+
+	return $value;
  }
 
 
@@ -34,7 +34,7 @@ function update_from_svn($lang, $file)
 	// check if original file is up to date
 	$stat = @stat(LANGDIR."$lang_prefix$file");
 	if (!$stat || ($stat['mtime'] < time() - 3600))
-		{
+	{
 		if ($fp = fsockopen("ssl://$host", 443, $err, $err_str))
 			fwrite($fp, "GET $base$lang_dir$file HTTP/1.1\r\nHost: $host\r\nConnection: Close\r\n\r\n");
 
@@ -65,10 +65,10 @@ function update_from_svn($lang, $file)
 
 function lang_selection($lang)
 {
-	include(LANGDIR."index.inc");
+	include(update_from_svn('', 'index.inc'));
 
 	$out = "<select name=\"lang\">\n<option value=\"_NEW_\">New Language</option>\n";
-	foreach ($rcube_languages as $l_key => $l_value)
+	foreach ((array)$rcube_languages as $l_key => $l_value)
 	{
 		if ($l_key == ORIGINAL)
 			continue;
