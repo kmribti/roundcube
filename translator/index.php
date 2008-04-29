@@ -8,9 +8,15 @@
 </head>
 <body>
 
-<h2 id="pageheader">RoundCube (Live) Translator</h2>
+<div id="banner">
+  <div class="banner-logo"><a href="http://roundcube.net"><img src="images/banner_logo.gif" width="200" height="56" border="0" alt="RoundCube Webmal Project" /></a></div>
+  <div class="banner-right"><img src="images/banner_right.gif" width="10" height="56" alt="" /></div>
+  <h2 id="pageheader">RoundCube (Live) Translator</h2>
+</div>
 
 <?php include('func.php'); ?>
+
+<div id="bodycontent">
 
 <form method="post" action="<?=$_SERVER['PHP_SELF']?>">
 <fieldset>
@@ -130,5 +136,7 @@ if (isset($_POST["save"]) && $file && $lang)
 }
 
 ?>
+</div>
+
 </body>
 </html>

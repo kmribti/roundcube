@@ -1,10 +1,10 @@
 
 body {
-	background: #F6F6F6;
+	background: #fff;
 	font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
 	font-size: small;
 	color: #000000;
-	margin: 12px;
+	margin: 10px;
 }
 
 fieldset {
@@ -12,14 +12,47 @@ fieldset {
 	padding: 8px;
 }
 
+#banner {
+	position: relative;
+	height: 56px;
+	margin-bottom: 1.5em;
+	background: url(images/banner_bg.gif) top left repeat-x #ffffff;
+}
+
+#banner div.banner-logo {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 200px;
+	height: 56px;
+}
+
+#banner div.banner-right {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 10px;
+	height: 56px;
+}
+
 #pageheader {
-  color: #BB0000;
+	position: absolute;
+	top: 13px;
+	right: 20px;
+	width: 400px;
+	text-align: right;
+	font-size: 12pt;
+	color: #f6f6f6;
+}
+
+#bodycontent {
+	margin: 1em 16px;
 }
 
 .console {
-  display: none;
-  color: #999;
-  margin-bottom: 0.5em;
+	display: none;
+	color: #999;
+	margin-bottom: 0.5em;
 }
 
 .translist thead td {
@@ -50,11 +83,11 @@ fieldset {
 }
 
 #resultsbox {
-  
+	
 }
 
 #results {
-  font-family: monospace;
+	font-family: monospace;
 	font-size: x-small;
 }
 
