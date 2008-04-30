@@ -78,6 +78,10 @@ fieldset {
 	color: black;
 }
 
+.hint {
+	color: #999;
+}
+
 #translations {
 	margin: 20px 0;
 }

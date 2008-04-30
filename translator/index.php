@@ -1,4 +1,26 @@
-<?php header("Content-Type: text/html; charset=UTF-8"); ?>
+<?php
+
+ob_start();
+
+require_once 'func.php';
+
+if (isset($_POST["download"]) && $file && $lang)
+{
+	ob_end_clean();
+	
+	header("Content-Type: text/plain; charset=UTF-8");
+	header("Cache-Control: private");
+	header("Content-Disposition: attachment; filename=\"{$file}\"");
+	
+	echo build_localization($lang, $file);
+	exit;
+}
+else
+	header("Content-Type: text/html; charset=UTF-8");
+
+ob_end_clean();
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="et">
 <head>
@@ -14,23 +36,21 @@
   <h2 id="pageheader">RoundCube (Live) Translator</h2>
 </div>
 
-<?php include('func.php'); ?>
-
 <div id="bodycontent">
 
-<form method="post" action="<?=$_SERVER['PHP_SELF']?>">
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 <fieldset>
 <legend>What to translate</legend>
 
 <?php echo lang_selection($lang); ?>
 
 <select name="file">
-	<option value="labels.inc"<?=($file=='labels.inc'?' selected':'')?>>labels.inc</option>
-	<option value="messages.inc"<?=($file=='messages.inc'?' selected':'')?>>messages.inc</option>
+	<option value="labels.inc"<?php echo ($file=='labels.inc'?' selected':''); ?>>labels.inc</option>
+	<option value="messages.inc"<?php echo ($file=='messages.inc'?' selected':''); ?>>messages.inc</option>
 </select>
 
 <div>
-<input type="checkbox" name="trans" id="trans" value="1"<?=($translated?' checked':'')?> />
+<input type="checkbox" name="trans" id="trans" value="1"<?php echo ($translated?' checked':''); ?> />
 <label for="trans">Show translated texts</label>
 </div>
 
@@ -39,7 +59,7 @@
 </form>
 
 <div id="translations">
-<form method="post" action="<?=$_SERVER['PHP_SELF']?>">
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 <input type="hidden" name="save" value="1" />
 <?php
 
@@ -49,16 +69,6 @@ if (!empty($lang) && !empty($file))
 	echo '<input type="hidden" name="trans" value="'.($translated?'1':'').'" />';
 	echo '<table border="0" cellspacing="0" class="translist" summary="">';
 	echo '<thead><tr><td>Label</td><td>Original</td><td>Translation</td></tr></thead><tbody>';
-	
-	if ($lang != "_NEW_")
-		@include(update_from_svn($lang, $file));
-		
-	if (!empty($labels))
-		$edit_values = $labels;
-	else if (!empty($messages))
-		$edit_values = $messages;
-	else
-		$edit_values = array();
 	
 	$count = 0;
 	foreach($orig_values as $t_key => $t_value)
@@ -83,7 +93,9 @@ if (!empty($lang) && !empty($file))
 		echo '<tr><td colspan="3"><em>No new texts to translate</em></td></tr>';
 	
 	echo "</tbody></table>\n";
-	echo '<p><input type="submit" class="button" name="translate" value="Create translation"/></p>';
+	echo '<p><br /><input type="submit" class="button" name="translate" value="Create translation" />';
+	echo '<span style="padding-left:1.5em"><input type="checkbox" name="download" value="1" checked="checked" />&nbsp;Download directly</a></p>';
+	echo '<p class="hint">Save the localization file and post it to the <a href="http://lists.roundcube.net/dev">dev-mailing list</a></p>';
 
 }
 
@@ -95,42 +107,11 @@ if (!empty($lang) && !empty($file))
 
 if (isset($_POST["save"]) && $file && $lang)
 {
-	$array = $file == "messages.inc" ? '$messages' : '$labels';
-	$fpath = $lang != "_NEW_" ? update_from_svn($lang, $file) : 'nope';
-	
-	if (!strstr($fpath, 'http') && !is_file($fpath))
-		$fpath = realpath("./$file");
-	
 	echo '<div id="resultsbox">'."<h3>Localization file</h3>\n";
 	echo '<form id="select_all" action="./">
 	<textarea id="results" name="text_area" rows="'.min(30, count($orig_values)).'" cols="130">';
-
-	if ($fpath && ($fp = fopen($fpath, 'r')))
-	{
-		while (!feof($fp))
-		{
-			$line = fgets($fp);
-			echo htmlspecialchars(str_replace('#lang', $lang, rtrim($line))) . "\n";
-			if (strstr($line, $array))
-				break;
-		}
-	}
-	else
-	{
-		echo "&lt;?php\n";
-		echo $array . " = array();\n";
-	}
-
-	foreach($orig_values as $t_key => $t_value)
-	{
-		$t_value = get_input_value('t_'.$t_key);
-		if (empty($t_value) && isset($edit_values[$t_key]))
-			$t_value = $edit_values[$t_key];
-		if (!empty($t_value))
-			echo $array . "['$t_key'] = '" . addslashes(htmlspecialchars($t_value, ENT_COMPAT, 'UTF-8')) . "';\n";
-	}
-
-	echo "\n?&gt;</textarea>\n";
+	echo htmlspecialchars(build_localization($lang, $file), ENT_COMPAT, 'UTF-8');
+	echo "</textarea>\n";
 	echo '<p><input id="hilight" class="button" type="button" value="Select all" onclick="javascript:this.form.text_area.focus();this.form.text_area.select();" /></p>';
 	echo "\n</form></div>";
 }

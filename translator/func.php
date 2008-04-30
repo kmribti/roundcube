@@ -83,6 +83,53 @@ function lang_selection($lang)
 }
 
 
+function build_localization($lang, $file)
+{
+	global $orig_values, $edit_values;
+	
+	$array = $file == "messages.inc" ? '$messages' : '$labels';
+	$fpath = $lang != "_NEW_" ? update_from_svn($lang, $file) : 'nope';
+	
+	if (!strstr($fpath, 'http') && !is_file($fpath))
+		$fpath = realpath("./$file");
+	
+	$out = "";
+	if ($fpath && ($fp = fopen($fpath, 'r')))
+	{
+		while (!feof($fp))
+		{
+			$line = trim(fgets($fp));
+			
+			if (empty($line) && empty($out))
+				continue;
+				
+			$out .= str_replace('#lang', $lang, $line) . "\n";
+			
+			// reached begin of php array
+			if (strstr($line, $array))
+				break;
+		}
+	}
+	else
+	{
+		$out .= '<?php' . "\n";
+		$out .= $array . " = array();\n";
+	}
+
+	foreach((array)$orig_values as $t_key => $t_value)
+	{
+		$t_value = get_input_value('t_'.$t_key);
+		if (empty($t_value) && isset($edit_values[$t_key]))
+			$t_value = $edit_values[$t_key];
+		if (!empty($t_value))
+			$out .= $array . "['$t_key'] = '" . addslashes($t_value) . "';\n";
+	}
+	
+	$out .= "\n?>\n";
+	return $out;
+}
+
+
 // -------- EOF func --------//
 
 $header = array();
@@ -93,6 +140,7 @@ $file = get_input_value('file');
 $lang = get_input_value('lang');
 $translated = !empty($_REQUEST['trans']);
 
+// read reference file
 if ($file && $lang)
 	include(update_from_svn(ORIGINAL, $file));
 
@@ -102,5 +150,21 @@ else if ($file == 'messages.inc' && $messages)
 	$orig_values = $messages;
 
 unset($labels, $messages);
+
+// read current localization file
+if (!empty($lang) && !empty($file))
+{
+	if ($lang != "_NEW_")
+		@include(update_from_svn($lang, $file));
+	
+	if (!empty($labels))
+		$edit_values = $labels;
+	else if (!empty($messages))
+		$edit_values = $messages;
+	else
+		$edit_values = array();
+		
+	unset($labels, $messages);
+}
 
 ?>
