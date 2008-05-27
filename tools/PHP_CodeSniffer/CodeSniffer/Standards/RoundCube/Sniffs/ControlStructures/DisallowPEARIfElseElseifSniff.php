@@ -64,6 +64,8 @@ class RoundCube_Sniffs_ControlStructures_DisallowPEARIfElseElseifSniff implement
      */
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
+        static $_eol = array("\n", "\r", "\n\r");
+
         $tokens = $phpcsFile->getTokens();
         $count  = 0;
         $error  = '} else {/} elseif (...) { not allowed.';
@@ -72,21 +74,9 @@ class RoundCube_Sniffs_ControlStructures_DisallowPEARIfElseElseifSniff implement
             $phpcsFile->addError($error, $stackPtr);
             return;
         }
-        while(true) {
-            $count++;
-            if ($tokens[$stackPtr - 1]['content'] === "\n") {
-                break;
-            }
-            if ($tokens[$stackPtr - 1]['content'] === "\r") {
-                break;
-            }
-            if ($tokens[$stackPtr - 1]['content'] === "\r\n") {
-                break;
-            }
-            if ($count > 3) {
-                $phpcsFile->addError($error . " - " . var_export($tokens[$stackPtr - 1]['content'], true), $stackPtr);
-                return;
-            }
+        if (!in_array($tokens[$stackPtr - 1]['content'], $_eol)) {
+            $phpcsFile->addError($error . " - " . var_export($tokens[$stackPtr - 1]['content'], true), $stackPtr);
+            return;
         }
         return;
     }//end process()
