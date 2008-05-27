@@ -66,6 +66,10 @@ class RoundCube_Sniffs_ControlStructures_DisallowPEARIfElseElseifSniff implement
     {
         $tokens = $phpcsFile->getTokens();
         $count  = 0;
+        if ($tokens[$stackPtr - 1] !== T_WHITESPACE) {
+            $phpcsFile->addError('} else {/} elseif (...) { not allowed.', $stackPtr);
+            return;
+        }
         while(true) {
             $count++;
             if ($tokens[$stackPtr - 1] === "\n") {
