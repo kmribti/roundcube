@@ -9,7 +9,7 @@
  * @author    Greg Sherwood <gsherwood@squiz.net>
  * @author    Marc McIntyre <mmcintyre@squiz.net>
  * @copyright 2006 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
+ * @license   http://www.opensource.org/licenses/bsd-license.php BSD License
  * @version   CVS: $Id: $
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
@@ -26,7 +26,7 @@ if (class_exists('PHP_CodeSniffer_Standards_AbstractPatternSniff', true) === fal
  * @author    Greg Sherwood <gsherwood@squiz.net>
  * @author    Marc McIntyre <mmcintyre@squiz.net>
  * @copyright 2006 Squiz Pty Ltd (ABN 77 084 670 600)
- * @license   http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
+ * @license   http://www.opensource.org/licenses/bsd-license.php BSD License
  * @version   Release: @package_version@
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
@@ -57,9 +57,9 @@ class RoundCube_Sniffs_ControlStructures_ControlSignatureSniff extends PHP_CodeS
                 'for (...) {EOL',
                 'if (...) {EOL',
                 'foreach (...) {EOL',
-                '}EOL else if (...) {EOL',
-                '}EOL elseif (...) {EOL',
-                '}EOL else {EOL',
+                '}EOLelse if (...) {EOL',
+                '}EOLelseif (...) {EOL',
+                '}EOLelse {EOL',
                 'do {EOL',
                );
 
