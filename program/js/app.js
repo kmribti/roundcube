@@ -313,11 +313,11 @@ function rcube_webmail()
         var input_user = rcube_find_object('rcmloginuser');
         var input_pass = rcube_find_object('rcmloginpwd');
         if (input_user)
-          input_user.onkeyup = function(e){ return rcmail.login_user_keyup(e); };
-        if (input_user && input_user.value=='')
+          $(input_user).keyup = function(e){ return rcmail.login_user_keyup(e); };
+        if (input_user && $(input_user).val() == '')
           input_user.focus();
         else if (input_pass)
-          input_pass.focus();
+          $(input_pass).focus();
           
         this.enable_command('login', true);
         break;
