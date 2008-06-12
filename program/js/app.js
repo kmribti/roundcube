@@ -1934,117 +1934,122 @@ function rcube_webmail()
     if (input_message)
       input_message.value = message;
 
-    this.env.identity = id;
-    return true;
+        this.env.identity = id;
+        return true;
     };
 
 
-  this.show_attachment_form = function(a)
+    this.show_attachment_form = function(a)
     {
-    if (!this.gui_objects.uploadbox)
-      return false;
-      
-    var elm, list;
-    if (elm = this.gui_objects.uploadbox)
-      {
-      if (a &&  (list = this.gui_objects.attachmentlist))
-        {
-        var pos = rcube_get_object_pos(list);
-        var left = pos.x;
-        var top = pos.y + list.offsetHeight + 10;
-      
-        elm.style.top = top+'px';
-        elm.style.left = left+'px';
+        if (!this.gui_objects.uploadbox) {
+            return false;
         }
       
-      elm.style.visibility = a ? 'visible' : 'hidden';
-      }
+        var elm, list;
+        if (elm = this.gui_objects.uploadbox) {
+            if (a &&  (list = this.gui_objects.attachmentlist)) {
+                var pos  = rcube_get_object_pos(list);
+                var left = pos.x;
+                var top  = pos.y + list.offsetHeight + 10;
       
-    // clear upload form
-	try {
-      if (!a && this.gui_objects.attachmentform != this.gui_objects.messageform)
-      	this.gui_objects.attachmentform.reset();
-	}
-	catch(e){}  // ignore errors
+                $(elm).css('top', top);
+                $(elm).css('left', left);
+            }
+            $(elm).toggle(); // 'visible' : 'hidden';
+        }
+
+        // clear upload form
+	    try {
+            if (!a && this.gui_objects.attachmentform != this.gui_objects.messageform)
+      	        this.gui_objects.attachmentform.reset();
+	    }
+	    catch(e){}  // ignore errors
     
-    return true;  
+        return true;  
     };
 
 
-  // upload attachment file
-  this.upload_file = function(form)
+    // upload attachment file
+    this.upload_file = function(form)
     {
-    if (!form)
-      return false;
-      
-    // get file input fields
-    var send = false;
-    for (var n=0; n<form.elements.length; n++)
-      if (form.elements[n].type=='file' && form.elements[n].value)
-        {
-        send = true;
-        break;
+        if (!form) {
+            return false;
         }
-    
-    // create hidden iframe and post upload form
-    if (send)
-      {
-      var ts = new Date().getTime();
-      var frame_name = 'rcmupload'+ts;
+        
+        // get file input fields
+        var send  = false;
+        var input = $(form).children('input[@type=file]');
+        if ($(input).length > 0) {
+            $(input).each(function(){
+                if ($(this).val() != '') {
+                    send = true;
+                    return;
+                } 
+            });
+        }
+        if (send != true) {
+            // set reference to the form object
+            this.gui_objects.attachmentform = form;
+            return true;
+        }
+        
+        // create hidden iframe and post upload form
+        var ts         = new Date().getTime();
+        var frame_name = 'rcmupload'+ts;
 
-      // have to do it this way for IE
-      // otherwise the form will be posted to a new window
-      if(document.all)
-        {
-        var html = '<iframe name="'+frame_name+'" src="program/blank.gif" style="width:0;height:0;visibility:hidden;"></iframe>';
-        document.body.insertAdjacentHTML('BeforeEnd',html);
+        /*
+        // have to do it this way for IE
+        // otherwise the form will be posted to a new window
+        if(document.all) {
+            var html = '<iframe name="'+frame_name+'" src="program/blank.gif" style="width:0;height:0;visibility:hidden;"></iframe>';
+            document.body.insertAdjacentHTML('BeforeEnd',html);
         }
-      else  // for standards-compilant browsers
-        {
-        var frame = document.createElement('IFRAME');
-        frame.name = frame_name;
-        frame.style.border = 'none';
-        frame.style.width = 0;
-        frame.style.height = 0;
-        frame.style.visibility = 'hidden';
-        document.body.appendChild(frame);
-        }
+        else { // for standards-compilant browsers
+        */
+            var frame = document.createElement('iframe');
+            $(frame).attr('name', frame_name);
+            $(frame).css('border', 'none');
+            $(frame).width(0);
+            $(frame).height(0);
+            $(frame).hide();
+            $('body').after($(frame));
+        //}
+        $(form).attr('target', frame_name);
+        $(form).attr('action', this.env.comm_path+'&_action=upload');
+        $(form).attr('enctype', 'multipart/form-data');
+        $(form).submit();
 
-      form.target = frame_name;
-      form.action = this.env.comm_path+'&_action=upload';
-      form.setAttribute('enctype', 'multipart/form-data');
-      form.submit();
-      }
-    
-    // set reference to the form object
-    this.gui_objects.attachmentform = form;
-    return true;
+        // set reference to the form object
+        this.gui_objects.attachmentform = form;
+        return true;
     };
 
 
-  // add file name to attachment list
-  // called from upload page
-  this.add2attachment_list = function(name, content)
+    // add file name to attachment list
+    // called from upload page
+    this.add2attachment_list = function(name, content)
     {
-    if (!this.gui_objects.attachmentlist)
-      return false;
-      
-    var li = document.createElement('LI');
-    li.id = name;
-    li.innerHTML = content;
-    this.gui_objects.attachmentlist.appendChild(li);
-    return true;
+        if (!this.gui_objects.attachmentlist) {
+            return false;
+        }
+        var li = document.createElement('LI');
+        $(li).attr('name', name);
+        $(li).html(content);
+        $('#' + this.gui_objects.attachmentlist).append(li);
+        return true;
     };
 
-  this.remove_from_attachment_list = function(name)
+    this.remove_from_attachment_list = function(name)
     {
-    if (!this.gui_objects.attachmentlist)
-      return false;
-
-    var list = this.gui_objects.attachmentlist.getElementsByTagName("li");
-    for (i=0;i<list.length;i++)
-      if (list[i].id == name)
-        this.gui_objects.attachmentlist.removeChild(list[i]);
+        if (!this.gui_objects.attachmentlist) {
+            return false;
+        }
+        var list = $('#' + this.gui_objects.attachmentlist).children('li');
+        list.each(function(n){
+            if ($(this).attr('id') == name) {
+                $(this).empty();
+            }
+        });
     };
 
   this.remove_attachment = function(name)
@@ -2084,21 +2089,21 @@ function rcube_webmail()
     return true;
     };
 
-  // reset quick-search form
-  this.reset_qsearch = function()
+    // reset quick-search form
+    this.reset_qsearch = function()
     {
-    if (this.gui_objects.qsearchbox)
-      this.gui_objects.qsearchbox.value = '';
-      
-    this.env.search_request = null;
-    return true;
+        if (this.gui_objects.qsearchbox) {
+            $(this.gui_objects.qsearchbox).val();
+        }
+        this.env.search_request = null;
+        return true;
     };
 
 
-  this.sent_successfully = function(msg)
+    this.sent_successfully = function(msg)
     {
-    this.list_mailbox();
-    this.display_message(msg, 'confirmation', true);
+        this.list_mailbox();
+        this.display_message(msg, 'confirmation', true);
     }
 
 
@@ -2483,7 +2488,7 @@ function rcube_webmail()
       qs += '&_search='+this.env.search_request;
 
     // send request to server
-    this.http_post('delete', '_cid='+urlencode(a_cids.join(','))+'&_source='+urlencode(this.env.source)+'&_from='+(this.env.action ? this.env.action : '')+qs);
+   this.http_post('delete', '_cid='+urlencode(a_cids.join(','))+'&_source='+urlencode(this.env.source)+'&_from='+(this.env.action ? this.env.action : '')+qs);
     return true;
     };
 

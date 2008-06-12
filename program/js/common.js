@@ -446,73 +446,77 @@ function find_in_array()
 // make a string URL safe
 function urlencode(str)
 {
-  return window.encodeURIComponent ? encodeURIComponent(str) : escape(str);
+    return window.encodeURIComponent ? encodeURIComponent(str) : escape(str);
 }
 
 
-// get any type of html objects by id/name
+/**
+ * get any type of html objects by id/name
+ 
+ * @param string id An ID, name or an index, or similar.
+ * @param object d  A document reference.
+ */
 function rcube_find_object(id, d)
-  {
-  var n, f, obj, e;
-  if(!d) d = document;
+{
+    var n, f, obj, e;
+    if(!d) d = document;
 
-  if(d.getElementsByName && (e = d.getElementsByName(id)))
-    obj = e[0];
-  if(!obj && d.getElementById)
-    obj = d.getElementById(id);
-  if(!obj && d.all)
-    obj = d.all[id];
-
-  if(!obj && d.images.length)
-    obj = d.images[id];
-
-  if(!obj && d.forms.length)
-    for(f=0; f<d.forms.length; f++)
-      {
-      if(d.forms[f].name == id)
-        obj = d.forms[f];
-      else if(d.forms[f].elements[id])
-        obj = d.forms[f].elements[id];
-      }
-
-  if(!obj && d.layers)
-    {
-    if(d.layers[id]) obj = d.layers[id];
-    for(n=0; !obj && n<d.layers.length; n++)
-      obj = rcube_find_object(id, d.layers[n].document);
+    if ($('#' + id)) {
+        return $('#'+id);
     }
-
-  return obj;
-  }
+    if ($('name='+id)) {
+        return $('name='+id)
+    }
+    if ($('img').length > 0) {
+        return $('img').get(id);
+    }
+    if ($('form').length > 0) {
+        $('form').each(function(){
+            if ($(this).attr('name') == id) {
+                return $(this);
+            }
+            if ($(this).children('input').get(id)) {
+                return $(this).children('input').get(id);
+            }
+        });
+    }
+    if ($(d).children('form').length > 0) {
+        $(d).children('form').each(function(){
+            if ($(this).attr('name') == id) {
+                return $(this);
+            }
+            if ($(this).children('input').get(id)) {
+                return $(this).children('input').get(id);
+            }
+        });
+    }
+    if ($('layer').length > 0) {
+        if ($('layer').get(id)) {
+            return $('layer').get(id);
+        }
+        $('layer').each(function(){
+            obj = rcube_find_object(id, $(this));
+            if (obj != null) {
+                return obj;
+            }
+        });
+    }
+    return null;
+}
 
 
 // return the absolute position of an object within the document
 function rcube_get_object_pos(obj)
-  {
-  if(typeof(obj)=='string')
-    obj = rcube_find_object(obj);
-
-  if(!obj) return {x:0, y:0};
-
-  var iX = (bw.layers) ? obj.x : obj.offsetLeft;
-  var iY = (bw.layers) ? obj.y : obj.offsetTop;
-
-  if(bw.ie || bw.mz)
-    {
-    var elm = obj.offsetParent;
-    while(elm && elm!=null)
-      {
-      iX += elm.offsetLeft;
-      iY += elm.offsetTop;
-      elm = elm.offsetParent;
-      }
+{
+    if (typeof(obj) == 'string') {
+        obj = rcube_find_object(obj);
     }
-
-  //if(bw.mac && bw.ie5) iX += document.body.leftMargin;
-  //if(bw.mac && bw.ie5) iY += document.body.topMargin;
-
-  return {x:iX, y:iY};
-  }
+    if (!obj) {
+        return {x:0, y: 0};
+    }
+    offset = $(obj).offset();
+    return {x:offset.left, y:offset.top}
+}
 
 
 /**
@@ -524,22 +528,19 @@ function rcube_get_object_pos(obj)
  * @return CSS property value
  * @type String
  */
-function get_elements_computed_style(html_element, css_property, mozilla_equivalent)
-  {
-  if (arguments.length==2)
-    mozilla_equivalent = css_property;
-
-  var el = html_element;
-  if (typeof(html_element)=='string')
-    el = rcube_find_object(html_element);
-
-  if (el && el.currentStyle)
-    return el.currentStyle[css_property];
-  else if (el && document.defaultView && document.defaultView.getComputedStyle)
-    return document.defaultView.getComputedStyle(el, null).getPropertyValue(mozilla_equivalent);
-  else
+function get_elements_computed_style(html_element, css_property, mozilla_equivalent) {
+    if (arguments.length == 2) {
+        mozilla_equivalent = css_property;
+    }
+    var el = null;
+    if (typeof(html_element) == 'string') {
+        el = rcube_find_object(html_element);
+    }
+    if (el && $(el).css(css_property)) {
+        return $(el).css(css_property);
+    }
     return false;
-  }
+}
   
 
 // cookie functions by GoogieSpell
@@ -579,33 +580,35 @@ roundcube_browser.prototype.get_cookie = getCookie;
 // tiny replacement for Firebox functionality
 function rcube_console()
 {
-  this.log = function(msg)
-  {
-    box = rcube_find_object('console');
-    if (box)
-      if (msg[msg.length-1]=='\n')
-        box.value += msg+'--------------------------------------\n';
-      else
-        box.value += msg+'\n--------------------------------------\n';
-  };
+    this.log = function(msg)
+    {
+        box = rcube_find_object('console');
+        if (box) {
+            if (msg[msg.length-1] != '\n') {
+                msg += '\n';
+            }
+            $('#box').after(msg)
+        }
+    };
 
-  this.reset = function()
-  {
-    box = rcube_find_object('console');
-    if (box)
-      box.value = '';
-  };
+    this.reset = function()
+    {
+        box = rcube_find_object('console');
+        if (box) {
+            $('#box').empty();
+        }
+    };
 }
 
 var bw = new roundcube_browser();
 
-if (!window.console)
-  console = new rcube_console();
-
+if (!window.console) {
+    console = new rcube_console();
+}
 
 // Add escape() method to RegExp object
 // http://dev.rubyonrails.org/changeset/7271
 RegExp.escape = function(str)
-  {
-  return String(str).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
-  }
+{
+    return String(str).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
+}
