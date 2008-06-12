@@ -67,9 +67,9 @@ class rcube_template extends rcube_html_page
         $this->add_script($javascript, 'head_top');
         $this->add_script($javascript_foot, 'foot');
         $this->scripts_path = 'program/js/';
+        $this->include_script('jquery-1.2.6.min.js');
         $this->include_script('common.js');
         $this->include_script('app.js');
-        $this->include_script('jquery-1.2.6.min.js');
 
         // register common UI objects
         $this->add_handlers(array(
