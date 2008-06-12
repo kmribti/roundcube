@@ -3153,14 +3153,13 @@ function rcube_webmail()
     };
 
 
-  // make a message row disapear
-  this.hide_message = function()
+    // make a message row disapear
+    this.hide_message = function()
     {
-    if (this.gui_objects.message)
-      {
-      this.gui_objects.message.style.display = 'none';
-      this.gui_objects.message.onmousedown = null;
-      }
+        if (this.gui_objects.message) {
+            $('#' + this.gui_objects.message).hide();
+            $('#' + this.gui_objects.message).mousedown = null;
+        }
     };
 
 
