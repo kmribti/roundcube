@@ -10,7 +10,7 @@
  | Authors: Thomas Bruederli <roundcube@gmail.com>                       |
  |          Charles McNulty <charles@charlesmcnulty.com>                 |
  +-----------------------------------------------------------------------+
- | Requires: common.js, list.js                                          |
+ | Requires: common.js, list.js, rcube_http_request.js                                          |
  +-----------------------------------------------------------------------+
 
   $Id$
