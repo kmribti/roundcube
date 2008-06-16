@@ -185,7 +185,7 @@ function rcube_webmail()
           {
           if (this.gui_objects.remoteobjectsmsg)
             this.gui_objects.remoteobjectsmsg.style.display = 'block';
-          this.enable_command('load-images', true);
+          this.enable_command('load-images', 'always-load', true);
           }
 
         if (this.env.action=='compose')
@@ -704,6 +704,13 @@ function rcube_webmail()
           
         this.mark_message(flag, uid);
         break;
+        
+      case 'always-load':
+        if (this.env.uid && this.env.sender) {
+          this.add_contact(urlencode(this.env.sender));
+          window.setTimeout(function(){ ref.command('load-images'); }, 300);
+          break;
+        }
         
       case 'load-images':
         if (this.env.uid)
@@ -3401,6 +3408,14 @@ function rcube_webmail()
         tinyMCE.execCommand('mceRemoveControl', true, textAreaId);
       }
     };
+
+
+  this.toggle_prefer_html = function(checkbox)
+    {
+    var addrbook_show_images;
+    if (addrbook_show_images = document.getElementById('rcmfd_addrbook_show_images'))
+      addrbook_show_images.disabled = !checkbox.checked;
+    }
 
 
 
