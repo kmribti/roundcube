@@ -23,7 +23,7 @@ function __autoload($classname)
       array('MDB2/\\1', 'Mail/\\1', 'html', 'utf8.class'),
       $classname
   );
-  include_once $filename. '.php';
+  @include_once $filename. '.php';
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
