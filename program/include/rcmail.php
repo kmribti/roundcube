@@ -37,6 +37,7 @@ class rcmail
   public $db;
   public $imap;
   public $output;
+  public $plugins;
   public $task = 'mail';
   public $action = '';
   public $comm_path = './';
@@ -47,7 +48,7 @@ class rcmail
   /**
    * This implements the 'singleton' design pattern
    *
-   * @return object qvert The one and only instance
+   * @return object rcmail The one and only instance
    */
   static function get_instance()
   {
@@ -125,6 +126,9 @@ class rcmail
     // create IMAP object
     if ($this->task == 'mail')
       $this->imap_init();
+      
+    // create plugin API and load plugins
+    $this->plugins = rcube_plugin_api::get_instance();
   }
   
   

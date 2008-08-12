@@ -74,6 +74,7 @@ class rcube_config
     // fix paths
     $this->prop['log_dir'] = $this->prop['log_dir'] ? unslashify($this->prop['log_dir']) : INSTALL_PATH . 'logs';
     $this->prop['temp_dir'] = $this->prop['temp_dir'] ? unslashify($this->prop['temp_dir']) : INSTALL_PATH . 'temp';
+    $this->prop['plugins_dir'] = $this->prop['plugins_dir'] ? unslashify($this->prop['plugins_dir']) : INSTALL_PATH . 'plugins';
     
     // handle aliases
     if (isset($this->prop['locale_string']) && empty($this->prop['language']))

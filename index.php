@@ -2,7 +2,7 @@
 /*
  +-------------------------------------------------------------------------+
  | RoundCube Webmail IMAP Client                                           |
- | Version 0.2-20080620                                                    |
+ | Version 0.2-devel-api                                                   |
  |                                                                         |
  | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                   |
  |                                                                         |
@@ -75,17 +75,26 @@ if ($RCMAIL->action=='error' && !empty($_GET['_code'])) {
   raise_error(array('code' => hexdec($_GET['_code'])), FALSE, TRUE);
 }
 
+
+// trigger startup plugin hook
+$startup = $RCMAIL->plugins->exec_hook('startup', array('task' => $RCMAIL->task, 'action' => $RCMAIL->action));
+$RCMAIL->set_task($startup['task']);
+$RCMAIL->action = $startup['action'];
+
+
 // try to log in
 if ($RCMAIL->action=='login' && $RCMAIL->task=='mail') {
-  $host = $RCMAIL->autoselect_host();
+  $auth = $RCMAIL->plugins->exec_hook('authenticate', array(
+    'host' => $RCMAIL->autoselect_host(),
+    'user' => trim(get_input_value('_user', RCUBE_INPUT_POST)),
+  )) + array('pass' => get_input_value('_pass', RCUBE_INPUT_POST, true, 'ISO-8859-1'));
   
   // check if client supports cookies
   if (empty($_COOKIE)) {
     $OUTPUT->show_message("cookiesdisabled", 'warning');
   }
-  else if ($_SESSION['temp'] && !empty($_POST['_user']) && isset($_POST['_pass']) &&
-           $RCMAIL->login(trim(get_input_value('_user', RCUBE_INPUT_POST), ' '),
-              get_input_value('_pass', RCUBE_INPUT_POST, true, 'ISO-8859-1'), $host)) {
+  else if ($_SESSION['temp'] && !empty($auth['user']) && !empty($auth['host']) && isset($auth['pass']) && 
+           $RCMAIL->login($auth['user'], $auth['pass'], $auth['host'])) {
     // create new session ID
     unset($_SESSION['temp']);
     sess_regenerate_id();
