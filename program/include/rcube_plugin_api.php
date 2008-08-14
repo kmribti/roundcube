@@ -112,8 +112,8 @@ class rcube_plugin_api
     
     foreach ((array)$this->handlers[$hook] as $callback) {
       $ret = call_user_func($callback, $args);
-      if ($ret != null)
-        $args = $ret;
+      if ($ret && is_array($ret))
+        $args = $ret + $args;
       
       if ($args['abort'])
         break;

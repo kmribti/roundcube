@@ -24,7 +24,7 @@
  *
  * @package Core
  */
-class rcube_plugin
+abstract class rcube_plugin
 {
   public $api;
   public $task;
@@ -35,10 +35,7 @@ class rcube_plugin
     $this->init();
   }
   
-  protected function init()
-  {
-    
-  }
+  abstract function init();
 
   public function add_hook($hook, $callback)
   {
