@@ -8,7 +8,7 @@ define('ORIGINAL', 'en_US'); // always up-to-date language
 
 // ---- EOF conf ---- //
 
-function get_input_value($fname)
+function get_input_value($fname, $html = false)
 {
 	$value = !empty($_REQUEST[$fname]) ? $_REQUEST[$fname] : "";
 
@@ -17,7 +17,8 @@ function get_input_value($fname)
 		$value = stripslashes($value);
 
 	// remove HTML tags if not allowed
-	$value = strip_tags($value);
+	if (!$html)
+		$value = strip_tags($value);
 
 	return $value;
  }
@@ -118,11 +119,11 @@ function build_localization($lang, $file)
 
 	foreach((array)$orig_values as $t_key => $t_value)
 	{
-		$t_value = get_input_value('t_'.$t_key);
+		$t_value = get_input_value('t_'.$t_key, true);
 		if (empty($t_value) && isset($edit_values[$t_key]))
 			$t_value = $edit_values[$t_key];
 		if (!empty($t_value))
-			$out .= $array . "['$t_key'] = '" . addslashes($t_value) . "';\n";
+			$out .= $array . "['$t_key'] = '" . addcslashes($t_value, "'") . "';\n";
 	}
 	
 	$out .= "\n?>\n";
