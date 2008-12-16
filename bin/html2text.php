@@ -1,9 +1,28 @@
 <?php
+/*
 
-define('INSTALL_PATH', realpath('./../') . '/');
+ +-----------------------------------------------------------------------+
+ | bin/html2text.php                                                     |
+ |                                                                       |
+ | This file is part of the RoundCube Webmail client                     |
+ | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
+ | Licensed under the GNU GPL                                            |
+ |                                                                       |
+ | PURPOSE:                                                              |
+ |   Convert HTML message to plain text                                  |
+ |                                                                       |
+ +-----------------------------------------------------------------------+
+ | Author: Thomas Bruederli <roundcube@gmail.com>                        |
+ +-----------------------------------------------------------------------+
+
+ $Id: html2text.php 2070 2008-11-20 10:29:34Z alec $
+
+*/
+
+define('INSTALL_PATH', realpath(dirname(__FILE__) . '/..') . '/');
 require INSTALL_PATH.'program/include/iniset.php';
 
-$converter = new html2text(html_entity_decode($HTTP_RAW_POST_DATA, ENT_COMPAT, 'UTF-8'));
+$converter = new html2text($HTTP_RAW_POST_DATA);
 
 header('Content-Type: text/plain; charset=UTF-8');
 print trim($converter->get_text());
