@@ -130,6 +130,64 @@ function build_localization($lang, $file)
 	return $out;
 }
 
+function count_lines($filename)
+{
+	$count = 0;
+	$lines = array();
+	
+	if(file_exists($filename))
+		$lines = file($filename);
+	
+	// count lines starting with $ ($labels/$messages)
+	foreach($lines as $line)
+		if(strpos($line, '$') === 0)
+			$count++;
+
+	return $count;
+}
+
+function localization_stats()
+{
+	// use saved file (cache)
+	if(file_exists('langstats.txt'))
+		if(filemtime('langstats.txt') + 60*60*2 > time())
+			return file_get_contents('langstats.txt');
+
+	$us_count = count_lines(LANGDIR.'/'.ORIGINAL.'/'.LABELS);
+	$us_count += count_lines(LANGDIR.'/'.ORIGINAL.'/'.MESSAGES);
+
+	include(LANGDIR.'/index.inc');
+	
+	$i = 0;
+	foreach ((array)$rcube_languages as $l_key => $l_value)
+	{
+		if ($l_key == ORIGINAL)
+			continue;
+
+		$count = count_lines(LANGDIR.'/'.$l_key.'/'.LABELS);
+		$count += count_lines(LANGDIR.'/'.$l_key.'/'.MESSAGES);
+		$percent = ($count * 100) / $us_count;
+		
+		$rows[] = sprintf("<tr><td class=\"lang%s\">%s</td><td class=\"percent%s\">%.1f %%</td></tr>\n",
+			($i%2 ? ' zebra' : ''), htmlspecialchars($l_value), ($i%2 ? ' zebra' : ''), $percent);
+		
+		$i++;
+	}
+
+	// format output tables
+	$result = '<table class="stats"><tr><td><table class="langstats">';
+	for($i=0; $i<count($rows)/2; $i++)
+		$result .= $rows[$i];
+	$result .= '</table></td><td><table class="langstats">';
+	for(; $i<count($rows); $i++)
+		$result .= $rows[$i];
+	$result .= '</td></tr></table>';
+	
+	// save to cache file
+	file_put_contents('langstats.txt', $result);
+	
+	return $result;
+}
 
 // -------- EOF func --------//
 

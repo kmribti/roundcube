@@ -95,6 +95,32 @@ fieldset {
 	font-size: x-small;
 }
 
+table.stats td {
+	width: 350px;
+	vertical-align: top;
+}
+
+table.langstats {
+	width: 300px;
+	border-collapse: collapse;
+	border: 1px #999 solid;
+}
+
+td.lang {
+	width: 240px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+td.percent {
+	width: 60px;
+	white-space: nowrap;
+	text-align: right;
+}
+
+td.zebra {
+	background-color: silver;
+}
 
 /*****************/
 

@@ -115,6 +115,9 @@ if (isset($_POST["save"]) && $file && $lang)
 	echo '<p><input id="hilight" class="button" type="button" value="Select all" onclick="javascript:this.form.text_area.focus();this.form.text_area.select();" /></p>';
 	echo "\n</form></div>";
 }
+else
+
+	echo '<div align="center">'.localization_stats().'</div>';
 
 ?>
 </div>
