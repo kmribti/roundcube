@@ -103,7 +103,7 @@ table.stats td {
 table.langstats {
 	width: 300px;
 	border-collapse: collapse;
-	border: 1px #999 solid;
+	border: 1px #bbb solid;
 }
 
 td.lang {
@@ -119,7 +119,7 @@ td.percent {
 }
 
 td.zebra {
-	background-color: silver;
+	background-color: #eaeaea;
 }
 
 /*****************/

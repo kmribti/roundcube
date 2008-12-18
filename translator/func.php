@@ -42,7 +42,7 @@ function update_from_svn($lang, $file)
 		$headers = true;
 		if ($fp && !$err && ($fl = @fopen(LANGDIR."$lang_prefix$file", 'w')))
 		{
-			// echo '<div class="console">Update from SVN: '.$lang_dir.$file.'</div>';
+			echo '<!-- Update from SVN: ' . $lang_dir.$file . "-->\n";
 			while (!feof($fp))
 			{
 				$line = fgets($fp, 4096);
@@ -130,12 +130,12 @@ function build_localization($lang, $file)
 	return $out;
 }
 
-function count_lines($filename)
+function count_lines($lang, $file)
 {
 	$count = 0;
 	$lines = array();
 	
-	if(file_exists($filename))
+	if ($filename = update_from_svn($lang, $file))
 		$lines = file($filename);
 	
 	// count lines starting with $ ($labels/$messages)
@@ -146,17 +146,18 @@ function count_lines($filename)
 	return $count;
 }
 
-function localization_stats()
+function localization_stats($force = false)
 {
+	$cachefile = LANGDIR . 'langstats.txt';
 	// use saved file (cache)
-	if(file_exists('langstats.txt'))
-		if(filemtime('langstats.txt') + 60*60*2 > time())
-			return file_get_contents('langstats.txt');
+	if (!$force && file_exists($cachefile))
+		if (filemtime($cachefile) + 60*60*12 > time())
+			return file_get_contents($cachefile);
 
-	$us_count = count_lines(LANGDIR.'/'.ORIGINAL.'/'.LABELS);
-	$us_count += count_lines(LANGDIR.'/'.ORIGINAL.'/'.MESSAGES);
+	$us_count = count_lines(ORIGINAL, LABELS);
+	$us_count += count_lines(ORIGINAL, MESSAGES);
 
-	include(LANGDIR.'/index.inc');
+	include(LANGDIR . 'index.inc');
 	
 	$i = 0;
 	foreach ((array)$rcube_languages as $l_key => $l_value)
@@ -164,8 +165,8 @@ function localization_stats()
 		if ($l_key == ORIGINAL)
 			continue;
 
-		$count = count_lines(LANGDIR.'/'.$l_key.'/'.LABELS);
-		$count += count_lines(LANGDIR.'/'.$l_key.'/'.MESSAGES);
+		$count = count_lines($l_key, LABELS);
+		$count += count_lines($l_key, MESSAGES);
 		$percent = ($count * 100) / $us_count;
 		
 		$rows[] = sprintf("<tr><td class=\"lang%s\">%s</td><td class=\"percent%s\">%.1f %%</td></tr>\n",
@@ -184,7 +185,7 @@ function localization_stats()
 	$result .= '</td></tr></table>';
 	
 	// save to cache file
-	file_put_contents('langstats.txt', $result);
+	file_put_contents($cachefile, $result);
 	
 	return $result;
 }
