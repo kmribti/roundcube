@@ -295,12 +295,11 @@ function rcube_charset_convert($str, $from, $to=NULL)
  */
 function rep_specialchars_output($str, $enctype='', $mode='', $newlines=TRUE)
   {
-  global $OUTPUT;
   static $html_encode_arr = false;
   static $js_rep_table = false;
   static $xml_rep_table = false;
 
-  $charset = $OUTPUT->get_charset();
+  $charset = rcmail::get_instance()->config->get('charset', RCMAIL_CHARSET);
   $is_iso_8859_1 = false;
   if ($charset == 'ISO-8859-1') {
     $is_iso_8859_1 = true;

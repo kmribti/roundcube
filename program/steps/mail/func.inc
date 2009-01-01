@@ -625,19 +625,21 @@ function rcmail_get_mailbox_name_text()
  */
 function rcmail_print_body($part, $p = array())
 {
-  global $REMOTE_OBJECTS;
+  global $RCMAIL, $REMOTE_OBJECTS;
   
-  $p += array('safe' => false, 'plain' => false, 'inline_html' => true);
+  // trigger plugin hook
+  $data = $RCMAIL->plugins->exec_hook('message-body-before',
+    array('type' => $part->ctype_secondary, 'body' => $part->body) + $p + array('safe' => false, 'plain' => false, 'inline_html' => true));
   
   // convert html to text/plain
-  if ($part->ctype_secondary == 'html' && $p['plain']) {
-    $txt = new html2text($part->body, false, true);
+  if ($data['type'] == 'html' && $data['plain']) {
+    $txt = new html2text($data['body'], false, true);
     $body = $txt->get_text();
     $part->ctype_secondary = 'plain';
   }
   // text/html
-  else if ($part->ctype_secondary == 'html') {
-    $html = $part->body;
+  else if ($data['type'] == 'html') {
+    $html = $data['body'];
 
     // special replacements (not properly handled by washtml class)
     $html_search = array(
@@ -675,14 +677,14 @@ function rcmail_print_body($part, $p = array())
     // clean HTML with washhtml by Frederic Motte
     $wash_opts = array(
       'show_washed' => false,
-      'allow_remote' => $p['safe'],
+      'allow_remote' => $data['safe'],
       'blocked_src' => "./program/blocked.gif",
       'charset' => RCMAIL_CHARSET,
       'cid_map' => $part->replaces,
       'html_elements' => array('body'),
     );
     
-    if (!$p['inline_html']) {
+    if (!$data['inline_html']) {
       $wash_opts['html_elements'] = array('html','head','title','body');
     }
     
@@ -695,68 +697,74 @@ function rcmail_print_body($part, $p = array())
     
     $body = $washer->wash($html);
     $REMOTE_OBJECTS = $washer->extlinks;
-
-    return $body;
+    
+    $part->ctype_secondary = $data['type'];
   }
   // text/enriched
-  else if ($part->ctype_secondary=='enriched') {
+  else if ($data['type'] == 'enriched') {
     $part->ctype_secondary = 'html';
-    return Q(enriched_to_html($part->body), 'show');
+    $body = Q(enriched_to_html($data['body']), 'show');
   }
-  else
+  else {
+    // assert plaintext
+    $part->ctype_secondary = $data['type'] = 'plain';
     $body = $part->body;
-
-
-  /**** assert plaintext ****/
-
-  // make links and email-addresses clickable
-  $convert_patterns = $convert_replaces = $replace_strings = array();
-  
-  $url_chars = 'a-z0-9_\-\+\*\$\/&%=@#:;';
-  $url_chars_within = '\?\.~,!';
-
-  $convert_patterns[] = "/([\w]+):\/\/([a-z0-9\-\.]+[a-z]{2,4}([$url_chars$url_chars_within]*[$url_chars])?)/ie";
-  $convert_replaces[] = "rcmail_str_replacement('<a href=\"\\1://\\2\" target=\"_blank\">\\1://\\2</a>', \$replace_strings)";
-
-  $convert_patterns[] = "/([^\/:]|\s)(www\.)([a-z0-9\-]{2,}[a-z]{2,4}([$url_chars$url_chars_within]*[$url_chars])?)/ie";
-  $convert_replaces[] = "rcmail_str_replacement('\\1<a href=\"http://\\2\\3\" target=\"_blank\">\\2\\3</a>', \$replace_strings)";
-  
-  $convert_patterns[] = '/([a-z0-9][a-z0-9\-\.\+\_]*@[a-z0-9]([a-z0-9\-][.]?)*[a-z0-9]\\.[a-z]{2,5})/ie';
-  $convert_replaces[] = "rcmail_str_replacement('<a href=\"mailto:\\1\" onclick=\"return ".JS_OBJECT_NAME.".command(\'compose\',\'\\1\',this)\">\\1</a>', \$replace_strings)";
-  
-  // search for patterns like links and e-mail addresses
-  $body = preg_replace($convert_patterns, $convert_replaces, $body);
-
-  // split body into single lines
-  $a_lines = preg_split('/\r?\n/', $body);
-  $quote_level = 0;
-
-  // colorize quoted parts
-  for ($n=0; $n < sizeof($a_lines); $n++) {
-    $line = $a_lines[$n];
-    $quotation = '';
-    $q = 0;
-    
-    if (preg_match('/^(>+\s*)+/', $line, $regs)) {
-      $q    = strlen(preg_replace('/\s/', '', $regs[0]));
-      $line = substr($line, strlen($regs[0]));
-
-      if ($q > $quote_level)
-        $quotation = str_repeat('<blockquote>', $q - $quote_level);
-      else if ($q < $quote_level)
-        $quotation = str_repeat("</blockquote>", $quote_level - $q);
-    }
-    else if ($quote_level > 0)
-      $quotation = str_repeat("</blockquote>", $quote_level);
-
-    $quote_level = $q;
-    $a_lines[$n] = $quotation . Q($line, 'replace', false);  // htmlquote plaintext
   }
 
-  // insert the links for urls and mailtos
-  $body = preg_replace("/##string_replacement\{([0-9]+)\}##/e", "\$replace_strings[\\1]", join("\n", $a_lines));
 
-  return html::tag('pre', array(), $body);
+  if ($part->ctype_secondary == 'plain') {
+    // make links and email-addresses clickable
+    $convert_patterns = $convert_replaces = $replace_strings = array();
+  
+    $url_chars = 'a-z0-9_\-\+\*\$\/&%=@#:;';
+    $url_chars_within = '\?\.~,!';
+
+    $convert_patterns[] = "/([\w]+):\/\/([a-z0-9\-\.]+[a-z]{2,4}([$url_chars$url_chars_within]*[$url_chars])?)/ie";
+    $convert_replaces[] = "rcmail_str_replacement('<a href=\"\\1://\\2\" target=\"_blank\">\\1://\\2</a>', \$replace_strings)";
+
+    $convert_patterns[] = "/([^\/:]|\s)(www\.)([a-z0-9\-]{2,}[a-z]{2,4}([$url_chars$url_chars_within]*[$url_chars])?)/ie";
+    $convert_replaces[] = "rcmail_str_replacement('\\1<a href=\"http://\\2\\3\" target=\"_blank\">\\2\\3</a>', \$replace_strings)";
+  
+    $convert_patterns[] = '/([a-z0-9][a-z0-9\-\.\+\_]*@[a-z0-9]([a-z0-9\-][.]?)*[a-z0-9]\\.[a-z]{2,5})/ie';
+    $convert_replaces[] = "rcmail_str_replacement('<a href=\"mailto:\\1\" onclick=\"return ".JS_OBJECT_NAME.".command(\'compose\',\'\\1\',this)\">\\1</a>', \$replace_strings)";
+  
+    // search for patterns like links and e-mail addresses
+    $body = preg_replace($convert_patterns, $convert_replaces, $body);
+
+    // split body into single lines
+    $a_lines = preg_split('/\r?\n/', $body);
+    $quote_level = 0;
+
+    // colorize quoted parts
+    for ($n=0; $n < sizeof($a_lines); $n++) {
+      $line = $a_lines[$n];
+      $quotation = '';
+      $q = 0;
+    
+      if (preg_match('/^(>+\s*)+/', $line, $regs)) {
+        $q    = strlen(preg_replace('/\s/', '', $regs[0]));
+        $line = substr($line, strlen($regs[0]));
+
+        if ($q > $quote_level)
+          $quotation = str_repeat('<blockquote>', $q - $quote_level);
+        else if ($q < $quote_level)
+          $quotation = str_repeat("</blockquote>", $quote_level - $q);
+      }
+      else if ($quote_level > 0)
+        $quotation = str_repeat("</blockquote>", $quote_level);
+
+      $quote_level = $q;
+      $a_lines[$n] = $quotation . Q($line, 'replace', false);  // htmlquote plaintext
+    }
+
+    // insert the links for urls and mailtos
+    $body = preg_replace("/##string_replacement\{([0-9]+)\}##/e", "\$replace_strings[\\1]", join("\n", $a_lines));
+  }
+  
+  // allow post-processing of the message body
+  $data = $RCMAIL->plugins->exec_hook('message-body-after', array('type' => $part->ctype_secondary, 'body' => $body) + $data);
+
+  return $data['type'] == 'html' ? $data['body'] : html::tag('pre', array(), $data['body']);
 }
 
 /**
