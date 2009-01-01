@@ -52,15 +52,15 @@ class rcube_plugin_api
    */
   private function __construct()
   {
-    $config = rcmail::get_instance()->config;
+    $rcmail = rcmail::get_instance();
     
     // only active in devel_mode for now
-    if (!$config->get('devel_mode'))
+    if (!$rcmail->config->get('devel_mode'))
       return;
     
     // load all enabled plugins
-    $plugins_dir = dir($config->get('plugins_dir'));
-    $plugins_enabled = (array)$config->get('plugins', array());
+    $plugins_dir = dir($rcmail->config->get('plugins_dir'));
+    $plugins_enabled = (array)$rcmail->config->get('plugins', array());
     
     foreach ($plugins_enabled as $plugin_name) {
       $fn = $plugins_dir->path . DIRECTORY_SEPARATOR . $plugin_name . DIRECTORY_SEPARATOR . $plugin_name . '.php';
@@ -70,7 +70,11 @@ class rcube_plugin_api
         
         // instantiate class if exists
         if (class_exists($plugin_name, false)) {
-          $this->plugins[] = new $plugin_name($this);
+          $plugin = new $plugin_name($this);
+          // check inheritance and task specification
+          if (is_subclass_of($plugin, 'rcube_plugin') && (!$plugin->task || $plugin->task == $rcmail->task)) {
+            $this->plugins[] = $plugin;
+          }
         }
         else {
           trigger_error(array('code' => 520, 'type' => 'php', 'message' => "No plugin class $plugin_name found in $fn"), true, false);

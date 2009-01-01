@@ -9,6 +9,7 @@ class emoticons extends rcube_plugin
 
   function init()
   {
+    $this->task = 'mail';
     $this->add_hook('message-body-after', array($this, 'replace'));
   
     $this->map = array(
