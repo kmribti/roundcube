@@ -6,7 +6,7 @@
 $RCI->load_defaults();
 
 // register these boolean fields
-$RCI->config_props = array(
+$RCI->bool_config_props = array(
   'ip_check' => 1,
   'enable_caching' => 1,
   'enable_spellcheck' => 1,
@@ -15,6 +15,7 @@ $RCI->config_props = array(
   'prefer_html' => 1,
   'preview_pane' => 1,
   'htmleditor' => 1,
+  'debug_level' => 1,
 );
 
 // allow the current user to get to the next step
@@ -23,16 +24,16 @@ $_SESSION['allowinstaller'] = true;
 if (!empty($_POST['submit'])) {
   
   echo '<p class="notice">Copy or download the following configurations and save them in two files';
-  echo ' (names above the text box) within the <tt>config/</tt> directory of your RoundCube installation.<br/>';
+  echo ' (names above the text box) within the <tt>'.RCMAIL_CONFIG_DIR.'</tt> directory of your RoundCube installation.<br/>';
   echo ' Make sure that there are no characters outside the <tt>&lt;?php ?&gt;</tt> brackets when saving the files.</p>';
   
   $textbox = new html_textarea(array('rows' => 16, 'cols' => 60, 'class' => "configfile"));
   
   echo '<div><em>main.inc.php (<a href="index.php?_getfile=main">download</a>)</em></div>';
-  echo $textbox->show($RCI->create_config('main'));
+  echo $textbox->show(($_SESSION['main.inc.php'] = $RCI->create_config('main')));
   
   echo '<div style="margin-top:1em"><em>db.inc.php (<a href="index.php?_getfile=db">download</a>)</em></div>';
-  echo $textbox->show($RCI->create_config('db'));
+  echo $textbox->show($_SESSION['db.inc.php'] = $RCI->create_config('db'));
 
   echo '<p class="hint">Of course there are more options to configure.
     Have a look at the config files or visit <a href="http://trac.roundcube.net/wiki/Howto_Config">Howto_Config</a> to find out.</p>';
@@ -47,25 +48,6 @@ if (!empty($_POST['submit'])) {
 <fieldset>
 <legend>General configuration</legend>
 <dl class="configblock">
-<!--
-<dt id="cgfblockgeneral" class="propname">debug_level</dt>
-<dd>
-<?php
-/*
-$value = $RCI->getprop('debug_level');
-$check_debug = new html_checkbox(array('name' => '_debug_level[]'));
-echo $check_debug->show(($value & 1) ? 1 : 0 , array('value' => 1, 'id' => 'cfgdebug1'));
-echo '<label for="cfgdebug1">Log errors</label><br />';
-
-echo $check_debug->show(($value & 4) ? 4 : 0, array('value' => 4, 'id' => 'cfgdebug4'));
-echo '<label for="cfgdebug4">Display errors</label><br />';
-
-echo $check_debug->show(($value & 8) ? 8 : 0, array('value' => 8, 'id' => 'cfgdebug8'));
-echo '<label for="cfgdebug8">Verbose display</label><br />';
-*/
-?>
-</dd>
--->
 
 <dt class="propname">product_name</dt>
 <dd>
@@ -78,17 +60,6 @@ echo $input_prodname->show($RCI->getprop('product_name'));
 <div>The name of your service (used to compose page titles)</div>
 </dd>
 
-<dt class="propname">skin</dt>
-<dd>
-<?php
-
-$input_skin = new html_inputfield(array('name' => '_skin', 'size' => 30, 'id' => "cfgskin"));
-echo $input_skin->show($RCI->getprop('skin'));
-
-?>
-<div>Name of interface skin (folder in /skins)</div>
-</dd>
-
 <dt class="propname">temp_dir</dt>
 <dd>
 <?php
@@ -97,19 +68,9 @@ $input_tempdir = new html_inputfield(array('name' => '_temp_dir', 'size' => 30, 
 echo $input_tempdir->show($RCI->getprop('temp_dir'));
 
 ?>
-<div>Use this folder to store temp files (must be writebale for webserver)</div>
+<div>Use this folder to store temp files (must be writeable for webserver)</div>
 </dd>
 
-<dt class="propname">log_dir</dt>
-<dd>
-<?php
-
-$input_logdir = new html_inputfield(array('name' => '_log_dir', 'size' => 30, 'id' => "cfglogdir"));
-echo $input_logdir->show($RCI->getprop('log_dir'));
-
-?>
-<div>Use this folder to store log files (must be writebale for webserver)</div>
-</dd>
 
 <dt class="propname">ip_check</dt>
 <dd>
@@ -161,20 +122,108 @@ echo $check_caching->show(intval($RCI->getprop('enable_spellcheck')), array('val
 <p class="hint">It is based on GoogieSpell what implies that the message content will be sent to Google in order to check the spelling.</p>
 </dd>
 
-<dt class="propname">mdn_requests</dt>
+<dt class="propname">identities_level</dt>
 <dd>
 <?php
 
-$select_mdnreq = new html_select(array('name' => '_mdn_requests', 'id' => "cfgmdnreq"));
-$select_mdnreq->add(array('ask the user', 'send automatically', 'ignore'), array(0, 1, 2));
-echo $select_mdnreq->show(intval($RCI->getprop('mdn_requests')));
+$input_ilevel = new html_select(array('name' => '_identities_level', 'id' => "cfgidentitieslevel"));
+$input_ilevel->add('many identities with possibility to edit all params', 0);
+$input_ilevel->add('many identities with possibility to edit all params but not email address', 1);
+$input_ilevel->add('one identity with possibility to edit all params', 2);
+$input_ilevel->add('one identity with possibility to edit all params but not email address', 3);
+echo $input_ilevel->show($RCI->getprop('identities_level'), 0);
 
 ?>
-<div>Behavior if a received message requests a message delivery notification (read receipt)</div>
+<div>Level of identities access</div>
+<p class="hint">Defines what users can do with their identities.</p>
 </dd>
 
 </dl>
 </fieldset>
+
+<fieldset>
+<legend>Logging & Debugging</legend>
+<dl class="loggingblock">
+
+<dt class="propname">debug_level</dt>
+<dd>
+<?php
+
+$value = $RCI->getprop('debug_level');
+$check_debug = new html_checkbox(array('name' => '_debug_level[]'));
+echo $check_debug->show(($value & 1) ? 1 : 0 , array('value' => 1, 'id' => 'cfgdebug1'));
+echo '<label for="cfgdebug1">Log errors</label><br />';
+
+echo $check_debug->show(($value & 4) ? 4 : 0, array('value' => 4, 'id' => 'cfgdebug4'));
+echo '<label for="cfgdebug4">Print errors (to the browser)</label><br />';
+
+echo $check_debug->show(($value & 8) ? 8 : 0, array('value' => 8, 'id' => 'cfgdebug8'));
+echo '<label for="cfgdebug8">Verbose display (enables debug console)</label><br />';
+
+?>
+</dd>
+
+<dt class="propname">log_driver</dt>
+<dd>
+<?php
+
+$select_log_driver = new html_select(array('name' => '_log_driver', 'id' => "cfglogdriver"));
+$select_log_driver->add(array('file', 'syslog'), array('file', 'syslog'));
+echo $select_log_driver->show($RCI->getprop('log_driver', 'file'));
+
+?>
+<div>How to do logging? 'file' - write to files in the log directory, 'syslog' - use the syslog facility.</div>
+</dd>
+
+<dt class="propname">log_dir</dt>
+<dd>
+<?php
+
+$input_logdir = new html_inputfield(array('name' => '_log_dir', 'size' => 30, 'id' => "cfglogdir"));
+echo $input_logdir->show($RCI->getprop('log_dir'));
+
+?>
+<div>Use this folder to store log files (must be writeable for webserver). Note that this only applies if you are using the 'file' log_driver.</div>
+</dd>
+
+<dt class="propname">syslog_id</dt>
+<dd>
+<?php
+
+$input_syslogid = new html_inputfield(array('name' => '_syslog_id', 'size' => 30, 'id' => "cfgsyslogid"));
+echo $input_syslogid->show($RCI->getprop('syslog_id', 'roundcube'));
+
+?>
+<div>What ID to use when logging with syslog. Note that this only applies if you are using the 'syslog' log_driver.</div>
+</dd>
+
+<dt class="propname">syslog_facility</dt>
+<dd>
+<?php
+
+$input_syslogfacility = new html_select(array('name' => '_syslog_facility', 'id' => "cfgsyslogfacility"));
+$input_syslogfacility->add('user-level messages', LOG_USER);
+$input_syslogfacility->add('mail subsystem', LOG_MAIL);
+$input_syslogfacility->add('local level 0', LOG_LOCAL0);
+$input_syslogfacility->add('local level 1', LOG_LOCAL1);
+$input_syslogfacility->add('local level 2', LOG_LOCAL2);
+$input_syslogfacility->add('local level 3', LOG_LOCAL3);
+$input_syslogfacility->add('local level 4', LOG_LOCAL4);
+$input_syslogfacility->add('local level 5', LOG_LOCAL5);
+$input_syslogfacility->add('local level 6', LOG_LOCAL6);
+$input_syslogfacility->add('local level 7', LOG_LOCAL7);
+echo $input_syslogfacility->show($RCI->getprop('syslog_facility'), LOG_USER);
+
+?>
+<div>What ID to use when logging with syslog.  Note that this only applies if you are using the 'syslog' log_driver.</div>
+</dd>
+
+
+
+
+</dl>
+</fieldset>
+
 
 <fieldset>
 <legend>Database setup</legend>
@@ -216,28 +265,6 @@ echo '<label for="cfgdbpass">Database password</label><br />';
 
 ?>
 </dd>
-
-<dt class="propname">db_backend</dt>
-<dd>
-<?php
-
-// check for existing PEAR classes
-@include_once 'DB.php';
-@include_once 'MDB2.php';
-
-$select_dbba = new html_select(array('name' => '_db_backend', 'id' => "cfgdbba"));
-
-if (class_exists('DB'))
-  $select_dbba->add('DB', 'db');
-if (class_exists('MDB2'))
-  $select_dbba->add('MDB2', 'mdb2');
-
-echo $select_dbba->show($RCI->getprop('db_backend'));
-
-?>
-<div>PEAR Database backend to use</div>
-</dd>
-
 </dl>
 </fieldset>
 
@@ -321,7 +348,7 @@ $text_sentmbox = new html_inputfield(array('name' => '_sent_mbox', 'size' => 20,
 echo $text_sentmbox->show($RCI->getprop('sent_mbox'));
 
 ?>
-<div>Store sent messages is this folder</div>
+<div>Store sent messages in this folder</div>
 
 <p class="hint">Leave blank if sent messages should not be stored</p>
 </dd>
@@ -347,9 +374,21 @@ $text_draftsmbox = new html_inputfield(array('name' => '_drafts_mbox', 'size' =>
 echo $text_draftsmbox->show($RCI->getprop('drafts_mbox'));
 
 ?>
-<div>Store draft messages is this folder</div>
+<div>Store draft messages in this folder</div>
+
+<p class="hint">Leave blank if they should not be stored</p>
 </dd>
 
+<dt class="propname">junk_mbox</dt>
+<dd>
+<?php
+
+$text_junkmbox = new html_inputfield(array('name' => '_junk_mbox', 'size' => 20, 'id' => "cfgjunkmbox"));
+echo $text_junkmbox->show($RCI->getprop('junk_mbox'));
+
+?>
+<div>Store spam messages in this folder</div>
+</dd>
 </dl>
 </fieldset>
 
@@ -423,7 +462,7 @@ $check_smtplog = new html_checkbox(array('name' => '_smtp_log', 'id' => "cfgsmtp
 echo $check_smtplog->show(intval($RCI->getprop('smtp_log')), array('value' => 1));
 
 ?>
-<label for="cfgsmtplog">Log sent messages in <tt>logs/sendmail</tt></label><br />
+<label for="cfgsmtplog">Log sent messages in <tt>{log_dir}/sendmail</tt> or to syslog.</label><br />
 </dd>
 
 </dl>
@@ -434,16 +473,27 @@ echo $check_smtplog->show(intval($RCI->getprop('smtp_log')), array('value' => 1)
 <legend>Display settings &amp; user prefs</legend>
 <dl class="configblock" id="cgfblockdisplay">
 
-<dt class="propname">locale_string</dt>
+<dt class="propname">language</dt>
 <dd>
 <?php
 
-$input_locale = new html_inputfield(array('name' => '_locale_string', 'size' => 6, 'id' => "cfglocale"));
-echo $input_locale->show($RCI->getprop('locale_string'));
+$input_locale = new html_inputfield(array('name' => '_language', 'size' => 6, 'id' => "cfglocale"));
+echo $input_locale->show($RCI->getprop('language'));
 
 ?>
-<div>The default locale setting. This also defines the language of the login screen.</div>
-<p class="hint">Enter a <a href="http://www.faqs.org/rfcs/rfc1766">RFC1766</a> formatted locale name. Examples: en_US, de, de_CH, fr, pt_BR</p>
+<div>The default locale setting. This also defines the language of the login screen.<br/>Leave it empty to auto-detect the user agent language.</div>
+<p class="hint">Enter a <a href="http://www.faqs.org/rfcs/rfc1766">RFC1766</a> formatted language name. Examples: en_US, de_DE, de_CH, fr_FR, pt_BR</p>
+</dd>
+
+<dt class="propname">skin <span class="userconf">*</span></dt>
+<dd>
+<?php
+
+$input_skin = new html_inputfield(array('name' => '_skin', 'size' => 30, 'id' => "cfgskin"));
+echo $input_skin->show($RCI->getprop('skin'));
+
+?>
+<div>Name of interface skin (folder in /skins)</div>
 </dd>
 
 <dt class="propname">pagesize <span class="userconf">*</span></dt>
@@ -503,6 +553,33 @@ foreach (array(3, 5, 10) as $i => $min)
 echo $select_autosave->show(intval($RCI->getprop('draft_autosave')));
 
 ?>
+</dd>
+
+<dt class="propname">mdn_requests <span class="userconf">*</span></dt>
+<dd>
+<?php
+
+$select_mdnreq = new html_select(array('name' => '_mdn_requests', 'id' => "cfgmdnreq"));
+$select_mdnreq->add(array('ask the user', 'send automatically', 'ignore'), array(0, 1, 2));
+echo $select_mdnreq->show(intval($RCI->getprop('mdn_requests')));
+
+?>
+<div>Behavior if a received message requests a message delivery notification (read receipt)</div>
+</dd>
+
+<dt class="propname">mime_param_folding <span class="userconf">*</span></dt>
+<dd>
+<?php
+
+$select_param_folding = new html_select(array('name' => '_mime_param_folding', 'id' => "cfgmimeparamfolding"));
+$select_param_folding->add('Full RFC 2231 (Roundcube, Thunderbird)', '0'); 
+$select_param_folding->add('RFC 2047/2231 (MS Outlook, OE)', '1');
+$select_param_folding->add('Full RFC 2047 (deprecated)', '2');
+
+echo $select_param_folding->show(intval($RCI->getprop('mime_param_folding')));
+
+?>
+<div>How to encode attachment long/non-ascii names</div>
 </dd>
 
 </dl>

@@ -69,17 +69,6 @@ class rcube_mdb2
 
 
   /**
-   * PHP 4 object constructor
-   *
-   * @see  rcube_mdb2::__construct
-   */
-  function rcube_db($db_dsnw,$db_dsnr='')
-    {
-    $this->__construct($db_dsnw,$db_dsnr);
-    }
-
-
-  /**
    * Connect to specific database
    *
    * @param  string  DSN for DB connections
@@ -89,12 +78,19 @@ class rcube_mdb2
   function dsn_connect($dsn)
     {
     // Use persistent connections if available
-    $dbh = MDB2::connect($dsn, array(
+    $db_options = array(
         'persistent' => $this->db_pconn,
         'emulate_prepared' => $this->debug_mode,
         'debug' => $this->debug_mode,
         'debug_handler' => 'mdb2_debug_handler',
-        'portability' => MDB2_PORTABILITY_ALL ^ MDB2_PORTABILITY_EMPTY_TO_NULL));
+        'portability' => MDB2_PORTABILITY_ALL ^ MDB2_PORTABILITY_EMPTY_TO_NULL);
+
+    if ($this->db_provider == 'pgsql') {
+      $db_options['disable_smart_seqname'] = true;
+      $db_options['seqname_format'] = '%s';
+    }
+
+    $dbh = MDB2::connect($dsn, $db_options);
 
     if (MDB2::isError($dbh))
       {

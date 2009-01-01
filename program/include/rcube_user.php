@@ -31,7 +31,7 @@ class rcube_user
 {
   public $ID = null;
   public $data = null;
-  public $language = 'en_US';
+  public $language = null;
   
   private $db = null;
   
@@ -59,17 +59,7 @@ class rcube_user
     }
   }
 
-  /**
-   * PHP 4 object constructor
-   *
-   * @see  rcube_user::__construct
-   */
-  function rcube_user($id = null, $sql_arr = null)
-  {
-    $this->__construct($id, $sql_arr);
-  }
-  
-  
+
   /**
    * Build a user name string (as e-mail address)
    *
@@ -88,10 +78,13 @@ class rcube_user
    */
   function get_prefs()
   {
+    if (!empty($this->language))
+      $prefs = array('language' => $this->language);
+    
     if ($this->ID && $this->data['preferences'])
-      return array('language' => $this->language) + unserialize($this->data['preferences']);
-    else
-      return array();
+      $prefs += (array)unserialize($this->data['preferences']);
+    
+    return $prefs;
   }
   
   
@@ -164,7 +157,7 @@ class rcube_user
        WHERE  del<>1
        AND    user_id=?
        $sql_add
-       ORDER BY ".$this->db->quoteIdentifier('standard')." DESC, name ASC",
+       ORDER BY ".$this->db->quoteIdentifier('standard')." DESC, name ASC, identity_id ASC",
       $this->ID);
     
     return $sql_result;
@@ -380,19 +373,22 @@ class rcube_user
       $user_name = $user != $user_email ? $user : '';
 
       // try to resolve the e-mail address from the virtuser table
-      if ($virtuser_query = $rcmail->config->get('virtuser_query') &&
-          ($sql_result = $dbh->query(preg_replace('/%u/', $dbh->escapeSimple($user), $virtuser_query))) &&
-          ($dbh->num_rows() > 0))
+      if (($virtuser_query = $rcmail->config->get('virtuser_query'))
+    	&& ($sql_result = $dbh->query(preg_replace('/%u/', $dbh->escapeSimple($user), $virtuser_query)))
+	&& ($dbh->num_rows() > 0))
       {
+        $standard = 1;
         while ($sql_arr = $dbh->fetch_array($sql_result))
         {
           $dbh->query(
             "INSERT INTO ".get_table_name('identities')."
               (user_id, del, standard, name, email)
-             VALUES (?, 0, 1, ?, ?)",
+             VALUES (?, 0, ?, ?, ?)",
             $user_id,
+	    $standard,
             strip_newlines($user_name),
             preg_replace('/^@/', $user . '@', $sql_arr[0]));
+	  $standard = 0;
         }
       }
       else

@@ -19,6 +19,8 @@
 
 */
 
+define('IDENTITIES_LEVEL', intval($RCMAIL->config->get('identities_level', 0)));
+
 $OUTPUT->set_pagetitle(rcube_label('identities'));
 
 $OUTPUT->include_script('list.js');
@@ -36,13 +38,11 @@ function rcmail_identity_frame($attrib)
 
   $OUTPUT->set_env('contentframe', $attrib['name']);
 
-  $attrib_str = create_attrib_string($attrib, array('name', 'id', 'class', 'style', 'src', 'width', 'height', 'frameborder'));
-  $out = '<iframe'. $attrib_str . '></iframe>';
-
-  return $out;
+  return html::iframe($attrib);
   }
 
 $OUTPUT->add_handler('identityframe', 'rcmail_identity_frame');
+$OUTPUT->set_env('identities_level', IDENTITIES_LEVEL);
 
 $OUTPUT->send('identities');
 ?>

@@ -4,6 +4,14 @@
 <title><roundcube:object name="pagetitle" /></title>
 <roundcube:include file="/includes/links.html" />
 <link rel="stylesheet" type="text/css" href="/mail.css" />
+<script type="text/javascript" src="/splitter.js"></script>
+<style type="text/css">
+#mailboxlist-container { width: <roundcube:exp expression="!empty(cookie:mailviewsplitterv) ? cookie:mailviewsplitterv-5 : 160" />px; }
+#messageframe {
+    left: <roundcube:exp expression="!empty(cookie:mailviewsplitterv) ? cookie:mailviewsplitterv+5 : 170" />px;
+    width: expression((parseInt(this.parentNode.offsetWidth)-<roundcube:exp expression="!empty(cookie:mailviewsplitterv) ? cookie:mailviewsplitterv+5 : 170" />)+'px');
+}
+</style>
 </head>
 <body>
 
@@ -30,20 +38,29 @@
 <roundcube:object name="mailboxlist" type="select" noSelection="moveto" maxlength="25" onchange="rcmail.command('moveto', this.options[this.selectedIndex].value)" class="mboxlist" />
 </div>
 
+<div id="mainscreen">
+
 <div id="mailboxlist-container">
 <div id="mailboxlist-header"><roundcube:label name="mailboxlist" /></div>
-<roundcube:object name="mailboxlist" id="mailboxlist" maxlength="16" />
+<roundcube:object name="mailboxlist" id="mailboxlist" maxlength="25" />
 </div>
 
 <div id="messageframe">
-
+<div id="messagecanvas">
 <roundcube:object name="messageHeaders" class="headers-table" cellspacing="0" cellpadding="2" addicon="/images/icons/plus.gif" summary="Message headers" />
 <roundcube:object name="messageAttachments" id="attachment-list" />
 
 <roundcube:object name="blockedObjects" id="remote-objects-message" />
-<roundcube:object name="messageBody" id="messagebody" showImages="true" />
+<roundcube:object name="messageBody" id="messagebody" />
+</div>
+</div>
 
 </div>
+
+<script type="text/javascript">
+    var mailviewsplitv = new rcube_splitter({id:'mailviewsplitterv', p1: 'mailboxlist-container', p2: 'messageframe', orientation: 'v', relative: true, start: 165});
+    rcmail.add_onload('mailviewsplitv.init()');
+</script>
 
 </body>
 </html>

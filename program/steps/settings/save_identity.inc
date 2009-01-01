@@ -19,16 +19,18 @@
 
 */
 
+define('IDENTITIES_LEVEL', intval($RCMAIL->config->get('identities_level', 0)));
+
 $a_save_cols = array('name', 'email', 'organization', 'reply-to', 'bcc', 'standard', 'signature', 'html_signature');
 $a_html_cols = array('signature');
 $a_boolean_cols = array('standard', 'html_signature');
 $updated = $default_id = false;
 
 // check input
-if (empty($_POST['_name']) || empty($_POST['_email']))
+if (empty($_POST['_name']) || (empty($_POST['_email']) && IDENTITIES_LEVEL != 1 && IDENTITIES_LEVEL != 3))
   {
   $OUTPUT->show_message('formincomplete', 'warning');
-  rcmail_overwrite_action('edit-identitiy');
+  rcmail_overwrite_action('edit-identity');
   return;
   }
 
@@ -49,6 +51,10 @@ foreach ($a_boolean_cols as $col)
   if (!isset($_POST[$fname]))
     $save_data[$col] = 0;
 }
+
+// unset email address if user has no rights to change it
+if (IDENTITIES_LEVEL == 1 || IDENTITIES_LEVEL == 3)
+  unset($save_data['email']);
 
 
 // update an existing contact
@@ -71,15 +77,18 @@ if ($_POST['_iid'])
   {
     // show error message
     $OUTPUT->show_message('errorsaving', 'error');
-    rcmail_overwrite_action('edit-identitiy');
+    rcmail_overwrite_action('edit-identity');
     return;
   }
 }
 
 // insert a new identity record
-else
+else if (IDENTITIES_LEVEL < 2)
 {
-  if ($insert_id = $USER->insert_identity($save_data))
+  if (IDENTITIES_LEVEL == 1)
+    $save_data['email'] = rcmail_get_email();
+
+  if ($save_data['email'] && ($insert_id = $USER->insert_identity($save_data)))
   {
     $OUTPUT->show_message('successfullysaved', 'confirmation');
     
@@ -96,6 +105,8 @@ else
     return;
   }
 }
+else
+  $OUTPUT->show_message('opnotpermitted', 'error');
 
 
 // mark all other identities as 'not-default'

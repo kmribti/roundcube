@@ -11,13 +11,13 @@
 CREATE TABLE cache (
   cache_id integer NOT NULL PRIMARY KEY,
   user_id integer NOT NULL default 0,
-  session_id varchar(40) default NULL,
   cache_key varchar(128) NOT NULL default '',
   created datetime NOT NULL default '0000-00-00 00:00:00',
   data longtext NOT NULL
 );
 
 CREATE INDEX ix_cache_user_cache_key ON cache(user_id, cache_key);
+CREATE INDEX ix_cache_created ON cache(created);
 
 
 -- --------------------------------------------------------
@@ -76,7 +76,7 @@ CREATE TABLE users (
   alias varchar(128) NOT NULL default '',
   created datetime NOT NULL default '0000-00-00 00:00:00',
   last_login datetime NOT NULL default '0000-00-00 00:00:00',
-  language varchar(5) NOT NULL default 'en',
+  language varchar(5),
   preferences text NOT NULL default ''
 );
 
@@ -97,6 +97,7 @@ CREATE TABLE session (
   vars text NOT NULL
 );
 
+CREATE INDEX ix_session_changed ON session (changed);
 
 -- --------------------------------------------------------
 

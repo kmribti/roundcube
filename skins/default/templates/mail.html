@@ -5,105 +5,115 @@
 <roundcube:include file="/includes/links.html" />
 <link rel="stylesheet" type="text/css" href="/mail.css" />
 <script type="text/javascript" src="/splitter.js"></script>
-<script type="text/javascript">
-
-function rcube_mail_ui()
-{
-  this.markmenu = new rcube_layer('markmessagemenu');
+<script type="text/javascript" src="/functions.js"></script>
+<style type="text/css">
+<roundcube:if condition="config:preview_pane == true" />
+#mailcontframe { height: <roundcube:exp expression="!empty(cookie:mailviewsplitter) ? cookie:mailviewsplitter-5 : 195" />px; }
+#mailpreviewframe {
+    top: <roundcube:exp expression="!empty(cookie:mailviewsplitter) ? cookie:mailviewsplitter+5 : 205" />px;
+    /* css hack for IE */
+    height: expression((parseInt(this.parentNode.offsetHeight)-<roundcube:exp expression="!empty(cookie:mailviewsplitter) ? cookie:mailviewsplitter+5 : 205" />)+'px');
 }
-
-rcube_mail_ui.prototype = {
-
-show_markmenu: function(show)
-{
-  if (typeof show == 'undefined')
-    show = this.markmenu.visible ? false : true;
-  
-  var ref = rcube_find_object('markreadbutton');
-  if (show && ref)
-    this.markmenu.move(ref.offsetLeft, ref.offsetTop + ref.offsetHeight);
-  
-  this.markmenu.show(show);
-},
-
-body_mouseup: function(evt, p)
-{
-  if (this.markmenu && this.markmenu.visible && evt.target != rcube_find_object('markreadbutton'))
-    this.show_markmenu(false);
-},
-
-body_keypress: function(evt, p)
-{
-  if (rcube_event.get_keycode(evt) == 27 && this.markmenu && this.markmenu.visible)
-    this.show_markmenu(false);
+<roundcube:endif />
+#mailboxlist-container { width: <roundcube:exp expression="!empty(cookie:mailviewsplitterv) ? cookie:mailviewsplitterv-5 : 160" />px; }
+#mailrightcontainer {
+    left: <roundcube:exp expression="!empty(cookie:mailviewsplitterv) ? cookie:mailviewsplitterv+5 : 170" />px;
+    /* css hack for IE */
+    width: expression((parseInt(this.parentNode.offsetWidth)-<roundcube:exp expression="!empty(cookie:mailviewsplitterv) ? cookie:mailviewsplitterv+5 : 170" />)+'px');
 }
-
-};
-
-</script>
+</style>
 </head>
-<body>
+<body onload="rcube_init_mail_ui()">
 
 <roundcube:include file="/includes/taskbar.html" />
 <roundcube:include file="/includes/header.html" />
+
+<div id="mainscreen">
 
 <div id="mailboxlist-container">
 <h3 id="mailboxlist-header"><roundcube:label name="mailboxlist" /></h3>
 <roundcube:object name="mailboxlist" id="mailboxlist" maxlength="16" />
 </div>
 
-<div id="mailboxcontrols">
-<roundcube:label name="folder" />:&nbsp;
-<roundcube:button command="expunge" label="compact" classAct="active" />&nbsp;
-<roundcube:button command="purge" label="empty" classAct="active" />&nbsp;
-</div>
+<script type="text/javascript">
+  var mailviewsplitv = new rcube_splitter({id:'mailviewsplitterv', p1: 'mailboxlist-container', p2: 'mailrightcontainer', orientation: 'v', relative: true, start: 165});
+  rcmail.add_onload('mailviewsplitv.init()');
+</script>
 
+<div id="mailrightcontainer">
 
 <div id="mailcontframe">
 <roundcube:object name="messages"
   id="messagelist"
   cellspacing="0"
+  columns=""
   summary="Message list"
   messageIcon="/images/icons/dot.png"
   unreadIcon="/images/icons/unread.png"
   deletedIcon="/images/icons/deleted.png"
   repliedIcon="/images/icons/replied.png"
+  forwardedIcon="/images/icons/forwarded.png"
+  forwardedrepliedIcon="/images/icons/forwarded_replied.png"
   attachmentIcon="/images/icons/attachment.png"
   flaggedIcon="/images/icons/flagged.png"
-  unflaggedIcon="/images/icons/unflagged.png" />
+  unflaggedIcon="/images/icons/blank.gif" />
 </div>
 
 <roundcube:if condition="config:preview_pane == true" />
+
 <script type="text/javascript">
-  var mailviewsplit = new rcube_splitter({id:'mailviewsplitter', p1: 'mailcontframe', p2: 'mailpreviewframe', orientation: 'h'});
+  var mailviewsplit = new rcube_splitter({id:'mailviewsplitter', p1: 'mailcontframe', p2: 'mailpreviewframe', orientation: 'h', relative: true, start: 200});
   rcmail.add_onload('mailviewsplit.init()');
 </script>
+
 <div id="mailpreviewframe">
 <roundcube:object name="messagecontentframe" id="messagecontframe" width="100%" height="100%" frameborder="0" src="/watermark.html" />
 </div>
 
-<style type="text/css">
-#mailcontframe {
-  bottom: auto;
-  height: 208px;
-}
-</style>
 <roundcube:endif />
 
-<div id="listcontrols">
+</div>
+
+</div>
+
+<div id="mailfooter">
+<table cellpadding="1" cellspacing="0">
+<tr>
+<td width="99%">
+<span id="mailboxcontrols">
+<roundcube:label name="folder" />:&nbsp;
+<roundcube:button command="expunge" label="compact" classAct="active" />&nbsp;
+<roundcube:button command="purge" label="empty" classAct="active" />&nbsp;
+</span>
+<span id="listcontrols">
 <roundcube:label name="select" />:&nbsp;
 <roundcube:button command="select-all" label="all" classAct="active" />&nbsp;
 <roundcube:button command="select-all" prop="unread" label="unread" classAct="active" />&nbsp;
-<roundcube:button command="select-none" label="none" classAct="active" /> &nbsp;&nbsp;&nbsp;
+<roundcube:button command="select-none" label="none" classAct="active" /> &nbsp;
+</span>
 <roundcube:if condition="env:quota" />
-<roundcube:label name="quota" />: <roundcube:object name="quotaDisplay" display="image" width="120" id="quotadisplay" />
+<span id="quotabox">
+<roundcube:label name="quota" />: <roundcube:object name="quotaDisplay" display="image" width="100" id="quotadisplay" />
+</span>
 <roundcube:endif />
+</td>
+<td width="1%">
+<span id="countcontrols">
+<roundcube:button command="firstpage" imageSel="/images/buttons/first_sel.png" imageAct="/images/buttons/first_act.png" imagePas="/images/buttons/first_pas.png" width="11" height="11" title="firstmessages" />
+<roundcube:button command="previouspage" imageSel="/images/buttons/previous_sel.png" imageAct="/images/buttons/previous_act.png" imagePas="/images/buttons/previous_pas.png" width="11" height="11" title="previousmessages" />
+&nbsp;<roundcube:object name="messageCountDisplay" />&nbsp;
+<roundcube:button command="nextpage" imageSel="/images/buttons/next_sel.png" imageAct="/images/buttons/next_act.png" imagePas="/images/buttons/next_pas.png" width="11" height="11" title="nextmessages" />
+<roundcube:button command="lastpage" imageSel="/images/buttons/last_sel.png" imageAct="/images/buttons/last_act.png" imagePas="/images/buttons/last_pas.png" width="11" height="11" title="lastmessages" />
+</span>
+</td>
+</tr>
+</table>
 </div>
 
 <div id="messagetoolbar">
 <roundcube:button command="checkmail" imageSel="/images/buttons/inbox_sel.png" imageAct="/images/buttons/inbox_act.png" imagePas="/images/buttons/inbox_pas.png" width="32" height="32" title="checkmail" />
 <roundcube:button command="compose" imageSel="/images/buttons/compose_sel.png" imageAct="/images/buttons/compose_act.png" imagePas="/images/buttons/compose_pas.png" width="32" height="32" title="writenewmessage" />
-<roundcube:button name="markreadbutton" id="markreadbutton" image="/images/buttons/markread_act.png" width="32" height="32" title="markmessages" onclick="rcmailUI.show_markmenu();return false" />
+<roundcube:button name="markreadbutton" id="markreadbutton" image="/images/buttons/markread_act.png" width="32" height="32" title="markmessages" onclick="rcmail_ui.show_markmenu();return false" />
 <roundcube:button command="reply" imageSel="/images/buttons/reply_sel.png" imageAct="/images/buttons/reply_act.png" imagePas="/images/buttons/reply_pas.png" width="32" height="32" title="replytomessage" />
 <roundcube:button command="reply-all" imageSel="/images/buttons/replyall_sel.png" imageAct="/images/buttons/replyall_act.png" imagePas="/images/buttons/replyall_pas.png" width="32" height="32" title="replytoallmessage" />
 <roundcube:button command="forward" imageSel="/images/buttons/forward_sel.png" imageAct="/images/buttons/forward_act.png" imagePas="/images/buttons/forward_pas.png" width="32" height="32" title="forwardmessage" />
@@ -118,26 +128,16 @@ body_keypress: function(evt, p)
     <li><roundcube:button command="mark" prop="unflagged" label="markunflagged" classAct="active" /></li>
   </ul>
 </div>
+
+<div id="searchfilter">
+  <label for="rcmlistfilter"><roundcube:label name="filter" /></label>:
+  <roundcube:object name="searchfilter" class="searchfilter" />
+</div>
 </div>
 
 <div id="quicksearchbar">
 <roundcube:object name="searchform" type="search" results="5" id="quicksearchbox" /><roundcube:button command="reset-search" id="searchreset" image="/images/icons/reset.gif" title="resetsearch" />
 </div>
 
-<div id="messagecountbar">
-<roundcube:button command="firstpage" imageSel="/images/buttons/first_sel.png" imageAct="/images/buttons/first_act.png" imagePas="/images/buttons/first_pas.png" width="11" height="11" title="firstmessages" />
-<roundcube:button command="previouspage" imageSel="/images/buttons/previous_sel.png" imageAct="/images/buttons/previous_act.png" imagePas="/images/buttons/previous_pas.png" width="11" height="11" title="previousmessages" />
-&nbsp;<roundcube:object name="messageCountDisplay" />&nbsp;
-<roundcube:button command="nextpage" imageSel="/images/buttons/next_sel.png" imageAct="/images/buttons/next_act.png" imagePas="/images/buttons/next_pas.png" width="11" height="11" title="nextmessages" />
-<roundcube:button command="lastpage" imageSel="/images/buttons/last_sel.png" imageAct="/images/buttons/last_act.png" imagePas="/images/buttons/last_pas.png" width="11" height="11" title="lastmessages" />
-</div>
-
-<script type="text/javascript">
-
-var rcmailUI = new rcube_mail_ui();
-rcube_event.add_listener({ object:rcmailUI, method:'body_mouseup', event:'mouseup' });
-rcube_event.add_listener({ object:rcmailUI, method:'body_keypress', event:'keypress' });
-  
-</script>
 </body>
 </html>

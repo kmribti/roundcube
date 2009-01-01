@@ -24,34 +24,6 @@ define('RCUBE_COMPOSE_REPLY', 0x0106);
 define('RCUBE_COMPOSE_FORWARD', 0x0107);
 define('RCUBE_COMPOSE_DRAFT', 0x0108);
 
-
-// remove an attachment
-if ($RCMAIL->action=='remove-attachment' && preg_match('/^rcmfile([0-9]+)$/', $_POST['_file'], $regs))
-{
-  $id = $regs[1];
-  if (is_array($_SESSION['compose']['attachments'][$id]))
-  {
-    @unlink($_SESSION['compose']['attachments'][$id]['path']);
-    $_SESSION['compose']['attachments'][$id] = NULL;
-    $OUTPUT->command('remove_from_attachment_list', "rcmfile$id");
-    $OUTPUT->send();
-    exit;
-  }
-}
-
-if ($RCMAIL->action=='display-attachment' && preg_match('/^rcmfile([0-9]+)$/', $_GET['_file'], $regs))
-{
-  $id = $regs[1];
-  if (is_array($_SESSION['compose']['attachments'][$id]))
-  {
-    $apath = $_SESSION['compose']['attachments'][$id]['path'];
-    header('Content-Type: ' . $_SESSION['compose']['attachments'][$id]['mimetype']);
-    header('Content-Length: ' . filesize($apath));
-    readfile($apath);
-  }
-  exit;
-}
-
 $MESSAGE_FORM = NULL;
 $MESSAGE = NULL;
 
@@ -65,16 +37,33 @@ if (!is_array($_SESSION['compose']) || $_SESSION['compose']['id'] != get_input_v
   rcmail_compose_cleanup();
   $_SESSION['compose'] = array('id' => uniqid(rand()), 'param' => array_map('strip_tags', $_GET));
   
+  // process values like "mailto:foo@bar.com?subject=new+message&cc=another"
+  if ($_SESSION['compose']['param']['_to']) {
+    $mailto = explode('?', $_SESSION['compose']['param']['_to']);
+    if (count($mailto) > 1) {
+      $_SESSION['compose']['param']['_to'] = $mailto[0];
+      parse_str($mailto[1], $query);
+      foreach ($query as $f => $val)
+        $_SESSION['compose']['param']["_$f"] = $val;
+    }
+  }
+
   // redirect to a unique URL with all parameters stored in session
   $OUTPUT->redirect(array('_action' => 'compose', '_id' => $_SESSION['compose']['id']));
 }
 
 // add some labels to client
-rcube_add_label('nosubject', 'norecipientwarning', 'nosubjectwarning', 'nobodywarning', 'notsentwarning', 'savingmessage', 'sendingmessage', 'messagesaved', 'converting');
+$OUTPUT->add_label('nosubject', 'nosenderwarning', 'norecipientwarning', 'nosubjectwarning',
+    'nobodywarning', 'notsentwarning', 'savingmessage', 'sendingmessage', 'messagesaved',
+    'converting', 'editorwarning', 'searching');
 
-// add config parameter to client script
-$OUTPUT->set_env('draft_autosave', !empty($CONFIG['drafts_mbox']) ? $CONFIG['draft_autosave'] : 0);
-
+// add config parameters to client script
+if (!empty($CONFIG['drafts_mbox'])) {
+  $OUTPUT->set_env('drafts_mailbox', $CONFIG['drafts_mbox']);
+  $OUTPUT->set_env('draft_autosave', $CONFIG['draft_autosave']);
+}
+// set current mailbox in client environment
+$OUTPUT->set_env('mailbox', $IMAP->get_mailbox_name());
 
 // get reference message and set compose mode
 if ($msg_uid = $_SESSION['compose']['param']['_reply_uid'])
@@ -100,6 +89,17 @@ if (!empty($msg_uid))
 
     if (!empty($_SESSION['compose']['param']['_all']))
       $MESSAGE->reply_all = 1;
+  }
+  else if ($compose_mode == RCUBE_COMPOSE_DRAFT)
+  {
+    if($MESSAGE->headers->in_reply_to)
+    {
+      // TODO: how to get reply_uid/forward_uid value, maybe we must set X-Reply-UID/X-Forward-UID
+      // $_SESSION['compose']['reply_uid'] = ?
+      // $_SESSION['compose']['forward_uid'] = ?
+      $_SESSION['compose']['reply_msgid'] = '<'.$MESSAGE->headers->in_reply_to.'>';
+    }
+    $_SESSION['compose']['references']  = $MESSAGE->headers->references;
   }
   else if ($compose_mode == RCUBE_COMPOSE_FORWARD)
   {
@@ -132,9 +132,7 @@ function rcmail_compose_headers($attrib)
       // we have a set of recipients stored is session
       if (($mailto_id = $_SESSION['compose']['param']['_mailto']) && $_SESSION['mailto'][$mailto_id])
         $fvalue = urldecode($_SESSION['mailto'][$mailto_id]);
-      else if (!empty($_SESSION['compose']['param']['_to']))
-        $fvalue = $_SESSION['compose']['param']['_to'];
-        
+      
     case 'cc':
       if (!$fname)
       {
@@ -157,11 +155,13 @@ function rcmail_compose_headers($attrib)
       $fname = '_replyto';
       $allow_attrib = array('id', 'class', 'style', 'size', 'tabindex');
       $field_type = 'html_inputfield';
-      break;    
+      break;
   }
  
   if ($fname && !empty($_POST[$fname]))
     $fvalue = get_input_value($fname, RCUBE_INPUT_POST, TRUE);
+  else if ($fname && !$fvalue && !empty($_SESSION['compose']['param'][$fname]))
+    $fvalue = $_SESSION['compose']['param'][$fname];
 
   else if ($header && $compose_mode == RCUBE_COMPOSE_REPLY)
   {
@@ -187,9 +187,14 @@ function rcmail_compose_headers($attrib)
     {
       $to_addresses = $IMAP->decode_address_list($fvalue);
       $fvalue = '';
+
       foreach ($to_addresses as $addr_part)
       {
-        if (!empty($addr_part['mailto']) && !in_array($addr_part['mailto'], $sa_recipients) && (!$MESSAGE->compose_from || !in_array($addr_part['mailto'], $MESSAGE->compose_from)))
+        if (!empty($addr_part['mailto'])
+            && !in_array($addr_part['mailto'], $sa_recipients)
+            && (!$MESSAGE->compose_from
+                || !in_array_nocase($addr_part['mailto'], $MESSAGE->compose_from)
+                || (count($to_addresses)==1 && $header=='to'))) // allow reply to yourself
         {
           $fvalue .= (strlen($fvalue) ? ', ':'').$addr_part['string'];
           $sa_recipients[] = $addr_part['mailto'];
@@ -214,7 +219,7 @@ function rcmail_compose_headers($attrib)
   if ($fname && $field_type)
   {
     // pass the following attributes to the form class
-    $field_attrib = array('name' => $fname);
+    $field_attrib = array('name' => $fname, 'spellcheck' => 'false');
     foreach ($attrib as $attr => $value)
       if (in_array($attr, $allow_attrib))
         $field_attrib[$attr] = $value;
@@ -252,7 +257,7 @@ function rcmail_compose_header_from($attrib)
     foreach ($a_to as $addr)
     {
       if (!empty($addr['mailto']))
-        $a_recipients[] = $addr['mailto'];
+        $a_recipients[] = rc_strtolower($addr['mailto']);
     }
 
     if (!empty($MESSAGE->headers->cc))
@@ -261,7 +266,7 @@ function rcmail_compose_header_from($attrib)
       foreach ($a_cc as $addr)
       {
         if (!empty($addr['mailto']))
-          $a_recipients[] = $addr['mailto'];
+          $a_recipients[] = rc_strtolower($addr['mailto']);
       }
     }
   }
@@ -290,24 +295,26 @@ function rcmail_compose_header_from($attrib)
         if ($a_signatures[$identity_id]['is_html'])
         {
             $h2t = new html2text($a_signatures[$identity_id]['text'], false, false);
-            $plainTextPart = $h2t->get_text();
-            $a_signatures[$identity_id]['plain_text'] = trim(html_entity_decode($plainTextPart, ENT_NOQUOTES, 'UTF-8'));
+            $a_signatures[$identity_id]['plain_text'] = trim($h2t->get_text());
         }
       }
-
-      // set identity if it's one of the reply-message recipients
-      if (in_array($sql_arr['email'], $a_recipients))
-        $from_id = $sql_arr['identity_id'];
 
       if ($compose_mode == RCUBE_COMPOSE_REPLY && is_array($MESSAGE->compose_from))
         $MESSAGE->compose_from[] = $sql_arr['email'];
 
-      if ($compose_mode == RCUBE_COMPOSE_DRAFT && strstr($MESSAGE->headers->from, $sql_arr['email']))
-        $from_id = $sql_arr['identity_id'];
+      if (empty($_POST['_from']))
+      {
+        // set draft's identity
+        if ($compose_mode == RCUBE_COMPOSE_DRAFT && strstr($MESSAGE->headers->from, $sql_arr['email']))
+          $from_id = $sql_arr['identity_id'];
+        // set identity if it's one of the reply-message recipients (with prio for default identity)
+        else if (in_array(rc_strtolower($sql_arr['email']), $a_recipients) && (empty($from_id) || $sql_arr['standard']))
+          $from_id = $sql_arr['identity_id'];
+      }
     }
 
     // overwrite identity selection with post parameter
-    if (isset($_POST['_from']))
+    if (!empty($_POST['_from']))
       $from_id = get_input_value('_from', RCUBE_INPUT_POST);
 
     $out = $select_from->show($from_id);
@@ -374,15 +381,21 @@ function rcmail_compose_body($attrib)
     // load draft message body
     else if ($compose_mode == RCUBE_COMPOSE_DRAFT)
       $body = rcmail_create_draft_body($body, $isHtml);
+
+    if ($isHtml) {
+      // replace cid with href in inline images links
+      foreach ((array)$_SESSION['compose']['attachments'] as $pid => $attachment) {
+        if ($attachment['content_id']) {
+          $body = str_replace('cid:'. $attachment['content_id'], 
+            $OUTPUT->app->comm_path.'&_action=display-attachment&_file=rcmfile'.$pid, $body);
+        }
+      }
+    }
   }
-
-  $tinylang = substr($_SESSION['language'], 0, 2);
-  if (!file_exists('program/js/tiny_mce/langs/'.$tinylang.'.js'))
-    $tinylang = 'en'; 
-
-  $OUTPUT->include_script('tiny_mce/tiny_mce.js');
-  $OUTPUT->include_script("editor.js");
-  $OUTPUT->add_script('rcmail_editor_init("$__skin_path", "'.$tinylang.'");');
+  else if (!empty($_SESSION['compose']['param']['_body']))
+  {
+    $body = $_SESSION['compose']['param']['_body'];
+  }
 
   $out = $form_start ? "$form_start\n" : '';
 
@@ -395,18 +408,28 @@ function rcmail_compose_body($attrib)
   $msgtype = new html_hiddenfield(array('name' => '_is_html', 'value' => ($isHtml?"1":"0")));
   $out .= $msgtype->show();
 
-  // If desired, set this text area to be editable by TinyMCE
-  if ($isHtml) $attrib['class'] = "mce_editor";
+  // If desired, set this textarea to be editable by TinyMCE
+  if ($isHtml) $attrib['class'] = 'mce_editor';
   $textarea = new html_textarea($attrib);
   $out .= $textarea->show($body);
   $out .= $form_end ? "\n$form_end" : '';
 
+  // include HTML editor
+  rcube_html_editor();
+  
   // include GoogieSpell
-  if (!empty($CONFIG['enable_spellcheck']) && !$isHtml)
-    {
-    $lang_set = '';
-    if (!empty($CONFIG['spellcheck_languages']) && is_array($CONFIG['spellcheck_languages']))
-      $lang_set = "googie.setLanguages(".array2js($CONFIG['spellcheck_languages']).");\n";
+  if (!empty($CONFIG['enable_spellcheck'])) {
+
+    $lang = strtolower(substr($_SESSION['language'], 0, 2));
+  
+    $spellcheck_langs = (array)$RCMAIL->config->get('spellcheck_languages', array('da'=>'Dansk', 'de'=>'Deutsch', 'en' => 'English', 'es'=>'Español', 'fr'=>'Français', 'it'=>'Italiano', 'nl'=>'Nederlands', 'pl'=>'Polski', 'pt'=>'Português', 'fi'=>'Suomi', 'sv'=>'Svenska'));
+    if (!$spellcheck_langs[$lang])
+      $lang = 'en';
+    
+    $editor_lang_set = array();
+    foreach ($spellcheck_langs as $key => $name) {
+      $editor_lang_set[] = ($key == $lang ? '+' : '') . JQ($name).'='.JQ($key);
+      }
     
     $OUTPUT->include_script('googiespell.js');
     $OUTPUT->add_script(sprintf(
@@ -415,7 +438,8 @@ function rcmail_compose_body($attrib)
       "googie.lang_rsm_edt = \"%s\";\n".
       "googie.lang_close = \"%s\";\n".
       "googie.lang_revert = \"%s\";\n".
-      "googie.lang_no_error_found = \"%s\";\n%s".
+      "googie.lang_no_error_found = \"%s\";\n".
+      "googie.setLanguages(%s);\n".
       "googie.setCurrentLanguage('%s');\n".
       "googie.decorateTextarea('%s');\n".
       "%s.set_env('spellcheck', googie);",
@@ -425,13 +449,14 @@ function rcmail_compose_body($attrib)
       JQ(Q(rcube_label('close'))),
       JQ(Q(rcube_label('revertto'))),
       JQ(Q(rcube_label('nospellerrors'))),
-      $lang_set,
-      substr($_SESSION['language'], 0, 2),
+      json_serialize($spellcheck_langs),
+      $lang,
       $attrib['id'],
       JS_OBJECT_NAME), 'foot');
 
-    rcube_add_label('checking');
-    }
+    $OUTPUT->add_label('checking');
+    $OUTPUT->set_env('spellcheck_langs', join(',', $editor_lang_set));
+  }
  
   $out .= "\n".'<iframe name="savetarget" src="program/blank.gif" style="width:0;height:0;border:none;visibility:hidden;"></iframe>';
 
@@ -441,47 +466,53 @@ function rcmail_compose_body($attrib)
 
 function rcmail_create_reply_body($body, $bodyIsHtml)
 {
-  global $IMAP, $MESSAGE;
+  global $IMAP, $MESSAGE, $OUTPUT;
 
   if (! $bodyIsHtml)
   {
-    // soft-wrap message first
-    $body = wordwrap($body, 75);
-  
-    // split body into single lines
-    $a_lines = preg_split('/\r?\n/', $body);
-  
-    // add > to each line
-    for($n=0; $n<sizeof($a_lines); $n++)
-    {
-      if (strpos($a_lines[$n], '>')===0)
-        $a_lines[$n] = '>'.$a_lines[$n];
-      else
-        $a_lines[$n] = '> '.$a_lines[$n];
-    }
- 
-    $body = join("\n", $a_lines);
-
-    // add title line
-    $prefix = sprintf("\n\n\nOn %s, %s wrote:\n",
-      $MESSAGE->headers->date,
-      $MESSAGE->get_header('from'));
-
     // try to remove the signature
-    if ($sp = strrpos($body, '-- '))
+    if (($sp = strrpos($body, '-- ')) !== false && ($sp == 0 || $body{$sp-1} == "\n"))
       {
       if ($body{$sp+3}==' ' || $body{$sp+3}=="\n" || $body{$sp+3}=="\r")
-        $body = substr($body, 0, $sp-1);
+        $body = substr($body, 0, max(0, $sp-1));
       }
+
+    // soft-wrap message first
+    $body = rcmail_wrap_quoted($body, 75);
+
+    $body = rtrim($body, "\r\n");
+
+    if ($body) {
+      // split body into single lines
+      $a_lines = preg_split('/\r?\n/', $body);
+
+      // add > to each line
+      for($n=0; $n<sizeof($a_lines); $n++) {
+        if (strpos($a_lines[$n], '>')===0)
+          $a_lines[$n] = '>'.$a_lines[$n];
+        else
+          $a_lines[$n] = '> '.$a_lines[$n];
+        }
+ 
+      $body = join("\n", $a_lines);
+      }
+
+    // add title line(s)
+    $prefix = wordwrap(sprintf("On %s, %s wrote:\n",
+      $MESSAGE->headers->date,
+      $MESSAGE->get_header('from')), 76);
+
     $suffix = '';
   }
   else
   {
-    $prefix = sprintf("<br /><br />On %s, %s wrote:<br />\n",
+    $prefix = sprintf("On %s, %s wrote:<br />\n",
       $MESSAGE->headers->date,
-      Q($MESSAGE->get_header('from')));
+      htmlspecialchars(Q($MESSAGE->get_header('from'), 'replace'), ENT_COMPAT, $OUTPUT->get_charset()));
     $prefix .= '<blockquote type="cite" style="padding-left:5px; border-left:#1010ff 2px solid; margin-left:5px; width:100%">';
-    $suffix = "</blockquote>";
+    $suffix = "</blockquote><p></p>";
+
+    rcmail_write_inline_attachments($MESSAGE);
   }
 
   return $prefix.$body.$suffix;
@@ -490,18 +521,18 @@ function rcmail_create_reply_body($body, $bodyIsHtml)
 
 function rcmail_create_forward_body($body, $bodyIsHtml)
 {
-  global $IMAP, $MESSAGE;
+  global $IMAP, $MESSAGE, $OUTPUT;
 
   if (!$bodyIsHtml)
   {
-    // soft-wrap message first
-    $body = wordwrap($body, 80);
-  
-    $prefix = sprintf("\n\n\n-------- Original Message --------\nSubject: %s\nDate: %s\nFrom: %s\nTo: %s\n\n",
-      $MESSAGE->subject,
-      $MESSAGE->headers->date,
-      $MESSAGE->get_header('from'),
-      $MESSAGE->get_header('to'));
+    $prefix = "\n\n\n-------- Original Message --------\n";
+    $prefix .= 'Subject: ' . $MESSAGE->subject . "\n";
+    $prefix .= 'Date: ' . $MESSAGE->headers->date . "\n";
+    $prefix .= 'From: ' . $MESSAGE->get_header('from') . "\n";
+    $prefix .= 'To: ' . $MESSAGE->get_header('to') . "\n";
+    if ($MESSAGE->headers->replyto && $MESSAGE->headers->replyto != $MESSAGE->headers->from)
+      $prefix .= 'Reply-To: ' . $MESSAGE->get_header('replyto') . "\n";
+    $prefix .= "\n";
   }
   else
   {
@@ -511,12 +542,17 @@ function rcmail_create_forward_body($body, $bodyIsHtml)
         "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">Subject: </th><td>%s</td></tr>" .
         "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">Date: </th><td>%s</td></tr>" .
         "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">From: </th><td>%s</td></tr>" .
-        "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">To: </th><td>%s</td></tr>" .
-        "</tbody></table><br>",
+        "<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">To: </th><td>%s</td></tr>",
       Q($MESSAGE->subject),
       Q($MESSAGE->headers->date),
-      Q($MESSAGE->get_header('from')),
-      Q($MESSAGE->get_header('to')));
+      htmlspecialchars(Q($MESSAGE->get_header('from'), 'replace'), ENT_COMPAT, $OUTPUT->get_charset(), true),
+	htmlspecialchars(Q($MESSAGE->get_header('to'), 'replace'), ENT_COMPAT, $OUTPUT->get_charset(), true));
+
+    if ($MESSAGE->headers->replyto && $MESSAGE->headers->replyto != $MESSAGE->headers->from)
+      $prefix .= sprintf("<tr><th align=\"right\" nowrap=\"nowrap\" valign=\"baseline\">Reply-To: </th><td>%s</td></tr>",
+	htmlspecialchars(Q($MESSAGE->get_header('replyto'), 'replace'), ENT_COMPAT, $OUTPUT->get_charset(), true));
+
+    $prefix .= "</tbody></table><br>";
   }
 
   // add attachments
@@ -546,35 +582,53 @@ function rcmail_create_draft_body($body, $bodyIsHtml)
   
 function rcmail_write_compose_attachments(&$message, $bodyIsHtml)
 {
-  global $RCMAIL, $IMAP;
-
-  $temp_dir = unslashify($RCMAIL->config->get('temp_dir'));
-
-  if (!is_array($_SESSION['compose']['attachments']))
-    $_SESSION['compose']['attachments'] = array();
-  
   foreach ((array)$message->mime_parts as $pid => $part)
   {
     if (($part->ctype_primary != 'message' || !$bodyIsHtml) &&
-        ($part->disposition=='attachment' || $part->disposition=='inline' || $part->headers['content-id'] ||
-         (empty($part->disposition) && $part->filename)))
+        ($part->disposition=='attachment' || $part->disposition=='inline' || $part->headers['content-id']
+         || (empty($part->disposition) && $part->filename)))
     {
-      $tmp_path = tempnam($temp_dir, 'rcmAttmnt');
-      if ($fp = fopen($tmp_path, 'w'))
-      {
-        fwrite($fp, $message->get_part_content($pid));
-        fclose($fp);
-        
-        $_SESSION['compose']['attachments'][] = array(
-          'mimetype' => $part->ctype_primary . '/' . $part->ctype_secondary,
-          'name' => $part->filename,
-          'path' => $tmp_path
-          );
-      }
+      if ($attachment = rcmail_save_attachment($message, $pid))
+        $_SESSION['compose']['attachments'][] = $attachment;
     }
   }
 	
   $_SESSION['compose']['forward_attachments'] = true;
+}
+
+
+function rcmail_write_inline_attachments(&$message)
+{
+  foreach ((array)$message->mime_parts as $pid => $part)
+  {
+    if ($part->content_id && $part->filename)
+    {
+      if ($attachment = rcmail_save_attachment($message, $pid))
+        $_SESSION['compose']['attachments'][] = $attachment;
+    }
+  }
+}
+
+function rcmail_save_attachment(&$message, $pid)
+{
+  global $RCMAIL;
+
+  $temp_dir = unslashify($RCMAIL->config->get('temp_dir'));
+  $tmp_path = tempnam($temp_dir, 'rcmAttmnt');
+  $part = $message->mime_parts[$pid];
+  
+  if ($fp = fopen($tmp_path, 'w'))
+  {
+    $message->get_part_content($pid, $fp);
+    fclose($fp);
+
+    return array(
+        'mimetype' => $part->ctype_primary . '/' . $part->ctype_secondary,
+        'name' => $part->filename,
+        'path' => $tmp_path,
+	'content_id' => $part->content_id
+    );
+  }
 }
 
 
@@ -586,35 +640,36 @@ function rcmail_compose_subject($attrib)
   unset($attrib['form']);
   
   $attrib['name'] = '_subject';
+  $attrib['spellcheck'] = 'true';
   $textfield = new html_inputfield($attrib);
 
   $subject = '';
 
   // use subject from post
-  if (isset($_POST['_subject']))
+  if (isset($_POST['_subject'])) {
     $subject = get_input_value('_subject', RCUBE_INPUT_POST, TRUE);
-    
+  }
   // create a reply-subject
-  else if ($compose_mode == RCUBE_COMPOSE_REPLY)
-  {
+  else if ($compose_mode == RCUBE_COMPOSE_REPLY) {
     if (eregi('^re:', $MESSAGE->subject))
       $subject = $MESSAGE->subject;
     else
       $subject = 'Re: '.$MESSAGE->subject;
   }
-
   // create a forward-subject
-  else if ($compose_mode == RCUBE_COMPOSE_FORWARD)
-  {
+  else if ($compose_mode == RCUBE_COMPOSE_FORWARD) {
     if (eregi('^fwd:', $MESSAGE->subject))
       $subject = $MESSAGE->subject;
     else
       $subject = 'Fwd: '.$MESSAGE->subject;
   }
-
   // creeate a draft-subject
-  else if ($compose_mode == RCUBE_COMPOSE_DRAFT)
+  else if ($compose_mode == RCUBE_COMPOSE_DRAFT) {
     $subject = $MESSAGE->subject;
+  }
+  else if (!empty($_SESSION['compose']['param']['_subject'])) {
+    $subject = $_SESSION['compose']['param']['_subject'];
+  }
   
   $out = $form_start ? "$form_start\n" : '';
   $out .= $textfield->show($subject);
@@ -640,7 +695,7 @@ function rcmail_compose_attachment_list($attrib)
       $button = html::img(array(
         'src' => $CONFIG['skin_path'] . $attrib['deleteicon'],
         'alt' => rcube_label('delete'),
-        'style' => "border:0;padding-right:2px;vertical-align:middle"));
+        'style' => "padding-right:2px;vertical-align:middle"));
     else
       $button = Q(rcube_label('delete'));
 
@@ -675,12 +730,15 @@ function rcmail_compose_attachment_form($attrib)
   $button = new html_inputfield(array('type' => 'button', 'class' => 'button'));
   
   $out = html::div($attrib,
-    $OUTPUT->form_tag(array('name' => 'form', 'method' => 'post', 'enctype' => 'multipart/form-data')) .
-    rcmail_compose_attachment_field(array()) . html::br() .
-    $button->show(rcube_label('close'), array('onclick' => "document.getElementById('$attrib[id]').style.visibility='hidden'")) .
-    $button->show(rcube_label('upload'), array('onclick' => JS_OBJECT_NAME . ".command('send-attachment', this.form)"))
+    $OUTPUT->form_tag(array('name' => 'form', 'method' => 'post', 'enctype' => 'multipart/form-data'),
+      html::div(null, rcmail_compose_attachment_field(array())) .
+      html::div('hint', rcube_label(array('name' => 'maxuploadsize', 'vars' => array('size' => show_bytes(parse_bytes(ini_get('upload_max_filesize'))))))) .
+      html::div('buttons',
+        $button->show(rcube_label('close'), array('onclick' => "document.getElementById('$attrib[id]').style.visibility='hidden'")) . ' ' .
+        $button->show(rcube_label('upload'), array('onclick' => JS_OBJECT_NAME . ".command('send-attachment', this.form)"))
+      )
+    )
   );
-  
   
   $OUTPUT->add_gui_object('uploadbox', $attrib['id']);
   return $out;
@@ -689,11 +747,10 @@ function rcmail_compose_attachment_form($attrib)
 
 function rcmail_compose_attachment_field($attrib)
 {
-  // allow the following attributes to be added to the <input> tag
-  $attrib_str = create_attrib_string($attrib, array('id', 'class', 'style', 'size'));
- 
-  $out = '<input type="file" name="_attachments[]"'. $attrib_str . " />";
-  return $out;
+  $attrib['type'] = 'file';
+  $attrib['name'] = '_attachments[]';
+  $field = new html_inputfield($attrib);
+  return $field->show();
 }
 
 
@@ -762,9 +819,13 @@ function rcmail_editor_selector($attrib)
   if ($compose_mode)
     $useHtml = ($useHtml && $MESSAGE->has_html_part());
 
+  $editorid = empty($attrib['editorid']) ? 'rcmComposeMessage' : $attrib['editorid'];
+
   $selector = '';
   $chosenvalue = $useHtml ? 'html' : 'plain';
-  $radio = new html_radiobutton(array('name' => '_editorSelect', 'onclick' => 'return rcmail_toggle_editor(this)'));
+  $radio = new html_radiobutton(array('name' => '_editorSelect',
+    'onclick' => "return rcmail_toggle_editor(this.value=='html', '$editorid', '_is_html')"));
+
   foreach ($choices as $value => $text)
   {
     $attrib['id'] = '_' . $value;
@@ -779,7 +840,7 @@ function rcmail_editor_selector($attrib)
 function rcmail_store_target_selection($attrib)
 {
   $attrib['name'] = '_store_target';
-  $select = rcmail_mailbox_select(array('noselection' => '- '.rcube_label('dontsave').' -'));
+  $select = rcmail_mailbox_select(array_merge($attrib, array('noselection' => '- '.rcube_label('dontsave').' -')));
   return $select->show(rcmail::get_instance()->config->get('sent_mbox'), $attrib);
 }
 
@@ -823,54 +884,6 @@ $OUTPUT->add_handlers(array(
   'receiptcheckbox' => 'rcmail_receipt_checkbox',
   'storetarget' => 'rcmail_store_target_selection',
 ));
-
-/****** get contacts for this user and add them to client scripts ********/
-
-$CONTACTS = new rcube_contacts($DB, $USER->ID);
-$CONTACTS->set_pagesize(1000);
-
-$a_contacts = array(); 
-                                   
-if ($result = $CONTACTS->list_records())
-  {
-  while ($sql_arr = $result->iterate())
-    if ($sql_arr['email'])
-      $a_contacts[] = format_email_recipient($sql_arr['email'], $sql_arr['name']);
-  }
-if (!empty($CONFIG['ldap_public']) && is_array($CONFIG['ldap_public']))
-  {
-  /* LDAP autocompletion */ 
-  foreach ($CONFIG['ldap_public'] as $ldapserv_config) 
-    { 
-    if ($ldapserv_config['fuzzy_search'] != 1 || 
-        $ldapserv_config['global_search'] != 1)
-      { 
-      continue; 
-      }
-	 
-    $LDAP = new rcube_ldap($ldapserv_config); 
-    $LDAP->connect(); 
-    $LDAP->set_pagesize(1000);
-  
-    $results = $LDAP->search($ldapserv_config['mail_field'], ""); 
- 
-    for ($i = 0; $i < $results->count; $i++) 
- 	  { 
- 	  if ($results->records[$i]['email'] != '') 
- 	    { 
- 	    $email = $results->records[$i]['email']; 
- 	    $name = $results->records[$i]['name']; 
- 		 
- 	    $a_contacts[] = format_email_recipient($email, $name);
- 	    } 
- 	  }
-    $LDAP->close(); 
-    }
-  }
-if ($a_contacts) 
-  { 
- 	$OUTPUT->set_env('contacts', $a_contacts); 
-  }
 
 $OUTPUT->send('compose');
 

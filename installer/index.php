@@ -1,8 +1,11 @@
 <?php
+
 ini_set('error_reporting', E_ALL&~E_NOTICE);
 ini_set('display_errors', 1);
 
 define('INSTALL_PATH', realpath(dirname(__FILE__) . '/../').'/');
+define('RCMAIL_CONFIG_DIR', INSTALL_PATH . 'config');
+
 $include_path  = INSTALL_PATH . 'program/lib' . PATH_SEPARATOR;
 $include_path .= INSTALL_PATH . 'program' . PATH_SEPARATOR;
 $include_path .= INSTALL_PATH . 'program/include' . PATH_SEPARATOR;
@@ -10,30 +13,42 @@ $include_path .= ini_get('include_path');
 
 set_include_path($include_path);
 
-session_start();
+require_once 'utils.php';
 
-/**
- * Use PHP5 autoload for dynamic class loading
- * (copy from program/incllude/iniset.php)
- */
-function __autoload($classname)
-{
-  $filename = preg_replace(
-      array('/MDB2_(.+)/', '/Mail_(.+)/', '/^html_.+/', '/^utf8$/'),
-      array('MDB2/\\1', 'Mail/\\1', 'html', 'utf8.class'),
-      $classname
-  );
-  include_once $filename. '.php';
-}
+session_start();
 
 $RCI = rcube_install::get_instance();
 $RCI->load_config();
 
-if (isset($_GET['_getfile']) && in_array($_GET['_getfile'], array('main', 'db')))
-{
+if (isset($_GET['_getfile']) && in_array($_GET['_getfile'], array('main', 'db'))) {
+  $filename = $_GET['_getfile'] . '.inc.php';
+  if (!empty($_SESSION[$filename])) {
+    header('Content-type: text/plain');
+    header('Content-Disposition: attachment; filename="'.$filename.'"');
+    echo $_SESSION[$filename];
+    exit;
+  }
+  else {
+    header('HTTP/1.0 404 Not found');
+    die("The requested configuration was not found. Please run the installer from the beginning.");
+  }
+}
+
+if ($RCI->configured && ($RCI->getprop('enable_installer') || $_SESSION['allowinstaller']) &&
+    isset($_GET['_mergeconfig']) && in_array($_GET['_mergeconfig'], array('main', 'db'))) {
+  $filename = $_GET['_mergeconfig'] . '.inc.php';
+
   header('Content-type: text/plain');
-  header('Content-Disposition: attachment; filename="'.$_GET['_getfile'].'.inc.php"');
-  echo $RCI->create_config($_GET['_getfile']);
+  header('Content-Disposition: attachment; filename="'.$filename.'"');
+  
+  $RCI->merge_config();
+  echo $RCI->create_config($_GET['_mergeconfig'], true);
+  exit;
+}
+
+// go to 'test' step if we have a local configuration
+if ($RCI->configured && empty($_REQUEST['_step'])) {
+  header("Location: ./?_step=3");
   exit;
 }
 
@@ -43,7 +58,8 @@ if (isset($_GET['_getfile']) && in_array($_GET['_getfile'], array('main', 'db'))
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <title>RoundCube Webmail Installer</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="Robots" content="noindex,nofollow" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="styles.css" />
 <script type="text/javascript" src="client.js"></script>
 </head>
@@ -68,7 +84,7 @@ if (isset($_GET['_getfile']) && in_array($_GET['_getfile'], array('main', 'db'))
   if ($RCI->configured && !$RCI->getprop('enable_installer') && !$_SESSION['allowinstaller']) {
     // header("HTTP/1.0 404 Not Found");
     echo '<h2 class="error">The installer is disabled!</h2>';
-    echo '<p>To enable it again, set <tt>$rcmail_config[\'enable_installer\'] = true;</tt> in config/main.inc.php</p>';
+    echo '<p>To enable it again, set <tt>$rcmail_config[\'enable_installer\'] = true;</tt> in RCMAIL_CONFIG_DIR/main.inc.php</p>';
     echo '</div></body></html>';
     exit;
   }

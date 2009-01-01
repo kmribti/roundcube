@@ -3,7 +3,7 @@
 /*
 
 +-----------------------------------------------------------------------+
-| language/ar/labels.inc                                                |
+| language/ar_SA/labels.inc                                             |
 |                                                                       |
 | Language file of the RoundCube Webmail client                         |
 | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
@@ -114,6 +114,8 @@ $labels['viewsource'] = 'إظهار المصدر';
 $labels['markmessages'] = 'وسم الرسالة';
 $labels['markread'] = 'كمقروءة';
 $labels['markunread'] = 'كغير مقروءة';
+$labels['markflagged'] = 'كموْسومة';
+$labels['markunflagged'] = 'كغير موْسومة';
 $labels['select'] = 'تحديد';
 $labels['all'] = 'الكل';
 $labels['none'] = 'لا شيء';
@@ -126,6 +128,7 @@ $labels['unknown'] = 'مجهول';
 $labels['unlimited'] = 'غير محدود';
 $labels['quicksearch'] = 'البحث السريع';
 $labels['resetsearch'] = 'استعادة البحث للافتراضي';
+$labels['openinextwin'] = 'افتح في نافذة جديدة';
 $labels['compose'] = 'إنشاء رسالة';
 $labels['savemessage'] = 'حفظ هذه المسودة';
 $labels['sendmessage'] = 'إرسال الرسالة الآن';
@@ -146,8 +149,12 @@ $labels['high'] = 'مرتفع';
 $labels['highest'] = 'الأعلى';
 $labels['nosubject'] = '(دون موضوع)';
 $labels['showimages'] = 'إظهار الصور';
+$labels['alwaysshow'] = 'دائماً أظهر الصّور القادمة من $sender';
 $labels['htmltoggle'] = 'HTML';
 $labels['plaintoggle'] = 'نص مجرد';
+$labels['savesentmessagein'] = 'احفظ الرسالة المُرسلة في';
+$labels['dontsave'] = 'لا تحفظها';
+$labels['maxuploadsize'] = 'أقصى حجم للملف هو $size';
 $labels['addcc'] = 'أضف CC';
 $labels['addbcc'] = 'أضف BCC';
 $labels['addreplyto'] = 'أضيف Reply-To';
@@ -171,12 +178,19 @@ $labels['composeto'] = 'إنشاء رسالة إليه';
 $labels['contactsfromto'] = 'المراسلون $from إلى $to من $count';
 $labels['print'] = 'طباعة';
 $labels['export'] = 'تصدير';
+$labels['exportvcards'] = 'صدّر المراسلين بنسق vCard';
 $labels['previouspage'] = 'عرض المجموعة السابقة';
 $labels['firstpage'] = 'عرض المجموعة الأولى';
 $labels['nextpage'] = 'عرض المجموعة التالية';
 $labels['lastpage'] = 'عرض المجموعة الأخيرة';
 $labels['groups'] = 'المجموعات';
 $labels['personaladrbook'] = 'العناوين الشخصية';
+$labels['import'] = 'استورد';
+$labels['importcontacts'] = 'استورد المراسلين';
+$labels['importfromfile'] = 'استورد من ملف:';
+$labels['importreplace'] = 'استبدل دفتر العناوين بأكمله';
+$labels['importtext'] = 'يمكنك رفع قائمة المراسلين من دفتر عناوين موجود.<br/>ندعم حالياً استيراد العناوين من نسق بيانات <a href="http://en.wikipedia.org/wiki/VCard">vCard</a>.';
+$labels['done'] = 'تم';
 $labels['settingsfor'] = 'إعدادات';
 $labels['preferences'] = 'التفضيلات';
 $labels['userpreferences'] = 'تفضيلات المستخدم';
@@ -187,6 +201,7 @@ $labels['newidentity'] = 'هوية جديدة';
 $labels['newitem'] = 'عنصر جديد';
 $labels['edititem'] = 'تحرير عنصر';
 $labels['setdefault'] = 'تعيين كإفتراضي';
+$labels['autodetect'] = 'آلي';
 $labels['language'] = 'اللغة';
 $labels['timezone'] = 'المنطقة الزمنية';
 $labels['pagesize'] = 'أسطر في الصفحة';
@@ -195,6 +210,7 @@ $labels['dstactive'] = 'التوقيت الصيفي';
 $labels['htmleditor'] = 'إنشاء رسائل بنسق HTML';
 $labels['htmlsignature'] = 'توقيع HTML';
 $labels['previewpane'] = 'إظهار قسم المعاينة';
+$labels['skin'] = 'شكل الواجهة';
 $labels['logoutclear'] = 'أفرغ المحذوفات عند الخروج';
 $labels['logoutcompact'] = 'اضغط الوارد عن الخروج';
 $labels['uisettings'] = 'واجهة المستخدم';
@@ -206,22 +222,39 @@ $labels['autosend'] = 'أأرسلها تلقائياً';
 $labels['ignore'] = 'تجاهلها';
 $labels['readwhendeleted'] = 'حدد الرسالة كمقروءة عند حذفها';
 $labels['flagfordeletion'] = 'ضع علامة على الرسالة لحذفها بدلاً من حذفها';
+$labels['skipdeleted'] = 'لا تظهر الرسائل المحذوفة';
+$labels['showinlineimages'] = 'أظهر الصّور المرفقة أسفل الرسالة';
 $labels['autosavedraft'] = 'حفظ المسودة تلقائياً';
 $labels['everynminutes'] = 'كل $n دقيقة';
+$labels['keepaliveevery'] = 'كل $n دقيقة';
+$labels['keepalive'] = 'تحقق من وجود رسائل جديدة عند';
 $labels['never'] = 'أبداً';
+$labels['messagesdisplaying'] = 'إظهار الرسائل';
+$labels['messagescomposition'] = 'إنشاء الرسائل';
+$labels['mimeparamfolding'] = 'أسماء الملفات المرفقة';
+$labels['2231folding'] = 'RFC 2231 بأكملها (ثندربيرد)';
+$labels['miscfolding'] = 'RFC 2047/2231 (ميكروسوفت آوتلوك)';
+$labels['2047folding'] = 'RFC 2047 بأكملها (غيرها)';
+$labels['advancedoptions'] = 'خيارات متقدّمة';
+$labels['focusonnewmessage'] = 'وجّه نافذة المتصفح عند وجود رسالة جديدة';
 $labels['folder'] = 'مجلد';
 $labels['folders'] = 'مجلدات';
 $labels['foldername'] = 'اسم المجلد';
 $labels['subscribed'] = 'مشترك';
 $labels['messagecount'] = 'الرسائل';
-$labels['create'] = 'إنشاء';
-$labels['createfolder'] = 'إنشاء مجلد جديد';
+$labels['create'] = 'أنشئ';
+$labels['createfolder'] = 'أنشئ مجلد جديد';
 $labels['rename'] = 'إعادة التسمية';
 $labels['renamefolder'] = 'إعادة تسمية المجلد';
-$labels['deletefolder'] = 'حذف المجلد';
+$labels['deletefolder'] = 'احذف المجلد';
 $labels['managefolders'] = 'إدارة المجلدات';
+$labels['specialfolders'] = 'المجلّدات المُميّزة';
 $labels['sortby'] = 'ترتيب بحسب';
 $labels['sortasc'] = 'ترتيب تصاعدي';
 $labels['sortdesc'] = 'ترتيب تنازلي';
+$labels['B'] = 'ب';
+$labels['KB'] = 'ك.ب';
+$labels['MB'] = 'م.ب';
+$labels['GB'] = 'ج.ب';
 
 ?>

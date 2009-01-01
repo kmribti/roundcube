@@ -74,18 +74,7 @@ function get_sequence_name($sequence)
   $opt = rcmail::get_instance()->config->get($config_key);
 
   if (!empty($opt))
-    {
-    $db = &rcmail::get_instance()->db;
-    $dbclass = 'rcube_mdb2';
-    
-    if ($db->db_provider=='pgsql' && ($db instanceof $dbclass))
-      {
-      $db->db_handle->setOption('disable_smart_seqname', true);
-      $db->db_handle->setOption('seqname_format', '%s');
-      }
-  
     return $opt;
-    }
     
   return $sequence;
   }
@@ -134,20 +123,6 @@ function rcmail_url($action, $p=array(), $task=null)
 
 
 /**
- * Add a localized label to the client environment
- * @deprecated
- */
-function rcube_add_label()
-  {
-  global $OUTPUT;
-  
-  $arg_list = func_get_args();
-  foreach ($arg_list as $i => $name)
-    $OUTPUT->add_label($name);
-  }
-
-
-/**
  * Garbage collector function for temp files.
  * Remove temp files older than two days
  */
@@ -176,19 +151,19 @@ function rcmail_temp_gc()
  * Garbage collector for cache entries.
  * Remove all expired message cache records
  */
-function rcmail_message_cache_gc()
+function rcmail_cache_gc()
   {
-  global $DB, $CONFIG;
-  
-  // no cache lifetime configured
-  if (empty($CONFIG['message_cache_lifetime']))
-    return;
+  $rcmail = rcmail::get_instance();
+  $db = $rcmail->get_dbh();
   
   // get target timestamp
-  $ts = get_offset_time($CONFIG['message_cache_lifetime'], -1);
+  $ts = get_offset_time($rcmail->config->get('message_cache_lifetime', '30d'), -1);
   
-  $DB->query("DELETE FROM ".get_table_name('messages')."
-             WHERE  created < ".$DB->fromunixtime($ts));
+  $db->query("DELETE FROM ".get_table_name('messages')."
+             WHERE  created < " . $db->fromunixtime($ts));
+
+  $db->query("DELETE FROM ".get_table_name('cache')."
+              WHERE  created < " . $db->fromunixtime($ts));
   }
 
 
@@ -203,7 +178,9 @@ function rcmail_message_cache_gc()
  */
 function rcube_charset_convert($str, $from, $to=NULL)
   {
-  static $mbstring_loaded = null, $convert_warning = false;
+  static $mbstring_loaded = null;
+  static $mbstring_list = null;
+  static $convert_warning = false;
 
   $from = strtoupper($from);
   $to = $to==NULL ? strtoupper(RCMAIL_CHARSET) : strtoupper($to);
@@ -213,11 +190,14 @@ function rcube_charset_convert($str, $from, $to=NULL)
     return $str;
     
   $aliases = array(
-    'UNKNOWN-8BIT'   => 'ISO-8859-15',
-    'X-UNKNOWN'      => 'ISO-8859-15',
-    'X-USER-DEFINED' => 'ISO-8859-15',
-    'ISO-8859-8-I'   => 'ISO-8859-8',
-    'KS_C_5601-1987' => 'EUC-KR',
+    'US-ASCII'         => 'ISO-8859-1',
+    'ANSI_X3.110-1983' => 'ISO-8859-1',
+    'ANSI_X3.4-1968'   => 'ISO-8859-1',
+    'UNKNOWN-8BIT'     => 'ISO-8859-15',
+    'X-UNKNOWN'        => 'ISO-8859-15',
+    'X-USER-DEFINED'   => 'ISO-8859-15',
+    'ISO-8859-8-I'     => 'ISO-8859-8',
+    'KS_C_5601-1987'   => 'EUC-KR',
   );
 
   // convert charset using iconv module  
@@ -231,21 +211,29 @@ function rcube_charset_convert($str, $from, $to=NULL)
       }
     }
 
-  // settings for mbstring module (by Tadashi Jokagi)
-  if (is_null($mbstring_loaded)) {
-    if ($mbstring_loaded = extension_loaded("mbstring"))
-      mb_internal_encoding(RCMAIL_CHARSET);
-  }
 
+  if (is_null($mbstring_loaded))
+    $mbstring_loaded = extension_loaded('mbstring');
+    
   // convert charset using mbstring module
   if ($mbstring_loaded)
     {
     $aliases['UTF-7'] = 'UTF7-IMAP';
     $aliases['WINDOWS-1257'] = 'ISO-8859-13';
     
-    // return if convert succeeded
-    if (($out = mb_convert_encoding($str, ($aliases[$to] ? $aliases[$to] : $to), ($aliases[$from] ? $aliases[$from] : $from))) != '')
-      return $out;
+    if (is_null($mbstring_list)) {
+      $mbstring_list = mb_list_encodings();
+      $mbstring_list = array_map('strtoupper', $mbstring_list);
+    }
+    
+    $mb_from = $aliases[$from] ? $aliases[$from] : $from;
+    $mb_to = $aliases[$to] ? $aliases[$to] : $to;
+    
+    // return if encoding found, string matches encoding and convert succeeded
+    if (in_array($mb_from, $mbstring_list) && in_array($mb_to, $mbstring_list))
+      if (mb_check_encoding($str, $mb_from))
+	if ($out = mb_convert_encoding($str, $mb_to, $mb_from))
+          return $out;
     }
     
   
@@ -307,17 +295,18 @@ function rcube_charset_convert($str, $from, $to=NULL)
  */
 function rep_specialchars_output($str, $enctype='', $mode='', $newlines=TRUE)
   {
+  global $OUTPUT;
   static $html_encode_arr = false;
   static $js_rep_table = false;
   static $xml_rep_table = false;
 
-  $charset = rcmail::get_instance()->config->get('charset', RCMAIL_CHARSET);
+  $charset = $OUTPUT->get_charset();
   $is_iso_8859_1 = false;
   if ($charset == 'ISO-8859-1') {
     $is_iso_8859_1 = true;
   }
   if (!$enctype)
-    $enctype = $GLOBALS['OUTPUT_TYPE'];
+    $enctype = $OUTPUT->type;
 
   // encode for plaintext
   if ($enctype=='text')
@@ -347,7 +336,7 @@ function rep_specialchars_output($str, $enctype='', $mode='', $newlines=TRUE)
       $str = strip_tags($str);
     
     // avoid douple quotation of &
-    $out = preg_replace('/&amp;([a-z]{2,5}|#[0-9]{2,4});/', '&\\1;', strtr($str, $encode_arr));
+    $out = preg_replace('/&amp;([A-Za-z]{2,6}|#[0-9]{2,4});/', '&\\1;', strtr($str, $encode_arr));
       
     return $newlines ? nl2br($out) : $out;
     }
@@ -370,6 +359,9 @@ function rep_specialchars_output($str, $enctype='', $mode='', $newlines=TRUE)
       }
 
     $xml_rep_table['"'] = '&quot;';
+    $js_rep_table['"'] = '\\"';
+    $js_rep_table["'"] = "\\'";
+    $js_rep_table["\\"] = "\\\\";
     }
 
   // encode for XML
@@ -382,7 +374,7 @@ function rep_specialchars_output($str, $enctype='', $mode='', $newlines=TRUE)
     if ($charset!='UTF-8')
       $str = rcube_charset_convert($str, RCMAIL_CHARSET,$charset);
       
-    return preg_replace(array("/\r?\n/", "/\r/", '/<\\//'), array('\n', '\n', '<\\/'), addslashes(strtr($str, $js_rep_table)));
+    return preg_replace(array("/\r?\n/", "/\r/", '/<\\//'), array('\n', '\n', '<\\/'), strtr($str, $js_rep_table));
     }
 
   // no encoding given -> return original string
@@ -443,8 +435,11 @@ function get_input_value($fname, $source, $allow_html=FALSE, $charset=NULL)
       $value = $_COOKIE[$fname];
     }
   
+  // strip single quotes if magic_quotes_sybase is enabled
+  if (ini_get('magic_quotes_sybase'))
+    $value = str_replace("''", "'", $value);
   // strip slashes if magic_quotes enabled
-  if ((bool)get_magic_quotes_gpc())
+  else if (get_magic_quotes_gpc() || get_magic_quotes_runtime())
     $value = stripslashes($value);
 
   // remove HTML tags if not allowed    
@@ -575,7 +570,8 @@ function rcmail_get_edit_field($col, $value, $attrib, $type='text')
 
   // use value from post
   if (!empty($_POST[$fname]))
-    $value = get_input_value($fname, RCUBE_INPUT_POST);
+    $value = get_input_value($fname, RCUBE_INPUT_POST,
+	    $type == 'textarea' && strpos($attrib['class'], 'mce_editor')!==false ? true : false);
 
   $out = $input->show($value);
          
@@ -597,7 +593,8 @@ function rcmail_mod_css_styles($source, $container_id, $base_url = '')
   $last_pos = 0;
   
   // ignore the whole block if evil styles are detected
-  if (stristr($source, 'expression') || stristr($source, 'behavior'))
+  $stripped = preg_replace('/[^a-z\(:]/', '', rcmail_xss_entitiy_decode($source));
+  if (preg_match('/expression|behavior|url\(|import/', $stripped))
     return '';
 
   // cut out all contents between { and }
@@ -615,21 +612,45 @@ function rcmail_mod_css_styles($source, $container_id, $base_url = '')
     array(
       '/(^\s*<!--)|(-->\s*$)/',
       '/(^\s*|,\s*|\}\s*)([a-z0-9\._#][a-z0-9\.\-_]*)/im',
-      '/@import\s+(url\()?[\'"]?([^\)\'"]+)[\'"]?(\))?/ime',
-      '/<<str_replacement\[([0-9]+)\]>>/e',
-      "/$container_id\s+body/i"
+      "/$container_id\s+body/i",
     ),
     array(
       '',
       "\\1#$container_id \\2",
-      "sprintf(\"@import url('./bin/modcss.php?u=%s&c=%s')\", urlencode(make_absolute_url('\\2','$base_url')), urlencode($container_id))",
-      "\$a_css_values[\\1]",
-      "$container_id div.rcmBody"
+      "$container_id div.rcmBody",
     ),
     $source);
+  
+  // replace all @import statements to modify the imported CSS sources too
+  $styles = preg_replace_callback(
+    '/@import\s+(url\()?[\'"]?([^\)\'"]+)[\'"]?(\))?/im',
+    create_function('$matches', "return sprintf(\"@import url('./bin/modcss.php?u=%s&c=%s')\", urlencode(make_absolute_url(\$matches[2],'$base_url')), urlencode('$container_id'));"),
+    $styles);
+  
+  // put block contents back in
+  $styles = preg_replace_callback(
+    '/<<str_replacement\[([0-9]+)\]>>/',
+    create_function('$matches', "\$values = ".var_export($a_css_values, true)."; return \$values[\$matches[1]];"),
+    $styles);
 
   return $styles;
   }
+
+
+/**
+ * Decode escaped entities used by known XSS exploits.
+ * See http://downloads.securityfocus.com/vulnerabilities/exploits/26800.eml for examples
+ *
+ * @param string CSS content to decode
+ * @return string Decoded string
+ */
+function rcmail_xss_entitiy_decode($content)
+{
+  $out = html_entity_decode(html_entity_decode($content));
+  $out = preg_replace_callback('/\\\([0-9a-f]{4})/i', create_function('$matches', 'return chr(hexdec($matches[1]));'), $out);
+  $out = preg_replace('#/\*.*\*/#Um', '', $out);
+  return $out;
+}
 
 
 /**
@@ -660,7 +681,7 @@ function create_attrib_string($attrib, $allowed_attribs=array('id', 'class', 'st
 function parse_attrib_string($str)
   {
   $attrib = array();
-  preg_match_all('/\s*([-_a-z]+)=(["\'])??(?(2)([^\2]+)\2|(\S+?))/Ui', stripslashes($str), $regs, PREG_SET_ORDER);
+  preg_match_all('/\s*([-_a-z]+)=(["\'])??(?(2)([^\2]*)\2|(\S+?))/Ui', stripslashes($str), $regs, PREG_SET_ORDER);
 
   // convert attributes to an associative array (name => value)
   if ($regs)
@@ -691,10 +712,10 @@ function format_date($date, $format=NULL)
     $ts = $date;
   else if (!empty($date))
     {
-    while (($ts = @strtotime($date))===false)
+    // if date parsing fails, we have a date in non-rfc format.
+    // remove token from the end and try again
+    while ((($ts = @strtotime($date))===false) || ($ts < 0))
       {
-        // if we have a date in non-rfc format
-        // remove token from the end and try again
         $d = explode(' ', $date);
         array_pop($d);
         if (!$d) break;
@@ -706,9 +727,13 @@ function format_date($date, $format=NULL)
     return '';
    
   // get user's timezone
-  $tz = $CONFIG['timezone'];
-  if ($CONFIG['dst_active'])
-    $tz++;
+  if ($CONFIG['timezone'] === 'auto')
+    $tz = isset($_SESSION['timezone']) ? $_SESSION['timezone'] : date('Z')/3600;
+  else {
+    $tz = $CONFIG['timezone'];
+    if ($CONFIG['dst_active'])
+      $tz++;
+  }
 
   // convert time to user's timezone
   $timestamp = $ts - date('Z', $ts) + ($tz * 3600);
@@ -792,19 +817,20 @@ function format_email_recipient($email, $name='')
  *
  * @param mixed Debug message or data
  */
-function console($msg)
+function console()
   {
-  if (!is_string($msg))
-    $msg = var_export($msg, true);
+  $msg = array();
+  foreach (func_get_args() as $arg)
+    $msg[] = !is_string($arg) ? var_export($arg, true) : $arg;
 
   if (!($GLOBALS['CONFIG']['debug_level'] & 4))
-    write_log('console', $msg);
+    write_log('console', join(";\n", $msg));
   else if ($GLOBALS['OUTPUT']->ajax_call)
-    print "/*\n $msg \n*/\n";
+    print "/*\n " . join(";\n", $msg) . " \n*/\n";
   else
     {
     print '<div style="background:#eee; border:1px solid #ccc; margin-bottom:3px; padding:6px"><pre>';
-    print $msg;
+    print join(";<br/>\n", $msg);
     print "</pre></div>\n";
     }
   }
@@ -827,17 +853,26 @@ function write_log($name, $line)
   $log_entry = sprintf("[%s]: %s\n",
                  date("d-M-Y H:i:s O", mktime()),
                  $line);
-                 
-  if (empty($CONFIG['log_dir']))
-    $CONFIG['log_dir'] = INSTALL_PATH.'logs';
-      
-  // try to open specific log file for writing
-  if ($fp = @fopen($CONFIG['log_dir'].'/'.$name, 'a'))    
-    {
-    fwrite($fp, $log_entry);
-    fclose($fp);
+
+  if ($CONFIG['log_driver'] == 'syslog') {
+    if ($name == 'errors')
+      $prio = LOG_ERR;
+    else
+      $prio = LOG_INFO;
+    syslog($prio, $log_entry);
+  } else {
+    // log_driver == 'file' is assumed here
+    if (empty($CONFIG['log_dir']))
+      $CONFIG['log_dir'] = INSTALL_PATH.'logs';
+
+    // try to open specific log file for writing
+    if ($fp = @fopen($CONFIG['log_dir'].'/'.$name, 'a')) {
+      fwrite($fp, $log_entry);
+      fflush($fp);
+      fclose($fp);
     }
   }
+}
 
 
 /**
@@ -876,14 +911,13 @@ function rcube_print_time($timer, $label='Timer')
  */
 function rcmail_mailbox_list($attrib)
 {
-  global $IMAP, $OUTPUT;
+  global $RCMAIL;
   static $a_mailboxes;
   
   $attrib += array('maxlength' => 100, 'relanames' => false);
 
   // add some labels to client
-  rcube_add_label('purgefolderconfirm');
-  rcube_add_label('deletemessagesconfirm');
+  $RCMAIL->output->add_label('purgefolderconfirm', 'deletemessagesconfirm');
   
   $type = $attrib['type'] ? $attrib['type'] : 'ul';
   unset($attrib['type']);
@@ -892,13 +926,13 @@ function rcmail_mailbox_list($attrib)
     $attrib['id'] = 'rcmboxlist';
 
   // get mailbox list
-  $mbox_name = $IMAP->get_mailbox_name();
+  $mbox_name = $RCMAIL->imap->get_mailbox_name();
   
   // build the folders tree
   if (empty($a_mailboxes)) {
     // get mailbox list
-    $a_folders = $IMAP->list_mailboxes();
-    $delimiter = $IMAP->get_hierarchy_delimiter();
+    $a_folders = $RCMAIL->imap->list_mailboxes();
+    $delimiter = $RCMAIL->imap->get_hierarchy_delimiter();
     $a_mailboxes = array();
 
     foreach ($a_folders as $folder)
@@ -916,11 +950,13 @@ function rcmail_mailbox_list($attrib)
     $out = $select->show();
   }
   else {
-    $out = html::tag('ul', $attrib, rcmail_render_folder_tree_html($a_mailboxes, $mbox_name, $attrib['maxlength'], $attrib['realnames']), html::$common_attrib);
+    $js_mailboxlist = array();
+    $out = html::tag('ul', $attrib, rcmail_render_folder_tree_html($a_mailboxes, $mbox_name, $js_mailboxlist, $attrib), html::$common_attrib);
+    
+    $RCMAIL->output->add_gui_object('mailboxlist', $attrib['id']);
+    $RCMAIL->output->set_env('mailboxes', $js_mailboxlist);
+    $RCMAIL->output->set_env('collapsed_folders', $RCMAIL->config->get('collapsed_folders'));
   }
-
-  if ($type=='ul')
-    $OUTPUT->add_gui_object('mailboxlist', $attrib['id']);
 
   return $out;
 }
@@ -958,64 +994,68 @@ function rcmail_mailbox_select($p = array())
  * @access private
  */
 function rcmail_build_folder_tree(&$arrFolders, $folder, $delm='/', $path='')
-  {
+{
   $pos = strpos($folder, $delm);
-  if ($pos !== false)
-    {
+  if ($pos !== false) {
     $subFolders = substr($folder, $pos+1);
     $currentFolder = substr($folder, 0, $pos);
-    }
-  else
-    {
+    $virtual = !isset($arrFolders[$currentFolder]);
+  }
+  else {
     $subFolders = false;
     $currentFolder = $folder;
-    }
+    $virtual = false;
+  }
 
   $path .= $currentFolder;
 
-  if (!isset($arrFolders[$currentFolder]))
-    {
+  if (!isset($arrFolders[$currentFolder])) {
     $arrFolders[$currentFolder] = array(
       'id' => $path,
       'name' => rcube_charset_convert($currentFolder, 'UTF-7'),
+      'virtual' => $virtual,
       'folders' => array());
-    }
+  }
+  else
+    $arrFolders[$currentFolder]['virtual'] = $virtual;
 
   if (!empty($subFolders))
     rcmail_build_folder_tree($arrFolders[$currentFolder]['folders'], $subFolders, $delm, $path.$delm);
-  }
+}
   
 
 /**
  * Return html for a structured list &lt;ul&gt; for the mailbox tree
  * @access private
  */
-function rcmail_render_folder_tree_html(&$arrFolders, &$mbox_name, $maxlength, $realnames=false, $nestLevel=0)
-  {
-  global $COMM_PATH, $IMAP, $CONFIG, $OUTPUT;
+function rcmail_render_folder_tree_html(&$arrFolders, &$mbox_name, &$jslist, $attrib, $nestLevel=0)
+{
+  global $RCMAIL, $CONFIG;
+  
+  $maxlength = intval($attrib['maxlength']);
+  $realnames = (bool)$attrib['realnames'];
+  $msgcounts = $RCMAIL->imap->get_cache('messagecount');
 
   $idx = 0;
   $out = '';
-  foreach ($arrFolders as $key => $folder)
-    {
+  foreach ($arrFolders as $key => $folder) {
     $zebra_class = (($nestLevel+1)*$idx) % 2 == 0 ? 'even' : 'odd';
     $title = null;
 
-    if (($folder_class = rcmail_folder_classname($folder['id'])) && !$realnames)
+    if (($folder_class = rcmail_folder_classname($folder['id'])) && !$realnames) {
       $foldername = rcube_label($folder_class);
-    else
-      {
+    }
+    else {
       $foldername = $folder['name'];
 
       // shorten the folder name to a given length
-      if ($maxlength && $maxlength>1)
-        {
+      if ($maxlength && $maxlength > 1) {
         $fname = abbreviate_string($foldername, $maxlength);
         if ($fname != $foldername)
           $title = $foldername;
         $foldername = $fname;
-        }
       }
+    }
 
     // make folder name safe for ids and class names
     $folder_id = asciiwords($folder['id'], true);
@@ -1030,37 +1070,56 @@ function rcmail_render_folder_tree_html(&$arrFolders, &$mbox_name, $maxlength, $
       $classes[] = 'trash';
     else if ($folder['id']==$CONFIG['junk_mbox'])
       $classes[] = 'junk';
+    else if ($folder['id']=='INBOX')
+      $classes[] = 'inbox';
     else
-      $classes[] = asciiwords($folder_class ? $folder_class : strtolower($folder['id']), true);
+      $classes[] = '_'.asciiwords($folder_class ? $folder_class : strtolower($folder['id']), true);
       
     $classes[] = $zebra_class;
     
     if ($folder['id'] == $mbox_name)
       $classes[] = 'selected';
 
+    $collapsed = preg_match('/&'.rawurlencode($folder['id']).'&/', $RCMAIL->config->get('collapsed_folders'));
+    $unread = $msgcounts ? intval($msgcounts[$folder['id']]['UNSEEN']) : 0;
+    
+    if ($folder['virtual'])
+      $classes[] = 'virtual';
+    else if ($unread)
+      $classes[] = 'unread';
+
     $js_name = JQ($folder['id']);
+    $html_name = Q($foldername . ($unread ? " ($unread)" : ''));
+    $link_attrib = $folder['virtual'] ? array() : array(
+      'href' => rcmail_url('', array('_mbox' => $folder['id'])),
+      'onclick' => sprintf("return %s.command('list','%s',this)", JS_OBJECT_NAME, $js_name),
+      'title' => $title,
+    );
+
     $out .= html::tag('li', array(
         'id' => "rcmli".$folder_id,
         'class' => join(' ', $classes),
         'noclose' => true),
-      html::a(array(
-        'href' => rcmail_url('', array('_mbox' => $folder['id'])),
-        'onclick' => sprintf("return %s.command('list','%s',this)", JS_OBJECT_NAME, $js_name),
-        'onmouseover' => sprintf("return %s.focus_folder('%s')", JS_OBJECT_NAME, $js_name),
-        'onmouseout' => sprintf("return %s.unfocus_folder('%s')", JS_OBJECT_NAME, $js_name),
-        'onmouseup' => sprintf("return %s.folder_mouse_up('%s')", JS_OBJECT_NAME, $js_name),
-        'title' => $title,
-      ), Q($foldername)));
+      html::a($link_attrib, $html_name) .
+      (!empty($folder['folders']) ? html::div(array(
+        'class' => ($collapsed ? 'collapsed' : 'expanded'),
+        'style' => "position:absolute",
+        'onclick' => sprintf("%s.command('collapse-folder', '%s')", JS_OBJECT_NAME, $js_name)
+      ), '&nbsp;') : ''));
     
-    if (!empty($folder['folders']))
-      $out .= "\n<ul>\n" . rcmail_render_folder_tree_html($folder['folders'], $mbox_name, $maxlength, $realnames, $nestLevel+1) . "</ul>\n";
+    $jslist[$folder_id] = array('id' => $folder['id'], 'name' => $foldername, 'virtual' => $folder['virtual']);
+    
+    if (!empty($folder['folders'])) {
+      $out .= html::tag('ul', array('style' => ($collapsed ? "display:none;" : null)),
+        rcmail_render_folder_tree_html($folder['folders'], $mbox_name, $jslist, $attrib, $nestLevel+1));
+    }
 
     $out .= "</li>\n";
     $idx++;
-    }
+  }
 
   return $out;
-  }
+}
 
 
 /**
@@ -1069,8 +1128,6 @@ function rcmail_render_folder_tree_html(&$arrFolders, &$mbox_name, $maxlength, $
  */
 function rcmail_render_folder_tree_select(&$arrFolders, &$mbox_name, $maxlength, &$select, $realnames=false, $nestLevel=0)
   {
-  global $IMAP, $OUTPUT;
-
   $idx = 0;
   $out = '';
   foreach ($arrFolders as $key=>$folder)
@@ -1106,17 +1163,15 @@ function rcmail_folder_classname($folder_id)
 {
   global $CONFIG;
 
-  $cname = null;
-  $folder_lc = strtolower($folder_id);
-  
   // for these mailboxes we have localized labels and css classes
-  foreach (array('inbox', 'sent', 'drafts', 'trash', 'junk') as $smbx)
+  foreach (array('sent', 'drafts', 'trash', 'junk') as $smbx)
   {
-    if ($folder_lc == $smbx || $folder_id == $CONFIG[$smbx.'_mbox'])
-      $cname = $smbx;
+    if ($folder_id == $CONFIG[$smbx.'_mbox'])
+      return $smbx;
   }
-  
-  return $cname;
+
+  if ($folder_id == 'INBOX')
+    return 'inbox';
 }
 
 
@@ -1135,5 +1190,23 @@ function rcmail_localize_foldername($name)
     return rcube_charset_convert($name, 'UTF-7');
 }
 
+
+/**
+ * Output HTML editor scripts
+ *
+ * @param string Editor mode
+ */
+function rcube_html_editor($mode='')
+{
+  global $OUTPUT, $CONFIG;
+
+  $lang = $tinylang = strtolower(substr($_SESSION['language'], 0, 2));
+  if (!file_exists(INSTALL_PATH . 'program/js/tiny_mce/langs/'.$tinylang.'.js'))
+    $tinylang = 'en';
+
+  $OUTPUT->include_script('tiny_mce/tiny_mce.js');
+  $OUTPUT->include_script('editor.js');
+  $OUTPUT->add_script('rcmail_editor_init("$__skin_path", "'.JQ($tinylang).'", '.intval($CONFIG['enable_spellcheck']).', "'.$mode.'");');
+}
 
 ?>

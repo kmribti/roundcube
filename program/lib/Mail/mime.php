@@ -323,6 +323,8 @@ class Mail_mime
      *                             of this attachment.
      * @param string $language    The language of the attachment
      * @param string $location    The RFC 2557.4 location of the attachment
+     * @param string $n_encoding      Use RFC 2047 for attachment name (Content-Type) encoding
+     * @param string $f_encoding      Use RFC 2047 for attachment filename (Content-Disposition) encoding
      *
      * @return mixed true on success or PEAR_Error object
      * @access public
@@ -335,7 +337,9 @@ class Mail_mime
                            $disposition = 'attachment',
                            $charset     = '',
                             $language   = '',
-                           $location    = '')
+                           $location    = '',
+			   $n_encoding	= NULL,
+			   $f_encoding   = NULL)
     {
         $filedata = ($isfile === true) ? $this->_file2str($file)
                                            : $file;
@@ -350,7 +354,7 @@ class Mail_mime
             $err = PEAR::raiseError($msg);
             return $err;
         }
-        $filename = basename($filename);
+        $filename = $this->_basename($filename);
         if (PEAR::isError($filedata)) {
             return $filedata;
         }
@@ -363,7 +367,9 @@ class Mail_mime
                                 'charset'     => $charset,
                                 'language'    => $language,
                                 'location'    => $location,
-                                'disposition' => $disposition
+                                'disposition' => $disposition,
+				'name-encoding'    => $n_encoding,
+				'filename-encoding'=> $f_encoding
                                );
         return true;
     }
@@ -532,6 +538,12 @@ class Mail_mime
         $params['disposition']  = 'inline';
         $params['dfilename']    = $value['name'];
         $params['cid']          = $value['cid'];
+	if ($value['name-encoding']) {
+	    $params['name-encoding'] = $value['name-encoding'];
+	}
+	if ($value['filename-encoding']) {
+	    $params['filename-encoding'] = $value['filename-encoding'];
+	}
         
         $ret = $obj->addSubpart($value['body'], $params);
         return $ret;
@@ -561,6 +573,12 @@ class Mail_mime
         if ($value['location']) {
             $params['location'] = $value['location'];
         }
+	if ($value['name-encoding']) {
+	    $params['name-encoding'] = $value['name-encoding'];
+	}
+	if ($value['filename-encoding']) {
+	    $params['filename-encoding'] = $value['filename-encoding'];
+	}
         $params['content_type'] = $value['c_type'];
         $params['disposition']  = isset($value['disposition']) ? 
                                   $value['disposition'] : 'attachment';
@@ -667,7 +685,7 @@ class Mail_mime
 
                 $this->_htmlbody = preg_replace($regex, $rep, $this->_htmlbody);
                 $this->_html_images[$key]['name'] = 
-                    basename($this->_html_images[$key]['name']);
+                    $this->_basename($this->_html_images[$key]['name']);
             }
         }
 
@@ -914,7 +932,6 @@ class Mail_mime
      */
     function _encodeHeaders($input, $params = array())
     {
-        
         $build_params = $this->_build_params;
         while (list($key, $value) = each($params)) {
             $build_params[$key] = $value;
@@ -1051,7 +1068,6 @@ class Mail_mime
                     //Concat the double quotes and encoded string together
                     $hdr_value = $quotePrefix . $hdr_value . $quoteSuffix;
                     
-
                     $hdr_value_out = $hdr_value;
                     $realMax = $maxLength1stLine + strlen($prefix . $suffix);
                     if (strlen($hdr_value_out) >= $realMax) {
@@ -1114,6 +1130,21 @@ class Mail_mime
         }
     }
 
-    
+    /**
+     * Get file's basename (locale independent) 
+     *
+     * @param string Filename
+     *
+     * @return string Basename
+     * @access private
+     */
+    function _basename($filename)
+    {
+	// basename() is not unicode safe and locale dependent
+	if (stristr(PHP_OS, 'win') || stristr(PHP_OS, 'netware'))
+	    return preg_replace('/^.*[\\\\\\/]/', '', $filename);
+	else
+	    return preg_replace('/^.*[\/]/', '', $filename);
+    }
 
 } // End of class

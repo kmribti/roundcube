@@ -21,13 +21,10 @@
 
 if (($ids = get_input_value('_iid', RCUBE_INPUT_GET)) && preg_match('/^[0-9]+(,[0-9]+)*$/', $ids))
 {
-
-  if ($USER->delete_identity($ids))
-  {
+  if ($USER->delete_identity($ids)) {
     $OUTPUT->show_message('deletedsuccessfully', 'confirmation');
   }
-  else 
-  {
+  else {
     $OUTPUT->show_message('nodeletelastidentity', 'error');
   }
   // send response
@@ -35,10 +32,8 @@ if (($ids = get_input_value('_iid', RCUBE_INPUT_GET)) && preg_match('/^[0-9]+(,[
     $OUTPUT->send();
 }
 
-
 if ($OUTPUT->ajax_call)
   exit;
-
 
 // go to identities page
 rcmail_overwrite_action('identities');

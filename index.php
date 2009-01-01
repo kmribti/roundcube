@@ -2,7 +2,7 @@
 /*
  +-------------------------------------------------------------------------+
  | RoundCube Webmail IMAP Client                                           |
- | Version 0.2-devel-api                                                   |
+ | Version 0.2-20080829                                                    |
  |                                                                         |
  | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                   |
  |                                                                         |
@@ -30,9 +30,6 @@
 // include environment
 require_once 'program/include/iniset.php';
 
-// define global vars
-$OUTPUT_TYPE = 'html';
-
 // init application and start session with requested task
 $RCMAIL = rcmail::get_instance();
 
@@ -52,7 +49,6 @@ if ($RCMAIL->action != 'get' && $RCMAIL->action != 'viewsource') {
   }
 }
 
-
 // check if config files had errors
 if ($err_str = $RCMAIL->config->get_error()) {
   raise_error(array(
@@ -69,51 +65,42 @@ if ($err_str = $DB->is_error()) {
     'message' => $err_str), FALSE, TRUE);
 }
 
-
 // error steps
 if ($RCMAIL->action=='error' && !empty($_GET['_code'])) {
   raise_error(array('code' => hexdec($_GET['_code'])), FALSE, TRUE);
 }
 
-
-// trigger startup plugin hook
-$startup = $RCMAIL->plugins->exec_hook('startup', array('task' => $RCMAIL->task, 'action' => $RCMAIL->action));
-$RCMAIL->set_task($startup['task']);
-$RCMAIL->action = $startup['action'];
-
-
 // try to log in
 if ($RCMAIL->action=='login' && $RCMAIL->task=='mail') {
-  $auth = $RCMAIL->plugins->exec_hook('authenticate', array(
-    'host' => $RCMAIL->autoselect_host(),
-    'user' => trim(get_input_value('_user', RCUBE_INPUT_POST)),
-  )) + array('pass' => get_input_value('_pass', RCUBE_INPUT_POST, true, 'ISO-8859-1'));
+  $host = $RCMAIL->autoselect_host();
   
   // check if client supports cookies
   if (empty($_COOKIE)) {
     $OUTPUT->show_message("cookiesdisabled", 'warning');
   }
-  else if ($_SESSION['temp'] && !empty($auth['user']) && !empty($auth['host']) && isset($auth['pass']) && 
-           $RCMAIL->login($auth['user'], $auth['pass'], $auth['host'])) {
+  else if ($_SESSION['temp'] && !empty($_POST['_user']) && !empty($_POST['_pass']) &&
+           $RCMAIL->login(trim(get_input_value('_user', RCUBE_INPUT_POST), ' '),
+              get_input_value('_pass', RCUBE_INPUT_POST, true, 'ISO-8859-1'), $host)) {
     // create new session ID
     unset($_SESSION['temp']);
-    sess_regenerate_id();
+    rcube_sess_regenerate_id();
 
     // send auth cookie if necessary
     $RCMAIL->authenticate_session();
 
     // log successful login
-    if ($RCMAIL->config->get('log_logins') && $RCMAIL->config->get('debug_level') & 1)
-      console(sprintf('Successful login for %s (id %d) from %s',
-                      trim(get_input_value('_user', RCUBE_INPUT_POST), ' '),
-                      $_SESSION['user_id'],
-                      $_SERVER['REMOTE_ADDR']));
+    if ($RCMAIL->config->get('log_logins')) {
+      write_log('userlogins', sprintf('Successful login for %s (id %d) from %s',
+        $RCMAIL->user->get_username(),
+        $RCMAIL->user->ID,
+        $_SERVER['REMOTE_ADDR']));
+    }
 
     // send redirect
     $OUTPUT->redirect();
   }
   else {
-    $OUTPUT->show_message($IMAP->error_code == -1 ? 'imaperror' : 'loginfailed', 'warning');
+    $OUTPUT->show_message($IMAP->error_code < -1 ? 'imaperror' : 'loginfailed', 'warning');
     $RCMAIL->kill_session();
   }
 }
@@ -134,17 +121,9 @@ else if ($RCMAIL->action != 'login' && $_SESSION['user_id'] && $RCMAIL->action !
 }
 
 
-// log in to imap server
-if (!empty($RCMAIL->user->ID) && $RCMAIL->task == 'mail') {
-  if (!$RCMAIL->imap_connect()) {
-    $RCMAIL->kill_session();
-  }
-}
-
-
 // check client X-header to verify request origin
 if ($OUTPUT->ajax_call) {
-  if ($RCMAIL->config->get('devel_mode') && !rc_request_header('X-RoundCube-Referer')) {
+  if (!$RCMAIL->config->get('devel_mode') && !rc_request_header('X-RoundCube-Referer')) {
     header('HTTP/1.1 404 Not Found');
     die("Invalid Request");
   }
@@ -175,7 +154,13 @@ if (empty($RCMAIL->user->ID)) {
 
 
 // handle keep-alive signal
-if ($RCMAIL->action=='keep-alive') {
+if ($RCMAIL->action == 'keep-alive') {
+  $OUTPUT->reset();
+  $OUTPUT->send();
+}
+// save preference value
+else if ($RCMAIL->action == 'save-pref') {
+  $RCMAIL->user->save_prefs(array(get_input_value('_name', RCUBE_INPUT_POST) => get_input_value('_value', RCUBE_INPUT_POST)));
   $OUTPUT->reset();
   $OUTPUT->send();
 }
@@ -191,8 +176,9 @@ $action_map = array(
     'send'    => 'sendmail.inc',
     'expunge' => 'folders.inc',
     'purge'   => 'folders.inc',
-    'remove-attachment'  => 'compose.inc',
-    'display-attachment' => 'compose.inc',
+    'remove-attachment'  => 'attachments.inc',
+    'display-attachment' => 'attachments.inc',
+    'upload' => 'attachments.inc',
   ),
   
   'addressbook' => array(
@@ -229,11 +215,6 @@ while ($redirects < 5) {
   }
 }
 
-
-// make sure the message count is refreshed (for default view)
-if ($RCMAIL->task == 'mail') {
-  $IMAP->messagecount($_SESSION['mbox'], 'ALL', true);
-}
 
 // parse main template (default)
 $OUTPUT->send($RCMAIL->task);

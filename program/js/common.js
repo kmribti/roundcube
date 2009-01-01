@@ -49,6 +49,7 @@ function roundcube_browser()
   this.ie4 = (this.ie && !this.dom);
   this.ie5 = (this.dom && this.appver.indexOf('MSIE 5')>0);
   this.ie6 = (this.dom && this.appver.indexOf('MSIE 6')>0);
+  this.ie7 = (this.dom && this.appver.indexOf('MSIE 7')>0);
 
   this.mz = (this.dom && this.ver>=5);  // (this.dom && this.product=='Gecko')
   this.ns = ((this.ver<5 && this.name=='Netscape') || (this.ver>=5 && this.vendor.indexOf('Netscape')>=0));
@@ -114,6 +115,15 @@ get_keycode: function(e)
 },
 
 /**
+ * returns the event key code
+ */
+get_button: function(e)
+{
+  e = e || window.event;
+  return e && (typeof e.button != 'undefined') ? e.button : (e && e.which ? e.which : 0);
+},
+
+/**
  * returns modifier key (constants defined at top of file)
  */
 get_modifier: function(e)
@@ -146,6 +156,11 @@ get_mouse_pos: function(e)
   {
     mX += document.body.scrollLeft;
     mY += document.body.scrollTop;
+  }
+
+  if (e._offset) {
+    mX += e._offset.x;
+    mY += e._offset.y;
   }
 
   return { x:mX, y:mY };
@@ -244,23 +259,28 @@ function rcube_layer(id, attributes)
     var obj;
 
     obj = document.createElement('DIV');
+
     with(obj)
       {
       id = this.name;
       with(style)
         {
-        position = 'absolute';
+	position = 'absolute';
         visibility = (vis) ? (vis==2) ? 'inherit' : 'visible' : 'hidden';
         left = l+'px';
         top = t+'px';
-        if(w) width = w+'px';
-        if(h) height = h+'px';
+        if (w)
+	  width = w.toString().match(/\%$/) ? w : w+'px';
+        if (h)
+	  height = h.toString().match(/\%$/) ? h : h+'px';
         if(z) zIndex = z;
-        }
+	}
       }
-      
-    if(parent) parent.appendChild(obj);
-    else document.body.appendChild(obj);
+
+    if (parent)
+      parent.appendChild(obj);
+    else
+      document.body.appendChild(obj);
 
     this.elm = obj;
     };
@@ -487,7 +507,7 @@ function rcube_find_object(id, d)
 
 
 // return the absolute position of an object within the document
-function rcube_get_object_pos(obj)
+function rcube_get_object_pos(obj, relative)
   {
   if(typeof(obj)=='string')
     obj = rcube_find_object(obj);
@@ -497,22 +517,29 @@ function rcube_get_object_pos(obj)
   var iX = (bw.layers) ? obj.x : obj.offsetLeft;
   var iY = (bw.layers) ? obj.y : obj.offsetTop;
 
-  if(bw.ie || bw.mz)
+  if(!relative && (bw.ie || bw.mz))
     {
     var elm = obj.offsetParent;
     while(elm && elm!=null)
       {
-      iX += elm.offsetLeft;
-      iY += elm.offsetTop;
+      iX += elm.offsetLeft - (elm.parentNode && elm.parentNode.scrollLeft ? elm.parentNode.scrollLeft : 0);
+      iY += elm.offsetTop - (elm.parentNode && elm.parentNode.scrollTop ? elm.parentNode.scrollTop : 0);
       elm = elm.offsetParent;
       }
     }
 
-  //if(bw.mac && bw.ie5) iX += document.body.leftMargin;
-  //if(bw.mac && bw.ie5) iY += document.body.topMargin;
-
   return {x:iX, y:iY};
   }
+
+// determine whether the mouse is over the given object or not
+function rcube_mouse_is_over(ev, obj)
+{
+  var mouse = rcube_event.get_mouse_pos(ev);
+  var pos = rcube_get_object_pos(obj);
+  
+  return ((mouse.x >= pos.x) && (mouse.x < (pos.x + obj.offsetWidth)) &&
+    (mouse.y >= pos.y) && (mouse.y < (pos.y + obj.offsetHeight)));
+}
 
 
 /**
@@ -582,8 +609,9 @@ function rcube_console()
   this.log = function(msg)
   {
     box = rcube_find_object('console');
+
     if (box)
-      if (msg[msg.length-1]=='\n')
+      if (msg.charAt(msg.length-1)=='\n')
         box.value += msg+'--------------------------------------\n';
       else
         box.value += msg+'\n--------------------------------------\n';
@@ -609,3 +637,38 @@ RegExp.escape = function(str)
   {
   return String(str).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
   }
+
+
+// Make getElementById() case-sensitive on IE
+if (bw.ie)
+  {
+  document._getElementById = document.getElementById;
+  document.getElementById = function(id)
+    {
+    var i = 0;
+    var o = document._getElementById(id);
+
+    if (!o || o.id != id)
+      while ((o = document.all[i]) && o.id != id)
+        i++;
+
+    return o;
+    }
+  }
+
+
+// Fire event on specified element
+function exec_event(element,event)
+{  
+  if (document.createEventObject) {
+    // dispatch for IE  
+    var evt = document.createEventObject();
+    return element.fireEvent('on'+event,evt)
+  }
+  else {  
+    // dispatch for firefox + others  
+    var evt = document.createEvent("HTMLEvents");
+    evt.initEvent(event, true, true); // event type,bubbling,cancelable
+    return !element.dispatchEvent(evt);
+   }
+}

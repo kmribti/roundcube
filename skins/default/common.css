@@ -18,7 +18,7 @@ body.extwin
   margin: 10px;
 }
 
-body, td, th, span, div, p, h3
+body, td, th, div, p, h3
 {
   font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -63,24 +63,33 @@ hr
   border-style: none;
 }
 
-input, textarea
+input[type="text"],
+input[type="button"],
+input[type="password"],
+textarea
 {
   font-size: 9pt;
   font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
   padding: 1px;
   padding-left: 3px;
   padding-right: 3px;
+  border: 1px solid #666666;
   color: #333333;
   background-color: #ffffff;
-  border: 1px solid #666666;
 }
 
-input[type="checkbox"],
-input[type="radio"]
+input, textarea
 {
-  border: 0;
-  padding: 0;
-  background-color: transparent;
+  font-size: 9pt;
+  font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+  color: #333333;
+  padding-left: 3px;
+  padding-right: 3px;
+  /* IE hacks for input elements */
+  border-style: expression(this.type=='checkbox' || this.type=='radio' || this.id=='quicksearchbox' ? 'none' : 'solid');
+  border-width: expression(this.type=='checkbox' || this.type=='radio' ? '0' : '1px');
+  border-color: expression(this.type=='checkbox' || this.type=='radio' ? '' : '#666666');
+  background-color: expression(this.type=='checkbox' || this.type=='radio' ? 'transparent' : '#ffffff');
 }
 
 input.button
@@ -99,9 +108,16 @@ input.button:hover
   color: black;
 }
 
+input.mainaction
+{
+  font-weight: bold;
+  border: 1px solid #999;
+}
+
 img
 {
   behavior: url('skins/default/pngbehavior.htc');
+  border: 0;
 }
 
 .alttext
@@ -187,6 +203,8 @@ a.button-logout
   right: 200px;
   z-index: 5000;
   opacity: 0.85;
+  /* IE */
+  filter: alpha(opacity=85);
 }
 
 #message div
@@ -230,8 +248,10 @@ a.button-logout
 
 .splitter
 {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
   position: absolute;
-  padding: 2px;
   background: url(images/dimple.png) center no-repeat;
 }
 
@@ -244,7 +264,7 @@ a.button-logout
 .splitter-v
 {
   cursor: e-resize;
-  background-position: 1px center;
+  background-position: 2px center;
 }
 
 .boxtitle
@@ -317,7 +337,7 @@ table.records-table tr.unfocused td
 #quicksearchbar
 {
   position: absolute;
-  top: 60px;
+  top: 55px;
   right: 20px;
   width: 182px;
   height: 20px;
@@ -378,6 +398,8 @@ html>body*#quicksearchbar[id$="quicksearchbar"]:not([class="none"]) #quicksearch
 
 #rcmdraglayer
 {
+  min-width: 300px;
+  width: auto !important;
   width: 300px;
   border: 1px solid #999999;
   background-color: #F9F9F9;
@@ -386,6 +408,7 @@ html>body*#quicksearchbar[id$="quicksearchbar"]:not([class="none"]) #quicksearch
   padding-top: 3px;
   padding-bottom: 3px;
   font-size: 11px;
+  white-space: nowrap;
   opacity: 0.7;
   -moz-opacity: 0.7;
   filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
@@ -417,12 +440,14 @@ a.rcmContactAddress:hover
 
 #rcmKSearchpane ul li
 {
+  display: block;
   height: 16px;
   font-size: 11px;
-  padding-left: 8px;
+  padding-left: 6px;
   padding-top: 2px;
-  padding-right: 8px;
-  white-space: nowrap;  
+  padding-right: 6px;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 #rcmKSearchpane ul li.selected

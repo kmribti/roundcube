@@ -2,19 +2,19 @@
 
 /*
 
- +-----------------------------------------------------------------------+
- | language/it/messages.inc                                              |
- |                                                                       |
- | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
- | Licensed under the GNU GPL                                            |
- |                                                                       |
- +-----------------------------------------------------------------------+
- | Author: Andrej Mocilnik <amocilnik@dotcom.ts.it>                      |
- |         Yusef Maali <contact@yusefmaali.net>                          |
- +-----------------------------------------------------------------------+
++-----------------------------------------------------------------------+
+| language/it/messages.inc                                              |
+|                                                                       |
+| Language file of the RoundCube Webmail client                         |
+| Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
+| Licensed under the GNU GPL                                            |
+|                                                                       |
++-----------------------------------------------------------------------+
+| Author: Andrej Mocilnik <amocilnik@dotcom.ts.it>                      |
+|         Yusef Maali <contact@yusefmaali.net>                          |
++-----------------------------------------------------------------------+
 
- @version $Id$
+@version $Id$
 
 */
 
@@ -25,37 +25,44 @@ $messages['sessionerror'] = 'Sessione non valida o scaduta';
 $messages['imaperror'] = 'Impossibile connettersi al server IMAP';
 $messages['nomessagesfound'] = 'Nessun messaggio trovato in questa cartella';
 $messages['loggedout'] = 'Sessione chiusa correttamente. Arrivederci!';
-$messages['mailboxempty'] = 'Cartella vuota';
+$messages['mailboxempty'] = 'La cartella è vuota';
 $messages['loading'] = 'Caricamento...';
 $messages['loadingdata'] = 'Caricamento dati...';
 $messages['checkingmail'] = 'Controllo nuovi messaggi...';
 $messages['sendingmessage'] = 'Invio messaggio in corso...';
 $messages['messagesent'] = 'Messaggio inviato correttamente';
 $messages['savingmessage'] = 'Salvataggio messaggio...';
-$messages['messagesaved'] = 'Messaggio salvato nelle bozze';
+$messages['messagesaved'] = 'Messaggio salvato in bozze';
 $messages['successfullysaved'] = 'Salvato correttamente';
 $messages['addedsuccessfully'] = 'Contatto aggiunto alla rubrica';
 $messages['contactexists'] = 'Esiste già un contatto con questo indirizzo e-mail';
 $messages['blockedimages'] = 'Per proteggere la tua privacy, le immagini remote di questo messaggio sono state bloccate.';
-$messages['encryptedmessage'] = 'Questo messaggio é cifrato e non può essere visualizzato';
+$messages['encryptedmessage'] = 'Questo messaggio é cifrato e non può essere visualizzato. Spiacenti!';
 $messages['nocontactsfound'] = 'Nessun contatto trovato';
 $messages['contactnotfound'] = 'Il contatto richiesto non è stato trovato';
 $messages['sendingfailed'] = 'Impossibile inviare il messaggio';
+$messages['senttooquickly'] = 'Per favore, attendi $sec secondi prima di inviare questo messaggio';
+$messages['errorsavingsent'] = 'C\'è stato un errore nel salvare il messaggio inviato';
 $messages['errorsaving'] = 'Impossibile salvare';
 $messages['errormoving'] = 'Impossibile spostare il messaggio';
-$messages['errordeleting'] = 'Impossibile cancellare il messaggio';
-$messages['deletecontactconfirm'] = 'Sei sicuro di voler cancellare i contatti selezionati?';
-$messages['deletemessagesconfirm'] = 'Sei sicuro di voler cancellare i messaggi selezionati?';
-$messages['deletefolderconfirm'] = 'Sei sicuro di voler cancellare la cartella selezionata?';
-$messages['purgefolderconfirm'] = 'Sei sicuro di voler cancellare tutti i messaggi in questa cartella?';
+$messages['errordeleting'] = 'Impossibile eliminare il messaggio';
+$messages['deletecontactconfirm'] = 'Sei sicuro di voler eliminare i contatti selezionati?';
+$messages['deletemessagesconfirm'] = 'Sei sicuro di voler eliminare i messaggi selezionati?';
+$messages['deletefolderconfirm'] = 'Sei sicuro di voler eliminare la cartella selezionata?';
+$messages['purgefolderconfirm'] = 'Sei sicuro di voler eliminare tutti i messaggi in questa cartella?';
+$messages['foldercreating'] = 'Creazione cartella...';
+$messages['folderdeleting'] = 'Eliminazione cartella...';
+$messages['folderrenaming'] = 'Rinominazione cartella...';
+$messages['foldermoving'] = 'Spostamento cartella...';
 $messages['formincomplete'] = 'Per favore, compila tutti i campi';
 $messages['noemailwarning'] = 'Per favore, immetti un indirizzo e-mail valido';
 $messages['nonamewarning'] = 'Per favore, immetti un nome';
 $messages['nopagesizewarning'] = 'Per favore, immetti il numero di righe per pagina';
+$messages['nosenderwarning'] = 'Per favore, inserisci l\'indirizzo e-mail del mittente';
 $messages['norecipientwarning'] = 'Per favore, immetti almeno un destinatario';
-$messages['nosubjectwarning'] = 'L\'oggetto é vuoto. Vuoi inserirlo adesso?';
+$messages['nosubjectwarning'] = 'L\'oggetto è vuoto. Vuoi inserirlo adesso?';
 $messages['nobodywarning'] = 'Inviare il messaggio senza testo?';
-$messages['notsentwarning'] = 'Il messaggio non é stato inviato. Vuoi veramente annullare questo messaggio?';
+$messages['notsentwarning'] = 'Il messaggio non è stato inviato. Vuoi annullare questo messaggio?';
 $messages['noldapserver'] = 'Per favore, scegli un server LDAP in cui ricercare';
 $messages['nocontactsreturned'] = 'Nessun contatto trovato';
 $messages['nosearchname'] = 'Per favore, immetti un nome o un indirizzo e-mail';
@@ -74,10 +81,19 @@ $messages['copysuccess'] = 'Copiati $nr indirizzi';
 $messages['copyerror'] = 'Impossibile copiare gli indirizzi';
 $messages['sourceisreadonly'] = 'La rubrica è in sola lettura';
 $messages['errorsavingcontact'] = 'Impossibile salvare il contatto';
-$messages['movingmessage'] = 'Sposto il messaggio...';
+$messages['movingmessage'] = 'Spostamento del messaggio...';
 $messages['receiptsent'] = 'Ricevuta di ritorno inviata con successo';
 $messages['errorsendingreceipt'] = 'Impossibile spedire la ricevuta di ritorno';
 $messages['nodeletelastidentity'] = 'Impossibile eliminare l\'unica identità disponibile';
 $messages['addsubfolderhint'] = 'La cartella verrà creata come sotto cartella della cartella corrente';
+$messages['forbiddencharacter'] = 'Il nome della cartella contiene un carattere vietato';
+$messages['selectimportfile'] = 'Per favore, seleziona il file da caricare';
+$messages['addresswriterror'] = 'La rubrica selezionata non è scrivibile';
+$messages['importwait'] = 'Importazione in corso, attendere...';
+$messages['importerror'] = 'Importazione fallita! Il file caricato non è un file vCard valido.';
+$messages['importconfirm'] = '<b>Importati con successo $inserted contatti, saltate $skipped voci esistenti</b>:<p><em>$names</em></p>';
+$messages['opnotpermitted'] = 'Operazione non consentita!';
+$messages['nofromaddress'] = 'Indirizzo e-mail mancante nell\'identità selezionata';
+$messages['editorwarning'] = 'Passare all\'editor testuale farà perdere tutte le informazioni di formattazione. Sicuro di voler continuare?';
 
 ?>

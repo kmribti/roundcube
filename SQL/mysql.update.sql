@@ -30,3 +30,17 @@ ALTER TABLE `identities`
 
 ALTER TABLE `messages`
     ADD INDEX `created_index` (`created`);
+
+-- Updates from version 0.2-beta (InnoDB only)
+
+ALTER TABLE `cache`
+    DROP `session_id`;
+    
+ALTER TABLE `session`
+    ADD INDEX `changed_index` (`changed`);
+
+ALTER TABLE `cache`
+    ADD INDEX `created_index` (`created`);
+
+ALTER TABLE `users`
+    CHANGE `language` `language` varchar(5);

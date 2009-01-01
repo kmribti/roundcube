@@ -20,20 +20,26 @@
 */
 
 $a_user_prefs = array(
-  'timezone'     => isset($_POST['_timezone']) ? floatval($_POST['_timezone']) : $CONFIG['timezone'],
+  'language'     => isset($_POST['_language']) ? get_input_value('_language', RCUBE_INPUT_POST) : $CONFIG['language'],
+  'timezone'     => isset($_POST['_timezone']) ? (is_numeric($_POST['_timezone']) ? floatval($_POST['_timezone']) : get_input_value('_timezone', RCUBE_INPUT_POST)) : $CONFIG['timezone'],
   'dst_active'   => isset($_POST['_dst_active']) ? TRUE : FALSE,
   'pagesize'     => is_numeric($_POST['_pagesize']) ? max(2, intval($_POST['_pagesize'])) : $CONFIG['pagesize'],
   'prettydate'   => isset($_POST['_pretty_date']) ? TRUE : FALSE,
   'prefer_html'  => isset($_POST['_prefer_html']) ? TRUE : FALSE,
-  'addrbook_show_images' => isset($_POST['_addrbook_show_images']) ? TRUE : FALSE,
   'htmleditor'   => isset($_POST['_htmleditor']) ? TRUE : FALSE,
   'inline_images'   => isset($_POST['_inline_images']) ? TRUE : FALSE,
   'preview_pane' => isset($_POST['_preview_pane']) ? TRUE : FALSE,
+  'focus_on_new_message' => isset($_POST['_focus_on_new_message']) ? TRUE : FALSE,
   'read_when_deleted' => isset($_POST['_read_when_deleted']) ? TRUE : FALSE,
+  'skip_deleted' => isset($_POST['_skip_deleted']) ? TRUE : FALSE,
   'flag_for_deletion' => isset($_POST['_flag_for_deletion']) ? TRUE : FALSE,
   'logout_purge' => isset($_POST['_logout_purge']) ? TRUE : FALSE,
   'logout_expunge' => isset($_POST['_logout_expunge']) ? TRUE : FALSE,
   'draft_autosave' => isset($_POST['_draft_autosave']) ? intval($_POST['_draft_autosave']) : 0,
+  'show_images' => isset($_POST['_show_images']) ? intval($_POST['_show_images']) : 0,
+  'keep_alive' => isset($_POST['_keep_alive']) ? intval($_POST['_keep_alive'])*60 : $CONFIG['keep_alive'],
+  'check_all_folders' => isset($_POST['_check_all_folders']) ? TRUE : FALSE,
+  'mime_param_folding' => isset($_POST['_mime_param_folding']) ? intval($_POST['_mime_param_folding']) : 0,
   'mdn_requests' => isset($_POST['_mdn_requests']) ? intval($_POST['_mdn_requests']) : 0,
   'skin' => isset($_POST['_skin']) ? get_input_value('_skin', RCUBE_INPUT_POST) : $CONFIG['skin'],
   'drafts_mbox' => get_input_value('_drafts_mbox', RCUBE_INPUT_POST),
@@ -61,7 +67,7 @@ else {
 
 // switch UI language
 if (isset($_POST['_language'])) {
-  $RCMAIL->load_language(get_input_value('_language', RCUBE_INPUT_POST));
+  $RCMAIL->load_language($a_user_prefs['language']);
 }
 
 // switch skin
@@ -74,9 +80,16 @@ if ($a_user_prefs['pagesize'] < 1)
 if (isset($CONFIG['max_pagesize']) && ($a_user_prefs['pagesize'] > $CONFIG['max_pagesize']))
   $a_user_prefs['pagesize'] = (int) $CONFIG['max_pagesize'];
 
+// force keep_alive
+if (isset($a_user_prefs['keep_alive'])) {
+    $a_user_prefs['keep_alive'] = max(60, $CONFIG['min_keep_alive'], $a_user_prefs['keep_alive']);
+    if (!empty($CONFIG['session_lifetime']))
+      $a_user_prefs['keep_alive'] = min($CONFIG['session_lifetime']*60, $a_user_prefs['keep_alive']);
+}
+
+
 if ($USER->save_prefs($a_user_prefs))
   $OUTPUT->show_message('successfullysaved', 'confirmation');
-
 
 // go to next step
 rcmail_overwrite_action('preferences');

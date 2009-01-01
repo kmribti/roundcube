@@ -3,8 +3,8 @@
 <h3>Check config files</h3>
 <?php
 
-$read_main = is_readable(INSTALL_PATH.'config/main.inc.php');
-$read_db = is_readable(INSTALL_PATH.'config/db.inc.php');
+$read_main = is_readable(RCMAIL_CONFIG_DIR.'/main.inc.php');
+$read_db = is_readable(RCMAIL_CONFIG_DIR.'/db.inc.php');
 
 if ($read_main && !empty($RCI->config)) {
   $RCI->pass('main.inc.php');
@@ -27,6 +27,64 @@ else if (!$read_db) {
   $RCI->fail('db.inc.php', 'Unable to read file. Did you create the config files?');
 }
 
+if ($RCI->configured && ($messages = $RCI->check_config())) {
+  
+  if (is_array($messages['missing'])) {
+    echo '<h3 class="warning">Missing config options</h3>';
+    echo '<p class="hint">The following config options are not present in the current configuration.<br/>';
+    echo 'Please check the default config files and add the missing properties to your local config files.</p>';
+    
+    echo '<ul class="configwarings">';
+    foreach ($messages['missing'] as $msg) {
+      echo html::tag('li', null, html::span('propname', $msg['prop']) . ($msg['name'] ? ':&nbsp;' . $msg['name'] : ''));
+    }    
+    echo '</ul>';
+  }
+
+  if (is_array($messages['replaced'])) {
+    echo '<h3 class="warning">Replaced config options</h3>';
+    echo '<p class="hint">The following config options have been replaced or renamed. ';
+    echo 'Please update them accordingly in your config files.</p>';
+    
+    echo '<ul class="configwarings">';
+    foreach ($messages['replaced'] as $msg) {
+      echo html::tag('li', null, html::span('propname', $msg['prop']) .
+        ' was replaced by ' . html::span('propname', $msg['replacement']));
+    }
+    echo '</ul>';
+  }
+
+  if (is_array($messages['obsolete'])) {
+    echo '<h3>Obsolete config options</h3>';
+    echo '<p class="hint">You still have some obsolete or inexistent properties set. This isn\'t a problem but should be noticed.</p>';
+    
+    echo '<ul class="configwarings">';
+    foreach ($messages['obsolete'] as $msg) {
+      echo html::tag('li', null, html::span('propname', $msg['prop']) . ($msg['name'] ? ':&nbsp;' . $msg['name'] : ''));
+    }
+    echo '</ul>';
+  }
+  
+  echo '<p class="suggestion">OK, lazy people can download the updated config files here: ';
+  echo html::a(array('href' => './?_mergeconfig=main'), 'main.inc.php') . ' &nbsp;';
+  echo html::a(array('href' => './?_mergeconfig=db'), 'db.inc.php');
+  echo "</p>";
+  
+  
+  if (is_array($messages['dependencies'])) {
+    echo '<h3 class="warning">Dependency check failed</h3>';
+    echo '<p class="hint">Some of your configuration settings require other options to be configured or additional PHP modules to be installed</p>';
+    
+    echo '<ul class="configwarings">';
+    foreach ($messages['dependencies'] as $msg) {
+      echo html::tag('li', null, html::span('propname', $msg['prop']) . ': ' . $msg['explain']);
+    }
+    echo '</ul>';
+  }
+
+  
+}
+
 ?>
 
 <h3>Check if directories are writable</h3>
@@ -35,7 +93,12 @@ else if (!$read_db) {
 
 if ($RCI->configured) {
     $pass = false;
-    foreach (array($RCI->config['temp_dir'],$RCI->config['log_dir']) as $dir) {
+
+    $dirs[] = $RCI->config['temp_dir'];
+    if($RCI->config['log_driver'] != 'syslog')
+      $dirs[] = $RCI->config['log_dir'];
+
+    foreach ($dirs as $dir) {
         $dirpath = $dir{0} == '/' ? $dir : INSTALL_PATH . $dir;
         if (is_writable(realpath($dirpath))) {
             $RCI->pass($dir);
@@ -61,14 +124,9 @@ else {
 
 $db_working = false;
 if ($RCI->configured) {
-    if (!empty($RCI->config['db_backend']) && !empty($RCI->config['db_dsnw'])) {
+    if (!empty($RCI->config['db_dsnw'])) {
 
-        echo 'Backend: ';
-        echo 'PEAR::' . strtoupper($RCI->config['db_backend']) . '<br />';
-
-        $dbclass = 'rcube_' . strtolower($RCI->config['db_backend']);
-
-        $DB = new $dbclass($RCI->config['db_dsnw'], '', false);
+        $DB = new rcube_mdb2($RCI->config['db_dsnw'], '', false);
         $DB->db_connect('w');
         if (!($db_error_msg = $DB->is_error())) {
             $RCI->pass('DSN (write)');
@@ -79,8 +137,6 @@ if ($RCI->configured) {
             $RCI->fail('DSN (write)', $db_error_msg);
             echo '<p class="hint">Make sure that the configured database exists and that the user has write privileges<br />';
             echo 'DSN: ' . $RCI->config['db_dsnw'] . '</p>';
-            if ($RCI->config['db_backend'] == 'mdb2')
-              echo '<p class="hint">There are known problems with MDB2 running on PHP 4. Try setting <tt>db_backend</tt> to \'db\' instead</p>';
         }
     }
     else {
@@ -105,13 +161,22 @@ if ($db_working) {
     $db_read = $DB->query("SELECT count(*) FROM {$RCI->config['db_table_users']}");
     if (!$db_read) {
         $RCI->fail('DB Schema', "Database not initialized");
-        $db_working = false;
         echo '<p><input type="submit" name="initdb" value="Initialize database" /></p>';
+        $db_working = false;
     }
+  /*
+    else if (!$RCI->db_schema_check($update = !empty($_POST['updatedb']))) {
+        $RCI->fail('DB Schema', "Database schema differs");
+        
+        echo $update ? '<p class="warning">Failed to update the database schema! Please manually execute the SQL statements from the SQL/*.update.sql file on your database</p>' :
+          '<p><input type="submit" name="updatedb" value="Update schema now" /></p>';
+        $db_working = false;
+    }
+  */
     else {
         $RCI->pass('DB Schema');
+        echo '<br />';
     }
-    echo '<br />';
 }
 
 // more database tests
@@ -127,7 +192,7 @@ if ($db_working) {
     else {
       $RCI->fail('DB Write', $RCI->get_error());
     }
-    echo '<br />';    
+    echo '<br />';
     
     // check timezone settings
     $tz_db = 'SELECT ' . $DB->unixtimestamp($DB->now()) . ' AS tz_db';
@@ -239,9 +304,9 @@ if (isset($_POST['sendmail']) && !empty($_POST['_from']) && !empty($_POST['_to']
   else {
     $RCI->fail('SMTP send', 'Invalid sender or recipient');
   }
+  
+  echo '</p>';
 }
-
-echo '</p>';
 
 ?>
 

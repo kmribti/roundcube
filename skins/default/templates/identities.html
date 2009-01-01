@@ -4,8 +4,9 @@
 <title><roundcube:object name="pagetitle" /></title>
 <roundcube:include file="/includes/links.html" />
 <link rel="stylesheet" type="text/css" href="/settings.css" />
+<script type="text/javascript" src="/functions.js"></script>
 </head>
-<body>
+<body onload="rcube_init_settings_tabs()">
 
 <roundcube:include file="/includes/taskbar.html" />
 <roundcube:include file="/includes/header.html" />
@@ -13,11 +14,17 @@
 
 <div id="identities-list">
 <roundcube:object name="identitiesList" id="identities-table" class="records-table" cellspacing="0" summary="Identities list" editIcon="" />
-
-<p><roundcube:button command="add" type="input" label="newidentity" class="button" /></p>
 </div>
 
-<roundcube:include file="/includes/settingscripts.html" />
+<p id="listbuttons">
+<roundcube:button command="add" type="input" label="newidentity" class="button" condition="config:identities_level:0<2" />
+</p>
+
+<div id="identity-details">
+  <div style="margin:10px auto; text-align:center">
+  <img src="/images/watermark.gif" width="260" height="228" alt="RoundCube" />
+  </div>
+</div>
 
 </body>
 </html>

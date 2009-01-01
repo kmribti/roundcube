@@ -18,6 +18,23 @@ $rcmail_config = array();
 // system error reporting: 1 = log; 2 = report (not implemented yet), 4 = show, 8 = trace
 $rcmail_config['debug_level'] = 1;
 
+// log driver:  'syslog' or 'file'.
+$rcmail_config['log_driver'] = 'file';
+
+// Syslog ident string to use, if using the 'syslog' log driver.
+$rcmail_config['syslog_id'] = 'roundcube';
+
+// Syslog facility to use, if using the 'syslog' log driver.
+// For possible values see installer or http://php.net/manual/en/function.openlog.php
+$rcmail_config['syslog_facility'] = LOG_USER;
+
+// use this folder to store log files (must be writeable for apache user)
+// This is used by the 'file' log driver.
+$rcmail_config['log_dir'] = 'logs/';
+
+// use this folder to store temp files (must be writeable for apache user)
+$rcmail_config['temp_dir'] = 'temp/';
+
 // enable caching of messages and mailbox data in the local database.
 // this is recommended if the IMAP server does not run on the same machine
 $rcmail_config['enable_caching'] = TRUE;
@@ -43,6 +60,11 @@ $rcmail_config['default_port'] = 143;
 // IMAP auth type. Can be "auth" (CRAM-MD5), "plain" (PLAIN) or "check" to auto detect.
 // Optional, defaults to "check"
 $rcmail_config['imap_auth_type'] = null;
+
+// If you know your imap's root directory and its folder delimiter,
+// you can specify them here. Otherwise they will be determined automatically.
+$rcmail_config['imap_root'] = null;
+$rcmail_config['imap_delimiter'] = null;
 
 // Automatically add this domain to user names for login
 // Only for IMAP servers that require full e-mail addresses for login
@@ -90,20 +112,18 @@ $rcmail_config['smtp_helo_host'] = '';
 // Log sent messages
 $rcmail_config['smtp_log'] = TRUE;
 
-// these cols are shown in the message list
-// available cols are: subject, from, to, cc, replyto, date, size, encoding, flag
-$rcmail_config['list_cols'] = array('subject', 'from', 'date', 'size', 'flag');
+// How many seconds must pass between emails sent by a user
+$rcmail_config['sendmail_delay'] = 0;
 
-// includes should be interpreted as PHP files
+// These cols are shown in the message list. Available cols are:
+// subject, from, to, cc, replyto, date, size, flag, attachment
+$rcmail_config['list_cols'] = array('subject', 'from', 'date', 'size', 'flag', 'attachment');
+
+// Includes should be interpreted as PHP files
 $rcmail_config['skin_include_php'] = FALSE;
 
-// use this folder to store temp files (must be writeable for apache user)
-$rcmail_config['temp_dir'] = 'temp/';
-
-// use this folder to store log files (must be writeable for apache user)
-$rcmail_config['log_dir'] = 'logs/';
-
-// session lifetime in minutes
+// Session lifetime in minutes
+// must be greater than 'keep_alive'/60
 $rcmail_config['session_lifetime'] = 10;
 
 // check client IP in session athorization
@@ -118,8 +138,9 @@ $rcmail_config['double_auth'] = false;
 // please provide a string of exactly 24 chars.
 $rcmail_config['des_key'] = 'rcmail-!24ByteDESkey*Str';
 
-// the default locale setting
-$rcmail_config['language'] = 'en';
+// the default locale setting (leave empty for auto-detection)
+// RFC1766 formatted language name like en_US, de_DE, de_CH, fr_FR, pt_BR
+$rcmail_config['language'] = null;
 
 // use this format for short date display
 $rcmail_config['date_short'] = 'D H:i';
@@ -131,13 +152,10 @@ $rcmail_config['date_long'] = 'd.m.Y H:i';
 $rcmail_config['date_today'] = 'H:i';
 
 // add this user-agent to message headers when sending
-$rcmail_config['useragent'] = 'RoundCube Webmail/0.1';
+$rcmail_config['useragent'] = 'RoundCube Webmail/0.2-beta';
 
 // use this name to compose page titles
 $rcmail_config['product_name'] = 'RoundCube Webmail';
-
-// only list folders within this path
-$rcmail_config['imap_root'] = '';
 
 // store draft message is this mailbox
 // leave blank if draft messages should not be stored
@@ -164,18 +182,8 @@ $rcmail_config['create_default_folders'] = FALSE;
 // protect the default folders from renames, deletes, and subscription changes
 $rcmail_config['protect_default_folders'] = TRUE;
 
-// Set TRUE if deleted messages should not be displayed
-// This will make the application run slower
-$rcmail_config['skip_deleted'] = FALSE;
-
-// Set true to Mark deleted messages as read as well as deleted
-// False means that a message's read status is not affected by marking it as deleted
-$rcmail_config['read_when_deleted'] = TRUE;
-
-// When a Trash folder is not present and a message is deleted, flag 
-// the message for deletion rather than deleting it immediately.  Setting this to 
-// false causes deleted messages to be permanantly removed if there is no Trash folder
-$rcmail_config['flag_for_deletion'] = FALSE;
+// if in your system 0 quota means no limit set this option to TRUE 
+$rcmail_config['quota_zero_as_unlimited'] = FALSE;
 
 // Behavior if a received message requests a message delivery notification (read receipt)
 // 0 = ask the user, 1 = send automatically, 2 = ignore (never send or ask)
@@ -189,6 +197,10 @@ $rcmail_config['default_charset'] = 'ISO-8859-1';
 // requires to be compiled with Open SSL support
 $rcmail_config['enable_spellcheck'] = TRUE;
 
+// Set the spell checking engine. 'googie' is the default. 'pspell' is also available,
+// but requires the Pspell extensions. When using Nox Spell Server, also set 'googie' here.
+$rcmail_config['spellcheck_engine'] = 'googie';
+
 // For a locally installed Nox Spell Server, please specify the URI to call it.
 // Get Nox Spell Server from http://orangoo.com/labs/?page_id=72
 // Leave empty to use the Google spell checking service, what means
@@ -197,7 +209,8 @@ $rcmail_config['spellcheck_uri'] = '';
 
 // These languages can be selected for spell checking.
 // Configure as a PHP style hash array: array('en'=>'English', 'de'=>'Deutsch');
-// Leave empty for default set of Google spell check languages
+// Leave empty for default set of Google spell check languages, should be defined
+// when using local Pspell extension
 $rcmail_config['spellcheck_languages'] = NULL;
 
 // path to a text file which will be added to each sent message
@@ -223,6 +236,8 @@ $rcmail_config['address_book_type'] = 'sql';
 
 // In order to enable public ldap search, configure an array like the Verisign
 // example further below. if you would like to test, simply uncomment the example.
+$rcmail_config['ldap_public'] = array();
+
 //
 // If you are going to use LDAP for individual address books, you will need to 
 // set 'user_specific' to true and use the variables to generate the appropriate DNs to access it.
@@ -268,12 +283,22 @@ $rcmail_config['address_book_type'] = 'sql';
  *  'sort'          => 'cn',    // The field to sort the listing by.
  *  'scope'         => 'sub',   // search mode: sub|base|list
  *  'filter'        => '',      // used for basic listing (if not empty) and will be &'d with search queries. example: status=act
- *  'global_search' => true,    // perform a global search for address auto-completion on compose
  *  'fuzzy_search'  => true);   // server allows wildcard search
  */
 
+// An ordered array of the ids of the addressbooks that should be searched
+// when populating address autocomplete fields server-side. ex: array('sql','Verisign');
+$rcmail_config['autocomplete_addressbooks'] = array('sql');
+
 // don't allow these settings to be overriden by the user
 $rcmail_config['dont_override'] = array();
+
+// Set identities access level:
+// 0 - many identities with possibility to edit all params
+// 1 - many identities with possibility to edit all params but not email address
+// 2 - one identity with possibility to edit all params
+// 3 - one identity with possibility to edit all params but not email address
+$rcmail_config['identities_level'] = 0;
 
 // try to load host-specific configuration
 // see http://trac.roundcube.net/wiki/Howto_Config for more details
@@ -306,9 +331,13 @@ $rcmail_config['log_logins'] = false;
  * quota (and Trash is included in the quota).
  *
  * This is a failover setting for iil_C_Move when a message is moved
- * to the Trash, and not the same as "delete_right_away".
+ * to the Trash.
  */
 $rcmail_config['delete_always'] = false;
+
+// Minimal value of user's 'keep_alive' setting (in seconds)
+// Must be less than 'session_lifetime'
+$rcmail_config['min_keep_alive'] = 60;
 
 /***** these settings can be overwritten by user's preferences *****/
 
@@ -319,7 +348,7 @@ $rcmail_config['skin'] = 'default';
 $rcmail_config['pagesize'] = 40;
 
 // use this timezone to display date/time
-$rcmail_config['timezone'] = intval(date('O'))/100 - date('I');
+$rcmail_config['timezone'] = 'auto';
 
 // is daylight saving On?
 $rcmail_config['dst_active'] = (bool)date('I');
@@ -327,8 +356,11 @@ $rcmail_config['dst_active'] = (bool)date('I');
 // prefer displaying HTML messages
 $rcmail_config['prefer_html'] = TRUE;
 
-// display images in mail from known senders
-$rcmail_config['addrbook_show_images'] = FALSE;
+// display remote inline images
+// 0 - Never, always ask
+// 1 - Ask if sender is not in address book
+// 2 - Always show inline images
+$rcmail_config['show_images'] = 0;
 
 // compose html formatted messages by default
 $rcmail_config['htmleditor'] = FALSE;
@@ -342,6 +374,9 @@ $rcmail_config['draft_autosave'] = 300;
 // default setting if preview pane is enabled
 $rcmail_config['preview_pane'] = FALSE;
 
+// focus new window if new message arrives
+$rcmail_config['focus_on_new_message'] = true;
+
 // Clear Trash on logout
 $rcmail_config['logout_purge'] = FALSE;
 
@@ -350,6 +385,32 @@ $rcmail_config['logout_expunge'] = FALSE;
 
 // Display attached images below the message body 
 $rcmail_config['inline_images'] = TRUE;
+
+// Encoding of long/non-ascii attachment names:
+// 0 - Full RFC 2231 compatible
+// 1 - RFC 2047 for 'name' and RFC 2231 for 'filename' parameter (Thunderbird's default)
+// 2 - Full 2047 compatible
+$rcmail_config['mime_param_folding'] = 0;
+
+// Set TRUE if deleted messages should not be displayed
+// This will make the application run slower
+$rcmail_config['skip_deleted'] = FALSE;
+
+// Set true to Mark deleted messages as read as well as deleted
+// False means that a message's read status is not affected by marking it as deleted
+$rcmail_config['read_when_deleted'] = TRUE;
+
+// When a Trash folder is not present and a message is deleted, flag 
+// the message for deletion rather than deleting it immediately.  Setting this to 
+// false causes deleted messages to be permanantly removed if there is no Trash folder
+$rcmail_config['flag_for_deletion'] = FALSE;
+
+// Default interval for keep-alive/check-recent requests (in seconds)
+// Must be greater than or equal to 'min_keep_alive' and less than 'session_lifetime'
+$rcmail_config['keep_alive'] = 60;
+
+// If true all folders will be checked for recent messages
+$rcmail_config['check_all_folders'] = FALSE;
 
 // end of config file
 ?>

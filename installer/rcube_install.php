@@ -30,7 +30,25 @@ class rcube_install
   var $configured = false;
   var $last_error = null;
   var $email_pattern = '([a-z0-9][a-z0-9\-\.\+\_]*@[a-z0-9]([a-z0-9\-][.]?)*[a-z0-9])';
-  var $config_props = array();
+  var $bool_config_props = array();
+
+  var $obsolete_config = array('db_backend');
+  var $replaced_config = array(
+    'skin_path' => 'skin',
+    'locale_string' => 'language',
+    'multiple_identities' => 'identities_level',
+    'addrbook_show_images' => 'show_images',
+  );
+  
+  // these config options are optional or can be set to null
+  var $optional_config = array(
+    'log_driver', 'syslog_id', 'syslog_facility', 'imap_auth_type',
+    'smtp_helo_host', 'smtp_auth_type', 'sendmail_delay', 'double_auth',
+    'language', 'mail_header_delimiter', 'create_default_folders',
+    'quota_zero_as_unlimited', 'spellcheck_uri', 'spellcheck_languages',
+    'http_received_header', 'session_domain', 'mime_magic', 'log_logins',
+    'enable_installer', 'skin_include_php', 'imap_root', 'imap_delimiter',
+    'virtuser_file', 'virtuser_query', 'dont_override');
   
   /**
    * Constructor
@@ -79,12 +97,12 @@ class rcube_install
    */
   function _load_config($suffix)
   {
-    @include '../config/main.inc' . $suffix;
+    @include RCMAIL_CONFIG_DIR . '/main.inc' . $suffix;
     if (is_array($rcmail_config)) {
       $this->config += $rcmail_config;
     }
       
-    @include '../config/db.inc'. $suffix;
+    @include RCMAIL_CONFIG_DIR . '/db.inc'. $suffix;
     if (is_array($rcmail_config)) {
       $this->config += $rcmail_config;
     }
@@ -100,7 +118,7 @@ class rcube_install
    */
   function getprop($name, $default = '')
   {
-    $value = $this->is_post && (isset($_POST["_$name"]) || $this->config_props[$name]) ? $_POST["_$name"] : $this->config[$name];
+    $value = $this->config[$name];
     
     if ($name == 'des_key' && !$this->configured && !isset($_REQUEST["_$name"]))
       $value = rcube_install::random_key(24);
@@ -116,30 +134,30 @@ class rcube_install
    * @param string Which config file (either 'main' or 'db')
    * @return string The complete config file content
    */
-  function create_config($which)
+  function create_config($which, $force = false)
   {
-    $out = file_get_contents("../config/{$which}.inc.php.dist");
+    $out = file_get_contents(RCMAIL_CONFIG_DIR . "/{$which}.inc.php.dist");
     
     if (!$out)
       return '[Warning: could not read the template file]';
-    
+
     foreach ($this->config as $prop => $default) {
-      $value = (isset($_POST["_$prop"]) || $this->config_props[$prop]) ? $_POST["_$prop"] : $default;
+      $value = (isset($_POST["_$prop"]) || $this->bool_config_props[$prop]) ? $_POST["_$prop"] : $default;
       
       // convert some form data
-      if ($prop == 'debug_level' && is_array($value)) {
+      if ($prop == 'debug_level') {
         $val = 0;
-        foreach ($value as $i => $dbgval)
-          $val += intval($dbgval);
+        if (is_array($value))
+          foreach ($value as $dbgval)
+            $val += intval($dbgval);
         $value = $val;
       }
-      else if ($prop == 'db_dsnw' && !empty($_POST['_dbtype'])) {
+      else if ($which == 'db' && $prop == 'db_dsnw' && !empty($_POST['_dbtype'])) {
         if ($_POST['_dbtype'] == 'sqlite')
           $value = sprintf('%s://%s?mode=0646', $_POST['_dbtype'], $_POST['_dbname']{0} == '/' ? '/' . $_POST['_dbname'] : $_POST['_dbname']);
         else
           $value = sprintf('%s://%s:%s@%s/%s', $_POST['_dbtype'], 
-		    rawurlencode($_POST['_dbuser']), rawurlencode($_POST['_dbpass']),
-		    $_POST['_dbhost'], $_POST['_dbname']);
+            rawurlencode($_POST['_dbuser']), rawurlencode($_POST['_dbpass']), $_POST['_dbhost'], $_POST['_dbname']);
       }
       else if ($prop == 'smtp_auth_type' && $value == '0') {
         $value = '';
@@ -166,17 +184,215 @@ class rcube_install
       }
       
       // skip this property
-      if ($value == $default)
+      if (!$force && ($value == $default))
         continue;
-      
+
+      // save change
+      $this->config[$prop] = $value;
+
       // replace the matching line in config file
       $out = preg_replace(
         '/(\$rcmail_config\[\''.preg_quote($prop).'\'\])\s+=\s+(.+);/Uie',
-        "'\\1 = ' . var_export(\$value, true) . ';'",
+        "'\\1 = ' . rcube_install::_dump_var(\$value) . ';'",
         $out);
     }
-    
+
     return trim($out);
+  }
+
+
+  /**
+   * Check the current configuration for missing properties
+   * and deprecated or obsolete settings
+   *
+   * @return array List with problems detected
+   */
+  function check_config()
+  {
+    $this->config = array();
+    $this->load_defaults();
+    $defaults = $this->config;
+    
+    $this->load_config();
+    if (!$this->configured)
+      return null;
+    
+    $out = $seen = array();
+    $optional = array_flip($this->optional_config);
+    
+    // iterate over the current configuration
+    foreach ($this->config as $prop => $value) {
+      if ($replacement = $this->replaced_config[$prop]) {
+        $out['replaced'][] = array('prop' => $prop, 'replacement' => $replacement);
+        $seen[$replacement] = true;
+      }
+      else if (!$seen[$prop] && in_array($prop, $this->obsolete_config)) {
+        $out['obsolete'][] = array('prop' => $prop);
+        $seen[$prop] = true;
+      }
+    }
+    
+    // iterate over default config
+    foreach ($defaults as $prop => $value) {
+      if (!$seen[$prop] && !isset($this->config[$prop]) && !isset($optional[$prop]))
+        $out['missing'][] = array('prop' => $prop);
+    }
+    
+    // check config dependencies and contradictions
+    if ($this->config['enable_spellcheck'] && $this->config['spellcheck_engine'] == 'pspell') {
+      if (!extension_loaded('pspell')) {
+        $out['dependencies'][] = array('prop' => 'spellcheck_engine',
+          'explain' => 'This requires the <tt>pspell</tt> extension which could not be loaded.');
+      }
+      if (empty($this->config['spellcheck_languages'])) {
+        $out['dependencies'][] = array('prop' => 'spellcheck_languages',
+          'explain' => 'You should specify the list of languages supported by your local pspell installation.');
+      }
+    }
+    
+    if ($this->config['log_driver'] == 'syslog') {
+      if (!function_exists('openlog')) {
+        $out['dependencies'][] = array('prop' => 'log_driver',
+          'explain' => 'This requires the <tt>sylog</tt> extension which could not be loaded.');
+      }
+      if (empty($this->config['syslog_id'])) {
+        $out['dependencies'][] = array('prop' => 'syslog_id',
+          'explain' => 'Using <tt>syslog</tt> for logging requires a syslog ID to be configured');
+      }
+    }
+    
+    // check ldap_public sources having global_search enabled
+    if (is_array($this->config['ldap_public']) && !is_array($this->config['autocomplete_addressbooks'])) {
+      foreach ($this->config['ldap_public'] as $ldap_public) {
+        if ($ldap_public['global_search']) {
+          $out['replaced'][] = array('prop' => 'ldap_public::global_search', 'replacement' => 'autocomplete_addressbooks');
+          break;
+        }
+      }
+    }
+    
+    return $out;
+  }
+  
+  
+  /**
+   * Merge the current configuration with the defaults
+   * and copy replaced values to the new options.
+   */
+  function merge_config()
+  {
+    $current = $this->config;
+    $this->config = array();
+    $this->load_defaults();
+    
+    foreach ($this->replaced_config as $prop => $replacement)
+      if (isset($current[$prop])) {
+        if ($prop == 'skin_path')
+          $this->config[$replacement] = preg_replace('#skins/(\w+)/?$#', '\\1', $current[$prop]);
+        else if ($prop == 'multiple_identities')
+          $this->config[$replacement] = $current[$prop] ? 2 : 0;
+        else
+          $this->config[$replacement] = $current[$prop];
+        
+        unset($current[$prop]);
+    }
+    
+    foreach ($this->obsolete_config as $prop) {
+      unset($current[$prop]);
+    }
+    
+    // add all ldap_public sources having global_search enabled to autocomplete_addressbooks
+    if (is_array($current['ldap_public'])) {
+      foreach ($current['ldap_public'] as $key => $ldap_public) {
+        if ($ldap_public['global_search']) {
+          $this->config['autocomplete_addressbooks'][] = $key;
+          unset($current['ldap_public'][$key]['global_search']);
+        }
+      }
+    }
+    
+    $this->config  = array_merge($this->config, $current);
+    
+    foreach ((array)$current['ldap_public'] as $key => $values) {
+      $this->config['ldap_public'][$key] = $current['ldap_public'][$key];
+    }
+  }
+  
+  
+  /**
+   * Compare the local database schema with the reference schema
+   * required for this version of RoundCube
+   *
+   * @param boolean True if the schema schould be updated
+   * @return boolean True if the schema is up-to-date, false if not or an error occured
+   */
+  function db_schema_check($update = false)
+  {
+    if (!$this->configured)
+      return false;
+    
+    $options = array(
+      'use_transactions' => false,
+      'log_line_break' => "\n",
+      'idxname_format' => '%s',
+      'debug' => false,
+      'quote_identifier' => true,
+      'force_defaults' => false,
+      'portability' => true
+    );
+    
+    $schema =& MDB2_Schema::factory($this->config['db_dsnw'], $options);
+    $schema->db->supported['transactions'] = false;
+    
+    if (PEAR::isError($schema)) {
+      $this->raise_error(array('code' => $schema->getCode(), 'message' => $schema->getMessage() . ' ' . $schema->getUserInfo()));
+      return false;
+    }
+    else {
+      $definition = $schema->getDefinitionFromDatabase();
+      $definition['charset'] = 'utf8';
+      
+      if (PEAR::isError($definition)) {
+        $this->raise_error(array('code' => $definition->getCode(), 'message' => $definition->getMessage() . ' ' . $definition->getUserInfo()));
+        return false;
+      }
+      
+      // load reference schema
+      $dsn = MDB2::parseDSN($this->config['db_dsnw']);
+      $ref_schema = INSTALL_PATH . 'SQL/' . $dsn['phptype'] . '.schema.xml';
+      
+      if (is_file($ref_schema)) {
+        $reference = $schema->parseDatabaseDefinition($ref_schema, false, array(), $schema->options['fail_on_invalid_names']);
+        
+        if (PEAR::isError($reference)) {
+          $this->raise_error(array('code' => $reference->getCode(), 'message' => $reference->getMessage() . ' ' . $reference->getUserInfo()));
+        }
+        else {
+          $diff = $schema->compareDefinitions($reference, $definition);
+          
+          if (empty($diff)) {
+            return true;
+          }
+          else if ($update) {
+            // update database schema with the diff from the above check
+            $success = $schema->alterDatabase($reference, $definition, $diff);
+            
+            if (PEAR::isError($success)) {
+              $this->raise_error(array('code' => $success->getCode(), 'message' => $success->getMessage() . ' ' . $success->getUserInfo()));
+            }
+            else
+              return true;
+          }
+          echo '<pre>'; var_dump($diff); echo '</pre>';
+          return false;
+        }
+      }
+      else
+        $this->raise_error(array('message' => "Could not find reference schema file ($ref_schema)"));
+        return false;
+    }
+    
+    return false;
   }
   
   
@@ -265,15 +481,43 @@ class rcube_install
   }
   
   
-  function _clean_array($arr)
+  static function _clean_array($arr)
   {
     $out = array();
     
-    foreach (array_unique($arr) as $i => $val)
-      if (!empty($val))
-        $out[] = $val;
+    foreach (array_unique($arr) as $k => $val) {
+      if (!empty($val)) {
+        if (is_numeric($k))
+          $out[] = $val;
+        else
+          $out[$k] = $val;
+      }
+    }
     
     return $out;
+  }
+  
+  
+  static function _dump_var($var) {
+    if (is_array($var)) {
+      if (empty($var)) {
+        return 'array()';
+      }
+      else {  // check if all keys are numeric
+        $isnum = true;
+        foreach ($var as $key => $value) {
+          if (!is_numeric($key)) {
+            $isnum = false;
+            break;
+          }
+        }
+        
+        if ($isnum)
+          return 'array(' . join(', ', array_map(array('rcube_install', '_dump_var'), $var)) . ')';
+      }
+    }
+    
+    return var_export($var, true);
   }
   
   
@@ -287,16 +531,6 @@ class rcube_install
   {
     $db_map = array('pgsql' => 'postgres', 'mysqli' => 'mysql');
     $engine = isset($db_map[$DB->db_provider]) ? $db_map[$DB->db_provider] : $DB->db_provider;
-    
-    // find out db version
-    if ($engine == 'mysql') {
-      $DB->query('SELECT VERSION() AS version');
-      $sql_arr = $DB->fetch_assoc();
-      $version = floatval($sql_arr['version']);
-      
-      if ($version >= 4.1)
-        $engine = 'mysql5';
-    }
     
     // read schema file from /SQL/*
     $fname = "../SQL/$engine.initial.sql";
@@ -355,27 +589,5 @@ class rcube_install
     return $out;
   }
   
-}
-
-
-/**
- * Shortcut function for htmlentities()
- *
- * @param string String to quote
- * @return string The html-encoded string
- */
-function Q($string)
-{
-  return htmlentities($string);
-}
-
-
-/**
- * Fake rinternal error handler to catch errors
- */
-function raise_error($p)
-{
-  $rci = rcube_install::get_instance();
-  $rci->raise_error($p);
 }
 

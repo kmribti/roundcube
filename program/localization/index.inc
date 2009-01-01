@@ -31,6 +31,7 @@ $rcube_languages = array(
   'bs_BA' => 'Bosnian (Serbian Latin)',
   'bg_BG' => 'Bulgarian',
   'ca_ES' => 'Català',
+  'cy_GB' => 'Cymraeg',
   'zh_CN' => 'Chinese (Simplified)',
   'zh_TW' => 'Chinese (Traditional)',
   'hr_HR' => 'Croatian (Hrvatski)',
@@ -73,14 +74,14 @@ $rcube_languages = array(
   'pt_BR' => 'Portuguese (Brazilian)',
   'pt_PT' => 'Portuguese (Standard)',
   'ro_RO' => 'Romanian',
-  'ru_RU' => 'Russian',
+  'ru_RU' => 'Русский',
   'sr_CS' => 'Serbian (Cyrillic)',
   'si_LK' => 'Sinhala',
   'sk_SK' => 'Slovak',
   'sl_SI' => 'Slovenian',
   'sv_SE' => 'Swedish (Svenska)',
   'th_TH' => 'Thai',
-  'tr_TR' => 'Turkish',
+  'tr_TR' => 'Türkçe',
   'uk_UA' => 'Ukrainian',
   'vi_VN' => 'Vietnamese',
 );
@@ -127,6 +128,5 @@ $rcube_language_aliases = array(
   'vi' => 'vi_VN',
   'zh' => 'zh_CN',
 );
-
 
 ?>

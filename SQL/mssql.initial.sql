@@ -1,7 +1,6 @@
 CREATE TABLE [dbo].[cache] (
 	[cache_id] [int] IDENTITY (1, 1) NOT NULL ,
 	[user_id] [int] NOT NULL ,
-	[session_id] [varchar] (32) COLLATE Latin1_General_CI_AI NULL ,
 	[cache_key] [varchar] (128) COLLATE Latin1_General_CI_AI NOT NULL ,
 	[created] [datetime] NOT NULL ,
 	[data] [text] COLLATE Latin1_General_CI_AI NOT NULL 
@@ -31,7 +30,8 @@ CREATE TABLE [dbo].[identities] (
 	[email] [varchar] (128) COLLATE Latin1_General_CI_AI NOT NULL ,
 	[reply-to] [varchar] (128) COLLATE Latin1_General_CI_AI NOT NULL ,
 	[bcc] [varchar] (128) COLLATE Latin1_General_CI_AI NOT NULL ,
-	[signature] [text] COLLATE Latin1_General_CI_AI NOT NULL 
+	[signature] [text] COLLATE Latin1_General_CI_AI NOT NULL, 
+	[html_signature] [char] (1) COLLATE Latin1_General_CI_AI NOT NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
@@ -70,7 +70,7 @@ CREATE TABLE [dbo].[users] (
 	[alias] [varchar] (128) COLLATE Latin1_General_CI_AI NOT NULL ,
 	[created] [datetime] NOT NULL ,
 	[last_login] [datetime] NULL ,
-	[language] [varchar] (5) COLLATE Latin1_General_CI_AI NOT NULL ,
+	[language] [varchar] (5) COLLATE Latin1_General_CI_AI NULL ,
 	[preferences] [text] COLLATE Latin1_General_CI_AI NOT NULL 
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
@@ -119,7 +119,6 @@ GO
 
 ALTER TABLE [dbo].[cache] ADD 
 	CONSTRAINT [DF_cache_user_id] DEFAULT ('0') FOR [user_id],
-	CONSTRAINT [DF_cache_session_id] DEFAULT (null) FOR [session_id],
 	CONSTRAINT [DF_cache_cache_key] DEFAULT ('') FOR [cache_key],
 	CONSTRAINT [DF_cache_created] DEFAULT (getdate()) FOR [created]
 GO
@@ -130,7 +129,7 @@ GO
  CREATE  INDEX [IX_cache_cache_key] ON [dbo].[cache]([cache_key]) ON [PRIMARY]
 GO
 
- CREATE  INDEX [IX_cache_session_id] ON [dbo].[cache]([session_id]) ON [PRIMARY]
+ CREATE  INDEX [IX_cache_created] ON [dbo].[cache]([created]) ON [PRIMARY]
 GO
 
 ALTER TABLE [dbo].[contacts] ADD 
@@ -184,10 +183,10 @@ GO
  CREATE  INDEX [IX_messages_cache_key] ON [dbo].[messages]([cache_key]) ON [PRIMARY]
 GO
 
- CREATE  INDEX [IX_messages_idx] ON [dbo].[messages]([idx]) ON [PRIMARY]
+ CREATE  INDEX [IX_messages_uid] ON [dbo].[messages]([uid]) ON [PRIMARY]
 GO
 
- CREATE  INDEX [IX_messages_uid] ON [dbo].[messages]([uid]) ON [PRIMARY]
+ CREATE  INDEX [IX_messages_created] ON [dbo].[messages]([created]) ON [PRIMARY]
 GO
 
 ALTER TABLE [dbo].[session] ADD 
@@ -196,11 +195,19 @@ ALTER TABLE [dbo].[session] ADD
 	CONSTRAINT [DF_session_ip] DEFAULT ('') FOR [ip]
 GO
 
+ CREATE  INDEX [IX_session_changed] ON [dbo].[session]([changed]) ON [PRIMARY]
+GO
+
 ALTER TABLE [dbo].[users] ADD 
 	CONSTRAINT [DF_users_username] DEFAULT ('') FOR [username],
 	CONSTRAINT [DF_users_mail_host] DEFAULT ('') FOR [mail_host],
 	CONSTRAINT [DF_users_alias] DEFAULT ('') FOR [alias],
 	CONSTRAINT [DF_users_created] DEFAULT (getdate()) FOR [created],
-	CONSTRAINT [DF_users_language] DEFAULT ('en') FOR [language]
+GO
+
+ CREATE  INDEX [IX_users_username] ON [dbo].[users]([username]) ON [PRIMARY]
+GO
+
+ CREATE  INDEX [IX_users_alias] ON [dbo].[users]([alias]) ON [PRIMARY]
 GO
 

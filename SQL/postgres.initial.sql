@@ -21,7 +21,7 @@ CREATE TABLE users (
     alias character varying(128) DEFAULT ''::character varying NOT NULL,
     created timestamp with time zone DEFAULT now() NOT NULL,
     last_login timestamp with time zone DEFAULT now() NOT NULL,
-    "language" character varying(5) DEFAULT 'en'::character varying NOT NULL,
+    "language" character varying(5),
     preferences text DEFAULT ''::text NOT NULL
 );
 
@@ -42,6 +42,7 @@ CREATE TABLE "session" (
     vars text NOT NULL
 );
 
+CREATE INDEX session_changed_idx ON session (changed);
 
 
 --
@@ -64,8 +65,8 @@ CREATE SEQUENCE identity_ids
 CREATE TABLE identities (
     identity_id integer DEFAULT nextval('identity_ids'::text) PRIMARY KEY,
     user_id integer NOT NULL REFERENCES users (user_id) ON DELETE CASCADE ON UPDATE CASCADE,
-    del integer DEFAULT 0 NOT NULL,
-    standard integer DEFAULT 0 NOT NULL,
+    del smallint DEFAULT 0 NOT NULL,
+    standard smallint DEFAULT 0 NOT NULL,
     name character varying(128) NOT NULL,
     organization character varying(128),
     email character varying(128) NOT NULL,
@@ -99,7 +100,7 @@ CREATE TABLE contacts (
     contact_id integer DEFAULT nextval('contact_ids'::text) PRIMARY KEY,
     user_id integer NOT NULL REFERENCES users (user_id) ON DELETE CASCADE ON UPDATE CASCADE,
     changed timestamp with time zone DEFAULT now() NOT NULL,
-    del integer DEFAULT 0 NOT NULL,
+    del smallint DEFAULT 0 NOT NULL,
     name character varying(128) DEFAULT ''::character varying NOT NULL,
     email character varying(128) DEFAULT ''::character varying NOT NULL,
     firstname character varying(128) DEFAULT ''::character varying NOT NULL,
@@ -128,13 +129,13 @@ CREATE SEQUENCE cache_ids
 CREATE TABLE "cache" (
     cache_id integer DEFAULT nextval('cache_ids'::text) PRIMARY KEY,
     user_id integer NOT NULL REFERENCES users (user_id) ON DELETE CASCADE ON UPDATE CASCADE,
-    session_id character varying(40) REFERENCES "session" (sess_id),
     cache_key character varying(128) DEFAULT ''::character varying NOT NULL,
     created timestamp with time zone DEFAULT now() NOT NULL,
     data text NOT NULL
 );
 
 CREATE INDEX cache_user_id_idx ON "cache" (user_id, cache_key);
+CREATE INDEX cache_created_idx ON "cache" (created);
 
 --
 -- Sequence "message_ids"
@@ -155,7 +156,7 @@ CREATE SEQUENCE message_ids
 CREATE TABLE messages (
     message_id integer DEFAULT nextval('message_ids'::text) PRIMARY KEY,
     user_id integer NOT NULL REFERENCES users (user_id) ON DELETE CASCADE ON UPDATE CASCADE,
-    del integer DEFAULT 0 NOT NULL,
+    del smallint DEFAULT 0 NOT NULL,
     cache_key character varying(128) DEFAULT ''::character varying NOT NULL,
     created timestamp with time zone DEFAULT now() NOT NULL,
     idx integer DEFAULT 0 NOT NULL,

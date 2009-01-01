@@ -1,7 +1,7 @@
-#!/usr/bin/php -qC 
+#!/usr/bin/php
 <?php
 
-define('INSTALL_PATH', preg_replace('/bin\/$/', '', getcwd()) . '/');
+define('INSTALL_PATH', realpath(dirname(__FILE__) . '/..') . '/' );
 ini_set('memory_limit', -1);
 
 require_once INSTALL_PATH.'program/include/iniset.php';
@@ -9,7 +9,7 @@ require_once INSTALL_PATH.'program/include/iniset.php';
 /**
  * Parse commandline arguments into a hash array
  */
-function get_args($aliases=array())
+function get_opt($aliases=array())
 {
 	$args = array();
 	for ($i=1; $i<count($_SERVER['argv']); $i++)
@@ -38,18 +38,18 @@ function get_args($aliases=array())
 	return $args;
 }
 
-
 function print_usage()
 {
-	print "Usage:  msgimport -h imap-host -u user-name -f message-file\n";
+	print "Usage:  msgimport -h imap-host -u user-name -m mailbox -f message-file\n";
 	print "--host   IMAP host\n";
 	print "--user   IMAP user name\n";
+	print "--mbox   Target mailbox\n";
 	print "--file   Message file to upload\n";
 }
 
 
 // get arguments
-$args = get_args(array('h' => 'host', 'u' => 'user', 'p' => 'pass', 'f' => 'file')) + array('host' => 'localhost');
+$args = get_opt(array('h' => 'host', 'u' => 'user', 'p' => 'pass', 'm' => 'mbox', 'f' => 'file')) + array('host' => 'localhost', 'mbox' => 'INBOX');
 
 if ($_SERVER['argv'][1] == 'help')
 {
@@ -77,11 +77,14 @@ if (empty($args['user']))
 }
 
 // prompt for password
-echo "Password: ";
-$args['pass'] = trim(fgets(STDIN));
+if (empty($args['pass']))
+{
+	echo "Password: ";
+	$args['pass'] = trim(fgets(STDIN));
 
-// clear password input
-echo chr(8)."\rPassword: ".str_repeat("*", strlen($args['pass']))."\n";
+	// clear password input
+	echo chr(8)."\rPassword: ".str_repeat("*", strlen($args['pass']))."\n";
+}
 
 // parse $host URL
 $a_host = parse_url($args['host']);
@@ -104,13 +107,39 @@ $IMAP = new rcube_imap(null);
 if ($IMAP->connect($host, $args['user'], $args['pass'], $imap_port, $imap_ssl))
 {
 	print "IMAP login successful.\n";
-	print "Uploading message...\n";
+	print "Uploading messages...\n";
 	
+	$count = 0;
+	$message = $lastline = '';
+	
+	$fp = fopen($args['file'], 'r');
+	while (($line = fgets($fp)) !== false)
+	{
+		if (preg_match('/^From\s+/', $line) && $lastline == '')
+		{
+			if (!empty($message))
+			{
+				if ($IMAP->save_message($args['mbox'], rtrim($message)))
+					$count++;
+				else
+					die("Failed to save message to {$args['mbox']}\n");
+				$message = '';
+			}
+			continue;
+		}
+
+		$message .= $line;
+		$lastline = rtrim($line);
+	}
+
+	if (!empty($message) && $IMAP->save_message($args['mbox'], rtrim($message)))
+		$count++;
+
 	// upload message from file
-	if  ($IMAP->save_message('INBOX', file_get_contents($args['file'])))
-		print "Message successfully added to INBOX.\n";
+	if ($count)
+		print "$count messages successfully added to {$args['mbox']}.\n";
 	else
-		print "Adding message failed!\n";
+		print "Adding messages failed!\n";
 }
 else
 {

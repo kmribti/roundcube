@@ -26,11 +26,13 @@ function rcube_list_widget(list, p)
   // static contants
   this.ENTER_KEY = 13;
   this.DELETE_KEY = 46;
+  this.BACKSPACE_KEY = 8;
   
   this.list = list ? list : null;
   this.frame = null;
   this.rows = [];
   this.selection = [];
+  this.rowcount = 0;
   
   this.subject_col = -1;
   this.shiftkey = false;
@@ -49,7 +51,7 @@ function rcube_list_widget(list, p)
   this.drag_mouse_start = null;
   this.dblclick_time = 600;
   this.row_init = function(){};
-  this.events = { click:[], dblclick:[], select:[], keypress:[], dragstart:[], dragend:[] };
+  this.events = { click:[], dblclick:[], select:[], keypress:[], dragstart:[], dragmove:[], dragend:[] };
   
   // overwrite default paramaters
   if (p && typeof(p)=='object')
@@ -69,6 +71,7 @@ init: function()
   if (this.list && this.list.tBodies[0])
   {
     this.rows = new Array();
+    this.rowcount = 0;
 
     var row;
     for(var r=0; r<this.list.tBodies[0].childNodes.length; r++)
@@ -81,13 +84,16 @@ init: function()
       }
 
       this.init_row(row);
+      this.rowcount++;
     }
 
     this.frame = this.list.parentNode;
 
     // set body events
-    if (this.keyboard)
-      rcube_event.add_listener({element:document, event:'keypress', object:this, method:'key_press'});
+    if (this.keyboard) {
+      rcube_event.add_listener({element:document, event:'keyup', object:this, method:'key_press'});
+      rcube_event.add_listener({element:document, event:'keydown', object:this, method:'key_down'});
+    }
   }
 },
 
@@ -126,6 +132,7 @@ clear: function(sel)
   this.list.insertBefore(tbody, this.list.tBodies[0]);
   this.list.removeChild(this.list.tBodies[1]);
   this.rows = new Array();
+  this.rowcount = 0;
   
   if (sel) this.clear_selection();
 },
@@ -143,6 +150,7 @@ remove_row: function(uid, sel_next)
     this.select_next();
 
   this.rows[uid] = null;
+  this.rowcount--;
 },
 
 
@@ -159,12 +167,13 @@ insert_row: function(row, attop)
     tbody.appendChild(row);
 
   this.init_row(row);
+  this.rowcount++;
 },
 
 
 
 /**
- * Set focur to the list
+ * Set focus to the list
  */
 focus: function(e)
 {
@@ -212,7 +221,11 @@ drag_row: function(e, id)
   var evtarget = rcube_event.get_target(e);
   if (this.dont_select || (evtarget && (evtarget.tagName == 'INPUT' || evtarget.tagName == 'IMG')))
     return false;
-
+    
+  // accept right-clicks
+  if (rcube_event.get_button(e) == 2)
+    return true;
+  
   this.in_selection_before = this.in_selection(id) ? id : false;
 
   // selects currently unselected row
@@ -228,6 +241,36 @@ drag_row: function(e, id)
     this.drag_mouse_start = rcube_event.get_mouse_pos(e);
     rcube_event.add_listener({element:document, event:'mousemove', object:this, method:'drag_mouse_move'});
     rcube_event.add_listener({element:document, event:'mouseup', object:this, method:'drag_mouse_up'});
+
+    // add listener for iframes
+    var iframes = document.getElementsByTagName('IFRAME');
+    this.iframe_events = Object();
+    for (var n in iframes)
+    {
+      var iframedoc = null;
+      if (iframes[n].contentDocument)
+        iframedoc = iframes[n].contentDocument;
+      else if (iframes[n].contentWindow)
+	iframedoc = iframes[n].contentWindow.document;
+      else if (iframes[n].document)
+        iframedoc = iframes[n].document;
+
+      if (iframedoc)
+      {
+	var list = this;
+	var pos = rcube_get_object_pos(document.getElementById(iframes[n].id));
+	this.iframe_events[n] = function(e) { e._offset = pos; return list.drag_mouse_move(e); }
+	
+	if (iframedoc.addEventListener)
+	  iframedoc.addEventListener('mousemove', this.iframe_events[n], false);
+	else if (iframes[n].attachEvent)
+	  iframedoc.attachEvent('onmousemove', this.iframe_events[n]);
+	else
+	  iframedoc['onmousemove'] = this.iframe_events[n];
+
+        rcube_event.add_listener({element:iframedoc, event:'mouseup', object:this, method:'drag_mouse_up'});
+      }
+    }								  
   }
 
   return false;
@@ -277,7 +320,7 @@ click_row: function(e, id)
 
 
 /**
- * get next and previous rows that are not hidden
+ * get next/previous/last rows that are not hidden
  */
 get_next_row: function()
 {
@@ -305,8 +348,24 @@ get_prev_row: function()
   return new_row;
 },
 
+get_last_row: function()
+{
+  if (this.rowcount)
+    {
+    var rows = this.list.tBodies[0].rows;
 
-// selects or unselects the proper row depending on the modifier key pressed
+    for(var i=rows.length-1; i>=0; i--)
+      if(rows[i].id && String(rows[i].id).match(/rcmrow([a-z0-9\-_=]+)/i) && this.rows[RegExp.$1] != null)
+	return RegExp.$1;
+    }
+
+  return null;
+},
+
+
+/**
+ * selects or unselects the proper row depending on the modifier key pressed
+ */
 select_row: function(id, mod_key, with_mouse)
 {
   var select_before = this.selection.join(',');
@@ -469,21 +528,36 @@ select_all: function(filter)
 
 
 /**
- * Unselect all selected rows
+ * Unselect selected row(s)
  */
-clear_selection: function()
+clear_selection: function(id)
 {
   var num_select = this.selection.length;
-  for (var n=0; n<this.selection.length; n++)
-    if (this.rows[this.selection[n]])
+
+  // one row
+  if (id)
     {
-      this.set_classname(this.rows[this.selection[n]].obj, 'selected', false);
-      this.set_classname(this.rows[this.selection[n]].obj, 'unfocused', false);
+    for (var n=0; n<this.selection.length; n++)
+      if (this.selection[n] == id)
+        {
+	this.selection.splice(n,1);
+    	break;
+	}
+    }
+  // all rows
+  else
+    {
+    for (var n=0; n<this.selection.length; n++)
+      if (this.rows[this.selection[n]])
+        {
+        this.set_classname(this.rows[this.selection[n]].obj, 'selected', false);
+        this.set_classname(this.rows[this.selection[n]].obj, 'unfocused', false);
+        }
+    
+    this.selection = new Array();
     }
 
-  this.selection = new Array();
-  
-  if (num_select)
+  if (num_select && !this.selection.length)
     this.trigger_event('select');
 },
 
@@ -548,24 +622,47 @@ highlight_row: function(id, multiple)
  */
 key_press: function(e)
 {
-  if (this.focused != true) 
+  if (this.focused != true)
     return true;
 
-  var keyCode = document.layers ? e.which : document.all ? event.keyCode : document.getElementById ? e.keyCode : 0;
+  var keyCode = rcube_event.get_keycode(e);
   var mod_key = rcube_event.get_modifier(e);
   switch (keyCode)
   {
     case 40:
     case 38: 
-	case 63233: // "down", in safari keypress
-	case 63232: // "up", in safari keypress
+    case 63233: // "down", in safari keypress
+    case 63232: // "up", in safari keypress
+      // Stop propagation so that the browser doesn't scroll
+      rcube_event.cancel(e);
       return this.use_arrow_key(keyCode, mod_key);
-      break;
-
     default:
       this.shiftkey = e.shiftKey;
       this.key_pressed = keyCode;
       this.trigger_event('keypress');
+      
+      if (this.key_pressed == this.BACKSPACE_KEY)
+        return rcube_event.cancel(e);
+  }
+  
+  return true;
+},
+
+/**
+ * Handler for keydown events
+ */
+key_down: function(e)
+{
+  switch (rcube_event.get_keycode(e))
+  {
+    case 40:
+    case 38: 
+    case 63233:
+    case 63232:
+      if (!rcube_event.get_modifier(e) && this.focused)
+        return rcube_event.cancel(e);
+        
+    default:
   }
   
   return true;
@@ -622,11 +719,12 @@ drag_mouse_move: function(e)
   {
     // check mouse movement, of less than 3 pixels, don't start dragging
     var m = rcube_event.get_mouse_pos(e);
+
     if (!this.drag_mouse_start || (Math.abs(m.x - this.drag_mouse_start.x) < 3 && Math.abs(m.y - this.drag_mouse_start.y) < 3))
       return false;
   
     if (!this.draglayer)
-      this.draglayer = new rcube_layer('rcmdraglayer', {x:0, y:0, width:300, vis:0, zindex:2000});
+      this.draglayer = new rcube_layer('rcmdraglayer', {x:0, y:0, vis:0, zindex:2000});
   
     // get subjects of selectedd messages
     var names = '';
@@ -672,6 +770,7 @@ drag_mouse_move: function(e)
   {
     var pos = rcube_event.get_mouse_pos(e);
     this.draglayer.move(pos.x+20, pos.y-5);
+    this.trigger_event('dragmove', e);
   }
 
   this.drag_start = false;
@@ -695,6 +794,30 @@ drag_mouse_up: function(e)
 
   rcube_event.remove_listener({element:document, event:'mousemove', object:this, method:'drag_mouse_move'});
   rcube_event.remove_listener({element:document, event:'mouseup', object:this, method:'drag_mouse_up'});
+
+  var iframes = document.getElementsByTagName('IFRAME');
+  for (var n in iframes) {
+    var iframedoc;
+    
+    if (iframes[n].contentDocument)
+      iframedoc = iframes[n].contentDocument;
+    else if (iframes[n].contentWindow)
+      iframedoc = iframes[n].contentWindow.document;
+    else if (iframes[n].document)
+      iframedoc = iframes[n].document;
+
+    if (iframedoc) {
+      if (this.iframe_events[n]) {
+	if (iframedoc.removeEventListener)
+	  iframedoc.removeEventListener('mousemove', this.iframe_events[n], false);
+	else if (iframedoc.detachEvent)
+	  iframedoc.detachEvent('onmousemove', this.iframe_events[n]);
+	else
+	  iframedoc['onmousemove'] = null;
+	}
+      rcube_event.remove_listener({element:iframedoc, event:'mouseup', object:this, method:'drag_mouse_up'});
+      }
+    }
 
   this.focus();
   
@@ -752,12 +875,12 @@ removeEventListener: function(evt, handle)
  * This will execute all registered event handlers
  * @private
  */
-trigger_event: function(evt)
+trigger_event: function(evt, p)
 {
   if (this.events[evt] && this.events[evt].length) {
     for (var i=0; i<this.events[evt].length; i++)
       if (typeof(this.events[evt][i]) == 'function')
-        this.events[evt][i](this);
+        this.events[evt][i](this, p);
   }
 }
 

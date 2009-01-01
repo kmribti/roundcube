@@ -1,6 +1,309 @@
 CHANGELOG RoundCube Webmail
 ---------------------------
 
+2008/12/30 (thomasb)
+----------
+- Fix mark popup in IE 7 (#1485369)
+- Fix line-break issue when copy & paste in Firefox (#1485425)
+
+2008/12/18 (thomasb)
+----------
+- Only abbreviate attachment file names in MSIE < 7
+- Fix autocomplete "unknown server error" (#1485637)
+- Optimize autocomplete search and output
+
+2008/12/18 (alec)
+----------
+- Fix STARTTLS before AUTH in SMTP connection (#1484883)
+- Support multiple quota values in QUOTAROOT resonse (#1485626)
+
+2008/12/16 (thomasb)
+----------
+- Only abbreviate file name for IE browsers (#1485063)
+
+2008/12/11 (alec)
+----------
+- Performance: allow setting imap rootdir and delimiter before connect (#1485172)
+
+2008/12/06 (alec)
+----------
+- Fix sorting of folders with more than 2 levels (#1485569)
+- Fix search results page jumps in LDAP addressbook (#1485253)
+- Fix empty line before the signature in IE (#1485351)
+- Fix horizontal scrollbar in preview pane on IE (#1484633)
+- Add Robots meta tag in login page and installer (#1484846)
+
+2008/12/04 (alec)
+----------
+- Added 'show_images' option, removed 'addrbook_show_images' (#1485597)
+- Performance fix: some mail actions do not require imap connection
+
+2008/11/28 (thomasb)
+----------
+- Option to check for new mails in all folders (#1484374)
+- Don't set client busy when checking for new messages (#1485276)
+
+2008/11/26 (alec)
+----------
+- Allow UTF-8 folder names in config (#1485579)
+- Add junk_mbox option configuration in installer (#1485579)
+
+2008/11/23 (thomasb)
+----------
+- Do serverside addressbook queries for autocompletion (#1485531)
+
+2008/11/23 (alec)
+----------
+- Allow setting attachment col position in 'list_cols' option
+- Allow override 'list_cols' via skin (#1485577)
+
+2008/11/21 (alec)
+----------
+- Fix 'cache' table cleanup on session destroy (#1485516)
+- Increase speed of session destroy and garbage clean up
+- Fix session timeout when DB server got clock skew (#1485490)
+
+2008/11/19 (alec)
+----------
+- Fix handling of some malformed messages (#1484438)
+- Speed up raw message body handling
+- Better HTML entities conversion in html2text (#1485519)
+
+2008/11/15 (alec)
+----------
+- Fix big memory consumption and speed up searching on servers without SORT capability
+- Fix setting locale to tr_TR, ku and az_AZ (#1485470) 
+
+2008/11/12 (alec)
+----------
+- Use SORT for searching on servers with SORT capability
+- Added message status filter
+
+2008/11/06 (alec)
+----------
+- Fix empty file sending (#1485389)
+- Improved searching with many criterias (calling one SEARCH command)
+
+2008/11/05 (alec)
+----------
+- Fix HTML editor initialization on IE (#1485304)
+
+2008/11/03 (alec)
+----------
+- Add warning when switching editor mode from html to plain (#1485488)
+- Make identities list scrollable (#1485538)
+
+2008/10/29 (alec)
+----------
+- Fix problem with numeric folder names (#1485527)
+- Added BYE response simple support to prevent from endless loops in imap.inc (#1483956)
+
+2008/10/27 (alec)
+----------
+- Fix unread message unintentionally marked as read if read_when_deleted=true (#1485409)
+- Remove port number from SERVER_NAME in smtp_helo_host (#1485518)
+
+2008/10/25 (alec)
+----------
+- Don't send disposition notification receipts for messages marked as 'read' (#1485523)
+- Added 'keep_alive' and 'min_keep_alive' options (#1485360)
+
+2008/10/24 (alec)
+----------
+- Added option 'identities_level', removed 'multiple_identities'
+- Allow deleting identities when multiple_identities=false (#1485435)
+
+2008/10/22 (alec)
+----------
+- Added option focus_on_new_message (#1485374)
+
+2008/10/18 (alec)
+----------
+- Fix html2text class autoloading on Windows (#1485505)
+- Fix html signature formatting when identity save error occured (#1485426)
+
+2008/10/15 (alec)
+----------
+- Add feedback and set busy when moving folder (#1485497)
+
+2008/10/10 (alec)
+----------
+- Fix 'Empty' link visibility for some languages e.g. Slovak (#1485489)
+- Fix messages count bar overlapping (#1485270)
+- Fix adding signature in drafts compose mode (#1485484)
+
+2008/10/09 (alec)
+----------
+- Fix iil_C_Sort() to support very long and/or divided responses (#1485283)
+- Fix matching case sensitivity when setting identity on reply (#1485480)
+- Prefer default identity on reply
+
+2008/10/08 (alec)
+----------
+- Fix imap searching on ISMail server (#1485466)
+- Add css class for flagged messages (#1485464)
+
+2008/10/07 (alec)
+----------
+- Write username instead of id in sendmail log (#1485477)
+- Fix htmlspecialchars() use for PHP version < 5.2.3 (#1485475)
+- Fix js keywords escaping in json_serialize() for IE/Opera (#1485472)
+- Added bin/killcache.php script (#1485434)
+
+2008/10/03 (alec)
+----------
+- Add support for SJIS, GB2312, BIG5 in rc_detect_encoding()
+- Fix vCard file encoding detection for non-UTF-8 strings (#1485410)
+- Add 'skip_deleted' option in User Preferences (#1485445)
+
+2008/10/02 (alec)
+----------
+- Minimize "inline" javascript scripts use (#1485433)
+- Fix css class setting for folders with names matching defined classes names (#1485355)
+- Fix race conditions when changing mailbox
+
+2008/10/01 (alec)
+- Fix spellchecking when switching to html editor (#1485362)
+- Fix compose window width/height (#1485396)
+- Allow calling msgimport.sh/msgexport.sh from any directory (#1485431)
+- Localized filesize units (#1485340)
+- Better handling of "no identity" and "no email in identity" situations (#1485117)
+
+2008/09/29 (alec)
+----------
+- Added 'mime_param_folding' option with possibility to choose 
+  long/non-ascii attachment names encoding eg. to be readable
+  in MS Outlook/OE (#1485320)
+- Added "advanced options" feature in User Preferences
+- Fix unread counter when displaying cached massage in preview panel (#1485290)
+- Fix htmleditor spellchecking on MS Windows (#1485397)
+
+2008/09/25 (alec)
+----------
+- Fix problem with non-ascii attachment names in Mail_mime (#1485267, #1485096)
+
+2008/09/23 (alec)
+----------
+- Fix language autodetection (#1485401)
+- Fix button label in folders management (#1485405)
+- Fix collapsed folder not indicating unread msgs count of all subfolders (#1485403)
+- Fix handling of apostrophes in filenames decoded according to rfc2231
+
+2008/09/19 (thomasb)
+----------
+- Made config files location configurable (#1485215)
+
+2008/09/16 (alec)
+----------
+- Reduced memory footprint when forwarding attachments (#1485345)
+- Fix inline images handling when replying/forwarding html messages
+- Allow and use spellcheck attribute for input/textarea fields (#1485060)
+- Added icons for forwarded/forwarded+replied messages (#1485257)
+- Added Reply-To to forwarded emails (#1485315)
+- Display progress message for folders create/delete/rename (#1485357)
+- Smart Tags and NOBR tag support in html messages (#1485363, #1485327)
+
+2008/09/15 (thomasb)
+----------
+- Redesign of the identities settings (#1484042)
+- Add config option to disable creation/deletion of identities (#1484498)
+
+2008/09/15 (alec)
+----------
+- Added 'sendmail_delay' option to restrict messages sending interval (#1484491)
+
+2008/09/12 (alec)
+----------
+- Added vertical splitter for folders list resizing
+- Added possibility to view all headers in message view
+- Fixed splitter drag/resize on Opera (#1485170)
+- Fixed quota img height/width setting from template (#1484857)
+
+2008/09/12 (thomasb)
+----------
+- Refactor drag & drop functionality. Don't rely on browser events anymore (#1484453)
+- Insert "virtual" folders in subscription list (#1484779)
+- Added link to open message in new window
+
+2008/09/05 (thomasb)
+----------
+- Enable export of address book contacts as vCard
+- Respect Content-Location headers in multipart/related messages according to RFC2110 (#1484946)
+- Applied mime_decode patch by David Lublink
+- Allowed max. attachment size now indicated in compose screen (#1485030)
+- Also capture backspace key in list mode (#1484566)
+- Allow application/pgp parts to be displayed (#1484753)
+- Correctly handle options in mailto-links (#1485228)
+- Immediately save sort_col/sort_order in user prefs (#1485265)
+
+2008/09/04 (alec)
+----------
+- Truncate very long (above 50 characters) attachment filenames when displaying
+- Support \" and \\ in quoted strings when parsing BODYSTRUCTURE (mime.inc)
+- Allow 'readonly' atributes in input and textarea (#1485312)
+
+2008/09/03 (thomasb)
+----------
+- Allow to auto-detect client language if none set (#1484434)
+- Auto-detect the client timezone (user configurable)
+
+2008/09/03 (alec)
+----------
+- Add RFC2231 header value continuations support for attachment
+  filenames + hack for servers that not support that feature
+- Fix Reply-To header displaying (#1485314)
+
+2008/09/02 (thomasb)
+----------
+- Add feature to import contacts from vcard files (#1326103)
+- Mark form buttons that provide the most obvious operation (mainaction)
+
+2008/08/30 (alec)
+----------
+- Improved HTML to TXT conversion by html2text class update
+  to version 1.0.0
+
+2008/08/28 (alec)
+----------
+- Added option 'quota_zero_as_unlimited' (#1484604)
+- Added PRE handling in html2text class (#1484740)
+
+2008/08/28 (robin)
+----------
+- Added folder hierarchy collapsing
+
+2008/08/27 (alec)
+----------
+- Added options to use syslog instead of log file (#1484850)
+- Added Logging & Debugging section in Installer
+- Write to smtp log also sent MDN confirmations
+
+2008/08/26 (alec)
+----------
+- Removed support for PEAR::DB driver
+
+2008/08/21 (alec)
+----------
+- Add Content-Length header while attachments downloading (#1484256)
+- Fix In-Reply-To and References headers when composing saved draft 
+  message (#1485288)
+- Removed PHP4 class constructors
+- Fix html message charset conversion for charsets with underline (#1485287) 
+- Fix buttons status after contacts deletion (#1485233)
+
+2008/08/21 (estadtherr)
+----------
+- Fix escaping of To: and From: fields when building message body for reply
+  or forward in the HTML editor (#1484904)
+
+2008/08/15 (thomasb)
+----------
+- Use current mailbox name in template (#1485256)
+- Better fix for skipping untagged responses (#1485261)
+- Added pspell support patch by Kris Steinhoff (#1483960)
+- Enable spellchecker for HTML editor (#1485114)
+- Respect spellcheck_uri in tinyMCE spellchecker (#1484196)
+
 2008/08/09 (alec)
 ----------
 - Case insensitive contacts searching using PostgreSQL (#1485259)

@@ -30,6 +30,8 @@ if (!defined('INSTALL_PATH')) {
   define('INSTALL_PATH', dirname($_SERVER['SCRIPT_FILENAME']).'/');
 }
 
+define('RCMAIL_CONFIG_DIR', INSTALL_PATH . 'config');
+
 // make sure path_separator is defined
 if (!defined('PATH_SEPARATOR')) {
   define('PATH_SEPARATOR', (eregi('win', PHP_OS) ? ';' : ':'));
@@ -50,8 +52,8 @@ if (set_include_path($include_path) === false) {
 
 ini_set('session.name', 'roundcube_sessid');
 ini_set('session.use_cookies', 1);
-ini_set('session.gc_maxlifetime', 21600);
-ini_set('session.gc_divisor', 500);
+ini_set('session.only_use_cookies', 1);
+ini_set('session.cookie_secure', ($_SERVER['HTTPS'] && ($_SERVER['HTTPS'] != 'off')));
 ini_set('error_reporting', E_ALL&~E_NOTICE);
 set_magic_quotes_runtime(0);
 
@@ -61,6 +63,11 @@ if (!ini_get('safe_mode')) {
   set_time_limit(120);
 }
 
+// set internal encoding for mbstring extension
+if(extension_loaded('mbstring'))
+  mb_internal_encoding(RCMAIL_CHARSET);
+	      
+
 /**
  * Use PHP5 autoload for dynamic class loading
  * 
@@ -69,8 +76,18 @@ if (!ini_get('safe_mode')) {
 function __autoload($classname)
 {
   $filename = preg_replace(
-      array('/MDB2_(.+)/', '/Mail_(.+)/', '/^html_.+/', '/^utf8$/'),
-      array('MDB2/\\1', 'Mail/\\1', 'html', 'utf8.class'),
+      array('/MDB2_(.+)/',
+    	    '/Mail_(.+)/',
+	    '/^html_.+/',
+	    '/^utf8$/',
+	    '/html2text/'
+	),
+      array('MDB2/\\1',
+    	    'Mail/\\1',
+	    'html',
+	    'utf8.class',
+	    'lib/html2text'	// see #1485505
+	),
       $classname
   );
   include_once $filename. '.php';

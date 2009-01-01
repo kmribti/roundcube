@@ -67,25 +67,31 @@ function raise_error($arg=array(), $log=false, $terminate=false)
 function log_bug($arg_arr)
 {
   global $CONFIG;
-  $program = $arg_arr['type']=='xpath' ? 'XPath' : strtoupper($arg_arr['type']);
+  $program = strtoupper($arg_arr['type']);
 
   // write error to local log file
   if ($CONFIG['debug_level'] & 1)
   {
-    $log_entry = sprintf(
-      "[%s] %s Error: %s in %s on line %d\n",
+    $post_query = ($_SERVER['REQUEST_METHOD'] == 'POST' ? '?_task='.urlencode($_POST['_task']).'&_action='.urlencode($_POST['_action']) : '');
+    $log_entry = sprintf("[%s] %s Error: %s%s (%s %s)\n",
       date("d-M-Y H:i:s O", mktime()),
       $program,
       $arg_arr['message'],
-      $arg_arr['file'],
-      $arg_arr['line']);
-                 
+      $arg_arr['file'] ? sprintf(' in %s on line %d', $arg_arr['file'], $arg_arr['line']) : '',
+      $_SERVER['REQUEST_METHOD'],
+      $_SERVER['REQUEST_URI'] . $post_query);
+      
     if (empty($CONFIG['log_dir']))
       $CONFIG['log_dir'] = INSTALL_PATH.'logs';
       
     // try to open specific log file for writing
-    if ($fp = @fopen($CONFIG['log_dir'].'/errors', 'a'))
+    if ($CONFIG['log_driver'] == 'syslog')
     {
+      syslog(LOG_ERR, $log_entry);
+    }
+    else if ($fp = @fopen($CONFIG['log_dir'].'/errors', 'a'))
+    {
+      // log_driver == 'file' is the default, assumed here.
       fwrite($fp, $log_entry);
       fclose($fp);
     }

@@ -62,22 +62,14 @@ class rcube_ldap
     $this->connect();
   }
 
-  /**
-   * PHP 4 object constructor
-   *
-   * @see  rcube_ldap::__construct()
-   */
-  function rcube_ldap($p)
-  {
-    $this->__construct($p);
-  }
-  
 
   /**
    * Establish a connection to the LDAP server
    */
   function connect()
   {
+    global $RCMAIL;
+    
     if (!function_exists('ldap_connect'))
       raise_error(array('type' => 'ldap', 'message' => "No ldap support in this installation of PHP"), true);
 
@@ -94,9 +86,9 @@ class rcube_ldap
     {
       if ($lc = @ldap_connect($host, $this->prop['port']))
       {
-	if ($this->prop['use_tls']===true)
-	  if (!ldap_start_tls($lc))
-	    continue;
+        if ($this->prop['use_tls']===true)
+          if (!ldap_start_tls($lc))
+            continue;
 
         ldap_set_option($lc, LDAP_OPT_PROTOCOL_VERSION, $this->prop['ldap_version']);
         $this->prop['host'] = $host;
@@ -109,43 +101,24 @@ class rcube_ldap
     {
       $this->ready = true;
 
+      // User specific access, generate the proper values to use.
       if ($this->prop["user_specific"]) {
-        // User specific access, generate the proper values to use.
-        global $CONFIG, $RCMAIL;
+        // No password set, use the session password
         if (empty($this->prop['bind_pass'])) {
-          // No password set, use the users.
           $this->prop['bind_pass'] = $RCMAIL->decrypt_passwd($_SESSION["password"]);
-        } // end if
+        }
 
         // Get the pieces needed for variable replacement.
-        // See if the logged in username has an "@" in it.
-        if (is_bool(strstr($_SESSION["username"], "@"))) {
-          // It does not, use the global default.
-          $fu = $_SESSION["username"]."@".$CONFIG["username_domain"];
-          $u = $_SESSION["username"];
-          $d = $CONFIG["username_domain"];
-        } // end if
-        else {
-          // It does.
-          $fu = $_SESSION["username"];
-          // Get the pieces needed for username and domain.
-          list($u, $d) = explode("@", $_SESSION["username"]);
-        } # end else
-
-        // Replace the bind_dn variables.
-        $bind_dn = str_replace(array("%fu", "%u", "%d"),
-                               array($fu, $u, $d),
-                               $this->prop['bind_dn']);
-        $this->prop['bind_dn'] = $bind_dn;
-        // Replace the base_dn variables.
-        $base_dn = str_replace(array("%fu", "%u", "%d"),
-                               array($fu, $u, $d),
-                               $this->prop['base_dn']);
-        $this->prop['base_dn'] = $base_dn;
-
-        $this->ready = $this->bind($this->prop['bind_dn'], $this->prop['bind_pass']);
-      } // end if
-      elseif (!empty($this->prop['bind_dn']) && !empty($this->prop['bind_pass']))
+        $fu = $RCMAIL->user->get_username();
+        list($u, $d) = explode('@', $fu);
+        
+        // Replace the bind_dn and base_dn variables.
+        $replaces = array('%fu' => $fu, '%u' => $u, '%d' => $d);
+        $this->prop['bind_dn'] = strtr($this->prop['bind_dn'], $replaces);
+        $this->prop['base_dn'] = strtr($this->prop['base_dn'], $replaces);
+      }
+      
+      if (!empty($this->prop['bind_dn']) && !empty($this->prop['bind_pass']))
         $this->ready = $this->bind($this->prop['bind_dn'], $this->prop['bind_pass']);
     }
     else
@@ -172,7 +145,7 @@ class rcube_ldap
       return false;
     }
     
-    if (ldap_bind($this->conn, $dn, $pass)) {
+    if (@ldap_bind($this->conn, $dn, $pass)) {
       return true;
     }
 
@@ -266,7 +239,7 @@ class rcube_ldap
   function list_records($cols=null, $subset=0)
   {
     // add general filter to query
-    if (!empty($this->prop['filter']))
+    if (!empty($this->prop['filter']) && empty($this->filter))
     {
       $filter = $this->prop['filter'];
       $this->set_search_set($filter);
@@ -570,7 +543,7 @@ class rcube_ldap
    */
   function _exec_search()
   {
-    if ($this->conn && $this->filter)
+    if ($this->ready && $this->filter)
     {
       $function = $this->prop['scope'] == 'sub' ? 'ldap_search' : ($this->prop['scope'] == 'base' ? 'ldap_read' : 'ldap_list');
       $this->ldap_result = $function($this->conn, $this->prop['base_dn'], $this->filter, array_values($this->fieldmap), 0, 0);

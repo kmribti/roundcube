@@ -15,7 +15,7 @@
  | Author: Thomas Bruederli <roundcube@gmail.com>                        |
  +-----------------------------------------------------------------------+
 
- $Id: rcube_browser.php 328 2006-08-30 17:41:21Z thomasb $
+ $Id: rcmail.php 328 2006-08-30 17:41:21Z thomasb $
 
 */
 
@@ -37,7 +37,6 @@ class rcmail
   public $db;
   public $imap;
   public $output;
-  public $plugins;
   public $task = 'mail';
   public $action = '';
   public $comm_path = './';
@@ -48,7 +47,7 @@ class rcmail
   /**
    * This implements the 'singleton' design pattern
    *
-   * @return object rcmail The one and only instance
+   * @return object qvert The one and only instance
    */
   static function get_instance()
   {
@@ -83,6 +82,13 @@ class rcmail
   {
     $config_all = $this->config->all();
 
+    // initialize syslog
+    if ($this->config->get('log_driver') == 'syslog') {
+      $syslog_id = $this->config->get('syslog_id', 'roundcube');
+      $syslog_facility = $this->config->get('syslog_facility', LOG_USER);
+      openlog($syslog_id, LOG_ODELAY, $syslog_facility);
+    }
+    				
     // set task and action properties
     $this->set_task(strip_quotes(get_input_value('_task', RCUBE_INPUT_GPC)));
     $this->action = asciiwords(get_input_value('_action', RCUBE_INPUT_GPC));
@@ -112,7 +118,6 @@ class rcmail
       $_SESSION['temp'] = true;
     }
 
-
     // create user object
     $this->set_user(new rcube_user($_SESSION['user_id']));
 
@@ -126,9 +131,6 @@ class rcmail
     // create IMAP object
     if ($this->task == 'mail')
       $this->imap_init();
-      
-    // create plugin API and load plugins
-    $this->plugins = rcube_plugin_api::get_instance();
   }
   
   
@@ -165,10 +167,14 @@ class rcmail
       $this->config->merge((array)$this->user->get_prefs());
     }
     
-    $_SESSION['language'] = $this->user->language = $this->language_prop($this->config->get('language'));
+    $_SESSION['language'] = $this->user->language = $this->language_prop($this->config->get('language', $_SESSION['language']));
 
     // set localization
-    setlocale(LC_ALL, $_SESSION['language'] . '.utf8');
+    setlocale(LC_ALL, $_SESSION['language'] . '.utf8', 'en_US.utf8');
+
+    // workaround for http://bugs.php.net/bug.php?id=18556 
+    if (in_array($_SESSION['language'], array('tr_TR', 'ku', 'az_AZ'))) 
+      setlocale(LC_CTYPE, 'en_US' . '.utf8'); 
   }
   
   
@@ -181,7 +187,13 @@ class rcmail
   private function language_prop($lang)
   {
     static $rcube_languages, $rcube_language_aliases;
-
+    
+    // user HTTP_ACCEPT_LANGUAGE if no language is specified
+    if (empty($lang) || $lang == 'auto') {
+       $accept_langs = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+       $lang = str_replace('-', '_', $accept_langs[0]);
+     }
+     
     if (empty($rcube_languages)) {
       @include(INSTALL_PATH . 'program/localization/index.inc');
     }
@@ -215,21 +227,52 @@ class rcmail
   /**
    * Get the current database connection
    *
-   * @return object rcube_db  Database connection object
+   * @return object rcube_mdb2  Database connection object
    */
   public function get_dbh()
   {
     if (!$this->db) {
-      $dbclass = "rcube_" . $this->config->get('db_backend', 'mdb2');
       $config_all = $this->config->all();
 
-      $this->db = new $dbclass($config_all['db_dsnw'], $config_all['db_dsnr'], $config_all['db_persistent']);
+      $this->db = new rcube_mdb2($config_all['db_dsnw'], $config_all['db_dsnr'], $config_all['db_persistent']);
       $this->db->sqlite_initials = INSTALL_PATH . 'SQL/sqlite.initial.sql';
       $this->db->set_debug((bool)$config_all['sql_debug']);
       $this->db->db_connect('w');
     }
 
     return $this->db;
+  }
+  
+  
+  /**
+   * Return instance of the internal address book class
+   *
+   * @param boolean True if the address book needs to be writeable
+   * @return object rcube_contacts Address book object
+   */
+  public function get_address_book($id, $writeable = false)
+  {
+    $contacts = null;
+    $ldap_config = (array)$this->config->get('ldap_public');
+    $abook_type = strtolower($this->config->get('address_book_type'));
+    
+    if ($id && $ldap_config[$id]) {
+      $contacts = new rcube_ldap($ldap_config[$id]);
+    }
+    else if ($abook_type == 'ldap') {
+      // Use the first writable LDAP address book.
+      foreach ($ldap_config as $id => $prop) {
+        if (!$writeable || $prop['writable']) {
+          $contacts = new rcube_ldap($prop);
+          break;
+        }
+      }
+    }
+    else {
+      $contacts = new rcube_contacts($this->db, $this->user->ID);
+    }
+    
+    return $contacts;
   }
   
   
@@ -249,6 +292,14 @@ class rcmail
 
     foreach (array('flag_for_deletion','read_when_deleted') as $js_config_var) {
       $this->output->set_env($js_config_var, $this->config->get($js_config_var));
+    }
+    
+    // set keep-alive/check-recent interval
+    if ($keep_alive = $this->config->get('keep_alive')) {
+      // be sure that it's less than session lifetime
+      if ($session_lifetime = $this->config->get('session_lifetime'))
+        $keep_alive = min($keep_alive, $session_lifetime * 60 - 30);
+      $this->output->set_env('keep_alive', max(60, $keep_alive));
     }
 
     if ($framed) {
@@ -301,6 +352,20 @@ class rcmail
 
     // set pagesize from config
     $this->imap->set_pagesize($this->config->get('pagesize', 50));
+    
+    // Setting root and delimiter before iil_Connect can save time detecting them
+    // using NAMESPACE and LIST 
+    $options = array(
+      'imap' => $this->config->get('imap_auth_type', 'check'),
+      'delimiter' => isset($_SESSION['imap_delimiter']) ? $_SESSION['imap_delimiter'] : $this->config->get('imap_delimiter'),
+    );
+    
+    if (isset($_SESSION['imap_root']))
+      $options['rootdir'] = $_SESSION['imap_root'];
+    else if ($imap_root = $this->config->get('imap_root'))
+      $options['rootdir'] = $imap_root;
+    
+    $this->imap->set_options($options);
   
     // set global object for backward compatibility
     $GLOBALS['IMAP'] = $this->imap;
@@ -320,7 +385,7 @@ class rcmail
     $conn = false;
     
     if ($_SESSION['imap_host'] && !$this->imap->conn) {
-      if (!($conn = $this->imap->connect($_SESSION['imap_host'], $_SESSION['username'], $this->decrypt_passwd($_SESSION['password']), $_SESSION['imap_port'], $_SESSION['imap_ssl'], rcmail::get_instance()->config->get('imap_auth_type', 'check')))) {
+      if (!($conn = $this->imap->connect($_SESSION['imap_host'], $_SESSION['username'], $this->decrypt_passwd($_SESSION['password']), $_SESSION['imap_port'], $_SESSION['imap_ssl']))) {
         if ($this->output)
           $this->output->show_message($this->imap->error_code == -1 ? 'imaperror' : 'sessionerror', 'error');
       }
@@ -394,14 +459,14 @@ class rcmail
 
     // lowercase username if it's an e-mail address (#1484473)
     if (strpos($username, '@'))
-      $username = strtolower($username);
+      $username = rc_strtolower($username);
 
     // user already registered -> overwrite username
     if ($user = rcube_user::query($username, $host))
       $username = $user->data['username'];
 
     // exit if IMAP login failed
-    if (!($imap_login  = $this->imap->connect($host, $username, $pass, $imap_port, $imap_ssl, $config['imap_auth_type'])))
+    if (!($imap_login  = $this->imap->connect($host, $username, $pass, $imap_port, $imap_ssl)))
       return false;
 
     // user already registered -> update user's record
@@ -421,7 +486,7 @@ class rcmail
       raise_error(array(
         'code' => 600,
         'type' => 'php',
-        'file' => "config/main.inc.php",
+        'file' => RCMAIL_CONFIG_DIR."/main.inc.php",
         'message' => "Acces denied for new user $username. 'auto_create_user' is disabled"
         ), true, false);
     }
@@ -438,6 +503,9 @@ class rcmail
       $_SESSION['imap_ssl']  = $imap_ssl;
       $_SESSION['password']  = $this->encrypt_passwd($pass);
       $_SESSION['login_time'] = mktime();
+      
+      if ($_REQUEST['_timezone'] != '_default_')
+        $_SESSION['timezone'] = floatval($_REQUEST['_timezone']);
 
       // force reloading complete list of subscribed mailboxes
       $this->set_imap_prop();
@@ -461,10 +529,6 @@ class rcmail
   {
     $this->imap->set_charset($this->config->get('default_charset', RCMAIL_CHARSET));
 
-    // set root dir from config
-    if ($imap_root = $this->config->get('imap_root')) {
-      $this->imap->set_rootdir($imap_root);
-    }
     if ($default_folders = $this->config->get('default_imap_folders')) {
       $this->imap->set_default_mailboxes($default_folders);
     }
@@ -474,6 +538,10 @@ class rcmail
     if (isset($_SESSION['page'])) {
       $this->imap->set_page($_SESSION['page']);
     }
+    
+    // cache IMAP root and delimiter in session for performance reasons
+    $_SESSION['imap_root'] = $this->imap->root_dir;
+    $_SESSION['imap_delimiter'] = $this->imap->delimiter;
   }
 
 
@@ -608,7 +676,7 @@ class rcmail
    */
   public function load_language($lang = null)
   {
-    $lang = $lang ? $this->language_prop($lang) : $_SESSION['language'];
+    $lang = $this->language_prop(($lang ? $lang : $_SESSION['language']));
     
     // load localized texts
     if (empty($this->texts) || $lang != $_SESSION['language']) {
@@ -686,7 +754,7 @@ class rcmail
       if (!$valid || ($_SERVER['REQUEST_METHOD']!='POST' && $now - $_SESSION['auth_time'] > 300)) {
         $_SESSION['last_auth'] = $_SESSION['auth_time'];
         $_SESSION['auth_time'] = $now;
-        setcookie('sessauth', $this->get_auth_hash(session_id(), $now));
+        rcmail::setcookie('sessauth', $this->get_auth_hash(session_id(), $now), 0);
       }
     }
     else {
@@ -708,15 +776,8 @@ class rcmail
    */
   public function kill_session()
   {
-    $user_prefs = $this->user->get_prefs();
-    
-    if ((isset($_SESSION['sort_col']) && $_SESSION['sort_col'] != $user_prefs['message_sort_col']) ||
-        (isset($_SESSION['sort_order']) && $_SESSION['sort_order'] != $user_prefs['message_sort_order'])) {
-      $this->user->save_prefs(array('message_sort_col' => $_SESSION['sort_col'], 'message_sort_order' => $_SESSION['sort_order']));
-    }
-
-    $_SESSION = array('language' => $USER->language, 'auth_time' => time(), 'temp' => true);
-    setcookie('sessauth', '-del-', time() - 60);
+    $_SESSION = array('language' => $this->user->language, 'auth_time' => time(), 'temp' => true);
+    rcmail::setcookie('sessauth', '-del-', time() - 60);
     $this->user->reset();
   }
 
@@ -856,18 +917,38 @@ class rcmail
   {
     if (!is_array($p))
       $p = array('_action' => @func_get_arg(0));
-    
-    if ($p['task'] && in_array($p['task'], rcmail::$main_tasks))
-      $url = './?_task='.$p['task'];
-    else
-      $url = $this->comm_path;
-    
+
+    if (!$p['task'] || !in_array($p['task'], rcmail::$main_tasks))
+      $p['task'] = $this->task;
+
+    $p['_task'] = $p['task'];
     unset($p['task']);
-    foreach ($p as $par => $val)
-      if (isset($val))
-        $url .= '&'.urlencode($par).'='.urlencode($val);
-    
+
+    $url = './';
+    $delm = '?';
+    foreach (array_reverse($p) as $par => $val)
+    {
+      if (!empty($val)) {
+        $url .= $delm.urlencode($par).'='.urlencode($val);
+        $delm = '&';
+      }
+    }
     return $url;
+  }
+
+
+  /**
+   * Helper method to set a cookie with the current path and host settings
+   *
+   * @param string Cookie name
+   * @param string Cookie value
+   * @param string Expiration time
+   */
+  public static function setcookie($name, $value, $exp = 0)
+  {
+    $cookie = session_get_cookie_params();
+    setcookie($name, $value, $exp, $cookie['path'], $cookie['domain'],
+      ($_SERVER['HTTPS'] && ($_SERVER['HTTPS'] != 'off')));
   }
 }
 

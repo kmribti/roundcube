@@ -51,13 +51,13 @@ class rcube_config
     ob_start();
     
     // load main config file
-    if (include(INSTALL_PATH . 'config/main.inc.php'))
+    if (include(RCMAIL_CONFIG_DIR . '/main.inc.php'))
       $this->prop = (array)$rcmail_config;
     else
       $this->errors[] = 'main.inc.php was not found.';
 
     // load database config
-    if (include(INSTALL_PATH . 'config/db.inc.php'))
+    if (include(RCMAIL_CONFIG_DIR . '/db.inc.php'))
       $this->prop += (array)$rcmail_config;
     else
       $this->errors[] = 'db.inc.php was not found.';
@@ -74,16 +74,24 @@ class rcube_config
     // fix paths
     $this->prop['log_dir'] = $this->prop['log_dir'] ? unslashify($this->prop['log_dir']) : INSTALL_PATH . 'logs';
     $this->prop['temp_dir'] = $this->prop['temp_dir'] ? unslashify($this->prop['temp_dir']) : INSTALL_PATH . 'temp';
-    $this->prop['plugins_dir'] = $this->prop['plugins_dir'] ? unslashify($this->prop['plugins_dir']) : INSTALL_PATH . 'plugins';
-    
-    // handle aliases
-    if (isset($this->prop['locale_string']) && empty($this->prop['language']))
-      $this->prop['language'] = $this->prop['locale_string'];
+
+    // fix default imap folders encoding
+    foreach (array('drafts_mbox', 'junk_mbox', 'sent_mbox', 'trash_mbox') as $folder)
+      $this->prop[$folder] = rcube_charset_convert($this->prop[$folder], RCMAIL_CHARSET, 'UTF-7');
+
+    if (!empty($this->prop['default_imap_folders']))
+      foreach ($this->prop['default_imap_folders'] as $n => $folder)
+        $this->prop['default_imap_folders'][$n] = rcube_charset_convert($folder, RCMAIL_CHARSET, 'UTF-7');
 
     // set PHP error logging according to config
     if ($this->prop['debug_level'] & 1) {
       ini_set('log_errors', 1);
-      ini_set('error_log', $this->prop['log_dir'] . '/errors');
+
+      if ($this->prop['log_driver'] == 'syslog') {
+        ini_set('error_log', 'syslog');
+      } else {
+        ini_set('error_log', $this->prop['log_dir'].'/errors');
+      }
     }
     if ($this->prop['debug_level'] & 4) {
       ini_set('display_errors', 1);
@@ -115,8 +123,8 @@ class rcube_config
       $fname = preg_replace('/[^a-z0-9\.\-_]/i', '', $_SERVER['HTTP_HOST']) . '.inc.php';
     }
 
-    if ($fname && is_file(INSTALL_PATH . 'config/' . $fname)) {
-      include(INSTALL_PATH . 'config/' . $fname);
+    if ($fname && is_file(RCMAIL_CONFIG_DIR . '/' . $fname)) {
+      include(RCMAIL_CONFIG_DIR . '/' . $fname);
       $this->prop = array_merge($this->prop, (array)$rcmail_config);
     }
   }

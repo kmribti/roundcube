@@ -3,7 +3,7 @@
 /*
 
 +-----------------------------------------------------------------------+
-| language/nn_NO/labels.inc                                                |
+| language/nn_NO/labels.inc                                             |
 |                                                                       |
 | Language file of the RoundCube Webmail client                         |
 | Copyright (C) 2005-2008, RoundCube Dev. - Switzerland                 |
@@ -53,7 +53,6 @@ $labels['filename'] = 'Filnamn';
 $labels['filesize'] = 'Filstorleik';
 $labels['preferhtml'] = 'Føretrekk HTML';
 $labels['htmlmessage'] = 'HTML-melding';
-$labels['showknownimages'] = 'Vis bilete frå kjende sendarar';
 $labels['prettydate'] = 'Pene datoar';
 $labels['addtoaddressbook'] = 'Legg til i adressebok';
 $labels['sun'] = 'Sun';
@@ -116,6 +115,8 @@ $labels['viewsource'] = 'Vis kjelde';
 $labels['markmessages'] = 'Marker meldingar';
 $labels['markread'] = 'Som lese';
 $labels['markunread'] = 'Som ulese';
+$labels['markflagged'] = 'Som flagga';
+$labels['markunflagged'] = 'Som uflagga';
 $labels['select'] = 'Vel';
 $labels['all'] = 'Alle';
 $labels['none'] = 'Ingen';
@@ -128,6 +129,7 @@ $labels['unknown'] = 'ukjend';
 $labels['unlimited'] = 'ubegrensa';
 $labels['quicksearch'] = 'Snøggsøk';
 $labels['resetsearch'] = 'Tilbakestill søk';
+$labels['openinextwin'] = 'Opna i nytt vindauga';
 $labels['compose'] = 'Skriv ei melding';
 $labels['savemessage'] = 'Lagra kladd';
 $labels['sendmessage'] = 'Send meldinga no';
@@ -151,6 +153,9 @@ $labels['showimages'] = 'Vis bilete';
 $labels['alwaysshow'] = 'Alltid vis bilete frå $sender';
 $labels['htmltoggle'] = 'HTML';
 $labels['plaintoggle'] = 'Vanleg tekst';
+$labels['savesentmessagein'] = 'Lagra sendt epost i';
+$labels['dontsave'] = 'Ikkje lagra';
+$labels['maxuploadsize'] = 'Maksimalt tillatte storleik på filar er $size';
 $labels['addcc'] = 'Legg til kopi';
 $labels['addbcc'] = 'Legg til blindkopi';
 $labels['addreplyto'] = 'Legg til svaradressa';
@@ -174,12 +179,19 @@ $labels['composeto'] = 'Ny melding til';
 $labels['contactsfromto'] = 'Kontaktar $from til $to av $count';
 $labels['print'] = 'Skriv ut';
 $labels['export'] = 'Eksport';
+$labels['exportvcards'] = 'Eksporter kontaktar i vCard-format';
 $labels['previouspage'] = 'Førre side';
 $labels['firstpage'] = 'Fyrste side';
 $labels['nextpage'] = 'Neste side';
 $labels['lastpage'] = 'Siste side';
 $labels['groups'] = 'Gruppar';
 $labels['personaladrbook'] = 'Personlege adresser';
+$labels['import'] = 'Importer';
+$labels['importcontacts'] = 'Importer kontaktar';
+$labels['importfromfile'] = 'Importer frå fil:';
+$labels['importreplace'] = 'Byt ut heile adresseboka';
+$labels['importtext'] = 'Du kan lasta opp kontaktar frå ei eksisterande adressebok.Me stør innlasting frå vCard-formatet.';
+$labels['done'] = 'Ferdig';
 $labels['settingsfor'] = 'Innstillingar for';
 $labels['preferences'] = 'Innstillingar';
 $labels['userpreferences'] = 'Brukarinnstillingar';
@@ -190,6 +202,7 @@ $labels['newidentity'] = 'Ny identitet';
 $labels['newitem'] = 'Nytt element';
 $labels['edititem'] = 'Redigere element';
 $labels['setdefault'] = 'Set som standard';
+$labels['autodetect'] = 'Automatisk';
 $labels['language'] = 'Språk';
 $labels['timezone'] = 'Tidssone';
 $labels['pagesize'] = 'Rader pr side';
@@ -198,11 +211,13 @@ $labels['dstactive'] = 'Sumartid';
 $labels['htmleditor'] = 'Lag HTML-meldingar';
 $labels['htmlsignature'] = 'HTML-signatur';
 $labels['previewpane'] = 'Vis førehandsvisningsboks';
+$labels['skin'] = 'Bunad';
 $labels['logoutclear'] = 'Fjern alt i «sletta element» ved utlogging';
 $labels['logoutcompact'] = 'Samanpress innboks ved utlogging';
 $labels['uisettings'] = 'Brukargrensesnitt';
 $labels['serversettings'] = 'Tenarinstillingar';
 $labels['mailboxview'] = 'Epostboksvisning';
+$labels['mdnrequests'] = 'Sender-notifisering';
 $labels['askuser'] = 'spør brukaren';
 $labels['autosend'] = 'send automatisk';
 $labels['ignore'] = 'ignorer';
@@ -225,6 +240,7 @@ $labels['rename'] = 'Gje nytt namn';
 $labels['renamefolder'] = 'Gje nytt namn til mappe';
 $labels['deletefolder'] = 'Slett mappe';
 $labels['managefolders'] = 'Mappehandsaming';
+$labels['specialfolders'] = 'Spesialmapper';
 $labels['sortby'] = 'Sorter etter';
 $labels['sortasc'] = 'Sorter stigande';
 $labels['sortdesc'] = 'Sorter søkkjande';

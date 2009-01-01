@@ -33,7 +33,7 @@ class html
     protected $content;
 
     public static $common_attrib = array('id','class','style','title','align');
-    public static $containers = array('div','span','p','h1','h2','h3','form','textarea','table','tr','th','td');
+    public static $containers = array('iframe','div','span','p','h1','h2','h3','form','textarea','table','tr','th','td','style');
     public static $lc_tags = true;
 
     /**
@@ -98,7 +98,7 @@ class html
         if (is_string($attr)) {
             $attr = array('class' => $attr);
         }
-        return self::tag('div', $attr, $cont, self::$common_attrib);
+        return self::tag('div', $attr, $cont, array_merge(self::$common_attrib, array('onclick')));
     }
 
     /**
@@ -181,6 +181,21 @@ class html
     }
 
     /**
+     * Derrived method to create <iframe></iframe>
+     *
+     * @param mixed Hash array with tag attributes or string with frame source (src)
+     * @return string HTML code
+     * @see html::tag()
+     */
+    public static function iframe($attr = null, $cont = null)
+    {
+        if (is_string($attr)) {
+            $attr = array('src' => $attr);
+        }
+        return self::tag('iframe', $attr, $cont, array_merge(self::$common_attrib, array('src','name','width','height','border','frameborder')));
+    }
+
+    /**
      * Derrived method for line breaks
      *
      * @return string HTML code
@@ -248,7 +263,7 @@ class html_inputfield extends html
 {
     protected $tagname = 'input';
     protected $type = 'text';
-    protected $allowed = array('type','name','value','size','tabindex','autocomplete','checked','onchange','onclick','disabled');
+    protected $allowed = array('type','name','value','size','tabindex','autocomplete','checked','onchange','onclick','disabled','readonly','spellcheck','results');
 
     public function __construct($attrib = array())
     {
@@ -416,7 +431,7 @@ class html_checkbox extends html_inputfield
 class html_textarea extends html
 {
     protected $tagname = 'textarea';
-    protected $allowed = array('name','rows','cols','wrap','tabindex','onchange','disabled');
+    protected $allowed = array('name','rows','cols','wrap','tabindex','onchange','disabled','readonly','spellcheck');
 
     /**
      * Get HTML code for this object
@@ -576,7 +591,7 @@ class html_table extends html
     public function add_header($attr, $cont)
     {
         if (is_string($attr))
-        $attr = array('class' => $attr);
+    	    $attr = array('class' => $attr);
 
         $cell = new stdClass;
         $cell->attrib = $attr;
@@ -598,6 +613,18 @@ class html_table extends html
         $this->rows[$this->rowindex]->cells = array();
     }
 
+    /**
+     * Set current row attrib
+     *
+     * @param array Row attributes
+     */
+    public function set_row_attribs($attr = array())
+    {
+        if (is_string($attr))
+    	    $attr = array('class' => $attr);
+
+        $this->rows[$this->rowindex]->attrib = $attr;
+    }
 
     /**
      * Build HTML output of the table data
@@ -641,6 +668,16 @@ class html_table extends html
 
         unset($this->attrib['cols'], $this->attrib['rowsonly']);
         return parent::show();
+    }
+    
+    /**
+     * Count number of rows
+     *
+     * @return The number of rows
+     */
+    public function size()
+    {
+      return count($this->rows);
     }
 }
 

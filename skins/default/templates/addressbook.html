@@ -5,6 +5,27 @@
 <roundcube:include file="/includes/links.html" />
 <link rel="stylesheet" type="text/css" href="/addresses.css" />
 <script type="text/javascript" src="/splitter.js"></script>
+
+<style type="text/css">
+<roundcube:if condition="config:ldap_public == false" />
+#abookcountbar { left: 20px;}
+#mainscreen { left:20px; /* IE hack */ width:expression((parseInt(document.documentElement.clientWidth)-40)+'px') }
+#addresslist { width: <roundcube:exp expression="!empty(cookie:addressviewsplitter) ? cookie:addressviewsplitter-5 : 245" />px; }
+#contacts-box {
+    left: <roundcube:exp expression="!empty(cookie:addressviewsplitter) ? cookie:addressviewsplitter+5 : 255" />px;
+    /* IE hack */
+    width:expression((parseInt(mainscreen.offsetWidth)-<roundcube:exp expression="!empty(cookie:addressviewsplitter) ? cookie:addressviewsplitter+5 : 255" />)+'px')
+}
+<roundcube:else />
+#addresslist { width: <roundcube:exp expression="!empty(cookie:addressviewsplitter) ? cookie:addressviewsplitter-5 : 245" />px; }
+#contacts-box {
+    left: <roundcube:exp expression="!empty(cookie:addressviewsplitter) ? cookie:addressviewsplitter+5 : 255" />px;
+    /* IE hack */
+    width:expression((parseInt(mainscreen.offsetWidth)-<roundcube:exp expression="!empty(cookie:addressviewsplitter) ? cookie:addressviewsplitter+5 : 255" />)+'px')
+}
+<roundcube:endif />
+</style>
+
 </head>
 <body>
 
@@ -15,8 +36,8 @@
 <roundcube:button command="add" imageSel="/images/buttons/add_contact_sel.png" imageAct="/images/buttons/add_contact_act.png" imagePas="/images/buttons/add_contact_pas.png" width="32" height="32" title="newcontact" />
 <roundcube:button command="delete" imageSel="/images/buttons/delete_sel.png" imageAct="/images/buttons/delete_act.png" imagePas="/images/buttons/delete_pas.png" width="32" height="32" title="deletecontact" />
 <roundcube:button command="compose" imageSel="/images/buttons/compose_sel.png" imageAct="/images/buttons/compose_act.png" imagePas="/images/buttons/compose_pas.png" width="32" height="32" title="composeto" />
-<roundcube:button command="print" imageSel="/images/buttons/print_sel.png" imageAct="/images/buttons/print_act.png" imagePas="/images/buttons/print_pas.png" width="32" height="32" title="print" />
-<roundcube:button command="export" imageSel="/images/buttons/download_sel.png" imageAct="/images/buttons/download_act.png" imagePas="/images/buttons/download_pas.png" width="32" height="32" title="export" />
+<roundcube:button command="import" imageSel="/images/buttons/adr_import_sel.png" imageAct="/images/buttons/adr_import_act.png" imagePas="/images/buttons/adr_import_pas.png" width="32" height="32" title="importcontacts" />
+<roundcube:button command="export" imageSel="/images/buttons/download_sel.png" imageAct="/images/buttons/download_act.png" imagePas="/images/buttons/download_pas.png" width="32" height="32" title="exportvcards" />
 </div>
 
 <div id="quicksearchbar">
@@ -28,27 +49,23 @@
 <div id="groups-title"><roundcube:label name="groups" /></div>
 <roundcube:object name="directorylist" id="directories-list" />
 </div>
-
-<roundcube:else />
-<style type="text/css">
-#addresslist { left:20px; width:440px }
-#contacts-box { left:475px }
-#abookcountbar { left:20px }
-</style>
-
 <roundcube:endif />
+
+<div id="mainscreen">
 
 <div id="addresslist">
 <roundcube:object name="addresslist" id="contacts-table" class="records-table" cellspacing="0" summary="Contacts list" />
 </div>
 
 <script type="text/javascript">
-  var addrviewsplit = new rcube_splitter({id:'addressviewsplitter', p1: 'addresslist', p2: 'contacts-box', orientation: 'v'});
+  var addrviewsplit = new rcube_splitter({id:'addressviewsplitter', p1: 'addresslist', p2: 'contacts-box', orientation: 'v', relative: true, start: 250});
   rcmail.add_onload('addrviewsplit.init()');
 </script>
 
 <div id="contacts-box">
 <roundcube:object name="addressframe" id="contact-frame" width="100%" height="100%" frameborder="0" src="/watermark.html" />
+</div>
+
 </div>
 
 <div id="abookcountbar">
