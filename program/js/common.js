@@ -506,69 +506,6 @@ function rcube_find_object(id, d)
   }
 
 
-// return the absolute position of an object within the document
-function rcube_get_object_pos(obj, relative)
-  {
-  if(typeof(obj)=='string')
-    obj = rcube_find_object(obj);
-
-  if(!obj) return {x:0, y:0};
-
-  var iX = (bw.layers) ? obj.x : obj.offsetLeft;
-  var iY = (bw.layers) ? obj.y : obj.offsetTop;
-
-  if(!relative && (bw.ie || bw.mz))
-    {
-    var elm = obj.offsetParent;
-    while(elm && elm!=null)
-      {
-      iX += elm.offsetLeft - (elm.parentNode && elm.parentNode.scrollLeft ? elm.parentNode.scrollLeft : 0);
-      iY += elm.offsetTop - (elm.parentNode && elm.parentNode.scrollTop ? elm.parentNode.scrollTop : 0);
-      elm = elm.offsetParent;
-      }
-    }
-
-  return {x:iX, y:iY};
-  }
-
-// determine whether the mouse is over the given object or not
-function rcube_mouse_is_over(ev, obj)
-{
-  var mouse = rcube_event.get_mouse_pos(ev);
-  var pos = rcube_get_object_pos(obj);
-  
-  return ((mouse.x >= pos.x) && (mouse.x < (pos.x + obj.offsetWidth)) &&
-    (mouse.y >= pos.y) && (mouse.y < (pos.y + obj.offsetHeight)));
-}
-
-
-/**
- * Return the currently applied value of a css property
- *
- * @param {Object} html_element  Node reference
- * @param {String} css_property  Property name to read in Javascript notation (eg. 'textAlign')
- * @param {String} mozilla_equivalent  Equivalent property name in CSS notation (eg. 'text-align')
- * @return CSS property value
- * @type String
- */
-function get_elements_computed_style(html_element, css_property, mozilla_equivalent)
-  {
-  if (arguments.length==2)
-    mozilla_equivalent = css_property;
-
-  var el = html_element;
-  if (typeof(html_element)=='string')
-    el = rcube_find_object(html_element);
-
-  if (el && el.currentStyle)
-    return el.currentStyle[css_property];
-  else if (el && document.defaultView && document.defaultView.getComputedStyle)
-    return document.defaultView.getComputedStyle(el, null).getPropertyValue(mozilla_equivalent);
-  else
-    return false;
-  }
-  
-
 // cookie functions by GoogieSpell
 function setCookie(name, value, expires, path, domain, secure)
   {
