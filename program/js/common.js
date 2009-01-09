@@ -159,8 +159,8 @@ get_mouse_pos: function(e)
   }
 
   if (e._offset) {
-    mX += e._offset.x;
-    mY += e._offset.y;
+    mX += e._offset.left;
+    mY += e._offset.top;
   }
 
   return { x:mX, y:mY };
