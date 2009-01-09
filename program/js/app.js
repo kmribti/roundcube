@@ -3,7 +3,7 @@
  | RoundCube Webmail Client Script                                       |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005-2008, RoundCube Dev, - Switzerland                 |
+ | Copyright (C) 2005-2009, RoundCube Dev, - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
@@ -17,8 +17,6 @@
 */
 
 
-var rcube_webmail_client;
-
 function rcube_webmail()
   {
   this.env = new Object();
@@ -29,8 +27,7 @@ function rcube_webmail()
   this.onloads = new Array();
 
   // create protected reference to myself
-  rcube_webmail_client = this;
-  this.ref = 'rcube_webmail_client';
+  this.ref = 'rcmail';
   var ref = this;
  
   // webmail client settings
@@ -52,6 +49,12 @@ function rcube_webmail()
   this.env.comm_path = './';
   this.env.bin_path = './bin/';
   this.env.blankpage = 'program/blank.gif';
+
+  // set jQuery ajax options
+  jQuery.ajaxSetup({ cache:false,
+    error:function(request, status, err){ ref.http_error(request, status, err); },
+    beforeSend:function(xmlhttp){ xmlhttp.setRequestHeader('X-RoundCube-Referer', bw.get_cookie('roundcube_sessid')); },
+  });
 
 
   // set environment variable(s)
@@ -3772,99 +3775,52 @@ function rcube_webmail()
     this.redirect(this.env.comm_path+'&_action='+action+querystring, lock);
     };
 
-  this.http_sockets = new Array();
-  
-  // find a non-busy socket or create a new one
-  this.get_request_obj = function()
-    {
-    for (var n=0; n<this.http_sockets.length; n++)
-      {
-      if (!this.http_sockets[n].busy)
-        return this.http_sockets[n];
-      }
-    
-    // create a new XMLHTTP object
-    var i = this.http_sockets.length;
-    this.http_sockets[i] = new rcube_http_request();
-
-    return this.http_sockets[i];
-    };
-  
   // send a http request to the server
   this.http_request = function(action, querystring, lock)
-    {
-    var request_obj = this.get_request_obj();
+  {
     querystring += (querystring ? '&' : '') + '_remote=1';
     
-    // add timestamp to request url to avoid cacheing problems in Safari
-    if (bw.safari)
-      querystring += '&_ts='+(new Date().getTime());
+    // send request
+    jQuery.get(this.env.comm_path+'&_action='+action+'&'+querystring, { _unlock:(lock?1:0) }, function(data){ ref.http_response(data); }, 'json');
+  };
+
+  // send a http POST request to the server
+  this.http_post = function(action, postdata, lock)
+  {
+    if (postdata && typeof(postdata) == 'object') {
+      postdata._remote = 1;
+      postdata._unlock = (lock ? 1 : 0);
+    }
+    else
+      postdata += (postdata ? '&' : '') + '_remote=1';
 
     // send request
-    if (request_obj)
-      {
-      console.log('HTTP request: '+this.env.comm_path+'&_action='+action+'&'+querystring);
-
-      if (lock)
-        this.set_busy(true);
-
-      var rcm = this;
-      request_obj.__lock = lock ? true : false;
-      request_obj.__action = action;
-      request_obj.onerror = function(o){ ref.http_error(o); };
-      request_obj.oncomplete = function(o){ ref.http_response(o); };
-      request_obj.GET(this.env.comm_path+'&_action='+action+'&'+querystring);
-      }
-    };
-
-    // send a http POST request to the server
-    this.http_post = function(action, postdata, lock)
-      {
-      var request_obj;
-      if (postdata && typeof(postdata) == 'object')
-        postdata._remote = 1;
-      else
-        postdata += (postdata ? '&' : '') + '_remote=1';
-
-      // send request
-      if (request_obj = this.get_request_obj())
-        {
-        console.log('HTTP POST: '+this.env.comm_path+'&_action='+action);
-
-        if (lock)
-          this.set_busy(true);
-
-        var rcm = this;
-        request_obj.__lock = lock ? true : false;
-        request_obj.__action = action;
-        request_obj.onerror = function(o){ rcm.http_error(o); };
-        request_obj.oncomplete = function(o){ rcm.http_response(o); };
-        request_obj.POST(this.env.comm_path+'&_action='+action, postdata);
-        }
-      };
+    jQuery.post(this.env.comm_path+'&_action='+action, postdata, function(data){ ref.http_response(data); }, 'json');
+  };
 
   // handle HTTP response
-  this.http_response = function(request_obj)
-    {
-    var ctype = request_obj.get_header('Content-Type');
-    if (ctype)
-      {
-      ctype = String(ctype).toLowerCase();
-      var ctype_array=ctype.split(";");
-      ctype = ctype_array[0];
-      }
-
-    if (request_obj.__lock)
+  this.http_response = function(response)
+  {
+    if (response.unlock)
       this.set_busy(false);
 
-    console.log(request_obj.get_text());
+    // set env vars
+    if (response.env)
+      this.set_env(response.env);
+
+    // we have labels to add
+    if (typeof response.texts == 'object') {
+      for (var name in response.texts)
+        if (typeof response.texts[name] == 'string')
+          this.add_label(name, response.texts[name]);
+    }
 
     // if we get javascript code from server -> execute it
-    if (request_obj.get_text() && (ctype=='text/javascript' || ctype=='application/x-javascript'))
-      eval(request_obj.get_text());
+    if (response.exec)
+      eval(response.exec);
 
     // process the response data according to the sent action
-    switch (request_obj.__action) {
+    switch (response.action) {
       case 'delete':
         if (this.task == 'addressbook') {
           var uid = this.contact_list.get_selection();
@@ -3881,7 +3837,7 @@ function rcube_webmail()
         break;
         
       case 'purge':
-      case 'expunge':      
+      case 'expunge':
         if (!this.env.messagecount && this.task == 'mail') {
           // clear preview pane content
           if (this.env.contentframe)
@@ -3896,23 +3852,22 @@ function rcube_webmail()
       case 'getunread':
       case 'list':
         if (this.task == 'mail') {
-          if (this.message_list && request_obj.__action == 'list')
+          if (this.message_list && response.action == 'list')
             this.msglist_select(this.message_list);
           this.enable_command('show', 'expunge', 'select-all', 'select-none', 'sort', (this.env.messagecount > 0));
           this.enable_command('purge', this.purge_mailbox_test());
         }
         else if (this.task == 'addressbook')
           this.enable_command('export', (this.contact_list && this.contact_list.rowcount > 0));
-
         break;
-      }
-
-    request_obj.reset();
-    };
+    }
+  };
 
   // handle HTTP request errors
-  this.http_error = function(request_obj)
+  this.http_error = function(request, status, err)
     {
+      alert(status+":"+err);
+/*
     //alert('Error sending request: '+request_obj.url+' => HTTP '+request_obj.xmlhttp.status);
     if (request_obj.__lock)
       this.set_busy(false);
@@ -3920,6 +3875,7 @@ function rcube_webmail()
     request_obj.reset();
     request_obj.__lock = false;
     this.display_message('Unknown Server Error!', 'error');
+*/
     };
 
   // use an image to send a keep-alive siganl to the server
@@ -4020,154 +3976,6 @@ function rcube_webmail()
     
   }  // end object rcube_webmail
 
-
-/**
- * Class for sending HTTP requests
- * @constructor
- */
-function rcube_http_request()
-  {
-  this.url = '';
-  this.busy = false;
-  this.xmlhttp = null;
-
-  // reset object properties
-  this.reset = function()
-    {
-    // set unassigned event handlers
-    this.onloading = function(){ };
-    this.onloaded = function(){ };
-    this.oninteractive = function(){ };
-    this.oncomplete = function(){ };
-    this.onabort = function(){ };
-    this.onerror = function(){ };
-    
-    this.url = '';
-    this.busy = false;
-    this.xmlhttp = null;
-    }
-
-  // create HTMLHTTP object
-  this.build = function()
-    {
-    if (window.XMLHttpRequest)
-      this.xmlhttp = new XMLHttpRequest();
-    else if (window.ActiveXObject)
-      {
-      try { this.xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); }
-      catch(e) { this.xmlhttp = null; }
-      }
-    else
-      {
-      
-      }
-    }
-
-  // send GET request
-  this.GET = function(url)
-    {
-    this.build();
-
-    if (!this.xmlhttp)
-      {
-      this.onerror(this);
-      return false;
-      }
-
-    var _ref = this;
-    this.url = url;
-    this.busy = true;
-
-    this.xmlhttp.onreadystatechange = function(){ _ref.xmlhttp_onreadystatechange(); };
-    this.xmlhttp.open('GET', url, true);
-    this.xmlhttp.setRequestHeader('X-RoundCube-Referer', bw.get_cookie('roundcube_sessid'));
-    this.xmlhttp.send(null);
-    };
-
-  this.POST = function(url, body, contentType)
-    {
-    // default value for contentType if not provided
-    if (typeof(contentType) == 'undefined')
-      contentType = 'application/x-www-form-urlencoded';
-
-    this.build();
-    
-    if (!this.xmlhttp)
-    {
-       this.onerror(this);
-       return false;
-    }
-    
-    var req_body = body;
-    if (typeof(body) == 'object')
-    {
-      req_body = '';
-      for (var p in body)
-        req_body += (req_body ? '&' : '') + p+'='+urlencode(body[p]);
-    }
-
-    var ref = this;
-    this.url = url;
-    this.busy = true;
-    
-    this.xmlhttp.onreadystatechange = function() { ref.xmlhttp_onreadystatechange(); };
-    this.xmlhttp.open('POST', url, true);
-    this.xmlhttp.setRequestHeader('Content-Type', contentType);
-    this.xmlhttp.setRequestHeader('X-RoundCube-Referer', bw.get_cookie('roundcube_sessid'));
-    this.xmlhttp.send(req_body);
-    };
-
-  // handle onreadystatechange event
-  this.xmlhttp_onreadystatechange = function()
-    {
-    if(this.xmlhttp.readyState == 1)
-      this.onloading(this);
-
-    else if(this.xmlhttp.readyState == 2)
-      this.onloaded(this);
-
-    else if(this.xmlhttp.readyState == 3)
-      this.oninteractive(this);
-
-    else if(this.xmlhttp.readyState == 4)
-      {
-      try {
-        if (this.xmlhttp.status == 0)
-          this.onabort(this);
-        else if(this.xmlhttp.status == 200)
-          this.oncomplete(this);
-        else
-          this.onerror(this);
-
-        this.busy = false;
-        }
-      catch(err)
-        {
-        this.onerror(this);
-        this.busy = false;
-        }
-      }
-    }
-
-  // getter method for HTTP headers
-  this.get_header = function(name)
-    {
-    return this.xmlhttp.getResponseHeader(name);
-    };
-
-  this.get_text = function()
-    {
-    return this.xmlhttp.responseText;
-    };
-
-  this.get_xml = function()
-    {
-    return this.xmlhttp.responseXML;
-    };
-
-  this.reset();
-  
-  }  // end class rcube_http_request
 
 // helper function to call the init method with a delay
 function call_init(o)
