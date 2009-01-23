@@ -160,13 +160,15 @@ remove_row: function(uid, sel_next)
 insert_row: function(row, attop)
 {
   var tbody = this.list.tBodies[0];
+  if (!row.jquery)
+    row = $(row);
 
   if (attop && tbody.rows.length)
-    tbody.insertBefore(row, tbody.firstChild);
+    row.prependTo(tbody)
   else
-    tbody.appendChild(row);
+    row.appendTo(tbody);
 
-  this.init_row(row);
+  this.init_row(row[0]);
   this.rowcount++;
 },
 
@@ -181,10 +183,8 @@ focus: function(e)
   for (var n=0; n<this.selection.length; n++)
   {
     id = this.selection[n];
-    if (this.rows[id] && this.rows[id].obj)
-    {
-      this.set_classname(this.rows[id].obj, 'selected', true);
-      this.set_classname(this.rows[id].obj, 'unfocused', false);
+    if (this.rows[id] && this.rows[id].obj) {
+      $(this.rows[id].obj).addClass('selected').removeClass('unfocused');
     }
   }
 
@@ -203,10 +203,8 @@ blur: function()
   for (var n=0; n<this.selection.length; n++)
   {
     id = this.selection[n];
-    if (this.rows[id] && this.rows[id].obj)
-    {
-      this.set_classname(this.rows[id].obj, 'selected', false);
-      this.set_classname(this.rows[id].obj, 'unfocused', true);
+    if (this.rows[id] && this.rows[id].obj) {
+      $(this.rows[id].obj).removeClass('selected').addClass('unfocused');
     }
   }
 },
@@ -251,26 +249,26 @@ drag_row: function(e, id)
       if (iframes[n].contentDocument)
         iframedoc = iframes[n].contentDocument;
       else if (iframes[n].contentWindow)
-	iframedoc = iframes[n].contentWindow.document;
+        iframedoc = iframes[n].contentWindow.document;
       else if (iframes[n].document)
         iframedoc = iframes[n].document;
 
       if (iframedoc)
       {
-	var list = this;
-	var pos = rcube_get_object_pos(document.getElementById(iframes[n].id));
-	this.iframe_events[n] = function(e) { e._offset = pos; return list.drag_mouse_move(e); }
-	
-	if (iframedoc.addEventListener)
-	  iframedoc.addEventListener('mousemove', this.iframe_events[n], false);
-	else if (iframes[n].attachEvent)
-	  iframedoc.attachEvent('onmousemove', this.iframe_events[n]);
-	else
-	  iframedoc['onmousemove'] = this.iframe_events[n];
+        var list = this;
+        var pos = $('#'+iframes[n].id).offset();
+        this.iframe_events[n] = function(e) { e._offset = pos; return list.drag_mouse_move(e); }
+
+        if (iframedoc.addEventListener)
+          iframedoc.addEventListener('mousemove', this.iframe_events[n], false);
+        else if (iframes[n].attachEvent)
+          iframedoc.attachEvent('onmousemove', this.iframe_events[n]);
+        else
+          iframedoc['onmousemove'] = this.iframe_events[n];
 
         rcube_event.add_listener({element:iframedoc, event:'mouseup', object:this, method:'drag_mouse_up'});
       }
-    }								  
+    }
   }
 
   return false;
@@ -410,7 +408,7 @@ select_row: function(id, mod_key, with_mouse)
     this.trigger_event('select');
 
   if (this.last_selected != 0 && this.rows[this.last_selected])
-    this.set_classname(this.rows[this.last_selected].obj, 'focused', false);
+    $(this.rows[this.last_selected].obj).removeClass('focused');
 
   // unselect if toggleselect is active and the same row was clicked again
   if (this.toggleselect && this.last_selected == id)
@@ -419,7 +417,7 @@ select_row: function(id, mod_key, with_mouse)
     id = null;
   }
   else
-    this.set_classname(this.rows[id].obj, 'focused', true);
+    $(this.rows[id].obj).addClass('focused');
 
   if (!this.selection.length)
     this.shift_start = null;
@@ -538,20 +536,17 @@ clear_selection: function(id)
   if (id)
     {
     for (var n=0; n<this.selection.length; n++)
-      if (this.selection[n] == id)
-        {
-	this.selection.splice(n,1);
-    	break;
-	}
+      if (this.selection[n] == id) {
+        this.selection.splice(n,1);
+        break;
+      }
     }
   // all rows
   else
     {
     for (var n=0; n<this.selection.length; n++)
-      if (this.rows[this.selection[n]])
-        {
-        this.set_classname(this.rows[this.selection[n]].obj, 'selected', false);
-        this.set_classname(this.rows[this.selection[n]].obj, 'unfocused', false);
+      if (this.rows[this.selection[n]]) {
+        $(this.rows[this.selection[n]].obj).removeClass('selected').removeClass('unfocused');
         }
     
     this.selection = new Array();
@@ -594,7 +589,7 @@ highlight_row: function(id, multiple)
     {
       this.clear_selection();
       this.selection[0] = id;
-      this.set_classname(this.rows[id].obj, 'selected', true);
+      $(this.rows[id].obj).addClass('selected');
     }
   }
   else if (this.rows[id])
@@ -602,7 +597,7 @@ highlight_row: function(id, multiple)
     if (!this.in_selection(id))  // select row
     {
       this.selection[this.selection.length] = id;
-      this.set_classname(this.rows[id].obj, 'selected', true);
+      $(this.rows[id].obj).addClass('selected');
     }
     else  // unselect row
     {
@@ -610,8 +605,7 @@ highlight_row: function(id, multiple)
       var a_pre = this.selection.slice(0, p);
       var a_post = this.selection.slice(p+1, this.selection.length);
       this.selection = a_pre.concat(a_post);
-      this.set_classname(this.rows[id].obj, 'selected', false);
-      this.set_classname(this.rows[id].obj, 'unfocused', false);
+      $(this.rows[id].obj).removeClass('selected').removeClass('unfocused');
     }
   }
 },
@@ -824,19 +818,6 @@ drag_mouse_up: function(e)
   return rcube_event.cancel(e);
 },
 
-
-
-/**
- * set/unset a specific class name
- */
-set_classname: function(obj, classname, set)
-{
-  var reg = new RegExp('\s*'+classname, 'i');
-  if (!set && obj.className.match(reg))
-    obj.className = obj.className.replace(reg, '');
-  else if (set && !obj.className.match(reg))
-    obj.className += ' '+classname;
-},
 
 
 /**

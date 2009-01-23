@@ -49,7 +49,7 @@ function rcmail_editor_init(skin_path, editor_lang, spellcheck, mode)
       external_image_list_url : 'program/js/editor_images.js',
       spellchecker_languages : (rcmail.env.spellcheck_langs ? rcmail.env.spellcheck_langs : 'Dansk=da,Deutsch=de,+English=en,Espanol=es,Francais=fr,Italiano=it,Nederlands=nl,Polski=pl,Portugues=pt,Suomi=fi,Svenska=sv'),
       gecko_spellcheck : true,
-      rc_client: rcube_webmail_client,
+      rc_client: rcmail,
       oninit : 'rcmail_editor_callback'
     });
 }

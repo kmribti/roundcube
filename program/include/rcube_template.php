@@ -66,7 +66,7 @@ class rcube_template extends rcube_html_page
         $javascript = 'var '.JS_OBJECT_NAME.' = new rcube_webmail();';
 
         // don't wait for page onload. Call init at the bottom of the page (delayed)
-        $javascript_foot = "if (window.call_init)\n call_init('".JS_OBJECT_NAME."');";
+        $javascript_foot = '$(document).ready(function(){ '.JS_OBJECT_NAME.'.init(); });';
 
         $this->add_script($javascript, 'head_top');
         $this->add_script($javascript_foot, 'foot');
