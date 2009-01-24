@@ -2735,18 +2735,18 @@ function rcube_webmail()
 
   // update a contact record in the list
   this.update_contact_row = function(cid, cols_arr)
-    {
+  {
     var row;
-    if (this.contact_list.rows[cid] && (row = this.contact_list.rows[cid].obj))
-      {
+    if (this.contact_list.rows[cid] && (row = this.contact_list.rows[cid].obj)) {
       for (var c=0; c<cols_arr.length; c++)
-        $(row.cells[c]).html(cols_arr[c]);
+        if (row.cells[c])
+          $(row.cells[c]).html(cols_arr[c]);
 
       return true;
-      }
+    }
 
     return false;
-    };
+  };
 
 
   /*********************************************************/
