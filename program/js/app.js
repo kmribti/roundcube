@@ -23,7 +23,9 @@ function rcube_webmail()
   this.labels = new Object();
   this.buttons = new Object();
   this.gui_objects = new Object();
+  this.gui_containers = new Object();
   this.commands = new Object();
+  this.command_handlers = new Object();
   this.onloads = new Array();
 
   // create protected reference to myself
@@ -93,6 +95,28 @@ function rcube_webmail()
     this.gui_objects[name] = id;
     };
   
+  // register a container object
+  this.gui_container = function(name, id)
+  {
+    this.gui_containers[name] = id;
+  };
+  
+  // add a GUI element (html node) to a specified container
+  this.add_element = function(elm, container)
+  {
+    if (this.gui_containers[container] && this.gui_containers[container].jquery)
+      this.gui_containers[container].append(elm);
+  };
+
+  // register an external handler for a certain command
+  this.register_command = function(command, callback, enable)
+  {
+    this.command_handlers[command] = callback;
+    
+    if (enable)
+      this.enable_command(command, true);
+  };
+  
   // execute the given script on load
   this.add_onload = function(f)
     {
@@ -112,6 +136,10 @@ function rcube_webmail()
       return;
       }
     
+    // find all registered gui containers
+    for (var n in this.gui_containers)
+      this.gui_containers[n] = $('#'+this.gui_containers[n]);
+
     // find all registered gui objects
     for (var n in this.gui_objects)
       this.gui_objects[n] = rcube_find_object(this.gui_objects[n]);
@@ -484,7 +512,19 @@ function rcube_webmail()
         return false;
      }
 
-    // process command
+    // process external commands
+    if (typeof this.command_handlers[command] == 'function')
+    {
+      var ret = this.command_handlers[command](props, obj);
+      return ret !== null ? ret : (obj ? false : true);
+    }
+    else if (typeof this.command_handlers[command] == 'string')
+    {
+      var ret = window[this.command_handlers[command]](props, obj);
+      return ret !== null ? ret : (obj ? false : true);
+    }
+
+    // process internal command
     switch (command)
       {
       case 'login':
@@ -1367,6 +1407,7 @@ function rcube_webmail()
     // also send search request to get the right messages
     if (this.env.search_request)
       add_url += '&_search='+this.env.search_request;
+
     var url = '&_action='+action+'&_uid='+id+'&_mbox='+urlencode(this.env.mailbox)+add_url;
     if (action == 'preview' && String(target.location.href).indexOf(url) >= 0)
       this.show_contentframe(true);
@@ -1766,8 +1807,8 @@ function rcube_webmail()
         {
           this.set_message_status(id, 'deleted', true);
           if (this.env.read_when_deleted)
-    	    this.set_message_status(id, 'unread', false);
-	  this.set_message(id);
+            this.set_message_status(id, 'unread', false);
+          this.set_message(id);
         }
       }
     }

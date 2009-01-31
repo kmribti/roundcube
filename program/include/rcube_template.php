@@ -376,9 +376,9 @@ class rcube_template extends rcube_html_page
             $parent = $this->framed || preg_match('/^parent\./', $method);
             $out .= sprintf(
                 "%s.%s(%s);\n",
-            ($parent ? 'parent.' : '') . JS_OBJECT_NAME,
-            preg_replace('/^parent\./', '', $method),
-            implode(',', $args)
+                ($parent ? 'if(window.parent && parent.'.JS_OBJECT_NAME.') parent.' : '') . JS_OBJECT_NAME,
+                preg_replace('/^parent\./', '', $method),
+                implode(',', $args)
             );
         }
         
@@ -512,37 +512,21 @@ class rcube_template extends rcube_html_page
      */
     private function parse_xml($input)
     {
-        return preg_replace_callback('/<roundcube:([-_a-z]+)\s+([^>]+)>/Ui', array($this, 'xml_command_callback'), $input);
+        return preg_replace_callback('/<roundcube:([-_a-z]+)\s+([^>]+)>/Ui', array($this, 'xml_command'), $input);
     }
 
 
     /**
-     * This is a callback function for preg_replace_callback (see #1485286)
-     * It's only purpose is to reconfigure parameters for xml_command, so that the signature isn't disturbed
-     */
-    private function xml_command_callback($matches)
-    {
-        $str_attrib = isset($matches[2]) ? $matches[2] : '';
-        $add_attrib = isset($matches[3]) ? $matches[3] : array();
-
-        $command = $matches[1];
-        //matches[0] is the entire matched portion of the string
-
-        return $this->xml_command($command, $str_attrib, $add_attrib);
-    }
-
-
-    /**
-     * Convert a xml command tag into real content
+     * Callback function for parsing an xml command tag
+     * and turn it into real html content
      *
-     * @param  string Tag command: object,button,label, etc.
-     * @param  string Attribute string
+     * @param  array Matches array of preg_replace_callback
      * @return string Tag/Object content
      */
-    private function xml_command($command, $str_attrib, $add_attrib = array())
+    private function xml_command($matches)
     {
-        $command = strtolower($command);
-        $attrib  = parse_attrib_string($str_attrib) + $add_attrib;
+        $command = strtolower($matches[1]);
+        $attrib  = parse_attrib_string($matches[2]);
 
         // empty output if required condition is not met
         if (!empty($attrib['condition']) && !$this->check_condition($attrib['condition'])) {
@@ -573,8 +557,8 @@ class rcube_template extends rcube_html_page
                         $incl = $this->include_php($path);
                     }
                     else {
-		        $incl = file_get_contents($path);
-		    }
+                      $incl = file_get_contents($path);
+                    }
                     return $this->parse_xml($incl);
                 }
                 break;
@@ -592,6 +576,14 @@ class rcube_template extends rcube_html_page
                 if ($incl) {
                     return $this->parse_xml($incl);
                 }
+                break;
+                
+            case 'container':
+                $this->add_script(sprintf(
+                  "%s.gui_container('%s', '%s');",
+                  JS_OBJECT_NAME,
+                  $attrib['name'],
+                  $attrib['id']));
                 break;
 
             // return code for a specific application object

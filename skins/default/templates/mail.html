@@ -33,6 +33,7 @@
 <div id="mailboxlist-container">
 <h3 id="mailboxlist-header"><roundcube:label name="mailboxlist" /></h3>
 <roundcube:object name="mailboxlist" id="mailboxlist" maxlength="16" />
+<roundcube:container name="folders" id="mailboxlist" />
 </div>
 
 <script type="text/javascript">
@@ -111,6 +112,7 @@
 </div>
 
 <div id="messagetoolbar">
+<roundcube:container name="toolbar" id="messagetoolbar" />
 <roundcube:button command="checkmail" imageSel="/images/buttons/inbox_sel.png" imageAct="/images/buttons/inbox_act.png" imagePas="/images/buttons/inbox_pas.png" width="32" height="32" title="checkmail" />
 <roundcube:button command="compose" imageSel="/images/buttons/compose_sel.png" imageAct="/images/buttons/compose_act.png" imagePas="/images/buttons/compose_pas.png" width="32" height="32" title="writenewmessage" />
 <roundcube:button name="markreadbutton" id="markreadbutton" image="/images/buttons/markread_act.png" width="32" height="32" title="markmessages" onclick="rcmail_ui.show_markmenu();return false" />
