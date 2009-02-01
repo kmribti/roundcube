@@ -62,7 +62,7 @@ abstract class rcube_plugin
   /**
     * Register a handler for a specific client-request action
     *
-    * The callback will be executed upon a request like /?_task=plugin&_action=myaction
+    * The callback will be executed upon a request like /?_task=mail&_action=plugin.myaction
     *
     * @param string Action name (should be unique)
     * @param mixed Callback function as string or array with object reference and method name

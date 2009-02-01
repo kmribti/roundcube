@@ -157,12 +157,16 @@ class rcube_plugin_api
   /**
    * Let a plugin register a handler for a specific request
    *
-   * @param string Action name (_task=plugin&_action=...)
+   * @param string Action name (_task=mail&_action=plugin.foo)
    * @param string Plugin name that registers this action
    * @param mixed Callback: string with global function name or array($obj, 'methodname')
    */
   public function register_action($action, $owner, $callback)
   {
+    // check action name
+    if (strpos($action, 'plugin.') !== 0)
+      $action = 'plugin.'.$action;
+    
     // can register action only if it's not taken or registered by myself
     if (!isset($this->actionmap[$action]) || $this->actionmap[$action] == $owner) {
       $this->actions[$action] = $callback;
@@ -175,7 +179,7 @@ class rcube_plugin_api
 
 
   /**
-   * This method handles requests like _task=plugin&_action=foo
+   * This method handles requests like _task=mail&_action=plugin.foo
    * It executes the callback function that was registered with the given action.
    *
    * @param string Action name
@@ -200,7 +204,7 @@ class rcube_plugin_api
    */
   public function register_handler($name, $owner, $callback)
   {
-    // check na
+    // check name
     if (strpos($name, 'plugin.') !== 0)
       $name = 'plugin.'.$name;
     
