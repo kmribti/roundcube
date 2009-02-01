@@ -2,7 +2,7 @@
 /*
  +-------------------------------------------------------------------------+
  | RoundCube Webmail IMAP Client                                           |
- | Version 0.2-20090101                                                    |
+ | Version 0.3-20090201                                                    |
  |                                                                         |
  | Copyright (C) 2005-2009, RoundCube Dev. - Switzerland                   |
  |                                                                         |
@@ -213,9 +213,14 @@ $redirects = 0; $incstep = null;
 while ($redirects < 5) {
   $stepfile = !empty($action_map[$RCMAIL->task][$RCMAIL->action]) ?
     $action_map[$RCMAIL->task][$RCMAIL->action] : strtr($RCMAIL->action, '-', '_') . '.inc';
-    
+
+  // execute a plugin action
+  if (eregi('^plugin.', $RCMAIL->action)) {
+    $RCMAIL->plugins->exec_action($RCMAIL->action);
+    break;
+  }
   // try to include the step file
-  if (is_file(($incfile = 'program/steps/'.$RCMAIL->task.'/'.$stepfile))) {
+  else if (is_file(($incfile = 'program/steps/'.$RCMAIL->task.'/'.$stepfile))) {
     include($incfile);
     $redirects++;
   }

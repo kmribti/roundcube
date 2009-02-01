@@ -28,9 +28,17 @@ class rcube_plugin_api
 {
   static private $instance;
   
+  public $dir;
+  public $url = 'plugins/';
+  
   private $handlers = array();
   private $plugins = array();
-
+  private $actions = array();
+  private $actionmap = array();
+  private $templobjects = array();
+  private $objectsmap = array();
+  private $scripts = array();
+  
 
   /**
    * This implements the 'singleton' design pattern
@@ -58,8 +66,10 @@ class rcube_plugin_api
     if (!$rcmail->config->get('devel_mode'))
       return;
     
+    $this->dir = realpath($rcmail->config->get('plugins_dir'));
+    
     // load all enabled plugins
-    $plugins_dir = dir($rcmail->config->get('plugins_dir'));
+    $plugins_dir = dir($this->dir);
     $plugins_enabled = (array)$rcmail->config->get('plugins', array());
     
     foreach ($plugins_enabled as $plugin_name) {
@@ -73,19 +83,34 @@ class rcube_plugin_api
           $plugin = new $plugin_name($this);
           // check inheritance and task specification
           if (is_subclass_of($plugin, 'rcube_plugin') && (!$plugin->task || $plugin->task == $rcmail->task)) {
+            $plugin->ID = $plugin_name;
             $this->plugins[] = $plugin;
           }
         }
         else {
-          trigger_error(array('code' => 520, 'type' => 'php', 'message' => "No plugin class $plugin_name found in $fn"), true, false);
+          raise_error(array('code' => 520, 'type' => 'php', 'message' => "No plugin class $plugin_name found in $fn"), true, false);
         }
       }
       else {
-        trigger_error(array('code' => 520, 'type' => 'php', 'message' => "Failed to load plugin file $fn"), true, false);
+        raise_error(array('code' => 520, 'type' => 'php', 'message' => "Failed to load plugin file $fn"), true, false);
       }
     }
     
     // maybe also register a shudown function which triggers shutdown functions of all plugin objects
+  }
+  
+  
+  /**
+   * Add GUI things once the output objects is created
+   */
+  public function init_gui($output)
+  {
+    if ($output->type == 'html') {
+      $output->add_handlers($this->objectsmap);
+      
+      foreach ($this->scripts as $script)
+        $output->add_header(html::tag('script', array('type' => "text/javascript", 'src' => $script)));
+    }
   }
   
   
@@ -100,7 +125,7 @@ class rcube_plugin_api
     if (is_callable($callback))
       $this->handlers[$hook][] = $callback;
     else
-      trigger_error(array('code' => 521, 'type' => 'php', 'message' => "Invalid callback function for $hook"), true, false);
+      raise_error(array('code' => 521, 'type' => 'php', 'message' => "Invalid callback function for $hook"), true, false);
   }
   
   
@@ -127,7 +152,76 @@ class rcube_plugin_api
     
     return $args;
   }
+
+
+  /**
+   * Let a plugin register a handler for a specific request
+   *
+   * @param string Action name (_task=plugin&_action=...)
+   * @param string Plugin name that registers this action
+   * @param mixed Callback: string with global function name or array($obj, 'methodname')
+   */
+  public function register_action($action, $owner, $callback)
+  {
+    // can register action only if it's not taken or registered by myself
+    if (!isset($this->actionmap[$action]) || $this->actionmap[$action] == $owner) {
+      $this->actions[$action] = $callback;
+      $this->actionmap[$action] = $owner;
+    }
+    else {
+      raise_error(array('code' => 523, 'type' => 'php', 'message' => "Cannot register action $action; already taken by another plugin"), true, false);
+    }
+  }
+
+
+  /**
+   * This method handles requests like _task=plugin&_action=foo
+   * It executes the callback function that was registered with the given action.
+   *
+   * @param string Action name
+   */
+  public function exec_action($action)
+  {
+    if (isset($this->actions[$action])) {
+      call_user_func($this->actions[$action]);
+    }
+    else {
+      raise_error(array('code' => 524, 'type' => 'php', 'message' => "No handler found for action $action"), true, true);
+    }
+  }
+
+
+  /**
+   * Register a handler function for template objects
+   *
+   * @param string Object name
+   * @param string Plugin name that registers this action
+   * @param mixed Callback: string with global function name or array($obj, 'methodname')
+   */
+  public function register_handler($name, $owner, $callback)
+  {
+    // check na
+    if (strpos($name, 'plugin.') !== 0)
+      $name = 'plugin.'.$name;
+    
+    // can register handler only if it's not taken or registered by myself
+    if (!isset($this->objectsmap[$name]) || $this->objectsmap[$name] == $owner) {
+      $this->templobjects[$name] = $callback;
+      $this->objectsmap[$name] = $owner;
+    }
+    else {
+      raise_error(array('code' => 525, 'type' => 'php', 'message' => "Cannot register template handler $name; already taken by another plugin"), true, false);
+    }
+  }
   
+  /**
+   *
+   */
+  public function include_script($fn)
+  {
+    $this->scripts[] = $this->url . $fn;
+  }
+
 
 }
 
