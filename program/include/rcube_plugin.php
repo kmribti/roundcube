@@ -39,8 +39,6 @@ abstract class rcube_plugin
     $this->ID = get_class($this);
     $this->api = $api;
     $this->home = $api->dir . DIRECTORY_SEPARATOR . $this->ID;
-
-    $this->init();
   }
   
   /**
@@ -58,7 +56,46 @@ abstract class rcube_plugin
   {
     $this->api->register_hook($hook, $callback);
   }
+  
+  /**
+   * Load localized texts from the plugins dir
+   *
+   * @param string Directory to search in
+   * @param string Domain to save texts
+   */
+  public function add_texts($dir)
+  {
+    if (empty($domain))
+      $domain = $this->ID;
+    
+    $lang = $_SESSION['language'];
+    $locdir = slashify(realpath(slashify($this->home) . $dir));
+    $texts = array();
+    
+    foreach (array('en_US', $lang) as $lng) {
+      @include($locdir . $lng . '.inc');
+      $texts = (array)$labels + (array)$messages + (array)$texts;
+    }
 
+    // prepend domain to text keys and add to the application texts repository
+    if (!empty($texts)) {
+      $add = array();
+      foreach ($texts as $key => $value)
+        $add[$domain.'.'.$key] = $value;
+
+      $rcmail = rcmail::get_instance();
+      $rcmail->load_language($lang, $add);
+    }
+  }
+  
+  /**
+   * Wrapper for rcmail::gettext() adding the plugin ID as domain
+   */
+  function gettext($p)
+  {
+    return rcmail::get_instance()->gettext($p, $this->ID);
+  }
+  
   /**
     * Register a handler for a specific client-request action
     *

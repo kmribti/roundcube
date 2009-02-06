@@ -5,6 +5,7 @@
  */
 class emoticons extends rcube_plugin
 {
+  public $task = 'mail';
   private $map;
 
   function init()

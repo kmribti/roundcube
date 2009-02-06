@@ -88,9 +88,9 @@ function get_sequence_name($sequence)
  * @return string Localized text
  * @see rcmail::gettext()
  */
-function rcube_label($p)
+function rcube_label($p, $domain=null)
 {
-  return rcmail::get_instance()->gettext($p);
+  return rcmail::get_instance()->gettext($p, $domain);
 }
 
 

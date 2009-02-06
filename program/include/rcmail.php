@@ -602,7 +602,7 @@ class rcmail
    * @param mixed Named parameters array or label name
    * @return string Localized text
    */
-  public function gettext($attrib)
+  public function gettext($attrib, $domain=null)
   {
     // load localization files if not done yet
     if (empty($this->texts))
@@ -617,9 +617,12 @@ class rcmail
 
     $command_name = !empty($attrib['command']) ? $attrib['command'] : NULL;
     $alias = $attrib['name'] ? $attrib['name'] : ($command_name && $command_label_map[$command_name] ? $command_label_map[$command_name] : '');
-
+    
+    // check for text with domain
+    if ($domain && ($text_item = $this->texts[$domain.'.'.$alias]))
+      ;
     // text does not exist
-    if (!($text_item = $this->texts[$alias])) {
+    else if (!($text_item = $this->texts[$alias])) {
       /*
       raise_error(array(
         'code' => 500,
@@ -681,7 +684,7 @@ class rcmail
    *
    * @param string Language ID
    */
-  public function load_language($lang = null)
+  public function load_language($lang = null, $add = array())
   {
     $lang = $this->language_prop(($lang ? $lang : $_SESSION['language']));
     
@@ -711,6 +714,10 @@ class rcmail
       
       $_SESSION['language'] = $lang;
     }
+
+    // append additional texts (from plugin)
+    if (is_array($add) && !empty($add))
+      $this->texts += $add;
   }
 
 

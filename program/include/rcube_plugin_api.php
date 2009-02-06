@@ -84,7 +84,7 @@ class rcube_plugin_api
           $plugin = new $plugin_name($this);
           // check inheritance and task specification
           if (is_subclass_of($plugin, 'rcube_plugin') && (!$plugin->task || $plugin->task == $rcmail->task)) {
-            $plugin->ID = $plugin_name;
+            $plugin->init();
             $this->plugins[] = $plugin;
           }
         }

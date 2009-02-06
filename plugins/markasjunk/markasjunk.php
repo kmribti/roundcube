@@ -6,11 +6,10 @@
  */
 class markasjunk extends rcube_plugin
 {
+  public $task = 'mail';
 
   function init()
   {
-    $this->task = 'mail';
-    
     $this->register_action('plugin.markasjunk', array($this, 'request_action'));
     $GLOBALS['IMAP_FLAGS']['JUNK'] = 'Junk';
     
