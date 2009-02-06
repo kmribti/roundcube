@@ -10,7 +10,7 @@
  | Authors: Thomas Bruederli <roundcube@gmail.com>                       |
  |          Charles McNulty <charles@charlesmcnulty.com>                 |
  +-----------------------------------------------------------------------+
- | Requires: common.js, list.js                                          |
+ | Requires: jquery.js, common.js, list.js                               |
  +-----------------------------------------------------------------------+
 
   $Id$
@@ -18,7 +18,7 @@
 
 
 function rcube_webmail()
-  {
+{
   this.env = new Object();
   this.labels = new Object();
   this.buttons = new Object();
@@ -119,9 +119,9 @@ function rcube_webmail()
   
   // execute the given script on load
   this.add_onload = function(f)
-    {
-      this.onloads[this.onloads.length] = f;
-    };
+  {
+    this.onloads[this.onloads.length] = f;
+  };
 
   // initialize webmail client
   this.init = function()
@@ -523,6 +523,16 @@ function rcube_webmail()
       var ret = window[this.command_handlers[command]](props, obj);
       return ret !== null ? ret : (obj ? false : true);
     }
+    
+    // trigger plugin hook
+    var event_ret = this.triggerEvent('before'+command, props);
+    if (typeof event_ret != 'undefined') {
+      // abort if one the handlers returned false
+      if (event_ret === false)
+        return false;
+      else
+        props = event_ret;
+    }
 
     // process internal command
     switch (command)
@@ -534,7 +544,7 @@ function rcube_webmail()
 
       case 'logout':
         this.goto_url('logout', '', true);
-        break;      
+        break;
 
       // commands to switch task
       case 'mail':
@@ -1084,6 +1094,8 @@ function rcube_webmail()
         break;
 
       }
+      
+    this.triggerEvent('after'+command, props);
 
     return obj ? false : true;
     };
@@ -1179,14 +1191,16 @@ function rcube_webmail()
 
   this.doc_mouse_up = function(e)
   {
-    var model, li;
+    var model, list, li;
     
     if (this.message_list) {
       this.message_list.blur();
+      list = this.message_list;
       model = this.env.mailboxes;
     }
     else if (this.contact_list) {
       this.contact_list.blur();
+      list = this.contact_list;
       model = this.env.address_sources;
     }
     else if (this.ksearch_value) {
@@ -1198,6 +1212,7 @@ function rcube_webmail()
       $(this.get_folder_li(this.env.last_folder_target)).removeClass('droptarget');
       this.command('moveto', model[this.env.last_folder_target].id);
       this.env.last_folder_target = null;
+      list.draglayer.hide();
     }
   };
 
@@ -1253,8 +1268,10 @@ function rcube_webmail()
           $(this.get_folder_li(k)).addClass('droptarget');
           this.env.last_folder_target = k;
         }
-        else
+        else {
           $(this.get_folder_li(k)).removeClass('droptarget');
+          this.env.last_folder_target = null;
+        }
       }
     }
   };
@@ -2417,7 +2434,7 @@ function rcube_webmail()
         
         highlight = document.getElementById('rcmksearchSelected');
         if (!highlight)
-          highlight = this.ksearch_pane.ul.firstChild;
+          highlight = this.ksearch_pane.__ul.firstChild;
         
         if (highlight)
           this.ksearch_select(dir ? highlight.previousSibling : highlight.nextSibling);
@@ -2493,8 +2510,8 @@ function rcube_webmail()
     if (inp_value === null)
       return;
       
-    if (this.ksearch_pane && this.ksearch_pane.visible)
-      this.ksearch_pane.show(0);
+    if (this.ksearch_pane && this.ksearch_pane.is(":visible"))
+      this.ksearch_pane.hide();
 
     // get string from current cursor pos to last comma
     var cpos = this.get_caret_pos(this.ksearch_input);
@@ -2538,15 +2555,13 @@ function rcube_webmail()
       
       // create results pane if not present
       if (!this.ksearch_pane) {
-        ul = document.createElement('UL');
-        this.ksearch_pane = new rcube_layer('rcmKSearchpane', {vis:0, zindex:30000});
-        this.ksearch_pane.elm.appendChild(ul);
-        this.ksearch_pane.ul = ul;
+        ul = $('<ul>');
+        this.ksearch_pane = $('<div>').attr('id', 'rcmKSearchpane').css({ position:'absolute', 'z-index':30000 }).append(ul).appendTo(document.body);
+        this.ksearch_pane.__ul = ul[0];
       }
-      else
-        ul = this.ksearch_pane.ul;
 
       // remove all search results
+      ul = this.ksearch_pane.__ul;
       ul.innerHTML = '';
             
       // add each result line to list
@@ -2577,8 +2592,7 @@ function rcube_webmail()
 
       // move the results pane right under the input box and make it visible
       var pos = $(this.ksearch_input).offset();
-      this.ksearch_pane.move(pos.left, pos.top + this.ksearch_input.offsetHeight);
-      this.ksearch_pane.show(1);
+      this.ksearch_pane.css({ left:pos.left+'px', top:(pos.top + this.ksearch_input.offsetHeight)+'px' }).show();
     }
     // hide results pane
     else
@@ -2611,7 +2625,7 @@ function rcube_webmail()
     this.ksearch_selected = null;
     
     if (this.ksearch_pane)
-      this.ksearch_pane.show(0);
+      this.ksearch_pane.hide();
     };
 
 
@@ -3964,5 +3978,11 @@ function rcube_webmail()
       }
     };
     
-  }  // end object rcube_webmail
+}  // end object rcube_webmail
+
+
+// copy event engine prototype
+rcube_webmail.prototype.addEventListener = rcube_event_engine.prototype.addEventListener;
+rcube_webmail.prototype.removeEventListener = rcube_event_engine.prototype.removeEventListener;
+rcube_webmail.prototype.triggerEvent = rcube_event_engine.prototype.triggerEvent;
 
