@@ -732,9 +732,6 @@ drag_mouse_move: function(e)
 
       if (this.rows[this.selection[n]].obj)
       {
-        if (n == 0)
-          this.drag_start_pos = $(this.rows[this.selection[n]].obj).offset();
-        
         obj = this.rows[this.selection[n]].obj;
         subject = '';
 
@@ -745,6 +742,9 @@ drag_mouse_move: function(e)
             if (((node = obj.childNodes[i].firstChild) && (node.nodeType==3 || node.nodeName=='A')) &&
               (this.subject_col < 0 || (this.subject_col >= 0 && this.subject_col == c)))
             {
+              if (n == 0)
+                this.drag_start_pos = $(node).offset();
+              
               subject = node.nodeType==3 ? node.data : node.innerHTML;
               names += (subject.length > 50 ? subject.substring(0, 50)+'...' : subject) + '<br />';
               break;

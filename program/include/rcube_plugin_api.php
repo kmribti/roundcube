@@ -38,6 +38,7 @@ class rcube_plugin_api
   private $templobjects = array();
   private $objectsmap = array();
   private $scripts = array();
+  private $output;
   
 
   /**
@@ -111,6 +112,8 @@ class rcube_plugin_api
       foreach ($this->scripts as $script)
         $output->add_header(html::tag('script', array('type' => "text/javascript", 'src' => $script)));
     }
+    
+    $this->output = $output;
   }
   
   
@@ -210,8 +213,14 @@ class rcube_plugin_api
     
     // can register handler only if it's not taken or registered by myself
     if (!isset($this->objectsmap[$name]) || $this->objectsmap[$name] == $owner) {
-      $this->templobjects[$name] = $callback;
-      $this->objectsmap[$name] = $owner;
+      // output is ready
+      if ($this->output) {
+        $this->output->add_handler($name, $callback);
+      }
+      else {
+        $this->templobjects[$name] = $callback;
+        $this->objectsmap[$name] = $owner;
+      }
     }
     else {
       raise_error(array('code' => 525, 'type' => 'php', 'message' => "Cannot register template handler $name; already taken by another plugin"), true, false);

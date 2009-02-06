@@ -71,7 +71,7 @@ class rcube_template extends rcube_html_page
         $this->add_script($javascript, 'head_top');
         $this->add_script($javascript_foot, 'foot');
         $this->scripts_path = 'program/js/';
-        $this->include_script('http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js');
+        $this->include_script('http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js');
         $this->include_script('common.js');
         $this->include_script('app.js');
 
@@ -695,7 +695,7 @@ class rcube_template extends rcube_html_page
         static $s_button_count = 100;
 
         // these commands can be called directly via url
-        $a_static_commands = array('compose', 'list');
+        $a_static_commands = array('compose', 'list', 'preferences', 'folders', 'identities');
 
         if (!($attrib['command'] || $attrib['name'])) {
             return '';

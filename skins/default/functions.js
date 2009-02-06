@@ -8,24 +8,16 @@
 
 function rcube_init_settings_tabs()
 {
+  var tab = '#settingstabdefault';
   if (window.rcmail && rcmail.env.action)
-    {
-    var action = rcmail.env.action=='preferences' ? 'default' : (rcmail.env.action.indexOf('identity')>0 ? 'identities' : rcmail.env.action);
-    var tab = document.getElementById('settingstab'+action);
-    }
-  else 
-    var tab = document.getElementById('settingstabdefault');
-  
-  if (tab)
-    tab.className = 'tablink-selected';
+    tab = '#settingstab' + (rcmail.env.action=='preferences' ? 'default' : (rcmail.env.action.indexOf('identity')>0 ? 'identities' : rcmail.env.action.replace(/\./g, '')));
+
+  $(tab).addClass('tablink-selected');
 }
 
 function rcube_show_advanced(visible)
 {
-  var rows = document.getElementsByTagName('TR');
-  for(var i=0; i<rows.length; i++)
-    if(rows[i].className && rows[i].className.match(/advanced/))
-      rows[i].style.display = visible ? (bw.ie ? 'block' : 'table-row') : 'none';
+  $('tr.advanced').css('display', (visible ? (bw.ie ? 'block' : 'table-row') : 'none'));
 }
 
 /**
