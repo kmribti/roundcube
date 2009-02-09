@@ -295,6 +295,8 @@ function rcube_webmail()
             }
           else
             this.contact_list.focus();
+            
+          this.gui_objects.folderlist = this.gui_objects.contactslist;
           }
 
         this.set_page_buttons();
@@ -375,11 +377,16 @@ function rcube_webmail()
     // show message
     if (this.pending_message)
       this.display_message(this.pending_message[0], this.pending_message[1]);
+      
+    // map implicit containers
+    if (this.gui_objects.folderlist)
+      this.gui_containers.foldertray = $(this.gui_objects.folderlist);
 
-    // start keep-alive interval
-    this.start_keepalive();
+    // trigger init event hook
+    this.triggerEvent('init', { task:this.task, action:this.env.action });
     
     // execute all foreign onload scripts
+    // @deprecated
     for (var i=0; i<this.onloads.length; i++)
       {
       if (typeof(this.onloads[i]) == 'string')
@@ -387,7 +394,10 @@ function rcube_webmail()
       else if (typeof(this.onloads[i]) == 'function')
         this.onloads[i]();
       }
-    };
+
+    // start keep-alive interval
+    this.start_keepalive();
+  };
 
   // start interval for keep-alive/recent_check signal
   this.start_keepalive = function()
@@ -1228,7 +1238,7 @@ function rcube_webmail()
     if (this.gui_objects.folderlist && model)
       {
       var li, pos, list, height;
-      list = $((this.task == 'mail' ? '#mailboxlist' : '#directorylist'));
+      list = $(this.gui_objects.folderlist);
       pos = list.offset();
       this.env.folderlist_coords = { x1:pos.left, y1:pos.top, x2:pos.left + list.width(), y2:pos.top + list.height() };
 

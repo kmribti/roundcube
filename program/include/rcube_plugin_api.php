@@ -38,6 +38,7 @@ class rcube_plugin_api
   private $templobjects = array();
   private $objectsmap = array();
   private $scripts = array();
+  private $stylesheets = array();
   private $output;
   
 
@@ -108,6 +109,9 @@ class rcube_plugin_api
   {
     if ($output->type == 'html') {
       $output->add_handlers($this->objectsmap);
+      
+      foreach ($this->stylesheets as $css)
+        $output->add_header(html::tag('link', array('rel' => "stylesheet", 'type' => "text/css", 'href' => $css)));
       
       foreach ($this->scripts as $script)
         $output->add_header(html::tag('script', array('type' => "text/javascript", 'src' => $script)));
@@ -228,13 +232,42 @@ class rcube_plugin_api
   }
   
   /**
-   *
+   * Include a plugin script file in the current HTML page
    */
   public function include_script($fn)
   {
-    $this->scripts[] = $this->url . $fn;
+    $src = $this->ressource_url($fn);
+    
+    if ($this->output)
+      $this->output->add_header(html::tag('script', array('type' => "text/javascript", 'src' => $src)));
+    else
+      $this->scripts[] = $src;
   }
 
+  /**
+    * Include a plugin stylesheet in the current HTML page
+   */
+  public function include_stylesheet($fn)
+  {
+    $src = $this->ressource_url($fn);
+    
+    if ($this->output)
+      $this->output->add_header(html::tag('link', array('rel' => "stylesheet", 'type' => "text/css", 'href' => $src)));
+    else
+      $this->stylesheets[] = $src;
+  }
+  
+  
+  /**
+   * Make the given file name link into the plugins directory
+   */
+  private function ressource_url($fn)
+  {
+    if ($fn[0] != '/' && !eregi('^https?://', $fn))
+      return $this->url . $fn;
+    else
+      return $fn;
+  }
 
 }
 

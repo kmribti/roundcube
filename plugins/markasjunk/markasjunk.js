@@ -13,7 +13,7 @@ function rcmail_markasjunk(prop)
 
 // callback for app-onload event
 if (window.rcmail) {
-  rcmail.add_onload(function(){
+  rcmail.addEventListener('init', function(evt) {
     
     // create button
     var button = $('<A>').html('<img src="plugins/markasjunk/junk_pas.png" id="rcmButtonMarkAsJunk" width="32" height="32" alt="" title="" />').css('cursor', 'pointer');

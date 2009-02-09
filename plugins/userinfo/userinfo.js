@@ -1,7 +1,7 @@
 /* Show user-info plugin script */
 
 if (window.rcmail) {
-  rcmail.add_onload(function(){
+  rcmail.addEventListener('init', function(evt) {
     // <span id="settingstabdefault" class="tablink"><roundcube:button command="preferences" type="link" label="preferences" title="editpreferences" /></span>
     var tab = $('<span>').attr('id', 'settingstabpluginuserinfo').addClass('tablink');
     

@@ -130,12 +130,28 @@ abstract class rcube_plugin
    */
   public function include_script($fn)
   {
-    // relative file name
-    if ($fn[0] != '/' && !eregi('^https?://', $fn)) {
-      $fn = $this->ID.'/'.$fn;
-    }
-    
-    $this->api->include_script($fn);
+    $this->api->include_script($this->ressource_url($fn));
+  }
+
+  /**
+   * Make this stylesheet available on the client
+   *
+   * @param string File path; absolute or relative to the plugin directory
+   */
+  public function include_stylesheet($fn)
+  {
+    $this->api->include_stylesheet($this->ressource_url($fn));
+  }
+
+  /**
+   * Make the given file name link into the plugin directory
+   */
+  private function ressource_url($fn)
+  {
+    if ($fn[0] != '/' && !eregi('^https?://', $fn))
+      return $this->ID . '/' . $fn;
+    else
+      return $fn;
   }
 
 

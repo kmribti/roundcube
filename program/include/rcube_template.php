@@ -579,11 +579,7 @@ class rcube_template extends rcube_html_page
                 break;
                 
             case 'container':
-                $this->add_script(sprintf(
-                  "%s.gui_container('%s', '%s');",
-                  JS_OBJECT_NAME,
-                  $attrib['name'],
-                  $attrib['id']));
+                $this->command('gui_container', $attrib['name'], $attrib['id']);
                 break;
 
             // return code for a specific application object
