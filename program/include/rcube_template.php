@@ -209,8 +209,11 @@ class rcube_template extends rcube_html_page
      */
     public function add_label()
     {
-        $arg_list = func_get_args();
-        foreach ($arg_list as $i => $name) {
+        $args = func_get_args();
+        if (count($args) == 1 && is_array($args[0]))
+          $args = $args[0];
+        
+        foreach ($args as $name) {
             $this->command('add_label', $name, rcube_label($name));
         }
     }

@@ -35,10 +35,7 @@ class rcube_plugin_api
   private $plugins = array();
   private $actions = array();
   private $actionmap = array();
-  private $templobjects = array();
   private $objectsmap = array();
-  private $scripts = array();
-  private $stylesheets = array();
   private $output;
   
 
@@ -69,8 +66,20 @@ class rcube_plugin_api
       return;
     
     $this->dir = realpath($rcmail->config->get('plugins_dir'));
+  }
+  
+  
+  /**
+   * Load and init all enabled plugins
+   *
+   * This has to be done after rcmail::load_gui() or rcmail::init_json()
+   * was called because plugins need to have access to rcmail->output
+   */
+  public function init()
+  {
+    $rcmail = rcmail::get_instance();
+    $this->output = $rcmail->output;
     
-    // load all enabled plugins
     $plugins_dir = dir($this->dir);
     $plugins_enabled = (array)$rcmail->config->get('plugins', array());
     
@@ -99,25 +108,6 @@ class rcube_plugin_api
     }
     
     // maybe also register a shudown function which triggers shutdown functions of all plugin objects
-  }
-  
-  
-  /**
-   * Add GUI things once the output objects is created
-   */
-  public function init_gui($output)
-  {
-    if ($output->type == 'html') {
-      $output->add_handlers($this->objectsmap);
-      
-      foreach ($this->stylesheets as $css)
-        $output->add_header(html::tag('link', array('rel' => "stylesheet", 'type' => "text/css", 'href' => $css)));
-      
-      foreach ($this->scripts as $script)
-        $output->add_header(html::tag('script', array('type' => "text/javascript", 'src' => $script)));
-    }
-    
-    $this->output = $output;
   }
   
   
@@ -217,14 +207,8 @@ class rcube_plugin_api
     
     // can register handler only if it's not taken or registered by myself
     if (!isset($this->objectsmap[$name]) || $this->objectsmap[$name] == $owner) {
-      // output is ready
-      if ($this->output) {
-        $this->output->add_handler($name, $callback);
-      }
-      else {
-        $this->templobjects[$name] = $callback;
-        $this->objectsmap[$name] = $owner;
-      }
+      $this->output->add_handler($name, $callback);
+      $this->objectsmap[$name] = $owner;
     }
     else {
       raise_error(array('code' => 525, 'type' => 'php', 'message' => "Cannot register template handler $name; already taken by another plugin"), true, false);
@@ -236,12 +220,10 @@ class rcube_plugin_api
    */
   public function include_script($fn)
   {
-    $src = $this->ressource_url($fn);
-    
-    if ($this->output)
+    if ($this->output->type == 'html') {
+      $src = $this->ressource_url($fn);
       $this->output->add_header(html::tag('script', array('type' => "text/javascript", 'src' => $src)));
-    else
-      $this->scripts[] = $src;
+    }
   }
 
   /**
@@ -249,12 +231,10 @@ class rcube_plugin_api
    */
   public function include_stylesheet($fn)
   {
-    $src = $this->ressource_url($fn);
-    
-    if ($this->output)
+    if ($this->output->type == 'html') {
+      $src = $this->ressource_url($fn);
       $this->output->add_header(html::tag('link', array('rel' => "stylesheet", 'type' => "text/css", 'href' => $src)));
-    else
-      $this->stylesheets[] = $src;
+    }
   }
   
   

@@ -319,9 +319,6 @@ class rcmail
     // add some basic label to client
     $this->output->add_label('loading');
     
-    // load plugins stuff
-    $this->plugins->init_gui($this->output);
-    
     return $this->output;
   }
   

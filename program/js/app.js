@@ -1158,13 +1158,18 @@ function rcube_webmail()
     };
 
   // return a localized string
-  this.get_label = function(name)
+  this.get_label = function(name, domain)
     {
-    if (this.labels[name])
+    if (domain && this.labels[domain+'.'+name])
+      return this.labels[domain+'.'+name];
+    else if (this.labels[name])
       return this.labels[name];
     else
       return name;
     };
+  
+  // alias for convenience reasons
+  this.gettext = this.get_label;
 
   // switch to another application task
   this.switch_task = function(task)

@@ -14,24 +14,27 @@ class markasjunk extends rcube_plugin
     $GLOBALS['IMAP_FLAGS']['JUNK'] = 'Junk';
     
     $rcmail = rcmail::get_instance();
-    if ($rcmail->action == '' || $rcmail->action == 'show')
+    if ($rcmail->action == '' || $rcmail->action == 'show') {
       $this->include_script('markasjunk.js');
+      $this->add_texts('localization', true);
+    }
   }
 
   function request_action()
   {
-    $rcmail = rcmail::get_instance();
+    $this->add_texts('localization');
     
-    $count = sizeof(explode(',', ($uids = get_input_value('_uid', RCUBE_INPUT_POST))));
+    $uids = get_input_value('_uid', RCUBE_INPUT_POST);
     $mbox = get_input_value('_mbox', RCUBE_INPUT_POST);
     
+    $rcmail = rcmail::get_instance();
     $rcmail->imap->set_flag($uids, 'JUNK');
     
     if (($junk_mbox = $rcmail->config->get('junk_mbox')) && $mbox != $junk_mbox) {
       $rcmail->output->command('move_messages', $junk_mbox);
     }
     
-    $rcmail->output->show_message('reportedasspam', 'confirmation');
+    $rcmail->output->command('display_message', $this->gettext('reportedasjunk'), 'confirmation');
     $rcmail->output->send();
   }
 

@@ -16,7 +16,7 @@ if (window.rcmail) {
   rcmail.addEventListener('init', function(evt) {
     
     // create button
-    var button = $('<A>').html('<img src="plugins/markasjunk/junk_pas.png" id="rcmButtonMarkAsJunk" width="32" height="32" alt="" title="" />').css('cursor', 'pointer');
+    var button = $('<A>').html('<img src="plugins/markasjunk/junk_pas.png" id="rcmButtonMarkAsJunk" width="32" height="32" alt="" title="'+rcmail.gettext('buttontitle', 'markasjunk')+'" />').css('cursor', 'pointer');
     button.bind('click', function(e){ return rcmail.command('plugin.markasjunk', this) });
     
     // add and register

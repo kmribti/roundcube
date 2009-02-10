@@ -10,7 +10,7 @@ class userinfo extends rcube_plugin
 
   function init()
   {
-    $this->add_texts('localization/');
+    $this->add_texts('localization/', array('userinfo'));
     $this->register_action('plugin.userinfo', array($this, 'infostep'));
     $this->include_script('userinfo.js');
   }

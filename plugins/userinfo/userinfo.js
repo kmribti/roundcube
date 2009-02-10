@@ -5,7 +5,7 @@ if (window.rcmail) {
     // <span id="settingstabdefault" class="tablink"><roundcube:button command="preferences" type="link" label="preferences" title="editpreferences" /></span>
     var tab = $('<span>').attr('id', 'settingstabpluginuserinfo').addClass('tablink');
     
-    var button = $('<a>').attr('href', rcmail.env.comm_path+'&_action=plugin.userinfo').html('Userinfo').appendTo(tab);
+    var button = $('<a>').attr('href', rcmail.env.comm_path+'&_action=plugin.userinfo').html(rcmail.gettext('userinfo', 'userinfo')).appendTo(tab);
     button.bind('click', function(e){ return rcmail.command('plugin.userinfo', this) });
     
     // add button and register command

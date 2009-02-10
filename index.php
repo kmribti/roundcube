@@ -2,7 +2,7 @@
 /*
  +-------------------------------------------------------------------------+
  | RoundCube Webmail IMAP Client                                           |
- | Version 0.3-20090201                                                    |
+ | Version 0.3-20090210                                                    |
  |                                                                         |
  | Copyright (C) 2005-2009, RoundCube Dev. - Switzerland                   |
  |                                                                         |
@@ -35,6 +35,9 @@ $RCMAIL = rcmail::get_instance();
 
 // init output class
 $OUTPUT = !empty($_REQUEST['_remote']) ? $RCMAIL->init_json() : $RCMAIL->load_gui(!empty($_REQUEST['_framed']));
+
+// init plugin API
+$RCMAIL->plugins->init();
 
 // set output buffering
 if ($RCMAIL->action != 'get' && $RCMAIL->action != 'viewsource') {

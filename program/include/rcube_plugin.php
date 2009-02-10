@@ -61,12 +61,11 @@ abstract class rcube_plugin
    * Load localized texts from the plugins dir
    *
    * @param string Directory to search in
-   * @param string Domain to save texts
+   * @param mixed Make texts also available on the client (array with list or true for all)
    */
-  public function add_texts($dir)
+  public function add_texts($dir, $add2client = false)
   {
-    if (empty($domain))
-      $domain = $this->ID;
+    $domain = $this->ID;
     
     $lang = $_SESSION['language'];
     $locdir = slashify(realpath(slashify($this->home) . $dir));
@@ -85,11 +84,20 @@ abstract class rcube_plugin
 
       $rcmail = rcmail::get_instance();
       $rcmail->load_language($lang, $add);
+      
+      // add labels to client
+      if ($add2client) {
+        $js_labels = is_array($add2client) ? array_map(array($this, 'label_map_callback'), $add2client) : array_keys($add);
+        $rcmail->output->add_label($js_labels);
+      }
     }
   }
   
   /**
    * Wrapper for rcmail::gettext() adding the plugin ID as domain
+   *
+   * @return string Localized text
+   * @see rcmail::gettext()
    */
   function gettext($p)
   {
@@ -152,6 +160,14 @@ abstract class rcube_plugin
       return $this->ID . '/' . $fn;
     else
       return $fn;
+  }
+
+  /**
+   * Callback function for array_map
+   */
+  private function label_map_callback($key)
+  {
+    return $this->ID.'.'.$key;
   }
 
 
