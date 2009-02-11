@@ -60,11 +60,6 @@ class rcube_plugin_api
   private function __construct()
   {
     $rcmail = rcmail::get_instance();
-    
-    // only active in devel_mode for now
-    if (!$rcmail->config->get('devel_mode'))
-      return;
-    
     $this->dir = realpath($rcmail->config->get('plugins_dir'));
   }
   

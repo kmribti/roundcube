@@ -1,7 +1,13 @@
 <?php
 
 /**
- * Sample plugin to replace remoticons in plain text message body with real icons
+ * Display Emoticons
+ *
+ * Sample plugin to replace emoticons in plain text message body with real icons
+ *
+ * @version 1.0.1
+ * @author Thomas Bruederli
+ * @website http://roundcube.net
  */
 class emoticons extends rcube_plugin
 {
