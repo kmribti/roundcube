@@ -357,6 +357,9 @@ if (function_exists("mb_encode_mimeheader"))
   mb_internal_encoding(RCMAIL_CHARSET);
 }
 
+$data = rcmail::get_instance()->plugins->exec_hook('outgoing_message_headers', array('headers' => $headers)); 
+$headers = $data['headers']; 
+
 // pass headers to message object
 $MAIL_MIME->headers($headers);
 
