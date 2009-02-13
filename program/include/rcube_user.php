@@ -346,13 +346,20 @@ class rcube_user
    */
   static function create($user, $host)
   {
+    $user_name  = '';
     $user_email = '';
     $rcmail = rcmail::get_instance();
+
+    $data = rcmail::get_instance()->plugins->exec_hook('create_user', array('RCMAIL'=>$rcmail, 'user'=>$user, 'user_name'=>$user_name, 'user_email'=>$user_email));
+    $user_name = $data['user_name'];
+    $user_email = $data['user_email'];
+
     $dbh = $rcmail->get_dbh();
 
     // try to resolve user in virtusertable
-    if ($rcmail->config->get('virtuser_file') && !strpos($user, '@'))
+    if ($user_email != '' && $rcmail->config->get('virtuser_file') && !strpos($user, '@')) {
       $user_email = rcube_user::user2email($user);
+    }
 
     $dbh->query(
       "INSERT INTO ".get_table_name('users')."
@@ -370,7 +377,9 @@ class rcube_user
       if ($user_email=='')
         $user_email = strpos($user, '@') ? $user : sprintf('%s@%s', $user, $mail_domain);
 
-      $user_name = $user != $user_email ? $user : '';
+      if ($user_name == '') {
+        $user_name = $user != $user_email ? $user : '';
+      }
 
       // try to resolve the e-mail address from the virtuser table
       if (($virtuser_query = $rcmail->config->get('virtuser_query'))
