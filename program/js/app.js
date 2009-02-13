@@ -3753,23 +3753,16 @@ function rcube_webmail()
 
   this.html2plain = function(htmlText, id)
     {
-    var http_request = new rcube_http_request();
     var url = this.env.bin_path+'html2text.php';
     var rcmail = this;
 
     this.set_busy(true, 'converting');
     console.log('HTTP POST: '+url);
 
-    http_request.onerror = function(o) { rcmail.http_error(o); };
-    http_request.oncomplete = function(o) { rcmail.set_text_value(o, id); };
-    http_request.POST(url, htmlText, 'application/octet-stream');
-    }
-
-  this.set_text_value = function(httpRequest, id)
-    {
-    this.set_busy(false);
-    document.getElementById(id).value = httpRequest.get_text();
-    console.log(httpRequest.get_text());
+    $.ajax({ type: 'POST', url: url, data: htmlText, contentType: 'application/octet-stream',
+      error: function(o) { rcmail.http_error(o); },
+      success: function(data) { rcmail.set_busy(false); $(document.getElementById(id)).val(data); console.log(data); },
+      });
     }
 
 
@@ -3798,14 +3791,18 @@ function rcube_webmail()
   this.http_request = function(action, querystring, lock)
   {
     querystring += (querystring ? '&' : '') + '_remote=1';
+    var url = this.env.comm_path + '&_action=' + action + '&' + querystring
     
     // send request
-    jQuery.get(this.env.comm_path+'&_action='+action+'&'+querystring, { _unlock:(lock?1:0) }, function(data){ ref.http_response(data); }, 'json');
+    console.log('HTTP POST: ' + url);
+    jQuery.get(url, { _unlock:(lock?1:0) }, function(data){ ref.http_response(data); }, 'json');
   };
 
   // send a http POST request to the server
   this.http_post = function(action, postdata, lock)
   {
+    var url = this.env.comm_path+'&_action=' + action;
+    
     if (postdata && typeof(postdata) == 'object') {
       postdata._remote = 1;
       postdata._unlock = (lock ? 1 : 0);
@@ -3814,12 +3811,15 @@ function rcube_webmail()
       postdata += (postdata ? '&' : '') + '_remote=1' + (lock ? '&_unlock=1' : '');
 
     // send request
-    jQuery.post(this.env.comm_path+'&_action='+action, postdata, function(data){ ref.http_response(data); }, 'json');
+    console.log('HTTP POST: ' + url);
+    jQuery.post(url, postdata, function(data){ ref.http_response(data); }, 'json');
   };
 
   // handle HTTP response
   this.http_response = function(response)
   {
+    var console_msg = '';
+    
     if (response.unlock)
       this.set_busy(false);
 
@@ -3835,9 +3835,11 @@ function rcube_webmail()
     }
 
     // if we get javascript code from server -> execute it
-    if (response.exec)
+    if (response.exec) {
+      console.log(response.exec);
       eval(response.exec);
-
+    }
+    
     // process the response data according to the sent action
     switch (response.action) {
       case 'delete':
