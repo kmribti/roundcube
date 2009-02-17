@@ -818,9 +818,15 @@ function format_email_recipient($email, $name='')
  */
 function console()
   {
+  $args = func_get_args();
+  if(class_exists('rcmail')){
+      $rcmail = rcmail::get_instance();
+      rcmail::get_instance()->plugins->exec_hook('console',$args);
+  }
+
   $msg = array();
-  foreach (func_get_args() as $arg)
-    $msg[] = !is_string($arg) ? var_export($arg, true) : $arg;
+  foreach ($args as $arg)
+     $msg[] = !is_string($arg) ? var_export($arg, true) : $arg;
 
   if (!($GLOBALS['CONFIG']['debug_level'] & 4))
     write_log('console', join(";\n", $msg));
