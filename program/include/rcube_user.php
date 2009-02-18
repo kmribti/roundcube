@@ -350,7 +350,7 @@ class rcube_user
     $user_email = '';
     $rcmail = rcmail::get_instance();
 
-    $data = rcmail::get_instance()->plugins->exec_hook('create_user', array('RCMAIL'=>$rcmail, 'user'=>$user, 'user_name'=>$user_name, 'user_email'=>$user_email));
+    $data = $rcmail->plugins->exec_hook('create_user', array('user'=>$user, 'user_name'=>$user_name, 'user_email'=>$user_email));
     $user_name = $data['user_name'];
     $user_email = $data['user_email'];
 
