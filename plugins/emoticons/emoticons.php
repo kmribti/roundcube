@@ -17,7 +17,7 @@ class emoticons extends rcube_plugin
   function init()
   {
     $this->task = 'mail';
-    $this->add_hook('message-body-after', array($this, 'replace'));
+    $this->add_hook('message_part_after', array($this, 'replace'));
   
     $this->map = array(
       ':)'  => html::img(array('src' => './program/js/tiny_mce/plugins/emotions/img/smiley-smile.gif', 'alt' => ':)')),

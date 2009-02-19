@@ -588,43 +588,46 @@ class rcube_template extends rcube_html_page
             // return code for a specific application object
             case 'object':
                 $object = strtolower($attrib['name']);
+                $content = '';
 
                 // we are calling a class/method
                 if (($handler = $this->object_handlers[$object]) && is_array($handler)) {
                     if ((is_object($handler[0]) && method_exists($handler[0], $handler[1])) ||
                     (is_string($handler[0]) && class_exists($handler[0])))
-                    return call_user_func($handler, $attrib);
+                    $content = call_user_func($handler, $attrib);
                 }
+                // execute object handler function
                 else if (function_exists($handler)) {
-                    // execute object handler function
-                    return call_user_func($handler, $attrib);
+                    $content = call_user_func($handler, $attrib);
                 }
-
-                if ($object=='productname') {
+                else if ($object == 'productname') {
                     $name = !empty($this->config['product_name']) ? $this->config['product_name'] : 'RoundCube Webmail';
-                    return Q($name);
+                    $content = Q($name);
                 }
-                if ($object=='version') {
+                else if ($object == 'version') {
                     $ver = (string)RCMAIL_VERSION;
                     if (is_file(INSTALL_PATH . '.svn/entries')) {
                         if (preg_match('/Revision:\s(\d+)/', @shell_exec('svn info'), $regs))
                           $ver .= ' [SVN r'.$regs[1].']';
                     }
-                    return $ver;
+                    $content = Q($ver);
                 }
-                if ($object=='steptitle') {
-                  return Q($this->get_pagetitle());
+                else if ($object == 'steptitle') {
+                  $content = Q($this->get_pagetitle());
                 }
-                if ($object=='pagetitle') {
+                else if ($object == 'pagetitle') {
                     $title = !empty($this->config['product_name']) ? $this->config['product_name'].' :: ' : '';
                     $title .= $this->get_pagetitle();
-                    return Q($title);
+                    $content = Q($title);
                 }
-                break;
+                
+                // exec plugin hooks for this template object
+                $hook = $this->app->plugins->exec_hook("template_object_$object", $attrib + array('content' => $content));
+                return $hook['content'];
 
             // return code for a specified eval expression
             case 'exp':
-        	$value = $this->parse_expression($attrib['expression']);
+                $value = $this->parse_expression($attrib['expression']);
                 return eval("return Q($value);");
             
             // return variable
