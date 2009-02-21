@@ -567,22 +567,18 @@ class rcube_template extends rcube_html_page
                 break;
 
             case 'plugin.include':
-                //rcube::tfk_debug(var_export($this->config['skin_path'], true));
-                $path = realpath($this->config['skin_path'].$attrib['file']);
-                if (!$path) {
-                    //rcube::tfk_debug("Does not exist:");
-                    //rcube::tfk_debug($this->config['skin_path']);
-                    //rcube::tfk_debug($attrib['file']);
-                    //rcube::tfk_debug($path);
-                }
-                $incl = file_get_contents($path);
-                if ($incl) {
-                    return $this->parse_xml($incl);
-                }
+                $hook = $this->app->plugins->exec_hook("template_plugin_include", $attrib);
+                return $hook['content'];
                 break;
-                
+            
+            // define a container block
             case 'container':
-                $this->command('gui_container', $attrib['name'], $attrib['id']);
+                if ($attrib['name'] && $attrib['id']) {
+                    $this->command('gui_container', $attrib['name'], $attrib['id']);
+                    // let plugins insert some content here
+                    $hook = $this->app->plugins->exec_hook("template_container", $attrib);
+                    return $hook['content'];
+                }
                 break;
 
             // return code for a specific application object
