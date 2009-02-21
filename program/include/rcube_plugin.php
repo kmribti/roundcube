@@ -151,6 +151,25 @@ abstract class rcube_plugin
   {
     $this->api->include_stylesheet($this->ressource_url($fn));
   }
+  
+  /**
+   * Append a button to a certain container
+   *
+   * @param array Hash array with named parameters (as used in skin templates)
+   * @param string Container name where the buttons should be added to
+   * @see rcube_remplate::button()
+   */
+  public function add_button($p, $container)
+  {
+    if ($this->api->output->type == 'html') {
+      // fix relative paths
+      foreach (array('imagepas', 'imageact', 'imagesel') as $key)
+        if ($p[$key])
+          $p[$key] = $this->api->url . $this->ressource_url($p[$key]);
+      
+      $this->api->add_content($this->api->output->button($p), $container);
+    }
+  }
 
   /**
    * Make the given file name link into the plugin directory

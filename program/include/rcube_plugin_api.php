@@ -30,13 +30,14 @@ class rcube_plugin_api
   
   public $dir;
   public $url = 'plugins/';
+  public $output;
   
   private $handlers = array();
   private $plugins = array();
   private $actions = array();
   private $actionmap = array();
   private $objectsmap = array();
-  private $output;
+  private $template_contents = array();
   
 
   /**
@@ -101,6 +102,9 @@ class rcube_plugin_api
         raise_error(array('code' => 520, 'type' => 'php', 'message' => "Failed to load plugin file $fn"), true, false);
       }
     }
+    
+    // register an internal hook
+    $this->register_hook('template_container', array($this, 'template_container_hook'));
     
     // maybe also register a shudown function which triggers shutdown functions of all plugin objects
   }
@@ -222,7 +226,7 @@ class rcube_plugin_api
   }
 
   /**
-    * Include a plugin stylesheet in the current HTML page
+   * Include a plugin stylesheet in the current HTML page
    */
   public function include_stylesheet($fn)
   {
@@ -232,6 +236,23 @@ class rcube_plugin_api
     }
   }
   
+  /**
+   * Save the given HTML content to be added to a template container
+   */
+  public function add_content($html, $container)
+  {
+    console($html, $container);
+    $this->template_contents[$container] .= $html . "\n";
+  }
+  
+  /**
+   * Callback for template_container hooks
+   */
+  private function template_container_hook($attrib)
+  {
+    $container = $attrib['name'];
+    return array('content' => $this->template_contents[$container]);
+  }
   
   /**
    * Make the given file name link into the plugins directory
