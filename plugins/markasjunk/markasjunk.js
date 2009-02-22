@@ -15,13 +15,7 @@ function rcmail_markasjunk(prop)
 if (window.rcmail) {
   rcmail.addEventListener('init', function(evt) {
     
-    // create button
-    var button = $('<A>').html('<img src="plugins/markasjunk/junk_pas.png" id="rcmButtonMarkAsJunk" width="32" height="32" alt="" title="'+rcmail.gettext('buttontitle', 'markasjunk')+'" />').css('cursor', 'pointer');
-    button.bind('click', function(e){ return rcmail.command('plugin.markasjunk', this) });
-    
-    // add and register
-    rcmail.add_element(button, 'toolbar');
-    rcmail.register_button('plugin.markasjunk', 'rcmButtonMarkAsJunk', 'image', 'plugins/markasjunk/junk_act.png');
+    // register command (directly enable in message view mode)
     rcmail.register_command('plugin.markasjunk', rcmail_markasjunk, rcmail.env.uid);
     
     // add event-listener to message list
