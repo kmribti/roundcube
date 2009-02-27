@@ -167,15 +167,13 @@ function rcube_webmail()
           this.message_list.addEventListener('dragstart', function(o){ p.drag_start(o); });
           this.message_list.addEventListener('dragmove', function(o, e){ p.drag_move(e); });
           this.message_list.addEventListener('dragend', function(o){ p.drag_active = false; });
+          document.onmouseup = function(e){ return p.doc_mouse_up(e); };
 
           this.message_list.init();
           this.enable_command('toggle_status', 'toggle_flag', true);
           
           if (this.gui_objects.mailcontframe)
-            {
             this.gui_objects.mailcontframe.onmousedown = function(e){ return p.click_on_list(e); };
-            document.onmouseup = function(e){ return p.doc_mouse_up(e); };
-            }
           else
             this.message_list.focus();
           }
@@ -1285,7 +1283,8 @@ function rcube_webmail()
         }
         else {
           $(this.get_folder_li(k)).removeClass('droptarget');
-          this.env.last_folder_target = null;
+          if (k == this.env.last_folder_target)
+            this.env.last_folder_target = null;
         }
       }
     }
@@ -3592,7 +3591,7 @@ function rcube_webmail()
   // replace content of quota display
   this.set_quota = function(content)
     {
-    if (content)
+    if (content && this.gui_objects.quotadisplay)
       $(this.gui_objects.quotadisplay).html(content);
     };
 
