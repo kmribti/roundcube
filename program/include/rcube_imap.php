@@ -426,8 +426,16 @@ class rcube_imap
     if (is_array($a_mboxes))
       return $a_mboxes;
 
-    // retrieve list of folders from IMAP server
-    $a_folders = iil_C_ListSubscribed($this->conn, $this->_mod_mailbox($root), $filter);
+    // Give plugins a chance to provide a list of mailboxes
+    $data = rcmail::get_instance()->plugins->exec_hook('list_mailboxes',array('root'=>$root,'filter'=>$filter));
+    if(isset($data['a_folders'])){
+        $a_folders = $data['a_folders'];
+    }
+    else{
+        // retrieve list of folders from IMAP server
+        $a_folders = iil_C_ListSubscribed($this->conn, $this->_mod_mailbox($root), $filter);
+    }
+
     
     if (!is_array($a_folders) || !sizeof($a_folders))
       $a_folders = array();

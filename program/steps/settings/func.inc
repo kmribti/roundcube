@@ -381,6 +381,8 @@ function rcmail_user_prefs_block($part, $no_override, $attrib)
       $table->add(null, $input_expunge->show($config['logout_expunge']?1:0));
     }
 
+    rcmail::get_instance()->plugins->exec_hook('user_preferences_server_settings', array('table'=>$table));
+
     if ($table->size())
       $out = html::tag('fieldset', null, html::tag('legend', null, Q(rcube_label('serversettings'))) . $table->show($attrib));
     break;

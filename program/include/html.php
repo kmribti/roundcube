@@ -599,6 +599,34 @@ class html_table extends html
         $this->header[] = $cell;
     }
 
+     /**
+     * Remove a column from a table
+     * Useful for plugins making alterations
+     * 
+     * @param string $class 
+     */
+    public function remove_column($class)
+    {
+        // Remove the header
+        foreach($this->header as $index=>$header){
+            if($header->attrib['class'] == $class){
+                unset($this->header[$index]);
+                break;
+            }
+        }
+
+        // Remove cells from rows
+        foreach($this->rows as $i=>$row){
+            foreach($row->cells as $j=>$cell){
+                if($cell->attrib['class'] == $class){
+                    unset($this->rows[$i]->cells[$j]);
+                    break;
+                }
+            }
+        }
+    }
+
+
     /**
      * Jump to next row
      *
