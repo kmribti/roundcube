@@ -48,8 +48,8 @@ $a_user_prefs = array(
   'trash_mbox' => get_input_value('_trash_mbox', RCUBE_INPUT_POST),
   );
 
-$data  =  rcmail::get_instance()->plugins->exec_hook('save_preferences', array('a_user_prefs'=>$a_user_prefs));
-$a_user_prefs = $data['a_user_prefs'];
+$data  =  rcmail::get_instance()->plugins->exec_hook('save_preferences', array('prefs' => $a_user_prefs));
+$a_user_prefs = $data['prefs'];
 
 // don't override these parameters
 foreach ((array)$CONFIG['dont_override'] as $p)

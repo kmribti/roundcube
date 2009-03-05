@@ -28,8 +28,8 @@ class subscriptions_option extends rcube_plugin
     function init()
     {
         $this->add_texts('localization/', false);
-        $config = rcmail::get_instance()->config->all();
-        if (!in_array('use_subscriptions',$config['dont_override'])){
+        $dont_override = rcmail::get_instance()->config->get('dont_override', array());
+        if (!in_array('use_subscriptions', $dont_override)){
             $this->add_hook('user_preferences_server_settings', array($this, 'settings_table'));
             $this->add_hook('save_preferences', array($this, 'save_prefs'));
         }
@@ -39,24 +39,24 @@ class subscriptions_option extends rcube_plugin
 
     function settings_table($args)
     {
-        $config = rcmail::get_instance()->config->all();
+        $use_subscriptions = rcmail::get_instance()->config->get('use_subscriptions');
         $field_id = 'rcmfd_use_subscriptions';
         $use_subscriptions = new html_checkbox(array('name' => '_use_subscriptions', 'id' => $field_id, 'value' => 1));
 
         $args['table']->add('title', html::label($field_id, Q($this->gettext('useimapsubscriptions'))));
-        $args['table']->add(null, $use_subscriptions->show($config['use_subscriptions']?1:0));
+        $args['table']->add(null, $use_subscriptions->show($use_subscriptions?1:0));
 
         return $args;
     }
 
     function save_prefs($args){
         $rcmail = rcmail::get_instance();
-        $config = $rcmail->config->all();
+        $use_subscriptions = $rcmail->config->get('use_subscriptions');
 
-        $args['a_user_prefs']['use_subscriptions'] = isset($_POST['_use_subscriptions']) ? TRUE : FALSE;
+        $args['prefs']['use_subscriptions'] = isset($_POST['_use_subscriptions']) ? true : false;
         // if the use_subscriptions preference changes, flush the folder cache
-        if (($config['use_subscriptions'] && !isset($_POST['_use_subscriptions'])) ||
-            (!$config['use_subscriptions'] && isset($_POST['_use_subscriptions']))) {
+        if (($use_subscriptions && !isset($_POST['_use_subscriptions'])) ||
+            (!$use_subscriptions && isset($_POST['_use_subscriptions']))) {
                 $rcmail->imap_init(true);
                 $rcmail->imap->clear_cache('mailboxes');
             }
@@ -66,15 +66,15 @@ class subscriptions_option extends rcube_plugin
 
     function list_mailboxes($args){
         $rcmail = rcmail::get_instance();
-        if ($rcmail->config->get('use_subscriptions', TRUE) == FALSE) {
-            $args['a_folders'] = iil_C_ListMailboxes($rcmail->imap->conn, $rcmail->imap->_mod_mailbox($args['root']), $args['filter']);
+        if (!$rcmail->config->get('use_subscriptions', true)) {
+            $args['folders'] = iil_C_ListMailboxes($rcmail->imap->conn, $rcmail->imap->_mod_mailbox($args['root']), $args['filter']);
         }
         return $args;
     }
 
     function manage_folders($args){
-        $rcmail =rcmail::get_instance();
-        if ($rcmail->config->get('use_subscriptions', TRUE) == FALSE) {
+        $rcmail = rcmail::get_instance();
+        if (!$rcmail->config->get('use_subscriptions', true)) {
             $args['table']->remove_column('subscribed');
         }
         return $args;

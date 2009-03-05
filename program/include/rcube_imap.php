@@ -428,8 +428,8 @@ class rcube_imap
 
     // Give plugins a chance to provide a list of mailboxes
     $data = rcmail::get_instance()->plugins->exec_hook('list_mailboxes',array('root'=>$root,'filter'=>$filter));
-    if(isset($data['a_folders'])){
-        $a_folders = $data['a_folders'];
+    if (isset($data['folders'])) {
+        $a_folders = $data['folders'];
     }
     else{
         // retrieve list of folders from IMAP server
