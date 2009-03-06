@@ -32,7 +32,7 @@ class rcube_html_page
     protected $charset = 'UTF-8';
 
     protected $script_tag_file = "<script type=\"text/javascript\" src=\"%s\"></script>\n";
-    protected $script_tag      = "<script type=\"text/javascript\">\n<!--\n%s\n\n//-->\n</script>\n";
+    protected $script_tag  =  "<script type=\"text/javascript\">\n/* <![CDATA[ */\n%s\n/* ]]> */\n</script>";
     protected $default_template = "<html>\n<head><title></title></head>\n<body></body>\n</html>";
 
     protected $title = '';

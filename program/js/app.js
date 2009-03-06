@@ -3760,7 +3760,7 @@ function rcube_webmail()
 
     $.ajax({ type: 'POST', url: url, data: htmlText, contentType: 'application/octet-stream',
       error: function(o) { rcmail.http_error(o); },
-      success: function(data) { rcmail.set_busy(false); $(document.getElementById(id)).val(data); console.log(data); },
+      success: function(data) { rcmail.set_busy(false); $(document.getElementById(id)).val(data); console.log(data); }
       });
     }
 
