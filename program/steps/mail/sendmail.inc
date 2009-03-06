@@ -298,6 +298,9 @@ $transfer_encoding = in_array(strtoupper($message_charset), $charset_7bit) ? '7b
 if (is_array($_SESSION['compose']['attachments']))
   foreach ($_SESSION['compose']['attachments'] as $id => $attachment)
   {
+    // This hook gives attachment handlers a chance to place the file on disk
+    $plugin = rcmail::get_instance()->plugins->exec_hook('get_attachment', array('id' => $id,'attachment'=>$attachment));
+    $attachment = $plugin['attachment'];
     $dispurl = '/\ssrc\s*=\s*[\'"]?\S+display-attachment\S+file=rcmfile' . $id . '[\'"]?/';
     $match = preg_match($dispurl, $message_body);
     if ($isHtml && ($match > 0))
@@ -320,6 +323,9 @@ if (is_array($_SESSION['compose']['attachments']))
 	$CONFIG['mime_param_folding'] ? 'quoted-printable' : NULL,
 	$CONFIG['mime_param_folding'] == 2 ? 'quoted-printable' : NULL
 	);
+    }
+    if($plugin['erase_after_send']){
+        unlink($plugin['attachment']['path']);
     }
   }
 

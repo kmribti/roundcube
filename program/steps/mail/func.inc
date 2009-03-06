@@ -1214,10 +1214,7 @@ function rcmail_compose_cleanup()
   if (!isset($_SESSION['compose']))
     return;
 
-  // remove attachment files from temp dir
-  if (is_array($_SESSION['compose']['attachments']))
-    foreach ($_SESSION['compose']['attachments'] as $attachment)
-      @unlink($attachment['path']);
+  rcmail::get_instance()->plugins->exec_hook('cleanup_attachments',array());
   
   unset($_SESSION['compose']);
   }

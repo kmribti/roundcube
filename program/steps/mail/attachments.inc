@@ -28,12 +28,12 @@ if (!$_SESSION['compose']) {
 // remove an attachment
 if ($RCMAIL->action=='remove-attachment')
 {
-  if (preg_match('/^rcmfile([0-9]+)$/', $_POST['_file'], $regs))
+  $plugin = rcmail::get_instance()->plugins->exec_hook('remove_attachment',array('id'=>substr($_POST['_file'],7)));
+  if ($plugin['status'])
   {
-    $id = $regs[1];
+    $id = $plugin['id'];
     if (is_array($_SESSION['compose']['attachments'][$id]))
     {
-      @unlink($_SESSION['compose']['attachments'][$id]['path']);
       unset($_SESSION['compose']['attachments'][$id]);
       $OUTPUT->command('remove_from_attachment_list', "rcmfile$id");
       $OUTPUT->send();
@@ -44,15 +44,17 @@ if ($RCMAIL->action=='remove-attachment')
 
 if ($RCMAIL->action=='display-attachment')
 {
-  if (preg_match('/^rcmfile([0-9]+)$/', $_GET['_file'], $regs))
+  $plugin = rcmail::get_instance()->plugins->exec_hook('display_attachment',array('id'=>substr($_GET['_file'],7)));
+  if ($plugin['status'])
   {
-    $id = $regs[1];
-    if (is_array($_SESSION['compose']['attachments'][$id]))
-    {
-      $apath = $_SESSION['compose']['attachments'][$id]['path'];
-      header('Content-Type: ' . $_SESSION['compose']['attachments'][$id]['mimetype']);
-      header('Content-Length: ' . filesize($apath));
-      readfile($apath);
+    $id = $plugin['id'];
+    $apath = $_SESSION['compose']['attachments'][$id]['path'];
+    header('Content-Type: ' . $_SESSION['compose']['attachments'][$id]['mimetype']);
+    header('Content-Length: ' . filesize($apath));
+    readfile($apath);
+    // plugins that don't use disk storage will want this temp file removed after use
+    if($plugin['erase_after_send']){
+        unlink($apath);
     }
   }
   exit;
@@ -72,15 +74,9 @@ $OUTPUT->reset();
 
 if (is_array($_FILES['_attachments']['tmp_name'])) {
   foreach ($_FILES['_attachments']['tmp_name'] as $i => $filepath) {
-    $tmpfname = tempnam($temp_dir, 'rcmAttmnt');
-    if (move_uploaded_file($filepath, $tmpfname)) {
-      $id = count($_SESSION['compose']['attachments']);
-      $_SESSION['compose']['attachments'][] = array(
-        'name' => $_FILES['_attachments']['name'][$i],
-        'mimetype' => rc_mime_content_type($tmpfname, $_FILES['_attachments']['type'][$i]),
-        'path' => $tmpfname,
-      );
-
+    $plugin = rcmail::get_instance()->plugins->exec_hook('upload_attachment',array('filepath'=>$filepath,'index'=>$i));
+    if ($plugin['status']) {
+      $id = $plugin['id'];
       if (is_file($icon = $CONFIG['skin_path'] . '/images/icons/remove-attachment.png')) {
         $button = html::img(array(
           'src' => $icon,
@@ -94,7 +90,7 @@ if (is_array($_FILES['_attachments']['tmp_name'])) {
 
       $content = html::a(array(
         'href' => "#delete",
-        'onclick' => sprintf("return %s.command('remove-attachment','rcmfile%d', this)", JS_OBJECT_NAME, $id),
+        'onclick' => sprintf("return %s.command('remove-attachment','rcmfile%s', this)", JS_OBJECT_NAME, $id),
         'title' => rcube_label('delete'),
       ), $button);
       

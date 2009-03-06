@@ -588,8 +588,9 @@ function rcmail_write_compose_attachments(&$message, $bodyIsHtml)
         ($part->disposition=='attachment' || $part->disposition=='inline' || $part->headers['content-id']
          || (empty($part->disposition) && $part->filename)))
     {
-      if ($attachment = rcmail_save_attachment($message, $pid))
-        $_SESSION['compose']['attachments'][] = $attachment;
+      if ($attachment = rcmail_save_attachment($message, $pid)){
+          $_SESSION['compose']['attachments'][$attachment['id']] = $attachment;
+      }
     }
   }
 	
@@ -604,7 +605,7 @@ function rcmail_write_inline_attachments(&$message)
     if ($part->content_id && $part->filename)
     {
       if ($attachment = rcmail_save_attachment($message, $pid))
-        $_SESSION['compose']['attachments'][] = $attachment;
+        $_SESSION['compose']['attachments'][$attachment['id']] = $attachment;
     }
   }
 }
@@ -613,21 +614,21 @@ function rcmail_save_attachment(&$message, $pid)
 {
   global $RCMAIL;
 
-  $temp_dir = unslashify($RCMAIL->config->get('temp_dir'));
-  $tmp_path = tempnam($temp_dir, 'rcmAttmnt');
   $part = $message->mime_parts[$pid];
   
-  if ($fp = fopen($tmp_path, 'w'))
+  $attachment = $message->get_part_content($pid);
+  $plugin = rcmail::get_instance()->plugins->exec_hook('save_attachment',array('attachment'=>$attachment,'filename'=>$part->filename));
+  if ($plugin['status'])
   {
-    $message->get_part_content($pid, $fp);
-    fclose($fp);
-
     return array(
         'mimetype' => $part->ctype_primary . '/' . $part->ctype_secondary,
         'name' => $part->filename,
-        'path' => $tmp_path,
-	'content_id' => $part->content_id
+        'path' => $plugin['tmp_path'],
+        'content_id' => $part->content_id,
+        'id' => $plugin['id']
     );
+  } else {
+    return FALSE;
   }
 }
 
