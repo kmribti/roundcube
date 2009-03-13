@@ -93,22 +93,6 @@ class rcube_plugin_api
           if (is_subclass_of($plugin, 'rcube_plugin') && (!$plugin->task || $plugin->task == $rcmail->task)) {
             $plugin->init();
             $this->plugins[] = $plugin;
-
-            // Remove required plugin class types from the required_plugins
-            // list as they are found
-            $key = array_search($plugin_name, $this->required_plugins);
-            if($key === FALSE){
-                $parents = class_parents($plugin); 
-                foreach($parents as $parent){
-                    $key = array_search($parent, $this->required_plugins);
-                    if($key !== FALSE){
-                        break;
-                    }
-                }
-            }
-            if($key !== FALSE){
-                unset($this->required_plugins[$key]);           
-            }
           }
         }
         else {
@@ -120,19 +104,37 @@ class rcube_plugin_api
       }
     }
     
-    // Instantiate core plugins if not all required plugin types are satisfied
-    foreach($this->required_plugins as $plugin_name){
-      $fn = $plugins_dir->path . DIRECTORY_SEPARATOR . $plugin_name . DIRECTORY_SEPARATOR . $plugin_name . '.php';
-      if (file_exists($fn)) {
-        include($fn);
-        if (class_exists($plugin_name, false)) {
-          $plugin = new $plugin_name($this);
-          // check inheritance and task specification
-          if (is_subclass_of($plugin, 'rcube_plugin') && (!$plugin->task || $plugin->task == $rcmail->task)) {
-            $plugin->init();
-            $this->plugins[] = $plugin;
+    // check existance of all required core plugins
+    foreach ($this->required_plugins as $plugin_name) {
+      $loaded = false;
+      foreach ($this->plugins as $plugin) {
+        if ($plugin instanceof $plugin_name) {
+          $loaded = true;
+          break;
+        }
+      }
+      
+      // load required core plugin if no derivate was found
+      if (!$loaded) {
+        $fn = $plugins_dir->path . DIRECTORY_SEPARATOR . $plugin_name . DIRECTORY_SEPARATOR . $plugin_name . '.php';
+        if (file_exists($fn)) {
+          include($fn);
+          
+          if (class_exists($plugin_name, false)) {
+            $plugin = new $plugin_name($this);
+            // check inheritance
+            if (is_subclass_of($plugin, 'rcube_plugin')) {
+              $plugin->init();
+              $this->plugins[] = $plugin;
+              $loaded = true;
+            }
           }
         }
+      }
+      
+      // trigger fatal error if still not loaded
+      if (!$loaded) {
+        raise_error(array('code' => 520, 'type' => 'php', 'message' => "Requried plugin $plugin_name was not loaded"), true, true);
       }
     }
 
