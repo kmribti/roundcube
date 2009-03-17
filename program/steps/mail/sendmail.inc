@@ -295,55 +295,54 @@ $charset_7bit = array('ASCII', 'ISO-2022-JP', 'ISO-8859-1', 'ISO-8859-2', 'ISO-8
 $transfer_encoding = in_array(strtoupper($message_charset), $charset_7bit) ? '7bit' : '8bit';
 
 // add stored attachments, if any
-if (is_array($_SESSION['compose']['attachments']))
-  foreach ($_SESSION['compose']['attachments'] as $id => $attachment)
-  {
+if (is_array($_SESSION['compose']['attachments'])) {
+  foreach ($_SESSION['compose']['attachments'] as $id => $attachment) {
     // This hook gives attachment handlers a chance to place the file on disk
-    $plugin = rcmail::get_instance()->plugins->exec_hook('get_attachment', array('id' => $id,'attachment'=>$attachment));
-    $attachment = $plugin['attachment'];
-    $dispurl = '/\ssrc\s*=\s*[\'"]?\S+display-attachment\S+file=rcmfile' . $id . '[\'"]?/';
+    $attachment = $RCMAIL->plugins->exec_hook('get_attachment', $attachment);
+
+    $dispurl = '/\ssrc\s*=\s*[\'"]?\S+display-attachment\S+file=rcmfile' . $attachment['id'] . '[\'"]?/';
     $match = preg_match($dispurl, $message_body);
-    if ($isHtml && ($match > 0))
-    {
+    if ($isHtml && ($match > 0)) {
       $message_body = preg_replace($dispurl, ' src="'.$attachment['name'].'"', $message_body);
       $MAIL_MIME->setHTMLBody($message_body);
-      $MAIL_MIME->addHTMLImage($attachment['path'], $attachment['mimetype'], $attachment['name']);
+      if ($attachment['data'])
+        $MAIL_MIME->addHTMLImage($attachment['data'], $attachment['mimetype'], $attachment['name'], false);
+      else
+        $MAIL_MIME->addHTMLImage($attachment['path'], $attachment['mimetype'], $attachment['name'], true);
     }
-    else
-    {
+    else {
       $ctype = str_replace('image/pjpeg', 'image/jpeg', $attachment['mimetype']); // #1484914
+      $file = $attachment['data'] ? $attachment['data'] : $attachment['path'];
 
       // .eml attachments send inline
-      $MAIL_MIME->addAttachment($attachment['path'],
+      $MAIL_MIME->addAttachment($file,
         $ctype, 
-        $attachment['name'], true, 
+        $attachment['name'],
+        ($attachment['data'] ? false : true),
         ($ctype == 'message/rfc822' ? $transfer_encoding : 'base64'),
         ($ctype == 'message/rfc822' ? 'inline' : 'attachment'),
         $message_charset, '', '', 
-	$CONFIG['mime_param_folding'] ? 'quoted-printable' : NULL,
-	$CONFIG['mime_param_folding'] == 2 ? 'quoted-printable' : NULL
-	);
-    }
-    if($plugin['erase_after_send']){
-        unlink($plugin['attachment']['path']);
+        $CONFIG['mime_param_folding'] ? 'quoted-printable' : NULL,
+        $CONFIG['mime_param_folding'] == 2 ? 'quoted-printable' : NULL
+      );
     }
   }
+}
 
 // add submitted attachments
-if (is_array($_FILES['_attachments']['tmp_name']))
-  foreach ($_FILES['_attachments']['tmp_name'] as $i => $filepath)
-    {
+if (is_array($_FILES['_attachments']['tmp_name'])) {
+  foreach ($_FILES['_attachments']['tmp_name'] as $i => $filepath) {
     $ctype = $files['type'][$i];
     $ctype = str_replace('image/pjpeg', 'image/jpeg', $ctype); // #1484914
     
     $MAIL_MIME->addAttachment($filepath, $ctype, $files['name'][$i], true,
-	$ctype == 'message/rfc822' ? $transfer_encoding : 'base64',
-	'attachment', $message_charset, '', '', 
-	$CONFIG['mime_param_folding'] ? 'quoted-printable' : NULL,
-	$CONFIG['mime_param_folding'] == 2 ? 'quoted-printable' : NULL
-	);
-    }
-
+      $ctype == 'message/rfc822' ? $transfer_encoding : 'base64',
+      'attachment', $message_charset, '', '', 
+      $CONFIG['mime_param_folding'] ? 'quoted-printable' : NULL,
+      $CONFIG['mime_param_folding'] == 2 ? 'quoted-printable' : NULL
+    );
+  }
+}
 
 // encoding settings for mail composing
 $MAIL_MIME->setParam(array(

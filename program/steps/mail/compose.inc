@@ -612,24 +612,22 @@ function rcmail_write_inline_attachments(&$message)
 
 function rcmail_save_attachment(&$message, $pid)
 {
-  global $RCMAIL;
-
   $part = $message->mime_parts[$pid];
   
-  $attachment = $message->get_part_content($pid);
-  $plugin = rcmail::get_instance()->plugins->exec_hook('save_attachment',array('attachment'=>$attachment,'filename'=>$part->filename));
-  if ($plugin['status'])
-  {
-    return array(
-        'mimetype' => $part->ctype_primary . '/' . $part->ctype_secondary,
-        'name' => $part->filename,
-        'path' => $plugin['tmp_path'],
-        'content_id' => $part->content_id,
-        'id' => $plugin['id']
-    );
-  } else {
-    return FALSE;
+  $attachment = array(
+    'name' => $part->filename,
+    'mimetype' => $part->ctype_primary . '/' . $part->ctype_secondary,
+    'content_id' => $part->content_id,
+    'data' => $message->get_part_content($pid),
+  );
+  
+  $attachment = rcmail::get_instance()->plugins->exec_hook('save_attachment', $attachment);
+  if ($attachment['status']) {
+    unset($attachment['data'], $attachment['status']);
+    return $attachment;
   }
+
+  return false;
 }
 
 
@@ -709,7 +707,7 @@ function rcmail_compose_attachment_list($attrib)
         html::a(array(
             'href' => "#delete",
             'title' => rcube_label('delete'),
-            'onclick' => sprintf("return %s.command('remove-attachment','rcmfile%d', this)", JS_OBJECT_NAME, $id)),
+            'onclick' => sprintf("return %s.command('remove-attachment','rcmfile%s', this)", JS_OBJECT_NAME, $id)),
           $button) . Q($a_prop['name']));
     }
   }
