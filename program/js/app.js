@@ -456,6 +456,7 @@ function rcube_webmail()
     var input_from = $("[name='_from']");
     var input_to = $("[name='_to']");
     var input_subject = $("input[name='_subject']");
+    var input_message = $("[name='_message']").get(0);
 
     // init live search events
     this.init_address_input_events(input_to);
@@ -473,7 +474,7 @@ function rcube_webmail()
     else if (input_subject.val() == '')
       input_subject.focus();
     else if (input_message)
-      this.set_caret2start($("[name='_message']").get(0));
+      this.set_caret2start(input_message);
 
     // get summary of all field values
     this.compose_field_hash(true);
