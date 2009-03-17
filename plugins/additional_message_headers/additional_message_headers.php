@@ -22,7 +22,8 @@
  */
 class additional_message_headers extends rcube_plugin
 {
-
+    public $task = 'mail';
+    
     function init()
     {
         $this->add_hook('outgoing_message_headers', array($this, 'message_headers'));

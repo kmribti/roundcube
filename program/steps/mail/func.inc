@@ -814,7 +814,7 @@ function rcmail_washtml_callback($tagname, $attrib, $content)
  */
 function rcmail_message_headers($attrib, $headers=NULL)
   {
-  global $IMAP, $OUTPUT, $MESSAGE, $PRINT_MODE, $CONFIG;
+  global $IMAP, $OUTPUT, $MESSAGE, $PRINT_MODE, $RCMAIL;
   static $sa_attrib;
   
   // keep header table attrib
@@ -823,7 +823,6 @@ function rcmail_message_headers($attrib, $headers=NULL)
   else if (!is_array($attrib) && is_array($sa_attrib))
     $attrib = $sa_attrib;
   
-  
   if (!isset($MESSAGE))
     return FALSE;
 
@@ -831,58 +830,55 @@ function rcmail_message_headers($attrib, $headers=NULL)
   if (!$headers)
     $headers = is_object($MESSAGE->headers) ? get_object_vars($MESSAGE->headers) : $MESSAGE->headers;
     
-  $header_count = 0;
-  
-  // allow the following attributes to be added to the <table> tag
-  $attrib_str = create_attrib_string($attrib, array('style', 'class', 'id', 'cellpadding', 'cellspacing', 'border', 'summary'));
-  $out = '<table' . $attrib_str . ">\n";
-
   // show these headers
   $standard_headers = array('subject', 'from', 'to', 'cc', 'bcc', 'replyto', 'date');
+  $output_headers = array();
 
-  foreach ($standard_headers as $hkey)
-    {
+  foreach ($standard_headers as $hkey) {
     if (!$headers[$hkey])
       continue;
 
-    if ($hkey == 'date')
-      {
+    if ($hkey == 'date') {
       if ($PRINT_MODE)
-        $header_value = format_date($headers[$hkey], $CONFIG['date_long'] ? $CONFIG['date_long'] : 'x');
+        $header_value = format_date($headers[$hkey], $RCMAIL->config->get('date_long', 'x'));
       else
         $header_value = format_date($headers[$hkey]);
-      }
-    else if ($hkey == 'replyto')
-      {
+    }
+    else if ($hkey == 'replyto') {
       if ($headers['replyto'] != $headers['from'])
-        $header_value = Q(rcmail_address_string($headers['replyto'], null, true, $attrib['addicon']), 'show');
+        $header_value = rcmail_address_string($headers['replyto'], null, true, $attrib['addicon']);
       else
         continue;
-      }
-    else if (in_array($hkey, array('from', 'to', 'cc', 'bcc')))
-      $header_value = Q(rcmail_address_string($headers[$hkey], null, true, $attrib['addicon']), 'show');
-    else if ($hkey == 'subject' && empty($headers[$hkey]))
-      $header_value = Q(rcube_label('nosubject'));
-    else
-      $header_value = Q(trim($IMAP->decode_header($headers[$hkey])));
-
-    $out .= "\n<tr>\n";
-    $out .= '<td class="header-title">'.Q(rcube_label($hkey)).":&nbsp;</td>\n";
-    $out .= '<td class="'.$hkey.'" width="90%">'.$header_value."</td>\n</tr>";
-    $header_count++;
     }
+    else if (in_array($hkey, array('from', 'to', 'cc', 'bcc')))
+      $header_value = rcmail_address_string($headers[$hkey], null, true, $attrib['addicon']);
+    else if ($hkey == 'subject' && empty($headers[$hkey]))
+      $header_value = rcube_label('nosubject');
+    else
+      $header_value = trim($IMAP->decode_header($headers[$hkey]));
+      
+    $output_headers[$hkey] = array('title' => rcube_label($hkey), 'value' => $header_value, 'raw' => $headers[$hkey]);
+  }
+    
+  $plugin = $RCMAIL->plugins->exec_hook('message_headers_output', array('output' => $output_headers, 'headers' => $MESSAGE->headers));
+  
+  // compose html table
+  $table = new html_table(array('cols' => 2));
+  
+  foreach ($plugin['output'] as $hkey => $row) {
+    $table->add(array('class' => 'header-title'), Q($row['title']));
+    $table->add(array('class' => $hkey, 'width' => "90%"), Q($row['value'], ($hkey == 'subject' ? 'strict' : 'show')));
+  }
 
   // all headers division
-  $out .= "\n".'<tr><td colspan="2" class="more-headers show-headers"
-	onclick="return '.JS_OBJECT_NAME.'.command(\'load-headers\', \'\', this)"></td></tr>';
-  $out .= "\n".'<tr id="all-headers"><td colspan="2" class="all"><div id="headers-source"></div></td></tr>';
-
+  $table->add(array('colspan' => 2, 'class' => "more-headers show-headers", 'onclick' => "return ".JS_OBJECT_NAME.".command('load-headers','',this)"), '');
+  $table->add_row(array('id' => "all-headers"));
+  $table->add(array('colspan' => 2, 'class' => "all"), html::div(array('id' => 'headers-source'), ''));
+  
   $OUTPUT->add_gui_object('all_headers_row', 'all-headers');
   $OUTPUT->add_gui_object('all_headers_box', 'headers-source');
 
-  $out .= "\n</table>\n\n";
-
-  return $header_count ? $out : '';  
+  return $table->show($attrib);
   }
 
 

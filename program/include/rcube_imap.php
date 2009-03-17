@@ -54,6 +54,7 @@ class rcube_imap
   var $default_charset = 'ISO-8859-1';
   var $default_folders = array('INBOX');
   var $default_folders_lc = array('inbox');
+  var $fetch_add_headers = '';
   var $cache = array();
   var $cache_keys = array();  
   var $cache_changes = array();
@@ -781,7 +782,7 @@ class rcube_imap
     $cache_index = $this->get_message_cache_index($cache_key);
     
     // fetch reuested headers from server
-    $a_header_index = iil_C_FetchHeaders($this->conn, $mailbox, $msgs);
+    $a_header_index = iil_C_FetchHeaders($this->conn, $mailbox, $msgs, false, $this->fetch_add_headers);
     $deleted_count = 0;
     
     if (!empty($a_header_index))
@@ -835,14 +836,14 @@ class rcube_imap
         if ($this->sort_field && $this->search_sort_field != $this->sort_field)
           $this->search('', $this->search_string, $this->search_charset, $this->sort_field);
 
-	if ($this->sort_order == 'DESC')
+        if ($this->sort_order == 'DESC')
           $this->cache[$key] = array_reverse($this->search_set);
-	else
-	  $this->cache[$key] = $this->search_set;
+        else
+          $this->cache[$key] = $this->search_set;
         }
       else
         {
-	$a_index = iil_C_FetchHeaderIndex($this->conn, $mailbox, join(',', $this->search_set), $this->sort_field);
+        $a_index = iil_C_FetchHeaderIndex($this->conn, $mailbox, join(',', $this->search_set), $this->sort_field, false);
 
         if ($this->sort_order=="ASC")
           asort($a_index);
@@ -929,7 +930,7 @@ class rcube_imap
         
 
       // fetch complete headers and add to cache
-      $headers = iil_C_FetchHeader($this->conn, $mailbox, $id);
+      $headers = iil_C_FetchHeader($this->conn, $mailbox, $id, false, $this->fetch_add_headers);
       $this->add_message_cache($cache_key, $headers->id, $headers);
       }
 
@@ -1066,7 +1067,7 @@ class rcube_imap
     if ($uid && ($headers = &$this->get_cached_message($mailbox.'.msg', $uid)))
       return $headers;
 
-    $headers = iil_C_FetchHeader($this->conn, $mailbox, $id, $is_uid);
+    $headers = iil_C_FetchHeader($this->conn, $mailbox, $id, $is_uid, $this->fetch_add_headers);
 
     // write headers cache
     if ($headers)
@@ -2223,7 +2224,7 @@ class rcube_imap
     if ($cache_count==$msg_count)
       {
       // get highest index
-      $header = iil_C_FetchHeader($this->conn, $mailbox, "$msg_count");
+      $header = iil_C_FetchHeader($this->conn, $mailbox, "$msg_count", false, $this->fetch_add_headers);
       $cache_uid = array_pop($cache_index);
       
       // uids of highest message matches -> cache seems OK
@@ -2273,7 +2274,7 @@ class rcube_imap
         
         // featch headers if unserialize failed
         if (empty($this->cache[$cache_key][$uid]))
-          $this->cache[$cache_key][$uid] = iil_C_FetchHeader($this->conn, preg_replace('/.msg$/', '', $key), $uid, true);
+          $this->cache[$cache_key][$uid] = iil_C_FetchHeader($this->conn, preg_replace('/.msg$/', '', $key), $uid, true, $this->fetch_add_headers);
         }
       }
       
