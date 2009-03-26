@@ -285,7 +285,6 @@ class rcube_plugin_api
    */
   public function add_content($html, $container)
   {
-    console($html, $container);
     $this->template_contents[$container] .= $html . "\n";
   }
   
