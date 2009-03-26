@@ -1658,6 +1658,9 @@ function iil_C_FetchHeaders(&$conn, $mailbox, $message_set, $uidfetch=false, $ad
 			}
 		}
 	}
+	
+	if ($add)
+	  $add = ' '.strtoupper(trim($add));
 
 	/* FETCH uid, size, flags and headers */
 	$key  	  = 'FH12';
@@ -1665,7 +1668,7 @@ function iil_C_FetchHeaders(&$conn, $mailbox, $message_set, $uidfetch=false, $ad
 	$request .= "(UID RFC822.SIZE FLAGS INTERNALDATE BODY.PEEK[HEADER.FIELDS ";
 	$request .= "(DATE FROM TO SUBJECT REPLY-TO IN-REPLY-TO CC BCC ";
 	$request .= "CONTENT-TRANSFER-ENCODING CONTENT-TYPE MESSAGE-ID ";
-	$request .= "REFERENCES DISPOSITION-NOTIFICATION-TO X-PRIORITY ".strtoupper($add).")])";
+	$request .= "REFERENCES DISPOSITION-NOTIFICATION-TO X-PRIORITY".$add.")])";
 
 	if (!iil_PutLine($fp, $request)) {
 		return false;
