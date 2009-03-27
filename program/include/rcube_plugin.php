@@ -30,6 +30,7 @@ abstract class rcube_plugin
   public $api;
   public $task;
   protected $home;
+  protected $urlbase;
 
   /**
    * Default constructor.
