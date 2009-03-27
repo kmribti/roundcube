@@ -301,7 +301,7 @@ if (is_array($_SESSION['compose']['attachments'])) {
     $attachment = $RCMAIL->plugins->exec_hook('get_attachment', $attachment);
 
     $dispurl = '/\ssrc\s*=\s*[\'"]?\S+display-attachment\S+file=rcmfile' . $attachment['id'] . '[\'"]?/';
-    $message_body = $MAL_MIME->getHTMLBody();
+    $message_body = $MAIL_MIME->getHTMLBody();
     if ($isHtml && (preg_match($dispurl, $message_body) > 0)) {
       $message_body = preg_replace($dispurl, ' src="'.$attachment['name'].'"', $message_body);
       $MAIL_MIME->setHTMLBody($message_body);
