@@ -151,9 +151,11 @@ if ($_GET['_uid']) {
     }
 
   // mark message as read
-  if (!$MESSAGE->headers->seen)
+  if (!$MESSAGE->headers->seen) {
     $IMAP->set_flag($MESSAGE->uid, 'SEEN');
+    $RCMAIL->plugins->exec_hook('message_read', array('uid' => $MESSAGE->uid, 'mailbox' => $IMAP->mailbox, 'message' => $MESSAGE));
   }
+}
 
 
 

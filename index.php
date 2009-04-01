@@ -108,11 +108,16 @@ if ($RCMAIL->action=='login' && $RCMAIL->task=='mail') {
         $_SERVER['REMOTE_ADDR']));
     }
 
+    // allow plugins to control the redirect url after login success
+    $redir = $RCMAIL->plugins->exec_hook('login_after', array('task' => $RCMAIL->task));
+    unset($redir['abort']);
+
     // send redirect
-    $OUTPUT->redirect();
+    $OUTPUT->redirect($redir);
   }
   else {
     $OUTPUT->show_message($IMAP->error_code < -1 ? 'imaperror' : 'loginfailed', 'warning');
+    $RCMAIL->plugins->exec_hook('login_failed', array('code' => $IMAP->error_code, 'host' => $auth['host'], 'user' => $auth['user']));
     $RCMAIL->kill_session();
   }
 }
