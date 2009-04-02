@@ -928,11 +928,12 @@ class rcmail
   {
     if (!is_array($p))
       $p = array('_action' => @func_get_arg(0));
+      
+    $task = $p['_task'] ? $p['_task'] : $p['task'];
+    if (!$task || !in_array($task, rcmail::$main_tasks))
+      $task = $this->task;
 
-    if (!$p['task'] || !in_array($p['task'], rcmail::$main_tasks))
-      $p['task'] = $this->task;
-
-    $p['_task'] = $p['task'];
+    $p['_task'] = $task;
     unset($p['task']);
 
     $url = './';
