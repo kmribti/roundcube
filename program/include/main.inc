@@ -683,11 +683,11 @@ function parse_attrib_string($str)
   preg_match_all('/\s*([-_a-z]+)=(["\'])??(?(2)([^\2]*)\2|(\S+?))/Ui', stripslashes($str), $regs, PREG_SET_ORDER);
 
   // convert attributes to an associative array (name => value)
-  if ($regs)
-    foreach ($regs as $attr)
-      {
-      $attrib[strtolower($attr[1])] = $attr[3] . $attr[4];
-      }
+  if ($regs) {
+    foreach ($regs as $attr) {
+      $attrib[strtolower($attr[1])] = html_entity_decode($attr[3] . $attr[4]);
+    }
+  }
 
   return $attrib;
   }

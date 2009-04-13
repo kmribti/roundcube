@@ -259,9 +259,18 @@ class rcmail
     $contacts = null;
     $ldap_config = (array)$this->config->get('ldap_public');
     $abook_type = strtolower($this->config->get('address_book_type'));
+
+    $plugin = $this->plugins->exec_hook('get_address_book', array('id' => $id, 'writeable' => $writeable));
     
-    if ($id && $ldap_config[$id]) {
+    // plugin returned instance of a rcube_addressbook
+    if ($plugin['instance'] instanceof rcube_addressbook) {
+      $contacts = $plugin['instance'];
+    }
+    else if ($id && $ldap_config[$id]) {
       $contacts = new rcube_ldap($ldap_config[$id]);
+    }
+    else if ($id === '0') {
+      $contacts = new rcube_contacts($this->db, $this->user->ID);
     }
     else if ($abook_type == 'ldap') {
       // Use the first writable LDAP address book.
