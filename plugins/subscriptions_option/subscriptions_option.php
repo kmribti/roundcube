@@ -30,7 +30,7 @@ class subscriptions_option extends rcube_plugin
         $this->add_texts('localization/', false);
         $dont_override = rcmail::get_instance()->config->get('dont_override', array());
         if (!in_array('use_subscriptions', $dont_override)){
-            $this->add_hook('user_preferences_server_settings', array($this, 'settings_table'));
+            $this->add_hook('user_preferences', array($this, 'settings_table'));
             $this->add_hook('save_preferences', array($this, 'save_prefs'));
         }
         $this->add_hook('list_mailboxes', array($this, 'list_mailboxes'));
@@ -39,12 +39,14 @@ class subscriptions_option extends rcube_plugin
 
     function settings_table($args)
     {
-        $use_subscriptions = rcmail::get_instance()->config->get('use_subscriptions');
-        $field_id = 'rcmfd_use_subscriptions';
-        $use_subscriptions = new html_checkbox(array('name' => '_use_subscriptions', 'id' => $field_id, 'value' => 1));
+        if ($args['section'] == 'server') {
+            $use_subscriptions = rcmail::get_instance()->config->get('use_subscriptions');
+            $field_id = 'rcmfd_use_subscriptions';
+            $use_subscriptions = new html_checkbox(array('name' => '_use_subscriptions', 'id' => $field_id, 'value' => 1));
 
-        $args['table']->add('title', html::label($field_id, Q($this->gettext('useimapsubscriptions'))));
-        $args['table']->add(null, $use_subscriptions->show($use_subscriptions?1:0));
+            $args['table']->add('title', html::label($field_id, Q($this->gettext('useimapsubscriptions'))));
+            $args['table']->add(null, $use_subscriptions->show($use_subscriptions?1:0));
+        }
 
         return $args;
     }
