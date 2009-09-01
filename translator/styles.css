@@ -21,9 +21,14 @@ fieldset {
 }
 
 #banner h1 {
+	position: absolute;
+	top: 13px;
+	right: 20px;
+	width: 16em;
+	text-align: right;
+	font-size: 15pt;
 	color: #333;
 	z-index: 5;
-	font-size: 15pt;
 }
 
 #banner .banner-bg {
@@ -37,21 +42,14 @@ fieldset {
 }
 
 #banner .banner-logo {
+	position: absolute;
+	top: 10px;
+	left: 20px;
 	z-index: 4;
 }
 
 #banner .banner-logo a {
   border: 0;
-}
-
-#pageheader {
-	position: absolute;
-	top: 13px;
-	right: 20px;
-	width: 400px;
-	text-align: right;
-	font-size: 12pt;
-	color: #f6f6f6;
 }
 
 #bodycontent {

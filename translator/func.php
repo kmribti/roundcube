@@ -182,7 +182,7 @@ function localization_stats($force = false)
 	$result .= '</table></td><td><table class="langstats">';
 	for(; $i<count($rows); $i++)
 		$result .= $rows[$i];
-	$result .= '</td></tr></table>';
+	$result .= '</table></td></tr></table>';
 	
 	// save to cache file
 	file_put_contents($cachefile, $result);
