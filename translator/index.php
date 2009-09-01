@@ -31,9 +31,9 @@ ob_end_clean();
 <body>
 
 <div id="banner">
-  <div class="banner-logo"><a href="http://roundcube.net"><img src="images/banner_logo.gif" width="200" height="56" border="0" alt="RoundCube Webmal Project" /></a></div>
-  <div class="banner-right"><img src="images/banner_right.gif" width="10" height="56" alt="" /></div>
-  <h2 id="pageheader">RoundCube (Live) Translator</h2>
+  <div class="banner-bg"></div>
+  <div class="banner-logo"><a href="http://roundcube.net"><img src="images/rcube_logo.gif" width="210" height="55" border="0" alt="Roundcube - Open source webmail project" /></a></div>
+  <h1 id="pageheader">Roundcube (Live) Translator</h1>
 </div>
 
 <div id="bodycontent">
