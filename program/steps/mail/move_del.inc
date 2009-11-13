@@ -24,7 +24,7 @@ if (!$OUTPUT->ajax_call)
   return;
 
 // count messages before changing anything
-$old_count = $IMAP->messagecount();
+$old_count = $IMAP->messagecount(NULL, $IMAP->threading ? 'THREADS' : 'ALL');
 $old_pages = ceil($old_count / $IMAP->page_size);
 
 // move messages
@@ -82,7 +82,7 @@ if ($_POST['_from'] == 'show')
 }
 else
 {
-  $msg_count      = $IMAP->messagecount();
+  $msg_count      = $IMAP->messagecount(NULL, $IMAP->threading ? 'THREADS' : 'ALL');
   $pages          = ceil($msg_count / $IMAP->page_size);
   $nextpage_count = $old_count - $IMAP->page_size * $IMAP->list_page;
   $remaining      = $msg_count - $IMAP->page_size * ($IMAP->list_page - 1);
@@ -122,6 +122,11 @@ else
     $sort_order = isset($_SESSION['sort_order']) ? $_SESSION['sort_order'] : $CONFIG['message_sort_order'];
 
     $a_headers = $IMAP->list_headers($mbox, NULL, $sort_col, $sort_order, $count);
+    if ($_SESSION['threads'])
+      // TODO: count number of roots deleted and slice that many roots from the end of $a_headers 
+      $OUTPUT->command('message_list.clear');
+    else
+      $a_headers = array_slice($a_headers, -$count, $count);
 
     rcmail_js_message_list($a_headers, false, false);
   }

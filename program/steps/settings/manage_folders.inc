@@ -38,6 +38,28 @@ else if ($RCMAIL->action=='unsubscribe')
     $IMAP->unsubscribe(array($mbox));
   }
 
+// enable threading for one or more mailboxes
+else if ($RCMAIL->action=='enable-threading')
+  {
+  if ($mbox = get_input_value('_mbox', RCUBE_INPUT_POST, false, 'UTF7-IMAP'))
+    $a_user_prefs = $USER->get_prefs();
+    if (!is_array($a_user_prefs['message_threading']))
+      $a_user_prefs['message_threading'] = array();
+    $a_user_prefs['message_threading'][$mbox] = true;
+    $USER->save_prefs($a_user_prefs);
+  }
+
+// enable threading for one or more mailboxes
+else if ($RCMAIL->action=='disable-threading')
+  {
+  if ($mbox = get_input_value('_mbox', RCUBE_INPUT_POST, false, 'UTF7-IMAP'))
+    $a_user_prefs = $USER->get_prefs();
+    if (!is_array($a_user_prefs['message_threading']))
+      $a_user_prefs['message_threading'] = array();
+    unset($a_user_prefs['message_threading'][$mbox]);
+    $USER->save_prefs($a_user_prefs);
+  }
+
 // create a new mailbox
 else if ($RCMAIL->action=='create-folder')
   {
@@ -159,7 +181,11 @@ if ($OUTPUT->ajax_call)
 // build table with all folders listed by server
 function rcube_subscription_form($attrib)
   {
-  global $IMAP, $CONFIG, $OUTPUT;
+  global $RCMAIL, $IMAP, $CONFIG, $OUTPUT;
+
+  $threading_supported = $IMAP->get_capability('thread=references')
+    || $IMAP->get_capability('thread=orderedsubject')
+    || $IMAP->get_capability('thread=refs');
 
   list($form_start, $form_end) = get_form_tags($attrib, 'folders');
   unset($attrib['form']);
@@ -173,15 +199,17 @@ function rcube_subscription_form($attrib)
   $table->add_header('name', rcube_label('foldername'));
   $table->add_header('msgcount', rcube_label('messagecount'));
   $table->add_header('subscribed', rcube_label('subscribed'));
+  if ($threading_supported)
+    $table->add_header('threaded', rcube_label('threaded'));
   $table->add_header('rename', '&nbsp;');
   $table->add_header('delete', '&nbsp;');
-
 
   // get folders from server
   $IMAP->clear_cache('mailboxes');
 
   $a_unsubscribed = $IMAP->list_unsubscribed();
   $a_subscribed = $IMAP->list_mailboxes();
+  $a_threaded = $RCMAIL->config->get('message_threading', array()); 
   $delimiter = $IMAP->get_hierarchy_delimiter();
   $a_js_folders = $seen_folders = $list_folders = array();
 
@@ -211,6 +239,10 @@ function rcube_subscription_form($attrib)
     'name' => '_subscribed[]',
     'onclick' => JS_OBJECT_NAME.".command(this.checked?'subscribe':'unsubscribe',this.value)",
   ));
+  $checkbox_threaded = new html_checkbox(array(
+    'name' => '_threaded[]',
+    'onclick' => JS_OBJECT_NAME.".command(this.checked?'enable-threading':'disable-threading',this.value)",
+  ));
   
   if (!empty($attrib['deleteicon']))
     $del_button = html::img(array('src' => $CONFIG['skin_path'] . $attrib['deleteicon'], 'alt' => rcube_label('delete')));
@@ -226,6 +258,7 @@ function rcube_subscription_form($attrib)
   foreach ($list_folders as $i => $folder) {
     $idx = $i + 1;
     $subscribed = in_array($folder['id'], $a_subscribed);
+    $threaded = $a_threaded[$folder['id']];
     $protected = ($CONFIG['protect_default_folders'] == true && in_array($folder['id'], $CONFIG['default_imap_folders']));
     $classes = array($i%2 ? 'even' : 'odd');
     $folder_js = JQ($folder['id']);
@@ -238,9 +271,13 @@ function rcube_subscription_form($attrib)
     $table->add_row(array('id' => 'rcmrow'.$idx, 'class' => join(' ', $classes)));
     
     $table->add('name', Q($display_folder));
-    $table->add('msgcount', ($folder['virtual'] ? '' : $IMAP->messagecount($folder['id'])));
+    $table->add('msgcount', ($folder['virtual'] ? '' : $IMAP->messagecount($folder['id']))); // XXX: Use THREADS or ALL?
     $table->add('subscribed', ($protected || $folder['virtual']) ? ($subscribed ? '&nbsp;&#x2022;' : '&nbsp;') :
         $checkbox_subscribe->show(($subscribed ? $folder_utf8 : ''), array('value' => $folder_utf8)));
+    if ($IMAP->get_capability('thread=references')) {
+      $table->add('threaded',
+                  $checkbox_threaded->show(($threaded ? $folder_utf8 : ''), array('value' => $folder_utf8)));
+    }
     
     // add rename and delete buttons
     if (!$protected && !$folder['virtual']) {

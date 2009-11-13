@@ -1,0 +1,45 @@
+CHANGES IN RELATION TO ORIGINAL PATCH
+    - don't add nested messages into selection on collapse if parent message
+      is in selection
+    - some changes in messages highlighting
+    - re-written all changes in rcube_imap.php
+    - temporary removed threads caching (see TODO)
+    - use depth=0 for roots
+    - thread expand state is not stored anywhere
+
+CHANGES IN RELATION TO TRUNK
+    - removed 'index_sort' option, now we'll use empty 'message_sort_col' for
+      this purpose (that's how this should be done from the beginning)
+    - popup menu for list column/sorting/view selection (not finished yet)
+
+TODO:
+    - threads caching,
+    - performance: fetching all messages for list in "expand all" state only,
+      if "expand all" is disabled we should fetch only root messages and fetch
+      children on-demand (on expand button click),
+    - after message delete we shouldn't reload the whole list, only the thread
+      in which the message was
+    - button in #listcontrols to mark all messages in current thread (with selected
+      root or child message),
+    - "Expand All Unread" button
+    - columns/sort/view selector (popup) with 'default sorting' support
+    - thread tree icons
+    - replace expand_unread() (list.js) with something universal,
+      e.g. expand_all('unread'), because list widget could be used not for messages only
+    - mark root message with unread children as underlined subject instead
+      of unread_children icon
+    - reset autoexpand feature if collapse-all/expand-all was used. Save state for next page
+      in the same folder. E.g. autoexpand is on, list is displayed with expanded
+      threads, then user clicks collapse-all, now if he goes to next page of the list,
+      threads should be collapsed,
+    - update message_threading flag on folder rename/delete, also make sure
+      that array is not growing infinite (remove non-existing items e.g. when
+      listing the folders)
+    - thread css: message row height, thread/status icon alignment
+
+KNOWN ISSUES:
+    - after message(s) deletion the whole list is reloaded (see TODO),
+    - unread_children icon is not shown after changing message status to
+      Seen, when root is e.g. "replied", also when thread contains many unread
+      children. For me, we should use underlined subject instead of unread_children 
+      icon

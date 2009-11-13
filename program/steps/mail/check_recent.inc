@@ -28,9 +28,9 @@ foreach ($a_mailboxes as $mbox_name) {
       // refresh saved search set
       if (($search_request = get_input_value('_search', RCUBE_INPUT_GPC)) && isset($_SESSION['search'][$search_request])) {
         $_SESSION['search'][$search_request] = $IMAP->refresh_search();
-        $all_count = $IMAP->messagecount();
+        $all_count = $IMAP->messagecount(NULL, $IMAP->threading ? 'THREADS' : 'ALL');
       } else {
-        $all_count = $IMAP->messagecount(NULL, 'ALL', TRUE);
+        $all_count = $IMAP->messagecount(NULL, $IMAP->threading ? 'THREADS' : 'ALL', TRUE);
       }
       
       $unread_count = $IMAP->messagecount(NULL, 'UNSEEN', TRUE);
@@ -55,18 +55,27 @@ foreach ($a_mailboxes as $mbox_name) {
       if (empty($_GET['_list']))
         continue;
 
-      // use SEARCH/SORT to find recent messages
-      $search_str = 'RECENT';
-      if ($search_request)
-        $search_str .= ' '.$IMAP->search_string;
+      if ($IMAP->threading) {
+          $OUTPUT->command('message_list.clear');
+          $sort_col   = isset($_SESSION['sort_col'])   ? $_SESSION['sort_col']   : $CONFIG['message_sort_col'];
+          $sort_order = isset($_SESSION['sort_order']) ? $_SESSION['sort_order'] : $CONFIG['message_sort_order'];
+          $result_h = $IMAP->list_headers($mbox_name, NULL, $sort_col, $sort_order);
+          // add to the list
+          rcmail_js_message_list($result_h);
+      } else {
+          // use SEARCH/SORT to find recent messages
+          $search_str = 'RECENT';
+          if ($search_request)
+              $search_str .= ' '.$IMAP->search_string;
 
-      $result = $IMAP->search($mbox_name, $search_str, NULL, 'date');
+          $result = $IMAP->search($mbox_name, $search_str, NULL, 'date');
 
-      if ($result) {
-        // get the headers
-        $result_h = $IMAP->list_headers($mbox_name, 1, 'date', 'DESC');
-        // add to the list
-        rcmail_js_message_list($result_h, true, false);
+          if ($result) {
+            // get the headers
+            $result_h = $IMAP->list_headers($mbox_name, 1, 'date', 'DESC');
+            // add to the list
+            rcmail_js_message_list($result_h, TRUE);
+          }
       }
     }
     else {

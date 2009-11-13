@@ -56,6 +56,7 @@ $labels['reply-to'] = $labels['replyto'];
 
 $labels['mailboxlist'] = 'Folders';
 $labels['messagesfromto'] = 'Messages $from to $to of $count';
+$labels['threadsfromto'] = 'Threads $from to $to of $count';
 $labels['messagenrof'] = 'Message $nr of $count';
 
 $labels['moveto']   = 'Move to...';
@@ -153,6 +154,15 @@ $labels['unanswered'] = 'Unanswered';
 $labels['deleted'] = 'Deleted';
 $labels['invert'] = 'Invert';
 $labels['filter'] = 'Filter';
+
+$labels['threads'] = 'Threads';
+$labels['expand-all'] = 'Expand All';
+$labels['collapse-all'] = 'Collapse All';
+
+$labels['autoexpand_threads'] = 'Autoexpand threads';
+$labels['do_expand'] = 'All threads';
+$labels['dont_expand'] = 'None';
+$labels['expand_only_unread'] = 'Only with unread messages';
 
 $labels['compact'] = 'Compact';
 $labels['empty'] = 'Empty';
@@ -318,6 +328,7 @@ $labels['folders']  = 'Folders';
 $labels['foldername']  = 'Folder name';
 $labels['subscribed']  = 'Subscribed';
 $labels['messagecount'] = 'Messages';
+$labels['threaded'] = 'Threaded';
 $labels['create']  = 'Create';
 $labels['createfolder']  = 'Create new folder';
 $labels['rename'] = 'Rename';

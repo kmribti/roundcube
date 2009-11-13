@@ -166,7 +166,8 @@
 
 #markmessagemenu,
 #searchmenu,
-#messagemenu
+#messagemenu,
+#listmenu
 {
   position: absolute;
   top: 32px;
@@ -626,6 +627,22 @@ td.formlinks a:visited
   background-position: -75px -15px;
 }
 
+#listcontrols a.expand-all {
+  background-position: -90px 0;
+}
+
+#listcontrols a.expand-allsel {
+  background-position: -90px -15px;
+}
+
+#listcontrols a.collapse-all {
+  background-position: -105px 0;
+}
+
+#listcontrols a.collapse-allsel {
+  background-position: -105px -15px;
+}
+
 #countcontrols
 {
   height: 15px;
@@ -747,6 +764,36 @@ body.messagelist
   padding: 2px 3px 2px 3px;
   vertical-align: middle;
   cursor: pointer;
+}
+
+#messagelist tr td div
+{
+  display: table-cell; /* For FireFox and Opera */
+  display: inline-block; /* For Opera and IE */ 
+  width: 15px;
+  height: 15px;
+}
+
+#messagelist tr td.subject img
+{
+  vertical-align: middle;
+}
+
+#messagelist tr td div.collapsed,
+#messagelist tr td div.expanded,
+#messagelist tr td img
+{
+  cursor: pointer;
+}
+
+#messagelist tr td div.collapsed
+{
+  background: url(images/icons/collapsed.png) center 5px no-repeat;
+}
+
+#messagelist tr td div.expanded
+{
+  background: url(images/icons/expanded.png) center 5px no-repeat;
 }
 
 #messagelist tbody tr td.flag img:hover,

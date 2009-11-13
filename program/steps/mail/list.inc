@@ -55,7 +55,7 @@ if ($_SESSION['search_filter'] && $_SESSION['search_filter'] != 'ALL')
 }
 
 // fetch message headers
-if ($count = $IMAP->messagecount($mbox_name, 'ALL', !empty($_REQUEST['_refresh'])))
+if ($count = $IMAP->messagecount($mbox_name, $IMAP->threading ? 'THREADS' : 'ALL', !empty($_REQUEST['_refresh'])))
   $a_headers = $IMAP->list_headers($mbox_name, NULL, $sort_col, $sort_order);
 
 // update mailboxlist
@@ -65,6 +65,7 @@ rcmail_send_unread_count($mbox_name, !empty($_REQUEST['_refresh']));
 $pages = ceil($count/$IMAP->page_size);
 $OUTPUT->set_env('messagecount', $count);
 $OUTPUT->set_env('pagecount', $pages);
+$OUTPUT->set_env('threading', (bool) $IMAP->threading);
 $OUTPUT->command('set_rowcount', rcmail_get_messagecount_text($count));
 $OUTPUT->command('set_mailboxname', rcmail_get_mailbox_name_text());
 
@@ -79,6 +80,21 @@ else if ($search_request)
   $OUTPUT->show_message('searchnomatch', 'notice');
 else
   $OUTPUT->show_message('nomessagesfound', 'notice');
+
+// deal with threaded view
+if ($IMAP->threading) {
+  switch ($RCMAIL->config->get('autoexpand_threads')) {
+    case 2:
+      $OUTPUT->command('message_list.expand_unread');
+      break;
+    case 1:
+      $OUTPUT->command('message_list.expand_all');
+      break;
+    case 0:
+    default:
+      break;
+  }
+}
 
 // send response
 $OUTPUT->send();

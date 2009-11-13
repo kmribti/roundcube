@@ -42,6 +42,7 @@ switch ($CURR_SECTION)
     $a_user_prefs = array(
       'focus_on_new_message' => isset($_POST['_focus_on_new_message']) ? TRUE : FALSE,
       'preview_pane' 	     => isset($_POST['_preview_pane']) ? TRUE : FALSE,
+      'autoexpand_threads'   => isset($_POST['_autoexpand_threads']) ? intval($_POST['_autoexpand_threads']) : 0,
       'mdn_requests'         => isset($_POST['_mdn_requests']) ? intval($_POST['_mdn_requests']) : 0,
       'keep_alive'           => isset($_POST['_keep_alive']) ? intval($_POST['_keep_alive'])*60 : $CONFIG['keep_alive'],
       'check_all_folders'    => isset($_POST['_check_all_folders']) ? TRUE : FALSE,

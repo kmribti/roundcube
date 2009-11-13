@@ -59,7 +59,9 @@
   forwardedrepliedIcon="/images/icons/forwarded_replied.png"
   attachmentIcon="/images/icons/attachment.png"
   flaggedIcon="/images/icons/flagged.png"
-  unflaggedIcon="/images/icons/blank.gif" />
+  unflaggedIcon="/images/icons/blank.gif"
+  unreadchildrenIcon="/images/icons/unread_children.png"
+  optionsmenuIcon="/images/icons/columnpicker.gif" />
 </div>
 
 <roundcube:if condition="config:preview_pane == true" />
@@ -82,6 +84,9 @@
       <roundcube:button command="select-all" type="link" prop="unread" title="unread" class="buttonPas unread" classAct="button unread" classSel="button unreadsel" content=" " />
       <roundcube:button command="select-all" type="link" prop="invert" title="invert" class="buttonPas invert" classAct="button invert" classSel="button invertsel" content=" " />
       <roundcube:button command="select-none" type="link" title="none" class="buttonPas none" classAct="button none" classSel="button nonesel" content=" " />
+      <span style="margin-left: 20px"><roundcube:label name="threads" />:&nbsp;</span>
+      <roundcube:button command="expand-all" type="link" title="expand-all" class="buttonPas expand-all" classAct="button expand-all" classSel="button expand-allsel" content=" "  />
+      <roundcube:button command="collapse-all" type="link" title="collapse-all" class="buttonPas collapse-all" classAct="button collapse-all" classSel="button collapse-allsel" content=" " />
       <roundcube:container name="listcontrols" id="listcontrols" />
   <roundcube:if condition="env:quota" />
   <span style="margin-left: 20px; margin-right: 5px"><roundcube:label name="quota" />:</span>
@@ -144,6 +149,41 @@
 <roundcube:button name="searchmod" id="searchmod" image="/images/icons/glass_roll.png" onclick="rcmail_ui.show_searchmenu();return false" title="searchmod" />
 <roundcube:object name="searchform" id="quicksearchbox" />
 <roundcube:button command="reset-search" id="searchreset" image="/images/icons/reset.gif" title="resetsearch" />
+</div>
+
+<div id="listmenu">
+<div><roundcube:label name="listcolumns" /></div>
+  <ul class="toolbarmenu">
+    <li><input type="checkbox" name="list_cols[]" value="subject" id="cols_subject" checked="checked" disabled="disabled" /><label for="cols_subject"><roundcube:label name="subject" /></label></li>
+    <li><input type="checkbox" name="list_cols[]" value="from" id="cols_fromto" /><label for="cols_fromto"><roundcube:label name="fromto" /></label></li>
+    <li><input type="checkbox" name="list_cols[]" value="replyto" id="cols_replyto" /><label for="cols_replyto"><roundcube:label name="replyto" /></label></li>
+    <li><input type="checkbox" name="list_cols[]" value="cc" id="cols_cc" /><label for="cols_cc"><roundcube:label name="cc" /></label></li>
+    <li><input type="checkbox" name="list_cols[]" value="date" id="cols_date" /><label for="cols_date"><roundcube:label name="date" /></label></li>
+    <li><input type="checkbox" name="list_cols[]" value="size" id="cols_size" /><label for="cols_size"><roundcube:label name="size" /></label></li>
+    <li><input type="checkbox" name="list_cols[]" value="flag" id="cols_flag" /><label for="cols_flag"><roundcube:label name="flag" /></label></li>
+    <li><input type="checkbox" name="list_cols[]" value="attachment" id="cols_attachment" /><label for="cols_attachment"><roundcube:label name="attachment" /></label></li>
+  </ul>
+<div><roundcube:label name="listsorting" /></div>
+  <ul class="toolbarmenu">
+    <li><input type="radio" name="sort_cols" value="" id="sort_default" /><label for="sort_default"><roundcube:label name="nonedefault" /></label></li>
+    <li><input type="radio" name="sort_cols" value="arrival" id="sort_arrival" /><label for="sort_arrival"><roundcube:label name="arrival" /></label></li>
+    <li><input type="radio" name="sort_cols" value="date" id="sort_date" /><label for="sort_date"><roundcube:label name="sentdate" /></label></li>
+    <li><input type="radio" name="sort_cols" value="subject" id="sort_subject" /><label for="sort_subject"><roundcube:label name="subject" /></label></li>
+    <li><input type="radio" name="sort_cols" value="from" id="sort_fromto" /><label for="sort_fromto"><roundcube:label name="fromto" /></label></li>
+    <li><input type="radio" name="sort_cols" value="to" id="sort_replyto" /><label for="sort_replyto"><roundcube:label name="replyto" /></label></li>
+    <li><input type="radio" name="sort_cols" value="cc" id="sort_cc" /><label for="sort_cc"><roundcube:label name="cc" /></label></li>
+    <li><input type="radio" name="sort_cols" value="size" id="sort_size" /><label for="sort_size"><roundcube:label name="size" /></label></li>
+  </ul>
+<div><roundcube:label name="listorder" /></div>
+  <ul class="toolbarmenu">
+    <li><input type="radio" name="sort_ord" value="" id="sort_asc" /><label for="sort_default"><roundcube:label name="asc" /></label></li>
+    <li><input type="radio" name="sort_ord" value="subject" id="sort_desc" /><label for="sort_subject"><roundcube:label name="desc" /></label></li>
+  </ul>
+<div><roundcube:label name="listgroups" /></div>
+  <ul class="toolbarmenu">
+    <li><input type="radio" name="view" value="" id="view_default" /><label for="view_default"><roundcube:label name="nonedefault" /></label></li>
+    <li><input type="radio" name="view" value="thread" id="view_thread" /><label for="view_thread"><roundcube:label name="threaded" /></label></li>
+  </ul>
 </div>
 
 </body>
