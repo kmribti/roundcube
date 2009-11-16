@@ -77,16 +77,6 @@ $rcmail_config['imap_auth_type'] = null;
 $rcmail_config['imap_root'] = null;
 $rcmail_config['imap_delimiter'] = null;
 
-// The default IMAP message THREAD retrieval algorithm.
-// A common one for threading would be REFERENCES.
-// Make sure that your IMAP server supports this!
-$rcmail_config['imap_thread_algorithm'] = 'REFERENCES';
-
-// 0 - Do not expand threads
-// 1 - Expand all threads automatically
-// 2 - Expand only threads with unread messages
-$rcmail_config['autoexpand_threads'] = 0;
-
 // Automatically add this domain to user names for login
 // Only for IMAP servers that require full e-mail addresses for login
 // Specify an array with 'host' => 'domain' values to support multiple hosts
@@ -457,8 +447,10 @@ $rcmail_config['check_all_folders'] = FALSE;
 // If true, after message delete/move, the next message will be displayed
 $rcmail_config['display_next'] = FALSE;
 
-// If true, messages list will be sorted by message index instead of message date
-$rcmail_config['index_sort'] = TRUE;
+// 0 - Do not expand threads
+// 1 - Expand all threads automatically
+// 2 - Expand only threads with unread messages
+$rcmail_config['autoexpand_threads'] = 0;
 
 // end of config file
 ?>
