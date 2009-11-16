@@ -13,7 +13,8 @@ CHANGES IN RELATION TO TRUNK (for pasting into CHANGELOG after merge)
     - removed 'index_sort' option, now we're using empty 'message_sort_col' for
       this purpose
     - popup menu for list column/sorting/view selection (not finished yet)
-    - implemented ARRIVAL sorting
+    - added sorting by ARRIVAL
+    - added sorting by CC
 
 TODO:
     - threads caching,

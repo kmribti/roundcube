@@ -160,7 +160,7 @@ function rcmail_message_list($attrib)
   $_SESSION['list_columns'] = $a_show_cols;
   
   // define sortable columns
-  $a_sort_cols = array('subject', 'date', 'from', 'to', 'size');
+  $a_sort_cols = array('subject', 'date', 'from', 'to', 'size', 'cc');
 
   $mbox = $IMAP->get_mailbox_name();
   $delim = $IMAP->get_hierarchy_delimiter();
