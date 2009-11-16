@@ -923,6 +923,7 @@ function iil_C_FetchHeaderIndex(&$conn, $mailbox, $message_set, $index_field='',
 	$fields_a['REPLY-TO']     = 1;
 	$fields_a['SENDER']       = 1;
 	$fields_a['TO']           = 1;
+	$fields_a['CC']           = 1;
 	$fields_a['SUBJECT']      = 1;
 	$fields_a['UID']          = 2;
 	$fields_a['SIZE']         = 2;
