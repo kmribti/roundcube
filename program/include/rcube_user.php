@@ -111,18 +111,21 @@ class rcube_user
       if (!isset($old_prefs[$key]) && ($value == $config->get($key)))
         unset($save_prefs[$key]);
     }
-    
+
+    $save_prefs = serialize($save_prefs);
+
     $this->db->query(
       "UPDATE ".get_table_name('users')."
        SET    preferences=?,
               language=?
        WHERE  user_id=?",
-      serialize($save_prefs),
+      $save_prefs,
       $_SESSION['language'],
       $this->ID);
 
     $this->language = $_SESSION['language'];
     if ($this->db->affected_rows()) {
+      $this->data['preferences'] = $save_prefs;
       $config->merge($a_user_prefs);
       return true;
     }

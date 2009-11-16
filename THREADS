@@ -6,6 +6,8 @@ CHANGES IN RELATION TO ORIGINAL PATCH
     - temporary removed threads caching (see TODO)
     - use depth=0 for roots
     - thread expand state is not stored anywhere
+    - removed imap_thread_algorithm option, we're using the best algorithm
+      supported by server and implement REFS sorting in Roundcube
 
 CHANGES IN RELATION TO TRUNK
     - removed 'index_sort' option, now we'll use empty 'message_sort_col' for

@@ -918,6 +918,7 @@ function iil_C_FetchHeaderIndex(&$conn, $mailbox, $message_set, $index_field='',
 	
 	$fields_a['DATE']         = 1;
 	$fields_a['INTERNALDATE'] = 4;
+	$fields_a['ARRIVAL'] 	  = 4;
 	$fields_a['FROM']         = 1;
 	$fields_a['REPLY-TO']     = 1;
 	$fields_a['SENDER']       = 1;

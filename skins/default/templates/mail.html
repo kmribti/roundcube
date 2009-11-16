@@ -154,36 +154,37 @@
 <div id="listmenu">
 <div><roundcube:label name="listcolumns" /></div>
   <ul class="toolbarmenu">
-    <li><input type="checkbox" name="list_cols[]" value="subject" id="cols_subject" checked="checked" disabled="disabled" /><label for="cols_subject"><roundcube:label name="subject" /></label></li>
-    <li><input type="checkbox" name="list_cols[]" value="from" id="cols_fromto" /><label for="cols_fromto"><roundcube:label name="fromto" /></label></li>
-    <li><input type="checkbox" name="list_cols[]" value="replyto" id="cols_replyto" /><label for="cols_replyto"><roundcube:label name="replyto" /></label></li>
-    <li><input type="checkbox" name="list_cols[]" value="cc" id="cols_cc" /><label for="cols_cc"><roundcube:label name="cc" /></label></li>
-    <li><input type="checkbox" name="list_cols[]" value="date" id="cols_date" /><label for="cols_date"><roundcube:label name="date" /></label></li>
-    <li><input type="checkbox" name="list_cols[]" value="size" id="cols_size" /><label for="cols_size"><roundcube:label name="size" /></label></li>
-    <li><input type="checkbox" name="list_cols[]" value="flag" id="cols_flag" /><label for="cols_flag"><roundcube:label name="flag" /></label></li>
-    <li><input type="checkbox" name="list_cols[]" value="attachment" id="cols_attachment" /><label for="cols_attachment"><roundcube:label name="attachment" /></label></li>
+    <li><input type="checkbox" name="list_col[]" value="subject" id="cols_subject" checked="checked" disabled="disabled" /><label for="cols_subject"><roundcube:label name="subject" /></label></li>
+    <li><input type="checkbox" name="list_col[]" value="from" id="cols_fromto" /><label for="cols_fromto"><roundcube:label name="fromto" /></label></li>
+    <li><input type="checkbox" name="list_col[]" value="replyto" id="cols_replyto" /><label for="cols_replyto"><roundcube:label name="replyto" /></label></li>
+    <li><input type="checkbox" name="list_col[]" value="cc" id="cols_cc" /><label for="cols_cc"><roundcube:label name="cc" /></label></li>
+    <li><input type="checkbox" name="list_col[]" value="date" id="cols_date" /><label for="cols_date"><roundcube:label name="date" /></label></li>
+    <li><input type="checkbox" name="list_col[]" value="size" id="cols_size" /><label for="cols_size"><roundcube:label name="size" /></label></li>
+    <li><input type="checkbox" name="list_col[]" value="flag" id="cols_flag" /><label for="cols_flag"><roundcube:label name="flag" /></label></li>
+    <li><input type="checkbox" name="list_col[]" value="attachment" id="cols_attachment" /><label for="cols_attachment"><roundcube:label name="attachment" /></label></li>
   </ul>
 <div><roundcube:label name="listsorting" /></div>
   <ul class="toolbarmenu">
-    <li><input type="radio" name="sort_cols" value="" id="sort_default" /><label for="sort_default"><roundcube:label name="nonedefault" /></label></li>
-    <li><input type="radio" name="sort_cols" value="arrival" id="sort_arrival" /><label for="sort_arrival"><roundcube:label name="arrival" /></label></li>
-    <li><input type="radio" name="sort_cols" value="date" id="sort_date" /><label for="sort_date"><roundcube:label name="sentdate" /></label></li>
-    <li><input type="radio" name="sort_cols" value="subject" id="sort_subject" /><label for="sort_subject"><roundcube:label name="subject" /></label></li>
-    <li><input type="radio" name="sort_cols" value="from" id="sort_fromto" /><label for="sort_fromto"><roundcube:label name="fromto" /></label></li>
-    <li><input type="radio" name="sort_cols" value="to" id="sort_replyto" /><label for="sort_replyto"><roundcube:label name="replyto" /></label></li>
-    <li><input type="radio" name="sort_cols" value="cc" id="sort_cc" /><label for="sort_cc"><roundcube:label name="cc" /></label></li>
-    <li><input type="radio" name="sort_cols" value="size" id="sort_size" /><label for="sort_size"><roundcube:label name="size" /></label></li>
+    <li><input type="radio" name="sort_col" value="" id="sort_default" /><label for="sort_default"><roundcube:label name="nonedefault" /></label></li>
+    <li><input type="radio" name="sort_col" value="arrival" id="sort_arrival" /><label for="sort_arrival"><roundcube:label name="arrival" /></label></li>
+    <li><input type="radio" name="sort_col" value="date" id="sort_date" /><label for="sort_date"><roundcube:label name="sentdate" /></label></li>
+    <li><input type="radio" name="sort_col" value="subject" id="sort_subject" /><label for="sort_subject"><roundcube:label name="subject" /></label></li>
+    <li><input type="radio" name="sort_col" value="from" id="sort_fromto" /><label for="sort_fromto"><roundcube:label name="fromto" /></label></li>
+    <li><input type="radio" name="sort_col" value="to" id="sort_replyto" /><label for="sort_replyto"><roundcube:label name="replyto" /></label></li>
+    <li><input type="radio" name="sort_col" value="cc" id="sort_cc" /><label for="sort_cc"><roundcube:label name="cc" /></label></li>
+    <li><input type="radio" name="sort_col" value="size" id="sort_size" /><label for="sort_size"><roundcube:label name="size" /></label></li>
   </ul>
 <div><roundcube:label name="listorder" /></div>
   <ul class="toolbarmenu">
-    <li><input type="radio" name="sort_ord" value="" id="sort_asc" /><label for="sort_default"><roundcube:label name="asc" /></label></li>
-    <li><input type="radio" name="sort_ord" value="subject" id="sort_desc" /><label for="sort_subject"><roundcube:label name="desc" /></label></li>
+    <li><input type="radio" name="sort_ord" value="ASC" id="sort_asc" /><label for="sort_asc"><roundcube:label name="asc" /></label></li>
+    <li><input type="radio" name="sort_ord" value="DESC" id="sort_desc" /><label for="sort_desc"><roundcube:label name="desc" /></label></li>
   </ul>
 <div><roundcube:label name="listgroups" /></div>
   <ul class="toolbarmenu">
-    <li><input type="radio" name="view" value="" id="view_default" /><label for="view_default"><roundcube:label name="nonedefault" /></label></li>
+    <li><input type="radio" name="view" value="list" id="view_default" /><label for="view_default"><roundcube:label name="nonedefault" /></label></li>
     <li><input type="radio" name="view" value="thread" id="view_thread" /><label for="view_thread"><roundcube:label name="threaded" /></label></li>
   </ul>
+<a href="javascript:rcmail_ui.save_listmenu()"><roundcube:label name="save" /></a>
 </div>
 
 </body>

@@ -197,8 +197,27 @@ show_listmenu: function(show)
   if (show && ref) {
     var pos = $(ref).offset();
     this.listmenu.css({ left:pos.left, top:(pos.top + ref.offsetHeight)});
+    // set form values
+    $('input[name="sort_col",value="'+rcmail.env.sort_col+'"]').attr('checked', 1);
+    $('input[name="sort_ord",value="DESC"]').attr(rcmail.env.sort_ord=='DESC' ? 1 : 0);
+    $('input[name="sort_ord",value="ASC"]').attr(rcmail.env.sort_ord=='DESC' ? 0 : 1);
+    $('input[name="view",value="thread"]').attr('checked', rcmail.env.threading ? 1 : 0);
+    $('input[name="view",value="list"]').attr('checked', rcmail.env.threading ? 0 : 1);
   }
   this.listmenu[show?'show':'hide']();
+},
+
+save_listmenu: function()
+{
+  this.show_listmenu();
+
+  var sort = $('input[name="sort_col"]:checked').val();
+  var ord = $('input[name="sort_ord"]:checked').val();
+  var thread = $('input[name="view"]:checked').val();
+  var cols = $('input[name="list_col[]"]:checked')
+    .map(function(){ return $(this).val(); }).get();
+
+  rcmail.set_list_options(cols, sort, ord, thread == 'thread' ? 1 : 0);
 },
 
 body_mouseup: function(evt, p)

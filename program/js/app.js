@@ -644,14 +644,8 @@ function rcube_webmail()
 	else
 	  sort_order = 'ASC';
 		     
-        // set table header class
-        $('#rcm'+this.env.sort_col).removeClass('sorted'+(this.env.sort_order.toUpperCase()));
-        if (sort_col)
-	  $('#rcm'+sort_col).addClass('sorted'+sort_order);
-
-        // save new sort properties
-        this.env.sort_col = sort_col;
-        this.env.sort_order = sort_order;
+        // set table header and update env
+	this.set_list_sorting(sort_col, sort_order);
 
         // reload message list
         this.list_mailbox('', '', sort_col+'_'+sort_order);
@@ -1568,6 +1562,35 @@ function rcube_webmail()
   /*********     (message) list functionality      *********/
   /*********************************************************/
 
+  this.set_list_sorting = function(sort_col, sort_order)
+    {
+    // set table header class
+    $('#rcm'+this.env.sort_col).removeClass('sorted'+(this.env.sort_order.toUpperCase()));
+    if (sort_col)
+      $('#rcm'+sort_col).addClass('sorted'+sort_order);
+    
+    this.env.sort_col = sort_col;
+    this.env.sort_order = sort_order;
+    }
+
+  this.set_list_options = function(cols, sort_col, sort_order, threads)
+    {
+    var update, add_url;
+
+    if (this.env.sort_col != sort_col || this.env.sort_order != sort_order) {
+      update = 1;
+      this.set_list_sorting(sort_col, sort_order);
+      }
+    
+    if (this.env.threading != threads) {
+      update = 1;
+      add_url = '&_threads=' + threads;     
+      }
+
+    if (update)
+      this.list_mailbox('', '', sort_col+'_'+sort_order, add_url);
+    }
+
   // when user doble-clicks on a row
   this.show_message = function(id, safe, preview)
     {
@@ -1672,21 +1695,24 @@ function rcube_webmail()
 
 
   // list messages of a specific mailbox
-  this.list_mailbox = function(mbox, page, sort)
+  this.list_mailbox = function(mbox, page, sort, add_url)
     {
-    var add_url = '';
+    var url = '';
     var target = window;
 
     if (!mbox)
       mbox = this.env.mailbox;
 
+    if (add_url)
+      url += add_url;
+
     // add sort to url if set
     if (sort)
-      add_url += '&_sort=' + sort;
+      url += '&_sort=' + sort;
 
     // also send search request to get the right messages
     if (this.env.search_request)
-      add_url += '&_search='+this.env.search_request;
+      url += '&_search='+this.env.search_request;
 
     // set page=1 if changeing to another mailbox
     if (!page && this.env.mailbox != mbox)
@@ -1697,7 +1723,7 @@ function rcube_webmail()
       }
 
     if (mbox != this.env.mailbox || (mbox == this.env.mailbox && !page && !sort))
-      add_url += '&_refresh=1';
+      url += '&_refresh=1';
 
     // unselect selected messages
     this.last_selected = 0;
@@ -1710,21 +1736,21 @@ function rcube_webmail()
     // load message list remotely
     if (this.gui_objects.messagelist)
       {
-      this.list_mailbox_remote(mbox, page, add_url);
+      this.list_mailbox_remote(mbox, page, url);
       return;
       }
     
     if (this.env.contentframe && window.frames && window.frames[this.env.contentframe])
       {
       target = window.frames[this.env.contentframe];
-      add_url += '&_framed=1';
+      url += '&_framed=1';
       }
 
     // load message list to target frame/window
     if (mbox)
       {
       this.set_busy(true, 'loading');
-      target.location.href = this.env.comm_path+'&_mbox='+urlencode(mbox)+(page ? '&_page='+page : '')+add_url;
+      target.location.href = this.env.comm_path+'&_mbox='+urlencode(mbox)+(page ? '&_page='+page : '')+url;
       }
     };
 

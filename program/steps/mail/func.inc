@@ -52,9 +52,16 @@ if (!isset($_SESSION['sort_col']))
 if (!isset($_SESSION['sort_order']))
   $_SESSION['sort_order'] = $CONFIG['message_sort_order'];
 
-// enable threads mode
-$a_message_threading = $RCMAIL->config->get('message_threading', array());
-$IMAP->set_threading($a_message_threading[$_SESSION['mbox']]);
+// set threads mode
+$a_threading = $RCMAIL->config->get('message_threading', array());
+if (isset($_GET['_threads'])) {
+  if ($_GET['_threads'])
+    $a_threading[$_SESSION['mbox']] = true;
+  else
+    unset($a_threading[$_SESSION['mbox']]);
+  $RCMAIL->user->save_prefs(array('message_threading' => $a_threading));
+}
+$IMAP->set_threading($a_threading[$_SESSION['mbox']]);
 
 // set message set for search result
 if (!empty($_REQUEST['_search']) && isset($_SESSION['search'][$_REQUEST['_search']]))
