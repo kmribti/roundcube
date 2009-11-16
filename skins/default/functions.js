@@ -198,11 +198,11 @@ show_listmenu: function(show)
     var pos = $(ref).offset();
     this.listmenu.css({ left:pos.left, top:(pos.top + ref.offsetHeight)});
     // set form values
-    $('input[name="sort_col",value="'+rcmail.env.sort_col+'"]').attr('checked', 1);
-    $('input[name="sort_ord",value="DESC"]').attr(rcmail.env.sort_ord=='DESC' ? 1 : 0);
-    $('input[name="sort_ord",value="ASC"]').attr(rcmail.env.sort_ord=='DESC' ? 0 : 1);
-    $('input[name="view",value="thread"]').attr('checked', rcmail.env.threading ? 1 : 0);
-    $('input[name="view",value="list"]').attr('checked', rcmail.env.threading ? 0 : 1);
+    $('input[name="sort_col"][value="'+rcmail.env.sort_col+'"]').attr('checked', 1);
+    $('input[name="sort_ord"][value="DESC"]').attr('checked', rcmail.env.sort_order=='DESC' ? 1 : 0);
+    $('input[name="sort_ord"][value="ASC"]').attr('checked', rcmail.env.sort_order=='DESC' ? 0 : 1);
+    $('input[name="view"][value="thread"]').attr('checked', rcmail.env.threading ? 1 : 0);
+    $('input[name="view"][value="list"]').attr('checked', rcmail.env.threading ? 0 : 1);
   }
   this.listmenu[show?'show':'hide']();
 },
