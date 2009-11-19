@@ -440,8 +440,17 @@ function rcube_webmail()
 //      row.expanded = this.env.autoexpand && row.has_children ? true : false;
       }
 
+    // global variable 'subject_col' may be not defined yet
+    if (this.env.subject_col == null && this.env.coltypes)
+      {
+      var found;
+      if((found = find_in_array('subject', this.env.coltypes)) >= 0)
+        this.set_env('subject_col', found);
+      }
+
     // set eventhandler to message icon
-    if (row.icon = row.obj.getElementsByTagName('td')[0].getElementsByTagName('img')[0])
+    if (this.env.subject_col != null
+	&& (row.icon = row.obj.getElementsByTagName('td')[this.env.subject_col].getElementsByTagName('img')[0]))
       {
       var p = this;
       row.icon.id = 'msgicn_'+row.uid;
@@ -450,7 +459,7 @@ function rcube_webmail()
       }
 
     // global variable 'flagged_col' may be not defined yet
-    if (!this.env.flagged_col && this.env.coltypes)
+    if (this.env.flagged_col == null && this.env.coltypes)
       {
       var found;
       if((found = find_in_array('flag', this.env.coltypes)) >= 0)
@@ -458,7 +467,8 @@ function rcube_webmail()
       }
 
     // set eventhandler to flag icon, if icon found
-    if (this.env.flagged_col && (row.flagged_icon = row.obj.getElementsByTagName('td')[this.env.flagged_col].getElementsByTagName('img')[0]))
+    if (this.env.flagged_col != null
+	 && (row.flagged_icon = row.obj.getElementsByTagName('td')[this.env.flagged_col].getElementsByTagName('img')[0]))
       {
       var p = this;
       row.flagged_icon.id = 'flaggedicn_'+row.uid;
@@ -1625,7 +1635,7 @@ function rcube_webmail()
       if (action == 'preview' && this.message_list && this.message_list.rows[id] && this.message_list.rows[id].unread)
         {
         this.set_message(id, 'unread', false);
-        this.update_parents(id, 'read');
+        this.update_thread_root(id, 'read');
         if (this.env.unread_counts[this.env.mailbox])
           {
           this.env.unread_counts[this.env.mailbox] -= 1;
@@ -1814,23 +1824,41 @@ function rcube_webmail()
       || this.env.mailbox.match('^' + RegExp.escape(this.env.junk_mailbox) + RegExp.escape(this.env.delimiter))));
   };
 
-  // update parents in a thread
-  this.update_parents = function(uid, flag)
+  // update parent in a thread
+  this.update_thread_root = function(uid, flag)
+  {
+    if (!this.env.threading)
+      return;
+
+    var root = this.find_thread_root(uid);
+    
+    if (uid == root)
+      return;
+
+    var p = this.message_list.rows[root];
+
+    if (flag == 'read' && p.unread_children) {
+      p.unread_children--;
+    } else if (flag == 'unread' && p.has_children) {
+      // unread_children may be undefined
+      p.unread_children = p.unread_children ? p.unread_children + 1 : 1;
+    } else {
+      return;
+    }
+
+    this.set_message_icon(root);
+  };
+
+  // finds root message for specified thread
+  this.find_thread_root = function(uid)
   {
     var r = this.message_list.rows[uid];
-    if (r.parent_uid) {
-      var p = this.message_list.rows[r.parent_uid];
-      if (flag == 'read' && p.unread_children > 0) {
-        p.unread_children--;
-      } else if (flag == 'unread') {
-        p.unread_children++;
-      } else {
-        return;
-      }
-      this.set_message_icon(r.parent_uid);
-      this.update_parents(r.parent_uid, flag);
-    }
-  };
+  
+    if (r.parent_uid)
+      return this.find_thread_root(r.parent_uid);
+    else
+      return uid;
+  }
 
   // set message icon
   this.set_message_icon = function(uid)
@@ -1840,7 +1868,7 @@ function rcube_webmail()
 
     if (!rows[uid])
       return false;
-    if (!rows[uid].unread && rows[uid].unread_children > 0 && this.env.unreadchildrenicon) {
+    if (!rows[uid].unread && rows[uid].unread_children && this.env.unreadchildrenicon) {
       icn_src = this.env.unreadchildrenicon;
     }
     else if (rows[uid].deleted && this.env.deletedicon)
@@ -1868,6 +1896,13 @@ function rcube_webmail()
       icn_src = this.env.flaggedicon;
     else if (!rows[uid].flagged && this.env.unflaggedicon)
       icn_src = this.env.unflaggedicon;
+
+    if (rows[uid].has_children) {
+      if (!rows[uid].unread && rows[uid].unread_children)
+        $(rows[uid].obj).addClass('unroot');
+      else
+        $(rows[uid].obj).removeClass('unroot');
+    }
 
     if (rows[uid].flagged_icon && icn_src)
       rows[uid].flagged_icon.src = icn_src;
@@ -1903,7 +1938,7 @@ function rcube_webmail()
     
     if (flag)
       this.set_message_status(uid, flag, status);
-    
+
     var rowobj = $(rows[uid].obj);
     if (rows[uid].unread && rows[uid].classname.indexOf('unread')<0)
       {
@@ -2048,7 +2083,7 @@ function rcube_webmail()
     {
     var a_uids = new Array();
     var r_uids = new Array();
-    var selection = this.message_list ? this.message_list.get_selection('mark') : new Array();
+    var selection = this.message_list ? this.message_list.get_selection() : new Array();
 
     if (uid)
       a_uids[0] = uid;
@@ -2110,7 +2145,7 @@ function rcube_webmail()
     this.http_post('mark', '_uid='+a_uids.join(',')+'&_flag='+flag);
 
     for (var i=0; i<a_uids.length; i++)
-      this.update_parents(a_uids[i], flag);
+      this.update_thread_root(a_uids[i], flag);
   };
 
   // set image to flagged or unflagged
@@ -3957,6 +3992,7 @@ function rcube_webmail()
         + (flags.unread ? ' unread' : '')
         + (flags.deleted ? ' deleted' : '')
         + (flags.flagged ? ' flagged' : '')
+	+ (flags.unread_children && !flags.unread ? ' unroot' : '')
         + (this.message_list.in_selection(uid) ? ' selected' : '');
 
     // for performance use DOM instead of jQuery here

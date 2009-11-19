@@ -796,6 +796,7 @@ body.messagelist
   background: url(images/icons/expanded.png) center 5px no-repeat;
 }
 
+
 #messagelist tbody tr td.flag img:hover,
 #messagelist thead tr td.flag img
 {
@@ -807,6 +808,12 @@ body.messagelist
   overflow: hidden;
   vertical-align: middle;
   width: 99%;
+}
+
+/* thread parent message with unread children */
+#messagelist tbody tr.unroot td.subject a
+{
+  text-decoration: underline;
 }
 
 #messagelist tr td.size

@@ -327,11 +327,12 @@ function rcmail_message_list($attrib)
     if ($attrib['attachmenticon'] && preg_match("/multipart\/m/i", $header->ctype))
       $attach_icon = $attrib['attachmenticon'];
         
-    $out .= sprintf('<tr id="rcmrow%d" class="message%s%s%s%s"%s>'."\n",
+    $out .= sprintf('<tr id="rcmrow%d" class="message%s%s%s%s%s"%s>'."\n",
                     $header->uid,
                     $header->seen ? '' : ' unread',
                     $header->deleted ? ' deleted' : '',
                     $header->flagged ? ' flagged' : '',
+                    $header->unread_children && $header->seen ? ' unroot' : '',
                     $zebra_class,
                     ($header->depth) ? ' style="display: none"' : '');
     

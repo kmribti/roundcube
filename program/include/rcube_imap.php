@@ -858,7 +858,7 @@ class rcube_imap
       if (!empty($parents)) {
         $headers[$idx]->parent_uid = end($parents);
         if (!$header->seen)
-          $headers[$parents[0]]->unread_children = true;
+          $headers[$parents[0]]->unread_children++;
         }
       array_push($parents, $header->uid);
 
