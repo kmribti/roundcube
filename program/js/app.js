@@ -1505,17 +1505,16 @@ function rcube_webmail()
       row.flagged_icon._row = row.obj;
       row.flagged_icon.onmousedown = function(e) { p.command('toggle_flag', this); };
       }
-      
-    this.triggerEvent('insertrow', { uid:uid, row:row });
 
-    // expando is handled here rather than in rcube_list_widget so that the
-    // expanded state may be persisted in this.env.messages
-    var expando = document.getElementById('rcmexpando' + uid);
-    if (expando != null) 
+    var expando;
+    if (!row.depth && row.has_children && this.env.subject_col != null
+	&& (expando = row.obj.getElementsByTagName('td')[this.env.subject_col].getElementsByTagName('div')[0]))
       {
       var p = this;
       expando.onmousedown = function(e) { return p.expand_message_row(e, uid); };
       }
+      
+    this.triggerEvent('insertrow', { uid:uid, row:row });
   };
 
   // create a table row in the message list
@@ -1614,8 +1613,9 @@ function rcube_webmail()
         html = attachment && this.env.attachmenticon ? '<img src="'+this.env.attachmenticon+'" alt="" />' : '&nbsp;';
       else
         html = cols[c];
-        if (n == 0)
-          html = tree + html;
+      if (c == 'subject')
+        html = tree + html;
+
       col.innerHTML = html;
 
       row.appendChild(col);

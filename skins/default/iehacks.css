@@ -160,6 +160,11 @@ input, textarea
   border-collapse: collapse;
 }
 
+#messagelist tbody tr.unroot td.subject
+{
+  text-decoration: underline;
+}
+
 #messageframe
 {
   width: expression((parseInt(this.parentNode.offsetWidth)-180)+'px');

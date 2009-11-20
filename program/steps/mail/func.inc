@@ -346,7 +346,8 @@ function rcmail_message_list($attrib)
       // The same is true for an online list (program/js/app.js:add_message_row()).
       // Bubble
       $width = ($header->depth) * 15;
-      $tree .= '<div id="rcmtab' . $header->uid . '" class="branch" style="width:' . $width . 'px;">&nbsp</div>';
+      if ($width)	
+        $tree .= '<div id="rcmtab' . $header->uid . '" class="branch" style="width:' . $width . 'px;">&nbsp</div>';
       if ($header->has_children && !$header->depth)
         $tree .= '<div id="rcmexpando' . $header->uid . '" class="collapsed">&nbsp;</div>';
       else
