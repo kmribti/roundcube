@@ -358,7 +358,6 @@ function rcmail_message_list($attrib)
     $IMAP->set_charset(!empty($header->charset) ? $header->charset : $CONFIG['default_charset']);
   
     // format each col
-    $first = true;
     foreach ($a_show_cols as $col)
       {
       if ($col=='from' || $col=='to')
@@ -370,6 +369,7 @@ function rcmail_message_list($attrib)
         $cont = abbreviate_string(trim($IMAP->decode_header($header->$col)), 160);
         if (empty($cont)) $cont = rcube_label('nosubject');
         $cont = $OUTPUT->browser->ie ? Q($cont) : sprintf('<a href="%s" onclick="return rcube_event.cancel(event)">%s</a>', Q(rcmail_url($action, array($uid_param=>$header->uid, '_mbox'=>$mbox))), Q($cont));
+      	$cont = $tree . $cont;
         }
       else if ($col=='flag')
         $cont = $flagged_icon ? sprintf($image_tag, $skin_path, $flagged_icon, '') : '';
@@ -380,10 +380,6 @@ function rcmail_message_list($attrib)
       else
         $cont = Q($header->$col);
         
-      if ($first) {
-      	$first = false;
-      	$cont = $tree . $cont;
-      }
       if ($col!='attachment')
         $out .= '<td class="'.$col.'">' . $cont . "</td>\n";
       else
