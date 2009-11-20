@@ -40,6 +40,7 @@ TODO:
       that array is not growing infinite (remove non-existing items e.g. when
       listing the folders)
     - thread css: message row height, thread/status icon alignment
+    - remove 'indexsort' label from localization files
 
 KNOWN ISSUES:
     - after message(s) deletion the whole list is reloaded (see TODO),
