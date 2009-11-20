@@ -85,7 +85,7 @@ else
 if ($IMAP->threading) {
   switch ($RCMAIL->config->get('autoexpand_threads')) {
     case 2:
-      $OUTPUT->command('message_list.expand_unread');
+      $OUTPUT->command('expand_unread');
       break;
     case 1:
       $OUTPUT->command('message_list.expand_all');

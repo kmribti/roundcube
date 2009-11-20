@@ -504,41 +504,6 @@ expand_all: function(row)
   return false;
 },
 
-expand_unread: function()
-{
-  var tbody = this.list.tBodies[0];
-  new_row = tbody.firstChild;
-  var r;
-  var p;
-
-  while (new_row) {
-    if (new_row.nodeType == 1)
-    {
-      r = this.rows[new_row.uid];
-      p = this.rows[r.parent_uid];
-      if ((r.has_children && r.unread_children > 0) || (!r.has_children && r.unread))
-      {
-        new_row.style.display = 'table-row';
-        if (r.has_children)
-        {
-          r.expanded = true;
-          var expando = document.getElementById('rcmexpando' + r.uid);
-          if (expando)
-            expando.className = 'expanded';
-        }
-      }
-      else if (p && p.unread_children > 0)
-      {
-        // Show all neighbours with the same parent at the same depth level (parent is expanded)
-        new_row.style.display = 'table-row';
-      }
-    }
-    new_row = new_row.nextSibling;
-  }
-  return false;
-},
-
-
 /**
  * get first/next/previous/last rows that are not hidden
  */

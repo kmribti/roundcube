@@ -182,7 +182,7 @@ function rcube_webmail()
             this.message_list.focus();
 
           switch (this.env.autoexpand_threads) {
-            case 2: this.message_list.expand_unread(); break;
+            case 2: this.expand_unread(); break;
             case 1: this.message_list.expand_all(); break;
             }
           this.message_list.expand(null);
@@ -413,125 +413,6 @@ function rcube_webmail()
     // start keep-alive interval
     this.start_keepalive();
   };
-
-  // start interval for keep-alive/recent_check signal
-  this.start_keepalive = function()
-    {
-    if (this.env.keep_alive && !this.env.framed && this.task=='mail' && this.gui_objects.mailboxlist)
-      this._int = setInterval(function(){ ref.check_for_recent(false); }, this.env.keep_alive * 1000);
-    else if (this.env.keep_alive && !this.env.framed && this.task!='login')
-      this._int = setInterval(function(){ ref.send_keep_alive(); }, this.env.keep_alive * 1000);
-    }
-
-  this.init_message_row = function(row)
-  {
-    var uid = row.uid;
-    if (uid && this.env.messages[uid])
-      {
-      row.deleted = this.env.messages[uid].deleted ? true : false;
-      row.unread = this.env.messages[uid].unread ? true : false;
-      row.replied = this.env.messages[uid].replied ? true : false;
-      row.flagged = this.env.messages[uid].flagged ? true : false;
-      row.forwarded = this.env.messages[uid].forwarded ? true : false;
-      row.has_children = this.env.messages[uid].has_children ? true : false;
-      row.depth = this.env.messages[uid].depth ? this.env.messages[uid].depth : 0;
-      row.unread_children = this.env.messages[uid].unread_children;
-      row.parent_uid = this.env.messages[uid].parent_uid;
-//      row.expanded = this.env.autoexpand && row.has_children ? true : false;
-      }
-
-    // global variable 'subject_col' may be not defined yet
-    if (this.env.subject_col == null && this.env.coltypes)
-      {
-      var found;
-      if((found = find_in_array('subject', this.env.coltypes)) >= 0)
-        this.set_env('subject_col', found);
-      }
-
-    // set eventhandler to message icon
-    if (this.env.subject_col != null
-	&& (row.icon = row.obj.getElementsByTagName('td')[this.env.subject_col].getElementsByTagName('img')[0]))
-      {
-      var p = this;
-      row.icon.id = 'msgicn_'+row.uid;
-      row.icon._row = row.obj;
-      row.icon.onmousedown = function(e) { p.command('toggle_status', this); };
-      }
-
-    // global variable 'flagged_col' may be not defined yet
-    if (this.env.flagged_col == null && this.env.coltypes)
-      {
-      var found;
-      if((found = find_in_array('flag', this.env.coltypes)) >= 0)
-        this.set_env('flagged_col', found);
-      }
-
-    // set eventhandler to flag icon, if icon found
-    if (this.env.flagged_col != null
-	 && (row.flagged_icon = row.obj.getElementsByTagName('td')[this.env.flagged_col].getElementsByTagName('img')[0]))
-      {
-      var p = this;
-      row.flagged_icon.id = 'flaggedicn_'+row.uid;
-      row.flagged_icon._row = row.obj;
-      row.flagged_icon.onmousedown = function(e) { p.command('toggle_flag', this); };
-      }
-      
-    this.triggerEvent('insertrow', { uid:uid, row:row });
-
-    // expando is handled here rather than in rcube_list_widget so that the
-    // expanded state may be persisted in this.env.messages
-    var expando = document.getElementById('rcmexpando' + uid);
-    if (expando != null) 
-      {
-      var p = this;
-      expando.onmousedown = function(e) { return p.message_list.expand_row(e, uid); };
-      }
-  };
-
-  // init message compose form: set focus and eventhandlers
-  this.init_messageform = function()
-    {
-    if (!this.gui_objects.messageform)
-      return false;
-    
-    //this.messageform = this.gui_objects.messageform;
-    var input_from = $("[name='_from']");
-    var input_to = $("[name='_to']");
-    var input_subject = $("input[name='_subject']");
-    var input_message = $("[name='_message']").get(0);
-    var html_mode = $("input[name='_is_html']").val() == '1';
-
-    // init live search events
-    this.init_address_input_events(input_to);
-    this.init_address_input_events($("[name='_cc']"));
-    this.init_address_input_events($("[name='_bcc']"));
-
-    // add signature according to selected identity
-    if (input_from.attr('type') == 'select-one' && $("input[name='_draft_saveid']").val() == ''
-        && !html_mode) {  // if we have HTML editor, signature is added in callback
-      this.change_identity(input_from[0]);
-    }
-
-    if (input_to.val() == '')
-      input_to.focus();
-    else if (input_subject.val() == '')
-      input_subject.focus();
-    else if (input_message && !html_mode)
-      input_message.focus();
-
-    // get summary of all field values
-    this.compose_field_hash(true);
- 
-    // start the auto-save timer
-    this.auto_save_start();
-    };
-
-  this.init_address_input_events = function(obj)
-    {
-    var handler = function(e){ return ref.ksearch_keypress(e,this); };
-    obj.bind((bw.safari || bw.ie ? 'keydown' : 'keypress'), handler);
-    obj.attr('autocomplete', 'off');
-    };
 
 
   /*********************************************************/
@@ -1572,6 +1453,191 @@ function rcube_webmail()
   /*********     (message) list functionality      *********/
   /*********************************************************/
 
+  this.init_message_row = function(row)
+  {
+    var uid = row.uid;
+    if (uid && this.env.messages[uid])
+      {
+      row.deleted = this.env.messages[uid].deleted ? true : false;
+      row.unread = this.env.messages[uid].unread ? true : false;
+      row.replied = this.env.messages[uid].replied ? true : false;
+      row.flagged = this.env.messages[uid].flagged ? true : false;
+      row.forwarded = this.env.messages[uid].forwarded ? true : false;
+      row.has_children = this.env.messages[uid].has_children ? true : false;
+      row.depth = this.env.messages[uid].depth ? this.env.messages[uid].depth : 0;
+      row.unread_children = this.env.messages[uid].unread_children;
+      row.parent_uid = this.env.messages[uid].parent_uid;
+//      row.expanded = this.env.autoexpand && row.has_children ? true : false;
+      }
+
+    // global variable 'subject_col' may be not defined yet
+    if (this.env.subject_col == null && this.env.coltypes)
+      {
+      var found;
+      if((found = find_in_array('subject', this.env.coltypes)) >= 0)
+        this.set_env('subject_col', found);
+      }
+
+    // set eventhandler to message icon
+    if (this.env.subject_col != null
+	&& (row.icon = row.obj.getElementsByTagName('td')[this.env.subject_col].getElementsByTagName('img')[0]))
+      {
+      var p = this;
+      row.icon.id = 'msgicn_'+row.uid;
+      row.icon._row = row.obj;
+      row.icon.onmousedown = function(e) { p.command('toggle_status', this); };
+      }
+
+    // global variable 'flagged_col' may be not defined yet
+    if (this.env.flagged_col == null && this.env.coltypes)
+      {
+      var found;
+      if((found = find_in_array('flag', this.env.coltypes)) >= 0)
+        this.set_env('flagged_col', found);
+      }
+
+    // set eventhandler to flag icon, if icon found
+    if (this.env.flagged_col != null
+	 && (row.flagged_icon = row.obj.getElementsByTagName('td')[this.env.flagged_col].getElementsByTagName('img')[0]))
+      {
+      var p = this;
+      row.flagged_icon.id = 'flaggedicn_'+row.uid;
+      row.flagged_icon._row = row.obj;
+      row.flagged_icon.onmousedown = function(e) { p.command('toggle_flag', this); };
+      }
+      
+    this.triggerEvent('insertrow', { uid:uid, row:row });
+
+    // expando is handled here rather than in rcube_list_widget so that the
+    // expanded state may be persisted in this.env.messages
+    var expando = document.getElementById('rcmexpando' + uid);
+    if (expando != null) 
+      {
+      var p = this;
+      expando.onmousedown = function(e) { return p.expand_message_row(e, uid); };
+      }
+  };
+
+  // create a table row in the message list
+  this.add_message_row = function(uid, cols, flags, attachment, attop)
+    {
+    if (!this.gui_objects.messagelist || !this.message_list)
+      return false;
+
+    if (this.message_list.background)
+      var tbody = this.message_list.background;
+    else
+      var tbody = this.gui_objects.messagelist.tBodies[0];
+    
+    var rowcount = tbody.rows.length;
+    var even = rowcount%2;
+    
+    var message = this.env.messages[uid] = {
+      deleted: flags.deleted?1:0,
+      replied: flags.replied?1:0,
+      unread: flags.unread?1:0,
+      forwarded: flags.forwarded?1:0,
+      flagged: flags.flagged?1:0,
+      has_children: flags.has_children?1:0,
+      depth: flags.depth?flags.depth:0,
+      unread_children: flags.unread_children,
+      parent_uid: flags.parent_uid,
+    }
+
+    var css_class = 'message'
+        + (even ? ' even' : ' odd')
+        + (flags.unread ? ' unread' : '')
+        + (flags.deleted ? ' deleted' : '')
+        + (flags.flagged ? ' flagged' : '')
+	+ (flags.unread_children && !flags.unread ? ' unroot' : '')
+        + (this.message_list.in_selection(uid) ? ' selected' : '');
+
+    // for performance use DOM instead of jQuery here
+    var row = document.createElement('tr');
+    row.id = 'rcmrow'+uid;
+    row.className = css_class;
+    
+    var icon = this.env.messageicon;
+    if (!flags.unread && flags.unread_children > 0 && this.env.unreadchildrenicon)
+      icon = this.env.unreadchildrenicon;
+    else if (flags.deleted && this.env.deletedicon)
+      icon = this.env.deletedicon;
+    else if (flags.replied && this.env.repliedicon)
+      {
+      if (flags.forwarded && this.env.forwardedrepliedicon)
+        icon = this.env.forwardedrepliedicon;
+      else
+        icon = this.env.repliedicon;
+      }
+    else if (flags.forwarded && this.env.forwardedicon)
+      icon = this.env.forwardedicon;
+    else if(flags.unread && this.env.unreadicon)
+      icon = this.env.unreadicon;
+    var tree = '';
+
+    if (this.env.threading)
+      {
+      // XXX: This assumes that div width is hardcoded to 15px,
+      // Chris did it a bit differently in an original patch, he was adding so much divs as depth is
+      // I replaced logic in list.js:drag_mouse_move() so subject text is picked defferently, so
+      // either method of could be used (that was only the one problem I noted with these added divs).
+      // The same is true for an offline list (program/steps/mail/func.inc:rcmail_message_list()).
+      // Bubble
+      var width = message.depth * 15;
+      if (width)
+        tree += '<div id="rcmtab' + uid + '" class="branch" style="width:' + width + 'px;">&nbsp</div>';
+      if (message.has_children && !message.depth)
+        tree += '<div id="rcmexpando' + uid + '" class="' + (message.expanded ? 'expanded' : 'collapsed') + '">&nbsp;</div>';
+      else
+        tree += '<div class="leaf">&nbsp;</div>';
+      if (message.depth)
+        row.style.display = 'none';
+      }
+
+    tree += icon ? '<img src="'+icon+'" alt="" />' : '';
+
+    // add each submitted col
+    for (var n = 0; n < this.coltypes.length; n++) {
+      var c = this.coltypes[n];
+      col = document.createElement('td');
+      col.className = String(c).toLowerCase();
+
+      var html;
+      if (c=='flag')
+        {
+        if (flags.flagged && this.env.flaggedicon)
+          html = '<img src="'+this.env.flaggedicon+'" alt="" />';
+        else if(!flags.flagged && this.env.unflaggedicon)
+          html = '<img src="'+this.env.unflaggedicon+'" alt="" />';
+      }
+      else if (c=='attachment')
+        html = attachment && this.env.attachmenticon ? '<img src="'+this.env.attachmenticon+'" alt="" />' : '&nbsp;';
+      else
+        html = cols[c];
+        if (n == 0)
+          html = tree + html;
+      col.innerHTML = html;
+
+      row.appendChild(col);
+      }
+
+    this.message_list.insert_row(row, attop);
+
+    // remove 'old' row
+    if (attop && this.env.pagesize && this.message_list.rowcount > this.env.pagesize) {
+      var uid = this.message_list.get_last_row();
+      this.message_list.remove_row(uid);
+      this.message_list.clear_selection(uid);
+      }
+    };
+
+  // messages list handling in background (for performance)
+  this.offline_message_list = function(flag)
+    {
+      if (this.message_list)
+      	this.message_list.set_background_mode(flag);
+    };
+
   this.set_list_sorting = function(sort_col, sort_order)
     {
     // set table header class
@@ -1703,7 +1769,6 @@ function rcube_webmail()
     	    + (this.env.mailbox ? '&_mbox='+urlencode(this.env.mailbox) : ''), true);
     }
 
-
   // list messages of a specific mailbox
   this.list_mailbox = function(mbox, page, sort, add_url)
     {
@@ -1774,6 +1839,40 @@ function rcube_webmail()
     var url = '_mbox='+urlencode(mbox)+(page ? '&_page='+page : '');
     this.set_busy(true, 'loading');
     this.http_request('list', url+add_url, true);
+    };
+
+  // expand all threads with unread children
+  this.expand_unread = function()
+    {
+    var tbody = this.gui_objects.messagelist.tBodies[0];
+    var new_row = tbody.firstChild;
+    var r;
+    
+    while (new_row) {
+      if (new_row.nodeType == 1 && (r = this.message_list.rows[new_row.uid])
+	    && r.unread_children) {
+	this.message_list.expand_all(r);
+	var expando = document.getElementById('rcmexpando' + r.uid);
+	if (expando)
+	  expando.className = 'expanded';
+	this.set_unread_children(r.uid);
+        }
+      new_row = new_row.nextSibling;
+      }
+    return false;
+    };
+
+  // thread expanding/collapsing handler    
+  this.expand_message_row = function(e, uid)
+    {
+    var row = this.message_list.rows[uid];
+
+    // handle unread_children mark
+    row.expanded = !row.expanded;
+    this.set_unread_children(uid);
+    row.expanded = !row.expanded;
+
+    this.message_list.expand_row(e, uid);
     };
 
   this.expunge_mailbox = function(mbox)
@@ -1847,6 +1946,7 @@ function rcube_webmail()
     }
 
     this.set_message_icon(root);
+    this.set_unread_children(root);
   };
 
   // finds root message for specified thread
@@ -1896,14 +1996,6 @@ function rcube_webmail()
       icn_src = this.env.flaggedicon;
     else if (!rows[uid].flagged && this.env.unflaggedicon)
       icn_src = this.env.unflaggedicon;
-
-    if (rows[uid].has_children) {
-      if (!rows[uid].unread && rows[uid].unread_children)
-        $(rows[uid].obj).addClass('unroot');
-      else
-        $(rows[uid].obj).removeClass('unroot');
-    }
-
     if (rows[uid].flagged_icon && icn_src)
       rows[uid].flagged_icon.src = icn_src;
   }
@@ -1973,8 +2065,23 @@ function rcube_webmail()
       rowobj.removeClass('flagged');
       }
 
+    this.set_unread_children(uid);
     this.set_message_icon(uid);
-    }
+    };
+
+  // sets unroot (unread_children) class of parent row
+  this.set_unread_children = function(uid)
+    {
+    var row = this.message_list.rows[uid];
+    
+    if (row.parent_uid || !row.has_children)
+      return;
+
+    if (!row.unread && row.unread_children && !row.expanded)
+      $(row.obj).addClass('unroot');
+    else
+      $(row.obj).removeClass('unroot');
+    };
 
   // move selected messages to the specified mailbox
   this.move_messages = function(mbox)
@@ -2289,6 +2396,51 @@ function rcube_webmail()
   /*********        message compose methods        *********/
   /*********************************************************/
   
+  // init message compose form: set focus and eventhandlers
+  this.init_messageform = function()
+    {
+    if (!this.gui_objects.messageform)
+      return false;
+    
+    //this.messageform = this.gui_objects.messageform;
+    var input_from = $("[name='_from']");
+    var input_to = $("[name='_to']");
+    var input_subject = $("input[name='_subject']");
+    var input_message = $("[name='_message']").get(0);
+    var html_mode = $("input[name='_is_html']").val() == '1';
+
+    // init live search events
+    this.init_address_input_events(input_to);
+    this.init_address_input_events($("[name='_cc']"));
+    this.init_address_input_events($("[name='_bcc']"));
+
+    // add signature according to selected identity
+    if (input_from.attr('type') == 'select-one' && $("input[name='_draft_saveid']").val() == ''
+        && !html_mode) {  // if we have HTML editor, signature is added in callback
+      this.change_identity(input_from[0]);
+    }
+
+    if (input_to.val() == '')
+      input_to.focus();
+    else if (input_subject.val() == '')
+      input_subject.focus();
+    else if (input_message && !html_mode)
+      input_message.focus();
+
+    // get summary of all field values
+    this.compose_field_hash(true);
+ 
+    // start the auto-save timer
+    this.auto_save_start();
+    };
+
+  this.init_address_input_events = function(obj)
+    {
+    var handler = function(e){ return ref.ksearch_keypress(e,this); };
+    obj.bind((bw.safari || bw.ie ? 'keydown' : 'keypress'), handler);
+    obj.attr('autocomplete', 'off');
+    };
+
   // checks the input fields before sending a message
   this.check_compose_input = function()
     {
@@ -3961,127 +4113,6 @@ function rcube_webmail()
       }
   };
 
-  // create a table row in the message list
-  this.add_message_row = function(uid, cols, flags, attachment, attop)
-    {
-    if (!this.gui_objects.messagelist || !this.message_list)
-      return false;
-
-    if (this.message_list.background)
-      var tbody = this.message_list.background;
-    else
-      var tbody = this.gui_objects.messagelist.tBodies[0];
-    
-    var rowcount = tbody.rows.length;
-    var even = rowcount%2;
-    
-    var message = this.env.messages[uid] = {
-      deleted: flags.deleted?1:0,
-      replied: flags.replied?1:0,
-      unread: flags.unread?1:0,
-      forwarded: flags.forwarded?1:0,
-      flagged: flags.flagged?1:0,
-      has_children: flags.has_children?1:0,
-      depth: flags.depth?flags.depth:0,
-      unread_children: flags.unread_children,
-      parent_uid: flags.parent_uid,
-    }
-
-    var css_class = 'message'
-        + (even ? ' even' : ' odd')
-        + (flags.unread ? ' unread' : '')
-        + (flags.deleted ? ' deleted' : '')
-        + (flags.flagged ? ' flagged' : '')
-	+ (flags.unread_children && !flags.unread ? ' unroot' : '')
-        + (this.message_list.in_selection(uid) ? ' selected' : '');
-
-    // for performance use DOM instead of jQuery here
-    var row = document.createElement('tr');
-    row.id = 'rcmrow'+uid;
-    row.className = css_class;
-    
-    var icon = this.env.messageicon;
-    if (!flags.unread && flags.unread_children > 0 && this.env.unreadchildrenicon)
-      icon = this.env.unreadchildrenicon;
-    else if (flags.deleted && this.env.deletedicon)
-      icon = this.env.deletedicon;
-    else if (flags.replied && this.env.repliedicon)
-      {
-      if (flags.forwarded && this.env.forwardedrepliedicon)
-        icon = this.env.forwardedrepliedicon;
-      else
-        icon = this.env.repliedicon;
-      }
-    else if (flags.forwarded && this.env.forwardedicon)
-      icon = this.env.forwardedicon;
-    else if(flags.unread && this.env.unreadicon)
-      icon = this.env.unreadicon;
-    var tree = '';
-
-    if (this.env.threading)
-      {
-      // XXX: This assumes that div width is hardcoded to 15px,
-      // Chris did it a bit differently in an original patch, he was adding so much divs as depth is
-      // I replaced logic in list.js:drag_mouse_move() so subject text is picked defferently, so
-      // either method of could be used (that was only the one problem I noted with these added divs).
-      // The same is true for an offline list (program/steps/mail/func.inc:rcmail_message_list()).
-      // Bubble
-      var width = message.depth * 15;
-      if (width)
-        tree += '<div id="rcmtab' + uid + '" class="branch" style="width:' + width + 'px;">&nbsp</div>';
-      if (message.has_children && !message.depth)
-        tree += '<div id="rcmexpando' + uid + '" class="' + (message.expanded ? 'expanded' : 'collapsed') + '">&nbsp;</div>';
-      else
-        tree += '<div class="leaf">&nbsp;</div>';
-      if (message.depth)
-        row.style.display = 'none';
-      }
-
-    tree += icon ? '<img src="'+icon+'" alt="" />' : '';
-
-    // add each submitted col
-    for (var n = 0; n < this.coltypes.length; n++) {
-      var c = this.coltypes[n];
-      col = document.createElement('td');
-      col.className = String(c).toLowerCase();
-
-      var html;
-      if (c=='flag')
-        {
-        if (flags.flagged && this.env.flaggedicon)
-          html = '<img src="'+this.env.flaggedicon+'" alt="" />';
-        else if(!flags.flagged && this.env.unflaggedicon)
-          html = '<img src="'+this.env.unflaggedicon+'" alt="" />';
-      }
-      else if (c=='attachment')
-        html = attachment && this.env.attachmenticon ? '<img src="'+this.env.attachmenticon+'" alt="" />' : '&nbsp;';
-      else
-        html = cols[c];
-        if (n == 0)
-          html = tree + html;
-      col.innerHTML = html;
-
-      row.appendChild(col);
-      }
-
-    this.message_list.insert_row(row, attop);
-
-    // remove 'old' row
-    if (attop && this.env.pagesize && this.message_list.rowcount > this.env.pagesize) {
-      var uid = this.message_list.get_last_row();
-      this.message_list.remove_row(uid);
-      this.message_list.clear_selection(uid);
-      }
-    };
-
-
-  // messages list handling in background (for performance)
-  this.offline_message_list = function(flag)
-    {
-      if (this.message_list)
-      	this.message_list.set_background_mode(flag);
-    };
-
   // replace content of row count display
   this.set_rowcount = function(text)
     {
@@ -4471,6 +4502,15 @@ function rcube_webmail()
     var d = new Date();
     this.http_request('keep-alive', '_t='+d.getTime());
     };
+
+  // start interval for keep-alive/recent_check signal
+  this.start_keepalive = function()
+    {
+    if (this.env.keep_alive && !this.env.framed && this.task=='mail' && this.gui_objects.mailboxlist)
+      this._int = setInterval(function(){ ref.check_for_recent(false); }, this.env.keep_alive * 1000);
+    else if (this.env.keep_alive && !this.env.framed && this.task!='login')
+      this._int = setInterval(function(){ ref.send_keep_alive(); }, this.env.keep_alive * 1000);
+    }
 
   // send periodic request to check for recent messages
   this.check_for_recent = function(setbusy)
