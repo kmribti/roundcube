@@ -125,13 +125,17 @@ function rcube_mail_ui()
   this.searchmenu = $('#searchmenu');
   this.messagemenu = $('#messagemenu');
   this.listmenu = $('#listmenu');
-  var ref = rcube_find_object('listmenulink');
-  
-  if (ref)
-    ref.onclick = function () { rcmail_ui.show_listmenu() };
+  this.add_listmenulink();
 }
 
 rcube_mail_ui.prototype = {
+
+add_listmenulink: function()
+{
+  var ref = rcube_find_object('listmenulink');
+  if (ref)
+    ref.onclick = function () { rcmail_ui.show_listmenu() };
+},
 
 show_markmenu: function(show)
 {
@@ -203,6 +207,17 @@ show_listmenu: function(show)
     $('input[name="sort_ord"][value="ASC"]').attr('checked', rcmail.env.sort_order=='DESC' ? 0 : 1);
     $('input[name="view"][value="thread"]').attr('checked', rcmail.env.threading ? 1 : 0);
     $('input[name="view"][value="list"]').attr('checked', rcmail.env.threading ? 0 : 1);
+    // list columns
+    var cols = $('input[name="list_col[]"]');
+    for (var i=0; i<cols.length; i++) {
+      var found = 0;
+      if (cols[i].value != 'from')
+        found = jQuery.inArray(cols[i].value, rcmail.env.coltypes) != -1;
+      else
+        found = (jQuery.inArray('from', rcmail.env.coltypes) != -1
+	    || jQuery.inArray('to', rcmail.env.coltypes) != -1);
+      $(cols[i]).attr('checked',found ? 1 : 0);
+    }
   }
   this.listmenu[show?'show':'hide']();
 },
@@ -215,7 +230,7 @@ save_listmenu: function()
   var ord = $('input[name="sort_ord"]:checked').val();
   var thread = $('input[name="view"]:checked').val();
   var cols = $('input[name="list_col[]"]:checked')
-    .map(function(){ return $(this).val(); }).get();
+    .map(function(){ return this.value; }).get();
 
   rcmail.set_list_options(cols, sort, ord, thread == 'thread' ? 1 : 0);
 },
@@ -271,4 +286,5 @@ function rcube_init_mail_ui()
   rcmail_ui = new rcube_mail_ui();
   rcube_event.add_listener({ object:rcmail_ui, method:'body_mouseup', event:'mouseup' });
   rcube_event.add_listener({ object:rcmail_ui, method:'body_keypress', event:'keypress' });
+  rcube_event.add_listener({ object:rcmail_ui, method:'add_listmenulink', event:'listupdate' });
 }

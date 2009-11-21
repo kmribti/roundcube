@@ -33,8 +33,6 @@ if ($sort = get_input_value('_sort', RCUBE_INPUT_GET))
   $save_arr = array();
   $_SESSION['sort_col'] = $save_arr['message_sort_col'] = $sort_col;
   $_SESSION['sort_order'] = $save_arr['message_sort_order'] = $sort_order;
-  
-  $RCMAIL->user->save_prefs($save_arr);
 }
 else
 {
@@ -42,6 +40,16 @@ else
   $sort_col   = isset($_SESSION['sort_col'])   ? $_SESSION['sort_col']   : $CONFIG['message_sort_col'];
   $sort_order = isset($_SESSION['sort_order']) ? $_SESSION['sort_order'] : $CONFIG['message_sort_order'];
 }
+
+// is there a set of columns for this request?
+if ($cols = get_input_value('_cols', RCUBE_INPUT_GET))
+{
+  $save_arr = array();
+  $_SESSION['list_columns'] = $save_arr['list_cols'] = explode(',', $cols);
+}
+
+if ($save_arr)  
+  $RCMAIL->user->save_prefs($save_arr);
 
 $mbox_name = $IMAP->get_mailbox_name();
 
@@ -72,7 +80,7 @@ $OUTPUT->command('set_mailboxname', rcmail_get_mailbox_name_text());
 // add message rows
 if (isset($a_headers) && count($a_headers))
 {
-  rcmail_js_message_list($a_headers);
+  rcmail_js_message_list($a_headers, FALSE, TRUE, (bool) $cols);
   if ($search_request)
     $OUTPUT->show_message('searchsuccessful', 'confirmation', array('nr' => $count));
 }

@@ -131,9 +131,6 @@ function rcmail_message_list($attrib)
 
   $skin_path = $CONFIG['skin_path'];
   $image_tag = '<img src="%s%s" alt="%s" />';
-  // check to see if we have some settings for sorting
-  $sort_col   = $_SESSION['sort_col'];
-  $sort_order = $_SESSION['sort_order'];
   
   // add some labels to client
   $OUTPUT->add_label('from', 'to');
@@ -156,12 +153,11 @@ function rcmail_message_list($attrib)
   else
       $a_show_cols = preg_split('/[\s,;]+/', strip_quotes($attrib['columns']));
 
-  // store column list in a session-variable
+  // save some variables for use in ajax list
   $_SESSION['list_columns'] = $a_show_cols;
+  $_SESSION['list_attrib'] = $attrib;
+  $_SESSION['skin_path'] = $skin_path;
   
-  // define sortable columns
-  $a_sort_cols = array('subject', 'date', 'from', 'to', 'size', 'cc');
-
   $mbox = $IMAP->get_mailbox_name();
   $delim = $IMAP->get_hierarchy_delimiter();
 
@@ -169,102 +165,9 @@ function rcmail_message_list($attrib)
   if ((strpos($mbox.$delim, $CONFIG['sent_mbox'].$delim)===0 || strpos($mbox.$delim, $CONFIG['drafts_mbox'].$delim)===0)
       && ($f = array_search('from', $a_show_cols)) && !array_search('to', $a_show_cols))
     $a_show_cols[$f] = 'to';
-  
-  // add col definition
-  $out .= '<colgroup>';
 
-  foreach ($a_show_cols as $col)
-    $out .= ($col!='attachment') ? sprintf('<col class="%s" />', $col) : '<col class="icon" />';
-
-  $out .= "</colgroup>\n";
-
-  // add table title
-  $out .= "<thead><tr>\n";
-
-  $javascript = '';
-  foreach ($a_show_cols as $col)
-    {
-    // get column name
-    switch ($col)
-      {
-      case 'flag':
-        $col_name = sprintf($image_tag, $skin_path, $attrib['unflaggedicon'], '');
-        break;
-      case 'attachment':
-        $col_name = sprintf($image_tag, $skin_path, $attrib['attachmenticon'], '');
-        break;
-      default:
-        $col_name = Q(rcube_label($col));
-    }
-
-    // make sort links
-    $sort = '';
-    if (in_array($col, $a_sort_cols))
-      {
-      // have buttons configured
-      if (!empty($attrib['sortdescbutton']) || !empty($attrib['sortascbutton']))
-        {
-        $sort = '&nbsp;&nbsp;';
-
-        // asc link
-        if (!empty($attrib['sortascbutton']))
-          {
-          $sort .= $OUTPUT->button(array(
-            'command' => 'sort',
-            'prop' => $col.'_ASC',
-            'image' => $attrib['sortascbutton'],
-            'align' => 'absmiddle',
-            'title' => 'sortasc'));
-          }       
-        
-        // desc link
-        if (!empty($attrib['sortdescbutton']))
-          {
-          $sort .= $OUTPUT->button(array(
-            'command' => 'sort',
-            'prop' => $col.'_DESC',
-            'image' => $attrib['sortdescbutton'],
-            'align' => 'absmiddle',
-            'title' => 'sortdesc'));
-          }
-        }
-      // just add a link tag to the header
-      else
-        {
-        $col_name = sprintf(
-          '<a href="./#sort" onclick="return %s.command(\'sort\',\'%s\',this)" title="%s">%s</a>',
-          JS_OBJECT_NAME,
-          $col,
-          rcube_label('sortby'),
-          $col_name);
-        }
-      }
-      
-    $sort_class = $col==$sort_col ? " sorted$sort_order" : '';
-
-    // put it all together
-    if ($col != 'attachment') {
-      // list options menu link
-      if ($col == 'subject' && !empty($attrib['optionsmenuicon'])) {
-          $list_menu = $OUTPUT->button(array(
-	    'name' => 'listmenulink',
-	    'id' => 'listmenulink',
-//            'command' => '',
-//            'prop' => '',
-            'image' => $attrib['optionsmenuicon'],
-            'align' => 'absmiddle',
-	    'style' => 'float: left; padding-right: 5px',
-            'title' => 'listoptions'));
-        } else
-	  $list_menu = '';
-
-      $out .= '<td class="'.$col.$sort_class.'" id="rcm'.$col.'">' . "$list_menu$col_name$sort</td>\n";
-      }
-    else    
-      $out .= '<td class="icon" id="rcm'.$col.'">' . "$col_name$sort</td>\n";
-    }
-
-  $out .= "</tr></thead>\n<tbody>\n";
+  $out .= '<thead>'.rcmail_message_list_head($attrib, $a_show_cols).'</thead>';
+  $out .= "\n<tbody>\n";
 
   // no messages in this mailbox
   if (!sizeof($a_headers))
@@ -405,8 +308,8 @@ function rcmail_message_list($attrib)
   $OUTPUT->set_env('messagecount', $message_count);
   $OUTPUT->set_env('current_page', $IMAP->list_page);
   $OUTPUT->set_env('pagecount', ceil($message_count/$IMAP->page_size));
-  $OUTPUT->set_env('sort_col', $sort_col);
-  $OUTPUT->set_env('sort_order', $sort_order);
+  $OUTPUT->set_env('sort_col', $_SESSION['sort_col']);
+  $OUTPUT->set_env('sort_order', $_SESSION['sort_order']);
   
   if ($attrib['messageicon'])
     $OUTPUT->set_env('messageicon', $skin_path . $attrib['messageicon']);
@@ -442,7 +345,7 @@ function rcmail_message_list($attrib)
  * return javascript commands to add rows to the message list
  * or to replace the whole list (IE only)
  */
-function rcmail_js_message_list($a_headers, $insert_top=FALSE, $replace=TRUE)
+function rcmail_js_message_list($a_headers, $insert_top=FALSE, $replace=TRUE, $head_replace=FALSE)
   {
   global $CONFIG, $IMAP, $OUTPUT;
 
@@ -460,8 +363,10 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE, $replace=TRUE)
     $a_show_cols[$f] = 'to';
 
   $browser = new rcube_browser;
-
-  $OUTPUT->command('set_message_coltypes', $a_show_cols);
+  
+  $thead = $head_replace ? rcmail_message_list_head($_SESSION['list_attrib'], $a_show_cols) : NULL;
+  
+  $OUTPUT->command('set_message_coltypes', $a_show_cols, $thead);
 
   // remove 'attachment' and 'flag' columns, we don't need them here
   if(($key = array_search('attachment', $a_show_cols)) !== FALSE)
@@ -544,6 +449,80 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE, $replace=TRUE)
 
   if ($browser->ie && $replace)
     $OUTPUT->command('offline_message_list', false);
+  }
+
+
+/*
+ * Creates <THEAD> for message list table
+ */
+function rcmail_message_list_head($attrib, $a_show_cols)
+  {
+  global $CONFIG;
+
+  $skin_path = $_SESSION['skin_path'];
+  $image_tag = '<img src="%s%s" alt="%s" />';
+
+  // check to see if we have some settings for sorting
+  $sort_col   = $_SESSION['sort_col'];
+  $sort_order = $_SESSION['sort_order'];
+
+  // define sortable columns
+  $a_sort_cols = array('subject', 'date', 'from', 'to', 'size', 'cc');
+  
+  $out = '<tr>';
+
+  foreach ($a_show_cols as $col)
+    {
+    // get column name
+    switch ($col)
+      {
+      case 'flag':
+        $col_name = sprintf($image_tag, $skin_path, $attrib['unflaggedicon'], '');
+        break;
+      case 'attachment':
+        $col_name = sprintf($image_tag, $skin_path, $attrib['attachmenticon'], '');
+        break;
+      default:
+        $col_name = Q(rcube_label($col));
+    }
+
+    // make sort links
+    $sort = '';
+    if (in_array($col, $a_sort_cols))
+      {
+        $col_name = sprintf(
+          '<a href="./#sort" onclick="return %s.command(\'sort\',\'%s\',this)" title="%s">%s</a>',
+          JS_OBJECT_NAME,
+          $col,
+          rcube_label('sortby'),
+          $col_name);
+      }
+      
+    $sort_class = $col==$sort_col ? " sorted$sort_order" : '';
+
+    // put it all together
+    if ($col != 'attachment') {
+      // list options menu link
+      if ($col == 'subject' && !empty($attrib['optionsmenuicon'])) {
+          $list_menu = sprintf('<a href="#"><img src="%s%s" id="%s" align="absmiddle" style="%s" title="%s" alt="" /></a>',
+            $skin_path,
+	    $attrib['optionsmenuicon'],
+	    'listmenulink',
+	    'float: left; padding-right: 5px',
+            rcube_label('listoptions')
+	    );
+        } else
+	  $list_menu = '';
+
+      $out .= '<td class="'.$col.$sort_class.'" id="rcm'.$col.'">' . "$list_menu$col_name$sort</td>\n";
+      }
+    else    
+      $out .= '<td class="icon" id="rcm'.$col.'">' . "$col_name$sort</td>\n";
+    }
+
+  $out .= '</tr>';
+
+  return $out;
   }
 
 

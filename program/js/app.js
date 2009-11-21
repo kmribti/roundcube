@@ -173,6 +173,7 @@ function rcube_webmail()
           this.message_list.addEventListener('dragend', function(e){ p.drag_end(e); });
           document.onmouseup = function(e){ return p.doc_mouse_up(e); };
 
+          this.set_message_coltypes(this.env.coltypes);
           this.message_list.init();
           this.enable_command('toggle_status', 'toggle_flag', true);
           
@@ -187,9 +188,6 @@ function rcube_webmail()
             }
           this.message_list.expand(null);
           }
-
-        if (this.env.coltypes)
-          this.set_message_coltypes(this.env.coltypes);
 
         // enable mail commands
         this.enable_command('list', 'checkmail', 'compose', 'add-contact', 'search', 'reset-search', 'collapse-folder', true);
@@ -1470,14 +1468,6 @@ function rcube_webmail()
 //      row.expanded = this.env.autoexpand && row.has_children ? true : false;
       }
 
-    // global variable 'subject_col' may be not defined yet
-    if (this.env.subject_col == null && this.env.coltypes)
-      {
-      var found;
-      if((found = find_in_array('subject', this.env.coltypes)) >= 0)
-        this.set_env('subject_col', found);
-      }
-
     // set eventhandler to message icon
     if (this.env.subject_col != null
 	&& (row.icon = row.obj.getElementsByTagName('td')[this.env.subject_col].getElementsByTagName('img')[0]))
@@ -1486,14 +1476,6 @@ function rcube_webmail()
       row.icon.id = 'msgicn_'+row.uid;
       row.icon._row = row.obj;
       row.icon.onmousedown = function(e) { p.command('toggle_status', this); };
-      }
-
-    // global variable 'flagged_col' may be not defined yet
-    if (this.env.flagged_col == null && this.env.coltypes)
-      {
-      var found;
-      if((found = find_in_array('flag', this.env.coltypes)) >= 0)
-        this.set_env('flagged_col', found);
       }
 
     // set eventhandler to flag icon, if icon found
@@ -1596,8 +1578,8 @@ function rcube_webmail()
     tree += icon ? '<img src="'+icon+'" alt="" />' : '';
 
     // add each submitted col
-    for (var n = 0; n < this.coltypes.length; n++) {
-      var c = this.coltypes[n];
+    for (var n = 0; n < this.env.coltypes.length; n++) {
+      var c = this.env.coltypes[n];
       col = document.createElement('td');
       col.className = String(c).toLowerCase();
 
@@ -1651,7 +1633,7 @@ function rcube_webmail()
 
   this.set_list_options = function(cols, sort_col, sort_order, threads)
     {
-    var update, add_url;
+    var update, add_url = '';
 
     if (this.env.sort_col != sort_col || this.env.sort_order != sort_order) {
       update = 1;
@@ -1660,7 +1642,12 @@ function rcube_webmail()
     
     if (this.env.threading != threads) {
       update = 1;
-      add_url = '&_threads=' + threads;     
+      add_url += '&_threads=' + threads;     
+      }
+
+    if (cols.join() != this.env.coltypes.join()) {
+      update = 1;
+      add_url += '&_cols=' + cols.join(',');
       }
 
     if (update)
@@ -4083,34 +4070,53 @@ function rcube_webmail()
     return null;
   };
 
-  // for reordering column array, Konqueror workaround
-  this.set_message_coltypes = function(coltypes) 
+  // for reordering column array (Konqueror workaround)
+  // and for setting some message list global variables
+  this.set_message_coltypes = function(coltypes, replace) 
   { 
-    this.coltypes = coltypes;
+    this.env.coltypes = coltypes;
     
     // set correct list titles
-    var cell, col;
+    var cell, col, found, n;
     var thead = this.gui_objects.messagelist ? this.gui_objects.messagelist.tHead : null;
-    for (var n=0; thead && n<this.coltypes.length; n++) 
+
+    // replace old column headers
+    if (thead && replace)
+      this.gui_objects.messagelist.tHead.innerHTML = replace;
+
+    for (n=0; thead && n<this.env.coltypes.length; n++)
       {
-      col = this.coltypes[n];
+      col = this.env.coltypes[n];
       if ((cell = thead.rows[0].cells[n]) && (col=='from' || col=='to'))
         {
         // if we have links for sorting, it's a bit more complicated...
         if (cell.firstChild && cell.firstChild.tagName.toLowerCase()=='a')
           {
-          cell.firstChild.innerHTML = this.get_label(this.coltypes[n]);
+          cell.firstChild.innerHTML = this.get_label(this.env.coltypes[n]);
           cell.firstChild.onclick = function(){ return rcmail.command('sort', this.__col, this); };
           cell.firstChild.__col = col;
           }
         else
-          cell.innerHTML = this.get_label(this.coltypes[n]);
+          cell.innerHTML = this.get_label(this.env.coltypes[n]);
 
         cell.id = 'rcm'+col;
         }
-      else if (col == 'subject' && this.message_list)
-        this.message_list.subject_col = n;
       }
+
+    // remove excessive columns
+    for (var i=n; thead && n<thead.rows[0].cells.length; i++)
+      thead.rows[0].removeChild(thead.rows[0].cells[i]);
+
+    this.env.subject_col = null;
+    this.env.flagged_col = null;
+
+    if((found = find_in_array('subject', this.env.coltypes)) >= 0) {
+      this.set_env('subject_col', found);
+      if (this.message_list)
+        this.message_list.subject_col = found;
+      }
+    if((found = find_in_array('flag', this.env.coltypes)) >= 0)
+      this.set_env('flagged_col', found);
   };
 
   // replace content of row count display

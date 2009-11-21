@@ -13,7 +13,7 @@ CHANGES IN RELATION TO ORIGINAL PATCH
 CHANGES IN RELATION TO TRUNK (for pasting into CHANGELOG after merge)
     - removed 'index_sort' option, now we're using empty 'message_sort_col' for
       this purpose
-    - popup menu for list column/sorting/view selection (not finished yet)
+    - popup menu for messages list column/sorting/view selection
     - added sorting by ARRIVAL
     - added sorting by CC
 
@@ -30,7 +30,6 @@ TODO:
     - button in #listcontrols to mark all messages in current thread (with selected
       root or child message),
     - "Expand All Unread" button
-    - columns/sort/view selector (popup) with 'default sorting' support
     - thread tree icons
     - reset autoexpand feature if collapse-all/expand-all was used. Save state for next page
       in the same folder. E.g. autoexpand is on, list is displayed with expanded
@@ -41,6 +40,7 @@ TODO:
       listing the folders)
     - thread css: message row height, thread/status icon alignment
     - remove 'indexsort' label from localization files
+    - use jQuery.inArray instead of find_in_array() (common.js)
 
 KNOWN ISSUES:
     - after message(s) deletion the whole list is reloaded (see TODO),
