@@ -182,11 +182,7 @@ function rcube_webmail()
           else
             this.message_list.focus();
 
-          switch (this.env.autoexpand_threads) {
-            case 2: this.expand_unread(); break;
-            case 1: this.message_list.expand_all(); break;
-            }
-          this.message_list.expand(null);
+	  this.expand_threads();
           }
 
         // enable mail commands
@@ -771,10 +767,18 @@ function rcube_webmail()
         break;
 
       case 'expand-all':
+        this.env.autoexpand_threads = 1;
         this.message_list.expand_all();
         break;
 
+      case 'expand-unread':
+        this.env.autoexpand_threads = 2;
+        this.message_list.collapse_all();
+        this.expand_unread();
+        break;
+
       case 'collapse-all':
+        this.env.autoexpand_threads = 0;
         this.message_list.collapse_all();
         break;
 
@@ -1861,6 +1865,19 @@ function rcube_webmail()
 
     this.message_list.expand_row(e, uid);
     };
+
+  // message list expanding
+  this.expand_threads = function()
+    {    
+    if (!this.env.threading || !this.env.autoexpand_threads || !this.message_list)
+      return;
+    
+    switch (this.env.autoexpand_threads) {
+      case 2: this.expand_unread(); break;
+      case 1: this.message_list.expand_all(); break;
+      }
+    //  this.message_list.expand(null);
+    }
 
   this.expunge_mailbox = function(mbox)
     {
@@ -4470,8 +4487,10 @@ function rcube_webmail()
       case 'getunread':
       case 'list':
         if (this.task == 'mail') {
-          if (this.message_list && response.action == 'list')
+          if (this.message_list && response.action == 'list') {
             this.msglist_select(this.message_list);
+	    this.expand_threads();
+	    }
           this.enable_command('show', 'expunge', 'select-all', 'select-none', 'sort', (this.env.messagecount > 0));
           this.enable_command('purge', this.purge_mailbox_test());
          

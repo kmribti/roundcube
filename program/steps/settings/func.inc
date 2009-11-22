@@ -303,7 +303,7 @@ function rcmail_user_prefs($current=null)
     if (!isset($no_override['autoexpand_threads'])) {
       $field_id = 'rcmfd_autoexpand_threads';
       $select_autoexpand_threads = new html_select(array('name' => '_autoexpand_threads', 'id' => $field_id));
-      $select_autoexpand_threads->add(rcube_label('dont_expand'), 0);
+      $select_autoexpand_threads->add(rcube_label('never'), 0);
       $select_autoexpand_threads->add(rcube_label('do_expand'), 1);
       $select_autoexpand_threads->add(rcube_label('expand_only_unread'), 2);
       

@@ -89,21 +89,6 @@ else if ($search_request)
 else
   $OUTPUT->show_message('nomessagesfound', 'notice');
 
-// deal with threaded view
-if ($IMAP->threading) {
-  switch ($RCMAIL->config->get('autoexpand_threads')) {
-    case 2:
-      $OUTPUT->command('expand_unread');
-      break;
-    case 1:
-      $OUTPUT->command('message_list.expand_all');
-      break;
-    case 0:
-    default:
-      break;
-  }
-}
-
 // send response
 $OUTPUT->send();
 

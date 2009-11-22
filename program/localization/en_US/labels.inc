@@ -159,9 +159,8 @@ $labels['threads'] = 'Threads';
 $labels['expand-all'] = 'Expand All';
 $labels['collapse-all'] = 'Collapse All';
 
-$labels['autoexpand_threads'] = 'Autoexpand threads';
+$labels['autoexpand_threads'] = 'Expand message threads';
 $labels['do_expand'] = 'all threads';
-$labels['dont_expand'] = 'none';
 $labels['expand_only_unread'] = 'only with unread messages';
 $labels['fromto'] = 'Sender/Recipient';
 $labels['flag'] = 'Flag';

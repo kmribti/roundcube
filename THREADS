@@ -31,14 +31,12 @@ TODO:
       root or child message),
     - "Expand All Unread" button
     - thread tree icons
-    - reset autoexpand feature if collapse-all/expand-all was used. Save state for next page
-      in the same folder. E.g. autoexpand is on, list is displayed with expanded
-      threads, then user clicks collapse-all, now if he goes to next page of the list,
-      threads should be collapsed,
     - update message_threading flag on folder rename/delete, also make sure
       that array is not growing infinite (remove non-existing items e.g. when
       listing the folders)
     - thread css: message row height, thread/status icon alignment
+      (change size of all list icons to 14x14)
+TODO (after merge):
     - remove 'indexsort' label from localization files
     - use jQuery.inArray instead of find_in_array() (common.js)
 
