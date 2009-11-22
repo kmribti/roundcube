@@ -222,7 +222,7 @@ function rcube_subscription_form($attrib)
   $a_threaded = $a_threaded_copy = $RCMAIL->config->get('message_threading', array()); 
   $delimiter = $IMAP->get_hierarchy_delimiter();
   $a_js_folders = $seen_folders = $list_folders = array();
-console($a_threaded);
+
   // pre-process folders list
   foreach ($a_unsubscribed as $i => $folder) {
     $foldersplit = explode($delimiter, $folder);
