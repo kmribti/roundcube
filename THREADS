@@ -17,28 +17,27 @@ CHANGES IN RELATION TO TRUNK (for pasting into CHANGELOG after merge)
     - added sorting by ARRIVAL
     - added sorting by CC
 
-TODO:
+TODO (must have):
     - threads caching,
+    - after message delete we shouldn't reload the whole list, only the thread
+      in which the message was
+    - "Expand All Unread" button
+TODO (other):
     - performance: fetching all messages for list in "expand all" state only,
       if "expand all" is disabled we should fetch only root messages and fetch
       children on-demand (on expand button click),
       Notice: this is not so simple, because we need to fetch children
     	      to set "unread_children", but we can fetch only flags instead of
     	      all headers for each child
-    - after message delete we shouldn't reload the whole list, only the thread
-      in which the message was
     - button in #listcontrols to mark all messages in current thread (with selected
       root or child message),
-    - "Expand All Unread" button
     - thread tree icons
-    - update message_threading flag on folder rename/delete, also make sure
-      that array is not growing infinite (remove non-existing items e.g. when
-      listing the folders)
     - thread css: message row height, thread/status icon alignment
       (change size of all list icons to 14x14)
-TODO (after merge):
     - remove 'indexsort' label from localization files
+TODO (by the way):
     - use jQuery.inArray instead of find_in_array() (common.js)
 
 KNOWN ISSUES:
     - after message(s) deletion the whole list is reloaded (see TODO),
+    - the same with a new message (check_recent)
