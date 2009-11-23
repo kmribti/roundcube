@@ -758,7 +758,6 @@ body.messagelist
   text-align: center;
 }
 
-#messagelist tbody tr td.icon,
 #messagelist tbody tr td.flag
 {
   padding: 2px 3px 2px 3px;
@@ -781,7 +780,7 @@ body.messagelist
 
 #messagelist tr td div.collapsed,
 #messagelist tr td div.expanded,
-#messagelist tr td img
+#messagelist tr td.subject img
 {
   cursor: pointer;
 }
@@ -795,7 +794,6 @@ body.messagelist
 {
   background: url(images/icons/expanded.png) center 5px no-repeat;
 }
-
 
 #messagelist tbody tr td.flag img:hover,
 #messagelist thead tr td.flag img
