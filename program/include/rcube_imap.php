@@ -313,10 +313,10 @@ class rcube_imap
   function set_search_set($str=null, $msgs=null, $charset=null, $sort_field=null, $threads=false)
     {
     if (is_array($str) && $msgs == null)
-      list($str, $msgs, $charset, $sort_field) = $str;
+      list($str, $msgs, $charset, $sort_field, $threads) = $str;
     if ($msgs != null && !is_array($msgs))
       $msgs = explode(',', $msgs);
-      
+
     $this->search_string = $str;
     $this->search_set = $msgs;
     $this->search_charset = $charset;
@@ -798,7 +798,6 @@ class rcube_imap
     {
     $cache_key = $mailbox.'.msg';
     // now get IDs for current page
-    $max = max($msg_index);
     list($begin, $end) = $this->_get_message_range(count($msg_index), $page);
     $msg_index = array_slice($msg_index, $begin, $end-$begin);
 
@@ -888,7 +887,10 @@ class rcube_imap
     // use saved messages from searching
     if ($this->threading)
       return $this->_list_thread_header_set($mailbox, $page, $sort_field, $sort_order, $slice);
-
+    // search set is threaded, we need a new one
+    if ($this->search_threads)
+      $this->search('', $this->search_string, $this->search_charset, $sort_field);
+    
     $msgs = $this->search_set;
     $a_msg_headers = array();
     $page = $page ? $page : $this->list_page;
@@ -1007,6 +1009,10 @@ class rcube_imap
    */
   private function _list_thread_header_set($mailbox, $page=NULL, $sort_field=NULL, $sort_order=NULL, $slice=0)
     {
+    // update search_set if previous data was fetched with disabled threading
+    if (!$this->search_threads)
+      $this->search('', $this->search_string, $this->search_charset, $sort_field);
+
     $thread_tree = $this->search_set['tree'];
     $msg_depth = $this->search_set['depth'];
     $has_children = $this->search_set['children'];

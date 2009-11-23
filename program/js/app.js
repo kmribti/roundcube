@@ -4450,7 +4450,7 @@ function rcube_webmail()
       for (var i=0; i < response.callbacks.length; i++)
         this.triggerEvent(response.callbacks[i][0], response.callbacks[i][1]);
     }
- 
+
     // process the response data according to the sent action
     switch (response.action) {
       case 'delete':
@@ -4485,9 +4485,10 @@ function rcube_webmail()
 
       case 'check-recent':
       case 'getunread':
+      case 'search':
       case 'list':
         if (this.task == 'mail') {
-          if (this.message_list && response.action == 'list') {
+          if (this.message_list && (response.action == 'list' || response.action == 'search')) {
             this.msglist_select(this.message_list);
 	    this.expand_threads();
 	    }

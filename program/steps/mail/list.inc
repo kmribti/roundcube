@@ -66,6 +66,10 @@ if ($_SESSION['search_filter'] && $_SESSION['search_filter'] != 'ALL')
 if ($count = $IMAP->messagecount($mbox_name, $IMAP->threading ? 'THREADS' : 'ALL', !empty($_REQUEST['_refresh'])))
   $a_headers = $IMAP->list_headers($mbox_name, NULL, $sort_col, $sort_order);
 
+// update search set (possible change of threading mode)
+if (!empty($_REQUEST['_search']) && isset($_SESSION['search'][$_REQUEST['_search']]))
+  $_SESSION['search'][$_REQUEST['_search']] = $IMAP->get_search_set();
+
 // update mailboxlist
 rcmail_send_unread_count($mbox_name, !empty($_REQUEST['_refresh']));
 
