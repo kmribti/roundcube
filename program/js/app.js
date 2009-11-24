@@ -671,7 +671,7 @@ function rcube_webmail()
         if (this.task == 'mail')
         {
           this.move_messages(props);
-          if (this.env.threadeding)
+          if (this.env.threading)
           {
             // The same as for 'delete'
             this.list_mailbox(this.env.mailbox, this.env.current_page);
@@ -4479,7 +4479,7 @@ function rcube_webmail()
           this.enable_command('show', 'reply', 'reply-all', 'forward', 'moveto', 'delete', 
 	    'mark', 'viewsource', 'open', 'edit', 'download', 'print', 'load-attachment', 
 	    'purge', 'expunge', 'select-all', 'select-none', 'sort', 'expand-all',
-	    'colapse-all', false);
+	    'collapse-all', false);
         }
         break;
 
