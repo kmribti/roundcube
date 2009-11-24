@@ -406,7 +406,7 @@ expand: function(row)
             if ((row && p == row) || last_expanded_parent_depth >= p.depth - 1)
             {
               last_expanded_parent_depth = p.depth;
-              new_row.style.display = 'table-row';
+              $(new_row).show();
 	      new_row.expanded = true;
             }
           }
@@ -490,7 +490,7 @@ expand_all: function(row)
       var r = this.rows[new_row.uid];
       if (row && r.depth <= depth)
         break;
-      new_row.style.display = 'table-row';
+      $(new_row).show();
       if (r.has_children)
       {
         r.expanded = true;

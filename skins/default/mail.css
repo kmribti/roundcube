@@ -768,7 +768,7 @@ body.messagelist
 #messagelist tr td div
 {
   display: table-cell; /* For FireFox and Opera */
-  display: inline-block; /* For Opera and IE */ 
+  display: inline-block; /* For Opera and IE */
   width: 15px;
   height: 15px;
 }

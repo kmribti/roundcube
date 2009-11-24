@@ -41,3 +41,4 @@ TODO (by the way):
 KNOWN ISSUES:
     - after message(s) deletion the whole list is reloaded (see TODO),
     - the same with a new message (check_recent)
+    - css issues on IE6-7

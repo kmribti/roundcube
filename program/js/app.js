@@ -1526,7 +1526,7 @@ function rcube_webmail()
       has_children: flags.has_children?1:0,
       depth: flags.depth?flags.depth:0,
       unread_children: flags.unread_children,
-      parent_uid: flags.parent_uid,
+      parent_uid: flags.parent_uid
     }
 
     var css_class = 'message'
