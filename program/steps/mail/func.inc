@@ -377,12 +377,6 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE, $replace=TRUE, $h
   if ($browser->ie && $replace)
     $OUTPUT->command('offline_message_list', true);
 
-  // remove 'attachment' and 'flag' columns, we don't need them here
-  if(($key = array_search('attachment', $a_show_cols)) !== FALSE)
-    unset($a_show_cols[$key]);
-  if(($key = array_search('flag', $a_show_cols)) !== FALSE)
-    unset($a_show_cols[$key]);
-
   // loop through message headers
   foreach ($a_headers as $n => $header)
     {
