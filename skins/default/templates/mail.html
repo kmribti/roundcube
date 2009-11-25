@@ -154,7 +154,7 @@
 <div id="listmenu">
 <div><roundcube:label name="listcolumns" /></div>
   <ul class="toolbarmenu">
-    <li><input type="checkbox" name="list_col[]" value="subject" id="cols_subject" checked="checked" disabled="disabled" /><label for="cols_subject"><roundcube:label name="subject" /></label></li>
+    <li><input type="checkbox" name="list_col[]" value="subject" id="cols_subject" checked="checked" disabled="disabled" /><label for="cols_subject" class="disabled"><roundcube:label name="subject" /></label></li>
     <li><input type="checkbox" name="list_col[]" value="from" id="cols_fromto" /><label for="cols_fromto"><roundcube:label name="fromto" /></label></li>
     <li><input type="checkbox" name="list_col[]" value="replyto" id="cols_replyto" /><label for="cols_replyto"><roundcube:label name="replyto" /></label></li>
     <li><input type="checkbox" name="list_col[]" value="cc" id="cols_cc" /><label for="cols_cc"><roundcube:label name="cc" /></label></li>
@@ -182,7 +182,11 @@
 <div><roundcube:label name="listgroups" /></div>
   <ul class="toolbarmenu">
     <li><input type="radio" name="view" value="list" id="view_default" /><label for="view_default"><roundcube:label name="nonedefault" /></label></li>
+    <roundcube:if condition="env:threads" />
     <li><input type="radio" name="view" value="thread" id="view_thread" /><label for="view_thread"><roundcube:label name="threaded" /></label></li>
+    <roundcube:else />
+    <li><input type="radio" name="view" value="thread" id="view_thread" disabled="disabled" /><label for="view_thread" class="disabled"><roundcube:label name="threaded" /></label></li>
+    <roundcube:endif />
   </ul>
 <a href="javascript:rcmail_ui.save_listmenu()"><roundcube:label name="save" /></a>
 </div>

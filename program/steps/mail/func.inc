@@ -98,6 +98,11 @@ if (empty($RCMAIL->action) || $RCMAIL->action == 'list')
   $OUTPUT->set_env('quota', $IMAP->get_capability('quota'));
   $OUTPUT->set_env('delimiter', $IMAP->get_hierarchy_delimiter());
   $OUTPUT->set_env('threading', (bool) $IMAP->threading);
+  $OUTPUT->set_env('threads', $IMAP->threading
+	|| $IMAP->get_capability('thread=references')
+        || $IMAP->get_capability('thread=orderedsubject')
+        || $IMAP->get_capability('thread=refs')  
+  );
 
   if ($CONFIG['flag_for_deletion'])
     $OUTPUT->set_env('flag_for_deletion', true);
