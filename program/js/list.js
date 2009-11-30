@@ -109,7 +109,7 @@ init_row: function(row)
     var p = this;
     var uid = RegExp.$1;
     row.uid = uid;
-    this.rows[uid] = {uid:uid, id:row.id, obj:row, classname:row.className};
+    this.rows[uid] = {uid:uid, id:row.id, obj:row};
 
     // set eventhandlers to table row
     row.onmousedown = function(e){ return p.drag_row(e, this.uid); };
@@ -325,20 +325,20 @@ expand_row: function(e, id)
   var row = this.rows[id];
   var evtarget = rcube_event.get_target(e);
   var mod_key = rcube_event.get_modifier(e);
+
   // Don't select this message
   this.dont_select = true;
   // Don't treat double click on the expando as double click on the message.
   row.clicked = 0;
-  if (row.expanded)
-  {
+
+  if (row.expanded) {
     evtarget.className = "collapsed";
     if (mod_key == CONTROL_KEY || this.multiexpand)
       this.collapse_all(row);
     else
       this.collapse(row);
   }
-  else
-  {
+  else {
     evtarget.className = "expanded";
     if (mod_key == CONTROL_KEY || this.multiexpand)
       this.expand_all(row);
@@ -354,10 +354,8 @@ collapse: function(row)
   var new_row = row ? row.obj.nextSibling : null;
   var r;
 
-  while (new_row)
-  {
-    if (new_row.nodeType == 1)
-    {
+  while (new_row) {
+    if (new_row.nodeType == 1) {
       var r = this.rows[new_row.uid];
       if (r && r.depth <= depth)
         break;
@@ -369,42 +367,34 @@ collapse: function(row)
   return false;
 },
 
-
 expand: function(row)
 {
   var depth, new_row;
   var last_expanded_parent_depth;
 
-  if (row)
-  {
+  if (row) {
     row.expanded = true;
     depth = row.depth;
     new_row = row.obj.nextSibling;
   }
-  else
-  {
+  else {
     var tbody = this.list.tBodies[0];
     new_row = tbody.firstChild;
     depth = 0;
     last_expanded_parent_depth = 0;
   }
 
-  while (new_row)
-  {
-    if (new_row.nodeType == 1)
-    {
+  while (new_row) {
+    if (new_row.nodeType == 1) {
       var r = this.rows[new_row.uid];
-      if (r)
-      {
-        if (row && r.depth <= depth)
+      if (r) {
+        if (row && (!r.depth || r.depth <= depth))
           break;
-        if (r.parent_uid)
-        {
+
+        if (r.parent_uid) {
           var p = this.rows[r.parent_uid];
-          if (p && p.expanded)
-          {
-            if ((row && p == row) || last_expanded_parent_depth >= p.depth - 1)
-            {
+          if (p && p.expanded) {
+            if ((row && p == row) || last_expanded_parent_depth >= p.depth - 1) {
               last_expanded_parent_depth = p.depth;
               $(new_row).show();
 	      new_row.expanded = true;
@@ -428,8 +418,7 @@ collapse_all: function(row)
   var depth, new_row;
   var r;
 
-  if (row)
-  {
+  if (row) {
     row.expanded = false;
     depth = row.depth;
     new_row = row.obj.nextSibling;
@@ -437,26 +426,27 @@ collapse_all: function(row)
     if (depth && this.multiexpand)
       return false; 
   }
-  else
-  {
+  else {
     var tbody = this.list.tBodies[0];
     new_row = tbody.firstChild;
     depth = 0;
   }
 
   while (new_row) {
-    if (new_row.nodeType == 1)
-    {
+    if (new_row.nodeType == 1) {
       var r = this.rows[new_row.uid];
-      if (row && r.depth <= depth)
-        break;
-      if (row || r.depth)
-        new_row.style.display = 'none';
-      if (r.has_children) {
-        r.expanded = false;
-        var expando = document.getElementById('rcmexpando' + r.uid);
-        if (expando)
-          expando.className = 'collapsed';
+      if (r) {
+        if (row && (!r.depth || r.depth <= depth))
+          break;
+
+        if (row || r.depth)
+          new_row.style.display = 'none';
+        if (r.has_children) {
+          r.expanded = false;
+          var expando = document.getElementById('rcmexpando' + r.uid);
+          if (expando)
+            expando.className = 'collapsed';
+        }
       }
     }
     new_row = new_row.nextSibling;
@@ -470,33 +460,31 @@ expand_all: function(row)
   var depth, new_row;
   var r;
 
-  if (row)
-  {
+  if (row) {
     row.expanded = true;
     depth = row.depth;
     new_row = row.obj.nextSibling;
   }
-  else
-  {
+  else {
     var tbody = this.list.tBodies[0];
     new_row = tbody.firstChild;
     depth = 0;
   }
 
-  while (new_row)
-  {
-    if (new_row.nodeType == 1)
-    {
+  while (new_row) {
+    if (new_row.nodeType == 1) {
       var r = this.rows[new_row.uid];
-      if (row && r.depth <= depth)
-        break;
-      $(new_row).show();
-      if (r.has_children)
-      {
-        r.expanded = true;
-        var expando = document.getElementById('rcmexpando' + r.uid);
-        if (expando)
-          expando.className = 'expanded';
+      if (r) {
+        if (row && r.depth <= depth)
+          break;
+
+        $(new_row).show();
+        if (r.has_children) {
+          r.expanded = true;
+          var expando = document.getElementById('rcmexpando' + r.uid);
+          if (expando)
+            expando.className = 'expanded';
+        }
       }
     }
     new_row = new_row.nextSibling;

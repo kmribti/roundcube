@@ -125,17 +125,9 @@ function rcube_mail_ui()
   this.searchmenu = $('#searchmenu');
   this.messagemenu = $('#messagemenu');
   this.listmenu = $('#listmenu');
-  this.add_listmenulink();
 }
 
 rcube_mail_ui.prototype = {
-
-add_listmenulink: function()
-{
-  var ref = rcube_find_object('listmenulink');
-  if (ref)
-    ref.onclick = function () { rcmail_ui.show_listmenu() };
-},
 
 show_markmenu: function(show)
 {
@@ -222,6 +214,11 @@ show_listmenu: function(show)
   this.listmenu[show?'show':'hide']();
 },
 
+listmenu_open: function(e)
+{
+  this.show_listmenu(true);
+},
+
 save_listmenu: function()
 {
   this.show_listmenu();
@@ -286,5 +283,5 @@ function rcube_init_mail_ui()
   rcmail_ui = new rcube_mail_ui();
   rcube_event.add_listener({ object:rcmail_ui, method:'body_mouseup', event:'mouseup' });
   rcube_event.add_listener({ object:rcmail_ui, method:'body_keypress', event:'keypress' });
-  rcube_event.add_listener({ object:rcmail_ui, method:'add_listmenulink', event:'listupdate' });
+  rcmail.addEventListener('menu-open', 'listmenu_open', rcmail_ui);
 }

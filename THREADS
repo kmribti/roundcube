@@ -9,6 +9,7 @@ CHANGES IN RELATION TO ORIGINAL PATCH
     - removed imap_thread_algorithm option, we're using the best algorithm
       supported by server and implement REFS sorting in Roundcube
     - use underlined subject for root with unread children (icon is still supported)
+    - on deleting messages the whole list isn't refreshed
 
 CHANGES IN RELATION TO TRUNK (for pasting into CHANGELOG after merge)
     - removed 'index_sort' option, now we're using empty 'message_sort_col' for
@@ -19,8 +20,6 @@ CHANGES IN RELATION TO TRUNK (for pasting into CHANGELOG after merge)
 
 TODO (must have):
     - threads caching,
-    - after message delete we shouldn't reload the whole list, only the thread
-      in which the message was
     - "Expand All Unread" button
 TODO (other):
     - performance: fetching all messages for list in "expand all" state only,
@@ -37,8 +36,9 @@ TODO (other):
     - remove 'indexsort' label from localization files
 TODO (by the way):
     - use jQuery.inArray instead of find_in_array() (common.js)
+    - use only one function (js) to generate messages list
 
 KNOWN ISSUES:
-    - after message(s) deletion the whole list is reloaded (see TODO),
-    - the same with a new message (check_recent)
+    - on new message (check_recent) the whole list is reloaded
     - css issues on IE6-7
+

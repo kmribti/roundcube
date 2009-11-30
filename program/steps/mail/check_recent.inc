@@ -37,7 +37,6 @@ foreach ($a_mailboxes as $mbox_name) {
       $_SESSION['unseen_count'][$mbox_name] = $unread_count;
 
       $OUTPUT->set_env('messagecount', $all_count);
-      $OUTPUT->set_env('pagesize', $IMAP->page_size);
       $OUTPUT->set_env('pagecount', ceil($all_count/$IMAP->page_size));
       $OUTPUT->command('set_unread_count', $mbox_name, $unread_count, ($mbox_name == 'INBOX'));
       $OUTPUT->command('set_rowcount', rcmail_get_messagecount_text($all_count));

@@ -93,8 +93,9 @@ if (empty($RCMAIL->action) || $RCMAIL->action == 'list')
       $IMAP->messagecount($mbox_name, $IMAP->threading ? 'THREADS' : 'ALL', true);
     }
 	
-  // set current mailbox in client environment
+  // set current mailbox and some other vars in client environment
   $OUTPUT->set_env('mailbox', $mbox_name);
+  $OUTPUT->set_env('pagesize', $IMAP->page_size);
   $OUTPUT->set_env('quota', $IMAP->get_capability('quota'));
   $OUTPUT->set_env('delimiter', $IMAP->get_hierarchy_delimiter());
   $OUTPUT->set_env('threading', (bool) $IMAP->threading);
@@ -141,7 +142,7 @@ function rcmail_message_list($attrib)
   $OUTPUT->add_label('from', 'to');
 
   // get message headers
-  $a_headers = $IMAP->list_headers('', '', $sort_col, $sort_order);
+  $a_headers = $IMAP->list_headers('', '', $_SESSION['sort_col'], $_SESSION['sort_order']);
 
   // add id to message list table if not specified
   if (!strlen($attrib['id']))
@@ -367,17 +368,20 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE, $replace=TRUE, $h
       && (($f = array_search('from', $a_show_cols)) !== false) && array_search('to', $a_show_cols) === false)
     $a_show_cols[$f] = 'to';
 
-  $browser = new rcube_browser;
-  
   $thead = $head_replace ? rcmail_message_list_head($_SESSION['list_attrib'], $a_show_cols) : NULL;
   
   $OUTPUT->command('set_message_coltypes', $a_show_cols, $thead);
+
+  if (empty($a_headers))
+    return;
 
   // remove 'attachment' and 'flag' columns, we don't need them here
   if(($key = array_search('attachment', $a_show_cols)) !== FALSE)
     unset($a_show_cols[$key]);
   if(($key = array_search('flag', $a_show_cols)) !== FALSE)
     unset($a_show_cols[$key]);
+
+  $browser = new rcube_browser;
 
   if ($browser->ie && $replace)
     $OUTPUT->command('offline_message_list', true);
@@ -503,7 +507,8 @@ function rcmail_message_list_head($attrib, $a_show_cols)
     if ($col != 'attachment') {
       // list options menu link
       if ($col == 'subject' && !empty($attrib['optionsmenuicon'])) {
-          $list_menu = sprintf('<a href="#"><img src="%s%s" id="%s" align="absmiddle" style="%s" title="%s" alt="" /></a>',
+          $list_menu = sprintf('<a href="#" onclick="%s"><img src="%s%s" id="%s" align="absmiddle" style="%s" title="%s" alt="" /></a>',
+	    'return '.JS_OBJECT_NAME.'.command(\'menu-open\', \'messagelistmenu\')',
             $skin_path,
 	    $attrib['optionsmenuicon'],
 	    'listmenulink',

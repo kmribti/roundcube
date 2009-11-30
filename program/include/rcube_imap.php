@@ -756,7 +756,7 @@ class rcube_imap
     $msg_index = $this->_sort_threads($mailbox, $thread_tree);
 
     return $this->_fetch_thread_headers($mailbox, $thread_tree, $msg_depth, $has_children,
-	$msg_index, $page, $lice);
+	$msg_index, $page, $slice);
     }
 
 

@@ -116,17 +116,15 @@ else
   $OUTPUT->command('set_quota', rcmail_quota_content($IMAP->get_quota()));
   $OUTPUT->command('set_rowcount', rcmail_get_messagecount_text($msg_count));
 
+  if ($IMAP->threading)
+    $count = get_input_value('_count', RCUBE_INPUT_POST);
+
   // add new rows from next page (if any)
-  if ($addrows && ($jump_back || $nextpage_count > 0)) {
+  if ($addrows && $count && ($jump_back || $nextpage_count > 0)) {
     $sort_col   = isset($_SESSION['sort_col'])   ? $_SESSION['sort_col']   : $CONFIG['message_sort_col'];
     $sort_order = isset($_SESSION['sort_order']) ? $_SESSION['sort_order'] : $CONFIG['message_sort_order'];
 
     $a_headers = $IMAP->list_headers($mbox, NULL, $sort_col, $sort_order, $count);
-    if ($_SESSION['threads'])
-      // TODO: count number of roots deleted and slice that many roots from the end of $a_headers 
-      $OUTPUT->command('message_list.clear');
-    else
-      $a_headers = array_slice($a_headers, -$count, $count);
 
     rcmail_js_message_list($a_headers, false, false);
   }

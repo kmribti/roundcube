@@ -82,9 +82,9 @@ $OUTPUT->command('set_rowcount', rcmail_get_messagecount_text($count));
 $OUTPUT->command('set_mailboxname', rcmail_get_mailbox_name_text());
 
 // add message rows
+rcmail_js_message_list($a_headers, FALSE, TRUE, (bool) $cols);
 if (isset($a_headers) && count($a_headers))
 {
-  rcmail_js_message_list($a_headers, FALSE, TRUE, (bool) $cols);
   if ($search_request)
     $OUTPUT->show_message('searchsuccessful', 'confirmation', array('nr' => $count));
 }

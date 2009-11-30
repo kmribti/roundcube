@@ -175,7 +175,7 @@ function rcube_webmail()
 
           this.set_message_coltypes(this.env.coltypes);
           this.message_list.init();
-          this.enable_command('toggle_status', 'toggle_flag', true);
+          this.enable_command('toggle_status', 'toggle_flag', 'menu-open', true);
           
           if (this.gui_objects.mailcontframe)
             this.gui_objects.mailcontframe.onmousedown = function(e){ return p.click_on_list(e); };
@@ -484,6 +484,11 @@ function rcube_webmail()
           parent.location.href = this.env.permaurl;
         break;
 
+      case 'menu-open':
+	this.triggerEvent('menu-open', {props:props});
+	return false;
+        break;
+
       case 'open':
         var uid;
         if (uid = this.get_single_uid())
@@ -646,16 +651,7 @@ function rcube_webmail()
       case 'delete':
         // mail task
         if (this.task=='mail')
-        {
-          if (this.delete_messages() && this.env.threading)
-          {
-            // It is very hard to re-thread message list if some messages were removed from
-            // the middle of a thread (we need to fully implement RFC5256 algorythm, because
-            // we are a "disconnected client" if we re-threading without a servers help)
-            // Reload message list
-            this.list_mailbox(this.env.mailbox, this.env.current_page);
-          }
-        }
+          this.delete_messages();
         // addressbook task
         else if (this.task=='addressbook')
           this.delete_contacts();
@@ -664,19 +660,11 @@ function rcube_webmail()
           this.delete_identity();
         break;
 
-
       // mail task commands
       case 'move':
       case 'moveto':
         if (this.task == 'mail')
-        {
           this.move_messages(props);
-          if (this.env.threading)
-          {
-            // The same as for 'delete'
-            this.list_mailbox(this.env.mailbox, this.env.current_page);
-          }
-        }
         else if (this.task == 'addressbook' && this.drag_active)
           this.copy_contact(null, props);
         break;
@@ -1562,12 +1550,7 @@ function rcube_webmail()
 
     if (this.env.threading)
       {
-      // XXX: This assumes that div width is hardcoded to 15px,
-      // Chris did it a bit differently in an original patch, he was adding so much divs as depth is
-      // I replaced logic in list.js:drag_mouse_move() so subject text is picked defferently, so
-      // either method of could be used (that was only the one problem I noted with these added divs).
-      // The same is true for an offline list (program/steps/mail/func.inc:rcmail_message_list()).
-      // Bubble
+      // This assumes that div width is hardcoded to 15px,
       var width = message.depth * 15;
       if (width)
         tree += '<div id="rcmtab' + uid + '" class="branch" style="width:' + width + 'px;">&nbsp</div>';
@@ -1879,54 +1862,6 @@ function rcube_webmail()
     //  this.message_list.expand(null);
     }
 
-  this.expunge_mailbox = function(mbox)
-    {
-    var lock = false;
-    var add_url = '';
-    
-    // lock interface if it's the active mailbox
-    if (mbox == this.env.mailbox)
-       {
-       lock = true;
-       this.set_busy(true, 'loading');
-       add_url = '&_reload=1';
-       }
-
-    // send request to server
-    var url = '_mbox='+urlencode(mbox);
-    this.http_post('expunge', url+add_url, lock);
-    };
-
-  this.purge_mailbox = function(mbox)
-    {
-    var lock = false;
-    var add_url = '';
-    
-    if (!confirm(this.get_label('purgefolderconfirm')))
-      return false;
-    
-    // lock interface if it's the active mailbox
-    if (mbox == this.env.mailbox)
-       {
-       lock = true;
-       this.set_busy(true, 'loading');
-       add_url = '&_reload=1';
-       }
-
-    // send request to server
-    var url = '_mbox='+urlencode(mbox);
-    this.http_post('purge', url+add_url, lock);
-    return true;
-    };
-
-  // test if purge command is allowed
-  this.purge_mailbox_test = function()
-  {
-    return (this.env.messagecount && (this.env.mailbox == this.env.trash_mailbox || this.env.mailbox == this.env.junk_mailbox 
-      || this.env.mailbox.match('^' + RegExp.escape(this.env.trash_mailbox) + RegExp.escape(this.env.delimiter)) 
-      || this.env.mailbox.match('^' + RegExp.escape(this.env.junk_mailbox) + RegExp.escape(this.env.delimiter))));
-  };
-
   // update parent in a thread
   this.update_thread_root = function(uid, flag)
   {
@@ -1962,6 +1897,94 @@ function rcube_webmail()
       return this.find_thread_root(r.parent_uid);
     else
       return uid;
+  }
+
+  // update thread indicators for all messages in a thread below the specified message
+  // return number of removed/added root level messages
+  this.update_thread = function (uid)
+  {
+    if (!this.env.threading)
+      return 0;
+
+    var rows = this.message_list.rows;
+    var row = rows[uid]
+    var depth = rows[uid].depth;
+    var r, parent, count = 0;
+    var roots = new Array();
+
+    if (!row.depth) // root message: decrease roots count
+      count--;
+    else if (row.unread) {
+      // update unread_children for thread root
+      var parent = this.find_thread_root(uid);
+      rows[parent].unread_children--;
+      this.set_unread_children(parent);
+      }
+
+    parent = row.parent_uid;
+
+    // childrens
+    row = row.obj.nextSibling;
+    while (row) {
+      if (row.nodeType == 1 && (r = rows[row.uid])) {
+	if (!r.depth || r.depth <= depth)
+	  break;
+
+	r.depth--; // move left
+	$('#rcmtab'+r.uid).width(r.depth * 15);
+        if (!r.depth) { // a new root
+	  count++; // increase roots count
+	  r.parent_uid = 0;
+	  if (r.has_children) {
+	    // replace 'leaf' with 'collapsed'
+	    $('#rcmrow'+r.uid+' '+'.leaf:first')
+              .attr('id', 'rcmexpando' + r.uid)
+	      .attr('class', (r.obj.style.display != 'none' ? 'expanded' : 'collapsed'))
+    	      .bind('mousedown', {uid:r.uid, p:this},
+	        function(e) { return e.data.p.expand_message_row(e, e.data.uid); });
+
+	    r.unread_children = 0;
+	    roots[roots.length] = r;
+	    }
+	  // show if it was hidden
+	  if (r.obj.style.display == 'none')
+	    $(r.obj).show();
+	  }
+	else {
+	  if (r.depth == depth)
+	    r.parent_uid = parent;
+	  if (r.unread && roots.length) {
+	    roots[roots.length-1].unread_children++;
+	    }
+	  }
+	}
+	row = row.nextSibling;
+      }
+    
+    // update unread_children for roots
+    for (var i=0; i<roots.length; i++)
+      this.set_unread_children(roots[i].uid);
+
+    return count;
+  };
+
+  this.delete_excessive_thread_rows = function()
+  {
+    var rows = this.message_list.rows;    
+    var tbody = this.message_list.list.tBodies[0];
+    var row = tbody.firstChild;
+    var cnt = this.env.pagesize + 1;
+    
+    while (row) {
+      if (row.nodeType == 1 && (r = rows[row.uid])) {
+	if (!r.depth && cnt)
+	  cnt--;
+
+        if (!cnt)
+	  this.message_list.remove_row(row.uid);
+	}
+	row = row.nextSibling;
+      }
   }
 
   // set message icon
@@ -2036,38 +2059,21 @@ function rcube_webmail()
       this.set_message_status(uid, flag, status);
 
     var rowobj = $(rows[uid].obj);
-    if (rows[uid].unread && rows[uid].classname.indexOf('unread')<0)
-      {
-      rows[uid].classname += ' unread';
-      rowobj.addClass('unread');
-      }
-    else if (!rows[uid].unread && rows[uid].classname.indexOf('unread')>=0)
-      {
-      rows[uid].classname = rows[uid].classname.replace(/\s*unread/, '');
-      rowobj.removeClass('unread');
-      }
-    
-    if (rows[uid].deleted && rows[uid].classname.indexOf('deleted')<0)
-      {
-      rows[uid].classname += ' deleted';
-      rowobj.addClass('deleted');
-      }
-    else if (!rows[uid].deleted && rows[uid].classname.indexOf('deleted')>=0)
-      {
-      rows[uid].classname = rows[uid].classname.replace(/\s*deleted/, '');
-      rowobj.removeClass('deleted');
-      }
 
-    if (rows[uid].flagged && rows[uid].classname.indexOf('flagged')<0)
-      {
-      rows[uid].classname += ' flagged';
+    if (rows[uid].unread && !rowobj.hasClass('unread'))
+      rowobj.addClass('unread');
+    else if (!rows[uid].unread && rowobj.hasClass('unread'))
+      rowobj.removeClass('unread');
+    
+    if (rows[uid].deleted && !rowobj.hasClass('deleted'))
+      rowobj.addClass('deleted');
+    else if (!rows[uid].deleted && rowobj.hasClass('deleted'))
+      rowobj.removeClass('deleted');
+
+    if (rows[uid].flagged && !rowobj.hasClass('flagged'))
       rowobj.addClass('flagged');
-      }
-    else if (!rows[uid].flagged && rows[uid].classname.indexOf('flagged')>=0)
-      {
-      rows[uid].classname = rows[uid].classname.replace(/\s*flagged/, '');
+    else if (!rows[uid].flagged && rowobj.hasClass('flagged'))
       rowobj.removeClass('flagged');
-      }
 
     this.set_unread_children(uid);
     this.set_message_icon(uid);
@@ -2155,22 +2161,23 @@ function rcube_webmail()
     this._with_selected_messages('delete', false, '&_from='+(this.env.action ? this.env.action : ''));
     };
 
-  // Send a specifc request with UIDs of all selected messages
+  // Send a specifc moveto/delete request with UIDs of all selected messages
   // @private
-  this._with_selected_messages = function(action, lock, add_url, remove)
+  this._with_selected_messages = function(action, lock, add_url)
   {
     var a_uids = new Array();
+    var count = 0;
 
     if (this.env.uid)
       a_uids[0] = this.env.uid;
     else
     {
       var selection = this.message_list.get_selection();
-      var rows = this.message_list.rows;
       var id;
       for (var n=0; n<selection.length; n++) {
         id = selection[n];
         a_uids[a_uids.length] = id;
+	count += this.update_thread(id);
         this.message_list.remove_row(id, (this.env.display_next && n == selection.length-1));
       }
       // make sure there are no selected rows
@@ -2184,6 +2191,12 @@ function rcube_webmail()
 
     if (this.env.display_next && this.env.next_uid)
       add_url += '&_next_uid='+this.env.next_uid;
+
+    if (count < 0)
+      add_url += '&_count='+(count*-1);
+    else if (count > 0) 
+      // remove threads from the end of the list
+      this.delete_excessive_thread_rows();
 
     // send request to server
     this.http_post(action, '_uid='+a_uids.join(',')+'&_mbox='+urlencode(this.env.mailbox)+add_url, lock);
@@ -2319,7 +2332,8 @@ function rcube_webmail()
     var add_url = '';
     var r_uids = new Array();
     var rows = this.message_list ? this.message_list.rows : new Array();
-    
+    var count = 0;
+
     for (var i=0; i<a_uids.length; i++)
       {
       uid = a_uids[i];
@@ -2328,16 +2342,25 @@ function rcube_webmail()
         if (rows[uid].unread)
           r_uids[r_uids.length] = uid;
 
-	if (this.env.skip_deleted)
+	if (this.env.skip_deleted) {
+	  count += this.update_thread(uid);
           this.message_list.remove_row(uid, (this.env.display_next && i == this.message_list.selection.length-1));
+	  }
 	else
 	  this.set_message(uid, 'deleted', true);
         }
       }
 
     // make sure there are no selected rows
-    if (this.env.skip_deleted && !this.env.display_next && this.message_list)
+    if (this.env.skip_deleted && this.message_list) {
+      if(!this.env.display_next)
       this.message_list.clear_selection();
+      if (count < 0)
+        add_url += '&_count='+(count*-1);
+      else if (count > 0) 
+        // remove threads from the end of the list
+        this.delete_excessive_thread_rows();
+      }
 
     add_url = '&_from='+(this.env.action ? this.env.action : '');
     
@@ -2373,6 +2396,59 @@ function rcube_webmail()
       if (rows[uid])
         this.set_message(uid, 'unread', false);
       }
+  };
+
+
+  /*********************************************************/
+  /*********       mailbox folders methods         *********/
+  /*********************************************************/
+
+  this.expunge_mailbox = function(mbox)
+    {
+    var lock = false;
+    var add_url = '';
+    
+    // lock interface if it's the active mailbox
+    if (mbox == this.env.mailbox)
+       {
+       lock = true;
+       this.set_busy(true, 'loading');
+       add_url = '&_reload=1';
+       }
+
+    // send request to server
+    var url = '_mbox='+urlencode(mbox);
+    this.http_post('expunge', url+add_url, lock);
+    };
+
+  this.purge_mailbox = function(mbox)
+    {
+    var lock = false;
+    var add_url = '';
+    
+    if (!confirm(this.get_label('purgefolderconfirm')))
+      return false;
+    
+    // lock interface if it's the active mailbox
+    if (mbox == this.env.mailbox)
+       {
+       lock = true;
+       this.set_busy(true, 'loading');
+       add_url = '&_reload=1';
+       }
+
+    // send request to server
+    var url = '_mbox='+urlencode(mbox);
+    this.http_post('purge', url+add_url, lock);
+    return true;
+    };
+
+  // test if purge command is allowed
+  this.purge_mailbox_test = function()
+  {
+    return (this.env.messagecount && (this.env.mailbox == this.env.trash_mailbox || this.env.mailbox == this.env.junk_mailbox 
+      || this.env.mailbox.match('^' + RegExp.escape(this.env.trash_mailbox) + RegExp.escape(this.env.delimiter)) 
+      || this.env.mailbox.match('^' + RegExp.escape(this.env.junk_mailbox) + RegExp.escape(this.env.delimiter))));
   };
 
   
