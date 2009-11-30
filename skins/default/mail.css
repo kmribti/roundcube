@@ -643,6 +643,14 @@ td.formlinks a:visited
   background-position: -105px -15px;
 }
 
+#listcontrols a.expand-unread {
+  background-position: -120px 0;
+}
+
+#listcontrols a.expand-unreadsel {
+  background-position: -120px -15px;
+}
+
 #countcontrols
 {
   height: 15px;

@@ -10,6 +10,7 @@ CHANGES IN RELATION TO ORIGINAL PATCH
       supported by server and implement REFS sorting in Roundcube
     - use underlined subject for root with unread children (icon is still supported)
     - on deleting messages the whole list isn't refreshed
+    - added 'expand unread' button
 
 CHANGES IN RELATION TO TRUNK (for pasting into CHANGELOG after merge)
     - removed 'index_sort' option, now we're using empty 'message_sort_col' for
@@ -19,8 +20,7 @@ CHANGES IN RELATION TO TRUNK (for pasting into CHANGELOG after merge)
     - added sorting by CC
 
 TODO (must have):
-    - threads caching,
-    - "Expand All Unread" button
+    - threads caching
 TODO (other):
     - performance: fetching all messages for list in "expand all" state only,
       if "expand all" is disabled we should fetch only root messages and fetch

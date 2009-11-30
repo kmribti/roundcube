@@ -246,7 +246,7 @@ function rcube_webmail()
 
         if (this.env.messagecount) {
           this.enable_command('select-all', 'select-none', 'expunge', true);
-          this.enable_command('expand-all', 'collapse-all', this.env.threading);
+          this.enable_command('expand-all', 'expand-unread', 'collapse-all', this.env.threading);
         }
 
         if (this.purge_mailbox_test())
@@ -4554,8 +4554,8 @@ function rcube_webmail()
           // disable commands useless when mailbox is empty
           this.enable_command('show', 'reply', 'reply-all', 'forward', 'moveto', 'delete', 
 	    'mark', 'viewsource', 'open', 'edit', 'download', 'print', 'load-attachment', 
-	    'purge', 'expunge', 'select-all', 'select-none', 'sort', 'expand-all',
-	    'collapse-all', false);
+	    'purge', 'expunge', 'select-all', 'select-none', 'sort',
+	    'expand-all', 'expand-unread', 'collapse-all', false);
         }
         break;
 
@@ -4571,7 +4571,7 @@ function rcube_webmail()
           this.enable_command('show', 'expunge', 'select-all', 'select-none', 'sort', (this.env.messagecount > 0));
           this.enable_command('purge', this.purge_mailbox_test());
          
-          this.enable_command('expand-all', 'collapse-all', this.env.threading && this.env.messagecount);
+          this.enable_command('expand-all', 'expand-unread', 'collapse-all', this.env.threading && this.env.messagecount);
 
           if (response.action == 'list')
             this.triggerEvent('listupdate', { folder:this.env.mailbox, rowcount:this.message_list.rowcount });

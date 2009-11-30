@@ -157,6 +157,7 @@ $labels['filter'] = 'Filter';
 
 $labels['threads'] = 'Threads';
 $labels['expand-all'] = 'Expand All';
+$labels['expand-unread'] = 'Expand Unread';
 $labels['collapse-all'] = 'Collapse All';
 
 $labels['autoexpand_threads'] = 'Expand message threads';
