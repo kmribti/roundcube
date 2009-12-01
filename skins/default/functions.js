@@ -211,12 +211,28 @@ show_listmenu: function(show)
       $(cols[i]).attr('checked',found ? 1 : 0);
     }
   }
+
   this.listmenu[show?'show':'hide']();
+
+  if (show) {
+    var maxheight=0;
+    $('#listmenu fieldset').each(function() {
+      var height = $(this).height();
+      if (height > maxheight) {
+        maxheight = height;
+      }
+    });
+    $('#listmenu fieldset').css("min-height", maxheight+"px")
+    // IE6 complains if you set this attribute using either method:
+    //$('#listmenu fieldset').css({'height':'auto !important'});
+    //$('#listmenu fieldset').css("height","auto !important");
+      .height(maxheight);
+  };
 },
 
-listmenu_open: function(e)
+open_listmenu: function(e)
 {
-  this.show_listmenu(true);
+  this.show_listmenu();
 },
 
 save_listmenu: function()
@@ -234,13 +250,14 @@ save_listmenu: function()
 
 body_mouseup: function(evt, p)
 {
-  if (this.markmenu && this.markmenu.is(':visible') && rcube_event.get_target(evt) != rcube_find_object('markreadbutton'))
+  var target = rcube_event.get_target(evt);
+
+  if (this.markmenu && this.markmenu.is(':visible') && target != rcube_find_object('markreadbutton'))
     this.show_markmenu(false);
-  else if (this.messagemenu && this.messagemenu.is(':visible') && rcube_event.get_target(evt) != rcube_find_object('messagemenulink'))
+  else if (this.messagemenu && this.messagemenu.is(':visible') && target != rcube_find_object('messagemenulink'))
     this.show_messagemenu(false);
-  else if (this.listmenu && this.listmenu.is(':visible') && rcube_event.get_target(evt) != rcube_find_object('listmenulink')) {
+  else if (this.listmenu && this.listmenu.is(':visible') && target != rcube_find_object('listmenulink')) {
     var menu = rcube_find_object('listmenu');
-    var target = rcube_event.get_target(evt);
     while (target.parentNode) {
       if (target.parentNode == menu)
         return;
@@ -248,9 +265,8 @@ body_mouseup: function(evt, p)
     }
     this.show_listmenu(false);
   }
-  else if (this.searchmenu && this.searchmenu.is(':visible') && rcube_event.get_target(evt) != rcube_find_object('searchmod')) {
+  else if (this.searchmenu && this.searchmenu.is(':visible') && target != rcube_find_object('searchmod')) {
     var menu = rcube_find_object('searchmenu');
-    var target = rcube_event.get_target(evt);
     while (target.parentNode) {
       if (target.parentNode == menu)
         return;
@@ -283,5 +299,6 @@ function rcube_init_mail_ui()
   rcmail_ui = new rcube_mail_ui();
   rcube_event.add_listener({ object:rcmail_ui, method:'body_mouseup', event:'mouseup' });
   rcube_event.add_listener({ object:rcmail_ui, method:'body_keypress', event:'keypress' });
-  rcmail.addEventListener('menu-open', 'listmenu_open', rcmail_ui);
+  rcmail.addEventListener('menu-open', 'open_listmenu', rcmail_ui);
+  rcmail.addEventListener('menu-save', 'save_listmenu', rcmail_ui);
 }

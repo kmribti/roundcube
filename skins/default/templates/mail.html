@@ -153,7 +153,7 @@
 </div>
 
 <div id="listmenu">
-<div><roundcube:label name="listcolumns" /></div>
+<fieldset><legend><roundcube:label name="listcolumns" /></legend>
   <ul class="toolbarmenu">
     <li><input type="checkbox" name="list_col[]" value="subject" id="cols_subject" checked="checked" disabled="disabled" /><label for="cols_subject" class="disabled"><roundcube:label name="subject" /></label></li>
     <li><input type="checkbox" name="list_col[]" value="from" id="cols_fromto" /><label for="cols_fromto"><roundcube:label name="fromto" /></label></li>
@@ -164,9 +164,20 @@
     <li><input type="checkbox" name="list_col[]" value="flag" id="cols_flag" /><label for="cols_flag"><roundcube:label name="flag" /></label></li>
     <li><input type="checkbox" name="list_col[]" value="attachment" id="cols_attachment" /><label for="cols_attachment"><roundcube:label name="attachment" /></label></li>
   </ul>
-<div><roundcube:label name="listsorting" /></div>
+</fieldset>
+<fieldset><legend><roundcube:label name="listmode" /></legend>
   <ul class="toolbarmenu">
-    <li><input type="radio" name="sort_col" value="" id="sort_default" /><label for="sort_default"><roundcube:label name="nonedefault" /></label></li>
+    <li><input type="radio" name="view" value="list" id="view_default" /><label for="view_default"><roundcube:label name="list" /></label></li>
+    <roundcube:if condition="env:threads" />
+    <li><input type="radio" name="view" value="thread" id="view_thread" /><label for="view_thread"><roundcube:label name="threads" /></label></li>
+    <roundcube:else />
+    <li><input type="radio" name="view" value="thread" id="view_thread" disabled="disabled" /><label for="view_thread" class="disabled"><roundcube:label name="threads" /></label></li>
+    <roundcube:endif />
+  </ul>
+</fieldset>
+<fieldset><legend><roundcube:label name="listsorting" /></legend>
+  <ul class="toolbarmenu">
+    <li><input type="radio" name="sort_col" value="" id="sort_default" /><label for="sort_default"><roundcube:label name="nonesort" /></label></li>
     <li><input type="radio" name="sort_col" value="arrival" id="sort_arrival" /><label for="sort_arrival"><roundcube:label name="arrival" /></label></li>
     <li><input type="radio" name="sort_col" value="date" id="sort_date" /><label for="sort_date"><roundcube:label name="sentdate" /></label></li>
     <li><input type="radio" name="sort_col" value="subject" id="sort_subject" /><label for="sort_subject"><roundcube:label name="subject" /></label></li>
@@ -175,21 +186,16 @@
     <li><input type="radio" name="sort_col" value="cc" id="sort_cc" /><label for="sort_cc"><roundcube:label name="cc" /></label></li>
     <li><input type="radio" name="sort_col" value="size" id="sort_size" /><label for="sort_size"><roundcube:label name="size" /></label></li>
   </ul>
-<div><roundcube:label name="listorder" /></div>
+</fieldset>
+<fieldset><legend><roundcube:label name="listorder" /></legend>
   <ul class="toolbarmenu">
     <li><input type="radio" name="sort_ord" value="ASC" id="sort_asc" /><label for="sort_asc"><roundcube:label name="asc" /></label></li>
     <li><input type="radio" name="sort_ord" value="DESC" id="sort_desc" /><label for="sort_desc"><roundcube:label name="desc" /></label></li>
   </ul>
-<div><roundcube:label name="listgroups" /></div>
-  <ul class="toolbarmenu">
-    <li><input type="radio" name="view" value="list" id="view_default" /><label for="view_default"><roundcube:label name="nonedefault" /></label></li>
-    <roundcube:if condition="env:threads" />
-    <li><input type="radio" name="view" value="thread" id="view_thread" /><label for="view_thread"><roundcube:label name="threaded" /></label></li>
-    <roundcube:else />
-    <li><input type="radio" name="view" value="thread" id="view_thread" disabled="disabled" /><label for="view_thread" class="disabled"><roundcube:label name="threaded" /></label></li>
-    <roundcube:endif />
-  </ul>
-<a href="javascript:rcmail_ui.save_listmenu()"><roundcube:label name="save" /></a>
+</fieldset>
+<div>
+    <roundcube:button command="menu-save" id="listmenusave" type="input" class="button mainaction" label="save" />
+</div>
 </div>
 
 </body>

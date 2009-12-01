@@ -175,7 +175,7 @@ function rcube_webmail()
 
           this.set_message_coltypes(this.env.coltypes);
           this.message_list.init();
-          this.enable_command('toggle_status', 'toggle_flag', 'menu-open', true);
+          this.enable_command('toggle_status', 'toggle_flag', 'menu-open', 'menu-save', true);
           
           if (this.gui_objects.mailcontframe)
             this.gui_objects.mailcontframe.onmousedown = function(e){ return p.click_on_list(e); };
@@ -485,7 +485,8 @@ function rcube_webmail()
         break;
 
       case 'menu-open':
-	this.triggerEvent('menu-open', {props:props});
+      case 'menu-save':
+	this.triggerEvent(command, {props:props});
 	return false;
         break;
 

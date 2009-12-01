@@ -1349,3 +1349,26 @@ font.bold
 {
   font-weight: bold;
 }
+
+#listmenu
+{
+  padding: 0px 4px;
+}
+
+#listmenu legend
+{
+  color: #999999;
+}
+
+#listmenu fieldset
+{
+  border: 1px solid #999999;
+  float: left;
+}
+
+#listmenu div
+{
+  padding: 5px;
+  text-align: center;
+  clear: both;
+}

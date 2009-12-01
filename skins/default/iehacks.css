@@ -278,3 +278,9 @@ table.records-table thead tr td
 {
   height: 19px;
 }
+
+#listmenu fieldset
+{
+  margin: 2px;
+  padding: 0.5em;
+}
