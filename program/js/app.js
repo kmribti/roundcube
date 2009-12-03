@@ -1572,19 +1572,23 @@ function rcube_webmail()
       col.className = String(c).toLowerCase();
 
       var html;
-      if (c=='flag')
-        {
+      if (c=='flag') {
         if (flags.flagged && this.env.flaggedicon)
           html = '<img src="'+this.env.flaggedicon+'" alt="" />';
         else if(!flags.flagged && this.env.unflaggedicon)
           html = '<img src="'+this.env.unflaggedicon+'" alt="" />';
-      }
+        }
       else if (c=='attachment')
         html = attachment && this.env.attachmenticon ? '<img src="'+this.env.attachmenticon+'" alt="" />' : '&nbsp;';
+      else if (c=='subject') {
+        html = cols[c];
+	if (!bw.ie)
+	  html = '<a href="?_task=mail&_action=show&_mbox='+urlencode(flags.mbox)+'&_uid='+uid
+	    +'" onclick="return rcube_event.cancel(event)">'+html+'</a>'
+        html = tree + html;
+        }
       else
         html = cols[c];
-      if (c == 'subject')
-        html = tree + html;
 
       col.innerHTML = html;
 
