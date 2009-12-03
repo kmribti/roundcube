@@ -1458,7 +1458,7 @@ function rcube_webmail()
       row.depth = this.env.messages[uid].depth ? this.env.messages[uid].depth : 0;
       row.unread_children = this.env.messages[uid].unread_children;
       row.parent_uid = this.env.messages[uid].parent_uid;
-//      row.expanded = this.env.autoexpand && row.has_children ? true : false;
+      row.expanded = this.env.messages[uid].expanded;
       }
 
     // set eventhandler to message icon
@@ -1493,7 +1493,7 @@ function rcube_webmail()
   };
 
   // create a table row in the message list
-  this.add_message_row = function(uid, cols, flags, attachment, attop)
+  this.add_message_row = function(uid, cols, flags, attop)
     {
     if (!this.gui_objects.messagelist || !this.message_list)
       return false;
@@ -1503,6 +1503,7 @@ function rcube_webmail()
     else
       var tbody = this.gui_objects.messagelist.tBodies[0];
     
+    var rows = this.message_list.rows;
     var rowcount = tbody.rows.length;
     var even = rowcount%2;
     
@@ -1552,15 +1553,28 @@ function rcube_webmail()
     if (this.env.threading)
       {
       // This assumes that div width is hardcoded to 15px,
+      var parent_uid;
       var width = message.depth * 15;
+      if (message.depth) {
+        if (this.env.autoexpand_threads == 0 ||
+	    (this.env.autoexpand_threads == 2 && rows[message.parent_uid] && rows[message.parent_uid].expanded)) {
+          row.style.display = 'none';
+          }
+	else
+	  message.expanded = this.env.messages[uid].expanded = true;
+	}
+      else if (message.has_children) {
+        if (this.env.autoexpand_threads == 1 || (this.env.autoexpand_threads == 2 && message.unread_children)) {
+	  message.expanded = this.env.messages[uid].expanded = true;  
+          }
+	}
+
       if (width)
         tree += '<div id="rcmtab' + uid + '" class="branch" style="width:' + width + 'px;">&nbsp</div>';
       if (message.has_children && !message.depth)
         tree += '<div id="rcmexpando' + uid + '" class="' + (message.expanded ? 'expanded' : 'collapsed') + '">&nbsp;</div>';
       else
         tree += '<div class="leaf">&nbsp;</div>';
-      if (message.depth)
-        row.style.display = 'none';
       }
 
     tree += icon ? '<img src="'+icon+'" alt="" />' : '';
@@ -1579,7 +1593,7 @@ function rcube_webmail()
           html = '<img src="'+this.env.unflaggedicon+'" alt="" />';
         }
       else if (c=='attachment')
-        html = attachment && this.env.attachmenticon ? '<img src="'+this.env.attachmenticon+'" alt="" />' : '&nbsp;';
+        html = flags.attachment && this.env.attachmenticon ? '<img src="'+this.env.attachmenticon+'" alt="" />' : '&nbsp;';
       else if (c=='subject') {
         html = cols[c];
 	if (!bw.ie)

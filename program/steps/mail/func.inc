@@ -420,7 +420,6 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE, $replace=TRUE, $h
       $a_msg_cols[$col] = $cont;
       }
 
-    $a_msg_flags['mbox'] = $mbox;
     if ($header->depth)
       $a_msg_flags['depth'] = $header->depth;
     if ($header->parent_uid)
@@ -439,6 +438,9 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE, $replace=TRUE, $h
       $a_msg_flags['forwarded'] = 1;
     if ($header->flagged)
       $a_msg_flags['flagged'] = 1;
+    if(preg_match("/multipart\/m/i", $header->ctype))
+      $a_msg_flags['attachment'] = 1;
+    $a_msg_flags['mbox'] = $mbox;
       
     if ($browser->ie)
       $a_msg_cols = rc_utf8_clean($a_msg_cols);
@@ -447,7 +449,6 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE, $replace=TRUE, $h
       $header->uid,
       $a_msg_cols,
       $a_msg_flags,
-      preg_match("/multipart\/m/i", $header->ctype),
       $insert_top);
     }
 
