@@ -68,8 +68,8 @@ class rcube_imap
   private $cache_changes = array();
   private $uid_id_map = array();
   private $msg_headers = array();
-  private $search_set = NULL;
-  private $search_string = '';
+  public  $search_set = NULL;
+  public  $search_string = '';
   private $search_charset = '';
   private $search_sort_field = '';
   private $search_threads = false;
