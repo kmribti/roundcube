@@ -41,39 +41,40 @@ require_once('lib/tnef_decoder.inc');
  */
 class rcube_imap
 {
-  var $db;
-  var $conn;
-  var $root_ns = '';
-  var $root_dir = '';
-  var $mailbox = 'INBOX';
-  var $list_page = 1;
-  var $page_size = 10;
-  var $sort_field = '';
-  var $sort_order = 'DESC';
-  var $delimiter = NULL;
-  var $threading = false;
-  var $caching_enabled = false;
-  var $default_charset = 'ISO-8859-1';
-  var $struct_charset = NULL;
-  var $default_folders = array('INBOX');
-  var $default_folders_lc = array('inbox');
-  var $fetch_add_headers = '';
-  var $cache = array();
-  var $cache_keys = array();  
-  var $cache_changes = array();
-  var $uid_id_map = array();
-  var $msg_headers = array();
-  var $skip_deleted = false;
-  var $search_set = NULL;
-  var $search_string = '';
-  var $search_charset = '';
-  var $search_sort_field = '';
-  var $search_threads = false;
-  var $debug_level = 1;
-  var $error_code = 0;
-  var $db_header_fields = array('idx', 'uid', 'subject', 'from', 'to', 'cc', 'date', 'size');
-  var $options = array('auth_method' => 'check');
-  
+  public $debug_level = 1;
+  public $error_code = 0;
+  public $skip_deleted = false;
+  public $root_dir = '';
+  public $page_size = 10;
+  public $list_page = 1;
+  public $delimiter = NULL;
+  public $threading = false;
+  public $fetch_add_headers = '';
+  public $conn;
+
+  private $db;
+  private $root_ns = '';
+  private $mailbox = 'INBOX';
+  private $sort_field = '';
+  private $sort_order = 'DESC';
+  private $caching_enabled = false;
+  private $default_charset = 'ISO-8859-1';
+  private $struct_charset = NULL;
+  private $default_folders = array('INBOX');
+  private $default_folders_lc = array('inbox');
+  private $icache = array();
+  private $cache = array();
+  private $cache_keys = array();  
+  private $cache_changes = array();
+  private $uid_id_map = array();
+  private $msg_headers = array();
+  private $search_set = NULL;
+  private $search_string = '';
+  private $search_charset = '';
+  private $search_sort_field = '';
+  private $search_threads = false;
+  private $db_header_fields = array('idx', 'uid', 'subject', 'from', 'to', 'cc', 'date', 'size');
+  private $options = array('auth_method' => 'check');
   private $host, $user, $pass, $port, $ssl;
 
 
@@ -585,8 +586,8 @@ class rcube_imap
    */
   private function _threadcount($mailbox)
     {
-    if (!empty($this->cache['__threads']))
-      return count($this->cache['__threads']['tree']);
+    if (!empty($this->icache['threads']))
+      return count($this->icache['threads']['tree']);
     
     list ($thread_tree, $msg_depth, $has_children) = $this->_fetch_threads($mailbox);
 
@@ -769,22 +770,22 @@ class rcube_imap
    */
   private function _fetch_threads($mailbox)
     {
-    if (empty($this->cache['__threads'])) {
+    if (empty($this->icache['threads'])) {
       // get all threads
       list ($thread_tree, $msg_depth, $has_children) = iil_C_Thread($this->conn,
 	$mailbox, $this->threading, $this->skip_deleted ? 'UNDELETED' : '');
     
       // add to internal (fast) cache
-      $this->cache['__threads'] = array();
-      $this->cache['__threads']['tree'] = $thread_tree;
-      $this->cache['__threads']['depth'] = $msg_depth;
-      $this->cache['__threads']['has_children'] = $has_children;
+      $this->icache['threads'] = array();
+      $this->icache['threads']['tree'] = $thread_tree;
+      $this->icache['threads']['depth'] = $msg_depth;
+      $this->icache['threads']['has_children'] = $has_children;
       }
 
     return array(
-      $this->cache['__threads']['tree'],
-      $this->cache['__threads']['depth'],
-      $this->cache['__threads']['has_children'],
+      $this->icache['threads']['tree'],
+      $this->icache['threads']['depth'],
+      $this->icache['threads']['has_children'],
       );
     }
 
@@ -2096,7 +2097,7 @@ class rcube_imap
 
     if ($moved) {
       // unset threads internal cache
-      unset($this->cache['__threads']);
+      unset($this->icache['threads']);
 
       // remove message ids from search set
       if ($this->search_set && $from_mbox == $this->mailbox) {
@@ -2150,7 +2151,7 @@ class rcube_imap
       unset($this->uid_id_map[$mailbox]);
 
       // unset threads internal cache
-      unset($this->cache['__threads']);
+      unset($this->icache['threads']);
       
       // remove message ids from search set
       if ($this->search_set && $mailbox == $this->mailbox) {
@@ -2769,9 +2770,9 @@ class rcube_imap
    */
   private function &get_cached_message($key, $uid)
     {
-    $internal_key = '__single_msg';
+    $internal_key = 'message';
     
-    if ($this->caching_enabled && !isset($this->cache[$internal_key][$uid]))
+    if ($this->caching_enabled && !isset($this->icache[$internal_key][$uid]))
       {
       $sql_result = $this->db->query(
         "SELECT idx, headers, structure
@@ -2786,13 +2787,13 @@ class rcube_imap
       if ($sql_arr = $this->db->fetch_assoc($sql_result))
         {
 	$this->uid_id_map[preg_replace('/\.msg$/', '', $key)][$uid] = $sql_arr['idx'];
-        $this->cache[$internal_key][$uid] = $this->db->decode(unserialize($sql_arr['headers']));
-        if (is_object($this->cache[$internal_key][$uid]) && !empty($sql_arr['structure']))
-          $this->cache[$internal_key][$uid]->structure = $this->db->decode(unserialize($sql_arr['structure']));
+        $this->icache[$internal_key][$uid] = $this->db->decode(unserialize($sql_arr['headers']));
+        if (is_object($this->icache[$internal_key][$uid]) && !empty($sql_arr['structure']))
+          $this->icache[$internal_key][$uid]->structure = $this->db->decode(unserialize($sql_arr['structure']));
         }
       }
 
-    return $this->cache[$internal_key][$uid];
+    return $this->icache[$internal_key][$uid];
     }
 
   /**
@@ -2838,8 +2839,8 @@ class rcube_imap
         return;
 
     // add to internal (fast) cache
-    $this->cache['__single_msg'][$headers->uid] = clone $headers;
-    $this->cache['__single_msg'][$headers->uid]->structure = $struct;
+    $this->icache['message'][$headers->uid] = clone $headers;
+    $this->icache['message'][$headers->uid]->structure = $struct;
 
     // no further caching
     if (!$this->caching_enabled)
