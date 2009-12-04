@@ -2088,24 +2088,34 @@ class rcube_imap
       $this->_expunge($from_mbox, FALSE, $a_uids);
       $this->_clear_messagecount($from_mbox);
       $this->_clear_messagecount($to_mbox);
-    }
+      }
     // moving failed
     else if (rcmail::get_instance()->config->get('delete_always', false)) {
-      return iil_C_Delete($this->conn, $from_mbox, join(',', $a_uids));
-    }
+      $moved = iil_C_Delete($this->conn, $from_mbox, join(',', $a_uids));
+      }
 
-    // remove message ids from search set
-    if ($moved && $this->search_set && $from_mbox == $this->mailbox) {
-      foreach ($a_uids as $uid)
-        $a_mids[] = $this->_uid2id($uid, $from_mbox);
-      $this->search_set = array_diff($this->search_set, $a_mids);
-    }
+    if ($moved) {
+      // unset threads internal cache
+      unset($this->cache['__threads']);
 
-    // update cached message headers
-    $cache_key = $from_mbox.'.msg';
-    if ($moved && $start_index = $this->get_message_cache_index_min($cache_key, $a_uids)) {
-      // clear cache from the lowest index on
-      $this->clear_message_cache($cache_key, $start_index);
+      // remove message ids from search set
+      if ($this->search_set && $from_mbox == $this->mailbox) {
+        // threads are too complicated to just remove messages from set
+	if ($this->search_threads)
+	  $this->refresh_search();
+	else {
+          foreach ($a_uids as $uid)
+            $a_mids[] = $this->_uid2id($uid, $from_mbox);
+          $this->search_set = array_diff($this->search_set, $a_mids);
+          }
+        }
+
+      // update cached message headers
+      $cache_key = $from_mbox.'.msg';
+      if ($start_index = $this->get_message_cache_index_min($cache_key, $a_uids)) {
+        // clear cache from the lowest index on
+        $this->clear_message_cache($cache_key, $start_index);
+        }
       }
 
     return $moved;
@@ -2132,27 +2142,34 @@ class rcube_imap
 
     $deleted = iil_C_Delete($this->conn, $mailbox, join(',', $a_uids));
 
-    // send expunge command in order to have the deleted message
-    // really deleted from the mailbox
-    if ($deleted)
-      {
+    if ($deleted) {
+      // send expunge command in order to have the deleted message
+      // really deleted from the mailbox
       $this->_expunge($mailbox, FALSE, $a_uids);
       $this->_clear_messagecount($mailbox);
       unset($this->uid_id_map[$mailbox]);
-      }
 
-    // remove message ids from search set
-    if ($deleted && $this->search_set && $mailbox == $this->mailbox) {
-      foreach ($a_uids as $uid)
-        $a_mids[] = $this->_uid2id($uid, $mailbox);
-      $this->search_set = array_diff($this->search_set, $a_mids);
-    }
+      // unset threads internal cache
+      unset($this->cache['__threads']);
+      
+      // remove message ids from search set
+      if ($this->search_set && $mailbox == $this->mailbox) {
+        // threads are too complicated to just remove messages from set
+	if ($this->search_threads)
+	  $this->refresh_search();
+	else {
+          foreach ($a_uids as $uid)
+            $a_mids[] = $this->_uid2id($uid, $mailbox);
+          $this->search_set = array_diff($this->search_set, $a_mids);
+          }
+	}
 
-    // remove deleted messages from cache
-    $cache_key = $mailbox.'.msg';
-    if ($deleted && $start_index = $this->get_message_cache_index_min($cache_key, $a_uids)) {
-      // clear cache from the lowest index on
-      $this->clear_message_cache($cache_key, $start_index);
+      // remove deleted messages from cache
+      $cache_key = $mailbox.'.msg';
+      if ($start_index = $this->get_message_cache_index_min($cache_key, $a_uids)) {
+        // clear cache from the lowest index on
+        $this->clear_message_cache($cache_key, $start_index);
+        }
       }
 
     return $deleted;
