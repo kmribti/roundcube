@@ -888,6 +888,7 @@ class rcube_imap
     // use saved messages from searching
     if ($this->threading)
       return $this->_list_thread_header_set($mailbox, $page, $sort_field, $sort_order, $slice);
+
     // search set is threaded, we need a new one
     if ($this->search_threads)
       $this->search('', $this->search_string, $this->search_charset, $sort_field);
@@ -1153,7 +1154,8 @@ class rcube_imap
         }
       else
         {
-        $a_index = iil_C_FetchHeaderIndex($this->conn, $mailbox, join(',', $this->search_set), $this->sort_field, $this->skip_deleted);
+        $a_index = iil_C_FetchHeaderIndex($this->conn, $mailbox,
+	  join(',', $this->search_set), $this->sort_field, $this->skip_deleted);
 
         if ($this->sort_order=="ASC")
           asort($a_index);

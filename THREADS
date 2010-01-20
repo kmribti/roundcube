@@ -21,6 +21,9 @@ CHANGES IN RELATION TO TRUNK (for pasting into CHANGELOG after merge)
 
 TODO (must have):
     - threads caching
+    - updating threaded message list on message delete
+    - don't reload messages list on check_recent
+
 TODO (other):
     - performance: fetching all messages for list in "expand all" state only,
       if "expand all" is disabled we should fetch only root messages and fetch
@@ -34,6 +37,7 @@ TODO (other):
     - thread css: message row height, thread/status icon alignment
       (change size of all list icons to 14x14)
     - remove 'indexsort' label from localization files
+
 TODO (by the way):
     - use jQuery.inArray instead of find_in_array() (common.js)
     - use only one function (js) to generate messages list
