@@ -50,6 +50,7 @@ if ($RCMAIL->action=='moveto' && !empty($_POST['_uid']) && !empty($_POST['_targe
 else if ($RCMAIL->action=='delete' && !empty($_POST['_uid'])) {
     $count = sizeof(explode(',', ($uids = get_input_value('_uid', RCUBE_INPUT_POST))));
     $mbox = get_input_value('_mbox', RCUBE_INPUT_POST);
+
     $del = $IMAP->delete_message($uids, $mbox);
   
     if (!$del) {

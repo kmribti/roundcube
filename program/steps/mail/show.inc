@@ -118,7 +118,7 @@ if ($_GET['_uid']) {
     $next = $prev = $first = $last = -1;
 
     if ($_SESSION['sort_col'] == 'date' && $_SESSION['sort_order'] != 'DESC'
-        && empty($_REQUEST['_search']) && !$CONFIG['skip_deleted'])
+        && empty($_REQUEST['_search']) && !$CONFIG['skip_deleted'] && !$IMAP->threading)
       {
       // this assumes that we are sorted by date_DESC
       $cnt = $IMAP->messagecount();

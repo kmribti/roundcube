@@ -1118,13 +1118,17 @@ class rcube_imap
    */
   function message_index($mbox_name='', $sort_field=NULL, $sort_order=NULL)
     {
+    if ($this->threading)
+      return $this->thread_index($mbox_name, $sort_field, $sort_order);
+
     $this->_set_sort_order($sort_field, $sort_order);
 
     $mailbox = $mbox_name ? $this->mod_mailbox($mbox_name) : $this->mailbox;
     $key = "{$mailbox}:{$this->sort_field}:{$this->sort_order}:{$this->search_string}.msgi";
 
     // we have a saved search result, get index from there
-    if (!isset($this->cache[$key]) && $this->search_string && $mailbox == $this->mailbox)
+    if (!isset($this->cache[$key]) && $this->search_string
+      && !$this->search_threads && $mailbox == $this->mailbox)
     {
       $this->cache[$key] = array();
       
@@ -1220,9 +1224,90 @@ class rcube_imap
 
 
   /**
+   * Return sorted array of threaded message IDs (not UIDs)
+   *
+   * @param string Mailbox to get index from
+   * @param string Sort column
+   * @param string Sort order [ASC, DESC]
+   * @return array Indexed array with message IDs
+   */
+  function thread_index($mbox_name='', $sort_field=NULL, $sort_order=NULL)
+    {
+    $this->_set_sort_order($sort_field, $sort_order);
+
+    $mailbox = $mbox_name ? $this->mod_mailbox($mbox_name) : $this->mailbox;
+    $key = "{$mailbox}:{$this->sort_field}:{$this->sort_order}:{$this->search_string}.thi";
+
+    // we have a saved search result, get index from there
+    if (!isset($this->cache[$key]) && $this->search_string
+      && $this->search_threads && $mailbox == $this->mailbox)
+    {
+      // use message IDs for better performance
+      $ids = array_keys_recursive($this->search_set['tree']);
+      $this->cache[$key] = $this->_flatten_threads($mailbox, $this->search_set['tree'], $ids);
+    }
+
+    // have stored it in RAM
+    if (isset($this->cache[$key]))
+      return $this->cache[$key];
+/*
+    // check local cache
+    $cache_key = $mailbox.'.msg';
+    $cache_status = $this->check_cache_status($mailbox, $cache_key);
+
+    // cache is OK
+    if ($cache_status>0)
+      {
+      $a_index = $this->get_message_cache_index($cache_key, TRUE, $this->sort_field, $this->sort_order);
+      return array_keys($a_index);
+      }
+*/
+    // get all threads (default sort order)
+    list ($thread_tree) = $this->fetch_threads($mailbox);
+
+    $this->cache[$key] = $this->_flatten_threads($mailbox, $thread_tree);
+    
+    return $this->cache[$key];
+    }
+
+
+  /**
+   * Return array of threaded messages (all, not only roots)
+   *
+   * @param string Mailbox to get index from
+   * @param array  Threaded messages array (see fetch_threads())
+   * @param array  Message IDs if we know what we need (e.g. search result)
+   *               for better performance
+   * @return array Indexed array with message IDs
+   *
    * @access private
    */
-  function sync_header_index($mailbox)
+  private function _flatten_threads($mailbox, $thread_tree, $ids=null)
+    {
+    if (empty($thread_tree))
+      return array();
+
+    $msg_index = $this->_sort_threads($mailbox, $thread_tree, $ids);
+
+    if ($this->sort_order == 'DESC')
+      $msg_index = array_reverse($msg_index);
+	  
+    // flatten threads array
+    $all_ids = array();
+    foreach($msg_index as $root) {
+      $all_ids[] = $root;
+      if (!empty($thread_tree[$root]))
+        $all_ids = array_merge($all_ids, array_keys_recursive($thread_tree[$root]));
+      }
+
+    return $all_ids;
+    }
+
+
+  /**
+   * @access private
+   */
+  private function sync_header_index($mailbox)
     {
     $cache_key = $mailbox.'.msg';
     $cache_index = $this->get_message_cache_index($cache_key);
@@ -1379,6 +1464,7 @@ class rcube_imap
   /**
    * Sort thread
    *
+   * @param string Mailbox name
    * @param  array Unsorted thread tree (iil_C_Thread() result)
    * @param  array Message IDs if we know what we need (e.g. search result)
    * @return array Sorted roots IDs
@@ -1410,23 +1496,6 @@ class rcube_imap
 
 	return $this->_sort_thread_refs($thread_tree, $a_index);
       }
-/*
-    // other sorting, we'll sort roots only
-    else {
-      // use SORT command for root messages sorting
-      if ($this->get_capability('sort')) {
-        $msg_index = iil_C_Sort($this->conn, $mailbox, $this->sort_field, array_keys($thread_tree));
-        }
-      else {
-        // fetch specified headers for all root messages and sort
-        $a_index = iil_C_FetchHeaderIndex($this->conn, $mailbox,
-	    array_keys($thread_tree), $this->sort_field, $this->skip_deleted);
-        asort($a_index); // ASC
-        $msg_index = array_keys($a_index);
-        }
-      }
-*/
-    return array();
     }
 
 
