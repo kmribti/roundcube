@@ -1263,7 +1263,7 @@ class rcube_imap
       }
 */
     // get all threads (default sort order)
-    list ($thread_tree) = $this->fetch_threads($mailbox);
+    list ($thread_tree) = $this->_fetch_threads($mailbox);
 
     $this->cache[$key] = $this->_flatten_threads($mailbox, $thread_tree);
     
@@ -1275,7 +1275,7 @@ class rcube_imap
    * Return array of threaded messages (all, not only roots)
    *
    * @param string Mailbox to get index from
-   * @param array  Threaded messages array (see fetch_threads())
+   * @param array  Threaded messages array (see _fetch_threads())
    * @param array  Message IDs if we know what we need (e.g. search result)
    *               for better performance
    * @return array Indexed array with message IDs
