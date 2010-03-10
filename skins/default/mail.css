@@ -172,9 +172,9 @@
   width: auto;
   display: none;
   background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.95);
   border: 1px solid #999;
   padding: 4px;
-  opacity: 0.95;
   z-index: 240;
   border-radius: 3px;
   -moz-border-radius: 3px;
