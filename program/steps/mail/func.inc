@@ -160,7 +160,7 @@ function rcmail_message_list($attrib)
       && ($f = array_search('from', $a_show_cols)) && !array_search('to', $a_show_cols))
     $a_show_cols[$f] = 'to';
 
-  $skin_path = $CONFIG['skin_path'];
+  $skin_path = $_SESSION['skin_path'] = $CONFIG['skin_path'];
   $message_count = $IMAP->messagecount(NULL, $IMAP->threading ? 'THREADS' : 'ALL');
   
   // set client env
@@ -342,7 +342,7 @@ function rcmail_message_list_head($attrib, $a_show_cols)
     );
   else
     $list_menu = '';
-  
+
   $out = html::tag('td', array('class' => 'threads'), $list_menu);
 
   foreach ($a_show_cols as $col) {
