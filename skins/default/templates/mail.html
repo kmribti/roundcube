@@ -153,7 +153,7 @@
 </div>
 
 <div id="listmenu" class="popupmenu">
-<fieldset><legend><roundcube:label name="listmode" /></legend>
+<fieldset class="thinbordered"><legend><roundcube:label name="listmode" /></legend>
   <ul class="toolbarmenu">
     <li><input type="radio" name="view" value="list" id="view_default" /><label for="view_default"><roundcube:label name="list" /></label></li>
     <roundcube:if condition="env:threads" />
@@ -163,7 +163,7 @@
     <roundcube:endif />
   </ul>
 </fieldset>
-<fieldset><legend><roundcube:label name="listcolumns" /></legend>
+<fieldset class="thinbordered"><legend><roundcube:label name="listcolumns" /></legend>
   <ul class="toolbarmenu">
     <li><input type="checkbox" name="list_col[]" value="flag" id="cols_flag" /><label for="cols_flag"><roundcube:label name="flag" /></label></li>
     <li><input type="checkbox" name="list_col[]" value="subject" id="cols_subject" checked="checked" disabled="disabled" /><label for="cols_subject" class="disabled"><roundcube:label name="subject" /></label></li>
@@ -176,7 +176,7 @@
   </ul>
 </fieldset>
 <!--
-<fieldset><legend><roundcube:label name="listsorting" /></legend>
+<fieldset class="thinbordered"><legend><roundcube:label name="listsorting" /></legend>
   <ul class="toolbarmenu">
     <li><input type="radio" name="sort_col" value="" id="sort_default" /><label for="sort_default"><roundcube:label name="nonesort" /></label></li>
     <li><input type="radio" name="sort_col" value="arrival" id="sort_arrival" /><label for="sort_arrival"><roundcube:label name="arrival" /></label></li>

@@ -1566,10 +1566,10 @@ function rcube_webmail()
 	}
 
       if (width)
-        tree += '<div id="rcmtab' + uid + '" class="branch" style="width:' + width + 'px;">&nbsp</div>';
+        tree += '<span id="rcmtab' + uid + '" class="branch" style="width:' + width + 'px;">&nbsp;&nbsp;</span>';
 
       if (message.has_children && !message.depth)
-        expando = '<div id="rcmexpando' + uid + '" class="' + (message.expanded ? 'expanded' : 'collapsed') + '">&nbsp;</div>';
+        expando = '<div id="rcmexpando' + uid + '" class="' + (message.expanded ? 'expanded' : 'collapsed') + '">&nbsp;&nbsp;</div>';
       }
 
     tree += icon ? '<img id="msgicn'+uid+'" src="'+icon+'" alt="" class="msgicon" />' : '';
@@ -1589,9 +1589,9 @@ function rcube_webmail()
       var html;
       if (c=='flag') {
         if (flags.flagged && this.env.flaggedicon)
-          html = '<img id="flaggedicn'+uid+'" src="'+this.env.flaggedicon+'" alt="" />';
+          html = '<img id="flaggedicn'+uid+'" src="'+this.env.flaggedicon+'" class="flagicon" alt="" />';
         else if(!flags.flagged && this.env.unflaggedicon)
-          html = '<img id="flaggedicn'+uid+'" src="'+this.env.unflaggedicon+'" alt="" />';
+          html = '<img id="flaggedicn'+uid+'" src="'+this.env.unflaggedicon+'" class="flagicon" alt="" />';
         }
       else if (c=='attachment')
         html = flags.attachment && this.env.attachmenticon ? '<img src="'+this.env.attachmenticon+'" alt="" />' : '&nbsp;';
@@ -4185,7 +4185,7 @@ function rcube_webmail()
 
   // for reordering column array (Konqueror workaround)
   // and for setting some message list global variables
-  this.set_message_coltypes = function(coltypes, replace) 
+  this.set_message_coltypes = function(coltypes, repl)
   { 
     this.env.coltypes = coltypes;
     
@@ -4194,8 +4194,11 @@ function rcube_webmail()
     var thead = this.gui_objects.messagelist ? this.gui_objects.messagelist.tHead : null;
 
     // replace old column headers
-    if (thead && replace)
-      this.gui_objects.messagelist.tHead.innerHTML = replace;
+    if (thead && repl) {
+      // throws an 'unknown runtime error' on IE (WTF?)
+      try { this.gui_objects.messagelist.tHead.innerHTML = repl; }
+      catch(e) { }
+    }
 
     for (n=0; thead && n<this.env.coltypes.length; n++)
       {
@@ -4226,7 +4229,7 @@ function rcube_webmail()
     if((found = find_in_array('subject', this.env.coltypes)) >= 0) {
       this.set_env('subject_col', found);
       if (this.message_list)
-        this.message_list.subject_col = found;
+        this.message_list.subject_col = found+1;
       }
     if((found = find_in_array('flag', this.env.coltypes)) >= 0)
       this.set_env('flagged_col', found);

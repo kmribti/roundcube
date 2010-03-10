@@ -44,5 +44,7 @@ TODO (by the way):
 
 KNOWN ISSUES:
     - on new message (check_recent) the whole list is reloaded
-    - css issues on IE6-7
+    - table header replacement doesn't work on IE
+    - css issues on IE6
+    + css issues on IE7
 

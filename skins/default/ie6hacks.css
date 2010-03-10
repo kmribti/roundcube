@@ -49,13 +49,12 @@ img
   background-image: url('images/abook_toolbar.gif');
 }
 
-ul.toolbarmenu li
-{
-  width: auto;
-  border: 1px solid #f6f6f6;
-}
-
 ul.toolbarmenu li a
 {
   clear: left;
+}
+
+ul.toolbarmenu li.separator_below
+{
+  padding-bottom: 8px;
 }

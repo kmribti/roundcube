@@ -796,20 +796,19 @@ body.messagelist
   cursor: pointer;
 }
 
-#messagelist tr td div
+#messagelist tr td span.branch
 {
-  display: table-cell; /* For FireFox and Opera */
-  display: inline-block; /* For Opera and IE */
+  display: inline-block;
   width: 15px;
   height: 15px;
 }
 
-#messagelist tr td.subject img
+#messagelist tr td.subject img.msgicon
 {
   vertical-align: middle;
 }
 
-#messagelist tbody img.msgicon
+#messagelist tbody td img.msgicon
 {
   position: relative;
   top: 0px;
@@ -818,18 +817,21 @@ body.messagelist
 
 #messagelist tr td div.collapsed,
 #messagelist tr td div.expanded,
-#messagelist tr td.subject img
+#messagelist tr td img.flagicon,
+#messagelist tr td img.msgicon
 {
   cursor: pointer;
 }
 
 #messagelist tr td div.collapsed
 {
+  display: block;
   background: url('images/messageactions.png') center -91px no-repeat;
 }
 
 #messagelist tr td div.expanded
 {
+  display: block;
   background: url('images/messageactions.png') center -109px no-repeat;
 }
 
@@ -865,7 +867,9 @@ body.messagelist
 }
 
 #messagelist tr td.from,
-#messagelist tr td.to
+#messagelist tr td.to,
+#messagelist tr td.cc,
+#messagelist tr td.replyto
 {
   width: 180px;
   vertical-align: middle;

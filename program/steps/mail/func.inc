@@ -160,9 +160,6 @@ function rcmail_message_list($attrib)
       && ($f = array_search('from', $a_show_cols)) && !array_search('to', $a_show_cols))
     $a_show_cols[$f] = 'to';
 
-  $out .= html::tag('thead', null, rcmail_message_list_head($attrib, $a_show_cols));
-  $out .= html::tag('tbody', null);
-
   $skin_path = $CONFIG['skin_path'];
   $message_count = $IMAP->messagecount(NULL, $IMAP->threading ? 'THREADS' : 'ALL');
   
@@ -205,7 +202,11 @@ function rcmail_message_list($attrib)
   
   $OUTPUT->include_script('list.js');
   
-  return html::tag('table', $attrib, $out, array('style', 'class', 'id', 'cellpadding', 'cellspacing', 'border', 'summary'));
+  return html::tag('table',
+    $attrib,
+    html::tag('thead', null, rcmail_message_list_head($attrib, $a_show_cols)) .
+      html::tag('tbody', null, ''),
+    array('style', 'class', 'id', 'cellpadding', 'cellspacing', 'border', 'summary'));
 }
 
 
