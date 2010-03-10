@@ -117,7 +117,7 @@
 <roundcube:button name="markreadbutton" id="markreadbutton" type="link" class="button markmessage" title="markmessages" onclick="rcmail_ui.show_markmenu();return false" content=" " />
 <roundcube:button name="messagemenulink" id="messagemenulink" type="link" class="button messagemenu" title="messageactions" onclick="rcmail_ui.show_messagemenu();return false" content=" " />
 
-<div id="markmessagemenu">
+<div id="markmessagemenu" class="popupmenu">
   <ul class="toolbarmenu">
     <li><roundcube:button command="mark" prop="read" label="markread" classAct="readlink active" class="readlink" /></li>
     <li><roundcube:button command="mark" prop="unread" label="markunread" classAct="unreadlink active" class="unreadlink" /></li>
@@ -131,7 +131,7 @@
 
 </div>
 
-<div id="searchmenu">
+<div id="searchmenu" class="popupmenu">
   <ul class="toolbarmenu">
     <li><input type="checkbox" name="s_mods[]" value="subject" id="s_mod_subject" onclick="rcmail_ui.set_searchmod(this)" /><label for="s_mod_subject"><roundcube:label name="subject" /></label></li>
     <li><input type="checkbox" name="s_mods[]" value="from" id="s_mod_from" onclick="rcmail_ui.set_searchmod(this)" /><label for="s_mod_from"><roundcube:label name="from" /></label></li>
@@ -152,29 +152,30 @@
 <roundcube:button command="reset-search" id="searchreset" image="/images/icons/reset.gif" title="resetsearch" />
 </div>
 
-<div id="listmenu">
+<div id="listmenu" class="popupmenu">
+<fieldset><legend><roundcube:label name="listmode" /></legend>
+  <ul class="toolbarmenu">
+    <li><input type="radio" name="view" value="list" id="view_default" /><label for="view_default"><roundcube:label name="list" /></label></li>
+    <roundcube:if condition="env:threads" />
+      <li><input type="radio" name="view" value="thread" id="view_thread" /><label for="view_thread"><roundcube:label name="threads" /></label></li>
+    <roundcube:else />
+      <li><input type="radio" name="view" value="thread" id="view_thread" disabled="disabled" /><label for="view_thread" class="disabled"><roundcube:label name="threads" /></label></li>
+    <roundcube:endif />
+  </ul>
+</fieldset>
 <fieldset><legend><roundcube:label name="listcolumns" /></legend>
   <ul class="toolbarmenu">
+    <li><input type="checkbox" name="list_col[]" value="flag" id="cols_flag" /><label for="cols_flag"><roundcube:label name="flag" /></label></li>
     <li><input type="checkbox" name="list_col[]" value="subject" id="cols_subject" checked="checked" disabled="disabled" /><label for="cols_subject" class="disabled"><roundcube:label name="subject" /></label></li>
     <li><input type="checkbox" name="list_col[]" value="from" id="cols_fromto" /><label for="cols_fromto"><roundcube:label name="fromto" /></label></li>
     <li><input type="checkbox" name="list_col[]" value="replyto" id="cols_replyto" /><label for="cols_replyto"><roundcube:label name="replyto" /></label></li>
     <li><input type="checkbox" name="list_col[]" value="cc" id="cols_cc" /><label for="cols_cc"><roundcube:label name="cc" /></label></li>
     <li><input type="checkbox" name="list_col[]" value="date" id="cols_date" /><label for="cols_date"><roundcube:label name="date" /></label></li>
     <li><input type="checkbox" name="list_col[]" value="size" id="cols_size" /><label for="cols_size"><roundcube:label name="size" /></label></li>
-    <li><input type="checkbox" name="list_col[]" value="flag" id="cols_flag" /><label for="cols_flag"><roundcube:label name="flag" /></label></li>
     <li><input type="checkbox" name="list_col[]" value="attachment" id="cols_attachment" /><label for="cols_attachment"><roundcube:label name="attachment" /></label></li>
   </ul>
 </fieldset>
-<fieldset><legend><roundcube:label name="listmode" /></legend>
-  <ul class="toolbarmenu">
-    <li><input type="radio" name="view" value="list" id="view_default" /><label for="view_default"><roundcube:label name="list" /></label></li>
-    <roundcube:if condition="env:threads" />
-    <li><input type="radio" name="view" value="thread" id="view_thread" /><label for="view_thread"><roundcube:label name="threads" /></label></li>
-    <roundcube:else />
-    <li><input type="radio" name="view" value="thread" id="view_thread" disabled="disabled" /><label for="view_thread" class="disabled"><roundcube:label name="threads" /></label></li>
-    <roundcube:endif />
-  </ul>
-</fieldset>
+<!--
 <fieldset><legend><roundcube:label name="listsorting" /></legend>
   <ul class="toolbarmenu">
     <li><input type="radio" name="sort_col" value="" id="sort_default" /><label for="sort_default"><roundcube:label name="nonesort" /></label></li>
@@ -187,14 +188,10 @@
     <li><input type="radio" name="sort_col" value="size" id="sort_size" /><label for="sort_size"><roundcube:label name="size" /></label></li>
   </ul>
 </fieldset>
-<fieldset><legend><roundcube:label name="listorder" /></legend>
-  <ul class="toolbarmenu">
-    <li><input type="radio" name="sort_ord" value="ASC" id="sort_asc" /><label for="sort_asc"><roundcube:label name="asc" /></label></li>
-    <li><input type="radio" name="sort_ord" value="DESC" id="sort_desc" /><label for="sort_desc"><roundcube:label name="desc" /></label></li>
-  </ul>
-</fieldset>
+-->
 <div>
-    <roundcube:button command="menu-save" id="listmenusave" type="input" class="button mainaction" label="save" />
+  <roundcube:button command="menu-open" id="listmenucancel" type="input" class="button" label="cancel" />
+  <roundcube:button command="menu-save" id="listmenusave" type="input" class="button mainaction" label="save" />
 </div>
 </div>
 

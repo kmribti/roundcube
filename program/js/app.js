@@ -160,6 +160,9 @@ function rcube_webmail()
     switch (this.task)
       {
       case 'mail':
+        // enable mail commands
+        this.enable_command('list', 'checkmail', 'compose', 'add-contact', 'search', 'reset-search', 'collapse-folder', true);
+      
         if (this.gui_objects.messagelist)
           {
           this.message_list = new rcube_list_widget(this.gui_objects.messagelist,
@@ -181,12 +184,11 @@ function rcube_webmail()
             this.gui_objects.mailcontframe.onmousedown = function(e){ return p.click_on_list(e); };
           else
             this.message_list.focus();
-
-	  this.expand_threads();
+          
+          // load messages
+          if (this.env.messagecount)
+            this.command('list');
           }
-
-        // enable mail commands
-        this.enable_command('list', 'checkmail', 'compose', 'add-contact', 'search', 'reset-search', 'collapse-folder', true);
 
         if (this.env.search_text != null && document.getElementById('quicksearchbox') != null)
           document.getElementById('quicksearchbox').value = this.env.search_text;
@@ -1446,6 +1448,7 @@ function rcube_webmail()
 
   this.init_message_row = function(row)
   {
+    var self = this;
     var uid = row.uid;
     if (uid && this.env.messages[uid])
       {
@@ -1462,31 +1465,23 @@ function rcube_webmail()
       }
 
     // set eventhandler to message icon
-    if (this.env.subject_col != null
-	&& (row.icon = row.obj.getElementsByTagName('td')[this.env.subject_col].getElementsByTagName('img')[0]))
+    if (this.env.subject_col != null && (row.icon = document.getElementById('msgicn'+row.uid)))
       {
-      var p = this;
-      row.icon.id = 'msgicn_'+row.uid;
       row.icon._row = row.obj;
-      row.icon.onmousedown = function(e) { p.command('toggle_status', this); };
+      row.icon.onmousedown = function(e) { self.command('toggle_status', this); };
       }
 
     // set eventhandler to flag icon, if icon found
-    if (this.env.flagged_col != null
-	 && (row.flagged_icon = row.obj.getElementsByTagName('td')[this.env.flagged_col].getElementsByTagName('img')[0]))
+    if (this.env.flagged_col != null && (row.flagged_icon = document.getElementById('flaggedicn'+row.uid)))
       {
-      var p = this;
-      row.flagged_icon.id = 'flaggedicn_'+row.uid;
       row.flagged_icon._row = row.obj;
-      row.flagged_icon.onmousedown = function(e) { p.command('toggle_flag', this); };
+      row.flagged_icon.onmousedown = function(e) { self.command('toggle_flag', this); };
       }
 
     var expando;
-    if (!row.depth && row.has_children && this.env.subject_col != null
-	&& (expando = row.obj.getElementsByTagName('td')[this.env.subject_col].getElementsByTagName('div')[0]))
+    if (!row.depth && row.has_children && (expando = document.getElementById('rcmexpando'+row.uid)))
       {
-      var p = this;
-      expando.onmousedown = function(e) { return p.expand_message_row(e, uid); };
+      expando.onmousedown = function(e) { return self.expand_message_row(e, uid); };
       }
       
     this.triggerEvent('insertrow', { uid:uid, row:row });
@@ -1548,7 +1543,8 @@ function rcube_webmail()
       icon = this.env.forwardedicon;
     else if(flags.unread && this.env.unreadicon)
       icon = this.env.unreadicon;
-    var tree = '';
+ 
+    var tree = expando = '';
 
     if (this.env.threading)
       {
@@ -1571,13 +1567,18 @@ function rcube_webmail()
 
       if (width)
         tree += '<div id="rcmtab' + uid + '" class="branch" style="width:' + width + 'px;">&nbsp</div>';
+
       if (message.has_children && !message.depth)
-        tree += '<div id="rcmexpando' + uid + '" class="' + (message.expanded ? 'expanded' : 'collapsed') + '">&nbsp;</div>';
-      else
-        tree += '<div class="leaf">&nbsp;</div>';
+        expando = '<div id="rcmexpando' + uid + '" class="' + (message.expanded ? 'expanded' : 'collapsed') + '">&nbsp;</div>';
       }
 
-    tree += icon ? '<img src="'+icon+'" alt="" />' : '';
+    tree += icon ? '<img id="msgicn'+uid+'" src="'+icon+'" alt="" class="msgicon" />' : '';
+    
+    // first col is always there
+    var col = document.createElement('td');
+    col.className = 'threads';
+    col.innerHTML = expando;
+    row.appendChild(col);
 
     // add each submitted col
     for (var n = 0; n < this.env.coltypes.length; n++) {
@@ -1588,9 +1589,9 @@ function rcube_webmail()
       var html;
       if (c=='flag') {
         if (flags.flagged && this.env.flaggedicon)
-          html = '<img src="'+this.env.flaggedicon+'" alt="" />';
+          html = '<img id="flaggedicn'+uid+'" src="'+this.env.flaggedicon+'" alt="" />';
         else if(!flags.flagged && this.env.unflaggedicon)
-          html = '<img src="'+this.env.unflaggedicon+'" alt="" />';
+          html = '<img id="flaggedicn'+uid+'" src="'+this.env.unflaggedicon+'" alt="" />';
         }
       else if (c=='attachment')
         html = flags.attachment && this.env.attachmenticon ? '<img src="'+this.env.attachmenticon+'" alt="" />' : '&nbsp;';
@@ -4199,7 +4200,7 @@ function rcube_webmail()
     for (n=0; thead && n<this.env.coltypes.length; n++)
       {
       col = this.env.coltypes[n];
-      if ((cell = thead.rows[0].cells[n]) && (col=='from' || col=='to'))
+      if ((cell = thead.rows[0].cells[n+1]) && (col=='from' || col=='to'))
         {
         // if we have links for sorting, it's a bit more complicated...
         if (cell.firstChild && cell.firstChild.tagName.toLowerCase()=='a')
@@ -4216,7 +4217,7 @@ function rcube_webmail()
       }
 
     // remove excessive columns
-    for (var i=n; thead && n<thead.rows[0].cells.length; i++)
+    for (var i=n+1; thead && i<thead.rows[0].cells.length; i++)
       thead.rows[0].removeChild(thead.rows[0].cells[i]);
 
     this.env.subject_col = null;

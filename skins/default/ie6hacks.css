@@ -14,7 +14,9 @@ img
   background-image: url('images/display/icons.gif');
 }
 
-#messagemenu li a
+#messagemenu li a,
+#messagelist tr td div.expanded,
+#messagelist tr td div.collapsed
 {
   background-image: url('images/messageactions.gif');
 }

@@ -172,10 +172,9 @@ $labels['sentdate'] = 'Sent date';
 $labels['arrival'] = 'Arrival date';
 $labels['asc'] = 'ascending';
 $labels['desc'] = 'descending';
-$labels['listcolumns'] = 'List columns:';
-$labels['listsorting'] = 'Sorting column:';
-$labels['listorder'] = 'Sorting order:';
-$labels['listmode'] = 'List view mode:';
+$labels['listcolumns'] = 'List columns';
+$labels['listsorting'] = 'Sorting column';
+$labels['listmode'] = 'List view mode';
 
 $labels['compact'] = 'Compact';
 $labels['empty'] = 'Empty';

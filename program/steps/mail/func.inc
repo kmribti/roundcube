@@ -132,26 +132,15 @@ if (empty($RCMAIL->action) || $RCMAIL->action == 'list')
  * return the message list as HTML table
  */
 function rcmail_message_list($attrib)
-  {
-  global $IMAP, $CONFIG, $COMM_PATH, $OUTPUT;
+{
+  global $IMAP, $CONFIG, $OUTPUT;
 
-  $skin_path = $CONFIG['skin_path'];
-  $image_tag = '<img src="%s%s" alt="%s" />';
-  
   // add some labels to client
   $OUTPUT->add_label('from', 'to');
-
-  // get message headers
-  $a_headers = $IMAP->list_headers('', '', $_SESSION['sort_col'], $_SESSION['sort_order']);
 
   // add id to message list table if not specified
   if (!strlen($attrib['id']))
     $attrib['id'] = 'rcubemessagelist';
-
-  // allow the following attributes to be added to the <table> tag
-  $attrib_str = create_attrib_string($attrib, array('style', 'class', 'id', 'cellpadding', 'cellspacing', 'border', 'summary'));
-
-  $out = '<table' . $attrib_str . ">\n";
 
   // define list of cols to be displayed based on parameter or config
   if (empty($attrib['columns']))
@@ -162,7 +151,6 @@ function rcmail_message_list($attrib)
   // save some variables for use in ajax list
   $_SESSION['list_columns'] = $a_show_cols;
   $_SESSION['list_attrib'] = $attrib;
-  $_SESSION['skin_path'] = $skin_path;
   
   $mbox = $IMAP->get_mailbox_name();
   $delim = $IMAP->get_hierarchy_delimiter();
@@ -172,139 +160,10 @@ function rcmail_message_list($attrib)
       && ($f = array_search('from', $a_show_cols)) && !array_search('to', $a_show_cols))
     $a_show_cols[$f] = 'to';
 
-  $out .= '<thead>'.rcmail_message_list_head($attrib, $a_show_cols).'</thead>';
-  $out .= "\n<tbody>\n";
+  $out .= html::tag('thead', null, rcmail_message_list_head($attrib, $a_show_cols));
+  $out .= html::tag('tbody', null);
 
-  // no messages in this mailbox
-  if (!sizeof($a_headers))
-    $OUTPUT->show_message('nomessagesfound', 'notice');
-
-  $a_js_message_arr = array();
-
-  // create row for each message
-  foreach ($a_headers as $i => $header)  //while (list($i, $header) = each($a_headers))
-    {
-    $message_icon = $attach_icon = $flagged_icon = '';
-    $js_row_arr = array();
-    $zebra_class = $i%2 ? ' even' : ' odd';
-
-    // set messag attributes to javascript array
-    if ($header->deleted)
-      $js_row_arr['deleted'] = true;
-    if (!$header->seen)
-      $js_row_arr['unread'] = true;
-    if ($header->answered)
-      $js_row_arr['replied'] = true;
-    if ($header->forwarded)
-      $js_row_arr['forwarded'] = true;
-    if ($header->flagged)
-      $js_row_arr['flagged'] = true;
-    if ($header->has_children)
-      $js_row_arr['has_children'] = true;
-    if ($header->depth)
-      $js_row_arr['depth'] = $header->depth;
-    if ($header->parent_uid)
-      $js_row_arr['parent_uid'] = $header->parent_uid;
-    if ($header->unread_children)
-      $js_row_arr['unread_children'] = $header->unread_children;
-
-    // set message icon
-    if ($header->seen && $attrib['unreadchildrenicon'] && $header->unread_children > 0) 
-      $message_icon = $attrib['unreadchildrenicon'];
-    else if ($attrib['deletedicon'] && $header->deleted)
-      $message_icon = $attrib['deletedicon'];
-    else if ($attrib['repliedicon'] && $header->answered)
-      {
-      if ($attrib['forwardedrepliedicon'] && $header->forwarded)
-        $message_icon = $attrib['forwardedrepliedicon'];
-      else
-        $message_icon = $attrib['repliedicon'];
-      }
-    else if ($attrib['forwardedicon'] && $header->forwarded)
-      $message_icon = $attrib['forwardedicon'];
-    else if ($attrib['unreadicon'] && !$header->seen)
-      $message_icon = $attrib['unreadicon'];
-    else if ($attrib['messageicon'])
-      $message_icon = $attrib['messageicon'];
-
-    if ($attrib['flaggedicon'] && $header->flagged)
-      $flagged_icon = $attrib['flaggedicon'];
-    else if ($attrib['unflaggedicon'] && !$header->flagged)
-      $flagged_icon = $attrib['unflaggedicon'];
-    
-    // set attachment icon
-    if ($attrib['attachmenticon'] && preg_match("/multipart\/m/i", $header->ctype))
-      $attach_icon = $attrib['attachmenticon'];
-        
-    $out .= sprintf('<tr id="rcmrow%d" class="message%s%s%s%s%s"%s>'."\n",
-                    $header->uid,
-                    $header->seen ? '' : ' unread',
-                    $header->deleted ? ' deleted' : '',
-                    $header->flagged ? ' flagged' : '',
-                    $header->unread_children && $header->seen ? ' unroot' : '',
-                    $zebra_class,
-                    ($header->depth) ? ' style="display: none"' : '');
-    
-    $tree = '';
-    if ($IMAP->threading)
-      {
-      // XXX: This assumes that div width is hardcoded to 15px,
-      // Chris did it a bit differently in an original patch, he was adding so much divs as depth is
-      // I replaced logic in list.js:drag_mouse_move() so subject text is picked defferently, so
-      // either method of could be used (that was only the one problem I noted with these added divs).
-      // The same is true for an online list (program/js/app.js:add_message_row()).
-      // Bubble
-      $width = ($header->depth) * 15;
-      if ($width)	
-        $tree .= '<div id="rcmtab' . $header->uid . '" class="branch" style="width:' . $width . 'px;">&nbsp</div>';
-      if ($header->has_children && !$header->depth)
-        $tree .= '<div id="rcmexpando' . $header->uid . '" class="collapsed">&nbsp;</div>';
-      else
-        $tree .= '<div class="leaf">&nbsp;</div>';
-      }
-
-    $tree .= $message_icon ? sprintf($image_tag, $skin_path, $message_icon, '') : '';
-
-    $IMAP->set_charset(!empty($header->charset) ? $header->charset : $CONFIG['default_charset']);
-  
-    // format each col
-    foreach ($a_show_cols as $col)
-      {
-      if ($col=='from' || $col=='to')
-        $cont = Q(rcmail_address_string($header->$col, 3, false, $attrib['addicon']), 'show');
-      else if ($col=='subject')
-        {
-        $action = $mbox==$CONFIG['drafts_mbox'] ? 'compose' : 'show';
-        $uid_param = $mbox==$CONFIG['drafts_mbox'] ? '_draft_uid' : '_uid';
-        $cont = abbreviate_string(trim($IMAP->decode_header($header->$col)), 160);
-        if (empty($cont)) $cont = rcube_label('nosubject');
-        $cont = $OUTPUT->browser->ie ? Q($cont) : sprintf('<a href="%s" onclick="return rcube_event.cancel(event)">%s</a>', Q(rcmail_url($action, array($uid_param=>$header->uid, '_mbox'=>$mbox))), Q($cont));
-      	$cont = $tree . $cont;
-        }
-      else if ($col=='flag')
-        $cont = $flagged_icon ? sprintf($image_tag, $skin_path, $flagged_icon, '') : '';
-      else if ($col=='size')
-        $cont = show_bytes($header->$col);
-      else if ($col=='date')
-        $cont = format_date($header->date);
-      else
-        $cont = Q($header->$col);
-        
-      if ($col!='attachment')
-        $out .= '<td class="'.$col.'">' . $cont . "</td>\n";
-      else
-        $out .= sprintf("<td class=\"icon\">%s</td>\n", $attach_icon ? sprintf($image_tag, $skin_path, $attach_icon, '') : '&nbsp;');
-      }
-
-    $out .= "</tr>\n";
-    
-    if (sizeof($js_row_arr))
-      $a_js_message_arr[$header->uid] = $js_row_arr;
-    }
-  
-  // complete message table
-  $out .= "</tbody></table>\n";
-  
+  $skin_path = $CONFIG['skin_path'];
   $message_count = $IMAP->messagecount(NULL, $IMAP->threading ? 'THREADS' : 'ALL');
   
   // set client env
@@ -338,13 +197,16 @@ function rcmail_message_list($attrib)
   if ($attrib['unreadchildrenicon'])
     $OUTPUT->set_env('unreadchildrenicon', $skin_path . $attrib['unreadchildrenicon']);
   
-  $OUTPUT->set_env('messages', $a_js_message_arr);
+  $OUTPUT->set_env('messages', array());
   $OUTPUT->set_env('coltypes', $a_show_cols);
+  
+  if (!$message_count)
+    $OUTPUT->show_message('nomessagesfound', 'notice');
   
   $OUTPUT->include_script('list.js');
   
-  return $out;
-  }
+  return html::tag('table', $attrib, $out, array('style', 'class', 'id', 'cellpadding', 'cellspacing', 'border', 'summary'));
+}
 
 
 /**
@@ -352,7 +214,7 @@ function rcmail_message_list($attrib)
  * or to replace the whole list (IE only)
  */
 function rcmail_js_message_list($a_headers, $insert_top=FALSE, $replace=TRUE, $head_replace=FALSE)
-  {
+{
   global $CONFIG, $IMAP, $OUTPUT;
 
   if (empty($_SESSION['list_columns']))
@@ -381,9 +243,7 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE, $replace=TRUE, $h
   if(($key = array_search('flag', $a_show_cols)) !== FALSE)
     unset($a_show_cols[$key]);
 
-  $browser = new rcube_browser;
-
-  if ($browser->ie && $replace)
+  if ($OUTPUT->browser->ie && $replace)
     $OUTPUT->command('offline_message_list', true);
 
   // loop through message headers
@@ -406,9 +266,9 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE, $replace=TRUE, $h
         {
         $action = $mbox==$CONFIG['drafts_mbox'] ? 'compose' : 'show';
         $uid_param = $mbox==$CONFIG['drafts_mbox'] ? '_draft_uid' : '_uid';
-	$cont = abbreviate_string(trim($IMAP->decode_header($header->$col)), 160);
+        $cont = abbreviate_string(trim($IMAP->decode_header($header->$col)), 160);
         if (!$cont) $cont = rcube_label('nosubject');
-	$cont = Q($cont);
+        $cont = Q($cont);
         }
       else if ($col=='size')
         $cont = show_bytes($header->$col);
@@ -442,7 +302,7 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE, $replace=TRUE, $h
       $a_msg_flags['attachment'] = 1;
     $a_msg_flags['mbox'] = $mbox;
       
-    if ($browser->ie)
+    if ($OUTPUT->browser->ie)
       $a_msg_cols = rc_utf8_clean($a_msg_cols);
     
     $OUTPUT->command('add_message_row',
@@ -461,11 +321,11 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE, $replace=TRUE, $h
  * Creates <THEAD> for message list table
  */
 function rcmail_message_list_head($attrib, $a_show_cols)
-  {
+{
   global $CONFIG;
 
   $skin_path = $_SESSION['skin_path'];
-  $image_tag = '<img src="%s%s" alt="%s" />';
+  $image_tag = html::img(array('src' => "%s%s", 'alt' => "%s"));
 
   // check to see if we have some settings for sorting
   $sort_col   = $_SESSION['sort_col'];
@@ -474,13 +334,19 @@ function rcmail_message_list_head($attrib, $a_show_cols)
   // define sortable columns
   $a_sort_cols = array('subject', 'date', 'from', 'to', 'size', 'cc');
   
-  $out = '<tr>';
+  if (!empty($attrib['optionsmenuicon']))
+    $list_menu = html::a(
+      array('href' => '#', 'onclick' => 'return '.JS_OBJECT_NAME.".command('menu-open', 'messagelistmenu')"),
+      html::img(array('src' => $skin_path . $attrib['optionsmenuicon'], 'id' => 'listmenulink', 'title' => rcube_label('listoptions')))
+    );
+  else
+    $list_menu = '';
+  
+  $out = html::tag('td', array('class' => 'threads'), $list_menu);
 
-  foreach ($a_show_cols as $col)
-    {
+  foreach ($a_show_cols as $col) {
     // get column name
-    switch ($col)
-      {
+    switch ($col) {
       case 'flag':
         $col_name = sprintf($image_tag, $skin_path, $attrib['unflaggedicon'], '');
         break;
@@ -492,44 +358,18 @@ function rcmail_message_list_head($attrib, $a_show_cols)
     }
 
     // make sort links
-    $sort = '';
     if (in_array($col, $a_sort_cols))
-      {
-        $col_name = sprintf(
-          '<a href="./#sort" onclick="return %s.command(\'sort\',\'%s\',this)" title="%s">%s</a>',
-          JS_OBJECT_NAME,
-          $col,
-          rcube_label('sortby'),
-          $col_name);
-      }
-      
-    $sort_class = $col==$sort_col ? " sorted$sort_order" : '';
+      $col_name = html::a(array('href'=>"./#sort", 'onclick' => 'return '.JS_OBJECT_NAME.".command('sort','".$col."',this)", 'title' => rcube_label('sortby')), $col_name);
+
+    $sort_class = $col == $sort_col ? " sorted$sort_order" : '';
+    $class_name = $col == 'attachment' ? 'icon' : $col.$sort_class;
 
     // put it all together
-    if ($col != 'attachment') {
-      // list options menu link
-      if ($col == 'subject' && !empty($attrib['optionsmenuicon'])) {
-          $list_menu = sprintf('<a href="#" onclick="%s"><img src="%s%s" id="%s" align="absmiddle" style="%s" title="%s" alt="" /></a>',
-	    'return '.JS_OBJECT_NAME.'.command(\'menu-open\', \'messagelistmenu\')',
-            $skin_path,
-	    $attrib['optionsmenuicon'],
-	    'listmenulink',
-	    'float: left; padding-right: 5px',
-            rcube_label('listoptions')
-	    );
-        } else
-	  $list_menu = '';
-
-      $out .= '<td class="'.$col.$sort_class.'" id="rcm'.$col.'">' . "$list_menu$col_name$sort</td>\n";
-      }
-    else    
-      $out .= '<td class="icon" id="rcm'.$col.'">' . "$col_name$sort</td>\n";
-    }
-
-  $out .= '</tr>';
-
-  return $out;
+    $out .= html::tag('td', array('class' => $class_name, 'id' => "rcm$col"), $col_name);
   }
+
+  return html::tag('tr', null, $out);
+}
 
 
 /**
@@ -566,7 +406,7 @@ function rcmail_messagecount_display($attrib)
 
 function rcmail_quota_display($attrib)
   {
-  global $OUTPUT, $COMM_PATH;
+  global $OUTPUT;
 
   if (!$attrib['id'])
     $attrib['id'] = 'rcmquotadisplay';

@@ -164,26 +164,38 @@
   padding-left: 2px;
 }
 
-#markmessagemenu,
-#searchmenu,
-#messagemenu,
-#listmenu
+.popupmenu
 {
   position: absolute;
   top: 32px;
   left: 90px;
   width: auto;
   display: none;
-  background-color: #F9F9F9;
-  border: 1px solid #CCC;
-  padding: 1px;
-  opacity: 0.9;
+  background-color: #fff;
+  border: 1px solid #999;
+  padding: 4px;
+  opacity: 0.95;
   z-index: 240;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-box-shadow: 1px 1px 12px #999;
+  -webkit-box-shadow: #999 1px 1px 12px;
 }
 
 #searchmenu
 {
-  width: 172px;
+  width: 160px;
+}
+
+#searchmenu ul.toolbarmenu
+{
+  margin: 0;
+}
+
+#searchmenu ul.toolbarmenu li
+{
+  margin: 1px 4px 1px;
 }
 
 #messagemenu li a.active:hover,
@@ -195,53 +207,53 @@
 
 #messagemenu li a
 {
-  background: url('images/messageactions.png') no-repeat 1px 0;
-  background-position: 0px 20px;
+  background: url('images/messageactions.png') no-repeat 7px 0;
+  background-position: 7px 20px;
 }
 
 #messagemenu li a.printlink
 {
-  background-position: 1px 1px;
+  background-position: 7px 1px;
 }
 
 #messagemenu li a.downloadlink
 {
-  background-position: 1px -17px;
+  background-position: 7px -17px;
 }
 
 #messagemenu li a.sourcelink
 {
-  background-position: 1px -35px;
+  background-position: 7px -35px;
 }
 
 #messagemenu li a.openlink
 {
-  background-position: 1px -53px;
+  background-position: 7px -53px;
 }
 
 #messagemenu li a.editlink
 {
-  background-position: 1px -71px;
+  background-position: 7px -71px;
 }
 
 #markmessagemenu a.readlink
 {
-  background: url('images/icons/dot.png') no-repeat 2px;
+  background: url('images/icons/dot.png') no-repeat 7px 2px;
 }
 
 #markmessagemenu a.unreadlink
 {
-  background: url('images/icons/unread.png') no-repeat 2px;
+  background: url('images/icons/unread.png') no-repeat 7px 2px;
 }
 
 #markmessagemenu a.flaggedlink
 {
-  background: url('images/icons/flagged.png') no-repeat 2px;
+  background: url('images/icons/flagged.png') no-repeat 7px 2px;
 }
 
 #markmessagemenu a.unflaggedlink
 {
-  background: url('images/icons/unflagged.png') no-repeat 2px;
+  background: url('images/icons/unflagged.png') no-repeat 7px 2px;
 }
 
 #searchfilter
@@ -758,12 +770,23 @@ body.messagelist
   vertical-align: middle;
 }
 
+#messagelist thead tr td.subject
+{
+  padding-left: 22px;
+}
+
 #messagelist thead tr td.icon,
-#messagelist thead tr td.flag
+#messagelist thead tr td.flag,
+#messagelist thead tr td.threads
 {
   width: 22px;
   padding: 0;
   text-align: center;
+}
+
+#messagelist thead tr td.threads
+{
+  width: 18px;
 }
 
 #messagelist tbody tr td.flag
@@ -786,6 +809,13 @@ body.messagelist
   vertical-align: middle;
 }
 
+#messagelist tbody img.msgicon
+{
+  position: relative;
+  top: 0px;
+  margin-right: 5px;
+}
+
 #messagelist tr td div.collapsed,
 #messagelist tr td div.expanded,
 #messagelist tr td.subject img
@@ -795,12 +825,12 @@ body.messagelist
 
 #messagelist tr td div.collapsed
 {
-  background: url(images/icons/collapsed.png) center 5px no-repeat;
+  background: url('images/messageactions.png') center -91px no-repeat;
 }
 
 #messagelist tr td div.expanded
 {
-  background: url(images/icons/expanded.png) center 5px no-repeat;
+  background: url('images/messageactions.png') center -109px no-repeat;
 }
 
 #messagelist tbody tr td.flag img:hover,
@@ -1352,7 +1382,7 @@ font.bold
 
 #listmenu
 {
-  padding: 0px 4px;
+  padding: 6px;
 }
 
 #listmenu legend
@@ -1368,7 +1398,7 @@ font.bold
 
 #listmenu div
 {
-  padding: 5px;
+  padding: 8px 0 3px 0;
   text-align: center;
   clear: both;
 }

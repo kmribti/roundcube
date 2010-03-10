@@ -33,14 +33,14 @@ TODO (other):
     	      all headers for each child
     - button in #listcontrols to mark all messages in current thread (with selected
       root or child message),
-    - thread tree icons
-    - thread css: message row height, thread/status icon alignment
+    + thread tree icons
+    + thread css: message row height, thread/status icon alignment
       (change size of all list icons to 14x14)
     - remove 'indexsort' label from localization files
 
 TODO (by the way):
     - use jQuery.inArray instead of find_in_array() (common.js)
-    - use only one function (js) to generate messages list
+    + use only one function (js) to generate messages list
 
 KNOWN ISSUES:
     - on new message (check_recent) the whole list is reloaded
