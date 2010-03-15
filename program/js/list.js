@@ -350,6 +350,7 @@ expand_row: function(e, id)
 collapse: function(row)
 {
   row.expanded = false;
+  this.triggerEvent('expandcollapse', { uid:row.uid, expanded:row.expanded });
   var depth = row.depth;
   var new_row = row ? row.obj.nextSibling : null;
   var r;
@@ -359,7 +360,9 @@ collapse: function(row)
       var r = this.rows[new_row.uid];
       if (r && r.depth <= depth)
         break;
-      new_row.style.display = 'none';
+      $(new_row).hide();
+      r.expanded = false;
+      this.triggerEvent('expandcollapse', { uid:r.uid, expanded:r.expanded });
     }
     new_row = new_row.nextSibling;
   }
@@ -376,6 +379,7 @@ expand: function(row)
     row.expanded = true;
     depth = row.depth;
     new_row = row.obj.nextSibling;
+    this.triggerEvent('expandcollapse', { uid:row.uid, expanded:row.expanded });
   }
   else {
     var tbody = this.list.tBodies[0];
@@ -397,7 +401,8 @@ expand: function(row)
             if ((row && p == row) || last_expanded_parent_depth >= p.depth - 1) {
               last_expanded_parent_depth = p.depth;
               $(new_row).show();
-	      new_row.expanded = true;
+              r.expanded = true;
+              this.triggerEvent('expandcollapse', { uid:r.uid, expanded:r.expanded });
             }
           }
           else
@@ -422,6 +427,8 @@ collapse_all: function(row)
     row.expanded = false;
     depth = row.depth;
     new_row = row.obj.nextSibling;
+    this.triggerEvent('expandcollapse', { uid:row.uid, expanded:row.expanded });
+    
     // don't collapse sub-root tree in multiexpand mode 
     if (depth && this.multiexpand)
       return false; 
@@ -440,12 +447,13 @@ collapse_all: function(row)
           break;
 
         if (row || r.depth)
-          new_row.style.display = 'none';
+          $(new_row).hide();
         if (r.has_children) {
           r.expanded = false;
           var expando = document.getElementById('rcmexpando' + r.uid);
           if (expando)
             expando.className = 'collapsed';
+          this.triggerEvent('expandcollapse', { uid:r.uid, expanded:r.expanded });
         }
       }
     }
@@ -464,6 +472,7 @@ expand_all: function(row)
     row.expanded = true;
     depth = row.depth;
     new_row = row.obj.nextSibling;
+    this.triggerEvent('expandcollapse', { uid:row.uid, expanded:row.expanded });
   }
   else {
     var tbody = this.list.tBodies[0];
@@ -484,6 +493,7 @@ expand_all: function(row)
           var expando = document.getElementById('rcmexpando' + r.uid);
           if (expando)
             expando.className = 'expanded';
+          this.triggerEvent('expandcollapse', { uid:r.uid, expanded:r.expanded });
         }
       }
     }
