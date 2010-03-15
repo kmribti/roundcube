@@ -155,10 +155,12 @@ $labels['deleted'] = 'Deleted';
 $labels['invert'] = 'Invert';
 $labels['filter'] = 'Filter';
 
+$labels['list'] = 'List';
 $labels['threads'] = 'Threads';
 $labels['expand-all'] = 'Expand All';
 $labels['expand-unread'] = 'Expand Unread';
 $labels['collapse-all'] = 'Collapse All';
+$labels['threaded'] = 'Threaded';
 
 $labels['autoexpand_threads'] = 'Expand message threads';
 $labels['do_expand'] = 'all threads';
@@ -167,7 +169,6 @@ $labels['fromto'] = 'Sender/Recipient';
 $labels['flag'] = 'Flag';
 $labels['attachment'] = 'Attachment';
 $labels['nonesort'] = 'None';
-$labels['list'] = 'List';
 $labels['sentdate'] = 'Sent date';
 $labels['arrival'] = 'Arrival date';
 $labels['asc'] = 'ascending';
