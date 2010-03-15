@@ -175,7 +175,6 @@
     <li><input type="checkbox" name="list_col[]" value="attachment" id="cols_attachment" /><label for="cols_attachment"><roundcube:label name="attachment" /></label></li>
   </ul>
 </fieldset>
-<!--
 <fieldset class="thinbordered"><legend><roundcube:label name="listsorting" /></legend>
   <ul class="toolbarmenu">
     <li><input type="radio" name="sort_col" value="" id="sort_default" /><label for="sort_default"><roundcube:label name="nonesort" /></label></li>
@@ -188,7 +187,12 @@
     <li><input type="radio" name="sort_col" value="size" id="sort_size" /><label for="sort_size"><roundcube:label name="size" /></label></li>
   </ul>
 </fieldset>
--->
+<fieldset><legend><roundcube:label name="listorder" /></legend> 
+	  <ul class="toolbarmenu"> 
+	    <li><input type="radio" name="sort_ord" value="ASC" id="sort_asc" /><label for="sort_asc"><roundcube:label name="asc" /></label></li> 
+	    <li><input type="radio" name="sort_ord" value="DESC" id="sort_desc" /><label for="sort_desc"><roundcube:label name="desc" /></label></li> 
+	  </ul> 
+</fieldset>
 <div>
   <roundcube:button command="menu-open" id="listmenucancel" type="input" class="button" label="cancel" />
   <roundcube:button command="menu-save" id="listmenusave" type="input" class="button mainaction" label="save" />

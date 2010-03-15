@@ -239,8 +239,8 @@ save_listmenu: function()
 {
   this.show_listmenu();
 
-  var sort = rcmail.env.sort_col; // $('input[name="sort_col"]:checked').val();
-  var ord = rcmail.env.sort_order; // $('input[name="sort_ord"]:checked').val();
+  var sort = $('input[name="sort_col"]:checked').val();
+  var ord = $('input[name="sort_ord"]:checked').val();
   var thread = $('input[name="view"]:checked').val();
   var cols = $('input[name="list_col[]"]:checked')
     .map(function(){ return this.value; }).get();

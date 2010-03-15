@@ -1397,6 +1397,7 @@ font.bold
 #listmenu fieldset
 {
   border: 1px solid #999999;
+  margin: 0 5px;
   float: left;
 }
 

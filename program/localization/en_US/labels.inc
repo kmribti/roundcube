@@ -174,6 +174,7 @@ $labels['asc'] = 'ascending';
 $labels['desc'] = 'descending';
 $labels['listcolumns'] = 'List columns';
 $labels['listsorting'] = 'Sorting column';
+$labels['listorder'] = 'Sorting order';
 $labels['listmode'] = 'List view mode';
 
 $labels['compact'] = 'Compact';
