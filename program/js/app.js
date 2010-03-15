@@ -3,11 +3,12 @@
  | RoundCube Webmail Client Script                                       |
  |                                                                       |
  | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005-2009, RoundCube Dev, - Switzerland                 |
+ | Copyright (C) 2005-2010, RoundCube Dev, - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
  | Authors: Thomas Bruederli <roundcube@gmail.com>                       |
+ |          Aleksander 'A.L.E.C' Machniak <alec@alec.pl>                 |
  |          Charles McNulty <charles@charlesmcnulty.com>                 |
  +-----------------------------------------------------------------------+
  | Requires: jquery.js, common.js, list.js                               |
@@ -174,6 +175,7 @@ function rcube_webmail()
           this.message_list.addEventListener('dragstart', function(o){ p.drag_start(o); });
           this.message_list.addEventListener('dragmove', function(e){ p.drag_move(e); });
           this.message_list.addEventListener('dragend', function(e){ p.drag_end(e); });
+          this.message_list.addEventListener('expandcollapse', function(e){ p.msglist_expand(e); });
           document.onmouseup = function(e){ return p.doc_mouse_up(e); };
 
           this.set_message_coltypes(this.env.coltypes);
@@ -1431,6 +1433,12 @@ function rcube_webmail()
       this.show_contentframe(false);
   };
   
+  this.msglist_expand = function(row)
+  {
+    if (this.env.messages[row.uid])
+      this.env.messages[row.uid].expanded = row.expanded;
+  };
+  
   this.check_droptarget = function(id)
   {
     if (this.task == 'mail')
@@ -1450,19 +1458,9 @@ function rcube_webmail()
   {
     var self = this;
     var uid = row.uid;
+    
     if (uid && this.env.messages[uid])
-      {
-      row.deleted = this.env.messages[uid].deleted ? true : false;
-      row.unread = this.env.messages[uid].unread ? true : false;
-      row.replied = this.env.messages[uid].replied ? true : false;
-      row.flagged = this.env.messages[uid].flagged ? true : false;
-      row.forwarded = this.env.messages[uid].forwarded ? true : false;
-      row.has_children = this.env.messages[uid].has_children ? true : false;
-      row.depth = this.env.messages[uid].depth ? this.env.messages[uid].depth : 0;
-      row.unread_children = this.env.messages[uid].unread_children;
-      row.parent_uid = this.env.messages[uid].parent_uid;
-      row.expanded = this.env.messages[uid].expanded;
-      }
+      $.extend(row, this.env.messages[uid]);
 
     // set eventhandler to message icon
     if (this.env.subject_col != null && (row.icon = document.getElementById('msgicn'+row.uid)))
@@ -1502,7 +1500,11 @@ function rcube_webmail()
     var rowcount = tbody.rows.length;
     var even = rowcount%2;
     
-    var message = this.env.messages[uid] = {
+    if (!this.env.messages[uid])
+      this.env.messages[uid] = {};
+    
+    // merge flags over local message object
+    $.extend(this.env.messages[uid], {
       deleted: flags.deleted?1:0,
       replied: flags.replied?1:0,
       unread: flags.unread?1:0,
@@ -1512,14 +1514,16 @@ function rcube_webmail()
       depth: flags.depth?flags.depth:0,
       unread_children: flags.unread_children,
       parent_uid: flags.parent_uid
-    }
+    });
+
+    var message = this.env.messages[uid];
 
     var css_class = 'message'
         + (even ? ' even' : ' odd')
         + (flags.unread ? ' unread' : '')
         + (flags.deleted ? ' deleted' : '')
         + (flags.flagged ? ' flagged' : '')
-	+ (flags.unread_children && !flags.unread ? ' unroot' : '')
+        + (flags.unread_children && !flags.unread ? ' unroot' : '')
         + (this.message_list.in_selection(uid) ? ' selected' : '');
 
     // for performance use DOM instead of jQuery here
@@ -1549,21 +1553,21 @@ function rcube_webmail()
     if (this.env.threading)
       {
       // This assumes that div width is hardcoded to 15px,
-      var parent_uid;
       var width = message.depth * 15;
       if (message.depth) {
-        if (this.env.autoexpand_threads == 0 ||
-	    (this.env.autoexpand_threads == 2 && rows[message.parent_uid] && rows[message.parent_uid].expanded)) {
+        if ((this.env.autoexpand_threads == 0 || this.env.autoexpand_threads == 2) &&
+            (!rows[message.parent_uid] || !rows[message.parent_uid].expanded)) {
           row.style.display = 'none';
-          }
-	else
-	  message.expanded = this.env.messages[uid].expanded = true;
-	}
+          message.expanded = false;
+        }
+        else
+          message.expanded = true;
+      }
       else if (message.has_children) {
-        if (this.env.autoexpand_threads == 1 || (this.env.autoexpand_threads == 2 && message.unread_children)) {
-	  message.expanded = this.env.messages[uid].expanded = true;  
-          }
-	}
+        if (typeof(message.expanded) == 'undefined' && (this.env.autoexpand_threads == 1 || (this.env.autoexpand_threads == 2 && message.unread_children))) {
+          message.expanded = true;
+        }
+      }
 
       if (width)
         tree += '<span id="rcmtab' + uid + '" class="branch" style="width:' + width + 'px;">&nbsp;&nbsp;</span>';
