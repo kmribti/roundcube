@@ -4194,16 +4194,23 @@ function rcube_webmail()
     this.env.coltypes = coltypes;
     
     // set correct list titles
-    var cell, col, found, n;
     var thead = this.gui_objects.messagelist ? this.gui_objects.messagelist.tHead : null;
 
     // replace old column headers
     if (thead && repl) {
-      // throws an 'unknown runtime error' on IE (WTF?)
-      try { this.gui_objects.messagelist.tHead.innerHTML = repl; }
-      catch(e) { }
+      for (var cell, c=0; c < repl.length; c++) {
+        cell = thead.rows[0].cells[c];
+        if (!cell) {
+          cell = document.createElement('td');
+          thead.rows[0].appendChild(cell);
+        }
+        cell.innerHTML = repl[c].html;
+        if (repl[c].id) cell.id = repl[c].id;
+        if (repl[c].className) cell.className = repl[c].className;
+      }
     }
 
+    var cell, col, n;
     for (n=0; thead && n<this.env.coltypes.length; n++)
       {
       col = this.env.coltypes[n];
@@ -4230,6 +4237,7 @@ function rcube_webmail()
     this.env.subject_col = null;
     this.env.flagged_col = null;
 
+    var found;
     if((found = find_in_array('subject', this.env.coltypes)) >= 0) {
       this.set_env('subject_col', found);
       if (this.message_list)

@@ -202,9 +202,13 @@ function rcmail_message_list($attrib)
   
   $OUTPUT->include_script('list.js');
   
+  $thead = '';
+  foreach (rcmail_message_list_head($attrib, $a_show_cols) as $cell)
+    $thead .= html::tag('td', array('class' => $cell['className'], 'id' => $cell['id']), $cell['html']);
+  
   return html::tag('table',
     $attrib,
-    html::tag('thead', null, rcmail_message_list_head($attrib, $a_show_cols)) .
+    html::tag('thead', null, html::tag('tr', null, $thead)) .
       html::tag('tbody', null, ''),
     array('style', 'class', 'id', 'cellpadding', 'cellspacing', 'border', 'summary'));
 }
@@ -343,7 +347,7 @@ function rcmail_message_list_head($attrib, $a_show_cols)
   else
     $list_menu = '';
 
-  $out = html::tag('td', array('class' => 'threads'), $list_menu);
+  $cells = array(array('className' => 'threads', 'html' => $list_menu));
 
   foreach ($a_show_cols as $col) {
     // get column name
@@ -366,10 +370,10 @@ function rcmail_message_list_head($attrib, $a_show_cols)
     $class_name = $col == 'attachment' ? 'icon' : $col.$sort_class;
 
     // put it all together
-    $out .= html::tag('td', array('class' => $class_name, 'id' => "rcm$col"), $col_name);
+    $cells[] = array('className' => $class_name, 'id' => "rcm$col", 'html' => $col_name);
   }
 
-  return html::tag('tr', null, $out);
+  return $cells;
 }
 
 
