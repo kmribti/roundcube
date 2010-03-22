@@ -467,7 +467,7 @@ class rcube_sieve_script
             $script .= 'if' . ($rule['disabled'] ? ' false #' : '');
 	    $script .= $rule['join'] ? ' allof (' : ' anyof (';
 	    if (sizeof($tests) > 1)
-	        $script .= implode(",\n\t", $tests);
+	        $script .= implode(", ", $tests);
 	    else if (sizeof($tests))
 	        $script .= $tests[0];
 	    else

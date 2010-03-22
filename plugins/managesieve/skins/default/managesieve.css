@@ -8,7 +8,6 @@
   top: 120px;
   bottom: 30px;
   border: 1px solid #999999;
-  background-color: #F9F9F9;
   overflow: auto;
   /* css hack for IE */
   height: expression((parseInt(document.documentElement.clientHeight)-155)+'px');
@@ -154,13 +153,11 @@
 
 #filter-frame
 {
-  background-color: #F9F9F9;
   border: none;
 }
 
 body.iframe
 {
-  background-color: #F9F9F9;
   min-width: 740px;
   width: expression(Math.max(740, document.documentElement.clientWidth)+'px');
 }
@@ -169,7 +166,6 @@ body.iframe
 {
   min-width: 650px;
   white-space: nowrap;
-  background-color: #F9F9F9;
   padding: 20px 10px 10px 10px;
 }
 
@@ -202,7 +198,7 @@ div.rulerow:hover, div.actionrow:hover
 {
   padding: 2px;
   white-space: nowrap;
-  background: #F2F2F2;
+  background: #F6F6F6;
   border: 1px solid silver;
 }
 

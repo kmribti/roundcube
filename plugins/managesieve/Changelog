@@ -1,3 +1,6 @@
+- Fixed disabling rules with many tests
+- Small css unification with core
+
 * version 2.3 [2010-03-18]
 -----------------------------------------------------------
 - Added import from Horde-INGO
