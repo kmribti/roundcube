@@ -49,6 +49,32 @@ function password_save($curpass, $passwd)
         }
         $sql = str_replace('%c',  $db->quote(crypt($passwd, CRYPT_MD5 ? '$1$'.$salt.'$' : $salt)), $sql);
     }
+
+    // dovecotpw
+    if (strpos($sql, '%D') !== FALSE) {
+        if (!($dovecotpw = $rcmail->config->get('dovecotpw')))
+            $dovecotpw = 'dovecotpw';
+        if (!($method = $rcmail->config->get('dovecotmethod')))
+            $method = 'CRAM-MD5';
+        $tmpfile = tempnam('/tmp', 'rouncdube-');
+        $pipe = popen("'$dovecotpw' -s '$method' > '$tmpfile'", "w");
+        if (!$pipe) {
+            unlink($tmpfile);
+            return PASSWORD_CRYPT_ERROR;
+        }
+        else {
+            fwrite($pipe, $passwd . "\n", 1+strlen($passwd)); usleep(1000);
+            fwrite($pipe, $passwd . "\n", 1+strlen($passwd));
+            pclose($pipe);
+            $newpass = file_get_contents($tmpfile);
+            if (!preg_match('/^\{' . $method . '\}/', $newpass)) {
+                return PASSWORD_CRYPT_ERROR;
+            }
+            $newpass = trim(str_replace('{' . $method . '}', '', $newpass));
+            unlink($tmpfile);
+        }
+        $sql = str_replace('%D', $db->quote($newpass), $sql);
+    }
     
     // hashed passwords
     if (preg_match('/%[n|q]/', $sql)) {
