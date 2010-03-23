@@ -64,7 +64,7 @@
   padding: 0;
   margin-right: 3px;
   overflow: hidden;
-  background: url('managesieve_toolbar.png') 0 0 no-repeat transparent;
+  background: url(managesieve_toolbar.png) 0 0 no-repeat transparent;
   opacity: 0.99; /* this is needed to make buttons appear correctly in Chrome */
 }
 
