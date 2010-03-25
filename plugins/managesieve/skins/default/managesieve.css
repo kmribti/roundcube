@@ -212,11 +212,20 @@ td.rowbuttons
 {
   text-align: right;
   white-space: nowrap;
+  width: 1%;
 }
 
-td.rowactions, td.rowtargets
+td.rowactions
 {
   white-space: nowrap;
+  width: 1%;
+}
+
+td.rowtargets
+{
+  white-space: nowrap;
+  width: 98%;
+  padding-left: 10px;
 }
 
 input.disabled, input.disabled:hover
