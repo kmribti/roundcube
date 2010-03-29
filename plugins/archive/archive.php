@@ -6,7 +6,7 @@
  * Plugin that adds a new button to the mailbox toolbar
  * to move messages to a (user selectable) archive folder.
  *
- * @version 1.4
+ * @version @package_version@
  * @author Andre Rodier, Thomas Bruederli
  */
 class archive extends rcube_plugin
