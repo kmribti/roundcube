@@ -6,7 +6,7 @@
  * Sample plugin that adds a new button to the mailbox toolbar
  * to mark the selected messages as Junk and move them to the Junk folder
  *
- * @version 1.0
+ * @version @package_version@
  * @author Thomas Bruederli
  */
 class markasjunk extends rcube_plugin
