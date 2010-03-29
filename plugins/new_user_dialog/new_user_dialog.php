@@ -7,7 +7,7 @@
  * and sets a session flag in case it is incomplete. An overlay box will appear
  * on the screen until the user has reviewed/completed his identity.
  *
- * @version 1.0
+ * @version @package_version@
  * @author Thomas Bruederli
  */
 class new_user_dialog extends rcube_plugin
