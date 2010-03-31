@@ -76,7 +76,7 @@ class subscriptions_option extends rcube_plugin
     {
         $rcmail = rcmail::get_instance();
         if (!$rcmail->config->get('use_subscriptions', true)) {
-            $args['folders'] = iil_C_ListMailboxes($rcmail->imap->conn, $rcmail->imap->mod_mailbox($args['root']), $args['filter']);
+            $args['folders'] = $rcmail->imap->conn->listMailboxes($rcmail->imap->mod_mailbox($args['root']), $args['filter']);
         }
         return $args;
     }
