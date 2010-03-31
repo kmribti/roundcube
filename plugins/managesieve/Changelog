@@ -1,3 +1,4 @@
+- Fixed bug in DIGEST-MD5 authentication (http://pear.php.net/bugs/bug.php?id=17285)
 - Fixed disabling rules with many tests
 - Small css unification with core
 
