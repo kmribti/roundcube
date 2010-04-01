@@ -40,12 +40,14 @@ $labels['filterset'] = 'Filters set';
 $labels['filtersetadd'] = 'Add filters set';
 $labels['filtersetdel'] = 'Delete current filters set';
 $labels['filtersetact'] = 'Activate current filters set';
+$labels['filtersetget'] = 'Download filters set in text format';
 $labels['filterdef'] = 'Filter definition';
 $labels['filtersetname'] = 'Filters set name';
 $labels['newfilterset'] = 'New filters set';
 $labels['active'] = 'active';
-$labels['copyfromset'] = 'Copy filters from set';
-$labels['none'] = '- none -';
+$labels['none'] = 'none';
+$labels['fromset'] = 'from set';
+$labels['fromfile'] = 'from file';
 $labels['filterdisabled'] = 'Filter disabled';
 
 $messages = array();

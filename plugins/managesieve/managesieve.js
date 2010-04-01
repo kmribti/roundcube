@@ -23,6 +23,7 @@ if (window.rcmail) {
     rcmail.register_command('plugin.managesieve-setadd', function() { rcmail.managesieve_setadd() }, true);
     rcmail.register_command('plugin.managesieve-setdel', function() { rcmail.managesieve_setdel() }, true);
     rcmail.register_command('plugin.managesieve-setact', function() { rcmail.managesieve_setact() }, true);
+    rcmail.register_command('plugin.managesieve-setget', function() { rcmail.managesieve_setget() }, true);
 
     if (rcmail.env.action == 'plugin.managesieve')
       {
@@ -33,7 +34,8 @@ if (window.rcmail) {
 	  rcmail.enable_command('plugin.managesieve-del', 'plugin.managesieve-up',
 	    'plugin.managesieve-down', false);
           rcmail.enable_command('plugin.managesieve-add', 'plugin.managesieve-setadd', !rcmail.env.sieveconnerror);
-	  rcmail.enable_command('plugin.managesieve-set', rcmail.gui_objects.filtersetslist != null);
+	  rcmail.enable_command('plugin.managesieve-set', 'plugin.managesieve-setget',
+            rcmail.gui_objects.filtersetslist != null);
 	  rcmail.enable_command('plugin.managesieve-setact',
 	    (rcmail.gui_objects.filtersetslist && rcmail.gui_objects.filtersetslist.length > 1
 		&& rcmail.gui_objects.filtersetslist.value != rcmail.env.active_set));
@@ -410,7 +412,14 @@ if (window.rcmail) {
   rcube_webmail.prototype.managesieve_set = function()
     {
     var script = $(this.gui_objects.filtersetslist).val();
-    location.href = this.env.comm_path+'&_action=plugin.managesieve&_sid='+script;
+    location.href = this.env.comm_path+'&_action=plugin.managesieve&_set='+script;
+    };
+
+  // Script download
+  rcube_webmail.prototype.managesieve_setget = function()
+    {
+    var script = $(this.gui_objects.filtersetslist).val();
+    location.href = this.env.comm_path+'&_action=plugin.managesieve&_act=setget&_set='+script;
     };
 
   // Set activate
@@ -466,13 +475,12 @@ if (window.rcmail) {
         }
     };
 
-
   rcube_webmail.prototype.managesieve_reload = function(set)
     {
       this.env.reload_set = set;
       window.setTimeout(function() {
         location.href = rcmail.env.comm_path + '&_action=plugin.managesieve'
-	  + (rcmail.env.reload_set ? '&_sid=' + rcmail.env.reload_set : '')
+	  + (rcmail.env.reload_set ? '&_set=' + rcmail.env.reload_set : '')
 	}, 500);
     };
 

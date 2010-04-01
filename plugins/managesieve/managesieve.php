@@ -7,7 +7,7 @@
  * It's clickable interface which operates on text scripts and communicates
  * with server using managesieve protocol. Adds Filters tab in Settings.
  *
- * @version 2.3
+ * @version 2.4
  * @author Aleksander 'A.L.E.C' Machniak <alec@alec.pl>
  *
  * Configuration (see config.inc.php.dist)
@@ -79,8 +79,8 @@ class managesieve extends rcube_plugin
       $active = $this->sieve->get_active();
       $_SESSION['managesieve_active'] = $active;
       
-      if (!empty($_GET['_sid'])) {
-        $script_name = get_input_value('_sid', RCUBE_INPUT_GET);
+      if (!empty($_GET['_set'])) {
+        $script_name = get_input_value('_set', RCUBE_INPUT_GET);
       } else if (!empty($_SESSION['managesieve_current'])) {
         $script_name = $_SESSION['managesieve_current'];
       } else {
@@ -224,6 +224,33 @@ class managesieve extends rcube_plugin
           $this->rc->output->show_message('managesieve.setdeleteerror', 'error');
 	}
       }
+      else if ($action=='setget')
+      {
+        $script_name = get_input_value('_set', RCUBE_INPUT_GPC);
+	$script = $this->sieve->get_script($script_name);
+
+        if (PEAR::isError($script))
+          exit;
+
+        $browser = new rcube_browser;
+        
+        // send download headers
+        header("Content-Type: application/octet-stream");
+        header("Content-Length: ".strlen($script));
+
+        if ($browser->ie)
+          header("Content-Type: application/force-download");
+        if ($browser->ie && $browser->ver < 7)
+          $filename = rawurlencode(abbreviate_string($script_name, 55));
+        else if ($browser->ie)
+          $filename = rawurlencode($script_name);
+        else
+          $filename = addcslashes($script_name, '\\"');
+        
+        header("Content-Disposition: attachment; filename=\"$filename.txt\"");
+        echo $script;
+        exit;                                                                                              
+      }
       elseif ($action=='ruleadd')
       {
         $rid = get_input_value('_rid', RCUBE_INPUT_GPC);
@@ -255,20 +282,47 @@ class managesieve extends rcube_plugin
     // filters set add action
     if (!empty($_POST['_newset']))
     {
-      $name = get_input_value('_name', RCUBE_INPUT_GPC);
-      $copy = get_input_value('_copy', RCUBE_INPUT_GPC);
+      $name = get_input_value('_name', RCUBE_INPUT_POST);
+      $copy = get_input_value('_copy', RCUBE_INPUT_POST);
+      $from = get_input_value('_from', RCUBE_INPUT_POST);
 
       if (!$name)
 	$error = 'managesieve.emptyname';
       else if (mb_strlen($name)>128)
 	$error = 'managesieve.nametoolong';
-      else if (!$this->sieve->copy($name, $copy))
+      else if ($from == 'file') {
+        // from file
+        if (is_uploaded_file($_FILES['_file']['tmp_name'])) {
+          $file = file_get_contents($_FILES['_file']['tmp_name']);
+          $file = preg_replace('/\r/', '', $file);
+          // for security don't save script directly
+          // check syntax before, like this...
+          $this->sieve->load_script($file);
+          if (!$this->sieve->save($name)) {
+            $error = 'managesieve.setcreateerror';  
+          }
+        }
+        else {  // upload failed
+          $err = $_FILES['_file']['error'];
+          $error = true;
+          if ($err == UPLOAD_ERR_INI_SIZE || $err == UPLOAD_ERR_FORM_SIZE) {
+            $msg = rcube_label(array('name' => 'filesizeerror', 'vars' => array('size' =>
+                show_bytes(parse_bytes(ini_get('upload_max_filesize'))))));
+          }
+          else {
+            $error = 'fileuploaderror';
+          }
+        }
+      }
+      else if (!$this->sieve->copy($name, $from == 'set' ? $copy : '')) {
 	$error = 'managesieve.setcreateerror';
-		
+      }
+
       if (!$error) {
 	$this->rc->output->show_message('managesieve.setcreated', 'confirmation');
 	$this->rc->output->command('parent.managesieve_reload', $name);
-//	$this->rc->session->remove('managesieve_current');
+      } else if ($msg) {
+        $this->rc->output->command('display_message', $msg, 'error');
       } else {
         $this->rc->output->show_message($error, 'error');
       }
@@ -596,7 +650,7 @@ class managesieve extends rcube_plugin
     if (!$attrib['id'])
       $attrib['id'] = 'rcmfiltersetform';
 
-    $out = '<form name="filtersetform" action="./" method="post">'."\n";
+    $out = '<form name="filtersetform" action="./" method="post" enctype="multipart/form-data">'."\n";
 
     $hiddenfields = new html_hiddenfield(array('name' => '_task', 'value' => $this->rc->task));
     $hiddenfields->add(array('name' => '_action', 'value' => 'plugin.managesieve-save'));
@@ -605,8 +659,9 @@ class managesieve extends rcube_plugin
 
     $out .= $hiddenfields->show();
 
-    $name = get_input_value('_name', RCUBE_INPUT_GPC);
-    $copy = get_input_value('_copy', RCUBE_INPUT_GPC);
+    $name = get_input_value('_name', RCUBE_INPUT_POST);
+    $copy = get_input_value('_copy', RCUBE_INPUT_POST);
+    $selected = get_input_value('_from', RCUBE_INPUT_POST);
 
     $table = new html_table(array('cols' => 2));
 
@@ -617,6 +672,11 @@ class managesieve extends rcube_plugin
     $table->add('title', sprintf('<label for="%s"><b>%s:</b></label>', '_name', Q($this->gettext('filtersetname'))));
     $table->add(null, $input_name->show($name));
 
+    $from ='<div class="itemlist">';
+    $from .= '<input type="radio" id="from_none" name="_from" value="none"'
+        .(!$selected || $selected=='none' ? ' checked="checked"' : '').'></input>';
+    $from .= sprintf('<label for="%s">%s</label> ', 'from_none', Q($this->gettext('none')));
+
     // filters set list
     $list = $this->sieve->get_scripts();
     $active = $this->sieve->get_active();
@@ -625,12 +685,26 @@ class managesieve extends rcube_plugin
 
     asort($list, SORT_LOCALE_STRING);
 
-    $select->add($this->gettext('none'), '');
     foreach($list as $set)
       $select->add($set . ($set == $active ? ' ('.$this->gettext('active').')' : ''), $set);
     
-    $table->add('title', '<label>'.$this->gettext('copyfromset').':</label>');
-    $table->add(null, $select->show($copy));
+    $from .= '<br /><input type="radio" id="from_set" name="_from" value="set"'
+        .($selected=='set' ? ' checked="checked"' : '').'></input>';
+    $from .= sprintf('<label for="%s">%s:</label> ', 'from_set', Q($this->gettext('fromset')));
+    $from .= $select->show($copy);
+
+    // script upload box
+    $upload = new html_inputfield(array('name' => '_file', 'id' => '_file', 'size' => 30,
+	'type' => 'file', 'class' => ($this->errors['name'] ? 'error' : '')));
+
+    $from .= '<br /><input type="radio" id="from_file" name="_from" value="file"'
+        .($selected=='file' ? ' checked="checked"' : '').'></input>';
+    $from .= sprintf('<label for="%s">%s:</label> ', 'from_file', Q($this->gettext('fromfile')));
+    $from .= $upload->show();
+    $from .= '</div>';
+
+    $table->add('title', '<label>'.$this->gettext('filters').':</label>');
+    $table->add(null, $from);
 
     $out .= $table->show();
     

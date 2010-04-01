@@ -223,30 +223,69 @@ class rcube_sieve
     	    return $this->_set_error(SIEVE_ERROR_OTHER);
 
 	// try to parse from Roundcube format
-        $this->script = new rcube_sieve_script($script, $this->disabled);
+        $this->script = $this->_parse($script);
+
+    	$this->current = $name;
+
+    	return true;
+    }
+
+    /**
+    * Loads script from text content
+    */
+    public function load_script($script)
+    {
+        if (!$this->sieve)
+    	    return $this->_set_error(SIEVE_ERROR_INTERNAL);
+
+	// try to parse from Roundcube format
+        $this->script = $this->_parse($script);
+    }
+
+    /**
+    * Creates rcube_sieve_script object from text script
+    */
+    private function _parse($txt)
+    {
+	// try to parse from Roundcube format
+        $script = new rcube_sieve_script($txt, $this->disabled);
 
         // ... else try to import from different formats
-        if (empty($this->script->content)) {
-    	    $script = $this->_import_rules($script);
-    	    $this->script = new rcube_sieve_script($script, $this->disabled);
+        if (empty($script->content)) {
+    	    $script = $this->_import_rules($txt);
+    	    $script = new rcube_sieve_script($script, $this->disabled);
     	}
 
         // replace all elsif with if+stop, we support only ifs
-        foreach ($this->script->content as $idx => $rule) {
-            if (!isset($this->script->content[$idx+1])
-                || preg_match('/^else|elsif$/', $this->script->content[$idx+1]['type'])) {
+        foreach ($script->content as $idx => $rule) {
+            if (!isset($script->content[$idx+1])
+                || preg_match('/^else|elsif$/', $script->content[$idx+1]['type'])) {
                 // 'stop' not found?
                 if (!preg_match('/^(stop|vacation)$/', $rule['actions'][count($rule['actions'])-1]['type'])) {
-                    $this->script->content[$idx]['actions'][] = array(
+                    $script->content[$idx]['actions'][] = array(
                         'type' => 'stop'
                     );
                 }
             }
         }
 
-    	$this->current = $name;
+    	return $script;
+    }
 
-    	return true;
+    /**
+    * Gets specified script as text
+    */
+    public function get_script($name)
+    {
+        if (!$this->sieve)
+    	    return $this->_set_error(SIEVE_ERROR_INTERNAL);
+
+    	$content = $this->sieve->getScript($name);
+
+    	if (PEAR::isError($content))
+    	    return $this->_set_error(SIEVE_ERROR_OTHER);
+	
+        return $content;
     }
 
     /**
@@ -266,7 +305,6 @@ class rcube_sieve
 	
 	return $this->save_script($name, $content);
     }
-
 
     private function _import_rules($script)
     {

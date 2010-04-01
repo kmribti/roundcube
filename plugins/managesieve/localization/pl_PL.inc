@@ -41,12 +41,14 @@ $labels['filterset'] = 'Zbiór filtrów';
 $labels['filtersetadd'] = 'Dodaj zbiór filtrów';
 $labels['filtersetdel'] = 'Usuń bierzący zbiór filtrów';
 $labels['filtersetact'] = 'Aktywuj bierzący zbiór filtrów';
+$labels['filtersetget'] = 'Pobierz bierzący zbiór filtrów w formacie tekstowym';
 $labels['filterdef'] = 'Definicja filtra';
-$labels['filtersetname'] = 'Nazwa zbioru filtrów';
+$labels['filtersetname'] = 'Nazwa zbioru';
 $labels['newfilterset'] = 'Nowy zbiór filtrów';
 $labels['active'] = 'aktywny';
-$labels['copyfromset'] = 'Skopiuj filtry ze zbioru';
-$labels['none'] = '- brak -';
+$labels['none'] = 'brak';
+$labels['fromset'] = 'ze zbioru';
+$labels['fromfile'] = 'z pliku';
 $labels['filterdisabled'] = 'Filtr wyłączony';
 
 $messages = array();

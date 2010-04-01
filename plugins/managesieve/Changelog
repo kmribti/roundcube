@@ -1,6 +1,9 @@
+* version 2.4 [2010-04-01]
+-----------------------------------------------------------
 - Fixed bug in DIGEST-MD5 authentication (http://pear.php.net/bugs/bug.php?id=17285)
 - Fixed disabling rules with many tests
 - Small css unification with core
+- Scripts import/export
 
 * version 2.3 [2010-03-18]
 -----------------------------------------------------------
