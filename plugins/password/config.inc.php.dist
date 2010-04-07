@@ -127,6 +127,44 @@ $rcmail_config['password_ldap_adminPW'] = null;
 // Exemple: 'uid=%login,ou=people,dc=exemple,dc=com'
 $rcmail_config['password_ldap_userDN_mask'] = 'uid=%login,ou=people,dc=exemple,dc=com';
 
+// LDAP search DN
+// The DN roundcube should bind with to find out user's DN
+// based on his login. Note that you should comment out the default
+// password_ldap_userDN_mask setting for this to take effect.
+// Use this if you cannot specify a general template for user DN with
+// password_ldap_userDN_mask. You need to perform a search based on
+// users login to find his DN instead. A common reason might be that
+// your users are placed under different ou's like engineering or
+// sales which cannot be derived from their login only.
+$rcmail_config['password_ldap_searchDN'] = 'cn=roundcube,ou=services,dc=example,dc=com';
+
+// LDAP search password
+// If password_ldap_searchDN is set, the password to use for
+// binding to search for user's DN. Note that you should comment out the default
+// password_ldap_userDN_mask setting for this to take effect.
+// Warning: Be sure to set approperiate permissions on this file so this password
+// is only accesible to roundcube and don't forget to restrict roundcube's access to
+// your directory as much as possible using ACLs. Should this password be compromised
+// you want to minimize the damage.
+$rcmail_config['password_ldap_searchPW'] = 'secret';
+
+// LDAP search base
+// If password_ldap_searchDN is set, the base to search in using the filter below.
+// Note that you should comment out the default password_ldap_userDN_mask setting
+// for this to take effect.
+$rcmail_config['password_ldap_search_base'] = 'ou=people,dc=example,dc=com';
+
+// LDAP search filter
+// If password_ldap_searchDN is set, the filter to use when
+// searching for user's DN. Note that you should comment out the default
+// password_ldap_userDN_mask setting for this to take effect.
+// '%login' will be replaced by the current roundcube user's login
+// '%name' will be replaced by the current roundcube user's name part
+// '%domain' will be replaced by the current roundcube user's domain part
+// Example: '(uid=%login)'
+// Example: '(&(objectClass=posixAccount)(uid=%login))'
+$rcmail_config['password_ldap_search_filter'] = '(uid=%login)';
+
 // LDAP password hash type
 // Standard LDAP encryption type which must be one of: crypt,
 // ext_des, md5crypt, blowfish, md5, sha, smd5, ssha, or clear.
