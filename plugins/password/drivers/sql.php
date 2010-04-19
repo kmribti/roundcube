@@ -70,7 +70,8 @@ function password_save($curpass, $passwd)
             if (!preg_match('/^\{' . $method . '\}/', $newpass)) {
                 return PASSWORD_CRYPT_ERROR;
             }
-            $newpass = trim(str_replace('{' . $method . '}', '', $newpass));
+            if (!$rcmail->config->get('password_dovecotpw_with_method'))
+                $newpass = trim(str_replace('{' . $method . '}', '', $newpass));
             unlink($tmpfile);
         }
         $sql = str_replace('%D', $db->quote($newpass), $sql);
