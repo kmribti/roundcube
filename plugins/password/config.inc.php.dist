@@ -30,7 +30,7 @@ $rcmail_config['password_db_dsn'] = '';
 //      %p is replaced with the plaintext new password
 //      %c is replaced with the crypt version of the new password, MD5 if available
 //         otherwise DES.
-//      %D is replaced with dovecotpw crypt method
+//      %D is replaced with the dovecotpw-crypted version of the new password
 //      %o is replaced with the password before the change
 //      %n is replaced with the hashed version of the new password
 //      %q is replaced with the hashed password before the change
