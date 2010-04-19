@@ -52,9 +52,9 @@ function password_save($curpass, $passwd)
 
     // dovecotpw
     if (strpos($sql, '%D') !== FALSE) {
-        if (!($dovecotpw = $rcmail->config->get('dovecotpw')))
+        if (!($dovecotpw = $rcmail->config->get('password_dovecotpw')))
             $dovecotpw = 'dovecotpw';
-        if (!($method = $rcmail->config->get('dovecotmethod')))
+        if (!($method = $rcmail->config->get('password_dovecotpw_method')))
             $method = 'CRAM-MD5';
         $tmpfile = tempnam('/tmp', 'rouncdube-');
         $pipe = popen("'$dovecotpw' -s '$method' > '$tmpfile'", "w");
@@ -66,7 +66,7 @@ function password_save($curpass, $passwd)
             fwrite($pipe, $passwd . "\n", 1+strlen($passwd)); usleep(1000);
             fwrite($pipe, $passwd . "\n", 1+strlen($passwd));
             pclose($pipe);
-            $newpass = file_get_contents($tmpfile);
+            $newpass = trim(file_get_contents($tmpfile), "\n");
             if (!preg_match('/^\{' . $method . '\}/', $newpass)) {
                 return PASSWORD_CRYPT_ERROR;
             }
