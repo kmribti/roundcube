@@ -50,6 +50,9 @@ $rcmail_config['password_query'] = 'SELECT update_passwd(%c, %u)';
 // Dovecot method (dovecotpw -s 'method')
 $rcmail_config['password_dovecotpw_method'] = 'CRAM-MD5';
 
+// Enables use of password with crypt method prefix in %D, e.g. {MD5}$1$LUiMYWqx$fEkg/ggr/L6Mb2X7be4i1/
+$rcmail_config['password_dovecotpw_with_method'] = false;
+
 // Using a password hash for %n and %q variables.
 // Determine which hashing algorithm should be used to generate
 // the hashed new and current password for using them within the
