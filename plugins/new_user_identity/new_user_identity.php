@@ -39,6 +39,9 @@ class new_user_identity extends rcube_plugin
             $results = $ldap->search($match, $args['user'], TRUE);
             if (count($results->records) == 1) {
                 $args['user_name'] = $results->records[0]['name'];
+                if (!$args['user_email'] && strpos($results->records[0]['email'], '@')) {
+                    $args['user_email'] = $results->records[0]['email'];
+                }
             }
         }
         return $args;
