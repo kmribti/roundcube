@@ -34,7 +34,8 @@
  2.6.   cPanel (cpanel)
  2.7.   XIMSS/Communigate (ximms)
  2.8.	Virtualmin (virtualmin)
- 2.9    hMailServer (hmail)
+ 2.9.   hMailServer (hmail)
+ 2.10.  PAM (pam)
  3.	Driver API
 
 
@@ -204,6 +205,13 @@
  ------------------------
  
  Requires PHP COM (Windows only).
+
+
+ 2.10. PAM (pam)
+ ---------------
+ 
+ This driver is for changing passwords of shell users authenticated with PAM.
+ Requires PECL's PAM exitension to be installed (http://pecl.php.net/package/PAM).
 
 
  3. Driver API
