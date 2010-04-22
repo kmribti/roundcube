@@ -34,6 +34,7 @@
  2.6.   cPanel (cpanel)
  2.7.   XIMSS/Communigate (ximms)
  2.8.	Virtualmin (virtualmin)
+ 2.9    hMailServer (hmail)
  3.	Driver API
 
 
@@ -197,6 +198,12 @@
  As in sasl driver this one allows to change password using shell
  utility called "virtualmin". See drivers/chgvirtualminpasswd.c for
  installation instructions.
+
+
+ 2.9. hMailServer (hmail)
+ ------------------------
+ 
+ Requires PHP COM (Windows only).
 
 
  3. Driver API
