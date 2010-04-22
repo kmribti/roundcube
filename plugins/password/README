@@ -36,6 +36,7 @@
  2.8.	Virtualmin (virtualmin)
  2.9.   hMailServer (hmail)
  2.10.  PAM (pam)
+ 2.11.  Chpasswd (chpasswd)
  3.	Driver API
 
 
@@ -212,6 +213,13 @@
  
  This driver is for changing passwords of shell users authenticated with PAM.
  Requires PECL's PAM exitension to be installed (http://pecl.php.net/package/PAM).
+
+
+ 2.11. Chpasswd (chpasswd)
+ -------------------------
+ 
+ Driver that adds functionality to change the systems user password via 
+ the 'chpasswd' command. See config.inc.php file.
 
 
  3. Driver API

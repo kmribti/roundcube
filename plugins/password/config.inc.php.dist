@@ -236,4 +236,10 @@ $rcmail_config['password_ximss_host'] = 'mail.example.com';
 // XIMSS port on Communigate server
 $rcmail_config['password_ximss_port'] = 11024;
 
+
+// chpasswd Driver options
+// ---------------------
+// Command to use
+$rcmail_config['password_chpasswd_cmd'] = 'sudo /usr/sbin/chpasswd 2> /dev/null';
+
 ?>
