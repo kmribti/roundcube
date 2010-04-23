@@ -36,6 +36,7 @@ class virtuser_query extends rcube_plugin
      */
     function user2email($p)
     {
+    $rcmail = rcmail::get_instance();
 	$dbh = $rcmail->get_dbh();
 
 	$sql_result = $dbh->query(preg_replace('/%u/', $dbh->escapeSimple($p['user']), $this->query));
