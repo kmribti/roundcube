@@ -85,7 +85,7 @@ class virtuser_file extends rcube_plugin
 	    $virtual = null;
 	
 	    if ($this->file)
-	        $virtual = file($virtuser_file);
+	        $virtual = file($this->file);
 	
 	    if (empty($virtual))
 	        return $result;
