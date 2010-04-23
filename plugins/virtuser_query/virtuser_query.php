@@ -22,13 +22,13 @@ class virtuser_query extends rcube_plugin
 
     function init()
     {
-	$this->app = rcmail::get_instance();
-	$this->query = $this->app->config->get('virtuser_query');
+	    $this->app = rcmail::get_instance();
+	    $this->query = $this->app->config->get('virtuser_query');
 
-	if ($this->query) {
-	    $this->add_hook('user2email', array($this, 'user2email'));
-//	    $this->add_hook('email2user', array($this, 'email2user'));
-	}
+	    if ($this->query) {
+	        $this->add_hook('user2email', array($this, 'user2email'));
+//	        $this->add_hook('email2user', array($this, 'email2user'));
+	    }
     }
 
     /**
@@ -36,36 +36,35 @@ class virtuser_query extends rcube_plugin
      */
     function user2email($p)
     {
-    $rcmail = rcmail::get_instance();
-	$dbh = $rcmail->get_dbh();
+	    $dbh = $this->app->get_dbh();
 
-	$sql_result = $dbh->query(preg_replace('/%u/', $dbh->escapeSimple($p['user']), $this->query));
+	    $sql_result = $dbh->query(preg_replace('/%u/', $dbh->escapeSimple($p['user']), $this->query));
 
-	while ($sql_arr = $dbh->fetch_array($sql_result)) {
-	    if (strpos($sql_arr[0], '@')) {
-		if ($p['extended'] && count($sql_arr) > 1) {
-		    $result[] = array(
-			'email' 	=> $sql_arr[0],
-			'name' 		=> $sql_arr[1],
-			'organization'  => $sql_arr[2],
-			'reply-to' 	=> $sql_arr[3],
-			'bcc' 		=> $sql_arr[4],
-			'signature' 	=> $sql_arr[5],
-			'html_signature' => (int)$sql_arr[6],
-    		    );
-		}
-		else {
-		    $result[] = $sql_arr[0];
-		}
+	    while ($sql_arr = $dbh->fetch_array($sql_result)) {
+	        if (strpos($sql_arr[0], '@')) {
+		        if ($p['extended'] && count($sql_arr) > 1) {
+		            $result[] = array(
+			            'email' 	    => $sql_arr[0],
+            			'name' 		    => $sql_arr[1],
+			            'organization'  => $sql_arr[2],
+            			'reply-to' 	    => $sql_arr[3],
+			            'bcc' 		    => $sql_arr[4],
+        			    'signature' 	=> $sql_arr[5],
+		            	'html_signature' => (int)$sql_arr[6],
+    		        );
+		        }
+		        else {
+		            $result[] = $sql_arr[0];
+		        }
 
-		if ($p['first'])
-		    break;
+		        if ($p['first'])
+		            break;
+	        }
 	    }
-	}
 	
-	$p['email'] = $result;
+	    $p['email'] = $result;
 
-	return $p;
+	    return $p;
     }
 
 }

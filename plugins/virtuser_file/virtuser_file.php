@@ -18,13 +18,13 @@ class virtuser_file extends rcube_plugin
 
     function init()
     {
-	$this->app = rcmail::get_instance();
-	$this->file = $this->app->config->get('virtuser_file');
+	    $this->app = rcmail::get_instance();
+	    $this->file = $this->app->config->get('virtuser_file');
 
-	if ($this->file) {
-	    $this->add_hook('user2email', array($this, 'user2email'));
-	    $this->add_hook('email2user', array($this, 'email2user'));
-	}
+	    if ($this->file) {
+	        $this->add_hook('user2email', array($this, 'user2email'));
+	        $this->add_hook('email2user', array($this, 'email2user'));
+	    }
     }
 
     /**
@@ -33,26 +33,25 @@ class virtuser_file extends rcube_plugin
     function user2email($p)
     {
         $r = $this->findinvirtual('/\s' . preg_quote($p['user'], '/') . '\s*$/');
-	$result = array();
+	    $result = array();
 
-	for ($i=0; $i<count($r); $i++)
-	{
-	    $arr = preg_split('/\s+/', $r[$i]);
-
-	    if (count($arr) > 0 && strpos($arr[0], '@'))
+	    for ($i=0; $i<count($r); $i++)
 	    {
-		$result[] = trim(str_replace('\\@', '@', $arr[0]));
+	        $arr = preg_split('/\s+/', $r[$i]);
 
-		if ($p['first']) {
-		    $p['email'] = $result[0];
-		    break;
-		}
+	        if (count($arr) > 0 && strpos($arr[0], '@')) {
+		        $result[] = trim(str_replace('\\@', '@', $arr[0]));
+
+		        if ($p['first']) {
+		            $p['email'] = $result[0];
+		            break;
+		        }
+	        }
 	    }
-	}
 
-	$p['email'] = empty($result) ? NULL : $result;
+	    $p['email'] = empty($result) ? NULL : $result;
 
-	return $p;
+	    return $p;
     }
 
     /**
@@ -60,19 +59,18 @@ class virtuser_file extends rcube_plugin
      */
     function email2user($p)
     {
-	$r = $this->findinvirtual('/^' . preg_quote($p['email'], '/') . '\s/');
+	    $r = $this->findinvirtual('/^' . preg_quote($p['email'], '/') . '\s/');
 
-	for ($i=0; $i<count($r); $i++)
-        {
-	    $arr = preg_split('/\s+/', trim($r[$i]));
+	    for ($i=0; $i<count($r); $i++) {
+	        $arr = preg_split('/\s+/', trim($r[$i]));
 	    
-	    if (count($arr) > 0) {
-		$p['user'] = trim($arr[count($arr)-1]);
-		break;
+	        if (count($arr) > 0) {
+		        $p['user'] = trim($arr[count($arr)-1]);
+		        break;
+	        }
 	    }
-	}
 
-	return $p;
+	    return $p;
     }
 
     /**
@@ -83,27 +81,26 @@ class virtuser_file extends rcube_plugin
      */
     private function findinvirtual($pattern)
     {
-	$result = array();
-	$virtual = null;
+	    $result = array();
+	    $virtual = null;
 	
-	if ($this->file)
-	    $virtual = file($virtuser_file);
+	    if ($this->file)
+	        $virtual = file($virtuser_file);
 	
-	if (empty($virtual))
+	    if (empty($virtual))
+	        return $result;
+	
+	    // check each line for matches
+	    foreach ($virtual as $line) {
+	        $line = trim($line);
+	        if (empty($line) || $line[0]=='#')
+	            continue;
+	
+	        if (preg_match($pattern, $line))
+	            $result[] = $line;
+	    }
+	
 	    return $result;
-	
-	// check each line for matches
-	foreach ($virtual as $line)
-	{
-	    $line = trim($line);
-	    if (empty($line) || $line[0]=='#')
-	        continue;
-	
-	    if (preg_match($pattern, $line))
-	        $result[] = $line;
-	}
-	
-	return $result;
     }
 
 }
