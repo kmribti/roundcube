@@ -42,7 +42,7 @@ function update_from_svn($lang, $file)
 		$headers = true;
 		if ($fp && !$err && ($fl = @fopen(LANGDIR."$lang_prefix$file", 'w')))
 		{
-			echo '<!-- Update from SVN: ' . $lang_dir.$file . "-->\n";
+			// echo '<!-- Update from SVN: ' . $lang_dir.$file . "-->\n";
 			while (!feof($fp))
 			{
 				$line = fgets($fp, 4096);
