@@ -18,11 +18,11 @@ function password_save($curpass, $passwd)
         $sql = 'SELECT update_passwd(%c, %u)';
 
     if ($dsn = $rcmail->config->get('password_db_dsn')) {
-	// #1486067: enable new_link option
-	if (is_array($dsn) && empty($dsn['new_link']))
-	    $dsn['new_link'] = true;
-	else if (!is_array($dsn) && !preg_match('/\?new_link=true/', $dsn))
-	  $dsn .= '?new_link=true';
+	    // #1486067: enable new_link option
+	    if (is_array($dsn) && empty($dsn['new_link']))
+	        $dsn['new_link'] = true;
+	    else if (!is_array($dsn) && !preg_match('/\?new_link=true/', $dsn))
+	        $dsn .= '?new_link=true';
 
         $db = new rcube_mdb2($dsn, '', FALSE);
         $db->set_debug((bool)$rcmail->config->get('sql_debug'));
@@ -80,35 +80,35 @@ function password_save($curpass, $passwd)
     // hashed passwords
     if (preg_match('/%[n|q]/', $sql)) {
 
-	if (!extension_loaded('hash')) {
-	    raise_error(array(
-	        'code' => 600,
-		'type' => 'php',
-		'file' => __FILE__,
-		'message' => "Password plugin: 'hash' extension not loaded!"
-		), true, false);
-	    return PASSWORD_ERROR;			    
-	}
+	    if (!extension_loaded('hash')) {
+	        raise_error(array(
+	            'code' => 600,
+		        'type' => 'php',
+		        'file' => __FILE__,
+		        'message' => "Password plugin: 'hash' extension not loaded!"
+		    ), true, false);
+	        return PASSWORD_ERROR;			    
+	    }
 
-	if (!($hash_algo = strtolower($rcmail->config->get('password_hash_algorithm'))))
+	    if (!($hash_algo = strtolower($rcmail->config->get('password_hash_algorithm'))))
             $hash_algo = 'sha1';
         
-	$hash_passwd = hash($hash_algo, $passwd);
+	    $hash_passwd = hash($hash_algo, $passwd);
         $hash_curpass = hash($hash_algo, $curpass);
         
-	if ($rcmail->config->get('password_hash_base64')) {
+	    if ($rcmail->config->get('password_hash_base64')) {
             $hash_passwd = base64_encode(pack('H*', $hash_passwd));
             $hash_curpass = base64_encode(pack('H*', $hash_curpass));
         }
 	
-	$sql = str_replace('%n', $db->quote($hash_passwd, 'text'), $sql);
-	$sql = str_replace('%q', $db->quote($hash_curpass, 'text'), $sql);
+	    $sql = str_replace('%n', $db->quote($hash_passwd, 'text'), $sql);
+	    $sql = str_replace('%q', $db->quote($hash_curpass, 'text'), $sql);
     }
 
     $user_info = explode('@', $_SESSION['username']);
     if (count($user_info) >= 2) {
-	$sql = str_replace('%l', $db->quote($user_info[0], 'text'), $sql);
-	$sql = str_replace('%d', $db->quote($user_info[1], 'text'), $sql);
+	    $sql = str_replace('%l', $db->quote($user_info[0], 'text'), $sql);
+	    $sql = str_replace('%d', $db->quote($user_info[1], 'text'), $sql);
     }
     
     $sql = str_replace('%u', $db->quote($_SESSION['username'],'text'), $sql);
@@ -119,13 +119,13 @@ function password_save($curpass, $passwd)
     $res = $db->query($sql);
 
     if (!$db->is_error()) {
-	if (strtolower(substr(trim($query),0,6))=='select') {
+	    if (strtolower(substr(trim($query),0,6))=='select') {
     	    if ($result = $db->fetch_array($res))
-		return PASSWORD_SUCCESS;
-	} else { 
+		        return PASSWORD_SUCCESS;
+	    } else { 
     	    if ($db->affected_rows($res) == 1)
-		return PASSWORD_SUCCESS; // This is the good case: 1 row updated
-	}
+		        return PASSWORD_SUCCESS; // This is the good case: 1 row updated
+	    }
     }
 
     return PASSWORD_ERROR;
