@@ -1,4 +1,7 @@
-
+/*
+ * vcard_attachments plugin script
+ * @version @package_version@
+ */
 function plugin_vcard_save_contact(mime_id)
 {
   rcmail.set_busy(true, 'loading');
