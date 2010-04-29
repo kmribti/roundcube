@@ -1,4 +1,7 @@
-/* Password change interface (tab) */
+/*
+ * Password plugin script
+ * @version @package_version@
+ */
 
 if (window.rcmail) {
   rcmail.addEventListener('init', function(evt) {

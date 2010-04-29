@@ -105,12 +105,9 @@ function password_save($curpass, $passwd)
 	    $sql = str_replace('%q', $db->quote($hash_curpass, 'text'), $sql);
     }
 
-    $user_info = explode('@', $_SESSION['username']);
-    if (count($user_info) >= 2) {
-	    $sql = str_replace('%l', $db->quote($user_info[0], 'text'), $sql);
-	    $sql = str_replace('%d', $db->quote($user_info[1], 'text'), $sql);
-    }
-    
+    // at least we should always have the local part
+    $sql = str_replace('%l', $db->quote(password::username_local(), 'text'), $sql);
+    $sql = str_replace('%d', $db->quote(password::username_domain(), 'text'), $sql);
     $sql = str_replace('%u', $db->quote($_SESSION['username'],'text'), $sql);
     $sql = str_replace('%h', $db->quote($_SESSION['imap_host'],'text'), $sql);
     $sql = str_replace('%p', $db->quote($passwd,'text'), $sql);
