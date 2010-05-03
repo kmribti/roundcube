@@ -31,7 +31,7 @@ class example_addressbook extends rcube_plugin
   
   public function get_address_book($p)
   {
-    if ($p['id'] == $this->abook_id) {
+    if ($p['id'] === $this->abook_id) {
       require_once(dirname(__FILE__) . '/example_addressbook_backend.php');
       $p['instance'] = new example_addressbook_backend;
     }
