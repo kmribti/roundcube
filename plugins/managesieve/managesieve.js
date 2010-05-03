@@ -438,14 +438,15 @@ if (window.rcmail) {
       if (!this.gui_objects.filtersetslist || !name)
         return false;
 
-      var opts = this.gui_objects.filtersetslist.getElementsByTagName('option');
-      var regx = new RegExp(RegExp.escape(' (' + this.get_label('managesieve.active') + ')'));
+      var opts = this.gui_objects.filtersetslist.getElementsByTagName('option'),
+        label = ' (' + this.get_label('managesieve.active') + ')',
+        regx = new RegExp(RegExp.escape(label));
       
-      for (var x=1; x<opts.length; x++)
+      for (var x=0; x<opts.length; x++)
         if (opts[x].value != name && opts[x].innerHTML.match(regx))
-	  opts[x].innerHTML = opts[x].innerHTML.replace(regx, '');
-	else if (opts[x].value == name)
-	  opts[x].innerHTML = opts[x].innerHTML + ' (' + this.get_label('managesieve.active') + ')';
+	      opts[x].innerHTML = opts[x].innerHTML.replace(regx, '');
+	    else if (opts[x].value == name)
+	      opts[x].innerHTML = opts[x].innerHTML + label;
     };
 
   // Set delete

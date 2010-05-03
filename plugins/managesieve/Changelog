@@ -1,3 +1,5 @@
+- Fix filters set label after activation
+
 * version 2.4 [2010-04-01]
 -----------------------------------------------------------
 - Fixed bug in DIGEST-MD5 authentication (http://pear.php.net/bugs/bug.php?id=17285)
