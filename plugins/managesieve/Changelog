@@ -1,5 +1,9 @@
+* version 2.5 [2010-05-04]
+-----------------------------------------------------------
 - Fix filters set label after activation
 - Fix filters set activation, add possibility to deactivate sets (#1486699)
+- Fix download button state when sets list is empty
+- Fix errors when sets list is empty
 
 * version 2.4 [2010-04-01]
 -----------------------------------------------------------
