@@ -156,11 +156,11 @@ class managesieve extends rcube_plugin
         {
           if ($this->sieve->script->update_rule($fid, $this->script[$fid-1]) !== false
     		&& $this->sieve->script->update_rule($fid-1, $this->script[$fid]) !== false)
-	    $result = $this->sieve->save();
+	        $result = $this->sieve->save();
       
           if ($result) {
 //          $this->rc->output->show_message('managesieve.filtersaved', 'confirmation');
-	    $this->rc->output->command('managesieve_updatelist', 'up', '', $fid);
+	        $this->rc->output->command('managesieve_updatelist', 'up', '', $fid);
           } else
             $this->rc->output->show_message('managesieve.filtersaveerror', 'error');
         }
@@ -171,15 +171,15 @@ class managesieve extends rcube_plugin
         {
           if ($this->sieve->script->update_rule($fid, $this->script[$fid+1]) !== false
     		&& $this->sieve->script->update_rule($fid+1, $this->script[$fid]) !== false)
-	    $result = $this->sieve->save();
+	        $result = $this->sieve->save();
       
           if ($result === true) {
 //          $this->rc->output->show_message('managesieve.filtersaved', 'confirmation');
-	    $this->rc->output->command('managesieve_updatelist', 'down', '', $fid);
+	        $this->rc->output->command('managesieve_updatelist', 'down', '', $fid);
           } else {
             $this->rc->output->show_message('managesieve.filtersaveerror', 'error');
           }
-	}
+	    }
       }
       else if ($action=='delete' && !$error)
       {
@@ -189,45 +189,57 @@ class managesieve extends rcube_plugin
             $result = $this->sieve->save();
 
           if ($result === true) {
-	    $this->rc->output->show_message('managesieve.filterdeleted', 'confirmation');
-	    $this->rc->output->command('managesieve_updatelist', 'delete', '', $fid);
+	        $this->rc->output->show_message('managesieve.filterdeleted', 'confirmation');
+	        $this->rc->output->command('managesieve_updatelist', 'delete', '', $fid);
           } else {
             $this->rc->output->show_message('managesieve.filterdeleteerror', 'error');
           }
-	}
+	    }
       }
       else if ($action=='setact' && !$error)
       {
         $script_name = get_input_value('_set', RCUBE_INPUT_GPC);
-	$result = $this->sieve->activate($script_name);
+	    $result = $this->sieve->activate($script_name);
 	
-	if ($result === true) {
+	    if ($result === true) {
           $this->rc->output->set_env('active_set', $script_name);
-	  $this->rc->output->show_message('managesieve.setactivated', 'confirmation');
-	  $this->rc->output->command('enable_command', 'plugin.managesieve-setact', false);
-	  $this->rc->output->command('managesieve_reset', $script_name);
-	  $_SESSION['managesieve_active'] = $script_name;
-	} else {
+	      $this->rc->output->show_message('managesieve.setactivated', 'confirmation');
+	      $this->rc->output->command('managesieve_reset');
+	      $_SESSION['managesieve_active'] = $script_name;
+	    } else {
           $this->rc->output->show_message('managesieve.setactivateerror', 'error');
-	}
+	    }
+      }
+      else if ($action=='deact' && !$error)
+      {
+	    $result = $this->sieve->deactivate();
+	
+	    if ($result === true) {
+          $this->rc->output->set_env('active_set', '');
+	      $this->rc->output->show_message('managesieve.setdeactivated', 'confirmation');
+	      $this->rc->output->command('managesieve_reset');
+	      $_SESSION['managesieve_active'] = '';
+	    } else {
+          $this->rc->output->show_message('managesieve.setdeactivateerror', 'error');
+	    }
       }
       else if ($action=='setdel' && !$error)
       {
         $script_name = get_input_value('_set', RCUBE_INPUT_GPC);
-	$result = $this->sieve->remove($script_name);
+	    $result = $this->sieve->remove($script_name);
 	
-	if ($result === true) {
-	  $this->rc->output->show_message('managesieve.setdeleted', 'confirmation');
-	  $this->rc->output->command('managesieve_reload');
-	  $this->rc->session->remove('managesieve_current');
-	} else {
+	    if ($result === true) {
+	      $this->rc->output->show_message('managesieve.setdeleted', 'confirmation');
+	      $this->rc->output->command('managesieve_reload');
+	      $this->rc->session->remove('managesieve_current');
+	    } else {
           $this->rc->output->show_message('managesieve.setdeleteerror', 'error');
-	}
+	    }
       }
       else if ($action=='setget')
       {
         $script_name = get_input_value('_set', RCUBE_INPUT_GPC);
-	$script = $this->sieve->get_script($script_name);
+	    $script = $this->sieve->get_script($script_name);
 
         if (PEAR::isError($script))
           exit;
@@ -624,8 +636,8 @@ class managesieve extends rcube_plugin
     
     // set client env
     $this->rc->output->add_gui_object('filtersetslist', $attrib['id']);
-    $this->rc->output->add_label('managesieve.setdeleteconfirm');
-    $this->rc->output->add_label('managesieve.active');
+    $this->rc->output->add_label('managesieve.setdeleteconfirm',
+      'managesieve.active', 'managesieve.filtersetact', 'managesieve.filtersetdeact');
   
     return $out;
   }

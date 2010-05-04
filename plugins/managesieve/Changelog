@@ -1,4 +1,5 @@
 - Fix filters set label after activation
+- Fix filters set activation, add possibility to deactivate sets (#1486699)
 
 * version 2.4 [2010-04-01]
 -----------------------------------------------------------
