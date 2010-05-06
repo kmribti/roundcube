@@ -20,10 +20,14 @@ class emoticons extends rcube_plugin
     $this->add_hook('message_part_after', array($this, 'replace'));
   
     $this->map = array(
-      ':)'  => html::img(array('src' => './program/js/tiny_mce/plugins/emotions/img/smiley-smile.gif', 'alt' => ':)')),
-      ':-)' => html::img(array('src' => './program/js/tiny_mce/plugins/emotions/img/smiley-smile.gif', 'alt' => ':-)')),
-      ':('  => html::img(array('src' => './program/js/tiny_mce/plugins/emotions/img/smiley-cry.gif', 'alt' => ':(')),
-      ':-(' => html::img(array('src' => './program/js/tiny_mce/plugins/emotions/img/smiley-cry.gif', 'alt' => ':-(')),
+      ':)'  => html::img(array('src' => './program/js/tiny_mce/plugins/emotions/img/smiley-smile.gif', 'title' => ':)')),
+      ':-)' => html::img(array('src' => './program/js/tiny_mce/plugins/emotions/img/smiley-smile.gif', 'title' => ':-)')),
+      ':D'  => html::img(array('src' => './program/js/tiny_mce/plugins/emotions/img/smiley-laughing.gif', 'title' => ':D')),
+      ':-D' => html::img(array('src' => './program/js/tiny_mce/plugins/emotions/img/smiley-laughing.gif', 'title' => ':-D')),
+      ';)'  => html::img(array('src' => './program/js/tiny_mce/plugins/emotions/img/smiley-wink.gif', 'title' => ';)')),
+      ';-)' => html::img(array('src' => './program/js/tiny_mce/plugins/emotions/img/smiley-wink.gif', 'title' => ';-)')),
+      ':('  => html::img(array('src' => './program/js/tiny_mce/plugins/emotions/img/smiley-frown.gif', 'title' => ':(')),
+      ':-(' => html::img(array('src' => './program/js/tiny_mce/plugins/emotions/img/smiley-frown.gif', 'title' => ':-(')),
     );
   }
 
