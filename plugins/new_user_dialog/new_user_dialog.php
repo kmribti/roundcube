@@ -52,24 +52,41 @@ class new_user_dialog extends rcube_plugin
       $table = new html_table(array('cols' => 2));
       
       $table->add('title', $this->gettext('name'));
-      $table->add(null, html::tag('input', array('type' => "text", 'name' => "_name", 'value' => $identity['name'])));
+      $table->add(null, html::tag('input', array(
+        'type' => 'text',
+        'name' => '_name',
+        'value' => $identity['name']
+      )));
 
       $table->add('title', $this->gettext('email'));
-      $table->add(null, html::tag('input', array('type' => "text", 'name' => "_email", 'value' => $identity['email'], 'disabled' => ($identities_level == 1 || $identities_level == 3))));
+      $table->add(null, html::tag('input', array(
+        'type' => 'text',
+        'name' => '_email',
+        'value' => $identity['email'],
+        'disabled' => ($identities_level == 1 || $identities_level == 3)
+      )));
       
       // add overlay input box to html page
-      $rcmail->output->add_footer(html::div(array('id' => "newuseroverlay"),
+      $rcmail->output->add_footer(html::div(array('id' => 'newuseroverlay'),
         html::tag('form', array(
             'action' => $rcmail->url('plugin.newusersave'),
-            'method' => "post"),
+            'method' => 'post'),
           html::tag('h3', null, Q($this->gettext('identitydialogtitle'))) .
           html::p('hint', Q($this->gettext('identitydialoghint'))) .
           $table->show() .
-          html::p(array('class' => "formbuttons"),
-            html::tag('input', array('type' => "submit", 'class' => "button mainaction", 'value' => $this->gettext('save'))))
+          html::p(array('class' => 'formbuttons'),
+            html::tag('input', array('type' => 'submit',
+              'class' => 'button mainaction', 'value' => $this->gettext('save'))))
         )
       ));
-      
+
+      // disable keyboard events for messages list (#1486726)
+      $rcmail->output->add_script(
+        "$(document).ready(function () {
+          rcmail.message_list.key_press = function(){};
+          rcmail.message_list.key_down = function(){};
+          });", 'foot');
+
       $this->include_stylesheet('newuserdialog.css');
     }
   }
