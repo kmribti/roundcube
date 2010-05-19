@@ -13,18 +13,18 @@
 class new_user_dialog extends rcube_plugin
 {
   public $task = 'login|mail';
-  
+
   function init()
   {
     $this->add_hook('create_identity', array($this, 'create_identity'));
-    
+
     // register additional hooks if session flag is set
     if ($_SESSION['plugin.newuserdialog']) {
       $this->add_hook('render_page', array($this, 'render_page'));
       $this->register_action('plugin.newusersave', array($this, 'save_data'));
     }
   }
-  
+
   /**
    * Check newly created identity at first login
    */
@@ -41,16 +41,16 @@ class new_user_dialog extends rcube_plugin
    */
   function render_page($p)
   {
-    if ($_SESSION['plugin.newuserdialog']) {
+    if ($_SESSION['plugin.newuserdialog'] && $p['template'] == 'mail') {
       $this->add_texts('localization');
-      
+
       $rcmail = rcmail::get_instance();
       $identity = $rcmail->user->get_identity();
       $identities_level = intval($rcmail->config->get('identities_level', 0));
-      
+
       // compose user-identity dialog
       $table = new html_table(array('cols' => 2));
-      
+
       $table->add('title', $this->gettext('name'));
       $table->add(null, html::tag('input', array(
         'type' => 'text',
@@ -65,7 +65,7 @@ class new_user_dialog extends rcube_plugin
         'value' => $identity['email'],
         'disabled' => ($identities_level == 1 || $identities_level == 3)
       )));
-      
+
       // add overlay input box to html page
       $rcmail->output->add_footer(html::div(array('id' => 'newuseroverlay'),
         html::tag('form', array(
@@ -102,25 +102,25 @@ class new_user_dialog extends rcube_plugin
     $rcmail = rcmail::get_instance();
     $identity = $rcmail->user->get_identity();
     $identities_level = intval($rcmail->config->get('identities_level', 0));
-    
+
     $save_data = array(
       'name' => get_input_value('_name', RCUBE_INPUT_POST),
       'email' => get_input_value('_email', RCUBE_INPUT_POST),
     );
-    
+
     // don't let the user alter the e-mail address if disabled by config
     if ($identities_level == 1 || $identities_level == 3)
       $save_data['email'] = $identity['email'];
-    
+
     // save data if not empty
     if (!empty($save_data['name']) && !empty($save_data['email'])) {
       $rcmail->user->update_identity($identity['identity_id'], $save_data);
       $rcmail->session->remove('plugin.newuserdialog');
     }
-    
+
     $rcmail->output->redirect('');
   }
-  
+
 }
 
 ?>
