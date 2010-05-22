@@ -7,4 +7,3 @@ $labels['lastlogin'] = 'Последний вход';
 $labels['defaultidentity'] = 'Профиль по умолчанию';
 
 ?>
-
