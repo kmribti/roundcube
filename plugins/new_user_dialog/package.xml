@@ -26,6 +26,7 @@
 	<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPLv2</license>
 	<notes>
 - Add overlay box only to mail task main template
+- Fix possible error on form submission (#1486103)
     </notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
