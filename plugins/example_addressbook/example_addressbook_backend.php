@@ -11,6 +11,7 @@ class example_addressbook_backend extends rcube_addressbook
 {
   public $primary_key = 'ID';
   public $readonly = true;
+  public $groups = true;
   
   private $filter;
   private $result;
@@ -36,6 +37,14 @@ class example_addressbook_backend extends rcube_addressbook
     $this->filter = null;
   }
 
+  function list_groups($search = null)
+  {
+    return array(
+      array('ID' => 'testgroup1', 'name' => "Testgroup"),
+      array('ID' => 'testgroup2', 'name' => "Sample Group"),
+    );
+  }
+  
   public function list_records($cols=null, $subset=0)
   {
     $this->result = $this->count();
@@ -67,6 +76,34 @@ class example_addressbook_backend extends rcube_addressbook
     $sql_arr = $first['ID'] == $id ? $first : null;
     
     return $assoc && $sql_arr ? $sql_arr : $this->result;
+  }
+
+
+  function create_group($name)
+  {
+    $result = false;
+
+    return $result;
+  }
+
+  function delete_group($gid)
+  {
+    return false;
+  }
+
+  function rename_group($gid, $newname)
+  {
+    return $newname;
+  }
+
+  function add_to_group($group_id, $ids)
+  {
+    return false;
+  }
+
+  function remove_from_group($group_id, $ids)
+  {
+     return false;
   }
   
 }

@@ -1,5 +1,7 @@
 <?php
 
+require_once(dirname(__FILE__) . '/example_addressbook_backend.php');
+
 /**
  * Sample plugin to add a new address book
  * with just a static list of contacts
@@ -25,14 +27,19 @@ class example_addressbook extends rcube_plugin
   
   public function address_sources($p)
   {
-    $p['sources'][$this->abook_id] = array('id' => $this->abook_id, 'name' => 'Static List', 'readonly' => true);
+    $abook = new example_addressbook_backend;
+    $p['sources'][$this->abook_id] = array(
+      'id' => $this->abook_id,
+      'name' => 'Static List',
+      'readonly' => $abook->readonly,
+      'groups' => $abook->groups,
+    );
     return $p;
   }
   
   public function get_address_book($p)
   {
     if ($p['id'] === $this->abook_id) {
-      require_once(dirname(__FILE__) . '/example_addressbook_backend.php');
       $p['instance'] = new example_addressbook_backend;
     }
     
