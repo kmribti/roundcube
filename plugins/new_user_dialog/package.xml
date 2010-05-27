@@ -13,10 +13,10 @@
 		<email>roundcube@gmail.com</email>
 		<active>yes</active>
 	</lead>
-	<date>?</date>
-	<time>?</time>
+	<date>2010-05-27</date>
+	<time>12:00:00</time>
 	<version>
-		<release>?</release>
+		<release>1.2</release>
 		<api>1.0</api>
 	</version>
 	<stability>
@@ -78,6 +78,7 @@
 		        <api>stable</api>
 	        </stability>
         	<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPLv2</license>
+        	<notes></notes>
         </release>
         <release>
 	        <date>2010-05-13</date>
