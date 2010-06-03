@@ -1,3 +1,7 @@
+* version 2.6 [2010-06-03]
+-----------------------------------------------------------
+- Support %n and %d variables in managesieve_host option
+
 * version 2.5 [2010-05-04]
 -----------------------------------------------------------
 - Fix filters set label after activation
