@@ -1,5 +1,16 @@
 <?php
 
+// Driver - 'file' or 'sql'
+$rcmail_config['squirrelmail_driver'] = 'sql';
+
 // full path to the squirrelmail data directory
 $rcmail_config['squirrelmail_data_dir'] = '';
+$rcmail_config['squirrelmail_data_dir_hash_level'] = 0;
+
+// 'mysql://dbuser:dbpass@localhost/database'
+$rcmail_config['squirrelmail_dsn'] = 'mysql://user:password@localhost/webmail';
+$rcmail_config['squirrelmail_db_charset'] = 'iso-8859-1';
+
+$rcmail_config['squirrelmail_address_table'] = 'address';
+$rcmail_config['squirrelmail_userprefs_table'] = 'userprefs';
 
