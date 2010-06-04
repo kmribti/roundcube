@@ -56,7 +56,7 @@ function password_save($curpass, $passwd)
             $dovecotpw = 'dovecotpw';
         if (!($method = $rcmail->config->get('password_dovecotpw_method')))
             $method = 'CRAM-MD5';
-        $tmpfile = tempnam('/tmp', 'rouncdube-');
+        $tmpfile = tempnam('/tmp', 'roundcube-');
         $pipe = popen("'$dovecotpw' -s '$method' > '$tmpfile'", "w");
         if (!$pipe) {
             unlink($tmpfile);
