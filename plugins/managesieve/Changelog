@@ -1,3 +1,5 @@
+- Update Net_Sieve to version 1.2.2
+
 * version 2.6 [2010-06-03]
 -----------------------------------------------------------
 - Support %n and %d variables in managesieve_host option
