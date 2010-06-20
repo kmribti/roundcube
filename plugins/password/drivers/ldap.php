@@ -133,14 +133,15 @@ function search_userdn($rcmail)
  */
 function substitute_vars($str)
 {
+    $rcmail = rcmail::get_instance();
     $str = str_replace(array(
             '%login',
             '%name',
             '%domain',
         ), array(
             $_SESSION['username'],
-            password::username_local(),
-            password::username_domain(),
+            $rcmail->user->get_username('local'),
+            $rcmail->user->get_username('domain'),
         ), $str
     );
 

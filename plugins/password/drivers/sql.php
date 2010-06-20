@@ -106,8 +106,8 @@ function password_save($curpass, $passwd)
     }
 
     // at least we should always have the local part
-    $sql = str_replace('%l', $db->quote(password::username_local(), 'text'), $sql);
-    $sql = str_replace('%d', $db->quote(password::username_domain(), 'text'), $sql);
+    $sql = str_replace('%l', $db->quote($rcmail->user->get_username('local'), 'text'), $sql);
+    $sql = str_replace('%d', $db->quote($rcmail->user->get_username('domain'), 'text'), $sql);
     $sql = str_replace('%u', $db->quote($_SESSION['username'],'text'), $sql);
     $sql = str_replace('%h', $db->quote($_SESSION['imap_host'],'text'), $sql);
     $sql = str_replace('%p', $db->quote($passwd,'text'), $sql);

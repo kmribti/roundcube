@@ -15,11 +15,11 @@
 		<email>alec@alec.pl</email>
 		<active>yes</active>
 	</lead>
-	<date>2010-04-29</date>
+	<date>2010-06-20</date>
 	<time>12:00:00</time>
 	<version>
-		<release>1.4</release>
-		<api>1.4</api>
+		<release>1.5</release>
+		<api>1.5</api>
 	</version>
 	<stability>
 		<release>stable</release>
@@ -27,9 +27,8 @@
 	</stability>
 	<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPLv2</license>
 	<notes>
-- Use mail_domain value for domain variables when there is no domain in username:
-  sql and ldap drivers(#1486694)
-- Created package.xml
+- Removed user_login/username_local/username_domain methods,
+  use rcube_user::get_username instead (#1486707)
     </notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
@@ -98,4 +97,24 @@
 		</required>
 	</dependencies>
 	<phprelease/>
+	<changelog>
+	    <release>
+	        <date>2010-04-29</date>
+	        <time>12:00:00</time>
+	        <version>
+		        <release>1.4</release>
+		        <api>1.4</api>
+	        </version>
+	        <stability>
+		        <release>stable</release>
+		        <api>stable</api>
+	        </stability>
+	        <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPLv2</license>
+	        <notes>
+- Use mail_domain value for domain variables when there is no domain in username:
+  sql and ldap drivers (#1486694)
+- Created package.xml
+            </notes>
+	    </release>
+	</changelog>
 </package>

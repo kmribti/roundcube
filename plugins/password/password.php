@@ -240,39 +240,7 @@ class password extends rcube_plugin
             default:
                 return $this->gettext('internalerror');
         }
-    }
-
-    static function username_local()
-    {
-        return password::user_login('local');
-    }
-
-    static function username_domain()
-    {
-        return password::user_login('domain');
-    }
-    
-    static function user_login($part = null)
-    {
-        $user_info = explode('@', $_SESSION['username']);
-  
-        // at least we should always have the local part
-        if ($part == 'local') {
-            return $user_info[0];
-        }
-        else if ($part == 'domain') {
-            if (!empty($user_info[1])) {
-                return $user_info[1];
-            }
-            // if no domain was provided use the default if available
-            if ($domain = rcmail::get_instance()->config->get('mail_domain')) {
-                return $domain;
-            }
-            return '';
-        }
-
-        return $_SESSION['username'];
-    }                                          
+    }                                     
 }
 
 ?>
