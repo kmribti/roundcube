@@ -6,11 +6,11 @@
   position: absolute;
   left: 20px;
   top: 120px;
-  bottom: 30px;
+  bottom: 20px;
   border: 1px solid #999999;
   overflow: auto;
   /* css hack for IE */
-  height: expression((parseInt(document.documentElement.clientHeight)-155)+'px');
+  height: expression((parseInt(document.documentElement.clientHeight)-140)+'px');
 }
 
 #filters-table
@@ -151,12 +151,12 @@
   position: absolute;
   top: 120px;
   right: 20px;
-  bottom: 30px;
+  bottom: 20px;
   border: 1px solid #999999;
   overflow: hidden;
   /* css hack for IE */
-  width: expression((parseInt(document.documentElement.clientWidth)-30-parseInt(document.getElementById('filterslist').offsetLeft)-parseInt(document.getElementById('filterslist').offsetWidth))+'px');
-  height: expression((parseInt(document.documentElement.clientHeight)-155)+'px');
+  width: expression((parseInt(document.documentElement.clientWidth)-40-parseInt(document.getElementById('filterslist').offsetWidth))+'px');
+  height: expression((parseInt(document.documentElement.clientHeight)-140)+'px');
 }
 
 #filter-frame
