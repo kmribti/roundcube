@@ -90,7 +90,7 @@ class vcard_attachments extends rcube_plugin
                     html::a(array(
                         'href' => "#",
                         'onclick' => "return plugin_vcard_save_contact('".JQ($part.':'.$idx)."')",
-                        'title' => $this->gettext('addvardmsg')),
+                        'title' => $this->gettext('addvcardmsg')),
                         html::img(array('src' => $this->url('vcard_add_contact.png'),
                             'style' => "vertical-align:middle")))
                     . ' ' . html::span(null, Q($display)));
