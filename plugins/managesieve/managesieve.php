@@ -468,12 +468,15 @@ class managesieve extends rcube_plugin
                 $type   = $this->strip_value($type);
                 $target = $this->strip_value($act_targets[$idx]);
 
-                $this->form['actions'][$i]['type'] = $type;
-
                 switch ($type) {
                 case 'fileinto':
+                case 'fileinto_copy':
                     $mailbox = $this->strip_value($mailboxes[$idx]);
                     $this->form['actions'][$i]['target'] = $mailbox;
+                    if ($type == 'fileinto_copy') {
+                        $type = 'fileinto';
+                        $this->form['actions'][$i]['copy'] = true;
+                    }
                     break;
                 case 'reject':
                 case 'ereject':
@@ -484,12 +487,18 @@ class managesieve extends rcube_plugin
 //                      $this->errors['actions'][$i]['targetarea'] = $this->gettext('cannotbeempty');
                     break;
                 case 'redirect':
+                case 'redirect_copy':
                     $this->form['actions'][$i]['target'] = $target;
 
                     if ($this->form['actions'][$i]['target'] == '')
                         $this->errors['actions'][$i]['target'] = $this->gettext('cannotbeempty');
                     else if (!check_email($this->form['actions'][$i]['target']))
                         $this->errors['actions'][$i]['target'] = $this->gettext('noemailwarning');
+
+                    if ($type == 'redirect_copy') {
+                        $type = 'redirect';
+                        $this->form['actions'][$i]['copy'] = true;
+                    }
                     break;
                 case 'vacation':
                     $reason = $this->strip_value($reasons[$idx]);
@@ -518,6 +527,7 @@ class managesieve extends rcube_plugin
                     break;
                 }
 
+                $this->form['actions'][$i]['type'] = $type;
                 $i++;
             }
 
@@ -941,7 +951,11 @@ class managesieve extends rcube_plugin
             'onchange' => 'action_type_select(' .$id .')'));
         if (in_array('fileinto', $this->exts))
             $select_action->add(Q($this->gettext('messagemoveto')), 'fileinto');
+        if (in_array('fileinto', $this->exts) && in_array('copy', $this->exts))
+            $select_action->add(Q($this->gettext('messagecopyto')), 'fileinto_copy');
         $select_action->add(Q($this->gettext('messageredirect')), 'redirect');
+        if (in_array('copy', $this->exts))
+            $select_action->add(Q($this->gettext('messagesendcopy')), 'redirect_copy');
         if (in_array('reject', $this->exts))
             $select_action->add(Q($this->gettext('messagediscard')), 'reject');
         else if (in_array('ereject', $this->exts))
@@ -951,7 +965,12 @@ class managesieve extends rcube_plugin
         $select_action->add(Q($this->gettext('messagedelete')), 'discard');
         $select_action->add(Q($this->gettext('rulestop')), 'stop');
 
-        $out .= $select_action->show($action['type']);
+        $select_type = $action['type'];
+        if (in_array($action['type'], array('fileinto', 'redirect')) && $action['copy']) {
+            $select_type .= '_copy';
+        }
+
+        $out .= $select_action->show($select_type);
         $out .= '</td>';
 
         // actions target inputs

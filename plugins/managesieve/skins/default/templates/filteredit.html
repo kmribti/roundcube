@@ -51,14 +51,14 @@ function action_type_select(id)
 {
     var obj = document.getElementById('action_type'+id);
 
-    if (obj.value == 'fileinto')
+    if (obj.value == 'fileinto' || obj.value == 'fileinto_copy')
     {
 	document.getElementById('action_mailbox' + id).style.display = 'inline';
 	document.getElementById('action_target' + id).style.display = 'none';
 	document.getElementById('action_target_area' + id).style.display = 'none';
 	document.getElementById('action_vacation' + id).style.display = 'none';
     }
-    else if (obj.value == 'redirect')
+    else if (obj.value == 'redirect' || obj.value == 'redirect_copy')
     {
 	document.getElementById('action_target' + id).style.display = 'inline';
 	document.getElementById('action_mailbox' + id).style.display = 'none';

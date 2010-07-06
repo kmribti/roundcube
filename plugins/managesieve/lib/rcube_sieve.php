@@ -382,6 +382,7 @@ class rcube_sieve_script
         'fileinto',
         'reject',
         'ereject',
+        'copy',                     // RFC3894
         'vacation',                 // RFC5230
     // TODO: (most wanted first) body, imapflags, notify, regex
     );
@@ -532,15 +533,25 @@ class rcube_sieve_script
             foreach ($rule['actions'] as $action) {
                 switch ($action['type']) {
                 case 'fileinto':
-                    $extension = 'fileinto';
-                    $script .= "\tfileinto \"" . $this->_escape_string($action['target']) . "\";\n";
+                    array_push($exts, 'fileinto');
+                    $script .= "\tfileinto ";
+                    if ($action['copy']) {
+                        $script .= ':copy ';
+                        array_push($exts, 'copy');
+                    }
+                    $script .= "\"" . $this->_escape_string($action['target']) . "\";\n";
                     break;
                 case 'redirect':
-                    $script .= "\tredirect \"" . $this->_escape_string($action['target']) . "\";\n";
+                    $script .= "\tredirect ";
+                    if ($action['copy']) {
+                        $script .= ':copy ';
+                        array_push($exts, 'copy');
+                    }
+                    $script .= "\"" . $this->_escape_string($action['target']) . "\";\n";
                     break;
                 case 'reject':
                 case 'ereject':
-                    $extension = $action['type'];
+                    array_push($exts, $action['type']);
                     if (strpos($action['target'], "\n")!==false)
                         $script .= "\t".$action['type']." text:\n" . $action['target'] . "\n.\n;\n";
                     else
@@ -552,7 +563,7 @@ class rcube_sieve_script
                     $script .= "\t" . $action['type'] .";\n";
                     break;
                 case 'vacation':
-                    $extension = 'vacation';
+                    array_push($exts, 'vacation');
                     $script .= "\tvacation";
                     if ($action['days'])
                         $script .= " :days " . $action['days'];
@@ -572,9 +583,6 @@ class rcube_sieve_script
                         $script .= " \"" . $this->_escape_string($action['reason']) . "\";\n";
                     break;
                 }
-
-                if ($extension && !isset($exts[$extension]))
-                    $exts[$extension] = $extension;
             }
 
             $script .= "}\n";
@@ -582,8 +590,8 @@ class rcube_sieve_script
         }
 
         // requires
-        if (sizeof($exts))
-            $script = 'require ["' . implode('","', $exts) . "\"];\n" . $script;
+        if (!empty($exts))
+            $script = 'require ["' . implode('","', array_unique($exts)) . "\"];\n" . $script;
 
         return $script;
     }
@@ -714,10 +722,24 @@ class rcube_sieve_script
                     $result[] = array('type' => $matches[1]);
                 }
                 else if(preg_match('/^fileinto/', $content)) {
-                    $result[] = array('type' => 'fileinto', 'target' => $this->_parse_string($m[sizeof($m)-1]));
+                    $target = $m[sizeof($m)-1];
+                    $copy = false;
+                    if (preg_match('/^:copy\s+/', $target)) {
+                        $target = preg_replace('/^:copy\s+/', '', $target);
+                        $copy = true;
+                    }
+                    $result[] = array('type' => 'fileinto', 'copy' => $copy,
+                        'target' => $this->_parse_string($target));
                 }
                 else if(preg_match('/^redirect/', $content)) {
-                    $result[] = array('type' => 'redirect', 'target' => $this->_parse_string($m[sizeof($m)-1]));
+                    $target = $m[sizeof($m)-1];
+                    $copy = false;
+                    if (preg_match('/^:copy\s+/', $target)) {
+                        $target = preg_replace('/^:copy\s+/', '', $target);
+                        $copy = true;
+                    }
+                    $result[] = array('type' => 'redirect', 'copy' => $copy,
+                        'target' => $this->_parse_string($target));
                 }
                 else if(preg_match('/^(reject|ereject)\s+(.*);$/sm', $content, $matches)) {
                     $result[] = array('type' => $matches[1], 'target' => $this->_parse_string($matches[2]));
