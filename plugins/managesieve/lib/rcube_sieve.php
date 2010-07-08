@@ -36,27 +36,31 @@ class rcube_sieve
     /**
      * Object constructor
      *
-     * @param  string  Username (to managesieve login)
-     * @param  string  Password (to managesieve login)
-     * @param  string  Managesieve server hostname/address
-     * @param  string  Managesieve server port number
-     * @param  string  Enable/disable TLS use
-     * @param  array   Disabled extensions
+     * @param string  Username (for managesieve login)
+     * @param string  Password (for managesieve login)
+     * @param string  Managesieve server hostname/address
+     * @param string  Managesieve server port number
+     * @param string  Managesieve authentication method 
+     * @param boolean Enable/disable TLS use
+     * @param array   Disabled extensions
+     * @param boolean Enable/disable debugging
      */
     public function __construct($username, $password='', $host='localhost', $port=2000,
-                $usetls=true, $disabled=array(), $debug=false)
+        $auth_type=null, $usetls=true, $disabled=array(), $debug=false)
     {
         $this->sieve = new Net_Sieve();
 
-        if ($debug)
+        if ($debug) {
             $this->sieve->setDebug(true, array($this, 'debug_handler'));
-
-        if (PEAR::isError($this->sieve->connect($host, $port, NULL, $usetls)))
+        }
+        if (PEAR::isError($this->sieve->connect($host, $port, NULL, $usetls))) {
             return $this->_set_error(SIEVE_ERROR_CONNECTION);
-
-        if (PEAR::isError($this->sieve->login($username, $password)))
+        }
+        if (PEAR::isError($this->sieve->login($username, $password,
+            $auth_type ? strtoupper($auth_type) : null))
+        ) {
             return $this->_set_error(SIEVE_ERROR_LOGIN);
-
+        }
         $this->disabled = $disabled;
     }
 

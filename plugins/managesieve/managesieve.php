@@ -7,7 +7,7 @@
  * It's clickable interface which operates on text scripts and communicates
  * with server using managesieve protocol. Adds Filters tab in Settings.
  *
- * @version 2.6
+ * @version 2.8
  * @author Aleksander 'A.L.E.C' Machniak <alec@alec.pl>
  *
  * Configuration (see config.inc.php.dist)
@@ -68,6 +68,7 @@ class managesieve extends rcube_plugin
         // try to connect to managesieve server and to fetch the script
         $this->sieve = new rcube_sieve($_SESSION['username'],
             $this->rc->decrypt($_SESSION['password']), $host, $port,
+            $this->rc->config->get('managesieve_auth_type'),
             $this->rc->config->get('managesieve_usetls', false),
             $this->rc->config->get('managesieve_disabled_extensions'),
             $this->rc->config->get('managesieve_debug', false)
@@ -1090,5 +1091,3 @@ class managesieve extends rcube_plugin
         return rcube_charset_convert($text, 'UTF7-IMAP', $encoding);
     }
 }
-
-?>
