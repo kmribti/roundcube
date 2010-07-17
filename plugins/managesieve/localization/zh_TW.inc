@@ -36,6 +36,20 @@ $labels['vacationaddresses'] = '其他收件者（用半形逗號隔開）：';
 $labels['vacationdays'] = '多久回覆一次（單位：天）：';
 $labels['vacationreason'] = '信件內容（休假原因）：';
 $labels['rulestop'] = '停止評估規則';
+$labels['filterset'] = '篩選器集合';
+$labels['filtersetadd'] = '加入篩選器集合';
+$labels['filtersetdel'] = '刪除目前的篩選器集合';
+$labels['filtersetact'] = '啟用目前的篩選器集合';
+$labels['filtersetdeact'] = '停用目前的篩選器集合';
+$labels['filtersetget'] = '以純文字下載篩選器集合';
+$labels['filterdef'] = '篩選器定義';
+$labels['filtersetname'] = '篩選器集合名稱';
+$labels['newfilterset'] = '建立篩選器集合';
+$labels['active'] = '啟用';
+$labels['none'] = '無';
+$labels['fromset'] = '從集合';
+$labels['fromfile'] = '重檔案';
+$labels['filterdisabled'] = '篩選器已停用';
 
 $messages = array();
 $messages['filterunknownerror'] = '未知的伺服器錯誤';
@@ -49,5 +63,16 @@ $messages['ruledeleteconfirm'] = '您確定要刪除選的規則嗎？';
 $messages['actiondeleteconfirm'] = '您確定要刪除選擇的動作嗎？';
 $messages['forbiddenchars'] = '內容包含禁用字元';
 $messages['cannotbeempty'] = '內容不能為空白';
+$messages['setactivateerror'] = '無法啟用選擇的篩選器集合。 伺服器發生錯誤';
+$messages['setdeactivateerror'] = '無法停用選擇的篩選器集合。 伺服器發生錯誤';
+$messages['setdeleteerror'] = '無法刪除選擇的篩選器集合。 伺服器發生錯誤';
+$messages['setactivated'] = '篩選器集合成功啟用';
+$messages['setdeactivated'] = '篩選器集合成功停用';
+$messages['setdeleted'] = '篩選器集合成功刪除';
+$messages['setdeleteconfirm'] = '你確定要刪除選擇的篩選器集合嗎？';
+$messages['setcreateerror'] = '無法建立篩選器集合。 伺服器發生錯誤';
+$messages['setcreated'] = '篩選器集合成功建立';
+$messages['emptyname'] = '無法建立篩選器集合。 集合名稱空白';
+$messages['nametoolong'] = '無法建立篩選器集合。 名稱太長'
 
 ?>
