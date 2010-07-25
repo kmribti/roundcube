@@ -3,6 +3,3 @@
 // Help content iframe source
 // $rcmail_config['help_source'] = 'http://trac.roundcube.net/wiki';
 $rcmail_config['help_source'] = '';
-
-?>
-  
