@@ -24,8 +24,8 @@ class squirrelmail_usercopy extends rcube_plugin
 		    $ilevel = $rcmail->config->get('identities_level', 0);
         $this->identities_level = intval($ilevel);
 
-		$this->add_hook('create_user', array($this, 'create_user'));
-		$this->add_hook('create_identity', array($this, 'create_identity'));
+		$this->add_hook('user_create', array($this, 'create_user'));
+		$this->add_hook('identity_create', array($this, 'create_identity'));
 	}
 
 	public function create_user($p)

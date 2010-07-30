@@ -31,11 +31,11 @@ class subscriptions_option extends rcube_plugin
         $this->add_texts('localization/', false);
         $dont_override = rcmail::get_instance()->config->get('dont_override', array());
         if (!in_array('use_subscriptions', $dont_override)) {
-            $this->add_hook('user_preferences', array($this, 'settings_blocks'));
-            $this->add_hook('save_preferences', array($this, 'save_prefs'));
+            $this->add_hook('preferences_list', array($this, 'settings_blocks'));
+            $this->add_hook('preferences_save', array($this, 'save_prefs'));
         }
-        $this->add_hook('list_mailboxes', array($this, 'list_mailboxes'));
-        $this->add_hook('manage_folders', array($this, 'manage_folders'));
+        $this->add_hook('mailboxes_list', array($this, 'mailboxes_list'));
+        $this->add_hook('folders_list', array($this, 'folders_list'));
     }
 
     function settings_blocks($args)
@@ -72,7 +72,7 @@ class subscriptions_option extends rcube_plugin
         return $args;
     }
 
-    function list_mailboxes($args)
+    function mailboxes_list($args)
     {
         $rcmail = rcmail::get_instance();
         if (!$rcmail->config->get('use_subscriptions', true)) {
@@ -81,7 +81,7 @@ class subscriptions_option extends rcube_plugin
         return $args;
     }
 
-    function manage_folders($args)
+    function folders_list($args)
     {
         $rcmail = rcmail::get_instance();
         if (!$rcmail->config->get('use_subscriptions', true)) {

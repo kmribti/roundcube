@@ -53,8 +53,8 @@ class archive extends rcube_plugin
     else if ($rcmail->task == 'settings') {
       $dont_override = $rcmail->config->get('dont_override', array());
       if (!in_array('archive_mbox', $dont_override)) {
-        $this->add_hook('user_preferences', array($this, 'prefs_table'));
-        $this->add_hook('save_preferences', array($this, 'save_prefs'));
+        $this->add_hook('preferences_list', array($this, 'prefs_table'));
+        $this->add_hook('preferences_save', array($this, 'save_prefs'));
       }
     }
   }

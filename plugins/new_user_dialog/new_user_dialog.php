@@ -16,7 +16,7 @@ class new_user_dialog extends rcube_plugin
 
   function init()
   {
-    $this->add_hook('create_identity', array($this, 'create_identity'));
+    $this->add_hook('identity_create', array($this, 'create_identity'));
     $this->register_action('plugin.newusersave', array($this, 'save_data'));
 
     // register additional hooks if session flag is set

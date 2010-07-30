@@ -19,7 +19,7 @@ class additional_message_headers extends rcube_plugin
 
     function init()
     {
-        $this->add_hook('outgoing_message_headers', array($this, 'message_headers'));
+        $this->add_hook('message_outgoing_headers', array($this, 'message_headers'));
     }
 
     function message_headers($args)

@@ -26,7 +26,7 @@ class new_user_identity extends rcube_plugin
 
     function init()
     {
-        $this->add_hook('create_user', array($this, 'lookup_user_name'));
+        $this->add_hook('user_create', array($this, 'lookup_user_name'));
     }
 
     function lookup_user_name($args)

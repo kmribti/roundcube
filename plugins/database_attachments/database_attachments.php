@@ -109,19 +109,19 @@ class database_attachments extends filesystem_attachments
 
     /**
      * When composing an html message, image attachments may be shown
-     * For this plugin, $this->get_attachment will check the file and
+     * For this plugin, $this->get() will check the file and
      * return it's contents
      */
     function display($args)
     {
-        return $this->get_attachment($args);
+        return $this->get($args);
     }
 
     /**
      * When displaying or sending the attachment the file contents are fetched
-     * using this method. This is also called by the display_attachment hook.
+     * using this method. This is also called by the attachment_display hook.
      */
-    function get_attachment($args)
+    function get($args)
     {
         $rcmail = rcmail::get_instance();
         
