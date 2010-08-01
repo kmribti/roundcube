@@ -37,6 +37,7 @@
  2.9.   hMailServer (hmail)
  2.10.  PAM (pam)
  2.11.  Chpasswd (chpasswd)
+ 2.12.  LDAP - no PEAR (ldap_simple)
  3.	Driver API
 
 
@@ -220,6 +221,21 @@
  
  Driver that adds functionality to change the systems user password via 
  the 'chpasswd' command. See config.inc.php file.
+
+
+ 2.12.  LDAP - no PEAR (ldap_simple)
+ -----------------------------------
+
+ It's rewritten ldap driver that doesn't require the Net_LDAP2 PEAR extension.
+ It uses directly PHP's ldap module functions instead (as Roundcube does).
+
+ This driver is fully compatible with the ldap driver, but
+ does not require (or uses) the
+    $rcmail_config['password_ldap_force_replace'] variable.
+ Other advantages:
+    * Connects only once with the LDAP server when using the search user.
+    * Does not read the DN, but only replaces the password within (that is
+      why the 'force replace' is always used).
 
 
  3. Driver API
