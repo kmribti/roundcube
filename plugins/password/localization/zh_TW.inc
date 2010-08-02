@@ -16,5 +16,6 @@ $messages['connecterror'] = '無法更新密碼：連線失敗';
 $messages['internalerror'] = '無法更新密碼';
 $messages['passwordshort'] = '您的密碼至少需 $length 個字元長';
 $messages['passwordweak'] = '您的新密碼至少需含有一個數字與一個標點符號';
+$messages['passwordforbidden'] = '您的密碼含有禁用字元';
 
 ?>
