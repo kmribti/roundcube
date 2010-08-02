@@ -751,32 +751,32 @@ class rcube_sieve_script
                 else if(preg_match('/^vacation\s+(.*);$/sm', $content, $matches)) {
                     $vacation = array('type' => 'vacation');
 
-                    if (preg_match('/:(days)\s+([0-9]+)/', $content, $vm)) {
-                        $vacation['days'] = $vm[2];
-                        $content = preg_replace('/:(days)\s+([0-9]+)/', '', $content);
+                    if (preg_match('/:days\s+([0-9]+)/', $content, $vm)) {
+                        $vacation['days'] = $vm[1];
+                        $content = preg_replace('/:days\s+([0-9]+)/', '', $content);
                     }
-                    if (preg_match('/:(subject)\s+(".*?[^\\\]")/', $content, $vm)) {
-                        $vacation['subject'] = $vm[2];
-                        $content = preg_replace('/:(subject)\s+(".*?[^\\\]")/', '', $content);
+                    if (preg_match('/:subject\s+"(.*?[^\\\])"/', $content, $vm)) {
+                        $vacation['subject'] = $vm[1];
+                        $content = preg_replace('/:subject\s+"(.*?[^\\\])"/', '', $content);
                     }
-                    if (preg_match('/:(addresses)\s+\[(.*?[^\\\])\]/', $content, $vm)) {
-                        $vacation['addresses'] = $this->_parse_list($vm[2]);
-                        $content = preg_replace('/:(addresses)\s+\[(.*?[^\\\])\]/', '', $content);
+                    if (preg_match('/:addresses\s+\[(.*?[^\\\])\]/', $content, $vm)) {
+                        $vacation['addresses'] = $this->_parse_list($vm[1]);
+                        $content = preg_replace('/:addresses\s+\[(.*?[^\\\])\]/', '', $content);
                     }
-                    if (preg_match('/:(handle)\s+(".*?[^\\\]")/', $content, $vm)) {
-                        $vacation['handle'] = $vm[2];
-                    $content = preg_replace('/:(handle)\s+(".*?[^\\\]")/', '', $content);
+                    if (preg_match('/:handle\s+"(.*?[^\\\])"/', $content, $vm)) {
+                        $vacation['handle'] = $vm[1];
+                        $content = preg_replace('/:handle\s+"(.*?[^\\\])"/', '', $content);
                     }
-                    if (preg_match('/:(from)\s+(".*?[^\\\]")/', $content, $vm)) {
-                        $vacation['from'] = $vm[2];
-                        $content = preg_replace('/:(from)\s+(".*?[^\\\]")/', '', $content);
+                    if (preg_match('/:from\s+"(.*?[^\\\])"/', $content, $vm)) {
+                        $vacation['from'] = $vm[1];
+                        $content = preg_replace('/:from\s+"(.*?[^\\\])"/', '', $content);
                     }
 
                     $content = preg_replace('/^vacation/', '', $content);
                     $content = preg_replace('/;$/', '', $content);
                     $content = trim($content);
 
-                    if (preg_match('/^:(mime)/', $content, $vm)) {
+                    if (preg_match('/^:mime/', $content, $vm)) {
                         $vacation['mime'] = true;
                         $content = preg_replace('/^:mime/', '', $content);
                     }
