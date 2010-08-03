@@ -16,5 +16,6 @@ $messages['connecterror'] = 'No se pudo guardar la contraseña nueva. Error de c
 $messages['internalerror'] = 'No se pudo guardar la contraseña nueva.';
 $messages['passwordshort'] = 'Tu contraseña debe tener una longitud mínima de $length.';
 $messages['passwordweak'] = 'Tu nueva contraseña debe incluir al menos un número y un signo de puntuación.';
+$messages['passwordforbidden'] = 'La contraseña contiene caracteres prohibidos.';
 
 ?>
