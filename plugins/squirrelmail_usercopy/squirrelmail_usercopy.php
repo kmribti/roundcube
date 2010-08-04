@@ -20,7 +20,7 @@ class squirrelmail_usercopy extends rcube_plugin
 
         // Set identities_level for operations of this plugin
 		$ilevel = $rcmail->config->get('squirrelmail_identities_level');
-        if (!$ilevel === null)
+        if ($ilevel === null)
 		    $ilevel = $rcmail->config->get('identities_level', 0);
         $this->identities_level = intval($ilevel);
 
