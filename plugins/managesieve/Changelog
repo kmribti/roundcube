@@ -1,3 +1,5 @@
+- Fixed import from Avelsieve
+
 * version 2.9 [2010-08-02]
 -----------------------------------------------------------
 - Fixed vacation parameters parsing (#1486883)

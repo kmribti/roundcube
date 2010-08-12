@@ -339,6 +339,10 @@ class rcube_sieve
                     $content .= "# rule:[".$name[$i]."]\n";
                 }
                 elseif (isset($name[$i])) {
+                    // This preg_replace is added because I've found some Avelsieve scripts
+                    // with rules containing "if" here. I'm not sure it was working
+                    // before without this or not.
+                    $token = preg_replace('/^if\s+/', '', trim($token));
                     $content .= "if $token\n";
                     $i++;
                 }
