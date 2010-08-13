@@ -1,5 +1,7 @@
 <?php
 
+//  EN-Revision: 3891
+
 $labels = array();
 $labels['changepasswd']  = 'パスワードの変更';
 $labels['curpasswd']  = '現在のパスワード:';

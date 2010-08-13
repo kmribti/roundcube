@@ -1,5 +1,7 @@
 <?php
 
+//  EN-Revision: 3891
+
 $labels = array();
 $labels['userinfo'] = 'ユーザー情報';
 $labels['created'] = '作成日';
