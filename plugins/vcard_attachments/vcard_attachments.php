@@ -26,32 +26,21 @@ class vcard_attachments extends rcube_plugin
     }
 
     /**
-     * Check message attachments for vcards
+     * Check message bodies and attachments for vcards
      */
     function message_load($p)
     {
         $this->message = $p['object'];
     
-        // handle attachments with specified content type:
-        // Content-Type: text/vcard;
-        // Content-Type: text/x-vcard;
-        // Content-Type: text/directory; profile=vCard;
+        // handle attachments vcard attachments
         foreach ((array)$this->message->attachments as $attachment) {
-            if ($attachment->mimetype == 'text/vcard' ||
-                $attachment->mimetype == 'text/x-vcard' ||
-                ($attachment->mimetype == 'text/directory' && $attachment->ctype_parameters['profile']
-                    && strtolower($attachment->ctype_parameters['profile']) == 'vcard')
-            ) {
+            if ($this->is_vcard($attachment)) {
                 $this->vcard_parts[] = $attachment->mime_id;
             }
         }
         // the same with message bodies
         foreach ((array)$this->message->parts as $idx => $part) {
-            if ($part->mimetype == 'text/vcard' ||
-                $part->mimetype == 'text/x-vcard' ||
-                ($part->mimetype == 'text/directory' && $part->ctype_parameters['profile']
-                    && strtolower($part->ctype_parameters['profile']) == 'vcard')
-            ) {
+            if ($this->is_vcard($part)) {
                 $this->vcard_parts[] = $part->mime_id;
                 $this->vcard_bodies[] = $part->mime_id;
             }
@@ -157,4 +146,28 @@ class vcard_attachments extends rcube_plugin
         $rcmail->output->send();
     }
 
+    /**
+     * Checks if specified message part is a vcard data
+     *
+     * @param rcube_message_part Part object
+     *
+     * @return boolean True if part is of type vcard
+     */
+    function is_vcard($part)
+    {
+        return (
+            // Content-Type: text/vcard;
+            $part->mimetype == 'text/vcard' ||
+            // Content-Type: text/x-vcard;
+            $part->mimetype == 'text/x-vcard' ||
+            // Content-Type: text/directory; profile=vCard;
+            ($part->mimetype == 'text/directory' && (
+                ($part->ctype_parameters['profile'] &&
+                    strtolower($part->ctype_parameters['profile']) == 'vcard')
+            // Content-Type: text/directory; (with filename=*.vcf)
+                    || ($part->filename && preg_match('/\.vcf$/i', $part->filename))
+                )
+            )
+        );
+    }
 }
