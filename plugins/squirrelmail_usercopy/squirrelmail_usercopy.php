@@ -144,8 +144,8 @@ class squirrelmail_usercopy extends rcube_plugin
 			$address_table = $rcmail->config->get('squirrelmail_address_table');
 			$db_charset = $rcmail->config->get('squirrelmail_db_charset');
 
-			$db->query('SET CHARACTER SET '.$db_charset);
-			$db->query('SET NAMES '.$db_encoding);
+            if ($db_charset)
+    			$db->query('SET NAMES '.$db_charset);
 
 			$sql_result = $db->query('SELECT * FROM '.$userprefs_table.' WHERE user=?', $uname); // ? is replaced with emailaddress
 
