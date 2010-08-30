@@ -31,7 +31,7 @@ class vcard_attachments extends rcube_plugin
     function message_load($p)
     {
         $this->message = $p['object'];
-    
+
         // handle attachments vcard attachments
         foreach ((array)$this->message->attachments as $attachment) {
             if ($this->is_vcard($attachment)) {
@@ -45,7 +45,7 @@ class vcard_attachments extends rcube_plugin
                 $this->vcard_bodies[] = $part->mime_id;
             }
         }
-                                        
+
         if ($this->vcard_parts)
             $this->add_texts('localization');
     }
@@ -69,13 +69,16 @@ class vcard_attachments extends rcube_plugin
             if (in_array($part, $this->vcard_bodies))
                 $p['content'] = '';
 
+            $style = 'margin:0.5em 1em; padding:0.2em 0.5em; border:1px solid #999; '
+                .'border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; width: auto';
+
             foreach ($vcards as $idx => $vcard) {
                 $display = $vcard->displayname;
                 if ($vcard->email[0])
                     $display .= ' <'.$vcard->email[0].'>';
 
                 // add box below messsage body
-                $p['content'] .= html::p(array('style' => "margin:0.5em 1em; padding:0.2em 0.5em; border:1px solid #999; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; width: auto"),
+                $p['content'] .= html::p(array('style' => $style),
                     html::a(array(
                         'href' => "#",
                         'onclick' => "return plugin_vcard_save_contact('".JQ($part.':'.$idx)."')",
@@ -113,12 +116,12 @@ class vcard_attachments extends rcube_plugin
         }
 
         $error_msg = $this->gettext('vcardsavefailed');
-    
+
         if ($part && ($vcards = rcube_vcard::import($part))
             && ($vcard = $vcards[$index]) && $vcard->displayname && $vcard->email) {
 
             $contacts = $rcmail->get_address_book(null, true);
-      
+
             // check for existing contacts
             $existing = $contacts->search('email', $vcard->email[0], true, false);
             if ($existing->count) {
@@ -126,23 +129,26 @@ class vcard_attachments extends rcube_plugin
             }
             else {
                 // add contact
-                $success = $contacts->insert(array(
+                $contact = array(
                     'name'      => $vcard->displayname,
                     'firstname' => $vcard->firstname,
                     'surname'   => $vcard->surname,
                     'email'     => $vcard->email[0],
                     'vcard'     => $vcard->export(),
-                ));
+                );
 
-                if ($success)
+                $plugin = $rcmail->plugins->exec_hook('contact_create', array('record' => $contact, 'source' => null));
+                $contact = $plugin['record'];
+
+                if (!$plugin['abort'] && ($done = $contacts->insert($contact)))
                     $rcmail->output->command('display_message', $this->gettext('addedsuccessfully'), 'confirmation');
                 else
                     $rcmail->output->command('display_message', $error_msg, 'error');
             }
-        }       
+        }
         else
             $rcmail->output->command('display_message', $error_msg, 'error');
-    
+
         $rcmail->output->send();
     }
 

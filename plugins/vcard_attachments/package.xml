@@ -19,10 +19,10 @@
 		<email>alec@alec.pl</email>
 		<active>yes</active>
 	</lead>
-	<date>2010-04-28</date>
-	<time>12:00:00</time>
+	<date></date>
+	<time></time>
 	<version>
-		<release>2.0</release>
+		<release></release>
 		<api>2.0</api>
 	</version>
 	<stability>
@@ -31,11 +31,7 @@
 	</stability>
 	<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPLv2</license>
 	<notes>
-- Added support for Content-Type: text/directory; profile=vCard
-- Added handler for message bodies of type vCard (#1486683)
-- Added support for more than one vCard attachment/body
-- Added support for more than one contact in one vCard file
-- Created package.xml
+- Exec contact_create hook when adding contact (#1486964)
     </notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
@@ -68,4 +64,26 @@
 		</required>
 	</dependencies>
 	<phprelease/>
+	<changelog>
+	    <release>
+        	<date>2010-04-28</date>
+        	<time>12:00:00</time>
+            <version>
+        		<release>2.0</release>
+		        <api>2.0</api>
+        	</version>
+        	<stability>
+		        <release>stable</release>
+        		<api>stable</api>
+	        </stability>
+        	<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPLv2</license>
+	        <notes>
+- Added support for Content-Type: text/directory; profile=vCard
+- Added handler for message bodies of type vCard (#1486683)
+- Added support for more than one vCard attachment/body
+- Added support for more than one contact in one vCard file
+- Created package.xml
+            </notes>
+        </release>
+	</changelog>
 </package>
