@@ -354,7 +354,7 @@ class enigma extends rcube_plugin
     private function parse_plain(&$p)
     {
         $this->load_engine();
-        $this->engine->parse_plain(&$p);
+        $this->engine->parse_plain($p);
     }
     
     /**
@@ -366,7 +366,7 @@ class enigma extends rcube_plugin
     private function parse_signed(&$p)
     {
         $this->load_engine();
-        $this->engine->parse_signed(&$p);
+        $this->engine->parse_signed($p);
     }
 
     /**
@@ -377,7 +377,7 @@ class enigma extends rcube_plugin
     private function parse_encrypted(&$p)
     {
         $this->load_engine();
-        $this->engine->parse_encrypted(&$p);
+        $this->engine->parse_encrypted($p);
     }
     
     /**
