@@ -27,7 +27,6 @@ class enigma_ui
     private $enigma;
     private $home;
     private $css_added;
-    private $listsize;
     private $data;
 
 
@@ -50,7 +49,7 @@ class enigma_ui
 
         // Enigma actions
         if ($this->rc->action == 'plugin.enigma') {
-            $action = get_input_value('_a', RCUBE_INPUT_GET);
+            $action = get_input_value('_a', RCUBE_INPUT_GPC);
 
             switch ($action) {
                 case 'keyedit':
@@ -60,8 +59,10 @@ class enigma_ui
                     $this->key_import();
                     break;
                 case 'keysearch':
-                    $this->key_search();
+                case 'keylist':
+                    $this->key_list();
                     break;
+                case 'keyinfo':
                 default:
                     $this->key_info();
             }
@@ -70,9 +71,9 @@ class enigma_ui
         else { // if ($this->rc->action == 'edit-prefs') {
             if ($section == 'enigmacerts') {
                 $this->rc->output->add_handlers(array(
-                    'keyslist' => array($this, 'certs_list'),
-                    'keyframe' => array($this, 'cert_frame'),
-                    'countdisplay' => array($this, 'certs_rowcount'),
+                    'keyslist' => array($this, 'tpl_certs_list'),
+                    'keyframe' => array($this, 'tpl_cert_frame'),
+                    'countdisplay' => array($this, 'tpl_certs_rowcount'),
                     'searchform' => array($this->rc->output, 'search_form'),
                 ));
                 $this->rc->output->set_pagetitle($this->enigma->gettext('enigmacerts'));
@@ -80,9 +81,9 @@ class enigma_ui
             }
             else {
                 $this->rc->output->add_handlers(array(
-                    'keyslist' => array($this, 'keys_list'),
-                    'keyframe' => array($this, 'key_frame'),
-                    'countdisplay' => array($this, 'keys_rowcount'),
+                    'keyslist' => array($this, 'tpl_keys_list'),
+                    'keyframe' => array($this, 'tpl_key_frame'),
+                    'countdisplay' => array($this, 'tpl_keys_rowcount'),
                     'searchform' => array($this->rc->output, 'search_form'),
                 ));
                 $this->rc->output->set_pagetitle($this->enigma->gettext('enigmakeys'));
@@ -114,12 +115,12 @@ class enigma_ui
      *
      * @return string HTML output
      */
-    function key_frame($attrib)
+    function tpl_key_frame($attrib)
     {
         if (!$attrib['id']) {
             $attrib['id'] = 'rcmkeysframe';
         }
-    
+
         $attrib['name'] = $attrib['id'];
 
         $this->rc->output->set_env('contentframe', $attrib['name']);
@@ -136,10 +137,8 @@ class enigma_ui
      *
      * @return string HTML content
      */
-    function keys_list($attrib)
+    function tpl_keys_list($attrib)
     {
-        $this->enigma->load_engine();
-
         // add id to message list table if not specified
         if (!strlen($attrib['id'])) {
             $attrib['id'] = 'rcmenigmakeyslist';
@@ -147,41 +146,71 @@ class enigma_ui
 
         // define list of cols to be displayed
         $a_show_cols = array('name');
-        $result = array();
-
-        // Get the list
-        $list = $this->enigma->engine->list_keys();
-
-        if (is_array($list)) {
-            // Sort the list by key (user) name
-            usort($list, array('enigma_key', 'cmp'));
-
-            foreach($list as $idx => $key) {
-                $result[] = array('name' => $key->name, 'id' => $key->id);
-                unset($list[$idx]);
-            }
-        }
 
         // create XHTML table
-        $out = rcube_table_output($attrib, $result, $a_show_cols, 'id');
-
-        if ($list && ($list instanceof enigma_error))
-            $this->rc->output->show_message('enigma.keylisterror', 'error');
-        else if (empty($result))
-            $this->rc->output->show_message('enigma.nokeysfound', 'notice');
-        else
-            $this->listsize = count($result);
+        $out = rcube_table_output($attrib, array(), $a_show_cols, 'id');
 
         // set client env
         $this->rc->output->add_gui_object('keyslist', $attrib['id']);
         $this->rc->output->include_script('list.js');
-  
+
         // add some labels to client
         $this->rc->output->add_label('enigma.keyconfirmdelete');
-  
+
         return $out;
     }
 
+    /**
+     * Key listing (and searching) request handler
+     */
+    private function key_list()
+    {
+        $this->enigma->load_engine();
+
+        $pagesize = $this->rc->config->get('pagesize', 100);
+        $page     = max(intval(get_input_value('_p', RCUBE_INPUT_GPC)), 1);
+        $search   = get_input_value('_q', RCUBE_INPUT_GPC);
+
+        // define list of cols to be displayed
+        $a_show_cols = array('name');
+        $result = array();
+
+        // Get the list
+        $list = $this->enigma->engine->list_keys($search);
+
+        if ($list && ($list instanceof enigma_error))
+            $this->rc->output->show_message('enigma.keylisterror', 'error');
+        else if (empty($list))
+            $this->rc->output->show_message('enigma.nokeysfound', 'notice');
+        else {
+            if (is_array($list)) {
+                // Save the size
+                $listsize = count($list);
+
+                // Sort the list by key (user) name
+                usort($list, array('enigma_key', 'cmp'));
+
+                // Slice current page
+                $list = array_slice($list, ($page - 1) * $pagesize, $pagesize);
+
+                $size = count($list);
+
+                // Add rows
+                foreach($list as $idx => $key) {
+                    $this->rc->output->command('enigma_add_list_row',
+                        array('name' => Q($key->name), 'id' => $key->id));
+                }
+            }
+        }
+
+        $this->rc->output->set_env('search_request', $search);
+        $this->rc->output->set_env('pagecount', ceil($listsize/$pagesize));
+        $this->rc->output->set_env('current_page', $page);
+        $this->rc->output->command('set_rowcount',
+            $this->get_rowcount_text($listsize, $size, $page));
+
+        $this->rc->output->send();
+    }
 
     /**
      * Template object for list records counter.
@@ -190,7 +219,7 @@ class enigma_ui
      *
      * @return string HTML output
      */
-    function keys_rowcount($attrib)
+    function tpl_keys_rowcount($attrib)
     {
         if (!$attrib['id'])
             $attrib['id'] = 'rcmcountdisplay';
@@ -203,22 +232,21 @@ class enigma_ui
     /**
      * Returns text representation of list records counter
      */
-    private function get_rowcount_text()
+    private function get_rowcount_text($all, $curr_count, $page)
     {
-        $page_size = $this->rc->config->get('pagesize', 100);
-        $count = $this->listsize;
-        $first = 0;
+        $pagesize = $this->rc->config->get('pagesize', 100);
+        $first = ($page - 1) * $pagesize;
 
-        if (!$count)
+        if (!$curr_count)
             $out = $this->enigma->gettext('nokeysfound');
         else
             $out = $this->enigma->gettext(array(
                 'name' => 'keysfromto',
                 'vars' => array(
                     'from'  => $first + 1,
-                    'to'    => min($count, $page_size),
-                    'count' => $count)
-        ));
+                    'to'    => $first + $curr_count,
+                    'count' => $all)
+            ));
 
         return $out;
     }
@@ -242,8 +270,8 @@ class enigma_ui
         }
 
         $this->rc->output->add_handlers(array(
-            'keyname' => array($this, 'key_name'),
-            'keydata' => array($this, 'key_data'),
+            'keyname' => array($this, 'tpl_key_name'),
+            'keydata' => array($this, 'tpl_key_data'),
         ));
 
         $this->rc->output->set_pagetitle($this->enigma->gettext('keyinfo'));
@@ -253,7 +281,7 @@ class enigma_ui
     /**
      * Template object for key name
      */
-    function key_name($attrib)
+    function tpl_key_name($attrib)
     {
         return Q($this->data->name);
     }
@@ -261,7 +289,7 @@ class enigma_ui
     /**
      * Template object for key information page content
      */
-    function key_data($attrib)
+    function tpl_key_data($attrib)
     {
         $out = '';
         $table = new html_table(array('cols' => 2)); 
@@ -340,7 +368,7 @@ class enigma_ui
         }
 
         $this->rc->output->add_handlers(array(
-            'importform' => array($this, 'key_import_form'),
+            'importform' => array($this, 'tpl_key_import_form'),
         ));
 
         $this->rc->output->set_pagetitle($this->enigma->gettext('keyimport'));
@@ -350,7 +378,7 @@ class enigma_ui
     /**
      * Template object for key import (upload) form
      */
-    function key_import_form($attrib)
+    function tpl_key_import_form($attrib)
     {
         $attrib += array('id' => 'rcmKeyImportForm');
   
