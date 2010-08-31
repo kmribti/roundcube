@@ -31,7 +31,7 @@
  * @author    Michael Gauthier <mike@silverorange.com>
  * @copyright 2008 silverorange
  * @license   http://www.gnu.org/copyleft/lesser.html LGPL License 2.1
- * @version   CVS: $Id: VerifyStatusHandler.php 302810 2010-08-26 15:30:17Z gauthierm $
+ * @version   CVS: $Id: VerifyStatusHandler.php 302908 2010-08-31 03:56:54Z gauthierm $
  * @link      http://pear.php.net/package/Crypt_GPG
  * @link      http://www.gnupg.org/
  */
@@ -135,6 +135,32 @@ class Crypt_GPG_VerifyStatusHandler
 
             $this->index++;
             $this->signatures[$this->index] = $signature;
+            break;
+
+        case 'ERRSIG':
+            $signature = new Crypt_GPG_Signature();
+
+            // if there was a signature id, set it on the new signature
+            if ($this->signatureId != '') {
+                $signature->setId($this->signatureId);
+                $this->signatureId = '';
+            }
+
+            // Detect whether fingerprint or key id was returned and set
+            // signature values appropriately. Key ids are strings of either
+            // 16 or 8 hexadecimal characters. Fingerprints are strings of 40
+            // hexadecimal characters. The key id is the last 16 characters of
+            // the key fingerprint.
+            if (strlen($tokens[1]) > 16) {
+                $signature->setKeyFingerprint($tokens[1]);
+                $signature->setKeyId(substr($tokens[1], -16));
+            } else {
+                $signature->setKeyId($tokens[1]);
+            }
+
+            $this->index++;
+            $this->signatures[$this->index] = $signature;
+
             break;
 
         case 'VALIDSIG':

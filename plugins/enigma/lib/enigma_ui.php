@@ -232,7 +232,7 @@ class enigma_ui
     /**
      * Returns text representation of list records counter
      */
-    private function get_rowcount_text($all, $curr_count, $page)
+    private function get_rowcount_text($all=0, $curr_count=0, $page=1)
     {
         $pagesize = $this->rc->config->get('pagesize', 100);
         $first = ($page - 1) * $pagesize;
