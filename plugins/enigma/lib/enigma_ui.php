@@ -234,12 +234,12 @@ class enigma_ui
      */
     private function get_rowcount_text($all=0, $curr_count=0, $page=1)
     {
-        $pagesize = $this->rc->config->get('pagesize', 100);
-        $first = ($page - 1) * $pagesize;
-
         if (!$curr_count)
             $out = $this->enigma->gettext('nokeysfound');
-        else
+        else {
+            $pagesize = $this->rc->config->get('pagesize', 100);
+            $first = ($page - 1) * $pagesize;
+
             $out = $this->enigma->gettext(array(
                 'name' => 'keysfromto',
                 'vars' => array(
@@ -247,6 +247,7 @@ class enigma_ui
                     'to'    => $first + $curr_count,
                     'count' => $all)
             ));
+        }
 
         return $out;
     }
@@ -346,13 +347,16 @@ class enigma_ui
             $result = $this->enigma->engine->import_key($_FILES['_file']['tmp_name'], true);
 
             if (is_array($result)) {
+                // reload list if any keys has been added
+                if ($result['imported']) {
+                    $this->rc->output->command('parent.enigma_list', 1);
+                }
+                else
+                    $this->rc->output->command('parent.enigma_loadframe');
+
                 $this->rc->output->show_message('enigma.keysimportsuccess', 'confirmation',
                     array('new' => $result['imported'], 'old' => $result['unchanged']));
 
-                if ($result['imported']) {
-                    // @TODO: reload list if any keys has been added
-                }
-                $this->rc->output->command('parent.enigma_loadframe');
                 $this->rc->output->send('iframe');
             }
             else
@@ -381,7 +385,7 @@ class enigma_ui
     function tpl_key_import_form($attrib)
     {
         $attrib += array('id' => 'rcmKeyImportForm');
-  
+
         $upload = new html_inputfield(array('type' => 'file', 'name' => '_file',
             'id' => 'rcmimportfile', 'size' => 30));
 
@@ -389,7 +393,7 @@ class enigma_ui
             Q($this->enigma->gettext('keyimporttext'), 'show')
             . html::br() . html::br() . $upload->show()
         );
-  
+
         $this->rc->output->add_label('selectimportfile', 'importwait');
         $this->rc->output->add_gui_object('importform', $attrib['id']);
 
