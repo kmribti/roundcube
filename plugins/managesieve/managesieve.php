@@ -917,10 +917,14 @@ class managesieve extends rcube_plugin
         $out .= $select_size_op->show($rule['test']=='size' ? $rule['type'] : '');
         $out .= '<input type="text" name="_rule_size_target[]" value="'.$sizetarget.'" size="10" ' 
             . $this->error_class($id, 'test', 'sizetarget') .' />
-            <input type="radio" name="_rule_size_item['.$id.']" value=""'. (!$sizeitem ? ' checked="checked"' : '') .' class="radio" />B
-            <input type="radio" name="_rule_size_item['.$id.']" value="K"'. ($sizeitem=='K' ? ' checked="checked"' : '') .' class="radio" />kB
-            <input type="radio" name="_rule_size_item['.$id.']" value="M"'. ($sizeitem=='M' ? ' checked="checked"' : '') .' class="radio" />MB
-            <input type="radio" name="_rule_size_item['.$id.']" value="G"'. ($sizeitem=='G' ? ' checked="checked"' : '') .' class="radio" />GB';
+            <input type="radio" name="_rule_size_item['.$id.']" value=""'
+                . (!$sizeitem ? ' checked="checked"' : '') .' class="radio" />'.rcube_label('B').'
+            <input type="radio" name="_rule_size_item['.$id.']" value="K"'
+                . ($sizeitem=='K' ? ' checked="checked"' : '') .' class="radio" />'.rcube_label('KB').'
+            <input type="radio" name="_rule_size_item['.$id.']" value="M"'
+                . ($sizeitem=='M' ? ' checked="checked"' : '') .' class="radio" />'.rcube_label('MB').'
+            <input type="radio" name="_rule_size_item['.$id.']" value="G"'
+                . ($sizeitem=='G' ? ' checked="checked"' : '') .' class="radio" />'.rcube_label('GB');
         $out .= '</div>';
         $out .= '</td>';
 
