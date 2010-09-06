@@ -221,7 +221,7 @@ class enigma_driver_gnupg extends enigma_driver
         }
         else if ($e instanceof Crypt_GPG_BadPassphraseException) {
             $error = enigma_error::E_BADPASS;
-            $data['bad']     = $e->getBasPassphrases();
+            $data['bad']     = $e->getBadPassphrases();
             $data['missing'] = $e->getMissingPassphrases();
         }
         else if ($e instanceof Crypt_GPG_NoDataException)
