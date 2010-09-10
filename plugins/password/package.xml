@@ -15,8 +15,8 @@
 		<email>alec@alec.pl</email>
 		<active>yes</active>
 	</lead>
-	<date></date>
-	<time></time>
+	<date>2010-09-10</date>
+	<time>09:00:00</time>
 	<version>
 		<release>1.7</release>
 		<api>1.5</api>
@@ -28,6 +28,8 @@
 	<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPLv2</license>
 	<notes>
 - Added XMail driver
+- Improve security of chpasswd driver using popen instead of exec+echo (#1486987)
+- Added chpass-wrapper.py script to improve security (#1486987)
     </notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
@@ -81,6 +83,8 @@
             <file name="drivers/sasl.php" role="php"></file>
             <file name="drivers/virtualmin.php" role="php"></file>
             <file name="drivers/ximss.php" role="php"></file>
+            <file name="drivers/xmail.php" role="php"></file>
+            <file name="drivers/chpass-wrapper.py" role="data"></file>
 
             <file name="config.inc.php.disc" role="data"></file>
 		</dir>

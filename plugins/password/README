@@ -223,6 +223,9 @@
  Driver that adds functionality to change the systems user password via 
  the 'chpasswd' command. See config.inc.php file.
 
+ Attached wrapper script (chpass-wrapper.py) restricts password changes
+ to uids >= 1000 and can deny requests based on a blacklist.
+
 
  2.12.  LDAP - no PEAR (ldap_simple)
  -----------------------------------

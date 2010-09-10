@@ -11,15 +11,16 @@
  * @version 1.0
  * @author Alex Cartwright <acartwright@mutinydesign.co.uk)
  */
- 
+
 function password_save($currpass, $newpass)
 {
-    $cmd = sprintf('echo \'%1$s:%2$s\' | %3$s; echo $?',
-                addcslashes($_SESSION['username'], "'"),
-                addcslashes($newpass, "'"),
-                rcmail::get_instance()->config->get('password_chpasswd_cmd'));
+    $cmd = rcmail::get_instance()->config->get('password_chpasswd_cmd');
+    $username = $_SESSION['username'];
 
-    if (exec($cmd) == 0) {
+    $handle = popen($cmd, "w");
+    fwrite($handle, "$username:$newpass");
+
+    if (pclose($handle) == 0) {
         return PASSWORD_SUCCESS;
     }
     else {
@@ -33,5 +34,3 @@ function password_save($currpass, $newpass)
 
     return PASSWORD_ERROR;
 }
-
-?>
