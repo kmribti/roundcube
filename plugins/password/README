@@ -26,18 +26,19 @@
 
  1. 	Configuration
  2.	Drivers
- 2.1. 	Database (sql)
- 2.2.	Cyrus/SASL (sasl)
- 2.3.	Poppassd/Courierpassd (poppassd)
- 2.4.	LDAP (ldap)
- 2.5.	DirectAdmin Control Panel (directadmin)
- 2.6.   cPanel (cpanel)
- 2.7.   XIMSS/Communigate (ximms)
- 2.8.	Virtualmin (virtualmin)
- 2.9.   hMailServer (hmail)
- 2.10.  PAM (pam)
- 2.11.  Chpasswd (chpasswd)
- 2.12.  LDAP - no PEAR (ldap_simple)
+ 2.1.  Database (sql)
+ 2.2.  Cyrus/SASL (sasl)
+ 2.3.  Poppassd/Courierpassd (poppassd)
+ 2.4.  LDAP (ldap)
+ 2.5.  DirectAdmin Control Panel (directadmin)
+ 2.6.  cPanel (cpanel)
+ 2.7.  XIMSS/Communigate (ximms)
+ 2.8.  Virtualmin (virtualmin)
+ 2.9.  hMailServer (hmail)
+ 2.10. PAM (pam)
+ 2.11. Chpasswd (chpasswd)
+ 2.12. LDAP - no PEAR (ldap_simple)
+ 2.13. XMail (xmail)
  3.	Driver API
 
 
@@ -205,20 +206,20 @@
 
  2.9. hMailServer (hmail)
  ------------------------
- 
+
  Requires PHP COM (Windows only).
 
 
  2.10. PAM (pam)
  ---------------
- 
+
  This driver is for changing passwords of shell users authenticated with PAM.
  Requires PECL's PAM exitension to be installed (http://pecl.php.net/package/PAM).
 
 
  2.11. Chpasswd (chpasswd)
  -------------------------
- 
+
  Driver that adds functionality to change the systems user password via 
  the 'chpasswd' command. See config.inc.php file.
 
@@ -236,6 +237,12 @@
     * Connects only once with the LDAP server when using the search user.
     * Does not read the DN, but only replaces the password within (that is
       why the 'force replace' is always used).
+
+
+ 2.13.  XMail (xmail)
+ -----------------------------------
+
+ Driver for XMail (www.xmailserver.org). See config.inc.php file for configuration description.
 
 
  3. Driver API

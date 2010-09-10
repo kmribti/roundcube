@@ -242,4 +242,11 @@ $rcmail_config['password_ximss_port'] = 11024;
 // Command to use
 $rcmail_config['password_chpasswd_cmd'] = 'sudo /usr/sbin/chpasswd 2> /dev/null';
 
-?>
+
+// XMail Driver options
+// ---------------------
+$rcmail_config['xmail_host'] = 'localhost';
+$rcmail_config['xmail_user'] = 'YourXmailControlUser';
+$rcmail_config['xmail_pass'] = 'YourXmailControlPass';
+$rcmail_config['xmail_port'] = 6017;
+
