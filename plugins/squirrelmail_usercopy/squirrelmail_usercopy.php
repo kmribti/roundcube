@@ -16,20 +16,15 @@ class squirrelmail_usercopy extends rcube_plugin
 
 	public function init()
 	{
-		$rcmail = rcmail::get_instance();
-
-        // Set identities_level for operations of this plugin
-		$ilevel = $rcmail->config->get('squirrelmail_identities_level');
-        if ($ilevel === null)
-		    $ilevel = $rcmail->config->get('identities_level', 0);
-        $this->identities_level = intval($ilevel);
-
 		$this->add_hook('user_create', array($this, 'create_user'));
 		$this->add_hook('identity_create', array($this, 'create_identity'));
 	}
 
 	public function create_user($p)
 	{
+        // Read plugin's config
+        $this->initialize();
+
 		// read prefs and add email address
 		$this->read_squirrel_prefs($p['user']);
 		if (($this->identities_level == 0 || $this->identities_level == 2) && $this->prefs['email_address'])
@@ -84,9 +79,23 @@ class squirrelmail_usercopy extends rcube_plugin
 		return $p;
 	}
 
+	private function initialize()
+	{
+		$rcmail = rcmail::get_instance();
+
+        // Load plugin's config file
+		$this->load_config();
+
+        // Set identities_level for operations of this plugin
+		$ilevel = $rcmail->config->get('squirrelmail_identities_level');
+        if ($ilevel === null)
+		    $ilevel = $rcmail->config->get('identities_level', 0);
+
+        $this->identities_level = intval($ilevel);
+    }
+
 	private function read_squirrel_prefs($uname)
 	{
-		$this->load_config();
 		$rcmail = rcmail::get_instance();
 
 		/**** File based backend ****/
