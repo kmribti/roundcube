@@ -8,7 +8,7 @@
  */
 class squirrelmail_usercopy extends rcube_plugin
 {
-	public $task = 'login|settings';
+	public $task = 'login';
 
 	private $prefs = null;
 	private $identities_level = 0;
@@ -36,8 +36,8 @@ class squirrelmail_usercopy extends rcube_plugin
 	{
 		$rcmail = rcmail::get_instance();
 
-		// only execute on login
-		if ($rcmail->task == 'login' && $this->prefs) {
+		// prefs are set in create_user()
+		if ($this->prefs) {
 			if ($this->prefs['full_name'])
 				$p['record']['name'] = $this->prefs['full_name'];
 			if (($this->identities_level == 0 || $this->identities_level == 2) && $this->prefs['email_address'])
