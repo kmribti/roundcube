@@ -3,7 +3,7 @@
 /**
  * Copy a new users identity and settings from a nearby Squirrelmail installation
  *
- * @version 1.3
+ * @version 1.4
  * @author Thomas Bruederli, Johannes Hessellund, pommi, Thomas Lueder
  */
 class squirrelmail_usercopy extends rcube_plugin
@@ -44,8 +44,8 @@ class squirrelmail_usercopy extends rcube_plugin
 				$p['record']['email'] = $this->prefs['email_address'];
 			if ($this->prefs['___signature___'])
 				$p['record']['signature'] = $this->prefs['___signature___'];
-			if ($this->prefs['reply-to']) 
-				$p['record']['reply-to'] = $this->prefs['reply-to']; 
+			if ($this->prefs['reply_to']) 
+				$p['record']['reply-to'] = $this->prefs['reply_to']; 
 			if (($this->identities_level == 0 || $this->identities_level == 1) && isset($this->prefs['identities']) && $this->prefs['identities'] > 1) {
 				for ($i=1; $i < $this->prefs['identities']; $i++) {
 					unset($ident_data);
