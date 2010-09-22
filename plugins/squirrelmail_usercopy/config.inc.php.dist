@@ -19,3 +19,7 @@ $rcmail_config['squirrelmail_userprefs_table'] = 'userprefs';
 // for operations inside this plugin. See #1486773
 $rcmail_config['squirrelmail_identities_level'] = null;
 
+// Set to false if you don't want the email address of the default identity
+// (squirrelmail preference "email_address") to be saved as alias.
+// Recommended: set to false if your squirrelmail config setting $edit_identity has been true.
+$rcmail_config['squirrelmail_set_alias'] = true;

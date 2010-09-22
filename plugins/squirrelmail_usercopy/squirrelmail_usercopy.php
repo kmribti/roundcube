@@ -22,12 +22,14 @@ class squirrelmail_usercopy extends rcube_plugin
 
 	public function create_user($p)
 	{
-        // Read plugin's config
-        $this->initialize();
+		$rcmail = rcmail::get_instance();
+
+		// Read plugin's config
+		$this->initialize();
 
 		// read prefs and add email address
 		$this->read_squirrel_prefs($p['user']);
-		if (($this->identities_level == 0 || $this->identities_level == 2) && $this->prefs['email_address'])
+		if (($this->identities_level == 0 || $this->identities_level == 2) && $rcmail->config->get('squirrelmail_set_alias') && $this->prefs['email_address'])
 			$p['user_email'] = $this->prefs['email_address'];
 		return $p;
 	}
@@ -83,16 +85,16 @@ class squirrelmail_usercopy extends rcube_plugin
 	{
 		$rcmail = rcmail::get_instance();
 
-        // Load plugin's config file
+		// Load plugin's config file
 		$this->load_config();
 
-        // Set identities_level for operations of this plugin
+		// Set identities_level for operations of this plugin
 		$ilevel = $rcmail->config->get('squirrelmail_identities_level');
-        if ($ilevel === null)
-		    $ilevel = $rcmail->config->get('identities_level', 0);
+		if ($ilevel === null)
+			$ilevel = $rcmail->config->get('identities_level', 0);
 
-        $this->identities_level = intval($ilevel);
-    }
+		$this->identities_level = intval($ilevel);
+	}
 
 	private function read_squirrel_prefs($uname)
 	{
@@ -153,8 +155,8 @@ class squirrelmail_usercopy extends rcube_plugin
 			$address_table = $rcmail->config->get('squirrelmail_address_table');
 			$db_charset = $rcmail->config->get('squirrelmail_db_charset');
 
-            if ($db_charset)
-    			$db->query('SET NAMES '.$db_charset);
+			if ($db_charset)
+				$db->query('SET NAMES '.$db_charset);
 
 			$sql_result = $db->query('SELECT * FROM '.$userprefs_table.' WHERE user=?', $uname); // ? is replaced with emailaddress
 
