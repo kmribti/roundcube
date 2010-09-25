@@ -7,7 +7,7 @@
  * The code is derrived from the Squirrelmail "Change Cyrus/SASL Password" Plugin
  * by Thomas Bruederli.
  *
- * It only works with virtualmin on the same host where RoundCube runs
+ * It only works with virtualmin on the same host where Roundcube runs
  * and requires shell access and gcc in order to compile the binary.
  *
  * @version 1.0

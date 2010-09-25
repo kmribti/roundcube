@@ -5,7 +5,7 @@
     http://pear.php.net/dtd/package-2.0.xsd">
  <name>additional_message_headers</name>
  <channel>pear.roundcube.net</channel>
- <summary>Additional message headers for RoundCube</summary>
+ <summary>Additional message headers for Roundcube</summary>
  <description>Very simple plugin which will add additional headers to or remove them from outgoing messages.</description>
  <lead>
   <name>Ziba Scott</name>

@@ -5,8 +5,8 @@
 +-----------------------------------------------------------------------+
 | language/cs_CZ/labels.inc                                             |
 |                                                                       |
-| Language file of the RoundCube userinfo plugin                        |
-| Copyright (C) 2005-2009, RoundCube Dev. - Switzerland                 |
+| Language file of the Roundcube userinfo plugin                        |
+| Copyright (C) 2005-2009, Roundcube Dev. - Switzerland                 |
 | Licensed under the GNU GPL                                            |
 |                                                                       |
 +-----------------------------------------------------------------------+

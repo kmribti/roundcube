@@ -7,7 +7,7 @@
  * The code is derrived from the Squirrelmail "Change SASL Password" Plugin
  * by Galen Johnson.
  *
- * It only works with saslpasswd2 on the same host where RoundCube runs
+ * It only works with saslpasswd2 on the same host where Roundcube runs
  * and requires shell access and gcc in order to compile the binary.
  *
  * For installation instructions please read the README file.

@@ -5,7 +5,7 @@
  | Password Plugin for Roundcube                                           |
  | @version @package_version@                                                             |
  |                                                                         |
- | Copyright (C) 2009, RoundCube Dev.                                      |
+ | Copyright (C) 2009, Roundcube Dev.                                      |
  |                                                                         |
  | This program is free software; you can redistribute it and/or modify    |
  | it under the terms of the GNU General Public License version 2          |
