@@ -15,11 +15,11 @@
 		<email>alec@alec.pl</email>
 		<active>yes</active>
 	</lead>
-	<date>2010-09-10</date>
-	<time>09:00:00</time>
+	<date>2010-09-29</date>
+	<time>19:00:00</time>
 	<version>
-		<release>1.7</release>
-		<api>1.5</api>
+		<release>1.8</release>
+		<api>1.6</api>
 	</version>
 	<stability>
 		<release>stable</release>
@@ -27,9 +27,8 @@
 	</stability>
 	<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPLv2</license>
 	<notes>
-- Added XMail driver
-- Improve security of chpasswd driver using popen instead of exec+echo (#1486987)
-- Added chpass-wrapper.py script to improve security (#1486987)
+- Added possibility to display extended error messages (#1486704)
+- Added extended error messages in Poppassd driver (#1486704)
     </notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
@@ -153,5 +152,23 @@
 - Added ldap_simple driver
             </notes>
         </release>
-	</changelog>
+        <release>
+	        <date>2010-09-10</date>
+	        <time>09:00:00</time>
+	        <version>
+		        <release>1.7</release>
+		        <api>1.5</api>
+	        </version>
+	        <stability>
+		        <release>stable</release>
+		        <api>stable</api>
+	        </stability>
+	        <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPLv2</license>
+	        <notes>
+- Added XMail driver
+- Improve security of chpasswd driver using popen instead of exec+echo (#1486987)
+- Added chpass-wrapper.py script to improve security (#1486987)
+            </notes>
+	    </release>
+    </changelog>
 </package>

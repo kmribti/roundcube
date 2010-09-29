@@ -5,7 +5,7 @@
  | Password Plugin for Roundcube                                           |
  | @version @package_version@                                                             |
  |                                                                         |
- | Copyright (C) 2009, Roundcube Dev.                                      |
+ | Copyright (C) 2009-2010, Roundcube Dev.                                 |
  |                                                                         |
  | This program is free software; you can redistribute it and/or modify    |
  | it under the terms of the GNU General Public License version 2          |
@@ -124,7 +124,7 @@ class password extends rcube_plugin
                 $rcmail->output->command('display_message', $this->gettext('passwordweak'), 'error');
             }
             // try to save the password
-            else if (!($res = $this->_save($curpwd,$newpwd))) {
+            else if (!($res = $this->_save($curpwd, $newpwd))) {
                 $rcmail->output->command('display_message', $this->gettext('successfullysaved'), 'confirmation');
                 $_SESSION['password'] = $rcmail->encrypt($newpwd);
             }
@@ -229,18 +229,27 @@ class password extends rcube_plugin
 
         $result = password_save($curpass, $passwd);
 
+        if (is_array($result)) {
+            $result  = $result['code'];
+            $message = $result['message'];
+        }
+
         switch ($result) {
             case PASSWORD_SUCCESS:
                 return;
             case PASSWORD_CRYPT_ERROR;
-                return $this->gettext('crypterror');
+                $reason = $this->gettext('crypterror');
             case PASSWORD_CONNECT_ERROR;
-                return $this->gettext('connecterror');
+                $reason = $this->gettext('connecterror');
             case PASSWORD_ERROR:
             default:
-                return $this->gettext('internalerror');
+                $reason = $this->gettext('internalerror');
         }
+
+        if ($message) {
+            $reason .= ' ' . $message;
+        }
+
+        return $reason;
     }                                     
 }
-
-?>
