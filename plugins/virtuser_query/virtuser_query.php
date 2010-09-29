@@ -44,11 +44,11 @@ class virtuser_query extends rcube_plugin
 	        if (strpos($sql_arr[0], '@')) {
 		        if ($p['extended'] && count($sql_arr) > 1) {
 		            $result[] = array(
-			            'email' 	    => $sql_arr[0],
+			            'email' 	    => idn_to_ascii($sql_arr[0]),
             			'name' 		    => $sql_arr[1],
 			            'organization'  => $sql_arr[2],
-            			'reply-to' 	    => $sql_arr[3],
-			            'bcc' 		    => $sql_arr[4],
+            			'reply-to' 	    => idn_to_ascii($sql_arr[3]),
+			            'bcc' 		    => idn_to_ascii($sql_arr[4]),
         			    'signature' 	=> $sql_arr[5],
 		            	'html_signature' => (int)$sql_arr[6],
     		        );
