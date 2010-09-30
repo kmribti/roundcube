@@ -187,6 +187,12 @@ $rcmail_config['password_ldap_pwattr'] = 'userPassword';
 // Default: true
 $rcmail_config['password_ldap_force_replace'] = true;
 
+// LDAP Password Last Change Date
+// Some places use an attribute to store the date of the last password change
+// The date is meassured in "days since epoch" (an integer value)
+// Whenever the password is changed, the attribute will be updated if set (e.g. shadowLastChange)
+$rcmail_config['password_ldap_lchattr'] = '';
+
 
 // DirectAdmin Driver options
 // --------------------------

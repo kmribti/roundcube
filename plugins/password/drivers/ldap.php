@@ -80,12 +80,21 @@ function password_save($curpass, $passwd)
     if (!$userEntry->replace(array($pwattr => $newCryptedPassword), $force)) {
         return PASSWORD_CONNECT_ERROR;
     }
+
+    // Updating PasswordLastChange Attribute if desired
+    if ($lchattr = $rcmail->config->get('password_ldap_lchattr')) {
+       $current_day = (int)(time() / 86400);
+       if (!$userEntry->replace(array($lchattr => $current_day), $force)) {
+           return PASSWORD_CONNECT_ERROR;
+       }
+    }
+
     if (Net_LDAP2::isError($userEntry->update())) {
         return PASSWORD_CONNECT_ERROR;
     }
     
     // All done, no error
-    return PASSWORD_SUCCESS;    
+    return PASSWORD_SUCCESS;
 }
 
 /**
@@ -269,5 +278,3 @@ function randomSalt( $length )
 
     return $str;
 }
-
-?>

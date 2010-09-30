@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Simple LDAP Password Driver
  *
@@ -12,7 +13,7 @@
 function password_save($curpass, $passwd)
 {
 	$rcmail = rcmail::get_instance();
-	
+
 	/* Connect */
 	if (!$ds = ldap_connect($rcmail->config->get('password_ldap_host'), $rcmail->config->get('password_ldap_port'))) {
 		ldap_unbind($ds);
@@ -24,7 +25,7 @@ function password_save($curpass, $passwd)
 		ldap_unbind($ds);
 		return PASSWORD_CONNECT_ERROR;
 	}
-	
+
 	/* Start TLS */
 	if ($rcmail->config->get('password_ldap_starttls')) {
 		if (!ldap_start_tls($ds)) {
@@ -72,6 +73,12 @@ function password_save($curpass, $passwd)
 	}
 	
 	$entree[$rcmail->config->get('password_ldap_pwattr')] = $passwd;
+
+	/* Updating PasswordLastChange Attribute if desired */
+	if ($lchattr = $rcmail->config->get('password_ldap_lchattr')) {
+		$entree[$lchattr] = (int)(time() / 86400)
+	}
+
 	
 	if (!ldap_modify($ds, $user_dn, $entree)) {
 		ldap_unbind($ds);
