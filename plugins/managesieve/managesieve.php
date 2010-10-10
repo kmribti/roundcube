@@ -383,14 +383,14 @@ class managesieve extends rcube_plugin
                 $this->form['tests'][0]['test'] = 'true';
             }
             else {
-                foreach($headers as $idx => $header) {
+                foreach ($headers as $idx => $header) {
                     $header = $this->strip_value($header);
                     $target = $this->strip_value($targets[$idx], true);
                     $op     = $this->strip_value($ops[$idx]);
 
                     // normal header
                     if (in_array($header, $this->headers)) {
-                        if(preg_match('/^not/', $op))
+                        if (preg_match('/^not/', $op))
                             $this->form['tests'][$i]['not'] = true;
                         $type = preg_replace('/^not/', '', $op);
 
@@ -406,6 +406,8 @@ class managesieve extends rcube_plugin
 
                             if ($target == '')
                                 $this->errors['tests'][$i]['target'] = $this->gettext('cannotbeempty');
+                            else if (preg_match('/^(value|count)-/', $type) && !preg_match('/[0-9]+/', $target))
+                                $this->errors['tests'][$i]['target'] = $this->gettext('forbiddenchars');
                         }
                     }
                     else
@@ -425,7 +427,7 @@ class managesieve extends rcube_plugin
                         case '...':
                             $cust_header = $headers = $this->strip_value($cust_headers[$idx]);
 
-                            if(preg_match('/^not/', $op))
+                            if (preg_match('/^not/', $op))
                                 $this->form['tests'][$i]['not'] = true;
                             $type = preg_replace('/^not/', '', $op);
 
@@ -458,6 +460,8 @@ class managesieve extends rcube_plugin
 
                                 if ($target == '')
                                     $this->errors['tests'][$i]['target'] = $this->gettext('cannotbeempty');
+                                else if (preg_match('/^(value|count)-/', $type) && !preg_match('/[0-9]+/', $target))
+                                    $this->errors['tests'][$i]['target'] = $this->gettext('forbiddenchars');
                             }
                             break;
                         }
@@ -888,6 +892,20 @@ class managesieve extends rcube_plugin
         $select_op->add(Q($this->gettext('filternotexists')), 'notexists');
 //      $select_op->add(Q($this->gettext('filtermatches')), 'matches');
 //      $select_op->add(Q($this->gettext('filternotmatches')), 'notmatches');
+		if (in_array('relational', $this->exts)) {
+			$select_op->add(Q($this->gettext('countisgreaterthan')), 'count-gt');
+			$select_op->add(Q($this->gettext('countisgreaterthanequal')), 'count-ge');
+			$select_op->add(Q($this->gettext('countislessthan')), 'count-lt');
+			$select_op->add(Q($this->gettext('countislessthanequal')), 'count-le');
+			$select_op->add(Q($this->gettext('countequals')), 'count-eq');
+			$select_op->add(Q($this->gettext('countnotequals')), 'count-ne');
+			$select_op->add(Q($this->gettext('valueisgreaterthan')), 'value-gt');
+			$select_op->add(Q($this->gettext('valueisgreaterthanequal')), 'value-ge');
+			$select_op->add(Q($this->gettext('valueislessthan')), 'value-lt');
+			$select_op->add(Q($this->gettext('valueislessthanequal')), 'value-le');
+			$select_op->add(Q($this->gettext('valueequals')), 'value-eq');
+			$select_op->add(Q($this->gettext('valuenotequals')), 'value-ne');
+		}
 
         // target input (TODO: lists)
 
@@ -897,7 +915,7 @@ class managesieve extends rcube_plugin
         }
         else if ($rule['test'] == 'size') {
             $out .= $select_op->show();
-            if(preg_match('/^([0-9]+)(K|M|G)*$/', $rule['arg'], $matches)) {
+            if (preg_match('/^([0-9]+)(K|M|G)*$/', $rule['arg'], $matches)) {
                 $sizetarget = $matches[1];
                 $sizeitem = $matches[2];
             }

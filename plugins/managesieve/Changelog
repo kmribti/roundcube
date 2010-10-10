@@ -1,5 +1,6 @@
 - Fixed import from Avelsieve
 - Use localized size units (#1486976)
+- Added support for relational operators and i;ascii-numeric comparator
 
 * version 2.9 [2010-08-02]
 -----------------------------------------------------------

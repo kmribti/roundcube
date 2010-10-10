@@ -392,6 +392,7 @@ class rcube_sieve_script
         'ereject',
         'copy',                     // RFC3894
         'vacation',                 // RFC5230
+        'relational',               // RFC3431
     // TODO: (most wanted first) body, imapflags, notify, regex
     );
 
@@ -511,15 +512,26 @@ class rcube_sieve_script
                     break;
                 case 'header':
                     $tests[$i] .= ($test['not'] ? 'not ' : '');
-                    $tests[$i] .= 'header :' . $test['type'];
+
+                    // relational operator + comparator
+					if (preg_match('/^(value|count)-([gteqnl]{2})/', $test['type'], $m)) {
+						array_push($exts, 'relational');
+						array_push($exts, 'comparator-i;ascii-numeric');
+                        $tests[$i] .= 'header :' . $m[1] . ' "' . $m[2] . '" :comparator "i;ascii-numeric"';
+                    }
+                    else
+                        $tests[$i] .= 'header :' . $test['type'];
+                    
                     if (is_array($test['arg1']))
                         $tests[$i] .= ' ["' . implode('", "', $this->_escape_string($test['arg1'])) . '"]';
                     else
                         $tests[$i] .= ' "' . $this->_escape_string($test['arg1']) . '"';
+
                     if (is_array($test['arg2']))
                         $tests[$i] .= ' ["' . implode('", "', $this->_escape_string($test['arg2'])) . '"]';
                     else
                         $tests[$i] .= ' "' . $this->_escape_string($test['arg2']) . '"';
+
                     break;
                 }
                 $i++;
@@ -818,10 +830,14 @@ class rcube_sieve_script
         $patterns[] = '(not\s+)?(exists)\s+(".*?[^\\\]")';
         $patterns[] = '(not\s+)?(true)';
         $patterns[] = '(not\s+)?(size)\s+:(under|over)\s+([0-9]+[KGM]{0,1})';
-        $patterns[] = '(not\s+)?(header)\s+:(contains|is|matches)\s+\[(.*?[^\\\]")\]\s+\[(.*?[^\\\]")\]';
-        $patterns[] = '(not\s+)?(header)\s+:(contains|is|matches)\s+(".*?[^\\\]")\s+(".*?[^\\\]")';
-        $patterns[] = '(not\s+)?(header)\s+:(contains|is|matches)\s+\[(.*?[^\\\]")\]\s+(".*?[^\\\]")';
-        $patterns[] = '(not\s+)?(header)\s+:(contains|is|matches)\s+(".*?[^\\\]")\s+\[(.*?[^\\\]")\]';
+        $patterns[] = '(not\s+)?(header)\s+:(contains|is|matches)((\s+))\[(.*?[^\\\]")\]\s+\[(.*?[^\\\]")\]';
+        $patterns[] = '(not\s+)?(header)\s+:(contains|is|matches)((\s+))(".*?[^\\\]")\s+(".*?[^\\\]")';
+        $patterns[] = '(not\s+)?(header)\s+:(contains|is|matches)((\s+))\[(.*?[^\\\]")\]\s+(".*?[^\\\]")';
+        $patterns[] = '(not\s+)?(header)\s+:(contains|is|matches)((\s+))(".*?[^\\\]")\s+\[(.*?[^\\\]")\]';
+		$patterns[] = '(not\s+)?(header)\s+:(count\s+"[gtleqn]{2}"|value\s+"[gtleqn]{2}")(\s+:comparator\s+"(.*?[^\\\])")?\s+\[(.*?[^\\\]")\]\s+\[(.*?[^\\\]")\]';
+		$patterns[] = '(not\s+)?(header)\s+:(count\s+"[gtleqn]{2}"|value\s+"[gtleqn]{2}")(\s+:comparator\s+"(.*?[^\\\])")?\s+(".*?[^\\\]")\s+(".*?[^\\\]")';
+		$patterns[] = '(not\s+)?(header)\s+:(count\s+"[gtleqn]{2}"|value\s+"[gtleqn]{2}")(\s+:comparator\s+"(.*?[^\\\])")?\s+\[(.*?[^\\\]")\]\s+(".*?[^\\\]")';
+		$patterns[] = '(not\s+)?(header)\s+:(count\s+"[gtleqn]{2}"|value\s+"[gtleqn]{2}")(\s+:comparator\s+"(.*?[^\\\])")?\s+(".*?[^\\\]")\s+\[(.*?[^\\\]")\]';
 
         // join patterns...
         $pattern = '/(' . implode(')|(', $patterns) . ')/';
@@ -840,10 +856,14 @@ class rcube_sieve_script
                     );
                 }
                 else if (preg_match('/^(not\s+)?header/', $match[0])) {
+                    $type = $match[$size-5];
+                    if (preg_match('/^(count|value)\s+"([gtleqn]{2})"/', $type, $m))
+                        $type = $m[1] . '-' . $m[2];
+                    
                     $result[] = array(
                         'test' => 'header',
-                        'not'  => $match[$size-5] ? true : false,
-                        'type' => $match[$size-3], // is/contains/matches
+                        'type' => $type, // is/contains/matches
+						'not'  => $match[$size-7] ? true : false,
                         'arg1' => $this->_parse_list($match[$size-2]), // header(s)
                         'arg2' => $this->_parse_list($match[$size-1]), // string(s)
                     );
@@ -956,4 +976,3 @@ class rcube_sieve_script
         return '["' . implode('","', $list) . '"]';
     }
 }
-
