@@ -289,3 +289,13 @@ div .itemlist input
 {
   vertical-align: middle;
 }
+
+span.sieve.error
+{
+  color: red;
+}
+
+#managesieve-tip
+{
+  width: 200px;
+}

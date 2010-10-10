@@ -7,7 +7,7 @@
  * It's clickable interface which operates on text scripts and communicates
  * with server using managesieve protocol. Adds Filters tab in Settings.
  *
- * @version 2.9
+ * @version 2.10
  * @author Aleksander 'A.L.E.C' Machniak <alec@alec.pl>
  *
  * Configuration (see config.inc.php.dist)
@@ -23,6 +23,7 @@ class managesieve extends rcube_plugin
     private $sieve;
     private $errors;
     private $form;
+    private $tips = array();
     private $script = array();
     private $exts = array();
     private $headers = array(
@@ -421,8 +422,10 @@ class managesieve extends rcube_plugin
                             $this->form['tests'][$i]['type'] = $sizeop;
                             $this->form['tests'][$i]['arg']  = $sizetarget.$sizeitem;
 
-                            if (!preg_match('/^[0-9]+(K|M|G)*$/i', $sizetarget))
-                                $this->errors['tests'][$i]['sizetarget'] = $this->gettext('wrongformat');
+                            if ($sizetarget == '')
+                                $this->errors['tests'][$i]['sizetarget'] = $this->gettext('cannotbeempty');
+                            else if (!preg_match('/^[0-9]+(K|M|G)*$/i', $sizetarget))
+                                $this->errors['tests'][$i]['sizetarget'] = $this->gettext('forbiddenchars');
                             break;
                         case '...':
                             $cust_header = $headers = $this->strip_value($cust_headers[$idx]);
@@ -823,6 +826,8 @@ class managesieve extends rcube_plugin
 
         $out .= "</fieldset>\n";
 
+        $this->print_tips();
+
         if ($scr['disabled']) {
             $this->rc->output->set_env('rule_disabled', true);
         }
@@ -877,7 +882,8 @@ class managesieve extends rcube_plugin
             $custom = is_array($rule['arg']) ? implode(', ', $rule['arg']) : $rule['arg'];
 
         $out .= '<div id="custom_header' .$id. '" style="display:' .(isset($custom) ? 'inline' : 'none'). '">
-            <input type="text" name="_custom_header[]" '. $this->error_class($id, 'test', 'header')
+            <input type="text" name="_custom_header[]" id="custom_header_i'.$id.'" '
+            . $this->error_class($id, 'test', 'header', 'custom_header_i')
             .' value="' .Q($custom). '" size="20" />&nbsp;</div>' . "\n";
 
         // matching type select (operator)
@@ -926,7 +932,7 @@ class managesieve extends rcube_plugin
         }
 
         $out .= '<input type="text" name="_rule_target[]" id="rule_target' .$id. '"
-            value="' .Q($target). '" size="20" ' . $this->error_class($id, 'test', 'target')
+            value="' .Q($target). '" size="20" ' . $this->error_class($id, 'test', 'target', 'rule_target')
             . ' style="display:' . ($rule['test']!='size' && $rule['test'] != 'exists' ? 'inline' : 'none') . '" />'."\n";
 
         $select_size_op = new html_select(array('name' => "_rule_size_op[]", 'id' => 'rule_size_op'.$id));
@@ -935,8 +941,8 @@ class managesieve extends rcube_plugin
 
         $out .= '<div id="rule_size' .$id. '" style="display:' . ($rule['test']=='size' ? 'inline' : 'none') .'">';
         $out .= $select_size_op->show($rule['test']=='size' ? $rule['type'] : '');
-        $out .= '<input type="text" name="_rule_size_target[]" value="'.$sizetarget.'" size="10" ' 
-            . $this->error_class($id, 'test', 'sizetarget') .' />
+        $out .= '<input type="text" name="_rule_size_target[]" id="rule_size_i'.$id.'" value="'.$sizetarget.'" size="10" ' 
+            . $this->error_class($id, 'test', 'sizetarget', 'rule_size_i') .' />
             <input type="radio" name="_rule_size_item['.$id.']" value=""'
                 . (!$sizeitem ? ' checked="checked"' : '') .' class="radio" />'.rcube_label('B').'
             <input type="radio" name="_rule_size_item['.$id.']" value="K"'
@@ -1004,9 +1010,9 @@ class managesieve extends rcube_plugin
         $out .= '<input type="text" name="_action_target[]" id="action_target' .$id. '" '
             .'value="' .($action['type']=='redirect' ? Q($action['target'], 'strict', false) : ''). '" size="40" '
             .'style="display:' .($action['type']=='redirect' ? 'inline' : 'none') .'" '
-            . $this->error_class($id, 'action', 'target') .' />';
+            . $this->error_class($id, 'action', 'target', 'action_target') .' />';
         $out .= '<textarea name="_action_target_area[]" id="action_target_area' .$id. '" '
-            .'rows="3" cols="40" '. $this->error_class($id, 'action', 'targetarea')
+            .'rows="3" cols="40" '. $this->error_class($id, 'action', 'targetarea', 'action_target_area')
             .'style="display:' .(in_array($action['type'], array('reject', 'ereject')) ? 'inline' : 'none') .'">'
             . (in_array($action['type'], array('reject', 'ereject')) ? Q($action['target'], 'strict', false) : '')
             . "</textarea>\n";
@@ -1015,16 +1021,16 @@ class managesieve extends rcube_plugin
         $out .= '<div id="action_vacation' .$id.'" style="display:' .($action['type']=='vacation' ? 'inline' : 'none') .'">';
         $out .= '<span class="label">'. Q($this->gettext('vacationreason')) .'</span><br />'
             .'<textarea name="_action_reason[]" id="action_reason' .$id. '" '
-            .'rows="3" cols="40" '. $this->error_class($id, 'action', 'reason') . '>'
+            .'rows="3" cols="40" '. $this->error_class($id, 'action', 'reason', 'action_reason') . '>'
             . Q($action['reason'], 'strict', false) . "</textarea>\n";
         $out .= '<br /><span class="label">' .Q($this->gettext('vacationaddresses')) . '</span><br />'
-            .'<input type="text" name="_action_addresses[]" '
+            .'<input type="text" name="_action_addresses[]" id="action_addr'.$id.'" '
             .'value="' . (is_array($action['addresses']) ? Q(implode(', ', $action['addresses']), 'strict', false) : $action['addresses']) . '" size="40" '
-            . $this->error_class($id, 'action', 'addresses') .' />';
+            . $this->error_class($id, 'action', 'addresses', 'action_addr') .' />';
         $out .= '<br /><span class="label">' . Q($this->gettext('vacationdays')) . '</span><br />'
-            .'<input type="text" name="_action_days[]" '
+            .'<input type="text" name="_action_days[]" id="action_days'.$id.'" '
             .'value="' .Q($action['days'], 'strict', false) . '" size="2" '
-            . $this->error_class($id, 'action', 'days') .' />';
+            . $this->error_class($id, 'action', 'days', 'action_days') .' />';
         $out .= '</div>';
 
         // mailbox select
@@ -1099,13 +1105,15 @@ class managesieve extends rcube_plugin
         return trim($str);
     }
 
-    private function error_class($id, $type, $target, $name_only=false)
+    private function error_class($id, $type, $target, $elem_prefix='')
     {
         // TODO: tooltips
-        if ($type == 'test' && isset($this->errors['tests'][$id][$target]))
-            return ($name_only ? 'error' : ' class="error"');
-        else if ($type == 'action' && isset($this->errors['actions'][$id][$target]))
-            return ($name_only ? 'error' : ' class="error"');
+        if (($type == 'test' && ($str = $this->errors['tests'][$id][$target])) ||
+            ($type == 'action' && ($str = $this->errors['actions'][$id][$target]))
+        ) {
+            $this->add_tip($elem_prefix.$id, $str, true);
+            return ' class="error"';
+        }
 
         return '';
     }
@@ -1114,4 +1122,22 @@ class managesieve extends rcube_plugin
     {
         return rcube_charset_convert($text, 'UTF7-IMAP', $encoding);
     }
+
+    private function add_tip($id, $str, $error=false)
+    {
+        if ($error)
+            $str = html::span('sieve error', $str);
+
+        $this->tips[] = array($id, $str);
+    }
+
+    private function print_tips()
+    {
+        if (empty($this->tips))
+            return;
+
+        $script = JS_OBJECT_NAME.'.managesieve_tip_register('.json_encode($this->tips).');';
+        $this->rc->output->add_script($script, 'foot');
+    }
+
 }
