@@ -250,8 +250,8 @@ rcube_webmail.prototype.load_managesieveframe = function(id)
 
   if (this.env.contentframe && window.frames && window.frames[this.env.contentframe]) {
     target = window.frames[this.env.contentframe];
-    this.set_busy(true, 'loading');
-    target.location.href = this.env.comm_path+'&_action=plugin.managesieve&_framed=1&_fid='+id;
+    var msgid = this.set_busy(true, 'loading');
+    target.location.href = this.env.comm_path+'&_action=plugin.managesieve&_framed=1&_fid='+id+'&_unlock='+msgid;
   }
 };
 
@@ -464,8 +464,8 @@ rcube_webmail.prototype.managesieve_setadd = function()
 
   if (this.env.contentframe && window.frames && window.frames[this.env.contentframe]) {
     target = window.frames[this.env.contentframe];
-    this.set_busy(true, 'loading');
-    target.location.href = this.env.comm_path+'&_action=plugin.managesieve&_framed=1&_newset=1';
+    var msgid = this.set_busy(true, 'loading');
+    target.location.href = this.env.comm_path+'&_action=plugin.managesieve&_framed=1&_newset=1&_unlock='+msgid;
   }
 };
 
