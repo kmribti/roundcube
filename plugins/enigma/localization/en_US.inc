@@ -28,6 +28,11 @@ $labels['keyrevoke'] = 'Revoke key';
 $labels['keysend'] = 'Send public key in a message';
 $labels['keychpass'] = 'Change password';
 
+$labels['securityoptions'] = 'Message security options...';
+$labels['identdefault'] = 'Use settings of selected identity';
+$labels['encryptmsg'] = 'Encrypt this message';
+$labels['signmsg'] = 'Digitally sign this message';
+
 $messages = array();
 $messages['sigvalid'] = 'Verified signature from $sender.';
 $messages['siginvalid'] = 'Invalid signature from $sender.';

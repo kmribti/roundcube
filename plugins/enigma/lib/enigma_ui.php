@@ -67,6 +67,10 @@ class enigma_ui
                     $this->key_info();
             }
         }
+        // Message composing UI
+        else if ($this->rc->action == 'compose') {
+            $this->compose_ui();
+        }
         // Preferences UI
         else { // if ($this->rc->action == 'edit-prefs') {
             if ($section == 'enigmacerts') {
@@ -406,5 +410,50 @@ class enigma_ui
         return $out;
     }
 
+    private function compose_ui()
+    {
+        if (!is_array($_SESSION['compose']) || $_SESSION['compose']['id'] != get_input_value('_id', RCUBE_INPUT_GET))
+            return;
+
+        // Options menu button
+        // @TODO: make this work with non-default skins
+        $this->enigma->add_button(array(
+            'name' => 'enigmamenu',
+            'imagepas' => 'skins/default/enigma.png',
+            'imageact' => 'skins/default/enigma.png',
+            'onclick' => "rcmail_ui.show_popup('enigmamenu', true); return false",
+            'title' => 'securityoptions',
+            'domain' => 'enigma',
+            ), 'toolbar');
+
+        // Options menu contents
+        $this->enigma->add_hook('render_page', array($this, 'compose_menu'));
+    }
+
+    function compose_menu(&$p)
+    {
+        $menu = new html_table(array('cols' => 2));
+        $chbox = new html_checkbox(array('value' => 1));
+
+        $menu->add(null, html::label(array('for' => 'enigmadefaultopt'),
+            Q($this->enigma->gettext('identdefault'))));
+        $menu->add(null, $chbox->show(1, array('name' => '_enigma_default', 'id' => 'enigmadefaultopt')));
+
+        $menu->add(null, html::label(array('for' => 'enigmasignopt'),
+            Q($this->enigma->gettext('signmsg'))));
+        $menu->add(null, $chbox->show(1, array('name' => '_enigma_sign', 'id' => 'enigmasignopt')));
+
+        $menu->add(null, html::label(array('for' => 'enigmacryptopt'),
+            Q($this->enigma->gettext('encryptmsg'))));
+        $menu->add(null, $chbox->show(1, array('name' => '_enigma_crypt', 'id' => 'enigmacryptopt')));
+
+        $menu = html::div(array('id' => 'enigmamenu', 'class' => 'popupmenu'),
+            $menu->show());
+
+        $p['content'] = preg_replace('/(<form name="form"[^>]+>)/i', '\\1'."\n$menu", $p['content']);
+
+        return $p;
+
+    }
 
 }

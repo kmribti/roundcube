@@ -52,16 +52,22 @@ class enigma extends rcube_plugin
             $this->add_hook('message_part_structure', array($this, 'parse_structure'));
             $this->add_hook('message_body_prefix', array($this, 'status_message'));
 
-            // message sending hooks
-            //$this->add_hook('outgoing_message_body', array($this, 'msg_encode'));
-            //$this->add_hook('outgoing_message_body', array($this, 'msg_sign'));
-
+            // message displaying
             if ($rcmail->action == 'show' || $rcmail->action == 'preview') {
                 $this->add_hook('message_load', array($this, 'message_load'));
                 $this->add_hook('template_object_messagebody', array($this, 'message_output'));
+                $this->register_action('plugin.enigmaimport', array($this, 'import_file'));
             }
-
-            $this->register_action('plugin.enigmaimport', array($this, 'import_file'));
+            // message composing
+            else if ($rcmail->action == 'compose') {
+                $this->load_ui();
+                $this->ui->init($section);
+            }
+            // message sending (and draft storing)
+            else if ($rcmail->action == 'sendmail') {
+                //$this->add_hook('outgoing_message_body', array($this, 'msg_encode'));
+                //$this->add_hook('outgoing_message_body', array($this, 'msg_sign'));
+            }
         }
         else if ($this->rc->task == 'settings') {
             // add hooks for Enigma settings
@@ -78,9 +84,6 @@ class enigma extends rcube_plugin
                 $this->load_ui();
                 $this->ui->init($section);
             }
-
-            // include main js script
-//            $this->include_script('enigma.js');
         }
     }
 
