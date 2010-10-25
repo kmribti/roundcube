@@ -1,7 +1,5 @@
 <?php
 
-require_once(dirname(__FILE__) . '/lib/rcube_kolab.php');
-
 
 /**
  * Backend class for a custom address book
@@ -18,8 +16,29 @@ class rcube_kolab_contacts extends rcube_addressbook
     public $readonly = true;
     public $groups = true;
 
+    private static $instance;
+    
+    private $_gid;
+    private $_imap;
+    private $_kolab;
+    private $_folder;
+    private $_data;
+    private $_groups;
+    private $_uid2index;
     private $filter;
     private $result;
+    private $imap_folder = 'INBOX/Contacts';
+    
+    
+    /**
+     * Singleton getter
+     */
+    public static function singleton()
+    {
+        if (!self::$instance)
+            self::$instance = new rcube_kolab_contacts;
+        return self::$instance;
+    }
 
 
     public function __construct()
@@ -27,9 +46,36 @@ class rcube_kolab_contacts extends rcube_addressbook
         // setup Kolab backend
         rcube_kolab::setup();
         
-        // $this->share = Kolab_Storage::getShare();
+        // fetch objects from Cotnacts folder
+        $this->_kolab = Kolab_List::singleton();
+        $this->_folder = $this->_kolab->getFolder($this->imap_folder);
+        $this->_storage = $this->_folder->getData();
+        $this->_objects = $this->_storage->getObjects();
         
-        $this->ready = true;
+        // dump objects to log/console
+        console($this->_objects);
+
+        // TEMPORARY SOLUTION: use Roundcube's IMAP connection to fetch data
+        $rcmail = rcmail::get_instance();
+        $rcmail->imap_connect();
+        $this->_imap = $rcmail->imap;
+
+        $folders = $this->_imap->list_unsubscribed();
+        
+        if (in_array($this->imap_folder, $folders)) {
+          $this->_imap->set_pagesize(9999);
+          $this->_imap->set_mailbox($this->imap_folder);
+          $this->ready = true;
+        }
+    }
+
+
+    /**
+     * Setter for the current group
+     */
+    function set_group($gid)
+    {
+        $this->_gid = $gid;
     }
 
 
@@ -72,10 +118,11 @@ class rcube_kolab_contacts extends rcube_addressbook
      */
     function list_groups($search = null)
     {
-        return array(
-          #array('ID' => 'testgroup1', 'name' => "Testgroup"),
-          #array('ID' => 'testgroup2', 'name' => "Sample Group"),
-        );
+        $this->_fetch_data();
+        $groups = array();
+        foreach ($this->_groups as $group)
+            $groups[] = array('ID' => $group['ID'], 'name' => $group['last-name']);
+        return $groups;
     }
 
     /**
@@ -87,12 +134,75 @@ class rcube_kolab_contacts extends rcube_addressbook
      */
     public function list_records($cols=null, $subset=0)
     {
-        $this->result = $this->count();
+        if ($this->_gid) {
+            $data = $this->_fetch_data();
+            $this->result = $this->count();
+            
+            foreach ((array)$this->_groups[$this->_gid]['member'] as $member) {
+                $this->result->add($data->records[$this->_uid2index[$member['uid']]]);
+            }
+        }
+        else
+            $this->result = $this->_fetch_data();
         
-        // Just return a sample contact record for now
-        $this->result->add(array('ID' => '111', 'name' => "Kolab Contact", 'firstname' => "Kolab", 'surname' => "Contact", 'email' => "example@kolab.org"));
-
         return $this->result;
+    }
+    
+    
+    /**
+     * Simply fetch all records and store them in a result_set object
+     */
+    private function _fetch_data()
+    {
+        if ($this->_data)
+            return $this->_data;
+        
+        $this->_data = new rcube_result_set(0, ($this->list_page-1) * $this->page_size);
+        $this->_groups = $this->_uid2index = array();
+
+        $xml_contact = Horde_Kolab_Format_XML::factory('contact');
+        $xml_list = Horde_Kolab_Format_XML::factory('distributionlist');
+      
+        $index = 0;
+        $headers = $this->_imap->list_headers();
+        foreach ($headers as $header) {
+            if ($type = $header->others['x-kolab-type']) {
+                if ($type == 'application/x-vnd.kolab.contact')
+                    $loader = $xml_contact;
+                else if ($type == 'application/x-vnd.kolab.distribution-list')
+                    $loader = $xml_list;
+                else
+                    continue;
+
+                $record = $loader->load($this->_imap->get_message_part($header->uid, '2'));
+                if (PEAR::isError($record)) {
+                    raise_error(array(
+                      'code' => 600, 'type' => 'php',
+                      'file' => __FILE__, 'line' => __LINE__,
+                      'message' => "Failed to load XML data from IMAP record:" . $record->getMessage()),
+                    true, false);
+                }
+                else if ($type == 'application/x-vnd.kolab.contact') {
+                    $this->_data->add(array(
+                      'ID' => md5($record['uid']),
+                      'name' => $record['full-name'],
+                      'firstname' => $record['given-name'],
+                      'surname' => $record['last-name'],
+                      'email' => $record['emails'],
+                    ));
+                    $this->_data->count++;
+                    $this->_uid2index[$record['uid']] = $index++;
+                }
+                else if ($type == 'application/x-vnd.kolab.distribution-list') {
+                    $record['ID'] = md5($record['uid']);
+                    foreach ($record['member'] as $i => $member)
+                        $record['member'][$i]['ID'] = md5($member['uid']);
+                    $this->_groups[$record['ID']] = $record;
+                }
+            }
+        }
+
+        return $this->_data;
     }
 
 
@@ -118,7 +228,9 @@ class rcube_kolab_contacts extends rcube_addressbook
      */
     public function count()
     {
-        return new rcube_result_set(1, ($this->list_page-1) * $this->page_size);
+        $this->_fetch_data();
+        $count = $this->_gid ? count($this->_groups[$this->_gid]['member']) : $this->_data->count;
+        return new rcube_result_set($count, ($this->list_page-1) * $this->page_size);
     }
 
 
@@ -141,14 +253,42 @@ class rcube_kolab_contacts extends rcube_addressbook
      */
     public function get_record($id, $assoc=false)
     {
-        $this->list_records();
-        $first = $this->result->first();
-        $sql_arr = $first['ID'] == $id ? $first : null;
-    
-        return $assoc && $sql_arr ? $sql_arr : $this->result;
+        $list = $this->_fetch_data();
+        $rec = $list->first();
+        do {
+            if ($rec['ID'] == $id)
+                break;
+        }
+        while ($rec = $list->next());
+
+        $this->result = new rcube_result_set(1);
+        $this->result->add($rec);
+
+        return $assoc ? $rec : $this->result;
     }
 
 
+    /**
+     * Get group assignments of a specific contact record
+     *
+     * @param mixed Record identifier
+     * @return array List of assigned groups as ID=>Name pairs
+     */
+    function get_record_groups($id)
+    {
+        $out = array();
+        
+        foreach ($this->_groups as $gid => $group) {
+            foreach ($group['member'] as $member) {
+                if ($member['ID'] == $id)
+                    $out[$gid] = $group['last-name'];
+            }
+        }
+        
+        return $out;
+    }
+    
+    
     /**
      * Close connection to source
      * Called on script shutdown

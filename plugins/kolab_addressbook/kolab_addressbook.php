@@ -17,23 +17,31 @@ require_once(dirname(__FILE__) . '/rcube_kolab_contacts.php');
 class kolab_addressbook extends rcube_plugin
 {
     private $abook_id = 'kolab';
+    private $abook;
  
     /**
      * Required startup method of a Roundcube plugin
      */
     public function init()
     {
+        // load local config
+        $this->load_config();
+        
         $this->add_hook('addressbooks_list', array($this, 'address_sources'));
         $this->add_hook('addressbook_get', array($this, 'get_address_book'));
+        $this->add_hook('imap_init', array($this, 'imap_init'));
 
         // use this address book for autocompletion queries
-        // (maybe this should be configurable by the user?)
         $config = rcmail::get_instance()->config;
         $sources = (array) $config->get('autocomplete_addressbooks', array('sql'));
         if (!in_array($this->abook_id, $sources)) {
             $sources[] = $this->abook_id;
             $config->set('autocomplete_addressbooks', $sources);
         }
+        
+        // extend include path to load bundled Horde classes
+        $include_path = $this->home . '/lib' . PATH_SEPARATOR . ini_get('include_path');
+        set_include_path($include_path);
     }
 
     /**
@@ -47,10 +55,10 @@ class kolab_addressbook extends rcube_plugin
      */
     public function address_sources($p)
     {
-        // could be changed to a factory call 
-        $abook = new rcube_kolab_contacts;
+        // get single instance (for now)
+        $abook = rcube_kolab_contacts::singleton();
         
-        // maybe here we add more than one item. 
+        // maybe here we'll add more than one item
         $p['sources'][$this->abook_id] = array(
             'id' => $this->abook_id,
             'name' => 'Kolab',
@@ -60,16 +68,26 @@ class kolab_addressbook extends rcube_plugin
         return $p;
     }
  
+ 
     /**
-     *
+     * Getter for the rcube_addressbook instance
      */
     public function get_address_book($p)
     {
         if ($p['id'] === $this->abook_id) {
-            $p['instance'] = new rcube_kolab_contacts;
+            $p['instance'] = rcube_kolab_contacts::singleton();
         }
-    
+        
         return $p;
     }
  
+ 
+    /**
+     * Make sure the X-Kolab-Type headers are also fetched when listing messages
+     */
+    function imap_init($p)
+    {
+        $p['fetch_headers'] = strtoupper('X-Kolab-Type');
+        return $p;
+    }
 }
