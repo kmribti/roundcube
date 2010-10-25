@@ -74,7 +74,9 @@ class managesieve extends rcube_plugin
             $this->rc->config->get('managesieve_auth_type'),
             $this->rc->config->get('managesieve_usetls', false),
             $this->rc->config->get('managesieve_disabled_extensions'),
-            $this->rc->config->get('managesieve_debug', false)
+            $this->rc->config->get('managesieve_debug', false),
+            $this->rc->config->get('managesieve_auth_cid'), 
+            $this->rc->config->get('managesieve_auth_pw')
         );
 
         if (!($error = $this->sieve->error())) {

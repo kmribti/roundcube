@@ -44,23 +44,35 @@ class rcube_sieve
      * @param boolean Enable/disable TLS use
      * @param array   Disabled extensions
      * @param boolean Enable/disable debugging
+     * @param string  Proxy authentication identifier
+     * @param string  Proxy authentication password
      */
     public function __construct($username, $password='', $host='localhost', $port=2000,
-        $auth_type=null, $usetls=true, $disabled=array(), $debug=false)
+        $auth_type=null, $usetls=true, $disabled=array(), $debug=false,
+        $auth_cid=null, $auth_pw=null)
     {
         $this->sieve = new Net_Sieve();
 
         if ($debug) {
             $this->sieve->setDebug(true, array($this, 'debug_handler'));
         }
+
         if (PEAR::isError($this->sieve->connect($host, $port, NULL, $usetls))) {
             return $this->_set_error(SIEVE_ERROR_CONNECTION);
         }
+
+        if (!empty($auth_cid)) {
+            $authz    = $username;
+            $username = $auth_cid;
+            $password = $auth_pw;
+        }
+
         if (PEAR::isError($this->sieve->login($username, $password,
-            $auth_type ? strtoupper($auth_type) : null))
+            $auth_type ? strtoupper($auth_type) : null, $authz))
         ) {
             return $this->_set_error(SIEVE_ERROR_LOGIN);
         }
+
         $this->disabled = $disabled;
     }
 

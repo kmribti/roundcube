@@ -1,3 +1,5 @@
+- Added support for SASL proxy authentication (#1486691)
+
 * version 2.10 [2010-10-10]
 -----------------------------------------------------------
 - Fixed import from Avelsieve
