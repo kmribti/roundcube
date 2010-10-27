@@ -430,7 +430,7 @@ class enigma_ui
         $this->enigma->add_hook('render_page', array($this, 'compose_menu'));
     }
 
-    function compose_menu(&$p)
+    function compose_menu($p)
     {
         $menu = new html_table(array('cols' => 2));
         $chbox = new html_checkbox(array('value' => 1));
