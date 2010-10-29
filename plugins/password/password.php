@@ -46,7 +46,9 @@ define('PASSWORD_SUCCESS', 0);
  */
 class password extends rcube_plugin
 {
-    public $task = 'settings';
+    public $task    = 'settings';
+    public $noframe = true;
+    public $noajax  = true;
 
     function init()
     {
