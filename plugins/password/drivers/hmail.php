@@ -3,7 +3,7 @@
 /**
  * hMailserver password driver
  *
- * @version 1.1
+ * @version 1.2 - 31.10.2010
  * @author Roland 'rosali' Liebl <myroundcube@mail4us.net>
  *
  */
@@ -16,10 +16,15 @@ function password_save($curpass, $passwd)
       return PASSWORD_ERROR;
 
     try {
-        $obApp = new COM('hMailServer.Application');
+      $remote = $rcmail->config->get('hmailserver_remote_dcom', false);
+      if ($remote)
+        $obApp = new COM("hMailServer.Application", $rcmail->config->get('hmailserver_server'));
+      else
+        $obApp = new COM("hMailServer.Application");
     }
     catch (Exception $e) {
-        write_log('errors', "Plugin password (hmail driver):" .  $e->getMessage() . ". This problem is often caused by DCOM permissions not being set.");
+        write_log('errors', "Plugin password (hmail driver):" .  $e->getMessage()
+            . ". This problem is often caused by DCOM permissions not being set.");
         return PASSWORD_ERROR;
     }
 

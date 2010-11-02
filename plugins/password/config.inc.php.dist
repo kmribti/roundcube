@@ -256,3 +256,17 @@ $rcmail_config['xmail_user'] = 'YourXmailControlUser';
 $rcmail_config['xmail_pass'] = 'YourXmailControlPass';
 $rcmail_config['xmail_port'] = 6017;
 
+
+// hMail Driver options
+// -----------------------
+// Remote hMailServer configuration
+// true:  HMailserver is on a remote box (php.ini: com.allow_dcom = true)
+// false: Hmailserver is on same box as PHP
+$rcmail_config['hmailserver_remote_dcom'] = false;
+// Windows credentials
+$rcmail_config['hmailserver_server'] = array(
+    'Server' => 'localhost', // hostname or ip address
+    'Username' => 'administrator', // windows username
+    'Password' => 'password' // windows user password
+);
+

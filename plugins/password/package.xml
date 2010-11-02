@@ -15,10 +15,10 @@
 		<email>alec@alec.pl</email>
 		<active>yes</active>
 	</lead>
-	<date>2010-10-07</date>
+	<date>2010-11-02</date>
 	<time>09:00:00</time>
 	<version>
-		<release>2.0</release>
+		<release>2.1</release>
 		<api>1.6</api>
 	</version>
 	<stability>
@@ -27,7 +27,7 @@
 	</stability>
 	<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPLv2</license>
 	<notes>
-- Fixed SQL Injection in SQL driver when using %p or %o variables in query (#1487034)
+- hMail driver: Add possibility to connect to remote host
     </notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
@@ -198,6 +198,22 @@
 	        <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPLv2</license>
 	        <notes>
 - Added password_ldap_lchattr option (#1486927)
+            </notes>
+        </release>
+        <release>
+        	<date>2010-10-07</date>
+        	<time>09:00:00</time>
+	        <version>
+		        <release>2.0</release>
+		        <api>1.6</api>
+	        </version>
+	        <stability>
+		        <release>stable</release>
+		        <api>stable</api>
+	        </stability>
+	        <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPLv2</license>
+	        <notes>
+- Fixed SQL Injection in SQL driver when using %p or %o variables in query (#1487034)
             </notes>
         </release>
     </changelog>
