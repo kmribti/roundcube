@@ -4,8 +4,8 @@
  +-----------------------------------------------------------------------+
  | program/steps/addressbook/list.inc                                    |
  |                                                                       |
- | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | This file is part of the Roundcube Webmail client                     |
+ | Copyright (C) 2005-2007, Roundcube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -32,4 +32,3 @@ rcmail_js_contacts_list($result);
 // send response
 $OUTPUT->send();
 
-?>

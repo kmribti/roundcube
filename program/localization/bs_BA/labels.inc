@@ -1,18 +1,19 @@
 <?php
 
 /*
+
  +-----------------------------------------------------------------------+
  | language/bs_BA/labels.inc                                             |
  |                                                                       |
- | Language file of the RoundCube Webmail client                         |
- | Copyright (C) 2005, 2006, RoundQube Dev. - Switzerland                |
+ | Language file of the Roundcube Webmail client                         |
+ | Copyright (C) 2005-2010, Roundcube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  +-----------------------------------------------------------------------+
  | Author: Begzudin Omerovic <Begzudin.Omerovic@gmail.com>               |
  +-----------------------------------------------------------------------+
 
- $Id$
+ @version $Id$
 
 */
 
@@ -212,7 +213,6 @@ $labels['htmleditor']= 'Pisi HTML poruke';
 $labels['htmlsignature'] ='HTML potpis';
 $labels['previewpane'] ='Pokaži prethodu poruku';
 $labels['autosavedraft'] ='Automatski spasi predlozak';
-$labels['everynminutes'] ='svakih $n minuta';
 $labels['never'] ='nikada';
 
 $labels['folder']  = 'Fascikla';

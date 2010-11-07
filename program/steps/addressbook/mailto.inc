@@ -4,8 +4,8 @@
  +-----------------------------------------------------------------------+
  | program/steps/addressbook/mailto.inc                                  |
  |                                                                       |
- | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2007, RoundCube Dev. - Switzerland                      |
+ | This file is part of the Roundcube Webmail client                     |
+ | Copyright (C) 2007, Roundcube Dev. - Switzerland                      |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -23,8 +23,10 @@ $cid = get_input_value('_cid', RCUBE_INPUT_GET);
 $recipients = null;
 $mailto = array();
 
-if ($cid && preg_match('/^[a-z0-9\-_=]+(,[a-z0-9\-_=]+)*$/i', $cid) && $CONTACTS->ready)
+if ($cid && preg_match('/^[a-z0-9\+\/=_-]+(,[a-z0-9\+\/=_-]+)*$/i', $cid) && $CONTACTS->ready)
 {
+  $CONTACTS->set_page(1);
+  $CONTACTS->set_pagesize(100);
   $recipients = $CONTACTS->search($CONTACTS->primary_key, $cid);
 
   while (is_object($recipients) && ($rec = $recipients->iterate()))
@@ -35,8 +37,8 @@ if (!empty($mailto))
 {
   $mailto_str = join(', ', $mailto);
   $mailto_id = substr(md5($mailto_str), 0, 16);
-  $_SESSION['mailto'][$mailto_id] = $mailto_str;
-  $OUTPUT->command('redirect', rcmail_self_url('compose', array('_mailto' => $mailto_id), 'mail'));
+  $_SESSION['mailto'][$mailto_id] = urlencode($mailto_str);
+  $OUTPUT->redirect(array('task' => 'mail', '_action' => 'compose', '_mailto' => $mailto_id));
 }
 else
   $OUTPUT->show_message('nocontactsfound', 'warning');
@@ -45,4 +47,3 @@ else
 // send response
 $OUTPUT->send();
 
-?>

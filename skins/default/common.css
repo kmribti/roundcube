@@ -1,15 +1,16 @@
-/***** RoundCube|Mail basic styles *****/
+/***** Roundcube|Mail basic styles *****/
 
 body
 {
   margin: 8px;
-  background-color: #F6F6F6; /* #EBEBEB; */
+  background-color: #F6F6F6;
   color: #000000;
 }
 
 body.iframe
 {
   margin: 0px;
+  background-color: #FFF;
 }
 
 body.extwin
@@ -17,11 +18,10 @@ body.extwin
   margin: 10px;
 }
 
-body, td, th, span, div, p, h3
+body, td, th, div, p, h3, select, input, textarea
 {
   font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
   font-size: 12px;
-  color: #000000;
 }
 
 th
@@ -31,9 +31,7 @@ th
 
 h3
 {
-  font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
   font-size: 18px;
-  color: #000000;
 }
 
 a, a:active, a:visited
@@ -62,15 +60,20 @@ hr
   border-style: none;
 }
 
+input[type="text"],
+input[type="button"],
+input[type="password"],
+textarea
+{
+  border: 1px solid #666666;
+  color: #333333;
+  background-color: #ffffff;
+}
+
 input, textarea
 {
-  font-size: 9pt;
-  font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
-  padding: 1px;
-  padding-left: 3px;
-  padding-right: 3px;
-  background-color: #ffffff;
-  border: 1px solid #666666;
+  color: black;
+  padding: 1px 3px;
 }
 
 input.button
@@ -89,9 +92,15 @@ input.button:hover
   color: black;
 }
 
+input.mainaction
+{
+  font-weight: bold;
+  border: 1px solid #999;
+}
+
 img
 {
-  behavior: url('skins/default/pngbehavior.htc');
+  border: 0;
 }
 
 .alttext
@@ -99,14 +108,28 @@ img
   font-size: 11px;
 }
 
+.hint
+{
+  color: #666;
+  font-size: 11px;
+}
 
 /** common user interface objects */
+
+#mainscreen
+{
+  position: absolute;
+  top: 85px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+}
 
 #header
 {
   position: absolute;
-  top: 10px;
-  left: 20px;
+  top: 8px;
+  left: 19px;
   width: 170px;
   height: 40px;
   z-index: 100;
@@ -117,24 +140,22 @@ img
   position: absolute;
   top: 0px;
   right: 0px;
-  width: 600px;
-  height: 37px;
-  background: url(images/taskbar.gif) top right no-repeat;
-  padding: 10px 14px 0px 0px;
+  height: 24px;
+  width: 100%;
+  background: url(images/taskbar.png) top right no-repeat;
+  padding: 10px 4px 5px 0px;
   text-align: right;
   white-space: nowrap;
   z-index: 2;
 }
 
-#taskbar a,
-#taskbar a:active,
-#taskbar a:visited
+#taskbar a
 {
   font-size: 11px;
   color: #666666;
   text-decoration: none;
-  padding: 6px 16px 6px 30px;
-  background-repeat: no-repeat;
+  padding: 6px 12px 6px 26px;
+  background: url(images/taskicons.gif) no-repeat;
 }
 
 #taskbar a:hover
@@ -142,34 +163,33 @@ img
   color: #333333;
 }
 
-a.button-mail
+#taskbar a.button-mail
 {
-  background-image: url(images/buttons/mail.gif);
+  background-position: 0 0;
 }
 
-a.button-addressbook
+#taskbar a.button-addressbook
 {
-  background-image: url(images/buttons/addressbook.gif);
+  background-position: 0 -25px;
 }
 
-a.button-settings
+#taskbar a.button-settings
 {
-  background-image: url(images/buttons/settings.gif);
+  background-position: 0 -50px;
 }
 
-a.button-logout
+#taskbar a.button-logout
 {
-  background-image: url(images/buttons/logout.gif);
+  background-position: 0 -75px;
 }
-
 
 #message
 {
   position: absolute;
   display: none;
   top: -1px;
-  left: 200px;
-  right: 200px;
+  margin-left: -225px;
+  left: 50%;
   z-index: 5000;
   opacity: 0.85;
 }
@@ -178,15 +198,14 @@ a.button-logout
 {
   width: 400px;
   margin: 0px auto;
-  height: 24px;
-  min-height: 24px;
+  min-height: 22px;
   padding: 8px 10px 8px 46px;
 }
 
 #message div.notice,
 #remote-objects-message
 {
-  background: url(images/display/info.png) 6px 3px no-repeat;
+  background: url(images/display/icons.png) 6px 3px no-repeat;
   background-color: #F7FDCB;
   border: 1px solid #C2D071;
 }
@@ -194,14 +213,14 @@ a.button-logout
 #message div.error,
 #message div.warning
 {
-  background: url(images/display/warning.png) 6px 3px no-repeat;
+  background: url(images/display/icons.png) 6px -97px no-repeat;
   background-color: #EF9398;
   border: 1px solid #DC5757;
 }
 
 #message div.confirmation
 {
-  background: url(images/display/confirm.png) 6px 3px no-repeat;
+  background: url(images/display/icons.png) 6px -47px no-repeat;
   background-color: #A6EF7B;
   border: 1px solid #76C83F;
 }
@@ -213,10 +232,160 @@ a.button-logout
   border: 1px solid #CCCCCC;
 }
 
-.splitter
+.box
+{
+  border: 1px solid #999;
+}
+
+.boxtitle
+{
+  height: 12px !important;
+  padding: 2px 10px 5px 5px;
+  border-bottom: 1px solid #999;
+  color: #333;
+  font-size: 11px;
+  font-weight: bold;
+  overflow: hidden;
+  background: url(images/listheader.gif) top left repeat-x #CCC;
+}
+
+.boxcontent
+{
+  padding: 15px 10px 10px 10px;
+  background-color: #F2F2F2;
+}
+
+.boxcontent table td.title
+{
+  color: #666;
+  padding-right: 10px;
+}
+
+.boxlistcontent
 {
   position: absolute;
-  padding: 2px;
+  top: 20px;
+  bottom: 22px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.boxsubject
+{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+  height: 22px;
+  border-bottom: 1px solid #999;
+  background: url(images/listheader.gif) top left repeat-x #CCC;
+}
+
+.boxfooter
+{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+  height: 22px;
+  border-top: 1px solid #999;
+  background: url(images/listheader.gif) top left repeat-x #CCC;
+}
+
+.boxfooter a.button,
+.boxfooter a.buttonPas
+{
+  display: block;
+  float: left;
+  width: 34px;
+  height: 22px;
+  padding: 0px;
+  margin: 0;
+  overflow: hidden;
+  background: url(images/icons/groupactions.png) 0 0 no-repeat transparent;
+  opacity: 0.99; /* this is needed to make buttons appear correctly in Chrome */
+}
+
+.boxfooter a.groupactions
+{
+  background-position: 0 -26px;
+}
+
+.boxfooter a.buttonPas
+{
+  opacity: 0.35;
+}
+
+.pagenav
+{
+  min-width: 250px;
+}
+
+.pagenav span
+{
+  color: #444;
+  font-size: 11px;
+  text-shadow: white 1px 1px;
+  white-space: nowrap;
+}
+
+.pagenav a.button,
+.pagenav a.buttonPas
+{
+  display: block;
+  float: left;
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  margin: 1px;
+  overflow: hidden;
+  background: url(images/pagenav.gif) 0 0 no-repeat transparent;
+  opacity: 0.99; /* this is needed to make buttons appear correctly in Chrome */
+}
+
+.pagenav a.buttonPas {
+  opacity: 0.35;
+}
+
+.pagenav a.firstpageSel {
+  background-position: 0 -11px;
+}
+
+.pagenav a.prevpage {
+  background-position: -11px 0;
+}
+
+.pagenav a.prevpageSel {
+  background-position: -11px -11px;
+}
+
+.pagenav a.nextpage {
+  background-position: -22px 0;
+}
+
+.pagenav a.nextpageSel {
+  background-position: -22px -11px;
+}
+
+.pagenav a.lastpage {
+  background-position: -33px 0;
+}
+
+.pagenav a.lastpageSel {
+  background-position: -33px -11px;
+}
+
+.splitter
+{
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  position: absolute;
   background: url(images/dimple.png) center no-repeat;
 }
 
@@ -229,17 +398,92 @@ a.button-logout
 .splitter-v
 {
   cursor: e-resize;
-  background-position: 1px center;
+  background-position: 2px center;
 }
 
-.radios-left label
+.popupmenu
 {
-  padding-left: 0.3em;
+  position: absolute;
+  top: 32px;
+  left: 90px;
+  width: auto;
+  display: none;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #999;
+  padding: 4px;
+  z-index: 240;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-box-shadow: 1px 1px 12px #999;
+  -webkit-box-shadow: #999 1px 1px 12px;
 }
 
-.radios-left input
+.popupmenu ul
 {
-  padding-left: 1em;
+  margin: -4px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.popupmenu ul li
+{
+  font-size: 11px;
+  white-space: nowrap;
+  min-width: 100px;
+  margin: 3px -4px;
+}
+
+.popupmenu li a
+{
+  display: block;
+  color: #a0a0a0;
+  padding: 2px 10px;
+  text-decoration: none;
+  min-height: 14px;
+}
+
+.popupmenu li a.active,
+.popupmenu li a.active:active,
+.popupmenu li a.active:visited
+{
+  color: #333;
+}
+
+.popupmenu li a.active:hover
+{
+  color: #fff;
+  background-color: #c00;
+}
+
+.darkbg
+{
+  background-color: #F2F2F2 !important;
+}
+
+.dropbutton,
+.dropbutton span
+{
+  float: left;
+  height: 32px;
+}
+
+.dropbutton:hover
+{
+  background: url(images/dbutton.png) 0 0 no-repeat transparent;
+}
+
+.dropbutton span
+{
+  width: 9px;
+  background: url(images/dbutton.png) -53px 0 no-repeat transparent;
+}
+
+.dropbutton span:hover
+{
+  cursor: pointer;
+  background-position: -64px 0;
 }
 
 
@@ -252,8 +496,7 @@ table.records-table thead tr td
   vertical-align: middle;
   border-bottom: 1px solid #999999;
   color: #333333;
-  background-color: #EBEBEB;
-  background-image: url(images/listheader_aqua.gif); 
+  background: url(images/listheader.gif) top left repeat-x #CCC;
   font-size: 11px;
   font-weight: bold;
 }
@@ -276,7 +519,6 @@ table.records-table tr
 
 table.records-table tr.selected td
 {
-  font-weight: bold;
   color: #FFFFFF;
   background-color: #CC3333;
 }
@@ -287,7 +529,6 @@ table.records-table tr.focused td
 
 table.records-table tr.unfocused td
 {
-  font-weight: bold;
   color: #FFFFFF;
   background-color: #929292;
 }
@@ -298,20 +539,27 @@ table.records-table tr.unfocused td
 #quicksearchbar
 {
   position: absolute;
-  top: 60px;
-  right: 30px;
+  top: 55px;
+  right: 20px;
   width: 182px;
   height: 20px;
   text-align: right;
-  background: url('images/searchfield.gif') top left no-repeat;
+  background: url(images/searchfield.gif) top left no-repeat;
 }
 
-#quicksearchbar a
+#searchreset
 {
   position: absolute;
   top: 3px;
   right: 4px;
   text-decoration: none;
+}
+
+#searchmenulink
+{
+ position: absolute;
+ top: 3px;
+ right: 160px;
 }
 
 #quicksearchbar img
@@ -323,35 +571,58 @@ table.records-table tr.unfocused td
 {
   position: absolute;
   top: 2px;
-  left: 20px;
+  left: 24px;
   width: 140px;
+  height: 15px;
   font-size: 11px;
   padding: 0px;
   border: none;
 }
 
 
-/*\*/
-html>body*#quicksearchbar { background-image: none; }
-html>body*#quicksearchbar a { top: 5px; }
-html>body*#quicksearchbar #quicksearchbox { width: 180px; top:0px; right: 1px; left: auto; }
-/**/
-
-
 /***** roundcube webmail pre-defined classes *****/
+
+#rcmversion
+{
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  text-align: right;
+  white-space: nowrap;
+  font-size: 8pt;
+  color: #999;
+}
 
 #rcmdraglayer
 {
+  min-width: 300px;
+  width: auto !important;
   width: 300px;
   border: 1px solid #999999;
-  background-color: #F9F9F9;
+  background-color: #fff;
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 3px;
   padding-bottom: 3px;
   font-size: 11px;
-  opacity: 0.6;
-  -moz-opacity: 0.6;
+  white-space: nowrap;
+  opacity: 0.82;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-box-shadow: 1px 1px 12px #999;
+  -webkit-box-shadow: #999 1px 1px 12px;
+}
+
+.draglayercopy:before
+{
+  position: absolute;
+  bottom: -5px;
+  left: -6px;
+  content: " ";
+  width: 14px;
+  height: 14px;
+  background: url(images/messageactions.png) -2px -128px no-repeat;
 }
 
 a.rcmContactAddress
@@ -380,17 +651,213 @@ a.rcmContactAddress:hover
 
 #rcmKSearchpane ul li
 {
+  display: block;
   height: 16px;
   font-size: 11px;
-  padding-left: 8px;
+  padding-left: 6px;
   padding-top: 2px;
-  padding-right: 8px;
-  white-space: nowrap;  
+  padding-right: 6px;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 #rcmKSearchpane ul li.selected
 {
   color: #ffffff;
   background-color: #CC3333;
+}
+
+#login-form
+{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 400px;
+  border: 1px solid #999;
+}
+
+#login-form table td.title
+{
+  text-align: right;
+  white-space: nowrap;
+}
+
+#login-form table
+{
+  width: 1%;
+  margin: auto;
+}
+
+#rcmloginuser, #rcmloginpwd, #rcmloginhost
+{
+  width: 200px;
+}
+
+#console
+{
+  opacity: 0.8;
+}
+
+.disabled
+{
+  color: #999;
+}
+
+font.bold
+{
+  font-weight: bold;
+}
+
+
+/***** onclick menu list *****/
+
+ul.toolbarmenu
+{
+  margin: -4px 0 -4px 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.toolbarmenu li
+{
+  font-size: 11px;
+  white-space: nowrap;
+  min-width: 130px;
+  margin: 2px -4px;
+}
+
+ul.toolbarmenu li a
+{
+  display: block;
+  color: #a0a0a0;
+  padding: 1px 12px 3px 28px;
+  text-decoration: none;
+  min-height: 14px;
+}
+
+ul.toolbarmenu li a.active,
+ul.toolbarmenu li a.active:active,
+ul.toolbarmenu li a.active:visited
+{
+  color: #333;
+}
+
+ul.toolbarmenu li input
+{
+  vertical-align: middle;
+}
+
+ul.toolbarmenu li hr
+{
+  color: #ccc;
+  width: 130px;
+  height: 1px;
+  margin: 2px 1px 2px 1px;
+}
+
+ul.toolbarmenu li img
+{
+  float: left;
+  margin: 0 2px;
+}
+
+div.popupmenu ul li.separator_below,
+ul.toolbarmenu li.separator_below
+{
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 2px;
+  padding-bottom: 2px;
+}
+
+div.popupmenu ul li.separator_above,
+ul.toolbarmenu li.separator_above
+{
+  border-top: 1px solid #ccc;
+  margin-top: 2px;
+  padding-top: 2px;
+}
+
+
+/***** tabbed interface elements *****/
+
+div.tabsbar,
+#tabsbar
+{
+  position: absolute;
+  top: 50px;
+  left: 220px;
+  right: 20px;
+  height: 22px;
+  border-bottom: 1px solid #999999;
+  white-space: nowrap;
+}
+
+div.tabsbar
+{
+  top: 35px;
+  left: 12px;
+  right: 12px;
+}
+
+span.tablink,
+span.tablink-selected
+{
+  float: left;
+  height: 23px !important;
+  height: 22px;
+  overflow: hidden;
+  background: url(images/tabs-left.gif) top left no-repeat;
+}
+
+span.tablink
+{
+  cursor: pointer;
+}
+
+span.tablink-selected
+{
+  cursor: default;
+  background-position: 0px -23px;
+}
+
+span.tablink a,
+span.tablink-selected a
+{
+  display: block;
+  padding: 5px 10px 0 5px;
+  margin-left: 5px;
+  height: 23px;
+  color: #555555;
+  max-width: 185px;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  background: url(images/tabs-right.gif) top right no-repeat;
+}
+
+span.tablink-selected a
+{
+  cursor: inherit;
+  color: #000000;
+  background-position: right -23px;
+}
+
+fieldset
+{
+  margin-bottom: 1em;
+  border: 1px solid #999999;
+  padding: 4px 8px 9px 8px; 
+}
+
+legend
+{
+  color: #999999;
+}
+
+fieldset.tabbed
+{
+  margin-top: 22px;
+  padding-top: 12px;
 }
 

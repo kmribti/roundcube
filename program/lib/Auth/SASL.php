@@ -75,6 +75,11 @@ class Auth_SASL
                 $classname = 'Auth_SASL_Plain';
                 break;
 
+            case 'external':
+                $filename  = 'Auth/SASL/External.php';
+                $classname = 'Auth_SASL_External';
+                break;
+
             case 'crammd5':
                 $filename  = 'Auth/SASL/CramMD5.php';
                 $classname = 'Auth_SASL_CramMD5';
@@ -91,7 +96,8 @@ class Auth_SASL
         }
 
         require_once($filename);
-        return new $classname();
+        $obj = new $classname();
+        return $obj;
     }
 }
 

@@ -4,8 +4,8 @@
  +-----------------------------------------------------------------------+
  | program/steps/settings/save_identity.inc                              |
  |                                                                       |
- | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005, RoundCube Dev. - Switzerland                      |
+ | This file is part of the Roundcube Webmail client                     |
+ | Copyright (C) 2005-2009, Roundcube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -19,132 +19,134 @@
 
 */
 
+define('IDENTITIES_LEVEL', intval($RCMAIL->config->get('identities_level', 0)));
+
 $a_save_cols = array('name', 'email', 'organization', 'reply-to', 'bcc', 'standard', 'signature', 'html_signature');
 $a_html_cols = array('signature');
 $a_boolean_cols = array('standard', 'html_signature');
+$updated = $default_id = false;
 
 // check input
-if (empty($_POST['_name']) || empty($_POST['_email']))
+if (empty($_POST['_name']) || (empty($_POST['_email']) && IDENTITIES_LEVEL != 1 && IDENTITIES_LEVEL != 3))
   {
   $OUTPUT->show_message('formincomplete', 'warning');
-  rcmail_overwrite_action('edit-identitiy');
+  rcmail_overwrite_action('edit-identity');
   return;
   }
 
 
+$save_data = array();
+foreach ($a_save_cols as $col)
+{
+  $fname = '_'.$col;
+  if (isset($_POST[$fname]))
+    $save_data[$col] = get_input_value($fname, RCUBE_INPUT_POST, in_array($col, $a_html_cols));
+}
+
+// set "off" values for checkboxes that were not checked, and therefore
+// not included in the POST body.
+foreach ($a_boolean_cols as $col)
+{
+  $fname = '_' . $col;
+  if (!isset($_POST[$fname]))
+    $save_data[$col] = 0;
+}
+
+// unset email address if user has no rights to change it
+if (IDENTITIES_LEVEL == 1 || IDENTITIES_LEVEL == 3)
+  unset($save_data['email']);
+
+// Validate e-mail addresses
+foreach (array('email', 'reply-to', 'bcc') as $item) {
+  if ($email = $save_data[$item]) {
+    $ascii_email = idn_to_ascii($email);
+    if (!check_email($ascii_email, false)) {
+      // show error message
+      $OUTPUT->show_message('emailformaterror', 'error', array('email' => $email), false);
+      rcmail_overwrite_action('edit-identity');
+      return;
+    }
+  }
+}
+
 // update an existing contact
 if ($_POST['_iid'])
-  {
-  $a_write_sql = array();
+{
+  $iid = get_input_value('_iid', RCUBE_INPUT_POST);
+  $plugin = $RCMAIL->plugins->exec_hook('identity_update', array('id' => $iid, 'record' => $save_data));
+  $save_data = $plugin['record'];
 
-  foreach ($a_save_cols as $col)
-    {
-    $fname = '_'.$col;
-    if (!isset($_POST[$fname]))
-      continue;
+  if ($save_data['email'])
+    $save_data['email'] = idn_to_ascii($save_data['email']);
+  if ($save_data['bcc'])
+    $save_data['bcc'] = idn_to_ascii($save_data['bcc']);
+  if ($save_data['reply-to'])
+    $save_data['reply-to'] = idn_to_ascii($save_data['reply-to']);
 
-    $a_write_sql[] = sprintf("%s=%s",
-                             $DB->quoteIdentifier($col),
-                             $DB->quote(get_input_value($fname, RCUBE_INPUT_POST, in_array($col, $a_html_cols))));
-    }
+  if (!$plugin['abort'])
+    $updated = $USER->update_identity($iid, $save_data);
+  else
+    $updated = $plugin['result'];
 
-  // set "off" values for checkboxes that were not checked, and therefore
-  // not included in the POST body.
-  foreach ($a_boolean_cols as $col)
-    {
-    $fname = '_' . $col;
-    if (!isset($_POST[$fname]))
-      {
-      $a_write_sql[] = sprintf("%s=0", $DB->quoteIdentifier($col));
-      }
-    }
-
-  if (sizeof($a_write_sql))
-    {
-    $DB->query("UPDATE ".get_table_name('identities')."
-                SET ".join(', ', $a_write_sql)."
-                WHERE  identity_id=?
-                AND    user_id=?
-                AND    del<>1",
-                get_input_value('_iid', RCUBE_INPUT_POST),
-                $_SESSION['user_id']);
-                       
-    $updated = $DB->affected_rows();
-    }
-       
-  if ($updated)
-    {
+  if ($updated) {
     $OUTPUT->show_message('successfullysaved', 'confirmation');
 
-    // mark all other identities as 'not-default'
     if (!empty($_POST['_standard']))
-      $DB->query("UPDATE ".get_table_name('identities')."
-                  SET ".$DB->quoteIdentifier('standard')."='0'
-                  WHERE  user_id=?
-                  AND    identity_id<>?
-                  AND    del<>1",
-                  $_SESSION['user_id'],
-                  get_input_value('_iid', RCUBE_INPUT_POST));
-    
-    if ($_POST['_framed'])
-      {
+      $default_id = get_input_value('_iid', RCUBE_INPUT_POST);
+
+    if ($_POST['_framed']) {
       // update the changed col in list
-      // ...      
-      }
-    }
-  else if ($DB->is_error())
-    {
-    // show error message
-    $OUTPUT->show_message('errorsaving', 'error');
-    rcmail_overwrite_action('edit-identitiy');
+      // ...
     }
   }
+  else {
+    // show error message
+    $OUTPUT->show_message($plugin['message'] ? $plugin['message'] : 'errorsaving', 'error', null, false);
+    rcmail_overwrite_action('edit-identity');
+    return;
+  }
+}
 
-// insert a new contact
-else
-  {
-  $a_insert_cols = $a_insert_values = array();
+// insert a new identity record
+else if (IDENTITIES_LEVEL < 2)
+{
+  if (IDENTITIES_LEVEL == 1)
+    $save_data['email'] = $RCMAIL->user->get_username();
 
-  foreach ($a_save_cols as $col)
-    {
-    $fname = '_'.$col;
-    if (!isset($_POST[$fname]))
-      continue;
-    
-    $a_insert_cols[] = $DB->quoteIdentifier($col);
-    $a_insert_values[] = $DB->quote(get_input_value($fname, RCUBE_INPUT_POST, in_array($col, $a_html_cols)));
-    }
-    
-  if (sizeof($a_insert_cols))
-    {
-    $DB->query("INSERT INTO ".get_table_name('identities')."
-                (user_id, ".join(', ', $a_insert_cols).")
-                VALUES (?, ".join(', ', $a_insert_values).")",
-                $_SESSION['user_id']);
+  $plugin = $RCMAIL->plugins->exec_hook('identity_create', array('record' => $save_data));
+  $save_data = $plugin['record'];
 
-    $insert_id = $DB->insert_id(get_sequence_name('identities'));
-    }
+  $save_data['email']    = idn_to_ascii($save_data['email']);
+  $save_data['bcc']      = idn_to_ascii($save_data['bcc']);
+  $save_data['reply-to'] = idn_to_ascii($save_data['reply-to']);
+
+  if (!$plugin['abort'])
+    $insert_id = $save_data['email'] ? $USER->insert_identity($save_data) : null;
+  else
+    $insert_id = $plugin['result'];
+
+  if ($insert_id) {
+    $OUTPUT->show_message('successfullysaved', 'confirmation', null, false);
     
-  if ($insert_id)
-    {
     $_GET['_iid'] = $insert_id;
 
-    if ($_POST['_framed'])
-      {
-      // add contact row or jump to the page where it should appear
-      // ....
-      }
-    }
-  else
-    {
-    // show error message
-    $OUTPUT->show_message('errorsaving', 'error');
-    rcmail_overwrite_action('edit-identity');
-    }
+    if (!empty($_POST['_standard']))
+      $default_id = $insert_id;
   }
+  else {
+    // show error message
+    $OUTPUT->show_message($plugin['message'] ? $plugin['message'] : 'errorsaving', 'error', null, false);
+    rcmail_overwrite_action('edit-identity');
+    return;
+  }
+}
+else
+  $OUTPUT->show_message('opnotpermitted', 'error');
 
+
+// mark all other identities as 'not-default'
+if ($default_id)
+  $USER->set_default($default_id);
 
 // go to next step
-rcmail_overwrite_action($_framed ? 'edit-identity' : 'identities');
-
-?>
+rcmail_overwrite_action('identities');

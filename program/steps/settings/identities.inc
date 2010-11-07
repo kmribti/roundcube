@@ -4,8 +4,8 @@
  +-----------------------------------------------------------------------+
  | program/steps/settings/identities.inc                                 |
  |                                                                       |
- | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2005-2007, RoundCube Dev. - Switzerland                 |
+ | This file is part of the Roundcube Webmail client                     |
+ | Copyright (C) 2005-2007, Roundcube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -19,8 +19,9 @@
 
 */
 
-if ($USER_DATA = $DB->fetch_assoc($sql_result))
-  $OUTPUT->set_pagetitle(sprintf('%s (%s@%s)', rcube_label('identities'), $USER_DATA['username'], $USER_DATA['mail_host']));
+define('IDENTITIES_LEVEL', intval($RCMAIL->config->get('identities_level', 0)));
+
+$OUTPUT->set_pagetitle(rcube_label('identities'));
 
 $OUTPUT->include_script('list.js');
 
@@ -37,13 +38,10 @@ function rcmail_identity_frame($attrib)
 
   $OUTPUT->set_env('contentframe', $attrib['name']);
 
-  $attrib_str = create_attrib_string($attrib, array('name', 'id', 'class', 'style', 'src', 'width', 'height', 'frameborder'));
-  $out = '<iframe'. $attrib_str . '></iframe>';
-
-  return $out;
+  return html::iframe($attrib);
   }
 
 $OUTPUT->add_handler('identityframe', 'rcmail_identity_frame');
+$OUTPUT->set_env('identities_level', IDENTITIES_LEVEL);
 
-parse_template('identities');
-?>
+$OUTPUT->send('identities');

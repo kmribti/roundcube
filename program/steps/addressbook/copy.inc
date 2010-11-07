@@ -4,8 +4,8 @@
  +-----------------------------------------------------------------------+
  | program/steps/addressbook/copy.inc                                    |
  |                                                                       |
- | This file is part of the RoundCube Webmail client                     |
- | Copyright (C) 2007, RoundCube Dev. - Switzerland                      |
+ | This file is part of the Roundcube Webmail client                     |
+ | Copyright (C) 2007, Roundcube Dev. - Switzerland                      |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -19,26 +19,79 @@
 
 */
 
+// only process ajax requests
+if (!$OUTPUT->ajax_call)
+  return;
+
 $cid = get_input_value('_cid', RCUBE_INPUT_POST);
 $target = get_input_value('_to', RCUBE_INPUT_POST);
-if ($cid && preg_match('/^[a-z0-9\-_=]+(,[a-z0-9\-_=]+)*$/i', $cid) && strlen($target) && $target != $source)
-{
-  if ($target != '0')
-    $TARGET = new rcube_ldap($CONFIG['ldap_public'][$target]);
-  else
-    $TARGET = new rcube_contacts($DB, $_SESSION['user_id']);
-    
-  $success = false;  
-  if ($TARGET && $TARGET->ready && !$TARGET->readonly)
-    $success = $TARGET->insert($CONTACTS->search($CONTACTS->primary_key, $cid), true);
+$target_group = get_input_value('_togid', RCUBE_INPUT_POST);
 
-  if (empty($success))
+if ($cid && preg_match('/^[a-zA-Z0-9\+\/=_-]+(,[a-zA-Z0-9\+\/=_-]+)*$/', $cid) && strlen($target) && $target !== $source)
+{
+  $success = 0;
+  $TARGET = $RCMAIL->get_address_book($target);
+
+  if ($TARGET && $TARGET->ready && !$TARGET->readonly) {
+    $arr_cids = explode(',', $cid);
+    $ids = array();
+
+    foreach ($arr_cids as $cid) {
+      $a_record = $CONTACTS->get_record($cid, true);
+
+      // check if contact exists, if so, we'll need it's ID
+      $result = $TARGET->search('email', $a_record['email'], true, true);
+
+      // insert contact record
+      if (!$result->count) {
+        $plugin = $RCMAIL->plugins->exec_hook('contact_create', array(
+          'record' => $a_record, 'source' => $target, 'group' => $target_group));
+
+        if (!$plugin['abort']) {
+          if ($insert_id = $TARGET->insert($a_record, false)) {
+            $ids[] = $insert_id;
+            $success++;
+          }
+        }
+        else if ($plugin['result']) {
+          $ids = array_merge($ids, $plugin['result']);
+          $success++;
+        }
+      }
+      else {
+        $record = $result->first();
+        $ids[] = $record['ID'];
+      }
+    }
+
+    // assign to group
+    if ($target_group && $TARGET->groups && !empty($ids)) {
+      $plugin = $RCMAIL->plugins->exec_hook('group_addmembers', array(
+        'group_id' => $target_group, 'ids' => $ids, 'source' => $target));
+
+      if (!$plugin['abort']) {
+        $TARGET->reset();
+        $TARGET->set_group($target_group);
+
+        if (($maxnum = $RCMAIL->config->get('max_group_members', 0)) && ($TARGET->count()->count + count($plugin['ids']) > $maxnum)) {
+          $OUTPUT->show_message('maxgroupmembersreached', 'warning', array('max' => $maxnum));
+          $OUTPUT->send();
+        }
+
+        if (($cnt = $TARGET->add_to_group($target_group, $plugin['ids'])) && $cnt > $success)
+          $success = $cnt;
+      }
+      else if ($plugin['result'])
+        $success = $plugin['result'];
+    }
+  }
+
+  if ($success == 0)
     $OUTPUT->show_message('copyerror', 'error');
   else
-    $OUTPUT->show_message('copysuccess', 'notice', array('nr' => count($success)));
+    $OUTPUT->show_message('copysuccess', 'notice', array('nr' => $success));
 }
-  
+
 // send response
 $OUTPUT->send();
 
-?>

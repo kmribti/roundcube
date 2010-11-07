@@ -2,57 +2,32 @@
 /* You can extend this CSS by adding your own CSS file with the the content_css option */
 
 body, td, pre {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 10px;
+	font-family: "Lucida Grande", Verdana,  Arial, Helvetica, sans-serif;
+	font-size: 12px;
 }
 
 body {
 	background-color: #FFFFFF;
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 2px;
 }
 
-.mceVisualAid {
-	border: 1px dashed #BBBBBB !important;
+pre
+{
+	margin: 0;
+	padding: 0;
+	white-space: -moz-pre-wrap !important;
+	white-space: pre-wrap !important;
+	white-space: pre;
+	word-wrap: break-word; /* IE (and Safari) */
 }
 
-div.mceVisualAid {
-	background-image:url('../images/spacer.gif');
-	visibility: visible !important;
+blockquote
+{
+	padding-left:5px;
+	border-left:#1010ff 2px solid;
+	margin-left:5px;
+	width:100%;
 }
 
-.mceItemAnchor {
-	width: 12px;
-	line-height: 6px;
-	overflow: hidden;
-	padding-left: 12px;
-	background-image: url('../images/anchor_symbol.gif');
-	background-position: bottom;
-	background-repeat: no-repeat;
-}
-
-/* Important is needed in Gecko browsers inorder to style links */
-/*
-a {
-	color: green !important;
-}
-*/
-
-/* Style selection range colors in Gecko browsers */
-/*
-::-moz-selection {
-	background-color: red;
-	color: green;
-}
-*/
-
-/* MSIE specific */
-
-* html body {
-	scrollbar-3dlight-color: #F0F0EE;
-	scrollbar-arrow-color: #676662;
-	scrollbar-base-color: #F0F0EE;
-	scrollbar-darkshadow-color: #DDDDDD;
-	scrollbar-face-color: #E0E0DD;
-	scrollbar-highlight-color: #F0F0EE;
-	scrollbar-shadow-color: #F0F0EE;
-	scrollbar-track-color: #F5F5F5;
-}

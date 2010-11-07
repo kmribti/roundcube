@@ -1,8 +1,4 @@
--- RoundCube Webmail initial database structure
--- Version 0.1-beta2
--- 
-
--- --------------------------------------------------------
+-- Roundcube Webmail initial database structure
 
 -- 
 -- Table structure for table `cache`
@@ -11,21 +7,19 @@
 CREATE TABLE cache (
   cache_id integer NOT NULL PRIMARY KEY,
   user_id integer NOT NULL default 0,
-  session_id varchar(40) default NULL,
   cache_key varchar(128) NOT NULL default '',
   created datetime NOT NULL default '0000-00-00 00:00:00',
   data longtext NOT NULL
 );
 
-CREATE INDEX ix_cache_user_id ON cache(user_id);
-CREATE INDEX ix_cache_cache_key ON cache(cache_key);
-CREATE INDEX ix_cache_session_id ON cache(session_id);
+CREATE INDEX ix_cache_user_cache_key ON cache(user_id, cache_key);
+CREATE INDEX ix_cache_created ON cache(created);
 
 
 -- --------------------------------------------------------
 
 -- 
--- Table structure for table contacts
+-- Table structure for table contacts and related
 -- 
 
 CREATE TABLE contacts (
@@ -34,13 +28,33 @@ CREATE TABLE contacts (
   changed datetime NOT NULL default '0000-00-00 00:00:00',
   del tinyint NOT NULL default '0',
   name varchar(128) NOT NULL default '',
-  email varchar(128) NOT NULL default '',
+  email varchar(255) NOT NULL default '',
   firstname varchar(128) NOT NULL default '',
   surname varchar(128) NOT NULL default '',
   vcard text NOT NULL default ''
 );
 
-CREATE INDEX ix_contacts_user_id ON contacts(user_id);
+CREATE INDEX ix_contacts_user_id ON contacts(user_id, email);
+
+
+CREATE TABLE contactgroups (
+  contactgroup_id integer NOT NULL PRIMARY KEY,
+  user_id integer NOT NULL default '0',
+  changed datetime NOT NULL default '0000-00-00 00:00:00',
+  del tinyint NOT NULL default '0',
+  name varchar(128) NOT NULL default ''
+);
+
+CREATE INDEX ix_contactgroups_user_id ON contactgroups(user_id, del);
+
+
+CREATE TABLE contactgroupmembers (
+  contactgroup_id integer NOT NULL,
+  contact_id integer NOT NULL default '0',
+  created datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY (contactgroup_id, contact_id)
+);
+
 
 -- --------------------------------------------------------
 
@@ -51,6 +65,7 @@ CREATE INDEX ix_contacts_user_id ON contacts(user_id);
 CREATE TABLE identities (
   identity_id integer NOT NULL PRIMARY KEY,
   user_id integer NOT NULL default '0',
+  changed datetime NOT NULL default '0000-00-00 00:00:00',
   del tinyint NOT NULL default '0',
   standard tinyint NOT NULL default '0',
   name varchar(128) NOT NULL default '',
@@ -62,7 +77,7 @@ CREATE TABLE identities (
   html_signature tinyint NOT NULL default '0'
 );
 
-CREATE INDEX ix_identities_user_id ON identities(user_id);
+CREATE INDEX ix_identities_user_id ON identities(user_id, del);
 
 
 -- --------------------------------------------------------
@@ -77,11 +92,13 @@ CREATE TABLE users (
   mail_host varchar(128) NOT NULL default '',
   alias varchar(128) NOT NULL default '',
   created datetime NOT NULL default '0000-00-00 00:00:00',
-  last_login datetime NOT NULL default '0000-00-00 00:00:00',
-  language varchar(5) NOT NULL default 'en',
+  last_login datetime DEFAULT NULL,
+  language varchar(5),
   preferences text NOT NULL default ''
 );
 
+CREATE UNIQUE INDEX ix_users_username ON users(username, mail_host);
+CREATE INDEX ix_users_alias ON users(alias);
 
 -- --------------------------------------------------------
 
@@ -93,10 +110,11 @@ CREATE TABLE session (
   sess_id varchar(40) NOT NULL PRIMARY KEY,
   created datetime NOT NULL default '0000-00-00 00:00:00',
   changed datetime NOT NULL default '0000-00-00 00:00:00',
-  ip varchar(15) NOT NULL default '',
+  ip varchar(40) NOT NULL default '',
   vars text NOT NULL
 );
 
+CREATE INDEX ix_session_changed ON session (changed);
 
 -- --------------------------------------------------------
 
@@ -115,14 +133,13 @@ CREATE TABLE messages (
   subject varchar(255) NOT NULL default '',
   "from" varchar(255) NOT NULL default '',
   "to" varchar(255) NOT NULL default '',
-  cc varchar(255) NOT NULL default '',
-  date datetime NOT NULL default '0000-00-00 00:00:00',
+  "cc" varchar(255) NOT NULL default '',
+  "date" datetime NOT NULL default '0000-00-00 00:00:00',
   size integer NOT NULL default '0',
   headers text NOT NULL,
   structure text
 );
 
-CREATE INDEX ix_messages_user_id ON messages(user_id);
-CREATE INDEX ix_messages_cache_key ON messages(cache_key);
-CREATE INDEX ix_messages_idx ON messages(idx);
-CREATE INDEX ix_messages_uid ON messages(uid);
+CREATE UNIQUE INDEX ix_messages_user_cache_uid ON messages (user_id,cache_key,uid);
+CREATE INDEX ix_messages_index ON messages (user_id,cache_key,idx);
+CREATE INDEX ix_messages_created ON messages (created);

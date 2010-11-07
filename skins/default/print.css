@@ -1,4 +1,4 @@
-/***** RoundCube|Mail message print styles *****/
+/***** Roundcube|Mail message print styles *****/
 
 body
 {
@@ -27,18 +27,14 @@ a, a:active, a:visited
 
 #header
 {
-  margin-left: 5mm;
-  margin-bottom: 3mm;
-}
-
-#messageframe
-{
-  position: relative;
+  float: right;
+  margin: 0 5mm 3mm 5mm;
 }
 
 table.headers-table
 {
   table-layout: fixed;
+  margin-top: 14px;
 }
 
 table.headers-table tr td
@@ -103,34 +99,39 @@ div.message-part a
   color: #0000CC;
 }
 
+div.message-part pre,
+div.message-htmlpart pre,
 div.message-part div.pre
 {
   margin: 0;
   padding: 0;
+  font-family: monospace;
+  white-space: -moz-pre-wrap !important;
+  white-space: pre-wrap !important;
   white-space: pre;
-  font-size: 9pt;
+  word-wrap: break-word; /* IE (and Safari) */
 }
 
 div.message-part blockquote
 {
-	color: blue;
-	border-left: 2px solid blue;
-	border-right: 2px solid blue;
-	background-color: #F6F6F6;
-	margin: 0.5em 0em 0.5em 0em;
-	padding: 0.25em 1em 0.25em 1em;
+  color: blue;
+  border-left: 2px solid blue;
+  border-right: 2px solid blue;
+  background-color: #F6F6F6;
+  margin: 0.5em 0em 0.5em 0em;
+  padding: 0.25em 1em 0.25em 1em;
 }
 
 div.message-part blockquote blockquote
 {
-	color: green;
-	border-left: 2px solid green;
-	border-right: 2px solid green;
+  color: green;
+  border-left: 2px solid green;
+  border-right: 2px solid green;
 }
 
 div.message-part blockquote blockquote blockquote
 {
-	color: #990000;
-	border-left: 2px solid #bb0000;
-	border-right: 2px solid #bb0000;
+  color: #990000;
+  border-left: 2px solid #bb0000;
+  border-right: 2px solid #bb0000;
 }
