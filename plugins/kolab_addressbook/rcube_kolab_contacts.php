@@ -28,25 +28,14 @@ class rcube_kolab_contacts extends rcube_addressbook
     private $filter;
     private $result;
     private $imap_folder = 'INBOX/Contacts';
-    
-    
-    /**
-     * Singleton getter
-     */
-    public static function singleton()
-    {
-        if (!self::$instance)
-            self::$instance = new rcube_kolab_contacts;
-        return self::$instance;
-    }
 
 
-    public function __construct()
+    public function __construct($imap_folder = null)
     {
-        // setup Kolab backend
-        rcube_kolab::setup();
+        if ($imap_folder)
+            $this->imap_folder = $imap_folder;
         
-        // fetch objects from Cotnacts folder
+        // fetch objects from Contacts folder
         $this->_kolab = Kolab_List::singleton();
         $this->_folder = $this->_kolab->getFolder($this->imap_folder);
         $this->_storage = $this->_folder->getData();
