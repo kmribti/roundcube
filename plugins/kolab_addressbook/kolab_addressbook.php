@@ -16,7 +16,6 @@ require_once(dirname(__FILE__) . '/rcube_kolab_contacts.php');
  */
 class kolab_addressbook extends rcube_plugin
 {
-    private $kolab;
     private $folders;
     private $sources;
 
@@ -30,11 +29,21 @@ class kolab_addressbook extends rcube_plugin
         
         $this->add_hook('addressbooks_list', array($this, 'address_sources'));
         $this->add_hook('addressbook_get', array($this, 'get_address_book'));
-        $this->add_hook('imap_init', array($this, 'imap_init'));
 
         // extend include path to load bundled Horde classes
         $include_path = $this->home . '/lib' . PATH_SEPARATOR . ini_get('include_path');
         set_include_path($include_path);
+
+        // extend list of address sources to be used for autocompletion
+        $rcmail = rcmail::get_instance();
+        if ($rcmail->action == 'autocomplete' || $rcmail->action == 'group-expand') {
+            $sources = (array) $rcmail->config->get('autocomplete_addressbooks', array());
+            foreach ($this->_list_sources() as $abook_id => $abook) {
+                if (!in_array($abook_id, $sources))
+                    $sources[] = $abook_id;
+            }
+            $rcmail->config->set('autocomplete_addressbooks', $sources);
+        }
     }
 
     /**
@@ -48,12 +57,42 @@ class kolab_addressbook extends rcube_plugin
      */
     public function address_sources($p)
     {
-        // setup Kolab backend
-        rcube_kolab::setup();
+        foreach ($this->_list_sources() as $abook_id => $abook) {
+            // register this address source
+            $p['sources'][$abook_id] = array(
+                'id' => $abook_id,
+                'name' => $abook->get_name(),
+                'readonly' => $abook->readonly,
+                'groups' => $abook->groups,
+            );
+        }
+
+        return $p;
+    }
+
+
+    /**
+     * Getter for the rcube_addressbook instance
+     */
+    public function get_address_book($p)
+    {
+        if ($this->sources[$p['id']]) {
+            $p['instance'] = $this->sources[$p['id']];
+        }
+        
+        return $p;
+    }
+    
+    
+    private function _list_sources()
+    {
+        // already read sources
+        if (isset($this->sources))
+            return $this->sources;
 
         // get all folders that have "contact" type
-        $this->kolab = Kolab_List::singleton();
-        $this->folders = $this->kolab->getByType('contact');
+        $this->folders = rcube_kolab::get_folders('contact');
+        $this->sources = array();
 
         if (PEAR::isError($this->folders)) {
             raise_error(array(
@@ -68,40 +107,10 @@ class kolab_addressbook extends rcube_plugin
                 $abook_id = strtolower(asciiwords(strtr($c_folder->name, '/.', '--')));
                 $abook = new rcube_kolab_contacts($c_folder->name);
                 $this->sources[$abook_id] = $abook;
-                
-                // register this address source
-                $p['sources'][$abook_id] = array(
-                    'id' => $abook_id,
-                    'name' => $c_folder->name,
-                    'readonly' => $abook->readonly,
-                    'groups' => $abook->groups,
-                );
             }
         }
-
-        return $p;
-    }
- 
- 
-    /**
-     * Getter for the rcube_addressbook instance
-     */
-    public function get_address_book($p)
-    {
-        if ($this->sources[$p['id']]) {
-            $p['instance'] = $this->sources[$p['id']];
-        }
         
-        return $p;
+        return $this->sources;
     }
- 
- 
-    /**
-     * Make sure the X-Kolab-Type headers are also fetched when listing messages
-     */
-    function imap_init($p)
-    {
-        $p['fetch_headers'] = strtoupper('X-Kolab-Type');
-        return $p;
-    }
+
 }

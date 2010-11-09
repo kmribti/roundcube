@@ -1,6 +1,5 @@
 <?php
 
-require_once 'Horde/Kolab/Format/XML.php';
 require_once 'Horde/Kolab/Storage/List.php';
 require_once 'Horde/Auth.php';
 require_once 'Horde/Auth/kolab.php';
@@ -15,6 +14,7 @@ require_once 'Horde/Perms.php';
 class rcube_kolab
 {
     private static $horde_auth;
+    
     
     /**
      * Setup the environment needed by the Kolab_* classes to access Kolab data
@@ -49,5 +49,47 @@ class rcube_kolab
         }
     }
 
+    /**
+     * Get a list of storage folders for the given data type
+     *
+     * @param string Data type to list folders for (contact,event,task,note)
+     * @return array List of Kolab_Folder objects
+     */
+    public static function get_folders($type)
+    {
+        self::setup();
+        $kolab = Kolab_List::singleton();
+        return $kolab->getByType($type);
+    }
 
+    /**
+     * Get storage object for read/write access to the Kolab backend
+     *
+     * @param string IMAP folder to access
+     * @param string Object type to deal with (leave empty for auto-detection using annotations)
+     * @return object Kolab_Data The data storage object
+     */
+    public static function get_storage($folder, $data_type = null)
+    {
+        self::setup();
+        $kolab = Kolab_List::singleton();
+        return $kolab->getFolder($folder)->getData($data_type);
+    }
+
+    /**
+     * Cleanup session data when done
+     */
+    public static function shutdown()
+    {
+        if (isset($_SESSION['__auth'])) {
+            // unset auth data from session. no need to store it persistantly
+            unset($_SESSION['__auth']);
+            
+            // FIXME: remove strange numeric entries
+            foreach ($_SESSION as $key => $val) {
+                if (!$val && is_numeric($key))
+                    unset($_SESSION[$key]);
+            }
+        }
+    }
 }
