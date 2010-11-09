@@ -76,7 +76,7 @@ function password_save($curpass, $passwd)
         }
         $sql = str_replace('%D', $db->quote($newpass), $sql);
     }
-    
+
     // hashed passwords
     if (preg_match('/%[n|q]/', $sql)) {
 
@@ -84,10 +84,11 @@ function password_save($curpass, $passwd)
 	        raise_error(array(
 	            'code' => 600,
 		        'type' => 'php',
-		        'file' => __FILE__,
+		        'file' => __FILE__, 'line' => __LINE__,
 		        'message' => "Password plugin: 'hash' extension not loaded!"
 		    ), true, false);
-	        return PASSWORD_ERROR;			    
+
+	        return PASSWORD_ERROR;
 	    }
 
 	    if (!($hash_algo = strtolower($rcmail->config->get('password_hash_algorithm'))))
