@@ -53,7 +53,6 @@ class rcube_kolab_contacts extends rcube_addressbook
         
         if (in_array($this->imap_folder, $folders)) {
           $this->_imap->set_pagesize(9999);
-          $this->_imap->set_mailbox($this->imap_folder);
           $this->ready = true;
         }
     }
@@ -153,6 +152,7 @@ class rcube_kolab_contacts extends rcube_addressbook
         $xml_list = Horde_Kolab_Format_XML::factory('distributionlist');
       
         $index = 0;
+        $this->_imap->set_mailbox($this->imap_folder);
         $headers = $this->_imap->list_headers();
         foreach ($headers as $header) {
             if ($type = $header->others['x-kolab-type']) {
