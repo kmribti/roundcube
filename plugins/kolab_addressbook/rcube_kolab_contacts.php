@@ -189,13 +189,10 @@ class rcube_kolab_contacts extends rcube_addressbook
     public function get_record($id, $assoc=false)
     {
         $this->_fetch_data();
-        if ($this->contacts[$id] && $assoc) {
-            return $this->contacts[$id];
-        }
-        else if ($this->contacts[$id]) {
+        if ($this->contacts[$id]) {
             $this->result = new rcube_result_set(1);
             $this->result->add($this->contacts[$id]);
-            return $this->result;
+            return $assoc ? $this->contacts[$id] : $this->result;
         }
 
         return false;
