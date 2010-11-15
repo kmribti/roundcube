@@ -29,31 +29,58 @@ if ($CONTACTS->readonly) {
   return;
 }
 
+
+// read POST values into hash array
+$a_record = array();
+foreach ($GLOBALS['CONTACT_COLTYPES'] as $col => $colprop) {
+  $fname = '_'.$col;
+  if ($colprop['composite'])
+    continue;
+  if ($colprop['childs']) {
+    $values = array();
+    foreach ($colprop['childs'] as $j => $childcol) {
+      $vals = get_input_value('_'.$childcol, RCUBE_INPUT_POST);
+      foreach ((array)$vals as $i => $val)
+        $values[$i][$childcol] = $val;
+    }
+    $subtypes = get_input_value('_subtype_' . $col, RCUBE_INPUT_POST);
+    foreach ($subtypes as $i => $subtype)
+      if ($values[$i])
+        $a_record[$col.':'.$subtype][] = $values[$i];
+  }
+  else if (is_array($_POST[$fname])) {
+    $values = get_input_value($fname, RCUBE_INPUT_POST);
+    $subtypes = get_input_value('_subtype_' . $col, RCUBE_INPUT_POST);
+    foreach ($values as $i => $val) {
+      $subtype = $subtypes[$i] ?: 'home';
+      $a_record[$col.':'.$subtype][] = $val;
+    }
+  }
+  else if (isset($_POST[$fname])) {
+    $a_record[$col] = get_input_value($fname, RCUBE_INPUT_POST);
+  }
+}
+
+if (empty($a_record['name']))
+  $a_record['name'] = join(' ', array_filter(array($a_record['firstname'], $a_record['middlename'], $a_record['surname'])));
+
+#var_dump($a_record);
+
 // Basic input checks
-if ((!get_input_value('_name', RCUBE_INPUT_POST) || !get_input_value('_email', RCUBE_INPUT_POST))) {
+if (empty($a_record['name']) || empty($a_record['email'])) {
   $OUTPUT->show_message('formincomplete', 'warning');
   rcmail_overwrite_action($return_action);
   return;
 }
 
-
-// setup some vars we need
-$a_save_cols = array('name', 'firstname', 'surname', 'email');
-$a_record = array();
-
-// read POST values into hash array
-foreach ($a_save_cols as $col) {
-  $fname = '_'.$col;
-  if (isset($_POST[$fname]))
-    $a_record[$col] = get_input_value($fname, RCUBE_INPUT_POST);
-}
-
 // Validity checks
-$_email = idn_to_ascii($a_record['email']);
-if (!check_email($_email, false)) {
-  $OUTPUT->show_message('emailformaterror', 'warning', array('email' => $_email));
-  rcmail_overwrite_action($return_action);
-  return;
+foreach ((array)$a_record['email'] as $email) {
+  $_email = idn_to_ascii($email);
+  if (!check_email($_email, false)) {
+    $OUTPUT->show_message('emailformaterror', 'warning', array('email' => $_email));
+    rcmail_overwrite_action($return_action);
+    return;
+  }
 }
 
 // update an existing contact

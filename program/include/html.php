@@ -501,7 +501,7 @@ class html_select extends html
     protected $tagname = 'select';
     protected $options = array();
     protected $allowed = array('name','size','tabindex','autocomplete',
-	'multiple','onchange','disabled');
+	'multiple','onchange','disabled','rel');
     
     /**
      * Add a new option to this drop-down

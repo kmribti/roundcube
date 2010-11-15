@@ -214,3 +214,98 @@ body.iframe,
   text-align: right;
 }
 
+#contacttabs
+{
+	position: relative;
+	padding-bottom: 22px;
+}
+
+#contacttabs div.tabsbar {
+	top: 0;
+	left: 2px;
+}
+
+#contacttabs fieldset.tabbed {
+	position: relative;
+	top: 22px;
+	min-height: 5em;
+}
+
+#contacthead
+{
+	margin-bottom: 1em;
+	border: 0;
+	padding: 0;
+}
+
+#contacthead span.namefield,
+#contacthead input.ff_firstname,
+#contacthead input.ff_surname,
+#contacthead input.ff_middlename
+{
+	font-size: 140%;
+}
+
+#contacthead input
+{
+	margin-right: 6px;
+	margin-bottom: 0.2em;
+}
+
+#contacthead .names input,
+#contacthead .addnames input,
+#contacthead .jobnames input
+{
+	width: 180px;
+}
+
+#contacthead .addnames input.ff_name
+{
+	width: 374px;
+}
+
+.contactfieldgroup
+{
+	margin: 1.2em 0;
+}
+
+.contactfieldgroup .row
+{
+	position: relative;
+	margin-bottom: 0.4em;
+}
+
+.contactfieldgroup .contactfieldlabel
+{
+	position: absolute;
+	top: 0;
+	left: 2px;
+	width: 80px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #666;
+	font-weight: bold;
+}
+
+.contactfieldgroup .contactfieldlabel select
+{
+	width: 78px;
+	background: none;
+	border: 0;
+	color: #666;
+	font-weight: bold;
+}
+
+.contactfieldgroup .contactfieldcontent
+{
+	margin-left: 90px;
+}
+
+.contactcontrolleraddress .contactfieldcontent {
+	width: 40em;
+}
+
+.contactcontrolleraddress .contactfieldcontent input {
+	margin-bottom: 0.1em;
+}

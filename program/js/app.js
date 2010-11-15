@@ -320,6 +320,14 @@ function rcube_webmail()
         if ((this.env.action=='add' || this.env.action=='edit') && this.gui_objects.editform) {
           this.enable_command('save', true);
           $("input[type='text']").first().select();
+
+          for (var col in this.env.coltypes)
+            this.init_edit_field(col, null);
+
+          $('#addfieldmenu').change(function(e){
+            ref.insert_edit_field($(this).val(), $(this).attr('rel'));
+            this.selectedIndex = 0;
+          });
         }
         else if (this.gui_objects.qsearchbox) {
           this.enable_command('search', 'reset-search', 'moveto', true);
@@ -631,6 +639,9 @@ function rcube_webmail()
               input_email.focus();
               break;
             }
+            
+            // clear empty input fields
+            $('input.placeholder').each(function(){ if (this.value == this._placeholder) this.value = ''; });
           }
 
           this.gui_objects.editform.submit();
@@ -3968,6 +3979,76 @@ function rcube_webmail()
   };
 
 
+  this.init_edit_field = function(col, elem)
+  {
+    if (!elem)
+      elem = $('.ff_' + col);
+    
+    elem.focus(function(){ ref.focus_textfield(this); })
+      .blur(function(){ ref.blur_textfield(this); })
+      .each(function(){ this._placeholder = ref.env.coltypes[col].label; ref.blur_textfield(this); });
+  };
+
+  this.insert_edit_field = function(col, section)
+  {
+    // just make pre-defined input field visible
+    var elem = $('#ff_'+col);
+    if (elem.length) {
+      elem.show().focus();
+    }
+    else {
+      var lastelem = $('.ff_'+col),
+        appendcontainer = $('#contactsection'+section+' .contactcontroller'+col);
+      
+      if (!appendcontainer.length)
+        appendcontainer = $('<div>').addClass('contactfieldgroup contactcontroller'+col).insertAfter($('#contactsection'+section+' .contactfieldgroup').last());
+
+      if (appendcontainer.length && appendcontainer.get(0).nodeName == 'DIV') {
+        var input, colprop = this.env.coltypes[col],
+          row = $('<div>').addClass('row'),
+          cell = $('<div>').addClass('contactfieldcontent data'),
+          label = $('<div>').addClass('contactfieldlabel label');
+          
+        if (colprop.subtypes_select)
+          label.html(colprop.subtypes_select);
+        else
+          label.html(colprop.label);
+
+        if (colprop.type == 'text' || colprop.type == 'date') {
+          input = $('<input>')
+            .addClass('ff_'+col)
+            .attr('type', 'text')
+            .attr('name', '_'+col+'[]')
+            .attr('size', colprop.size)
+            .appendTo(cell);
+
+          this.init_edit_field(col, input);
+        }
+        else if (colprop.type == 'composite') {
+          var childcol, cp;
+          for (var j=0; j < colprop.childs.length; j++) {
+              childcol = colprop.childs[j];
+              cp = this.env.coltypes[childcol];
+              input = $('<input>')
+                .addClass('ff_'+childcol)
+                .attr('type', 'text')
+                .attr('name', '_'+childcol+'[]')
+                .attr('size', cp.size)
+                .appendTo(cell);
+              cell.append(" ");
+              this.init_edit_field(childcol, input);
+            }
+        }
+
+        if (input) {
+          row.append(label).append(cell).appendTo(appendcontainer);
+          input.first().focus();
+        }
+      }
+    }
+  };
+
+
   /*********************************************************/
   /*********        user settings methods          *********/
   /*********************************************************/
@@ -4584,6 +4665,23 @@ function rcube_webmail()
     }
   };
 
+
+  this.focus_textfield = function(elem)
+  {
+    elem._hasfocus = true;
+    var $elem = $(elem);
+    if ($elem.hasClass('placeholder') || $elem.val() == elem._placeholder)
+      $elem.val('').removeClass('placeholder').attr('spellcheck', true);
+  };
+
+  this.blur_textfield = function(elem)
+  {
+    elem._hasfocus = false;
+    var $elem = $(elem);
+    if (!$elem.val() && elem._placeholder)
+      $elem.addClass('placeholder').attr('spellcheck', false).val(elem._placeholder);
+  };
+  
   // write to the document/window title
   this.set_pagetitle = function(title)
   {
@@ -4595,7 +4693,7 @@ function rcube_webmail()
   this.display_message = function(msg, type)
   {
     // pass command to parent window
-    if (this.env.framed && parent.rcmail)
+    if (this.env.framed && parent.rcmail && parent.rcmail != this)
       return parent.rcmail.display_message(msg, type);
 
     if (!this.gui_objects.message) {
@@ -4642,7 +4740,7 @@ function rcube_webmail()
   this.hide_message = function(obj, fade)
   {
     // pass command to parent window
-    if (this.env.framed && parent.rcmail)
+    if (this.env.framed && parent.rcmail && parent.rcmail != this)
       return parent.rcmail.hide_message(obj, fade);
 
     if (typeof(obj) == 'object') {

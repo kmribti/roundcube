@@ -817,32 +817,35 @@ function rcube_table_output($attrib, $table_data, $a_show_cols, $id_col)
  * @return string HTML field definition
  */
 function rcmail_get_edit_field($col, $value, $attrib, $type='text')
-  {
-  $fname = '_'.$col;
-  $attrib['name'] = $fname;
+{
+  static $colcounts = array();
   
-  if ($type=='checkbox')
-    {
+  $fname = '_'.$col;
+  $attrib['name'] = $fname . ($attrib['array'] ? '[]' : '');
+  $attrib['class'] = trim($attrib['class'] . ' ff_' . $col);
+  
+  if ($type=='checkbox') {
     $attrib['value'] = '1';
     $input = new html_checkbox($attrib);
-    }
-  else if ($type=='textarea')
-    {
+  }
+  else if ($type=='textarea') {
     $attrib['cols'] = $attrib['size'];
     $input = new html_textarea($attrib);
-    }
+  }
   else
     $input = new html_inputfield($attrib);
 
   // use value from post
-  if (!empty($_POST[$fname]))
-    $value = get_input_value($fname, RCUBE_INPUT_POST,
-	    $type == 'textarea' && strpos($attrib['class'], 'mce_editor')!==false ? true : false);
+  if (isset($_POST[$fname])) {
+    $postvalue = get_input_value($fname, RCUBE_INPUT_POST,
+      $type == 'textarea' && strpos($attrib['class'], 'mce_editor')!==false ? true : false);
+    $value = $attrib['array'] ? $postvalue[intval($colcounts[$col]++)] : $postvalue;
+  }
 
   $out = $input->show($value);
-         
+
   return $out;
-  }
+}
 
 
 /**

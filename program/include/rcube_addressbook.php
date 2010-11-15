@@ -129,6 +129,8 @@ abstract class rcube_addressbook
      * Create a new contact record
      *
      * @param array Assoziative array with save data
+     *  Keys:   Field name with optional section in the form FIELD:SECTION
+     *  Values: Field value. Can be either a string or an array of strings for multiple values
      * @param boolean True to check for duplicates first
      * @return mixed The created record ID on success, False on error
      */
@@ -142,6 +144,8 @@ abstract class rcube_addressbook
      *
      * @param mixed Record identifier
      * @param array Assoziative array with save data
+     *  Keys:   Field name with optional section in the form FIELD:SECTION
+     *  Values: Field value. Can be either a string or an array of strings for multiple values
      * @return boolean True on success, False on error
      */
     function update($id, $save_cols)

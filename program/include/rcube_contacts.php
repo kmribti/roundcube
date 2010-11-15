@@ -397,13 +397,13 @@ class rcube_contacts extends rcube_addressbook
         if ($check)
             $existing = $this->search('email', $save_data['email'], true, false);
 
+        $save_data = $this->convert_save_data($save_data);
         $a_insert_cols = $a_insert_values = array();
 
-        foreach ($this->table_cols as $col)
-            if (isset($save_data[$col])) {
-                $a_insert_cols[]   = $this->db->quoteIdentifier($col);
-                $a_insert_values[] = $this->db->quote($save_data[$col]);
-            }
+        foreach ($save_data as $col => $value) {
+            $a_insert_cols[]   = $this->db->quoteIdentifier($col);
+            $a_insert_values[] = $this->db->quote($value);
+        }
 
         if (!$existing->count && !empty($a_insert_cols)) {
             $this->db->query(
@@ -450,11 +450,11 @@ class rcube_contacts extends rcube_addressbook
     {
         $updated = false;
         $write_sql = array();
+        $save_cols = $this->convert_save_data($save_cols);
 
-        foreach ($this->table_cols as $col)
-            if (isset($save_cols[$col]))
-                $write_sql[] = sprintf("%s=%s", $this->db->quoteIdentifier($col),
-                    $this->db->quote($save_cols[$col]));
+        foreach ($save_cols as $col => $value) {
+            $write_sql[] = sprintf("%s=%s", $this->db->quoteIdentifier($col), $this->db->quote($value));
+        }
 
         if (!empty($write_sql)) {
             $this->db->query(
@@ -471,6 +471,24 @@ class rcube_contacts extends rcube_addressbook
         }
 
         return $updated;
+    }
+
+
+    private function convert_save_data($save_data)
+    {
+        $out = array();
+        
+        foreach ($this->table_cols as $col) {
+            $key = $col;
+            if (!isset($save_data[$key]))
+                $key .= ':home';
+            if (isset($save_data[$key]))
+                $out[$col] = is_array($save_data[$key]) ? join(',', $save_data[$key]) : $save_data[$key];
+        }
+        
+        // TODO: save all data into a vcard
+        
+        return $out;
     }
 
 

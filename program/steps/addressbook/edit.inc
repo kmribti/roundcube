@@ -31,20 +31,59 @@ if ($CONTACTS->readonly) {
 }
 
 
-function rcmail_contact_editform($attrib)
+function rcmail_contact_edithead($attrib)
 {
-   global $RCMAIL, $CONTACTS, $OUTPUT;
+   global $RCMAIL, $CONTACTS;
 
     // check if we have a valid result
     if ($RCMAIL->action != 'add'
         && !(($result = $CONTACTS->get_result()) && ($record = $result->first()))
     ) {
-        $OUTPUT->show_message('contactnotfound');
+        $RCMAIL->output->show_message('contactnotfound');
+        return false;
+    }
+    
+    $i_size = !empty($attrib['size']) ? $attrib['size'] : 20;
+
+    $form = array(
+        'head' => array(
+            'content' => array(
+                'name' => array('size' => 2*$i_size),
+                'firstname' => array('size' => $i_size, 'visible' => true),
+                'middlename' => array('size' => $i_size),
+                'surname' => array('size' => $i_size, 'visible' => true),
+                'nickname' => array('size' => $i_size),
+                'company' => array('size' => $i_size),
+                'department' => array('size' => $i_size),
+                'jobtitle' => array('size' => $i_size),
+            )
+        )
+    );
+
+    list($form_start, $form_end) = get_form_tags($attrib);
+    unset($attrib['form'], $attrib['name'], $attrib['size']);
+
+    // return the address edit form
+    $out = rcmail_contact_form($form, $record, $attrib);
+
+    return $form_start . $out . $form_end;
+}
+
+
+function rcmail_contact_editform($attrib)
+{
+   global $RCMAIL, $CONTACTS;
+
+    // check if we have a valid result
+    if ($RCMAIL->action != 'add'
+        && !(($result = $CONTACTS->get_result()) && ($record = $result->first()))
+    ) {
+        $RCMAIL->output->show_message('contactnotfound');
         return false;
     }
 
     // add some labels to client
-    $OUTPUT->add_label('noemailwarning', 'nonamewarning');
+    $RCMAIL->output->add_label('noemailwarning', 'nonamewarning');
 
     $i_size = !empty($attrib['size']) ? $attrib['size'] : 40;
     $t_rows = !empty($attrib['textarearows']) ? $attrib['textarearows'] : 6;
@@ -54,14 +93,19 @@ function rcmail_contact_editform($attrib)
         'info' => array(
             'name'    => rcube_label('contactproperties'),
             'content' => array(
-                'name' => array('type' => 'text', 'size' => $i_size),
-                'firstname' => array('type' => 'text', 'size' => $i_size),
-                'surname' => array('type' => 'text', 'size' => $i_size),
-                'email' => array('type' => 'text', 'size' => $i_size),
+                'email' => array('size' => $i_size, 'visible' => true),
+                'phone' => array('size' => $i_size, 'visible' => true),
+                'address' => array('visible' => true),
             ),
         ),
+        'notes' => array(
+            'name'    => rcube_label('notes'),
+            'content' => array(
+                'notes' => array('type' => 'textarea', 'size' => $t_cols, 'rows' => $t_rows, 'label' => false, 'visible' => true),
+            ),
+            'single' => true,
+        )
     );
-
 
     list($form_start, $form_end) = get_form_tags($attrib);
     unset($attrib['form']);
@@ -103,6 +147,7 @@ function get_form_tags($attrib)
 }
 
 
+$OUTPUT->add_handler('contactedithead', 'rcmail_contact_edithead');
 $OUTPUT->add_handler('contacteditform', 'rcmail_contact_editform');
 
 if (!$CONTACTS->get_result() && $OUTPUT->template_exists('contactadd'))

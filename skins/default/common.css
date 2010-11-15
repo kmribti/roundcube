@@ -76,6 +76,11 @@ input, textarea
   padding: 1px 3px;
 }
 
+input.placeholder
+{
+  color: #aaa;
+}
+
 input.button
 {
   height: 20px;

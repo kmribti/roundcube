@@ -26,7 +26,7 @@ if (($cid = get_input_value('_cid', RCUBE_INPUT_GPC)) && ($record = $CONTACTS->g
 }
 
 
-function rcmail_contact_details($attrib)
+function rcmail_contact_head($attrib)
 {
     global $CONTACTS, $RCMAIL;
 
@@ -36,48 +36,63 @@ function rcmail_contact_details($attrib)
         return false;
     }
 
+    $microformats = array('name' => 'fn', 'email' => 'email');
+
+    $form = array(
+        'head' => array(  // section 'head' is magic!
+            'content' => array(
+                'firstname' => array('type' => 'text'),
+                'middlename' => array('type' => 'text'),
+                'surname' => array('type' => 'text'),
+            ),
+        ),
+    );
+
+    unset($attrib['name']);
+    return rcmail_contact_form($form, $record, $attrib);
+}
+
+
+function rcmail_contact_details($attrib)
+{
+    global $CONTACTS, $RCMAIL;
+
+    // check if we have a valid result
+    if (!(($result = $CONTACTS->get_result()) && ($record = $result->first()))) {
+        //$RCMAIL->output->show_message('contactnotfound');
+        return false;
+    }
+
     $i_size = !empty($attrib['size']) ? $attrib['size'] : 40;
     $t_rows = !empty($attrib['textarearows']) ? $attrib['textarearows'] : 6;
     $t_cols = !empty($attrib['textareacols']) ? $attrib['textareacols'] : 40;
-
-    $microformats = array('name' => 'fn', 'email' => 'email');
 
     $form = array(
         'info' => array(
             'name'    => rcube_label('contactproperties'),
             'content' => array(
-                'name' => array('type' => 'text', 'size' => $i_size),
-                'firstname' => array('type' => 'text', 'size' => $i_size),
-                'surname' => array('type' => 'text', 'size' => $i_size),
-                'email' => array('type' => 'text', 'size' => $i_size),
+                'email' => array('type' => 'text', 'size' => $i_size, 'value' => array()),
+            ),
+        ),
+        'notes' => array(
+            'name'    => rcube_label('notes'),
+            'content' => array(
+                'notes' => array('type' => 'textarea', 'label' => false),
             ),
         ),
         'groups' => array(
             'name'    => rcube_label('groups'),
-            'content' => '',
+            'content' => rcmail_contact_record_groups($record['ID']),
         ),
     );
-
-    // Get content of groups fieldset
-    if ($groups = rcmail_contact_record_groups($record['ID'])) {
-        $form['groups']['content'] = $groups;    
-    }
-    else {
-        unset($form['groups']);
-    }
-
-    if (!empty($record['email'])) {
-        $form['info']['content']['email']['value'] = html::a(array(
-            'href' => 'mailto:' . $record['email'],
-            'onclick' => sprintf("return %s.command('compose','%s',this)", JS_OBJECT_NAME, JQ($record['email'])),
+    
+    foreach ((array)$record['email'] as $email) {
+        $form['info']['content']['email']['value'][] = html::a(array(
+            'href' => 'mailto:' . $email,
+            'onclick' => sprintf("return %s.command('compose','%s',this)", JS_OBJECT_NAME, JQ($email)),
             'title' => rcube_label('composeto'),
-            'class' => $microformats['email'],
-        ), Q($record['email']));
-    }
-    foreach (array('name', 'firstname', 'surname') as $col) {
-        if ($record[$col]) {
-            $form['info']['content'][$col]['value'] = html::span($microformats[$col], Q($record[$col]));
-        }
+            'class' => 'email',
+        ), Q($email));
     }
 
     return rcmail_contact_form($form, $record);
@@ -124,6 +139,7 @@ function rcmail_contact_record_groups($contact_id)
 
 
 //$OUTPUT->framed = $_framed;
+$OUTPUT->add_handler('contacthead', 'rcmail_contact_head');
 $OUTPUT->add_handler('contactdetails', 'rcmail_contact_details');
 
 $OUTPUT->send('contact');
