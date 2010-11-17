@@ -482,7 +482,7 @@ class rcube_contacts extends rcube_addressbook
         
         if ($sql_arr['vcard']) {
           $vcard = new rcube_vcard($sql_arr['vcard']);
-          $record += $vcard->get_assoc();
+          $record += $vcard->get_assoc() + $sql_arr;
         }
         else
           $record += $sql_arr;

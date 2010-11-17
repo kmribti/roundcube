@@ -310,7 +310,7 @@ function rcmail_contact_form($form, $record, $attrib = null)
                 foreach ($colnames as $col) {
                     if ($RCMAIL->action == 'show') {
                         if (!empty($record[$col]))
-                            $fields .= html::span('namefield', Q($record[$col])) . " ";
+                            $fields .= html::span('namefield ' . $col, Q($record[$col])) . " ";
                     }
                     else {
                         $colprop = (array)$fieldset['content'][$col] + (array)$coltypes[$col];

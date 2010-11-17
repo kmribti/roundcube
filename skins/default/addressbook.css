@@ -238,12 +238,18 @@ body.iframe,
 	padding: 0;
 }
 
-#contacthead span.namefield,
+#contacthead .names span.namefield,
 #contacthead input.ff_firstname,
 #contacthead input.ff_surname,
 #contacthead input.ff_middlename
 {
 	font-size: 140%;
+}
+
+#contacthead span.nickname:before,
+#contacthead span.nickname:after
+{
+	content: '"';
 }
 
 #contacthead input

@@ -73,7 +73,7 @@ function rcmail_contact_details($attrib)
               'phone' => array('size' => $i_size),
               'address' => array(),
               'birthday' => array('size' => $i_size),
-              'website' => array('size' => $i_size),
+              'website' => array('size' => $i_size, 'value' => array()),
               'im' => array('size' => $i_size),
             ),
         ),
@@ -88,7 +88,7 @@ function rcmail_contact_details($attrib)
             'content' => rcmail_contact_record_groups($record['ID']),
         ),
     );
-    
+/* FIXME: this destroys subtype assignments
     foreach ((array)$record as $field => $values) {
         if (strpos($field, 'email') === 0) {
             foreach ((array)$values as $email) {
@@ -100,8 +100,18 @@ function rcmail_contact_details($attrib)
                 ), Q($email));
             }
         }
+        else if (strpos($field, 'website') === 0) {
+            foreach ((array)$values as $url) {
+                $prefix = preg_match('![htfps]+://!', $url) ? '' : 'http://';
+                $form['info']['content']['website']['value'][] = html::a(array(
+                    'href' => $prefix . $url,
+                    'target' => '_blank',
+                    'class' => 'url',
+                ), Q($url));
+            }
+        }
     }
-
+*/
     return rcmail_contact_form($form, $record);
 }
 

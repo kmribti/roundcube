@@ -33,6 +33,7 @@ class rcube_vcard
     'N' => array(array('','','','','')),
   );
   private $fieldmap = array('phone' => 'TEL', 'birthday' => 'BDAY', 'website' => 'URL', 'notes' => 'NOTE', 'email' => 'EMAIL', 'address' => 'ADR');
+  private $typemap = array('iPhone' => 'mobile', 'CELL' => 'mobile');
 
   public $business = false;
   public $displayname;
@@ -105,21 +106,25 @@ class rcube_vcard
   public function get_assoc()
   {
     $out = array('name' => $this->displayname);
+    $typemap = $this->typemap;
     
+    // copy name fields to output array
     foreach (array('firstname','surname','middlename','nickname','organization') as $col)
       $out[$col] = $this->$col;
     
+    // convert from raw vcard data into associative data for Roundcube
     foreach (array_flip($this->fieldmap) as $tag => $col) {
       foreach ((array)$this->raw[$tag] as $i => $raw) {
         if (is_array($raw)) {
-          $k = 0;
+          $k = -1;
           $key = $col;
-          $subtype = strtolower($raw['type'][$k++]);
+          $subtype = $typemap[$raw['type'][++$k]] ?: strtolower($raw['type'][$k]);
           while ($k < count($raw['type']) && ($subtype == 'internet' || $subtype == 'pref'))
-            $subtype = strtolower($raw['type'][$k++]);
+            $subtype = $typemap[$raw['type'][++$k]] ?: strtolower($raw['type'][$k]);
           if ($subtype)
             $key .= ':' . $subtype;
-            
+
+          // split ADR values into assoc array
           if ($tag == 'ADR') {
             list(,, $value['street'], $value['locality'], $value['region'], $value['zipcode'], $value['country']) = $raw;
             $out[$key][] = $value;
@@ -130,6 +135,13 @@ class rcube_vcard
         else {
           $out[$col][] = $raw;
         }
+      }
+    }
+    
+    // handle special IM fields as used by Apple
+    foreach (array('X-JABBER' => 'jabber', 'X-ICQ' => 'icq', 'X-MSN' => 'msn', 'X-AIM' => 'aim', 'X-YAHOO' => 'yahoo') as $tag => $type) {
+      foreach ((array)$this->raw[$tag] as $i => $raw) {
+        $out['im:'.$type][] = $raw[0];
       }
     }
     
@@ -151,11 +163,12 @@ class rcube_vcard
    *
    * @param string Field name
    * @param string Field value
-   * @param string Section name
+   * @param string Type/section name
    */
-  public function set($field, $value, $section = 'HOME')
+  public function set($field, $value, $type = 'HOME')
   {
     static $touched = array();
+    $typemap = array_flip($this->typemap);
     
     switch ($field) {
       case 'name':
@@ -183,7 +196,7 @@ class rcube_vcard
         if (!$touched['EMAIL']++)
           $this->raw['EMAIL'] = array();
         $index = count($this->raw['EMAIL']);
-        $this->raw['EMAIL'][$index] = array(0 => $value, 'type' => array_filter(array('INTERNET', $section)));
+        $this->raw['EMAIL'][$index] = array(0 => $value, 'type' => array_filter(array('INTERNET', $type)));
         break;
 
       case 'address':
@@ -196,8 +209,8 @@ class rcube_vcard
             $this->raw[$tag] = array();
           $index = count($this->raw[$tag]);
           $this->raw[$tag][$index] = (array)$value;
-          if ($section)
-            $this->raw[$tag][$index]['type'] = array($section);
+          if ($type)
+            $this->raw[$tag][$index]['type'] = array(($typemap[$type] ?: $type));
         }
         break;
     }
