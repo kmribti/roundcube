@@ -64,14 +64,17 @@ function rcmail_contact_details($attrib)
     }
 
     $i_size = !empty($attrib['size']) ? $attrib['size'] : 40;
-    $t_rows = !empty($attrib['textarearows']) ? $attrib['textarearows'] : 6;
-    $t_cols = !empty($attrib['textareacols']) ? $attrib['textareacols'] : 40;
 
     $form = array(
         'info' => array(
             'name'    => rcube_label('contactproperties'),
             'content' => array(
-                'email' => array('type' => 'text', 'size' => $i_size, 'value' => array()),
+              'email' => array('size' => $i_size, 'value' => array()),
+              'phone' => array('size' => $i_size),
+              'address' => array(),
+              'birthday' => array('size' => $i_size),
+              'website' => array('size' => $i_size),
+              'im' => array('size' => $i_size),
             ),
         ),
         'notes' => array(
@@ -86,13 +89,17 @@ function rcmail_contact_details($attrib)
         ),
     );
     
-    foreach ((array)$record['email'] as $email) {
-        $form['info']['content']['email']['value'][] = html::a(array(
-            'href' => 'mailto:' . $email,
-            'onclick' => sprintf("return %s.command('compose','%s',this)", JS_OBJECT_NAME, JQ($email)),
-            'title' => rcube_label('composeto'),
-            'class' => 'email',
-        ), Q($email));
+    foreach ((array)$record as $field => $values) {
+        if (strpos($field, 'email') === 0) {
+            foreach ((array)$values as $email) {
+                $form['info']['content']['email']['value'][] = html::a(array(
+                    'href' => 'mailto:' . $email,
+                    'onclick' => sprintf("return %s.command('compose','%s',this)", JS_OBJECT_NAME, JQ($email)),
+                    'title' => rcube_label('composeto'),
+                    'class' => 'email',
+                ), Q($email));
+            }
+        }
     }
 
     return rcmail_contact_form($form, $record);

@@ -56,16 +56,16 @@ if (!$OUTPUT->ajax_call) {
 }
 
 
-// default coltypes
+// TODO: let the $CONTACT object define the list of possible coltypes
 $CONTACT_COLTYPES = array(
-  'name'         => array('type' => 'text', 'size' => 40, 'label' => rcube_label('name')),
-  'firstname'    => array('type' => 'text', 'size' => 19, 'label' => rcube_label('firstname')),
-  'surname'      => array('type' => 'text', 'size' => 19, 'label' => rcube_label('surname')),
-  'middlename'   => array('type' => 'text', 'size' => 19, 'label' => rcube_label('middlename')),
-  'nickname'     => array('type' => 'text', 'size' => 40, 'label' => rcube_label('nickname')),
-  'jobtitle'     => array('type' => 'text', 'size' => 40, 'label' => rcube_label('jobtitle')),
-  'organization' => array('type' => 'text', 'size' => 19, 'label' => rcube_label('organization')),
-  'department'   => array('type' => 'text', 'size' => 19, 'label' => rcube_label('department')),
+  'name'         => array('type' => 'text', 'size' => 40, 'limit' => 1, 'label' => rcube_label('name')),
+  'firstname'    => array('type' => 'text', 'size' => 19, 'limit' => 1, 'label' => rcube_label('firstname')),
+  'surname'      => array('type' => 'text', 'size' => 19, 'limit' => 1, 'label' => rcube_label('surname')),
+  'middlename'   => array('type' => 'text', 'size' => 19, 'limit' => 1, 'label' => rcube_label('middlename')),
+  'nickname'     => array('type' => 'text', 'size' => 40, 'limit' => 1, 'label' => rcube_label('nickname')),
+  'jobtitle'     => array('type' => 'text', 'size' => 40, 'limit' => 1, 'label' => rcube_label('jobtitle')),
+  'organization' => array('type' => 'text', 'size' => 19, 'limit' => 1, 'label' => rcube_label('organization')),
+  'department'   => array('type' => 'text', 'size' => 19, 'limit' => 1, 'label' => rcube_label('department')),
   'email'        => array('type' => 'text', 'size' => 40, 'label' => rcube_label('email'), 'subtypes' => array('home','work','other')),
   'phone'        => array('type' => 'text', 'size' => 40, 'label' => rcube_label('phone'), 'subtypes' => array('home','home2','work','work2','mobile','main','homefax','workfax','car','pager','assistant','other')),
   'address'      => array('type' => 'composite', 'label' => rcube_label('address'), 'subtypes' => array('home','work','other'), 'childs' => array('street','locality','zipcode','region','country')),
@@ -74,9 +74,10 @@ $CONTACT_COLTYPES = array(
     'zipcode'    => array('type' => 'text', 'size' => 8, 'label' => rcube_label('zipcode'), 'composite' => true),
     'region'     => array('type' => 'text', 'size' => 12, 'label' => rcube_label('region'), 'composite' => true),
     'country'    => array('type' => 'text', 'size' => 40, 'label' => rcube_label('country'), 'composite' => true),
-  'birthday'     => array('type' => 'date', 'size' => 12, 'label' => rcube_label('birthday')),
+  'birthday'     => array('type' => 'date', 'size' => 12, 'label' => rcube_label('birthday'), 'limit' => 1),
   'website'      => array('type' => 'text', 'size' => 40, 'label' => rcube_label('website'), 'subtypes' => array('home','work','blog','other')),
   'im'           => array('type' => 'text', 'size' => 40, 'label' => rcube_label('instantmessenger'), 'subtypes' => array('aim','icq','msn','yahoo','jabber','other')),
+  'notes'        => array('type' => 'textarea', 'size' => 40, 'rows' => 15, 'label' => rcube_label('notes'), 'limit' => 1),
 );
 
 
@@ -274,12 +275,7 @@ function rcmail_contact_form($form, $record, $attrib = null)
     // get default coltypes
     $coltypes = $GLOBALS['CONTACT_COLTYPES'];
     
-    $select_add = new html_select(array('id' => 'addfieldmenu'));
-    $select_add->add(rcube_label('addfield'), '');
-    $select_add->add($coltypes['middlename']['label'], 'middlename');
     foreach ($coltypes as $col => $prop) {
-        if (!$prop['composite'] && !$prop['default'])
-            $select_add->add($prop['label'], $col);
         if ($prop['subtypes']) {
             $select_subtype = new html_select(array('name' => '_subtype_'.$col.'[]', 'class' => 'contactselectsubtype'));
             $select_subtype->add($prop['subtypes']);
@@ -291,6 +287,9 @@ function rcmail_contact_form($form, $record, $attrib = null)
         // skip empty sections
         if (empty($fieldset['content']))
             continue;
+
+        $select_add = new html_select(array('class' => 'addfieldmenu', 'rel' => $section));
+        $select_add->add(rcube_label('addfield'), '');
 
         // render head section with name fields (not a regular list of rows)
         if ($section == 'head') {
@@ -316,13 +315,18 @@ function rcmail_contact_form($form, $record, $attrib = null)
                     else {
                         $colprop = (array)$fieldset['content'][$col] + (array)$coltypes[$col];
                         $colprop['id'] = 'ff_'.$col;
-                        if (empty($record[$col]) && !$colprop['visible'])
+                        if (empty($record[$col]) && !$colprop['visible']) {
                             $colprop['style'] = 'display:none';
+                            $select_add->add($colprop['label'], $col);
+                        }
                         $fields .= rcmail_get_edit_field($col, $record[$col], $colprop, $colprop['type']);
                     }
                 }
                 $content .= html::div($blockname, $fields);
             }
+            
+            if ($RCMAIL->action != 'show')
+                $content .= html::p('addfield', $select_add->show(null));
 
             $out .= html::tag('fieldset', $attrib, (!empty($fieldset['name']) ? html::tag('legend', null, Q($fieldset['name'])) : '') . $content) ."\n";
             continue;
@@ -337,7 +341,7 @@ function rcmail_contact_form($form, $record, $attrib = null)
                 if (!$subtype)
                   $subtype = 'home';
 
-                $fullkey = $col.'.'.$subtype;
+                $fullkey = $col.':'.$subtype;
                 $label = isset($colprop['label']) ? $colprop['label'] : rcube_label($col);
                 
                 if ($coltypes[$field])
@@ -358,9 +362,9 @@ function rcmail_contact_form($form, $record, $attrib = null)
                         $values = $subtypes = array();
                         foreach ($colprop['subtypes'] as $i => $st) {
                             $newval = false;
-                            if ($record[$field.'.'.$st]) {
+                            if ($record[$field.':'.$st]) {
                                 $subtypes[count($values)] = $st;
-                                $newval = $record[$field.'.'.$st];
+                                $newval = $record[$field.':'.$st];
                             }
                             else if ($i == 0 && $record[$field]) {
                                 $subtypes[count($values)] = $st;
@@ -386,21 +390,21 @@ function rcmail_contact_form($form, $record, $attrib = null)
                 $rows = '';
                 foreach ((array)$values as $i => $val) {
                     if ($subtypes[$i])
-                        $subtype = $subtypes;
+                        $subtype = $subtypes[$i];
 
                     // render composite field
                     if ($colprop['type'] == 'composite') {
                         $composite = '';
                         foreach ($colprop['childs'] as $j => $childcol) {
-                            $childvalue = $val[$coldcol] ? $val[$coldcol] : $val[$j];
-                            
+                            $childvalue = $val[$childcol] ? $val[$childcol] : $val[$j];
+
                             if ($RCMAIL->action != 'show') {
                                 $cp = $coltypes[$childcol];
                                 if ($colprop['subtypes']) $cp['array'] = true;
                                 $composite .= rcmail_get_edit_field($childcol, $childvalue, $cp, $cp['type']) . " ";
                             }
                             else
-                                $composite .= html::span('data', Q($childvalue)) . " ";
+                                $composite .= html::span('data ' . $childcol, Q($childvalue)) . " ";
                         }
 
                         $val = $composite;
@@ -412,11 +416,14 @@ function rcmail_contact_form($form, $record, $attrib = null)
                         if ($colprop['subtypes'])
                             $colprop['array'] = true;
                         $val = rcmail_get_edit_field($col, $val, $colprop, $colprop['type']);
+                        $coltypes[$field]['count']++;
                     }
+                    else if (!$colprop['value'])
+                        $val = Q($val);
 
                     if ($colprop['subtypes'])
                         $label = $subtype;
-                        
+
                     if ($label) {
                         $rows .= html::div('row',
                             html::div('contactfieldlabel label', $select_subtype ? $select_subtype->show($subtype) : Q($label)) .
@@ -426,11 +433,17 @@ function rcmail_contact_form($form, $record, $attrib = null)
                         $rows .= html::div('row', html::div('contactfield', $val));
                 }
                 
+                // add option to the add-field menu
+                if (!$colprop['limit'] || $coltypes[$field]['count'] < $colprop['limit']) {
+                    $select_add->add($colprop['label'], $col);
+                    $select_add->_count++;
+                }
+                
                 $content .= html::div('contactfieldgroup contactcontroller' . $col, $rows);
             }
 
-            if ($RCMAIL->action != 'show' && !$fieldset['single'])
-                $content .= html::p('addfield', $select_add->show(null, array('rel' => $section)));
+            if ($RCMAIL->action != 'show' && $select_add->_count)
+                $content .= html::p('addfield', $select_add->show(null));
 
             $content = html::div(array('id' => 'contactsection' . $section), $content);
         }

@@ -266,7 +266,12 @@ body.iframe,
 
 .contactfieldgroup
 {
-	margin: 1.2em 0;
+	margin: 0.8em 0;
+}
+
+form .contactfieldgroup
+{
+	margin: 1.4em 0;
 }
 
 .contactfieldgroup .row
@@ -308,4 +313,9 @@ body.iframe,
 
 .contactcontrolleraddress .contactfieldcontent input {
 	margin-bottom: 0.1em;
+}
+
+.contactcontrolleraddress span.street,
+.contactcontrolleraddress span.country {
+	display: block;
 }

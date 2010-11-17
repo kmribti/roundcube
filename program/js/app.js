@@ -324,8 +324,8 @@ function rcube_webmail()
           for (var col in this.env.coltypes)
             this.init_edit_field(col, null);
 
-          $('#addfieldmenu').change(function(e){
-            ref.insert_edit_field($(this).val(), $(this).attr('rel'));
+          $('select.addfieldmenu').change(function(e){
+            ref.insert_edit_field($(this).val(), $(this).attr('rel'), this);
             this.selectedIndex = 0;
           });
         }
@@ -3989,12 +3989,13 @@ function rcube_webmail()
       .each(function(){ this._placeholder = ref.env.coltypes[col].label; ref.blur_textfield(this); });
   };
 
-  this.insert_edit_field = function(col, section)
+  this.insert_edit_field = function(col, section, menu)
   {
     // just make pre-defined input field visible
     var elem = $('#ff_'+col);
     if (elem.length) {
       elem.show().focus();
+      $(menu).children('option[value="'+col+'"]').attr('disabled', true);
     }
     else {
       var lastelem = $('.ff_'+col),
@@ -4043,6 +4044,11 @@ function rcube_webmail()
         if (input) {
           row.append(label).append(cell).appendTo(appendcontainer);
           input.first().focus();
+          
+          // disable option if limit reached
+          if (!colprop.count) colprop.count = 0;
+          if (colprop.limit && ++colprop.count == colprop.limit)
+            $(menu).children('option[value="'+col+'"]').attr('disabled', true);
         }
       }
     }

@@ -32,6 +32,7 @@ class rcube_vcard
     'FN' => array(),
     'N' => array(array('','','','','')),
   );
+  private $fieldmap = array('phone' => 'TEL', 'birthday' => 'BDAY', 'website' => 'URL', 'notes' => 'NOTE', 'email' => 'EMAIL', 'address' => 'ADR');
 
   public $business = false;
   public $displayname;
@@ -97,6 +98,46 @@ class rcube_vcard
 
 
   /**
+   * Return vCard data as associative array to be unsed in Roundcube address books
+   *
+   * @return array Hash array with key-value pairs
+   */
+  public function get_assoc()
+  {
+    $out = array('name' => $this->displayname);
+    
+    foreach (array('firstname','surname','middlename','nickname','organization') as $col)
+      $out[$col] = $this->$col;
+    
+    foreach (array_flip($this->fieldmap) as $tag => $col) {
+      foreach ((array)$this->raw[$tag] as $i => $raw) {
+        if (is_array($raw)) {
+          $k = 0;
+          $key = $col;
+          $subtype = strtolower($raw['type'][$k++]);
+          while ($k < count($raw['type']) && ($subtype == 'internet' || $subtype == 'pref'))
+            $subtype = strtolower($raw['type'][$k++]);
+          if ($subtype)
+            $key .= ':' . $subtype;
+            
+          if ($tag == 'ADR') {
+            list(,, $value['street'], $value['locality'], $value['region'], $value['zipcode'], $value['country']) = $raw;
+            $out[$key][] = $value;
+          }
+          else
+            $out[$key][] = $raw[0];
+        }
+        else {
+          $out[$col][] = $raw;
+        }
+      }
+    }
+    
+    return $out;
+  }
+
+
+  /**
    * Convert the data structure into a vcard 3.0 string
    */
   public function export()
@@ -114,6 +155,8 @@ class rcube_vcard
    */
   public function set($field, $value, $section = 'HOME')
   {
+    static $touched = array();
+    
     switch ($field) {
       case 'name':
       case 'displayname':
@@ -137,12 +180,24 @@ class rcube_vcard
         break;
         
       case 'email':
-        $index = $this->get_type_index('EMAIL', $section);
-        if (!is_array($this->raw['EMAIL'][$index])) {
-          $this->raw['EMAIL'][$index] = array(0 => $value, 'type' => array('INTERNET', $section, 'pref'));
-        }
-        else {
-          $this->raw['EMAIL'][$index][0] = $value;
+        if (!$touched['EMAIL']++)
+          $this->raw['EMAIL'] = array();
+        $index = count($this->raw['EMAIL']);
+        $this->raw['EMAIL'][$index] = array(0 => $value, 'type' => array_filter(array('INTERNET', $section)));
+        break;
+
+      case 'address':
+        $value = $value[0] ? $value : array('', '', $value['street'], $value['locality'], $value['region'], $value['zipcode'], $value['country']);
+        // fall through
+
+      default:
+        if ($tag = $this->fieldmap[$field]) {
+          if (!$touched[$tag]++)
+            $this->raw[$tag] = array();
+          $index = count($this->raw[$tag]);
+          $this->raw[$tag][$index] = (array)$value;
+          if ($section)
+            $this->raw[$tag][$index]['type'] = array($section);
         }
         break;
     }

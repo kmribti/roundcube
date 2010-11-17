@@ -96,12 +96,15 @@ function rcmail_contact_editform($attrib)
                 'email' => array('size' => $i_size, 'visible' => true),
                 'phone' => array('size' => $i_size, 'visible' => true),
                 'address' => array('visible' => true),
+                'birthday' => array('size' => $i_size),
+                'website' => array('size' => $i_size),
+                'im' => array('size' => $i_size),
             ),
         ),
         'notes' => array(
             'name'    => rcube_label('notes'),
             'content' => array(
-                'notes' => array('type' => 'textarea', 'size' => $t_cols, 'rows' => $t_rows, 'label' => false, 'visible' => true),
+                'notes' => array('size' => $t_cols, 'rows' => $t_rows, 'label' => false, 'visible' => true, 'limit' => 1),
             ),
             'single' => true,
         )

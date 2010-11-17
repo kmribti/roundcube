@@ -345,12 +345,12 @@ class rcube_contacts extends rcube_addressbook
         );
 
         if ($sql_arr = $this->db->fetch_assoc()) {
-            $sql_arr['ID'] = $sql_arr[$this->primary_key];
+            $record = $this->convert_db_data($sql_arr);
             $this->result = new rcube_result_set(1);
-            $this->result->add($sql_arr);
+            $this->result->add($record);
         }
 
-        return $assoc && $sql_arr ? $sql_arr : $this->result;
+        return $assoc && $record ? $record : $this->result;
     }
 
 
@@ -450,7 +450,8 @@ class rcube_contacts extends rcube_addressbook
     {
         $updated = false;
         $write_sql = array();
-        $save_cols = $this->convert_save_data($save_cols);
+        $record = $this->get_record($id, true);
+        $save_cols = $this->convert_save_data($save_cols, $record);
 
         foreach ($save_cols as $col => $value) {
             $write_sql[] = sprintf("%s=%s", $this->db->quoteIdentifier($col), $this->db->quote($value));
@@ -472,12 +473,39 @@ class rcube_contacts extends rcube_addressbook
 
         return $updated;
     }
+    
+    
+    private function convert_db_data($sql_arr)
+    {
+        $record = array();
+        $record['ID'] = $sql_arr[$this->primary_key];
+        
+        if ($sql_arr['vcard']) {
+          $vcard = new rcube_vcard($sql_arr['vcard']);
+          $record += $vcard->get_assoc();
+        }
+        else
+          $record += $sql_arr;
+        
+        return $record;
+    }
 
 
-    private function convert_save_data($save_data)
+    private function convert_save_data($save_data, $record = array())
     {
         $out = array();
-        
+
+        // copy values into vcard object
+        $vcard = new rcube_vcard($record['vcard']);
+        foreach ($save_data as $key => $values) {
+            list($field, $section) = explode(':', $key);
+            foreach ((array)$values as $value) {
+                if (strlen($value) || is_array($value))
+                    $vcard->set($field, $value, strtoupper($section));
+            }
+        }
+        $out['vcard'] = $vcard->export();
+
         foreach ($this->table_cols as $col) {
             $key = $col;
             if (!isset($save_data[$key]))
@@ -485,9 +513,7 @@ class rcube_contacts extends rcube_addressbook
             if (isset($save_data[$key]))
                 $out[$col] = is_array($save_data[$key]) ? join(',', $save_data[$key]) : $save_data[$key];
         }
-        
-        // TODO: save all data into a vcard
-        
+
         return $out;
     }
 

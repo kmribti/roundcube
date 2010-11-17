@@ -36,6 +36,7 @@ foreach ($GLOBALS['CONTACT_COLTYPES'] as $col => $colprop) {
   $fname = '_'.$col;
   if ($colprop['composite'])
     continue;
+  // gather form data of composite fields
   if ($colprop['childs']) {
     $values = array();
     foreach ($colprop['childs'] as $j => $childcol) {
@@ -48,6 +49,7 @@ foreach ($GLOBALS['CONTACT_COLTYPES'] as $col => $colprop) {
       if ($values[$i])
         $a_record[$col.':'.$subtype][] = $values[$i];
   }
+  // assign values and subtypes
   else if (is_array($_POST[$fname])) {
     $values = get_input_value($fname, RCUBE_INPUT_POST);
     $subtypes = get_input_value('_subtype_' . $col, RCUBE_INPUT_POST);
@@ -66,20 +68,24 @@ if (empty($a_record['name']))
 
 #var_dump($a_record);
 
-// Basic input checks
-if (empty($a_record['name']) || empty($a_record['email'])) {
+// Basic input checks (TODO: delegate to $CONTACTS instance)
+if (empty($a_record['name'])/* || empty($a_record['email'])*/) {
   $OUTPUT->show_message('formincomplete', 'warning');
   rcmail_overwrite_action($return_action);
   return;
 }
 
 // Validity checks
-foreach ((array)$a_record['email'] as $email) {
-  $_email = idn_to_ascii($email);
-  if (!check_email($_email, false)) {
-    $OUTPUT->show_message('emailformaterror', 'warning', array('email' => $_email));
-    rcmail_overwrite_action($return_action);
-    return;
+foreach ($a_record as $field => $values) {
+  if (strpos($field, 'email') === 0) {
+    foreach ((array)$values as $email) {
+      $_email = idn_to_ascii($email);
+      if (!check_email($_email, false)) {
+        $OUTPUT->show_message('emailformaterror', 'warning', array('email' => $email));
+        rcmail_overwrite_action($return_action);
+        return;
+      }
+    }
   }
 }
 

@@ -276,6 +276,9 @@ $labels['exportvcards']   = 'Export contacts in vCard format';
 $labels['newcontactgroup'] = 'Create new contact group';
 $labels['groupactions']   = 'Actions for contact groups...';
 
+$labels['addfield'] = 'Add field...';
+$labels['notes'] = 'Notes';
+
 $labels['previouspage']   = 'Show previous set';
 $labels['firstpage']      = 'Show first set';
 $labels['nextpage']       = 'Show next set';
