@@ -324,6 +324,8 @@ function rcube_webmail()
           for (var col in this.env.coltypes)
             this.init_edit_field(col, null);
 
+          $('.contactfieldgroup .row a.deletebutton').click(function(){ ref.delete_edit_field(this); return false });
+
           $('select.addfieldmenu').change(function(e){
             ref.insert_edit_field($(this).val(), $(this).attr('rel'), this);
             this.selectedIndex = 0;
@@ -4042,6 +4044,14 @@ function rcube_webmail()
         }
 
         if (input) {
+          var delbutton = $('<a href="#del"></a>')
+            .addClass('contactfieldbutton deletebutton')
+            .attr('title', this.get_label('delete'))
+            .attr('rel', col)
+            .html(this.env.delbutton)
+            .click(function(){ ref.delete_edit_field(this); return false })
+            .appendTo(cell);
+          
           row.append(label).append(cell).appendTo(appendcontainer);
           input.first().focus();
           
@@ -4052,6 +4062,13 @@ function rcube_webmail()
         }
       }
     }
+  };
+
+  this.delete_edit_field = function(elem){
+    var col = $(elem).attr('rel');
+    $(elem).parents('div.row').remove();
+    
+    // TODO: enable option in add-field selector or insert it if necessary
   };
 
 

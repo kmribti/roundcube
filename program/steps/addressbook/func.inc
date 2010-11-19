@@ -74,7 +74,7 @@ $CONTACT_COLTYPES = array(
     'zipcode'    => array('type' => 'text', 'size' => 8, 'label' => rcube_label('zipcode'), 'composite' => true),
     'region'     => array('type' => 'text', 'size' => 12, 'label' => rcube_label('region'), 'composite' => true),
     'country'    => array('type' => 'text', 'size' => 40, 'label' => rcube_label('country'), 'composite' => true),
-  'birthday'     => array('type' => 'date', 'size' => 12, 'label' => rcube_label('birthday'), 'limit' => 1),
+  'birthday'     => array('type' => 'date', 'size' => 12, 'label' => rcube_label('birthday'), 'limit' => 1, 'render_func' => 'rcmail_format_date_col'),
   'website'      => array('type' => 'text', 'size' => 40, 'label' => rcube_label('website'), 'subtypes' => array('home','work','blog','other')),
   'im'           => array('type' => 'text', 'size' => 40, 'label' => rcube_label('instantmessenger'), 'subtypes' => array('aim','icq','msn','yahoo','jabber','other')),
   'notes'        => array('type' => 'textarea', 'size' => 40, 'rows' => 15, 'label' => rcube_label('notes'), 'limit' => 1),
@@ -261,7 +261,7 @@ function rcmail_get_rowcount_text()
 
 function rcmail_contact_form($form, $record, $attrib = null)
 {
-    global $RCMAIL;
+    global $RCMAIL, $CONFIG;
 
     // Allow plugins to modify contact form content
     $plugin = $RCMAIL->plugins->exec_hook('contact_form', array(
@@ -270,6 +270,7 @@ function rcmail_contact_form($form, $record, $attrib = null)
     $form = $plugin['form'];
     $record = $plugin['record'];
     $formdata = array();
+    $del_button = $attrib['deleteicon'] ? html::img(array('src' => $CONFIG['skin_path'] . $attrib['deleteicon'], 'alt' => rcube_label('delete'))) : rcube_label('delete');
     $out = '';
     
     // get default coltypes
@@ -335,8 +336,7 @@ function rcmail_contact_form($form, $record, $attrib = null)
         $content = '';
         if (is_array($fieldset['content'])) {
             foreach ($fieldset['content'] as $col => $colprop) {
-              #  $colprop['id'] = 'rcmfd_'.$col;
-
+                // remove subtype part of col name
                 list($field, $subtype) = explode(':', $col);
                 if (!$subtype)
                   $subtype = 'home';
@@ -344,9 +344,11 @@ function rcmail_contact_form($form, $record, $attrib = null)
                 $fullkey = $col.':'.$subtype;
                 $label = isset($colprop['label']) ? $colprop['label'] : rcube_label($col);
                 
+                // merge colprop with global coltype configuration
                 if ($coltypes[$field])
                     $colprop += $coltypes[$field];
 
+                // prepare subtype selector in edit mode
                 if ($RCMAIL->action != 'show' && is_array($colprop['subtypes'])) {
                     $select_subtype = new html_select(array('name' => '_subtype_'.$col.'[]', 'class' => 'contactselectsubtype'));
                     $select_subtype->add($colprop['subtypes']);
@@ -358,6 +360,7 @@ function rcmail_contact_form($form, $record, $attrib = null)
                     $values = (array)$colprop['value'];
                 }
                 else {
+                    // iterate over possible subtypes and collect values with their subtype
                     if (is_array($colprop['subtypes'])) {
                         $values = $subtypes = array();
                         foreach ($colprop['subtypes'] as $i => $st) {
@@ -384,6 +387,7 @@ function rcmail_contact_form($form, $record, $attrib = null)
                     }
                 }
 
+                // hack: create empty values array to force this field to be displayed
                 if (empty($values) && $colprop['visible'])
                     $values[] = '';
 
@@ -403,13 +407,19 @@ function rcmail_contact_form($form, $record, $attrib = null)
                                 if ($colprop['subtypes']) $cp['array'] = true;
                                 $composite .= rcmail_get_edit_field($childcol, $childvalue, $cp, $cp['type']) . " ";
                             }
-                            else
-                                $composite .= html::span('data ' . $childcol, Q($childvalue)) . " ";
+                            else {
+                                $childval = $cp['render_func'] ? call_user_func($cp['render_func'], $childvalue, $childcol) : Q($childvalue);
+                                $composite .= html::span('data ' . $childcol, $childval) . " ";
+                            }
                         }
 
                         $val = $composite;
                     }
                     else if ($RCMAIL->action != 'show') {
+                        // call callback to render/format value
+                        if ($colprop['render_func'])
+                            $val = call_user_func($colprop['render_func'], $val, $col);
+
                         $coltypes[$field] = array('field' => $field, 'label' => $label) + (array)$colprop;
                         $formdata[$field][] = array('subtype' => $subtype, 'value' => $val);
 
@@ -418,18 +428,26 @@ function rcmail_contact_form($form, $record, $attrib = null)
                         $val = rcmail_get_edit_field($col, $val, $colprop, $colprop['type']);
                         $coltypes[$field]['count']++;
                     }
-                    else if (!$colprop['value'])
+                    else if ($colprop['render_func'])
+                        $val = call_user_func($colprop['render_func'], $val, $col);
+                    else
                         $val = Q($val);
 
+                    // use subtype as label
                     if ($colprop['subtypes'])
                         $label = $subtype;
 
+                    // add delete button/link
+                    if ($RCMAIL->action != 'show' && (!$colprop['visible'] || count($values) > 1))
+                        $val .= html::a(array('href' => '#del', 'class' => 'contactfieldbutton deletebutton', 'title' => rcube_label('delete'), 'rel' => $col), $del_button);
+
+                    // display row with label
                     if ($label) {
                         $rows .= html::div('row',
                             html::div('contactfieldlabel label', $select_subtype ? $select_subtype->show($subtype) : Q($label)) .
                             html::div('contactfieldcontent '.$colprop['type'], $val));
                     }
-                    else
+                    else   // row without label
                         $rows .= html::div('row', html::div('contactfield', $val));
                 }
                 
@@ -439,9 +457,11 @@ function rcmail_contact_form($form, $record, $attrib = null)
                     $select_add->_count++;
                 }
                 
+                // wrap rows in fieldgroup container
                 $content .= html::div('contactfieldgroup contactcontroller' . $col, $rows);
             }
 
+            // also render add-field selector
             if ($RCMAIL->action != 'show' && $select_add->_count)
                 $content .= html::p('addfield', $select_add->show(null));
 
@@ -457,11 +477,19 @@ function rcmail_contact_form($form, $record, $attrib = null)
     if ($RCMAIL->action != 'show') {
       $RCMAIL->output->set_env('contactdata', $formdata);
       $RCMAIL->output->set_env('coltypes', $coltypes);
+      $RCMAIL->output->set_env('delbutton', $del_button);
+      $RCMAIL->output->add_label('delete');
     }
 
     return $out;
 }
 
+
+function rcmail_format_date_col($val)
+{
+    global $RCMAIL;
+    return format_date($val, $RCMAIL->config->get('date_format', 'Y-m-d'));
+}
 
 
 // register UI objects

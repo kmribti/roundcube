@@ -69,11 +69,11 @@ function rcmail_contact_details($attrib)
         'info' => array(
             'name'    => rcube_label('contactproperties'),
             'content' => array(
-              'email' => array('size' => $i_size, 'value' => array()),
+              'email' => array('size' => $i_size, 'render_func' => 'rcmail_render_email_value'),
               'phone' => array('size' => $i_size),
               'address' => array(),
               'birthday' => array('size' => $i_size),
-              'website' => array('size' => $i_size, 'value' => array()),
+              'website' => array('size' => $i_size, 'render_func' => 'rcmail_render_url_value'),
               'im' => array('size' => $i_size),
             ),
         ),
@@ -88,31 +88,30 @@ function rcmail_contact_details($attrib)
             'content' => rcmail_contact_record_groups($record['ID']),
         ),
     );
-/* FIXME: this destroys subtype assignments
-    foreach ((array)$record as $field => $values) {
-        if (strpos($field, 'email') === 0) {
-            foreach ((array)$values as $email) {
-                $form['info']['content']['email']['value'][] = html::a(array(
-                    'href' => 'mailto:' . $email,
-                    'onclick' => sprintf("return %s.command('compose','%s',this)", JS_OBJECT_NAME, JQ($email)),
-                    'title' => rcube_label('composeto'),
-                    'class' => 'email',
-                ), Q($email));
-            }
-        }
-        else if (strpos($field, 'website') === 0) {
-            foreach ((array)$values as $url) {
-                $prefix = preg_match('![htfps]+://!', $url) ? '' : 'http://';
-                $form['info']['content']['website']['value'][] = html::a(array(
-                    'href' => $prefix . $url,
-                    'target' => '_blank',
-                    'class' => 'url',
-                ), Q($url));
-            }
-        }
-    }
-*/
+
     return rcmail_contact_form($form, $record);
+}
+
+
+function rcmail_render_email_value($email, $col)
+{
+    return html::a(array(
+        'href' => 'mailto:' . $email,
+        'onclick' => sprintf("return %s.command('compose','%s',this)", JS_OBJECT_NAME, JQ($email)),
+        'title' => rcube_label('composeto'),
+        'class' => 'email',
+    ), Q($email));
+}
+
+
+function rcmail_render_url_value($url, $col)
+{
+    $prefix = preg_match('![htfps]+://!', $url) ? '' : 'http://';
+    return html::a(array(
+        'href' => $prefix . $url,
+        'target' => '_blank',
+        'class' => 'url',
+    ), Q($url));
 }
 
 

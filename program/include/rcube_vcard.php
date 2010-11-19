@@ -195,8 +195,15 @@ class rcube_vcard
       case 'email':
         if (!$touched['EMAIL']++)
           $this->raw['EMAIL'] = array();
-        $index = count($this->raw['EMAIL']);
-        $this->raw['EMAIL'][$index] = array(0 => $value, 'type' => array_filter(array('INTERNET', $type)));
+        $this->raw['EMAIL'][] = array(0 => $value, 'type' => array_filter(array('INTERNET', $type)));
+        break;
+
+      case 'birthday':
+        if ($val = @strtotime($value)) {
+          if (!$touched['BDAY']++)
+            $this->raw['BDAY'] = array();
+          $this->raw['BDAY'][] = array(0 => date('Y-m-d', $val), 'value' => array('date'));
+        }
         break;
 
       case 'address':

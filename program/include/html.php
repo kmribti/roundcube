@@ -147,7 +147,7 @@ class html
             $attr = array('href' => $attr);
         }
         return self::tag('a', $attr, $cont, array_merge(self::$common_attrib,
-	    array('href','target','name','onclick','onmouseover','onmouseout','onmousedown','onmouseup')));
+	    array('href','target','name','rel','onclick','onmouseover','onmouseout','onmousedown','onmouseup')));
     }
 
     /**

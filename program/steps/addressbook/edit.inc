@@ -114,7 +114,7 @@ function rcmail_contact_editform($attrib)
     unset($attrib['form']);
 
     // return the complete address edit form as table
-    $out = rcmail_contact_form($form, $record);
+    $out = rcmail_contact_form($form, $record, $attrib);
 
     return $form_start . $out . $form_end;
 }

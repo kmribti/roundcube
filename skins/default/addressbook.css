@@ -311,6 +311,7 @@ form .contactfieldgroup
 .contactfieldgroup .contactfieldcontent
 {
 	margin-left: 90px;
+	min-height: 1em;
 }
 
 .contactcontrolleraddress .contactfieldcontent {
@@ -324,4 +325,9 @@ form .contactfieldgroup
 .contactcontrolleraddress span.street,
 .contactcontrolleraddress span.country {
 	display: block;
+}
+
+.contactfieldcontent .contactfieldbutton {
+	vertical-align: middle;
+	margin-left: 0.5em;
 }

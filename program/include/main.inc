@@ -824,16 +824,19 @@ function rcmail_get_edit_field($col, $value, $attrib, $type='text')
   $attrib['name'] = $fname . ($attrib['array'] ? '[]' : '');
   $attrib['class'] = trim($attrib['class'] . ' ff_' . $col);
   
-  if ($type=='checkbox') {
+  if ($type == 'checkbox') {
     $attrib['value'] = '1';
     $input = new html_checkbox($attrib);
   }
-  else if ($type=='textarea') {
+  else if ($type == 'textarea') {
     $attrib['cols'] = $attrib['size'];
     $input = new html_textarea($attrib);
   }
-  else
+  else {
+    if ($attrib['type'] != 'text' && $attrib['type'] != 'hidden')
+        $attrib['type'] = 'text';
     $input = new html_inputfield($attrib);
+  }
 
   // use value from post
   if (isset($_POST[$fname])) {
