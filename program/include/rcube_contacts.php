@@ -469,6 +469,7 @@ class rcube_contacts extends rcube_addressbook
             );
 
             $updated = $this->db->affected_rows();
+            $this->result = null;  // clear current result (from get_record())
         }
 
         return $updated;
