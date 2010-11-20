@@ -684,20 +684,17 @@ class managesieve extends rcube_plugin
         $copy     = get_input_value('_copy', RCUBE_INPUT_POST);
         $selected = get_input_value('_from', RCUBE_INPUT_POST);
 
-        $table = new html_table(array('cols' => 2));
-
         // filter set name input
         $input_name = new html_inputfield(array('name' => '_name', 'id' => '_name', 'size' => 30,
             'class' => ($this->errors['name'] ? 'error' : '')));
 
-        $table->add('title', sprintf('<label for="%s"><b>%s:</b></label>',
-            '_name', Q($this->gettext('filtersetname'))));
-        $table->add(null, $input_name->show($name));
+        $out .= sprintf('<label for="%s"><b>%s:</b></label> %s<br /><br />',
+            '_name', Q($this->gettext('filtersetname')), $input_name->show($name));
 
-        $from ='<div class="itemlist">';
-        $from .= '<input type="radio" id="from_none" name="_from" value="none"'
+        $out .="\n<fieldset class=\"itemlist\"><legend>" . $this->gettext('filters') . ":</legend>\n";
+        $out .= '<input type="radio" id="from_none" name="_from" value="none"'
             .(!$selected || $selected=='none' ? ' checked="checked"' : '').'></input>';
-        $from .= sprintf('<label for="%s">%s</label> ', 'from_none', Q($this->gettext('none')));
+        $out .= sprintf('<label for="%s">%s</label> ', 'from_none', Q($this->gettext('none')));
 
         // filters set list
         $list   = $this->sieve->get_scripts();
@@ -711,26 +708,21 @@ class managesieve extends rcube_plugin
             foreach ($list as $set)
                 $select->add($set . ($set == $active ? ' ('.$this->gettext('active').')' : ''), $set);
 
-            $from .= '<br /><input type="radio" id="from_set" name="_from" value="set"'
+            $out .= '<br /><input type="radio" id="from_set" name="_from" value="set"'
                 .($selected=='set' ? ' checked="checked"' : '').'></input>';
-            $from .= sprintf('<label for="%s">%s:</label> ', 'from_set', Q($this->gettext('fromset')));
-            $from .= $select->show($copy);
+            $out .= sprintf('<label for="%s">%s:</label> ', 'from_set', Q($this->gettext('fromset')));
+            $out .= $select->show($copy);
         }
 
         // script upload box
         $upload = new html_inputfield(array('name' => '_file', 'id' => '_file', 'size' => 30,
             'type' => 'file', 'class' => ($this->errors['name'] ? 'error' : '')));
 
-        $from .= '<br /><input type="radio" id="from_file" name="_from" value="file"'
+        $out .= '<br /><input type="radio" id="from_file" name="_from" value="file"'
             .($selected=='file' ? ' checked="checked"' : '').'></input>';
-        $from .= sprintf('<label for="%s">%s:</label> ', 'from_file', Q($this->gettext('fromfile')));
-        $from .= $upload->show();
-        $from .= '</div>';
-
-        $table->add('title', '<label>'.$this->gettext('filters').':</label>');
-        $table->add(null, $from);
-
-        $out .= $table->show();
+        $out .= sprintf('<label for="%s">%s:</label> ', 'from_file', Q($this->gettext('fromfile')));
+        $out .= $upload->show();
+        $out .= '</fieldset>';
 
         $this->rc->output->add_gui_object('sieveform', 'filtersetform');
 
@@ -762,6 +754,9 @@ class managesieve extends rcube_plugin
         $field_id = '_name';
         $input_name = new html_inputfield(array('name' => '_name', 'id' => $field_id, 'size' => 30,
             'class' => ($this->errors['name'] ? 'error' : '')));
+
+        if ($this->errors['name'])
+            $this->add_tip($field_id, $this->errors['name'], true);
 
         if (isset($scr))
             $input_name = $input_name->show($scr['name']);

@@ -1,4 +1,6 @@
 - Added support for SASL proxy authentication (#1486691)
+- Fixed parsing of scripts with \r\n line separator
+- Apply forgotten changes for form errors handling
 
 * version 2.10 [2010-10-10]
 -----------------------------------------------------------

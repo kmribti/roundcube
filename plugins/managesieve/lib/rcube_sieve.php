@@ -344,7 +344,7 @@ class rcube_sieve
         $name = array();
 
         // Squirrelmail (Avelsieve)
-        if ($tokens = preg_split('/(#START_SIEVE_RULE.*END_SIEVE_RULE)\n/', $script, -1, PREG_SPLIT_DELIM_CAPTURE)) {
+        if ($tokens = preg_split('/(#START_SIEVE_RULE.*END_SIEVE_RULE)\r?\n/', $script, -1, PREG_SPLIT_DELIM_CAPTURE)) {
             foreach($tokens as $token) {
                 if (preg_match('/^#START_SIEVE_RULE.*/', $token, $matches)) {
                     $name[$i] = "unnamed rule ".($i+1);
@@ -743,7 +743,7 @@ class rcube_sieve_script
         if (in_array('vacation', $this->supported))
             $patterns[] = '^\s*vacation\s+(.*?[^\\\]);';
 
-        $pattern = '/(' . implode('$)|(', $patterns) . '$)/ms';
+        $pattern = '/(' . implode('\s*$)|(', $patterns) . '$\s*)/ms';
 
         // parse actions body
         if (preg_match_all($pattern, $content, $mm, PREG_SET_ORDER)) {
