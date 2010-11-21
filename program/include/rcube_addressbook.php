@@ -5,7 +5,7 @@
  | program/include/rcube_addressbook.php                                 |
  |                                                                       |
  | This file is part of the Roundcube Webmail client                     |
- | Copyright (C) 2006-2009, Roundcube Dev. - Switzerland                 |
+ | Copyright (C) 2006-2010, Roundcube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -27,13 +27,14 @@
  */
 abstract class rcube_addressbook
 {
-    /** public properties */
-    var $primary_key;
-    var $groups = false;
-    var $readonly = true;
-    var $ready = false;
-    var $list_page = 1;
-    var $page_size = 10;
+    /** public properties (mandatory) */
+    public $primary_key;
+    public $groups = false;
+    public $readonly = true;
+    public $ready = false;
+    public $list_page = 1;
+    public $page_size = 10;
+    public $coltypes = array('name' => array('limit'=>1), 'firstname' => array('limit'=>1), 'surname' => array('limit'=>1), 'email' => array('limit'=>1));
 
     /**
      * Save a search string for future listings

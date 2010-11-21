@@ -56,7 +56,7 @@ if (!$OUTPUT->ajax_call) {
 }
 
 
-// TODO: let the $CONTACT object define the list of possible coltypes
+// general definition of contact coltypes
 $CONTACT_COLTYPES = array(
   'name'         => array('type' => 'text', 'size' => 40, 'limit' => 1, 'label' => rcube_label('name')),
   'firstname'    => array('type' => 'text', 'size' => 19, 'limit' => 1, 'label' => rcube_label('firstname')),
@@ -72,12 +72,13 @@ $CONTACT_COLTYPES = array(
   'maidenname'   => array('type' => 'text', 'size' => 40, 'limit' => 1, 'label' => rcube_label('maidenname')),
   'email'        => array('type' => 'text', 'size' => 40, 'label' => rcube_label('email'), 'subtypes' => array('home','work','other')),
   'phone'        => array('type' => 'text', 'size' => 40, 'label' => rcube_label('phone'), 'subtypes' => array('home','home2','work','work2','mobile','main','homefax','workfax','car','pager','video','assistant','other')),
-  'address'      => array('type' => 'composite', 'label' => rcube_label('address'), 'subtypes' => array('home','work','other'), 'childs' => array('street','locality','zipcode','region','country')),
-    'street'     => array('type' => 'text', 'size' => 40, 'label' => rcube_label('street'), 'composite' => true),
-    'locality'   => array('type' => 'text', 'size' => 28, 'label' => rcube_label('locality'), 'composite' => true),
-    'zipcode'    => array('type' => 'text', 'size' => 8, 'label' => rcube_label('zipcode'), 'composite' => true),
-    'region'     => array('type' => 'text', 'size' => 12, 'label' => rcube_label('region'), 'composite' => true),
-    'country'    => array('type' => 'text', 'size' => 40, 'label' => rcube_label('country'), 'composite' => true),
+  'address'      => array('type' => 'composite', 'label' => rcube_label('address'), 'subtypes' => array('home','work','other'), 'childs' => array(
+    'street'     => array('type' => 'text', 'size' => 40, 'label' => rcube_label('street')),
+    'locality'   => array('type' => 'text', 'size' => 28, 'label' => rcube_label('locality')),
+    'zipcode'    => array('type' => 'text', 'size' => 8, 'label' => rcube_label('zipcode')),
+    'region'     => array('type' => 'text', 'size' => 12, 'label' => rcube_label('region')),
+    'country'    => array('type' => 'text', 'size' => 40, 'label' => rcube_label('country')),
+  )),
   'birthday'     => array('type' => 'date', 'size' => 12, 'label' => rcube_label('birthday'), 'limit' => 1, 'render_func' => 'rcmail_format_date_col'),
   'website'      => array('type' => 'text', 'size' => 40, 'label' => rcube_label('website'), 'subtypes' => array('home','work','blog','other')),
   'im'           => array('type' => 'text', 'size' => 40, 'label' => rcube_label('instantmessenger'), 'subtypes' => array('aim','icq','msn','yahoo','jabber','other')),
@@ -85,6 +86,17 @@ $CONTACT_COLTYPES = array(
   // TODO: define fields for vcards GEO, PHOTO, KEY, X-ANNIVERSARY, X-ASSISTANT, X-MANAGER
 );
 
+// reduce/extend $CONTACT_COLTYPES with specification from the current $CONTACT object
+if (is_array($CONTACTS->coltypes)) {
+    // remove cols not listed by the backend class
+    $contact_cols = $CONTACTS->coltypes[0] ? array_flip($CONTACTS->coltypes) : $CONTACTS->coltypes;
+    $CONTACT_COLTYPES = array_intersect_key($CONTACT_COLTYPES, $contact_cols);
+    // add associative coltypes definition
+    if (!$CONTACTS->coltypes[0]) {
+        foreach ($CONTACTS->coltypes as $col => $colprop)
+            $CONTACT_COLTYPES[$col] = $CONTACT_COLTYPES[$col] ? array_merge($CONTACT_COLTYPES[$col], $colprop) : $colprop;
+    }
+}
 
 
 function rcmail_directory_list($attrib)
@@ -281,12 +293,17 @@ function rcmail_contact_form($form, $record, $attrib = null)
     
     // get default coltypes
     $coltypes = $GLOBALS['CONTACT_COLTYPES'];
+    $coltype_lables = array();
     
     foreach ($coltypes as $col => $prop) {
         if ($prop['subtypes']) {
             $select_subtype = new html_select(array('name' => '_subtype_'.$col.'[]', 'class' => 'contactselectsubtype'));
             $select_subtype->add($prop['subtypes']);
             $coltypes[$col]['subtypes_select'] = $select_subtype->show();
+        }
+        if ($prop['childs']) {
+            foreach ($prop['childs'] as $childcol => $cp)
+                $coltype_lables[$childcol] = array('label' => $cp['label']);
         }
     }
 
@@ -315,6 +332,10 @@ function rcmail_contact_form($form, $record, $attrib = null)
             foreach ($field_blocks as $blockname => $colnames) {
                 $fields = '';
                 foreach ($colnames as $col) {
+                    // skip cols unknown to the backend
+                    if (!$coltypes[$col])
+                        continue;
+
                     if ($RCMAIL->action == 'show') {
                         if (!empty($record[$col]))
                             $fields .= html::span('namefield ' . $col, Q($record[$col])) . " ";
@@ -342,6 +363,10 @@ function rcmail_contact_form($form, $record, $attrib = null)
         $content = '';
         if (is_array($fieldset['content'])) {
             foreach ($fieldset['content'] as $col => $colprop) {
+                // skip cols unknown to the backend
+                if (!$coltypes[$col])
+                    continue;
+                
                 // remove subtype part of col name
                 list($field, $subtype) = explode(':', $col);
                 if (!$subtype)
@@ -404,12 +429,11 @@ function rcmail_contact_form($form, $record, $attrib = null)
 
                     // render composite field
                     if ($colprop['type'] == 'composite') {
-                        $composite = '';
-                        foreach ($colprop['childs'] as $j => $childcol) {
+                        $composite = ''; $j = 0;
+                        foreach ($colprop['childs'] as $childcol => $cp) {
                             $childvalue = $val[$childcol] ? $val[$childcol] : $val[$j];
 
                             if ($edit_mode) {
-                                $cp = $coltypes[$childcol];
                                 if ($colprop['subtypes']) $cp['array'] = true;
                                 $composite .= rcmail_get_edit_field($childcol, $childvalue, $cp, $cp['type']) . " ";
                             }
@@ -417,6 +441,7 @@ function rcmail_contact_form($form, $record, $attrib = null)
                                 $childval = $cp['render_func'] ? call_user_func($cp['render_func'], $childvalue, $childcol) : Q($childvalue);
                                 $composite .= html::span('data ' . $childcol, $childval) . " ";
                             }
+                            $j++;
                         }
 
                         $coltypes[$field] += (array)$colprop;
@@ -487,7 +512,7 @@ function rcmail_contact_form($form, $record, $attrib = null)
 
     if ($edit_mode) {
       $RCMAIL->output->set_env('contactdata', $formdata);
-      $RCMAIL->output->set_env('coltypes', $coltypes);
+      $RCMAIL->output->set_env('coltypes', $coltypes + $coltype_lables);
       $RCMAIL->output->set_env('delbutton', $del_button);
       $RCMAIL->output->add_label('delete');
     }

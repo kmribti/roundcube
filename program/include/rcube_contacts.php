@@ -47,13 +47,16 @@ class rcube_contacts extends rcube_addressbook
     private $table_cols = array('name', 'email', 'firstname', 'surname', 'vcard');
 
     // public properties
-    var $primary_key = 'contact_id';
-    var $readonly = false;
-    var $groups = true;
-    var $list_page = 1;
-    var $page_size = 10;
-    var $group_id = 0;
-    var $ready = false;
+    public $primary_key = 'contact_id';
+    public $readonly = false;
+    public $groups = true;
+    public $list_page = 1;
+    public $page_size = 10;
+    public $group_id = 0;
+    public $ready = false;
+    public $coltypes = array('name', 'firstname', 'surname', 'middlename', 'prefix', 'suffix', 'nickname',
+      'jobtitle', 'organization', 'department', 'gender', 'maidenname', 'email', 'phone', 'address',
+      'birthday', 'website', 'im', 'notes');
 
 
     /**

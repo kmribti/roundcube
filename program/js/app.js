@@ -4028,19 +4028,20 @@ function rcube_webmail()
           this.init_edit_field(col, input);
         }
         else if (colprop.type == 'composite') {
-          var childcol, cp;
-          for (var j=0; j < colprop.childs.length; j++) {
-              childcol = colprop.childs[j];
-              cp = this.env.coltypes[childcol];
-              input = $('<input>')
-                .addClass('ff_'+childcol)
-                .attr('type', 'text')
-                .attr('name', '_'+childcol+'[]')
-                .attr('size', cp.size)
-                .appendTo(cell);
-              cell.append(" ");
-              this.init_edit_field(childcol, input);
-            }
+          var childcol, cp, first;
+          for (var childcol in colprop.childs) {
+            cp = colprop.childs[childcol];
+            input = $('<input>')
+              .addClass('ff_'+childcol)
+              .attr('type', 'text')
+              .attr('name', '_'+childcol+'[]')
+              .attr('size', cp.size)
+              .appendTo(cell);
+            cell.append(" ");
+            this.init_edit_field(childcol, input);
+            if (!first) first = input;
+          }
+          input = first;  // set focus to the first of this composite fields
         }
         else if (colprop.type == 'select') {
           input = $('<select>')
