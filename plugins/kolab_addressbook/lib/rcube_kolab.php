@@ -1,6 +1,7 @@
 <?php
 
 require_once 'Horde/Kolab/Storage/List.php';
+require_once 'Horde/Kolab/Format.php';
 require_once 'Horde/Auth.php';
 require_once 'Horde/Auth/kolab.php';
 require_once 'Horde/Perms.php';
@@ -47,6 +48,19 @@ class rcube_kolab
             );
             Auth::setCredential('password', $pwd);
         }
+    }
+    
+    
+    /**
+     * Get instance of a Kolab (XML) format object
+     *
+     * @param string Data type (contact,event,task,note)
+     * @return object Horde_Kolab_Format_XML The format object
+     */
+    public static function get_format($type)
+    {
+      self::setup();
+      return Horde_Kolab_Format::factory('XML', $type);
     }
 
     /**

@@ -29,6 +29,7 @@ class kolab_addressbook extends rcube_plugin
         
         $this->add_hook('addressbooks_list', array($this, 'address_sources'));
         $this->add_hook('addressbook_get', array($this, 'get_address_book'));
+        $this->add_hook('contact_form', array($this, 'contact_form'));
 
         // extend include path to load bundled Horde classes
         $include_path = $this->home . '/lib' . PATH_SEPARATOR . ini_get('include_path');
@@ -111,6 +112,25 @@ class kolab_addressbook extends rcube_plugin
         }
         
         return $this->sources;
+    }
+    
+    
+    /**
+     * Plugin hook called before rendering the contact form or detail view
+     */
+    public function contact_form($p)
+    {
+        // extend the list of contact fields to be displayed in the 'info' section
+        if (is_array($p['form']['info'])) {
+            $p['form']['info']['content']['initials'] = array('size' => 6);
+            $p['form']['info']['content']['anniversary'] = array('size' => 12, 'render_func' => 'rcmail_format_date_col');
+            
+            // TODO: add more Kolab-specific fields
+            
+            // TODO: re-order fields
+        }
+        
+        return $p;
     }
 
 }

@@ -15,6 +15,30 @@ class rcube_kolab_contacts extends rcube_addressbook
     public $primary_key = 'ID';
     public $readonly = true;
     public $groups = true;
+    public $coltypes = array(
+      'name'         => array('limit' => 1),
+      'firstname'    => array('limit' => 1),
+      'surname'      => array('limit' => 1),
+      'middlename'   => array('limit' => 1),
+      'prefix'       => array('limit' => 1),
+      'suffix'       => array('limit' => 1),
+      'nickname'     => array('limit' => 1),
+      'jobtitle'     => array('limit' => 1),
+      'organization' => array('limit' => 1),
+      'department'   => array('limit' => 1),
+      'gender'       => array('limit' => 1),
+      'birthday'     => array('limit' => 1),
+      'email'        => array(),
+      'phone'        => array(),
+      'im'           => array('limit' => 1),
+      'website'      => array('limit' => 1),
+      'address'      => array(),
+      'notes'        => array(),
+      // define additional coltypes
+      'initials'     => array('type' => 'text', 'size' => 6, 'limit' => 1),
+      'anniversary'  => array('type' => 'date', 'size' => 12, 'limit' => 1),
+      // TODO: define more Kolab-specific fields such as: office-location, profession, manager-name, assistant, spouse-name, children, language, latitude, longitude, pgp-publickey, free-busy-url
+    );
 
     private $gid;
     private $imap;
@@ -28,12 +52,19 @@ class rcube_kolab_contacts extends rcube_addressbook
     private $filter;
     private $result;
     private $imap_folder = 'INBOX/Contacts';
+    private $gender_map = array(0 => 'male', 1 => 'female');
 
 
     public function __construct($imap_folder = null)
     {
         if ($imap_folder)
             $this->imap_folder = $imap_folder;
+            
+        // extend coltypes configuration 
+        $format = rcube_kolab::get_format('contact');
+        $this->coltypes['phone']['subtypes'] = $format->_phone_types;
+        $this->coltypes['address']['subtypes'] = $format->_address_types;
+        $this->coltypes['anniversary']['label'] = rcube_label('anniversary');
         
         // fetch objects from the given IMAP folder
         $this->contactstorage = rcube_kolab::get_storage($this->imap_folder);
@@ -293,13 +324,53 @@ class rcube_kolab_contacts extends rcube_addressbook
      */
     private function _to_rcube_contact($record)
     {
-        return array(
+        $out = array(
           'ID' => md5($record['uid']),
           'name' => $record['full-name'],
           'firstname' => $record['given-name'],
+          'middlename' => $record['middle-names'],
           'surname' => $record['last-name'],
-          'email' => $record['emails'],
+          'prefix' => $record['prefix'],
+          'suffix' => $record['suffix'],
+          'nickname' => $record['nick-name'],
+          'organization' => $record['organization'],
+          'department' => $record['department'],
+          'jobtitle' => $record['job-title'],
+          'initials' => $record['initials'],
+          'birthday' => $record['birthday'],
+          'anniversary' => $record['anniversary'],
+          'email' => array(),
+          'phone' => array(),
+          'notes' => $record['body'],
         );
+        
+        if (isset($record['gender']))
+            $out['gender'] = $this->gender_map[$record['gender']];
+
+        foreach ((array)$record['email'] as $i => $email)
+            $out['email'][] = $email['smtp-address'];
+
+        foreach ((array)$record['phone'] as $i => $phone)
+            $out['phone:'.$phone['type']][] = $phone['number'];
+            
+        if ($record['im-address'])
+            $out['im:aim'] = array($record['im-address']);
+        if ($record['web-page'])
+            $out['website:work'] = array($record['web-page']);
+
+        if ($record['addr-home-type']) {
+            $key = 'address:' . $record['addr-home-type'];
+            $out[$key][] = array(
+                'street' => $record['addr-home-street'],
+                'locality' => $record['addr-home-locality'],
+                'zipcode' => $record['addr-home-postal-code'],
+                'region' => $record['addr-home-region'],
+                'country' => $record['addr-home-country'],
+            );
+        }
+
+        // remove empty fields
+        return array_filter($out);
     }
 
     private function _from_rcube_contact($contact)
