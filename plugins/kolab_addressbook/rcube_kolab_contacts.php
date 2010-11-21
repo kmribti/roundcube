@@ -28,10 +28,10 @@ class rcube_kolab_contacts extends rcube_addressbook
       'department'   => array('limit' => 1),
       'gender'       => array('limit' => 1),
       'birthday'     => array('limit' => 1),
-      'email'        => array(),
+      'email'        => array('subtypes' => null),
       'phone'        => array(),
       'im'           => array('limit' => 1),
-      'website'      => array('limit' => 1),
+      'website'      => array('limit' => 1, 'subtypes' => null),
       'address'      => array(),
       'notes'        => array(),
       // define additional coltypes
@@ -133,7 +133,7 @@ class rcube_kolab_contacts extends rcube_addressbook
      */
     function list_groups($search = null)
     {
-        $this->_fetch_data();
+        $this->_fetch_groups();
         $groups = array();
         foreach ((array)$this->distlists as $group)
             $groups[] = array('ID' => $group['ID'], 'name' => $group['last-name']);
@@ -194,7 +194,7 @@ class rcube_kolab_contacts extends rcube_addressbook
      */
     public function count()
     {
-        $this->_fetch_data();
+        $this->_fetch_contacts();
         $count = $this->gid ? count($this->distlists[$this->gid]['member']) : count($this->contacts);
         return new rcube_result_set($count, ($this->list_page-1) * $this->page_size);
     }
@@ -219,7 +219,7 @@ class rcube_kolab_contacts extends rcube_addressbook
      */
     public function get_record($id, $assoc=false)
     {
-        $this->_fetch_data();
+        $this->_fetch_contacts();
         if ($this->contacts[$id]) {
             $this->result = new rcube_result_set(1);
             $this->result->add($this->contacts[$id]);
@@ -239,6 +239,7 @@ class rcube_kolab_contacts extends rcube_addressbook
     function get_record_groups($id)
     {
         $out = array();
+        $this->_fetch_groups();
         
         foreach ($this->distlists as $gid => $group) {
             foreach ($group['member'] as $member) {
@@ -290,7 +291,7 @@ class rcube_kolab_contacts extends rcube_addressbook
     /**
      * Simply fetch all records and store them in private member vars
      */
-    private function _fetch_data()
+    private function _fetch_contacts()
     {
         if (!isset($this->contacts)) {
             // read contacts
@@ -301,8 +302,18 @@ class rcube_kolab_contacts extends rcube_addressbook
                 $this->contacts[$id] = $contact;
                 $this->id2uid[$id] = $record['uid'];
             }
-            
-            // read distribution-lists AKA groups
+
+            // TODO: sort data arrays according to desired list sorting
+        }
+    }
+    
+    
+    /**
+     * Read distribution-lists AKA groups from server
+     */
+    private function _fetch_groups()
+    {
+        if (!isset($this->distlists)) {
             $this->distlists = array();
             foreach ((array)$this->liststorage->getObjects() as $record) {
                 // FIXME: folders without any distribution-list objects return contacts instead ?!
@@ -313,8 +324,6 @@ class rcube_kolab_contacts extends rcube_addressbook
                     $record['member'][$i]['ID'] = md5($member['uid']);
                 $this->distlists[$record['ID']] = $record;
             }
-
-            // TODO: sort data arrays according to desired list sorting
         }
     }
     
@@ -356,7 +365,7 @@ class rcube_kolab_contacts extends rcube_addressbook
         if ($record['im-address'])
             $out['im:aim'] = array($record['im-address']);
         if ($record['web-page'])
-            $out['website:work'] = array($record['web-page']);
+            $out['website'] = array($record['web-page']);
 
         if ($record['addr-home-type']) {
             $key = 'address:' . $record['addr-home-type'];
