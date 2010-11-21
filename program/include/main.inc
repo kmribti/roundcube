@@ -832,6 +832,11 @@ function rcmail_get_edit_field($col, $value, $attrib, $type='text')
     $attrib['cols'] = $attrib['size'];
     $input = new html_textarea($attrib);
   }
+  else if ($type == 'select') {
+    $input = new html_select($attrib);
+    $input->add('---', '');
+    $input->add(array_values($attrib['options']), array_keys($attrib['options']));
+  }
   else {
     if ($attrib['type'] != 'text' && $attrib['type'] != 'hidden')
         $attrib['type'] = 'text';

@@ -41,9 +41,11 @@ function rcmail_contact_head($attrib)
     $form = array(
         'head' => array(  // section 'head' is magic!
             'content' => array(
+                'prefix' => array('type' => 'text'),
                 'firstname' => array('type' => 'text'),
                 'middlename' => array('type' => 'text'),
                 'surname' => array('type' => 'text'),
+                'suffix' => array('type' => 'text'),
             ),
         ),
     );
@@ -69,6 +71,8 @@ function rcmail_contact_details($attrib)
         'info' => array(
             'name'    => rcube_label('contactproperties'),
             'content' => array(
+              'gender' => array('size' => $i_size),
+              'maidenname' => array('size' => $i_size),
               'email' => array('size' => $i_size, 'render_func' => 'rcmail_render_email_value'),
               'phone' => array('size' => $i_size),
               'address' => array(),

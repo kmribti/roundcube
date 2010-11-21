@@ -4042,6 +4042,17 @@ function rcube_webmail()
               this.init_edit_field(childcol, input);
             }
         }
+        else if (colprop.type == 'select') {
+          input = $('<select>')
+            .addClass('ff_'+col)
+            .attr('name', '_'+col+'[]')
+            .appendTo(cell);
+          
+          var options = input.attr('options');
+          options[options.length] = new Option('---', '');
+          if (colprop.options)
+            $.each(colprop.options, function(i, val){ options[options.length] = new Option(val, i); });
+        }
 
         if (input) {
           var delbutton = $('<a href="#del"></a>')
@@ -4057,7 +4068,7 @@ function rcube_webmail()
           
           // disable option if limit reached
           if (!colprop.count) colprop.count = 0;
-          if (colprop.limit && ++colprop.count == colprop.limit)
+          if (++colprop.count == colprop.limit && colprop.limit)
             $(menu).children('option[value="'+col+'"]').attr('disabled', true);
         }
       }
@@ -4065,10 +4076,26 @@ function rcube_webmail()
   };
 
   this.delete_edit_field = function(elem){
-    var col = $(elem).attr('rel');
-    $(elem).parents('div.row').remove();
+    var col = $(elem).attr('rel'),
+      colprop = this.env.coltypes[col],
+      addmenu = $(elem).parents('div.contactfieldgroup').parent().find('select.addfieldmenu');
+    
+    // just clear input but don't hide the last field
+    if (--colprop.count <= 0 && colprop.visible)
+      $(elem).parent().children('input').val('').blur();
+    else
+      $(elem).parents('div.row').remove();
     
     // TODO: enable option in add-field selector or insert it if necessary
+    if (addmenu.length) {
+      var option = addmenu.children('option[value="'+col+'"]');
+      if (option.length)
+        option.attr('disabled', false);
+      else
+        option = $('<option>').attr('value', col).html(colprop.label).appendTo(addmenu);
+    }
+    else
+    alert('addmennu not found')
   };
 
 

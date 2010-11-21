@@ -239,9 +239,7 @@ body.iframe,
 }
 
 #contacthead .names span.namefield,
-#contacthead input.ff_firstname,
-#contacthead input.ff_surname,
-#contacthead input.ff_middlename
+#contacthead .names input
 {
 	font-size: 140%;
 }
@@ -264,6 +262,13 @@ body.iframe,
 {
 	width: 180px;
 }
+
+#contacthead input.ff_prefix,
+#contacthead input.ff_suffix
+{
+	width: 90px;
+}
+
 
 #contacthead .addnames input.ff_name
 {

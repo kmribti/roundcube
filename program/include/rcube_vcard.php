@@ -5,7 +5,7 @@
  | program/include/rcube_vcard.php                                       |
  |                                                                       |
  | This file is part of the Roundcube Webmail client                     |
- | Copyright (C) 2008-2009, Roundcube Dev. - Switzerland                 |
+ | Copyright (C) 2008-2010, Roundcube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -32,8 +32,9 @@ class rcube_vcard
     'FN' => array(),
     'N' => array(array('','','','','')),
   );
-  private $fieldmap = array('phone' => 'TEL', 'birthday' => 'BDAY', 'website' => 'URL', 'notes' => 'NOTE', 'email' => 'EMAIL', 'address' => 'ADR');
+  private $fieldmap = array('phone' => 'TEL', 'birthday' => 'BDAY', 'website' => 'URL', 'notes' => 'NOTE', 'email' => 'EMAIL', 'address' => 'ADR', 'gender' => 'X-GENDER', 'maidenname' => 'X-MAIDENNAME', 'gender' => 'X-GENDER');
   private $typemap = array('iPhone' => 'mobile', 'CELL' => 'mobile');
+  private $immap = array('X-JABBER' => 'jabber', 'X-ICQ' => 'icq', 'X-MSN' => 'msn', 'X-AIM' => 'aim', 'X-YAHOO' => 'yahoo');
 
   public $business = false;
   public $displayname;
@@ -112,6 +113,9 @@ class rcube_vcard
     foreach (array('firstname','surname','middlename','nickname','organization') as $col)
       $out[$col] = $this->$col;
     
+    $out['prefix'] = $this->raw['N'][0][3];
+    $out['suffix'] = $this->raw['N'][0][4];
+    
     // convert from raw vcard data into associative data for Roundcube
     foreach (array_flip($this->fieldmap) as $tag => $col) {
       foreach ((array)$this->raw[$tag] as $i => $raw) {
@@ -139,7 +143,7 @@ class rcube_vcard
     }
     
     // handle special IM fields as used by Apple
-    foreach (array('X-JABBER' => 'jabber', 'X-ICQ' => 'icq', 'X-MSN' => 'msn', 'X-AIM' => 'aim', 'X-YAHOO' => 'yahoo') as $tag => $type) {
+    foreach ($this->immap as $tag => $type) {
       foreach ((array)$this->raw[$tag] as $i => $raw) {
         $out['im:'.$type][] = $raw[0];
       }
@@ -176,14 +180,26 @@ class rcube_vcard
         $this->raw['FN'][0][0] = $value;
         break;
         
+      case 'surname':
+        $this->raw['N'][0][0] = $value;
+        break;
+        
       case 'firstname':
         $this->raw['N'][0][1] = $value;
         break;
         
-      case 'surname':
-        $this->raw['N'][0][0] = $value;
+      case 'middlename':
+        $this->raw['N'][0][2] = $value;
         break;
-      
+        
+      case 'prefix':
+        $this->raw['N'][0][3] = $value;
+        break;
+        
+      case 'suffix':
+        $this->raw['N'][0][4] = $value;
+        break;
+        
       case 'nickname':
         $this->raw['NICKNAME'][0][0] = $value;
         break;
@@ -197,6 +213,16 @@ class rcube_vcard
           $this->raw['EMAIL'] = array();
         $this->raw['EMAIL'][] = array(0 => $value, 'type' => array_filter(array('INTERNET', $type)));
         break;
+        
+      case 'im':
+        // save IM subtypes into extension fields
+        $typemap = array_flip($this->immap);
+        if ($field = $typemap[strtolower($type)]) {
+          if (!$touched[$field]++)
+            $this->raw[$field] = array();
+          $this->raw[$field][] = array(0 => $value);
+        }
+        break;
 
       case 'birthday':
         if ($val = @strtotime($value)) {
@@ -208,7 +234,9 @@ class rcube_vcard
 
       case 'address':
         $value = $value[0] ? $value : array('', '', $value['street'], $value['locality'], $value['region'], $value['zipcode'], $value['country']);
-        // fall through
+        // fall through if not empty
+        if (!strlen(join('', $value)))
+          break;
 
       default:
         if ($tag = $this->fieldmap[$field]) {

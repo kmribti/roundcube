@@ -64,7 +64,7 @@ foreach ($GLOBALS['CONTACT_COLTYPES'] as $col => $colprop) {
 }
 
 if (empty($a_record['name']))
-  $a_record['name'] = join(' ', array_filter(array($a_record['firstname'], $a_record['middlename'], $a_record['surname'])));
+  $a_record['name'] = join(' ', array_filter(array($a_record['prefix'], $a_record['firstname'], $a_record['middlename'], $a_record['surname'], $a_record['suffix'],)));
 
 #var_dump($a_record);
 

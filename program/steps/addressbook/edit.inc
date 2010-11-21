@@ -48,10 +48,12 @@ function rcmail_contact_edithead($attrib)
     $form = array(
         'head' => array(
             'content' => array(
-                'name' => array('size' => 2*$i_size),
+                'prefix' => array('size' => $i_size),
                 'firstname' => array('size' => $i_size, 'visible' => true),
                 'middlename' => array('size' => $i_size),
                 'surname' => array('size' => $i_size, 'visible' => true),
+                'suffix' => array('size' => $i_size),
+                'name' => array('size' => 2*$i_size),
                 'nickname' => array('size' => $i_size),
                 'company' => array('size' => $i_size),
                 'department' => array('size' => $i_size),
@@ -86,17 +88,19 @@ function rcmail_contact_editform($attrib)
     $RCMAIL->output->add_label('noemailwarning', 'nonamewarning');
 
     $i_size = !empty($attrib['size']) ? $attrib['size'] : 40;
-    $t_rows = !empty($attrib['textarearows']) ? $attrib['textarearows'] : 6;
+    $t_rows = !empty($attrib['textarearows']) ? $attrib['textarearows'] : 10;
     $t_cols = !empty($attrib['textareacols']) ? $attrib['textareacols'] : 40;
 
     $form = array(
         'info' => array(
             'name'    => rcube_label('contactproperties'),
             'content' => array(
+                'gender' => array('visible' => false),
+                'maidenname' => array('size' => $i_size),
                 'email' => array('size' => $i_size, 'visible' => true),
                 'phone' => array('size' => $i_size, 'visible' => true),
                 'address' => array('visible' => true),
-                'birthday' => array('size' => $i_size),
+                'birthday' => array('size' => 12),
                 'website' => array('size' => $i_size),
                 'im' => array('size' => $i_size),
             ),
