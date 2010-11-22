@@ -6,10 +6,7 @@ require_once(dirname(__FILE__) . '/rcube_kolab_contacts.php');
  * Kolab address book
  * 
  * Sample plugin to add a new address book source with data from Kolab storage
- *
  * This is work-in-progress for the Roundcube+Kolab integration.
- * The library part is to be moved into a separate PEAR package or plugin
- * that this and other Kolab-related plugins will depend on.
  *
  * @author Thomas Bruederli <roundcube@gmail.com>
  * 
@@ -24,17 +21,14 @@ class kolab_addressbook extends rcube_plugin
      */
     public function init()
     {
-        // load local config
-        $this->load_config();
+        // load required plugin
+        $this->require_plugin('kolab_core');
         
+        // register hooks
         $this->add_hook('addressbooks_list', array($this, 'address_sources'));
         $this->add_hook('addressbook_get', array($this, 'get_address_book'));
         $this->add_hook('contact_form', array($this, 'contact_form'));
-
-        // extend include path to load bundled Horde classes
-        $include_path = $this->home . '/lib' . PATH_SEPARATOR . ini_get('include_path');
-        set_include_path($include_path);
-
+        
         // extend list of address sources to be used for autocompletion
         $rcmail = rcmail::get_instance();
         if ($rcmail->action == 'autocomplete' || $rcmail->action == 'group-expand') {
