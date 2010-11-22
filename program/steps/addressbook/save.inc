@@ -39,7 +39,7 @@ foreach ($GLOBALS['CONTACT_COLTYPES'] as $col => $colprop) {
   // gather form data of composite fields
   if ($colprop['childs']) {
     $values = array();
-    foreach ($colprop['childs'] as $j => $childcol) {
+    foreach ($colprop['childs'] as $childcol => $cp) {
       $vals = get_input_value('_'.$childcol, RCUBE_INPUT_POST);
       foreach ((array)$vals as $i => $val)
         $values[$i][$childcol] = $val;

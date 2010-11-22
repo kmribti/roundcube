@@ -192,9 +192,10 @@ class rcube_contacts extends rcube_addressbook
 
         while ($sql_result && ($sql_arr = $this->db->fetch_assoc($sql_result))) {
             $sql_arr['ID'] = $sql_arr[$this->primary_key];
+            $sql_arr['email'] = preg_split('/,\s*/', $sql_arr['email']);
             // make sure we have a name to display
             if (empty($sql_arr['name']))
-                $sql_arr['name'] = $sql_arr['email'];
+                $sql_arr['name'] = $sql_arr['email'][0];
             $this->result->add($sql_arr);
         }
 
@@ -397,8 +398,16 @@ class rcube_contacts extends rcube_addressbook
 
         $insert_id = $existing = false;
 
-        if ($check)
-            $existing = $this->search('email', $save_data['email'], true, false);
+        if ($check) {
+            foreach ($save_data as $col => $values) {
+                if (strpos($col, 'email') === 0) {
+                    foreach ((array)$values as $email) {
+                        if ($existing = $this->search('email', $email, true, false))
+                            break 2;
+                    }
+                }
+            }
+        }
 
         $save_data = $this->convert_save_data($save_data);
         $a_insert_cols = $a_insert_values = array();
@@ -501,6 +510,7 @@ class rcube_contacts extends rcube_addressbook
 
         // copy values into vcard object
         $vcard = new rcube_vcard($record['vcard']);
+        $vcard->reset();
         foreach ($save_data as $key => $values) {
             list($field, $section) = explode(':', $key);
             foreach ((array)$values as $value) {
@@ -517,6 +527,9 @@ class rcube_contacts extends rcube_addressbook
             if (isset($save_data[$key]))
                 $out[$col] = is_array($save_data[$key]) ? join(',', $save_data[$key]) : $save_data[$key];
         }
+
+        // save all e-mails in database column
+        $out['email'] = join(", ", $vcard->email);
 
         return $out;
     }

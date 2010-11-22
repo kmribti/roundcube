@@ -434,7 +434,7 @@ function rcmail_contact_form($form, $record, $attrib = null)
                             $childvalue = $val[$childcol] ? $val[$childcol] : $val[$j];
 
                             if ($edit_mode) {
-                                if ($colprop['subtypes']) $cp['array'] = true;
+                                if ($colprop['subtypes'] || $colprop['limit'] != 1) $cp['array'] = true;
                                 $composite .= rcmail_get_edit_field($childcol, $childvalue, $cp, $cp['type']) . " ";
                             }
                             else {
@@ -456,7 +456,7 @@ function rcmail_contact_form($form, $record, $attrib = null)
                         $coltypes[$field] = (array)$colprop + $coltypes[$field];
                         $formdata[$field][] = array('subtype' => $subtype, 'value' => $val);
 
-                        if ($colprop['subtypes'])
+                        if ($colprop['subtypes'] || $colprop['limit'] != 1)
                             $colprop['array'] = true;
 
                         $val = rcmail_get_edit_field($col, $val, $colprop, $colprop['type']);

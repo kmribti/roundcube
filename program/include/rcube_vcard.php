@@ -160,6 +160,28 @@ class rcube_vcard
   {
     return self::rfc2425_fold(self::vcard_encode($this->raw));
   }
+  
+  
+  /**
+   * Clear the given fields in the loaded vcard data
+   *
+   * @param array List of field names to be reset
+   */
+  public function reset($fields = null)
+  {
+    if (!$fields)
+      $fields = array_merge(array_values($this->fieldmap), array_keys($this->immap), array('FN','N','ORG','NICKNAME','EMAIL','ADR','BDAY'));
+    
+    foreach ($fields as $f)
+      unset($this->raw[$f]);
+
+    if (!$this->raw['N'])
+      $this->raw['N'] = array(array('','','','',''));
+    if (!$this->raw['FN'])
+      $this->raw['FN'] = array();
+      
+    $this->email = array();
+  }
 
 
   /**
@@ -171,7 +193,6 @@ class rcube_vcard
    */
   public function set($field, $value, $type = 'HOME')
   {
-    static $touched = array();
     $typemap = array_flip($this->typemap);
     
     switch ($field) {
@@ -209,27 +230,20 @@ class rcube_vcard
         break;
         
       case 'email':
-        if (!$touched['EMAIL']++)
-          $this->raw['EMAIL'] = array();
         $this->raw['EMAIL'][] = array(0 => $value, 'type' => array_filter(array('INTERNET', $type)));
+        $this->email[] = $value;
         break;
         
       case 'im':
         // save IM subtypes into extension fields
         $typemap = array_flip($this->immap);
-        if ($field = $typemap[strtolower($type)]) {
-          if (!$touched[$field]++)
-            $this->raw[$field] = array();
+        if ($field = $typemap[strtolower($type)])
           $this->raw[$field][] = array(0 => $value);
-        }
         break;
 
       case 'birthday':
-        if ($val = @strtotime($value)) {
-          if (!$touched['BDAY']++)
-            $this->raw['BDAY'] = array();
+        if ($val = @strtotime($value))
           $this->raw['BDAY'][] = array(0 => date('Y-m-d', $val), 'value' => array('date'));
-        }
         break;
 
       case 'address':
@@ -240,8 +254,6 @@ class rcube_vcard
 
       default:
         if ($tag = $this->fieldmap[$field]) {
-          if (!$touched[$tag]++)
-            $this->raw[$tag] = array();
           $index = count($this->raw[$tag]);
           $this->raw[$tag][$index] = (array)$value;
           if ($type)
