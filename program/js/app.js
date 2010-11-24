@@ -4017,11 +4017,12 @@ function rcube_webmail()
         else
           label.html(colprop.label);
 
+        var name_suffix = colprop.limit != 1 ? '[]' : '';
         if (colprop.type == 'text' || colprop.type == 'date') {
           input = $('<input>')
             .addClass('ff_'+col)
             .attr('type', 'text')
-            .attr('name', '_'+col+'[]')
+            .attr('name', '_'+col+name_suffix)
             .attr('size', colprop.size)
             .appendTo(cell);
 
@@ -4034,7 +4035,7 @@ function rcube_webmail()
             input = $('<input>')
               .addClass('ff_'+childcol)
               .attr('type', 'text')
-              .attr('name', '_'+childcol+'[]')
+              .attr('name', '_'+childcol+name_suffix)
               .attr('size', cp.size)
               .appendTo(cell);
             cell.append(" ");
@@ -4046,7 +4047,7 @@ function rcube_webmail()
         else if (colprop.type == 'select') {
           input = $('<select>')
             .addClass('ff_'+col)
-            .attr('name', '_'+col+'[]')
+            .attr('name', '_'+col+name_suffix)
             .appendTo(cell);
           
           var options = input.attr('options');

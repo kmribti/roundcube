@@ -141,6 +141,21 @@ abstract class rcube_addressbook
     }
 
     /**
+     * Create new contact records for every item in the record set
+     */
+    function insertMultiple($recset, $check=false)
+    {
+        $ids = array();
+        if (is_object($recset) && is_a($recset, rcube_result_set)) {
+            while ($row = $recset->next()) {
+                if ($insert = $this->insert($row, $check))
+                    $ids[] = $insert;
+            }
+        }
+        return $ids;
+    }
+
+    /**
      * Update a specific contact record
      *
      * @param mixed Record identifier
@@ -265,5 +280,34 @@ abstract class rcube_addressbook
         /* empty for address books don't supporting groups */
         return array();
     }
+
+
+    /**
+     * Utility function to return all values of a certain data column
+     * either as flat list or grouped by subtype
+     *
+     * @param string Col name
+     * @param array  Record data array as used for saving
+     * @param boolean True to return one array with all values, False for hash array with values grouped by type
+     * @return array List of column values
+     */
+    function get_col_values($col, $data, $flat = false)
+    {
+        $out = array();
+        foreach ($data as $c => $values) {
+            if (strpos($c, $col) === 0) {
+                if ($flat) {
+                    $out = array_merge($out, (array)$values);
+                }
+                else {
+                    list($f, $type) = explode(':', $c);
+                    $out[$type] = array_merge((array)$out[$type], (array)$values);
+                }
+            }
+        }
+      
+        return $out;
+    }
+    
 }
 

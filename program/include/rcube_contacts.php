@@ -393,8 +393,8 @@ class rcube_contacts extends rcube_addressbook
      */
     function insert($save_data, $check=false)
     {
-        if (is_object($save_data) && is_a($save_data, rcube_result_set))
-            return $this->insert_recset($save_data, $check);
+        if (!is_array($save_data))
+            return false;
 
         $insert_id = $existing = false;
 
@@ -434,20 +434,6 @@ class rcube_contacts extends rcube_addressbook
         $this->cache = null;
 
         return $insert_id;
-    }
-
-
-    /**
-     * Insert new contacts for each row in set
-     */
-    function insert_recset($result, $check=false)
-    {
-        $ids = array();
-        while ($row = $result->next()) {
-            if ($insert = $this->insert($row, $check))
-                $ids[] = $insert;
-        }
-        return $ids;
     }
 
 
@@ -494,6 +480,7 @@ class rcube_contacts extends rcube_addressbook
         $record['ID'] = $sql_arr[$this->primary_key];
         
         if ($sql_arr['vcard']) {
+          unset($save_arr['email']);
           $vcard = new rcube_vcard($sql_arr['vcard']);
           $record += $vcard->get_assoc() + $sql_arr;
         }
@@ -515,7 +502,7 @@ class rcube_contacts extends rcube_addressbook
             list($field, $section) = explode(':', $key);
             foreach ((array)$values as $value) {
                 if (is_array($value) || strlen($value))
-                    $vcard->set($field, $value, strtoupper($section));
+                    $vcard->set($field, $value, $section);
             }
         }
         $out['vcard'] = $vcard->export();

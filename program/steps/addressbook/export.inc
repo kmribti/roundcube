@@ -30,11 +30,16 @@ header('Content-Type: text/x-vcard; charset='.RCMAIL_CHARSET);
 header('Content-Disposition: attachment; filename="rcube_contacts.vcf"');
 
 while ($result && ($row = $result->next())) {
+  // copy values into vcard object
   $vcard = new rcube_vcard($row['vcard']);
-  $vcard->set('displayname', $row['name']);
-  $vcard->set('firstname', $row['firstname']);
-  $vcard->set('surname', $row['surname']);
-  $vcard->set('email', $row['email']);
+  $vcard->reset();
+  foreach ($row as $key => $values) {
+      list($field, $section) = explode(':', $key);
+      foreach ((array)$values as $value) {
+          if (is_array($value) || strlen($value))
+              $vcard->set($field, $value, strtoupper($section));
+      }
+  }
   
   echo $vcard->export();
 }

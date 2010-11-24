@@ -34,6 +34,8 @@ class rcube_vcard
   );
   private $fieldmap = array('phone' => 'TEL', 'birthday' => 'BDAY', 'website' => 'URL', 'notes' => 'NOTE', 'email' => 'EMAIL', 'address' => 'ADR', 'gender' => 'X-GENDER', 'maidenname' => 'X-MAIDENNAME', 'gender' => 'X-GENDER');
   private $typemap = array('iPhone' => 'mobile', 'CELL' => 'mobile');
+  private $phonetypemap = array('HOME1' => 'HOME', 'BUSINESS1' => 'WORK', 'BUSINESS2' => 'WORK2', 'WORKFAX' => 'BUSINESSFAX');
+  private $addresstypemap = array('BUSINESS' => 'WORK');
   private $immap = array('X-JABBER' => 'jabber', 'X-ICQ' => 'icq', 'X-MSN' => 'msn', 'X-AIM' => 'aim', 'X-YAHOO' => 'yahoo');
 
   public $business = false;
@@ -193,6 +195,8 @@ class rcube_vcard
    */
   public function set($field, $value, $type = 'HOME')
   {
+    $field = strtolower($field);
+    $type = strtoupper($type);
     $typemap = array_flip($this->typemap);
     
     switch ($field) {
@@ -247,12 +251,19 @@ class rcube_vcard
         break;
 
       case 'address':
+        if ($this->addresstypemap[$type])
+          $type = $this->addresstypemap[$type];
+
         $value = $value[0] ? $value : array('', '', $value['street'], $value['locality'], $value['region'], $value['zipcode'], $value['country']);
+
         // fall through if not empty
         if (!strlen(join('', $value)))
           break;
 
       default:
+        if ($field == 'phone' && $this->phonetypemap[$type])
+          $type = $this->phonetypemap[$type];
+
         if ($tag = $this->fieldmap[$field]) {
           $index = count($this->raw[$tag]);
           $this->raw[$tag][$index] = (array)$value;

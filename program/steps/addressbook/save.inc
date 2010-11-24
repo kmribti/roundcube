@@ -76,15 +76,13 @@ if (empty($a_record['name'])/* || empty($a_record['email'])*/) {
 }
 
 // Validity checks
-foreach ($a_record as $field => $values) {
-  if (strpos($field, 'email') === 0) {
-    foreach ((array)$values as $email) {
-      $_email = idn_to_ascii($email);
-      if (!check_email($_email, false)) {
-        $OUTPUT->show_message('emailformaterror', 'warning', array('email' => $email));
-        rcmail_overwrite_action($return_action);
-        return;
-      }
+foreach ($CONTACTS->get_col_values('email', $a_record, false) as $email) {
+  if (strlen($email)) {
+    $_email = idn_to_ascii($email);
+    if (!check_email($_email, false)) {
+      $OUTPUT->show_message('emailformaterror', 'warning', array('email' => $email));
+      rcmail_overwrite_action($return_action);
+      return;
     }
   }
 }
@@ -133,10 +131,16 @@ if (!empty($cid))
 // insert a new contact
 else {
   // check for existing contacts
-  $existing = $CONTACTS->search('email', $a_record['email'], true, false);
+  $existing = false;
+  foreach ($CONTACTS->get_col_values('email', $a_record, true) as $email) {
+      if (($res = $CONTACTS->search('email', $email, true, false)) && $res->count) {
+          $existing = true;
+          break;
+      }
+  }
 
   // show warning message
-  if ($existing->count) {
+  if ($existing) {
     $OUTPUT->show_message('contactexists', 'warning', null, false);
     rcmail_overwrite_action('add');
     return;
