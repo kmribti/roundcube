@@ -174,8 +174,13 @@ class rcube_kolab_contacts extends rcube_addressbook
         
         // list member of the selected group
         if ($this->gid) {
+            $seen = array();
+            $this->result->count = 0;
             foreach ((array)$this->distlists[$this->gid]['member'] as $member) {
-                $this->result->add($this->contacts[$member['ID']]);
+                if ($this->contacts[$member['ID']] && !$seen[$member['ID']]++) {
+                    $this->result->add($this->contacts[$member['ID']]);
+                    $this->result->count++;
+                }
             }
         }
         else {
@@ -216,6 +221,7 @@ class rcube_kolab_contacts extends rcube_addressbook
     public function count()
     {
         $this->_fetch_contacts();
+        $this->_fetch_groups();
         $count = $this->gid ? count($this->distlists[$this->gid]['member']) : count($this->contacts);
         return new rcube_result_set($count, ($this->list_page-1) * $this->page_size);
     }
@@ -303,8 +309,6 @@ class rcube_kolab_contacts extends rcube_addressbook
             // generate new Kolab contact item
             $object = $this->_from_rcube_contact($save_data);
             $object['uid'] = $this->contactstorage->generateUID();
-            $object['creation-date'] = time();
-            $object['last-modification-date'] = time();
 
             $saved = $this->contactstorage->save($object);
 
@@ -344,8 +348,7 @@ class rcube_kolab_contacts extends rcube_addressbook
         if ($this->contacts[$id] && ($uid = $this->id2uid[$id])) {
             $old = $this->contactstorage->getObject($uid);
             $object = array_merge($old, $this->_from_rcube_contact($save_data));
-            $object['last-modification-date'] = time();
-console($save_data, $object);
+
             $saved = $this->contactstorage->save($object, $uid);
             if (PEAR::isError($saved)) {
                 raise_error(array(
@@ -388,6 +391,7 @@ console($save_data, $object);
                     true, false);
                 }
                 else {
+                    // TODO: remove from distribution lists
                     unset($this->contacts[$id], $this->id2uid[$id]);
                     $count++;
                 }
@@ -402,7 +406,11 @@ console($save_data, $object);
      */
     public function delete_all()
     {
-        return !PEAR::isError($this->contactstorage->deleteAll());
+        if (!PEAR::isError($this->contactstorage->deleteAll())) {
+            $this->contacts = array();
+            $this->id2uid = array();
+            $this->result = null;
+        }
     }
 
     
@@ -416,29 +424,155 @@ console($save_data, $object);
     }
 
 
+    /**
+     * Create a contact group with the given name
+     *
+     * @param string The group name
+     * @return mixed False on error, array with record props in success
+     */
     function create_group($name)
     {
+        // TODO: implement this
         return false;
     }
 
+    /**
+     * Delete the given group and all linked group members
+     *
+     * @param string Group identifier
+     * @return boolean True on success, false if no data was changed
+     */
     function delete_group($gid)
     {
+        // TODO: implement this
         return false;
     }
 
+    /**
+     * Rename a specific contact group
+     *
+     * @param string Group identifier
+     * @param string New name to set for this group
+     * @return boolean New name on success, false if no data was changed
+     */
     function rename_group($gid, $newname)
     {
-      return $newname;
+        $this->_fetch_groups();
+        $list = $this->distlists[$gid];
+        
+        if ($newname != $list['last-name']) {
+            $list['last-name'] = $newname;
+            $saved = $this->liststorage->save($list, $list['uid']);
+        }
+
+        if (PEAR::isError($saved)) {
+            raise_error(array(
+              'code' => 600, 'type' => 'php',
+              'file' => __FILE__, 'line' => __LINE__,
+              'message' => "Error saving distribution-list object to Kolab server:" . $saved->getMessage()),
+            true, false);
+            return false;
+        }
+
+        return $newname;
     }
 
-    function add_to_group($group_id, $ids)
+    /**
+     * Add the given contact records the a certain group
+     *
+     * @param string  Group identifier
+     * @param array   List of contact identifiers to be added
+     * @return int    Number of contacts added
+     */
+    function add_to_group($gid, $ids)
     {
+        if (!is_array($ids))
+            $ids = explode(',', $ids);
+
+        $added = 0;
+        $exists = array();
+        
+        $this->_fetch_groups();
+        $this->_fetch_contacts();
+        $list = $this->distlists[$gid];
+
+        foreach ($list['member'] as $i => $member)
+            $exists[] = $member['ID'];
+            
+        // substract existing assignments from list
+        $ids = array_diff($ids, $exists);
+        
+        foreach ($ids as $contact_id) {
+            if ($uid = $this->id2uid[$contact_id]) {
+                $contact = $this->contacts[$contact_id];
+                foreach ($this->get_col_values('email', $contact, true) as $email) {
+                    $list['member'][] = array(
+                        'uid' => $uid,
+                        'display-name' => $contact['name'],
+                        'smtp-address' => $email,
+                    );
+                }
+                $added++;
+            }
+        }
+        
+        if ($added)
+            $saved = $this->liststorage->save($list, $list['uid']);
+        
+        if (PEAR::isError($saved)) {
+            raise_error(array(
+              'code' => 600, 'type' => 'php',
+              'file' => __FILE__, 'line' => __LINE__,
+              'message' => "Error saving distribution-list to Kolab server:" . $saved->getMessage()),
+            true, false);
+            $added = false;
+        }
+        else {
+            $this->distlists[$gid] = $list;
+        }
+        
+        return $added;
+    }
+
+    /**
+     * Remove the given contact records from a certain group
+     *
+     * @param string  Group identifier
+     * @param array   List of contact identifiers to be removed
+     * @return int    Number of deleted group members
+     */
+    function remove_from_group($gid, $ids)
+    {
+        if (!is_array($ids))
+            $ids = explode(',', $ids);
+        
+        $this->_fetch_groups();
+        if (!($list = $this->distlists[$gid]))
+            return false;
+
+        $new_member = array();
+        foreach ((array)$list['member'] as $member) {
+            if (!in_array($member['ID'], $ids))
+                $new_member[] = $member;
+        }
+
+        // write distribution list back to server
+        $list['member'] = $new_member;
+        $saved = $this->liststorage->save($list, $list['uid']);
+        
+        if (PEAR::isError($saved)) {
+            raise_error(array(
+              'code' => 600, 'type' => 'php',
+              'file' => __FILE__, 'line' => __LINE__,
+              'message' => "Error saving distribution-list object to Kolab server:" . $saved->getMessage()),
+            true, false);
+        }
+        else {
+            $this->distlists[$gid] = $list;
+            return true;
+        }
+
         return false;
-    }
-
-    function remove_from_group($group_id, $ids)
-    {
-         return false;
     }
 
 
