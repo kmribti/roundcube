@@ -70,9 +70,11 @@ abstract class rcube_addressbook
      * @param array   List of fields to search in
      * @param string  Search value
      * @param boolean True if results are requested, False if count only
-     * @return Indexed list of contact records and 'count' value
+     * @param boolean True to skip the count query (select only)
+     * @param array   List of fields that cannot be empty
+     * @return object rcube_result_set List of contact records and 'count' value
      */
-    abstract function search($fields, $value, $strict=false, $select=true);
+    abstract function search($fields, $value, $strict=false, $select=true, $nocount=false, $required=array());
 
     /**
      * Count number of available contacts in database
@@ -200,9 +202,10 @@ abstract class rcube_addressbook
     /**
      * List all active contact groups of this source
      *
+     * @param string  Optional search string to match group name
      * @return array  Indexed list of contact groups, each a hash array
      */
-    function list_groups()
+    function list_groups($search = null)
     {
         /* empty for address books don't supporting groups */
         return array();
