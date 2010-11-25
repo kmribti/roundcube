@@ -27,17 +27,16 @@ class rcube_kolab_contacts extends rcube_addressbook
       'organization' => array('limit' => 1),
       'department'   => array('limit' => 1),
       'gender'       => array('limit' => 1),
-      'birthday'     => array('limit' => 1),
+      'initials'     => array('type' => 'text', 'size' => 6, 'limit' => 1, 'label' => 'kolab_addressbook.initials'),
       'email'        => array('subtypes' => null),
       'phone'        => array(),
       'im'           => array('limit' => 1),
       'website'      => array('limit' => 1, 'subtypes' => null),
       'address'      => array('limit' => 2, 'subtypes' => array('home','business')),
-      'notes'        => array(),
-      // define additional coltypes
-      'initials'     => array('type' => 'text', 'size' => 6, 'limit' => 1),
-      'anniversary'  => array('type' => 'date', 'size' => 12, 'limit' => 1),
+      'birthday'     => array('limit' => 1),
+      'anniversary'  => array('type' => 'date', 'size' => 12, 'limit' => 1, 'label' => 'kolab_addressbook.anniversary'),
       // TODO: define more Kolab-specific fields such as: office-location, profession, manager-name, assistant, spouse-name, children, language, latitude, longitude, pgp-publickey, free-busy-url
+      'notes'        => array(),
     );
     
     private $gid;
@@ -48,6 +47,7 @@ class rcube_kolab_contacts extends rcube_addressbook
     private $liststorage;
     private $contacts;
     private $distlists;
+    private $groupmembers;
     private $id2uid;
     private $filter;
     private $result;
@@ -85,7 +85,12 @@ class rcube_kolab_contacts extends rcube_addressbook
         $format = rcube_kolab::get_format('contact');
         $this->coltypes['phone']['subtypes'] = $format->_phone_types;
         $this->coltypes['address']['subtypes'] = $format->_address_types;
-        $this->coltypes['anniversary']['label'] = rcube_label('anniversary');
+        
+        // set localized labels for proprietary cols
+        foreach ($this->coltypes as $col => $prop) {
+            if (is_string($prop['label']))
+                $this->coltypes[$col]['label'] = rcube_label($prop['label']);
+        }
         
         // fetch objects from the given IMAP folder
         $this->contactstorage = rcube_kolab::get_storage($this->imap_folder);
@@ -208,6 +213,11 @@ class rcube_kolab_contacts extends rcube_addressbook
      */
     public function search($fields, $value, $strict=false, $select=true)
     {
+        // search by ID
+        if ($fields == $this->primary_key) {
+            return $this->get_record($value);
+        }
+        
         // TODO: currently not implemented
         return new rcube_result_set(0, ($this->list_page-1) * $this->page_size);
     }
@@ -268,11 +278,9 @@ class rcube_kolab_contacts extends rcube_addressbook
         $out = array();
         $this->_fetch_groups();
         
-        foreach ($this->distlists as $gid => $group) {
-            foreach ($group['member'] as $member) {
-                if ($member['ID'] == $id)
-                    $out[$gid] = $group['last-name'];
-            }
+        foreach ((array)$this->groupmembers[$id] as $gid) {
+            if ($group = $this->distlists[$gid])
+                $out[$gid] = $group['last-name'];
         }
         
         return $out;
@@ -374,6 +382,7 @@ class rcube_kolab_contacts extends rcube_addressbook
     public function delete($ids)
     {
         $this->_fetch_contacts();
+        $this->_fetch_groups();
         
         if (!is_array($ids))
             $ids = explode(',', $ids);
@@ -391,8 +400,12 @@ class rcube_kolab_contacts extends rcube_addressbook
                     true, false);
                 }
                 else {
-                    // TODO: remove from distribution lists
-                    unset($this->contacts[$id], $this->id2uid[$id]);
+                    // remove from distribution lists
+                    foreach ((array)$this->groupmembers[$id] as $gid)
+                        $this->remove_from_group($gid, $id);
+                    
+                    // clear internal cache
+                    unset($this->contacts[$id], $this->id2uid[$id], $this->groupmembers[$id]);
                     $count++;
                 }
             }
@@ -432,8 +445,31 @@ class rcube_kolab_contacts extends rcube_addressbook
      */
     function create_group($name)
     {
-        // TODO: implement this
-        return false;
+        $this->_fetch_groups();
+        $result = false;
+        
+        $list = array(
+            'uid' => $this->liststorage->generateUID(),
+            'last-name' => $name,
+            'member' => array(),
+        );
+        $saved = $this->liststorage->save($list);
+
+        if (PEAR::isError($saved)) {
+            raise_error(array(
+              'code' => 600, 'type' => 'php',
+              'file' => __FILE__, 'line' => __LINE__,
+              'message' => "Error saving distribution-list object to Kolab server:" . $saved->getMessage()),
+            true, false);
+            return false;
+        }
+        else {
+            $id = md5($list['uid']);
+            $this->distlists[$record['ID']] = $list;
+            $result = array('id' => $id, 'name' => $name);
+        }
+
+        return $result;
     }
 
     /**
@@ -444,8 +480,23 @@ class rcube_kolab_contacts extends rcube_addressbook
      */
     function delete_group($gid)
     {
-        // TODO: implement this
-        return false;
+        $this->_fetch_groups();
+        $result = false;
+        
+        if ($list = $this->distlists[$gid])
+            $deleted = $this->liststorage->delete($list['uid']);
+
+        if (PEAR::isError($deleted)) {
+            raise_error(array(
+              'code' => 600, 'type' => 'php',
+              'file' => __FILE__, 'line' => __LINE__,
+              'message' => "Error deleting distribution-list object from the Kolab server:" . $deleted->getMessage()),
+            true, false);
+        }
+        else
+            $result = true;
+        
+        return $result;
     }
 
     /**
@@ -496,12 +547,12 @@ class rcube_kolab_contacts extends rcube_addressbook
         $this->_fetch_contacts();
         $list = $this->distlists[$gid];
 
-        foreach ($list['member'] as $i => $member)
+        foreach ((array)$list['member'] as $i => $member)
             $exists[] = $member['ID'];
-            
+        
         // substract existing assignments from list
         $ids = array_diff($ids, $exists);
-        
+
         foreach ($ids as $contact_id) {
             if ($uid = $this->id2uid[$contact_id]) {
                 $contact = $this->contacts[$contact_id];
@@ -512,6 +563,7 @@ class rcube_kolab_contacts extends rcube_addressbook
                         'smtp-address' => $email,
                     );
                 }
+                $this->groupmembers[$contact_id][] = $gid;
                 $added++;
             }
         }
@@ -568,6 +620,11 @@ class rcube_kolab_contacts extends rcube_addressbook
             true, false);
         }
         else {
+            // remove group assigments in local cache
+            foreach ($ids as $id) {
+                $j = array_search($gid, $this->groupmembers[$id]);
+                unset($this->groupmembers[$id][$j]);
+            }
             $this->distlists[$gid] = $list;
             return true;
         }
@@ -602,14 +659,17 @@ class rcube_kolab_contacts extends rcube_addressbook
     private function _fetch_groups()
     {
         if (!isset($this->distlists)) {
-            $this->distlists = array();
+            $this->distlists = $this->groupmembers = array();
             foreach ((array)$this->liststorage->getObjects() as $record) {
                 // FIXME: folders without any distribution-list objects return contacts instead ?!
                 if ($record['__type'] != 'Group')
                     continue;
                 $record['ID'] = md5($record['uid']);
-                foreach ($record['member'] as $i => $member)
-                    $record['member'][$i]['ID'] = md5($member['uid']);
+                foreach ((array)$record['member'] as $i => $member) {
+                    $mid = md5($member['uid']);
+                    $record['member'][$i]['ID'] = $mid;
+                    $this->groupmembers[$mid][] = $record['ID'];
+                }
                 $this->distlists[$record['ID']] = $record;
             }
         }
@@ -637,6 +697,9 @@ class rcube_kolab_contacts extends rcube_addressbook
 
         foreach ((array)$record['email'] as $i => $email)
             $out['email'][] = $email['smtp-address'];
+            
+        if (!$record['email'] && $record['emails'])
+            $out['email'] = preg_split('/,\s*/', $record['emails']);
 
         foreach ((array)$record['phone'] as $i => $phone)
             $out['phone:'.$phone['type']][] = $phone['number'];

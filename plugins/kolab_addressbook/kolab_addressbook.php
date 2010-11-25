@@ -24,6 +24,8 @@ class kolab_addressbook extends rcube_plugin
         // load required plugin
         $this->require_plugin('kolab_core');
         
+        $this->add_texts('localization');
+        
         // register hooks
         $this->add_hook('addressbooks_list', array($this, 'address_sources'));
         $this->add_hook('addressbook_get', array($this, 'get_address_book'));
@@ -121,7 +123,15 @@ class kolab_addressbook extends rcube_plugin
             
             // TODO: add more Kolab-specific fields
             
-            // TODO: re-order fields
+            // re-order fields according to the coltypes list
+            $block = array();
+            $contacts = reset($this->sources);
+            foreach ($contacts->coltypes as $col => $prop) {
+                if (isset($p['form']['info']['content'][$col]))
+                    $block[$col] = $p['form']['info']['content'][$col];
+            }
+            
+            $p['form']['info']['content'] = $block;
         }
         
         return $p;
