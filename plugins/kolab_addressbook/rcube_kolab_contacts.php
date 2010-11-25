@@ -155,14 +155,17 @@ class rcube_kolab_contacts extends rcube_addressbook
     /**
      * List all active contact groups of this source
      *
+     * @param string  Optional search string to match group name
      * @return array  Indexed list of contact groups, each a hash array
      */
     function list_groups($search = null)
     {
         $this->_fetch_groups();
         $groups = array();
-        foreach ((array)$this->distlists as $group)
-            $groups[] = array('ID' => $group['ID'], 'name' => $group['last-name']);
+        foreach ((array)$this->distlists as $group) {
+            if (!$search || strstr(strtolower($group['last-name']), strtolower($search)))
+                $groups[] = array('ID' => $group['ID'], 'name' => $group['last-name']);
+        }
         return $groups;
     }
 
@@ -182,21 +185,25 @@ class rcube_kolab_contacts extends rcube_addressbook
             $seen = array();
             $this->result->count = 0;
             foreach ((array)$this->distlists[$this->gid]['member'] as $member) {
-                if ($this->contacts[$member['ID']] && !$seen[$member['ID']]++) {
-                    $this->result->add($this->contacts[$member['ID']]);
-                    $this->result->count++;
-                }
-            }
-        }
-        else {
-            $i = $j = 0;
-            foreach ($this->contacts as $id => $contact) {
-                if ($i++ < $this->result->first)
+                // skip member that don't match the search filter
+                if ($this->filter && array_search($member['ID'], $this->filter) === false)
                     continue;
-                $this->result->add($contact);
-                if (++$j == $this->page_size)
-                    break;
+                if ($this->contacts[$member['ID']] && !$seen[$member['ID']]++)
+                    $this->result->count++;
             }
+            $ids = array_keys($seen);
+        }
+        else
+            $ids = $this->filter ? $this->filter : array_keys($this->contacts);
+        
+        // fill contact data into the current result set
+        $i = $j = 0;
+        foreach ($ids as $id) {
+            if ($i++ < $this->result->first)
+                continue;
+            $this->result->add($this->contacts[$id]);
+            if (++$j == $this->page_size)
+                break;
         }
         
         return $this->result;
@@ -209,17 +216,48 @@ class rcube_kolab_contacts extends rcube_addressbook
      * @param array   List of fields to search in
      * @param string  Search value
      * @param boolean True if results are requested, False if count only
-     * @return Indexed list of contact records and 'count' value
+     * @param boolean True to skip the count query (select only)
+     * @param array   List of fields that cannot be empty
+     * @return object rcube_result_set List of contact records and 'count' value
      */
-    public function search($fields, $value, $strict=false, $select=true)
+    public function search($fields, $value, $strict=false, $select=true, $nocount=false, $required=array())
     {
+        $this->_fetch_contacts();
+        
         // search by ID
         if ($fields == $this->primary_key) {
             return $this->get_record($value);
         }
+
+        $value = strtolower($value);
+        if (!is_array($fields))
+            $fields = array($fields);
+        if (!is_array($required) && !empty($required))
+            $required = array($required);
         
-        // TODO: currently not implemented
-        return new rcube_result_set(0, ($this->list_page-1) * $this->page_size);
+        $this->filter = array();
+        
+        // search be iterating over all records in memory
+        foreach ($this->contacts as $id => $contact) {
+            // check if current contact has required values, otherwise skip it
+            if ($required) {
+                foreach ($required as $f)
+                    if (empty($contact[$f]))
+                        continue 2;
+            }
+            foreach ($fields as $f) {
+                foreach ((array)$contact[$f] as $val) {
+                    $val = strtolower($val);
+                    if (($strict && $val == $value) || (!$strict && strstr($val, $value))) {
+                        $this->filter[] = $id;
+                        break 2;
+                    }
+                }
+            }
+        }
+
+        // list records (now limited by $this->filter)
+        return $this->list_records();
     }
 
 
@@ -232,7 +270,7 @@ class rcube_kolab_contacts extends rcube_addressbook
     {
         $this->_fetch_contacts();
         $this->_fetch_groups();
-        $count = $this->gid ? count($this->distlists[$this->gid]['member']) : count($this->contacts);
+        $count = $this->gid ? count($this->distlists[$this->gid]['member']) : ($this->filter ? count($this->filter) : count($this->contacts));
         return new rcube_result_set($count, ($this->list_page-1) * $this->page_size);
     }
 
