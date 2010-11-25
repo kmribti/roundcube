@@ -142,6 +142,10 @@ abstract class rcube_addressbook
 
     /**
      * Create new contact records for every item in the record set
+     *
+     * @param object rcube_result_set Recordset to insert
+     * @param boolean True to check for duplicates first
+     * @return array List of created record IDs
      */
     function insertMultiple($recset, $check=false)
     {

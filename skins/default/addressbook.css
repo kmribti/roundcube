@@ -277,12 +277,12 @@ body.iframe,
 
 .contactfieldgroup
 {
-	margin: 0.8em 0;
+	margin: 1em 0;
 }
 
 form .contactfieldgroup
 {
-	margin: 1.4em 0;
+	margin: 1.3em 0;
 }
 
 .contactfieldgroup .row
@@ -311,6 +311,7 @@ form .contactfieldgroup
 	border: 0;
 	color: #666;
 	font-weight: bold;
+	padding-left: 0;
 }
 
 .contactfieldgroup .contactfieldcontent
@@ -336,3 +337,4 @@ form .contactfieldgroup
 	vertical-align: middle;
 	margin-left: 0.5em;
 }
+

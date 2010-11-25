@@ -251,11 +251,32 @@ $labels['yourmessage'] = 'This is a Return Receipt for your message';
 $labels['receiptnote'] = 'Note: This receipt only acknowledges that the message was displayed on the recipient\'s computer. There is no guarantee that the recipient has read or understood the message contents.';
 
 // address boook
-$labels['name']      = 'Display name';
-$labels['firstname'] = 'First name';
-$labels['surname']   = 'Last name';
-$labels['email']     = 'E-Mail';
+$labels['name']         = 'Display name';
+$labels['firstname']    = 'First name';
+$labels['surname']      = 'Last name';
+$labels['middlename']   = 'Middle name';
+$labels['nameprefix']   = 'Prefix';
+$labels['namesuffix']   = 'Suffix';
+$labels['nickname']     = 'Nickname';
+$labels['jobtitle']     = 'Job title';
+$labels['organization'] = 'Company';
+$labels['department']   = 'Department';
+$labels['gender']       = 'Gender';
+$labels['maidenname']   = 'Maiden name';
+$labels['email']        = 'E-Mail';
+$labels['phone']        = 'Phone';
+$labels['address']      = 'Address';
+$labels['street']       = 'Street';
+$labels['locality']     = 'City';
+$labels['zipcode']      = 'Zip code';
+$labels['region']       = 'Region';
+$labels['country']      = 'Country';
+$labels['birthday']     = 'Birthday';
+$labels['website']      = 'Website';
+$labels['instantmessenger'] = 'IM';
+$labels['notes'] = 'Notes';
 
+$labels['addfield'] = 'Add field...';
 $labels['addcontact'] = 'Add new contact';
 $labels['editcontact'] = 'Edit contact';
 $labels['contacts'] = 'Contacts';
@@ -275,9 +296,6 @@ $labels['export']         = 'Export';
 $labels['exportvcards']   = 'Export contacts in vCard format';
 $labels['newcontactgroup'] = 'Create new contact group';
 $labels['groupactions']   = 'Actions for contact groups...';
-
-$labels['addfield'] = 'Add field...';
-$labels['notes'] = 'Notes';
 
 $labels['previouspage']   = 'Show previous set';
 $labels['firstpage']      = 'Show first set';
