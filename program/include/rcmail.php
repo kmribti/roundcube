@@ -114,7 +114,7 @@ class rcmail
   public $comm_path = './';
 
   private $texts;
-  private $books = array();
+  private $address_books = array();
 
 
   /**
@@ -350,8 +350,8 @@ class rcmail
     }
 
     // add to the 'books' array for shutdown function
-    if (!in_array($contacts, $this->books))
-      $this->books[] = $contacts;
+    if (!isset($this->address_books[$id]))
+      $this->address_books[$id] = $contacts;
 
     return $contacts;
   }
@@ -397,14 +397,15 @@ class rcmail
     $plugin = $this->plugins->exec_hook('addressbooks_list', array('sources' => $list));
     $list = $plugin['sources'];
 
-    if ($writeable && !empty($list)) {
-      foreach ($list as $idx => $item) {
-        if ($item['readonly']) {
+    foreach ($list as $idx => $item) {
+      // register source for shutdown function
+      if (!is_object($this->address_books[$item['id']]))
+        $this->address_books[$item['id']] = $item;
+      // remove from list if not writeable as requested
+      if ($writeable && $item['readonly'])
           unset($list[$idx]);
-        }
-      }
     }
-
+    
     return $list;
   }
 
@@ -1066,9 +1067,12 @@ class rcmail
     if (is_object($this->smtp))
       $this->smtp->disconnect();
 
-    foreach ($this->books as $book)
-      if (is_object($book))
+    foreach ($this->address_books as $book) {
+      if (!is_object($book))  // maybe an address book instance wasn't fetched using get_address_book() yet
+        $book = $this->get_address_book($book['id']);
+      if (is_a($book, 'rcube_addressbook'))
         $book->close();
+    }
 
     // before closing the database connection, write session data
     if ($_SERVER['REMOTE_ADDR'])
