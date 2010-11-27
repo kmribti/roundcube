@@ -275,6 +275,8 @@ $labels['birthday']     = 'Birthday';
 $labels['website']      = 'Website';
 $labels['instantmessenger'] = 'IM';
 $labels['notes'] = 'Notes';
+$labels['male']   = 'male';
+$labels['gemale'] = 'female';
 
 $labels['addfield'] = 'Add field...';
 $labels['addcontact'] = 'Add new contact';

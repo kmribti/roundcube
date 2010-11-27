@@ -363,21 +363,18 @@ function rcmail_contact_form($form, $record, $attrib = null)
         $content = '';
         if (is_array($fieldset['content'])) {
             foreach ($fieldset['content'] as $col => $colprop) {
-                // skip cols unknown to the backend
-                if (!$coltypes[$col])
-                    continue;
-                
                 // remove subtype part of col name
                 list($field, $subtype) = explode(':', $col);
-                if (!$subtype)
-                  $subtype = 'home';
-
+                if (!$subtype) $subtype = 'home';
                 $fullkey = $col.':'.$subtype;
-                $label = isset($colprop['label']) ? $colprop['label'] : rcube_label($col);
-                
+
+                // skip cols unknown to the backend
+                if (!$coltypes[$field])
+                    continue;
+
                 // merge colprop with global coltype configuration
-                if ($coltypes[$field])
-                    $colprop += $coltypes[$field];
+                $colprop += $coltypes[$field];
+                $label = isset($colprop['label']) ? $colprop['label'] : rcube_label($col);
 
                 // prepare subtype selector in edit mode
                 if ($edit_mode && is_array($colprop['subtypes'])) {
