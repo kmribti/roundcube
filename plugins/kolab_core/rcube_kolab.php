@@ -48,6 +48,8 @@ class rcube_kolab
             );
             Auth::setCredential('password', $pwd);
         }
+        
+        NLS::setCharset('UTF-8');
     }
     
     
@@ -95,15 +97,8 @@ class rcube_kolab
      */
     public static function shutdown()
     {
-        if (isset($_SESSION['__auth'])) {
-            // unset auth data from session. no need to store it persistantly
+        // unset auth data from session. no need to store it persistantly
+        if (isset($_SESSION['__auth']))
             unset($_SESSION['__auth']);
-            
-            // FIXME: remove strange numeric entries
-            foreach ($_SESSION as $key => $val) {
-                if (!$val && is_numeric($key))
-                    unset($_SESSION[$key]);
-            }
-        }
     }
 }
