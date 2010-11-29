@@ -124,9 +124,9 @@ class rcube_vcard
         if (is_array($raw)) {
           $k = -1;
           $key = $col;
-          $subtype = $typemap[$raw['type'][++$k]] ?: strtolower($raw['type'][$k]);
+          $subtype = $typemap[$raw['type'][++$k]] ? $typemap[$raw['type'][$k]] : strtolower($raw['type'][$k]);
           while ($k < count($raw['type']) && ($subtype == 'internet' || $subtype == 'pref'))
-            $subtype = $typemap[$raw['type'][++$k]] ?: strtolower($raw['type'][$k]);
+            $subtype = $typemap[$raw['type'][++$k]] ? $typemap[$raw['type'][$k]] : strtolower($raw['type'][$k]);
           if ($subtype)
             $key .= ':' . $subtype;
 
@@ -268,7 +268,7 @@ class rcube_vcard
           $index = count($this->raw[$tag]);
           $this->raw[$tag][$index] = (array)$value;
           if ($type)
-            $this->raw[$tag][$index]['type'] = array(($typemap[$type] ?: $type));
+            $this->raw[$tag][$index]['type'] = array(($typemap[$type] ? $typemap[$type] : $type));
         }
         break;
     }

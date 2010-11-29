@@ -410,7 +410,7 @@ function rcmail_contact_form($form, $record, $attrib = null)
                         }
                     }
                     else {
-                        $values = $record[$fullkey] ?: $record[$field];
+                        $values = $record[$fullkey] ? $record[$fullkey] : $record[$field];
                         $subtypes = null;
                     }
                 }

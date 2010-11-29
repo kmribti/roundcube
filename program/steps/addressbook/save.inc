@@ -54,7 +54,7 @@ foreach ($GLOBALS['CONTACT_COLTYPES'] as $col => $colprop) {
     $values = get_input_value($fname, RCUBE_INPUT_POST);
     $subtypes = get_input_value('_subtype_' . $col, RCUBE_INPUT_POST);
     foreach ($values as $i => $val) {
-      $subtype = $subtypes[$i] ?: 'home';
+      $subtype = $subtypes[$i] ? $subtypes[$i] : 'home';
       $a_record[$col.':'.$subtype][] = $val;
     }
   }
@@ -76,7 +76,7 @@ if (empty($a_record['name'])/* || empty($a_record['email'])*/) {
 }
 
 // Validity checks
-foreach ($CONTACTS->get_col_values('email', $a_record, false) as $email) {
+foreach ($CONTACTS->get_col_values('email', $a_record, true) as $email) {
   if (strlen($email)) {
     $_email = idn_to_ascii($email);
     if (!check_email($_email, false)) {
