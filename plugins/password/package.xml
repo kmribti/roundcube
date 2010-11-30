@@ -29,6 +29,7 @@
 	<notes>
 - hMail driver: add username_domain detection (#1487100)
 - hMail driver: HTML tags in logged messages should be stripped off (#1487099)
+- Chpasswd driver: add newline at end of input to chpasswd binary (#1487141)
     </notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
