@@ -233,6 +233,11 @@ class rcube_vcard
         $this->raw['ORG'][0][0] = $value;
         break;
         
+      case 'photo':
+        $encoded = base64_decode($value, true) ? true : false;
+        $this->raw['PHOTO'][] = array(0 => $encoded ? $value : base64_encode($value), array('BASE64'));
+        break;
+        
       case 'email':
         $this->raw['EMAIL'][] = array(0 => $value, 'type' => array_filter(array('INTERNET', $type)));
         $this->email[] = $value;

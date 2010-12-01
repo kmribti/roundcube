@@ -324,7 +324,7 @@ function rcmail_contact_form($form, $record, $attrib = null)
             
             if ($coltypes['photo']) {
                 if ($record['photo'])
-                    $pic_img = $browser->imgdata ? 'data:image/jpeg;base64,' . $data : $RCMAIL->url(array('_action' => 'photo', '_cid' => $record['ID'], '_source' => $_REQUEST['_source']));
+                    $pic_img = $RCMAIL->url(array('_action' => 'photo', '_cid' => $record['ID'], '_source' => $_REQUEST['_source']));
                 $img = html::img(array('src' => $pic_img, 'border' => 1, 'alt' => ''));
                 if ($edit_mode) {
                     $label = $record['photo'] ? rcube_label('replacephoto') : rcube_label('addphoto');

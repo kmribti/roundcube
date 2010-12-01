@@ -28,11 +28,21 @@ if (($cid = get_input_value('_cid', RCUBE_INPUT_GPC)) && ($record = $CONTACTS->g
 // return raw photo of the given contact
 if ($RCMAIL->action == 'photo') {
     if ($record['photo']) {
-        // assume image/jpg base64 encoded
-        $data = base64_decode(is_array($record['photo']) ? $record['photo'][0] : $record['photo'], true);
+        $data = is_array($record['photo']) ? $record['photo'][0] : $record['photo'];
+        if (!preg_match('![^a-z0-9/+-]!i', $data))
+            $data = base64_decode($data, true);
     }
     
-    header('Content-Type: image/jpeg');
+    // check some magic numbers to detect image type
+    $type = 'jpeg';
+    if (preg_match('/^\x89\x50\x4E\x47/', $data))
+        $type = 'png';
+    else if (preg_match('/^\x47\x49\x46\x38/', $data))
+        $type = 'png';
+    //else if (preg_match('/^\xFF\xD8\xFF\xE0/', $data))
+    //    $type = 'jpeg';
+    
+    header('Content-Type: image/' . $type);
     echo $data ? $data : file_get_contents('program/blank.gif');
     exit;
 }
