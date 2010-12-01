@@ -278,10 +278,14 @@ body.iframe,
 {
 	float: right;
 	width: 50px;
-	height: 50px;
+	min-height: 50px;
 	border: 1px solid #ccc;
 	background: white;
 	margin-left: 3em;
+}
+
+#contacthead .contactpic img {
+	width: 50px;
 }
 
 fieldset.contactfieldgroup

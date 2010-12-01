@@ -35,12 +35,9 @@ if ($RCMAIL->action == 'photo') {
     
     // check some magic numbers to detect image type
     $type = 'jpeg';
-    if (preg_match('/^\x89\x50\x4E\x47/', $data))
-        $type = 'png';
-    else if (preg_match('/^\x47\x49\x46\x38/', $data))
-        $type = 'png';
-    //else if (preg_match('/^\xFF\xD8\xFF\xE0/', $data))
-    //    $type = 'jpeg';
+    if (preg_match('/^\x89\x50\x4E\x47/', $data))      $type = 'png';
+    else if (preg_match('/^\x47\x49\x46\x38/', $data)) $type = 'gif';
+//  else if (preg_match('/^\xFF\xD8\xFF\xE0/', $data)) $type = 'jpeg';
     
     header('Content-Type: image/' . $type);
     echo $data ? $data : file_get_contents('program/blank.gif');
