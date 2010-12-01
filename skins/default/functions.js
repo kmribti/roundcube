@@ -25,8 +25,8 @@ function rcube_show_advanced(visible)
 // Warning: don't place "caller" <script> inside page element (id)
 function rcube_init_tabs(id, current)
 {
-  var content = document.getElementById(id),
-    fs = $('fieldset', content);
+  var content = $('#'+id),
+    fs = content.children('fieldset');
 
   current = current ? current : 0;
 
@@ -38,7 +38,7 @@ function rcube_init_tabs(id, current)
 
   // convert fildsets into tabs
   fs.each(function(idx) {
-    var tab, a, elm = $(this), legend = $('legend', elm);
+    var tab, a, elm = $(this), legend = elm.children('legend');
 
     // create a tab
     a   = $('<a>').text(legend.text()).attr('href', '#');
@@ -60,8 +60,7 @@ function rcube_init_tabs(id, current)
 
 function rcube_show_tab(id, index)
 {
-  var content = document.getElementById(id),
-    fs = $('fieldset', content);
+  var fs = $('#'+id).children('fieldset');
 
   fs.each(function(idx) {
     // Show/hide fieldset (tab content)

@@ -25,6 +25,18 @@ if (($cid = get_input_value('_cid', RCUBE_INPUT_GPC)) && ($record = $CONTACTS->g
     $OUTPUT->set_env('cid', $record['ID']);
 }
 
+// return raw photo of the given contact
+if ($RCMAIL->action == 'photo') {
+    if ($record['photo']) {
+        // assume image/jpg base64 encoded
+        $data = base64_decode(is_array($record['photo']) ? $record['photo'][0] : $record['photo'], true);
+    }
+    
+    header('Content-Type: image/jpeg');
+    echo $data ? $data : file_get_contents('program/blank.gif');
+    exit;
+}
+
 
 function rcmail_contact_head($attrib)
 {

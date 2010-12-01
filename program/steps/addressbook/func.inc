@@ -83,6 +83,7 @@ $CONTACT_COLTYPES = array(
   'website'      => array('type' => 'text', 'size' => 40, 'label' => rcube_label('website'), 'subtypes' => array('home','work','blog','other')),
   'im'           => array('type' => 'text', 'size' => 40, 'label' => rcube_label('instantmessenger'), 'subtypes' => array('aim','icq','msn','yahoo','jabber','other')),
   'notes'        => array('type' => 'textarea', 'size' => 40, 'rows' => 15, 'label' => rcube_label('notes'), 'limit' => 1),
+  'photo'        => array('type' => 'image', 'limit' => 1),
   // TODO: define fields for vcards GEO, PHOTO, KEY, X-ANNIVERSARY, X-ASSISTANT, X-MANAGER
 );
 
@@ -287,8 +288,10 @@ function rcmail_contact_form($form, $record, $attrib = null)
     $form = $plugin['form'];
     $record = $plugin['record'];
     $formdata = array();
-    $del_button = $attrib['deleteicon'] ? html::img(array('src' => $CONFIG['skin_path'] . $attrib['deleteicon'], 'alt' => rcube_label('delete'))) : rcube_label('delete');
     $edit_mode = $RCMAIL->action != 'show';
+    $pic_img = $attrib['picplaceholder'] ? $CONFIG['skin_path'] . $attrib['picplaceholder'] : 'program/blank.gif';
+    $del_button = $attrib['deleteicon'] ? html::img(array('src' => $CONFIG['skin_path'] . $attrib['deleteicon'], 'alt' => rcube_label('delete'))) : rcube_label('delete');
+    unset($attrib['picplaceholder'], $attrib['deleteicon']);
     $out = '';
     
     // get default coltypes
@@ -318,6 +321,17 @@ function rcmail_contact_form($form, $record, $attrib = null)
         // render head section with name fields (not a regular list of rows)
         if ($section == 'head') {
             $content = '';
+            
+            if ($coltypes['photo']) {
+                if ($record['photo'])
+                    $pic_img = $browser->imgdata ? 'data:image/jpeg;base64,' . $data : $RCMAIL->url(array('_action' => 'photo', '_cid' => $record['ID'], '_source' => $_REQUEST['_source']));
+                $img = html::img(array('src' => $pic_img, 'border' => 1, 'alt' => ''));
+                if ($edit_mode) {
+                    $label = $record['photo'] ? rcube_label('replacephoto') : rcube_label('addphoto');
+                    $img = html::a(array('href' => '#', 'id' => 'contactpicframe', 'title' => $label), $img);
+                }
+                $content .= html::div('contactpic', $img);
+            }
             
             $names_arr = array($record['prefix'], $record['firstname'], $record['middlename'], $record['surname'], $record['suffix']);
             if ($record['name'] == join(' ', array_filter($names_arr)))
@@ -491,7 +505,9 @@ function rcmail_contact_form($form, $record, $attrib = null)
                 }
                 
                 // wrap rows in fieldgroup container
-                $content .= html::div('contactfieldgroup contactcontroller' . $col, $rows);
+                $content .= html::tag('fieldset', array('class' => 'contactfieldgroup contactcontroller' . $col, 'style' => ($rows ? null : 'display:none')),
+                  ($colprop['subtypes'] ? html::tag('legend', null, Q($colprop['label'])) : ' ') .
+                  $rows);
             }
 
             // also render add-field selector

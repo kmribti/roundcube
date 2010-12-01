@@ -56,7 +56,7 @@ class rcube_contacts extends rcube_addressbook
     public $ready = false;
     public $coltypes = array('name', 'firstname', 'surname', 'middlename', 'prefix', 'suffix', 'nickname',
       'jobtitle', 'organization', 'department', 'gender', 'maidenname', 'email', 'phone', 'address',
-      'birthday', 'website', 'im', 'notes');
+      'birthday', 'website', 'im', 'notes', 'photo');
 
 
     /**

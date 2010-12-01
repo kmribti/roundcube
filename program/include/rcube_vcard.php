@@ -32,7 +32,7 @@ class rcube_vcard
     'FN' => array(),
     'N' => array(array('','','','','')),
   );
-  private $fieldmap = array('phone' => 'TEL', 'birthday' => 'BDAY', 'website' => 'URL', 'notes' => 'NOTE', 'email' => 'EMAIL', 'address' => 'ADR', 'gender' => 'X-GENDER', 'maidenname' => 'X-MAIDENNAME', 'gender' => 'X-GENDER');
+  private $fieldmap = array('photo' => 'PHOTO', 'phone' => 'TEL', 'birthday' => 'BDAY', 'website' => 'URL', 'notes' => 'NOTE', 'email' => 'EMAIL', 'address' => 'ADR', 'gender' => 'X-GENDER', 'maidenname' => 'X-MAIDENNAME', 'gender' => 'X-GENDER');
   private $typemap = array('iPhone' => 'mobile', 'CELL' => 'mobile');
   private $phonetypemap = array('HOME1' => 'HOME', 'BUSINESS1' => 'WORK', 'BUSINESS2' => 'WORK2', 'WORKFAX' => 'BUSINESSFAX');
   private $addresstypemap = array('BUSINESS' => 'WORK');

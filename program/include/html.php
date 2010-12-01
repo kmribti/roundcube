@@ -71,6 +71,9 @@ class html
      */
     public static function tag($tagname, $attrib = array(), $content = null, $allowed_attrib = null)
     {
+        if (is_string($attrib))
+            $attrib = array('class' => $attrib);
+
         $inline_tags = array('a','span','img');
         $suffix = $attrib['nl'] || ($content && $attrib['nl'] !== false && !in_array($tagname, $inline_tags)) ? "\n" : '';
 

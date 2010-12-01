@@ -323,6 +323,8 @@ function rcube_webmail()
 
           for (var col in this.env.coltypes)
             this.init_edit_field(col, null);
+            
+          $('#contactpicframe').click(function(){ ref.upload_contact_photo(this); return false; });
 
           $('.contactfieldgroup .row a.deletebutton').click(function(){ ref.delete_edit_field(this); return false });
 
@@ -4004,9 +4006,9 @@ function rcube_webmail()
         appendcontainer = $('#contactsection'+section+' .contactcontroller'+col);
       
       if (!appendcontainer.length)
-        appendcontainer = $('<div>').addClass('contactfieldgroup contactcontroller'+col).insertAfter($('#contactsection'+section+' .contactfieldgroup').last());
+        appendcontainer = $('<fieldset>').addClass('contactfieldgroup contactcontroller'+col).insertAfter($('#contactsection'+section+' .contactfieldgroup').last());
 
-      if (appendcontainer.length && appendcontainer.get(0).nodeName == 'DIV') {
+      if (appendcontainer.length && appendcontainer.get(0).nodeName == 'FIELDSET') {
         var input, colprop = this.env.coltypes[col],
           row = $('<div>').addClass('row'),
           cell = $('<div>').addClass('contactfieldcontent data'),
@@ -4065,7 +4067,7 @@ function rcube_webmail()
             .click(function(){ ref.delete_edit_field(this); return false })
             .appendTo(cell);
           
-          row.append(label).append(cell).appendTo(appendcontainer);
+          row.append(label).append(cell).appendTo(appendcontainer.show());
           input.first().focus();
           
           // disable option if limit reached
@@ -4077,7 +4079,8 @@ function rcube_webmail()
     }
   };
 
-  this.delete_edit_field = function(elem){
+  this.delete_edit_field = function(elem)
+  {
     var col = $(elem).attr('rel'),
       colprop = this.env.coltypes[col],
       addmenu = $(elem).parents('div.contactfieldgroup').parent().find('select.addfieldmenu');
@@ -4098,6 +4101,12 @@ function rcube_webmail()
     }
     else
     alert('addmennu not found')
+  };
+
+
+  this.upload_contact_photo = function(frame)
+  {
+    // TODO: implement this
   };
 
 
