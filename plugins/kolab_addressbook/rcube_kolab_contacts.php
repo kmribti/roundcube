@@ -37,6 +37,7 @@ class rcube_kolab_contacts extends rcube_addressbook
       'anniversary'  => array('type' => 'date', 'size' => 12, 'limit' => 1, 'label' => 'kolab_addressbook.anniversary'),
       // TODO: define more Kolab-specific fields such as: office-location, profession, manager-name, assistant, spouse-name, children, language, latitude, longitude, pgp-publickey, free-busy-url
       'notes'        => array(),
+      'photo'        => array(),
     );
     
     private $gid;
@@ -753,6 +754,11 @@ class rcube_kolab_contacts extends rcube_addressbook
                     'country' => $adr['country'],
                 );
             }
+        }
+        
+        // photo is stored as separate attachment
+        if ($record['picture'] && ($att = $record['_attachments'][$record['picture']])) {
+            $out['photo'] = $this->contactstorage->getAttachment($att['key']);
         }
 
         // remove empty fields
