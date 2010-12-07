@@ -99,6 +99,8 @@ if (is_array($CONTACTS->coltypes)) {
     }
 }
 
+$OUTPUT->set_env('photocol', is_array($CONTACT_COLTYPES['photo']));
+
 
 function rcmail_directory_list($attrib)
 {
@@ -287,11 +289,9 @@ function rcmail_contact_form($form, $record, $attrib = null)
 
     $form = $plugin['form'];
     $record = $plugin['record'];
-    $formdata = array();
     $edit_mode = $RCMAIL->action != 'show';
-    $pic_img = $attrib['picplaceholder'] ? $CONFIG['skin_path'] . $attrib['picplaceholder'] : 'program/blank.gif';
     $del_button = $attrib['deleteicon'] ? html::img(array('src' => $CONFIG['skin_path'] . $attrib['deleteicon'], 'alt' => rcube_label('delete'))) : rcube_label('delete');
-    unset($attrib['picplaceholder'], $attrib['deleteicon']);
+    unset($attrib['deleteicon']);
     $out = '';
     
     // get default coltypes
@@ -321,17 +321,6 @@ function rcmail_contact_form($form, $record, $attrib = null)
         // render head section with name fields (not a regular list of rows)
         if ($section == 'head') {
             $content = '';
-            
-            if ($coltypes['photo']) {
-                if ($record['photo'])
-                    $pic_img = $RCMAIL->url(array('_action' => 'photo', '_cid' => $record['ID'], '_source' => $_REQUEST['_source']));
-                $img = html::img(array('src' => $pic_img, 'border' => 1, 'alt' => ''));
-                if ($edit_mode) {
-                    $label = $record['photo'] ? rcube_label('replacephoto') : rcube_label('addphoto');
-                    $img = html::a(array('href' => '#', 'id' => 'contactpicframe', 'title' => $label), $img);
-                }
-                $content .= html::div('contactpic', $img);
-            }
             
             $names_arr = array($record['prefix'], $record['firstname'], $record['middlename'], $record['surname'], $record['suffix']);
             if ($record['name'] == join(' ', array_filter($names_arr)))
@@ -465,7 +454,6 @@ function rcmail_contact_form($form, $record, $attrib = null)
                             $val = call_user_func($colprop['render_func'], $val, $col);
 
                         $coltypes[$field] = (array)$colprop + $coltypes[$field];
-                        $formdata[$field][] = array('subtype' => $subtype, 'value' => $val);
 
                         if ($colprop['subtypes'] || $colprop['limit'] != 1)
                             $colprop['array'] = true;
@@ -524,13 +512,41 @@ function rcmail_contact_form($form, $record, $attrib = null)
     }
 
     if ($edit_mode) {
-      $RCMAIL->output->set_env('contactdata', $formdata);
       $RCMAIL->output->set_env('coltypes', $coltypes + $coltype_lables);
       $RCMAIL->output->set_env('delbutton', $del_button);
       $RCMAIL->output->add_label('delete');
     }
 
     return $out;
+}
+
+
+function rcmail_contact_photo($attrib)
+{
+    global $CONTACTS, $CONTACT_COLTYPES, $RCMAIL, $CONFIG;
+    
+    if ($result = $CONTACTS->get_result())
+        $record = $result->first();
+    
+    $photo_img = $attrib['placeholder'] ? $CONFIG['skin_path'] . $attrib['placeholder'] : 'program/blank.gif';
+    unset($attrib['placeholder']);
+    
+    if ($CONTACT_COLTYPES['photo']) {
+        $RCMAIL->output->set_env('photo_placeholder', $photo_img);
+        
+        if ($record['photo'])
+            $photo_img = $RCMAIL->url(array('_action' => 'photo', '_cid' => $record['ID'], '_source' => $_REQUEST['_source']));
+        $img = html::img(array('src' => $photo_img, 'border' => 1, 'alt' => ''));
+        $content = html::div($attrib, $img);
+      
+        if ($RCMAIL->action == 'edit' || $RCMAIL->action == 'add') {
+            $RCMAIL->output->add_gui_object('contactphoto', $attrib['id']);
+            $hidden = new html_hiddenfield(array('name' => '_photo', 'id' => 'ff_photo'));
+            $content .= $hidden->show();
+        }
+  }
+  
+  return $content;
 }
 
 

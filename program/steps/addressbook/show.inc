@@ -27,9 +27,18 @@ if (($cid = get_input_value('_cid', RCUBE_INPUT_GPC)) && ($record = $CONTACTS->g
 
 // return raw photo of the given contact
 if ($RCMAIL->action == 'photo') {
-    if ($record['photo']) {
+    if (($file_id = get_input_value('_photo', RCUBE_INPUT_GPC)) && ($tempfile = $_SESSION['contacts']['files'][$file_id])) {
+        $tempfile = $RCMAIL->plugins->exec_hook('attachment_display', $tempfile);
+        if ($tempfile['status']) {
+            if ($tempfile['data'])
+                $data = $tempfile['data'];
+            else if ($tempfile['path'])
+                $data = file_get_contents($tempfile['path']);
+        }
+    }
+    else if ($record['photo']) {
         $data = is_array($record['photo']) ? $record['photo'][0] : $record['photo'];
-        if (!preg_match('![^a-z0-9/+-]!i', $data))
+        if (!preg_match('![^a-z0-9/=+-]!i', $data))
             $data = base64_decode($data, true);
     }
     
@@ -180,5 +189,6 @@ function rcmail_contact_record_groups($contact_id)
 //$OUTPUT->framed = $_framed;
 $OUTPUT->add_handler('contacthead', 'rcmail_contact_head');
 $OUTPUT->add_handler('contactdetails', 'rcmail_contact_details');
+$OUTPUT->add_handler('contactphoto', 'rcmail_contact_photo');
 
 $OUTPUT->send('contact');

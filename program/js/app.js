@@ -319,12 +319,12 @@ function rcube_webmail()
 
         if ((this.env.action=='add' || this.env.action=='edit') && this.gui_objects.editform) {
           this.enable_command('save', true);
+          this.enable_command('upload-photo', this.env.coltypes.photo ? true : false);
+          this.enable_command('delete-photo', this.env.coltypes.photo && this.env.action == 'edit');
           $("input[type='text']").first().select();
 
           for (var col in this.env.coltypes)
             this.init_edit_field(col, null);
-            
-          $('#contactpicframe').click(function(){ ref.upload_contact_photo(this); return false; });
 
           $('.contactfieldgroup .row a.deletebutton').click(function(){ ref.delete_edit_field(this); return false });
 
@@ -446,7 +446,7 @@ function rcube_webmail()
     // command not supported or allowed
     if (!this.commands[command]) {
       // pass command to parent window
-      if (this.env.framed && parent.rcmail && parent.rcmail.command)
+      if (this.env.framed && parent.rcmail && parent.rcmail != this && parent.rcmail.command)
         parent.rcmail.command(command, props);
 
       return false;
@@ -1009,6 +1009,14 @@ function rcube_webmail()
 
           this.goto_url('export', add_url);
         }
+        break;
+        
+      case 'upload-photo':
+        this.upload_contact_photo(props);
+        break;
+
+      case 'delete-photo':
+        this.replace_contact_photo('-del-');
         break;
 
       // user settings commands
@@ -3181,27 +3189,7 @@ function rcube_webmail()
 
     // create hidden iframe and post upload form
     if (send) {
-      var ts = new Date().getTime();
-      var frame_name = 'rcmupload'+ts;
-
-      // have to do it this way for IE
-      // otherwise the form will be posted to a new window
-      if (document.all) {
-        var html = '<iframe name="'+frame_name+'" src="program/blank.gif" style="width:0;height:0;visibility:hidden;"></iframe>';
-        document.body.insertAdjacentHTML('BeforeEnd',html);
-      }
-      else { // for standards-compilant browsers
-        var frame = document.createElement('iframe');
-        frame.name = frame_name;
-        frame.style.border = 'none';
-        frame.style.width = 0;
-        frame.style.height = 0;
-        frame.style.visibility = 'hidden';
-        document.body.appendChild(frame);
-      }
-
-      // handle upload errors, parsing iframe content in onload
-      $(frame_name).bind('load', {ts:ts}, function(e) {
+      this.async_upload_form(form, 'upload', function(e) {
         var d, content = '';
         try {
           if (this.contentDocument) {
@@ -3221,11 +3209,6 @@ function rcube_webmail()
         if (bw.opera)
           rcmail.env.uploadframe = e.data.ts;
       });
-
-      form.target = frame_name;
-      form.action = this.env.comm_path+'&_action=upload&_uploadid='+ts;
-      form.setAttribute('enctype', 'multipart/form-data');
-      form.submit();
 
       // display upload indicator and cancel button
       var content = this.get_label('uploading');
@@ -4083,15 +4066,20 @@ function rcube_webmail()
   {
     var col = $(elem).attr('rel'),
       colprop = this.env.coltypes[col],
-      addmenu = $(elem).parents('div.contactfieldgroup').parent().find('select.addfieldmenu');
+      fieldset = $(elem).parents('fieldset.contactfieldgroup'),
+      addmenu = fieldset.parent().find('select.addfieldmenu');
     
     // just clear input but don't hide the last field
     if (--colprop.count <= 0 && colprop.visible)
       $(elem).parent().children('input').val('').blur();
-    else
+    else {
       $(elem).parents('div.row').remove();
+      // hide entire fieldset if no more rows
+      if (!fieldset.children('div.row').length)
+        fieldset.hide();
+    }
     
-    // TODO: enable option in add-field selector or insert it if necessary
+    // enable option in add-field selector or insert it if necessary
     if (addmenu.length) {
       var option = addmenu.children('option[value="'+col+'"]');
       if (option.length)
@@ -4100,13 +4088,41 @@ function rcube_webmail()
         option = $('<option>').attr('value', col).html(colprop.label).appendTo(addmenu);
     }
     else
-    alert('addmennu not found')
+      alert('addmennu not found')
   };
 
 
-  this.upload_contact_photo = function(frame)
+  this.upload_contact_photo = function(form)
   {
-    // TODO: implement this
+    if (form && form.elements._photo.value) {
+      this.async_upload_form(form, 'upload-photo', function(e) {
+        rcmail.set_busy(false, null, rcmail.photo_upload_id);
+      });
+
+      // display upload indicator
+      this.photo_upload_id = this.set_busy(true, 'uploading');
+    }
+  };
+  
+  this.replace_contact_photo = function(id)
+  {
+    $('#ff_photo').val(id);
+    
+    var buttons = this.buttons['upload-photo'];
+    for (var n=0; n < buttons.length; n++)
+      $('#'+buttons[n].id).html(this.get_label(id == '-del-' ? 'addphoto' : 'replacephoto'));
+    
+    var img_src = id == '-del-' ? this.env.photo_placeholder :
+      this.env.comm_path + '&_action=photo&_source=' + this.env.source + '&_cid=' + this.env.cid + '&_photo=' + id;
+    $(this.gui_objects.contactphoto).children('img').attr('src', img_src);
+    
+    this.enable_command('delete-photo', id != '-del-');
+  };
+  
+  this.photo_upload_end = function()
+  {
+    this.set_busy(false, null, this.photo_upload_id);
+    delete this.photo_upload_id;
   };
 
 
@@ -5375,6 +5391,37 @@ function rcube_webmail()
       this.display_message(this.get_label('servererror') + ' (' + errmsg + ')', 'error');
   };
 
+  // post the given form to a hidden iframe
+  this.async_upload_form = function(form, action, onload)
+  {
+    var ts = new Date().getTime();
+    var frame_name = 'rcmupload'+ts;
+
+    // have to do it this way for IE
+    // otherwise the form will be posted to a new window
+    if (document.all) {
+      var html = '<iframe name="'+frame_name+'" src="program/blank.gif" style="width:0;height:0;visibility:hidden;"></iframe>';
+      document.body.insertAdjacentHTML('BeforeEnd', html);
+    }
+    else { // for standards-compilant browsers
+      var frame = document.createElement('iframe');
+      frame.name = frame_name;
+      frame.style.border = 'none';
+      frame.style.width = 0;
+      frame.style.height = 0;
+      frame.style.visibility = 'hidden';
+      document.body.appendChild(frame);
+    }
+
+    // handle upload errors, parsing iframe content in onload
+    $(frame_name).bind('load', {ts:ts}, onload);
+
+    form.target = frame_name;
+    form.action = this.env.comm_path + '&_action=' + action + '&_uploadid=' + ts;
+    form.setAttribute('enctype', 'multipart/form-data');
+    form.submit();
+  };
+  
   // starts interval for keep-alive/check-recent signal
   this.start_keepalive = function()
   {

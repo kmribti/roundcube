@@ -274,18 +274,30 @@ body.iframe,
 	width: 374px;
 }
 
-#contacthead .contactpic
+#contactphoto
 {
 	float: right;
-	width: 50px;
-	min-height: 50px;
-	border: 1px solid #ccc;
-	background: white;
+	width: 60px;
 	margin-left: 3em;
+	margin-right: 4px;
 }
 
-#contacthead .contactpic img {
-	width: 50px;
+#contactpic
+{
+	width: 60px;
+	min-height: 60px;
+	border: 1px solid #ccc;
+	background: white;
+}
+
+#contactpic img {
+	width: 60px;
+}
+
+#contactphoto .formlinks
+{
+	margin-top: 0.5em;
+	text-align: center;
 }
 
 fieldset.contactfieldgroup
@@ -353,3 +365,12 @@ fieldset.contactfieldgroup legend
 	margin-left: 0.5em;
 }
 
+#upload-form
+{
+	padding: 6px;
+}
+
+#upload-form div
+{
+	padding: 2px;
+}

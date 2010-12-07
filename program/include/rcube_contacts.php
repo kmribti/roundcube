@@ -501,7 +501,7 @@ class rcube_contacts extends rcube_addressbook
         foreach ($save_data as $key => $values) {
             list($field, $section) = explode(':', $key);
             foreach ((array)$values as $value) {
-                if (is_array($value) || strlen($value))
+                if (isset($value))
                     $vcard->set($field, $value, $section);
             }
         }

@@ -288,6 +288,8 @@ $labels['edit']   = 'Edit';
 $labels['cancel'] = 'Cancel';
 $labels['save']   = 'Save';
 $labels['delete'] = 'Delete';
+$labels['addphoto'] = 'Add';
+$labels['replacephoto'] = 'Replace';
 
 $labels['newcontact']     = 'Create new contact card';
 $labels['deletecontact']  = 'Delete selected contacts';

@@ -30,6 +30,71 @@ if ($CONTACTS->readonly) {
 }
 
 
+// handle photo upload for contacts
+if ($RCMAIL->action == 'upload-photo') {
+    // clear all stored output properties (like scripts and env vars)
+    $OUTPUT->reset();
+
+    if ($filepath = $_FILES['_photo']['tmp_name']) {
+        // TODO: check file type and resize image
+        $imageprop = rcmail::imageprops($_FILES['_photo']['tmp_name']);
+        
+        if ($imageprop['width'] && $imageprop['height']) {
+            $maxsize = $RCMAIL->config->get('contact_photo_size', 160);
+            $tmpfname = tempnam($RCMAIL->config->get('temp_dir'), 'rcmImgConvert');
+            $save_hook = 'attachment_upload';
+            
+            // scale image to a maximum size
+            if (($imageprop['width'] > $maxsize || $imageprop['height'] > $maxsize) &&
+                  (rcmail::imageconvert(array('in' => $filepath, 'out' => $tmpfname, 'size' => $maxsize.'x'.$maxsize, 'type' => $imageprop['type'])) !== false)) {
+                $filepath = $tmpfname;
+                $save_hook = 'attachment_save';
+            }
+            
+            // save uploaded file in storage backend
+            $attachment = $RCMAIL->plugins->exec_hook($save_hook, array(
+                'path' => $filepath,
+                'size' => $_FILES['_photo']['size'],
+                'name' => $_FILES['_photo']['name'],
+                'mimetype' => rc_mime_content_type($filepath, $_FILES['_photo']['name'], 'image/' . $imageprop['type'])
+            ));
+        }
+        else
+            $attachment['error'] = rcube_label('invalidimageformat');
+
+        if ($attachment['status'] && !$attachment['abort']) {
+            $file_id = $attachment['id'];
+            $_SESSION['contacts']['files'][$file_id] = $attachment;
+            $OUTPUT->command('replace_contact_photo', $file_id);
+        }
+        else {  // upload failed
+            $err = $_FILES['_photo']['error'];
+            if ($err == UPLOAD_ERR_INI_SIZE || $err == UPLOAD_ERR_FORM_SIZE)
+                $msg = rcube_label(array('name' => 'filesizeerror', 'vars' => array('size' => show_bytes(parse_bytes(ini_get('upload_max_filesize'))))));
+            else if ($attachment['error'])
+                $msg = $attachment['error'];
+            else
+                $msg = rcube_label('fileuploaderror');
+            
+            $OUTPUT->command('display_message', $msg, 'error');
+        }
+    }
+    else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // if filesize exceeds post_max_size then $_FILES array is empty,
+        // show filesizeerror instead of fileuploaderror
+        if ($maxsize = ini_get('post_max_size'))
+            $msg = rcube_label(array('name' => 'filesizeerror', 'vars' => array('size' => show_bytes(parse_bytes($maxsize)))));
+        else
+            $msg = rcube_label('fileuploaderror');
+            
+        $OUTPUT->command('display_message', $msg, 'error');
+    }
+    
+    $OUTPUT->command('photo_upload_end');
+    $OUTPUT->send('iframe');
+}
+
+
 // read POST values into hash array
 $a_record = array();
 foreach ($GLOBALS['CONTACT_COLTYPES'] as $col => $colprop) {
@@ -85,6 +150,24 @@ foreach ($CONTACTS->get_col_values('email', $a_record, true) as $email) {
       return;
     }
   }
+}
+
+// get raw photo data if changed
+if (isset($a_record['photo'])) {
+    if ($a_record['photo'] == '-del-') {
+        $a_record['photo'] = '';
+    }
+    else if ($tempfile = $_SESSION['contacts']['files'][$a_record['photo']]) {
+        $tempfile = $RCMAIL->plugins->exec_hook('attachment_get', $tempfile);
+        if ($tempfile['status'])
+            $a_record['photo'] = $tempfile['data'] ? $tempfile['data'] : @file_get_contents($tempfile['path']);
+    }
+    else
+        unset($a_record['photo']);
+    
+    // cleanup session data
+    $RCMAIL->plugins->exec_hook('attachments_cleanup', array());
+    $RCMAIL->session->remove('contacts');
 }
 
 // update an existing contact

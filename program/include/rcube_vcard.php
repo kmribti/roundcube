@@ -32,7 +32,7 @@ class rcube_vcard
     'FN' => array(),
     'N' => array(array('','','','','')),
   );
-  private $fieldmap = array('photo' => 'PHOTO', 'phone' => 'TEL', 'birthday' => 'BDAY', 'website' => 'URL', 'notes' => 'NOTE', 'email' => 'EMAIL', 'address' => 'ADR', 'gender' => 'X-GENDER', 'maidenname' => 'X-MAIDENNAME', 'gender' => 'X-GENDER');
+  private $fieldmap = array('phone' => 'TEL', 'birthday' => 'BDAY', 'website' => 'URL', 'notes' => 'NOTE', 'email' => 'EMAIL', 'address' => 'ADR', 'gender' => 'X-GENDER', 'maidenname' => 'X-MAIDENNAME', 'gender' => 'X-GENDER');
   private $typemap = array('iPhone' => 'mobile', 'CELL' => 'mobile');
   private $phonetypemap = array('HOME1' => 'HOME', 'BUSINESS1' => 'WORK', 'BUSINESS2' => 'WORK2', 'WORKFAX' => 'BUSINESSFAX');
   private $addresstypemap = array('BUSINESS' => 'WORK');
@@ -67,7 +67,7 @@ class rcube_vcard
   public function load($vcard, $charset = RCMAIL_CHARSET)
   {
     $this->raw = self::vcard_decode($vcard);
-    
+
     // resolve charset parameters
     if ($charset == null)
       $this->raw = $this->charset_convert($this->raw);
@@ -150,6 +150,10 @@ class rcube_vcard
         $out['im:'.$type][] = $raw[0];
       }
     }
+    
+    // copy photo data
+    if ($this->raw['PHOTO'])
+      $out['photo'] = $this->raw['PHOTO'][0][0];
     
     return $out;
   }
@@ -234,8 +238,8 @@ class rcube_vcard
         break;
         
       case 'photo':
-        $encoded = base64_decode($value, true) ? true : false;
-        $this->raw['PHOTO'][] = array(0 => $encoded ? $value : base64_encode($value), array('BASE64'));
+        $encoded = !preg_match('![^a-z0-9/=+-]!i', $value);
+        $this->raw['PHOTO'][0] = array(0 => $encoded ? $value : base64_encode($value), 'BASE64' => true);
         break;
         
       case 'email':
@@ -269,7 +273,7 @@ class rcube_vcard
         if ($field == 'phone' && $this->phonetypemap[$type])
           $type = $this->phonetypemap[$type];
 
-        if ($tag = $this->fieldmap[$field]) {
+        if (($tag = $this->fieldmap[$field]) && (is_array($value) || strlen($value))) {
           $index = count($this->raw[$tag]);
           $this->raw[$tag][$index] = (array)$value;
           if ($type)

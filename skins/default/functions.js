@@ -87,7 +87,8 @@ function rcube_mail_ui()
     mailboxmenu:    {id:'mailboxoptionsmenu', above:1},
     composemenu:    {id:'composeoptionsmenu', editable:1},
     // toggle: #1486823, #1486930
-    uploadmenu:     {id:'attachment-form', editable:1, above:1, toggle:!bw.ie&&!bw.linux }
+    uploadmenu:     {id:'attachment-form', editable:1, above:1, toggle:!bw.ie&&!bw.linux },
+    uploadform:     {id:'upload-form', editable:1, toggle:true}
   };
 
   var obj;
@@ -128,6 +129,9 @@ show_popupmenu: function(popup, show)
 
     if (!above && pos.top + ref.offsetHeight + obj.height() > window.innerHeight)
       above = true;
+
+    if (pos.left + obj.width() > window.innerWidth)
+      pos.left = window.innerWidth - obj.width() - 30;
 
     obj.css({ left:pos.left, top:(pos.top + (above ? -obj.height() : ref.offsetHeight)) });
   }
@@ -492,6 +496,9 @@ function rcube_init_mail_ui()
 
     if (rcmail.env.action == 'compose')
       rcmail_ui.init_compose_form();
+  }
+  else if (rcmail.env.task == 'addressbook') {
+    rcmail.addEventListener('afterupload-photo', function(){ rcmail_ui.show_popup('uploadform', false); });
   }
 }
 

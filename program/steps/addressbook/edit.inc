@@ -124,6 +124,43 @@ function rcmail_contact_editform($attrib)
 }
 
 
+function rcmail_upload_photo_form($attrib)
+{
+  global $OUTPUT;
+
+  // add ID if not given
+  if (!$attrib['id'])
+    $attrib['id'] = 'rcmUploadbox';
+
+  // find max filesize value
+  $max_filesize = parse_bytes(ini_get('upload_max_filesize'));
+  $max_postsize = parse_bytes(ini_get('post_max_size'));
+  if ($max_postsize && $max_postsize < $max_filesize)
+    $max_filesize = $max_postsize;
+  $max_filesize = show_bytes($max_filesize);
+  
+  $hidden = new html_hiddenfield(array('name' => '_cid', 'value' => $GLOBALS['cid']));
+  $input = new html_inputfield(array('type' => 'file', 'name' => '_photo', 'size' => $attrib['size']));
+  $button = new html_inputfield(array('type' => 'button'));
+  
+  $out = html::div($attrib,
+    $OUTPUT->form_tag(array('name' => 'uploadform', 'method' => 'post', 'enctype' => 'multipart/form-data'),
+      $hidden->show() .
+      html::div(null, $input->show()) .
+      html::div('hint', rcube_label(array('name' => 'maxuploadsize', 'vars' => array('size' => $max_filesize)))) .
+      html::div('buttons',
+        $button->show(rcube_label('close'), array('class' => 'button', 'onclick' => "$('#$attrib[id]').hide()")) . ' ' .
+        $button->show(rcube_label('upload'), array('class' => 'button mainaction', 'onclick' => JS_OBJECT_NAME . ".command('upload-photo', this.form)"))
+      )
+    )
+  );
+  
+  $OUTPUT->add_label('addphoto','replacephoto');
+  $OUTPUT->add_gui_object('uploadbox', $attrib['id']);
+  return $out;
+}
+
+
 // similar function as in /steps/settings/edit_identity.inc
 function get_form_tags($attrib)
 {
@@ -156,6 +193,8 @@ function get_form_tags($attrib)
 
 $OUTPUT->add_handler('contactedithead', 'rcmail_contact_edithead');
 $OUTPUT->add_handler('contacteditform', 'rcmail_contact_editform');
+$OUTPUT->add_handler('contactphoto',    'rcmail_contact_photo');
+$OUTPUT->add_handler('photouploadform', 'rcmail_upload_photo_form');
 
 if (!$CONTACTS->get_result() && $OUTPUT->template_exists('contactadd'))
     $OUTPUT->send('contactadd');

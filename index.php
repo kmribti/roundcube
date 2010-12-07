@@ -213,6 +213,7 @@ $action_map = array(
   'addressbook' => array(
     'add' => 'edit.inc',
     'photo' => 'show.inc',
+    'upload-photo' => 'save.inc',
     'group-create' => 'groups.inc',
     'group-rename' => 'groups.inc',
     'group-delete' => 'groups.inc',

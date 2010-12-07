@@ -9,7 +9,9 @@
 
 <div id="contact-title" class="boxtitle"><roundcube:label name="contactproperties" /></div>
 <div id="contact-details" class="boxcontent">
-  <roundcube:object name="contacthead" id="contacthead" picPlaceholder="/images/contactpic.png" />
+  <div id="contactphoto"><roundcube:object name="contactphoto" id="contactpic" placeholder="/images/contactpic.png" /></div>
+  <roundcube:object name="contacthead" id="contacthead" photoplaceholder="/images/contactpic.png" />
+  <div style="clear:both"></div>
   <div id="contacttabs">
     <roundcube:object name="contactdetails" />
   </div>
