@@ -187,7 +187,7 @@ class rcube_kolab_contacts extends rcube_addressbook
             $this->result->count = 0;
             foreach ((array)$this->distlists[$this->gid]['member'] as $member) {
                 // skip member that don't match the search filter
-                if ($this->filter && array_search($member['ID'], $this->filter) === false)
+                if (is_array($this->filter) && array_search($member['ID'], $this->filter) === false)
                     continue;
                 if ($this->contacts[$member['ID']] && !$seen[$member['ID']]++)
                     $this->result->count++;
@@ -195,7 +195,7 @@ class rcube_kolab_contacts extends rcube_addressbook
             $ids = array_keys($seen);
         }
         else
-            $ids = $this->filter ? $this->filter : array_keys($this->contacts);
+            $ids = is_array($this->filter) ? $this->filter : array_keys($this->contacts);
         
         // fill contact data into the current result set
         $i = $j = 0;
@@ -271,7 +271,7 @@ class rcube_kolab_contacts extends rcube_addressbook
     {
         $this->_fetch_contacts();
         $this->_fetch_groups();
-        $count = $this->gid ? count($this->distlists[$this->gid]['member']) : ($this->filter ? count($this->filter) : count($this->contacts));
+        $count = $this->gid ? count($this->distlists[$this->gid]['member']) : (is_array($this->filter) ? count($this->filter) : count($this->contacts));
         return new rcube_result_set($count, ($this->list_page-1) * $this->page_size);
     }
 
