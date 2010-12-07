@@ -88,7 +88,7 @@ function rcube_mail_ui()
     composemenu:    {id:'composeoptionsmenu', editable:1},
     // toggle: #1486823, #1486930
     uploadmenu:     {id:'attachment-form', editable:1, above:1, toggle:!bw.ie&&!bw.linux },
-    uploadform:     {id:'upload-form', editable:1, toggle:true}
+    uploadform:     {id:'upload-form', editable:1, toggle:!bw.ie&&!bw.linux }
   };
 
   var obj;

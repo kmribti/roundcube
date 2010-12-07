@@ -292,7 +292,7 @@ $rcmail_config['im_identify_path'] = null;
 // path to imagemagick convert binary
 $rcmail_config['im_convert_path'] = null;
 
-// maximum size of uploaded contact photos
+// maximum size of uploaded contact photos in pixel
 $rcmail_config['contact_photo_size'] = 160;
 
 // Enable DNS checking for e-mail address validation

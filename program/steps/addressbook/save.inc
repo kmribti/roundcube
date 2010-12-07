@@ -5,7 +5,7 @@
  | program/steps/addressbook/save.inc                                    |
  |                                                                       |
  | This file is part of the Roundcube Webmail client                     |
- | Copyright (C) 2005-2009, Roundcube Dev. - Switzerland                 |
+ | Copyright (C) 2005-2010, Roundcube Dev. - Switzerland                 |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -36,11 +36,11 @@ if ($RCMAIL->action == 'upload-photo') {
     $OUTPUT->reset();
 
     if ($filepath = $_FILES['_photo']['tmp_name']) {
-        // TODO: check file type and resize image
+        // check file type and resize image
         $imageprop = rcmail::imageprops($_FILES['_photo']['tmp_name']);
         
         if ($imageprop['width'] && $imageprop['height']) {
-            $maxsize = $RCMAIL->config->get('contact_photo_size', 160);
+            $maxsize = intval($RCMAIL->config->get('contact_photo_size', 160));
             $tmpfname = tempnam($RCMAIL->config->get('temp_dir'), 'rcmImgConvert');
             $save_hook = 'attachment_upload';
             
@@ -56,7 +56,7 @@ if ($RCMAIL->action == 'upload-photo') {
                 'path' => $filepath,
                 'size' => $_FILES['_photo']['size'],
                 'name' => $_FILES['_photo']['name'],
-                'mimetype' => rc_mime_content_type($filepath, $_FILES['_photo']['name'], 'image/' . $imageprop['type'])
+                'mimetype' => 'image/' . $imageprop['type'],
             ));
         }
         else

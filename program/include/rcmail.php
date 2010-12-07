@@ -1358,7 +1358,7 @@ class rcmail
    *
    * @param $cmd Format string with {keywords} to be replaced
    * @param $values (zero, one or more arrays can be passed)
-   * @return output of command. shell errors not detectable, see error_log in /www/server/logs
+   * @return output of command. shell errors not detectable
    */
   public static function exec(/* $cmd, $values1 = array(), ... */)
   {
