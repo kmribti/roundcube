@@ -758,7 +758,7 @@ class rcube_kolab_contacts extends rcube_addressbook
         
         // photo is stored as separate attachment
         if ($record['picture'] && ($att = $record['_attachments'][$record['picture']])) {
-            $out['photo'] = $this->contactstorage->getAttachment($att['key']);
+            $out['photo'] = $att['content'] ? $att['content'] : $this->contactstorage->getAttachment($att['key']);
         }
 
         // remove empty fields
@@ -831,6 +831,16 @@ class rcube_kolab_contacts extends rcube_addressbook
                     );
                 }
             }
+        }
+        
+        // save new photo as attachment
+        if ($contact['photo']) {
+          $attkey = 'photo.attachment';
+          $object['_attachments'][$attkey] = array(
+            'type' => rc_image_content_type($contact['photo']),
+            'content' => $contact['photo'],
+          );
+          $object['picture'] = $attkey;
         }
 
         return $object;
