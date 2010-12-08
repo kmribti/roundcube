@@ -787,13 +787,17 @@ class rcube_kolab_contacts extends rcube_addressbook
             $object['gender'] = $gendermap[$contact['gender']];
 
         $emails = $this->get_col_values('email', $contact, true);
-        $object['emails'] = join(', ', $emails);
+        $object['emails'] = join(', ', array_filter($emails));
 
         foreach ($this->get_col_values('phone', $contact) as $type => $values) {
             if ($this->phonetypemap[$type])
                 $type = $this->phonetypemap[$type];
-            foreach ((array)$values as $phone)
-                $object['phone'][] = array('number' => $phone, 'type' => $type);
+            foreach ((array)$values as $phone) {
+                if (!empty($phone)) {
+                    $object['phone-' . $type] = $phone;
+                    $object['phone'][] = array('number' => $phone, 'type' => $type);
+                }
+            }
         }
 
         foreach ($this->get_col_values('address', $contact) as $type => $values) {
