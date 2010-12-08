@@ -42,14 +42,7 @@ if ($RCMAIL->action == 'photo') {
             $data = base64_decode($data, true);
     }
     
-    // check some magic numbers to detect image type
-    $type = 'jpeg';
-    if (preg_match('/^\x89\x50\x4E\x47/', $data))      $type = 'png';
-    else if (preg_match('/^\x47\x49\x46\x38/', $data)) $type = 'gif';
-    else if (preg_match('/^\x00\x00\x01\x00/', $data)) $type = 'ico';
-//  else if (preg_match('/^\xFF\xD8\xFF\xE0/', $data)) $type = 'jpeg';
-    
-    header('Content-Type: image/' . $type);
+    header('Content-Type: ' . rc_image_content_type($data));
     echo $data ? $data : file_get_contents('program/blank.gif');
     exit;
 }
