@@ -1003,11 +1003,7 @@ function rcube_webmail()
 
       case 'export':
         if (this.contact_list.rowcount > 0) {
-          var add_url = (this.env.source ? '_source='+urlencode(this.env.source)+'&' : '');
-          if (this.env.search_request)
-            add_url += '_search='+this.env.search_request;
-
-          this.goto_url('export', add_url);
+          this.goto_url('export', { _source:this.env.source, _gid:this.env.group, _search:this.env.search_request });
         }
         break;
         
@@ -5174,6 +5170,39 @@ function rcube_webmail()
   /********************************************************/
   /*********        remote request methods        *********/
   /********************************************************/
+  
+  // compose a valid url with the given parameters
+  this.url = function(action, query)
+  {
+    var querystring = typeof(query) == 'string' ? '&' + query : '';
+    
+    if (typeof action != 'string')
+      query = action;
+    else if (!query || typeof(query) != 'object')
+      query = {};
+    
+    if (action)
+      query._action = action;
+    else
+      query._action = this.env.action;
+    
+    var base = this.env.comm_path;
+
+    // overwrite task name
+    if (query._action.match(/([a-z]+)\/([a-z-_]+)/)) {
+      query._action = RegExp.$2;
+      base = base.replace(/\_task=[a-z]+/, '_task='+RegExp.$1);
+    }
+    
+    // remove undefined values
+    var param = {};
+    for (var k in query) {
+      if (typeof(query[k]) != 'undefined' && query[k] !== null)
+        param[k] = query[k];
+    }
+    
+    return base + '&' + $.param(param) + querystring;
+  };
 
   this.redirect = function(url, lock)
   {
@@ -5188,28 +5217,14 @@ function rcube_webmail()
 
   this.goto_url = function(action, query, lock)
   {
-    var url = this.env.comm_path,
-     querystring = query ? '&'+query : '';
-
-    // overwrite task name
-    if (action.match(/([a-z]+)\/([a-z-_]+)/)) {
-      action = RegExp.$2;
-      url = url.replace(/\_task=[a-z]+/, '_task='+RegExp.$1);
-    }
-
-    this.redirect(url+'&_action='+action+querystring, lock);
+    alert(this.url(action, query));
+    this.redirect(this.url(action, query));
   };
 
   // send a http request to the server
   this.http_request = function(action, query, lock)
   {
-    var url = this.env.comm_path;
-
-    // overwrite task name
-    if (action.match(/([a-z]+)\/([a-z-_]+)/)) {
-      action = RegExp.$2;
-      url = url.replace(/\_task=[a-z]+/, '_task='+RegExp.$1);
-    }
+    var url = this.url(action, query);
 
     // trigger plugin hook
     var result = this.triggerEvent('request'+action, query);
@@ -5222,7 +5237,7 @@ function rcube_webmail()
         query = result;
     }
 
-    url += '&_remote=1&_action=' + action + (query ? '&' : '') + query;
+    url += '&_remote=1';
 
     // send request
     console.log('HTTP GET: ' + url);
@@ -5236,15 +5251,7 @@ function rcube_webmail()
   // send a http POST request to the server
   this.http_post = function(action, postdata, lock)
   {
-    var url = this.env.comm_path;
-
-    // overwrite task name
-    if (action.match(/([a-z]+)\/([a-z-_]+)/)) {
-      action = RegExp.$2;
-      url = url.replace(/\_task=[a-z]+/, '_task='+RegExp.$1);
-    }
-
-    url += '&_action=' + action;
+    var url = this.url(action);
 
     if (postdata && typeof(postdata) == 'object') {
       postdata._remote = 1;
@@ -5417,7 +5424,7 @@ function rcube_webmail()
     $(frame_name).bind('load', {ts:ts}, onload);
 
     form.target = frame_name;
-    form.action = this.env.comm_path + '&_action=' + action + '&_uploadid=' + ts;
+    form.action = this.url(action, { _uploadid:ts });
     form.setAttribute('enctype', 'multipart/form-data');
     form.submit();
   };
