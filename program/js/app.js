@@ -5217,7 +5217,6 @@ function rcube_webmail()
 
   this.goto_url = function(action, query, lock)
   {
-    alert(this.url(action, query));
     this.redirect(this.url(action, query));
   };
 
