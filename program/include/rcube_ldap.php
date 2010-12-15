@@ -57,9 +57,22 @@ class rcube_ldap extends rcube_addressbook
   {
     $this->prop = $p;
 
-    foreach ($p as $prop => $value)
-      if (preg_match('/^(.+)_field$/', $prop, $matches))
-        $this->fieldmap[$matches[1]] = $this->_attr_name(strtolower($value));
+    // fieldmap property is given
+    if (is_array($p['fieldmap'])) {
+      foreach ($p['fieldmap'] as $rf => $lf)
+          $this->fieldmap[$rf] = $this->_attr_name(strtolower($lf));
+    }
+    else {
+      // read deprecated *_field properties to remain backwards compatible
+      foreach ($p as $prop => $value)
+        if (preg_match('/^(.+)_field$/', $prop, $matches))
+          $this->fieldmap[$matches[1]] = $this->_attr_name(strtolower($value));
+    }
+    
+    // use fieldmap to advertise supported coltypes to the application
+    $this->coltypes = array_keys($this->fieldmap);
+    if ($this->fieldmap['street'] && $this->fieldmap['locality'])
+      $this->coltypes[] = 'address';
 
     // make sure 'required_fields' is an array
     if (!is_array($this->prop['required_fields']))
@@ -679,8 +692,6 @@ class rcube_ldap extends rcube_addressbook
    */
   private function _ldap2result($rec)
   {
-    global $RCMAIL;
-
     $out = array();
     
     if ($rec['dn'])
@@ -688,11 +699,17 @@ class rcube_ldap extends rcube_addressbook
     
     foreach ($this->fieldmap as $rf => $lf)
     {
-      if ($rec[$lf]['count']) {
-        if ($rf == 'email' && $this->mail_domain && !strpos($rec[$lf][0], '@'))
-          $out[$rf] = sprintf('%s@%s', $rec[$lf][0], $this->mail_domain);
+      for ($i=0; $i < $rec[$lf]['count']; $i++) {
+        if (!($value = $rec[$lf][$i]))
+          continue;
+        if ($rf == 'email' && $this->mail_domain && !strpos($value, '@'))
+          $out[$rf][] = sprintf('%s@%s', $value, $this->mail_domain);
+        else if (in_array($rf, array('street','zipcode','locality','country','region')))
+          $out['address'][$i][$rf] = $value;
+        else if ($rec[$lf]['count'] > 1)
+          $out[$rf][] = $value;
         else
-          $out[$rf] = $rec[$lf][0];
+          $out[$rf] = $value;
       }
     }
     

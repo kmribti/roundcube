@@ -448,7 +448,6 @@ $rcmail_config['ldap_public']['Verisign'] = array(
   // The login name is used to search for the DN to bind with
   'search_base_dn' => '',
   'search_filter'  => '',   // e.g. '(&(objectClass=posixAccount)(uid=%u))'
-
   'writable'      => false,   // Indicates if we can write to the LDAP directory or not.
   // If writable is true then these fields need to be populated:
   // LDAP_Object_Classes, required_fields, LDAP_rdn
@@ -457,10 +456,19 @@ $rcmail_config['ldap_public']['Verisign'] = array(
   'LDAP_rdn'      => 'mail', // The RDN field that is used for new entries, this field needs to be one of the search_fields, the base of base_dn is appended to the RDN to insert into the LDAP directory.
   'ldap_version'  => 3,       // using LDAPv3
   'search_fields' => array('mail', 'cn'),  // fields to search in
-  'name_field'    => 'cn',    // this field represents the contact's name
-  'email_field'   => 'mail',  // this field represents the contact's e-mail
-  'surname_field' => 'sn',    // this field represents the contact's last name
-  'firstname_field' => 'gn',  // this field represents the contact's first name
+  'fieldmap' => array(      // mapping of contact fields to directory attributes
+    // roundcube  => ldap
+    'name'        => 'cn',
+    'surname'     => 'sn',
+    'firstname'   => 'givenName',
+    'phone'       => 'telephoneNumber',
+    'email'       => 'mail',
+    'street'      => 'street',
+    'zipcode'     => 'postalCode',
+    'locality'    => 'l',
+    'country'     => 'c',
+    'organization' => 'o',
+  ),
   'sort'          => 'cn',    // The field to sort the listing by.
   'scope'         => 'sub',   // search mode: sub|base|list
   'filter'        => '',      // used for basic listing (if not empty) and will be &'d with search queries. example: status=act
