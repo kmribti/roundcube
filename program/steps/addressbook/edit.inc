@@ -54,7 +54,7 @@ function rcmail_contact_edithead($attrib)
                 'surname' => array('size' => $i_size, 'visible' => true),
                 'suffix' => array('size' => $i_size),
                 'name' => array('size' => 2*$i_size),
-                'nickname' => array('size' => $i_size),
+                'nickname' => array('size' => 2*$i_size),
                 'company' => array('size' => $i_size),
                 'department' => array('size' => $i_size),
                 'jobtitle' => array('size' => $i_size),
@@ -74,7 +74,7 @@ function rcmail_contact_edithead($attrib)
 
 function rcmail_contact_editform($attrib)
 {
-   global $RCMAIL, $CONTACTS;
+   global $RCMAIL, $CONTACTS, $CONTACT_COLTYPES;
 
     // check if we have a valid result
     if ($RCMAIL->action != 'add'
@@ -105,14 +105,17 @@ function rcmail_contact_editform($attrib)
                 'im' => array('size' => $i_size),
             ),
         ),
-        'notes' => array(
+    );
+    
+    if (isset($CONTACT_COLTYPES['notes'])) {
+        $form['notes'] = array(
             'name'    => rcube_label('notes'),
             'content' => array(
                 'notes' => array('size' => $t_cols, 'rows' => $t_rows, 'label' => false, 'visible' => true, 'limit' => 1),
             ),
             'single' => true,
-        )
-    );
+        );
+    }
 
     list($form_start, $form_end) = get_form_tags($attrib);
     unset($attrib['form']);

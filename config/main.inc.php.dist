@@ -487,6 +487,10 @@ $rcmail_config['autocomplete_addressbooks'] = array('sql');
 // may need to do lengthy results building given overly-broad searches
 $rcmail_config['autocomplete_min_length'] = 1;
 
+// show address fields in this order
+// available placeholders: {street}, {locality}, {zipcode}, {country}, {region}
+$rcmail_config['address_template'] = '{street}<br/>{locality} {zipcode}<br/>{country} {region}';
+
 // ----------------------------------
 // USER PREFERENCES
 // ----------------------------------

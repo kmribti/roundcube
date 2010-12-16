@@ -79,7 +79,7 @@ function rcmail_contact_head($attrib)
 
 function rcmail_contact_details($attrib)
 {
-    global $CONTACTS, $RCMAIL;
+    global $CONTACTS, $RCMAIL, $CONTACT_COLTYPES;
 
     // check if we have a valid result
     if (!(($result = $CONTACTS->get_result()) && ($record = $result->first()))) {
@@ -103,17 +103,23 @@ function rcmail_contact_details($attrib)
               'im' => array('size' => $i_size),
             ),
         ),
-        'notes' => array(
+    );
+    
+    if (isset($CONTACT_COLTYPES['notes'])) {
+        $form['notes'] = array(
             'name'    => rcube_label('notes'),
             'content' => array(
                 'notes' => array('type' => 'textarea', 'label' => false),
             ),
-        ),
-        'groups' => array(
+        );
+    }
+    
+    if ($CONTACTS->groups) {
+        $form['groups'] = array(
             'name'    => rcube_label('groups'),
             'content' => rcmail_contact_record_groups($record['ID']),
-        ),
-    );
+        );
+    }
 
     return rcmail_contact_form($form, $record);
 }

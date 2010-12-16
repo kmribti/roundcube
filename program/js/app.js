@@ -4751,7 +4751,7 @@ function rcube_webmail()
   {
     elem._hasfocus = false;
     var $elem = $(elem);
-    if (!$elem.val() && elem._placeholder)
+    if (elem._placeholder && (!$elem.val() || $elem.val() == elem._placeholder))
       $elem.addClass('placeholder').attr('spellcheck', false).val(elem._placeholder);
   };
   

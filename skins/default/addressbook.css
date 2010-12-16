@@ -245,7 +245,9 @@ body.iframe,
 }
 
 #contacthead span.nickname:before,
-#contacthead span.nickname:after
+#contacthead span.nickname:after,
+#contacthead input.ff_nickname:before,
+#contacthead input.ff_nickname:after
 {
 	content: '"';
 }
@@ -345,19 +347,15 @@ fieldset.contactfieldgroup legend
 {
 	padding-left: 90px;
 	min-height: 1em;
+	line-height: 1.3em;
 }
 
-.contactcontrolleraddress .contactfieldcontent {
-	width: 30em;
+.contactfieldgroup .contactfield {
+	line-height: 1.3em;
 }
 
 .contactcontrolleraddress .contactfieldcontent input {
 	margin-bottom: 0.1em;
-}
-
-.contactcontrolleraddress span.street,
-.contactcontrolleraddress span.country {
-	display: block;
 }
 
 .contactfieldcontent .contactfieldbutton {

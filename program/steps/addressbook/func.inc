@@ -329,7 +329,8 @@ function rcmail_contact_form($form, $record, $attrib = null)
             // group fields
             $field_blocks = array(
                 'names'    => array('prefix','firstname','middlename','surname','suffix'),
-                'addnames' => array('name','nickname'),
+                'displayname' => array('name'),
+                'nickname' => array('nickname'),
                 'jobnames' => array('organization','department','jobtitle'),
             );
             foreach ($field_blocks as $blockname => $colnames) {
@@ -429,24 +430,25 @@ function rcmail_contact_form($form, $record, $attrib = null)
 
                     // render composite field
                     if ($colprop['type'] == 'composite') {
-                        $composite = ''; $j = 0;
+                        $composite = array(); $j = 0;
+                        $template = $RCMAIL->config->get($col . '_template', '{'.join('} {', array_keys($colprop['childs'])).'}');
                         foreach ($colprop['childs'] as $childcol => $cp) {
                             $childvalue = $val[$childcol] ? $val[$childcol] : $val[$j];
 
                             if ($edit_mode) {
                                 if ($colprop['subtypes'] || $colprop['limit'] != 1) $cp['array'] = true;
-                                $composite .= rcmail_get_edit_field($childcol, $childvalue, $cp, $cp['type']) . " ";
+                                $composite['{'.$childcol.'}'] = rcmail_get_edit_field($childcol, $childvalue, $cp, $cp['type']) . " ";
                             }
                             else {
                                 $childval = $cp['render_func'] ? call_user_func($cp['render_func'], $childvalue, $childcol) : Q($childvalue);
-                                $composite .= html::span('data ' . $childcol, $childval) . " ";
+                                $composite['{'.$childcol.'}'] = html::span('data ' . $childcol, $childval) . " ";
                             }
                             $j++;
                         }
 
                         $coltypes[$field] += (array)$colprop;
                         $coltypes[$field]['count']++;
-                        $val = $composite;
+                        $val = strtr($template, $composite);
                     }
                     else if ($edit_mode) {
                         // call callback to render/format value
