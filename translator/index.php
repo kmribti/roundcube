@@ -32,7 +32,7 @@ ob_end_clean();
 
 <div id="banner">
   <div class="banner-bg"></div>
-  <div class="banner-logo"><a href="http://roundcube.net"><img src="images/rcube_logo.gif" width="210" height="55" border="0" alt="Roundcube - Open source webmail project" /></a></div>
+  <div class="banner-logo"><a href="/"><img src="images/rcube_logo.gif" width="210" height="55" border="0" alt="Roundcube - Open source webmail project" /></a></div>
   <h1>Roundcube (Live) Translator</h1>
 </div>
 

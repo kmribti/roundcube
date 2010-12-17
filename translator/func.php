@@ -167,7 +167,7 @@ function localization_stats($force = false)
 
 		$count = count_lines($l_key, LABELS);
 		$count += count_lines($l_key, MESSAGES);
-		$percent = ($count * 100) / $us_count;
+		$percent = min(100, ($count * 100) / $us_count);
 		
 		$rows[] = sprintf("<tr><td class=\"lang%s\">%s</td><td class=\"percent%s\">%.1f %%</td></tr>\n",
 			($i%2 ? ' zebra' : ''), htmlspecialchars($l_value), ($i%2 ? ' zebra' : ''), $percent);
