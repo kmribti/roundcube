@@ -330,6 +330,10 @@ class rcmail
     if ($plugin['instance'] instanceof rcube_addressbook) {
       $contacts = $plugin['instance'];
     }
+    // use existing instance
+    else if (isset($this->address_books[$id]) && is_a($this->address_books[$id], 'rcube_addressbook') && (!$writeable || !$this->address_books[$id]->readonly)) {
+      $contacts = $this->address_books[$id];
+    }
     else if ($id && $ldap_config[$id]) {
       $contacts = new rcube_ldap($ldap_config[$id], $this->config->get('ldap_debug'), $this->config->mail_domain($_SESSION['imap_host']));
     }
@@ -372,11 +376,12 @@ class rcmail
 
     // We are using the DB address book
     if ($abook_type != 'ldap') {
-      $contacts = new rcube_contacts($this->db, null);
+      if (!isset($this->address_books['0']))
+        $this->address_books['0'] = new rcube_contacts($this->db, $this->user->ID);
       $list['0'] = array(
-        'id' => 0,
+        'id' => '0',
         'name' => rcube_label('personaladrbook'),
-        'groups' => $contacts->groups,
+        'groups' => $this->address_books['0']->groups,
         'readonly' => false,
         'autocomplete' => in_array('sql', $autocomplete)
       );

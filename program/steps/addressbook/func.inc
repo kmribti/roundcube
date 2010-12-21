@@ -118,23 +118,21 @@ function rcmail_directory_list($attrib)
         html::a(array('href' => '%s',
             'onclick' => "return ".JS_OBJECT_NAME.".command('list','%s',this)"), '%s'));
 
-    if (!$current && strtolower($RCMAIL->config->get('address_book_type', 'sql')) != 'ldap') {
-        $current = '0';
-    }
-    else if (!$current) {
-        // DB address book not used, see if a source is set, if not use the
-        // first LDAP directory.
-        $current = key((array)$RCMAIL->config->get('ldap_public', array()));
-    }
+    // currently selected is the first address source in the list
+    if (!isset($current))
+        $current = strval(key((array)$OUTPUT->env['address_sources']));
 
     foreach ((array)$OUTPUT->env['address_sources'] as $j => $source) {
-        $id = $source['id'] ? $source['id'] : $j;
+        $id = strval($source['id'] ? $source['id'] : $j);
         $js_id = JQ($id);
         $dom_id = preg_replace('/[^a-z0-9\-_]/i', '', $id);
-        $out .= sprintf($line_templ, $dom_id, ($current == $id ? 'selected' : ''),
+        $out .= sprintf($line_templ, $dom_id, ($current === $id ? 'selected' : ''),
             Q(rcmail_url(null, array('_source' => $id))),
             $js_id, (!empty($source['name']) ? Q($source['name']) : Q($id)));
-        $groupdata = rcmail_contact_groups(array('out' => $out, 'jsdata' => $jsdata, 'source' => $id));
+
+        $groupdata = array('out' => $out, 'jsdata' => $jsdata, 'source' => $id);
+        if ($source['groups'])
+            $groupdata = rcmail_contact_groups($groupdata);
         $jsdata = $groupdata['jsdata'];
         $out = $groupdata['out'];
     }
