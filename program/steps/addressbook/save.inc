@@ -206,7 +206,8 @@ if (!empty($cid))
   }
   else {
     // show error message
-    $OUTPUT->show_message($plugin['message'] ? $plugin['message'] : 'errorsaving', 'error', null, false);
+    $err = $CONTACTS->get_error();
+    $OUTPUT->show_message($plugin['message'] ? $plugin['message'] : ($err['message'] ? $err['message'] : 'errorsaving'), 'error', null, false);
     rcmail_overwrite_action('show');
   }
 }
@@ -258,7 +259,8 @@ else {
   }
   else {
     // show error message
-    $OUTPUT->show_message($plugin['message'] ? $plugin['message'] : 'errorsaving', 'error', null, false);
+    $err = $CONTACTS->get_error();
+    $OUTPUT->show_message($plugin['message'] ? $plugin['message'] : ($err['message'] ? $err['message'] : 'errorsaving'), 'error', null, false);
     rcmail_overwrite_action('add');
   }
 }

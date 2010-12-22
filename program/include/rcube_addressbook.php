@@ -27,6 +27,12 @@
  */
 abstract class rcube_addressbook
 {
+    /** constants for error reporting **/
+    const ERROR_READ_ONLY = 1;
+    const ERROR_NO_CONNECTION = 2;
+    const ERROR_INCOMPLETE = 3;
+    const ERROR_SAVING = 4;
+    
     /** public properties (mandatory) */
     public $primary_key;
     public $groups = false;
@@ -35,6 +41,8 @@ abstract class rcube_addressbook
     public $list_page = 1;
     public $page_size = 10;
     public $coltypes = array('name' => array('limit'=>1), 'firstname' => array('limit'=>1), 'surname' => array('limit'=>1), 'email' => array('limit'=>1));
+    
+    protected $error;
 
     /**
      * Save a search string for future listings
@@ -99,6 +107,27 @@ abstract class rcube_addressbook
      * @return mixed Result object with all record fields or False if not found
      */
     abstract function get_record($id, $assoc=false);
+
+    /**
+     * Returns the last error occured (e.g. when updating/inserting failed)
+     *
+     * @return array Hash array with the following fields: type, message
+     */
+    function get_error()
+    {
+      return $this->error;
+    }
+    
+    /**
+     * Setter for errors for internal use
+     *
+     * @param int Error type (one of this class' error constants)
+     * @param string Error message (name of a text label)
+     */
+    protected function set_error($type, $message)
+    {
+      $this->error = array('type' => $type, 'message' => $message);
+    }
 
     /**
      * Close connection to source

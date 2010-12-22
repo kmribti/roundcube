@@ -26,24 +26,24 @@
  */
 class rcube_ldap extends rcube_addressbook
 {
-  var $conn;
-  var $prop = array();
-  var $fieldmap = array();
+  protected $conn;
+  protected $prop = array();
+  protected $fieldmap = array();
 
-  var $filter = '';
-  var $result = null;
-  var $ldap_result = null;
-  var $sort_col = '';
-  var $mail_domain = '';
-  var $debug = false;
+  protected $filter = '';
+  protected $result = null;
+  protected $ldap_result = null;
+  protected $sort_col = '';
+  protected $mail_domain = '';
+  protected $debug = false;
 
   /** public properties */
-  var $primary_key = 'ID';
-  var $readonly = true;
-  var $list_page = 1;
-  var $page_size = 10;
-  var $ready = false;
-  var $coltypes = array();
+  public $primary_key = 'ID';
+  public $readonly = true;
+  public $list_page = 1;
+  public $page_size = 10;
+  public $ready = false;
+  public $coltypes = array();
 
 
   /**
@@ -523,15 +523,18 @@ class rcube_ldap extends rcube_addressbook
 
     // Verify that the required fields are set.
     foreach ($this->prop['required_fields'] as $fld) {
-      $complete = true;
+      $missing = null;
       if (!isset($newentry[$fld])) {
-        $complete = true;
-      } // end if
-    } // end foreach
+        $missing[] = $fld;
+      }
+    }
     
     // abort process if requiered fields are missing
-    if (!$complete)
+    // TODO: generate message saying which fields are missing
+    if ($missing) {
+      $this->set_error(self::ERROR_INCOMPLETE, 'formincomplete');
       return false;
+    }
 
     // Build the new entries DN.
     $dn = $this->prop['LDAP_rdn'].'='.rcube_ldap::quote_string($newentry[$this->prop['LDAP_rdn']], true).','.$this->prop['base_dn'];
@@ -541,6 +544,7 @@ class rcube_ldap extends rcube_addressbook
     $res = ldap_add($this->conn, $dn, $newentry);
     if ($res === FALSE) {
       $this->_debug("S: ".ldap_error($this->conn));
+      $this->set_error(self::ERROR_SAVING, 'errorsaving');
       return false;
     } // end if
 
@@ -599,6 +603,7 @@ class rcube_ldap extends rcube_addressbook
       $this->_debug("C: Delete [dn: $dn]: ".print_r($deletedata, true));
       if (!ldap_mod_del($this->conn, $dn, $deletedata)) {
         $this->_debug("S: ".ldap_error($this->conn));
+        $this->set_error(self::ERROR_SAVING, 'errorsaving');
         return false;
       }
       $this->_debug("S: OK");
@@ -632,6 +637,7 @@ class rcube_ldap extends rcube_addressbook
       $this->_debug("C: Add [dn: $dn]: ".print_r($newdata, true));
       if (!ldap_mod_add($this->conn, $dn, $newdata)) {
         $this->_debug("S: ".ldap_error($this->conn));
+        $this->set_error(self::ERROR_SAVING, 'errorsaving');
         return false;
       }
       $this->_debug("S: OK");
@@ -671,6 +677,7 @@ class rcube_ldap extends rcube_addressbook
       $res = ldap_delete($this->conn, $dn);
       if ($res === FALSE) {
         $this->_debug("S: ".ldap_error($this->conn));
+        $this->set_error(self::ERROR_SAVING, 'errorsaving');
         return false;
       } // end if
       $this->_debug("S: OK");

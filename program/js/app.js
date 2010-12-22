@@ -4804,7 +4804,7 @@ function rcube_webmail()
     }
     else {
       obj.appendTo(cont).bind('mousedown', function(){ return ref.hide_message(obj); });
-      window.setTimeout(function(){ ref.hide_message(obj, true); }, this.message_time);
+      window.setTimeout(function(){ ref.hide_message(obj, true); }, this.message_time * (type == 'warning' || type == 'error' ? 2 : 1));
       return obj;
     }
   };
