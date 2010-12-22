@@ -321,7 +321,6 @@ function rcube_webmail()
           this.enable_command('save', true);
           this.enable_command('upload-photo', this.env.coltypes.photo ? true : false);
           this.enable_command('delete-photo', this.env.coltypes.photo && this.env.action == 'edit');
-          $("input[type='text']").first().select();
 
           for (var col in this.env.coltypes)
             this.init_edit_field(col, null);
@@ -332,6 +331,8 @@ function rcube_webmail()
             ref.insert_edit_field($(this).val(), $(this).attr('rel'), this);
             this.selectedIndex = 0;
           });
+
+          $("input[type='text']").first().focus();
         }
         else if (this.gui_objects.qsearchbox) {
           this.enable_command('search', 'reset-search', 'moveto', true);

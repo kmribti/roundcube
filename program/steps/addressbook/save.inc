@@ -119,8 +119,8 @@ foreach ($GLOBALS['CONTACT_COLTYPES'] as $col => $colprop) {
     $values = get_input_value($fname, RCUBE_INPUT_POST);
     $subtypes = get_input_value('_subtype_' . $col, RCUBE_INPUT_POST);
     foreach ($values as $i => $val) {
-      $subtype = $subtypes[$i] ? $subtypes[$i] : 'home';
-      $a_record[$col.':'.$subtype][] = $val;
+      $subtype = $subtypes[$i] ? ':'.$subtypes[$i] : '';
+      $a_record[$col.$subtype][] = $val;
     }
   }
   else if (isset($_POST[$fname])) {

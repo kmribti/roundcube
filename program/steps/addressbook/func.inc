@@ -84,7 +84,7 @@ $CONTACT_COLTYPES = array(
   'im'           => array('type' => 'text', 'size' => 40, 'label' => rcube_label('instantmessenger'), 'subtypes' => array('aim','icq','msn','yahoo','jabber','other')),
   'notes'        => array('type' => 'textarea', 'size' => 40, 'rows' => 15, 'label' => rcube_label('notes'), 'limit' => 1),
   'photo'        => array('type' => 'image', 'limit' => 1),
-  // TODO: define fields for vcards GEO, PHOTO, KEY, X-ANNIVERSARY, X-ASSISTANT, X-MANAGER
+  // TODO: define fields for vcards GEO, KEY, X-ANNIVERSARY, X-ASSISTANT, X-MANAGER
 );
 
 // reduce/extend $CONTACT_COLTYPES with specification from the current $CONTACT object

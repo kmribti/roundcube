@@ -43,6 +43,7 @@ class rcube_ldap extends rcube_addressbook
   var $list_page = 1;
   var $page_size = 10;
   var $ready = false;
+  var $coltypes = array();
 
 
   /**
@@ -72,8 +73,10 @@ class rcube_ldap extends rcube_addressbook
     // use fieldmap to advertise supported coltypes to the application
     foreach ($this->fieldmap as $col => $lf) {
       list($col, $type) = explode(':', $col);
-      if (!is_array($this->coltypes[$col]))
-        $this->coltypes[$col] = array('limit' => 1, 'subtypes' => array($type));
+      if (!is_array($this->coltypes[$col])) {
+        $subtypes = $type ? array($type) : null;
+        $this->coltypes[$col] = array('limit' => 2, 'subtypes' => $subtypes);
+      }
       else if ($type) {
         $this->coltypes[$col]['subtypes'][] = $type;
         $this->coltypes[$col]['limit']++;
@@ -85,7 +88,7 @@ class rcube_ldap extends rcube_addressbook
     if ($this->fieldmap['street'] && $this->fieldmap['locality'])
       $this->coltypes['address'] = array('limit' => 1);
     else if ($this->coltypes['address'])
-      $this->coltypes['address'] = array('type' => 'textarea', 'childs' => null, 'limit' => 1);
+      $this->coltypes['address'] = array('type' => 'textarea', 'childs' => null, 'limit' => 1, 'size' => 40);
 
     // make sure 'required_fields' is an array
     if (!is_array($this->prop['required_fields']))
@@ -481,7 +484,7 @@ class rcube_ldap extends rcube_addressbook
 
       if ($entry && ($rec = ldap_get_attributes($this->conn, $entry)))
       {
-        $this->_debug("S: OK");
+        $this->_debug("S: OK"/* . print_r($rec, true)*/);
 
         $rec = array_change_key_case($rec, CASE_LOWER);
 
@@ -508,8 +511,10 @@ class rcube_ldap extends rcube_addressbook
     // Map out the column names to their LDAP ones to build the new entry.
     $newentry = array();
     $newentry['objectClass'] = $this->prop['LDAP_Object_Classes'];
-    foreach ($save_cols as $col => $val) {
-      $fld = $this->_map_field($col);
+    foreach ($this->fieldmap as $col => $fld) {
+      $val = $save_cols[$col];
+      if (is_array($val))
+        $val = array_filter($val);  // remove empty entries
       if ($fld && $val) {
         // The field does exist, add it to the entry.
         $newentry[$fld] = $val;
@@ -517,17 +522,19 @@ class rcube_ldap extends rcube_addressbook
     } // end foreach
 
     // Verify that the required fields are set.
-    // We know that the email address is required as a default of rcube, so
-    // we will default its value into any unfilled required fields.
     foreach ($this->prop['required_fields'] as $fld) {
+      $complete = true;
       if (!isset($newentry[$fld])) {
-        $newentry[$fld] = $newentry[$this->_map_field('email')];
+        $complete = true;
       } // end if
     } // end foreach
+    
+    // abort process if requiered fields are missing
+    if (!$complete)
+      return false;
 
     // Build the new entries DN.
-    $dn = $this->prop['LDAP_rdn'].'='.rcube_ldap::quote_string($newentry[$this->prop['LDAP_rdn']], true)
-      .','.$this->prop['base_dn'];
+    $dn = $this->prop['LDAP_rdn'].'='.rcube_ldap::quote_string($newentry[$this->prop['LDAP_rdn']], true).','.$this->prop['base_dn'];
 
     $this->_debug("C: Add [dn: $dn]: ".print_r($newentry, true));
 
@@ -771,6 +778,10 @@ class rcube_ldap extends rcube_addressbook
    */
   function quote_string($str, $dn=false)
   {
+    // take firt entry if array given
+    if (is_array($str))
+      $str = reset($str);
+    
     if ($dn)
       $replace = array(','=>'\2c', '='=>'\3d', '+'=>'\2b', '<'=>'\3c',
         '>'=>'\3e', ';'=>'\3b', '\\'=>'\5c', '"'=>'\22', '#'=>'\23');

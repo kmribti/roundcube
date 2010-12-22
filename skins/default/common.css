@@ -76,7 +76,8 @@ input, textarea
   padding: 1px 3px;
 }
 
-input.placeholder
+input.placeholder,
+textarea.placeholder
 {
   color: #aaa;
 }
