@@ -125,7 +125,7 @@ function rcmail_directory_list($attrib)
     foreach ((array)$OUTPUT->env['address_sources'] as $j => $source) {
         $id = strval($source['id'] ? $source['id'] : $j);
         $js_id = JQ($id);
-        $dom_id = preg_replace('/[^a-z0-9\-_]/i', '', $id);
+        $dom_id = preg_replace('/[^a-z0-9\-_]/i', '_', $id);
         $out .= sprintf($line_templ, $dom_id, ($current === $id ? 'selected' : ''),
             Q(rcmail_url(null, array('_source' => $id))),
             $js_id, (!empty($source['name']) ? Q($source['name']) : Q($id)));
@@ -499,8 +499,8 @@ function rcmail_contact_form($form, $record, $attrib = null)
             }
 
             // also render add-field selector
-            if ($edit_mode && $select_add->_count)
-                $content .= html::p('addfield', $select_add->show(null));
+            if ($edit_mode)
+                $content .= html::p('addfield', $select_add->show(null, array('style' => $select_add->_count ? null : 'display:none')));
 
             $content = html::div(array('id' => 'contactsection' . $section), $content);
         }

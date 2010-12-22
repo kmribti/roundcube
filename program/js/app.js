@@ -4082,9 +4082,8 @@ function rcube_webmail()
         option.attr('disabled', false);
       else
         option = $('<option>').attr('value', col).html(colprop.label).appendTo(addmenu);
+      addmenu.show();
     }
-    else
-      alert('addmennu not found')
   };
 
 

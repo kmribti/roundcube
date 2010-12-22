@@ -60,7 +60,7 @@ class rcube_ldap extends rcube_addressbook
     // fieldmap property is given
     if (is_array($p['fieldmap'])) {
       foreach ($p['fieldmap'] as $rf => $lf)
-          $this->fieldmap[$rf] = $this->_attr_name(strtolower($lf));
+        $this->fieldmap[$rf] = $this->_attr_name(strtolower($lf));
     }
     else {
       // read deprecated *_field properties to remain backwards compatible
@@ -70,9 +70,22 @@ class rcube_ldap extends rcube_addressbook
     }
     
     // use fieldmap to advertise supported coltypes to the application
-    $this->coltypes = array_keys($this->fieldmap);
+    foreach ($this->fieldmap as $col => $lf) {
+      list($col, $type) = explode(':', $col);
+      if (!is_array($this->coltypes[$col]))
+        $this->coltypes[$col] = array('limit' => 1, 'subtypes' => array($type));
+      else if ($type) {
+        $this->coltypes[$col]['subtypes'][] = $type;
+        $this->coltypes[$col]['limit']++;
+      }
+      if ($type && !$this->fieldmap[$col])
+        $this->fieldmap[$col] = $lf;
+    }
+    
     if ($this->fieldmap['street'] && $this->fieldmap['locality'])
-      $this->coltypes[] = 'address';
+      $this->coltypes['address'] = array('limit' => 1);
+    else if ($this->coltypes['address'])
+      $this->coltypes['address'] = array('type' => 'textarea', 'childs' => null, 'limit' => 1);
 
     // make sure 'required_fields' is an array
     if (!is_array($this->prop['required_fields']))
@@ -546,8 +559,8 @@ class rcube_ldap extends rcube_addressbook
     $newdata = array();
     $replacedata = array();
     $deletedata = array();
-    foreach ($save_cols as $col => $val) {
-      $fld = $this->_map_field($col);
+    foreach ($this->fieldmap as $col => $fld) {
+      $val = $save_cols[$col];
       if ($fld) {
         // The field does exist compare it to the ldap record.
         if ($record[$col] != $val) {
@@ -588,11 +601,11 @@ class rcube_ldap extends rcube_addressbook
       // Handle RDN change
       if ($replacedata[$this->prop['LDAP_rdn']]) {
         $newdn = $this->prop['LDAP_rdn'].'='
-	  .rcube_ldap::quote_string($replacedata[$this->prop['LDAP_rdn']], true)
-	  .','.$this->prop['base_dn']; 
+          .rcube_ldap::quote_string($replacedata[$this->prop['LDAP_rdn']], true)
+          .','.$this->prop['base_dn'];
         if ($dn != $newdn) {
           $newrdn = $this->prop['LDAP_rdn'].'='
-	    .rcube_ldap::quote_string($replacedata[$this->prop['LDAP_rdn']], true);
+            .rcube_ldap::quote_string($replacedata[$this->prop['LDAP_rdn']], true);
           unset($replacedata[$this->prop['LDAP_rdn']]);
         }
       }
@@ -602,7 +615,7 @@ class rcube_ldap extends rcube_addressbook
         if (!ldap_mod_replace($this->conn, $dn, $replacedata)) {
           $this->_debug("S: ".ldap_error($this->conn));
           return false;
-	}
+        }
         $this->_debug("S: OK");
       } // end if
     } // end if
