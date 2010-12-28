@@ -155,7 +155,7 @@ class rcube_contacts extends rcube_addressbook
     /**
      * List the current set of contact records
      *
-     * @param  array   List of cols to show
+     * @param  array   List of cols to show, Null means all
      * @param  int     Only return this number of records, use negative values for tail
      * @param  boolean True to skip the count query (select only)
      * @return array  Indexed list of contact records, each a hash array
@@ -190,12 +190,21 @@ class rcube_contacts extends rcube_addressbook
             $this->user_id,
             $this->group_id);
 
+        // determine whether we have to parse the vcard or if only db cols are requested
+        $read_vcard = !$cols || count(array_intersect($cols, array_keys($sql_arr))) < count($cols);
+        
         while ($sql_result && ($sql_arr = $this->db->fetch_assoc($sql_result))) {
             $sql_arr['ID'] = $sql_arr[$this->primary_key];
-            $sql_arr['email'] = preg_split('/,\s*/', $sql_arr['email']);
+
+            if ($read_vcard)
+                $sql_arr = $this->convert_db_data($sql_arr);
+            else
+                $sql_arr['email'] = preg_split('/,\s*/', $sql_arr['email']);
+            
             // make sure we have a name to display
             if (empty($sql_arr['name']))
                 $sql_arr['name'] = $sql_arr['email'][0];
+
             $this->result->add($sql_arr);
         }
 

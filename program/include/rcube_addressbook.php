@@ -64,6 +64,16 @@ abstract class rcube_addressbook
     abstract function reset();
 
     /**
+     * Refresh saved search set after data has changed
+     *
+     * @return mixed New search set
+     */
+    function refresh_search()
+    {
+        return $this->get_search_set();
+    }
+
+    /**
      * List the current set of contact records
      *
      * @param  array  List of cols to show

@@ -174,15 +174,15 @@ function rcmail_contacts_list($attrib)
 {
     global $CONTACTS, $OUTPUT;
 
+    // define list of cols to be displayed
+    $a_show_cols = array('name');
+
     // count contacts for this user
-    $result = $CONTACTS->list_records();
+    $result = $CONTACTS->list_records($a_show_cols);
 
     // add id to message list table if not specified
     if (!strlen($attrib['id']))
         $attrib['id'] = 'rcmAddressList';
-
-    // define list of cols to be displayed
-    $a_show_cols = array('name');
 
     // create XHTML table
     $out = rcube_table_output($attrib, $result->records, $a_show_cols, $CONTACTS->primary_key);

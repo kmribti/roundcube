@@ -797,7 +797,7 @@ function rcube_table_output($attrib, $table_data, $a_show_cols, $id_col)
 
       // format each col
       foreach ($a_show_cols as $col)
-        $table->add($col, Q($row_data[$col]));
+        $table->add($col, Q(is_array($row_data[$col]) ? $row_data[$col][0] : $row_data[$col]));
         
       $c++;
     }
