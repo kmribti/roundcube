@@ -92,7 +92,15 @@ function password_save($curpass, $passwd)
     if (Net_LDAP2::isError($userEntry->update())) {
         return PASSWORD_CONNECT_ERROR;
     }
-    
+
+    // Update Samba password fields, ignore errors if attributes are not found
+    if ($rcmail->config->get('password_ldap_samba')) {
+        $sambaNTPassword = hash('md4', rcube_charset_convert($passwd, RCMAIL_CHARSET, 'UTF-16LE'));
+        $userEntry->replace(array('sambaNTPassword' => $sambaNTPassword), $force);
+        $userEntry->replace(array('sambaPwdLastSet' => time()), $force);
+        $userEntry->update();
+    }
+
     // All done, no error
     return PASSWORD_SUCCESS;
 }

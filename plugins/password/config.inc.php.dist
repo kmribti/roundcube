@@ -195,6 +195,9 @@ $rcmail_config['password_ldap_force_replace'] = true;
 // Whenever the password is changed, the attribute will be updated if set (e.g. shadowLastChange)
 $rcmail_config['password_ldap_lchattr'] = '';
 
+// Also try to update Samba password attributes: sambaNTPassword and sambaPwdLastSet
+$rcmail_config['password_ldap_samba'] = false;
+
 
 // DirectAdmin Driver options
 // --------------------------

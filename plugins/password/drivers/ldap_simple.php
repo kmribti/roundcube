@@ -66,19 +66,25 @@ function password_save($curpass, $passwd)
 	}
 
 	/* Crypting new password */
-	$passwd = ldap_simple_hash_password($passwd, $rcmail->config->get('password_ldap_encodage'));
-	if (!$passwd) {
+	$crypted_pass = ldap_simple_hash_password($passwd, $rcmail->config->get('password_ldap_encodage'));
+	if (!$crypted_pass) {
 		ldap_unbind($ds);
 		return PASSWORD_CRYPT_ERROR;
 	}
 
-	$entree[$rcmail->config->get('password_ldap_pwattr')] = $passwd;
+	$entree[$rcmail->config->get('password_ldap_pwattr')] = $crypted_pass;
 
 	/* Updating PasswordLastChange Attribute if desired */
 	if ($lchattr = $rcmail->config->get('password_ldap_lchattr')) {
 		$entree[$lchattr] = (int)(time() / 86400);
 	}
 
+    /* Update Samba password fields */
+    if ($smbattr = $rcmail->config->get('password_ldap_samba')) {
+        $sambaNTPassword = hash('md4', rcube_charset_convert($passwd, RCMAIL_CHARSET, 'UTF-16LE'));
+        $entree['sambaNTPassword'] = $sambaNTPassword;
+        $entree['sambaPwdLastSet'] = time();
+    }
 
 	if (!ldap_modify($ds, $user_dn, $entree)) {
 		ldap_unbind($ds);
