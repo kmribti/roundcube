@@ -191,7 +191,7 @@ class rcube_contacts extends rcube_addressbook
             $this->group_id);
 
         // determine whether we have to parse the vcard or if only db cols are requested
-        $read_vcard = !$cols || count(array_intersect($cols, array_keys($sql_arr))) < count($cols);
+        $read_vcard = !$cols || count(array_intersect($cols, $this->table_cols)) < count($cols);
         
         while ($sql_result && ($sql_arr = $this->db->fetch_assoc($sql_result))) {
             $sql_arr['ID'] = $sql_arr[$this->primary_key];
