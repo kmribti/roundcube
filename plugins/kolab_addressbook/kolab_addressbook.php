@@ -116,12 +116,16 @@ class kolab_addressbook extends rcube_plugin
      */
     public function contact_form($p)
     {
+        // none of our business
+        if (!is_a($GLOBALS['CONTACTS'], 'rcube_kolab_contacts'))
+            return $p;
+          
         // extend the list of contact fields to be displayed in the 'info' section
         if (is_array($p['form']['info'])) {
             $p['form']['info']['content']['initials'] = array('size' => 6);
-            $p['form']['info']['content']['anniversary'] = array('size' => 12, 'render_func' => 'rcmail_format_date_col');
-            
-            // TODO: add more Kolab-specific fields
+            $p['form']['info']['content']['officelocation'] = array('size' => 40);
+            $p['form']['info']['content']['profession'] = array('size' => 40);
+            $p['form']['info']['content']['children'] = array('size' => 40);
             
             // re-order fields according to the coltypes list
             $block = array();
@@ -132,6 +136,15 @@ class kolab_addressbook extends rcube_plugin
             }
             
             $p['form']['info']['content'] = $block;
+            
+            // define a separate section 'settings'
+            $p['form']['settings'] = array(
+                'name'    => rcube_label('kolab_addressbook.settings'),
+                'content' => array(
+                    'pgppublickey' => array('size' => 40, 'visible' => true),
+                    'freebusyurl'  => array('size' => 40, 'visible' => true),
+                )
+            );
         }
         
         return $p;

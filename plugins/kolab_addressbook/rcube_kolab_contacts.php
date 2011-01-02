@@ -30,14 +30,22 @@ class rcube_kolab_contacts extends rcube_addressbook
       'initials'     => array('type' => 'text', 'size' => 6, 'limit' => 1, 'label' => 'kolab_addressbook.initials'),
       'email'        => array('subtypes' => null),
       'phone'        => array(),
-      'im'           => array('limit' => 1),
+      'im'           => array('limit' => 1, 'subtypes' => null),
       'website'      => array('limit' => 1, 'subtypes' => null),
       'address'      => array('limit' => 2, 'subtypes' => array('home','business')),
       'birthday'     => array('limit' => 1),
-      'anniversary'  => array('type' => 'date', 'size' => 12, 'limit' => 1, 'label' => 'kolab_addressbook.anniversary'),
-      // TODO: define more Kolab-specific fields such as: office-location, profession, manager-name, assistant, spouse-name, children, language, latitude, longitude, pgp-publickey, free-busy-url
+      'anniversary'  => array('limit' => 1),
+      'officelocation' => array('type' => 'text', 'size' => 40, 'limit' => 1, 'label' => 'kolab_addressbook.officelocation'),
+      'profession'   => array('type' => 'text', 'size' => 40, 'limit' => 1, 'label' => 'kolab_addressbook.profession'),
+      'manager'      => array('limit' => 1),
+      'assistant'    => array('limit' => 1),
+      'spouse'       => array('limit' => 1),
+      'children'     => array('type' => 'text', 'size' => 40, 'limit' => 1, 'label' => 'kolab_addressbook.children'),
+      'pgppublickey' => array('type' => 'text', 'size' => 40, 'limit' => 1, 'label' => 'kolab_addressbook.pgppublickey'),
+      'freebusyurl'  => array('type' => 'text', 'size' => 40, 'limit' => 1, 'label' => 'kolab_addressbook.freebusyurl'),
       'notes'        => array(),
       'photo'        => array(),
+      // TODO: define more Kolab-specific fields such as: language, latitude, longitude
     );
     
     private $gid;
@@ -71,9 +79,17 @@ class rcube_kolab_contacts extends rcube_addressbook
       'initials'     => 'initials',
       'birthday'     => 'birthday',
       'anniversary'  => 'anniversary',
-      'im-address'   => 'im:aim',
+      'im-address'   => 'im',
       'web-page'     => 'website',
+      'office-location' => 'officelocation',
+      'profession'   => 'profession',
+      'manager-name' => 'manager',
+      'assistant'    => 'assistant',
+      'spouse-name'  => 'spouse',
+      'children'     => 'children',
       'body'         => 'notes',
+      'pgp-publickey' => 'pgppublickey',
+      'free-busy-url' => 'freebusyurl',
     );
 
 
@@ -783,8 +799,8 @@ class rcube_kolab_contacts extends rcube_addressbook
         foreach (array_flip($this->fieldmap) as $rcube => $kolab) {
             if (isset($contact[$rcube]))
                 $object[$kolab] = is_array($contact[$rcube]) ? $contact[$rcube][0] : $contact[$rcube];
-            else if ($rcube .= ':home' && isset($contact[$rcube]))
-                $object[$kolab] = is_array($contact[$rcube]) ? $contact[$rcube][0] : $contact[$rcube];
+            else if ($values = $this->get_col_values($rcube, $contact, true))
+                $object[$kolab] = is_array($values) ? $values[0] : $values;
         }
 
         // format dates
@@ -849,7 +865,7 @@ class rcube_kolab_contacts extends rcube_addressbook
           $attkey = 'photo.attachment';
           $object['_attachments'][$attkey] = array(
             'type' => rc_image_content_type($contact['photo']),
-            'content' => $contact['photo'],
+            'content' => preg_match('![^a-z0-9/=+-]!i', $contact['photo']) ? $contact['photo'] : base64_decode($contact['photo']),
           );
           $object['picture'] = $attkey;
         }
