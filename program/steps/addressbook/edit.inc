@@ -101,8 +101,12 @@ function rcmail_contact_editform($attrib)
                 'phone' => array('size' => $i_size, 'visible' => true),
                 'address' => array('visible' => true),
                 'birthday' => array('size' => 12),
+                'anniversary' => array('size' => $i_size),
                 'website' => array('size' => $i_size),
                 'im' => array('size' => $i_size),
+                'manager' => array('size' => $i_size),
+                'assistant' => array('size' => $i_size),
+                'spouse' => array('size' => $i_size),
             ),
         ),
     );

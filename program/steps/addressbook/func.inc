@@ -80,11 +80,15 @@ $CONTACT_COLTYPES = array(
     'country'    => array('type' => 'text', 'size' => 40, 'label' => rcube_label('country')),
   )),
   'birthday'     => array('type' => 'date', 'size' => 12, 'label' => rcube_label('birthday'), 'limit' => 1, 'render_func' => 'rcmail_format_date_col'),
-  'website'      => array('type' => 'text', 'size' => 40, 'label' => rcube_label('website'), 'subtypes' => array('home','work','blog','other')),
-  'im'           => array('type' => 'text', 'size' => 40, 'label' => rcube_label('instantmessenger'), 'subtypes' => array('aim','icq','msn','yahoo','jabber','other')),
+  'anniversary'  => array('type' => 'date', 'size' => 12, 'label' => rcube_label('anniversary'), 'limit' => 1, 'render_func' => 'rcmail_format_date_col'),
+  'website'      => array('type' => 'text', 'size' => 40, 'label' => rcube_label('website'), 'subtypes' => array('homepage','work','blog','other')),
+  'im'           => array('type' => 'text', 'size' => 40, 'label' => rcube_label('instantmessenger'), 'subtypes' => array('aim','icq','msn','yahoo','jabber','skype','other')),
   'notes'        => array('type' => 'textarea', 'size' => 40, 'rows' => 15, 'label' => rcube_label('notes'), 'limit' => 1),
   'photo'        => array('type' => 'image', 'limit' => 1),
-  // TODO: define fields for vcards GEO, KEY, X-ANNIVERSARY, X-ASSISTANT, X-MANAGER
+  'assistant'    => array('type' => 'text', 'size' => 40, 'limit' => 1, 'label' => rcube_label('assistant')),
+  'manager'      => array('type' => 'text', 'size' => 40, 'limit' => 1, 'label' => rcube_label('manager')),
+  'spouse'       => array('type' => 'text', 'size' => 40, 'limit' => 1, 'label' => rcube_label('spouse')),
+  // TODO: define fields for vcards like GEO, KEY
 );
 
 // reduce/extend $CONTACT_COLTYPES with specification from the current $CONTACT object

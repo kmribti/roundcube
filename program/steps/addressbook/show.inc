@@ -99,8 +99,12 @@ function rcmail_contact_details($attrib)
               'phone' => array('size' => $i_size),
               'address' => array(),
               'birthday' => array('size' => $i_size),
+              'anniversary' => array('size' => $i_size),
               'website' => array('size' => $i_size, 'render_func' => 'rcmail_render_url_value'),
               'im' => array('size' => $i_size),
+              'manager' => array('size' => $i_size),
+              'assistant' => array('size' => $i_size),
+              'spouse' => array('size' => $i_size),
             ),
         ),
     );

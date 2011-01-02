@@ -55,8 +55,9 @@ class rcube_contacts extends rcube_addressbook
     public $group_id = 0;
     public $ready = false;
     public $coltypes = array('name', 'firstname', 'surname', 'middlename', 'prefix', 'suffix', 'nickname',
-      'jobtitle', 'organization', 'department', 'gender', 'maidenname', 'email', 'phone', 'address',
-      'birthday', 'website', 'im', 'notes', 'photo');
+      'jobtitle', 'organization', 'department', 'assistant', 'manager',
+      'gender', 'maidenname', 'spouse', 'email', 'phone', 'address',
+      'birthday', 'anniversary', 'website', 'im', 'notes', 'photo');
 
 
     /**
@@ -505,7 +506,7 @@ class rcube_contacts extends rcube_addressbook
         $out = array();
 
         // copy values into vcard object
-        $vcard = new rcube_vcard($record['vcard']);
+        $vcard = new rcube_vcard($record['vcard'] ? $record['vcard'] : $save_data['vcard']);
         $vcard->reset();
         foreach ($save_data as $key => $values) {
             list($field, $section) = explode(':', $key);

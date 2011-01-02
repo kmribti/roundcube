@@ -32,11 +32,24 @@ class rcube_vcard
     'FN' => array(),
     'N' => array(array('','','','','')),
   );
-  private $fieldmap = array('phone' => 'TEL', 'birthday' => 'BDAY', 'website' => 'URL', 'notes' => 'NOTE', 'email' => 'EMAIL', 'address' => 'ADR', 'gender' => 'X-GENDER', 'maidenname' => 'X-MAIDENNAME', 'gender' => 'X-GENDER');
+  private $fieldmap = array(
+    'phone'    => 'TEL',
+    'birthday' => 'BDAY',
+    'website'  => 'URL',
+    'notes'    => 'NOTE',
+    'email'    => 'EMAIL',
+    'address'  => 'ADR',
+    'gender'      => 'X-GENDER',
+    'maidenname'  => 'X-MAIDENNAME',
+    'anniversary' => 'X-ANNIVERSARY',
+    'assistant'   => 'X-ASSISTANT',
+    'manager'     => 'X-MANAGER',
+    'spouse'      => 'X-SPOUSE',
+  );
   private $typemap = array('iPhone' => 'mobile', 'CELL' => 'mobile');
   private $phonetypemap = array('HOME1' => 'HOME', 'BUSINESS1' => 'WORK', 'BUSINESS2' => 'WORK2', 'WORKFAX' => 'BUSINESSFAX');
   private $addresstypemap = array('BUSINESS' => 'WORK');
-  private $immap = array('X-JABBER' => 'jabber', 'X-ICQ' => 'icq', 'X-MSN' => 'msn', 'X-AIM' => 'aim', 'X-YAHOO' => 'yahoo');
+  private $immap = array('X-JABBER' => 'jabber', 'X-ICQ' => 'icq', 'X-MSN' => 'msn', 'X-AIM' => 'aim', 'X-YAHOO' => 'yahoo', 'X-SKYPE' => 'skype', 'X-SKYPE-USERNAME' => 'skype');
 
   public $business = false;
   public $displayname;

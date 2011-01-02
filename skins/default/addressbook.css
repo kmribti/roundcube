@@ -311,7 +311,7 @@ fieldset.contactfieldgroup
 
 fieldset.contactfieldgroup legend
 {
-	font-size: 0.8em;
+	font-size: 0.9em;
 }
 
 .contactfieldgroup .row
@@ -325,7 +325,7 @@ fieldset.contactfieldgroup legend
 	position: absolute;
 	top: 0;
 	left: 2px;
-	width: 80px;
+	width: 90px;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -345,7 +345,7 @@ fieldset.contactfieldgroup legend
 
 .contactfieldgroup .contactfieldcontent
 {
-	padding-left: 90px;
+	padding-left: 100px;
 	min-height: 1em;
 	line-height: 1.3em;
 }

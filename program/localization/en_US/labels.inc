@@ -272,11 +272,15 @@ $labels['zipcode']      = 'Zip code';
 $labels['region']       = 'Region';
 $labels['country']      = 'Country';
 $labels['birthday']     = 'Birthday';
+$labels['anniversary']  = 'Anniversary';
 $labels['website']      = 'Website';
 $labels['instantmessenger'] = 'IM';
 $labels['notes'] = 'Notes';
 $labels['male']   = 'male';
-$labels['gemale'] = 'female';
+$labels['female'] = 'female';
+$labels['manager'] = 'Manager';
+$labels['assistant'] = 'Assistant';
+$labels['spouse'] = 'Spouse';
 
 $labels['addfield'] = 'Add field...';
 $labels['addcontact'] = 'Add new contact';
