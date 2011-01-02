@@ -187,7 +187,7 @@ class rcube_kolab_contacts extends rcube_addressbook
             $this->result->count = 0;
             foreach ((array)$this->distlists[$this->gid]['member'] as $member) {
                 // skip member that don't match the search filter
-                if (is_array($this->filter) && array_search($member['ID'], $this->filter) === false)
+                if (is_array($this->filter['ids']) && array_search($member['ID'], $this->filter['ids']) === false)
                     continue;
                 if ($this->contacts[$member['ID']] && !$seen[$member['ID']]++)
                     $this->result->count++;
@@ -195,16 +195,15 @@ class rcube_kolab_contacts extends rcube_addressbook
             $ids = array_keys($seen);
         }
         else
-            $ids = is_array($this->filter) ? $this->filter : array_keys($this->contacts);
+            $ids = is_array($this->filter['ids']) ? $this->filter['ids'] : array_keys($this->contacts);
         
         // fill contact data into the current result set
-        $i = $j = 0;
-        foreach ($ids as $id) {
-            if ($i++ < $this->result->first)
-                continue;
-            $this->result->add($this->contacts[$id]);
-            if (++$j == $this->page_size)
-                break;
+        $start_row = $subset < 0 ? $this->result->first + $this->page_size + $subset : $this->result->first;
+        $last_row = min($subset != 0 ? $start_row + abs($subset) : $this->result->first + $this->page_size, count($ids));
+        
+        for ($i = $start_row; $i < $last_row; $i++) {
+            if ($id = $ids[$i])
+                $this->result->add($this->contacts[$id]);
         }
         
         return $this->result;
@@ -236,7 +235,7 @@ class rcube_kolab_contacts extends rcube_addressbook
         if (!is_array($required) && !empty($required))
             $required = array($required);
         
-        $this->filter = array();
+        $this->filter = array('fields' => $fields, 'value' => $value, 'strict' => $strict, 'ids' => array());
         
         // search be iterating over all records in memory
         foreach ($this->contacts as $id => $contact) {
@@ -250,7 +249,7 @@ class rcube_kolab_contacts extends rcube_addressbook
                 foreach ((array)$contact[$f] as $val) {
                     $val = strtolower($val);
                     if (($strict && $val == $value) || (!$strict && strstr($val, $value))) {
-                        $this->filter[] = $id;
+                        $this->filter['ids'][] = $id;
                         break 2;
                     }
                 }
@@ -259,6 +258,18 @@ class rcube_kolab_contacts extends rcube_addressbook
 
         // list records (now limited by $this->filter)
         return $this->list_records();
+    }
+    
+    
+    /**
+     * Refresh saved search results after data has changed
+     */
+    public function refresh_search()
+    {
+        if ($this->filter)
+            $this->search($this->filter['fields'], $this->filter['value'], $this->filter['strict']);
+        
+        return $this->get_search_set();
     }
 
 
@@ -271,7 +282,7 @@ class rcube_kolab_contacts extends rcube_addressbook
     {
         $this->_fetch_contacts();
         $this->_fetch_groups();
-        $count = $this->gid ? count($this->distlists[$this->gid]['member']) : (is_array($this->filter) ? count($this->filter) : count($this->contacts));
+        $count = $this->gid ? count($this->distlists[$this->gid]['member']) : (is_array($this->filter['ids']) ? count($this->filter['ids']) : count($this->contacts));
         return new rcube_result_set($count, ($this->list_page-1) * $this->page_size);
     }
 
