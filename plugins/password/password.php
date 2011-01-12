@@ -232,8 +232,8 @@ class password extends rcube_plugin
         $result = password_save($curpass, $passwd);
 
         if (is_array($result)) {
-            $result  = $result['code'];
             $message = $result['message'];
+            $result  = $result['code'];
         }
 
         switch ($result) {
