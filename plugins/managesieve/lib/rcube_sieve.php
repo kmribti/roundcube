@@ -585,9 +585,11 @@ class rcube_sieve_script
                 case 'ereject':
                     array_push($exts, $action['type']);
                     if (strpos($action['target'], "\n")!==false)
-                        $script .= "\t".$action['type']." text:\n" . $action['target'] . "\n.\n;\n";
+                        $script .= "\t".$action['type']." text:\n"
+                            . $this->_escape_multiline_string($action['target']) . "\n.\n;\n";
                     else
-                        $script .= "\t".$action['type']." \"" . $this->_escape_string($action['target']) . "\";\n";
+                        $script .= "\t".$action['type']." \""
+                            . $this->_escape_string($action['target']) . "\";\n";
                     break;
                 case 'keep':
                 case 'discard':
@@ -610,7 +612,7 @@ class rcube_sieve_script
                     if ($action['mime'])
                         $script .= " :mime";
                     if (strpos($action['reason'], "\n")!==false)
-                        $script .= " text:\n" . $action['reason'] . "\n.\n;\n";
+                        $script .= " text:\n" . $this->_escape_multiline_string($action['reason']) . "\n.\n;\n";
                     else
                         $script .= " \"" . $this->_escape_string($action['reason']) . "\";\n";
                     break;
@@ -909,16 +911,35 @@ class rcube_sieve_script
         $text = '';
         $content = trim($content);
 
-        if (preg_match('/^text:(.*)\.$/sm', $content, $matches))
-            $text = trim($matches[1]);
-        else if (preg_match('/^"(.*)"$/', $content, $matches))
+        // multi-line string
+        if (preg_match('/^(text:[\t\s\r]*\n)/', $content, $matches)) {
+            $content = substr($content, strlen($matches[1]));
+            $lines   = preg_split('/(\r?\n)/', $content, -1, PREG_SPLIT_DELIM_CAPTURE);
+            $text    = '';
+
+            foreach ($lines as $line) {
+                // terminator
+                if ($line == '.') {
+                    break;
+                }
+                // dot-stuffing
+                if ($line[0] == '.' && $line[1] == '.') {
+                    $line = substr($line, 1);
+                }
+                $text .= $line;
+            }
+            $text = rtrim($text, "\r\n");
+        }
+        // quoted string
+        else if (preg_match('/^"(.*)"$/', $content, $matches)) {
             $text = str_replace('\"', '"', $matches[1]);
+        }
 
         return $text;
     }
 
     /**
-     * Escape special chars in string value
+     * Escape special chars in quoted string value
      *
      * @param string Text
      */
@@ -927,14 +948,35 @@ class rcube_sieve_script
         $replace['/"/'] = '\\"';
 
         if (is_array($content)) {
-            for ($x=0, $y=sizeof($content); $x<$y; $x++)
+            for ($x=0, $y=sizeof($content); $x<$y; $x++) {
                 $content[$x] = preg_replace(array_keys($replace),
                     array_values($replace), $content[$x]);
+            }
 
             return $content;
         }
-        else
+        else {
             return preg_replace(array_keys($replace), array_values($replace), $content);
+        }
+    }
+
+    /**
+     * Escape special chars in multi-line string value
+     *
+     * @param string Text
+     */
+    private function _escape_multiline_string($content)
+    {
+        $lines = preg_split('/(\r?\n)/', $content, -1, PREG_SPLIT_DELIM_CAPTURE);
+
+        foreach ($lines as $idx => $line) {
+            // dot-stuffing
+            if ($line[0] == '.') {
+                $lines[$idx] = '.' . $line;
+            }
+        }
+
+        return implode($lines);
     }
 
     /**
