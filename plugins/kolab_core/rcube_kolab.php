@@ -50,6 +50,7 @@ class rcube_kolab
         }
         
         NLS::setCharset('UTF-8');
+        String::setDefaultCharset('UTF-8');
     }
     
     
