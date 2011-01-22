@@ -120,22 +120,17 @@ class kolab_addressbook extends rcube_plugin
         if (!is_a($GLOBALS['CONTACTS'], 'rcube_kolab_contacts'))
             return $p;
           
-        // extend the list of contact fields to be displayed in the 'info' section
-        if (is_array($p['form']['info'])) {
-            $p['form']['info']['content']['initials'] = array('size' => 6);
+        // extend the list of contact fields to be displayed in the 'personal' section
+        if (is_array($p['form']['personal'])) {
             $p['form']['info']['content']['officelocation'] = array('size' => 40);
-            $p['form']['info']['content']['profession'] = array('size' => 40);
-            $p['form']['info']['content']['children'] = array('size' => 40);
+            
+            $p['form']['personal']['content']['initials'] = array('size' => 6);
+            $p['form']['personal']['content']['profession'] = array('size' => 40);
+            $p['form']['personal']['content']['children'] = array('size' => 40);
             
             // re-order fields according to the coltypes list
-            $block = array();
-            $contacts = reset($this->sources);
-            foreach ($contacts->coltypes as $col => $prop) {
-                if (isset($p['form']['info']['content'][$col]))
-                    $block[$col] = $p['form']['info']['content'][$col];
-            }
-            
-            $p['form']['info']['content'] = $block;
+            $p['form']['info']['content'] = $this->_sort_form_fields($p['form']['info']['content']);
+            $p['form']['personal']['content'] = $this->_sort_form_fields($p['form']['personal']['content']);
             
             // define a separate section 'settings'
             $p['form']['settings'] = array(
@@ -148,6 +143,19 @@ class kolab_addressbook extends rcube_plugin
         }
         
         return $p;
+    }
+    
+    
+    private function _sort_form_fields($contents)
+    {
+      $block = array();
+      $contacts = reset($this->sources);
+      foreach ($contacts->coltypes as $col => $prop) {
+          if (isset($contents[$col]))
+              $block[$col] = $contents[$col];
+      }
+      
+      return $block;
     }
 
 }

@@ -26,16 +26,16 @@ class rcube_kolab_contacts extends rcube_addressbook
       'jobtitle'     => array('limit' => 1),
       'organization' => array('limit' => 1),
       'department'   => array('limit' => 1),
-      'gender'       => array('limit' => 1),
-      'initials'     => array('type' => 'text', 'size' => 6, 'limit' => 1, 'label' => 'kolab_addressbook.initials'),
       'email'        => array('subtypes' => null),
       'phone'        => array(),
-      'im'           => array('limit' => 1, 'subtypes' => null),
-      'website'      => array('limit' => 1, 'subtypes' => null),
       'address'      => array('limit' => 2, 'subtypes' => array('home','business')),
+      'officelocation' => array('type' => 'text', 'size' => 40, 'limit' => 1, 'label' => 'kolab_addressbook.officelocation'),
+      'website'      => array('limit' => 1, 'subtypes' => null),
+      'im'           => array('limit' => 1, 'subtypes' => null),
+      'gender'       => array('limit' => 1),
+      'initials'     => array('type' => 'text', 'size' => 6, 'limit' => 1, 'label' => 'kolab_addressbook.initials'),
       'birthday'     => array('limit' => 1),
       'anniversary'  => array('limit' => 1),
-      'officelocation' => array('type' => 'text', 'size' => 40, 'limit' => 1, 'label' => 'kolab_addressbook.officelocation'),
       'profession'   => array('type' => 'text', 'size' => 40, 'limit' => 1, 'label' => 'kolab_addressbook.profession'),
       'manager'      => array('limit' => 1),
       'assistant'    => array('limit' => 1),
@@ -714,8 +714,18 @@ class rcube_kolab_contacts extends rcube_addressbook
                 $this->id2uid[$id] = $record['uid'];
             }
 
-            // TODO: sort data arrays according to desired list sorting
+            // sort data arrays according to desired list sorting
+            uasort($this->contacts, array($this, '_sort_contacts_comp'));
         }
+    }
+
+
+    /**
+     * Callback function for sorting contacts
+     */
+    private function _sort_contacts_comp($a, $b)
+    {
+      return strcasecmp($a['name'], $b['name']);
     }
     
     

@@ -15,6 +15,7 @@ require_once 'Horde/Perms.php';
 class rcube_kolab
 {
     private static $horde_auth;
+    private static $ready = false;
     
     
     /**
@@ -47,6 +48,7 @@ class rcube_kolab
                 'remote_addr' => $_SERVER['REMOTE_ADDR'],
             );
             Auth::setCredential('password', $pwd);
+            self::$ready = true;
         }
         
         NLS::setCharset('UTF-8');
@@ -76,7 +78,7 @@ class rcube_kolab
     {
         self::setup();
         $kolab = Kolab_List::singleton();
-        return $kolab->getByType($type);
+        return self::$ready ? $kolab->getByType($type) : array();
     }
 
     /**
@@ -90,7 +92,7 @@ class rcube_kolab
     {
         self::setup();
         $kolab = Kolab_List::singleton();
-        return $kolab->getFolder($folder)->getData($data_type);
+        return self::$ready ? $kolab->getFolder($folder)->getData($data_type) : null;
     }
 
     /**
