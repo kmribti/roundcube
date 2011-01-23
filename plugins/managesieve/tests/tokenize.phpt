@@ -22,6 +22,7 @@ text:
 test
 .
 ');
+$txt[7] = array(1, '"\\a\\\\\\"a"');
 
 foreach ($txt as $idx => $t) {
     echo "[$idx]---------------\n"; 
@@ -61,3 +62,5 @@ array(2) {
   [1]=>
   string(4) "test"
 }
+[7]---------------
+string(4) "a\"a"
