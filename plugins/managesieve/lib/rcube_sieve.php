@@ -538,17 +538,26 @@ class rcube_sieve_script
                 $i++;
             }
 
-//          $script .= ($idx>0 ? 'els' : '').($rule['join'] ? 'if allof (' : 'if anyof (');
             // disabled rule: if false #....
-            $script .= 'if' . ($rule['disabled'] ? ' false #' : '');
-            $script .= $rule['join'] ? ' allof (' : ' anyof (';
-            if (sizeof($tests) > 1)
-                $script .= implode(", ", $tests);
-            else if (sizeof($tests))
-                $script .= $tests[0];
-            else
-                $script .= 'true';
-            $script .= ")\n{\n";
+            $script .= 'if ' . ($rule['disabled'] ? 'false # ' : '');
+
+            if (empty($tests)) {
+                $tests_str = 'true';
+            }
+            else if (count($tests) > 1) {
+                $tests_str = implode(', ', $tests);
+            }
+            else {
+                $tests_str = $tests[0];
+            }
+
+            if ($rule['join'] || count($tests) > 1) {
+                $script .= sprintf('%s (%s)', $rule['join'] ? 'allof' : 'anyof', $tests_str);
+            }
+            else {
+                $script .= $tests_str;
+            }
+            $script .= "\n{\n";
 
             // action(s)
             foreach ($rule['actions'] as $action) {
@@ -879,11 +888,14 @@ class rcube_sieve_script
      */
     static function escape_string($str)
     {
-        if (is_array($str)) {
+        if (is_array($str) && count($str) > 1) {
             foreach($str as $idx => $val)
                 $str[$idx] = self::escape_string($val);
 
             return '[' . implode(',', $str) . ']';
+        }
+        else if (is_array($str)) {
+            $str = array_pop($str);
         }
 
         // multi-line string
