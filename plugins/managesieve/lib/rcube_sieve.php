@@ -513,14 +513,11 @@ class rcube_sieve_script
                     $tests[$i] .= 'size :' . ($test['type']=='under' ? 'under ' : 'over ') . $test['arg'];
                     break;
                 case 'true':
-                    $tests[$i] .= ($test['not'] ? 'not true' : 'true');
+                    $tests[$i] .= ($test['not'] ? 'false' : 'true');
                     break;
                 case 'exists':
                     $tests[$i] .= ($test['not'] ? 'not ' : '');
-                    if (is_array($test['arg']))
-                        $tests[$i] .= 'exists ["' . implode('", "', $this->_escape_string($test['arg'])) . '"]';
-                    else
-                        $tests[$i] .= 'exists "' . $this->_escape_string($test['arg']) . '"';
+                    $tests[$i] .= 'exists ' . self::escape_string($test['arg']);
                     break;
                 case 'header':
                     $tests[$i] .= ($test['not'] ? 'not ' : '');
@@ -534,16 +531,8 @@ class rcube_sieve_script
                     else
                         $tests[$i] .= 'header :' . $test['type'];
                     
-                    if (is_array($test['arg1']))
-                        $tests[$i] .= ' ["' . implode('", "', $this->_escape_string($test['arg1'])) . '"]';
-                    else
-                        $tests[$i] .= ' "' . $this->_escape_string($test['arg1']) . '"';
-
-                    if (is_array($test['arg2']))
-                        $tests[$i] .= ' ["' . implode('", "', $this->_escape_string($test['arg2'])) . '"]';
-                    else
-                        $tests[$i] .= ' "' . $this->_escape_string($test['arg2']) . '"';
-
+                    $tests[$i] .= ' ' . self::escape_string($test['arg1']);
+                    $tests[$i] .= ' ' . self::escape_string($test['arg2']);
                     break;
                 }
                 $i++;
@@ -571,7 +560,7 @@ class rcube_sieve_script
                         $script .= ':copy ';
                         array_push($exts, 'copy');
                     }
-                    $script .= "\"" . $this->_escape_string($action['target']) . "\";\n";
+                    $script .= self::escape_string($action['target']) . ";\n";
                     break;
                 case 'redirect':
                     $script .= "\tredirect ";
@@ -579,17 +568,13 @@ class rcube_sieve_script
                         $script .= ':copy ';
                         array_push($exts, 'copy');
                     }
-                    $script .= "\"" . $this->_escape_string($action['target']) . "\";\n";
+                    $script .= self::escape_string($action['target']) . ";\n";
                     break;
                 case 'reject':
                 case 'ereject':
                     array_push($exts, $action['type']);
-                    if (strpos($action['target'], "\n")!==false)
-                        $script .= "\t".$action['type']." text:\n"
-                            . $this->_escape_multiline_string($action['target']) . "\n.\n;\n";
-                    else
-                        $script .= "\t".$action['type']." \""
-                            . $this->_escape_string($action['target']) . "\";\n";
+                    $script .= "\t".$action['type']." "
+                        . self::escape_string($action['target']) . ";\n";
                     break;
                 case 'keep':
                 case 'discard':
@@ -599,22 +584,19 @@ class rcube_sieve_script
                 case 'vacation':
                     array_push($exts, 'vacation');
                     $script .= "\tvacation";
-                    if ($action['days'])
+                    if (!empty($action['days']))
                         $script .= " :days " . $action['days'];
-                    if ($action['addresses'])
-                        $script .= " :addresses " . $this->_print_list($action['addresses']);
-                    if ($action['subject'])
-                        $script .= " :subject \"" . $this->_escape_string($action['subject']) . "\"";
-                    if ($action['handle'])
-                        $script .= " :handle \"" . $this->_escape_string($action['handle']) . "\"";
-                    if ($action['from'])
-                        $script .= " :from \"" . $this->_escape_string($action['from']) . "\"";
-                    if ($action['mime'])
+                    if (!empty($action['addresses']))
+                        $script .= " :addresses " . self::escape_string($action['addresses']);
+                    if (!empty($action['subject']))
+                        $script .= " :subject " . self::escape_string($action['subject']);
+                    if (!empty($action['handle']))
+                        $script .= " :handle " . self::escape_string($action['handle']);
+                    if (!empty($action['from']))
+                        $script .= " :from " . self::escape_string($action['from']);
+                    if (!empty($action['mime']))
                         $script .= " :mime";
-                    if (strpos($action['reason'], "\n")!==false)
-                        $script .= " text:\n" . $this->_escape_multiline_string($action['reason']) . "\n.\n;\n";
-                    else
-                        $script .= " \"" . $this->_escape_string($action['reason']) . "\";\n";
+                    $script .= " " . self::escape_string($action['reason']) . ";\n";
                     break;
                 }
             }
@@ -658,9 +640,6 @@ class rcube_sieve_script
         $i = 0;
         $content = array();
 
-        // remove C comments
-        $script = preg_replace('|/\*.*?\*/|sm', '', $script);
-
         // tokenize rules
         if ($tokens = preg_split('/(# rule:\[.*\])\r?\n/', $script, -1, PREG_SPLIT_DELIM_CAPTURE)) {
             foreach($tokens as $token) {
@@ -688,31 +667,118 @@ class rcube_sieve_script
      */
     private function _tokenize_rule($content)
     {
-        $result = NULL;
+        $cond = strtolower(self::tokenize($content, 1));
 
-        if (preg_match('/^(if|elsif|else)\s+((true|false|not\s+true|allof|anyof|exists|header|not|size)(.*))\s+\{(.*)\}$/sm',
-            trim($content), $matches)) {
+        if ($cond != 'if' && $cond != 'elsif' && $cond != 'else') {
+            return NULL;
+        }
 
-            $tests = trim($matches[2]);
+        $disabled = false;
+        $join     = false;
 
-            // disabled rule (false + comment): if false #.....
-            if ($matches[3] == 'false') {
-                $tests = preg_replace('/^false\s+#\s+/', '', $tests);
-                $disabled = true;
+        // disabled rule (false + comment): if false # .....
+        if (preg_match('/^\s*false\s+#/i', $content)) {
+            $content = preg_replace('/^\s*false\s+#\s*/i', '', $content);
+            $disabled = true;
+        }
+
+        while (strlen($content)) {
+            $tokens = self::tokenize($content, true);
+            $separator = array_pop($tokens);
+
+            if (!empty($tokens)) {
+                $token = array_shift($tokens);
             }
-            else
-                $disabled = false;
+            else {
+                $token = $separator;
+            }
 
-            list($tests, $join) = $this->_parse_tests($tests);
-            $actions = $this->_parse_actions(trim($matches[5]));
+            $token = strtolower($token);
 
-            if ($tests && $actions)
-                $result = array(
-                    'type'     => $matches[1],
-                    'tests'    => $tests,
-                    'actions'  => $actions,
-                    'join'     => $join,
-                    'disabled' => $disabled,
+            if ($token == 'not') {
+                $not = true;
+                $token = strtolower(array_shift($tokens));
+            }
+            else {
+                $not = false;
+            }
+
+            switch ($token) {
+            case 'allof':
+                $join = true;
+                break;
+            case 'anyof':
+                break;
+
+            case 'size':
+                $size = array('test' => 'size', 'not'  => $not);
+                for ($i=0, $len=count($tokens); $i<$len; $i++) {
+                    if (!is_array($tokens[$i])
+                        && preg_match('/^:(under|over)$/i', $tokens[$i])
+                    ) {
+                        $size['type'] = strtolower(substr($tokens[$i], 1));
+                    }
+                    else {
+                        $size['arg'] = $tokens[$i];
+                    }
+                }
+
+                $tests[] = $size;
+                break;
+
+            case 'header':
+                $header = array('test' => 'header', 'not' => $not, 'arg1' => '', 'arg2' => '');
+                for ($i=0, $len=count($tokens); $i<$len; $i++) {
+                    if (!is_array($tokens[$i]) && preg_match('/^:comparator$/i', $tokens[$i])) {
+                        $i++;
+                    }
+                    else if (!is_array($tokens[$i]) && preg_match('/^:(count|value)$/i', $tokens[$i])) {
+                        $header['type'] = strtolower(substr($tokens[$i], 1)) . '-' . $tokens[++$i];
+                    }
+                    else if (!is_array($tokens[$i]) && preg_match('/^:(is|contains|matches)$/i', $tokens[$i])) {
+                        $header['type'] = strtolower(substr($tokens[$i], 1));
+                    }
+                    else {
+                        $header['arg1'] = $header['arg2'];
+                        $header['arg2'] = $tokens[$i];
+                    }
+                }
+
+                $tests[] = $header;
+                break;
+
+            case 'exists':
+                $tests[] = array('test' => 'exists', 'not'  => $not,
+                    'arg'  => array_pop($tokens));
+                break;
+
+            case 'true':
+                $tests[] = array('test' => 'true', 'not'  => $not);
+                break;
+
+            case 'false':
+                $tests[] = array('test' => 'true', 'not'  => !$not);
+                break;
+            }
+
+            // goto actions...
+            if ($separator == '{') {
+                break;
+            }
+        }
+
+        // ...and actions block
+        if ($tests) {
+            $actions = $this->_parse_actions($content);
+        }
+
+        if ($tests && $actions) {
+            $result = array(
+                'type'     => $cond,
+                'tests'    => $tests,
+                'actions'  => $actions,
+                'join'     => $join,
+                'disabled' => $disabled,
             );
         }
 
@@ -729,92 +795,74 @@ class rcube_sieve_script
     {
         $result = NULL;
 
-        // supported actions
-        $patterns[] = '^\s*discard;';
-        $patterns[] = '^\s*keep;';
-        $patterns[] = '^\s*stop;';
-        $patterns[] = '^\s*redirect\s+(.*?[^\\\]);';
-        if (in_array('fileinto', $this->supported))
-            $patterns[] = '^\s*fileinto\s+(.*?[^\\\]);';
-        if (in_array('reject', $this->supported)) {
-            $patterns[] = '^\s*reject\s+text:(.*)\n\.\n;';
-            $patterns[] = '^\s*reject\s+(.*?[^\\\]);';
-            $patterns[] = '^\s*ereject\s+text:(.*)\n\.\n;';
-            $patterns[] = '^\s*ereject\s+(.*?[^\\\]);';
-        }
-        if (in_array('vacation', $this->supported))
-            $patterns[] = '^\s*vacation\s+(.*?[^\\\]);';
+        while (strlen($content)) {
+            $tokens = self::tokenize($content, true);
+            $separator = array_pop($tokens);
 
-        $pattern = '/(' . implode('\s*$)|(', $patterns) . '$\s*)/ms';
+            if (!empty($tokens)) {
+                $token = array_shift($tokens);
+            }
+            else {
+                $token = $separator;
+            }
 
-        // parse actions body
-        if (preg_match_all($pattern, $content, $mm, PREG_SET_ORDER)) {
-            foreach ($mm as $m) {
-                $content = trim($m[0]);
+            switch ($token) {
+            case 'discard':
+            case 'keep':
+            case 'stop':
+                $result[] = array('type' => $token);
+                break;
 
-                if(preg_match('/^(discard|keep|stop)/', $content, $matches)) {
-                    $result[] = array('type' => $matches[1]);
-                }
-                else if(preg_match('/^fileinto/', $content)) {
-                    $target = $m[sizeof($m)-1];
-                    $copy = false;
-                    if (preg_match('/^:copy\s+/', $target)) {
-                        $target = preg_replace('/^:copy\s+/', '', $target);
+            case 'fileinto':
+            case 'redirect':
+                $copy   = false;
+                $target = '';
+
+                for ($i=0, $len=count($tokens); $i<$len; $i++) {
+                    if (strtolower($tokens[$i]) == ':copy') {
                         $copy = true;
                     }
-                    $result[] = array('type' => 'fileinto', 'copy' => $copy,
-                        'target' => $this->_parse_string($target));
+                    else {
+                        $target = $tokens[$i];
+                    }
                 }
-                else if(preg_match('/^redirect/', $content)) {
-                    $target = $m[sizeof($m)-1];
-                    $copy = false;
-                    if (preg_match('/^:copy\s+/', $target)) {
-                        $target = preg_replace('/^:copy\s+/', '', $target);
-                        $copy = true;
-                    }
-                    $result[] = array('type' => 'redirect', 'copy' => $copy,
-                        'target' => $this->_parse_string($target));
-                }
-                else if(preg_match('/^(reject|ereject)\s+(.*);$/sm', $content, $matches)) {
-                    $result[] = array('type' => $matches[1], 'target' => $this->_parse_string($matches[2]));
-                }
-                else if(preg_match('/^vacation\s+(.*);$/sm', $content, $matches)) {
-                    $vacation = array('type' => 'vacation');
 
-                    if (preg_match('/:days\s+([0-9]+)/', $content, $vm)) {
-                        $vacation['days'] = $vm[1];
-                        $content = preg_replace('/:days\s+([0-9]+)/', '', $content);
-                    }
-                    if (preg_match('/:subject\s+"(.*?[^\\\])"/', $content, $vm)) {
-                        $vacation['subject'] = $vm[1];
-                        $content = preg_replace('/:subject\s+"(.*?[^\\\])"/', '', $content);
-                    }
-                    if (preg_match('/:addresses\s+\[(.*?[^\\\])\]/', $content, $vm)) {
-                        $vacation['addresses'] = $this->_parse_list($vm[1]);
-                        $content = preg_replace('/:addresses\s+\[(.*?[^\\\])\]/', '', $content);
-                    }
-                    if (preg_match('/:handle\s+"(.*?[^\\\])"/', $content, $vm)) {
-                        $vacation['handle'] = $vm[1];
-                        $content = preg_replace('/:handle\s+"(.*?[^\\\])"/', '', $content);
-                    }
-                    if (preg_match('/:from\s+"(.*?[^\\\])"/', $content, $vm)) {
-                        $vacation['from'] = $vm[1];
-                        $content = preg_replace('/:from\s+"(.*?[^\\\])"/', '', $content);
-                    }
+                $result[] = array('type' => $token, 'copy' => $copy,
+                    'target' => $target);
+                break;
 
-                    $content = preg_replace('/^vacation/', '', $content);
-                    $content = preg_replace('/;$/', '', $content);
-                    $content = trim($content);
+            case 'reject':
+            case 'ereject':
+                $result[] = array('type' => $token, 'target' => array_pop($tokens));
+                break;
 
-                    if (preg_match('/^:mime/', $content, $vm)) {
+            case 'vacation':
+                $vacation = array('type' => 'vacation', 'reason' => array_pop($tokens));
+
+                for ($i=0, $len=count($tokens); $i<$len; $i++) {
+                    $tok = strtolower($tokens[$i]);
+                    if ($tok == ':days') {
+                        $vacation['days'] = $tokens[++$i];
+                    }
+                    else if ($tok == ':subject') {
+                        $vacation['subject'] = $tokens[++$i];
+                    }
+                    else if ($tok == ':addresses') {
+                        $vacation['addresses'] = $tokens[++$i];
+                    }
+                    else if ($tok == ':handle') {
+                        $vacation['handle'] = $tokens[++$i];
+                    }
+                    else if ($tok == ':from') {
+                        $vacation['from'] = $tokens[++$i];
+                    }
+                    else if ($tok == ':mime') {
                         $vacation['mime'] = true;
-                        $content = preg_replace('/^:mime/', '', $content);
                     }
-
-                    $vacation['reason'] = $this->_parse_string($content);
-
-                    $result[] = $vacation;
                 }
+
+                $result[] = $vacation;
+                break;
             }
         }
 
@@ -822,211 +870,193 @@ class rcube_sieve_script
     }
 
     /**
-     * Parse test/conditions section
+     * Escape special chars into quoted string value or multi-line string
+     * or list of strings
      *
-     * @param string Text
-     */
-    private function _parse_tests($content)
-    {
-        $result = NULL;
-
-        // lists
-        if (preg_match('/^(allof|anyof)\s+\((.*)\)$/sm', $content, $matches)) {
-            $content = $matches[2];
-            $join = $matches[1]=='allof' ? true : false;
-        }
-        else
-            $join = false;
-
-        // supported tests regular expressions
-        // TODO: comparators, envelope
-        $patterns[] = '(not\s+)?(exists)\s+\[(.*?[^\\\])\]';
-        $patterns[] = '(not\s+)?(exists)\s+(".*?[^\\\]")';
-        $patterns[] = '(not\s+)?(true)';
-        $patterns[] = '(not\s+)?(size)\s+:(under|over)\s+([0-9]+[KGM]{0,1})';
-        $patterns[] = '(not\s+)?(header)\s+:(contains|is|matches)((\s+))\[(.*?[^\\\]")\]\s+\[(.*?[^\\\]")\]';
-        $patterns[] = '(not\s+)?(header)\s+:(contains|is|matches)((\s+))(".*?[^\\\]")\s+(".*?[^\\\]")';
-        $patterns[] = '(not\s+)?(header)\s+:(contains|is|matches)((\s+))\[(.*?[^\\\]")\]\s+(".*?[^\\\]")';
-        $patterns[] = '(not\s+)?(header)\s+:(contains|is|matches)((\s+))(".*?[^\\\]")\s+\[(.*?[^\\\]")\]';
-		$patterns[] = '(not\s+)?(header)\s+:(count\s+"[gtleqn]{2}"|value\s+"[gtleqn]{2}")(\s+:comparator\s+"(.*?[^\\\])")?\s+\[(.*?[^\\\]")\]\s+\[(.*?[^\\\]")\]';
-		$patterns[] = '(not\s+)?(header)\s+:(count\s+"[gtleqn]{2}"|value\s+"[gtleqn]{2}")(\s+:comparator\s+"(.*?[^\\\])")?\s+(".*?[^\\\]")\s+(".*?[^\\\]")';
-		$patterns[] = '(not\s+)?(header)\s+:(count\s+"[gtleqn]{2}"|value\s+"[gtleqn]{2}")(\s+:comparator\s+"(.*?[^\\\])")?\s+\[(.*?[^\\\]")\]\s+(".*?[^\\\]")';
-		$patterns[] = '(not\s+)?(header)\s+:(count\s+"[gtleqn]{2}"|value\s+"[gtleqn]{2}")(\s+:comparator\s+"(.*?[^\\\])")?\s+(".*?[^\\\]")\s+\[(.*?[^\\\]")\]';
-
-        // join patterns...
-        $pattern = '/(' . implode(')|(', $patterns) . ')/';
-
-        // ...and parse tests list
-        if (preg_match_all($pattern, $content, $matches, PREG_SET_ORDER)) {
-            foreach ($matches as $match) {
-                $size = sizeof($match);
-
-                if (preg_match('/^(not\s+)?size/', $match[0])) {
-                    $result[] = array(
-                        'test' => 'size',
-                        'not'  => $match[$size-4] ? true : false,
-                        'type' => $match[$size-2], // under/over
-                        'arg'  => $match[$size-1], // value
-                    );
-                }
-                else if (preg_match('/^(not\s+)?header/', $match[0])) {
-                    $type = $match[$size-5];
-                    if (preg_match('/^(count|value)\s+"([gtleqn]{2})"/', $type, $m))
-                        $type = $m[1] . '-' . $m[2];
-                    
-                    $result[] = array(
-                        'test' => 'header',
-                        'type' => $type, // is/contains/matches
-						'not'  => $match[$size-7] ? true : false,
-                        'arg1' => $this->_parse_list($match[$size-2]), // header(s)
-                        'arg2' => $this->_parse_list($match[$size-1]), // string(s)
-                    );
-                }
-                else if (preg_match('/^(not\s+)?exists/', $match[0])) {
-                    $result[] = array(
-                        'test' => 'exists',
-                        'not'  => $match[$size-3] ? true : false,
-                        'arg'  => $this->_parse_list($match[$size-1]), // header(s)
-                    );
-                }
-                else if (preg_match('/^(not\s+)?true/', $match[0])) {
-                    $result[] = array(
-                        'test' => 'true',
-                        'not'  => $match[$size-2] ? true : false,
-                    );
-                }
-            }
-        }
-
-        return array($result, $join);
-    }
-
-    /**
-     * Parse string value
+     * @param string $str Text or array (list) of strings
      *
-     * @param string Text
+     * @return string Result text
      */
-    private function _parse_string($content)
+    static function escape_string($str)
     {
-        $text = '';
-        $content = trim($content);
+        if (is_array($str)) {
+            foreach($str as $idx => $val)
+                $str[$idx] = self::escape_string($val);
+
+            return '[' . implode(',', $str) . ']';
+        }
 
         // multi-line string
-        if (preg_match('/^(text:[\t\s\r]*\n)/', $content, $matches)) {
-            $content = substr($content, strlen($matches[1]));
-            $lines   = preg_split('/(\r?\n)/', $content, -1, PREG_SPLIT_DELIM_CAPTURE);
-            $text    = '';
-
-            foreach ($lines as $line) {
-                // terminator
-                if ($line == '.') {
-                    break;
-                }
-                // dot-stuffing
-                if ($line[0] == '.' && $line[1] == '.') {
-                    $line = substr($line, 1);
-                }
-                $text .= $line;
-            }
-            $text = rtrim($text, "\r\n");
+        if (preg_match('/[\r\n\0]/', $str)) {
+            return sprintf("text:\n%s\n.\n", self::escape_multiline_string($str));
         }
-        // quoted string
-        else if (preg_match('/^"(.*)"$/', $content, $matches)) {
-            $text = str_replace('\"', '"', $matches[1]);
-        }
-
-        return $text;
-    }
-
-    /**
-     * Escape special chars in quoted string value
-     *
-     * @param string Text
-     */
-    private function _escape_string($content)
-    {
-        $replace['/"/'] = '\\"';
-
-        if (is_array($content)) {
-            for ($x=0, $y=sizeof($content); $x<$y; $x++) {
-                $content[$x] = preg_replace(array_keys($replace),
-                    array_values($replace), $content[$x]);
-            }
-
-            return $content;
-        }
+        // quoted-string
         else {
-            return preg_replace(array_keys($replace), array_values($replace), $content);
+            $replace['/"/'] = '\\"';
+            return '"'. preg_replace(array_keys($replace), array_values($replace),
+                $str) . '"';
         }
     }
 
     /**
      * Escape special chars in multi-line string value
      *
-     * @param string Text
+     * @param string $str Text
+     *
+     * @return string Text
      */
-    private function _escape_multiline_string($content)
+    static function escape_multiline_string($str)
     {
-        $lines = preg_split('/(\r?\n)/', $content, -1, PREG_SPLIT_DELIM_CAPTURE);
+        $str = preg_split('/(\r?\n)/', $str, -1, PREG_SPLIT_DELIM_CAPTURE);
 
-        foreach ($lines as $idx => $line) {
+        foreach ($str as $idx => $line) {
             // dot-stuffing
-            if ($line[0] == '.') {
-                $lines[$idx] = '.' . $line;
+            if (isset($line[0]) && $line[0] == '.') {
+                $str[$idx] = '.' . $line;
             }
         }
 
-        return implode($lines);
+        return implode($str);
     }
 
     /**
-     * Parse string or list of strings to string or array of strings
+     * Splits script into string tokens
      *
-     * @param string Text
+     * @param string &$str    The script
+     * @param mixed  $num     Number of tokens to return, 0 for all
+     *                        or True for all tokens until separator is found.
+     *                        Separator will be returned as last token.
+     * @param int    $in_list Enable to called recursively inside a list
+     *
+     * @return mixed Tokens array or string if $num=1
      */
-    private function _parse_list($content)
+    static function tokenize(&$str, $num=0, $in_list=false)
     {
         $result = array();
 
-        for ($x=0, $len=strlen($content); $x<$len; $x++) {
-            switch ($content[$x]) {
-            case '\\':
-                $str .= $content[++$x];
-                break;
+        // remove spaces from the beginning of the string
+        while (($str = ltrim($str)) !== ''
+            && (!$num || $num === true || count($result) < $num)
+        ) {
+            switch ($str[0]) {
+
+            // Quoted string
             case '"':
-                if (isset($str)) {
-                    $result[] = $str;
-                    unset($str);
+                $len = strlen($str);
+
+                for ($pos=1; $pos<$len; $pos++) {
+                    if ($str[$pos] == '"') {
+                        break;
+                    }
+                    if ($str[$pos] == "\\") {
+                        if ($str[$pos + 1] == '"' || $str[$pos + 1] == "\\") {
+                            $pos++;
+                        }
+                    }
                 }
-                else
-                    $str = '';
+                if ($str[$pos] != '"') {
+                    // error
+                }
+                // we need to strip slashes for a quoted string
+                $result[] = stripslashes(substr($str, 1, $pos - 1));
+                $str      = substr($str, $pos + 1);
                 break;
+
+            // Parenthesized list
+            case '[':
+                $str = substr($str, 1);
+                $result[] = self::tokenize($str, 0, true);
+                break;
+            case ']':
+                $str = substr($str, 1);
+                return $result;
+                break;
+
+            // list/test separator
+            case ',':
+            // command separator
+            case ';':
+            // block/tests-list
+            case '(':
+            case ')':
+            case '{':
+            case '}':
+                $sep = $str[0];
+                $str = substr($str, 1);
+                if ($num === true) {
+                    $result[] = $sep;
+                    break 2; 
+                }
+                break;
+
+            // bracket-comment
+            case '/':
+                if ($str[1] == '*') {
+                    if ($end_pos = strpos($str, '*/')) {
+                        $str = substr($str, $end_pos + 2);
+                    }
+                    else {
+                        // error
+                        $str = '';
+                    }
+                }
+                break;
+
+            // hash-comment
+            case '#':
+                if ($lf_pos = strpos($str, "\n")) {
+                    $str = substr($str, $lf_pos);
+                    break;
+                }
+                else {
+                    $str = '';
+                }
+
+            // String atom
             default:
-                if(isset($str))
-                    $str .= $content[$x];
-            break;
+                // empty or one character
+                if ($str === '') {
+                    break 2;
+                }
+                if (strlen($str) < 2) {
+                    $result[] = $str;
+                    $str = '';
+                    break;
+                }
+
+                // tag/identifier/number
+                if (preg_match('/^([a-z0-9:_]+)/i', $str, $m)) {
+                    $str = substr($str, strlen($m[1]));
+
+                    if ($m[1] != 'text:') {
+                        $result[] = $m[1];
+                    }
+                    // multiline string
+                    else {
+                        // possible hash-comment after "text:"
+                        if (preg_match('/^( |\t)*(#[^\n]+)?\n/', $str, $m)) {
+                            $str = substr($str, strlen($m[0]));
+                        }
+                        // get text until alone dot in a line
+                        if (preg_match('/^(.*)\r?\n\.\r?\n/sU', $str, $m)) {
+                            $text = $m[1];
+                            // remove dot-stuffing
+                            $text = str_replace("\n..", "\n.", $text);
+                            $str = substr($str, strlen($m[0]));
+                        }
+                        else {
+                            $text = '';
+                        }
+
+                        $result[] = $text;
+                    }
+                }
+
+                break;
             }
         }
 
-        if (sizeof($result)>1)
-            return $result;
-        else if (sizeof($result) == 1)
-            return $result[0];
-        else
-            return NULL;
+        return $num === 1 ? (isset($result[0]) ? $result[0] : NULL) : $result;
     }
 
-    /**
-     * Convert array of elements to list of strings
-     *
-     * @param string Text
-     */
-    private function _print_list($list)
-    {
-        $list = (array) $list;
-        foreach($list as $idx => $val)
-            $list[$idx] = $this->_escape_string($val);
-
-        return '["' . implode('","', $list) . '"]';
-    }
 }
