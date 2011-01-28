@@ -2,7 +2,7 @@
 
 $labels = array();
 $labels['filters'] = 'Filtros';
-$labels['managefilters'] = 'Administrar os filtros de correo entrante';
+$labels['managefilters'] = 'Xestionar os filtros de correo entrante';
 $labels['filtername'] = 'Nome do filtro';
 $labels['newfilter'] = 'Novo filtro';
 $labels['filteradd'] = 'Engadir filtro';
@@ -35,7 +35,7 @@ $labels['add'] = 'Engadir';
 $labels['del'] = 'Eliminar';
 $labels['sender'] = 'Remitente';
 $labels['recipient'] = 'Destinatario';
-$labels['vacationaddresses'] = 'Lista de direccións de correo de destinatarios adicionais (separados por comas):';
+$labels['vacationaddresses'] = 'Lista de enderezos de correo de destinatarios adicionais (separados por comas):';
 $labels['vacationdays'] = 'Cada canto enviar mensaxes (en días):';
 $labels['vacationreason'] = 'Corpo da mensaxe (razón de vacacións):';
 $labels['rulestop'] = 'Parar de avaliar regras';
