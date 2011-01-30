@@ -4,6 +4,7 @@
 - Fix multi-line strings parsing (#1487685)
 - Added tests for script parser
 - Rewritten script parser
+- Fix double request when clicking on Filters tab using Firefox
 
 * version 2.10 [2010-10-10]
 -----------------------------------------------------------

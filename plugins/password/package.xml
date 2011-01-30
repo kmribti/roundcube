@@ -35,6 +35,7 @@
 - ldap/ldap_simple drivers: support %dc variable in config
 - ldap/ldap_simple drivers: support Samba password change
 - Fix extended error messages handling (#1487676)
+- Fix double request when clicking on Password tab in Firefox
     </notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
