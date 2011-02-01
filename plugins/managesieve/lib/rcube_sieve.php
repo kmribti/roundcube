@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
   Classes for managesieve operations (using PEAR::Net_Sieve)
 
   Author: Aleksander Machniak <alec@alec.pl>
@@ -57,7 +57,7 @@ class rcube_sieve
             $this->sieve->setDebug(true, array($this, 'debug_handler'));
         }
 
-        if (PEAR::isError($this->sieve->connect($host, $port, NULL, $usetls))) {
+        if (PEAR::isError($this->sieve->connect($host, $port, null, $usetls))) {
             return $this->_set_error(SIEVE_ERROR_CONNECTION);
         }
 
@@ -414,12 +414,17 @@ class rcube_sieve_script
      * @param  string  Script's text content
      * @param  array   Disabled extensions
      */
-    public function __construct($script, $disabled=NULL)
+    public function __construct($script, $disabled=null)
     {
-        if (!empty($disabled))
-            foreach ($disabled as $ext)
-                if (($idx = array_search($ext, $this->supported)) !== false)
+        if (!empty($disabled)) {
+            // we're working on lower-cased names
+            $disabled = array_map('strtolower', (array) $disabled);
+            foreach ($disabled as $ext) {
+                if (($idx = array_search($ext, $this->supported)) !== false) {
                     unset($this->supported[$idx]);
+                }
+            }
+        }
 
         $this->content = $this->_parse_text($script);
     }
@@ -530,7 +535,7 @@ class rcube_sieve_script
                     }
                     else
                         $tests[$i] .= 'header :' . $test['type'];
-                    
+
                     $tests[$i] .= ' ' . self::escape_string($test['arg1']);
                     $tests[$i] .= ' ' . self::escape_string($test['arg2']);
                     break;
@@ -679,7 +684,7 @@ class rcube_sieve_script
         $cond = strtolower(self::tokenize($content, 1));
 
         if ($cond != 'if' && $cond != 'elsif' && $cond != 'else') {
-            return NULL;
+            return null;
         }
 
         $disabled = false;
@@ -802,7 +807,7 @@ class rcube_sieve_script
      */
     private function _parse_actions($content)
     {
-        $result = NULL;
+        $result = null;
 
         while (strlen($content)) {
             $tokens = self::tokenize($content, true);
@@ -1068,7 +1073,7 @@ class rcube_sieve_script
             }
         }
 
-        return $num === 1 ? (isset($result[0]) ? $result[0] : NULL) : $result;
+        return $num === 1 ? (isset($result[0]) ? $result[0] : null) : $result;
     }
 
 }
