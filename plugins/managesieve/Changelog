@@ -1,3 +1,5 @@
+- Fix STARTTLS for timsieved < 2.3.10
+
 * version 3.0 [2011-02-01]
 -----------------------------------------------------------
 - Added support for SASL proxy authentication (#1486691)

@@ -1161,7 +1161,13 @@ class Net_Sieve
 
         // The server should be sending a CAPABILITY response after
         // negotiating TLS. Read it, and ignore if it doesn't.
-        $this->_doCmd();
+        // Doesn't work with older timsieved versions
+        $regexp = '/^CYRUS TIMSIEVED V([0-9.]+)/';
+        if (!preg_match($regexp, $this->_capability['implementation'], $matches)
+            || version_compare($matches[1], '2.3.10', '>=')
+        ) {
+            $this->_doCmd();
+        }
 
         // RFC says we need to query the server capabilities again now that we
         // are under encryption.
