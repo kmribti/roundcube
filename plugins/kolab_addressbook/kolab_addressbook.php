@@ -122,17 +122,19 @@ class kolab_addressbook extends rcube_plugin
           
         // extend the list of contact fields to be displayed in the 'personal' section
         if (is_array($p['form']['personal'])) {
-            $p['form']['info']['content']['officelocation'] = array('size' => 40);
+            $p['form']['contact']['content']['officelocation'] = array('size' => 40);
             
-            $p['form']['personal']['content']['initials'] = array('size' => 6);
-            $p['form']['personal']['content']['profession'] = array('size' => 40);
-            $p['form']['personal']['content']['children'] = array('size' => 40);
+            $p['form']['personal']['content']['initials']     = array('size' => 6);
+            $p['form']['personal']['content']['profession']   = array('size' => 40);
+            $p['form']['personal']['content']['children']     = array('size' => 40);
+            $p['form']['personal']['content']['pgppublickey'] = array('size' => 40);
+            $p['form']['personal']['content']['freebusyurl']  = array('size' => 40);
             
             // re-order fields according to the coltypes list
-            $p['form']['info']['content'] = $this->_sort_form_fields($p['form']['info']['content']);
+            $p['form']['contact']['content'] = $this->_sort_form_fields($p['form']['contact']['content']);
             $p['form']['personal']['content'] = $this->_sort_form_fields($p['form']['personal']['content']);
             
-            // define a separate section 'settings'
+            /* define a separate section 'settings'
             $p['form']['settings'] = array(
                 'name'    => rcube_label('kolab_addressbook.settings'),
                 'content' => array(
@@ -140,6 +142,7 @@ class kolab_addressbook extends rcube_plugin
                     'freebusyurl'  => array('size' => 40, 'visible' => true),
                 )
             );
+            */
         }
         
         return $p;
