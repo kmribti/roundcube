@@ -36,6 +36,7 @@
 - ldap/ldap_simple drivers: support Samba password change
 - Fix extended error messages handling (#1487676)
 - Fix double request when clicking on Password tab in Firefox
+- Fix deprecated split() usage in xmail and directadmin drivers (#1487769)
     </notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
