@@ -7,7 +7,7 @@
  * It's clickable interface which operates on text scripts and communicates
  * with server using managesieve protocol. Adds Filters tab in Settings.
  *
- * @version 3.0
+ * @version 4.0
  * @author Aleksander 'A.L.E.C' Machniak <alec@alec.pl>
  *
  * Configuration (see config.inc.php.dist)
@@ -60,8 +60,10 @@ class managesieve extends rcube_plugin
             'filtersetform'  => array($this, 'filterset_form'),
         ));
 
-        require_once($this->home . '/lib/Net/Sieve.php');
-        require_once($this->home . '/lib/rcube_sieve.php');
+        // Add include path for internal classes
+        $include_path = $this->home . '/lib' . PATH_SEPARATOR;
+        $include_path .= ini_get('include_path');
+        set_include_path($include_path);
 
         $host = rcube_parse_host($this->rc->config->get('managesieve_host', 'localhost'));
         $port = $this->rc->config->get('managesieve_port', 2000);

@@ -3,7 +3,7 @@ Script parsing: tokenizer
 --SKIPIF--
 --FILE--
 <?php
-include('../lib/rcube_sieve.php');
+include '../lib/rcube_sieve_script.php';
 
 $txt[1] = array(1, 'text: #test
 This is test ; message;

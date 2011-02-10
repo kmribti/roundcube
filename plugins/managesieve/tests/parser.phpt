@@ -3,7 +3,7 @@ Main test of script parser
 --SKIPIF--
 --FILE--
 <?php
-include('../lib/rcube_sieve.php');
+include '../lib/rcube_sieve_script.php';
 
 $txt = '
 require ["fileinto","vacation","reject","relational","comparator-i;ascii-numeric"];
