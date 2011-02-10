@@ -37,6 +37,8 @@
 - Fix extended error messages handling (#1487676)
 - Fix double request when clicking on Password tab in Firefox
 - Fix deprecated split() usage in xmail and directadmin drivers (#1487769)
+- ldap/ldap_simple drivers: use password_ldap_samba_pwattr/password_ldap_samba_lchattr
+    instead of password_ldap_samba option
     </notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
