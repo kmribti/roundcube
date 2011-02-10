@@ -43,6 +43,7 @@ $labels['rulestop'] = 'Przerwij przetwarzanie reguł';
 $labels['vacationdays'] = 'Częstotliwość wysyłania wiadomości (w dniach):';
 $labels['vacationaddresses'] = 'Lista dodatkowych adresów odbiorców (oddzielonych przecinkami):';
 $labels['vacationreason'] = 'Treść (przyczyna nieobecności):';
+$labels['vacationsubject'] = 'Temat wiadomości:';
 $labels['filterset'] = 'Zbiór filtrów';
 $labels['filtersetadd'] = 'Dodaj zbiór filtrów';
 $labels['filtersetdel'] = 'Usuń bierzący zbiór filtrów';

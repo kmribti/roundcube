@@ -360,6 +360,7 @@ class managesieve extends rcube_plugin
             $reasons = $_POST['_action_reason'];
             $addresses = $_POST['_action_addresses'];
             $days = $_POST['_action_days'];
+            $subject = $_POST['_action_subject'];
             $flags = $_POST['_action_flags'];
 
             // we need a "hack" for radiobuttons
@@ -540,8 +541,9 @@ class managesieve extends rcube_plugin
                     $reason = $this->strip_value($reasons[$idx]);
                     $this->form['actions'][$i]['reason']    = str_replace("\r\n", "\n", $reason);
                     $this->form['actions'][$i]['days']      = $days[$idx];
+                    $this->form['actions'][$i]['subject']   = $subject[$idx];
                     $this->form['actions'][$i]['addresses'] = explode(',', $addresses[$idx]);
-// @TODO: vacation :subject, :mime, :from, :handle
+// @TODO: vacation :mime, :from, :handle
 
                     if ($this->form['actions'][$i]['addresses']) {
                         foreach($this->form['actions'][$i]['addresses'] as $aidx => $address) {
@@ -1051,11 +1053,15 @@ class managesieve extends rcube_plugin
         $out .= '<div id="action_vacation' .$id.'" style="display:' .($action['type']=='vacation' ? 'inline' : 'none') .'">';
         $out .= '<span class="label">'. Q($this->gettext('vacationreason')) .'</span><br />'
             .'<textarea name="_action_reason[]" id="action_reason' .$id. '" '
-            .'rows="3" cols="40" '. $this->error_class($id, 'action', 'reason', 'action_reason') . '>'
+            .'rows="3" cols="45" '. $this->error_class($id, 'action', 'reason', 'action_reason') . '>'
             . Q($action['reason'], 'strict', false) . "</textarea>\n";
+        $out .= '<br /><span class="label">' .Q($this->gettext('vacationsubject')) . '</span><br />'
+            .'<input type="text" name="_action_subject[]" id="action_subject'.$id.'" '
+            .'value="' . (is_array($action['subject']) ? Q(implode(', ', $action['subject']), 'strict', false) : $action['subject']) . '" size="50" '
+            . $this->error_class($id, 'action', 'subject', 'action_subject') .' />';
         $out .= '<br /><span class="label">' .Q($this->gettext('vacationaddresses')) . '</span><br />'
             .'<input type="text" name="_action_addresses[]" id="action_addr'.$id.'" '
-            .'value="' . (is_array($action['addresses']) ? Q(implode(', ', $action['addresses']), 'strict', false) : $action['addresses']) . '" size="40" '
+            .'value="' . (is_array($action['addresses']) ? Q(implode(', ', $action['addresses']), 'strict', false) : $action['addresses']) . '" size="50" '
             . $this->error_class($id, 'action', 'addresses', 'action_addr') .' />';
         $out .= '<br /><span class="label">' . Q($this->gettext('vacationdays')) . '</span><br />'
             .'<input type="text" name="_action_days[]" id="action_days'.$id.'" '

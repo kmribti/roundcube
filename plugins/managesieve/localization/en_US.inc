@@ -41,6 +41,7 @@ $labels['recipient'] = 'Recipient';
 $labels['vacationaddresses'] = 'Additional list of recipient e-mails (comma separated):';
 $labels['vacationdays'] = 'How often send messages (in days):';
 $labels['vacationreason'] = 'Message body (vacation reason):';
+$labels['vacationsubject'] = 'Message subject:';
 $labels['rulestop'] = 'Stop evaluating rules';
 $labels['filterset'] = 'Filters set';
 $labels['filtersetadd'] = 'Add filters set';
