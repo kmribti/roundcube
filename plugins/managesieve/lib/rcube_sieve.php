@@ -405,7 +405,8 @@ class rcube_sieve_script
         'copy',                     // RFC3894
         'vacation',                 // RFC5230
         'relational',               // RFC3431
-    // TODO: (most wanted first) body, imapflags, notify, regex
+        'regex',                    // draft-ietf-sieve-regex-01
+    // TODO: (most wanted first) body, imapflags, notify
     );
 
     /**
@@ -533,8 +534,9 @@ class rcube_sieve_script
 						array_push($exts, 'comparator-i;ascii-numeric');
                         $tests[$i] .= 'header :' . $m[1] . ' "' . $m[2] . '" :comparator "i;ascii-numeric"';
                     }
-                    else
+                    else {
                         $tests[$i] .= 'header :' . $test['type'];
+                    }
 
                     $tests[$i] .= ' ' . self::escape_string($test['arg1']);
                     $tests[$i] .= ' ' . self::escape_string($test['arg2']);
@@ -749,7 +751,7 @@ class rcube_sieve_script
                     else if (!is_array($tokens[$i]) && preg_match('/^:(count|value)$/i', $tokens[$i])) {
                         $header['type'] = strtolower(substr($tokens[$i], 1)) . '-' . $tokens[++$i];
                     }
-                    else if (!is_array($tokens[$i]) && preg_match('/^:(is|contains|matches)$/i', $tokens[$i])) {
+                    else if (!is_array($tokens[$i]) && preg_match('/^:(is|contains|matches|regex)$/i', $tokens[$i])) {
                         $header['type'] = strtolower(substr($tokens[$i], 1));
                     }
                     else {

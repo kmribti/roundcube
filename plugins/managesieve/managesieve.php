@@ -893,8 +893,12 @@ class managesieve extends rcube_plugin
         $select_op->add(Q($this->gettext('filterisnot')), 'notis');
         $select_op->add(Q($this->gettext('filterexists')), 'exists');
         $select_op->add(Q($this->gettext('filternotexists')), 'notexists');
-//      $select_op->add(Q($this->gettext('filtermatches')), 'matches');
-//      $select_op->add(Q($this->gettext('filternotmatches')), 'notmatches');
+        $select_op->add(Q($this->gettext('filtermatches')), 'matches');
+        $select_op->add(Q($this->gettext('filternotmatches')), 'notmatches');
+		if (in_array('regex', $this->exts)) {
+            $select_op->add(Q($this->gettext('filterregex')), 'regex');
+            $select_op->add(Q($this->gettext('filternotregex')), 'notregex');
+        }
 		if (in_array('relational', $this->exts)) {
 			$select_op->add(Q($this->gettext('countisgreaterthan')), 'count-gt');
 			$select_op->add(Q($this->gettext('countisgreaterthanequal')), 'count-ge');
