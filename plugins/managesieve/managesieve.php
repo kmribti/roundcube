@@ -7,7 +7,7 @@
  * It's clickable interface which operates on text scripts and communicates
  * with server using managesieve protocol. Adds Filters tab in Settings.
  *
- * @version 4.0
+ * @version 3.0
  * @author Aleksander 'A.L.E.C' Machniak <alec@alec.pl>
  *
  * Configuration (see config.inc.php.dist)
@@ -876,7 +876,7 @@ class managesieve extends rcube_plugin
 
         // headers select
         $select_header = new html_select(array('name' => "_header[]", 'id' => 'header'.$id,
-            'onchange' => 'header_select(' .$id .')'));
+            'onchange' => 'rule_header_select(' .$id .')'));
         foreach($this->headers as $name => $val)
             $select_header->add(Q($this->gettext($name)), Q($val));
         $select_header->add(Q($this->gettext('size')), 'size');

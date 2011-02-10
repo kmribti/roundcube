@@ -5,6 +5,7 @@
 - Added setflag/addflag/removeflag support (#1487449)
 - Added support for vacation :subject field (#1487120)
 - rcube_sieve_script class moved to separate file
+- Moved javascript code from skin templates into managesieve.js file
 
 * version 3.0 [2011-02-01]
 -----------------------------------------------------------
