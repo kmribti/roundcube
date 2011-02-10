@@ -406,7 +406,9 @@ class rcube_sieve_script
         'vacation',                 // RFC5230
         'relational',               // RFC3431
         'regex',                    // draft-ietf-sieve-regex-01
-    // TODO: (most wanted first) body, imapflags, notify
+        'imapflags',
+        'imap4flags',               // RFC5232
+        // TODO: (most wanted first) body, notify
     );
 
     /**
@@ -569,6 +571,7 @@ class rcube_sieve_script
             // action(s)
             foreach ($rule['actions'] as $action) {
                 switch ($action['type']) {
+
                 case 'fileinto':
                     array_push($exts, 'fileinto');
                     $script .= "\tfileinto ";
@@ -578,6 +581,7 @@ class rcube_sieve_script
                     }
                     $script .= self::escape_string($action['target']) . ";\n";
                     break;
+
                 case 'redirect':
                     $script .= "\tredirect ";
                     if ($action['copy']) {
@@ -586,17 +590,29 @@ class rcube_sieve_script
                     }
                     $script .= self::escape_string($action['target']) . ";\n";
                     break;
+
                 case 'reject':
                 case 'ereject':
                     array_push($exts, $action['type']);
                     $script .= "\t".$action['type']." "
                         . self::escape_string($action['target']) . ";\n";
                     break;
+
+                case 'addflag':
+                case 'setflag':
+                case 'removeflag':
+                    $imapflags = strtolower($action['mode']) == 'imap4flags' ? 'imap4flags' : 'imapflags';
+                    array_push($exts, $imapflags);
+                    $script .= "\t".$action['type']." "
+                        . self::escape_string($action['target']) . ";\n";
+                    break;
+
                 case 'keep':
                 case 'discard':
                 case 'stop':
                     $script .= "\t" . $action['type'] .";\n";
                     break;
+
                 case 'vacation':
                     array_push($exts, 'vacation');
                     $script .= "\tvacation";
@@ -878,6 +894,15 @@ class rcube_sieve_script
                 }
 
                 $result[] = $vacation;
+                break;
+
+            case 'setflag':
+            case 'addflag':
+            case 'removeflag':
+                $result[] = array('type' => $token,
+                    // Flags list: last token (skip optional variable)
+                    'target' => $tokens[count($tokens)-1]
+                );
                 break;
             }
         }

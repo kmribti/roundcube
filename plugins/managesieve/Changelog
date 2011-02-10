@@ -1,5 +1,6 @@
 - Fix STARTTLS for timsieved < 2.3.10
 - Added :regex and :matches support (#1487746)
+- Added setflag/addflag/removeflag support (#1487449)
 
 * version 3.0 [2011-02-01]
 -----------------------------------------------------------

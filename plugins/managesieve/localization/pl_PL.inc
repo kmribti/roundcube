@@ -69,6 +69,14 @@ $labels['valueislessthan'] = 'wartość jest mniejsza od';
 $labels['valueislessthanequal'] = 'wartość jest równa lub mniejsza od';
 $labels['valueequals'] = 'wartość jest równa';
 $labels['valuenotequals'] = 'wartość jest różna od';
+$labels['setflags'] = 'Ustaw flagi wiadomości';
+$labels['addflags'] = 'Dodaj flagi do wiadomości';
+$labels['removeflags'] = 'Usuń flagi wiadomości';
+$labels['flagread'] = 'Przeczytana';
+$labels['flagdeleted'] = 'Usunięta';
+$labels['flaganswered'] = 'Z odpowiedzią';
+$labels['flagflagged'] = 'Oflagowana';
+$labels['flagdraft'] = 'Szkic';
 
 $messages = array();
 $messages['filterunknownerror'] = 'Nieznany błąd serwera';

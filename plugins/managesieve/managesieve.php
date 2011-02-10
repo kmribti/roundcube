@@ -360,6 +360,7 @@ class managesieve extends rcube_plugin
             $reasons = $_POST['_action_reason'];
             $addresses = $_POST['_action_addresses'];
             $days = $_POST['_action_days'];
+            $flags = $_POST['_action_flags'];
 
             // we need a "hack" for radiobuttons
             foreach ($sizeitems as $item)
@@ -373,12 +374,13 @@ class managesieve extends rcube_plugin
 
             if ($name == '')
                 $this->errors['name'] = $this->gettext('cannotbeempty');
-            else
+            else {
                 foreach($this->script as $idx => $rule)
                     if($rule['name'] == $name && $idx != $fid) {
                         $this->errors['name'] = $this->gettext('ruleexist');
                         break;
                     }
+            }
 
             $i = 0;
             // rules
@@ -481,6 +483,7 @@ class managesieve extends rcube_plugin
                 $target = $this->strip_value($act_targets[$idx]);
 
                 switch ($type) {
+
                 case 'fileinto':
                 case 'fileinto_copy':
                     $mailbox = $this->strip_value($mailboxes[$idx]);
@@ -490,6 +493,7 @@ class managesieve extends rcube_plugin
                         $this->form['actions'][$i]['copy'] = true;
                     }
                     break;
+
                 case 'reject':
                 case 'ereject':
                     $target = $this->strip_value($area_targets[$idx]);
@@ -498,6 +502,7 @@ class managesieve extends rcube_plugin
  //                 if ($target == '')
 //                      $this->errors['actions'][$i]['targetarea'] = $this->gettext('cannotbeempty');
                     break;
+
                 case 'redirect':
                 case 'redirect_copy':
                     $this->form['actions'][$i]['target'] = $target;
@@ -512,6 +517,25 @@ class managesieve extends rcube_plugin
                         $this->form['actions'][$i]['copy'] = true;
                     }
                     break;
+
+                case 'addflag':
+                case 'setflag':
+                case 'removeflag':
+                    $_target = array();
+                    if (empty($flags[$idx])) {
+                        $this->errors['actions'][$i]['target'] = $this->gettext('noflagset');
+                    }
+                    else {
+                        foreach ($flags[$idx] as $flag) {
+                            $_target[] = $this->strip_value($flag);
+                        }
+                    }
+                    $this->form['actions'][$i]['target'] = $_target;
+                    if (in_array('imap4flags', $this->exts)) {
+                        $this->form['actions'][$i]['mode'] = 'imap4flags';
+                    }
+                    break;
+
                 case 'vacation':
                     $reason = $this->strip_value($reasons[$idx]);
                     $this->form['actions'][$i]['reason']    = str_replace("\r\n", "\n", $reason);
@@ -995,6 +1019,11 @@ class managesieve extends rcube_plugin
         if (in_array('vacation', $this->exts))
             $select_action->add(Q($this->gettext('messagereply')), 'vacation');
         $select_action->add(Q($this->gettext('messagedelete')), 'discard');
+        if (in_array('imapflags', $this->exts) || in_array('imap4flags', $this->exts)) {
+            $select_action->add(Q($this->gettext('setflags')), 'setflag');
+            $select_action->add(Q($this->gettext('addflags')), 'addflag');
+            $select_action->add(Q($this->gettext('removeflags')), 'removeflag');
+        }
         $select_action->add(Q($this->gettext('rulestop')), 'stop');
 
         $select_type = $action['type'];
@@ -1032,6 +1061,25 @@ class managesieve extends rcube_plugin
             .'<input type="text" name="_action_days[]" id="action_days'.$id.'" '
             .'value="' .Q($action['days'], 'strict', false) . '" size="2" '
             . $this->error_class($id, 'action', 'days', 'action_days') .' />';
+        $out .= '</div>';
+
+        // flags
+        $flags = array(
+            'read'      => '\\\\Seen',
+            'answered'  => '\\\\Answered',
+            'flagged'   => '\\\\Flagged',
+            'deleted'   => '\\\\Deleted',
+            'draft'     => '\\\\Draft',
+        );
+        $action['target'] = (array)$action['target'];
+        $out .= '<div id="action_flags' .$id.'" style="display:' 
+            . (preg_match('/^(set|add|remove)flag$/', $action['type']) ? 'inline' : 'none') . '"'
+            . $this->error_class($id, 'action', 'flags', 'action_flags') . '>';
+        foreach ($flags as $fidx => $flag) {
+            $out .= '<nobr><input type="checkbox" name="_action_flags[' .$id .'][]" value="' . $flag . '"'
+                . (in_array_nocase($flag, $action['target']) ? 'checked="checked"' : '') . ' />'
+                . Q($this->gettext('flag'.$fidx)) .'</nobr> ';
+        }
         $out .= '</div>';
 
         // mailbox select

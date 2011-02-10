@@ -68,6 +68,14 @@ $labels['valueislessthan'] = 'value is less than';
 $labels['valueislessthanequal'] = 'value is less than or equal to';
 $labels['valueequals'] = 'value is equal to';
 $labels['valuenotequals'] = 'value does not equal';
+$labels['setflags'] = 'Set flags to the message';
+$labels['addflags'] = 'Add flags to the message';
+$labels['removeflags'] = 'Remove flags from the message';
+$labels['flagread'] = 'Read';
+$labels['flagdeleted'] = 'Deleted';
+$labels['flaganswered'] = 'Answered';
+$labels['flagflagged'] = 'Flagged';
+$labels['flagdraft'] = 'Draft';
 
 $messages = array();
 $messages['filterunknownerror'] = 'Unknown server error';
