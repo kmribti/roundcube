@@ -1079,13 +1079,13 @@ class managesieve extends rcube_plugin
             'deleted'   => '\\\\Deleted',
             'draft'     => '\\\\Draft',
         );
-        $action['target'] = (array)$action['target'];
+        $flags_target = (array)$action['target'];
         $out .= '<div id="action_flags' .$id.'" style="display:' 
             . (preg_match('/^(set|add|remove)flag$/', $action['type']) ? 'inline' : 'none') . '"'
             . $this->error_class($id, 'action', 'flags', 'action_flags') . '>';
         foreach ($flags as $fidx => $flag) {
             $out .= '<nobr><input type="checkbox" name="_action_flags[' .$id .'][]" value="' . $flag . '"'
-                . (in_array_nocase($flag, $action['target']) ? 'checked="checked"' : '') . ' />'
+                . (in_array_nocase($flag, $flags_target) ? 'checked="checked"' : '') . ' />'
                 . Q($this->gettext('flag'.$fidx)) .'</nobr> ';
         }
         $out .= '</div>';
