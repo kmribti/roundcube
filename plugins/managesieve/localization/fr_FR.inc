@@ -38,6 +38,14 @@ $labels['vacationaddresses'] = 'Liste des destinataires (séparés par une virgu
 $labels['vacationdays'] = 'Ne pas renvoyer un message avant (jours) :';
 $labels['vacationreason'] = 'Corps du message (raison de l\'absence) :';
 $labels['rulestop'] = 'Arrêter d\'évaluer les prochaines règles';
+$labels['setflags'] = 'Mettre les flags au message';
+$labels['addflags'] = 'Ajouter les flags au message';
+$labels['removeflags'] = 'Supprimer les flags du message';
+$labels['flagread'] = 'Lu';
+$labels['flagdeleted'] = 'Suprimé';
+$labels['flaganswered'] = 'répondu';
+$labels['flagflagged'] = 'Favori';
+$labels['flagdraft'] = 'Brouillon';
 
 $messages = array();
 $messages['filterunknownerror'] = 'Erreur du serveur inconnue';
