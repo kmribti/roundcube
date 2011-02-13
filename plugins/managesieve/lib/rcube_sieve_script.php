@@ -216,8 +216,11 @@ class rcube_sieve_script
                 case 'addflag':
                 case 'setflag':
                 case 'removeflag':
-                    $imapflags = strtolower($action['mode']) == 'imap4flags' ? 'imap4flags' : 'imapflags';
-                    array_push($exts, $imapflags);
+                    if (!empty($action['mode']) && strtolower($action['mode']) == 'imap4flags')
+                        array_push($exts, 'imap4flags');
+                    else
+                        array_push($exts, 'imapflags');
+
                     $script .= "\t".$action['type']." "
                         . self::escape_string($action['target']) . ";\n";
                     break;
@@ -546,14 +549,14 @@ class rcube_sieve_script
         }
 
         // multi-line string
-        if (preg_match('/[\r\n\0]/', $str)) {
+        if (preg_match('/[\r\n\0]/', $str) || strlen($str) > 1024) {
             return sprintf("text:\n%s\n.\n", self::escape_multiline_string($str));
         }
         // quoted-string
         else {
-            $replace['/"/'] = '\\"';
-            return '"'. preg_replace(array_keys($replace), array_values($replace),
-                $str) . '"';
+            $replace = array('\\' => '\\\\', '"' => '\\"');
+            $str = str_replace(array_keys($replace), array_values($replace), $str);
+            return '"' . $str . '"';
         }
     }
 

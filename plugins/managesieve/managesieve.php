@@ -1073,13 +1073,14 @@ class managesieve extends rcube_plugin
 
         // flags
         $flags = array(
-            'read'      => '\\\\Seen',
-            'answered'  => '\\\\Answered',
-            'flagged'   => '\\\\Flagged',
-            'deleted'   => '\\\\Deleted',
-            'draft'     => '\\\\Draft',
+            'read'      => '\\Seen',
+            'answered'  => '\\Answered',
+            'flagged'   => '\\Flagged',
+            'deleted'   => '\\Deleted',
+            'draft'     => '\\Draft',
         );
         $flags_target = (array)$action['target'];
+
         $out .= '<div id="action_flags' .$id.'" style="display:' 
             . (preg_match('/^(set|add|remove)flag$/', $action['type']) ? 'inline' : 'none') . '"'
             . $this->error_class($id, 'action', 'flags', 'action_flags') . '>';
