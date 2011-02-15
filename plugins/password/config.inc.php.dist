@@ -18,6 +18,9 @@ $rcmail_config['password_minimum_length'] = 0;
 // Change to false to remove this check.
 $rcmail_config['password_require_nonalpha'] = false;
 
+// Enables logging of password changes into logs/password
+$rcmail_config['password_log'] = false;
+
 
 // SQL Driver options
 // ------------------
@@ -195,15 +198,8 @@ $rcmail_config['password_ldap_force_replace'] = true;
 // Whenever the password is changed, the attribute will be updated if set (e.g. shadowLastChange)
 $rcmail_config['password_ldap_lchattr'] = '';
 
-// LDAP Samba password attribute, e.g. sambaNTPassword
-// Name of the LDAP's Samba attribute used for storing user password
-$rcmail_config['password_ldap_samba_pwattr'] = '';
-
-// LDAP Samba Password Last Change Date attribute, e.g. sambaPwdLastSet
-// Some places use an attribute to store the date of the last password change
-// The date is meassured in "seconds since epoch" (an integer value)
-// Whenever the password is changed, the attribute will be updated if set
-$rcmail_config['password_ldap_samba_lchattr'] = '';
+// Also try to update Samba password attributes: sambaNTPassword and sambaPwdLastSet
+$rcmail_config['password_ldap_samba'] = false;
 
 
 // DirectAdmin Driver options
