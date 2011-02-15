@@ -15,8 +15,8 @@
 		<email>alec@alec.pl</email>
 		<active>yes</active>
 	</lead>
-	<date></date>
-	<time></time>
+	<date>2011-02-15</date>
+	<time>12:00</time>
 	<version>
 		<release>2.2</release>
 		<api>1.6</api>
@@ -37,9 +37,8 @@
 - Fix extended error messages handling (#1487676)
 - Fix double request when clicking on Password tab in Firefox
 - Fix deprecated split() usage in xmail and directadmin drivers (#1487769)
-- ldap/ldap_simple drivers: use password_ldap_samba_pwattr/password_ldap_samba_lchattr
-  instead of password_ldap_samba option
 - Added option (password_log) for logging password changes
+- Virtualmin driver: Add option for setting username format (#1487781)
     </notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
