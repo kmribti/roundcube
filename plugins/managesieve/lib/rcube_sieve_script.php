@@ -554,9 +554,7 @@ class rcube_sieve_script
         }
         // quoted-string
         else {
-            $replace = array('\\' => '\\\\', '"' => '\\"');
-            $str = str_replace(array_keys($replace), array_values($replace), $str);
-            return '"' . $str . '"';
+            return '"' . addcslashes($str, '\\"') . '"';
         }
     }
 
