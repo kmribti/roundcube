@@ -785,7 +785,7 @@ class Net_Sieve
             return PEAR::raiseError('Not currently in AUTHORISATION state', 1);
         }
 
-        $command = sprintf('SETACTIVE "%s"', $this->_escape($scriptname));
+        $command = sprintf('SETACTIVE %s', $this->_escape($scriptname));
         if (PEAR::isError($res = $this->_doCmd($command))) {
             return $res;
         }
