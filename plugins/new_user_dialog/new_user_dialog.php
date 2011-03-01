@@ -82,11 +82,10 @@ class new_user_dialog extends rcube_plugin
 
       // disable keyboard events for messages list (#1486726)
       $rcmail->output->add_script(
-        "$(document).ready(function () {
-          rcmail.message_list.key_press = function(){};
-          rcmail.message_list.key_down = function(){};
-          $('input[name=_name]').focus();
-          });", 'foot');
+        "rcmail.message_list.key_press = function(){};
+         rcmail.message_list.key_down = function(){};
+         $('input[name=_name]').focus();
+        ", 'docready');
 
       $this->include_stylesheet('newuserdialog.css');
     }
