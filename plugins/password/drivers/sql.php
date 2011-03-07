@@ -137,9 +137,12 @@ function password_save($curpass, $passwd)
 	    if (strtolower(substr(trim($query),0,6))=='select') {
     	    if ($result = $db->fetch_array($res))
 		        return PASSWORD_SUCCESS;
-	    } else { 
+	    } else {
+            // This is the good case: 1 row updated
     	    if ($db->affected_rows($res) == 1)
-		        return PASSWORD_SUCCESS; // This is the good case: 1 row updated
+	            return PASSWORD_SUCCESS;
+            // @TODO: Some queries don't affect any rows
+            // Should we assume a success if there was no error?
 	    }
     }
 
