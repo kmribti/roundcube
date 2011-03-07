@@ -1,8 +1,11 @@
+* version 4.1 [2011-03-07]
+-----------------------------------------------------------
 - Fix fileinto target is always INBOX (#1487776)
 - Fix escaping of backslash character in quoted strings (#1487780)
 - Fix handling of non-safe characters (double-quote, backslash)
   or UTF-8 characters (dovecot's implementation bug workaround)
   in script names
+- Fix saving of a script using flags extension on servers with imap4flags support (#1487825)
 
 * version 4.0 [2011-02-10]
 -----------------------------------------------------------

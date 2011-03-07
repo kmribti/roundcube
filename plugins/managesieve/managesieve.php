@@ -534,9 +534,6 @@ class managesieve extends rcube_plugin
                         }
                     }
                     $this->form['actions'][$i]['target'] = $_target;
-                    if (in_array('imap4flags', $this->exts)) {
-                        $this->form['actions'][$i]['mode'] = 'imap4flags';
-                    }
                     break;
 
                 case 'vacation':
@@ -1085,9 +1082,9 @@ class managesieve extends rcube_plugin
             . (preg_match('/^(set|add|remove)flag$/', $action['type']) ? 'inline' : 'none') . '"'
             . $this->error_class($id, 'action', 'flags', 'action_flags') . '>';
         foreach ($flags as $fidx => $flag) {
-            $out .= '<nobr><input type="checkbox" name="_action_flags[' .$id .'][]" value="' . $flag . '"'
+            $out .= '<input type="checkbox" name="_action_flags[' .$id .'][]" value="' . $flag . '"'
                 . (in_array_nocase($flag, $flags_target) ? 'checked="checked"' : '') . ' />'
-                . Q($this->gettext('flag'.$fidx)) .'</nobr> ';
+                . Q($this->gettext('flag'.$fidx)) .'<br>';
         }
         $out .= '</div>';
 

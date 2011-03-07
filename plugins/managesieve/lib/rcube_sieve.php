@@ -31,6 +31,7 @@ class rcube_sieve
     public $script;                 // rcube_sieve_script object
     public $current;                // name of currently loaded script
     private $disabled;              // array of disabled extensions
+    private $exts;                  // array of supported extensions
 
 
     /**
@@ -73,6 +74,7 @@ class rcube_sieve
             return $this->_set_error(SIEVE_ERROR_LOGIN);
         }
 
+        $this->exts     = $this->get_extensions();
         $this->disabled = $disabled;
     }
 
@@ -191,6 +193,9 @@ class rcube_sieve
      */
     public function get_extensions()
     {
+        if ($this->exts)
+            return $this->exts;
+    
         if (!$this->sieve)
             return $this->_set_error(SIEVE_ERROR_INTERNAL);
 
@@ -280,12 +285,12 @@ class rcube_sieve
     private function _parse($txt)
     {
         // try to parse from Roundcube format
-        $script = new rcube_sieve_script($txt, $this->disabled);
+        $script = new rcube_sieve_script($txt, $this->disabled, $this->exts);
 
         // ... else try to import from different formats
         if (empty($script->content)) {
             $script = $this->_import_rules($txt);
-            $script = new rcube_sieve_script($script, $this->disabled);
+            $script = new rcube_sieve_script($script, $this->disabled, $this->exts);
         }
 
         // replace all elsif with if+stop, we support only ifs

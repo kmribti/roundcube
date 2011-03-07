@@ -26,13 +26,16 @@ class rcube_sieve_script
         // TODO: body, notify
     );
 
+    private $capabilities;
+
     /**
      * Object constructor
      *
      * @param  string  Script's text content
-     * @param  array   Disabled extensions
+     * @param  array   List of disabled extensions
+     * @param  array   List of capabilities supported by server
      */
-    public function __construct($script, $disabled=null)
+    public function __construct($script, $disabled=null, $capabilities=null)
     {
         if (!empty($disabled)) {
             // we're working on lower-cased names
@@ -44,7 +47,8 @@ class rcube_sieve_script
             }
         }
 
-        $this->content = $this->_parse_text($script);
+        $this->capabilities = $capabilities;
+        $this->content      = $this->_parse_text($script);
     }
 
     /**
@@ -216,7 +220,7 @@ class rcube_sieve_script
                 case 'addflag':
                 case 'setflag':
                 case 'removeflag':
-                    if (!empty($action['mode']) && strtolower($action['mode']) == 'imap4flags')
+                    if (is_array($this->capabilities) && in_array('imap4flags', $this->capabilities))
                         array_push($exts, 'imap4flags');
                     else
                         array_push($exts, 'imapflags');
