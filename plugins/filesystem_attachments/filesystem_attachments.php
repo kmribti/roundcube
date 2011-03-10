@@ -19,7 +19,7 @@
  */
 class filesystem_attachments extends rcube_plugin
 {
-    public $task = 'mail|addressbook';
+    public $task = 'mail|addressbook|logout';
 
     function init()
     {
@@ -49,6 +49,7 @@ class filesystem_attachments extends rcube_plugin
     function upload($args)
     {
         $args['status'] = false;
+        $group = $args['group'];
         $rcmail = rcmail::get_instance();
 
         // use common temp dir for file uploads
@@ -61,7 +62,7 @@ class filesystem_attachments extends rcube_plugin
             $args['status'] = true;
 
             // Note the file for later cleanup
-            $_SESSION['plugins']['filesystem_attachments']['tmp_files'][] = $tmpfname;
+            $_SESSION['plugins']['filesystem_attachments'][$group][] = $tmpfname;
         }
 
         return $args;
@@ -72,6 +73,7 @@ class filesystem_attachments extends rcube_plugin
      */
     function save($args)
     {
+        $group = $args['group'];
         $args['status'] = false;
 
         if (!$args['path']) {
@@ -91,7 +93,7 @@ class filesystem_attachments extends rcube_plugin
         $args['status'] = true;
 
         // Note the file for later cleanup
-        $_SESSION['plugins']['filesystem_attachments']['tmp_files'][] = $args['path'];
+        $_SESSION['plugins']['filesystem_attachments'][$group][] = $args['path'];
 
         return $args;
     }
@@ -135,13 +137,17 @@ class filesystem_attachments extends rcube_plugin
         // $_SESSION['compose']['attachments'] is not a complete record of
         // temporary files because loading a draft or starting a forward copies
         // the file to disk, but does not make an entry in that array
-        if (is_array($_SESSION['plugins']['filesystem_attachments']['tmp_files'])){
-            foreach ($_SESSION['plugins']['filesystem_attachments']['tmp_files'] as $filename){
-                if(file_exists($filename)){
-                    unlink($filename);
+        if (is_array($_SESSION['plugins']['filesystem_attachments'])){
+            foreach ($_SESSION['plugins']['filesystem_attachments'] as $group => $files) {
+                if ($args['group'] && $args['group'] != $group)
+                    continue;
+                foreach ((array)$files as $filename){
+                    if(file_exists($filename)){
+                        unlink($filename);
+                    }
                 }
+                unset($_SESSION['plugins']['filesystem_attachments'][$group]);
             }
-            unset($_SESSION['plugins']['filesystem_attachments']['tmp_files']);
         }
         return $args;
     }

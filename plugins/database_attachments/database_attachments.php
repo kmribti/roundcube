@@ -22,9 +22,10 @@ class database_attachments extends filesystem_attachments
     /**
      * Helper method to generate a unique key for the given attachment file
      */
-    private function _key($filepath)
+    private function _key($args)
     {
-        return  $this->cache_prefix.md5(mktime().$filepath.$_SESSION['user_id']); 
+        $uname = $args['path'] ? $args['path'] : $args['name'];
+        return  $this->cache_prefix . $args['group'] . md5(mktime() . $uname . $_SESSION['user_id']);
     }
 
     /**
@@ -34,7 +35,7 @@ class database_attachments extends filesystem_attachments
     {
         $args['status'] = false;
         $rcmail = rcmail::get_instance();
-        $key = $this->_key($args['path']);
+        $key = $this->_key($args);
         $data = base64_encode(file_get_contents($args['path']));
 
         $status = $rcmail->db->query(
@@ -62,10 +63,10 @@ class database_attachments extends filesystem_attachments
         $args['status'] = false;
         $rcmail = rcmail::get_instance();
 
-        $key = $this->_key($args['name']);
+        $key = $this->_key($args);
 
-	if ($args['path'])
-	    $args['data'] = file_get_contents($args['path']);
+        if ($args['path'])
+          $args['data'] = file_get_contents($args['path']);
 
         $data = base64_encode($args['data']);
 
@@ -146,11 +147,12 @@ class database_attachments extends filesystem_attachments
      */
     function cleanup($args)
     {
+        $prefix = $this->cache_prefix . $args['group'];
         $rcmail = rcmail::get_instance();
         $rcmail->db->query(
             "DELETE FROM ".get_table_name('cache')."
              WHERE  user_id=?
-             AND cache_key like '{$this->cache_prefix}%'",
+             AND cache_key like '{$prefix}%'",
             $_SESSION['user_id']);
     }
 }
