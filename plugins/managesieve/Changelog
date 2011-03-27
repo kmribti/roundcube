@@ -1,3 +1,5 @@
+- Moved elsif replacement code to handle only imports from other formats
+
 * version 4.1 [2011-03-07]
 -----------------------------------------------------------
 - Fix fileinto target is always INBOX (#1487776)

@@ -291,18 +291,16 @@ class rcube_sieve
         if (empty($script->content)) {
             $script = $this->_import_rules($txt);
             $script = new rcube_sieve_script($script, $this->disabled, $this->exts);
-        }
 
-        // replace all elsif with if+stop, we support only ifs
-        foreach ($script->content as $idx => $rule) {
-            if (!isset($script->content[$idx+1])
-                || preg_match('/^else|elsif$/', $script->content[$idx+1]['type'])) {
+            // replace all elsif with if+stop, we support only ifs
+            foreach ($script->content as $idx => $rule) {
                 // 'stop' not found?
-                if (!preg_match('/^(stop|vacation)$/', $rule['actions'][count($rule['actions'])-1]['type'])) {
-                    $script->content[$idx]['actions'][] = array(
-                        'type' => 'stop'
-                    );
+                foreach ($rule['actions'] as $action) {
+                    if (preg_match('/^(stop|vacation)$/', $action['type'])) {
+                        continue 2;
+                    }
                 }
+                $script->content[$idx]['actions'][] = array('type' => 'stop');
             }
         }
 
