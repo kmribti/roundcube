@@ -5,7 +5,7 @@
  *
  * Driver to change passwords via DirectAdmin Control Panel
  *
- * @version 1.0
+ * @version 1.2
  * @author Victor Benincasa <vbenincasa@gmail.com>
  *
  */
@@ -22,6 +22,11 @@ function password_save($curpass, $passwd){
     $da_host    = $rcmail->config->get('password_directadmin_host');
     $da_port    = $rcmail->config->get('password_directadmin_port');
 
+    if(strpos($da_user, '@') === false) return array('code' => PASSWORD_ERROR, 'message' => 'Change the SYSTEM user password through control panel!');
+
+    $da_host = str_replace('%h', $_SESSION['imap_host'], $da_host);
+    $da_host = str_replace('%d', $rcmail->user->get_username('domain'), $da_host);
+
     $Socket->connect($da_host,$da_port); 
     $Socket->set_method('POST');
     $Socket->query('/CMD_CHANGE_EMAIL_PASSWORD',
@@ -34,13 +39,14 @@ function password_save($curpass, $passwd){
     ));
     $response = $Socket->fetch_parsed_body();
 
-	//console("DA error response: $response[text] [$da_user]");
+    //DEBUG
+    //console("Password Plugin: [USER: $da_user] [HOST: $da_host] - Response: [SOCKET: ".$Socket->result_status_code."] [DA ERROR: ".strip_tags($response['error'])."] [TEXT: ".$response[text]."]");
 
-    if($Socket->result_status_code <> 200)
-        return PASSWORD_CONNECT_ERROR;
-    elseif($response['error'] == 1){ //Error description: $response[text] 
-        return PASSWORD_ERROR;
-    }else 
+    if($Socket->result_status_code != 200)
+        return array('code' => PASSWORD_CONNECT_ERROR, 'message' => $Socket->error[0]);
+    elseif($response['error'] == 1)
+        return array('code' => PASSWORD_ERROR, 'message' => strip_tags($response['text']));
+    else 
         return PASSWORD_SUCCESS;
 
 }
@@ -57,11 +63,11 @@ function password_save($curpass, $passwd){
  *
  * @author Phi1 'l0rdphi1' Stier <l0rdphi1@liquenox.net>
  * @package HTTPSocket
- * @version 2.6
+ * @version 2.7 (Updated by Victor Benincasa <vbenincasa@gmail.com>)
  */
 class HTTPSocket {
 
-    var $version = '2.6';
+    var $version = '2.7';
     
     /* all vars are private except $error, $query_cache, and $doFollowLocationHeader */
 
@@ -316,8 +322,8 @@ class HTTPSocket {
             }
 
         }
-
-        list($this->result_header, $this->result_body) = explode("\r\n\r\n", $this->result, 2);
+        
+        list($this->result_header,$this->result_body) = preg_split("/\r\n\r\n/",$this->result,2);
 
         if ($this->bind_host)
         {
@@ -378,7 +384,7 @@ class HTTPSocket {
         {
             if ($asArray)
             {
-                return explode("\n", $this->fetch_body());
+                return preg_split("/\n/",$this->fetch_body());
             }
 
             return $this->fetch_body();
@@ -438,14 +444,14 @@ class HTTPSocket {
      */
     function fetch_header( $header = '' )
     {
-        $array_headers = explode("\r\n", $this->result_header);
-
+        $array_headers = preg_split("/\r\n/",$this->result_header);
+        
         $array_return = array( 0 => $array_headers[0] );
         unset($array_headers[0]);
 
         foreach ( $array_headers as $pair )
         {
-            list($key,$value) = explode(": ", $pair, 2);
+            list($key,$value) = preg_split("/: /",$pair,2);
             $array_return[strtolower($key)] = $value;
         }
 
