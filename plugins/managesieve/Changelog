@@ -1,4 +1,5 @@
 - Moved elsif replacement code to handle only imports from other formats
+- Fixed mod_mailbox() usage for newer Roundcube versions
 
 * version 4.1 [2011-03-07]
 -----------------------------------------------------------

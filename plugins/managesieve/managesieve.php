@@ -1096,6 +1096,7 @@ class managesieve extends rcube_plugin
 
         $a_folders = $this->rc->imap->list_mailboxes();
         $delimiter = $this->rc->imap->get_hierarchy_delimiter();
+        $replace_delimiter = $this->rc->config->get('managesieve_replace_delimiter');
 
         // set mbox encoding
         $mbox_encoding = $this->rc->config->get('managesieve_mbox_encoding', 'UTF7-IMAP');
@@ -1105,21 +1106,21 @@ class managesieve extends rcube_plugin
         else
             $mailbox = '';
 
+
         foreach ($a_folders as $folder) {
-            $utf7folder = $this->rc->imap->mod_mailbox($folder);
+            $utf7folder = $folder;
+            $foldername = rcmail_localize_foldername($utf7folder);
+            $names      = explode($delimiter, $foldername);
+            $foldername = $names[sizeof($names)-1];
+
             $names = explode($delimiter, rcube_charset_convert($folder, 'UTF7-IMAP'));
             $name  = $names[sizeof($names)-1];
-
-            if ($replace_delimiter = $this->rc->config->get('managesieve_replace_delimiter'))
-                $utf7folder = str_replace($delimiter, $replace_delimiter, $utf7folder);
 
             // convert to Sieve implementation encoding
             $utf7folder = $this->mbox_encode($utf7folder, $mbox_encoding);
 
-            if ($folder_class = rcmail_folder_classname($name))
-                $foldername = $this->gettext($folder_class);
-            else
-                $foldername = $name;
+            if ($replace_delimiter)
+                $utf7folder = str_replace($delimiter, $replace_delimiter, $utf7folder);
 
             $out .= sprintf('<option value="%s"%s>%s%s</option>'."\n",
                 htmlspecialchars($utf7folder),
