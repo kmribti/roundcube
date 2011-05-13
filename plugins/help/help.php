@@ -29,7 +29,7 @@ class help extends rcube_plugin
         $this->register_task('help');
 
         // register actions
-        $this->register_action('', array($this, 'action'));
+        $this->register_action('index', array($this, 'action'));
         $this->register_action('about', array($this, 'action'));
         $this->register_action('license', array($this, 'action'));
 
