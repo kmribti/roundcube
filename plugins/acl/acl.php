@@ -89,12 +89,12 @@ class acl extends rcube_plugin
         if (!strlen($mbox_imap)) {
             return $args;
         }
-
+/*
         // Do nothing on protected folders (?)
         if ($args['options']['protected']) {
             return $args;
         }
-
+*/
         // Do nothing if no ACL support
         if (!$this->rc->imap->get_capability('ACL')) {
             return $args;
