@@ -1,0 +1,13 @@
+<?php
+
+// Default look of access rights table
+// In advanced mode all access rights are displayed separately
+// In simple mode access rights are grouped into four groups: read, write, delete, full 
+$rcmail_config['acl_advanced_mode'] = false;
+
+// Username realm
+// When user enters a username without domain part, realm
+// alows to add it to the username (and display correct username in the table)
+$rcmail_config['acl_username_realm'] = '';
+
+?>

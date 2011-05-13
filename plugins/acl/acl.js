@@ -1,0 +1,268 @@
+/**
+ * ACL plugin script
+ *
+ * @version 0.1
+ * @author Aleksander Machniak <alec@alec.pl>
+ */
+
+if (window.rcmail) {
+    rcmail.addEventListener('init', function() {
+        if (rcmail.gui_objects.acltable)
+            rcmail.acl_list_init();
+
+        rcmail.enable_command('acl-create', 'acl-save', 'acl-cancel', 'acl-mode-switch', true);
+        rcmail.enable_command('acl-delete', 'acl-edit', false);
+    });
+}
+
+// Display new-entry form
+rcube_webmail.prototype.acl_create = function()
+{
+    this.acl_init_form();
+}
+
+// Display ACL edit form
+rcube_webmail.prototype.acl_edit = function()
+{
+    // @TODO: multi-row edition
+    var id = this.acl_list.get_single_selection();
+    if (id)
+        this.acl_init_form(id);
+}
+
+// ACL entry delete
+rcube_webmail.prototype.acl_delete = function()
+{
+    var users = this.acl_get_usernames();
+
+    if (users && users.length && confirm(this.get_label('acl.deleteconfirm'))) {
+        this.http_request('plugin.acl', '_act=delete&_user='+urlencode(users.join(','))
+            + '&_mbox='+urlencode(this.env.mailbox),
+            this.set_busy(true, 'acl.deleting'));
+    }
+}
+
+// Save ACL data
+rcube_webmail.prototype.acl_save = function()
+{
+    var user = $('#acluser').val(), rights = '';
+
+    $(':checkbox', this.env.acl_advanced ? $('#advancedrights') : sim_ul = $('#simplerights')).map(function() {
+        if (this.checked)
+            rights += this.value;    
+    });
+
+    if (!user) {
+        alert(this.get_label('acl.nouser'));
+        return;
+    }
+    if (!rights) {
+        alert(this.get_label('acl.norights'));
+        return;
+    }
+
+    this.http_request('plugin.acl', '_act=save'
+        + '&_user='+urlencode(user)
+        + '&_acl=' +rights
+        + '&_mbox='+urlencode(this.env.mailbox)
+        + (this.acl_id ? '&_old='+this.acl_id : ''),
+        this.set_busy(true, 'acl.saving'));
+}
+
+// Cancel/Hide form
+rcube_webmail.prototype.acl_cancel = function()
+{
+    this.acl_form.hide();
+}
+
+// Update data after save (and hide form)
+rcube_webmail.prototype.acl_update = function(o)
+{
+    // delete row
+    if (o.old)
+        this.acl_remove_row(o.old);
+
+    // add new row
+    this.acl_add_row(o, true);
+    // hide form
+    this.acl_form.hide();
+}
+
+// Switch table display mode
+rcube_webmail.prototype.acl_mode_switch = function(elem)
+{
+    this.env.acl_advanced = !this.env.acl_advanced;
+    this.enable_command('acl-delete', 'acl-edit', false);
+    this.http_request('plugin.acl', '_act=list'
+        + '&_mode='+(this.env.acl_advanced ? 'advanced' : 'simple')
+        + '&_mbox='+urlencode(this.env.mailbox),
+        this.set_busy(true, 'loading'));
+}
+
+// ACL table initialization
+rcube_webmail.prototype.acl_list_init = function()
+{
+    this.acl_list = new rcube_list_widget(this.gui_objects.acltable,
+        {multiselect:true, draggable:false, keyboard:true, toggleselect:true});
+    this.acl_list.addEventListener('select', function(o) { rcmail.acl_list_select(o); });
+    this.acl_list.addEventListener('dblclick', function(o) { rcmail.acl_list_dblclick(o); });
+    this.acl_list.addEventListener('keypress', function(o) { rcmail.acl_list_keypress(o); });
+    this.acl_list.init();
+}
+
+// ACL table row selection handler
+rcube_webmail.prototype.acl_list_select = function(list)
+{
+    rcmail.enable_command('acl-delete', list.selection.length > 0);
+    rcmail.enable_command('acl-edit', list.selection.length == 1);
+    list.focus();
+}
+
+// ACL table double-click handler
+rcube_webmail.prototype.acl_list_dblclick = function(list)
+{
+    this.acl_edit();
+}
+
+// ACL table keypress handler
+rcube_webmail.prototype.acl_list_keypress = function(list)
+{
+    if (list.key_pressed == list.ENTER_KEY)
+        this.command('acl-edit');
+    else if (list.key_pressed == list.DELETE_KEY || list.key_pressed == list.BACKSPACE_KEY)
+        this.command('acl-delete');
+}
+
+// Reloads ACL table
+rcube_webmail.prototype.acl_list_update = function(html)
+{
+    $(this.gui_objects.acltable).html(html);
+    this.acl_list_init();
+}
+
+// Returns names of users in selected rows
+rcube_webmail.prototype.acl_get_usernames = function()
+{
+    var users = [], n, len, cell, row,
+        list = this.acl_list,
+        selection = list.get_selection();
+
+    for (n=0, len=selection.length; n<len; n++) {
+        row = list.rows[selection[n]].obj;
+        cell = $('td.user', row);
+        if (cell.length == 1)
+            users.push(cell.text());
+    }
+
+    return users;
+}
+
+// Removes ACL table row
+rcube_webmail.prototype.acl_remove_row = function(id)
+{
+    this.acl_list.remove_row(id);
+    // we don't need it anymore (remove id conflict)
+    $('#rcmrow'+id).remove();
+    this.env.acl[id] = null;
+}
+
+// Adds ACL table row
+rcube_webmail.prototype.acl_add_row = function(o, sel)
+{
+    var n, len, ids = [], id = o.id, list = this.acl_list,
+        items = this.env.acl_advanced ? [] : this.env.acl_items,
+        table = this.gui_objects.acltable,
+        row = $('thead > tr', table).clone();
+
+    // Update new row
+    $('td', row).map(function() {
+        var cl = this.className.replace(/^acl/, '');
+
+        if (items && items[cl])
+            cl = items[cl];
+
+        if (cl == 'user')
+            $(this).text(o.username);
+        else
+            $(this).addClass(String(o.acl).match(RegExp(cl)) ? 'enabled' : 'disabled').text('');
+    });
+
+    row.attr('id', 'rcmrow'+id);
+    row = row.get(0);
+
+    this.env.acl[id] = o.acl;
+
+    // sorting... (create an array of user identifiers, then sort it)
+    for (n in this.env.acl)
+        if (this.env.acl[n])
+            ids.push(n);
+    ids.sort();
+
+    // find current id
+    for (n=0, len=ids.length; n<len; n++)
+        if (ids[n] == id)
+            break;
+
+    // add row
+    if (n && n < len) {
+        $('#rcmrow'+ids[n-1]).after(row);
+        list.init_row(row);
+        list.rowcount++;
+    }
+    else
+        list.insert_row(row);
+
+    if (sel)
+        list.select_row(o.id);
+}
+
+// Initializes and shows ACL create/edit form
+rcube_webmail.prototype.acl_init_form = function(id)
+{
+    var ul, row, li_elements, body = $('body'),
+        adv_ul = $('#advancedrights'), sim_ul = $('#simplerights'),
+        name_input = $('#acluser');
+
+    this.acl_form = $('#aclform');
+
+    // Hide unused items
+    if (this.env.acl_advanced) {
+        adv_ul.show();
+        sim_ul.hide();
+        ul = adv_ul;
+    }
+    else {
+        sim_ul.show();
+        adv_ul.hide();
+        ul = sim_ul;
+    }
+
+    // initialize form fields
+    li_elements = $(':checkbox', ul);
+    li_elements.attr('checked', false);
+
+    if (id) {
+        row = this.acl_list.rows[id].obj;
+        li_elements.map(function() {
+            var val = this.value, td = $('td.'+this.id, row);
+            if (td && td.hasClass('enabled'))
+                this.checked = true;
+        });
+        name_input.val($('td.user', row).text());
+    }
+    else {
+        name_input.val('');
+    }
+
+    this.acl_id = id;
+
+    // position the form horizontally
+    var bw = body.width(), mw = this.acl_form.width();
+
+    if (bw >= mw)
+        this.acl_form.css({left: parseInt((bw - mw)/2)+'px'});
+
+    // display it
+    this.acl_form.show();
+    name_input.focus();
+}
