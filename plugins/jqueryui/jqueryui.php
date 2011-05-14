@@ -11,10 +11,12 @@
  */
 class jqueryui extends rcube_plugin
 {
+  public $noajax = true;
+
   public function init()
   {
     $version = '1.8.12';
-    
+
     $rcmail = rcmail::get_instance();
     $this->load_config();
 
@@ -30,7 +32,7 @@ class jqueryui extends rcube_plugin
       $this->include_stylesheet("themes/$ui_theme/jquery-ui-$version.custom.css");
     }
     else {
-      $this->include_stylesheet("themes/$ui_theme/jquery-ui-$version.custom.css");
+      $this->include_stylesheet("themes/default/jquery-ui-$version.custom.css");
     }
 
     // jquery UI localization
@@ -50,5 +52,3 @@ class jqueryui extends rcube_plugin
   }
 
 }
-
-?>
