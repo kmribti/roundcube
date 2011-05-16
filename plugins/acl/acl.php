@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Folders Access Control Lists Management
+ * Folders Access Control Lists Management (RFC4314, RFC2086)
  *
  * @version 0.1
  * @author Aleksander Machniak <alec@alec.pl>
@@ -312,7 +312,7 @@ class acl extends rcube_plugin
 
         $acl = array_intersect(str_split($acl), $this->rights_supported());
 
-        if (!strpos($user, '@') && ($realm = $this->rc->config->get('acl_username_realm'))) {
+        if (!strpos($user, '@') && ($realm = $this->get_realm())) {
             $user .= '@' . rcube_idn_to_ascii(preg_replace('/^@/', '', $realm));
         }
 
@@ -454,5 +454,42 @@ class acl extends rcube_plugin
         }
 
         return $this->supported = str_split('lrswi' . $rights . 'pa');
+    }
+
+    /**
+     * Username realm detection.
+     *
+     * @return string Username realm (domain)
+     */
+    private function get_realm()
+    {
+        // When user enters a username without domain part, realm
+        // alows to add it to the username (and display correct username in the table)
+
+        if (isset($_SESSION['acl_username_realm'])) {
+            return $_SESSION['acl_username_realm'];
+        }
+
+        // find realm in username of logged user (?)
+        list($name, $domain) = explode('@', $_SESSION['username']);
+
+        // Use (always existent) ACL entry on the INBOX for the user to determine
+        // whether or not the user ID in ACL entries need to be qualified and how
+        // they would need to be qualified.
+        if (empty($domain)) {
+            $acl = $this->rc->imap->get_acl('INBOX');
+            if (is_array($acl)) {
+                $regexp = '/^' . preg_quote($_SESSION['username'], '/') . '@(.*)$/';
+                $regexp = '/^' . preg_quote('aleksander.machniak', '/') . '@(.*)$/';
+                foreach (array_keys($acl) as $name) {
+                    if (preg_match($regexp, $name, $matches)) {
+                        $domain = $matches[1];
+                        break;
+                    }
+                }
+            }
+        }
+
+        return $_SESSION['acl_username_realm'] = $domain;
     }
 }
