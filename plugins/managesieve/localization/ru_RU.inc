@@ -5,15 +5,15 @@
 | plugins/managesieve/localization/ru_RU.inc                            |
 |                                                                       |
 | Russian translation for roundcube/managesieve plugin                  |
-| Copyright (C) 2008-2010                                               |
+| Copyright (C) 2008-2011                                               |
 | Licensed under the GNU GPL                                            |
 |                                                                       |
 +-----------------------------------------------------------------------+
-| Author:                                                               |
+| Author: Sergey Dukachev <iam@dukess.ru>                               |
 | Updates: Sergey Dukachev <iam@dukess.ru>                              |
 +-----------------------------------------------------------------------+
 
-@version 2010-10-11
+@version 2011-05-11
 
 */
 
@@ -81,6 +81,14 @@ $labels['valueislessthan'] = 'значение меньше, чем';
 $labels['valueislessthanequal'] = 'значение меньше или равно';
 $labels['valueequals'] = 'значение равно';
 $labels['valuenotequals'] = 'значение не равно';
+$labels['setflags'] = 'Установить флаг на сообщение';
+$labels['addflags'] = 'Добавить флаг к сообщению';
+$labels['removeflags'] = 'Убрать флаги из сообщения';
+$labels['flagread'] = 'Прочитано';
+$labels['flagdeleted'] = 'Удалено';
+$labels['flaganswered'] = 'Отвечено';
+$labels['flagflagged'] = 'Помечено';
+$labels['flagdraft'] = 'Черновик';
 
 $messages = array();
 $messages['filterunknownerror'] = 'Неизвестная ошибка сервера';
