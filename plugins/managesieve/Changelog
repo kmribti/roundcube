@@ -1,5 +1,8 @@
+* version 4.2 [2011-05-24]
+-----------------------------------------------------------
 - Moved elsif replacement code to handle only imports from other formats
 - Fixed mod_mailbox() usage for newer Roundcube versions
+- Fixed regex extension (error: regex require missing)
 
 * version 4.1 [2011-03-07]
 -----------------------------------------------------------

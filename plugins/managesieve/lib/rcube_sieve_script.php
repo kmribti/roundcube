@@ -153,9 +153,14 @@ class rcube_sieve_script
 					if (preg_match('/^(value|count)-([gteqnl]{2})/', $test['type'], $m)) {
 						array_push($exts, 'relational');
 						array_push($exts, 'comparator-i;ascii-numeric');
+
                         $tests[$i] .= 'header :' . $m[1] . ' "' . $m[2] . '" :comparator "i;ascii-numeric"';
                     }
                     else {
+					    if ($test['type'] == 'regex') {
+						    array_push($exts, 'regex');
+                        }
+
                         $tests[$i] .= 'header :' . $test['type'];
                     }
 
