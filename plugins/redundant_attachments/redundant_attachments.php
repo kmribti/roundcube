@@ -1,32 +1,84 @@
 <?php
 /**
  * Redundant attachments
- * 
+ *
  * This plugin provides a redundant storage for temporary uploaded
- * attachment files. They are stored in both the database backed
+ * attachment files. They are stored in both the database backend
  * as well as on the local file system.
+ *
+ * It provides also memcache store as a fallback (see config file).
  *
  * This plugin relies on the core filesystem_attachments plugin
  * and combines it with the functionality of the database_attachments plugin.
  *
  * @author Thomas Bruederli <roundcube@gmail.com>
- * 
+ * @author Aleksander Machniak <machniak@kolabsys.com>
+ *
+ * Copyright (C) 2011, The Roundcube Dev Team
+ * Copyright (C) 2011, Kolab Systems AG
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2
+ * as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
-require_once('plugins/filesystem_attachments/filesystem_attachments.php');
+
+require_once(INSTALL_PATH . 'plugins/filesystem_attachments/filesystem_attachments.php');
 
 class redundant_attachments extends filesystem_attachments
 {
     // A prefix for the cache key used in the session and in the key field of the cache table
-    private $cache_prefix = "ATTACH.";
-    
+    private $prefix = "ATTACH";
+
+    // rcube_cache instance for SQL DB
+    private $cache;
+
+    // rcube_cache instance for memcache
+    private $mem_cache;
+
+    private $loaded;
+
     /**
      * Default constructor
      */
     function init()
     {
-      parent::init();
-      
-      $this->db = rcmail::get_instance()->get_dbh();
+        parent::init();
+    }
+
+    /**
+     * Loads plugin configuration and initializes cache object(s)
+     */
+    private function _load_drivers()
+    {
+        if ($this->loaded) {
+            return;
+        }
+
+        $rcmail = rcmail::get_instance();
+
+        // load configuration
+        $this->load_config();
+
+        // Init SQL cache (disable cache data serialization)
+        $this->cache = $rcmail->get_cache($this->prefix, 'db', 0, false);
+
+        // Init memcache (fallback) cache
+        if ($rcmail->config->get('redundant_attachments_memcache')) {
+            $ttl = 12 * 60 * 60; // 12 hours
+            $ttl = (int) $rcmail->config->get('redundant_attachments_memcache_ttl', $ttl);
+            $this->mem_cache = $rcmail->get_cache($this->prefix, 'memcache', $ttl, false);
+        }
+
+        $this->loaded = true;
     }
 
     /**
@@ -35,7 +87,7 @@ class redundant_attachments extends filesystem_attachments
     private function _key($args)
     {
         $uname = $args['path'] ? $args['path'] : $args['name'];
-        return  $this->cache_prefix . $args['group'] . md5(mktime() . $uname . $_SESSION['user_id']);
+        return $args['group'] . md5(mktime() . $uname . $_SESSION['user_id']);
     }
 
     /**
@@ -44,24 +96,23 @@ class redundant_attachments extends filesystem_attachments
     function upload($args)
     {
         $args = parent::upload($args);
-        
-        $key = $this->_key($args);
+
+        $this->_load_drivers();
+
+        $key  = $this->_key($args);
         $data = base64_encode(file_get_contents($args['path']));
 
-        $status = $this->db->query(
-            "INSERT INTO ".get_table_name('cache')."
-             (created, user_id, cache_key, data)
-             VALUES (".$this->db->now().", ?, ?, ?)",
-            $_SESSION['user_id'],
-            $key,
-            $data);
-            
+        $status = $this->cache->write($key, $data);
+
+        if (!$status && $this->mem_cache) {
+            $status = $this->mem_cache->write($key, $data);
+        }
+
         if ($status) {
             $args['id'] = $key;
             $args['status'] = true;
-            unset($args['path']);
         }
-        
+
         return $args;
     }
 
@@ -72,19 +123,19 @@ class redundant_attachments extends filesystem_attachments
     {
         $args = parent::save($args);
 
+        $this->_load_drivers();
+
         if ($args['path'])
           $args['data'] = file_get_contents($args['path']);
 
+        $key  = $this->_key($args);
         $data = base64_encode($args['data']);
-        $key = $this->_key($args);
 
-        $status = $this->db->query(
-            "INSERT INTO ".get_table_name('cache')."
-             (created, user_id, cache_key, data)
-             VALUES (".$this->db->now().", ?, ?, ?)",
-            $_SESSION['user_id'],
-            $key,
-            $data);
+        $status = $this->cache->write($key, $data);
+
+        if (!$status && $this->mem_cache) {
+            $status = $this->mem_cache->write($key, $data);
+        }
 
         if ($status) {
             $args['id'] = $key;
@@ -100,18 +151,21 @@ class redundant_attachments extends filesystem_attachments
      */
     function remove($args)
     {
-        $args['status'] = false;
-        $status = $this->db->query(
-            "DELETE FROM ".get_table_name('cache')."
-             WHERE  user_id=?
-             AND    cache_key=?",
-            $_SESSION['user_id'],
-            $args['id']);
+        parent::remove($args);
 
-        if ($status)
-            $args['status'] = true;
+        $this->_load_drivers();
 
-        return parent::remove($args);
+        $status = $this->cache->remove($args['id']);
+
+        if (!$status && $this->mem_cache) {
+            $status = $this->cache->remove($args['id']);
+        }
+
+        // we cannot trust the result of any of the methods above
+        // assume true, attachments will be removed on cleanup
+        $args['status'] = true;
+
+        return $args;
     }
 
     /**
@@ -132,38 +186,47 @@ class redundant_attachments extends filesystem_attachments
     {
         // attempt to get file from local file system
         $args = parent::get($args);
+
         if ($args['path'] && ($args['status'] = file_exists($args['path'])))
           return $args;
-        
-        // fetch from database if not found on FS
-        $sql_result = $this->db->query(
-            "SELECT cache_id, data
-             FROM ".get_table_name('cache')."
-             WHERE  user_id=?
-             AND    cache_key=?",
-            $_SESSION['user_id'],
-            $args['id']);
 
-        if ($sql_arr = $this->db->fetch_assoc($sql_result)) {
-            $args['data'] = base64_decode($sql_arr['data']);
+        $this->_load_drivers();
+
+        // fetch from database if not found on FS
+        $data = $this->cache->read($args['id']);
+
+        // fetch from memcache if not found on FS and DB
+        if (($data === false || $data === null) && $this->mem_cache) {
+            $data = $this->mem_cache->read($args['id']);
+        }
+
+        if ($data) {
+            $args['data'] = base64_decode($data);
             $args['status'] = true;
         }
-        
+
         return $args;
     }
-    
+
     /**
      * Delete all temp files associated with this user
      */
     function cleanup($args)
     {
-        $prefix = $this->cache_prefix . $args['group'];
-        $this->db->query(
-            "DELETE FROM ".get_table_name('cache')."
-             WHERE  user_id=?
-             AND cache_key like '{$prefix}%'",
-            $_SESSION['user_id']);
-            
+        $this->_load_drivers();
+
+        if ($this->cache) {
+            $this->cache->remove($args['group'], true);
+        }
+
+        if ($this->mem_cache) {
+            $this->mem_cache->remove($args['group'], true);
+        }
+
         parent::cleanup($args);
+
+        $args['status'] = true;
+
+        return $args;
     }
 }
