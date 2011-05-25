@@ -2,10 +2,13 @@
 
 $labels['sharing'] = 'Udostępnianie';
 $labels['myrights'] = 'Prawa dostępu';
-$labels['username'] = 'Nazwa użytkownika';
+$labels['username'] = 'Użytkownik:';
 $labels['advanced'] = 'tryb zaawansowany';
 $labels['newuser'] = 'Dodaj rekord';
 $labels['actions'] = 'Akcje na prawach...';
+$labels['anyone'] = 'Wszyscy (anyone)';
+$labels['anonymous'] = 'Goście (anonymous)';
+$labels['identifier'] = 'Identyfikator';
 
 $labels['acll'] = 'Podgląd (Lookup)';
 $labels['aclr'] = 'Odczyt (Read)';

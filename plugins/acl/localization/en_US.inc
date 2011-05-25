@@ -2,10 +2,13 @@
 
 $labels['sharing'] = 'Sharing';
 $labels['myrights'] = 'Access Rights';
-$labels['username'] = 'Username';
+$labels['username'] = 'User:';
 $labels['advanced'] = 'advanced mode';
 $labels['newuser'] = 'Add entry';
 $labels['actions'] = 'Access right actions...';
+$labels['anyone'] = 'All users (anyone)';
+$labels['anonymous'] = 'Guests (anonymous)';
+$labels['identifier'] = 'Identifier';
 
 $labels['acll'] = 'Lookup';
 $labels['aclr'] = 'Read messages';

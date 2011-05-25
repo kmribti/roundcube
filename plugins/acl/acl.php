@@ -3,7 +3,7 @@
 /**
  * Folders Access Control Lists Management (RFC4314, RFC2086)
  *
- * @version 0.1
+ * @version 0.2
  * @author Aleksander Machniak <alec@alec.pl>
  *
  *
@@ -30,6 +30,7 @@ class acl extends rcube_plugin
     private $rc;
     private $supported = null;
     private $mbox;
+    private $specials = array('anyone', 'anonymous');
 
     /**
      * Plugin initialization
@@ -129,6 +130,7 @@ class acl extends rcube_plugin
         $this->rc->output->set_env('mailbox', $mbox_imap);
         $this->rc->output->add_handlers(array(
             'acltable'  => array($this, 'templ_table'),
+            'acluser'   => array($this, 'templ_user'),
             'aclrights' => array($this, 'templ_rights'),
         ));
 
@@ -160,7 +162,7 @@ class acl extends rcube_plugin
     }
 
     /**
-     * Creates ACL rights form
+     * Creates ACL rights form (rights list part)
      *
      * @param array $attrib Template object attributes
      *
@@ -218,6 +220,52 @@ class acl extends rcube_plugin
     }
 
     /**
+     * Creates ACL rights form (user part)
+     *
+     * @param array $attrib Template object attributes
+     *
+     * @return string HTML Content
+     */
+    function templ_user($attrib)
+    {
+        // Create username input
+        $attrib['name'] = 'acluser';
+
+        $textfield = new html_inputfield($attrib);
+
+        $fields['user'] = html::label(array('for' => 'iduser'), $this->gettext('username'))
+            . ' ' . $textfield->show();
+
+        // Add special entries
+        if (!empty($this->specials)) {
+            foreach ($this->specials as $key) {
+                $fields[$key] = html::label(array('for' => 'id'.$key), $this->gettext($key));
+            }
+        }
+
+        $this->rc->output->set_env('acl_specials', $this->specials);
+
+        // Create list with radio buttons
+        if (count($fields) > 1) {
+            $ul = '';
+            $radio = new html_radiobutton(array('name' => 'usertype'));
+            foreach ($fields as $key => $val) {
+                $ul .= html::tag('li', null, $radio->show($key == 'user' ? 'user' : '',
+                        array('value' => $key, 'id' => 'id'.$key))
+                    . $val);
+            }
+
+            $out = html::tag('ul', array('id' => 'usertype'), $ul, html::$common_attrib);
+        }
+        // Display text input alone
+        else {
+            $out = $fields['user'];
+        }
+
+        return $out;
+    }
+
+    /**
      * Creates ACL rights table
      *
      * @param array $attrib Template object attributes
@@ -233,8 +281,22 @@ class acl extends rcube_plugin
             $acl = array();
         }
 
+        // Keep special entries (anyone/anonymous) on top of the list
+        if (!empty($this->specials) && !empty($acl)) {
+            foreach ($this->specials as $key) {
+                if (isset($acl[$key])) {
+                    $acl_special[$key] = $acl[$key];
+                    unset($acl[$key]);
+                }
+            }
+        }
+
         // Sort the list by username
         uksort($acl, 'strnatcasecmp');
+
+        if (!empty($acl_special)) {
+            $acl = array_merge($acl_special, $acl);
+        }
 
         // Get supported rights and build column names
         $supported = $this->rights_supported();
@@ -265,7 +327,7 @@ class acl extends rcube_plugin
         $table = new html_table($attrib);
 
         // Create table header
-        $table->add_header('user', $this->gettext('username'));
+        $table->add_header('user', $this->gettext('identifier'));
         foreach (array_keys($items) as $key) {
             $table->add_header('acl'.$key, $this->gettext('shortacl'.$key));
         }
@@ -280,6 +342,10 @@ class acl extends rcube_plugin
             // filter out virtual rights (c or d) the server may return
             $userrights = array_intersect($rights, $supported);
             $userid = html_identifier($user);
+
+            if (!empty($this->specials) && in_array($user, $this->specials)) {
+                $user = $this->gettext($user);
+            }
 
             $table->add_row(array('id' => 'rcmrow'.$userid));
             $table->add('user', Q($user));
@@ -312,15 +378,19 @@ class acl extends rcube_plugin
 
         $acl = array_intersect(str_split($acl), $this->rights_supported());
 
-        if (!strpos($user, '@') && ($realm = $this->get_realm())) {
+        if (!empty($this->specials) && in_array($user, $this->specials)) {
+            $username = $this->gettext($user);
+        }
+        else if (!strpos($user, '@') && ($realm = $this->get_realm())) {
             $user .= '@' . rcube_idn_to_ascii(preg_replace('/^@/', '', $realm));
+            $username = $user;
         }
 
         if ($acl && $user && strlen($mbox)
             && $this->rc->imap->set_acl($mbox, $user, $acl)
         ) {
             $ret = array('id' => html_identifier($user),
-                 'username' => $user, 'acl' => implode($acl), 'old' => $oldid);
+                 'username' => $username, 'acl' => implode($acl), 'old' => $oldid);
             $this->rc->output->command('acl_update', $ret);
             $this->rc->output->show_message($oldid ? 'acl.updatesuccess' : 'acl.createsuccess', 'confirmation');
         }
