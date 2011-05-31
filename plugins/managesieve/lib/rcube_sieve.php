@@ -223,10 +223,12 @@ class rcube_sieve
             if (!$this->sieve)
                 return $this->_set_error(SIEVE_ERROR_INTERNAL);
 
-            $this->list = $this->sieve->listScripts();
+            $list = $this->sieve->listScripts();
 
-            if (PEAR::isError($this->list))
+            if (PEAR::isError($list))
                 return $this->_set_error(SIEVE_ERROR_OTHER);
+
+            $this->list = $list;
         }
 
         return $this->list;

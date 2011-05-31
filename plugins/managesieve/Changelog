@@ -1,3 +1,5 @@
+- Fixed handling of error in Net_Sieve::listScripts()
+
 * version 4.2 [2011-05-24]
 -----------------------------------------------------------
 - Moved elsif replacement code to handle only imports from other formats
