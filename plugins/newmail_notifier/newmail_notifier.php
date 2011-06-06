@@ -59,20 +59,20 @@ class newmail_notifier extends rcube_plugin
      */
     function prefs_list($args)
     {
+        if ($args['section'] != 'mailbox') {
+            return $args;
+        }
+
         // Load configuration
         $this->load_config();
+
+        // Load localization and configuration
+        $this->add_texts('localization/');
 
         // Check that configuration is not disabled
         $dont_override  = (array) $this->rc->config->get('dont_override', array());
         $basic_override = in_array('newmail_notifier_basic', $dont_override);
         $sound_override = in_array('newmail_notifier_sound', $dont_override);
-
-        if($args['section'] != 'mailbox') {
-            return $args;
-        }
-
-        // Load localization and configuration
-        $this->add_texts('localization/');
 
         if (!$basic_override) {
             $field_id = '_newmail_notifier_basic';
@@ -100,6 +100,10 @@ class newmail_notifier extends rcube_plugin
      */
     function prefs_save($args)
     {
+        if ($args['section'] != 'mailbox') {
+            return $args;
+        }
+
         // Load configuration
         $this->load_config();
 
@@ -107,10 +111,6 @@ class newmail_notifier extends rcube_plugin
         $dont_override  = (array) $this->rc->config->get('dont_override', array());
         $basic_override = in_array('newmail_notifier_basic', $dont_override);
         $sound_override = in_array('newmail_notifier_sound', $dont_override);
-
-        if($args['section'] != 'mailbox') {
-            return $args;
-        }
 
         if (!$basic_override) {
             $key = 'newmail_notifier_basic';
