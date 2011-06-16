@@ -12,20 +12,27 @@ class example_addressbook_backend extends rcube_addressbook
   public $primary_key = 'ID';
   public $readonly = true;
   public $groups = true;
-  
+
   private $filter;
   private $result;
-  
-  public function __construct()
+  private $name;
+
+  public function __construct($name)
   {
     $this->ready = true;
+    $this->name = $name;
   }
-  
+
+  public function get_name()
+  {
+    return $this->name;
+  }
+
   public function set_search_set($filter)
   {
     $this->filter = $filter;
   }
-  
+
   public function get_search_set()
   {
     return $this->filter;
@@ -44,12 +51,12 @@ class example_addressbook_backend extends rcube_addressbook
       array('ID' => 'testgroup2', 'name' => "Sample Group"),
     );
   }
-  
+
   public function list_records($cols=null, $subset=0)
   {
     $this->result = $this->count();
     $this->result->add(array('ID' => '111', 'name' => "Example Contact", 'firstname' => "Example", 'surname' => "Contact", 'email' => "example@roundcube.net"));
-    
+
     return $this->result;
   }
 
@@ -74,7 +81,7 @@ class example_addressbook_backend extends rcube_addressbook
     $this->list_records();
     $first = $this->result->first();
     $sql_arr = $first['ID'] == $id ? $first : null;
-    
+
     return $assoc && $sql_arr ? $sql_arr : $this->result;
   }
 
@@ -105,5 +112,5 @@ class example_addressbook_backend extends rcube_addressbook
   {
      return false;
   }
-  
+
 }
