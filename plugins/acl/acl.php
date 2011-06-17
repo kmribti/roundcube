@@ -96,13 +96,18 @@ class acl extends rcube_plugin
             return $args;
         }
 */
-        // Do nothing if no ACL support
-        if (!$this->rc->imap->get_capability('ACL')) {
+        // Namespace root
+        if ($args['options']['is_root']) {
             return $args;
         }
 
         // Get MYRIGHTS
         if (!($myrights = $args['options']['rights'])) {
+            return $args;
+        }
+
+        // Do nothing if no ACL support
+        if (!$this->rc->imap->get_capability('ACL')) {
             return $args;
         }
 
@@ -211,7 +216,7 @@ class acl extends rcube_plugin
                 . html::label(array('for' => $id, 'title' => $this->gettext('longacl'.$key)),
                     $this->gettext('acl'.$key)));
         }
-        
+
         $out .= "\n" . html::tag('ul', $attrib, $ul, html::$common_attrib);
 
         $this->rc->output->set_env('acl_items', $items);
@@ -441,7 +446,7 @@ class acl extends rcube_plugin
 
         // Save state in user preferences
         $this->rc->user->save_prefs(array('acl_advanced_mode' => $advanced));
-        
+
         $out = $this->list_rights();
 
         $out = preg_replace(array('/^<table[^>]+>/', '/<\/table>$/'), '', $out);
@@ -455,7 +460,7 @@ class acl extends rcube_plugin
      * @param array $rights MYRIGHTS result
      *
      * @return string HTML content
-     */        
+     */
     function acl2text($rights)
     {
         if (empty($rights)) {
