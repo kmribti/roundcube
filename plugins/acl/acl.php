@@ -39,8 +39,6 @@ class acl extends rcube_plugin
     {
         $this->rc = rcmail::get_instance();
 
-        $this->require_plugin('jqueryui');
-
         // Register hooks
         $this->add_hook('folder_form', array($this, 'folder_form'));
         // Plugin actions

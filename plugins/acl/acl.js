@@ -49,7 +49,7 @@ rcube_webmail.prototype.acl_save = function()
 
     $(':checkbox', this.env.acl_advanced ? $('#advancedrights') : sim_ul = $('#simplerights')).map(function() {
         if (this.checked)
-            rights += this.value;    
+            rights += this.value;
     });
 
     if (type = $('input:checked[name=usertype]').val()) {
