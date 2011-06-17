@@ -97,7 +97,7 @@ rcube_webmail.prototype.managesieve_rowid = function(id)
   for (i=0; i<rows.length; i++)
     if (rows[i] != null && rows[i].uid == id)
       return i;
-}
+};
 
 rcube_webmail.prototype.managesieve_updatelist = function(action, name, id, disabled)
 {
