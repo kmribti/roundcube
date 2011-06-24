@@ -21,7 +21,7 @@ $labels['aclk'] = 'Tworzenie podfolderów (Create)';
 $labels['acld'] = 'Usuwanie wiadomości (Delete)';
 $labels['aclt'] = 'Usuwanie wiadomości (Delete)';
 $labels['acle'] = 'Porządkowanie folderu (Expunge)';
-$labels['aclx'] = 'Usuwanie folder (Delete)';
+$labels['aclx'] = 'Usuwanie folderu (Delete)';
 $labels['acla'] = 'Administracja (Administer)';
 
 $labels['aclfull'] = 'Wszystkie';

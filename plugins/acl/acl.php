@@ -3,7 +3,7 @@
 /**
  * Folders Access Control Lists Management (RFC4314, RFC2086)
  *
- * @version 0.2
+ * @version 0.3
  * @author Aleksander Machniak <alec@alec.pl>
  *
  *
@@ -25,7 +25,7 @@
 
 class acl extends rcube_plugin
 {
-    public $task = 'settings';
+    public $task = 'settings|addressbook';
 
     private $rc;
     private $supported = null;
@@ -41,8 +41,10 @@ class acl extends rcube_plugin
 
         // Register hooks
         $this->add_hook('folder_form', array($this, 'folder_form'));
+        // kolab_addressbook plugin
+        $this->add_hook('addressbook_form', array($this, 'folder_form'));
         // Plugin actions
-        $this->register_action('plugin.acl', array($this, 'acl_actions')); 
+        $this->register_action('plugin.acl', array($this, 'acl_actions'));
     }
 
     /**
@@ -116,6 +118,12 @@ class acl extends rcube_plugin
         $this->include_script('acl.js');
         $this->rc->output->include_script('list.js');
         $this->include_stylesheet($this->local_skin_path().'/acl.css');
+
+        // add Info fieldset if it doesn't exist
+        if (!isset($args['form']['props']['fieldsets']['info']))
+            $args['form']['props']['fieldsets']['info'] = array(
+                'name'  => rcube_label('info'),
+                'content' => array());
 
         // Display folder rights to 'Info' fieldset
         $args['form']['props']['fieldsets']['info']['content']['myrights'] = array(
