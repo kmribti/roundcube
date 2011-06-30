@@ -19,7 +19,7 @@
  */
 class filesystem_attachments extends rcube_plugin
 {
-    public $task = 'mail|addressbook|logout';
+    public $task = '?(?!login).*';
 
     function init()
     {
