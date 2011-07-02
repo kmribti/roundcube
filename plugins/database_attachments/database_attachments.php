@@ -36,7 +36,13 @@ class database_attachments extends filesystem_attachments
         $args['status'] = false;
         $rcmail = rcmail::get_instance();
         $key = $this->_key($args);
-        $data = base64_encode(file_get_contents($args['path']));
+
+        $data = file_get_contents($args['path']);
+
+        if ($data === false)
+            return $args;
+
+        $data = base64_encode($data);
 
         $status = $rcmail->db->query(
             "INSERT INTO ".get_table_name('cache')."
@@ -45,13 +51,13 @@ class database_attachments extends filesystem_attachments
             $_SESSION['user_id'],
             $key,
             $data);
-            
+
         if ($status) {
             $args['id'] = $key;
             $args['status'] = true;
             unset($args['path']);
         }
-        
+
         return $args;
     }
 
@@ -65,8 +71,12 @@ class database_attachments extends filesystem_attachments
 
         $key = $this->_key($args);
 
-        if ($args['path'])
-          $args['data'] = file_get_contents($args['path']);
+        if ($args['path']) {
+            $args['data'] = file_get_contents($args['path']);
+
+            if ($args['data'] === false)
+                return $args;
+        }
 
         $data = base64_encode($args['data']);
 
@@ -77,7 +87,7 @@ class database_attachments extends filesystem_attachments
             $_SESSION['user_id'],
             $key,
             $data);
-        
+
         if ($status) {
             $args['id'] = $key;
             $args['status'] = true;
@@ -100,11 +110,11 @@ class database_attachments extends filesystem_attachments
              AND    cache_key=?",
             $_SESSION['user_id'],
             $args['id']);
-    
+
         if ($status) {
             $args['status'] = true;
         }
-        
+
         return $args;
     }
 
@@ -125,7 +135,7 @@ class database_attachments extends filesystem_attachments
     function get($args)
     {
         $rcmail = rcmail::get_instance();
-        
+
         $sql_result = $rcmail->db->query(
             "SELECT cache_id, data
              FROM ".get_table_name('cache')."
@@ -138,10 +148,10 @@ class database_attachments extends filesystem_attachments
             $args['data'] = base64_decode($sql_arr['data']);
             $args['status'] = true;
         }
-        
+
         return $args;
     }
-    
+
     /**
      * Delete all temp files associated with this user
      */
