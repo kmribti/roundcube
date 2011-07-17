@@ -6,7 +6,7 @@
  *
  * This plugin requires that a working public_ldap directory be configured.
  *
- * @version 1.01
+ * @version 1.02
  * @author Kris Steinhoff
  *
  * Example configuration:
@@ -19,6 +19,10 @@
  *  // When automatically setting a new users's full name in their
  *  // new identity, match the user's login name against this field.
  *  $rcmail_config['new_user_identity_match'] = 'uid';
+ *
+ *  // Use this field (from fieldmap configuration) to fill alias col of
+ *  // the new user record.
+ *  $rcmail_config['new_user_identity_alias'] = 'alias';
  */
 class new_user_identity extends rcube_plugin
 {
@@ -33,12 +37,17 @@ class new_user_identity extends rcube_plugin
 
     function lookup_user_name($args)
     {
+        $rcmail = rcmail::get_instance();
+        
         if ($this->init_ldap()) {
             $results = $this->ldap->search('*', $args['user'], TRUE);
             if (count($results->records) == 1) {
                 $args['user_name'] = $results->records[0]['name'];
                 if (!$args['user_email'] && strpos($results->records[0]['email'], '@')) {
                     $args['user_email'] = rcube_idn_to_ascii($results->records[0]['email']);
+                }
+                if (($alias_col = $rcmail->config->get('new_user_identity_alias')) && $results->records[0][$alias_col]) {
+                  $args['alias'] = $results->records[0][$alias_col];
                 }
             }
         }
