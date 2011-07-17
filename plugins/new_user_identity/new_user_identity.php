@@ -6,7 +6,7 @@
  *
  * This plugin requires that a working public_ldap directory be configured.
  *
- * @version 1.0
+ * @version 1.01
  * @author Kris Steinhoff
  *
  * Example configuration:
@@ -75,6 +75,6 @@ class new_user_identity_ldap_backend extends rcube_ldap
     function __construct($p, $debug=false, $mail_domain=NULL, $search=null)
     {
         parent::__construct($p, $debug, $mail_domain);
-        $this->prop['search_fields'] = $search;
+        $this->prop['search_fields'] = (array)$search;
     }
 }
