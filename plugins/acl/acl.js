@@ -1,14 +1,30 @@
 /**
  * ACL plugin script
  *
- * @version 0.3
+ * @version 0.4
  * @author Aleksander Machniak <alec@alec.pl>
  */
 
 if (window.rcmail) {
     rcmail.addEventListener('init', function() {
-        if (rcmail.gui_objects.acltable)
+        if (rcmail.gui_objects.acltable) {
             rcmail.acl_list_init();
+            // enable autocomplete on user input
+            if (rcmail.env.acl_users_source) {
+                rcmail.init_address_input_events($('#acluser'), 'plugin.acl-autocomplete');
+                // fix inserted value
+                rcmail.addEventListener('autocomplete_insert', function(e) {
+                    if (e.field.id != 'acluser')
+                        return;
+
+                    var value = e.insert;
+                    // get UID from the entry value
+                    if (value.match(/\s*\(([^)]+)\)[, ]*$/))
+                        value = RegExp.$1;
+                    e.field.value = value;
+                });
+            }
+        }
 
         rcmail.enable_command('acl-create', 'acl-save', 'acl-cancel', 'acl-mode-switch', true);
         rcmail.enable_command('acl-delete', 'acl-edit', false);

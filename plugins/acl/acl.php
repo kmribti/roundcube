@@ -3,7 +3,7 @@
 /**
  * Folders Access Control Lists Management (RFC4314, RFC2086)
  *
- * @version 0.3
+ * @version 0.4
  * @author Aleksander Machniak <alec@alec.pl>
  *
  *
@@ -30,6 +30,7 @@ class acl extends rcube_plugin
     private $rc;
     private $supported = null;
     private $mbox;
+    private $ldap;
     private $specials = array('anyone', 'anonymous');
 
     /**
@@ -45,6 +46,7 @@ class acl extends rcube_plugin
         $this->add_hook('addressbook_form', array($this, 'folder_form'));
         // Plugin actions
         $this->register_action('plugin.acl', array($this, 'acl_actions'));
+        $this->register_action('plugin.acl-autocomplete', array($this, 'acl_autocomplete'));
     }
 
     /**
@@ -73,6 +75,45 @@ class acl extends rcube_plugin
         }
 
         // Only AJAX actions
+        $this->rc->output->send();
+    }
+
+    /**
+     * Handler for user login autocomplete request
+     */
+    function acl_autocomplete()
+    {
+        $this->load_config();
+
+        $search    = get_input_value('_search', RCUBE_INPUT_GPC, true);
+        $uid_field = $this->rc->config->get('acl_users_uid_field', 'uid');
+        $users     = array();
+
+        if ($this->init_ldap()) {
+            $this->ldap->set_pagesize(15);
+            $result = $this->ldap->search('*', $search);
+
+            foreach ($result->records as $record) {
+                $user = $record[$uid_field];
+
+                if (is_array($user)) {
+                    $user = array_filter($user);
+                    $user = $user[0];
+                }
+
+                if ($user) {
+
+                    if ($record['name'])
+                        $user = $record['name'] . ' (' . $user . ')';
+
+                    $users[] = $user;
+                }
+            }
+        }
+
+        sort($users, SORT_LOCALE_STRING);
+
+        $this->rc->output->command('ksearch_query_results', $users, $search);
         $this->rc->output->send();
     }
 
@@ -138,6 +179,7 @@ class acl extends rcube_plugin
 
         // The 'Sharing' tab
         $this->mbox = $mbox_imap;
+        $this->rc->output->set_env('acl_users_source', (bool) $this->rc->config->get('acl_users_source'));
         $this->rc->output->set_env('mailbox', $mbox_imap);
         $this->rc->output->add_handlers(array(
             'acltable'  => array($this, 'templ_table'),
@@ -572,5 +614,45 @@ class acl extends rcube_plugin
         }
 
         return $_SESSION['acl_username_realm'] = $domain;
+    }
+
+    /**
+     * Initializes autocomplete LDAP backend
+     */
+    private function init_ldap()
+    {
+        if ($this->ldap)
+            return $this->ldap->ready;
+
+        $ldap_config = (array) $this->rc->config->get('ldap_public');
+        $addressbook = $this->rc->config->get('acl_users_source');
+        $uid_field   = $this->rc->config->get('acl_users_uid_field', 'uid');
+
+        if (empty($addressbook) || empty($uid_field) || empty($ldap_config[$addressbook])) {
+            return false;
+        }
+
+        // search also in UID field
+        $ldap_config[$addressbook]['search_fields'] = array_unique(
+            array_merge((array)$uid_field, (array)$ldap_config[$addressbook]['search_fields']));
+
+        // add UID field to fieldmap, so it will be returned in a record
+        if (isset($ldap_config[$addressbook]['fieldmap'])) {
+            if (empty($ldap_config[$addressbook]['fieldmap']['uid'])) {
+                $ldap_config[$addressbook]['fieldmap']['uid'] = $uid_field;
+            }
+        }
+        // ... no fieldmap, use the old method
+        else if (empty($ldap_config[$addressbook]['uid_field'])) {
+            $ldap_config[$addressbook]['uid_field'] = $uid_field;
+        }
+
+        // Initialize LDAP connection
+        $this->ldap = new rcube_ldap(
+            $ldap_config[$addressbook],
+            $this->rc->config->get('ldap_debug'),
+            $this->rc->config->mail_domain($_SESSION['imap_host']));
+
+        return $this->ldap->ready;
     }
 }
