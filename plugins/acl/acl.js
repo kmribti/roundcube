@@ -99,9 +99,12 @@ rcube_webmail.prototype.acl_cancel = function()
 // Update data after save (and hide form)
 rcube_webmail.prototype.acl_update = function(o)
 {
-    // delete row
+    // delete old row
     if (o.old)
         this.acl_remove_row(o.old);
+    // make sure the same ID doesn't exist
+    else if (this.env.acl[o.id])
+        this.acl_remove_row(o.id);
 
     // add new row
     this.acl_add_row(o, true);
