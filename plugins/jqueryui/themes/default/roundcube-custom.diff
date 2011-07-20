@@ -1,5 +1,5 @@
---- jquery-ui-1.8.12.custom.css.orig	2011-05-02 14:50:40.000000000 +0200
-+++ jquery-ui-1.8.12.custom.css	2011-06-29 13:15:47.000000000 +0200
+--- jquery-ui-1.8.14.custom.css.orig	2011-07-20 13:59:40.000000000 +0200
++++ jquery-ui-1.8.14.custom.css	2011-07-20 23:01:08.000000000 +0200
 @@ -61,7 +61,7 @@
  .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Lucida Grande, Verdana, Arial, Helvetica, sans-serif; font-size: 1em; }
  .ui-widget-content { border: 1px solid #aaaaaa; background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x; color: #000000; }
@@ -27,16 +27,16 @@
  .ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled { opacity: .35; filter:Alpha(Opacity=35); background-image: none; }
  
  /* Icons
-@@ -359,6 +361,8 @@
+@@ -349,6 +351,8 @@
  /* workarounds */
  * html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
  
 +#ui-active-menuitem { background:#c33; border-color:#a22; color:#fff; }
 +
  /*
-  * jQuery UI Menu 1.8.12
+  * jQuery UI Menu 1.8.14
   *
-@@ -374,6 +378,8 @@
+@@ -364,6 +368,8 @@
  	margin: 0;
  	display:block;
  	float: left;
@@ -45,7 +45,7 @@
  }
  .ui-menu .ui-menu {
  	margin-top: -3px;
-@@ -412,10 +418,11 @@
+@@ -402,10 +408,11 @@
  button.ui-button-icon-only { width: 2.4em; } /* button elements seem to need a little more width */
  .ui-button-icons-only { width: 3.4em; } 
  button.ui-button-icons-only { width: 3.7em; } 
@@ -58,7 +58,7 @@
  .ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text { padding: .4em; text-indent: -9999999px; }
  .ui-button-text-icon-primary .ui-button-text, .ui-button-text-icons .ui-button-text { padding: .4em 1em .4em 2.1em; }
  .ui-button-text-icon-secondary .ui-button-text, .ui-button-text-icons .ui-button-text { padding: .4em 2.1em .4em 1em; }
-@@ -445,7 +452,7 @@
+@@ -435,7 +442,7 @@
   *
   * http://docs.jquery.com/UI/Dialog#theming
   */
@@ -67,7 +67,7 @@
  .ui-dialog .ui-dialog-titlebar { padding: .4em 1em; position: relative;  }
  .ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .1em 0; } 
  .ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
-@@ -491,13 +498,16 @@
+@@ -481,13 +488,16 @@
   */
  .ui-tabs { position: relative; padding: .2em; zoom: 1; } /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
  .ui-tabs .ui-tabs-nav { margin: 0; padding: .2em .2em 0; }
@@ -84,9 +84,9 @@
 +.ui-dialog .ui-tabs .ui-tabs-nav li.ui-tabs-selected { background:#fff; }
 +
  /*
-  * jQuery UI Datepicker 1.8.12
+  * jQuery UI Datepicker 1.8.14
   *
-@@ -507,7 +517,7 @@
+@@ -497,7 +507,7 @@
   *
   * http://docs.jquery.com/UI/Datepicker#theming
   */
@@ -95,7 +95,7 @@
  .ui-datepicker .ui-datepicker-header { position:relative; padding:.2em 0; }
  .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next { position:absolute; top: 2px; width: 1.8em; height: 1.8em; }
  .ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next-hover { top: 1px; }
-@@ -525,6 +535,7 @@
+@@ -515,6 +525,7 @@
  .ui-datepicker th { padding: .7em .3em; text-align: center; font-weight: bold; border: 0;  }
  .ui-datepicker td { border: 0; padding: 1px; }
  .ui-datepicker td span, .ui-datepicker td a { display: block; padding: .2em; text-align: right; text-decoration: none; }

@@ -15,7 +15,7 @@ class jqueryui extends rcube_plugin
 
   public function init()
   {
-    $version = '1.8.12';
+    $version = '1.8.14';
 
     $rcmail = rcmail::get_instance();
     $this->load_config();
