@@ -151,7 +151,8 @@ rcube_webmail.prototype.acl_list_keypress = function(list)
     if (list.key_pressed == list.ENTER_KEY)
         this.command('acl-edit');
     else if (list.key_pressed == list.DELETE_KEY || list.key_pressed == list.BACKSPACE_KEY)
-        this.command('acl-delete');
+        if (!this.acl_form || !this.acl_form.is(':visible'))
+            this.command('acl-delete');
 }
 
 // Reloads ACL table
