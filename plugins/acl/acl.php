@@ -181,6 +181,7 @@ class acl extends rcube_plugin
         $this->mbox = $mbox_imap;
         $this->rc->output->set_env('acl_users_source', (bool) $this->rc->config->get('acl_users_source'));
         $this->rc->output->set_env('mailbox', $mbox_imap);
+        $this->rc->output->add_label('searching');
         $this->rc->output->add_handlers(array(
             'acltable'  => array($this, 'templ_table'),
             'acluser'   => array($this, 'templ_user'),
