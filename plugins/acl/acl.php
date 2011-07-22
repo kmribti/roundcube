@@ -85,16 +85,15 @@ class acl extends rcube_plugin
     {
         $this->load_config();
 
-        $search    = get_input_value('_search', RCUBE_INPUT_GPC, true);
-        $uid_field = $this->rc->config->get('acl_users_uid_field', 'uid');
-        $users     = array();
+        $search = get_input_value('_search', RCUBE_INPUT_GPC, true);
+        $users  = array();
 
         if ($this->init_ldap()) {
             $this->ldap->set_pagesize(15);
             $result = $this->ldap->search('*', $search);
 
             foreach ($result->records as $record) {
-                $user = $record[$uid_field];
+                $user = $record['uid'];
 
                 if (is_array($user)) {
                     $user = array_filter($user);
@@ -102,7 +101,6 @@ class acl extends rcube_plugin
                 }
 
                 if ($user) {
-
                     if ($record['name'])
                         $user = $record['name'] . ' (' . $user . ')';
 
@@ -181,7 +179,6 @@ class acl extends rcube_plugin
         $this->mbox = $mbox_imap;
         $this->rc->output->set_env('acl_users_source', (bool) $this->rc->config->get('acl_users_source'));
         $this->rc->output->set_env('mailbox', $mbox_imap);
-        $this->rc->output->add_label('searching');
         $this->rc->output->add_handlers(array(
             'acltable'  => array($this, 'templ_table'),
             'acluser'   => array($this, 'templ_user'),
@@ -633,24 +630,31 @@ class acl extends rcube_plugin
             return false;
         }
 
-        // search also in UID field
-        $ldap_config[$addressbook]['search_fields'] = array_unique(
-            array_merge((array)$uid_field, (array)$ldap_config[$addressbook]['search_fields']));
+        $ldap_config = $ldap_config[$addressbook];
 
-        // add UID field to fieldmap, so it will be returned in a record
-        if (isset($ldap_config[$addressbook]['fieldmap'])) {
-            if (empty($ldap_config[$addressbook]['fieldmap']['uid'])) {
-                $ldap_config[$addressbook]['fieldmap']['uid'] = $uid_field;
-            }
+        // get name attribute
+        if (!empty($ldap_config['fieldmap'])) {
+            $name_field = $ldap_config['fieldmap']['name_field'];
         }
         // ... no fieldmap, use the old method
-        else if (empty($ldap_config[$addressbook]['uid_field'])) {
-            $ldap_config[$addressbook]['uid_field'] = $uid_field;
+        if (empty($name_field)) {
+            $name_field = $ldap_config['name_field'];
         }
 
+        // add UID field to fieldmap, so it will be returned in a record with name
+        $ldap_config['fieldmap'] = array(
+            'name' => $name_field,
+            'uid'  => $uid_field,
+        );
+
+        // search in UID and name fields
+        $ldap_config['search_fields'] = array_values($ldap_config['fieldmap']);
+
+        // disable vlv
+        $ldap_config['vlv'] = false;
+
         // Initialize LDAP connection
-        $this->ldap = new rcube_ldap(
-            $ldap_config[$addressbook],
+        $this->ldap = new rcube_ldap($ldap_config,
             $this->rc->config->get('ldap_debug'),
             $this->rc->config->mail_domain($_SESSION['imap_host']));
 
