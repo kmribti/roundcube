@@ -93,6 +93,7 @@ rcube_webmail.prototype.acl_save = function()
 // Cancel/Hide form
 rcube_webmail.prototype.acl_cancel = function()
 {
+    this.ksearch_blur();
     this.acl_form.hide();
 }
 
@@ -108,6 +109,8 @@ rcube_webmail.prototype.acl_update = function(o)
 
     // add new row
     this.acl_add_row(o, true);
+    // hide autocomplete popup
+    this.ksearch_blur();
     // hide form
     this.acl_form.hide();
 }
