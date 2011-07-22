@@ -622,39 +622,54 @@ class acl extends rcube_plugin
         if ($this->ldap)
             return $this->ldap->ready;
 
-        $ldap_config = (array) $this->rc->config->get('ldap_public');
-        $addressbook = $this->rc->config->get('acl_users_source');
-        $uid_field   = $this->rc->config->get('acl_users_uid_field', 'uid');
+        // get LDAP config
+        $config = $this->rc->config->get('acl_users_source');
 
-        if (empty($addressbook) || empty($uid_field) || empty($ldap_config[$addressbook])) {
+        if (empty($config)) {
             return false;
         }
 
-        $ldap_config = $ldap_config[$addressbook];
+        // not an array, use configured ldap_public source
+        if (!is_array($config)) {
+            $ldap_config = (array) $this->rc->config->get('ldap_public');
+            $config = $ldap_config[$config];
+        }
+
+        $uid_field = $this->rc->config->get('acl_users_field', 'mail');
+        $filter    = $this->rc->config->get('acl_users_filter');
+
+        if (empty($uid_field) || empty($config)) {
+            return false;
+        }
 
         // get name attribute
-        if (!empty($ldap_config['fieldmap'])) {
-            $name_field = $ldap_config['fieldmap']['name_field'];
+        if (!empty($config['fieldmap'])) {
+            $name_field = $config['fieldmap']['name'];
         }
         // ... no fieldmap, use the old method
         if (empty($name_field)) {
-            $name_field = $ldap_config['name_field'];
+            $name_field = $config['name_field'];
         }
 
         // add UID field to fieldmap, so it will be returned in a record with name
-        $ldap_config['fieldmap'] = array(
+        $config['fieldmap'] = array(
             'name' => $name_field,
             'uid'  => $uid_field,
         );
 
         // search in UID and name fields
-        $ldap_config['search_fields'] = array_values($ldap_config['fieldmap']);
+        $config['search_fields'] = array_values($config['fieldmap']);
+        $config['required_fields'] = array($uid_field);
+
+        // set search filter
+        if ($filter)
+            $config['filter'] = $filter;
 
         // disable vlv
-        $ldap_config['vlv'] = false;
+        $config['vlv'] = false;
 
         // Initialize LDAP connection
-        $this->ldap = new rcube_ldap($ldap_config,
+        $this->ldap = new rcube_ldap($config,
             $this->rc->config->get('ldap_debug'),
             $this->rc->config->mail_domain($_SESSION['imap_host']));
 
