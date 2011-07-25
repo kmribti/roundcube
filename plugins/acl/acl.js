@@ -11,7 +11,7 @@ if (window.rcmail) {
             rcmail.acl_list_init();
             // enable autocomplete on user input
             if (rcmail.env.acl_users_source) {
-                rcmail.init_address_input_events($('#acluser'), 'plugin.acl-autocomplete');
+                rcmail.init_address_input_events($('#acluser'), {action:'plugin.acl-autocomplete'});
                 // fix inserted value
                 rcmail.addEventListener('autocomplete_insert', function(e) {
                     if (e.field.id != 'acluser')
