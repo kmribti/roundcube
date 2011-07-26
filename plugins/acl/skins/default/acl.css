@@ -41,7 +41,7 @@
   width: 96%;
   text-align: left;
   overflow: hidden;
-  text-overflow: ellipsis;                                                                                                                           
+  text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
 }
 
