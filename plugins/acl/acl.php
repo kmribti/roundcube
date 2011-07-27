@@ -439,9 +439,11 @@ class acl extends rcube_plugin
             $username = $user;
         }
 
-        if ($acl && $user && strlen($mbox)
-            && $this->rc->imap->set_acl($mbox, $user, $acl)
-        ) {
+        if ($acl && $user && $user != $_SESSION['username'] && strlen($mbox)) {
+            $result = $this->rc->imap->set_acl($mbox, $user, $acl);
+        }
+
+        if ($result) {
             $ret = array('id' => html_identifier($user),
                  'username' => $username, 'acl' => implode($acl), 'old' => $oldid);
             $this->rc->output->command('acl_update', $ret);
