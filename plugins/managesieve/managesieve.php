@@ -7,10 +7,25 @@
  * It's clickable interface which operates on text scripts and communicates
  * with server using managesieve protocol. Adds Filters tab in Settings.
  *
- * @version 4.2
- * @author Aleksander 'A.L.E.C' Machniak <alec@alec.pl>
+ * @version 4.3
+ * @author Aleksander Machniak <alec@alec.pl>
  *
  * Configuration (see config.inc.php.dist)
+ *
+ * Copyright (C) 2008-2011, The Roundcube Dev Team
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2
+ * as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
  * $Id$
  */
@@ -490,7 +505,7 @@ class managesieve extends rcube_plugin
                 case 'fileinto':
                 case 'fileinto_copy':
                     $mailbox = $this->strip_value($mailboxes[$idx]);
-                    $this->form['actions'][$i]['target'] = $mailbox;
+                    $this->form['actions'][$i]['target'] = $this->mod_mailbox($mailbox, 'in');
                     if ($type == 'fileinto_copy') {
                         $type = 'fileinto';
                         $this->form['actions'][$i]['copy'] = true;
@@ -1089,46 +1104,20 @@ class managesieve extends rcube_plugin
         $out .= '</div>';
 
         // mailbox select
-        $out .= '<select id="action_mailbox' .$id. '" name="_action_mailbox[]" style="display:'
-            .(!isset($action) || $action['type']=='fileinto' ? 'inline' : 'none'). '">';
-
-        $this->rc->imap_connect();
-
-        $a_folders = $this->rc->imap->list_mailboxes();
-        $delimiter = $this->rc->imap->get_hierarchy_delimiter();
-        $replace_delimiter = $this->rc->config->get('managesieve_replace_delimiter');
-
-        // set mbox encoding
-        $mbox_encoding = $this->rc->config->get('managesieve_mbox_encoding', 'UTF7-IMAP');
-
         if ($action['type'] == 'fileinto')
-            $mailbox = $action['target'];
+            $mailbox = $this->mod_mailbox($action['target'], 'out');
         else
             $mailbox = '';
 
-
-        foreach ($a_folders as $folder) {
-            $utf7folder = $folder;
-            $foldername = rcmail_localize_foldername($utf7folder);
-            $names      = explode($delimiter, $foldername);
-            $foldername = $names[sizeof($names)-1];
-
-            $names = explode($delimiter, rcube_charset_convert($folder, 'UTF7-IMAP'));
-            $name  = $names[sizeof($names)-1];
-
-            // convert to Sieve implementation encoding
-            $utf7folder = $this->mbox_encode($utf7folder, $mbox_encoding);
-
-            if ($replace_delimiter)
-                $utf7folder = str_replace($delimiter, $replace_delimiter, $utf7folder);
-
-            $out .= sprintf('<option value="%s"%s>%s%s</option>'."\n",
-                htmlspecialchars($utf7folder),
-                ($mailbox == $utf7folder ? ' selected="selected"' : ''),
-                str_repeat('&nbsp;', 4 * (sizeof($names)-1)),
-                Q(abbreviate_string($foldername, 40 - (2 * sizeof($names)-1))));
-        }
-        $out .= '</select>';
+        $this->rc->imap_connect();
+        $select = rcmail_mailbox_select(array(
+	        'realnames' => false,
+	        'maxlength' => 100,
+	        'id' => 'action_mailbox' . $id,
+	        'name' => '_action_mailbox[]',
+	        'style' => 'display:'.(!isset($action) || $action['type']=='fileinto' ? 'inline' : 'none')
+	    ));
+        $out .= $select->show($mailbox);
         $out .= '</td>';
 
         // add/del buttons
@@ -1174,11 +1163,6 @@ class managesieve extends rcube_plugin
         return '';
     }
 
-    private function mbox_encode($text, $encoding)
-    {
-        return rcube_charset_convert($text, 'UTF7-IMAP', $encoding);
-    }
-
     private function add_tip($id, $str, $error=false)
     {
         if ($error)
@@ -1196,4 +1180,32 @@ class managesieve extends rcube_plugin
         $this->rc->output->add_script($script, 'foot');
     }
 
+    /**
+     * Converts mailbox name from/to UTF7-IMAP from/to internal Sieve encoding
+     * with delimiter replacement.
+     *
+     * @param string $mailbox Mailbox name
+     * @param string $mode    Conversion direction ('in'|'out')
+     *
+     * @return string Mailbox name
+     */
+    private function mod_mailbox($mailbox, $mode = 'out')
+    {
+        $delimiter         = $_SESSION['imap_delimiter'];
+        $replace_delimiter = $this->rc->config->get('managesieve_replace_delimiter');
+        $mbox_encoding     = $this->rc->config->get('managesieve_mbox_encoding', 'UTF7-IMAP');
+
+        if ($mode == 'out') {
+            $mailbox = rcube_charset_convert($mailbox, $mbox_encoding, 'UTF7-IMAP');
+            if ($replace_delimiter && $replace_delimiter != $delimiter)
+                $mailbox = str_replace($replace_delimiter, $delimiter, $mailbox);
+        }
+        else {
+            $mailbox = rcube_charset_convert($mailbox, 'UTF7-IMAP', $mbox_encoding);
+            if ($replace_delimiter && $replace_delimiter != $delimiter)
+                $mailbox = str_replace($delimiter, $replace_delimiter, $mailbox);
+        }
+
+        return $mailbox;
+    }
 }

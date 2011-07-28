@@ -1,5 +1,8 @@
+* version 4.3 [2011-07-28]
+-----------------------------------------------------------
 - Fixed handling of error in Net_Sieve::listScripts()
 - Fixed handling of REFERRAL responses (http://pear.php.net/bugs/bug.php?id=17107)
+- Fixed bug where wrong folders hierarchy was displayed on folders listing
 
 * version 4.2 [2011-05-24]
 -----------------------------------------------------------
