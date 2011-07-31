@@ -5,7 +5,7 @@
  * 
  * Provide the jQuery UI library with according themes.
  * 
- * @version 1.8.12
+ * @version 1.8.14
  * @author Cor Bosman <roundcube@wa.ter.net>
  * @author Thomas Bruederli <roundcube@gmail.com>
  */
