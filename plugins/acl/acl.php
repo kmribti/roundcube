@@ -251,7 +251,7 @@ class acl extends rcube_plugin
             'read' => 'lrs',
             'write' => 'wi',
             'delete' => $deleteright,
-            'full' => preg_replace('/[lrswi'.$deleteright.']/', '', implode($supported)),
+            'other' => preg_replace('/[lrswi'.$deleteright.']/', '', implode($supported)),
         );
 
         foreach ($items as $key => $val) {
@@ -369,7 +369,7 @@ class acl extends rcube_plugin
                 'read' => 'lrs',
                 'write' => 'wi',
                 'delete' => $deleteright,
-                'full' => preg_replace('/[lrswi'.$deleteright.']/', '', implode($supported)),
+                'other' => preg_replace('/[lrswi'.$deleteright.']/', '', implode($supported)),
             );
         }
 

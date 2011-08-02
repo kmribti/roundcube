@@ -25,6 +25,7 @@ $labels['aclx'] = 'Usuwanie folderu (Delete)';
 $labels['acla'] = 'Administracja (Administer)';
 
 $labels['aclfull'] = 'Wszystkie';
+$labels['aclother'] = 'Inne';
 $labels['aclread'] = 'Odczyt';
 $labels['aclwrite'] = 'Zapis';
 $labels['acldelete'] = 'Usuwanie';
@@ -43,7 +44,7 @@ $labels['shortacle'] = 'Porządkowanie';
 $labels['shortaclx'] = 'Usuwanie folderu';
 $labels['shortacla'] = 'Administracja';
 
-$labels['shortaclfull'] = 'Wszystkie';
+$labels['shortaclother'] = 'Pozostałe';
 $labels['shortaclread'] = 'Odczyt';
 $labels['shortaclwrite'] = 'Zapis';
 $labels['shortacldelete'] = 'Usuwanie';

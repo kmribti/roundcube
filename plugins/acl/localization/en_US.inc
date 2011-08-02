@@ -25,6 +25,7 @@ $labels['aclx'] = 'Delete folder';
 $labels['acla'] = 'Administer';
 
 $labels['aclfull'] = 'Full control';
+$labels['aclother'] = 'Other';
 $labels['aclread'] = 'Read';
 $labels['aclwrite'] = 'Write';
 $labels['acldelete'] = 'Delete';
@@ -43,7 +44,7 @@ $labels['shortacle'] = 'Expunge';
 $labels['shortaclx'] = 'Folder delete';
 $labels['shortacla'] = 'Administer';
 
-$labels['shortaclfull'] = 'Full';
+$labels['shortaclother'] = 'Other';
 $labels['shortaclread'] = 'Read';
 $labels['shortaclwrite'] = 'Write';
 $labels['shortacldelete'] = 'Delete';
