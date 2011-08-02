@@ -45,9 +45,14 @@
   -o-text-overflow: ellipsis;
 }
 
+#acltable tbody td.partial
+{
+  background: url(images/partial.png) center no-repeat;
+}
+
 #acltable tbody td.enabled
 {
-  background: url(images/flagged.png) center no-repeat;
+  background: url(images/enabled.png) center no-repeat;
 }
 
 #acltable tr.selected td

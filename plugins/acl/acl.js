@@ -1,7 +1,7 @@
 /**
  * ACL plugin script
  *
- * @version 0.4
+ * @version 0.5
  * @author Aleksander Machniak <alec@alec.pl>
  */
 
@@ -209,7 +209,7 @@ rcube_webmail.prototype.acl_add_row = function(o, sel)
 
     // Update new row
     $('td', row).map(function() {
-        var cl = this.className.replace(/^acl/, '');
+        var r, cl = this.className.replace(/^acl/, '');
 
         if (items && items[cl])
             cl = items[cl];
@@ -217,7 +217,7 @@ rcube_webmail.prototype.acl_add_row = function(o, sel)
         if (cl == 'user')
             $(this).text(o.username);
         else
-            $(this).addClass(String(o.acl).match(RegExp(cl)) ? 'enabled' : 'disabled').text('');
+            $(this).addClass(rcmail.acl_class(o.acl, cl)).text('');
     });
 
     row.attr('id', 'rcmrow'+id);
@@ -315,4 +315,24 @@ rcube_webmail.prototype.acl_init_form = function(id)
     this.acl_form.show();
     if (type == 'user')
         name_input.focus();
+}
+
+// Returns class name according to ACL comparision result
+rcube_webmail.prototype.acl_class = function(acl1, acl2)
+{
+    var i, len, found = 0;
+
+    acl1 = String(acl1);
+    acl2 = String(acl2);
+
+    for (i=0, len=acl2.length; i<len; i++)
+        if (acl1.indexOf(acl2[i]) > -1)
+            found++;
+
+    if (found == len)
+        return 'enabled';
+    else if (found)
+        return 'partial';
+
+    return 'disabled';
 }

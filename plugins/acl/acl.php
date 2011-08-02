@@ -3,7 +3,7 @@
 /**
  * Folders Access Control Lists Management (RFC4314, RFC2086)
  *
- * @version 0.4
+ * @version 0.5
  * @author Aleksander Machniak <alec@alec.pl>
  *
  *
@@ -251,7 +251,7 @@ class acl extends rcube_plugin
             'read' => 'lrs',
             'write' => 'wi',
             'delete' => $deleteright,
-            'full' => implode($supported),
+            'full' => preg_replace('/[lrswi'.$deleteright.']/', '', implode($supported)),
         );
 
         foreach ($items as $key => $val) {
@@ -369,7 +369,7 @@ class acl extends rcube_plugin
                 'read' => 'lrs',
                 'write' => 'wi',
                 'delete' => $deleteright,
-                'full' => implode($supported),
+                'full' => preg_replace('/[lrswi'.$deleteright.']/', '', implode($supported)),
             );
         }
 
@@ -403,7 +403,12 @@ class acl extends rcube_plugin
 
             foreach ($items as $key => $right) {
                 $in = $this->acl_compare($userrights, $right);
-                $table->add('acl'.$key . ' ' . ($in ? 'enabled' : 'disabled'), '');
+                switch ($in) {
+                    case 2: $class = 'enabled'; break;
+                    case 1: $class = 'partial'; break;
+                    default: $class = 'disabled'; break;
+                }
+                $table->add('acl' . $key . ' ' . $class, '');
             }
 
             $js_table[$userid] = implode($userrights);
@@ -542,7 +547,7 @@ class acl extends rcube_plugin
      * @param array $acl1 ACL rights array (or string)
      * @param array $acl2 ACL rights array (or string)
      *
-     * @param boolean Comparision result
+     * @param int Comparision result, 2 - full match, 1 - partial match, 0 - no match
      */
     function acl_compare($acl1, $acl2)
     {
@@ -555,7 +560,15 @@ class acl extends rcube_plugin
         $acl2 = array_intersect($acl2, $rights);
         $res  = array_intersect($acl1, $acl2);
 
-        return count($res) == count($acl2);
+        $cnt1 = count($res);
+        $cnt2 = count($acl2);
+
+        if ($cnt1 == $cnt2)
+            return 2;
+        else if ($cnt1)
+            return 1;
+        else
+            return 0;
     }
 
     /**
