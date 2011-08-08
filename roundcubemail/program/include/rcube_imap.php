@@ -2471,7 +2471,10 @@ class rcube_imap
             // reload message headers if cached
             // @TODO: update flags instead removing from cache
             if (!$skip_cache && ($mcache = $this->get_mcache_engine())) {
-                $mcache->clear($mailbox, $all_mode ? null : explode(',', $uids));
+                $status = strpos($flag, 'UN') !== 0;
+                $mflag  = preg_replace('/^UN/', '', $flag);
+                $mcache->change_flag($mailbox, $all_mode ? null : explode(',', $uids),
+                    $mflag, $status);
             }
 
             // clear cached counters
@@ -2603,16 +2606,18 @@ class rcube_imap
                 if ($this->search_threads || $all_mode)
                     $this->refresh_search();
                 else {
-                    $uids = explode(',', $uids);
-                    foreach ($uids as $uid)
+                    $a_uids = explode(',', $uids);
+                    foreach ($a_uids as $uid)
                         $a_mids[] = $this->uid2id($uid, $from_mbox);
                     $this->search_set = array_diff($this->search_set, $a_mids);
                 }
+                unset($a_mids);
+                unset($a_uids);
             }
 
             // remove cached messages
             // @TODO: do cache update instead of clearing it
-            $this->clear_message_cache($from_mbox, $all_mode ? null : $uids);
+            $this->clear_message_cache($from_mbox, $all_mode ? null : explode(',', $uids));
         }
 
         return $moved;
@@ -2697,15 +2702,17 @@ class rcube_imap
                 if ($this->search_threads || $all_mode)
                     $this->refresh_search();
                 else {
-                    $uids = explode(',', $uids);
-                    foreach ($uids as $uid)
+                    $a_uids = explode(',', $uids);
+                    foreach ($a_uids as $uid)
                         $a_mids[] = $this->uid2id($uid, $mailbox);
                     $this->search_set = array_diff($this->search_set, $a_mids);
+                    unset($a_uids);
+                    unset($a_mids);
                 }
             }
 
             // remove cached messages
-            $this->clear_message_cache($mailbox, $all_mode ? null : $uids);
+            $this->clear_message_cache($mailbox, $all_mode ? null : explode(',', $uids));
         }
 
         return $deleted;
@@ -2773,9 +2780,9 @@ class rcube_imap
     private function _expunge($mailbox, $clear_cache=true, $uids=NULL)
     {
         if ($uids && $this->get_capability('UIDPLUS'))
-            $a_uids = is_array($uids) ? join(',', $uids) : $uids;
+            list($uids, $all_mode) = $this->_parse_uids($uids, $mailbox);
         else
-            $a_uids = NULL;
+            $uids = null;
 
         // force mailbox selection and check if mailbox is writeable
         // to prevent a situation when CLOSE is executed on closed
@@ -2790,15 +2797,13 @@ class rcube_imap
         }
 
         // CLOSE(+SELECT) should be faster than EXPUNGE
-        if (empty($a_uids) || $a_uids == '1:*')
+        if (empty($uids) || $all_mode)
             $result = $this->conn->close();
         else
-            $result = $this->conn->expunge($mailbox, $a_uids);
+            $result = $this->conn->expunge($mailbox, $uids);
 
         if ($result && $clear_cache) {
-            // @TODO: I'm not sure we should remove all messages
-            // maybe we could clear only indexes and counters
-            $this->clear_message_cache($mailbox);
+            $this->clear_message_cache($mailbox, $all_mode ? null : explode(',', $uids));
             $this->_clear_messagecount($mailbox);
         }
 
@@ -3160,11 +3165,13 @@ class rcube_imap
                     $this->conn->unsubscribe($c_subscribed);
                     $this->conn->subscribe(preg_replace('/^'.preg_quote($mailbox, '/').'/',
                         $new_name, $c_subscribed));
+
+                    // clear cache
+                    $this->clear_message_cache($c_subscribed);
                 }
             }
 
             // clear cache
-            // @TODO: we could be much smarter here
             $this->clear_message_cache($mailbox);
             $this->clear_cache('mailboxes', true);
         }
@@ -3839,7 +3846,7 @@ class rcube_imap
      */
     function clear_message_cache($mailbox = null, $uids = null)
     {
-        if ($mcache = $this->get_cache_engine()) {
+        if ($mcache = $this->get_mcache_engine()) {
             $mcache->clear($mailbox, $uids);
         }
     }

@@ -48,14 +48,15 @@ class rcube_mail_header
     public $encoding;
     public $charset;
     public $ctype;
-    public $flags;
     public $timestamp;
     public $body_structure;
     public $internaldate;
     public $references;
     public $priority;
     public $mdn_to;
-    public $mdn_sent = false;
+
+    public $flags;
+    public $mdnsent = false;
     public $seen = false;
     public $deleted = false;
     public $answered = false;
@@ -1720,7 +1721,6 @@ class rcube_imap_generic
                 if (!empty($flags_a)) {
                     foreach ($flags_a as $flag) {
                         $flag = str_replace('\\', '', $flag);
-                        $result[$id]->flags[] = $flag;
 
                         switch (strtoupper($flag)) {
                         case 'SEEN':
@@ -1736,10 +1736,13 @@ class rcube_imap_generic
                             $result[$id]->forwarded = true;
                             break;
                         case '$MDNSENT':
-                            $result[$id]->mdn_sent = true;
+                            $result[$id]->mdnsent = true;
                             break;
                         case 'FLAGGED':
                             $result[$id]->flagged = true;
+                            break;
+                        default:
+                            $result[$id]->flags[] = $flag;
                             break;
                         }
                     }

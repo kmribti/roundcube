@@ -36,7 +36,7 @@ class rcube_imap_cache
      *
      * @var rcube_imap
      */
-    public $imap;
+    private $imap;
 
     /**
      * Instance of rcube_mdb2
@@ -60,6 +60,9 @@ class rcube_imap_cache
     private $icache = array();
 
     private $skip_deleted = false;
+
+    public $flag_fields = array('seen', 'deleted', 'answered', 'forwarded', 'flagged', 'mdnsent');
+
 
     /**
      * Object constructor.
@@ -283,9 +286,11 @@ class rcube_imap_cache
                     $msgs[$idx] = $uid;
         }
 
+        $flag_fields = implode(', ', array_map(array($this->db, 'quoteIdentifier'), $this->flag_fields));
+
         // Fetch messages from cache
         $sql_result = $this->db->query(
-            "SELECT uid, data"
+            "SELECT uid, data, ".$flag_fields
             ." FROM ".get_table_name('cache_messages')
             ." WHERE user_id = ?"
                 ." AND mailbox = ?"
@@ -297,7 +302,7 @@ class rcube_imap_cache
 
         while ($sql_arr = $this->db->fetch_assoc($sql_result)) {
             $uid          = intval($sql_arr['uid']);
-            $result[$uid] = $this->db->decode(unserialize($sql_arr['data']));
+            $result[$uid] = $this->build_message($sql_arr);
 //@TODO: update message ID according to index data?
 
             if (!empty($result[$uid])) {
@@ -332,15 +337,18 @@ class rcube_imap_cache
      */
     function get_message($mailbox, $uid)
     {
+        $flag_fields = implode(', ', array_map(array($this->db, 'quoteIdentifier'), $this->flag_fields));
+
         $sql_result = $this->db->query(
-            "SELECT data FROM ".get_table_name('cache_messages')
+            "SELECT data, ".$flag_fields
+            ." FROM ".get_table_name('cache_messages')
             ." WHERE user_id = ?"
                 ." AND mailbox = ?"
                 ." AND uid = ?",
-                $this->userid, $mailbox, $uid);
+                $this->userid, $mailbox, (int)$uid);
 
         if ($sql_arr = $this->db->fetch_assoc($sql_result)) {
-            $message = $this->db->decode(unserialize($sql_arr['data']));
+            $message = $this->build_message($sql_arr);
             $found   = true;
 
 //@TODO: update message ID according to index data?
@@ -371,16 +379,26 @@ class rcube_imap_cache
 
         $msg = serialize($this->db->encode(clone $message));
 
+        $flag_fields = array_map(array($this->db, 'quoteIdentifier'), $this->flag_fields);
+        $flag_values = array();
+
+        foreach ($this->flag_fields as $flag)
+            $flag_values[] = (int) $message->$flag;
+
         // update cache record (even if it exists, the update
         // here will work as select, assume row exist if affected_rows=0)
         if (!$force) {
+            foreach ($flag_fields as $key => $val)
+                $flag_data[] = $val . " = " . $flag_values[$key];
+
             $res = $this->db->query(
                 "UPDATE ".get_table_name('cache_messages')
                 ." SET data = ?, changed = ".$this->db->now()
+                .", " . implode(', ', $flag_data)
                 ." WHERE user_id = ?"
                     ." AND mailbox = ?"
                     ." AND uid = ?",
-                $msg, $this->userid, $mailbox, $message->uid);
+                $msg, $this->userid, $mailbox, (int) $message->uid);
 
             if ($this->db->affected_rows())
                 return;
@@ -389,19 +407,75 @@ class rcube_imap_cache
         // insert new record
         $this->db->query(
             "INSERT INTO ".get_table_name('cache_messages')
-            ." (user_id, mailbox, uid, changed, data)"
-            ." VALUES (?, ?, ?, ".$this->db->now().", ?)",
-            $this->userid, $mailbox, $message->uid, $msg);
+            ." (user_id, mailbox, uid, changed, data, " . implode(', ', $flag_fields) . ")"
+            ." VALUES (?, ?, ?, ".$this->db->now().", ?, " . implode(', ', $flag_values) . ")",
+            $this->userid, $mailbox, (int) $message->uid, $msg);
     }
 
 
     /**
-     * Clears messages/index cache
+     * Sets the flag for specified message.
+     *
+     * @param string  $mailbox  Folder name
+     * @param array   $uids     Message UIDs or -1 to change flag
+     *                          of all messages in a folder
+     * @param string  $flag     The name of the flag
+     * @param bool    $enabled  Flag state
+     */
+    function change_flag($mailbox, $uids, $flag, $enabled = false)
+    {
+        $flag = strtolower($flag);
+
+        if (in_array($flag, $this->flag_fields)) {
+            $this->db->query(
+                "UPDATE ".get_table_name('cache_messages')
+                ." SET changed = ".$this->db->now()
+                .", " .$this->db->quoteIdentifier($flag) . " = " . intval($enabled)
+                ." WHERE user_id = ?"
+                    ." AND mailbox = ?"
+                    .($uids !== null ? " AND uid IN (".$this->db->array2list((array)$uids, 'integer').")" : ""),
+                $this->userid, $mailbox);
+        }
+        else {
+            // @TODO: SELECT+UPDATE?
+            $this->remove_message($mailbox, $uids);
+        }
+    }
+
+
+    /**
+     * Removes message(s) from cache.
      *
      * @param string $mailbox  Folder name
-     * @param array  $uids     Message UIDs
+     * @param array  $uids     Message UIDs, NULL removes all messages
      */
-    function clear($mailbox = null, $uids = array())
+    function remove_message($mailbox = null, $uids = null)
+    {
+        if (!strlen($mailbox)) {
+            $this->db->query(
+                "DELETE FROM ".get_table_name('cache_messages')
+                ." WHERE user_id = ?",
+                $this->userid);
+        }
+        else {
+            $this->db->query(
+                "DELETE FROM ".get_table_name('cache_messages')
+                ." WHERE user_id = ?"
+                    ." AND mailbox = ".$this->db->quote($mailbox)
+                    .($uids !== null ? " AND uid IN (".$this->db->array2list((array)$uids, 'integer').")" : ""),
+                $this->userid);
+        }
+
+    }
+
+
+    /**
+     * Clears messages/index cache.
+     *
+     * @param string $mailbox  Folder name
+     * @param array  $uids     Message UIDs, NULL removes all messages in a folder
+     */
+    function clear($mailbox = null, $uids = null)
     {
         $this->db->query(
             "DELETE FROM ".get_table_name('cache_index')
@@ -409,22 +483,12 @@ class rcube_imap_cache
                 .(strlen($mailbox) ? " AND mailbox = ".$this->db->quote($mailbox) : ""),
             $this->userid);
 
-        if (!strlen($mailbox)) {
+        $this->remove_message($mailbox, $uids);
+
+        if (strlen($mailbox))
             unset($this->icache[$mailbox]);
-            $this->db->query(
-                "DELETE FROM ".get_table_name('cache_messages')
-                ." WHERE user_id = ?",
-                $this->userid);
-        }
-        else {
+        else
             $this->icache = array();
-            $this->db->query(
-                "DELETE FROM ".get_table_name('cache_messages')
-                ." WHERE user_id = ?"
-                    ." AND mailbox = ".$this->db->quote($mailbox)
-                    .(!empty($uids) ? " AND uid IN (".$this->db->array2list($uids, 'integer').")" : ""),
-                $this->userid);
-        }
     }
 
 
@@ -500,6 +564,22 @@ class rcube_imap_cache
         }
 
         return null;
+    }
+
+
+    /**
+     *
+     */
+    private function build_message($sql_arr)
+    {
+        $message = $this->db->decode(unserialize($sql_arr['data']));
+
+        if ($message) {
+            foreach ($this->flag_fields as $field)
+                $message->$field = (bool) $sql_arr[$field];
+        }
+
+        return $message;
     }
 
 }
