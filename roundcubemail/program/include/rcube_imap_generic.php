@@ -61,9 +61,6 @@ class rcube_mail_header
     public $answered = false;
     public $forwarded = false;
     public $flagged = false;
-    public $has_children = false;
-    public $depth = 0;
-    public $unread_children = 0;
     public $others = array();
 }
 

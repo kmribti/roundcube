@@ -891,31 +891,36 @@ class rcube_imap
         // use SORT command
         else if ($this->get_capability('SORT') &&
             // Courier-IMAP provides SORT capability but allows to disable it by admin (#1486959)
-            ($msg_index = $this->conn->sort($mailbox, $this->sort_field, $this->skip_deleted ? 'UNDELETED' : '')) !== false
+            ($msg_index = $this->conn->sort($mailbox, $this->sort_field,
+                $this->skip_deleted ? 'UNDELETED' : '', true)) !== false
         ) {
             if (!empty($msg_index)) {
                 list($begin, $end) = $this->_get_message_range(count($msg_index), $page);
                 $msg_index = array_slice($msg_index, $begin, $end-$begin);
+                $is_uid    = true;
 
                 if ($slice)
                     $msg_index = array_slice($msg_index, ($this->sort_order == 'DESC' ? 0 : -$slice), $slice);
 
                 // fetch reqested headers from server
-                $a_msg_headers = $this->fetch_headers($mailbox, $msg_index);
+                $a_msg_headers = $this->fetch_headers($mailbox, $msg_index, true);
             }
         }
         // fetch specified header for all messages and sort
-        else if ($a_index = $this->conn->fetchHeaderIndex($mailbox, "1:*", $this->sort_field, $this->skip_deleted)) {
-            asort($a_index); // ASC
-            $msg_index = array_keys($a_index);
+        else if ($msg_index = $this->conn->fetchHeaderIndex($mailbox, "1:*",
+            $this->sort_field, $this->skip_deleted, true)
+        ) {
+            asort($msg_index); // ASC
+            $msg_index = array_keys($msg_index);
             list($begin, $end) = $this->_get_message_range(count($msg_index), $page);
             $msg_index = array_slice($msg_index, $begin, $end-$begin);
+            $is_uid    = true;
 
             if ($slice)
                 $msg_index = array_slice($msg_index, ($this->sort_order == 'DESC' ? 0 : -$slice), $slice);
 
             // fetch reqested headers from server
-            $a_msg_headers = $this->fetch_headers($mailbox, $msg_index);
+            $a_msg_headers = $this->fetch_headers($mailbox, $msg_index, true);
         }
 
         // return empty array if no messages found
@@ -1661,7 +1666,7 @@ class rcube_imap
             $a_messages = $this->conn->sort($mailbox, $sort_field, $criteria, false, $charset);
 
             // Error, try with US-ASCII (RFC5256: SORT/THREAD must support US-ASCII and UTF-8,
-            // but I've seen that Courier doesn't support UTF-8)
+            // but I've seen Courier with disabled UTF-8 support)
             if ($a_messages === false && $charset && $charset != 'US-ASCII')
                 $a_messages = $this->conn->sort($mailbox, $sort_field,
                     $this->convert_criteria($criteria, $charset), false, 'US-ASCII');
@@ -4499,7 +4504,7 @@ class rcube_header_sorter
      */
     function sort_headers(&$headers)
     {
-        if (!empty($uids))
+        if (!empty($this->uids))
             uksort($headers, array($this, "compare_uids"));
         else
             uasort($headers, array($this, "compare_seqnums"));
