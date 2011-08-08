@@ -33,30 +33,34 @@ CREATE TABLE `users` (
 ) /*!40000 ENGINE=INNODB */ /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;
 
 
--- Table structure for table `messages`
+-- Table structure for table `cache_index`
 
-CREATE TABLE `messages` (
- `message_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cache_index` (
  `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
- `del` tinyint(1) NOT NULL DEFAULT '0',
- `cache_key` varchar(128) /*!40101 CHARACTER SET ascii COLLATE ascii_general_ci */ NOT NULL,
- `created` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
- `idx` int(11) UNSIGNED NOT NULL DEFAULT '0',
- `uid` int(11) UNSIGNED NOT NULL DEFAULT '0',
- `subject` varchar(255) NOT NULL,
- `from` varchar(255) NOT NULL,
- `to` varchar(255) NOT NULL,
- `cc` varchar(255) NOT NULL,
- `date` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
- `size` int(11) UNSIGNED NOT NULL DEFAULT '0',
- `headers` text NOT NULL,
- `structure` text,
- PRIMARY KEY(`message_id`),
- CONSTRAINT `user_id_fk_messages` FOREIGN KEY (`user_id`)
+ `mailbox` varchar(255) /*!40101 CHARACTER SET ascii COLLATE ascii_general_ci */ NOT NULL,
+ `sort_field` varchar(8) NOT NULL,
+ `threaded` tinyint(1) NOT NULL DEFAULT '0',
+ `changed` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
+ `data` text,
+ CONSTRAINT `user_id_fk_cache_index` FOREIGN KEY (`user_id`)
    REFERENCES `users`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
- INDEX `created_index` (`created`),
- INDEX `index_index` (`user_id`, `cache_key`, `idx`),
- UNIQUE `uniqueness` (`user_id`, `cache_key`, `uid`)
+ INDEX `changed_index` (`changed`),
+ PRIMARY KEY (`user_id`, `mailbox`, `sort_field`, `threaded`)
+) /*!40000 ENGINE=INNODB */ /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;
+
+
+-- Table structure for table `cache_messages`
+
+CREATE TABLE `cache_messages` (
+ `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+ `mailbox` varchar(255) /*!40101 CHARACTER SET ascii COLLATE ascii_general_ci */ NOT NULL,
+ `uid` int(11) UNSIGNED NOT NULL DEFAULT '0',
+ `changed` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
+ `data` text,
+ CONSTRAINT `user_id_fk_cache_messages` FOREIGN KEY (`user_id`)
+   REFERENCES `users`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ INDEX `changed_index` (`changed`),
+ PRIMARY KEY (`user_id`, `mailbox`, `uid`)
 ) /*!40000 ENGINE=INNODB */ /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;
 
 

@@ -84,6 +84,7 @@ class rcube_imap_generic
     public $errornum;
     public $result;
     public $resultcode;
+    public $selected;
     public $data = array();
     public $flags = array(
         'SEEN'     => '\\Seen',
@@ -96,7 +97,6 @@ class rcube_imap_generic
         '*'        => '\\*',
     );
 
-    private $selected;
     private $fp;
     private $host;
     private $logged = false;
@@ -1491,7 +1491,7 @@ class rcube_imap_generic
     function ID2UID($mailbox, $id)
     {
         if (empty($id) || $id < 0) {
-            return 	null;
+            return null;
         }
 
         if (!$this->select($mailbox)) {
@@ -1509,9 +1509,7 @@ class rcube_imap_generic
 
     function fetchUIDs($mailbox, $message_set=null)
     {
-        if (is_array($message_set))
-            $message_set = join(',', $message_set);
-        else if (empty($message_set))
+        if (empty($message_set))
             $message_set = '1:*';
 
         return $this->fetchHeaderIndex($mailbox, $message_set, 'UID', false);
@@ -2225,7 +2223,7 @@ class rcube_imap_generic
         return false;
     }
 
-    function fetchMIMEHeaders($mailbox, $id, $parts, $mime=true)
+    function fetchMIMEHeaders($mailbox, $uid, $parts, $mime=true)
     {
         if (!$this->select($mailbox)) {
             return false;
@@ -2243,7 +2241,7 @@ class rcube_imap_generic
             $peeks[] = "BODY.PEEK[$part.$type]";
         }
 
-        $request = "$key FETCH $id (" . implode(' ', $peeks) . ')';
+        $request = "$key UID FETCH $uid (" . implode(' ', $peeks) . ')';
 
         // send request
         if (!$this->putLine($request)) {
@@ -2257,7 +2255,7 @@ class rcube_imap_generic
 
             if (preg_match('/BODY\[([0-9\.]+)\.'.$type.'\]/', $line, $matches)) {
                 $idx = $matches[1];
-                $result[$idx] = preg_replace('/^(\* '.$id.' FETCH \()?\s*BODY\['.$idx.'\.'.$type.'\]\s+/', '', $line);
+                $result[$idx] = preg_replace('/^(\* [0-9]+ FETCH \()?\s*BODY\['.$idx.'\.'.$type.'\]\s+/', '', $line);
                 $result[$idx] = trim($result[$idx], '"');
                 $result[$idx] = rtrim($result[$idx], "\t\r\n\0\x0B");
             }
