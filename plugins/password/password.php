@@ -134,8 +134,12 @@ class password extends rcube_plugin
             else if (!($res = $this->_save($curpwd, $newpwd))) {
                 $rcmail->output->command('display_message', $this->gettext('successfullysaved'), 'confirmation');
 
+		// allow additional actions after password change (e.g. reset some backends)
+		$plugin = $rcmail->plugins->exec_hook('password_change', array(
+		    'old_pass' => $curpwd, 'new_pass' => $newpwd));
+
                 // Reset session password
-                $_SESSION['password'] = $rcmail->encrypt($newpwd);
+                $_SESSION['password'] = $rcmail->encrypt($plugin['new_pass']);
 
                 // Log password change
                 if ($rcmail->config->get('password_log')) {
