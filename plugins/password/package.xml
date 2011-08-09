@@ -28,6 +28,7 @@
 	<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPLv2</license>
 	<notes>
 - When old and new passwords are the same, do nothing, return success (#1487823)
+- Fixed Samba password hashing in 'ldap' driver
     </notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
