@@ -1828,12 +1828,12 @@ class rcube_imap
     /**
      * THREAD=REFS sorting implementation
      *
-     * @param  array $tree       Thread tree array (message identifiers as keys)
-     * @param  array $index      Array of sorted message identifiers
+     * @param  array $tree   Thread tree array (message identifiers as keys)
+     * @param  array $index  Array of sorted message identifiers
      *
      * @return array   Array of sorted roots messages
      */
-    function _sort_thread_refs($tree, $index)
+    private function _sort_thread_refs($tree, $index)
     {
         if (empty($tree))
             return array();
