@@ -41,7 +41,7 @@ CREATE TABLE `cache_index` (
  `sort_field` varchar(8) NOT NULL,
  `threaded` tinyint(1) NOT NULL DEFAULT '0',
  `changed` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
- `data` text,
+ `data` longtext NOT NULL,
  CONSTRAINT `user_id_fk_cache_index` FOREIGN KEY (`user_id`)
    REFERENCES `users`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
  INDEX `changed_index` (`changed`),
@@ -56,7 +56,7 @@ CREATE TABLE `cache_messages` (
  `mailbox` varchar(255) /*!40101 CHARACTER SET ascii COLLATE ascii_general_ci */ NOT NULL,
  `uid` int(11) UNSIGNED NOT NULL DEFAULT '0',
  `changed` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
- `data` text,
+ `data` longtext NOT NULL,
  `seen` tinyint(1) NOT NULL DEFAULT '0',
  `deleted` tinyint(1) NOT NULL DEFAULT '0',
  `answered` tinyint(1) NOT NULL DEFAULT '0',

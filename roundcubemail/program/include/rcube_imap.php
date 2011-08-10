@@ -780,7 +780,7 @@ class rcube_imap
                 'maxuid'   => $dcount ? max(array_keys($this->icache['threads']['depth'])) : 0,
             );
         }
-        else if (is_array($result = $this->_fetch_threads($mailbox))) {
+        else if (is_array($result = $this->fetch_threads($mailbox))) {
             $dcount = count($result[1]);
             $result = array(
                 'count'    => count($result[0]),
@@ -955,15 +955,19 @@ class rcube_imap
     {
         $this->_set_sort_order($sort_field, $sort_order);
 
-        $page = $page ? $page : $this->list_page;
+        $page   = $page ? $page : $this->list_page;
+        $mcache = $this->get_mcache_engine();
 
-        // get all threads (default sort order)
-        list ($thread_tree, $msg_depth, $has_children) = $this->_fetch_threads($mailbox);
+        // get all threads (not sorted)
+        if ($mcache)
+            list ($thread_tree, $msg_depth, $has_children) = $mcache->get_thread($mailbox);
+        else
+            list ($thread_tree, $msg_depth, $has_children) = $this->fetch_threads($mailbox);
 
         if (empty($thread_tree))
             return array();
 
-        $msg_index = $this->_sort_threads($mailbox, $thread_tree);
+        $msg_index = $this->sort_threads($mailbox, $thread_tree);
 
         return $this->_fetch_thread_headers($mailbox,
             $thread_tree, $msg_depth, $has_children, $msg_index, $page, $slice);
@@ -971,14 +975,20 @@ class rcube_imap
 
 
     /**
-     * Private method for fetching threads data
+     * Method for fetching threads data
      *
-     * @param   string   $mailbox Mailbox/folder name
+     * @param  string $mailbox  Folder name
+     * @param  bool   $force    Use IMAP server, no cache
+     *
      * @return  array    Array with thread data
-     * @access  private
      */
-    private function _fetch_threads($mailbox)
+    function fetch_threads($mailbox, $force = false)
     {
+        if (!$force && ($mcache = $this->get_mcache_engine())) {
+            // don't store in self's internal cache, cache has it's own internal cache
+            return $mcache->get_thread($mailbox);
+        }
+
         if (empty($this->icache['threads'])) {
             // get all threads
             $result = $this->conn->thread($mailbox, $this->threading,
@@ -1009,6 +1019,7 @@ class rcube_imap
      * @param array   $msg_index    Messages index
      * @param int     $page         List page number
      * @param int     $slice        Number of threads to slice
+     *
      * @return array  Messages headers
      * @access  private
      */
@@ -1253,7 +1264,7 @@ class rcube_imap
 
         $this->_set_sort_order($sort_field, $sort_order);
 
-        $msg_index = $this->_sort_threads($mailbox, $thread_tree, array_keys($msg_depth));
+        $msg_index = $this->sort_threads($mailbox, $thread_tree, array_keys($msg_depth));
 
         return $this->_fetch_thread_headers($mailbox,
             $thread_tree, $msg_depth, $has_children, $msg_index, $page, $slice=0);
@@ -1551,7 +1562,7 @@ class rcube_imap
             return $this->icache[$key];
 
         // get all threads (default sort order)
-        list ($thread_tree) = $this->_fetch_threads($mailbox);
+        list ($thread_tree) = $this->fetch_threads($mailbox);
 
         $this->icache[$key] = $this->_flatten_threads($mailbox, $thread_tree);
 
@@ -1563,7 +1574,7 @@ class rcube_imap
      * Return array of threaded messages (all, not only roots)
      *
      * @param string $mailbox     Mailbox to get index from
-     * @param array  $thread_tree Threaded messages array (see _fetch_threads())
+     * @param array  $thread_tree Threaded messages array (see fetch_threads())
      * @param array  $ids         Message IDs if we know what we need (e.g. search result)
      *                            for better performance
      * @return array Indexed array with message IDs
@@ -1575,7 +1586,7 @@ class rcube_imap
         if (empty($thread_tree))
             return array();
 
-        $msg_index = $this->_sort_threads($mailbox, $thread_tree, $ids);
+        $msg_index = $this->sort_threads($mailbox, $thread_tree, $ids);
 
         if ($this->sort_order == 'DESC')
             $msg_index = array_reverse($msg_index);
@@ -1629,8 +1640,8 @@ class rcube_imap
      * @param string $criteria   Search criteria
      * @param string $charset    Charset
      * @param string $sort_field Sorting field
+     *
      * @return array   search results as list of message ids
-     * @access private
      * @see rcube_imap::search()
      */
     private function _search_index($mailbox, $criteria='ALL', $charset=NULL, $sort_field=NULL)
@@ -1708,8 +1719,8 @@ class rcube_imap
      * @param  string  $mailbox Mailbox name to search in
      * @param  string  $str     Search string
      * @param  boolean $ret_uid True if UIDs should be returned
+     *
      * @return array   Search results as list of message IDs or UIDs
-     * @access public
      */
     function search_once($mailbox='', $str=NULL, $ret_uid=false)
     {
@@ -1763,10 +1774,10 @@ class rcube_imap
      * @param string $mailbox     Mailbox name
      * @param  array $thread_tree Unsorted thread tree (rcube_imap_generic::thread() result)
      * @param  array $ids         Message IDs if we know what we need (e.g. search result)
+     *
      * @return array Sorted roots IDs
-     * @access private
      */
-    private function _sort_threads($mailbox, $thread_tree, $ids=NULL)
+    function sort_threads($mailbox, $thread_tree, $ids = null)
     {
         // THREAD=ORDEREDSUBJECT: sorting by sent date of root message
         // THREAD=REFERENCES:     sorting by sent date of root message
@@ -1775,17 +1786,24 @@ class rcube_imap
         // default sorting
         if (!$this->sort_field || ($this->sort_field == 'date' && $this->threading == 'REFS')) {
             return array_keys((array)$thread_tree);
-          }
-        // here we'll implement REFS sorting, for performance reason
-        else { // ($sort_field == 'date' && $this->threading != 'REFS')
+        }
+        // here we'll implement REFS sorting
+        else {
+            if ($mcache = $this->get_mcache_engine()) {
+                $a_index = $mcache->get_index($mailbox, $this->sort_field, 'ASC');
+                if (is_array($a_index)) {
+                    $a_index = array_keys($a_index);
+                    // now we must remove IDs that doesn't exist in $ids
+                    if (!empty($ids))
+                        $a_index = array_intersect($a_index, $ids);
+                }
+            }
             // use SORT command
-            if ($this->get_capability('SORT') && 
+            else if ($this->get_capability('SORT') &&
                 ($a_index = $this->conn->sort($mailbox, $this->sort_field,
                     !empty($ids) ? $ids : ($this->skip_deleted ? 'UNDELETED' : ''))) !== false
             ) {
-                // return unsorted tree if we've got no index data
-                if (!$a_index)
-                    return array_keys((array)$thread_tree);
+                // do nothing
             }
             else {
                 // fetch specified headers for all messages and sort them
@@ -1793,12 +1811,14 @@ class rcube_imap
                     $this->sort_field, $this->skip_deleted);
 
                 // return unsorted tree if we've got no index data
-                if (!$a_index)
-                    return array_keys((array)$thread_tree);
-
-                asort($a_index); // ASC
-                $a_index = array_values($a_index);
+                if (!empty($a_index)) {
+                    asort($a_index); // ASC
+                    $a_index = array_values($a_index);
+                }
             }
+
+            if (empty($a_index))
+                return array_keys((array)$thread_tree);
 
             return $this->_sort_thread_refs($thread_tree, $a_index);
         }
@@ -1808,12 +1828,12 @@ class rcube_imap
     /**
      * THREAD=REFS sorting implementation
      *
-     * @param  array $tree  Thread tree array (message identifiers as keys)
-     * @param  array $index Array of sorted message identifiers
+     * @param  array $tree       Thread tree array (message identifiers as keys)
+     * @param  array $index      Array of sorted message identifiers
+     *
      * @return array   Array of sorted roots messages
-     * @access private
      */
-    private function _sort_thread_refs($tree, $index)
+    function _sort_thread_refs($tree, $index)
     {
         if (empty($tree))
             return array();
