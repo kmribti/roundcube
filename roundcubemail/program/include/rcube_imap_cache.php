@@ -599,10 +599,9 @@ class rcube_imap_cache
      */
     private function get_thread_row($mailbox)
     {
-        // Get index from DB
-        // There's a special case when we want most recent index
+        // Get thread from DB
         $sql_result = $this->db->query(
-            "SELECT data, sort_field"
+            "SELECT data"
             ." FROM ".get_table_name('cache_thread')
             ." WHERE user_id = ?"
                 ." AND mailbox = ?",
