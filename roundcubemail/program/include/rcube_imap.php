@@ -1963,12 +1963,11 @@ class rcube_imap
 
         $this->_msg_uid = $uid;
 
-        if (empty($headers->body_structure)) {
-            $headers->body_structure = $this->conn->fetchStructureString($mailbox, $uid, true);
+        if (empty($headers->bodystructure)) {
+            $headers->bodystructure = $this->conn->getStructure($mailbox, $uid, true);
         }
 
-        // parse structure and add headers
-        $structure = rcube_mime_struct::parseStructure($headers->body_structure);
+        $structure = $headers->bodystructure;
 
         if (empty($structure))
             return $headers;
@@ -2370,17 +2369,12 @@ class rcube_imap
     {
         // get part encoding if not provided
         if (!is_object($o_part)) {
-            $structure_str = $this->conn->fetchStructureString($this->mailbox, $uid, true);
-            $structure = new rcube_mime_struct();
-            // error or message not found
-            if (!$structure->loadStructure($structure_str)) {
-                return false;
-            }
+            $structure = $this->conn->getStructure($this->mailbox, $uid, true);
 
             $o_part = new rcube_message_part;
-            $o_part->ctype_primary = strtolower($structure->getPartType($part));
-            $o_part->encoding      = strtolower($structure->getPartEncoding($part));
-            $o_part->charset       = $structure->getPartCharset($part);
+            $o_part->ctype_primary = strtolower(rcube_imap_generic::getPartType($structure, $part));
+            $o_part->encoding      = strtolower(rcube_imap_generic::getPartEncoding($structure, $part));
+            $o_part->charset       = rcube_imap_generic::getPartCharset($structure, $part);
         }
 
         // TODO: Add caching for message parts
