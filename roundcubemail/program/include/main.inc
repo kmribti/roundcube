@@ -175,6 +175,9 @@ function rcmail_cache_gc()
   $db->query("DELETE FROM ".get_table_name('cache_index')
         ." WHERE changed < " . $db->fromunixtime($ts));
 
+  $db->query("DELETE FROM ".get_table_name('cache_thread')
+        ." WHERE changed < " . $db->fromunixtime($ts));
+
   $db->query("DELETE FROM ".get_table_name('cache')
         ." WHERE created < " . $db->fromunixtime($ts));
 }

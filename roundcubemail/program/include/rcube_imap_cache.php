@@ -174,7 +174,7 @@ class rcube_imap_cache
             $this->icache['pending_index_update'] = false;
 
             // insert/update
-            $this->add_index_row($mailbox, $sort_field, $sort_order, false, $data, $mbox_data, $exists);
+            $this->add_index_row($mailbox, $sort_field, $sort_order, $data, $mbox_data, $exists);
         }
 
         $this->icache[$mailbox]['index'] = array(
@@ -212,7 +212,7 @@ class rcube_imap_cache
         }
 
         // Get index from DB
-        $index = $this->get_index_row($mailbox, '', true);
+        $index = $this->get_thread_row($mailbox);
         $data  = null;
 
         // Entry exist, check cache status
@@ -242,7 +242,7 @@ class rcube_imap_cache
             );
 
             // insert/update
-            $this->add_index_row($mailbox, '', '', true, $index, $mbox_data, $exists);
+            $this->add_thread_row($mailbox, $index, $mbox_data, $exists);
         }
 
         $this->icache[$mailbox]['thread'] = $index;
@@ -464,20 +464,38 @@ class rcube_imap_cache
      *
      * @param string  $mailbox     Folder name
      * @param string  $sort_field  Sorting column
-     * @param bool    $threaded    True for threaded indexes
      */
-    function remove_index($mailbox = null, $sort_field = null, $threaded = null)
+    function remove_index($mailbox = null, $sort_field = null)
     {
         $this->db->query(
             "DELETE FROM ".get_table_name('cache_index')
             ." WHERE user_id = ".intval($this->userid)
                 .(strlen($mailbox) ? " AND mailbox = ".$this->db->quote($mailbox) : "")
-                .($threaded !== null ? " AND threaded = ".intval($threaded) : "")
                 .($sort_field !== null ? " AND sort_field = ".$this->db->quote($sort_field) : "")
         );
 
         if (strlen($mailbox))
-            unset($this->icache[$mailbox]);
+            unset($this->icache[$mailbox]['index']);
+        else
+            $this->icache = array();
+    }
+
+
+    /**
+     * Clears thread cache.
+     *
+     * @param string  $mailbox     Folder name
+     */
+    function remove_thread($mailbox = null)
+    {
+        $this->db->query(
+            "DELETE FROM ".get_table_name('cache_thread')
+            ." WHERE user_id = ".intval($this->userid)
+                .(strlen($mailbox) ? " AND mailbox = ".$this->db->quote($mailbox) : "")
+        );
+
+        if (strlen($mailbox))
+            unset($this->icache[$mailbox]['thread']);
         else
             $this->icache = array();
     }
@@ -492,6 +510,7 @@ class rcube_imap_cache
     function clear($mailbox = null, $uids = null)
     {
         $this->remove_index($mailbox);
+        $this->remove_thread($mailbox);
         $this->remove_message($mailbox, $uids);
     }
 
@@ -531,9 +550,9 @@ class rcube_imap_cache
 
 
     /**
-     * Fetches index/thread data from database
+     * Fetches index data from database
      */
-    private function get_index_row($mailbox, $sort_field, $threaded = false)
+    private function get_index_row($mailbox, $sort_field = 'ANY')
     {
         // Get index from DB
         // There's a special case when we want most recent index
@@ -543,51 +562,32 @@ class rcube_imap_cache
                 ." FROM ".get_table_name('cache_index')
                 ." WHERE user_id = ?"
                     ." AND mailbox = ?"
-                    ." AND threaded = ?"
                 // sort by 'changed' datetime to get most fresh index
                 // sort by 'sort_field' to get index with specified order,
                 // in some cases this saves one query
                 ." ORDER BY changed DESC, sort_field DESC",
-                0, 1, $this->userid, $mailbox, (int)$threaded);
+                0, 1, $this->userid, $mailbox);
         else
             $sql_result = $this->db->query(
                 "SELECT data, sort_field"
                 ." FROM ".get_table_name('cache_index')
                 ." WHERE user_id = ?"
                     ." AND mailbox = ?"
-                    ." AND threaded = ?"
                     ." AND sort_field = ?",
-                $this->userid, $mailbox, (int)$threaded, (string)$sort_field);
+                $this->userid, $mailbox, (string)$sort_field);
 
         if ($sql_arr = $this->db->fetch_assoc($sql_result)) {
             $data = explode('@', $sql_arr['data']);
 
-            if (!$threaded) {
-                return array(
-                    'seq'        => explode(',', $data[0]),
-                    'uid'        => explode(',', $data[1]),
-                    'sort_field' => $sql_arr['sort_field'],
-                    'sort_order' => $data[2],
-                    'deleted'    => $data[3],
-                    'validity'   => $data[4],
-                    'uidnext'    => $data[5],
-                );
-            }
-            else {
-                $data[0] = unserialize($data[0]);
-                // build 'depth' and 'children' arrays
-                $depth = $children = array();
-                $this->build_thread_data($data[0], $depth, $children);
-
-                return array(
-                    'tree'       => $data[0],
-                    'depth'      => $depth,
-                    'children'   => $children,
-                    'deleted'    => $data[1],
-                    'validity'   => $data[2],
-                    'uidnext'    => $data[3],
-                );
-            }
+            return array(
+                'seq'        => explode(',', $data[0]),
+                'uid'        => explode(',', $data[1]),
+                'sort_field' => $sql_arr['sort_field'],
+                'sort_order' => $data[2],
+                'deleted'    => $data[3],
+                'validity'   => $data[4],
+                'uidnext'    => $data[5],
+            );
         }
 
         return null;
@@ -595,32 +595,55 @@ class rcube_imap_cache
 
 
     /**
-     * Saves index/thread data into database
+     * Fetches thread data from database
      */
-    private function add_index_row($mailbox, $sort_field, $sort_order, $threaded = false,
-        $data = array(), $mbox_data = array(), $exists = false)
+    private function get_thread_row($mailbox)
     {
-        // We're using different data format for index and thread
-        // Index is simpler and this way we can make it smaller
-        if (!$threaded) {
-            $data = array(
-                implode(',', array_keys($data)),
-                implode(',', array_values($data)),
-                $sort_order,
-                (int) $this->skip_deleted,
-                (int) $mbox_data['UIDVALIDITY'],
-                (int) $mbox_data['UIDNEXT'],
-            );
-        }
-        else {
-            $data = array(
-                serialize($data['tree']),
-                (int) $this->skip_deleted,
-                (int) $mbox_data['UIDVALIDITY'],
-                (int) $mbox_data['UIDNEXT'],
+        // Get index from DB
+        // There's a special case when we want most recent index
+        $sql_result = $this->db->query(
+            "SELECT data, sort_field"
+            ." FROM ".get_table_name('cache_thread')
+            ." WHERE user_id = ?"
+                ." AND mailbox = ?",
+            $this->userid, $mailbox);
+
+        if ($sql_arr = $this->db->fetch_assoc($sql_result)) {
+            $data = explode('@', $sql_arr['data']);
+
+            $data[0] = unserialize($data[0]);
+            // build 'depth' and 'children' arrays
+            $depth = $children = array();
+            $this->build_thread_data($data[0], $depth, $children);
+
+            return array(
+                'tree'     => $data[0],
+                'depth'    => $depth,
+                'children' => $children,
+                'deleted'  => $data[1],
+                'validity' => $data[2],
+                'uidnext'  => $data[3],
             );
         }
 
+        return null;
+    }
+
+
+    /**
+     * Saves index data into database
+     */
+    private function add_index_row($mailbox, $sort_field, $sort_order,
+        $data = array(), $mbox_data = array(), $exists = false)
+    {
+        $data = array(
+            implode(',', array_keys($data)),
+            implode(',', array_values($data)),
+            $sort_order,
+            (int) $this->skip_deleted,
+            (int) $mbox_data['UIDVALIDITY'],
+            (int) $mbox_data['UIDNEXT'],
+        );
         $data = implode('@', $data);
 
         if ($exists)
@@ -634,9 +657,38 @@ class rcube_imap_cache
         else
             $sql_result = $this->db->query(
                 "INSERT INTO ".get_table_name('cache_index')
-                ." (user_id, mailbox, sort_field, threaded, data, changed)"
-                ." VALUES (?, ?, ?, ?, ?, ".$this->db->now().")",
-                $this->userid, $mailbox, (string)$sort_field, (int)$threaded, $data);
+                ." (user_id, mailbox, sort_field, data, changed)"
+                ." VALUES (?, ?, ?, ?, ".$this->db->now().")",
+                $this->userid, $mailbox, (string)$sort_field, $data);
+    }
+
+
+    /**
+     * Saves thread data into database
+     */
+    private function add_thread_row($mailbox, $data = array(), $mbox_data = array(), $exists = false)
+    {
+        $data = array(
+            serialize($data['tree']),
+            (int) $this->skip_deleted,
+            (int) $mbox_data['UIDVALIDITY'],
+            (int) $mbox_data['UIDNEXT'],
+        );
+        $data = implode('@', $data);
+
+        if ($exists)
+            $sql_result = $this->db->query(
+                "UPDATE ".get_table_name('cache_thread')
+                ." SET data = ?, changed = ".$this->db->now()
+                ." WHERE user_id = ?"
+                    ." AND mailbox = ?",
+                $data, $this->userid, $mailbox);
+        else
+            $sql_result = $this->db->query(
+                "INSERT INTO ".get_table_name('cache_thread')
+                ." (user_id, mailbox, data, changed)"
+                ." VALUES (?, ?, ?, ".$this->db->now().")",
+                $this->userid, $mailbox, $data);
     }
 
 
@@ -645,7 +697,7 @@ class rcube_imap_cache
      */
     private function validate($mailbox, $index, &$exists = true)
     {
-        $threaded = isset($index['tree']);
+        $is_thread = isset($index['tree']);
 
         // Get mailbox data (UIDVALIDITY, counters, etc.) for status check
         $mbox_data = $this->imap->mailbox_data($mailbox);
@@ -675,7 +727,7 @@ class rcube_imap_cache
 
         // Check UIDNEXT
         if ($index['uidnext'] != $mbox_data['UIDNEXT']) {
-            unset($this->icache[$mailbox][$threaded ? 'thread' : 'index']);
+            unset($this->icache[$mailbox][$is_thread ? 'thread' : 'index']);
             return false;
         }
 
@@ -685,7 +737,7 @@ class rcube_imap_cache
         }
 
         // @TODO: find better validity check for threaded index
-        if ($threaded) {
+        if ($is_thread) {
             // check messages number...
             if ($mbox_data['EXISTS'] != max(array_keys($index['depth']))) {
                 return false;

@@ -33,19 +33,48 @@ CREATE TABLE `users` (
 ) /*!40000 ENGINE=INNODB */ /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;
 
 
+-- Table structure for table `cache`
+
+CREATE TABLE `cache` (
+ `cache_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+ `cache_key` varchar(128) /*!40101 CHARACTER SET ascii COLLATE ascii_general_ci */ NOT NULL ,
+ `created` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
+ `data` longtext NOT NULL,
+ `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+ PRIMARY KEY(`cache_id`),
+ CONSTRAINT `user_id_fk_cache` FOREIGN KEY (`user_id`)
+   REFERENCES `users`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ INDEX `created_index` (`created`),
+ INDEX `user_cache_index` (`user_id`,`cache_key`)
+) /*!40000 ENGINE=INNODB */ /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;
+
+
 -- Table structure for table `cache_index`
 
 CREATE TABLE `cache_index` (
  `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
  `mailbox` varchar(255) /*!40101 CHARACTER SET ascii COLLATE ascii_general_ci */ NOT NULL,
  `sort_field` varchar(8) NOT NULL,
- `threaded` tinyint(1) NOT NULL DEFAULT '0',
  `changed` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
  `data` longtext NOT NULL,
  CONSTRAINT `user_id_fk_cache_index` FOREIGN KEY (`user_id`)
    REFERENCES `users`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
  INDEX `changed_index` (`changed`),
- PRIMARY KEY (`user_id`, `mailbox`, `threaded`, `sort_field`)
+ PRIMARY KEY (`user_id`, `mailbox`, `sort_field`)
+) /*!40000 ENGINE=INNODB */ /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;
+
+
+-- Table structure for table `cache_thread`
+
+CREATE TABLE `cache_thread` (
+ `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+ `mailbox` varchar(255) /*!40101 CHARACTER SET ascii COLLATE ascii_general_ci */ NOT NULL,
+ `changed` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
+ `data` longtext NOT NULL,
+ CONSTRAINT `user_id_fk_cache_thread` FOREIGN KEY (`user_id`)
+   REFERENCES `users`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ INDEX `changed_index` (`changed`),
+ PRIMARY KEY (`user_id`, `mailbox`)
 ) /*!40000 ENGINE=INNODB */ /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;
 
 
@@ -67,22 +96,6 @@ CREATE TABLE `cache_messages` (
    REFERENCES `users`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
  INDEX `changed_index` (`changed`),
  PRIMARY KEY (`user_id`, `mailbox`, `uid`)
-) /*!40000 ENGINE=INNODB */ /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;
-
-
--- Table structure for table `cache`
-
-CREATE TABLE `cache` (
- `cache_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
- `cache_key` varchar(128) /*!40101 CHARACTER SET ascii COLLATE ascii_general_ci */ NOT NULL ,
- `created` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
- `data` longtext NOT NULL,
- `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
- PRIMARY KEY(`cache_id`),
- CONSTRAINT `user_id_fk_cache` FOREIGN KEY (`user_id`)
-   REFERENCES `users`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
- INDEX `created_index` (`created`),
- INDEX `user_cache_index` (`user_id`,`cache_key`)
 ) /*!40000 ENGINE=INNODB */ /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;
 
 

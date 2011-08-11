@@ -141,3 +141,46 @@ ALTER TABLE `contactgroupmembers` ADD INDEX `contactgroupmembers_contact_index` 
 
 TRUNCATE TABLE `messages`;
 TRUNCATE TABLE `cache`;
+
+DROP TABLE `messages`;
+
+CREATE TABLE `cache_index` (
+ `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+ `mailbox` varchar(255) /*!40101 CHARACTER SET ascii COLLATE ascii_general_ci */ NOT NULL,
+ `sort_field` varchar(8) NOT NULL,
+ `changed` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
+ `data` longtext NOT NULL,
+ CONSTRAINT `user_id_fk_cache_index` FOREIGN KEY (`user_id`)
+   REFERENCES `users`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ INDEX `changed_index` (`changed`),
+ PRIMARY KEY (`user_id`, `mailbox`, `sort_field`)
+) /*!40000 ENGINE=INNODB */ /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;
+
+CREATE TABLE `cache_thread` (
+ `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+ `mailbox` varchar(255) /*!40101 CHARACTER SET ascii COLLATE ascii_general_ci */ NOT NULL,
+ `changed` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
+ `data` longtext NOT NULL,
+ CONSTRAINT `user_id_fk_cache_thread` FOREIGN KEY (`user_id`)
+   REFERENCES `users`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ INDEX `changed_index` (`changed`),
+ PRIMARY KEY (`user_id`, `mailbox`)
+) /*!40000 ENGINE=INNODB */ /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;
+
+CREATE TABLE `cache_messages` (
+ `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+ `mailbox` varchar(255) /*!40101 CHARACTER SET ascii COLLATE ascii_general_ci */ NOT NULL,
+ `uid` int(11) UNSIGNED NOT NULL DEFAULT '0',
+ `changed` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
+ `data` longtext NOT NULL,
+ `seen` tinyint(1) NOT NULL DEFAULT '0',
+ `deleted` tinyint(1) NOT NULL DEFAULT '0',
+ `answered` tinyint(1) NOT NULL DEFAULT '0',
+ `forwarded` tinyint(1) NOT NULL DEFAULT '0',
+ `flagged` tinyint(1) NOT NULL DEFAULT '0',
+ `mdnsent` tinyint(1) NOT NULL DEFAULT '0',
+ CONSTRAINT `user_id_fk_cache_messages` FOREIGN KEY (`user_id`)
+   REFERENCES `users`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ INDEX `changed_index` (`changed`),
+ PRIMARY KEY (`user_id`, `mailbox`, `uid`)
+) /*!40000 ENGINE=INNODB */ /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;
