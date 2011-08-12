@@ -869,12 +869,13 @@ class rcube_imap_generic
     /**
      * Executes SELECT command (if mailbox is already not in selected state)
      *
-     * @param string $mailbox Mailbox name
+     * @param string $mailbox      Mailbox name
+     * @param array  $qresync_data QRESYNC data (RFC5162)
      *
      * @return boolean True on success, false on error
      * @access public
      */
-    function select($mailbox)
+    function select($mailbox, $qresync_data = null)
     {
         if (!strlen($mailbox)) {
             return false;
@@ -893,7 +894,21 @@ class rcube_imap_generic
             }
         }
 */
-        list($code, $response) = $this->execute('SELECT', array($this->escape($mailbox)));
+        $params = array($this->escape($mailbox));
+
+        // QRESYNC data items
+        //    0. the last known UIDVALIDITY,
+        //    1. the last known modification sequence,
+        //    2. the optional set of known UIDs, and
+        //    3. an optional parenthesized list of known sequence ranges and their
+        //       corresponding UIDs.
+        if (!empty($qresync_data)) {
+            if (!empty($qresync_data[2]))
+                $qresync_data[2] = self::compressMessageSet($qresync_data[2]);
+            $params[] = array('QRESYNC', $qresync_data);
+        }
+
+        list($code, $response) = $this->execute('SELECT', $params);
 
         if ($code == self::ERROR_OK) {
             $response = explode("\r\n", $response);
@@ -915,6 +930,25 @@ class rcube_imap_generic
                     else if (preg_match('/^PERMANENTFLAGS \(([^\)]+)\)/iU', $line, $match)) {
                         $this->data['PERMANENTFLAGS'] = explode(' ', $match[1]);
                     }
+                }
+                // QRESYNC FETCH response (RFC5162)
+                else if (preg_match('/^\* ([0-9+]) FETCH/i', $line, $match)) {
+                    $line       = substr($line, strlen($match[0]));
+                    $fetch_data = $this->tokenizeResponse($line, 1);
+                    $data       = array('id' => $match[1]);
+
+                    for ($i=0, $size=count($fetch_data); $i<$size; $i+=2) {
+                        $data[strtolower($fetch_data[$i])] = $fetch_data[$i+1];
+                    }
+
+                    $this->data['QRESYNC'][$data['uid']] = $data;
+                }
+                // QRESYNC VANISHED response (RFC5162)
+                else if (preg_match('/^\* VANISHED [EARLIER]*/i', $line, $match)) {
+                    $line   = substr($line, strlen($match[0]));
+                    $v_data = $this->tokenizeResponse($line, 1);
+
+                    $this->data['VANISHED'] = $v_data;
                 }
             }
 
@@ -1530,12 +1564,14 @@ class rcube_imap_generic
      * @param bool   $is_uid      True if $message_set contains UIDs
      * @param array  $query_items FETCH command data items
      * @param string $mod_seq     Modification sequence for CHANGEDSINCE (RFC4551) query
+     * @param bool   $vanished    Enables VANISHED parameter (RFC5162) for CHANGEDSINCE query
      *
      * @return array List of rcube_mail_header elements, False on error
      * @access public
      * @since 0.6
      */
-    function fetch($mailbox, $message_set, $is_uid = false, $query_items = array(), $mod_seq = null)
+    function fetch($mailbox, $message_set, $is_uid = false, $query_items = array(),
+        $mod_seq = null, $vanished = false)
     {
         if (!$this->select($mailbox)) {
             return false;
@@ -1549,7 +1585,7 @@ class rcube_imap_generic
         $request .= "(" . implode(' ', $query_items) . ")";
 
         if ($mod_seq !== null && $this->hasCapability('CONDSTORE')) {
-            $request .= " (CHANGEDSINCE $mod_seq)";
+            $request .= " (CHANGEDSINCE $mod_seq" . ($vanished ? " VANISHED" : '') .")";
         }
 
         if (!$this->putLine($request)) {
@@ -1750,6 +1786,17 @@ class rcube_imap_generic
                     }
                 }
             }
+
+            // VANISHED response (QRESYNC RFC5162)
+            // Sample: * VANISHED (EARLIER) 300:310,405,411
+
+            else if (preg_match('/^\* VANISHED [EARLIER]*/i', $line, $match)) {
+                $line   = substr($line, strlen($match[0]));
+                $v_data = $this->tokenizeResponse($line, 1);
+
+                $this->data['VANISHED'] = $v_data;
+            }
+
         } while (!$this->startsWith($line, $key, true));
 
         return $result;
@@ -3210,7 +3257,9 @@ class rcube_imap_generic
         $response = $noresp ? null : '';
 
         if (!empty($arguments)) {
-            $query .= ' ' . implode(' ', $arguments);
+            foreach ($arguments as $arg) {
+                $query .= ' ' . self::r_implode($arg);
+            }
         }
 
         // Send command
@@ -3339,6 +3388,23 @@ class rcube_imap_generic
         }
 
         return $num == 1 ? $result[0] : $result;
+    }
+
+    static function r_implode($element)
+    {
+        $string = '';
+
+        if (is_array($element)) {
+            reset($element);
+            while (list($key, $value) = each($element)) {
+                $string .= ' ' . self::r_implode($value);
+            }
+        }
+        else {
+            return $element;
+        }
+
+        return '(' . trim($string) . ')';
     }
 
     private function _xor($string, $string2)
