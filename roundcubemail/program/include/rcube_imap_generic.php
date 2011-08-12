@@ -1529,12 +1529,13 @@ class rcube_imap_generic
      * @param mixed  $message_set Message(s) sequence identifier(s) or UID(s)
      * @param bool   $is_uid      True if $message_set contains UIDs
      * @param array  $query_items FETCH command data items
+     * @param string $mod_seq     Modification sequence for CHANGEDSINCE (RFC4551) query
      *
      * @return array List of rcube_mail_header elements, False on error
      * @access public
      * @since 0.6
      */
-    function fetch($mailbox, $message_set, $is_uid = false, $query_items = array())
+    function fetch($mailbox, $message_set, $is_uid = false, $query_items = array(), $mod_seq = null)
     {
         if (!$this->select($mailbox)) {
             return false;
@@ -1545,7 +1546,11 @@ class rcube_imap_generic
 
         $key      = $this->nextTag();
         $request  = $key . ($is_uid ? ' UID' : '') . " FETCH $message_set ";
-        $request .= "(" . implode(' ', $query_items) . ")"; 
+        $request .= "(" . implode(' ', $query_items) . ")";
+
+        if ($mod_seq !== null && $this->hasCapability('CONDSTORE')) {
+            $request .= " (CHANGEDSINCE $mod_seq)";
+        }
 
         if (!$this->putLine($request)) {
             $this->setError(self::ERROR_COMMAND, "Unable to send command: $request");
