@@ -873,7 +873,6 @@ class rcube_imap_generic
      * @param array  $qresync_data QRESYNC data (RFC5162)
      *
      * @return boolean True on success, false on error
-     * @access public
      */
     function select($mailbox, $qresync_data = null)
     {
@@ -970,7 +969,6 @@ class rcube_imap_generic
      *                        in RFC3501: UIDNEXT, UIDVALIDITY, RECENT
      *
      * @return array Status item-value hash
-     * @access public
      * @since 0.5-beta
      */
     function status($mailbox, $items=array())
@@ -1024,7 +1022,6 @@ class rcube_imap_generic
      * @param string $messages Message UIDs to expunge
      *
      * @return boolean True on success, False on error
-     * @access public
      */
     function expunge($mailbox, $messages=NULL)
     {
@@ -1057,7 +1054,6 @@ class rcube_imap_generic
      * Executes CLOSE command
      *
      * @return boolean True on success, False on error
-     * @access public
      * @since 0.5
      */
     function close()
@@ -1078,7 +1074,6 @@ class rcube_imap_generic
      * @param string $mailbox Mailbox name
      *
      * @return boolean True on success, False on error
-     * @access public
      */
     function subscribe($mailbox)
     {
@@ -1094,7 +1089,6 @@ class rcube_imap_generic
      * @param string $mailbox Mailbox name
      *
      * @return boolean True on success, False on error
-     * @access public
      */
     function unsubscribe($mailbox)
     {
@@ -1110,7 +1104,6 @@ class rcube_imap_generic
      * @param string $mailbox Mailbox name
      *
      * @return boolean True on success, False on error
-     * @access public
      */
     function deleteFolder($mailbox)
     {
@@ -1126,7 +1119,6 @@ class rcube_imap_generic
      * @param string $mailbox Mailbox name
      *
      * @return boolean True on success, False on error
-     * @access public
      */
     function clearFolder($mailbox)
     {
@@ -1151,7 +1143,6 @@ class rcube_imap_generic
      * @param string $mailbox Mailbox name
      *
      * @return int Number of messages, False on error
-     * @access public
      */
     function countMessages($mailbox, $refresh = false)
     {
@@ -1184,7 +1175,6 @@ class rcube_imap_generic
      * @param string $mailbox Mailbox name
      *
      * @return int Number of messages, False on error
-     * @access public
      */
     function countRecent($mailbox)
     {
@@ -1207,7 +1197,6 @@ class rcube_imap_generic
      * @param string $mailbox Mailbox name
      *
      * @return int Number of messages, False on error
-     * @access public
      */
     function countUnseen($mailbox)
     {
@@ -1238,7 +1227,6 @@ class rcube_imap_generic
      * @param array $items Client identification information key/value hash
      *
      * @return array Server identification information key/value hash
-     * @access public
      * @since 0.6
      */
     function id($items=array())
@@ -1263,6 +1251,37 @@ class rcube_imap_generic
             for ($i=0, $len=count($items); $i<$len; $i += 2) {
                 $result[$items[$i]] = $items[$i+1];
             }
+
+            return $result;
+        }
+
+        return false;
+    }
+
+    /**
+     * Executes ENABLE command (RFC5161)
+     *
+     * @param mixed $extension Extension name to enable (or array of names)
+     *
+     * @return array|bool List of enabled extensions, False on error
+     * @since 0.6
+     */
+    function enable($extension)
+    {
+        if (empty($extension))
+            return false;
+
+        if (!$this->hasCapability('ENABLE'))
+            return false;
+
+        if (!is_array($extension))
+            $extension = array($extension);
+
+        list($code, $response) = $this->execute('ENABLE', $extension);
+
+        if ($code == self::ERROR_OK && preg_match('/\* ENABLED /i', $response)) {
+            $response = substr($response, 10); // remove prefix "* ENABLED "
+            $result   = (array) $this->tokenizeResponse($response);
 
             return $result;
         }
@@ -1507,7 +1526,6 @@ class rcube_imap_generic
      * @param int    $uid     Message unique identifier (UID)
      *
      * @return int Message sequence identifier
-     * @access public
      */
     function UID2ID($mailbox, $uid)
     {
@@ -1527,7 +1545,6 @@ class rcube_imap_generic
      * @param int    $uid     Message sequence identifier
      *
      * @return int Message unique identifier
-     * @access public
      */
     function ID2UID($mailbox, $id)
     {
@@ -1567,7 +1584,6 @@ class rcube_imap_generic
      * @param bool   $vanished    Enables VANISHED parameter (RFC5162) for CHANGEDSINCE query
      *
      * @return array List of rcube_mail_header elements, False on error
-     * @access public
      * @since 0.6
      */
     function fetch($mailbox, $message_set, $is_uid = false, $query_items = array(),
@@ -2180,7 +2196,6 @@ class rcube_imap_generic
      *
      * @return array List of mailboxes or hash of options if $status_opts argument
      *               is non-empty.
-     * @access public
      */
     function listMailboxes($ref, $mailbox, $status_opts=array(), $select_opts=array())
     {
@@ -2196,7 +2211,6 @@ class rcube_imap_generic
      *
      * @return array List of mailboxes or hash of options if $status_opts argument
      *               is non-empty.
-     * @access public
      */
     function listSubscribed($ref, $mailbox, $status_opts=array())
     {
@@ -2216,7 +2230,6 @@ class rcube_imap_generic
      *
      * @return array List of mailboxes or hash of options if $status_ops argument
      *               is non-empty.
-     * @access private
      */
     private function _listMailboxes($ref, $mailbox, $subscribed=false,
         $status_opts=array(), $select_opts=array())
@@ -2697,7 +2710,6 @@ class rcube_imap_generic
      *
      * @return boolean True on success, False on failure
      *
-     * @access public
      * @since 0.5-beta
      */
     function setACL($mailbox, $user, $acl)
@@ -2721,7 +2733,6 @@ class rcube_imap_generic
      *
      * @return boolean True on success, False on failure
      *
-     * @access public
      * @since 0.5-beta
      */
     function deleteACL($mailbox, $user)
@@ -2739,7 +2750,6 @@ class rcube_imap_generic
      * @param string $mailbox Mailbox name
      *
      * @return array User-rights array on success, NULL on error
-     * @access public
      * @since 0.5-beta
      */
     function getACL($mailbox)
@@ -2780,7 +2790,6 @@ class rcube_imap_generic
      * @param string $user    User name
      *
      * @return array List of user rights
-     * @access public
      * @since 0.5-beta
      */
     function listRights($mailbox, $user)
@@ -2812,7 +2821,6 @@ class rcube_imap_generic
      * @param string $mailbox Mailbox name
      *
      * @return array MYRIGHTS response on success, NULL on error
-     * @access public
      * @since 0.5-beta
      */
     function myRights($mailbox)
@@ -2839,7 +2847,6 @@ class rcube_imap_generic
      * @param array  $entries Entry-value array (use NULL value as NIL)
      *
      * @return boolean True on success, False on failure
-     * @access public
      * @since 0.5-beta
      */
     function setMetadata($mailbox, $entries)
@@ -2869,7 +2876,6 @@ class rcube_imap_generic
      *
      * @return boolean True on success, False on failure
      *
-     * @access public
      * @since 0.5-beta
      */
     function deleteMetadata($mailbox, $entries)
@@ -2899,7 +2905,6 @@ class rcube_imap_generic
      *
      * @return array GETMETADATA result on success, NULL on error
      *
-     * @access public
      * @since 0.5-beta
      */
     function getMetadata($mailbox, $entries, $options=array())
@@ -2991,7 +2996,6 @@ class rcube_imap_generic
      *                        three elements: entry name, attribute name, value
      *
      * @return boolean True on success, False on failure
-     * @access public
      * @since 0.5-beta
      */
     function setAnnotation($mailbox, $data)
@@ -3023,7 +3027,6 @@ class rcube_imap_generic
      *
      * @return boolean True on success, False on failure
      *
-     * @access public
      * @since 0.5-beta
      */
     function deleteAnnotation($mailbox, $data)
@@ -3045,7 +3048,6 @@ class rcube_imap_generic
      *
      * @return array Annotations result on success, NULL on error
      *
-     * @access public
      * @since 0.5-beta
      */
     function getAnnotation($mailbox, $entries, $attribs)
@@ -3227,7 +3229,6 @@ class rcube_imap_generic
      * Creates next command identifier (tag)
      *
      * @return string Command identifier
-     * @access public
      * @since 0.5-beta
      */
     function nextTag()
@@ -3246,7 +3247,6 @@ class rcube_imap_generic
      * @param int    $options   Execution options
      *
      * @return mixed Response code or list of response code and data
-     * @access public
      * @since 0.5-beta
      */
     function execute($command, $arguments=array(), $options=0)
@@ -3306,7 +3306,6 @@ class rcube_imap_generic
      * @param int    $num  Number of tokens to return
      *
      * @return mixed Tokens array or string if $num=1
-     * @access public
      * @since 0.5-beta
      */
     static function tokenizeResponse(&$str, $num=0)
@@ -3500,7 +3499,6 @@ class rcube_imap_generic
      *
      * @param   boolean $debug      New value for the debugging flag.
      *
-     * @access  public
      * @since   0.5-stable
      */
     function setDebug($debug, $handler = null)
@@ -3514,7 +3512,6 @@ class rcube_imap_generic
      *
      * @param   string  $message    Debug mesage text.
      *
-     * @access  private
      * @since   0.5-stable
      */
     private function debug($message)
