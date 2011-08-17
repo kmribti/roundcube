@@ -76,8 +76,13 @@ class rcube_imap_cache
     }
 
 
+    /**
+     * Cleanup actions (on shutdown).
+     */
     public function close()
     {
+        $this->save_icache();
+        $this->icache = null;
     }
 
 
@@ -327,6 +332,13 @@ class rcube_imap_cache
      */
     function get_message($mailbox, $uid)
     {
+        // Check internal cache
+        if (($message = $this->icache['message'])
+            && $message['mailbox'] == $mailbox && $message['object']->uid == $uid
+        ) {
+            return $this->icache['message']['object'];
+        }
+
         $flag_fields = implode(', ', array_map(array($this->db, 'quoteIdentifier'), $this->flag_fields));
 
         $sql_result = $this->db->query(
@@ -347,8 +359,25 @@ class rcube_imap_cache
         // Get the message from IMAP server
         if (empty($message)) {
             $message = $this->imap->get_headers($uid, $mailbox, true);
-            // update cache
-            $this->add_message($mailbox, $message, !$found);
+            // cache will be updated in close(), see below
+        }
+
+        // Save the message in internal cache, will be written to DB in close()
+        // Common scenario: user opens unseen message
+        // - get message (SELECT)
+        // - set message headers/structure (INSERT or UPDATE)
+        // - set \Seen flag (UPDATE)
+        // This way we can skip one UPDATE
+        if (!empty($message)) {
+            // Save current message from internal cache
+            $this->save_icache();
+
+            $this->icache['message'] = array(
+                'object'  => $message,
+                'mailbox' => $mailbox,
+                'exists'  => $found,
+                'md5sum'  => md5(serialize($message)),
+            );
         }
 
         return $message;
@@ -407,7 +436,7 @@ class rcube_imap_cache
      * Sets the flag for specified message.
      *
      * @param string  $mailbox  Folder name
-     * @param array   $uids     Message UIDs or -1 to change flag
+     * @param array   $uids     Message UIDs or null to change flag
      *                          of all messages in a folder
      * @param string  $flag     The name of the flag
      * @param bool    $enabled  Flag state
@@ -417,6 +446,15 @@ class rcube_imap_cache
         $flag = strtolower($flag);
 
         if (in_array($flag, $this->flag_fields)) {
+            // Internal cache update
+            if ($uids && count($uids) == 1 && ($uid = current($uids))
+                && ($message = $this->icache['message'])
+                && $message['mailbox'] == $mailbox && $message['object']->uid == $uid
+            ) {
+                $message['object']->$flag = $enabled;
+                return;
+            }
+
             $this->db->query(
                 "UPDATE ".get_table_name('cache_messages')
                 ." SET changed = ".$this->db->now()
@@ -448,6 +486,13 @@ class rcube_imap_cache
                 $this->userid);
         }
         else {
+            // Remove the message from internal cache
+            if (!empty($uids) && !is_array($uids) && ($message = $this->icache['message'])
+                && $message['mailbox'] == $mailbox && $message['object']->uid == $uids
+            ) {
+                $this->icache['message'] = null;
+            }
+
             $this->db->query(
                 "DELETE FROM ".get_table_name('cache_messages')
                 ." WHERE user_id = ?"
@@ -822,4 +867,29 @@ class rcube_imap_cache
                 $this->build_thread_data($val, $depth, $children, $level + 1);
         }
     }
+
+
+    /**
+     * Saves message stored in internal cache
+     */
+    private function save_icache()
+    {
+        // Save current message from internal cache
+        if ($message = $this->icache['message']) {
+            $object = $message['object'];
+            // remove body too big (>500kB)
+            if ($object->body && strlen($object->body) > 500 * 1024)
+                $object->body = null;
+
+            // calculate current md5 sum
+            $md5sum = md5(serialize($object));
+
+            if ($message['md5sum'] != $md5sum) {
+                $this->add_message($message['mailbox'], $object, !$message['exists']);
+            }
+
+            $this->icache['message']['md5sum'] = $md5sum;
+        }
+    }
+
 }

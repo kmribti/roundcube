@@ -220,6 +220,8 @@ class rcube_imap
     function close()
     {
         $this->conn->closeConnection();
+        if ($this->mcache)
+            $this->mcache->close();
     }
 
 
@@ -2007,11 +2009,6 @@ class rcube_imap
         }
 
         $headers->structure = $struct;
-
-        // update cached headers with structure
-        if ($mcache = $this->get_mcache_engine()) {
-            $mcache->add_message($mailbox, $headers);
-        }
 
         return $this->icache['message'] = $headers;
     }
