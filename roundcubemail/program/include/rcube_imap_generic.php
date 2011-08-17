@@ -3144,7 +3144,7 @@ class rcube_imap_generic
     function getStructure($mailbox, $id, $is_uid = false)
     {
         $result = $this->fetch($mailbox, $id, $is_uid, array('BODYSTRUCTURE'));
-        if (is_array($aresult)) {
+        if (is_array($result)) {
             $result = array_shift($result);
             return $result->bodystructure;
         }
