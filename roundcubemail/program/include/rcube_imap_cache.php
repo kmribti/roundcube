@@ -298,6 +298,8 @@ class rcube_imap_cache
         while ($sql_arr = $this->db->fetch_assoc($sql_result)) {
             $uid          = intval($sql_arr['uid']);
             $result[$uid] = $this->build_message($sql_arr);
+            // save memory, we don't need a body here
+            $result[$uid]->body = null;
 //@TODO: update message ID according to index data?
 
             if (!empty($result[$uid])) {
