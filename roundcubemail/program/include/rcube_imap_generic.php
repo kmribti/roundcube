@@ -3153,7 +3153,7 @@ class rcube_imap_generic
 
     static function getStructurePartType($structure, $part)
     {
-	    $part_a = self::getPartArray($structure, $part);
+	    $part_a = self::getStructurePartArray($structure, $part);
 	    if (!empty($part_a)) {
 		    if (is_array($part_a[0]))
                 return 'multipart';
@@ -3166,7 +3166,7 @@ class rcube_imap_generic
 
     static function getStructurePartEncoding($structure, $part)
     {
-	    $part_a = self::getPartArray($structure, $part);
+	    $part_a = self::getStructurePartArray($structure, $part);
 	    if ($part_a) {
 		    if (!is_array($part_a[0]))
                 return $part_a[5];
@@ -3177,7 +3177,7 @@ class rcube_imap_generic
 
     static function getStructurePartCharset($structure, $part)
     {
-	    $part_a = self::getPartArray($structure, $part);
+	    $part_a = self::getStructurePartArray($structure, $part);
 	    if ($part_a) {
 		    if (is_array($part_a[0]))
                 return '';
@@ -3207,7 +3207,7 @@ class rcube_imap_generic
 		    if ((strcasecmp($a[0], 'message') == 0) && (strcasecmp($a[1], 'rfc822') == 0)) {
 			    $a = $a[8];
 		    }
-		    return self::getPartArray($a[$part-1], $rest);
+		    return self::getStructurePartArray($a[$part-1], $rest);
 	    }
         else if ($part>0) {
 		    if (!is_array($a[0]) && (strcasecmp($a[0], 'message') == 0)
