@@ -225,3 +225,29 @@ CREATE TABLE messages (
 
 CREATE INDEX messages_index_idx ON messages (user_id, cache_key, idx);
 CREATE INDEX messages_created_idx ON messages (created);
+
+--
+-- Sequence "searches_ids"
+-- Name: searches_ids; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE search_ids
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+--
+-- Table "searches"
+-- Name: searches; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE searches (
+    search_id integer DEFAULT nextval('search_ids'::text) PRIMARY KEY,
+    user_id integer NOT NULL
+        REFERENCES users (user_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    "type" smallint DEFAULT 0 NOT NULL,
+    name varchar(128) NOT NULL,
+    data text,
+    CONSTRAINT searches_user_id_key UNIQUE (user_id, "type", name)
+);
