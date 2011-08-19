@@ -5,7 +5,7 @@
  *
  * Make use of an existing HTTP authentication and perform login with the existing user credentials
  *
- * @version 1.2
+ * @version 1.3
  * @author Thomas Bruederli
  */
 class http_authentication extends rcube_plugin
