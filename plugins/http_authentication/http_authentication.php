@@ -30,14 +30,20 @@ class http_authentication extends rcube_plugin
 
   function authenticate($args)
   {
+    // Allow entering other user data in login form,
+    // e.g. after log out (#1487953)
+    if (!empty($args['user'])) {
+        return $args;
+    }
+
     if (!empty($_SERVER['PHP_AUTH_USER']) && !empty($_SERVER['PHP_AUTH_PW'])) {
       $args['user'] = $_SERVER['PHP_AUTH_USER'];
       $args['pass'] = $_SERVER['PHP_AUTH_PW'];
     }
-    
+
     $args['cookiecheck'] = false;
     $args['valid'] = true;
-  
+
     return $args;
   }
 
