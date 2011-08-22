@@ -220,6 +220,47 @@ INSERT INTO contacts (contact_id, user_id, changed, del, name, email, firstname,
 CREATE INDEX ix_contacts_user_id ON contacts(user_id, email);
 DROP TABLE contacts_tmp;
 
+
 DELETE FROM messages;
 DELETE FROM cache;
 CREATE INDEX ix_contactgroupmembers_contact_id ON contactgroupmembers (contact_id);
+
+DROP TABLE messages;
+
+CREATE TABLE cache_index (
+    user_id integer NOT NULL,
+    mailbox varchar(255) NOT NULL,
+    sort_field varchar(8) NOT NULL,
+    changed datetime NOT NULL default '0000-00-00 00:00:00',
+    data text NOT NULL,
+    PRIMARY KEY (user_id, mailbox, sort_field)
+);
+
+CREATE INDEX ix_cache_index_changed ON cache_index (changed);
+
+CREATE TABLE cache_thread (
+    user_id integer NOT NULL,
+    mailbox varchar(255) NOT NULL,
+    changed datetime NOT NULL default '0000-00-00 00:00:00',
+    data text NOT NULL,
+    PRIMARY KEY (user_id, mailbox)
+);
+
+CREATE INDEX ix_cache_thread_changed ON cache_thread (changed);
+
+CREATE TABLE cache_messages (
+    user_id integer NOT NULL,
+    mailbox varchar(255) NOT NULL,
+    uid integer NOT NULL,
+    changed datetime NOT NULL default '0000-00-00 00:00:00',
+    data text NOT NULL,
+    seen smallint NOT NULL DEFAULT '0',
+    deleted smallint NOT NULL DEFAULT '0',
+    answered smallint NOT NULL DEFAULT '0',
+    forwarded smallint NOT NULL DEFAULT '0',
+    flagged smallint NOT NULL DEFAULT '0',
+    mdnsent smallint NOT NULL DEFAULT '0',
+    PRIMARY KEY (user_id, mailbox, uid)
+);
+
+CREATE INDEX ix_cache_messages_changed ON cache_messages (changed);
