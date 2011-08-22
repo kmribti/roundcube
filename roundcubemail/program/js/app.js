@@ -4462,8 +4462,6 @@ function rcube_webmail()
   {
     this.select_folder('');
     this.enable_command('search-delete', false);
-    this.env.group = '';
-    this.env.source = '';
   };
 
   // callback for creating a new saved search record

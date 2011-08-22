@@ -214,6 +214,7 @@ function rcmail_contact_search()
     if ($result->count > 0) {
         // create javascript list
         rcmail_js_contacts_list($result);
+        $OUTPUT->show_message('contactsearchsuccessful', 'confirmation', array('nr' => $result->count));
     }
     else {
         $OUTPUT->show_message('nocontactsfound', 'notice');
@@ -223,7 +224,10 @@ function rcmail_contact_search()
     $OUTPUT->command('set_env', 'search_request', $search_request);
     $OUTPUT->command('set_env', 'pagecount', ceil($result->count / $CONFIG['pagesize']));
     $OUTPUT->command('set_rowcount', rcmail_get_rowcount_text($result));
+    // Re-set current source
     $OUTPUT->command('set_env', 'search_id', $sid);
+    $OUTPUT->command('set_env', 'source', '');
+    $OUTPUT->command('set_env', 'group', '');
 
     // unselect currently selected directory/group
     if (!$sid)
