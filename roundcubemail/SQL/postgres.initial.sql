@@ -248,6 +248,6 @@ CREATE TABLE searches (
         REFERENCES users (user_id) ON DELETE CASCADE ON UPDATE CASCADE,
     "type" smallint DEFAULT 0 NOT NULL,
     name varchar(128) NOT NULL,
-    data text,
+    data text NOT NULL,
     CONSTRAINT searches_user_id_key UNIQUE (user_id, "type", name)
 );

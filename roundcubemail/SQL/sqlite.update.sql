@@ -226,3 +226,15 @@ DROP TABLE contacts_tmp;
 DELETE FROM messages;
 DELETE FROM cache;
 CREATE INDEX ix_contactgroupmembers_contact_id ON contactgroupmembers (contact_id);
+
+-- Updates from version 0.6-beta
+
+CREATE TABLE searches (
+  search_id integer NOT NULL PRIMARY KEY,
+  user_id integer NOT NULL DEFAULT '0',
+  "type" smallint NOT NULL DEFAULT '0',
+  name varchar(128) NOT NULL,
+  data text NOT NULL
+);
+
+CREATE UNIQUE INDEX ix_searches_user_type_name (user_id, type, name);

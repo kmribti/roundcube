@@ -101,6 +101,8 @@ CREATE INDEX contactgroupmembers_contact_id_idx ON contactgroupmembers (contact_
 TRUNCATE messages;
 TRUNCATE cache;
 
+-- Updates from version 0.6-beta
+
 CREATE SEQUENCE search_ids
     INCREMENT BY 1
     NO MAXVALUE
@@ -113,6 +115,6 @@ CREATE TABLE searches (
         REFERENCES users (user_id) ON DELETE CASCADE ON UPDATE CASCADE,
     "type" smallint DEFAULT 0 NOT NULL,
     name varchar(128) NOT NULL,
-    data text,
+    data text NOT NULL,
     CONSTRAINT searches_user_id_key UNIQUE (user_id, "type", name)
 );

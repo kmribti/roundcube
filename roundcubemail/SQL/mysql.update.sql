@@ -145,6 +145,8 @@ ALTER TABLE `contactgroupmembers` ADD INDEX `contactgroupmembers_contact_index` 
 TRUNCATE TABLE `messages`;
 TRUNCATE TABLE `cache`;
 
+-- Updates from version 0.6-beta
+
 CREATE TABLE `searches` (
   `search_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
