@@ -563,6 +563,12 @@ class rcube_user
      */
     function list_searches($type)
     {
+        $plugin = $this->rc->plugins->exec_hook('saved_search_list', array('type' => $type));
+
+        if ($plugin['abort']) {
+            return (array) $plugin['result'];
+        }
+
         $result = array();
 
         $sql_result = $this->db->query(
@@ -591,6 +597,12 @@ class rcube_user
      */
     function get_search($id)
     {
+        $plugin = $this->rc->plugins->exec_hook('saved_search_get', array('id' => $id));
+
+        if ($plugin['abort']) {
+            return $plugin['result'];
+        }
+
         $sql_result = $this->db->query(
             "SELECT ".$this->db->quoteIdentifier('name')
                 .", ".$this->db->quoteIdentifier('data')

@@ -36,7 +36,12 @@ if ($RCMAIL->action == 'search-create') {
             ),
         );
 
-        $result = $RCMAIL->user->insert_search($data);
+        $plugin = $RCMAIL->plugins->exec_hook('saved_search_create', array('data' => $data));
+
+        if (!$plugin['abort'])
+            $result = $RCMAIL->user->insert_search($plugin['data']);
+        else
+            $result = $plugin['result'];
     }
 
     if ($result) {
@@ -44,7 +49,7 @@ if ($RCMAIL->action == 'search-create') {
         $OUTPUT->command('insert_saved_search', Q($name), Q($result));
     }
     else
-        $OUTPUT->show_message('savedsearchcreateerror', 'error');
+        $OUTPUT->show_message($plugin['message'] ? $plugin['message'] : 'savedsearchcreateerror', 'error');
 
     $OUTPUT->send();
 }
@@ -52,14 +57,19 @@ if ($RCMAIL->action == 'search-create') {
 if ($RCMAIL->action == 'search-delete') {
     $id = get_input_value('_sid', RCUBE_INPUT_POST);
 
-    $result = $RCMAIL->user->delete_search($id);
+    $plugin = $RCMAIL->plugins->exec_hook('saved_search_delete', array('id' => $id));
+
+    if (!$plugin['abort'])
+        $result = $RCMAIL->user->delete_search($id);
+    else
+        $result = $plugin['result'];
 
     if ($result) {
         $OUTPUT->show_message('savedsearchdeleted', 'confirmation');
         $OUTPUT->command('remove_search_item', Q($id));
     }
     else
-        $OUTPUT->show_message('savedsearchdeleteerror', 'error');
+        $OUTPUT->show_message($plugin['message'] ? $plugin['message'] : 'savedsearchdeleteerror', 'error');
 
     $OUTPUT->send();
 }
