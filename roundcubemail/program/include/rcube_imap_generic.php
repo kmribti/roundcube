@@ -943,7 +943,7 @@ class rcube_imap_generic
                     $this->data['QRESYNC'][$data['uid']] = $data;
                 }
                 // QRESYNC VANISHED response (RFC5162)
-                else if (preg_match('/^\* VANISHED [EARLIER]*/i', $line, $match)) {
+                else if (preg_match('/^\* VANISHED [()EARLIER]*/i', $line, $match)) {
                     $line   = substr($line, strlen($match[0]));
                     $v_data = $this->tokenizeResponse($line, 1);
 
