@@ -105,10 +105,9 @@ CREATE TABLE cache_index (
     user_id integer NOT NULL
     	REFERENCES users (user_id) ON DELETE CASCADE ON UPDATE CASCADE,
     mailbox varchar(255) NOT NULL,
-    sort_field varchar(8) NOT NULL,
     changed timestamp with time zone DEFAULT now() NOT NULL,
     data text NOT NULL,
-    PRIMARY KEY (user_id, mailbox, sort_field)
+    PRIMARY KEY (user_id, mailbox)
 );
 
 CREATE INDEX cache_index_changed_idx ON cache_index (changed);

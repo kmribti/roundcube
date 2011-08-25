@@ -230,10 +230,9 @@ DROP TABLE messages;
 CREATE TABLE cache_index (
     user_id integer NOT NULL,
     mailbox varchar(255) NOT NULL,
-    sort_field varchar(8) NOT NULL,
     changed datetime NOT NULL default '0000-00-00 00:00:00',
     data text NOT NULL,
-    PRIMARY KEY (user_id, mailbox, sort_field)
+    PRIMARY KEY (user_id, mailbox)
 );
 
 CREATE INDEX ix_cache_index_changed ON cache_index (changed);

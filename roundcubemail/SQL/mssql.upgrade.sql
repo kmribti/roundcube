@@ -114,7 +114,6 @@ GO
 CREATE TABLE [dbo].[cache_index] (
 	[user_id] [int] NOT NULL ,
 	[mailbox] [varchar] (128) COLLATE Latin1_General_CI_AI NOT NULL ,
-	[sort_field] [varchar] (8) COLLATE Latin1_General_CI_AI NOT NULL ,
 	[changed] [datetime] NOT NULL ,
 	[data] [text] COLLATE Latin1_General_CI_AI NOT NULL 
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
@@ -146,7 +145,7 @@ GO
 ALTER TABLE [dbo].[cache_index] WITH NOCHECK ADD 
 	 PRIMARY KEY CLUSTERED 
 	(
-		[user_id],[mailbox],[sort_field]
+		[user_id],[mailbox]
 	) ON [PRIMARY] 
 GO
 

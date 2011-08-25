@@ -93,10 +93,11 @@ class rcube_imap_cache
      * @param string  $mailbox     Folder name
      * @param string  $sort_field  Sorting column
      * @param string  $sort_order  Sorting order (ASC|DESC)
+     * @param bool    $exiting     Skip index initialization if it doesn't exist in DB
      *
      * @return array Messages index
      */
-    function get_index($mailbox, $sort_field = null, $sort_order = null)
+    function get_index($mailbox, $sort_field = null, $sort_order = null, $existing = false)
     {
         if (empty($this->icache[$mailbox]))
             $this->icache[$mailbox] = array();
@@ -113,8 +114,15 @@ class rcube_imap_cache
                 return array_reverse($this->icache[$mailbox]['index']['result'], true);
         }
 
-        // Get index from DB
-        $index = $this->get_index_row($mailbox, $sort_field);
+        // Get index from DB (if DB wasn't already queried)
+        if (empty($this->icache[$mailbox]['index_queried'])) {
+            $index = $this->get_index_row($mailbox);
+
+            // set the flag that DB was already queried for index
+            // this way we'll be able to skip one SELECT, when
+            // get_index() is called more than once
+            $this->icache[$mailbox]['index_queried'] = true;
+        }
         $data  = null;
 
         // @TODO: Think about skipping validation checks.
@@ -125,12 +133,18 @@ class rcube_imap_cache
 
         // Entry exist, check cache status
         if (!empty($index)) {
+            $exists = true;
+
             if ($sort_field == 'ANY') {
                 $sort_field = $index['sort_field'];
             }
 
-            $exists = true;
-            $is_valid = $this->validate($mailbox, $index, $exists);
+            if ($sort_field != $index['sort_field']) {
+                $is_valid = false;
+            }
+            else {
+                $is_valid = $this->validate($mailbox, $index, $exists);
+            }
 
             if ($is_valid) {
                 // build index, assign sequence IDs to unique IDs
@@ -140,11 +154,19 @@ class rcube_imap_cache
                     $data = array_reverse($data, true);
             }
         }
-        else if ($sort_field == 'ANY') {
-            $sort_field = '';
+        else {
+            // Got it in internal cache, so the row already exist
+            $exists = array_key_exists('index', $this->icache[$mailbox]);
+
+            if ($existing) {
+                return null;
+            }
+            else if ($sort_field == 'ANY') {
+                $sort_field = '';
+            }
         }
 
-        // Index not found or not valid, get index from IMAP server
+        // Index not found, not valid or sort field changed, get index from IMAP server
         if ($data === null) {
             // Get mailbox data (UIDVALIDITY, counters, etc.) for status check
             $mbox_data = $this->imap->mailbox_data($mailbox);
@@ -176,6 +198,7 @@ class rcube_imap_cache
                 }
             }
 
+            // Reset internal flags
             $this->icache['pending_index_update'] = false;
 
             // insert/update
@@ -510,15 +533,13 @@ class rcube_imap_cache
      * Clears index cache.
      *
      * @param string  $mailbox     Folder name
-     * @param string  $sort_field  Sorting column
      */
-    function remove_index($mailbox = null, $sort_field = null)
+    function remove_index($mailbox = null)
     {
         $this->db->query(
             "DELETE FROM ".get_table_name('cache_index')
             ." WHERE user_id = ".intval($this->userid)
                 .(strlen($mailbox) ? " AND mailbox = ".$this->db->quote($mailbox) : "")
-                .($sort_field !== null ? " AND sort_field = ".$this->db->quote($sort_field) : "")
         );
 
         if (strlen($mailbox))
@@ -573,7 +594,8 @@ class rcube_imap_cache
         if (!empty($this->icache['pending_index_update']))
             return null;
 
-        $index = $this->get_index($mailbox, 'ANY');
+        // get index if it exists
+        $index = $this->get_index($mailbox, 'ANY', null, true);
 
         return $index[$id];
     }
@@ -590,7 +612,8 @@ class rcube_imap_cache
         if (!empty($this->icache['pending_index_update']))
             return null;
 
-        $index = $this->get_index($mailbox, 'ANY');
+        // get index if it exists
+        $index = $this->get_index($mailbox, 'ANY', null, true);
 
         return array_search($uid, (array)$index);
     }
@@ -599,29 +622,15 @@ class rcube_imap_cache
     /**
      * Fetches index data from database
      */
-    private function get_index_row($mailbox, $sort_field = 'ANY')
+    private function get_index_row($mailbox)
     {
         // Get index from DB
-        // There's a special case when we want most recent index
-        if ($sort_field == 'ANY')
-            $sql_result = $this->db->limitquery(
-                "SELECT data, sort_field"
-                ." FROM ".get_table_name('cache_index')
-                ." WHERE user_id = ?"
-                    ." AND mailbox = ?"
-                // sort by 'changed' datetime to get most fresh index
-                // sort by 'sort_field' to get index with specified order,
-                // in some cases this saves one query
-                ." ORDER BY changed DESC, sort_field DESC",
-                0, 1, $this->userid, $mailbox);
-        else
-            $sql_result = $this->db->query(
-                "SELECT data, sort_field"
-                ." FROM ".get_table_name('cache_index')
-                ." WHERE user_id = ?"
-                    ." AND mailbox = ?"
-                    ." AND sort_field = ?",
-                $this->userid, $mailbox, (string)$sort_field);
+        $sql_result = $this->db->query(
+            "SELECT data"
+            ." FROM ".get_table_name('cache_index')
+            ." WHERE user_id = ?"
+                ." AND mailbox = ?",
+            $this->userid, $mailbox);
 
         if ($sql_arr = $this->db->fetch_assoc($sql_result)) {
             $data = explode('@', $sql_arr['data']);
@@ -629,11 +638,11 @@ class rcube_imap_cache
             return array(
                 'seq'        => explode(',', $data[0]),
                 'uid'        => explode(',', $data[1]),
-                'sort_field' => $sql_arr['sort_field'],
-                'sort_order' => $data[2],
-                'deleted'    => $data[3],
-                'validity'   => $data[4],
-                'uidnext'    => $data[5],
+                'sort_field' => $data[2],
+                'sort_order' => $data[3],
+                'deleted'    => $data[4],
+                'validity'   => $data[5],
+                'uidnext'    => $data[6],
             );
         }
 
@@ -685,6 +694,7 @@ class rcube_imap_cache
         $data = array(
             implode(',', array_keys($data)),
             implode(',', array_values($data)),
+            $sort_field,
             $sort_order,
             (int) $this->skip_deleted,
             (int) $mbox_data['UIDVALIDITY'],
@@ -697,15 +707,14 @@ class rcube_imap_cache
                 "UPDATE ".get_table_name('cache_index')
                 ." SET data = ?, changed = ".$this->db->now()
                 ." WHERE user_id = ?"
-                    ." AND mailbox = ?"
-                    ." AND sort_field = ?",
-                $data, $this->userid, $mailbox, (string)$sort_field);
+                    ." AND mailbox = ?",
+                $data, $this->userid, $mailbox);
         else
             $sql_result = $this->db->query(
                 "INSERT INTO ".get_table_name('cache_index')
-                ." (user_id, mailbox, sort_field, data, changed)"
-                ." VALUES (?, ?, ?, ?, ".$this->db->now().")",
-                $this->userid, $mailbox, (string)$sort_field, $data);
+                ." (user_id, mailbox, data, changed)"
+                ." VALUES (?, ?, ?, ".$this->db->now().")",
+                $this->userid, $mailbox, $data);
     }
 
 
@@ -825,10 +834,11 @@ class rcube_imap_cache
         }
         else {
             // check messages number...
-            if ($mbox_data['EXISTS'] != max($index['seq'])
-                // ... and max UID
-                || max($index['uid']) != $this->imap->id2uid($mbox_data['EXISTS'], $mailbox, true)
-            ) {
+            if ($mbox_data['EXISTS'] != max($index['seq'])) {
+                return false;
+            }
+            // ... and max UID
+            if (max($index['uid']) != $this->imap->id2uid($mbox_data['EXISTS'], $mailbox, true)) {
                 return false;
             }
         }
