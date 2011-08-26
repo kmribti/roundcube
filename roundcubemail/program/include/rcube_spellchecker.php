@@ -34,8 +34,9 @@ class rcube_spellchecker
     private $lang;
     private $rc;
     private $error;
-    private $separator = '/[ !"#$%&()*+\\,\/\n:;<=>?@\[\]^_{|}-]+|\.[^\w]/';
-    
+    private $separator = '/[\s\r\n\t\(\)\/\[\]{}<>\\"]+|[:;?!,\.]([^\w]|$)/';
+    private $options = array();
+
 
     // default settings
     const GOOGLE_HOST = 'ssl://www.google.com';
@@ -50,9 +51,9 @@ class rcube_spellchecker
      */
     function __construct($lang = 'en')
     {
-        $this->rc = rcmail::get_instance();
+        $this->rc     = rcmail::get_instance();
         $this->engine = $this->rc->config->get('spellcheck_engine', 'googie');
-        $this->lang = $lang ? $lang : 'en';
+        $this->lang   = $lang ? $lang : 'en';
 
         if ($this->engine == 'pspell' && !extension_loaded('pspell')) {
             raise_error(array(
@@ -60,6 +61,12 @@ class rcube_spellchecker
                 'file' => __FILE__, 'line' => __LINE__,
                 'message' => "Pspell extension not available"), true, true);
         }
+
+        $this->options = array(
+            'ignore_syms' => $this->rc->config->get('spellcheck_ignore_syms'),
+            'ignore_nums' => $this->rc->config->get('spellcheck_ignore_nums'),
+            'ignore_caps' => $this->rc->config->get('spellcheck_ignore_caps'),
+        );
     }
 
 
@@ -71,7 +78,7 @@ class rcube_spellchecker
      *
      * @return bool True when no mispelling found, otherwise false
      */
-    function check($text, $is_html=false)
+    function check($text, $is_html = false)
     {
         // convert to plain text
         if ($is_html) {
@@ -116,9 +123,9 @@ class rcube_spellchecker
             return $this->_pspell_suggestions($word);
         }
 
-        return $this->_googie_suggestions($word);    
+        return $this->_googie_suggestions($word);
     }
-    
+
 
     /**
      * Returns mispelled words
@@ -179,7 +186,7 @@ class rcube_spellchecker
             $result[$word] = is_array($item[4]) ? implode("\t", $item[4]) : $item[4];
         }
 
-        return $out;
+        return $result;
     }
 
 
@@ -211,15 +218,18 @@ class rcube_spellchecker
         // tokenize
         $text = preg_split($this->separator, $text, NULL, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_OFFSET_CAPTURE);
 
-        $diff = 0;
-        $matches = array();
+        $diff       = 0;
+        $matches    = array();
 
         foreach ($text as $w) {
             $word = trim($w[0]);
             $pos  = $w[1] - $diff;
             $len  = mb_strlen($word);
 
-            if ($word && preg_match('/[^0-9\.]/', $word) && !pspell_check($this->plink, $word)) {
+            // skip exceptions
+            if ($this->is_exception($word)) {
+            }
+            else if (!pspell_check($this->plink, $word)) {
                 $suggestions = pspell_suggest($this->plink, $word);
 
 	            if (sizeof($suggestions) > self::MAX_SUGGESTIONS)
@@ -240,6 +250,8 @@ class rcube_spellchecker
      */
     private function _pspell_words($text = null, $is_html=false)
     {
+        $result = array();
+
         if ($text) {
             // init spellchecker
             $this->_pspell_init();
@@ -257,15 +269,19 @@ class rcube_spellchecker
 
             foreach ($text as $w) {
                 $word = trim($w[0]);
-                if ($word && preg_match('/[^0-9\.]/', $word) && !pspell_check($this->plink, $word)) {
+
+                // skip exceptions
+                if ($this->is_exception($word)) {
+                    continue;
+                }
+
+                if (!pspell_check($this->plink, $word)) {
                     $result[] = $word;
                 }
             }
 
             return $result;
         }
-
-        $result = array();
 
         foreach ($this->matches as $m) {
             $result[] = $m[0];
@@ -330,21 +346,21 @@ class rcube_spellchecker
         }
 
         // Google has some problem with spaces, use \n instead
-        $text = str_replace(' ', "\n", $text);
+        $gtext = str_replace(' ', "\n", $text);
 
-        $text = '<?xml version="1.0" encoding="utf-8" ?>'
+        $gtext = '<?xml version="1.0" encoding="utf-8" ?>'
             .'<spellrequest textalreadyclipped="0" ignoredups="0" ignoredigits="1" ignoreallcaps="1">'
-            .'<text>' . $text . '</text>'
+            .'<text>' . $gtext . '</text>'
             .'</spellrequest>';
 
         $store = '';
         if ($fp = fsockopen($host, $port, $errno, $errstr, 30)) {
             $out = "POST $path HTTP/1.0\r\n";
             $out .= "Host: " . str_replace('ssl://', '', $host) . "\r\n";
-            $out .= "Content-Length: " . strlen($text) . "\r\n";
+            $out .= "Content-Length: " . strlen($gtext) . "\r\n";
             $out .= "Content-Type: application/x-www-form-urlencoded\r\n";
             $out .= "Connection: Close\r\n\r\n";
-            $out .= $text;
+            $out .= $gtext;
             fwrite($fp, $out);
 
             while (!feof($fp))
@@ -357,6 +373,17 @@ class rcube_spellchecker
         }
 
         preg_match_all('/<c o="([^"]*)" l="([^"]*)" s="([^"]*)">([^<]*)<\/c>/', $store, $matches, PREG_SET_ORDER);
+
+        // skip exceptions (if appropriate options are enabled)
+        if (!empty($this->options['ignore_syms']) || !empty($this->options['ignore_nums']) || !empty($this->options['ignore_caps'])) {
+            foreach ($matches as $idx => $m) {
+                $word = mb_substr($text, $m[1], $m[2], RCMAIL_CHARSET);
+                // skip  exceptions
+                if ($this->is_exception($word)) {
+                    unset($matches[$idx]);
+                }
+            }
+        }
 
         return $matches;
     }
@@ -412,5 +439,35 @@ class rcube_spellchecker
     {
         $h2t = new html2text($text, false, true, 0);
         return $h2t->get_text();
+    }
+
+
+    /**
+     * Check if the specified word is an exception accoring to 
+     * spellcheck options.
+     *
+     * @param string  $word  The word
+     *
+     * @return bool True if the word is an exception, False otherwise
+     */
+    public function is_exception($word)
+    {
+        // Contain only symbols (e.g. "+9,0", "2:2")
+        if (!$word || preg_match('/^[0-9@#$%^&_+~*=:;?!,.-]+$/', $word))
+            return true;
+
+        // Contain symbols (e.g. "g@@gle"), all symbols excluding separators
+        if (!empty($this->options['ignore_syms']) && preg_match('/[@#$%^&_+~*=-]/', $word))
+            return true;
+
+        // Contain numbers (e.g. "g00g13")
+        if (!empty($this->options['ignore_nums']) && preg_match('/[0-9]/', $word))
+            return true;
+
+        // Blocked caps (e.g. "GOOGLE")
+        if (!empty($this->options['ignore_caps']) && $word == mb_strtoupper($word))
+            return true;
+
+        return false;
     }
 }

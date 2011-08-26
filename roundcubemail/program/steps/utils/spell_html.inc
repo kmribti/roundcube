@@ -40,7 +40,7 @@ if ($request['method'] == 'checkWords') {
 else if ($request['method'] == 'getSuggestions') {
     $result['result'] = $spellchecker->get_suggestions($data);
 }
-
+console($result);
 if ($error = $spellchecker->error()) {
     echo '{"error":{"errstr":"' . addslashes($error) . '","errfile":"","errline":null,"errcontext":"","level":"FATAL"}}';
     exit;
