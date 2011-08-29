@@ -535,29 +535,36 @@ class rcube_spellchecker
             $userid = (int) $this->rc->user->ID;
         }
 
+        $plugin = $this->rc->plugins->exec_hook('spell_dictionary_save', array(
+            'userid' => $userid, 'language' => $this->lang, 'dictionary' => $this->dict));
+
+        if (!empty($plugin['abort'])) {
+            return;
+        }
+
         if ($this->have_dict) {
             if (!empty($this->dict)) {
                 $this->rc->db->query(
                     "UPDATE ".get_table_name('dictionary')
                     ." SET data = ?"
-                    ." WHERE user_id " . ($userid ? "= ".$userid : "IS NULL")
+                    ." WHERE user_id " . ($plugin['userid'] ? "= ".$plugin['userid'] : "IS NULL")
                         ." AND " . $this->rc->db->quoteIdentifier('language') . " = ?",
-                    implode(' ', $this->dict), $this->lang);
+                    implode(' ', $plugin['dictionary']), $plugin['language']);
             }
             // don't store empty dict
             else {
                 $this->rc->db->query(
                     "DELETE FROM " . get_table_name('dictionary')
-                    ." WHERE user_id " . ($userid ? "= ".$userid : "IS NULL")
+                    ." WHERE user_id " . ($plugin['userid'] ? "= ".$plugin['userid'] : "IS NULL")
                         ." AND " . $this->rc->db->quoteIdentifier('language') . " = ?",
-                    $this->lang);
+                    $plugin['language']);
             }
         }
         else if (!empty($this->dict)) {
             $this->rc->db->query(
                 "INSERT INTO " .get_table_name('dictionary')
                 ." (user_id, " . $this->rc->db->quoteIdentifier('language') . ", data) VALUES (?, ?, ?)",
-                $userid, $this->lang, implode(' ', $this->dict));
+                $plugin['userid'], $plugin['language'], implode(' ', $plugin['dictionary']));
         }
     }
 
@@ -575,20 +582,33 @@ class rcube_spellchecker
             $userid = (int) $this->rc->user->ID;
         }
 
-        $this->rc->db->query(
-            "SELECT data FROM ".get_table_name('dictionary')
-            ." WHERE user_id ". ($userid ? "= ".$userid : "IS NULL")
-                ." AND " . $this->rc->db->quoteIdentifier('language') . " = ?",
-            $this->lang);
+        $plugin = $this->rc->plugins->exec_hook('spell_dictionary_get', array(
+            'userid' => $userid, 'language' => $this->lang, 'dictionary' => array()));
 
-        if ($sql_arr = $this->rc->db->fetch_assoc($sql_result)) {
-            $this->have_dict = true;
-            if (!empty($sql_arr['data'])) {
-                $dict = explode(' ', $sql_arr['data']);
+        if (empty($plugin['abort'])) {
+            $dict = array();
+            $this->rc->db->query(
+                "SELECT data FROM ".get_table_name('dictionary')
+                ." WHERE user_id ". ($plugin['userid'] ? "= ".$plugin['userid'] : "IS NULL")
+                    ." AND " . $this->rc->db->quoteIdentifier('language') . " = ?",
+                $plugin['language']);
+
+            if ($sql_arr = $this->rc->db->fetch_assoc($sql_result)) {
+                $this->have_dict = true;
+                if (!empty($sql_arr['data'])) {
+                    $dict = explode(' ', $sql_arr['data']);
+                }
             }
+
+            $plugin['dictionary'] = array_merge((array)$plugin['dictionary'], $dict);
         }
 
-        $this->dict = !empty($dict) ? $dict : array();
+        if (!empty($plugin['dictionary']) && is_array($plugin['dictionary'])) {
+            $this->dict = $plugin['dictionary'];
+        }
+        else {
+            $this->dict = array();
+        }
 
         return $this->dict;
     }
