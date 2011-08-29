@@ -428,6 +428,7 @@ $labels['spellcheckoptions'] = 'Spellcheck Options';
 $labels['spellcheckignoresyms'] = 'Ignore words with symbols';
 $labels['spellcheckignorenums'] = 'Ignore words with numbers';
 $labels['spellcheckignorecaps'] = 'Ignore words with all letters capitalized';
+$labels['addtodict'] = 'Add to dictionary';
 
 $labels['folder']  = 'Folder';
 $labels['folders']  = 'Folders';

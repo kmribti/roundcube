@@ -1,6 +1,8 @@
 CHANGELOG Roundcube Webmail
 ===========================
 
+- Added spellchecker exceptions dictionary (shared or per-user)
+- Added possibility to ignore words containing caps, numbers, symbols (spellcheck_ignore_* options)
 - Added unique connection identifier to IMAP debug messages
 - Added 'priority' column on messages list (#1486782)
 - Fix image type check for contact photo uploads

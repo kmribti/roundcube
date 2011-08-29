@@ -226,3 +226,11 @@ DROP TABLE contacts_tmp;
 DELETE FROM messages;
 DELETE FROM cache;
 CREATE INDEX ix_contactgroupmembers_contact_id ON contactgroupmembers (contact_id);
+
+CREATE TABLE dictionary (
+    user_id integer DEFAULT NULL,
+   "language" varchar(5) NOT NULL,
+    data text NOT NULL
+);
+
+CREATE UNIQUE INDEX ix_dictionary_user_language ON dictionary (user_id, "language");

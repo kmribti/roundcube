@@ -36,6 +36,8 @@ class rcube_spellchecker
     private $error;
     private $separator = '/[\s\r\n\t\(\)\/\[\]{}<>\\"]+|[:;?!,\.]([^\w]|$)/';
     private $options = array();
+    private $dict;
+    private $have_dict;
 
 
     // default settings
@@ -66,6 +68,7 @@ class rcube_spellchecker
             'ignore_syms' => $this->rc->config->get('spellcheck_ignore_syms'),
             'ignore_nums' => $this->rc->config->get('spellcheck_ignore_nums'),
             'ignore_caps' => $this->rc->config->get('spellcheck_ignore_caps'),
+            'dictionary'  => $this->rc->config->get('spellcheck_dictionary'),
         );
     }
 
@@ -375,7 +378,9 @@ class rcube_spellchecker
         preg_match_all('/<c o="([^"]*)" l="([^"]*)" s="([^"]*)">([^<]*)<\/c>/', $store, $matches, PREG_SET_ORDER);
 
         // skip exceptions (if appropriate options are enabled)
-        if (!empty($this->options['ignore_syms']) || !empty($this->options['ignore_nums']) || !empty($this->options['ignore_caps'])) {
+        if (!empty($this->options['ignore_syms']) || !empty($this->options['ignore_nums'])
+            || !empty($this->options['ignore_caps']) || !empty($this->options['dictionary'])
+        ) {
             foreach ($matches as $idx => $m) {
                 $word = mb_substr($text, $m[1], $m[2], RCMAIL_CHARSET);
                 // skip  exceptions
@@ -468,6 +473,124 @@ class rcube_spellchecker
         if (!empty($this->options['ignore_caps']) && $word == mb_strtoupper($word))
             return true;
 
+        // Use exceptions from dictionary
+        if (!empty($this->options['dictionary'])) {
+            $this->load_dict();
+
+            // @TODO: should dictionary be case-insensitive?
+            if (!empty($this->dict) && in_array($word, $this->dict))
+                return true;
+        }
+
         return false;
     }
+
+
+    /**
+     * Add a word to dictionary
+     *
+     * @param string  $word  The word to add
+     */
+    public function add_word($word)
+    {
+        $this->load_dict();
+
+        foreach (explode(' ', $word) as $word) {
+            // sanity check
+            if (strlen($word) < 512) {
+                $this->dict[] = $word;
+                $valid = true;
+            }
+        }
+
+        if ($valid) {
+            $this->dict = array_unique($this->dict);
+            $this->update_dict();
+        }
+    }
+
+
+    /**
+     * Remove a word from dictionary
+     *
+     * @param string  $word  The word to remove
+     */
+    public function remove_word($word)
+    {
+        $this->load_dict();
+
+        if (($key = array_search($word, $this->dict)) !== false) {
+            unset($this->dict[$key]);
+            $this->update_dict();
+        }
+    }
+
+
+    /**
+     * Update dictionary row in DB
+     */
+    private function update_dict()
+    {
+        if (strcasecmp($this->options['dictionary'], 'shared') != 0) {
+            $userid = (int) $this->rc->user->ID;
+        }
+
+        if ($this->have_dict) {
+            if (!empty($this->dict)) {
+                $this->rc->db->query(
+                    "UPDATE ".get_table_name('dictionary')
+                    ." SET data = ?"
+                    ." WHERE user_id " . ($userid ? "= ".$userid : "IS NULL")
+                        ." AND " . $this->rc->db->quoteIdentifier('language') . " = ?",
+                    implode(' ', $this->dict), $this->lang);
+            }
+            // don't store empty dict
+            else {
+                $this->rc->db->query(
+                    "DELETE FROM " . get_table_name('dictionary')
+                    ." WHERE user_id " . ($userid ? "= ".$userid : "IS NULL")
+                        ." AND " . $this->rc->db->quoteIdentifier('language') . " = ?",
+                    $this->lang);
+            }
+        }
+        else if (!empty($this->dict)) {
+            $this->rc->db->query(
+                "INSERT INTO " .get_table_name('dictionary')
+                ." (user_id, " . $this->rc->db->quoteIdentifier('language') . ", data) VALUES (?, ?, ?)",
+                $userid, $this->lang, implode(' ', $this->dict));
+        }
+    }
+
+
+    /**
+     * Get dictionary from DB
+     */
+    private function load_dict()
+    {
+        if (is_array($this->dict)) {
+            return $this->dict;
+        }
+
+        if (strcasecmp($this->options['dictionary'], 'shared') != 0) {
+            $userid = (int) $this->rc->user->ID;
+        }
+
+        $this->rc->db->query(
+            "SELECT data FROM ".get_table_name('dictionary')
+            ." WHERE user_id ". ($userid ? "= ".$userid : "IS NULL")
+                ." AND " . $this->rc->db->quoteIdentifier('language') . " = ?",
+            $this->lang);
+
+        if ($sql_arr = $this->rc->db->fetch_assoc($sql_result)) {
+            $this->have_dict = true;
+            if (!empty($sql_arr['data'])) {
+                $dict = explode(' ', $sql_arr['data']);
+            }
+        }
+
+        $this->dict = !empty($dict) ? $dict : array();
+
+        return $this->dict;
+    }
+
 }
