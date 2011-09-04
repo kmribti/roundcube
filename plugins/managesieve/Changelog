@@ -1,4 +1,5 @@
 - Added possibility to create a filter based on selected message "in-place"
+- Fixed import from Horde-INGO (#1488064)
 
 * version 4.3 [2011-07-28]
 -----------------------------------------------------------
