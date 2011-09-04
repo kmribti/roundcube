@@ -1,6 +1,3 @@
-/***** Roundcube|Filters styles *****/
-
-
 #filterslist
 {
   position: absolute;
@@ -168,6 +165,7 @@ body.iframe
 {
   min-width: 740px;
   width: expression(Math.max(740, document.documentElement.clientWidth)+'px');
+  background-color: #F2F2F2;
 }
 
 #filter-form
@@ -293,4 +291,17 @@ span.sieve.error
 #managesieve-tip
 {
   width: 200px;
+}
+
+/* fixes for popup window */
+
+body.iframe.mail
+{
+  margin: 0;
+  padding: 0;
+}
+
+body.iframe.mail #filter-form
+{
+  padding: 10px 5px 5px 5px;
 }

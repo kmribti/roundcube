@@ -1,41 +1,57 @@
-/* Sieve Filters (tab) */
+/* (Manage)Sieve Filters */
 
 if (window.rcmail) {
   rcmail.addEventListener('init', function(evt) {
+    // add managesieve-create command to message_commands array,
+    // so it's state will be updated on message selection/unselection
+    if (rcmail.env.task == 'mail') {
+      if (rcmail.env.action != 'show')
+        rcmail.env.message_commands.push('managesieve-create');
+      else
+        rcmail.enable_command('managesieve-create', true);
+    }
+    else {
+      var tab = $('<span>').attr('id', 'settingstabpluginmanagesieve').addClass('tablink'),
+        button = $('<a>').attr('href', rcmail.env.comm_path+'&_action=plugin.managesieve')
+          .attr('title', rcmail.gettext('managesieve.managefilters'))
+          .html(rcmail.gettext('managesieve.filters'))
+          .appendTo(tab);
 
-    var tab = $('<span>').attr('id', 'settingstabpluginmanagesieve').addClass('tablink');
-    var button = $('<a>').attr('href', rcmail.env.comm_path+'&_action=plugin.managesieve')
-      .attr('title', rcmail.gettext('managesieve.managefilters'))
-      .html(rcmail.gettext('managesieve.filters'))
-      .appendTo(tab);
+      // add tab
+      rcmail.add_element(tab, 'tabs');
+    }
 
-    // add button and register commands
-    rcmail.add_element(tab, 'tabs');
-    rcmail.register_command('plugin.managesieve-save', function() { rcmail.managesieve_save() }, true);
-    rcmail.register_command('plugin.managesieve-add', function() { rcmail.managesieve_add() }, true);
-    rcmail.register_command('plugin.managesieve-del', function() { rcmail.managesieve_del() }, true);
-    rcmail.register_command('plugin.managesieve-up', function() { rcmail.managesieve_up() }, true);
-    rcmail.register_command('plugin.managesieve-down', function() { rcmail.managesieve_down() }, true);
-    rcmail.register_command('plugin.managesieve-set', function() { rcmail.managesieve_set() }, true);
-    rcmail.register_command('plugin.managesieve-setadd', function() { rcmail.managesieve_setadd() }, true);
-    rcmail.register_command('plugin.managesieve-setdel', function() { rcmail.managesieve_setdel() }, true);
-    rcmail.register_command('plugin.managesieve-setact', function() { rcmail.managesieve_setact() }, true);
-    rcmail.register_command('plugin.managesieve-setget', function() { rcmail.managesieve_setget() }, true);
-
-    if (rcmail.env.action == 'plugin.managesieve') {
-      if (rcmail.gui_objects.sieveform) {
-        rcmail.enable_command('plugin.managesieve-save', true);
-      }
-      else {
-        rcmail.enable_command('plugin.managesieve-del', 'plugin.managesieve-up',
-          'plugin.managesieve-down', false);
-        rcmail.enable_command('plugin.managesieve-add', 'plugin.managesieve-setadd', !rcmail.env.sieveconnerror);
-      }
-
+    if (rcmail.env.task == 'mail' || rcmail.env.action.indexOf('plugin.managesieve') != -1) {
       // Create layer for form tips
       if (!rcmail.env.framed) {
         rcmail.env.ms_tip_layer = $('<div id="managesieve-tip" class="popupmenu"></div>');
         rcmail.env.ms_tip_layer.appendTo(document.body);
+      }
+    }
+
+    // register commands
+    rcmail.register_command('plugin.managesieve-save', function() { rcmail.managesieve_save() });
+    rcmail.register_command('plugin.managesieve-add', function() { rcmail.managesieve_add() });
+    rcmail.register_command('plugin.managesieve-del', function() { rcmail.managesieve_del() });
+    rcmail.register_command('plugin.managesieve-up', function() { rcmail.managesieve_up() });
+    rcmail.register_command('plugin.managesieve-down', function() { rcmail.managesieve_down() });
+    rcmail.register_command('plugin.managesieve-set', function() { rcmail.managesieve_set() });
+    rcmail.register_command('plugin.managesieve-setadd', function() { rcmail.managesieve_setadd() });
+    rcmail.register_command('plugin.managesieve-setdel', function() { rcmail.managesieve_setdel() });
+    rcmail.register_command('plugin.managesieve-setact', function() { rcmail.managesieve_setact() });
+    rcmail.register_command('plugin.managesieve-setget', function() { rcmail.managesieve_setget() });
+
+    if (rcmail.env.action == 'plugin.managesieve' || rcmail.env.action == 'plugin.managesieve-save') {
+      if (rcmail.gui_objects.sieveform) {
+        rcmail.enable_command('plugin.managesieve-save', true);
+        // resize dialog window
+        if (rcmail.env.action == 'plugin.managesieve' && rcmail.env.task == 'mail') {
+          parent.rcmail.managesieve_dialog_resize(rcmail.gui_objects.sieveform);
+        }
+        $('input[type="text"]:first', rcmail.gui_objects.sieveform).focus();
+      }
+      else {
+        rcmail.enable_command('plugin.managesieve-add', 'plugin.managesieve-setadd', !rcmail.env.sieveconnerror);
       }
 
       if (rcmail.gui_objects.filterslist) {
@@ -479,17 +495,19 @@ rcube_webmail.prototype.managesieve_reload = function(set)
 // Register onmouse(leave/enter) events for tips on specified form element
 rcube_webmail.prototype.managesieve_tip_register = function(tips)
 {
+  var n, framed = parent.rcmail,
+    tip = framed ? parent.rcmail.env.ms_tip_layer : rcmail.env.ms_tip_layer;
+
   for (var n in tips) {
     $('#'+tips[n][0])
       .bind('mouseenter', {str: tips[n][1]},
         function(e) {
           var offset = $(this).offset(),
-            tip = rcmail.env.framed ? parent.rcmail.env.ms_tip_layer : rcmail.env.ms_tip_layer,
             left = offset.left,
             top = offset.top - 12;
 
-          if (rcmail.env.framed) {
-            offset = $(parent.document.getElementById('filter-box')).offset();
+          if (framed) {
+            offset = $((rcmail.env.task == 'mail'  ? '#sievefilterform > iframe' : '#filter-box'), parent.document).offset();
             top  += offset.top;
             left += offset.left;
           }
@@ -499,12 +517,7 @@ rcube_webmail.prototype.managesieve_tip_register = function(tips)
           
           tip.css({left: left, top: top}).show();
         })
-      .bind('mouseleave',
-        function(e) {
-          var tip = parent.rcmail && parent.rcmail.env.ms_tip_layer ? 
-            parent.rcmail.env.ms_tip_layer : rcmail.env.ms_tip_layer;
-          tip.hide();
-      });
+      .bind('mouseleave', function(e) { tip.hide(); });
   }
 };
 
@@ -579,3 +592,98 @@ function action_type_select(id)
     elems[x].style.display = !enabled[x] ? 'none' : 'inline';
   }
 };
+
+/*********************************************************/
+/*********           Mail UI methods             *********/
+/*********************************************************/
+
+rcube_webmail.prototype.managesieve_create = function()
+{
+  if (!rcmail.env.sieve_headers || !rcmail.env.sieve_headers.length)
+    return;
+
+  var i, html, buttons = {}, dialog = $("#sievefilterform");
+
+  // create dialog window
+  if (!dialog.length) {
+    dialog = $('<div id="sievefilterform"></div>');
+    $('body').append(dialog);
+  }
+
+  // build dialog window content
+  html = '<fieldset><legend>'+this.gettext('managesieve.usedata')+'</legend><ul>';
+  for (i in rcmail.env.sieve_headers)
+    html += '<li><input type="checkbox" name="headers[]" id="sievehdr'+i+'" value="'+i+'" checked="checked" />'
+      +'<label for="sievehdr'+i+'">'+rcmail.env.sieve_headers[i][0]+':</label> '+rcmail.env.sieve_headers[i][1]+'</li>';
+  html += '</ul></fieldset>';
+
+  dialog.html(html);
+
+  // [Next Step] button action
+  buttons[this.gettext('managesieve.nextstep')] = function () {
+    // check if there's at least one checkbox checked
+    var hdrs = $('input[name="headers[]"]:checked', dialog);
+    if (!hdrs.length) {
+      alert(rcmail.gettext('managesieve.nodata'));
+      return;
+    }
+
+    // build frame URL
+    var url = rcmail.get_task_url('mail');
+    url = rcmail.add_url(url, '_action', 'plugin.managesieve');
+    url = rcmail.add_url(url, '_framed', 1);
+
+    hdrs.map(function() {
+      var val = rcmail.env.sieve_headers[this.value];
+      url = rcmail.add_url(url, 'r['+this.value+']', val[0]+':'+val[1]);
+    });
+
+    // load form in the iframe
+    var frame = $('<iframe>').attr({src: url, frameborder: 0})
+    frame.height(dialog.height()); // temp. 
+    dialog.empty().append(frame);
+    dialog.dialog('dialog').resize();
+
+    // Change [Next Step] button with [Save] button
+    buttons = {};
+    buttons[rcmail.gettext('save')] = function() {  
+      var win = $('iframe', dialog).get(0).contentWindow;
+      win.rcmail.managesieve_save();
+    };
+    dialog.dialog('option', 'buttons', buttons);
+  };
+
+  // show dialog window
+  dialog.dialog({
+    modal: false,
+    resizable: !bw.ie6,
+    closeOnEscape: (!bw.ie6 && !bw.ie7),  // disable for performance reasons
+    title: this.gettext('managesieve.newfilter'),
+    close: function() { rcmail.managesieve_dialog_close(); },
+    buttons: buttons,
+    minWidth: 600,
+    minHeight: 300
+  }).show();
+
+  this.env.managesieve_dialog = dialog;
+}
+
+rcube_webmail.prototype.managesieve_dialog_close = function()
+{
+  var dialog = this.env.managesieve_dialog;
+  
+  // BUG(?): if we don't remove the iframe first, it will be reloaded
+  dialog.html('');
+  dialog.dialog('destroy').hide();
+}
+
+rcube_webmail.prototype.managesieve_dialog_resize = function(o)
+{
+  var dialog = this.env.managesieve_dialog,
+    win = $(window), form = $(o);
+    width = form.width(), height = form.height(),
+    w = win.width(), h = win.height();
+
+  dialog.dialog('option', { height: Math.min(h-20, height+120), width: Math.min(w-20, width+65) })
+    .dialog('option', 'position', ['center', 'center']);  // only works in a separate call (!?)
+}

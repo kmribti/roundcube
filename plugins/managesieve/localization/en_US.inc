@@ -77,6 +77,9 @@ $labels['flagdeleted'] = 'Deleted';
 $labels['flaganswered'] = 'Answered';
 $labels['flagflagged'] = 'Flagged';
 $labels['flagdraft'] = 'Draft';
+$labels['filtercreate'] = 'Create filter';
+$labels['usedata'] = 'Use following data in the filter:';
+$labels['nextstep'] = 'Next Step';
 
 $messages = array();
 $messages['filterunknownerror'] = 'Unknown server error';
@@ -100,6 +103,7 @@ $messages['setdeleteconfirm'] = 'Are you sure, you want to delete selected filte
 $messages['setcreateerror'] = 'Unable to create filters set. Server error occured';
 $messages['setcreated'] = 'Filters set created successfully';
 $messages['emptyname'] = 'Unable to create filters set. Empty set name';
-$messages['nametoolong'] = 'Unable to create filters set. Name too long'
+$messages['nametoolong'] = 'Unable to create filters set. Name too long';
+$messages['nodata'] = 'At least one position must be selected!';
 
 ?>

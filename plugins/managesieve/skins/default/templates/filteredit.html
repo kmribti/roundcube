@@ -5,13 +5,16 @@
 <roundcube:include file="/includes/links.html" />
 <link rel="stylesheet" type="text/css" href="/this/managesieve.css" />
 </head>
-<body class="iframe">
+<body class="iframe<roundcube:exp expression="env:task != 'mail' ? '' : ' mail'" />">
 
+<roundcube:if condition="env:task != 'mail'" />
 <div id="filter-title" class="boxtitle"><roundcube:label name="managesieve.filterdef" /></div>
+<roundcube:endif />
 
 <div id="filter-form" class="boxcontent">
 <roundcube:object name="filterform" />
 
+<roundcube:if condition="env:task != 'mail'" />
 <div id="footer">
 <div class="footerleft">
 <roundcube:button command="plugin.managesieve-save" type="input" class="button mainaction" label="save" />
@@ -21,10 +24,10 @@
 <input type="checkbox" id="disabled" name="_disabled" value="1" />
 </div>
 </div>
+<roundcube:endif />
 
 </form>
 </div>
-
 
 </body>
 </html>
