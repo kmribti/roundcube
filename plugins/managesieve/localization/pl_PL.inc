@@ -104,7 +104,7 @@ $messages['setdeleteconfirm'] = 'Czy na pewno chcesz usunąć wybrany zbiór fil
 $messages['setcreateerror'] = 'Nie można utworzyć zbioru filtrów. Błąd serwera';
 $messages['setcreated'] = 'Zbiór filtrów został utworzony pomyślnie';
 $messages['emptyname'] = 'Nie można utworzyć zbioru filtrów. Pusta nazwa zbioru';
-$messages['nametoolong'] = 'Nie można utworzyć zbioru filtrów. Nazwa zbyt długa'
+$messages['nametoolong'] = 'Nie można utworzyć zbioru filtrów. Nazwa zbyt długa';
 $messages['nodata'] = 'Należy wybrać co najmniej jedną pozycję!';
 
 ?>
