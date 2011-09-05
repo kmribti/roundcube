@@ -118,7 +118,7 @@ class managesieve extends rcube_plugin
         $ret     = array();
 
         if ($headers->subject)
-            $ret[] = array('Subject', $headers->subject);
+            $ret[] = array('Subject', $this->rc->imap->decode_header($headers->subject));
 
         // @TODO: List-Id, others?
         foreach (array('From', 'To') as $h) {
