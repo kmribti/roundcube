@@ -205,14 +205,18 @@ class managesieve extends rcube_plugin
                 else {
                     // if script not exists build default script contents
                     $script_file = $this->rc->config->get('managesieve_default');
-                    $script_name = 'roundcube';
+                    $script_name = $this->rc->config->get('managesieve_script_name');
+
+                    if (empty($script_name))
+                        $script_name = 'roundcube';
+
                     if ($script_file && is_readable($script_file))
                         $content = file_get_contents($script_file);
 
-                // add script and set it active
-                if ($this->sieve->save_script($script_name, $content))
-                    if ($this->sieve->activate($script_name))
-                        $_SESSION['managesieve_active'] = $script_name;
+                    // add script and set it active
+                    if ($this->sieve->save_script($script_name, $content))
+                        if ($this->sieve->activate($script_name))
+                            $_SESSION['managesieve_active'] = $script_name;
                 }
             }
 
