@@ -61,7 +61,28 @@ class rcube_imap_cache
 
     private $skip_deleted = false;
 
-    public $flag_fields = array('seen', 'deleted', 'answered', 'forwarded', 'flagged', 'mdnsent');
+    /**
+     * List of known flags. Thanks to this we can handle flag changes
+     * with good performance. Bad thing is we need to know used flags.
+     */
+    public $flags = array(
+        1       => 'SEEN',          // RFC3501
+        2       => 'DELETED',       // RFC3501
+        4       => 'ANSWERED',      // RFC3501
+        8       => 'FLAGGED',       // RFC3501
+        16      => 'DRAFT',         // RFC3501
+        32      => 'MDNSENT',       // RFC3503
+        64      => 'FORWARDED',     // RFC5550
+        128     => 'SUBMITPENDING', // RFC5550
+        256     => 'SUBMITTED',     // RFC5550
+        512     => 'JUNK',
+        1024    => 'NONJUNK',
+        2048    => 'LABEL1',
+        4096    => 'LABEL2',
+        8192    => 'LABEL3',
+        16384   => 'LABEL4',
+        32768   => 'LABEL5',
+    );
 
 
     /**
@@ -284,11 +305,9 @@ class rcube_imap_cache
                     $msgs[$idx] = $uid;
         }
 
-        $flag_fields = implode(', ', array_map(array($this->db, 'quoteIdentifier'), $this->flag_fields));
-
         // Fetch messages from cache
         $sql_result = $this->db->query(
-            "SELECT uid, data, ".$flag_fields
+            "SELECT uid, data, flags"
             ." FROM ".get_table_name('cache_messages')
             ." WHERE user_id = ?"
                 ." AND mailbox = ?"
@@ -347,10 +366,8 @@ class rcube_imap_cache
             return $this->icache['message']['object'];
         }
 
-        $flag_fields = implode(', ', array_map(array($this->db, 'quoteIdentifier'), $this->flag_fields));
-
         $sql_result = $this->db->query(
-            "SELECT data, ".$flag_fields
+            "SELECT flags, data"
             ." FROM ".get_table_name('cache_messages')
             ." WHERE user_id = ?"
                 ." AND mailbox = ?"
@@ -404,28 +421,26 @@ class rcube_imap_cache
         if (!is_object($message) || empty($message->uid))
             return;
 
-        $msg = serialize($this->db->encode(clone $message));
+        $msg   = serialize($this->db->encode(clone $message));
+        $flags = 0;
 
-        $flag_fields = array_map(array($this->db, 'quoteIdentifier'), $this->flag_fields);
-        $flag_values = array();
-
-        foreach ($this->flag_fields as $flag)
-            $flag_values[] = (int) $message->$flag;
+        if (!empty($message->flags)) {
+            foreach ($this->flags as $idx => $flag)
+                if (!empty($message->flags[$flag]))
+                    $flags += $idx;
+        }
+        unset($msg->flags);
 
         // update cache record (even if it exists, the update
         // here will work as select, assume row exist if affected_rows=0)
         if (!$force) {
-            foreach ($flag_fields as $key => $val)
-                $flag_data[] = $val . " = " . $flag_values[$key];
-
             $res = $this->db->query(
                 "UPDATE ".get_table_name('cache_messages')
-                ." SET data = ?, changed = ".$this->db->now()
-                .", " . implode(', ', $flag_data)
+                ." SET flags = ?, data = ?, changed = ".$this->db->now()
                 ." WHERE user_id = ?"
                     ." AND mailbox = ?"
                     ." AND uid = ?",
-                $msg, $this->userid, $mailbox, (int) $message->uid);
+                $flags, $msg, $this->userid, $mailbox, (int) $message->uid);
 
             if ($this->db->affected_rows())
                 return;
@@ -434,9 +449,9 @@ class rcube_imap_cache
         // insert new record
         $this->db->query(
             "INSERT INTO ".get_table_name('cache_messages')
-            ." (user_id, mailbox, uid, changed, data, " . implode(', ', $flag_fields) . ")"
-            ." VALUES (?, ?, ?, ".$this->db->now().", ?, " . implode(', ', $flag_values) . ")",
-            $this->userid, $mailbox, (int) $message->uid, $msg);
+            ." (user_id, mailbox, uid, flags, changed, data)"
+            ." VALUES (?, ?, ?, ?, ".$this->db->now().", ?)",
+            $this->userid, $mailbox, (int) $message->uid, $flags, $msg);
     }
 
 
@@ -451,31 +466,31 @@ class rcube_imap_cache
      */
     function change_flag($mailbox, $uids, $flag, $enabled = false)
     {
-        $flag = strtolower($flag);
+        $flag = strtoupper($flag);
+        $idx  = (int) array_search($flag, $this->flags);
 
-        if (in_array($flag, $this->flag_fields)) {
-            // Internal cache update
-            if ($uids && count($uids) == 1 && ($uid = current($uids))
-                && ($message = $this->icache['message'])
-                && $message['mailbox'] == $mailbox && $message['object']->uid == $uid
-            ) {
-                $message['object']->$flag = $enabled;
-                return;
-            }
+        if (!$idx) {
+            return;
+        }
 
-            $this->db->query(
-                "UPDATE ".get_table_name('cache_messages')
-                ." SET changed = ".$this->db->now()
-                .", " .$this->db->quoteIdentifier($flag) . " = " . intval($enabled)
-                ." WHERE user_id = ?"
-                    ." AND mailbox = ?"
-                    .($uids !== null ? " AND uid IN (".$this->db->array2list((array)$uids, 'integer').")" : ""),
-                $this->userid, $mailbox);
+        // Internal cache update
+        if ($uids && count($uids) == 1 && ($uid = current($uids))
+            && ($message = $this->icache['message'])
+            && $message['mailbox'] == $mailbox && $message['object']->uid == $uid
+        ) {
+            $message['object']->flags[$flag] = $enabled;
+            return;
         }
-        else {
-            // @TODO: SELECT+UPDATE?
-            $this->remove_message($mailbox, $uids);
-        }
+
+        $this->db->query(
+            "UPDATE ".get_table_name('cache_messages')
+            ." SET changed = ".$this->db->now()
+            .", flags = flags ".($enabled ? "+ $idx" : "- $idx")
+            ." WHERE user_id = ?"
+                ." AND mailbox = ?"
+                .($uids !== null ? " AND uid IN (".$this->db->array2list((array)$uids, 'integer').")" : "")
+                ." AND (flags & $idx) ".($enabled ? "= 0" : "= $idx"),
+            $this->userid, $mailbox);
     }
 
 
@@ -945,8 +960,6 @@ class rcube_imap_cache
             return;
         }
 
-        $flags = $this->flag_fields;
-
         // Get modified flags and vanished messages
         // UID FETCH 1:* (FLAGS) (CHANGEDSINCE 0123456789 VANISHED)
         $result = $this->imap->conn->fetch($mailbox,
@@ -962,21 +975,21 @@ class rcube_imap_cache
                     continue;
                 }
 
-                // Get the message to merge the flags (if it exists)
-                // @TODO: update flags without fetching the cached message
-                $message = $this->get_message($mailbox, $uid, false, false);
+                $flags = 0;
+                if (!empty($msg->flags)) {
+                    foreach ($this->flags as $idx => $flag)
+                        if (!empty($msg->flags[$flag]))
+                            $flags += $idx;
+                }
 
-                if (empty($message))
-                    continue;
-
-                $message->id = $id;
-
-                // reset message flags
-                $message->flags = $msg->flags;
-                foreach ($flags as $flag)
-                    $message->$flag = $msg->$flag;
-
-                $this->add_message($mailbox, $message);
+                $this->db->query(
+                    "UPDATE ".get_table_name('cache_messages')
+                    ." SET flags = ?, changed = ".$this->db->now()
+                    ." WHERE user_id = ?"
+                        ." AND mailbox = ?"
+                        ." AND uid = ?"
+                        ." AND flags <> ?",
+                    $flags, $this->userid, $mailbox, $uid, $flags);
             }
         }
 
@@ -1030,8 +1043,10 @@ class rcube_imap_cache
         $message = $this->db->decode(unserialize($sql_arr['data']));
 
         if ($message) {
-            foreach ($this->flag_fields as $field)
-                $message->$field = (bool) $sql_arr[$field];
+            $message->flags = array();
+            foreach ($this->flags as $idx => $flag)
+                if (($sql_arr['flags'] & $idx) == $idx)
+                    $message->flags[$flag] = true;
         }
 
         return $message;
@@ -1106,7 +1121,7 @@ class rcube_imap_cache
      */
     private function get_index_data($mailbox, $sort_field, $sort_order, $mbox_data = array())
     {
-        $data      = array();
+        $data = array();
 
         if (empty($mbox_data)) {
             $mbox_data = $this->imap->mailbox_data($mailbox);

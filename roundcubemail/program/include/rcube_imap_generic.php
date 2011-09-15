@@ -6,6 +6,7 @@
  |                                                                       |
  | This file is part of the Roundcube Webmail client                     |
  | Copyright (C) 2005-2010, The Roundcube Dev Team                       |
+ | Copyright (C) 2011, Kolab Systems AG                                  |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | PURPOSE:                                                              |
@@ -54,15 +55,8 @@ class rcube_mail_header
     public $references;
     public $priority;
     public $mdn_to;
-
-    public $flags;
-    public $mdnsent = false;
-    public $seen = false;
-    public $deleted = false;
-    public $answered = false;
-    public $forwarded = false;
-    public $flagged = false;
     public $others = array();
+    public $flags = array();
 }
 
 // For backward compatibility with cached messages (#1486602)
@@ -1670,31 +1664,10 @@ class rcube_imap_generic
                     else if ($name == 'FLAGS') {
                         if (!empty($value)) {
                             foreach ((array)$value as $flag) {
-                                $flag = str_replace('\\', '', $flag);
+                                $flag = str_replace(array('$', '\\'), '', $flag);
+                                $flag = strtoupper($flag);
 
-                                switch (strtoupper($flag)) {
-                                case 'SEEN':
-                                    $result[$id]->seen = true;
-                                    break;
-                                case 'DELETED':
-                                    $result[$id]->deleted = true;
-                                    break;
-                                case 'ANSWERED':
-                                    $result[$id]->answered = true;
-                                    break;
-                                case '$FORWARDED':
-                                    $result[$id]->forwarded = true;
-                                    break;
-                                case '$MDNSENT':
-                                    $result[$id]->mdnsent = true;
-                                    break;
-                                case 'FLAGGED':
-                                    $result[$id]->flagged = true;
-                                    break;
-                                default:
-                                    $result[$id]->flags[] = $flag;
-                                    break;
-                                }
+                                $result[$id]->flags[$flag] = true;
                             }
                         }
                     }
