@@ -1,6 +1,9 @@
 - Added possibility to create a filter based on selected message "in-place"
 - Fixed import from Horde-INGO (#1488064)
 - Add managesieve_script_name option for default name of the script (#1487956)
+- Fixed handling of enabled magic_quotes_gpc setting
+- Fixed PHP warning on connection error when submitting filter form
+- Fixed bug where new action row with flags wasn't handled properly
 
 * version 4.3 [2011-07-28]
 -----------------------------------------------------------

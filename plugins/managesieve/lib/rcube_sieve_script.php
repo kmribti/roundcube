@@ -684,7 +684,7 @@ class rcube_sieve_script
             // String atom
             default:
                 // empty or one character
-                if ($str === '') {
+                if ($str === '' || $str === null) {
                     break 2;
                 }
                 if (strlen($str) < 2) {

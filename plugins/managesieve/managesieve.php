@@ -495,22 +495,22 @@ class managesieve extends rcube_plugin
             $join = trim(get_input_value('_join', RCUBE_INPUT_POST));
 
             // and arrays
-            $headers = $_POST['_header'];
-            $cust_headers = $_POST['_custom_header'];
-            $ops = $_POST['_rule_op'];
-            $sizeops = $_POST['_rule_size_op'];
-            $sizeitems = $_POST['_rule_size_item'];
-            $sizetargets = $_POST['_rule_size_target'];
-            $targets = $_POST['_rule_target'];
-            $act_types = $_POST['_action_type'];
-            $mailboxes = $_POST['_action_mailbox'];
-            $act_targets = $_POST['_action_target'];
-            $area_targets = $_POST['_action_target_area'];
-            $reasons = $_POST['_action_reason'];
-            $addresses = $_POST['_action_addresses'];
-            $days = $_POST['_action_days'];
-            $subject = $_POST['_action_subject'];
-            $flags = $_POST['_action_flags'];
+            $headers        = get_input_value('_header', RCUBE_INPUT_POST);
+            $cust_headers   = get_input_value('_custom_header', RCUBE_INPUT_POST);
+            $ops            = get_input_value('_rule_op', RCUBE_INPUT_POST);
+            $sizeops        = get_input_value('_rule_size_op', RCUBE_INPUT_POST);
+            $sizeitems      = get_input_value('_rule_size_item', RCUBE_INPUT_POST);
+            $sizetargets    = get_input_value('_rule_size_target', RCUBE_INPUT_POST);
+            $targets        = get_input_value('_rule_target', RCUBE_INPUT_POST, true);
+            $act_types      = get_input_value('_action_type', RCUBE_INPUT_POST, true);
+            $mailboxes      = get_input_value('_action_mailbox', RCUBE_INPUT_POST, true);
+            $act_targets    = get_input_value('_action_target', RCUBE_INPUT_POST, true);
+            $area_targets   = get_input_value('_action_target_area', RCUBE_INPUT_POST, true);
+            $reasons        = get_input_value('_action_reason', RCUBE_INPUT_POST, true);
+            $addresses      = get_input_value('_action_addresses', RCUBE_INPUT_POST, true);
+            $days           = get_input_value('_action_days', RCUBE_INPUT_POST);
+            $subject        = get_input_value('_action_subject', RCUBE_INPUT_POST, true);
+            $flags          = get_input_value('_action_flags', RCUBE_INPUT_POST);
 
             // we need a "hack" for radiobuttons
             foreach ($sizeitems as $item)
@@ -715,7 +715,7 @@ class managesieve extends rcube_plugin
                 $i++;
             }
 
-            if (!$this->errors) {
+            if (!$this->errors && !$error) {
                 // zapis skryptu
                 if (!isset($this->script[$fid])) {
                     $fid = $this->sieve->script->add_rule($this->form);
@@ -1157,7 +1157,7 @@ class managesieve extends rcube_plugin
         $out .= '<table><tr><td class="rowactions">';
 
         // action select
-        $select_action = new html_select(array('name' => "_action_type[]", 'id' => 'action_type'.$id,
+        $select_action = new html_select(array('name' => "_action_type[$id]", 'id' => 'action_type'.$id,
             'onchange' => 'action_type_select(' .$id .')'));
         if (in_array('fileinto', $this->exts))
             $select_action->add(Q($this->gettext('messagemoveto')), 'fileinto');
@@ -1191,11 +1191,11 @@ class managesieve extends rcube_plugin
         // actions target inputs
         $out .= '<td class="rowtargets">';
         // shared targets
-        $out .= '<input type="text" name="_action_target[]" id="action_target' .$id. '" '
+        $out .= '<input type="text" name="_action_target['.$id.']" id="action_target' .$id. '" '
             .'value="' .($action['type']=='redirect' ? Q($action['target'], 'strict', false) : ''). '" size="40" '
             .'style="display:' .($action['type']=='redirect' ? 'inline' : 'none') .'" '
             . $this->error_class($id, 'action', 'target', 'action_target') .' />';
-        $out .= '<textarea name="_action_target_area[]" id="action_target_area' .$id. '" '
+        $out .= '<textarea name="_action_target_area['.$id.']" id="action_target_area' .$id. '" '
             .'rows="3" cols="40" '. $this->error_class($id, 'action', 'targetarea', 'action_target_area')
             .'style="display:' .(in_array($action['type'], array('reject', 'ereject')) ? 'inline' : 'none') .'">'
             . (in_array($action['type'], array('reject', 'ereject')) ? Q($action['target'], 'strict', false) : '')
@@ -1204,19 +1204,19 @@ class managesieve extends rcube_plugin
         // vacation
         $out .= '<div id="action_vacation' .$id.'" style="display:' .($action['type']=='vacation' ? 'inline' : 'none') .'">';
         $out .= '<span class="label">'. Q($this->gettext('vacationreason')) .'</span><br />'
-            .'<textarea name="_action_reason[]" id="action_reason' .$id. '" '
+            .'<textarea name="_action_reason['.$id.']" id="action_reason' .$id. '" '
             .'rows="3" cols="45" '. $this->error_class($id, 'action', 'reason', 'action_reason') . '>'
             . Q($action['reason'], 'strict', false) . "</textarea>\n";
         $out .= '<br /><span class="label">' .Q($this->gettext('vacationsubject')) . '</span><br />'
-            .'<input type="text" name="_action_subject[]" id="action_subject'.$id.'" '
+            .'<input type="text" name="_action_subject['.$id.']" id="action_subject'.$id.'" '
             .'value="' . (is_array($action['subject']) ? Q(implode(', ', $action['subject']), 'strict', false) : $action['subject']) . '" size="50" '
             . $this->error_class($id, 'action', 'subject', 'action_subject') .' />';
         $out .= '<br /><span class="label">' .Q($this->gettext('vacationaddresses')) . '</span><br />'
-            .'<input type="text" name="_action_addresses[]" id="action_addr'.$id.'" '
+            .'<input type="text" name="_action_addresses['.$id.']" id="action_addr'.$id.'" '
             .'value="' . (is_array($action['addresses']) ? Q(implode(', ', $action['addresses']), 'strict', false) : $action['addresses']) . '" size="50" '
             . $this->error_class($id, 'action', 'addresses', 'action_addr') .' />';
         $out .= '<br /><span class="label">' . Q($this->gettext('vacationdays')) . '</span><br />'
-            .'<input type="text" name="_action_days[]" id="action_days'.$id.'" '
+            .'<input type="text" name="_action_days['.$id.']" id="action_days'.$id.'" '
             .'value="' .Q($action['days'], 'strict', false) . '" size="2" '
             . $this->error_class($id, 'action', 'days', 'action_days') .' />';
         $out .= '</div>';
@@ -1252,7 +1252,7 @@ class managesieve extends rcube_plugin
 	        'realnames' => false,
 	        'maxlength' => 100,
 	        'id' => 'action_mailbox' . $id,
-	        'name' => '_action_mailbox[]',
+	        'name' => "_action_mailbox[$id]",
 	        'style' => 'display:'.(!isset($action) || $action['type']=='fileinto' ? 'inline' : 'none')
 	    ));
         $out .= $select->show($mailbox);
