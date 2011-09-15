@@ -76,9 +76,9 @@ if ($uid = get_input_value('_uid', RCUBE_INPUT_GET)) {
       && empty($MESSAGE->headers->flags['MDNSENT'])
       && empty($MESSAGE->headers->flags['SEEN'])
       && ($IMAP->check_permflag('MDNSENT') || $IMAP->check_permflag('*'))
-      && $mbox_name != $CONFIG['drafts_mbox'] &&
-      && $mbox_name != $CONFIG['sent_mbox'])
-  {
+      && $mbox_name != $CONFIG['drafts_mbox']
+      && $mbox_name != $CONFIG['sent_mbox']
+  ) {
     $mdn_cfg = intval($CONFIG['mdn_requests']);
 
     if ($mdn_cfg == 1 || (($mdn_cfg == 3 || $mdn_cfg ==  4) && rcmail_contact_exists($MESSAGE->sender['mailto']))) {

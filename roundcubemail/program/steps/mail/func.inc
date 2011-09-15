@@ -300,11 +300,6 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE, $a_show_cols=null
       $a_msg_flags['unread_children'] = $header->unread_children;
     if ($header->others['list-post'])
       $a_msg_flags['ml'] = 1;
-    // @TODO: change js/css scripts to use original flag names
-    if (empty($header->flags['SEEN']))
-      $a_msg_flags['unread'] = 1;
-    if (!empty($header->flags['ANSWERED']))
-      $a_msg_flags['replied'] = 1;
 
     $a_msg_flags['ctype'] = Q($header->ctype);
     $a_msg_flags['mbox'] = $mbox;
