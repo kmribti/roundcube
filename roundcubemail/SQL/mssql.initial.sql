@@ -11,6 +11,7 @@ CREATE TABLE [dbo].[cache_index] (
 	[user_id] [int] NOT NULL ,
 	[mailbox] [varchar] (128) COLLATE Latin1_General_CI_AI NOT NULL ,
 	[changed] [datetime] NOT NULL ,
+	[valid] [char] (1) COLLATE Latin1_General_CI_AI NOT NULL ,
 	[data] [text] COLLATE Latin1_General_CI_AI NOT NULL 
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO

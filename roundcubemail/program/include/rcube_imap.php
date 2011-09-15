@@ -3399,6 +3399,8 @@ class rcube_imap
         if ($this->conn->selected != $mailbox) {
             if ($this->conn->select($mailbox))
                 $this->mailbox = $mailbox;
+            else
+                return null;
         }
 
         $data = $this->conn->data;
@@ -3484,6 +3486,22 @@ class rcube_imap
         }
 
         return $options;
+    }
+
+
+    /**
+     * Synchronizes messages cache.
+     *
+     * @param string $mailbox Folder name
+     */
+    public function mailbox_sync($mailbox)
+    {
+        if ($mcache = $this->get_mcache_engine()) {
+            $mcache->synchronize($mailbox);
+        }
+        else {
+            // @TODO: use QRESYNC/CONDSTORE to detect flag changes
+        }
     }
 
 

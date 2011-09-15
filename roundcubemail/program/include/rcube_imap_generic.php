@@ -688,7 +688,7 @@ class rcube_imap_generic
         // initialize connection
         $this->error    = '';
         $this->errornum = self::ERROR_OK;
-        $this->selected = '';
+        $this->selected = null;
         $this->user     = $user;
         $this->host     = $host;
         $this->logged   = false;
@@ -880,7 +880,7 @@ class rcube_imap_generic
             return false;
         }
 
-        if ($this->selected == $mailbox) {
+        if ($this->selected === $mailbox) {
             return true;
         }
 /*
@@ -1043,7 +1043,7 @@ class rcube_imap_generic
             $result = $this->execute('EXPUNGE', null, self::COMMAND_NORESPONSE);
 
         if ($result == self::ERROR_OK) {
-            $this->selected = ''; // state has changed, need to reselect
+            $this->selected = null; // state has changed, need to reselect
             return true;
         }
 
@@ -1061,7 +1061,7 @@ class rcube_imap_generic
         $result = $this->execute('CLOSE', NULL, self::COMMAND_NORESPONSE);
 
         if ($result == self::ERROR_OK) {
-            $this->selected = '';
+            $this->selected = null;
             return true;
         }
 
@@ -1128,7 +1128,7 @@ class rcube_imap_generic
         }
 
         if ($res) {
-            if ($this->selected == $mailbox)
+            if ($this->selected === $mailbox)
                 $res = $this->close();
             else
                 $res = $this->expunge($mailbox);
@@ -1147,10 +1147,10 @@ class rcube_imap_generic
     function countMessages($mailbox, $refresh = false)
     {
         if ($refresh) {
-            $this->selected = '';
+            $this->selected = null;
         }
 
-        if ($this->selected == $mailbox) {
+        if ($this->selected === $mailbox) {
             return $this->data['EXISTS'];
         }
 
@@ -1184,7 +1184,7 @@ class rcube_imap_generic
 
         $this->select($mailbox);
 
-        if ($this->selected == $mailbox) {
+        if ($this->selected === $mailbox) {
             return $this->data['RECENT'];
         }
 
@@ -1806,7 +1806,7 @@ class rcube_imap_generic
             // VANISHED response (QRESYNC RFC5162)
             // Sample: * VANISHED (EARLIER) 300:310,405,411
 
-            else if (preg_match('/^\* VANISHED [EARLIER]*/i', $line, $match)) {
+            else if (preg_match('/^\* VANISHED [()EARLIER]*/i', $line, $match)) {
                 $line   = substr($line, strlen($match[0]));
                 $v_data = $this->tokenizeResponse($line, 1);
 

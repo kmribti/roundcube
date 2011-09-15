@@ -34,8 +34,18 @@ else {
 
 // check recent/unseen counts
 foreach ($a_mailboxes as $mbox_name) {
-    if ($mbox_name == $current && ($status = $IMAP->mailbox_status($mbox_name))) {
+    if ($mbox_name == $current) {
+        // Synchronize mailbox cache, handle flag changes
+        $IMAP->mailbox_sync($mbox_name);
 
+        // Get mailbox status
+        $status = $IMAP->mailbox_status($mbox_name);
+    }
+    else {
+        $status = null;
+    }
+
+    if ($status) {
         rcmail_send_unread_count($mbox_name, true);
 
         // refresh saved search set
