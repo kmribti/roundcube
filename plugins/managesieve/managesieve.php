@@ -170,15 +170,31 @@ class managesieve extends rcube_plugin
 
         $host = rcube_idn_to_ascii($host);
 
+        $plugin = $this->rc->plugins->exec_hook('managesieve_connect', array(
+            'user'      => $_SESSION['username'],
+            'password'  => $this->rc->decrypt($_SESSION['password']),
+            'host'      => $host,
+            'port'      => $port,
+            'auth_type' => $this->rc->config->get('managesieve_auth_type'),
+            'usetls'    => $this->rc->config->get('managesieve_usetls', false),
+            'disabled'  => $this->rc->config->get('managesieve_disabled_extensions'),
+            'debug'     => $this->rc->config->get('managesieve_debug', false),
+            'auth_cid'  => $this->rc->config->get('managesieve_auth_cid'),
+            'auth_pw'   => $this->rc->config->get('managesieve_auth_pw'),
+        ));
+
         // try to connect to managesieve server and to fetch the script
-        $this->sieve = new rcube_sieve($_SESSION['username'],
-            $this->rc->decrypt($_SESSION['password']), $host, $port,
-            $this->rc->config->get('managesieve_auth_type'),
-            $this->rc->config->get('managesieve_usetls', false),
-            $this->rc->config->get('managesieve_disabled_extensions'),
-            $this->rc->config->get('managesieve_debug', false),
-            $this->rc->config->get('managesieve_auth_cid'), 
-            $this->rc->config->get('managesieve_auth_pw')
+        $this->sieve = new rcube_sieve(
+            $plugin['user'],
+            $plugin['password'],
+            $plugin['host'],
+            $plugin['port'],
+            $plugin['auth_type'],
+            $plugin['usetls'],
+            $plugin['disabled'],
+            $plugin['debug'],
+            $plugin['auth_cid'],
+            $plugin['auth_pw']
         );
 
         if (!($error = $this->sieve->error())) {

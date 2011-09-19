@@ -4,6 +4,7 @@
 - Fixed handling of enabled magic_quotes_gpc setting
 - Fixed PHP warning on connection error when submitting filter form
 - Fixed bug where new action row with flags wasn't handled properly
+- Added managesieve_connect hook for plugins
 
 * version 4.3 [2011-07-28]
 -----------------------------------------------------------
