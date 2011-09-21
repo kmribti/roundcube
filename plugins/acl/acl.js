@@ -1,7 +1,7 @@
 /**
  * ACL plugin script
  *
- * @version 0.6.1
+ * @version 0.6.2
  * @author Aleksander Machniak <alec@alec.pl>
  */
 
@@ -315,6 +315,9 @@ rcube_webmail.prototype.acl_init_form = function(id)
     this.acl_form.show();
     if (type == 'user')
         name_input.focus();
+
+    // unfocus the list, make backspace key in name input field working
+    this.acl_list.blur();
 }
 
 // Returns class name according to ACL comparision result

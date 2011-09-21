@@ -61,6 +61,12 @@
   background-color: #CC3333;
 }
 
+#acltable tr.unfocused td
+{
+  color: #FFFFFF;
+  background-color: #929292;
+}
+
 #acladvswitch
 {
   position: absolute;
