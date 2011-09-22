@@ -6,8 +6,10 @@
  * Supports two methods of notification:
  * 1. Basic - focus browser window and change favicon
  * 2. Sound - play wav file
+ * 3. Desktop - display desktop notification (using webkitNotifications feature,
+ *              supported by Chrome and Firefox with 'HTML5 Notifications' plugin)
  *
- * @version 0.2
+ * @version 0.3
  * @author Aleksander Machniak <alec@alec.pl>
  *
  *
@@ -32,6 +34,7 @@ class newmail_notifier extends rcube_plugin
     public $task = 'mail|settings';
 
     private $rc;
+    private $notified;
 
     /**
      * Plugin initialization
@@ -49,6 +52,8 @@ class newmail_notifier extends rcube_plugin
             $this->add_hook('new_messages', array($this, 'notify'));
             // add script when not in ajax and not in frame
             if (is_a($this->rc->output, 'rcube_template') && empty($_REQUEST['_framed'])) {
+                $this->add_texts('localization/');
+                $this->rc->output->add_label('newmail_notifier.title', 'newmail_notifier.body');
                 $this->include_script('newmail_notifier.js');
             }
         }
@@ -69,27 +74,29 @@ class newmail_notifier extends rcube_plugin
         // Load localization and configuration
         $this->add_texts('localization/');
 
-        // Check that configuration is not disabled
-        $dont_override  = (array) $this->rc->config->get('dont_override', array());
-        $basic_override = in_array('newmail_notifier_basic', $dont_override);
-        $sound_override = in_array('newmail_notifier_sound', $dont_override);
-
-        if (!$basic_override) {
-            $field_id = '_newmail_notifier_basic';
-            $input    = new html_checkbox(array('name' => $field_id, 'id' => $field_id, 'value' => 1));
-            $args['blocks']['new_message']['options']['newmail_notifier_basic'] = array(
-                'title' => html::label($field_id, Q($this->gettext('basic'))),
-                'content' => $input->show($this->rc->config->get('newmail_notifier_basic')),
-            );
+        if (!empty($_REQUEST['_framed'])) {
+            $this->rc->output->add_label('newmail_notifier.title', 'newmail_notifier.testbody',
+                'newmail_notifier.desktopunsupported', 'newmail_notifier.desktopenabled', 'newmail_notifier.desktopdisabled');
+            $this->include_script('newmail_notifier.js');
         }
 
-        if (!$sound_override) {
-            $field_id = '_newmail_notifier_sound';
-            $input    = new html_checkbox(array('name' => $field_id, 'id' => $field_id, 'value' => 1));
-            $args['blocks']['new_message']['options']['newmail_notifier_sound'] = array(
-                'title' => html::label($field_id, Q($this->gettext('sound'))),
-                'content' => $input->show($this->rc->config->get('newmail_notifier_sound')),
-            );
+        // Check that configuration is not disabled
+        $dont_override = (array) $this->rc->config->get('dont_override', array());
+
+        foreach (array('basic', 'desktop', 'sound') as $type) {
+            $key = 'newmail_notifier_' . $type;
+            if (!in_array($key, $dont_override)) {
+                $field_id = '_' . $key;
+                $input    = new html_checkbox(array('name' => $field_id, 'id' => $field_id, 'value' => 1));
+                $content  = $input->show($this->rc->config->get($key))
+                    . ' ' . html::a(array('href' => '#', 'onclick' => 'newmail_notifier_test_'.$type.'()'),
+                        $this->gettext('test'));
+
+                $args['blocks']['new_message']['options'][$key] = array(
+                    'title' => html::label($field_id, Q($this->gettext($type))),
+                    'content' => $content
+                );
+            }
         }
 
         return $args;
@@ -108,17 +115,13 @@ class newmail_notifier extends rcube_plugin
         $this->load_config();
 
         // Check that configuration is not disabled
-        $dont_override  = (array) $this->rc->config->get('dont_override', array());
-        $basic_override = in_array('newmail_notifier_basic', $dont_override);
-        $sound_override = in_array('newmail_notifier_sound', $dont_override);
+        $dont_override = (array) $this->rc->config->get('dont_override', array());
 
-        if (!$basic_override) {
-            $key = 'newmail_notifier_basic';
-            $args['prefs'][$key] = get_input_value('_'.$key, RCUBE_INPUT_POST) ? true : false;
-        }
-        if (!$sound_override) {
-            $key = 'newmail_notifier_sound';
-            $args['prefs'][$key] = get_input_value('_'.$key, RCUBE_INPUT_POST) ? true : false;
+        foreach (array('basic', 'desktop', 'sound') as $type) {
+            $key = 'newmail_notifier_' . $type;
+            if (!in_array($key, $dont_override)) {
+                $args['prefs'][$key] = get_input_value('_'.$key, RCUBE_INPUT_POST) ? true : false;
+            }
         }
 
         return $args;
@@ -129,15 +132,22 @@ class newmail_notifier extends rcube_plugin
      */
     function notify($args)
     {
+        if ($this->notified) {
+            return $args;
+        }
+
+        $this->notified = true;
+
         // Load configuration
         $this->load_config();
 
-        $basic = $this->rc->config->get('newmail_notifier_basic');
-        $sound = $this->rc->config->get('newmail_notifier_sound');
+        $basic   = $this->rc->config->get('newmail_notifier_basic');
+        $sound   = $this->rc->config->get('newmail_notifier_sound');
+        $desktop = $this->rc->config->get('newmail_notifier_desktop');
 
-        if ($basic || $sound) {
+        if ($basic || $sound || $desktop) {
             $this->rc->output->command('plugin.newmail_notifier',
-                array('basic' => $basic, 'sound' => $sound));
+                array('basic' => $basic, 'sound' => $sound, 'desktop' => $desktop));
         }
 
         return $args;

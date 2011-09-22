@@ -1,7 +1,7 @@
 /**
  * New Mail Notifier plugin script
  *
- * @version 0.2
+ * @version 0.3
  * @author Aleksander Machniak <alec@alec.pl>
  */
 
@@ -22,6 +22,8 @@ function newmail_notifier_run(prop)
         newmail_notifier_basic();
     if (prop.sound)
         newmail_notifier_sound();
+    if (prop.desktop)
+        newmail_notifier_desktop(rcmail.gettext('body', 'newmail_notifier'));
 }
 
 // Stops notification
@@ -37,11 +39,13 @@ function newmail_notifier_stop(prop)
 // Basic notification: window.focus and favicon change
 function newmail_notifier_basic()
 {
-    window.focus();
+    var w = rcmail.is_framed() ? window.parent : window;
+
+    w.focus();
 
     // we cannot simply change a href attribute, we must to replace the link element (at least in FF)
     var link = $('<link rel="shortcut icon" href="plugins/newmail_notifier/favicon.ico"/>'),
-        oldlink = $('link[rel="shortcut icon"]');
+        oldlink = $('link[rel="shortcut icon"]', w.document);
 
     rcmail.env.favicon_href = oldlink.attr('href');
     link.replaceAll(oldlink);
@@ -63,4 +67,54 @@ function newmail_notifier_sound()
         elem.appendTo($('body'));
         window.setTimeout("$('#sound').remove()", 5000);
     }
+}
+
+// Desktop notification (need Chrome or Firefox with a plugin)
+function newmail_notifier_desktop(body)
+{
+    var dn = window.webkitNotifications;
+
+    if (dn && !dn.checkPermission()) {
+        if (rcmail.newmail_popup)
+            rcmail.newmail_popup.cancel();
+        var popup = window.webkitNotifications.createNotification('plugins/newmail_notifier/mail.png',
+            rcmail.gettext('title', 'newmail_notifier'), body);
+        popup.onclick = function() {
+            this.cancel();
+        }
+        popup.show();
+        setTimeout(function() { popup.cancel(); }, 10000); // close after 10 seconds
+        rcmail.newmail_popup = popup;
+        return true;
+    }
+
+    return false;
+}
+
+function newmail_notifier_test_desktop()
+{
+    var dn = window.webkitNotifications,
+        txt = rcmail.gettext('testbody', 'newmail_notifier');
+
+    if (dn) {
+        if (!dn.checkPermission())
+            newmail_notifier_desktop(txt);
+        else
+            dn.requestPermission(function() {
+                if (!newmail_notifier_desktop(txt))
+                    rcmail.display_message(rcmail.gettext('desktopdisabled', 'newmail_notifier'), 'error');
+            });
+    }
+    else
+        rcmail.display_message(rcmail.gettext('desktopunsupported', 'newmail_notifier'), 'error');
+}
+
+function newmail_notifier_test_basic()
+{
+    newmail_notifier_basic();
+}
+
+function newmail_notifier_test_sound()
+{
+    newmail_notifier_sound();
 }
