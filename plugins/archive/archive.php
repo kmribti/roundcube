@@ -100,7 +100,7 @@ class archive extends rcube_plugin
       // load folders list when needed
       if ($CURR_SECTION)
         $select = rcmail_mailbox_select(array('noselection' => '---', 'realnames' => true,
-          'maxlength' => 30, 'exceptions' => array('INBOX')));
+          'maxlength' => 30, 'exceptions' => array('INBOX'), 'folder_filter' => 'mail', 'folder_rights' => 'w'));
       else
         $select = new html_select();
 
