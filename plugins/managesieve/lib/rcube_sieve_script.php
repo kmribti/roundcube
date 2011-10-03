@@ -1,19 +1,36 @@
 <?php
 
 /**
-  Class for operations on Sieve scripts
-
-  Author: Aleksander Machniak <alec@alec.pl>
-
-  $Id$
-
-*/
+ *  Class for operations on Sieve scripts
+ *
+ * Copyright (C) 2008-2011, The Roundcube Dev Team
+ * Copyright (C) 2011, Kolab Systems AG
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2
+ * as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * $Id$
+ *
+ */
 
 class rcube_sieve_script
 {
     public $content = array();      // script rules array
 
-    private $supported = array(     // extensions supported by class
+    private $vars = array();        // "global" variables
+    private $prefix = '';           // script header (comments)
+    private $capabilities = array(); // Sieve extensions supported by server
+    private $supported = array(     // Sieve extensions supported by class
         'fileinto',                 // RFC3028
         'reject',                   // RFC5429
         'ereject',                  // RFC5429
@@ -23,10 +40,10 @@ class rcube_sieve_script
         'regex',                    // draft-ietf-sieve-regex-01
         'imapflags',                // draft-melnikov-sieve-imapflags-06
         'imap4flags',               // RFC5232
+        'include',                  // draft-ietf-sieve-include-12
+        'variables',                // RFC5229
         // TODO: body, notify
     );
-
-    private $capabilities;
 
     /**
      * Object constructor
@@ -35,7 +52,7 @@ class rcube_sieve_script
      * @param  array   List of disabled extensions
      * @param  array   List of capabilities supported by server
      */
-    public function __construct($script, $disabled=null, $capabilities=null)
+    public function __construct($script, $disabled=array(), $capabilities=array())
     {
         if (!empty($disabled)) {
             // we're working on lower-cased names
@@ -47,33 +64,10 @@ class rcube_sieve_script
             }
         }
 
-        $this->capabilities = $capabilities;
-        $this->content      = $this->_parse_text($script);
-    }
+        $this->capabilities = array_map('strtolower', (array) $capabilities);
 
-    /**
-     * Adds script contents as text to the script array (at the end)
-     *
-     * @param    string    Text script contents
-     */
-    public function add_text($script)
-    {
-        $content = $this->_parse_text($script);
-        $result = false;
-
-        // check existsing script rules names
-        foreach ($this->content as $idx => $elem) {
-            $names[$elem['name']] = $idx;
-        }
-
-        foreach ($content as $elem) {
-            if (!isset($names[$elem['name']])) {
-                array_push($this->content, $elem);
-                $result = true;
-            }
-        }
-
-        return $result;
+        // Parse text content of the script
+        $this->_parse_text($script);
     }
 
     /**
@@ -81,6 +75,8 @@ class rcube_sieve_script
      *
      * @param string Rule name
      * @param array  Rule content (as array)
+     *
+     * @return int The index of the new rule
      */
     public function add_rule($content)
     {
@@ -114,161 +110,272 @@ class rcube_sieve_script
     }
 
     /**
+     * Sets "global" variable
+     *
+     * @param string $name  Variable name
+     * @param string $value Variable value
+     * @param array  $mods  Variable modifiers
+     */
+    public function set_var($name, $value, $mods = array())
+    {
+        // Check if variable exists
+        for ($i=0, $len=count($this->vars); $i<$len; $i++) {
+            if ($this->vars[$i]['name'] == $name) {
+                break;
+            }
+        }
+
+        $var = array_merge($mods, array('name' => $name, 'value' => $value));
+        $this->vars[$i] = $var;
+    }
+
+    /**
+     * Unsets "global" variable
+     *
+     * @param string $name  Variable name
+     */
+    public function unset_var($name)
+    {
+        // Check if variable exists
+        foreach ($this->vars as $idx => $var) {
+            if ($var['name'] == $name) {
+                unset($this->vars[$idx]);
+                break;
+            }
+        }
+    }
+
+    /**
+     * Gets the value of  "global" variable
+     *
+     * @param string $name  Variable name
+     *
+     * @return string Variable value
+     */
+    public function get_var($name)
+    {
+        // Check if variable exists
+        for ($i=0, $len=count($this->vars); $i<$len; $i++) {
+            if ($this->vars[$i]['name'] == $name) {
+                return $this->vars[$i]['name'];
+            }
+        }
+    }
+
+    /**
+     * Sets script header content
+     *
+     * @param string $text  Header content
+     */
+    public function set_prefix($text)
+    {
+        $this->prefix = $text;
+    }
+
+    /**
      * Returns script as text
      */
     public function as_text()
     {
-        $script = '';
-        $exts = array();
-        $idx = 0;
+        $output = '';
+        $exts   = array();
+        $idx    = 0;
+
+        if (!empty($this->vars) && in_array('variables', (array)$this->capabilities)) {
+            array_push($exts, 'variables');
+            foreach ($this->vars as $var) {
+                $output .= 'set ';
+                foreach (array_diff(array_keys($var), array('name', 'value')) as $opt) {
+                    $output .= ":$opt ";
+                }
+                $output .= self::escape_string($var['name']) . ' ' . self::escape_string($var['value']) . ";\n";
+            }
+        }
 
         // rules
         foreach ($this->content as $rule) {
             $extension = '';
-            $tests = array();
-            $i = 0;
+            $script    = '';
+            $tests     = array();
+            $i         = 0;
 
             // header
-            $script .= '# rule:[' . $rule['name'] . "]\n";
+            if (!empty($rule['name']) && strlen($rule['name'])) {
+                $script .= '# rule:[' . $rule['name'] . "]\n";
+            }
 
             // constraints expressions
-            foreach ($rule['tests'] as $test) {
-                $tests[$i] = '';
-                switch ($test['test']) {
-                case 'size':
-                    $tests[$i] .= ($test['not'] ? 'not ' : '');
-                    $tests[$i] .= 'size :' . ($test['type']=='under' ? 'under ' : 'over ') . $test['arg'];
-                    break;
-                case 'true':
-                    $tests[$i] .= ($test['not'] ? 'false' : 'true');
-                    break;
-                case 'exists':
-                    $tests[$i] .= ($test['not'] ? 'not ' : '');
-                    $tests[$i] .= 'exists ' . self::escape_string($test['arg']);
-                    break;
-                case 'header':
-                    $tests[$i] .= ($test['not'] ? 'not ' : '');
+            if (!empty($rule['tests'])) {
+                foreach ($rule['tests'] as $test) {
+                    $tests[$i] = '';
+                    switch ($test['test']) {
+                    case 'size':
+                        $tests[$i] .= ($test['not'] ? 'not ' : '');
+                        $tests[$i] .= 'size :' . ($test['type']=='under' ? 'under ' : 'over ') . $test['arg'];
+                        break;
+                    case 'true':
+                        $tests[$i] .= ($test['not'] ? 'false' : 'true');
+                        break;
+                    case 'exists':
+                        $tests[$i] .= ($test['not'] ? 'not ' : '');
+                        $tests[$i] .= 'exists ' . self::escape_string($test['arg']);
+                        break;
+                    case 'header':
+                        $tests[$i] .= ($test['not'] ? 'not ' : '');
 
-                    // relational operator + comparator
-					if (preg_match('/^(value|count)-([gteqnl]{2})/', $test['type'], $m)) {
-						array_push($exts, 'relational');
-						array_push($exts, 'comparator-i;ascii-numeric');
+                        // relational operator + comparator
+                        if (preg_match('/^(value|count)-([gteqnl]{2})/', $test['type'], $m)) {
+                            array_push($exts, 'relational');
+                            array_push($exts, 'comparator-i;ascii-numeric');
 
-                        $tests[$i] .= 'header :' . $m[1] . ' "' . $m[2] . '" :comparator "i;ascii-numeric"';
-                    }
-                    else {
-					    if ($test['type'] == 'regex') {
-						    array_push($exts, 'regex');
+                            $tests[$i] .= 'header :' . $m[1] . ' "' . $m[2] . '" :comparator "i;ascii-numeric"';
+                        }
+                        else {
+                            if ($test['type'] == 'regex') {
+                                array_push($exts, 'regex');
+                            }
+
+                            $tests[$i] .= 'header :' . $test['type'];
                         }
 
-                        $tests[$i] .= 'header :' . $test['type'];
+                        $tests[$i] .= ' ' . self::escape_string($test['arg1']);
+                        $tests[$i] .= ' ' . self::escape_string($test['arg2']);
+                        break;
                     }
-
-                    $tests[$i] .= ' ' . self::escape_string($test['arg1']);
-                    $tests[$i] .= ' ' . self::escape_string($test['arg2']);
-                    break;
+                    $i++;
                 }
-                $i++;
             }
 
             // disabled rule: if false #....
-            $script .= 'if ' . ($rule['disabled'] ? 'false # ' : '');
+            if (!empty($tests)) {
+                $script .= 'if ' . ($rule['disabled'] ? 'false # ' : '');
 
-            if (empty($tests)) {
-                $tests_str = 'true';
-            }
-            else if (count($tests) > 1) {
-                $tests_str = implode(', ', $tests);
-            }
-            else {
-                $tests_str = $tests[0];
-            }
+                if (count($tests) > 1) {
+                    $tests_str = implode(', ', $tests);
+                }
+                else {
+                    $tests_str = $tests[0];
+                }
 
-            if ($rule['join'] || count($tests) > 1) {
-                $script .= sprintf('%s (%s)', $rule['join'] ? 'allof' : 'anyof', $tests_str);
+                if ($rule['join'] || count($tests) > 1) {
+                    $script .= sprintf('%s (%s)', $rule['join'] ? 'allof' : 'anyof', $tests_str);
+                }
+                else {
+                    $script .= $tests_str;
+                }
+                $script .= "\n{\n";
             }
-            else {
-                $script .= $tests_str;
-            }
-            $script .= "\n{\n";
 
             // action(s)
-            foreach ($rule['actions'] as $action) {
-                switch ($action['type']) {
+            if (!empty($rule['actions'])) {
+                foreach ($rule['actions'] as $action) {
+                    $action_script = '';
 
-                case 'fileinto':
-                    array_push($exts, 'fileinto');
-                    $script .= "\tfileinto ";
-                    if ($action['copy']) {
-                        $script .= ':copy ';
-                        array_push($exts, 'copy');
+                    switch ($action['type']) {
+
+                    case 'fileinto':
+                        array_push($exts, 'fileinto');
+                        $action_script .= 'fileinto ';
+                        if ($action['copy']) {
+                            $action_script .= ':copy ';
+                            array_push($exts, 'copy');
+                        }
+                        $action_script .= self::escape_string($action['target']);
+                        break;
+
+                    case 'redirect':
+                        $action_script .= 'redirect ';
+                        if ($action['copy']) {
+                            $action_script .= ':copy ';
+                            array_push($exts, 'copy');
+                        }
+                        $action_script .= self::escape_string($action['target']);
+                        break;
+
+                    case 'reject':
+                    case 'ereject':
+                        array_push($exts, $action['type']);
+                        $action_script .= $action['type'].' '
+                            . self::escape_string($action['target']);
+                        break;
+
+                    case 'addflag':
+                    case 'setflag':
+                    case 'removeflag':
+                        if (is_array($this->capabilities) && in_array('imap4flags', $this->capabilities))
+                            array_push($exts, 'imap4flags');
+                        else
+                            array_push($exts, 'imapflags');
+
+                        $action_script .= $action['type'].' '
+                            . self::escape_string($action['target']);
+                        break;
+
+                    case 'keep':
+                    case 'discard':
+                    case 'stop':
+                        $action_script .= $action['type'];
+                        break;
+
+                    case 'include':
+                        array_push($exts, 'include');
+                        $action_script .= 'include ';
+                        foreach (array_diff(array_keys($action), array('target', 'type')) as $opt) {
+                            $action_script .= ":$opt ";
+                        }
+                        $action_script .= self::escape_string($action['target']);
+                        break;
+
+                    case 'set':
+                        array_push($exts, 'variables');
+                        $action_script .= 'set ';
+                        foreach (array_diff(array_keys($action), array('name', 'value', 'type')) as $opt) {
+                            $action_script .= ":$opt ";
+                        }
+                        $action_script .= self::escape_string($action['name']) . ' ' . self::escape_string($action['value']);
+                        break;
+
+                    case 'vacation':
+                        array_push($exts, 'vacation');
+                        $action_script .= 'vacation';
+                        if (!empty($action['days']))
+                            $action_script .= " :days " . $action['days'];
+                        if (!empty($action['addresses']))
+                            $action_script .= " :addresses " . self::escape_string($action['addresses']);
+                        if (!empty($action['subject']))
+                            $action_script .= " :subject " . self::escape_string($action['subject']);
+                        if (!empty($action['handle']))
+                            $action_script .= " :handle " . self::escape_string($action['handle']);
+                        if (!empty($action['from']))
+                            $action_script .= " :from " . self::escape_string($action['from']);
+                        if (!empty($action['mime']))
+                            $action_script .= " :mime";
+                        $action_script .= " " . self::escape_string($action['reason']);
+                        break;
                     }
-                    $script .= self::escape_string($action['target']) . ";\n";
-                    break;
 
-                case 'redirect':
-                    $script .= "\tredirect ";
-                    if ($action['copy']) {
-                        $script .= ':copy ';
-                        array_push($exts, 'copy');
+                    if ($action_script) {
+                        $script .= !empty($tests) ? "\t" : '';
+                        $script .= $action_script . ";\n";
                     }
-                    $script .= self::escape_string($action['target']) . ";\n";
-                    break;
-
-                case 'reject':
-                case 'ereject':
-                    array_push($exts, $action['type']);
-                    $script .= "\t".$action['type']." "
-                        . self::escape_string($action['target']) . ";\n";
-                    break;
-
-                case 'addflag':
-                case 'setflag':
-                case 'removeflag':
-                    if (is_array($this->capabilities) && in_array('imap4flags', $this->capabilities))
-                        array_push($exts, 'imap4flags');
-                    else
-                        array_push($exts, 'imapflags');
-
-                    $script .= "\t".$action['type']." "
-                        . self::escape_string($action['target']) . ";\n";
-                    break;
-
-                case 'keep':
-                case 'discard':
-                case 'stop':
-                    $script .= "\t" . $action['type'] .";\n";
-                    break;
-
-                case 'vacation':
-                    array_push($exts, 'vacation');
-                    $script .= "\tvacation";
-                    if (!empty($action['days']))
-                        $script .= " :days " . $action['days'];
-                    if (!empty($action['addresses']))
-                        $script .= " :addresses " . self::escape_string($action['addresses']);
-                    if (!empty($action['subject']))
-                        $script .= " :subject " . self::escape_string($action['subject']);
-                    if (!empty($action['handle']))
-                        $script .= " :handle " . self::escape_string($action['handle']);
-                    if (!empty($action['from']))
-                        $script .= " :from " . self::escape_string($action['from']);
-                    if (!empty($action['mime']))
-                        $script .= " :mime";
-                    $script .= " " . self::escape_string($action['reason']) . ";\n";
-                    break;
                 }
             }
 
-            $script .= "}\n";
-            $idx++;
+            if ($script) {
+                $output .= $script . (!empty($tests) ? "}\n" : '');
+                $idx++;
+            }
         }
 
         // requires
         if (!empty($exts))
-            $script = 'require ["' . implode('","', array_unique($exts)) . "\"];\n" . $script;
+            $output = 'require ["' . implode('","', array_unique($exts)) . "\"];\n" . $output;
 
-        return $script;
+        if (!empty($this->prefix)) {
+            $output = $this->prefix . "\n\n" . $output;
+        }
+
+        return $output;
     }
 
     /**
@@ -296,35 +403,85 @@ class rcube_sieve_script
      */
     private function _parse_text($script)
     {
-        $i = 0;
-        $content = array();
+        $prefix     = '';
+        $options = array();
 
-        // tokenize rules
-        if ($tokens = preg_split('/(# rule:\[.*\])\r?\n/', $script, -1, PREG_SPLIT_DELIM_CAPTURE)) {
-            foreach($tokens as $token) {
-                if (preg_match('/^# rule:\[(.*)\]/', $token, $matches)) {
-                    $content[$i]['name'] = $matches[1];
+        while ($script) {
+            $script = trim($script);
+            $rule   = array();
+
+            // Comments
+            while ($script[0] == '#') {
+                $endl = strpos($script, "\n");
+                $line = $endl ? substr($script, 0, $endl) : $script;
+
+                // Roundcube format
+                if (preg_match('/^# rule:\[(.*)\]/', $line, $matches)) {
+                    $rulename = $matches[1];
                 }
-                else if (isset($content[$i]['name']) && sizeof($content[$i]) == 1) {
-                    if ($rule = $this->_tokenize_rule($token)) {
-                        $content[$i] = array_merge($content[$i], $rule);
-                        $i++;
+                // Horde-Ingo format
+                else if (!empty($options['format']) && $options['format'] == 'INGO'
+                    && preg_match('/^# (.*)/', $line, $matches)
+                ) {
+                    $rulename = $matches[1];
+                }
+                else if (empty($options['prefix'])) {
+                    $prefix .= $line . "\n";
+                }
+
+                $script = ltrim(substr($script, strlen($line) + 1));
+            }
+
+            // handle script header
+            if (empty($options['prefix'])) {
+                $options['prefix'] = true;
+                if ($prefix && strpos($prefix, 'Generated by Ingo')) {
+                    $options['format'] = 'INGO';
+                }
+            }
+
+            // Control structures/blocks
+            if (preg_match('/^(if|else|elsif)/i', $script)) {
+                $rule = $this->_tokenize_rule($script);
+                if (strlen($rulename) && !empty($rule)) {
+                    $rule['name'] = $rulename;
+                }
+            }
+            // Simple commands
+            else {
+                $rule = $this->_parse_actions($script, ';');
+                if (!empty($rule[0]) && is_array($rule)) {
+                    // set "global" variables
+                    if ($rule[0]['type'] == 'set') {
+                        unset($rule[0]['type']);
+                        $this->vars[] = $rule[0];
                     }
-                    else // unknown rule format
-                        unset($content[$i]);
+                    else {
+                        $rule = array('actions' => $rule);
+                    }
                 }
+            }
+
+            $rulename = '';
+
+            if (!empty($rule)) {
+                $this->content[] = $rule;
             }
         }
 
-        return $content;
+        if (!empty($prefix)) {
+            $this->prefix = trim($prefix);
+        }
     }
 
     /**
      * Convert text script fragment to rule object
      *
      * @param string Text rule
+     *
+     * @return array Rule data
      */
-    private function _tokenize_rule($content)
+    private function _tokenize_rule(&$content)
     {
         $cond = strtolower(self::tokenize($content, 1));
 
@@ -447,10 +604,12 @@ class rcube_sieve_script
     /**
      * Parse body of actions section
      *
-     * @param string Text body
+     * @param string $content  Text body
+     * @param string $end      End of text separator
+     *
      * @return array Array of parsed action type/target pairs
      */
-    private function _parse_actions($content)
+    private function _parse_actions(&$content, $end = '}')
     {
         $result = null;
 
@@ -531,7 +690,44 @@ class rcube_sieve_script
                     'target' => $tokens[count($tokens)-1]
                 );
                 break;
+
+            case 'include':
+                $include = array('type' => 'include', 'target' => array_pop($tokens));
+
+                // Parameters: :once, :optional, :global, :personal
+                for ($i=0, $len=count($tokens); $i<$len; $i++) {
+                    $tok = strtolower($tokens[$i]);
+                    if ($tok[0] == ':') {
+                        $include[substr($tok, 1)] = true;
+                    }
+                }
+
+                $result[] = $include;
+                break;
+
+            case 'set':
+                $set = array('type' => 'set', 'value' => array_pop($tokens), 'name' => array_pop($tokens));
+
+                // Parameters: :lower :upper :lowerfirst :upperfirst :quotewildcard :length
+                for ($i=0, $len=count($tokens); $i<$len; $i++) {
+                    $tok = strtolower($tokens[$i]);
+                    if ($tok[0] == ':') {
+                        $set[substr($tok, 1)] = true;
+                    }
+                }
+
+                $result[] = $set;
+                break;
+
+            case 'require':
+                // skip, will be build according to used commands
+                // $result[] = array('type' => 'require', 'target' => $tokens);
+                break;
+
             }
+
+            if ($separator == $end)
+                break;
         }
 
         return $result;
@@ -595,7 +791,7 @@ class rcube_sieve_script
      * @param mixed  $num     Number of tokens to return, 0 for all
      *                        or True for all tokens until separator is found.
      *                        Separator will be returned as last token.
-     * @param int    $in_list Enable to called recursively inside a list
+     * @param int    $in_list Enable to call recursively inside a list
      *
      * @return mixed Tokens array or string if $num=1
      */
@@ -654,7 +850,7 @@ class rcube_sieve_script
                 $str = substr($str, 1);
                 if ($num === true) {
                     $result[] = $sep;
-                    break 2; 
+                    break 2;
                 }
                 break;
 

@@ -66,7 +66,7 @@ if (window.rcmail) {
         rcmail.enable_command('plugin.managesieve-setdel', rcmail.gui_objects.filtersetslist.length > 1);
 
         $('#'+rcmail.buttons['plugin.managesieve-setact'][0].id).attr('title', rcmail.gettext('managesieve.filterset'
-          + (rcmail.gui_objects.filtersetslist.value == rcmail.env.active_set ? 'deact' : 'act')));
+          + ($.inArray(rcmail.gui_objects.filtersetslist.value, rcmail.env.active_sets) != -1 ? 'deact' : 'act')));
       }
     }
     if (rcmail.gui_objects.sieveform && rcmail.env.rule_disabled)
@@ -265,7 +265,8 @@ rcube_webmail.prototype.load_managesieveframe = function(id)
   if (this.env.contentframe && window.frames && window.frames[this.env.contentframe]) {
     target = window.frames[this.env.contentframe];
     var msgid = this.set_busy(true, 'loading');
-    target.location.href = this.env.comm_path+'&_action=plugin.managesieve&_framed=1&_fid='+id+'&_unlock='+msgid;
+    target.location.href = this.env.comm_path+'&_action=plugin.managesieve&_framed=1'
+      +(id ? '&_fid='+id : '')+'&_unlock='+msgid;
   }
 };
 
@@ -429,7 +430,7 @@ rcube_webmail.prototype.managesieve_setact = function()
     return false;
 
   var script = this.gui_objects.filtersetslist.value,
-    action = (script == rcmail.env.active_set ? 'deact' : 'setact');
+    action = ($.inArray(script, rcmail.env.active_sets) != -1 ? 'deact' : 'setact');
 
   this.http_post('plugin.managesieve', '_act='+action+'&_set='+script);
 };
@@ -446,15 +447,17 @@ rcube_webmail.prototype.managesieve_reset = function()
     regx = new RegExp(RegExp.escape(label)+'$');
 
   for (var x=0; x<opts.length; x++) {
-    if (opts[x].value != rcmail.env.active_set && opts[x].innerHTML.match(regx))
-      opts[x].innerHTML = opts[x].innerHTML.replace(regx, '');
-    else if (opts[x].value == rcmail.env.active_set)
+    if ($.inArray(opts[x].value, rcmail.env.active_sets)<0) {
+      if (opts[x].innerHTML.match(regx))
+        opts[x].innerHTML = opts[x].innerHTML.replace(regx, '');
+    }
+    else if (!opts[x].innerHTML.match(regx))
       opts[x].innerHTML = opts[x].innerHTML + label;
   }
 
   // change title of setact button
   $('#'+rcmail.buttons['plugin.managesieve-setact'][0].id).attr('title', rcmail.gettext('managesieve.filterset'
-    + (list.value == rcmail.env.active_set ? 'deact' : 'act')));
+    + ($.inArray(list.value, rcmail.env.active_sets) != -1 ? 'deact' : 'act')));
 };
 
 // Set delete

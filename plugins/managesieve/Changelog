@@ -5,6 +5,10 @@
 - Fixed PHP warning on connection error when submitting filter form
 - Fixed bug where new action row with flags wasn't handled properly
 - Added managesieve_connect hook for plugins
+- Fixed doubled Filter tab on page refresh
+- Added filters set selector in filter form when invoked in mail task
+- Improved script parser, added support for include and variables extensions
+- Added Kolab's KEP:14 support (http://wiki.kolab.org/User:Greve/Drafts/KEP:14)
 
 * version 4.3 [2011-07-28]
 -----------------------------------------------------------

@@ -53,4 +53,11 @@ $rcmail_config['managesieve_disabled_extensions'] = array();
 // Enables debugging of conversation with sieve server. Logs it into <log_dir>/sieve
 $rcmail_config['managesieve_debug'] = false;
 
+// Enables features described in http://wiki.kolab.org/KEP:14
+$rcmail_config['managesieve_kolab_master'] = false;
+
+// Script name extension used for scripts including. Dovecot uses '.sieve',
+// Cyrus uses '.siv'. Doesn't matter if you have managesieve_kolab_master disabled.
+$rcmail_config['managesieve_filename_extension'] = '.sieve';
+
 ?>
