@@ -30,6 +30,7 @@
 - When old and new passwords are the same, do nothing, return success (#1487823)
 - Fixed Samba password hashing in 'ldap' driver
 - Added 'password_change' hook for plugin actions after successful password change
+- Fixed bug where 'doveadm pw' command was used as dovecotpw utility
     </notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">

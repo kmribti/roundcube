@@ -5,7 +5,7 @@
  *
  * Driver for passwords stored in SQL database
  *
- * @version 1.3
+ * @version 1.4
  * @author Aleksander 'A.L.E.C' Machniak <alec@alec.pl>
  *
  */
@@ -61,7 +61,7 @@ function password_save($curpass, $passwd)
         $tmp_dir = $rcmail->config->get('temp_dir');
         $tmpfile = tempnam($tmp_dir, 'roundcube-');
 
-        $pipe = popen("'$dovecotpw' -s '$method' > '$tmpfile'", "w");
+        $pipe = popen("$dovecotpw -s '$method' > '$tmpfile'", "w");
         if (!$pipe) {
             unlink($tmpfile);
             return PASSWORD_CRYPT_ERROR;
@@ -97,15 +97,15 @@ function password_save($curpass, $passwd)
 
 	    if (!($hash_algo = strtolower($rcmail->config->get('password_hash_algorithm'))))
             $hash_algo = 'sha1';
-        
+
 	    $hash_passwd = hash($hash_algo, $passwd);
         $hash_curpass = hash($hash_algo, $curpass);
-        
+
 	    if ($rcmail->config->get('password_hash_base64')) {
             $hash_passwd = base64_encode(pack('H*', $hash_passwd));
             $hash_curpass = base64_encode(pack('H*', $hash_curpass));
         }
-	
+
 	    $sql = str_replace('%n', $db->quote($hash_passwd, 'text'), $sql);
 	    $sql = str_replace('%q', $db->quote($hash_curpass, 'text'), $sql);
     }
