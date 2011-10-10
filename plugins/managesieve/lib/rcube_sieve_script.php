@@ -181,10 +181,13 @@ class rcube_sieve_script
         $exts   = array();
         $idx    = 0;
 
-        if (!empty($this->vars) && in_array('variables', (array)$this->capabilities)) {
-            array_push($exts, 'variables');
+        if (!empty($this->vars)) {
+            if (in_array('variables', (array)$this->capabilities)) {
+                $has_vars = true;
+                array_push($exts, 'variables');
+            }
             foreach ($this->vars as $var) {
-                $output .= 'set ';
+                $output .= (empty($has_vars) ? '# ' : '') . 'set ';
                 foreach (array_diff(array_keys($var), array('name', 'value')) as $opt) {
                     $output .= ":$opt ";
                 }
@@ -411,13 +414,17 @@ class rcube_sieve_script
             $rule   = array();
 
             // Comments
-            while ($script[0] == '#') {
+            while (!empty($script) && $script[0] == '#') {
                 $endl = strpos($script, "\n");
                 $line = $endl ? substr($script, 0, $endl) : $script;
 
                 // Roundcube format
                 if (preg_match('/^# rule:\[(.*)\]/', $line, $matches)) {
                     $rulename = $matches[1];
+                }
+                // KEP:14 variables
+                else if (preg_match('/^# set "([^"]+)" "([^"]+)";$/', $line, $matches)) {
+                    $this->set_var($matches[1], $matches[2]);
                 }
                 // Horde-Ingo format
                 else if (!empty($options['format']) && $options['format'] == 'INGO'
