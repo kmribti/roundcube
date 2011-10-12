@@ -63,12 +63,7 @@ class managesieve extends rcube_plugin
         $this->register_action('plugin.managesieve-save', array($this, 'managesieve_save'));
 
         if ($this->rc->task == 'settings') {
-            // load localization
-            $this->add_texts('localization/', array('filters','managefilters'));
-
-            if (!strpos($this->rc->action, 'managesieve')) {
-                $this->include_script('managesieve.js');
-            }
+            $this->init_ui();
         }
         else if ($this->rc->task == 'mail') {
             // register message hook
@@ -82,18 +77,30 @@ class managesieve extends rcube_plugin
     }
 
     /**
+     * Initializes plugin's UI (localization, js script)
+     */
+    private function init_ui()
+    {
+        if ($this->ui_initialized)
+            return;
+
+        // load localization
+        $this->add_texts('localization/', array('filters','managefilters'));
+        $this->include_script('managesieve.js');
+
+        $this->ui_initialized = true;
+    }
+
+    /**
      * Add UI elements to the 'mailbox view' and 'show message' UI.
      */
     function mail_task_handler()
     {
-        // load localization
-        $this->add_texts('localization/');
-
         // use jQuery for popup window
         $this->require_plugin('jqueryui'); 
 
-        // include main js script
-        $this->include_script('managesieve.js');
+        // include js script and localization
+        $this->init_ui();
 
         // include styles
         $skin = $this->rc->config->get('skin');
@@ -281,13 +288,7 @@ class managesieve extends rcube_plugin
 
     function managesieve_actions()
     {
-        // load localization
-        $this->add_texts('localization/', array('filters','managefilters'));
-
-        // include main js script
-        if ($this->api->output->type == 'html') {
-            $this->include_script('managesieve.js');
-        }
+        $this->init_ui();
 
         $error = $this->managesieve_start();
 
