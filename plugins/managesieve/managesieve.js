@@ -328,6 +328,9 @@ rcube_webmail.prototype.managesieve_rulefill = function(content, id, after)
 
 rcube_webmail.prototype.managesieve_ruledel = function(id)
 {
+  if ($('#ruledel'+id).hasClass('disabled'))
+    return;
+
   if (confirm(this.get_label('managesieve.ruledeleteconfirm'))) {
     var row = document.getElementById('rulerow'+id);
     row.parentNode.removeChild(row);
@@ -358,6 +361,9 @@ rcube_webmail.prototype.managesieve_actionfill = function(content, id, after)
 
 rcube_webmail.prototype.managesieve_actiondel = function(id)
 {
+  if ($('#actiondel'+id).hasClass('disabled'))
+    return;
+
   if (confirm(this.get_label('managesieve.actiondeleteconfirm'))) {
     var row = document.getElementById('actionrow'+id);
     row.parentNode.removeChild(row);
@@ -400,11 +406,9 @@ rcube_webmail.prototype.managesieve_formbuttons = function(div)
     button = document.getElementById(buttons[i]);
     if (i>0 || buttons.length>1) {
       $(button).removeClass('disabled');
-      button.removeAttribute('disabled');
     }
     else {
       $(button).addClass('disabled');
-      button.setAttribute('disabled', true);
     }
   }
 };

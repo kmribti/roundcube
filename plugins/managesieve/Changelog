@@ -9,6 +9,7 @@
 - Added filters set selector in filter form when invoked in mail task
 - Improved script parser, added support for include and variables extensions
 - Added Kolab's KEP:14 support (http://wiki.kolab.org/User:Greve/Drafts/KEP:14)
+- Use smaller action/rule buttons
 
 * version 4.3 [2011-07-28]
 -----------------------------------------------------------

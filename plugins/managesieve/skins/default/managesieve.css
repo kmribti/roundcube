@@ -61,7 +61,7 @@
   padding: 0;
   margin-right: 3px;
   overflow: hidden;
-  background: url(managesieve_toolbar.png) 0 0 no-repeat transparent;
+  background: url(images/toolbar.png) 0 0 no-repeat transparent;
   opacity: 0.99; /* this is needed to make buttons appear correctly in Chrome */
 }
 
@@ -291,6 +291,30 @@ span.sieve.error
 #managesieve-tip
 {
   width: 200px;
+}
+
+a.button.add
+{
+  background: url(images/add.png) no-repeat;
+  width: 30px;
+  height: 20px;
+  margin-right: 4px; 
+  display: inline-block;
+}
+
+a.button.del
+{
+  background: url(images/del.png) no-repeat;
+  width: 30px;
+  height: 20px;
+  display: inline-block;
+}
+
+a.button.disabled
+{
+  opacity: 0.35;
+  filter: alpha(opacity=35);
+  cursor: default;
 }
 
 /* fixes for popup window */

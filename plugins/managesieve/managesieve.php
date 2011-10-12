@@ -1171,11 +1171,10 @@ class managesieve extends rcube_plugin
 
         // add/del buttons
         $out .= '<td class="rowbuttons">';
-        $out .= '<input type="button" id="ruleadd' . $id .'" value="'. Q($this->gettext('add')). '"
-            onclick="rcmail.managesieve_ruleadd(' . $id .')" class="button" /> ';
-        $out .= '<input type="button" id="ruledel' . $id .'" value="'. Q($this->gettext('del')). '"
-            onclick="rcmail.managesieve_ruledel(' . $id .')" class="button' . ($rows_num<2 ? ' disabled' : '') .'"'
-            . ($rows_num<2 ? ' disabled="disabled"' : '') .' />';
+        $out .= '<a href="#" id="ruleadd' . $id .'" title="'. Q($this->gettext('add')). '"
+            onclick="rcmail.managesieve_ruleadd(' . $id .')" class="button add"></a>';
+        $out .= '<a href="#" id="ruledel' . $id .'" title="'. Q($this->gettext('del')). '"
+            onclick="rcmail.managesieve_ruledel(' . $id .')" class="button del' . ($rows_num<2 ? ' disabled' : '') .'"></a>';
         $out .= '</td></tr></table>';
 
         $out .= $div ? "</div>\n" : '';
@@ -1296,11 +1295,10 @@ class managesieve extends rcube_plugin
 
         // add/del buttons
         $out .= '<td class="rowbuttons">';
-        $out .= '<input type="button" id="actionadd' . $id .'" value="'. Q($this->gettext('add')). '"
-            onclick="rcmail.managesieve_actionadd(' . $id .')" class="button" /> ';
-        $out .= '<input type="button" id="actiondel' . $id .'" value="'. Q($this->gettext('del')). '"
-            onclick="rcmail.managesieve_actiondel(' . $id .')" class="button' . ($rows_num<2 ? ' disabled' : '') .'"'
-            . ($rows_num<2 ? ' disabled="disabled"' : '') .' />';
+        $out .= '<a href="#" id="actionadd' . $id .'" title="'. Q($this->gettext('add')). '"
+            onclick="rcmail.managesieve_actionadd(' . $id .')" class="button add"></a>';
+        $out .= '<a href="#" id="actiondel' . $id .'" title="'. Q($this->gettext('del')). '"
+            onclick="rcmail.managesieve_actiondel(' . $id .')" class="button del' . ($rows_num<2 ? ' disabled' : '') .'"></a>';
         $out .= '</td>';
 
         $out .= '</tr></table>';
