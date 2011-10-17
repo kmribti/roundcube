@@ -6,8 +6,8 @@ Test of Kolab's KEP:14 implementation
 include '../lib/rcube_sieve_script.php';
 
 $txt = '
-# set "editor" "Roundcube";
-# set "editor_version" "123";
+# EDITOR Roundcube
+# EDITOR_VERSION 123
 ';
 
 $s = new rcube_sieve_script($txt, array());
@@ -15,5 +15,5 @@ echo $s->as_text();
 
 ?>
 --EXPECT--
-# set "editor" "Roundcube";
-# set "editor_version" "123";
+# EDITOR Roundcube
+# EDITOR_VERSION 123

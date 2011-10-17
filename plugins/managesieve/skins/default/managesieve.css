@@ -1,159 +1,98 @@
-#filterslist
+#filtersetslistbox
 {
   position: absolute;
-  left: 20px;
-  top: 120px;
-  bottom: 20px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 195px;
+  border: 1px solid #999999;
+  background-color: #F9F9F9;
+  overflow: hidden;
+  /* css hack for IE */
+  height: expression(parseInt(this.parentNode.offsetHeight)+'px');
+}
+
+#filtersscreen
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 205px;
+  /* css hack for IE */
+  height: expression(parseInt(this.parentNode.offsetHeight)+'px');
+}
+
+#filterslistbox
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
   border: 1px solid #999999;
   overflow: auto;
   /* css hack for IE */
-  height: expression((parseInt(document.documentElement.clientHeight)-140)+'px');
+  height: expression(parseInt(this.parentNode.offsetHeight)+'px');
 }
 
-#filters-table
+#filterslist,
+#filtersetslist
 {
   width: 100%;
   table-layout: fixed;
-  /* css hack for IE */
-  width: expression(document.getElementById('filterslist').clientWidth);
 }
 
-#filters-table tbody td
+#filterslist tbody td,
+#filtersetslist tbody td
 {
-  cursor: pointer;
+  cursor: default;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
 }
 
-#filters-table tbody tr.disabled td
+#filterslist tbody tr.disabled td,
+#filtersetslist tbody tr.disabled td
 {
   color: #999999;
 }
 
-#filtersbuttons
+#filtersetslist tbody td
 {
-  position: absolute;
-  left: 20px;
-  top: 85px;
+  font-weight: bold;
 }
-
-#filtersetsbuttons
+/*
+#filtersetslist tr.selected
 {
-  position: absolute;
-  left: 230px;
-  top: 85px;
+  background-color: #929292;
+  border-bottom: 1px solid #898989;
+  color: #FFF;
+  font-weight: bold;
 }
+*/
 
-#filtersbuttons a,
-#filtersetsbuttons a
+#filterslist tbody tr.filtermoveup td
 {
-  display: block;
-  float: left;
+  border-top: 2px dotted #555;
+  padding-top: 0px;
 }
 
-#filtersbuttons a.button,
-#filtersbuttons a.buttonPas,
-#filtersetsbuttons a.button,
-#filtersetsbuttons a.buttonPas
+#filterslist tbody tr.filtermovedown td
 {
-  display: block;
-  float: left;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  margin-right: 3px;
-  overflow: hidden;
-  background: url(images/toolbar.png) 0 0 no-repeat transparent;
-  opacity: 0.99; /* this is needed to make buttons appear correctly in Chrome */
-}
-
-#filtersbuttons a.buttonPas,
-#filtersetsbuttons a.buttonPas
-{
-  filter: alpha(opacity=35);
-  opacity: 0.35;
-}
-
-#filtersbuttons a.add {
-  background-position: 0px 0px;
-}
-
-#filtersbuttons a.addsel {
-  background-position: 0 -32px;
-}
-
-#filtersbuttons a.del {
-  background-position: -32px 0px;
-}
-
-#filtersbuttons a.delsel {
-  background-position: -32px -32px;
-}
-
-#filtersbuttons a.up {
-  background-position: -64px 0px;
-}
-
-#filtersbuttons a.upsel {
-  background-position: -64px -32px;
-}
-
-#filtersbuttons a.down {
-  background-position: -96px 0px;
-}
-
-#filtersbuttons a.downsel {
-  background-position: -96px -32px;
-}
-
-#filtersetsbuttons a.setadd {
-  background-position: -128px 0px;
-}
-
-#filtersetsbuttons a.setaddsel {
-  background-position: -128px -32px;
-}
-
-#filtersetsbuttons a.setdel {
-  background-position: -160px 0px;
-}
-
-#filtersetsbuttons a.setdelsel {
-  background-position: -160px -32px;
-}
-
-#filtersetsbuttons a.setset {
-  background-position: -192px 0px;
-}
-
-#filtersetsbuttons a.setsetsel {
-  background-position: -192px -32px;
-}
-
-#filtersetsbuttons a.setget {
-  background-position: -224px 0px;
-}
-
-#filtersetsbuttons a.setgetsel {
-  background-position: -224px -32px;
-}
-
-#filtersetselect
-{
-  position: absolute;
-  left: 375px;
-  top: 90px;
+  border-bottom: 2px dotted #555;
+  padding-bottom: 1px;
 }
 
 #filter-box
 {
   position: absolute;
-  top: 120px;
-  right: 20px;
-  bottom: 20px;
+  top: 0;
+  right: 0;
+  bottom: 0;
   border: 1px solid #999999;
   overflow: hidden;
   /* css hack for IE */
-  width: expression((parseInt(document.documentElement.clientWidth)-40-parseInt(document.getElementById('filterslist').offsetWidth))+'px');
-  height: expression((parseInt(document.documentElement.clientHeight)-140)+'px');
+  width: expression((parseInt(this.parentNode.offsetWidth)-20-parseInt(document.getElementById('filterslistbox').offsetWidth))+'px');
+  height: expression(parseInt(this.parentNode.offsetHeight)+'px');
 }
 
 #filter-frame
@@ -163,14 +102,14 @@
 
 body.iframe
 {
-  min-width: 740px;
-  width: expression(Math.max(740, document.documentElement.clientWidth)+'px');
+  min-width: 620px;
+  width: expression(Math.max(620, document.documentElement.clientWidth)+'px');
   background-color: #F2F2F2;
 }
 
 #filter-form
 {
-  min-width: 650px;
+  min-width: 550px;
   white-space: nowrap;
   padding: 20px 10px 10px 10px;
 }
@@ -207,6 +146,7 @@ div.rulerow table, div.actionrow table
 {
   padding: 0px;
   width: 100%;
+  min-width: 620px;
 }
 
 td.rowbuttons
@@ -226,7 +166,7 @@ td.rowtargets
 {
   white-space: nowrap;
   width: 98%;
-  padding-left: 10px;
+  padding-left: 3px;
 }
 
 input.disabled, input.disabled:hover
@@ -243,6 +183,11 @@ input.box,
 input.radio
 {
   border: 0;
+}
+
+select.operator_selector
+{
+  width: 200px;
 }
 
 span.label
@@ -315,6 +260,13 @@ a.button.disabled
   opacity: 0.35;
   filter: alpha(opacity=35);
   cursor: default;
+}
+
+#filter-form select,
+#filter-form input,
+#filter-form textarea
+{
+  font-size: 11px;
 }
 
 /* fixes for popup window */

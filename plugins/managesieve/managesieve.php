@@ -216,7 +216,7 @@ class managesieve extends rcube_plugin
             $list = $this->list_scripts();
 
             if (!empty($_GET['_set']) || !empty($_POST['_set'])) {
-                $script_name = get_input_value('_set', RCUBE_INPUT_GPC);
+                $script_name = get_input_value('_set', RCUBE_INPUT_GPC, true);
             }
             else if (!empty($_SESSION['managesieve_current'])) {
                 $script_name = $_SESSION['managesieve_current'];
@@ -244,6 +244,7 @@ class managesieve extends rcube_plugin
                     // add script and set it active
                     if ($this->sieve->save_script($script_name, $content)) {
                         $this->activate_script($script_name);
+                        $this->list[] = $script_name;
                     }
                 }
             }
@@ -278,8 +279,7 @@ class managesieve extends rcube_plugin
         else {
             $this->exts = $this->sieve->get_extensions();
             $this->script = $this->sieve->script->as_array();
-            if (empty($_GET['act']))
-                $this->rc->output->set_env('active_sets', $this->active);
+            $this->rc->output->set_env('currentset', $this->sieve->current);
             $_SESSION['managesieve_current'] = $this->sieve->current;
         }
 
@@ -294,58 +294,93 @@ class managesieve extends rcube_plugin
 
         // Handle user requests
         if ($action = get_input_value('_act', RCUBE_INPUT_GPC)) {
-            $fid = (int) get_input_value('_fid', RCUBE_INPUT_GET);
+            $fid = (int) get_input_value('_fid', RCUBE_INPUT_POST);
 
-            if ($action == 'up' && !$error) {
-                if ($fid && isset($this->script[$fid]) && isset($this->script[$fid-1])) {
-                    if ($this->sieve->script->update_rule($fid, $this->script[$fid-1]) !== false
-                        && $this->sieve->script->update_rule($fid-1, $this->script[$fid]) !== false) {
-                        $result = $this->save_script();
-                    }
-
-                    if ($result) {
-//                      $this->rc->output->show_message('managesieve.filtersaved', 'confirmation');
-                        $this->rc->output->command('managesieve_updatelist', 'up', '', $fid);
-                    } else
-                        $this->rc->output->show_message('managesieve.filtersaveerror', 'error');
-                }
-            }
-            else if ($action == 'down' && !$error) {
-                if (isset($this->script[$fid]) && isset($this->script[$fid+1])) {
-                    if ($this->sieve->script->update_rule($fid, $this->script[$fid+1]) !== false
-                        && $this->sieve->script->update_rule($fid+1, $this->script[$fid]) !== false) {
-                        $result = $this->save_script();
-                    }
-
-                    if ($result === true) {
-//                      $this->rc->output->show_message('managesieve.filtersaved', 'confirmation');
-                        $this->rc->output->command('managesieve_updatelist', 'down', '', $fid);
-                    } else {
-                        $this->rc->output->show_message('managesieve.filtersaveerror', 'error');
-                    }
-                }
-            }
-            else if ($action == 'delete' && !$error) {
+            if ($action == 'delete' && !$error) {
                 if (isset($this->script[$fid])) {
                     if ($this->sieve->script->delete_rule($fid))
                         $result = $this->save_script();
 
                     if ($result === true) {
                         $this->rc->output->show_message('managesieve.filterdeleted', 'confirmation');
-                        $this->rc->output->command('managesieve_updatelist', 'delete', '', $fid);
+                        $this->rc->output->command('managesieve_updatelist', 'del', array('id' => $fid));
                     } else {
                         $this->rc->output->show_message('managesieve.filterdeleteerror', 'error');
+                    }
+                }
+            }
+            else if ($action == 'move' && !$error) {
+                if (isset($this->script[$fid])) {
+                    $to   = (int) get_input_value('_to', RCUBE_INPUT_POST);
+                    $rule = $this->script[$fid];
+
+                    // remove rule
+                    unset($this->script[$fid]);
+                    $this->script = array_values($this->script);
+
+                    // add at target position
+                    if ($to >= count($this->script)) {
+                        $this->script[] = $rule;
+                    }
+                    else {
+                        $script = array();
+                        foreach ($this->script as $idx => $r) {
+                            if ($idx == $to)
+                                $script[] = $rule;
+                            $script[] = $r;
+                        }
+                        $this->script = $script;
+                    }
+
+                    $this->sieve->script->content = $this->script;
+                    $result = $this->save_script();
+
+                    if ($result === true) {
+                        $result = $this->list_rules();
+
+                        $this->rc->output->show_message('managesieve.moved', 'confirmation');
+                        $this->rc->output->command('managesieve_updatelist', 'list',
+                            array('list' => $result, 'clear' => true, 'set' => $to));
+                    } else {
+                        $this->rc->output->show_message('managesieve.moveerror', 'error');
+                    }
+                }
+            }
+            else if ($action == 'act' && !$error) {
+                if (isset($this->script[$fid])) {
+                    $rule     = $this->script[$fid];
+                    $disabled = $rule['disabled'] ? true : false;
+                    $rule['disabled'] = !$disabled;
+                    $result = $this->sieve->script->update_rule($fid, $rule);
+
+                    if ($result !== false)
+                        $result = $this->save_script();
+
+                    if ($result === true) {
+                        if ($rule['disabled'])
+                            $this->rc->output->show_message('managesieve.deactivated', 'confirmation');
+                        else
+                            $this->rc->output->show_message('managesieve.activated', 'confirmation');
+                        $this->rc->output->command('managesieve_updatelist', 'update',
+                            array('id' => $fid, 'disabled' => $rule['disabled']));
+                    } else {
+                        if ($rule['disabled'])
+                            $this->rc->output->show_message('managesieve.deactivateerror', 'error');
+                        else
+                            $this->rc->output->show_message('managesieve.activateerror', 'error');
                     }
                 }
             }
             else if ($action == 'setact' && !$error) {
                 $script_name = get_input_value('_set', RCUBE_INPUT_GPC);
                 $result = $this->activate_script($script_name);
+                $kep14  = $this->rc->config->get('managesieve_kolab_master');
 
                 if ($result === true) {
                     $this->rc->output->set_env('active_sets', $this->active);
                     $this->rc->output->show_message('managesieve.setactivated', 'confirmation');
-                    $this->rc->output->command('managesieve_reset');
+                    $this->rc->output->command('managesieve_updatelist', 'setact',
+                        array('name' => $script_name, 'active' => true, 'all' => !$kep14));
                 } else {
                     $this->rc->output->show_message('managesieve.setactivateerror', 'error');
                 }
@@ -357,7 +392,8 @@ class managesieve extends rcube_plugin
                 if ($result === true) {
                     $this->rc->output->set_env('active_sets', $this->active);
                     $this->rc->output->show_message('managesieve.setdeactivated', 'confirmation');
-                    $this->rc->output->command('managesieve_reset');
+                    $this->rc->output->command('managesieve_updatelist', 'setact',
+                        array('name' => $script_name, 'active' => false));
                 } else {
                     $this->rc->output->show_message('managesieve.setdeactivateerror', 'error');
                 }
@@ -368,7 +404,8 @@ class managesieve extends rcube_plugin
 
                 if ($result === true) {
                     $this->rc->output->show_message('managesieve.setdeleted', 'confirmation');
-                    $this->rc->output->command('managesieve_reload');
+                    $this->rc->output->command('managesieve_updatelist', 'setdel',
+                        array('name' => $script_name));
                     $this->rc->session->remove('managesieve_current');
                 } else {
                     $this->rc->output->show_message('managesieve.setdeleteerror', 'error');
@@ -400,14 +437,19 @@ class managesieve extends rcube_plugin
                 echo $script;
                 exit;
             }
-            elseif ($action == 'ruleadd') {
+            else if ($action == 'list') {
+                $result = $this->list_rules();
+
+                $this->rc->output->command('managesieve_updatelist', 'list', array('list' => $result));
+            }
+            else if ($action == 'ruleadd') {
                 $rid = get_input_value('_rid', RCUBE_INPUT_GPC);
                 $id = $this->genid();
                 $content = $this->rule_div($fid, $id, false);
 
                 $this->rc->output->command('managesieve_rulefill', $content, $id, $rid);
             }
-            elseif ($action == 'actionadd') {
+            else if ($action == 'actionadd') {
                 $aid = get_input_value('_aid', RCUBE_INPUT_GPC);
                 $id = $this->genid();
                 $content = $this->action_div($fid, $id, false);
@@ -464,14 +506,28 @@ class managesieve extends rcube_plugin
         // filters set add action
         if (!empty($_POST['_newset'])) {
 
-            $name = get_input_value('_name', RCUBE_INPUT_POST);
-            $copy = get_input_value('_copy', RCUBE_INPUT_POST);
-            $from = get_input_value('_from', RCUBE_INPUT_POST);
+            $name       = get_input_value('_name', RCUBE_INPUT_POST, true);
+            $copy       = get_input_value('_copy', RCUBE_INPUT_POST, true);
+            $from       = get_input_value('_from', RCUBE_INPUT_POST);
+            $exceptions = $this->rc->config->get('managesieve_filename_exceptions');
+            $kolab      = $this->rc->config->get('managesieve_kolab_master');
+            $name_uc    = mb_strtolower($name);
 
-            if (!$name)
-                $error = 'managesieve.emptyname';
-            else if (mb_strlen($name)>128)
-                $error = 'managesieve.nametoolong';
+            if (!$name) {
+                $this->errors['name'] = $this->gettext('emptyname');
+            }
+            else if (mb_strlen($name) > 128) {
+                $this->errors['name'] = $this->gettext('nametoolong');
+            }
+            else if (!empty($exceptions) && in_array($name, (array)$exceptions)) {
+                $this->errors['name'] = $this->gettext('namereserved');
+            }
+            else if (!empty($kolab) && in_array($name_uc, array('MASTER', 'USER', 'MANAGEMENT'))) {
+                $this->errors['name'] = $this->gettext('namereserved');
+            }
+            else if (($list = $this->list_scripts()) && in_array($name, $list)) {
+                $this->errors['name'] = $this->gettext('setexist');
+            }
             else if ($from == 'file') {
                 // from file
                 if (is_uploaded_file($_FILES['_file']['tmp_name'])) {
@@ -481,12 +537,11 @@ class managesieve extends rcube_plugin
                     // check syntax before, like this...
                     $this->sieve->load_script($file);
                     if (!$this->save_script($name)) {
-                        $error = 'managesieve.setcreateerror';
+                        $this->errors['file'] = $this->gettext('setcreateerror');
                     }
                 }
                 else {  // upload failed
                     $err = $_FILES['_file']['error'];
-                    $error = true;
 
                     if ($err == UPLOAD_ERR_INI_SIZE || $err == UPLOAD_ERR_FORM_SIZE) {
                         $msg = rcube_label(array('name' => 'filesizeerror',
@@ -494,7 +549,7 @@ class managesieve extends rcube_plugin
                                 show_bytes(parse_bytes(ini_get('upload_max_filesize'))))));
                     }
                     else {
-                        $error = 'fileuploaderror';
+                        $this->errors['file'] = $this->gettext('fileuploaderror');
                     }
                 }
             }
@@ -502,12 +557,13 @@ class managesieve extends rcube_plugin
                 $error = 'managesieve.setcreateerror';
             }
 
-            if (!$error) {
+            if (!$error && empty($this->errors)) {
                 $this->rc->output->show_message('managesieve.setcreated', 'confirmation');
-                $this->rc->output->command('parent.managesieve_reload', $name);
+                $this->rc->output->command('parent.managesieve_updatelist', 'setadd',
+                    array('name' => $name));
             } else if ($msg) {
                 $this->rc->output->command('display_message', $msg, 'error');
-            } else {
+            } else if ($error) {
                 $this->rc->output->show_message($error, 'error');
             }
         }
@@ -752,11 +808,13 @@ class managesieve extends rcube_plugin
                 if ($save && $fid !== false) {
                     $this->rc->output->show_message('managesieve.filtersaved', 'confirmation');
                     if ($this->rc->task != 'mail') {
-                        $this->rc->output->add_script(
-                            sprintf("rcmail.managesieve_updatelist('%s', '%s', %d, %d);",
-                                isset($new) ? 'add' : 'update', Q($this->form['name']),
-                                $fid, $this->form['disabled']),
-                            'foot');
+                        $this->rc->output->command('parent.managesieve_updatelist',
+                            isset($new) ? 'add' : 'update',
+                            array(
+                                'name' => Q($this->form['name']),
+                                'id' => $fid,
+                                'disabled' => $this->form['disabled']
+                        ));
                     }
                     else {
                         $this->rc->output->command('managesieve_dialog_close');
@@ -797,21 +855,9 @@ class managesieve extends rcube_plugin
             $attrib['id'] = 'rcmfilterslist';
 
         // define list of cols to be displayed
-        $a_show_cols = array('managesieve.filtername');
+        $a_show_cols = array('name');
 
-        $i = 1;
-        foreach ($this->script as $idx => $filter) {
-            if ($filter['type'] != 'if') {
-                continue;
-            }
-            $fname = $filter['name'] ? $filter['name'] : "#$i";
-            $result[] = array(
-                'managesieve.filtername' => $fname,
-                'id' => $idx,
-                'class' => $filter['disabled'] ? 'disabled' : '',
-            );
-            $i++;
-        }
+        $result = $this->list_rules();
 
         // create XHTML table
         $out = rcube_table_output($attrib, $result, $a_show_cols, 'id');
@@ -835,27 +881,47 @@ class managesieve extends rcube_plugin
 
         $list = $this->list_scripts();
 
-        $select = new html_select(array('name' => '_set', 'id' => $attrib['id'],
-            'onchange' => $this->rc->task != 'mail' ? 'rcmail.managesieve_set()' : ''));
+//        if ($list) {
+//            asort($list, SORT_LOCALE_STRING);
+//        }
 
-        if ($list) {
-            asort($list, SORT_LOCALE_STRING);
+        if (!empty($attrib['type']) && $attrib['type'] == 'list') {
+            // define list of cols to be displayed
+            $a_show_cols = array('name');
 
-            foreach ($list as $set)
-                $select->add($set . (in_array($set, $this->active) ? ' ('.$this->gettext('active').')' : ''), $set);
+            if ($list) {
+                foreach ($list as $idx => $set) {
+                    $scripts['S'.$idx] = $set;
+                    $result[] = array(
+                        'name' => Q($set),
+                        'id' => 'S'.$idx,
+                        'class' => !in_array($set, $this->active) ? 'disabled' : '',
+                    );
+                }
+            }
+
+            // create XHTML table
+            $out = rcube_table_output($attrib, $result, $a_show_cols, 'id');
+
+            $this->rc->output->set_env('filtersets', $scripts);
+            $this->rc->output->include_script('list.js');
         }
+        else {
+            $select = new html_select(array('name' => '_set', 'id' => $attrib['id'],
+                'onchange' => $this->rc->task != 'mail' ? 'rcmail.managesieve_set()' : ''));
 
-        $out = $select->show($this->sieve->current);
+            if ($list) {
+                foreach ($list as $set)
+                    $select->add($set, $set);
+            }
+
+            $out = $select->show($this->sieve->current);
+        }
 
         // set client env
         if (!$no_env) {
             $this->rc->output->add_gui_object('filtersetslist', $attrib['id']);
-            $this->rc->output->add_label(
-                'managesieve.setdeleteconfirm',
-                'managesieve.active',
-                'managesieve.filtersetact',
-                'managesieve.filtersetdeact'
-            );
+            $this->rc->output->add_label('managesieve.setdeleteconfirm');
         }
 
         return $out;
@@ -910,10 +976,14 @@ class managesieve extends rcube_plugin
         $select = new html_select(array('name' => '_copy', 'id' => '_copy'));
 
         if (is_array($list)) {
-            asort($list, SORT_LOCALE_STRING);
+//            asort($list, SORT_LOCALE_STRING);
 
-            foreach ($list as $set)
-                $select->add($set . (in_array($set, $this->active) ? ' ('.$this->gettext('active').')' : ''), $set);
+            if (!$copy)
+                $copy = $_SESSION['managesieve_current'];
+
+            foreach ($list as $set) {
+                $select->add($set, $set);
+            }
 
             $out .= '<br /><input type="radio" id="from_set" name="_from" value="set"'
                 .($selected=='set' ? ' checked="checked"' : '').'></input>';
@@ -923,7 +993,7 @@ class managesieve extends rcube_plugin
 
         // script upload box
         $upload = new html_inputfield(array('name' => '_file', 'id' => '_file', 'size' => 30,
-            'type' => 'file', 'class' => ($this->errors['name'] ? 'error' : '')));
+            'type' => 'file', 'class' => ($this->errors['file'] ? 'error' : '')));
 
         $out .= '<br /><input type="radio" id="from_file" name="_from" value="file"'
             .($selected=='file' ? ' checked="checked"' : '').'></input>';
@@ -932,6 +1002,13 @@ class managesieve extends rcube_plugin
         $out .= '</fieldset>';
 
         $this->rc->output->add_gui_object('sieveform', 'filtersetform');
+
+        if ($this->errors['name'])
+            $this->add_tip('_name', $this->errors['name'], true);
+        if ($this->errors['file'])
+            $this->add_tip('_file', $this->errors['file'], true);
+
+        $this->print_tips();
 
         return $out;
     }
@@ -1095,11 +1172,12 @@ class managesieve extends rcube_plugin
         $out .= '<div id="custom_header' .$id. '" style="display:' .(isset($custom) ? 'inline' : 'none'). '">
             <input type="text" name="_custom_header[]" id="custom_header_i'.$id.'" '
             . $this->error_class($id, 'test', 'header', 'custom_header_i')
-            .' value="' .Q($custom). '" size="20" />&nbsp;</div>' . "\n";
+            .' value="' .Q($custom). '" size="15" />&nbsp;</div>' . "\n";
 
         // matching type select (operator)
         $select_op = new html_select(array('name' => "_rule_op[]", 'id' => 'rule_op'.$id,
             'style' => 'display:' .($rule['test']!='size' ? 'inline' : 'none'),
+            'class' => 'operator_selector',
             'onchange' => 'rule_op_select('.$id.')'));
         $select_op->add(Q($this->gettext('filtercontains')), 'contains');
         $select_op->add(Q($this->gettext('filternotcontains')), 'notcontains');
@@ -1227,11 +1305,11 @@ class managesieve extends rcube_plugin
         $out .= '<td class="rowtargets">';
         // shared targets
         $out .= '<input type="text" name="_action_target['.$id.']" id="action_target' .$id. '" '
-            .'value="' .($action['type']=='redirect' ? Q($action['target'], 'strict', false) : ''). '" size="40" '
+            .'value="' .($action['type']=='redirect' ? Q($action['target'], 'strict', false) : ''). '" size="35" '
             .'style="display:' .($action['type']=='redirect' ? 'inline' : 'none') .'" '
             . $this->error_class($id, 'action', 'target', 'action_target') .' />';
         $out .= '<textarea name="_action_target_area['.$id.']" id="action_target_area' .$id. '" '
-            .'rows="3" cols="40" '. $this->error_class($id, 'action', 'targetarea', 'action_target_area')
+            .'rows="3" cols="35" '. $this->error_class($id, 'action', 'targetarea', 'action_target_area')
             .'style="display:' .(in_array($action['type'], array('reject', 'ereject')) ? 'inline' : 'none') .'">'
             . (in_array($action['type'], array('reject', 'ereject')) ? Q($action['target'], 'strict', false) : '')
             . "</textarea>\n";
@@ -1240,15 +1318,15 @@ class managesieve extends rcube_plugin
         $out .= '<div id="action_vacation' .$id.'" style="display:' .($action['type']=='vacation' ? 'inline' : 'none') .'">';
         $out .= '<span class="label">'. Q($this->gettext('vacationreason')) .'</span><br />'
             .'<textarea name="_action_reason['.$id.']" id="action_reason' .$id. '" '
-            .'rows="3" cols="45" '. $this->error_class($id, 'action', 'reason', 'action_reason') . '>'
+            .'rows="3" cols="35" '. $this->error_class($id, 'action', 'reason', 'action_reason') . '>'
             . Q($action['reason'], 'strict', false) . "</textarea>\n";
         $out .= '<br /><span class="label">' .Q($this->gettext('vacationsubject')) . '</span><br />'
             .'<input type="text" name="_action_subject['.$id.']" id="action_subject'.$id.'" '
-            .'value="' . (is_array($action['subject']) ? Q(implode(', ', $action['subject']), 'strict', false) : $action['subject']) . '" size="50" '
+            .'value="' . (is_array($action['subject']) ? Q(implode(', ', $action['subject']), 'strict', false) : $action['subject']) . '" size="35" '
             . $this->error_class($id, 'action', 'subject', 'action_subject') .' />';
         $out .= '<br /><span class="label">' .Q($this->gettext('vacationaddresses')) . '</span><br />'
             .'<input type="text" name="_action_addresses['.$id.']" id="action_addr'.$id.'" '
-            .'value="' . (is_array($action['addresses']) ? Q(implode(', ', $action['addresses']), 'strict', false) : $action['addresses']) . '" size="50" '
+            .'value="' . (is_array($action['addresses']) ? Q(implode(', ', $action['addresses']), 'strict', false) : $action['addresses']) . '" size="35" '
             . $this->error_class($id, 'action', 'addresses', 'action_addr') .' />';
         $out .= '<br /><span class="label">' . Q($this->gettext('vacationdays')) . '</span><br />'
             .'<input type="text" name="_action_days['.$id.']" id="action_days'.$id.'" '
@@ -1575,10 +1653,36 @@ class managesieve extends rcube_plugin
     {
         // Kolab's KEP:14
         if ($this->rc->config->get('managesieve_kolab_master')) {
-            $this->sieve->script->set_var('editor', self::PROGNAME);
-            $this->sieve->script->set_var('editor_version', self::VERSION);
+            $this->sieve->script->set_var('EDITOR', self::PROGNAME);
+            $this->sieve->script->set_var('EDITOR_VERSION', self::VERSION);
         }
 
         return $this->sieve->save($name);
+    }
+
+    /**
+     * Returns list of rules from the current script
+     *
+     * @return array List of rules
+     */
+    public function list_rules()
+    {
+        $result = array();
+        $i      = 1;
+
+        foreach ($this->script as $idx => $filter) {
+            if ($filter['type'] != 'if') {
+                continue;
+            }
+            $fname = $filter['name'] ? $filter['name'] : "#$i";
+            $result[] = array(
+                'id'    => $idx,
+                'name'  => Q($fname),
+                'class' => $filter['disabled'] ? 'disabled' : '',
+            );
+            $i++;
+        }
+
+        return $result;
     }
 }

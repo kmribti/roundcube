@@ -187,11 +187,17 @@ class rcube_sieve_script
                 array_push($exts, 'variables');
             }
             foreach ($this->vars as $var) {
-                $output .= (empty($has_vars) ? '# ' : '') . 'set ';
-                foreach (array_diff(array_keys($var), array('name', 'value')) as $opt) {
-                    $output .= ":$opt ";
+                if (empty($has_vars)) {
+                    // 'variables' extension not supported, put vars in comments
+                    $output .= sprintf("# %s %s\n", $var['name'], $var['value']);
                 }
-                $output .= self::escape_string($var['name']) . ' ' . self::escape_string($var['value']) . ";\n";
+                else {
+                    $output .= 'set ';
+                    foreach (array_diff(array_keys($var), array('name', 'value')) as $opt) {
+                        $output .= ":$opt ";
+                    }
+                    $output .= self::escape_string($var['name']) . ' ' . self::escape_string($var['value']) . ";\n";
+                }
             }
         }
 
@@ -423,7 +429,7 @@ class rcube_sieve_script
                     $rulename = $matches[1];
                 }
                 // KEP:14 variables
-                else if (preg_match('/^# set "([^"]+)" "([^"]+)";$/', $line, $matches)) {
+                else if (preg_match('/^# (EDITOR|EDITOR_VERSION) (.+)$/', $line, $matches)) {
                     $this->set_var($matches[1], $matches[2]);
                 }
                 // Horde-Ingo format

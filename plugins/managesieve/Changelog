@@ -1,3 +1,5 @@
+* version 5.0-beta [2011-10-17]
+-----------------------------------------------------------
 - Added possibility to create a filter based on selected message "in-place"
 - Fixed import from Horde-INGO (#1488064)
 - Add managesieve_script_name option for default name of the script (#1487956)
@@ -10,6 +12,10 @@
 - Improved script parser, added support for include and variables extensions
 - Added Kolab's KEP:14 support (http://wiki.kolab.org/User:Greve/Drafts/KEP:14)
 - Use smaller action/rule buttons
+- UI redesign: added possibility to move filter to any place using drag&drop
+  (instead of up/down buttons), added filter sets list object, added more
+  'loading' messages
+- Added option to hide some scripts (managesieve_filename_exceptions)
 
 * version 4.3 [2011-07-28]
 -----------------------------------------------------------
