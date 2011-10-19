@@ -341,6 +341,14 @@ rcube_webmail.prototype.managesieve_updatelist = function(action, o)
 
       this.env.filtersets[id] = o.name;
       list.insert_row(row.get(0));
+
+      // move row into its position on the list
+      if (o.index != list.rowcount-1) {
+        row.detach();
+        var elem = $('tr:visible', list.list).get(o.index);
+        row.insertBefore(elem);
+      }
+
       list.select(id);
 
       break;

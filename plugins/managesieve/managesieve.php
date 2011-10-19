@@ -372,7 +372,7 @@ class managesieve extends rcube_plugin
                 }
             }
             else if ($action == 'setact' && !$error) {
-                $script_name = get_input_value('_set', RCUBE_INPUT_GPC);
+                $script_name = get_input_value('_set', RCUBE_INPUT_GPC, true);
                 $result = $this->activate_script($script_name);
                 $kep14  = $this->rc->config->get('managesieve_kolab_master');
 
@@ -386,7 +386,7 @@ class managesieve extends rcube_plugin
                 }
             }
             else if ($action == 'deact' && !$error) {
-                $script_name = get_input_value('_set', RCUBE_INPUT_GPC);
+                $script_name = get_input_value('_set', RCUBE_INPUT_GPC, true);
                 $result = $this->deactivate_script($script_name);
 
                 if ($result === true) {
@@ -399,7 +399,7 @@ class managesieve extends rcube_plugin
                 }
             }
             else if ($action == 'setdel' && !$error) {
-                $script_name = get_input_value('_set', RCUBE_INPUT_GPC);
+                $script_name = get_input_value('_set', RCUBE_INPUT_GPC, true);
                 $result = $this->remove_script($script_name);
 
                 if ($result === true) {
@@ -412,7 +412,7 @@ class managesieve extends rcube_plugin
                 }
             }
             else if ($action == 'setget') {
-                $script_name = get_input_value('_set', RCUBE_INPUT_GPC);
+                $script_name = get_input_value('_set', RCUBE_INPUT_GPC, true);
                 $script = $this->sieve->get_script($script_name);
 
                 if (PEAR::isError($script))
@@ -512,9 +512,10 @@ class managesieve extends rcube_plugin
             $exceptions = $this->rc->config->get('managesieve_filename_exceptions');
             $kolab      = $this->rc->config->get('managesieve_kolab_master');
             $name_uc    = mb_strtolower($name);
+            $list       = $this->list_scripts();
 
             if (!$name) {
-                $this->errors['name'] = $this->gettext('emptyname');
+                $this->errors['name'] = $this->gettext('cannotbeempty');
             }
             else if (mb_strlen($name) > 128) {
                 $this->errors['name'] = $this->gettext('nametoolong');
@@ -525,7 +526,7 @@ class managesieve extends rcube_plugin
             else if (!empty($kolab) && in_array($name_uc, array('MASTER', 'USER', 'MANAGEMENT'))) {
                 $this->errors['name'] = $this->gettext('namereserved');
             }
-            else if (($list = $this->list_scripts()) && in_array($name, $list)) {
+            else if (in_array($name, $list)) {
                 $this->errors['name'] = $this->gettext('setexist');
             }
             else if ($from == 'file') {
@@ -558,9 +559,15 @@ class managesieve extends rcube_plugin
             }
 
             if (!$error && empty($this->errors)) {
+                // Find position of the new script on the list
+                $list[] = $name;
+                asort($list, SORT_LOCALE_STRING);
+                $list  = array_values($list);
+                $index = array_search($name, $list);
+
                 $this->rc->output->show_message('managesieve.setcreated', 'confirmation');
                 $this->rc->output->command('parent.managesieve_updatelist', 'setadd',
-                    array('name' => $name));
+                    array('name' => $name, 'index' => $index));
             } else if ($msg) {
                 $this->rc->output->command('display_message', $msg, 'error');
             } else if ($error) {
@@ -881,9 +888,9 @@ class managesieve extends rcube_plugin
 
         $list = $this->list_scripts();
 
-//        if ($list) {
-//            asort($list, SORT_LOCALE_STRING);
-//        }
+        if ($list) {
+            asort($list, SORT_LOCALE_STRING);
+        }
 
         if (!empty($attrib['type']) && $attrib['type'] == 'list') {
             // define list of cols to be displayed
@@ -976,7 +983,7 @@ class managesieve extends rcube_plugin
         $select = new html_select(array('name' => '_copy', 'id' => '_copy'));
 
         if (is_array($list)) {
-//            asort($list, SORT_LOCALE_STRING);
+            asort($list, SORT_LOCALE_STRING);
 
             if (!$copy)
                 $copy = $_SESSION['managesieve_current'];
@@ -1570,14 +1577,50 @@ class managesieve extends rcube_plugin
             if ($user_script && ($key = array_search($name, $this->active)) === false) {
                 // ...rewrite USER file adding appropriate include command
                 if ($this->sieve->load($user_script)) {
-                    // @TODO: include order
-                    $this->sieve->script->add_rule(array(
+                    $script = $this->sieve->script->as_array();
+                    $list   = array();
+                    $regexp = '/' . preg_quote($extension, '/') . '$/';
+
+                    // Create new include entry
+                    $rule = array(
                         'actions' => array(
                             0 => array(
                                 'target'   => $name.$extension,
                                 'type'     => 'include',
                                 'personal' => true,
-                    ))));
+                    )));
+
+                    // get all active scripts for sorting
+                    foreach ($script as $rid => $rules) {
+                        foreach ($rules['actions'] as $aid => $action) {
+                            if ($action['type'] == 'include' && empty($action['global'])) {
+                                $target = $extension ? preg_replace($regexp, '', $action['target']) : $action['target'];
+                                $list[] = $target;
+                            }
+                        }
+                    }
+                    $list[] = $name;
+
+                    // Sort and find current script position
+                    asort($list, SORT_LOCALE_STRING);
+                    $list = array_values($list);
+                    $index = array_search($name, $list);
+
+                    // add rule at the end of the script
+                    if ($index === false || $index == count($list)-1) {
+                        $this->sieve->script->add_rule($rule);
+                    }
+                    // add rule at index position
+                    else {
+                        $script2 = array();
+                        foreach ($script as $rid => $rules) {
+                            if ($rid == $index) {
+                                $script2[] = $rule;
+                            }
+                            $script2[] = $rules;
+                        }
+                        $this->sieve->script->content = $script2;
+                    }
 
                     $result = $this->sieve->save();
                     if ($result) {
