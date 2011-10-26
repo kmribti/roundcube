@@ -37,16 +37,21 @@ function password_save($curpass, $passwd)
     // crypted password
     if (strpos($sql, '%c') !== FALSE) {
         $salt = '';
-        if (CRYPT_MD5) { 
-    	    $len = rand(3, CRYPT_SALT_LENGTH);
+        if (CRYPT_MD5) {
+            // Always use eight salt characters for MD5 (#1488136)
+    	    $len = 8;
         } else if (CRYPT_STD_DES) {
     	    $len = 2;
         } else {
     	    return PASSWORD_CRYPT_ERROR;
         }
+
+        //Restrict the character set used as salt (#1488136)
+        $seedchars = './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
         for ($i = 0; $i < $len ; $i++) {
-    	    $salt .= chr(rand(ord('.'), ord('z')));
+    	    $salt .= $seedchars[rand(0, 63)];
         }
+
         $sql = str_replace('%c',  $db->quote(crypt($passwd, CRYPT_MD5 ? '$1$'.$salt.'$' : $salt)), $sql);
     }
 

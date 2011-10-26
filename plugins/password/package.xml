@@ -15,10 +15,10 @@
 		<email>alec@alec.pl</email>
 		<active>yes</active>
 	</lead>
-	<date></date>
-	<time></time>
+	<date>2011-10-26</date>
+	<time>12:00</time>
 	<version>
-		<release></release>
+		<release>2.3</release>
 		<api>1.6</api>
 	</version>
 	<stability>
@@ -31,6 +31,7 @@
 - Fixed Samba password hashing in 'ldap' driver
 - Added 'password_change' hook for plugin actions after successful password change
 - Fixed bug where 'doveadm pw' command was used as dovecotpw utility
+- Improve generated crypt() passwords (#1488136)
     </notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
