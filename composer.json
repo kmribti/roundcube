@@ -1,0 +1,36 @@
+{
+    "name": "RoundCube",
+    "description": "RoundCube is a super-cool webmail client",
+    "keywords": ["webmail", "mail"],
+    "homepage": "http://roundcube.net/",
+    "license": "GPLv2",
+    "version": "0.7.0-DEV",
+    "repositories": {
+        "packagist": false,
+        "RoundCube Subversion": {
+            "svn": {
+                "url": "https://svn.roundcube.net/branches/devel-composer/"
+            }
+        },
+        "pear php net": {
+            "pear": {
+                "url": "http://pear.php.net/",
+                "url": "http://de.pear.php.net/",
+                "url": "http://us.pear.php.net/"
+            }
+        }
+    },
+    "require": {
+        "php": ">=5.2.0",
+        "Auth_SASL": "1.0.6",
+        "Mail_Mime": "1.8.2",
+        "MDB2": "2.4.1",
+        "Net_SMTP": "1.6.1",
+        "Net_Socket": "1.0.6",
+        "Net_IDNA2": "0.1.1"
+    },
+    "recommends": {
+        "php": ">=5.3.0",
+        "ext-apc": "*"
+    }
+}
