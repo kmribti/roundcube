@@ -130,11 +130,28 @@ function password_save($curpass, $passwd)
         }
     }
 
+    $local_part  = $rcmail->user->get_username('local');
+    $domain_part = $rcmail->user->get_username('domain');
+    $username    = $_SESSION['username'];
+    $host        = $_SESSION['imap_host'];
+
+    // convert domains to/from punnycode
+    if ($rcmail->config->get('password_idn_ascii')) {
+        $domain_part = rcube_idn_to_ascii($domain_part);
+        $username    = rcube_idn_to_ascii($username);
+        $host        = rcube_idn_to_ascii($host);
+    }
+    else {
+        $domain_part = rcube_idn_to_utf8($domain_part);
+        $username    = rcube_idn_to_utf8($username);
+        $host        = rcube_idn_to_utf8($host);
+    }
+
     // at least we should always have the local part
-    $sql = str_replace('%l', $db->quote($rcmail->user->get_username('local'), 'text'), $sql);
-    $sql = str_replace('%d', $db->quote($rcmail->user->get_username('domain'), 'text'), $sql);
-    $sql = str_replace('%u', $db->quote($_SESSION['username'],'text'), $sql);
-    $sql = str_replace('%h', $db->quote($_SESSION['imap_host'],'text'), $sql);
+    $sql = str_replace('%l', $db->quote($local_part, 'text'), $sql);
+    $sql = str_replace('%d', $db->quote($domain_part, 'text'), $sql);
+    $sql = str_replace('%u', $db->quote($username, 'text'), $sql);
+    $sql = str_replace('%h', $db->quote($host, 'text'), $sql);
 
     $res = $db->query($sql, $sql_vars);
 
