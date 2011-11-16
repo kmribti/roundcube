@@ -6,7 +6,7 @@ Main test of script parser
 include '../lib/rcube_sieve_script.php';
 
 $txt = '
-require ["fileinto","vacation","reject","relational","comparator-i;ascii-numeric","imapflags"];
+require ["fileinto","reject"];
 # rule:[spam]
 if anyof (header :contains "X-DSPAM-Result" "Spam")
 {
@@ -25,17 +25,6 @@ if anyof (not header :contains ["Subject"] "[test]", header :contains "Subject" 
 	fileinto "test";
 	stop;
 }
-# rule:[test-vacation]
-if anyof (header :contains "Subject" "vacation")
-{
-	vacation :days 1 text:
-# test
-test test /* test */
-test
-.
-;
-	stop;
-}
 # rule:[comments]
 if anyof (true) /* comment
  * "comment" #comment */ {
@@ -46,14 +35,6 @@ if anyof (true) /* comment
 if size :over 5000K {
     reject "Message over 5MB size limit. Please contact me before sending this.";
 }
-# rule:[redirect]
-if header :value "ge" :comparator "i;ascii-numeric"
-    ["X-Spam-score"] ["14"] {redirect "test@test.tld";}
-# rule:[imapflags]
-if header :matches "Subject" "^Test$" {
-    setflag "\\\\Seen";
-    addflag ["\\\\Answered","\\\\Deleted"];
-}
 ';
 
 $s = new rcube_sieve_script($txt);
@@ -61,7 +42,7 @@ echo $s->as_text();
 
 ?>
 --EXPECT--
-require ["fileinto","vacation","reject","relational","comparator-i;ascii-numeric","imapflags"];
+require ["fileinto","reject"];
 # rule:[spam]
 if header :contains "X-DSPAM-Result" "Spam"
 {
@@ -80,17 +61,6 @@ if anyof (not header :contains "Subject" "[test]", header :contains "Subject" "[
 	fileinto "test";
 	stop;
 }
-# rule:[test-vacation]
-if header :contains "Subject" "vacation"
-{
-	vacation :days 1 text:
-# test
-test test /* test */
-test
-.
-;
-	stop;
-}
 # rule:[comments]
 if true
 {
@@ -100,15 +70,4 @@ if true
 if size :over 5000K
 {
 	reject "Message over 5MB size limit. Please contact me before sending this.";
-}
-# rule:[redirect]
-if header :value "ge" :comparator "i;ascii-numeric" "X-Spam-score" "14"
-{
-	redirect "test@test.tld";
-}
-# rule:[imapflags]
-if header :matches "Subject" "^Test$"
-{
-	setflag "\\Seen";
-	addflag ["\\Answered","\\Deleted"];
 }
