@@ -597,9 +597,7 @@ class rcube_sieve_script
         }
 
         // ...and actions block
-        if ($tests) {
-            $actions = $this->_parse_actions($content);
-        }
+        $actions = $this->_parse_actions($content);
 
         if ($tests && $actions) {
             $result = array(

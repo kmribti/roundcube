@@ -33,8 +33,19 @@ if anyof (true) /* comment
 }
 # rule:[reject]
 if size :over 5000K {
-    reject "Message over 5MB size limit. Please contact me before sending this.";
+	reject "Message over 5MB size limit. Please contact me before sending this.";
 }
+# rule:[false]
+if false # size :over 5000K
+{
+	stop; /* rule disabled */
+}
+# rule:[true]
+if true
+{
+	stop;
+}
+fileinto "Test";
 ';
 
 $s = new rcube_sieve_script($txt);
@@ -71,3 +82,14 @@ if size :over 5000K
 {
 	reject "Message over 5MB size limit. Please contact me before sending this.";
 }
+# rule:[false]
+if false # size :over 5000K
+{
+	stop;
+}
+# rule:[true]
+if true
+{
+	stop;
+}
+fileinto "Test";
