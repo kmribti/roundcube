@@ -14,7 +14,7 @@ if header :matches "Subject" "^Test$" {
 }
 ';
 
-$s = new rcube_sieve_script($txt);
+$s = new rcube_sieve_script($txt, array('imapflags'));
 echo $s->as_text();
 
 ?>
