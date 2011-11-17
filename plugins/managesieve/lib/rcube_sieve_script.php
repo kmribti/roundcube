@@ -29,7 +29,6 @@ class rcube_sieve_script
 
     private $vars = array();        // "global" variables
     private $prefix = '';           // script header (comments)
-    private $capabilities = array(); // Sieve extensions supported by server
     private $supported = array(     // Sieve extensions supported by class
         'fileinto',                 // RFC5228
         'envelope',                 // RFC5228
@@ -56,12 +55,12 @@ class rcube_sieve_script
      */
     public function __construct($script, $capabilities=array())
     {
-        $this->capabilities = array_map('strtolower', (array) $capabilities);
+        $capabilities = array_map('strtolower', (array) $capabilities);
 
         // disable features by server capabilities
-        if (!empty($this->capabilities)) {
+        if (!empty($capabilities)) {
             foreach ($this->supported as $idx => $ext) {
-                if (!in_array($ext, $this->capabilities)) {
+                if (!in_array($ext, $capabilities)) {
                     unset($this->supported[$idx]);
                 }
             }
