@@ -1277,11 +1277,16 @@ class managesieve extends rcube_plugin
         // target input (TODO: lists)
 
         if (in_array($rule['test'], array('header', 'address', 'envelope'))) {
-            $tout .= $select_op->show(($rule['not'] ? 'not' : '').$rule['type']);
+            $test   = ($rule['not'] ? 'not' : '').($rule['type'] ? $rule['type'] : 'is');
             $target = $rule['arg2'];
         }
+        else if ($rule['test'] == 'body') {
+            $test   = ($rule['not'] ? 'not' : '').($rule['type'] ? $rule['type'] : 'is');
+            $target = $rule['arg'];
+        }
         else if ($rule['test'] == 'size') {
-            $tout .= $select_op->show();
+            $test   = '';
+            $target = '';
             if (preg_match('/^([0-9]+)(K|M|G)?$/', $rule['arg'], $matches)) {
                 $sizetarget = $matches[1];
                 $sizeitem = $matches[2];
@@ -1292,10 +1297,11 @@ class managesieve extends rcube_plugin
             }
         }
         else {
-            $tout .= $select_op->show(($rule['not'] ? 'not' : '').$rule['test']);
-            $target = $rule['test'] == 'body' ? $rule['arg'] : '';
+            $test   = ($rule['not'] ? 'not' : '').$rule['test'];
+            $target =  '';
         }
 
+        $tout .= $select_op->show($test);
         $tout .= '<input type="text" name="_rule_target[]" id="rule_target' .$id. '"
             value="' .Q($target). '" size="20" ' . $this->error_class($id, 'test', 'target', 'rule_target')
             . ' style="display:' . ($rule['test']!='size' && $rule['test'] != 'exists' ? 'inline' : 'none') . '" />'."\n";

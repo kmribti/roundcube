@@ -1,4 +1,6 @@
-* version 5.0-rc1 [2011-11-17]
+- Fixed setting test type to :is when none is specified
+
+* version 5.0-rc1 [2011-]
 -----------------------------------------------------------
 - Fixed sorting of scripts, scripts including aware of the sort order
 - Fixed import of rules with unsupported tests
