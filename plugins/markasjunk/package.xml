@@ -43,9 +43,11 @@
 			<file name="localization/es_ES.inc" role="data"></file>
 			<file name="localization/et_EE.inc" role="data"></file>
 			<file name="localization/gl_ES.inc" role="data"></file>
+			<file name="localization/it_IT.inc" role="data"></file>
 			<file name="localization/ja_JP.inc" role="data"></file>
 			<file name="localization/pl_PL.inc" role="data"></file>
 			<file name="localization/ru_RU.inc" role="data"></file>
+			<file name="localization/sk_SK.inc" role="data"></file>
 			<file name="localization/sv_SE.inc" role="data"></file>
 			<file name="localization/zh_TW.inc" role="data"></file>
 			<file name="skins/default/junk_act.png" role="data"></file>

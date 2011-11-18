@@ -17,8 +17,7 @@
 		<email>alec@alec.pl</email>
 		<active>yes</active>
 	</lead>
-	<date></date>
-	<time></time>
+	<date>2011-11-17</date>
 	<version>
 		<release>5.0</release>
 		<api>5.0</api>
@@ -28,7 +27,7 @@
 		<api>stable</api>
 	</stability>
 	<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPLv2</license>
-	<notes></notes>
+    <notes>-</notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
 			<file name="managesieve.php" role="php">
