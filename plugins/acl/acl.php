@@ -3,7 +3,7 @@
 /**
  * Folders Access Control Lists Management (RFC4314, RFC2086)
  *
- * @version 0.6.3
+ * @version @package_version@
  * @author Aleksander Machniak <alec@alec.pl>
  *
  *
