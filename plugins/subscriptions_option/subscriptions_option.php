@@ -19,7 +19,7 @@
  * 'dont_override' list and the global option has changed, don't expect
  * to see the change until the folder list cache is refreshed.
  *
- * @version 1.1
+ * @version @package_version@
  * @author Ziba Scott
  */
 class subscriptions_option extends rcube_plugin

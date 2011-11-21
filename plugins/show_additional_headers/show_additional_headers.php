@@ -9,7 +9,7 @@
  * Enable the plugin in config/main.inc.php and add your desired headers:
  *   $rcmail_config['show_additional_headers'] = array('User-Agent');
  *
- * @version 1.0
+ * @version @package_version@
  * @author Thomas Bruederli
  * @website http://roundcube.net
  */
