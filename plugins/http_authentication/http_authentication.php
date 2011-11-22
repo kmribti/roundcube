@@ -11,7 +11,7 @@
  *
  * See logout.html (in this directory) for an example how HTTP auth can be cleared.
  *
- * @version 1.4
+ * @version @package_version@
  * @author Thomas Bruederli
  */
 class http_authentication extends rcube_plugin

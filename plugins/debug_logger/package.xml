@@ -3,28 +3,20 @@
     http://pear.php.net/dtd/tasks-1.0.xsd
     http://pear.php.net/dtd/package-2.0
     http://pear.php.net/dtd/package-2.0.xsd">
-	<name>filesystem_attachments</name>
+	<name>debug_logger</name>
 	<channel>pear.roundcube.net</channel>
-	<summary>Default database storage for uploaded attachments</summary>
+	<summary>Additional debugging logs</summary>
 	<description>
-	    This is a core plugin which provides basic, filesystem based
-        attachment temporary file handling. This includes storing
-        attachments of messages currently being composed, writing attachments
-        to disk when drafts with attachments are re-opened and writing
-        attachments to disk for inline display in current html compositions.
+	    Enhanced logging for debugging purposes. It is not recommened
+        to be enabled on production systems without testing because of
+        the somewhat increased memory, cpu and disk i/o overhead.
 	</description>
 	<lead>
-		<name>Thomas Bruederli</name>
-		<user>thomasb</user>
-		<email>roundcube@gmail.com</email>
-		<active>yes</active>
-	</lead>
-	<developer>
 		<name>Ziba Scott</name>
 		<user>ziba</user>
 		<email>ziba@umich.edu</email>
 		<active>yes</active>
-	</developer>
+	</lead>
 	<date>2011-11-21</date>
 	<version>
 		<release>1.0</release>
@@ -38,7 +30,11 @@
 	<notes>-</notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
-			<file name="filesystem_attachments.php" role="php">
+			<file name="debug_logger.php" role="php">
+				<tasks:replace from="@name@" to="name" type="package-info"/>
+				<tasks:replace from="@package_version@" to="version" type="package-info"/>
+			</file>
+			<file name="runlog/runlog.php" role="php">
 				<tasks:replace from="@name@" to="name" type="package-info"/>
 				<tasks:replace from="@package_version@" to="version" type="package-info"/>
 			</file>

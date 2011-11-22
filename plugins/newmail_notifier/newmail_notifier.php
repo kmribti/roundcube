@@ -3,13 +3,13 @@
 /**
  * New Mail Notifier plugin
  *
- * Supports two methods of notification:
+ * Supports three methods of notification:
  * 1. Basic - focus browser window and change favicon
  * 2. Sound - play wav file
  * 3. Desktop - display desktop notification (using webkitNotifications feature,
  *              supported by Chrome and Firefox with 'HTML5 Notifications' plugin)
  *
- * @version 0.3
+ * @version @package_version@
  * @author Aleksander Machniak <alec@alec.pl>
  *
  *

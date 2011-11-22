@@ -3,31 +3,21 @@
     http://pear.php.net/dtd/tasks-1.0.xsd
     http://pear.php.net/dtd/package-2.0
     http://pear.php.net/dtd/package-2.0.xsd">
-	<name>filesystem_attachments</name>
+	<name>new_user_identity</name>
 	<channel>pear.roundcube.net</channel>
-	<summary>Default database storage for uploaded attachments</summary>
+	<summary>Populates a new user's default identity from LDAP on their first visit.</summary>
 	<description>
-	    This is a core plugin which provides basic, filesystem based
-        attachment temporary file handling. This includes storing
-        attachments of messages currently being composed, writing attachments
-        to disk when drafts with attachments are re-opened and writing
-        attachments to disk for inline display in current html compositions.
+	    Populates a new user's default identity from LDAP on their first visit.
 	</description>
 	<lead>
-		<name>Thomas Bruederli</name>
-		<user>thomasb</user>
-		<email>roundcube@gmail.com</email>
+		<name>Aleksander Machniak</name>
+		<user>alec</user>
+		<email>alec@alec.pl</email>
 		<active>yes</active>
 	</lead>
-	<developer>
-		<name>Ziba Scott</name>
-		<user>ziba</user>
-		<email>ziba@umich.edu</email>
-		<active>yes</active>
-	</developer>
 	<date>2011-11-21</date>
 	<version>
-		<release>1.0</release>
+		<release>1.0.5</release>
 		<api>1.0</api>
 	</version>
 	<stability>
@@ -38,7 +28,7 @@
 	<notes>-</notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
-			<file name="filesystem_attachments.php" role="php">
+			<file name="new_user_identity.php" role="php">
 				<tasks:replace from="@name@" to="name" type="package-info"/>
 				<tasks:replace from="@package_version@" to="version" type="package-info"/>
 			</file>

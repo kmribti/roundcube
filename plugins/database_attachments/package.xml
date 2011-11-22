@@ -20,7 +20,9 @@
 	</lead>
 	<developer>
 		<name>Ziba Scott</name>
+		<user>ziba</user>
 		<email>ziba@umich.edu</email>
+		<active>yes</active>
 	</developer>
 	<date>2011-11-21</date>
 	<version>
