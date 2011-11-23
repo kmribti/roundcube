@@ -15,7 +15,7 @@
 		<email>alec@alec.pl</email>
 		<active>yes</active>
 	</lead>
-	<date>2011-10-06</date>
+	<date>2011-11-23</date>
 	<version>
 		<release>2.4</release>
 		<api>1.6</api>
@@ -27,6 +27,7 @@
 	<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPLv2</license>
 	<notes>
 - Added option to use punycode or unicode for domain names (#1488103)
+- Save Samba password hashes in capital letters (#1488197)
     </notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">
