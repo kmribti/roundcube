@@ -290,8 +290,8 @@ rcube_webmail.prototype.managesieve_updatelist = function(action, o)
         td.innerHTML = el.name;
         td.className = 'name';
         tr.id = 'rcmrow' + el.id;
-        if (el.class)
-            tr.className = el.class
+        if (el['class'])
+            tr.className = el['class'];
         tr.appendChild(td);
 
         list.insert_row(tr);
