@@ -299,6 +299,9 @@ rcube_webmail.prototype.acl_init_form = function(id)
         else
             type = id;
     }
+    // mark read (lrs) rights by default
+    else
+        li_elements.filter(function() { return this.id.match(/^acl([lrs]|read)$/); }).prop('checked', true);
 
     name_input.val(val);
     $('input[value='+type+']').prop('checked', true);
