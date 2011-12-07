@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T15:20:28+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ja_JP\n"
@@ -461,10 +460,6 @@ msgstr "SMTP Error ($code): 宛先 \"$to\" を追加できません ($msg)"
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "SMTP Error: 宛先の一覧を解析できません。"
 
-#: program/localization/ja_JP/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "SMTP エラー: 配送状況通知をサポートしていません。"
-
 #: program/localization/ja_JP/messages.inc:smtperror
 msgid "SMTP Error: $msg"
 msgstr "SMTP エラー: $msg"
@@ -581,3 +576,7 @@ msgstr "メッセージにスペル エラーを見つけました。"
 #: program/localization/ja_JP/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
 msgstr "選択した親フォルダーへの作成、移動に失敗しました。アクセス権限がありません。"
+
+#: program/localization/ja_JP/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "その処理をするにはメッセージ部分が大きすぎます。"

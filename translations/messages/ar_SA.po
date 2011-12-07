@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T15:20:32+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ar_SA\n"
@@ -139,6 +138,11 @@ msgstr "لم يعثر على أي مراسل"
 msgid "The requested contact was not found."
 msgstr "تعذر العثور على المراسل المطلوب"
 
+#: program/localization/ar_SA/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "اكتب بعض كلمات البحث للعثور على"
+"المُراسلين"
+
 #: program/localization/ar_SA/messages.inc:sendingfailed
 msgid "Failed to send message."
 msgstr "فشل إرسال الرسالة"
@@ -191,6 +195,10 @@ msgstr "هل تريد حقاً حذف هذا المجلد؟"
 msgid "Do you really want to delete all messages in this folder?"
 msgstr "هل تريد حقاً حذف جميع الرسائل في هذا"
 "المجلد؟"
+
+#: program/localization/ar_SA/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "جاري حذف المُراسلين..."
 
 #: program/localization/ar_SA/messages.inc:groupdeleting
 msgid "Deleting group..."
@@ -470,10 +478,6 @@ msgstr "خطأ SMTP ($code): تعذرت إضافة المستلم \"$to\" ($msg)
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "خطأ SMTP: تعذرت قراءة قائمة المرسل إليهم"
 
-#: program/localization/ar_SA/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "خطأ SMTP: لا يوجد دعم لتنويهات حالة التوصيل"
-
 #: program/localization/ar_SA/messages.inc:smtperror
 msgid "SMTP Error: $msg"
 msgstr "خطأ SMTP: $msg"
@@ -559,6 +563,11 @@ msgid "Enter at least $min characters for autocompletion."
 msgstr "إكتب $min أحرف على الأقل للحصول على التكملة"
 "التلقائية"
 
+#: program/localization/ar_SA/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "هناك المزيد من النتائج المطابقة. رجاء"
+"اكتب كلمات بحث أكثر."
+
 #: program/localization/ar_SA/messages.inc:namecannotbeempty
 msgid "Name cannot be empty."
 msgstr "لا يمكن ترك الإسم فارغاً"
@@ -587,3 +596,7 @@ msgstr "عُثر على أخطاء إملائية في الرسالة"
 msgid "Unable to create/move folder into selected parent folder. No access rights."
 msgstr "تعذر إنشاء/نقل المجلد إلى المجلد المحدد."
 "ليست لديك الصلاحية."
+
+#: program/localization/ar_SA/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "جزء الرسالة أكبر بكثير مما يمكن معالجته."

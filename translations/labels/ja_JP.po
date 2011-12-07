@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T15:20:28+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ja_JP\n"
@@ -694,6 +693,10 @@ msgstr "画像の表示"
 msgid "Always show images from $sender"
 msgstr "$sender から届いた画像は常に表示"
 
+#: program/localization/ja_JP/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "これは下書きのメッセージです。"
+
 #: program/localization/ja_JP/labels.inc:htmltoggle
 msgid "HTML"
 msgstr "HTML"
@@ -1096,6 +1099,10 @@ msgstr "完了"
 msgid "Settings for"
 msgstr "次の設定:"
 
+#: program/localization/ja_JP/labels.inc:about
+msgid "About"
+msgstr "Roundcube Webmail について"
+
 #: program/localization/ja_JP/labels.inc:preferences
 msgid "Preferences"
 msgstr "設定"
@@ -1432,6 +1439,10 @@ msgstr "返信されたメールを返信元メールと同じフォルダに保
 msgid "Add new contacts to the selected addressbook"
 msgstr "次のアドレス帳に新規連絡先を追加する"
 
+#: program/localization/ja_JP/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "自動補完で代替メールアドレスを飛ばす"
+
 #: program/localization/ja_JP/labels.inc:spellcheckbeforesend
 msgid "Check spelling before sending a message"
 msgstr "メールの送信前にスペル チェック"
@@ -1547,6 +1558,26 @@ msgstr "降順で並び替え"
 #: program/localization/ja_JP/labels.inc:undo
 msgid "Undo"
 msgstr "取り消し"
+
+#: program/localization/ja_JP/labels.inc:plugin
+msgid "Plugin"
+msgstr "プラグイン"
+
+#: program/localization/ja_JP/labels.inc:version
+msgid "Version"
+msgstr "バージョン"
+
+#: program/localization/ja_JP/labels.inc:source
+msgid "Source"
+msgstr "ソース"
+
+#: program/localization/ja_JP/labels.inc:license
+msgid "License"
+msgstr "ライセンス"
+
+#: program/localization/ja_JP/labels.inc:support
+msgid "Get support"
+msgstr "ヘルプを受ける"
 
 #: program/localization/ja_JP/labels.inc:B
 msgid "B"

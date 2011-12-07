@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T15:20:32+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ar_SA\n"
@@ -694,6 +693,10 @@ msgstr "إظهار الصور"
 msgid "Always show images from $sender"
 msgstr "دائماً أظهر الصّور القادمة من $sender"
 
+#: program/localization/ar_SA/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "هذه مسودّة رسالة"
+
 #: program/localization/ar_SA/labels.inc:htmltoggle
 msgid "HTML"
 msgstr "HTML"
@@ -1099,6 +1102,10 @@ msgstr "تم"
 msgid "Settings for"
 msgstr "إعدادات"
 
+#: program/localization/ar_SA/labels.inc:about
+msgid "About"
+msgstr "نبذة"
+
 #: program/localization/ar_SA/labels.inc:preferences
 msgid "Preferences"
 msgstr "التفضيلات"
@@ -1142,6 +1149,14 @@ msgstr "ترميز المحارف الافتراضي"
 #: program/localization/ar_SA/labels.inc:htmlmessage
 msgid "HTML Message"
 msgstr "رسالة بنسق HTML"
+
+#: program/localization/ar_SA/labels.inc:dateformat
+msgid "Date format"
+msgstr "نسق التاريخ"
+
+#: program/localization/ar_SA/labels.inc:timeformat
+msgid "Time format"
+msgstr "نسق الوقت"
 
 #: program/localization/ar_SA/labels.inc:prettydate
 msgid "Pretty dates"
@@ -1437,6 +1452,11 @@ msgid "Add new contacts to the selected addressbook"
 msgstr "أضف المراسلين الجديد إلى دفتر العناوين"
 "المحدد"
 
+#: program/localization/ar_SA/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "تجاهل عنوان البريد الإلكتروني البديل في"
+"التكملة التلقائية"
+
 #: program/localization/ar_SA/labels.inc:spellcheckbeforesend
 msgid "Check spelling before sending a message"
 msgstr "تحقق من الإملاء قبل إرسال الرسائل"
@@ -1552,6 +1572,26 @@ msgstr "ترتيب تنازلي"
 #: program/localization/ar_SA/labels.inc:undo
 msgid "Undo"
 msgstr "تراجع"
+
+#: program/localization/ar_SA/labels.inc:plugin
+msgid "Plugin"
+msgstr "إضافة"
+
+#: program/localization/ar_SA/labels.inc:version
+msgid "Version"
+msgstr "النسخة"
+
+#: program/localization/ar_SA/labels.inc:source
+msgid "Source"
+msgstr "المصدر"
+
+#: program/localization/ar_SA/labels.inc:license
+msgid "License"
+msgstr "الترخيص"
+
+#: program/localization/ar_SA/labels.inc:support
+msgid "Get support"
+msgstr "احصل على الدعم الفني"
 
 #: program/localization/ar_SA/labels.inc:B
 msgid "B"
