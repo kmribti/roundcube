@@ -1,0 +1,212 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/uk_UA.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: uk_UA\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/uk_UA.inc:filters
+msgid "Filters"
+msgstr "Фільтри"
+
+#: plugins/managesieve/localization/uk_UA.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Керування фільтрами вхідної пошти"
+
+#: plugins/managesieve/localization/uk_UA.inc:filtername
+msgid "Filter name"
+msgstr "Назва фільтру"
+
+#: plugins/managesieve/localization/uk_UA.inc:newfilter
+msgid "New filter"
+msgstr "Новий фільтр"
+
+#: plugins/managesieve/localization/uk_UA.inc:filteradd
+msgid "Add filter"
+msgstr "Додати фільтр"
+
+#: plugins/managesieve/localization/uk_UA.inc:filterdel
+msgid "Delete filter"
+msgstr "Видалити фільтр"
+
+#: plugins/managesieve/localization/uk_UA.inc:moveup
+msgid "Move up"
+msgstr "Пересунути вгору"
+
+#: plugins/managesieve/localization/uk_UA.inc:movedown
+msgid "Move down"
+msgstr "Пересунути вниз"
+
+#: plugins/managesieve/localization/uk_UA.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "задовольняє усім наступним умовам"
+
+#: plugins/managesieve/localization/uk_UA.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "задовольняє будь-якій з умов"
+
+#: plugins/managesieve/localization/uk_UA.inc:filterany
+msgid "all messages"
+msgstr "всі повідомлення"
+
+#: plugins/managesieve/localization/uk_UA.inc:filtercontains
+msgid "contains"
+msgstr "містить"
+
+#: plugins/managesieve/localization/uk_UA.inc:filternotcontains
+msgid "not contains"
+msgstr "не містить"
+
+#: plugins/managesieve/localization/uk_UA.inc:filteris
+msgid "is equal to"
+msgstr "ідентичний до"
+
+#: plugins/managesieve/localization/uk_UA.inc:filterisnot
+msgid "is not equal to"
+msgstr "не ідентичний до"
+
+#: plugins/managesieve/localization/uk_UA.inc:filterexists
+msgid "exists"
+msgstr "існує"
+
+#: plugins/managesieve/localization/uk_UA.inc:filternotexists
+msgid "not exists"
+msgstr "не існує"
+
+#: plugins/managesieve/localization/uk_UA.inc:filterunder
+msgid "under"
+msgstr "менше, ніж"
+
+#: plugins/managesieve/localization/uk_UA.inc:filterover
+msgid "over"
+msgstr "більше, ніж"
+
+#: plugins/managesieve/localization/uk_UA.inc:addrule
+msgid "Add rule"
+msgstr "Додати правило"
+
+#: plugins/managesieve/localization/uk_UA.inc:delrule
+msgid "Delete rule"
+msgstr "Видалити правило"
+
+#: plugins/managesieve/localization/uk_UA.inc:messagemoveto
+msgid "Move message to"
+msgstr "Пересунути повідомлення до"
+
+#: plugins/managesieve/localization/uk_UA.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Перенаправити повідомлення до"
+
+#: plugins/managesieve/localization/uk_UA.inc:messagereply
+msgid "Reply with message"
+msgstr "Автовідповідач"
+
+#: plugins/managesieve/localization/uk_UA.inc:messagedelete
+msgid "Delete message"
+msgstr "Видалити повідомлення"
+
+#: plugins/managesieve/localization/uk_UA.inc:messagediscard
+msgid "Discard with message"
+msgstr "Відхилити з повідомленням"
+
+#: plugins/managesieve/localization/uk_UA.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Для вхідної пошти"
+
+#: plugins/managesieve/localization/uk_UA.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "... виконати дію:"
+
+#: plugins/managesieve/localization/uk_UA.inc:add
+msgid "Add"
+msgstr "Додати"
+
+#: plugins/managesieve/localization/uk_UA.inc:del
+msgid "Delete"
+msgstr "Видалити"
+
+#: plugins/managesieve/localization/uk_UA.inc:sender
+msgid "Sender"
+msgstr "Відправник"
+
+#: plugins/managesieve/localization/uk_UA.inc:recipient
+msgid "Recipient"
+msgstr "Отримувач"
+
+#: plugins/managesieve/localization/uk_UA.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Додатковий список адрес отримувачів"
+"(розділених комою)"
+
+#: plugins/managesieve/localization/uk_UA.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Як часто повторювати (у днях):"
+
+#: plugins/managesieve/localization/uk_UA.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Текст повідомлення:"
+
+#: plugins/managesieve/localization/uk_UA.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Зупинити перевірку правил"
+
+#: plugins/managesieve/localization/uk_UA.inc:filterset
+msgid "Filters set"
+msgstr "Набір фільтрів"
+
+#: plugins/managesieve/localization/uk_UA.inc:filtersetadd
+msgid "Add filters set"
+msgstr "Додати набір фільтрів"
+
+#: plugins/managesieve/localization/uk_UA.inc:filtersetdel
+msgid "Delete current filters set"
+msgstr "Видалити поточний набір"
+
+#: plugins/managesieve/localization/uk_UA.inc:filtersetact
+msgid "Activate current filters set"
+msgstr "Активувати поточний набір"
+
+#: plugins/managesieve/localization/uk_UA.inc:filtersetget
+msgid "filtersetget"
+msgstr "Зберегти набір у текстовому форматі"
+
+#: plugins/managesieve/localization/uk_UA.inc:filterdef
+msgid "Filter definition"
+msgstr "Параметри фільтру"
+
+#: plugins/managesieve/localization/uk_UA.inc:filtersetname
+msgid "Filters set name"
+msgstr "Назва набору фільтрів"
+
+#: plugins/managesieve/localization/uk_UA.inc:newfilterset
+msgid "New filters set"
+msgstr "Новий набір фільтрів"
+
+#: plugins/managesieve/localization/uk_UA.inc:active
+msgid "active"
+msgstr "активний"
+
+#: plugins/managesieve/localization/uk_UA.inc:none
+msgid "none"
+msgstr "нічого"
+
+#: plugins/managesieve/localization/uk_UA.inc:fromset
+msgid "from set"
+msgstr "з набору"
+
+#: plugins/managesieve/localization/uk_UA.inc:fromfile
+msgid "from file"
+msgstr "з файлу"
+
+#: plugins/managesieve/localization/uk_UA.inc:filterdisabled
+msgid "Filter disabled"
+msgstr "Фільтр вимкнено"

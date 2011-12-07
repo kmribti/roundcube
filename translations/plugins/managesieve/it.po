@@ -1,0 +1,215 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/it_IT.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: it_IT\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/it_IT.inc:filters
+msgid "Filters"
+msgstr "Filtri"
+
+#: plugins/managesieve/localization/it_IT.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Gestione dei filtri per la posta in arrivo"
+
+#: plugins/managesieve/localization/it_IT.inc:filtername
+msgid "Filter name"
+msgstr "Nome del filtro"
+
+#: plugins/managesieve/localization/it_IT.inc:newfilter
+msgid "New filter"
+msgstr "Nuovo filtro"
+
+#: plugins/managesieve/localization/it_IT.inc:filteradd
+msgid "Add filter"
+msgstr "Aggiungi filtro"
+
+#: plugins/managesieve/localization/it_IT.inc:filterdel
+msgid "Delete filter"
+msgstr "Elimina filtro"
+
+#: plugins/managesieve/localization/it_IT.inc:moveup
+msgid "Move up"
+msgstr "Sposta sopra"
+
+#: plugins/managesieve/localization/it_IT.inc:movedown
+msgid "Move down"
+msgstr "Sposta sotto"
+
+#: plugins/managesieve/localization/it_IT.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "che soddisfa tutte le regole seguenti"
+
+#: plugins/managesieve/localization/it_IT.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "che soddisfa una qualsiasi delle regole seguenti"
+
+#: plugins/managesieve/localization/it_IT.inc:filterany
+msgid "all messages"
+msgstr "tutti i messaggi"
+
+#: plugins/managesieve/localization/it_IT.inc:filtercontains
+msgid "contains"
+msgstr "contiene"
+
+#: plugins/managesieve/localization/it_IT.inc:filternotcontains
+msgid "not contains"
+msgstr "non contiene"
+
+#: plugins/managesieve/localization/it_IT.inc:filteris
+msgid "is equal to"
+msgstr "è uguale a"
+
+#: plugins/managesieve/localization/it_IT.inc:filterisnot
+msgid "is not equal to"
+msgstr "è diverso da"
+
+#: plugins/managesieve/localization/it_IT.inc:filterexists
+msgid "exists"
+msgstr "esiste"
+
+#: plugins/managesieve/localization/it_IT.inc:filternotexists
+msgid "not exists"
+msgstr "non esiste"
+
+#: plugins/managesieve/localization/it_IT.inc:filterunder
+msgid "under"
+msgstr "sotto"
+
+#: plugins/managesieve/localization/it_IT.inc:filterover
+msgid "over"
+msgstr "sopra"
+
+#: plugins/managesieve/localization/it_IT.inc:addrule
+msgid "Add rule"
+msgstr "Aggiungi regola"
+
+#: plugins/managesieve/localization/it_IT.inc:delrule
+msgid "Delete rule"
+msgstr "Elimina regola"
+
+#: plugins/managesieve/localization/it_IT.inc:messagemoveto
+msgid "Move message to"
+msgstr "Sposta il messaggio in"
+
+#: plugins/managesieve/localization/it_IT.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Inoltra il messaggio a"
+
+#: plugins/managesieve/localization/it_IT.inc:messagereply
+msgid "Reply with message"
+msgstr "Rispondi con il messaggio"
+
+#: plugins/managesieve/localization/it_IT.inc:messagedelete
+msgid "Delete message"
+msgstr "Elimina il messaggio"
+
+#: plugins/managesieve/localization/it_IT.inc:messagediscard
+msgid "Discard with message"
+msgstr "Rifiuta con messaggio"
+
+#: plugins/managesieve/localization/it_IT.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Per la posta in arrivo"
+
+#: plugins/managesieve/localization/it_IT.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "...esegui le seguenti azioni:"
+
+#: plugins/managesieve/localization/it_IT.inc:add
+msgid "Add"
+msgstr "Aggiungi"
+
+#: plugins/managesieve/localization/it_IT.inc:del
+msgid "Delete"
+msgstr "Elimina"
+
+#: plugins/managesieve/localization/it_IT.inc:sender
+msgid "Sender"
+msgstr "Mittente"
+
+#: plugins/managesieve/localization/it_IT.inc:recipient
+msgid "Recipient"
+msgstr "Destinatario"
+
+#: plugins/managesieve/localization/it_IT.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Lista di indirizzi e-mail di destinatari addizionali (separati da virgola):"
+
+#: plugins/managesieve/localization/it_IT.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Ogni quanti giorni ribadire il messaggio allo stesso mittente"
+
+#: plugins/managesieve/localization/it_IT.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Corpo del messaggio (dettagli relativi all'assenza):"
+
+#: plugins/managesieve/localization/it_IT.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Non valutare le regole successive"
+
+#: plugins/managesieve/localization/it_IT.inc:filterset
+msgid "Filters set"
+msgstr "Gruppi di filtri"
+
+#: plugins/managesieve/localization/it_IT.inc:filtersetadd
+msgid "Add filters set"
+msgstr "Aggiungi gruppo"
+
+#: plugins/managesieve/localization/it_IT.inc:filtersetdel
+msgid "Delete current filters set"
+msgstr "Cancella gruppo selezionato"
+
+#: plugins/managesieve/localization/it_IT.inc:filtersetact
+msgid "Activate current filters set"
+msgstr "Attiva gruppo selezionato"
+
+#: plugins/managesieve/localization/it_IT.inc:filtersetdeact
+msgid "Deactivate current filters set"
+msgstr "Disattiva gruppo selezionato"
+
+#: plugins/managesieve/localization/it_IT.inc:filtersetget
+msgid "filtersetget"
+msgstr "Scarica filtri come testo"
+
+#: plugins/managesieve/localization/it_IT.inc:filterdef
+msgid "Filter definition"
+msgstr "Definizione del filtro"
+
+#: plugins/managesieve/localization/it_IT.inc:filtersetname
+msgid "Filters set name"
+msgstr "Nome del Gruppo di filtri"
+
+#: plugins/managesieve/localization/it_IT.inc:newfilterset
+msgid "New filters set"
+msgstr "Nuovo gruppo di filri"
+
+#: plugins/managesieve/localization/it_IT.inc:active
+msgid "active"
+msgstr "attivo"
+
+#: plugins/managesieve/localization/it_IT.inc:none
+msgid "none"
+msgstr "nessuno"
+
+#: plugins/managesieve/localization/it_IT.inc:fromset
+msgid "from set"
+msgstr "dal set"
+
+#: plugins/managesieve/localization/it_IT.inc:fromfile
+msgid "from file"
+msgstr "dal file"
+
+#: plugins/managesieve/localization/it_IT.inc:filterdisabled
+msgid "Filter disabled"
+msgstr "Filtro disabilitato"

@@ -1,0 +1,159 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/cs_CZ.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: cs_CZ\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filters
+msgid "Filters"
+msgstr "Filtry"
+
+#: plugins/managesieve/localization/cs_CZ.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Nastavení filtrů"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filtername
+msgid "Filter name"
+msgstr "Název filtru"
+
+#: plugins/managesieve/localization/cs_CZ.inc:newfilter
+msgid "New filter"
+msgstr "Nový filtr"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filteradd
+msgid "Add filter"
+msgstr "Přidej filtr"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filterdel
+msgid "Delete filter"
+msgstr "Smaž filtr"
+
+#: plugins/managesieve/localization/cs_CZ.inc:moveup
+msgid "Move up"
+msgstr "Posunout nahoru"
+
+#: plugins/managesieve/localization/cs_CZ.inc:movedown
+msgid "Move down"
+msgstr "Posunout dolů"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "Odpovídají všechny pravidla"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "Odpovídá kterékoliv pravidlo"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filterany
+msgid "all messages"
+msgstr "Všechny zprávy"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filtercontains
+msgid "contains"
+msgstr "obsahuje"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filternotcontains
+msgid "not contains"
+msgstr "neobsahuje"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filteris
+msgid "is equal to"
+msgstr "odpovídá"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filterisnot
+msgid "is not equal to"
+msgstr "neodpovídá"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filterexists
+msgid "exists"
+msgstr "existuje"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filternotexists
+msgid "not exists"
+msgstr "neexistuje"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filterunder
+msgid "under"
+msgstr "pod"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filterover
+msgid "over"
+msgstr "nad"
+
+#: plugins/managesieve/localization/cs_CZ.inc:addrule
+msgid "Add rule"
+msgstr "Přidej pravidlo"
+
+#: plugins/managesieve/localization/cs_CZ.inc:delrule
+msgid "Delete rule"
+msgstr "Smaž pravidlo"
+
+#: plugins/managesieve/localization/cs_CZ.inc:messagemoveto
+msgid "Move message to"
+msgstr "Přesuň zprávu do"
+
+#: plugins/managesieve/localization/cs_CZ.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Přeposlat zprávu na"
+
+#: plugins/managesieve/localization/cs_CZ.inc:messagereply
+msgid "Reply with message"
+msgstr "Odpovědět se zprávou"
+
+#: plugins/managesieve/localization/cs_CZ.inc:messagedelete
+msgid "Delete message"
+msgstr "Smazat zprávu"
+
+#: plugins/managesieve/localization/cs_CZ.inc:messagediscard
+msgid "Discard with message"
+msgstr "Smazat se zprávou"
+
+#: plugins/managesieve/localization/cs_CZ.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Pravidla pro příchozí zprávu:"
+
+#: plugins/managesieve/localization/cs_CZ.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "...vykonej následující akce:"
+
+#: plugins/managesieve/localization/cs_CZ.inc:add
+msgid "Add"
+msgstr "Přidej"
+
+#: plugins/managesieve/localization/cs_CZ.inc:del
+msgid "Delete"
+msgstr "Smaž"
+
+#: plugins/managesieve/localization/cs_CZ.inc:sender
+msgid "Sender"
+msgstr "Odesílatel"
+
+#: plugins/managesieve/localization/cs_CZ.inc:recipient
+msgid "Recipient"
+msgstr "Příjemce"
+
+#: plugins/managesieve/localization/cs_CZ.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Seznam příjemců, kterým nebude zpráva odeslána (oddělené čárkou):"
+
+#: plugins/managesieve/localization/cs_CZ.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Počet dnů mezi automatickými odpověďmi:"
+
+#: plugins/managesieve/localization/cs_CZ.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Zpráva (Důvod nepřítomnosti):"
+
+#: plugins/managesieve/localization/cs_CZ.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Zastavit pravidla"

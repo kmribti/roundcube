@@ -1,0 +1,223 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/ja_JP.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ja_JP\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/ja_JP.inc:filters
+msgid "Filters"
+msgstr "フィルター"
+
+#: plugins/managesieve/localization/ja_JP.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "受信メールのフィルターの管理"
+
+#: plugins/managesieve/localization/ja_JP.inc:filtername
+msgid "Filter name"
+msgstr "フィルターの名前"
+
+#: plugins/managesieve/localization/ja_JP.inc:newfilter
+msgid "New filter"
+msgstr "新規フィルター"
+
+#: plugins/managesieve/localization/ja_JP.inc:filteradd
+msgid "Add filter"
+msgstr "フィルターの追加"
+
+#: plugins/managesieve/localization/ja_JP.inc:filterdel
+msgid "Delete filter"
+msgstr "フィルターの削除"
+
+#: plugins/managesieve/localization/ja_JP.inc:moveup
+msgid "Move up"
+msgstr "上に移動"
+
+#: plugins/managesieve/localization/ja_JP.inc:movedown
+msgid "Move down"
+msgstr "下に移動"
+
+#: plugins/managesieve/localization/ja_JP.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "次のルールすべてに一致"
+
+#: plugins/managesieve/localization/ja_JP.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "次のルールのどれかに一致"
+
+#: plugins/managesieve/localization/ja_JP.inc:filterany
+msgid "all messages"
+msgstr "全メッセージ"
+
+#: plugins/managesieve/localization/ja_JP.inc:filtercontains
+msgid "contains"
+msgstr "含む"
+
+#: plugins/managesieve/localization/ja_JP.inc:filternotcontains
+msgid "not contains"
+msgstr "含まない"
+
+#: plugins/managesieve/localization/ja_JP.inc:filteris
+msgid "is equal to"
+msgstr "次と一致する"
+
+#: plugins/managesieve/localization/ja_JP.inc:filterisnot
+msgid "is not equal to"
+msgstr "次と一致しない"
+
+#: plugins/managesieve/localization/ja_JP.inc:filterexists
+msgid "exists"
+msgstr "存在する"
+
+#: plugins/managesieve/localization/ja_JP.inc:filternotexists
+msgid "not exists"
+msgstr "存在しない"
+
+#: plugins/managesieve/localization/ja_JP.inc:filterunder
+msgid "under"
+msgstr "より上"
+
+#: plugins/managesieve/localization/ja_JP.inc:filterover
+msgid "over"
+msgstr "より下"
+
+#: plugins/managesieve/localization/ja_JP.inc:addrule
+msgid "Add rule"
+msgstr "ルールの追加"
+
+#: plugins/managesieve/localization/ja_JP.inc:delrule
+msgid "Delete rule"
+msgstr "ルールの削除"
+
+#: plugins/managesieve/localization/ja_JP.inc:messagemoveto
+msgid "Move message to"
+msgstr "次にメッセージを移動する"
+
+#: plugins/managesieve/localization/ja_JP.inc:messageredirect
+msgid "Redirect message to"
+msgstr "次のメールアドレスに転送 (リダイレクト)"
+
+#: plugins/managesieve/localization/ja_JP.inc:messagecopyto
+msgid "Copy message to"
+msgstr "次にメッセージをコピーする"
+
+#: plugins/managesieve/localization/ja_JP.inc:messagesendcopy
+msgid "Send message copy to"
+msgstr "次にメッセージのコピーを送信する"
+
+#: plugins/managesieve/localization/ja_JP.inc:messagereply
+msgid "Reply with message"
+msgstr "メッセージに返信する"
+
+#: plugins/managesieve/localization/ja_JP.inc:messagedelete
+msgid "Delete message"
+msgstr "メッセージを削除する"
+
+#: plugins/managesieve/localization/ja_JP.inc:messagediscard
+msgid "Discard with message"
+msgstr "メッセージを破棄する"
+
+#: plugins/managesieve/localization/ja_JP.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "受信メールへの処理:"
+
+#: plugins/managesieve/localization/ja_JP.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "…次の操作の実行:"
+
+#: plugins/managesieve/localization/ja_JP.inc:add
+msgid "Add"
+msgstr "追加"
+
+#: plugins/managesieve/localization/ja_JP.inc:del
+msgid "Delete"
+msgstr "削除"
+
+#: plugins/managesieve/localization/ja_JP.inc:sender
+msgid "Sender"
+msgstr "送信者"
+
+#: plugins/managesieve/localization/ja_JP.inc:recipient
+msgid "Recipient"
+msgstr "受信者"
+
+#: plugins/managesieve/localization/ja_JP.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "電子メール受信者の一覧を追加する (カンマ区切り):"
+
+#: plugins/managesieve/localization/ja_JP.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "どれ位頻繁にメッセージの送信をするか (1 日あたり):"
+
+#: plugins/managesieve/localization/ja_JP.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "メッセージ本文 (vacation reason):"
+
+#: plugins/managesieve/localization/ja_JP.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "ルール評価の停止"
+
+#: plugins/managesieve/localization/ja_JP.inc:filterset
+msgid "Filters set"
+msgstr "フィルター セット"
+
+#: plugins/managesieve/localization/ja_JP.inc:filtersetadd
+msgid "Add filters set"
+msgstr "フィルター セットの追加"
+
+#: plugins/managesieve/localization/ja_JP.inc:filtersetdel
+msgid "Delete current filters set"
+msgstr "現在のルールセット の削除"
+
+#: plugins/managesieve/localization/ja_JP.inc:filtersetact
+msgid "Activate current filters set"
+msgstr "現在のフィルター セットを有効にする"
+
+#: plugins/managesieve/localization/ja_JP.inc:filtersetdeact
+msgid "Deactivate current filters set"
+msgstr "現在のフィルター セットを無効にする"
+
+#: plugins/managesieve/localization/ja_JP.inc:filtersetget
+msgid "filtersetget"
+msgstr "テキスト形式でフィルター セットをダウンロードする"
+
+#: plugins/managesieve/localization/ja_JP.inc:filterdef
+msgid "Filter definition"
+msgstr "フィルターの定義"
+
+#: plugins/managesieve/localization/ja_JP.inc:filtersetname
+msgid "Filters set name"
+msgstr "フィルター セットの名前"
+
+#: plugins/managesieve/localization/ja_JP.inc:newfilterset
+msgid "New filters set"
+msgstr "新規フィルター セット"
+
+#: plugins/managesieve/localization/ja_JP.inc:active
+msgid "active"
+msgstr "有効"
+
+#: plugins/managesieve/localization/ja_JP.inc:none
+msgid "none"
+msgstr "なし"
+
+#: plugins/managesieve/localization/ja_JP.inc:fromset
+msgid "from set"
+msgstr "セットから"
+
+#: plugins/managesieve/localization/ja_JP.inc:fromfile
+msgid "from file"
+msgstr "ファイルから"
+
+#: plugins/managesieve/localization/ja_JP.inc:filterdisabled
+msgid "Filter disabled"
+msgstr "フィルターを無効にしました。"

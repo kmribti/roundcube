@@ -1,0 +1,323 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/hr_HR.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: hr_HR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/hr_HR.inc:filters
+msgid "Filters"
+msgstr "Filteri"
+
+#: plugins/managesieve/localization/hr_HR.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Uredi filtere za pristiglu poštu"
+
+#: plugins/managesieve/localization/hr_HR.inc:filtername
+msgid "Filter name"
+msgstr "Naziv filtera"
+
+#: plugins/managesieve/localization/hr_HR.inc:newfilter
+msgid "New filter"
+msgstr "Novi filter"
+
+#: plugins/managesieve/localization/hr_HR.inc:filteradd
+msgid "Add filter"
+msgstr "Dodaj filter"
+
+#: plugins/managesieve/localization/hr_HR.inc:filterdel
+msgid "Delete filter"
+msgstr "Obriši filter"
+
+#: plugins/managesieve/localization/hr_HR.inc:moveup
+msgid "Move up"
+msgstr "Pomakni gore"
+
+#: plugins/managesieve/localization/hr_HR.inc:movedown
+msgid "Move down"
+msgstr "Pomakni dolje"
+
+#: plugins/managesieve/localization/hr_HR.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "koje odgovaraju svim sljedećim pravilima"
+
+#: plugins/managesieve/localization/hr_HR.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "koje odgovaraju bilo kojem od sljedećih pravila"
+
+#: plugins/managesieve/localization/hr_HR.inc:filterany
+msgid "all messages"
+msgstr "sve poruke"
+
+#: plugins/managesieve/localization/hr_HR.inc:filtercontains
+msgid "contains"
+msgstr "sadrži"
+
+#: plugins/managesieve/localization/hr_HR.inc:filternotcontains
+msgid "not contains"
+msgstr "ne sadrži"
+
+#: plugins/managesieve/localization/hr_HR.inc:filteris
+msgid "is equal to"
+msgstr "jednako je"
+
+#: plugins/managesieve/localization/hr_HR.inc:filterisnot
+msgid "is not equal to"
+msgstr "nije jednako"
+
+#: plugins/managesieve/localization/hr_HR.inc:filterexists
+msgid "exists"
+msgstr "postoji"
+
+#: plugins/managesieve/localization/hr_HR.inc:filternotexists
+msgid "not exists"
+msgstr "ne postoji"
+
+#: plugins/managesieve/localization/hr_HR.inc:filtermatches
+msgid "matches expression"
+msgstr "odgovara izrazu"
+
+#: plugins/managesieve/localization/hr_HR.inc:filternotmatches
+msgid "not matches expression"
+msgstr "ne odgovara izrazu"
+
+#: plugins/managesieve/localization/hr_HR.inc:filterregex
+msgid "matches regular expression"
+msgstr "odgovara regularnom izrazu"
+
+#: plugins/managesieve/localization/hr_HR.inc:filternotregex
+msgid "not matches regular expression"
+msgstr "ne odgovara regularnom izrazu"
+
+#: plugins/managesieve/localization/hr_HR.inc:filterunder
+msgid "under"
+msgstr "ispod"
+
+#: plugins/managesieve/localization/hr_HR.inc:filterover
+msgid "over"
+msgstr "iznad"
+
+#: plugins/managesieve/localization/hr_HR.inc:addrule
+msgid "Add rule"
+msgstr "Dodaj pravilo"
+
+#: plugins/managesieve/localization/hr_HR.inc:delrule
+msgid "Delete rule"
+msgstr "Obriši pravilo"
+
+#: plugins/managesieve/localization/hr_HR.inc:messagemoveto
+msgid "Move message to"
+msgstr "Premjesti poruku u"
+
+#: plugins/managesieve/localization/hr_HR.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Preusmjeri poruku na"
+
+#: plugins/managesieve/localization/hr_HR.inc:messagecopyto
+msgid "Copy message to"
+msgstr "Kopiraju poruku u"
+
+#: plugins/managesieve/localization/hr_HR.inc:messagesendcopy
+msgid "Send message copy to"
+msgstr "Pošalji kopiju poruke na"
+
+#: plugins/managesieve/localization/hr_HR.inc:messagereply
+msgid "Reply with message"
+msgstr "Odgovori sa porukom"
+
+#: plugins/managesieve/localization/hr_HR.inc:messagedelete
+msgid "Delete message"
+msgstr "Obriši poruku"
+
+#: plugins/managesieve/localization/hr_HR.inc:messagediscard
+msgid "Discard with message"
+msgstr "Otkaži sa porukom"
+
+#: plugins/managesieve/localization/hr_HR.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Za pristigle poruke:"
+
+#: plugins/managesieve/localization/hr_HR.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "...primijeni sljedeće akcije:"
+
+#: plugins/managesieve/localization/hr_HR.inc:add
+msgid "Add"
+msgstr "Dodaj"
+
+#: plugins/managesieve/localization/hr_HR.inc:del
+msgid "Delete"
+msgstr "Obriši"
+
+#: plugins/managesieve/localization/hr_HR.inc:sender
+msgid "Sender"
+msgstr "Pošiljatelj"
+
+#: plugins/managesieve/localization/hr_HR.inc:recipient
+msgid "Recipient"
+msgstr "Primatelj"
+
+#: plugins/managesieve/localization/hr_HR.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Dodatna lista primatelja (odvojenih zarezom):"
+
+#: plugins/managesieve/localization/hr_HR.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Koliko često slati poruku (u danima):"
+
+#: plugins/managesieve/localization/hr_HR.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Tijelo poruke (razlog odmora):"
+
+#: plugins/managesieve/localization/hr_HR.inc:vacationsubject
+msgid "Message subject:"
+msgstr "Naslov poruke:"
+
+#: plugins/managesieve/localization/hr_HR.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Prekini izvođenje filtera"
+
+#: plugins/managesieve/localization/hr_HR.inc:filterset
+msgid "Filters set"
+msgstr "Grupa filtera"
+
+#: plugins/managesieve/localization/hr_HR.inc:filtersetadd
+msgid "Add filters set"
+msgstr "Dodaj grupu filtera"
+
+#: plugins/managesieve/localization/hr_HR.inc:filtersetdel
+msgid "Delete current filters set"
+msgstr "Obriši odabranu grupu filtera"
+
+#: plugins/managesieve/localization/hr_HR.inc:filtersetact
+msgid "Activate current filters set"
+msgstr "Aktiviraj odabranu grupu filtera"
+
+#: plugins/managesieve/localization/hr_HR.inc:filtersetdeact
+msgid "Deactivate current filters set"
+msgstr "Deaktiviraj odabranu grupu filtera"
+
+#: plugins/managesieve/localization/hr_HR.inc:filtersetget
+msgid "filtersetget"
+msgstr "Preuzmi grupu filtera u tekstualnom formatu"
+
+#: plugins/managesieve/localization/hr_HR.inc:filterdef
+msgid "Filter definition"
+msgstr "Definicije filtera"
+
+#: plugins/managesieve/localization/hr_HR.inc:filtersetname
+msgid "Filters set name"
+msgstr "Naziv grupe filtera"
+
+#: plugins/managesieve/localization/hr_HR.inc:newfilterset
+msgid "New filters set"
+msgstr "Nova grupa filtera"
+
+#: plugins/managesieve/localization/hr_HR.inc:active
+msgid "active"
+msgstr "aktivan"
+
+#: plugins/managesieve/localization/hr_HR.inc:none
+msgid "none"
+msgstr "nijedan"
+
+#: plugins/managesieve/localization/hr_HR.inc:fromset
+msgid "from set"
+msgstr "iz grupe"
+
+#: plugins/managesieve/localization/hr_HR.inc:fromfile
+msgid "from file"
+msgstr "iz datoteke"
+
+#: plugins/managesieve/localization/hr_HR.inc:filterdisabled
+msgid "Filter disabled"
+msgstr "Deaktiviraj filter"
+
+#: plugins/managesieve/localization/hr_HR.inc:countisgreaterthan
+msgid "count is greater than"
+msgstr "brojač je veći od"
+
+#: plugins/managesieve/localization/hr_HR.inc:countisgreaterthanequal
+msgid "count is greater than or equal to"
+msgstr "brojač je veći ili jednak od"
+
+#: plugins/managesieve/localization/hr_HR.inc:countislessthan
+msgid "count is less than"
+msgstr "brojač je manji od"
+
+#: plugins/managesieve/localization/hr_HR.inc:countislessthanequal
+msgid "count is less than or equal to"
+msgstr "brojač je manji ili jednak od"
+
+#: plugins/managesieve/localization/hr_HR.inc:countequals
+msgid "count is equal to"
+msgstr "brojač je jednak"
+
+#: plugins/managesieve/localization/hr_HR.inc:countnotequals
+msgid "count does not equal"
+msgstr "brojač nije jednak"
+
+#: plugins/managesieve/localization/hr_HR.inc:valueisgreaterthan
+msgid "value is greater than"
+msgstr "vrijednost je veća od"
+
+#: plugins/managesieve/localization/hr_HR.inc:valueisgreaterthanequal
+msgid "value is greater than or equal to"
+msgstr "vrijednost je veća ili jednaka od"
+
+#: plugins/managesieve/localization/hr_HR.inc:valueislessthan
+msgid "value is less than"
+msgstr "vrijednost je manja od"
+
+#: plugins/managesieve/localization/hr_HR.inc:valueislessthanequal
+msgid "value is less than or equal to"
+msgstr "vrijednost je manja ili jednaka od"
+
+#: plugins/managesieve/localization/hr_HR.inc:valueequals
+msgid "value is equal to"
+msgstr "vrijednost je jednaka"
+
+#: plugins/managesieve/localization/hr_HR.inc:valuenotequals
+msgid "value does not equal"
+msgstr "vrijednost nije jednaka"
+
+#: plugins/managesieve/localization/hr_HR.inc:setflags
+msgid "Set flags to the message"
+msgstr "Postavi oznake na poruku"
+
+#: plugins/managesieve/localization/hr_HR.inc:addflags
+msgid "Add flags to the message"
+msgstr "Dodaj oznake na poruku"
+
+#: plugins/managesieve/localization/hr_HR.inc:removeflags
+msgid "Remove flags from the message"
+msgstr "Ukloni oznake sa poruke"
+
+#: plugins/managesieve/localization/hr_HR.inc:flagread
+msgid "Read"
+msgstr "Pročitana"
+
+#: plugins/managesieve/localization/hr_HR.inc:flagdeleted
+msgid "Deleted"
+msgstr "Obrisana"
+
+#: plugins/managesieve/localization/hr_HR.inc:flaganswered
+msgid "Answered"
+msgstr "Odgovorena"
+
+#: plugins/managesieve/localization/hr_HR.inc:flagflagged
+msgid "Flagged"
+msgstr "Označena"
+
+#: plugins/managesieve/localization/hr_HR.inc:flagdraft
+msgid "Draft"
+msgstr "Predložak"

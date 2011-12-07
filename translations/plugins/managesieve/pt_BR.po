@@ -1,0 +1,159 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/pt_BR.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: pt_BR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/pt_BR.inc:filters
+msgid "Filters"
+msgstr "Filtros"
+
+#: plugins/managesieve/localization/pt_BR.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Gerenciar filtros de entrada de e-mail"
+
+#: plugins/managesieve/localization/pt_BR.inc:filtername
+msgid "Filter name"
+msgstr "Nome do filtro"
+
+#: plugins/managesieve/localization/pt_BR.inc:newfilter
+msgid "New filter"
+msgstr "Novo filtro"
+
+#: plugins/managesieve/localization/pt_BR.inc:filteradd
+msgid "Add filter"
+msgstr "Adicionar filtro"
+
+#: plugins/managesieve/localization/pt_BR.inc:filterdel
+msgid "Delete filter"
+msgstr "Excluir filtro"
+
+#: plugins/managesieve/localization/pt_BR.inc:moveup
+msgid "Move up"
+msgstr "Mover para cima"
+
+#: plugins/managesieve/localization/pt_BR.inc:movedown
+msgid "Move down"
+msgstr "Mover para baixo"
+
+#: plugins/managesieve/localization/pt_BR.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "casando todas as seguintes regras"
+
+#: plugins/managesieve/localization/pt_BR.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "casando qualquer das seguintes regras"
+
+#: plugins/managesieve/localization/pt_BR.inc:filterany
+msgid "all messages"
+msgstr "todas as mensagens"
+
+#: plugins/managesieve/localization/pt_BR.inc:filtercontains
+msgid "contains"
+msgstr "contem"
+
+#: plugins/managesieve/localization/pt_BR.inc:filternotcontains
+msgid "not contains"
+msgstr "não contem"
+
+#: plugins/managesieve/localization/pt_BR.inc:filteris
+msgid "is equal to"
+msgstr "é igual a"
+
+#: plugins/managesieve/localization/pt_BR.inc:filterisnot
+msgid "is not equal to"
+msgstr "não é igual a"
+
+#: plugins/managesieve/localization/pt_BR.inc:filterexists
+msgid "exists"
+msgstr "existe"
+
+#: plugins/managesieve/localization/pt_BR.inc:filternotexists
+msgid "not exists"
+msgstr "não existe"
+
+#: plugins/managesieve/localization/pt_BR.inc:filterunder
+msgid "under"
+msgstr "inferior a"
+
+#: plugins/managesieve/localization/pt_BR.inc:filterover
+msgid "over"
+msgstr "superior a"
+
+#: plugins/managesieve/localization/pt_BR.inc:addrule
+msgid "Add rule"
+msgstr "Adicionar regra"
+
+#: plugins/managesieve/localization/pt_BR.inc:delrule
+msgid "Delete rule"
+msgstr "Excluir regra"
+
+#: plugins/managesieve/localization/pt_BR.inc:messagemoveto
+msgid "Move message to"
+msgstr "Mover mensagem para"
+
+#: plugins/managesieve/localization/pt_BR.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Redirecionar mensagem para"
+
+#: plugins/managesieve/localization/pt_BR.inc:messagereply
+msgid "Reply with message"
+msgstr "Responder com mensagem"
+
+#: plugins/managesieve/localization/pt_BR.inc:messagedelete
+msgid "Delete message"
+msgstr "Excluir mensagem"
+
+#: plugins/managesieve/localization/pt_BR.inc:messagediscard
+msgid "Discard with message"
+msgstr "Descartar com mensagem"
+
+#: plugins/managesieve/localization/pt_BR.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Para e-mails recebidos:"
+
+#: plugins/managesieve/localization/pt_BR.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "...execute as seguintes ações:"
+
+#: plugins/managesieve/localization/pt_BR.inc:add
+msgid "Add"
+msgstr "Adicionar"
+
+#: plugins/managesieve/localization/pt_BR.inc:del
+msgid "Delete"
+msgstr "Excluir"
+
+#: plugins/managesieve/localization/pt_BR.inc:sender
+msgid "Sender"
+msgstr "Remetente"
+
+#: plugins/managesieve/localization/pt_BR.inc:recipient
+msgid "Recipient"
+msgstr "Destinatário"
+
+#: plugins/managesieve/localization/pt_BR.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Lista adicional de e-mails destinatários (separado por vírgula):"
+
+#: plugins/managesieve/localization/pt_BR.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Enviar mensagens com que frequência (em dias):"
+
+#: plugins/managesieve/localization/pt_BR.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Corpo da mensagem (motivo de férias):"
+
+#: plugins/managesieve/localization/pt_BR.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Parar de avaliar regras"

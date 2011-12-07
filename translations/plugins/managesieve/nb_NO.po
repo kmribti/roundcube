@@ -1,0 +1,159 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/nb_NO.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: nb_NO\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/nb_NO.inc:filters
+msgid "Filters"
+msgstr "Filtre"
+
+#: plugins/managesieve/localization/nb_NO.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Rediger filter for innkommende e-post"
+
+#: plugins/managesieve/localization/nb_NO.inc:filtername
+msgid "Filter name"
+msgstr "Filternavn"
+
+#: plugins/managesieve/localization/nb_NO.inc:newfilter
+msgid "New filter"
+msgstr "Nytt filter"
+
+#: plugins/managesieve/localization/nb_NO.inc:filteradd
+msgid "Add filter"
+msgstr "Legg til filter"
+
+#: plugins/managesieve/localization/nb_NO.inc:filterdel
+msgid "Delete filter"
+msgstr "Slett filter"
+
+#: plugins/managesieve/localization/nb_NO.inc:moveup
+msgid "Move up"
+msgstr "Flytt opp"
+
+#: plugins/managesieve/localization/nb_NO.inc:movedown
+msgid "Move down"
+msgstr "Flytt ned"
+
+#: plugins/managesieve/localization/nb_NO.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "som treffer alle følgende regler"
+
+#: plugins/managesieve/localization/nb_NO.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "som treffer en av følgende regler"
+
+#: plugins/managesieve/localization/nb_NO.inc:filterany
+msgid "all messages"
+msgstr "og alle meldinger"
+
+#: plugins/managesieve/localization/nb_NO.inc:filtercontains
+msgid "contains"
+msgstr "inneholder"
+
+#: plugins/managesieve/localization/nb_NO.inc:filternotcontains
+msgid "not contains"
+msgstr "ikke innehold"
+
+#: plugins/managesieve/localization/nb_NO.inc:filteris
+msgid "is equal to"
+msgstr "er"
+
+#: plugins/managesieve/localization/nb_NO.inc:filterisnot
+msgid "is not equal to"
+msgstr "ikke er"
+
+#: plugins/managesieve/localization/nb_NO.inc:filterexists
+msgid "exists"
+msgstr "eksisterer"
+
+#: plugins/managesieve/localization/nb_NO.inc:filternotexists
+msgid "not exists"
+msgstr "ikke eksisterer"
+
+#: plugins/managesieve/localization/nb_NO.inc:filterunder
+msgid "under"
+msgstr "under"
+
+#: plugins/managesieve/localization/nb_NO.inc:filterover
+msgid "over"
+msgstr "over"
+
+#: plugins/managesieve/localization/nb_NO.inc:addrule
+msgid "Add rule"
+msgstr "Legg til regel"
+
+#: plugins/managesieve/localization/nb_NO.inc:delrule
+msgid "Delete rule"
+msgstr "Slett regel"
+
+#: plugins/managesieve/localization/nb_NO.inc:messagemoveto
+msgid "Move message to"
+msgstr "Flytt meldingen til"
+
+#: plugins/managesieve/localization/nb_NO.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Videresend meldingen til"
+
+#: plugins/managesieve/localization/nb_NO.inc:messagereply
+msgid "Reply with message"
+msgstr "Svar med melding"
+
+#: plugins/managesieve/localization/nb_NO.inc:messagedelete
+msgid "Delete message"
+msgstr "Slett melding"
+
+#: plugins/managesieve/localization/nb_NO.inc:messagediscard
+msgid "Discard with message"
+msgstr "Avvis med melding"
+
+#: plugins/managesieve/localization/nb_NO.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "For innkommende e-post"
+
+#: plugins/managesieve/localization/nb_NO.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "...gjør følgende"
+
+#: plugins/managesieve/localization/nb_NO.inc:add
+msgid "Add"
+msgstr "Legg til"
+
+#: plugins/managesieve/localization/nb_NO.inc:del
+msgid "Delete"
+msgstr "Slett"
+
+#: plugins/managesieve/localization/nb_NO.inc:sender
+msgid "Sender"
+msgstr "Avsender"
+
+#: plugins/managesieve/localization/nb_NO.inc:recipient
+msgid "Recipient"
+msgstr "Mottaker"
+
+#: plugins/managesieve/localization/nb_NO.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Liste med mottakeradresser (adskilt med komma):"
+
+#: plugins/managesieve/localization/nb_NO.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Periode mellom meldinger (i dager):"
+
+#: plugins/managesieve/localization/nb_NO.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Innhold (begrunnelse for fravær)"
+
+#: plugins/managesieve/localization/nb_NO.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Stopp evaluering av regler"

@@ -1,0 +1,159 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/de_CH.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: de_CH\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/de_CH.inc:filters
+msgid "Filters"
+msgstr "Filter"
+
+#: plugins/managesieve/localization/de_CH.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Verwalte eingehende Nachrichtenfilter"
+
+#: plugins/managesieve/localization/de_CH.inc:filtername
+msgid "Filter name"
+msgstr "Filtername"
+
+#: plugins/managesieve/localization/de_CH.inc:newfilter
+msgid "New filter"
+msgstr "Neuer Filter"
+
+#: plugins/managesieve/localization/de_CH.inc:filteradd
+msgid "Add filter"
+msgstr "Filter hinzufügen"
+
+#: plugins/managesieve/localization/de_CH.inc:filterdel
+msgid "Delete filter"
+msgstr "Filter löschen"
+
+#: plugins/managesieve/localization/de_CH.inc:moveup
+msgid "Move up"
+msgstr "Nach oben"
+
+#: plugins/managesieve/localization/de_CH.inc:movedown
+msgid "Move down"
+msgstr "Nach unten"
+
+#: plugins/managesieve/localization/de_CH.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "UND (alle Regeln müssen zutreffen)"
+
+#: plugins/managesieve/localization/de_CH.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "ODER (eine der Regeln muss zutreffen"
+
+#: plugins/managesieve/localization/de_CH.inc:filterany
+msgid "all messages"
+msgstr "Für alle Nachrichten"
+
+#: plugins/managesieve/localization/de_CH.inc:filtercontains
+msgid "contains"
+msgstr "enthält"
+
+#: plugins/managesieve/localization/de_CH.inc:filternotcontains
+msgid "not contains"
+msgstr "enthält nicht"
+
+#: plugins/managesieve/localization/de_CH.inc:filteris
+msgid "is equal to"
+msgstr "ist gleich"
+
+#: plugins/managesieve/localization/de_CH.inc:filterisnot
+msgid "is not equal to"
+msgstr "ist ungleich"
+
+#: plugins/managesieve/localization/de_CH.inc:filterexists
+msgid "exists"
+msgstr "ist vorhanden"
+
+#: plugins/managesieve/localization/de_CH.inc:filternotexists
+msgid "not exists"
+msgstr "nicht vorhanden"
+
+#: plugins/managesieve/localization/de_CH.inc:filterunder
+msgid "under"
+msgstr "unter"
+
+#: plugins/managesieve/localization/de_CH.inc:filterover
+msgid "over"
+msgstr "über"
+
+#: plugins/managesieve/localization/de_CH.inc:addrule
+msgid "Add rule"
+msgstr "Regel hinzufügen"
+
+#: plugins/managesieve/localization/de_CH.inc:delrule
+msgid "Delete rule"
+msgstr "Regel löschen"
+
+#: plugins/managesieve/localization/de_CH.inc:messagemoveto
+msgid "Move message to"
+msgstr "Verschiebe Nachricht nach"
+
+#: plugins/managesieve/localization/de_CH.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Leite Nachricht um nach"
+
+#: plugins/managesieve/localization/de_CH.inc:messagereply
+msgid "Reply with message"
+msgstr "Antworte mit Nachricht"
+
+#: plugins/managesieve/localization/de_CH.inc:messagedelete
+msgid "Delete message"
+msgstr "Nachricht löschen"
+
+#: plugins/managesieve/localization/de_CH.inc:messagediscard
+msgid "Discard with message"
+msgstr "Discard with message"
+
+#: plugins/managesieve/localization/de_CH.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Für eingehende Nachrichten:"
+
+#: plugins/managesieve/localization/de_CH.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "Führe folgende Aktionen aus:"
+
+#: plugins/managesieve/localization/de_CH.inc:add
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: plugins/managesieve/localization/de_CH.inc:del
+msgid "Delete"
+msgstr "Löschen"
+
+#: plugins/managesieve/localization/de_CH.inc:sender
+msgid "Sender"
+msgstr "Absender"
+
+#: plugins/managesieve/localization/de_CH.inc:recipient
+msgid "Recipient"
+msgstr "Empfänger"
+
+#: plugins/managesieve/localization/de_CH.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Zusätzliche Liste von Empfängern (Komma getrennt):"
+
+#: plugins/managesieve/localization/de_CH.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Antwort wird erneut gesendet nach (in Tagen):"
+
+#: plugins/managesieve/localization/de_CH.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Inhalt der Nachricht (Abwesenheitsgrund):"
+
+#: plugins/managesieve/localization/de_CH.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Regelauswertung anhalten"

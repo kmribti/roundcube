@@ -1,0 +1,271 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/de_DE.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: de_DE\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/de_DE.inc:filters
+msgid "Filters"
+msgstr "Filter"
+
+#: plugins/managesieve/localization/de_DE.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Posteingangs-Filter verwalten"
+
+#: plugins/managesieve/localization/de_DE.inc:filtername
+msgid "Filter name"
+msgstr "Filtername"
+
+#: plugins/managesieve/localization/de_DE.inc:newfilter
+msgid "New filter"
+msgstr "Filter anlegen"
+
+#: plugins/managesieve/localization/de_DE.inc:filteradd
+msgid "Add filter"
+msgstr "Filter hinzufügen"
+
+#: plugins/managesieve/localization/de_DE.inc:filterdel
+msgid "Delete filter"
+msgstr "Filter löschen"
+
+#: plugins/managesieve/localization/de_DE.inc:moveup
+msgid "Move up"
+msgstr "Nach oben"
+
+#: plugins/managesieve/localization/de_DE.inc:movedown
+msgid "Move down"
+msgstr "Nach unten"
+
+#: plugins/managesieve/localization/de_DE.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "trifft auf alle folgenden Regeln zu"
+
+#: plugins/managesieve/localization/de_DE.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "trifft auf eine der folgenden Regeln zu"
+
+#: plugins/managesieve/localization/de_DE.inc:filterany
+msgid "all messages"
+msgstr "alle Nachrichten"
+
+#: plugins/managesieve/localization/de_DE.inc:filtercontains
+msgid "contains"
+msgstr "enthält"
+
+#: plugins/managesieve/localization/de_DE.inc:filternotcontains
+msgid "not contains"
+msgstr "enthält nicht"
+
+#: plugins/managesieve/localization/de_DE.inc:filteris
+msgid "is equal to"
+msgstr "ist gleich"
+
+#: plugins/managesieve/localization/de_DE.inc:filterisnot
+msgid "is not equal to"
+msgstr "ist ungleich"
+
+#: plugins/managesieve/localization/de_DE.inc:filterexists
+msgid "exists"
+msgstr "existiert"
+
+#: plugins/managesieve/localization/de_DE.inc:filternotexists
+msgid "not exists"
+msgstr "existiert nicht"
+
+#: plugins/managesieve/localization/de_DE.inc:filterunder
+msgid "under"
+msgstr "unter"
+
+#: plugins/managesieve/localization/de_DE.inc:filterover
+msgid "over"
+msgstr "über"
+
+#: plugins/managesieve/localization/de_DE.inc:addrule
+msgid "Add rule"
+msgstr "Regel hinzufügen"
+
+#: plugins/managesieve/localization/de_DE.inc:delrule
+msgid "Delete rule"
+msgstr "Regel löschen"
+
+#: plugins/managesieve/localization/de_DE.inc:messagemoveto
+msgid "Move message to"
+msgstr "Verschiebe Nachricht nach"
+
+#: plugins/managesieve/localization/de_DE.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Leite Nachricht um an"
+
+#: plugins/managesieve/localization/de_DE.inc:messagecopyto
+msgid "Copy message to"
+msgstr "Kopiere Nachricht nach"
+
+#: plugins/managesieve/localization/de_DE.inc:messagesendcopy
+msgid "Send message copy to"
+msgstr "Sende Kopie an"
+
+#: plugins/managesieve/localization/de_DE.inc:messagereply
+msgid "Reply with message"
+msgstr "Antworte mit Nachricht"
+
+#: plugins/managesieve/localization/de_DE.inc:messagedelete
+msgid "Delete message"
+msgstr "Lösche Nachricht"
+
+#: plugins/managesieve/localization/de_DE.inc:messagediscard
+msgid "Discard with message"
+msgstr "Weise ab mit Nachricht"
+
+#: plugins/managesieve/localization/de_DE.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Für eingehende Nachrichten:"
+
+#: plugins/managesieve/localization/de_DE.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "...führende folgende Aktionen aus:"
+
+#: plugins/managesieve/localization/de_DE.inc:add
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: plugins/managesieve/localization/de_DE.inc:del
+msgid "Delete"
+msgstr "Löschen"
+
+#: plugins/managesieve/localization/de_DE.inc:sender
+msgid "Sender"
+msgstr "Absender"
+
+#: plugins/managesieve/localization/de_DE.inc:recipient
+msgid "Recipient"
+msgstr "Empfänger"
+
+#: plugins/managesieve/localization/de_DE.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Zusätzliche Liste von E-Mail Empfängern (Komma getrennt):"
+
+#: plugins/managesieve/localization/de_DE.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Wie oft sollen Nachrichten gesendet werden (in Tagen):"
+
+#: plugins/managesieve/localization/de_DE.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Nachrichteninhalt (Abwesenheitsgrund):"
+
+#: plugins/managesieve/localization/de_DE.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Regelauswertung anhalten"
+
+#: plugins/managesieve/localization/de_DE.inc:filterset
+msgid "Filters set"
+msgstr "Filtersätze"
+
+#: plugins/managesieve/localization/de_DE.inc:filtersetadd
+msgid "Add filters set"
+msgstr "Filtersatz anlegen"
+
+#: plugins/managesieve/localization/de_DE.inc:filtersetdel
+msgid "Delete current filters set"
+msgstr "Aktuellen Filtersatz löschen"
+
+#: plugins/managesieve/localization/de_DE.inc:filtersetact
+msgid "Activate current filters set"
+msgstr "Aktuellen Filtersatz aktivieren"
+
+#: plugins/managesieve/localization/de_DE.inc:filtersetdeact
+msgid "Deactivate current filters set"
+msgstr "Aktuellen Filtersatz deaktivieren"
+
+#: plugins/managesieve/localization/de_DE.inc:filtersetget
+msgid "filtersetget"
+msgstr "Filtersatz im Textformat herunterladen"
+
+#: plugins/managesieve/localization/de_DE.inc:filterdef
+msgid "Filter definition"
+msgstr "Filterdefinition"
+
+#: plugins/managesieve/localization/de_DE.inc:filtersetname
+msgid "Filters set name"
+msgstr "Filtersatzname"
+
+#: plugins/managesieve/localization/de_DE.inc:newfilterset
+msgid "New filters set"
+msgstr "Neuer Filtersatz"
+
+#: plugins/managesieve/localization/de_DE.inc:active
+msgid "active"
+msgstr "aktiv"
+
+#: plugins/managesieve/localization/de_DE.inc:none
+msgid "none"
+msgstr "keine"
+
+#: plugins/managesieve/localization/de_DE.inc:fromset
+msgid "from set"
+msgstr "aus Filtersatz"
+
+#: plugins/managesieve/localization/de_DE.inc:fromfile
+msgid "from file"
+msgstr "aus Datei"
+
+#: plugins/managesieve/localization/de_DE.inc:filterdisabled
+msgid "Filter disabled"
+msgstr "Filter deaktiviert"
+
+#: plugins/managesieve/localization/de_DE.inc:countisgreaterthan
+msgid "count is greater than"
+msgstr "Anzahl ist größer als"
+
+#: plugins/managesieve/localization/de_DE.inc:countisgreaterthanequal
+msgid "count is greater than or equal to"
+msgstr "Anzahl ist gleich oder größer als"
+
+#: plugins/managesieve/localization/de_DE.inc:countislessthan
+msgid "count is less than"
+msgstr "Anzahl ist kleiner als"
+
+#: plugins/managesieve/localization/de_DE.inc:countislessthanequal
+msgid "count is less than or equal to"
+msgstr "Anzahl ist gleich oder kleiner als"
+
+#: plugins/managesieve/localization/de_DE.inc:countequals
+msgid "count is equal to"
+msgstr "Anzahl ist gleich"
+
+#: plugins/managesieve/localization/de_DE.inc:countnotequals
+msgid "count does not equal"
+msgstr "Anzahl ist ungleich"
+
+#: plugins/managesieve/localization/de_DE.inc:valueisgreaterthan
+msgid "value is greater than"
+msgstr "Wert ist größer als"
+
+#: plugins/managesieve/localization/de_DE.inc:valueisgreaterthanequal
+msgid "value is greater than or equal to"
+msgstr "Wert ist gleich oder größer als"
+
+#: plugins/managesieve/localization/de_DE.inc:valueislessthan
+msgid "value is less than"
+msgstr "Wert ist kleiner"
+
+#: plugins/managesieve/localization/de_DE.inc:valueislessthanequal
+msgid "value is less than or equal to"
+msgstr "Wert ist gleich oder kleiner als"
+
+#: plugins/managesieve/localization/de_DE.inc:valueequals
+msgid "value is equal to"
+msgstr "Wert ist gleich"
+
+#: plugins/managesieve/localization/de_DE.inc:valuenotequals
+msgid "value does not equal"
+msgstr "Wert ist ungleich"

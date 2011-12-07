@@ -1,0 +1,143 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/zh_CN.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: zh_CN\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/zh_CN.inc:filters
+msgid "Filters"
+msgstr "过滤器"
+
+#: plugins/managesieve/localization/zh_CN.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "管理邮件过滤器"
+
+#: plugins/managesieve/localization/zh_CN.inc:filtername
+msgid "Filter name"
+msgstr "过滤器名称"
+
+#: plugins/managesieve/localization/zh_CN.inc:newfilter
+msgid "New filter"
+msgstr "新建过滤器"
+
+#: plugins/managesieve/localization/zh_CN.inc:filteradd
+msgid "Add filter"
+msgstr "添加过滤器"
+
+#: plugins/managesieve/localization/zh_CN.inc:filterdel
+msgid "Delete filter"
+msgstr "删除过滤器"
+
+#: plugins/managesieve/localization/zh_CN.inc:moveup
+msgid "Move up"
+msgstr "上移"
+
+#: plugins/managesieve/localization/zh_CN.inc:movedown
+msgid "Move down"
+msgstr "下移"
+
+#: plugins/managesieve/localization/zh_CN.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "匹配所有规则"
+
+#: plugins/managesieve/localization/zh_CN.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "匹配任意一条规则"
+
+#: plugins/managesieve/localization/zh_CN.inc:filterany
+msgid "all messages"
+msgstr "所有邮件"
+
+#: plugins/managesieve/localization/zh_CN.inc:filtercontains
+msgid "contains"
+msgstr "包含"
+
+#: plugins/managesieve/localization/zh_CN.inc:filternotcontains
+msgid "not contains"
+msgstr "不包含"
+
+#: plugins/managesieve/localization/zh_CN.inc:filteris
+msgid "is equal to"
+msgstr "等于"
+
+#: plugins/managesieve/localization/zh_CN.inc:filterisnot
+msgid "is not equal to"
+msgstr "不等于"
+
+#: plugins/managesieve/localization/zh_CN.inc:filterexists
+msgid "exists"
+msgstr "存在"
+
+#: plugins/managesieve/localization/zh_CN.inc:filternotexists
+msgid "not exists"
+msgstr "不存在"
+
+#: plugins/managesieve/localization/zh_CN.inc:filterunder
+msgid "under"
+msgstr "小于"
+
+#: plugins/managesieve/localization/zh_CN.inc:filterover
+msgid "over"
+msgstr "大于"
+
+#: plugins/managesieve/localization/zh_CN.inc:addrule
+msgid "Add rule"
+msgstr "添加规则"
+
+#: plugins/managesieve/localization/zh_CN.inc:delrule
+msgid "Delete rule"
+msgstr "删除规则"
+
+#: plugins/managesieve/localization/zh_CN.inc:messagemoveto
+msgid "Move message to"
+msgstr "将邮件移动到"
+
+#: plugins/managesieve/localization/zh_CN.inc:messageredirect
+msgid "Redirect message to"
+msgstr "将邮件转发到"
+
+#: plugins/managesieve/localization/zh_CN.inc:messagereply
+msgid "Reply with message"
+msgstr "回复以下信息"
+
+#: plugins/managesieve/localization/zh_CN.inc:messagedelete
+msgid "Delete message"
+msgstr "删除邮件"
+
+#: plugins/managesieve/localization/zh_CN.inc:messagediscard
+msgid "Discard with message"
+msgstr "丢弃邮件并回复以下信息"
+
+#: plugins/managesieve/localization/zh_CN.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "对收取的邮件应用规则："
+
+#: plugins/managesieve/localization/zh_CN.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "...执行以下动作："
+
+#: plugins/managesieve/localization/zh_CN.inc:add
+msgid "Add"
+msgstr "添加"
+
+#: plugins/managesieve/localization/zh_CN.inc:del
+msgid "Delete"
+msgstr "删除"
+
+#: plugins/managesieve/localization/zh_CN.inc:sender
+msgid "Sender"
+msgstr "发件人"
+
+#: plugins/managesieve/localization/zh_CN.inc:recipient
+msgid "Recipient"
+msgstr "收件人"

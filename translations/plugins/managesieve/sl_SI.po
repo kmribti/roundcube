@@ -1,0 +1,159 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/sl_SI.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: sl_SI\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/sl_SI.inc:filters
+msgid "Filters"
+msgstr "Pravila"
+
+#: plugins/managesieve/localization/sl_SI.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Uredi sporočilna pravila"
+
+#: plugins/managesieve/localization/sl_SI.inc:filtername
+msgid "Filter name"
+msgstr "Ime pravila"
+
+#: plugins/managesieve/localization/sl_SI.inc:newfilter
+msgid "New filter"
+msgstr "Novo pravilo"
+
+#: plugins/managesieve/localization/sl_SI.inc:filteradd
+msgid "Add filter"
+msgstr "Dodaj pravilo"
+
+#: plugins/managesieve/localization/sl_SI.inc:filterdel
+msgid "Delete filter"
+msgstr "Izbriši pravilo"
+
+#: plugins/managesieve/localization/sl_SI.inc:moveup
+msgid "Move up"
+msgstr "Pomakni se više"
+
+#: plugins/managesieve/localization/sl_SI.inc:movedown
+msgid "Move down"
+msgstr "Pomakni se niže"
+
+#: plugins/managesieve/localization/sl_SI.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "izpolnjeni morajo biti vsi pogoji"
+
+#: plugins/managesieve/localization/sl_SI.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "izpolnjen mora biti vsaj eden od navedenih pogojev"
+
+#: plugins/managesieve/localization/sl_SI.inc:filterany
+msgid "all messages"
+msgstr "pogoj velja za vsa sporočila"
+
+#: plugins/managesieve/localization/sl_SI.inc:filtercontains
+msgid "contains"
+msgstr "vsebuje"
+
+#: plugins/managesieve/localization/sl_SI.inc:filternotcontains
+msgid "not contains"
+msgstr "ne vsebuje"
+
+#: plugins/managesieve/localization/sl_SI.inc:filteris
+msgid "is equal to"
+msgstr "je enak/a"
+
+#: plugins/managesieve/localization/sl_SI.inc:filterisnot
+msgid "is not equal to"
+msgstr "ni enak/a"
+
+#: plugins/managesieve/localization/sl_SI.inc:filterexists
+msgid "exists"
+msgstr "obstaja"
+
+#: plugins/managesieve/localization/sl_SI.inc:filternotexists
+msgid "not exists"
+msgstr "ne obstaja"
+
+#: plugins/managesieve/localization/sl_SI.inc:filterunder
+msgid "under"
+msgstr "pod"
+
+#: plugins/managesieve/localization/sl_SI.inc:filterover
+msgid "over"
+msgstr "nad"
+
+#: plugins/managesieve/localization/sl_SI.inc:addrule
+msgid "Add rule"
+msgstr "Dodaj pravilo"
+
+#: plugins/managesieve/localization/sl_SI.inc:delrule
+msgid "Delete rule"
+msgstr "Izbriši pravilo"
+
+#: plugins/managesieve/localization/sl_SI.inc:messagemoveto
+msgid "Move message to"
+msgstr "Premakni sporočilo v"
+
+#: plugins/managesieve/localization/sl_SI.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Preusmeri sporočilo v"
+
+#: plugins/managesieve/localization/sl_SI.inc:messagereply
+msgid "Reply with message"
+msgstr "Odgovori s sporočilom"
+
+#: plugins/managesieve/localization/sl_SI.inc:messagedelete
+msgid "Delete message"
+msgstr "Izbriši sporočilo"
+
+#: plugins/managesieve/localization/sl_SI.inc:messagediscard
+msgid "Discard with message"
+msgstr "Zavrži s sporočilom"
+
+#: plugins/managesieve/localization/sl_SI.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Določi pravila za dohodno pošto:"
+
+#: plugins/managesieve/localization/sl_SI.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "...izvrši naslednja dejanja:"
+
+#: plugins/managesieve/localization/sl_SI.inc:add
+msgid "Add"
+msgstr "Dodaj"
+
+#: plugins/managesieve/localization/sl_SI.inc:del
+msgid "Delete"
+msgstr "Izbriši"
+
+#: plugins/managesieve/localization/sl_SI.inc:sender
+msgid "Sender"
+msgstr "Pošiljatelj"
+
+#: plugins/managesieve/localization/sl_SI.inc:recipient
+msgid "Recipient"
+msgstr "Prejemnik"
+
+#: plugins/managesieve/localization/sl_SI.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Dodaten seznam naslovov prejemnikov (ločenih z vejico):"
+
+#: plugins/managesieve/localization/sl_SI.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Kako pogosto naj bodo sporočila poslana (v dnevih):"
+
+#: plugins/managesieve/localization/sl_SI.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Vsebina sporočila (vzrok za odsotnost):"
+
+#: plugins/managesieve/localization/sl_SI.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Prekini z izvajanjem pravil"

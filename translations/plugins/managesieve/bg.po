@@ -1,0 +1,143 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/bg_BG.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: bg_BG\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/bg_BG.inc:filters
+msgid "Filters"
+msgstr "Филтри"
+
+#: plugins/managesieve/localization/bg_BG.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Управление на филтри за входяща поща"
+
+#: plugins/managesieve/localization/bg_BG.inc:filtername
+msgid "Filter name"
+msgstr "Име на филтър"
+
+#: plugins/managesieve/localization/bg_BG.inc:newfilter
+msgid "New filter"
+msgstr "Нов филтър"
+
+#: plugins/managesieve/localization/bg_BG.inc:filteradd
+msgid "Add filter"
+msgstr "Добавяне на филтър"
+
+#: plugins/managesieve/localization/bg_BG.inc:filterdel
+msgid "Delete filter"
+msgstr "Изтриване на филтър"
+
+#: plugins/managesieve/localization/bg_BG.inc:moveup
+msgid "Move up"
+msgstr "Преместване нагоре"
+
+#: plugins/managesieve/localization/bg_BG.inc:movedown
+msgid "Move down"
+msgstr "Преместване надолу"
+
+#: plugins/managesieve/localization/bg_BG.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "съвпадение на всички следващи правила"
+
+#: plugins/managesieve/localization/bg_BG.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "съвпадение на някое от следните правила"
+
+#: plugins/managesieve/localization/bg_BG.inc:filterany
+msgid "all messages"
+msgstr "всички съобщения"
+
+#: plugins/managesieve/localization/bg_BG.inc:filtercontains
+msgid "contains"
+msgstr "съдържа"
+
+#: plugins/managesieve/localization/bg_BG.inc:filternotcontains
+msgid "not contains"
+msgstr "не съдържа"
+
+#: plugins/managesieve/localization/bg_BG.inc:filteris
+msgid "is equal to"
+msgstr "е равно на"
+
+#: plugins/managesieve/localization/bg_BG.inc:filterisnot
+msgid "is not equal to"
+msgstr "не е равно на"
+
+#: plugins/managesieve/localization/bg_BG.inc:filterexists
+msgid "exists"
+msgstr "съществува"
+
+#: plugins/managesieve/localization/bg_BG.inc:filternotexists
+msgid "not exists"
+msgstr "не съществува"
+
+#: plugins/managesieve/localization/bg_BG.inc:filterunder
+msgid "under"
+msgstr "под"
+
+#: plugins/managesieve/localization/bg_BG.inc:filterover
+msgid "over"
+msgstr "над"
+
+#: plugins/managesieve/localization/bg_BG.inc:addrule
+msgid "Add rule"
+msgstr "Добавяне на правило"
+
+#: plugins/managesieve/localization/bg_BG.inc:delrule
+msgid "Delete rule"
+msgstr "Изтриване на правило"
+
+#: plugins/managesieve/localization/bg_BG.inc:messagemoveto
+msgid "Move message to"
+msgstr "Преместване на съобщението в"
+
+#: plugins/managesieve/localization/bg_BG.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Пренасочване на съобщението до"
+
+#: plugins/managesieve/localization/bg_BG.inc:messagereply
+msgid "Reply with message"
+msgstr "Отговор със съобщение"
+
+#: plugins/managesieve/localization/bg_BG.inc:messagedelete
+msgid "Delete message"
+msgstr "Изтриване на съобщение"
+
+#: plugins/managesieve/localization/bg_BG.inc:messagediscard
+msgid "Discard with message"
+msgstr "Отхвърляне със съобщение"
+
+#: plugins/managesieve/localization/bg_BG.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "За входящата поща:"
+
+#: plugins/managesieve/localization/bg_BG.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "...изпълнение на следните действия"
+
+#: plugins/managesieve/localization/bg_BG.inc:add
+msgid "Add"
+msgstr "Добавяне"
+
+#: plugins/managesieve/localization/bg_BG.inc:del
+msgid "Delete"
+msgstr "Изтриване"
+
+#: plugins/managesieve/localization/bg_BG.inc:sender
+msgid "Sender"
+msgstr "Подател"
+
+#: plugins/managesieve/localization/bg_BG.inc:recipient
+msgid "Recipient"
+msgstr "Получател"

@@ -1,0 +1,271 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/sv_SE.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: sv_SE\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/sv_SE.inc:filters
+msgid "Filters"
+msgstr "Filter"
+
+#: plugins/managesieve/localization/sv_SE.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Administrera filter"
+
+#: plugins/managesieve/localization/sv_SE.inc:filtername
+msgid "Filter name"
+msgstr "Filternamn"
+
+#: plugins/managesieve/localization/sv_SE.inc:newfilter
+msgid "New filter"
+msgstr "Nytt filter"
+
+#: plugins/managesieve/localization/sv_SE.inc:filteradd
+msgid "Add filter"
+msgstr "Lägg till filter"
+
+#: plugins/managesieve/localization/sv_SE.inc:filterdel
+msgid "Delete filter"
+msgstr "Ta bort filter"
+
+#: plugins/managesieve/localization/sv_SE.inc:moveup
+msgid "Move up"
+msgstr "Flytta upp filter"
+
+#: plugins/managesieve/localization/sv_SE.inc:movedown
+msgid "Move down"
+msgstr "Flytta ner filter"
+
+#: plugins/managesieve/localization/sv_SE.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "Filtrera på alla följande regler"
+
+#: plugins/managesieve/localization/sv_SE.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "Filtrera på någon av följande regler"
+
+#: plugins/managesieve/localization/sv_SE.inc:filterany
+msgid "all messages"
+msgstr "Filtrera alla meddelanden"
+
+#: plugins/managesieve/localization/sv_SE.inc:filtercontains
+msgid "contains"
+msgstr "innehåller"
+
+#: plugins/managesieve/localization/sv_SE.inc:filternotcontains
+msgid "not contains"
+msgstr "inte innehåller"
+
+#: plugins/managesieve/localization/sv_SE.inc:filteris
+msgid "is equal to"
+msgstr "är lika med"
+
+#: plugins/managesieve/localization/sv_SE.inc:filterisnot
+msgid "is not equal to"
+msgstr "är inte lika med"
+
+#: plugins/managesieve/localization/sv_SE.inc:filterexists
+msgid "exists"
+msgstr "finns"
+
+#: plugins/managesieve/localization/sv_SE.inc:filternotexists
+msgid "not exists"
+msgstr "inte finns"
+
+#: plugins/managesieve/localization/sv_SE.inc:filterunder
+msgid "under"
+msgstr "under"
+
+#: plugins/managesieve/localization/sv_SE.inc:filterover
+msgid "over"
+msgstr "över"
+
+#: plugins/managesieve/localization/sv_SE.inc:addrule
+msgid "Add rule"
+msgstr "Lägg till regel"
+
+#: plugins/managesieve/localization/sv_SE.inc:delrule
+msgid "Delete rule"
+msgstr "Ta bort regel"
+
+#: plugins/managesieve/localization/sv_SE.inc:messagemoveto
+msgid "Move message to"
+msgstr "Flytta meddelande till"
+
+#: plugins/managesieve/localization/sv_SE.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Ändra mottagare till"
+
+#: plugins/managesieve/localization/sv_SE.inc:messagecopyto
+msgid "Copy message to"
+msgstr "Kopiera meddelande till"
+
+#: plugins/managesieve/localization/sv_SE.inc:messagesendcopy
+msgid "Send message copy to"
+msgstr "Skicka kopia av meddelande till"
+
+#: plugins/managesieve/localization/sv_SE.inc:messagereply
+msgid "Reply with message"
+msgstr "Besvara meddelande"
+
+#: plugins/managesieve/localization/sv_SE.inc:messagedelete
+msgid "Delete message"
+msgstr "Ta bort meddelande"
+
+#: plugins/managesieve/localization/sv_SE.inc:messagediscard
+msgid "Discard with message"
+msgstr "Avböj med felmeddelande"
+
+#: plugins/managesieve/localization/sv_SE.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "För inkommande meddelande"
+
+#: plugins/managesieve/localization/sv_SE.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "Utför följande åtgärd"
+
+#: plugins/managesieve/localization/sv_SE.inc:add
+msgid "Add"
+msgstr "Lägg till"
+
+#: plugins/managesieve/localization/sv_SE.inc:del
+msgid "Delete"
+msgstr "Ta bort"
+
+#: plugins/managesieve/localization/sv_SE.inc:sender
+msgid "Sender"
+msgstr "Avsändare"
+
+#: plugins/managesieve/localization/sv_SE.inc:recipient
+msgid "Recipient"
+msgstr "Mottagare"
+
+#: plugins/managesieve/localization/sv_SE.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Ytterligare mottagaradresser (avdelade med kommatecken)"
+
+#: plugins/managesieve/localization/sv_SE.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Antal dagar mellan auto-svar:"
+
+#: plugins/managesieve/localization/sv_SE.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Meddelande i auto-svar:"
+
+#: plugins/managesieve/localization/sv_SE.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Avsluta filtrering"
+
+#: plugins/managesieve/localization/sv_SE.inc:filterset
+msgid "Filters set"
+msgstr "Filtergrupp"
+
+#: plugins/managesieve/localization/sv_SE.inc:filtersetadd
+msgid "Add filters set"
+msgstr "Lägg till filtergrupp"
+
+#: plugins/managesieve/localization/sv_SE.inc:filtersetdel
+msgid "Delete current filters set"
+msgstr "Ta bort filtergrupp"
+
+#: plugins/managesieve/localization/sv_SE.inc:filtersetact
+msgid "Activate current filters set"
+msgstr "Aktivera filtergrupp"
+
+#: plugins/managesieve/localization/sv_SE.inc:filtersetdeact
+msgid "Deactivate current filters set"
+msgstr "Deaktivera filtergrupp"
+
+#: plugins/managesieve/localization/sv_SE.inc:filtersetget
+msgid "filtersetget"
+msgstr "Exportera filtergrupp i textformat"
+
+#: plugins/managesieve/localization/sv_SE.inc:filterdef
+msgid "Filter definition"
+msgstr "Filterdefinition"
+
+#: plugins/managesieve/localization/sv_SE.inc:filtersetname
+msgid "Filters set name"
+msgstr "Filtergruppsnamn"
+
+#: plugins/managesieve/localization/sv_SE.inc:newfilterset
+msgid "New filters set"
+msgstr "Ny filtergrupp"
+
+#: plugins/managesieve/localization/sv_SE.inc:active
+msgid "active"
+msgstr "aktiv"
+
+#: plugins/managesieve/localization/sv_SE.inc:none
+msgid "none"
+msgstr "ingen"
+
+#: plugins/managesieve/localization/sv_SE.inc:fromset
+msgid "from set"
+msgstr "från grupp"
+
+#: plugins/managesieve/localization/sv_SE.inc:fromfile
+msgid "from file"
+msgstr "från fil"
+
+#: plugins/managesieve/localization/sv_SE.inc:filterdisabled
+msgid "Filter disabled"
+msgstr "Filter deaktiverat"
+
+#: plugins/managesieve/localization/sv_SE.inc:countisgreaterthan
+msgid "count is greater than"
+msgstr "antal är större än"
+
+#: plugins/managesieve/localization/sv_SE.inc:countisgreaterthanequal
+msgid "count is greater than or equal to"
+msgstr "antal är större än eller lika med"
+
+#: plugins/managesieve/localization/sv_SE.inc:countislessthan
+msgid "count is less than"
+msgstr "antal är mindre än"
+
+#: plugins/managesieve/localization/sv_SE.inc:countislessthanequal
+msgid "count is less than or equal to"
+msgstr "antal är mindre än eller lika med"
+
+#: plugins/managesieve/localization/sv_SE.inc:countequals
+msgid "count is equal to"
+msgstr "antal är lika med"
+
+#: plugins/managesieve/localization/sv_SE.inc:countnotequals
+msgid "count does not equal"
+msgstr "antal är inte lika med"
+
+#: plugins/managesieve/localization/sv_SE.inc:valueisgreaterthan
+msgid "value is greater than"
+msgstr "värde är större än"
+
+#: plugins/managesieve/localization/sv_SE.inc:valueisgreaterthanequal
+msgid "value is greater than or equal to"
+msgstr "värde är större än eller lika med"
+
+#: plugins/managesieve/localization/sv_SE.inc:valueislessthan
+msgid "value is less than"
+msgstr "värde är mindre än"
+
+#: plugins/managesieve/localization/sv_SE.inc:valueislessthanequal
+msgid "value is less than or equal to"
+msgstr "värde är mindre än eller lika med"
+
+#: plugins/managesieve/localization/sv_SE.inc:valueequals
+msgid "value is equal to"
+msgstr "värde är lika med"
+
+#: plugins/managesieve/localization/sv_SE.inc:valuenotequals
+msgid "value does not equal"
+msgstr "värde är inte lika med"

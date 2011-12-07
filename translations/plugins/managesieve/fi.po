@@ -1,0 +1,211 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/fi_FI.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: fi_FI\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/fi_FI.inc:filters
+msgid "Filters"
+msgstr "Suodattimet"
+
+#: plugins/managesieve/localization/fi_FI.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Muokkaa saapuvan sähköpostin suodattimia"
+
+#: plugins/managesieve/localization/fi_FI.inc:filtername
+msgid "Filter name"
+msgstr "Suodattimen nimi"
+
+#: plugins/managesieve/localization/fi_FI.inc:newfilter
+msgid "New filter"
+msgstr "Uusi suodatin"
+
+#: plugins/managesieve/localization/fi_FI.inc:filteradd
+msgid "Add filter"
+msgstr "Lisää suodatin"
+
+#: plugins/managesieve/localization/fi_FI.inc:filterdel
+msgid "Delete filter"
+msgstr "Poista suodatin"
+
+#: plugins/managesieve/localization/fi_FI.inc:moveup
+msgid "Move up"
+msgstr "Siirrä ylös"
+
+#: plugins/managesieve/localization/fi_FI.inc:movedown
+msgid "Move down"
+msgstr "Siirrä alas"
+
+#: plugins/managesieve/localization/fi_FI.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "Täsmää kaikkien sääntöjen mukaan"
+
+#: plugins/managesieve/localization/fi_FI.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "Täsmää minkä tahansa sääntöjen mukaan"
+
+#: plugins/managesieve/localization/fi_FI.inc:filterany
+msgid "all messages"
+msgstr "Kaikki viestit"
+
+#: plugins/managesieve/localization/fi_FI.inc:filtercontains
+msgid "contains"
+msgstr "Sisältää"
+
+#: plugins/managesieve/localization/fi_FI.inc:filternotcontains
+msgid "not contains"
+msgstr "Ei Sisällä"
+
+#: plugins/managesieve/localization/fi_FI.inc:filteris
+msgid "is equal to"
+msgstr "on samanlainen kuin"
+
+#: plugins/managesieve/localization/fi_FI.inc:filterisnot
+msgid "is not equal to"
+msgstr "ei ole samanlainen kuin"
+
+#: plugins/managesieve/localization/fi_FI.inc:filterexists
+msgid "exists"
+msgstr "on olemassa"
+
+#: plugins/managesieve/localization/fi_FI.inc:filternotexists
+msgid "not exists"
+msgstr "ei ole olemassa"
+
+#: plugins/managesieve/localization/fi_FI.inc:filterunder
+msgid "under"
+msgstr "alla"
+
+#: plugins/managesieve/localization/fi_FI.inc:filterover
+msgid "over"
+msgstr "yli"
+
+#: plugins/managesieve/localization/fi_FI.inc:addrule
+msgid "Add rule"
+msgstr "Lisää sääntö"
+
+#: plugins/managesieve/localization/fi_FI.inc:delrule
+msgid "Delete rule"
+msgstr "Poista sääntö"
+
+#: plugins/managesieve/localization/fi_FI.inc:messagemoveto
+msgid "Move message to"
+msgstr "Siirrä viesti"
+
+#: plugins/managesieve/localization/fi_FI.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Uudelleen ohjaa viesti"
+
+#: plugins/managesieve/localization/fi_FI.inc:messagereply
+msgid "Reply with message"
+msgstr "Vastaa viestin kanssa"
+
+#: plugins/managesieve/localization/fi_FI.inc:messagedelete
+msgid "Delete message"
+msgstr "Poista viesti"
+
+#: plugins/managesieve/localization/fi_FI.inc:messagediscard
+msgid "Discard with message"
+msgstr "Hylkää viesti"
+
+#: plugins/managesieve/localization/fi_FI.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Saapuva sähköposti"
+
+#: plugins/managesieve/localization/fi_FI.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "Suorita seuraavat tapahtumat"
+
+#: plugins/managesieve/localization/fi_FI.inc:add
+msgid "Add"
+msgstr "Lisää"
+
+#: plugins/managesieve/localization/fi_FI.inc:del
+msgid "Delete"
+msgstr "Poista"
+
+#: plugins/managesieve/localization/fi_FI.inc:sender
+msgid "Sender"
+msgstr "Lähettäjä"
+
+#: plugins/managesieve/localization/fi_FI.inc:recipient
+msgid "Recipient"
+msgstr "Vastaanottaja"
+
+#: plugins/managesieve/localization/fi_FI.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Lähetä viesti myös seuraaviin osotteisiin (erottele pilkulla):"
+
+#: plugins/managesieve/localization/fi_FI.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Kuinka monen päivän välein lähetetään uusi vastaus:"
+
+#: plugins/managesieve/localization/fi_FI.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Viesti:"
+
+#: plugins/managesieve/localization/fi_FI.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Viimeinen sääntö"
+
+#: plugins/managesieve/localization/fi_FI.inc:filterset
+msgid "Filters set"
+msgstr "Suodatinlista"
+
+#: plugins/managesieve/localization/fi_FI.inc:filtersetadd
+msgid "Add filters set"
+msgstr "Lisää suodatinlista"
+
+#: plugins/managesieve/localization/fi_FI.inc:filtersetdel
+msgid "Delete current filters set"
+msgstr "Poista valittu suodatinlista"
+
+#: plugins/managesieve/localization/fi_FI.inc:filtersetact
+msgid "Activate current filters set"
+msgstr "Aktivoi valittu suodatinlista"
+
+#: plugins/managesieve/localization/fi_FI.inc:filtersetget
+msgid "filtersetget"
+msgstr "Lataa valittu suodatinlista tekstimuodossa"
+
+#: plugins/managesieve/localization/fi_FI.inc:filterdef
+msgid "Filter definition"
+msgstr "Suodatinmääritykset"
+
+#: plugins/managesieve/localization/fi_FI.inc:filtersetname
+msgid "Filters set name"
+msgstr "Suodatinlistan nimi"
+
+#: plugins/managesieve/localization/fi_FI.inc:newfilterset
+msgid "New filters set"
+msgstr "Uusi suodatinlista"
+
+#: plugins/managesieve/localization/fi_FI.inc:active
+msgid "active"
+msgstr "aktiivinen"
+
+#: plugins/managesieve/localization/fi_FI.inc:none
+msgid "none"
+msgstr "ei mitään"
+
+#: plugins/managesieve/localization/fi_FI.inc:fromset
+msgid "from set"
+msgstr "listasta"
+
+#: plugins/managesieve/localization/fi_FI.inc:fromfile
+msgid "from file"
+msgstr "tiedostosta"
+
+#: plugins/managesieve/localization/fi_FI.inc:filterdisabled
+msgid "Filter disabled"
+msgstr "Suodatin on poistettu käytöstä"

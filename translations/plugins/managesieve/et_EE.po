@@ -1,0 +1,159 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/et_EE.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: et_EE\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/et_EE.inc:filters
+msgid "Filters"
+msgstr "Filtrid"
+
+#: plugins/managesieve/localization/et_EE.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Halda sisenevate kirjade filtreid"
+
+#: plugins/managesieve/localization/et_EE.inc:filtername
+msgid "Filter name"
+msgstr "Filtri nimi"
+
+#: plugins/managesieve/localization/et_EE.inc:newfilter
+msgid "New filter"
+msgstr "Uus filter"
+
+#: plugins/managesieve/localization/et_EE.inc:filteradd
+msgid "Add filter"
+msgstr "Lisa filter"
+
+#: plugins/managesieve/localization/et_EE.inc:filterdel
+msgid "Delete filter"
+msgstr "Kustuta filter"
+
+#: plugins/managesieve/localization/et_EE.inc:moveup
+msgid "Move up"
+msgstr "Liiguta üles"
+
+#: plugins/managesieve/localization/et_EE.inc:movedown
+msgid "Move down"
+msgstr "Liiguta alla"
+
+#: plugins/managesieve/localization/et_EE.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "vastab kõikidele järgnevatele reeglitele"
+
+#: plugins/managesieve/localization/et_EE.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "vastab mõnele järgnevatest reeglitest"
+
+#: plugins/managesieve/localization/et_EE.inc:filterany
+msgid "all messages"
+msgstr "kõik kirjad"
+
+#: plugins/managesieve/localization/et_EE.inc:filtercontains
+msgid "contains"
+msgstr "sisaldab"
+
+#: plugins/managesieve/localization/et_EE.inc:filternotcontains
+msgid "not contains"
+msgstr "ei sisalda"
+
+#: plugins/managesieve/localization/et_EE.inc:filteris
+msgid "is equal to"
+msgstr "on võrdne kui"
+
+#: plugins/managesieve/localization/et_EE.inc:filterisnot
+msgid "is not equal to"
+msgstr "ei ole võrdne kui"
+
+#: plugins/managesieve/localization/et_EE.inc:filterexists
+msgid "exists"
+msgstr "on olemas"
+
+#: plugins/managesieve/localization/et_EE.inc:filternotexists
+msgid "not exists"
+msgstr "pole olemas"
+
+#: plugins/managesieve/localization/et_EE.inc:filterunder
+msgid "under"
+msgstr "alt"
+
+#: plugins/managesieve/localization/et_EE.inc:filterover
+msgid "over"
+msgstr "üle"
+
+#: plugins/managesieve/localization/et_EE.inc:addrule
+msgid "Add rule"
+msgstr "Lisa reegel"
+
+#: plugins/managesieve/localization/et_EE.inc:delrule
+msgid "Delete rule"
+msgstr "Kustuta reegel"
+
+#: plugins/managesieve/localization/et_EE.inc:messagemoveto
+msgid "Move message to"
+msgstr "Liiguta kiri"
+
+#: plugins/managesieve/localization/et_EE.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Suuna kiri ümber"
+
+#: plugins/managesieve/localization/et_EE.inc:messagereply
+msgid "Reply with message"
+msgstr "Vasta kirjaga"
+
+#: plugins/managesieve/localization/et_EE.inc:messagedelete
+msgid "Delete message"
+msgstr "Kustuta kiri"
+
+#: plugins/managesieve/localization/et_EE.inc:messagediscard
+msgid "Discard with message"
+msgstr "Viska ära teatega"
+
+#: plugins/managesieve/localization/et_EE.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Siseneva kirja puhul, mis:"
+
+#: plugins/managesieve/localization/et_EE.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "...käivita järgnevad tegevused:"
+
+#: plugins/managesieve/localization/et_EE.inc:add
+msgid "Add"
+msgstr "Lisa"
+
+#: plugins/managesieve/localization/et_EE.inc:del
+msgid "Delete"
+msgstr "Kustuta"
+
+#: plugins/managesieve/localization/et_EE.inc:sender
+msgid "Sender"
+msgstr "Saatja"
+
+#: plugins/managesieve/localization/et_EE.inc:recipient
+msgid "Recipient"
+msgstr "Saaja"
+
+#: plugins/managesieve/localization/et_EE.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Lisanimekiri saaja e-posti aadressidest (komadega eraldatud):"
+
+#: plugins/managesieve/localization/et_EE.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Kui tihti kirju saata (päevades):"
+
+#: plugins/managesieve/localization/et_EE.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Kirja sisu (puhkuse põhjus):"
+
+#: plugins/managesieve/localization/et_EE.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Peata reeglite otsimine"

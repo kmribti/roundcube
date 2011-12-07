@@ -1,0 +1,215 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/sk_SK.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: sk_SK\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/sk_SK.inc:filters
+msgid "Filters"
+msgstr "Filtre"
+
+#: plugins/managesieve/localization/sk_SK.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Správa filtrov príchádzajúcej pošty"
+
+#: plugins/managesieve/localization/sk_SK.inc:filtername
+msgid "Filter name"
+msgstr "Názov filtra"
+
+#: plugins/managesieve/localization/sk_SK.inc:newfilter
+msgid "New filter"
+msgstr "Nový filter"
+
+#: plugins/managesieve/localization/sk_SK.inc:filteradd
+msgid "Add filter"
+msgstr "Pridaj filter"
+
+#: plugins/managesieve/localization/sk_SK.inc:filterdel
+msgid "Delete filter"
+msgstr "Zmaž filter"
+
+#: plugins/managesieve/localization/sk_SK.inc:moveup
+msgid "Move up"
+msgstr "Presuň vyššie"
+
+#: plugins/managesieve/localization/sk_SK.inc:movedown
+msgid "Move down"
+msgstr "Presuň nižšie"
+
+#: plugins/managesieve/localization/sk_SK.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "vyhovujúcu VŠETKÝM nasledujúcim pravidlám"
+
+#: plugins/managesieve/localization/sk_SK.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "vyhovujúcu ĽUBOVOĽNÉMU z nasledujúcich pravidiel"
+
+#: plugins/managesieve/localization/sk_SK.inc:filterany
+msgid "all messages"
+msgstr "všetky správy"
+
+#: plugins/managesieve/localization/sk_SK.inc:filtercontains
+msgid "contains"
+msgstr "obsahuje"
+
+#: plugins/managesieve/localization/sk_SK.inc:filternotcontains
+msgid "not contains"
+msgstr "neobsahuje"
+
+#: plugins/managesieve/localization/sk_SK.inc:filteris
+msgid "is equal to"
+msgstr "je"
+
+#: plugins/managesieve/localization/sk_SK.inc:filterisnot
+msgid "is not equal to"
+msgstr "nie je"
+
+#: plugins/managesieve/localization/sk_SK.inc:filterexists
+msgid "exists"
+msgstr "existuje"
+
+#: plugins/managesieve/localization/sk_SK.inc:filternotexists
+msgid "not exists"
+msgstr "neexistuje"
+
+#: plugins/managesieve/localization/sk_SK.inc:filterunder
+msgid "under"
+msgstr "pod"
+
+#: plugins/managesieve/localization/sk_SK.inc:filterover
+msgid "over"
+msgstr "nad"
+
+#: plugins/managesieve/localization/sk_SK.inc:addrule
+msgid "Add rule"
+msgstr "Pridaj pravidlo"
+
+#: plugins/managesieve/localization/sk_SK.inc:delrule
+msgid "Delete rule"
+msgstr "Zmaž pravidlo"
+
+#: plugins/managesieve/localization/sk_SK.inc:messagemoveto
+msgid "Move message to"
+msgstr "Presuň správu do"
+
+#: plugins/managesieve/localization/sk_SK.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Presmeruj správu na"
+
+#: plugins/managesieve/localization/sk_SK.inc:messagereply
+msgid "Reply with message"
+msgstr "Pošli automatickú odpoveď"
+
+#: plugins/managesieve/localization/sk_SK.inc:messagedelete
+msgid "Delete message"
+msgstr "Zmaž správu"
+
+#: plugins/managesieve/localization/sk_SK.inc:messagediscard
+msgid "Discard with message"
+msgstr "Zmaž a pošli správu na"
+
+#: plugins/managesieve/localization/sk_SK.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Pre prichádzajúcu poštu"
+
+#: plugins/managesieve/localization/sk_SK.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "vykonaj nasledovné akcie"
+
+#: plugins/managesieve/localization/sk_SK.inc:add
+msgid "Add"
+msgstr "Pridaj"
+
+#: plugins/managesieve/localization/sk_SK.inc:del
+msgid "Delete"
+msgstr "Zmaž"
+
+#: plugins/managesieve/localization/sk_SK.inc:sender
+msgid "Sender"
+msgstr "Odosielateľ"
+
+#: plugins/managesieve/localization/sk_SK.inc:recipient
+msgid "Recipient"
+msgstr "Adresát"
+
+#: plugins/managesieve/localization/sk_SK.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Dodatoční príjemcovia správy (oddelení čiarkami):"
+
+#: plugins/managesieve/localization/sk_SK.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Počet dní medzi odoslaním správy:"
+
+#: plugins/managesieve/localization/sk_SK.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Dôvod neprítomnosti:"
+
+#: plugins/managesieve/localization/sk_SK.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Koniec pravidiel"
+
+#: plugins/managesieve/localization/sk_SK.inc:filterset
+msgid "Filters set"
+msgstr "Sada filtrov"
+
+#: plugins/managesieve/localization/sk_SK.inc:filtersetadd
+msgid "Add filters set"
+msgstr "Pridaj sadu filtrov"
+
+#: plugins/managesieve/localization/sk_SK.inc:filtersetdel
+msgid "Delete current filters set"
+msgstr "Zmaž túto sadu filtrov"
+
+#: plugins/managesieve/localization/sk_SK.inc:filtersetact
+msgid "Activate current filters set"
+msgstr "Aktivuj túto sadu filtrov"
+
+#: plugins/managesieve/localization/sk_SK.inc:filtersetdeact
+msgid "Deactivate current filters set"
+msgstr "Deaktivuj túto sadu filtrov"
+
+#: plugins/managesieve/localization/sk_SK.inc:filtersetget
+msgid "filtersetget"
+msgstr "Stiahni definíciu filtrov v textovom súbore"
+
+#: plugins/managesieve/localization/sk_SK.inc:filterdef
+msgid "Filter definition"
+msgstr "Definícia filtra"
+
+#: plugins/managesieve/localization/sk_SK.inc:filtersetname
+msgid "Filters set name"
+msgstr "Názov sady filtrov"
+
+#: plugins/managesieve/localization/sk_SK.inc:newfilterset
+msgid "New filters set"
+msgstr "Nová sada filtrov"
+
+#: plugins/managesieve/localization/sk_SK.inc:active
+msgid "active"
+msgstr "aktívna"
+
+#: plugins/managesieve/localization/sk_SK.inc:none
+msgid "none"
+msgstr "žiadne"
+
+#: plugins/managesieve/localization/sk_SK.inc:fromset
+msgid "from set"
+msgstr "zo sady"
+
+#: plugins/managesieve/localization/sk_SK.inc:fromfile
+msgid "from file"
+msgstr "zo súboru"
+
+#: plugins/managesieve/localization/sk_SK.inc:filterdisabled
+msgid "Filter disabled"
+msgstr "Filter zakázaný"

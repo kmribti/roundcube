@@ -1,0 +1,272 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/lv_LV.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: lv_LV\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/lv_LV.inc:filters
+msgid "Filters"
+msgstr "Vēstuļu filtri"
+
+#: plugins/managesieve/localization/lv_LV.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Rediģēt ienākošo vēstuļu filtrus"
+
+#: plugins/managesieve/localization/lv_LV.inc:filtername
+msgid "Filter name"
+msgstr "Filtra nosaukums"
+
+#: plugins/managesieve/localization/lv_LV.inc:newfilter
+msgid "New filter"
+msgstr "Jauns filtrs"
+
+#: plugins/managesieve/localization/lv_LV.inc:filteradd
+msgid "Add filter"
+msgstr "Pievienot filtru"
+
+#: plugins/managesieve/localization/lv_LV.inc:filterdel
+msgid "Delete filter"
+msgstr "Izdzēst filtru"
+
+#: plugins/managesieve/localization/lv_LV.inc:moveup
+msgid "Move up"
+msgstr "Pārvietot augšup"
+
+#: plugins/managesieve/localization/lv_LV.inc:movedown
+msgid "Move down"
+msgstr "Pārvietot lejup"
+
+#: plugins/managesieve/localization/lv_LV.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "jāatbilst visiem no sekojošiem nosacījumiem"
+
+#: plugins/managesieve/localization/lv_LV.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "jāatbilst jebkuram no sekojošiem nosacījumiem"
+
+#: plugins/managesieve/localization/lv_LV.inc:filterany
+msgid "all messages"
+msgstr "visām vēstulēm"
+
+#: plugins/managesieve/localization/lv_LV.inc:filtercontains
+msgid "contains"
+msgstr "satur"
+
+#: plugins/managesieve/localization/lv_LV.inc:filternotcontains
+msgid "not contains"
+msgstr "nesatur"
+
+#: plugins/managesieve/localization/lv_LV.inc:filteris
+msgid "is equal to"
+msgstr "ir vienāds ar"
+
+#: plugins/managesieve/localization/lv_LV.inc:filterisnot
+msgid "is not equal to"
+msgstr "nav vienāds ar"
+
+#: plugins/managesieve/localization/lv_LV.inc:filterexists
+msgid "exists"
+msgstr "eksistē"
+
+#: plugins/managesieve/localization/lv_LV.inc:filternotexists
+msgid "not exists"
+msgstr "neeksistē"
+
+#: plugins/managesieve/localization/lv_LV.inc:filterunder
+msgid "under"
+msgstr "zem"
+
+#: plugins/managesieve/localization/lv_LV.inc:filterover
+msgid "over"
+msgstr "virs"
+
+#: plugins/managesieve/localization/lv_LV.inc:addrule
+msgid "Add rule"
+msgstr "Pievienot nosacījumu"
+
+#: plugins/managesieve/localization/lv_LV.inc:delrule
+msgid "Delete rule"
+msgstr "Izdzēst nosacījumu"
+
+#: plugins/managesieve/localization/lv_LV.inc:messagemoveto
+msgid "Move message to"
+msgstr "Pārvietot vēstuli uz"
+
+#: plugins/managesieve/localization/lv_LV.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Pāradresēt vēstuli uz"
+
+#: plugins/managesieve/localization/lv_LV.inc:messagecopyto
+msgid "Copy message to"
+msgstr "Pārkopēt vēstuli uz"
+
+#: plugins/managesieve/localization/lv_LV.inc:messagesendcopy
+msgid "Send message copy to"
+msgstr "Pārsūtīt vēstules kopiju uz"
+
+#: plugins/managesieve/localization/lv_LV.inc:messagereply
+msgid "Reply with message"
+msgstr "Automātiski atbildēt"
+
+#: plugins/managesieve/localization/lv_LV.inc:messagedelete
+msgid "Delete message"
+msgstr "Izdzēst vēstuli"
+
+#: plugins/managesieve/localization/lv_LV.inc:messagediscard
+msgid "Discard with message"
+msgstr "Izdzēst vēstuli un atbildēt"
+
+#: plugins/managesieve/localization/lv_LV.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Ienākošajām vēstulēm:"
+
+#: plugins/managesieve/localization/lv_LV.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "Izpildīt sekojošās darbības:"
+
+#: plugins/managesieve/localization/lv_LV.inc:add
+msgid "Add"
+msgstr "Pievienot"
+
+#: plugins/managesieve/localization/lv_LV.inc:del
+msgid "Delete"
+msgstr "Dzēst"
+
+#: plugins/managesieve/localization/lv_LV.inc:sender
+msgid "Sender"
+msgstr "Sūtītājs"
+
+#: plugins/managesieve/localization/lv_LV.inc:recipient
+msgid "Recipient"
+msgstr "Saņēmējs"
+
+#: plugins/managesieve/localization/lv_LV.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Ievadiet savu(s) e-pastu(s) caur komatu:"
+
+#: plugins/managesieve/localization/lv_LV.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Cik dienu laikā vienam un tam pašam sūtītājam neatbildēt atkārtoti"
+"(piem., 7):"
+
+#: plugins/managesieve/localization/lv_LV.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Atvaļinājuma vēstules teksts:"
+
+#: plugins/managesieve/localization/lv_LV.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Apturēt nosacījumu pārbaudi"
+
+#: plugins/managesieve/localization/lv_LV.inc:filterset
+msgid "Filters set"
+msgstr "Filtru kopa"
+
+#: plugins/managesieve/localization/lv_LV.inc:filtersetadd
+msgid "Add filters set"
+msgstr "Pievienot filtru kopu"
+
+#: plugins/managesieve/localization/lv_LV.inc:filtersetdel
+msgid "Delete current filters set"
+msgstr "Izdzēst pašreizējo filtru kopu"
+
+#: plugins/managesieve/localization/lv_LV.inc:filtersetact
+msgid "Activate current filters set"
+msgstr "Aktivizēt pašreizējo filtru kopu"
+
+#: plugins/managesieve/localization/lv_LV.inc:filtersetdeact
+msgid "Deactivate current filters set"
+msgstr "Deaktivizēt pašreizējo filtru kopu"
+
+#: plugins/managesieve/localization/lv_LV.inc:filtersetget
+msgid "filtersetget"
+msgstr "Lejupielādēt filtru kopu teksta formātā"
+
+#: plugins/managesieve/localization/lv_LV.inc:filterdef
+msgid "Filter definition"
+msgstr "Filtra apraksts"
+
+#: plugins/managesieve/localization/lv_LV.inc:filtersetname
+msgid "Filters set name"
+msgstr "Filtru kopas nosaukums"
+
+#: plugins/managesieve/localization/lv_LV.inc:newfilterset
+msgid "New filters set"
+msgstr "Jauna filtru kopa"
+
+#: plugins/managesieve/localization/lv_LV.inc:active
+msgid "active"
+msgstr "aktīvs"
+
+#: plugins/managesieve/localization/lv_LV.inc:none
+msgid "none"
+msgstr "nav"
+
+#: plugins/managesieve/localization/lv_LV.inc:fromset
+msgid "from set"
+msgstr "no kopas"
+
+#: plugins/managesieve/localization/lv_LV.inc:fromfile
+msgid "from file"
+msgstr "no faila"
+
+#: plugins/managesieve/localization/lv_LV.inc:filterdisabled
+msgid "Filter disabled"
+msgstr "Filtrs atslēgts"
+
+#: plugins/managesieve/localization/lv_LV.inc:countisgreaterthan
+msgid "count is greater than"
+msgstr "skaits ir lielāks nekā"
+
+#: plugins/managesieve/localization/lv_LV.inc:countisgreaterthanequal
+msgid "count is greater than or equal to"
+msgstr "skaits ir vienāds vai lielāks nekā"
+
+#: plugins/managesieve/localization/lv_LV.inc:countislessthan
+msgid "count is less than"
+msgstr "skaits ir mazāks nekā"
+
+#: plugins/managesieve/localization/lv_LV.inc:countislessthanequal
+msgid "count is less than or equal to"
+msgstr "skaits ir vienāds vai mazāks nekā"
+
+#: plugins/managesieve/localization/lv_LV.inc:countequals
+msgid "count is equal to"
+msgstr "skaits ir vienāds ar"
+
+#: plugins/managesieve/localization/lv_LV.inc:countnotequals
+msgid "count does not equal"
+msgstr "skaits nav vienāds ar"
+
+#: plugins/managesieve/localization/lv_LV.inc:valueisgreaterthan
+msgid "value is greater than"
+msgstr "vērtība ir lielāka nekā"
+
+#: plugins/managesieve/localization/lv_LV.inc:valueisgreaterthanequal
+msgid "value is greater than or equal to"
+msgstr "vērtība ir vienāda vai lielāka nekā"
+
+#: plugins/managesieve/localization/lv_LV.inc:valueislessthan
+msgid "value is less than"
+msgstr "vērtība ir mazāka nekā"
+
+#: plugins/managesieve/localization/lv_LV.inc:valueislessthanequal
+msgid "value is less than or equal to"
+msgstr "vērtība ir vienāda vai mazāka nekā"
+
+#: plugins/managesieve/localization/lv_LV.inc:valueequals
+msgid "value is equal to"
+msgstr "vērtība ir vienāda ar"
+
+#: plugins/managesieve/localization/lv_LV.inc:valuenotequals
+msgid "value does not equal"
+msgstr "vērtība nav vienāda ar"

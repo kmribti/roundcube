@@ -1,0 +1,163 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/el_GR.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: el_GR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/el_GR.inc:filters
+msgid "Filters"
+msgstr "Φίλτρα"
+
+#: plugins/managesieve/localization/el_GR.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Διαχείριση φίλτρων εισερχόμενων"
+
+#: plugins/managesieve/localization/el_GR.inc:filtername
+msgid "Filter name"
+msgstr "Ονομασία φίλτρου"
+
+#: plugins/managesieve/localization/el_GR.inc:newfilter
+msgid "New filter"
+msgstr "Δημιουργία φίλτρου"
+
+#: plugins/managesieve/localization/el_GR.inc:filteradd
+msgid "Add filter"
+msgstr "Προσθήκη φίλτρου"
+
+#: plugins/managesieve/localization/el_GR.inc:filterdel
+msgid "Delete filter"
+msgstr "Διαγραφή φίλτρου"
+
+#: plugins/managesieve/localization/el_GR.inc:moveup
+msgid "Move up"
+msgstr "Μετακίνηση πάνω"
+
+#: plugins/managesieve/localization/el_GR.inc:movedown
+msgid "Move down"
+msgstr "Μετακίνηση κάτω"
+
+#: plugins/managesieve/localization/el_GR.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "ταιριάζουν με όλους τους παρακάτω"
+"κανόνες"
+
+#: plugins/managesieve/localization/el_GR.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "ταιριάζουν με οποιονδήποτε από τους"
+"παρακάτω κανόνες"
+
+#: plugins/managesieve/localization/el_GR.inc:filterany
+msgid "all messages"
+msgstr "όλα τα μηνύματα"
+
+#: plugins/managesieve/localization/el_GR.inc:filtercontains
+msgid "contains"
+msgstr "περιέχει"
+
+#: plugins/managesieve/localization/el_GR.inc:filternotcontains
+msgid "not contains"
+msgstr "δεν περιέχει"
+
+#: plugins/managesieve/localization/el_GR.inc:filteris
+msgid "is equal to"
+msgstr "είναι ίσο με"
+
+#: plugins/managesieve/localization/el_GR.inc:filterisnot
+msgid "is not equal to"
+msgstr "δεν είναι ίσο με"
+
+#: plugins/managesieve/localization/el_GR.inc:filterexists
+msgid "exists"
+msgstr "υπάρχει"
+
+#: plugins/managesieve/localization/el_GR.inc:filternotexists
+msgid "not exists"
+msgstr "δεν υπάρχει"
+
+#: plugins/managesieve/localization/el_GR.inc:filterunder
+msgid "under"
+msgstr "κάτω"
+
+#: plugins/managesieve/localization/el_GR.inc:filterover
+msgid "over"
+msgstr "πάνω"
+
+#: plugins/managesieve/localization/el_GR.inc:addrule
+msgid "Add rule"
+msgstr "Προσθήκη κανόνα"
+
+#: plugins/managesieve/localization/el_GR.inc:delrule
+msgid "Delete rule"
+msgstr "Διαγραφή κανόνα"
+
+#: plugins/managesieve/localization/el_GR.inc:messagemoveto
+msgid "Move message to"
+msgstr "Μετακίνηση μηνύματος στο"
+
+#: plugins/managesieve/localization/el_GR.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Προώθηση μηνύματος στο"
+
+#: plugins/managesieve/localization/el_GR.inc:messagereply
+msgid "Reply with message"
+msgstr "Απάντηση με μήνυμα"
+
+#: plugins/managesieve/localization/el_GR.inc:messagedelete
+msgid "Delete message"
+msgstr "Διαγραφή μηνύματος"
+
+#: plugins/managesieve/localization/el_GR.inc:messagediscard
+msgid "Discard with message"
+msgstr "Απόρριψη με μήνυμα"
+
+#: plugins/managesieve/localization/el_GR.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Για εισερχόμενα μηνύματα που:"
+
+#: plugins/managesieve/localization/el_GR.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "...εκτέλεση των παρακάτω ενεργειών:"
+
+#: plugins/managesieve/localization/el_GR.inc:add
+msgid "Add"
+msgstr "Προσθήκη"
+
+#: plugins/managesieve/localization/el_GR.inc:del
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#: plugins/managesieve/localization/el_GR.inc:sender
+msgid "Sender"
+msgstr "Αποστολέας"
+
+#: plugins/managesieve/localization/el_GR.inc:recipient
+msgid "Recipient"
+msgstr "Παραλήπτης"
+
+#: plugins/managesieve/localization/el_GR.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Πρόσθετη λίστα email παραληπτών"
+"(διαχωρισμένη με κόμματα):"
+
+#: plugins/managesieve/localization/el_GR.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Συχνότητα αποστολής μηνυμάτων (σε"
+"ημέρες):"
+
+#: plugins/managesieve/localization/el_GR.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Σώμα μηνύματος (λόγος απουσίας):"
+
+#: plugins/managesieve/localization/el_GR.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Παύση επαλήθευσης κανόνων"

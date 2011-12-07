@@ -1,0 +1,215 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/zh_TW.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: zh_TW\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/zh_TW.inc:filters
+msgid "Filters"
+msgstr "篩選器"
+
+#: plugins/managesieve/localization/zh_TW.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "設定篩選器"
+
+#: plugins/managesieve/localization/zh_TW.inc:filtername
+msgid "Filter name"
+msgstr "篩選器名稱"
+
+#: plugins/managesieve/localization/zh_TW.inc:newfilter
+msgid "New filter"
+msgstr "建立新篩選器"
+
+#: plugins/managesieve/localization/zh_TW.inc:filteradd
+msgid "Add filter"
+msgstr "增加篩選器"
+
+#: plugins/managesieve/localization/zh_TW.inc:filterdel
+msgid "Delete filter"
+msgstr "刪除篩選器"
+
+#: plugins/managesieve/localization/zh_TW.inc:moveup
+msgid "Move up"
+msgstr "上移"
+
+#: plugins/managesieve/localization/zh_TW.inc:movedown
+msgid "Move down"
+msgstr "下移"
+
+#: plugins/managesieve/localization/zh_TW.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "符合所有規則"
+
+#: plugins/managesieve/localization/zh_TW.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "符合任一條規則"
+
+#: plugins/managesieve/localization/zh_TW.inc:filterany
+msgid "all messages"
+msgstr "所有信件"
+
+#: plugins/managesieve/localization/zh_TW.inc:filtercontains
+msgid "contains"
+msgstr "包含"
+
+#: plugins/managesieve/localization/zh_TW.inc:filternotcontains
+msgid "not contains"
+msgstr "不包含"
+
+#: plugins/managesieve/localization/zh_TW.inc:filteris
+msgid "is equal to"
+msgstr "等於"
+
+#: plugins/managesieve/localization/zh_TW.inc:filterisnot
+msgid "is not equal to"
+msgstr "不等於"
+
+#: plugins/managesieve/localization/zh_TW.inc:filterexists
+msgid "exists"
+msgstr "存在"
+
+#: plugins/managesieve/localization/zh_TW.inc:filternotexists
+msgid "not exists"
+msgstr "不存在"
+
+#: plugins/managesieve/localization/zh_TW.inc:filterunder
+msgid "under"
+msgstr "小於"
+
+#: plugins/managesieve/localization/zh_TW.inc:filterover
+msgid "over"
+msgstr "大於"
+
+#: plugins/managesieve/localization/zh_TW.inc:addrule
+msgid "Add rule"
+msgstr "新增規則"
+
+#: plugins/managesieve/localization/zh_TW.inc:delrule
+msgid "Delete rule"
+msgstr "刪除規則"
+
+#: plugins/managesieve/localization/zh_TW.inc:messagemoveto
+msgid "Move message to"
+msgstr "將信件移至"
+
+#: plugins/managesieve/localization/zh_TW.inc:messageredirect
+msgid "Redirect message to"
+msgstr "將信件轉寄至"
+
+#: plugins/managesieve/localization/zh_TW.inc:messagereply
+msgid "Reply with message"
+msgstr "以下列內容回覆"
+
+#: plugins/managesieve/localization/zh_TW.inc:messagedelete
+msgid "Delete message"
+msgstr "刪除信件"
+
+#: plugins/managesieve/localization/zh_TW.inc:messagediscard
+msgid "Discard with message"
+msgstr "刪除信件並以下列內容回覆"
+
+#: plugins/managesieve/localization/zh_TW.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "對新收到的信件："
+
+#: plugins/managesieve/localization/zh_TW.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "執行下列動作："
+
+#: plugins/managesieve/localization/zh_TW.inc:add
+msgid "Add"
+msgstr "新增"
+
+#: plugins/managesieve/localization/zh_TW.inc:del
+msgid "Delete"
+msgstr "刪除"
+
+#: plugins/managesieve/localization/zh_TW.inc:sender
+msgid "Sender"
+msgstr "寄件者"
+
+#: plugins/managesieve/localization/zh_TW.inc:recipient
+msgid "Recipient"
+msgstr "收件者"
+
+#: plugins/managesieve/localization/zh_TW.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "其他收件者（用半形逗號隔開）："
+
+#: plugins/managesieve/localization/zh_TW.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "多久回覆一次（單位：天）："
+
+#: plugins/managesieve/localization/zh_TW.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "信件內容（休假原因）："
+
+#: plugins/managesieve/localization/zh_TW.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "停止評估規則"
+
+#: plugins/managesieve/localization/zh_TW.inc:filterset
+msgid "Filters set"
+msgstr "篩選器集合"
+
+#: plugins/managesieve/localization/zh_TW.inc:filtersetadd
+msgid "Add filters set"
+msgstr "加入篩選器集合"
+
+#: plugins/managesieve/localization/zh_TW.inc:filtersetdel
+msgid "Delete current filters set"
+msgstr "刪除目前的篩選器集合"
+
+#: plugins/managesieve/localization/zh_TW.inc:filtersetact
+msgid "Activate current filters set"
+msgstr "啟用目前的篩選器集合"
+
+#: plugins/managesieve/localization/zh_TW.inc:filtersetdeact
+msgid "Deactivate current filters set"
+msgstr "停用目前的篩選器集合"
+
+#: plugins/managesieve/localization/zh_TW.inc:filtersetget
+msgid "filtersetget"
+msgstr "以純文字下載篩選器集合"
+
+#: plugins/managesieve/localization/zh_TW.inc:filterdef
+msgid "Filter definition"
+msgstr "篩選器定義"
+
+#: plugins/managesieve/localization/zh_TW.inc:filtersetname
+msgid "Filters set name"
+msgstr "篩選器集合名稱"
+
+#: plugins/managesieve/localization/zh_TW.inc:newfilterset
+msgid "New filters set"
+msgstr "建立篩選器集合"
+
+#: plugins/managesieve/localization/zh_TW.inc:active
+msgid "active"
+msgstr "啟用"
+
+#: plugins/managesieve/localization/zh_TW.inc:none
+msgid "none"
+msgstr "無"
+
+#: plugins/managesieve/localization/zh_TW.inc:fromset
+msgid "from set"
+msgstr "從集合"
+
+#: plugins/managesieve/localization/zh_TW.inc:fromfile
+msgid "from file"
+msgstr "重檔案"
+
+#: plugins/managesieve/localization/zh_TW.inc:filterdisabled
+msgid "Filter disabled"
+msgstr "篩選器已停用"

@@ -1,0 +1,224 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/gl_ES.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: gl_ES\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/gl_ES.inc:filters
+msgid "Filters"
+msgstr "Filtros"
+
+#: plugins/managesieve/localization/gl_ES.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Xestionar os filtros de correo entrante"
+
+#: plugins/managesieve/localization/gl_ES.inc:filtername
+msgid "Filter name"
+msgstr "Nome do filtro"
+
+#: plugins/managesieve/localization/gl_ES.inc:newfilter
+msgid "New filter"
+msgstr "Novo filtro"
+
+#: plugins/managesieve/localization/gl_ES.inc:filteradd
+msgid "Add filter"
+msgstr "Engadir filtro"
+
+#: plugins/managesieve/localization/gl_ES.inc:filterdel
+msgid "Delete filter"
+msgstr "Eliminar filtro"
+
+#: plugins/managesieve/localization/gl_ES.inc:moveup
+msgid "Move up"
+msgstr "Mover arriba"
+
+#: plugins/managesieve/localization/gl_ES.inc:movedown
+msgid "Move down"
+msgstr "Mover abaixo"
+
+#: plugins/managesieve/localization/gl_ES.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "coincidir con tódalas regras siguientes"
+
+#: plugins/managesieve/localization/gl_ES.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "coincidir con algunha das regras seguintes"
+
+#: plugins/managesieve/localization/gl_ES.inc:filterany
+msgid "all messages"
+msgstr "tódalas mensaxes"
+
+#: plugins/managesieve/localization/gl_ES.inc:filtercontains
+msgid "contains"
+msgstr "contén"
+
+#: plugins/managesieve/localization/gl_ES.inc:filternotcontains
+msgid "not contains"
+msgstr "non contén"
+
+#: plugins/managesieve/localization/gl_ES.inc:filteris
+msgid "is equal to"
+msgstr "é igual a"
+
+#: plugins/managesieve/localization/gl_ES.inc:filterisnot
+msgid "is not equal to"
+msgstr "non é igual a"
+
+#: plugins/managesieve/localization/gl_ES.inc:filterexists
+msgid "exists"
+msgstr "existe"
+
+#: plugins/managesieve/localization/gl_ES.inc:filternotexists
+msgid "not exists"
+msgstr "non existe"
+
+#: plugins/managesieve/localization/gl_ES.inc:filterunder
+msgid "under"
+msgstr "baixo"
+
+#: plugins/managesieve/localization/gl_ES.inc:filterover
+msgid "over"
+msgstr "sobre"
+
+#: plugins/managesieve/localization/gl_ES.inc:addrule
+msgid "Add rule"
+msgstr "Engadir regra"
+
+#: plugins/managesieve/localization/gl_ES.inc:delrule
+msgid "Delete rule"
+msgstr "Eliminar regra"
+
+#: plugins/managesieve/localization/gl_ES.inc:messagemoveto
+msgid "Move message to"
+msgstr "Mover a mensaxe a"
+
+#: plugins/managesieve/localization/gl_ES.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Redirixir a mensaxe a"
+
+#: plugins/managesieve/localization/gl_ES.inc:messagecopyto
+msgid "Copy message to"
+msgstr "Copiar a mensaxe a"
+
+#: plugins/managesieve/localization/gl_ES.inc:messagesendcopy
+msgid "Send message copy to"
+msgstr "Enviar copia da mensaxe a"
+
+#: plugins/managesieve/localization/gl_ES.inc:messagereply
+msgid "Reply with message"
+msgstr "Respostar con unha mensaxe"
+
+#: plugins/managesieve/localization/gl_ES.inc:messagedelete
+msgid "Delete message"
+msgstr "Eliminar a mensaxe"
+
+#: plugins/managesieve/localization/gl_ES.inc:messagediscard
+msgid "Discard with message"
+msgstr "Descartar con unha mensaxe"
+
+#: plugins/managesieve/localization/gl_ES.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Para o correo entrante:"
+
+#: plugins/managesieve/localization/gl_ES.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "... executar as seguintes accións:"
+
+#: plugins/managesieve/localization/gl_ES.inc:add
+msgid "Add"
+msgstr "Engadir"
+
+#: plugins/managesieve/localization/gl_ES.inc:del
+msgid "Delete"
+msgstr "Eliminar"
+
+#: plugins/managesieve/localization/gl_ES.inc:sender
+msgid "Sender"
+msgstr "Remitente"
+
+#: plugins/managesieve/localization/gl_ES.inc:recipient
+msgid "Recipient"
+msgstr "Destinatario"
+
+#: plugins/managesieve/localization/gl_ES.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Lista de enderezos de correo de destinatarios adicionais (separados por"
+"comas):"
+
+#: plugins/managesieve/localization/gl_ES.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Cada canto enviar mensaxes (en días):"
+
+#: plugins/managesieve/localization/gl_ES.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Corpo da mensaxe (razón de vacacións):"
+
+#: plugins/managesieve/localization/gl_ES.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Parar de avaliar regras"
+
+#: plugins/managesieve/localization/gl_ES.inc:filterset
+msgid "Filters set"
+msgstr "Conxunto de filtros"
+
+#: plugins/managesieve/localization/gl_ES.inc:filtersetadd
+msgid "Add filters set"
+msgstr "Engadir un conxunto de filtros"
+
+#: plugins/managesieve/localization/gl_ES.inc:filtersetdel
+msgid "Delete current filters set"
+msgstr "Eliminar o conxunto de filtros actual"
+
+#: plugins/managesieve/localization/gl_ES.inc:filtersetact
+msgid "Activate current filters set"
+msgstr "Activar o conxunto de filtros actual"
+
+#: plugins/managesieve/localization/gl_ES.inc:filtersetdeact
+msgid "Deactivate current filters set"
+msgstr "Desactivar o conxunto de filtros actual"
+
+#: plugins/managesieve/localization/gl_ES.inc:filtersetget
+msgid "filtersetget"
+msgstr "Descargar o conxunto de filtros en formato de texto"
+
+#: plugins/managesieve/localization/gl_ES.inc:filterdef
+msgid "Filter definition"
+msgstr "Definición de filtros"
+
+#: plugins/managesieve/localization/gl_ES.inc:filtersetname
+msgid "Filters set name"
+msgstr "Nome do conxunto de filtros"
+
+#: plugins/managesieve/localization/gl_ES.inc:newfilterset
+msgid "New filters set"
+msgstr "Novo conxunto de filtros"
+
+#: plugins/managesieve/localization/gl_ES.inc:active
+msgid "active"
+msgstr "activo"
+
+#: plugins/managesieve/localization/gl_ES.inc:none
+msgid "none"
+msgstr "ningún"
+
+#: plugins/managesieve/localization/gl_ES.inc:fromset
+msgid "from set"
+msgstr "de conxunto "
+
+#: plugins/managesieve/localization/gl_ES.inc:fromfile
+msgid "from file"
+msgstr "de arquivo"
+
+#: plugins/managesieve/localization/gl_ES.inc:filterdisabled
+msgid "Filter disabled"
+msgstr "Filtro desactivado"

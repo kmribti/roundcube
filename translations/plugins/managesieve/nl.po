@@ -1,0 +1,143 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/nl_NL.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: nl_NL\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/nl_NL.inc:filters
+msgid "Filters"
+msgstr "Filters"
+
+#: plugins/managesieve/localization/nl_NL.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Beheer inkomende mail filters"
+
+#: plugins/managesieve/localization/nl_NL.inc:filtername
+msgid "Filter name"
+msgstr "Filternaam"
+
+#: plugins/managesieve/localization/nl_NL.inc:newfilter
+msgid "New filter"
+msgstr "Nieuw filter"
+
+#: plugins/managesieve/localization/nl_NL.inc:filteradd
+msgid "Add filter"
+msgstr "Filter toevoegen"
+
+#: plugins/managesieve/localization/nl_NL.inc:filterdel
+msgid "Delete filter"
+msgstr "Filter verwijderen"
+
+#: plugins/managesieve/localization/nl_NL.inc:moveup
+msgid "Move up"
+msgstr "Omhoog"
+
+#: plugins/managesieve/localization/nl_NL.inc:movedown
+msgid "Move down"
+msgstr "Omlaag"
+
+#: plugins/managesieve/localization/nl_NL.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "die voldoen aan alle volgende regels"
+
+#: plugins/managesieve/localization/nl_NL.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "die voldoen aan een van de volgende regels"
+
+#: plugins/managesieve/localization/nl_NL.inc:filterany
+msgid "all messages"
+msgstr "alle berichten"
+
+#: plugins/managesieve/localization/nl_NL.inc:filtercontains
+msgid "contains"
+msgstr "bevat"
+
+#: plugins/managesieve/localization/nl_NL.inc:filternotcontains
+msgid "not contains"
+msgstr "bevat niet"
+
+#: plugins/managesieve/localization/nl_NL.inc:filteris
+msgid "is equal to"
+msgstr "is gelijk aan"
+
+#: plugins/managesieve/localization/nl_NL.inc:filterisnot
+msgid "is not equal to"
+msgstr "is niet gelijk aan"
+
+#: plugins/managesieve/localization/nl_NL.inc:filterexists
+msgid "exists"
+msgstr "bestaat"
+
+#: plugins/managesieve/localization/nl_NL.inc:filternotexists
+msgid "not exists"
+msgstr "bestaat niet"
+
+#: plugins/managesieve/localization/nl_NL.inc:filterunder
+msgid "under"
+msgstr "onder"
+
+#: plugins/managesieve/localization/nl_NL.inc:filterover
+msgid "over"
+msgstr "over"
+
+#: plugins/managesieve/localization/nl_NL.inc:addrule
+msgid "Add rule"
+msgstr "Regel toevoegen"
+
+#: plugins/managesieve/localization/nl_NL.inc:delrule
+msgid "Delete rule"
+msgstr "Regel verwijderen"
+
+#: plugins/managesieve/localization/nl_NL.inc:messagemoveto
+msgid "Move message to"
+msgstr "Verplaats bericht naar"
+
+#: plugins/managesieve/localization/nl_NL.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Redirect bericht naar"
+
+#: plugins/managesieve/localization/nl_NL.inc:messagereply
+msgid "Reply with message"
+msgstr "Beantwoord met bericht"
+
+#: plugins/managesieve/localization/nl_NL.inc:messagedelete
+msgid "Delete message"
+msgstr "Verwijder bericht"
+
+#: plugins/managesieve/localization/nl_NL.inc:messagediscard
+msgid "Discard with message"
+msgstr "Wijs af met bericht"
+
+#: plugins/managesieve/localization/nl_NL.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Voor binnenkomende e-mail"
+
+#: plugins/managesieve/localization/nl_NL.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "...voer de volgende acties uit"
+
+#: plugins/managesieve/localization/nl_NL.inc:add
+msgid "Add"
+msgstr "Toevoegen"
+
+#: plugins/managesieve/localization/nl_NL.inc:del
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: plugins/managesieve/localization/nl_NL.inc:sender
+msgid "Sender"
+msgstr "Afzender"
+
+#: plugins/managesieve/localization/nl_NL.inc:recipient
+msgid "Recipient"
+msgstr "Ontvanger"

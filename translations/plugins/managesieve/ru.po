@@ -1,0 +1,305 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/ru_RU.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ru_RU\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/ru_RU.inc:filters
+msgid "Filters"
+msgstr "Фильтры"
+
+#: plugins/managesieve/localization/ru_RU.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Управление фильтрами для входящей почты"
+
+#: plugins/managesieve/localization/ru_RU.inc:filtername
+msgid "Filter name"
+msgstr "Название фильтра"
+
+#: plugins/managesieve/localization/ru_RU.inc:newfilter
+msgid "New filter"
+msgstr "Новый фильтр"
+
+#: plugins/managesieve/localization/ru_RU.inc:filteradd
+msgid "Add filter"
+msgstr "Добавить фильтр"
+
+#: plugins/managesieve/localization/ru_RU.inc:filterdel
+msgid "Delete filter"
+msgstr "Удалить фильтр"
+
+#: plugins/managesieve/localization/ru_RU.inc:moveup
+msgid "Move up"
+msgstr "Сдвинуть вверх"
+
+#: plugins/managesieve/localization/ru_RU.inc:movedown
+msgid "Move down"
+msgstr "Сдвинуть вниз"
+
+#: plugins/managesieve/localization/ru_RU.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "соответствует всем указанным правилам"
+
+#: plugins/managesieve/localization/ru_RU.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "соответствует любому из указанных"
+"правил"
+
+#: plugins/managesieve/localization/ru_RU.inc:filterany
+msgid "all messages"
+msgstr "все сообщения"
+
+#: plugins/managesieve/localization/ru_RU.inc:filtercontains
+msgid "contains"
+msgstr "содержит"
+
+#: plugins/managesieve/localization/ru_RU.inc:filternotcontains
+msgid "not contains"
+msgstr "не содержит"
+
+#: plugins/managesieve/localization/ru_RU.inc:filteris
+msgid "is equal to"
+msgstr "соответствует"
+
+#: plugins/managesieve/localization/ru_RU.inc:filterisnot
+msgid "is not equal to"
+msgstr "не соответствует"
+
+#: plugins/managesieve/localization/ru_RU.inc:filterexists
+msgid "exists"
+msgstr "существует"
+
+#: plugins/managesieve/localization/ru_RU.inc:filternotexists
+msgid "not exists"
+msgstr "не существует"
+
+#: plugins/managesieve/localization/ru_RU.inc:filterunder
+msgid "under"
+msgstr "под"
+
+#: plugins/managesieve/localization/ru_RU.inc:filterover
+msgid "over"
+msgstr "на"
+
+#: plugins/managesieve/localization/ru_RU.inc:addrule
+msgid "Add rule"
+msgstr "Добавить правило"
+
+#: plugins/managesieve/localization/ru_RU.inc:delrule
+msgid "Delete rule"
+msgstr "Удалить правило"
+
+#: plugins/managesieve/localization/ru_RU.inc:messagemoveto
+msgid "Move message to"
+msgstr "Переместить сообщение в"
+
+#: plugins/managesieve/localization/ru_RU.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Перенаправить сообщение на"
+
+#: plugins/managesieve/localization/ru_RU.inc:messagecopyto
+msgid "Copy message to"
+msgstr "Скопировать сообщение в"
+
+#: plugins/managesieve/localization/ru_RU.inc:messagesendcopy
+msgid "Send message copy to"
+msgstr "Отправить копию сообщения на"
+
+#: plugins/managesieve/localization/ru_RU.inc:messagereply
+msgid "Reply with message"
+msgstr "Ответить с сообщением"
+
+#: plugins/managesieve/localization/ru_RU.inc:messagedelete
+msgid "Delete message"
+msgstr "Удалить сообщение"
+
+#: plugins/managesieve/localization/ru_RU.inc:messagediscard
+msgid "Discard with message"
+msgstr "Отбросить с сообщением"
+
+#: plugins/managesieve/localization/ru_RU.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Для входящей почты:"
+
+#: plugins/managesieve/localization/ru_RU.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "...выполнить следующие действия:"
+
+#: plugins/managesieve/localization/ru_RU.inc:add
+msgid "Add"
+msgstr "Добавить"
+
+#: plugins/managesieve/localization/ru_RU.inc:del
+msgid "Delete"
+msgstr "Удалить"
+
+#: plugins/managesieve/localization/ru_RU.inc:sender
+msgid "Sender"
+msgstr "Отправитель"
+
+#: plugins/managesieve/localization/ru_RU.inc:recipient
+msgid "Recipient"
+msgstr "Получатель"
+
+#: plugins/managesieve/localization/ru_RU.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Список дополнительных адресов"
+"получателя (разделённых запятыми):"
+
+#: plugins/managesieve/localization/ru_RU.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Как часто отправлять сообщения (в днях):"
+
+#: plugins/managesieve/localization/ru_RU.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Текст сообщения (причина отсутствия):"
+
+#: plugins/managesieve/localization/ru_RU.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Закончить выполнение"
+
+#: plugins/managesieve/localization/ru_RU.inc:filterset
+msgid "Filters set"
+msgstr "Набор фильтров"
+
+#: plugins/managesieve/localization/ru_RU.inc:filtersetadd
+msgid "Add filters set"
+msgstr "Добавить набор фильтров"
+
+#: plugins/managesieve/localization/ru_RU.inc:filtersetdel
+msgid "Delete current filters set"
+msgstr "Удалить текущий набор фильтров"
+
+#: plugins/managesieve/localization/ru_RU.inc:filtersetact
+msgid "Activate current filters set"
+msgstr "Включить текущий набор фильтров"
+
+#: plugins/managesieve/localization/ru_RU.inc:filtersetdeact
+msgid "Deactivate current filters set"
+msgstr "Отключить текущий набор фильтров"
+
+#: plugins/managesieve/localization/ru_RU.inc:filtersetget
+msgid "filtersetget"
+msgstr "Скачать набор фильтров в виде текста"
+
+#: plugins/managesieve/localization/ru_RU.inc:filterdef
+msgid "Filter definition"
+msgstr "Описание фильтра"
+
+#: plugins/managesieve/localization/ru_RU.inc:filtersetname
+msgid "Filters set name"
+msgstr "Название набора фильтров"
+
+#: plugins/managesieve/localization/ru_RU.inc:newfilterset
+msgid "New filters set"
+msgstr "Новый набор фильтров"
+
+#: plugins/managesieve/localization/ru_RU.inc:active
+msgid "active"
+msgstr "используется"
+
+#: plugins/managesieve/localization/ru_RU.inc:none
+msgid "none"
+msgstr "пустой"
+
+#: plugins/managesieve/localization/ru_RU.inc:fromset
+msgid "from set"
+msgstr "из набора"
+
+#: plugins/managesieve/localization/ru_RU.inc:fromfile
+msgid "from file"
+msgstr "из файла"
+
+#: plugins/managesieve/localization/ru_RU.inc:filterdisabled
+msgid "Filter disabled"
+msgstr "Отключить фильтр"
+
+#: plugins/managesieve/localization/ru_RU.inc:countisgreaterthan
+msgid "count is greater than"
+msgstr "количество больше, чем"
+
+#: plugins/managesieve/localization/ru_RU.inc:countisgreaterthanequal
+msgid "count is greater than or equal to"
+msgstr "количество больше или равно"
+
+#: plugins/managesieve/localization/ru_RU.inc:countislessthan
+msgid "count is less than"
+msgstr "количество меньше, чем"
+
+#: plugins/managesieve/localization/ru_RU.inc:countislessthanequal
+msgid "count is less than or equal to"
+msgstr "количество меньше или равно"
+
+#: plugins/managesieve/localization/ru_RU.inc:countequals
+msgid "count is equal to"
+msgstr "количество равно"
+
+#: plugins/managesieve/localization/ru_RU.inc:countnotequals
+msgid "count does not equal"
+msgstr "количество не равно"
+
+#: plugins/managesieve/localization/ru_RU.inc:valueisgreaterthan
+msgid "value is greater than"
+msgstr "значение больше, чем"
+
+#: plugins/managesieve/localization/ru_RU.inc:valueisgreaterthanequal
+msgid "value is greater than or equal to"
+msgstr "значение больше или равно"
+
+#: plugins/managesieve/localization/ru_RU.inc:valueislessthan
+msgid "value is less than"
+msgstr "значение меньше, чем"
+
+#: plugins/managesieve/localization/ru_RU.inc:valueislessthanequal
+msgid "value is less than or equal to"
+msgstr "значение меньше или равно"
+
+#: plugins/managesieve/localization/ru_RU.inc:valueequals
+msgid "value is equal to"
+msgstr "значение равно"
+
+#: plugins/managesieve/localization/ru_RU.inc:valuenotequals
+msgid "value does not equal"
+msgstr "значение не равно"
+
+#: plugins/managesieve/localization/ru_RU.inc:setflags
+msgid "Set flags to the message"
+msgstr "Установить флаг на сообщение"
+
+#: plugins/managesieve/localization/ru_RU.inc:addflags
+msgid "Add flags to the message"
+msgstr "Добавить флаг к сообщению"
+
+#: plugins/managesieve/localization/ru_RU.inc:removeflags
+msgid "Remove flags from the message"
+msgstr "Убрать флаги из сообщения"
+
+#: plugins/managesieve/localization/ru_RU.inc:flagread
+msgid "Read"
+msgstr "Прочитано"
+
+#: plugins/managesieve/localization/ru_RU.inc:flagdeleted
+msgid "Deleted"
+msgstr "Удалено"
+
+#: plugins/managesieve/localization/ru_RU.inc:flaganswered
+msgid "Answered"
+msgstr "Отвечено"
+
+#: plugins/managesieve/localization/ru_RU.inc:flagflagged
+msgid "Flagged"
+msgstr "Помечено"
+
+#: plugins/managesieve/localization/ru_RU.inc:flagdraft
+msgid "Draft"
+msgstr "Черновик"

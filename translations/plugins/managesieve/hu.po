@@ -1,0 +1,159 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/managesieve/localization/hu_HU.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: hu_HU\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/managesieve/localization/hu_HU.inc:filters
+msgid "Filters"
+msgstr "Üzenetszűrők"
+
+#: plugins/managesieve/localization/hu_HU.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Bejövő üzenetek szűrői"
+
+#: plugins/managesieve/localization/hu_HU.inc:filtername
+msgid "Filter name"
+msgstr "Szűrő neve"
+
+#: plugins/managesieve/localization/hu_HU.inc:newfilter
+msgid "New filter"
+msgstr "Új szűrő"
+
+#: plugins/managesieve/localization/hu_HU.inc:filteradd
+msgid "Add filter"
+msgstr "Szűrő hozzáadása"
+
+#: plugins/managesieve/localization/hu_HU.inc:filterdel
+msgid "Delete filter"
+msgstr "Szűrő törlése"
+
+#: plugins/managesieve/localization/hu_HU.inc:moveup
+msgid "Move up"
+msgstr "Mozgatás felfelé"
+
+#: plugins/managesieve/localization/hu_HU.inc:movedown
+msgid "Move down"
+msgstr "Mozgatás lefelé"
+
+#: plugins/managesieve/localization/hu_HU.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "A következők mind illeszkedjenek"
+
+#: plugins/managesieve/localization/hu_HU.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "A következők bármelyike illeszkedjen"
+
+#: plugins/managesieve/localization/hu_HU.inc:filterany
+msgid "all messages"
+msgstr "Minden üzenet illeszkedjen"
+
+#: plugins/managesieve/localization/hu_HU.inc:filtercontains
+msgid "contains"
+msgstr "tartalmazza"
+
+#: plugins/managesieve/localization/hu_HU.inc:filternotcontains
+msgid "not contains"
+msgstr "nem tartalmazza"
+
+#: plugins/managesieve/localization/hu_HU.inc:filteris
+msgid "is equal to"
+msgstr "megegyezik"
+
+#: plugins/managesieve/localization/hu_HU.inc:filterisnot
+msgid "is not equal to"
+msgstr "nem egyezik meg"
+
+#: plugins/managesieve/localization/hu_HU.inc:filterexists
+msgid "exists"
+msgstr "létezik"
+
+#: plugins/managesieve/localization/hu_HU.inc:filternotexists
+msgid "not exists"
+msgstr "nem létezik"
+
+#: plugins/managesieve/localization/hu_HU.inc:filterunder
+msgid "under"
+msgstr "alatta"
+
+#: plugins/managesieve/localization/hu_HU.inc:filterover
+msgid "over"
+msgstr "felette"
+
+#: plugins/managesieve/localization/hu_HU.inc:addrule
+msgid "Add rule"
+msgstr "Szabály hozzáadása"
+
+#: plugins/managesieve/localization/hu_HU.inc:delrule
+msgid "Delete rule"
+msgstr "Szabály törlése"
+
+#: plugins/managesieve/localization/hu_HU.inc:messagemoveto
+msgid "Move message to"
+msgstr "Üzenet áthelyezése ide:"
+
+#: plugins/managesieve/localization/hu_HU.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Üzenet továbbítása ide:"
+
+#: plugins/managesieve/localization/hu_HU.inc:messagereply
+msgid "Reply with message"
+msgstr "Válaszüzenet küldése (autoreply)"
+
+#: plugins/managesieve/localization/hu_HU.inc:messagedelete
+msgid "Delete message"
+msgstr "Üzenet törlése"
+
+#: plugins/managesieve/localization/hu_HU.inc:messagediscard
+msgid "Discard with message"
+msgstr "Válaszüzenet küldése, a levél törlése"
+
+#: plugins/managesieve/localization/hu_HU.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "Az adott tulajdonságú beérkezett üzenetekre:"
+
+#: plugins/managesieve/localization/hu_HU.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "... a következő műveletek végrehajtása:"
+
+#: plugins/managesieve/localization/hu_HU.inc:add
+msgid "Add"
+msgstr "Hozzáadás"
+
+#: plugins/managesieve/localization/hu_HU.inc:del
+msgid "Delete"
+msgstr "Törlés"
+
+#: plugins/managesieve/localization/hu_HU.inc:sender
+msgid "Sender"
+msgstr "Feladó"
+
+#: plugins/managesieve/localization/hu_HU.inc:recipient
+msgid "Recipient"
+msgstr "Címzett"
+
+#: plugins/managesieve/localization/hu_HU.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "További címzettek (vesszővel elválasztva):"
+
+#: plugins/managesieve/localization/hu_HU.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Válaszüzenet küldése ennyi naponként:"
+
+#: plugins/managesieve/localization/hu_HU.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Levél szövege (automatikus válasz):"
+
+#: plugins/managesieve/localization/hu_HU.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Műveletek végrehajtásának befejezése"
