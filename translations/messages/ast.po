@@ -1,0 +1,355 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ast/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ast/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "La clave nun val"
+
+#: program/localization/ast/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "El to navegador nun acepta \"cookies\""
+
+#: program/localization/ast/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "La to sesión nun val"
+
+#: program/localization/ast/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Fallu de conexón col sirvidor IMAP"
+
+#: program/localization/ast/messages.inc:servererror
+msgid "Server Error!"
+msgstr "¡Fallu del sirvidor!"
+
+#: program/localization/ast/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Fallu de la solicitú. Nun se guardaron datos."
+
+#: program/localization/ast/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Nun doi con mensaxes"
+
+#: program/localization/ast/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Zarraste la sesión."
+
+#: program/localization/ast/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "La to cuenta nun tien mensaxes"
+
+#: program/localization/ast/messages.inc:loading
+msgid "Loading..."
+msgstr "Cargando..."
+
+#: program/localization/ast/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Cargando datos..."
+
+#: program/localization/ast/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "A la gueta de mensaxes nuevos..."
+
+#: program/localization/ast/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Unviando mensaxe..."
+
+#: program/localization/ast/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Unviose'l mensaxe"
+
+#: program/localization/ast/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Guardar mensaxe..."
+
+#: program/localization/ast/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "El mensaxe guardóse en borradores"
+
+#: program/localization/ast/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Guardose correchamente"
+
+#: program/localization/ast/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "El contautu amestose correchamente a la llibreta de direiciones"
+
+#: program/localization/ast/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Yá hai un contuaut con es direición de corréu"
+
+#: program/localization/ast/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Pa protexer la to privacidá, torgáronse les imáxenes esternes n'esti"
+"mensaxe"
+
+#: program/localization/ast/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Esti ye un mensaxe cifráu y nun soi a amosalu."
+
+#: program/localization/ast/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Nun doi con nengún contautu"
+
+#: program/localization/ast/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Nun doi col contautu que pides"
+
+#: program/localization/ast/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Falló l'unvio del mensaxe"
+
+#: program/localization/ast/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Por favor espera $sec segundu/os enantes d'unviar esti mensaxe."
+
+#: program/localization/ast/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Di con un fallu al guardar el mensaxe"
+
+#: program/localization/ast/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Falló al guardase"
+
+#: program/localization/ast/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Nun fui a mover el mensaxe"
+
+#: program/localization/ast/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Nun fui a desaniciar el mensaxe"
+
+#: program/localization/ast/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Nun se puede marcar el mensaxe"
+
+#: program/localization/ast/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "¿Tas seguru de desaniciar los contautos que marcaste?"
+
+#: program/localization/ast/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "¿Tas seguru de desaniciar los mensaxes que marcaste?"
+
+#: program/localization/ast/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "¿Tas seguru de desaniciar esta bandexa?"
+
+#: program/localization/ast/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "¿Tas seguru de desaniciar tolos mensaxes d'esta bandexa?"
+
+#: program/localization/ast/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Desaniciando la bandexa..."
+
+#: program/localization/ast/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Moviendo la bandexa..."
+
+#: program/localization/ast/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Tienes de rellenar tolos campos del formulariu"
+
+#: program/localization/ast/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Por favor, dame un corréu válidu"
+
+#: program/localization/ast/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Por favor, dame'l to nome"
+
+#: program/localization/ast/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Por favor, dame un tamañu de páxina"
+
+#: program/localization/ast/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Por favor dame un corréu dende donde unviar mesaxes"
+
+#: program/localization/ast/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Por favor, dame polo menos un destinatariu"
+
+#: program/localization/ast/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "El campo \"Asuntu\" ta vacíu. ¿Quiés rellenalu anguaño?"
+
+#: program/localization/ast/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "¿Quies unviar esti mensaxe ensin testu?"
+
+#: program/localization/ast/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Nun unvie'l mensaxe. ¿Quies desanicialu?"
+
+#: program/localization/ast/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Por favor, escueye un sirvidor LDAP pa buscar"
+
+#: program/localization/ast/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Nun di con nengún contautu"
+
+#: program/localization/ast/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Por favor, dame un nome o una direición de corréu"
+
+#: program/localization/ast/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "Di con $nr mensaxes"
+
+#: program/localization/ast/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Nun di con nengún resultáu"
+
+#: program/localization/ast/messages.inc:searching
+msgid "Searching..."
+msgstr "A la gueta..."
+
+#: program/localization/ast/messages.inc:checking
+msgid "Checking..."
+msgstr "Comprobando..."
+
+#: program/localization/ast/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Nun di con errores ortográficos"
+
+#: program/localization/ast/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Desaniciose la bandexa correchamente"
+
+#: program/localization/ast/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Desaniciose correchamente"
+
+#: program/localization/ast/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Desaniciando'l formatu del mensaxe..."
+
+#: program/localization/ast/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Nun soi a baxer el mensaxe del sirvidor"
+
+#: program/localization/ast/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Fallu al xubir ficheros"
+
+#: program/localization/ast/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "El ficheru ye más grande de lo permitío ($size)"
+
+#: program/localization/ast/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Copiaronse $nr direiciones correchamente"
+
+#: program/localization/ast/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Nun fui a copiar nenguna direición"
+
+#: program/localization/ast/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Esta direición ye de namái-llectura"
+
+#: program/localization/ast/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Nun fui a guardar la direición del contautu"
+
+#: program/localization/ast/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Moviendo'l mensaxe..."
+
+#: program/localization/ast/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Unviose correchamente l'avisu de llectura."
+
+#: program/localization/ast/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Nun fui a unviar l'avisu de llectura."
+
+#: program/localization/ast/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Nun puedo desaniciar esa identidá porque ye la última."
+
+#: program/localization/ast/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "El nome de la bandexa tien un caráuter que nun val"
+
+#: program/localization/ast/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Por favor escueye el ficheru que quies xubir"
+
+#: program/localization/ast/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Nun puedo escribir nel llibru de direiciones qu'escoyisti"
+
+#: program/localization/ast/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Importando, dame un minutín..."
+
+#: program/localization/ast/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Nun fui a importar. El ficheru qu'escoyiste nun ye un ficheru vCard"
+"válidu."
+
+#: program/localization/ast/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Importaronse correchamente $inserted contautos, saltáronse $skipped"
+"entrase que yá esistíen</b>:<p><em>$names</em></p>"
+
+#: program/localization/ast/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Nun tienes permisu pa facelo."
+
+#: program/localization/ast/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Perdiose la direición de corréu de la identidá qu'escoyisti"
+
+#: program/localization/ast/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Si pases a editor en modu testu vas perder tol estilu aplicáu al mensaxe."
+"¿Tas seguru de que quies facelo?"
+
+#: program/localization/ast/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Hai un fallu garrafal de configuración. Contauta col alministrador de"
+"secute. <b>Nun se pude unviar el mesaxe</b>"
+
+#: program/localization/ast/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "Fallu SMTP ($code): Fallu de conexón col sirvidor"
+
+#: program/localization/ast/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "Fallu SMTP ($code): Fallu d'autorización"
+
+#: program/localization/ast/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "Fallu SMTP ($code): Fallu al aficar el remitente \"$from\" ($msg)"
+
+#: program/localization/ast/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "Fallu SMTP ($code): Fallu al amestar el destinatariu \"$to\" ($msg)"
+
+#: program/localization/ast/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "Fallu SMTP: Nun soi a amosar la llista de destinatarios"
+
+#: program/localization/ast/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "Fallu SMTP: $msg"

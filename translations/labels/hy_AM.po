@@ -1,0 +1,992 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/hy_AM/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: hy_AM\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/hy_AM/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Բարի գալուստ $product"
+
+#: program/localization/hy_AM/labels.inc:username
+msgid "Username"
+msgstr "Օգտվող"
+
+#: program/localization/hy_AM/labels.inc:password
+msgid "Password"
+msgstr "Գաղտնաբառ"
+
+#: program/localization/hy_AM/labels.inc:server
+msgid "Server"
+msgstr "Սերվեր"
+
+#: program/localization/hy_AM/labels.inc:login
+msgid "Login"
+msgstr "Մուտք"
+
+#: program/localization/hy_AM/labels.inc:logout
+msgid "Logout"
+msgstr "Ելք"
+
+#: program/localization/hy_AM/labels.inc:mail
+msgid "Mail"
+msgstr "Էլ–փոստ"
+
+#: program/localization/hy_AM/labels.inc:settings
+msgid "Settings"
+msgstr "Նախասիրություններ"
+
+#: program/localization/hy_AM/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Հասցեներ"
+
+#: program/localization/hy_AM/labels.inc:inbox
+msgid "Inbox"
+msgstr "Փոստարկղ"
+
+#: program/localization/hy_AM/labels.inc:drafts
+msgid "Drafts"
+msgstr "Սևագրեր"
+
+#: program/localization/hy_AM/labels.inc:sent
+msgid "Sent"
+msgstr "Ուղարկված"
+
+#: program/localization/hy_AM/labels.inc:trash
+msgid "Trash"
+msgstr "Աղբարկղ"
+
+#: program/localization/hy_AM/labels.inc:junk
+msgid "Junk"
+msgstr "Թափոն"
+
+#: program/localization/hy_AM/labels.inc:subject
+msgid "Subject"
+msgstr "Վերնագիր"
+
+#: program/localization/hy_AM/labels.inc:from
+msgid "From"
+msgstr "Ուղարկող"
+
+#: program/localization/hy_AM/labels.inc:to
+msgid "To"
+msgstr "Ստացող"
+
+#: program/localization/hy_AM/labels.inc:cc
+msgid "Cc"
+msgstr "Cc"
+
+#: program/localization/hy_AM/labels.inc:bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#: program/localization/hy_AM/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Reply-To"
+
+#: program/localization/hy_AM/labels.inc:date
+msgid "Date"
+msgstr "Ամսաթիվ"
+
+#: program/localization/hy_AM/labels.inc:size
+msgid "Size"
+msgstr "Չափ"
+
+#: program/localization/hy_AM/labels.inc:priority
+msgid "Priority"
+msgstr "Առավելություն"
+
+#: program/localization/hy_AM/labels.inc:organization
+msgid "Company"
+msgstr "Կազմակերպություն"
+
+#: program/localization/hy_AM/labels.inc:reply-to
+msgid "reply-to"
+msgstr "Reply-To"
+
+#: program/localization/hy_AM/labels.inc:mailboxlist
+#: program/localization/hy_AM/labels.inc:folders
+msgid "Folders"
+msgstr "Դարակներ"
+
+#: program/localization/hy_AM/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Նամակներ $from–ից $to–ը եղած $count–ից"
+
+#: program/localization/hy_AM/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Նամակ $nr եղած $count–ից"
+
+#: program/localization/hy_AM/labels.inc:moveto
+msgid "Move to..."
+msgstr "Տեղափոխել..."
+
+#: program/localization/hy_AM/labels.inc:download
+msgid "Download"
+msgstr "Քաշել"
+
+#: program/localization/hy_AM/labels.inc:filename
+msgid "File name"
+msgstr "Ֆայլի անուն"
+
+#: program/localization/hy_AM/labels.inc:filesize
+msgid "File size"
+msgstr "Ֆայլի չափ"
+
+#: program/localization/hy_AM/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Գերադասել HTML"
+
+#: program/localization/hy_AM/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML նամակ"
+
+#: program/localization/hy_AM/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Պարզ ամսաթվեր"
+
+#: program/localization/hy_AM/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Հիշել հասցեն"
+
+#: program/localization/hy_AM/labels.inc:sun
+msgid "Sun"
+msgstr "Կիր"
+
+#: program/localization/hy_AM/labels.inc:mon
+msgid "Mon"
+msgstr "Երկ"
+
+#: program/localization/hy_AM/labels.inc:tue
+msgid "Tue"
+msgstr "Երք"
+
+#: program/localization/hy_AM/labels.inc:wed
+msgid "Wed"
+msgstr "Չրք"
+
+#: program/localization/hy_AM/labels.inc:thu
+msgid "Thu"
+msgstr "Հնգ"
+
+#: program/localization/hy_AM/labels.inc:fri
+msgid "Fri"
+msgstr "Ուրբ"
+
+#: program/localization/hy_AM/labels.inc:sat
+msgid "Sat"
+msgstr "Շբթ"
+
+#: program/localization/hy_AM/labels.inc:sunday
+msgid "Sunday"
+msgstr "Կիրակի"
+
+#: program/localization/hy_AM/labels.inc:monday
+msgid "Monday"
+msgstr "Երկուշաբթի"
+
+#: program/localization/hy_AM/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Երեքշաբթի"
+
+#: program/localization/hy_AM/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Չորեքշաբթի"
+
+#: program/localization/hy_AM/labels.inc:thursday
+msgid "Thursday"
+msgstr "Հինգշաբթի"
+
+#: program/localization/hy_AM/labels.inc:friday
+msgid "Friday"
+msgstr "Ուրբաթ"
+
+#: program/localization/hy_AM/labels.inc:saturday
+msgid "Saturday"
+msgstr "Շաբաթ"
+
+#: program/localization/hy_AM/labels.inc:jan
+msgid "Jan"
+msgstr "Հնվ"
+
+#: program/localization/hy_AM/labels.inc:feb
+msgid "Feb"
+msgstr "Փետ"
+
+#: program/localization/hy_AM/labels.inc:mar
+msgid "Mar"
+msgstr "Մար"
+
+#: program/localization/hy_AM/labels.inc:apr
+msgid "Apr"
+msgstr "Ապր"
+
+#: program/localization/hy_AM/labels.inc:may
+#: program/localization/hy_AM/labels.inc:longmay
+msgid "May"
+msgstr "Մայիս"
+
+#: program/localization/hy_AM/labels.inc:jun
+msgid "Jun"
+msgstr "Հուս"
+
+#: program/localization/hy_AM/labels.inc:jul
+msgid "Jul"
+msgstr "Հուլ"
+
+#: program/localization/hy_AM/labels.inc:aug
+msgid "Aug"
+msgstr "Օգս"
+
+#: program/localization/hy_AM/labels.inc:sep
+msgid "Sep"
+msgstr "Սեպ"
+
+#: program/localization/hy_AM/labels.inc:oct
+msgid "Oct"
+msgstr "Հոկ"
+
+#: program/localization/hy_AM/labels.inc:nov
+msgid "Nov"
+msgstr "Նոյ"
+
+#: program/localization/hy_AM/labels.inc:dec
+msgid "Dec"
+msgstr "Դեկ"
+
+#: program/localization/hy_AM/labels.inc:longjan
+msgid "January"
+msgstr "Հունվար"
+
+#: program/localization/hy_AM/labels.inc:longfeb
+msgid "February"
+msgstr "Փետրվար"
+
+#: program/localization/hy_AM/labels.inc:longmar
+msgid "March"
+msgstr "Մարտ"
+
+#: program/localization/hy_AM/labels.inc:longapr
+msgid "April"
+msgstr "Ապրիլ"
+
+#: program/localization/hy_AM/labels.inc:longjun
+msgid "June"
+msgstr "Հունիս"
+
+#: program/localization/hy_AM/labels.inc:longjul
+msgid "July"
+msgstr "Հուլիս"
+
+#: program/localization/hy_AM/labels.inc:longaug
+msgid "August"
+msgstr "Օգոստոս"
+
+#: program/localization/hy_AM/labels.inc:longsep
+msgid "September"
+msgstr "Սեպտեմբեր"
+
+#: program/localization/hy_AM/labels.inc:longoct
+msgid "October"
+msgstr "Հոկտեմբեր"
+
+#: program/localization/hy_AM/labels.inc:longnov
+msgid "November"
+msgstr "Նոյեմբեր"
+
+#: program/localization/hy_AM/labels.inc:longdec
+msgid "December"
+msgstr "Դեկտեմբեր"
+
+#: program/localization/hy_AM/labels.inc:today
+msgid "Today"
+msgstr "Այսօր"
+
+#: program/localization/hy_AM/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Ստուգել նոր նամակները"
+
+#: program/localization/hy_AM/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Նոր նամակ"
+
+#: program/localization/hy_AM/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Պատասխանել նամակին"
+
+#: program/localization/hy_AM/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Պատասխանել բոլորին"
+
+#: program/localization/hy_AM/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Փոխանցել նամակը"
+
+#: program/localization/hy_AM/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Ջնջել նամակը"
+
+#: program/localization/hy_AM/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Գցել աղբարկղը"
+
+#: program/localization/hy_AM/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Տպել"
+
+#: program/localization/hy_AM/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Ցուցադրել նախորդ նամակը"
+
+#: program/localization/hy_AM/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "Ցուցադրել նախորդ նամակները"
+
+#: program/localization/hy_AM/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Ցուցադրել առաջին նամակը"
+
+#: program/localization/hy_AM/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "Ցուցադրել առաջին էջը"
+
+#: program/localization/hy_AM/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Ցուցադրել հաջորդ նամակը"
+
+#: program/localization/hy_AM/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "Ցուցադրել հաջորդ նամակները"
+
+#: program/localization/hy_AM/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Ցուցադրել վերջին նամակը"
+
+#: program/localization/hy_AM/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "Ցուցադրել վերջին էջը"
+
+#: program/localization/hy_AM/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Վերադառնալ նամակների ցուցակ"
+
+#: program/localization/hy_AM/labels.inc:viewsource
+msgid "Show source"
+msgstr "Ցուցադրել նամակի կոդը"
+
+#: program/localization/hy_AM/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Նշել նամակները"
+
+#: program/localization/hy_AM/labels.inc:markread
+msgid "As read"
+msgstr "որպես կարդացած"
+
+#: program/localization/hy_AM/labels.inc:markunread
+msgid "As unread"
+msgstr "որպես չկարդացած"
+
+#: program/localization/hy_AM/labels.inc:markflagged
+msgid "As flagged"
+msgstr "որպես նշված"
+
+#: program/localization/hy_AM/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "որպես չնշված"
+
+#: program/localization/hy_AM/labels.inc:select
+msgid "Select"
+msgstr "Նշել"
+
+#: program/localization/hy_AM/labels.inc:all
+msgid "All"
+msgstr "Բոլորը"
+
+#: program/localization/hy_AM/labels.inc:none
+msgid "None"
+msgstr "Չնշել"
+
+#: program/localization/hy_AM/labels.inc:unread
+msgid "Unread"
+msgstr "Չկարդացածը"
+
+#: program/localization/hy_AM/labels.inc:flagged
+msgid "Flagged"
+msgstr "Նշված"
+
+#: program/localization/hy_AM/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Անպատասխան"
+
+#: program/localization/hy_AM/labels.inc:filter
+msgid "Filter"
+msgstr "Զտիչ"
+
+#: program/localization/hy_AM/labels.inc:compact
+msgid "Compact"
+msgstr "Սեղմել"
+
+#: program/localization/hy_AM/labels.inc:empty
+msgid "Empty"
+msgstr "Դատարկել"
+
+#: program/localization/hy_AM/labels.inc:purge
+msgid "purge"
+msgstr "Մաքրել"
+
+#: program/localization/hy_AM/labels.inc:quota
+msgid "Disk usage"
+msgstr "Դիսկային տարածք"
+
+#: program/localization/hy_AM/labels.inc:unknown
+msgid "unknown"
+msgstr "անհայտ"
+
+#: program/localization/hy_AM/labels.inc:unlimited
+msgid "unlimited"
+msgstr "անսահմանափակ"
+
+#: program/localization/hy_AM/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Արագ որոնում"
+
+#: program/localization/hy_AM/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Վերսկսել որոնումը"
+
+#: program/localization/hy_AM/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Բացել նոր պատուհանում"
+
+#: program/localization/hy_AM/labels.inc:compose
+msgid "Compose a message"
+msgstr "Գրել նամակ"
+
+#: program/localization/hy_AM/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Հիշել որպես սևագիր"
+
+#: program/localization/hy_AM/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Ուղարկել"
+
+#: program/localization/hy_AM/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Կցել ֆայլ"
+
+#: program/localization/hy_AM/labels.inc:charset
+msgid "Charset"
+msgstr "Տառաշար"
+
+#: program/localization/hy_AM/labels.inc:editortype
+msgid "Editor type"
+msgstr "Խմբագրի տիպը"
+
+#: program/localization/hy_AM/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Ստացման հավաստագիր"
+
+#: program/localization/hy_AM/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Ստուգել ուղագրությունը"
+
+#: program/localization/hy_AM/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Շարունակել խմբագրումը"
+
+#: program/localization/hy_AM/labels.inc:revertto
+msgid "Revert to"
+msgstr "Վերականգնել"
+
+#: program/localization/hy_AM/labels.inc:attachments
+msgid "Attachments"
+msgstr "Կցումներ"
+
+#: program/localization/hy_AM/labels.inc:upload
+msgid "Upload"
+msgstr "Բեռնել"
+
+#: program/localization/hy_AM/labels.inc:close
+msgid "Close"
+msgstr "Փակել"
+
+#: program/localization/hy_AM/labels.inc:low
+msgid "Low"
+msgstr "Ցածր"
+
+#: program/localization/hy_AM/labels.inc:lowest
+msgid "Lowest"
+msgstr "Նվազագույն"
+
+#: program/localization/hy_AM/labels.inc:normal
+msgid "Normal"
+msgstr "Նորմալ"
+
+#: program/localization/hy_AM/labels.inc:high
+msgid "High"
+msgstr "Կարևոր"
+
+#: program/localization/hy_AM/labels.inc:highest
+msgid "Highest"
+msgstr "Կարևորագույն"
+
+#: program/localization/hy_AM/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(առանց վերնագրի)"
+
+#: program/localization/hy_AM/labels.inc:showimages
+msgid "Display images"
+msgstr "Ցուցադրել նկարները"
+
+#: program/localization/hy_AM/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Միշտ ցուցադրել պատկերները $sender–ից"
+
+#: program/localization/hy_AM/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/hy_AM/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Պարզ տեքստ"
+
+#: program/localization/hy_AM/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Գրանցել ուղարկված նամակը"
+
+#: program/localization/hy_AM/labels.inc:dontsave
+msgid "don't save"
+msgstr "Չ՛գրանցել"
+
+#: program/localization/hy_AM/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Առավելագույն թույլատրելի ֆայլի չափը $size"
+"է"
+
+#: program/localization/hy_AM/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Ավելացնել Cc"
+
+#: program/localization/hy_AM/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Ավելացնել Bcc"
+
+#: program/localization/hy_AM/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Ավելացնել Reply-To"
+
+#: program/localization/hy_AM/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Նամակի հեղինակը խնդրել է նամակը"
+"կարդալուն պես տեղեկացնել իրեն։"
+"Ցանկանում էք Տեղեկացնե՞լ։"
+
+#: program/localization/hy_AM/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Նամակի ընթերցման ծանուցագիր"
+
+#: program/localization/hy_AM/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Սա Ձեր նամակի ընթերցման ծանուցագիրն է"
+
+#: program/localization/hy_AM/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Նշում՝ Այս ծանուցագիրը ընդամենը"
+"տեղեկացնում է, որ նամակը ցուցադրվել է"
+"հասցեատիրոջ համակարչով։ Չկա որևիցե"
+"երաշխիք, որ հասցեատերը իսկապես կարդացել"
+"է նամակը։"
+
+#: program/localization/hy_AM/labels.inc:name
+msgid "Display Name"
+msgstr "Մականուն"
+
+#: program/localization/hy_AM/labels.inc:firstname
+msgid "First Name"
+msgstr "Անուն"
+
+#: program/localization/hy_AM/labels.inc:surname
+msgid "Last Name"
+msgstr "Ազգանուն"
+
+#: program/localization/hy_AM/labels.inc:email
+msgid "Email"
+msgstr "Էկ–փոստ"
+
+#: program/localization/hy_AM/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Գրանցել նշած հասցեն"
+
+#: program/localization/hy_AM/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Խմբագրել հասցեն"
+
+#: program/localization/hy_AM/labels.inc:edit
+msgid "Edit"
+msgstr "Խմբագրել"
+
+#: program/localization/hy_AM/labels.inc:cancel
+msgid "Cancel"
+msgstr "Թարգել"
+
+#: program/localization/hy_AM/labels.inc:save
+msgid "Save"
+msgstr "Հիշել"
+
+#: program/localization/hy_AM/labels.inc:delete
+msgid "Delete"
+msgstr "Ջնջել"
+
+#: program/localization/hy_AM/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Ստեղծել նոր հասցեքարտ"
+
+#: program/localization/hy_AM/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Ջնջել նշած նամակները"
+
+#: program/localization/hy_AM/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Գրել նամակ"
+
+#: program/localization/hy_AM/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Հասցեներ $from–ից $to–ը եղած $count–ից"
+
+#: program/localization/hy_AM/labels.inc:print
+msgid "Print"
+msgstr "Տպել"
+
+#: program/localization/hy_AM/labels.inc:export
+msgid "Export"
+msgstr "Արտահանել"
+
+#: program/localization/hy_AM/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Արտահանել հասցեները vCard չափաձևով"
+
+#: program/localization/hy_AM/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Ցուցադրել նախորդ էջը"
+
+#: program/localization/hy_AM/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Ցուցադրել առաջին էջը"
+
+#: program/localization/hy_AM/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Ցուցադրել հաջորդ էջը"
+
+#: program/localization/hy_AM/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Ցուցադրել վերջին էջը"
+
+#: program/localization/hy_AM/labels.inc:groups
+msgid "Groups"
+msgstr "Խմբեր"
+
+#: program/localization/hy_AM/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Անձնական հասցեներ"
+
+#: program/localization/hy_AM/labels.inc:import
+msgid "Import"
+msgstr "Ներկրել"
+
+#: program/localization/hy_AM/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Ներկրել հասցեներ"
+
+#: program/localization/hy_AM/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Ներկրել ֆայլից"
+
+#: program/localization/hy_AM/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Փոխել ողջ հասցեագիրքը"
+
+#: program/localization/hy_AM/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Դուք կարող եք ներկրել նոր հասցեներ առկա"
+"հասցեագրքից։ Համակարգը ընդունում է"
+"հասցեների ներկրումը <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> չափաձևով։"
+
+#: program/localization/hy_AM/labels.inc:done
+msgid "Done"
+msgstr "Ավարտված է"
+
+#: program/localization/hy_AM/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Նախասիրություններ"
+
+#: program/localization/hy_AM/labels.inc:preferences
+msgid "Preferences"
+msgstr "Ընդհանուր"
+
+#: program/localization/hy_AM/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Օգտվողի նախասիրություններ"
+
+#: program/localization/hy_AM/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Խմբագրել օգտվողի նախասիրությունները"
+
+#: program/localization/hy_AM/labels.inc:identities
+msgid "Identities"
+msgstr "Անձիք"
+
+#: program/localization/hy_AM/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Կարգավորել անձանց"
+
+#: program/localization/hy_AM/labels.inc:newidentity
+msgid "New identity"
+msgstr "Նոր անձ"
+
+#: program/localization/hy_AM/labels.inc:newitem
+msgid "New item"
+msgstr "Նոր իր"
+
+#: program/localization/hy_AM/labels.inc:edititem
+msgid "Edit item"
+msgstr "Խմբագրել իրը"
+
+#: program/localization/hy_AM/labels.inc:setdefault
+msgid "Set default"
+msgstr "Հիմնական"
+
+#: program/localization/hy_AM/labels.inc:autodetect
+msgid "Auto"
+msgstr "Ավտո"
+
+#: program/localization/hy_AM/labels.inc:language
+msgid "Language"
+msgstr "Լեզու"
+
+#: program/localization/hy_AM/labels.inc:timezone
+msgid "Time zone"
+msgstr "Ժամային գոտի"
+
+#: program/localization/hy_AM/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Տողեր առ էջ"
+
+#: program/localization/hy_AM/labels.inc:signature
+msgid "Signature"
+msgstr "Ստորագրություն"
+
+#: program/localization/hy_AM/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Ամառային ժամանակ"
+
+#: program/localization/hy_AM/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Ստեղծել HTML նամակներ"
+
+#: program/localization/hy_AM/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML ստորագրություն"
+
+#: program/localization/hy_AM/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Ցուցադրել պատուհանը"
+
+#: program/localization/hy_AM/labels.inc:skin
+msgid "Interface skin"
+msgstr "Տեսքի տարբերակ"
+
+#: program/localization/hy_AM/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Դուրս գալուց դատարկել աղբարկղը"
+
+#: program/localization/hy_AM/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Դուրս գալուց կարգի բերել փոստարկղը"
+
+#: program/localization/hy_AM/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Տեսք"
+
+#: program/localization/hy_AM/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Սերվերի կարգավորումներ"
+
+#: program/localization/hy_AM/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Փոստարկղի տեսք"
+
+#: program/localization/hy_AM/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Տեղեկացումներ"
+
+#: program/localization/hy_AM/labels.inc:askuser
+msgid "ask me"
+msgstr "Հարցնել օգտվողին"
+
+#: program/localization/hy_AM/labels.inc:autosend
+msgid "send receipt"
+msgstr "ուղարկել ավտոմատ"
+
+#: program/localization/hy_AM/labels.inc:ignore
+msgid "ignore"
+msgstr "անտեսել"
+
+#: program/localization/hy_AM/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Ջնջելուց նշել նամակը որպես կարդացած"
+
+#: program/localization/hy_AM/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Ջնջելու փոխարեն նշել որպես ենթակա ջնջման"
+""
+
+#: program/localization/hy_AM/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Ցույց չ՛տալ ջնջված նամակները"
+
+#: program/localization/hy_AM/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Ցույց տալ հեռակա պատկերները"
+
+#: program/localization/hy_AM/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "հայտնի հասցեատերերից"
+
+#: program/localization/hy_AM/labels.inc:always
+msgid "always"
+msgstr "միշտ"
+
+#: program/localization/hy_AM/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Ցուցադրել կցված պատկերները"
+"հաղորդագրության տակ"
+
+#: program/localization/hy_AM/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Սևագրի ավտոմատ գրանցում"
+
+#: program/localization/hy_AM/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "ամեն $n րոպեն"
+
+#: program/localization/hy_AM/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Ստուգել նոր նամակները"
+
+#: program/localization/hy_AM/labels.inc:never
+msgid "never"
+msgstr "երբեք"
+
+#: program/localization/hy_AM/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "նամակները ցուցադրելիս"
+
+#: program/localization/hy_AM/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "նամակ գրելիս"
+
+#: program/localization/hy_AM/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Կցորդների անուններ"
+
+#: program/localization/hy_AM/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Կատարյալ RFC 2231 (Thunderbird)"
+
+#: program/localization/hy_AM/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/hy_AM/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Կատարյալ RFC 2047 (այլ)"
+
+#: program/localization/hy_AM/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Հավելյալ կարգավորումներ"
+
+#: program/localization/hy_AM/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Առաջ բերել պատուհանը նոր նամակ ստանալիս"
+
+#: program/localization/hy_AM/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Ստուգել բոլոր դարակները նոր նամակների"
+"համար"
+
+#: program/localization/hy_AM/labels.inc:folder
+msgid "Folder"
+msgstr "Դարակ"
+
+#: program/localization/hy_AM/labels.inc:foldername
+msgid "Folder name"
+msgstr "Դարակի անուն"
+
+#: program/localization/hy_AM/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Բաժանորդագրված"
+
+#: program/localization/hy_AM/labels.inc:messagecount
+msgid "Messages"
+msgstr "Նամակներ"
+
+#: program/localization/hy_AM/labels.inc:create
+msgid "Create"
+msgstr "Ստեղծել"
+
+#: program/localization/hy_AM/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Բացել նոր դարակ"
+
+#: program/localization/hy_AM/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Կարգավորել դարակները"
+
+#: program/localization/hy_AM/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Հատուկ դարակներ"
+
+#: program/localization/hy_AM/labels.inc:sortby
+msgid "Sort by"
+msgstr "Դասավորել"
+
+#: program/localization/hy_AM/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "ըստ աճման"
+
+#: program/localization/hy_AM/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "ըստ նվազման"
+
+#: program/localization/hy_AM/labels.inc:B
+msgid "B"
+msgstr "Բ"
+
+#: program/localization/hy_AM/labels.inc:KB
+msgid "KB"
+msgstr "ԿԲ"
+
+#: program/localization/hy_AM/labels.inc:MB
+msgid "MB"
+msgstr "ՄԲ"
+
+#: program/localization/hy_AM/labels.inc:GB
+msgid "GB"
+msgstr "ԳԲ"

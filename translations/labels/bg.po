@@ -1,0 +1,1668 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/bg_BG/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: bg_BG\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/bg_BG/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Добре дошли в $product"
+
+#: program/localization/bg_BG/labels.inc:username
+msgid "Username"
+msgstr "Потребител"
+
+#: program/localization/bg_BG/labels.inc:password
+msgid "Password"
+msgstr "Парола"
+
+#: program/localization/bg_BG/labels.inc:server
+msgid "Server"
+msgstr "Сървър"
+
+#: program/localization/bg_BG/labels.inc:login
+msgid "Login"
+msgstr "Вход"
+
+#: program/localization/bg_BG/labels.inc:logout
+msgid "Logout"
+msgstr "Изход"
+
+#: program/localization/bg_BG/labels.inc:mail
+msgid "Mail"
+msgstr "Кутия"
+
+#: program/localization/bg_BG/labels.inc:settings
+msgid "Settings"
+msgstr "Настройки"
+
+#: program/localization/bg_BG/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Книга с адреси"
+
+#: program/localization/bg_BG/labels.inc:inbox
+msgid "Inbox"
+msgstr "Входящи"
+
+#: program/localization/bg_BG/labels.inc:drafts
+msgid "Drafts"
+msgstr "Чернови"
+
+#: program/localization/bg_BG/labels.inc:sent
+msgid "Sent"
+msgstr "Изпратени"
+
+#: program/localization/bg_BG/labels.inc:trash
+msgid "Trash"
+msgstr "Кошче"
+
+#: program/localization/bg_BG/labels.inc:junk
+msgid "Junk"
+msgstr "Спам"
+
+#: program/localization/bg_BG/labels.inc:subject
+msgid "Subject"
+msgstr "Заглавие"
+
+#: program/localization/bg_BG/labels.inc:from
+msgid "From"
+msgstr "От"
+
+#: program/localization/bg_BG/labels.inc:to
+msgid "To"
+msgstr "Получател"
+
+#: program/localization/bg_BG/labels.inc:cc
+msgid "Cc"
+msgstr "Копие до"
+
+#: program/localization/bg_BG/labels.inc:bcc
+msgid "Bcc"
+msgstr "Скрито копие до"
+
+#: program/localization/bg_BG/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Отговор до"
+
+#: program/localization/bg_BG/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Препращане към"
+
+#: program/localization/bg_BG/labels.inc:date
+msgid "Date"
+msgstr "Дата"
+
+#: program/localization/bg_BG/labels.inc:size
+msgid "Size"
+msgstr "Размер"
+
+#: program/localization/bg_BG/labels.inc:priority
+msgid "Priority"
+msgstr "Приоритет"
+
+#: program/localization/bg_BG/labels.inc:organization
+msgid "Company"
+msgstr "Организация"
+
+#: program/localization/bg_BG/labels.inc:readstatus
+msgid "Read status"
+msgstr "Статут (прочетено/непрочетено)"
+
+#: program/localization/bg_BG/labels.inc:mailboxlist
+#: program/localization/bg_BG/labels.inc:folders
+msgid "Folders"
+msgstr "Папки"
+
+#: program/localization/bg_BG/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Съобщения $from до $to от $count"
+
+#: program/localization/bg_BG/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Съобщения $from до $to от $count"
+
+#: program/localization/bg_BG/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Съобщение $nr от $count"
+
+#: program/localization/bg_BG/labels.inc:copy
+msgid "Copy"
+msgstr "Копиране"
+
+#: program/localization/bg_BG/labels.inc:move
+msgid "Move"
+msgstr "Преместване"
+
+#: program/localization/bg_BG/labels.inc:moveto
+msgid "Move to..."
+msgstr "Премести в..."
+
+#: program/localization/bg_BG/labels.inc:download
+msgid "Download"
+msgstr "Изтегли"
+
+#: program/localization/bg_BG/labels.inc:filename
+msgid "File name"
+msgstr "Име на файла"
+
+#: program/localization/bg_BG/labels.inc:filesize
+msgid "File size"
+msgstr "Размер на файла"
+
+#: program/localization/bg_BG/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Добави в адресната книга"
+
+#: program/localization/bg_BG/labels.inc:sun
+msgid "Sun"
+msgstr "Нед"
+
+#: program/localization/bg_BG/labels.inc:mon
+msgid "Mon"
+msgstr "Пон"
+
+#: program/localization/bg_BG/labels.inc:tue
+msgid "Tue"
+msgstr "Вто"
+
+#: program/localization/bg_BG/labels.inc:wed
+msgid "Wed"
+msgstr "Сря"
+
+#: program/localization/bg_BG/labels.inc:thu
+msgid "Thu"
+msgstr "Чет"
+
+#: program/localization/bg_BG/labels.inc:fri
+msgid "Fri"
+msgstr "Пет"
+
+#: program/localization/bg_BG/labels.inc:sat
+msgid "Sat"
+msgstr "Съб"
+
+#: program/localization/bg_BG/labels.inc:sunday
+msgid "Sunday"
+msgstr "Неделя"
+
+#: program/localization/bg_BG/labels.inc:monday
+msgid "Monday"
+msgstr "Понеделник"
+
+#: program/localization/bg_BG/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Вторник"
+
+#: program/localization/bg_BG/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Сряда"
+
+#: program/localization/bg_BG/labels.inc:thursday
+msgid "Thursday"
+msgstr "Четвъртък"
+
+#: program/localization/bg_BG/labels.inc:friday
+msgid "Friday"
+msgstr "Петък"
+
+#: program/localization/bg_BG/labels.inc:saturday
+msgid "Saturday"
+msgstr "Събота"
+
+#: program/localization/bg_BG/labels.inc:jan
+msgid "Jan"
+msgstr "Яну"
+
+#: program/localization/bg_BG/labels.inc:feb
+msgid "Feb"
+msgstr "Фев"
+
+#: program/localization/bg_BG/labels.inc:mar
+msgid "Mar"
+msgstr "Мар"
+
+#: program/localization/bg_BG/labels.inc:apr
+msgid "Apr"
+msgstr "Апр"
+
+#: program/localization/bg_BG/labels.inc:may
+#: program/localization/bg_BG/labels.inc:longmay
+msgid "May"
+msgstr "Май"
+
+#: program/localization/bg_BG/labels.inc:jun
+msgid "Jun"
+msgstr "Юни"
+
+#: program/localization/bg_BG/labels.inc:jul
+msgid "Jul"
+msgstr "Юли"
+
+#: program/localization/bg_BG/labels.inc:aug
+msgid "Aug"
+msgstr "Авг"
+
+#: program/localization/bg_BG/labels.inc:sep
+msgid "Sep"
+msgstr "Сеп"
+
+#: program/localization/bg_BG/labels.inc:oct
+msgid "Oct"
+msgstr "Окт"
+
+#: program/localization/bg_BG/labels.inc:nov
+msgid "Nov"
+msgstr "Ное"
+
+#: program/localization/bg_BG/labels.inc:dec
+msgid "Dec"
+msgstr "Дек"
+
+#: program/localization/bg_BG/labels.inc:longjan
+msgid "January"
+msgstr "Януари"
+
+#: program/localization/bg_BG/labels.inc:longfeb
+msgid "February"
+msgstr "Февруари"
+
+#: program/localization/bg_BG/labels.inc:longmar
+msgid "March"
+msgstr "Март"
+
+#: program/localization/bg_BG/labels.inc:longapr
+msgid "April"
+msgstr "Април"
+
+#: program/localization/bg_BG/labels.inc:longjun
+msgid "June"
+msgstr "Юни"
+
+#: program/localization/bg_BG/labels.inc:longjul
+msgid "July"
+msgstr "Юли"
+
+#: program/localization/bg_BG/labels.inc:longaug
+msgid "August"
+msgstr "Август"
+
+#: program/localization/bg_BG/labels.inc:longsep
+msgid "September"
+msgstr "Септември"
+
+#: program/localization/bg_BG/labels.inc:longoct
+msgid "October"
+msgstr "Октомври"
+
+#: program/localization/bg_BG/labels.inc:longnov
+msgid "November"
+msgstr "Ноември"
+
+#: program/localization/bg_BG/labels.inc:longdec
+msgid "December"
+msgstr "Декември"
+
+#: program/localization/bg_BG/labels.inc:today
+msgid "Today"
+msgstr "Днес"
+
+#: program/localization/bg_BG/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Провери за нови писма"
+
+#: program/localization/bg_BG/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Създай ново писмо"
+
+#: program/localization/bg_BG/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Отговори на писмото"
+
+#: program/localization/bg_BG/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Отговор до изпращача и всички получатели"
+
+#: program/localization/bg_BG/labels.inc:replyall
+msgid "Reply all"
+msgstr "Отговор на всички"
+
+#: program/localization/bg_BG/labels.inc:replylist
+msgid "Reply list"
+msgstr "Списък за отговор"
+
+#: program/localization/bg_BG/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "Препрати като част от съобщението"
+
+#: program/localization/bg_BG/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "Препрати като прикачен файл"
+
+#: program/localization/bg_BG/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Препрати писмото"
+
+#: program/localization/bg_BG/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Изтрий писмото"
+
+#: program/localization/bg_BG/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Премести писмото в кошчето"
+
+#: program/localization/bg_BG/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Разпечатай писмото"
+
+#: program/localization/bg_BG/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Предишно писмо"
+
+#: program/localization/bg_BG/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Първо писмо"
+
+#: program/localization/bg_BG/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Следващо писмо"
+
+#: program/localization/bg_BG/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Последно писмо"
+
+#: program/localization/bg_BG/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Обратно към списъка"
+
+#: program/localization/bg_BG/labels.inc:viewsource
+msgid "Show source"
+msgstr "Виж като код"
+
+#: program/localization/bg_BG/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Маркирай писмата"
+
+#: program/localization/bg_BG/labels.inc:markread
+msgid "As read"
+msgstr "Като прочетени"
+
+#: program/localization/bg_BG/labels.inc:markunread
+msgid "As unread"
+msgstr "Като нови"
+
+#: program/localization/bg_BG/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Като отбелязани"
+
+#: program/localization/bg_BG/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Като неотбелязани"
+
+#: program/localization/bg_BG/labels.inc:moreactions
+msgid "More actions..."
+msgstr "Повече действия..."
+
+#: program/localization/bg_BG/labels.inc:select
+msgid "Select"
+msgstr "Избери"
+
+#: program/localization/bg_BG/labels.inc:all
+msgid "All"
+msgstr "Всички"
+
+#: program/localization/bg_BG/labels.inc:none
+#: program/localization/bg_BG/labels.inc:nonesort
+msgid "None"
+msgstr "Никакъв"
+
+#: program/localization/bg_BG/labels.inc:currpage
+msgid "Current page"
+msgstr "Страница"
+
+#: program/localization/bg_BG/labels.inc:unread
+msgid "Unread"
+msgstr "Нови"
+
+#: program/localization/bg_BG/labels.inc:flagged
+msgid "Flagged"
+msgstr "Отбелязано"
+
+#: program/localization/bg_BG/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Неотговорено"
+
+#: program/localization/bg_BG/labels.inc:deleted
+msgid "Deleted"
+msgstr "Изтрито"
+
+#: program/localization/bg_BG/labels.inc:invert
+msgid "Invert"
+msgstr "Инвертирай"
+
+#: program/localization/bg_BG/labels.inc:filter
+msgid "Filter"
+msgstr "Филтър"
+
+#: program/localization/bg_BG/labels.inc:list
+msgid "List"
+msgstr "Списък"
+
+#: program/localization/bg_BG/labels.inc:threads
+msgid "Threads"
+msgstr "Съобщения"
+
+#: program/localization/bg_BG/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Отваряне на всички"
+
+#: program/localization/bg_BG/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Отваряне на непрочетени"
+
+#: program/localization/bg_BG/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Затваряне на всички"
+
+#: program/localization/bg_BG/labels.inc:threaded
+msgid "Threaded"
+msgstr "Съобщения с отговори"
+
+#: program/localization/bg_BG/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Отваряне на съобщения и отговори"
+
+#: program/localization/bg_BG/labels.inc:do_expand
+msgid "all threads"
+msgstr "всички отговори"
+
+#: program/localization/bg_BG/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "само с непрочетени съобщения"
+
+#: program/localization/bg_BG/labels.inc:fromto
+msgid "From/To"
+msgstr "Изпращащ/Получаващ"
+
+#: program/localization/bg_BG/labels.inc:flag
+msgid "Flag"
+msgstr "Флаг"
+
+#: program/localization/bg_BG/labels.inc:attachment
+msgid "Attachment"
+msgstr "Прикачен файл"
+
+#: program/localization/bg_BG/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Дата на изпращане"
+
+#: program/localization/bg_BG/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Дата на пристигане"
+
+#: program/localization/bg_BG/labels.inc:asc
+msgid "ascending"
+msgstr "възходящ"
+
+#: program/localization/bg_BG/labels.inc:desc
+msgid "descending"
+msgstr "низходящ"
+
+#: program/localization/bg_BG/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Колони за списък"
+
+#: program/localization/bg_BG/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Колона за сортиране"
+
+#: program/localization/bg_BG/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Режим на сортиране"
+
+#: program/localization/bg_BG/labels.inc:listmode
+msgid "List view mode"
+msgstr "Кратък списък"
+
+#: program/localization/bg_BG/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Действия за папки..."
+
+#: program/localization/bg_BG/labels.inc:compact
+msgid "Compact"
+msgstr "Свий"
+
+#: program/localization/bg_BG/labels.inc:empty
+msgid "Empty"
+msgstr "Изпразни"
+
+#: program/localization/bg_BG/labels.inc:quota
+msgid "Disk usage"
+msgstr "Използвано място"
+
+#: program/localization/bg_BG/labels.inc:unknown
+msgid "unknown"
+msgstr "няма информация"
+
+#: program/localization/bg_BG/labels.inc:unlimited
+msgid "unlimited"
+msgstr "няма ограничение"
+
+#: program/localization/bg_BG/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Бързо търсене"
+
+#: program/localization/bg_BG/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Изчисти търсенето и покажи всички писма"
+
+#: program/localization/bg_BG/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Търсене във"
+
+#: program/localization/bg_BG/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Цялото съобщение"
+
+#: program/localization/bg_BG/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Отвори в нов прозорец"
+
+#: program/localization/bg_BG/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Изтегли като .eml"
+
+#: program/localization/bg_BG/labels.inc:compose
+msgid "Compose a message"
+msgstr "Ново писмо"
+
+#: program/localization/bg_BG/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Редактирай като ново"
+
+#: program/localization/bg_BG/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Запиши в Чернови"
+
+#: program/localization/bg_BG/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Изпрати писмото"
+
+#: program/localization/bg_BG/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Прикачи файл"
+
+#: program/localization/bg_BG/labels.inc:charset
+msgid "Charset"
+msgstr "Кодировка"
+
+#: program/localization/bg_BG/labels.inc:editortype
+msgid "Editor type"
+msgstr "Вид редактор"
+
+#: program/localization/bg_BG/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Обратна разписка"
+
+#: program/localization/bg_BG/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Информиране при доставка"
+
+#: program/localization/bg_BG/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "На $date, $sender написа:"
+
+#: program/localization/bg_BG/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "Първоначалното съобщение"
+
+#: program/localization/bg_BG/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Редактиране на самоличности"
+
+#: program/localization/bg_BG/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Провери правописа"
+
+#: program/localization/bg_BG/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Продължи черновата"
+
+#: program/localization/bg_BG/labels.inc:revertto
+msgid "Revert to"
+msgstr "Върни се към"
+
+#: program/localization/bg_BG/labels.inc:attachments
+msgid "Attachments"
+msgstr "Прикачени файлове"
+
+#: program/localization/bg_BG/labels.inc:upload
+msgid "Upload"
+msgstr "Качи"
+
+#: program/localization/bg_BG/labels.inc:uploadprogress
+msgid "$percent ($current from $total)"
+msgstr "$percent ($current от $total)"
+
+#: program/localization/bg_BG/labels.inc:close
+msgid "Close"
+msgstr "Затвори"
+
+#: program/localization/bg_BG/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Настройки на съобщения..."
+
+#: program/localization/bg_BG/labels.inc:low
+msgid "Low"
+msgstr "Нисък"
+
+#: program/localization/bg_BG/labels.inc:lowest
+msgid "Lowest"
+msgstr "Най-нисък"
+
+#: program/localization/bg_BG/labels.inc:normal
+msgid "Normal"
+msgstr "Нормален"
+
+#: program/localization/bg_BG/labels.inc:high
+msgid "High"
+msgstr "Висок"
+
+#: program/localization/bg_BG/labels.inc:highest
+msgid "Highest"
+msgstr "Най-висок"
+
+#: program/localization/bg_BG/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(няма заглавие)"
+
+#: program/localization/bg_BG/labels.inc:showimages
+msgid "Display images"
+msgstr "Показвай изображения"
+
+#: program/localization/bg_BG/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Винаги показвай изображения от $ "
+
+#: program/localization/bg_BG/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "Това съобщение е чернова"
+
+#: program/localization/bg_BG/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/bg_BG/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "текстов"
+
+#: program/localization/bg_BG/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Запази съобщението в"
+
+#: program/localization/bg_BG/labels.inc:dontsave
+msgid "don't save"
+msgstr "Не съхранявай"
+
+#: program/localization/bg_BG/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Максимално позволен размер $size"
+
+#: program/localization/bg_BG/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Копие до"
+
+#: program/localization/bg_BG/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Скрито копие до"
+
+#: program/localization/bg_BG/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Отговор на"
+
+#: program/localization/bg_BG/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Добавяне на препращане към"
+
+#: program/localization/bg_BG/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Подателят на писмото е пожелал да бъде"
+"уведомен, че сте го прочели. Желаете ли да"
+"изпратите обратна разписка?"
+
+#: program/localization/bg_BG/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Обратна разписка (прочетено)"
+
+#: program/localization/bg_BG/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Това е обратна разписка за писмото Ви"
+
+#: program/localization/bg_BG/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Забележка: Тази разписка потвърждава"
+"само, че писмото е било показано на"
+"компютъра на получателят. Няма никаква"
+"гаранция, че получателят е прочел и/или"
+"разбрал съдържанието на писмото."
+
+#: program/localization/bg_BG/labels.inc:name
+msgid "Display Name"
+msgstr "Кратко име"
+
+#: program/localization/bg_BG/labels.inc:firstname
+msgid "First Name"
+msgstr "Име"
+
+#: program/localization/bg_BG/labels.inc:surname
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: program/localization/bg_BG/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Презиме"
+
+#: program/localization/bg_BG/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "Представка (Титла)"
+
+#: program/localization/bg_BG/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "Наставка (Титла)"
+
+#: program/localization/bg_BG/labels.inc:nickname
+msgid "Nickname"
+msgstr "Прякор"
+
+#: program/localization/bg_BG/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Длъжност"
+
+#: program/localization/bg_BG/labels.inc:department
+msgid "Department"
+msgstr "Отдел"
+
+#: program/localization/bg_BG/labels.inc:gender
+msgid "Gender"
+msgstr "Пол"
+
+#: program/localization/bg_BG/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Бащино име"
+
+#: program/localization/bg_BG/labels.inc:email
+msgid "Email"
+msgstr "E-Mail"
+
+#: program/localization/bg_BG/labels.inc:phone
+msgid "Phone"
+msgstr "Телефон"
+
+#: program/localization/bg_BG/labels.inc:address
+msgid "Address"
+msgstr "Адрес"
+
+#: program/localization/bg_BG/labels.inc:street
+msgid "Street"
+msgstr "Улица"
+
+#: program/localization/bg_BG/labels.inc:locality
+msgid "City"
+msgstr "Град"
+
+#: program/localization/bg_BG/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "Пощенски код"
+
+#: program/localization/bg_BG/labels.inc:region
+msgid "State/Province"
+msgstr "Област"
+
+#: program/localization/bg_BG/labels.inc:country
+msgid "Country"
+msgstr "Държава"
+
+#: program/localization/bg_BG/labels.inc:birthday
+msgid "Birthday"
+msgstr "Рожден ден"
+
+#: program/localization/bg_BG/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "Годишнина"
+
+#: program/localization/bg_BG/labels.inc:website
+msgid "Website"
+msgstr "Уебсайт"
+
+#: program/localization/bg_BG/labels.inc:instantmessenger
+msgid "IM"
+msgstr "IM"
+
+#: program/localization/bg_BG/labels.inc:notes
+msgid "Notes"
+msgstr "Бележки"
+
+#: program/localization/bg_BG/labels.inc:male
+msgid "male"
+msgstr "Мъж"
+
+#: program/localization/bg_BG/labels.inc:female
+msgid "female"
+msgstr "Жена"
+
+#: program/localization/bg_BG/labels.inc:manager
+msgid "Manager"
+msgstr "Мениджър"
+
+#: program/localization/bg_BG/labels.inc:assistant
+#: program/localization/bg_BG/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Асистент"
+
+#: program/localization/bg_BG/labels.inc:spouse
+msgid "Spouse"
+msgstr "Съпруг (а)"
+
+#: program/localization/bg_BG/labels.inc:allfields
+msgid "All fields"
+msgstr "Всички полета"
+
+#: program/localization/bg_BG/labels.inc:search
+msgid "Search"
+msgstr "Търсене"
+
+#: program/localization/bg_BG/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "Разширено търсене"
+
+#: program/localization/bg_BG/labels.inc:other
+#: program/localization/bg_BG/labels.inc:typeother
+msgid "Other"
+msgstr "Други"
+
+#: program/localization/bg_BG/labels.inc:typehome
+msgid "Home"
+msgstr "Начало"
+
+#: program/localization/bg_BG/labels.inc:typework
+msgid "Work"
+msgstr "Работа"
+
+#: program/localization/bg_BG/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Мобилни"
+
+#: program/localization/bg_BG/labels.inc:typemain
+msgid "Main"
+msgstr "Главни"
+
+#: program/localization/bg_BG/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Домашен факс"
+
+#: program/localization/bg_BG/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "Служебен факс"
+
+#: program/localization/bg_BG/labels.inc:typecar
+msgid "Car"
+msgstr "Автомобил"
+
+#: program/localization/bg_BG/labels.inc:typepager
+msgid "Pager"
+msgstr "Пейджър"
+
+#: program/localization/bg_BG/labels.inc:typevideo
+msgid "Video"
+msgstr "Видео"
+
+#: program/localization/bg_BG/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "Начална страница"
+
+#: program/localization/bg_BG/labels.inc:typeblog
+msgid "Blog"
+msgstr "Блог"
+
+#: program/localization/bg_BG/labels.inc:typeprofile
+msgid "Profile"
+msgstr "Профил"
+
+#: program/localization/bg_BG/labels.inc:addfield
+msgid "Add field..."
+msgstr "Добави поле"
+
+#: program/localization/bg_BG/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Добави"
+
+#: program/localization/bg_BG/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Редактирай"
+
+#: program/localization/bg_BG/labels.inc:contacts
+msgid "Contacts"
+msgstr "Контакти"
+
+#: program/localization/bg_BG/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Свойства на контакт"
+
+#: program/localization/bg_BG/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Лична информация"
+
+#: program/localization/bg_BG/labels.inc:edit
+msgid "Edit"
+msgstr "Редактирай"
+
+#: program/localization/bg_BG/labels.inc:cancel
+msgid "Cancel"
+msgstr "Отказ"
+
+#: program/localization/bg_BG/labels.inc:save
+msgid "Save"
+msgstr "Запиши"
+
+#: program/localization/bg_BG/labels.inc:delete
+msgid "Delete"
+msgstr "Изтрий"
+
+#: program/localization/bg_BG/labels.inc:rename
+msgid "Rename"
+msgstr "Преименувай"
+
+#: program/localization/bg_BG/labels.inc:addphoto
+msgid "Add"
+msgstr "Добави"
+
+#: program/localization/bg_BG/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Замени"
+
+#: program/localization/bg_BG/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Нов контакт"
+
+#: program/localization/bg_BG/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Изтрий маркираните контакти"
+
+#: program/localization/bg_BG/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Напиши писмо до"
+
+#: program/localization/bg_BG/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Контакти $from до $to от $count"
+
+#: program/localization/bg_BG/labels.inc:print
+msgid "Print"
+msgstr "Разпечатай"
+
+#: program/localization/bg_BG/labels.inc:export
+msgid "Export"
+msgstr "Изнасяне"
+
+#: program/localization/bg_BG/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Изнасяне във vCard формат"
+
+#: program/localization/bg_BG/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Създаване на нова група"
+
+#: program/localization/bg_BG/labels.inc:grouprename
+msgid "Rename group"
+msgstr "Преименувай група"
+
+#: program/localization/bg_BG/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "Изтриване на група"
+
+#: program/localization/bg_BG/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Предна страница"
+
+#: program/localization/bg_BG/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Първа страница"
+
+#: program/localization/bg_BG/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Следваща страница"
+
+#: program/localization/bg_BG/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Последна страница"
+
+#: program/localization/bg_BG/labels.inc:group
+msgid "Group"
+msgstr "Група"
+
+#: program/localization/bg_BG/labels.inc:groups
+msgid "Groups"
+msgstr "Групи"
+
+#: program/localization/bg_BG/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Лични адреси"
+
+#: program/localization/bg_BG/labels.inc:searchsave
+msgid "Save search"
+msgstr "Запази търсенето"
+
+#: program/localization/bg_BG/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "Изтрий търсенето"
+
+#: program/localization/bg_BG/labels.inc:import
+msgid "Import"
+msgstr "Внасяне"
+
+#: program/localization/bg_BG/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Внасяне"
+
+#: program/localization/bg_BG/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Внасяне от файл"
+
+#: program/localization/bg_BG/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "Добави нови контакти в книгата с адреси"
+
+#: program/localization/bg_BG/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Замени цялата книга с адреси"
+
+#: program/localization/bg_BG/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Можете да внесете контакти от"
+"съществуваща книга с адреси. В момента"
+"поддържане внасянето на адреси от vCard"
+"формат за данни."
+
+#: program/localization/bg_BG/labels.inc:done
+msgid "Done"
+msgstr "Извършено"
+
+#: program/localization/bg_BG/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Настройки за"
+
+#: program/localization/bg_BG/labels.inc:preferences
+msgid "Preferences"
+msgstr "Настройки"
+
+#: program/localization/bg_BG/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Потребителски настройки"
+
+#: program/localization/bg_BG/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Редактирай потребителските настройки"
+
+#: program/localization/bg_BG/labels.inc:identities
+msgid "Identities"
+msgstr "Самоличност"
+
+#: program/localization/bg_BG/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Промяна на самоличностите за този акаунт"
+
+#: program/localization/bg_BG/labels.inc:newidentity
+msgid "New identity"
+msgstr "Нова самоличност"
+
+#: program/localization/bg_BG/labels.inc:newitem
+msgid "New item"
+msgstr "Нова самоличност"
+
+#: program/localization/bg_BG/labels.inc:edititem
+msgid "Edit item"
+msgstr "Редактиране на самоличност"
+
+#: program/localization/bg_BG/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Показвай първо HTML версия"
+
+#: program/localization/bg_BG/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Подразбиращо се кодиране"
+
+#: program/localization/bg_BG/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML съобщение"
+
+#: program/localization/bg_BG/labels.inc:dateformat
+msgid "Date format"
+msgstr "Формат на датата"
+
+#: program/localization/bg_BG/labels.inc:timeformat
+msgid "Time format"
+msgstr "Формат на времето"
+
+#: program/localization/bg_BG/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Кратки дати"
+
+#: program/localization/bg_BG/labels.inc:setdefault
+msgid "Set default"
+msgstr "По подразбиране"
+
+#: program/localization/bg_BG/labels.inc:autodetect
+msgid "Auto"
+msgstr "Автоматично"
+
+#: program/localization/bg_BG/labels.inc:language
+msgid "Language"
+msgstr "Език"
+
+#: program/localization/bg_BG/labels.inc:timezone
+msgid "Time zone"
+msgstr "Часова зона"
+
+#: program/localization/bg_BG/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Редове на страница"
+
+#: program/localization/bg_BG/labels.inc:signature
+msgid "Signature"
+msgstr "Подпис"
+
+#: program/localization/bg_BG/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Маркирай при лятно време"
+
+#: program/localization/bg_BG/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Писане на съобщениe като HTML"
+
+#: program/localization/bg_BG/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "само при отговор на HTML събощения"
+
+#: program/localization/bg_BG/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML подпис"
+
+#: program/localization/bg_BG/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Панел за преглед"
+
+#: program/localization/bg_BG/labels.inc:skin
+msgid "Interface skin"
+msgstr "Смяна изгледа на интерфейса"
+
+#: program/localization/bg_BG/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Изчисти кошчето при изход"
+
+#: program/localization/bg_BG/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Упллътни Входящи при изход"
+
+#: program/localization/bg_BG/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Потребителски интерфейс"
+
+#: program/localization/bg_BG/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Настройки на сървъра"
+
+#: program/localization/bg_BG/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Преглед на Кутия"
+
+#: program/localization/bg_BG/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Уведомление на изпращача"
+
+#: program/localization/bg_BG/labels.inc:askuser
+msgid "ask me"
+msgstr "Питай"
+
+#: program/localization/bg_BG/labels.inc:autosend
+msgid "send receipt"
+msgstr "Изпрати автоматично"
+
+#: program/localization/bg_BG/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "да се изпрати обратна разписка на моите"
+"контакти и да се при външни контакти"
+
+#: program/localization/bg_BG/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "да се изпрати обратна разписка на моите"
+"контакти, а на външни не"
+
+#: program/localization/bg_BG/labels.inc:ignore
+msgid "ignore"
+msgstr "Отхвърли"
+
+#: program/localization/bg_BG/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Отбележи като прочетено при изтриване"
+
+#: program/localization/bg_BG/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Отбележи съобщението за изтриване"
+
+#: program/localization/bg_BG/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Не показвай изтритите съобщения"
+
+#: program/localization/bg_BG/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "При неуспешно преместване на съобщение в"
+"Кошчето, да се изтрие"
+
+#: program/localization/bg_BG/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Покажи блокираните изображения"
+
+#: program/localization/bg_BG/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "Oт познати изпращачи"
+
+#: program/localization/bg_BG/labels.inc:always
+msgid "always"
+msgstr "Винаги"
+
+#: program/localization/bg_BG/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Покажи прикачените изображения след"
+"съобщението"
+
+#: program/localization/bg_BG/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Автоматично записвай чернова"
+
+#: program/localization/bg_BG/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "всеки $n минути"
+
+#: program/localization/bg_BG/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Проверявай за нови съобщения на"
+
+#: program/localization/bg_BG/labels.inc:never
+msgid "never"
+msgstr "никога"
+
+#: program/localization/bg_BG/labels.inc:immediately
+msgid "immediately"
+msgstr "веднага"
+
+#: program/localization/bg_BG/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Показване на събщенията"
+
+#: program/localization/bg_BG/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Писане на съобщения"
+
+#: program/localization/bg_BG/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Добавяне име на прикрепените файлове"
+
+#: program/localization/bg_BG/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Според RFC 2231 (Thunderbird)"
+
+#: program/localization/bg_BG/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/bg_BG/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Според RFC 2047 (други)"
+
+#: program/localization/bg_BG/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "Използване на MIME кодиране за 8-битови"
+"символи"
+
+#: program/localization/bg_BG/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Настройки за напреднали"
+
+#: program/localization/bg_BG/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Премигване на прозореца при ново писмо"
+
+#: program/localization/bg_BG/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Провери всички папки за нови писма"
+
+#: program/localization/bg_BG/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "След изтриване / премини към следващото"
+"писмо"
+
+#: program/localization/bg_BG/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Основни настройки"
+
+#: program/localization/bg_BG/labels.inc:section
+msgid "Section"
+msgstr "Раздел"
+
+#: program/localization/bg_BG/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Поддръжка"
+
+#: program/localization/bg_BG/labels.inc:newmessage
+msgid "New Message"
+msgstr "Ново съобщение"
+
+#: program/localization/bg_BG/labels.inc:listoptions
+msgid "List Options"
+msgstr "Покажи списък с настройки"
+
+#: program/localization/bg_BG/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Настройки на подпис"
+
+#: program/localization/bg_BG/labels.inc:whenreplying
+msgid "When replying"
+msgstr "При отговор"
+
+#: program/localization/bg_BG/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "започване на ново съобщение преди"
+"получения текст"
+
+#: program/localization/bg_BG/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "започване на ново съобщение след"
+"получения текст"
+
+#: program/localization/bg_BG/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "Премахване на предишния подпис от"
+"съобщението при отговор"
+
+#: program/localization/bg_BG/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Автоматично добавяне на подпис"
+
+#: program/localization/bg_BG/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "само на нови съобщения"
+
+#: program/localization/bg_BG/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "само на отговори и препратени"
+
+#: program/localization/bg_BG/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "Поставяне на подпис при отговор или"
+"препращане"
+
+#: program/localization/bg_BG/labels.inc:belowquote
+msgid "below the quote"
+msgstr "над цитатът"
+
+#: program/localization/bg_BG/labels.inc:abovequote
+msgid "above the quote"
+msgstr "под цитатът"
+
+#: program/localization/bg_BG/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Вмъкване на подпис"
+
+#: program/localization/bg_BG/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Маркиране на прегледаните съобщения"
+"като прочетени"
+
+#: program/localization/bg_BG/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "след $n секунди"
+
+#: program/localization/bg_BG/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Винаги връщай обратна разписка"
+
+#: program/localization/bg_BG/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Винаги изисквай отговор при доставка на"
+"съобщение"
+
+#: program/localization/bg_BG/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Постави отговора в папката на"
+"съобщението, на което се отговаря"
+
+#: program/localization/bg_BG/labels.inc:defaultaddressbook
+msgid "Add new contacts to the selected addressbook"
+msgstr "Добави нови контакти в избраната книга с"
+"адреси"
+
+#: program/localization/bg_BG/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "Пропусни алтернативните email адреси при"
+"автоматично попълване"
+
+#: program/localization/bg_BG/labels.inc:spellcheckbeforesend
+msgid "Check spelling before sending a message"
+msgstr "Провери за правописни грешки преди"
+"изпращане на съобщението"
+
+#: program/localization/bg_BG/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "Настройки на проверката за правопис"
+
+#: program/localization/bg_BG/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "Игнорирай думи съдържащи символи"
+
+#: program/localization/bg_BG/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "Игнорирай думи съдържащи числа"
+
+#: program/localization/bg_BG/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "Игнорирай думи съдържащи единствено"
+"главни букви"
+
+#: program/localization/bg_BG/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "Добави в речника"
+
+#: program/localization/bg_BG/labels.inc:folder
+msgid "Folder"
+msgstr "Папка"
+
+#: program/localization/bg_BG/labels.inc:foldername
+msgid "Folder name"
+msgstr "Име на папката"
+
+#: program/localization/bg_BG/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Използвай"
+
+#: program/localization/bg_BG/labels.inc:messagecount
+msgid "Messages"
+msgstr "Писма"
+
+#: program/localization/bg_BG/labels.inc:create
+msgid "Create"
+msgstr "Създай"
+
+#: program/localization/bg_BG/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Направи нова папка"
+
+#: program/localization/bg_BG/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Настройки на папките"
+
+#: program/localization/bg_BG/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Служебни папки"
+
+#: program/localization/bg_BG/labels.inc:properties
+msgid "Properties"
+msgstr "Свойства"
+
+#: program/localization/bg_BG/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Свойства на папката"
+
+#: program/localization/bg_BG/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Родителска папка"
+
+#: program/localization/bg_BG/labels.inc:location
+msgid "Location"
+msgstr "Местоположение"
+
+#: program/localization/bg_BG/labels.inc:info
+msgid "Information"
+msgstr "Информация"
+
+#: program/localization/bg_BG/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Щракни за големина на папката"
+
+#: program/localization/bg_BG/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Щракни за промяна на абонамент"
+
+#: program/localization/bg_BG/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Вид на папката"
+
+#: program/localization/bg_BG/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "Лична папка"
+
+#: program/localization/bg_BG/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "Папка на друг потребител"
+
+#: program/localization/bg_BG/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "Публична папка"
+
+#: program/localization/bg_BG/labels.inc:sortby
+msgid "Sort by"
+msgstr "Сортирай по"
+
+#: program/localization/bg_BG/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Сортирай възходящо"
+
+#: program/localization/bg_BG/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Сортирай низходящо"
+
+#: program/localization/bg_BG/labels.inc:undo
+msgid "Undo"
+msgstr "Отмени"
+
+#: program/localization/bg_BG/labels.inc:B
+msgid "B"
+msgstr "Б"
+
+#: program/localization/bg_BG/labels.inc:KB
+msgid "KB"
+msgstr "КБ"
+
+#: program/localization/bg_BG/labels.inc:MB
+msgid "MB"
+msgstr "МБ"
+
+#: program/localization/bg_BG/labels.inc:GB
+msgid "GB"
+msgstr "ГБ"
+
+#: program/localization/bg_BG/labels.inc:unicode
+msgid "Unicode"
+msgstr "Уникод"
+
+#: program/localization/bg_BG/labels.inc:english
+msgid "English"
+msgstr "Английски"
+
+#: program/localization/bg_BG/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Западна Европа"
+
+#: program/localization/bg_BG/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Източна Европа"
+
+#: program/localization/bg_BG/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Югоизточна Европа"
+
+#: program/localization/bg_BG/labels.inc:baltic
+msgid "Baltic"
+msgstr "Балтийски"
+
+#: program/localization/bg_BG/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Кирилица"
+
+#: program/localization/bg_BG/labels.inc:arabic
+msgid "Arabic"
+msgstr "Арабски"
+
+#: program/localization/bg_BG/labels.inc:greek
+msgid "Greek"
+msgstr "Гръцки"
+
+#: program/localization/bg_BG/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Иврит"
+
+#: program/localization/bg_BG/labels.inc:turkish
+msgid "Turkish"
+msgstr "Турски"
+
+#: program/localization/bg_BG/labels.inc:nordic
+msgid "Nordic"
+msgstr "Скандинавски"
+
+#: program/localization/bg_BG/labels.inc:thai
+msgid "Thai"
+msgstr "Тайландски"
+
+#: program/localization/bg_BG/labels.inc:celtic
+msgid "Celtic"
+msgstr "Келтски"
+
+#: program/localization/bg_BG/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Виетнамски"
+
+#: program/localization/bg_BG/labels.inc:japanese
+msgid "Japanese"
+msgstr "Японски"
+
+#: program/localization/bg_BG/labels.inc:korean
+msgid "Korean"
+msgstr "Корейски"
+
+#: program/localization/bg_BG/labels.inc:chinese
+msgid "Chinese"
+msgstr "Китайски"

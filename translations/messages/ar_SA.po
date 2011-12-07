@@ -1,0 +1,589 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ar_SA/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ar_SA\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ar_SA/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "فشل تسجيل الدخول"
+
+#: program/localization/ar_SA/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "المتصفح الخاص بك لا يقبل الكوكيز"
+
+#: program/localization/ar_SA/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "انتهت صلاحية الجلسة الحالية أو أنها غير"
+"صالحة"
+
+#: program/localization/ar_SA/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "فشل الاتصال بخادم IMAP"
+
+#: program/localization/ar_SA/messages.inc:servererror
+msgid "Server Error!"
+msgstr "خطأ في الخادم!"
+
+#: program/localization/ar_SA/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "خطأ خادم: $msg"
+
+#: program/localization/ar_SA/messages.inc:dberror
+msgid "Database Error!"
+msgstr "خطأ في قاعدة البيانات!"
+
+#: program/localization/ar_SA/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "تعذر تنفيذ العملية. المجلد للقراءة فقط."
+
+#: program/localization/ar_SA/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "تعذر تنفيذ العملية. ليست لديك الصلاحية."
+
+#: program/localization/ar_SA/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "طلب غير صالح! لم تحفظ أية بيانات."
+
+#: program/localization/ar_SA/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "لم يعثر على أية رسائل في صندوق البريد هذا"
+
+#: program/localization/ar_SA/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "قمت بإنهاء هذه الجلسة بنجاح. إلى اللقاء!"
+
+#: program/localization/ar_SA/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "صندوق البريد فارغ"
+
+#: program/localization/ar_SA/messages.inc:loading
+msgid "Loading..."
+msgstr "جاري العمل..."
+
+#: program/localization/ar_SA/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "جاري رفع الملف..."
+
+#: program/localization/ar_SA/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "جاري تحميل الملفات..."
+
+#: program/localization/ar_SA/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "تحميل البيانات..."
+
+#: program/localization/ar_SA/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "التحقق من وجود رسائل جديدة..."
+
+#: program/localization/ar_SA/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "إرسال الرسالة..."
+
+#: program/localization/ar_SA/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "تم إرسال الرسالة بنجاح"
+
+#: program/localization/ar_SA/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "حفظ الرسالة..."
+
+#: program/localization/ar_SA/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "تم حفظ الرسالة في المسودات"
+
+#: program/localization/ar_SA/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "تم الحفظ بنجاح"
+
+#: program/localization/ar_SA/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "تمت إضافة المراسل إلى دفتر العناوين"
+"بنجاح"
+
+#: program/localization/ar_SA/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "هناك مراسل له نفس هذا البريد الالكتروني"
+"موجود مسبقاً"
+
+#: program/localization/ar_SA/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "هناك مُرسال له نفس الإسم موجود مسبقاً."
+
+#: program/localization/ar_SA/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "لحماية خصوصيتك، تم حجب الصور الغير مضمنة"
+"(البعيدة) في هذه الرسالة."
+
+#: program/localization/ar_SA/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "هذه الرسالة مشفرة ولا يمكن عرضها. عذراً!"
+
+#: program/localization/ar_SA/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "لم يعثر على أي مراسل"
+
+#: program/localization/ar_SA/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "تعذر العثور على المراسل المطلوب"
+
+#: program/localization/ar_SA/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "فشل إرسال الرسالة"
+
+#: program/localization/ar_SA/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "رجاء انتظر $sec ثوان قبل إرسال هذه الرسالة"
+
+#: program/localization/ar_SA/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "حدث خطأ أثناء حفظ الرسالة المُرسلة"
+
+#: program/localization/ar_SA/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "حدث خطأ أثناء الحفظ"
+
+#: program/localization/ar_SA/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "تعذر نقل هذه الرسالة"
+
+#: program/localization/ar_SA/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "تعذر نسخ الرسائل"
+
+#: program/localization/ar_SA/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "تعذر حذف هذه الرسالة"
+
+#: program/localization/ar_SA/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "تعذر تحديد الرسائل"
+
+#: program/localization/ar_SA/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "هل تريد حقاً حذف المراسلـ(ين) المحدد(ين)؟"
+
+#: program/localization/ar_SA/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "هل تريد فعلاً حذف المجموعة المحددة؟"
+
+#: program/localization/ar_SA/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "هل تريد حذف الرسائل المحددة؟"
+
+#: program/localization/ar_SA/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "هل تريد حقاً حذف هذا المجلد؟"
+
+#: program/localization/ar_SA/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "هل تريد حقاً حذف جميع الرسائل في هذا"
+"المجلد؟"
+
+#: program/localization/ar_SA/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "جاري حذف المجموعة..."
+
+#: program/localization/ar_SA/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "جاري حذف المجلد..."
+
+#: program/localization/ar_SA/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "جاري نقل المجلد..."
+
+#: program/localization/ar_SA/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "الإشتراك في المجلد..."
+
+#: program/localization/ar_SA/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "إلغاء الإشتراك في المجد..."
+
+#: program/localization/ar_SA/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "لم يتم تعبئة بيانات الاستمارة بالكامل"
+
+#: program/localization/ar_SA/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "الرجاء إدخال عنوان بريد إلكتروني صالح"
+
+#: program/localization/ar_SA/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "الرجاء إدخال اسم"
+
+#: program/localization/ar_SA/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "الرجاء إدخال حجم الصفحة"
+
+#: program/localization/ar_SA/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "رجاء اكتب عنوان البريد الالكتروني"
+"للمُرسل"
+
+#: program/localization/ar_SA/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "الرجاء إدخال اسم مستقبل واحد على الأقل"
+
+#: program/localization/ar_SA/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "حقل \"الموضوع\" فارغ. هل تريد كتابة موضوع"
+"للرسالة؟"
+
+#: program/localization/ar_SA/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "إرسال هذه الرسالة دون نص؟"
+
+#: program/localization/ar_SA/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "لم يتم إرسال الرسالة. هل تريد تجاهل"
+"الرسالة؟"
+
+#: program/localization/ar_SA/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "الرجاء اختيار خادم ldap للبحث فيه"
+
+#: program/localization/ar_SA/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "الرجاء إدخال اسم مراسل أو عنوان بريد"
+"إلكتروني"
+
+#: program/localization/ar_SA/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "لم يتم رفع جميع المرفقات بعد. رجاءً"
+"الانتظار أو إلغاء عملية الرفع."
+
+#: program/localization/ar_SA/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "عثر على $nr رسائل"
+
+#: program/localization/ar_SA/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "عُثر على $nr مُراسَل"
+
+#: program/localization/ar_SA/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "لم يعثر على شيء"
+
+#: program/localization/ar_SA/messages.inc:searching
+msgid "Searching..."
+msgstr "جاري البحث..."
+
+#: program/localization/ar_SA/messages.inc:checking
+msgid "Checking..."
+msgstr "جاري التحقق..."
+
+#: program/localization/ar_SA/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "لم يعثر على أية أخطاء إملائية"
+
+#: program/localization/ar_SA/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "تم حذف المجلد بنجاح"
+
+#: program/localization/ar_SA/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "تم الإشتراك في المجلد بنجاح"
+
+#: program/localization/ar_SA/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "تم إلغاء الإشتراك في المجلد بنجاح"
+
+#: program/localization/ar_SA/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "تم تفريغ المجلد بنجاح"
+
+#: program/localization/ar_SA/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "تم إفراغ المجلد بنجاح."
+
+#: program/localization/ar_SA/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "تم الحذف بنجاح"
+
+#: program/localization/ar_SA/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "إزالة التنسيق من الرسالة..."
+
+#: program/localization/ar_SA/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "تعذرت قراءة الرسالة من الخادم"
+
+#: program/localization/ar_SA/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "فشل رفع الملف"
+
+#: program/localization/ar_SA/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "حجم الملف الذي تحاول رفعه أكبر من الحجم"
+"الأقصى $size"
+
+#: program/localization/ar_SA/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "تم نسخ $nr رسائل بنجاح"
+
+#: program/localization/ar_SA/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "لم يمكن نسخ أية عناوين"
+
+#: program/localization/ar_SA/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "لا يمكن تعديل مصدر العنوان هذا"
+
+#: program/localization/ar_SA/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "تعذر حفظ عنوان المراسل"
+
+#: program/localization/ar_SA/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "جاري نقل الرسالة..."
+
+#: program/localization/ar_SA/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "جاري نسخ الرسالة..."
+
+#: program/localization/ar_SA/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "جاري نسخ المُراسلين..."
+
+#: program/localization/ar_SA/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "جاري حذف الرسائل..."
+
+#: program/localization/ar_SA/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "جاري تحديد الرسائل..."
+
+#: program/localization/ar_SA/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "جاري إضافة المُراسلين إلى المجموعة..."
+
+#: program/localization/ar_SA/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "جاري إزالة المراسلين من المجموعة..."
+
+#: program/localization/ar_SA/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "أرسل إيصال الاستلام بنجاح"
+
+#: program/localization/ar_SA/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "تعذر إرسال إيصال الاستلام"
+
+#: program/localization/ar_SA/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "لا يمكن حذف هذا السجل حيث أنه الوحيد"
+"المتبقي."
+
+#: program/localization/ar_SA/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "اسم المجلّد يحتوي حروفاً ممنوعة"
+
+#: program/localization/ar_SA/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "رجاء اختر ملفاً لرفعه"
+
+#: program/localization/ar_SA/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "دفتر العناوين المحدد غير قابل للكتابة"
+
+#: program/localization/ar_SA/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "تمت إضافة المراسلين إلى هذه المجموعة"
+"بنجاح"
+
+#: program/localization/ar_SA/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "تمت إزالة المراسلين من هذه المجموعة"
+"بنجاح"
+
+#: program/localization/ar_SA/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "جاري الاستيراد، رجاء انتظر..."
+
+#: program/localization/ar_SA/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "فشل الاستيراد! الملف المرفوع ليس ملف vCard"
+"صالح."
+
+#: program/localization/ar_SA/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>تم استيراد $inserted مراسلين بنجاح، وتجاهل"
+"$skipped موجودين مسبقاً</b>:<p><em>$names</em></p>"
+
+#: program/localization/ar_SA/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>تم تجاهل $skipped عناصر موجودة</b>"
+
+#: program/localization/ar_SA/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "العملية ممنوعة!"
+
+#: program/localization/ar_SA/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "عنوان البريد الالكتروني غير محدد في"
+"الهويّة المنتقاة"
+
+#: program/localization/ar_SA/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "يتسبب الانتقال إلى محرر النص البسيط"
+"بضياع جميع التنسيق. هل تريد الاستمرار؟"
+
+#: program/localization/ar_SA/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "حدث خطأ جسيم في التهيئة. رجاءً اتصال"
+"بمدير الخادم حالاً. <b>لا يمكن إرسال"
+"بريدك.</b>"
+
+#: program/localization/ar_SA/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "خطأ SMTP ($code): تعذر الاتصال بالخادم"
+
+#: program/localization/ar_SA/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "خطأ SMTP ($code): تعذر التحقق من هويتك"
+
+#: program/localization/ar_SA/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "خطأ SMTP ($code): تعذر تحديد المرسل \"$from\" ($msg)"
+
+#: program/localization/ar_SA/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "خطأ SMTP ($code): تعذرت إضافة المستلم \"$to\" ($msg)"
+
+#: program/localization/ar_SA/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "خطأ SMTP: تعذرت قراءة قائمة المرسل إليهم"
+
+#: program/localization/ar_SA/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "خطأ SMTP: لا يوجد دعم لتنويهات حالة التوصيل"
+
+#: program/localization/ar_SA/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "خطأ SMTP: $msg"
+
+#: program/localization/ar_SA/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "عنوان بريد إلكتروني غير صالح: $email"
+
+#: program/localization/ar_SA/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "عدد المرسل إليهم كبير. قلص العدد إلى $max."
+
+#: program/localization/ar_SA/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "عدد أعضاء المجموعة أكثر من $max"
+
+#: program/localization/ar_SA/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "حدث خطأ داخلي. الرجاء المحاولة مرة أخرى"
+
+#: program/localization/ar_SA/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "تعذر حذف أسماء جهات الإتصال"
+
+#: program/localization/ar_SA/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "تم حذف أسماء جهات الإتصال بنجاح"
+
+#: program/localization/ar_SA/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "تعذر استعادة المُراسل المحذوف."
+
+#: program/localization/ar_SA/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "تم استعادة المُراسل بنجاح."
+
+#: program/localization/ar_SA/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "تم حذف المجموعة بنجاح"
+
+#: program/localization/ar_SA/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "تم تغيير إسم المجموعة بنجاح"
+
+#: program/localization/ar_SA/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "تم إنشاء المجموعة بنجاح"
+
+#: program/localization/ar_SA/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "تم بنجاح حذف البحث المحفوظ."
+
+#: program/localization/ar_SA/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "تعذر حذف البحث المحفوظ"
+
+#: program/localization/ar_SA/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "تم بنجاح إنشاء البحث المحفوظ."
+
+#: program/localization/ar_SA/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "تعذر إنشاء بحث محفوظ."
+
+#: program/localization/ar_SA/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "تم حذف الرسائل بنجاح"
+
+#: program/localization/ar_SA/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "تم نقل الرسائل بنجاح"
+
+#: program/localization/ar_SA/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "تم نسخ الرسائل بنجاح"
+
+#: program/localization/ar_SA/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "تم تحديد الرسائل بنجاح"
+
+#: program/localization/ar_SA/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "إكتب $min أحرف على الأقل للحصول على التكملة"
+"التلقائية"
+
+#: program/localization/ar_SA/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "لا يمكن ترك الإسم فارغاً"
+
+#: program/localization/ar_SA/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "الإسم طويل جداً"
+
+#: program/localization/ar_SA/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "تم تحديث المجلد بنجاح"
+
+#: program/localization/ar_SA/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "تم إنشاء المجلد بنجاح"
+
+#: program/localization/ar_SA/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "ليست صيغة صورة صحيحة"
+
+#: program/localization/ar_SA/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "عُثر على أخطاء إملائية في الرسالة"
+
+#: program/localization/ar_SA/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "تعذر إنشاء/نقل المجلد إلى المجلد المحدد."
+"ليست لديك الصلاحية."

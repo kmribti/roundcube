@@ -1,0 +1,650 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/hi_IN/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: hi_IN\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/hi_IN/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "$product में स्वागत है"
+
+#: program/localization/hi_IN/labels.inc:username
+msgid "Username"
+msgstr "यूसरनाम"
+
+#: program/localization/hi_IN/labels.inc:password
+msgid "Password"
+msgstr "पासवर्ड"
+
+#: program/localization/hi_IN/labels.inc:server
+msgid "Server"
+msgstr "सर्वर"
+
+#: program/localization/hi_IN/labels.inc:login
+msgid "Login"
+msgstr "लॉगिन"
+
+#: program/localization/hi_IN/labels.inc:logout
+msgid "Logout"
+msgstr "लॉगआऊट"
+
+#: program/localization/hi_IN/labels.inc:mail
+msgid "Mail"
+msgstr "ई-मेल"
+
+#: program/localization/hi_IN/labels.inc:settings
+msgid "Settings"
+msgstr "निजी सैटिंग"
+
+#: program/localization/hi_IN/labels.inc:addressbook
+msgid "Address Book"
+msgstr "पता खाता"
+
+#: program/localization/hi_IN/labels.inc:inbox
+msgid "Inbox"
+msgstr "इनबॉक्स"
+
+#: program/localization/hi_IN/labels.inc:drafts
+msgid "Drafts"
+msgstr "ड्राफ़ट"
+
+#: program/localization/hi_IN/labels.inc:sent
+msgid "Sent"
+msgstr "भेजा गया"
+
+#: program/localization/hi_IN/labels.inc:trash
+msgid "Trash"
+msgstr "रद्दी"
+
+#: program/localization/hi_IN/labels.inc:junk
+msgid "Junk"
+msgstr "स्पैम"
+
+#: program/localization/hi_IN/labels.inc:subject
+msgid "Subject"
+msgstr "विशय"
+
+#: program/localization/hi_IN/labels.inc:from
+msgid "From"
+msgstr "भेजने वाला"
+
+#: program/localization/hi_IN/labels.inc:to
+msgid "To"
+msgstr "पाने वाला"
+
+#: program/localization/hi_IN/labels.inc:cc
+msgid "Cc"
+msgstr "कार्बन"
+
+#: program/localization/hi_IN/labels.inc:bcc
+msgid "Bcc"
+msgstr "अंधा कार्बन"
+
+#: program/localization/hi_IN/labels.inc:replyto
+msgid "Reply-To"
+msgstr "जवाब यहाँ"
+
+#: program/localization/hi_IN/labels.inc:date
+msgid "Date"
+msgstr "तारीख"
+
+#: program/localization/hi_IN/labels.inc:size
+msgid "Size"
+msgstr "माप"
+
+#: program/localization/hi_IN/labels.inc:priority
+msgid "Priority"
+msgstr "मेल की महत्वपूर्णता"
+
+#: program/localization/hi_IN/labels.inc:organization
+msgid "Company"
+msgstr "संस्था"
+
+#: program/localization/hi_IN/labels.inc:reply-to
+msgid "reply-to"
+msgstr "जवाब यहाँ"
+
+#: program/localization/hi_IN/labels.inc:mailboxlist
+#: program/localization/hi_IN/labels.inc:folders
+msgid "Folders"
+msgstr "फ़ोल्डर"
+
+#: program/localization/hi_IN/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "$from से ले कर $to, $count मेल में से"
+
+#: program/localization/hi_IN/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "$nr नम्बर मेल, $count में से"
+
+#: program/localization/hi_IN/labels.inc:moveto
+msgid "Move to..."
+msgstr "खीस्काऐं..."
+
+#: program/localization/hi_IN/labels.inc:download
+msgid "Download"
+msgstr "डाऊनलोड"
+
+#: program/localization/hi_IN/labels.inc:filename
+msgid "File name"
+msgstr "फ़ाईल नाम"
+
+#: program/localization/hi_IN/labels.inc:filesize
+msgid "File size"
+msgstr "फ़ाईल माप"
+
+#: program/localization/hi_IN/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "ऐच-टी-ऐम-ऐल(HTML) दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "ऐच-टी-ऐम-ऐल (HTML) रूप मेल करें"
+
+#: program/localization/hi_IN/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "सुनदर तारीखें"
+
+#: program/localization/hi_IN/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "पता खाते में जोडें"
+
+#: program/localization/hi_IN/labels.inc:sun
+msgid "Sun"
+msgstr "रवि"
+
+#: program/localization/hi_IN/labels.inc:mon
+msgid "Mon"
+msgstr "सोम"
+
+#: program/localization/hi_IN/labels.inc:tue
+msgid "Tue"
+msgstr "मंग"
+
+#: program/localization/hi_IN/labels.inc:wed
+msgid "Wed"
+msgstr "बुध"
+
+#: program/localization/hi_IN/labels.inc:thu
+msgid "Thu"
+msgstr "गुरु"
+
+#: program/localization/hi_IN/labels.inc:fri
+msgid "Fri"
+msgstr "शुक्र"
+
+#: program/localization/hi_IN/labels.inc:sat
+msgid "Sat"
+msgstr "शनि"
+
+#: program/localization/hi_IN/labels.inc:sunday
+msgid "Sunday"
+msgstr "रविवार"
+
+#: program/localization/hi_IN/labels.inc:monday
+msgid "Monday"
+msgstr "सोमवार"
+
+#: program/localization/hi_IN/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "मंगलवार"
+
+#: program/localization/hi_IN/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "बुधवार"
+
+#: program/localization/hi_IN/labels.inc:thursday
+msgid "Thursday"
+msgstr "गुरुवार"
+
+#: program/localization/hi_IN/labels.inc:friday
+msgid "Friday"
+msgstr "शुक्रवार"
+
+#: program/localization/hi_IN/labels.inc:saturday
+msgid "Saturday"
+msgstr "शनिवार"
+
+#: program/localization/hi_IN/labels.inc:today
+msgid "Today"
+msgstr "आज"
+
+#: program/localization/hi_IN/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "नये मेल लाऐं"
+
+#: program/localization/hi_IN/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "मेल लिखें"
+
+#: program/localization/hi_IN/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "मेल का जवाब दें"
+
+#: program/localization/hi_IN/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "सभी को जवाब लिखें"
+
+#: program/localization/hi_IN/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "आगे भेजें"
+
+#: program/localization/hi_IN/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "रद्द करें"
+
+#: program/localization/hi_IN/labels.inc:printmessage
+msgid "Print this message"
+msgstr "मेल छापें"
+
+#: program/localization/hi_IN/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "पीछे के मेल दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "पीछे के मेल का बन्डल दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "पहला मेल दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "पहला मेल का बन्डल दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "अगला मेल दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "अगले मेल का बन्डल दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "आखीरी मेल दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "आखिरी मेल का बन्डल दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "मेल सूची देखें"
+
+#: program/localization/hi_IN/labels.inc:viewsource
+msgid "Show source"
+msgstr "सोर्स दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:select
+msgid "Select"
+msgstr "चुनें"
+
+#: program/localization/hi_IN/labels.inc:all
+msgid "All"
+msgstr "सभी"
+
+#: program/localization/hi_IN/labels.inc:none
+msgid "None"
+msgstr "कोई नहीं"
+
+#: program/localization/hi_IN/labels.inc:unread
+msgid "Unread"
+msgstr "अनदेखी"
+
+#: program/localization/hi_IN/labels.inc:compact
+msgid "Compact"
+msgstr "छोटा करें"
+
+#: program/localization/hi_IN/labels.inc:empty
+msgid "Empty"
+msgstr "मेल रद्दी में डालें"
+
+#: program/localization/hi_IN/labels.inc:purge
+msgid "purge"
+msgstr "मिटाऐं"
+
+#: program/localization/hi_IN/labels.inc:quota
+msgid "Disk usage"
+msgstr "डिस्क उपयोग"
+
+#: program/localization/hi_IN/labels.inc:unknown
+msgid "unknown"
+msgstr "अज्ञात"
+
+#: program/localization/hi_IN/labels.inc:unlimited
+msgid "unlimited"
+msgstr "असीम"
+
+#: program/localization/hi_IN/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "तेज़ खोज"
+
+#: program/localization/hi_IN/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "खोज खाली करें"
+
+#: program/localization/hi_IN/labels.inc:compose
+msgid "Compose a message"
+msgstr "मेल लिखें"
+
+#: program/localization/hi_IN/labels.inc:sendmessage
+msgid "Send now"
+msgstr "मेल भेजें"
+
+#: program/localization/hi_IN/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "ड्राफ़ट सहेजें"
+
+#: program/localization/hi_IN/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "फ़ाईल जोडें"
+
+#: program/localization/hi_IN/labels.inc:charset
+msgid "Charset"
+msgstr "कैरेक्टर सैट"
+
+#: program/localization/hi_IN/labels.inc:editortype
+msgid "Editor type"
+msgstr "सम्पादक प्राकार"
+
+#: program/localization/hi_IN/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "मेल रसीद"
+
+#: program/localization/hi_IN/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "स्पैलिंग जाँचें"
+
+#: program/localization/hi_IN/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "सम्पादन फिर शुरू करें"
+
+#: program/localization/hi_IN/labels.inc:revertto
+msgid "Revert to"
+msgstr "पहले की स्थिती पर जाऐं"
+
+#: program/localization/hi_IN/labels.inc:attachments
+msgid "Attachments"
+msgstr "जुडे फाईल"
+
+#: program/localization/hi_IN/labels.inc:upload
+msgid "Upload"
+msgstr "अपलोड"
+
+#: program/localization/hi_IN/labels.inc:close
+msgid "Close"
+msgstr "बंद"
+
+#: program/localization/hi_IN/labels.inc:low
+msgid "Low"
+msgstr "कम"
+
+#: program/localization/hi_IN/labels.inc:lowest
+msgid "Lowest"
+msgstr "सबसे कम"
+
+#: program/localization/hi_IN/labels.inc:normal
+msgid "Normal"
+msgstr "साधारण"
+
+#: program/localization/hi_IN/labels.inc:high
+msgid "High"
+msgstr "उच्च"
+
+#: program/localization/hi_IN/labels.inc:highest
+msgid "Highest"
+msgstr "उच्चतम"
+
+#: program/localization/hi_IN/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(कोई विशय नहीं)"
+
+#: program/localization/hi_IN/labels.inc:showimages
+msgid "Display images"
+msgstr "चित्र दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "ऐच-टी-ऐम-एल (HTML)"
+
+#: program/localization/hi_IN/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "सादा पाठ"
+
+#: program/localization/hi_IN/labels.inc:name
+msgid "Display Name"
+msgstr "दिखने वाला नाम"
+
+#: program/localization/hi_IN/labels.inc:firstname
+msgid "First Name"
+msgstr "पहला नाम"
+
+#: program/localization/hi_IN/labels.inc:surname
+msgid "Last Name"
+msgstr "उपनाम"
+
+#: program/localization/hi_IN/labels.inc:email
+msgid "Email"
+msgstr "मेल"
+
+#: program/localization/hi_IN/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "नया पता जोडें"
+
+#: program/localization/hi_IN/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "पता सम्पाद"
+
+#: program/localization/hi_IN/labels.inc:edit
+msgid "Edit"
+msgstr "सम्पाद"
+
+#: program/localization/hi_IN/labels.inc:cancel
+msgid "Cancel"
+msgstr "रद्द"
+
+#: program/localization/hi_IN/labels.inc:save
+msgid "Save"
+msgstr "सहेज"
+
+#: program/localization/hi_IN/labels.inc:delete
+msgid "Delete"
+msgstr "मिटा"
+
+#: program/localization/hi_IN/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "नया पता कार्ड बनाऐं"
+
+#: program/localization/hi_IN/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "चुने पते मिटाऐं"
+
+#: program/localization/hi_IN/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "को मेल भेजें"
+
+#: program/localization/hi_IN/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "$from से ले कर $to, $count पते में से"
+
+#: program/localization/hi_IN/labels.inc:print
+msgid "Print"
+msgstr "छापें"
+
+#: program/localization/hi_IN/labels.inc:export
+msgid "Export"
+msgstr "ऐक्स्पोर्ट"
+
+#: program/localization/hi_IN/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "इससे पहले के बन्डल को दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:firstpage
+msgid "Show first page"
+msgstr "पहला बन्डल दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:nextpage
+msgid "Show next page"
+msgstr "अगला बन्डल दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:lastpage
+msgid "Show last page"
+msgstr "आखिरी बन्डल दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:ldapsearch
+msgid "ldapsearch"
+msgstr "ऐलडैप (LDAP) डाईरेक्टरी खोजें"
+
+#: program/localization/hi_IN/labels.inc:ldappublicsearchname
+msgid "ldappublicsearchname"
+msgstr "पता का नाम"
+
+#: program/localization/hi_IN/labels.inc:ldappublicsearchtype
+msgid "ldappublicsearchtype"
+msgstr "सख़त मैच?"
+
+#: program/localization/hi_IN/labels.inc:ldappublicserverselect
+msgid "ldappublicserverselect"
+msgstr "सर्वर चुनें"
+
+#: program/localization/hi_IN/labels.inc:ldappublicsearchfield
+msgid "ldappublicsearchfield"
+msgstr "यहाँ खोजें"
+
+#: program/localization/hi_IN/labels.inc:ldappublicsearchform
+msgid "ldappublicsearchform"
+msgstr "पता के लिये खोजें"
+
+#: program/localization/hi_IN/labels.inc:ldappublicsearch
+msgid "ldappublicsearch"
+msgstr "खोज"
+
+#: program/localization/hi_IN/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "इनके विन्यास:"
+
+#: program/localization/hi_IN/labels.inc:preferences
+msgid "Preferences"
+msgstr "पसंद"
+
+#: program/localization/hi_IN/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "यूसर पसंद"
+
+#: program/localization/hi_IN/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "यूसर पसंद सम्पादें"
+
+#: program/localization/hi_IN/labels.inc:identities
+msgid "Identities"
+msgstr "पहचान"
+
+#: program/localization/hi_IN/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "इस खाते के पहचान व्यवस्थित"
+"करें"
+
+#: program/localization/hi_IN/labels.inc:newidentity
+msgid "New identity"
+msgstr "नया पहचान"
+
+#: program/localization/hi_IN/labels.inc:newitem
+msgid "New item"
+msgstr "नया चीज़"
+
+#: program/localization/hi_IN/labels.inc:edititem
+msgid "Edit item"
+msgstr "चीज़ सम्पादें"
+
+#: program/localization/hi_IN/labels.inc:setdefault
+msgid "Set default"
+msgstr "तयशुदा चुनें"
+
+#: program/localization/hi_IN/labels.inc:language
+msgid "Language"
+msgstr "भाषा"
+
+#: program/localization/hi_IN/labels.inc:timezone
+msgid "Time zone"
+msgstr "समय क्षेत्र"
+
+#: program/localization/hi_IN/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "हर पन्ने पर इतने"
+
+#: program/localization/hi_IN/labels.inc:signature
+msgid "Signature"
+msgstr "दस्तखत"
+
+#: program/localization/hi_IN/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "रौशनी बचाव"
+
+#: program/localization/hi_IN/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "मेल ऐच-टी-ऐम-एल (HTML) मे लिखें"
+
+#: program/localization/hi_IN/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "ऐच-टी-ऐम-एल (HTML) दस्तखत"
+
+#: program/localization/hi_IN/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "झलक पट्टी दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "ड्राफ़ट अपने आप सहेजते जाऐं"
+
+#: program/localization/hi_IN/labels.inc:never
+msgid "never"
+msgstr "कभी नहाीं"
+
+#: program/localization/hi_IN/labels.inc:folder
+msgid "Folder"
+msgstr "फ़ोल्डर"
+
+#: program/localization/hi_IN/labels.inc:foldername
+msgid "Folder name"
+msgstr "फ़ोल्डर नाम"
+
+#: program/localization/hi_IN/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "सबस्क्राईब किया गया"
+
+#: program/localization/hi_IN/labels.inc:create
+msgid "Create"
+msgstr "बनाऐं"
+
+#: program/localization/hi_IN/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "फ़ोलडर बनाऐं"
+
+#: program/localization/hi_IN/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "फ़ोलडर को व्यवस्थित करें"
+
+#: program/localization/hi_IN/labels.inc:sortby
+msgid "Sort by"
+msgstr "ऐसे तय करें"
+
+#: program/localization/hi_IN/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "पहले से आखीरी तय करें"
+
+#: program/localization/hi_IN/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "आखीरी से पहले तय करें"

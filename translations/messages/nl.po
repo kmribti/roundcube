@@ -1,0 +1,579 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/nl_NL/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: nl_NL\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/nl_NL/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Inloggen mislukt."
+
+#: program/localization/nl_NL/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Uw browser accepteert geen cookies."
+
+#: program/localization/nl_NL/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Uw sessie is verlopen of ongeldig."
+
+#: program/localization/nl_NL/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Connectie met IMAP server mislukt."
+
+#: program/localization/nl_NL/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Server Fout!"
+
+#: program/localization/nl_NL/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Server Fout: $msg"
+
+#: program/localization/nl_NL/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Database Fout!"
+
+#: program/localization/nl_NL/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Niet in staat om de bewerking uit te voeren. Map is alleen-lezen."
+
+#: program/localization/nl_NL/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Niet in staat om de bewerking uit te voeren. Toestemming geweigerd."
+
+#: program/localization/nl_NL/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Ongeldige aanvraag! Er zijn geen gegevens opgeslagen."
+
+#: program/localization/nl_NL/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Geen berichten gevonden in deze mailbox."
+
+#: program/localization/nl_NL/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Succesvol uitgelogd. Tot ziens!"
+
+#: program/localization/nl_NL/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Mailbox is leeg."
+
+#: program/localization/nl_NL/messages.inc:loading
+msgid "Loading..."
+msgstr "Laden..."
+
+#: program/localization/nl_NL/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Bestand wordt geüpload..."
+
+#: program/localization/nl_NL/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Bestanden worden geüpload..."
+
+#: program/localization/nl_NL/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Laden van data..."
+
+#: program/localization/nl_NL/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Controleren op nieuwe berichten..."
+
+#: program/localization/nl_NL/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Bezig met bericht versturen..."
+
+#: program/localization/nl_NL/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Bericht succesvol verstuurd."
+
+#: program/localization/nl_NL/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Bezig met bericht opslaan..."
+
+#: program/localization/nl_NL/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Bericht bewaard als concept."
+
+#: program/localization/nl_NL/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Succesvol opgeslagen."
+
+#: program/localization/nl_NL/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Contact is succesvol toegevoegd aan het adresboek."
+
+#: program/localization/nl_NL/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Er bestaat al een contactpersoon met dit e-mailadres."
+
+#: program/localization/nl_NL/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Er bestaat al een contactpersoon met deze naam."
+
+#: program/localization/nl_NL/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Uit privacyoverwegingen zijn niet bijgevoegde afbeeldingen geblokkeerd in"
+"dit bericht."
+
+#: program/localization/nl_NL/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Dit is een gecodeerd bericht en kan niet weergegeven worden. Excuses!"
+
+#: program/localization/nl_NL/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Geen contactpersonen gevonden."
+
+#: program/localization/nl_NL/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Contactpersoon niet gevonden."
+
+#: program/localization/nl_NL/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Voer enkele zoektermen in om contactpersonen te zoeken."
+
+#: program/localization/nl_NL/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Verzenden van bericht is mislukt."
+
+#: program/localization/nl_NL/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Je moet $sec seconden wachten om het bericht te versturen."
+
+#: program/localization/nl_NL/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Er is een fout opgetreden tijdens het opslaan van het verzonden bericht."
+
+#: program/localization/nl_NL/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Er is een fout opgetreden tijdens het opslaan."
+
+#: program/localization/nl_NL/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Kan het bericht niet verplaatsen."
+
+#: program/localization/nl_NL/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Kan de bericht(en) niet kopiëren."
+
+#: program/localization/nl_NL/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Kan het bericht niet verwijderen."
+
+#: program/localization/nl_NL/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Kon bericht niet markeren."
+
+#: program/localization/nl_NL/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Weet u zeker dat u de geselecteerde contactperso(o)n/en wilt verwijderen?"
+
+#: program/localization/nl_NL/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Weet u zeker dat u de geselecteerde groep wilt verwijderen?"
+
+#: program/localization/nl_NL/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Weet u zeker dat u de geselecteerde bericht(en) wilt verwijderen?"
+
+#: program/localization/nl_NL/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Weet u zeker dat u deze map wilt verwijderen?"
+
+#: program/localization/nl_NL/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Weet u zeker dat u alle berichten in deze map wilt verwijderen?"
+
+#: program/localization/nl_NL/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Bezig met verwijderen één of meer contactpersonen..."
+
+#: program/localization/nl_NL/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Groep wordt verwijderd..."
+
+#: program/localization/nl_NL/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Map wordt verwijderd..."
+
+#: program/localization/nl_NL/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Map wordt verplaatst..."
+
+#: program/localization/nl_NL/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Bezig met abonneren op map..."
+
+#: program/localization/nl_NL/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Abonnement op map wordt opgezegd..."
+
+#: program/localization/nl_NL/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Het formulier was niet volledig ingevuld."
+
+#: program/localization/nl_NL/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Geef een geldig e-mailadres op."
+
+#: program/localization/nl_NL/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Vul een naam in."
+
+#: program/localization/nl_NL/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Geef een paginagrootte op."
+
+#: program/localization/nl_NL/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Geef een e-mailadres van de afzender op."
+
+#: program/localization/nl_NL/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Geef tenminste één ontvanger op."
+
+#: program/localization/nl_NL/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Het 'Onderwerp' veld is leeg. Wilt u nu alsnog een onderwerp opgeven?"
+
+#: program/localization/nl_NL/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Dit bericht zonder inhoud versturen?"
+
+#: program/localization/nl_NL/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Bericht is niet verstuurd. Weet u zeker dat u het niet wilt bewaren?"
+
+#: program/localization/nl_NL/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Geef een LDAP adresboek server op om te doorzoeken."
+
+#: program/localization/nl_NL/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Geef de naam of e-mail op van de contactpersoon."
+
+#: program/localization/nl_NL/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Nog niet alle bijlagen zijn geüpload. Wacht even of annuleer de upload."
+
+#: program/localization/nl_NL/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr berichten gevonden."
+
+#: program/localization/nl_NL/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "$nr contactpersonen gevonden."
+
+#: program/localization/nl_NL/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Zoekopdracht heeft geen resultaten opgeleverd."
+
+#: program/localization/nl_NL/messages.inc:searching
+msgid "Searching..."
+msgstr "Zoeken..."
+
+#: program/localization/nl_NL/messages.inc:checking
+msgid "Checking..."
+msgstr "Controleren..."
+
+#: program/localization/nl_NL/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Geen spelfouten gevonden."
+
+#: program/localization/nl_NL/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Map successvol verwijderd."
+
+#: program/localization/nl_NL/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Folder succesvol geabonneerd."
+
+#: program/localization/nl_NL/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Folder succesvol uitgeschreven."
+
+#: program/localization/nl_NL/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Folder met succes geleegd."
+
+#: program/localization/nl_NL/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Folder succesvol geleegd."
+
+#: program/localization/nl_NL/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Successvol verwijderd."
+
+#: program/localization/nl_NL/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Opmaak van bericht verwijderen..."
+
+#: program/localization/nl_NL/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Kan het bericht niet van de server laden."
+
+#: program/localization/nl_NL/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Bestand uploaden mislukt."
+
+#: program/localization/nl_NL/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Het bestand overschrijdt de maximale grootte van $size."
+
+#: program/localization/nl_NL/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "$nr adressen succesvol gekopieerd."
+
+#: program/localization/nl_NL/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Kan geen adressen kopiëren."
+
+#: program/localization/nl_NL/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Het adres is alleen-lezen."
+
+#: program/localization/nl_NL/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Kan het ontvanger-adres niet opslaan."
+
+#: program/localization/nl_NL/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Bericht verplaatsen..."
+
+#: program/localization/nl_NL/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Kopiëren bericht..."
+
+#: program/localization/nl_NL/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Kopiëren contactpersonen..."
+
+#: program/localization/nl_NL/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Verwijderen bericht(en)..."
+
+#: program/localization/nl_NL/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Markeren bericht(en)..."
+
+#: program/localization/nl_NL/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Contactpersonen worden toegevoegd aan de groep..."
+
+#: program/localization/nl_NL/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Contactpersonen worden verwijderd uit de groep..."
+
+#: program/localization/nl_NL/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Ontvangstbevestiging is verstuurd."
+
+#: program/localization/nl_NL/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Kan de ontvangstbevestiging niet versturen."
+
+#: program/localization/nl_NL/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "U kunt uw enige identiteit niet verwijderen."
+
+#: program/localization/nl_NL/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "De naam van de map bevat een karakter dat niet is toegestaan."
+
+#: program/localization/nl_NL/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Selecteer een bestand om de uploaden."
+
+#: program/localization/nl_NL/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Het geselecteerde adresboek is alleen lezen."
+
+#: program/localization/nl_NL/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Contact(en) met succes toegevoegd aan de groep."
+
+#: program/localization/nl_NL/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Contact(en) met succes verwijderd aan de groep."
+
+#: program/localization/nl_NL/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Importeren, even geduld..."
+
+#: program/localization/nl_NL/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Importeren mislukt! Het verstuurde bestand is geen geldig vCard bestand."
+
+#: program/localization/nl_NL/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Er zijn $inserted contactpersonen succesvol geïmporteerd, en $skipped"
+"bestaande overgeslagen</b>:<p><em>$names</em></p>"
+
+#: program/localization/nl_NL/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>$skipped bestaande contactpersonen overgeslagen</b>"
+
+#: program/localization/nl_NL/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Deze verrichting is niet toegestaan!"
+
+#: program/localization/nl_NL/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Het e-mailadres mist in de geselecteerde identiteit."
+
+#: program/localization/nl_NL/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Door het overschakelen naar de platte tekst editor gaat alle opmaak"
+"verloren. Weet je zeker dat je verder wil gaan?"
+
+#: program/localization/nl_NL/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Er is een fatale fout opgetreden. Neem direct contact op met uw"
+"systeembeheerder. <b>Uw bericht kon niet worden verzonden.</b>"
+
+#: program/localization/nl_NL/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP Fout ($code): Verbinding met server mislukt."
+
+#: program/localization/nl_NL/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP Fout ($code): Autenticatie mislukt."
+
+#: program/localization/nl_NL/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP Fout ($code): Kon afzender \"$from\" niet instellen ($msg)."
+
+#: program/localization/nl_NL/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP Fout ($code): Kon ontvanger \"$to\" niet toevoegen ($msg)."
+
+#: program/localization/nl_NL/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP Fout: Kon lijst van ontvangers niet verwerken."
+
+#: program/localization/nl_NL/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP Fout: $msg"
+
+#: program/localization/nl_NL/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Ongeldig e-mailadres: $email"
+
+#: program/localization/nl_NL/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Te veel geadresseerden. Verminder de hoeveelheid geadresseerden tot $max."
+
+#: program/localization/nl_NL/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Het aantal leden van de groep groter is dan de maximale van $max."
+
+#: program/localization/nl_NL/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Er is een interne fout opgetreden. Probeer het nogmaals."
+
+#: program/localization/nl_NL/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Kon contact(en) niet verwijderen."
+
+#: program/localization/nl_NL/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Contact(en) succesvol verwijderd."
+
+#: program/localization/nl_NL/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Verwijderde contactpersonen konden niet hersteld worden"
+
+#: program/localization/nl_NL/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Contactpersonen succesvol hersteld."
+
+#: program/localization/nl_NL/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Groep succesvol verwijderd."
+
+#: program/localization/nl_NL/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Groep succesvol hernoemd."
+
+#: program/localization/nl_NL/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Groep succesvol aangemaakt."
+
+#: program/localization/nl_NL/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Opgeslagen zoekopdracht successvol verwijderd."
+
+#: program/localization/nl_NL/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Opgeslagen zoekopdracht kon niet worden verwijderd."
+
+#: program/localization/nl_NL/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Zoekopdracht successvol opgeslagen."
+
+#: program/localization/nl_NL/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Zoekopdracht kon niet worden opgeslagen."
+
+#: program/localization/nl_NL/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Bericht(en) succesvol verwijderd."
+
+#: program/localization/nl_NL/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Bericht(en) succesvol verplaatst."
+
+#: program/localization/nl_NL/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Bericht(en) succesvol gekopieerd."
+
+#: program/localization/nl_NL/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Bericht(en) succesvol gemarkeerd."
+
+#: program/localization/nl_NL/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Voer ten minste $min karakters in voor automatisch aanvullen."
+
+#: program/localization/nl_NL/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Meerdere resultaten gevonden. Verfijn uw zoekopdracht."
+
+#: program/localization/nl_NL/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Naam kan niet leeg zijn"
+
+#: program/localization/nl_NL/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Naam is te lang"
+
+#: program/localization/nl_NL/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Map succesvol bijgewerkt"
+
+#: program/localization/nl_NL/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Map succesvol aangemaakt"
+
+#: program/localization/nl_NL/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Geen geldig afbeeldings formaat"
+
+#: program/localization/nl_NL/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "Spelfouten gedetecteerd in bericht"
+
+#: program/localization/nl_NL/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "U heeft niet voldoende rechten een map te maken / verplaatsen in deze map."

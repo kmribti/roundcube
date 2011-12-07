@@ -1,0 +1,504 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/zh_TW/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: zh_TW\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/zh_TW/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "登入失敗"
+
+#: program/localization/zh_TW/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "你的瀏覽器不接受 cookies"
+
+#: program/localization/zh_TW/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "你的工作階段已失效或過期"
+
+#: program/localization/zh_TW/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "連線到 IMAP 伺服器失敗"
+
+#: program/localization/zh_TW/messages.inc:servererror
+msgid "Server Error!"
+msgstr "伺服器錯誤！"
+
+#: program/localization/zh_TW/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "伺服器錯誤：$msg"
+
+#: program/localization/zh_TW/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "動作無法完成。資料夾唯讀"
+
+#: program/localization/zh_TW/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "動作無法完成。權限不符"
+
+#: program/localization/zh_TW/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "要求無效！未儲存任何資料。"
+
+#: program/localization/zh_TW/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "此郵件匣沒有任何郵件"
+
+#: program/localization/zh_TW/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "你已成功地登出並結束工作階段了。再見！"
+
+#: program/localization/zh_TW/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "郵件匣是空的"
+
+#: program/localization/zh_TW/messages.inc:loading
+msgid "Loading..."
+msgstr "載入中..."
+
+#: program/localization/zh_TW/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "上傳檔案中…"
+
+#: program/localization/zh_TW/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "載入資料中..."
+
+#: program/localization/zh_TW/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "檢查新郵件..."
+
+#: program/localization/zh_TW/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "寄出郵件中..."
+
+#: program/localization/zh_TW/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "郵件寄出成功"
+
+#: program/localization/zh_TW/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "儲存郵件中..."
+
+#: program/localization/zh_TW/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "訊息已經存至"
+
+#: program/localization/zh_TW/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "儲存成功"
+
+#: program/localization/zh_TW/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "聯絡人已經成功地新增至通訊錄"
+
+#: program/localization/zh_TW/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "此聯絡人的電子郵件位址已存在"
+
+#: program/localization/zh_TW/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "為了保護你的隱私，此郵件中的遠端圖片已經被阻擋。"
+
+#: program/localization/zh_TW/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "此郵件經過加密，因此無法顯示。抱歉！"
+
+#: program/localization/zh_TW/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "沒有找到任何聯絡人"
+
+#: program/localization/zh_TW/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "找不到要求的聯絡人"
+
+#: program/localization/zh_TW/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "郵件寄出失敗"
+
+#: program/localization/zh_TW/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "你寄出的郵件太過於頻繁，請稍候 $sec 秒後再試一次。"
+
+#: program/localization/zh_TW/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "儲存寄件備份時發生錯誤"
+
+#: program/localization/zh_TW/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "儲存時發生錯誤"
+
+#: program/localization/zh_TW/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "無法移動此郵件"
+
+#: program/localization/zh_TW/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "無法訊息"
+
+#: program/localization/zh_TW/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "無法刪除此郵件"
+
+#: program/localization/zh_TW/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "無法標上旗標"
+
+#: program/localization/zh_TW/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "你確定要刪除已選擇的聯絡人？"
+
+#: program/localization/zh_TW/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "你確定要刪除已選擇的郵件？"
+
+#: program/localization/zh_TW/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "你確定要刪除這個資料夾嗎？"
+
+#: program/localization/zh_TW/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "你確定要刪除這個資料夾裡面所有的郵件嗎？"
+
+#: program/localization/zh_TW/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "刪除資料夾中..."
+
+#: program/localization/zh_TW/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "移動資料夾中..."
+
+#: program/localization/zh_TW/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "訂閱資料夾..."
+
+#: program/localization/zh_TW/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "取消訂閱資料夾..."
+
+#: program/localization/zh_TW/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "這個表單有部分未填，請完整填寫"
+
+#: program/localization/zh_TW/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "請輸入一個有效的電子郵件位址"
+
+#: program/localization/zh_TW/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "請輸入名字"
+
+#: program/localization/zh_TW/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "請輸入一頁顯示多少郵件"
+
+#: program/localization/zh_TW/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "請輸入寄件者的電子郵件位址"
+
+#: program/localization/zh_TW/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "請輸入至少一位收信者"
+
+#: program/localization/zh_TW/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "「主旨」欄是空的。你要輸入一個主旨嗎？"
+
+#: program/localization/zh_TW/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "要傳送沒有內文的郵件嗎？"
+
+#: program/localization/zh_TW/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "郵件尚未寄出。你確定要離開並且捨棄此郵件？"
+
+#: program/localization/zh_TW/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "請選擇一個 LDAP 伺服器進行搜尋"
+
+#: program/localization/zh_TW/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "沒有找到任何聯絡人"
+
+#: program/localization/zh_TW/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "請輸入一個聯絡人姓名或電子郵件位址"
+
+#: program/localization/zh_TW/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "尚有附加檔案未上傳完畢，請等待或取消上傳"
+
+#: program/localization/zh_TW/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "共找到 $nr 封郵件"
+
+#: program/localization/zh_TW/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "找不到任何符合的郵件"
+
+#: program/localization/zh_TW/messages.inc:searching
+msgid "Searching..."
+msgstr "搜尋中..."
+
+#: program/localization/zh_TW/messages.inc:checking
+msgid "Checking..."
+msgstr "檢查中..."
+
+#: program/localization/zh_TW/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "沒有找到任何拼字錯誤"
+
+#: program/localization/zh_TW/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "資料夾已經成功地被刪除"
+
+#: program/localization/zh_TW/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "資料夾成功訂閱"
+
+#: program/localization/zh_TW/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "資料夾成功取消訂閱"
+
+#: program/localization/zh_TW/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "資料夾成功清空"
+
+#: program/localization/zh_TW/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "資料夾成功壓縮"
+
+#: program/localization/zh_TW/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "刪除成功"
+
+#: program/localization/zh_TW/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "移除郵件格式中..."
+
+#: program/localization/zh_TW/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "無法從伺服器載入郵件"
+
+#: program/localization/zh_TW/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "檔案上傳失敗"
+
+#: program/localization/zh_TW/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "上傳的檔案超過了 $size 的大小限制"
+
+#: program/localization/zh_TW/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "複製 $nr 個位址成功"
+
+#: program/localization/zh_TW/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "無法複製任何位址"
+
+#: program/localization/zh_TW/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "此來源位址是唯讀的"
+
+#: program/localization/zh_TW/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "無法儲存連絡人的位址"
+
+#: program/localization/zh_TW/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "移動郵件中..."
+
+#: program/localization/zh_TW/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "複製訊息..."
+
+#: program/localization/zh_TW/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "刪除訊息..."
+
+#: program/localization/zh_TW/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "標示訊息..."
+
+#: program/localization/zh_TW/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "閱讀回條傳送成功"
+
+#: program/localization/zh_TW/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "無法傳送回條"
+
+#: program/localization/zh_TW/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "你不能刪除此身份，因為只剩一個身份。"
+
+#: program/localization/zh_TW/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "資料夾名稱中包含非法的字元"
+
+#: program/localization/zh_TW/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "請選擇一個上傳的檔案"
+
+#: program/localization/zh_TW/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "無法寫入選擇的通訊錄"
+
+#: program/localization/zh_TW/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "成功把聯絡人加入此群組"
+
+#: program/localization/zh_TW/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "成功把移除此群組中的聯絡人"
+
+#: program/localization/zh_TW/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "匯入中，請稍候..."
+
+#: program/localization/zh_TW/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "匯入失敗！上傳的檔案並非支援的 vCard 格式。"
+
+#: program/localization/zh_TW/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>成功匯入 $inserted 筆資料，略過 $skipped"
+"筆已存在的資料</b>：<p><em>$names</em></p>"
+
+#: program/localization/zh_TW/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>略過 $skipped 個已存在的項目</b>"
+
+#: program/localization/zh_TW/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "不允許的操作"
+
+#: program/localization/zh_TW/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "在選擇的身分中遺失了電子郵件位址"
+
+#: program/localization/zh_TW/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "切換到純文字編輯模式將會遺失所有設定的樣式。您確定要繼續嗎？"
+
+#: program/localization/zh_TW/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "發生嚴重錯誤。請立即聯絡管理者。<b>您的郵件無法送出。</b>"
+
+#: program/localization/zh_TW/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP 錯誤（$code）：與伺服器連線失敗"
+
+#: program/localization/zh_TW/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP 錯誤（$code）：認證失敗"
+
+#: program/localization/zh_TW/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP 錯誤（$code）：無法設寄建者「$from」（$msg）"
+
+#: program/localization/zh_TW/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP 錯誤（$code）：無法加收件者「$to」（$msg）"
+
+#: program/localization/zh_TW/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP 錯誤：無法分析收件者"
+
+#: program/localization/zh_TW/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "SMTP 錯誤：不支援傳送狀態通知"
+
+#: program/localization/zh_TW/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP 錯誤：$msg"
+
+#: program/localization/zh_TW/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "錯誤電子郵件：$email"
+
+#: program/localization/zh_TW/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "太多收件人。請減少至 $max 人"
+
+#: program/localization/zh_TW/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "太多群組成員，超過最大人數 $max 人"
+
+#: program/localization/zh_TW/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "內部發生錯誤。請再次嘗試"
+
+#: program/localization/zh_TW/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "無法刪除聯絡人"
+
+#: program/localization/zh_TW/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "聯絡人成功刪除"
+
+#: program/localization/zh_TW/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "群組成功刪除"
+
+#: program/localization/zh_TW/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "群組重新命名成功"
+
+#: program/localization/zh_TW/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "群組建立成功"
+
+#: program/localization/zh_TW/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "訊息成功刪除"
+
+#: program/localization/zh_TW/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "訊息成功移動"
+
+#: program/localization/zh_TW/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "訊息成功複製"
+
+#: program/localization/zh_TW/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "訊息成功標示"
+
+#: program/localization/zh_TW/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "輸入至少 $min 字元才能自動完成自動完成"
+
+#: program/localization/zh_TW/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "名稱不可空白"
+
+#: program/localization/zh_TW/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "名稱太長"
+
+#: program/localization/zh_TW/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "資料夾成功更新"
+
+#: program/localization/zh_TW/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "資料夾成功建立"
+
+#: program/localization/zh_TW/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "圖片格式錯誤"

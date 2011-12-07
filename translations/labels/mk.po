@@ -1,0 +1,1095 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/mk_MK/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: mk_MK\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/mk_MK/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Добредојдовте во $product"
+
+#: program/localization/mk_MK/labels.inc:username
+msgid "Username"
+msgstr "Корисничко име"
+
+#: program/localization/mk_MK/labels.inc:password
+msgid "Password"
+msgstr "Лозинка"
+
+#: program/localization/mk_MK/labels.inc:server
+msgid "Server"
+msgstr "Сервер"
+
+#: program/localization/mk_MK/labels.inc:login
+msgid "Login"
+msgstr "Најава"
+
+#: program/localization/mk_MK/labels.inc:logout
+msgid "Logout"
+msgstr "Одјава"
+
+#: program/localization/mk_MK/labels.inc:mail
+msgid "Mail"
+msgstr "Е-пошта"
+
+#: program/localization/mk_MK/labels.inc:settings
+msgid "Settings"
+msgstr "Нагодувања"
+
+#: program/localization/mk_MK/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Именик"
+
+#: program/localization/mk_MK/labels.inc:inbox
+msgid "Inbox"
+msgstr "Примени"
+
+#: program/localization/mk_MK/labels.inc:drafts
+msgid "Drafts"
+msgstr "Непратени"
+
+#: program/localization/mk_MK/labels.inc:sent
+msgid "Sent"
+msgstr "Пратени"
+
+#: program/localization/mk_MK/labels.inc:trash
+msgid "Trash"
+msgstr "Корпа"
+
+#: program/localization/mk_MK/labels.inc:junk
+msgid "Junk"
+msgstr "Ѓубре"
+
+#: program/localization/mk_MK/labels.inc:subject
+msgid "Subject"
+msgstr "Наслов"
+
+#: program/localization/mk_MK/labels.inc:from
+msgid "From"
+msgstr "Праќач"
+
+#: program/localization/mk_MK/labels.inc:to
+msgid "To"
+msgstr "Примач"
+
+#: program/localization/mk_MK/labels.inc:cc
+msgid "Cc"
+msgstr "Копирај"
+
+#: program/localization/mk_MK/labels.inc:bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#: program/localization/mk_MK/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Препрати на"
+
+#: program/localization/mk_MK/labels.inc:date
+msgid "Date"
+msgstr "Датум"
+
+#: program/localization/mk_MK/labels.inc:size
+msgid "Size"
+msgstr "Големина"
+
+#: program/localization/mk_MK/labels.inc:priority
+msgid "Priority"
+msgstr "Приоритет"
+
+#: program/localization/mk_MK/labels.inc:organization
+msgid "Company"
+msgstr "Организација"
+
+#: program/localization/mk_MK/labels.inc:reply-to
+msgid "reply-to"
+msgstr "Препрати на"
+
+#: program/localization/mk_MK/labels.inc:mailboxlist
+#: program/localization/mk_MK/labels.inc:folders
+msgid "Folders"
+msgstr "Папки"
+
+#: program/localization/mk_MK/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Писма од $from до $to од $count"
+
+#: program/localization/mk_MK/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Писмо $nr од $count"
+
+#: program/localization/mk_MK/labels.inc:moveto
+msgid "Move to..."
+msgstr "Премести во..."
+
+#: program/localization/mk_MK/labels.inc:download
+msgid "Download"
+msgstr "Преземи"
+
+#: program/localization/mk_MK/labels.inc:filename
+msgid "File name"
+msgstr "Име на податотеката"
+
+#: program/localization/mk_MK/labels.inc:filesize
+msgid "File size"
+msgstr "Големина на податотеката"
+
+#: program/localization/mk_MK/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Прикажи во HTML"
+
+#: program/localization/mk_MK/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML писмо"
+
+#: program/localization/mk_MK/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Убави датуми"
+
+#: program/localization/mk_MK/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Додај во именик"
+
+#: program/localization/mk_MK/labels.inc:sun
+msgid "Sun"
+msgstr "Нед"
+
+#: program/localization/mk_MK/labels.inc:mon
+msgid "Mon"
+msgstr "Пон"
+
+#: program/localization/mk_MK/labels.inc:tue
+msgid "Tue"
+msgstr "Вто"
+
+#: program/localization/mk_MK/labels.inc:wed
+msgid "Wed"
+msgstr "Сре"
+
+#: program/localization/mk_MK/labels.inc:thu
+msgid "Thu"
+msgstr "Чет"
+
+#: program/localization/mk_MK/labels.inc:fri
+msgid "Fri"
+msgstr "Пет"
+
+#: program/localization/mk_MK/labels.inc:sat
+msgid "Sat"
+msgstr "Саб"
+
+#: program/localization/mk_MK/labels.inc:sunday
+msgid "Sunday"
+msgstr "Недела"
+
+#: program/localization/mk_MK/labels.inc:monday
+msgid "Monday"
+msgstr "Понеделник"
+
+#: program/localization/mk_MK/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Вторник"
+
+#: program/localization/mk_MK/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Среда"
+
+#: program/localization/mk_MK/labels.inc:thursday
+msgid "Thursday"
+msgstr "Четврток"
+
+#: program/localization/mk_MK/labels.inc:friday
+msgid "Friday"
+msgstr "Петок"
+
+#: program/localization/mk_MK/labels.inc:saturday
+msgid "Saturday"
+msgstr "Сабота"
+
+#: program/localization/mk_MK/labels.inc:jan
+msgid "Jan"
+msgstr "Јан"
+
+#: program/localization/mk_MK/labels.inc:feb
+msgid "Feb"
+msgstr "Фев"
+
+#: program/localization/mk_MK/labels.inc:mar
+msgid "Mar"
+msgstr "Мар"
+
+#: program/localization/mk_MK/labels.inc:apr
+msgid "Apr"
+msgstr "Апр"
+
+#: program/localization/mk_MK/labels.inc:may
+#: program/localization/mk_MK/labels.inc:longmay
+msgid "May"
+msgstr "Мај"
+
+#: program/localization/mk_MK/labels.inc:jun
+msgid "Jun"
+msgstr "Јун"
+
+#: program/localization/mk_MK/labels.inc:jul
+msgid "Jul"
+msgstr "Јул"
+
+#: program/localization/mk_MK/labels.inc:aug
+msgid "Aug"
+msgstr "Авг"
+
+#: program/localization/mk_MK/labels.inc:sep
+msgid "Sep"
+msgstr "Сеп"
+
+#: program/localization/mk_MK/labels.inc:oct
+msgid "Oct"
+msgstr "Окт"
+
+#: program/localization/mk_MK/labels.inc:nov
+msgid "Nov"
+msgstr "Ное"
+
+#: program/localization/mk_MK/labels.inc:dec
+msgid "Dec"
+msgstr "Дек"
+
+#: program/localization/mk_MK/labels.inc:longjan
+msgid "January"
+msgstr "Јануари"
+
+#: program/localization/mk_MK/labels.inc:longfeb
+msgid "February"
+msgstr "Февруари"
+
+#: program/localization/mk_MK/labels.inc:longmar
+msgid "March"
+msgstr "Март"
+
+#: program/localization/mk_MK/labels.inc:longapr
+msgid "April"
+msgstr "Април"
+
+#: program/localization/mk_MK/labels.inc:longjun
+msgid "June"
+msgstr "Јуни"
+
+#: program/localization/mk_MK/labels.inc:longjul
+msgid "July"
+msgstr "Јули"
+
+#: program/localization/mk_MK/labels.inc:longaug
+msgid "August"
+msgstr "Август"
+
+#: program/localization/mk_MK/labels.inc:longsep
+msgid "September"
+msgstr "Септември"
+
+#: program/localization/mk_MK/labels.inc:longoct
+msgid "October"
+msgstr "Октомври"
+
+#: program/localization/mk_MK/labels.inc:longnov
+msgid "November"
+msgstr "Ноември"
+
+#: program/localization/mk_MK/labels.inc:longdec
+msgid "December"
+msgstr "Декември"
+
+#: program/localization/mk_MK/labels.inc:today
+msgid "Today"
+msgstr "Денес"
+
+#: program/localization/mk_MK/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Провери пошта"
+
+#: program/localization/mk_MK/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Ново писмо"
+
+#: program/localization/mk_MK/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Одговори на испраќачот"
+
+#: program/localization/mk_MK/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Одговори на испраќачот и сите примачи"
+
+#: program/localization/mk_MK/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Препрати писмо"
+
+#: program/localization/mk_MK/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Избриши писмо"
+
+#: program/localization/mk_MK/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Премести ги писмата во Корпа"
+
+#: program/localization/mk_MK/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Испечати писмо"
+
+#: program/localization/mk_MK/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Прикажи го претходното писмо"
+
+#: program/localization/mk_MK/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "Прикажи ги претходните писма"
+
+#: program/localization/mk_MK/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Прикажи го првото писмо"
+
+#: program/localization/mk_MK/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "Прикажи ги првите писма"
+
+#: program/localization/mk_MK/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Прикажи го следното писмо"
+
+#: program/localization/mk_MK/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "Прикажи ги следните писма"
+
+#: program/localization/mk_MK/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Прикажи го последното писмо"
+
+#: program/localization/mk_MK/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "Прикажи ги последните писма"
+
+#: program/localization/mk_MK/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Назад кон листа на писма"
+
+#: program/localization/mk_MK/labels.inc:viewsource
+msgid "Show source"
+msgstr "Покажи го изворот на писмото"
+
+#: program/localization/mk_MK/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Обележи ги писмата"
+
+#: program/localization/mk_MK/labels.inc:markread
+msgid "As read"
+msgstr "Како прочитани"
+
+#: program/localization/mk_MK/labels.inc:markunread
+msgid "As unread"
+msgstr "Како непрочитани"
+
+#: program/localization/mk_MK/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Како обележано"
+
+#: program/localization/mk_MK/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Како необележано"
+
+#: program/localization/mk_MK/labels.inc:messageactions
+msgid "messageactions"
+msgstr "Повеќе дејства..."
+
+#: program/localization/mk_MK/labels.inc:select
+msgid "Select"
+msgstr "Одбери"
+
+#: program/localization/mk_MK/labels.inc:all
+msgid "All"
+msgstr "Сите"
+
+#: program/localization/mk_MK/labels.inc:none
+msgid "None"
+msgstr "Ниедно"
+
+#: program/localization/mk_MK/labels.inc:unread
+msgid "Unread"
+msgstr "Непрочитани"
+
+#: program/localization/mk_MK/labels.inc:flagged
+msgid "Flagged"
+msgstr "Обележано"
+
+#: program/localization/mk_MK/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Неодговорено"
+
+#: program/localization/mk_MK/labels.inc:deleted
+msgid "Deleted"
+msgstr "Избришано"
+
+#: program/localization/mk_MK/labels.inc:invert
+msgid "Invert"
+msgstr "Обратно"
+
+#: program/localization/mk_MK/labels.inc:filter
+msgid "Filter"
+msgstr "Филтер"
+
+#: program/localization/mk_MK/labels.inc:compact
+msgid "Compact"
+msgstr "Компактно"
+
+#: program/localization/mk_MK/labels.inc:empty
+msgid "Empty"
+msgstr "Испразни"
+
+#: program/localization/mk_MK/labels.inc:purge
+msgid "purge"
+msgstr "Исчисти"
+
+#: program/localization/mk_MK/labels.inc:quota
+msgid "Disk usage"
+msgstr "Искористен простор"
+
+#: program/localization/mk_MK/labels.inc:unknown
+msgid "unknown"
+msgstr "непознато"
+
+#: program/localization/mk_MK/labels.inc:unlimited
+msgid "unlimited"
+msgstr "неограничено"
+
+#: program/localization/mk_MK/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Брзо пребарување"
+
+#: program/localization/mk_MK/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Ново пребарување"
+
+#: program/localization/mk_MK/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Модификатори на пребарувањето"
+
+#: program/localization/mk_MK/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Цело писмо"
+
+#: program/localization/mk_MK/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Отвори во нов прозорец"
+
+#: program/localization/mk_MK/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Преземи (.eml)"
+
+#: program/localization/mk_MK/labels.inc:compose
+msgid "Compose a message"
+msgstr "Пиши ново писмо"
+
+#: program/localization/mk_MK/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Уреди како ново"
+
+#: program/localization/mk_MK/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Зачувај го писмото во Непратени"
+
+#: program/localization/mk_MK/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Испрати сега"
+
+#: program/localization/mk_MK/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Приложи податотека"
+
+#: program/localization/mk_MK/labels.inc:charset
+msgid "Charset"
+msgstr "Збир од знаци"
+
+#: program/localization/mk_MK/labels.inc:editortype
+msgid "Editor type"
+msgstr "Тип на уредник"
+
+#: program/localization/mk_MK/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Врати "
+
+#: program/localization/mk_MK/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Провери правопис"
+
+#: program/localization/mk_MK/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Продолжи со уредување"
+
+#: program/localization/mk_MK/labels.inc:revertto
+msgid "Revert to"
+msgstr "Врати на"
+
+#: program/localization/mk_MK/labels.inc:attachments
+msgid "Attachments"
+msgstr "Приложено"
+
+#: program/localization/mk_MK/labels.inc:upload
+msgid "Upload"
+msgstr "Подигни"
+
+#: program/localization/mk_MK/labels.inc:close
+msgid "Close"
+msgstr "Затвори"
+
+#: program/localization/mk_MK/labels.inc:low
+msgid "Low"
+msgstr "Низок"
+
+#: program/localization/mk_MK/labels.inc:lowest
+msgid "Lowest"
+msgstr "Најнизок"
+
+#: program/localization/mk_MK/labels.inc:normal
+msgid "Normal"
+msgstr "Нормален"
+
+#: program/localization/mk_MK/labels.inc:high
+msgid "High"
+msgstr "Висок"
+
+#: program/localization/mk_MK/labels.inc:highest
+msgid "Highest"
+msgstr "Највисок"
+
+#: program/localization/mk_MK/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(без наслов)"
+
+#: program/localization/mk_MK/labels.inc:showimages
+msgid "Display images"
+msgstr "Прикажи слики"
+
+#: program/localization/mk_MK/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Секогаш прикажувај ги сликите од $sender"
+
+#: program/localization/mk_MK/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/mk_MK/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Обичен текст"
+
+#: program/localization/mk_MK/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Сними го пратеното писмо во"
+
+#: program/localization/mk_MK/labels.inc:dontsave
+msgid "don't save"
+msgstr "не зачувувај"
+
+#: program/localization/mk_MK/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Максималната дозволена големина за"
+"податотеката е $size"
+
+#: program/localization/mk_MK/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Додај Cc"
+
+#: program/localization/mk_MK/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Додај Bcc"
+
+#: program/localization/mk_MK/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Додај Одговори-на"
+
+#: program/localization/mk_MK/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Праќачот на оваа порака сака да биде"
+"известен кога ќе го прочитате писмото."
+"Дали сакате да го известите?"
+
+#: program/localization/mk_MK/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Извести (прочитано)"
+
+#: program/localization/mk_MK/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Ова е известување за вашата порака"
+
+#: program/localization/mk_MK/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Напомена: Ова известување само потврдува"
+"дека писмото кое сте го пратиле е"
+"отворено. Не е гаранција дека примачот го"
+"прочитал или разбрал истото."
+
+#: program/localization/mk_MK/labels.inc:name
+msgid "Display Name"
+msgstr "Име за приказ"
+
+#: program/localization/mk_MK/labels.inc:firstname
+msgid "First Name"
+msgstr "Име"
+
+#: program/localization/mk_MK/labels.inc:surname
+msgid "Last Name"
+msgstr "Презиме"
+
+#: program/localization/mk_MK/labels.inc:email
+msgid "Email"
+msgstr "Е-пошта"
+
+#: program/localization/mk_MK/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Додај нов контакт"
+
+#: program/localization/mk_MK/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Уреди контакт"
+
+#: program/localization/mk_MK/labels.inc:edit
+msgid "Edit"
+msgstr "Уреди"
+
+#: program/localization/mk_MK/labels.inc:cancel
+msgid "Cancel"
+msgstr "Откажи"
+
+#: program/localization/mk_MK/labels.inc:save
+msgid "Save"
+msgstr "Зачувај"
+
+#: program/localization/mk_MK/labels.inc:delete
+msgid "Delete"
+msgstr "Избриши"
+
+#: program/localization/mk_MK/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Додај ново име"
+
+#: program/localization/mk_MK/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Избриши ги следните имиња"
+
+#: program/localization/mk_MK/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Напиши порака за"
+
+#: program/localization/mk_MK/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Имиња од $from до $to од $count"
+
+#: program/localization/mk_MK/labels.inc:print
+msgid "Print"
+msgstr "Испечати"
+
+#: program/localization/mk_MK/labels.inc:export
+msgid "Export"
+msgstr "Извези како"
+
+#: program/localization/mk_MK/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Извези ги контактите во vCard формат"
+
+#: program/localization/mk_MK/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Прикажи претходна страна"
+
+#: program/localization/mk_MK/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Прикажи ја првата страна"
+
+#: program/localization/mk_MK/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Прикажи ја следната страна"
+
+#: program/localization/mk_MK/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Прикажи ја последната страна"
+
+#: program/localization/mk_MK/labels.inc:groups
+msgid "Groups"
+msgstr "Групи"
+
+#: program/localization/mk_MK/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Лични адреси"
+
+#: program/localization/mk_MK/labels.inc:import
+msgid "Import"
+msgstr "Увези"
+
+#: program/localization/mk_MK/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Увези контакти"
+
+#: program/localization/mk_MK/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Увези од податотека:"
+
+#: program/localization/mk_MK/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Замени го целиот именик"
+
+#: program/localization/mk_MK/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Можете да приложите контакти од веќе"
+"постоечки именик.<br/>Во моментот"
+"поддржуваме увоз на адреси од <a"
+"href=\"http://mk.wikipedia.org/wiki/VCard\">vCard</a> форматот."
+
+#: program/localization/mk_MK/labels.inc:done
+msgid "Done"
+msgstr "Завршено"
+
+#: program/localization/mk_MK/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Нагодувања за"
+
+#: program/localization/mk_MK/labels.inc:preferences
+msgid "Preferences"
+msgstr "Нагодувања "
+
+#: program/localization/mk_MK/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Кориснички нагодувања "
+
+#: program/localization/mk_MK/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Промени кориснички нагодувања "
+
+#: program/localization/mk_MK/labels.inc:identities
+msgid "Identities"
+msgstr "Идентитети"
+
+#: program/localization/mk_MK/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Организирај ги идентитетите за овој"
+"корисник"
+
+#: program/localization/mk_MK/labels.inc:newidentity
+msgid "New identity"
+msgstr "Нов идентитет"
+
+#: program/localization/mk_MK/labels.inc:newitem
+msgid "New item"
+msgstr "Нов објект"
+
+#: program/localization/mk_MK/labels.inc:edititem
+msgid "Edit item"
+msgstr "Промени објект"
+
+#: program/localization/mk_MK/labels.inc:setdefault
+msgid "Set default"
+msgstr "Постави за основно"
+
+#: program/localization/mk_MK/labels.inc:autodetect
+msgid "Auto"
+msgstr "Автоматски"
+
+#: program/localization/mk_MK/labels.inc:language
+msgid "Language"
+msgstr "Јазик"
+
+#: program/localization/mk_MK/labels.inc:timezone
+msgid "Time zone"
+msgstr "Часовна зона"
+
+#: program/localization/mk_MK/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Редови по страна"
+
+#: program/localization/mk_MK/labels.inc:signature
+msgid "Signature"
+msgstr "Потпис"
+
+#: program/localization/mk_MK/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Промени на времето"
+
+#: program/localization/mk_MK/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Пиши HTML порака"
+
+#: program/localization/mk_MK/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML потпис"
+
+#: program/localization/mk_MK/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Прикажи прозорец за преглед"
+
+#: program/localization/mk_MK/labels.inc:skin
+msgid "Interface skin"
+msgstr "Модел на изгледот"
+
+#: program/localization/mk_MK/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Исчисти ја Кантата при излез"
+
+#: program/localization/mk_MK/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Подреди ги примените при излез"
+
+#: program/localization/mk_MK/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Кориснички изглед"
+
+#: program/localization/mk_MK/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Нагодувања на серверот"
+
+#: program/localization/mk_MK/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Приказ на поштенското сандаче"
+
+#: program/localization/mk_MK/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Известувања за праќачот"
+
+#: program/localization/mk_MK/labels.inc:askuser
+msgid "ask me"
+msgstr "прашај го корисникот"
+
+#: program/localization/mk_MK/labels.inc:autosend
+msgid "send receipt"
+msgstr "испрати автоматски"
+
+#: program/localization/mk_MK/labels.inc:ignore
+msgid "ignore"
+msgstr "игнорирај"
+
+#: program/localization/mk_MK/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Обележи го писмото како прочитано при"
+"бришење"
+
+#: program/localization/mk_MK/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Обележи го писмото за бришење наместо да"
+"го избришеш"
+
+#: program/localization/mk_MK/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Не ги прикажувај избришаните писма"
+
+#: program/localization/mk_MK/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Прикажи вметнати слики"
+
+#: program/localization/mk_MK/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "од познати праќачи"
+
+#: program/localization/mk_MK/labels.inc:always
+msgid "always"
+msgstr "секогаш"
+
+#: program/localization/mk_MK/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Прикажи приложени слики под писмото"
+
+#: program/localization/mk_MK/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Авоматски зачувувај во Непратени"
+
+#: program/localization/mk_MK/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "секои $n минути"
+
+#: program/localization/mk_MK/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Проверувај за нови писма на"
+
+#: program/localization/mk_MK/labels.inc:never
+msgid "never"
+msgstr "никогаш"
+
+#: program/localization/mk_MK/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Прикажување на писма"
+
+#: program/localization/mk_MK/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Пишување на писма"
+
+#: program/localization/mk_MK/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Име на прикачените податотеки"
+
+#: program/localization/mk_MK/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Полн RFC 2231 (Thunderbird)"
+
+#: program/localization/mk_MK/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/mk_MK/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Полн RFC 2047 (друго)"
+
+#: program/localization/mk_MK/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Напредни можности"
+
+#: program/localization/mk_MK/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Фокусирај го прозорецот на"
+"прелистувачот на новото писмо"
+
+#: program/localization/mk_MK/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Провери ги сите папки за нови писма"
+
+#: program/localization/mk_MK/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "По бришење/преместување на писмото"
+"прикажи го следното писмо"
+
+#: program/localization/mk_MK/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Главни можности"
+
+#: program/localization/mk_MK/labels.inc:section
+msgid "Section"
+msgstr "Заглавие"
+
+#: program/localization/mk_MK/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Одржување"
+
+#: program/localization/mk_MK/labels.inc:newmessage
+msgid "New Message"
+msgstr "Ново писмо"
+
+#: program/localization/mk_MK/labels.inc:listoptions
+msgid "List Options"
+msgstr "Можности за листата"
+
+#: program/localization/mk_MK/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Можности за потписот"
+
+#: program/localization/mk_MK/labels.inc:whenreplying
+msgid "When replying"
+msgstr "При одговарање"
+
+#: program/localization/mk_MK/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "новото писмо започни го над оригиналот"
+
+#: program/localization/mk_MK/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "новото писмо започни го под оригиналот"
+
+#: program/localization/mk_MK/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "При одговарање отстрани го изворниот"
+"потпис од писмото"
+
+#: program/localization/mk_MK/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Автоматски додавај потпис"
+
+#: program/localization/mk_MK/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "само нови писма"
+
+#: program/localization/mk_MK/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "само одгорови и препраќања"
+
+#: program/localization/mk_MK/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "При одговарање или препраќање стави"
+"потпис"
+
+#: program/localization/mk_MK/labels.inc:belowquote
+msgid "below the quote"
+msgstr "под цитираното"
+
+#: program/localization/mk_MK/labels.inc:abovequote
+msgid "above the quote"
+msgstr "над цитираното"
+
+#: program/localization/mk_MK/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Вметни потпис"
+
+#: program/localization/mk_MK/labels.inc:folder
+msgid "Folder"
+msgstr "Папка"
+
+#: program/localization/mk_MK/labels.inc:foldername
+msgid "Folder name"
+msgstr "Име на папката"
+
+#: program/localization/mk_MK/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Претплатен"
+
+#: program/localization/mk_MK/labels.inc:messagecount
+msgid "Messages"
+msgstr "Пораки"
+
+#: program/localization/mk_MK/labels.inc:create
+msgid "Create"
+msgstr "Создај"
+
+#: program/localization/mk_MK/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Создај нова папка"
+
+#: program/localization/mk_MK/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Организирање на папки"
+
+#: program/localization/mk_MK/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Специјални папки"
+
+#: program/localization/mk_MK/labels.inc:sortby
+msgid "Sort by"
+msgstr "Сортирај по"
+
+#: program/localization/mk_MK/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Сортирај нагорно"
+
+#: program/localization/mk_MK/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Сортирај надолно"
+
+#: program/localization/mk_MK/labels.inc:B
+msgid "B"
+msgstr "Б"
+
+#: program/localization/mk_MK/labels.inc:KB
+msgid "KB"
+msgstr "КБ"
+
+#: program/localization/mk_MK/labels.inc:MB
+msgid "MB"
+msgstr "МБ"
+
+#: program/localization/mk_MK/labels.inc:GB
+msgid "GB"
+msgstr "ГБ"

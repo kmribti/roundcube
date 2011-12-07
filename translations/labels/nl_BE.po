@@ -1,0 +1,1384 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/nl_BE/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: nl_BE\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/nl_BE/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Welkom bij $product"
+
+#: program/localization/nl_BE/labels.inc:username
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+#: program/localization/nl_BE/labels.inc:password
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: program/localization/nl_BE/labels.inc:server
+msgid "Server"
+msgstr "Server"
+
+#: program/localization/nl_BE/labels.inc:login
+msgid "Login"
+msgstr "Aanmelden"
+
+#: program/localization/nl_BE/labels.inc:logout
+msgid "Logout"
+msgstr "Afmelden"
+
+#: program/localization/nl_BE/labels.inc:mail
+msgid "Mail"
+msgstr "Berichten"
+
+#: program/localization/nl_BE/labels.inc:settings
+msgid "Settings"
+msgstr "Instellingen"
+
+#: program/localization/nl_BE/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Contactpersonen"
+
+#: program/localization/nl_BE/labels.inc:inbox
+msgid "Inbox"
+msgstr "Postvak IN"
+
+#: program/localization/nl_BE/labels.inc:drafts
+msgid "Drafts"
+msgstr "Concepten"
+
+#: program/localization/nl_BE/labels.inc:sent
+msgid "Sent"
+msgstr "Verzonden berichten"
+
+#: program/localization/nl_BE/labels.inc:trash
+msgid "Trash"
+msgstr "Prullenbak"
+
+#: program/localization/nl_BE/labels.inc:junk
+msgid "Junk"
+msgstr "Spam"
+
+#: program/localization/nl_BE/labels.inc:subject
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: program/localization/nl_BE/labels.inc:from
+msgid "From"
+msgstr "Van"
+
+#: program/localization/nl_BE/labels.inc:to
+msgid "To"
+msgstr "Aan"
+
+#: program/localization/nl_BE/labels.inc:cc
+msgid "Cc"
+msgstr "Cc"
+
+#: program/localization/nl_BE/labels.inc:bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#: program/localization/nl_BE/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Antwoorden aan"
+
+#: program/localization/nl_BE/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Followup aan"
+
+#: program/localization/nl_BE/labels.inc:date
+msgid "Date"
+msgstr "Datum"
+
+#: program/localization/nl_BE/labels.inc:size
+msgid "Size"
+msgstr "Grootte"
+
+#: program/localization/nl_BE/labels.inc:priority
+msgid "Priority"
+msgstr "Prioriteit"
+
+#: program/localization/nl_BE/labels.inc:organization
+msgid "Company"
+msgstr "Organisatie"
+
+#: program/localization/nl_BE/labels.inc:readstatus
+msgid "Read status"
+msgstr "Gelezen?"
+
+#: program/localization/nl_BE/labels.inc:mailboxlist
+#: program/localization/nl_BE/labels.inc:folders
+msgid "Folders"
+msgstr "Mappen"
+
+#: program/localization/nl_BE/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Berichten $from - $to van $count"
+
+#: program/localization/nl_BE/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Conversatie $from - $to van $count"
+
+#: program/localization/nl_BE/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Bericht $nr van $count"
+
+#: program/localization/nl_BE/labels.inc:copy
+msgid "Copy"
+msgstr "Kopieer"
+
+#: program/localization/nl_BE/labels.inc:move
+msgid "Move"
+msgstr "Verplaats"
+
+#: program/localization/nl_BE/labels.inc:moveto
+msgid "Move to..."
+msgstr "Verplaats naar..."
+
+#: program/localization/nl_BE/labels.inc:download
+msgid "Download"
+msgstr "Downloaden"
+
+#: program/localization/nl_BE/labels.inc:filename
+msgid "File name"
+msgstr "Bestandsnaam"
+
+#: program/localization/nl_BE/labels.inc:filesize
+msgid "File size"
+msgstr "Bestandsgrootte"
+
+#: program/localization/nl_BE/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Voeg toe aan lijst met contactpersonen"
+
+#: program/localization/nl_BE/labels.inc:sun
+msgid "Sun"
+msgstr "Zo"
+
+#: program/localization/nl_BE/labels.inc:mon
+msgid "Mon"
+msgstr "Ma"
+
+#: program/localization/nl_BE/labels.inc:tue
+msgid "Tue"
+msgstr "Di"
+
+#: program/localization/nl_BE/labels.inc:wed
+msgid "Wed"
+msgstr "Wo"
+
+#: program/localization/nl_BE/labels.inc:thu
+msgid "Thu"
+msgstr "Do"
+
+#: program/localization/nl_BE/labels.inc:fri
+msgid "Fri"
+msgstr "Vr"
+
+#: program/localization/nl_BE/labels.inc:sat
+msgid "Sat"
+msgstr "Za"
+
+#: program/localization/nl_BE/labels.inc:sunday
+msgid "Sunday"
+msgstr "Zondag"
+
+#: program/localization/nl_BE/labels.inc:monday
+msgid "Monday"
+msgstr "Maandag"
+
+#: program/localization/nl_BE/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Dinsdag"
+
+#: program/localization/nl_BE/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Woensdag"
+
+#: program/localization/nl_BE/labels.inc:thursday
+msgid "Thursday"
+msgstr "Donderdag"
+
+#: program/localization/nl_BE/labels.inc:friday
+msgid "Friday"
+msgstr "Vrijdag"
+
+#: program/localization/nl_BE/labels.inc:saturday
+msgid "Saturday"
+msgstr "Zaterdag"
+
+#: program/localization/nl_BE/labels.inc:jan
+msgid "Jan"
+msgstr "Jan"
+
+#: program/localization/nl_BE/labels.inc:feb
+msgid "Feb"
+msgstr "Feb"
+
+#: program/localization/nl_BE/labels.inc:mar
+msgid "Mar"
+msgstr "Mrt"
+
+#: program/localization/nl_BE/labels.inc:apr
+msgid "Apr"
+msgstr "Apr"
+
+#: program/localization/nl_BE/labels.inc:may
+#: program/localization/nl_BE/labels.inc:longmay
+msgid "May"
+msgstr "Mei"
+
+#: program/localization/nl_BE/labels.inc:jun
+msgid "Jun"
+msgstr "Jun"
+
+#: program/localization/nl_BE/labels.inc:jul
+msgid "Jul"
+msgstr "Jul"
+
+#: program/localization/nl_BE/labels.inc:aug
+msgid "Aug"
+msgstr "Aug"
+
+#: program/localization/nl_BE/labels.inc:sep
+msgid "Sep"
+msgstr "Sep"
+
+#: program/localization/nl_BE/labels.inc:oct
+msgid "Oct"
+msgstr "Okt"
+
+#: program/localization/nl_BE/labels.inc:nov
+msgid "Nov"
+msgstr "Nov"
+
+#: program/localization/nl_BE/labels.inc:dec
+msgid "Dec"
+msgstr "Dec"
+
+#: program/localization/nl_BE/labels.inc:longjan
+msgid "January"
+msgstr "Januari"
+
+#: program/localization/nl_BE/labels.inc:longfeb
+msgid "February"
+msgstr "Februari"
+
+#: program/localization/nl_BE/labels.inc:longmar
+msgid "March"
+msgstr "Maart"
+
+#: program/localization/nl_BE/labels.inc:longapr
+msgid "April"
+msgstr "April"
+
+#: program/localization/nl_BE/labels.inc:longjun
+msgid "June"
+msgstr "Juni"
+
+#: program/localization/nl_BE/labels.inc:longjul
+msgid "July"
+msgstr "Juli"
+
+#: program/localization/nl_BE/labels.inc:longaug
+msgid "August"
+msgstr "Augustus"
+
+#: program/localization/nl_BE/labels.inc:longsep
+msgid "September"
+msgstr "September"
+
+#: program/localization/nl_BE/labels.inc:longoct
+msgid "October"
+msgstr "Oktober"
+
+#: program/localization/nl_BE/labels.inc:longnov
+msgid "November"
+msgstr "November"
+
+#: program/localization/nl_BE/labels.inc:longdec
+msgid "December"
+msgstr "December"
+
+#: program/localization/nl_BE/labels.inc:today
+msgid "Today"
+msgstr "Vandaag"
+
+#: program/localization/nl_BE/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Controleer op nieuwe berichten"
+
+#: program/localization/nl_BE/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Nieuw bericht"
+
+#: program/localization/nl_BE/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Beantwoorden"
+
+#: program/localization/nl_BE/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Allen beantwoorden"
+
+#: program/localization/nl_BE/labels.inc:replyall
+msgid "Reply all"
+msgstr "Allen beantwoorden"
+
+#: program/localization/nl_BE/labels.inc:replylist
+msgid "Reply list"
+msgstr "Lijst beantwoorden"
+
+#: program/localization/nl_BE/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Doorsturen"
+
+#: program/localization/nl_BE/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Dit bericht verwijderen"
+
+#: program/localization/nl_BE/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Verplaats bericht naar verwijderde items"
+
+#: program/localization/nl_BE/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Afdrukken"
+
+#: program/localization/nl_BE/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Vorig bericht"
+
+#: program/localization/nl_BE/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "Vorige berichten"
+
+#: program/localization/nl_BE/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Eerste bericht"
+
+#: program/localization/nl_BE/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "Eerste berichten"
+
+#: program/localization/nl_BE/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Volgende bericht"
+
+#: program/localization/nl_BE/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "Volgende berichten"
+
+#: program/localization/nl_BE/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Laatste bericht"
+
+#: program/localization/nl_BE/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "Laatste berichten"
+
+#: program/localization/nl_BE/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Terug naar berichtenlijst"
+
+#: program/localization/nl_BE/labels.inc:viewsource
+msgid "Show source"
+msgstr "Broncode bericht weergeven"
+
+#: program/localization/nl_BE/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Markeer berichten"
+
+#: program/localization/nl_BE/labels.inc:markread
+msgid "As read"
+msgstr "Als gelezen"
+
+#: program/localization/nl_BE/labels.inc:markunread
+msgid "As unread"
+msgstr "Als ongelezen"
+
+#: program/localization/nl_BE/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Selecteren"
+
+#: program/localization/nl_BE/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Niet Selecteren"
+
+#: program/localization/nl_BE/labels.inc:messageactions
+msgid "messageactions"
+msgstr "Meer acties..."
+
+#: program/localization/nl_BE/labels.inc:select
+msgid "Select"
+msgstr "Selecteren"
+
+#: program/localization/nl_BE/labels.inc:all
+msgid "All"
+msgstr "Alles"
+
+#: program/localization/nl_BE/labels.inc:none
+#: program/localization/nl_BE/labels.inc:nonesort
+msgid "None"
+msgstr "Geen"
+
+#: program/localization/nl_BE/labels.inc:currpage
+msgid "Current page"
+msgstr "Huidige pagina"
+
+#: program/localization/nl_BE/labels.inc:unread
+msgid "Unread"
+msgstr "Ongelezen"
+
+#: program/localization/nl_BE/labels.inc:flagged
+msgid "Flagged"
+msgstr "Geselecteerd"
+
+#: program/localization/nl_BE/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Onbeantwoord"
+
+#: program/localization/nl_BE/labels.inc:deleted
+msgid "Deleted"
+msgstr "Verwijderd"
+
+#: program/localization/nl_BE/labels.inc:invert
+msgid "Invert"
+msgstr "Selectie omkeren"
+
+#: program/localization/nl_BE/labels.inc:filter
+msgid "Filter"
+msgstr "Filter"
+
+#: program/localization/nl_BE/labels.inc:list
+msgid "List"
+msgstr "Lijst"
+
+#: program/localization/nl_BE/labels.inc:threads
+msgid "Threads"
+msgstr "Conversaties"
+
+#: program/localization/nl_BE/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Alles uitklappen"
+
+#: program/localization/nl_BE/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Ongelezen uitklappen"
+
+#: program/localization/nl_BE/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Alles inklappen"
+
+#: program/localization/nl_BE/labels.inc:threaded
+msgid "Threaded"
+msgstr "Conversaties"
+
+#: program/localization/nl_BE/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Klap alle conversaties uit"
+
+#: program/localization/nl_BE/labels.inc:do_expand
+msgid "all threads"
+msgstr "alle conversaties"
+
+#: program/localization/nl_BE/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "alleen met ongelezen berichten"
+
+#: program/localization/nl_BE/labels.inc:fromto
+msgid "From/To"
+msgstr "Afzender/Ontvanger"
+
+#: program/localization/nl_BE/labels.inc:flag
+msgid "Flag"
+msgstr "Markeer"
+
+#: program/localization/nl_BE/labels.inc:attachment
+msgid "Attachment"
+msgstr "Bijlage"
+
+#: program/localization/nl_BE/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Verzenddatum"
+
+#: program/localization/nl_BE/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Ontvangstdatum"
+
+#: program/localization/nl_BE/labels.inc:asc
+msgid "ascending"
+msgstr "oplopend"
+
+#: program/localization/nl_BE/labels.inc:desc
+msgid "descending"
+msgstr "aflopend"
+
+#: program/localization/nl_BE/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Kolommen"
+
+#: program/localization/nl_BE/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Sorteerkolom"
+
+#: program/localization/nl_BE/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Sorteervolgorde"
+
+#: program/localization/nl_BE/labels.inc:listmode
+msgid "List view mode"
+msgstr "Lijstweergave mode"
+
+#: program/localization/nl_BE/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Acties voor map..."
+
+#: program/localization/nl_BE/labels.inc:compact
+msgid "Compact"
+msgstr "Comprimeren"
+
+#: program/localization/nl_BE/labels.inc:empty
+msgid "Empty"
+msgstr "Legen"
+
+#: program/localization/nl_BE/labels.inc:purge
+msgid "purge"
+msgstr "Opruimen"
+
+#: program/localization/nl_BE/labels.inc:quota
+msgid "Disk usage"
+msgstr "Gebruikte schijfruimte"
+
+#: program/localization/nl_BE/labels.inc:unknown
+msgid "unknown"
+msgstr "onbekend"
+
+#: program/localization/nl_BE/labels.inc:unlimited
+msgid "unlimited"
+msgstr "ongelimiteerd"
+
+#: program/localization/nl_BE/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Snelzoeken"
+
+#: program/localization/nl_BE/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Zoek opnieuw"
+
+#: program/localization/nl_BE/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Zoekopties"
+
+#: program/localization/nl_BE/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Volledig bericht"
+
+#: program/localization/nl_BE/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Openen in een nieuw venster"
+
+#: program/localization/nl_BE/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Opslaan (.eml)"
+
+#: program/localization/nl_BE/labels.inc:compose
+msgid "Compose a message"
+msgstr "Nieuw bericht opstellen"
+
+#: program/localization/nl_BE/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Als nieuw bewerken"
+
+#: program/localization/nl_BE/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Bewaar als concept"
+
+#: program/localization/nl_BE/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Verzenden"
+
+#: program/localization/nl_BE/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Bestand toevoegen als bijlage"
+
+#: program/localization/nl_BE/labels.inc:charset
+msgid "Charset"
+msgstr "Karakterset"
+
+#: program/localization/nl_BE/labels.inc:editortype
+msgid "Editor type"
+msgstr "Opmaak"
+
+#: program/localization/nl_BE/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Ontvangstbevestiging"
+
+#: program/localization/nl_BE/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Delivery Status Notification"
+
+#: program/localization/nl_BE/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Bewerk identiteiten"
+
+#: program/localization/nl_BE/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Controleer spelling"
+
+#: program/localization/nl_BE/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Hervat bewerken"
+
+#: program/localization/nl_BE/labels.inc:revertto
+msgid "Revert to"
+msgstr "Ongedaan maken"
+
+#: program/localization/nl_BE/labels.inc:attachments
+msgid "Attachments"
+msgstr "Bijlagen"
+
+#: program/localization/nl_BE/labels.inc:upload
+msgid "Upload"
+msgstr "Toevoegen"
+
+#: program/localization/nl_BE/labels.inc:close
+msgid "Close"
+msgstr "Sluiten"
+
+#: program/localization/nl_BE/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Opties voor bericht..."
+
+#: program/localization/nl_BE/labels.inc:low
+msgid "Low"
+msgstr "Laag"
+
+#: program/localization/nl_BE/labels.inc:lowest
+msgid "Lowest"
+msgstr "Laagste"
+
+#: program/localization/nl_BE/labels.inc:normal
+msgid "Normal"
+msgstr "Normaal"
+
+#: program/localization/nl_BE/labels.inc:high
+msgid "High"
+msgstr "Hoog"
+
+#: program/localization/nl_BE/labels.inc:highest
+msgid "Highest"
+msgstr "Hoogste"
+
+#: program/localization/nl_BE/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(geen onderwerp)"
+
+#: program/localization/nl_BE/labels.inc:showimages
+msgid "Display images"
+msgstr "Toon afbeeldingen"
+
+#: program/localization/nl_BE/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Afbeeldingen van $sender altijd tonen"
+
+#: program/localization/nl_BE/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/nl_BE/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Platte tekst"
+
+#: program/localization/nl_BE/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Bewaar verzonden bericht in"
+
+#: program/localization/nl_BE/labels.inc:dontsave
+msgid "don't save"
+msgstr "niet bewaren"
+
+#: program/localization/nl_BE/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Maximum toegestane bestandsgrootte is $size"
+
+#: program/localization/nl_BE/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Cc toevoegen"
+
+#: program/localization/nl_BE/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Bcc toevoegen"
+
+#: program/localization/nl_BE/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Antwoorden aan toevoegen"
+
+#: program/localization/nl_BE/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Followup aan toevoegen"
+
+#: program/localization/nl_BE/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "De afzender heeft een ontvangstbevestiging gevraagd. Wilt u deze versturen?"
+
+#: program/localization/nl_BE/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Ontvangstbevestiging (gelezen)"
+
+#: program/localization/nl_BE/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Dir is een onvangstbevestiging voor uw bericht"
+
+#: program/localization/nl_BE/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Opmerking: deze ontvangstbevestiging houdt enkel in dat het bericht was"
+"weergegeven bij de ontvanger. Er is geen garantie dat de ontvanger het"
+"bericht daadwerkelijk heeft gelezen en/of begrepen."
+
+#: program/localization/nl_BE/labels.inc:name
+msgid "Display Name"
+msgstr "Naam"
+
+#: program/localization/nl_BE/labels.inc:firstname
+msgid "First Name"
+msgstr "Voornaam"
+
+#: program/localization/nl_BE/labels.inc:surname
+msgid "Last Name"
+msgstr "Achternaam"
+
+#: program/localization/nl_BE/labels.inc:email
+msgid "Email"
+msgstr "E-mailadres"
+
+#: program/localization/nl_BE/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Geselecteerde contactpersoon toevoegen"
+
+#: program/localization/nl_BE/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Contactpersoon bewerken"
+
+#: program/localization/nl_BE/labels.inc:contacts
+msgid "Contacts"
+msgstr "Contactpersonen"
+
+#: program/localization/nl_BE/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Eigenschappen van contactpersoon"
+
+#: program/localization/nl_BE/labels.inc:edit
+msgid "Edit"
+msgstr "Bewerken"
+
+#: program/localization/nl_BE/labels.inc:cancel
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: program/localization/nl_BE/labels.inc:save
+msgid "Save"
+msgstr "Opslaan"
+
+#: program/localization/nl_BE/labels.inc:delete
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: program/localization/nl_BE/labels.inc:rename
+msgid "Rename"
+msgstr "Hernoemen"
+
+#: program/localization/nl_BE/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Contactpersoon toevoegen"
+
+#: program/localization/nl_BE/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Verwijder geselecteerde contactpersonen"
+
+#: program/localization/nl_BE/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Mail sturen aan"
+
+#: program/localization/nl_BE/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Contactpersonen $from - $to van $count"
+
+#: program/localization/nl_BE/labels.inc:print
+msgid "Print"
+msgstr "Afdrukken"
+
+#: program/localization/nl_BE/labels.inc:export
+msgid "Export"
+msgstr "Exporteren"
+
+#: program/localization/nl_BE/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Exporteer contactpersonen in vCard formaat"
+
+#: program/localization/nl_BE/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Maak een nieuwe contactgroep"
+
+#: program/localization/nl_BE/labels.inc:groupactions
+msgid "groupactions"
+msgstr "Acties voor contactgroepen..."
+
+#: program/localization/nl_BE/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Toon vorige"
+
+#: program/localization/nl_BE/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Toon eerste"
+
+#: program/localization/nl_BE/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Toon volgende"
+
+#: program/localization/nl_BE/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Toon laatste"
+
+#: program/localization/nl_BE/labels.inc:group
+msgid "Group"
+msgstr "Groep"
+
+#: program/localization/nl_BE/labels.inc:groups
+msgid "Groups"
+msgstr "Groepen"
+
+#: program/localization/nl_BE/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Personlijke adressen"
+
+#: program/localization/nl_BE/labels.inc:import
+msgid "Import"
+msgstr "Importeer"
+
+#: program/localization/nl_BE/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Contactpersonen importeren"
+
+#: program/localization/nl_BE/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Importeer van bestand:"
+
+#: program/localization/nl_BE/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Vervang het complete adresboek"
+
+#: program/localization/nl_BE/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "U kunt hier contactpersonen importeren vanuit een bestaand adresboek.<br"
+"/>Op dit moment ondersteunen wij het <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> bestandsformaat."
+
+#: program/localization/nl_BE/labels.inc:done
+msgid "Done"
+msgstr "Klaar"
+
+#: program/localization/nl_BE/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Instellingen voor"
+
+#: program/localization/nl_BE/labels.inc:preferences
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+#: program/localization/nl_BE/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Gebruikersvoorkeuren"
+
+#: program/localization/nl_BE/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Gebruikersvoorkeuren bewerken"
+
+#: program/localization/nl_BE/labels.inc:identities
+msgid "Identities"
+msgstr "Identiteiten"
+
+#: program/localization/nl_BE/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Beheer de identiteiten voor deze gebruiker"
+
+#: program/localization/nl_BE/labels.inc:newidentity
+msgid "New identity"
+msgstr "Nieuwe identiteit"
+
+#: program/localization/nl_BE/labels.inc:newitem
+msgid "New item"
+msgstr "Nieuw"
+
+#: program/localization/nl_BE/labels.inc:edititem
+msgid "Edit item"
+msgstr "Bewerken"
+
+#: program/localization/nl_BE/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Gebruik HTML-opmaak"
+
+#: program/localization/nl_BE/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Standaard karakterset"
+
+#: program/localization/nl_BE/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML-bericht"
+
+#: program/localization/nl_BE/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Uitgebreide datumweergave"
+
+#: program/localization/nl_BE/labels.inc:setdefault
+msgid "Set default"
+msgstr "Als standaard instellen"
+
+#: program/localization/nl_BE/labels.inc:autodetect
+msgid "Auto"
+msgstr "Automatisch"
+
+#: program/localization/nl_BE/labels.inc:language
+msgid "Language"
+msgstr "Taal"
+
+#: program/localization/nl_BE/labels.inc:timezone
+msgid "Time zone"
+msgstr "Tijdzone"
+
+#: program/localization/nl_BE/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Berichten per pagina"
+
+#: program/localization/nl_BE/labels.inc:signature
+msgid "Signature"
+msgstr "Handtekening"
+
+#: program/localization/nl_BE/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Zomer/wintertijd"
+
+#: program/localization/nl_BE/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "HTML berichten opmaken"
+
+#: program/localization/nl_BE/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "enkel bij beantwoorden van een HTML bericht"
+
+#: program/localization/nl_BE/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML handtekening"
+
+#: program/localization/nl_BE/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Toon voorbeeldvenster"
+
+#: program/localization/nl_BE/labels.inc:skin
+msgid "Interface skin"
+msgstr "Opmaakprofiel"
+
+#: program/localization/nl_BE/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Prullenbak legen bij uitloggen"
+
+#: program/localization/nl_BE/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Postvak IN opschonen bij uitloggen"
+
+#: program/localization/nl_BE/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Gebruikersinterface"
+
+#: program/localization/nl_BE/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Serverinstellingen"
+
+#: program/localization/nl_BE/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Opmaak Mailbox"
+
+#: program/localization/nl_BE/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Ontvangstmeldingen"
+
+#: program/localization/nl_BE/labels.inc:askuser
+msgid "ask me"
+msgstr "vraag de gebruiker"
+
+#: program/localization/nl_BE/labels.inc:autosend
+msgid "send receipt"
+msgstr "stuur automatisch"
+
+#: program/localization/nl_BE/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "stuur ontvangstbevestiging naar mijn contactpersonen, anders vraag mij"
+
+#: program/localization/nl_BE/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "stuur ontvangstbevestiging naar mijn contactpersonen, anders negeer"
+
+#: program/localization/nl_BE/labels.inc:ignore
+msgid "ignore"
+msgstr "negeer"
+
+#: program/localization/nl_BE/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Bericht na verwijderen als gelezen markeren"
+
+#: program/localization/nl_BE/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Bericht niet verwijderen maar als verwijderd markeren "
+
+#: program/localization/nl_BE/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Verwijderde berichten niet tonen"
+
+#: program/localization/nl_BE/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Verwijder bericht wanneer verplaatsen naar Prullenbak mislukt"
+
+#: program/localization/nl_BE/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Geef externe toegevoegde berichten weer"
+
+#: program/localization/nl_BE/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "Van bekende afzenders"
+
+#: program/localization/nl_BE/labels.inc:always
+msgid "always"
+msgstr "altijd"
+
+#: program/localization/nl_BE/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Toon bijgevoegde afbeeldingen onder het bericht"
+
+#: program/localization/nl_BE/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Automatisch als concept opslaan"
+
+#: program/localization/nl_BE/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "elke $n minuten"
+
+#: program/localization/nl_BE/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Controleer op nieuwe berichten"
+
+#: program/localization/nl_BE/labels.inc:never
+msgid "never"
+msgstr "nooit"
+
+#: program/localization/nl_BE/labels.inc:immediately
+msgid "immediately"
+msgstr "onmiddellijk"
+
+#: program/localization/nl_BE/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Berichten weergave"
+
+#: program/localization/nl_BE/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Berichten aanmaken"
+
+#: program/localization/nl_BE/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Namen van bijlagen"
+
+#: program/localization/nl_BE/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Volledig RFC 2231 (Thunderbird)"
+
+#: program/localization/nl_BE/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/nl_BE/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Volledig RFC 2047 (andere)"
+
+#: program/localization/nl_BE/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "Gebruik MIME codering voor 8-bit karakters"
+
+#: program/localization/nl_BE/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Geavanceerde opties"
+
+#: program/localization/nl_BE/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Focus browserscherm bij nieuw bericht"
+
+#: program/localization/nl_BE/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Controleer alle mappen op nieuwe berichten"
+
+#: program/localization/nl_BE/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Na verplaatsen/verwijderen het volgende bericht tonen"
+
+#: program/localization/nl_BE/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Hoofdopties"
+
+#: program/localization/nl_BE/labels.inc:section
+msgid "Section"
+msgstr "Sectie"
+
+#: program/localization/nl_BE/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Onderhoud"
+
+#: program/localization/nl_BE/labels.inc:newmessage
+msgid "New Message"
+msgstr "Nieuw bericht"
+
+#: program/localization/nl_BE/labels.inc:listoptions
+msgid "List Options"
+msgstr "Lijstopties"
+
+#: program/localization/nl_BE/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Opties voor handtekening"
+
+#: program/localization/nl_BE/labels.inc:whenreplying
+msgid "When replying"
+msgstr "Bij beantwoorden"
+
+#: program/localization/nl_BE/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "begin bericht boven het origineel"
+
+#: program/localization/nl_BE/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "begin bericht onder het origineel"
+
+#: program/localization/nl_BE/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "Verwijder handtekening uit het origneel bij beantwoorden"
+
+#: program/localization/nl_BE/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Handtekening automatisch toevoegen"
+
+#: program/localization/nl_BE/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "alleen bij nieuwe berichten"
+
+#: program/localization/nl_BE/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "alleen bij beantwoorden en doorsturen"
+
+#: program/localization/nl_BE/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "Ondertekening plaatsen bij beantwoorden of doorsturen"
+
+#: program/localization/nl_BE/labels.inc:belowquote
+msgid "below the quote"
+msgstr "onder het citaat"
+
+#: program/localization/nl_BE/labels.inc:abovequote
+msgid "above the quote"
+msgstr "boven het citaat"
+
+#: program/localization/nl_BE/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Handtekening invoegen"
+
+#: program/localization/nl_BE/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Markeer voorbeeldbericht als gelezen"
+
+#: program/localization/nl_BE/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "Na $n seconden"
+
+#: program/localization/nl_BE/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Vraag altijd een ontvangstbevestiging"
+
+#: program/localization/nl_BE/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Vraag altijd een Delivery Status Notification"
+
+#: program/localization/nl_BE/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Plaats antwoorden in de map van het beantwoorde bericht"
+
+#: program/localization/nl_BE/labels.inc:folder
+msgid "Folder"
+msgstr "Map"
+
+#: program/localization/nl_BE/labels.inc:foldername
+msgid "Folder name"
+msgstr "Naam"
+
+#: program/localization/nl_BE/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Geabonneerd"
+
+#: program/localization/nl_BE/labels.inc:messagecount
+msgid "Messages"
+msgstr "Berichten"
+
+#: program/localization/nl_BE/labels.inc:create
+msgid "Create"
+msgstr "Aanmaken"
+
+#: program/localization/nl_BE/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Nieuwe map aanmaken"
+
+#: program/localization/nl_BE/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Mappen beheren"
+
+#: program/localization/nl_BE/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Speciale mappen"
+
+#: program/localization/nl_BE/labels.inc:properties
+msgid "Properties"
+msgstr "Eigenschappen"
+
+#: program/localization/nl_BE/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Eigenschappen van map"
+
+#: program/localization/nl_BE/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Bovenliggende map"
+
+#: program/localization/nl_BE/labels.inc:location
+msgid "Location"
+msgstr "Locatie"
+
+#: program/localization/nl_BE/labels.inc:info
+msgid "Information"
+msgstr "Informatie"
+
+#: program/localization/nl_BE/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Klik voor de grootte van de map"
+
+#: program/localization/nl_BE/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Klik voor abonnement te wijzigen"
+
+#: program/localization/nl_BE/labels.inc:sortby
+msgid "Sort by"
+msgstr "Sorteren op"
+
+#: program/localization/nl_BE/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Oplopend sorteren"
+
+#: program/localization/nl_BE/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Aflopend sorteren"
+
+#: program/localization/nl_BE/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/nl_BE/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/nl_BE/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/nl_BE/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/nl_BE/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unicode"
+
+#: program/localization/nl_BE/labels.inc:english
+msgid "English"
+msgstr "Engels"
+
+#: program/localization/nl_BE/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "West-Europees"
+
+#: program/localization/nl_BE/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Oost-Europees"
+
+#: program/localization/nl_BE/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Zuidoost Europees"
+
+#: program/localization/nl_BE/labels.inc:baltic
+msgid "Baltic"
+msgstr "Baltisch"
+
+#: program/localization/nl_BE/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Cyrillisch"
+
+#: program/localization/nl_BE/labels.inc:arabic
+msgid "Arabic"
+msgstr "Arabisch"
+
+#: program/localization/nl_BE/labels.inc:greek
+msgid "Greek"
+msgstr "Grieks"
+
+#: program/localization/nl_BE/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Hebreeuws"
+
+#: program/localization/nl_BE/labels.inc:turkish
+msgid "Turkish"
+msgstr "Turks"
+
+#: program/localization/nl_BE/labels.inc:nordic
+msgid "Nordic"
+msgstr "Noord-Germaans"
+
+#: program/localization/nl_BE/labels.inc:thai
+msgid "Thai"
+msgstr "Thais"
+
+#: program/localization/nl_BE/labels.inc:celtic
+msgid "Celtic"
+msgstr "Keltisch"
+
+#: program/localization/nl_BE/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Vietnamees"
+
+#: program/localization/nl_BE/labels.inc:japanese
+msgid "Japanese"
+msgstr "Japans"
+
+#: program/localization/nl_BE/labels.inc:korean
+msgid "Korean"
+msgstr "Koreaans"
+
+#: program/localization/nl_BE/labels.inc:chinese
+msgid "Chinese"
+msgstr "Chinees"

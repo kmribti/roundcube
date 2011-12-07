@@ -1,0 +1,1637 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ja_JP/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ja_JP\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ja_JP/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "ようこそ $product へ"
+
+#: program/localization/ja_JP/labels.inc:username
+msgid "Username"
+msgstr "ユーザー名"
+
+#: program/localization/ja_JP/labels.inc:password
+msgid "Password"
+msgstr "パスワード"
+
+#: program/localization/ja_JP/labels.inc:server
+msgid "Server"
+msgstr "サーバー"
+
+#: program/localization/ja_JP/labels.inc:login
+msgid "Login"
+msgstr "ログイン"
+
+#: program/localization/ja_JP/labels.inc:logout
+msgid "Logout"
+msgstr "ログアウト"
+
+#: program/localization/ja_JP/labels.inc:mail
+msgid "Mail"
+msgstr "メール"
+
+#: program/localization/ja_JP/labels.inc:settings
+msgid "Settings"
+msgstr "個人設定"
+
+#: program/localization/ja_JP/labels.inc:addressbook
+msgid "Address Book"
+msgstr "アドレス帳"
+
+#: program/localization/ja_JP/labels.inc:inbox
+msgid "Inbox"
+msgstr "受信トレイ"
+
+#: program/localization/ja_JP/labels.inc:drafts
+msgid "Drafts"
+msgstr "下書き"
+
+#: program/localization/ja_JP/labels.inc:sent
+msgid "Sent"
+msgstr "送信済みアイテム"
+
+#: program/localization/ja_JP/labels.inc:trash
+msgid "Trash"
+msgstr "ごみ箱"
+
+#: program/localization/ja_JP/labels.inc:junk
+msgid "Junk"
+msgstr "迷惑メール"
+
+#: program/localization/ja_JP/labels.inc:subject
+msgid "Subject"
+msgstr "件名"
+
+#: program/localization/ja_JP/labels.inc:from
+msgid "From"
+msgstr "差出人"
+
+#: program/localization/ja_JP/labels.inc:to
+msgid "To"
+msgstr "宛先"
+
+#: program/localization/ja_JP/labels.inc:cc
+msgid "Cc"
+msgstr "コピー"
+
+#: program/localization/ja_JP/labels.inc:bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#: program/localization/ja_JP/labels.inc:replyto
+msgid "Reply-To"
+msgstr "返信先の指定"
+
+#: program/localization/ja_JP/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Followup-To"
+
+#: program/localization/ja_JP/labels.inc:date
+msgid "Date"
+msgstr "日付"
+
+#: program/localization/ja_JP/labels.inc:size
+msgid "Size"
+msgstr "容量"
+
+#: program/localization/ja_JP/labels.inc:priority
+msgid "Priority"
+msgstr "優先度"
+
+#: program/localization/ja_JP/labels.inc:organization
+msgid "Company"
+msgstr "企業名"
+
+#: program/localization/ja_JP/labels.inc:readstatus
+msgid "Read status"
+msgstr "閲覧の状態"
+
+#: program/localization/ja_JP/labels.inc:mailboxlist
+#: program/localization/ja_JP/labels.inc:folders
+msgid "Folders"
+msgstr "フォルダー一覧"
+
+#: program/localization/ja_JP/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "表示中のメール: $from ～ $to (全: $count 件)"
+
+#: program/localization/ja_JP/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "表示中のスレッド: $from ～ $to (全: $count 件)"
+
+#: program/localization/ja_JP/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "現在のメール: $nr (全: $count 件)"
+
+#: program/localization/ja_JP/labels.inc:copy
+msgid "Copy"
+msgstr "コピー"
+
+#: program/localization/ja_JP/labels.inc:move
+msgid "Move"
+msgstr "移動"
+
+#: program/localization/ja_JP/labels.inc:moveto
+msgid "Move to..."
+msgstr "フォルダーの移動"
+
+#: program/localization/ja_JP/labels.inc:download
+msgid "Download"
+msgstr "ダウンロード"
+
+#: program/localization/ja_JP/labels.inc:filename
+msgid "File name"
+msgstr "ファイル名"
+
+#: program/localization/ja_JP/labels.inc:filesize
+msgid "File size"
+msgstr "ファイル サイズ"
+
+#: program/localization/ja_JP/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "アドレス帳に追加"
+
+#: program/localization/ja_JP/labels.inc:sun
+msgid "Sun"
+msgstr "日"
+
+#: program/localization/ja_JP/labels.inc:mon
+msgid "Mon"
+msgstr "月"
+
+#: program/localization/ja_JP/labels.inc:tue
+msgid "Tue"
+msgstr "火"
+
+#: program/localization/ja_JP/labels.inc:wed
+msgid "Wed"
+msgstr "水"
+
+#: program/localization/ja_JP/labels.inc:thu
+msgid "Thu"
+msgstr "木"
+
+#: program/localization/ja_JP/labels.inc:fri
+msgid "Fri"
+msgstr "金"
+
+#: program/localization/ja_JP/labels.inc:sat
+msgid "Sat"
+msgstr "土"
+
+#: program/localization/ja_JP/labels.inc:sunday
+msgid "Sunday"
+msgstr "日曜日"
+
+#: program/localization/ja_JP/labels.inc:monday
+msgid "Monday"
+msgstr "月曜日"
+
+#: program/localization/ja_JP/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "火曜日"
+
+#: program/localization/ja_JP/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "水曜日"
+
+#: program/localization/ja_JP/labels.inc:thursday
+msgid "Thursday"
+msgstr "木曜日"
+
+#: program/localization/ja_JP/labels.inc:friday
+msgid "Friday"
+msgstr "金曜日"
+
+#: program/localization/ja_JP/labels.inc:saturday
+msgid "Saturday"
+msgstr "土曜日"
+
+#: program/localization/ja_JP/labels.inc:jan
+msgid "Jan"
+msgstr "1 月"
+
+#: program/localization/ja_JP/labels.inc:feb
+msgid "Feb"
+msgstr "2 月"
+
+#: program/localization/ja_JP/labels.inc:mar
+msgid "Mar"
+msgstr "3 月"
+
+#: program/localization/ja_JP/labels.inc:apr
+msgid "Apr"
+msgstr "4 月"
+
+#: program/localization/ja_JP/labels.inc:may
+#: program/localization/ja_JP/labels.inc:longmay
+msgid "May"
+msgstr "5 月"
+
+#: program/localization/ja_JP/labels.inc:jun
+msgid "Jun"
+msgstr "6 月"
+
+#: program/localization/ja_JP/labels.inc:jul
+msgid "Jul"
+msgstr "7 月"
+
+#: program/localization/ja_JP/labels.inc:aug
+msgid "Aug"
+msgstr "8 月"
+
+#: program/localization/ja_JP/labels.inc:sep
+msgid "Sep"
+msgstr "9 月"
+
+#: program/localization/ja_JP/labels.inc:oct
+msgid "Oct"
+msgstr "10 月"
+
+#: program/localization/ja_JP/labels.inc:nov
+msgid "Nov"
+msgstr "11 月"
+
+#: program/localization/ja_JP/labels.inc:dec
+msgid "Dec"
+msgstr "12 月"
+
+#: program/localization/ja_JP/labels.inc:longjan
+msgid "January"
+msgstr "1 月"
+
+#: program/localization/ja_JP/labels.inc:longfeb
+msgid "February"
+msgstr "2 月"
+
+#: program/localization/ja_JP/labels.inc:longmar
+msgid "March"
+msgstr "3 月"
+
+#: program/localization/ja_JP/labels.inc:longapr
+msgid "April"
+msgstr "4 月"
+
+#: program/localization/ja_JP/labels.inc:longjun
+msgid "June"
+msgstr "6 月"
+
+#: program/localization/ja_JP/labels.inc:longjul
+msgid "July"
+msgstr "7 月"
+
+#: program/localization/ja_JP/labels.inc:longaug
+msgid "August"
+msgstr "8 月"
+
+#: program/localization/ja_JP/labels.inc:longsep
+msgid "September"
+msgstr "9 月"
+
+#: program/localization/ja_JP/labels.inc:longoct
+msgid "October"
+msgstr "10 月"
+
+#: program/localization/ja_JP/labels.inc:longnov
+msgid "November"
+msgstr "11 月"
+
+#: program/localization/ja_JP/labels.inc:longdec
+msgid "December"
+msgstr "12 月"
+
+#: program/localization/ja_JP/labels.inc:today
+msgid "Today"
+msgstr "今日"
+
+#: program/localization/ja_JP/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "新着の確認"
+
+#: program/localization/ja_JP/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "新規メールの作成"
+
+#: program/localization/ja_JP/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "返信"
+
+#: program/localization/ja_JP/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "差出人とすべての宛先に返信"
+
+#: program/localization/ja_JP/labels.inc:replyall
+msgid "Reply all"
+msgstr "全員に返信"
+
+#: program/localization/ja_JP/labels.inc:replylist
+msgid "Reply list"
+msgstr "ML に返信"
+
+#: program/localization/ja_JP/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "本文に挿入して転送"
+
+#: program/localization/ja_JP/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "添付形式で転送"
+
+#: program/localization/ja_JP/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "転送"
+
+#: program/localization/ja_JP/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "削除"
+
+#: program/localization/ja_JP/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "ごみ箱に移動"
+
+#: program/localization/ja_JP/labels.inc:printmessage
+msgid "Print this message"
+msgstr "印刷"
+
+#: program/localization/ja_JP/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "前のメールへ"
+
+#: program/localization/ja_JP/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "最初のメールへ"
+
+#: program/localization/ja_JP/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "次のメールへ"
+
+#: program/localization/ja_JP/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "最後のメールへ"
+
+#: program/localization/ja_JP/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "一覧に戻る"
+
+#: program/localization/ja_JP/labels.inc:viewsource
+msgid "Show source"
+msgstr "ソースの表示"
+
+#: program/localization/ja_JP/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "マークを付ける"
+
+#: program/localization/ja_JP/labels.inc:markread
+msgid "As read"
+msgstr "既読にする"
+
+#: program/localization/ja_JP/labels.inc:markunread
+msgid "As unread"
+msgstr "未読にする"
+
+#: program/localization/ja_JP/labels.inc:markflagged
+msgid "As flagged"
+msgstr "フラグを付ける"
+
+#: program/localization/ja_JP/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "フラグを外す"
+
+#: program/localization/ja_JP/labels.inc:moreactions
+msgid "More actions..."
+msgstr "その他の操作..."
+
+#: program/localization/ja_JP/labels.inc:select
+msgid "Select"
+msgstr "選択"
+
+#: program/localization/ja_JP/labels.inc:all
+msgid "All"
+msgstr "すべて"
+
+#: program/localization/ja_JP/labels.inc:none
+#: program/localization/ja_JP/labels.inc:nonesort
+msgid "None"
+msgstr "なし"
+
+#: program/localization/ja_JP/labels.inc:currpage
+msgid "Current page"
+msgstr "現在のページ"
+
+#: program/localization/ja_JP/labels.inc:unread
+msgid "Unread"
+msgstr "未読"
+
+#: program/localization/ja_JP/labels.inc:flagged
+msgid "Flagged"
+msgstr "フラグあり"
+
+#: program/localization/ja_JP/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "未返信"
+
+#: program/localization/ja_JP/labels.inc:deleted
+msgid "Deleted"
+msgstr "削除済み"
+
+#: program/localization/ja_JP/labels.inc:invert
+msgid "Invert"
+msgstr "反転"
+
+#: program/localization/ja_JP/labels.inc:filter
+msgid "Filter"
+msgstr "フィルター"
+
+#: program/localization/ja_JP/labels.inc:list
+msgid "List"
+msgstr "一覧"
+
+#: program/localization/ja_JP/labels.inc:threads
+msgid "Threads"
+msgstr "スレッド"
+
+#: program/localization/ja_JP/labels.inc:expand-all
+msgid "Expand All"
+msgstr "すべて展開"
+
+#: program/localization/ja_JP/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "未開封のメールを展開"
+
+#: program/localization/ja_JP/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "すべて折りたたむ"
+
+#: program/localization/ja_JP/labels.inc:threaded
+msgid "Threaded"
+msgstr "スレッドにする"
+
+#: program/localization/ja_JP/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "スレッドの展開"
+
+#: program/localization/ja_JP/labels.inc:do_expand
+msgid "all threads"
+msgstr "すべてのスレッド"
+
+#: program/localization/ja_JP/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "未開封のメールのみ"
+
+#: program/localization/ja_JP/labels.inc:fromto
+msgid "From/To"
+msgstr "送信者 / 宛先"
+
+#: program/localization/ja_JP/labels.inc:flag
+msgid "Flag"
+msgstr "フラグ"
+
+#: program/localization/ja_JP/labels.inc:attachment
+msgid "Attachment"
+msgstr "添付ファイル"
+
+#: program/localization/ja_JP/labels.inc:sentdate
+msgid "Sent date"
+msgstr "送信日"
+
+#: program/localization/ja_JP/labels.inc:arrival
+msgid "Arrival date"
+msgstr "受信日"
+
+#: program/localization/ja_JP/labels.inc:asc
+msgid "ascending"
+msgstr "昇順"
+
+#: program/localization/ja_JP/labels.inc:desc
+msgid "descending"
+msgstr "降順"
+
+#: program/localization/ja_JP/labels.inc:listcolumns
+msgid "List columns"
+msgstr "列の一覧"
+
+#: program/localization/ja_JP/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "整列基準"
+
+#: program/localization/ja_JP/labels.inc:listorder
+msgid "Sorting order"
+msgstr "整列順"
+
+#: program/localization/ja_JP/labels.inc:listmode
+msgid "List view mode"
+msgstr "一覧表示モード"
+
+#: program/localization/ja_JP/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "フォルダーの操作..."
+
+#: program/localization/ja_JP/labels.inc:compact
+msgid "Compact"
+msgstr "コンパクト"
+
+#: program/localization/ja_JP/labels.inc:empty
+msgid "Empty"
+msgstr "空"
+
+#: program/localization/ja_JP/labels.inc:quota
+msgid "Disk usage"
+msgstr "ディスク使用量"
+
+#: program/localization/ja_JP/labels.inc:unknown
+msgid "unknown"
+msgstr "不明"
+
+#: program/localization/ja_JP/labels.inc:unlimited
+msgid "unlimited"
+msgstr "無制限"
+
+#: program/localization/ja_JP/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "検索"
+
+#: program/localization/ja_JP/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "検索解除"
+
+#: program/localization/ja_JP/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "検索条件"
+
+#: program/localization/ja_JP/labels.inc:msgtext
+msgid "Entire message"
+msgstr "すべてのメール"
+
+#: program/localization/ja_JP/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "新しいウィンドウで開く"
+
+#: program/localization/ja_JP/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "eml 形式で保存する"
+
+#: program/localization/ja_JP/labels.inc:compose
+msgid "Compose a message"
+msgstr "メールの作成"
+
+#: program/localization/ja_JP/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "新規として編集"
+
+#: program/localization/ja_JP/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "下書きに保存"
+
+#: program/localization/ja_JP/labels.inc:sendmessage
+msgid "Send now"
+msgstr "今すぐ送信"
+
+#: program/localization/ja_JP/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "ファイルの添付"
+
+#: program/localization/ja_JP/labels.inc:charset
+msgid "Charset"
+msgstr "文字エンコード"
+
+#: program/localization/ja_JP/labels.inc:editortype
+msgid "Editor type"
+msgstr "エディターの種類"
+
+#: program/localization/ja_JP/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "開封確認"
+
+#: program/localization/ja_JP/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "配送状況の通知"
+
+#: program/localization/ja_JP/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "$date に $sender が書きました:"
+
+#: program/localization/ja_JP/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "元のメッセージ"
+
+#: program/localization/ja_JP/labels.inc:editidents
+msgid "Edit identities"
+msgstr "個人情報の編集"
+
+#: program/localization/ja_JP/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "スペル チェック"
+
+#: program/localization/ja_JP/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "メール作成に戻る"
+
+#: program/localization/ja_JP/labels.inc:revertto
+msgid "Revert to"
+msgstr "元に戻す"
+
+#: program/localization/ja_JP/labels.inc:attachments
+msgid "Attachments"
+msgstr "添付ファイル"
+
+#: program/localization/ja_JP/labels.inc:upload
+msgid "Upload"
+msgstr "アップロード"
+
+#: program/localization/ja_JP/labels.inc:uploadprogress
+msgid "$percent ($current from $total)"
+msgstr "$percent ($current / $total)"
+
+#: program/localization/ja_JP/labels.inc:close
+msgid "Close"
+msgstr "閉じる"
+
+#: program/localization/ja_JP/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "メッセージのオプション..."
+
+#: program/localization/ja_JP/labels.inc:low
+msgid "Low"
+msgstr "低い"
+
+#: program/localization/ja_JP/labels.inc:lowest
+msgid "Lowest"
+msgstr "最低"
+
+#: program/localization/ja_JP/labels.inc:normal
+msgid "Normal"
+msgstr "通常"
+
+#: program/localization/ja_JP/labels.inc:high
+msgid "High"
+msgstr "高い"
+
+#: program/localization/ja_JP/labels.inc:highest
+msgid "Highest"
+msgstr "最高"
+
+#: program/localization/ja_JP/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(件名なし)"
+
+#: program/localization/ja_JP/labels.inc:showimages
+msgid "Display images"
+msgstr "画像の表示"
+
+#: program/localization/ja_JP/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "$sender から届いた画像は常に表示"
+
+#: program/localization/ja_JP/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/ja_JP/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "テキスト"
+
+#: program/localization/ja_JP/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "送信済みメールの保存先"
+
+#: program/localization/ja_JP/labels.inc:dontsave
+msgid "don't save"
+msgstr "保存しない"
+
+#: program/localization/ja_JP/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "添付可能なファイルのサイズは最大 $size です。"
+
+#: program/localization/ja_JP/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Cc 追加"
+
+#: program/localization/ja_JP/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Bcc 追加"
+
+#: program/localization/ja_JP/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Reply-To 追加"
+
+#: program/localization/ja_JP/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Followup-To 追加"
+
+#: program/localization/ja_JP/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "メールの差出人は開封確認の送付を求めています。開封確認のメールを送付しますか?"
+
+#: program/localization/ja_JP/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "開封確認 (表示済み)"
+
+#: program/localization/ja_JP/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "これはあなたが送信したメールに対する開封確認です。"
+
+#: program/localization/ja_JP/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "注意:"
+"この開封確認はメールが受信者に表示されたことの通知です。受信者がメールを読んだこと、内容を理解したことを保証するものではありません。"
+
+#: program/localization/ja_JP/labels.inc:name
+msgid "Display Name"
+msgstr "表示名"
+
+#: program/localization/ja_JP/labels.inc:firstname
+msgid "First Name"
+msgstr "名 (ファーストネーム)"
+
+#: program/localization/ja_JP/labels.inc:surname
+msgid "Last Name"
+msgstr "姓 (ラストネーム)"
+
+#: program/localization/ja_JP/labels.inc:middlename
+msgid "Middle Name"
+msgstr "ミドルネーム"
+
+#: program/localization/ja_JP/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "敬称 (名前の前)"
+
+#: program/localization/ja_JP/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "敬称 (名前の後)"
+
+#: program/localization/ja_JP/labels.inc:nickname
+msgid "Nickname"
+msgstr "ニックネーム"
+
+#: program/localization/ja_JP/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "肩書き"
+
+#: program/localization/ja_JP/labels.inc:department
+msgid "Department"
+msgstr "部署名"
+
+#: program/localization/ja_JP/labels.inc:gender
+msgid "Gender"
+msgstr "性別"
+
+#: program/localization/ja_JP/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "旧姓"
+
+#: program/localization/ja_JP/labels.inc:email
+msgid "Email"
+msgstr "メールアドレス"
+
+#: program/localization/ja_JP/labels.inc:phone
+msgid "Phone"
+msgstr "電話番号"
+
+#: program/localization/ja_JP/labels.inc:address
+msgid "Address"
+msgstr "住所"
+
+#: program/localization/ja_JP/labels.inc:street
+msgid "Street"
+msgstr "通り"
+
+#: program/localization/ja_JP/labels.inc:locality
+msgid "City"
+msgstr "都市"
+
+#: program/localization/ja_JP/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "郵便番号"
+
+#: program/localization/ja_JP/labels.inc:region
+msgid "State/Province"
+msgstr "州"
+
+#: program/localization/ja_JP/labels.inc:country
+msgid "Country"
+msgstr "国"
+
+#: program/localization/ja_JP/labels.inc:birthday
+msgid "Birthday"
+msgstr "誕生日"
+
+#: program/localization/ja_JP/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "記念日"
+
+#: program/localization/ja_JP/labels.inc:website
+msgid "Website"
+msgstr "ウェブサイト"
+
+#: program/localization/ja_JP/labels.inc:instantmessenger
+msgid "IM"
+msgstr "IM"
+
+#: program/localization/ja_JP/labels.inc:notes
+msgid "Notes"
+msgstr "メモ"
+
+#: program/localization/ja_JP/labels.inc:male
+msgid "male"
+msgstr "男性"
+
+#: program/localization/ja_JP/labels.inc:female
+msgid "female"
+msgstr "女性"
+
+#: program/localization/ja_JP/labels.inc:manager
+msgid "Manager"
+msgstr "管理者"
+
+#: program/localization/ja_JP/labels.inc:assistant
+#: program/localization/ja_JP/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "アシスタント"
+
+#: program/localization/ja_JP/labels.inc:spouse
+msgid "Spouse"
+msgstr "配偶者"
+
+#: program/localization/ja_JP/labels.inc:allfields
+msgid "All fields"
+msgstr "全項目"
+
+#: program/localization/ja_JP/labels.inc:search
+msgid "Search"
+msgstr "検索"
+
+#: program/localization/ja_JP/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "高度な検索"
+
+#: program/localization/ja_JP/labels.inc:other
+#: program/localization/ja_JP/labels.inc:typeother
+msgid "Other"
+msgstr "他"
+
+#: program/localization/ja_JP/labels.inc:typehome
+msgid "Home"
+msgstr "自宅"
+
+#: program/localization/ja_JP/labels.inc:typework
+msgid "Work"
+msgstr "職場"
+
+#: program/localization/ja_JP/labels.inc:typemobile
+msgid "Mobile"
+msgstr "モバイル"
+
+#: program/localization/ja_JP/labels.inc:typemain
+msgid "Main"
+msgstr "主要回線"
+
+#: program/localization/ja_JP/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "自宅 Fax"
+
+#: program/localization/ja_JP/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "職場 Fax"
+
+#: program/localization/ja_JP/labels.inc:typecar
+msgid "Car"
+msgstr "車"
+
+#: program/localization/ja_JP/labels.inc:typepager
+msgid "Pager"
+msgstr "ポケベル(ページャー)"
+
+#: program/localization/ja_JP/labels.inc:typevideo
+msgid "Video"
+msgstr "ビデオ"
+
+#: program/localization/ja_JP/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "ホームページ"
+
+#: program/localization/ja_JP/labels.inc:typeblog
+msgid "Blog"
+msgstr "ブログ"
+
+#: program/localization/ja_JP/labels.inc:typeprofile
+msgid "Profile"
+msgstr "プロフィール"
+
+#: program/localization/ja_JP/labels.inc:addfield
+msgid "Add field..."
+msgstr "項目の追加..."
+
+#: program/localization/ja_JP/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "連絡先の新規追加"
+
+#: program/localization/ja_JP/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "連絡先の編集"
+
+#: program/localization/ja_JP/labels.inc:contacts
+msgid "Contacts"
+msgstr "連絡先"
+
+#: program/localization/ja_JP/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "連絡先のプロパティ"
+
+#: program/localization/ja_JP/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "個人情報"
+
+#: program/localization/ja_JP/labels.inc:edit
+msgid "Edit"
+msgstr "編集"
+
+#: program/localization/ja_JP/labels.inc:cancel
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: program/localization/ja_JP/labels.inc:save
+msgid "Save"
+msgstr "保存"
+
+#: program/localization/ja_JP/labels.inc:delete
+msgid "Delete"
+msgstr "削除"
+
+#: program/localization/ja_JP/labels.inc:rename
+msgid "Rename"
+msgstr "名前の変更"
+
+#: program/localization/ja_JP/labels.inc:addphoto
+msgid "Add"
+msgstr "追加"
+
+#: program/localization/ja_JP/labels.inc:replacephoto
+msgid "Replace"
+msgstr "置換"
+
+#: program/localization/ja_JP/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "連絡先の新規作成"
+
+#: program/localization/ja_JP/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "連絡先の削除"
+
+#: program/localization/ja_JP/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "この連絡先へメールの送信"
+
+#: program/localization/ja_JP/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "連絡先: $from ～ $to (全: $count 件)"
+
+#: program/localization/ja_JP/labels.inc:print
+msgid "Print"
+msgstr "印刷"
+
+#: program/localization/ja_JP/labels.inc:export
+msgid "Export"
+msgstr "エクスポート"
+
+#: program/localization/ja_JP/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "vCard 形式でエクスポート"
+
+#: program/localization/ja_JP/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "連絡先グループの新規作成"
+
+#: program/localization/ja_JP/labels.inc:grouprename
+msgid "Rename group"
+msgstr "グループ名の変更"
+
+#: program/localization/ja_JP/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "グループの削除"
+
+#: program/localization/ja_JP/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "前のページへ"
+
+#: program/localization/ja_JP/labels.inc:firstpage
+msgid "Show first page"
+msgstr "最初のページへ"
+
+#: program/localization/ja_JP/labels.inc:nextpage
+msgid "Show next page"
+msgstr "次のページへ"
+
+#: program/localization/ja_JP/labels.inc:lastpage
+msgid "Show last page"
+msgstr "最後のページへ"
+
+#: program/localization/ja_JP/labels.inc:group
+msgid "Group"
+msgstr "グループ"
+
+#: program/localization/ja_JP/labels.inc:groups
+msgid "Groups"
+msgstr "グループ"
+
+#: program/localization/ja_JP/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "個人アドレス"
+
+#: program/localization/ja_JP/labels.inc:searchsave
+msgid "Save search"
+msgstr "検索情報の保存"
+
+#: program/localization/ja_JP/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "検索情報の削除"
+
+#: program/localization/ja_JP/labels.inc:import
+msgid "Import"
+msgstr "インポート"
+
+#: program/localization/ja_JP/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "連絡先のインポート"
+
+#: program/localization/ja_JP/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "インポートするファイル:"
+
+#: program/localization/ja_JP/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "アドレス帳へ新規連絡先の追加:"
+
+#: program/localization/ja_JP/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "現在のアドレス帳と置き換える"
+
+#: program/localization/ja_JP/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "既存のアドレス帳の連絡先をアップロードできます。現在、<a"
+"href=\"http://ja.wikipedia.org/wiki/VCard\">vCard</a>"
+"形式からのインポートに対応しています。"
+
+#: program/localization/ja_JP/labels.inc:done
+msgid "Done"
+msgstr "完了"
+
+#: program/localization/ja_JP/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "次の設定:"
+
+#: program/localization/ja_JP/labels.inc:preferences
+msgid "Preferences"
+msgstr "設定"
+
+#: program/localization/ja_JP/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "ユーザー設定"
+
+#: program/localization/ja_JP/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "ユーザー設定の変更"
+
+#: program/localization/ja_JP/labels.inc:identities
+msgid "Identities"
+msgstr "個人情報"
+
+#: program/localization/ja_JP/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "アカウントの個人情報管理"
+
+#: program/localization/ja_JP/labels.inc:newidentity
+msgid "New identity"
+msgstr "個人情報の新規作成"
+
+#: program/localization/ja_JP/labels.inc:newitem
+msgid "New item"
+msgstr "新しい項目"
+
+#: program/localization/ja_JP/labels.inc:edititem
+msgid "Edit item"
+msgstr "項目の編集"
+
+#: program/localization/ja_JP/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML を表示する"
+
+#: program/localization/ja_JP/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "標準の文字セット"
+
+#: program/localization/ja_JP/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML メール"
+
+#: program/localization/ja_JP/labels.inc:dateformat
+msgid "Date format"
+msgstr "日付の書式"
+
+#: program/localization/ja_JP/labels.inc:timeformat
+msgid "Time format"
+msgstr "時間の書式"
+
+#: program/localization/ja_JP/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "短い日付で表示"
+
+#: program/localization/ja_JP/labels.inc:setdefault
+msgid "Set default"
+msgstr "標準の設定"
+
+#: program/localization/ja_JP/labels.inc:autodetect
+msgid "Auto"
+msgstr "自動識別"
+
+#: program/localization/ja_JP/labels.inc:language
+msgid "Language"
+msgstr "言語"
+
+#: program/localization/ja_JP/labels.inc:timezone
+msgid "Time zone"
+msgstr "タイムゾーン"
+
+#: program/localization/ja_JP/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "1 ページの表示件数"
+
+#: program/localization/ja_JP/labels.inc:signature
+msgid "Signature"
+msgstr "署名"
+
+#: program/localization/ja_JP/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "サマータイムを適用する"
+
+#: program/localization/ja_JP/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "新規メールでは HTML を標準にする"
+
+#: program/localization/ja_JP/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "メールの返信時は常に HTML を使用する"
+
+#: program/localization/ja_JP/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "署名に HTML タグを使用する"
+
+#: program/localization/ja_JP/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "プレビュー ペインを表示する"
+
+#: program/localization/ja_JP/labels.inc:skin
+msgid "Interface skin"
+msgstr "スキン"
+
+#: program/localization/ja_JP/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "ログアウト時にごみ箱を空にする"
+
+#: program/localization/ja_JP/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "ログアウト時にフォルダーを整理する"
+
+#: program/localization/ja_JP/labels.inc:uisettings
+msgid "User Interface"
+msgstr "ユーザー インターフェース"
+
+#: program/localization/ja_JP/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "サーバーの設定"
+
+#: program/localization/ja_JP/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "受信箱"
+
+#: program/localization/ja_JP/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "開封確認の送信要求時"
+
+#: program/localization/ja_JP/labels.inc:askuser
+msgid "ask me"
+msgstr "開封確認メールの送信を確認する"
+
+#: program/localization/ja_JP/labels.inc:autosend
+msgid "send receipt"
+msgstr "開封確認メールを送信する"
+
+#: program/localization/ja_JP/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "差出人が連絡先に登録されていれば開封確認を送信し、それ以外は問い合わせる"
+
+#: program/localization/ja_JP/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "差出人が連絡先に登録されていれば開封確認を送信し、それ以外は無視する"
+
+#: program/localization/ja_JP/labels.inc:ignore
+msgid "ignore"
+msgstr "無視"
+
+#: program/localization/ja_JP/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "削除したメールを既読にする"
+
+#: program/localization/ja_JP/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "実際に削除せずに削除済みフラグを付ける"
+
+#: program/localization/ja_JP/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "削除済みメールを表示しない"
+
+#: program/localization/ja_JP/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "ごみ箱への移動に失敗したメールはすぐに削除"
+
+#: program/localization/ja_JP/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "外部 URL の画像をインライン表示する"
+
+#: program/localization/ja_JP/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "送信者が知人の場合"
+
+#: program/localization/ja_JP/labels.inc:always
+msgid "always"
+msgstr "常に"
+
+#: program/localization/ja_JP/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "メールに添付された画像を表示する"
+
+#: program/localization/ja_JP/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "自動的に下書きを保存する"
+
+#: program/localization/ja_JP/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "$n 分毎"
+
+#: program/localization/ja_JP/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "新着メールの確認間隔"
+
+#: program/localization/ja_JP/labels.inc:never
+msgid "never"
+msgstr "しない"
+
+#: program/localization/ja_JP/labels.inc:immediately
+msgid "immediately"
+msgstr "すぐに"
+
+#: program/localization/ja_JP/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "メールの表示"
+
+#: program/localization/ja_JP/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "メールの作成"
+
+#: program/localization/ja_JP/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "添付ファイル名"
+
+#: program/localization/ja_JP/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "RFC 2231 準拠 (Thunderbird)"
+
+#: program/localization/ja_JP/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/ja_JP/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "RFC 2047 準拠 (他のメーラー)"
+
+#: program/localization/ja_JP/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "マルチバイト文字列を MIME エンコードする"
+
+#: program/localization/ja_JP/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "高度な設定"
+
+#: program/localization/ja_JP/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "新着メールが届いたらブラウザーをアクティブにする"
+
+#: program/localization/ja_JP/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "全フォルダーで新着メールを表示する"
+
+#: program/localization/ja_JP/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "メールの削除や移動後に次のメールを表示する"
+
+#: program/localization/ja_JP/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "基本設定"
+
+#: program/localization/ja_JP/labels.inc:section
+msgid "Section"
+msgstr "設定項目"
+
+#: program/localization/ja_JP/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "メンテナンス設定"
+
+#: program/localization/ja_JP/labels.inc:newmessage
+msgid "New Message"
+msgstr "新着メール設定"
+
+#: program/localization/ja_JP/labels.inc:listoptions
+msgid "List Options"
+msgstr "一覧設定"
+
+#: program/localization/ja_JP/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "署名の設定"
+
+#: program/localization/ja_JP/labels.inc:whenreplying
+msgid "When replying"
+msgstr "返信時の本文"
+
+#: program/localization/ja_JP/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "元のメッセージ引用部の前に本文を作成する"
+
+#: program/localization/ja_JP/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "元のメッセージ引用部の後に本文を作成する"
+
+#: program/localization/ja_JP/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "返信時にメッセージからオリジナルの署名を除去する"
+
+#: program/localization/ja_JP/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "自動的に署名を付加する"
+
+#: program/localization/ja_JP/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "新規作成時のみ"
+
+#: program/localization/ja_JP/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "返信・転送時のみ"
+
+#: program/localization/ja_JP/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "返信・転送時に署名を挿入する位置"
+
+#: program/localization/ja_JP/labels.inc:belowquote
+msgid "below the quote"
+msgstr "引用部の後"
+
+#: program/localization/ja_JP/labels.inc:abovequote
+msgid "above the quote"
+msgstr "引用部の前"
+
+#: program/localization/ja_JP/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "署名の挿入"
+
+#: program/localization/ja_JP/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "開封済みにする"
+
+#: program/localization/ja_JP/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "$n 秒後"
+
+#: program/localization/ja_JP/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "常に開封確認通知を要求する"
+
+#: program/localization/ja_JP/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "常に配送状況の通知を要求する"
+
+#: program/localization/ja_JP/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "返信されたメールを返信元メールと同じフォルダに保存"
+
+#: program/localization/ja_JP/labels.inc:defaultaddressbook
+msgid "Add new contacts to the selected addressbook"
+msgstr "次のアドレス帳に新規連絡先を追加する"
+
+#: program/localization/ja_JP/labels.inc:spellcheckbeforesend
+msgid "Check spelling before sending a message"
+msgstr "メールの送信前にスペル チェック"
+
+#: program/localization/ja_JP/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "スペルチェックのオプション"
+
+#: program/localization/ja_JP/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "記号の単語を無視する"
+
+#: program/localization/ja_JP/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "数字の単語を無視する"
+
+#: program/localization/ja_JP/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "すべて大文字の単語を無視する"
+
+#: program/localization/ja_JP/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "辞書に追加"
+
+#: program/localization/ja_JP/labels.inc:folder
+msgid "Folder"
+msgstr "フォルダー"
+
+#: program/localization/ja_JP/labels.inc:foldername
+msgid "Folder name"
+msgstr "フォルダー名"
+
+#: program/localization/ja_JP/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "購読済み"
+
+#: program/localization/ja_JP/labels.inc:messagecount
+msgid "Messages"
+msgstr "メール"
+
+#: program/localization/ja_JP/labels.inc:create
+msgid "Create"
+msgstr "作成"
+
+#: program/localization/ja_JP/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "フォルダーの新規作成"
+
+#: program/localization/ja_JP/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "フォルダーの管理"
+
+#: program/localization/ja_JP/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "特殊なフォルダー"
+
+#: program/localization/ja_JP/labels.inc:properties
+msgid "Properties"
+msgstr "プロパティ"
+
+#: program/localization/ja_JP/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "フォルダーのプロパティ"
+
+#: program/localization/ja_JP/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "親フォルダー"
+
+#: program/localization/ja_JP/labels.inc:location
+msgid "Location"
+msgstr "場所"
+
+#: program/localization/ja_JP/labels.inc:info
+msgid "Information"
+msgstr "情報"
+
+#: program/localization/ja_JP/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "クリックでフォルダー サイズの取得"
+
+#: program/localization/ja_JP/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "クリックで購読の変更"
+
+#: program/localization/ja_JP/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "フォルダーの種類"
+
+#: program/localization/ja_JP/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "個人フォルダー"
+
+#: program/localization/ja_JP/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "他のユーザーのフォルダー"
+
+#: program/localization/ja_JP/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "公開フォルダー"
+
+#: program/localization/ja_JP/labels.inc:sortby
+msgid "Sort by"
+msgstr "並び替えの基準"
+
+#: program/localization/ja_JP/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "昇順で並び替え"
+
+#: program/localization/ja_JP/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "降順で並び替え"
+
+#: program/localization/ja_JP/labels.inc:undo
+msgid "Undo"
+msgstr "取り消し"
+
+#: program/localization/ja_JP/labels.inc:B
+msgid "B"
+msgstr "バイト"
+
+#: program/localization/ja_JP/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/ja_JP/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/ja_JP/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/ja_JP/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unicode"
+
+#: program/localization/ja_JP/labels.inc:english
+msgid "English"
+msgstr "英語"
+
+#: program/localization/ja_JP/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "西ヨーロッパ言語"
+
+#: program/localization/ja_JP/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "東ヨーロッパ言語"
+
+#: program/localization/ja_JP/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "南東ヨーロッパ言語"
+
+#: program/localization/ja_JP/labels.inc:baltic
+msgid "Baltic"
+msgstr "バルト言語"
+
+#: program/localization/ja_JP/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "キリル言語"
+
+#: program/localization/ja_JP/labels.inc:arabic
+msgid "Arabic"
+msgstr "アラビア語"
+
+#: program/localization/ja_JP/labels.inc:greek
+msgid "Greek"
+msgstr "ギリシャ語"
+
+#: program/localization/ja_JP/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "ヘブライ語"
+
+#: program/localization/ja_JP/labels.inc:turkish
+msgid "Turkish"
+msgstr "トルコ語"
+
+#: program/localization/ja_JP/labels.inc:nordic
+msgid "Nordic"
+msgstr "北欧言語"
+
+#: program/localization/ja_JP/labels.inc:thai
+msgid "Thai"
+msgstr "タイ語"
+
+#: program/localization/ja_JP/labels.inc:celtic
+msgid "Celtic"
+msgstr "ケルト語"
+
+#: program/localization/ja_JP/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "ベトナム語"
+
+#: program/localization/ja_JP/labels.inc:japanese
+msgid "Japanese"
+msgstr "日本語"
+
+#: program/localization/ja_JP/labels.inc:korean
+msgid "Korean"
+msgstr "韓国語"
+
+#: program/localization/ja_JP/labels.inc:chinese
+msgid "Chinese"
+msgstr "中国語"

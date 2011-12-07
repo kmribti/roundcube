@@ -1,0 +1,1289 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ro_RO/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ro_RO\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ro_RO/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Bine aţi venit la $product"
+
+#: program/localization/ro_RO/labels.inc:username
+msgid "Username"
+msgstr "Utilizator"
+
+#: program/localization/ro_RO/labels.inc:password
+msgid "Password"
+msgstr "Parolă"
+
+#: program/localization/ro_RO/labels.inc:server
+msgid "Server"
+msgstr "Server"
+
+#: program/localization/ro_RO/labels.inc:login
+msgid "Login"
+msgstr "Autentificare"
+
+#: program/localization/ro_RO/labels.inc:logout
+msgid "Logout"
+msgstr "Deconectare"
+
+#: program/localization/ro_RO/labels.inc:mail
+msgid "Mail"
+msgstr "E-Mail"
+
+#: program/localization/ro_RO/labels.inc:settings
+msgid "Settings"
+msgstr "Setări personale"
+
+#: program/localization/ro_RO/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Agendă"
+
+#: program/localization/ro_RO/labels.inc:inbox
+msgid "Inbox"
+msgstr "Primite"
+
+#: program/localization/ro_RO/labels.inc:drafts
+msgid "Drafts"
+msgstr "Ciorne"
+
+#: program/localization/ro_RO/labels.inc:sent
+msgid "Sent"
+msgstr "Trimise"
+
+#: program/localization/ro_RO/labels.inc:trash
+msgid "Trash"
+msgstr "Gunoi"
+
+#: program/localization/ro_RO/labels.inc:junk
+msgid "Junk"
+msgstr "Spam"
+
+#: program/localization/ro_RO/labels.inc:subject
+msgid "Subject"
+msgstr "Subiect"
+
+#: program/localization/ro_RO/labels.inc:from
+msgid "From"
+msgstr "Expeditor"
+
+#: program/localization/ro_RO/labels.inc:to
+msgid "To"
+msgstr "Destinatar"
+
+#: program/localization/ro_RO/labels.inc:cc
+msgid "Cc"
+msgstr "Copie (CC)"
+
+#: program/localization/ro_RO/labels.inc:bcc
+msgid "Bcc"
+msgstr "Copie oarbă (BCC)"
+
+#: program/localization/ro_RO/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Răspunde la"
+
+#: program/localization/ro_RO/labels.inc:date
+msgid "Date"
+msgstr "Data"
+
+#: program/localization/ro_RO/labels.inc:size
+msgid "Size"
+msgstr "Mărime"
+
+#: program/localization/ro_RO/labels.inc:priority
+msgid "Priority"
+msgstr "Prioritate"
+
+#: program/localization/ro_RO/labels.inc:organization
+msgid "Company"
+msgstr "Organizaţie"
+
+#: program/localization/ro_RO/labels.inc:reply-to
+msgid "reply-to"
+msgstr "Răspunde la"
+
+#: program/localization/ro_RO/labels.inc:mailboxlist
+#: program/localization/ro_RO/labels.inc:folders
+msgid "Folders"
+msgstr "Dosare"
+
+#: program/localization/ro_RO/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Mesaje de la $from până la $to din $count"
+
+#: program/localization/ro_RO/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Grupuri de la $from până la $to din $count"
+
+#: program/localization/ro_RO/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "$nr mesaje din $count"
+
+#: program/localization/ro_RO/labels.inc:copy
+msgid "Copy"
+msgstr "Copiază"
+
+#: program/localization/ro_RO/labels.inc:move
+msgid "Move"
+msgstr "Mută"
+
+#: program/localization/ro_RO/labels.inc:moveto
+msgid "Move to..."
+msgstr "Mută in..."
+
+#: program/localization/ro_RO/labels.inc:download
+msgid "Download"
+msgstr "Descarcă"
+
+#: program/localization/ro_RO/labels.inc:filename
+msgid "File name"
+msgstr "Nume fişier"
+
+#: program/localization/ro_RO/labels.inc:filesize
+msgid "File size"
+msgstr "Mărime fişier"
+
+#: program/localization/ro_RO/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Adaugă în agendă"
+
+#: program/localization/ro_RO/labels.inc:sun
+msgid "Sun"
+msgstr "Dum"
+
+#: program/localization/ro_RO/labels.inc:mon
+msgid "Mon"
+msgstr "Lun"
+
+#: program/localization/ro_RO/labels.inc:tue
+msgid "Tue"
+msgstr "Mar"
+
+#: program/localization/ro_RO/labels.inc:wed
+msgid "Wed"
+msgstr "Mie"
+
+#: program/localization/ro_RO/labels.inc:thu
+msgid "Thu"
+msgstr "Joi"
+
+#: program/localization/ro_RO/labels.inc:fri
+msgid "Fri"
+msgstr "Vin"
+
+#: program/localization/ro_RO/labels.inc:sat
+msgid "Sat"
+msgstr "Sâm"
+
+#: program/localization/ro_RO/labels.inc:sunday
+msgid "Sunday"
+msgstr "Duminică"
+
+#: program/localization/ro_RO/labels.inc:monday
+msgid "Monday"
+msgstr "Luni"
+
+#: program/localization/ro_RO/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Marţi"
+
+#: program/localization/ro_RO/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Miercuri"
+
+#: program/localization/ro_RO/labels.inc:thursday
+msgid "Thursday"
+msgstr "Joi"
+
+#: program/localization/ro_RO/labels.inc:friday
+msgid "Friday"
+msgstr "Vineri"
+
+#: program/localization/ro_RO/labels.inc:saturday
+msgid "Saturday"
+msgstr "Sâmbătă"
+
+#: program/localization/ro_RO/labels.inc:jan
+msgid "Jan"
+msgstr "Ian"
+
+#: program/localization/ro_RO/labels.inc:feb
+msgid "Feb"
+msgstr "Feb"
+
+#: program/localization/ro_RO/labels.inc:mar
+msgid "Mar"
+msgstr "Mar"
+
+#: program/localization/ro_RO/labels.inc:apr
+msgid "Apr"
+msgstr "Apr"
+
+#: program/localization/ro_RO/labels.inc:may
+#: program/localization/ro_RO/labels.inc:longmay
+msgid "May"
+msgstr "Mai"
+
+#: program/localization/ro_RO/labels.inc:jun
+msgid "Jun"
+msgstr "Iun"
+
+#: program/localization/ro_RO/labels.inc:jul
+msgid "Jul"
+msgstr "Iul"
+
+#: program/localization/ro_RO/labels.inc:aug
+msgid "Aug"
+msgstr "Aug"
+
+#: program/localization/ro_RO/labels.inc:sep
+msgid "Sep"
+msgstr "Sep"
+
+#: program/localization/ro_RO/labels.inc:oct
+msgid "Oct"
+msgstr "Oct"
+
+#: program/localization/ro_RO/labels.inc:nov
+msgid "Nov"
+msgstr "Noi"
+
+#: program/localization/ro_RO/labels.inc:dec
+msgid "Dec"
+msgstr "Dec"
+
+#: program/localization/ro_RO/labels.inc:longjan
+msgid "January"
+msgstr "Ianuarie"
+
+#: program/localization/ro_RO/labels.inc:longfeb
+msgid "February"
+msgstr "Februarie"
+
+#: program/localization/ro_RO/labels.inc:longmar
+msgid "March"
+msgstr "Martie"
+
+#: program/localization/ro_RO/labels.inc:longapr
+msgid "April"
+msgstr "Aprilie"
+
+#: program/localization/ro_RO/labels.inc:longjun
+msgid "June"
+msgstr "Iunie"
+
+#: program/localization/ro_RO/labels.inc:longjul
+msgid "July"
+msgstr "Iulie"
+
+#: program/localization/ro_RO/labels.inc:longaug
+msgid "August"
+msgstr "August"
+
+#: program/localization/ro_RO/labels.inc:longsep
+msgid "September"
+msgstr "Septembrie"
+
+#: program/localization/ro_RO/labels.inc:longoct
+msgid "October"
+msgstr "Octombrie"
+
+#: program/localization/ro_RO/labels.inc:longnov
+msgid "November"
+msgstr "Noiembrie"
+
+#: program/localization/ro_RO/labels.inc:longdec
+msgid "December"
+msgstr "Decembrie"
+
+#: program/localization/ro_RO/labels.inc:today
+msgid "Today"
+msgstr "Astăzi"
+
+#: program/localization/ro_RO/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Verifică mesaje noi"
+
+#: program/localization/ro_RO/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Scrie mesaj nou"
+
+#: program/localization/ro_RO/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Răspunde la mesaj"
+
+#: program/localization/ro_RO/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Răspunde la toţi"
+
+#: program/localization/ro_RO/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Trimite mesajul mai departe"
+
+#: program/localization/ro_RO/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Trimite mesajul la gunoi"
+
+#: program/localization/ro_RO/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Mută mesajul la gunoi"
+
+#: program/localization/ro_RO/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Listează mesajul"
+
+#: program/localization/ro_RO/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Afişează mesajul anterior"
+
+#: program/localization/ro_RO/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "Afişează setul anterior de mesaje"
+
+#: program/localization/ro_RO/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Afişează primul mesaj"
+
+#: program/localization/ro_RO/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "Afişează primul set de mesaje"
+
+#: program/localization/ro_RO/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Afişează următorul mesaj"
+
+#: program/localization/ro_RO/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "Afişează setul următor de mesaje"
+
+#: program/localization/ro_RO/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Afişează ultimul mesaj"
+
+#: program/localization/ro_RO/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "Afişează ultimul set de mesaje"
+
+#: program/localization/ro_RO/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Înapoi la lista cu mesaje"
+
+#: program/localization/ro_RO/labels.inc:viewsource
+msgid "Show source"
+msgstr "Afişează sursa"
+
+#: program/localization/ro_RO/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Marchează mesajele"
+
+#: program/localization/ro_RO/labels.inc:markread
+msgid "As read"
+msgstr "Ca citit"
+
+#: program/localization/ro_RO/labels.inc:markunread
+msgid "As unread"
+msgstr "Ca necitit"
+
+#: program/localization/ro_RO/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Ca marcat"
+
+#: program/localization/ro_RO/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Ca nemarcat"
+
+#: program/localization/ro_RO/labels.inc:messageactions
+msgid "messageactions"
+msgstr "Mai multe acţiuni..."
+
+#: program/localization/ro_RO/labels.inc:select
+msgid "Select"
+msgstr "Selectează"
+
+#: program/localization/ro_RO/labels.inc:all
+msgid "All"
+msgstr "Toate"
+
+#: program/localization/ro_RO/labels.inc:none
+#: program/localization/ro_RO/labels.inc:nonesort
+msgid "None"
+msgstr "Fără sortare"
+
+#: program/localization/ro_RO/labels.inc:currpage
+msgid "Current page"
+msgstr "Pagina curentă"
+
+#: program/localization/ro_RO/labels.inc:unread
+msgid "Unread"
+msgstr "Necitite"
+
+#: program/localization/ro_RO/labels.inc:flagged
+msgid "Flagged"
+msgstr "Marcat"
+
+#: program/localization/ro_RO/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Fără răspuns"
+
+#: program/localization/ro_RO/labels.inc:deleted
+msgid "Deleted"
+msgstr "Şterse"
+
+#: program/localization/ro_RO/labels.inc:invert
+msgid "Invert"
+msgstr "Inversează"
+
+#: program/localization/ro_RO/labels.inc:filter
+msgid "Filter"
+msgstr "Filtru"
+
+#: program/localization/ro_RO/labels.inc:list
+msgid "List"
+msgstr "Listă"
+
+#: program/localization/ro_RO/labels.inc:threads
+msgid "Threads"
+msgstr "Grupare după subiect"
+
+#: program/localization/ro_RO/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Extinde toate"
+
+#: program/localization/ro_RO/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Extinde necitite"
+
+#: program/localization/ro_RO/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Compactează toate"
+
+#: program/localization/ro_RO/labels.inc:threaded
+msgid "Threaded"
+msgstr "Grupate"
+
+#: program/localization/ro_RO/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Extinde mesajele grupate"
+
+#: program/localization/ro_RO/labels.inc:do_expand
+msgid "all threads"
+msgstr "toate grupările"
+
+#: program/localization/ro_RO/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "doar pe cele cu mesaje necitite"
+
+#: program/localization/ro_RO/labels.inc:fromto
+msgid "From/To"
+msgstr "Expeditor/Destinatar"
+
+#: program/localization/ro_RO/labels.inc:flag
+msgid "Flag"
+msgstr "Marcaj"
+
+#: program/localization/ro_RO/labels.inc:attachment
+msgid "Attachment"
+msgstr "Ataşament"
+
+#: program/localization/ro_RO/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Data trimiterii"
+
+#: program/localization/ro_RO/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Data primirii"
+
+#: program/localization/ro_RO/labels.inc:asc
+msgid "ascending"
+msgstr "ascendent"
+
+#: program/localization/ro_RO/labels.inc:desc
+msgid "descending"
+msgstr "descendent"
+
+#: program/localization/ro_RO/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Arată coloane"
+
+#: program/localization/ro_RO/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Sortează după"
+
+#: program/localization/ro_RO/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Ordinea de sortare"
+
+#: program/localization/ro_RO/labels.inc:listmode
+msgid "List view mode"
+msgstr "Mod de vizualizare"
+
+#: program/localization/ro_RO/labels.inc:compact
+msgid "Compact"
+msgstr "Compactează"
+
+#: program/localization/ro_RO/labels.inc:empty
+msgid "Empty"
+msgstr "Goleşte"
+
+#: program/localization/ro_RO/labels.inc:purge
+msgid "purge"
+msgstr "Curăţă"
+
+#: program/localization/ro_RO/labels.inc:quota
+msgid "Disk usage"
+msgstr "Spaţiu folosit"
+
+#: program/localization/ro_RO/labels.inc:unknown
+msgid "unknown"
+msgstr "necunoscut"
+
+#: program/localization/ro_RO/labels.inc:unlimited
+msgid "unlimited"
+msgstr "nelimitat"
+
+#: program/localization/ro_RO/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Căutare rapidă"
+
+#: program/localization/ro_RO/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Anulează căutarea"
+
+#: program/localization/ro_RO/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Parametrii de căutare"
+
+#: program/localization/ro_RO/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Tot mesajul"
+
+#: program/localization/ro_RO/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Deschide într-o fereastră nouă"
+
+#: program/localization/ro_RO/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Salvează în format .eml"
+
+#: program/localization/ro_RO/labels.inc:compose
+msgid "Compose a message"
+msgstr "Scrie un mesaj"
+
+#: program/localization/ro_RO/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Editează ca nou"
+
+#: program/localization/ro_RO/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Salvează această ciornă"
+
+#: program/localization/ro_RO/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Trimite mesaj"
+
+#: program/localization/ro_RO/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Ataşează fişier"
+
+#: program/localization/ro_RO/labels.inc:charset
+msgid "Charset"
+msgstr "Set de caractere"
+
+#: program/localization/ro_RO/labels.inc:editortype
+msgid "Editor type"
+msgstr "Tip de editor"
+
+#: program/localization/ro_RO/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Returnează confirmare de primire"
+
+#: program/localization/ro_RO/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Verifică ortografie"
+
+#: program/localization/ro_RO/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Reia editarea"
+
+#: program/localization/ro_RO/labels.inc:revertto
+msgid "Revert to"
+msgstr "Revino la"
+
+#: program/localization/ro_RO/labels.inc:attachments
+msgid "Attachments"
+msgstr "Ataşamente"
+
+#: program/localization/ro_RO/labels.inc:upload
+msgid "Upload"
+msgstr "Încarcă"
+
+#: program/localization/ro_RO/labels.inc:close
+msgid "Close"
+msgstr "Închide"
+
+#: program/localization/ro_RO/labels.inc:low
+msgid "Low"
+msgstr "Mică"
+
+#: program/localization/ro_RO/labels.inc:lowest
+msgid "Lowest"
+msgstr "Cea mai mică"
+
+#: program/localization/ro_RO/labels.inc:normal
+msgid "Normal"
+msgstr "Normală"
+
+#: program/localization/ro_RO/labels.inc:high
+msgid "High"
+msgstr "Mare"
+
+#: program/localization/ro_RO/labels.inc:highest
+msgid "Highest"
+msgstr "Cea mai mare"
+
+#: program/localization/ro_RO/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(fără subiect)"
+
+#: program/localization/ro_RO/labels.inc:showimages
+msgid "Display images"
+msgstr "Afişează imagini"
+
+#: program/localization/ro_RO/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Afişează întotdeauna imaginile de la $sender"
+
+#: program/localization/ro_RO/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/ro_RO/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Text simplu"
+
+#: program/localization/ro_RO/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Salvează mesajele în"
+
+#: program/localization/ro_RO/labels.inc:dontsave
+msgid "don't save"
+msgstr "Nu salva"
+
+#: program/localization/ro_RO/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Mărimea maximă admisă a fişierului este $size"
+
+#: program/localization/ro_RO/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Adaugă Cc "
+
+#: program/localization/ro_RO/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Adaugă Bcc"
+
+#: program/localization/ro_RO/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Adaugă Raspunde-La"
+
+#: program/localization/ro_RO/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Expeditorul acestui mesaj a solicitat să fie notificat la cititrea"
+"mesajului. Doriţi să notificaţi expeditorul?"
+
+#: program/localization/ro_RO/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Returnează confirmare (citit)"
+
+#: program/localization/ro_RO/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Aceasta este o confirmare de primire a mesajului dumneavoastră."
+
+#: program/localization/ro_RO/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Notă: Această confirmare doar vă informează că mesajul a fost afişat"
+"pe calculatorul destinatarului. Nu există nici o garanţie că"
+"destinatarul a citit sau a inţeles conţinutul mesajului."
+
+#: program/localization/ro_RO/labels.inc:name
+msgid "Display Name"
+msgstr "Numele Contactului"
+
+#: program/localization/ro_RO/labels.inc:firstname
+msgid "First Name"
+msgstr "Nume"
+
+#: program/localization/ro_RO/labels.inc:surname
+msgid "Last Name"
+msgstr "Prenume"
+
+#: program/localization/ro_RO/labels.inc:email
+msgid "Email"
+msgstr "E-Mail"
+
+#: program/localization/ro_RO/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Adaugă contactul selectat în agendă"
+
+#: program/localization/ro_RO/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Modifică contact"
+
+#: program/localization/ro_RO/labels.inc:edit
+msgid "Edit"
+msgstr "Editează"
+
+#: program/localization/ro_RO/labels.inc:cancel
+msgid "Cancel"
+msgstr "Renunţă"
+
+#: program/localization/ro_RO/labels.inc:save
+msgid "Save"
+msgstr "Salvează"
+
+#: program/localization/ro_RO/labels.inc:delete
+msgid "Delete"
+msgstr "Şterge"
+
+#: program/localization/ro_RO/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Creează contact nou"
+
+#: program/localization/ro_RO/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Şterge contactul selectat"
+
+#: program/localization/ro_RO/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Compune e-mail pentru"
+
+#: program/localization/ro_RO/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Contacte de la $from până la $to din $count"
+
+#: program/localization/ro_RO/labels.inc:print
+msgid "Print"
+msgstr "Listează"
+
+#: program/localization/ro_RO/labels.inc:export
+msgid "Export"
+msgstr "Exportă"
+
+#: program/localization/ro_RO/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Exportă contactele în format vCard"
+
+#: program/localization/ro_RO/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Creează un nou grup de contacte"
+
+#: program/localization/ro_RO/labels.inc:groupactions
+msgid "groupactions"
+msgstr "Acţiuni pentru grupurile de contacte ..."
+
+#: program/localization/ro_RO/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Pagina anterioară"
+
+#: program/localization/ro_RO/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Arată primul set"
+
+#: program/localization/ro_RO/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Pagina următoare"
+
+#: program/localization/ro_RO/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Arată ultimul set"
+
+#: program/localization/ro_RO/labels.inc:group
+msgid "Group"
+msgstr "Grup"
+
+#: program/localization/ro_RO/labels.inc:groups
+msgid "Groups"
+msgstr "Grupuri"
+
+#: program/localization/ro_RO/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Adrese personale"
+
+#: program/localization/ro_RO/labels.inc:import
+msgid "Import"
+msgstr "Importă"
+
+#: program/localization/ro_RO/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Importă contacte"
+
+#: program/localization/ro_RO/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Importă din fişier:"
+
+#: program/localization/ro_RO/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Înlocuieşte întreaga agendă"
+
+#: program/localization/ro_RO/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Puteţi încărca contacte dintr-o agendă existentă. Se pot importa"
+"adresele în format vCard."
+
+#: program/localization/ro_RO/labels.inc:done
+msgid "Done"
+msgstr "Finalizat"
+
+#: program/localization/ro_RO/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Setări pentru"
+
+#: program/localization/ro_RO/labels.inc:preferences
+msgid "Preferences"
+msgstr "Preferinţe"
+
+#: program/localization/ro_RO/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Preferinţe utilizator"
+
+#: program/localization/ro_RO/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Modifică preferinţe utilizator"
+
+#: program/localization/ro_RO/labels.inc:identities
+msgid "Identities"
+msgstr "Identităţi"
+
+#: program/localization/ro_RO/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Administrează identităţi pentru acest cont"
+
+#: program/localization/ro_RO/labels.inc:newidentity
+msgid "New identity"
+msgstr "Identitate nouă"
+
+#: program/localization/ro_RO/labels.inc:newitem
+msgid "New item"
+msgstr "Obiect nou"
+
+#: program/localization/ro_RO/labels.inc:edititem
+msgid "Edit item"
+msgstr "Editează obiect"
+
+#: program/localization/ro_RO/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Format HTML"
+
+#: program/localization/ro_RO/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Set implicit de caractere"
+
+#: program/localization/ro_RO/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Mesaj HTML"
+
+#: program/localization/ro_RO/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Dată formatată"
+
+#: program/localization/ro_RO/labels.inc:setdefault
+msgid "Set default"
+msgstr "Setează implicit"
+
+#: program/localization/ro_RO/labels.inc:autodetect
+msgid "Auto"
+msgstr "Automat"
+
+#: program/localization/ro_RO/labels.inc:language
+msgid "Language"
+msgstr "Limba"
+
+#: program/localization/ro_RO/labels.inc:timezone
+msgid "Time zone"
+msgstr "Fus orar"
+
+#: program/localization/ro_RO/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Rânduri pe pagină"
+
+#: program/localization/ro_RO/labels.inc:signature
+msgid "Signature"
+msgstr "Semnătură"
+
+#: program/localization/ro_RO/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Reglare automată oră de vară"
+
+#: program/localization/ro_RO/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Scrie mesaje HTML"
+
+#: program/localization/ro_RO/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "Semnatură HTML"
+
+#: program/localization/ro_RO/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Previzualizare mail"
+
+#: program/localization/ro_RO/labels.inc:skin
+msgid "Interface skin"
+msgstr "Temă interfaţă"
+
+#: program/localization/ro_RO/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Goleşte Coşul de Gunoi la deconectare"
+
+#: program/localization/ro_RO/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Compactează dosarul Primite la deconectare"
+
+#: program/localization/ro_RO/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Interfaţă utilizator"
+
+#: program/localization/ro_RO/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Configuraţii server"
+
+#: program/localization/ro_RO/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Afişare căsuţă poştală"
+
+#: program/localization/ro_RO/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Notificări expeditor"
+
+#: program/localization/ro_RO/labels.inc:askuser
+msgid "ask me"
+msgstr "întreabă utilizatorul"
+
+#: program/localization/ro_RO/labels.inc:autosend
+msgid "send receipt"
+msgstr "trimite automat"
+
+#: program/localization/ro_RO/labels.inc:ignore
+msgid "ignore"
+msgstr "ignoră"
+
+#: program/localization/ro_RO/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Marchează mesajul ca şi citit la ştergere"
+
+#: program/localization/ro_RO/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Marchează mesajul pentru ştergere în loc de a-l şterge direct"
+
+#: program/localization/ro_RO/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Nu arăta mesajele şterse"
+
+#: program/localization/ro_RO/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Dacă mutarea mesajelor în coş eşuează, se vor şterge"
+
+#: program/localization/ro_RO/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Arată imaginile care nu fac parte din e-mail"
+
+#: program/localization/ro_RO/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "de la expeditori cunoscuţi"
+
+#: program/localization/ro_RO/labels.inc:always
+msgid "always"
+msgstr "întotdeauna"
+
+#: program/localization/ro_RO/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Arată imaginile ataşate sub mesaj"
+
+#: program/localization/ro_RO/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Salvează ciorna automat"
+
+#: program/localization/ro_RO/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "la fiecare $n minut(e)"
+
+#: program/localization/ro_RO/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Verifică mesaje noi la"
+
+#: program/localization/ro_RO/labels.inc:never
+msgid "never"
+msgstr "niciodată"
+
+#: program/localization/ro_RO/labels.inc:immediately
+msgid "immediately"
+msgstr "imediat"
+
+#: program/localization/ro_RO/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Afişarea mesajelor"
+
+#: program/localization/ro_RO/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Compunerea mesajelor"
+
+#: program/localization/ro_RO/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Nume ataşamente"
+
+#: program/localization/ro_RO/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "RFC 2231 (Thunderbird)"
+
+#: program/localization/ro_RO/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/ro_RO/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "RFC 2047 (Altele)"
+
+#: program/localization/ro_RO/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "Foloseşte encodarea MIME pentru caracterele cu 8 biţi"
+
+#: program/localization/ro_RO/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Opţiuni avansate"
+
+#: program/localization/ro_RO/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Focalizare pe fereastra browser-ului la mesaje noi"
+
+#: program/localization/ro_RO/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Verifică toate dosarele pentru mesaje noi"
+
+#: program/localization/ro_RO/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "După ştergerea sau mutarea unui mesaj afişează-l pe următorul din"
+"listă"
+
+#: program/localization/ro_RO/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Opţiuni principale"
+
+#: program/localization/ro_RO/labels.inc:section
+msgid "Section"
+msgstr "Secţiune"
+
+#: program/localization/ro_RO/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Mentenanţă"
+
+#: program/localization/ro_RO/labels.inc:newmessage
+msgid "New Message"
+msgstr "Mesaj nou"
+
+#: program/localization/ro_RO/labels.inc:listoptions
+msgid "List Options"
+msgstr "Opţiuni listă"
+
+#: program/localization/ro_RO/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Opţiuni semnătură"
+
+#: program/localization/ro_RO/labels.inc:whenreplying
+msgid "When replying"
+msgstr "Când răspundeţi"
+
+#: program/localization/ro_RO/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "începeţi mesajul nou deasupra originalului"
+
+#: program/localization/ro_RO/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "începeţi mesajul nou dedesubtul originalului"
+
+#: program/localization/ro_RO/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "Când răspundeţi, se şterge semnătura originală din mesaj"
+
+#: program/localization/ro_RO/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Adăugarea automată a semnăturii"
+
+#: program/localization/ro_RO/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "numai la mesajele noi"
+
+#: program/localization/ro_RO/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "numai la răspunsuri si cele trimise mai departe"
+
+#: program/localization/ro_RO/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "Când răspundeţi sau trimiteţi mai departe, semnătura se va plasa"
+
+#: program/localization/ro_RO/labels.inc:belowquote
+msgid "below the quote"
+msgstr "dedesubtul citatului"
+
+#: program/localization/ro_RO/labels.inc:abovequote
+msgid "above the quote"
+msgstr "deasupra citatului"
+
+#: program/localization/ro_RO/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Introduce o semnătură"
+
+#: program/localization/ro_RO/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Marchează mesajele previzualizate ca citite"
+
+#: program/localization/ro_RO/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "după $n secunde"
+
+#: program/localization/ro_RO/labels.inc:folder
+msgid "Folder"
+msgstr "Dosar"
+
+#: program/localization/ro_RO/labels.inc:foldername
+msgid "Folder name"
+msgstr "Nume dosar"
+
+#: program/localization/ro_RO/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Înscris"
+
+#: program/localization/ro_RO/labels.inc:messagecount
+msgid "Messages"
+msgstr "Mesaje"
+
+#: program/localization/ro_RO/labels.inc:create
+msgid "Create"
+msgstr "Creează"
+
+#: program/localization/ro_RO/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Creează dosar nou"
+
+#: program/localization/ro_RO/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Administrează dosare"
+
+#: program/localization/ro_RO/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Dosare speciale"
+
+#: program/localization/ro_RO/labels.inc:sortby
+msgid "Sort by"
+msgstr "Sortează după"
+
+#: program/localization/ro_RO/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Sortează ascendent"
+
+#: program/localization/ro_RO/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Sortează descendent"
+
+#: program/localization/ro_RO/labels.inc:B
+msgid "B"
+msgstr "O"
+
+#: program/localization/ro_RO/labels.inc:KB
+msgid "KB"
+msgstr "KO"
+
+#: program/localization/ro_RO/labels.inc:MB
+msgid "MB"
+msgstr "MO"
+
+#: program/localization/ro_RO/labels.inc:GB
+msgid "GB"
+msgstr "GO"
+
+#: program/localization/ro_RO/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unicode"
+
+#: program/localization/ro_RO/labels.inc:english
+msgid "English"
+msgstr "Englezesc"
+
+#: program/localization/ro_RO/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Europa de Vest"
+
+#: program/localization/ro_RO/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Europa de Est"
+
+#: program/localization/ro_RO/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Europa de Sud-Est"
+
+#: program/localization/ro_RO/labels.inc:baltic
+msgid "Baltic"
+msgstr "Baltic"
+
+#: program/localization/ro_RO/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Chirilic"
+
+#: program/localization/ro_RO/labels.inc:arabic
+msgid "Arabic"
+msgstr "Arab"
+
+#: program/localization/ro_RO/labels.inc:greek
+msgid "Greek"
+msgstr "Grecesc"
+
+#: program/localization/ro_RO/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Evreiesc"
+
+#: program/localization/ro_RO/labels.inc:turkish
+msgid "Turkish"
+msgstr "Turcesc"
+
+#: program/localization/ro_RO/labels.inc:nordic
+msgid "Nordic"
+msgstr "Ţările Nordice"
+
+#: program/localization/ro_RO/labels.inc:thai
+msgid "Thai"
+msgstr "Tailandez"
+
+#: program/localization/ro_RO/labels.inc:celtic
+msgid "Celtic"
+msgstr "Celtic"
+
+#: program/localization/ro_RO/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Vietnamez"
+
+#: program/localization/ro_RO/labels.inc:japanese
+msgid "Japanese"
+msgstr "Japonez"
+
+#: program/localization/ro_RO/labels.inc:korean
+msgid "Korean"
+msgstr "Coreean"
+
+#: program/localization/ro_RO/labels.inc:chinese
+msgid "Chinese"
+msgstr "Chinezesc"

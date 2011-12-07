@@ -1,0 +1,629 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ga_IE/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ga_IE\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ga_IE/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Fáilte go $product"
+
+#: program/localization/ga_IE/labels.inc:username
+msgid "Username"
+msgstr "Úsáideoir"
+
+#: program/localization/ga_IE/labels.inc:password
+msgid "Password"
+msgstr "Pasfhocal"
+
+#: program/localization/ga_IE/labels.inc:server
+msgid "Server"
+msgstr "Freastalaí"
+
+#: program/localization/ga_IE/labels.inc:login
+msgid "Login"
+msgstr "Logáil isteach"
+
+#: program/localization/ga_IE/labels.inc:logout
+msgid "Logout"
+msgstr "Logáil amach"
+
+#: program/localization/ga_IE/labels.inc:mail
+msgid "Mail"
+msgstr "Postas"
+
+#: program/localization/ga_IE/labels.inc:settings
+msgid "Settings"
+msgstr "Socruithe Pearsanta"
+
+#: program/localization/ga_IE/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Leabhair Seoltaí"
+
+#: program/localization/ga_IE/labels.inc:inbox
+msgid "Inbox"
+msgstr "Isteach"
+
+#: program/localization/ga_IE/labels.inc:drafts
+msgid "Drafts"
+msgstr "Dréachtaí"
+
+#: program/localization/ga_IE/labels.inc:sent
+msgid "Sent"
+msgstr "Amach"
+
+#: program/localization/ga_IE/labels.inc:trash
+msgid "Trash"
+msgstr "Bosca bruscair"
+
+#: program/localization/ga_IE/labels.inc:junk
+msgid "Junk"
+msgstr "Dramhaíl"
+
+#: program/localization/ga_IE/labels.inc:subject
+msgid "Subject"
+msgstr "Ábhair"
+
+#: program/localization/ga_IE/labels.inc:from
+msgid "From"
+msgstr "Seolaí"
+
+#: program/localization/ga_IE/labels.inc:to
+msgid "To"
+msgstr "Faighteoir"
+
+#: program/localization/ga_IE/labels.inc:cc
+msgid "Cc"
+msgstr "Cóipeáil"
+
+#: program/localization/ga_IE/labels.inc:bcc
+msgid "Bcc"
+msgstr "Cóip cheilte"
+
+#: program/localization/ga_IE/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Freagair go"
+
+#: program/localization/ga_IE/labels.inc:date
+msgid "Date"
+msgstr "Dáta"
+
+#: program/localization/ga_IE/labels.inc:size
+msgid "Size"
+msgstr "Méid"
+
+#: program/localization/ga_IE/labels.inc:priority
+msgid "Priority"
+msgstr "Tosaíocht"
+
+#: program/localization/ga_IE/labels.inc:organization
+msgid "Company"
+msgstr "Eagraíocht"
+
+#: program/localization/ga_IE/labels.inc:reply-to
+msgid "reply-to"
+msgstr "Freagair go"
+
+#: program/localization/ga_IE/labels.inc:mailboxlist
+#: program/localization/ga_IE/labels.inc:folders
+msgid "Folders"
+msgstr "Fillteán"
+
+#: program/localization/ga_IE/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Teachtaireachta as $from go $to as $count"
+
+#: program/localization/ga_IE/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Teachtaireacht $nr as $count"
+
+#: program/localization/ga_IE/labels.inc:moveto
+msgid "Move to..."
+msgstr "bog go..."
+
+#: program/localization/ga_IE/labels.inc:download
+msgid "Download"
+msgstr "síos-luchtú"
+
+#: program/localization/ga_IE/labels.inc:filename
+msgid "File name"
+msgstr "Comhad"
+
+#: program/localization/ga_IE/labels.inc:filesize
+msgid "File size"
+msgstr "Toirt"
+
+#: program/localization/ga_IE/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Taispeáin an HTML"
+
+#: program/localization/ga_IE/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Teachtaireacht HTML"
+
+#: program/localization/ga_IE/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Dátaí Dheas"
+
+#: program/localization/ga_IE/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Sábháil i mo leabhair seoltaí"
+
+#: program/localization/ga_IE/labels.inc:sun
+msgid "Sun"
+msgstr "Do"
+
+#: program/localization/ga_IE/labels.inc:mon
+msgid "Mon"
+msgstr "Lu"
+
+#: program/localization/ga_IE/labels.inc:tue
+msgid "Tue"
+msgstr "Mh"
+
+#: program/localization/ga_IE/labels.inc:wed
+msgid "Wed"
+msgstr "Ch"
+
+#: program/localization/ga_IE/labels.inc:thu
+msgid "Thu"
+msgstr "Dé"
+
+#: program/localization/ga_IE/labels.inc:fri
+msgid "Fri"
+msgstr "Ao"
+
+#: program/localization/ga_IE/labels.inc:sat
+msgid "Sat"
+msgstr "Sa"
+
+#: program/localization/ga_IE/labels.inc:sunday
+msgid "Sunday"
+msgstr "Domhnach"
+
+#: program/localization/ga_IE/labels.inc:monday
+msgid "Monday"
+msgstr "An Luan"
+
+#: program/localization/ga_IE/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "An Mháirt"
+
+#: program/localization/ga_IE/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "An Chéadaoin"
+
+#: program/localization/ga_IE/labels.inc:thursday
+msgid "Thursday"
+msgstr "An Déardaoin"
+
+#: program/localization/ga_IE/labels.inc:friday
+msgid "Friday"
+msgstr "Aoine"
+
+#: program/localization/ga_IE/labels.inc:saturday
+msgid "Saturday"
+msgstr "An Satharn"
+
+#: program/localization/ga_IE/labels.inc:today
+msgid "Today"
+msgstr "Inniu"
+
+#: program/localization/ga_IE/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Seiceáil chun teachtaireacht nua"
+
+#: program/localization/ga_IE/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Scríobh teachtaireacht nua"
+
+#: program/localization/ga_IE/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Scríobh freagra chun an seolaí"
+
+#: program/localization/ga_IE/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Scríobh freagra chun an seolaí agus na faighteoir"
+
+#: program/localization/ga_IE/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Seol ar aghaidh an teachtaireacht"
+
+#: program/localization/ga_IE/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Chuir an teachtaireacht i mo bosca bruscair"
+
+#: program/localization/ga_IE/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Priontáil an teachtaireacht seo"
+
+#: program/localization/ga_IE/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Taispeáin an teachtaireacht roimhe seo"
+
+#: program/localization/ga_IE/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "Taispeáin an foireann roimhe seo"
+
+#: program/localization/ga_IE/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Taispeáin an cead teachtaireacht"
+
+#: program/localization/ga_IE/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "Taispeáin an cead foireann"
+
+#: program/localization/ga_IE/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Taispeáin an teachtaireacht ina dhiaidh sin"
+
+#: program/localization/ga_IE/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "Taispeáin an foireann ina dhiaidh sin"
+
+#: program/localization/ga_IE/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Taispeáin an teachtaireacht deireanach"
+
+#: program/localization/ga_IE/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "Taispeáin an foireann deireanach"
+
+#: program/localization/ga_IE/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Téigh ar ais go dtí an liosta teachtaireachta"
+
+#: program/localization/ga_IE/labels.inc:viewsource
+msgid "Show source"
+msgstr "Éiriú bunchód"
+
+#: program/localization/ga_IE/labels.inc:select
+msgid "Select"
+msgstr "Togh"
+
+#: program/localization/ga_IE/labels.inc:all
+msgid "All"
+msgstr "An uile"
+
+#: program/localization/ga_IE/labels.inc:none
+msgid "None"
+msgstr "Aon cheann"
+
+#: program/localization/ga_IE/labels.inc:unread
+msgid "Unread"
+msgstr "Na rudaí nach bhuil corraithe"
+
+#: program/localization/ga_IE/labels.inc:compact
+msgid "Compact"
+msgstr "Comhbhrúigh"
+
+#: program/localization/ga_IE/labels.inc:empty
+msgid "Empty"
+msgstr "Folmhaigh"
+
+#: program/localization/ga_IE/labels.inc:purge
+msgid "purge"
+msgstr "Purgaigh"
+
+#: program/localization/ga_IE/labels.inc:quota
+msgid "Disk usage"
+msgstr "Toilleadh diosca atá athláimhe"
+
+#: program/localization/ga_IE/labels.inc:unknown
+msgid "unknown"
+msgstr "gan aithne"
+
+#: program/localization/ga_IE/labels.inc:unlimited
+msgid "unlimited"
+msgstr "gan teorainn"
+
+#: program/localization/ga_IE/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Mearcuardaigh"
+
+#: program/localization/ga_IE/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Athshocraigh an cuardach"
+
+#: program/localization/ga_IE/labels.inc:compose
+msgid "Compose a message"
+msgstr "Scríobh teachtaireacht"
+
+#: program/localization/ga_IE/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Seol mo teachtaireacht láithreach bonn"
+
+#: program/localization/ga_IE/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Sábháil an dréachta seo"
+
+#: program/localization/ga_IE/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Suimigh Iatán"
+
+#: program/localization/ga_IE/labels.inc:charset
+msgid "Charset"
+msgstr "Foireann carachtar"
+
+#: program/localization/ga_IE/labels.inc:editortype
+msgid "Editor type"
+msgstr "Sort eagarthóir"
+
+#: program/localization/ga_IE/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Admháil léite"
+
+#: program/localization/ga_IE/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Fiosrú ar mo litriú"
+
+#: program/localization/ga_IE/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Athdhúisigh eagarthóireacht"
+
+#: program/localization/ga_IE/labels.inc:revertto
+msgid "Revert to"
+msgstr "Filleadh ar"
+
+#: program/localization/ga_IE/labels.inc:attachments
+msgid "Attachments"
+msgstr "Iatání"
+
+#: program/localization/ga_IE/labels.inc:upload
+msgid "Upload"
+msgstr "Aistriú suas"
+
+#: program/localization/ga_IE/labels.inc:close
+msgid "Close"
+msgstr "Dún"
+
+#: program/localization/ga_IE/labels.inc:low
+msgid "Low"
+msgstr "Íseal"
+
+#: program/localization/ga_IE/labels.inc:lowest
+msgid "Lowest"
+msgstr "Is Ísle"
+
+#: program/localization/ga_IE/labels.inc:normal
+msgid "Normal"
+msgstr "Gnách"
+
+#: program/localization/ga_IE/labels.inc:high
+msgid "High"
+msgstr "Ard"
+
+#: program/localization/ga_IE/labels.inc:highest
+msgid "Highest"
+msgstr "Is Airde"
+
+#: program/localization/ga_IE/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(Níl aon Ábhair)"
+
+#: program/localization/ga_IE/labels.inc:showimages
+msgid "Display images"
+msgstr "Taispeáin na híomhánna"
+
+#: program/localization/ga_IE/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/ga_IE/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Téacs amháin"
+
+#: program/localization/ga_IE/labels.inc:name
+msgid "Display Name"
+msgstr "Leasainm"
+
+#: program/localization/ga_IE/labels.inc:firstname
+msgid "First Name"
+msgstr "Ainm baiste"
+
+#: program/localization/ga_IE/labels.inc:surname
+msgid "Last Name"
+msgstr "Sloinne"
+
+#: program/localization/ga_IE/labels.inc:email
+msgid "Email"
+msgstr "Ríomhphost"
+
+#: program/localization/ga_IE/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Sábháil duine nua"
+
+#: program/localization/ga_IE/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Chuir chara in eagar"
+
+#: program/localization/ga_IE/labels.inc:edit
+msgid "Edit"
+msgstr "Athraigh"
+
+#: program/localization/ga_IE/labels.inc:cancel
+msgid "Cancel"
+msgstr "Cealaigh"
+
+#: program/localization/ga_IE/labels.inc:save
+msgid "Save"
+msgstr "Sábháil"
+
+#: program/localization/ga_IE/labels.inc:delete
+msgid "Delete"
+msgstr "Scrios"
+
+#: program/localization/ga_IE/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Scríobh carta teagmháil nua"
+
+#: program/localization/ga_IE/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Scrios na daoine seo"
+
+#: program/localization/ga_IE/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Scríobh teachtaireacht go"
+
+#: program/localization/ga_IE/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Daoine as $from to $to as $count"
+
+#: program/localization/ga_IE/labels.inc:print
+msgid "Print"
+msgstr "Priontáil"
+
+#: program/localization/ga_IE/labels.inc:export
+msgid "Export"
+msgstr "Easportáil"
+
+#: program/localization/ga_IE/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Taispeáin an foireann roimhe seo"
+
+#: program/localization/ga_IE/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Taispeáin an céad foireann"
+
+#: program/localization/ga_IE/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Taispeáin an foireann ina dhiaidh sin"
+
+#: program/localization/ga_IE/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Taispeáin an foireann deireanach"
+
+#: program/localization/ga_IE/labels.inc:groups
+msgid "Groups"
+msgstr "Grúpaí"
+
+#: program/localization/ga_IE/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Seoltaí Pearsanta"
+
+#: program/localization/ga_IE/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Socruithe chun"
+
+#: program/localization/ga_IE/labels.inc:preferences
+msgid "Preferences"
+msgstr "Tosaíocht"
+
+#: program/localization/ga_IE/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Tosaíocht Pearsanta"
+
+#: program/localization/ga_IE/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Athraigh tosaíocht pearsanta"
+
+#: program/localization/ga_IE/labels.inc:identities
+msgid "Identities"
+msgstr "Céannachtaí"
+
+#: program/localization/ga_IE/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Stiúir céannachtaí i cuntas seo"
+
+#: program/localization/ga_IE/labels.inc:newidentity
+msgid "New identity"
+msgstr "Céannacht nua"
+
+#: program/localization/ga_IE/labels.inc:newitem
+msgid "New item"
+msgstr "Mír nua"
+
+#: program/localization/ga_IE/labels.inc:edititem
+msgid "Edit item"
+msgstr "Athraigh mhír"
+
+#: program/localization/ga_IE/labels.inc:setdefault
+msgid "Set default"
+msgstr "Socraigh an réamhshocraithe"
+
+#: program/localization/ga_IE/labels.inc:language
+msgid "Language"
+msgstr "Teanga"
+
+#: program/localization/ga_IE/labels.inc:timezone
+msgid "Time zone"
+msgstr "Crios ama"
+
+#: program/localization/ga_IE/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Rónna in aghaidh gach leathanach"
+
+#: program/localization/ga_IE/labels.inc:signature
+msgid "Signature"
+msgstr "Mana clabhsúir"
+
+#: program/localization/ga_IE/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Laethúil um shamhradh"
+
+#: program/localization/ga_IE/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Scríobh teachtaireachta HTML"
+
+#: program/localization/ga_IE/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "Mana clabhsúir HTML"
+
+#: program/localization/ga_IE/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Taispeáin an pána réamhamharc"
+
+#: program/localization/ga_IE/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Sábháil dréachta go huathoibríoch"
+
+#: program/localization/ga_IE/labels.inc:never
+msgid "never"
+msgstr "riamh"
+
+#: program/localization/ga_IE/labels.inc:folder
+msgid "Folder"
+msgstr "Fillteán"
+
+#: program/localization/ga_IE/labels.inc:foldername
+msgid "Folder name"
+msgstr "Ainm fillteán"
+
+#: program/localization/ga_IE/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Síntiú"
+
+#: program/localization/ga_IE/labels.inc:create
+msgid "Create"
+msgstr "Cruthaigh"
+
+#: program/localization/ga_IE/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Cruthaigh fillteán nua"
+
+#: program/localization/ga_IE/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Stiúir na fillteán"
+
+#: program/localization/ga_IE/labels.inc:sortby
+msgid "Sort by"
+msgstr "Sórtáil trí"
+
+#: program/localization/ga_IE/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Sórtáil in ord méadaitheach"
+
+#: program/localization/ga_IE/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Sórtáil in ord neartaitheach"

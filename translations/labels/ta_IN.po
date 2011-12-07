@@ -1,0 +1,1141 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ta_IN/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ta_IN\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ta_IN/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "நல்வரவு"
+
+#: program/localization/ta_IN/labels.inc:username
+msgid "Username"
+msgstr "பயனர்"
+
+#: program/localization/ta_IN/labels.inc:password
+msgid "Password"
+msgstr "கடவுச்சொல்"
+
+#: program/localization/ta_IN/labels.inc:server
+msgid "Server"
+msgstr "சேவையகம்"
+
+#: program/localization/ta_IN/labels.inc:login
+msgid "Login"
+msgstr "நுழை"
+
+#: program/localization/ta_IN/labels.inc:logout
+msgid "Logout"
+msgstr "வெளியேறு"
+
+#: program/localization/ta_IN/labels.inc:mail
+msgid "Mail"
+msgstr "மின்னஞ்சல்"
+
+#: program/localization/ta_IN/labels.inc:settings
+msgid "Settings"
+msgstr "அமைப்புகள்"
+
+#: program/localization/ta_IN/labels.inc:addressbook
+msgid "Address Book"
+msgstr "தொடர்புகள்"
+
+#: program/localization/ta_IN/labels.inc:inbox
+msgid "Inbox"
+msgstr "அகப்பெட்டி"
+
+#: program/localization/ta_IN/labels.inc:drafts
+msgid "Drafts"
+msgstr "வரைவுகள்"
+
+#: program/localization/ta_IN/labels.inc:sent
+msgid "Sent"
+msgstr "அனுப்பிய அஞ்சல்"
+
+#: program/localization/ta_IN/labels.inc:trash
+msgid "Trash"
+msgstr "குப்பை"
+
+#: program/localization/ta_IN/labels.inc:junk
+msgid "Junk"
+msgstr "எரிதம்"
+
+#: program/localization/ta_IN/labels.inc:subject
+msgid "Subject"
+msgstr "தலைப்பு"
+
+#: program/localization/ta_IN/labels.inc:from
+msgid "From"
+msgstr "அனுப்புனர்"
+
+#: program/localization/ta_IN/labels.inc:to
+msgid "To"
+msgstr "பெறுனர்"
+
+#: program/localization/ta_IN/labels.inc:cc
+msgid "Cc"
+msgstr "நகல்"
+
+#: program/localization/ta_IN/labels.inc:bcc
+msgid "Bcc"
+msgstr "மறை நகல்"
+
+#: program/localization/ta_IN/labels.inc:replyto
+msgid "Reply-To"
+msgstr "பதிலளி"
+
+#: program/localization/ta_IN/labels.inc:date
+msgid "Date"
+msgstr "தேதி"
+
+#: program/localization/ta_IN/labels.inc:size
+msgid "Size"
+msgstr "அளவு"
+
+#: program/localization/ta_IN/labels.inc:priority
+msgid "Priority"
+msgstr "முக்கியத்துவம்"
+
+#: program/localization/ta_IN/labels.inc:organization
+msgid "Company"
+msgstr "நிறுவனம்"
+
+#: program/localization/ta_IN/labels.inc:reply-to
+msgid "reply-to"
+msgstr "பதிலளி"
+
+#: program/localization/ta_IN/labels.inc:mailboxlist
+#: program/localization/ta_IN/labels.inc:folders
+msgid "Folders"
+msgstr "அடைவுகள்"
+
+#: program/localization/ta_IN/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "செய்திகள் $countல் $from லிருந்து $to"
+"வரை"
+
+#: program/localization/ta_IN/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "$countல் $nr வது செய்தி"
+
+#: program/localization/ta_IN/labels.inc:moveto
+msgid "Move to..."
+msgstr "இதற்கு அனுப்பு..."
+
+#: program/localization/ta_IN/labels.inc:download
+msgid "Download"
+msgstr "பதிவிறக்கு"
+
+#: program/localization/ta_IN/labels.inc:filename
+msgid "File name"
+msgstr "கோப்பு பெயர்"
+
+#: program/localization/ta_IN/labels.inc:filesize
+msgid "File size"
+msgstr "கோப்பு அளவு"
+
+#: program/localization/ta_IN/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML காட்டு"
+
+#: program/localization/ta_IN/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML செய்தி"
+
+#: program/localization/ta_IN/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "நல்ல தேதி"
+
+#: program/localization/ta_IN/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "தொடர்புகளுக்கு"
+"சேர்க்கவும்"
+
+#: program/localization/ta_IN/labels.inc:sun
+msgid "Sun"
+msgstr "ஞாயிறு"
+
+#: program/localization/ta_IN/labels.inc:mon
+msgid "Mon"
+msgstr "திங்கள்"
+
+#: program/localization/ta_IN/labels.inc:tue
+msgid "Tue"
+msgstr "செவ்வாய்"
+
+#: program/localization/ta_IN/labels.inc:wed
+msgid "Wed"
+msgstr "புதன்"
+
+#: program/localization/ta_IN/labels.inc:thu
+msgid "Thu"
+msgstr "வியாழன்"
+
+#: program/localization/ta_IN/labels.inc:fri
+msgid "Fri"
+msgstr "வெள்ளி"
+
+#: program/localization/ta_IN/labels.inc:sat
+msgid "Sat"
+msgstr "சனி"
+
+#: program/localization/ta_IN/labels.inc:sunday
+msgid "Sunday"
+msgstr "ஞாயிறு"
+
+#: program/localization/ta_IN/labels.inc:monday
+msgid "Monday"
+msgstr "திங்கள்"
+
+#: program/localization/ta_IN/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "செவ்வாய்"
+
+#: program/localization/ta_IN/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "புதன்"
+
+#: program/localization/ta_IN/labels.inc:thursday
+msgid "Thursday"
+msgstr "வியாழன்"
+
+#: program/localization/ta_IN/labels.inc:friday
+msgid "Friday"
+msgstr "வெள்ளி"
+
+#: program/localization/ta_IN/labels.inc:saturday
+msgid "Saturday"
+msgstr "சனி"
+
+#: program/localization/ta_IN/labels.inc:jan
+msgid "Jan"
+msgstr "சனவரி"
+
+#: program/localization/ta_IN/labels.inc:feb
+msgid "Feb"
+msgstr "பிப்ரவரி"
+
+#: program/localization/ta_IN/labels.inc:mar
+msgid "Mar"
+msgstr "மார்ச்"
+
+#: program/localization/ta_IN/labels.inc:apr
+msgid "Apr"
+msgstr "ஏப்ரல்"
+
+#: program/localization/ta_IN/labels.inc:may
+#: program/localization/ta_IN/labels.inc:longmay
+msgid "May"
+msgstr "மே"
+
+#: program/localization/ta_IN/labels.inc:jun
+msgid "Jun"
+msgstr "சூன்"
+
+#: program/localization/ta_IN/labels.inc:jul
+msgid "Jul"
+msgstr "சூலை"
+
+#: program/localization/ta_IN/labels.inc:aug
+msgid "Aug"
+msgstr "ஆகஸ்ட்"
+
+#: program/localization/ta_IN/labels.inc:sep
+msgid "Sep"
+msgstr "செப்டம்பர்"
+
+#: program/localization/ta_IN/labels.inc:oct
+msgid "Oct"
+msgstr "அக்டோபர்"
+
+#: program/localization/ta_IN/labels.inc:nov
+msgid "Nov"
+msgstr "நவம்பர்"
+
+#: program/localization/ta_IN/labels.inc:dec
+msgid "Dec"
+msgstr "டிசம்பர்"
+
+#: program/localization/ta_IN/labels.inc:longjan
+msgid "January"
+msgstr "சனவரி"
+
+#: program/localization/ta_IN/labels.inc:longfeb
+msgid "February"
+msgstr "பிப்ரவரி"
+
+#: program/localization/ta_IN/labels.inc:longmar
+msgid "March"
+msgstr "மார்ச்"
+
+#: program/localization/ta_IN/labels.inc:longapr
+msgid "April"
+msgstr "ஏப்ரல்"
+
+#: program/localization/ta_IN/labels.inc:longjun
+msgid "June"
+msgstr "சூன்"
+
+#: program/localization/ta_IN/labels.inc:longjul
+msgid "July"
+msgstr "சூலை"
+
+#: program/localization/ta_IN/labels.inc:longaug
+msgid "August"
+msgstr "ஆகஸ்ட்"
+
+#: program/localization/ta_IN/labels.inc:longsep
+msgid "September"
+msgstr "செப்டம்பர்"
+
+#: program/localization/ta_IN/labels.inc:longoct
+msgid "October"
+msgstr "அக்டோபர்"
+
+#: program/localization/ta_IN/labels.inc:longnov
+msgid "November"
+msgstr "நவம்பர்"
+
+#: program/localization/ta_IN/labels.inc:longdec
+msgid "December"
+msgstr "டிசம்பர்"
+
+#: program/localization/ta_IN/labels.inc:today
+msgid "Today"
+msgstr "இன்று"
+
+#: program/localization/ta_IN/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "புது அஞ்சல்களை பார்க்கவும்"
+
+#: program/localization/ta_IN/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "புது அஞ்சல் எழுதவும்"
+
+#: program/localization/ta_IN/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "அனுப்புனருக்கு பதிலளி"
+
+#: program/localization/ta_IN/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "அனுப்புனர் மற்றும் எல்லா"
+"பெறுனர்களுக்கும் பதிலளி"
+
+#: program/localization/ta_IN/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "செய்தியை முன்அனுப்பு"
+
+#: program/localization/ta_IN/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "செய்தியை நீக்கு"
+
+#: program/localization/ta_IN/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "செய்தியை குப்பைக்கு"
+"நகர்த்து"
+
+#: program/localization/ta_IN/labels.inc:printmessage
+msgid "Print this message"
+msgstr "செய்தியை அச்சிடவும்"
+
+#: program/localization/ta_IN/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "முந்திய செய்தியை காட்டவும்"
+
+#: program/localization/ta_IN/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "முந்திய செய்திகள் குழுவை"
+"காட்டவும்"
+
+#: program/localization/ta_IN/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "முதல் செய்தியை காட்டவும்"
+
+#: program/localization/ta_IN/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "முதல் செய்திகள் குழுவை"
+"காட்டவும்"
+
+#: program/localization/ta_IN/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "அடுத்த செய்தியை காட்டு"
+
+#: program/localization/ta_IN/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "அடுத்த செய்திகள் குழுவை"
+"காட்டு"
+
+#: program/localization/ta_IN/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "கடைசி செய்தியை காட்டு"
+
+#: program/localization/ta_IN/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "கடைசி செய்திகள் குழுவை"
+"காட்டு"
+
+#: program/localization/ta_IN/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "செய்தி பட்டியலுக்கு"
+"செல்லவும்"
+
+#: program/localization/ta_IN/labels.inc:viewsource
+msgid "Show source"
+msgstr "மூலத்தை காட்டு"
+
+#: program/localization/ta_IN/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "செய்திகளை குறியிடு"
+
+#: program/localization/ta_IN/labels.inc:markread
+msgid "As read"
+msgstr "படித்ததாக குறியிடு"
+
+#: program/localization/ta_IN/labels.inc:markunread
+msgid "As unread"
+msgstr "படிக்காததாக குறியிடு"
+
+#: program/localization/ta_IN/labels.inc:markflagged
+msgid "As flagged"
+msgstr "நட்சத்திரமிட்டதாக"
+"குறியிடு"
+
+#: program/localization/ta_IN/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "நட்சத்திரமிடாததாக"
+"குறியிடு"
+
+#: program/localization/ta_IN/labels.inc:messageactions
+msgid "messageactions"
+msgstr "மேலும் செயல்கள்"
+
+#: program/localization/ta_IN/labels.inc:select
+msgid "Select"
+msgstr "தேர்ந்தெடு"
+
+#: program/localization/ta_IN/labels.inc:all
+msgid "All"
+msgstr "எல்லாம்"
+
+#: program/localization/ta_IN/labels.inc:none
+msgid "None"
+msgstr "எதுவுமில்லை"
+
+#: program/localization/ta_IN/labels.inc:unread
+msgid "Unread"
+msgstr "படிக்காதது"
+
+#: program/localization/ta_IN/labels.inc:flagged
+msgid "Flagged"
+msgstr "நட்சத்திரமிட்டது"
+
+#: program/localization/ta_IN/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "பதிலளிக்காதது"
+
+#: program/localization/ta_IN/labels.inc:deleted
+msgid "Deleted"
+msgstr "நீக்கியது"
+
+#: program/localization/ta_IN/labels.inc:invert
+msgid "Invert"
+msgstr "தலைகீழ்"
+
+#: program/localization/ta_IN/labels.inc:filter
+msgid "Filter"
+msgstr "வடிப்பான்"
+
+#: program/localization/ta_IN/labels.inc:compact
+msgid "Compact"
+msgstr "குறுகிய"
+
+#: program/localization/ta_IN/labels.inc:empty
+msgid "Empty"
+msgstr "காலி"
+
+#: program/localization/ta_IN/labels.inc:purge
+msgid "purge"
+msgstr "நீக்கு"
+
+#: program/localization/ta_IN/labels.inc:quota
+msgid "Disk usage"
+msgstr "பயன்பாட்டு அளவு"
+
+#: program/localization/ta_IN/labels.inc:unknown
+msgid "unknown"
+msgstr "தெரியாத"
+
+#: program/localization/ta_IN/labels.inc:unlimited
+msgid "unlimited"
+msgstr "அளவில்லா"
+
+#: program/localization/ta_IN/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "விரைவு தேடல்"
+
+#: program/localization/ta_IN/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "தேடலை மறுஅமை"
+
+#: program/localization/ta_IN/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "மாற்றிகளை தேடு"
+
+#: program/localization/ta_IN/labels.inc:msgtext
+msgid "Entire message"
+msgstr "முழு செய்தி"
+
+#: program/localization/ta_IN/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "புது சாளரத்தில் திற"
+
+#: program/localization/ta_IN/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "பதிவிறக்கு (.eml)"
+
+#: program/localization/ta_IN/labels.inc:compose
+msgid "Compose a message"
+msgstr "அஞ்சல் எழுது"
+
+#: program/localization/ta_IN/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "புதியதாக திருத்து"
+
+#: program/localization/ta_IN/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "இந்த வரைவை சேமி"
+
+#: program/localization/ta_IN/labels.inc:sendmessage
+msgid "Send now"
+msgstr "இப்போது அனுப்பு"
+
+#: program/localization/ta_IN/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "ஒரு கோப்பை இணைக்கவும்"
+
+#: program/localization/ta_IN/labels.inc:charset
+msgid "Charset"
+msgstr "எழுத்து குறிமுறை"
+
+#: program/localization/ta_IN/labels.inc:editortype
+msgid "Editor type"
+msgstr "திருத்தும் வகை"
+
+#: program/localization/ta_IN/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "திரும்பு சீட்டு"
+
+#: program/localization/ta_IN/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "எழுத்துப்பிழை சரிபார்"
+
+#: program/localization/ta_IN/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "திருத்துவதை தொடரவும்"
+
+#: program/localization/ta_IN/labels.inc:revertto
+msgid "Revert to"
+msgstr "முந்திய நிலைக்கு"
+"திரும்பவும்"
+
+#: program/localization/ta_IN/labels.inc:attachments
+msgid "Attachments"
+msgstr "கோப்பு இணைப்புகள்"
+
+#: program/localization/ta_IN/labels.inc:upload
+msgid "Upload"
+msgstr "பதிவேற்று"
+
+#: program/localization/ta_IN/labels.inc:close
+msgid "Close"
+msgstr "மூடு"
+
+#: program/localization/ta_IN/labels.inc:low
+msgid "Low"
+msgstr "குறைந்த"
+
+#: program/localization/ta_IN/labels.inc:lowest
+msgid "Lowest"
+msgstr "மிக குறைந்த"
+
+#: program/localization/ta_IN/labels.inc:normal
+msgid "Normal"
+msgstr "சாதாரண"
+
+#: program/localization/ta_IN/labels.inc:high
+msgid "High"
+msgstr "அதிக"
+
+#: program/localization/ta_IN/labels.inc:highest
+msgid "Highest"
+msgstr "மிக அதிக"
+
+#: program/localization/ta_IN/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(தலைப்பில்லா)"
+
+#: program/localization/ta_IN/labels.inc:showimages
+msgid "Display images"
+msgstr "படங்களை காட்டு"
+
+#: program/localization/ta_IN/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "$-னிடமிருந்து வரும் படங்களை"
+"காட்டு"
+
+#: program/localization/ta_IN/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/ta_IN/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "எளிய உரை"
+
+#: program/localization/ta_IN/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "அனுப்பிய அஞ்சலை இங்கு"
+"சேமிக்கவும்"
+
+#: program/localization/ta_IN/labels.inc:dontsave
+msgid "don't save"
+msgstr "சேமிக்காதே"
+
+#: program/localization/ta_IN/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "அனுமதிக்கப்படும் அதிகபட்ச"
+"கோப்பு அளவு $"
+
+#: program/localization/ta_IN/labels.inc:addcc
+msgid "Add Cc"
+msgstr "நகல் சேர்"
+
+#: program/localization/ta_IN/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "மறை நகல் சேர்"
+
+#: program/localization/ta_IN/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "பதிலளிக்க வேண்டியவர்களை"
+"சேர்"
+
+#: program/localization/ta_IN/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "இந்த செய்தியின் அனுப்புனர்"
+"இதை படித்தவுடன்"
+"அறிவிக்கும்படி கேட்டார்."
+"அறிவிக்க"
+"விரும்புகிறீர்களா ?"
+
+#: program/localization/ta_IN/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "திரும்பு சீட்டு (படி)"
+
+#: program/localization/ta_IN/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "இது உங்கள் செய்தியின்"
+"திரும்பு சீட்டு"
+
+#: program/localization/ta_IN/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "குறிப்பு: இந்த ஒப்புகை"
+"பெறுனரிடம் செய்தியை"
+"காட்டியதற்காக வருகிறது."
+"அவர் அதை படித்ததற்கு எந்த"
+"உத்திரவாதமும் இல்லை"
+
+#: program/localization/ta_IN/labels.inc:name
+msgid "Display Name"
+msgstr "காட்சி பெயர்"
+
+#: program/localization/ta_IN/labels.inc:firstname
+msgid "First Name"
+msgstr "முதற் பெயர்"
+
+#: program/localization/ta_IN/labels.inc:surname
+msgid "Last Name"
+msgstr "கடைசி பெயர்"
+
+#: program/localization/ta_IN/labels.inc:email
+msgid "Email"
+msgstr "மின்னஞ்சல்"
+
+#: program/localization/ta_IN/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "புது தொடர்பை சேர்"
+
+#: program/localization/ta_IN/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "தொடர்பை திருத்து"
+
+#: program/localization/ta_IN/labels.inc:edit
+msgid "Edit"
+msgstr "திருத்து"
+
+#: program/localization/ta_IN/labels.inc:cancel
+msgid "Cancel"
+msgstr "ரத்து"
+
+#: program/localization/ta_IN/labels.inc:save
+msgid "Save"
+msgstr "சேமி"
+
+#: program/localization/ta_IN/labels.inc:delete
+msgid "Delete"
+msgstr "நீக்கு"
+
+#: program/localization/ta_IN/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "புது தொடர்பு அட்டையை"
+"உருவாக்கு"
+
+#: program/localization/ta_IN/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "தேர்ந்தெடுத்த தொடர்புகளை"
+"நீக்கு"
+
+#: program/localization/ta_IN/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "இவர்-கு அஞ்சல் எழுது"
+
+#: program/localization/ta_IN/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "தொடர்புகள் $countல் $from"
+"லிருந்து $to வரை"
+
+#: program/localization/ta_IN/labels.inc:print
+msgid "Print"
+msgstr "அச்சிடு"
+
+#: program/localization/ta_IN/labels.inc:export
+msgid "Export"
+msgstr "ஏற்றுமதி"
+
+#: program/localization/ta_IN/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "தொடர்புகளை vCard வடிவத்தில்"
+"ஏற்றுமதி செய்யவும்"
+
+#: program/localization/ta_IN/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "முந்திய குழுவை காட்டு"
+
+#: program/localization/ta_IN/labels.inc:firstpage
+msgid "Show first page"
+msgstr "முதல் குழுவை காட்டு"
+
+#: program/localization/ta_IN/labels.inc:nextpage
+msgid "Show next page"
+msgstr "அடுத்த குழுவை காட்டு"
+
+#: program/localization/ta_IN/labels.inc:lastpage
+msgid "Show last page"
+msgstr "கடைசி குழுவை காட்டு"
+
+#: program/localization/ta_IN/labels.inc:groups
+msgid "Groups"
+msgstr "குழுக்கள்"
+
+#: program/localization/ta_IN/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "சுய முகவரி"
+
+#: program/localization/ta_IN/labels.inc:import
+msgid "Import"
+msgstr "இறக்குமதி"
+
+#: program/localization/ta_IN/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "தொடர்புகளை இறக்குமதி"
+"செய்யவும்"
+
+#: program/localization/ta_IN/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "இந்த கோப்பிலிருந்து"
+"இறக்குமதி செய்யவும்:"
+
+#: program/localization/ta_IN/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "எல்லா தொடர்புகளையும்"
+"மாற்றி அமை"
+
+#: program/localization/ta_IN/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "நீங்கள் ஏற்கனவே உள்ள"
+"தொடர்புகளை"
+"ஏற்றலாம்.<br/>நாங்கள்"
+"முகவரியை <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> தரவு"
+"வடிவத்தில் ஏற்றுவதை"
+"ஆதரிக்கிறோம்"
+
+#: program/localization/ta_IN/labels.inc:done
+msgid "Done"
+msgstr "முடிந்தது"
+
+#: program/localization/ta_IN/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "இதற்கான அமைப்புகள்"
+
+#: program/localization/ta_IN/labels.inc:preferences
+msgid "Preferences"
+msgstr "விருப்பங்கள்"
+
+#: program/localization/ta_IN/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "பயனர் விருப்பங்கள்"
+
+#: program/localization/ta_IN/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "பயனர் விருப்பங்களை"
+"திருத்து"
+
+#: program/localization/ta_IN/labels.inc:identities
+msgid "Identities"
+msgstr "அடையாளங்கள்"
+
+#: program/localization/ta_IN/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "இந்த கணக்கிற்கான"
+"அடையாளங்களை"
+"நிற்வாகிக்கவும்"
+
+#: program/localization/ta_IN/labels.inc:newidentity
+msgid "New identity"
+msgstr "புது அடையாளம்"
+
+#: program/localization/ta_IN/labels.inc:newitem
+msgid "New item"
+msgstr "புது உருப்படி"
+
+#: program/localization/ta_IN/labels.inc:edititem
+msgid "Edit item"
+msgstr "உருப்படியை திருத்து"
+
+#: program/localization/ta_IN/labels.inc:setdefault
+msgid "Set default"
+msgstr "இயல்பை அமை"
+
+#: program/localization/ta_IN/labels.inc:autodetect
+msgid "Auto"
+msgstr "தானியங்கி"
+
+#: program/localization/ta_IN/labels.inc:language
+msgid "Language"
+msgstr "மொழி"
+
+#: program/localization/ta_IN/labels.inc:timezone
+msgid "Time zone"
+msgstr "நேர மண்டலம்"
+
+#: program/localization/ta_IN/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "ஒரு பக்கத்திற்கான வரிகள்"
+
+#: program/localization/ta_IN/labels.inc:signature
+msgid "Signature"
+msgstr "கையொப்பம்"
+
+#: program/localization/ta_IN/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "பகல் ஒளி சேமிப்பு நேரம்"
+
+#: program/localization/ta_IN/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "HTML செய்திகளை எழுது"
+
+#: program/localization/ta_IN/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML கையொப்பம்"
+
+#: program/localization/ta_IN/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "முந்திய பாத்தியை காட்டு"
+
+#: program/localization/ta_IN/labels.inc:skin
+msgid "Interface skin"
+msgstr "முகப்பு தோற்றம்"
+
+#: program/localization/ta_IN/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "வெளியேறும் போது குப்பையை"
+"காலி செய்"
+
+#: program/localization/ta_IN/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "வெளியேறும் போது இன்பாக்ஸை"
+"குறுக்கவும்"
+
+#: program/localization/ta_IN/labels.inc:uisettings
+msgid "User Interface"
+msgstr "பயனர் முகப்பு"
+
+#: program/localization/ta_IN/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "சேவையகம் அமைப்புகள்"
+
+#: program/localization/ta_IN/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "அஞ்சல் பெட்டி காட்சி"
+
+#: program/localization/ta_IN/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "அனுப்புனர் அறிவிப்புகள்"
+
+#: program/localization/ta_IN/labels.inc:askuser
+msgid "ask me"
+msgstr "பயனரை கேள்"
+
+#: program/localization/ta_IN/labels.inc:autosend
+msgid "send receipt"
+msgstr "தானாக அனுப்பு"
+
+#: program/localization/ta_IN/labels.inc:ignore
+msgid "ignore"
+msgstr "தவிர்"
+
+#: program/localization/ta_IN/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "செய்தியை நீக்கும் போது"
+"படித்ததாக குறி"
+
+#: program/localization/ta_IN/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "நீக்குவதற்கு பதிலாக"
+"நீக்குவதாக நட்சத்திரமிடு"
+
+#: program/localization/ta_IN/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "நீக்கிய செய்திகளை காட்டாதே"
+
+#: program/localization/ta_IN/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "தொலை தூர துணை படங்களை"
+"காட்டு"
+
+#: program/localization/ta_IN/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "தெரிந்த"
+"அனுப்புனரிடமிருந்து"
+
+#: program/localization/ta_IN/labels.inc:always
+msgid "always"
+msgstr "எப்போதும்"
+
+#: program/localization/ta_IN/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "இணைத்த படங்களை"
+"செய்திகளுக்கு கீழே"
+"காட்டவும்"
+
+#: program/localization/ta_IN/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "தானாக வரைவுகளை சேமி"
+
+#: program/localization/ta_IN/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "ஒவ்வொரு $n"
+"நிமிடங்களுக்கும்"
+
+#: program/localization/ta_IN/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "புது செய்திக்கு இங்கு சரி"
+"பார்"
+
+#: program/localization/ta_IN/labels.inc:never
+msgid "never"
+msgstr "எப்போதுமில்லை"
+
+#: program/localization/ta_IN/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "செய்திகளை காட்டுகிறது"
+
+#: program/localization/ta_IN/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "செய்திகளை எழுதுகிறது"
+
+#: program/localization/ta_IN/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "இணைப்பு பெயர்கள்"
+
+#: program/localization/ta_IN/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "முழு RFC 2231 (Thunderbird)"
+
+#: program/localization/ta_IN/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/ta_IN/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "முழு RFC 2047 (மற்ற)"
+
+#: program/localization/ta_IN/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "மேம்பட்ட விருப்பங்கள்"
+
+#: program/localization/ta_IN/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "உலாவி சாளரத்தை புது"
+"செய்திக்காக கவனி"
+
+#: program/localization/ta_IN/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "புது செய்திகளுக்காக எல்லா"
+"அடைவுகளையும் சரிபார்"
+
+#: program/localization/ta_IN/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "செய்தியை நீக்கு/நகர் பிறகு"
+"அடுத்த செய்தியை காட்டு"
+
+#: program/localization/ta_IN/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "முக்கிய விருப்பங்கள்"
+
+#: program/localization/ta_IN/labels.inc:section
+msgid "Section"
+msgstr "பிரிவு"
+
+#: program/localization/ta_IN/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "பராமரிப்பு"
+
+#: program/localization/ta_IN/labels.inc:newmessage
+msgid "New Message"
+msgstr "புது செய்தி"
+
+#: program/localization/ta_IN/labels.inc:listoptions
+msgid "List Options"
+msgstr "விருப்பங்களை பட்டியலிடு"
+
+#: program/localization/ta_IN/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "கையொப்ப விருப்பங்கள்"
+
+#: program/localization/ta_IN/labels.inc:whenreplying
+msgid "When replying"
+msgstr "பதிலளிக்கும் போது"
+
+#: program/localization/ta_IN/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "புது செய்தியை அசலின் மேல்"
+"துவக்கு"
+
+#: program/localization/ta_IN/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "புது செய்தியை அசலின் கீழ்"
+"துவக்கு"
+
+#: program/localization/ta_IN/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "பதிலளிக்கும் போது அசல்"
+"கையெழுத்தை"
+"செய்தியிலிருந்து"
+"நீக்கவும்"
+
+#: program/localization/ta_IN/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "தானாக கையொப்பத்தை சேர்"
+
+#: program/localization/ta_IN/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "புது செய்தி மட்டும்"
+
+#: program/localization/ta_IN/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "பதிலளிப்பு முன்அனுப்பு"
+"மட்டும்"
+
+#: program/localization/ta_IN/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "பதிலளிக்கும் போதும்"
+"முன்அனுப்பும் போதும்"
+"கையோப்பமிடு"
+
+#: program/localization/ta_IN/labels.inc:belowquote
+msgid "below the quote"
+msgstr "மேற்கோளுக்கு கீழே"
+
+#: program/localization/ta_IN/labels.inc:abovequote
+msgid "above the quote"
+msgstr "மேற்கோளுக்கு மேலே"
+
+#: program/localization/ta_IN/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "கையோப்பமிடு"
+
+#: program/localization/ta_IN/labels.inc:folder
+msgid "Folder"
+msgstr "அடைவு"
+
+#: program/localization/ta_IN/labels.inc:foldername
+msgid "Folder name"
+msgstr "அடைவு பெயர்"
+
+#: program/localization/ta_IN/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "சந்தா"
+
+#: program/localization/ta_IN/labels.inc:messagecount
+msgid "Messages"
+msgstr "செய்திகள்"
+
+#: program/localization/ta_IN/labels.inc:create
+msgid "Create"
+msgstr "உருவாக்கு"
+
+#: program/localization/ta_IN/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "புது அடைவு உருவாக்கு"
+
+#: program/localization/ta_IN/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "அடைவுகளை நிற்வகி"
+
+#: program/localization/ta_IN/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "சிறப்பு அடைவுகள்"
+
+#: program/localization/ta_IN/labels.inc:sortby
+msgid "Sort by"
+msgstr "வாரியாக அடுக்கு"
+
+#: program/localization/ta_IN/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "ஏறு வரிசையாக அடுக்கு"
+
+#: program/localization/ta_IN/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "இறங்கு வரிசையாக அடுக்கு"
+
+#: program/localization/ta_IN/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/ta_IN/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/ta_IN/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/ta_IN/labels.inc:GB
+msgid "GB"
+msgstr "GB"

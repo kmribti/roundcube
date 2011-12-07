@@ -1,0 +1,515 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/id_ID/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: id_ID\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/id_ID/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Gagal masuk"
+
+#: program/localization/id_ID/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Browser Anda tidak menerima cookies"
+
+#: program/localization/id_ID/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Session Anda invalid atau kadaluwarsa"
+
+#: program/localization/id_ID/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Koneksi ke IMAP server gagal"
+
+#: program/localization/id_ID/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Server Error!"
+
+#: program/localization/id_ID/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Server Error: $msg"
+
+#: program/localization/id_ID/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Basis data Error!"
+
+#: program/localization/id_ID/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Tidak bisa melakukan operasi. Folder hanya bisa dibaca"
+
+#: program/localization/id_ID/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Tidak bisa melakukan operasi. Ijin ditolak"
+
+#: program/localization/id_ID/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Permintaan tidak valid! Tidak ada data yang tersimpan."
+
+#: program/localization/id_ID/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Surat tidak ditemukan di kotak masuk ini"
+
+#: program/localization/id_ID/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Anda berhasil mengakhiri session. Selamat Tinggal!"
+
+#: program/localization/id_ID/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Kotak masuk kosong"
+
+#: program/localization/id_ID/messages.inc:loading
+msgid "Loading..."
+msgstr "Memuat..."
+
+#: program/localization/id_ID/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Menggungah berkas ..."
+
+#: program/localization/id_ID/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Mengunggah berkas-berkas..."
+
+#: program/localization/id_ID/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Memuat data..."
+
+#: program/localization/id_ID/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Memeriksa pesan baru..."
+
+#: program/localization/id_ID/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Mengirim pesan..."
+
+#: program/localization/id_ID/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Pesan terkirim"
+
+#: program/localization/id_ID/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Menyimpan pesan..."
+
+#: program/localization/id_ID/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Menyimpan pesan ke daftar tunggu"
+
+#: program/localization/id_ID/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Berhasil disimpan"
+
+#: program/localization/id_ID/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Kontak berhasil ditambahkan ke buku alamat"
+
+#: program/localization/id_ID/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Kontak dengan alamat e-mail ini sudah ada"
+
+#: program/localization/id_ID/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Untuk melindungi privasi Anda, gambar-gambar diluar server diblok pada"
+"pesan ini."
+
+#: program/localization/id_ID/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Pesan ini terenkripsi dan tidak bisa ditampilkan. Maaf!"
+
+#: program/localization/id_ID/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Kontak tidak ditemukan"
+
+#: program/localization/id_ID/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Kontak yang diminta tidak ditemukan"
+
+#: program/localization/id_ID/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Pengiriman pesan gagal"
+
+#: program/localization/id_ID/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Mohon tunggu $sec detik sebelum mengirim pesan ini"
+
+#: program/localization/id_ID/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Error ketika menyimpan pesan terkirim"
+
+#: program/localization/id_ID/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Error ketika menyimpan"
+
+#: program/localization/id_ID/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Pesan tidak bisa dipindahkan"
+
+#: program/localization/id_ID/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Pesan tidak dapat disalin"
+
+#: program/localization/id_ID/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Pesan tidak bisa dihapus"
+
+#: program/localization/id_ID/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Tidak dapat menandai pesan"
+
+#: program/localization/id_ID/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Apakah anda yakin untuk menghapus kontak terpilih?"
+
+#: program/localization/id_ID/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Yakin menghapus pesan terpilih?"
+
+#: program/localization/id_ID/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Apakah anda benar-benar ingin menghapus map ini?"
+
+#: program/localization/id_ID/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Yakin menghapus semua pesan pada map ini?"
+
+#: program/localization/id_ID/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Menghapus map..."
+
+#: program/localization/id_ID/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Memindahkan map..."
+
+#: program/localization/id_ID/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Melanggankan folder"
+
+#: program/localization/id_ID/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Berhenti melanggankan folder"
+
+#: program/localization/id_ID/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Isian tidak terisi semua"
+
+#: program/localization/id_ID/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Tolong masukkan alamat email yang valid"
+
+#: program/localization/id_ID/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Tolong masukkan nama"
+
+#: program/localization/id_ID/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Tolong masukkan ukuran halaman"
+
+#: program/localization/id_ID/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Mohon memasukkan alamat e-mail pengirim"
+
+#: program/localization/id_ID/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Tolong masukkan sedikitnya satu penerima"
+
+#: program/localization/id_ID/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "\"Judul\" kosong. Isi judul sekarang?"
+
+#: program/localization/id_ID/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Kirim pesan ini tanpa teks?"
+
+#: program/localization/id_ID/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Pesan belum terkirim. Buang pesan Anda?"
+
+#: program/localization/id_ID/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Tolong pilih server LDAP untuk pencarian"
+
+#: program/localization/id_ID/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Kontak kosong"
+
+#: program/localization/id_ID/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Tolong masukkan nama kontak atau alamat email"
+
+#: program/localization/id_ID/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Proses upload belum selesai. Silahkan tunggu atau batalkan proses upload"
+
+#: program/localization/id_ID/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr pesan ditemukan"
+
+#: program/localization/id_ID/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Pencarian hasilnya nihil"
+
+#: program/localization/id_ID/messages.inc:searching
+msgid "Searching..."
+msgstr "Mencari..."
+
+#: program/localization/id_ID/messages.inc:checking
+msgid "Checking..."
+msgstr "Memeriksa..."
+
+#: program/localization/id_ID/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Tidak ditemukan kesalahan ejaan"
+
+#: program/localization/id_ID/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Map berhasil dihapus"
+
+#: program/localization/id_ID/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Folder berhasil dilanggankan"
+
+#: program/localization/id_ID/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Folder berhasil berhenti dilanggankan"
+
+#: program/localization/id_ID/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Folder telah berhasil dikosongkan"
+
+#: program/localization/id_ID/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Folder berhasil berhenti dirampingkan"
+
+#: program/localization/id_ID/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Berhasil dihapus"
+
+#: program/localization/id_ID/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Mengembalikan pesan ke format awal..."
+
+#: program/localization/id_ID/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Tidak dapat mengambil pesan dari server"
+
+#: program/localization/id_ID/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Gagal mengunggah berkas"
+
+#: program/localization/id_ID/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Berkas terunggah mencapai ukuran maksimal dari $size"
+
+#: program/localization/id_ID/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Berhasil menyalin $nr alamat"
+
+#: program/localization/id_ID/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Tidak bisa menyalin alamat manapun"
+
+#: program/localization/id_ID/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Sumber dari alamat ini hanya dapat dibaca"
+
+#: program/localization/id_ID/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Tidak bisa menyimpan alamat kontak"
+
+#: program/localization/id_ID/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Memindahkan pesan..."
+
+#: program/localization/id_ID/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Menyalin pesan..."
+
+#: program/localization/id_ID/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Menghapus pesan..."
+
+#: program/localization/id_ID/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Menandai Pesan..."
+
+#: program/localization/id_ID/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Berhasil mengirim pemberitahuan tanda terima telah terbaca"
+
+#: program/localization/id_ID/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Tidak dapat mengirim tanda terima"
+
+#: program/localization/id_ID/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Anda tidak bida mengapus identitas ini, ini identitas yang terakhir"
+
+#: program/localization/id_ID/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Nama folder mengandung karakter terlarang"
+
+#: program/localization/id_ID/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Mohon pilih sebuah berkas untuk diunggah"
+
+#: program/localization/id_ID/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Buku alamat terpilih tidak dapat ditulisi"
+
+#: program/localization/id_ID/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Berhasil menambahkan kontak kedalam grup ini"
+
+#: program/localization/id_ID/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Berhasil menghapus kontak dari grup ini"
+
+#: program/localization/id_ID/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Sedang mengimpor, harap menunggu..."
+
+#: program/localization/id_ID/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Gagal mengimpor! Berkas terunggah bukan berkas vCard yang valid"
+
+#: program/localization/id_ID/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Berhasil mengimpor $inserted kontak, $skipped entri"
+"dilewati</b>:<p><em>$names</em></p>"
+
+#: program/localization/id_ID/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>$skipped entri yang sudah ada dilewatkan</b>"
+
+#: program/localization/id_ID/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Operasi tidak diperbolehkan!"
+
+#: program/localization/id_ID/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "kekurangan alamat e-mail pada identitas terpilih"
+
+#: program/localization/id_ID/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Beralih pada editor teks murni akan mengakibatkan semua pemformatan teks"
+"hilang. Lanjutkan?"
+
+#: program/localization/id_ID/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Terjadi sebuah kesalahan pengaturan. Segera hubungi administrator Anda. <b>"
+"Pesan Anda tidak bisa terkirim.</b>"
+
+#: program/localization/id_ID/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP Error ($code): Koneksi ke server gagal"
+
+#: program/localization/id_ID/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP Error ($code): Otentifikasi gagal"
+
+#: program/localization/id_ID/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP Error ($code): Gagal mengatur pengirim \"$from\" ($msg)"
+
+#: program/localization/id_ID/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP Error ($code): Gagal menambah penerima \"$to\" ($msg)"
+
+#: program/localization/id_ID/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP Error ($code): Tidak dapat menguraikan daftar penerima"
+
+#: program/localization/id_ID/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "SMTP Error: Tidak ada dukungan untuk pemberitahuan status terkirim"
+
+#: program/localization/id_ID/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP Error : $msg"
+
+#: program/localization/id_ID/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Alamat e-mail salah: $email"
+
+#: program/localization/id_ID/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Terlalu banyak penerima. Batas maksimal penerima adalah $max"
+
+#: program/localization/id_ID/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Jumlah grup melebihi jumlah maksimum $max"
+
+#: program/localization/id_ID/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Terjadi kesalahan internal. Silahkan diulang kembali"
+
+#: program/localization/id_ID/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Kontak tidak bisa dihapus"
+
+#: program/localization/id_ID/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Kontak berhasil dihapus"
+
+#: program/localization/id_ID/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Grup berhasil dihapus"
+
+#: program/localization/id_ID/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Grup berhasil dinamai kembali"
+
+#: program/localization/id_ID/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Grub berhasil dibuat"
+
+#: program/localization/id_ID/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Pesan berhasil dihapus"
+
+#: program/localization/id_ID/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Pesan berhasil dipindahkan"
+
+#: program/localization/id_ID/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Pesan berhasil disalin"
+
+#: program/localization/id_ID/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Pesan berhasil ditandai"
+
+#: program/localization/id_ID/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Masukkan setidaknya $min karakter untuk swaparipurna"
+
+#: program/localization/id_ID/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Nama tidak boleh kosong"
+
+#: program/localization/id_ID/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Nama terlalu panjang"
+
+#: program/localization/id_ID/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Folder berhasil diperbarui"
+
+#: program/localization/id_ID/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Folder berhasil dibuat"
+
+#: program/localization/id_ID/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Bukan format gambar yang valid"

@@ -1,0 +1,1642 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ar_SA/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ar_SA\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ar_SA/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "مرحباً بكم في $product"
+
+#: program/localization/ar_SA/labels.inc:username
+msgid "Username"
+msgstr "اسم المستخدم"
+
+#: program/localization/ar_SA/labels.inc:password
+msgid "Password"
+msgstr "كلمة المرور"
+
+#: program/localization/ar_SA/labels.inc:server
+msgid "Server"
+msgstr "الخادم"
+
+#: program/localization/ar_SA/labels.inc:login
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: program/localization/ar_SA/labels.inc:logout
+msgid "Logout"
+msgstr "تسجيل الخروج"
+
+#: program/localization/ar_SA/labels.inc:mail
+msgid "Mail"
+msgstr "البريد"
+
+#: program/localization/ar_SA/labels.inc:settings
+msgid "Settings"
+msgstr "الإعدادات الشخصية"
+
+#: program/localization/ar_SA/labels.inc:addressbook
+msgid "Address Book"
+msgstr "دفتر العناوين"
+
+#: program/localization/ar_SA/labels.inc:inbox
+msgid "Inbox"
+msgstr "الوارد"
+
+#: program/localization/ar_SA/labels.inc:drafts
+msgid "Drafts"
+msgstr "المسودات"
+
+#: program/localization/ar_SA/labels.inc:sent
+msgid "Sent"
+msgstr "المرسل"
+
+#: program/localization/ar_SA/labels.inc:trash
+msgid "Trash"
+msgstr "المهملات"
+
+#: program/localization/ar_SA/labels.inc:junk
+msgid "Junk"
+msgstr "غير المرغوب"
+
+#: program/localization/ar_SA/labels.inc:subject
+msgid "Subject"
+msgstr "الموضوع"
+
+#: program/localization/ar_SA/labels.inc:from
+msgid "From"
+msgstr "المرسل"
+
+#: program/localization/ar_SA/labels.inc:to
+msgid "To"
+msgstr "المستقبل"
+
+#: program/localization/ar_SA/labels.inc:cc
+msgid "Cc"
+msgstr "نسخة"
+
+#: program/localization/ar_SA/labels.inc:bcc
+msgid "Bcc"
+msgstr "نسخة مخفية"
+
+#: program/localization/ar_SA/labels.inc:replyto
+msgid "Reply-To"
+msgstr "الرد إلى"
+
+#: program/localization/ar_SA/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Mail-Followup-To"
+
+#: program/localization/ar_SA/labels.inc:date
+msgid "Date"
+msgstr "التاريخ"
+
+#: program/localization/ar_SA/labels.inc:size
+msgid "Size"
+msgstr "الحجم"
+
+#: program/localization/ar_SA/labels.inc:priority
+msgid "Priority"
+msgstr "الأولوية"
+
+#: program/localization/ar_SA/labels.inc:organization
+msgid "Company"
+msgstr "المنظمة"
+
+#: program/localization/ar_SA/labels.inc:readstatus
+msgid "Read status"
+msgstr "حالة القراءة"
+
+#: program/localization/ar_SA/labels.inc:mailboxlist
+#: program/localization/ar_SA/labels.inc:folders
+msgid "Folders"
+msgstr "مجلدات"
+
+#: program/localization/ar_SA/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "الرسالة $from إلى $to من مجموع $count"
+
+#: program/localization/ar_SA/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "جهات الإتصال $from إلى $to من مجموع $count"
+
+#: program/localization/ar_SA/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "الرسالة $nr من $count"
+
+#: program/localization/ar_SA/labels.inc:copy
+msgid "Copy"
+msgstr "نسخ"
+
+#: program/localization/ar_SA/labels.inc:move
+msgid "Move"
+msgstr "نقل"
+
+#: program/localization/ar_SA/labels.inc:moveto
+msgid "Move to..."
+msgstr "نقل إلى..."
+
+#: program/localization/ar_SA/labels.inc:download
+msgid "Download"
+msgstr "تنزيل"
+
+#: program/localization/ar_SA/labels.inc:filename
+msgid "File name"
+msgstr "اسم الملف"
+
+#: program/localization/ar_SA/labels.inc:filesize
+msgid "File size"
+msgstr "حجم الملف"
+
+#: program/localization/ar_SA/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "إضافة إلى دفتر العناوين"
+
+#: program/localization/ar_SA/labels.inc:sun
+msgid "Sun"
+msgstr "أحد"
+
+#: program/localization/ar_SA/labels.inc:mon
+msgid "Mon"
+msgstr "إثنين"
+
+#: program/localization/ar_SA/labels.inc:tue
+msgid "Tue"
+msgstr "ثلاثاء"
+
+#: program/localization/ar_SA/labels.inc:wed
+msgid "Wed"
+msgstr "أربعاء"
+
+#: program/localization/ar_SA/labels.inc:thu
+msgid "Thu"
+msgstr "خميس"
+
+#: program/localization/ar_SA/labels.inc:fri
+msgid "Fri"
+msgstr "جمعة"
+
+#: program/localization/ar_SA/labels.inc:sat
+msgid "Sat"
+msgstr "سبت"
+
+#: program/localization/ar_SA/labels.inc:sunday
+msgid "Sunday"
+msgstr "الأحد"
+
+#: program/localization/ar_SA/labels.inc:monday
+msgid "Monday"
+msgstr "الإثنين"
+
+#: program/localization/ar_SA/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "الثلاثاء"
+
+#: program/localization/ar_SA/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "الأربعاء"
+
+#: program/localization/ar_SA/labels.inc:thursday
+msgid "Thursday"
+msgstr "الخميس"
+
+#: program/localization/ar_SA/labels.inc:friday
+msgid "Friday"
+msgstr "الجمعة"
+
+#: program/localization/ar_SA/labels.inc:saturday
+msgid "Saturday"
+msgstr "السبت"
+
+#: program/localization/ar_SA/labels.inc:jan
+msgid "Jan"
+msgstr "يناير"
+
+#: program/localization/ar_SA/labels.inc:feb
+msgid "Feb"
+msgstr "فبراير"
+
+#: program/localization/ar_SA/labels.inc:mar
+msgid "Mar"
+msgstr "مارس"
+
+#: program/localization/ar_SA/labels.inc:apr
+msgid "Apr"
+msgstr "أبريل"
+
+#: program/localization/ar_SA/labels.inc:may
+#: program/localization/ar_SA/labels.inc:longmay
+msgid "May"
+msgstr "مايو"
+
+#: program/localization/ar_SA/labels.inc:jun
+msgid "Jun"
+msgstr "يونيو"
+
+#: program/localization/ar_SA/labels.inc:jul
+msgid "Jul"
+msgstr "يوليو"
+
+#: program/localization/ar_SA/labels.inc:aug
+msgid "Aug"
+msgstr "أغسطس"
+
+#: program/localization/ar_SA/labels.inc:sep
+msgid "Sep"
+msgstr "سبتمبر"
+
+#: program/localization/ar_SA/labels.inc:oct
+msgid "Oct"
+msgstr "أكتوبر"
+
+#: program/localization/ar_SA/labels.inc:nov
+msgid "Nov"
+msgstr "نوفمبر"
+
+#: program/localization/ar_SA/labels.inc:dec
+msgid "Dec"
+msgstr "ديسمبر"
+
+#: program/localization/ar_SA/labels.inc:longjan
+msgid "January"
+msgstr "يناير"
+
+#: program/localization/ar_SA/labels.inc:longfeb
+msgid "February"
+msgstr "فبراير"
+
+#: program/localization/ar_SA/labels.inc:longmar
+msgid "March"
+msgstr "مارس"
+
+#: program/localization/ar_SA/labels.inc:longapr
+msgid "April"
+msgstr "إبريل"
+
+#: program/localization/ar_SA/labels.inc:longjun
+msgid "June"
+msgstr "يونيو"
+
+#: program/localization/ar_SA/labels.inc:longjul
+msgid "July"
+msgstr "يوليو"
+
+#: program/localization/ar_SA/labels.inc:longaug
+msgid "August"
+msgstr "أغسطس"
+
+#: program/localization/ar_SA/labels.inc:longsep
+msgid "September"
+msgstr "سبتمبر"
+
+#: program/localization/ar_SA/labels.inc:longoct
+msgid "October"
+msgstr "أكتوبر"
+
+#: program/localization/ar_SA/labels.inc:longnov
+msgid "November"
+msgstr "نوفمبر"
+
+#: program/localization/ar_SA/labels.inc:longdec
+msgid "December"
+msgstr "ديسمبر"
+
+#: program/localization/ar_SA/labels.inc:today
+msgid "Today"
+msgstr "اليوم"
+
+#: program/localization/ar_SA/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "التحقق من وجود رسائل جديدة"
+
+#: program/localization/ar_SA/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "إنشاء رسالة جديدة"
+
+#: program/localization/ar_SA/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "الرد على الرسالة"
+
+#: program/localization/ar_SA/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "الرد على المرسل وجميع مستقبلي الرسالة"
+
+#: program/localization/ar_SA/labels.inc:replyall
+msgid "Reply all"
+msgstr "الرد على الجميع"
+
+#: program/localization/ar_SA/labels.inc:replylist
+msgid "Reply list"
+msgstr "الرد على القائمة"
+
+#: program/localization/ar_SA/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "تمرير الرسالة ضمنياً"
+
+#: program/localization/ar_SA/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "تمرير الرسالة كمرفق"
+
+#: program/localization/ar_SA/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "تمرير الرسالة"
+
+#: program/localization/ar_SA/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "حذف الرسالة إلى المهملات"
+
+#: program/localization/ar_SA/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "انقل الرسالة إلى سلة المهملات"
+
+#: program/localization/ar_SA/labels.inc:printmessage
+msgid "Print this message"
+msgstr "طباعة هذه الرسالة"
+
+#: program/localization/ar_SA/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "عرض الرسالة السابقة"
+
+#: program/localization/ar_SA/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "عرض الرسالة الأولى"
+
+#: program/localization/ar_SA/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "عرض الرسالة التالية"
+
+#: program/localization/ar_SA/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "عرض الرسالة الأخيرة"
+
+#: program/localization/ar_SA/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "العودة إلى لائحة الرسائل"
+
+#: program/localization/ar_SA/labels.inc:viewsource
+msgid "Show source"
+msgstr "إظهار المصدر"
+
+#: program/localization/ar_SA/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "وسم الرسالة"
+
+#: program/localization/ar_SA/labels.inc:markread
+msgid "As read"
+msgstr "كمقروءة"
+
+#: program/localization/ar_SA/labels.inc:markunread
+msgid "As unread"
+msgstr "كغير مقروءة"
+
+#: program/localization/ar_SA/labels.inc:markflagged
+msgid "As flagged"
+msgstr "كموْسومة"
+
+#: program/localization/ar_SA/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "كغير موْسومة"
+
+#: program/localization/ar_SA/labels.inc:moreactions
+msgid "More actions..."
+msgstr "إجراءات إضافية..."
+
+#: program/localization/ar_SA/labels.inc:select
+msgid "Select"
+msgstr "تحديد"
+
+#: program/localization/ar_SA/labels.inc:all
+msgid "All"
+msgstr "الكل"
+
+#: program/localization/ar_SA/labels.inc:none
+#: program/localization/ar_SA/labels.inc:nonesort
+msgid "None"
+msgstr "لاشيء"
+
+#: program/localization/ar_SA/labels.inc:currpage
+msgid "Current page"
+msgstr "الصفحة الحالية"
+
+#: program/localization/ar_SA/labels.inc:unread
+msgid "Unread"
+msgstr "غير المقروءة"
+
+#: program/localization/ar_SA/labels.inc:flagged
+msgid "Flagged"
+msgstr "موسوم"
+
+#: program/localization/ar_SA/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "بلا رد"
+
+#: program/localization/ar_SA/labels.inc:deleted
+msgid "Deleted"
+msgstr "محذوف"
+
+#: program/localization/ar_SA/labels.inc:invert
+msgid "Invert"
+msgstr "عكس"
+
+#: program/localization/ar_SA/labels.inc:filter
+msgid "Filter"
+msgstr "تصفية"
+
+#: program/localization/ar_SA/labels.inc:list
+msgid "List"
+msgstr "قائمة"
+
+#: program/localization/ar_SA/labels.inc:threads
+msgid "Threads"
+msgstr "تتابعات"
+
+#: program/localization/ar_SA/labels.inc:expand-all
+msgid "Expand All"
+msgstr "إظهار الكل"
+
+#: program/localization/ar_SA/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "إظهار الغير مقروءة"
+
+#: program/localization/ar_SA/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "ضمّ الكل"
+
+#: program/localization/ar_SA/labels.inc:threaded
+msgid "Threaded"
+msgstr "متتابع"
+
+#: program/localization/ar_SA/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "إظهار تتابعات الرسائل"
+
+#: program/localization/ar_SA/labels.inc:do_expand
+msgid "all threads"
+msgstr "جميع التتابعات"
+
+#: program/localization/ar_SA/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "فقط مع الرسائل الغير مقروءة"
+
+#: program/localization/ar_SA/labels.inc:fromto
+msgid "From/To"
+msgstr "المرسل/المستلم"
+
+#: program/localization/ar_SA/labels.inc:flag
+msgid "Flag"
+msgstr "وسم"
+
+#: program/localization/ar_SA/labels.inc:attachment
+msgid "Attachment"
+msgstr "مرفق"
+
+#: program/localization/ar_SA/labels.inc:sentdate
+msgid "Sent date"
+msgstr "تاريخ إرسالها"
+
+#: program/localization/ar_SA/labels.inc:arrival
+msgid "Arrival date"
+msgstr "تاريخ وصولها"
+
+#: program/localization/ar_SA/labels.inc:asc
+msgid "ascending"
+msgstr "تصاعدي"
+
+#: program/localization/ar_SA/labels.inc:desc
+msgid "descending"
+msgstr "تنازلي"
+
+#: program/localization/ar_SA/labels.inc:listcolumns
+msgid "List columns"
+msgstr "أعمدة السرد"
+
+#: program/localization/ar_SA/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "أعمدة الترتيب"
+
+#: program/localization/ar_SA/labels.inc:listorder
+msgid "Sorting order"
+msgstr "طريقة الترتيب"
+
+#: program/localization/ar_SA/labels.inc:listmode
+msgid "List view mode"
+msgstr "وضع طريقة السرد"
+
+#: program/localization/ar_SA/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "إجراءات المجلد..."
+
+#: program/localization/ar_SA/labels.inc:compact
+msgid "Compact"
+msgstr "ضغط"
+
+#: program/localization/ar_SA/labels.inc:empty
+msgid "Empty"
+msgstr "تفريغ"
+
+#: program/localization/ar_SA/labels.inc:quota
+msgid "Disk usage"
+msgstr "المساحة المستخدمة"
+
+#: program/localization/ar_SA/labels.inc:unknown
+msgid "unknown"
+msgstr "مجهول"
+
+#: program/localization/ar_SA/labels.inc:unlimited
+msgid "unlimited"
+msgstr "غير محدود"
+
+#: program/localization/ar_SA/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "البحث السريع"
+
+#: program/localization/ar_SA/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "استعادة البحث للافتراضي"
+
+#: program/localization/ar_SA/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "أماكن البحث"
+
+#: program/localization/ar_SA/labels.inc:msgtext
+msgid "Entire message"
+msgstr "كامل الرسالة"
+
+#: program/localization/ar_SA/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "افتح في نافذة جديدة"
+
+#: program/localization/ar_SA/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "تنزيل (.eml)"
+
+#: program/localization/ar_SA/labels.inc:compose
+msgid "Compose a message"
+msgstr "إنشاء رسالة"
+
+#: program/localization/ar_SA/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "تعديل كجديد"
+
+#: program/localization/ar_SA/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "حفظ هذه المسودة"
+
+#: program/localization/ar_SA/labels.inc:sendmessage
+msgid "Send now"
+msgstr "إرسال الرسالة الآن"
+
+#: program/localization/ar_SA/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "إرفاق ملف"
+
+#: program/localization/ar_SA/labels.inc:charset
+msgid "Charset"
+msgstr "مجموعة المحارف"
+
+#: program/localization/ar_SA/labels.inc:editortype
+msgid "Editor type"
+msgstr "نوع المُحرّر"
+
+#: program/localization/ar_SA/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "ايصال استلام"
+
+#: program/localization/ar_SA/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "تنويه حالة التوصيل"
+
+#: program/localization/ar_SA/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "كتب $sender في $date:"
+
+#: program/localization/ar_SA/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "الرسالة الأساسية"
+
+#: program/localization/ar_SA/labels.inc:editidents
+msgid "Edit identities"
+msgstr "تعديل الهويات"
+
+#: program/localization/ar_SA/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "التدقيق الإملائي"
+
+#: program/localization/ar_SA/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "متابعة التحرير"
+
+#: program/localization/ar_SA/labels.inc:revertto
+msgid "Revert to"
+msgstr "استعادة إلى"
+
+#: program/localization/ar_SA/labels.inc:attachments
+msgid "Attachments"
+msgstr "مرفقات"
+
+#: program/localization/ar_SA/labels.inc:upload
+msgid "Upload"
+msgstr "تحميل"
+
+#: program/localization/ar_SA/labels.inc:uploadprogress
+msgid "$percent ($current from $total)"
+msgstr "$percent ($current من $total)"
+
+#: program/localization/ar_SA/labels.inc:close
+msgid "Close"
+msgstr "إغلاق"
+
+#: program/localization/ar_SA/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "خيارات الرسائل..."
+
+#: program/localization/ar_SA/labels.inc:low
+msgid "Low"
+msgstr "منخض"
+
+#: program/localization/ar_SA/labels.inc:lowest
+msgid "Lowest"
+msgstr "الأقل"
+
+#: program/localization/ar_SA/labels.inc:normal
+msgid "Normal"
+msgstr "عادي"
+
+#: program/localization/ar_SA/labels.inc:high
+msgid "High"
+msgstr "مرتفع"
+
+#: program/localization/ar_SA/labels.inc:highest
+msgid "Highest"
+msgstr "الأعلى"
+
+#: program/localization/ar_SA/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(دون موضوع)"
+
+#: program/localization/ar_SA/labels.inc:showimages
+msgid "Display images"
+msgstr "إظهار الصور"
+
+#: program/localization/ar_SA/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "دائماً أظهر الصّور القادمة من $sender"
+
+#: program/localization/ar_SA/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/ar_SA/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "نص مجرد"
+
+#: program/localization/ar_SA/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "احفظ الرسالة المُرسلة في"
+
+#: program/localization/ar_SA/labels.inc:dontsave
+msgid "don't save"
+msgstr "لا تحفظها"
+
+#: program/localization/ar_SA/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "أقصى حجم للملف هو $size"
+
+#: program/localization/ar_SA/labels.inc:addcc
+msgid "Add Cc"
+msgstr "أضف CC"
+
+#: program/localization/ar_SA/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "أضف BCC"
+
+#: program/localization/ar_SA/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "أضيف Reply-To"
+
+#: program/localization/ar_SA/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "إضافة Mail-Followup-To"
+
+#: program/localization/ar_SA/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "طلب المرسل إعلامه عند قراءتك لرسالته. هل"
+"تود إعلام المرسل؟"
+
+#: program/localization/ar_SA/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "إيصال الاستلام )بالقراءة)"
+
+#: program/localization/ar_SA/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "هذا إيصال بقراءة رسالتك"
+
+#: program/localization/ar_SA/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "ملاحظة: يُعلمك هذا الإيصال بأن رسالتك قد"
+"ظهرت على جهاز المستقبِل. ليست هناك أية"
+"ضمانات أن المستقبل قد قرأ أو فهم محتويات"
+"الرسالة."
+
+#: program/localization/ar_SA/labels.inc:name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#: program/localization/ar_SA/labels.inc:firstname
+msgid "First Name"
+msgstr "الإسم الأول"
+
+#: program/localization/ar_SA/labels.inc:surname
+msgid "Last Name"
+msgstr "الإسم الأخير"
+
+#: program/localization/ar_SA/labels.inc:middlename
+msgid "Middle Name"
+msgstr "الاسم الثاني"
+
+#: program/localization/ar_SA/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "السابقة"
+
+#: program/localization/ar_SA/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "اللاحقة"
+
+#: program/localization/ar_SA/labels.inc:nickname
+msgid "Nickname"
+msgstr "اللقب"
+
+#: program/localization/ar_SA/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "المسمى الوظيفي"
+
+#: program/localization/ar_SA/labels.inc:department
+msgid "Department"
+msgstr "الإدارة"
+
+#: program/localization/ar_SA/labels.inc:gender
+msgid "Gender"
+msgstr "الجنس"
+
+#: program/localization/ar_SA/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "إسم الزواج"
+
+#: program/localization/ar_SA/labels.inc:email
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: program/localization/ar_SA/labels.inc:phone
+msgid "Phone"
+msgstr "الهاتف"
+
+#: program/localization/ar_SA/labels.inc:address
+msgid "Address"
+msgstr "العنوان"
+
+#: program/localization/ar_SA/labels.inc:street
+msgid "Street"
+msgstr "الشارع"
+
+#: program/localization/ar_SA/labels.inc:locality
+msgid "City"
+msgstr "المدينة"
+
+#: program/localization/ar_SA/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "الرمز البريدي"
+
+#: program/localization/ar_SA/labels.inc:region
+msgid "State/Province"
+msgstr "المنطقة"
+
+#: program/localization/ar_SA/labels.inc:country
+msgid "Country"
+msgstr "الدولة"
+
+#: program/localization/ar_SA/labels.inc:birthday
+msgid "Birthday"
+msgstr "تاريخ الميلاد"
+
+#: program/localization/ar_SA/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "المناسبة السنوية"
+
+#: program/localization/ar_SA/labels.inc:website
+msgid "Website"
+msgstr "الموقع"
+
+#: program/localization/ar_SA/labels.inc:instantmessenger
+msgid "IM"
+msgstr "IM"
+
+#: program/localization/ar_SA/labels.inc:notes
+msgid "Notes"
+msgstr "ملاحظات"
+
+#: program/localization/ar_SA/labels.inc:male
+msgid "male"
+msgstr "ذكر"
+
+#: program/localization/ar_SA/labels.inc:female
+msgid "female"
+msgstr "أنثى"
+
+#: program/localization/ar_SA/labels.inc:manager
+msgid "Manager"
+msgstr "مدير"
+
+#: program/localization/ar_SA/labels.inc:assistant
+#: program/localization/ar_SA/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "المساعد"
+
+#: program/localization/ar_SA/labels.inc:spouse
+msgid "Spouse"
+msgstr "زوجة"
+
+#: program/localization/ar_SA/labels.inc:allfields
+msgid "All fields"
+msgstr "جميع الحقول"
+
+#: program/localization/ar_SA/labels.inc:search
+msgid "Search"
+msgstr "بحث"
+
+#: program/localization/ar_SA/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "بحث متقدم"
+
+#: program/localization/ar_SA/labels.inc:other
+#: program/localization/ar_SA/labels.inc:typeother
+msgid "Other"
+msgstr "آخر"
+
+#: program/localization/ar_SA/labels.inc:typehome
+msgid "Home"
+msgstr "المنزل"
+
+#: program/localization/ar_SA/labels.inc:typework
+msgid "Work"
+msgstr "العمل"
+
+#: program/localization/ar_SA/labels.inc:typemobile
+msgid "Mobile"
+msgstr "المحمول"
+
+#: program/localization/ar_SA/labels.inc:typemain
+msgid "Main"
+msgstr "الرئيسي"
+
+#: program/localization/ar_SA/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "فاكس المنزل"
+
+#: program/localization/ar_SA/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "فاكس العمل"
+
+#: program/localization/ar_SA/labels.inc:typecar
+msgid "Car"
+msgstr "السيارة"
+
+#: program/localization/ar_SA/labels.inc:typepager
+msgid "Pager"
+msgstr "الرنان"
+
+#: program/localization/ar_SA/labels.inc:typevideo
+msgid "Video"
+msgstr "الفيديو"
+
+#: program/localization/ar_SA/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "الرئيسية"
+
+#: program/localization/ar_SA/labels.inc:typeblog
+msgid "Blog"
+msgstr "المدوّنة"
+
+#: program/localization/ar_SA/labels.inc:typeprofile
+msgid "Profile"
+msgstr "الملف الشخصي"
+
+#: program/localization/ar_SA/labels.inc:addfield
+msgid "Add field..."
+msgstr "إضافة حقل..."
+
+#: program/localization/ar_SA/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "إضافة المراسل المحدد إلى دفتر عناويني"
+
+#: program/localization/ar_SA/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "تحرير بيانات المراسل"
+
+#: program/localization/ar_SA/labels.inc:contacts
+msgid "Contacts"
+msgstr "المراسلين"
+
+#: program/localization/ar_SA/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "خواص جهة الإتصال"
+
+#: program/localization/ar_SA/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "المعلومات الشخصية"
+
+#: program/localization/ar_SA/labels.inc:edit
+msgid "Edit"
+msgstr "تحرير"
+
+#: program/localization/ar_SA/labels.inc:cancel
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: program/localization/ar_SA/labels.inc:save
+msgid "Save"
+msgstr "حفظ"
+
+#: program/localization/ar_SA/labels.inc:delete
+msgid "Delete"
+msgstr "حذف"
+
+#: program/localization/ar_SA/labels.inc:rename
+msgid "Rename"
+msgstr "إعادة التسمية"
+
+#: program/localization/ar_SA/labels.inc:addphoto
+msgid "Add"
+msgstr "إضافة"
+
+#: program/localization/ar_SA/labels.inc:replacephoto
+msgid "Replace"
+msgstr "استبدال"
+
+#: program/localization/ar_SA/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "إنشاء بطاقة مراسل جديدة"
+
+#: program/localization/ar_SA/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "حذف المراسلين المحددين"
+
+#: program/localization/ar_SA/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "إنشاء رسالة إليه"
+
+#: program/localization/ar_SA/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "المراسلون $from إلى $to من $count"
+
+#: program/localization/ar_SA/labels.inc:print
+msgid "Print"
+msgstr "طباعة"
+
+#: program/localization/ar_SA/labels.inc:export
+msgid "Export"
+msgstr "تصدير"
+
+#: program/localization/ar_SA/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "صدّر المراسلين بنسق vCard"
+
+#: program/localization/ar_SA/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "إنشاء مجموعة مراسلين جديدة"
+
+#: program/localization/ar_SA/labels.inc:grouprename
+msgid "Rename group"
+msgstr "تغيير اسم المجموعة"
+
+#: program/localization/ar_SA/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "حذف المجموعة"
+
+#: program/localization/ar_SA/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "عرض المجموعة السابقة"
+
+#: program/localization/ar_SA/labels.inc:firstpage
+msgid "Show first page"
+msgstr "عرض المجموعة الأولى"
+
+#: program/localization/ar_SA/labels.inc:nextpage
+msgid "Show next page"
+msgstr "عرض المجموعة التالية"
+
+#: program/localization/ar_SA/labels.inc:lastpage
+msgid "Show last page"
+msgstr "عرض المجموعة الأخيرة"
+
+#: program/localization/ar_SA/labels.inc:group
+msgid "Group"
+msgstr "مجموعة"
+
+#: program/localization/ar_SA/labels.inc:groups
+msgid "Groups"
+msgstr "المجموعات"
+
+#: program/localization/ar_SA/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "العناوين الشخصية"
+
+#: program/localization/ar_SA/labels.inc:searchsave
+msgid "Save search"
+msgstr "حفظ البحث"
+
+#: program/localization/ar_SA/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "حذف البحث"
+
+#: program/localization/ar_SA/labels.inc:import
+msgid "Import"
+msgstr "استورد"
+
+#: program/localization/ar_SA/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "استورد المراسلين"
+
+#: program/localization/ar_SA/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "استورد من ملف:"
+
+#: program/localization/ar_SA/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "أضف المراسلين الجدد إلى دفتر العناوين:"
+
+#: program/localization/ar_SA/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "استبدل دفتر العناوين بأكمله"
+
+#: program/localization/ar_SA/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "يمكنك رفع قائمة المراسلين من دفتر عناوين"
+"موجود.<br/>ندعم حالياً استيراد العناوين من"
+"نسق بيانات <a href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>."
+
+#: program/localization/ar_SA/labels.inc:done
+msgid "Done"
+msgstr "تم"
+
+#: program/localization/ar_SA/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "إعدادات"
+
+#: program/localization/ar_SA/labels.inc:preferences
+msgid "Preferences"
+msgstr "التفضيلات"
+
+#: program/localization/ar_SA/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "تفضيلات المستخدم"
+
+#: program/localization/ar_SA/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "تحرير تفضيلات المستخدم"
+
+#: program/localization/ar_SA/labels.inc:identities
+msgid "Identities"
+msgstr "الهويات"
+
+#: program/localization/ar_SA/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "إدارة هويات هذا الحساب"
+
+#: program/localization/ar_SA/labels.inc:newidentity
+msgid "New identity"
+msgstr "هوية جديدة"
+
+#: program/localization/ar_SA/labels.inc:newitem
+msgid "New item"
+msgstr "عنصر جديد"
+
+#: program/localization/ar_SA/labels.inc:edititem
+msgid "Edit item"
+msgstr "تحرير عنصر"
+
+#: program/localization/ar_SA/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "تفضيل صيغة HTML"
+
+#: program/localization/ar_SA/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "ترميز المحارف الافتراضي"
+
+#: program/localization/ar_SA/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "رسالة بنسق HTML"
+
+#: program/localization/ar_SA/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "تواريخ منمقة"
+
+#: program/localization/ar_SA/labels.inc:setdefault
+msgid "Set default"
+msgstr "تعيين كإفتراضي"
+
+#: program/localization/ar_SA/labels.inc:autodetect
+msgid "Auto"
+msgstr "آلي"
+
+#: program/localization/ar_SA/labels.inc:language
+msgid "Language"
+msgstr "اللغة"
+
+#: program/localization/ar_SA/labels.inc:timezone
+msgid "Time zone"
+msgstr "المنطقة الزمنية"
+
+#: program/localization/ar_SA/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "عدد الرسائل في الصفحة"
+
+#: program/localization/ar_SA/labels.inc:signature
+msgid "Signature"
+msgstr "التوقيع"
+
+#: program/localization/ar_SA/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "التوقيت الصيفي"
+
+#: program/localization/ar_SA/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "إنشاء رسائل بنسق HTML"
+
+#: program/localization/ar_SA/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "حال الرد على الرسائل بصيغة HTML فقط"
+
+#: program/localization/ar_SA/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "توقيع HTML"
+
+#: program/localization/ar_SA/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "إظهار قسم المعاينة"
+
+#: program/localization/ar_SA/labels.inc:skin
+msgid "Interface skin"
+msgstr "شكل الواجهة"
+
+#: program/localization/ar_SA/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "إفراغ سلة المحذوفات عند الخروج"
+
+#: program/localization/ar_SA/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "ضغط صندوق الوارد عن الخروج"
+
+#: program/localization/ar_SA/labels.inc:uisettings
+msgid "User Interface"
+msgstr "واجهة المستخدم"
+
+#: program/localization/ar_SA/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "إعدادات الخادم"
+
+#: program/localization/ar_SA/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "مظهر صندوق البريد"
+
+#: program/localization/ar_SA/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "عند طلب إشعار استلام"
+
+#: program/localization/ar_SA/labels.inc:askuser
+msgid "ask me"
+msgstr "اسأل المستخدم"
+
+#: program/localization/ar_SA/labels.inc:autosend
+msgid "send receipt"
+msgstr "أرسلها تلقائياً"
+
+#: program/localization/ar_SA/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "أرسل إشعار استلام إلى جهات اتصالي، وإلا"
+"اسألني"
+
+#: program/localization/ar_SA/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "أرسل إشعار استلام إلى جهات اتصالي، وإلا"
+"تجاهل الأمر"
+
+#: program/localization/ar_SA/labels.inc:ignore
+msgid "ignore"
+msgstr "تجاهلها"
+
+#: program/localization/ar_SA/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "تحديد الرسالة كمقروءة عند حذفها"
+
+#: program/localization/ar_SA/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "وضع علامة على الرسالة لحذفها بدلاً من"
+"حذفها"
+
+#: program/localization/ar_SA/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "لا تظهر الرسائل المحذوفة"
+
+#: program/localization/ar_SA/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "حذف الرسائل مباشرة، إن تعذر نقلها إلى"
+"المهملات"
+
+#: program/localization/ar_SA/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "إظهار الصور الخارجية المدمجة"
+
+#: program/localization/ar_SA/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "للمرسلين المعلومين"
+
+#: program/localization/ar_SA/labels.inc:always
+msgid "always"
+msgstr "دائماً"
+
+#: program/localization/ar_SA/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "إظهار الصّور المرفقة أسفل الرسالة"
+
+#: program/localization/ar_SA/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "حفظ المسودة تلقائياً"
+
+#: program/localization/ar_SA/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "كل $n دقيقة"
+
+#: program/localization/ar_SA/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "التحقق من وجود رسائل جديدة عند"
+
+#: program/localization/ar_SA/labels.inc:never
+msgid "never"
+msgstr "أبداً"
+
+#: program/localization/ar_SA/labels.inc:immediately
+msgid "immediately"
+msgstr "حالاً"
+
+#: program/localization/ar_SA/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "إظهار الرسائل"
+
+#: program/localization/ar_SA/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "إنشاء الرسائل"
+
+#: program/localization/ar_SA/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "أسماء الملفات المرفقة"
+
+#: program/localization/ar_SA/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "RFC 2231 بأكملها (ثندربيرد)"
+
+#: program/localization/ar_SA/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (ميكروسوفت آوتلوك)"
+
+#: program/localization/ar_SA/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "RFC 2047 بأكملها (غيرها)"
+
+#: program/localization/ar_SA/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "استخدام ترميز MIME للحروف ذات الثمانية"
+"بتّات"
+
+#: program/localization/ar_SA/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "خيارات متقدّمة"
+
+#: program/localization/ar_SA/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "التركيز على نافذة المتصفح عند وجود رسالة"
+"جديدة"
+
+#: program/localization/ar_SA/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "التحقق من وجود رسائل جديدة في جميع"
+"المجلدات"
+
+#: program/localization/ar_SA/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "إظهار الرسالة التالية بعد حذف/نقل"
+"الرسالة الحالية"
+
+#: program/localization/ar_SA/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "الخيارات الأساسية"
+
+#: program/localization/ar_SA/labels.inc:section
+msgid "Section"
+msgstr "قسم"
+
+#: program/localization/ar_SA/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "الصيانة"
+
+#: program/localization/ar_SA/labels.inc:newmessage
+msgid "New Message"
+msgstr "رسالة جديدة"
+
+#: program/localization/ar_SA/labels.inc:listoptions
+msgid "List Options"
+msgstr "خيارات السرد"
+
+#: program/localization/ar_SA/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "خيارات التوقيع"
+
+#: program/localization/ar_SA/labels.inc:whenreplying
+msgid "When replying"
+msgstr "عند الرد"
+
+#: program/localization/ar_SA/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "بدء رسالة جديدة ووضع النص أعلى الأصلية"
+
+#: program/localization/ar_SA/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "بدء رسالة جديدة ووضع النص أسفل الأصلية"
+
+#: program/localization/ar_SA/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "إزالة التوقيع من الرسالة عند الرد"
+
+#: program/localization/ar_SA/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "إضافة التوقيع آلياً"
+
+#: program/localization/ar_SA/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "الرسالة الجديدة فقط"
+
+#: program/localization/ar_SA/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "الردود والتمريرات فقط"
+
+#: program/localization/ar_SA/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "إضافة التوقيع عند الرد أو التمرير"
+
+#: program/localization/ar_SA/labels.inc:belowquote
+msgid "below the quote"
+msgstr "بعد الاقتباس"
+
+#: program/localization/ar_SA/labels.inc:abovequote
+msgid "above the quote"
+msgstr "قبل الاقتباس"
+
+#: program/localization/ar_SA/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "إضافة التوقيع"
+
+#: program/localization/ar_SA/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "تحديد الرسائل المُعاينة كمقروءة"
+
+#: program/localization/ar_SA/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "بعد $n ثواني"
+
+#: program/localization/ar_SA/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "طلب إشعار استلام دائماً"
+
+#: program/localization/ar_SA/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "طلب تنويه لحالة التوصيل دائماً"
+
+#: program/localization/ar_SA/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "وضع الردود في المجلد الذي يحوي الرسالة"
+"المردود عليها"
+
+#: program/localization/ar_SA/labels.inc:defaultaddressbook
+msgid "Add new contacts to the selected addressbook"
+msgstr "أضف المراسلين الجديد إلى دفتر العناوين"
+"المحدد"
+
+#: program/localization/ar_SA/labels.inc:spellcheckbeforesend
+msgid "Check spelling before sending a message"
+msgstr "تحقق من الإملاء قبل إرسال الرسائل"
+
+#: program/localization/ar_SA/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "خيارات التدقيق الإملاءي"
+
+#: program/localization/ar_SA/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "تجاهل الكلمات التي تحتوي رموز"
+
+#: program/localization/ar_SA/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "تجاهل الكلمات التي تحتوي أرقام"
+
+#: program/localization/ar_SA/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "تجاهل الكلمات التي بها أحرف كبيرة"
+
+#: program/localization/ar_SA/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "إضافة إلى القامس"
+
+#: program/localization/ar_SA/labels.inc:folder
+msgid "Folder"
+msgstr "مجلد"
+
+#: program/localization/ar_SA/labels.inc:foldername
+msgid "Folder name"
+msgstr "اسم المجلد"
+
+#: program/localization/ar_SA/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "مشترك"
+
+#: program/localization/ar_SA/labels.inc:messagecount
+msgid "Messages"
+msgstr "الرسائل"
+
+#: program/localization/ar_SA/labels.inc:create
+msgid "Create"
+msgstr "أنشئ"
+
+#: program/localization/ar_SA/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "أنشئ مجلد جديد"
+
+#: program/localization/ar_SA/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "إدارة المجلدات"
+
+#: program/localization/ar_SA/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "المجلّدات المُميّزة"
+
+#: program/localization/ar_SA/labels.inc:properties
+msgid "Properties"
+msgstr "الخواص"
+
+#: program/localization/ar_SA/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "خواص المجلد"
+
+#: program/localization/ar_SA/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "المجلد الحاوي"
+
+#: program/localization/ar_SA/labels.inc:location
+msgid "Location"
+msgstr "الموضع"
+
+#: program/localization/ar_SA/labels.inc:info
+msgid "Information"
+msgstr "معلومات"
+
+#: program/localization/ar_SA/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "اضغط لمعرفة حجم المجلد"
+
+#: program/localization/ar_SA/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "اضغط لتغيير حالة الإشتراك"
+
+#: program/localization/ar_SA/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "نوع المجلد"
+
+#: program/localization/ar_SA/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "مجلد خاص"
+
+#: program/localization/ar_SA/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "مجلد مستخدم آخر"
+
+#: program/localization/ar_SA/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "مجلد عام"
+
+#: program/localization/ar_SA/labels.inc:sortby
+msgid "Sort by"
+msgstr "ترتيب بحسب"
+
+#: program/localization/ar_SA/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "ترتيب تصاعدي"
+
+#: program/localization/ar_SA/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "ترتيب تنازلي"
+
+#: program/localization/ar_SA/labels.inc:undo
+msgid "Undo"
+msgstr "تراجع"
+
+#: program/localization/ar_SA/labels.inc:B
+msgid "B"
+msgstr "ب"
+
+#: program/localization/ar_SA/labels.inc:KB
+msgid "KB"
+msgstr "ك.ب"
+
+#: program/localization/ar_SA/labels.inc:MB
+msgid "MB"
+msgstr "م.ب"
+
+#: program/localization/ar_SA/labels.inc:GB
+msgid "GB"
+msgstr "ج.ب"
+
+#: program/localization/ar_SA/labels.inc:unicode
+msgid "Unicode"
+msgstr "يونيكود"
+
+#: program/localization/ar_SA/labels.inc:english
+msgid "English"
+msgstr "الإنجليزية"
+
+#: program/localization/ar_SA/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "الغرب أوروبية"
+
+#: program/localization/ar_SA/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "الشرق أوروبية"
+
+#: program/localization/ar_SA/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "الجنوب شرق أوروبية"
+
+#: program/localization/ar_SA/labels.inc:baltic
+msgid "Baltic"
+msgstr "البلطيقية"
+
+#: program/localization/ar_SA/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "الكيريلية"
+
+#: program/localization/ar_SA/labels.inc:arabic
+msgid "Arabic"
+msgstr "العربية"
+
+#: program/localization/ar_SA/labels.inc:greek
+msgid "Greek"
+msgstr "اليونانية"
+
+#: program/localization/ar_SA/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "العبرية"
+
+#: program/localization/ar_SA/labels.inc:turkish
+msgid "Turkish"
+msgstr "التركية"
+
+#: program/localization/ar_SA/labels.inc:nordic
+msgid "Nordic"
+msgstr "النرويجية"
+
+#: program/localization/ar_SA/labels.inc:thai
+msgid "Thai"
+msgstr "التايلندية"
+
+#: program/localization/ar_SA/labels.inc:celtic
+msgid "Celtic"
+msgstr "الكلتية"
+
+#: program/localization/ar_SA/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "الفيتنامية"
+
+#: program/localization/ar_SA/labels.inc:japanese
+msgid "Japanese"
+msgstr "اليابانية"
+
+#: program/localization/ar_SA/labels.inc:korean
+msgid "Korean"
+msgstr "الكورية"
+
+#: program/localization/ar_SA/labels.inc:chinese
+msgid "Chinese"
+msgstr "الصينية"

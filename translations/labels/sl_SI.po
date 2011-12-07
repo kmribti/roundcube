@@ -1,0 +1,1671 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/sl_SI/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: sl_SI\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/sl_SI/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Dobrodošli v $product"
+
+#: program/localization/sl_SI/labels.inc:username
+msgid "Username"
+msgstr "Uporabniško ime"
+
+#: program/localization/sl_SI/labels.inc:password
+msgid "Password"
+msgstr "Geslo"
+
+#: program/localization/sl_SI/labels.inc:server
+msgid "Server"
+msgstr "Strežnik"
+
+#: program/localization/sl_SI/labels.inc:login
+msgid "Login"
+msgstr "Prijava"
+
+#: program/localization/sl_SI/labels.inc:logout
+msgid "Logout"
+msgstr "Odjava"
+
+#: program/localization/sl_SI/labels.inc:mail
+msgid "Mail"
+msgstr "E-Pošta"
+
+#: program/localization/sl_SI/labels.inc:settings
+msgid "Settings"
+msgstr "Osebne nastavitve"
+
+#: program/localization/sl_SI/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Stiki"
+
+#: program/localization/sl_SI/labels.inc:inbox
+msgid "Inbox"
+msgstr "Prejeto"
+
+#: program/localization/sl_SI/labels.inc:drafts
+msgid "Drafts"
+msgstr "Osnutki"
+
+#: program/localization/sl_SI/labels.inc:sent
+msgid "Sent"
+msgstr "Poslano"
+
+#: program/localization/sl_SI/labels.inc:trash
+msgid "Trash"
+msgstr "Smeti"
+
+#: program/localization/sl_SI/labels.inc:junk
+msgid "Junk"
+msgstr "Nezaželena sporočila"
+
+#: program/localization/sl_SI/labels.inc:subject
+msgid "Subject"
+msgstr "Zadeva"
+
+#: program/localization/sl_SI/labels.inc:from
+msgid "From"
+msgstr "Pošiljatelj"
+
+#: program/localization/sl_SI/labels.inc:to
+msgid "To"
+msgstr "Prejemnik"
+
+#: program/localization/sl_SI/labels.inc:cc
+msgid "Cc"
+msgstr "Kp"
+
+#: program/localization/sl_SI/labels.inc:bcc
+msgid "Bcc"
+msgstr "Skp"
+
+#: program/localization/sl_SI/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Odgovor na"
+
+#: program/localization/sl_SI/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Odgovor na"
+
+#: program/localization/sl_SI/labels.inc:date
+msgid "Date"
+msgstr "Datum"
+
+#: program/localization/sl_SI/labels.inc:size
+msgid "Size"
+msgstr "Velikost"
+
+#: program/localization/sl_SI/labels.inc:priority
+msgid "Priority"
+msgstr "Prioriteta"
+
+#: program/localization/sl_SI/labels.inc:organization
+msgid "Company"
+msgstr "Organizacija"
+
+#: program/localization/sl_SI/labels.inc:readstatus
+msgid "Read status"
+msgstr "Status"
+
+#: program/localization/sl_SI/labels.inc:mailboxlist
+#: program/localization/sl_SI/labels.inc:folders
+msgid "Folders"
+msgstr "Mape"
+
+#: program/localization/sl_SI/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Sporočila $from do $to od $count"
+
+#: program/localization/sl_SI/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Nit $from do $to od $count"
+
+#: program/localization/sl_SI/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Sporočilo $nr od $count"
+
+#: program/localization/sl_SI/labels.inc:copy
+msgid "Copy"
+msgstr "Kopiraj"
+
+#: program/localization/sl_SI/labels.inc:move
+msgid "Move"
+msgstr "Premakni"
+
+#: program/localization/sl_SI/labels.inc:moveto
+msgid "Move to..."
+msgstr "Premakni v..."
+
+#: program/localization/sl_SI/labels.inc:download
+msgid "Download"
+msgstr "Prenesi"
+
+#: program/localization/sl_SI/labels.inc:filename
+msgid "File name"
+msgstr "Ime datoteke"
+
+#: program/localization/sl_SI/labels.inc:filesize
+msgid "File size"
+msgstr "Velikost datoteke"
+
+#: program/localization/sl_SI/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Dodaj med stike"
+
+#: program/localization/sl_SI/labels.inc:sun
+msgid "Sun"
+msgstr "Ned"
+
+#: program/localization/sl_SI/labels.inc:mon
+msgid "Mon"
+msgstr "Pon"
+
+#: program/localization/sl_SI/labels.inc:tue
+msgid "Tue"
+msgstr "Tor"
+
+#: program/localization/sl_SI/labels.inc:wed
+msgid "Wed"
+msgstr "Sre"
+
+#: program/localization/sl_SI/labels.inc:thu
+msgid "Thu"
+msgstr "Čet"
+
+#: program/localization/sl_SI/labels.inc:fri
+msgid "Fri"
+msgstr "Pet"
+
+#: program/localization/sl_SI/labels.inc:sat
+msgid "Sat"
+msgstr "Sob"
+
+#: program/localization/sl_SI/labels.inc:sunday
+msgid "Sunday"
+msgstr "Nedelja"
+
+#: program/localization/sl_SI/labels.inc:monday
+msgid "Monday"
+msgstr "Ponedeljek"
+
+#: program/localization/sl_SI/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Torek"
+
+#: program/localization/sl_SI/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Sreda"
+
+#: program/localization/sl_SI/labels.inc:thursday
+msgid "Thursday"
+msgstr "Četrtek"
+
+#: program/localization/sl_SI/labels.inc:friday
+msgid "Friday"
+msgstr "Petek"
+
+#: program/localization/sl_SI/labels.inc:saturday
+msgid "Saturday"
+msgstr "Sobota"
+
+#: program/localization/sl_SI/labels.inc:jan
+msgid "Jan"
+msgstr "Jan"
+
+#: program/localization/sl_SI/labels.inc:feb
+msgid "Feb"
+msgstr "Feb"
+
+#: program/localization/sl_SI/labels.inc:mar
+msgid "Mar"
+msgstr "Mar"
+
+#: program/localization/sl_SI/labels.inc:apr
+msgid "Apr"
+msgstr "Apr"
+
+#: program/localization/sl_SI/labels.inc:may
+#: program/localization/sl_SI/labels.inc:longmay
+msgid "May"
+msgstr "Maj"
+
+#: program/localization/sl_SI/labels.inc:jun
+msgid "Jun"
+msgstr "Jun"
+
+#: program/localization/sl_SI/labels.inc:jul
+msgid "Jul"
+msgstr "Jul"
+
+#: program/localization/sl_SI/labels.inc:aug
+msgid "Aug"
+msgstr "Avg"
+
+#: program/localization/sl_SI/labels.inc:sep
+msgid "Sep"
+msgstr "Sep"
+
+#: program/localization/sl_SI/labels.inc:oct
+msgid "Oct"
+msgstr "Okt"
+
+#: program/localization/sl_SI/labels.inc:nov
+msgid "Nov"
+msgstr "Nov"
+
+#: program/localization/sl_SI/labels.inc:dec
+msgid "Dec"
+msgstr "Dec"
+
+#: program/localization/sl_SI/labels.inc:longjan
+msgid "January"
+msgstr "Januar"
+
+#: program/localization/sl_SI/labels.inc:longfeb
+msgid "February"
+msgstr "Februar"
+
+#: program/localization/sl_SI/labels.inc:longmar
+msgid "March"
+msgstr "Marec"
+
+#: program/localization/sl_SI/labels.inc:longapr
+msgid "April"
+msgstr "April"
+
+#: program/localization/sl_SI/labels.inc:longjun
+msgid "June"
+msgstr "Junij"
+
+#: program/localization/sl_SI/labels.inc:longjul
+msgid "July"
+msgstr "Julij"
+
+#: program/localization/sl_SI/labels.inc:longaug
+msgid "August"
+msgstr "Avgust"
+
+#: program/localization/sl_SI/labels.inc:longsep
+msgid "September"
+msgstr "September"
+
+#: program/localization/sl_SI/labels.inc:longoct
+msgid "October"
+msgstr "Oktober"
+
+#: program/localization/sl_SI/labels.inc:longnov
+msgid "November"
+msgstr "November"
+
+#: program/localization/sl_SI/labels.inc:longdec
+msgid "December"
+msgstr "December"
+
+#: program/localization/sl_SI/labels.inc:today
+msgid "Today"
+msgstr "Danes"
+
+#: program/localization/sl_SI/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Preglej nova sporočila"
+
+#: program/localization/sl_SI/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Novo sporočilo"
+
+#: program/localization/sl_SI/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Odgovori"
+
+#: program/localization/sl_SI/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Odgovori listi ali vsem prejemnikom"
+
+#: program/localization/sl_SI/labels.inc:replyall
+msgid "Reply all"
+msgstr "Odgovori vsem"
+
+#: program/localization/sl_SI/labels.inc:replylist
+msgid "Reply list"
+msgstr "Odgovori listi"
+
+#: program/localization/sl_SI/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "Posreduj medvrstično"
+
+#: program/localization/sl_SI/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "Posreduj kot priponko"
+
+#: program/localization/sl_SI/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Posreduj"
+
+#: program/localization/sl_SI/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Izbriši"
+
+#: program/localization/sl_SI/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Premakni v smeti"
+
+#: program/localization/sl_SI/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Natisni"
+
+#: program/localization/sl_SI/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Prikaži prejšnje sporočilo"
+
+#: program/localization/sl_SI/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Prikaži prvo sporočilo"
+
+#: program/localization/sl_SI/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Prikaži naslednje sporočilo"
+
+#: program/localization/sl_SI/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Prikaži zadnje sporočilo"
+
+#: program/localization/sl_SI/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Nazaj na seznam sporočil"
+
+#: program/localization/sl_SI/labels.inc:viewsource
+msgid "Show source"
+msgstr "Prikaži izvirno kodo"
+
+#: program/localization/sl_SI/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Označi sporočilo"
+
+#: program/localization/sl_SI/labels.inc:markread
+msgid "As read"
+msgstr "Kot prebrano"
+
+#: program/localization/sl_SI/labels.inc:markunread
+msgid "As unread"
+msgstr "Kot neprebrano"
+
+#: program/localization/sl_SI/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Kot označeno"
+
+#: program/localization/sl_SI/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Kot neoznačeno"
+
+#: program/localization/sl_SI/labels.inc:moreactions
+msgid "More actions..."
+msgstr "Več možnosti..."
+
+#: program/localization/sl_SI/labels.inc:select
+msgid "Select"
+msgstr "Izberi"
+
+#: program/localization/sl_SI/labels.inc:all
+msgid "All"
+msgstr "Vse"
+
+#: program/localization/sl_SI/labels.inc:none
+#: program/localization/sl_SI/labels.inc:nonesort
+msgid "None"
+msgstr "Brez"
+
+#: program/localization/sl_SI/labels.inc:currpage
+msgid "Current page"
+msgstr "Trenutna stran"
+
+#: program/localization/sl_SI/labels.inc:unread
+msgid "Unread"
+msgstr "Neprebrano"
+
+#: program/localization/sl_SI/labels.inc:flagged
+msgid "Flagged"
+msgstr "Označeno"
+
+#: program/localization/sl_SI/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Neoznačeno"
+
+#: program/localization/sl_SI/labels.inc:deleted
+msgid "Deleted"
+msgstr "Izbrisano"
+
+#: program/localization/sl_SI/labels.inc:invert
+msgid "Invert"
+msgstr "Zamenjaj"
+
+#: program/localization/sl_SI/labels.inc:filter
+msgid "Filter"
+msgstr "Prikaži"
+
+#: program/localization/sl_SI/labels.inc:list
+msgid "List"
+msgstr "Seznam"
+
+#: program/localization/sl_SI/labels.inc:threads
+msgid "Threads"
+msgstr "Niti"
+
+#: program/localization/sl_SI/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Razširi vse"
+
+#: program/localization/sl_SI/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Razširi neprebrano"
+
+#: program/localization/sl_SI/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Zloži vse"
+
+#: program/localization/sl_SI/labels.inc:threaded
+msgid "Threaded"
+msgstr "Nitno"
+
+#: program/localization/sl_SI/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Razširi niti"
+
+#: program/localization/sl_SI/labels.inc:do_expand
+msgid "all threads"
+msgstr "vse niti"
+
+#: program/localization/sl_SI/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "samo niti z neprebranimi sporočili"
+
+#: program/localization/sl_SI/labels.inc:fromto
+msgid "From/To"
+msgstr "Pošiljatelj/Prejemnik"
+
+#: program/localization/sl_SI/labels.inc:flag
+msgid "Flag"
+msgstr "Oznaka"
+
+#: program/localization/sl_SI/labels.inc:attachment
+msgid "Attachment"
+msgstr "Priponka"
+
+#: program/localization/sl_SI/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Datum pošiljanja"
+
+#: program/localization/sl_SI/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Datum prejema"
+
+#: program/localization/sl_SI/labels.inc:asc
+msgid "ascending"
+msgstr "naraščajoče"
+
+#: program/localization/sl_SI/labels.inc:desc
+msgid "descending"
+msgstr "padajoče"
+
+#: program/localization/sl_SI/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Seznam stolpcev"
+
+#: program/localization/sl_SI/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Urejanje stolpcev"
+
+#: program/localization/sl_SI/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Vrstni red"
+
+#: program/localization/sl_SI/labels.inc:listmode
+msgid "List view mode"
+msgstr "Način prikaza seznama"
+
+#: program/localization/sl_SI/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Upravljanje map..."
+
+#: program/localization/sl_SI/labels.inc:compact
+msgid "Compact"
+msgstr "Stisni"
+
+#: program/localization/sl_SI/labels.inc:empty
+msgid "Empty"
+msgstr "Izprazni"
+
+#: program/localization/sl_SI/labels.inc:quota
+msgid "Disk usage"
+msgstr "Poraba prostora"
+
+#: program/localization/sl_SI/labels.inc:unknown
+msgid "unknown"
+msgstr "neznana"
+
+#: program/localization/sl_SI/labels.inc:unlimited
+msgid "unlimited"
+msgstr "neomejena"
+
+#: program/localization/sl_SI/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Hitri iskalnik"
+
+#: program/localization/sl_SI/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Prekliči iskanje"
+
+#: program/localization/sl_SI/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Spremembe iskanja"
+
+#: program/localization/sl_SI/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Celotno sporočilo"
+
+#: program/localization/sl_SI/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Odpri v novem oknu"
+
+#: program/localization/sl_SI/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Prenos datoteke (.eml)"
+
+#: program/localization/sl_SI/labels.inc:compose
+msgid "Compose a message"
+msgstr "Sestavi sporočilo"
+
+#: program/localization/sl_SI/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Uredi kot novo"
+
+#: program/localization/sl_SI/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Shrani kot osnutek"
+
+#: program/localization/sl_SI/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Pošlji sporočilo"
+
+#: program/localization/sl_SI/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Pripni datoteko"
+
+#: program/localization/sl_SI/labels.inc:charset
+msgid "Charset"
+msgstr "Nabor znakov"
+
+#: program/localization/sl_SI/labels.inc:editortype
+msgid "Editor type"
+msgstr "Vrsta urejevalnika"
+
+#: program/localization/sl_SI/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Potrdilo prejemnika"
+
+#: program/localization/sl_SI/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Status dostave sporočila"
+
+#: program/localization/sl_SI/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "$date, je $sender napisal"
+
+#: program/localization/sl_SI/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "Izvorno sporočilo"
+
+#: program/localization/sl_SI/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Uredi identitete"
+
+#: program/localization/sl_SI/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Preglej pravopis"
+
+#: program/localization/sl_SI/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Nadaljuj z urejanjem"
+
+#: program/localization/sl_SI/labels.inc:revertto
+msgid "Revert to"
+msgstr "Razveljavi"
+
+#: program/localization/sl_SI/labels.inc:attachments
+msgid "Attachments"
+msgstr "Priponke"
+
+#: program/localization/sl_SI/labels.inc:upload
+msgid "Upload"
+msgstr "Naloži"
+
+#: program/localization/sl_SI/labels.inc:uploadprogress
+msgid "$percent ($current from $total)"
+msgstr "$percent ($current od $total)"
+
+#: program/localization/sl_SI/labels.inc:close
+msgid "Close"
+msgstr "Zapri"
+
+#: program/localization/sl_SI/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Možnosti"
+
+#: program/localization/sl_SI/labels.inc:low
+msgid "Low"
+msgstr "Nizka"
+
+#: program/localization/sl_SI/labels.inc:lowest
+msgid "Lowest"
+msgstr "Najnižja"
+
+#: program/localization/sl_SI/labels.inc:normal
+msgid "Normal"
+msgstr "Običajna"
+
+#: program/localization/sl_SI/labels.inc:high
+msgid "High"
+msgstr "Visoka"
+
+#: program/localization/sl_SI/labels.inc:highest
+msgid "Highest"
+msgstr "Najvišja"
+
+#: program/localization/sl_SI/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(brez naslova)"
+
+#: program/localization/sl_SI/labels.inc:showimages
+msgid "Display images"
+msgstr "Prikaži slike"
+
+#: program/localization/sl_SI/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Vedno prikaži slike od $sender"
+
+#: program/localization/sl_SI/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "To je osnutek sporočila."
+
+#: program/localization/sl_SI/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "Obogateno besedilo (HTML)"
+
+#: program/localization/sl_SI/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Samo besedilo"
+
+#: program/localization/sl_SI/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Shrani poslana sporočila v"
+
+#: program/localization/sl_SI/labels.inc:dontsave
+msgid "don't save"
+msgstr "Ne shrani"
+
+#: program/localization/sl_SI/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Največja dovoljena velikost datoteke je $size"
+
+#: program/localization/sl_SI/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Dodaj Kp"
+
+#: program/localization/sl_SI/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Dodaj Skp"
+
+#: program/localization/sl_SI/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Dodaj naslov za odgovor"
+
+#: program/localization/sl_SI/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Dodaj naslov za odgovor"
+
+#: program/localization/sl_SI/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Pošiljatelj tega sporočila je zaprosil za potrdilo o branju. Želite o"
+"tem obvestiti pošiljatelja?"
+
+#: program/localization/sl_SI/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Potrdilo o branju"
+
+#: program/localization/sl_SI/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "To je potrdilo o branju."
+
+#: program/localization/sl_SI/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Pozor: to je samo potrdilo, da je bilo vaše sporočilo prikazano na"
+"prejemnikovem računalniku. To še ne pomeni, da je prejemnik prebral ali"
+"razumel vsebino vašega sporočila."
+
+#: program/localization/sl_SI/labels.inc:name
+msgid "Display Name"
+msgstr "Ime za prikaz"
+
+#: program/localization/sl_SI/labels.inc:firstname
+msgid "First Name"
+msgstr "Ime"
+
+#: program/localization/sl_SI/labels.inc:surname
+msgid "Last Name"
+msgstr "Priimek"
+
+#: program/localization/sl_SI/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Drugo ime"
+
+#: program/localization/sl_SI/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "Predpona"
+
+#: program/localization/sl_SI/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "Pripona"
+
+#: program/localization/sl_SI/labels.inc:nickname
+msgid "Nickname"
+msgstr "Vzdevek"
+
+#: program/localization/sl_SI/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Naziv"
+
+#: program/localization/sl_SI/labels.inc:department
+msgid "Department"
+msgstr "Oddelek"
+
+#: program/localization/sl_SI/labels.inc:gender
+msgid "Gender"
+msgstr "Spol"
+
+#: program/localization/sl_SI/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Dekliški priimek"
+
+#: program/localization/sl_SI/labels.inc:email
+msgid "Email"
+msgstr "E-Pošta"
+
+#: program/localization/sl_SI/labels.inc:phone
+msgid "Phone"
+msgstr "Telefon"
+
+#: program/localization/sl_SI/labels.inc:address
+msgid "Address"
+msgstr "Naslov"
+
+#: program/localization/sl_SI/labels.inc:street
+msgid "Street"
+msgstr "Ulica"
+
+#: program/localization/sl_SI/labels.inc:locality
+msgid "City"
+msgstr "Mesto"
+
+#: program/localization/sl_SI/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "Poštna številka"
+
+#: program/localization/sl_SI/labels.inc:region
+msgid "State/Province"
+msgstr "Regija"
+
+#: program/localization/sl_SI/labels.inc:country
+msgid "Country"
+msgstr "Država"
+
+#: program/localization/sl_SI/labels.inc:birthday
+msgid "Birthday"
+msgstr "Rojstni dan"
+
+#: program/localization/sl_SI/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "Rojstni dan"
+
+#: program/localization/sl_SI/labels.inc:website
+msgid "Website"
+msgstr "Spletna stran"
+
+#: program/localization/sl_SI/labels.inc:instantmessenger
+msgid "IM"
+msgstr "IM"
+
+#: program/localization/sl_SI/labels.inc:notes
+msgid "Notes"
+msgstr "Opombe"
+
+#: program/localization/sl_SI/labels.inc:male
+msgid "male"
+msgstr "moški"
+
+#: program/localization/sl_SI/labels.inc:female
+msgid "female"
+msgstr "ženska"
+
+#: program/localization/sl_SI/labels.inc:manager
+msgid "Manager"
+msgstr "Vodja"
+
+#: program/localization/sl_SI/labels.inc:assistant
+#: program/localization/sl_SI/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Pomoč"
+
+#: program/localization/sl_SI/labels.inc:spouse
+msgid "Spouse"
+msgstr "Zakonec"
+
+#: program/localization/sl_SI/labels.inc:allfields
+msgid "All fields"
+msgstr "Vsa polja"
+
+#: program/localization/sl_SI/labels.inc:search
+msgid "Search"
+msgstr "Iskanje"
+
+#: program/localization/sl_SI/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "Napredno iskanje"
+
+#: program/localization/sl_SI/labels.inc:other
+#: program/localization/sl_SI/labels.inc:typeother
+msgid "Other"
+msgstr "Ostalo"
+
+#: program/localization/sl_SI/labels.inc:typehome
+msgid "Home"
+msgstr "Doma"
+
+#: program/localization/sl_SI/labels.inc:typework
+msgid "Work"
+msgstr "Služba"
+
+#: program/localization/sl_SI/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Mobilni telefon"
+
+#: program/localization/sl_SI/labels.inc:typemain
+msgid "Main"
+msgstr "Osnovno"
+
+#: program/localization/sl_SI/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Domači fax"
+
+#: program/localization/sl_SI/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "Službeni fax"
+
+#: program/localization/sl_SI/labels.inc:typecar
+msgid "Car"
+msgstr "Avto"
+
+#: program/localization/sl_SI/labels.inc:typepager
+msgid "Pager"
+msgstr "Pozivnik"
+
+#: program/localization/sl_SI/labels.inc:typevideo
+msgid "Video"
+msgstr "Video"
+
+#: program/localization/sl_SI/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "Domača stran"
+
+#: program/localization/sl_SI/labels.inc:typeblog
+msgid "Blog"
+msgstr "Blog"
+
+#: program/localization/sl_SI/labels.inc:typeprofile
+msgid "Profile"
+msgstr "Profil"
+
+#: program/localization/sl_SI/labels.inc:addfield
+msgid "Add field..."
+msgstr "Dodaj polje..."
+
+#: program/localization/sl_SI/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Dodaj izbrane stike v imenik"
+
+#: program/localization/sl_SI/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Uredi vizitko"
+
+#: program/localization/sl_SI/labels.inc:contacts
+msgid "Contacts"
+msgstr "Stiki"
+
+#: program/localization/sl_SI/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Lastnosti stika"
+
+#: program/localization/sl_SI/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Osebni podatki"
+
+#: program/localization/sl_SI/labels.inc:edit
+msgid "Edit"
+msgstr "Uredi"
+
+#: program/localization/sl_SI/labels.inc:cancel
+msgid "Cancel"
+msgstr "Prekliči"
+
+#: program/localization/sl_SI/labels.inc:save
+msgid "Save"
+msgstr "Shrani"
+
+#: program/localization/sl_SI/labels.inc:delete
+msgid "Delete"
+msgstr "Izbriši"
+
+#: program/localization/sl_SI/labels.inc:rename
+msgid "Rename"
+msgstr "Preimenuj"
+
+#: program/localization/sl_SI/labels.inc:addphoto
+msgid "Add"
+msgstr "Dodaj"
+
+#: program/localization/sl_SI/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Zamenjaj"
+
+#: program/localization/sl_SI/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Dodaj vizitko"
+
+#: program/localization/sl_SI/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Izbriši izbrane vizitke"
+
+#: program/localization/sl_SI/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Sestavi sporočilo za"
+
+#: program/localization/sl_SI/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Vizitke $from od $to do $count"
+
+#: program/localization/sl_SI/labels.inc:print
+msgid "Print"
+msgstr "Natisni"
+
+#: program/localization/sl_SI/labels.inc:export
+msgid "Export"
+msgstr "Izvozi"
+
+#: program/localization/sl_SI/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Izvozi stike v formatu vCard"
+
+#: program/localization/sl_SI/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Ustvari novo skupino stikov"
+
+#: program/localization/sl_SI/labels.inc:grouprename
+msgid "Rename group"
+msgstr "Preimenuj skupino"
+
+#: program/localization/sl_SI/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "Izbriši skupino"
+
+#: program/localization/sl_SI/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Prejšnja stran"
+
+#: program/localization/sl_SI/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Prva stran"
+
+#: program/localization/sl_SI/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Naslednja stran"
+
+#: program/localization/sl_SI/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Zadnja stran"
+
+#: program/localization/sl_SI/labels.inc:group
+msgid "Group"
+msgstr "Skupina"
+
+#: program/localization/sl_SI/labels.inc:groups
+msgid "Groups"
+msgstr "Skupine"
+
+#: program/localization/sl_SI/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Stiki"
+
+#: program/localization/sl_SI/labels.inc:searchsave
+msgid "Save search"
+msgstr "Shrani iskanje"
+
+#: program/localization/sl_SI/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "Izbriši iskanje"
+
+#: program/localization/sl_SI/labels.inc:import
+msgid "Import"
+msgstr "Uvozi"
+
+#: program/localization/sl_SI/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Uvozi stike"
+
+#: program/localization/sl_SI/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Uvozi iz datoteke:"
+
+#: program/localization/sl_SI/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "Dodaj nove stike v imenik:"
+
+#: program/localization/sl_SI/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Zamenjaj celoten imenik"
+
+#: program/localization/sl_SI/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Stike lahko prenesete iz obstoječega imenika<br/> Trenutno je podprto"
+"uvažanje naslovov v  formatu <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>"
+
+#: program/localization/sl_SI/labels.inc:done
+msgid "Done"
+msgstr "Dokončano"
+
+#: program/localization/sl_SI/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Nastavitve za"
+
+#: program/localization/sl_SI/labels.inc:about
+msgid "About"
+msgstr "Vizitka"
+
+#: program/localization/sl_SI/labels.inc:preferences
+msgid "Preferences"
+msgstr "Nastavitve"
+
+#: program/localization/sl_SI/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Uporabniške nastavitve"
+
+#: program/localization/sl_SI/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Uredi uporabniške nastavitve"
+
+#: program/localization/sl_SI/labels.inc:identities
+msgid "Identities"
+msgstr "Identitete"
+
+#: program/localization/sl_SI/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Upravljaj identitete za ta račun"
+
+#: program/localization/sl_SI/labels.inc:newidentity
+msgid "New identity"
+msgstr "Nova identiteta"
+
+#: program/localization/sl_SI/labels.inc:newitem
+msgid "New item"
+msgstr "Nov predmet"
+
+#: program/localization/sl_SI/labels.inc:edititem
+msgid "Edit item"
+msgstr "Uredi predmet"
+
+#: program/localization/sl_SI/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Prednostno HTML"
+
+#: program/localization/sl_SI/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Privzeto kodiranje znakov"
+
+#: program/localization/sl_SI/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML sporočilo"
+
+#: program/localization/sl_SI/labels.inc:dateformat
+msgid "Date format"
+msgstr "Prikaz datuma"
+
+#: program/localization/sl_SI/labels.inc:timeformat
+msgid "Time format"
+msgstr "Prikaz časa"
+
+#: program/localization/sl_SI/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Bolj čitljivi datumi"
+
+#: program/localization/sl_SI/labels.inc:setdefault
+msgid "Set default"
+msgstr "Nastavi privzeto"
+
+#: program/localization/sl_SI/labels.inc:autodetect
+msgid "Auto"
+msgstr "Samodejno"
+
+#: program/localization/sl_SI/labels.inc:language
+msgid "Language"
+msgstr "Jezik"
+
+#: program/localization/sl_SI/labels.inc:timezone
+msgid "Time zone"
+msgstr "Časovni pas"
+
+#: program/localization/sl_SI/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Vrstic na stran"
+
+#: program/localization/sl_SI/labels.inc:signature
+msgid "Signature"
+msgstr "Podpis"
+
+#: program/localization/sl_SI/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Samodejna nastavitev zimskega/letnega časa"
+
+#: program/localization/sl_SI/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Sestavi sporočila z obogatenim besedilom"
+
+#: program/localization/sl_SI/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "le pri odgovoru na sporočila z obogatenim besedilom"
+
+#: program/localization/sl_SI/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "Podpis z obogatenim besedilom"
+
+#: program/localization/sl_SI/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Prikaži predogled"
+
+#: program/localization/sl_SI/labels.inc:skin
+msgid "Interface skin"
+msgstr "Tema uporabniškega vmesnika"
+
+#: program/localization/sl_SI/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Izprazni mapo Smeti ob odjavi"
+
+#: program/localization/sl_SI/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Stisni sporočila v mapi Inbox ob odjavi"
+
+#: program/localization/sl_SI/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Uporabniški vmesnik"
+
+#: program/localization/sl_SI/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Nastavitve strežnika"
+
+#: program/localization/sl_SI/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Pogled poštnega predala"
+
+#: program/localization/sl_SI/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Obvestila pošiljatelja"
+
+#: program/localization/sl_SI/labels.inc:askuser
+msgid "ask me"
+msgstr "vprašaj uporabnika"
+
+#: program/localization/sl_SI/labels.inc:autosend
+msgid "send receipt"
+msgstr "pošlji povratnico samodejno"
+
+#: program/localization/sl_SI/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "samodejno pošlji povratnico samo mojim stikom"
+
+#: program/localization/sl_SI/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "pošlji potrdilo le mojim stikom"
+
+#: program/localization/sl_SI/labels.inc:ignore
+msgid "ignore"
+msgstr "ne upoštevaj"
+
+#: program/localization/sl_SI/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Označi izbrisano sporočilo kot prebrano"
+
+#: program/localization/sl_SI/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Ne izbriši sporočila, le označi kot izbrisano"
+
+#: program/localization/sl_SI/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Ne prikaži izbrisanih sporočil"
+
+#: program/localization/sl_SI/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Če premikanje sporočil v Smeti spodleti, naj bodo izbrisana."
+
+#: program/localization/sl_SI/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Prikaži medvrstične slike"
+
+#: program/localization/sl_SI/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "od znanih pošiljateljev"
+
+#: program/localization/sl_SI/labels.inc:always
+msgid "always"
+msgstr "vedno"
+
+#: program/localization/sl_SI/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Prikaži priponke na dnu sporočila"
+
+#: program/localization/sl_SI/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Samodejno shrani osnutke"
+
+#: program/localization/sl_SI/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "$n minut"
+
+#: program/localization/sl_SI/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Preglej nova sporočila na"
+
+#: program/localization/sl_SI/labels.inc:never
+msgid "never"
+msgstr "nikoli"
+
+#: program/localization/sl_SI/labels.inc:immediately
+msgid "immediately"
+msgstr "takoj"
+
+#: program/localization/sl_SI/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Prikazovanje sporočil"
+
+#: program/localization/sl_SI/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Sestavljanje sporočil"
+
+#: program/localization/sl_SI/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Imena priponk"
+
+#: program/localization/sl_SI/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Full RFC 2231 (Thunderbird)"
+
+#: program/localization/sl_SI/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/sl_SI/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Full RFC 2047 (ostali)"
+
+#: program/localization/sl_SI/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "Uporabi MIME kodiranje za 8-bitne znake"
+
+#: program/localization/sl_SI/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Dodatne možnosti"
+
+#: program/localization/sl_SI/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Usmeri okno brskalnika na novo sporočilo"
+
+#: program/localization/sl_SI/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Preglej nova sporočila za vse mape"
+
+#: program/localization/sl_SI/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Po izbrisu/premikanju sporočila prikaži naslednje sporočilo"
+
+#: program/localization/sl_SI/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Osnovne nastavitve"
+
+#: program/localization/sl_SI/labels.inc:section
+msgid "Section"
+msgstr "Nastavitve"
+
+#: program/localization/sl_SI/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Vzdrževanje"
+
+#: program/localization/sl_SI/labels.inc:newmessage
+msgid "New Message"
+msgstr "Novo sporočilo"
+
+#: program/localization/sl_SI/labels.inc:listoptions
+msgid "List Options"
+msgstr "Prikaži seznam možnosti"
+
+#: program/localization/sl_SI/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Nastavitve podpisa"
+
+#: program/localization/sl_SI/labels.inc:whenreplying
+msgid "When replying"
+msgstr "Pri odgovoru"
+
+#: program/localization/sl_SI/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "začni z novim sporočilom nad izvornim sporočilom"
+
+#: program/localization/sl_SI/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "začni z novim sporočilom pod izvornim sporočilom"
+
+#: program/localization/sl_SI/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "Pri odgovoru na sporočilo odstrani izvorni podpis iz sporočila"
+
+#: program/localization/sl_SI/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Samodejno dodaj podpis"
+
+#: program/localization/sl_SI/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "samo novim sporočilom"
+
+#: program/localization/sl_SI/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "samo k odgovorom in posredovanim sporočilom"
+
+#: program/localization/sl_SI/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "Pri odgovoru ali posredovanju sporočila vstavi podpis"
+
+#: program/localization/sl_SI/labels.inc:belowquote
+msgid "below the quote"
+msgstr "pod citiran tekst"
+
+#: program/localization/sl_SI/labels.inc:abovequote
+msgid "above the quote"
+msgstr "nad citiran tekst"
+
+#: program/localization/sl_SI/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Vstavi podpis"
+
+#: program/localization/sl_SI/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Označi predogledana sporočila kot prebrana"
+
+#: program/localization/sl_SI/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "po $n sekundah"
+
+#: program/localization/sl_SI/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Vedno zahtevaj povratnico"
+
+#: program/localization/sl_SI/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Vedno zahtevaj obvestilo o statusu dostave"
+
+#: program/localization/sl_SI/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Shrani odgovore na sporočilo v mapo izvornega sporočila"
+
+#: program/localization/sl_SI/labels.inc:defaultaddressbook
+msgid "Add new contacts to the selected addressbook"
+msgstr "Dodaj nove stike v izbran imenik"
+
+#: program/localization/sl_SI/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "Preskoči nadomestni e-naslov pri samodejnem dokončanju"
+
+#: program/localization/sl_SI/labels.inc:spellcheckbeforesend
+msgid "Check spelling before sending a message"
+msgstr "Preveri črkovanje pred pošiljanjem sporočila"
+
+#: program/localization/sl_SI/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "Možnosti črkovanja"
+
+#: program/localization/sl_SI/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "Ne upoštevaj besed, ki vsebujejo simbole"
+
+#: program/localization/sl_SI/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "Ne upoštevaj besed, ki vsebujejo številke"
+
+#: program/localization/sl_SI/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "Ne upoštevaj besed, ki vsebujejo samo velike črke"
+
+#: program/localization/sl_SI/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "Dodaj v slovar"
+
+#: program/localization/sl_SI/labels.inc:folder
+msgid "Folder"
+msgstr "Mapa"
+
+#: program/localization/sl_SI/labels.inc:foldername
+msgid "Folder name"
+msgstr "Ime mape"
+
+#: program/localization/sl_SI/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Vpisan"
+
+#: program/localization/sl_SI/labels.inc:messagecount
+msgid "Messages"
+msgstr "Sporočila"
+
+#: program/localization/sl_SI/labels.inc:create
+msgid "Create"
+msgstr "Ustvari"
+
+#: program/localization/sl_SI/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Ustvari novo mapo"
+
+#: program/localization/sl_SI/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Uredi mape"
+
+#: program/localization/sl_SI/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Posebne mape"
+
+#: program/localization/sl_SI/labels.inc:properties
+msgid "Properties"
+msgstr "Lastnosti"
+
+#: program/localization/sl_SI/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Lastnosti mape"
+
+#: program/localization/sl_SI/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Glavna mapa"
+
+#: program/localization/sl_SI/labels.inc:location
+msgid "Location"
+msgstr "Lokacija"
+
+#: program/localization/sl_SI/labels.inc:info
+msgid "Information"
+msgstr "Podatki"
+
+#: program/localization/sl_SI/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Klikni za prikaz velikosti mape"
+
+#: program/localization/sl_SI/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Klikni za spremembo prijave mape"
+
+#: program/localization/sl_SI/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Tip mape"
+
+#: program/localization/sl_SI/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "Zasebna mapa"
+
+#: program/localization/sl_SI/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "Mapa drugega uporabnika"
+
+#: program/localization/sl_SI/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "Javna mapa"
+
+#: program/localization/sl_SI/labels.inc:sortby
+msgid "Sort by"
+msgstr "Uredi po"
+
+#: program/localization/sl_SI/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Uredi naraščajoče"
+
+#: program/localization/sl_SI/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Uredi padajoče"
+
+#: program/localization/sl_SI/labels.inc:undo
+msgid "Undo"
+msgstr "Prekliči"
+
+#: program/localization/sl_SI/labels.inc:plugin
+msgid "Plugin"
+msgstr "Vtičnik"
+
+#: program/localization/sl_SI/labels.inc:version
+msgid "Version"
+msgstr "Različica"
+
+#: program/localization/sl_SI/labels.inc:source
+msgid "Source"
+msgstr "Vir"
+
+#: program/localization/sl_SI/labels.inc:license
+msgid "License"
+msgstr "Licenca"
+
+#: program/localization/sl_SI/labels.inc:support
+msgid "Get support"
+msgstr "Podpora"
+
+#: program/localization/sl_SI/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/sl_SI/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/sl_SI/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/sl_SI/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/sl_SI/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unicode"
+
+#: program/localization/sl_SI/labels.inc:english
+msgid "English"
+msgstr "Angleško"
+
+#: program/localization/sl_SI/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Zahodnoevropsko"
+
+#: program/localization/sl_SI/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Vzhodnoevropsko"
+
+#: program/localization/sl_SI/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "JV Evropsko"
+
+#: program/localization/sl_SI/labels.inc:baltic
+msgid "Baltic"
+msgstr "Baltsko"
+
+#: program/localization/sl_SI/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Cirilica"
+
+#: program/localization/sl_SI/labels.inc:arabic
+msgid "Arabic"
+msgstr "Arabsko"
+
+#: program/localization/sl_SI/labels.inc:greek
+msgid "Greek"
+msgstr "Grško"
+
+#: program/localization/sl_SI/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Hebrejsko"
+
+#: program/localization/sl_SI/labels.inc:turkish
+msgid "Turkish"
+msgstr "Turško"
+
+#: program/localization/sl_SI/labels.inc:nordic
+msgid "Nordic"
+msgstr "Nordijsko"
+
+#: program/localization/sl_SI/labels.inc:thai
+msgid "Thai"
+msgstr "Tajsko"
+
+#: program/localization/sl_SI/labels.inc:celtic
+msgid "Celtic"
+msgstr "Keltsko"
+
+#: program/localization/sl_SI/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Vietnamsko"
+
+#: program/localization/sl_SI/labels.inc:japanese
+msgid "Japanese"
+msgstr "Japonsko"
+
+#: program/localization/sl_SI/labels.inc:korean
+msgid "Korean"
+msgstr "Korejsko"
+
+#: program/localization/sl_SI/labels.inc:chinese
+msgid "Chinese"
+msgstr "Kitajsko"

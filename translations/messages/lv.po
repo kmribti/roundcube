@@ -1,0 +1,558 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/lv_LV/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: lv_LV\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/lv_LV/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Neizdevās pieslēgties"
+
+#: program/localization/lv_LV/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Jūsu pārlūkprogramma neatbalsta sīkdatnes (cookies)"
+
+#: program/localization/lv_LV/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Jūsu sessija ir beigusies"
+
+#: program/localization/lv_LV/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Neizdevās pieslēgties IMAP serverim"
+
+#: program/localization/lv_LV/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Servera kļūme."
+
+#: program/localization/lv_LV/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Servera kļūda: $msg"
+
+#: program/localization/lv_LV/messages.inc:databaserror
+msgid "databaserror"
+msgstr "Datubāzes kļūda!"
+
+#: program/localization/lv_LV/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Neizdevās veikt darbību: Mape ir tikai lasāma (read only)."
+
+#: program/localization/lv_LV/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Neizdevās veikt darbību: Piekļuve liegta."
+
+#: program/localization/lv_LV/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Nederīgs pieprasījums. Dati netika saglabāti."
+
+#: program/localization/lv_LV/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Šajā pastkastē nav vēstuļu"
+
+#: program/localization/lv_LV/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Jūs esat veiksmīgi atslēdzies no sistēmas"
+
+#: program/localization/lv_LV/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Pastkaste tukša"
+
+#: program/localization/lv_LV/messages.inc:loading
+msgid "Loading..."
+msgstr "Notiek ielāde..."
+
+#: program/localization/lv_LV/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Notiek faila augšupielāde..."
+
+#: program/localization/lv_LV/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Augšupielādē failus..."
+
+#: program/localization/lv_LV/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Tiek ielādēti dati..."
+
+#: program/localization/lv_LV/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Notiek pasta pārbaude..."
+
+#: program/localization/lv_LV/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Tiek sūtīta vēstule..."
+
+#: program/localization/lv_LV/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Vēstule nosūtīta veiksmīgi"
+
+#: program/localization/lv_LV/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Vēstule tiek saglabāta..."
+
+#: program/localization/lv_LV/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Vēstule saglabāta pie uzmetumiem"
+
+#: program/localization/lv_LV/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Iestatījumi veiksmīgi saglabāti"
+
+#: program/localization/lv_LV/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Ieraksts veiksmīgi pievienots adrešu grāmatai"
+
+#: program/localization/lv_LV/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Ieraksts ar šādu e-pasta adresi jau eksistē"
+
+#: program/localization/lv_LV/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Kontakts ar šādu vārdu jau eksistē."
+
+#: program/localization/lv_LV/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Drošības nolūkos attēli, kas tiek ielādēti no cita servera, šajā"
+"vēstulē ir bloķēti"
+
+#: program/localization/lv_LV/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Šī ir šifrēta vēstule un diemžēl nevar tikt parādīta"
+
+#: program/localization/lv_LV/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Ieraksti netika atrasti"
+
+#: program/localization/lv_LV/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Prasītais kontakts nav atrasts"
+
+#: program/localization/lv_LV/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Vēstule netika nosūtīta"
+
+#: program/localization/lv_LV/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Lūdzu uzgaidiet $sec sekundi(-es) pirms sūtiet šo vēstuli"
+
+#: program/localization/lv_LV/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Notika kļūda saglabājot nosūtīto vēstuli"
+
+#: program/localization/lv_LV/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Saglabājot vēstuli notikusi kļūme, vēstule netika saglabāta"
+
+#: program/localization/lv_LV/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Vēstule netika pārvietota"
+
+#: program/localization/lv_LV/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Neizdevās pārkopēt vēstules."
+
+#: program/localization/lv_LV/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Vēstule netika dzēsta"
+
+#: program/localization/lv_LV/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Nebija iespējams iezīmēt vēstuli"
+
+#: program/localization/lv_LV/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Vai tiešām vēlaties dzēst iezīmēto(ās) kontaktpersonas?"
+
+#: program/localization/lv_LV/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Vai tiešām vēlaties dzēst atzīmēto grupu?"
+
+#: program/localization/lv_LV/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Vai tiešām vēlaties dzēst iezīmēto(ās) vēstules?"
+
+#: program/localization/lv_LV/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Vai tiešām vēlaties dzēst šo mapi?"
+
+#: program/localization/lv_LV/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Vai tiešām vēlaties dzēst visas vēstules, kas atrodas šajā mapē?"
+
+#: program/localization/lv_LV/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Dzēš grupu..."
+
+#: program/localization/lv_LV/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Dzēš mapi..."
+
+#: program/localization/lv_LV/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Pārvietoju mapi..."
+
+#: program/localization/lv_LV/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Pieslēdz mapi..."
+
+#: program/localization/lv_LV/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Atslēdz mapi..."
+
+#: program/localization/lv_LV/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Formulārs nav pilnībā aizpildīts"
+
+#: program/localization/lv_LV/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Lūdzu ievadiet pareizu e-pasta adresi"
+
+#: program/localization/lv_LV/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Lūdzu ievadiet vārdu"
+
+#: program/localization/lv_LV/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Lūdzu ievadiet lapas izmēru"
+
+#: program/localization/lv_LV/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Lūdzu ievadiet saņēmēja e-pasta adresi"
+
+#: program/localization/lv_LV/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Lūdzu ievadiet vismaz vienu saņēmēju"
+
+#: program/localization/lv_LV/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Lauks \"temats\" ir tukšs. Vai vēlaties to aizpildīt tagad?"
+
+#: program/localization/lv_LV/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Sūtīt vēstuli bez satura teksta?"
+
+#: program/localization/lv_LV/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Vēstule netika nosūtīta. Vai tiešām vēlaties atcelt vēstules"
+"rakstīsanu?"
+
+#: program/localization/lv_LV/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Lūdzu izvēlaties LDAP serveri"
+
+#: program/localization/lv_LV/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Neviena kontaktpersona netika atrasta"
+
+#: program/localization/lv_LV/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Lūdzu ievadiet kontaktpersonas vārdu vai e-pasta adresi"
+
+#: program/localization/lv_LV/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Visi pielikumi vēl nav augšupielādēti. Lūdzu uzgaidiet vai atceļiet"
+"augšupielādi!"
+
+#: program/localization/lv_LV/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "Atrastas $nr vēstules"
+
+#: program/localization/lv_LV/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Meklēšanā nekas netika atrasts"
+
+#: program/localization/lv_LV/messages.inc:searching
+msgid "Searching..."
+msgstr "Notiek meklēšana..."
+
+#: program/localization/lv_LV/messages.inc:checking
+msgid "Checking..."
+msgstr "Notiek pārbaude..."
+
+#: program/localization/lv_LV/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Netika atrastas pareizrakstības kļudas"
+
+#: program/localization/lv_LV/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Mape veiksmīgi izdzēsta"
+
+#: program/localization/lv_LV/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Mape veiksmīgi pieslēgta."
+
+#: program/localization/lv_LV/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Mape veiksmīgi atslēgta."
+
+#: program/localization/lv_LV/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Mape tika veiksmīgi iztukšota."
+
+#: program/localization/lv_LV/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Mape tika veiksmīgi saspiesta."
+
+#: program/localization/lv_LV/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Veiksmīgi izdzēsts"
+
+#: program/localization/lv_LV/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Tiek novākts vēstules formatējums..."
+
+#: program/localization/lv_LV/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Nevarēja ielādēt vēstuli no servera"
+
+#: program/localization/lv_LV/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Neizdevās ielādēt failu"
+
+#: program/localization/lv_LV/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Ielādētais fails pārsniedz pieļaujamo $size apjomu"
+
+#: program/localization/lv_LV/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Veiksmīgi nokopētas $nr vēstules"
+
+#: program/localization/lv_LV/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Nevarēja nokopēt nevienu adresi"
+
+#: program/localization/lv_LV/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Adreses avots ir lasīšanas režīmā tikai"
+
+#: program/localization/lv_LV/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Nevarēja saglabāt kontakta adreses"
+
+#: program/localization/lv_LV/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Pārvietoju vēstules..."
+
+#: program/localization/lv_LV/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Kopē vēstules..."
+
+#: program/localization/lv_LV/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Kopē kontaktus..."
+
+#: program/localization/lv_LV/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Dzēš vēstules..."
+
+#: program/localization/lv_LV/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Atzīmē vēstules..."
+
+#: program/localization/lv_LV/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Pievieno kontaktu(s) grupai..."
+
+#: program/localization/lv_LV/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Atvieno kontaktu(s) no grupas..."
+
+#: program/localization/lv_LV/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Saņemšanas apstiprinājums nosūtīts"
+
+#: program/localization/lv_LV/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Neizdevās nosūtīt apstiprinājumu"
+
+#: program/localization/lv_LV/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Šo identitāti nevar izdzēst, tā ir pati pēdējā."
+
+#: program/localization/lv_LV/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Mapes nosaukums satur aizliegtus simbolus"
+
+#: program/localization/lv_LV/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Lūdzu izvēlieties failu, ko vēlaties augšupielādēt"
+
+#: program/localization/lv_LV/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Izvēlētās adrešu grāmatas datus nevar labot"
+
+#: program/localization/lv_LV/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Kontakti tika veiksmīgi pievienoti šai grupai."
+
+#: program/localization/lv_LV/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Kontakti tika veiksmīgi atvienoti no šīs grupas."
+
+#: program/localization/lv_LV/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Importēju, lūdzu uzgaidiet..."
+
+#: program/localization/lv_LV/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Imports neizdevās! Augšupielādētais fails nav korekts vCard fails"
+
+#: program/localization/lv_LV/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Veiksmīgi ieimportēti $inserted kontakti, netika importēti $skipped"
+"esoši ieraksti</b>:<p><em>$names</em></p>"
+
+#: program/localization/lv_LV/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Izlaida $skipped jau eksistējošus ierakstus</b>"
+
+#: program/localization/lv_LV/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Darbība nav atļauta!"
+
+#: program/localization/lv_LV/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Izvēlētajai identitātei nav norādīta e-pasta adrese"
+
+#: program/localization/lv_LV/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Pārslēdzoties uz vienkāršotu teksta redaktoru, tiks pazaudēts esošais"
+"teksta formatējums. Vai vēlaties turpināt?"
+
+#: program/localization/lv_LV/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Kļūme. Lūdzu sazinieties ar administratoru. <b>Nav iespējams nosūtīt"
+"vēstuli.</b>"
+
+#: program/localization/lv_LV/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP kļūme ($code): Neizdevās pieslēgties serverim"
+
+#: program/localization/lv_LV/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP kļūme ($code): Neizdevās autentificēties"
+
+#: program/localization/lv_LV/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP kļūme ($code): Neizdevās iestatīt sūtītāju \"$from\" ($msg)"
+
+#: program/localization/lv_LV/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP kļūme ($code): Neizdevās pievienot saņēmēju \"$to\" ($msg)"
+
+#: program/localization/lv_LV/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP kļūme: Nav iespējams parsēt saņēmēju sarakstu"
+
+#: program/localization/lv_LV/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "SMTP kļūme: Piegādes statusa paziņojumi netiek uzturēti."
+
+#: program/localization/lv_LV/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP kļūme: $msg"
+
+#: program/localization/lv_LV/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Nepareiza e-pasta adrese: $email"
+
+#: program/localization/lv_LV/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Pārāk daudz saņēmēju. Samaziniet skaitu līdz $max."
+
+#: program/localization/lv_LV/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Grupas dalībnieku skaits pārsniedz limitu $max."
+
+#: program/localization/lv_LV/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Servera iekšējā kļūda. Lūdzu mēģiniet vēlreiz."
+
+#: program/localization/lv_LV/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Neizdevās izdzēst kontaktu(s)."
+
+#: program/localization/lv_LV/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Kontakti veiksmīgi izdzēsti."
+
+#: program/localization/lv_LV/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Neizdevās atjaunot izdzēstos kontaktus."
+
+#: program/localization/lv_LV/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Kontakti veiksmīgi atjaunoti."
+
+#: program/localization/lv_LV/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Grupa veiksmīgi izdzēsta."
+
+#: program/localization/lv_LV/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Grupa veiksmīgi pārdēvēta."
+
+#: program/localization/lv_LV/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Grupa veiksmīgi izveidota."
+
+#: program/localization/lv_LV/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Vēstule(s) veiksmīgi izdzēsta(s)."
+
+#: program/localization/lv_LV/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Vēstule(s) veiksmīgi pārvietota(s)."
+
+#: program/localization/lv_LV/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Vēstule(s) veiksmīgi pārkopēta(s)."
+
+#: program/localization/lv_LV/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Vēstule(s) veiksmīgi iezīmēta(s)."
+
+#: program/localization/lv_LV/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Ievadiet vismaz $min burtus, lai meklētu automātiski."
+
+#: program/localization/lv_LV/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Lūdzu ievadiet vārdu."
+
+#: program/localization/lv_LV/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Vārds ir par garu."
+
+#: program/localization/lv_LV/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Mape vieksmīgi atjaunota."
+
+#: program/localization/lv_LV/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Mape veiksmīgi izveidota."
+
+#: program/localization/lv_LV/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Nederīgs attēla formāts."
+
+#: program/localization/lv_LV/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "Vēstulē atrastas pareizrakstības kļūdas."
+
+#: program/localization/lv_LV/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "Neizdevās izveidot/pārvietot mapi uz atzīmēto virsmapi. Nav piekļuves"
+"tiesību."

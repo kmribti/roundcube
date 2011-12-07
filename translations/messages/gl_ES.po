@@ -1,0 +1,587 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/gl_ES/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: gl_ES\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/gl_ES/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "O contrasinal ou o nome de usuario son incorrectos."
+
+#: program/localization/gl_ES/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "O seu navegador non acepta galletas."
+
+#: program/localization/gl_ES/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "A súa sesión non é válida ou expirou."
+
+#: program/localization/gl_ES/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Fallou a conexión co servidor IMAP."
+
+#: program/localization/gl_ES/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Erro do servidor!"
+
+#: program/localization/gl_ES/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Erro do servidor: $msg"
+
+#: program/localization/gl_ES/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Erro na base de datos!"
+
+#: program/localization/gl_ES/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Non foi posible realizar a operación. O cartafol é de só lectura."
+
+#: program/localization/gl_ES/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Non foi posible realizar a operación. Permiso denegado."
+
+#: program/localization/gl_ES/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Petición inválida!. Non se gardou ningún dato."
+
+#: program/localization/gl_ES/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Non se atoparon mensaxes nesta caixa de correo."
+
+#: program/localization/gl_ES/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Rematou correctamente a súa sesión. Ata logo!"
+
+#: program/localization/gl_ES/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "A caixa de correo está vacía."
+
+#: program/localization/gl_ES/messages.inc:loading
+msgid "Loading..."
+msgstr "Cargando..."
+
+#: program/localization/gl_ES/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Cargando ficheiro..."
+
+#: program/localization/gl_ES/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Cargando ficheiros..."
+
+#: program/localization/gl_ES/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Cargando datos..."
+
+#: program/localization/gl_ES/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Á procura de novas mensaxes..."
+
+#: program/localization/gl_ES/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Enviando mensaxe..."
+
+#: program/localization/gl_ES/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "A mensaxe enviouse correctamente."
+
+#: program/localization/gl_ES/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Gardando mensaxe..."
+
+#: program/localization/gl_ES/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "A mensaxe gardouse en \"Borradores\""
+
+#: program/localization/gl_ES/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Gardado correctamente."
+
+#: program/localization/gl_ES/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "O contacto engadiuse correctamente ao caderno de enderezos."
+
+#: program/localization/gl_ES/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Xa existe un contacto con este enderezo de correo electrónico."
+
+#: program/localization/gl_ES/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Xa existe un contacto con este nome."
+
+#: program/localization/gl_ES/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Estanse a bloquear as imaxes remotas para protexer a súa privacidade."
+
+#: program/localization/gl_ES/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Non se pode amosar a mensaxe porque está cifrada."
+
+#: program/localization/gl_ES/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Non se atoparon contactos."
+
+#: program/localization/gl_ES/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Non se atopou o contacto solicitado."
+
+#: program/localization/gl_ES/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Introduza algún termo para atopar contactos"
+
+#: program/localization/gl_ES/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Fallou o envío da mensaxe."
+
+#: program/localization/gl_ES/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Por favor, espere $sec segundos antes de enviar esta mensaxe."
+
+#: program/localization/gl_ES/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Ocurriu un erro mentres se gardaba a mensaxe enviada."
+
+#: program/localization/gl_ES/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Ocurriu un erro mentres se gardaba."
+
+#: program/localization/gl_ES/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Non foi posible mover a(s) mensaxe(s)."
+
+#: program/localization/gl_ES/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Non foi posible copiar a(s) mensaxe(s)."
+
+#: program/localization/gl_ES/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Non foi posible eliminar a(s) mensaxe(s)."
+
+#: program/localization/gl_ES/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Non foi posible marcar a(s) mensaxe(s)."
+
+#: program/localization/gl_ES/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Quere eliminar o(s) contacto(s) seleccionado(s)?"
+
+#: program/localization/gl_ES/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Quere eliminar o grupo seleccionado?"
+
+#: program/localization/gl_ES/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Quere eliminar a(s) mensaxe(s) seleccionadas?"
+
+#: program/localization/gl_ES/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Quere eliminar este cartafol?"
+
+#: program/localization/gl_ES/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Quere eliminar tódalas mensaxes neste cartafol?"
+
+#: program/localization/gl_ES/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Eliminando o(s) contacto(s)..."
+
+#: program/localization/gl_ES/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Eliminando o grupo..."
+
+#: program/localization/gl_ES/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Eliminando o cartafol..."
+
+#: program/localization/gl_ES/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Movendo o cartafol..."
+
+#: program/localization/gl_ES/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Subscribindo o cartafol..."
+
+#: program/localization/gl_ES/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Desubscribindo o cartafol..."
+
+#: program/localization/gl_ES/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Non se cumprimentou completamente o formulario."
+
+#: program/localization/gl_ES/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Por favor, introduza un enderezo de correo electrónico válido."
+
+#: program/localization/gl_ES/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Por favor, introduza un nome."
+
+#: program/localization/gl_ES/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Por favor, introduza un tamaño de páxina."
+
+#: program/localization/gl_ES/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Por favor, introduza o enderezo de correo electrónico do remitente."
+
+#: program/localization/gl_ES/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Por favor, introduza polo menos un destinatario."
+
+#: program/localization/gl_ES/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "O campo \"Asunto\" está baleiro. Desexa completalo?"
+
+#: program/localization/gl_ES/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Quere enviar esta mensaxe sen texto?"
+
+#: program/localization/gl_ES/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "A mensaxe non se enviou. Quere descartala?"
+
+#: program/localization/gl_ES/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Por favor, elixa un servidor LDAP para buscar."
+
+#: program/localization/gl_ES/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Por favor, introduza un nome ou un enderezo de correo electrónico."
+
+#: program/localization/gl_ES/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Aínda non se cargaron tódolos ficheiros. Por favor, agarde ou cancele a"
+"carga."
+
+#: program/localization/gl_ES/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "Atopáronse $nr mensaxes."
+
+#: program/localization/gl_ES/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "Atopáronse $nr contactos."
+
+#: program/localization/gl_ES/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "A busca non atopou coincidencias."
+
+#: program/localization/gl_ES/messages.inc:searching
+msgid "Searching..."
+msgstr "Buscando..."
+
+#: program/localization/gl_ES/messages.inc:checking
+msgid "Checking..."
+msgstr "Comprobando..."
+
+#: program/localization/gl_ES/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Non hai erros ortográficos."
+
+#: program/localization/gl_ES/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "O cartafol eliminouse correctamente."
+
+#: program/localization/gl_ES/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "O cartafol suscribiuse correctamente."
+
+#: program/localization/gl_ES/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "O cartafol desuscribiuse correctamente."
+
+#: program/localization/gl_ES/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "O cartafol purgouse correctamente."
+
+#: program/localization/gl_ES/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "O cartafol baleirouse correctamente."
+
+#: program/localization/gl_ES/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Eliminouse correctamente."
+
+#: program/localization/gl_ES/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Eliminando o formato da mensaxe..."
+
+#: program/localization/gl_ES/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Non foi posible cargar a mensaxe desde o servidor."
+
+#: program/localization/gl_ES/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Fallou a carga do ficheiro."
+
+#: program/localization/gl_ES/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "O ficheiro cargado é máis grande que o tamaño máximo de $size."
+
+#: program/localization/gl_ES/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Copiáronse correctamente $nr enderezos."
+
+#: program/localization/gl_ES/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Non foi posible copiar ningún enderezo."
+
+#: program/localization/gl_ES/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "A orixe é de só lectura."
+
+#: program/localization/gl_ES/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Non foi posible gardar o contacto."
+
+#: program/localization/gl_ES/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Movendo a(s) mensaxe(s)..."
+
+#: program/localization/gl_ES/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Copiando a(s) mensaxe(s)..."
+
+#: program/localization/gl_ES/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Copiando o(s) contacto(s)..."
+
+#: program/localization/gl_ES/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Eliminando a(s) mensaxe(s)..."
+
+#: program/localization/gl_ES/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Marcando a(s) mensaxe(s)..."
+
+#: program/localization/gl_ES/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Engadindo o(s) contacto(s) ao grupo..."
+
+#: program/localization/gl_ES/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Eliminando o(s) contacto(s) do grupo..."
+
+#: program/localization/gl_ES/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "A notificación da entrega enviouse correctamente."
+
+#: program/localization/gl_ES/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Non foi posible enviar a notificación da entrega."
+
+#: program/localization/gl_ES/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Non pode eliminar esta identidade, é a última."
+
+#: program/localization/gl_ES/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "O nome do cartafol contén un carácter non válido."
+
+#: program/localization/gl_ES/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Por favor, escolla un ficheiro para cargar."
+
+#: program/localization/gl_ES/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Non se pode escribir no caderno de enderezos que escolleu."
+
+#: program/localization/gl_ES/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Engadiuse correctamente o contacto a este grupo."
+
+#: program/localization/gl_ES/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Suprimiuse correctamente o contacto deste grupo."
+
+#: program/localization/gl_ES/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "A importar. Por favor, agarde..."
+
+#: program/localization/gl_ES/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Produciuse un erro na importación. O ficheiro que cargou non é un vCard"
+"correcto."
+
+#: program/localization/gl_ES/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Importáronse correctamente $inserted contactos. Ignoráronse $skipped"
+"contactos que xa existían</b>:<p><em>$names</em></p>"
+
+#: program/localization/gl_ES/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Ignoráronse $skipped existing entradas</b>"
+
+#: program/localization/gl_ES/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Operación non permitida!"
+
+#: program/localization/gl_ES/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Falta o enderezo de correo electrónico na identidade que escolleu."
+
+#: program/localization/gl_ES/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Se troca neste intre ao editor de texto plano, vai perder todo o formato do"
+"texto. Quere continuar?"
+
+#: program/localization/gl_ES/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Produciuse un erro fatal de configuración. Contacte ao administrador"
+"inmediatamente. <b>Non se enviou a súa mensaxe.</b>"
+
+#: program/localization/gl_ES/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "Erro SMTP ($code): Fallou a conexión co servidor."
+
+#: program/localization/gl_ES/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "Erro SMTP ($code): Fallou a autenticación."
+
+#: program/localization/gl_ES/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "Erro SMTP ($code): Non foi posible establecer o remitente \"$from\" ($msg)."
+
+#: program/localization/gl_ES/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "Erro SMTP ($code): Non foi posible engadir o destinatario \"$to\" ($msg)."
+
+#: program/localization/gl_ES/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "Erro SMTP: Non se pode analizar a lista de destinatarios."
+
+#: program/localization/gl_ES/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "Erro SMTP: Non hai soporte para notificacións do estado de envío (DSN)."
+
+#: program/localization/gl_ES/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "Erro SMTP: $msg"
+
+#: program/localization/gl_ES/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "O enderezo de correo electrónico é incorrecto: $email."
+
+#: program/localization/gl_ES/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Especificou destinatarios de máis. Por favor, redúzaos a un máximo de"
+"$max."
+
+#: program/localization/gl_ES/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "O número de membros do grupo excede o máximo de $max."
+
+#: program/localization/gl_ES/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Ocurriu un erro interno. Por favor, probe outra vez."
+
+#: program/localization/gl_ES/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Non foi posible eliminar o(s) contacto(s)."
+
+#: program/localization/gl_ES/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Borráronse correctamente o(s) contacto(s)."
+
+#: program/localization/gl_ES/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Non foi posible restaurar o(s) contacto(s) borrado(s)."
+
+#: program/localization/gl_ES/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Restauráronse correctamente o(s) contacto(s)."
+
+#: program/localization/gl_ES/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Borrouse correctamente o grupo."
+
+#: program/localization/gl_ES/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Mudouse correctamente o nome do grupo."
+
+#: program/localization/gl_ES/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Creouse correctamente o grupo."
+
+#: program/localization/gl_ES/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Borrouse correctamente a procura gardada. "
+
+#: program/localization/gl_ES/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Non foi posible borrar a procura gardada."
+
+#: program/localization/gl_ES/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Creouse correctamente a procura gardada."
+
+#: program/localization/gl_ES/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Non foi posible crear a procura gardada."
+
+#: program/localization/gl_ES/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Borráronse correctamente a(s) mensaxe(s)."
+
+#: program/localization/gl_ES/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Movéronse correctamente a(s) mensaxe(s)."
+
+#: program/localization/gl_ES/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Copiáronse correctamente a(s) mensaxe(s)."
+
+#: program/localization/gl_ES/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Marcáronse correctamente a(s) mensaxe(s)."
+
+#: program/localization/gl_ES/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Introduza polo menos $min caracteres para autocompletar."
+
+#: program/localization/gl_ES/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Atopáronse máis entradas concidintes. Por favor, introduza máis"
+"caracteres."
+
+#: program/localization/gl_ES/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "O nome non pode estar baleiro."
+
+#: program/localization/gl_ES/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "O nome é longo de máis."
+
+#: program/localization/gl_ES/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "O cartafol actualizouse correctamente."
+
+#: program/localization/gl_ES/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "O cartafol creouse correctamente."
+
+#: program/localization/gl_ES/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "O formato da imaxe non é válido."
+
+#: program/localization/gl_ES/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "Atopáronse erros ortográficos na mensaxe."
+
+#: program/localization/gl_ES/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "Non foi posible crear/mover o cartafol no cartafol padre escollido porque"
+"non ten permisos."

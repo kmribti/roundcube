@@ -1,0 +1,583 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/sv_SE/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: sv_SE\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/sv_SE/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Inloggningen misslyckades"
+
+#: program/localization/sv_SE/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Din webbläsare accepterar inte cookies"
+
+#: program/localization/sv_SE/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Din inloggning är felaktig eller har gått ut"
+
+#: program/localization/sv_SE/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Anslutning till IMAP-servern misslyckades"
+
+#: program/localization/sv_SE/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Serverfel!"
+
+#: program/localization/sv_SE/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Serverfel: $msg"
+
+#: program/localization/sv_SE/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Databasfel!"
+
+#: program/localization/sv_SE/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Åtgärden kunde inte utföras. Katalogen är skrivskyddad"
+
+#: program/localization/sv_SE/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Åtgärden kunde inte utföras. Otillräcklig befogenhet"
+
+#: program/localization/sv_SE/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Ogiltig begäran! Informationen sparades inte."
+
+#: program/localization/sv_SE/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Inga meddelanden"
+
+#: program/localization/sv_SE/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Du är utloggad. Välkommen åter!"
+
+#: program/localization/sv_SE/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Katalogen är tom"
+
+#: program/localization/sv_SE/messages.inc:loading
+msgid "Loading..."
+msgstr "Laddar..."
+
+#: program/localization/sv_SE/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Överför fil..."
+
+#: program/localization/sv_SE/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Överför filer..."
+
+#: program/localization/sv_SE/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Laddar data..."
+
+#: program/localization/sv_SE/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Hämtar nya meddelanden..."
+
+#: program/localization/sv_SE/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Skickar meddelande..."
+
+#: program/localization/sv_SE/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Meddelandet har skickats"
+
+#: program/localization/sv_SE/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Sparar meddelande..."
+
+#: program/localization/sv_SE/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Meddelandet har sparats i Utkast"
+
+#: program/localization/sv_SE/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Informationen har sparats"
+
+#: program/localization/sv_SE/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Kontakten har lagts till i adressboken"
+
+#: program/localization/sv_SE/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "En kontakt med den här adressen finns redan"
+
+#: program/localization/sv_SE/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "En kontakt med det här namnet finns redan"
+
+#: program/localization/sv_SE/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Externt länkade bilder i meddelandet har blockerats."
+
+#: program/localization/sv_SE/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Meddelandet är krypterat och kan tyvärr inte visas."
+
+#: program/localization/sv_SE/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Inga kontakter hittades"
+
+#: program/localization/sv_SE/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Efterfrågad kontakt hittades inte"
+
+#: program/localization/sv_SE/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Ange sökord för att hitta kontakter"
+
+#: program/localization/sv_SE/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Meddelandet kunde inte skickas"
+
+#: program/localization/sv_SE/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Vänta ytterligare $sec sekunder med att skicka meddelandet"
+
+#: program/localization/sv_SE/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Ett fel inträffade när det skickade meddelandet skulle sparas"
+
+#: program/localization/sv_SE/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Meddelandet kunde inte sparas"
+
+#: program/localization/sv_SE/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Meddelandet kunde inte flyttas"
+
+#: program/localization/sv_SE/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Meddelandet kunde inte kopieras"
+
+#: program/localization/sv_SE/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Meddelandet kunde inte tas bort"
+
+#: program/localization/sv_SE/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Meddelandet kunde inte markeras"
+
+#: program/localization/sv_SE/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Vill du verkligen ta bort valda kontakter?"
+
+#: program/localization/sv_SE/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Vill du verkligen ta bort den valda gruppen?"
+
+#: program/localization/sv_SE/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Vill du verkligen ta bort valda meddelanden?"
+
+#: program/localization/sv_SE/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Vill du verkligen ta bort den här katalogen?"
+
+#: program/localization/sv_SE/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Vill du verkligen ta bort alla meddelanden i den här katalogen?"
+
+#: program/localization/sv_SE/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Tar bort kontakt..."
+
+#: program/localization/sv_SE/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Tar bort grupp..."
+
+#: program/localization/sv_SE/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Tar bort katalog..."
+
+#: program/localization/sv_SE/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Flyttar katalog..."
+
+#: program/localization/sv_SE/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Startar prenumeration på katalog..."
+
+#: program/localization/sv_SE/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Avslutar prenumeration på katalog..."
+
+#: program/localization/sv_SE/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Formuläret var inte komplett ifyllt"
+
+#: program/localization/sv_SE/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Ange en giltig adress"
+
+#: program/localization/sv_SE/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Ange ett namn"
+
+#: program/localization/sv_SE/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Ange en sidstorlek"
+
+#: program/localization/sv_SE/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Ange en avsändaradress"
+
+#: program/localization/sv_SE/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Ange minst en mottagare"
+
+#: program/localization/sv_SE/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Ämnesraden är tom. Vill du ange ämne nu?"
+
+#: program/localization/sv_SE/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Skicka det här meddelandet utan text?"
+
+#: program/localization/sv_SE/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Meddelandet har inte skickats. Vill du avbryta meddelandet?"
+
+#: program/localization/sv_SE/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Ange en LDAP-server för att söka"
+
+#: program/localization/sv_SE/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Ange ett kontaktnamn eller en adress"
+
+#: program/localization/sv_SE/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Alla bilagor har inte överförts ännu. Vänligen vänta eller avbryt"
+"överföringen."
+
+#: program/localization/sv_SE/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr meddelanden hittades"
+
+#: program/localization/sv_SE/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "$nr kontakter hittades"
+
+#: program/localization/sv_SE/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Sökningen gav inget resultat"
+
+#: program/localization/sv_SE/messages.inc:searching
+msgid "Searching..."
+msgstr "Söker..."
+
+#: program/localization/sv_SE/messages.inc:checking
+msgid "Checking..."
+msgstr "Kontrollerar..."
+
+#: program/localization/sv_SE/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Inget stavfel hittades"
+
+#: program/localization/sv_SE/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Katalogen togs bort"
+
+#: program/localization/sv_SE/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Prenumeration på katalog startad"
+
+#: program/localization/sv_SE/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Prenumeration på katalog avslutad"
+
+#: program/localization/sv_SE/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Katalog rensad"
+
+#: program/localization/sv_SE/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Katalog tömd"
+
+#: program/localization/sv_SE/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Lyckad borttagning"
+
+#: program/localization/sv_SE/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Tar bort formatering från meddelande..."
+
+#: program/localization/sv_SE/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Meddelandet kunde inte hämtas från servern"
+
+#: program/localization/sv_SE/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Filuppladdning misslyckades"
+
+#: program/localization/sv_SE/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Den uppladdade filens storlek överstiger högsta tillåtna $size"
+
+#: program/localization/sv_SE/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "$nr adresser har kopierats"
+
+#: program/localization/sv_SE/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Några adresser kunde inte kopieras"
+
+#: program/localization/sv_SE/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Denna adresskälla är skrivskyddad"
+
+#: program/localization/sv_SE/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Kontaktadressen kunde inte sparas"
+
+#: program/localization/sv_SE/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Flyttar meddelande..."
+
+#: program/localization/sv_SE/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Kopierar meddelande..."
+
+#: program/localization/sv_SE/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Kopierar kontakter..."
+
+#: program/localization/sv_SE/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Tar bort meddelande..."
+
+#: program/localization/sv_SE/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Markerar meddelande..."
+
+#: program/localization/sv_SE/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Lägger till kontakter i gruppen..."
+
+#: program/localization/sv_SE/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Tar bort kontakter från gruppen..."
+
+#: program/localization/sv_SE/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Mottagarkvitto har skickats"
+
+#: program/localization/sv_SE/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Mottagarkvitto kunde inte skickas"
+
+#: program/localization/sv_SE/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Du kan inte ta bort identiteten, den är din sista."
+
+#: program/localization/sv_SE/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Katalognamnet innehåller otillåtna tecken"
+
+#: program/localization/sv_SE/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Välj en fil att ladda upp"
+
+#: program/localization/sv_SE/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Angiven adressbok är skrivskyddad"
+
+#: program/localization/sv_SE/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Kontakterna har lagts till i gruppen"
+
+#: program/localization/sv_SE/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Kontakterna har tagits bort från gruppen"
+
+#: program/localization/sv_SE/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Importerar, var god vänta..."
+
+#: program/localization/sv_SE/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Importen misslyckades! Filen är inte i vCard-format."
+
+#: program/localization/sv_SE/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Lyckad import av $inserted kontakter, $skipped dubbletter har"
+"ignorerats:</b><p><em>$names</em></p>"
+
+#: program/localization/sv_SE/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Hoppade över $skipped befintliga poster</b>"
+
+#: program/localization/sv_SE/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Otillåten operation!"
+
+#: program/localization/sv_SE/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Adress saknas i den valda identiteten"
+
+#: program/localization/sv_SE/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Genom att växla till text-läge går formateringen förlorad. Vill du"
+"fortsätta?"
+
+#: program/localization/sv_SE/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Ett irreparabelt fel har uppstått. Kontakta administratören omgående."
+"<b>Meddelandet kan inte skickas.</b>"
+
+#: program/localization/sv_SE/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP-fel ($code): Anslutning till servern misslyckades"
+
+#: program/localization/sv_SE/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP-fel ($code): Inloggningen misslyckades"
+
+#: program/localization/sv_SE/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP-fel ($code): Kan inte sätta avsändaradress till \"$from\""
+
+#: program/localization/sv_SE/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP-fel ($code): Kan inte lägga till mottagaradress \"$to\""
+
+#: program/localization/sv_SE/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP-fel: Felaktigt formaterad lista med mottagaradresser"
+
+#: program/localization/sv_SE/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "SMTP-fel: Inget stöd för leveransstatusmeddelande"
+
+#: program/localization/sv_SE/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP-fel: $msg"
+
+#: program/localization/sv_SE/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Felaktig adress: $email"
+
+#: program/localization/sv_SE/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Förmånga mottagare. Minska antalet till högst $max."
+
+#: program/localization/sv_SE/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Antalet gruppmedlemmar får inte överstiga $max"
+
+#: program/localization/sv_SE/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Ett internt fel uppstod. Försök igen."
+
+#: program/localization/sv_SE/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Kontakt kunde inte tas bort"
+
+#: program/localization/sv_SE/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Kontakt borttagen"
+
+#: program/localization/sv_SE/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Borttagna kontakter kunde inte återskapas"
+
+#: program/localization/sv_SE/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Kontakter återskapade"
+
+#: program/localization/sv_SE/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Grupp borttagen"
+
+#: program/localization/sv_SE/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Gruppnamn ändrat"
+
+#: program/localization/sv_SE/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Grupp skapad"
+
+#: program/localization/sv_SE/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Sparad sökning borttagen"
+
+#: program/localization/sv_SE/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Kunde inte ta bort sparad sökning"
+
+#: program/localization/sv_SE/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Sparad sökning tillagd"
+
+#: program/localization/sv_SE/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Kunde inte lägga till sparad sökning"
+
+#: program/localization/sv_SE/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Meddelande borttaget"
+
+#: program/localization/sv_SE/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Meddelande flyttat"
+
+#: program/localization/sv_SE/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Meddelande kopierat"
+
+#: program/localization/sv_SE/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Meddelande markerat"
+
+#: program/localization/sv_SE/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Ange minst $min tecken för automatisk komplettering"
+
+#: program/localization/sv_SE/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Flera passande informationsposter funna. Skriv fler tecken."
+
+#: program/localization/sv_SE/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Namnet får inte vara tomt"
+
+#: program/localization/sv_SE/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Namnet är för långt"
+
+#: program/localization/sv_SE/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Katalog uppdaterad"
+
+#: program/localization/sv_SE/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Katalog skapad"
+
+#: program/localization/sv_SE/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Ogiltigt bildfilsformat"
+
+#: program/localization/sv_SE/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "Stavfel hittades i meddelandet"
+
+#: program/localization/sv_SE/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "Katalogen kunde inte skapas eller flyttas. Åtkomsträttighet saknas."

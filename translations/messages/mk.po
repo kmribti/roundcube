@@ -1,0 +1,396 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/mk_MK/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: mk_MK\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/mk_MK/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Најавата не успеа"
+
+#: program/localization/mk_MK/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Вашиот прелистувач не прифаќа колачиња"
+
+#: program/localization/mk_MK/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Сесијата е неважечка или е истечена"
+
+#: program/localization/mk_MK/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Поврзувањето со IMAP не успеа"
+
+#: program/localization/mk_MK/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Грешка во серверот!"
+
+#: program/localization/mk_MK/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Неважечко барање! Податоците не се"
+"зачувани."
+
+#: program/localization/mk_MK/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Немате писма во ова сандаче"
+
+#: program/localization/mk_MK/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Успешно се одјавивте. Ви благодариме и"
+"довидување!"
+
+#: program/localization/mk_MK/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Поштенското сандаче е празно."
+
+#: program/localization/mk_MK/messages.inc:loading
+msgid "Loading..."
+msgstr "Вчитувам..."
+
+#: program/localization/mk_MK/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Ја подигам податотеката..."
+
+#: program/localization/mk_MK/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Ги вчитувам податоците..."
+
+#: program/localization/mk_MK/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Проверувам нова пошта..."
+
+#: program/localization/mk_MK/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Ја испраќам пораката..."
+
+#: program/localization/mk_MK/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Пораката е успешно испратена"
+
+#: program/localization/mk_MK/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Ја зачувувам пораката..."
+
+#: program/localization/mk_MK/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Пораката е зачувана во Непратени"
+
+#: program/localization/mk_MK/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Успешно зачувано"
+
+#: program/localization/mk_MK/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Името е успешно додадено во Именикот"
+
+#: program/localization/mk_MK/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Веќе постои име со зададената"
+"Е-поштенска адреса"
+
+#: program/localization/mk_MK/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "За да се заштити вашата приватност,"
+"сликите во оваа порака не се прикажани."
+
+#: program/localization/mk_MK/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Оваа порака е кодирана и не може да се"
+"прикаже. Жалиме!"
+
+#: program/localization/mk_MK/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Нема пронајдено имиња."
+
+#: program/localization/mk_MK/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Бараното име не е пронајдено"
+
+#: program/localization/mk_MK/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Не упеав да го испратам писмото"
+
+#: program/localization/mk_MK/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Почекајте $sec секунда/и пред да го"
+"испратите писмото"
+
+#: program/localization/mk_MK/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Грешка при зачувувањето на пратеното"
+"писмо"
+
+#: program/localization/mk_MK/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Грешка при зачувувањето "
+
+#: program/localization/mk_MK/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Не можев да го преместам писмото"
+
+#: program/localization/mk_MK/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Не можев да го избришам писмото"
+
+#: program/localization/mk_MK/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Не можев да го обележам писмото"
+
+#: program/localization/mk_MK/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Дали сте сигурни дека сакате да го"
+"избришете одбраното(те) име(ња)?"
+
+#: program/localization/mk_MK/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Дали сте сигурни дека сакате да го(и)"
+"избришете обележаниот(те) писмо(а)?"
+
+#: program/localization/mk_MK/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Дали сте сигурни дека сакате да ја"
+"избришете оваа папка?"
+
+#: program/localization/mk_MK/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Дали сте сигурни дека сакате да ги"
+"избршете сите писма во оваа папка?"
+
+#: program/localization/mk_MK/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Ја бришам папката..."
+
+#: program/localization/mk_MK/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Ја преместувам папката..."
+
+#: program/localization/mk_MK/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Имате изоставено непополнети информации"
+
+#: program/localization/mk_MK/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Внесете валидна е-поштенска адреса"
+
+#: program/localization/mk_MK/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Внесете име"
+
+#: program/localization/mk_MK/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Внесете големина на страницата"
+
+#: program/localization/mk_MK/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Внесете адреса на праќачот"
+
+#: program/localization/mk_MK/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Внесете барем еден примач"
+
+#: program/localization/mk_MK/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Немате внесено „Наслов“. Дали сакате да"
+"внесете?"
+
+#: program/localization/mk_MK/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Писмото нема текст во него. Дали сакате"
+"да го испратите?"
+
+#: program/localization/mk_MK/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Писмото не е пратено. Дали сакате да го"
+"отфрлите?"
+
+#: program/localization/mk_MK/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Изберете LDAP сервер за пребарување"
+
+#: program/localization/mk_MK/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Не се најдени имиња"
+
+#: program/localization/mk_MK/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Внесете име или е-поштенска адреса"
+
+#: program/localization/mk_MK/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Сè уште нема подигнати прилози."
+"Почекајте или откажете го подигањето"
+
+#: program/localization/mk_MK/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "Пронајадени се $nr пораки"
+
+#: program/localization/mk_MK/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Пребарувањето не даде резлутати"
+
+#: program/localization/mk_MK/messages.inc:searching
+msgid "Searching..."
+msgstr "Пребарувам...."
+
+#: program/localization/mk_MK/messages.inc:checking
+msgid "Checking..."
+msgstr "Проверувам..."
+
+#: program/localization/mk_MK/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Нема грешки во спелувањето"
+
+#: program/localization/mk_MK/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Папката е успешно избришана"
+
+#: program/localization/mk_MK/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Успешно избришано"
+
+#: program/localization/mk_MK/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Форматирањето на писмото е отстрането..."
+
+#: program/localization/mk_MK/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Не можев да го вчитам писното од серверот"
+
+#: program/localization/mk_MK/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Прикачувањето е неуспешно"
+
+#: program/localization/mk_MK/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Подигнатата податотека го надминува"
+"ограничувањето од $size"
+
+#: program/localization/mk_MK/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Успешно се копирани $nr имиња"
+
+#: program/localization/mk_MK/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Не можам да ги копирам адресите"
+
+#: program/localization/mk_MK/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Изворот на оваа адреса неможе да се"
+"промени"
+
+#: program/localization/mk_MK/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Името неможе да се сними"
+
+#: program/localization/mk_MK/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Пораката се преместува..."
+
+#: program/localization/mk_MK/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Известувањето е успешно пратено"
+
+#: program/localization/mk_MK/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Известувањето не е пратено"
+
+#: program/localization/mk_MK/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Овој идентитет неможе да се избрише, тој"
+"е последниот."
+
+#: program/localization/mk_MK/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Името на папката содржи несоодветен"
+"формат"
+
+#: program/localization/mk_MK/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Изберете ја податотеката која сакате да"
+"ја прикачите"
+
+#: program/localization/mk_MK/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Одбраниот именик не може да се менува"
+
+#: program/localization/mk_MK/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Убезувам,, почекајте..."
+
+#: program/localization/mk_MK/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Увезувањето не неуспешно! Прикачената"
+"податотека не е важечки vCard документ."
+
+#: program/localization/mk_MK/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Успешно се увезени $inserted имиња, $skipped"
+"веќе постојат и се"
+"прескокнати</b>:<p><em>$names</em></p>"
+
+#: program/localization/mk_MK/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Операцијата не е дозволена"
+
+#: program/localization/mk_MK/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Не е внесена е-пошта во одберениот"
+"идентитет"
+
+#: program/localization/mk_MK/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Префрлањето на уредникот на обичен текст"
+"ќе резултира со губење на целото"
+"форматирање на текстот. Дали сакате да"
+"продолжите?"
+
+#: program/localization/mk_MK/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Се појави фатална конфигурациска грешка."
+"Веднаш контактирајте го"
+"администраторот. <b>Вашето писмо не мож.</b>"
+
+#: program/localization/mk_MK/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP грешка ($code): Не успеав да се поврзам со"
+"серверот"
+
+#: program/localization/mk_MK/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP грешка: Не успееа потврдувањето"
+
+#: program/localization/mk_MK/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP грешка ($code): Не успеав да го поставам"
+"испраќачот „$from“ ($msg)"
+
+#: program/localization/mk_MK/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP грешка ($code): Не успеав да го поставам"
+"примачот „$yo“ ($msg)"
+
+#: program/localization/mk_MK/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP грешка: Не успеав да ја испарсирам"
+"листата на примачи"
+
+#: program/localization/mk_MK/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP Error: $msg"
+
+#: program/localization/mk_MK/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Неправилна поштенска адреса: $email"

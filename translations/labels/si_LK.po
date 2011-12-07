@@ -1,0 +1,692 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/si_LK/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: si_LK\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/si_LK/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "$product ආයුබොවන්"
+
+#: program/localization/si_LK/labels.inc:username
+msgid "Username"
+msgstr "නම"
+
+#: program/localization/si_LK/labels.inc:password
+msgid "Password"
+msgstr "මුරපදය"
+
+#: program/localization/si_LK/labels.inc:server
+msgid "Server"
+msgstr "පද්ධතිය"
+
+#: program/localization/si_LK/labels.inc:login
+msgid "Login"
+msgstr "අතුල්වීම"
+
+#: program/localization/si_LK/labels.inc:logout
+msgid "Logout"
+msgstr "පිටවීම"
+
+#: program/localization/si_LK/labels.inc:mail
+msgid "Mail"
+msgstr "විද්යුත් තැපෑල"
+
+#: program/localization/si_LK/labels.inc:settings
+msgid "Settings"
+msgstr "පොද්ගලික කට්ටල අංග"
+
+#: program/localization/si_LK/labels.inc:addressbook
+msgid "Address Book"
+msgstr "ලිපින පොත"
+
+#: program/localization/si_LK/labels.inc:inbox
+msgid "Inbox"
+msgstr "ඇතුල්වීම්"
+
+#: program/localization/si_LK/labels.inc:drafts
+msgid "Drafts"
+msgstr "කටු සටහන්"
+
+#: program/localization/si_LK/labels.inc:sent
+msgid "Sent"
+msgstr "පිටවුම්"
+
+#: program/localization/si_LK/labels.inc:trash
+msgid "Trash"
+msgstr "ලටපට"
+
+#: program/localization/si_LK/labels.inc:junk
+msgid "Junk"
+msgstr "සුන්බුන්"
+
+#: program/localization/si_LK/labels.inc:subject
+msgid "Subject"
+msgstr "මාතෘකාව"
+
+#: program/localization/si_LK/labels.inc:from
+msgid "From"
+msgstr "යවන්නා"
+
+#: program/localization/si_LK/labels.inc:to
+msgid "To"
+msgstr "ලබන්නා"
+
+#: program/localization/si_LK/labels.inc:cc
+msgid "Cc"
+msgstr "පිටපත් කිරීම්"
+
+#: program/localization/si_LK/labels.inc:bcc
+msgid "Bcc"
+msgstr "අඳ පිටපත් කිරීම්"
+
+#: program/localization/si_LK/labels.inc:replyto
+msgid "Reply-To"
+msgstr "පිළිතුරු සඳහා"
+
+#: program/localization/si_LK/labels.inc:date
+msgid "Date"
+msgstr "දිනය"
+
+#: program/localization/si_LK/labels.inc:size
+msgid "Size"
+msgstr "ප්රමාණය"
+
+#: program/localization/si_LK/labels.inc:priority
+msgid "Priority"
+msgstr "ප්රමුඛතාව"
+
+#: program/localization/si_LK/labels.inc:organization
+msgid "Company"
+msgstr "සංවිධානය"
+
+#: program/localization/si_LK/labels.inc:reply-to
+msgid "reply-to"
+msgstr "පිළිතුරු සඳහා"
+
+#: program/localization/si_LK/labels.inc:mailboxlist
+#: program/localization/si_LK/labels.inc:folders
+msgid "Folders"
+msgstr "ෆෝල්ඩර"
+
+#: program/localization/si_LK/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "$from ගෙන් $to පනිවුඩ $count"
+
+#: program/localization/si_LK/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "පනිවුඩය $count න් $nr "
+
+#: program/localization/si_LK/labels.inc:moveto
+msgid "Move to..."
+msgstr "ගෙනයෑම..."
+
+#: program/localization/si_LK/labels.inc:download
+msgid "Download"
+msgstr "බාගතකිරීම"
+
+#: program/localization/si_LK/labels.inc:filename
+msgid "File name"
+msgstr "ගොනුවේ නම"
+
+#: program/localization/si_LK/labels.inc:filesize
+msgid "File size"
+msgstr "ගොනුවේ ප්රමාණය"
+
+#: program/localization/si_LK/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML විදහා පෙන්වීම"
+
+#: program/localization/si_LK/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML පනිවුඩය"
+
+#: program/localization/si_LK/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "සුරුබුහුටි දින"
+
+#: program/localization/si_LK/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "ලිපින පොතට එකතු කරන්න"
+
+#: program/localization/si_LK/labels.inc:sun
+msgid "Sun"
+msgstr "ඉරිදා"
+
+#: program/localization/si_LK/labels.inc:mon
+msgid "Mon"
+msgstr "සඳුදා"
+
+#: program/localization/si_LK/labels.inc:tue
+msgid "Tue"
+msgstr "අගහ"
+
+#: program/localization/si_LK/labels.inc:wed
+msgid "Wed"
+msgstr "බදාදා"
+
+#: program/localization/si_LK/labels.inc:thu
+msgid "Thu"
+msgstr "බ්රහස්"
+
+#: program/localization/si_LK/labels.inc:fri
+msgid "Fri"
+msgstr "සිකුරා"
+
+#: program/localization/si_LK/labels.inc:sat
+msgid "Sat"
+msgstr "සෙනසු"
+
+#: program/localization/si_LK/labels.inc:sunday
+msgid "Sunday"
+msgstr "ඉරිදා"
+
+#: program/localization/si_LK/labels.inc:monday
+msgid "Monday"
+msgstr "සඳුදා"
+
+#: program/localization/si_LK/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "අගහරුවාදා"
+
+#: program/localization/si_LK/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "බදාදා"
+
+#: program/localization/si_LK/labels.inc:thursday
+msgid "Thursday"
+msgstr "බ්රහස්පතිනිදා"
+
+#: program/localization/si_LK/labels.inc:friday
+msgid "Friday"
+msgstr "සිකුරාදා"
+
+#: program/localization/si_LK/labels.inc:saturday
+msgid "Saturday"
+msgstr "සෙනසුරාදා"
+
+#: program/localization/si_LK/labels.inc:today
+msgid "Today"
+msgstr "අද"
+
+#: program/localization/si_LK/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "අඵත් පනිවුඩ සඳහා පිරික්සීම"
+
+#: program/localization/si_LK/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "අඵත් පනිවුඩක්"
+
+#: program/localization/si_LK/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "පනිවුඩයට පිළිතුරු"
+
+#: program/localization/si_LK/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "එවන්නාට සහ සැමට පිළිතුරු"
+
+#: program/localization/si_LK/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "පනිවුඩය ඉදිරියට"
+
+#: program/localization/si_LK/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "පනිවුඩය ලටපට තුලට ගෙනයන්න"
+
+#: program/localization/si_LK/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "පණිවුඩය ලටපට වෙත ගෙන යන්න"
+
+#: program/localization/si_LK/labels.inc:printmessage
+msgid "Print this message"
+msgstr "පනිවුඩය මුද්රනය කරන්න"
+
+#: program/localization/si_LK/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "කලින් පනිවුඩය පෙන්නන්න"
+
+#: program/localization/si_LK/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "කලින් පනිවුඩ කට්ටලය"
+"පෙන්නන්න"
+
+#: program/localization/si_LK/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "පළමුවන පනිවුඩය පෙන්නන්න"
+
+#: program/localization/si_LK/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "පළමුවන පනිවුඩ කට්ටලය"
+"පෙන්නන්න"
+
+#: program/localization/si_LK/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "මීළඟ පනිවුඩය පෙන්නන්න"
+
+#: program/localization/si_LK/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "මීළඟ පනිවුඩ කට්ටලය පෙන්නන්න"
+
+#: program/localization/si_LK/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "අවසාන පනිවුඩය පෙන්නන්න"
+
+#: program/localization/si_LK/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "අවසාන පනිවුඩ කට්ටලය"
+"පෙන්නන්න"
+
+#: program/localization/si_LK/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "නැවතත් පනිවුඩ ලැයිස්තුවට"
+
+#: program/localization/si_LK/labels.inc:viewsource
+msgid "Show source"
+msgstr "මූලාශ්රය පෙන්නන්න"
+
+#: program/localization/si_LK/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "පණිවුඩ"
+
+#: program/localization/si_LK/labels.inc:markread
+msgid "As read"
+msgstr "කියවු ලෙස සළකුණු කරන්න"
+
+#: program/localization/si_LK/labels.inc:markunread
+msgid "As unread"
+msgstr "නොකියවු ලෙස සළකුණු කරන්න"
+
+#: program/localization/si_LK/labels.inc:select
+msgid "Select"
+msgstr "තෝරාගන්න"
+
+#: program/localization/si_LK/labels.inc:all
+msgid "All"
+msgstr "සියලු"
+
+#: program/localization/si_LK/labels.inc:none
+msgid "None"
+msgstr "තෝරානොගත්"
+
+#: program/localization/si_LK/labels.inc:unread
+msgid "Unread"
+msgstr "නොකියවූ"
+
+#: program/localization/si_LK/labels.inc:compact
+msgid "Compact"
+msgstr "සංයුක්ත"
+
+#: program/localization/si_LK/labels.inc:empty
+msgid "Empty"
+msgstr "රික්ත"
+
+#: program/localization/si_LK/labels.inc:purge
+msgid "purge"
+msgstr "විරේචන"
+
+#: program/localization/si_LK/labels.inc:quota
+msgid "Disk usage"
+msgstr "භාවිතය"
+
+#: program/localization/si_LK/labels.inc:unknown
+msgid "unknown"
+msgstr "නාඳුනන"
+
+#: program/localization/si_LK/labels.inc:unlimited
+msgid "unlimited"
+msgstr "අසීමිත"
+
+#: program/localization/si_LK/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "ඉක්මන් සෙවුම"
+
+#: program/localization/si_LK/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "සෙවුම යලි පිහිටවීම"
+
+#: program/localization/si_LK/labels.inc:compose
+msgid "Compose a message"
+msgstr "පනිවුඩයක් සෑදීම"
+
+#: program/localization/si_LK/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "කටු සටහනේ තැන්පත කරන්න"
+
+#: program/localization/si_LK/labels.inc:sendmessage
+msgid "Send now"
+msgstr "පනිවුඩය දැන් යවන්න"
+
+#: program/localization/si_LK/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "ගොනුවක් ඇතුලත් කිරීම"
+
+#: program/localization/si_LK/labels.inc:charset
+msgid "Charset"
+msgstr "අකුරැ කට්ටලය"
+
+#: program/localization/si_LK/labels.inc:editortype
+msgid "Editor type"
+msgstr "සම්පාදන ආකාරය"
+
+#: program/localization/si_LK/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "නැවත ලබන්නා"
+
+#: program/localization/si_LK/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "වචන පරීක්ෂාව"
+
+#: program/localization/si_LK/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "සම්පාදන නැවත ඇරඹීම"
+
+#: program/localization/si_LK/labels.inc:revertto
+msgid "Revert to"
+msgstr "ආපසු ඒම"
+
+#: program/localization/si_LK/labels.inc:attachments
+msgid "Attachments"
+msgstr "ගොනු"
+
+#: program/localization/si_LK/labels.inc:upload
+msgid "Upload"
+msgstr "ඇතුල් කරීම"
+
+#: program/localization/si_LK/labels.inc:close
+msgid "Close"
+msgstr "වැසීම"
+
+#: program/localization/si_LK/labels.inc:low
+msgid "Low"
+msgstr "අඩු"
+
+#: program/localization/si_LK/labels.inc:lowest
+msgid "Lowest"
+msgstr "අඩුම"
+
+#: program/localization/si_LK/labels.inc:normal
+msgid "Normal"
+msgstr "සමක"
+
+#: program/localization/si_LK/labels.inc:high
+msgid "High"
+msgstr "ඉහළ"
+
+#: program/localization/si_LK/labels.inc:highest
+msgid "Highest"
+msgstr "ඉහළම"
+
+#: program/localization/si_LK/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(මාතෘකාව නොමැති)"
+
+#: program/localization/si_LK/labels.inc:showimages
+msgid "Display images"
+msgstr "රූප පෙන්නන්න"
+
+#: program/localization/si_LK/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/si_LK/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "පැහැදිලි අකුරු"
+
+#: program/localization/si_LK/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Cc එක් කරන්න"
+
+#: program/localization/si_LK/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Bcc එක් කරන්න"
+
+#: program/localization/si_LK/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "'පිළිතුරු සඳහා' එක් කරන්න"
+
+#: program/localization/si_LK/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "මෙම පණිවුඩය එවන්නා ඔබ එය"
+"කියවු බව අසයි. එය දැන්වීමට ඔබ"
+"කැමතිද?"
+
+#: program/localization/si_LK/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "ලැබීම් ලදුපත (කියවීම)"
+
+#: program/localization/si_LK/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "මෙය ඔබගේ පණිවුඩයේ ලැබීම්"
+"ලදුපතයි"
+
+#: program/localization/si_LK/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "සටහන: ලැබීම් ලදුපත මගින් මෙම"
+"පණිවුඩය කියවූ බව හෝ තේරුම්"
+"ගත් බව ගම්‍ය නොවේ. පණිවුඩය"
+"ලබන්නාට පෙන්නුම් කල බවටට"
+"සාක්ෂියක් පමණි"
+
+#: program/localization/si_LK/labels.inc:name
+msgid "Display Name"
+msgstr "නම පෙන්නන්න"
+
+#: program/localization/si_LK/labels.inc:firstname
+msgid "First Name"
+msgstr "පළමු නම"
+
+#: program/localization/si_LK/labels.inc:surname
+msgid "Last Name"
+msgstr "අවසාන නම"
+
+#: program/localization/si_LK/labels.inc:email
+msgid "Email"
+msgstr "ද්යුත් තැපෑල"
+
+#: program/localization/si_LK/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "ලිපින පොතට එකතු කරන්න"
+
+#: program/localization/si_LK/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "ලිපිනය වෙනස් කිරීම"
+
+#: program/localization/si_LK/labels.inc:edit
+msgid "Edit"
+msgstr "වෙනස් කිරීම"
+
+#: program/localization/si_LK/labels.inc:cancel
+msgid "Cancel"
+msgstr "අවලංගු කරීම"
+
+#: program/localization/si_LK/labels.inc:save
+msgid "Save"
+msgstr "තැන්පත් කිරීම"
+
+#: program/localization/si_LK/labels.inc:delete
+msgid "Delete"
+msgstr "මකා දැමීම"
+
+#: program/localization/si_LK/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "අඵත් ලිපින පතක් සෑදීම"
+
+#: program/localization/si_LK/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "තෝරාගත් ලිපින මකා දැමන්න"
+
+#: program/localization/si_LK/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "පනිවුඩයක් සෑදීම"
+
+#: program/localization/si_LK/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "$from ගෙන් $to ලිපින $count"
+
+#: program/localization/si_LK/labels.inc:print
+msgid "Print"
+msgstr "මුද්රණය"
+
+#: program/localization/si_LK/labels.inc:export
+msgid "Export"
+msgstr "නිර්යාත"
+
+#: program/localization/si_LK/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "කලින් කට්ටලය පෙන්නන්න"
+
+#: program/localization/si_LK/labels.inc:firstpage
+msgid "Show first page"
+msgstr "පළමුවන කට්ටලය පෙන්නන්න"
+
+#: program/localization/si_LK/labels.inc:nextpage
+msgid "Show next page"
+msgstr "මීළඟ කට්ටලය පෙන්නන්න"
+
+#: program/localization/si_LK/labels.inc:lastpage
+msgid "Show last page"
+msgstr "අවසාන කට්ටලය පෙන්නන්න"
+
+#: program/localization/si_LK/labels.inc:groups
+msgid "Groups"
+msgstr "කණ්ඩායම්"
+
+#: program/localization/si_LK/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "පොද්ගලික ලිපිනය"
+
+#: program/localization/si_LK/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "සඳහා කට්ටල අංග"
+
+#: program/localization/si_LK/labels.inc:preferences
+msgid "Preferences"
+msgstr "අභිමතය"
+
+#: program/localization/si_LK/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "පරිශීලක අභිමතය"
+
+#: program/localization/si_LK/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "පරිශීලක අභිමතය වෙනස් කිරීම්"
+
+#: program/localization/si_LK/labels.inc:identities
+msgid "Identities"
+msgstr "අනන්නයතාව"
+
+#: program/localization/si_LK/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "මෙම ගිණුමෙ අනන්නයතාව"
+"හැසිරවීම"
+
+#: program/localization/si_LK/labels.inc:newidentity
+msgid "New identity"
+msgstr "අඵත් අනන්නයතාව"
+
+#: program/localization/si_LK/labels.inc:newitem
+msgid "New item"
+msgstr "අඵත් අයිතම"
+
+#: program/localization/si_LK/labels.inc:edititem
+msgid "Edit item"
+msgstr "අයිතම වෙනස් කිරීම්"
+
+#: program/localization/si_LK/labels.inc:setdefault
+msgid "Set default"
+msgstr "පළමු තත්වයට"
+
+#: program/localization/si_LK/labels.inc:language
+msgid "Language"
+msgstr "භාෂාව"
+
+#: program/localization/si_LK/labels.inc:timezone
+msgid "Time zone"
+msgstr "කාල කලාපය"
+
+#: program/localization/si_LK/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "පිටුවකටඅ පේළි"
+
+#: program/localization/si_LK/labels.inc:signature
+msgid "Signature"
+msgstr "අත්සන"
+
+#: program/localization/si_LK/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "දිවා එළිය ඉතිරි කිරීම"
+
+#: program/localization/si_LK/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "HTML පනිවුඩයක් සෑදීම"
+
+#: program/localization/si_LK/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML අත්සන"
+
+#: program/localization/si_LK/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "පූර්වදර්ශන කොටස පෙන්නන්න"
+
+#: program/localization/si_LK/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "ස්වයංක්රීයව කටු සටහනේ"
+"තැන්පත් කරන්න"
+
+#: program/localization/si_LK/labels.inc:never
+msgid "never"
+msgstr "කිසි විටෙකත් නැති"
+
+#: program/localization/si_LK/labels.inc:folder
+msgid "Folder"
+msgstr "ෆෝල්ඩරය"
+
+#: program/localization/si_LK/labels.inc:foldername
+msgid "Folder name"
+msgstr "ෆෝල්ඩරයේ නම"
+
+#: program/localization/si_LK/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "සාමාජික"
+
+#: program/localization/si_LK/labels.inc:messagecount
+msgid "Messages"
+msgstr "පනිවුඩ"
+
+#: program/localization/si_LK/labels.inc:create
+msgid "Create"
+msgstr "සෑදීම"
+
+#: program/localization/si_LK/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "අඵත් ෆෝල්ඩරයක් සෑදීම"
+
+#: program/localization/si_LK/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "හැසිරවීම හැසිරවීම"
+
+#: program/localization/si_LK/labels.inc:sortby
+msgid "Sort by"
+msgstr "චිසින් වර්ග කිරීම"
+
+#: program/localization/si_LK/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "ආරෝහණ වර්ග කිරීම"
+
+#: program/localization/si_LK/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "අවරෝහණ වර්ග කිරීම"

@@ -1,0 +1,592 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/he_IL/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: he_IL\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/he_IL/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "הכניסה נכשלה"
+
+#: program/localization/he_IL/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "הדפדפן אינו מקבל עוגיות"
+
+#: program/localization/he_IL/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "כניסתך למערכת אינה חוקית או שפג תוקפה"
+
+#: program/localization/he_IL/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "הקשר לשרת הדואר נכשל"
+
+#: program/localization/he_IL/messages.inc:servererror
+msgid "Server Error!"
+msgstr "! שגיאת שרת"
+
+#: program/localization/he_IL/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "$msg  שגיאת שרת"
+
+#: program/localization/he_IL/messages.inc:dberror
+msgid "Database Error!"
+msgstr "! שגיאה במסד הנתונים"
+
+#: program/localization/he_IL/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "לא ניתן לבצע הפעולה כי התיק ניתן לקריאה"
+"בלבד"
+
+#: program/localization/he_IL/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "לא ניתן לבצע הפעולה כי אין הרשאה לבצעה"
+
+#: program/localization/he_IL/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "בקשה לא חוקית. המידע לא נשמר"
+
+#: program/localization/he_IL/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "לא נמצאו הודעות בתיבה זו"
+
+#: program/localization/he_IL/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "הקשר הסתיים. להתראות!"
+
+#: program/localization/he_IL/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "רשימת ההודעות ריקה"
+
+#: program/localization/he_IL/messages.inc:loading
+msgid "Loading..."
+msgstr "טעינה..."
+
+#: program/localization/he_IL/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "קובץ עולה..."
+
+#: program/localization/he_IL/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "מעלה קבצים..."
+
+#: program/localization/he_IL/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "טעינת מידע..."
+
+#: program/localization/he_IL/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "בדיקת קיום הודעות חדשות..."
+
+#: program/localization/he_IL/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "ההודעה נמסרת..."
+
+#: program/localization/he_IL/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "ההודעה נמסרה בהצלחה"
+
+#: program/localization/he_IL/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "שמירת הודעה..."
+
+#: program/localization/he_IL/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "ההודעה נשמרה כטיוטה"
+
+#: program/localization/he_IL/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "נשמרה בהצלחה"
+
+#: program/localization/he_IL/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "איש הקשר נוסף לפנקס בהצלחה"
+
+#: program/localization/he_IL/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "קיים כבר איש קשר עם כתובת דוא\"ל זו"
+
+#: program/localization/he_IL/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "קיים כבר איש קשר בעל אותו שם"
+
+#: program/localization/he_IL/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "תמונות משרת אחר נחסמו כדי לשמור על"
+"הפרטיות"
+
+#: program/localization/he_IL/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "זו הודעת מוצפנת ולא ניתן להציגה"
+
+#: program/localization/he_IL/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "לא נמצאו אנשי קשר"
+
+#: program/localization/he_IL/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "איש הקשר המבוקש לא נמצא"
+
+#: program/localization/he_IL/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "יש להקיש מפתחות חיפוש כדי למצוא אנשי קשר"
+
+#: program/localization/he_IL/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "שליחת ההודעה נכשלה"
+
+#: program/localization/he_IL/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "נא להמתין $sec שניות לפני מסירת הודעה זו"
+
+#: program/localization/he_IL/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "נגרמה שגיאה במהלך שמירת ההודעה בתיק"
+"הודעות יוצאות"
+
+#: program/localization/he_IL/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "נגרמה שגיאה במהלך השמירה"
+
+#: program/localization/he_IL/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "לא ניתן לתייק את ההודעה"
+
+#: program/localization/he_IL/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "העתקת ההודעות נכשלה"
+
+#: program/localization/he_IL/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "לא ניתן למחוק את ההודעה"
+
+#: program/localization/he_IL/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "לא ניתן לסמן ההודעה"
+
+#: program/localization/he_IL/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "האם למחוק את איש הקשר?"
+
+#: program/localization/he_IL/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "האם אכן ברצונך למחוק את הקבוצה שנבחרה?"
+
+#: program/localization/he_IL/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "האם למחוק את ההודעות המסומנות?"
+
+#: program/localization/he_IL/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "האם למחוק תיק זה?"
+
+#: program/localization/he_IL/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "האם למחוק את כל ההודעות בתיק זה?"
+
+#: program/localization/he_IL/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "אנשי קשר נמחקים..."
+
+#: program/localization/he_IL/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "מחיקת קבוצה..."
+
+#: program/localization/he_IL/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "התיקיה נמחקת..."
+
+#: program/localization/he_IL/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "העברת תיקיה..."
+
+#: program/localization/he_IL/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "התיק נרשם..."
+
+#: program/localization/he_IL/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "רישום התיק בוטל..."
+
+#: program/localization/he_IL/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "לא הוזנו כל השדות בטופס זה"
+
+#: program/localization/he_IL/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "נא להוסיף כתובת דוא\"ל חוקית"
+
+#: program/localization/he_IL/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "נא להוסיף שם"
+
+#: program/localization/he_IL/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "נא להוסיף גודל דף"
+
+#: program/localization/he_IL/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "נא להוסיף כתובת השולח"
+
+#: program/localization/he_IL/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "נא להוסיף לפחות נמען אחד"
+
+#: program/localization/he_IL/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "שורת הנושא ריקה. האם ברצונך להוסיף נושא"
+"כעת?"
+
+#: program/localization/he_IL/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "האם לשלוח הודעה ללא תוכן?"
+
+#: program/localization/he_IL/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "ההודעה לא נשלחה. האם לבטל?"
+
+#: program/localization/he_IL/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "נא לבחור שרת כתובות לחיפוש"
+
+#: program/localization/he_IL/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "נא להוסיף איש קשר או כתובת דוא\"ל"
+
+#: program/localization/he_IL/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "עדיין לא הועלו כל הקבצים. נא לחכות או לבטל"
+"הפעולה."
+
+#: program/localization/he_IL/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "נמצאו $nr הודעות"
+
+#: program/localization/he_IL/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "נמצאו $nr אנשי קשר"
+
+#: program/localization/he_IL/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "תוצאת החיפוש ריקה"
+
+#: program/localization/he_IL/messages.inc:searching
+msgid "Searching..."
+msgstr "חיפוש..."
+
+#: program/localization/he_IL/messages.inc:checking
+msgid "Checking..."
+msgstr "בדיקה..."
+
+#: program/localization/he_IL/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "לא נמצאו שגיאות כתיב"
+
+#: program/localization/he_IL/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "התיק נמחק בהצלחה"
+
+#: program/localization/he_IL/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "התיק נרשם בהצלחה"
+
+#: program/localization/he_IL/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "ביטול רישום תיק הצליח"
+
+#: program/localization/he_IL/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "התיק נמחק בהצלחה"
+
+#: program/localization/he_IL/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "התיק רוקן בהצלחה"
+
+#: program/localization/he_IL/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "המחיקה הסתיימה בהצלחה"
+
+#: program/localization/he_IL/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "הסרת העיצוב מההודעה"
+
+#: program/localization/he_IL/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "לא ניתן לטעון ההודעה מהשרת"
+
+#: program/localization/he_IL/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "העלאת הקובץ נכשלה"
+
+#: program/localization/he_IL/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "הקובץ לטעינה גדול מהגודל המקסימלי שהוא"
+"$size"
+
+#: program/localization/he_IL/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "$nr כתובות הועתקו בהצלחה"
+
+#: program/localization/he_IL/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "לא ניתן להעתיק אף כתובת"
+
+#: program/localization/he_IL/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "המקור לכתובת הוא לקריאה בלבד"
+
+#: program/localization/he_IL/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "לא ניתן לשמור את כתובת איש הקשר"
+
+#: program/localization/he_IL/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "תיוק ההודעה..."
+
+#: program/localization/he_IL/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "הודעת מועתקת..."
+
+#: program/localization/he_IL/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "העתקת אנשי קשר..."
+
+#: program/localization/he_IL/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "המחיקה בתהליך..."
+
+#: program/localization/he_IL/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "סימון ההודעה בתהליך..."
+
+#: program/localization/he_IL/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "הוספת אנשי קשר לקבוצה..."
+
+#: program/localization/he_IL/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "הסרת אנשי קשר מהקבוצה..."
+
+#: program/localization/he_IL/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "אישור הקבלה נשלח בהצלחה"
+
+#: program/localization/he_IL/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "לא ניתן לשלוח אישור קבלה"
+
+#: program/localization/he_IL/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "זו הזהות האחרונה ולכן לא ניתן לבטלה"
+
+#: program/localization/he_IL/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "שם התיקיה מכיל תוים אסורים"
+
+#: program/localization/he_IL/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "נא לבחור קובץ לייבוא"
+
+#: program/localization/he_IL/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "פנקס הכתובות שנבחר אינו ניתן לכתיבה"
+
+#: program/localization/he_IL/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "אנשי הקשר נוספו בהצלחה לקבוצה"
+
+#: program/localization/he_IL/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "אנשי הקשר הוסרו בהצלחה מהקבוצה"
+
+#: program/localization/he_IL/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "ייבוא, נא להמתין.."
+
+#: program/localization/he_IL/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "חוקי vCard הייבוא נכשל כי הקובץ אינו בפורמט"
+
+#: program/localization/he_IL/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>יובאו $inserted אנשי קשר, $skipped היו קיימים"
+"</b>:<p><em>$names</em></p>"
+
+#: program/localization/he_IL/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>  דילוג של $skipped נתונים קיימים <b>"
+
+#: program/localization/he_IL/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "פעולה אסורה!"
+
+#: program/localization/he_IL/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "לזהות שנבחרה חסרה כתובת דואר"
+
+#: program/localization/he_IL/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "המעבר לעורך רגיל יגרום לאיבוד את העריכה"
+"הקיימת. האם להמשיך?"
+
+#: program/localization/he_IL/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "ארעה שגיאת תצורה חמורה. נא להודיע מייד"
+"למנהל/ת המערכת. <B> הודעתך לא תשלח <B> "
+
+#: program/localization/he_IL/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP ($code): אבד הקשר לשרת"
+
+#: program/localization/he_IL/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP ($code): ההזדהות נכשלה"
+
+#: program/localization/he_IL/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr " ($msg) SMTP ($code): \"$from\" לא נרשמה כתובת השולח"
+
+#: program/localization/he_IL/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr " ($msg) SMTP ($code): \"$to\" לא נרשמה כתובת המקבל"
+
+#: program/localization/he_IL/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP : לא ניתן לפענח רשימת נמענים"
+
+#: program/localization/he_IL/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP: $msg"
+
+#: program/localization/he_IL/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "$email  כתובת דוא\"ל שגויה"
+
+#: program/localization/he_IL/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "יותר מדי נמענים. יש להקטין מספרם ל - $max"
+
+#: program/localization/he_IL/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "מספרם של חברי הקבוצה אינו יכול לעבור $max"
+
+#: program/localization/he_IL/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "שגיאת מערכת. נא לנסות שנית"
+
+#: program/localization/he_IL/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "לא ניתן למחוק איש קשר"
+
+#: program/localization/he_IL/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "איש הקשר נמחק"
+
+#: program/localization/he_IL/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "לא ניתן לשחזר איש קשר שנמחק"
+
+#: program/localization/he_IL/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "איש הקשר שוחזר בהצלחה"
+
+#: program/localization/he_IL/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "הקבוצה נמחקה בהצלחה"
+
+#: program/localization/he_IL/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "שם הקבוצה שונה בהצלחה"
+
+#: program/localization/he_IL/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "הקבוצה נוצרה בהצלחה"
+
+#: program/localization/he_IL/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "נמחק החיפוש שנשמר"
+
+#: program/localization/he_IL/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "לא ניתן למחוק החיפוש שנשמר"
+
+#: program/localization/he_IL/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "החיפוש נשמר בהצלחה"
+
+#: program/localization/he_IL/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "לא ניתן לשמור את החיפוש"
+
+#: program/localization/he_IL/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "ההודעה נמחקה בהצלחה"
+
+#: program/localization/he_IL/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "ההודעה הועברה בהצלחה"
+
+#: program/localization/he_IL/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "ההודעה הועתקה בהצלחה"
+
+#: program/localization/he_IL/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "ההודעה סומנה בהצלחה"
+
+#: program/localization/he_IL/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "יש להקיש לפחות $min תווים להשלמה אוטומטית"
+"של המחרוזת"
+
+#: program/localization/he_IL/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "נמצאו רשומות נוספות. נא להקיש תווים"
+"נוספים."
+
+#: program/localization/he_IL/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "השם אינו יכול להיות ריק"
+
+#: program/localization/he_IL/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "השם ארוך מדי"
+
+#: program/localization/he_IL/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "התיק עודכן בהצלחה"
+
+#: program/localization/he_IL/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "התיק נוצר בהצלחה"
+
+#: program/localization/he_IL/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "פורמט תמונה לא חוקי"
+
+#: program/localization/he_IL/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "התגלו שגיאות כתיב בהודעה"
+
+#: program/localization/he_IL/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "לא ניתן ליצור/להעביר תיקיה לתוך תיקית האב"
+"שנבחרה. אין הרשאה לגישה."
+
+#: program/localization/he_IL/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "ההודעה גדולה מעבר ליכולת העיבוד של"
+"התוכנה"

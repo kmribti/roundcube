@@ -1,0 +1,920 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/el_GR/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: el_GR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/el_GR/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Καλώς ήρθατε στο $product"
+
+#: program/localization/el_GR/labels.inc:username
+msgid "Username"
+msgstr "Όνομα Χρήστη"
+
+#: program/localization/el_GR/labels.inc:password
+msgid "Password"
+msgstr "Κωδικός Πρόσβασης"
+
+#: program/localization/el_GR/labels.inc:server
+msgid "Server"
+msgstr "Διακομιστής"
+
+#: program/localization/el_GR/labels.inc:login
+msgid "Login"
+msgstr "Είσοδος"
+
+#: program/localization/el_GR/labels.inc:logout
+msgid "Logout"
+msgstr "Έξοδος"
+
+#: program/localization/el_GR/labels.inc:mail
+msgid "Mail"
+msgstr "E-Mail"
+
+#: program/localization/el_GR/labels.inc:settings
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+#: program/localization/el_GR/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Επαφές"
+
+#: program/localization/el_GR/labels.inc:inbox
+msgid "Inbox"
+msgstr "Εισερχόμενα"
+
+#: program/localization/el_GR/labels.inc:drafts
+msgid "Drafts"
+msgstr "Πρόχειρα"
+
+#: program/localization/el_GR/labels.inc:sent
+msgid "Sent"
+msgstr "Απεσταλμένα"
+
+#: program/localization/el_GR/labels.inc:trash
+msgid "Trash"
+msgstr "Κάδος"
+
+#: program/localization/el_GR/labels.inc:junk
+msgid "Junk"
+msgstr "Junk"
+
+#: program/localization/el_GR/labels.inc:subject
+msgid "Subject"
+msgstr "Θέμα"
+
+#: program/localization/el_GR/labels.inc:from
+msgid "From"
+msgstr "Αποστολέας"
+
+#: program/localization/el_GR/labels.inc:to
+msgid "To"
+msgstr "Παραλήπτης"
+
+#: program/localization/el_GR/labels.inc:cc
+msgid "Cc"
+msgstr "Αντίγραφο"
+
+#: program/localization/el_GR/labels.inc:bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#: program/localization/el_GR/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Απάντηση σε"
+
+#: program/localization/el_GR/labels.inc:date
+msgid "Date"
+msgstr "Ημ/νία"
+
+#: program/localization/el_GR/labels.inc:size
+msgid "Size"
+msgstr "Μέγεθος"
+
+#: program/localization/el_GR/labels.inc:priority
+msgid "Priority"
+msgstr "Πρoτεραιότητα"
+
+#: program/localization/el_GR/labels.inc:organization
+msgid "Company"
+msgstr "Οργανισμός"
+
+#: program/localization/el_GR/labels.inc:reply-to
+msgid "reply-to"
+msgstr "Απάντηση σε"
+
+#: program/localization/el_GR/labels.inc:mailboxlist
+#: program/localization/el_GR/labels.inc:folders
+msgid "Folders"
+msgstr "Φάκελοι"
+
+#: program/localization/el_GR/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Μηνύματα $from από $to έως $count"
+
+#: program/localization/el_GR/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Μήνυμα $nr από $count"
+
+#: program/localization/el_GR/labels.inc:moveto
+msgid "Move to..."
+msgstr "μετακίνηση σε..."
+
+#: program/localization/el_GR/labels.inc:download
+msgid "Download"
+msgstr "λήψη"
+
+#: program/localization/el_GR/labels.inc:filename
+msgid "File name"
+msgstr "Όνομα αρχείου"
+
+#: program/localization/el_GR/labels.inc:filesize
+msgid "File size"
+msgstr "Μέγεθος αρχείου"
+
+#: program/localization/el_GR/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Προτίμηση HTML"
+
+#: program/localization/el_GR/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Μήνυμα HTML"
+
+#: program/localization/el_GR/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Όμορφη ημ/νία"
+
+#: program/localization/el_GR/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Προσθήκη στις Επαφές"
+
+#: program/localization/el_GR/labels.inc:sun
+msgid "Sun"
+msgstr "Κυρ"
+
+#: program/localization/el_GR/labels.inc:mon
+msgid "Mon"
+msgstr "Δευτ"
+
+#: program/localization/el_GR/labels.inc:tue
+msgid "Tue"
+msgstr "Τρι"
+
+#: program/localization/el_GR/labels.inc:wed
+msgid "Wed"
+msgstr "Τετ"
+
+#: program/localization/el_GR/labels.inc:thu
+msgid "Thu"
+msgstr "Πεμ"
+
+#: program/localization/el_GR/labels.inc:fri
+msgid "Fri"
+msgstr "Παρ"
+
+#: program/localization/el_GR/labels.inc:sat
+msgid "Sat"
+msgstr "Σαβ"
+
+#: program/localization/el_GR/labels.inc:sunday
+msgid "Sunday"
+msgstr "Κυριακή"
+
+#: program/localization/el_GR/labels.inc:monday
+msgid "Monday"
+msgstr "Δευτέρα"
+
+#: program/localization/el_GR/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Τρίτη"
+
+#: program/localization/el_GR/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Τετάρτη"
+
+#: program/localization/el_GR/labels.inc:thursday
+msgid "Thursday"
+msgstr "Πέμπτη"
+
+#: program/localization/el_GR/labels.inc:friday
+msgid "Friday"
+msgstr "Παρασκευή"
+
+#: program/localization/el_GR/labels.inc:saturday
+msgid "Saturday"
+msgstr "Σάββατο"
+
+#: program/localization/el_GR/labels.inc:jan
+msgid "Jan"
+msgstr "Ιαν"
+
+#: program/localization/el_GR/labels.inc:feb
+msgid "Feb"
+msgstr "Φεβ"
+
+#: program/localization/el_GR/labels.inc:mar
+msgid "Mar"
+msgstr "Μαρ"
+
+#: program/localization/el_GR/labels.inc:apr
+msgid "Apr"
+msgstr "Απρ"
+
+#: program/localization/el_GR/labels.inc:may
+#: program/localization/el_GR/labels.inc:longmay
+msgid "May"
+msgstr "Μάιος"
+
+#: program/localization/el_GR/labels.inc:jun
+msgid "Jun"
+msgstr "Ιον"
+
+#: program/localization/el_GR/labels.inc:jul
+msgid "Jul"
+msgstr "Ιολ"
+
+#: program/localization/el_GR/labels.inc:aug
+msgid "Aug"
+msgstr "Αυγ"
+
+#: program/localization/el_GR/labels.inc:sep
+msgid "Sep"
+msgstr "Σεπ"
+
+#: program/localization/el_GR/labels.inc:oct
+msgid "Oct"
+msgstr "Οκτ"
+
+#: program/localization/el_GR/labels.inc:nov
+msgid "Nov"
+msgstr "Νοε"
+
+#: program/localization/el_GR/labels.inc:dec
+msgid "Dec"
+msgstr "Δεκ"
+
+#: program/localization/el_GR/labels.inc:longjan
+msgid "January"
+msgstr "Ιανουάριος"
+
+#: program/localization/el_GR/labels.inc:longfeb
+msgid "February"
+msgstr "Φεβρουάριος"
+
+#: program/localization/el_GR/labels.inc:longmar
+msgid "March"
+msgstr "Μάρτιος"
+
+#: program/localization/el_GR/labels.inc:longapr
+msgid "April"
+msgstr "Απρίλιος"
+
+#: program/localization/el_GR/labels.inc:longjun
+msgid "June"
+msgstr "Ιούνιος"
+
+#: program/localization/el_GR/labels.inc:longjul
+msgid "July"
+msgstr "Ιούλιος"
+
+#: program/localization/el_GR/labels.inc:longaug
+msgid "August"
+msgstr "Αύγουστος"
+
+#: program/localization/el_GR/labels.inc:longsep
+msgid "September"
+msgstr "Σεπτέμβριος"
+
+#: program/localization/el_GR/labels.inc:longoct
+msgid "October"
+msgstr "Οκτώβριος"
+
+#: program/localization/el_GR/labels.inc:longnov
+msgid "November"
+msgstr "Νοέμβριος"
+
+#: program/localization/el_GR/labels.inc:longdec
+msgid "December"
+msgstr "Δεκέμβριος"
+
+#: program/localization/el_GR/labels.inc:today
+msgid "Today"
+msgstr "Σήμερα"
+
+#: program/localization/el_GR/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Έλεγχος για νέα μηνύματα"
+
+#: program/localization/el_GR/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Δημιουργία νέου μηνύματος"
+
+#: program/localization/el_GR/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Απάντηση"
+
+#: program/localization/el_GR/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Απάντηση στον αποστολέα και όλους τους"
+"παραλήπτες"
+
+#: program/localization/el_GR/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Προώθηση μηνύματος"
+
+#: program/localization/el_GR/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Διαγραφή μηνύματος"
+
+#: program/localization/el_GR/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Μετακίνηση μηνύματος στον Κάδο"
+
+#: program/localization/el_GR/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Εκτύπωση"
+
+#: program/localization/el_GR/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Εμφάνιση προηγούμενου μηνύματος"
+
+#: program/localization/el_GR/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "Εμφάνιση προηγούμενης ομάδας μηνυμάτων"
+
+#: program/localization/el_GR/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Εμφάνιση πρώτου μηνύματος"
+
+#: program/localization/el_GR/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "Εμφάνιση πρώτης ομάδας μηνυμάτων"
+
+#: program/localization/el_GR/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Εμφάνιση επόμενου μηνύματος"
+
+#: program/localization/el_GR/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "Εμφάνιση επόμενης ομάδας μηνυμάτων"
+
+#: program/localization/el_GR/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Εμφάνιση τελευταίου μηνύματος"
+
+#: program/localization/el_GR/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "Εμφάνιση τελευταίας ομάδας μηνυμάτων"
+
+#: program/localization/el_GR/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Επιστροφή στη λίστα μηνυμάτων"
+
+#: program/localization/el_GR/labels.inc:viewsource
+msgid "Show source"
+msgstr "Προβολή πηγαίου κώδικα"
+
+#: program/localization/el_GR/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Σήμανση μηνυμάτων"
+
+#: program/localization/el_GR/labels.inc:markread
+msgid "As read"
+msgstr "ως αναγνωσμένα"
+
+#: program/localization/el_GR/labels.inc:markunread
+msgid "As unread"
+msgstr "ως μη-αναγνωσμένα"
+
+#: program/localization/el_GR/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Με σήμανση"
+
+#: program/localization/el_GR/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Χωρίς σήμανση"
+
+#: program/localization/el_GR/labels.inc:messageactions
+msgid "messageactions"
+msgstr "Περισσότερες ενέργειες..."
+
+#: program/localization/el_GR/labels.inc:select
+msgid "Select"
+msgstr "Επιλογή"
+
+#: program/localization/el_GR/labels.inc:all
+msgid "All"
+msgstr "Όλα"
+
+#: program/localization/el_GR/labels.inc:none
+msgid "None"
+msgstr "Κανένα"
+
+#: program/localization/el_GR/labels.inc:unread
+msgid "Unread"
+msgstr "Μη αναγνωσμένα"
+
+#: program/localization/el_GR/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Αναπάντητο"
+
+#: program/localization/el_GR/labels.inc:deleted
+msgid "Deleted"
+msgstr "Διεγραμμένο"
+
+#: program/localization/el_GR/labels.inc:invert
+msgid "Invert"
+msgstr "Αναστροφή"
+
+#: program/localization/el_GR/labels.inc:filter
+msgid "Filter"
+msgstr "Φίλτρο"
+
+#: program/localization/el_GR/labels.inc:compact
+msgid "Compact"
+msgstr "Συμπίεση"
+
+#: program/localization/el_GR/labels.inc:empty
+msgid "Empty"
+msgstr "Άδειασμα"
+
+#: program/localization/el_GR/labels.inc:purge
+msgid "purge"
+msgstr "Καθάρισμα"
+
+#: program/localization/el_GR/labels.inc:quota
+msgid "Disk usage"
+msgstr "Χρήση δίσκου"
+
+#: program/localization/el_GR/labels.inc:unknown
+msgid "unknown"
+msgstr "άγνωστο"
+
+#: program/localization/el_GR/labels.inc:unlimited
+msgid "unlimited"
+msgstr "απεριόριστο"
+
+#: program/localization/el_GR/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Γρήγορη Αναζήτηση"
+
+#: program/localization/el_GR/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Επαναφορά Αναζήτησης"
+
+#: program/localization/el_GR/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Σε όλο το μήνυμα"
+
+#: program/localization/el_GR/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Άνοιγμα σε νέο παράθυρο"
+
+#: program/localization/el_GR/labels.inc:compose
+msgid "Compose a message"
+msgstr "Συγγραφή μηνύματος"
+
+#: program/localization/el_GR/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Αποθήκευση ως πρόχειρου"
+
+#: program/localization/el_GR/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Αποστολή μηνύματος τώρα"
+
+#: program/localization/el_GR/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Επισύναψη αρχείου"
+
+#: program/localization/el_GR/labels.inc:charset
+msgid "Charset"
+msgstr "Charset"
+
+#: program/localization/el_GR/labels.inc:editortype
+msgid "Editor type"
+msgstr "Είδος επεξεργαστή κειμένου"
+
+#: program/localization/el_GR/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Αναφορά Παράδοσης"
+
+#: program/localization/el_GR/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Έλεγχος ορθογραφίας"
+
+#: program/localization/el_GR/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Συνέχιση επεξεργασίας"
+
+#: program/localization/el_GR/labels.inc:revertto
+msgid "Revert to"
+msgstr "Επαναφορά σε"
+
+#: program/localization/el_GR/labels.inc:attachments
+msgid "Attachments"
+msgstr "Συνημμένα"
+
+#: program/localization/el_GR/labels.inc:upload
+msgid "Upload"
+msgstr "Ανέβασμα"
+
+#: program/localization/el_GR/labels.inc:close
+msgid "Close"
+msgstr "Κλείσιμο"
+
+#: program/localization/el_GR/labels.inc:low
+msgid "Low"
+msgstr "Χαμηλή"
+
+#: program/localization/el_GR/labels.inc:lowest
+msgid "Lowest"
+msgstr "Χαμηλότερη"
+
+#: program/localization/el_GR/labels.inc:normal
+msgid "Normal"
+msgstr "Κανονική"
+
+#: program/localization/el_GR/labels.inc:high
+msgid "High"
+msgstr "Υψηλή"
+
+#: program/localization/el_GR/labels.inc:highest
+msgid "Highest"
+msgstr "Υψηλότερη"
+
+#: program/localization/el_GR/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(κανένα θέμα)"
+
+#: program/localization/el_GR/labels.inc:showimages
+msgid "Display images"
+msgstr "Εμφάνιση εικόνων"
+
+#: program/localization/el_GR/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/el_GR/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Απλό κείμενο"
+
+#: program/localization/el_GR/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Αποθήκευση απεσταλμένου στο φάκελο"
+
+#: program/localization/el_GR/labels.inc:dontsave
+msgid "don't save"
+msgstr "Χωρίς αποθήκευση"
+
+#: program/localization/el_GR/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Προσθήκη Cc"
+
+#: program/localization/el_GR/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Προσθήκη Bcc"
+
+#: program/localization/el_GR/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Προσθήκη Απάντηση-Σε"
+
+#: program/localization/el_GR/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Ο αποστολέας του μηνύματος έχει ζητήσει"
+"να ενημερωθεί όταν διαβάσετε αυτό το"
+"μήνυμα. Επιθυμείτε να ενημερώστε τον"
+"αποστολέα;"
+
+#: program/localization/el_GR/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Αναφορά (ανάγνωσης)"
+
+#: program/localization/el_GR/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Αυτό είναι μια Αναφορά για το μήνυμά σας"
+
+#: program/localization/el_GR/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Σημείωση: Αυτή η αναφορά επιβεβαιώνει"
+"μόνο ότι το μήνυμα εμφανίστηκε μόνο στον"
+"υπολογιστή του παραλήπτη. Δεν"
+"επιβεβαιώνει ότι ο παραλήπτης έχει"
+"διαβάσει ή έχει κατανοήσει το"
+"περιεχόμενο του μηνύματος."
+
+#: program/localization/el_GR/labels.inc:name
+msgid "Display Name"
+msgstr "Εμφανιζόμενο όνομα"
+
+#: program/localization/el_GR/labels.inc:firstname
+msgid "First Name"
+msgstr "Όνομα"
+
+#: program/localization/el_GR/labels.inc:surname
+msgid "Last Name"
+msgstr "Επώνυμο"
+
+#: program/localization/el_GR/labels.inc:email
+msgid "Email"
+msgstr "E-Mail"
+
+#: program/localization/el_GR/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Προσθήκη επιλεγμένης επαφής στις Επαφές"
+
+#: program/localization/el_GR/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Επεξεργασία επαφής"
+
+#: program/localization/el_GR/labels.inc:edit
+msgid "Edit"
+msgstr "Επεξεργασία"
+
+#: program/localization/el_GR/labels.inc:cancel
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+#: program/localization/el_GR/labels.inc:save
+msgid "Save"
+msgstr "Αποθήκευση"
+
+#: program/localization/el_GR/labels.inc:delete
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#: program/localization/el_GR/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Δημιουργία νέας επαφής"
+
+#: program/localization/el_GR/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Διαγραφή επιλεγμένων επαφών"
+
+#: program/localization/el_GR/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Σύνθεση μηνύματος προς"
+
+#: program/localization/el_GR/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Επαφή $from από $to έως $count"
+
+#: program/localization/el_GR/labels.inc:print
+msgid "Print"
+msgstr "Εκτύπωση"
+
+#: program/localization/el_GR/labels.inc:export
+msgid "Export"
+msgstr "Εξαγωγή"
+
+#: program/localization/el_GR/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Εξαγωγή επαφών σε vCard"
+
+#: program/localization/el_GR/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Εμφάνιση προηγούμενης σελίδας"
+
+#: program/localization/el_GR/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Εμφάνιση πρώτης σελίδας"
+
+#: program/localization/el_GR/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Εμφάνιση επόμενης σελίδας"
+
+#: program/localization/el_GR/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Εμφάνιση τελευταίας σελίδας"
+
+#: program/localization/el_GR/labels.inc:groups
+msgid "Groups"
+msgstr "Ομάδες"
+
+#: program/localization/el_GR/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Προσωπικές Επαφές"
+
+#: program/localization/el_GR/labels.inc:import
+msgid "Import"
+msgstr "Εισαγωγή"
+
+#: program/localization/el_GR/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Εισαγωγή επαφών"
+
+#: program/localization/el_GR/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Εισαγωγή από αρχείο"
+
+#: program/localization/el_GR/labels.inc:done
+msgid "Done"
+msgstr "Έτοιμο"
+
+#: program/localization/el_GR/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Ρυθμίσεις για"
+
+#: program/localization/el_GR/labels.inc:preferences
+msgid "Preferences"
+msgstr "Προτιμήσεις"
+
+#: program/localization/el_GR/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Προτιμήσεις χρήστη"
+
+#: program/localization/el_GR/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Επεξεργασία προτιμήσεων χρήστη"
+
+#: program/localization/el_GR/labels.inc:identities
+msgid "Identities"
+msgstr "Ταυτότητες"
+
+#: program/localization/el_GR/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Διαχείριση ταυτοτήτων για το λογαριασμό"
+"αυτό"
+
+#: program/localization/el_GR/labels.inc:newidentity
+msgid "New identity"
+msgstr "Νέα ταυτότητα"
+
+#: program/localization/el_GR/labels.inc:newitem
+msgid "New item"
+msgstr "Νέο αντικείμενο"
+
+#: program/localization/el_GR/labels.inc:edititem
+msgid "Edit item"
+msgstr "Επεξεργασία αντικειμένου"
+
+#: program/localization/el_GR/labels.inc:setdefault
+msgid "Set default"
+msgstr "Ορισμός ως προεπιλογή"
+
+#: program/localization/el_GR/labels.inc:language
+msgid "Language"
+msgstr "Γλώσσα"
+
+#: program/localization/el_GR/labels.inc:timezone
+msgid "Time zone"
+msgstr "Περιοχή ώρας"
+
+#: program/localization/el_GR/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Γραμμές ανά σελίδα"
+
+#: program/localization/el_GR/labels.inc:signature
+msgid "Signature"
+msgstr "Υπογραφή"
+
+#: program/localization/el_GR/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Daylight savings"
+
+#: program/localization/el_GR/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Σύνθεση HTML μηνύματος"
+
+#: program/localization/el_GR/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "Υπογραφή HTML"
+
+#: program/localization/el_GR/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Εμφάνιση παραθύρου προεπισκόπησης"
+
+#: program/localization/el_GR/labels.inc:skin
+msgid "Interface skin"
+msgstr "Θεματική παραλλαγή"
+
+#: program/localization/el_GR/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Άδειασμα κάδου στην έξοδο"
+
+#: program/localization/el_GR/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Συμπίεση εισερχομένων στην έξοδο"
+
+#: program/localization/el_GR/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Ρυθμίσεις εξυπηρετητή"
+
+#: program/localization/el_GR/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Ειδοποιήσεις αποστολέα"
+
+#: program/localization/el_GR/labels.inc:autosend
+msgid "send receipt"
+msgstr "Στείλε αυτόματα"
+
+#: program/localization/el_GR/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Μη εμφάνιση διεγραμμένων μηνυμάτων"
+
+#: program/localization/el_GR/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "από γνωστούς αποστολείς"
+
+#: program/localization/el_GR/labels.inc:always
+msgid "always"
+msgstr "πάντα"
+
+#: program/localization/el_GR/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Προβολή συνημμένων φωτογραφιών, κάτω από"
+"το μήνυμα"
+
+#: program/localization/el_GR/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Αυτόματη αποθήκευση προχείρου"
+
+#: program/localization/el_GR/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "κάθε $n λεπτό/α"
+
+#: program/localization/el_GR/labels.inc:never
+msgid "never"
+msgstr "ποτέ"
+
+#: program/localization/el_GR/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Προβολή Μηνυμάτων"
+
+#: program/localization/el_GR/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Συγγραφή Μηνυμάτων"
+
+#: program/localization/el_GR/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Ονόματα συνημένων"
+
+#: program/localization/el_GR/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Προχωρημένες επιλογές"
+
+#: program/localization/el_GR/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Βασικές επιλογές"
+
+#: program/localization/el_GR/labels.inc:newmessage
+msgid "New Message"
+msgstr "Νέο Μήνυμα"
+
+#: program/localization/el_GR/labels.inc:folder
+msgid "Folder"
+msgstr "Φάκελος"
+
+#: program/localization/el_GR/labels.inc:foldername
+msgid "Folder name"
+msgstr "Όνομα φακέλου"
+
+#: program/localization/el_GR/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Εγγραφή"
+
+#: program/localization/el_GR/labels.inc:messagecount
+msgid "Messages"
+msgstr "Μηνύματα"
+
+#: program/localization/el_GR/labels.inc:create
+msgid "Create"
+msgstr "Δημιουργία"
+
+#: program/localization/el_GR/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Δημιουργία νέου φακέλου"
+
+#: program/localization/el_GR/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Διαχείριση φακέλων"
+
+#: program/localization/el_GR/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Ειδικοί Φάκελοι"
+
+#: program/localization/el_GR/labels.inc:sortby
+msgid "Sort by"
+msgstr "Ταξινόμηση κατά"
+
+#: program/localization/el_GR/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Αύξουσα ταξινόμηση"
+
+#: program/localization/el_GR/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Φθίνουσα ταξινόμηση"

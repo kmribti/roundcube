@@ -1,0 +1,1546 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/hr_HR/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: hr_HR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/hr_HR/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Dobrodošli na $product"
+
+#: program/localization/hr_HR/labels.inc:username
+msgid "Username"
+msgstr "E-mail"
+
+#: program/localization/hr_HR/labels.inc:password
+msgid "Password"
+msgstr "Lozinka"
+
+#: program/localization/hr_HR/labels.inc:server
+msgid "Server"
+msgstr "Poslužitelj"
+
+#: program/localization/hr_HR/labels.inc:login
+msgid "Login"
+msgstr "Prijava"
+
+#: program/localization/hr_HR/labels.inc:logout
+msgid "Logout"
+msgstr "Odjava"
+
+#: program/localization/hr_HR/labels.inc:mail
+msgid "Mail"
+msgstr "E-Mail"
+
+#: program/localization/hr_HR/labels.inc:settings
+msgid "Settings"
+msgstr "Postavke"
+
+#: program/localization/hr_HR/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Imenik"
+
+#: program/localization/hr_HR/labels.inc:inbox
+msgid "Inbox"
+msgstr "Sandučić"
+
+#: program/localization/hr_HR/labels.inc:drafts
+msgid "Drafts"
+msgstr "Predlošci"
+
+#: program/localization/hr_HR/labels.inc:sent
+msgid "Sent"
+msgstr "Poslano"
+
+#: program/localization/hr_HR/labels.inc:trash
+msgid "Trash"
+msgstr "Smeće"
+
+#: program/localization/hr_HR/labels.inc:junk
+msgid "Junk"
+msgstr "Spam"
+
+#: program/localization/hr_HR/labels.inc:subject
+msgid "Subject"
+msgstr "Naslov"
+
+#: program/localization/hr_HR/labels.inc:from
+msgid "From"
+msgstr "Od"
+
+#: program/localization/hr_HR/labels.inc:to
+msgid "To"
+msgstr "Za"
+
+#: program/localization/hr_HR/labels.inc:cc
+msgid "Cc"
+msgstr "Cc"
+
+#: program/localization/hr_HR/labels.inc:bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#: program/localization/hr_HR/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Odgovor-na"
+
+#: program/localization/hr_HR/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Nastavi-na"
+
+#: program/localization/hr_HR/labels.inc:date
+msgid "Date"
+msgstr "Datum"
+
+#: program/localization/hr_HR/labels.inc:size
+msgid "Size"
+msgstr "Veličina"
+
+#: program/localization/hr_HR/labels.inc:priority
+msgid "Priority"
+msgstr "Prioritet"
+
+#: program/localization/hr_HR/labels.inc:organization
+msgid "Company"
+msgstr "Organizacija"
+
+#: program/localization/hr_HR/labels.inc:readstatus
+msgid "Read status"
+msgstr "Pročitano"
+
+#: program/localization/hr_HR/labels.inc:mailboxlist
+#: program/localization/hr_HR/labels.inc:folders
+msgid "Folders"
+msgstr "Mape"
+
+#: program/localization/hr_HR/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Poruke od $from do $to od ukupno $count"
+
+#: program/localization/hr_HR/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Teme od $from do $to od ukupno $count"
+
+#: program/localization/hr_HR/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Poruka broj $nr od $count"
+
+#: program/localization/hr_HR/labels.inc:copy
+msgid "Copy"
+msgstr "Kopiraj"
+
+#: program/localization/hr_HR/labels.inc:move
+msgid "Move"
+msgstr "Premjesti"
+
+#: program/localization/hr_HR/labels.inc:moveto
+msgid "Move to..."
+msgstr "Premjesti u..."
+
+#: program/localization/hr_HR/labels.inc:download
+msgid "Download"
+msgstr "Preuzmi (download)"
+
+#: program/localization/hr_HR/labels.inc:filename
+msgid "File name"
+msgstr "Ime datoteke"
+
+#: program/localization/hr_HR/labels.inc:filesize
+msgid "File size"
+msgstr "Veličina datoteke"
+
+#: program/localization/hr_HR/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Dodaj u imenik"
+
+#: program/localization/hr_HR/labels.inc:sun
+msgid "Sun"
+msgstr "Ned"
+
+#: program/localization/hr_HR/labels.inc:mon
+msgid "Mon"
+msgstr "Pon"
+
+#: program/localization/hr_HR/labels.inc:tue
+msgid "Tue"
+msgstr "Uto"
+
+#: program/localization/hr_HR/labels.inc:wed
+msgid "Wed"
+msgstr "Sri"
+
+#: program/localization/hr_HR/labels.inc:thu
+msgid "Thu"
+msgstr "Čet"
+
+#: program/localization/hr_HR/labels.inc:fri
+msgid "Fri"
+msgstr "Pet"
+
+#: program/localization/hr_HR/labels.inc:sat
+msgid "Sat"
+msgstr "Sub"
+
+#: program/localization/hr_HR/labels.inc:sunday
+msgid "Sunday"
+msgstr "Nedjelja"
+
+#: program/localization/hr_HR/labels.inc:monday
+msgid "Monday"
+msgstr "Ponedjeljak"
+
+#: program/localization/hr_HR/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Utorak"
+
+#: program/localization/hr_HR/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Srijeda"
+
+#: program/localization/hr_HR/labels.inc:thursday
+msgid "Thursday"
+msgstr "Četvrtak"
+
+#: program/localization/hr_HR/labels.inc:friday
+msgid "Friday"
+msgstr "Petak"
+
+#: program/localization/hr_HR/labels.inc:saturday
+msgid "Saturday"
+msgstr "Subota"
+
+#: program/localization/hr_HR/labels.inc:jan
+msgid "Jan"
+msgstr "Sij"
+
+#: program/localization/hr_HR/labels.inc:feb
+msgid "Feb"
+msgstr "Velj"
+
+#: program/localization/hr_HR/labels.inc:mar
+msgid "Mar"
+msgstr "Ožu"
+
+#: program/localization/hr_HR/labels.inc:apr
+msgid "Apr"
+msgstr "Tra"
+
+#: program/localization/hr_HR/labels.inc:may
+#: program/localization/hr_HR/labels.inc:longmay
+msgid "May"
+msgstr "Svibanj"
+
+#: program/localization/hr_HR/labels.inc:jun
+msgid "Jun"
+msgstr "Lip"
+
+#: program/localization/hr_HR/labels.inc:jul
+msgid "Jul"
+msgstr "Srp"
+
+#: program/localization/hr_HR/labels.inc:aug
+msgid "Aug"
+msgstr "Kol"
+
+#: program/localization/hr_HR/labels.inc:sep
+msgid "Sep"
+msgstr "Ruj"
+
+#: program/localization/hr_HR/labels.inc:oct
+msgid "Oct"
+msgstr "Lis"
+
+#: program/localization/hr_HR/labels.inc:nov
+msgid "Nov"
+msgstr "Stu"
+
+#: program/localization/hr_HR/labels.inc:dec
+msgid "Dec"
+msgstr "Pro"
+
+#: program/localization/hr_HR/labels.inc:longjan
+msgid "January"
+msgstr "Siječanj"
+
+#: program/localization/hr_HR/labels.inc:longfeb
+msgid "February"
+msgstr "Veljača"
+
+#: program/localization/hr_HR/labels.inc:longmar
+msgid "March"
+msgstr "Ožujak"
+
+#: program/localization/hr_HR/labels.inc:longapr
+msgid "April"
+msgstr "Travanj"
+
+#: program/localization/hr_HR/labels.inc:longjun
+msgid "June"
+msgstr "Lipanj"
+
+#: program/localization/hr_HR/labels.inc:longjul
+msgid "July"
+msgstr "Srpanj"
+
+#: program/localization/hr_HR/labels.inc:longaug
+msgid "August"
+msgstr "Kolovoz"
+
+#: program/localization/hr_HR/labels.inc:longsep
+msgid "September"
+msgstr "Rujan"
+
+#: program/localization/hr_HR/labels.inc:longoct
+msgid "October"
+msgstr "Listopad"
+
+#: program/localization/hr_HR/labels.inc:longnov
+msgid "November"
+msgstr "Studeni"
+
+#: program/localization/hr_HR/labels.inc:longdec
+msgid "December"
+msgstr "Prosinac"
+
+#: program/localization/hr_HR/labels.inc:today
+msgid "Today"
+msgstr "danas"
+
+#: program/localization/hr_HR/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Provjera novih poruka"
+
+#: program/localization/hr_HR/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Nova poruka"
+
+#: program/localization/hr_HR/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Odgovori na poruku"
+
+#: program/localization/hr_HR/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Odgovori pošiljaocu i svim primateljima"
+
+#: program/localization/hr_HR/labels.inc:replyall
+msgid "Reply all"
+msgstr "Odgovori svima"
+
+#: program/localization/hr_HR/labels.inc:replylist
+msgid "Reply list"
+msgstr "Odgovori listi"
+
+#: program/localization/hr_HR/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "Proslijedi citirano"
+
+#: program/localization/hr_HR/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "Proslijedi kao privitak"
+
+#: program/localization/hr_HR/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Prosljedi poruku"
+
+#: program/localization/hr_HR/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Prebaci poruku u mapu smeće"
+
+#: program/localization/hr_HR/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Preseli poruke u smeće"
+
+#: program/localization/hr_HR/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Print poruke"
+
+#: program/localization/hr_HR/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Prikaži prethodnu poruku"
+
+#: program/localization/hr_HR/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Prikaži prvu poruku"
+
+#: program/localization/hr_HR/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Prikaži slijedeću poruku"
+
+#: program/localization/hr_HR/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Prikaži zadnju poruku"
+
+#: program/localization/hr_HR/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Povratak na listu poruka"
+
+#: program/localization/hr_HR/labels.inc:viewsource
+msgid "Show source"
+msgstr "Prikaži poruku u izvornom obliku"
+
+#: program/localization/hr_HR/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Označi poruke"
+
+#: program/localization/hr_HR/labels.inc:markread
+msgid "As read"
+msgstr "Kao pročitano"
+
+#: program/localization/hr_HR/labels.inc:markunread
+msgid "As unread"
+msgstr "Kao nepročitano"
+
+#: program/localization/hr_HR/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Kao označenu"
+
+#: program/localization/hr_HR/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Kao neoznačenu"
+
+#: program/localization/hr_HR/labels.inc:messageactions
+msgid "messageactions"
+msgstr "Više akcija"
+
+#: program/localization/hr_HR/labels.inc:select
+msgid "Select"
+msgstr "Označi"
+
+#: program/localization/hr_HR/labels.inc:all
+msgid "All"
+msgstr "Sve"
+
+#: program/localization/hr_HR/labels.inc:none
+#: program/localization/hr_HR/labels.inc:nonesort
+msgid "None"
+msgstr "Ništa"
+
+#: program/localization/hr_HR/labels.inc:currpage
+msgid "Current page"
+msgstr "Trenutna stranica"
+
+#: program/localization/hr_HR/labels.inc:unread
+msgid "Unread"
+msgstr "Nepročitane"
+
+#: program/localization/hr_HR/labels.inc:flagged
+msgid "Flagged"
+msgstr "Označene"
+
+#: program/localization/hr_HR/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Neodgovrene"
+
+#: program/localization/hr_HR/labels.inc:deleted
+msgid "Deleted"
+msgstr "Obrisano"
+
+#: program/localization/hr_HR/labels.inc:invert
+msgid "Invert"
+msgstr "Obrni"
+
+#: program/localization/hr_HR/labels.inc:filter
+msgid "Filter"
+msgstr "Filtriraj"
+
+#: program/localization/hr_HR/labels.inc:list
+msgid "List"
+msgstr "Lista"
+
+#: program/localization/hr_HR/labels.inc:threads
+msgid "Threads"
+msgstr "Teme"
+
+#: program/localization/hr_HR/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Proširi sve"
+
+#: program/localization/hr_HR/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Proširi nepročitane"
+
+#: program/localization/hr_HR/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Zatvori sve"
+
+#: program/localization/hr_HR/labels.inc:threaded
+msgid "Threaded"
+msgstr "Tematski prikaz"
+
+#: program/localization/hr_HR/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Proširi teme poruka"
+
+#: program/localization/hr_HR/labels.inc:do_expand
+msgid "all threads"
+msgstr "Sve teme"
+
+#: program/localization/hr_HR/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "samo s nepročitanim porukama"
+
+#: program/localization/hr_HR/labels.inc:fromto
+msgid "From/To"
+msgstr "Pošiljatelj/Primatelj"
+
+#: program/localization/hr_HR/labels.inc:flag
+msgid "Flag"
+msgstr "Oznaka"
+
+#: program/localization/hr_HR/labels.inc:attachment
+msgid "Attachment"
+msgstr "Privitak"
+
+#: program/localization/hr_HR/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Datum slanja"
+
+#: program/localization/hr_HR/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Datum primanja"
+
+#: program/localization/hr_HR/labels.inc:asc
+msgid "ascending"
+msgstr "uzlazno"
+
+#: program/localization/hr_HR/labels.inc:desc
+msgid "descending"
+msgstr "silazno"
+
+#: program/localization/hr_HR/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Kolone"
+
+#: program/localization/hr_HR/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Sortirajuća kolona"
+
+#: program/localization/hr_HR/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Sortirajući redoslijed"
+
+#: program/localization/hr_HR/labels.inc:listmode
+msgid "List view mode"
+msgstr "Model pregleda listi"
+
+#: program/localization/hr_HR/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Akcije mapa"
+
+#: program/localization/hr_HR/labels.inc:compact
+msgid "Compact"
+msgstr "Kompresiranje"
+
+#: program/localization/hr_HR/labels.inc:empty
+msgid "Empty"
+msgstr "Isprazni "
+
+#: program/localization/hr_HR/labels.inc:quota
+msgid "Disk usage"
+msgstr "Kvota"
+
+#: program/localization/hr_HR/labels.inc:unknown
+msgid "unknown"
+msgstr "nepoznato"
+
+#: program/localization/hr_HR/labels.inc:unlimited
+msgid "unlimited"
+msgstr "beskonačna"
+
+#: program/localization/hr_HR/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Brza pretraga"
+
+#: program/localization/hr_HR/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Prikaži sve poruke"
+
+#: program/localization/hr_HR/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Postavke pretrage"
+
+#: program/localization/hr_HR/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Cijela poruka"
+
+#: program/localization/hr_HR/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Otvori u novom prozoru"
+
+#: program/localization/hr_HR/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Download (.eml)"
+
+#: program/localization/hr_HR/labels.inc:compose
+msgid "Compose a message"
+msgstr "Nova poruka"
+
+#: program/localization/hr_HR/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Uredi kao novo"
+
+#: program/localization/hr_HR/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Spremi u 'Predlošci'"
+
+#: program/localization/hr_HR/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Pošalji poruku"
+
+#: program/localization/hr_HR/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Priloži datoteku"
+
+#: program/localization/hr_HR/labels.inc:charset
+msgid "Charset"
+msgstr "Charset"
+
+#: program/localization/hr_HR/labels.inc:editortype
+msgid "Editor type"
+msgstr "Tip editora"
+
+#: program/localization/hr_HR/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Potvrda o primitku poruke"
+
+#: program/localization/hr_HR/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Potvrda o poslanoj poruci"
+
+#: program/localization/hr_HR/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Promijeni identitete"
+
+#: program/localization/hr_HR/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Provjera pravopisa"
+
+#: program/localization/hr_HR/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Povratak u pisanje"
+
+#: program/localization/hr_HR/labels.inc:revertto
+msgid "Revert to"
+msgstr "Vrati na"
+
+#: program/localization/hr_HR/labels.inc:attachments
+msgid "Attachments"
+msgstr "Privitci (Attachments)"
+
+#: program/localization/hr_HR/labels.inc:upload
+msgid "Upload"
+msgstr "Dodaj"
+
+#: program/localization/hr_HR/labels.inc:close
+msgid "Close"
+msgstr "Zatvori"
+
+#: program/localization/hr_HR/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Opcije poruka..."
+
+#: program/localization/hr_HR/labels.inc:low
+msgid "Low"
+msgstr "Nizak"
+
+#: program/localization/hr_HR/labels.inc:lowest
+msgid "Lowest"
+msgstr "Najniži"
+
+#: program/localization/hr_HR/labels.inc:normal
+msgid "Normal"
+msgstr "Srednji"
+
+#: program/localization/hr_HR/labels.inc:high
+msgid "High"
+msgstr "Visok"
+
+#: program/localization/hr_HR/labels.inc:highest
+msgid "Highest"
+msgstr "Najviši"
+
+#: program/localization/hr_HR/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(bez naslova)"
+
+#: program/localization/hr_HR/labels.inc:showimages
+msgid "Display images"
+msgstr "Prikaži slike"
+
+#: program/localization/hr_HR/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Uvijek prikaži slike od $sender"
+
+#: program/localization/hr_HR/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/hr_HR/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Samo tekst"
+
+#: program/localization/hr_HR/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Spremi poslane poruke u"
+
+#: program/localization/hr_HR/labels.inc:dontsave
+msgid "don't save"
+msgstr "ne spremaj"
+
+#: program/localization/hr_HR/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Maksimalna dozvoljena velicina datoteke je $size"
+
+#: program/localization/hr_HR/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Dodaj Cc"
+
+#: program/localization/hr_HR/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Dodaj Bcc"
+
+#: program/localization/hr_HR/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Dodaj Odgovori-na"
+
+#: program/localization/hr_HR/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Dodaj Nastavak-na"
+
+#: program/localization/hr_HR/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Pošiljaoc ove poruke je tražio da bude obaviješten o njenom primitku."
+"Želite li obavijestiti pošiljaoca?"
+
+#: program/localization/hr_HR/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Vrati potvrdu (pročitano)"
+
+#: program/localization/hr_HR/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Ovo je vraćena potvrda vaše poruke"
+
+#: program/localization/hr_HR/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Info: Ova poruka samo potvrđuje da se poruka prikazala na računalu"
+"primaoca. Nema garancije da je primaoc pročitao ili razumio sadržaj"
+"poruke."
+
+#: program/localization/hr_HR/labels.inc:name
+msgid "Display Name"
+msgstr "Puno ime"
+
+#: program/localization/hr_HR/labels.inc:firstname
+msgid "First Name"
+msgstr "Ime"
+
+#: program/localization/hr_HR/labels.inc:surname
+msgid "Last Name"
+msgstr "Prezime"
+
+#: program/localization/hr_HR/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Srednje ime"
+
+#: program/localization/hr_HR/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "Prefiks"
+
+#: program/localization/hr_HR/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "Sufiks"
+
+#: program/localization/hr_HR/labels.inc:nickname
+msgid "Nickname"
+msgstr "Nadimak"
+
+#: program/localization/hr_HR/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Titula"
+
+#: program/localization/hr_HR/labels.inc:department
+msgid "Department"
+msgstr "Odjel"
+
+#: program/localization/hr_HR/labels.inc:gender
+msgid "Gender"
+msgstr "Rod"
+
+#: program/localization/hr_HR/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Djevojačko ime"
+
+#: program/localization/hr_HR/labels.inc:email
+msgid "Email"
+msgstr "E-Mail"
+
+#: program/localization/hr_HR/labels.inc:phone
+msgid "Phone"
+msgstr "Telefon"
+
+#: program/localization/hr_HR/labels.inc:address
+msgid "Address"
+msgstr "Adresa"
+
+#: program/localization/hr_HR/labels.inc:street
+msgid "Street"
+msgstr "Ulica"
+
+#: program/localization/hr_HR/labels.inc:locality
+msgid "City"
+msgstr "Grad"
+
+#: program/localization/hr_HR/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "Poštanski broj"
+
+#: program/localization/hr_HR/labels.inc:region
+msgid "State/Province"
+msgstr "Oblast"
+
+#: program/localization/hr_HR/labels.inc:country
+msgid "Country"
+msgstr "Zemlja"
+
+#: program/localization/hr_HR/labels.inc:birthday
+msgid "Birthday"
+msgstr "Rođendan"
+
+#: program/localization/hr_HR/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "Jubilej"
+
+#: program/localization/hr_HR/labels.inc:website
+msgid "Website"
+msgstr "Web stranica"
+
+#: program/localization/hr_HR/labels.inc:instantmessenger
+msgid "IM"
+msgstr "IM"
+
+#: program/localization/hr_HR/labels.inc:notes
+msgid "Notes"
+msgstr "Bilješke"
+
+#: program/localization/hr_HR/labels.inc:male
+msgid "male"
+msgstr "muško"
+
+#: program/localization/hr_HR/labels.inc:female
+msgid "female"
+msgstr "žensko"
+
+#: program/localization/hr_HR/labels.inc:manager
+msgid "Manager"
+msgstr "Menadžer"
+
+#: program/localization/hr_HR/labels.inc:assistant
+#: program/localization/hr_HR/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Asistent"
+
+#: program/localization/hr_HR/labels.inc:spouse
+msgid "Spouse"
+msgstr "Suprug/a"
+
+#: program/localization/hr_HR/labels.inc:typehome
+msgid "Home"
+msgstr "Kućni broj"
+
+#: program/localization/hr_HR/labels.inc:typework
+msgid "Work"
+msgstr "Poslovni broj"
+
+#: program/localization/hr_HR/labels.inc:typeother
+msgid "Other"
+msgstr "Ostalo"
+
+#: program/localization/hr_HR/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Mobitel"
+
+#: program/localization/hr_HR/labels.inc:typemain
+msgid "Main"
+msgstr "Glavni broj"
+
+#: program/localization/hr_HR/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Fax kuća"
+
+#: program/localization/hr_HR/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "Fax posao"
+
+#: program/localization/hr_HR/labels.inc:typecar
+msgid "Car"
+msgstr "Auto"
+
+#: program/localization/hr_HR/labels.inc:typepager
+msgid "Pager"
+msgstr "Pejdžer"
+
+#: program/localization/hr_HR/labels.inc:typevideo
+msgid "Video"
+msgstr "Video"
+
+#: program/localization/hr_HR/labels.inc:addfield
+msgid "Add field..."
+msgstr "Dodaj polje..."
+
+#: program/localization/hr_HR/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Dodaj novi kontakt"
+
+#: program/localization/hr_HR/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Izmjeni kontakt"
+
+#: program/localization/hr_HR/labels.inc:contacts
+msgid "Contacts"
+msgstr "Kontakti"
+
+#: program/localization/hr_HR/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Svojstva kontakta"
+
+#: program/localization/hr_HR/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Osobni podaci"
+
+#: program/localization/hr_HR/labels.inc:edit
+msgid "Edit"
+msgstr "Izmjeni"
+
+#: program/localization/hr_HR/labels.inc:cancel
+msgid "Cancel"
+msgstr "Odustani"
+
+#: program/localization/hr_HR/labels.inc:save
+msgid "Save"
+msgstr "Spremi"
+
+#: program/localization/hr_HR/labels.inc:delete
+msgid "Delete"
+msgstr "Obriši"
+
+#: program/localization/hr_HR/labels.inc:rename
+msgid "Rename"
+msgstr "Preimenuj"
+
+#: program/localization/hr_HR/labels.inc:addphoto
+msgid "Add"
+msgstr "Dodaj"
+
+#: program/localization/hr_HR/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Smijeniti"
+
+#: program/localization/hr_HR/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Dodaj novi kontakt"
+
+#: program/localization/hr_HR/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Obriši odabrane kontakte"
+
+#: program/localization/hr_HR/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Napiši mail..."
+
+#: program/localization/hr_HR/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Kontakti od $from do $to od ukupno $count"
+
+#: program/localization/hr_HR/labels.inc:print
+msgid "Print"
+msgstr "Print"
+
+#: program/localization/hr_HR/labels.inc:export
+msgid "Export"
+msgstr "Export"
+
+#: program/localization/hr_HR/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Izvezi kontakte u vCard formatu"
+
+#: program/localization/hr_HR/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Napravi novu kontaktnu grupu"
+
+#: program/localization/hr_HR/labels.inc:groupactions
+msgid "groupactions"
+msgstr "Akcije kontaktne grupe"
+
+#: program/localization/hr_HR/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Prethodna strana"
+
+#: program/localization/hr_HR/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Prva strana"
+
+#: program/localization/hr_HR/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Slijedeća strana"
+
+#: program/localization/hr_HR/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Zadnja strana"
+
+#: program/localization/hr_HR/labels.inc:group
+msgid "Group"
+msgstr "Grupa"
+
+#: program/localization/hr_HR/labels.inc:groups
+msgid "Groups"
+msgstr "Grupe"
+
+#: program/localization/hr_HR/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Privatna adresa"
+
+#: program/localization/hr_HR/labels.inc:import
+msgid "Import"
+msgstr "Uvoz"
+
+#: program/localization/hr_HR/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Uvoz kontakta"
+
+#: program/localization/hr_HR/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Uvezi iz datoteke:"
+
+#: program/localization/hr_HR/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Prepiši cijeli adresar"
+
+#: program/localization/hr_HR/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Možete prebaciti kontakte iz postojećeg adresara.<br/>Trenutno"
+"podržavamo uvozenje adresa iz <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> formata."
+
+#: program/localization/hr_HR/labels.inc:done
+msgid "Done"
+msgstr "Završeno"
+
+#: program/localization/hr_HR/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Postavke za"
+
+#: program/localization/hr_HR/labels.inc:preferences
+msgid "Preferences"
+msgstr "Postavke"
+
+#: program/localization/hr_HR/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Korisničke postavke"
+
+#: program/localization/hr_HR/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Izmjena postavki"
+
+#: program/localization/hr_HR/labels.inc:identities
+msgid "Identities"
+msgstr "Identiteti"
+
+#: program/localization/hr_HR/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Podesi identitete za ovaj nalog"
+
+#: program/localization/hr_HR/labels.inc:newidentity
+msgid "New identity"
+msgstr "Dodaj identitet"
+
+#: program/localization/hr_HR/labels.inc:newitem
+msgid "New item"
+msgstr "Novo"
+
+#: program/localization/hr_HR/labels.inc:edititem
+msgid "Edit item"
+msgstr "Uredi"
+
+#: program/localization/hr_HR/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML format u prednosti"
+
+#: program/localization/hr_HR/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Zadani skup znakova"
+
+#: program/localization/hr_HR/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML format poruke"
+
+#: program/localization/hr_HR/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Formatiran datum"
+
+#: program/localization/hr_HR/labels.inc:setdefault
+msgid "Set default"
+msgstr "Postavi predodređeno"
+
+#: program/localization/hr_HR/labels.inc:autodetect
+msgid "Auto"
+msgstr "Auto"
+
+#: program/localization/hr_HR/labels.inc:language
+msgid "Language"
+msgstr "Jezik"
+
+#: program/localization/hr_HR/labels.inc:timezone
+msgid "Time zone"
+msgstr "Vremenska zona"
+
+#: program/localization/hr_HR/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Redova po stranici"
+
+#: program/localization/hr_HR/labels.inc:signature
+msgid "Signature"
+msgstr "Potpis"
+
+#: program/localization/hr_HR/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Automatska promjena vremena"
+
+#: program/localization/hr_HR/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Sastavi HTML poruke"
+
+#: program/localization/hr_HR/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "odgovor samo na HTML poruke"
+
+#: program/localization/hr_HR/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML potpis"
+
+#: program/localization/hr_HR/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Prikaži područje pregleda"
+
+#: program/localization/hr_HR/labels.inc:skin
+msgid "Interface skin"
+msgstr "Tema izgleda"
+
+#: program/localization/hr_HR/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Očisti smeće pri izlazu"
+
+#: program/localization/hr_HR/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Komprimiraj Inbox pri izlazu"
+
+#: program/localization/hr_HR/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Korisnički interfejs"
+
+#: program/localization/hr_HR/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Postavke servera"
+
+#: program/localization/hr_HR/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Pregled Mailboxa"
+
+#: program/localization/hr_HR/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Obavijest pošiljatelja"
+
+#: program/localization/hr_HR/labels.inc:askuser
+msgid "ask me"
+msgstr "pitaj korisnika"
+
+#: program/localization/hr_HR/labels.inc:autosend
+msgid "send receipt"
+msgstr "šalji automatski"
+
+#: program/localization/hr_HR/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "Dodaj primatelja u moje kontakte, u suprotnom me pitaj"
+
+#: program/localization/hr_HR/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "Dodaj primatelja u moje kontakte, u suprotnom zanemari"
+
+#: program/localization/hr_HR/labels.inc:ignore
+msgid "ignore"
+msgstr "zanemari"
+
+#: program/localization/hr_HR/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Označi poruku kao pročitanu pri brisanju"
+
+#: program/localization/hr_HR/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Označi poruku za brisanje umjesto brisanja"
+
+#: program/localization/hr_HR/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Ne prikazivaj pobrisane poruke"
+
+#: program/localization/hr_HR/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Ukoliko premještanje poruka u mapu otpad ne uspije, izbrši poruku"
+
+#: program/localization/hr_HR/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Prikaži slike s interneta"
+
+#: program/localization/hr_HR/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "od poznatih pošiljatelja"
+
+#: program/localization/hr_HR/labels.inc:always
+msgid "always"
+msgstr "uvijek"
+
+#: program/localization/hr_HR/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Prikaži slike ispod poruke"
+
+#: program/localization/hr_HR/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Automatski spremi draft"
+
+#: program/localization/hr_HR/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "svakih $n minuta"
+
+#: program/localization/hr_HR/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Provjeri nove poruke"
+
+#: program/localization/hr_HR/labels.inc:never
+msgid "never"
+msgstr "nikada"
+
+#: program/localization/hr_HR/labels.inc:immediately
+msgid "immediately"
+msgstr "odmah"
+
+#: program/localization/hr_HR/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Prikazujem poruke"
+
+#: program/localization/hr_HR/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Komponiram poruke"
+
+#: program/localization/hr_HR/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Nazivi privitaka"
+
+#: program/localization/hr_HR/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Full RFC 2231 (Thunderbird)"
+
+#: program/localization/hr_HR/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/hr_HR/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Full RFC 2047 (ostali)"
+
+#: program/localization/hr_HR/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "Koristi MIME postavke za 8-bitne znakove"
+
+#: program/localization/hr_HR/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Napredne postavke"
+
+#: program/localization/hr_HR/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Fokusiraj browser pri novoj poruci"
+
+#: program/localization/hr_HR/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Provjeri nove poruke u svim mapama"
+
+#: program/localization/hr_HR/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Nakon brisanja/micanja poruke, prikaži slijedeću"
+
+#: program/localization/hr_HR/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Glavne postavke"
+
+#: program/localization/hr_HR/labels.inc:section
+msgid "Section"
+msgstr "Sekcija"
+
+#: program/localization/hr_HR/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Održavanje"
+
+#: program/localization/hr_HR/labels.inc:newmessage
+msgid "New Message"
+msgstr "Nova poruka"
+
+#: program/localization/hr_HR/labels.inc:listoptions
+msgid "List Options"
+msgstr "Postavke liste"
+
+#: program/localization/hr_HR/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Postavke potpisa"
+
+#: program/localization/hr_HR/labels.inc:whenreplying
+msgid "When replying"
+msgstr "Prilikom odgovora"
+
+#: program/localization/hr_HR/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "započni novu poruku iznad originala"
+
+#: program/localization/hr_HR/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "započni novu poruku ispod originala"
+
+#: program/localization/hr_HR/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "Kod odgovaranja, makni originalni potpis iz poruke"
+
+#: program/localization/hr_HR/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Automatski dodaj potpis"
+
+#: program/localization/hr_HR/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "samo nova poruka"
+
+#: program/localization/hr_HR/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "samo odgovori i proslijeđivanja"
+
+#: program/localization/hr_HR/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "Kod downloada ili proslijeđivanja postavi potpis"
+
+#: program/localization/hr_HR/labels.inc:belowquote
+msgid "below the quote"
+msgstr "ispod citata"
+
+#: program/localization/hr_HR/labels.inc:abovequote
+msgid "above the quote"
+msgstr "iznad citata"
+
+#: program/localization/hr_HR/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Umetni potpis"
+
+#: program/localization/hr_HR/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Obilježi pregledane poruke kao pročitane"
+
+#: program/localization/hr_HR/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "nakon $n sekundi"
+
+#: program/localization/hr_HR/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Uvijek zatraži potvrdu o primitku poruke"
+
+#: program/localization/hr_HR/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Uvijek zatraži potvrdu o slanju poruke"
+
+#: program/localization/hr_HR/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Spremi odgovore u mapu gdje se nalazi poruka"
+
+#: program/localization/hr_HR/labels.inc:folder
+msgid "Folder"
+msgstr "Mapa"
+
+#: program/localization/hr_HR/labels.inc:foldername
+msgid "Folder name"
+msgstr "Ime mape"
+
+#: program/localization/hr_HR/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Pretplata"
+
+#: program/localization/hr_HR/labels.inc:messagecount
+msgid "Messages"
+msgstr "Poruke"
+
+#: program/localization/hr_HR/labels.inc:create
+msgid "Create"
+msgstr "Napravi"
+
+#: program/localization/hr_HR/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Napravi novu mapu"
+
+#: program/localization/hr_HR/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Podesi mapu"
+
+#: program/localization/hr_HR/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Specijalna mapa"
+
+#: program/localization/hr_HR/labels.inc:properties
+msgid "Properties"
+msgstr "Svojstva"
+
+#: program/localization/hr_HR/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Svojstva mape"
+
+#: program/localization/hr_HR/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Glavna fascikla"
+
+#: program/localization/hr_HR/labels.inc:location
+msgid "Location"
+msgstr "Lokacija"
+
+#: program/localization/hr_HR/labels.inc:info
+msgid "Information"
+msgstr "Informacija"
+
+#: program/localization/hr_HR/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Kliknite da biste dobili veličinu mape"
+
+#: program/localization/hr_HR/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Kliknite da biste promjenili pretplatu"
+
+#: program/localization/hr_HR/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Vrsta mape"
+
+#: program/localization/hr_HR/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "Privatna mapa"
+
+#: program/localization/hr_HR/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "Mapa drugih korisnika"
+
+#: program/localization/hr_HR/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "Javna mapa"
+
+#: program/localization/hr_HR/labels.inc:sortby
+msgid "Sort by"
+msgstr "Sortiraj po"
+
+#: program/localization/hr_HR/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Sortiraj rastućim nizom"
+
+#: program/localization/hr_HR/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Sortiraj opadajućim nizom"
+
+#: program/localization/hr_HR/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/hr_HR/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/hr_HR/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/hr_HR/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/hr_HR/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unicode"
+
+#: program/localization/hr_HR/labels.inc:english
+msgid "English"
+msgstr "Engleski"
+
+#: program/localization/hr_HR/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Zapadno Evropski"
+
+#: program/localization/hr_HR/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Istočno Evropski"
+
+#: program/localization/hr_HR/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Južno-Istočni Evropski"
+
+#: program/localization/hr_HR/labels.inc:baltic
+msgid "Baltic"
+msgstr "Balitčki"
+
+#: program/localization/hr_HR/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Čirilčni"
+
+#: program/localization/hr_HR/labels.inc:arabic
+msgid "Arabic"
+msgstr "Arapski"
+
+#: program/localization/hr_HR/labels.inc:greek
+msgid "Greek"
+msgstr "Grčki"
+
+#: program/localization/hr_HR/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Hibru"
+
+#: program/localization/hr_HR/labels.inc:turkish
+msgid "Turkish"
+msgstr "Turski"
+
+#: program/localization/hr_HR/labels.inc:nordic
+msgid "Nordic"
+msgstr "Nordski"
+
+#: program/localization/hr_HR/labels.inc:thai
+msgid "Thai"
+msgstr "Tajlandski"
+
+#: program/localization/hr_HR/labels.inc:celtic
+msgid "Celtic"
+msgstr "Keltski"
+
+#: program/localization/hr_HR/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Vijetnamski"
+
+#: program/localization/hr_HR/labels.inc:japanese
+msgid "Japanese"
+msgstr "Japanski"
+
+#: program/localization/hr_HR/labels.inc:korean
+msgid "Korean"
+msgstr "Korejski"
+
+#: program/localization/hr_HR/labels.inc:chinese
+msgid "Chinese"
+msgstr "Kineski"

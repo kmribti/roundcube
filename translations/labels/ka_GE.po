@@ -1,0 +1,1431 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ka_GE/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ka_GE\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ka_GE/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "მოგესალმებათ $product"
+
+#: program/localization/ka_GE/labels.inc:username
+msgid "Username"
+msgstr "მომხმარებელი"
+
+#: program/localization/ka_GE/labels.inc:password
+msgid "Password"
+msgstr "პაროლი"
+
+#: program/localization/ka_GE/labels.inc:server
+msgid "Server"
+msgstr "სერვერი"
+
+#: program/localization/ka_GE/labels.inc:login
+msgid "Login"
+msgstr "შესვლა"
+
+#: program/localization/ka_GE/labels.inc:logout
+msgid "Logout"
+msgstr "გამოსვლა"
+
+#: program/localization/ka_GE/labels.inc:mail
+msgid "Mail"
+msgstr "ელფოსტა"
+
+#: program/localization/ka_GE/labels.inc:settings
+msgid "Settings"
+msgstr "პარამეტრები"
+
+#: program/localization/ka_GE/labels.inc:addressbook
+msgid "Address Book"
+msgstr "მისამართები"
+
+#: program/localization/ka_GE/labels.inc:inbox
+msgid "Inbox"
+msgstr "მიღებული"
+
+#: program/localization/ka_GE/labels.inc:drafts
+msgid "Drafts"
+msgstr "დროებითი"
+
+#: program/localization/ka_GE/labels.inc:sent
+msgid "Sent"
+msgstr "გაგზავნილი"
+
+#: program/localization/ka_GE/labels.inc:trash
+msgid "Trash"
+msgstr "წაშლილი"
+
+#: program/localization/ka_GE/labels.inc:junk
+msgid "Junk"
+msgstr "სპამი"
+
+#: program/localization/ka_GE/labels.inc:subject
+msgid "Subject"
+msgstr "სათაური"
+
+#: program/localization/ka_GE/labels.inc:from
+msgid "From"
+msgstr "გამგზავნი"
+
+#: program/localization/ka_GE/labels.inc:to
+msgid "To"
+msgstr "ვის"
+
+#: program/localization/ka_GE/labels.inc:cc
+msgid "Cc"
+msgstr "ასლი"
+
+#: program/localization/ka_GE/labels.inc:bcc
+msgid "Bcc"
+msgstr "ფარული"
+
+#: program/localization/ka_GE/labels.inc:replyto
+msgid "Reply-To"
+msgstr "პასუხი"
+
+#: program/localization/ka_GE/labels.inc:date
+msgid "Date"
+msgstr "თარიღი"
+
+#: program/localization/ka_GE/labels.inc:size
+msgid "Size"
+msgstr "ზომა"
+
+#: program/localization/ka_GE/labels.inc:priority
+msgid "Priority"
+msgstr "პრიორიტეტი"
+
+#: program/localization/ka_GE/labels.inc:organization
+msgid "Company"
+msgstr "ორგანიზაცია"
+
+#: program/localization/ka_GE/labels.inc:mailboxlist
+#: program/localization/ka_GE/labels.inc:folders
+msgid "Folders"
+msgstr "საქაღალდეები"
+
+#: program/localization/ka_GE/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "შეტყობინება $nr დან $count"
+
+#: program/localization/ka_GE/labels.inc:copy
+msgid "Copy"
+msgstr "ასლი"
+
+#: program/localization/ka_GE/labels.inc:move
+msgid "Move"
+msgstr "გადატანა"
+
+#: program/localization/ka_GE/labels.inc:moveto
+msgid "Move to..."
+msgstr "გადატანა..."
+
+#: program/localization/ka_GE/labels.inc:download
+msgid "Download"
+msgstr "გადმოწერა"
+
+#: program/localization/ka_GE/labels.inc:filename
+msgid "File name"
+msgstr "ფაილის სახელი"
+
+#: program/localization/ka_GE/labels.inc:filesize
+msgid "File size"
+msgstr "ფაილის ზომა"
+
+#: program/localization/ka_GE/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "მისამართებში დამატება"
+
+#: program/localization/ka_GE/labels.inc:sun
+msgid "Sun"
+msgstr "კვი"
+
+#: program/localization/ka_GE/labels.inc:mon
+msgid "Mon"
+msgstr "ორშ"
+
+#: program/localization/ka_GE/labels.inc:tue
+msgid "Tue"
+msgstr "სამ"
+
+#: program/localization/ka_GE/labels.inc:wed
+msgid "Wed"
+msgstr "ოთხ"
+
+#: program/localization/ka_GE/labels.inc:thu
+msgid "Thu"
+msgstr "ხუთ"
+
+#: program/localization/ka_GE/labels.inc:fri
+msgid "Fri"
+msgstr "პარ"
+
+#: program/localization/ka_GE/labels.inc:sat
+msgid "Sat"
+msgstr "შაბ"
+
+#: program/localization/ka_GE/labels.inc:sunday
+msgid "Sunday"
+msgstr "კვირა"
+
+#: program/localization/ka_GE/labels.inc:monday
+msgid "Monday"
+msgstr "ორშაბათი"
+
+#: program/localization/ka_GE/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "სამშაბათი"
+
+#: program/localization/ka_GE/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "ოთხშაბათი"
+
+#: program/localization/ka_GE/labels.inc:thursday
+msgid "Thursday"
+msgstr "ხუთშაბათი"
+
+#: program/localization/ka_GE/labels.inc:friday
+msgid "Friday"
+msgstr "პარასკევი"
+
+#: program/localization/ka_GE/labels.inc:saturday
+msgid "Saturday"
+msgstr "შაბათი"
+
+#: program/localization/ka_GE/labels.inc:jan
+msgid "Jan"
+msgstr "იან"
+
+#: program/localization/ka_GE/labels.inc:feb
+msgid "Feb"
+msgstr "თებ"
+
+#: program/localization/ka_GE/labels.inc:mar
+msgid "Mar"
+msgstr "მარ"
+
+#: program/localization/ka_GE/labels.inc:apr
+msgid "Apr"
+msgstr "აპრ"
+
+#: program/localization/ka_GE/labels.inc:may
+#: program/localization/ka_GE/labels.inc:longmay
+msgid "May"
+msgstr "მაისი"
+
+#: program/localization/ka_GE/labels.inc:jun
+msgid "Jun"
+msgstr "ივნ"
+
+#: program/localization/ka_GE/labels.inc:jul
+msgid "Jul"
+msgstr "ივლ"
+
+#: program/localization/ka_GE/labels.inc:aug
+msgid "Aug"
+msgstr "აგვ"
+
+#: program/localization/ka_GE/labels.inc:sep
+msgid "Sep"
+msgstr "სექ"
+
+#: program/localization/ka_GE/labels.inc:oct
+msgid "Oct"
+msgstr "ოქტ"
+
+#: program/localization/ka_GE/labels.inc:nov
+msgid "Nov"
+msgstr "ნოე"
+
+#: program/localization/ka_GE/labels.inc:dec
+msgid "Dec"
+msgstr "დეკ"
+
+#: program/localization/ka_GE/labels.inc:longjan
+msgid "January"
+msgstr "იანვარი"
+
+#: program/localization/ka_GE/labels.inc:longfeb
+msgid "February"
+msgstr "თებერვალი"
+
+#: program/localization/ka_GE/labels.inc:longmar
+msgid "March"
+msgstr "მარტი"
+
+#: program/localization/ka_GE/labels.inc:longapr
+msgid "April"
+msgstr "აპრილი"
+
+#: program/localization/ka_GE/labels.inc:longjun
+msgid "June"
+msgstr "ივნისი"
+
+#: program/localization/ka_GE/labels.inc:longjul
+msgid "July"
+msgstr "ივლისი"
+
+#: program/localization/ka_GE/labels.inc:longaug
+msgid "August"
+msgstr "აგვისტო"
+
+#: program/localization/ka_GE/labels.inc:longsep
+msgid "September"
+msgstr "სექტემბერი"
+
+#: program/localization/ka_GE/labels.inc:longoct
+msgid "October"
+msgstr "ოქტომბერი"
+
+#: program/localization/ka_GE/labels.inc:longnov
+msgid "November"
+msgstr "ნოემბერი"
+
+#: program/localization/ka_GE/labels.inc:longdec
+msgid "December"
+msgstr "დეკემბერი"
+
+#: program/localization/ka_GE/labels.inc:today
+msgid "Today"
+msgstr "დღეს"
+
+#: program/localization/ka_GE/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "შემოწმება ახალ"
+"შეტყობინებაზე"
+
+#: program/localization/ka_GE/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "ახალი შეტყობინება"
+
+#: program/localization/ka_GE/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "პასუხი"
+
+#: program/localization/ka_GE/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "პასუხი ყველას"
+
+#: program/localization/ka_GE/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "გადაგზავნა"
+
+#: program/localization/ka_GE/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "წაშლა"
+
+#: program/localization/ka_GE/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "შეტყობინების წაშლილებში"
+"გადატანა"
+
+#: program/localization/ka_GE/labels.inc:printmessage
+msgid "Print this message"
+msgstr "შეტყობინების ამობეჭვდა"
+
+#: program/localization/ka_GE/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "წინა შეტყობინების ნახვა"
+
+#: program/localization/ka_GE/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "პირველი შეტყობინების ნახვა"
+
+#: program/localization/ka_GE/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "შემდეგი შეტყობინების ნახვა"
+
+#: program/localization/ka_GE/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "ბოლო შეტყობინების ნახვა"
+
+#: program/localization/ka_GE/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "უკან ჩამონათვალში"
+
+#: program/localization/ka_GE/labels.inc:viewsource
+msgid "Show source"
+msgstr "შიგთავსი"
+
+#: program/localization/ka_GE/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "მონიშნეთ შეტყობინებები"
+
+#: program/localization/ka_GE/labels.inc:markread
+msgid "As read"
+msgstr "როგორც წაკითხული"
+
+#: program/localization/ka_GE/labels.inc:markunread
+msgid "As unread"
+msgstr "როგორც წაუკითხავი"
+
+#: program/localization/ka_GE/labels.inc:markflagged
+msgid "As flagged"
+msgstr "როგორც მონიშნული"
+
+#: program/localization/ka_GE/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "როგორც მოუნიშნავი"
+
+#: program/localization/ka_GE/labels.inc:moreactions
+msgid "More actions..."
+msgstr "მეტი მოქმედება..."
+
+#: program/localization/ka_GE/labels.inc:select
+msgid "Select"
+msgstr "მონიშვნა"
+
+#: program/localization/ka_GE/labels.inc:all
+msgid "All"
+msgstr "ყველა"
+
+#: program/localization/ka_GE/labels.inc:none
+msgid "None"
+msgstr "არცერთი"
+
+#: program/localization/ka_GE/labels.inc:currpage
+msgid "Current page"
+msgstr "მიმდინარე გვერდი"
+
+#: program/localization/ka_GE/labels.inc:unread
+msgid "Unread"
+msgstr "წაუკითხავი"
+
+#: program/localization/ka_GE/labels.inc:flagged
+msgid "Flagged"
+msgstr "მონიშნული"
+
+#: program/localization/ka_GE/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "უპასუხო"
+
+#: program/localization/ka_GE/labels.inc:deleted
+msgid "Deleted"
+msgstr "წაშლილი"
+
+#: program/localization/ka_GE/labels.inc:invert
+msgid "Invert"
+msgstr "შებრუნებული"
+
+#: program/localization/ka_GE/labels.inc:filter
+msgid "Filter"
+msgstr "ფილტრი"
+
+#: program/localization/ka_GE/labels.inc:list
+msgid "List"
+msgstr "სია"
+
+#: program/localization/ka_GE/labels.inc:expand-all
+msgid "Expand All"
+msgstr "ყველას გაშლა"
+
+#: program/localization/ka_GE/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "წაუკითხავის გაშლა"
+
+#: program/localization/ka_GE/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "ყველას დაკეცვა"
+
+#: program/localization/ka_GE/labels.inc:fromto
+msgid "From/To"
+msgstr "ვისგან/ვის"
+
+#: program/localization/ka_GE/labels.inc:flag
+msgid "Flag"
+msgstr "დროშა"
+
+#: program/localization/ka_GE/labels.inc:attachment
+msgid "Attachment"
+msgstr "მიმაგრებული ფაილი"
+
+#: program/localization/ka_GE/labels.inc:sentdate
+msgid "Sent date"
+msgstr "გაგზავნის თარიღი"
+
+#: program/localization/ka_GE/labels.inc:asc
+msgid "ascending"
+msgstr "ზრდადობით"
+
+#: program/localization/ka_GE/labels.inc:desc
+msgid "descending"
+msgstr "კლებადობით"
+
+#: program/localization/ka_GE/labels.inc:listorder
+msgid "Sorting order"
+msgstr "დალაგება"
+
+#: program/localization/ka_GE/labels.inc:compact
+msgid "Compact"
+msgstr "შეკუმშვა"
+
+#: program/localization/ka_GE/labels.inc:empty
+msgid "Empty"
+msgstr "გაცარიელება"
+
+#: program/localization/ka_GE/labels.inc:quota
+msgid "Disk usage"
+msgstr "შეზღუდვა"
+
+#: program/localization/ka_GE/labels.inc:unknown
+msgid "unknown"
+msgstr "უცნობი"
+
+#: program/localization/ka_GE/labels.inc:unlimited
+msgid "unlimited"
+msgstr "შეუზღუდავი"
+
+#: program/localization/ka_GE/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "სწრაფი ძიება"
+
+#: program/localization/ka_GE/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "ძიების გასუფთავება"
+
+#: program/localization/ka_GE/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "ძებნის ვარიანტები"
+
+#: program/localization/ka_GE/labels.inc:msgtext
+msgid "Entire message"
+msgstr "ყველა შეტყობინება"
+
+#: program/localization/ka_GE/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "გახსნა ახალ ფანჯარაში"
+
+#: program/localization/ka_GE/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "გადმოწერა (.eml)"
+
+#: program/localization/ka_GE/labels.inc:compose
+msgid "Compose a message"
+msgstr "შეტყობინების დაწერა"
+
+#: program/localization/ka_GE/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "რედაქტირება როგორც ახლის"
+
+#: program/localization/ka_GE/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "დროებით შენახვა"
+
+#: program/localization/ka_GE/labels.inc:sendmessage
+msgid "Send now"
+msgstr "შეტყობინების გაგზავნა"
+
+#: program/localization/ka_GE/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "ფაილის ატვირთვა"
+
+#: program/localization/ka_GE/labels.inc:charset
+msgid "Charset"
+msgstr "კოდირება"
+
+#: program/localization/ka_GE/labels.inc:editortype
+msgid "Editor type"
+msgstr "რედაქტორი"
+
+#: program/localization/ka_GE/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "პასუხის მოთხოვნა"
+
+#: program/localization/ka_GE/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "ორთოგრაფიული შემოწმება"
+
+#: program/localization/ka_GE/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "რედაქტირების გაგრძელება"
+
+#: program/localization/ka_GE/labels.inc:revertto
+msgid "Revert to"
+msgstr "გაუქმება"
+
+#: program/localization/ka_GE/labels.inc:attachments
+msgid "Attachments"
+msgstr "გზავნილები"
+
+#: program/localization/ka_GE/labels.inc:upload
+msgid "Upload"
+msgstr "ატვირთვა"
+
+#: program/localization/ka_GE/labels.inc:close
+msgid "Close"
+msgstr "დახურვა"
+
+#: program/localization/ka_GE/labels.inc:low
+msgid "Low"
+msgstr "დაბალი"
+
+#: program/localization/ka_GE/labels.inc:lowest
+msgid "Lowest"
+msgstr "უდაბლესი"
+
+#: program/localization/ka_GE/labels.inc:normal
+msgid "Normal"
+msgstr "საშუალო"
+
+#: program/localization/ka_GE/labels.inc:high
+msgid "High"
+msgstr "მაღალი"
+
+#: program/localization/ka_GE/labels.inc:highest
+msgid "Highest"
+msgstr "უმაღლესი"
+
+#: program/localization/ka_GE/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(უსათაურო)"
+
+#: program/localization/ka_GE/labels.inc:showimages
+msgid "Display images"
+msgstr "გამოსახულების ჩვენება"
+
+#: program/localization/ka_GE/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "ყოველთვის გამოაჩინე"
+"სურათები $sender –გან"
+
+#: program/localization/ka_GE/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/ka_GE/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "ტექსტური"
+
+#: program/localization/ka_GE/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "შეინახე შეტყობინება"
+
+#: program/localization/ka_GE/labels.inc:dontsave
+msgid "don't save"
+msgstr "არ შეინახო"
+
+#: program/localization/ka_GE/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "მაქსიმალური დაშვებული"
+"ფაილის ზომა $size"
+
+#: program/localization/ka_GE/labels.inc:addcc
+msgid "Add Cc"
+msgstr "დაამატე კოპიო"
+
+#: program/localization/ka_GE/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "დაამატე ფარული კოპიო"
+
+#: program/localization/ka_GE/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "დაამატე გამომგზავნი"
+
+#: program/localization/ka_GE/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "გამომგზავნს სურს შეიტყოს"
+"წერილის მიღება. გსურთ"
+"შეატყობინოთ გამომგზავნს?"
+
+#: program/localization/ka_GE/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "გზავნილის დაბრუნება"
+
+#: program/localization/ka_GE/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "ეს არის მიღების დასტური"
+"თქვენს შეტყობინებაზე"
+
+#: program/localization/ka_GE/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "განმარტება: ეს ნიშნავს რომ"
+"ადრესატმა მიიღო"
+"შეტყობინება. მაგრამ, არ"
+"ნიშნავს რომ წაიკითხა ან"
+"გაიგო ტექსტი"
+
+#: program/localization/ka_GE/labels.inc:name
+msgid "Display Name"
+msgstr "სრული სახელი"
+
+#: program/localization/ka_GE/labels.inc:firstname
+msgid "First Name"
+msgstr "სახელი"
+
+#: program/localization/ka_GE/labels.inc:surname
+msgid "Last Name"
+msgstr "გვარი"
+
+#: program/localization/ka_GE/labels.inc:department
+msgid "Department"
+msgstr "დეპარტამენტი"
+
+#: program/localization/ka_GE/labels.inc:gender
+msgid "Gender"
+msgstr "სქესი"
+
+#: program/localization/ka_GE/labels.inc:email
+msgid "Email"
+msgstr "ელ–ფოსტა"
+
+#: program/localization/ka_GE/labels.inc:phone
+msgid "Phone"
+msgstr "ტელეფონი"
+
+#: program/localization/ka_GE/labels.inc:address
+msgid "Address"
+msgstr "მისამართი"
+
+#: program/localization/ka_GE/labels.inc:street
+msgid "Street"
+msgstr "ქუჩა"
+
+#: program/localization/ka_GE/labels.inc:locality
+msgid "City"
+msgstr "ქალაქი"
+
+#: program/localization/ka_GE/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "ZIP კოდი"
+
+#: program/localization/ka_GE/labels.inc:region
+msgid "State/Province"
+msgstr "შტატი/პროვინცია"
+
+#: program/localization/ka_GE/labels.inc:country
+msgid "Country"
+msgstr "ქვეყანა"
+
+#: program/localization/ka_GE/labels.inc:birthday
+msgid "Birthday"
+msgstr "დაბადების დღე"
+
+#: program/localization/ka_GE/labels.inc:website
+msgid "Website"
+msgstr "ვებგვერდი"
+
+#: program/localization/ka_GE/labels.inc:male
+msgid "male"
+msgstr "მამრობითი"
+
+#: program/localization/ka_GE/labels.inc:female
+msgid "female"
+msgstr "მდედრობით"
+
+#: program/localization/ka_GE/labels.inc:manager
+msgid "Manager"
+msgstr "მენეჯერი"
+
+#: program/localization/ka_GE/labels.inc:allfields
+msgid "All fields"
+msgstr "ყველა ველი"
+
+#: program/localization/ka_GE/labels.inc:search
+msgid "Search"
+msgstr "ძებნა"
+
+#: program/localization/ka_GE/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "გაფართოებული ძებნა"
+
+#: program/localization/ka_GE/labels.inc:other
+#: program/localization/ka_GE/labels.inc:typeother
+msgid "Other"
+msgstr "სხვა"
+
+#: program/localization/ka_GE/labels.inc:typehome
+msgid "Home"
+msgstr "სახლი"
+
+#: program/localization/ka_GE/labels.inc:typework
+msgid "Work"
+msgstr "სამსახური"
+
+#: program/localization/ka_GE/labels.inc:typemobile
+msgid "Mobile"
+msgstr "მობილური"
+
+#: program/localization/ka_GE/labels.inc:typemain
+msgid "Main"
+msgstr "ძირითადი"
+
+#: program/localization/ka_GE/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "სახლის ფაქსი"
+
+#: program/localization/ka_GE/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "სამსახურის ფაქსი"
+
+#: program/localization/ka_GE/labels.inc:typecar
+msgid "Car"
+msgstr "მანქანა"
+
+#: program/localization/ka_GE/labels.inc:typepager
+msgid "Pager"
+msgstr "პეიჯერი"
+
+#: program/localization/ka_GE/labels.inc:typevideo
+msgid "Video"
+msgstr "ვიდეო"
+
+#: program/localization/ka_GE/labels.inc:typeblog
+msgid "Blog"
+msgstr "ბლოგი"
+
+#: program/localization/ka_GE/labels.inc:typeprofile
+msgid "Profile"
+msgstr "პროფილი"
+
+#: program/localization/ka_GE/labels.inc:addfield
+msgid "Add field..."
+msgstr "ველის დამატება..."
+
+#: program/localization/ka_GE/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "კონტაქტებში დამატება"
+
+#: program/localization/ka_GE/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "კონტაქტის რედაქტირება"
+
+#: program/localization/ka_GE/labels.inc:contacts
+msgid "Contacts"
+msgstr "კონტაქტები"
+
+#: program/localization/ka_GE/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "პირადი ინფორმაცია"
+
+#: program/localization/ka_GE/labels.inc:edit
+msgid "Edit"
+msgstr "რედაქტირება"
+
+#: program/localization/ka_GE/labels.inc:cancel
+msgid "Cancel"
+msgstr "გაუქმება"
+
+#: program/localization/ka_GE/labels.inc:save
+msgid "Save"
+msgstr "შენახვა"
+
+#: program/localization/ka_GE/labels.inc:delete
+msgid "Delete"
+msgstr "წაშლა"
+
+#: program/localization/ka_GE/labels.inc:rename
+msgid "Rename"
+msgstr "გადარქმევა"
+
+#: program/localization/ka_GE/labels.inc:addphoto
+msgid "Add"
+msgstr "დამატება"
+
+#: program/localization/ka_GE/labels.inc:replacephoto
+msgid "Replace"
+msgstr "გამოცვლა"
+
+#: program/localization/ka_GE/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "კონტაქტის შექმნა"
+
+#: program/localization/ka_GE/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "მონიშნელი კონტაქტის წაშლა"
+
+#: program/localization/ka_GE/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "ფოსტის გაგზავნა შერჩეულ"
+"ადრესატებთან"
+
+#: program/localization/ka_GE/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "კონტაქტები $from დან $to ში $count"
+
+#: program/localization/ka_GE/labels.inc:print
+msgid "Print"
+msgstr "დაბეჭვდა"
+
+#: program/localization/ka_GE/labels.inc:export
+msgid "Export"
+msgstr "ექსპორტი"
+
+#: program/localization/ka_GE/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "კონტაქტების ექსპორტი vCard"
+"ფორმატში"
+
+#: program/localization/ka_GE/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "ახალი საკონტაქტო ჯგუფის"
+"შექმნა"
+
+#: program/localization/ka_GE/labels.inc:grouprename
+msgid "Rename group"
+msgstr "ჯგუფის სახელის შეცვლა"
+
+#: program/localization/ka_GE/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "ჯგუფის წაშლა"
+
+#: program/localization/ka_GE/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "წინას ჩვენება"
+
+#: program/localization/ka_GE/labels.inc:firstpage
+msgid "Show first page"
+msgstr "პირველის ჩვენება"
+
+#: program/localization/ka_GE/labels.inc:nextpage
+msgid "Show next page"
+msgstr "შემდეგის ჩვენება"
+
+#: program/localization/ka_GE/labels.inc:lastpage
+msgid "Show last page"
+msgstr "ბოლოს ჩვენება"
+
+#: program/localization/ka_GE/labels.inc:group
+msgid "Group"
+msgstr "ჯგუფი"
+
+#: program/localization/ka_GE/labels.inc:groups
+msgid "Groups"
+msgstr "ჯგუფები"
+
+#: program/localization/ka_GE/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "პერსონალური მისამართები"
+
+#: program/localization/ka_GE/labels.inc:searchsave
+msgid "Save search"
+msgstr "ძებნის შენახვა"
+
+#: program/localization/ka_GE/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "ძებნის წაშლა"
+
+#: program/localization/ka_GE/labels.inc:import
+msgid "Import"
+msgstr "შემოტანა"
+
+#: program/localization/ka_GE/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "კონტაქტების შემოტანა"
+
+#: program/localization/ka_GE/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "შემოტანა ფაილიდან:"
+
+#: program/localization/ka_GE/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "ჩაანაცვლეთ არსებული"
+"მისამართები"
+
+#: program/localization/ka_GE/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "თქვენ შეგიძლიათ ატვირთოთ"
+"კონტაქტები აღნიშნული"
+"მისამართიდან. <br/> ჩვენ"
+"შეგვიძლია მივიღოთ"
+"მისამართები <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>"
+"მონაცემთა ფორმატში."
+
+#: program/localization/ka_GE/labels.inc:done
+msgid "Done"
+msgstr "დასრულებულია"
+
+#: program/localization/ka_GE/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "პარამეტრები"
+
+#: program/localization/ka_GE/labels.inc:preferences
+msgid "Preferences"
+msgstr "პარამეტრები"
+
+#: program/localization/ka_GE/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "მომხმარებლის პარამეტრები"
+
+#: program/localization/ka_GE/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "მომხმარებლის პარამეტრების"
+"რედაქტირება"
+
+#: program/localization/ka_GE/labels.inc:identities
+msgid "Identities"
+msgstr "პროფილები"
+
+#: program/localization/ka_GE/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "პროფილების მართვა"
+
+#: program/localization/ka_GE/labels.inc:newidentity
+msgid "New identity"
+msgstr "ახალი პროფილი"
+
+#: program/localization/ka_GE/labels.inc:newitem
+msgid "New item"
+msgstr "ახალი"
+
+#: program/localization/ka_GE/labels.inc:edititem
+msgid "Edit item"
+msgstr "რედაქტირება"
+
+#: program/localization/ka_GE/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "როგორც HTML"
+
+#: program/localization/ka_GE/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "ნაგულისხმები სიმბოლოთა"
+"ნაკრები"
+
+#: program/localization/ka_GE/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML შეტყობინება"
+
+#: program/localization/ka_GE/labels.inc:dateformat
+msgid "Date format"
+msgstr "თარიღის ფორმატი"
+
+#: program/localization/ka_GE/labels.inc:timeformat
+msgid "Time format"
+msgstr "დროის ფორმატი"
+
+#: program/localization/ka_GE/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "კარგი თარიღები"
+
+#: program/localization/ka_GE/labels.inc:setdefault
+msgid "Set default"
+msgstr "როგორც ზოგაგად"
+
+#: program/localization/ka_GE/labels.inc:autodetect
+msgid "Auto"
+msgstr "ავტომატური"
+
+#: program/localization/ka_GE/labels.inc:language
+msgid "Language"
+msgstr "ენა"
+
+#: program/localization/ka_GE/labels.inc:timezone
+msgid "Time zone"
+msgstr "დროითი ზონა"
+
+#: program/localization/ka_GE/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "სტრიქონი გვერდზე"
+
+#: program/localization/ka_GE/labels.inc:signature
+msgid "Signature"
+msgstr "ხელმოწერა"
+
+#: program/localization/ka_GE/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "დროის გადაყვანა"
+
+#: program/localization/ka_GE/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "შეტყობინების შექმნა HTML –ში"
+
+#: program/localization/ka_GE/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML ხელმოწერა"
+
+#: program/localization/ka_GE/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "ჩვენება"
+
+#: program/localization/ka_GE/labels.inc:skin
+msgid "Interface skin"
+msgstr "ინტერფეისი"
+
+#: program/localization/ka_GE/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "წაშლილების გასუფთავება"
+"გამოსვლისას"
+
+#: program/localization/ka_GE/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "მიღებულების შეკუმშვა"
+"გამოსვლისას"
+
+#: program/localization/ka_GE/labels.inc:uisettings
+msgid "User Interface"
+msgstr "მომხმარებლის ინტერფეისი"
+
+#: program/localization/ka_GE/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "სერვერის პარამეტრები"
+
+#: program/localization/ka_GE/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "საფოსტო ყუთის ჩვენება"
+
+#: program/localization/ka_GE/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "მგზავნელის შეტყობინებები"
+
+#: program/localization/ka_GE/labels.inc:askuser
+msgid "ask me"
+msgstr "ჰკითხე მომხმარებელს"
+
+#: program/localization/ka_GE/labels.inc:autosend
+msgid "send receipt"
+msgstr "გაგზავნე ავტომატურად"
+
+#: program/localization/ka_GE/labels.inc:ignore
+msgid "ignore"
+msgstr "იგნორირება"
+
+#: program/localization/ka_GE/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "მონიშნე გზავნილი"
+"წაკითხულად წაშლის დროს"
+
+#: program/localization/ka_GE/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "აღნიშნეთ გზავნილები როგორც"
+"წასაშლელი წაშლის ნაცვლად"
+
+#: program/localization/ka_GE/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "არ გამოაჩინო წაშლილი"
+"გზავნილები"
+
+#: program/localization/ka_GE/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "გამოაჩინე მოშორებული"
+"სურათები"
+
+#: program/localization/ka_GE/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "ნაცნობი მგზავნელებისგან"
+
+#: program/localization/ka_GE/labels.inc:always
+msgid "always"
+msgstr "ყოველთვის"
+
+#: program/localization/ka_GE/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "ატვირთული სურათები"
+"გამოაჩინე გზავნილის ქვემოთ"
+
+#: program/localization/ka_GE/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "ავტომატური შენახვა"
+
+#: program/localization/ka_GE/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "ყოველ $n წუთში"
+
+#: program/localization/ka_GE/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "შეამოწმე ახალ"
+"შეტყობინებაზე"
+
+#: program/localization/ka_GE/labels.inc:never
+msgid "never"
+msgstr "არასდროს"
+
+#: program/localization/ka_GE/labels.inc:immediately
+msgid "immediately"
+msgstr "დაუყონებლივ"
+
+#: program/localization/ka_GE/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "გამოაჩინე შეტყობინებები"
+
+#: program/localization/ka_GE/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "შეტყობინებების შექმნა"
+
+#: program/localization/ka_GE/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "ბმულის სახელები"
+
+#: program/localization/ka_GE/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Full RFC 2231 (Thunderbird)"
+
+#: program/localization/ka_GE/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/ka_GE/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Full RFC 2047 (other)"
+
+#: program/localization/ka_GE/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "MIME კოდირების გამოყენება 8"
+"ბიტიანი სიმბოლოებისთვის"
+
+#: program/localization/ka_GE/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "დამატებითი პარამეტრები"
+
+#: program/localization/ka_GE/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "ფოკუსირება ახალ"
+"შეტყობინებებზე"
+
+#: program/localization/ka_GE/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "შეამოწმე ყველა საქაღალდე"
+"ახალ შეტყობინებაზე"
+
+#: program/localization/ka_GE/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "შეტყობინების წაშლის ან"
+"გადატანის შემდეგ გამოჩნდეს"
+"შემდეგი შეტყობინება"
+
+#: program/localization/ka_GE/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "ძირითადი პარამეტრები"
+
+#: program/localization/ka_GE/labels.inc:section
+msgid "Section"
+msgstr "განყოფილება"
+
+#: program/localization/ka_GE/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "მომსახურება"
+
+#: program/localization/ka_GE/labels.inc:newmessage
+msgid "New Message"
+msgstr "ახალი შეტყობინება"
+
+#: program/localization/ka_GE/labels.inc:listoptions
+msgid "List Options"
+msgstr "პარამეტრების ჩამონათვალი"
+
+#: program/localization/ka_GE/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "ხელმოწერის ოფციები"
+
+#: program/localization/ka_GE/labels.inc:whenreplying
+msgid "When replying"
+msgstr "პასუხის შემთხვევაში"
+
+#: program/localization/ka_GE/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "დაიწყოს ახალი შეტყობინება"
+"ორიგინალის ზემოთ"
+
+#: program/localization/ka_GE/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "დაიწყოს ახალი შეტყობინება"
+"ორიგინალის ქვემოთ"
+
+#: program/localization/ka_GE/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "წაიშალოს ხელმოწერა პასუხის"
+"შემთხვევაში"
+
+#: program/localization/ka_GE/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "ავტომატურად დაემატოს"
+"ხელმოწერა"
+
+#: program/localization/ka_GE/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "მხოლოდ ახალი შეტყობინება"
+
+#: program/localization/ka_GE/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "მხოლოდ გადაგზავნის და"
+"პასუხის შემთხვევაში"
+
+#: program/localization/ka_GE/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "მხოლოდ პასუხის ან"
+"გადაგზავნის შემთხვევაში"
+"გაყვეს ხელმოწერა"
+
+#: program/localization/ka_GE/labels.inc:belowquote
+msgid "below the quote"
+msgstr "ციტატის შემდეგ"
+
+#: program/localization/ka_GE/labels.inc:abovequote
+msgid "above the quote"
+msgstr "ციტატამდე"
+
+#: program/localization/ka_GE/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "ხელმოცერის ჩასმა"
+
+#: program/localization/ka_GE/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "$n წამის შემდეგ"
+
+#: program/localization/ka_GE/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "ლექსიკონში დამატება"
+
+#: program/localization/ka_GE/labels.inc:folder
+msgid "Folder"
+msgstr "საქაღალდე"
+
+#: program/localization/ka_GE/labels.inc:foldername
+msgid "Folder name"
+msgstr "საქაღალდის დასახელება"
+
+#: program/localization/ka_GE/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "გამოწერილია"
+
+#: program/localization/ka_GE/labels.inc:messagecount
+msgid "Messages"
+msgstr "შეტყობინებები"
+
+#: program/localization/ka_GE/labels.inc:create
+msgid "Create"
+msgstr "შექმნა"
+
+#: program/localization/ka_GE/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "საქაღალდის შექმნა"
+
+#: program/localization/ka_GE/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "საქაღალდეების მართვა"
+
+#: program/localization/ka_GE/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "სპეციალური საქაღალდე"
+
+#: program/localization/ka_GE/labels.inc:location
+msgid "Location"
+msgstr "მდებარეობა"
+
+#: program/localization/ka_GE/labels.inc:info
+msgid "Information"
+msgstr "ინფორმაცია"
+
+#: program/localization/ka_GE/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "დასტის ტიპი"
+
+#: program/localization/ka_GE/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "კერძო დასტა"
+
+#: program/localization/ka_GE/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "საჯარო დასტა"
+
+#: program/localization/ka_GE/labels.inc:sortby
+msgid "Sort by"
+msgstr "დალაგება"
+
+#: program/localization/ka_GE/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "დალაგება ზრდადობით"
+
+#: program/localization/ka_GE/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "დალაგება კლებადობით"
+
+#: program/localization/ka_GE/labels.inc:undo
+msgid "Undo"
+msgstr "დაბრუნება"
+
+#: program/localization/ka_GE/labels.inc:B
+msgid "B"
+msgstr "ბტ"
+
+#: program/localization/ka_GE/labels.inc:KB
+msgid "KB"
+msgstr "კბტ"
+
+#: program/localization/ka_GE/labels.inc:MB
+msgid "MB"
+msgstr "მბტ"
+
+#: program/localization/ka_GE/labels.inc:GB
+msgid "GB"
+msgstr "გბტ"
+
+#: program/localization/ka_GE/labels.inc:unicode
+msgid "Unicode"
+msgstr "უნიკოდი"
+
+#: program/localization/ka_GE/labels.inc:english
+msgid "English"
+msgstr "ინსგლისური"
+
+#: program/localization/ka_GE/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "დასავლურევროპული"
+
+#: program/localization/ka_GE/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "აღმოსავლეთევროპული"
+
+#: program/localization/ka_GE/labels.inc:baltic
+msgid "Baltic"
+msgstr "ბალტიური"
+
+#: program/localization/ka_GE/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "კირილიცა"
+
+#: program/localization/ka_GE/labels.inc:arabic
+msgid "Arabic"
+msgstr "არაბული"
+
+#: program/localization/ka_GE/labels.inc:greek
+msgid "Greek"
+msgstr "ბერძნული"
+
+#: program/localization/ka_GE/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "ებრაული"
+
+#: program/localization/ka_GE/labels.inc:turkish
+msgid "Turkish"
+msgstr "თურქული"
+
+#: program/localization/ka_GE/labels.inc:thai
+msgid "Thai"
+msgstr "ტაი"
+
+#: program/localization/ka_GE/labels.inc:celtic
+msgid "Celtic"
+msgstr "კელტური"
+
+#: program/localization/ka_GE/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "ვიეტნამური"
+
+#: program/localization/ka_GE/labels.inc:japanese
+msgid "Japanese"
+msgstr "იაპონური"
+
+#: program/localization/ka_GE/labels.inc:korean
+msgid "Korean"
+msgstr "კორეული"
+
+#: program/localization/ka_GE/labels.inc:chinese
+msgid "Chinese"
+msgstr "ჩინური"

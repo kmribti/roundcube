@@ -1,0 +1,1673 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/lt_LT/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: lt_LT\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/lt_LT/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Sveiki! Čia $product"
+
+#: program/localization/lt_LT/labels.inc:username
+msgid "Username"
+msgstr "Naudotojo vardas"
+
+#: program/localization/lt_LT/labels.inc:password
+msgid "Password"
+msgstr "Slaptažodis"
+
+#: program/localization/lt_LT/labels.inc:server
+msgid "Server"
+msgstr "Serveris"
+
+#: program/localization/lt_LT/labels.inc:login
+msgid "Login"
+msgstr "Prisijungti"
+
+#: program/localization/lt_LT/labels.inc:logout
+msgid "Logout"
+msgstr "Atsijungti"
+
+#: program/localization/lt_LT/labels.inc:mail
+msgid "Mail"
+msgstr "El. paštas"
+
+#: program/localization/lt_LT/labels.inc:settings
+msgid "Settings"
+msgstr "Nustatymai"
+
+#: program/localization/lt_LT/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Adresų knyga"
+
+#: program/localization/lt_LT/labels.inc:inbox
+msgid "Inbox"
+msgstr "Gauti laiškai"
+
+#: program/localization/lt_LT/labels.inc:drafts
+msgid "Drafts"
+msgstr "Juodraščiai"
+
+#: program/localization/lt_LT/labels.inc:sent
+msgid "Sent"
+msgstr "Išsiųsti laiškai"
+
+#: program/localization/lt_LT/labels.inc:trash
+msgid "Trash"
+msgstr "Šiukšlinė"
+
+#: program/localization/lt_LT/labels.inc:junk
+msgid "Junk"
+msgstr "Brukalas"
+
+#: program/localization/lt_LT/labels.inc:subject
+msgid "Subject"
+msgstr "Tema"
+
+#: program/localization/lt_LT/labels.inc:from
+msgid "From"
+msgstr "Siuntėjas"
+
+#: program/localization/lt_LT/labels.inc:to
+msgid "To"
+msgstr "Gavėjas"
+
+#: program/localization/lt_LT/labels.inc:cc
+msgid "Cc"
+msgstr "Kopija"
+
+#: program/localization/lt_LT/labels.inc:bcc
+msgid "Bcc"
+msgstr "Slaptoji kopija"
+
+#: program/localization/lt_LT/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Atsakymą gaus"
+
+#: program/localization/lt_LT/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Followup-To"
+
+#: program/localization/lt_LT/labels.inc:date
+msgid "Date"
+msgstr "Data"
+
+#: program/localization/lt_LT/labels.inc:size
+msgid "Size"
+msgstr "Dydis"
+
+#: program/localization/lt_LT/labels.inc:priority
+msgid "Priority"
+msgstr "Prioritetas"
+
+#: program/localization/lt_LT/labels.inc:organization
+msgid "Company"
+msgstr "Organizacija"
+
+#: program/localization/lt_LT/labels.inc:readstatus
+msgid "Read status"
+msgstr "Neskaitytas"
+
+#: program/localization/lt_LT/labels.inc:mailboxlist
+#: program/localization/lt_LT/labels.inc:folders
+msgid "Folders"
+msgstr "Aplankai"
+
+#: program/localization/lt_LT/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Laiškai nuo $from iki $to iš $count"
+
+#: program/localization/lt_LT/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Gijos nuo $from iki $to iš $count"
+
+#: program/localization/lt_LT/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Laiškas $nr iš $count"
+
+#: program/localization/lt_LT/labels.inc:copy
+msgid "Copy"
+msgstr "Kopijuoti"
+
+#: program/localization/lt_LT/labels.inc:move
+msgid "Move"
+msgstr "Perkelti"
+
+#: program/localization/lt_LT/labels.inc:moveto
+msgid "Move to..."
+msgstr "Perkelti į…"
+
+#: program/localization/lt_LT/labels.inc:download
+msgid "Download"
+msgstr "Parsisiųsti"
+
+#: program/localization/lt_LT/labels.inc:filename
+msgid "File name"
+msgstr "Failo vardas"
+
+#: program/localization/lt_LT/labels.inc:filesize
+msgid "File size"
+msgstr "Failo dydis"
+
+#: program/localization/lt_LT/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Įtraukti į adresų knygą"
+
+#: program/localization/lt_LT/labels.inc:sun
+msgid "Sun"
+msgstr "Sek"
+
+#: program/localization/lt_LT/labels.inc:mon
+msgid "Mon"
+msgstr "Pir"
+
+#: program/localization/lt_LT/labels.inc:tue
+msgid "Tue"
+msgstr "Ant"
+
+#: program/localization/lt_LT/labels.inc:wed
+msgid "Wed"
+msgstr "Tre"
+
+#: program/localization/lt_LT/labels.inc:thu
+msgid "Thu"
+msgstr "Ket"
+
+#: program/localization/lt_LT/labels.inc:fri
+msgid "Fri"
+msgstr "Pen"
+
+#: program/localization/lt_LT/labels.inc:sat
+msgid "Sat"
+msgstr "Šeš"
+
+#: program/localization/lt_LT/labels.inc:sunday
+msgid "Sunday"
+msgstr "Sekmadienis"
+
+#: program/localization/lt_LT/labels.inc:monday
+msgid "Monday"
+msgstr "Pirmadienis"
+
+#: program/localization/lt_LT/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Antradienis"
+
+#: program/localization/lt_LT/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Trečiadienis"
+
+#: program/localization/lt_LT/labels.inc:thursday
+msgid "Thursday"
+msgstr "Ketvirtadienis"
+
+#: program/localization/lt_LT/labels.inc:friday
+msgid "Friday"
+msgstr "Penktadienis"
+
+#: program/localization/lt_LT/labels.inc:saturday
+msgid "Saturday"
+msgstr "Šeštadienis"
+
+#: program/localization/lt_LT/labels.inc:jan
+msgid "Jan"
+msgstr "Sau"
+
+#: program/localization/lt_LT/labels.inc:feb
+msgid "Feb"
+msgstr "Vas"
+
+#: program/localization/lt_LT/labels.inc:mar
+msgid "Mar"
+msgstr "Kov"
+
+#: program/localization/lt_LT/labels.inc:apr
+msgid "Apr"
+msgstr "Bal"
+
+#: program/localization/lt_LT/labels.inc:may
+#: program/localization/lt_LT/labels.inc:longmay
+msgid "May"
+msgstr "Gegužė"
+
+#: program/localization/lt_LT/labels.inc:jun
+msgid "Jun"
+msgstr "Bir"
+
+#: program/localization/lt_LT/labels.inc:jul
+msgid "Jul"
+msgstr "Lie"
+
+#: program/localization/lt_LT/labels.inc:aug
+msgid "Aug"
+msgstr "Rgp"
+
+#: program/localization/lt_LT/labels.inc:sep
+msgid "Sep"
+msgstr "Rgs"
+
+#: program/localization/lt_LT/labels.inc:oct
+msgid "Oct"
+msgstr "Spl"
+
+#: program/localization/lt_LT/labels.inc:nov
+msgid "Nov"
+msgstr "Lap"
+
+#: program/localization/lt_LT/labels.inc:dec
+msgid "Dec"
+msgstr "Grd"
+
+#: program/localization/lt_LT/labels.inc:longjan
+msgid "January"
+msgstr "Sausis"
+
+#: program/localization/lt_LT/labels.inc:longfeb
+msgid "February"
+msgstr "Vasaris"
+
+#: program/localization/lt_LT/labels.inc:longmar
+msgid "March"
+msgstr "Kovas"
+
+#: program/localization/lt_LT/labels.inc:longapr
+msgid "April"
+msgstr "Balandis"
+
+#: program/localization/lt_LT/labels.inc:longjun
+msgid "June"
+msgstr "Biržėlis"
+
+#: program/localization/lt_LT/labels.inc:longjul
+msgid "July"
+msgstr "Liepa"
+
+#: program/localization/lt_LT/labels.inc:longaug
+msgid "August"
+msgstr "Rugpjūtis"
+
+#: program/localization/lt_LT/labels.inc:longsep
+msgid "September"
+msgstr "Rugsėjis"
+
+#: program/localization/lt_LT/labels.inc:longoct
+msgid "October"
+msgstr "Spalis"
+
+#: program/localization/lt_LT/labels.inc:longnov
+msgid "November"
+msgstr "Lapkritis"
+
+#: program/localization/lt_LT/labels.inc:longdec
+msgid "December"
+msgstr "Gruodis"
+
+#: program/localization/lt_LT/labels.inc:today
+msgid "Today"
+msgstr "Šiandien"
+
+#: program/localization/lt_LT/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Tikrinti, ar yra naujų laiškų"
+
+#: program/localization/lt_LT/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Rašyti naują laišką"
+
+#: program/localization/lt_LT/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Atsakyti siuntėjui"
+
+#: program/localization/lt_LT/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Atsakyti el. pašto grupei arba laiško siuntėjui ir visiems jo gavėjams"
+
+#: program/localization/lt_LT/labels.inc:replyall
+msgid "Reply all"
+msgstr "Atsakyti visiems"
+
+#: program/localization/lt_LT/labels.inc:replylist
+msgid "Reply list"
+msgstr "Atsakyti el. pašto grupei"
+
+#: program/localization/lt_LT/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "Persiųsti cituojant"
+
+#: program/localization/lt_LT/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "Persiųsti priedu"
+
+#: program/localization/lt_LT/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Persiųsti laišką"
+
+#: program/localization/lt_LT/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Pašalinti laišką"
+
+#: program/localization/lt_LT/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Perkelti laišką į šiukšlinę"
+
+#: program/localization/lt_LT/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Atspausdinti laišką"
+
+#: program/localization/lt_LT/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Rodyti ankstesnį laišką"
+
+#: program/localization/lt_LT/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Rodyti pirmąjį laišką"
+
+#: program/localization/lt_LT/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Rodyti tolesnį laišką"
+
+#: program/localization/lt_LT/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Rodyti paskutinį laišką"
+
+#: program/localization/lt_LT/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Grižti į laiškų sarašą"
+
+#: program/localization/lt_LT/labels.inc:viewsource
+msgid "Show source"
+msgstr "Rodyti pirminį tekstą"
+
+#: program/localization/lt_LT/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Pažymėti laiškus"
+
+#: program/localization/lt_LT/labels.inc:markread
+msgid "As read"
+msgstr "Kaip skaitytus"
+
+#: program/localization/lt_LT/labels.inc:markunread
+msgid "As unread"
+msgstr "Kaip neskaitytus"
+
+#: program/localization/lt_LT/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Pažymėti gairele"
+
+#: program/localization/lt_LT/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Pašalinti gairelę"
+
+#: program/localization/lt_LT/labels.inc:moreactions
+msgid "More actions..."
+msgstr "Kiti veiksmai…"
+
+#: program/localization/lt_LT/labels.inc:select
+msgid "Select"
+msgstr "Pažymėti"
+
+#: program/localization/lt_LT/labels.inc:all
+msgid "All"
+msgstr "visus"
+
+#: program/localization/lt_LT/labels.inc:none
+#: program/localization/lt_LT/labels.inc:nonesort
+msgid "None"
+msgstr "Nerūšiuoti"
+
+#: program/localization/lt_LT/labels.inc:currpage
+msgid "Current page"
+msgstr "matomus šiame puslapyje"
+
+#: program/localization/lt_LT/labels.inc:unread
+msgid "Unread"
+msgstr "neskaitytus"
+
+#: program/localization/lt_LT/labels.inc:flagged
+msgid "Flagged"
+msgstr "su gairele"
+
+#: program/localization/lt_LT/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "neatsakytus"
+
+#: program/localization/lt_LT/labels.inc:deleted
+msgid "Deleted"
+msgstr "pašalintus"
+
+#: program/localization/lt_LT/labels.inc:invert
+msgid "Invert"
+msgstr "invertuoti"
+
+#: program/localization/lt_LT/labels.inc:filter
+msgid "Filter"
+msgstr "Rodyti"
+
+#: program/localization/lt_LT/labels.inc:list
+msgid "List"
+msgstr "Sąrašas"
+
+#: program/localization/lt_LT/labels.inc:threads
+msgid "Threads"
+msgstr "Gijos"
+
+#: program/localization/lt_LT/labels.inc:expand-all
+msgid "Expand All"
+msgstr "išskleisti visas"
+
+#: program/localization/lt_LT/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "išskleisti turinčias neskaitytų laiškų"
+
+#: program/localization/lt_LT/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "suskleisti visas"
+
+#: program/localization/lt_LT/labels.inc:threaded
+msgid "Threaded"
+msgstr "Rodyti gijas"
+
+#: program/localization/lt_LT/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Išskleisti gijas"
+
+#: program/localization/lt_LT/labels.inc:do_expand
+msgid "all threads"
+msgstr "visas"
+
+#: program/localization/lt_LT/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "tik turinčias neskaitytų laiškų"
+
+#: program/localization/lt_LT/labels.inc:fromto
+msgid "From/To"
+msgstr "Siuntėjas/Gavėjas"
+
+#: program/localization/lt_LT/labels.inc:flag
+msgid "Flag"
+msgstr "Gairelė"
+
+#: program/localization/lt_LT/labels.inc:attachment
+msgid "Attachment"
+msgstr "Priedas"
+
+#: program/localization/lt_LT/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Išsiuntimo laikas"
+
+#: program/localization/lt_LT/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Gavimo laikas"
+
+#: program/localization/lt_LT/labels.inc:asc
+msgid "ascending"
+msgstr "didėjančiai"
+
+#: program/localization/lt_LT/labels.inc:desc
+msgid "descending"
+msgstr "mažėjančiai"
+
+#: program/localization/lt_LT/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Stulpelių sąrašas"
+
+#: program/localization/lt_LT/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Stulpelis rikiavimui"
+
+#: program/localization/lt_LT/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Rikiavimo tvarka"
+
+#: program/localization/lt_LT/labels.inc:listmode
+msgid "List view mode"
+msgstr "Sąrašo rodymo veiksena"
+
+#: program/localization/lt_LT/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Veiksmai su aplankais…"
+
+#: program/localization/lt_LT/labels.inc:compact
+msgid "Compact"
+msgstr "Suglaudinti"
+
+#: program/localization/lt_LT/labels.inc:empty
+msgid "Empty"
+msgstr "Ištuštinti"
+
+#: program/localization/lt_LT/labels.inc:quota
+msgid "Disk usage"
+msgstr "Disko naudojimas"
+
+#: program/localization/lt_LT/labels.inc:unknown
+msgid "unknown"
+msgstr "nežinomas"
+
+#: program/localization/lt_LT/labels.inc:unlimited
+msgid "unlimited"
+msgstr "neribotas"
+
+#: program/localization/lt_LT/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Sparčioji paieška"
+
+#: program/localization/lt_LT/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Atšaukti paiešką"
+
+#: program/localization/lt_LT/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Paieškos modifikatoriai"
+
+#: program/localization/lt_LT/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Visas laiškas"
+
+#: program/localization/lt_LT/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Atverti naujame lange"
+
+#: program/localization/lt_LT/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Parsisiųsti (.eml)"
+
+#: program/localization/lt_LT/labels.inc:compose
+msgid "Compose a message"
+msgstr "Rašyti naują laišką"
+
+#: program/localization/lt_LT/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Redaguoti kaip naują"
+
+#: program/localization/lt_LT/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Išsaugoti šį juodraštį"
+
+#: program/localization/lt_LT/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Išsiųsti laiską"
+
+#: program/localization/lt_LT/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Pridėti failą"
+
+#: program/localization/lt_LT/labels.inc:charset
+msgid "Charset"
+msgstr "Koduotė"
+
+#: program/localization/lt_LT/labels.inc:editortype
+msgid "Editor type"
+msgstr "Laiško tipas"
+
+#: program/localization/lt_LT/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Prašyti pristatymo pažymos"
+
+#: program/localization/lt_LT/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Laiško pristatymo pažyma"
+
+#: program/localization/lt_LT/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "$date, $sender rašė:"
+
+#: program/localization/lt_LT/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "Originalus laiškas"
+
+#: program/localization/lt_LT/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Tvarkyti tapatybes"
+
+#: program/localization/lt_LT/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Tikrinti rašybą"
+
+#: program/localization/lt_LT/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Tęsti redagavimą"
+
+#: program/localization/lt_LT/labels.inc:revertto
+msgid "Revert to"
+msgstr "Atstatyti į"
+
+#: program/localization/lt_LT/labels.inc:attachments
+msgid "Attachments"
+msgstr "Pridėti failai"
+
+#: program/localization/lt_LT/labels.inc:upload
+msgid "Upload"
+msgstr "Įkelti"
+
+#: program/localization/lt_LT/labels.inc:uploadprogress
+msgid "$percent ($current from $total)"
+msgstr "$percent ($current iš $total)"
+
+#: program/localization/lt_LT/labels.inc:close
+msgid "Close"
+msgstr "Užverti"
+
+#: program/localization/lt_LT/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Laiško savybės…"
+
+#: program/localization/lt_LT/labels.inc:low
+msgid "Low"
+msgstr "Žemas"
+
+#: program/localization/lt_LT/labels.inc:lowest
+msgid "Lowest"
+msgstr "Žemiausias"
+
+#: program/localization/lt_LT/labels.inc:normal
+msgid "Normal"
+msgstr "Normalus"
+
+#: program/localization/lt_LT/labels.inc:high
+msgid "High"
+msgstr "Aukštas"
+
+#: program/localization/lt_LT/labels.inc:highest
+msgid "Highest"
+msgstr "Aukščiausias"
+
+#: program/localization/lt_LT/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(tema nenurodyta)"
+
+#: program/localization/lt_LT/labels.inc:showimages
+msgid "Display images"
+msgstr "Rodyti paveikslėlius"
+
+#: program/localization/lt_LT/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Visada rodyti paveikslėlius $sender laiškuose"
+
+#: program/localization/lt_LT/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "Tai – laiško juodraštis."
+
+#: program/localization/lt_LT/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/lt_LT/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Grynasis tekstas"
+
+#: program/localization/lt_LT/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Išsiųstus laiškus įrašyti į"
+
+#: program/localization/lt_LT/labels.inc:dontsave
+msgid "don't save"
+msgstr "neįrašyti"
+
+#: program/localization/lt_LT/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Maksimalus leistinas failo dydis yra $size"
+
+#: program/localization/lt_LT/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Pridėti Cc"
+
+#: program/localization/lt_LT/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Pridėti Bcc"
+
+#: program/localization/lt_LT/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Pridėti Reply-To"
+
+#: program/localization/lt_LT/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Pridėti Followup-To"
+
+#: program/localization/lt_LT/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Šio laiško siuntėjas paprašė patvirtinti, kad jūs jį perskaitėte."
+"Ar išsiųsti tai patvirtinančią pažymą?"
+
+#: program/localization/lt_LT/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Patvirtinimas (laiškas perskaitytas)"
+
+#: program/localization/lt_LT/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Tai – pažyma, patvirtinanti, jog buvo perskaitytas Jūsų laiškas"
+
+#: program/localization/lt_LT/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Pastaba: šia pažyma patvirtinamas tik faktas, jog laiškas buvo parodytas"
+"gavėjui. Ja negarantuojama, jog gavėjas perskaitė ir suprato laiško"
+"turinį."
+
+#: program/localization/lt_LT/labels.inc:name
+msgid "Display Name"
+msgstr "Rodomas vardas"
+
+#: program/localization/lt_LT/labels.inc:firstname
+msgid "First Name"
+msgstr "Vardas"
+
+#: program/localization/lt_LT/labels.inc:surname
+msgid "Last Name"
+msgstr "Pavardė"
+
+#: program/localization/lt_LT/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Kiti vardai"
+
+#: program/localization/lt_LT/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "Titulas"
+
+#: program/localization/lt_LT/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "Sufiksas"
+
+#: program/localization/lt_LT/labels.inc:nickname
+msgid "Nickname"
+msgstr "Pravardė"
+
+#: program/localization/lt_LT/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Pareigos"
+
+#: program/localization/lt_LT/labels.inc:department
+msgid "Department"
+msgstr "Padalinys"
+
+#: program/localization/lt_LT/labels.inc:gender
+msgid "Gender"
+msgstr "Lytis"
+
+#: program/localization/lt_LT/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Mergautinė pavardė"
+
+#: program/localization/lt_LT/labels.inc:email
+msgid "Email"
+msgstr "El. paštas"
+
+#: program/localization/lt_LT/labels.inc:phone
+msgid "Phone"
+msgstr "Telefono numeris"
+
+#: program/localization/lt_LT/labels.inc:address
+msgid "Address"
+msgstr "Adresas"
+
+#: program/localization/lt_LT/labels.inc:street
+msgid "Street"
+msgstr "Gatvė, namas ir butas"
+
+#: program/localization/lt_LT/labels.inc:locality
+msgid "City"
+msgstr "Miestas"
+
+#: program/localization/lt_LT/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "Pašto kodas"
+
+#: program/localization/lt_LT/labels.inc:region
+msgid "State/Province"
+msgstr "Regionas"
+
+#: program/localization/lt_LT/labels.inc:country
+msgid "Country"
+msgstr "Valstybė"
+
+#: program/localization/lt_LT/labels.inc:birthday
+msgid "Birthday"
+msgstr "Gimimo data"
+
+#: program/localization/lt_LT/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "Jubiliejus"
+
+#: program/localization/lt_LT/labels.inc:website
+msgid "Website"
+msgstr "Svetainė"
+
+#: program/localization/lt_LT/labels.inc:instantmessenger
+msgid "IM"
+msgstr "Tikralaikiai pokalbiai"
+
+#: program/localization/lt_LT/labels.inc:notes
+msgid "Notes"
+msgstr "Pastabos"
+
+#: program/localization/lt_LT/labels.inc:male
+msgid "male"
+msgstr "vyras"
+
+#: program/localization/lt_LT/labels.inc:female
+msgid "female"
+msgstr "moteris"
+
+#: program/localization/lt_LT/labels.inc:manager
+msgid "Manager"
+msgstr "Vadybininkas(-ė)"
+
+#: program/localization/lt_LT/labels.inc:assistant
+#: program/localization/lt_LT/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Padėjėjo(-os)"
+
+#: program/localization/lt_LT/labels.inc:spouse
+msgid "Spouse"
+msgstr "Sutuoktinis"
+
+#: program/localization/lt_LT/labels.inc:allfields
+msgid "All fields"
+msgstr "Visi laukai"
+
+#: program/localization/lt_LT/labels.inc:search
+msgid "Search"
+msgstr "Paieška"
+
+#: program/localization/lt_LT/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "Išplėstinė paieška"
+
+#: program/localization/lt_LT/labels.inc:other
+#: program/localization/lt_LT/labels.inc:typeother
+msgid "Other"
+msgstr "Kitas"
+
+#: program/localization/lt_LT/labels.inc:typehome
+msgid "Home"
+msgstr "Namų"
+
+#: program/localization/lt_LT/labels.inc:typework
+msgid "Work"
+msgstr "Darbo"
+
+#: program/localization/lt_LT/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Mobilusis"
+
+#: program/localization/lt_LT/labels.inc:typemain
+msgid "Main"
+msgstr "Pagrindinis"
+
+#: program/localization/lt_LT/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Namų faksas"
+
+#: program/localization/lt_LT/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "Darbo faksas"
+
+#: program/localization/lt_LT/labels.inc:typecar
+msgid "Car"
+msgstr "Automobilyje"
+
+#: program/localization/lt_LT/labels.inc:typepager
+msgid "Pager"
+msgstr "Pranešimų gaviklis"
+
+#: program/localization/lt_LT/labels.inc:typevideo
+msgid "Video"
+msgstr "Vaizdo"
+
+#: program/localization/lt_LT/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "Tinklalapis"
+
+#: program/localization/lt_LT/labels.inc:typeblog
+msgid "Blog"
+msgstr "Tinklaraštis"
+
+#: program/localization/lt_LT/labels.inc:typeprofile
+msgid "Profile"
+msgstr "Profilis"
+
+#: program/localization/lt_LT/labels.inc:addfield
+msgid "Add field..."
+msgstr "Pridėti lauką…"
+
+#: program/localization/lt_LT/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Pridėti adresatą"
+
+#: program/localization/lt_LT/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Taisyti adresatą"
+
+#: program/localization/lt_LT/labels.inc:contacts
+msgid "Contacts"
+msgstr "Adresatai"
+
+#: program/localization/lt_LT/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Adresato savybės"
+
+#: program/localization/lt_LT/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Asmeniniai duomenys"
+
+#: program/localization/lt_LT/labels.inc:edit
+msgid "Edit"
+msgstr "Redaguoti"
+
+#: program/localization/lt_LT/labels.inc:cancel
+msgid "Cancel"
+msgstr "Atsisakyti"
+
+#: program/localization/lt_LT/labels.inc:save
+msgid "Save"
+msgstr "Įrašyti"
+
+#: program/localization/lt_LT/labels.inc:delete
+msgid "Delete"
+msgstr "Pašalinti"
+
+#: program/localization/lt_LT/labels.inc:rename
+msgid "Rename"
+msgstr "Pervardinti"
+
+#: program/localization/lt_LT/labels.inc:addphoto
+msgid "Add"
+msgstr "Pridėti"
+
+#: program/localization/lt_LT/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Pakeisti"
+
+#: program/localization/lt_LT/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Sukurti naują adresatą"
+
+#: program/localization/lt_LT/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Ištrinti pažymėtus adresatus"
+
+#: program/localization/lt_LT/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Rašyti laišką"
+
+#: program/localization/lt_LT/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Adresatai nuo $from iki $to iš $count"
+
+#: program/localization/lt_LT/labels.inc:print
+msgid "Print"
+msgstr "Spausdinti"
+
+#: program/localization/lt_LT/labels.inc:export
+msgid "Export"
+msgstr "Eksportuoti"
+
+#: program/localization/lt_LT/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Eksportuoti adresatus  „vCard“ formatu"
+
+#: program/localization/lt_LT/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Kurti adresatų grupę"
+
+#: program/localization/lt_LT/labels.inc:grouprename
+msgid "Rename group"
+msgstr "Pervardinti grupę"
+
+#: program/localization/lt_LT/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "Pašalinti grupę"
+
+#: program/localization/lt_LT/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Rodyti ankstesnį puslapį"
+
+#: program/localization/lt_LT/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Rodyti pirmąjį puslapį"
+
+#: program/localization/lt_LT/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Rodyti tolesnį puslapį"
+
+#: program/localization/lt_LT/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Rodyti paskutinį puslapį"
+
+#: program/localization/lt_LT/labels.inc:group
+msgid "Group"
+msgstr "Grupė"
+
+#: program/localization/lt_LT/labels.inc:groups
+msgid "Groups"
+msgstr "Grupės"
+
+#: program/localization/lt_LT/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Asmeniniai adresai"
+
+#: program/localization/lt_LT/labels.inc:searchsave
+msgid "Save search"
+msgstr "Įrašyti kaip radinių aplanką"
+
+#: program/localization/lt_LT/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "Pašalinti radinių aplanką"
+
+#: program/localization/lt_LT/labels.inc:import
+msgid "Import"
+msgstr "Importuoti"
+
+#: program/localization/lt_LT/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Importuoti adresatus"
+
+#: program/localization/lt_LT/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Importuoti iš failo:"
+
+#: program/localization/lt_LT/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "Pridėti naujus adresatus į adresų knygą:"
+
+#: program/localization/lt_LT/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Perrašyti visą adresų knygą"
+
+#: program/localization/lt_LT/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Jūs galite įkelti adresatus iš egzistuojančios adresų"
+"knygos.<br/>Šiuo metu galima importuoti adresus iš <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> tipo failų."
+
+#: program/localization/lt_LT/labels.inc:done
+msgid "Done"
+msgstr "Baigta"
+
+#: program/localization/lt_LT/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Nustatymai"
+
+#: program/localization/lt_LT/labels.inc:about
+msgid "About"
+msgstr "Apie"
+
+#: program/localization/lt_LT/labels.inc:preferences
+msgid "Preferences"
+msgstr "Nustatymai"
+
+#: program/localization/lt_LT/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Naudotojo nustatymai"
+
+#: program/localization/lt_LT/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Redaguoti naudotojo nustatymus"
+
+#: program/localization/lt_LT/labels.inc:identities
+msgid "Identities"
+msgstr "Tapatybės"
+
+#: program/localization/lt_LT/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Tvarkyti šios paskyros tapatybes"
+
+#: program/localization/lt_LT/labels.inc:newidentity
+msgid "New identity"
+msgstr "Nauja tapatybė"
+
+#: program/localization/lt_LT/labels.inc:newitem
+msgid "New item"
+msgstr "Naujas elementas"
+
+#: program/localization/lt_LT/labels.inc:edititem
+msgid "Edit item"
+msgstr "Redaguoti elementą"
+
+#: program/localization/lt_LT/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Rodyti HTML"
+
+#: program/localization/lt_LT/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Numatytoji koduotė"
+
+#: program/localization/lt_LT/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML laiškas"
+
+#: program/localization/lt_LT/labels.inc:dateformat
+msgid "Date format"
+msgstr "Datos formatas"
+
+#: program/localization/lt_LT/labels.inc:timeformat
+msgid "Time format"
+msgstr "Laiko formatas"
+
+#: program/localization/lt_LT/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Dailios datos"
+
+#: program/localization/lt_LT/labels.inc:setdefault
+msgid "Set default"
+msgstr "Laikyti numatytąja"
+
+#: program/localization/lt_LT/labels.inc:autodetect
+msgid "Auto"
+msgstr "Aptikti automatiškai"
+
+#: program/localization/lt_LT/labels.inc:language
+msgid "Language"
+msgstr "Kalba"
+
+#: program/localization/lt_LT/labels.inc:timezone
+msgid "Time zone"
+msgstr "Laiko juosta"
+
+#: program/localization/lt_LT/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Eilučių skaičius puslapyje"
+
+#: program/localization/lt_LT/labels.inc:signature
+msgid "Signature"
+msgstr "Parašas"
+
+#: program/localization/lt_LT/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Vasaros laikas skiriasi"
+
+#: program/localization/lt_LT/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Laiškus kurti HTML formatu"
+
+#: program/localization/lt_LT/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "tik atsakymus į HTML formato laiškus"
+
+#: program/localization/lt_LT/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML parašas"
+
+#: program/localization/lt_LT/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Rodyti laiško peržiūros polangį"
+
+#: program/localization/lt_LT/labels.inc:skin
+msgid "Interface skin"
+msgstr "Grafinis apvalkalas"
+
+#: program/localization/lt_LT/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Išvalyti Šiukšlinę atsijungiant"
+
+#: program/localization/lt_LT/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Suglaudinti gautųjų laiškų aplanką atsijungiant"
+
+#: program/localization/lt_LT/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Naudotojo sąsaja"
+
+#: program/localization/lt_LT/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Serverio nustatymai"
+
+#: program/localization/lt_LT/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Pašto dėžutės rodymas"
+
+#: program/localization/lt_LT/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Gavus prašymą patvirtinti, jog laiškas perskaitytas"
+
+#: program/localization/lt_LT/labels.inc:askuser
+msgid "ask me"
+msgstr "visuomet klausti, ar siųsti patvirtinimą"
+
+#: program/localization/lt_LT/labels.inc:autosend
+msgid "send receipt"
+msgstr "visuomet siųsti patvirtinimą automatiškai"
+
+#: program/localization/lt_LT/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "automatiškai siųsti patvirtinimą adresų knygoje esantiems adresatams,"
+"kitu atveju klausti"
+
+#: program/localization/lt_LT/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "automatiškai siųsti patvirtinimą adresų knygoje esantiems adresatams,"
+"kitu atveju nesiųsti"
+
+#: program/localization/lt_LT/labels.inc:ignore
+msgid "ignore"
+msgstr "niekada nesiųsti patvirtinimo"
+
+#: program/localization/lt_LT/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Pažymėti laišką kaip skaitytą prieš šalinant"
+
+#: program/localization/lt_LT/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Pažymėti laišką šalinimui užuot šalinus"
+
+#: program/localization/lt_LT/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Nerodyti pašalintų laiškų"
+
+#: program/localization/lt_LT/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Pašalinti laiškus, jeigu nepavyksta jų perkelti į Šiukšlinę"
+
+#: program/localization/lt_LT/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Įkelti paveikslėlius iš interneto serverių"
+
+#: program/localization/lt_LT/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "tik žinomų siuntėjų laiškuose"
+
+#: program/localization/lt_LT/labels.inc:always
+msgid "always"
+msgstr "visada"
+
+#: program/localization/lt_LT/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Rodyti pridėtus paveikslėlius žemiau laiško"
+
+#: program/localization/lt_LT/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Automatiškai įrašyti juodraščius"
+
+#: program/localization/lt_LT/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "kas $n min."
+
+#: program/localization/lt_LT/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Tikrinti ar yra naujų laiškų"
+
+#: program/localization/lt_LT/labels.inc:never
+msgid "never"
+msgstr "niekada"
+
+#: program/localization/lt_LT/labels.inc:immediately
+msgid "immediately"
+msgstr "nedelsiant"
+
+#: program/localization/lt_LT/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Laiškų rodymas"
+
+#: program/localization/lt_LT/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Laiškų rašymas"
+
+#: program/localization/lt_LT/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Prisegtų failų vardų kodavimas"
+
+#: program/localization/lt_LT/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "visiškas RFC 2231 (Thunderbird)"
+
+#: program/localization/lt_LT/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/lt_LT/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "visiškas RFC 2047 (kitos programos)"
+
+#: program/localization/lt_LT/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "Naudoti MIME kodavimą 8 bitų simboliams"
+
+#: program/localization/lt_LT/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Papildomi nustatymai"
+
+#: program/localization/lt_LT/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Fokusuoti naršyklės langą gavus naują laišką"
+
+#: program/localization/lt_LT/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Naujų laiškų ieškoti visuose aplankuose"
+
+#: program/localization/lt_LT/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Rodyti pranešimą pašalinus/perkėlus laišką"
+
+#: program/localization/lt_LT/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Pagrindiniai nustatymai"
+
+#: program/localization/lt_LT/labels.inc:section
+msgid "Section"
+msgstr "Sekcija"
+
+#: program/localization/lt_LT/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Priežiūra"
+
+#: program/localization/lt_LT/labels.inc:newmessage
+msgid "New Message"
+msgstr "Naujas laiškas"
+
+#: program/localization/lt_LT/labels.inc:listoptions
+msgid "List Options"
+msgstr "Rodyti nustatymus"
+
+#: program/localization/lt_LT/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Parašo nustatymai"
+
+#: program/localization/lt_LT/labels.inc:whenreplying
+msgid "When replying"
+msgstr "Kuriant atsakymą"
+
+#: program/localization/lt_LT/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "rašyti atsakymą virš cituojamo laiško"
+
+#: program/localization/lt_LT/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "rašyti atsakymą po cituojamu laišku"
+
+#: program/localization/lt_LT/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "Pašalinti cituojamame laiške esantį parašą"
+
+#: program/localization/lt_LT/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Automatiškai pridėti parašą"
+
+#: program/localization/lt_LT/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "tik naujuose laiškuose"
+
+#: program/localization/lt_LT/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "tik atsakymuose ir persiunčiamuose laiškuose"
+
+#: program/localization/lt_LT/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "Atsakant ir persiunčiant laiškus, parašą pridėti"
+
+#: program/localization/lt_LT/labels.inc:belowquote
+msgid "below the quote"
+msgstr "po citata"
+
+#: program/localization/lt_LT/labels.inc:abovequote
+msgid "above the quote"
+msgstr "virš citatos"
+
+#: program/localization/lt_LT/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Pridėti parašą"
+
+#: program/localization/lt_LT/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Peržiūros polangyje parodytus laiškus žymėti skaitytais"
+
+#: program/localization/lt_LT/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "praėjus $n sek."
+
+#: program/localization/lt_LT/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Visuomet prašyti patvirtinimo, jog laiškas perskaitytas"
+
+#: program/localization/lt_LT/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Visuomet prašyti laiško pristatymo pažymos"
+
+#: program/localization/lt_LT/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Atsakymus talpinti į tą patį aplanką, kuriame yra pirminis laiškas"
+
+#: program/localization/lt_LT/labels.inc:defaultaddressbook
+msgid "Add new contacts to the selected addressbook"
+msgstr "Pridėti naujus adresatus į pasirinktąją adresų knygą"
+
+#: program/localization/lt_LT/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "Užbaigiant adresus, praleisti antrinius"
+
+#: program/localization/lt_LT/labels.inc:spellcheckbeforesend
+msgid "Check spelling before sending a message"
+msgstr "Tikrinti rašybą prieš išsiunčiant laišką"
+
+#: program/localization/lt_LT/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "Rašybos tikrinimo nuostatos"
+
+#: program/localization/lt_LT/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "Nepaisyti žodžių su spec. simboliais"
+
+#: program/localization/lt_LT/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "Nepaisyti žodžių su skaitmenimis"
+
+#: program/localization/lt_LT/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "Nepaisyti žodžių vien iš didžiųjų raidžių"
+
+#: program/localization/lt_LT/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "Įtraukti į žodyną"
+
+#: program/localization/lt_LT/labels.inc:folder
+msgid "Folder"
+msgstr "Aplankas"
+
+#: program/localization/lt_LT/labels.inc:foldername
+msgid "Folder name"
+msgstr "Aplanko vardas"
+
+#: program/localization/lt_LT/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Užsakytas"
+
+#: program/localization/lt_LT/labels.inc:messagecount
+msgid "Messages"
+msgstr "Laiškai"
+
+#: program/localization/lt_LT/labels.inc:create
+msgid "Create"
+msgstr "Sukurti"
+
+#: program/localization/lt_LT/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Sukurti naują aplanką"
+
+#: program/localization/lt_LT/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Tvarkyti aplankus"
+
+#: program/localization/lt_LT/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Specialieji aplankai"
+
+#: program/localization/lt_LT/labels.inc:properties
+msgid "Properties"
+msgstr "Savybės"
+
+#: program/localization/lt_LT/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Aplanko savybės"
+
+#: program/localization/lt_LT/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Tėvinis aplankas"
+
+#: program/localization/lt_LT/labels.inc:location
+msgid "Location"
+msgstr "Vieta"
+
+#: program/localization/lt_LT/labels.inc:info
+msgid "Information"
+msgstr "Informacija"
+
+#: program/localization/lt_LT/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Spustelėkite, norėdami sužinoti aplanko dydį"
+
+#: program/localization/lt_LT/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Spustelėkite, norėdami keisti prenumeratos nuostatas"
+
+#: program/localization/lt_LT/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Aplanko tipas"
+
+#: program/localization/lt_LT/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "Asmeninis aplankas"
+
+#: program/localization/lt_LT/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "Kito naudotojo aplankas"
+
+#: program/localization/lt_LT/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "Viešas aplankas"
+
+#: program/localization/lt_LT/labels.inc:sortby
+msgid "Sort by"
+msgstr "Rikiuoti pagal"
+
+#: program/localization/lt_LT/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Rikiuoti didėjančiai"
+
+#: program/localization/lt_LT/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Rikiuoti mažėjančiai"
+
+#: program/localization/lt_LT/labels.inc:undo
+msgid "Undo"
+msgstr "Atšaukti"
+
+#: program/localization/lt_LT/labels.inc:plugin
+msgid "Plugin"
+msgstr "Papildinys"
+
+#: program/localization/lt_LT/labels.inc:version
+msgid "Version"
+msgstr "Versija"
+
+#: program/localization/lt_LT/labels.inc:source
+msgid "Source"
+msgstr "Šaltinis"
+
+#: program/localization/lt_LT/labels.inc:license
+msgid "License"
+msgstr "Licencija"
+
+#: program/localization/lt_LT/labels.inc:support
+msgid "Get support"
+msgstr "Gauti pagalbos"
+
+#: program/localization/lt_LT/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/lt_LT/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/lt_LT/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/lt_LT/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/lt_LT/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unikodas"
+
+#: program/localization/lt_LT/labels.inc:english
+msgid "English"
+msgstr "Anglų"
+
+#: program/localization/lt_LT/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Vakarų Europos"
+
+#: program/localization/lt_LT/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Rytų Europos"
+
+#: program/localization/lt_LT/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Pietryčių Europos"
+
+#: program/localization/lt_LT/labels.inc:baltic
+msgid "Baltic"
+msgstr "Baltijos šalių"
+
+#: program/localization/lt_LT/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Kirilica"
+
+#: program/localization/lt_LT/labels.inc:arabic
+msgid "Arabic"
+msgstr "Arabų"
+
+#: program/localization/lt_LT/labels.inc:greek
+msgid "Greek"
+msgstr "Graikų"
+
+#: program/localization/lt_LT/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Hebrajų"
+
+#: program/localization/lt_LT/labels.inc:turkish
+msgid "Turkish"
+msgstr "Turkų"
+
+#: program/localization/lt_LT/labels.inc:nordic
+msgid "Nordic"
+msgstr "Šiaurės šalių"
+
+#: program/localization/lt_LT/labels.inc:thai
+msgid "Thai"
+msgstr "Tajų"
+
+#: program/localization/lt_LT/labels.inc:celtic
+msgid "Celtic"
+msgstr "Keltų"
+
+#: program/localization/lt_LT/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Vietnamiečių"
+
+#: program/localization/lt_LT/labels.inc:japanese
+msgid "Japanese"
+msgstr "Japonų"
+
+#: program/localization/lt_LT/labels.inc:korean
+msgid "Korean"
+msgstr "Korėjiečių"
+
+#: program/localization/lt_LT/labels.inc:chinese
+msgid "Chinese"
+msgstr "Kinų"

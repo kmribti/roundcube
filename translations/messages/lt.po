@@ -1,0 +1,585 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/lt_LT/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: lt_LT\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/lt_LT/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Prisijungti nepavyko."
+
+#: program/localization/lt_LT/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Jūsų naršyklė nepriima slapukų."
+
+#: program/localization/lt_LT/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Jūsų sesija negaliojanti."
+
+#: program/localization/lt_LT/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Nepavyko prisijungti prie IMAP serverio."
+
+#: program/localization/lt_LT/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Serverio klaida!"
+
+#: program/localization/lt_LT/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Serverio klaida: $msg"
+
+#: program/localization/lt_LT/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Duomenų bazės klaida!"
+
+#: program/localization/lt_LT/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Nepavyko atlikti veiksmo – aplankas prieinamas tik skaitymui."
+
+#: program/localization/lt_LT/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Nepavyko atlikti veiksmo – nepakanka teisių."
+
+#: program/localization/lt_LT/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Netinkama užklausa! Duomenys neišsaugoti."
+
+#: program/localization/lt_LT/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Šioje pašto dėžutėje laiškų nėra."
+
+#: program/localization/lt_LT/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Jūs sėkmingai atsijungėte. Iki kito karto!"
+
+#: program/localization/lt_LT/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Pašto dėžutė tuščia."
+
+#: program/localization/lt_LT/messages.inc:loading
+msgid "Loading..."
+msgstr "Įkeliama…"
+
+#: program/localization/lt_LT/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Įkeliamas failas…"
+
+#: program/localization/lt_LT/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Įkeliami failai…"
+
+#: program/localization/lt_LT/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Įkeliami duomenys…"
+
+#: program/localization/lt_LT/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Tikrinama ar nėra naujų pranešimų…"
+
+#: program/localization/lt_LT/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Siunčiamas laiškas…"
+
+#: program/localization/lt_LT/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Laiškas sėkmingai nusiųstas."
+
+#: program/localization/lt_LT/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Laiškas įrašomas…"
+
+#: program/localization/lt_LT/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Laiškas įrašytas į Juodraščių aplanką."
+
+#: program/localization/lt_LT/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Sėkmingai įrašyta."
+
+#: program/localization/lt_LT/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Asmuo įtrauktas į adresų knygą."
+
+#: program/localization/lt_LT/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Adresatas, turintis šį el. pašto adresą, jau egzistuoja."
+
+#: program/localization/lt_LT/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Adresatas tokiu vardu jau egzistuoja."
+
+#: program/localization/lt_LT/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Siekiant apsaugoti Jūsų privatumą, paveikslėliai iš interneto"
+"neįkelti."
+
+#: program/localization/lt_LT/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Apgailestaujame, tačiau šis laiškas užšifruotas ir negali būti"
+"parodytas."
+
+#: program/localization/lt_LT/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Adresatų nerasta."
+
+#: program/localization/lt_LT/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Ieškotas adresatas nerastas."
+
+#: program/localization/lt_LT/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Įveskite reikšminius žodžius adresatų paieškai"
+
+#: program/localization/lt_LT/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Laiško išsiųsti nepavyko."
+
+#: program/localization/lt_LT/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Turite luktelėti $sec sek., kad galėtumėte išsiųsti laišką."
+
+#: program/localization/lt_LT/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Įrašant išsiųstą laišką įvyko klaida."
+
+#: program/localization/lt_LT/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Įrašant įvyko klaida."
+
+#: program/localization/lt_LT/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Laiško(-ų) perkelti nepavyko."
+
+#: program/localization/lt_LT/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Laiško(-ų) nukopijuoti nepavyko."
+
+#: program/localization/lt_LT/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Laiško(-ų) pašalinti nepavyko."
+
+#: program/localization/lt_LT/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Laiško(-ų) pažymėti nepavyko."
+
+#: program/localization/lt_LT/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Ar tikrai pašalinti pažymėtą(-us) adresatą(-us)?"
+
+#: program/localization/lt_LT/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Ar tikrai pašalinti pažymėtą grupę?"
+
+#: program/localization/lt_LT/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Ar tikrai pašalinti pažymėtą(-us) laišką(-us)?"
+
+#: program/localization/lt_LT/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Ar tikrai pašalinti šį aplanką?"
+
+#: program/localization/lt_LT/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Ar tikrai pašalinti visus šiame aplanke esančius laiškus?"
+
+#: program/localization/lt_LT/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Adresatas(-ai) šalinamas(-i)…"
+
+#: program/localization/lt_LT/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Grupė šalinama…"
+
+#: program/localization/lt_LT/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Aplankas šalinamas…"
+
+#: program/localization/lt_LT/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Aplankas perkeliamas…"
+
+#: program/localization/lt_LT/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Aplankas prenumeruojamas…"
+
+#: program/localization/lt_LT/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Atsisakoma aplanko prenumeratos…"
+
+#: program/localization/lt_LT/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Forma nepilnai užpildyta."
+
+#: program/localization/lt_LT/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Prašom įvesti teisingą el. pašto adresą."
+
+#: program/localization/lt_LT/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Prašom įvesti vardą."
+
+#: program/localization/lt_LT/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Prašom įvesti puslapio dydį."
+
+#: program/localization/lt_LT/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Prašom įvesti siuntėjo el. pašto adresą."
+
+#: program/localization/lt_LT/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Prašom įvesti bent vieną gavėją."
+
+#: program/localization/lt_LT/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Temos laukelis tuščias. Ar norite temą įvesti dabar?"
+
+#: program/localization/lt_LT/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Išsiųsti šį laišką be teksto?"
+
+#: program/localization/lt_LT/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Laiškas neišsiųstas. Ar jūs tikrai norite jo atsikratyti?"
+
+#: program/localization/lt_LT/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Prašome pasirinkti LDAP serverį paieškai."
+
+#: program/localization/lt_LT/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Prašom įvesti vardą arba el. pašto adresą."
+
+#: program/localization/lt_LT/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Įkelti dar ne visi priedai. Prašom palaukti arba atšaukti jų"
+"įkėlimą."
+
+#: program/localization/lt_LT/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "Rasta laiškų: $nr."
+
+#: program/localization/lt_LT/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "Rasta adresatų: $nr."
+
+#: program/localization/lt_LT/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Paiešką atitinkančių rezultatų nėra."
+
+#: program/localization/lt_LT/messages.inc:searching
+msgid "Searching..."
+msgstr "Ieškoma…"
+
+#: program/localization/lt_LT/messages.inc:checking
+msgid "Checking..."
+msgstr "Tikrinama…"
+
+#: program/localization/lt_LT/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Rašybos klaidų nerasta."
+
+#: program/localization/lt_LT/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Aplankas sėkmingai pašalintas."
+
+#: program/localization/lt_LT/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Aplankas sėkmingai užprenumeruotas."
+
+#: program/localization/lt_LT/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Aplanko prenumeratos sėkmingai atsisakyta."
+
+#: program/localization/lt_LT/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Aplankas sėkmingai ištuštintas."
+
+#: program/localization/lt_LT/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Aplankas sėkmingai išvalytas."
+
+#: program/localization/lt_LT/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Sėkmingai pašalinta."
+
+#: program/localization/lt_LT/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Šalinamas laiško formatavimas…"
+
+#: program/localization/lt_LT/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Nepavyko įkelti laiško iš serverio."
+
+#: program/localization/lt_LT/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Nepavyko įkelti failo."
+
+#: program/localization/lt_LT/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Įkeltas failas viršija maksimalų leistiną dydį – $size."
+
+#: program/localization/lt_LT/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Nukopijuota adresų: $nr."
+
+#: program/localization/lt_LT/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Adresų nukopijuoti nepavyko."
+
+#: program/localization/lt_LT/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Šis adresų šaltinis prieinamas tik skaitymui."
+
+#: program/localization/lt_LT/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Asmens adreso įrašyti nepavyko."
+
+#: program/localization/lt_LT/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Laiškas(-ai) perkeliamas(-i)…"
+
+#: program/localization/lt_LT/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Laiškas(-ai) kopijuojamas(-i)…"
+
+#: program/localization/lt_LT/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Adresatas(-ai) kopijuojamas(-i)…"
+
+#: program/localization/lt_LT/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Laiškas(-ai) šalinamas(-i)…"
+
+#: program/localization/lt_LT/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Laiškas(-ai) žymimas(-i)…"
+
+#: program/localization/lt_LT/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Adresatas(-ai) įtraukiamas(-i) į grupę…"
+
+#: program/localization/lt_LT/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Adresatas(-ai) šalinamas(-i) iš grupės…"
+
+#: program/localization/lt_LT/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Laiško perskaitymo pažyma sėkmingai išsiųsta."
+
+#: program/localization/lt_LT/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Laiško perskaitymo pažymos išsiųsti nepavyko."
+
+#: program/localization/lt_LT/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Jūs negalite ištrinti šios tapatybės, nes ji yra vienintelė likusi."
+
+#: program/localization/lt_LT/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Aplanko varde rasta neleistinų simbolių."
+
+#: program/localization/lt_LT/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Parinkite įkelti norimą failą."
+
+#: program/localization/lt_LT/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Pasirinktoji adresų knyga prieinama tik skaitymui."
+
+#: program/localization/lt_LT/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Adresatai sėkmingai įtraukti į šią grupę."
+
+#: program/localization/lt_LT/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Adresatai sėkmingai pašalinti iš šios grupės."
+
+#: program/localization/lt_LT/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Importuojama, prašome palaukti…"
+
+#: program/localization/lt_LT/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Importavimas nepavyko! Įkeltasis failas nėra „vCard“ formato."
+
+#: program/localization/lt_LT/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Sėkmingai importuoti $inserted adresatai(-ų)</b>"
+
+#: program/localization/lt_LT/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Praleisti $skipped jau egzistuojantys adresatai(-ų)</b>"
+
+#: program/localization/lt_LT/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Veiksmas neleistinas!"
+
+#: program/localization/lt_LT/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Nenurodytas pasirinktosios tapatybės el. pašto adresas."
+
+#: program/localization/lt_LT/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Pereinant į grynojo teksto redagavimą, visas laiško formatavimas bus"
+"prarastas. Ar tęsti?"
+
+#: program/localization/lt_LT/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Įvyko lemtinga konfigūracijos klaida. Nedelsiant susisiekite su"
+"administratoriumi. <b>Jūsų laiškas negali būti išsiųstas.</b>"
+
+#: program/localization/lt_LT/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP klaida ($code): nepavyko prisijungti prie serverio."
+
+#: program/localization/lt_LT/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP klaida ($code): nepavyko autentikuotis."
+
+#: program/localization/lt_LT/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP klaida ($code): nepavyko nurodyti siuntėjo „$from“ ($msg)."
+
+#: program/localization/lt_LT/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP klaida ($code): nepavyko pridėti gavėjo „$to“ ($msg)."
+
+#: program/localization/lt_LT/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP klaida: nepavyko apdoroti gavėjų sąrašo."
+
+#: program/localization/lt_LT/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP klaida: $msg"
+
+#: program/localization/lt_LT/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Netinkamas el. pašto adresas: $email"
+
+#: program/localization/lt_LT/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Per daug gavėjų. Sumažinkite jų bent iki $max."
+
+#: program/localization/lt_LT/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Grupės narių skaičius viršijo maksimalų leistiną ($max)."
+
+#: program/localization/lt_LT/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Įvyko klaida. Prašom bandyti iš naujo."
+
+#: program/localization/lt_LT/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Nepavyko pašalinti adresato(-ų)."
+
+#: program/localization/lt_LT/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Adresatas(-ai) sėkmingai pašalintas(-i)."
+
+#: program/localization/lt_LT/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Nepavyko atkurti pašalinto(-ų) adresato(-ų)."
+
+#: program/localization/lt_LT/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Adresatas(-ai) sėkmingai atkurtas(-i)."
+
+#: program/localization/lt_LT/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Grupė sėkmingai pašalinta."
+
+#: program/localization/lt_LT/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Grupė sėkmingai pervardinta."
+
+#: program/localization/lt_LT/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Grupė sėkmingai sukurta."
+
+#: program/localization/lt_LT/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Radinių aplankas sėkmingai pašalintas."
+
+#: program/localization/lt_LT/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Radinių aplanko pašalinti nepavyko."
+
+#: program/localization/lt_LT/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Radinių aplankas sėkmingai sukurtas."
+
+#: program/localization/lt_LT/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Radinių aplanko sukurti nepavyko."
+
+#: program/localization/lt_LT/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Laiškas(-ai) sėkmingai pašalintas(-i)."
+
+#: program/localization/lt_LT/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Laiškas(-ai) sėkmingai perkeltas(-i)."
+
+#: program/localization/lt_LT/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Laiškas(-ai) sėkmingai nukopijuotas(-i)."
+
+#: program/localization/lt_LT/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Laiškas(-ai) sėkmingai pažymėtas(-i)."
+
+#: program/localization/lt_LT/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Automatiniam užbaigimui būtini bent $min simboliai."
+
+#: program/localization/lt_LT/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Rasta daugiau atitikmenų. Įveskite dar porą simbolių."
+
+#: program/localization/lt_LT/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Vardas negali būti tuščias."
+
+#: program/localization/lt_LT/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Vardas yra per ilgas."
+
+#: program/localization/lt_LT/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Aplanko savybės sėkmingai atnaujintos."
+
+#: program/localization/lt_LT/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Aplankas sėkmingai sukurtas."
+
+#: program/localization/lt_LT/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Paveikslo formatas netinkamas."
+
+#: program/localization/lt_LT/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "Laiške rasta rašybos klaidų."
+
+#: program/localization/lt_LT/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "Nepavyko sukurti arba perkelti aplanko į parinktą tėvinį aplanką."
+"Trūksta prieigos teisių."
+
+#: program/localization/lt_LT/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "Laiško dalis yra per didelė, kad galėtų būti apdorota."

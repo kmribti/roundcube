@@ -1,0 +1,988 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/fa/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: fa\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/fa/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "خوش آمدید $product به"
+
+#: program/localization/fa/labels.inc:username
+msgid "Username"
+msgstr "نام کاربری"
+
+#: program/localization/fa/labels.inc:password
+msgid "Password"
+msgstr "گذرواژه"
+
+#: program/localization/fa/labels.inc:server
+msgid "Server"
+msgstr "سرور"
+
+#: program/localization/fa/labels.inc:login
+msgid "Login"
+msgstr "ورود"
+
+#: program/localization/fa/labels.inc:logout
+msgid "Logout"
+msgstr "خروج"
+
+#: program/localization/fa/labels.inc:mail
+msgid "Mail"
+msgstr "ایمیل"
+
+#: program/localization/fa/labels.inc:settings
+msgid "Settings"
+msgstr "تنظیمات شخصی"
+
+#: program/localization/fa/labels.inc:addressbook
+msgid "Address Book"
+msgstr "دفتر نشانی‌ها"
+
+#: program/localization/fa/labels.inc:inbox
+msgid "Inbox"
+msgstr "صندوق"
+
+#: program/localization/fa/labels.inc:drafts
+msgid "Drafts"
+msgstr "پیش‌نویس‌ها"
+
+#: program/localization/fa/labels.inc:sent
+msgid "Sent"
+msgstr "فرستاده‌شده‌ها"
+
+#: program/localization/fa/labels.inc:trash
+msgid "Trash"
+msgstr "زباله‌دان"
+
+#: program/localization/fa/labels.inc:junk
+msgid "Junk"
+msgstr "بنجل"
+
+#: program/localization/fa/labels.inc:subject
+msgid "Subject"
+msgstr "موضوع"
+
+#: program/localization/fa/labels.inc:from
+msgid "From"
+msgstr "فرستنده"
+
+#: program/localization/fa/labels.inc:to
+msgid "To"
+msgstr "گیرنده"
+
+#: program/localization/fa/labels.inc:cc
+msgid "Cc"
+msgstr "رونوشت"
+
+#: program/localization/fa/labels.inc:bcc
+msgid "Bcc"
+msgstr "رونوشت مخفی"
+
+#: program/localization/fa/labels.inc:replyto
+msgid "Reply-To"
+msgstr "پاسخ-به"
+
+#: program/localization/fa/labels.inc:date
+msgid "Date"
+msgstr "تاریخ"
+
+#: program/localization/fa/labels.inc:size
+msgid "Size"
+msgstr "حجم"
+
+#: program/localization/fa/labels.inc:priority
+msgid "Priority"
+msgstr "اولویت"
+
+#: program/localization/fa/labels.inc:organization
+msgid "Company"
+msgstr "سازمان‌دهی"
+
+#: program/localization/fa/labels.inc:reply-to
+msgid "reply-to"
+msgstr "پاسخ-به"
+
+#: program/localization/fa/labels.inc:mailboxlist
+#: program/localization/fa/labels.inc:folders
+msgid "Folders"
+msgstr "پوشه‌ها"
+
+#: program/localization/fa/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "تا $count از $to تا $from پیغام‌های"
+
+#: program/localization/fa/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "تا $count پیغام  از $nr"
+
+#: program/localization/fa/labels.inc:moveto
+msgid "Move to..."
+msgstr "...انتقال به"
+
+#: program/localization/fa/labels.inc:download
+msgid "Download"
+msgstr "دانلود"
+
+#: program/localization/fa/labels.inc:filename
+msgid "File name"
+msgstr "نام پرونده"
+
+#: program/localization/fa/labels.inc:filesize
+msgid "File size"
+msgstr "اندازه‌ی پرونده"
+
+#: program/localization/fa/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML نمایش"
+
+#: program/localization/fa/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML پیغام"
+
+#: program/localization/fa/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "تاریخ‌های زیبا"
+
+#: program/localization/fa/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "افزودن به دفتر نشانی‌ها"
+
+#: program/localization/fa/labels.inc:sun
+msgid "Sun"
+msgstr "یکشنبه"
+
+#: program/localization/fa/labels.inc:mon
+msgid "Mon"
+msgstr "دوشنبه"
+
+#: program/localization/fa/labels.inc:tue
+msgid "Tue"
+msgstr "سه‌شنبه"
+
+#: program/localization/fa/labels.inc:wed
+msgid "Wed"
+msgstr "چهارشنبه"
+
+#: program/localization/fa/labels.inc:thu
+msgid "Thu"
+msgstr "پنج‌شنبه"
+
+#: program/localization/fa/labels.inc:fri
+msgid "Fri"
+msgstr "جمعه"
+
+#: program/localization/fa/labels.inc:sat
+msgid "Sat"
+msgstr "شنبه"
+
+#: program/localization/fa/labels.inc:sunday
+msgid "Sunday"
+msgstr "یکشنبه"
+
+#: program/localization/fa/labels.inc:monday
+msgid "Monday"
+msgstr "دوشنبه"
+
+#: program/localization/fa/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "سه‌شنبه"
+
+#: program/localization/fa/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "چهارشنبه"
+
+#: program/localization/fa/labels.inc:thursday
+msgid "Thursday"
+msgstr "پنج‌شنبه"
+
+#: program/localization/fa/labels.inc:friday
+msgid "Friday"
+msgstr "جمعه"
+
+#: program/localization/fa/labels.inc:saturday
+msgid "Saturday"
+msgstr "شنبه"
+
+#: program/localization/fa/labels.inc:jan
+msgid "Jan"
+msgstr "ژانویه"
+
+#: program/localization/fa/labels.inc:feb
+msgid "Feb"
+msgstr "فوریه"
+
+#: program/localization/fa/labels.inc:mar
+msgid "Mar"
+msgstr "مارس"
+
+#: program/localization/fa/labels.inc:apr
+msgid "Apr"
+msgstr "آوریل"
+
+#: program/localization/fa/labels.inc:may
+#: program/localization/fa/labels.inc:longmay
+msgid "May"
+msgstr "می"
+
+#: program/localization/fa/labels.inc:jun
+msgid "Jun"
+msgstr "ژوئن"
+
+#: program/localization/fa/labels.inc:jul
+msgid "Jul"
+msgstr "جولی"
+
+#: program/localization/fa/labels.inc:aug
+msgid "Aug"
+msgstr "آگوست"
+
+#: program/localization/fa/labels.inc:sep
+msgid "Sep"
+msgstr "سپتامبر"
+
+#: program/localization/fa/labels.inc:oct
+msgid "Oct"
+msgstr "اکتبر"
+
+#: program/localization/fa/labels.inc:nov
+msgid "Nov"
+msgstr "نوامبر"
+
+#: program/localization/fa/labels.inc:dec
+msgid "Dec"
+msgstr "دسامبر"
+
+#: program/localization/fa/labels.inc:longjan
+msgid "January"
+msgstr "ژانویه"
+
+#: program/localization/fa/labels.inc:longfeb
+msgid "February"
+msgstr "فوریه"
+
+#: program/localization/fa/labels.inc:longmar
+msgid "March"
+msgstr "مارس"
+
+#: program/localization/fa/labels.inc:longapr
+msgid "April"
+msgstr "آوریل"
+
+#: program/localization/fa/labels.inc:longjun
+msgid "June"
+msgstr "ژوئن"
+
+#: program/localization/fa/labels.inc:longjul
+msgid "July"
+msgstr "جولی"
+
+#: program/localization/fa/labels.inc:longaug
+msgid "August"
+msgstr "آگوست"
+
+#: program/localization/fa/labels.inc:longsep
+msgid "September"
+msgstr "سپتامبر"
+
+#: program/localization/fa/labels.inc:longoct
+msgid "October"
+msgstr "اکتبر"
+
+#: program/localization/fa/labels.inc:longnov
+msgid "November"
+msgstr "نوامبر"
+
+#: program/localization/fa/labels.inc:longdec
+msgid "December"
+msgstr "دسامبر"
+
+#: program/localization/fa/labels.inc:today
+msgid "Today"
+msgstr "امروز"
+
+#: program/localization/fa/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "بررسی برای پیغام‌های جدید"
+
+#: program/localization/fa/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "ایجاد پیغام جدید"
+
+#: program/localization/fa/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "پاسخ به پیغام"
+
+#: program/localization/fa/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "پاسخ به فرستنده وتمام گیرنده‌ها"
+
+#: program/localization/fa/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "ارجاع پیغام"
+
+#: program/localization/fa/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "حذف پیغام"
+
+#: program/localization/fa/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "انتقال پیغام به زباله‌دان"
+
+#: program/localization/fa/labels.inc:printmessage
+msgid "Print this message"
+msgstr "چاپ این پیغام"
+
+#: program/localization/fa/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "نمایش پیغام قبلی"
+
+#: program/localization/fa/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "نمایش دسته‌ی قبلی  پیغام‌ها"
+
+#: program/localization/fa/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "نمایش اولین  پیغام"
+
+#: program/localization/fa/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "نمایش اولین دسته‌ی پیغام‌ها"
+
+#: program/localization/fa/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "نمایش پیغام بعدی"
+
+#: program/localization/fa/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "نمایش دسته‌ی بعدی  پیغام‌ها"
+
+#: program/localization/fa/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "نمایش آخرین پیغام"
+
+#: program/localization/fa/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "نمایش آخرین دسته‌ی  پیغام‌ها"
+
+#: program/localization/fa/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "بازگشت به فهرست پیغام‌ها"
+
+#: program/localization/fa/labels.inc:viewsource
+msgid "Show source"
+msgstr "نمایش منبع"
+
+#: program/localization/fa/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "علامت‌گذاری پیغام‌ها"
+
+#: program/localization/fa/labels.inc:markread
+msgid "As read"
+msgstr "به عنوان خوانده‌شده"
+
+#: program/localization/fa/labels.inc:markunread
+msgid "As unread"
+msgstr "به عنوان خوانده‌نشده"
+
+#: program/localization/fa/labels.inc:markflagged
+msgid "As flagged"
+msgstr "به عنوان علامت گذاری شده"
+
+#: program/localization/fa/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "به عنوان علامت گذاری نشده"
+
+#: program/localization/fa/labels.inc:select
+msgid "Select"
+msgstr "انتخاب"
+
+#: program/localization/fa/labels.inc:all
+msgid "All"
+msgstr "همه"
+
+#: program/localization/fa/labels.inc:none
+msgid "None"
+msgstr "هیچ"
+
+#: program/localization/fa/labels.inc:unread
+msgid "Unread"
+msgstr "ناخوانده"
+
+#: program/localization/fa/labels.inc:flagged
+msgid "Flagged"
+msgstr "علامت گذاری شده"
+
+#: program/localization/fa/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "پاسخ داده نشده"
+
+#: program/localization/fa/labels.inc:filter
+msgid "Filter"
+msgstr "فیلتر"
+
+#: program/localization/fa/labels.inc:compact
+msgid "Compact"
+msgstr "فشرده"
+
+#: program/localization/fa/labels.inc:empty
+msgid "Empty"
+msgstr "خالی"
+
+#: program/localization/fa/labels.inc:purge
+msgid "purge"
+msgstr "خرد کردن"
+
+#: program/localization/fa/labels.inc:quota
+msgid "Disk usage"
+msgstr "فضای استفاده شده"
+
+#: program/localization/fa/labels.inc:unknown
+msgid "unknown"
+msgstr "ناشناخته"
+
+#: program/localization/fa/labels.inc:unlimited
+msgid "unlimited"
+msgstr "نامحدود"
+
+#: program/localization/fa/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "جستجوی سریع"
+
+#: program/localization/fa/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "شروع مجدد جستجو"
+
+#: program/localization/fa/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "نمایش در صفحه جدید"
+
+#: program/localization/fa/labels.inc:compose
+msgid "Compose a message"
+msgstr "نوشتن پیغام"
+
+#: program/localization/fa/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "ذخیره‌ی این پیش‌نویس"
+
+#: program/localization/fa/labels.inc:sendmessage
+msgid "Send now"
+msgstr "ارسال پیغام"
+
+#: program/localization/fa/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "پیوست کردن یک پرونده"
+
+#: program/localization/fa/labels.inc:charset
+msgid "Charset"
+msgstr "مجموعه‌نمایه"
+
+#: program/localization/fa/labels.inc:editortype
+msgid "Editor type"
+msgstr "نوع ویرایش‌گر"
+
+#: program/localization/fa/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "رسید دریافت"
+
+#: program/localization/fa/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "بررسی املایی"
+
+#: program/localization/fa/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "ادامه‌ی ویرایش"
+
+#: program/localization/fa/labels.inc:revertto
+msgid "Revert to"
+msgstr "برگرداندن به"
+
+#: program/localization/fa/labels.inc:attachments
+msgid "Attachments"
+msgstr "پیوست‌ها"
+
+#: program/localization/fa/labels.inc:upload
+msgid "Upload"
+msgstr "بالاگذاری"
+
+#: program/localization/fa/labels.inc:close
+msgid "Close"
+msgstr "بستن"
+
+#: program/localization/fa/labels.inc:low
+msgid "Low"
+msgstr "کم"
+
+#: program/localization/fa/labels.inc:lowest
+msgid "Lowest"
+msgstr "کم‌ترین"
+
+#: program/localization/fa/labels.inc:normal
+msgid "Normal"
+msgstr "معمولی"
+
+#: program/localization/fa/labels.inc:high
+msgid "High"
+msgstr "زیاد"
+
+#: program/localization/fa/labels.inc:highest
+msgid "Highest"
+msgstr "بیش‌ترین"
+
+#: program/localization/fa/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(بدون موضوع)"
+
+#: program/localization/fa/labels.inc:showimages
+msgid "Display images"
+msgstr "نمایش عکس‌ها"
+
+#: program/localization/fa/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "را نمایش بده $sender همیشه عکسهای دریافتی از "
+""
+
+#: program/localization/fa/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/fa/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "متن ساده"
+
+#: program/localization/fa/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "ذخیره پیغام ارسالی در"
+
+#: program/localization/fa/labels.inc:dontsave
+msgid "don't save"
+msgstr "ذخیره نکن"
+
+#: program/localization/fa/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "مجاز می باشد $size حجم فایل حداکثر تا میزان  "
+
+#: program/localization/fa/labels.inc:addcc
+msgid "Add Cc"
+msgstr "افزودن رونوشت"
+
+#: program/localization/fa/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "افزودن رونوشت مخفی"
+
+#: program/localization/fa/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "افزودن پاسخ-به"
+
+#: program/localization/fa/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "فرستندهٔ این پیغام خواسته است که وقتی شما"
+"این پیغام را می‌خوانید، آگاه شود. آیا"
+"مایلید فرستنده را آگاه کنید؟"
+
+#: program/localization/fa/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "(رسید دریافت (خواندن"
+
+#: program/localization/fa/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "این یک رسید دریافت برای پیغام شماست"
+
+#: program/localization/fa/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "تذکر: این رسید فقط تصدیق می‌کند که پیغام،"
+"روی رایانهٔ گیرنده نمایش داده شده است."
+"هیچ تضمینی نیست که گیرنده، محتوای پیغام"
+"را خوانده یا فهمیده باشد."
+
+#: program/localization/fa/labels.inc:name
+msgid "Display Name"
+msgstr "نمایش نام"
+
+#: program/localization/fa/labels.inc:firstname
+msgid "First Name"
+msgstr "نام"
+
+#: program/localization/fa/labels.inc:surname
+msgid "Last Name"
+msgstr "نام خانوادگی"
+
+#: program/localization/fa/labels.inc:email
+msgid "Email"
+msgstr "ایمیل"
+
+#: program/localization/fa/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "افزودن تماس جدید"
+
+#: program/localization/fa/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "ویرایش تماس"
+
+#: program/localization/fa/labels.inc:edit
+msgid "Edit"
+msgstr "ویرایش"
+
+#: program/localization/fa/labels.inc:cancel
+msgid "Cancel"
+msgstr "لغو"
+
+#: program/localization/fa/labels.inc:save
+msgid "Save"
+msgstr "ذخیره"
+
+#: program/localization/fa/labels.inc:delete
+msgid "Delete"
+msgstr "حذف"
+
+#: program/localization/fa/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "ایجاد کارت تماس جدید"
+
+#: program/localization/fa/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "حذف تماس‌های انتخاب شده"
+
+#: program/localization/fa/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "نوشتن نامه به"
+
+#: program/localization/fa/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr " تا $count از $to تا $from  تماس‌های"
+
+#: program/localization/fa/labels.inc:print
+msgid "Print"
+msgstr "چاپ"
+
+#: program/localization/fa/labels.inc:export
+msgid "Export"
+msgstr "صدور"
+
+#: program/localization/fa/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "صدور اطلاعات تماس ها با فرمت Vcard"
+
+#: program/localization/fa/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "نمایش دسته‌ی قبلی"
+
+#: program/localization/fa/labels.inc:firstpage
+msgid "Show first page"
+msgstr "نمایش دسته‌ی اول"
+
+#: program/localization/fa/labels.inc:nextpage
+msgid "Show next page"
+msgstr "نمایش دسته‌ی بعدی"
+
+#: program/localization/fa/labels.inc:lastpage
+msgid "Show last page"
+msgstr "نمایش دسته‌ی آخر"
+
+#: program/localization/fa/labels.inc:groups
+msgid "Groups"
+msgstr "گروه‌ها"
+
+#: program/localization/fa/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "نشانی‌های شخصی"
+
+#: program/localization/fa/labels.inc:import
+msgid "Import"
+msgstr "وارد کردن "
+
+#: program/localization/fa/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "وارد کردن تماسها"
+
+#: program/localization/fa/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr ":ورود اطلاعات از فایل "
+
+#: program/localization/fa/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "جایگزینی دفترچه آدرس کامل"
+
+#: program/localization/fa/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "شما میتوانید اطلاعات تماس ها را به دفترچه"
+"تلفن موجود منتقل کنید. <br/>  ما در حال حاضر"
+"امکان انتقال آدرسها را با فرمت <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> برای شما"
+"فراهم نموده ایم."
+
+#: program/localization/fa/labels.inc:done
+msgid "Done"
+msgstr "انجام شد"
+
+#: program/localization/fa/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "تنظیمات"
+
+#: program/localization/fa/labels.inc:preferences
+msgid "Preferences"
+msgstr "ترجیحات"
+
+#: program/localization/fa/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "ترجیحات کاربر"
+
+#: program/localization/fa/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "ویرایش ترجیحات کاربر"
+
+#: program/localization/fa/labels.inc:identities
+msgid "Identities"
+msgstr "شناسه‌ها"
+
+#: program/localization/fa/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "مدیریت شناسه‌ها برای این حساب"
+
+#: program/localization/fa/labels.inc:newidentity
+msgid "New identity"
+msgstr "شناسه جدید"
+
+#: program/localization/fa/labels.inc:newitem
+msgid "New item"
+msgstr "مورد جدید"
+
+#: program/localization/fa/labels.inc:edititem
+msgid "Edit item"
+msgstr "ویرایش مورد"
+
+#: program/localization/fa/labels.inc:setdefault
+msgid "Set default"
+msgstr "پیش‌فرض کن"
+
+#: program/localization/fa/labels.inc:autodetect
+msgid "Auto"
+msgstr "خودکار"
+
+#: program/localization/fa/labels.inc:language
+msgid "Language"
+msgstr "زبان"
+
+#: program/localization/fa/labels.inc:timezone
+msgid "Time zone"
+msgstr "محدوده‌ی زمانی"
+
+#: program/localization/fa/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "سطر در صفحه"
+
+#: program/localization/fa/labels.inc:signature
+msgid "Signature"
+msgstr "امضا"
+
+#: program/localization/fa/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "ساعت تابستانی"
+
+#: program/localization/fa/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "HTML ‌نوشتن پیغام‌های"
+
+#: program/localization/fa/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML امضای"
+
+#: program/localization/fa/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "نمایش قاب پیش‌نمایش"
+
+#: program/localization/fa/labels.inc:skin
+msgid "Interface skin"
+msgstr "پوسته ظاهری"
+
+#: program/localization/fa/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "تمیز کردن زباله دان در هنگام خروچ"
+
+#: program/localization/fa/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "فشرده سازی صندوق در هنگام خروچ"
+
+#: program/localization/fa/labels.inc:uisettings
+msgid "User Interface"
+msgstr "محیط کاربری"
+
+#: program/localization/fa/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "تنظیمات سرور"
+
+#: program/localization/fa/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "نمایش صندوق"
+
+#: program/localization/fa/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "تاییدهای فرستنده"
+
+#: program/localization/fa/labels.inc:askuser
+msgid "ask me"
+msgstr "پرسش از کاربر"
+
+#: program/localization/fa/labels.inc:autosend
+msgid "send receipt"
+msgstr "ارسال خود به خود"
+
+#: program/localization/fa/labels.inc:ignore
+msgid "ignore"
+msgstr "نادیده گیری"
+
+#: program/localization/fa/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "در هنگام پاک کردن، پیغام را به عنوان"
+"خوانده شده علامت بزن"
+
+#: program/localization/fa/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "پیغام را بجای پاک کردن، برای پاک شدن"
+"آماده کن "
+
+#: program/localization/fa/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "پیغام های حذف شده را نمایش نده"
+
+#: program/localization/fa/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "تصاویر لینک شده را نمایش بده"
+
+#: program/localization/fa/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "از سوی فرستنده شناس"
+
+#: program/localization/fa/labels.inc:always
+msgid "always"
+msgstr "همواره"
+
+#: program/localization/fa/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "نمایش عکس های الصاق شده در پایین پیغام"
+
+#: program/localization/fa/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "ذخیره‌ی خودکار پیش‌نویس"
+
+#: program/localization/fa/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "دقیقه/ها $n هر"
+
+#: program/localization/fa/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "بررسی پیغام جدید روی"
+
+#: program/localization/fa/labels.inc:never
+msgid "never"
+msgstr "هرگز"
+
+#: program/localization/fa/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "نمایش داده شدن پیغام ها"
+
+#: program/localization/fa/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "نوشته شدن پیغام ها"
+
+#: program/localization/fa/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "عناوین پیوستی"
+
+#: program/localization/fa/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Full RFC 2231 (Thunderbird)"
+
+#: program/localization/fa/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/fa/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Full RFC 2047 (سایر)"
+
+#: program/localization/fa/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "گزینه های پیشرفته"
+
+#: program/localization/fa/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "مشخص نمودن پیغام جدید"
+
+#: program/localization/fa/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "همه پوشه ها رو برای مشاهده پیغام های جدید"
+"بگردید"
+
+#: program/localization/fa/labels.inc:folder
+msgid "Folder"
+msgstr "پوشه"
+
+#: program/localization/fa/labels.inc:foldername
+msgid "Folder name"
+msgstr "نام پوشه"
+
+#: program/localization/fa/labels.inc:messagecount
+msgid "Messages"
+msgstr "پیغام‌ها"
+
+#: program/localization/fa/labels.inc:create
+msgid "Create"
+msgstr "ایجاد"
+
+#: program/localization/fa/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "ایجاد پوشه‌ی جدید"
+
+#: program/localization/fa/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "مدیریت پوشه‌ها"
+
+#: program/localization/fa/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "پوشه های ویژه"
+
+#: program/localization/fa/labels.inc:sortby
+msgid "Sort by"
+msgstr "مرتب‌سازی بر اساس"
+
+#: program/localization/fa/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "مرتب‌سازی صعودی"
+
+#: program/localization/fa/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "مرتب‌سازی نزولی"
+
+#: program/localization/fa/labels.inc:B
+msgid "B"
+msgstr "بایت"
+
+#: program/localization/fa/labels.inc:KB
+msgid "KB"
+msgstr "کیلو بایت"
+
+#: program/localization/fa/labels.inc:MB
+msgid "MB"
+msgstr "مگابایت"
+
+#: program/localization/fa/labels.inc:GB
+msgid "GB"
+msgstr "گیگا بایت"

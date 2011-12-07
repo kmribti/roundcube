@@ -1,0 +1,1607 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/tr_TR/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: tr_TR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/tr_TR/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "$product, Hoş Geldiniz"
+
+#: program/localization/tr_TR/labels.inc:username
+msgid "Username"
+msgstr "Kullanıcı Adı"
+
+#: program/localization/tr_TR/labels.inc:password
+msgid "Password"
+msgstr "Şifre"
+
+#: program/localization/tr_TR/labels.inc:server
+msgid "Server"
+msgstr "Sunucu"
+
+#: program/localization/tr_TR/labels.inc:login
+msgid "Login"
+msgstr "Oturum Aç"
+
+#: program/localization/tr_TR/labels.inc:logout
+msgid "Logout"
+msgstr "Oturumu Kapat"
+
+#: program/localization/tr_TR/labels.inc:mail
+msgid "Mail"
+msgstr "E-Posta"
+
+#: program/localization/tr_TR/labels.inc:settings
+msgid "Settings"
+msgstr "Kişisel Ayarlar"
+
+#: program/localization/tr_TR/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Adres Defteri"
+
+#: program/localization/tr_TR/labels.inc:inbox
+msgid "Inbox"
+msgstr "Gelen"
+
+#: program/localization/tr_TR/labels.inc:drafts
+msgid "Drafts"
+msgstr "Taslaklar"
+
+#: program/localization/tr_TR/labels.inc:sent
+msgid "Sent"
+msgstr "Giden"
+
+#: program/localization/tr_TR/labels.inc:trash
+msgid "Trash"
+msgstr "Çöp"
+
+#: program/localization/tr_TR/labels.inc:junk
+msgid "Junk"
+msgstr "İstenmeyen"
+
+#: program/localization/tr_TR/labels.inc:subject
+msgid "Subject"
+msgstr "Konu"
+
+#: program/localization/tr_TR/labels.inc:from
+msgid "From"
+msgstr "Gönderen"
+
+#: program/localization/tr_TR/labels.inc:to
+msgid "To"
+msgstr "Alıcı"
+
+#: program/localization/tr_TR/labels.inc:cc
+msgid "Cc"
+msgstr "İlgili Kopyası"
+
+#: program/localization/tr_TR/labels.inc:bcc
+msgid "Bcc"
+msgstr "Gizli Kopya"
+
+#: program/localization/tr_TR/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Yanıtla"
+
+#: program/localization/tr_TR/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Takip adresi"
+
+#: program/localization/tr_TR/labels.inc:date
+msgid "Date"
+msgstr "Tarih"
+
+#: program/localization/tr_TR/labels.inc:size
+msgid "Size"
+msgstr "Boyut"
+
+#: program/localization/tr_TR/labels.inc:priority
+msgid "Priority"
+msgstr "Öncelik"
+
+#: program/localization/tr_TR/labels.inc:organization
+msgid "Company"
+msgstr "Kuruluş"
+
+#: program/localization/tr_TR/labels.inc:readstatus
+msgid "Read status"
+msgstr "Okundu durumu"
+
+#: program/localization/tr_TR/labels.inc:mailboxlist
+#: program/localization/tr_TR/labels.inc:folders
+msgid "Folders"
+msgstr "Klasörler"
+
+#: program/localization/tr_TR/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Postalar: $from - $to , Toplam: $count"
+
+#: program/localization/tr_TR/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Dizilmler: $from - $to, Toplam $count"
+
+#: program/localization/tr_TR/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Posta: $nr / $count"
+
+#: program/localization/tr_TR/labels.inc:copy
+msgid "Copy"
+msgstr "Kopyala"
+
+#: program/localization/tr_TR/labels.inc:move
+msgid "Move"
+msgstr "Taşı"
+
+#: program/localization/tr_TR/labels.inc:moveto
+msgid "Move to..."
+msgstr "Buraya taşı..."
+
+#: program/localization/tr_TR/labels.inc:download
+msgid "Download"
+msgstr "İndir"
+
+#: program/localization/tr_TR/labels.inc:filename
+msgid "File name"
+msgstr "Dosya Adı"
+
+#: program/localization/tr_TR/labels.inc:filesize
+msgid "File size"
+msgstr "Dosya Boyutu"
+
+#: program/localization/tr_TR/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Adres Defterine Ekle"
+
+#: program/localization/tr_TR/labels.inc:sun
+msgid "Sun"
+msgstr "Paz"
+
+#: program/localization/tr_TR/labels.inc:mon
+msgid "Mon"
+msgstr "Pzt"
+
+#: program/localization/tr_TR/labels.inc:tue
+msgid "Tue"
+msgstr "Sal"
+
+#: program/localization/tr_TR/labels.inc:wed
+msgid "Wed"
+msgstr "Çar"
+
+#: program/localization/tr_TR/labels.inc:thu
+msgid "Thu"
+msgstr "Per"
+
+#: program/localization/tr_TR/labels.inc:fri
+msgid "Fri"
+msgstr "Cum"
+
+#: program/localization/tr_TR/labels.inc:sat
+msgid "Sat"
+msgstr "Cmt"
+
+#: program/localization/tr_TR/labels.inc:sunday
+msgid "Sunday"
+msgstr "Pazar"
+
+#: program/localization/tr_TR/labels.inc:monday
+msgid "Monday"
+msgstr "Pazartesi"
+
+#: program/localization/tr_TR/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Salı"
+
+#: program/localization/tr_TR/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Çarşamba"
+
+#: program/localization/tr_TR/labels.inc:thursday
+msgid "Thursday"
+msgstr "Perşembe"
+
+#: program/localization/tr_TR/labels.inc:friday
+msgid "Friday"
+msgstr "Cuma"
+
+#: program/localization/tr_TR/labels.inc:saturday
+msgid "Saturday"
+msgstr "Cumartesi"
+
+#: program/localization/tr_TR/labels.inc:jan
+msgid "Jan"
+msgstr "Oca"
+
+#: program/localization/tr_TR/labels.inc:feb
+msgid "Feb"
+msgstr "Şub"
+
+#: program/localization/tr_TR/labels.inc:mar
+msgid "Mar"
+msgstr "Mar"
+
+#: program/localization/tr_TR/labels.inc:apr
+msgid "Apr"
+msgstr "Nis"
+
+#: program/localization/tr_TR/labels.inc:may
+#: program/localization/tr_TR/labels.inc:longmay
+msgid "May"
+msgstr "Mayıs"
+
+#: program/localization/tr_TR/labels.inc:jun
+msgid "Jun"
+msgstr "Haz"
+
+#: program/localization/tr_TR/labels.inc:jul
+msgid "Jul"
+msgstr "Tem"
+
+#: program/localization/tr_TR/labels.inc:aug
+msgid "Aug"
+msgstr "Ağu"
+
+#: program/localization/tr_TR/labels.inc:sep
+msgid "Sep"
+msgstr "Eyl"
+
+#: program/localization/tr_TR/labels.inc:oct
+msgid "Oct"
+msgstr "Eki"
+
+#: program/localization/tr_TR/labels.inc:nov
+msgid "Nov"
+msgstr "Kas"
+
+#: program/localization/tr_TR/labels.inc:dec
+msgid "Dec"
+msgstr "Ara"
+
+#: program/localization/tr_TR/labels.inc:longjan
+msgid "January"
+msgstr "Ocak"
+
+#: program/localization/tr_TR/labels.inc:longfeb
+msgid "February"
+msgstr "Şubat"
+
+#: program/localization/tr_TR/labels.inc:longmar
+msgid "March"
+msgstr "Mart"
+
+#: program/localization/tr_TR/labels.inc:longapr
+msgid "April"
+msgstr "Nisan"
+
+#: program/localization/tr_TR/labels.inc:longjun
+msgid "June"
+msgstr "Haziran"
+
+#: program/localization/tr_TR/labels.inc:longjul
+msgid "July"
+msgstr "Temmuz"
+
+#: program/localization/tr_TR/labels.inc:longaug
+msgid "August"
+msgstr "Ağustos"
+
+#: program/localization/tr_TR/labels.inc:longsep
+msgid "September"
+msgstr "Eylül"
+
+#: program/localization/tr_TR/labels.inc:longoct
+msgid "October"
+msgstr "Ekim"
+
+#: program/localization/tr_TR/labels.inc:longnov
+msgid "November"
+msgstr "Kasım"
+
+#: program/localization/tr_TR/labels.inc:longdec
+msgid "December"
+msgstr "Aralık"
+
+#: program/localization/tr_TR/labels.inc:today
+msgid "Today"
+msgstr "Bugün"
+
+#: program/localization/tr_TR/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Yeni postaları kontrol et"
+
+#: program/localization/tr_TR/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Yeni posta oluştur"
+
+#: program/localization/tr_TR/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Gönderene yanıtla"
+
+#: program/localization/tr_TR/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Gönderene ve tüm alıcılara yanıtla"
+
+#: program/localization/tr_TR/labels.inc:replyall
+msgid "Reply all"
+msgstr "Tümüne yanıtla"
+
+#: program/localization/tr_TR/labels.inc:replylist
+msgid "Reply list"
+msgstr "Listeye yanıtla"
+
+#: program/localization/tr_TR/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "Postanın içinde ilet"
+
+#: program/localization/tr_TR/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "Eklenti olarak ilet"
+
+#: program/localization/tr_TR/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Postayı ilet"
+
+#: program/localization/tr_TR/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Postayı sil"
+
+#: program/localization/tr_TR/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Postayı çöpe taşı"
+
+#: program/localization/tr_TR/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Bu postayı yazdır"
+
+#: program/localization/tr_TR/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Önceki postayı göster"
+
+#: program/localization/tr_TR/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "İlk postayı göster"
+
+#: program/localization/tr_TR/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Sonraki postayı göster"
+
+#: program/localization/tr_TR/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Son postayı göster"
+
+#: program/localization/tr_TR/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Posta listesine dön"
+
+#: program/localization/tr_TR/labels.inc:viewsource
+msgid "Show source"
+msgstr "Kaynağı göster"
+
+#: program/localization/tr_TR/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Postaları işaretle"
+
+#: program/localization/tr_TR/labels.inc:markread
+msgid "As read"
+msgstr "okunmuş olarak"
+
+#: program/localization/tr_TR/labels.inc:markunread
+msgid "As unread"
+msgstr "okunmamış olarak"
+
+#: program/localization/tr_TR/labels.inc:markflagged
+msgid "As flagged"
+msgstr "işaretli olarak"
+
+#: program/localization/tr_TR/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "işaretsiz olarak"
+
+#: program/localization/tr_TR/labels.inc:messageactions
+msgid "messageactions"
+msgstr "Diğer eylemler..."
+
+#: program/localization/tr_TR/labels.inc:select
+msgid "Select"
+msgstr "Seç"
+
+#: program/localization/tr_TR/labels.inc:all
+msgid "All"
+msgstr "Hepsini"
+
+#: program/localization/tr_TR/labels.inc:none
+#: program/localization/tr_TR/labels.inc:nonesort
+msgid "None"
+msgstr "Yok"
+
+#: program/localization/tr_TR/labels.inc:currpage
+msgid "Current page"
+msgstr "Şimdiki sayfa"
+
+#: program/localization/tr_TR/labels.inc:unread
+msgid "Unread"
+msgstr "Okunmamışları"
+
+#: program/localization/tr_TR/labels.inc:flagged
+msgid "Flagged"
+msgstr "İşaretlenmişleri"
+
+#: program/localization/tr_TR/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Yanıtlanmamışları"
+
+#: program/localization/tr_TR/labels.inc:deleted
+msgid "Deleted"
+msgstr "Silinmişleri"
+
+#: program/localization/tr_TR/labels.inc:invert
+msgid "Invert"
+msgstr "Seçimi Tersine Çevir"
+
+#: program/localization/tr_TR/labels.inc:filter
+msgid "Filter"
+msgstr "Göster"
+
+#: program/localization/tr_TR/labels.inc:list
+msgid "List"
+msgstr "Liste"
+
+#: program/localization/tr_TR/labels.inc:threads
+msgid "Threads"
+msgstr "Dizilimler"
+
+#: program/localization/tr_TR/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Tümünü genişlet"
+
+#: program/localization/tr_TR/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Okunmamışları genişlet"
+
+#: program/localization/tr_TR/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Tümünü daralt"
+
+#: program/localization/tr_TR/labels.inc:threaded
+msgid "Threaded"
+msgstr "Dizilimli"
+
+#: program/localization/tr_TR/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Dizilimleri aç"
+
+#: program/localization/tr_TR/labels.inc:do_expand
+msgid "all threads"
+msgstr "tüm dizilimler"
+
+#: program/localization/tr_TR/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "sadece okunmamış posta içeren dizilimler"
+
+#: program/localization/tr_TR/labels.inc:fromto
+msgid "From/To"
+msgstr "Gönderici/Alıcı"
+
+#: program/localization/tr_TR/labels.inc:flag
+msgid "Flag"
+msgstr "İşaret"
+
+#: program/localization/tr_TR/labels.inc:attachment
+msgid "Attachment"
+msgstr "Eklenti"
+
+#: program/localization/tr_TR/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Gönderim tarihi"
+
+#: program/localization/tr_TR/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Alım tarihi"
+
+#: program/localization/tr_TR/labels.inc:asc
+msgid "ascending"
+msgstr "artan"
+
+#: program/localization/tr_TR/labels.inc:desc
+msgid "descending"
+msgstr "azalan"
+
+#: program/localization/tr_TR/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Sütunları listele"
+
+#: program/localization/tr_TR/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Sıralama sütunu"
+
+#: program/localization/tr_TR/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Sıralama düzeni"
+
+#: program/localization/tr_TR/labels.inc:listmode
+msgid "List view mode"
+msgstr "Liste görünümü"
+
+#: program/localization/tr_TR/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Klasör eylemleri..."
+
+#: program/localization/tr_TR/labels.inc:compact
+msgid "Compact"
+msgstr "Sıklaştır"
+
+#: program/localization/tr_TR/labels.inc:empty
+msgid "Empty"
+msgstr "Boşalt"
+
+#: program/localization/tr_TR/labels.inc:quota
+msgid "Disk usage"
+msgstr "Disk kullanımı"
+
+#: program/localization/tr_TR/labels.inc:unknown
+msgid "unknown"
+msgstr "bilinmeyen"
+
+#: program/localization/tr_TR/labels.inc:unlimited
+msgid "unlimited"
+msgstr "sınırsız"
+
+#: program/localization/tr_TR/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Hızlı arama"
+
+#: program/localization/tr_TR/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Aramayı bitir"
+
+#: program/localization/tr_TR/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Arama detayları"
+
+#: program/localization/tr_TR/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Tüm posta gövdesi"
+
+#: program/localization/tr_TR/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Yeni pencerede aç"
+
+#: program/localization/tr_TR/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "İndir (.eml)"
+
+#: program/localization/tr_TR/labels.inc:compose
+msgid "Compose a message"
+msgstr "Yeni posta oluştur"
+
+#: program/localization/tr_TR/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Postayı yeni olarak düzenle"
+
+#: program/localization/tr_TR/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Taslak olarak kaydet"
+
+#: program/localization/tr_TR/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Postayı gönder"
+
+#: program/localization/tr_TR/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Dosya ekle"
+
+#: program/localization/tr_TR/labels.inc:charset
+msgid "Charset"
+msgstr "Karakter kodlaması"
+
+#: program/localization/tr_TR/labels.inc:editortype
+msgid "Editor type"
+msgstr "Düzenleyici"
+
+#: program/localization/tr_TR/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Alındı onayı"
+
+#: program/localization/tr_TR/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Teslimat durumu bildirisi"
+
+#: program/localization/tr_TR/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "$date, $sender yazmış:"
+
+#: program/localization/tr_TR/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "Özgün ileti"
+
+#: program/localization/tr_TR/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Kimlikleri düzenle"
+
+#: program/localization/tr_TR/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Yazım denetimi yap"
+
+#: program/localization/tr_TR/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Düzenlemeye devam et"
+
+#: program/localization/tr_TR/labels.inc:revertto
+msgid "Revert to"
+msgstr "Geri çevir:"
+
+#: program/localization/tr_TR/labels.inc:attachments
+msgid "Attachments"
+msgstr "Ekler"
+
+#: program/localization/tr_TR/labels.inc:upload
+msgid "Upload"
+msgstr "Yükle"
+
+#: program/localization/tr_TR/labels.inc:uploadprogress
+msgid "$percent ($current from $total)"
+msgstr "$percent ($current / $total)"
+
+#: program/localization/tr_TR/labels.inc:close
+msgid "Close"
+msgstr "Kapat"
+
+#: program/localization/tr_TR/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "İleti seçenekleri..."
+
+#: program/localization/tr_TR/labels.inc:low
+msgid "Low"
+msgstr "Düşük"
+
+#: program/localization/tr_TR/labels.inc:lowest
+msgid "Lowest"
+msgstr "En Düşük"
+
+#: program/localization/tr_TR/labels.inc:normal
+msgid "Normal"
+msgstr "Normal"
+
+#: program/localization/tr_TR/labels.inc:high
+msgid "High"
+msgstr "Yüksek"
+
+#: program/localization/tr_TR/labels.inc:highest
+msgid "Highest"
+msgstr "En yüksek"
+
+#: program/localization/tr_TR/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(Konu Belirtilmemiş)"
+
+#: program/localization/tr_TR/labels.inc:showimages
+msgid "Display images"
+msgstr "Resimleri göster"
+
+#: program/localization/tr_TR/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "$sender tarafından gönderilen resimleri her zaman göster"
+
+#: program/localization/tr_TR/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/tr_TR/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Düz metin"
+
+#: program/localization/tr_TR/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Gönderileni buraya kaydet"
+
+#: program/localization/tr_TR/labels.inc:dontsave
+msgid "don't save"
+msgstr "kaydetme"
+
+#: program/localization/tr_TR/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "İzin verilen en büyük dosya boyutu $size"
+
+#: program/localization/tr_TR/labels.inc:addcc
+msgid "Add Cc"
+msgstr "İlgili kopyası ekle"
+
+#: program/localization/tr_TR/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Gizli kopya ekle"
+
+#: program/localization/tr_TR/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Yanıtlama adresi ekle"
+
+#: program/localization/tr_TR/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Takip adresi ekle"
+
+#: program/localization/tr_TR/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Bu postayı gönderen kişi, postayı okuduğunuza dair alındı onayı"
+"istedi. Alındı onayını göndermek ister misiniz ?"
+
+#: program/localization/tr_TR/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Alındı Onayı (okundu)"
+
+#: program/localization/tr_TR/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Bu, postanız için alındı onayıdır"
+
+#: program/localization/tr_TR/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Not: Bu alındı onayı sadece postanızın alıcının bilgisayarında"
+"gösterildiğini belirtir. Alıcının posta içeriğini okuduğunu veya"
+"anladığını garantilemez."
+
+#: program/localization/tr_TR/labels.inc:name
+msgid "Display Name"
+msgstr "Görüntülenen isim"
+
+#: program/localization/tr_TR/labels.inc:firstname
+msgid "First Name"
+msgstr "Ad"
+
+#: program/localization/tr_TR/labels.inc:surname
+msgid "Last Name"
+msgstr "Soyad"
+
+#: program/localization/tr_TR/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Göbek adı"
+
+#: program/localization/tr_TR/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "Ön ek"
+
+#: program/localization/tr_TR/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "Son ek"
+
+#: program/localization/tr_TR/labels.inc:nickname
+msgid "Nickname"
+msgstr "Takma ad"
+
+#: program/localization/tr_TR/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Ünvan"
+
+#: program/localization/tr_TR/labels.inc:department
+msgid "Department"
+msgstr "Bölüm"
+
+#: program/localization/tr_TR/labels.inc:gender
+msgid "Gender"
+msgstr "Cinsiyet"
+
+#: program/localization/tr_TR/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Eski soyadı"
+
+#: program/localization/tr_TR/labels.inc:email
+msgid "Email"
+msgstr "E-Posta"
+
+#: program/localization/tr_TR/labels.inc:phone
+msgid "Phone"
+msgstr "Telefon"
+
+#: program/localization/tr_TR/labels.inc:address
+msgid "Address"
+msgstr "Adres"
+
+#: program/localization/tr_TR/labels.inc:street
+msgid "Street"
+msgstr "Sokak"
+
+#: program/localization/tr_TR/labels.inc:locality
+msgid "City"
+msgstr "Şehir"
+
+#: program/localization/tr_TR/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "Posta Kodu"
+
+#: program/localization/tr_TR/labels.inc:region
+msgid "State/Province"
+msgstr "Bölge"
+
+#: program/localization/tr_TR/labels.inc:country
+msgid "Country"
+msgstr "Ülke"
+
+#: program/localization/tr_TR/labels.inc:birthday
+msgid "Birthday"
+msgstr "Doğum günü"
+
+#: program/localization/tr_TR/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "Yıl dönümü"
+
+#: program/localization/tr_TR/labels.inc:website
+msgid "Website"
+msgstr "Web sayfası"
+
+#: program/localization/tr_TR/labels.inc:instantmessenger
+msgid "IM"
+msgstr "Anında mesajlaşma"
+
+#: program/localization/tr_TR/labels.inc:notes
+msgid "Notes"
+msgstr "Notlar"
+
+#: program/localization/tr_TR/labels.inc:male
+msgid "male"
+msgstr "erkek"
+
+#: program/localization/tr_TR/labels.inc:female
+msgid "female"
+msgstr "kadın"
+
+#: program/localization/tr_TR/labels.inc:manager
+msgid "Manager"
+msgstr "Yönetici"
+
+#: program/localization/tr_TR/labels.inc:assistant
+#: program/localization/tr_TR/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Asistan"
+
+#: program/localization/tr_TR/labels.inc:spouse
+msgid "Spouse"
+msgstr "Eş"
+
+#: program/localization/tr_TR/labels.inc:allfields
+msgid "All fields"
+msgstr "Tüm alanlar"
+
+#: program/localization/tr_TR/labels.inc:search
+msgid "Search"
+msgstr "Ara"
+
+#: program/localization/tr_TR/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "Gelişmiş ara"
+
+#: program/localization/tr_TR/labels.inc:other
+#: program/localization/tr_TR/labels.inc:typeother
+msgid "Other"
+msgstr "Diğer"
+
+#: program/localization/tr_TR/labels.inc:typehome
+msgid "Home"
+msgstr "Ev"
+
+#: program/localization/tr_TR/labels.inc:typework
+msgid "Work"
+msgstr "İş"
+
+#: program/localization/tr_TR/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Cep telefonu"
+
+#: program/localization/tr_TR/labels.inc:typemain
+msgid "Main"
+msgstr "Ana"
+
+#: program/localization/tr_TR/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Ev Faks"
+
+#: program/localization/tr_TR/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "İş Faks"
+
+#: program/localization/tr_TR/labels.inc:typecar
+msgid "Car"
+msgstr "Araba"
+
+#: program/localization/tr_TR/labels.inc:typepager
+msgid "Pager"
+msgstr "Çağrı cihazı"
+
+#: program/localization/tr_TR/labels.inc:typevideo
+msgid "Video"
+msgstr "Görüntülü"
+
+#: program/localization/tr_TR/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "Ev sayfası"
+
+#: program/localization/tr_TR/labels.inc:typeblog
+msgid "Blog"
+msgstr "Günlük"
+
+#: program/localization/tr_TR/labels.inc:typeprofile
+msgid "Profile"
+msgstr "Profil"
+
+#: program/localization/tr_TR/labels.inc:addfield
+msgid "Add field..."
+msgstr "Alan ekle..."
+
+#: program/localization/tr_TR/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Adres defterine ekle"
+
+#: program/localization/tr_TR/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Kişiyi düzenle"
+
+#: program/localization/tr_TR/labels.inc:contacts
+msgid "Contacts"
+msgstr "Kişiler"
+
+#: program/localization/tr_TR/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Kişi özellikleri"
+
+#: program/localization/tr_TR/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Kişisel bilgiler"
+
+#: program/localization/tr_TR/labels.inc:edit
+msgid "Edit"
+msgstr "Düzenle"
+
+#: program/localization/tr_TR/labels.inc:cancel
+msgid "Cancel"
+msgstr "İptal"
+
+#: program/localization/tr_TR/labels.inc:save
+msgid "Save"
+msgstr "Kaydet"
+
+#: program/localization/tr_TR/labels.inc:delete
+msgid "Delete"
+msgstr "Sil"
+
+#: program/localization/tr_TR/labels.inc:rename
+msgid "Rename"
+msgstr "Yeniden adlandır"
+
+#: program/localization/tr_TR/labels.inc:addphoto
+msgid "Add"
+msgstr "Ekle"
+
+#: program/localization/tr_TR/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Değiştir"
+
+#: program/localization/tr_TR/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Yeni adres kartı ekle"
+
+#: program/localization/tr_TR/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Seçili kişileri sil"
+
+#: program/localization/tr_TR/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Seçili kişiye posta gönder"
+
+#: program/localization/tr_TR/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Kişiler: $from - $to , Toplam: $count"
+
+#: program/localization/tr_TR/labels.inc:print
+msgid "Print"
+msgstr "Yazdır"
+
+#: program/localization/tr_TR/labels.inc:export
+msgid "Export"
+msgstr "Dışa aktar"
+
+#: program/localization/tr_TR/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "vCard olarak dışa aktar"
+
+#: program/localization/tr_TR/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Yeni kişi grubu oluştur"
+
+#: program/localization/tr_TR/labels.inc:groupactions
+msgid "groupactions"
+msgstr "Kişi grupları için eylemler..."
+
+#: program/localization/tr_TR/labels.inc:grouprename
+msgid "Rename group"
+msgstr "Grubu yeniden adlandır"
+
+#: program/localization/tr_TR/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "Grubu sil"
+
+#: program/localization/tr_TR/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Öncekileri göster"
+
+#: program/localization/tr_TR/labels.inc:firstpage
+msgid "Show first page"
+msgstr "İlkini göster"
+
+#: program/localization/tr_TR/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Sonrakileri göster"
+
+#: program/localization/tr_TR/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Sonuncuyu göster"
+
+#: program/localization/tr_TR/labels.inc:group
+msgid "Group"
+msgstr "Grup"
+
+#: program/localization/tr_TR/labels.inc:groups
+msgid "Groups"
+msgstr "Gruplar"
+
+#: program/localization/tr_TR/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Adresler"
+
+#: program/localization/tr_TR/labels.inc:import
+msgid "Import"
+msgstr "İçe aktar"
+
+#: program/localization/tr_TR/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Kişileri içe aktar"
+
+#: program/localization/tr_TR/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Dosyadan içe aktar:"
+
+#: program/localization/tr_TR/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "Yeni kişiler eklenecek adres defteri:"
+
+#: program/localization/tr_TR/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Tüm adres defterinin yerine geçsin"
+
+#: program/localization/tr_TR/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Mevcut bir adres defterindeki kişileri yükleyebilirsiniz.<br/><a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> dosyalarından"
+"adresleri içe aktarmayı destekliyoruz."
+
+#: program/localization/tr_TR/labels.inc:done
+msgid "Done"
+msgstr "Tamam"
+
+#: program/localization/tr_TR/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Ayarlar"
+
+#: program/localization/tr_TR/labels.inc:preferences
+msgid "Preferences"
+msgstr "Tercihler"
+
+#: program/localization/tr_TR/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Kullanıcı tercihleri"
+
+#: program/localization/tr_TR/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Kullanıcı tercihlerini düzenle"
+
+#: program/localization/tr_TR/labels.inc:identities
+msgid "Identities"
+msgstr "Kimlikler"
+
+#: program/localization/tr_TR/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Bu hesap için kimlikleri düzenle"
+
+#: program/localization/tr_TR/labels.inc:newidentity
+msgid "New identity"
+msgstr "Yeni kimlik"
+
+#: program/localization/tr_TR/labels.inc:newitem
+msgid "New item"
+msgstr "Yeni öğe"
+
+#: program/localization/tr_TR/labels.inc:edititem
+msgid "Edit item"
+msgstr "Öğe düzenle"
+
+#: program/localization/tr_TR/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML görüntüle"
+
+#: program/localization/tr_TR/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Varsayılan Karakter Kümesi"
+
+#: program/localization/tr_TR/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML Posta"
+
+#: program/localization/tr_TR/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Tarihi kısaltarak göster"
+
+#: program/localization/tr_TR/labels.inc:setdefault
+msgid "Set default"
+msgstr "Varsayılan olarak ata"
+
+#: program/localization/tr_TR/labels.inc:autodetect
+msgid "Auto"
+msgstr "Otomatik"
+
+#: program/localization/tr_TR/labels.inc:language
+msgid "Language"
+msgstr "Dil"
+
+#: program/localization/tr_TR/labels.inc:timezone
+msgid "Time zone"
+msgstr "Saat dilimi"
+
+#: program/localization/tr_TR/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Bir sayfadaki satır sayısı"
+
+#: program/localization/tr_TR/labels.inc:signature
+msgid "Signature"
+msgstr "İmza"
+
+#: program/localization/tr_TR/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Yaz saati uygulaması"
+
+#: program/localization/tr_TR/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "HTML postaları oluştur"
+
+#: program/localization/tr_TR/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "sadece HTML postaları yanıtlarken"
+
+#: program/localization/tr_TR/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML imza"
+
+#: program/localization/tr_TR/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Önizleme panelini göster"
+
+#: program/localization/tr_TR/labels.inc:skin
+msgid "Interface skin"
+msgstr "Arayüz görünümü"
+
+#: program/localization/tr_TR/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Oturumu kapatınca Çöpü temizle"
+
+#: program/localization/tr_TR/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Oturumu kapatınca Gelen Kutusunu sıklaştır"
+
+#: program/localization/tr_TR/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Kullanıcı Arayüzü"
+
+#: program/localization/tr_TR/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Sunucu Ayarları"
+
+#: program/localization/tr_TR/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Posta Kutusu Görünümü"
+
+#: program/localization/tr_TR/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Alındı onayları"
+
+#: program/localization/tr_TR/labels.inc:askuser
+msgid "ask me"
+msgstr "kullanıcıya sor"
+
+#: program/localization/tr_TR/labels.inc:autosend
+msgid "send receipt"
+msgstr "otomatik olarak gönder"
+
+#: program/localization/tr_TR/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "adres defterimdekilere alındı onayı gönder, diğerlerini bana sor"
+
+#: program/localization/tr_TR/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "adres defterimdekilere alındı onayı gönder, diğerlerini gözardı et"
+
+#: program/localization/tr_TR/labels.inc:ignore
+msgid "ignore"
+msgstr "gözardı et"
+
+#: program/localization/tr_TR/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Silinen postaları okunmuş olarak işaretle"
+
+#: program/localization/tr_TR/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Postaları silmek yerine silinecek olarak işaretle"
+
+#: program/localization/tr_TR/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Silinmiş postaları gösterme"
+
+#: program/localization/tr_TR/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Postaların çöpe taşınmasında sorun çıkarsa, postaları sil"
+
+#: program/localization/tr_TR/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Uzaktan yüklenen resimleri göster"
+
+#: program/localization/tr_TR/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "bilinen göndericilerden"
+
+#: program/localization/tr_TR/labels.inc:always
+msgid "always"
+msgstr "her zaman"
+
+#: program/localization/tr_TR/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Postanın ekindeki resimleri postanın altında göster"
+
+#: program/localization/tr_TR/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Taslağı otomatik kaydet:"
+
+#: program/localization/tr_TR/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "her $n dakikada bir"
+
+#: program/localization/tr_TR/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Yeni postaları denetle:"
+
+#: program/localization/tr_TR/labels.inc:never
+msgid "never"
+msgstr "asla"
+
+#: program/localization/tr_TR/labels.inc:immediately
+msgid "immediately"
+msgstr "hemen"
+
+#: program/localization/tr_TR/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Posta Görüntüleme"
+
+#: program/localization/tr_TR/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Yeni Posta Oluşturma"
+
+#: program/localization/tr_TR/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Eklenti isimleri"
+
+#: program/localization/tr_TR/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Tam RFC 2231 (Thunderbird)"
+
+#: program/localization/tr_TR/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/tr_TR/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Tam RFC 2047 (diğer)"
+
+#: program/localization/tr_TR/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "8 bitlik karakterler için MIME kodlaması kullan"
+
+#: program/localization/tr_TR/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Gelişmiş seçenekler"
+
+#: program/localization/tr_TR/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Yeni posta geldiğinde web tarayıcı penceresine odaklan."
+
+#: program/localization/tr_TR/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Tüm klasörlerdeki yeni postaları denetle"
+
+#: program/localization/tr_TR/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Posta silindikten/taşındıktan sonra sıradaki postayı göster"
+
+#: program/localization/tr_TR/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Ana Seçenekler"
+
+#: program/localization/tr_TR/labels.inc:section
+msgid "Section"
+msgstr "Bölüm"
+
+#: program/localization/tr_TR/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Bakım"
+
+#: program/localization/tr_TR/labels.inc:newmessage
+msgid "New Message"
+msgstr "Yeni Posta"
+
+#: program/localization/tr_TR/labels.inc:listoptions
+msgid "List Options"
+msgstr "Liste Seçenekleri"
+
+#: program/localization/tr_TR/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "İmza Seçenekleri"
+
+#: program/localization/tr_TR/labels.inc:whenreplying
+msgid "When replying"
+msgstr "Yanıtlarken"
+
+#: program/localization/tr_TR/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "yeni postayı alıntı metninin üstünden başlat"
+
+#: program/localization/tr_TR/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "yeni postayı alıntı metninden sonra başlat"
+
+#: program/localization/tr_TR/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "Yanıtlarken önceki imzaları sil"
+
+#: program/localization/tr_TR/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Otomatik olarak imza ekle"
+
+#: program/localization/tr_TR/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "sadece yeni postalarda"
+
+#: program/localization/tr_TR/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "sadece yanıtlar ve yönlendirmelerde"
+
+#: program/localization/tr_TR/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "Yanıtlarken veya yönlendirirken imzayı yerleştir"
+
+#: program/localization/tr_TR/labels.inc:belowquote
+msgid "below the quote"
+msgstr "alıntının altına"
+
+#: program/localization/tr_TR/labels.inc:abovequote
+msgid "above the quote"
+msgstr "alıntının üstüne"
+
+#: program/localization/tr_TR/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "İmza ekle"
+
+#: program/localization/tr_TR/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Önzilemede görünen postaları okunmuş işaretle"
+
+#: program/localization/tr_TR/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "$n saniye sonra"
+
+#: program/localization/tr_TR/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Her zaman alındı onayı iste"
+
+#: program/localization/tr_TR/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Her zaman teslimat durumu bildirisi iste"
+
+#: program/localization/tr_TR/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Yanıtları, yanıtlanan postanın bulunduğu klasöre kaydet"
+
+#: program/localization/tr_TR/labels.inc:defaultaddressbook
+msgid "Add new contacts to the selected addressbook"
+msgstr "Yeni kişileri seçili adres defterine ekle"
+
+#: program/localization/tr_TR/labels.inc:spellcheckbeforesend
+msgid "Check spelling before sending a message"
+msgstr "Posta göndermeden önce yazım denetimi yap"
+
+#: program/localization/tr_TR/labels.inc:folder
+msgid "Folder"
+msgstr "Klasör"
+
+#: program/localization/tr_TR/labels.inc:foldername
+msgid "Folder name"
+msgstr "Klasör ismi"
+
+#: program/localization/tr_TR/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Abonelik"
+
+#: program/localization/tr_TR/labels.inc:messagecount
+msgid "Messages"
+msgstr "Postalar"
+
+#: program/localization/tr_TR/labels.inc:create
+msgid "Create"
+msgstr "Oluştur"
+
+#: program/localization/tr_TR/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Yeni klasör oluştur"
+
+#: program/localization/tr_TR/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Klasörleri düzenle"
+
+#: program/localization/tr_TR/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Özel klasörler"
+
+#: program/localization/tr_TR/labels.inc:properties
+msgid "Properties"
+msgstr "Özellikler"
+
+#: program/localization/tr_TR/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Klasör özellikleri"
+
+#: program/localization/tr_TR/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Üst klasör"
+
+#: program/localization/tr_TR/labels.inc:location
+msgid "Location"
+msgstr "Konum"
+
+#: program/localization/tr_TR/labels.inc:info
+msgid "Information"
+msgstr "Bilgi"
+
+#: program/localization/tr_TR/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Klasör büyüklüğünü öğrenmek için tıklayın"
+
+#: program/localization/tr_TR/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Abonelik durumunu değiştirmek için tıklayın"
+
+#: program/localization/tr_TR/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Klasör Türü"
+
+#: program/localization/tr_TR/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "Kişisel Klasör"
+
+#: program/localization/tr_TR/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "Diğer Kullanıcıların Klasörü"
+
+#: program/localization/tr_TR/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "Genel Klasör"
+
+#: program/localization/tr_TR/labels.inc:sortby
+msgid "Sort by"
+msgstr "Sırala"
+
+#: program/localization/tr_TR/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Artarak"
+
+#: program/localization/tr_TR/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Azalarak"
+
+#: program/localization/tr_TR/labels.inc:undo
+msgid "Undo"
+msgstr "Geri al"
+
+#: program/localization/tr_TR/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/tr_TR/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/tr_TR/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/tr_TR/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/tr_TR/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unicode"
+
+#: program/localization/tr_TR/labels.inc:english
+msgid "English"
+msgstr "İngilizce "
+
+#: program/localization/tr_TR/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Batı Avrupa"
+
+#: program/localization/tr_TR/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Doğu Avrupa"
+
+#: program/localization/tr_TR/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Güneydoğu Avrupa"
+
+#: program/localization/tr_TR/labels.inc:baltic
+msgid "Baltic"
+msgstr "Baltık"
+
+#: program/localization/tr_TR/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Kiril"
+
+#: program/localization/tr_TR/labels.inc:arabic
+msgid "Arabic"
+msgstr "Arapça"
+
+#: program/localization/tr_TR/labels.inc:greek
+msgid "Greek"
+msgstr "Yunanca"
+
+#: program/localization/tr_TR/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "İbranice"
+
+#: program/localization/tr_TR/labels.inc:turkish
+msgid "Turkish"
+msgstr "Türkçe"
+
+#: program/localization/tr_TR/labels.inc:nordic
+msgid "Nordic"
+msgstr "İskandinav"
+
+#: program/localization/tr_TR/labels.inc:thai
+msgid "Thai"
+msgstr "Tay Dili"
+
+#: program/localization/tr_TR/labels.inc:celtic
+msgid "Celtic"
+msgstr "Keltik"
+
+#: program/localization/tr_TR/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Vietnamca"
+
+#: program/localization/tr_TR/labels.inc:japanese
+msgid "Japanese"
+msgstr "Japonca"
+
+#: program/localization/tr_TR/labels.inc:korean
+msgid "Korean"
+msgstr "Korece"
+
+#: program/localization/tr_TR/labels.inc:chinese
+msgid "Chinese"
+msgstr "Çince"

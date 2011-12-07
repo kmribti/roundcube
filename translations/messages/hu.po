@@ -1,0 +1,582 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/hu_HU/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: hu_HU\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/hu_HU/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Sikertelen belépés"
+
+#: program/localization/hu_HU/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "A böngésző nem támogatja a sütik használatát"
+
+#: program/localization/hu_HU/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Érvénytelen vagy lejárt munkamenet"
+
+#: program/localization/hu_HU/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Nem sikerült csatlakozni az IMAP szerverhez"
+
+#: program/localization/hu_HU/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Szerverhiba!"
+
+#: program/localization/hu_HU/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Szerverhiba: $msg"
+
+#: program/localization/hu_HU/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Adatbázishiba!"
+
+#: program/localization/hu_HU/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "A műveletet nem sikerült végrehajtani. A mappa írásvédett."
+
+#: program/localization/hu_HU/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "A műveletet nem sikerült végrehajtani. Hozzáférés megtagadva."
+
+#: program/localization/hu_HU/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Érvénytelen kérés! Az adatok nem lettek elmentve."
+
+#: program/localization/hu_HU/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "A fiók nem tartalmaz leveleket"
+
+#: program/localization/hu_HU/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Sikeres kijelentkezés. Viszontlátásra!"
+
+#: program/localization/hu_HU/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "A fiók üres"
+
+#: program/localization/hu_HU/messages.inc:loading
+msgid "Loading..."
+msgstr "Betöltés..."
+
+#: program/localization/hu_HU/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Fájl feltöltése..."
+
+#: program/localization/hu_HU/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Fájlok feltöltése..."
+
+#: program/localization/hu_HU/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Az adatok betöltése..."
+
+#: program/localization/hu_HU/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Új üzenetek keresése..."
+
+#: program/localization/hu_HU/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Az üzenet küldése..."
+
+#: program/localization/hu_HU/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Az üzenet elküldve"
+
+#: program/localization/hu_HU/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Az üzenet mentése..."
+
+#: program/localization/hu_HU/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Az üzenet elmentve a Piszkozatokhoz"
+
+#: program/localization/hu_HU/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "A mentés sikerült"
+
+#: program/localization/hu_HU/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "A kapcsolat hozzáadása a címjegyzékhez megtörtént"
+
+#: program/localization/hu_HU/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Ezzel az e-mail címmel már létezik kapcsolat"
+
+#: program/localization/hu_HU/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Ezzel a névvel már létezik kapcsolat"
+
+#: program/localization/hu_HU/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Biztonsági okokból a távoli képek letöltése tiltott"
+
+#: program/localization/hu_HU/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Az üzenet titkosított, ezért nem megjeleníthető"
+
+#: program/localization/hu_HU/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Nem találhatóak kapcsolatok"
+
+#: program/localization/hu_HU/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "A kiválasztott kapcsolat nem található"
+
+#: program/localization/hu_HU/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Adjon meg keresőkifejezéseket a kapcsolatok közti kereséshez"
+
+#: program/localization/hu_HU/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Az üzenet elküldése nem sikerült"
+
+#: program/localization/hu_HU/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Kérem várjon még $sec másodpercet az üzenet elküldése előtt"
+
+#: program/localization/hu_HU/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Hiba történt az elküldött üzenet mentése közben"
+
+#: program/localization/hu_HU/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "A mentés során hiba lépett fel"
+
+#: program/localization/hu_HU/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Az üzenet(ek)et nem sikerült áthelyezni"
+
+#: program/localization/hu_HU/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Az üzenet(ek)et nem sikerült másolni"
+
+#: program/localization/hu_HU/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Az üzenet(ek)et nem sikerült törölni"
+
+#: program/localization/hu_HU/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Az üzenet(ek)et nem sikerült megjelölni"
+
+#: program/localization/hu_HU/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Biztos, hogy törölni szeretné a kijelölt kapcsolato(ka)t?"
+
+#: program/localization/hu_HU/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Biztos, hogy törölni szeretné a kijelölt csoportot?"
+
+#: program/localization/hu_HU/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Biztos, hogy törölni szeretné a kijelölt üzenete(ke)t?"
+
+#: program/localization/hu_HU/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Biztos, hogy törölni szeretné ezt a mappát?"
+
+#: program/localization/hu_HU/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Biztos benne, hogy az összes üzenet törölhető?"
+
+#: program/localization/hu_HU/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Kapcsolat(ok) törlése..."
+
+#: program/localization/hu_HU/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Csoport törlése..."
+
+#: program/localization/hu_HU/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Mappa törlése..."
+
+#: program/localization/hu_HU/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Mappa mozgatása..."
+
+#: program/localization/hu_HU/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Feliratkozás a mappára..."
+
+#: program/localization/hu_HU/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Leiratkozás a mappáról..."
+
+#: program/localization/hu_HU/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Az űrlap hiányosan lett kitöltve"
+
+#: program/localization/hu_HU/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Adjon meg egy valós e-mail címet"
+
+#: program/localization/hu_HU/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Adjon meg egy nevet"
+
+#: program/localization/hu_HU/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Adja meg a papír méretét"
+
+#: program/localization/hu_HU/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Kérem adja meg a feladó e-mail címét"
+
+#: program/localization/hu_HU/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Legalább egy címzettet adjon meg"
+
+#: program/localization/hu_HU/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "A Tárgy mező üres. Szeretné most kitölteni?"
+
+#: program/localization/hu_HU/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Elküldi az üzenetet üresen?"
+
+#: program/localization/hu_HU/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Az üzenet még nem lett elküldve. Eldobja az üzenetet?"
+
+#: program/localization/hu_HU/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Adjon meg egy LDAP szervert a kereséshez"
+
+#: program/localization/hu_HU/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Adja meg a kapcsolat nevét vagy e-mail címét"
+
+#: program/localization/hu_HU/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Még nem került feltöltésre minden csatolmány. Kérem várjon vagy"
+"állítsa le a feltöltést!"
+
+#: program/localization/hu_HU/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr üzenet található"
+
+#: program/localization/hu_HU/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "$nr találat"
+
+#: program/localization/hu_HU/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Nincs találat"
+
+#: program/localization/hu_HU/messages.inc:searching
+msgid "Searching..."
+msgstr "Keresés..."
+
+#: program/localization/hu_HU/messages.inc:checking
+msgid "Checking..."
+msgstr "Ellenőrzés..."
+
+#: program/localization/hu_HU/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Nem található helyesírási hiba"
+
+#: program/localization/hu_HU/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "A mappa sikeresen törölve"
+
+#: program/localization/hu_HU/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Sikerült a mappára feliratkozni"
+
+#: program/localization/hu_HU/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Sikerült a mappáról leiratkozni"
+
+#: program/localization/hu_HU/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Mappa sikeresen törölve"
+
+#: program/localization/hu_HU/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Mappa sikeresen kiürítve"
+
+#: program/localization/hu_HU/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Törölve"
+
+#: program/localization/hu_HU/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Formázás eltávolítása az üzenetből..."
+
+#: program/localization/hu_HU/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "A levelek a szerverről nem tölthetők le"
+
+#: program/localization/hu_HU/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Feltöltés sikertelen"
+
+#: program/localization/hu_HU/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "A feltöltött fájl mérete meghaladja a maximális $size méretet"
+
+#: program/localization/hu_HU/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "$nr cím sikeresen másolva"
+
+#: program/localization/hu_HU/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Egyetlen cím sem másolható"
+
+#: program/localization/hu_HU/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Ez a címforrás csak olvasható"
+
+#: program/localization/hu_HU/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "A kapcsolat címe nem menthető"
+
+#: program/localization/hu_HU/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Üzenet(ek) mozgatása..."
+
+#: program/localization/hu_HU/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Üzenet(ek) másolása..."
+
+#: program/localization/hu_HU/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Kapcsolat(ok) másolása..."
+
+#: program/localization/hu_HU/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Üzenet(ek) törlése...."
+
+#: program/localization/hu_HU/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Üzenet(ek) megjelölése..."
+
+#: program/localization/hu_HU/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Kapcsolat(ok) hozzáadása a csoporthoz..."
+
+#: program/localization/hu_HU/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Kapcsolat(ok) törlése a csoportból..."
+
+#: program/localization/hu_HU/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Az olvasási visszaigazolás el lett küldve"
+
+#: program/localization/hu_HU/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Az olvasási visszaigazolást nem sikerült elküldeni"
+
+#: program/localization/hu_HU/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Az azonosító nem törölhető, lennie kell legalább egy azonosítónak!"
+
+#: program/localization/hu_HU/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "A mappa neve tiltott karaktert tartalmaz"
+
+#: program/localization/hu_HU/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Kérjük válassza ki a feltölteni kívánt fájlt"
+
+#: program/localization/hu_HU/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "A kiválasztott címjegyzék nem írható"
+
+#: program/localization/hu_HU/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "A kapcsolat hozzáadása a csoporthoz sikeresen megtörtént"
+
+#: program/localization/hu_HU/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "A kapcsolat törlése a csoportból sikeresen megtörtént"
+
+#: program/localization/hu_HU/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Importálás folyamatban, kérem várjon..."
+
+#: program/localization/hu_HU/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Az importálás sikertelen! A feltöltött állomány nem egy érvényes"
+"vCard fájl."
+
+#: program/localization/hu_HU/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Sikeresen importálásra került $inserted kapcsolat, kihagyva $skipped"
+"már létező bejegyzés</b>:<p><em>$names</em></p>"
+
+#: program/localization/hu_HU/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Kihagyva $skipped már létező bejegyzés</b>"
+
+#: program/localization/hu_HU/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "A művelet nem megengedett!"
+
+#: program/localization/hu_HU/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "A kiválasztott feladónál hiányzik az e-mail cím!"
+
+#: program/localization/hu_HU/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Az egyszerű szöveges formátumra való váltás az összes formázás"
+"elvesztésével jár. Biztosan folytatja?"
+
+#: program/localization/hu_HU/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Végzetes konfigurációs hiba történt, azonnal lépjen kapcsolatba az"
+"üzemeltetővel. <b>Az üzenet nem küldhető el.</b>"
+
+#: program/localization/hu_HU/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP hiba ($code): Sikertelen kapcsolódás a szerverhez"
+
+#: program/localization/hu_HU/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP hiba ($code): Sikertelen bejelentkezés"
+
+#: program/localization/hu_HU/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP hiba ($code): Nem sikerült a feladó beállítása: \"$from\" ($msg)"
+
+#: program/localization/hu_HU/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP hiba ($code): Nem sikerült a következő címzett hozzáadása: \"$to\""
+"($msg)"
+
+#: program/localization/hu_HU/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP hiba ($code): A címzettlista feldolgozása sikertelen"
+
+#: program/localization/hu_HU/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP hiba ($code): $msg"
+
+#: program/localization/hu_HU/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Helytelen formátumú e-mail cím: $email"
+
+#: program/localization/hu_HU/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Túl sok a címzett. Csökkentse a címzettek számát maximum $max címre!"
+
+#: program/localization/hu_HU/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "A csoport létszáma meghaladja a maximum $max főt"
+
+#: program/localization/hu_HU/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Belső hiba történt, kérjük próbálja újra!"
+
+#: program/localization/hu_HU/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Hiba a kapcsolat(ok) törlésekor"
+
+#: program/localization/hu_HU/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Kapcsolat(ok) sikeresen törölve"
+
+#: program/localization/hu_HU/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Nem sikerült a törölt kapcsolat(ok) helyreállítása"
+
+#: program/localization/hu_HU/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Kapcsolat(ok) sikeresen helyreállítva"
+
+#: program/localization/hu_HU/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Csoport sikeresen törölve"
+
+#: program/localization/hu_HU/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Csoport sikeresen átnevezve"
+
+#: program/localization/hu_HU/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Csoport sikeresen létrehozva"
+
+#: program/localization/hu_HU/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Mentett keresés sikeresen törölve"
+
+#: program/localization/hu_HU/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Nem sikerült törölni a mentett keresést"
+
+#: program/localization/hu_HU/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Keresés sikeresen mentve"
+
+#: program/localization/hu_HU/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Nem sikerült létrehozni mentett keresést"
+
+#: program/localization/hu_HU/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Üzenet(ek) sikeresen törölve"
+
+#: program/localization/hu_HU/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Üzenet(ek) sikeresen átmozgatva"
+
+#: program/localization/hu_HU/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Üzenet(ek) sikeresen másolva"
+
+#: program/localization/hu_HU/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Üzenet(ek) sikeresen megjelölve"
+
+#: program/localization/hu_HU/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Az automatikus kiegészítéshez legalább $min karakter szükséges"
+
+#: program/localization/hu_HU/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Több egyezés található. Kérem adjon meg további karaktereket!"
+
+#: program/localization/hu_HU/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "A név nem lehet üres"
+
+#: program/localization/hu_HU/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "A név túl hosszú"
+
+#: program/localization/hu_HU/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Mappa sikeresen frissítve"
+
+#: program/localization/hu_HU/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Mappa sikeresen létrehozva"
+
+#: program/localization/hu_HU/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Érvénytelen képformátum"
+
+#: program/localization/hu_HU/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "Az üzenetben helyesírási hibák találhatók"
+
+#: program/localization/hu_HU/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "Nem sikerült a mappa létrehozása/mozgatása a kijelölt mappába. Nincs"
+"jogosultsága a művelethez!"

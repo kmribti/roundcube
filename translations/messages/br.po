@@ -1,0 +1,239 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/br/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: br\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/br/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Fazi dilesadur"
+
+#: program/localization/br/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "N'eus ket c'hoant toupinoù Hor merder"
+
+#: program/localization/br/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Direizh eo hoc'h dalc'h pe echu eo"
+
+#: program/localization/br/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Fazi kevreadur ouzh ar servijer IMAP"
+
+#: program/localization/br/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Kemennadoù ebet er voest lizhiri"
+
+#: program/localization/br/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Digevreet hoc'h eus mat. Kenavo !"
+
+#: program/localization/br/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Boest lizhiri dileun"
+
+#: program/localization/br/messages.inc:loading
+msgid "Loading..."
+msgstr "O kargañ..."
+
+#: program/localization/br/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "O kargañ roadennoù..."
+
+#: program/localization/br/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "O Gwiriañ kemennadoù nevez..."
+
+#: program/localization/br/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "O kas ar c'hemennad..."
+
+#: program/localization/br/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Kaset eo mat hoc'h c'hemennad"
+
+#: program/localization/br/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "O gwarediñ ar c'hemennad..."
+
+#: program/localization/br/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Kemennad gwaredet dindan Brouilhedoù"
+
+#: program/localization/br/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Gwarediñ graet"
+
+#: program/localization/br/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Darempred ouzhpennet er c'harned chomlec'hioù"
+
+#: program/localization/br/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Bout a ra un darempred gant memes postel elektronek"
+
+#: program/localization/br/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Evit gwarantiñ hoc'h buhez prevez, stanket eo bet skeudennoù pell er"
+"c'hemennad-se."
+
+#: program/localization/br/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Rineget eo ar c'hemennad, ha ne c'hall ket bezañ diskouez. Ma Digarezit !"
+
+#: program/localization/br/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "N'eo ket bet kavet darempred ebet"
+
+#: program/localization/br/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "N'eo ket bet kavet an darempred goulennet"
+
+#: program/localization/br/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "N'eo ket bet kaset ar c'hemennad"
+
+#: program/localization/br/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Fazi en deus graet reuz en hoc'h gwarediñ"
+
+#: program/localization/br/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "N'eus ket tu da zilec'hiañ ar c'hemennad"
+
+#: program/localization/br/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "N'eus ket tu da zilemel ar c'hemennad"
+
+#: program/localization/br/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "C'hoant hoc'h eus da zilemel an darempred(où) diuzet ?"
+
+#: program/localization/br/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "C'hoant hoc'h eus da zilemel ar c'hemennad(où) diuzet ?"
+
+#: program/localization/br/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "C'hoant hoc'h eus da skarzhañ ar renkell-se ?"
+
+#: program/localization/br/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "C'hoant hoc'h eus da skarzhañ an holl kemennad eus ar renkell-se ?"
+
+#: program/localization/br/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "N'eo ket leuniet ar furmskrid penn-da-benn"
+
+#: program/localization/br/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Termenit ur postel elektronek mat mar plij ganeoc'h"
+
+#: program/localization/br/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Termenit un anv mar plij ganeoc'h"
+
+#: program/localization/br/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Termenit ur ment pajenn mar plij ganeoc'h"
+
+#: program/localization/br/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Ouzhpennit ur resever da nebeutañ mar plij ganeoc'h"
+
+#: program/localization/br/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Dileun eo ar maezienn « Sujed » . C'hoant hoc'h eus da leuniañ anezhiñ"
+"diouzhtu ?"
+
+#: program/localization/br/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Kas ar c'hemennad hep testenn ?"
+
+#: program/localization/br/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "N'eo ket bet kaset ar c'hemennad. C'hoant hoc'h eus dilezel ar"
+"c'hemennad-se ?"
+
+#: program/localization/br/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Dizuit ur servijer LDAP evit ar glask"
+
+#: program/localization/br/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Darempred ebet kavet"
+
+#: program/localization/br/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Skrivit un anv darempred pe ur postel elektronek"
+
+#: program/localization/br/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr kemennad kavet"
+
+#: program/localization/br/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Disoc'h ebet gant ar glask"
+
+#: program/localization/br/messages.inc:searching
+msgid "Searching..."
+msgstr "O klask..."
+
+#: program/localization/br/messages.inc:checking
+msgid "Checking..."
+msgstr "O gwiriañ..."
+
+#: program/localization/br/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Fazi ebet kavet"
+
+#: program/localization/br/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Renkell skarzhet"
+
+#: program/localization/br/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Dilemet mat"
+
+#: program/localization/br/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "O tilemel furmaozañ..."
+
+#: program/localization/br/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "N'us ket tu da gargañ ar c'hemennad adalek ar servijer"
+
+#: program/localization/br/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Fazi o treuzkas ar restr"
+
+#: program/localization/br/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Re vras eo ar restr treuzkaset $size"
+
+#: program/localization/br/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Kopiañ mat $nr chomlec'h"
+
+#: program/localization/br/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Ne c'hall ket kopiañ chomlec'hioù"
+
+#: program/localization/br/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Lenn hepken eo an tarzh chomlec'h se"
+
+#: program/localization/br/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Ne c'haller ket gwarediñ chomlec'h darempred"

@@ -1,0 +1,584 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/da_DK/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: da_DK\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/da_DK/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Det lykkedes ikke at logge på"
+
+#: program/localization/da_DK/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Din browser accepterer ikke cookies"
+
+#: program/localization/da_DK/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Din session er ugyldig eller udløbet"
+
+#: program/localization/da_DK/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Forbindelse til IMAP serveren fejlede"
+
+#: program/localization/da_DK/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Server fejl!"
+
+#: program/localization/da_DK/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Server fejl: $msg"
+
+#: program/localization/da_DK/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Database fejl!"
+
+#: program/localization/da_DK/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Kunne ikke udføre den ønskede handling. Mappen er skrivebeskyttet"
+
+#: program/localization/da_DK/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Kunne ikke udføre den ønskede handling. Adgang nægtet"
+
+#: program/localization/da_DK/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Ugyldig forespørgsel! Ingen data blev gemt."
+
+#: program/localization/da_DK/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Der blev ikke fundet nogen beskeder i denne postkasse"
+
+#: program/localization/da_DK/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Du er nu logget af webmail. Farvel så længe!"
+
+#: program/localization/da_DK/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Postkassen er tom!"
+
+#: program/localization/da_DK/messages.inc:loading
+msgid "Loading..."
+msgstr "Indlæser..."
+
+#: program/localization/da_DK/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Uploader fil..."
+
+#: program/localization/da_DK/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Uploader filer..."
+
+#: program/localization/da_DK/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Indlæser data..."
+
+#: program/localization/da_DK/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Tjekker for nye beskeder..."
+
+#: program/localization/da_DK/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Sender besked..."
+
+#: program/localization/da_DK/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Beskeden blev sendt korrekt"
+
+#: program/localization/da_DK/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Gemmer besked..."
+
+#: program/localization/da_DK/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Beskeden er gemt i kladdemappen"
+
+#: program/localization/da_DK/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Det lykkedes at gemme"
+
+#: program/localization/da_DK/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Kontakten blev tilføjet adressebogen"
+
+#: program/localization/da_DK/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Der er allerede en kontakt med denne e-mail adresse"
+
+#: program/localization/da_DK/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "En kontakt med samme navn eksisterer allerede."
+
+#: program/localization/da_DK/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "For at beskytte dit privatliv er billeder fra internetservere blokeret i"
+"denne besked."
+
+#: program/localization/da_DK/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Beskeden er krypteret og kan ikke vises. Beklager!"
+
+#: program/localization/da_DK/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Ingen kontakter blev fundet"
+
+#: program/localization/da_DK/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Den søgte kontakt blev ikke fundet"
+
+#: program/localization/da_DK/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Indtast ord for at finde kontakten"
+
+#: program/localization/da_DK/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Beskeden kunne ikke sendes"
+
+#: program/localization/da_DK/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Vent venligst $sec sekunder før du sender denne besked"
+
+#: program/localization/da_DK/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Der opstod en fejl da den sendte besked blev gemt"
+
+#: program/localization/da_DK/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Der opstod en fejl ved lagring af data"
+
+#: program/localization/da_DK/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Beskeden kunne ikke flyttes"
+
+#: program/localization/da_DK/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Beskeden kunne ikke kopieres"
+
+#: program/localization/da_DK/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Beskeden kunne ikke slettes"
+
+#: program/localization/da_DK/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Beskeden kunne ikke markeres"
+
+#: program/localization/da_DK/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Vil du virkelig slette den/de valgte kontakt(er)?"
+
+#: program/localization/da_DK/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Vil du virkelig slette den/de valgte gruppe(r)?"
+
+#: program/localization/da_DK/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Vil du virkelig slette den/de valgte besked(er)?"
+
+#: program/localization/da_DK/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Vil du virkelig slette den valgte mappe"
+
+#: program/localization/da_DK/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Vil du virkelig slette alle beskeder i denne mappe?"
+
+#: program/localization/da_DK/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Sletter kontakt(er)..."
+
+#: program/localization/da_DK/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Sletter gruppe..."
+
+#: program/localization/da_DK/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Sletter mappen..."
+
+#: program/localization/da_DK/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Flytter mappen..."
+
+#: program/localization/da_DK/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Abonnere på mappen..."
+
+#: program/localization/da_DK/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Fjerner abonnement på mappen..."
+
+#: program/localization/da_DK/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Formularen var ikke fuldstændig fyldt ud"
+
+#: program/localization/da_DK/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Indtast venligst en gyldig e-mail adresse"
+
+#: program/localization/da_DK/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Angiv venligst et navn"
+
+#: program/localization/da_DK/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Angiv sidestørrelsen"
+
+#: program/localization/da_DK/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Indtast venligst afsenders email-adresse"
+
+#: program/localization/da_DK/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Indtast mindst én modtager"
+
+#: program/localization/da_DK/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "'Emne'-feltet er tomt. Kunne du tænke dig at skrive et nu?"
+
+#: program/localization/da_DK/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Send denne besked uden tekst?"
+
+#: program/localization/da_DK/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Beskeden er ikke blevet sendt. Vil du kassere din besked?"
+
+#: program/localization/da_DK/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Vælg venligst hvilken LDAP-server der skal søges i"
+
+#: program/localization/da_DK/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Ingen kontakter blev fundet"
+
+#: program/localization/da_DK/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Indtast venligst en kontakts navn eller e-mail adresse"
+
+#: program/localization/da_DK/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Ikke alle vedhæftede filer er blevet uploadet endnu. Vent venligst eller"
+"afbryd upload."
+
+#: program/localization/da_DK/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "Fandt $nr beskeder"
+
+#: program/localization/da_DK/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Søgningen fandt ingen beskeder"
+
+#: program/localization/da_DK/messages.inc:searching
+msgid "Searching..."
+msgstr "Søger..."
+
+#: program/localization/da_DK/messages.inc:checking
+msgid "Checking..."
+msgstr "Tjekker..."
+
+#: program/localization/da_DK/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Ingen stavefejl fundet"
+
+#: program/localization/da_DK/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Mappen er slettet"
+
+#: program/localization/da_DK/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Mappe abonnement oprettet"
+
+#: program/localization/da_DK/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Mappe abonnement opsagt"
+
+#: program/localization/da_DK/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Mappen er tømt"
+
+#: program/localization/da_DK/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Mappen er blevet optimeret"
+
+#: program/localization/da_DK/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Slettet"
+
+#: program/localization/da_DK/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Fjerner formatering fra besked..."
+
+#: program/localization/da_DK/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Beskeden kunne ikke hentes fra serveren"
+
+#: program/localization/da_DK/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Den indsatte fil fejlede"
+
+#: program/localization/da_DK/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Den indsatte fil fylder mere end det maksimale på $size"
+
+#: program/localization/da_DK/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Det lykkedes at kopiere $nr adresser"
+
+#: program/localization/da_DK/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Kunne ikke kopiere adresserne"
+
+#: program/localization/da_DK/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Denne adressekilde er kun til læsning"
+
+#: program/localization/da_DK/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Kunne ikke gemme kontakt adressen"
+
+#: program/localization/da_DK/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Flytter besked..."
+
+#: program/localization/da_DK/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Kopierer besked..."
+
+#: program/localization/da_DK/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Kopierer kontakt(er)..."
+
+#: program/localization/da_DK/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Sletter besked(er)..."
+
+#: program/localization/da_DK/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Markerer besked(er)..."
+
+#: program/localization/da_DK/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Tilføjer kontakt(er) til gruppen..."
+
+#: program/localization/da_DK/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Fjerner kontakt(er) fra gruppen..."
+
+#: program/localization/da_DK/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Kvittering for læsning er sendt"
+
+#: program/localization/da_DK/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Kvitteringen kunne ikke sendes"
+
+#: program/localization/da_DK/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Du kan ikke slette denne identitet, da det er den eneste der er tilbage."
+
+#: program/localization/da_DK/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Mappe-navnet indeholder ugyldige tegn"
+
+#: program/localization/da_DK/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Vælg venligst den fil der skal uploades"
+
+#: program/localization/da_DK/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Der kan ikke skrives i den valgte adressebog"
+
+#: program/localization/da_DK/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Succesfuldt tilføjet kontakten til denne gruppe"
+
+#: program/localization/da_DK/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Succesfuldt fjernet kontakten fra denne gruppe"
+
+#: program/localization/da_DK/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Importerer, vent venligst..."
+
+#: program/localization/da_DK/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Fejl i importen! Den uploadede fil er ikke en gyldig vCard fil."
+
+#: program/localization/da_DK/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Importerede $inserted kontakter, sprang over $skipped allerede"
+"eksisterende kontakter</b>:<p><em>$names</em></p>"
+
+#: program/localization/da_DK/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Skipped $skipped existing entries</b>"
+
+#: program/localization/da_DK/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Handlingen er ikke tilladt!"
+
+#: program/localization/da_DK/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Der mangler en email-adresse i den valgte identitet"
+
+#: program/localization/da_DK/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Al formatering af teksten forsvinder, hvis der skiftes til ren tekst. Vil"
+"du fortsætte?"
+
+#: program/localization/da_DK/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Der er opstået en fatal konfigurationsfejl. Kontakt venligst din"
+"system-administrator med det samme.<b>Din besked kunne ikke afsendes.</b>"
+
+#: program/localization/da_DK/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP fejl ($code): Forbindelsen til serveren afbrudt"
+
+#: program/localization/da_DK/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP fejl ($code): Autenticering fejlede"
+
+#: program/localization/da_DK/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP fejl ($code): Kunne ikke afsende som \"$from\" ($msg)"
+
+#: program/localization/da_DK/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP fejl ($code): Kunne ikke tilføje modtageren \"$to\" ($msg)"
+
+#: program/localization/da_DK/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP fejl: kan ikke fortolke listen af modtagere"
+
+#: program/localization/da_DK/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP fejl: $msg"
+
+#: program/localization/da_DK/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Ugyldig email-adresse: $email"
+
+#: program/localization/da_DK/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "For mange modtagere. Reducer antallet af modtagere til $max"
+
+#: program/localization/da_DK/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Antallet af gruppemedlemmer overstiger maksimum på $max"
+
+#: program/localization/da_DK/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Der opstod en intern fejl - prøv venligst igen"
+
+#: program/localization/da_DK/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Kunne ikke slette kontakt(er)"
+
+#: program/localization/da_DK/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Kontakt(er) slettet"
+
+#: program/localization/da_DK/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Kunne ikke gendanne slettede kontakt(er)."
+
+#: program/localization/da_DK/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Kontakt(er) gendannet."
+
+#: program/localization/da_DK/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Gruppen er slettet"
+
+#: program/localization/da_DK/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Gruppen er omdøbt"
+
+#: program/localization/da_DK/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Gruppen er oprettet"
+
+#: program/localization/da_DK/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Gemt søgning slettet."
+
+#: program/localization/da_DK/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Kunne ikke slette Gemt søgning."
+
+#: program/localization/da_DK/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Gemt søgning oprettet."
+
+#: program/localization/da_DK/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Kunne ikke oprette Gemt søgning."
+
+#: program/localization/da_DK/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Besked(er) slettet"
+
+#: program/localization/da_DK/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Besked(er) flyttet"
+
+#: program/localization/da_DK/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Besked(er) kopieret"
+
+#: program/localization/da_DK/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Besked(er) markeret"
+
+#: program/localization/da_DK/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Du skal min. indtaste $min for at benytte autoopslag"
+
+#: program/localization/da_DK/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Flere emner fundet. Task flere bogstaver."
+
+#: program/localization/da_DK/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Navnet kan ikke været tomt"
+
+#: program/localization/da_DK/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Navnet er for langt"
+
+#: program/localization/da_DK/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Mappen er opdateret"
+
+#: program/localization/da_DK/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Mappen er oprettet"
+
+#: program/localization/da_DK/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Ikke et gyldigt billedformat"
+
+#: program/localization/da_DK/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "Der er fundet stavefejl i beskeden."
+
+#: program/localization/da_DK/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "Kan ikke oprette/flytte mappe ind i valgt mappe. Ingen adgangsrettigheder."
+
+#: program/localization/da_DK/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "Besked delen er for stor til at behandle."

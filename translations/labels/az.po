@@ -1,0 +1,1538 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/az_AZ/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: az_AZ\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/az_AZ/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "$product-a xoş gəldiniz!"
+
+#: program/localization/az_AZ/labels.inc:username
+msgid "Username"
+msgstr "İstifadəçi adı"
+
+#: program/localization/az_AZ/labels.inc:password
+msgid "Password"
+msgstr "Şifrə"
+
+#: program/localization/az_AZ/labels.inc:server
+msgid "Server"
+msgstr "Server"
+
+#: program/localization/az_AZ/labels.inc:login
+msgid "Login"
+msgstr "Daxil ol"
+
+#: program/localization/az_AZ/labels.inc:logout
+msgid "Logout"
+msgstr "Çıx"
+
+#: program/localization/az_AZ/labels.inc:mail
+msgid "Mail"
+msgstr "Poçt"
+
+#: program/localization/az_AZ/labels.inc:settings
+msgid "Settings"
+msgstr "Nizamlamalar"
+
+#: program/localization/az_AZ/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Ünvanlar"
+
+#: program/localization/az_AZ/labels.inc:inbox
+msgid "Inbox"
+msgstr "Gələnlər"
+
+#: program/localization/az_AZ/labels.inc:drafts
+msgid "Drafts"
+msgstr "Qaralamalar"
+
+#: program/localization/az_AZ/labels.inc:sent
+msgid "Sent"
+msgstr "Göndərilənlər"
+
+#: program/localization/az_AZ/labels.inc:trash
+msgid "Trash"
+msgstr "Səbət"
+
+#: program/localization/az_AZ/labels.inc:junk
+msgid "Junk"
+msgstr "Spam"
+
+#: program/localization/az_AZ/labels.inc:subject
+msgid "Subject"
+msgstr "Mövzu"
+
+#: program/localization/az_AZ/labels.inc:from
+msgid "From"
+msgstr "Kimdən"
+
+#: program/localization/az_AZ/labels.inc:to
+msgid "To"
+msgstr "Kimə"
+
+#: program/localization/az_AZ/labels.inc:cc
+msgid "Cc"
+msgstr "Nüsxə"
+
+#: program/localization/az_AZ/labels.inc:bcc
+msgid "Bcc"
+msgstr "Gizli"
+
+#: program/localization/az_AZ/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Cavabla"
+
+#: program/localization/az_AZ/labels.inc:followupto
+msgid "Followup-To"
+msgstr "İzlə"
+
+#: program/localization/az_AZ/labels.inc:date
+msgid "Date"
+msgstr "Tarix"
+
+#: program/localization/az_AZ/labels.inc:size
+msgid "Size"
+msgstr "Ölçü"
+
+#: program/localization/az_AZ/labels.inc:priority
+msgid "Priority"
+msgstr "Vaciblik"
+
+#: program/localization/az_AZ/labels.inc:organization
+msgid "Company"
+msgstr "Təşkilat"
+
+#: program/localization/az_AZ/labels.inc:readstatus
+msgid "Read status"
+msgstr "Statusu oxu"
+
+#: program/localization/az_AZ/labels.inc:mailboxlist
+#: program/localization/az_AZ/labels.inc:folders
+msgid "Folders"
+msgstr "Qovluqlar"
+
+#: program/localization/az_AZ/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "$count mesajdan $from - $to arası mesajlar"
+
+#: program/localization/az_AZ/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Müzakirə: $from - $to Toplam: $count"
+
+#: program/localization/az_AZ/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Məktub: $nr / $count"
+
+#: program/localization/az_AZ/labels.inc:copy
+msgid "Copy"
+msgstr "Kopyala"
+
+#: program/localization/az_AZ/labels.inc:move
+msgid "Move"
+msgstr "Köçür"
+
+#: program/localization/az_AZ/labels.inc:moveto
+msgid "Move to..."
+msgstr "Burada köçür..."
+
+#: program/localization/az_AZ/labels.inc:download
+msgid "Download"
+msgstr "Endir"
+
+#: program/localization/az_AZ/labels.inc:filename
+msgid "File name"
+msgstr "Faylın adı"
+
+#: program/localization/az_AZ/labels.inc:filesize
+msgid "File size"
+msgstr "Faylın ölçüsü"
+
+#: program/localization/az_AZ/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Ünvanlara əlavə et"
+
+#: program/localization/az_AZ/labels.inc:sun
+msgid "Sun"
+msgstr "B"
+
+#: program/localization/az_AZ/labels.inc:mon
+msgid "Mon"
+msgstr "Be"
+
+#: program/localization/az_AZ/labels.inc:tue
+msgid "Tue"
+msgstr "Ç"
+
+#: program/localization/az_AZ/labels.inc:wed
+msgid "Wed"
+msgstr "Ça"
+
+#: program/localization/az_AZ/labels.inc:thu
+msgid "Thu"
+msgstr "C"
+
+#: program/localization/az_AZ/labels.inc:fri
+msgid "Fri"
+msgstr "Ca"
+
+#: program/localization/az_AZ/labels.inc:sat
+msgid "Sat"
+msgstr "Ş"
+
+#: program/localization/az_AZ/labels.inc:sunday
+msgid "Sunday"
+msgstr "Bazar"
+
+#: program/localization/az_AZ/labels.inc:monday
+msgid "Monday"
+msgstr "Bazar ertəsi"
+
+#: program/localization/az_AZ/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Çərçənbə"
+
+#: program/localization/az_AZ/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Çərşənbə axşamı"
+
+#: program/localization/az_AZ/labels.inc:thursday
+msgid "Thursday"
+msgstr "Cümə"
+
+#: program/localization/az_AZ/labels.inc:friday
+msgid "Friday"
+msgstr "Cümə axşamı"
+
+#: program/localization/az_AZ/labels.inc:saturday
+msgid "Saturday"
+msgstr "Şənbə"
+
+#: program/localization/az_AZ/labels.inc:jan
+msgid "Jan"
+msgstr "Yan"
+
+#: program/localization/az_AZ/labels.inc:feb
+msgid "Feb"
+msgstr "Fev"
+
+#: program/localization/az_AZ/labels.inc:mar
+msgid "Mar"
+msgstr "Mar"
+
+#: program/localization/az_AZ/labels.inc:apr
+msgid "Apr"
+msgstr "Apr"
+
+#: program/localization/az_AZ/labels.inc:may
+#: program/localization/az_AZ/labels.inc:longmay
+msgid "May"
+msgstr "May"
+
+#: program/localization/az_AZ/labels.inc:jun
+msgid "Jun"
+msgstr "İyn"
+
+#: program/localization/az_AZ/labels.inc:jul
+msgid "Jul"
+msgstr "İyl"
+
+#: program/localization/az_AZ/labels.inc:aug
+msgid "Aug"
+msgstr "Avq"
+
+#: program/localization/az_AZ/labels.inc:sep
+msgid "Sep"
+msgstr "Sen"
+
+#: program/localization/az_AZ/labels.inc:oct
+msgid "Oct"
+msgstr "Okt"
+
+#: program/localization/az_AZ/labels.inc:nov
+msgid "Nov"
+msgstr "Noy"
+
+#: program/localization/az_AZ/labels.inc:dec
+msgid "Dec"
+msgstr "Dek"
+
+#: program/localization/az_AZ/labels.inc:longjan
+msgid "January"
+msgstr "Yanvar"
+
+#: program/localization/az_AZ/labels.inc:longfeb
+msgid "February"
+msgstr "Fevral"
+
+#: program/localization/az_AZ/labels.inc:longmar
+msgid "March"
+msgstr "Mart"
+
+#: program/localization/az_AZ/labels.inc:longapr
+msgid "April"
+msgstr "Aprel"
+
+#: program/localization/az_AZ/labels.inc:longjun
+msgid "June"
+msgstr "İyun"
+
+#: program/localization/az_AZ/labels.inc:longjul
+msgid "July"
+msgstr "İyul"
+
+#: program/localization/az_AZ/labels.inc:longaug
+msgid "August"
+msgstr "Avqust"
+
+#: program/localization/az_AZ/labels.inc:longsep
+msgid "September"
+msgstr "Sentyabr"
+
+#: program/localization/az_AZ/labels.inc:longoct
+msgid "October"
+msgstr "Oktyabr"
+
+#: program/localization/az_AZ/labels.inc:longnov
+msgid "November"
+msgstr "Noyabr"
+
+#: program/localization/az_AZ/labels.inc:longdec
+msgid "December"
+msgstr "Dekabr"
+
+#: program/localization/az_AZ/labels.inc:today
+msgid "Today"
+msgstr "Bu gün"
+
+#: program/localization/az_AZ/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Gələnləri yoxla"
+
+#: program/localization/az_AZ/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Yeni məktub"
+
+#: program/localization/az_AZ/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Göndərənə cavabla"
+
+#: program/localization/az_AZ/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Hamıya cavabla"
+
+#: program/localization/az_AZ/labels.inc:replyall
+msgid "Reply all"
+msgstr "Hamıya cavab"
+
+#: program/localization/az_AZ/labels.inc:replylist
+msgid "Reply list"
+msgstr "Cavab siyahısı"
+
+#: program/localization/az_AZ/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Yönəlt"
+
+#: program/localization/az_AZ/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Sil"
+
+#: program/localization/az_AZ/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Məktubu səbətə köçür"
+
+#: program/localization/az_AZ/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Çap et"
+
+#: program/localization/az_AZ/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Əvvəlki məktubu göstər"
+
+#: program/localization/az_AZ/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Birinci məktubu göstər"
+
+#: program/localization/az_AZ/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Sonrakı məktubu göstər"
+
+#: program/localization/az_AZ/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Sonuncu məktubu göstər"
+
+#: program/localization/az_AZ/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Məktublar siyahısına qayıt"
+
+#: program/localization/az_AZ/labels.inc:viewsource
+msgid "Show source"
+msgstr "Mənbəni göstər"
+
+#: program/localization/az_AZ/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Məktubları işarələ"
+
+#: program/localization/az_AZ/labels.inc:markread
+msgid "As read"
+msgstr "Oxunmuş"
+
+#: program/localization/az_AZ/labels.inc:markunread
+msgid "As unread"
+msgstr "Oxunmamış"
+
+#: program/localization/az_AZ/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Qeyd et"
+
+#: program/localization/az_AZ/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Qeydi çıxar"
+
+#: program/localization/az_AZ/labels.inc:messageactions
+msgid "messageactions"
+msgstr "Əlavə işlər..."
+
+#: program/localization/az_AZ/labels.inc:select
+msgid "Select"
+msgstr "Seçin"
+
+#: program/localization/az_AZ/labels.inc:all
+msgid "All"
+msgstr "Hamısını"
+
+#: program/localization/az_AZ/labels.inc:none
+#: program/localization/az_AZ/labels.inc:nonesort
+msgid "None"
+msgstr "Yoxdur"
+
+#: program/localization/az_AZ/labels.inc:currpage
+msgid "Current page"
+msgstr "Hazırki səhifəni"
+
+#: program/localization/az_AZ/labels.inc:unread
+msgid "Unread"
+msgstr "Oxunmamışları"
+
+#: program/localization/az_AZ/labels.inc:flagged
+msgid "Flagged"
+msgstr "İşarəliləri"
+
+#: program/localization/az_AZ/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Cavabsızları"
+
+#: program/localization/az_AZ/labels.inc:deleted
+msgid "Deleted"
+msgstr "Silinmişləri"
+
+#: program/localization/az_AZ/labels.inc:invert
+msgid "Invert"
+msgstr "İnvertliləri"
+
+#: program/localization/az_AZ/labels.inc:filter
+msgid "Filter"
+msgstr "Süzgəc"
+
+#: program/localization/az_AZ/labels.inc:list
+msgid "List"
+msgstr "Siyahı"
+
+#: program/localization/az_AZ/labels.inc:threads
+msgid "Threads"
+msgstr "Müzakirələr"
+
+#: program/localization/az_AZ/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Hamısını aç"
+
+#: program/localization/az_AZ/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Oxunmamışları aç"
+
+#: program/localization/az_AZ/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Hamısını bük"
+
+#: program/localization/az_AZ/labels.inc:threaded
+msgid "Threaded"
+msgstr "Müzakirə"
+
+#: program/localization/az_AZ/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Müzakirəni aç"
+
+#: program/localization/az_AZ/labels.inc:do_expand
+msgid "all threads"
+msgstr "bütün müzakirələr"
+
+#: program/localization/az_AZ/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "yalnız oxunmamış məktublarla"
+
+#: program/localization/az_AZ/labels.inc:fromto
+msgid "From/To"
+msgstr "Göndərən/Qəbul edən"
+
+#: program/localization/az_AZ/labels.inc:flag
+msgid "Flag"
+msgstr "Bayrağ"
+
+#: program/localization/az_AZ/labels.inc:attachment
+msgid "Attachment"
+msgstr "Əlavə"
+
+#: program/localization/az_AZ/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Göndərilmə tarixi"
+
+#: program/localization/az_AZ/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Çatdırılma tarixi"
+
+#: program/localization/az_AZ/labels.inc:asc
+msgid "ascending"
+msgstr "Çoxalan"
+
+#: program/localization/az_AZ/labels.inc:desc
+msgid "descending"
+msgstr "Azalan"
+
+#: program/localization/az_AZ/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Sütunlar"
+
+#: program/localization/az_AZ/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Sütunları çeşidlə"
+
+#: program/localization/az_AZ/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Çeşidləmə qaydası"
+
+#: program/localization/az_AZ/labels.inc:listmode
+msgid "List view mode"
+msgstr "Görünüş rejimi"
+
+#: program/localization/az_AZ/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Qovluq işləri..."
+
+#: program/localization/az_AZ/labels.inc:compact
+msgid "Compact"
+msgstr "Sıx"
+
+#: program/localization/az_AZ/labels.inc:empty
+msgid "Empty"
+msgstr "Boşalt"
+
+#: program/localization/az_AZ/labels.inc:quota
+msgid "Disk usage"
+msgstr "Disk istifadəsi"
+
+#: program/localization/az_AZ/labels.inc:unknown
+msgid "unknown"
+msgstr "naməlum"
+
+#: program/localization/az_AZ/labels.inc:unlimited
+msgid "unlimited"
+msgstr "limitsiz"
+
+#: program/localization/az_AZ/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Sürətli axtarış"
+
+#: program/localization/az_AZ/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Axtarışı yenilə"
+
+#: program/localization/az_AZ/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Axtarış variantları"
+
+#: program/localization/az_AZ/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Bütün məktub"
+
+#: program/localization/az_AZ/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Yeni pəncərədə aç"
+
+#: program/localization/az_AZ/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Saxla (.eml)"
+
+#: program/localization/az_AZ/labels.inc:compose
+msgid "Compose a message"
+msgstr "Məktub yaz"
+
+#: program/localization/az_AZ/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Yeni kimi redaktə et"
+
+#: program/localization/az_AZ/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Qaralama saxla"
+
+#: program/localization/az_AZ/labels.inc:sendmessage
+msgid "Send now"
+msgstr "İndi göndər"
+
+#: program/localization/az_AZ/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Fayl əlavə et"
+
+#: program/localization/az_AZ/labels.inc:charset
+msgid "Charset"
+msgstr "Kodlaşdırma"
+
+#: program/localization/az_AZ/labels.inc:editortype
+msgid "Editor type"
+msgstr "Redaktor"
+
+#: program/localization/az_AZ/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Cavab sorğusu"
+
+#: program/localization/az_AZ/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Çatdırılma statusu haqda bildiriş"
+
+#: program/localization/az_AZ/labels.inc:editidents
+msgid "Edit identities"
+msgstr "İdentifikasiyanı dəyiş"
+
+#: program/localization/az_AZ/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Orfoqrafiyanı yoxla"
+
+#: program/localization/az_AZ/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Redaktəni davam et"
+
+#: program/localization/az_AZ/labels.inc:revertto
+msgid "Revert to"
+msgstr "Dəyişiklikləri ləğv et"
+
+#: program/localization/az_AZ/labels.inc:attachments
+msgid "Attachments"
+msgstr "Əlavələr"
+
+#: program/localization/az_AZ/labels.inc:upload
+msgid "Upload"
+msgstr "Yüklə"
+
+#: program/localization/az_AZ/labels.inc:close
+msgid "Close"
+msgstr "Bağla"
+
+#: program/localization/az_AZ/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Məktub xüsusiyyətləri..."
+
+#: program/localization/az_AZ/labels.inc:low
+msgid "Low"
+msgstr "Alçaq"
+
+#: program/localization/az_AZ/labels.inc:lowest
+msgid "Lowest"
+msgstr "Çox alçaq"
+
+#: program/localization/az_AZ/labels.inc:normal
+msgid "Normal"
+msgstr "Normal"
+
+#: program/localization/az_AZ/labels.inc:high
+msgid "High"
+msgstr "Yüksək"
+
+#: program/localization/az_AZ/labels.inc:highest
+msgid "Highest"
+msgstr "Çox yüksək"
+
+#: program/localization/az_AZ/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(mövzu yoxdur)"
+
+#: program/localization/az_AZ/labels.inc:showimages
+msgid "Display images"
+msgstr "Şəkilləri göstər"
+
+#: program/localization/az_AZ/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "$sender-dən olan məktublarda həmişə şəkilləri göstər"
+
+#: program/localization/az_AZ/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/az_AZ/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Mətn"
+
+#: program/localization/az_AZ/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Məktubu saxla..."
+
+#: program/localization/az_AZ/labels.inc:dontsave
+msgid "don't save"
+msgstr "saxlama"
+
+#: program/localization/az_AZ/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Faylın maksimal ölçüsü: $size"
+
+#: program/localization/az_AZ/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Kopya əlavə et"
+
+#: program/localization/az_AZ/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Gizli kopya əlavə et"
+
+#: program/localization/az_AZ/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Yönəltmə əlavə et"
+
+#: program/localization/az_AZ/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "\"İzlə\" əlavə et"
+
+#: program/localization/az_AZ/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Məktubu göndərən onu oxuduğunuz haqda sorğu almaq istəyir."
+"Göndərilsin?"
+
+#: program/localization/az_AZ/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Oxunulma haqda soğru"
+
+#: program/localization/az_AZ/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Bu məktubunuzun oxunulduğu haqda sorğudur"
+
+#: program/localization/az_AZ/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Bu sorğu yalnız qəbul edilən tərəfindən məktubun açıldığına"
+"göstərir. Onun oxunulduğuna zəmanət vermir."
+
+#: program/localization/az_AZ/labels.inc:name
+msgid "Display Name"
+msgstr "Göstərilən ad"
+
+#: program/localization/az_AZ/labels.inc:firstname
+msgid "First Name"
+msgstr "Adı"
+
+#: program/localization/az_AZ/labels.inc:surname
+msgid "Last Name"
+msgstr "Soyadı"
+
+#: program/localization/az_AZ/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Orta adı"
+
+#: program/localization/az_AZ/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "Prefiks"
+
+#: program/localization/az_AZ/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "Suffiks"
+
+#: program/localization/az_AZ/labels.inc:nickname
+msgid "Nickname"
+msgstr "Ləqəb"
+
+#: program/localization/az_AZ/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Vəzifə"
+
+#: program/localization/az_AZ/labels.inc:department
+msgid "Department"
+msgstr "Departament"
+
+#: program/localization/az_AZ/labels.inc:gender
+msgid "Gender"
+msgstr "Cins"
+
+#: program/localization/az_AZ/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Qız adı"
+
+#: program/localization/az_AZ/labels.inc:email
+msgid "Email"
+msgstr "E-Poçt"
+
+#: program/localization/az_AZ/labels.inc:phone
+msgid "Phone"
+msgstr "Telefon"
+
+#: program/localization/az_AZ/labels.inc:address
+msgid "Address"
+msgstr "Ünvan"
+
+#: program/localization/az_AZ/labels.inc:street
+msgid "Street"
+msgstr "Küçə"
+
+#: program/localization/az_AZ/labels.inc:locality
+msgid "City"
+msgstr "Şəhər"
+
+#: program/localization/az_AZ/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "ZIP kod"
+
+#: program/localization/az_AZ/labels.inc:region
+msgid "State/Province"
+msgstr "Region"
+
+#: program/localization/az_AZ/labels.inc:country
+msgid "Country"
+msgstr "Ölkə"
+
+#: program/localization/az_AZ/labels.inc:birthday
+msgid "Birthday"
+msgstr "Ad günü"
+
+#: program/localization/az_AZ/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "İldönümü"
+
+#: program/localization/az_AZ/labels.inc:website
+msgid "Website"
+msgstr "Vebsayt"
+
+#: program/localization/az_AZ/labels.inc:instantmessenger
+msgid "IM"
+msgstr "IM"
+
+#: program/localization/az_AZ/labels.inc:notes
+msgid "Notes"
+msgstr "Qeydlər"
+
+#: program/localization/az_AZ/labels.inc:male
+msgid "male"
+msgstr "kişi"
+
+#: program/localization/az_AZ/labels.inc:female
+msgid "female"
+msgstr "qadın"
+
+#: program/localization/az_AZ/labels.inc:manager
+msgid "Manager"
+msgstr "Menecer"
+
+#: program/localization/az_AZ/labels.inc:assistant
+#: program/localization/az_AZ/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Köməkçi"
+
+#: program/localization/az_AZ/labels.inc:spouse
+msgid "Spouse"
+msgstr "Ər-arvad"
+
+#: program/localization/az_AZ/labels.inc:typehome
+msgid "Home"
+msgstr "Ev"
+
+#: program/localization/az_AZ/labels.inc:typework
+msgid "Work"
+msgstr "İş"
+
+#: program/localization/az_AZ/labels.inc:typeother
+msgid "Other"
+msgstr "Başqa"
+
+#: program/localization/az_AZ/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Mobil"
+
+#: program/localization/az_AZ/labels.inc:typemain
+msgid "Main"
+msgstr "Əsas"
+
+#: program/localization/az_AZ/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Ev faksı"
+
+#: program/localization/az_AZ/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "İş faksı"
+
+#: program/localization/az_AZ/labels.inc:typecar
+msgid "Car"
+msgstr "Maşın"
+
+#: program/localization/az_AZ/labels.inc:typepager
+msgid "Pager"
+msgstr "Peycer"
+
+#: program/localization/az_AZ/labels.inc:typevideo
+msgid "Video"
+msgstr "Video"
+
+#: program/localization/az_AZ/labels.inc:addfield
+msgid "Add field..."
+msgstr "Sahə əlavə et"
+
+#: program/localization/az_AZ/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Ünvanlara əlavə et"
+
+#: program/localization/az_AZ/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Ünvanı redaktə et"
+
+#: program/localization/az_AZ/labels.inc:contacts
+msgid "Contacts"
+msgstr "Əlaqələr"
+
+#: program/localization/az_AZ/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Kontakt xüsusiyyətləri"
+
+#: program/localization/az_AZ/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Şəxsi məlumat"
+
+#: program/localization/az_AZ/labels.inc:edit
+msgid "Edit"
+msgstr "Redaktə et"
+
+#: program/localization/az_AZ/labels.inc:cancel
+msgid "Cancel"
+msgstr "Ləğv et"
+
+#: program/localization/az_AZ/labels.inc:save
+msgid "Save"
+msgstr "Saxla"
+
+#: program/localization/az_AZ/labels.inc:delete
+msgid "Delete"
+msgstr "Sil"
+
+#: program/localization/az_AZ/labels.inc:rename
+msgid "Rename"
+msgstr "Adlandır"
+
+#: program/localization/az_AZ/labels.inc:addphoto
+msgid "Add"
+msgstr "Əlavə et"
+
+#: program/localization/az_AZ/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Adı dəyiş"
+
+#: program/localization/az_AZ/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Yeni ünvan kartı əlavə et"
+
+#: program/localization/az_AZ/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Seçilmiş ünvanları sil"
+
+#: program/localization/az_AZ/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Seçilmiş ünvanlara məktub yaz"
+
+#: program/localization/az_AZ/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "$count ünvanının $from - $to arası"
+
+#: program/localization/az_AZ/labels.inc:print
+msgid "Print"
+msgstr "Çap et"
+
+#: program/localization/az_AZ/labels.inc:export
+msgid "Export"
+msgstr "İxrac et"
+
+#: program/localization/az_AZ/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Ünvanları vCards formatında ixrac et"
+
+#: program/localization/az_AZ/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Ünvanlar qrupunu yarat"
+
+#: program/localization/az_AZ/labels.inc:groupactions
+msgid "groupactions"
+msgstr "Ünvanlar qrupu üçün işlər"
+
+#: program/localization/az_AZ/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Əvvəlkini göstər"
+
+#: program/localization/az_AZ/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Birincini göstər"
+
+#: program/localization/az_AZ/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Sonrakını göstər"
+
+#: program/localization/az_AZ/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Sonuncunu göstər"
+
+#: program/localization/az_AZ/labels.inc:group
+msgid "Group"
+msgstr "Qrup"
+
+#: program/localization/az_AZ/labels.inc:groups
+msgid "Groups"
+msgstr "Qruplar"
+
+#: program/localization/az_AZ/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Şəxsi ünvanlar"
+
+#: program/localization/az_AZ/labels.inc:import
+msgid "Import"
+msgstr "İdxal"
+
+#: program/localization/az_AZ/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Ünvanların idxalı "
+
+#: program/localization/az_AZ/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Fayldan idxal:"
+
+#: program/localization/az_AZ/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Ünvan kitabçasını dəyiş"
+
+#: program/localization/az_AZ/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Siz ünvanları mövcud ünvan kitabçasından yükləyə bilərsiniz."
+"Hal-hazırda ünvanların idxalını <a"
+"href=\"http://az.wikipedia.org/wiki/vCard\">vCard</a> formatında"
+"dəstəkləyirik."
+
+#: program/localization/az_AZ/labels.inc:done
+msgid "Done"
+msgstr "Bitdi"
+
+#: program/localization/az_AZ/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Nizamlamaları"
+
+#: program/localization/az_AZ/labels.inc:preferences
+msgid "Preferences"
+msgstr "Nizamlamalar"
+
+#: program/localization/az_AZ/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "İstifadəçi nizamlamaları"
+
+#: program/localization/az_AZ/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "İstifadəçi nizamlamalarını redaktə et"
+
+#: program/localization/az_AZ/labels.inc:identities
+msgid "Identities"
+msgstr "Kimliklər"
+
+#: program/localization/az_AZ/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Bu hesab üçün kimlikləri idarə et"
+
+#: program/localization/az_AZ/labels.inc:newidentity
+msgid "New identity"
+msgstr "Yeni kimlik"
+
+#: program/localization/az_AZ/labels.inc:newitem
+msgid "New item"
+msgstr "Yeni maddə"
+
+#: program/localization/az_AZ/labels.inc:edititem
+msgid "Edit item"
+msgstr "Maddəni redaktə et"
+
+#: program/localization/az_AZ/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML-də göstər"
+
+#: program/localization/az_AZ/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "İlkin vəziyyətdəki kodlaşdırma"
+
+#: program/localization/az_AZ/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML məktub"
+
+#: program/localization/az_AZ/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Qəşəng tarixlər"
+
+#: program/localization/az_AZ/labels.inc:setdefault
+msgid "Set default"
+msgstr "İlkin vəziyyətə qaytar"
+
+#: program/localization/az_AZ/labels.inc:autodetect
+msgid "Auto"
+msgstr "Avto"
+
+#: program/localization/az_AZ/labels.inc:language
+msgid "Language"
+msgstr "Dil"
+
+#: program/localization/az_AZ/labels.inc:timezone
+msgid "Time zone"
+msgstr "Saat qurşağı"
+
+#: program/localization/az_AZ/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Səhifədə sətrlər"
+
+#: program/localization/az_AZ/labels.inc:signature
+msgid "Signature"
+msgstr "İmza"
+
+#: program/localization/az_AZ/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Yay vaxtı"
+
+#: program/localization/az_AZ/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "HTML-də mesaj yaz"
+
+#: program/localization/az_AZ/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "yalnız HTML mesajlar ilə cavab"
+
+#: program/localization/az_AZ/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML imza"
+
+#: program/localization/az_AZ/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Prevyu paneli göstər"
+
+#: program/localization/az_AZ/labels.inc:skin
+msgid "Interface skin"
+msgstr "İnterfeys stili"
+
+#: program/localization/az_AZ/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Poçtdan çıxan zaman səbəti təmizlə"
+
+#: program/localization/az_AZ/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Poçtdan çıxan zaman gələnləri sıx"
+
+#: program/localization/az_AZ/labels.inc:uisettings
+msgid "User Interface"
+msgstr "İstifadəçi interfeysi"
+
+#: program/localization/az_AZ/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Server nizamlamaları"
+
+#: program/localization/az_AZ/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Poçt qutusunun görünüşü"
+
+#: program/localization/az_AZ/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Göndərilmə bildirişi"
+
+#: program/localization/az_AZ/labels.inc:askuser
+msgid "ask me"
+msgstr "göndərilmə zamanı istifadəçidən soruş"
+
+#: program/localization/az_AZ/labels.inc:autosend
+msgid "send receipt"
+msgstr "avtomatik göndər"
+
+#: program/localization/az_AZ/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "kontaktlarıma qəbz yolla. Əks halda soruş"
+
+#: program/localization/az_AZ/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "kontaktlarıma qəbz yolla. Əks halda iqnor et"
+
+#: program/localization/az_AZ/labels.inc:ignore
+msgid "ignore"
+msgstr "iqnor"
+
+#: program/localization/az_AZ/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Məktubu siləndə oxunmuş kimi qeyd et"
+
+#: program/localization/az_AZ/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Silmə əvəzi silinmə işarəsilə qeyd et"
+
+#: program/localization/az_AZ/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Silinmiş məktubları göstərmə"
+
+#: program/localization/az_AZ/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Məktubu səbətə köçürmək alınmırsa, silinsin"
+
+#: program/localization/az_AZ/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Silinmiç şəkilləri göstər"
+
+#: program/localization/az_AZ/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "məlum göndərənlərdən"
+
+#: program/localization/az_AZ/labels.inc:always
+msgid "always"
+msgstr "hər zaman"
+
+#: program/localization/az_AZ/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Əlavə olunmuş şəkili məktubun aşağısında göstər"
+
+#: program/localization/az_AZ/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Qaralamanı avtomatik saxla"
+
+#: program/localization/az_AZ/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "hər $n dəqiqə(lər)"
+
+#: program/localization/az_AZ/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Yeni məktubları yoxla"
+
+#: program/localization/az_AZ/labels.inc:never
+msgid "never"
+msgstr "heç vaxt"
+
+#: program/localization/az_AZ/labels.inc:immediately
+msgid "immediately"
+msgstr "dərhal"
+
+#: program/localization/az_AZ/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Məktubların göstərilməsi"
+
+#: program/localization/az_AZ/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Məktubların yazılması"
+
+#: program/localization/az_AZ/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Bərkidilənlərin adları"
+
+#: program/localization/az_AZ/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Full RFC 2231 (Thunderbird)"
+
+#: program/localization/az_AZ/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/az_AZ/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Full RFC 2047 (başqa)"
+
+#: program/localization/az_AZ/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "8-bitli simvollar üçün MIME istifadə et"
+
+#: program/localization/az_AZ/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Ətraflı nizamlama"
+
+#: program/localization/az_AZ/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Yeni məktub zamanı brauzerin pəncərəsini fokusla"
+
+#: program/localization/az_AZ/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Bütün qovluqlarda yeni məktubları yoxla"
+
+#: program/localization/az_AZ/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Hazırkini sildikdə/köçürdükdə növbəti məktubu göstər"
+
+#: program/localization/az_AZ/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Əsas nizamlamalar"
+
+#: program/localization/az_AZ/labels.inc:section
+msgid "Section"
+msgstr "Bölmə"
+
+#: program/localization/az_AZ/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Xidmət"
+
+#: program/localization/az_AZ/labels.inc:newmessage
+msgid "New Message"
+msgstr "Yeni məktub"
+
+#: program/localization/az_AZ/labels.inc:listoptions
+msgid "List Options"
+msgstr "Nizamlamaların siyahısı"
+
+#: program/localization/az_AZ/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "İmzanın nizamlamaları"
+
+#: program/localization/az_AZ/labels.inc:whenreplying
+msgid "When replying"
+msgstr "Cavab zamanı"
+
+#: program/localization/az_AZ/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "orijinaldan əvvəl yeni məktub yaz"
+
+#: program/localization/az_AZ/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "orijinaldan sonra yeni məktub yaz"
+
+#: program/localization/az_AZ/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "Cavab zamanı imzanı sil"
+
+#: program/localization/az_AZ/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "İmzanı avtomatik əlavə et"
+
+#: program/localization/az_AZ/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "yalnız yeni məktublarda"
+
+#: program/localization/az_AZ/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "Yalnız cavab və yönəldilənlərdə"
+
+#: program/localization/az_AZ/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "Cavab və yönəltmə zamanı imzanı bərkid"
+
+#: program/localization/az_AZ/labels.inc:belowquote
+msgid "below the quote"
+msgstr "sitatdan sonra"
+
+#: program/localization/az_AZ/labels.inc:abovequote
+msgid "above the quote"
+msgstr "sitatdan əvvəl"
+
+#: program/localization/az_AZ/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "İmza əlavə et"
+
+#: program/localization/az_AZ/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Baxılmış şəkilləri oxunmuş kimi qeyd et"
+
+#: program/localization/az_AZ/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "$n saniyədən sonra"
+
+#: program/localization/az_AZ/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Hər zaman çatdırılma bildirişini istə"
+
+#: program/localization/az_AZ/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Hər zaman çatıdrılma haqda statusu istə"
+
+#: program/localization/az_AZ/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Cavab mesajları üçün saxlanılan yer"
+
+#: program/localization/az_AZ/labels.inc:folder
+msgid "Folder"
+msgstr "Qovluq"
+
+#: program/localization/az_AZ/labels.inc:foldername
+msgid "Folder name"
+msgstr "Qovluq adı"
+
+#: program/localization/az_AZ/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "İmzalanıb"
+
+#: program/localization/az_AZ/labels.inc:messagecount
+msgid "Messages"
+msgstr "Məktublar"
+
+#: program/localization/az_AZ/labels.inc:create
+msgid "Create"
+msgstr "Yarad"
+
+#: program/localization/az_AZ/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Yeni qovluq yarad"
+
+#: program/localization/az_AZ/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Qovluqlarla iş"
+
+#: program/localization/az_AZ/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Xüsusi qovluqlar"
+
+#: program/localization/az_AZ/labels.inc:properties
+msgid "Properties"
+msgstr "Xüsusiyyətlər"
+
+#: program/localization/az_AZ/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Qovluq xüsusiyyətləri"
+
+#: program/localization/az_AZ/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Ana qovluq"
+
+#: program/localization/az_AZ/labels.inc:location
+msgid "Location"
+msgstr "Yerləşmə"
+
+#: program/localization/az_AZ/labels.inc:info
+msgid "Information"
+msgstr "Məlumat"
+
+#: program/localization/az_AZ/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Qovluq ölçüsünü öyrənmək üçün vur"
+
+#: program/localization/az_AZ/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Abunəni dəyişmək üçün vurun"
+
+#: program/localization/az_AZ/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Qovluq növü"
+
+#: program/localization/az_AZ/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "Gizli qovluq"
+
+#: program/localization/az_AZ/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "Başqa istifadəçilərin qovluğu"
+
+#: program/localization/az_AZ/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "İctimai qovluq"
+
+#: program/localization/az_AZ/labels.inc:sortby
+msgid "Sort by"
+msgstr "Çeşidlə"
+
+#: program/localization/az_AZ/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Azdan çoxa"
+
+#: program/localization/az_AZ/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Çoxdan aza"
+
+#: program/localization/az_AZ/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/az_AZ/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/az_AZ/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/az_AZ/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/az_AZ/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unicode"
+
+#: program/localization/az_AZ/labels.inc:english
+msgid "English"
+msgstr "İngilis dili"
+
+#: program/localization/az_AZ/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Qərbi Avropa"
+
+#: program/localization/az_AZ/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Şərqi Avropa"
+
+#: program/localization/az_AZ/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Cənub-Şərqi Avropa"
+
+#: program/localization/az_AZ/labels.inc:baltic
+msgid "Baltic"
+msgstr "Baltik"
+
+#: program/localization/az_AZ/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Kirillə"
+
+#: program/localization/az_AZ/labels.inc:arabic
+msgid "Arabic"
+msgstr "Ərəbcə"
+
+#: program/localization/az_AZ/labels.inc:greek
+msgid "Greek"
+msgstr "Yunanca"
+
+#: program/localization/az_AZ/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Yəhudicə"
+
+#: program/localization/az_AZ/labels.inc:turkish
+msgid "Turkish"
+msgstr "Türkcə"
+
+#: program/localization/az_AZ/labels.inc:nordic
+msgid "Nordic"
+msgstr "Skandinav"
+
+#: program/localization/az_AZ/labels.inc:thai
+msgid "Thai"
+msgstr "Tayca"
+
+#: program/localization/az_AZ/labels.inc:celtic
+msgid "Celtic"
+msgstr "Keltcə"
+
+#: program/localization/az_AZ/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Vyetnamca"
+
+#: program/localization/az_AZ/labels.inc:japanese
+msgid "Japanese"
+msgstr "Yaponca"
+
+#: program/localization/az_AZ/labels.inc:korean
+msgid "Korean"
+msgstr "Koreya"
+
+#: program/localization/az_AZ/labels.inc:chinese
+msgid "Chinese"
+msgstr "Çincə"

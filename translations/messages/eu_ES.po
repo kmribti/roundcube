@@ -1,0 +1,260 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/eu_ES/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: eu_ES\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/eu_ES/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Saio sarrerak huts egin du"
+
+#: program/localization/eu_ES/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Zure nabigatzaileak ez ditu cookie-ak onartzen"
+
+#: program/localization/eu_ES/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Zure saioa baliogabea da edo iraungita dago"
+
+#: program/localization/eu_ES/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Huts IMAP zerbitzarira konektatzean"
+
+#: program/localization/eu_ES/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Ez da mezurik aurkitu posta kutxa honetan"
+
+#: program/localization/eu_ES/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Saioa behar bezala amaitu duzu. Agur!"
+
+#: program/localization/eu_ES/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Posta kutxa hutsik dago"
+
+#: program/localization/eu_ES/messages.inc:loading
+msgid "Loading..."
+msgstr "Kargatzen..."
+
+#: program/localization/eu_ES/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Datuak kargatzen..."
+
+#: program/localization/eu_ES/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Mezu berrien bila arakatzen..."
+
+#: program/localization/eu_ES/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Mezua bidaltzen..."
+
+#: program/localization/eu_ES/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Mezua behar bezala bidali da"
+
+#: program/localization/eu_ES/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Mezua gordetzen..."
+
+#: program/localization/eu_ES/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Mezua zirriborroetan gordea"
+
+#: program/localization/eu_ES/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Behar bezala gorde da"
+
+#: program/localization/eu_ES/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Txartela behar bezala gehitu da helbide liburura"
+
+#: program/localization/eu_ES/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "ePosta honetako txartel bat badago dagoeneko"
+
+#: program/localization/eu_ES/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Zure pribazitatea mantentzeko urruneko irudiak blokeatu egin dira."
+
+#: program/localization/eu_ES/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Hau enkriptaturiko mezu bat da eta ezin da bistarazi. Barkatu!"
+
+#: program/localization/eu_ES/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Ez da txartelik aurkitu"
+
+#: program/localization/eu_ES/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Eskatutako txartela ez da aurkitu"
+
+#: program/localization/eu_ES/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Huts mezua bidaltzerakoan"
+
+#: program/localization/eu_ES/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Errorea gertatu da bidalitako mezua gordetzean"
+
+#: program/localization/eu_ES/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Errore bat gertatu da gordetzean"
+
+#: program/localization/eu_ES/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Ezin da mezua mugitu"
+
+#: program/localization/eu_ES/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Ezin da mezua ezabatu"
+
+#: program/localization/eu_ES/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Benetan hautaturiko kontaktuak ezabatu nahi dituzula?"
+
+#: program/localization/eu_ES/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Benetan hautaturiko mezuak ezabatu nahi dituzula?"
+
+#: program/localization/eu_ES/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Benetan Karpeta hau ezabatu nahi duzu?"
+
+#: program/localization/eu_ES/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Benetan karpeta honetako mezu guziak ezabatu nahi dituzu?"
+
+#: program/localization/eu_ES/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Inprimakia ez guztiz bete"
+
+#: program/localization/eu_ES/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Mesedez idatzi baliozko eposta helbide bat"
+
+#: program/localization/eu_ES/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Mesedez izen bat idatzi"
+
+#: program/localization/eu_ES/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Mesedez paper tamaina idatzi"
+
+#: program/localization/eu_ES/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Mesedez behintzat hartzaile bat idatzi"
+
+#: program/localization/eu_ES/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "\"Gaia\" eremua hutsik dago. Bat idatzi nahi al duzu?"
+
+#: program/localization/eu_ES/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Testu gabeko mezu hau bidali?"
+
+#: program/localization/eu_ES/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Mezua ez da bidali. Mezua ezeztatu nahi al duzu?"
+
+#: program/localization/eu_ES/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Mesedez hautatu bilaketa egiteko LDAP zerbitzari bat"
+
+#: program/localization/eu_ES/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Ez da kontakturik aurkitu"
+
+#: program/localization/eu_ES/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Mesedez idatzi kontaktu izen bat edo eposta helbide bat"
+
+#: program/localization/eu_ES/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr mezu aurkiturik"
+
+#: program/localization/eu_ES/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Bilaketak ez du emaitzarik itzuli"
+
+#: program/localization/eu_ES/messages.inc:searching
+msgid "Searching..."
+msgstr "Bilatzen..."
+
+#: program/localization/eu_ES/messages.inc:checking
+msgid "Checking..."
+msgstr "Arakatzen..."
+
+#: program/localization/eu_ES/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Ez da ortografia errorerik aurkitu"
+
+#: program/localization/eu_ES/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Karpeta behar bezala ezabatu da"
+
+#: program/localization/eu_ES/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Behar bezala ezabatu da"
+
+#: program/localization/eu_ES/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Mezuaren formatua ezabatzen"
+
+#: program/localization/eu_ES/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Ezin da zerbitzaritik mezua kargatu"
+
+#: program/localization/eu_ES/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Huts fitxategia eransterakoan"
+
+#: program/localization/eu_ES/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Erantsi nahi duzun fitxategian $size tamaina muga gainditzen du"
+
+#: program/localization/eu_ES/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Ondo kopiatu dira $nr helbideak"
+
+#: program/localization/eu_ES/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Ezin da helbiderik kopiatu"
+
+#: program/localization/eu_ES/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Helbide iturburua irakurtzeko soilik da"
+
+#: program/localization/eu_ES/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Ezin da kontaktuaren helbidea gorde"
+
+#: program/localization/eu_ES/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Mezua mugitzen..."
+
+#: program/localization/eu_ES/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Ondo bidalia irakurritako agiria"
+
+#: program/localization/eu_ES/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Ezin da agiria bidali"
+
+#: program/localization/eu_ES/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Ezin da izaera hau ezabatu, zure bakarra da"
+
+#: program/localization/eu_ES/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Karpeta izenak debekatutako karaktereak ditu"

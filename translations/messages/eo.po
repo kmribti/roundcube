@@ -1,0 +1,257 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/eo/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: eo\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/eo/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Malsukcesis ensaluti"
+
+#: program/localization/eo/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Via foliumilo ne akceptas kuketojn"
+
+#: program/localization/eo/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Via seanco estas nevalida aŭ finita"
+
+#: program/localization/eo/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Konekto kun IMAP-servilo malsukcesis"
+
+#: program/localization/eo/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Neniu mesaĝo en ĉi tiu dosierujo"
+
+#: program/localization/eo/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Vi sukcese finis la seancon. Ĝis!"
+
+#: program/localization/eo/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Dosierujo estas malplena"
+
+#: program/localization/eo/messages.inc:loading
+msgid "Loading..."
+msgstr "Ŝarganta..."
+
+#: program/localization/eo/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Ŝarganta datumojn..."
+
+#: program/localization/eo/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Kontrolanta, ĉu  novaj mesaĝoj..."
+
+#: program/localization/eo/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Sedanta mesaĝon..."
+
+#: program/localization/eo/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Mesaĝo estas sendita sukcese"
+
+#: program/localization/eo/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Savanta mesaĝon..."
+
+#: program/localization/eo/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Mesaĝo savita en Malnetujo"
+
+#: program/localization/eo/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Sukcese savis"
+
+#: program/localization/eo/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Sukcese aldonis kontakton al adresaro"
+
+#: program/localization/eo/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Kontakto kun ĉi tiu adreso jam ekzistas"
+
+#: program/localization/eo/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Por protekti vian privatecon, foraj bildoj estas blokitaj en ĉi tiu"
+"mesaĝo."
+
+#: program/localization/eo/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Ĉi tiu mesaĝo estas ĉifrata kaj ne estas montrebla. Pardonu!"
+
+#: program/localization/eo/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Trovis neniun kontakton"
+
+#: program/localization/eo/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "La petita kontakto ne trovis"
+
+#: program/localization/eo/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Ne sukcesis sendi mesaĝon"
+
+#: program/localization/eo/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Okazis eraro dum savo de mesaĝo"
+
+#: program/localization/eo/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Ne povis transloki mesaĝon"
+
+#: program/localization/eo/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Ne povis forigi mesaĝon"
+
+#: program/localization/eo/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Ĉu vi vere volas forigi la elektata(j)n kontakto(j)n?"
+
+#: program/localization/eo/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Ĉu vi vere volas forigi la elektata(j)n mesaĝo(j)n?"
+
+#: program/localization/eo/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Ĉu vi vere volas forigi la elektatan dosierujon?"
+
+#: program/localization/eo/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Ĉu vi vere volas forigi ĉiun mesaĝon el ĉi tiu dosierujo?"
+
+#: program/localization/eo/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "La formularo ne estis kompletigita"
+
+#: program/localization/eo/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Bonvolu enmeti validan retpoŝt-adreson"
+
+#: program/localization/eo/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Bonvulu enmeti nomon"
+
+#: program/localization/eo/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Bonvolu enmeti paĝ-grando"
+
+#: program/localization/eo/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Bonvolu enmeti minumume unu ricevonto"
+
+#: program/localization/eo/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "La temkampo estas malplena. Ĉu vi volas skribi temon nun?"
+
+#: program/localization/eo/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Ĉu sendi ĉi tiun mesaĝon sen teksto?"
+
+#: program/localization/eo/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Mesaĝo ne estas sendita. Ĉu vi volas forigi vian mesaĝon?"
+
+#: program/localization/eo/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Bonvolu elekti ldap-servilon por serĉado"
+
+#: program/localization/eo/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Trovis neniun kontakton"
+
+#: program/localization/eo/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Bonvolu enmeti kontakt-nomon aŭ retpoŝt-adreson."
+
+#: program/localization/eo/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "trovis $nr mesaĝojn"
+
+#: program/localization/eo/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Serĉo donis nenion"
+
+#: program/localization/eo/messages.inc:searching
+msgid "Searching..."
+msgstr "Serĉanta..."
+
+#: program/localization/eo/messages.inc:checking
+msgid "Checking..."
+msgstr "Kontrolanta..."
+
+#: program/localization/eo/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Neniujn literumada eraro trovita"
+
+#: program/localization/eo/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Forigis dosierujon sukcese"
+
+#: program/localization/eo/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Sukcese forigis"
+
+#: program/localization/eo/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Foriganta formatan de mesaĝo..."
+
+#: program/localization/eo/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Ne povis ŝargi mesaĝon de servilo"
+
+#: program/localization/eo/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Malsukcesis alŝuti dosieron"
+
+#: program/localization/eo/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "La alŝutita dosiero superas la maksimuman grandon de $size"
+
+#: program/localization/eo/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Sukcese kopiis $nr adresojn"
+
+#: program/localization/eo/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Ne povis kopii ajn adreson"
+
+#: program/localization/eo/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Ĉi tiu adres-fonto estas nurlegebla"
+
+#: program/localization/eo/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Ne povis savi la kontakt-adreson"
+
+#: program/localization/eo/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Translokanta mesaĝon..."
+
+#: program/localization/eo/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Sukcese sendis konfirmon"
+
+#: program/localization/eo/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Ne povis sendi konfirmon"
+
+#: program/localization/eo/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Vi ne povas forigi ĉi tiun identon, ĉar ĝi estas la lasta"
+
+#: program/localization/eo/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Dosierujo-nomo enhavas malpermesitan karaktron"

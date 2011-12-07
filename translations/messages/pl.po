@@ -1,0 +1,587 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/pl_PL/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: pl_PL\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/pl_PL/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Błąd logowania!"
+
+#: program/localization/pl_PL/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Twoja przeglądarka nie obsługuje ciasteczek!"
+
+#: program/localization/pl_PL/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Błąd sesji bądź sesja wygasła!"
+
+#: program/localization/pl_PL/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Błąd połączenia z serwerem!"
+
+#: program/localization/pl_PL/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Błąd serwera!"
+
+#: program/localization/pl_PL/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Błąd serwera: $msg"
+
+#: program/localization/pl_PL/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Błędne żądanie! Nie zapisano danych."
+
+#: program/localization/pl_PL/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Brak wiadomości w skrzynce."
+
+#: program/localization/pl_PL/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Użytkownik wylogował się poprawnie."
+
+#: program/localization/pl_PL/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Skrzynka jest pusta!"
+
+#: program/localization/pl_PL/messages.inc:loading
+msgid "Loading..."
+msgstr "Ładowanie..."
+
+#: program/localization/pl_PL/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Zapisywanie pliku..."
+
+#: program/localization/pl_PL/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Zapisywanie plików..."
+
+#: program/localization/pl_PL/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Ładowanie danych..."
+
+#: program/localization/pl_PL/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Sprawdzanie nowych wiadomości..."
+
+#: program/localization/pl_PL/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Wysyłanie wiadomości..."
+
+#: program/localization/pl_PL/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Wiadomość została wysłana."
+
+#: program/localization/pl_PL/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Zapisywanie wiadomości..."
+
+#: program/localization/pl_PL/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Wiadomość została zapisana w folderze Kopie robocze."
+
+#: program/localization/pl_PL/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Zapisano."
+
+#: program/localization/pl_PL/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Kontakt został dodany."
+
+#: program/localization/pl_PL/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Kontakt o podanym adresie e-mail już istnieje!"
+
+#: program/localization/pl_PL/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Ze względów bezpieczeństwa zewnętrzne obrazki zostały zablokowane."
+
+#: program/localization/pl_PL/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Przepraszamy, nie można wyświetlić zaszyfrowanej wiadomości!"
+
+#: program/localization/pl_PL/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Nie znaleziono kontaktu!"
+
+#: program/localization/pl_PL/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Szukany kontakt nie został odnaleziony."
+
+#: program/localization/pl_PL/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Nie udało się wysłać wiadomości!"
+
+#: program/localization/pl_PL/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Musisz poczekać $sec sek. aby móc wysłać tą wiadomość!"
+
+#: program/localization/pl_PL/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Wystąpił błąd podczas zapisu wysłanej wiadomości!"
+
+#: program/localization/pl_PL/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Wystąpił błąd podczas zapisu!"
+
+#: program/localization/pl_PL/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Nie można przenieść wiadomości!"
+
+#: program/localization/pl_PL/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Nie można skopiować wiadomości!"
+
+#: program/localization/pl_PL/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Nie można usunąć wiadomości!"
+
+#: program/localization/pl_PL/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Nie można oznaczyć wiadomości!"
+
+#: program/localization/pl_PL/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Czy na pewno chcesz usunąć wybrane kontakty?"
+
+#: program/localization/pl_PL/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Czy na pewno chcesz usunąć wybraną grupę?"
+
+#: program/localization/pl_PL/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Czy na pewno chcesz usunąć wybrane wiadomości?"
+
+#: program/localization/pl_PL/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Czy na pewno chcesz usunąć wybrany folder?"
+
+#: program/localization/pl_PL/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Czy na pewno chcesz usunąć wszystkie wiadomości w tym folderze?"
+
+#: program/localization/pl_PL/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Usuwanie grupy..."
+
+#: program/localization/pl_PL/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Usuwanie folderu..."
+
+#: program/localization/pl_PL/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Przenoszenie folderu..."
+
+#: program/localization/pl_PL/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Uzupełnij formularz!"
+
+#: program/localization/pl_PL/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Podaj poprawny adres e-mail!"
+
+#: program/localization/pl_PL/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Podaj nazwę!"
+
+#: program/localization/pl_PL/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Podaj poprawną wartość!"
+
+#: program/localization/pl_PL/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Podaj adres nadawcy!"
+
+#: program/localization/pl_PL/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Podaj co najmniej jednego odbiorcę!"
+
+#: program/localization/pl_PL/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Nie podano tematu wiadomości. Czy chcesz go teraz uzupełnić?"
+
+#: program/localization/pl_PL/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Ta wiadomość jest pusta, czy mimo to chcesz ją wysłać?"
+
+#: program/localization/pl_PL/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Wiadomość nie została wysłana. Czy chcesz usunąć tę wiadomość?"
+
+#: program/localization/pl_PL/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Wybierz serwer LDAP!"
+
+#: program/localization/pl_PL/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Nie znaleziono kontaktów!"
+
+#: program/localization/pl_PL/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Podaj nazwę kontaktu lub jego adres e-mail."
+
+#: program/localization/pl_PL/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Nie wszystkie załączniki zostały pobrane. Poczekaj lub anuluj"
+"pobieranie."
+
+#: program/localization/pl_PL/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "Liczba znalezionych wiadomości: $nr."
+
+#: program/localization/pl_PL/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Nic nie znaleziono."
+
+#: program/localization/pl_PL/messages.inc:searching
+msgid "Searching..."
+msgstr "Wyszukiwanie..."
+
+#: program/localization/pl_PL/messages.inc:checking
+msgid "Checking..."
+msgstr "Sprawdzanie..."
+
+#: program/localization/pl_PL/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Nie znaleziono błędów w pisowni."
+
+#: program/localization/pl_PL/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Folder został pomyślnie usunięty."
+
+#: program/localization/pl_PL/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Usunięto."
+
+#: program/localization/pl_PL/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Konwertowanie tekstu..."
+
+#: program/localization/pl_PL/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Nie można załadować wiadomości z serwera."
+
+#: program/localization/pl_PL/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Załączanie pliku nie powiodło się."
+
+#: program/localization/pl_PL/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Plik przekracza maksymalną wielkość $size."
+
+#: program/localization/pl_PL/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Pomyślnie skopiowano następującą liczbę adresów: $nr."
+
+#: program/localization/pl_PL/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Nie można skopiować żadnego adresu."
+
+#: program/localization/pl_PL/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Źródło adresu jest tylko do odczytu."
+
+#: program/localization/pl_PL/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Nie można było zapisać adresu kontaktu."
+
+#: program/localization/pl_PL/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Przenoszenie wiadomości..."
+
+#: program/localization/pl_PL/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Kopiowanie wiadomości..."
+
+#: program/localization/pl_PL/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Usuwanie wiadomości..."
+
+#: program/localization/pl_PL/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Oznaczanie wiadomości..."
+
+#: program/localization/pl_PL/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Pomyślnie wysłano potwierdzenie dostarczenia."
+
+#: program/localization/pl_PL/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Nie można wysłać potwierdzenia."
+
+#: program/localization/pl_PL/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Nie można skasować tej tożsamości, ponieważ jest ostatnią."
+
+#: program/localization/pl_PL/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Nazwa folderu zawiera niedozwolony znak."
+
+#: program/localization/pl_PL/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Proszę wybrać plik do wysłania."
+
+#: program/localization/pl_PL/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Wybrana książka adresowa jest tylko-do-odczytu."
+
+#: program/localization/pl_PL/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Kontakty zostały pomyślnie dodane do grupy."
+
+#: program/localization/pl_PL/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Kontakty zostały pomyślnie usunięte z grupy."
+
+#: program/localization/pl_PL/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Importowanie, proszę czekać..."
+
+#: program/localization/pl_PL/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Błąd! Pobrany plik nie jest poprawnym plikiem vCard."
+
+#: program/localization/pl_PL/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Pomyślnie dodano $inserted kontaktów, pominięto $skipped"
+"istniejących wpisów</b>:<p><em>$names</em></p>."
+
+#: program/localization/pl_PL/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Niedozwolona operacja!"
+
+#: program/localization/pl_PL/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Brak adresu e-mail w wybranej tożsamości."
+
+#: program/localization/pl_PL/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Zmiana edytora spowoduje utratę formatowania tekstu. Czy jesteś pewien,"
+"że chcesz to zrobić?"
+
+#: program/localization/pl_PL/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Wystąpił błąd krytyczny. Skontaktuj się z administratorem. <b>Nie"
+"można wysłać wiadomości.</b>"
+
+#: program/localization/pl_PL/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "Błąd SMTP ($code): Nie można nawiązać połączenia z serwerem."
+
+#: program/localization/pl_PL/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "Błąd SMTP ($code): Uwierzytelnianie nie powiodło się."
+
+#: program/localization/pl_PL/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "Błąd SMTP ($code): Nie można ustawić nadawcy \"$from\" ($msg)."
+
+#: program/localization/pl_PL/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "Błąd SMTP ($code): Nie można dodać odbiorcy \"$to\" ($msg)."
+
+#: program/localization/pl_PL/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "Błąd SMTP: Parsowanie listy odbiorców nie powiodło się."
+
+#: program/localization/pl_PL/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "Błąd SMTP: $msg"
+
+#: program/localization/pl_PL/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Błędny adres e-mail: $email"
+
+#: program/localization/pl_PL/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Zbyt wielu odbiorców. Zmniejsz ich liczbę do $max."
+
+#: program/localization/pl_PL/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Liczba członków grupy nie może być większa niż $max."
+
+#: program/localization/pl_PL/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Wystąpił wewnętrzny błąd systemu. Spróbuj jeszcze raz."
+
+#: program/localization/pl_PL/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Usuwanie kontaktów nie powiodło się."
+
+#: program/localization/pl_PL/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Kontakt(y) został(y) usunięte."
+
+#: program/localization/pl_PL/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Grupa została usunięta."
+
+#: program/localization/pl_PL/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Nazwa grupy została zmieniona."
+
+#: program/localization/pl_PL/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Grupa została utworzona."
+
+#: program/localization/pl_PL/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Wiadomości zostały usunięte."
+
+#: program/localization/pl_PL/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Wiadomości zostały przeniesione."
+
+#: program/localization/pl_PL/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Wiadomości zostały skopiowane."
+
+#: program/localization/pl_PL/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Wiadomości zostały oznaczone."
+
+#: program/localization/pl_PL/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Wprowadź co najmniej $min znak(ów) aby skorzystać z autouzupełniania."
+
+#: program/localization/pl_PL/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Subskrybowanie folderu..."
+
+#: program/localization/pl_PL/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Odsubskrybowanie folderu..."
+
+#: program/localization/pl_PL/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Folder został pomyślnie zasubskrybowany."
+
+#: program/localization/pl_PL/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Folder został pomyślnie odsubskrybowany."
+
+#: program/localization/pl_PL/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Folder został pomyślnie opróżniony."
+
+#: program/localization/pl_PL/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Folder został pomyślnie uporządkowany."
+
+#: program/localization/pl_PL/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Nazwa nie może być pusta."
+
+#: program/localization/pl_PL/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Nazwa jest zbyt długa."
+
+#: program/localization/pl_PL/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Folder został pomyślnie zaktualizowany."
+
+#: program/localization/pl_PL/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Folder został pomyślnie utworzony."
+
+#: program/localization/pl_PL/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Nie można wykonać operacji. Folder tylko do odczytu."
+
+#: program/localization/pl_PL/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Nie można wykonać operacji. Brak uprawnień."
+
+#: program/localization/pl_PL/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Pominięto $skipped istniejących wpisów.</b>"
+
+#: program/localization/pl_PL/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Niepoprawny format obrazka."
+
+#: program/localization/pl_PL/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "Wykryto błędy pisowni w tej wiadomości."
+
+#: program/localization/pl_PL/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Przywracanie kontaktów nie powiodło się."
+
+#: program/localization/pl_PL/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Kontakt(y) zostały przywrócone."
+
+#: program/localization/pl_PL/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Błąd bazy danych!"
+
+#: program/localization/pl_PL/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Kontakt z podaną nazwą już istnieje!"
+
+#: program/localization/pl_PL/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Kopiowanie kontaktów..."
+
+#: program/localization/pl_PL/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Dodawanie kontaktów do grupy..."
+
+#: program/localization/pl_PL/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Usuwanie kontaktów z grupy..."
+
+#: program/localization/pl_PL/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "Nie można utworzyć/przenieść folderu w wybrane miejsce. Brak upranień."
+
+#: program/localization/pl_PL/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "Znaleziono $nr kontaktów."
+
+#: program/localization/pl_PL/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Wyszukiwanie usunięto pomyślnie."
+
+#: program/localization/pl_PL/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Nie można usunąć wyszukiwania."
+
+#: program/localization/pl_PL/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Wyszukiwanie zapisano pomyślnie."
+
+#: program/localization/pl_PL/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Nie można zapisać wyszukiwania."
+
+#: program/localization/pl_PL/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Użyj wyszukiwarki aby wyświetlić kontakty."
+
+#: program/localization/pl_PL/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Usuwanie kontaktów..."
+
+#: program/localization/pl_PL/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Znaleziono więcej pasujących wpisów. Wprowadź więcej znaków."
+
+#: program/localization/pl_PL/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "Ta część wiadomości jest zbyt duża aby ją przetworzyć."

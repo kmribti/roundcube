@@ -1,0 +1,1597 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/lv_LV/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: lv_LV\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/lv_LV/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Esiet laipni lūgti $product"
+
+#: program/localization/lv_LV/labels.inc:username
+msgid "Username"
+msgstr "Lietotājvārds"
+
+#: program/localization/lv_LV/labels.inc:password
+msgid "Password"
+msgstr "Parole"
+
+#: program/localization/lv_LV/labels.inc:server
+msgid "Server"
+msgstr "Serveris"
+
+#: program/localization/lv_LV/labels.inc:login
+msgid "Login"
+msgstr "Pieslēgties"
+
+#: program/localization/lv_LV/labels.inc:logout
+msgid "Logout"
+msgstr "Atslēgties"
+
+#: program/localization/lv_LV/labels.inc:mail
+msgid "Mail"
+msgstr "E-pasts"
+
+#: program/localization/lv_LV/labels.inc:settings
+msgid "Settings"
+msgstr "Personīgie iestatījumi"
+
+#: program/localization/lv_LV/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Adrešu grāmata"
+
+#: program/localization/lv_LV/labels.inc:inbox
+msgid "Inbox"
+msgstr "Ienākošās"
+
+#: program/localization/lv_LV/labels.inc:drafts
+msgid "Drafts"
+msgstr "Uzmetumi"
+
+#: program/localization/lv_LV/labels.inc:sent
+msgid "Sent"
+msgstr "Nosūtītās"
+
+#: program/localization/lv_LV/labels.inc:trash
+msgid "Trash"
+msgstr "Miskaste"
+
+#: program/localization/lv_LV/labels.inc:junk
+msgid "Junk"
+msgstr "Mēstules"
+
+#: program/localization/lv_LV/labels.inc:subject
+msgid "Subject"
+msgstr "Temats"
+
+#: program/localization/lv_LV/labels.inc:from
+msgid "From"
+msgstr "No"
+
+#: program/localization/lv_LV/labels.inc:to
+msgid "To"
+msgstr "Kam"
+
+#: program/localization/lv_LV/labels.inc:cc
+msgid "Cc"
+msgstr "Cc"
+
+#: program/localization/lv_LV/labels.inc:bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#: program/localization/lv_LV/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Reply-To"
+
+#: program/localization/lv_LV/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Followup-To"
+
+#: program/localization/lv_LV/labels.inc:date
+msgid "Date"
+msgstr "Datums"
+
+#: program/localization/lv_LV/labels.inc:size
+msgid "Size"
+msgstr "Izmērs"
+
+#: program/localization/lv_LV/labels.inc:priority
+msgid "Priority"
+msgstr "Prioritāte"
+
+#: program/localization/lv_LV/labels.inc:organization
+msgid "Company"
+msgstr "Uzņēmums"
+
+#: program/localization/lv_LV/labels.inc:readstatus
+msgid "Read status"
+msgstr "Izlasīšanas statuss"
+
+#: program/localization/lv_LV/labels.inc:mailboxlist
+#: program/localization/lv_LV/labels.inc:folders
+msgid "Folders"
+msgstr "Mapes"
+
+#: program/localization/lv_LV/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Vēstules $from līdz $to no $count"
+
+#: program/localization/lv_LV/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Vijumi $from līdz $to no $count"
+
+#: program/localization/lv_LV/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "$nr. vēstule  no $count"
+
+#: program/localization/lv_LV/labels.inc:copy
+msgid "Copy"
+msgstr "Kopēt"
+
+#: program/localization/lv_LV/labels.inc:move
+msgid "Move"
+msgstr "Pārvietot"
+
+#: program/localization/lv_LV/labels.inc:moveto
+msgid "Move to..."
+msgstr "pārvietot uz..."
+
+#: program/localization/lv_LV/labels.inc:download
+msgid "Download"
+msgstr "lejupielādēt"
+
+#: program/localization/lv_LV/labels.inc:filename
+msgid "File name"
+msgstr "Faila nosaukums"
+
+#: program/localization/lv_LV/labels.inc:filesize
+msgid "File size"
+msgstr "Faila izmērs"
+
+#: program/localization/lv_LV/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Pievienot adrešu grāmatai"
+
+#: program/localization/lv_LV/labels.inc:sun
+msgid "Sun"
+msgstr "Sv"
+
+#: program/localization/lv_LV/labels.inc:mon
+msgid "Mon"
+msgstr "P"
+
+#: program/localization/lv_LV/labels.inc:tue
+msgid "Tue"
+msgstr "O"
+
+#: program/localization/lv_LV/labels.inc:wed
+msgid "Wed"
+msgstr "T"
+
+#: program/localization/lv_LV/labels.inc:thu
+msgid "Thu"
+msgstr "C"
+
+#: program/localization/lv_LV/labels.inc:fri
+msgid "Fri"
+msgstr "P"
+
+#: program/localization/lv_LV/labels.inc:sat
+msgid "Sat"
+msgstr "Se"
+
+#: program/localization/lv_LV/labels.inc:sunday
+msgid "Sunday"
+msgstr "Svētdiena"
+
+#: program/localization/lv_LV/labels.inc:monday
+msgid "Monday"
+msgstr "Pirmdiena"
+
+#: program/localization/lv_LV/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Otrdiena"
+
+#: program/localization/lv_LV/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Trešdiena"
+
+#: program/localization/lv_LV/labels.inc:thursday
+msgid "Thursday"
+msgstr "Ceturtdiena"
+
+#: program/localization/lv_LV/labels.inc:friday
+msgid "Friday"
+msgstr "Piektdiena"
+
+#: program/localization/lv_LV/labels.inc:saturday
+msgid "Saturday"
+msgstr "Sestdiena"
+
+#: program/localization/lv_LV/labels.inc:jan
+msgid "Jan"
+msgstr "Jan"
+
+#: program/localization/lv_LV/labels.inc:feb
+msgid "Feb"
+msgstr "Feb"
+
+#: program/localization/lv_LV/labels.inc:mar
+msgid "Mar"
+msgstr "Mar"
+
+#: program/localization/lv_LV/labels.inc:apr
+msgid "Apr"
+msgstr "Apr"
+
+#: program/localization/lv_LV/labels.inc:may
+#: program/localization/lv_LV/labels.inc:longmay
+msgid "May"
+msgstr "Maijs"
+
+#: program/localization/lv_LV/labels.inc:jun
+msgid "Jun"
+msgstr "Jūn"
+
+#: program/localization/lv_LV/labels.inc:jul
+msgid "Jul"
+msgstr "Jūl"
+
+#: program/localization/lv_LV/labels.inc:aug
+msgid "Aug"
+msgstr "Aug"
+
+#: program/localization/lv_LV/labels.inc:sep
+msgid "Sep"
+msgstr "Sep"
+
+#: program/localization/lv_LV/labels.inc:oct
+msgid "Oct"
+msgstr "Okt"
+
+#: program/localization/lv_LV/labels.inc:nov
+msgid "Nov"
+msgstr "Nov"
+
+#: program/localization/lv_LV/labels.inc:dec
+msgid "Dec"
+msgstr "Dec"
+
+#: program/localization/lv_LV/labels.inc:longjan
+msgid "January"
+msgstr "Janvāris"
+
+#: program/localization/lv_LV/labels.inc:longfeb
+msgid "February"
+msgstr "Februāris"
+
+#: program/localization/lv_LV/labels.inc:longmar
+msgid "March"
+msgstr "Marts"
+
+#: program/localization/lv_LV/labels.inc:longapr
+msgid "April"
+msgstr "Aprīlis"
+
+#: program/localization/lv_LV/labels.inc:longjun
+msgid "June"
+msgstr "Jūnijs"
+
+#: program/localization/lv_LV/labels.inc:longjul
+msgid "July"
+msgstr "Jūlijs"
+
+#: program/localization/lv_LV/labels.inc:longaug
+msgid "August"
+msgstr "Augusts"
+
+#: program/localization/lv_LV/labels.inc:longsep
+msgid "September"
+msgstr "Septembris"
+
+#: program/localization/lv_LV/labels.inc:longoct
+msgid "October"
+msgstr "Oktobris"
+
+#: program/localization/lv_LV/labels.inc:longnov
+msgid "November"
+msgstr "Novembris"
+
+#: program/localization/lv_LV/labels.inc:longdec
+msgid "December"
+msgstr "Decembris"
+
+#: program/localization/lv_LV/labels.inc:today
+msgid "Today"
+msgstr "Šodien"
+
+#: program/localization/lv_LV/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Pārbaudīt pastu"
+
+#: program/localization/lv_LV/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Rakstīt jaunu vēstuli"
+
+#: program/localization/lv_LV/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Atbildēt"
+
+#: program/localization/lv_LV/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Atbildēt sūtītājam un visiem saņēmējiem"
+
+#: program/localization/lv_LV/labels.inc:replyall
+msgid "Reply all"
+msgstr "Atbildēt visiem"
+
+#: program/localization/lv_LV/labels.inc:replylist
+msgid "Reply list"
+msgstr "Atbildēt listei"
+
+#: program/localization/lv_LV/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "Pārsūtīt iekļaujot vēstulē"
+
+#: program/localization/lv_LV/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "Pārsūtīt kā pielikumu"
+
+#: program/localization/lv_LV/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Pārsūtīt vēstuli"
+
+#: program/localization/lv_LV/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Dzēst vēstuli"
+
+#: program/localization/lv_LV/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Pārvietot vēstuli uz miskasti"
+
+#: program/localization/lv_LV/labels.inc:printmessage
+msgid "Print this message"
+msgstr "izdrukāt"
+
+#: program/localization/lv_LV/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Parādīt iepriekšējo vēstuli"
+
+#: program/localization/lv_LV/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Parādīt pirmo vēstuli"
+
+#: program/localization/lv_LV/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Parādīt nākamo vēstuli"
+
+#: program/localization/lv_LV/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Parādīt pēdējo vēstuli"
+
+#: program/localization/lv_LV/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Atpakaļ uz vēstuļu sarakstu"
+
+#: program/localization/lv_LV/labels.inc:viewsource
+msgid "Show source"
+msgstr "parādīt pirmtekstu"
+
+#: program/localization/lv_LV/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Marķēt vēstules kā:"
+
+#: program/localization/lv_LV/labels.inc:markread
+msgid "As read"
+msgstr "lasītas"
+
+#: program/localization/lv_LV/labels.inc:markunread
+msgid "As unread"
+msgstr "nelasītas"
+
+#: program/localization/lv_LV/labels.inc:markflagged
+msgid "As flagged"
+msgstr "iezīmētas"
+
+#: program/localization/lv_LV/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "neiezīmētas"
+
+#: program/localization/lv_LV/labels.inc:messageactions
+msgid "messageactions"
+msgstr "Citas darbības:"
+
+#: program/localization/lv_LV/labels.inc:select
+msgid "Select"
+msgstr "Iezīmēt"
+
+#: program/localization/lv_LV/labels.inc:all
+msgid "All"
+msgstr "visas"
+
+#: program/localization/lv_LV/labels.inc:none
+#: program/localization/lv_LV/labels.inc:nonesort
+msgid "None"
+msgstr "Neviens"
+
+#: program/localization/lv_LV/labels.inc:currpage
+msgid "Current page"
+msgstr "Pašreizējā lapa"
+
+#: program/localization/lv_LV/labels.inc:unread
+msgid "Unread"
+msgstr "nelasītās"
+
+#: program/localization/lv_LV/labels.inc:flagged
+msgid "Flagged"
+msgstr "iezīmētās"
+
+#: program/localization/lv_LV/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "neatbildētās"
+
+#: program/localization/lv_LV/labels.inc:deleted
+msgid "Deleted"
+msgstr "dzēstās"
+
+#: program/localization/lv_LV/labels.inc:invert
+msgid "Invert"
+msgstr "invertēt"
+
+#: program/localization/lv_LV/labels.inc:filter
+msgid "Filter"
+msgstr "Filtrēt"
+
+#: program/localization/lv_LV/labels.inc:list
+msgid "List"
+msgstr "Saraksts"
+
+#: program/localization/lv_LV/labels.inc:threads
+msgid "Threads"
+msgstr "Vijumi"
+
+#: program/localization/lv_LV/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Izvērst visus"
+
+#: program/localization/lv_LV/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Izvērst neizlasītos"
+
+#: program/localization/lv_LV/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Savērst visu"
+
+#: program/localization/lv_LV/labels.inc:threaded
+msgid "Threaded"
+msgstr "Savīts"
+
+#: program/localization/lv_LV/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Izvērst vēstuļu vijumus"
+
+#: program/localization/lv_LV/labels.inc:do_expand
+msgid "all threads"
+msgstr "visiem vijumiem"
+
+#: program/localization/lv_LV/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "tikai tad, ja ir neizlasītas vēstules"
+
+#: program/localization/lv_LV/labels.inc:fromto
+msgid "From/To"
+msgstr "Sūtītājs/Saņēmējs"
+
+#: program/localization/lv_LV/labels.inc:flag
+msgid "Flag"
+msgstr "Iezīmēts"
+
+#: program/localization/lv_LV/labels.inc:attachment
+msgid "Attachment"
+msgstr "Pielikums"
+
+#: program/localization/lv_LV/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Nosūtīšanas datums"
+
+#: program/localization/lv_LV/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Pienākšanas datums"
+
+#: program/localization/lv_LV/labels.inc:asc
+msgid "ascending"
+msgstr "augoša"
+
+#: program/localization/lv_LV/labels.inc:desc
+msgid "descending"
+msgstr "dilstoša"
+
+#: program/localization/lv_LV/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Saraksta kolonnas"
+
+#: program/localization/lv_LV/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Kārtot pēc kolonnas"
+
+#: program/localization/lv_LV/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Kārtošanas secība"
+
+#: program/localization/lv_LV/labels.inc:listmode
+msgid "List view mode"
+msgstr "Saraksta režīms"
+
+#: program/localization/lv_LV/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Darbības ar mapēm..."
+
+#: program/localization/lv_LV/labels.inc:compact
+msgid "Compact"
+msgstr "saspiest"
+
+#: program/localization/lv_LV/labels.inc:empty
+msgid "Empty"
+msgstr "iztukšot"
+
+#: program/localization/lv_LV/labels.inc:quota
+msgid "Disk usage"
+msgstr "Kvota"
+
+#: program/localization/lv_LV/labels.inc:unknown
+msgid "unknown"
+msgstr "nezināms"
+
+#: program/localization/lv_LV/labels.inc:unlimited
+msgid "unlimited"
+msgstr "neierobežots"
+
+#: program/localization/lv_LV/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Ārtā meklēšana"
+
+#: program/localization/lv_LV/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Atstatīt meklēšanu"
+
+#: program/localization/lv_LV/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Meklēt laukos:"
+
+#: program/localization/lv_LV/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Vēstules tekstā"
+
+#: program/localization/lv_LV/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "atvērt jaunā logā"
+
+#: program/localization/lv_LV/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "lejupielādēt (.eml)"
+
+#: program/localization/lv_LV/labels.inc:compose
+msgid "Compose a message"
+msgstr "Rakstīt vēstuli"
+
+#: program/localization/lv_LV/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "rediģēt kā jaunu"
+
+#: program/localization/lv_LV/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Saglabāt uzmetumu"
+
+#: program/localization/lv_LV/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Sūtīt vēstuli"
+
+#: program/localization/lv_LV/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Pievienot failu"
+
+#: program/localization/lv_LV/labels.inc:charset
+msgid "Charset"
+msgstr "Rakstzīmju kopa"
+
+#: program/localization/lv_LV/labels.inc:editortype
+msgid "Editor type"
+msgstr "Redaktora tips"
+
+#: program/localization/lv_LV/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Saņemšanas apstiprinājums"
+
+#: program/localization/lv_LV/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Atskaite par piegādi"
+
+#: program/localization/lv_LV/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "$sender @ $date rakstīja:"
+
+#: program/localization/lv_LV/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Rediģēt identitātes"
+
+#: program/localization/lv_LV/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Pārbaudīt pareizrakstību"
+
+#: program/localization/lv_LV/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Turpināt rediģēšanu"
+
+#: program/localization/lv_LV/labels.inc:revertto
+msgid "Revert to"
+msgstr "Atgriezt uz"
+
+#: program/localization/lv_LV/labels.inc:attachments
+msgid "Attachments"
+msgstr "Pielikumi"
+
+#: program/localization/lv_LV/labels.inc:upload
+msgid "Upload"
+msgstr "Augšupielādēt"
+
+#: program/localization/lv_LV/labels.inc:uploadprogress
+msgid "$percent ($current from $total)"
+msgstr "$percent ($current no $total)"
+
+#: program/localization/lv_LV/labels.inc:close
+msgid "Close"
+msgstr "Aizvērt"
+
+#: program/localization/lv_LV/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Vēstuļu iestatījumi..."
+
+#: program/localization/lv_LV/labels.inc:low
+msgid "Low"
+msgstr "Zema"
+
+#: program/localization/lv_LV/labels.inc:lowest
+msgid "Lowest"
+msgstr "Zemākā"
+
+#: program/localization/lv_LV/labels.inc:normal
+msgid "Normal"
+msgstr "Normāla"
+
+#: program/localization/lv_LV/labels.inc:high
+msgid "High"
+msgstr "Augsta"
+
+#: program/localization/lv_LV/labels.inc:highest
+msgid "Highest"
+msgstr "Augstākā"
+
+#: program/localization/lv_LV/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(no subject)"
+
+#: program/localization/lv_LV/labels.inc:showimages
+msgid "Display images"
+msgstr "Rādīt attēlus"
+
+#: program/localization/lv_LV/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Vienmēr rādīt attēlus no $sender"
+
+#: program/localization/lv_LV/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/lv_LV/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Vienkāršs teksts"
+
+#: program/localization/lv_LV/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Saglabāt nosūtīto vēstuli mapē"
+
+#: program/localization/lv_LV/labels.inc:dontsave
+msgid "don't save"
+msgstr "nesaglabāt"
+
+#: program/localization/lv_LV/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Maksimālais atļautais faila izmērs ir $size"
+
+#: program/localization/lv_LV/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Pievienot Cc"
+
+#: program/localization/lv_LV/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Pievienot Bcc"
+
+#: program/localization/lv_LV/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Pievienot Reply-To"
+
+#: program/localization/lv_LV/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Pievienot Followup-To"
+
+#: program/localization/lv_LV/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Šīs vēstules sūtītājs vēlas redzēt vēstules saņemšanas"
+"apstiprinājumu. Vai jūs vēlaties nosūtīt apstiprinājumu?"
+
+#: program/localization/lv_LV/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Saņemšanas apstiprinājums"
+
+#: program/localization/lv_LV/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Šīs ir jūsu vēstules saņemšanas apstiprinājums"
+
+#: program/localization/lv_LV/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Piezīme: Šīs apsiprinājums nozīmē tikai to, ka vēstule tika"
+"parādīta uz saņēmāja datora. Tas nenozīmē, ka saņēmējs ir"
+"izlasījis vai izpratis vēstules saturu."
+
+#: program/localization/lv_LV/labels.inc:name
+msgid "Display Name"
+msgstr "Uzrādītais vārds"
+
+#: program/localization/lv_LV/labels.inc:firstname
+msgid "First Name"
+msgstr "Vārds"
+
+#: program/localization/lv_LV/labels.inc:surname
+msgid "Last Name"
+msgstr "Uzvārds"
+
+#: program/localization/lv_LV/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Otrais vārds"
+
+#: program/localization/lv_LV/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "Prefikss"
+
+#: program/localization/lv_LV/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "Sufikss"
+
+#: program/localization/lv_LV/labels.inc:nickname
+msgid "Nickname"
+msgstr "Iesauka (nick)"
+
+#: program/localization/lv_LV/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Amats"
+
+#: program/localization/lv_LV/labels.inc:department
+msgid "Department"
+msgstr "Nodaļa"
+
+#: program/localization/lv_LV/labels.inc:gender
+msgid "Gender"
+msgstr "Dzimums"
+
+#: program/localization/lv_LV/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Pirmslaulību uzvārds"
+
+#: program/localization/lv_LV/labels.inc:email
+msgid "Email"
+msgstr "E-pasts"
+
+#: program/localization/lv_LV/labels.inc:phone
+msgid "Phone"
+msgstr "Tālrunis"
+
+#: program/localization/lv_LV/labels.inc:address
+msgid "Address"
+msgstr "Adrese"
+
+#: program/localization/lv_LV/labels.inc:street
+msgid "Street"
+msgstr "Iela"
+
+#: program/localization/lv_LV/labels.inc:locality
+msgid "City"
+msgstr "Pilsēta"
+
+#: program/localization/lv_LV/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "Pasta kods"
+
+#: program/localization/lv_LV/labels.inc:region
+msgid "State/Province"
+msgstr "Novads"
+
+#: program/localization/lv_LV/labels.inc:country
+msgid "Country"
+msgstr "Pilsēta"
+
+#: program/localization/lv_LV/labels.inc:birthday
+msgid "Birthday"
+msgstr "Dzimšanas diena"
+
+#: program/localization/lv_LV/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "Gadadiena"
+
+#: program/localization/lv_LV/labels.inc:website
+msgid "Website"
+msgstr "Web lapa"
+
+#: program/localization/lv_LV/labels.inc:instantmessenger
+msgid "IM"
+msgstr "IM"
+
+#: program/localization/lv_LV/labels.inc:notes
+msgid "Notes"
+msgstr "Piezīmes"
+
+#: program/localization/lv_LV/labels.inc:male
+msgid "male"
+msgstr "vīrietis"
+
+#: program/localization/lv_LV/labels.inc:female
+msgid "female"
+msgstr "sieviete"
+
+#: program/localization/lv_LV/labels.inc:manager
+msgid "Manager"
+msgstr "Menedžeris"
+
+#: program/localization/lv_LV/labels.inc:assistant
+#: program/localization/lv_LV/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Asistents"
+
+#: program/localization/lv_LV/labels.inc:spouse
+msgid "Spouse"
+msgstr "Laulātais draugs"
+
+#: program/localization/lv_LV/labels.inc:allfields
+msgid "All fields"
+msgstr "Visi lauki"
+
+#: program/localization/lv_LV/labels.inc:search
+msgid "Search"
+msgstr "Meklēt"
+
+#: program/localization/lv_LV/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "Paplašinātā meklēšana"
+
+#: program/localization/lv_LV/labels.inc:other
+#: program/localization/lv_LV/labels.inc:typeother
+msgid "Other"
+msgstr "Cits"
+
+#: program/localization/lv_LV/labels.inc:typehome
+msgid "Home"
+msgstr "Mājas"
+
+#: program/localization/lv_LV/labels.inc:typework
+msgid "Work"
+msgstr "Darbs"
+
+#: program/localization/lv_LV/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Mobilais tālrunis"
+
+#: program/localization/lv_LV/labels.inc:typemain
+msgid "Main"
+msgstr "Galvenais"
+
+#: program/localization/lv_LV/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Mājas Fax"
+
+#: program/localization/lv_LV/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "Darba Fax"
+
+#: program/localization/lv_LV/labels.inc:typecar
+msgid "Car"
+msgstr "Auto"
+
+#: program/localization/lv_LV/labels.inc:typepager
+msgid "Pager"
+msgstr "Peidžeris"
+
+#: program/localization/lv_LV/labels.inc:typevideo
+msgid "Video"
+msgstr "Video"
+
+#: program/localization/lv_LV/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "Web lapa"
+
+#: program/localization/lv_LV/labels.inc:addfield
+msgid "Add field..."
+msgstr "Pievienot lauku..."
+
+#: program/localization/lv_LV/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Pievienot iezīmēto ierakstu adrešu grāmatai"
+
+#: program/localization/lv_LV/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Rediģēt adrešu grāmatas ierakstu"
+
+#: program/localization/lv_LV/labels.inc:contacts
+msgid "Contacts"
+msgstr "Kontakti"
+
+#: program/localization/lv_LV/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Kontakta īpašības"
+
+#: program/localization/lv_LV/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Personiskā informācija"
+
+#: program/localization/lv_LV/labels.inc:edit
+msgid "Edit"
+msgstr "Rediģēt"
+
+#: program/localization/lv_LV/labels.inc:cancel
+msgid "Cancel"
+msgstr "Atcelt"
+
+#: program/localization/lv_LV/labels.inc:save
+msgid "Save"
+msgstr "Saglabāt"
+
+#: program/localization/lv_LV/labels.inc:delete
+msgid "Delete"
+msgstr "Dzēst"
+
+#: program/localization/lv_LV/labels.inc:rename
+msgid "Rename"
+msgstr "Pārdēvēt"
+
+#: program/localization/lv_LV/labels.inc:addphoto
+msgid "Add"
+msgstr "Pievienot"
+
+#: program/localization/lv_LV/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Aizvietot"
+
+#: program/localization/lv_LV/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Izveidot jaunu ierakstu"
+
+#: program/localization/lv_LV/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Dzēst iezīmētos ierakstus"
+
+#: program/localization/lv_LV/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Rakstīt vēstuli"
+
+#: program/localization/lv_LV/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Ieraksti $from līdz $to no $count"
+
+#: program/localization/lv_LV/labels.inc:print
+msgid "Print"
+msgstr "Drukāt"
+
+#: program/localization/lv_LV/labels.inc:export
+msgid "Export"
+msgstr "Eksportēt"
+
+#: program/localization/lv_LV/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Eksportēt kontaktus vCard formātā"
+
+#: program/localization/lv_LV/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Izveidot jaunu kontaktu grupu"
+
+#: program/localization/lv_LV/labels.inc:groupactions
+msgid "groupactions"
+msgstr "Kontaktu grupu darbības..."
+
+#: program/localization/lv_LV/labels.inc:grouprename
+msgid "Rename group"
+msgstr "Pārdēvēt grupu"
+
+#: program/localization/lv_LV/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "Izdzēst grupu"
+
+#: program/localization/lv_LV/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Parādīt iepriekšējo kopu"
+
+#: program/localization/lv_LV/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Parādīt pirmo kopu"
+
+#: program/localization/lv_LV/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Parādīt nākamo kopu"
+
+#: program/localization/lv_LV/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Parādīt pēdējo kopu"
+
+#: program/localization/lv_LV/labels.inc:group
+msgid "Group"
+msgstr "Grupa"
+
+#: program/localization/lv_LV/labels.inc:groups
+msgid "Groups"
+msgstr "Grupas"
+
+#: program/localization/lv_LV/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Personīgās adreses"
+
+#: program/localization/lv_LV/labels.inc:import
+msgid "Import"
+msgstr "Importēt"
+
+#: program/localization/lv_LV/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Importēt kontaktus"
+
+#: program/localization/lv_LV/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Importēt no faila:"
+
+#: program/localization/lv_LV/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "Pievienot jaunus kontaktus adrešu grāmatai"
+
+#: program/localization/lv_LV/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Aizvietot visu adrešu grāmatu"
+
+#: program/localization/lv_LV/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Jūst varat augšupielādēt kontaktus no citas adrešu"
+"grāmatas.<br/>Pašlaik ir atbalstīts adrešu imports no <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> datu formāta."
+
+#: program/localization/lv_LV/labels.inc:done
+msgid "Done"
+msgstr "Pabeigts"
+
+#: program/localization/lv_LV/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Iestatījumi"
+
+#: program/localization/lv_LV/labels.inc:preferences
+msgid "Preferences"
+msgstr "Iestatījumi"
+
+#: program/localization/lv_LV/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Lietotāja preferences"
+
+#: program/localization/lv_LV/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Rediģēt lietotāja preferences"
+
+#: program/localization/lv_LV/labels.inc:identities
+msgid "Identities"
+msgstr "Identitātes"
+
+#: program/localization/lv_LV/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Rediģēt šī konta identitātes"
+
+#: program/localization/lv_LV/labels.inc:newidentity
+msgid "New identity"
+msgstr "Jauna identitāte"
+
+#: program/localization/lv_LV/labels.inc:newitem
+msgid "New item"
+msgstr "Jauns"
+
+#: program/localization/lv_LV/labels.inc:edititem
+msgid "Edit item"
+msgstr "Rediģēt"
+
+#: program/localization/lv_LV/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Dot priekšroku HTML formatētām vēstulēm"
+
+#: program/localization/lv_LV/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Noklusētā rakstzīmju kopa"
+
+#: program/localization/lv_LV/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML vēstule"
+
+#: program/localization/lv_LV/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Formatēt datumus"
+
+#: program/localization/lv_LV/labels.inc:setdefault
+msgid "Set default"
+msgstr "Uzlikt kā noklusēto"
+
+#: program/localization/lv_LV/labels.inc:autodetect
+msgid "Auto"
+msgstr "Automātiski"
+
+#: program/localization/lv_LV/labels.inc:language
+msgid "Language"
+msgstr "Valoda"
+
+#: program/localization/lv_LV/labels.inc:timezone
+msgid "Time zone"
+msgstr "Laika zona"
+
+#: program/localization/lv_LV/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Rindas lapā"
+
+#: program/localization/lv_LV/labels.inc:signature
+msgid "Signature"
+msgstr "Paraksts"
+
+#: program/localization/lv_LV/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Vasaras/ziemas laiks"
+
+#: program/localization/lv_LV/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Rakstīt HTML vēstules"
+
+#: program/localization/lv_LV/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "tikai atbildot uz HTML formatētām vēstulēm"
+
+#: program/localization/lv_LV/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML paraksts"
+
+#: program/localization/lv_LV/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Rādīt priekšskatījuma paneli"
+
+#: program/localization/lv_LV/labels.inc:skin
+msgid "Interface skin"
+msgstr "Interfeisa izskats"
+
+#: program/localization/lv_LV/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Izejot no sistēmas, iztīrīt miskasti"
+
+#: program/localization/lv_LV/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Izejot no sistēmas, saspiest iesūtni"
+
+#: program/localization/lv_LV/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Lietotāja saskarne"
+
+#: program/localization/lv_LV/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Servera iestatījumi"
+
+#: program/localization/lv_LV/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Pastkastes skats"
+
+#: program/localization/lv_LV/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Vēstules izlasīšanas atskaites sūtīšana"
+
+#: program/localization/lv_LV/labels.inc:askuser
+msgid "ask me"
+msgstr "jautāt lietotājam"
+
+#: program/localization/lv_LV/labels.inc:autosend
+msgid "send receipt"
+msgstr "sūtīt automātiski"
+
+#: program/localization/lv_LV/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "automātiski sūtīt maniem kontaktiem, par citiem jautāt"
+
+#: program/localization/lv_LV/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "automātiski sūtīt maniem kontaktiem, citiem nesūtīt"
+
+#: program/localization/lv_LV/labels.inc:ignore
+msgid "ignore"
+msgstr "ignorēt"
+
+#: program/localization/lv_LV/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Atzīmēt dzēstās vēstules kā izlasītas"
+
+#: program/localization/lv_LV/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Dzēšot marķēt vēstules kā dzēstas, bet nedzēst"
+
+#: program/localization/lv_LV/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Nerādīt dzēstās vēstules"
+
+#: program/localization/lv_LV/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Izdzēst vēstules, ja tās neizdodas pārvietot uz miskasti"
+
+#: program/localization/lv_LV/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Rādīt attēlus, kas atrodas uz cita servera"
+
+#: program/localization/lv_LV/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "no zināmiem sūtītājiem"
+
+#: program/localization/lv_LV/labels.inc:always
+msgid "always"
+msgstr "vienmēr"
+
+#: program/localization/lv_LV/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Rādīt pielikuma attēlus zem vēstules"
+
+#: program/localization/lv_LV/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Automātiski saglabāt uzmetumu"
+
+#: program/localization/lv_LV/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "ik pa $n minūti(ēm)"
+
+#: program/localization/lv_LV/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Pārbaudīt vai nav jaunas vēstules"
+
+#: program/localization/lv_LV/labels.inc:never
+msgid "never"
+msgstr "nekad"
+
+#: program/localization/lv_LV/labels.inc:immediately
+msgid "immediately"
+msgstr "nekavējoties"
+
+#: program/localization/lv_LV/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Vēstuļu attēlošana"
+
+#: program/localization/lv_LV/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Vēstuļu rakstīšana"
+
+#: program/localization/lv_LV/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Pielikumu nosaukumi"
+
+#: program/localization/lv_LV/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Pilns RFC 2231 (Thunderbird)"
+
+#: program/localization/lv_LV/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/lv_LV/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Pilns RFC 2047 (citi)"
+
+#: program/localization/lv_LV/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "Izmantot MIME kodējumu 8-bitu simboliem"
+
+#: program/localization/lv_LV/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Paplašināti iestatījumi"
+
+#: program/localization/lv_LV/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Uztādīt pārlūka fokusu uz jaunu vēstuli"
+
+#: program/localization/lv_LV/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Pārbaudīt visas mapes pēc jaunām vēstulēm"
+
+#: program/localization/lv_LV/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Rādīt nākamo vēstuli pēc dzēšanas/pārvietošanas "
+
+#: program/localization/lv_LV/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Galvenie iestatījumi"
+
+#: program/localization/lv_LV/labels.inc:section
+msgid "Section"
+msgstr "Kategorija"
+
+#: program/localization/lv_LV/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Uzturēšana"
+
+#: program/localization/lv_LV/labels.inc:newmessage
+msgid "New Message"
+msgstr "Vēstuļu pienākšana"
+
+#: program/localization/lv_LV/labels.inc:listoptions
+msgid "List Options"
+msgstr "Saraksta iestatījumi"
+
+#: program/localization/lv_LV/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Paraksta iestatījumi"
+
+#: program/localization/lv_LV/labels.inc:whenreplying
+msgid "When replying"
+msgstr "Atbildot"
+
+#: program/localization/lv_LV/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "sākt jaunu vēstuli virs oriģināla"
+
+#: program/localization/lv_LV/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "sākt jaunu vēstuli zem oriģināla"
+
+#: program/localization/lv_LV/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "Atbildot izņemt oriģinālo parakstu no vēstules"
+
+#: program/localization/lv_LV/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Automātiski pievienot parakstu"
+
+#: program/localization/lv_LV/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "tikai jaunas vēstules"
+
+#: program/localization/lv_LV/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "tikai atbildes un pārsūtījumi"
+
+#: program/localization/lv_LV/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "Atbildot vai pārsūtot ievietot parakstu"
+
+#: program/localization/lv_LV/labels.inc:belowquote
+msgid "below the quote"
+msgstr "zem citāta"
+
+#: program/localization/lv_LV/labels.inc:abovequote
+msgid "above the quote"
+msgstr "virs citāta"
+
+#: program/localization/lv_LV/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Ievietot parakstu"
+
+#: program/localization/lv_LV/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Atzīmēt priekšskatītās vēstules kā lasītas"
+
+#: program/localization/lv_LV/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "pēc $n sekundēm"
+
+#: program/localization/lv_LV/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Vienmēr pieprasīt atskati par vēstules izlasīšanu"
+
+#: program/localization/lv_LV/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Vienmēr pieprasīt atskati par vēstules piegādāšanu saņēmēja"
+"serverim"
+
+#: program/localization/lv_LV/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Glabāt atbildes tajā pašā mapē, kurā ir vēstule, uz kuru tika"
+"atbildēts"
+
+#: program/localization/lv_LV/labels.inc:defaultaddressbook
+msgid "Add new contacts to the selected addressbook"
+msgstr "Pievienot jaunus kontaktus atzīmētajai adrešu grāmatai"
+
+#: program/localization/lv_LV/labels.inc:spellcheckbeforesend
+msgid "Check spelling before sending a message"
+msgstr "Pārbaudīt pareizrakstību pirms vēstules nosūtīšanas"
+
+#: program/localization/lv_LV/labels.inc:folder
+msgid "Folder"
+msgstr "Mapi"
+
+#: program/localization/lv_LV/labels.inc:foldername
+msgid "Folder name"
+msgstr "Mapes nosaukums"
+
+#: program/localization/lv_LV/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Abonēta"
+
+#: program/localization/lv_LV/labels.inc:messagecount
+msgid "Messages"
+msgstr "Vēstules"
+
+#: program/localization/lv_LV/labels.inc:create
+msgid "Create"
+msgstr "Izveidot"
+
+#: program/localization/lv_LV/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Izveidot jaunu mapi"
+
+#: program/localization/lv_LV/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Rediģēt mapes"
+
+#: program/localization/lv_LV/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Īpašās mapes"
+
+#: program/localization/lv_LV/labels.inc:properties
+msgid "Properties"
+msgstr "Īpašības"
+
+#: program/localization/lv_LV/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Mapes īpašības"
+
+#: program/localization/lv_LV/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Virsmape"
+
+#: program/localization/lv_LV/labels.inc:location
+msgid "Location"
+msgstr "Atrašanās vieta"
+
+#: program/localization/lv_LV/labels.inc:info
+msgid "Information"
+msgstr "Informācija"
+
+#: program/localization/lv_LV/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Uzklikšķiniet, lai uzzinātu mapes izmēru"
+
+#: program/localization/lv_LV/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Uzklikšķiniet, lai mainītu abonēšanu"
+
+#: program/localization/lv_LV/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Mapes veids"
+
+#: program/localization/lv_LV/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "Privāta mape"
+
+#: program/localization/lv_LV/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "Cita lietotāja mape"
+
+#: program/localization/lv_LV/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "Publiska mape"
+
+#: program/localization/lv_LV/labels.inc:sortby
+msgid "Sort by"
+msgstr "Kārtot pēc"
+
+#: program/localization/lv_LV/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Kārtot augošā secībā"
+
+#: program/localization/lv_LV/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Kārtot dilstošā secībā"
+
+#: program/localization/lv_LV/labels.inc:undo
+msgid "Undo"
+msgstr "Atsaukt"
+
+#: program/localization/lv_LV/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/lv_LV/labels.inc:KB
+msgid "KB"
+msgstr "kB"
+
+#: program/localization/lv_LV/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/lv_LV/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/lv_LV/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unikoda"
+
+#: program/localization/lv_LV/labels.inc:english
+msgid "English"
+msgstr "Angļu"
+
+#: program/localization/lv_LV/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Rietumeiropas"
+
+#: program/localization/lv_LV/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Austrumeiropas"
+
+#: program/localization/lv_LV/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Dienvidaustrumu Eiropas"
+
+#: program/localization/lv_LV/labels.inc:baltic
+msgid "Baltic"
+msgstr "Baltijas"
+
+#: program/localization/lv_LV/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Kirilicas"
+
+#: program/localization/lv_LV/labels.inc:arabic
+msgid "Arabic"
+msgstr "Arābu"
+
+#: program/localization/lv_LV/labels.inc:greek
+msgid "Greek"
+msgstr "Grieķu"
+
+#: program/localization/lv_LV/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Ebreju"
+
+#: program/localization/lv_LV/labels.inc:turkish
+msgid "Turkish"
+msgstr "Turku"
+
+#: program/localization/lv_LV/labels.inc:nordic
+msgid "Nordic"
+msgstr "Ziemeļvalstu"
+
+#: program/localization/lv_LV/labels.inc:thai
+msgid "Thai"
+msgstr "Taizemes"
+
+#: program/localization/lv_LV/labels.inc:celtic
+msgid "Celtic"
+msgstr "Ķeltu"
+
+#: program/localization/lv_LV/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Vjetnamiešu"
+
+#: program/localization/lv_LV/labels.inc:japanese
+msgid "Japanese"
+msgstr "Japāņu"
+
+#: program/localization/lv_LV/labels.inc:korean
+msgid "Korean"
+msgstr "Korejiešu"
+
+#: program/localization/lv_LV/labels.inc:chinese
+msgid "Chinese"
+msgstr "Ķīniešu"

@@ -1,0 +1,582 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/cy_GB/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: cy_GB\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/cy_GB/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Methwyd a'ch mewngofnodi"
+
+#: program/localization/cy_GB/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Nid yw eich porwr yn derbyn cwcis"
+
+#: program/localization/cy_GB/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Mae'r sesiwn yn anghywir neu wedi dod i ben"
+
+#: program/localization/cy_GB/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Methwyd cysylltu a'r gweinydd IMAP"
+
+#: program/localization/cy_GB/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Gwall Gweinydd!"
+
+#: program/localization/cy_GB/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Gwall Gweinydd: $msg"
+
+#: program/localization/cy_GB/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Gwall Cronfa Ddata!"
+
+#: program/localization/cy_GB/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Methwyd gweithredu. Mae'r ffolder yn darllen-yn-unig"
+
+#: program/localization/cy_GB/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Methwyd gweithredu. Gwrthodwyd caniatad"
+
+#: program/localization/cy_GB/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Cais annilys! Ni chadwyd unrhyw wybodaeth."
+
+#: program/localization/cy_GB/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Dim negeseuon wedi eu canfod yn y blwch hwn"
+
+#: program/localization/cy_GB/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Rydych wedi gorffen y sesiwn yn llwyddianus. Hwyl fawr!"
+
+#: program/localization/cy_GB/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Blwch yn wag"
+
+#: program/localization/cy_GB/messages.inc:loading
+msgid "Loading..."
+msgstr "Yn llwytho..."
+
+#: program/localization/cy_GB/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Yn llwytho ffeil i fyny..."
+
+#: program/localization/cy_GB/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Yn llwytho fyny ffeiliau..."
+
+#: program/localization/cy_GB/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Yn llwytho data..."
+
+#: program/localization/cy_GB/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Yn edrych am negeseuon newydd..."
+
+#: program/localization/cy_GB/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Yn danfon neges..."
+
+#: program/localization/cy_GB/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Danfonwyd y neges yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Yn cadw neges..."
+
+#: program/localization/cy_GB/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Cadwyd neges i'r Drafftiau"
+
+#: program/localization/cy_GB/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Cadwyd yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Cyswllt wedi ei ychwanegu i'r llyfr cyfeiriadau yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Mae cyswllt gyda'r cyfeiriad e-bost yma yn bodoli'n barod"
+
+#: program/localization/cy_GB/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Mae cyswllt gyda'r un enw yn bodoli yn barod."
+
+#: program/localization/cy_GB/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "I amddiffyn eich preifatrwydd, fe ataliwyd lluniau allanol yn y neges yma."
+
+#: program/localization/cy_GB/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Mae hon yn neges amgryptedig a felly ni ellir ei ddangos. Flin iawn!"
+
+#: program/localization/cy_GB/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Ni gafwyd hyd i unrhyw gysylltiadau"
+
+#: program/localization/cy_GB/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Ni gafwyd hyd i'r cysylltiad gofynnwyd amdano"
+
+#: program/localization/cy_GB/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Rhowch dermau chwilio i ganfod cysylltiadau"
+
+#: program/localization/cy_GB/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Methwyd danfon y neges"
+
+#: program/localization/cy_GB/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Arhoswch $sec eiliad cyn danfon y neges"
+
+#: program/localization/cy_GB/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Fe gafwyd gwall wrth cadw'r neges ddanfonwyd"
+
+#: program/localization/cy_GB/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Fe gafwyd gwall wrth gadw"
+
+#: program/localization/cy_GB/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Methwyd symud y neges"
+
+#: program/localization/cy_GB/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Methwyd copïo'r neges(euon)"
+
+#: program/localization/cy_GB/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Methwyd dileu y neges"
+
+#: program/localization/cy_GB/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Methwyd nodi y neges"
+
+#: program/localization/cy_GB/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Ydych chi wir am ddileu y cysylltiadau ddewiswyd?"
+
+#: program/localization/cy_GB/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Ydych chi wir am ddileu'r grŵp dewiswyd?"
+
+#: program/localization/cy_GB/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Ydych chi wir am ddileu y neges(euon) ddewiswyd?"
+
+#: program/localization/cy_GB/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Ydych chi wir am ddileu y ffolder yma?"
+
+#: program/localization/cy_GB/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Ydych chi wir am ddileu yr holl negeseuon yn y ffolder yma?"
+
+#: program/localization/cy_GB/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Dileu cyswllt/cysylltiadau..."
+
+#: program/localization/cy_GB/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Yn dileu grŵp..."
+
+#: program/localization/cy_GB/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Yn dileu ffolder..."
+
+#: program/localization/cy_GB/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Yn symud ffolder..."
+
+#: program/localization/cy_GB/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Yn tanysgrifio i'r ffolder..."
+
+#: program/localization/cy_GB/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Yn dad-danysgrifio i'r ffolder..."
+
+#: program/localization/cy_GB/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Nid oedd y ffurflen wedi ei gwblhau yn llawn"
+
+#: program/localization/cy_GB/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Rhowch gyfeiriad e-bost dilys"
+
+#: program/localization/cy_GB/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Rhowch enw"
+
+#: program/localization/cy_GB/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Rhowch maint tudalen"
+
+#: program/localization/cy_GB/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Rhowch gyfeiriad e-bost y danfonwr"
+
+#: program/localization/cy_GB/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Rhowch o leiaf un derbynnydd"
+
+#: program/localization/cy_GB/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Mae'r pennawd \"Pwnc\" yn wag. Hoffech chi roi un fewn nawr?"
+
+#: program/localization/cy_GB/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Danfon y neges hwn heb destun?"
+
+#: program/localization/cy_GB/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Ni ddanfonwyd y neges. Hoffech chi gael gwared a'r neges?"
+
+#: program/localization/cy_GB/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Dewiswch weinydd ldap i chwilio"
+
+#: program/localization/cy_GB/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Rhowch enw cyswllt neu gyfeiriad e-bost"
+
+#: program/localization/cy_GB/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Nid yw pob atodiad wedi eu llwytho i fyny eto. Triwch eto neu canslo."
+
+#: program/localization/cy_GB/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "Cafwyd hyd i $nr neges"
+
+#: program/localization/cy_GB/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "Canfuwyd $nr cyswllt."
+
+#: program/localization/cy_GB/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Ni gafwyd hyd i unrhyw ganlyniadau chwilio"
+
+#: program/localization/cy_GB/messages.inc:searching
+msgid "Searching..."
+msgstr "Yn chwilio..."
+
+#: program/localization/cy_GB/messages.inc:checking
+msgid "Checking..."
+msgstr "Yn gofyn..."
+
+#: program/localization/cy_GB/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Ni gafwyd hyd i unrhyw wallau gwirio"
+
+#: program/localization/cy_GB/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Dilëwyd y ffolder yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Ffolder wedi ei danysgrifio yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Ffolder wedi ei ddad-danysgrifio yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Ffolder wedi ei lanhau yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Ffolder wedi ei wagio yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Dilëwyd yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Yn cael gwared a'r fformatio..."
+
+#: program/localization/cy_GB/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Methwyd llwytho'r neges o'r gweinydd"
+
+#: program/localization/cy_GB/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Methwyd llwytho'r ffeil i fyny"
+
+#: program/localization/cy_GB/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Mae'r ffeil a lwythyd fyny yn fwy na'r maint uchaf ganiateir o $size"
+
+#: program/localization/cy_GB/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Copïwyd $nr cyfeiriad yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Methwyd copïo unrhyw gyfeiriad"
+
+#: program/localization/cy_GB/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Mae ffynhonnell y cyfeiriadau i'w ddarllen yn unig"
+
+#: program/localization/cy_GB/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Methwyd cadw cyfeiriad y cyswllt"
+
+#: program/localization/cy_GB/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Yn symud neges..."
+
+#: program/localization/cy_GB/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Yn copïo'r neges"
+
+#: program/localization/cy_GB/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Yn copïo cyswllt/cysylltiadau..."
+
+#: program/localization/cy_GB/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Yn dileu neges(euon)..."
+
+#: program/localization/cy_GB/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Yn marcio neges(euon)..."
+
+#: program/localization/cy_GB/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Yn ychwanegu cyswllt/cysylltiadau i'r grŵp..."
+
+#: program/localization/cy_GB/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Yn dileu cyswllt/cysylltiadau o'r grŵp..."
+
+#: program/localization/cy_GB/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Danfonwyd cadarnhad derbyn yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Methwyd danfon cadarnhad derbyn"
+
+#: program/localization/cy_GB/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Allwch chi ddim dileu'r personoliaeth yma, hwn yw'r un olaf."
+
+#: program/localization/cy_GB/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Mae enw'r ffolder yn cynnwys llythyren annerbynniol"
+
+#: program/localization/cy_GB/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Dewiswch ffeil i'w lwytho fyny"
+
+#: program/localization/cy_GB/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Nid yw'n bosib ysgrifennu i'r llyfr cyfeiriadau "
+
+#: program/localization/cy_GB/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Ychwanegwyd y cysylltiadau i'r grŵp yma yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Dilëwyd y cysylltiadau o'r grŵp yma yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Yn mewnforio, arhoswch os gwelwch yn dda..."
+
+#: program/localization/cy_GB/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Methwyd a mewnforio! Nid yw'r ffeil a lwythwyd fyny yn ffeil vCard dilys."
+
+#: program/localization/cy_GB/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Fe mewnforiwyd $inserted cyswllt yn llwyddiannus, anwybyddwyd $skipped"
+"cofnod presennol</b>:<p><em>$names</em></p>"
+
+#: program/localization/cy_GB/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Neidiwyd $skipped cofnod oedd yn bodoli</b>"
+
+#: program/localization/cy_GB/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Ni chaniateir y weithred!"
+
+#: program/localization/cy_GB/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Cyfeiriad e-bost ar goll yn y personoliaeth a ddewiswyd"
+
+#: program/localization/cy_GB/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Mi fydd newid i'r golygydd testun plaen yn golygu byddwch chi'n colli"
+"unrhyw arddulliau yn eich testun. Hoffech chi barhau?"
+
+#: program/localization/cy_GB/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Fe gafwyd gwall angheuol yn y ffurfweddiad. Cysylltwch â'ch gweinyddwr ar"
+"unwaith. <b>Nid oedd yn bosib dangos eich neges.</b>"
+
+#: program/localization/cy_GB/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "Gwall SMTP ($code): Methwyd cysylltu a'r gweinydd"
+
+#: program/localization/cy_GB/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "Gwall SMTP ($code): Methwyd dilysu'r cyfrif"
+
+#: program/localization/cy_GB/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "Gwall SMTP ($code): Methwyd gosod y danfonwr \"$from\" ($msg)"
+
+#: program/localization/cy_GB/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "Gwall SMTP ($code): Methwyd ychwanegu derbynwr \"$to\" ($msg)"
+
+#: program/localization/cy_GB/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "Gwall SMTP: Nid oedd yn bosib darllen y rhestr o dderbynnwyr"
+
+#: program/localization/cy_GB/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "Gwall SMTP: $msg"
+
+#: program/localization/cy_GB/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Cyfeiriad e-bost anghywir: $email"
+
+#: program/localization/cy_GB/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Gormod o dderbynnwyr. Lleihewch y nifer i $max"
+
+#: program/localization/cy_GB/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Mae nifer o aelodau'r grŵp yn fwy na'r uchafswm o $max"
+
+#: program/localization/cy_GB/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Fe gafwyd gwall mewnol. Rhowch gynnig arni eto."
+
+#: program/localization/cy_GB/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Methwyd dileu cyswllt"
+
+#: program/localization/cy_GB/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Cyswllt wedi ei ddileu yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Methwyd adfer y cyswllt/cysylltiadau a ddilëwyd"
+
+#: program/localization/cy_GB/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Adferwyd y cyswllt/cysylltiadau"
+
+#: program/localization/cy_GB/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Grŵp wedi ei ddileu yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Grŵp wedi ei ailenwi yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Grŵp wedi ei greu yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Dilëwyd y chwiliad yn llwyddiannus."
+
+#: program/localization/cy_GB/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Methwyd dileu y chwiliad."
+
+#: program/localization/cy_GB/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Crëwyd y chwiliad yn llwyddiannus."
+
+#: program/localization/cy_GB/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Methwyd creu y chwiliad."
+
+#: program/localization/cy_GB/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Neges(euon) wedi eu dileu yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Neges(euon) wedi eu symud yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Neges(euon) wedi eu copïo yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Neges(euon) wedi eu marcio yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Rhowch o leia $min llythyren ar gyfer awto-gwblhau"
+
+#: program/localization/cy_GB/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Canfuwyd mwy o gofnodion sy'n cyfateb. Teipiwch fwy o lythrennau."
+
+#: program/localization/cy_GB/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Ni all yr enw fod yn wag"
+
+#: program/localization/cy_GB/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Mae'r enw yn rhy hir"
+
+#: program/localization/cy_GB/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Diweddarwyd y ffolder yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Crëwyd y ffolder yn llwyddiannus"
+
+#: program/localization/cy_GB/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Ddim yn fformat llun dilys."
+
+#: program/localization/cy_GB/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "Gwelwyd camsillafu yn y neges."
+
+#: program/localization/cy_GB/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "Methwyd creu/symud ffolder i'r ffolder rhiant ddewiswyd. Dim hawl mynediad."
+
+#: program/localization/cy_GB/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "Mae darn y neges yn rhy fawr i'w brosesu."

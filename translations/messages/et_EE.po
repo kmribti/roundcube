@@ -1,0 +1,520 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/et_EE/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: et_EE\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/et_EE/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Sisselogimine ebaõnnestus"
+
+#: program/localization/et_EE/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Sinu veebilehitseja ei võta präänikuid vastu"
+
+#: program/localization/et_EE/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Sinu seanss on aegunud või vigane"
+
+#: program/localization/et_EE/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Ei õnnestunud IMAP serveriga ühendust luua"
+
+#: program/localization/et_EE/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Serveri tõrge!"
+
+#: program/localization/et_EE/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Serveri tõrge: $msg"
+
+#: program/localization/et_EE/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Andmebaasi tõrge!"
+
+#: program/localization/et_EE/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Operatsioon nurjus. Kaustale on vaid lugemisõigus"
+
+#: program/localization/et_EE/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Operatsioon nurjus. Ligipääsu õigused puuduvad"
+
+#: program/localization/et_EE/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Lubamatu päring! Andmeid ei salvestatud."
+
+#: program/localization/et_EE/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Postkast paistab tühi olevat"
+
+#: program/localization/et_EE/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Sinu seanss on edukalt lõpetatud. Nägemiseni!"
+
+#: program/localization/et_EE/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Postkast on tühi"
+
+#: program/localization/et_EE/messages.inc:loading
+msgid "Loading..."
+msgstr "Laadin..."
+
+#: program/localization/et_EE/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Laadin faili üles..."
+
+#: program/localization/et_EE/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Failide üleslaadimine..."
+
+#: program/localization/et_EE/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Andmete laadimine..."
+
+#: program/localization/et_EE/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Kontrollin uusi kirju..."
+
+#: program/localization/et_EE/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Saadan kirja..."
+
+#: program/localization/et_EE/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Kiri edukalt saadetud"
+
+#: program/localization/et_EE/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Salvestan kirja..."
+
+#: program/localization/et_EE/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Kiri salvestatud mustanditesse"
+
+#: program/localization/et_EE/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Edukalt salvestatud"
+
+#: program/localization/et_EE/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Kontakt lisati edukalt aadressiraamatusse"
+
+#: program/localization/et_EE/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Sellise e-posti aadressiga kontakt on juba olemas"
+
+#: program/localization/et_EE/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Sinu privaatsuse kaitsmiseks on selles kirjas välised pildid blokeeritud."
+
+#: program/localization/et_EE/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "See on krüpteeritud kiri ja kahjuks pole seda võimalik näidata."
+"Andestust!"
+
+#: program/localization/et_EE/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Ei leitud ühtegi kontakti"
+
+#: program/localization/et_EE/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Otsitud kontakti ei leitud"
+
+#: program/localization/et_EE/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Kirja saatmine ebaõnnestus"
+
+#: program/localization/et_EE/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Palun oota enne selle kirja saatmist $sec sekundit."
+
+#: program/localization/et_EE/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Saadetud kirja salvestamisel ilmnes tõrge"
+
+#: program/localization/et_EE/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Salvestamise ajal ilmnes viga"
+
+#: program/localization/et_EE/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Ei suutnud seda kirja liigutada"
+
+#: program/localization/et_EE/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Kirju ei õnnestunud kopeerida"
+
+#: program/localization/et_EE/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Ei suutnud seda kirja kustutada"
+
+#: program/localization/et_EE/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Kirja märkimine nurjus"
+
+#: program/localization/et_EE/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Soovid valitud kontaktid kustutada?"
+
+#: program/localization/et_EE/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Soovid valitud kirja(d) kustutada?"
+
+#: program/localization/et_EE/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Soovid selle kataloogi kindlasti kustutada?"
+
+#: program/localization/et_EE/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Soovid sellest kaustast kõik kirjad kustutada?"
+
+#: program/localization/et_EE/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Kustutan kausta..."
+
+#: program/localization/et_EE/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Liigutan kausta..."
+
+#: program/localization/et_EE/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Tellin kausta..."
+
+#: program/localization/et_EE/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Peatan kausta tellimuse..."
+
+#: program/localization/et_EE/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Vormi kõik väljad ei ole täidetud"
+
+#: program/localization/et_EE/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Palun sisesta toimiv e-posti aadress"
+
+#: program/localization/et_EE/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Palun sisesta nimi"
+
+#: program/localization/et_EE/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Palun sisesta lehekülje suurus"
+
+#: program/localization/et_EE/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Palun sisesta saatja e-posti aadress"
+
+#: program/localization/et_EE/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Palun sisesta vähemalt üks adressaat"
+
+#: program/localization/et_EE/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Väli „Pealkiri“ on tühi. Soovid selle ära täita?"
+
+#: program/localization/et_EE/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Saadan selle kirja ilma tekstita?"
+
+#: program/localization/et_EE/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Kirja saatmine nurjus. Soovid selle ära visata?"
+
+#: program/localization/et_EE/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Palun vali otsinguks LDAPi server"
+
+#: program/localization/et_EE/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Ühtegi kontakti ei leitud"
+
+#: program/localization/et_EE/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Palun sisesta kontakti nimi või e-posti aadress"
+
+#: program/localization/et_EE/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Kõiki manuseid ei ole veel üles laaditud. Palun oota või tühista"
+"üleslaadimine."
+
+#: program/localization/et_EE/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "Leiti $nr kirja"
+
+#: program/localization/et_EE/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Otsingule vastavaid kirju ei leitud"
+
+#: program/localization/et_EE/messages.inc:searching
+msgid "Searching..."
+msgstr "Otsin..."
+
+#: program/localization/et_EE/messages.inc:checking
+msgid "Checking..."
+msgstr "Kontrollin..."
+
+#: program/localization/et_EE/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Õigekirjavigu ei leitud"
+
+#: program/localization/et_EE/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Kausta kustutamine õnnestus"
+
+#: program/localization/et_EE/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Kausta tellimine õnnestus"
+
+#: program/localization/et_EE/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Kausta tellimise peatamine õnnestus"
+
+#: program/localization/et_EE/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Kaust puhastatud edukalt"
+
+#: program/localization/et_EE/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Kaust tühjendatud edukalt"
+
+#: program/localization/et_EE/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Edukalt kustutatud"
+
+#: program/localization/et_EE/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Eemaldan kirjast vormindust..."
+
+#: program/localization/et_EE/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Kirjade serverist laadimine ebaõnnestus"
+
+#: program/localization/et_EE/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Faili üleslaadimine ebaõnnestus"
+
+#: program/localization/et_EE/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Üleslaetava faili suurus ületab maksimaalse suuruse $size"
+
+#: program/localization/et_EE/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "$nr aadressi edukalt kopeeritud"
+
+#: program/localization/et_EE/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Ühegi aadressi kopeerimine ei õnnestunud "
+
+#: program/localization/et_EE/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Aadressi asukohas puuduvad kirjutusõigused"
+
+#: program/localization/et_EE/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Kontakti aadressi salvestamine ebaõnnestus"
+
+#: program/localization/et_EE/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Liigutan kirja..."
+
+#: program/localization/et_EE/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Kopeerin kirja..."
+
+#: program/localization/et_EE/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Kustutan kirja..."
+
+#: program/localization/et_EE/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Märgin kirja..."
+
+#: program/localization/et_EE/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Kättesaamiskinnitus saadetud"
+
+#: program/localization/et_EE/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Ei õnnestunud kättesaamiskinnitust saata"
+
+#: program/localization/et_EE/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "See identiteet on viimane ja seda ei saa kustutada."
+
+#: program/localization/et_EE/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Kausta nimi sisaldab keelatud sümbolit"
+
+#: program/localization/et_EE/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Palun vali üleslaadimiseks fail"
+
+#: program/localization/et_EE/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Valitud aadressiraamat pole kirjutatav"
+
+#: program/localization/et_EE/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Kontaktide lisamine gruppi õnnestus"
+
+#: program/localization/et_EE/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Kontaktide eemaldamine grupist õnnestus"
+
+#: program/localization/et_EE/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Impordin, palun oota..."
+
+#: program/localization/et_EE/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Import nurjus! Üleslaaditud fail ei ole vCard formaadis."
+
+#: program/localization/et_EE/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Edukalt imporditud $inserted kontakti, $skipped olemasolevat sissekannet"
+"vahele jäetud</b>:<p><em>$names</em></p>"
+
+#: program/localization/et_EE/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b> $skipped olemasolevat kirjet jäeti vahele</b>"
+
+#: program/localization/et_EE/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Tegevus pole lubatud!"
+
+#: program/localization/et_EE/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Valitud identiteedil puudub e-posti aadress"
+
+#: program/localization/et_EE/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Klaarteksti redaktorile lülitamine kaotab kogu teksti vorminduse. Soovid"
+"jätkata?"
+
+#: program/localization/et_EE/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Viga seadistustes. Võta kohe oma süsteemiadministraatoriga ühendust."
+"<b>Sinu kirja polnud võimalik ära saata.</b>"
+
+#: program/localization/et_EE/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP tõrge ($code): serveriga ühendumine nurjus"
+
+#: program/localization/et_EE/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP tõrge ($code): autentimine nurjus"
+
+#: program/localization/et_EE/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP tõrge ($code): \"$from\" saatjaks määramine nurjus ($msg)"
+
+#: program/localization/et_EE/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP tõrge ($code): \"$to\" saajaks määramine nurjus ($msg)"
+
+#: program/localization/et_EE/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP tõrge: saajate nimekirja parsimine nurjus"
+
+#: program/localization/et_EE/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "SMTP tõrge: puudub kohalejõudmise teavituse toetus"
+
+#: program/localization/et_EE/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP tõrge: $msg"
+
+#: program/localization/et_EE/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Lubamatu e-posti aadress: $email"
+
+#: program/localization/et_EE/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Liiga palju adressaate. Vähenda kirja saajate hulka $max-ni."
+
+#: program/localization/et_EE/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Grupi liikmete arv ületab suurima lubatud $max"
+
+#: program/localization/et_EE/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Ilmnes sisemine tõrge. Palun proovi uuesti."
+
+#: program/localization/et_EE/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Kontaktide kustutamine nurjus"
+
+#: program/localization/et_EE/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Kontaktide kustutamine õnnestus"
+
+#: program/localization/et_EE/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Grupi kustutamine õnnestus"
+
+#: program/localization/et_EE/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Grupi ümbernimetamine õnnestus"
+
+#: program/localization/et_EE/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Grupi loomine õnnestus"
+
+#: program/localization/et_EE/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Kiri edukalt kustutatud"
+
+#: program/localization/et_EE/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Kiri edukalt liigutatud"
+
+#: program/localization/et_EE/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Kiri edukalt kopeeritud"
+
+#: program/localization/et_EE/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Kiri edukalt märgitud"
+
+#: program/localization/et_EE/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Sisesta vähemalt $min märki autom. lõpetuseks"
+
+#: program/localization/et_EE/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Nimi ei saa olla tühi"
+
+#: program/localization/et_EE/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Nimi liiga pikk"
+
+#: program/localization/et_EE/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Kaust uuendatud edukalt"
+
+#: program/localization/et_EE/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Kaust loodud edukalt"
+
+#: program/localization/et_EE/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Pole õige pildi formaat"
+
+#: program/localization/et_EE/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "Kiri sisaldab õigekirjavigu"

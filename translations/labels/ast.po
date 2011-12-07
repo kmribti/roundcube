@@ -1,0 +1,1036 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ast/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ast/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Bienllegáu a $product"
+
+#: program/localization/ast/labels.inc:username
+msgid "Username"
+msgstr "Usuariu"
+
+#: program/localization/ast/labels.inc:password
+msgid "Password"
+msgstr "Clave"
+
+#: program/localization/ast/labels.inc:server
+msgid "Server"
+msgstr "Sirvidor"
+
+#: program/localization/ast/labels.inc:login
+msgid "Login"
+msgstr "Entrar"
+
+#: program/localization/ast/labels.inc:logout
+msgid "Logout"
+msgstr "Zarrar"
+
+#: program/localization/ast/labels.inc:mail
+msgid "Mail"
+msgstr "Corréu"
+
+#: program/localization/ast/labels.inc:settings
+msgid "Settings"
+msgstr "Preferencies personales"
+
+#: program/localization/ast/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Llibru de direiciones"
+
+#: program/localization/ast/labels.inc:inbox
+msgid "Inbox"
+msgstr "Entrantes"
+
+#: program/localization/ast/labels.inc:drafts
+msgid "Drafts"
+msgstr "Borradores"
+
+#: program/localization/ast/labels.inc:sent
+msgid "Sent"
+msgstr "Unviaos"
+
+#: program/localization/ast/labels.inc:trash
+msgid "Trash"
+msgstr "Papelera"
+
+#: program/localization/ast/labels.inc:junk
+msgid "Junk"
+msgstr "Puxarra"
+
+#: program/localization/ast/labels.inc:subject
+msgid "Subject"
+msgstr "Asuntu"
+
+#: program/localization/ast/labels.inc:from
+msgid "From"
+msgstr "De"
+
+#: program/localization/ast/labels.inc:to
+msgid "To"
+msgstr "Pa"
+
+#: program/localization/ast/labels.inc:cc
+msgid "Cc"
+msgstr "Copia"
+
+#: program/localization/ast/labels.inc:bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#: program/localization/ast/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Contestar a"
+
+#: program/localization/ast/labels.inc:date
+msgid "Date"
+msgstr "Fecha"
+
+#: program/localization/ast/labels.inc:size
+msgid "Size"
+msgstr "Tamañu"
+
+#: program/localization/ast/labels.inc:priority
+msgid "Priority"
+msgstr "Prioridá"
+
+#: program/localization/ast/labels.inc:organization
+msgid "Company"
+msgstr "Organización"
+
+#: program/localization/ast/labels.inc:reply-to
+msgid "reply-to"
+msgstr "Contestar a"
+
+#: program/localization/ast/labels.inc:mailboxlist
+#: program/localization/ast/labels.inc:folders
+msgid "Folders"
+msgstr "Bandexes"
+
+#: program/localization/ast/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Mensaxes del $from a $to de $count"
+
+#: program/localization/ast/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Mensaxe $nr de $count"
+
+#: program/localization/ast/labels.inc:moveto
+msgid "Move to..."
+msgstr "mover pa..."
+
+#: program/localization/ast/labels.inc:download
+msgid "Download"
+msgstr "baxar"
+
+#: program/localization/ast/labels.inc:filename
+msgid "File name"
+msgstr "Nome del Ficheru"
+
+#: program/localization/ast/labels.inc:filesize
+msgid "File size"
+msgstr "Tamañu del ficheru"
+
+#: program/localization/ast/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Amosar HTML"
+
+#: program/localization/ast/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Mensaxe HTML"
+
+#: program/localization/ast/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Fecha prestosa"
+
+#: program/localization/ast/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Amestar al llibru de direiciones"
+
+#: program/localization/ast/labels.inc:sun
+msgid "Sun"
+msgstr "Dom"
+
+#: program/localization/ast/labels.inc:mon
+msgid "Mon"
+msgstr "Llu"
+
+#: program/localization/ast/labels.inc:tue
+msgid "Tue"
+msgstr "Mar"
+
+#: program/localization/ast/labels.inc:wed
+msgid "Wed"
+msgstr "Mie"
+
+#: program/localization/ast/labels.inc:thu
+msgid "Thu"
+msgstr "Xue"
+
+#: program/localization/ast/labels.inc:fri
+msgid "Fri"
+msgstr "Vie"
+
+#: program/localization/ast/labels.inc:sat
+msgid "Sat"
+msgstr "Sab"
+
+#: program/localization/ast/labels.inc:sunday
+msgid "Sunday"
+msgstr "Domingu"
+
+#: program/localization/ast/labels.inc:monday
+msgid "Monday"
+msgstr "Llunes"
+
+#: program/localization/ast/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Martes"
+
+#: program/localization/ast/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Miércoles"
+
+#: program/localization/ast/labels.inc:thursday
+msgid "Thursday"
+msgstr "Xueves"
+
+#: program/localization/ast/labels.inc:friday
+msgid "Friday"
+msgstr "Vienres"
+
+#: program/localization/ast/labels.inc:saturday
+msgid "Saturday"
+msgstr "Sábadu"
+
+#: program/localization/ast/labels.inc:jan
+msgid "Jan"
+msgstr "Xin"
+
+#: program/localization/ast/labels.inc:feb
+msgid "Feb"
+msgstr "Feb"
+
+#: program/localization/ast/labels.inc:mar
+msgid "Mar"
+msgstr "Mar"
+
+#: program/localization/ast/labels.inc:apr
+msgid "Apr"
+msgstr "Abr"
+
+#: program/localization/ast/labels.inc:may
+#: program/localization/ast/labels.inc:longmay
+msgid "May"
+msgstr "Mayu"
+
+#: program/localization/ast/labels.inc:jun
+msgid "Jun"
+msgstr "Xun"
+
+#: program/localization/ast/labels.inc:jul
+msgid "Jul"
+msgstr "Xnt"
+
+#: program/localization/ast/labels.inc:aug
+msgid "Aug"
+msgstr "Ago"
+
+#: program/localization/ast/labels.inc:sep
+msgid "Sep"
+msgstr "Set"
+
+#: program/localization/ast/labels.inc:oct
+msgid "Oct"
+msgstr "Och"
+
+#: program/localization/ast/labels.inc:nov
+msgid "Nov"
+msgstr "Pay"
+
+#: program/localization/ast/labels.inc:dec
+msgid "Dec"
+msgstr "Avi"
+
+#: program/localization/ast/labels.inc:longjan
+msgid "January"
+msgstr "Xineru"
+
+#: program/localization/ast/labels.inc:longfeb
+msgid "February"
+msgstr "Febreru"
+
+#: program/localization/ast/labels.inc:longmar
+msgid "March"
+msgstr "Marzu"
+
+#: program/localization/ast/labels.inc:longapr
+msgid "April"
+msgstr "Abril"
+
+#: program/localization/ast/labels.inc:longjun
+msgid "June"
+msgstr "Xunu"
+
+#: program/localization/ast/labels.inc:longjul
+msgid "July"
+msgstr "Xunetu"
+
+#: program/localization/ast/labels.inc:longaug
+msgid "August"
+msgstr "Agostu"
+
+#: program/localization/ast/labels.inc:longsep
+msgid "September"
+msgstr "Setiembre"
+
+#: program/localization/ast/labels.inc:longoct
+msgid "October"
+msgstr "Ochobre"
+
+#: program/localization/ast/labels.inc:longnov
+msgid "November"
+msgstr "Payares"
+
+#: program/localization/ast/labels.inc:longdec
+msgid "December"
+msgstr "Avientu"
+
+#: program/localization/ast/labels.inc:today
+msgid "Today"
+msgstr "Güei"
+
+#: program/localization/ast/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Buscar mensaxes nuevos"
+
+#: program/localization/ast/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Facer un mensaxe nuevu"
+
+#: program/localization/ast/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Contestar al mensaxe"
+
+#: program/localization/ast/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Contestar a toos"
+
+#: program/localization/ast/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Reunviar mensaxe"
+
+#: program/localization/ast/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Desaniciar mensaxe"
+
+#: program/localization/ast/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Mover mensaxe a la papelera"
+
+#: program/localization/ast/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Imprentar esti mensaxe"
+
+#: program/localization/ast/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Amosar el mensaxe anterior"
+
+#: program/localization/ast/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "Amosar grupu de mensaxes anterior"
+
+#: program/localization/ast/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Amosar primer mensaxe"
+
+#: program/localization/ast/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "Amosar primer grupu de mensaxes"
+
+#: program/localization/ast/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Amosar el mensaxe siguiente"
+
+#: program/localization/ast/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "Amosar grupu de mensaxes que siguientes"
+
+#: program/localization/ast/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Amosar l'últimu mensaxe"
+
+#: program/localization/ast/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "Amosar l'últimu grupu de mensaxes"
+
+#: program/localization/ast/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Tornar a la llista de mensaxes"
+
+#: program/localization/ast/labels.inc:viewsource
+msgid "Show source"
+msgstr "Amosar el códigu"
+
+#: program/localization/ast/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Marcar mensaxes"
+
+#: program/localization/ast/labels.inc:markread
+msgid "As read"
+msgstr "Como lleíu"
+
+#: program/localization/ast/labels.inc:markunread
+msgid "As unread"
+msgstr "Como non lleíu"
+
+#: program/localization/ast/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Como marcáu"
+
+#: program/localization/ast/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Como non marcáu"
+
+#: program/localization/ast/labels.inc:messageactions
+msgid "messageactions"
+msgstr "Más aiciones..."
+
+#: program/localization/ast/labels.inc:select
+msgid "Select"
+msgstr "Escueye"
+
+#: program/localization/ast/labels.inc:all
+msgid "All"
+msgstr "Toos"
+
+#: program/localization/ast/labels.inc:none
+msgid "None"
+msgstr "Nengún"
+
+#: program/localization/ast/labels.inc:unread
+msgid "Unread"
+msgstr "Ensin lleer"
+
+#: program/localization/ast/labels.inc:flagged
+msgid "Flagged"
+msgstr "Marcáu"
+
+#: program/localization/ast/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Ensin contestar"
+
+#: program/localization/ast/labels.inc:deleted
+msgid "Deleted"
+msgstr "Desaniciáu"
+
+#: program/localization/ast/labels.inc:invert
+msgid "Invert"
+msgstr "Invertir"
+
+#: program/localization/ast/labels.inc:filter
+msgid "Filter"
+msgstr "Filtru"
+
+#: program/localization/ast/labels.inc:compact
+msgid "Compact"
+msgstr "Compautar"
+
+#: program/localization/ast/labels.inc:empty
+msgid "Empty"
+msgstr "Vaciar"
+
+#: program/localization/ast/labels.inc:purge
+msgid "purge"
+msgstr "Desaniciar"
+
+#: program/localization/ast/labels.inc:quota
+msgid "Disk usage"
+msgstr "Espaciu en discu"
+
+#: program/localization/ast/labels.inc:unknown
+msgid "unknown"
+msgstr "desconocíu"
+
+#: program/localization/ast/labels.inc:unlimited
+msgid "unlimited"
+msgstr "ensin llímite"
+
+#: program/localization/ast/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Búsqueda rápida"
+
+#: program/localization/ast/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Anovar la búsqueda"
+
+#: program/localization/ast/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Guetar modificadores"
+
+#: program/localization/ast/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Mensax completu"
+
+#: program/localization/ast/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Abrir en una ventana nueva"
+
+#: program/localization/ast/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Baxar (.eml)"
+
+#: program/localization/ast/labels.inc:compose
+msgid "Compose a message"
+msgstr "Escribir un mensaxe"
+
+#: program/localization/ast/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Editar como nuevu"
+
+#: program/localization/ast/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Guardar como borrador"
+
+#: program/localization/ast/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Unviar el mensaxe yá"
+
+#: program/localization/ast/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Amestar un archivu"
+
+#: program/localization/ast/labels.inc:charset
+msgid "Charset"
+msgstr "Codificación"
+
+#: program/localization/ast/labels.inc:editortype
+msgid "Editor type"
+msgstr "Tipo d'editor"
+
+#: program/localization/ast/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Avisu de recibu"
+
+#: program/localization/ast/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Revisar ortografía"
+
+#: program/localization/ast/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Siguir cola edición"
+
+#: program/localization/ast/labels.inc:revertto
+msgid "Revert to"
+msgstr "Desfacer a"
+
+#: program/localization/ast/labels.inc:attachments
+msgid "Attachments"
+msgstr "Axuntos"
+
+#: program/localization/ast/labels.inc:upload
+msgid "Upload"
+msgstr "Xubir"
+
+#: program/localization/ast/labels.inc:close
+msgid "Close"
+msgstr "Zarrar"
+
+#: program/localization/ast/labels.inc:low
+msgid "Low"
+msgstr "Baxu"
+
+#: program/localization/ast/labels.inc:lowest
+msgid "Lowest"
+msgstr "Mui baxu"
+
+#: program/localization/ast/labels.inc:normal
+msgid "Normal"
+msgstr "Normal"
+
+#: program/localization/ast/labels.inc:high
+msgid "High"
+msgstr "Altu"
+
+#: program/localization/ast/labels.inc:highest
+msgid "Highest"
+msgstr "Mui altu"
+
+#: program/localization/ast/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(ensin asuntu)"
+
+#: program/localization/ast/labels.inc:showimages
+msgid "Display images"
+msgstr "Amosar imáxenes"
+
+#: program/localization/ast/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Amosar siempre les imáxenes de $sender"
+
+#: program/localization/ast/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/ast/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Testu"
+
+#: program/localization/ast/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Guardar mensaxe unviau en"
+
+#: program/localization/ast/labels.inc:dontsave
+msgid "don't save"
+msgstr "Desanicialu"
+
+#: program/localization/ast/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "El tamañu másimu pa un ficheru ye $size"
+
+#: program/localization/ast/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Amestar Cc"
+
+#: program/localization/ast/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Amestar Bcc"
+
+#: program/localization/ast/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Amestar Rempuesta pa"
+
+#: program/localization/ast/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "El qu'unvia esti mensaxe quier que lo avises cuando lleas el corréu."
+"¿Quies avisalo?"
+
+#: program/localization/ast/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Avisu de llectura"
+
+#: program/localization/ast/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Esto ye un avisu de llectura del to mensaxe"
+
+#: program/localization/ast/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Nota: Esti avisu namás quier dicir que'l to mensaxe amosośe nel equipu"
+"del receptor. Nun hai forma de garantizate que lo lleera o que"
+"pescanciara'l to mensaxe."
+
+#: program/localization/ast/labels.inc:name
+msgid "Display Name"
+msgstr "Nome completu"
+
+#: program/localization/ast/labels.inc:firstname
+msgid "First Name"
+msgstr "Nome"
+
+#: program/localization/ast/labels.inc:surname
+msgid "Last Name"
+msgstr "Apellíu"
+
+#: program/localization/ast/labels.inc:email
+msgid "Email"
+msgstr "Corréu"
+
+#: program/localization/ast/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Amestar contautu nuevu"
+
+#: program/localization/ast/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Editar contautu"
+
+#: program/localization/ast/labels.inc:edit
+msgid "Edit"
+msgstr "Editar"
+
+#: program/localization/ast/labels.inc:cancel
+msgid "Cancel"
+msgstr "Encaboxar"
+
+#: program/localization/ast/labels.inc:save
+msgid "Save"
+msgstr "Guardar"
+
+#: program/localization/ast/labels.inc:delete
+msgid "Delete"
+msgstr "Desaniciar"
+
+#: program/localization/ast/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Facer un contautu nuevu"
+
+#: program/localization/ast/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Desaniciar los contautos marcaos"
+
+#: program/localization/ast/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Unviar mensaxe a"
+
+#: program/localization/ast/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Contautos $from a $to de $count"
+
+#: program/localization/ast/labels.inc:print
+msgid "Print"
+msgstr "Imprentar"
+
+#: program/localization/ast/labels.inc:export
+msgid "Export"
+msgstr "Esportar"
+
+#: program/localization/ast/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Esportar contautos en formatu vCard"
+
+#: program/localization/ast/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Amosar grupu anterior"
+
+#: program/localization/ast/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Amosar primer grupu"
+
+#: program/localization/ast/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Amosar siguiente grupu"
+
+#: program/localization/ast/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Amosar l'últimu grupu"
+
+#: program/localization/ast/labels.inc:groups
+msgid "Groups"
+msgstr "Grupos"
+
+#: program/localization/ast/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Direiciones personales"
+
+#: program/localization/ast/labels.inc:import
+msgid "Import"
+msgstr "Importar"
+
+#: program/localization/ast/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Importar contautos"
+
+#: program/localization/ast/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Importar dende un ficheru:"
+
+#: program/localization/ast/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Trocar el llibru de direiciones enteru"
+
+#: program/localization/ast/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Puedes xubir direcione d'un llibr que yá tengas.<br/>Anguaño puedes"
+"importar direiciones en formatu <a"
+"href=\"http://ast.wikipedia.org/wiki/VCard\">vCard</a>."
+
+#: program/localization/ast/labels.inc:done
+msgid "Done"
+msgstr "Fecho"
+
+#: program/localization/ast/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Configuración pa"
+
+#: program/localization/ast/labels.inc:preferences
+msgid "Preferences"
+msgstr "Preferencies"
+
+#: program/localization/ast/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Preferencies d'usuariu"
+
+#: program/localization/ast/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Editar preferencies d'usuariu"
+
+#: program/localization/ast/labels.inc:identities
+msgid "Identities"
+msgstr "Identidaes"
+
+#: program/localization/ast/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Remanar identidaes pa esta cuenta"
+
+#: program/localization/ast/labels.inc:newidentity
+msgid "New identity"
+msgstr "Identidad nueva"
+
+#: program/localization/ast/labels.inc:newitem
+msgid "New item"
+msgstr "Nuevu"
+
+#: program/localization/ast/labels.inc:edititem
+msgid "Edit item"
+msgstr "Editar"
+
+#: program/localization/ast/labels.inc:setdefault
+msgid "Set default"
+msgstr "Escoyer opción preferída"
+
+#: program/localization/ast/labels.inc:autodetect
+msgid "Auto"
+msgstr "Escoyer automáticamente"
+
+#: program/localization/ast/labels.inc:language
+msgid "Language"
+msgstr "Idioma"
+
+#: program/localization/ast/labels.inc:timezone
+msgid "Time zone"
+msgstr "Franxa horaria"
+
+#: program/localization/ast/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Fileres per páxina"
+
+#: program/localization/ast/labels.inc:signature
+msgid "Signature"
+msgstr "Firma"
+
+#: program/localization/ast/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Cambéu horariu"
+
+#: program/localization/ast/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Facer el mensaxe n'HTML"
+
+#: program/localization/ast/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "Firma HTML"
+
+#: program/localization/ast/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Entever"
+
+#: program/localization/ast/labels.inc:skin
+msgid "Interface skin"
+msgstr "Estilu"
+
+#: program/localization/ast/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Vaciar la papelera al zarrar la sesión"
+
+#: program/localization/ast/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Compautar la bandexa d'entrada al zarrar la sesión"
+
+#: program/localization/ast/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Interfaz d'usuariu"
+
+#: program/localization/ast/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Configuración del sirvidor"
+
+#: program/localization/ast/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Vista del buzón"
+
+#: program/localization/ast/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Avisos d'unvios"
+
+#: program/localization/ast/labels.inc:askuser
+msgid "ask me"
+msgstr "preguntar al usuariu"
+
+#: program/localization/ast/labels.inc:autosend
+msgid "send receipt"
+msgstr "unviar de secute"
+
+#: program/localization/ast/labels.inc:ignore
+msgid "ignore"
+msgstr "ignoralos"
+
+#: program/localization/ast/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Marcar el mensaxe como lleíu al desanicialu"
+
+#: program/localization/ast/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Marcar el mensaxe pa desaniciase en cuenta de desanicialu dafechu"
+
+#: program/localization/ast/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Nun amosar los mensaxes desaniciaos"
+
+#: program/localization/ast/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Amosar imáxenes remotes"
+
+#: program/localization/ast/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "de contautos conocíos"
+
+#: program/localization/ast/labels.inc:always
+msgid "always"
+msgstr "siempre"
+
+#: program/localization/ast/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Amosar imáxenes axuntes embaxu'l mensaxe"
+
+#: program/localization/ast/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Guardar borrador de secute"
+
+#: program/localization/ast/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "cada $n minutu/os"
+
+#: program/localization/ast/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Guetar mensaxes nuevos cada"
+
+#: program/localization/ast/labels.inc:never
+msgid "never"
+msgstr "nunca"
+
+#: program/localization/ast/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Vista de mensaxes"
+
+#: program/localization/ast/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Edición de mensaxes"
+
+#: program/localization/ast/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Nomes d'axuntos"
+
+#: program/localization/ast/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Too RFC 2231 (Thunderbird)"
+
+#: program/localization/ast/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/ast/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Too RFC 2047 (otros)"
+
+#: program/localization/ast/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Opciones avanzaes"
+
+#: program/localization/ast/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Poner el focu nos mensaxes nuevos"
+
+#: program/localization/ast/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Guetar mensaxes nuevos en toles bandexes"
+
+#: program/localization/ast/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Depués de mover/desaniciar amosar el mensaxe que sigue darréu"
+
+#: program/localization/ast/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Opciones principales"
+
+#: program/localization/ast/labels.inc:section
+msgid "Section"
+msgstr "Seición"
+
+#: program/localization/ast/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Mantenimientu"
+
+#: program/localization/ast/labels.inc:newmessage
+msgid "New Message"
+msgstr "Mensax nuevu"
+
+#: program/localization/ast/labels.inc:listoptions
+msgid "List Options"
+msgstr "Allistar opciones"
+
+#: program/localization/ast/labels.inc:folder
+msgid "Folder"
+msgstr "Bandexa"
+
+#: program/localization/ast/labels.inc:foldername
+msgid "Folder name"
+msgstr "Nome de bandexa"
+
+#: program/localization/ast/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Soscrita"
+
+#: program/localization/ast/labels.inc:messagecount
+msgid "Messages"
+msgstr "Mensaxes"
+
+#: program/localization/ast/labels.inc:create
+msgid "Create"
+msgstr "Facer"
+
+#: program/localization/ast/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Facer una bandexa nueva"
+
+#: program/localization/ast/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Alministrar bandexes"
+
+#: program/localization/ast/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Bandexes especiales"
+
+#: program/localization/ast/labels.inc:sortby
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: program/localization/ast/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Orden ascendente"
+
+#: program/localization/ast/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Orden descendente"
+
+#: program/localization/ast/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/ast/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/ast/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/ast/labels.inc:GB
+msgid "GB"
+msgstr "GB"

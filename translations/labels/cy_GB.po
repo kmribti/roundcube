@@ -1,0 +1,1671 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/cy_GB/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: cy_GB\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/cy_GB/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Croeso i $product"
+
+#: program/localization/cy_GB/labels.inc:username
+msgid "Username"
+msgstr "Enw defnyddiwr"
+
+#: program/localization/cy_GB/labels.inc:password
+msgid "Password"
+msgstr "Cyfrinair"
+
+#: program/localization/cy_GB/labels.inc:server
+msgid "Server"
+msgstr "Gweinydd"
+
+#: program/localization/cy_GB/labels.inc:login
+msgid "Login"
+msgstr "Mewngofnodi"
+
+#: program/localization/cy_GB/labels.inc:logout
+msgid "Logout"
+msgstr "Allgofnodi"
+
+#: program/localization/cy_GB/labels.inc:mail
+msgid "Mail"
+msgstr "E-bost"
+
+#: program/localization/cy_GB/labels.inc:settings
+msgid "Settings"
+msgstr "Gosodiadau Personol"
+
+#: program/localization/cy_GB/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Llyfr Cyfeiriadau"
+
+#: program/localization/cy_GB/labels.inc:inbox
+msgid "Inbox"
+msgstr "Mewnflwch"
+
+#: program/localization/cy_GB/labels.inc:drafts
+msgid "Drafts"
+msgstr "Drafftiau"
+
+#: program/localization/cy_GB/labels.inc:sent
+msgid "Sent"
+msgstr "Danfonwyd"
+
+#: program/localization/cy_GB/labels.inc:trash
+msgid "Trash"
+msgstr "Sbwriel"
+
+#: program/localization/cy_GB/labels.inc:junk
+msgid "Junk"
+msgstr "Sothach"
+
+#: program/localization/cy_GB/labels.inc:subject
+msgid "Subject"
+msgstr "Pwnc"
+
+#: program/localization/cy_GB/labels.inc:from
+msgid "From"
+msgstr "Anfonwr"
+
+#: program/localization/cy_GB/labels.inc:to
+msgid "To"
+msgstr "Derbyniwr"
+
+#: program/localization/cy_GB/labels.inc:cc
+msgid "Cc"
+msgstr "Copi"
+
+#: program/localization/cy_GB/labels.inc:bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#: program/localization/cy_GB/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Ateb-I"
+
+#: program/localization/cy_GB/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Followup-To"
+
+#: program/localization/cy_GB/labels.inc:date
+msgid "Date"
+msgstr "Dyddiad"
+
+#: program/localization/cy_GB/labels.inc:size
+msgid "Size"
+msgstr "Maint"
+
+#: program/localization/cy_GB/labels.inc:priority
+msgid "Priority"
+msgstr "Blaenoriaeth"
+
+#: program/localization/cy_GB/labels.inc:organization
+msgid "Company"
+msgstr "Enw'r Sefydliad"
+
+#: program/localization/cy_GB/labels.inc:readstatus
+msgid "Read status"
+msgstr "Statws darllen"
+
+#: program/localization/cy_GB/labels.inc:mailboxlist
+#: program/localization/cy_GB/labels.inc:folders
+msgid "Folders"
+msgstr "Ffolderi"
+
+#: program/localization/cy_GB/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Negeseuon $from i $to o $count"
+
+#: program/localization/cy_GB/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Edefau $from i $to o $count"
+
+#: program/localization/cy_GB/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Neges $nr o $count"
+
+#: program/localization/cy_GB/labels.inc:copy
+msgid "Copy"
+msgstr "Copio"
+
+#: program/localization/cy_GB/labels.inc:move
+msgid "Move"
+msgstr "Symud"
+
+#: program/localization/cy_GB/labels.inc:moveto
+msgid "Move to..."
+msgstr "Symud i..."
+
+#: program/localization/cy_GB/labels.inc:download
+msgid "Download"
+msgstr "Llwytho lawr"
+
+#: program/localization/cy_GB/labels.inc:filename
+msgid "File name"
+msgstr "Enw ffeil"
+
+#: program/localization/cy_GB/labels.inc:filesize
+msgid "File size"
+msgstr "Maint ffeil"
+
+#: program/localization/cy_GB/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Ychwanegu i'r llyfr cyfeiriadau"
+
+#: program/localization/cy_GB/labels.inc:sun
+msgid "Sun"
+msgstr "Sul"
+
+#: program/localization/cy_GB/labels.inc:mon
+msgid "Mon"
+msgstr "Llun"
+
+#: program/localization/cy_GB/labels.inc:tue
+msgid "Tue"
+msgstr "Maw"
+
+#: program/localization/cy_GB/labels.inc:wed
+msgid "Wed"
+msgstr "Mer"
+
+#: program/localization/cy_GB/labels.inc:thu
+msgid "Thu"
+msgstr "Iau"
+
+#: program/localization/cy_GB/labels.inc:fri
+msgid "Fri"
+msgstr "Gwe"
+
+#: program/localization/cy_GB/labels.inc:sat
+msgid "Sat"
+msgstr "Sad"
+
+#: program/localization/cy_GB/labels.inc:sunday
+msgid "Sunday"
+msgstr "Dydd Sul"
+
+#: program/localization/cy_GB/labels.inc:monday
+msgid "Monday"
+msgstr "Dydd Llun"
+
+#: program/localization/cy_GB/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Dydd Mawrth"
+
+#: program/localization/cy_GB/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Dydd Mercher"
+
+#: program/localization/cy_GB/labels.inc:thursday
+msgid "Thursday"
+msgstr "Dydd Iau"
+
+#: program/localization/cy_GB/labels.inc:friday
+msgid "Friday"
+msgstr "Dydd Gwener"
+
+#: program/localization/cy_GB/labels.inc:saturday
+msgid "Saturday"
+msgstr "Dydd Sadwrn"
+
+#: program/localization/cy_GB/labels.inc:jan
+msgid "Jan"
+msgstr "Ion"
+
+#: program/localization/cy_GB/labels.inc:feb
+msgid "Feb"
+msgstr "Chwe"
+
+#: program/localization/cy_GB/labels.inc:mar
+msgid "Mar"
+msgstr "Maw"
+
+#: program/localization/cy_GB/labels.inc:apr
+msgid "Apr"
+msgstr "Ebr"
+
+#: program/localization/cy_GB/labels.inc:may
+#: program/localization/cy_GB/labels.inc:longmay
+msgid "May"
+msgstr "Mai"
+
+#: program/localization/cy_GB/labels.inc:jun
+msgid "Jun"
+msgstr "Meh"
+
+#: program/localization/cy_GB/labels.inc:jul
+msgid "Jul"
+msgstr "Gor"
+
+#: program/localization/cy_GB/labels.inc:aug
+msgid "Aug"
+msgstr "Aws"
+
+#: program/localization/cy_GB/labels.inc:sep
+msgid "Sep"
+msgstr "Med"
+
+#: program/localization/cy_GB/labels.inc:oct
+msgid "Oct"
+msgstr "Hyd"
+
+#: program/localization/cy_GB/labels.inc:nov
+msgid "Nov"
+msgstr "Tach"
+
+#: program/localization/cy_GB/labels.inc:dec
+msgid "Dec"
+msgstr "Rhag"
+
+#: program/localization/cy_GB/labels.inc:longjan
+msgid "January"
+msgstr "Ionawr"
+
+#: program/localization/cy_GB/labels.inc:longfeb
+msgid "February"
+msgstr "Chwefror"
+
+#: program/localization/cy_GB/labels.inc:longmar
+msgid "March"
+msgstr "Mawrth"
+
+#: program/localization/cy_GB/labels.inc:longapr
+msgid "April"
+msgstr "Ebrill"
+
+#: program/localization/cy_GB/labels.inc:longjun
+msgid "June"
+msgstr "Mehefin"
+
+#: program/localization/cy_GB/labels.inc:longjul
+msgid "July"
+msgstr "Gorffennaf"
+
+#: program/localization/cy_GB/labels.inc:longaug
+msgid "August"
+msgstr "Awst"
+
+#: program/localization/cy_GB/labels.inc:longsep
+msgid "September"
+msgstr "Medi"
+
+#: program/localization/cy_GB/labels.inc:longoct
+msgid "October"
+msgstr "Hydref"
+
+#: program/localization/cy_GB/labels.inc:longnov
+msgid "November"
+msgstr "Tachwedd"
+
+#: program/localization/cy_GB/labels.inc:longdec
+msgid "December"
+msgstr "Rhagfyr"
+
+#: program/localization/cy_GB/labels.inc:today
+msgid "Today"
+msgstr "Heddiw"
+
+#: program/localization/cy_GB/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Edrych am negeseuon newydd"
+
+#: program/localization/cy_GB/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Creu neges newydd"
+
+#: program/localization/cy_GB/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Ymateb i'r anfonwr"
+
+#: program/localization/cy_GB/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Ymateb i'r anfonwr a phob derbyniwr"
+
+#: program/localization/cy_GB/labels.inc:replyall
+msgid "Reply all"
+msgstr "Ymateb i bawb"
+
+#: program/localization/cy_GB/labels.inc:replylist
+msgid "Reply list"
+msgstr "Ymateb i'r rhestr"
+
+#: program/localization/cy_GB/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "Anfon ymlaen o fewn y neges"
+
+#: program/localization/cy_GB/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "Anfon ymlaen fel atodiad"
+
+#: program/localization/cy_GB/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Danfon y neges ymlaen"
+
+#: program/localization/cy_GB/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Dileu'r neges"
+
+#: program/localization/cy_GB/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Symud y neges i'r sbwriel"
+
+#: program/localization/cy_GB/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Argraffu'r neges"
+
+#: program/localization/cy_GB/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Dangos y neges flaenorol"
+
+#: program/localization/cy_GB/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Dangos y neges gyntaf"
+
+#: program/localization/cy_GB/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Dangos y neges nesaf"
+
+#: program/localization/cy_GB/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Dangos y neges olaf"
+
+#: program/localization/cy_GB/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Nôl i'r rhestr o negeseuon"
+
+#: program/localization/cy_GB/labels.inc:viewsource
+msgid "Show source"
+msgstr "Edrych ar y ffynhonnell"
+
+#: program/localization/cy_GB/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Nodi'r negeseuon"
+
+#: program/localization/cy_GB/labels.inc:markread
+msgid "As read"
+msgstr "Wedi eu darllen"
+
+#: program/localization/cy_GB/labels.inc:markunread
+msgid "As unread"
+msgstr "Heb eu darllen"
+
+#: program/localization/cy_GB/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Wedi eu fflagio"
+
+#: program/localization/cy_GB/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Heb eu fflagio"
+
+#: program/localization/cy_GB/labels.inc:moreactions
+msgid "More actions..."
+msgstr "Mwy o weithredoedd..."
+
+#: program/localization/cy_GB/labels.inc:select
+msgid "Select"
+msgstr "Dewis"
+
+#: program/localization/cy_GB/labels.inc:all
+msgid "All"
+msgstr "Popeth"
+
+#: program/localization/cy_GB/labels.inc:none
+#: program/localization/cy_GB/labels.inc:nonesort
+msgid "None"
+msgstr "Dim"
+
+#: program/localization/cy_GB/labels.inc:currpage
+msgid "Current page"
+msgstr "Tudalen gyfredol"
+
+#: program/localization/cy_GB/labels.inc:unread
+msgid "Unread"
+msgstr "Heb eu darllen"
+
+#: program/localization/cy_GB/labels.inc:flagged
+msgid "Flagged"
+msgstr "Nodwyd"
+
+#: program/localization/cy_GB/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Heb ei ateb"
+
+#: program/localization/cy_GB/labels.inc:deleted
+msgid "Deleted"
+msgstr "Dilewyd"
+
+#: program/localization/cy_GB/labels.inc:invert
+msgid "Invert"
+msgstr "Gwrth-droi"
+
+#: program/localization/cy_GB/labels.inc:filter
+msgid "Filter"
+msgstr "Hidlo"
+
+#: program/localization/cy_GB/labels.inc:list
+msgid "List"
+msgstr "Rhestr"
+
+#: program/localization/cy_GB/labels.inc:threads
+msgid "Threads"
+msgstr "Edafedd"
+
+#: program/localization/cy_GB/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Ehangu Popeth"
+
+#: program/localization/cy_GB/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Ehangu Negeseuon Heb eu darllen"
+
+#: program/localization/cy_GB/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Crebachu Popeth"
+
+#: program/localization/cy_GB/labels.inc:threaded
+msgid "Threaded"
+msgstr "Edafedd"
+
+#: program/localization/cy_GB/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Ehangu edefau neges"
+
+#: program/localization/cy_GB/labels.inc:do_expand
+msgid "all threads"
+msgstr "pob edefyn"
+
+#: program/localization/cy_GB/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "dim ond gyda negeseuon heb eu darllen"
+
+#: program/localization/cy_GB/labels.inc:fromto
+msgid "From/To"
+msgstr "Danfonwr/Derbynnydd"
+
+#: program/localization/cy_GB/labels.inc:flag
+msgid "Flag"
+msgstr "Fflag"
+
+#: program/localization/cy_GB/labels.inc:attachment
+msgid "Attachment"
+msgstr "Atodiad"
+
+#: program/localization/cy_GB/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Dyddiad danfon"
+
+#: program/localization/cy_GB/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Dyddiad derbyn"
+
+#: program/localization/cy_GB/labels.inc:asc
+msgid "ascending"
+msgstr "esgynnol"
+
+#: program/localization/cy_GB/labels.inc:desc
+msgid "descending"
+msgstr "disgynnol"
+
+#: program/localization/cy_GB/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Rhestr colofnau"
+
+#: program/localization/cy_GB/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Colofn trefnu"
+
+#: program/localization/cy_GB/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Trefn didoli"
+
+#: program/localization/cy_GB/labels.inc:listmode
+msgid "List view mode"
+msgstr "Golwg rhestr"
+
+#: program/localization/cy_GB/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Gweithredoedd ffolder..."
+
+#: program/localization/cy_GB/labels.inc:compact
+msgid "Compact"
+msgstr "Crynhoi"
+
+#: program/localization/cy_GB/labels.inc:empty
+msgid "Empty"
+msgstr "Gwagio"
+
+#: program/localization/cy_GB/labels.inc:quota
+msgid "Disk usage"
+msgstr "Defnydd "
+
+#: program/localization/cy_GB/labels.inc:unknown
+msgid "unknown"
+msgstr "anhysbys"
+
+#: program/localization/cy_GB/labels.inc:unlimited
+msgid "unlimited"
+msgstr "diderfyn"
+
+#: program/localization/cy_GB/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Chwiliad cyflym"
+
+#: program/localization/cy_GB/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Ail-osod chwiliad"
+
+#: program/localization/cy_GB/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Addasyddion chwilio"
+
+#: program/localization/cy_GB/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Y neges yn llawn"
+
+#: program/localization/cy_GB/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Agor mewn ffenest newydd"
+
+#: program/localization/cy_GB/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Llwytho lawr (.eml)"
+
+#: program/localization/cy_GB/labels.inc:compose
+msgid "Compose a message"
+msgstr "Ysgrifennu neges"
+
+#: program/localization/cy_GB/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Golygu fel neges newydd"
+
+#: program/localization/cy_GB/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Cadw'r drafft hwn"
+
+#: program/localization/cy_GB/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Danfon nawr"
+
+#: program/localization/cy_GB/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Atodi ffeil"
+
+#: program/localization/cy_GB/labels.inc:charset
+msgid "Charset"
+msgstr "Set nodiau"
+
+#: program/localization/cy_GB/labels.inc:editortype
+msgid "Editor type"
+msgstr "Math golygydd"
+
+#: program/localization/cy_GB/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Cadarnhau derbyn"
+
+#: program/localization/cy_GB/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Hysbysiad statws danfon"
+
+#: program/localization/cy_GB/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "Ar $date, ysgrifennodd $sender:"
+
+#: program/localization/cy_GB/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "Neges Wreiddiol"
+
+#: program/localization/cy_GB/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Golygu personoliaethau"
+
+#: program/localization/cy_GB/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Gwirio sillafu"
+
+#: program/localization/cy_GB/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Ail-ddechrau golygu"
+
+#: program/localization/cy_GB/labels.inc:revertto
+msgid "Revert to"
+msgstr "Dychwelyd i"
+
+#: program/localization/cy_GB/labels.inc:attachments
+msgid "Attachments"
+msgstr "Atodiadau"
+
+#: program/localization/cy_GB/labels.inc:upload
+msgid "Upload"
+msgstr "Llwytho fyny"
+
+#: program/localization/cy_GB/labels.inc:uploadprogress
+msgid "$percent ($current from $total)"
+msgstr "$percent ($current o $total)"
+
+#: program/localization/cy_GB/labels.inc:close
+msgid "Close"
+msgstr "Cau"
+
+#: program/localization/cy_GB/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Dewisiadau neges..."
+
+#: program/localization/cy_GB/labels.inc:low
+msgid "Low"
+msgstr "Isel"
+
+#: program/localization/cy_GB/labels.inc:lowest
+msgid "Lowest"
+msgstr "Isaf"
+
+#: program/localization/cy_GB/labels.inc:normal
+msgid "Normal"
+msgstr "Cyffredin"
+
+#: program/localization/cy_GB/labels.inc:high
+msgid "High"
+msgstr "Uchel"
+
+#: program/localization/cy_GB/labels.inc:highest
+msgid "Highest"
+msgstr "Uchaf"
+
+#: program/localization/cy_GB/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(dim pwnc)"
+
+#: program/localization/cy_GB/labels.inc:showimages
+msgid "Display images"
+msgstr "Dangos lluniau"
+
+#: program/localization/cy_GB/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Dangos lluniau bob amser o $sender"
+
+#: program/localization/cy_GB/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "Mae hwn yn neges ddrafft"
+
+#: program/localization/cy_GB/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/cy_GB/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Testun plaen"
+
+#: program/localization/cy_GB/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Cadw negeseuon a ddanfonir yn"
+
+#: program/localization/cy_GB/labels.inc:dontsave
+msgid "don't save"
+msgstr "peidio cadw"
+
+#: program/localization/cy_GB/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Y maint ffeil uchaf a ganiateir yw $size"
+
+#: program/localization/cy_GB/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Ychwanegu Cc"
+
+#: program/localization/cy_GB/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Ychwanegu Bcc"
+
+#: program/localization/cy_GB/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Ychwanegu Ateb-I"
+
+#: program/localization/cy_GB/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Ychwanegu Followup-To"
+
+#: program/localization/cy_GB/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Mae anfonwr y neges hwn wedi gofyn am hysbysiad eich bod wedi darllen y"
+"neges. Hoffech chi hysbysu'r anfonwr?"
+
+#: program/localization/cy_GB/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Cadarnhad Derbyn (darllenwyd)"
+
+#: program/localization/cy_GB/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Mae hwn yn gadarnhad o dderbyn eich neges"
+
+#: program/localization/cy_GB/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Nodyn: Mae'r cadarnhad hwn yn cydnabod fod y neges wedi ei ddangos ar"
+"gyfrifiadur y derbynnydd. 'Does dim sicrwydd fod y derbynydd wedi darllen"
+"neu ddeall cynnwys y neges."
+
+#: program/localization/cy_GB/labels.inc:name
+msgid "Display Name"
+msgstr "Enw ddangosir"
+
+#: program/localization/cy_GB/labels.inc:firstname
+msgid "First Name"
+msgstr "Enw cyntaf"
+
+#: program/localization/cy_GB/labels.inc:surname
+msgid "Last Name"
+msgstr "Enw olaf"
+
+#: program/localization/cy_GB/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Enw Canol"
+
+#: program/localization/cy_GB/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "Rhagddodiad"
+
+#: program/localization/cy_GB/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "Olddodiad"
+
+#: program/localization/cy_GB/labels.inc:nickname
+msgid "Nickname"
+msgstr "Llysenw"
+
+#: program/localization/cy_GB/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Teitl Swydd"
+
+#: program/localization/cy_GB/labels.inc:department
+msgid "Department"
+msgstr "Adran"
+
+#: program/localization/cy_GB/labels.inc:gender
+msgid "Gender"
+msgstr "Rhyw"
+
+#: program/localization/cy_GB/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Enw cyn priodi"
+
+#: program/localization/cy_GB/labels.inc:email
+msgid "Email"
+msgstr "E-bost"
+
+#: program/localization/cy_GB/labels.inc:phone
+msgid "Phone"
+msgstr "Ffôn"
+
+#: program/localization/cy_GB/labels.inc:address
+msgid "Address"
+msgstr "Cyfeiriad"
+
+#: program/localization/cy_GB/labels.inc:street
+msgid "Street"
+msgstr "Stryd"
+
+#: program/localization/cy_GB/labels.inc:locality
+msgid "City"
+msgstr "Tref/Dinas"
+
+#: program/localization/cy_GB/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "Côd Post/ZIP"
+
+#: program/localization/cy_GB/labels.inc:region
+msgid "State/Province"
+msgstr "Sîr/Talaith"
+
+#: program/localization/cy_GB/labels.inc:country
+msgid "Country"
+msgstr "Gwlad"
+
+#: program/localization/cy_GB/labels.inc:birthday
+msgid "Birthday"
+msgstr "Penblwydd"
+
+#: program/localization/cy_GB/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "Cylchwyl"
+
+#: program/localization/cy_GB/labels.inc:website
+msgid "Website"
+msgstr "Gwefan"
+
+#: program/localization/cy_GB/labels.inc:instantmessenger
+msgid "IM"
+msgstr "IM"
+
+#: program/localization/cy_GB/labels.inc:notes
+msgid "Notes"
+msgstr "Nodiadau"
+
+#: program/localization/cy_GB/labels.inc:male
+msgid "male"
+msgstr "gwryw"
+
+#: program/localization/cy_GB/labels.inc:female
+msgid "female"
+msgstr "benyw"
+
+#: program/localization/cy_GB/labels.inc:manager
+msgid "Manager"
+msgstr "Rheolwr"
+
+#: program/localization/cy_GB/labels.inc:assistant
+#: program/localization/cy_GB/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Cynorthwyydd"
+
+#: program/localization/cy_GB/labels.inc:spouse
+msgid "Spouse"
+msgstr "Cymar"
+
+#: program/localization/cy_GB/labels.inc:allfields
+msgid "All fields"
+msgstr "Pob maes"
+
+#: program/localization/cy_GB/labels.inc:search
+msgid "Search"
+msgstr "Chwilio"
+
+#: program/localization/cy_GB/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "Chwilio Uwch"
+
+#: program/localization/cy_GB/labels.inc:other
+#: program/localization/cy_GB/labels.inc:typeother
+msgid "Other"
+msgstr "Arall"
+
+#: program/localization/cy_GB/labels.inc:typehome
+msgid "Home"
+msgstr "Cartref"
+
+#: program/localization/cy_GB/labels.inc:typework
+msgid "Work"
+msgstr "Gwaith"
+
+#: program/localization/cy_GB/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Symudol"
+
+#: program/localization/cy_GB/labels.inc:typemain
+msgid "Main"
+msgstr "Prif"
+
+#: program/localization/cy_GB/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Ffacs Adref"
+
+#: program/localization/cy_GB/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "Ffacs Gwaith"
+
+#: program/localization/cy_GB/labels.inc:typecar
+msgid "Car"
+msgstr "Car"
+
+#: program/localization/cy_GB/labels.inc:typepager
+msgid "Pager"
+msgstr "Peiriant Galw"
+
+#: program/localization/cy_GB/labels.inc:typevideo
+msgid "Video"
+msgstr "Fideo"
+
+#: program/localization/cy_GB/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "Gwefan"
+
+#: program/localization/cy_GB/labels.inc:typeblog
+msgid "Blog"
+msgstr "Blog"
+
+#: program/localization/cy_GB/labels.inc:typeprofile
+msgid "Profile"
+msgstr "Proffil"
+
+#: program/localization/cy_GB/labels.inc:addfield
+msgid "Add field..."
+msgstr "Ychwanegu maes..."
+
+#: program/localization/cy_GB/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Ychwanegu cyswllt newydd"
+
+#: program/localization/cy_GB/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Golygu cyswllt"
+
+#: program/localization/cy_GB/labels.inc:contacts
+msgid "Contacts"
+msgstr "Cysylltiadau"
+
+#: program/localization/cy_GB/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Nodweddion cyswllt"
+
+#: program/localization/cy_GB/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Gwybodaeth bersonol"
+
+#: program/localization/cy_GB/labels.inc:edit
+msgid "Edit"
+msgstr "Golygu"
+
+#: program/localization/cy_GB/labels.inc:cancel
+msgid "Cancel"
+msgstr "Canslo"
+
+#: program/localization/cy_GB/labels.inc:save
+msgid "Save"
+msgstr "Cadw"
+
+#: program/localization/cy_GB/labels.inc:delete
+msgid "Delete"
+msgstr "Dileu"
+
+#: program/localization/cy_GB/labels.inc:rename
+msgid "Rename"
+msgstr "Ail-enwi"
+
+#: program/localization/cy_GB/labels.inc:addphoto
+msgid "Add"
+msgstr "Ychwanegu"
+
+#: program/localization/cy_GB/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Amnewid"
+
+#: program/localization/cy_GB/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Creu cerdyn cyswllt newydd"
+
+#: program/localization/cy_GB/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Dileu y cysylltiadau a ddewiswyd"
+
+#: program/localization/cy_GB/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Ysgrifennu neges at"
+
+#: program/localization/cy_GB/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Cysylltiadau $from i $to o $count"
+
+#: program/localization/cy_GB/labels.inc:print
+msgid "Print"
+msgstr "Argraffu"
+
+#: program/localization/cy_GB/labels.inc:export
+msgid "Export"
+msgstr "Allforio"
+
+#: program/localization/cy_GB/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Allforio cysylltiadau mewn fformat vCard"
+
+#: program/localization/cy_GB/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Creu grŵp cysylltiadau newydd"
+
+#: program/localization/cy_GB/labels.inc:grouprename
+msgid "Rename group"
+msgstr "Ail-enwi grŵp"
+
+#: program/localization/cy_GB/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "Dileu grŵp"
+
+#: program/localization/cy_GB/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Dangos y set flaenorol"
+
+#: program/localization/cy_GB/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Dangos y set gyntaf"
+
+#: program/localization/cy_GB/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Dangos y set nesaf"
+
+#: program/localization/cy_GB/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Dangos y set olaf"
+
+#: program/localization/cy_GB/labels.inc:group
+msgid "Group"
+msgstr "Grŵp"
+
+#: program/localization/cy_GB/labels.inc:groups
+msgid "Groups"
+msgstr "Grwpiau"
+
+#: program/localization/cy_GB/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Cyfeiriadau Personol"
+
+#: program/localization/cy_GB/labels.inc:searchsave
+msgid "Save search"
+msgstr "Cadw chwiliad"
+
+#: program/localization/cy_GB/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "Dileu chwiliad"
+
+#: program/localization/cy_GB/labels.inc:import
+msgid "Import"
+msgstr "Mewnforio"
+
+#: program/localization/cy_GB/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Mewnforio cysylltiadau"
+
+#: program/localization/cy_GB/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Mewnforio o ffeil:"
+
+#: program/localization/cy_GB/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "Ychwanegu cysylltiadau newydd i'r llyfr cyfeiriad:"
+
+#: program/localization/cy_GB/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Dileu y llyfr cyfeiriadau cyfan wrth lwytho"
+
+#: program/localization/cy_GB/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Fe allwch chi lwytho fyny cysylltiadau o lyfr cyfeiriadau sy'n bodoli yn"
+"barod. Ar hyn o bryd rydyn' ni'n cefnogi mewnforio cyfeiriadau yn y fformat"
+"<a href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>."
+
+#: program/localization/cy_GB/labels.inc:done
+msgid "Done"
+msgstr "Wedi gorffen"
+
+#: program/localization/cy_GB/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Gosodiadau ar gyfer"
+
+#: program/localization/cy_GB/labels.inc:about
+msgid "About"
+msgstr "Amdan"
+
+#: program/localization/cy_GB/labels.inc:preferences
+msgid "Preferences"
+msgstr "Dewisiadau"
+
+#: program/localization/cy_GB/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Dewisiadau'r defnyddiwr"
+
+#: program/localization/cy_GB/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Golygu dewisiadau'r defnyddiwr"
+
+#: program/localization/cy_GB/labels.inc:identities
+msgid "Identities"
+msgstr "Personoliaethau"
+
+#: program/localization/cy_GB/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Rheoli personoliaethau ar gyfer y cyfri hwn"
+
+#: program/localization/cy_GB/labels.inc:newidentity
+msgid "New identity"
+msgstr "Personoliaeth newydd"
+
+#: program/localization/cy_GB/labels.inc:newitem
+msgid "New item"
+msgstr "Eitem newydd"
+
+#: program/localization/cy_GB/labels.inc:edititem
+msgid "Edit item"
+msgstr "Golygu eitem"
+
+#: program/localization/cy_GB/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Dangos HTML"
+
+#: program/localization/cy_GB/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Set Nodau Diofyn"
+
+#: program/localization/cy_GB/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Neges HTML"
+
+#: program/localization/cy_GB/labels.inc:dateformat
+msgid "Date format"
+msgstr "Fformat dyddiad"
+
+#: program/localization/cy_GB/labels.inc:timeformat
+msgid "Time format"
+msgstr "Fformat amser"
+
+#: program/localization/cy_GB/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Dyddiadau pert"
+
+#: program/localization/cy_GB/labels.inc:setdefault
+msgid "Set default"
+msgstr "Rhagosod"
+
+#: program/localization/cy_GB/labels.inc:autodetect
+msgid "Auto"
+msgstr "Awto"
+
+#: program/localization/cy_GB/labels.inc:language
+msgid "Language"
+msgstr "Iaith"
+
+#: program/localization/cy_GB/labels.inc:timezone
+msgid "Time zone"
+msgstr "Parth amser"
+
+#: program/localization/cy_GB/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Rhesi ar bob tudalen"
+
+#: program/localization/cy_GB/labels.inc:signature
+msgid "Signature"
+msgstr "Llofnod"
+
+#: program/localization/cy_GB/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Amser arbed golau ddydd"
+
+#: program/localization/cy_GB/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Ysgrifennu negeseuon HTML"
+
+#: program/localization/cy_GB/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "wrth ateb i neges HTML yn unig"
+
+#: program/localization/cy_GB/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "Llofnod HTML"
+
+#: program/localization/cy_GB/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Dangos ffenest rhagolwg"
+
+#: program/localization/cy_GB/labels.inc:skin
+msgid "Interface skin"
+msgstr "Croen rhyngwyneb"
+
+#: program/localization/cy_GB/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Clirio'r Sbwriel wrth allgofnodi"
+
+#: program/localization/cy_GB/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Crynhoi'r Mewnflwch wrth allgofnodi"
+
+#: program/localization/cy_GB/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Rhyngwyneb Defnyddiwr"
+
+#: program/localization/cy_GB/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Gosodiadau Gweinydd"
+
+#: program/localization/cy_GB/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Ymddangosiad y Blychau"
+
+#: program/localization/cy_GB/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Hysbysiadau anfonwr"
+
+#: program/localization/cy_GB/labels.inc:askuser
+msgid "ask me"
+msgstr "gofyn i'r defnyddiwr"
+
+#: program/localization/cy_GB/labels.inc:autosend
+msgid "send receipt"
+msgstr "danfon yn awtomatig"
+
+#: program/localization/cy_GB/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "danfon y derbynneb i fy nghsylltiadau yn unig"
+
+#: program/localization/cy_GB/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "danfon derbynneb i fy nghysylltiadau, anwybyddu fel arall"
+
+#: program/localization/cy_GB/labels.inc:ignore
+msgid "ignore"
+msgstr "anwybyddu"
+
+#: program/localization/cy_GB/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Nodi'r neges fel darllenwyd wrth ddileu"
+
+#: program/localization/cy_GB/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Fflagio'r neges i'w ddileu yn hytrach na dileu yn syth"
+
+#: program/localization/cy_GB/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Peidio dangos negesuon wedi ei dileu"
+
+#: program/localization/cy_GB/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Pan fod symud negeseuon i'r Sbwriel yn methu, dileu nhw"
+
+#: program/localization/cy_GB/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Dangos lluniau o wefannau allanol"
+
+#: program/localization/cy_GB/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "o ddanfonwyr hysbys"
+
+#: program/localization/cy_GB/labels.inc:always
+msgid "always"
+msgstr "bob amser"
+
+#: program/localization/cy_GB/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Dangos lluniau atodol islaw'r neges"
+
+#: program/localization/cy_GB/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Cadw drafft yn awtomatig"
+
+#: program/localization/cy_GB/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "bob $n munud"
+
+#: program/localization/cy_GB/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Gofyn am negeseuon newydd ymlaen"
+
+#: program/localization/cy_GB/labels.inc:never
+msgid "never"
+msgstr "byth"
+
+#: program/localization/cy_GB/labels.inc:immediately
+msgid "immediately"
+msgstr "ar unwaith"
+
+#: program/localization/cy_GB/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Dangos Negeseuon"
+
+#: program/localization/cy_GB/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Ysgrifennu Negeseuon"
+
+#: program/localization/cy_GB/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Enw atodiadau"
+
+#: program/localization/cy_GB/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "RFC 2231 llawn (Thunderbird)"
+
+#: program/localization/cy_GB/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/cy_GB/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "RFC 2047 llawn (arall)"
+
+#: program/localization/cy_GB/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "Defnyddio amgodi MIME ar gyfer llythrennau 8-did"
+
+#: program/localization/cy_GB/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Dewisiadau uwch"
+
+#: program/localization/cy_GB/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Ffocysu'r porwr ar y neges newydd"
+
+#: program/localization/cy_GB/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Chwilio pob ffolder am negeseuon newydd"
+
+#: program/localization/cy_GB/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Ar ôl dileu/symud neges dangos y neges nesaf"
+
+#: program/localization/cy_GB/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Prif Ddewisiadau"
+
+#: program/localization/cy_GB/labels.inc:section
+msgid "Section"
+msgstr "Adran"
+
+#: program/localization/cy_GB/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Gwaith cynnal a chadw"
+
+#: program/localization/cy_GB/labels.inc:newmessage
+msgid "New Message"
+msgstr "Neges Newydd"
+
+#: program/localization/cy_GB/labels.inc:listoptions
+msgid "List Options"
+msgstr "Rhestru Dewisiadau"
+
+#: program/localization/cy_GB/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Dewisiadau Llofnod"
+
+#: program/localization/cy_GB/labels.inc:whenreplying
+msgid "When replying"
+msgstr "Wrth ateb"
+
+#: program/localization/cy_GB/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "dechrau'r neges newydd uwchben y neges wreiddiol"
+
+#: program/localization/cy_GB/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "dechrau'r neges newydd o dan y neges wreiddiol"
+
+#: program/localization/cy_GB/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "Wrth ateb, dileu'r llofnod gwreiddiol o'r neges"
+
+#: program/localization/cy_GB/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Ychwanegu llofnod yn awtomatig"
+
+#: program/localization/cy_GB/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "negeseuon newydd yn unig"
+
+#: program/localization/cy_GB/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "atebion a danfon ymlaen yn unig"
+
+#: program/localization/cy_GB/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "Wrth ateb neu ddanfon ymlaen, rhoi'r llofnod"
+
+#: program/localization/cy_GB/labels.inc:belowquote
+msgid "below the quote"
+msgstr "o dan y dyfynniad"
+
+#: program/localization/cy_GB/labels.inc:abovequote
+msgid "above the quote"
+msgstr "uwchben y dyfynniad"
+
+#: program/localization/cy_GB/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Mewnosod llofnod"
+
+#: program/localization/cy_GB/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Nodi negeseuon rhagolwg fel darllenwyd"
+
+#: program/localization/cy_GB/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "ar ôl $n eiliad"
+
+#: program/localization/cy_GB/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Bob amser gofyn am dderbynneb danfon"
+
+#: program/localization/cy_GB/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Gofyn am hysbysiad statws danfon bob amser"
+
+#: program/localization/cy_GB/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Rhoi atebion yn yr un ffolder i'r neges sy'n cael ei ateb"
+
+#: program/localization/cy_GB/labels.inc:defaultaddressbook
+msgid "Add new contacts to the selected addressbook"
+msgstr "Ychwanegu cysylltiadau newydd i'r llyfr cyfeiriad dewiswyd"
+
+#: program/localization/cy_GB/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "Hepgor cyfeiriadau ebost amgen wrth awto-gwblhau"
+
+#: program/localization/cy_GB/labels.inc:spellcheckbeforesend
+msgid "Check spelling before sending a message"
+msgstr "Gwirio sillafu cyn danfon neges"
+
+#: program/localization/cy_GB/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "Dewisiadau gwirio sillafu"
+
+#: program/localization/cy_GB/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "Anwybyddu geiriau gyda symbolau"
+
+#: program/localization/cy_GB/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "Anwybyddu geiriau gyda rhifau"
+
+#: program/localization/cy_GB/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "Anwybyddu geiriau sy'n briflythrennau yn gyfangwbl"
+
+#: program/localization/cy_GB/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "Ychwanegu i'r geiriadur"
+
+#: program/localization/cy_GB/labels.inc:folder
+msgid "Folder"
+msgstr "Ffolder"
+
+#: program/localization/cy_GB/labels.inc:foldername
+msgid "Folder name"
+msgstr "Enw ffolder"
+
+#: program/localization/cy_GB/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Tanysgrifwyd"
+
+#: program/localization/cy_GB/labels.inc:messagecount
+msgid "Messages"
+msgstr "Negeseuon"
+
+#: program/localization/cy_GB/labels.inc:create
+msgid "Create"
+msgstr "Creu"
+
+#: program/localization/cy_GB/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Creu ffolder newydd"
+
+#: program/localization/cy_GB/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Rheoli ffolderi"
+
+#: program/localization/cy_GB/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Ffolderi arbennig"
+
+#: program/localization/cy_GB/labels.inc:properties
+msgid "Properties"
+msgstr "Nodweddion"
+
+#: program/localization/cy_GB/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Ffolder nodweddion"
+
+#: program/localization/cy_GB/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Ffolder uwchben"
+
+#: program/localization/cy_GB/labels.inc:location
+msgid "Location"
+msgstr "Lleoliad"
+
+#: program/localization/cy_GB/labels.inc:info
+msgid "Information"
+msgstr "Gwybodaeth"
+
+#: program/localization/cy_GB/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Cliciwch i gael maint ffolder"
+
+#: program/localization/cy_GB/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Cliciwch i newid y tanysgrifiad"
+
+#: program/localization/cy_GB/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Math Ffolder"
+
+#: program/localization/cy_GB/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "Ffolder Preifat"
+
+#: program/localization/cy_GB/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "Ffolder Defnyddiwr Arall"
+
+#: program/localization/cy_GB/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "Ffolder Cyhoeddus"
+
+#: program/localization/cy_GB/labels.inc:sortby
+msgid "Sort by"
+msgstr "Trefnu yn ôl"
+
+#: program/localization/cy_GB/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Trefn esgynnol"
+
+#: program/localization/cy_GB/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Trefn ddisgynnol"
+
+#: program/localization/cy_GB/labels.inc:undo
+msgid "Undo"
+msgstr "Dad-wneud"
+
+#: program/localization/cy_GB/labels.inc:plugin
+msgid "Plugin"
+msgstr "Ategyn"
+
+#: program/localization/cy_GB/labels.inc:version
+msgid "Version"
+msgstr "Fersiwn"
+
+#: program/localization/cy_GB/labels.inc:source
+msgid "Source"
+msgstr "Ffynhonnell"
+
+#: program/localization/cy_GB/labels.inc:license
+msgid "License"
+msgstr "Trwydded"
+
+#: program/localization/cy_GB/labels.inc:support
+msgid "Get support"
+msgstr "Gofyn am gymorth"
+
+#: program/localization/cy_GB/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/cy_GB/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/cy_GB/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/cy_GB/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/cy_GB/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unicode"
+
+#: program/localization/cy_GB/labels.inc:english
+msgid "English"
+msgstr "Saesneg"
+
+#: program/localization/cy_GB/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Gorllewin Ewropeaidd"
+
+#: program/localization/cy_GB/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Dwyrain Ewropeaidd"
+
+#: program/localization/cy_GB/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "De-Ddwyrain Ewropeaidd"
+
+#: program/localization/cy_GB/labels.inc:baltic
+msgid "Baltic"
+msgstr "Baltig"
+
+#: program/localization/cy_GB/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Cyrilig"
+
+#: program/localization/cy_GB/labels.inc:arabic
+msgid "Arabic"
+msgstr "Arabeg"
+
+#: program/localization/cy_GB/labels.inc:greek
+msgid "Greek"
+msgstr "Groegaidd"
+
+#: program/localization/cy_GB/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Hebraeg"
+
+#: program/localization/cy_GB/labels.inc:turkish
+msgid "Turkish"
+msgstr "Twrceg"
+
+#: program/localization/cy_GB/labels.inc:nordic
+msgid "Nordic"
+msgstr "Nordeg"
+
+#: program/localization/cy_GB/labels.inc:thai
+msgid "Thai"
+msgstr "Thai"
+
+#: program/localization/cy_GB/labels.inc:celtic
+msgid "Celtic"
+msgstr "Celtaidd"
+
+#: program/localization/cy_GB/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Fietnamaidd"
+
+#: program/localization/cy_GB/labels.inc:japanese
+msgid "Japanese"
+msgstr "Japaneaidd"
+
+#: program/localization/cy_GB/labels.inc:korean
+msgid "Korean"
+msgstr "Corëeg"
+
+#: program/localization/cy_GB/labels.inc:chinese
+msgid "Chinese"
+msgstr "Tsieineaidd"

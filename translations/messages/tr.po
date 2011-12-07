@@ -1,0 +1,555 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/tr_TR/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: tr_TR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/tr_TR/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Giriş Başarısız"
+
+#: program/localization/tr_TR/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Tarayıcınız çerezleri kabul etmiyor"
+
+#: program/localization/tr_TR/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Oturumunuz sona ermiş veya hatalı"
+
+#: program/localization/tr_TR/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "IMAP sunucusuna bağlanılamadı"
+
+#: program/localization/tr_TR/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Sunucu Hatası!"
+
+#: program/localization/tr_TR/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Sunucu hatası: $msg"
+
+#: program/localization/tr_TR/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Veritabanı Hatası!"
+
+#: program/localization/tr_TR/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "İşlem gerçekleştirilemedi. Klasör sadece okunabilir"
+
+#: program/localization/tr_TR/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "İşlem gerçekleştirilemedi. İzin verilmedi."
+
+#: program/localization/tr_TR/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Geçersiz İstek! Veri kaydedilmedi"
+
+#: program/localization/tr_TR/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Posta kutusunda ileti bulunamadı"
+
+#: program/localization/tr_TR/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Oturumu başarılı bir şekilde kapattınız. Güle güle!"
+
+#: program/localization/tr_TR/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Posta kutusu boş"
+
+#: program/localization/tr_TR/messages.inc:loading
+msgid "Loading..."
+msgstr "Yükleniyor..."
+
+#: program/localization/tr_TR/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Dosya yükleniyor..."
+
+#: program/localization/tr_TR/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Dosyalar yükleniyor..."
+
+#: program/localization/tr_TR/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Veriler yükleniyor..."
+
+#: program/localization/tr_TR/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Yeni postalara bakılıyor..."
+
+#: program/localization/tr_TR/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Posta gönderiliyor..."
+
+#: program/localization/tr_TR/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Posta gönderildi"
+
+#: program/localization/tr_TR/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Posta kaydediliyor..."
+
+#: program/localization/tr_TR/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Posta taslaklara kaydedildi"
+
+#: program/localization/tr_TR/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Kaydedildi"
+
+#: program/localization/tr_TR/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Kişi adres defterine eklendi"
+
+#: program/localization/tr_TR/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Rehberde bu e-posta adresine sahip biri zaten var"
+
+#: program/localization/tr_TR/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Rehberde bu ada sahip biri zaten var."
+
+#: program/localization/tr_TR/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Kişisel gizliliğinizi korumak amacıyla postadaki resimler engellendi"
+
+#: program/localization/tr_TR/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Bu şifrelenmiş bir posta olduğu için gösterilemiyor. Özür dilerim!"
+
+#: program/localization/tr_TR/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Kişi bulunamadı"
+
+#: program/localization/tr_TR/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "İstenen kişi bulunamadı"
+
+#: program/localization/tr_TR/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Posta gönderilemedi"
+
+#: program/localization/tr_TR/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Lütfen bu postayı göndermeden önce $sec saniye bekleyin"
+
+#: program/localization/tr_TR/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Gönderilen postayı kaydederken hata oluştu"
+
+#: program/localization/tr_TR/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Kaydederken bir hata oluştu"
+
+#: program/localization/tr_TR/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Posta taşınamadı"
+
+#: program/localization/tr_TR/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Posta kopyalanamadı"
+
+#: program/localization/tr_TR/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Posta silinemedi"
+
+#: program/localization/tr_TR/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Posta işaretlenemedi"
+
+#: program/localization/tr_TR/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Seçili kişileri silmek istediğinizden emin misiniz?"
+
+#: program/localization/tr_TR/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Seçili grupları silmek istediğinizden emin misiniz?"
+
+#: program/localization/tr_TR/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Seçili postaları silmek istediğinizden emin misiniz?"
+
+#: program/localization/tr_TR/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Bu klasörü silmek istediğinizden emin misiniz?"
+
+#: program/localization/tr_TR/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Bu klasördeki tüm postaları silmek istediğinizden emin misiniz?"
+
+#: program/localization/tr_TR/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Grup siliniyor..."
+
+#: program/localization/tr_TR/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Klasör siliniyor..."
+
+#: program/localization/tr_TR/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Klasör taşınıyor..."
+
+#: program/localization/tr_TR/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Klasöre abone olunuyor..."
+
+#: program/localization/tr_TR/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Klasör aboneliği kaldırılıyor..."
+
+#: program/localization/tr_TR/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Form tam olarak doldurulmadı"
+
+#: program/localization/tr_TR/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Lütfen geçerli bir e-posta adresi girin"
+
+#: program/localization/tr_TR/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Lütfen bir isim girin"
+
+#: program/localization/tr_TR/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Lütfen bir sayfa boyutu girin"
+
+#: program/localization/tr_TR/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Lütfen gönderici e-posta adresini girin"
+
+#: program/localization/tr_TR/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Lütfen en az bir alıcı belirtin"
+
+#: program/localization/tr_TR/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "\"Konu\" kutusu boş bırakılmış. Şimdi bir konu belirtmek ister misiniz?"
+
+#: program/localization/tr_TR/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Postayı boş olarak gönder?"
+
+#: program/localization/tr_TR/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Posta gönderilmedi. Postanızı iptal etmek istiyor musunuz?"
+
+#: program/localization/tr_TR/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Lütfen arama için bir LDAP sunucu seçin"
+
+#: program/localization/tr_TR/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Kişi bulunamadı"
+
+#: program/localization/tr_TR/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Lütfen bir kişi ismi veya e-posta adresi girin"
+
+#: program/localization/tr_TR/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Henüz tüm ekli dosyalar yüklenmedi. Lütfen bekleyin ya da yüklemeyi"
+"iptal edin."
+
+#: program/localization/tr_TR/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr posta bulundu"
+
+#: program/localization/tr_TR/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Aramanıza uygun hiçbir sonuç bulunamadı"
+
+#: program/localization/tr_TR/messages.inc:searching
+msgid "Searching..."
+msgstr "Aranıyor..."
+
+#: program/localization/tr_TR/messages.inc:checking
+msgid "Checking..."
+msgstr "Denetleniyor..."
+
+#: program/localization/tr_TR/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Yazım hatası bulunamadı"
+
+#: program/localization/tr_TR/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Klasör silindi"
+
+#: program/localization/tr_TR/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Klasöre abone olundu"
+
+#: program/localization/tr_TR/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Klasör aboneliği kaldırıldı"
+
+#: program/localization/tr_TR/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Klasör sıklaştırıldı"
+
+#: program/localization/tr_TR/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Klasör boşaltıldı"
+
+#: program/localization/tr_TR/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Silindi"
+
+#: program/localization/tr_TR/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Postanın biçimlendirmesi kaldırılıyor..."
+
+#: program/localization/tr_TR/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Sunucudan posta yüklenemedi"
+
+#: program/localization/tr_TR/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Dosya yükleme başarısız"
+
+#: program/localization/tr_TR/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Yüklenen dosya en büyük dosya boyunu ($size) aşıyor"
+
+#: program/localization/tr_TR/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "$nr adres kopyalandı"
+
+#: program/localization/tr_TR/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Hiçbir adres kopyalanamadı"
+
+#: program/localization/tr_TR/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Adres kaynağı salt okunur durumda"
+
+#: program/localization/tr_TR/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Kişinin adresi kaydedilemedi"
+
+#: program/localization/tr_TR/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Posta(lar) taşınıyor..."
+
+#: program/localization/tr_TR/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Posta(lar) kopyalanıyor..."
+
+#: program/localization/tr_TR/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Kişile(ler) kopyalanıyor..."
+
+#: program/localization/tr_TR/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Posta(lar) siliniyor..."
+
+#: program/localization/tr_TR/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Posta(lar) işaretleniyor..."
+
+#: program/localization/tr_TR/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Gruba kişi(ler) ekleniyor..."
+
+#: program/localization/tr_TR/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Gruptan kişi(ler) siliniyor..."
+
+#: program/localization/tr_TR/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Okundu onayı gönderildi"
+
+#: program/localization/tr_TR/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Okundu onayı gönderilemedi"
+
+#: program/localization/tr_TR/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Son kimliğiniz olduğu için bu kimliği silemezsiniz"
+
+#: program/localization/tr_TR/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Klasör ismi yasaklanmış bir karakter içeriyor"
+
+#: program/localization/tr_TR/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Lütfen yüklenecek dosyayı seçin"
+
+#: program/localization/tr_TR/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Seçili adres defterine yazılamaz"
+
+#: program/localization/tr_TR/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Kişiler bu gruba eklendi"
+
+#: program/localization/tr_TR/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Kişiler bu gruptan çıkarıldı"
+
+#: program/localization/tr_TR/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Aktarılıyor, lütfen bekleyin..."
+
+#: program/localization/tr_TR/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "İçe aktarma başarısız! Yüklenen dosya geçerli bir vCard dosyası"
+"değil"
+
+#: program/localization/tr_TR/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>$inserted kişi başarıyla aktarıldı</b>"
+
+#: program/localization/tr_TR/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Var olan $skipped girdi atlandı</b>"
+
+#: program/localization/tr_TR/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Bu işleme izin verilmedi!"
+
+#: program/localization/tr_TR/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Seçili kimlikte e-posta adresi yok"
+
+#: program/localization/tr_TR/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Düz metin düzenleyiciye geçmek, metin üzerindeki bütün"
+"biçimlendirmeleri kaldıracak. Devam etmek istiyor musunuz?"
+
+#: program/localization/tr_TR/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Ayarlarda bir hata oluştu. Sistem yöneticinize haber verin. <b>Postanız"
+"gönderilemedi</b>"
+
+#: program/localization/tr_TR/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP Hatası ($code): Sunucuya bağlanılamadı"
+
+#: program/localization/tr_TR/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP Hatası ($code): Kimlik doğrulama başarısız oldu"
+
+#: program/localization/tr_TR/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP Hatası ($code): Gönderen adresi \"$from\" olarak ayarlanamadı ($msg)"
+
+#: program/localization/tr_TR/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP Hatası ($code): \"$to\" alıcısı eklenemedi ($msg)"
+
+#: program/localization/tr_TR/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP Hatası: Posta alıcılarının listesi ayrıştırılamadı"
+
+#: program/localization/tr_TR/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "SMTP hatası: Teslimat durumu bildirileri desteklenmiyor"
+
+#: program/localization/tr_TR/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP Hatası: $msg"
+
+#: program/localization/tr_TR/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Hatalı e-posta adresi: $email"
+
+#: program/localization/tr_TR/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Çok fazla alıcı. En fazla $max alıcı girebilirsiniz."
+
+#: program/localization/tr_TR/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Grup üyelerinin sayısı $max sınırını aşıyor."
+
+#: program/localization/tr_TR/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Bir hata oluştu. Lütfen tekrar deneyin."
+
+#: program/localization/tr_TR/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Kişi(ler) silinemedi"
+
+#: program/localization/tr_TR/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Kişi(ler) silindi"
+
+#: program/localization/tr_TR/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Silinen kişi(ler) geri getirilemiyor."
+
+#: program/localization/tr_TR/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Kişi(ler) başarıyla geri getirildi."
+
+#: program/localization/tr_TR/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Grup silindi"
+
+#: program/localization/tr_TR/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Grup ismi değiştirildi"
+
+#: program/localization/tr_TR/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Grup oluşturuldu"
+
+#: program/localization/tr_TR/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Posta(lar) silindi"
+
+#: program/localization/tr_TR/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Posta(lar) taşındı"
+
+#: program/localization/tr_TR/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Posta(lar) kopyalandı"
+
+#: program/localization/tr_TR/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Posta(lar) işaretlendi"
+
+#: program/localization/tr_TR/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "otomatik tamamlama için en az $min karakter girin"
+
+#: program/localization/tr_TR/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "İsim alanı boş olamaz"
+
+#: program/localization/tr_TR/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "İsim çok uzun"
+
+#: program/localization/tr_TR/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Klasör güncellendi"
+
+#: program/localization/tr_TR/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Klasör oluşturuldu"
+
+#: program/localization/tr_TR/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Geçerli bir resim biçimi değil."
+
+#: program/localization/tr_TR/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "Postada yazım hataları tespit edildi."
+
+#: program/localization/tr_TR/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "Klasör, seçilen üst klasöre taşınamıyor. Erişim izni yok."

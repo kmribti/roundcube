@@ -1,0 +1,860 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/eu_ES/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: eu_ES\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/eu_ES/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Ongietorri Roundcube|Mail-era"
+
+#: program/localization/eu_ES/labels.inc:username
+msgid "Username"
+msgstr "Erabiltzailea"
+
+#: program/localization/eu_ES/labels.inc:password
+msgid "Password"
+msgstr "Pasahitza"
+
+#: program/localization/eu_ES/labels.inc:server
+msgid "Server"
+msgstr "Zerbitzaria"
+
+#: program/localization/eu_ES/labels.inc:login
+msgid "Login"
+msgstr "Saio hasiera"
+
+#: program/localization/eu_ES/labels.inc:logout
+msgid "Logout"
+msgstr "Irten"
+
+#: program/localization/eu_ES/labels.inc:mail
+msgid "Mail"
+msgstr "ePosta"
+
+#: program/localization/eu_ES/labels.inc:settings
+msgid "Settings"
+msgstr "Ezarpen Pertsonalak"
+
+#: program/localization/eu_ES/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Helbide Liburua"
+
+#: program/localization/eu_ES/labels.inc:inbox
+msgid "Inbox"
+msgstr "Sarrera"
+
+#: program/localization/eu_ES/labels.inc:drafts
+msgid "Drafts"
+msgstr "Zirriborroak"
+
+#: program/localization/eu_ES/labels.inc:sent
+msgid "Sent"
+msgstr "Bidalitakoak"
+
+#: program/localization/eu_ES/labels.inc:trash
+msgid "Trash"
+msgstr "Zakarrontzia"
+
+#: program/localization/eu_ES/labels.inc:junk
+msgid "Junk"
+msgstr "Zabor-posta"
+
+#: program/localization/eu_ES/labels.inc:subject
+msgid "Subject"
+msgstr "Gaia"
+
+#: program/localization/eu_ES/labels.inc:from
+msgid "From"
+msgstr "Nork"
+
+#: program/localization/eu_ES/labels.inc:to
+msgid "To"
+msgstr "Nori"
+
+#: program/localization/eu_ES/labels.inc:cc
+msgid "Cc"
+msgstr "Kopia"
+
+#: program/localization/eu_ES/labels.inc:bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#: program/localization/eu_ES/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Erantzun-Honi"
+
+#: program/localization/eu_ES/labels.inc:date
+msgid "Date"
+msgstr "Data"
+
+#: program/localization/eu_ES/labels.inc:size
+msgid "Size"
+msgstr "Tamaina"
+
+#: program/localization/eu_ES/labels.inc:priority
+msgid "Priority"
+msgstr "Lehentasuna"
+
+#: program/localization/eu_ES/labels.inc:organization
+msgid "Company"
+msgstr "Erakundea"
+
+#: program/localization/eu_ES/labels.inc:reply-to
+msgid "reply-to"
+msgstr "Erantzun-Honi"
+
+#: program/localization/eu_ES/labels.inc:mailboxlist
+#: program/localization/eu_ES/labels.inc:folders
+msgid "Folders"
+msgstr "Karpetak"
+
+#: program/localization/eu_ES/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "$from -tik $to -ra $count mezuetatik"
+
+#: program/localization/eu_ES/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "$nr mezua $count -tik"
+
+#: program/localization/eu_ES/labels.inc:moveto
+msgid "Move to..."
+msgstr "mugitu hona..."
+
+#: program/localization/eu_ES/labels.inc:download
+msgid "Download"
+msgstr "deskargatu"
+
+#: program/localization/eu_ES/labels.inc:filename
+msgid "File name"
+msgstr "Fitxategi Izena"
+
+#: program/localization/eu_ES/labels.inc:filesize
+msgid "File size"
+msgstr "Fitxategi Tamaina"
+
+#: program/localization/eu_ES/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML nahiago"
+
+#: program/localization/eu_ES/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML Mezua"
+
+#: program/localization/eu_ES/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Data politak"
+
+#: program/localization/eu_ES/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Helbide liburura gehitu"
+
+#: program/localization/eu_ES/labels.inc:sun
+msgid "Sun"
+msgstr "Iga"
+
+#: program/localization/eu_ES/labels.inc:mon
+msgid "Mon"
+msgstr "Al"
+
+#: program/localization/eu_ES/labels.inc:tue
+msgid "Tue"
+msgstr "As"
+
+#: program/localization/eu_ES/labels.inc:wed
+msgid "Wed"
+msgstr "Azt"
+
+#: program/localization/eu_ES/labels.inc:thu
+msgid "Thu"
+msgstr "Og"
+
+#: program/localization/eu_ES/labels.inc:fri
+msgid "Fri"
+msgstr "Or"
+
+#: program/localization/eu_ES/labels.inc:sat
+msgid "Sat"
+msgstr "Lar"
+
+#: program/localization/eu_ES/labels.inc:sunday
+msgid "Sunday"
+msgstr "Igandea"
+
+#: program/localization/eu_ES/labels.inc:monday
+msgid "Monday"
+msgstr "Astelehena"
+
+#: program/localization/eu_ES/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Asteartea"
+
+#: program/localization/eu_ES/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Asteazkena"
+
+#: program/localization/eu_ES/labels.inc:thursday
+msgid "Thursday"
+msgstr "Osteguna"
+
+#: program/localization/eu_ES/labels.inc:friday
+msgid "Friday"
+msgstr "Ostirala"
+
+#: program/localization/eu_ES/labels.inc:saturday
+msgid "Saturday"
+msgstr "Larunbata"
+
+#: program/localization/eu_ES/labels.inc:jan
+msgid "Jan"
+msgstr "Urt"
+
+#: program/localization/eu_ES/labels.inc:feb
+msgid "Feb"
+msgstr "Ots"
+
+#: program/localization/eu_ES/labels.inc:mar
+msgid "Mar"
+msgstr "Mar"
+
+#: program/localization/eu_ES/labels.inc:apr
+msgid "Apr"
+msgstr "Api"
+
+#: program/localization/eu_ES/labels.inc:may
+#: program/localization/eu_ES/labels.inc:longmay
+msgid "May"
+msgstr "Maiatza"
+
+#: program/localization/eu_ES/labels.inc:jun
+msgid "Jun"
+msgstr "Eka"
+
+#: program/localization/eu_ES/labels.inc:jul
+msgid "Jul"
+msgstr "Uzt"
+
+#: program/localization/eu_ES/labels.inc:aug
+msgid "Aug"
+msgstr "Abu"
+
+#: program/localization/eu_ES/labels.inc:sep
+msgid "Sep"
+msgstr "Ira"
+
+#: program/localization/eu_ES/labels.inc:oct
+msgid "Oct"
+msgstr "Urr"
+
+#: program/localization/eu_ES/labels.inc:nov
+msgid "Nov"
+msgstr "Aza"
+
+#: program/localization/eu_ES/labels.inc:dec
+msgid "Dec"
+msgstr "Abe"
+
+#: program/localization/eu_ES/labels.inc:longjan
+msgid "January"
+msgstr "Urtarrila"
+
+#: program/localization/eu_ES/labels.inc:longfeb
+msgid "February"
+msgstr "Otsaila"
+
+#: program/localization/eu_ES/labels.inc:longmar
+msgid "March"
+msgstr "Martxoa"
+
+#: program/localization/eu_ES/labels.inc:longapr
+msgid "April"
+msgstr "Apirila"
+
+#: program/localization/eu_ES/labels.inc:longjun
+msgid "June"
+msgstr "Ekaina"
+
+#: program/localization/eu_ES/labels.inc:longjul
+msgid "July"
+msgstr "Uztaila"
+
+#: program/localization/eu_ES/labels.inc:longaug
+msgid "August"
+msgstr "Abuztua"
+
+#: program/localization/eu_ES/labels.inc:longsep
+msgid "September"
+msgstr "Iraila"
+
+#: program/localization/eu_ES/labels.inc:longoct
+msgid "October"
+msgstr "Urria"
+
+#: program/localization/eu_ES/labels.inc:longnov
+msgid "November"
+msgstr "Azaroa"
+
+#: program/localization/eu_ES/labels.inc:longdec
+msgid "December"
+msgstr "Abendua"
+
+#: program/localization/eu_ES/labels.inc:today
+msgid "Today"
+msgstr "Gaur"
+
+#: program/localization/eu_ES/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Mezu berrien bila arakatu"
+
+#: program/localization/eu_ES/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Mezu berri bat sortu"
+
+#: program/localization/eu_ES/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Mezuari erantzun"
+
+#: program/localization/eu_ES/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Bidaltzaile eta hartzaile guztiei erantzun"
+
+#: program/localization/eu_ES/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Mezua Birbidali"
+
+#: program/localization/eu_ES/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Mezua ezabatu"
+
+#: program/localization/eu_ES/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Mezua zakarrontzira mugitu"
+
+#: program/localization/eu_ES/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Mezu hau inprimatu"
+
+#: program/localization/eu_ES/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Aurreko mezua ikusi"
+
+#: program/localization/eu_ES/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "Aurreko mezuak ikusi"
+
+#: program/localization/eu_ES/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Lehenengo mezua ikusi"
+
+#: program/localization/eu_ES/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "Lehenengo mezu sorta ikusi"
+
+#: program/localization/eu_ES/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Hurrengo mezua ikusi"
+
+#: program/localization/eu_ES/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "Hurrengo mezu sorta ikusi"
+
+#: program/localization/eu_ES/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Azken mezua ikusi"
+
+#: program/localization/eu_ES/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "Azken mezu sorta ikusi"
+
+#: program/localization/eu_ES/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Mezu zerrendara itzuli"
+
+#: program/localization/eu_ES/labels.inc:viewsource
+msgid "Show source"
+msgstr "Jatorria bistarazi"
+
+#: program/localization/eu_ES/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Markatu mezuak"
+
+#: program/localization/eu_ES/labels.inc:markread
+msgid "As read"
+msgstr "Irakurria bezala"
+
+#: program/localization/eu_ES/labels.inc:markunread
+msgid "As unread"
+msgstr "Ez-irakurria bezala"
+
+#: program/localization/eu_ES/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Markatua bezala"
+
+#: program/localization/eu_ES/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Ez-markatua bezala"
+
+#: program/localization/eu_ES/labels.inc:select
+msgid "Select"
+msgstr "Hautatu"
+
+#: program/localization/eu_ES/labels.inc:all
+msgid "All"
+msgstr "Denak"
+
+#: program/localization/eu_ES/labels.inc:none
+msgid "None"
+msgstr "Batez"
+
+#: program/localization/eu_ES/labels.inc:unread
+msgid "Unread"
+msgstr "Irakurri gabeak"
+
+#: program/localization/eu_ES/labels.inc:compact
+msgid "Compact"
+msgstr "Trinkotu"
+
+#: program/localization/eu_ES/labels.inc:empty
+msgid "Empty"
+msgstr "Hustu"
+
+#: program/localization/eu_ES/labels.inc:purge
+msgid "purge"
+msgstr "Garbitu"
+
+#: program/localization/eu_ES/labels.inc:quota
+msgid "Disk usage"
+msgstr "Disko erabilera"
+
+#: program/localization/eu_ES/labels.inc:unknown
+msgid "unknown"
+msgstr "ezezaguna"
+
+#: program/localization/eu_ES/labels.inc:unlimited
+msgid "unlimited"
+msgstr "mugagabea"
+
+#: program/localization/eu_ES/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Bilaketa azkarra"
+
+#: program/localization/eu_ES/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Bilaketa berrabiarazi"
+
+#: program/localization/eu_ES/labels.inc:compose
+msgid "Compose a message"
+msgstr "Mezu bat sortu"
+
+#: program/localization/eu_ES/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Zirriborro hau gorde"
+
+#: program/localization/eu_ES/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Mezua orain bidali"
+
+#: program/localization/eu_ES/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Fitxategia erantsi"
+
+#: program/localization/eu_ES/labels.inc:charset
+msgid "Charset"
+msgstr "Karaktere jokoa"
+
+#: program/localization/eu_ES/labels.inc:editortype
+msgid "Editor type"
+msgstr "Editore mota"
+
+#: program/localization/eu_ES/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Bidaltzaileari itzuli"
+
+#: program/localization/eu_ES/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Egiaztaketa ortografikoa"
+
+#: program/localization/eu_ES/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Editatzen jarraitu"
+
+#: program/localization/eu_ES/labels.inc:revertto
+msgid "Revert to"
+msgstr "Itzuli hona"
+
+#: program/localization/eu_ES/labels.inc:attachments
+msgid "Attachments"
+msgstr "Eranskinak"
+
+#: program/localization/eu_ES/labels.inc:upload
+msgid "Upload"
+msgstr "Igo"
+
+#: program/localization/eu_ES/labels.inc:close
+msgid "Close"
+msgstr "Itxi"
+
+#: program/localization/eu_ES/labels.inc:low
+msgid "Low"
+msgstr "Baxua"
+
+#: program/localization/eu_ES/labels.inc:lowest
+msgid "Lowest"
+msgstr "Baxuena"
+
+#: program/localization/eu_ES/labels.inc:normal
+msgid "Normal"
+msgstr "Normala"
+
+#: program/localization/eu_ES/labels.inc:high
+msgid "High"
+msgstr "Altua"
+
+#: program/localization/eu_ES/labels.inc:highest
+msgid "Highest"
+msgstr "Altuena"
+
+#: program/localization/eu_ES/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(gairik gabea)"
+
+#: program/localization/eu_ES/labels.inc:showimages
+msgid "Display images"
+msgstr "Irudiak bistarazi"
+
+#: program/localization/eu_ES/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Beti ikusi $sender -en irudiak"
+
+#: program/localization/eu_ES/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/eu_ES/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Testu laua"
+
+#: program/localization/eu_ES/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Gorde mezua hemen"
+
+#: program/localization/eu_ES/labels.inc:dontsave
+msgid "don't save"
+msgstr "ez gorde"
+
+#: program/localization/eu_ES/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Gehitu Cc (kopia)"
+
+#: program/localization/eu_ES/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Gehitu Bcc (kopia ezkutua)"
+
+#: program/localization/eu_ES/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Gehitu erantzun-honi"
+
+#: program/localization/eu_ES/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Mezu honen bidaltzaileak mezua irakurtzen duzunean jakinaraztea eskatu du."
+"Bidaltzailea ohartu nahi duzu?"
+
+#: program/localization/eu_ES/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Itzulketa agiria (irakurria)"
+
+#: program/localization/eu_ES/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Hau zure mezuaren Itzulketa Agiria da"
+
+#: program/localization/eu_ES/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Oharra: Agiri honek hartzailearen ordenagailuan mezua ikusi dala adierazten"
+"du besterik gabe. Honek ez du esan nahi hartzaileak mezua irakurri edo/eta"
+"ulertu duenik:"
+
+#: program/localization/eu_ES/labels.inc:name
+msgid "Display Name"
+msgstr "Izena bistarazi"
+
+#: program/localization/eu_ES/labels.inc:firstname
+msgid "First Name"
+msgstr "Izena"
+
+#: program/localization/eu_ES/labels.inc:surname
+msgid "Last Name"
+msgstr "Abizena"
+
+#: program/localization/eu_ES/labels.inc:email
+msgid "Email"
+msgstr "ePosta"
+
+#: program/localization/eu_ES/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Txartel berria gehitu"
+
+#: program/localization/eu_ES/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Txartela editatu"
+
+#: program/localization/eu_ES/labels.inc:edit
+msgid "Edit"
+msgstr "Editatu"
+
+#: program/localization/eu_ES/labels.inc:cancel
+msgid "Cancel"
+msgstr "Utzi"
+
+#: program/localization/eu_ES/labels.inc:save
+msgid "Save"
+msgstr "Gorde"
+
+#: program/localization/eu_ES/labels.inc:delete
+msgid "Delete"
+msgstr "Ezabatu"
+
+#: program/localization/eu_ES/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Helbide liburu txartel berria sortu"
+
+#: program/localization/eu_ES/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Aukeraturiko txartelak ezabatu"
+
+#: program/localization/eu_ES/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Bidali mezua honi: "
+
+#: program/localization/eu_ES/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "$from -tik $to -ra $count txarteletatik"
+
+#: program/localization/eu_ES/labels.inc:print
+msgid "Print"
+msgstr "Inprimatu"
+
+#: program/localization/eu_ES/labels.inc:export
+msgid "Export"
+msgstr "Esportatu"
+
+#: program/localization/eu_ES/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Aurreko sorta ikusi"
+
+#: program/localization/eu_ES/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Lehenengo sorta ikusi"
+
+#: program/localization/eu_ES/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Hurrengo sorta ikusi"
+
+#: program/localization/eu_ES/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Azken sorta ikusi"
+
+#: program/localization/eu_ES/labels.inc:groups
+msgid "Groups"
+msgstr "Taldeak"
+
+#: program/localization/eu_ES/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Helbide pertsonalak"
+
+#: program/localization/eu_ES/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Honen ezarpenak:"
+
+#: program/localization/eu_ES/labels.inc:preferences
+msgid "Preferences"
+msgstr "Hobespenak"
+
+#: program/localization/eu_ES/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Erabiltzaile hobespenak"
+
+#: program/localization/eu_ES/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Erabiltzaile hobespenak editatu"
+
+#: program/localization/eu_ES/labels.inc:identities
+msgid "Identities"
+msgstr "Identitateak"
+
+#: program/localization/eu_ES/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Kontu honetako identitateak kudeatu"
+
+#: program/localization/eu_ES/labels.inc:newidentity
+msgid "New identity"
+msgstr "Identitate berria"
+
+#: program/localization/eu_ES/labels.inc:newitem
+msgid "New item"
+msgstr "Elementu berria"
+
+#: program/localization/eu_ES/labels.inc:edititem
+msgid "Edit item"
+msgstr "Elementua Editatu"
+
+#: program/localization/eu_ES/labels.inc:setdefault
+msgid "Set default"
+msgstr "Lehenespenak ezarri"
+
+#: program/localization/eu_ES/labels.inc:language
+msgid "Language"
+msgstr "Hizkuntza"
+
+#: program/localization/eu_ES/labels.inc:timezone
+msgid "Time zone"
+msgstr "Ordu zonaldea"
+
+#: program/localization/eu_ES/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Lerro orrialdeko"
+
+#: program/localization/eu_ES/labels.inc:signature
+msgid "Signature"
+msgstr "Sinadura"
+
+#: program/localization/eu_ES/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Eguneko gordeketak"
+
+#: program/localization/eu_ES/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "HTML mezuak sortu"
+
+#: program/localization/eu_ES/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML sinadura"
+
+#: program/localization/eu_ES/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Aurrebista panela ikusi"
+
+#: program/localization/eu_ES/labels.inc:skin
+msgid "Interface skin"
+msgstr "Azal-interfazea"
+
+#: program/localization/eu_ES/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Garbitu Zakarronzia irtetean"
+
+#: program/localization/eu_ES/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Trinkotu Sarrera irtetean"
+
+#: program/localization/eu_ES/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Erabiltzaile-interfazea"
+
+#: program/localization/eu_ES/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Zerbitzariaren ezarpenak"
+
+#: program/localization/eu_ES/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Postakutxatilaren ikuspegia"
+
+#: program/localization/eu_ES/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Bidaltzailearen jakinarazpena"
+
+#: program/localization/eu_ES/labels.inc:askuser
+msgid "ask me"
+msgstr "galdetu erabiltzaileari"
+
+#: program/localization/eu_ES/labels.inc:autosend
+msgid "send receipt"
+msgstr "bidali automatikoki"
+
+#: program/localization/eu_ES/labels.inc:ignore
+msgid "ignore"
+msgstr "ezikusi"
+
+#: program/localization/eu_ES/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Markatu mezua irakurrita bezala ezabatzerakoan"
+
+#: program/localization/eu_ES/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Markatu mezua ezabatzeko ezabatu beharrean"
+
+#: program/localization/eu_ES/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Erakutsi erantzitako irudiak mezuaren azpian"
+
+#: program/localization/eu_ES/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Zirriborroa automatikoki gorde"
+
+#: program/localization/eu_ES/labels.inc:never
+msgid "never"
+msgstr "inoiz ez"
+
+#: program/localization/eu_ES/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Mezuak ikusi"
+
+#: program/localization/eu_ES/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Mezuak sortu"
+
+#: program/localization/eu_ES/labels.inc:folder
+msgid "Folder"
+msgstr "Karpeta"
+
+#: program/localization/eu_ES/labels.inc:foldername
+msgid "Folder name"
+msgstr "Karpeta izena"
+
+#: program/localization/eu_ES/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Harpideturik"
+
+#: program/localization/eu_ES/labels.inc:messagecount
+msgid "Messages"
+msgstr "Mezuak"
+
+#: program/localization/eu_ES/labels.inc:create
+msgid "Create"
+msgstr "Sortu"
+
+#: program/localization/eu_ES/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Karpeta berria sortu"
+
+#: program/localization/eu_ES/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Karpeta kudeaketa"
+
+#: program/localization/eu_ES/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Karpeta bereziak"
+
+#: program/localization/eu_ES/labels.inc:sortby
+msgid "Sort by"
+msgstr "Honela ordenatu"
+
+#: program/localization/eu_ES/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Goraka ordenatu"
+
+#: program/localization/eu_ES/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Beheraka ordenatu"

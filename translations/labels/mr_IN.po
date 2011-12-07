@@ -1,0 +1,1339 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/mr_IN/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: mr_IN\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/mr_IN/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "$product वरती स्वागत आहे"
+
+#: program/localization/mr_IN/labels.inc:username
+msgid "Username"
+msgstr "वापरकर्त्याचे नाव(तुमचे"
+"इमेल) "
+
+#: program/localization/mr_IN/labels.inc:password
+msgid "Password"
+msgstr "परवलीचा शब्द"
+
+#: program/localization/mr_IN/labels.inc:server
+msgid "Server"
+msgstr "सर्व्हर"
+
+#: program/localization/mr_IN/labels.inc:login
+msgid "Login"
+msgstr "प्रवेश"
+
+#: program/localization/mr_IN/labels.inc:logout
+msgid "Logout"
+msgstr "बाहेर जा"
+
+#: program/localization/mr_IN/labels.inc:mail
+msgid "Mail"
+msgstr "इ-मेल"
+
+#: program/localization/mr_IN/labels.inc:settings
+msgid "Settings"
+msgstr "तुमची पसंती"
+
+#: program/localization/mr_IN/labels.inc:addressbook
+msgid "Address Book"
+msgstr "पत्ता नोंदवही"
+
+#: program/localization/mr_IN/labels.inc:inbox
+msgid "Inbox"
+msgstr "आलेले संदेश"
+
+#: program/localization/mr_IN/labels.inc:drafts
+msgid "Drafts"
+msgstr "मसुदा"
+
+#: program/localization/mr_IN/labels.inc:sent
+msgid "Sent"
+msgstr "पाठवलेले"
+
+#: program/localization/mr_IN/labels.inc:trash
+msgid "Trash"
+msgstr "कचरा पेटी"
+
+#: program/localization/mr_IN/labels.inc:junk
+msgid "Junk"
+msgstr "नको असलेले कचरा संदेश"
+
+#: program/localization/mr_IN/labels.inc:subject
+msgid "Subject"
+msgstr "विषय"
+
+#: program/localization/mr_IN/labels.inc:from
+msgid "From"
+msgstr "पाठवणार"
+
+#: program/localization/mr_IN/labels.inc:to
+msgid "To"
+msgstr "प्रती"
+
+#: program/localization/mr_IN/labels.inc:cc
+msgid "Cc"
+msgstr "प्रत"
+
+#: program/localization/mr_IN/labels.inc:bcc
+msgid "Bcc"
+msgstr "गुप्त प्रत"
+
+#: program/localization/mr_IN/labels.inc:replyto
+msgid "Reply-To"
+msgstr "उत्तर द्या "
+
+#: program/localization/mr_IN/labels.inc:date
+msgid "Date"
+msgstr "दिनांक"
+
+#: program/localization/mr_IN/labels.inc:size
+msgid "Size"
+msgstr "आकार"
+
+#: program/localization/mr_IN/labels.inc:priority
+msgid "Priority"
+msgstr "प्राधान्य"
+
+#: program/localization/mr_IN/labels.inc:organization
+msgid "Company"
+msgstr "संस्था"
+
+#: program/localization/mr_IN/labels.inc:reply-to
+msgid "reply-to"
+msgstr "उत्तर द्या "
+
+#: program/localization/mr_IN/labels.inc:mailboxlist
+#: program/localization/mr_IN/labels.inc:folders
+msgid "Folders"
+msgstr "फोल्डर्स"
+
+#: program/localization/mr_IN/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "संदेश $from कडून $to साठी $count वा"
+
+#: program/localization/mr_IN/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "धागे $from कडून $to साठी $count वा"
+
+#: program/localization/mr_IN/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Message $nr of $count"
+
+#: program/localization/mr_IN/labels.inc:copy
+msgid "Copy"
+msgstr "नक्‍कल "
+
+#: program/localization/mr_IN/labels.inc:move
+msgid "Move"
+msgstr "हलवा"
+
+#: program/localization/mr_IN/labels.inc:moveto
+msgid "Move to..."
+msgstr "या फोल्डरमधे ठेवा"
+
+#: program/localization/mr_IN/labels.inc:download
+msgid "Download"
+msgstr "उतरवून घ्या"
+
+#: program/localization/mr_IN/labels.inc:filename
+msgid "File name"
+msgstr "फाईलचे नाव"
+
+#: program/localization/mr_IN/labels.inc:filesize
+msgid "File size"
+msgstr "फाईलचा आकार"
+
+#: program/localization/mr_IN/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "पत्ता नोंदवहीत नोंदवा "
+
+#: program/localization/mr_IN/labels.inc:sun
+msgid "Sun"
+msgstr "रवी"
+
+#: program/localization/mr_IN/labels.inc:mon
+msgid "Mon"
+msgstr "सोम"
+
+#: program/localization/mr_IN/labels.inc:tue
+msgid "Tue"
+msgstr "मंगळ"
+
+#: program/localization/mr_IN/labels.inc:wed
+msgid "Wed"
+msgstr "बुध"
+
+#: program/localization/mr_IN/labels.inc:thu
+msgid "Thu"
+msgstr "गुरु"
+
+#: program/localization/mr_IN/labels.inc:fri
+msgid "Fri"
+msgstr "शुक्र"
+
+#: program/localization/mr_IN/labels.inc:sat
+msgid "Sat"
+msgstr "शनी"
+
+#: program/localization/mr_IN/labels.inc:sunday
+msgid "Sunday"
+msgstr "रविवार"
+
+#: program/localization/mr_IN/labels.inc:monday
+msgid "Monday"
+msgstr "सोमवार"
+
+#: program/localization/mr_IN/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "मंगळवार"
+
+#: program/localization/mr_IN/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "बुधवार"
+
+#: program/localization/mr_IN/labels.inc:thursday
+msgid "Thursday"
+msgstr "गुरुवार"
+
+#: program/localization/mr_IN/labels.inc:friday
+msgid "Friday"
+msgstr "शुक्रवार"
+
+#: program/localization/mr_IN/labels.inc:saturday
+msgid "Saturday"
+msgstr "शनीवार"
+
+#: program/localization/mr_IN/labels.inc:jan
+msgid "Jan"
+msgstr "जाने"
+
+#: program/localization/mr_IN/labels.inc:feb
+msgid "Feb"
+msgstr "फेब्"
+
+#: program/localization/mr_IN/labels.inc:mar
+msgid "Mar"
+msgstr "मार्च"
+
+#: program/localization/mr_IN/labels.inc:apr
+msgid "Apr"
+msgstr "एप्रिल"
+
+#: program/localization/mr_IN/labels.inc:may
+#: program/localization/mr_IN/labels.inc:longmay
+msgid "May"
+msgstr "मे"
+
+#: program/localization/mr_IN/labels.inc:jun
+msgid "Jun"
+msgstr "जून"
+
+#: program/localization/mr_IN/labels.inc:jul
+msgid "Jul"
+msgstr "जुलै"
+
+#: program/localization/mr_IN/labels.inc:aug
+msgid "Aug"
+msgstr "ऑगस्ट"
+
+#: program/localization/mr_IN/labels.inc:sep
+msgid "Sep"
+msgstr "सप्टें"
+
+#: program/localization/mr_IN/labels.inc:oct
+msgid "Oct"
+msgstr "ऑक्टो"
+
+#: program/localization/mr_IN/labels.inc:nov
+msgid "Nov"
+msgstr "नोव्हें"
+
+#: program/localization/mr_IN/labels.inc:dec
+msgid "Dec"
+msgstr "डिसें"
+
+#: program/localization/mr_IN/labels.inc:longjan
+msgid "January"
+msgstr "जानेवारी"
+
+#: program/localization/mr_IN/labels.inc:longfeb
+msgid "February"
+msgstr "फेब्रूवारी"
+
+#: program/localization/mr_IN/labels.inc:longmar
+msgid "March"
+msgstr "मार्च"
+
+#: program/localization/mr_IN/labels.inc:longapr
+msgid "April"
+msgstr "एप्रिल"
+
+#: program/localization/mr_IN/labels.inc:longjun
+msgid "June"
+msgstr "जून"
+
+#: program/localization/mr_IN/labels.inc:longjul
+msgid "July"
+msgstr "जुलै"
+
+#: program/localization/mr_IN/labels.inc:longaug
+msgid "August"
+msgstr "ऑगस्ट"
+
+#: program/localization/mr_IN/labels.inc:longsep
+msgid "September"
+msgstr "सप्टेंबर"
+
+#: program/localization/mr_IN/labels.inc:longoct
+msgid "October"
+msgstr "ऑक्टोबर"
+
+#: program/localization/mr_IN/labels.inc:longnov
+msgid "November"
+msgstr "नोव्हेंबर"
+
+#: program/localization/mr_IN/labels.inc:longdec
+msgid "December"
+msgstr "डिसेंबर"
+
+#: program/localization/mr_IN/labels.inc:today
+msgid "Today"
+msgstr "आज"
+
+#: program/localization/mr_IN/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "नवीन संदेश आले आहेत का पहा"
+
+#: program/localization/mr_IN/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "नवीन संदेश तयार करा"
+
+#: program/localization/mr_IN/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "पाठवणार्‍याला उत्तर द्या"
+
+#: program/localization/mr_IN/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "पाठवणार्‍याला आणि प्रत"
+"केलेल्या सर्वांना संदेश"
+"पाठवा"
+
+#: program/localization/mr_IN/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "हा संदेश पुढे पाठवा"
+
+#: program/localization/mr_IN/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "संदेश काढून टाका"
+
+#: program/localization/mr_IN/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "संदेश कचरापेटीत टाका"
+
+#: program/localization/mr_IN/labels.inc:printmessage
+msgid "Print this message"
+msgstr "हा संदेश छापा"
+
+#: program/localization/mr_IN/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "आधिचा संदेश दाखवा"
+
+#: program/localization/mr_IN/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "आधिच्या संदेशांचा गट दाखवा"
+
+#: program/localization/mr_IN/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "पहिला संदेश दाखवा"
+
+#: program/localization/mr_IN/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "पहिला संदेशांचा संच दाखवा"
+
+#: program/localization/mr_IN/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "नंतरचा संदेश दाखवा"
+
+#: program/localization/mr_IN/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "नंतरचा संदेशांचा संच दाखवा"
+
+#: program/localization/mr_IN/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "शेवटचा संदेश दाखवा"
+
+#: program/localization/mr_IN/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "शेवटचा संदेशांचा संच दाखवा"
+
+#: program/localization/mr_IN/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "संदेशांच्या यादीकडे परत चला"
+
+#: program/localization/mr_IN/labels.inc:viewsource
+msgid "Show source"
+msgstr "मूळ संदेशाचा प्रोग्राम कोड"
+"दाखवा"
+
+#: program/localization/mr_IN/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "संदेशांना खूण करा"
+
+#: program/localization/mr_IN/labels.inc:markread
+msgid "As read"
+msgstr "वाचलेला म्हणून खूण करा"
+
+#: program/localization/mr_IN/labels.inc:markunread
+msgid "As unread"
+msgstr "न वाचलेला म्हणून खूण करा"
+
+#: program/localization/mr_IN/labels.inc:markflagged
+msgid "As flagged"
+msgstr "खूण लावलेला म्हणून खूण करा"
+
+#: program/localization/mr_IN/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "खूण काढलेला म्हणून खूण करा"
+
+#: program/localization/mr_IN/labels.inc:messageactions
+msgid "messageactions"
+msgstr "जास्‍त क्रिया..."
+
+#: program/localization/mr_IN/labels.inc:select
+msgid "Select"
+msgstr "निवडा"
+
+#: program/localization/mr_IN/labels.inc:all
+msgid "All"
+msgstr "सर्व"
+
+#: program/localization/mr_IN/labels.inc:none
+#: program/localization/mr_IN/labels.inc:nonesort
+msgid "None"
+msgstr "कोणताही नाही"
+
+#: program/localization/mr_IN/labels.inc:currpage
+msgid "Current page"
+msgstr "सध्‍याचे पान"
+
+#: program/localization/mr_IN/labels.inc:unread
+msgid "Unread"
+msgstr "न वाचलेले"
+
+#: program/localization/mr_IN/labels.inc:flagged
+msgid "Flagged"
+msgstr "खूण लावलेले"
+
+#: program/localization/mr_IN/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "उत्तर न दिलेले"
+
+#: program/localization/mr_IN/labels.inc:deleted
+msgid "Deleted"
+msgstr "काढून टाकलेला(ले)"
+
+#: program/localization/mr_IN/labels.inc:invert
+msgid "Invert"
+msgstr "उलट करा"
+
+#: program/localization/mr_IN/labels.inc:filter
+msgid "Filter"
+msgstr "गाळणी"
+
+#: program/localization/mr_IN/labels.inc:list
+msgid "List"
+msgstr "यादी"
+
+#: program/localization/mr_IN/labels.inc:threads
+msgid "Threads"
+msgstr "धागे"
+
+#: program/localization/mr_IN/labels.inc:expand-all
+msgid "Expand All"
+msgstr "सर्व विस्‍तारीत करा"
+
+#: program/localization/mr_IN/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "न वाचलेला विस्‍तारा"
+
+#: program/localization/mr_IN/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "सर्व मिटवा"
+
+#: program/localization/mr_IN/labels.inc:threaded
+msgid "Threaded"
+msgstr "धागा लावलेला"
+
+#: program/localization/mr_IN/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "संदेश धागे विस्‍तारा"
+
+#: program/localization/mr_IN/labels.inc:do_expand
+msgid "all threads"
+msgstr "सर्व धागे"
+
+#: program/localization/mr_IN/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "फक्‍त न वाचलेल्‍या"
+"संदेशांबददल "
+
+#: program/localization/mr_IN/labels.inc:fromto
+msgid "From/To"
+msgstr "पाठवणारा/प्रती"
+
+#: program/localization/mr_IN/labels.inc:flag
+msgid "Flag"
+msgstr "खूण"
+
+#: program/localization/mr_IN/labels.inc:attachment
+msgid "Attachment"
+msgstr "जोड"
+
+#: program/localization/mr_IN/labels.inc:sentdate
+msgid "Sent date"
+msgstr "पाठवणी दिनांक"
+
+#: program/localization/mr_IN/labels.inc:arrival
+msgid "Arrival date"
+msgstr "आगमन दिनांक"
+
+#: program/localization/mr_IN/labels.inc:asc
+msgid "ascending"
+msgstr "चढत्‍या क्रमाने"
+
+#: program/localization/mr_IN/labels.inc:desc
+msgid "descending"
+msgstr "उतरत्‍या क्रमाने"
+
+#: program/localization/mr_IN/labels.inc:listcolumns
+msgid "List columns"
+msgstr "सुची स्‍तंभ"
+
+#: program/localization/mr_IN/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "स्‍तंभ वर्गीकरण"
+
+#: program/localization/mr_IN/labels.inc:listorder
+msgid "Sorting order"
+msgstr "वर्गीकरण क्रम"
+
+#: program/localization/mr_IN/labels.inc:listmode
+msgid "List view mode"
+msgstr "यादी दर्शक पध्‍दत"
+
+#: program/localization/mr_IN/labels.inc:compact
+msgid "Compact"
+msgstr "छोटा"
+
+#: program/localization/mr_IN/labels.inc:empty
+msgid "Empty"
+msgstr "रिकामा"
+
+#: program/localization/mr_IN/labels.inc:purge
+msgid "purge"
+msgstr "काढून टाका"
+
+#: program/localization/mr_IN/labels.inc:quota
+msgid "Disk usage"
+msgstr "डिस्कचा वापर"
+
+#: program/localization/mr_IN/labels.inc:unknown
+msgid "unknown"
+msgstr "माहित नसलेला"
+
+#: program/localization/mr_IN/labels.inc:unlimited
+msgid "unlimited"
+msgstr "अमर्याद"
+
+#: program/localization/mr_IN/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "चटकन शोध"
+
+#: program/localization/mr_IN/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "परत शोध "
+
+#: program/localization/mr_IN/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "बदलकर्त्‍यांना शोधा"
+
+#: program/localization/mr_IN/labels.inc:msgtext
+msgid "Entire message"
+msgstr "संपूर्ण संदेश"
+
+#: program/localization/mr_IN/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "नवीन खिडकी उघडा"
+
+#: program/localization/mr_IN/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "इएमएल स्‍वरूपात उतरवून घ्या"
+
+#: program/localization/mr_IN/labels.inc:compose
+msgid "Compose a message"
+msgstr "नवीन संदेश तयार करा"
+
+#: program/localization/mr_IN/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "नवीन आहे असा संपादित करा"
+
+#: program/localization/mr_IN/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "हा मसूदा साठवून ठेवा"
+
+#: program/localization/mr_IN/labels.inc:sendmessage
+msgid "Send now"
+msgstr "आत्ता पाठवा"
+
+#: program/localization/mr_IN/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "फाईल सोबत जोडा"
+
+#: program/localization/mr_IN/labels.inc:charset
+msgid "Charset"
+msgstr "कॅरेक्टर सेट"
+
+#: program/localization/mr_IN/labels.inc:editortype
+msgid "Editor type"
+msgstr "संपादकाचा प्रकार"
+
+#: program/localization/mr_IN/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "पोच पावती"
+
+#: program/localization/mr_IN/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "शुध्द लेखन"
+
+#: program/localization/mr_IN/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "परत संदेश संपादित करा"
+
+#: program/localization/mr_IN/labels.inc:revertto
+msgid "Revert to"
+msgstr "परत जा"
+
+#: program/localization/mr_IN/labels.inc:attachments
+msgid "Attachments"
+msgstr "जोडलेल्या"
+
+#: program/localization/mr_IN/labels.inc:upload
+msgid "Upload"
+msgstr "चढवा"
+
+#: program/localization/mr_IN/labels.inc:close
+msgid "Close"
+msgstr "बंद"
+
+#: program/localization/mr_IN/labels.inc:low
+msgid "Low"
+msgstr "कमी"
+
+#: program/localization/mr_IN/labels.inc:lowest
+msgid "Lowest"
+msgstr "कमित कमी"
+
+#: program/localization/mr_IN/labels.inc:normal
+msgid "Normal"
+msgstr "नेहमी प्रमाणे"
+
+#: program/localization/mr_IN/labels.inc:high
+msgid "High"
+msgstr "तातडीचे"
+
+#: program/localization/mr_IN/labels.inc:highest
+msgid "Highest"
+msgstr "अतिशय तातडीचे"
+
+#: program/localization/mr_IN/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(विषय नाही)"
+
+#: program/localization/mr_IN/labels.inc:showimages
+msgid "Display images"
+msgstr "चित्र दाखवा"
+
+#: program/localization/mr_IN/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "$sender कडून आलेल्या संदेशातील"
+"चित्रे नेहमी दाखवा"
+
+#: program/localization/mr_IN/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "एच टी एम एल"
+
+#: program/localization/mr_IN/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "साधे लिखाण"
+
+#: program/localization/mr_IN/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "पाठवलेला संदेश या फोल्डरमधे"
+"ठेवा"
+
+#: program/localization/mr_IN/labels.inc:dontsave
+msgid "don't save"
+msgstr "संदेश साठवू नका"
+
+#: program/localization/mr_IN/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "जास्‍तीत जास्‍त फाइलचा आकार"
+"$size असू शकतो"
+
+#: program/localization/mr_IN/labels.inc:addcc
+msgid "Add Cc"
+msgstr "प्रत करा"
+
+#: program/localization/mr_IN/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "गुप्त प्रत करा"
+
+#: program/localization/mr_IN/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "आणखी लोकांना संदेश पाठवा"
+
+#: program/localization/mr_IN/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "हा संदेश पाठवणार्‍याने हा"
+"संदेश तुम्ही वाचल्यावर"
+"कळवावयाला सांगितले आहे."
+"तुम्हाला असे कळवणे चालेल ना?"
+
+#: program/localization/mr_IN/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "पोच पावती (संदेश वाचला)"
+
+#: program/localization/mr_IN/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "ही तुमच्या संदेशाची पोच"
+"पावती आहे. "
+
+#: program/localization/mr_IN/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "सूचना: ही पोच पावती तुम्ही"
+"ज्यांना  संदेश पाठवला"
+"त्यांच्या संगणकावर दिसला"
+"एवढेच सांगते. तुम्ही"
+"ज्यांना हा संदेश पाठवला,"
+"त्यांनी तो वाचला, आणि"
+"त्यांना तो नक्की समजला हे"
+"मात्र सांगत नाही. "
+
+#: program/localization/mr_IN/labels.inc:name
+msgid "Display Name"
+msgstr "टोपणनाव"
+
+#: program/localization/mr_IN/labels.inc:firstname
+msgid "First Name"
+msgstr "नाव"
+
+#: program/localization/mr_IN/labels.inc:surname
+msgid "Last Name"
+msgstr "आडनाव"
+
+#: program/localization/mr_IN/labels.inc:email
+msgid "Email"
+msgstr "इ-मेल्"
+
+#: program/localization/mr_IN/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "नवीन पत्ता नोंदवहीत ठेवा"
+
+#: program/localization/mr_IN/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "नोंदवहीतील पत्ता सुधारा"
+
+#: program/localization/mr_IN/labels.inc:edit
+msgid "Edit"
+msgstr "संदेश तयार करा"
+
+#: program/localization/mr_IN/labels.inc:cancel
+msgid "Cancel"
+msgstr "रद्द करा"
+
+#: program/localization/mr_IN/labels.inc:save
+msgid "Save"
+msgstr "ठेवून द्या"
+
+#: program/localization/mr_IN/labels.inc:delete
+msgid "Delete"
+msgstr "काढून टाका"
+
+#: program/localization/mr_IN/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "नोंदवहीत नवीन संपर्क"
+"लिहिण्यासाठी"
+
+#: program/localization/mr_IN/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "खूण केलेले सर्व संपर्काचे"
+"पत्ते काढून टाका"
+
+#: program/localization/mr_IN/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "साठी नवीन संदेश तयार करा"
+
+#: program/localization/mr_IN/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "$from पासून ते $to पर्यंत $count पैकी"
+
+#: program/localization/mr_IN/labels.inc:print
+msgid "Print"
+msgstr "छापा"
+
+#: program/localization/mr_IN/labels.inc:export
+msgid "Export"
+msgstr "निर्यात करा"
+
+#: program/localization/mr_IN/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "व्ही कार्ड स्वरुपात पत्ते"
+"निर्यात करा"
+
+#: program/localization/mr_IN/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "नवीन पत्‍त्‍यांचा गट बनवा"
+
+#: program/localization/mr_IN/labels.inc:groupactions
+msgid "groupactions"
+msgstr "पत्‍त्‍यांच्‍या गटाबददल"
+"क्रिया..."
+
+#: program/localization/mr_IN/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "आधिचा संच दाखवा"
+
+#: program/localization/mr_IN/labels.inc:firstpage
+msgid "Show first page"
+msgstr "पहिला संच दाखवा"
+
+#: program/localization/mr_IN/labels.inc:nextpage
+msgid "Show next page"
+msgstr "नंतरचा संच दाखवा"
+
+#: program/localization/mr_IN/labels.inc:lastpage
+msgid "Show last page"
+msgstr "शेवटचा संच दाखवा"
+
+#: program/localization/mr_IN/labels.inc:group
+msgid "Group"
+msgstr "गट"
+
+#: program/localization/mr_IN/labels.inc:groups
+msgid "Groups"
+msgstr "अनेक गट"
+
+#: program/localization/mr_IN/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "वैयक्तिक पत्ते"
+
+#: program/localization/mr_IN/labels.inc:import
+msgid "Import"
+msgstr "आयात करा"
+
+#: program/localization/mr_IN/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "पत्ते आयात करा"
+
+#: program/localization/mr_IN/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "या फाईल मधून आयात करा"
+
+#: program/localization/mr_IN/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "संपूर्ण पत्ता नोंदवही बदला"
+
+#: program/localization/mr_IN/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "तुम्ही तुमच्याकडील पत्ता"
+"नोंदवहीतील पत्ते तुम्ही"
+"येथे घेऊ शकता.<br/>सध्या आम्ही"
+"या <a href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>"
+"प्रकारच्या वेगवेगळ्या"
+"नोंदवहीतील पत्ते घेऊ शकतो. "
+
+#: program/localization/mr_IN/labels.inc:done
+msgid "Done"
+msgstr "झाले"
+
+#: program/localization/mr_IN/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "साठी सेटिंग्ज"
+
+#: program/localization/mr_IN/labels.inc:preferences
+msgid "Preferences"
+msgstr "तुमची पसंती"
+
+#: program/localization/mr_IN/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "वापरकर्त्याची पसंती"
+
+#: program/localization/mr_IN/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "वापरकर्त्याची पसंती सुधारा"
+
+#: program/localization/mr_IN/labels.inc:identities
+msgid "Identities"
+msgstr "ओळख"
+
+#: program/localization/mr_IN/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "या खात्यासाठी ओळखींचे"
+"नियोजन करा"
+
+#: program/localization/mr_IN/labels.inc:newidentity
+msgid "New identity"
+msgstr "नवीन ओळख"
+
+#: program/localization/mr_IN/labels.inc:newitem
+msgid "New item"
+msgstr "नवीन प्रकार"
+
+#: program/localization/mr_IN/labels.inc:edititem
+msgid "Edit item"
+msgstr "प्रकार सुधारा"
+
+#: program/localization/mr_IN/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "एच टी एम एल दाखवा"
+
+#: program/localization/mr_IN/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "नेहमीचा अक्षर संच"
+
+#: program/localization/mr_IN/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "एच टी एम एल संदेश"
+
+#: program/localization/mr_IN/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "विशेष दिवस"
+
+#: program/localization/mr_IN/labels.inc:setdefault
+msgid "Set default"
+msgstr "हा नेहमीसाठी वापरा"
+
+#: program/localization/mr_IN/labels.inc:autodetect
+msgid "Auto"
+msgstr "स्वयंचलित"
+
+#: program/localization/mr_IN/labels.inc:language
+msgid "Language"
+msgstr "भाषा"
+
+#: program/localization/mr_IN/labels.inc:timezone
+msgid "Time zone"
+msgstr "वेळ "
+"क्षेत्र"
+
+#: program/localization/mr_IN/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "प्रत्येक पानावरील ओळी"
+
+#: program/localization/mr_IN/labels.inc:signature
+msgid "Signature"
+msgstr "सही"
+
+#: program/localization/mr_IN/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "दिवसाची वेळ"
+
+#: program/localization/mr_IN/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "एच टी एम एल संदेश तयारा करा"
+
+#: program/localization/mr_IN/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "एच टी एम एल सही"
+
+#: program/localization/mr_IN/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "प्रक्रियापूर्व तावदान"
+"दाखवा"
+
+#: program/localization/mr_IN/labels.inc:skin
+msgid "Interface skin"
+msgstr "दृष्य गोष्टी"
+
+#: program/localization/mr_IN/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "खात्यातून बाहेर पडतांना"
+"कचरा पेटी साफ करा"
+
+#: program/localization/mr_IN/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "खात्यातून बाहेर पडतांना"
+"आलेल्या संदेशांना छोटे आणि"
+"व्यवस्थित करा"
+
+#: program/localization/mr_IN/labels.inc:uisettings
+msgid "User Interface"
+msgstr "वापरकर्त्यासाठीचा इंटरफेस"
+
+#: program/localization/mr_IN/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "सर्व्हरची सेटिंग्ज"
+
+#: program/localization/mr_IN/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "टपालपेटी पहाणे"
+
+#: program/localization/mr_IN/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "पाठवणार्‍याच्या सूचना"
+
+#: program/localization/mr_IN/labels.inc:askuser
+msgid "ask me"
+msgstr "वापरकर्त्याला विचारा"
+
+#: program/localization/mr_IN/labels.inc:autosend
+msgid "send receipt"
+msgstr "स्वयंचलित (आपोआप पाठवणे)"
+
+#: program/localization/mr_IN/labels.inc:ignore
+msgid "ignore"
+msgstr "दुर्लक्ष करा"
+
+#: program/localization/mr_IN/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "काढून टाकल्यावर संदेश वाचला"
+"असे दाखवा"
+
+#: program/localization/mr_IN/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "संदेश काढून टाकण्या ऎवजी"
+"संदेश काढून टाकण्यासाठी आहे"
+"अशी खूण करा"
+
+#: program/localization/mr_IN/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "काढून टाकलेले संदेश दाखवू"
+"नका"
+
+#: program/localization/mr_IN/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "जर संदेश कचरापेटीत गेले"
+"नाहीत तर काढून टाका"
+
+#: program/localization/mr_IN/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "संदेशातील चित्रे दाखवा"
+
+#: program/localization/mr_IN/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "माहितीतील पाठवणार्‍याकडून"
+"संदेश"
+
+#: program/localization/mr_IN/labels.inc:always
+msgid "always"
+msgstr "नेहमी"
+
+#: program/localization/mr_IN/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "सोबत जोडलेली चित्रे"
+"संदेशाच्या खाली दाखवा"
+
+#: program/localization/mr_IN/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "मसूदा आपोआप जतन करा"
+
+#: program/localization/mr_IN/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "प्रत्येक $n मिनिटांनी"
+
+#: program/localization/mr_IN/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "वर नवे संदेश आले आहेत का ते"
+"पहा"
+
+#: program/localization/mr_IN/labels.inc:never
+msgid "never"
+msgstr "कधीच नाही"
+
+#: program/localization/mr_IN/labels.inc:immediately
+msgid "immediately"
+msgstr "ताबडतोब"
+
+#: program/localization/mr_IN/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "संदेश दाखवा"
+
+#: program/localization/mr_IN/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "संदेश तयार करा"
+
+#: program/localization/mr_IN/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "सोबत दिलेल्या फाईल्सची नावे"
+""
+
+#: program/localization/mr_IN/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "संपूर्ण आर एफ सी 2231(थंडरबर्ड)"
+
+#: program/localization/mr_IN/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "आर एफ सी  2047/2231 (मायक्रोसॉफ़्ट"
+"आऊटलूक)"
+
+#: program/localization/mr_IN/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "संपूर्ण आर एफ सी 2047(ईतर)"
+
+#: program/localization/mr_IN/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "8 अक्षरी एमआयएमई"
+"संक्षिप्‍तरूप वापरा"
+
+#: program/localization/mr_IN/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "अधिक पर्याय"
+
+#: program/localization/mr_IN/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "ब्राऊझर खिडकी नवीन संदेशावर"
+"केंद्रित करा"
+
+#: program/localization/mr_IN/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "सर्व फोल्डरमधे नवीन संदेश"
+"शोधा"
+
+#: program/localization/mr_IN/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "संदेश काढल्‍यानंतर किंवा"
+"हलवल्‍यानंतर पुढचा संदेश"
+"दाखवा"
+
+#: program/localization/mr_IN/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "मुख्‍य पर्याय"
+
+#: program/localization/mr_IN/labels.inc:section
+msgid "Section"
+msgstr "भाग"
+
+#: program/localization/mr_IN/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "देखभाल"
+
+#: program/localization/mr_IN/labels.inc:newmessage
+msgid "New Message"
+msgstr "नवीन संदेश"
+
+#: program/localization/mr_IN/labels.inc:listoptions
+msgid "List Options"
+msgstr "पर्याय सूची"
+
+#: program/localization/mr_IN/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "सही पर्याय"
+
+#: program/localization/mr_IN/labels.inc:whenreplying
+msgid "When replying"
+msgstr "उत्‍तर देताना"
+
+#: program/localization/mr_IN/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "नवीन संदेश मुळ संदेशाच्‍या"
+"वर चालू करा"
+
+#: program/localization/mr_IN/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "नवीन संदेश मुळ संदेशाच्‍या"
+"खाली चालू करा"
+
+#: program/localization/mr_IN/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "उत्‍तर देताना मुळ सही"
+"संदेशातून काढून टाका"
+
+#: program/localization/mr_IN/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "आपोआप सही करा"
+
+#: program/localization/mr_IN/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "फक्‍त नवीन संदेश"
+
+#: program/localization/mr_IN/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "फक्‍त उत्‍तरे आ‍णी पुढे"
+"पाठवलेले संदेश"
+
+#: program/localization/mr_IN/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "उत्‍तर देताना किंवा पुढे"
+"पाठवताना सही करा"
+
+#: program/localization/mr_IN/labels.inc:belowquote
+msgid "below the quote"
+msgstr "उतारया खाली"
+
+#: program/localization/mr_IN/labels.inc:abovequote
+msgid "above the quote"
+msgstr "उतारयाच्‍या वर"
+
+#: program/localization/mr_IN/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "सही मध्‍ये टाका"
+
+#: program/localization/mr_IN/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "प्रदर्शित संदेश पाहीले अशी"
+"खुण करा "
+
+#: program/localization/mr_IN/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "$n क्षणानंतर"
+
+#: program/localization/mr_IN/labels.inc:folder
+msgid "Folder"
+msgstr "फोल्डर"
+
+#: program/localization/mr_IN/labels.inc:foldername
+msgid "Folder name"
+msgstr "फोल्डरचे नाव"
+
+#: program/localization/mr_IN/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "वर्गणिदार होणे"
+
+#: program/localization/mr_IN/labels.inc:messagecount
+msgid "Messages"
+msgstr "संदेश"
+
+#: program/localization/mr_IN/labels.inc:create
+msgid "Create"
+msgstr "तयार करा"
+
+#: program/localization/mr_IN/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "नवीन फोल्डर तयार करा"
+
+#: program/localization/mr_IN/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "फोल्डर्सचे नियोजन करा"
+
+#: program/localization/mr_IN/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "विषेश फोल्डर"
+
+#: program/localization/mr_IN/labels.inc:sortby
+msgid "Sort by"
+msgstr "ने वर्गवारी करा"
+
+#: program/localization/mr_IN/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "चढत्या क्रमाने"
+
+#: program/localization/mr_IN/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "उतरत्या क्रमाने"
+
+#: program/localization/mr_IN/labels.inc:B
+msgid "B"
+msgstr "बाइट"
+
+#: program/localization/mr_IN/labels.inc:KB
+msgid "KB"
+msgstr "केबी"
+
+#: program/localization/mr_IN/labels.inc:MB
+msgid "MB"
+msgstr "एमबी"
+
+#: program/localization/mr_IN/labels.inc:GB
+msgid "GB"
+msgstr "जीबी"
+
+#: program/localization/mr_IN/labels.inc:unicode
+msgid "Unicode"
+msgstr "युनिकोड"
+
+#: program/localization/mr_IN/labels.inc:english
+msgid "English"
+msgstr "इंग्रजी"
+
+#: program/localization/mr_IN/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "पश्चिम युरोपियन"
+
+#: program/localization/mr_IN/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "पूर्व युरोपियन"
+
+#: program/localization/mr_IN/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "दक्षिणपूर्व युरोपियन"
+
+#: program/localization/mr_IN/labels.inc:baltic
+msgid "Baltic"
+msgstr "बाल्‍टीक"
+
+#: program/localization/mr_IN/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "सिरीलिक"
+
+#: program/localization/mr_IN/labels.inc:arabic
+msgid "Arabic"
+msgstr "अरेबिक"
+
+#: program/localization/mr_IN/labels.inc:greek
+msgid "Greek"
+msgstr "ग्रीक"
+
+#: program/localization/mr_IN/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "हिब्रु"
+
+#: program/localization/mr_IN/labels.inc:turkish
+msgid "Turkish"
+msgstr "तुर्कि"
+
+#: program/localization/mr_IN/labels.inc:nordic
+msgid "Nordic"
+msgstr "नॉर्डिक"
+
+#: program/localization/mr_IN/labels.inc:thai
+msgid "Thai"
+msgstr "थाइ"
+
+#: program/localization/mr_IN/labels.inc:celtic
+msgid "Celtic"
+msgstr "सेल्टिक"
+
+#: program/localization/mr_IN/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "व्हिएतनामी"
+
+#: program/localization/mr_IN/labels.inc:japanese
+msgid "Japanese"
+msgstr "जपानी"
+
+#: program/localization/mr_IN/labels.inc:korean
+msgid "Korean"
+msgstr "कोरियन"
+
+#: program/localization/mr_IN/labels.inc:chinese
+msgid "Chinese"
+msgstr "चिनी"

@@ -1,0 +1,1289 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/nb_NO/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: nb_NO\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/nb_NO/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Velkommen til $product"
+
+#: program/localization/nb_NO/labels.inc:username
+msgid "Username"
+msgstr "Brukernavn"
+
+#: program/localization/nb_NO/labels.inc:password
+msgid "Password"
+msgstr "Passord"
+
+#: program/localization/nb_NO/labels.inc:server
+msgid "Server"
+msgstr "Server"
+
+#: program/localization/nb_NO/labels.inc:login
+msgid "Login"
+msgstr "Logg på"
+
+#: program/localization/nb_NO/labels.inc:logout
+msgid "Logout"
+msgstr "Logg ut"
+
+#: program/localization/nb_NO/labels.inc:mail
+msgid "Mail"
+msgstr "E-post"
+
+#: program/localization/nb_NO/labels.inc:settings
+msgid "Settings"
+msgstr "Innstillinger"
+
+#: program/localization/nb_NO/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Adressebok"
+
+#: program/localization/nb_NO/labels.inc:inbox
+msgid "Inbox"
+msgstr "Innboks"
+
+#: program/localization/nb_NO/labels.inc:drafts
+msgid "Drafts"
+msgstr "Kladd"
+
+#: program/localization/nb_NO/labels.inc:sent
+msgid "Sent"
+msgstr "Sendt"
+
+#: program/localization/nb_NO/labels.inc:trash
+msgid "Trash"
+msgstr "Slettet"
+
+#: program/localization/nb_NO/labels.inc:junk
+msgid "Junk"
+msgstr "Spam"
+
+#: program/localization/nb_NO/labels.inc:subject
+msgid "Subject"
+msgstr "Emne"
+
+#: program/localization/nb_NO/labels.inc:from
+msgid "From"
+msgstr "Avsender"
+
+#: program/localization/nb_NO/labels.inc:to
+msgid "To"
+msgstr "Mottaker"
+
+#: program/localization/nb_NO/labels.inc:cc
+msgid "Cc"
+msgstr "Kopi til"
+
+#: program/localization/nb_NO/labels.inc:bcc
+msgid "Bcc"
+msgstr "Blindkopi til"
+
+#: program/localization/nb_NO/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Svar til"
+
+#: program/localization/nb_NO/labels.inc:date
+msgid "Date"
+msgstr "Dato"
+
+#: program/localization/nb_NO/labels.inc:size
+msgid "Size"
+msgstr "Størrelse"
+
+#: program/localization/nb_NO/labels.inc:priority
+msgid "Priority"
+msgstr "Prioritet"
+
+#: program/localization/nb_NO/labels.inc:organization
+msgid "Company"
+msgstr "Organisasjon"
+
+#: program/localization/nb_NO/labels.inc:reply-to
+msgid "reply-to"
+msgstr "Svar til"
+
+#: program/localization/nb_NO/labels.inc:mailboxlist
+#: program/localization/nb_NO/labels.inc:folders
+msgid "Folders"
+msgstr "Mapper"
+
+#: program/localization/nb_NO/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Meldinger $from til $to av $count"
+
+#: program/localization/nb_NO/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Tråder $from til $to av $count"
+
+#: program/localization/nb_NO/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Melding $nr av $count"
+
+#: program/localization/nb_NO/labels.inc:copy
+msgid "Copy"
+msgstr "Kopier"
+
+#: program/localization/nb_NO/labels.inc:move
+msgid "Move"
+msgstr "Flytt"
+
+#: program/localization/nb_NO/labels.inc:moveto
+msgid "Move to..."
+msgstr "flytt til..."
+
+#: program/localization/nb_NO/labels.inc:download
+msgid "Download"
+msgstr "last ned"
+
+#: program/localization/nb_NO/labels.inc:filename
+msgid "File name"
+msgstr "Filnavn"
+
+#: program/localization/nb_NO/labels.inc:filesize
+msgid "File size"
+msgstr "Filstørrelse"
+
+#: program/localization/nb_NO/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Legg til i adressebok"
+
+#: program/localization/nb_NO/labels.inc:sun
+msgid "Sun"
+msgstr "Søn"
+
+#: program/localization/nb_NO/labels.inc:mon
+msgid "Mon"
+msgstr "Man"
+
+#: program/localization/nb_NO/labels.inc:tue
+msgid "Tue"
+msgstr "Tir"
+
+#: program/localization/nb_NO/labels.inc:wed
+msgid "Wed"
+msgstr "Ons"
+
+#: program/localization/nb_NO/labels.inc:thu
+msgid "Thu"
+msgstr "Tor"
+
+#: program/localization/nb_NO/labels.inc:fri
+msgid "Fri"
+msgstr "Fre"
+
+#: program/localization/nb_NO/labels.inc:sat
+msgid "Sat"
+msgstr "Lør"
+
+#: program/localization/nb_NO/labels.inc:sunday
+msgid "Sunday"
+msgstr "Søndag"
+
+#: program/localization/nb_NO/labels.inc:monday
+msgid "Monday"
+msgstr "Mandag"
+
+#: program/localization/nb_NO/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Tirsdag"
+
+#: program/localization/nb_NO/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Onsdag"
+
+#: program/localization/nb_NO/labels.inc:thursday
+msgid "Thursday"
+msgstr "Torsdag"
+
+#: program/localization/nb_NO/labels.inc:friday
+msgid "Friday"
+msgstr "Fredag"
+
+#: program/localization/nb_NO/labels.inc:saturday
+msgid "Saturday"
+msgstr "Lørdag"
+
+#: program/localization/nb_NO/labels.inc:jan
+msgid "Jan"
+msgstr "Jan"
+
+#: program/localization/nb_NO/labels.inc:feb
+msgid "Feb"
+msgstr "Feb"
+
+#: program/localization/nb_NO/labels.inc:mar
+msgid "Mar"
+msgstr "Mar"
+
+#: program/localization/nb_NO/labels.inc:apr
+msgid "Apr"
+msgstr "Apr"
+
+#: program/localization/nb_NO/labels.inc:may
+#: program/localization/nb_NO/labels.inc:longmay
+msgid "May"
+msgstr "Mai"
+
+#: program/localization/nb_NO/labels.inc:jun
+msgid "Jun"
+msgstr "Jun"
+
+#: program/localization/nb_NO/labels.inc:jul
+msgid "Jul"
+msgstr "Jul"
+
+#: program/localization/nb_NO/labels.inc:aug
+msgid "Aug"
+msgstr "Aug"
+
+#: program/localization/nb_NO/labels.inc:sep
+msgid "Sep"
+msgstr "Sep"
+
+#: program/localization/nb_NO/labels.inc:oct
+msgid "Oct"
+msgstr "Okt"
+
+#: program/localization/nb_NO/labels.inc:nov
+msgid "Nov"
+msgstr "Nov"
+
+#: program/localization/nb_NO/labels.inc:dec
+msgid "Dec"
+msgstr "Des"
+
+#: program/localization/nb_NO/labels.inc:longjan
+msgid "January"
+msgstr "Januar"
+
+#: program/localization/nb_NO/labels.inc:longfeb
+msgid "February"
+msgstr "Februar"
+
+#: program/localization/nb_NO/labels.inc:longmar
+msgid "March"
+msgstr "Mars"
+
+#: program/localization/nb_NO/labels.inc:longapr
+msgid "April"
+msgstr "April"
+
+#: program/localization/nb_NO/labels.inc:longjun
+msgid "June"
+msgstr "Juni"
+
+#: program/localization/nb_NO/labels.inc:longjul
+msgid "July"
+msgstr "Juli"
+
+#: program/localization/nb_NO/labels.inc:longaug
+msgid "August"
+msgstr "August"
+
+#: program/localization/nb_NO/labels.inc:longsep
+msgid "September"
+msgstr "September"
+
+#: program/localization/nb_NO/labels.inc:longoct
+msgid "October"
+msgstr "Oktober"
+
+#: program/localization/nb_NO/labels.inc:longnov
+msgid "November"
+msgstr "November"
+
+#: program/localization/nb_NO/labels.inc:longdec
+msgid "December"
+msgstr "Desember"
+
+#: program/localization/nb_NO/labels.inc:today
+msgid "Today"
+msgstr "I dag"
+
+#: program/localization/nb_NO/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Se etter nye meldinger"
+
+#: program/localization/nb_NO/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Opprett ny e-post"
+
+#: program/localization/nb_NO/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Svar på denne e-posten"
+
+#: program/localization/nb_NO/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Svar til alle mottakere"
+
+#: program/localization/nb_NO/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Videresend denne e-posten"
+
+#: program/localization/nb_NO/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Slett e-posten"
+
+#: program/localization/nb_NO/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Flytt e-posten til søppel"
+
+#: program/localization/nb_NO/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Skriv ut denne e-posten"
+
+#: program/localization/nb_NO/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Vis forrige melding"
+
+#: program/localization/nb_NO/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "Vis forrige side"
+
+#: program/localization/nb_NO/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Vis første melding"
+
+#: program/localization/nb_NO/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "Vis første side med meldinger"
+
+#: program/localization/nb_NO/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Vis neste melding"
+
+#: program/localization/nb_NO/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "Vis neste side"
+
+#: program/localization/nb_NO/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Vis siste melding"
+
+#: program/localization/nb_NO/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "Vis siste side med meldinger"
+
+#: program/localization/nb_NO/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Tilbake til e-postlisten"
+
+#: program/localization/nb_NO/labels.inc:viewsource
+msgid "Show source"
+msgstr "Vis kilde"
+
+#: program/localization/nb_NO/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Merk meldinger"
+
+#: program/localization/nb_NO/labels.inc:markread
+msgid "As read"
+msgstr "som lest"
+
+#: program/localization/nb_NO/labels.inc:markunread
+msgid "As unread"
+msgstr "som ulest"
+
+#: program/localization/nb_NO/labels.inc:markflagged
+msgid "As flagged"
+msgstr "som flagget"
+
+#: program/localization/nb_NO/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "som uflagget"
+
+#: program/localization/nb_NO/labels.inc:messageactions
+msgid "messageactions"
+msgstr "Flere valg..."
+
+#: program/localization/nb_NO/labels.inc:select
+msgid "Select"
+msgstr "Velg"
+
+#: program/localization/nb_NO/labels.inc:all
+msgid "All"
+msgstr "Alle"
+
+#: program/localization/nb_NO/labels.inc:none
+#: program/localization/nb_NO/labels.inc:nonesort
+msgid "None"
+msgstr "Ingen"
+
+#: program/localization/nb_NO/labels.inc:currpage
+msgid "Current page"
+msgstr "Gjeldende side"
+
+#: program/localization/nb_NO/labels.inc:unread
+msgid "Unread"
+msgstr "Uleste"
+
+#: program/localization/nb_NO/labels.inc:flagged
+msgid "Flagged"
+msgstr "Flagget"
+
+#: program/localization/nb_NO/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Ubesvarte"
+
+#: program/localization/nb_NO/labels.inc:deleted
+msgid "Deleted"
+msgstr "Slettet"
+
+#: program/localization/nb_NO/labels.inc:invert
+msgid "Invert"
+msgstr "Inverter"
+
+#: program/localization/nb_NO/labels.inc:filter
+msgid "Filter"
+msgstr "Filter"
+
+#: program/localization/nb_NO/labels.inc:list
+msgid "List"
+msgstr "Liste"
+
+#: program/localization/nb_NO/labels.inc:threads
+msgid "Threads"
+msgstr "Tråder"
+
+#: program/localization/nb_NO/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Utvid alle"
+
+#: program/localization/nb_NO/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Utvid uleste"
+
+#: program/localization/nb_NO/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Skjul alle"
+
+#: program/localization/nb_NO/labels.inc:threaded
+msgid "Threaded"
+msgstr "Trådet"
+
+#: program/localization/nb_NO/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Utvid tråder"
+
+#: program/localization/nb_NO/labels.inc:do_expand
+msgid "all threads"
+msgstr "alle tråder"
+
+#: program/localization/nb_NO/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "kun med uleste meldinger"
+
+#: program/localization/nb_NO/labels.inc:fromto
+msgid "From/To"
+msgstr "Avsender/Mottaker"
+
+#: program/localization/nb_NO/labels.inc:flag
+msgid "Flag"
+msgstr "Flagg"
+
+#: program/localization/nb_NO/labels.inc:attachment
+msgid "Attachment"
+msgstr "Vedlegg"
+
+#: program/localization/nb_NO/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Dato sendt"
+
+#: program/localization/nb_NO/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Dato mottatt"
+
+#: program/localization/nb_NO/labels.inc:asc
+msgid "ascending"
+msgstr "stigende"
+
+#: program/localization/nb_NO/labels.inc:desc
+msgid "descending"
+msgstr "synkende"
+
+#: program/localization/nb_NO/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Listekolonner"
+
+#: program/localization/nb_NO/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Sorteringskolonne"
+
+#: program/localization/nb_NO/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Sorteringsrekkefølge"
+
+#: program/localization/nb_NO/labels.inc:listmode
+msgid "List view mode"
+msgstr "Listevisningsmodus"
+
+#: program/localization/nb_NO/labels.inc:compact
+msgid "Compact"
+msgstr "Rydd opp"
+
+#: program/localization/nb_NO/labels.inc:empty
+msgid "Empty"
+msgstr "Tøm"
+
+#: program/localization/nb_NO/labels.inc:purge
+msgid "purge"
+msgstr "Tøm"
+
+#: program/localization/nb_NO/labels.inc:quota
+msgid "Disk usage"
+msgstr "Plassforbruk"
+
+#: program/localization/nb_NO/labels.inc:unknown
+msgid "unknown"
+msgstr "ukjent"
+
+#: program/localization/nb_NO/labels.inc:unlimited
+msgid "unlimited"
+msgstr "ubegrenset"
+
+#: program/localization/nb_NO/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Hurtigsøk"
+
+#: program/localization/nb_NO/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Nullstill søk"
+
+#: program/localization/nb_NO/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Søke felt"
+
+#: program/localization/nb_NO/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Hele meldingen"
+
+#: program/localization/nb_NO/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Åpne i nytt vindu"
+
+#: program/localization/nb_NO/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Last ned (.eml)"
+
+#: program/localization/nb_NO/labels.inc:compose
+msgid "Compose a message"
+msgstr "Skriv ny e-post"
+
+#: program/localization/nb_NO/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Rediger som ny"
+
+#: program/localization/nb_NO/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Lagre kladd"
+
+#: program/localization/nb_NO/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Send e-posten"
+
+#: program/localization/nb_NO/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Vedlegg"
+
+#: program/localization/nb_NO/labels.inc:charset
+msgid "Charset"
+msgstr "Tegnsett"
+
+#: program/localization/nb_NO/labels.inc:editortype
+msgid "Editor type"
+msgstr "Format"
+
+#: program/localization/nb_NO/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Be om kvittering"
+
+#: program/localization/nb_NO/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Stavekontroll"
+
+#: program/localization/nb_NO/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Fortsett redigering"
+
+#: program/localization/nb_NO/labels.inc:revertto
+msgid "Revert to"
+msgstr "Tilbake til"
+
+#: program/localization/nb_NO/labels.inc:attachments
+msgid "Attachments"
+msgstr "Vedlegg"
+
+#: program/localization/nb_NO/labels.inc:upload
+msgid "Upload"
+msgstr "Last opp"
+
+#: program/localization/nb_NO/labels.inc:close
+msgid "Close"
+msgstr "Lukk"
+
+#: program/localization/nb_NO/labels.inc:low
+msgid "Low"
+msgstr "Lav"
+
+#: program/localization/nb_NO/labels.inc:lowest
+msgid "Lowest"
+msgstr "Lavest"
+
+#: program/localization/nb_NO/labels.inc:normal
+msgid "Normal"
+msgstr "Normal"
+
+#: program/localization/nb_NO/labels.inc:high
+msgid "High"
+msgstr "Høy"
+
+#: program/localization/nb_NO/labels.inc:highest
+msgid "Highest"
+msgstr "Høyest"
+
+#: program/localization/nb_NO/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(intet emne)"
+
+#: program/localization/nb_NO/labels.inc:showimages
+msgid "Display images"
+msgstr "Vis bilder"
+
+#: program/localization/nb_NO/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Vis alltid bilder fra $sender"
+
+#: program/localization/nb_NO/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/nb_NO/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Ren tekst"
+
+#: program/localization/nb_NO/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Lagre sendt melding i"
+
+#: program/localization/nb_NO/labels.inc:dontsave
+msgid "don't save"
+msgstr "ikke lagre"
+
+#: program/localization/nb_NO/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Maksimalt tillatt filstørrelse er $size"
+
+#: program/localization/nb_NO/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Legg til kopiadressat (Cc)"
+
+#: program/localization/nb_NO/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Legg til blindkopiadressat (Bcc)"
+
+#: program/localization/nb_NO/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Legg til svar til (Reply-To)"
+
+#: program/localization/nb_NO/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Senderen av denne meldingen har bedt om å bli gjort oppmerksom på at"
+"denne meldingen er lest. Ønsker du å sende denne bekreftelsen?"
+
+#: program/localization/nb_NO/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Kvittering (lest)"
+
+#: program/localization/nb_NO/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Dette er en kvittering for at din e-post er mottatt"
+
+#: program/localization/nb_NO/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Merknad: Denne kvitteringen bekrefter bare at e-posten ble vist hos"
+"mottakeren. Det er ingen garanti for at mottakeren har lest eller forstått"
+"innholdet i e-posten."
+
+#: program/localization/nb_NO/labels.inc:name
+msgid "Display Name"
+msgstr "Visningsnavn"
+
+#: program/localization/nb_NO/labels.inc:firstname
+msgid "First Name"
+msgstr "Fornavn"
+
+#: program/localization/nb_NO/labels.inc:surname
+msgid "Last Name"
+msgstr "Etternavn"
+
+#: program/localization/nb_NO/labels.inc:email
+msgid "Email"
+msgstr "E-post"
+
+#: program/localization/nb_NO/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Legg til ny kontakt"
+
+#: program/localization/nb_NO/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Rediger kontakt"
+
+#: program/localization/nb_NO/labels.inc:edit
+msgid "Edit"
+msgstr "Rediger"
+
+#: program/localization/nb_NO/labels.inc:cancel
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: program/localization/nb_NO/labels.inc:save
+msgid "Save"
+msgstr "Lagre"
+
+#: program/localization/nb_NO/labels.inc:delete
+msgid "Delete"
+msgstr "Slett"
+
+#: program/localization/nb_NO/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Opprett ny kontakt"
+
+#: program/localization/nb_NO/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Slett valgte kontakter"
+
+#: program/localization/nb_NO/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Skriv e-post til"
+
+#: program/localization/nb_NO/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Kontakter $from til $to av $count"
+
+#: program/localization/nb_NO/labels.inc:print
+msgid "Print"
+msgstr "Skriv ut"
+
+#: program/localization/nb_NO/labels.inc:export
+msgid "Export"
+msgstr "Eksporter"
+
+#: program/localization/nb_NO/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Eksporter kontakter i vCard-format"
+
+#: program/localization/nb_NO/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Opprett ny kontaktgruppe"
+
+#: program/localization/nb_NO/labels.inc:groupactions
+msgid "groupactions"
+msgstr "Handlinger for kontaktgrupper..."
+
+#: program/localization/nb_NO/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Vis forrige sett"
+
+#: program/localization/nb_NO/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Vis første sett"
+
+#: program/localization/nb_NO/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Vis neste sett"
+
+#: program/localization/nb_NO/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Vis siste sett"
+
+#: program/localization/nb_NO/labels.inc:group
+msgid "Group"
+msgstr "Gruppe"
+
+#: program/localization/nb_NO/labels.inc:groups
+msgid "Groups"
+msgstr "Grupper"
+
+#: program/localization/nb_NO/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Egne adresser"
+
+#: program/localization/nb_NO/labels.inc:import
+msgid "Import"
+msgstr "Importer"
+
+#: program/localization/nb_NO/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Importer kontakter"
+
+#: program/localization/nb_NO/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Importer fra fil:"
+
+#: program/localization/nb_NO/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Erstatt hele adresseboken"
+
+#: program/localization/nb_NO/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Du kan laste opp kontakter fra en eksisterende adressebok.<br/>For"
+"øyeblikket støttes importering av kontakter i <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>-formatet."
+
+#: program/localization/nb_NO/labels.inc:done
+msgid "Done"
+msgstr "Fullført"
+
+#: program/localization/nb_NO/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Innstillinger for"
+
+#: program/localization/nb_NO/labels.inc:preferences
+msgid "Preferences"
+msgstr "Oppsett"
+
+#: program/localization/nb_NO/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Brukeroppsett"
+
+#: program/localization/nb_NO/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Rediger brukeroppsett"
+
+#: program/localization/nb_NO/labels.inc:identities
+msgid "Identities"
+msgstr "Identiteter"
+
+#: program/localization/nb_NO/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Administrer identitetene for denne kontoen"
+
+#: program/localization/nb_NO/labels.inc:newidentity
+msgid "New identity"
+msgstr "Ny identitet"
+
+#: program/localization/nb_NO/labels.inc:newitem
+msgid "New item"
+msgstr "Nytt punkt"
+
+#: program/localization/nb_NO/labels.inc:edititem
+msgid "Edit item"
+msgstr "Rediger punkt"
+
+#: program/localization/nb_NO/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Foretrekk HTML"
+
+#: program/localization/nb_NO/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Standard tegnsett"
+
+#: program/localization/nb_NO/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML-melding"
+
+#: program/localization/nb_NO/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Pen datovisning"
+
+#: program/localization/nb_NO/labels.inc:setdefault
+msgid "Set default"
+msgstr "Sett som standard"
+
+#: program/localization/nb_NO/labels.inc:autodetect
+msgid "Auto"
+msgstr "Auto"
+
+#: program/localization/nb_NO/labels.inc:language
+msgid "Language"
+msgstr "Språk"
+
+#: program/localization/nb_NO/labels.inc:timezone
+msgid "Time zone"
+msgstr "Tidssone"
+
+#: program/localization/nb_NO/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Linjer per side"
+
+#: program/localization/nb_NO/labels.inc:signature
+msgid "Signature"
+msgstr "Signatur"
+
+#: program/localization/nb_NO/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Sommertid"
+
+#: program/localization/nb_NO/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Bruk HTML-editor"
+
+#: program/localization/nb_NO/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML-signatur"
+
+#: program/localization/nb_NO/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Forhåndsvisning"
+
+#: program/localization/nb_NO/labels.inc:skin
+msgid "Interface skin"
+msgstr "Utseende"
+
+#: program/localization/nb_NO/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Tøm søppel ved utlogging"
+
+#: program/localization/nb_NO/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Kompakt innboksen ved utlogging"
+
+#: program/localization/nb_NO/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Brukergrensesnitt"
+
+#: program/localization/nb_NO/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Serverinnstillinger"
+
+#: program/localization/nb_NO/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "E-postvisning"
+
+#: program/localization/nb_NO/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Tilbakemelding til avsender"
+
+#: program/localization/nb_NO/labels.inc:askuser
+msgid "ask me"
+msgstr "spør hver gang"
+
+#: program/localization/nb_NO/labels.inc:autosend
+msgid "send receipt"
+msgstr "send automatisk"
+
+#: program/localization/nb_NO/labels.inc:ignore
+msgid "ignore"
+msgstr "ignorer"
+
+#: program/localization/nb_NO/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Merk melding som lest ved sletting"
+
+#: program/localization/nb_NO/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Flagg meldingen for sletting i stedet for å slette"
+
+#: program/localization/nb_NO/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Ikke vis slettede meldinger"
+
+#: program/localization/nb_NO/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Hvis en melding ikke kan flyttes til Slettet, slett den"
+
+#: program/localization/nb_NO/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Vis bilder fra eksterne servere i meldinger"
+
+#: program/localization/nb_NO/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "fra kjente avsendere"
+
+#: program/localization/nb_NO/labels.inc:always
+msgid "always"
+msgstr "alltid"
+
+#: program/localization/nb_NO/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Vis vedlagte bilder nedenfor meldingen"
+
+#: program/localization/nb_NO/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Autolagring av utkast"
+
+#: program/localization/nb_NO/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "hvert $n minutt"
+
+#: program/localization/nb_NO/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Se etter ny e-post"
+
+#: program/localization/nb_NO/labels.inc:never
+msgid "never"
+msgstr "Aldri"
+
+#: program/localization/nb_NO/labels.inc:immediately
+msgid "immediately"
+msgstr "umiddelbart"
+
+#: program/localization/nb_NO/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Visning av meldinger"
+
+#: program/localization/nb_NO/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Skriving av meldinger"
+
+#: program/localization/nb_NO/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Vedleggsnavn"
+
+#: program/localization/nb_NO/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Fullstendig RFC 2231 (Thunderbird)"
+
+#: program/localization/nb_NO/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/nb_NO/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Fullstendig RFC 2047 (andre)"
+
+#: program/localization/nb_NO/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "Bruk MIME-koding for 8-bit-tegn"
+
+#: program/localization/nb_NO/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Avanserte alternativer"
+
+#: program/localization/nb_NO/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Gi nettleservindu fokus ved nye meldinger"
+
+#: program/localization/nb_NO/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Kontroller alle mapper for nye meldinger"
+
+#: program/localization/nb_NO/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Vis neste melding etter sletting/flytting av en melding"
+
+#: program/localization/nb_NO/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Hovedinnstillinger"
+
+#: program/localization/nb_NO/labels.inc:section
+msgid "Section"
+msgstr "Kategori"
+
+#: program/localization/nb_NO/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Vedlikehold"
+
+#: program/localization/nb_NO/labels.inc:newmessage
+msgid "New Message"
+msgstr "Ny melding"
+
+#: program/localization/nb_NO/labels.inc:listoptions
+msgid "List Options"
+msgstr "Meldingsoversikt"
+
+#: program/localization/nb_NO/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Innstillinger for signatur"
+
+#: program/localization/nb_NO/labels.inc:whenreplying
+msgid "When replying"
+msgstr "Ved svar på e-post"
+
+#: program/localization/nb_NO/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "start den nye meldingen over orginalmeldingen"
+
+#: program/localization/nb_NO/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "start den nye meldingen under orginalmeldingen"
+
+#: program/localization/nb_NO/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "Fjern orginalsignaturen i svar på melding"
+
+#: program/localization/nb_NO/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Legg til signatur"
+
+#: program/localization/nb_NO/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "kun på nye meldinger"
+
+#: program/localization/nb_NO/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "kun i svar og videresendinger"
+
+#: program/localization/nb_NO/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "Plassering av signatur ved svar eller videresending"
+
+#: program/localization/nb_NO/labels.inc:belowquote
+msgid "below the quote"
+msgstr "over sitert melding"
+
+#: program/localization/nb_NO/labels.inc:abovequote
+msgid "above the quote"
+msgstr "under sitert melding"
+
+#: program/localization/nb_NO/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Sett inn signatur"
+
+#: program/localization/nb_NO/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Merk forhåndsviste meldinger som lest"
+
+#: program/localization/nb_NO/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "etter $n sekunder"
+
+#: program/localization/nb_NO/labels.inc:folder
+msgid "Folder"
+msgstr "Mappe"
+
+#: program/localization/nb_NO/labels.inc:foldername
+msgid "Folder name"
+msgstr "Mappenavn"
+
+#: program/localization/nb_NO/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Abonnere"
+
+#: program/localization/nb_NO/labels.inc:messagecount
+msgid "Messages"
+msgstr "Meldinger"
+
+#: program/localization/nb_NO/labels.inc:create
+msgid "Create"
+msgstr "Opprett"
+
+#: program/localization/nb_NO/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Lag ny mappe"
+
+#: program/localization/nb_NO/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Rediger mapper"
+
+#: program/localization/nb_NO/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Spesielle mapper"
+
+#: program/localization/nb_NO/labels.inc:sortby
+msgid "Sort by"
+msgstr "Sorter etter"
+
+#: program/localization/nb_NO/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Eldste først"
+
+#: program/localization/nb_NO/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Nyeste først"
+
+#: program/localization/nb_NO/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/nb_NO/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/nb_NO/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/nb_NO/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/nb_NO/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unicode"
+
+#: program/localization/nb_NO/labels.inc:english
+msgid "English"
+msgstr "Engelsk"
+
+#: program/localization/nb_NO/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Vesteuropeisk"
+
+#: program/localization/nb_NO/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Østeuropeisk"
+
+#: program/localization/nb_NO/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Sørøsteuropeisk"
+
+#: program/localization/nb_NO/labels.inc:baltic
+msgid "Baltic"
+msgstr "Baltisk"
+
+#: program/localization/nb_NO/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Cyrillisk"
+
+#: program/localization/nb_NO/labels.inc:arabic
+msgid "Arabic"
+msgstr "Arabisk"
+
+#: program/localization/nb_NO/labels.inc:greek
+msgid "Greek"
+msgstr "Gresk"
+
+#: program/localization/nb_NO/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Hebraisk"
+
+#: program/localization/nb_NO/labels.inc:turkish
+msgid "Turkish"
+msgstr "Tyrkisk"
+
+#: program/localization/nb_NO/labels.inc:nordic
+msgid "Nordic"
+msgstr "Nordisk"
+
+#: program/localization/nb_NO/labels.inc:thai
+msgid "Thai"
+msgstr "Thailandsk"
+
+#: program/localization/nb_NO/labels.inc:celtic
+msgid "Celtic"
+msgstr "Keltisk"
+
+#: program/localization/nb_NO/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Vietnamesisk"
+
+#: program/localization/nb_NO/labels.inc:japanese
+msgid "Japanese"
+msgstr "Japansk"
+
+#: program/localization/nb_NO/labels.inc:korean
+msgid "Korean"
+msgstr "Koreansk"
+
+#: program/localization/nb_NO/labels.inc:chinese
+msgid "Chinese"
+msgstr "Kinesisk"

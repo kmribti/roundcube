@@ -1,0 +1,393 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/es_AR/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: es_AR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/es_AR/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Contraseña o nombre de usuario incorrecto"
+
+#: program/localization/es_AR/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Su navegador no acepta cookies"
+
+#: program/localization/es_AR/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Su sesión no existe o ha expirado"
+
+#: program/localization/es_AR/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Error de conexión con el servidor IMAP"
+
+#: program/localization/es_AR/messages.inc:servererror
+msgid "Server Error!"
+msgstr "¡Error en el servidor!"
+
+#: program/localization/es_AR/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Peteción invalida! No se guardó nada."
+
+#: program/localization/es_AR/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "No se han encontrado mensajes en esta casilla"
+
+#: program/localization/es_AR/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Ha cerrado la sesión. ¡Hasta pronto!"
+
+#: program/localization/es_AR/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "La casilla está vacía"
+
+#: program/localization/es_AR/messages.inc:loading
+msgid "Loading..."
+msgstr "Cargando..."
+
+#: program/localization/es_AR/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Subiendo archivo..."
+
+#: program/localization/es_AR/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Cargando datos..."
+
+#: program/localization/es_AR/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Verificando si hay nuevos mensajes..."
+
+#: program/localization/es_AR/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Enviando mensaje..."
+
+#: program/localization/es_AR/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Mensaje enviado correctamente"
+
+#: program/localization/es_AR/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Guardar mensaje..."
+
+#: program/localization/es_AR/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Mensaje guardado en borradores"
+
+#: program/localization/es_AR/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Guardado correctamente"
+
+#: program/localization/es_AR/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Contacto añadido correctamente a la libreta de direcciones"
+
+#: program/localization/es_AR/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Ya existe un contacto con esta dirección de correo"
+
+#: program/localization/es_AR/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Para proteger su privacidad, las imágenes externas han sido bloqueadas en"
+"este mensaje"
+
+#: program/localization/es_AR/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Este es un mensaje cifrado y no puede ser mostrado. ¡Lo siento!"
+
+#: program/localization/es_AR/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "No hay contactos"
+
+#: program/localization/es_AR/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "El contacto solicitado no existe"
+
+#: program/localization/es_AR/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Error al enviar mensaje"
+
+#: program/localization/es_AR/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Por favor, espere $sec segundo(s) antes de enviar este mensaje"
+
+#: program/localization/es_AR/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Ocurrió un error al guardar el mensaje enviado"
+
+#: program/localization/es_AR/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Ocurrió un error al guardar"
+
+#: program/localization/es_AR/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "No se pudo mover el mensaje"
+
+#: program/localization/es_AR/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "No se pudo copiar el mensaje"
+
+#: program/localization/es_AR/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "No se ha podido eliminar el mensaje"
+
+#: program/localization/es_AR/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "No se puede marcar el mensaje."
+
+#: program/localization/es_AR/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "¿Realmente quiere eliminar los contactos seleccionados?"
+
+#: program/localization/es_AR/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "¿Realmente quiere eliminar los mensajes seleccionados?"
+
+#: program/localization/es_AR/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "¿Realmente quiere eliminar esta carpeta?"
+
+#: program/localization/es_AR/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "¿Realmente quiere eliminar todos los mensajes de esta carpeta?"
+
+#: program/localization/es_AR/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Eliminando carpeta..."
+
+#: program/localization/es_AR/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Moviendo carpeta..."
+
+#: program/localization/es_AR/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "No se han llenado todos los campos del formulario"
+
+#: program/localization/es_AR/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Por favor, introduzca un e-mail válido"
+
+#: program/localization/es_AR/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Por favor, introduzca su nombre"
+
+#: program/localization/es_AR/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Por favor, introduzca un tamaño de página"
+
+#: program/localization/es_AR/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Por favor, introduzca el e-mail del emisor"
+
+#: program/localization/es_AR/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Por favor, introduzca al menos un destinatario"
+
+#: program/localization/es_AR/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "El campo \"Asunto\" esta vacío. ¿Desea completarlo en este momento?"
+
+#: program/localization/es_AR/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "¿Quiere enviar este mensaje sin texto?"
+
+#: program/localization/es_AR/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "El mensaje no ha sido enviado. ¿Desea descartar su mensaje?"
+
+#: program/localization/es_AR/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Por favor, seleccione un servidor LDAP para buscar"
+
+#: program/localization/es_AR/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "No se han encontrado contactos"
+
+#: program/localization/es_AR/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Por favor, introduzca un nombre o la dirección de e-mail"
+
+#: program/localization/es_AR/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Todavia no se subieron todos los archivos adjuntos. Por favor aguarde o"
+"cancele la subida."
+
+#: program/localization/es_AR/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "Se encontraron $nr mensajes"
+
+#: program/localization/es_AR/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "La búsqueda no obtuvo resultados"
+
+#: program/localization/es_AR/messages.inc:searching
+msgid "Searching..."
+msgstr "Buscando..."
+
+#: program/localization/es_AR/messages.inc:checking
+msgid "Checking..."
+msgstr "Revisando..."
+
+#: program/localization/es_AR/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "No se encontraron errores ortográficos"
+
+#: program/localization/es_AR/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Carpeta eliminada exitosamente"
+
+#: program/localization/es_AR/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Eliminado exitosamente"
+
+#: program/localization/es_AR/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Removiendo el formato del mensaje..."
+
+#: program/localization/es_AR/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "No puedo descargar el mensaje del servidor"
+
+#: program/localization/es_AR/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Error al subir archivos"
+
+#: program/localization/es_AR/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "El archivo excede el tamaño maximo ($size)"
+
+#: program/localization/es_AR/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "$nr direcciones copiadas con éxito"
+
+#: program/localization/es_AR/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "No se pudo copiar ninguna dirección"
+
+#: program/localization/es_AR/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Esta dirección es de sólo-lectura"
+
+#: program/localization/es_AR/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "No se pudo guardar la dirección de contacto"
+
+#: program/localization/es_AR/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Moviendo mensaje..."
+
+#: program/localization/es_AR/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Copiando mensaje..."
+
+#: program/localization/es_AR/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "La notificación de lectura se ha enviado con éxito."
+
+#: program/localization/es_AR/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "No se ha podido enviar la notificación de lectura."
+
+#: program/localization/es_AR/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "No se puede borrar esta identidad puesto que es la última."
+
+#: program/localization/es_AR/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "El nombre de la carpeta contiene un carácter prohibido"
+
+#: program/localization/es_AR/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Por favor, seleccione el archivo a subir"
+
+#: program/localization/es_AR/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "La libreta de direcciones seleccionada es de solo-lectura"
+
+#: program/localization/es_AR/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Contactos agregados al grupo correctamente"
+
+#: program/localization/es_AR/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Contactos eliminados del grupo correctamente"
+
+#: program/localization/es_AR/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Importando, aguarde por favor..."
+
+#: program/localization/es_AR/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Falló la importación! El archivo seleccionado parece no ser un archivo"
+"del tipo vCard válido."
+
+#: program/localization/es_AR/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Se importaron $inserted contactos correctamente. $skipped ya existentes"
+"fueron ignorados</b>:<p><em>$names</em></p>"
+
+#: program/localization/es_AR/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Operación no permitida!"
+
+#: program/localization/es_AR/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "El contacto seleccionado no tiene dirección de e-mail"
+
+#: program/localization/es_AR/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Si cambia a texto plano se perderán todas las opciones de formato. ¿Desea"
+"continuar?"
+
+#: program/localization/es_AR/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Ha ocurrido un error fatal de configuración. Contacte inmediatamente a su"
+"administrador. <b>Su mensaje no ha sido enviado.</b>"
+
+#: program/localization/es_AR/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "Error SMTP ($code): Conexión al servidor falló"
+
+#: program/localization/es_AR/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "Error SMTP ($code): Falló la autentificación"
+
+#: program/localization/es_AR/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "Error SMTP ($code): No se pudo establecer el remitente \"$from\" ($msg)"
+
+#: program/localization/es_AR/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "Error SMTP ($code): No se puedo agregar el destinatario \"$to\" ($msg)"
+
+#: program/localization/es_AR/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "Error SMTP: No se pudo leer la lista de destinatarios"
+
+#: program/localization/es_AR/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "Error SMTP: $msg"
+
+#: program/localization/es_AR/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "La dirección $email no es válida"
+
+#: program/localization/es_AR/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Demasiados destinatarios. Reduzca la cantidad a un máximo de $max."
+
+#: program/localization/es_AR/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "El número de miembros del grupo excede el máximo de $max"

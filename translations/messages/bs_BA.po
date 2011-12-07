@@ -1,0 +1,507 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/bs_BA/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: bs_BA\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/bs_BA/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Prijava neuspješna"
+
+#: program/localization/bs_BA/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Vaš Web pretraživač ne podržava kolačiće (cookies)"
+
+#: program/localization/bs_BA/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Morate se ponovno ulogovati"
+
+#: program/localization/bs_BA/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Neuspješna konekcija na IMAP server"
+
+#: program/localization/bs_BA/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Greška poslužitelja"
+
+#: program/localization/bs_BA/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Greška na serveru: $msg"
+
+#: program/localization/bs_BA/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Nemoguća izvedba operacije. Mapa je samo za čitanje."
+
+#: program/localization/bs_BA/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Nemoguća izvedba operacije. Dozvola odbijena."
+
+#: program/localization/bs_BA/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Nepravilan zahtijev! Podaci nisu spremljeni."
+
+#: program/localization/bs_BA/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Nema poruka u sandučetu"
+
+#: program/localization/bs_BA/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Uspješno ste se odjavili. Doviđenja!"
+
+#: program/localization/bs_BA/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Sanduče je prazno"
+
+#: program/localization/bs_BA/messages.inc:loading
+msgid "Loading..."
+msgstr "Učitavanje..."
+
+#: program/localization/bs_BA/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Snimam datoteku na poslužitelj"
+
+#: program/localization/bs_BA/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Učitavanje podataka..."
+
+#: program/localization/bs_BA/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Provjera novih poruka u toku..."
+
+#: program/localization/bs_BA/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Poruka se šalje..."
+
+#: program/localization/bs_BA/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Poruka je uspješno poslana"
+
+#: program/localization/bs_BA/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Poruka se snima..."
+
+#: program/localization/bs_BA/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Poruka uspješno spremljena u 'Predlošci'"
+
+#: program/localization/bs_BA/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Snimanje uspješno obavljeno"
+
+#: program/localization/bs_BA/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Kontakt uspješno dodat u imenik"
+
+#: program/localization/bs_BA/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Kontakt sa ovom e-mail adresom već postoji u imeniku"
+
+#: program/localization/bs_BA/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Zbog zaštite privatnosti, slike sa drugih servera su blokirane."
+
+#: program/localization/bs_BA/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Ova poruka je zaštićena pa se ne može prikazati"
+
+#: program/localization/bs_BA/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Imenik je prazan"
+
+#: program/localization/bs_BA/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Traženi kontakt nije pronađen"
+
+#: program/localization/bs_BA/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Greška pri slanju poruke"
+
+#: program/localization/bs_BA/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Molimo sačekajte $sec sek. prije slanja ove poruke"
+
+#: program/localization/bs_BA/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Greška pri spremanju poslane poruke"
+
+#: program/localization/bs_BA/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Greška pri spremanju"
+
+#: program/localization/bs_BA/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Greška pri premještanju poruke"
+
+#: program/localization/bs_BA/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Greška pri kopiranju poruke"
+
+#: program/localization/bs_BA/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Greška pri brisanju poruke"
+
+#: program/localization/bs_BA/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Nije moguće označiti poruku"
+
+#: program/localization/bs_BA/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Želite li obrisati izabrane kontakte?"
+
+#: program/localization/bs_BA/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Sigurno želite obrisati odabrane poruke?"
+
+#: program/localization/bs_BA/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Želite li obrisati ovu fasciklu?"
+
+#: program/localization/bs_BA/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Želite li obrisati sve poruke u fascikli?"
+
+#: program/localization/bs_BA/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Brišem fasciklu..."
+
+#: program/localization/bs_BA/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Premještam fasciklu..."
+
+#: program/localization/bs_BA/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Pretplata na fasciklu..."
+
+#: program/localization/bs_BA/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Poništavanje pretplate na fasciklu..."
+
+#: program/localization/bs_BA/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Obrazac nije u cjelosti popunjen"
+
+#: program/localization/bs_BA/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Unesite valjanu email adresu"
+
+#: program/localization/bs_BA/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Unesite ime"
+
+#: program/localization/bs_BA/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Unesite veličinu stranice"
+
+#: program/localization/bs_BA/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Unesite email adresu pošiljaoca"
+
+#: program/localization/bs_BA/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Unesite primatelja (ZA)"
+
+#: program/localization/bs_BA/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Polje 'Naslov' je prazno. Želite li unijeti naslov?"
+
+#: program/localization/bs_BA/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Želite li poslati poruku bez teksta?"
+
+#: program/localization/bs_BA/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Poruka nije poslata. Želite li odbaciti ovu poruku?"
+
+#: program/localization/bs_BA/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Unesite LDAP poslužitelj za pretragu"
+
+#: program/localization/bs_BA/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Nije pronađen niti jedan kontakt"
+
+#: program/localization/bs_BA/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Unesite ime ili email adresu"
+
+#: program/localization/bs_BA/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Svi prilozi još nisu presnimljeni na poslužitelj. Molim pričekajte ili"
+"zaustavite presnimavanje."
+
+#: program/localization/bs_BA/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "Broj pronađenih poruka: $nr"
+
+#: program/localization/bs_BA/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Traženi termin nije pronađen ni u jednoj poruci"
+
+#: program/localization/bs_BA/messages.inc:searching
+msgid "Searching..."
+msgstr "Pretraga u toku..."
+
+#: program/localization/bs_BA/messages.inc:checking
+msgid "Checking..."
+msgstr "Provjera u toku..."
+
+#: program/localization/bs_BA/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Nije pronađena niti jedna pravopisna greška"
+
+#: program/localization/bs_BA/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Fascikla uspješno obrisana"
+
+#: program/localization/bs_BA/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Fascikla uspješno pretplaćena"
+
+#: program/localization/bs_BA/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Pretplata na fasciklu uspješno poništena"
+
+#: program/localization/bs_BA/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Fascikla uspješno ispražnjena"
+
+#: program/localization/bs_BA/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Fascikla uspješno zbijena"
+
+#: program/localization/bs_BA/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Uspješno obrisano"
+
+#: program/localization/bs_BA/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Formatiranje poruke"
+
+#: program/localization/bs_BA/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Nije moguće "
+
+#: program/localization/bs_BA/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Prijenos datoteke nije uspio"
+
+#: program/localization/bs_BA/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Datoteka je prevelika. Maksimalna veličina je $size"
+
+#: program/localization/bs_BA/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Uspješno kopirano $n adresa"
+
+#: program/localization/bs_BA/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Nije uspjelo kopiranje adresa"
+
+#: program/localization/bs_BA/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Ovaj resurs adresa je samo za čitanje"
+
+#: program/localization/bs_BA/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Nije uspjelo spremanje adrese kontakta"
+
+#: program/localization/bs_BA/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Premještanje poruke..."
+
+#: program/localization/bs_BA/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Kopiranje poruke..."
+
+#: program/localization/bs_BA/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Brisanje poruke..."
+
+#: program/localization/bs_BA/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Označavanje poruke..."
+
+#: program/localization/bs_BA/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Uspješno poslata potvrda (pročitano)"
+
+#: program/localization/bs_BA/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Ne može poslati potvrdu"
+
+#: program/localization/bs_BA/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Ne možete izbrisati zadnji pseudonim."
+
+#: program/localization/bs_BA/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Naziv mape sadrži zabranjene znakove"
+
+#: program/localization/bs_BA/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Odaberite datoteku za prijenos"
+
+#: program/localization/bs_BA/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "U odabrani adresar nije moguće zapisivati..."
+
+#: program/localization/bs_BA/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Kontakti uspješno dodani ovoj grupi"
+
+#: program/localization/bs_BA/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Kontakti uspješno izbrisani iz ove grupe"
+
+#: program/localization/bs_BA/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Uvozim, molimo sačekajte..."
+
+#: program/localization/bs_BA/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Greška pri uvozu! Datoteka ne sadrži pravilan vCard format."
+
+#: program/localization/bs_BA/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Uspješno je uvezeno $inserted kontakt(a), preskočeno $skipped već"
+"postojećih</b>:<p><em>$names</em></p>"
+
+#: program/localization/bs_BA/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Preskočeno $skipped postojećih unosa</b>"
+
+#: program/localization/bs_BA/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Operacija nije dozvoljena!"
+
+#: program/localization/bs_BA/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Nije upisana email adresa u odabrani pseudonim"
+
+#: program/localization/bs_BA/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Prebacivanje u čisti tekstualni uređivač će prouzrokovati gubljenje"
+"formata teksta. Želite li nastaviti?"
+
+#: program/localization/bs_BA/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Dogodila se fatalna greška u konfiguraciji. Odmah kontaktirajte"
+"administratora. <b>Vaša poruka ne može biti poslata.</b>"
+
+#: program/localization/bs_BA/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP Greška ($code): Veza na server nije uspjela"
+
+#: program/localization/bs_BA/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP Greška ($code): Autentikacija nije uspjela"
+
+#: program/localization/bs_BA/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP Greška ($code): Nije uspjelo postavljanje pošiljaoca \"$from\" ($msg)"
+
+#: program/localization/bs_BA/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP Greška ($code): Nije uspjelo dodavanje primaoca \"$to\" ($msg)"
+
+#: program/localization/bs_BA/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP Greška: Nije moguće pročitati listu primaoca"
+
+#: program/localization/bs_BA/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "SMTP Greška: Nema podrške za obaviještenje o statusu isporuke"
+
+#: program/localization/bs_BA/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP Greška: $msg"
+
+#: program/localization/bs_BA/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Nepravilna email adresa: $email"
+
+#: program/localization/bs_BA/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Previše primaoca. Smanjite broj primaoca na $max."
+
+#: program/localization/bs_BA/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Broj članova grupe prelazi preko maximuma od $max"
+
+#: program/localization/bs_BA/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Dogodila se interna greška. Molimo Vas pokušajte ponovo."
+
+#: program/localization/bs_BA/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Kontakti ne mogu biti obrisani."
+
+#: program/localization/bs_BA/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Kontakti uspješno obrisani."
+
+#: program/localization/bs_BA/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Grupa uspješno obrisana."
+
+#: program/localization/bs_BA/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Grupa uspješno preimenovana."
+
+#: program/localization/bs_BA/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Grupa uspješno kreirana."
+
+#: program/localization/bs_BA/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Poruke uspješno obrisane."
+
+#: program/localization/bs_BA/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Poruke uspješno pomjerene."
+
+#: program/localization/bs_BA/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Poruke uspješno kopirane."
+
+#: program/localization/bs_BA/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Poruke uspješno označene."
+
+#: program/localization/bs_BA/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Unesite barem $min znakova za auto-dopunjavanje."
+
+#: program/localization/bs_BA/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Polje za ime ne može biti prazno."
+
+#: program/localization/bs_BA/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Ime predugo."
+
+#: program/localization/bs_BA/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Ažuriranje mape uspješno."
+
+#: program/localization/bs_BA/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Kreiranje mape uspješno."
+
+#: program/localization/bs_BA/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Format slike nije validan."

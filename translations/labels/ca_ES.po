@@ -1,0 +1,1631 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ca_ES/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ca_ES\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ca_ES/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Benvingut a $product"
+
+#: program/localization/ca_ES/labels.inc:username
+msgid "Username"
+msgstr "Nom d'usuari"
+
+#: program/localization/ca_ES/labels.inc:password
+msgid "Password"
+msgstr "Contrasenya"
+
+#: program/localization/ca_ES/labels.inc:server
+msgid "Server"
+msgstr "Servidor"
+
+#: program/localization/ca_ES/labels.inc:login
+msgid "Login"
+msgstr "Entra"
+
+#: program/localization/ca_ES/labels.inc:logout
+msgid "Logout"
+msgstr "Tanca sessió"
+
+#: program/localization/ca_ES/labels.inc:mail
+msgid "Mail"
+msgstr "E-Mail"
+
+#: program/localization/ca_ES/labels.inc:settings
+msgid "Settings"
+msgstr "Configuració"
+
+#: program/localization/ca_ES/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Contactes"
+
+#: program/localization/ca_ES/labels.inc:inbox
+msgid "Inbox"
+msgstr "Entrada"
+
+#: program/localization/ca_ES/labels.inc:drafts
+msgid "Drafts"
+msgstr "Esborranys"
+
+#: program/localization/ca_ES/labels.inc:sent
+msgid "Sent"
+msgstr "Enviats"
+
+#: program/localization/ca_ES/labels.inc:trash
+msgid "Trash"
+msgstr "Paperera"
+
+#: program/localization/ca_ES/labels.inc:junk
+msgid "Junk"
+msgstr "Correu brossa"
+
+#: program/localization/ca_ES/labels.inc:subject
+msgid "Subject"
+msgstr "Assumpte"
+
+#: program/localization/ca_ES/labels.inc:from
+msgid "From"
+msgstr "Remitent"
+
+#: program/localization/ca_ES/labels.inc:to
+msgid "To"
+msgstr "Destinatari"
+
+#: program/localization/ca_ES/labels.inc:cc
+msgid "Cc"
+msgstr "CC"
+
+#: program/localization/ca_ES/labels.inc:bcc
+msgid "Bcc"
+msgstr "BCC"
+
+#: program/localization/ca_ES/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Respon a"
+
+#: program/localization/ca_ES/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Seguiment-Per"
+
+#: program/localization/ca_ES/labels.inc:date
+msgid "Date"
+msgstr "Data"
+
+#: program/localization/ca_ES/labels.inc:size
+msgid "Size"
+msgstr "Grandària"
+
+#: program/localization/ca_ES/labels.inc:priority
+msgid "Priority"
+msgstr "Prioritat"
+
+#: program/localization/ca_ES/labels.inc:organization
+msgid "Company"
+msgstr "Organització"
+
+#: program/localization/ca_ES/labels.inc:readstatus
+msgid "Read status"
+msgstr "Estat de lectura"
+
+#: program/localization/ca_ES/labels.inc:mailboxlist
+#: program/localization/ca_ES/labels.inc:folders
+msgid "Folders"
+msgstr "Carpetes"
+
+#: program/localization/ca_ES/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Missatges des de $from a $to de $count"
+
+#: program/localization/ca_ES/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Fils $from a $to de $count"
+
+#: program/localization/ca_ES/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Missatge $nr de $count"
+
+#: program/localization/ca_ES/labels.inc:copy
+msgid "Copy"
+msgstr "Copia"
+
+#: program/localization/ca_ES/labels.inc:move
+msgid "Move"
+msgstr "Mou"
+
+#: program/localization/ca_ES/labels.inc:moveto
+msgid "Move to..."
+msgstr "mou a..."
+
+#: program/localization/ca_ES/labels.inc:download
+msgid "Download"
+msgstr "descarrega"
+
+#: program/localization/ca_ES/labels.inc:filename
+msgid "File name"
+msgstr "Nom del fitxer"
+
+#: program/localization/ca_ES/labels.inc:filesize
+msgid "File size"
+msgstr "Grandària de fitxer"
+
+#: program/localization/ca_ES/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Afegeix a contactes"
+
+#: program/localization/ca_ES/labels.inc:sun
+msgid "Sun"
+msgstr "DG"
+
+#: program/localization/ca_ES/labels.inc:mon
+msgid "Mon"
+msgstr "DL"
+
+#: program/localization/ca_ES/labels.inc:tue
+msgid "Tue"
+msgstr "DM"
+
+#: program/localization/ca_ES/labels.inc:wed
+msgid "Wed"
+msgstr "DC"
+
+#: program/localization/ca_ES/labels.inc:thu
+msgid "Thu"
+msgstr "DJ"
+
+#: program/localization/ca_ES/labels.inc:fri
+msgid "Fri"
+msgstr "DV"
+
+#: program/localization/ca_ES/labels.inc:sat
+msgid "Sat"
+msgstr "DS"
+
+#: program/localization/ca_ES/labels.inc:sunday
+msgid "Sunday"
+msgstr "Diumenge"
+
+#: program/localization/ca_ES/labels.inc:monday
+msgid "Monday"
+msgstr "Dilluns"
+
+#: program/localization/ca_ES/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Dimarts"
+
+#: program/localization/ca_ES/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Dimecres"
+
+#: program/localization/ca_ES/labels.inc:thursday
+msgid "Thursday"
+msgstr "Dijous"
+
+#: program/localization/ca_ES/labels.inc:friday
+msgid "Friday"
+msgstr "Divendres"
+
+#: program/localization/ca_ES/labels.inc:saturday
+msgid "Saturday"
+msgstr "Dissabte"
+
+#: program/localization/ca_ES/labels.inc:jan
+msgid "Jan"
+msgstr "gen"
+
+#: program/localization/ca_ES/labels.inc:feb
+msgid "Feb"
+msgstr "feb"
+
+#: program/localization/ca_ES/labels.inc:mar
+msgid "Mar"
+msgstr "mar"
+
+#: program/localization/ca_ES/labels.inc:apr
+msgid "Apr"
+msgstr "abr"
+
+#: program/localization/ca_ES/labels.inc:may
+#: program/localization/ca_ES/labels.inc:longmay
+msgid "May"
+msgstr "maig"
+
+#: program/localization/ca_ES/labels.inc:jun
+msgid "Jun"
+msgstr "jun"
+
+#: program/localization/ca_ES/labels.inc:jul
+msgid "Jul"
+msgstr "jul"
+
+#: program/localization/ca_ES/labels.inc:aug
+msgid "Aug"
+msgstr "ago"
+
+#: program/localization/ca_ES/labels.inc:sep
+msgid "Sep"
+msgstr "set"
+
+#: program/localization/ca_ES/labels.inc:oct
+msgid "Oct"
+msgstr "oct"
+
+#: program/localization/ca_ES/labels.inc:nov
+msgid "Nov"
+msgstr "nov"
+
+#: program/localization/ca_ES/labels.inc:dec
+msgid "Dec"
+msgstr "des"
+
+#: program/localization/ca_ES/labels.inc:longjan
+msgid "January"
+msgstr "gener"
+
+#: program/localization/ca_ES/labels.inc:longfeb
+msgid "February"
+msgstr "febrer"
+
+#: program/localization/ca_ES/labels.inc:longmar
+msgid "March"
+msgstr "març"
+
+#: program/localization/ca_ES/labels.inc:longapr
+msgid "April"
+msgstr "abril"
+
+#: program/localization/ca_ES/labels.inc:longjun
+msgid "June"
+msgstr "juny"
+
+#: program/localization/ca_ES/labels.inc:longjul
+msgid "July"
+msgstr "juliol"
+
+#: program/localization/ca_ES/labels.inc:longaug
+msgid "August"
+msgstr "agost"
+
+#: program/localization/ca_ES/labels.inc:longsep
+msgid "September"
+msgstr "setembre"
+
+#: program/localization/ca_ES/labels.inc:longoct
+msgid "October"
+msgstr "octubre"
+
+#: program/localization/ca_ES/labels.inc:longnov
+msgid "November"
+msgstr "novembre"
+
+#: program/localization/ca_ES/labels.inc:longdec
+msgid "December"
+msgstr "desembre"
+
+#: program/localization/ca_ES/labels.inc:today
+msgid "Today"
+msgstr "Avui"
+
+#: program/localization/ca_ES/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Recupera missatges nous"
+
+#: program/localization/ca_ES/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Crea nou missatge"
+
+#: program/localization/ca_ES/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Respon al missatge"
+
+#: program/localization/ca_ES/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Respon al remitent i a tots els destinataris"
+
+#: program/localization/ca_ES/labels.inc:replyall
+msgid "Reply all"
+msgstr "Respondre a tots"
+
+#: program/localization/ca_ES/labels.inc:replylist
+msgid "Reply list"
+msgstr "Llista de resposta"
+
+#: program/localization/ca_ES/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "Reenvia"
+
+#: program/localization/ca_ES/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "Reenvia adjunt"
+
+#: program/localization/ca_ES/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Reenvia missatge"
+
+#: program/localization/ca_ES/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Suprimeix missatge"
+
+#: program/localization/ca_ES/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Mou missatge a la paperera"
+
+#: program/localization/ca_ES/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Imprimeix aquest missatge"
+
+#: program/localization/ca_ES/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Mostra el missatge anterior"
+
+#: program/localization/ca_ES/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Mostra el primer missatge"
+
+#: program/localization/ca_ES/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Mostra el missatge següent"
+
+#: program/localization/ca_ES/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Mostra l'últim missatge"
+
+#: program/localization/ca_ES/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Torna a la llista de missatges"
+
+#: program/localization/ca_ES/labels.inc:viewsource
+msgid "Show source"
+msgstr "Visualitza el codi font"
+
+#: program/localization/ca_ES/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Marca missatges"
+
+#: program/localization/ca_ES/labels.inc:markread
+msgid "As read"
+msgstr "Com a llegits"
+
+#: program/localization/ca_ES/labels.inc:markunread
+msgid "As unread"
+msgstr "Com a no llegits"
+
+#: program/localization/ca_ES/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Com marcat"
+
+#: program/localization/ca_ES/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Com no marcat"
+
+#: program/localization/ca_ES/labels.inc:moreactions
+msgid "More actions..."
+msgstr "Més accions..."
+
+#: program/localization/ca_ES/labels.inc:select
+msgid "Select"
+msgstr "Selecciona"
+
+#: program/localization/ca_ES/labels.inc:all
+msgid "All"
+msgstr "Tots"
+
+#: program/localization/ca_ES/labels.inc:none
+#: program/localization/ca_ES/labels.inc:nonesort
+msgid "None"
+msgstr "Cap"
+
+#: program/localization/ca_ES/labels.inc:currpage
+msgid "Current page"
+msgstr "Pàgina actual"
+
+#: program/localization/ca_ES/labels.inc:unread
+msgid "Unread"
+msgstr "No llegits"
+
+#: program/localization/ca_ES/labels.inc:flagged
+msgid "Flagged"
+msgstr "Marcat"
+
+#: program/localization/ca_ES/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "No respost"
+
+#: program/localization/ca_ES/labels.inc:deleted
+msgid "Deleted"
+msgstr "Esborrat"
+
+#: program/localization/ca_ES/labels.inc:invert
+msgid "Invert"
+msgstr "Inverteix"
+
+#: program/localization/ca_ES/labels.inc:filter
+msgid "Filter"
+msgstr "Filtre"
+
+#: program/localization/ca_ES/labels.inc:list
+msgid "List"
+msgstr "Llista"
+
+#: program/localization/ca_ES/labels.inc:threads
+msgid "Threads"
+msgstr "Fils"
+
+#: program/localization/ca_ES/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Expandeix tots"
+
+#: program/localization/ca_ES/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Expandeix No llegits"
+
+#: program/localization/ca_ES/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Col·lapsa tots"
+
+#: program/localization/ca_ES/labels.inc:threaded
+msgid "Threaded"
+msgstr "Encadenat"
+
+#: program/localization/ca_ES/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Expandeix els missatges encadenats"
+
+#: program/localization/ca_ES/labels.inc:do_expand
+msgid "all threads"
+msgstr "tots els fils"
+
+#: program/localization/ca_ES/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "només amb missatges no llegits"
+
+#: program/localization/ca_ES/labels.inc:fromto
+msgid "From/To"
+msgstr "Remitent/Destinatari"
+
+#: program/localization/ca_ES/labels.inc:flag
+msgid "Flag"
+msgstr "Marca"
+
+#: program/localization/ca_ES/labels.inc:attachment
+msgid "Attachment"
+msgstr "Adjunt"
+
+#: program/localization/ca_ES/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Data d'enviament"
+
+#: program/localization/ca_ES/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Data d'arribada"
+
+#: program/localization/ca_ES/labels.inc:asc
+msgid "ascending"
+msgstr "ascendent"
+
+#: program/localization/ca_ES/labels.inc:desc
+msgid "descending"
+msgstr "descendent"
+
+#: program/localization/ca_ES/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Llista les columnes"
+
+#: program/localization/ca_ES/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Columna d'ordenació"
+
+#: program/localization/ca_ES/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Ordre d'ordenació"
+
+#: program/localization/ca_ES/labels.inc:listmode
+msgid "List view mode"
+msgstr "Mode de vista de llista"
+
+#: program/localization/ca_ES/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Accions de carpeta"
+
+#: program/localization/ca_ES/labels.inc:compact
+msgid "Compact"
+msgstr "Compacta"
+
+#: program/localization/ca_ES/labels.inc:empty
+msgid "Empty"
+msgstr "Buida"
+
+#: program/localization/ca_ES/labels.inc:quota
+msgid "Disk usage"
+msgstr "Utilització de disc"
+
+#: program/localization/ca_ES/labels.inc:unknown
+msgid "unknown"
+msgstr "desconegut"
+
+#: program/localization/ca_ES/labels.inc:unlimited
+msgid "unlimited"
+msgstr "il·limitat"
+
+#: program/localization/ca_ES/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Cerca ràpida"
+
+#: program/localization/ca_ES/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Neteja cerca"
+
+#: program/localization/ca_ES/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Cerca modificadors"
+
+#: program/localization/ca_ES/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Missatge sencer"
+
+#: program/localization/ca_ES/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Obre a una nova finestra"
+
+#: program/localization/ca_ES/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Descarrega (.eml)"
+
+#: program/localization/ca_ES/labels.inc:compose
+msgid "Compose a message"
+msgstr "Escriu un missatge"
+
+#: program/localization/ca_ES/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Edita com a nou"
+
+#: program/localization/ca_ES/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Desa aquest esborrany"
+
+#: program/localization/ca_ES/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Envia ara el missatge"
+
+#: program/localization/ca_ES/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Afegeix un fitxer"
+
+#: program/localization/ca_ES/labels.inc:charset
+msgid "Charset"
+msgstr "Codificació de caràcters"
+
+#: program/localization/ca_ES/labels.inc:editortype
+msgid "Editor type"
+msgstr "Tipus d'editor"
+
+#: program/localization/ca_ES/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Confirmació de recepció"
+
+#: program/localization/ca_ES/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Notificació d'estat de lliurament"
+
+#: program/localization/ca_ES/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "A $date, $sender escrigué:"
+
+#: program/localization/ca_ES/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "Missatge Original"
+
+#: program/localization/ca_ES/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Editar identitats"
+
+#: program/localization/ca_ES/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Comprova l'ortografia"
+
+#: program/localization/ca_ES/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Continua l'edició"
+
+#: program/localization/ca_ES/labels.inc:revertto
+msgid "Revert to"
+msgstr "Torna a"
+
+#: program/localization/ca_ES/labels.inc:attachments
+msgid "Attachments"
+msgstr "Adjunts"
+
+#: program/localization/ca_ES/labels.inc:upload
+msgid "Upload"
+msgstr "Afegeix"
+
+#: program/localization/ca_ES/labels.inc:uploadprogress
+msgid "$percent ($current from $total)"
+msgstr "$percent ($current de $total)"
+
+#: program/localization/ca_ES/labels.inc:close
+msgid "Close"
+msgstr "Cancel·la"
+
+#: program/localization/ca_ES/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Opcions de missatge..."
+
+#: program/localization/ca_ES/labels.inc:low
+msgid "Low"
+msgstr "Baixa"
+
+#: program/localization/ca_ES/labels.inc:lowest
+msgid "Lowest"
+msgstr "Molt baixa"
+
+#: program/localization/ca_ES/labels.inc:normal
+msgid "Normal"
+msgstr "Normal"
+
+#: program/localization/ca_ES/labels.inc:high
+msgid "High"
+msgstr "Alta"
+
+#: program/localization/ca_ES/labels.inc:highest
+msgid "Highest"
+msgstr "Molt alta"
+
+#: program/localization/ca_ES/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(sense assumpte)"
+
+#: program/localization/ca_ES/labels.inc:showimages
+msgid "Display images"
+msgstr "Mostra imatges"
+
+#: program/localization/ca_ES/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Sempre mostra imatges de $sender"
+
+#: program/localization/ca_ES/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/ca_ES/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Text pla"
+
+#: program/localization/ca_ES/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Desa el missatge enviat a"
+
+#: program/localization/ca_ES/labels.inc:dontsave
+msgid "don't save"
+msgstr "no deseu"
+
+#: program/localization/ca_ES/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "El tamany màxim de fitxer és $size"
+
+#: program/localization/ca_ES/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Afegeix Cc"
+
+#: program/localization/ca_ES/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Afegeix Bcc"
+
+#: program/localization/ca_ES/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Afegeix Reply-To"
+
+#: program/localization/ca_ES/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Afegir Seguiment-Per"
+
+#: program/localization/ca_ES/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "El remitent d'aquest missatge ha demanat ser notificat quan llegiu aquest"
+"missatge. Voleu notificar al remitent?"
+
+#: program/localization/ca_ES/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Confirmació de recepció"
+
+#: program/localization/ca_ES/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Aquesta és una confirmació de recepció per al vostre missatge"
+
+#: program/localization/ca_ES/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Nota: Aquesta confirmació només indica que el missatge ha estat mostrat a"
+"l'ordinador del destinatari. No hi ha garantia que el destinatari hagi"
+"llegit o entès el contingut del missatge."
+
+#: program/localization/ca_ES/labels.inc:name
+msgid "Display Name"
+msgstr "Nom a mostrar"
+
+#: program/localization/ca_ES/labels.inc:firstname
+msgid "First Name"
+msgstr "Nom"
+
+#: program/localization/ca_ES/labels.inc:surname
+msgid "Last Name"
+msgstr "Cognom"
+
+#: program/localization/ca_ES/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Segon Nom"
+
+#: program/localization/ca_ES/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "Prefix"
+
+#: program/localization/ca_ES/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "Sufix"
+
+#: program/localization/ca_ES/labels.inc:nickname
+msgid "Nickname"
+msgstr "Àlies"
+
+#: program/localization/ca_ES/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Càrrec"
+
+#: program/localization/ca_ES/labels.inc:department
+msgid "Department"
+msgstr "Departament"
+
+#: program/localization/ca_ES/labels.inc:gender
+msgid "Gender"
+msgstr "Sexe"
+
+#: program/localization/ca_ES/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Cognom de Solter/a"
+
+#: program/localization/ca_ES/labels.inc:email
+msgid "Email"
+msgstr "E-Mail"
+
+#: program/localization/ca_ES/labels.inc:phone
+msgid "Phone"
+msgstr "Telèfon"
+
+#: program/localization/ca_ES/labels.inc:address
+msgid "Address"
+msgstr "Adreça"
+
+#: program/localization/ca_ES/labels.inc:street
+msgid "Street"
+msgstr "Carrer"
+
+#: program/localization/ca_ES/labels.inc:locality
+msgid "City"
+msgstr "Ciutat"
+
+#: program/localization/ca_ES/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "Codi postal"
+
+#: program/localization/ca_ES/labels.inc:region
+msgid "State/Province"
+msgstr "Estat/Província"
+
+#: program/localization/ca_ES/labels.inc:country
+msgid "Country"
+msgstr "País"
+
+#: program/localization/ca_ES/labels.inc:birthday
+msgid "Birthday"
+msgstr "Aniversari"
+
+#: program/localization/ca_ES/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "Aniversari"
+
+#: program/localization/ca_ES/labels.inc:website
+msgid "Website"
+msgstr "Pàgina web"
+
+#: program/localization/ca_ES/labels.inc:instantmessenger
+msgid "IM"
+msgstr "IM"
+
+#: program/localization/ca_ES/labels.inc:notes
+msgid "Notes"
+msgstr "Notes"
+
+#: program/localization/ca_ES/labels.inc:male
+msgid "male"
+msgstr "masculí"
+
+#: program/localization/ca_ES/labels.inc:female
+msgid "female"
+msgstr "femení"
+
+#: program/localization/ca_ES/labels.inc:manager
+msgid "Manager"
+msgstr "Gerent"
+
+#: program/localization/ca_ES/labels.inc:assistant
+#: program/localization/ca_ES/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Assistent"
+
+#: program/localization/ca_ES/labels.inc:spouse
+msgid "Spouse"
+msgstr "Cònjuge"
+
+#: program/localization/ca_ES/labels.inc:allfields
+msgid "All fields"
+msgstr "Tots els camps"
+
+#: program/localization/ca_ES/labels.inc:search
+msgid "Search"
+msgstr "Cercar"
+
+#: program/localization/ca_ES/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "Cerca Avançada"
+
+#: program/localization/ca_ES/labels.inc:other
+#: program/localization/ca_ES/labels.inc:typeother
+msgid "Other"
+msgstr "Altre"
+
+#: program/localization/ca_ES/labels.inc:typehome
+msgid "Home"
+msgstr "Casa"
+
+#: program/localization/ca_ES/labels.inc:typework
+msgid "Work"
+msgstr "Feina"
+
+#: program/localization/ca_ES/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Mòbil"
+
+#: program/localization/ca_ES/labels.inc:typemain
+msgid "Main"
+msgstr "Principal"
+
+#: program/localization/ca_ES/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Fax de Casa"
+
+#: program/localization/ca_ES/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "Fax de la Feina"
+
+#: program/localization/ca_ES/labels.inc:typecar
+msgid "Car"
+msgstr "Cotxe"
+
+#: program/localization/ca_ES/labels.inc:typepager
+msgid "Pager"
+msgstr "Paginador"
+
+#: program/localization/ca_ES/labels.inc:typevideo
+msgid "Video"
+msgstr "Vídeo"
+
+#: program/localization/ca_ES/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "Pàgina Inicial"
+
+#: program/localization/ca_ES/labels.inc:typeblog
+msgid "Blog"
+msgstr "Blog"
+
+#: program/localization/ca_ES/labels.inc:typeprofile
+msgid "Profile"
+msgstr "Perfil"
+
+#: program/localization/ca_ES/labels.inc:addfield
+msgid "Add field..."
+msgstr "Afegeix camp..."
+
+#: program/localization/ca_ES/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Afegeix nou contacte"
+
+#: program/localization/ca_ES/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Edita contacte"
+
+#: program/localization/ca_ES/labels.inc:contacts
+msgid "Contacts"
+msgstr "Contactes"
+
+#: program/localization/ca_ES/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Propietats del contacte"
+
+#: program/localization/ca_ES/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Informació personal"
+
+#: program/localization/ca_ES/labels.inc:edit
+msgid "Edit"
+msgstr "Edita"
+
+#: program/localization/ca_ES/labels.inc:cancel
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: program/localization/ca_ES/labels.inc:save
+msgid "Save"
+msgstr "Desa"
+
+#: program/localization/ca_ES/labels.inc:delete
+msgid "Delete"
+msgstr "Suprimeix"
+
+#: program/localization/ca_ES/labels.inc:rename
+msgid "Rename"
+msgstr "Renombrar"
+
+#: program/localization/ca_ES/labels.inc:addphoto
+msgid "Add"
+msgstr "Afegeix"
+
+#: program/localization/ca_ES/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Reemplaça"
+
+#: program/localization/ca_ES/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Crea nou contacte"
+
+#: program/localization/ca_ES/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Suprimeix contactes seleccionats"
+
+#: program/localization/ca_ES/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Redacta correu per a"
+
+#: program/localization/ca_ES/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Contactes $from a $to de $count"
+
+#: program/localization/ca_ES/labels.inc:print
+msgid "Print"
+msgstr "Imprimeix"
+
+#: program/localization/ca_ES/labels.inc:export
+msgid "Export"
+msgstr "Exporta"
+
+#: program/localization/ca_ES/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Exporta contactes en format vCard"
+
+#: program/localization/ca_ES/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Crea un nou grup de contactes"
+
+#: program/localization/ca_ES/labels.inc:grouprename
+msgid "Rename group"
+msgstr "Renomena el grup"
+
+#: program/localization/ca_ES/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "Elimina el grup"
+
+#: program/localization/ca_ES/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Mostra anteriors"
+
+#: program/localization/ca_ES/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Mostra primers"
+
+#: program/localization/ca_ES/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Mostra següents"
+
+#: program/localization/ca_ES/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Mostra darrers"
+
+#: program/localization/ca_ES/labels.inc:group
+msgid "Group"
+msgstr "Grup"
+
+#: program/localization/ca_ES/labels.inc:groups
+msgid "Groups"
+msgstr "Grups"
+
+#: program/localization/ca_ES/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Llibreta d'adreces"
+
+#: program/localization/ca_ES/labels.inc:searchsave
+msgid "Save search"
+msgstr "Desa la cerca"
+
+#: program/localization/ca_ES/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "Elimina la cerca"
+
+#: program/localization/ca_ES/labels.inc:import
+msgid "Import"
+msgstr "Importa"
+
+#: program/localization/ca_ES/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Importa contactes"
+
+#: program/localization/ca_ES/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Importa des d'un fitxer:"
+
+#: program/localization/ca_ES/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "Afegeix contactes nous a la llibreta d'adreces:"
+
+#: program/localization/ca_ES/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Reemplaça la llibreta d'adreçes sencera"
+
+#: program/localization/ca_ES/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Podeu importar contactes des d'una llibreta d'adreces"
+"existent.<br/>Actualment suportem l'importació d'adreces amb el format <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>."
+
+#: program/localization/ca_ES/labels.inc:done
+msgid "Done"
+msgstr "Fet"
+
+#: program/localization/ca_ES/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Configuració per a"
+
+#: program/localization/ca_ES/labels.inc:preferences
+msgid "Preferences"
+msgstr "Preferències"
+
+#: program/localization/ca_ES/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Preferències d'usuari"
+
+#: program/localization/ca_ES/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Edita preferències d'usuari"
+
+#: program/localization/ca_ES/labels.inc:identities
+msgid "Identities"
+msgstr "Identitats"
+
+#: program/localization/ca_ES/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Gestiona identitats per a aquest compte"
+
+#: program/localization/ca_ES/labels.inc:newidentity
+msgid "New identity"
+msgstr "Nova identitat"
+
+#: program/localization/ca_ES/labels.inc:newitem
+msgid "New item"
+msgstr "Nou"
+
+#: program/localization/ca_ES/labels.inc:edititem
+msgid "Edit item"
+msgstr "Edita"
+
+#: program/localization/ca_ES/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Mostra HTML"
+
+#: program/localization/ca_ES/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Joc de caracters per defecte"
+
+#: program/localization/ca_ES/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Missatge HTML"
+
+#: program/localization/ca_ES/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Dates curtes"
+
+#: program/localization/ca_ES/labels.inc:setdefault
+msgid "Set default"
+msgstr "Selecciona opció per defecte"
+
+#: program/localization/ca_ES/labels.inc:autodetect
+msgid "Auto"
+msgstr "Auto"
+
+#: program/localization/ca_ES/labels.inc:language
+msgid "Language"
+msgstr "Idioma"
+
+#: program/localization/ca_ES/labels.inc:timezone
+msgid "Time zone"
+msgstr "Fus horari"
+
+#: program/localization/ca_ES/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Files per pàgina"
+
+#: program/localization/ca_ES/labels.inc:signature
+msgid "Signature"
+msgstr "Signatura"
+
+#: program/localization/ca_ES/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Horari d'estiu"
+
+#: program/localization/ca_ES/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Escriu missatges en HTML"
+
+#: program/localization/ca_ES/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "només en resposta a missatge HTML"
+
+#: program/localization/ca_ES/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "Signatura HTML"
+
+#: program/localization/ca_ES/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Mostra el panell de previsualització"
+
+#: program/localization/ca_ES/labels.inc:skin
+msgid "Interface skin"
+msgstr "Aparença d'interfície"
+
+#: program/localization/ca_ES/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Buida la paperera al tancar sessió"
+
+#: program/localization/ca_ES/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Compacta la safata d'entrada al tancar sessió"
+
+#: program/localization/ca_ES/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Interfície d'usuari"
+
+#: program/localization/ca_ES/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Configuració del servidor"
+
+#: program/localization/ca_ES/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Vista de la bústia"
+
+#: program/localization/ca_ES/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Notificacions de recepció"
+
+#: program/localization/ca_ES/labels.inc:askuser
+msgid "ask me"
+msgstr "Pregunta-ho a l'usuari"
+
+#: program/localization/ca_ES/labels.inc:autosend
+msgid "send receipt"
+msgstr "Envia-les automàticament"
+
+#: program/localization/ca_ES/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "Envia-les automàticament només als meus contactes"
+
+#: program/localization/ca_ES/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "enviar recepció als meus contactes, sinó ignora"
+
+#: program/localization/ca_ES/labels.inc:ignore
+msgid "ignore"
+msgstr "Ignora-les"
+
+#: program/localization/ca_ES/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Marca el missatge com a llegit quan se suprimeixi"
+
+#: program/localization/ca_ES/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Afegeix marca d'esborrat en comptes d'esborrar-lo"
+
+#: program/localization/ca_ES/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "No mostris els missatges suprimits"
+
+#: program/localization/ca_ES/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Si falla quan es mou un missatge a la Paperera, aleshores esborra'l"
+
+#: program/localization/ca_ES/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Mostra imatges remotes sota el missatge"
+
+#: program/localization/ca_ES/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "de remitent conegut"
+
+#: program/localization/ca_ES/labels.inc:always
+msgid "always"
+msgstr "sempre"
+
+#: program/localization/ca_ES/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Mostra les imatges adjuntes sota el missatge"
+
+#: program/localization/ca_ES/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Desa esborrany automàticament"
+
+#: program/localization/ca_ES/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "cada $n minut(s)"
+
+#: program/localization/ca_ES/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Comprova nous missatges a"
+
+#: program/localization/ca_ES/labels.inc:never
+msgid "never"
+msgstr "mai"
+
+#: program/localization/ca_ES/labels.inc:immediately
+msgid "immediately"
+msgstr "immediatament"
+
+#: program/localization/ca_ES/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Vista de missatges"
+
+#: program/localization/ca_ES/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Composició de missatges"
+
+#: program/localization/ca_ES/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Noms dels adjunts"
+
+#: program/localization/ca_ES/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Compleix RFC 2231 (Thunderbird)"
+
+#: program/localization/ca_ES/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/ca_ES/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Compleix RFC 2047 (un altre)"
+
+#: program/localization/ca_ES/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "Fes servir la codificació MIME per a caracters de 8-bits"
+
+#: program/localization/ca_ES/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Opcions avançades"
+
+#: program/localization/ca_ES/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Envia el focus al navegador quan hi hagi un nou missatge"
+
+#: program/localization/ca_ES/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Comprova totes les carpetes per missatges nous"
+
+#: program/localization/ca_ES/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Mostra el següent missatge després de esborrar-ne o moure'n un"
+
+#: program/localization/ca_ES/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Opcions principals"
+
+#: program/localization/ca_ES/labels.inc:section
+msgid "Section"
+msgstr "Secció"
+
+#: program/localization/ca_ES/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Manteniment"
+
+#: program/localization/ca_ES/labels.inc:newmessage
+msgid "New Message"
+msgstr "Missatge nou"
+
+#: program/localization/ca_ES/labels.inc:listoptions
+msgid "List Options"
+msgstr "Opcions de llista"
+
+#: program/localization/ca_ES/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Opcions de signatura"
+
+#: program/localization/ca_ES/labels.inc:whenreplying
+msgid "When replying"
+msgstr "Quan es respon"
+
+#: program/localization/ca_ES/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "comença un nou missatge per sobre de l'original"
+
+#: program/localization/ca_ES/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "comença un nou missatge per sota de l'original"
+
+#: program/localization/ca_ES/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "Quan es contesti, elimina la signatura original del missatge"
+
+#: program/localization/ca_ES/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Afegeix la signatura automàticament"
+
+#: program/localization/ca_ES/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "només missatge nou"
+
+#: program/localization/ca_ES/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "només respostes i reenviaments"
+
+#: program/localization/ca_ES/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "Quan es contesti o reenviï, posa la signatura"
+
+#: program/localization/ca_ES/labels.inc:belowquote
+msgid "below the quote"
+msgstr "sota les cometes"
+
+#: program/localization/ca_ES/labels.inc:abovequote
+msgid "above the quote"
+msgstr "sobre les cometes"
+
+#: program/localization/ca_ES/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Inserta signatura"
+
+#: program/localization/ca_ES/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Marca missatges previsualitzats com a llegits"
+
+#: program/localization/ca_ES/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "després de $n segons"
+
+#: program/localization/ca_ES/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Demana sempre la confirmació de recepció"
+
+#: program/localization/ca_ES/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Sempre demanar una notificació d'estat de lliurament"
+
+#: program/localization/ca_ES/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Col·locar respostes a la carpeta del missatge que es respon"
+
+#: program/localization/ca_ES/labels.inc:defaultaddressbook
+msgid "Add new contacts to the selected addressbook"
+msgstr "Afegeix contactes nous a la llibreta d'adreces seleccionada"
+
+#: program/localization/ca_ES/labels.inc:spellcheckbeforesend
+msgid "Check spelling before sending a message"
+msgstr "Comprova l'ortografia abans d'enviar un missatge"
+
+#: program/localization/ca_ES/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "Opcions del corrector ortogràfic"
+
+#: program/localization/ca_ES/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "Ignora paraules amb símbols"
+
+#: program/localization/ca_ES/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "Ignora paraules amb números"
+
+#: program/localization/ca_ES/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "Ignora paraules amb lletres capitalitzades"
+
+#: program/localization/ca_ES/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "Afegeix al diccionari"
+
+#: program/localization/ca_ES/labels.inc:folder
+msgid "Folder"
+msgstr "Carpeta"
+
+#: program/localization/ca_ES/labels.inc:foldername
+msgid "Folder name"
+msgstr "Nom de carpeta"
+
+#: program/localization/ca_ES/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Subscriure's"
+
+#: program/localization/ca_ES/labels.inc:messagecount
+msgid "Messages"
+msgstr "Missatges"
+
+#: program/localization/ca_ES/labels.inc:create
+msgid "Create"
+msgstr "Crea"
+
+#: program/localization/ca_ES/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Crea nova carpeta"
+
+#: program/localization/ca_ES/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Gestiona carpetes"
+
+#: program/localization/ca_ES/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Carpetes Especials"
+
+#: program/localization/ca_ES/labels.inc:properties
+msgid "Properties"
+msgstr "Propietats"
+
+#: program/localization/ca_ES/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Propietats de la carpeta"
+
+#: program/localization/ca_ES/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Carpeta pare"
+
+#: program/localization/ca_ES/labels.inc:location
+msgid "Location"
+msgstr "Localització"
+
+#: program/localization/ca_ES/labels.inc:info
+msgid "Information"
+msgstr "Informació"
+
+#: program/localization/ca_ES/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Clica per a veure la mida de la carpeta"
+
+#: program/localization/ca_ES/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Clica per a canviar la subscripció"
+
+#: program/localization/ca_ES/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Tipus de Carpeta"
+
+#: program/localization/ca_ES/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "Carpeta Privada"
+
+#: program/localization/ca_ES/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "Carpeta d'un Altre Usuari"
+
+#: program/localization/ca_ES/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "Carpeta Pública"
+
+#: program/localization/ca_ES/labels.inc:sortby
+msgid "Sort by"
+msgstr "Ordena per"
+
+#: program/localization/ca_ES/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Ordena ascendentment"
+
+#: program/localization/ca_ES/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Ordena descendentment"
+
+#: program/localization/ca_ES/labels.inc:undo
+msgid "Undo"
+msgstr "Desfés"
+
+#: program/localization/ca_ES/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/ca_ES/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/ca_ES/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/ca_ES/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/ca_ES/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unicode"
+
+#: program/localization/ca_ES/labels.inc:english
+msgid "English"
+msgstr "Anglés"
+
+#: program/localization/ca_ES/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Europeu Occidental"
+
+#: program/localization/ca_ES/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Europeu Oriental"
+
+#: program/localization/ca_ES/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Europeu Sud-Oriental"
+
+#: program/localization/ca_ES/labels.inc:baltic
+msgid "Baltic"
+msgstr "Bàltic"
+
+#: program/localization/ca_ES/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Cirilic"
+
+#: program/localization/ca_ES/labels.inc:arabic
+msgid "Arabic"
+msgstr "Àrab"
+
+#: program/localization/ca_ES/labels.inc:greek
+msgid "Greek"
+msgstr "Grec"
+
+#: program/localization/ca_ES/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Hebreu"
+
+#: program/localization/ca_ES/labels.inc:turkish
+msgid "Turkish"
+msgstr "Turc"
+
+#: program/localization/ca_ES/labels.inc:nordic
+msgid "Nordic"
+msgstr "Nòrdic"
+
+#: program/localization/ca_ES/labels.inc:thai
+msgid "Thai"
+msgstr "Tailandés"
+
+#: program/localization/ca_ES/labels.inc:celtic
+msgid "Celtic"
+msgstr "Celta"
+
+#: program/localization/ca_ES/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Vietnamita"
+
+#: program/localization/ca_ES/labels.inc:japanese
+msgid "Japanese"
+msgstr "Japonés"
+
+#: program/localization/ca_ES/labels.inc:korean
+msgid "Korean"
+msgstr "Koreà"
+
+#: program/localization/ca_ES/labels.inc:chinese
+msgid "Chinese"
+msgstr "Xinés"

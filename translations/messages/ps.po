@@ -1,0 +1,336 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ps/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ps\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ps/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "ننوتنه په بري سره ترسره نه شوه "
+
+#: program/localization/ps/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "ستاسو لټوني ککوړي ونه منل "
+
+#: program/localization/ps/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr " ستاسې ناسته ناباوري يا له مينځه تللې ده"
+
+#: program/localization/ps/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "له ای ميپ سرور سره پيوستون په بري سره"
+"ترسره نه شو "
+
+#: program/localization/ps/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "ليکبکس کې هېڅ استوزي ونه مونده"
+
+#: program/localization/ps/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "تاسې له ناستې څخه په بشپړه توګه وويستل"
+"شوئ الله په امان"
+
+#: program/localization/ps/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "ليکبکس تش دی"
+
+#: program/localization/ps/messages.inc:loading
+msgid "Loading..."
+msgstr "د کار په حال کې"
+
+#: program/localization/ps/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "اومتوک د کار په حال کې"
+
+#: program/localization/ps/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "نوي استوزي ګوري"
+
+#: program/localization/ps/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "استوزه استوي."
+
+#: program/localization/ps/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "استوزه په بري سره واستول شوه"
+
+#: program/localization/ps/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "استوزه خوندي کوي"
+
+#: program/localization/ps/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "استوزه په بارليک کې خوندي شوه"
+
+#: program/localization/ps/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "په بري‌سره خوندي شوه"
+
+#: program/localization/ps/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "اړيکلوری په بري سره پتې کتاب ته ور زيات شو"
+
+#: program/localization/ps/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "يو اړيکلوری له دې برېښناليک پتې سره شتون"
+"لري"
+
+#: program/localization/ps/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "ستاسو د پټتيآ خوندي کېدو لپاره ، له لري"
+"انځورنه په دې استوزي‌کې بند کړئ "
+
+#: program/localization/ps/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "دا يوه پټه استوزه ده او نه څرګندېږي. بښنه"
+"غواړو"
+
+#: program/localization/ps/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "هېڅ اړيکلوری يې ونه موند"
+
+#: program/localization/ps/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "وړاندی شوی اړيکلوری ونه مونده"
+
+#: program/localization/ps/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "استوزي استونه په بري سره پای ته ونه رسېده"
+
+#: program/localization/ps/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "مهرباني وکړئ $صبر وکړئ د دې استوزې له"
+"لېږلو مخکې"
+
+#: program/localization/ps/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "دخوندي کولو او لېږلو پر  مهال يوه تيروتنه"
+"رامنځ ته شوه"
+
+#: program/localization/ps/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "دخوندي کولو پر  مهال يوه تيروتنه رامنځ ته"
+"شوه"
+
+#: program/localization/ps/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "استوزه ونه خوځول شوه"
+
+#: program/localization/ps/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "استوزه ړنګه نه شوه"
+
+#: program/localization/ps/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr " په رښتيا سره غواړئ چې ټاکل شوی اړيکلوری"
+"ړنګ کړئ؟ "
+
+#: program/localization/ps/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "په رښتيا سره غواړئ چې ټاکل شوي"
+"استوزي‌ړنګ کړئ؟"
+
+#: program/localization/ps/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "په رښتيآ سره غواړئ چې دا پوښۍ ړنګه کړئ؟"
+
+#: program/localization/ps/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "په رښتيا سره غواړئ چې ددې پوښۍ ټول"
+"استوزي‌ړنګ کړئ؟"
+
+#: program/localization/ps/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "پوښۍ ړنګوي"
+
+#: program/localization/ps/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "پوښۍ خوځوي"
+
+#: program/localization/ps/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "دا پورمه بشپړه ډکه شوې نه ده"
+
+#: program/localization/ps/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "مهرباني وکړئ د يوه شته برېښناليک پته"
+"ورځای کړئ"
+
+#: program/localization/ps/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "مهرباني‌وکړئ يو نوم وليکئ"
+
+#: program/localization/ps/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "مهرباني‌وکړئ د پاڼې کچه ورکړئ"
+
+#: program/localization/ps/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "مهرباني وکړئ د استول شوي برېښناليک پته"
+"وليکئ"
+
+#: program/localization/ps/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "مهرباني‌وکړئ لږ تر لږه يو ترلاسه کوونکی"
+"وليکئ"
+
+#: program/localization/ps/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "د مضمون ډګر تش دی يا تاسو غواړئ چې همدا"
+"اوس يو له هغو څخه وليکئ"
+
+#: program/localization/ps/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "دا استوزه پرته له متن څخه استوئ؟"
+
+#: program/localization/ps/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "استوزه نه ده لېږل شوې. غواړئ چې استوزه مو"
+"لرې وغورځوئ"
+
+#: program/localization/ps/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "مهرباني وکړئ يو ال ډپ سرور د پلټلو لپاره"
+"وټاکئ"
+
+#: program/localization/ps/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "هېڅ يو اړيکلوری يې ونه موند"
+
+#: program/localization/ps/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "مهرباني وکړئ  د يو اړيکلوري‌نوم يا"
+"برېښناليک پته وليکئ"
+
+#: program/localization/ps/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "استوزي ومونده$"
+
+#: program/localization/ps/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "د پلټلو بيا راګرځېدل هېڅ سمون ونه خوړه"
+
+#: program/localization/ps/messages.inc:searching
+msgid "Searching..."
+msgstr "پلټي"
+
+#: program/localization/ps/messages.inc:checking
+msgid "Checking..."
+msgstr "ګوري"
+
+#: program/localization/ps/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "هېڅ ليکدودي‌تيروتنه ونه مونده"
+
+#: program/localization/ps/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "پوښۍ په بشپړه توګه ړنګه شوه"
+
+#: program/localization/ps/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "په بشپړه توګه ړنګ شول"
+
+#: program/localization/ps/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "له استوزي څخه بڼې ړنګېږي"
+
+#: program/localization/ps/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "له سرور څخه استوزي پرمخ نه شي تلی"
+
+#: program/localization/ps/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "دفايل پورته کول په بري سره سرته ونه رسيده"
+
+#: program/localization/ps/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "د پورته شوي فايل کچه بايد لږترلږه له $څخه"
+"تيری ونه کړي"
+
+#: program/localization/ps/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "په بشپړه توګه $پتې کاپي شوې"
+
+#: program/localization/ps/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "هېڅ يوه پته يې کاپي‌نه شوای کړای"
+
+#: program/localization/ps/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "ددې پتې يوازې سرچينه لوستل کېږي"
+
+#: program/localization/ps/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr " د پتې اړيکلوری يې خوندي‌نه شو کړای "
+
+#: program/localization/ps/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "استوزه خوځوي"
+
+#: program/localization/ps/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "يو لوستل شوی رسليک په بشپړه توګه واستول"
+"شو"
+
+#: program/localization/ps/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "رسليک يې ونه شوای ليږلی"
+
+#: program/localization/ps/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "تاسې نه شئ کولی چې دا پېژندنه ړنګه کړئ،"
+"داستاسو اخرنی پيژندنه ده"
+
+#: program/localization/ps/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "د پوښۍ نوم له فوربايډن تورو څخه جوړ دی"
+
+#: program/localization/ps/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "مهرباني وکړئ‌يو فايل د پورته کولو لپاره"
+"وټاکئ"
+
+#: program/localization/ps/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "ټاکل شوی پتې کتاب د بياليکلو نه دی"
+
+#: program/localization/ps/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "نقلوي...صبر وکړئ"
+
+#: program/localization/ps/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "نقلول په بري سره ترسره نه شول پورته شوی"
+"فايل شته ویکارډ فايل نه دی"
+
+#: program/localization/ps/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>په بشپړه توګه نقل شو $اړيکلوري داخل شول,"
+"$شته تيرشوي انټاير څخه"
+"تيرشول</b>:<p><em>$نومونه</em></p>"
+
+#: program/localization/ps/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "چار اجازه نه لري"
+
+#: program/localization/ps/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "په ټاکل شوي پيژندنه کې برېښناليک پتې له"
+"لاسه ورکړي"
+
+#: program/localization/ps/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "که د متن بڼو له منځه تللو ګواښ وي نو د متن"
+"سمون پرانيزئ. غواړئ چې دوام ورکړئ"

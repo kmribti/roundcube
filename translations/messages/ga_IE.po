@@ -1,0 +1,241 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ga_IE/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ga_IE\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ga_IE/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Theip an iarraidh chun logáil tú isteach"
+
+#: program/localization/ga_IE/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Níor glac do sracléitheoir an fianán seisiúin"
+
+#: program/localization/ga_IE/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Tá an seisiúin neamhbhailí nó as feidhm"
+
+#: program/localization/ga_IE/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Theip an iarraidh chun nasc go dtí an freastalaí Prótacal Rochtana"
+"Teachtaireachtaí Idirlín (IMAP)"
+
+#: program/localization/ga_IE/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Ní bhfuair mé aon teachtaireacht i bosca postas seo"
+
+#: program/localization/ga_IE/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "D'éirigh tú logáil amach. Slán Leat!"
+
+#: program/localization/ga_IE/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Tá an bosca postas folamh"
+
+#: program/localization/ga_IE/messages.inc:loading
+msgid "Loading..."
+msgstr "Fan nóiméad, ag lódáil..."
+
+#: program/localization/ga_IE/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Ag lódáil sonraí..."
+
+#: program/localization/ga_IE/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Ag seiceáil chun teachtaireacht nua..."
+
+#: program/localization/ga_IE/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Ag seol mo teachtaireacht láithreach bonn..."
+
+#: program/localization/ga_IE/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Sheol mé an teachtaireacht"
+
+#: program/localization/ga_IE/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Ag sábháil an teachtaireacht..."
+
+#: program/localization/ga_IE/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Sábháil mé an teachtaireacht i dréachtaí"
+
+#: program/localization/ga_IE/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "D'éirigh mé agus sábháil mé"
+
+#: program/localization/ga_IE/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "D'éirigh mé agus shábháil mé duine nua go dtí an Leabhair Seoltaí"
+
+#: program/localization/ga_IE/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Tá duine i do Leabhair Seoltaí agus tá an seoladh ríomhphost seo aige"
+
+#: program/localization/ga_IE/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Chun do príobháide a cosain, choiscinn na híomhánna san teachtaireacht"
+"seo "
+
+#: program/localization/ga_IE/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Tá an teachtaireacht seo i criptiúchán, Níl an cumas agam chun é a"
+"tionscail"
+
+#: program/localization/ga_IE/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Ní raibh aon buine san Leabhair Seoltaí seo"
+
+#: program/localization/ga_IE/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Ní bhfuair mé an duine seo"
+
+#: program/localization/ga_IE/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Theip an iarraidh chun an teachtaireacht a seol"
+
+#: program/localization/ga_IE/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Theip mé agus ní shábháil"
+
+#: program/localization/ga_IE/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Theip mé agus ní bog an teachtaireacht"
+
+#: program/localization/ga_IE/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Theip mé agus níor scrios me an teachtaireacht"
+
+#: program/localization/ga_IE/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Ar mhaith leat scrios na daoine seo?"
+
+#: program/localization/ga_IE/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Ar mhaith leat scrios na teachtaireacht seo?"
+
+#: program/localization/ga_IE/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Ar mhaith leat scrios an fillteán seo?"
+
+#: program/localization/ga_IE/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Ar mhaith leat scrios gach teachtaireacht san fillteán seo?"
+
+#: program/localization/ga_IE/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Níor chríochnaigh tú an foirm"
+
+#: program/localization/ga_IE/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Abair liom seoladh ríomhphost nach bfhuil neamhbhaillí"
+
+#: program/localization/ga_IE/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Abair liom do ainm"
+
+#: program/localization/ga_IE/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Abair liom saghas leathanaigh"
+
+#: program/localization/ga_IE/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Abair liom faighteoir amhain ar a laghad"
+
+#: program/localization/ga_IE/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Níl aon ábhair ar an teachtaireacht, ba mhaith tú déarfaidh mé ábair?"
+
+#: program/localization/ga_IE/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Níl aon teacs san teachtaireacht, ba mhaith tú déarfaidh mé"
+"teachtaireacht ar bith?"
+
+#: program/localization/ga_IE/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Theip an iarraidh chun an teachtaireacht a seo. ba mhaith tú scrios do"
+"teachtaireacht?"
+
+#: program/localization/ga_IE/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Abair liom eolaire LDAP chun é a cuardaigh"
+
+#: program/localization/ga_IE/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Ní bhfuair mé aon duine as an ceist seo"
+
+#: program/localization/ga_IE/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Abair liom ainm duine nó seoladh ríomhphost"
+
+#: program/localization/ga_IE/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "Fuair mé $n teachtaireacht"
+
+#: program/localization/ga_IE/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Ní bhfuair mé aon rud as an ceist seo"
+
+#: program/localization/ga_IE/messages.inc:searching
+msgid "Searching..."
+msgstr "Ag tástáil..."
+
+#: program/localization/ga_IE/messages.inc:checking
+msgid "Checking..."
+msgstr "Bím ag dhéanamh na mhaoirseachtí..."
+
+#: program/localization/ga_IE/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Ní bhfuair mé aon earráidí i teachtaireacht seo"
+
+#: program/localization/ga_IE/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "D'éirigh mé, Scrios mé an fillteán"
+
+#: program/localization/ga_IE/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "D'éirigh mé, Scrios mé"
+
+#: program/localization/ga_IE/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Scrios mé formáidithe as an teachtaireacht seo"
+
+#: program/localization/ga_IE/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Theip orm chun an teachtaireacht seo a tarrtháil as an freastalaí"
+
+#: program/localization/ga_IE/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Theip an suas-luchtú"
+
+#: program/localization/ga_IE/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Beigh an comhad ró-mhor. Is ea $size uas-saghas chun admháil léite"
+
+#: program/localization/ga_IE/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "D'éirigh mé agus chuir mé $nr seolagh i do Leabhair Seoltaí"
+
+#: program/localization/ga_IE/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Theip mé agus níor dfhag mé aon seolagh"
+
+#: program/localization/ga_IE/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Tá an foinse seolaigh seo inléite amháin"
+
+#: program/localization/ga_IE/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Theip mé, Níl an cumas agam an seolagh seo a sábháil"

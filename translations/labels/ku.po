@@ -1,0 +1,682 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ku/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ku\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ku/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Bixêr hatî $product 'ê"
+
+#: program/localization/ku/labels.inc:username
+msgid "Username"
+msgstr "Bikarhêner"
+
+#: program/localization/ku/labels.inc:password
+msgid "Password"
+msgstr "Nasnav"
+
+#: program/localization/ku/labels.inc:server
+msgid "Server"
+msgstr "Pêşkêşkar"
+
+#: program/localization/ku/labels.inc:login
+msgid "Login"
+msgstr "Têkevê"
+
+#: program/localization/ku/labels.inc:logout
+msgid "Logout"
+msgstr "Derkeve"
+
+#: program/localization/ku/labels.inc:mail
+msgid "Mail"
+msgstr "E-Peyam"
+
+#: program/localization/ku/labels.inc:settings
+msgid "Settings"
+msgstr "Mîhengên Takekesî"
+
+#: program/localization/ku/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Lênûska Navnîşanan"
+
+#: program/localization/ku/labels.inc:inbox
+msgid "Inbox"
+msgstr "Hatî"
+
+#: program/localization/ku/labels.inc:drafts
+msgid "Drafts"
+msgstr "Hilanînî"
+
+#: program/localization/ku/labels.inc:sent
+msgid "Sent"
+msgstr "Şandî"
+
+#: program/localization/ku/labels.inc:trash
+msgid "Trash"
+msgstr "Çop"
+
+#: program/localization/ku/labels.inc:junk
+msgid "Junk"
+msgstr "Biikêrnehatî"
+
+#: program/localization/ku/labels.inc:subject
+msgid "Subject"
+msgstr "Mijar"
+
+#: program/localization/ku/labels.inc:from
+msgid "From"
+msgstr "Şandyar"
+
+#: program/localization/ku/labels.inc:to
+msgid "To"
+msgstr "Standyar"
+
+#: program/localization/ku/labels.inc:cc
+msgid "Cc"
+msgstr "Kopiya Karbon"
+
+#: program/localization/ku/labels.inc:bcc
+msgid "Bcc"
+msgstr "Kopiya karbon a Veşartî"
+
+#: program/localization/ku/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Navnîşanên Standyar"
+
+#: program/localization/ku/labels.inc:date
+msgid "Date"
+msgstr "Dîrok"
+
+#: program/localization/ku/labels.inc:size
+msgid "Size"
+msgstr "Mezinahî"
+
+#: program/localization/ku/labels.inc:priority
+msgid "Priority"
+msgstr "Girîngî"
+
+#: program/localization/ku/labels.inc:organization
+msgid "Company"
+msgstr "Sazî"
+
+#: program/localization/ku/labels.inc:reply-to
+msgid "reply-to"
+msgstr "Navnîşanên Standyar"
+
+#: program/localization/ku/labels.inc:mailboxlist
+#: program/localization/ku/labels.inc:folders
+msgid "Folders"
+msgstr "Peldank"
+
+#: program/localization/ku/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Peyam $count ên di navbera $from - $to"
+
+#: program/localization/ku/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "$nr a peyama $count"
+
+#: program/localization/ku/labels.inc:moveto
+msgid "Move to..."
+msgstr "bibe..."
+
+#: program/localization/ku/labels.inc:download
+msgid "Download"
+msgstr "daxe"
+
+#: program/localization/ku/labels.inc:filename
+msgid "File name"
+msgstr "Navê pelê"
+
+#: program/localization/ku/labels.inc:filesize
+msgid "File size"
+msgstr "Mezinahiya pelê"
+
+#: program/localization/ku/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Wekî HTML nîşan bide"
+
+#: program/localization/ku/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Peyama HTML"
+
+#: program/localization/ku/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Kurtenivîsa Dîrokê"
+
+#: program/localization/ku/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Têxe lênûska navnîşanan"
+
+#: program/localization/ku/labels.inc:sun
+msgid "Sun"
+msgstr "Yş"
+
+#: program/localization/ku/labels.inc:mon
+msgid "Mon"
+msgstr "Dş"
+
+#: program/localization/ku/labels.inc:tue
+msgid "Tue"
+msgstr "Sş"
+
+#: program/localization/ku/labels.inc:wed
+msgid "Wed"
+msgstr "Çş"
+
+#: program/localization/ku/labels.inc:thu
+msgid "Thu"
+msgstr "Pş"
+
+#: program/localization/ku/labels.inc:fri
+msgid "Fri"
+msgstr "În"
+
+#: program/localization/ku/labels.inc:sat
+msgid "Sat"
+msgstr "Şe"
+
+#: program/localization/ku/labels.inc:sunday
+msgid "Sunday"
+msgstr "Yekşem"
+
+#: program/localization/ku/labels.inc:monday
+msgid "Monday"
+msgstr "Duşem"
+
+#: program/localization/ku/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Sêşem"
+
+#: program/localization/ku/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Çarşem"
+
+#: program/localization/ku/labels.inc:thursday
+msgid "Thursday"
+msgstr "Pêncşem"
+
+#: program/localization/ku/labels.inc:friday
+msgid "Friday"
+msgstr "În"
+
+#: program/localization/ku/labels.inc:saturday
+msgid "Saturday"
+msgstr "Şemî"
+
+#: program/localization/ku/labels.inc:today
+msgid "Today"
+msgstr "Îro"
+
+#: program/localization/ku/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Li peyamên nû venihêre"
+
+#: program/localization/ku/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Peyameke nû biafirîne"
+
+#: program/localization/ku/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Bersivê bide peyamê"
+
+#: program/localization/ku/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Bersivê ji bo hemû kesên ku ev peyan standine bişîne"
+
+#: program/localization/ku/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Bersivê bide peyamê"
+
+#: program/localization/ku/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Peyamê jê bibe"
+
+#: program/localization/ku/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Peyamê dake çopê"
+
+#: program/localization/ku/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Vê peyamê çap bike"
+
+#: program/localization/ku/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Peyama berê nîşan bide"
+
+#: program/localization/ku/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "Peyamên berê nîşan bide"
+
+#: program/localization/ku/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Peyama yekemîn nîşan bide"
+
+#: program/localization/ku/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "Peyamên yekemîn nîşan bide"
+
+#: program/localization/ku/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Peyama di rêzê de nîşan bide"
+
+#: program/localization/ku/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "Peyamên di rêzê de nîşan bide"
+
+#: program/localization/ku/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Peyama dawî nîşan bide"
+
+#: program/localization/ku/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "Peyamên dawî nîşan bide"
+
+#: program/localization/ku/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Vegere lîsteya peyaman"
+
+#: program/localization/ku/labels.inc:viewsource
+msgid "Show source"
+msgstr "Çavkaniyê nîşan bide"
+
+#: program/localization/ku/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Peyamê nîşan bike"
+
+#: program/localization/ku/labels.inc:markread
+msgid "As read"
+msgstr "Wekî xwendî"
+
+#: program/localization/ku/labels.inc:markunread
+msgid "As unread"
+msgstr "Wekî nexwendî"
+
+#: program/localization/ku/labels.inc:select
+msgid "Select"
+msgstr "Hilbijêre"
+
+#: program/localization/ku/labels.inc:all
+msgid "All"
+msgstr "Hemû"
+
+#: program/localization/ku/labels.inc:none
+msgid "None"
+msgstr "Ne yek jî"
+
+#: program/localization/ku/labels.inc:unread
+msgid "Unread"
+msgstr "Nexwendî"
+
+#: program/localization/ku/labels.inc:compact
+msgid "Compact"
+msgstr "Kompakt"
+
+#: program/localization/ku/labels.inc:empty
+msgid "Empty"
+msgstr "Vala Bike"
+
+#: program/localization/ku/labels.inc:purge
+msgid "purge"
+msgstr "Jê bibe"
+
+#: program/localization/ku/labels.inc:quota
+msgid "Disk usage"
+msgstr "Bikaranîna dîskê"
+
+#: program/localization/ku/labels.inc:unknown
+msgid "unknown"
+msgstr "nayê zanîn"
+
+#: program/localization/ku/labels.inc:unlimited
+msgid "unlimited"
+msgstr "bêsînor"
+
+#: program/localization/ku/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Lêgerîna bilez"
+
+#: program/localization/ku/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Lêgerînê reset bike"
+
+#: program/localization/ku/labels.inc:compose
+msgid "Compose a message"
+msgstr "Peyamekê biafirîne"
+
+#: program/localization/ku/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Hilîne"
+
+#: program/localization/ku/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Peyamê niha bişîne"
+
+#: program/localization/ku/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Pelekê lê zêde bike"
+
+#: program/localization/ku/labels.inc:charset
+msgid "Charset"
+msgstr "Curetîp"
+
+#: program/localization/ku/labels.inc:editortype
+msgid "Editor type"
+msgstr "Cureyê serastkat"
+
+#: program/localization/ku/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Rapora Vegerînê"
+
+#: program/localization/ku/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Kontrola rastnivîsê"
+
+#: program/localization/ku/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Serastkirinê bidomîne"
+
+#: program/localization/ku/labels.inc:revertto
+msgid "Revert to"
+msgstr "Şûnde bîne"
+
+#: program/localization/ku/labels.inc:attachments
+msgid "Attachments"
+msgstr "Pêvek"
+
+#: program/localization/ku/labels.inc:upload
+msgid "Upload"
+msgstr "Bar bike"
+
+#: program/localization/ku/labels.inc:close
+msgid "Close"
+msgstr "Bigire"
+
+#: program/localization/ku/labels.inc:low
+msgid "Low"
+msgstr "Nizm"
+
+#: program/localization/ku/labels.inc:lowest
+msgid "Lowest"
+msgstr "Nizmtirîn"
+
+#: program/localization/ku/labels.inc:normal
+msgid "Normal"
+msgstr "Asayî"
+
+#: program/localization/ku/labels.inc:high
+msgid "High"
+msgstr "Bilind"
+
+#: program/localization/ku/labels.inc:highest
+msgid "Highest"
+msgstr "Bilintirîn"
+
+#: program/localization/ku/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(bê mijar)"
+
+#: program/localization/ku/labels.inc:showimages
+msgid "Display images"
+msgstr "Xuyakirina wêneyan"
+
+#: program/localization/ku/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/ku/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Deqa tazî"
+
+#: program/localization/ku/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Cc Têxê"
+
+#: program/localization/ku/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Bcc Têxê"
+
+#: program/localization/ku/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Bibersivîne têxê"
+
+#: program/localization/ku/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Şandyara/ê vê peyamê xwest dema ku te peyam vekir, jê re hişyarî"
+"here. Dixwazî jê re hişyarî here?"
+
+#: program/localization/ku/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Rapora Vegerînê (xwendî)"
+
+#: program/localization/ku/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Ev rapora vegerîna peyama te ye"
+
+#: program/localization/ku/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Nîşe: Ev dide zanîn ka peyama te şand hat xwendin an na. Naveroka"
+"peyamê bi mîgogerî nayê zanîn."
+
+#: program/localization/ku/labels.inc:name
+msgid "Display Name"
+msgstr "Navê xuya dibe"
+
+#: program/localization/ku/labels.inc:firstname
+msgid "First Name"
+msgstr "Nav"
+
+#: program/localization/ku/labels.inc:surname
+msgid "Last Name"
+msgstr "Paşnav"
+
+#: program/localization/ku/labels.inc:email
+msgid "Email"
+msgstr "E-Peyam"
+
+#: program/localization/ku/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Têkiliyeke nû têxê"
+
+#: program/localization/ku/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Têkiliyê serast bike"
+
+#: program/localization/ku/labels.inc:edit
+msgid "Edit"
+msgstr "Serast bike"
+
+#: program/localization/ku/labels.inc:cancel
+msgid "Cancel"
+msgstr "Betal"
+
+#: program/localization/ku/labels.inc:save
+msgid "Save"
+msgstr "Tomar bike"
+
+#: program/localization/ku/labels.inc:delete
+msgid "Delete"
+msgstr "Jê Bibe"
+
+#: program/localization/ku/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "kardeke nû a têkiliyê biafirîne"
+
+#: program/localization/ku/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Têkiliyên hilbijartî jê bibe"
+
+#: program/localization/ku/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Ji têkiliya hilbijartî re peyam bişîne"
+
+#: program/localization/ku/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Têkiliyên $count ên di navbera $from - $to de"
+
+#: program/localization/ku/labels.inc:print
+msgid "Print"
+msgstr "çap bike"
+
+#: program/localization/ku/labels.inc:export
+msgid "Export"
+msgstr "Derxe"
+
+#: program/localization/ku/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Seta berê nîşan bide"
+
+#: program/localization/ku/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Seta yekemîn nîşan bide"
+
+#: program/localization/ku/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Seta di rêzê de nîşan bide"
+
+#: program/localization/ku/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Seta dawî nîşan bide"
+
+#: program/localization/ku/labels.inc:groups
+msgid "Groups"
+msgstr "Kom"
+
+#: program/localization/ku/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Navnîşanên Takekesî"
+
+#: program/localization/ku/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Mîheng ji bo"
+
+#: program/localization/ku/labels.inc:preferences
+msgid "Preferences"
+msgstr "Vebijêrk"
+
+#: program/localization/ku/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Vebijêrkên bikarhêner"
+
+#: program/localization/ku/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Vebijêrkên bikarhêner serast bike"
+
+#: program/localization/ku/labels.inc:identities
+msgid "Identities"
+msgstr "Nasname"
+
+#: program/localization/ku/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Nasnameyên vê hesabê serast bike"
+
+#: program/localization/ku/labels.inc:newidentity
+msgid "New identity"
+msgstr "Nasnameya nû"
+
+#: program/localization/ku/labels.inc:newitem
+msgid "New item"
+msgstr "Parçeya nû"
+
+#: program/localization/ku/labels.inc:edititem
+msgid "Edit item"
+msgstr "Parçeyê serast bike"
+
+#: program/localization/ku/labels.inc:setdefault
+msgid "Set default"
+msgstr "Wekî standard tomar bike"
+
+#: program/localization/ku/labels.inc:language
+msgid "Language"
+msgstr "Ziman"
+
+#: program/localization/ku/labels.inc:timezone
+msgid "Time zone"
+msgstr "Herêma demê"
+
+#: program/localization/ku/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Hejmara peyamên her rûpelekê"
+
+#: program/localization/ku/labels.inc:signature
+msgid "Signature"
+msgstr "Şanenav"
+
+#: program/localization/ku/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Demjimêra havînî"
+
+#: program/localization/ku/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Peyameke HTML biafirîne"
+
+#: program/localization/ku/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "Şanenava HTML"
+
+#: program/localization/ku/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Panela berê nîşan bide"
+
+#: program/localization/ku/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Xweber hilîne"
+
+#: program/localization/ku/labels.inc:never
+msgid "never"
+msgstr "qet"
+
+#: program/localization/ku/labels.inc:folder
+msgid "Folder"
+msgstr "Peldank"
+
+#: program/localization/ku/labels.inc:foldername
+msgid "Folder name"
+msgstr "Navê peldankê"
+
+#: program/localization/ku/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Ni şanenav"
+
+#: program/localization/ku/labels.inc:messagecount
+msgid "Messages"
+msgstr "Peyam"
+
+#: program/localization/ku/labels.inc:create
+msgid "Create"
+msgstr "Biafirîne"
+
+#: program/localization/ku/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Peldankeke nû biafirîne"
+
+#: program/localization/ku/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Rêveberiya peldankan"
+
+#: program/localization/ku/labels.inc:sortby
+msgid "Sort by"
+msgstr "Şêweyê rêzkirinê"
+
+#: program/localization/ku/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Wekî zêde dibe"
+
+#: program/localization/ku/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Wekî kêm dibe"

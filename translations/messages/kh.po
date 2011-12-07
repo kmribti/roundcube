@@ -1,0 +1,541 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/kh_KH/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: kh_KH\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/kh_KH/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "ការពិនិត្យចូលមិនបានសំរេច"
+"ព្រោះមានបញ្ហាកើតឡើង"
+
+#: program/localization/kh_KH/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "កម្មវិធីមើលគេហទំព័រនេះមិនទទួលយក"
+"Cookies"
+
+#: program/localization/kh_KH/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Session មិនត្រឹមត្រូវ ឬ"
+"ហួសកំណត់"
+
+#: program/localization/kh_KH/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "មិនអាចភ្ជាប់ទៅកាន់ម៉ាស៊ីន"
+"IMAP"
+
+#: program/localization/kh_KH/messages.inc:servererror
+msgid "Server Error!"
+msgstr "មានបញ្ហានៅម៉ាស៊ីនមេ"
+
+#: program/localization/kh_KH/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "បញ្ហា: $msg"
+
+#: program/localization/kh_KH/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "មិនអាចប្រតិបត្តិបានពីព្រោះថតនេះត្រូវបានគេកំណត់សំរាប់តែមើល"
+
+#: program/localization/kh_KH/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "មិនអាចប្រតិបត្តិបានពីព្រោះមិនមានសិទ្ទគ្រប់គ្រាន់"
+
+#: program/localization/kh_KH/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "មិនអាចរក្សាទុកទិន្នន័យបានពីព្រោះមានបញ្ហានៅពេលបញ្ជូនទិន្នន័យ"
+
+#: program/localization/kh_KH/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "ពុំមានសំបុត្រក្នុងប្រអប់សំបុត្រនេះទេ"
+
+#: program/localization/kh_KH/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "អ្នកបានពិនិត្យចេញដោយជោគជ័យ"
+"។"
+
+#: program/localization/kh_KH/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "ប្រអប់សំបុត្រទទេ"
+
+#: program/localization/kh_KH/messages.inc:loading
+msgid "Loading..."
+msgstr "កំពុងដំណើរការ..."
+
+#: program/localization/kh_KH/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "កំពុងបញ្ជូនឯកសារ..."
+
+#: program/localization/kh_KH/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "កំពុងបើកឯកសារ..."
+
+#: program/localization/kh_KH/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "កំពុងស្វែងរកមើលសំបុត្រថ្មី៝..."
+
+#: program/localization/kh_KH/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "កំពុងផ្ញើសំបុត្រ..."
+
+#: program/localization/kh_KH/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "សំបុត្រត្រូវបានបញ្ជូនដោយជោគជ័យ!"
+
+#: program/localization/kh_KH/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "កំពុងរក្សាសំបុត្រទុក..."
+
+#: program/localization/kh_KH/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "សំបុត្រត្រូវបានរក្សាទុកក្នុងថតពង្រៀង"
+
+#: program/localization/kh_KH/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "រក្សាទុកដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "អាសយដ្ឋានត្រូវបានរក្សាទុកដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "ព័ត៌មានទាក់ទងដែលមានអ៊ីមែលនេះ"
+"មានក្នុងសៀវភៅអាសយដ្ឋានរួចហើយ"
+
+#: program/localization/kh_KH/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "រូបភាពដែលមានក្នុងសំបុត្រនេះត្រូវបានបិទ"
+"ដើម្បីរក្សាសុវត្ថភាព"
+
+#: program/localization/kh_KH/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "លោកអ្នកមិនអាចមើលសំបុត្រនេះបានទេពីព្រោះសំបុត្រនេះជាសំបុត្រសំងាត់"
+
+#: program/localization/kh_KH/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "ពុំមានអាសយដ្ឋានទាក់ទងទេ"
+
+#: program/localization/kh_KH/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "អាសយដ្ឋានទាក់ទងដែលលោកអ្នកចង់រក"
+"ពុំមានឡើយ"
+
+#: program/localization/kh_KH/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "មិនអាចផ្ញើសំបុត្របាន"
+
+#: program/localization/kh_KH/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "សូមរងចាំ $sec វិនាទី"
+"មុននឹងផ្ញើសំបុត្រនេះ"
+
+#: program/localization/kh_KH/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "មានបញ្ហាកើតឡើងនៅពេលកំពុងរក្សាទុកសំបុត្រដែលបានផ្ញើរួច"
+
+#: program/localization/kh_KH/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "មានបញ្ហាកើតឡើងនៅពេលកំពុងរក្សាសំបុត្រទុក"
+
+#: program/localization/kh_KH/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "មិនអាចផ្ទេរសំបុត្របាន"
+
+#: program/localization/kh_KH/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "មិនអាចចំលងសំបុត្របាន"
+
+#: program/localization/kh_KH/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "មិនអាចលុបសំបុត្រចោលបាន"
+
+#: program/localization/kh_KH/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "មិនអាចកំណត់ចំណាំលើសំបុត្របាន"
+
+#: program/localization/kh_KH/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "តើលោកអ្នកពិតជាចង់លុបព័ត៌មានទំនាក់ទំនងនេះមែនទេ?"
+
+#: program/localization/kh_KH/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "តើលោកអ្នកពិតជាចង់លុបសំបុត្រនេះមែនទេ?"
+
+#: program/localization/kh_KH/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "តើលោកអ្នកពិតជាចង់លុបថតនេះមែនទេ?"
+
+#: program/localization/kh_KH/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "តើលោកអ្នកពិតជាចង់លុបសំបុត្រទាំងអស់នៅក្នុងថតនេះមែនទេ?"
+
+#: program/localization/kh_KH/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "កំពុងលុបថតសំរាប់ទុកឯកសារ..."
+
+#: program/localization/kh_KH/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "កំពុងផ្ទេរថតសំរាប់ទុកឯកសារ..."
+
+#: program/localization/kh_KH/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "កំពុងកំណត់ប្រើថតសំរាប់ទុកឯកសារ..."
+
+#: program/localization/kh_KH/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "កំពុងកំណត់មិនប្រើថតសំរាប់ទុកឯកសារ..."
+
+#: program/localization/kh_KH/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "សូមបំពេញទិន្នន័យអោយបានគ្រប់"
+
+#: program/localization/kh_KH/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "អ៊ីមែលត្រឹមត្រូវ"
+
+#: program/localization/kh_KH/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "សូមសរសេរឈ្មោះរបស់អ្នក"
+
+#: program/localization/kh_KH/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "សូមកំណត់ទំហំទំព័រ"
+
+#: program/localization/kh_KH/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "សូមសរសេរអ៊ីមែលរបស់អ្នកផ្ញើ"
+
+#: program/localization/kh_KH/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "សូមសរសេរអ្នកទទួលយ៉ាងហោចណាស់ម្នាក់"
+
+#: program/localization/kh_KH/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "សំបុត្រគ្មានចំណងជើង"
+"តើអ្នកចង់សរសេរចំណងជើងនៅពេលនេះទេ?"
+
+#: program/localization/kh_KH/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "តើលោកអ្នកចង់ផ្ញើសំបុត្រដែលគ្មានតួអត្ថបទសំបុត្រទេ?"
+
+#: program/localization/kh_KH/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "សំបុត្រនេះមិនទាន់បានផ្ញើទេ"
+"។ តើលោកអ្នកចង់លុបចោលទេ?"
+
+#: program/localization/kh_KH/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "សូមកំណត់ម៉ាស៊ីន LDAP"
+"ដើម្បីស្វែងរក"
+
+#: program/localization/kh_KH/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "រកមិនឃើញពត៌មានទំនាក់ទំនងណាមួយទេ"
+
+#: program/localization/kh_KH/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "សូមបំពេញឈ្មោះទំនាក់ទំនង ឬ"
+"អាសយដ្ឋានអ៊ីមែល"
+
+#: program/localization/kh_KH/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "ឯកសារទាំងអស់មិនទាន់បញ្ជូនភ្ជាប់រួចរាល់ទេ"
+"។ មេត្តារងចាំបន្តិច"
+"ឬបោះបង់ការបញ្ជូននេះ!"
+
+#: program/localization/kh_KH/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "រកឃើញសំបុត្រចំនួន $nr "
+
+#: program/localization/kh_KH/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "រកមិនឃើញអ្វីទាំងអស់"
+
+#: program/localization/kh_KH/messages.inc:searching
+msgid "Searching..."
+msgstr "កំពុងស្វែងរក..."
+
+#: program/localization/kh_KH/messages.inc:checking
+msgid "Checking..."
+msgstr "កំពុងពិនិត្យរក..."
+
+#: program/localization/kh_KH/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "គ្មានកំហុសអក្ខរាវិរុទ្ធទេ"
+
+#: program/localization/kh_KH/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "លុបថតបានដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "អាចកំណត់ប្រើថតបានដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "កំណត់លែងប្រើថតបានដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "សំអាតថតបានដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "បង្រួមថតបានដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "លុបបានដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "កំពុងលុបការរចនាចោល..."
+
+#: program/localization/kh_KH/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "មិនអាចទាញយកសំបុត្រពីម៉ាស៊ីនមេបានទេ"
+
+#: program/localization/kh_KH/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "មិនអាចបញ្ជូលភ្ជាប់ឯកសារ"
+
+#: program/localization/kh_KH/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "ទំហំឯកសារត្រូវបញ្ជូនលើសចំណុះ"
+"ទំហំធំបំផុតគឺ $size"
+
+#: program/localization/kh_KH/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "បានចំលងអាសយដ្ឋានចំនួន $nr"
+"ដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "មិនអាចចំលងអាសយដ្ឋានណាមួយឡើយ"
+
+#: program/localization/kh_KH/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "លោកអ្នកមានសិទ្ធត្រឹមតែមើលប្រភពនៃអាសយដ្ឋាននេះ"
+
+#: program/localization/kh_KH/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "មិនអាចរក្សាអាសយដ្ឋានបានទេ"
+
+#: program/localization/kh_KH/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "កំពុកផ្តេរសំបុត្រ..."
+
+#: program/localization/kh_KH/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "កំពុងចំលងសំបុត្រ..."
+
+#: program/localization/kh_KH/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "កំពុងលុបសំបុត្រ..."
+
+#: program/localization/kh_KH/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "កំពុងកំណត់សំគាល់សំបុត្រ..."
+
+#: program/localization/kh_KH/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "បានបញ្ជូន"
+"អត្ថបទបញ្ជាក់ថាបានអាន"
+"បានសំរេច"
+
+#: program/localization/kh_KH/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "មិនអាចបញ្ជូន"
+"អត្ថបទបញ្ជាក់ថាបានអាន ទេ"
+
+#: program/localization/kh_KH/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "លោកអ្នកមិនអាចលុបអត្តសញ្ញាណនេះទេ"
+"ព្រោះវានៅសល់ចុងក្រោយគេ"
+
+#: program/localization/kh_KH/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "ឈ្មោះថតនេះមានអក្សរដែលត្រូវហាមឃាត់"
+
+#: program/localization/kh_KH/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "សូមជ្រើសរើសឯកសារដើម្បីបញ្ជូនភ្ជាប់"
+
+#: program/localization/kh_KH/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "សៀវភៅអាសយដ្ឋាននោះមិនអាចសរសេរចូលបានទេ"
+
+#: program/localization/kh_KH/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "បានដាក់ពត៌មានទំនាក់ទំនងចូលក្នុងក្រុមនេះដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "បានលុបពត៌មានទំនាក់ទំនងចេញពីក្រុមនេះដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "សូមមេត្តារង់ចាំ"
+"កំពុងទាញទិន្នន័យចូល ..."
+
+#: program/localization/kh_KH/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "ការទាញចូលមិនបានសំរេច!"
+"ឯកសារដែលជ្រើសរើសនោះមិនមែនជាប្រភេទឯកសារ"
+"vCard ទេ ។"
+
+#: program/localization/kh_KH/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>ព័ត៌មានទំនាក់ទំនង $inserted"
+"បានបញ្ចូលដោយជោគជ័យ,"
+"ហើយបានរំលងចោលពត៌មានដែលមានស្រាប់"
+"$skipped </b>:<p><em>$names</em></p>"
+
+#: program/localization/kh_KH/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "ប្រតិ្តបត្តិការត្រូវបានគេហាមឃាត់!"
+
+#: program/localization/kh_KH/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "ខ្វះអាសយដ្ឋានអ៊ីមែលក្នុងអត្តសញ្ណាណមួយនេះ"
+
+#: program/localization/kh_KH/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "ប្តូរទៅទំរង់អត្ថបទធម្មតា"
+"អាចធ្វើអោយបាត់បង់ការរចនាដែលមាន។"
+"លោកអ្នកចង់ប្តូរទេ?"
+
+#: program/localization/kh_KH/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "ប្រព័ន្ធដំណើរការមិនប្រកតី។"
+"សូមទាក់ទងទៅកាន់អ្នកបច្ចេកទេសជាបន្ទាន់។"
+"<br>សាររបស់អ្នកមិនអាចផ្ញើទេក្នុងពេលនេះ<br>"
+
+#: program/localization/kh_KH/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP Error ($code):"
+"មិនអាចភ្ជាប់ទៅម៉ាស៊ីនមេ"
+
+#: program/localization/kh_KH/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP Error ($code):"
+"ព័ត៌មានគនីយមិនត្រឹមត្រូវ"
+
+#: program/localization/kh_KH/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP Error ($code):"
+"មិនអាចកំនត់អ្នកផ្ញើ \"$from\" ($msg)"
+
+#: program/localization/kh_KH/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP Error ($code):"
+"មិនអាចកំនត់អ្នកទទួល \"$to\" ($msg)"
+
+#: program/localization/kh_KH/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP Error:"
+"មិនអាចបំលែងបញ្ជីអ្នកទទួល"
+
+#: program/localization/kh_KH/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "SMTP Error:"
+"មិនអាចប្រាប់ពីស្ថានភាពនៃការបញ្ជូនសំបុត្រ"
+
+#: program/localization/kh_KH/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP Error: $msg"
+
+#: program/localization/kh_KH/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "អាសយដ្ឋានអ៊ីមែលមិនត្រឹមត្រូវទេ:"
+"$email"
+
+#: program/localization/kh_KH/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "ចំនួនអ្នកទទួលច្រើនលើសកំនត់!"
+"សូមមេត្តាលុបចោលរហូតដល់ $max។"
+
+#: program/localization/kh_KH/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "ចំនួនក្រុមលើសកំនត់ហើយ"
+"ចំនួនច្រើនបំផុតគឺ $max"
+
+#: program/localization/kh_KH/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "មានបញ្ហាខាងម៉ាស៊ីនមេ ។"
+"សូមព្យាយាមម្តងទៀត!"
+
+#: program/localization/kh_KH/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "មិនអាចលុបអាសយដ្ឋានទំនាក់ទំនង"
+
+#: program/localization/kh_KH/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "អាសយដ្ឋានទំនាក់ទំនងត្រូវបានលុបដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "លុបក្រុមបានដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "ប្តូរឈ្មោះក្រុមបានដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "បង្កើតក្រុមបានដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "លុបសំបុត្របានដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "ផ្ទេរសំបុត្របានដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "ចំលងសំបុត្របានដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "កំណត់សំគាល់សំបុត្របានដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "សូមសរសេរអក្សរយ៉ាងតិច $min"
+"ដើម្បីបង្ហាយដោយស្វ័យប្រវត្តិ"
+
+#: program/localization/kh_KH/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "សូមសរសេរឈ្មោះ"
+
+#: program/localization/kh_KH/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "ឈ្មោះវែងពេក"
+
+#: program/localization/kh_KH/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "ផ្លាស់ប្តូរថតបានដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "បង្កើតថតបានដោយជោគជ័យ"
+
+#: program/localization/kh_KH/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "ប្រភេទរូបភាពមិនត្រឹមត្រូវ"

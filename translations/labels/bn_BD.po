@@ -1,0 +1,1023 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/bn_BD/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: bn_BD\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/bn_BD/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "স্বাগতম"
+
+#: program/localization/bn_BD/labels.inc:username
+msgid "Username"
+msgstr "গ্রাহক নাম (username)"
+
+#: program/localization/bn_BD/labels.inc:password
+msgid "Password"
+msgstr "গোপোন শব্দ (password)"
+
+#: program/localization/bn_BD/labels.inc:server
+msgid "Server"
+msgstr "সারভার"
+
+#: program/localization/bn_BD/labels.inc:login
+msgid "Login"
+msgstr "প্রবেশ"
+
+#: program/localization/bn_BD/labels.inc:logout
+msgid "Logout"
+msgstr "প্রস্থান"
+
+#: program/localization/bn_BD/labels.inc:mail
+msgid "Mail"
+msgstr "ই-মেইল"
+
+#: program/localization/bn_BD/labels.inc:settings
+msgid "Settings"
+msgstr "ব্যাক্তিগত খুটিনাটি"
+
+#: program/localization/bn_BD/labels.inc:addressbook
+msgid "Address Book"
+msgstr "ঠিকানার বই"
+
+#: program/localization/bn_BD/labels.inc:inbox
+msgid "Inbox"
+msgstr "প্রধান বাক্স"
+
+#: program/localization/bn_BD/labels.inc:drafts
+msgid "Drafts"
+msgstr "খসড়া"
+
+#: program/localization/bn_BD/labels.inc:sent
+msgid "Sent"
+msgstr "প্রেরিত(পাঠানো মেইল)"
+
+#: program/localization/bn_BD/labels.inc:trash
+msgid "Trash"
+msgstr "ডাস্টবিন"
+
+#: program/localization/bn_BD/labels.inc:junk
+msgid "Junk"
+msgstr "আজেবাজে মেইল"
+
+#: program/localization/bn_BD/labels.inc:subject
+msgid "Subject"
+msgstr "বিষয়"
+
+#: program/localization/bn_BD/labels.inc:from
+msgid "From"
+msgstr "প্রেরক"
+
+#: program/localization/bn_BD/labels.inc:to
+msgid "To"
+msgstr "প্রাপক"
+
+#: program/localization/bn_BD/labels.inc:cc
+msgid "Cc"
+msgstr "অনুলিপির ঠিকানা"
+
+#: program/localization/bn_BD/labels.inc:bcc
+msgid "Bcc"
+msgstr "নাজানিয়ে অনুলিপির ঠিকানা"
+
+#: program/localization/bn_BD/labels.inc:replyto
+msgid "Reply-To"
+msgstr "উত্তর পাঠানোর ঠিকানা"
+
+#: program/localization/bn_BD/labels.inc:date
+msgid "Date"
+msgstr "তারিখ"
+
+#: program/localization/bn_BD/labels.inc:size
+msgid "Size"
+msgstr "সাইজ"
+
+#: program/localization/bn_BD/labels.inc:priority
+msgid "Priority"
+msgstr "গুরুত্ব"
+
+#: program/localization/bn_BD/labels.inc:organization
+msgid "Company"
+msgstr "কোম্পানি"
+
+#: program/localization/bn_BD/labels.inc:reply-to
+msgid "reply-to"
+msgstr "প্রতি উত্তর"
+
+#: program/localization/bn_BD/labels.inc:mailboxlist
+#: program/localization/bn_BD/labels.inc:folders
+msgid "Folders"
+msgstr "ফোল্ডার/মেইলবক্স"
+
+#: program/localization/bn_BD/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "$count মেইলের মধ্যে, $from হতে $to"
+"দেখানো হচ্ছে "
+
+#: program/localization/bn_BD/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "$nr #মেইল/চিঠি , $count এর মধ্যে"
+
+#: program/localization/bn_BD/labels.inc:moveto
+msgid "Move to..."
+msgstr "সরিয়ে ফেলুন.."
+
+#: program/localization/bn_BD/labels.inc:download
+msgid "Download"
+msgstr "ডাউনলোড"
+
+#: program/localization/bn_BD/labels.inc:filename
+msgid "File name"
+msgstr "ফাইলের নাম"
+
+#: program/localization/bn_BD/labels.inc:filesize
+msgid "File size"
+msgstr "ফাইলের সাইজ"
+
+#: program/localization/bn_BD/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML এ দেখি"
+
+#: program/localization/bn_BD/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML মেইল/চিঠি"
+
+#: program/localization/bn_BD/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "তারিখ ভালো করে দেখা যাবে"
+
+#: program/localization/bn_BD/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "ঠিকানার বইতে ঢুকান"
+
+#: program/localization/bn_BD/labels.inc:sun
+msgid "Sun"
+msgstr "রবি"
+
+#: program/localization/bn_BD/labels.inc:mon
+msgid "Mon"
+msgstr "সোম"
+
+#: program/localization/bn_BD/labels.inc:tue
+msgid "Tue"
+msgstr "মঙ্গল"
+
+#: program/localization/bn_BD/labels.inc:wed
+msgid "Wed"
+msgstr "বুধ"
+
+#: program/localization/bn_BD/labels.inc:thu
+msgid "Thu"
+msgstr "বৃহ:"
+
+#: program/localization/bn_BD/labels.inc:fri
+msgid "Fri"
+msgstr "শুক্র"
+
+#: program/localization/bn_BD/labels.inc:sat
+msgid "Sat"
+msgstr "শনি"
+
+#: program/localization/bn_BD/labels.inc:sunday
+msgid "Sunday"
+msgstr "রবিবার"
+
+#: program/localization/bn_BD/labels.inc:monday
+msgid "Monday"
+msgstr "সোমবার"
+
+#: program/localization/bn_BD/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "মঙ্গলবার"
+
+#: program/localization/bn_BD/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "বুধবার"
+
+#: program/localization/bn_BD/labels.inc:thursday
+msgid "Thursday"
+msgstr "বৃহস্পতিবার"
+
+#: program/localization/bn_BD/labels.inc:friday
+msgid "Friday"
+msgstr "শুক্রবার"
+
+#: program/localization/bn_BD/labels.inc:saturday
+msgid "Saturday"
+msgstr "শনিবার"
+
+#: program/localization/bn_BD/labels.inc:jan
+msgid "Jan"
+msgstr "জানুয়ারি"
+
+#: program/localization/bn_BD/labels.inc:feb
+msgid "Feb"
+msgstr "ফেব্রুয়ারি"
+
+#: program/localization/bn_BD/labels.inc:mar
+msgid "Mar"
+msgstr "মার্চ"
+
+#: program/localization/bn_BD/labels.inc:apr
+msgid "Apr"
+msgstr "এপ্রিল"
+
+#: program/localization/bn_BD/labels.inc:may
+#: program/localization/bn_BD/labels.inc:longmay
+msgid "May"
+msgstr "মে"
+
+#: program/localization/bn_BD/labels.inc:jun
+msgid "Jun"
+msgstr "জুন"
+
+#: program/localization/bn_BD/labels.inc:jul
+msgid "Jul"
+msgstr "জুলাই"
+
+#: program/localization/bn_BD/labels.inc:aug
+msgid "Aug"
+msgstr "আগস্ট"
+
+#: program/localization/bn_BD/labels.inc:sep
+msgid "Sep"
+msgstr "সেপ্তেমবার"
+
+#: program/localization/bn_BD/labels.inc:oct
+msgid "Oct"
+msgstr "অষ্টবার"
+
+#: program/localization/bn_BD/labels.inc:nov
+msgid "Nov"
+msgstr "নবেমবার"
+
+#: program/localization/bn_BD/labels.inc:dec
+msgid "Dec"
+msgstr "দিশেমবার"
+
+#: program/localization/bn_BD/labels.inc:longjan
+msgid "January"
+msgstr "জানুয়ারি"
+
+#: program/localization/bn_BD/labels.inc:longfeb
+msgid "February"
+msgstr "ফেব্রুয়ারি"
+
+#: program/localization/bn_BD/labels.inc:longmar
+msgid "March"
+msgstr "মার্চ"
+
+#: program/localization/bn_BD/labels.inc:longapr
+msgid "April"
+msgstr "এপ্রিল"
+
+#: program/localization/bn_BD/labels.inc:longjun
+msgid "June"
+msgstr "জুন"
+
+#: program/localization/bn_BD/labels.inc:longjul
+msgid "July"
+msgstr "জুলাই"
+
+#: program/localization/bn_BD/labels.inc:longaug
+msgid "August"
+msgstr "আগস্ট"
+
+#: program/localization/bn_BD/labels.inc:longsep
+msgid "September"
+msgstr "সেপ্তেমবার (September)"
+
+#: program/localization/bn_BD/labels.inc:longoct
+msgid "October"
+msgstr "অষ্টবার (October)"
+
+#: program/localization/bn_BD/labels.inc:longnov
+msgid "November"
+msgstr "নবেমবার (November)"
+
+#: program/localization/bn_BD/labels.inc:longdec
+msgid "December"
+msgstr "দিশেমবার (December)"
+
+#: program/localization/bn_BD/labels.inc:today
+msgid "Today"
+msgstr "আজকে"
+
+#: program/localization/bn_BD/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "দেখুন নতুন কোনো মেইল/চিঠি"
+"এলো কিনা "
+
+#: program/localization/bn_BD/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "নতুন মেইল/চিঠি লিখুন"
+
+#: program/localization/bn_BD/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "শুধু প্রেরকের কাছে উত্তর"
+"পাঠান"
+
+#: program/localization/bn_BD/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "প্রেরক ও এই চিঠির অন্যান্য"
+"প্রাপকদের কাছে উত্তর পাঠান"
+
+#: program/localization/bn_BD/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "মেইল/চিঠি এগিয়ে দিন "
+
+#: program/localization/bn_BD/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "মেইল/চিঠি ছিড়ে ফেলুন"
+
+#: program/localization/bn_BD/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "মেইল/চিঠি ডাস্টবিনে ফেলুন"
+
+#: program/localization/bn_BD/labels.inc:printmessage
+msgid "Print this message"
+msgstr "মেইল/চিঠি প্রিন্ট করুন"
+
+#: program/localization/bn_BD/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "আগের মেইল/চিঠিটি দেখুন"
+
+#: program/localization/bn_BD/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "আগের মেইল/চিঠি গুলো দেখুন"
+
+#: program/localization/bn_BD/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "প্রথম মেইল/চিঠিটি দেখুন"
+
+#: program/localization/bn_BD/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "প্রথম মেইল/চিঠি গুলো দেখুন"
+
+#: program/localization/bn_BD/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "পরের মেইল/চিঠিটি দেখুন"
+
+#: program/localization/bn_BD/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "পরের মেইল/চিঠিগুলি দেখুন"
+
+#: program/localization/bn_BD/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "শেষ মেইল/চিঠিটি দেখুন"
+
+#: program/localization/bn_BD/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "শেষের দিকের মেইল/চিঠিগুলি"
+"দেখুন"
+
+#: program/localization/bn_BD/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "মেইল/চিঠির তালিকায় ফিরে যান"
+
+#: program/localization/bn_BD/labels.inc:viewsource
+msgid "Show source"
+msgstr "মূল উৎসদেখুন"
+
+#: program/localization/bn_BD/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "মেইল/চিঠি (গুলো)"
+
+#: program/localization/bn_BD/labels.inc:markread
+msgid "As read"
+msgstr "পড়া শেষ (read)"
+
+#: program/localization/bn_BD/labels.inc:markunread
+msgid "As unread"
+msgstr "নাদেখা (unread)"
+
+#: program/localization/bn_BD/labels.inc:markflagged
+msgid "As flagged"
+msgstr "দাগানো (flagged)"
+
+#: program/localization/bn_BD/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "দাগহীন (unflagged)"
+
+#: program/localization/bn_BD/labels.inc:select
+msgid "Select"
+msgstr "বেছেনিন"
+
+#: program/localization/bn_BD/labels.inc:all
+msgid "All"
+msgstr "সবগুলো"
+
+#: program/localization/bn_BD/labels.inc:none
+msgid "None"
+msgstr "কোনোটাই না"
+
+#: program/localization/bn_BD/labels.inc:unread
+msgid "Unread"
+msgstr "নাদেখা (unread)"
+
+#: program/localization/bn_BD/labels.inc:flagged
+msgid "Flagged"
+msgstr "দাগানো (flagged)"
+
+#: program/localization/bn_BD/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "উত্তর না দেওয়া গুলো"
+
+#: program/localization/bn_BD/labels.inc:filter
+msgid "Filter"
+msgstr "ছাকনি"
+
+#: program/localization/bn_BD/labels.inc:compact
+msgid "Compact"
+msgstr "টাইটকরুন"
+
+#: program/localization/bn_BD/labels.inc:empty
+msgid "Empty"
+msgstr "খালিকরুন"
+
+#: program/localization/bn_BD/labels.inc:purge
+msgid "purge"
+msgstr "Purge"
+
+#: program/localization/bn_BD/labels.inc:quota
+msgid "Disk usage"
+msgstr "ডিস্ক এ খালি যায়গা"
+
+#: program/localization/bn_BD/labels.inc:unknown
+msgid "unknown"
+msgstr "অজানা"
+
+#: program/localization/bn_BD/labels.inc:unlimited
+msgid "unlimited"
+msgstr "সীমাহীন"
+
+#: program/localization/bn_BD/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "ঝটকরে খোজা"
+
+#: program/localization/bn_BD/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "নতুনকরে খুজুন"
+
+#: program/localization/bn_BD/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "নতুন উইন্ডো তে দেখুন"
+
+#: program/localization/bn_BD/labels.inc:compose
+msgid "Compose a message"
+msgstr "নতুন মেইল/চিঠি লিখুন"
+
+#: program/localization/bn_BD/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "খসড়া হিসাবে জমা করে রাখুন"
+
+#: program/localization/bn_BD/labels.inc:sendmessage
+msgid "Send now"
+msgstr "এখুনি মেইল / চিঠিটি পাঠান"
+
+#: program/localization/bn_BD/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "একটা ফাইল জুড়ে দিন চিঠির"
+"সাথে"
+
+#: program/localization/bn_BD/labels.inc:charset
+msgid "Charset"
+msgstr "Charset"
+
+#: program/localization/bn_BD/labels.inc:editortype
+msgid "Editor type"
+msgstr "Editor type"
+
+#: program/localization/bn_BD/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "ফিরতি রসিদ"
+
+#: program/localization/bn_BD/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Check spelling"
+
+#: program/localization/bn_BD/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Resume editing"
+
+#: program/localization/bn_BD/labels.inc:revertto
+msgid "Revert to"
+msgstr "Revert to"
+
+#: program/localization/bn_BD/labels.inc:attachments
+msgid "Attachments"
+msgstr "জুড়ে দেওয়া ফাইল (Attachments)"
+
+#: program/localization/bn_BD/labels.inc:upload
+msgid "Upload"
+msgstr "উঠায় দেন"
+
+#: program/localization/bn_BD/labels.inc:close
+msgid "Close"
+msgstr "বন্ধ করুন"
+
+#: program/localization/bn_BD/labels.inc:low
+msgid "Low"
+msgstr "Low"
+
+#: program/localization/bn_BD/labels.inc:lowest
+msgid "Lowest"
+msgstr "Lowest"
+
+#: program/localization/bn_BD/labels.inc:normal
+msgid "Normal"
+msgstr "Normal"
+
+#: program/localization/bn_BD/labels.inc:high
+msgid "High"
+msgstr "High"
+
+#: program/localization/bn_BD/labels.inc:highest
+msgid "Highest"
+msgstr "Highest"
+
+#: program/localization/bn_BD/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(বিষয়হীন)"
+
+#: program/localization/bn_BD/labels.inc:showimages
+msgid "Display images"
+msgstr "ছবি দেখান"
+
+#: program/localization/bn_BD/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "সবসময় $sender এর কাছে থেকে পাওয়া"
+"ছবিগুলো দেখানো হোক"
+
+#: program/localization/bn_BD/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/bn_BD/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "খালি লেখা দেখুন"
+
+#: program/localization/bn_BD/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "পাঠানো চিঠি/মেইল জমা করুন >>"
+
+#: program/localization/bn_BD/labels.inc:dontsave
+msgid "don't save"
+msgstr "জমিয়ে রাখা লাগবে না"
+
+#: program/localization/bn_BD/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "ফাইল উঠানোর সর্বোচ্চ সাইজ $size"
+
+#: program/localization/bn_BD/labels.inc:addcc
+msgid "Add Cc"
+msgstr "অনুলিপির ঠিকানা ঢুকান"
+
+#: program/localization/bn_BD/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "নাজানিয়ে অনুলিপির ঠিকানা"
+"ঢুকান"
+
+#: program/localization/bn_BD/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "উত্তর পাঠানোর ঠিকানা ঢুকান"
+
+#: program/localization/bn_BD/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "প্রাপক আপনার কাছে"
+"মেইল/চিঠিটা যে পেয়েছেন তার"
+"ফিরতি রসিদ চেয়েছেন। আপনি কি"
+"ফিরতি রসিদ টা পাঠাবেন?"
+
+#: program/localization/bn_BD/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "মেইল/চিঠি যে পেয়েছেন তার"
+"ফিরতি রসিদ"
+
+#: program/localization/bn_BD/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "নিচে রয়েছে আপনার চিঠিটা যে"
+"প্রাপক পেয়েছেন তার রসিদ"
+
+#: program/localization/bn_BD/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "এই রসিদ খালি এতটুকু প্রমান"
+"করে যে প্রাপক চিঠিটি"
+"পেয়েছেন। কিন্তু তিনি ঠিকমতো"
+"পড়তে পেরেছেন কিনা অথবা তিনি"
+"পড়ে বুঝতে পেরেছেন কিনা তার"
+"কোনো প্রমান নেই।"
+
+#: program/localization/bn_BD/labels.inc:name
+msgid "Display Name"
+msgstr "নাম"
+
+#: program/localization/bn_BD/labels.inc:firstname
+msgid "First Name"
+msgstr "নামের প্রথমাংশ"
+
+#: program/localization/bn_BD/labels.inc:surname
+msgid "Last Name"
+msgstr "নামের শেষাংশ"
+
+#: program/localization/bn_BD/labels.inc:email
+msgid "Email"
+msgstr "ই-মেইল/চিঠি"
+
+#: program/localization/bn_BD/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "নতুন ঠিকানা ঢুকান"
+
+#: program/localization/bn_BD/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "একটা ঠিকানা বদলান"
+
+#: program/localization/bn_BD/labels.inc:edit
+msgid "Edit"
+msgstr "বদলান"
+
+#: program/localization/bn_BD/labels.inc:cancel
+msgid "Cancel"
+msgstr "বাতিল"
+
+#: program/localization/bn_BD/labels.inc:save
+msgid "Save"
+msgstr "জমা দিন"
+
+#: program/localization/bn_BD/labels.inc:delete
+msgid "Delete"
+msgstr "ফেলে দিন"
+
+#: program/localization/bn_BD/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "একটা নতুন ঠিকানার কার্ড"
+"বানান"
+
+#: program/localization/bn_BD/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "বেছে নেওয়া ঠিকানা গুলো ফেলে"
+"দিন"
+
+#: program/localization/bn_BD/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "চিঠি পাঠাবেন কার কাছে?"
+
+#: program/localization/bn_BD/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "$count ঠিকানার মধ্যে $from থেকে $to টা"
+
+#: program/localization/bn_BD/labels.inc:print
+msgid "Print"
+msgstr "প্রিন্ট করুন"
+
+#: program/localization/bn_BD/labels.inc:export
+msgid "Export"
+msgstr "রপ্তানি করুন"
+
+#: program/localization/bn_BD/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "রপ্তানি করুন vCard আকারে"
+
+#: program/localization/bn_BD/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "আগের গুলো দেখান"
+
+#: program/localization/bn_BD/labels.inc:firstpage
+msgid "Show first page"
+msgstr "প্রথম গুলো দেখান"
+
+#: program/localization/bn_BD/labels.inc:nextpage
+msgid "Show next page"
+msgstr "পরের গুলো দেখান"
+
+#: program/localization/bn_BD/labels.inc:lastpage
+msgid "Show last page"
+msgstr "শেষের গুলো দেখান"
+
+#: program/localization/bn_BD/labels.inc:groups
+msgid "Groups"
+msgstr "গ্রুপ"
+
+#: program/localization/bn_BD/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "নিজের ঠিকানা"
+
+#: program/localization/bn_BD/labels.inc:import
+msgid "Import"
+msgstr "আমদানি করুন"
+
+#: program/localization/bn_BD/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "ঠিকানা আমদানি করুন"
+
+#: program/localization/bn_BD/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "ফাইলের থেকে ঠিকানা আমদানি"
+"করুন"
+
+#: program/localization/bn_BD/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "পুরো ঠিকানার বইটি খালি করে"
+"নতুন ঠিকানা গুলো ভরুন"
+
+#: program/localization/bn_BD/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "আপনি অন্য কোনো ঠিকানার বই"
+"(address book) আমাদের এখানে তুলতে"
+"পারেন। <br/>আমরা বর্তমানে <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> আকারে"
+"খালি ঠিকানা তুলতে পারি।"
+
+#: program/localization/bn_BD/labels.inc:done
+msgid "Done"
+msgstr "শেষ"
+
+#: program/localization/bn_BD/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "খুটিনাটি"
+
+#: program/localization/bn_BD/labels.inc:preferences
+msgid "Preferences"
+msgstr "পছন্দ"
+
+#: program/localization/bn_BD/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "গ্রাহক পছন্দ"
+
+#: program/localization/bn_BD/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "গ্রাহক পছন্দ বদলান"
+
+#: program/localization/bn_BD/labels.inc:identities
+msgid "Identities"
+msgstr "পরিচিতি"
+
+#: program/localization/bn_BD/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "এই অ্যাকউন্টের \"পরচিতি\""
+"বদলান"
+
+#: program/localization/bn_BD/labels.inc:newidentity
+msgid "New identity"
+msgstr "নতুন পরিচিতি"
+
+#: program/localization/bn_BD/labels.inc:newitem
+msgid "New item"
+msgstr "নতুন জিনিষ"
+
+#: program/localization/bn_BD/labels.inc:edititem
+msgid "Edit item"
+msgstr "জিনিষ বদলান"
+
+#: program/localization/bn_BD/labels.inc:setdefault
+msgid "Set default"
+msgstr "এইটাই আসল"
+
+#: program/localization/bn_BD/labels.inc:autodetect
+msgid "Auto"
+msgstr "কম্পুটার নিজেনিজি বেছে নেবে"
+
+#: program/localization/bn_BD/labels.inc:language
+msgid "Language"
+msgstr "ভাষা"
+
+#: program/localization/bn_BD/labels.inc:timezone
+msgid "Time zone"
+msgstr "সময়ভিত্তিক এলাকা"
+
+#: program/localization/bn_BD/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "প্রতি পৃষ্ঠায় লাইন সংখ্যা"
+
+#: program/localization/bn_BD/labels.inc:signature
+msgid "Signature"
+msgstr "স্বাক্ষর"
+
+#: program/localization/bn_BD/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Daylight saving time"
+
+#: program/localization/bn_BD/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "HTML এ মেইল/চিঠি লিখুন"
+
+#: program/localization/bn_BD/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML এ স্বাক্ষর"
+
+#: program/localization/bn_BD/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "ছোটোকরে দেখার জায়গা"
+
+#: program/localization/bn_BD/labels.inc:skin
+msgid "Interface skin"
+msgstr "মেইলবক্স এর পুরোটার চেহারা"
+
+#: program/localization/bn_BD/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "বেরহবার সময় ডাস্টবিন"
+"অটোমেটিক খালি হবে"
+
+#: program/localization/bn_BD/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "বেরহবার সময় প্রধান বাক্স"
+"অটোমেটিক টাইট হবে"
+
+#: program/localization/bn_BD/labels.inc:uisettings
+msgid "User Interface"
+msgstr "কম্পুটারের চেহারা"
+
+#: program/localization/bn_BD/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "সারভার এর খুটিনাটি"
+
+#: program/localization/bn_BD/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "মেইলবক্স দেখার কায়দা"
+
+#: program/localization/bn_BD/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "প্রেরক নোটিশ পাঠালে কি করা"
+"হবে?"
+
+#: program/localization/bn_BD/labels.inc:askuser
+msgid "ask me"
+msgstr "আমি গ্রাহক, আমাকে জিজ্ঞাসা"
+"করুন"
+
+#: program/localization/bn_BD/labels.inc:autosend
+msgid "send receipt"
+msgstr "কম্পুটার নিজেনিজি ফিরতি"
+"নোটিশ পাঠায় দেবে"
+
+#: program/localization/bn_BD/labels.inc:ignore
+msgid "ignore"
+msgstr "পাত্তা দেওয়া হবেনা"
+
+#: program/localization/bn_BD/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "ফেলে দেবার সময় মেইল/চিঠি পড়া"
+"হয়ে গেছে হিসাবে ধরে নেওয়া"
+"হবে"
+
+#: program/localization/bn_BD/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "একেবারেই ফেলে না দিয়ে"
+"মেইল/চিঠি গুলোকে দাগিয়ে"
+"রাখুন ফেলে দেবার জন্যে"
+
+#: program/localization/bn_BD/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "ফেলে দেওয়া মেইল/চিঠি"
+"দেখানোর দরকার নেই"
+
+#: program/localization/bn_BD/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "মেইলে অন্য ওয়েবসাইট থেকে"
+"আসা ছবি থাকলে তা দেখা যাবে"
+
+#: program/localization/bn_BD/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "পরিচিত প্রেরক এর ক্ষেত্রে"
+
+#: program/localization/bn_BD/labels.inc:always
+msgid "always"
+msgstr "সবসময়"
+
+#: program/localization/bn_BD/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "মেইলের সাথে জোড়া লাগানো ছবি,"
+"মেইলের নিচে দেখা যাবে"
+
+#: program/localization/bn_BD/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "নিজেনিজি খসড়া জমা হয়ে যাবে"
+
+#: program/localization/bn_BD/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "প্রতি $n মিনিটে"
+
+#: program/localization/bn_BD/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "নতুন মেইল/চিঠি এসেছে কিনা তা"
+"দেখা হবে,"
+
+#: program/localization/bn_BD/labels.inc:never
+msgid "never"
+msgstr "কখোনোই না"
+
+#: program/localization/bn_BD/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "মেইল/চিঠি দেখা যাচ্ছে"
+
+#: program/localization/bn_BD/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "মেইল/চিঠি লেখা হচ্ছে"
+
+#: program/localization/bn_BD/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "জুড়ে দেওয়া জিনিষের নাম"
+
+#: program/localization/bn_BD/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Full RFC 2231 (Thunderbird)"
+
+#: program/localization/bn_BD/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/bn_BD/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Full RFC 2047 (other)"
+
+#: program/localization/bn_BD/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "জটিল বিষয়"
+
+#: program/localization/bn_BD/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "নতুন মেইল এলেই তা হাইলাইট"
+"হয়ে যাবে"
+
+#: program/localization/bn_BD/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "সবগুলো মেইলবক্সে নতুন চিঠি"
+"খোজা হবে"
+
+#: program/localization/bn_BD/labels.inc:folder
+msgid "Folder"
+msgstr "ফোল্ডার/মেইলবক্স"
+
+#: program/localization/bn_BD/labels.inc:foldername
+msgid "Folder name"
+msgstr "ফোল্ডার/মেইলবক্স এর নাম"
+
+#: program/localization/bn_BD/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "গ্রহনকারি"
+
+#: program/localization/bn_BD/labels.inc:messagecount
+msgid "Messages"
+msgstr "মেইল/চিঠি"
+
+#: program/localization/bn_BD/labels.inc:create
+msgid "Create"
+msgstr "প্রস্তুত করুন"
+
+#: program/localization/bn_BD/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "নতুন ফোল্ডার / মেইলবক্স"
+"প্রস্তুত করুন"
+
+#: program/localization/bn_BD/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "ফোল্ডার/মেইলবক্স গুলো কে"
+"গুছান"
+
+#: program/localization/bn_BD/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "বিশেষ ফোল্ডার/মেইলবক্স"
+
+#: program/localization/bn_BD/labels.inc:sortby
+msgid "Sort by"
+msgstr "সাজান"
+
+#: program/localization/bn_BD/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "কম থেকে বেশি হিসাবে সাজান"
+
+#: program/localization/bn_BD/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "বেশি থেকে কম হিসাবে সাজান"
+
+#: program/localization/bn_BD/labels.inc:B
+msgid "B"
+msgstr "বাইট"
+
+#: program/localization/bn_BD/labels.inc:KB
+msgid "KB"
+msgstr "কিলোবাইট"
+
+#: program/localization/bn_BD/labels.inc:MB
+msgid "MB"
+msgstr "মেগাবাইট"
+
+#: program/localization/bn_BD/labels.inc:GB
+msgid "GB"
+msgstr "গিগাবাইট"

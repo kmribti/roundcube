@@ -1,0 +1,253 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/sq_AL/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: sq_AL\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/sq_AL/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Hyrja dështoi"
+
+#: program/localization/sq_AL/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Shfletuesi juaj nuk i pranon sheqerkat"
+
+#: program/localization/sq_AL/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Sesioni juaj është i pavlefshëm ose i ka kaluar afati"
+
+#: program/localization/sq_AL/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Lidhja me serverin IMAP dështoi"
+
+#: program/localization/sq_AL/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Nuk ka mesazhe në këtë kuti postare"
+
+#: program/localization/sq_AL/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Sesionin e mbyllët me sukses. Mirupafshim!"
+
+#: program/localization/sq_AL/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Kutia postare është bosh"
+
+#: program/localization/sq_AL/messages.inc:loading
+msgid "Loading..."
+msgstr "Po ngarkohet..."
+
+#: program/localization/sq_AL/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Po ngarkohen të dhëna..."
+
+#: program/localization/sq_AL/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Po shoh për mesazhe të reja..."
+
+#: program/localization/sq_AL/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Po dërgoj mesazhin..."
+
+#: program/localization/sq_AL/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Mesazhi u dërgua me sukses"
+
+#: program/localization/sq_AL/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Po ruaj mesazhin..."
+
+#: program/localization/sq_AL/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Mesazhi u ruajt te kutia Drafte"
+
+#: program/localization/sq_AL/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "U ruajt me sukses"
+
+#: program/localization/sq_AL/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Kontakti u shtua me sukses në librin e adresave"
+
+#: program/localization/sq_AL/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Këtë adresë e-mail e ka një kontakt tjetër"
+
+#: program/localization/sq_AL/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Për të mbrojtur fshehtësinë tuaj, imazhet e largëta të këtij mesazhi"
+"janë bllokuar."
+
+#: program/localization/sq_AL/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Ky është një mesazh i koduar dhe nuk mund te shfaqet. Më vjen keq!"
+
+#: program/localization/sq_AL/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Nuk ka kontakte"
+
+#: program/localization/sq_AL/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Kontakti që kërkoni nuk gjendet"
+
+#: program/localization/sq_AL/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Dërgimi i mesazhit dështoi"
+
+#: program/localization/sq_AL/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Pati nje problem gjatë ruajtjes"
+
+#: program/localization/sq_AL/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Nuk e lëviza dot mesazhin"
+
+#: program/localization/sq_AL/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Nuk e fshiva dot mesazhin"
+
+#: program/localization/sq_AL/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Me të vërtetë doni ti fshini kontaktet e zgjedhura?"
+
+#: program/localization/sq_AL/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Me të vërtetë doni ti fshini mesazhet e zgjedhura?"
+
+#: program/localization/sq_AL/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Me të vërtetë doni ta fshini këtë kuti?"
+
+#: program/localization/sq_AL/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Me të vërtetë doni ti fshini të gjitha mesazhet në këtë kuti?"
+
+#: program/localization/sq_AL/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Formulari nuk ishte i gjithi i plotësuar"
+
+#: program/localization/sq_AL/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Ju lutem jepni një adresë email të rregullt"
+
+#: program/localization/sq_AL/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Ju lutem jepni një emër"
+
+#: program/localization/sq_AL/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Ju lutem jepni nje madhësi për faqen"
+
+#: program/localization/sq_AL/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Ju lutem shënoni të paktën një marrës"
+
+#: program/localization/sq_AL/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Fusha e temës është bosh. Dëshironi të shënoni një temë tani?"
+
+#: program/localization/sq_AL/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Ta dërgoj mesazhin pa tekst?"
+
+#: program/localization/sq_AL/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Mesazhi nuk u dërgua. Doni ta hidhni poshtë mesazhin?"
+
+#: program/localization/sq_AL/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Ju lutem jepni një server ldap për të kërkuar"
+
+#: program/localization/sq_AL/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Nuk gjeta kontakte"
+
+#: program/localization/sq_AL/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Ju lutem jepni një adresë email ose një emër kontakti"
+
+#: program/localization/sq_AL/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "U gjetën $nr mesazhe"
+
+#: program/localization/sq_AL/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Kërkimi nuk gjeti gjë"
+
+#: program/localization/sq_AL/messages.inc:searching
+msgid "Searching..."
+msgstr "Po kërkoj..."
+
+#: program/localization/sq_AL/messages.inc:checking
+msgid "Checking..."
+msgstr "Po kontrolloj..."
+
+#: program/localization/sq_AL/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Nuk u gjetën gabime"
+
+#: program/localization/sq_AL/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Kutia u fshi me sukses"
+
+#: program/localization/sq_AL/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "U fshi me sukses"
+
+#: program/localization/sq_AL/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Po i heq formatimin mesazhit..."
+
+#: program/localization/sq_AL/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Nuk marr dot mesazhe nga serveri"
+
+#: program/localization/sq_AL/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Ngarkimi i skedarit dështoi"
+
+#: program/localization/sq_AL/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Skedari i ngarkuar e kalon madhësinë kufi prej $size"
+
+#: program/localization/sq_AL/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "U kopjuan me sukses $nr adresa"
+
+#: program/localization/sq_AL/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Nuk munda të kopjoj adresat"
+
+#: program/localization/sq_AL/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Ky burim adrese është vetëm i lexueshëm"
+
+#: program/localization/sq_AL/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Nuk e ruajta dot adresën e kontaktit"
+
+#: program/localization/sq_AL/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Po lëviz mesazhin..."
+
+#: program/localization/sq_AL/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "U dërgua me sukses një njoftim leximi"
+
+#: program/localization/sq_AL/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Nuk mund të dërgohet njoftimi"
+
+#: program/localization/sq_AL/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Ju nuk mund ta fshini këtë identitet sepse nuk ju ka mbetur tjetër."

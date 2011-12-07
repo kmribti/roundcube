@@ -1,0 +1,683 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/sq_AL/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: sq_AL\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/sq_AL/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Mirëseerdhe te $product"
+
+#: program/localization/sq_AL/labels.inc:username
+msgid "Username"
+msgstr "Përdoruesi"
+
+#: program/localization/sq_AL/labels.inc:password
+msgid "Password"
+msgstr "Fjalëkalimi"
+
+#: program/localization/sq_AL/labels.inc:server
+msgid "Server"
+msgstr "Serveri"
+
+#: program/localization/sq_AL/labels.inc:login
+msgid "Login"
+msgstr "Hyr"
+
+#: program/localization/sq_AL/labels.inc:logout
+msgid "Logout"
+msgstr "Dil"
+
+#: program/localization/sq_AL/labels.inc:mail
+msgid "Mail"
+msgstr "Mesazhet"
+
+#: program/localization/sq_AL/labels.inc:settings
+msgid "Settings"
+msgstr "Konfigurimi Personal"
+
+#: program/localization/sq_AL/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Libri i Adresave"
+
+#: program/localization/sq_AL/labels.inc:inbox
+msgid "Inbox"
+msgstr "Ardhjet"
+
+#: program/localization/sq_AL/labels.inc:drafts
+msgid "Drafts"
+msgstr "Drafte"
+
+#: program/localization/sq_AL/labels.inc:sent
+msgid "Sent"
+msgstr "Dërguar"
+
+#: program/localization/sq_AL/labels.inc:trash
+msgid "Trash"
+msgstr "Fshirë"
+
+#: program/localization/sq_AL/labels.inc:junk
+msgid "Junk"
+msgstr "Reklama"
+
+#: program/localization/sq_AL/labels.inc:subject
+msgid "Subject"
+msgstr "Tema"
+
+#: program/localization/sq_AL/labels.inc:from
+msgid "From"
+msgstr "Dërguesi"
+
+#: program/localization/sq_AL/labels.inc:to
+msgid "To"
+msgstr "Marrësi"
+
+#: program/localization/sq_AL/labels.inc:cc
+msgid "Cc"
+msgstr "Kopje"
+
+#: program/localization/sq_AL/labels.inc:bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#: program/localization/sq_AL/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Reply-To"
+
+#: program/localization/sq_AL/labels.inc:date
+msgid "Date"
+msgstr "Data"
+
+#: program/localization/sq_AL/labels.inc:size
+msgid "Size"
+msgstr "Madhësia"
+
+#: program/localization/sq_AL/labels.inc:priority
+msgid "Priority"
+msgstr "Përparësia"
+
+#: program/localization/sq_AL/labels.inc:organization
+msgid "Company"
+msgstr "Organizata"
+
+#: program/localization/sq_AL/labels.inc:reply-to
+msgid "reply-to"
+msgstr "Reply-To"
+
+#: program/localization/sq_AL/labels.inc:mailboxlist
+#: program/localization/sq_AL/labels.inc:folders
+msgid "Folders"
+msgstr "Kutitë"
+
+#: program/localization/sq_AL/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Mesazhet $from në $to nga $count"
+
+#: program/localization/sq_AL/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Mesazhi $nr nga $count"
+
+#: program/localization/sq_AL/labels.inc:moveto
+msgid "Move to..."
+msgstr "ço te..."
+
+#: program/localization/sq_AL/labels.inc:download
+msgid "Download"
+msgstr "shkarko"
+
+#: program/localization/sq_AL/labels.inc:filename
+msgid "File name"
+msgstr "Emër skedari"
+
+#: program/localization/sq_AL/labels.inc:filesize
+msgid "File size"
+msgstr "Madhësi skedari"
+
+#: program/localization/sq_AL/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Shfaq HTML"
+
+#: program/localization/sq_AL/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Mesazh HTML"
+
+#: program/localization/sq_AL/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Data të këndshme"
+
+#: program/localization/sq_AL/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Shto në librin e adresave"
+
+#: program/localization/sq_AL/labels.inc:sun
+msgid "Sun"
+msgstr "Dje"
+
+#: program/localization/sq_AL/labels.inc:mon
+msgid "Mon"
+msgstr "Hën"
+
+#: program/localization/sq_AL/labels.inc:tue
+msgid "Tue"
+msgstr "Mar"
+
+#: program/localization/sq_AL/labels.inc:wed
+msgid "Wed"
+msgstr "Mër"
+
+#: program/localization/sq_AL/labels.inc:thu
+msgid "Thu"
+msgstr "Enj"
+
+#: program/localization/sq_AL/labels.inc:fri
+msgid "Fri"
+msgstr "Pre"
+
+#: program/localization/sq_AL/labels.inc:sat
+msgid "Sat"
+msgstr "Sht"
+
+#: program/localization/sq_AL/labels.inc:sunday
+msgid "Sunday"
+msgstr "e djelë"
+
+#: program/localization/sq_AL/labels.inc:monday
+msgid "Monday"
+msgstr "e hënë"
+
+#: program/localization/sq_AL/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "e martë"
+
+#: program/localization/sq_AL/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "e mërkurë"
+
+#: program/localization/sq_AL/labels.inc:thursday
+msgid "Thursday"
+msgstr "e enjte"
+
+#: program/localization/sq_AL/labels.inc:friday
+msgid "Friday"
+msgstr "e premte"
+
+#: program/localization/sq_AL/labels.inc:saturday
+msgid "Saturday"
+msgstr "e shtunë"
+
+#: program/localization/sq_AL/labels.inc:today
+msgid "Today"
+msgstr "sot"
+
+#: program/localization/sq_AL/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Shiko për mesazhe të reja"
+
+#: program/localization/sq_AL/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Krijo një mesazh të ri"
+
+#: program/localization/sq_AL/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Ktheji përgjigje mesazhit"
+
+#: program/localization/sq_AL/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Ktheji përgjigje dërguesit dhe të gjithë marrësve"
+
+#: program/localization/sq_AL/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Pasoje mesazhin"
+
+#: program/localization/sq_AL/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Fshije mesazhin"
+
+#: program/localization/sq_AL/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Hidhe mesazhin në kosh"
+
+#: program/localization/sq_AL/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Shtype këtë mesazh"
+
+#: program/localization/sq_AL/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Shfaq mesazhin e mëparshëm"
+
+#: program/localization/sq_AL/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "Shfaq grupin e mëparshëm të mesazheve"
+
+#: program/localization/sq_AL/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Shfaq mesazhin e parë"
+
+#: program/localization/sq_AL/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "Shfaq grupin e parë të mesazheve"
+
+#: program/localization/sq_AL/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Shfaq mesazhin pasardhës"
+
+#: program/localization/sq_AL/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "Shfaq grupin tjetër të mesazheve"
+
+#: program/localization/sq_AL/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Shfaq mesazhin e fundit"
+
+#: program/localization/sq_AL/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "Shfaq grupin e fundit të mesazheve"
+
+#: program/localization/sq_AL/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Kthehu te lista e mesazheve"
+
+#: program/localization/sq_AL/labels.inc:viewsource
+msgid "Show source"
+msgstr "Shfaq tekstin"
+
+#: program/localization/sq_AL/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Shëno mesazhet"
+
+#: program/localization/sq_AL/labels.inc:markread
+msgid "As read"
+msgstr "Si të lexuara"
+
+#: program/localization/sq_AL/labels.inc:markunread
+msgid "As unread"
+msgstr "Si të palexuara"
+
+#: program/localization/sq_AL/labels.inc:select
+msgid "Select"
+msgstr "Zgjidh"
+
+#: program/localization/sq_AL/labels.inc:all
+msgid "All"
+msgstr "Të gjitha"
+
+#: program/localization/sq_AL/labels.inc:none
+msgid "None"
+msgstr "Asnjë"
+
+#: program/localization/sq_AL/labels.inc:unread
+msgid "Unread"
+msgstr "Palexuar"
+
+#: program/localization/sq_AL/labels.inc:compact
+msgid "Compact"
+msgstr "Zvogëlo"
+
+#: program/localization/sq_AL/labels.inc:empty
+msgid "Empty"
+msgstr "Boshatis"
+
+#: program/localization/sq_AL/labels.inc:purge
+msgid "purge"
+msgstr "Pastro"
+
+#: program/localization/sq_AL/labels.inc:quota
+msgid "Disk usage"
+msgstr "Përdorimi i diskut"
+
+#: program/localization/sq_AL/labels.inc:unknown
+msgid "unknown"
+msgstr "i panjohur"
+
+#: program/localization/sq_AL/labels.inc:unlimited
+msgid "unlimited"
+msgstr "i pakufizuar"
+
+#: program/localization/sq_AL/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Kërkim i shpejtë"
+
+#: program/localization/sq_AL/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Pastro kërkimin"
+
+#: program/localization/sq_AL/labels.inc:compose
+msgid "Compose a message"
+msgstr "Shkruaj një mesazh"
+
+#: program/localization/sq_AL/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Ruaje si draft"
+
+#: program/localization/sq_AL/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Dërgoje mesazhin tani"
+
+#: program/localization/sq_AL/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Bashkangjit një skedar"
+
+#: program/localization/sq_AL/labels.inc:charset
+msgid "Charset"
+msgstr "Bashkësi shkronjash"
+
+#: program/localization/sq_AL/labels.inc:editortype
+msgid "Editor type"
+msgstr "Lloj editori"
+
+#: program/localization/sq_AL/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Njoftim marrje"
+
+#: program/localization/sq_AL/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Kontroll gabimesh"
+
+#: program/localization/sq_AL/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Vazhdo editimin"
+
+#: program/localization/sq_AL/labels.inc:revertto
+msgid "Revert to"
+msgstr "Ktheje te"
+
+#: program/localization/sq_AL/labels.inc:attachments
+msgid "Attachments"
+msgstr "Bashkangjitjet"
+
+#: program/localization/sq_AL/labels.inc:upload
+msgid "Upload"
+msgstr "Ngarko"
+
+#: program/localization/sq_AL/labels.inc:close
+msgid "Close"
+msgstr "Mbyll"
+
+#: program/localization/sq_AL/labels.inc:low
+msgid "Low"
+msgstr "I ulët"
+
+#: program/localization/sq_AL/labels.inc:lowest
+msgid "Lowest"
+msgstr "Më i ulëti"
+
+#: program/localization/sq_AL/labels.inc:normal
+msgid "Normal"
+msgstr "Normal"
+
+#: program/localization/sq_AL/labels.inc:high
+msgid "High"
+msgstr "I lartë"
+
+#: program/localization/sq_AL/labels.inc:highest
+msgid "Highest"
+msgstr "Më i larti"
+
+#: program/localization/sq_AL/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(pa subjekt)"
+
+#: program/localization/sq_AL/labels.inc:showimages
+msgid "Display images"
+msgstr "Shfaq imazhet"
+
+#: program/localization/sq_AL/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/sq_AL/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "TEXT"
+
+#: program/localization/sq_AL/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Shto Cc"
+
+#: program/localization/sq_AL/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Shto Bcc"
+
+#: program/localization/sq_AL/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Shto Reply-To"
+
+#: program/localization/sq_AL/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Dërguesi i këtij mesazhi ka kërkuar që të njoftohet kur ju të lexoni"
+"këtë mesazh. Dëshironi ta njoftoni dërguesin?"
+
+#: program/localization/sq_AL/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Njoftim Leximi"
+
+#: program/localization/sq_AL/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Ky është një njoftim leximi për mesazhin tuaj"
+
+#: program/localization/sq_AL/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Shënim: Ky njoftim tregon vetëm që mesazhi u shfaq në kompjuterin e"
+"marrësit. Nuk ka siguri që marrësi e ka lexuar ose e ka kuptuar"
+"përmbajtjen e mesazhit."
+
+#: program/localization/sq_AL/labels.inc:name
+msgid "Display Name"
+msgstr "Emri që thirret"
+
+#: program/localization/sq_AL/labels.inc:firstname
+msgid "First Name"
+msgstr "Emri"
+
+#: program/localization/sq_AL/labels.inc:surname
+msgid "Last Name"
+msgstr "Mbiemri"
+
+#: program/localization/sq_AL/labels.inc:email
+msgid "Email"
+msgstr "E-Mail"
+
+#: program/localization/sq_AL/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Shto një kontakt të ri"
+
+#: program/localization/sq_AL/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Ndrysho kontaktin"
+
+#: program/localization/sq_AL/labels.inc:edit
+msgid "Edit"
+msgstr "Ndrysho"
+
+#: program/localization/sq_AL/labels.inc:cancel
+msgid "Cancel"
+msgstr "Anullo"
+
+#: program/localization/sq_AL/labels.inc:save
+msgid "Save"
+msgstr "Ruaj"
+
+#: program/localization/sq_AL/labels.inc:delete
+msgid "Delete"
+msgstr "Fshi"
+
+#: program/localization/sq_AL/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Krijo nje kartë të re kontakti"
+
+#: program/localization/sq_AL/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Fshi kontaktet e zgjedhura"
+
+#: program/localization/sq_AL/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Shkruaj email për"
+
+#: program/localization/sq_AL/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Kontaktet $from në $to nga $count"
+
+#: program/localization/sq_AL/labels.inc:print
+msgid "Print"
+msgstr "Shtyp"
+
+#: program/localization/sq_AL/labels.inc:export
+msgid "Export"
+msgstr "Eksporto"
+
+#: program/localization/sq_AL/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Shfaq grupin e mëparshëm"
+
+#: program/localization/sq_AL/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Shfaq grupin e parë"
+
+#: program/localization/sq_AL/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Shfaq grupin tjetër"
+
+#: program/localization/sq_AL/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Shfaq grupin e fundit"
+
+#: program/localization/sq_AL/labels.inc:groups
+msgid "Groups"
+msgstr "Grupet"
+
+#: program/localization/sq_AL/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Adresat Personale"
+
+#: program/localization/sq_AL/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Konfigurimet për"
+
+#: program/localization/sq_AL/labels.inc:preferences
+msgid "Preferences"
+msgstr "Preferencat"
+
+#: program/localization/sq_AL/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Preferencat e përdoruesit"
+
+#: program/localization/sq_AL/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Ndrysho preferencat e përdoruesit"
+
+#: program/localization/sq_AL/labels.inc:identities
+msgid "Identities"
+msgstr "Identitetet"
+
+#: program/localization/sq_AL/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Manaxho identitetet per këtë llogari"
+
+#: program/localization/sq_AL/labels.inc:newidentity
+msgid "New identity"
+msgstr "Identitet i ri"
+
+#: program/localization/sq_AL/labels.inc:newitem
+msgid "New item"
+msgstr "Element i ri"
+
+#: program/localization/sq_AL/labels.inc:edititem
+msgid "Edit item"
+msgstr "Ndrysho element"
+
+#: program/localization/sq_AL/labels.inc:setdefault
+msgid "Set default"
+msgstr "Bëje identitet kryesor"
+
+#: program/localization/sq_AL/labels.inc:language
+msgid "Language"
+msgstr "Gjuha"
+
+#: program/localization/sq_AL/labels.inc:timezone
+msgid "Time zone"
+msgstr "Brezi orar"
+
+#: program/localization/sq_AL/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Rreshtat për faqe"
+
+#: program/localization/sq_AL/labels.inc:signature
+msgid "Signature"
+msgstr "Nënshkrim"
+
+#: program/localization/sq_AL/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Ndryshim ore"
+
+#: program/localization/sq_AL/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Shkruaj mesazhe HTML"
+
+#: program/localization/sq_AL/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "Nënshkrimi HTML"
+
+#: program/localization/sq_AL/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Shiko si duket"
+
+#: program/localization/sq_AL/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Ruaje automatikisht si draft"
+
+#: program/localization/sq_AL/labels.inc:never
+msgid "never"
+msgstr "kurrë"
+
+#: program/localization/sq_AL/labels.inc:folder
+msgid "Folder"
+msgstr "Kutia"
+
+#: program/localization/sq_AL/labels.inc:foldername
+msgid "Folder name"
+msgstr "Emër kutie"
+
+#: program/localization/sq_AL/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Regjistruar"
+
+#: program/localization/sq_AL/labels.inc:messagecount
+msgid "Messages"
+msgstr "Mesazhe"
+
+#: program/localization/sq_AL/labels.inc:create
+msgid "Create"
+msgstr "Krijo"
+
+#: program/localization/sq_AL/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Krijo kuti të re"
+
+#: program/localization/sq_AL/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Sistemo kutitë"
+
+#: program/localization/sq_AL/labels.inc:sortby
+msgid "Sort by"
+msgstr "Rradhit sipas"
+
+#: program/localization/sq_AL/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Rradhitje rritëse"
+
+#: program/localization/sq_AL/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Rradhitje zbritëse"

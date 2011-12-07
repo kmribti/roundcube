@@ -1,0 +1,1535 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/zh_TW/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: zh_TW\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/zh_TW/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "歡迎使用 $product"
+
+#: program/localization/zh_TW/labels.inc:username
+msgid "Username"
+msgstr "使用者名稱"
+
+#: program/localization/zh_TW/labels.inc:password
+msgid "Password"
+msgstr "使用者密碼"
+
+#: program/localization/zh_TW/labels.inc:server
+msgid "Server"
+msgstr "伺服器"
+
+#: program/localization/zh_TW/labels.inc:login
+msgid "Login"
+msgstr "登入"
+
+#: program/localization/zh_TW/labels.inc:logout
+msgid "Logout"
+msgstr "登出"
+
+#: program/localization/zh_TW/labels.inc:mail
+msgid "Mail"
+msgstr "電子郵件"
+
+#: program/localization/zh_TW/labels.inc:settings
+msgid "Settings"
+msgstr "個人設定"
+
+#: program/localization/zh_TW/labels.inc:addressbook
+msgid "Address Book"
+msgstr "通訊錄"
+
+#: program/localization/zh_TW/labels.inc:inbox
+msgid "Inbox"
+msgstr "收件匣"
+
+#: program/localization/zh_TW/labels.inc:drafts
+msgid "Drafts"
+msgstr "草稿匣"
+
+#: program/localization/zh_TW/labels.inc:sent
+msgid "Sent"
+msgstr "寄件備份"
+
+#: program/localization/zh_TW/labels.inc:trash
+msgid "Trash"
+msgstr "垃圾桶"
+
+#: program/localization/zh_TW/labels.inc:junk
+msgid "Junk"
+msgstr "垃圾郵件"
+
+#: program/localization/zh_TW/labels.inc:subject
+msgid "Subject"
+msgstr "主旨"
+
+#: program/localization/zh_TW/labels.inc:from
+msgid "From"
+msgstr "寄件者"
+
+#: program/localization/zh_TW/labels.inc:to
+msgid "To"
+msgstr "收件者"
+
+#: program/localization/zh_TW/labels.inc:cc
+msgid "Cc"
+msgstr "副本"
+
+#: program/localization/zh_TW/labels.inc:bcc
+msgid "Bcc"
+msgstr "密件副本"
+
+#: program/localization/zh_TW/labels.inc:replyto
+msgid "Reply-To"
+msgstr "回覆至"
+
+#: program/localization/zh_TW/labels.inc:followupto
+msgid "Followup-To"
+msgstr "信件跟隨至"
+
+#: program/localization/zh_TW/labels.inc:date
+msgid "Date"
+msgstr "日期"
+
+#: program/localization/zh_TW/labels.inc:size
+msgid "Size"
+msgstr "大小"
+
+#: program/localization/zh_TW/labels.inc:priority
+msgid "Priority"
+msgstr "優先順序"
+
+#: program/localization/zh_TW/labels.inc:organization
+msgid "Company"
+msgstr "組織"
+
+#: program/localization/zh_TW/labels.inc:readstatus
+msgid "Read status"
+msgstr "讀信狀態"
+
+#: program/localization/zh_TW/labels.inc:mailboxlist
+#: program/localization/zh_TW/labels.inc:folders
+msgid "Folders"
+msgstr "資料夾"
+
+#: program/localization/zh_TW/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "郵件 $from 至 $to，共有 $count 封郵件"
+
+#: program/localization/zh_TW/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "郵件串 $from 至 $to，共有 $count 個"
+
+#: program/localization/zh_TW/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "第 $nr 封郵件，共有 $count 封"
+
+#: program/localization/zh_TW/labels.inc:copy
+msgid "Copy"
+msgstr "複製"
+
+#: program/localization/zh_TW/labels.inc:move
+msgid "Move"
+msgstr "移動"
+
+#: program/localization/zh_TW/labels.inc:moveto
+msgid "Move to..."
+msgstr "移至..."
+
+#: program/localization/zh_TW/labels.inc:download
+msgid "Download"
+msgstr "下載"
+
+#: program/localization/zh_TW/labels.inc:filename
+msgid "File name"
+msgstr "檔案名稱"
+
+#: program/localization/zh_TW/labels.inc:filesize
+msgid "File size"
+msgstr "檔案大小"
+
+#: program/localization/zh_TW/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "新增至通訊錄"
+
+#: program/localization/zh_TW/labels.inc:sun
+msgid "Sun"
+msgstr "週日"
+
+#: program/localization/zh_TW/labels.inc:mon
+msgid "Mon"
+msgstr "週一"
+
+#: program/localization/zh_TW/labels.inc:tue
+msgid "Tue"
+msgstr "週二"
+
+#: program/localization/zh_TW/labels.inc:wed
+msgid "Wed"
+msgstr "週三"
+
+#: program/localization/zh_TW/labels.inc:thu
+msgid "Thu"
+msgstr "週四"
+
+#: program/localization/zh_TW/labels.inc:fri
+msgid "Fri"
+msgstr "週五"
+
+#: program/localization/zh_TW/labels.inc:sat
+msgid "Sat"
+msgstr "週六"
+
+#: program/localization/zh_TW/labels.inc:sunday
+msgid "Sunday"
+msgstr "星期日"
+
+#: program/localization/zh_TW/labels.inc:monday
+msgid "Monday"
+msgstr "星期一"
+
+#: program/localization/zh_TW/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "星期二"
+
+#: program/localization/zh_TW/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "星期三"
+
+#: program/localization/zh_TW/labels.inc:thursday
+msgid "Thursday"
+msgstr "星期四"
+
+#: program/localization/zh_TW/labels.inc:friday
+msgid "Friday"
+msgstr "星期五"
+
+#: program/localization/zh_TW/labels.inc:saturday
+msgid "Saturday"
+msgstr "星期六"
+
+#: program/localization/zh_TW/labels.inc:jan
+msgid "Jan"
+msgstr "一"
+
+#: program/localization/zh_TW/labels.inc:feb
+msgid "Feb"
+msgstr "二"
+
+#: program/localization/zh_TW/labels.inc:mar
+msgid "Mar"
+msgstr "三"
+
+#: program/localization/zh_TW/labels.inc:apr
+msgid "Apr"
+msgstr "四"
+
+#: program/localization/zh_TW/labels.inc:may
+#: program/localization/zh_TW/labels.inc:longmay
+msgid "May"
+msgstr "五月"
+
+#: program/localization/zh_TW/labels.inc:jun
+msgid "Jun"
+msgstr "六"
+
+#: program/localization/zh_TW/labels.inc:jul
+msgid "Jul"
+msgstr "七"
+
+#: program/localization/zh_TW/labels.inc:aug
+msgid "Aug"
+msgstr "八"
+
+#: program/localization/zh_TW/labels.inc:sep
+msgid "Sep"
+msgstr "九"
+
+#: program/localization/zh_TW/labels.inc:oct
+msgid "Oct"
+msgstr "十"
+
+#: program/localization/zh_TW/labels.inc:nov
+msgid "Nov"
+msgstr "十一"
+
+#: program/localization/zh_TW/labels.inc:dec
+msgid "Dec"
+msgstr "十二"
+
+#: program/localization/zh_TW/labels.inc:longjan
+msgid "January"
+msgstr "一月"
+
+#: program/localization/zh_TW/labels.inc:longfeb
+msgid "February"
+msgstr "二月"
+
+#: program/localization/zh_TW/labels.inc:longmar
+msgid "March"
+msgstr "三月"
+
+#: program/localization/zh_TW/labels.inc:longapr
+msgid "April"
+msgstr "四月"
+
+#: program/localization/zh_TW/labels.inc:longjun
+msgid "June"
+msgstr "六月"
+
+#: program/localization/zh_TW/labels.inc:longjul
+msgid "July"
+msgstr "七月"
+
+#: program/localization/zh_TW/labels.inc:longaug
+msgid "August"
+msgstr "八月"
+
+#: program/localization/zh_TW/labels.inc:longsep
+msgid "September"
+msgstr "九月"
+
+#: program/localization/zh_TW/labels.inc:longoct
+msgid "October"
+msgstr "十月"
+
+#: program/localization/zh_TW/labels.inc:longnov
+msgid "November"
+msgstr "十一月"
+
+#: program/localization/zh_TW/labels.inc:longdec
+msgid "December"
+msgstr "十二月"
+
+#: program/localization/zh_TW/labels.inc:today
+msgid "Today"
+msgstr "今日"
+
+#: program/localization/zh_TW/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "檢查新郵件"
+
+#: program/localization/zh_TW/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "撰寫新郵件"
+
+#: program/localization/zh_TW/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "回覆"
+
+#: program/localization/zh_TW/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "全部回覆"
+
+#: program/localization/zh_TW/labels.inc:replyall
+msgid "Reply all"
+msgstr "全部回覆"
+
+#: program/localization/zh_TW/labels.inc:replylist
+msgid "Reply list"
+msgstr "清單回覆"
+
+#: program/localization/zh_TW/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "轉寄"
+
+#: program/localization/zh_TW/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "刪除郵件"
+
+#: program/localization/zh_TW/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "移動郵件至垃圾桶"
+
+#: program/localization/zh_TW/labels.inc:printmessage
+msgid "Print this message"
+msgstr "列印此郵件"
+
+#: program/localization/zh_TW/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "顯示上一封郵件"
+
+#: program/localization/zh_TW/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "顯示第一封郵件"
+
+#: program/localization/zh_TW/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "顯示下一封郵件"
+
+#: program/localization/zh_TW/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "顯示最後一封郵件"
+
+#: program/localization/zh_TW/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "回到郵件清單"
+
+#: program/localization/zh_TW/labels.inc:viewsource
+msgid "Show source"
+msgstr "顯示原始郵件"
+
+#: program/localization/zh_TW/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "標記選取的郵件為"
+
+#: program/localization/zh_TW/labels.inc:markread
+msgid "As read"
+msgstr "標示為已讀取"
+
+#: program/localization/zh_TW/labels.inc:markunread
+msgid "As unread"
+msgstr "標示為未讀取"
+
+#: program/localization/zh_TW/labels.inc:markflagged
+msgid "As flagged"
+msgstr "標上旗標"
+
+#: program/localization/zh_TW/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "移除旗標"
+
+#: program/localization/zh_TW/labels.inc:messageactions
+msgid "messageactions"
+msgstr "更多動作…"
+
+#: program/localization/zh_TW/labels.inc:select
+msgid "Select"
+msgstr "選取"
+
+#: program/localization/zh_TW/labels.inc:all
+msgid "All"
+msgstr "全部郵件"
+
+#: program/localization/zh_TW/labels.inc:none
+#: program/localization/zh_TW/labels.inc:nonesort
+msgid "None"
+msgstr "無"
+
+#: program/localization/zh_TW/labels.inc:currpage
+msgid "Current page"
+msgstr "目前頁面"
+
+#: program/localization/zh_TW/labels.inc:unread
+msgid "Unread"
+msgstr "未讀取的郵件"
+
+#: program/localization/zh_TW/labels.inc:flagged
+msgid "Flagged"
+msgstr "已加標記的郵件"
+
+#: program/localization/zh_TW/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "未回覆的郵件"
+
+#: program/localization/zh_TW/labels.inc:deleted
+msgid "Deleted"
+msgstr "已刪除的郵件"
+
+#: program/localization/zh_TW/labels.inc:invert
+msgid "Invert"
+msgstr "反選"
+
+#: program/localization/zh_TW/labels.inc:filter
+msgid "Filter"
+msgstr "篩選範圍"
+
+#: program/localization/zh_TW/labels.inc:list
+msgid "List"
+msgstr "清單"
+
+#: program/localization/zh_TW/labels.inc:threads
+msgid "Threads"
+msgstr "郵件串"
+
+#: program/localization/zh_TW/labels.inc:expand-all
+msgid "Expand All"
+msgstr "全部展開"
+
+#: program/localization/zh_TW/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "展開未讀取"
+
+#: program/localization/zh_TW/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "全部收起"
+
+#: program/localization/zh_TW/labels.inc:threaded
+msgid "Threaded"
+msgstr "郵件串"
+
+#: program/localization/zh_TW/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "只展開郵件串"
+
+#: program/localization/zh_TW/labels.inc:do_expand
+msgid "all threads"
+msgstr "所有郵件串"
+
+#: program/localization/zh_TW/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "只展開未讀訊息"
+
+#: program/localization/zh_TW/labels.inc:fromto
+msgid "From/To"
+msgstr "寄件者/收件者"
+
+#: program/localization/zh_TW/labels.inc:flag
+msgid "Flag"
+msgstr "旗標"
+
+#: program/localization/zh_TW/labels.inc:attachment
+msgid "Attachment"
+msgstr "附件"
+
+#: program/localization/zh_TW/labels.inc:sentdate
+msgid "Sent date"
+msgstr "寄送時間"
+
+#: program/localization/zh_TW/labels.inc:arrival
+msgid "Arrival date"
+msgstr "到達時間"
+
+#: program/localization/zh_TW/labels.inc:asc
+msgid "ascending"
+msgstr "遞增"
+
+#: program/localization/zh_TW/labels.inc:desc
+msgid "descending"
+msgstr "遞減"
+
+#: program/localization/zh_TW/labels.inc:listcolumns
+msgid "List columns"
+msgstr "列出欄位"
+
+#: program/localization/zh_TW/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "排序欄位"
+
+#: program/localization/zh_TW/labels.inc:listorder
+msgid "Sorting order"
+msgstr "排序順序"
+
+#: program/localization/zh_TW/labels.inc:listmode
+msgid "List view mode"
+msgstr "清單檢視模式"
+
+#: program/localization/zh_TW/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "資料夾動作..."
+
+#: program/localization/zh_TW/labels.inc:compact
+msgid "Compact"
+msgstr "壓縮"
+
+#: program/localization/zh_TW/labels.inc:empty
+msgid "Empty"
+msgstr "清空"
+
+#: program/localization/zh_TW/labels.inc:quota
+msgid "Disk usage"
+msgstr "磁碟使用量"
+
+#: program/localization/zh_TW/labels.inc:unknown
+msgid "unknown"
+msgstr "未知"
+
+#: program/localization/zh_TW/labels.inc:unlimited
+msgid "unlimited"
+msgstr "無限制"
+
+#: program/localization/zh_TW/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "快速搜尋"
+
+#: program/localization/zh_TW/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "重設搜尋"
+
+#: program/localization/zh_TW/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "修改搜尋"
+
+#: program/localization/zh_TW/labels.inc:msgtext
+msgid "Entire message"
+msgstr "整封郵件"
+
+#: program/localization/zh_TW/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "在新視窗開啟"
+
+#: program/localization/zh_TW/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "下載（.eml）"
+
+#: program/localization/zh_TW/labels.inc:compose
+msgid "Compose a message"
+msgstr "撰寫新郵件"
+
+#: program/localization/zh_TW/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "已新郵件編輯"
+
+#: program/localization/zh_TW/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "儲存成草稿"
+
+#: program/localization/zh_TW/labels.inc:sendmessage
+msgid "Send now"
+msgstr "立即寄出"
+
+#: program/localization/zh_TW/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "增加附件檔案"
+
+#: program/localization/zh_TW/labels.inc:charset
+msgid "Charset"
+msgstr "郵件編碼"
+
+#: program/localization/zh_TW/labels.inc:editortype
+msgid "Editor type"
+msgstr "編輯器類型"
+
+#: program/localization/zh_TW/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "要求讀取回條"
+
+#: program/localization/zh_TW/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "傳送狀態通知"
+
+#: program/localization/zh_TW/labels.inc:editidents
+msgid "Edit identities"
+msgstr "編輯身份資訊"
+
+#: program/localization/zh_TW/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "拼字檢查"
+
+#: program/localization/zh_TW/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "繼續編輯"
+
+#: program/localization/zh_TW/labels.inc:revertto
+msgid "Revert to"
+msgstr "恢復至"
+
+#: program/localization/zh_TW/labels.inc:attachments
+msgid "Attachments"
+msgstr "附加檔案"
+
+#: program/localization/zh_TW/labels.inc:upload
+msgid "Upload"
+msgstr "上傳"
+
+#: program/localization/zh_TW/labels.inc:close
+msgid "Close"
+msgstr "關閉"
+
+#: program/localization/zh_TW/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "郵件選項..."
+
+#: program/localization/zh_TW/labels.inc:low
+msgid "Low"
+msgstr "低"
+
+#: program/localization/zh_TW/labels.inc:lowest
+msgid "Lowest"
+msgstr "最低"
+
+#: program/localization/zh_TW/labels.inc:normal
+msgid "Normal"
+msgstr "普通"
+
+#: program/localization/zh_TW/labels.inc:high
+msgid "High"
+msgstr "高"
+
+#: program/localization/zh_TW/labels.inc:highest
+msgid "Highest"
+msgstr "最高"
+
+#: program/localization/zh_TW/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "（沒有主旨）"
+
+#: program/localization/zh_TW/labels.inc:showimages
+msgid "Display images"
+msgstr "顯示圖片"
+
+#: program/localization/zh_TW/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "永遠顯示來自 $sender 的圖片"
+
+#: program/localization/zh_TW/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/zh_TW/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "純文字"
+
+#: program/localization/zh_TW/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "儲存寄件備份至"
+
+#: program/localization/zh_TW/labels.inc:dontsave
+msgid "don't save"
+msgstr "不要儲存"
+
+#: program/localization/zh_TW/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "上傳檔案大小限制為 $size"
+
+#: program/localization/zh_TW/labels.inc:addcc
+msgid "Add Cc"
+msgstr "新增副本"
+
+#: program/localization/zh_TW/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "新增密件副本"
+
+#: program/localization/zh_TW/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "新增回覆地址"
+
+#: program/localization/zh_TW/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "新增 信件跟隨至"
+
+#: program/localization/zh_TW/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "此郵件的寄件者希望在你閱讀此郵件時受到通知。你想要通知寄件者嗎？"
+
+#: program/localization/zh_TW/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "郵件回條（已閱讀）"
+
+#: program/localization/zh_TW/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "這是你郵件的郵件回條"
+
+#: program/localization/zh_TW/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "注意：此回條只能確認收件者的電腦顯示了郵件，並不能保證收件者已閱讀或了解郵件的內容。"
+
+#: program/localization/zh_TW/labels.inc:name
+msgid "Display Name"
+msgstr "顯示名稱"
+
+#: program/localization/zh_TW/labels.inc:firstname
+msgid "First Name"
+msgstr "名稱"
+
+#: program/localization/zh_TW/labels.inc:surname
+msgid "Last Name"
+msgstr "姓氏"
+
+#: program/localization/zh_TW/labels.inc:middlename
+msgid "Middle Name"
+msgstr "中名"
+
+#: program/localization/zh_TW/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "名"
+
+#: program/localization/zh_TW/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "姓"
+
+#: program/localization/zh_TW/labels.inc:nickname
+msgid "Nickname"
+msgstr "暱稱"
+
+#: program/localization/zh_TW/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "職位"
+
+#: program/localization/zh_TW/labels.inc:department
+msgid "Department"
+msgstr "部門"
+
+#: program/localization/zh_TW/labels.inc:gender
+msgid "Gender"
+msgstr "性別"
+
+#: program/localization/zh_TW/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "姓"
+
+#: program/localization/zh_TW/labels.inc:email
+msgid "Email"
+msgstr "電子郵件"
+
+#: program/localization/zh_TW/labels.inc:phone
+msgid "Phone"
+msgstr "電話"
+
+#: program/localization/zh_TW/labels.inc:address
+msgid "Address"
+msgstr "地址"
+
+#: program/localization/zh_TW/labels.inc:street
+msgid "Street"
+msgstr "街道"
+
+#: program/localization/zh_TW/labels.inc:locality
+msgid "City"
+msgstr "城市"
+
+#: program/localization/zh_TW/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "郵遞區號"
+
+#: program/localization/zh_TW/labels.inc:region
+msgid "State/Province"
+msgstr "地區"
+
+#: program/localization/zh_TW/labels.inc:country
+msgid "Country"
+msgstr "國家"
+
+#: program/localization/zh_TW/labels.inc:birthday
+msgid "Birthday"
+msgstr "生日"
+
+#: program/localization/zh_TW/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "周年纪念日"
+
+#: program/localization/zh_TW/labels.inc:website
+msgid "Website"
+msgstr "網站"
+
+#: program/localization/zh_TW/labels.inc:instantmessenger
+msgid "IM"
+msgstr "即時通訊"
+
+#: program/localization/zh_TW/labels.inc:notes
+msgid "Notes"
+msgstr "註解"
+
+#: program/localization/zh_TW/labels.inc:male
+msgid "male"
+msgstr "男"
+
+#: program/localization/zh_TW/labels.inc:female
+msgid "female"
+msgstr "女"
+
+#: program/localization/zh_TW/labels.inc:manager
+msgid "Manager"
+msgstr "經理"
+
+#: program/localization/zh_TW/labels.inc:assistant
+#: program/localization/zh_TW/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "助理"
+
+#: program/localization/zh_TW/labels.inc:spouse
+msgid "Spouse"
+msgstr "配偶"
+
+#: program/localization/zh_TW/labels.inc:typehome
+msgid "Home"
+msgstr "住家"
+
+#: program/localization/zh_TW/labels.inc:typework
+msgid "Work"
+msgstr "工作"
+
+#: program/localization/zh_TW/labels.inc:typeother
+msgid "Other"
+msgstr "其他"
+
+#: program/localization/zh_TW/labels.inc:typemobile
+msgid "Mobile"
+msgstr "行動電話"
+
+#: program/localization/zh_TW/labels.inc:typemain
+msgid "Main"
+msgstr "主要"
+
+#: program/localization/zh_TW/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "住家傳真"
+
+#: program/localization/zh_TW/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "工作傳真"
+
+#: program/localization/zh_TW/labels.inc:typecar
+msgid "Car"
+msgstr "汽車"
+
+#: program/localization/zh_TW/labels.inc:typepager
+msgid "Pager"
+msgstr "傳呼機"
+
+#: program/localization/zh_TW/labels.inc:typevideo
+msgid "Video"
+msgstr "影片"
+
+#: program/localization/zh_TW/labels.inc:addfield
+msgid "Add field..."
+msgstr "新增欄位..."
+
+#: program/localization/zh_TW/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "新增聯絡人"
+
+#: program/localization/zh_TW/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "編輯聯絡人"
+
+#: program/localization/zh_TW/labels.inc:contacts
+msgid "Contacts"
+msgstr "聯絡人"
+
+#: program/localization/zh_TW/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "聯絡人資訊"
+
+#: program/localization/zh_TW/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "個人資訊"
+
+#: program/localization/zh_TW/labels.inc:edit
+msgid "Edit"
+msgstr "編輯"
+
+#: program/localization/zh_TW/labels.inc:cancel
+msgid "Cancel"
+msgstr "取消"
+
+#: program/localization/zh_TW/labels.inc:save
+msgid "Save"
+msgstr "儲存"
+
+#: program/localization/zh_TW/labels.inc:delete
+msgid "Delete"
+msgstr "刪除"
+
+#: program/localization/zh_TW/labels.inc:rename
+msgid "Rename"
+msgstr "重新命名"
+
+#: program/localization/zh_TW/labels.inc:addphoto
+msgid "Add"
+msgstr "新增"
+
+#: program/localization/zh_TW/labels.inc:replacephoto
+msgid "Replace"
+msgstr "取代"
+
+#: program/localization/zh_TW/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "建立新聯絡人資料"
+
+#: program/localization/zh_TW/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "刪除所選擇的聯絡人"
+
+#: program/localization/zh_TW/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "寄信至所選擇的聯絡人"
+
+#: program/localization/zh_TW/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "聯絡人 $from 至 $to，共有 $count 人"
+
+#: program/localization/zh_TW/labels.inc:print
+msgid "Print"
+msgstr "列印"
+
+#: program/localization/zh_TW/labels.inc:export
+msgid "Export"
+msgstr "匯出通訊錄"
+
+#: program/localization/zh_TW/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "匯出通訊錄為 vCard 格式"
+
+#: program/localization/zh_TW/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "新增聯絡人群組"
+
+#: program/localization/zh_TW/labels.inc:groupactions
+msgid "groupactions"
+msgstr "聯絡人群組的動作"
+
+#: program/localization/zh_TW/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "顯示上一頁"
+
+#: program/localization/zh_TW/labels.inc:firstpage
+msgid "Show first page"
+msgstr "顯示第一頁"
+
+#: program/localization/zh_TW/labels.inc:nextpage
+msgid "Show next page"
+msgstr "顯示下一頁"
+
+#: program/localization/zh_TW/labels.inc:lastpage
+msgid "Show last page"
+msgstr "顯示最後一頁"
+
+#: program/localization/zh_TW/labels.inc:group
+msgid "Group"
+msgstr "群組"
+
+#: program/localization/zh_TW/labels.inc:groups
+msgid "Groups"
+msgstr "群組"
+
+#: program/localization/zh_TW/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "個人住址"
+
+#: program/localization/zh_TW/labels.inc:import
+msgid "Import"
+msgstr "匯入通訊錄"
+
+#: program/localization/zh_TW/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "由檔案匯入通訊錄"
+
+#: program/localization/zh_TW/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "選擇你要匯入的檔案:"
+
+#: program/localization/zh_TW/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "以匯入的資料取代已存在的重複資料"
+
+#: program/localization/zh_TW/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "你可以由已存在的通訊錄上傳資料，<br/>目前系統僅支援匯入"
+"<a href=\"http://zh.wikipedia.org/wiki/VCard\" target=\"_blank\">vCard</a>"
+"格式的資料。"
+
+#: program/localization/zh_TW/labels.inc:done
+msgid "Done"
+msgstr "完成"
+
+#: program/localization/zh_TW/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "設定"
+
+#: program/localization/zh_TW/labels.inc:preferences
+msgid "Preferences"
+msgstr "設定"
+
+#: program/localization/zh_TW/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "個人設定"
+
+#: program/localization/zh_TW/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "編輯個人設定"
+
+#: program/localization/zh_TW/labels.inc:identities
+msgid "Identities"
+msgstr "身份資訊"
+
+#: program/localization/zh_TW/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "管理此帳號的身份資訊"
+
+#: program/localization/zh_TW/labels.inc:newidentity
+msgid "New identity"
+msgstr "新增身份資訊"
+
+#: program/localization/zh_TW/labels.inc:newitem
+msgid "New item"
+msgstr "新增項目"
+
+#: program/localization/zh_TW/labels.inc:edititem
+msgid "Edit item"
+msgstr "編輯項目"
+
+#: program/localization/zh_TW/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "使用 HTML 顯示"
+
+#: program/localization/zh_TW/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "預設編碼"
+
+#: program/localization/zh_TW/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML 郵件"
+
+#: program/localization/zh_TW/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "簡短日期顯示"
+
+#: program/localization/zh_TW/labels.inc:setdefault
+msgid "Set default"
+msgstr "設成預設i值"
+
+#: program/localization/zh_TW/labels.inc:autodetect
+msgid "Auto"
+msgstr "自動選擇"
+
+#: program/localization/zh_TW/labels.inc:language
+msgid "Language"
+msgstr "語言"
+
+#: program/localization/zh_TW/labels.inc:timezone
+msgid "Time zone"
+msgstr "時區"
+
+#: program/localization/zh_TW/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "每頁郵件數"
+
+#: program/localization/zh_TW/labels.inc:signature
+msgid "Signature"
+msgstr "簽名檔"
+
+#: program/localization/zh_TW/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "日光節約時間"
+
+#: program/localization/zh_TW/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "使用 HTML 撰寫郵件"
+
+#: program/localization/zh_TW/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "只有在回覆HTML信件時"
+
+#: program/localization/zh_TW/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML 簽名檔"
+
+#: program/localization/zh_TW/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "顯示預覽窗格"
+
+#: program/localization/zh_TW/labels.inc:skin
+msgid "Interface skin"
+msgstr "版面風格"
+
+#: program/localization/zh_TW/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "登出時清空垃圾桶"
+
+#: program/localization/zh_TW/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "登出時壓縮收件匣"
+
+#: program/localization/zh_TW/labels.inc:uisettings
+msgid "User Interface"
+msgstr "使用介面設定"
+
+#: program/localization/zh_TW/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "伺服器設定"
+
+#: program/localization/zh_TW/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "信箱顯示設定"
+
+#: program/localization/zh_TW/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "讀取回條回應"
+
+#: program/localization/zh_TW/labels.inc:askuser
+msgid "ask me"
+msgstr "詢問使用者"
+
+#: program/localization/zh_TW/labels.inc:autosend
+msgid "send receipt"
+msgstr "自動送出"
+
+#: program/localization/zh_TW/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "只對我的聯絡人傳送回條，其他詢問使用者"
+
+#: program/localization/zh_TW/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "只對我的聯絡人傳送回條，其他忽略"
+
+#: program/localization/zh_TW/labels.inc:ignore
+msgid "ignore"
+msgstr "完全忽略"
+
+#: program/localization/zh_TW/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "將刪除的郵件標示為已讀取"
+
+#: program/localization/zh_TW/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "刪除郵件時將原始郵件標示為已刪除"
+
+#: program/localization/zh_TW/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "不要顯示已刪除的郵件"
+
+#: program/localization/zh_TW/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "如果移到垃圾桶失敗，就直接刪除"
+
+#: program/localization/zh_TW/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "顯示遠端郵件內文中的圖片"
+
+#: program/localization/zh_TW/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "從已知的寄件者"
+
+#: program/localization/zh_TW/labels.inc:always
+msgid "always"
+msgstr "總是接受"
+
+#: program/localization/zh_TW/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "將附加檔案的圖片顯示於郵件最後"
+
+#: program/localization/zh_TW/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "自動儲存草稿"
+
+#: program/localization/zh_TW/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "每 $n 分鐘"
+
+#: program/localization/zh_TW/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "檢查新郵件的間隔時間"
+
+#: program/localization/zh_TW/labels.inc:never
+msgid "never"
+msgstr "絕對不要"
+
+#: program/localization/zh_TW/labels.inc:immediately
+msgid "immediately"
+msgstr "馬上"
+
+#: program/localization/zh_TW/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "郵件顯示設定"
+
+#: program/localization/zh_TW/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "撰寫郵件設定"
+
+#: program/localization/zh_TW/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "附加檔案名稱的編碼方式"
+
+#: program/localization/zh_TW/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "完全 RFC 2231 模式（Thunderbird）"
+
+#: program/localization/zh_TW/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 混合模式（MS Outlook）"
+
+#: program/localization/zh_TW/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "完全 RFC 2047 模式（其他）"
+
+#: program/localization/zh_TW/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "使用MIME編碼對於8位元字元"
+
+#: program/localization/zh_TW/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "顯示進階設定選項"
+
+#: program/localization/zh_TW/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "收到新郵件時使瀏覽器獲得焦點"
+
+#: program/localization/zh_TW/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "檢查所有資料夾中的新郵件"
+
+#: program/localization/zh_TW/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "郵件刪除／移動時顯示下一個郵件"
+
+#: program/localization/zh_TW/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "主要選項"
+
+#: program/localization/zh_TW/labels.inc:section
+msgid "Section"
+msgstr "分類"
+
+#: program/localization/zh_TW/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "管理"
+
+#: program/localization/zh_TW/labels.inc:newmessage
+msgid "New Message"
+msgstr "新郵件"
+
+#: program/localization/zh_TW/labels.inc:listoptions
+msgid "List Options"
+msgstr "排列選項"
+
+#: program/localization/zh_TW/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "簽名檔選項"
+
+#: program/localization/zh_TW/labels.inc:whenreplying
+msgid "When replying"
+msgstr "回覆時"
+
+#: program/localization/zh_TW/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "在原來的上方開始新訊息"
+
+#: program/localization/zh_TW/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "在原來的下方開始新訊息"
+
+#: program/localization/zh_TW/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "回覆時移除原有簽名檔"
+
+#: program/localization/zh_TW/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "自動附加簽名"
+
+#: program/localization/zh_TW/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "只有新訊息"
+
+#: program/localization/zh_TW/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "只有回覆或轉寄"
+
+#: program/localization/zh_TW/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "當回覆或轉寄時附上簽名檔"
+
+#: program/localization/zh_TW/labels.inc:belowquote
+msgid "below the quote"
+msgstr "引用的下方"
+
+#: program/localization/zh_TW/labels.inc:abovequote
+msgid "above the quote"
+msgstr "引用的上方"
+
+#: program/localization/zh_TW/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "插入簽名檔"
+
+#: program/localization/zh_TW/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "標示已預覽訊息為已讀取"
+
+#: program/localization/zh_TW/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "$n 秒之後"
+
+#: program/localization/zh_TW/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "永遠索取讀取回條"
+
+#: program/localization/zh_TW/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "總是要求傳送狀態通知"
+
+#: program/localization/zh_TW/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "將回覆與回覆信件放置於相同資料夾"
+
+#: program/localization/zh_TW/labels.inc:folder
+msgid "Folder"
+msgstr "資料夾"
+
+#: program/localization/zh_TW/labels.inc:foldername
+msgid "Folder name"
+msgstr "資料夾名稱"
+
+#: program/localization/zh_TW/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "顯示"
+
+#: program/localization/zh_TW/labels.inc:messagecount
+msgid "Messages"
+msgstr "郵件數目"
+
+#: program/localization/zh_TW/labels.inc:create
+msgid "Create"
+msgstr "建立"
+
+#: program/localization/zh_TW/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "建立新資料夾"
+
+#: program/localization/zh_TW/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "管理資料夾"
+
+#: program/localization/zh_TW/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "預設資料夾設定"
+
+#: program/localization/zh_TW/labels.inc:properties
+msgid "Properties"
+msgstr "屬性"
+
+#: program/localization/zh_TW/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "資料夾屬性"
+
+#: program/localization/zh_TW/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "上一層資料夾"
+
+#: program/localization/zh_TW/labels.inc:location
+msgid "Location"
+msgstr "位置"
+
+#: program/localization/zh_TW/labels.inc:info
+msgid "Information"
+msgstr "資訊"
+
+#: program/localization/zh_TW/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "點擊顯示資料夾大小"
+
+#: program/localization/zh_TW/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "點擊以改變訂閱"
+
+#: program/localization/zh_TW/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "資料夾類型"
+
+#: program/localization/zh_TW/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "私人資料夾"
+
+#: program/localization/zh_TW/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "其他使用者資料夾"
+
+#: program/localization/zh_TW/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "公用資料夾"
+
+#: program/localization/zh_TW/labels.inc:sortby
+msgid "Sort by"
+msgstr "排序"
+
+#: program/localization/zh_TW/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "遞增排序"
+
+#: program/localization/zh_TW/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "遞減排序"
+
+#: program/localization/zh_TW/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/zh_TW/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/zh_TW/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/zh_TW/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/zh_TW/labels.inc:unicode
+msgid "Unicode"
+msgstr "萬國碼"
+
+#: program/localization/zh_TW/labels.inc:english
+msgid "English"
+msgstr "英語"
+
+#: program/localization/zh_TW/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "西歐語系"
+
+#: program/localization/zh_TW/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "東歐語系"
+
+#: program/localization/zh_TW/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "東南歐語系"
+
+#: program/localization/zh_TW/labels.inc:baltic
+msgid "Baltic"
+msgstr "波羅的海"
+
+#: program/localization/zh_TW/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "西里爾"
+
+#: program/localization/zh_TW/labels.inc:arabic
+msgid "Arabic"
+msgstr "阿拉伯語"
+
+#: program/localization/zh_TW/labels.inc:greek
+msgid "Greek"
+msgstr "希臘"
+
+#: program/localization/zh_TW/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "希伯來語"
+
+#: program/localization/zh_TW/labels.inc:turkish
+msgid "Turkish"
+msgstr "土耳其"
+
+#: program/localization/zh_TW/labels.inc:nordic
+msgid "Nordic"
+msgstr "北歐"
+
+#: program/localization/zh_TW/labels.inc:thai
+msgid "Thai"
+msgstr "泰國"
+
+#: program/localization/zh_TW/labels.inc:celtic
+msgid "Celtic"
+msgstr "塞爾特"
+
+#: program/localization/zh_TW/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "越南"
+
+#: program/localization/zh_TW/labels.inc:japanese
+msgid "Japanese"
+msgstr "日本"
+
+#: program/localization/zh_TW/labels.inc:korean
+msgid "Korean"
+msgstr "韓國"
+
+#: program/localization/zh_TW/labels.inc:chinese
+msgid "Chinese"
+msgstr "國語"

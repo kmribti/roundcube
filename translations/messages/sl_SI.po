@@ -1,0 +1,580 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/sl_SI/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: sl_SI\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/sl_SI/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Prijava ni uspela"
+
+#: program/localization/sl_SI/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Vaš spletni brskalnik ne sprejema piškotkov."
+
+#: program/localization/sl_SI/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Seja je neveljavna ali je potekla."
+
+#: program/localization/sl_SI/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Povezava z IMAP strežnikom je spodletela."
+
+#: program/localization/sl_SI/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Napaka strežnika!"
+
+#: program/localization/sl_SI/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Napaka strežnikaČ $msg"
+
+#: program/localization/sl_SI/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Napaka v bazi"
+
+#: program/localization/sl_SI/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Operacije ni bilo mogoče izvršiti. Mapa je na voljo samo za branje."
+
+#: program/localization/sl_SI/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Operacije ni bilo mogoče izvršiti. Dostop zavrnjen."
+
+#: program/localization/sl_SI/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Neveljavna zahteva. Podatki niso bili shranjeni."
+
+#: program/localization/sl_SI/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "V poštnem predalu ni sporočil."
+
+#: program/localization/sl_SI/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Odjava je bila uspešna."
+
+#: program/localization/sl_SI/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Poštni predal je prazen."
+
+#: program/localization/sl_SI/messages.inc:loading
+msgid "Loading..."
+msgstr "Nalaganje..."
+
+#: program/localization/sl_SI/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Prenos dokumenta na strežnik..."
+
+#: program/localization/sl_SI/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Nalaganje dokumentov.."
+
+#: program/localization/sl_SI/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Nalaganje podatkov..."
+
+#: program/localization/sl_SI/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Preverjanje novih sporočil..."
+
+#: program/localization/sl_SI/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Pošiljanje sporočil..."
+
+#: program/localization/sl_SI/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Sporočilo je bilo uspešno poslano."
+
+#: program/localization/sl_SI/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Shranjevanje sporočila..."
+
+#: program/localization/sl_SI/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Sporočilo je bilo shranjeno v Osnutke"
+
+#: program/localization/sl_SI/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Uspešno shranjeno."
+
+#: program/localization/sl_SI/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Stik je bil uspešno dodan v imenik."
+
+#: program/localization/sl_SI/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Stik s tem elektronskim naslovom že obstaja."
+
+#: program/localization/sl_SI/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Stik s tem imenom že obstaja"
+
+#: program/localization/sl_SI/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Zaradi zaščite zasebnosti je prikaz slik v sporočilu onemogočen."
+
+#: program/localization/sl_SI/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Sporočilo je šifrirano in ne more biti prikazano."
+
+#: program/localization/sl_SI/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Ni stikov."
+
+#: program/localization/sl_SI/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Iskanega stika ni bilo mogoče najti."
+
+#: program/localization/sl_SI/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Vpišite iskalni parameter za iskanje stika"
+
+#: program/localization/sl_SI/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Sporočila ni bilo mogoče poslati."
+
+#: program/localization/sl_SI/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Počakajte $sec sekund in nato znova poskusite s pošiljanjem sporočila."
+
+#: program/localization/sl_SI/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Pri shranjevanju poslanega sporočila je prišlo do napake."
+
+#: program/localization/sl_SI/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Pri shranjevanju je prišlo do napake."
+
+#: program/localization/sl_SI/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Sporočila ni bilo mogoče premakniti."
+
+#: program/localization/sl_SI/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Sporočila ni bilo mogoče kopirati."
+
+#: program/localization/sl_SI/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Sporočila ni bilo mogoče izbrisati."
+
+#: program/localization/sl_SI/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Sporočila ni bilo mogoče označiti."
+
+#: program/localization/sl_SI/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Ste prepričani, da želite izbrisati označen(e) stik(e)?"
+
+#: program/localization/sl_SI/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Ste prepričani, da želite izbrisati izbrano skupino?"
+
+#: program/localization/sl_SI/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Ste prepričani, da želite izbrisati označeno(a) sporočilo(a)?"
+
+#: program/localization/sl_SI/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Ste prepričani, da želite to mapo izbrisati?"
+
+#: program/localization/sl_SI/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Ste prepričani, da želite izbrisati vsa sporočila v mapi?"
+
+#: program/localization/sl_SI/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Brisanje stika/ov..."
+
+#: program/localization/sl_SI/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Brisanje skupine..."
+
+#: program/localization/sl_SI/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Brisanje mape..."
+
+#: program/localization/sl_SI/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Premikanje mape..."
+
+#: program/localization/sl_SI/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Prijavljanje mape..."
+
+#: program/localization/sl_SI/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Odjavljanje mape..."
+
+#: program/localization/sl_SI/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Obrazec ni v celoti izpolnjen"
+
+#: program/localization/sl_SI/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Vnesite veljaven elektronski naslov"
+
+#: program/localization/sl_SI/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Vnesite ime"
+
+#: program/localization/sl_SI/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Vnesite velikost strani"
+
+#: program/localization/sl_SI/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Vnesite elektronski naslov pošiljatelja"
+
+#: program/localization/sl_SI/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Vnesite vsaj enega prejemnika sporočila"
+
+#: program/localization/sl_SI/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Polje \"Zadeva\" je prazno. Želite dodati tekst v to polje?"
+
+#: program/localization/sl_SI/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Želite poslati sporočilo brez vsebine?"
+
+#: program/localization/sl_SI/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Sporočilo ni bilo poslano. Želite zavreči to sporočilo?"
+
+#: program/localization/sl_SI/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Izberite LDAP strežnik, v katerem želite iskati?"
+
+#: program/localization/sl_SI/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Vnesite ime ali elektronski naslov stika"
+
+#: program/localization/sl_SI/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Priponke se še nalagajo na strežnik. Počakajte ali prekinite prenos."
+
+#: program/localization/sl_SI/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr najdenih sporočil"
+
+#: program/localization/sl_SI/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "$nr najdenih stikov."
+
+#: program/localization/sl_SI/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Ni zadetkov"
+
+#: program/localization/sl_SI/messages.inc:searching
+msgid "Searching..."
+msgstr "Iskanje..."
+
+#: program/localization/sl_SI/messages.inc:checking
+msgid "Checking..."
+msgstr "Preverjanje..."
+
+#: program/localization/sl_SI/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "V tekstu ni bilo nobenih pravopisnih napak"
+
+#: program/localization/sl_SI/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Mapa je bila uspešno izbrisana."
+
+#: program/localization/sl_SI/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Mapa je bila uspešno prijavljena."
+
+#: program/localization/sl_SI/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Mapa je bila uspešno odjavljena."
+
+#: program/localization/sl_SI/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Mapa je bila uspešno izpraznjena"
+
+#: program/localization/sl_SI/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Mapa je bila uspešno skrčena"
+
+#: program/localization/sl_SI/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Uspešno izbrisano"
+
+#: program/localization/sl_SI/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Odstranjevanje nastavitev oblikovanja..."
+
+#: program/localization/sl_SI/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Sporočila ni bilo mogoče prenesti iz strežnika"
+
+#: program/localization/sl_SI/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Prenos datoteke je spodletel"
+
+#: program/localization/sl_SI/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Naložena datoteka presega največjo dovoljeno velikost $size"
+
+#: program/localization/sl_SI/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "$nr naslovov je bilo uspešno prenešenih"
+
+#: program/localization/sl_SI/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Nobenih naslovov ni bilo mogoče kopirati"
+
+#: program/localization/sl_SI/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Ta naslov je na voljo samo za branje"
+
+#: program/localization/sl_SI/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Stika ni bilo mogoče shraniti"
+
+#: program/localization/sl_SI/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Premikanje sporočila..."
+
+#: program/localization/sl_SI/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Kopiranje sporočila..."
+
+#: program/localization/sl_SI/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Kopiranje stika/ov"
+
+#: program/localization/sl_SI/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Brisanje sporočil/a"
+
+#: program/localization/sl_SI/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Označevanje sporočil/a"
+
+#: program/localization/sl_SI/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Dodajanje stika/ov v skupino..."
+
+#: program/localization/sl_SI/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Odstranjevanje stika/ov iz skupine.."
+
+#: program/localization/sl_SI/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Sporočilo o branju je bilo uspešno poslano"
+
+#: program/localization/sl_SI/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Sporočila o branju ni bilo mogoče poslati"
+
+#: program/localization/sl_SI/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Te identitete ni mogoče izbrisati, saj je edina."
+
+#: program/localization/sl_SI/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Ime mape vsebuje nedovoljen znak"
+
+#: program/localization/sl_SI/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Izberite datoteko, ki jo želite prenesti"
+
+#: program/localization/sl_SI/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Izbran imenik ni zapisljiv"
+
+#: program/localization/sl_SI/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Stik je bil uspešno dodan v skupino"
+
+#: program/localization/sl_SI/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Stik je bil uspešno izbrisan iz skupine"
+
+#: program/localization/sl_SI/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Uvažanje poteka..."
+
+#: program/localization/sl_SI/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Uvažanje je spodletelo. Naložena datoteka ni veljavna vCard datoteka."
+
+#: program/localization/sl_SI/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Uspešno uvoženi $inserted stiki, $skipped stikov že obstaja v"
+"imeniku</b>:<p><em>$names</em></p>"
+
+#: program/localization/sl_SI/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Preskočeni že obstoječi vnosi $skipped </b>"
+
+#: program/localization/sl_SI/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Operacija ni dovoljena."
+
+#: program/localization/sl_SI/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "V izbrani identiteti manjka elektronski naslov."
+
+#: program/localization/sl_SI/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Preklop v splošen urejevalnik onemogoča uporabo izbranih nastavitev"
+"oblikovanja. Želite nadaljevati?"
+
+#: program/localization/sl_SI/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Prišlo je do večje napake v konfiguraciji.Obrnite se na skrbnika sistema."
+" <b>Sporočila ni bilo mogoče poslati.</b>"
+
+#: program/localization/sl_SI/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "Napaka pri pošiljanju ($code): Povezava s strežnikom je spodletela"
+
+#: program/localization/sl_SI/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "Napaka pri pošiljanju($code): Avtentikacija je spodletela"
+
+#: program/localization/sl_SI/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "Napaka pri pošiljanju ($code): Neveljaven elektronski naslov pošiljatelja"
+"\"$from\" ($msg)"
+
+#: program/localization/sl_SI/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "Napaka pri pošiljanju ($code): Neveljaven elektronski naslov prejemnika"
+"\"$to\" ($msg)"
+
+#: program/localization/sl_SI/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "Napaka pri pošiljanju: Seznama prejemnikov ni bilo mogoče razčleniti"
+
+#: program/localization/sl_SI/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "Napaka pri pošiljanju:$msg"
+
+#: program/localization/sl_SI/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Nepravilen elektronski naslov: $email"
+
+#: program/localization/sl_SI/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Navedli ste preveč prejemnikov. Zmanjšajte število prejemnikov na $max"
+
+#: program/localization/sl_SI/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Število članov skupine presega največje dovoljeno število $max."
+
+#: program/localization/sl_SI/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Prišlo je do napake. Poskusite znova."
+
+#: program/localization/sl_SI/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Stika/ov ni bilo mogoče izbrisati"
+
+#: program/localization/sl_SI/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Stik/i so bili uspešno izbrisani"
+
+#: program/localization/sl_SI/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Ni bilo mogoče obnoviti izbrisanih stikov."
+
+#: program/localization/sl_SI/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Stiki so bili uspešno obnovljeni."
+
+#: program/localization/sl_SI/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Skupina je bila uspešno izbrisana"
+
+#: program/localization/sl_SI/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Skupina je bila uspešno preimenovana"
+
+#: program/localization/sl_SI/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Skupina je bila uspešno ustvarjena"
+
+#: program/localization/sl_SI/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Shranjeno iskanje je bilo uspešno izbrisano."
+
+#: program/localization/sl_SI/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Ni bilo mogoče izbrisati shranjenega iskanja."
+
+#: program/localization/sl_SI/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Iskanje je bilo uspešno shranjeno."
+
+#: program/localization/sl_SI/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Iskanja ni bilo mogoče shraniti."
+
+#: program/localization/sl_SI/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Sporočila so bila uspešno izbrisana"
+
+#: program/localization/sl_SI/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Sporočila so bila uspešno premaknjena"
+
+#: program/localization/sl_SI/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Sporočila so bila uspešno kopirana"
+
+#: program/localization/sl_SI/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Sporočila so bila uspešno označena"
+
+#: program/localization/sl_SI/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Vnesite vsaj $min znakov za samodejno dokončanje"
+
+#: program/localization/sl_SI/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Z iskanjem se ujema več vnosov. Vnesite dodatne črke."
+
+#: program/localization/sl_SI/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Imena ni mogoče izbrisati"
+
+#: program/localization/sl_SI/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Ime je predolgo"
+
+#: program/localization/sl_SI/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Mapa je bila uspešno posodobljena"
+
+#: program/localization/sl_SI/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Mapa je bila uspešno ustvarjena"
+
+#: program/localization/sl_SI/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Neveljaven format slike"
+
+#: program/localization/sl_SI/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "V sporočilu so bile najdene napake v črkovanju"
+
+#: program/localization/sl_SI/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "Podmape v tej mapi ni bilo mogoče ustvariti/premakniti. Nimate pravic."

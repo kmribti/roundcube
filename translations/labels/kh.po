@@ -1,0 +1,1553 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/kh_KH/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: kh_KH\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/kh_KH/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "$product សូមស្វាគមន៍"
+
+#: program/localization/kh_KH/labels.inc:username
+msgid "Username"
+msgstr "ឈ្មោះអ្នកប្រើ"
+
+#: program/localization/kh_KH/labels.inc:password
+msgid "Password"
+msgstr "ពាក្យសំងាត់"
+
+#: program/localization/kh_KH/labels.inc:server
+msgid "Server"
+msgstr "ម៉ាស៊ីនមេ"
+
+#: program/localization/kh_KH/labels.inc:login
+msgid "Login"
+msgstr "ពិនិត្យចូល"
+
+#: program/localization/kh_KH/labels.inc:logout
+msgid "Logout"
+msgstr "ពិនិត្យចេញ"
+
+#: program/localization/kh_KH/labels.inc:mail
+msgid "Mail"
+msgstr "អ៊ីមែល"
+
+#: program/localization/kh_KH/labels.inc:settings
+msgid "Settings"
+msgstr "កំនត់ការប្រើប្រាស់"
+
+#: program/localization/kh_KH/labels.inc:addressbook
+msgid "Address Book"
+msgstr "សៀវភៅអាសយដ្ឋាន"
+
+#: program/localization/kh_KH/labels.inc:inbox
+msgid "Inbox"
+msgstr "ប្រអប់សំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:drafts
+msgid "Drafts"
+msgstr "សំបុត្រពង្រៀង"
+
+#: program/localization/kh_KH/labels.inc:sent
+msgid "Sent"
+msgstr "សំបុត្រដែលបានបញ្ជូន"
+
+#: program/localization/kh_KH/labels.inc:trash
+msgid "Trash"
+msgstr "ធុងសំរាម"
+
+#: program/localization/kh_KH/labels.inc:junk
+msgid "Junk"
+msgstr "សំបុត្រមិនល្អ"
+
+#: program/localization/kh_KH/labels.inc:subject
+msgid "Subject"
+msgstr "ចំណងជើង"
+
+#: program/localization/kh_KH/labels.inc:from
+msgid "From"
+msgstr "អ្នកផ្ញើ"
+
+#: program/localization/kh_KH/labels.inc:to
+msgid "To"
+msgstr "អ្នកទទួល"
+
+#: program/localization/kh_KH/labels.inc:cc
+msgid "Cc"
+msgstr "Cc"
+
+#: program/localization/kh_KH/labels.inc:bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#: program/localization/kh_KH/labels.inc:replyto
+msgid "Reply-To"
+msgstr "ឆ្លើយតបទៅកាន់"
+
+#: program/localization/kh_KH/labels.inc:followupto
+msgid "Followup-To"
+msgstr "ឆ្លើយតបទៅកាន់ក្រុម"
+
+#: program/localization/kh_KH/labels.inc:date
+msgid "Date"
+msgstr "កាលបរិច្ឆេត"
+
+#: program/localization/kh_KH/labels.inc:size
+msgid "Size"
+msgstr "ទំហំ"
+
+#: program/localization/kh_KH/labels.inc:priority
+msgid "Priority"
+msgstr "អទិភាព"
+
+#: program/localization/kh_KH/labels.inc:organization
+msgid "Company"
+msgstr "អង្គភាព"
+
+#: program/localization/kh_KH/labels.inc:readstatus
+msgid "Read status"
+msgstr "ស្ថានភាពនៃការអាន"
+
+#: program/localization/kh_KH/labels.inc:mailboxlist
+#: program/localization/kh_KH/labels.inc:folders
+msgid "Folders"
+msgstr "ថតទាំងអស់"
+
+#: program/localization/kh_KH/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "សំបុត្រពី $from ទៅដល់ $to"
+"ក្នុងចំណោម $count សំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "បន្តុំសំបុត្រពី $from ទៅដល់ $to"
+"ក្នុងចំណោម $count សំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "សំបុត្រ $nr នៃ $count"
+
+#: program/localization/kh_KH/labels.inc:copy
+msgid "Copy"
+msgstr "ចំលង"
+
+#: program/localization/kh_KH/labels.inc:move
+msgid "Move"
+msgstr "ផ្ទេរ"
+
+#: program/localization/kh_KH/labels.inc:moveto
+msgid "Move to..."
+msgstr "ផ្ទេរទៅ"
+
+#: program/localization/kh_KH/labels.inc:download
+msgid "Download"
+msgstr "ទាញយក"
+
+#: program/localization/kh_KH/labels.inc:filename
+msgid "File name"
+msgstr "ឈ្មោះឯកសារ"
+
+#: program/localization/kh_KH/labels.inc:filesize
+msgid "File size"
+msgstr "ទំហំឯកសារ"
+
+#: program/localization/kh_KH/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "រក្សាទុកក្នុងសៀវភៅអាសយដ្ឋាន"
+
+#: program/localization/kh_KH/labels.inc:sun
+msgid "Sun"
+msgstr "អាទិត្យ"
+
+#: program/localization/kh_KH/labels.inc:mon
+msgid "Mon"
+msgstr "ច័ន្ទ"
+
+#: program/localization/kh_KH/labels.inc:tue
+msgid "Tue"
+msgstr "អង្គារ"
+
+#: program/localization/kh_KH/labels.inc:wed
+msgid "Wed"
+msgstr "ពុធ"
+
+#: program/localization/kh_KH/labels.inc:thu
+msgid "Thu"
+msgstr "ព្រហស្បតិ៍"
+
+#: program/localization/kh_KH/labels.inc:fri
+msgid "Fri"
+msgstr "សុក្រ"
+
+#: program/localization/kh_KH/labels.inc:sat
+msgid "Sat"
+msgstr "សៅរ៍"
+
+#: program/localization/kh_KH/labels.inc:sunday
+msgid "Sunday"
+msgstr "អាទិត្យ"
+
+#: program/localization/kh_KH/labels.inc:monday
+msgid "Monday"
+msgstr "ច័ន្ទ"
+
+#: program/localization/kh_KH/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "អង្គារ"
+
+#: program/localization/kh_KH/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "ពុធ"
+
+#: program/localization/kh_KH/labels.inc:thursday
+msgid "Thursday"
+msgstr "ព្រហស្បតិ៍"
+
+#: program/localization/kh_KH/labels.inc:friday
+msgid "Friday"
+msgstr "សុក្រ"
+
+#: program/localization/kh_KH/labels.inc:saturday
+msgid "Saturday"
+msgstr "សៅរ៍"
+
+#: program/localization/kh_KH/labels.inc:jan
+msgid "Jan"
+msgstr "មករា"
+
+#: program/localization/kh_KH/labels.inc:feb
+msgid "Feb"
+msgstr "កុម្ភះ"
+
+#: program/localization/kh_KH/labels.inc:mar
+msgid "Mar"
+msgstr "មិនា"
+
+#: program/localization/kh_KH/labels.inc:apr
+msgid "Apr"
+msgstr "មេសា"
+
+#: program/localization/kh_KH/labels.inc:may
+#: program/localization/kh_KH/labels.inc:longmay
+msgid "May"
+msgstr "ឧសភា"
+
+#: program/localization/kh_KH/labels.inc:jun
+msgid "Jun"
+msgstr "មិថុនា"
+
+#: program/localization/kh_KH/labels.inc:jul
+msgid "Jul"
+msgstr "កក្កដា"
+
+#: program/localization/kh_KH/labels.inc:aug
+msgid "Aug"
+msgstr "សីហា"
+
+#: program/localization/kh_KH/labels.inc:sep
+msgid "Sep"
+msgstr "កញ្ញា"
+
+#: program/localization/kh_KH/labels.inc:oct
+msgid "Oct"
+msgstr "តុលា"
+
+#: program/localization/kh_KH/labels.inc:nov
+msgid "Nov"
+msgstr "វិច្ឆិកា"
+
+#: program/localization/kh_KH/labels.inc:dec
+msgid "Dec"
+msgstr "ធ្នូ"
+
+#: program/localization/kh_KH/labels.inc:longjan
+msgid "January"
+msgstr "មករា"
+
+#: program/localization/kh_KH/labels.inc:longfeb
+msgid "February"
+msgstr "កុម្ភះ"
+
+#: program/localization/kh_KH/labels.inc:longmar
+msgid "March"
+msgstr "មិនា"
+
+#: program/localization/kh_KH/labels.inc:longapr
+msgid "April"
+msgstr "មេសា"
+
+#: program/localization/kh_KH/labels.inc:longjun
+msgid "June"
+msgstr "មិថុនា"
+
+#: program/localization/kh_KH/labels.inc:longjul
+msgid "July"
+msgstr "កក្កដា"
+
+#: program/localization/kh_KH/labels.inc:longaug
+msgid "August"
+msgstr "សីហា"
+
+#: program/localization/kh_KH/labels.inc:longsep
+msgid "September"
+msgstr "កញ្ញា"
+
+#: program/localization/kh_KH/labels.inc:longoct
+msgid "October"
+msgstr "តុលា"
+
+#: program/localization/kh_KH/labels.inc:longnov
+msgid "November"
+msgstr "វិច្ឆិកា"
+
+#: program/localization/kh_KH/labels.inc:longdec
+msgid "December"
+msgstr "ធ្នូ"
+
+#: program/localization/kh_KH/labels.inc:today
+msgid "Today"
+msgstr "ថ្ងៃនេះ"
+
+#: program/localization/kh_KH/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "ពិនិត្យសំបុត្រថ្មី"
+
+#: program/localization/kh_KH/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "សរសេរសំបុត្រថ្មី"
+
+#: program/localization/kh_KH/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "ឆ្លើយតបទៅអ្នកផ្ញើ"
+
+#: program/localization/kh_KH/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "ឆ្លើយតបទៅ អ្នកទទួលទាំងអស់"
+"និង ក្រុម ឬ អ្នកផ្ញើ"
+
+#: program/localization/kh_KH/labels.inc:replyall
+msgid "Reply all"
+msgstr "ឆ្លើយតបទៅទាំងអស់គ្នា"
+
+#: program/localization/kh_KH/labels.inc:replylist
+msgid "Reply list"
+msgstr "ឆ្លើយតបទៅក្រុម"
+
+#: program/localization/kh_KH/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "ផ្ញើសំបុត្របន្តរ"
+
+#: program/localization/kh_KH/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "លុបសំបុត្រចោល"
+
+#: program/localization/kh_KH/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "ផ្ទេរសំបុត្រទៅក្នុងធុងសំរាម"
+
+#: program/localization/kh_KH/labels.inc:printmessage
+msgid "Print this message"
+msgstr "បោះពុម្ភសំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "បង្ហាញសំបុត្រចាស់"
+
+#: program/localization/kh_KH/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "បង្ហាញសំបុត្រចាស់"
+
+#: program/localization/kh_KH/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "បង្ហាញសំបុត្រដំបូង"
+
+#: program/localization/kh_KH/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "បង្ហាញសំបុត្រដំបូង"
+
+#: program/localization/kh_KH/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "បង្ហាញសំបុត្របន្ទាប់"
+
+#: program/localization/kh_KH/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "បង្ហាញសំបុត្របន្ទាប់"
+
+#: program/localization/kh_KH/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "បង្ហាញសំបុត្រចុងក្រោយ"
+
+#: program/localization/kh_KH/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "បង្ហាញសំបុត្រចុងក្រោយ"
+
+#: program/localization/kh_KH/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "ត្រលប់ទៅកាន់ក្រុមសំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:viewsource
+msgid "Show source"
+msgstr "បង្ហាញ Source របស់សំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "កំណត់សំគាល់សំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:markread
+msgid "As read"
+msgstr "កំណត់ថាបានអានរួច"
+
+#: program/localization/kh_KH/labels.inc:markunread
+msgid "As unread"
+msgstr "កំណត់ថាមិនទាន់បានអាន"
+
+#: program/localization/kh_KH/labels.inc:markflagged
+msgid "As flagged"
+msgstr "កំណត់សំគាល់ដោយផ្កាយ"
+
+#: program/localization/kh_KH/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "លុបកំណត់សំគាល់ដោយផ្កាយ"
+
+#: program/localization/kh_KH/labels.inc:messageactions
+msgid "messageactions"
+msgstr "មុខងារផ្សេងទៀត"
+
+#: program/localization/kh_KH/labels.inc:select
+msgid "Select"
+msgstr "ជ្រើសរើស"
+
+#: program/localization/kh_KH/labels.inc:all
+msgid "All"
+msgstr "ទាំងអស់"
+
+#: program/localization/kh_KH/labels.inc:none
+#: program/localization/kh_KH/labels.inc:nonesort
+msgid "None"
+msgstr "មិនតំរៀប"
+
+#: program/localization/kh_KH/labels.inc:currpage
+msgid "Current page"
+msgstr "ទំព័រនេះ"
+
+#: program/localization/kh_KH/labels.inc:unread
+msgid "Unread"
+msgstr "មិនទាន់អាន"
+
+#: program/localization/kh_KH/labels.inc:flagged
+msgid "Flagged"
+msgstr "មានកំណត់សំគាល់ដោយផ្កាយ"
+
+#: program/localization/kh_KH/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "មិនទាន់ឆ្លើយតប"
+
+#: program/localization/kh_KH/labels.inc:deleted
+msgid "Deleted"
+msgstr "បានលុបរួច"
+
+#: program/localization/kh_KH/labels.inc:invert
+msgid "Invert"
+msgstr "បញ្ច្រស់"
+
+#: program/localization/kh_KH/labels.inc:filter
+msgid "Filter"
+msgstr "លក្ខខ័ណ្ឌ"
+
+#: program/localization/kh_KH/labels.inc:list
+msgid "List"
+msgstr "តារាង"
+
+#: program/localization/kh_KH/labels.inc:threads
+msgid "Threads"
+msgstr "បណ្តុំសំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:expand-all
+msgid "Expand All"
+msgstr "បង្ហាញសំបុត្រទាំងអស់"
+
+#: program/localization/kh_KH/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "បង្ហាញសំបុត្រមិនទាន់អាន"
+
+#: program/localization/kh_KH/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "បិទសំបុត្រទាំងអស់"
+
+#: program/localization/kh_KH/labels.inc:threaded
+msgid "Threaded"
+msgstr "បានបែកចែកជាក្រុមរួច"
+
+#: program/localization/kh_KH/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "បង្ហាញបណ្តុំសំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:do_expand
+msgid "all threads"
+msgstr "បណ្តុំទាំងអស់"
+
+#: program/localization/kh_KH/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "បង្ហាញតែសំបុត្រដែលមិនទាន់អាន"
+
+#: program/localization/kh_KH/labels.inc:fromto
+msgid "From/To"
+msgstr "អ្នកផ្ញើ / អ្នកទទួល"
+
+#: program/localization/kh_KH/labels.inc:flag
+msgid "Flag"
+msgstr "កំណត់សំគាល់ដោយផ្កាយ"
+
+#: program/localization/kh_KH/labels.inc:attachment
+msgid "Attachment"
+msgstr "ឯកសារភ្ជាប់"
+
+#: program/localization/kh_KH/labels.inc:sentdate
+msgid "Sent date"
+msgstr "កាលបរិច្ឆេតផ្ញើ"
+
+#: program/localization/kh_KH/labels.inc:arrival
+msgid "Arrival date"
+msgstr "កាលបរិច្ឆេតទទួល"
+
+#: program/localization/kh_KH/labels.inc:asc
+msgid "ascending"
+msgstr "តាមលំដាប់ចុះ"
+
+#: program/localization/kh_KH/labels.inc:desc
+msgid "descending"
+msgstr "តាមលំដាប់ឡើង"
+
+#: program/localization/kh_KH/labels.inc:listcolumns
+msgid "List columns"
+msgstr "តារាងជួរឈ"
+
+#: program/localization/kh_KH/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "តំរៀបជួរឈ"
+
+#: program/localization/kh_KH/labels.inc:listorder
+msgid "Sorting order"
+msgstr "លំដាប់នៃការតំរៀប"
+
+#: program/localization/kh_KH/labels.inc:listmode
+msgid "List view mode"
+msgstr "បង្ហាញជាតារាង"
+
+#: program/localization/kh_KH/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "មុខងារថត"
+
+#: program/localization/kh_KH/labels.inc:compact
+msgid "Compact"
+msgstr "បង្រួម"
+
+#: program/localization/kh_KH/labels.inc:empty
+msgid "Empty"
+msgstr "ទទេរ"
+
+#: program/localization/kh_KH/labels.inc:quota
+msgid "Disk usage"
+msgstr "ទំហំសំបុត្រទាំងអស់ដែលមាន"
+
+#: program/localization/kh_KH/labels.inc:unknown
+msgid "unknown"
+msgstr "មិនស្គាល់"
+
+#: program/localization/kh_KH/labels.inc:unlimited
+msgid "unlimited"
+msgstr "គ្មានកំនត់"
+
+#: program/localization/kh_KH/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "ស្វែងរក"
+
+#: program/localization/kh_KH/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "កំណត់លក្ខខ័ណ្ឌស្វែងរកជាថ្មី"
+
+#: program/localization/kh_KH/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "កែសំរួលលក្ខខ័ណ្ឌស្វែងរក"
+
+#: program/localization/kh_KH/labels.inc:msgtext
+msgid "Entire message"
+msgstr "សំបុត្រទាំងមូល"
+
+#: program/localization/kh_KH/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "បើកក្នុងវីនដូវថ្មី"
+
+#: program/localization/kh_KH/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "រក្សាទុកទិន្នន័យជាឯកសារប្រភេទ"
+"(.eml)"
+
+#: program/localization/kh_KH/labels.inc:compose
+msgid "Compose a message"
+msgstr "សរសេរសំបុត្រថ្មី"
+
+#: program/localization/kh_KH/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "កែហើយរក្សាទុកដូចជាសំបុត្រថ្មី"
+
+#: program/localization/kh_KH/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "រក្សាទុកសំបុត្រពង្រៀង"
+
+#: program/localization/kh_KH/labels.inc:sendmessage
+msgid "Send now"
+msgstr "ផ្ញើសំបុត្រនេះ"
+
+#: program/localization/kh_KH/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "ឯកសារភ្ជាប់"
+
+#: program/localization/kh_KH/labels.inc:charset
+msgid "Charset"
+msgstr "ប្រភេទអក្សរ"
+
+#: program/localization/kh_KH/labels.inc:editortype
+msgid "Editor type"
+msgstr "ប្រភេទ Editor"
+
+#: program/localization/kh_KH/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "អត្ថបទបញ្ជាក់ពីការត្រឡប់"
+
+#: program/localization/kh_KH/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "ប្រាប់អំពីស្ថានភាពផ្ញើ"
+
+#: program/localization/kh_KH/labels.inc:editidents
+msgid "Edit identities"
+msgstr "ផ្លាស់ប្តូរអត្តសញ្ញាណ"
+
+#: program/localization/kh_KH/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "ពិនិត្យអក្ខរាវិរុទ្ធ"
+
+#: program/localization/kh_KH/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "បន្តរការកែតំរូវ"
+
+#: program/localization/kh_KH/labels.inc:revertto
+msgid "Revert to"
+msgstr "ត្រលប់ទៅ"
+
+#: program/localization/kh_KH/labels.inc:attachments
+msgid "Attachments"
+msgstr "ឯកសារភ្ជាប់"
+
+#: program/localization/kh_KH/labels.inc:upload
+msgid "Upload"
+msgstr "ភ្ជាប់ឯកសារ"
+
+#: program/localization/kh_KH/labels.inc:close
+msgid "Close"
+msgstr "បិទ"
+
+#: program/localization/kh_KH/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "កំណត់ជំរើសរបស់សំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:low
+msgid "Low"
+msgstr "ទាប"
+
+#: program/localization/kh_KH/labels.inc:lowest
+msgid "Lowest"
+msgstr "ទាបបំផុត"
+
+#: program/localization/kh_KH/labels.inc:normal
+msgid "Normal"
+msgstr "ធម្មតា"
+
+#: program/localization/kh_KH/labels.inc:high
+msgid "High"
+msgstr "ខ្ពស់"
+
+#: program/localization/kh_KH/labels.inc:highest
+msgid "Highest"
+msgstr "ខ្ពស់បំផុត"
+
+#: program/localization/kh_KH/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(គ្មានចំណងជើង)"
+
+#: program/localization/kh_KH/labels.inc:showimages
+msgid "Display images"
+msgstr "បង្ហាញរូបភាព"
+
+#: program/localization/kh_KH/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "បង្ហាញជានិច្ចរាល់រូបភាពបញ្ជូនពី"
+"$sender"
+
+#: program/localization/kh_KH/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "អត្ថបទ HTML"
+
+#: program/localization/kh_KH/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "អត្ថបទធម្មតា"
+
+#: program/localization/kh_KH/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "រក្សាសំបុត្រដែលបានផ្ញើក្នុង"
+
+#: program/localization/kh_KH/labels.inc:dontsave
+msgid "don't save"
+msgstr "មិនរក្សាទុក"
+
+#: program/localization/kh_KH/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "ទំហំឯកសារធំបំផុតដែលអាចភ្ជាប់បានគឺ"
+"$size"
+
+#: program/localization/kh_KH/labels.inc:addcc
+msgid "Add Cc"
+msgstr "បន្ថែម Cc"
+
+#: program/localization/kh_KH/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "បន្ថែម Bcc"
+
+#: program/localization/kh_KH/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "បន្ថែម Reply-To"
+
+#: program/localization/kh_KH/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "បន្ថែម Followup-To"
+
+#: program/localization/kh_KH/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "ម្ចាស់សំបុត្រស្នើសុំអោយប្រាប់នៅពេលសំបុត្រនេះត្រូវបានគេអាន។"
+"តើអ្នកចង់ប្រាប់ដែរឬទេ?"
+
+#: program/localization/kh_KH/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "អត្ថបទផ្ញើត្រលប់ (បានអាន)"
+
+#: program/localization/kh_KH/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "នេះគឺជាអត្ថបទផ្ញើត្រលប់សំរាប់សំបុត្ររបស់លោកអ្នក។"
+
+#: program/localization/kh_KH/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "កំណត់សំគាល់:"
+"អត្ថបទផ្ញើត្រលប់នេះគ្រាន់តែបញ្ជាក់ថា"
+"សំបុត្ររបស់លោកអ្នកត្រូវបានបង្ហាញនៅឯកុំព្យូទ័ររបស់អ្នកទទួល។"
+"គេមិនអាចធានាថាអ្នកទទួលបានមើលឬយល់សំបុត្ររបស់លោកអ្នកឡើយ។"
+
+#: program/localization/kh_KH/labels.inc:name
+msgid "Display Name"
+msgstr "ឈ្មោះសំរាប់បង្ហាញ"
+
+#: program/localization/kh_KH/labels.inc:firstname
+msgid "First Name"
+msgstr "នាមត្រកូល"
+
+#: program/localization/kh_KH/labels.inc:surname
+msgid "Last Name"
+msgstr "នាមខ្លួន"
+
+#: program/localization/kh_KH/labels.inc:middlename
+msgid "Middle Name"
+msgstr "ឈ្មោះកណ្តាល"
+
+#: program/localization/kh_KH/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "ពាក្យពីមុខឈ្មោះ"
+
+#: program/localization/kh_KH/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "ពាក្យពីក្រោយឈ្មោះ"
+
+#: program/localization/kh_KH/labels.inc:nickname
+msgid "Nickname"
+msgstr "ឈ្មោះហៅក្រៅ"
+
+#: program/localization/kh_KH/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "ឈ្មោះការងារ"
+
+#: program/localization/kh_KH/labels.inc:department
+msgid "Department"
+msgstr "នាយកដ្ឋាន"
+
+#: program/localization/kh_KH/labels.inc:gender
+msgid "Gender"
+msgstr "ភេទ"
+
+#: program/localization/kh_KH/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "ឈ្មោះពីកំណើត"
+
+#: program/localization/kh_KH/labels.inc:email
+msgid "Email"
+msgstr "អ៊ីមែល"
+
+#: program/localization/kh_KH/labels.inc:phone
+msgid "Phone"
+msgstr "ទូរស័ព្ទ"
+
+#: program/localization/kh_KH/labels.inc:address
+msgid "Address"
+msgstr "អាសយដ្ឋាន"
+
+#: program/localization/kh_KH/labels.inc:street
+msgid "Street"
+msgstr "ផ្លូវ"
+
+#: program/localization/kh_KH/labels.inc:locality
+msgid "City"
+msgstr "ទីក្រុង"
+
+#: program/localization/kh_KH/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "លេខប៉ុស្តិ៍"
+
+#: program/localization/kh_KH/labels.inc:region
+msgid "State/Province"
+msgstr "តំបន់"
+
+#: program/localization/kh_KH/labels.inc:country
+msgid "Country"
+msgstr "ប្រទេស"
+
+#: program/localization/kh_KH/labels.inc:birthday
+msgid "Birthday"
+msgstr "ថ្ងៃខួបកំណើត"
+
+#: program/localization/kh_KH/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "ខួប"
+
+#: program/localization/kh_KH/labels.inc:website
+msgid "Website"
+msgstr "គេហទំព័រ"
+
+#: program/localization/kh_KH/labels.inc:instantmessenger
+msgid "IM"
+msgstr "IM"
+
+#: program/localization/kh_KH/labels.inc:notes
+msgid "Notes"
+msgstr "កំណត់ហេតុ"
+
+#: program/localization/kh_KH/labels.inc:male
+msgid "male"
+msgstr "ប្រុស"
+
+#: program/localization/kh_KH/labels.inc:female
+msgid "female"
+msgstr "ស្រី"
+
+#: program/localization/kh_KH/labels.inc:manager
+msgid "Manager"
+msgstr "នាយក"
+
+#: program/localization/kh_KH/labels.inc:assistant
+#: program/localization/kh_KH/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "ជំនួយការ"
+
+#: program/localization/kh_KH/labels.inc:spouse
+msgid "Spouse"
+msgstr "គ្រួសារ"
+
+#: program/localization/kh_KH/labels.inc:typehome
+msgid "Home"
+msgstr "គេហដ្ឋាន"
+
+#: program/localization/kh_KH/labels.inc:typework
+msgid "Work"
+msgstr "កន្លែងធ្វើការ"
+
+#: program/localization/kh_KH/labels.inc:typeother
+msgid "Other"
+msgstr "ផ្សេងពីនេះ"
+
+#: program/localization/kh_KH/labels.inc:typemobile
+msgid "Mobile"
+msgstr "ទូរស័ព្ទដៃ"
+
+#: program/localization/kh_KH/labels.inc:typemain
+msgid "Main"
+msgstr "ចំបង"
+
+#: program/localization/kh_KH/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "ទូរសារនៅគេហដ្ឋាន"
+
+#: program/localization/kh_KH/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "ទូរសារនៅកន្លែងធ្វើការ"
+
+#: program/localization/kh_KH/labels.inc:typecar
+msgid "Car"
+msgstr "រថយន្ត"
+
+#: program/localization/kh_KH/labels.inc:typepager
+msgid "Pager"
+msgstr "ឧបករណ៍ផ្តល់សារ"
+
+#: program/localization/kh_KH/labels.inc:typevideo
+msgid "Video"
+msgstr "វីដេអូរ"
+
+#: program/localization/kh_KH/labels.inc:addfield
+msgid "Add field..."
+msgstr "បន្ថែម"
+
+#: program/localization/kh_KH/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "បន្ថែមអាសយដ្ឋានទាក់ទង"
+
+#: program/localization/kh_KH/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "កែប្រែអាសយដ្ឋានទាក់ទង"
+
+#: program/localization/kh_KH/labels.inc:contacts
+msgid "Contacts"
+msgstr "អាសយដ្ឋានទាក់ទងទាំងអស់"
+
+#: program/localization/kh_KH/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "ព័ត៌មានអំពីទំនាក់ទំនង"
+
+#: program/localization/kh_KH/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "ព័ត៌មានផ្ទាល់ខ្លួន"
+
+#: program/localization/kh_KH/labels.inc:edit
+msgid "Edit"
+msgstr "កែតំរូវ"
+
+#: program/localization/kh_KH/labels.inc:cancel
+msgid "Cancel"
+msgstr "លះបង់"
+
+#: program/localization/kh_KH/labels.inc:save
+msgid "Save"
+msgstr "រក្សាទុក"
+
+#: program/localization/kh_KH/labels.inc:delete
+msgid "Delete"
+msgstr "លុបចោល"
+
+#: program/localization/kh_KH/labels.inc:rename
+msgid "Rename"
+msgstr "ប្តូរឈ្មោះ"
+
+#: program/localization/kh_KH/labels.inc:addphoto
+msgid "Add"
+msgstr "បន្ថែមរូបថត"
+
+#: program/localization/kh_KH/labels.inc:replacephoto
+msgid "Replace"
+msgstr "លុបរូបថត"
+
+#: program/localization/kh_KH/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "បង្កើតអាសយដ្ឋានទាក់ទងថ្មី"
+
+#: program/localization/kh_KH/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "លុបអាសយដ្ឋានទាក់ទងដែលបានជ្រើសរើស"
+
+#: program/localization/kh_KH/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "ផ្ញើសំបុត្រទៅ"
+
+#: program/localization/kh_KH/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "អាសយដ្ឋានទាក់ទង $from ដល់ $to នៃ"
+"$count"
+
+#: program/localization/kh_KH/labels.inc:print
+msgid "Print"
+msgstr "បោះពុម្ភ"
+
+#: program/localization/kh_KH/labels.inc:export
+msgid "Export"
+msgstr "ទាញនិងរក្សាទុក"
+
+#: program/localization/kh_KH/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "ទាញនិងរក្សាទុកអាសយដ្ឋានជាប្រភេទ"
+"vCard"
+
+#: program/localization/kh_KH/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "បង្កើតក្រុមអាសយដ្ឋានថ្មី"
+
+#: program/localization/kh_KH/labels.inc:groupactions
+msgid "groupactions"
+msgstr "មុខងារក្រុមអាសយដ្ឋាន"
+
+#: program/localization/kh_KH/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "ទំព័រមុន"
+
+#: program/localization/kh_KH/labels.inc:firstpage
+msgid "Show first page"
+msgstr "ទំព័រដំបូង"
+
+#: program/localization/kh_KH/labels.inc:nextpage
+msgid "Show next page"
+msgstr "ទំព័របន្ទាប់"
+
+#: program/localization/kh_KH/labels.inc:lastpage
+msgid "Show last page"
+msgstr "ទំព័រចុងក្រោយ"
+
+#: program/localization/kh_KH/labels.inc:group
+msgid "Group"
+msgstr "ក្រុម"
+
+#: program/localization/kh_KH/labels.inc:groups
+msgid "Groups"
+msgstr "ក្រុម"
+
+#: program/localization/kh_KH/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "អាសយដ្ឋានផ្ទាល់ខ្លួន"
+
+#: program/localization/kh_KH/labels.inc:import
+msgid "Import"
+msgstr "បញ្ចូល"
+
+#: program/localization/kh_KH/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "បញ្ចូលអាសយដ្ឋាន"
+
+#: program/localization/kh_KH/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "បញ្ចូលពី ឯកសារ"
+
+#: program/localization/kh_KH/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "ផ្លាស់ប្តូរអាសយដ្ឋានទាំងអស់"
+
+#: program/localization/kh_KH/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "អ្នកអាចបញ្ចូលអាសយដ្ឋានទាក់ទងពីទិន្នន័យដែលមានស្រាប់​"
+"។<br/>បច្ចុប្បន្នលោកអ្នកអាចបញ្ជូលទិន្នន័យអាសយដ្ឋានពី"
+"ឯកសារប្រភេទ <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>។"
+
+#: program/localization/kh_KH/labels.inc:done
+msgid "Done"
+msgstr "ចប់រួចរាល់"
+
+#: program/localization/kh_KH/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "កំណត់សំរាប់"
+
+#: program/localization/kh_KH/labels.inc:preferences
+msgid "Preferences"
+msgstr "កំណត់តាមការចូលចិត្ត"
+
+#: program/localization/kh_KH/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "កំណត់តាមការចូលចិត្តរបស់អ្នកប្រើ"
+
+#: program/localization/kh_KH/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "ផ្លាស់ប្តូរការចូលចិត្តរបស់អ្នកប្រើ"
+
+#: program/localization/kh_KH/labels.inc:identities
+msgid "Identities"
+msgstr "អត្តសញ្ញាណ"
+
+#: program/localization/kh_KH/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "គ្រប់គ្រងអត្តសញ្ញាណ"
+
+#: program/localization/kh_KH/labels.inc:newidentity
+msgid "New identity"
+msgstr "អត្តសញ្ញាណថ្មី"
+
+#: program/localization/kh_KH/labels.inc:newitem
+msgid "New item"
+msgstr "វត្ថុថ្មី"
+
+#: program/localization/kh_KH/labels.inc:edititem
+msgid "Edit item"
+msgstr "កែប្រែវត្ថុ"
+
+#: program/localization/kh_KH/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "បង្ហាញជា HTML"
+
+#: program/localization/kh_KH/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "លេខកូតអក្សរមានស្រាប់"
+
+#: program/localization/kh_KH/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "សំបុត្រប្រភេទ HTML"
+
+#: program/localization/kh_KH/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "កាលបរិច្ឆេតងាយស្រួលមើល"
+
+#: program/localization/kh_KH/labels.inc:setdefault
+msgid "Set default"
+msgstr "កំណត់ទុក"
+
+#: program/localization/kh_KH/labels.inc:autodetect
+msgid "Auto"
+msgstr "ស្វ័យប្រវត្តិ"
+
+#: program/localization/kh_KH/labels.inc:language
+msgid "Language"
+msgstr "ភាសា"
+
+#: program/localization/kh_KH/labels.inc:timezone
+msgid "Time zone"
+msgstr "ម៉ោង"
+
+#: program/localization/kh_KH/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "ចំនួនសំបុត្រក្នុងមួយទំព័រ"
+
+#: program/localization/kh_KH/labels.inc:signature
+msgid "Signature"
+msgstr "ហត្ថលេខា"
+
+#: program/localization/kh_KH/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "ម៉ោងវស្សានរដូវ"
+
+#: program/localization/kh_KH/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "សរសេរសំបុត្រតាមបែប HTML"
+
+#: program/localization/kh_KH/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "ឆ្លើយតបសំបុត្រតាមបែប HTML"
+
+#: program/localization/kh_KH/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "ហត្ថលេខាតាមបែប HTML"
+
+#: program/localization/kh_KH/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "បង្ហាញប្រអប់សំរាប់មើលសំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:skin
+msgid "Interface skin"
+msgstr "ការរចនាទំព័រ"
+
+#: program/localization/kh_KH/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "សំអាតធុងសំរាមពេលពិនិត្យចេញ"
+
+#: program/localization/kh_KH/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "បង្រួមប្រអប់សំបុត្រពេលពិនិត្យចេញ"
+
+#: program/localization/kh_KH/labels.inc:uisettings
+msgid "User Interface"
+msgstr "ការរចនា"
+
+#: program/localization/kh_KH/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "ការកំណត់ម៉ាស៊ីនមេ"
+
+#: program/localization/kh_KH/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "មើលប្រអប់សំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "ប្រាប់អ្នកផ្ញើ"
+
+#: program/localization/kh_KH/labels.inc:askuser
+msgid "ask me"
+msgstr "សួរអ្នកប្រើ"
+
+#: program/localization/kh_KH/labels.inc:autosend
+msgid "send receipt"
+msgstr "ផ្ញើស្វ័យប្រវត្តិ"
+
+#: program/localization/kh_KH/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "បញ្ជូនអត្ថបទប្រាប់អ្នកផ្ញើទៅកាន់អាសយដ្ឋានទាក់ទងរបស់ខ្ញុំឬក៏សួរខ្ញុំ"
+
+#: program/localization/kh_KH/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "បញ្ជូនអត្ថបទប្រាប់អ្នកផ្ញើទៅកាន់អាសយដ្ឋានទាក់ទងរបស់ខ្ញុំឬមិនបាច់ធ្វើអ្វីទាំងអស់"
+
+#: program/localization/kh_KH/labels.inc:ignore
+msgid "ignore"
+msgstr "ទុកចោល"
+
+#: program/localization/kh_KH/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "កំណត់សំបុត្រថាបានអាន"
+"នៅពេលលុបសំបុត្រនោះ"
+
+#: program/localization/kh_KH/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "កំណត់សញ្ញាផ្កាយអោយសំបុត្រថាបានលុប"
+"ដោយមិនចាំបាច់លុបជាក់ស្តែង"
+
+#: program/localization/kh_KH/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "មិនបង្ហាញសំបុត្រដែលបានលុប"
+
+#: program/localization/kh_KH/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "លុបសំបុត្រចោល"
+"ប្រសិនជាមិនអាចផ្ទេសំបុត្រនោះទៅធុងសំរាមបាន"
+
+#: program/localization/kh_KH/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "បង្ហាញរូបភាពដែលគេផ្ញើមក"
+
+#: program/localization/kh_KH/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "ពីអ្នកផ្ញើដែលស្គាល់"
+
+#: program/localization/kh_KH/labels.inc:always
+msgid "always"
+msgstr "គ្រប់ពេល"
+
+#: program/localization/kh_KH/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "បង្ហាញរូបភាពនៅក្រោមអត្ថបទសំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "រក្សាទុកសំបុត្រពង្រៀងដោយស្វ័យប្រវត្តិ"
+
+#: program/localization/kh_KH/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "រៀងរាល់ $n នាទី"
+
+#: program/localization/kh_KH/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "ត្រួតពិនិត្យរកមើលសំបុត្រថ្មីនៅ"
+
+#: program/localization/kh_KH/labels.inc:never
+msgid "never"
+msgstr "មិនដែល"
+
+#: program/localization/kh_KH/labels.inc:immediately
+msgid "immediately"
+msgstr "ភ្លាមៗ"
+
+#: program/localization/kh_KH/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "កំពុងបង្ហាញសំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "កំពុងសរសេរសំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "ឈ្មោះឯកសារភ្ជាប់"
+
+#: program/localization/kh_KH/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "RFC 2231 ពេញ (Thunderbird)"
+
+#: program/localization/kh_KH/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/kh_KH/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "RFC 2047 ពេញ(other)"
+
+#: program/localization/kh_KH/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "ប្រើ MIME សំរាប់អក្សរទំហំ 8-bit"
+
+#: program/localization/kh_KH/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "ការកំណត់ពឹស្តារ"
+
+#: program/localization/kh_KH/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "ផ្តោតលើ"
+"វីនដូវដែលកំពុងសរសេរសំបុត្រថ្មី"
+
+#: program/localization/kh_KH/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "ពិនិត្យសំបុត្រថ្មីនៅគ្រប់ថតទាំងអស់"
+
+#: program/localization/kh_KH/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "បន្ទាប់ពីសំបុត្រត្រូវបានលុប​ឬផ្ទេរ"
+"បង្ហាញសំបុត្របន្ទាប់"
+
+#: program/localization/kh_KH/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "ជំរើសដែលជាគោល"
+
+#: program/localization/kh_KH/labels.inc:section
+msgid "Section"
+msgstr "ផ្នែក"
+
+#: program/localization/kh_KH/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "ការថែរក្សា"
+
+#: program/localization/kh_KH/labels.inc:newmessage
+msgid "New Message"
+msgstr "សំបុត្រថ្មី"
+
+#: program/localization/kh_KH/labels.inc:listoptions
+msgid "List Options"
+msgstr "កំណត់តារាង"
+
+#: program/localization/kh_KH/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "កំណត់ហត្ថលេខា"
+
+#: program/localization/kh_KH/labels.inc:whenreplying
+msgid "When replying"
+msgstr "នៅពេលកំពុងឆ្លើយតប"
+
+#: program/localization/kh_KH/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "ចាប់ផ្តើម​សរសេរ​ពី​លើ​សំបុត្រ​ដើម"
+
+#: program/localization/kh_KH/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "ចាប់ផ្តើមសរសេរពីក្រោមសំបុត្រដើម"
+
+#: program/localization/kh_KH/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "នៅ​ពេល​ឆ្លើយ​តប​លុប​ហត្ថលេខា​ចេញ​ពីសំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "បញ្ចូលហត្តលេខាដោយស្វ័យប្រវត្តិ"
+
+#: program/localization/kh_KH/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "សំរាប់សំបុត្រថ្មីតែប៉ុណ្ណោះ"
+
+#: program/localization/kh_KH/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "សំរាប់ឆើ្លយតប​និងផ្ញើបន្តតែ​ប៉ុណ្ណោះ"
+
+#: program/localization/kh_KH/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "បញ្ចូលហត្តលេខានៅពេលឆើ្លយតប​និងផ្ញើបន្ត​"
+
+#: program/localization/kh_KH/labels.inc:belowquote
+msgid "below the quote"
+msgstr "ពីក្រោមសម្រង់អត្ថបទ"
+
+#: program/localization/kh_KH/labels.inc:abovequote
+msgid "above the quote"
+msgstr "ពីលើសម្រង់អត្ថបទ"
+
+#: program/localization/kh_KH/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "បញ្ចូលហត្តលេខា"
+
+#: program/localization/kh_KH/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "កំណត់សំបុត្រ​ដែល​បាន​បង្ហាញ​​ជា​សំបុត្របាន​អាន​រួច"
+
+#: program/localization/kh_KH/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "ក្រោយពី $n វិនាទី"
+
+#: program/localization/kh_KH/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "ក្រោយពី $n វិនាទី"
+
+#: program/localization/kh_KH/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "ក្រោយពី $n វិនាទី"
+
+#: program/localization/kh_KH/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "ក្រោយពី $n វិនាទី"
+
+#: program/localization/kh_KH/labels.inc:folder
+msgid "Folder"
+msgstr "ថត"
+
+#: program/localization/kh_KH/labels.inc:foldername
+msgid "Folder name"
+msgstr "ឈ្មោះថត"
+
+#: program/localization/kh_KH/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "កំណត់យកមកប្រើ"
+
+#: program/localization/kh_KH/labels.inc:messagecount
+msgid "Messages"
+msgstr "សំបុត្រ"
+
+#: program/localization/kh_KH/labels.inc:create
+msgid "Create"
+msgstr "បង្កើត"
+
+#: program/localization/kh_KH/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "បង្កើតថតថ្មី"
+
+#: program/localization/kh_KH/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "រៀបចំថត"
+
+#: program/localization/kh_KH/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "ថតពិសេស"
+
+#: program/localization/kh_KH/labels.inc:properties
+msgid "Properties"
+msgstr "ព័ត៌មាន"
+
+#: program/localization/kh_KH/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "ព័ត៌មានអំពីថត"
+
+#: program/localization/kh_KH/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "ថតមេ"
+
+#: program/localization/kh_KH/labels.inc:location
+msgid "Location"
+msgstr "ទីកន្លែង"
+
+#: program/localization/kh_KH/labels.inc:info
+msgid "Information"
+msgstr "ព័ត៌មាន"
+
+#: program/localization/kh_KH/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "ទំហំថត"
+
+#: program/localization/kh_KH/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "ផ្លាស់ប្តូរការជាវ"
+
+#: program/localization/kh_KH/labels.inc:sortby
+msgid "Sort by"
+msgstr "តំរៀបតាម"
+
+#: program/localization/kh_KH/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "តំរៀបតាមលំដាប់ចុះ"
+
+#: program/localization/kh_KH/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "តំរៀបតាមលំដាប់ឡើង"
+
+#: program/localization/kh_KH/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/kh_KH/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/kh_KH/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/kh_KH/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/kh_KH/labels.inc:unicode
+msgid "Unicode"
+msgstr "យូនីកូដ"
+
+#: program/localization/kh_KH/labels.inc:english
+msgid "English"
+msgstr "ភាសាអង់គ្លេស"
+
+#: program/localization/kh_KH/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "អឺរ៉ុបខាងលិច"
+
+#: program/localization/kh_KH/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "អីរ៉ុបខាងកើត"
+
+#: program/localization/kh_KH/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "អឺរ៉ុបភាគអាគ្នេយ៍"
+
+#: program/localization/kh_KH/labels.inc:baltic
+msgid "Baltic"
+msgstr "ភាសាបាល់តិក"
+
+#: program/localization/kh_KH/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "ភាសាស៊ីរីលិក"
+
+#: program/localization/kh_KH/labels.inc:arabic
+msgid "Arabic"
+msgstr "ភាសាអារ៉ាប់"
+
+#: program/localization/kh_KH/labels.inc:greek
+msgid "Greek"
+msgstr "ភាសាក្រិក"
+
+#: program/localization/kh_KH/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "ភាសាហ៊ីបប្រ៊ូ"
+
+#: program/localization/kh_KH/labels.inc:turkish
+msgid "Turkish"
+msgstr "ភាសាទួរគី"
+
+#: program/localization/kh_KH/labels.inc:nordic
+msgid "Nordic"
+msgstr "ភាសាណរឌីក"
+
+#: program/localization/kh_KH/labels.inc:thai
+msgid "Thai"
+msgstr "ភាសាថៃ"
+
+#: program/localization/kh_KH/labels.inc:celtic
+msgid "Celtic"
+msgstr "ភាសាសេលតិច"
+
+#: program/localization/kh_KH/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "ភាសាវៀតណាម"
+
+#: program/localization/kh_KH/labels.inc:japanese
+msgid "Japanese"
+msgstr "ភាសាជប៉ុន"
+
+#: program/localization/kh_KH/labels.inc:korean
+msgid "Korean"
+msgstr "ភាសាកូរ៉េ"
+
+#: program/localization/kh_KH/labels.inc:chinese
+msgid "Chinese"
+msgstr "ភាសាចិន"

@@ -1,0 +1,1633 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/cs_CZ/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: cs_CZ\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/cs_CZ/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Vítejte v $product"
+
+#: program/localization/cs_CZ/labels.inc:username
+msgid "Username"
+msgstr "Uživatel"
+
+#: program/localization/cs_CZ/labels.inc:password
+msgid "Password"
+msgstr "Heslo"
+
+#: program/localization/cs_CZ/labels.inc:server
+msgid "Server"
+msgstr "Server"
+
+#: program/localization/cs_CZ/labels.inc:login
+msgid "Login"
+msgstr "Přihlásit"
+
+#: program/localization/cs_CZ/labels.inc:logout
+msgid "Logout"
+msgstr "Odhlásit"
+
+#: program/localization/cs_CZ/labels.inc:mail
+msgid "Mail"
+msgstr "E-mail"
+
+#: program/localization/cs_CZ/labels.inc:settings
+msgid "Settings"
+msgstr "Osobní nastavení"
+
+#: program/localization/cs_CZ/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Adresář"
+
+#: program/localization/cs_CZ/labels.inc:inbox
+msgid "Inbox"
+msgstr "Příchozí pošta"
+
+#: program/localization/cs_CZ/labels.inc:drafts
+msgid "Drafts"
+msgstr "Rozepsané"
+
+#: program/localization/cs_CZ/labels.inc:sent
+msgid "Sent"
+msgstr "Odeslané"
+
+#: program/localization/cs_CZ/labels.inc:trash
+msgid "Trash"
+msgstr "Koš"
+
+#: program/localization/cs_CZ/labels.inc:junk
+msgid "Junk"
+msgstr "Nevyžádaná pošta"
+
+#: program/localization/cs_CZ/labels.inc:subject
+msgid "Subject"
+msgstr "Předmět"
+
+#: program/localization/cs_CZ/labels.inc:from
+msgid "From"
+msgstr "Odesílatel"
+
+#: program/localization/cs_CZ/labels.inc:to
+msgid "To"
+msgstr "Adresát"
+
+#: program/localization/cs_CZ/labels.inc:cc
+msgid "Cc"
+msgstr "Kopie"
+
+#: program/localization/cs_CZ/labels.inc:bcc
+msgid "Bcc"
+msgstr "Skrytá kopie"
+
+#: program/localization/cs_CZ/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Odpověď na"
+
+#: program/localization/cs_CZ/labels.inc:date
+msgid "Date"
+msgstr "Datum"
+
+#: program/localization/cs_CZ/labels.inc:size
+msgid "Size"
+msgstr "Velikost"
+
+#: program/localization/cs_CZ/labels.inc:priority
+msgid "Priority"
+msgstr "Priorita"
+
+#: program/localization/cs_CZ/labels.inc:organization
+msgid "Company"
+msgstr "Organizace"
+
+#: program/localization/cs_CZ/labels.inc:readstatus
+msgid "Read status"
+msgstr "Přečteno"
+
+#: program/localization/cs_CZ/labels.inc:mailboxlist
+#: program/localization/cs_CZ/labels.inc:folders
+msgid "Folders"
+msgstr "Složky"
+
+#: program/localization/cs_CZ/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Zprávy $from až $to z celkem $count"
+
+#: program/localization/cs_CZ/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Konverzace $from až $to z celkem $count"
+
+#: program/localization/cs_CZ/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Zpráva $nr z $count"
+
+#: program/localization/cs_CZ/labels.inc:copy
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: program/localization/cs_CZ/labels.inc:move
+msgid "Move"
+msgstr "Přesunout"
+
+#: program/localization/cs_CZ/labels.inc:moveto
+msgid "Move to..."
+msgstr "přesunout do..."
+
+#: program/localization/cs_CZ/labels.inc:download
+msgid "Download"
+msgstr "stáhnout"
+
+#: program/localization/cs_CZ/labels.inc:filename
+msgid "File name"
+msgstr "Jméno přílohy"
+
+#: program/localization/cs_CZ/labels.inc:filesize
+msgid "File size"
+msgstr "Velikost přílohy"
+
+#: program/localization/cs_CZ/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Přidat do adresáře"
+
+#: program/localization/cs_CZ/labels.inc:sun
+msgid "Sun"
+msgstr "Ne"
+
+#: program/localization/cs_CZ/labels.inc:mon
+msgid "Mon"
+msgstr "Po"
+
+#: program/localization/cs_CZ/labels.inc:tue
+msgid "Tue"
+msgstr "Út"
+
+#: program/localization/cs_CZ/labels.inc:wed
+msgid "Wed"
+msgstr "St"
+
+#: program/localization/cs_CZ/labels.inc:thu
+msgid "Thu"
+msgstr "Čt"
+
+#: program/localization/cs_CZ/labels.inc:fri
+msgid "Fri"
+msgstr "Pá"
+
+#: program/localization/cs_CZ/labels.inc:sat
+msgid "Sat"
+msgstr "So"
+
+#: program/localization/cs_CZ/labels.inc:sunday
+msgid "Sunday"
+msgstr "Neděle"
+
+#: program/localization/cs_CZ/labels.inc:monday
+msgid "Monday"
+msgstr "Pondělí"
+
+#: program/localization/cs_CZ/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Úterý"
+
+#: program/localization/cs_CZ/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Středa"
+
+#: program/localization/cs_CZ/labels.inc:thursday
+msgid "Thursday"
+msgstr "Čtvrtek"
+
+#: program/localization/cs_CZ/labels.inc:friday
+msgid "Friday"
+msgstr "Pátek"
+
+#: program/localization/cs_CZ/labels.inc:saturday
+msgid "Saturday"
+msgstr "Sobota"
+
+#: program/localization/cs_CZ/labels.inc:jan
+msgid "Jan"
+msgstr "Led"
+
+#: program/localization/cs_CZ/labels.inc:feb
+msgid "Feb"
+msgstr "Úno"
+
+#: program/localization/cs_CZ/labels.inc:mar
+msgid "Mar"
+msgstr "Bře"
+
+#: program/localization/cs_CZ/labels.inc:apr
+msgid "Apr"
+msgstr "Dub"
+
+#: program/localization/cs_CZ/labels.inc:may
+#: program/localization/cs_CZ/labels.inc:longmay
+msgid "May"
+msgstr "Květen"
+
+#: program/localization/cs_CZ/labels.inc:jun
+msgid "Jun"
+msgstr "Čer"
+
+#: program/localization/cs_CZ/labels.inc:jul
+msgid "Jul"
+msgstr "Čec"
+
+#: program/localization/cs_CZ/labels.inc:aug
+msgid "Aug"
+msgstr "Srp"
+
+#: program/localization/cs_CZ/labels.inc:sep
+msgid "Sep"
+msgstr "Zář"
+
+#: program/localization/cs_CZ/labels.inc:oct
+msgid "Oct"
+msgstr "Říj"
+
+#: program/localization/cs_CZ/labels.inc:nov
+msgid "Nov"
+msgstr "Lis"
+
+#: program/localization/cs_CZ/labels.inc:dec
+msgid "Dec"
+msgstr "Pro"
+
+#: program/localization/cs_CZ/labels.inc:longjan
+msgid "January"
+msgstr "Leden"
+
+#: program/localization/cs_CZ/labels.inc:longfeb
+msgid "February"
+msgstr "Únor"
+
+#: program/localization/cs_CZ/labels.inc:longmar
+msgid "March"
+msgstr "Březen"
+
+#: program/localization/cs_CZ/labels.inc:longapr
+msgid "April"
+msgstr "Duben"
+
+#: program/localization/cs_CZ/labels.inc:longjun
+msgid "June"
+msgstr "Červen"
+
+#: program/localization/cs_CZ/labels.inc:longjul
+msgid "July"
+msgstr "Červenec"
+
+#: program/localization/cs_CZ/labels.inc:longaug
+msgid "August"
+msgstr "Srpen"
+
+#: program/localization/cs_CZ/labels.inc:longsep
+msgid "September"
+msgstr "Září"
+
+#: program/localization/cs_CZ/labels.inc:longoct
+msgid "October"
+msgstr "Říjen"
+
+#: program/localization/cs_CZ/labels.inc:longnov
+msgid "November"
+msgstr "Listopad"
+
+#: program/localization/cs_CZ/labels.inc:longdec
+msgid "December"
+msgstr "Prosinec"
+
+#: program/localization/cs_CZ/labels.inc:today
+msgid "Today"
+msgstr "Dnes"
+
+#: program/localization/cs_CZ/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Zkontrolovat nové zprávy"
+
+#: program/localization/cs_CZ/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Vytvořit novou zprávu"
+
+#: program/localization/cs_CZ/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Odpovědět odesílateli"
+
+#: program/localization/cs_CZ/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Odpovědět všem"
+
+#: program/localization/cs_CZ/labels.inc:replyall
+msgid "Reply all"
+msgstr "Odpovědět všem"
+
+#: program/localization/cs_CZ/labels.inc:replylist
+msgid "Reply list"
+msgstr "Odpovědět do e-mailové konference"
+
+#: program/localization/cs_CZ/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "Přeposlat v textu"
+
+#: program/localization/cs_CZ/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "Přeposlat jako přílohu"
+
+#: program/localization/cs_CZ/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Předat zprávu"
+
+#: program/localization/cs_CZ/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Odstranit zprávu"
+
+#: program/localization/cs_CZ/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Přesunout zprávu do koše"
+
+#: program/localization/cs_CZ/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Vytisknout zprávu"
+
+#: program/localization/cs_CZ/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Zobrazit předchozí zprávu"
+
+#: program/localization/cs_CZ/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Zobrazit první zprávu"
+
+#: program/localization/cs_CZ/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Zobrazit další zprávu"
+
+#: program/localization/cs_CZ/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Zobrazit poslední zprávu"
+
+#: program/localization/cs_CZ/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Zpět do seznamu zpráv"
+
+#: program/localization/cs_CZ/labels.inc:viewsource
+msgid "Show source"
+msgstr "Zobrazit zdroj"
+
+#: program/localization/cs_CZ/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Označ zprávy"
+
+#: program/localization/cs_CZ/labels.inc:markread
+msgid "As read"
+msgstr "Jako přečtené"
+
+#: program/localization/cs_CZ/labels.inc:markunread
+msgid "As unread"
+msgstr "Jako nepřečtené"
+
+#: program/localization/cs_CZ/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Jako označené"
+
+#: program/localization/cs_CZ/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Jako neoznačené"
+
+#: program/localization/cs_CZ/labels.inc:moreactions
+msgid "More actions..."
+msgstr "Další akce..."
+
+#: program/localization/cs_CZ/labels.inc:select
+msgid "Select"
+msgstr "Vybrat"
+
+#: program/localization/cs_CZ/labels.inc:all
+msgid "All"
+msgstr "Vše"
+
+#: program/localization/cs_CZ/labels.inc:none
+#: program/localization/cs_CZ/labels.inc:nonesort
+msgid "None"
+msgstr "Nic"
+
+#: program/localization/cs_CZ/labels.inc:currpage
+msgid "Current page"
+msgstr "Aktuální stránka"
+
+#: program/localization/cs_CZ/labels.inc:unread
+msgid "Unread"
+msgstr "Nepřečtené"
+
+#: program/localization/cs_CZ/labels.inc:flagged
+msgid "Flagged"
+msgstr "Označené"
+
+#: program/localization/cs_CZ/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Neoznačené"
+
+#: program/localization/cs_CZ/labels.inc:deleted
+msgid "Deleted"
+msgstr "Smazané"
+
+#: program/localization/cs_CZ/labels.inc:invert
+msgid "Invert"
+msgstr "Převrátit"
+
+#: program/localization/cs_CZ/labels.inc:filter
+msgid "Filter"
+msgstr "Filtr"
+
+#: program/localization/cs_CZ/labels.inc:list
+msgid "List"
+msgstr "Seznam"
+
+#: program/localization/cs_CZ/labels.inc:threads
+msgid "Threads"
+msgstr "Konverzace"
+
+#: program/localization/cs_CZ/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Rozbalit všechny"
+
+#: program/localization/cs_CZ/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Rozbalit nepřečtené"
+
+#: program/localization/cs_CZ/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Sbalit všechny"
+
+#: program/localization/cs_CZ/labels.inc:threaded
+msgid "Threaded"
+msgstr "Spojovat do konverzací"
+
+#: program/localization/cs_CZ/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Rozbalit konverzace"
+
+#: program/localization/cs_CZ/labels.inc:do_expand
+msgid "all threads"
+msgstr "všechny konverzace"
+
+#: program/localization/cs_CZ/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "pouze s nepřečtenými zprávami"
+
+#: program/localization/cs_CZ/labels.inc:fromto
+msgid "From/To"
+msgstr "Odesílatel/Příjemce"
+
+#: program/localization/cs_CZ/labels.inc:flag
+msgid "Flag"
+msgstr "Vlajka"
+
+#: program/localization/cs_CZ/labels.inc:attachment
+msgid "Attachment"
+msgstr "Příloha"
+
+#: program/localization/cs_CZ/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Datum odeslání"
+
+#: program/localization/cs_CZ/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Datum přijetí"
+
+#: program/localization/cs_CZ/labels.inc:asc
+msgid "ascending"
+msgstr "vzestupně"
+
+#: program/localization/cs_CZ/labels.inc:desc
+msgid "descending"
+msgstr "sestupně"
+
+#: program/localization/cs_CZ/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Seznam sloupců"
+
+#: program/localization/cs_CZ/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Třídění sloupců"
+
+#: program/localization/cs_CZ/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Uspořádání"
+
+#: program/localization/cs_CZ/labels.inc:listmode
+msgid "List view mode"
+msgstr "Režim zobrazení seznamu"
+
+#: program/localization/cs_CZ/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Akce se složkou..."
+
+#: program/localization/cs_CZ/labels.inc:compact
+msgid "Compact"
+msgstr "Zmenšit"
+
+#: program/localization/cs_CZ/labels.inc:empty
+msgid "Empty"
+msgstr "Vymazat"
+
+#: program/localization/cs_CZ/labels.inc:quota
+msgid "Disk usage"
+msgstr "Využití schránky"
+
+#: program/localization/cs_CZ/labels.inc:unknown
+msgid "unknown"
+msgstr "neznámý"
+
+#: program/localization/cs_CZ/labels.inc:unlimited
+msgid "unlimited"
+msgstr "neomezený"
+
+#: program/localization/cs_CZ/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Rychlé vyhledávání"
+
+#: program/localization/cs_CZ/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Zrušit vyhledávání"
+
+#: program/localization/cs_CZ/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Parametry hledání"
+
+#: program/localization/cs_CZ/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Celá zpráva"
+
+#: program/localization/cs_CZ/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Otevřít v novém okně"
+
+#: program/localization/cs_CZ/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Stáhnout (.eml)"
+
+#: program/localization/cs_CZ/labels.inc:compose
+msgid "Compose a message"
+msgstr "Napsat zprávu"
+
+#: program/localization/cs_CZ/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Upravit jako novou"
+
+#: program/localization/cs_CZ/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Uložit do rozepsaných"
+
+#: program/localization/cs_CZ/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Odeslat zprávu nyní"
+
+#: program/localization/cs_CZ/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Přidat přílohu"
+
+#: program/localization/cs_CZ/labels.inc:charset
+msgid "Charset"
+msgstr "Znaková sada"
+
+#: program/localization/cs_CZ/labels.inc:editortype
+msgid "Editor type"
+msgstr "Typ editoru zpráv"
+
+#: program/localization/cs_CZ/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Doručenka"
+
+#: program/localization/cs_CZ/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Stav doručení"
+
+#: program/localization/cs_CZ/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "Dne $date, $sender napsal:"
+
+#: program/localization/cs_CZ/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "Původní zpráva"
+
+#: program/localization/cs_CZ/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Editovat identity"
+
+#: program/localization/cs_CZ/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Zkontrolovat pravopis"
+
+#: program/localization/cs_CZ/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Pokračovat v úpravách"
+
+#: program/localization/cs_CZ/labels.inc:revertto
+msgid "Revert to"
+msgstr "Přejít na"
+
+#: program/localization/cs_CZ/labels.inc:attachments
+msgid "Attachments"
+msgstr "Přílohy"
+
+#: program/localization/cs_CZ/labels.inc:upload
+msgid "Upload"
+msgstr "Nahrát"
+
+#: program/localization/cs_CZ/labels.inc:uploadprogress
+msgid "$percent ($current from $total)"
+msgstr "$percent ($current z $total)"
+
+#: program/localization/cs_CZ/labels.inc:close
+msgid "Close"
+msgstr "Zavřít"
+
+#: program/localization/cs_CZ/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Nastavení zprávy..."
+
+#: program/localization/cs_CZ/labels.inc:low
+msgid "Low"
+msgstr "Nízká"
+
+#: program/localization/cs_CZ/labels.inc:lowest
+msgid "Lowest"
+msgstr "Nejnižší"
+
+#: program/localization/cs_CZ/labels.inc:normal
+msgid "Normal"
+msgstr "Normální"
+
+#: program/localization/cs_CZ/labels.inc:high
+msgid "High"
+msgstr "Vysoká"
+
+#: program/localization/cs_CZ/labels.inc:highest
+msgid "Highest"
+msgstr "Nejvyšší"
+
+#: program/localization/cs_CZ/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(bez predmetu)"
+
+#: program/localization/cs_CZ/labels.inc:showimages
+msgid "Display images"
+msgstr "Zobrazit obrázky"
+
+#: program/localization/cs_CZ/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Vždy ukazovat obrázky od $sender"
+
+#: program/localization/cs_CZ/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/cs_CZ/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Prostý text"
+
+#: program/localization/cs_CZ/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Ukládat odeslané zprávy v"
+
+#: program/localization/cs_CZ/labels.inc:dontsave
+msgid "don't save"
+msgstr "neukládat"
+
+#: program/localization/cs_CZ/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Maximální povolená velikost souboru je $size"
+
+#: program/localization/cs_CZ/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Přidat pole \"Kopie\""
+
+#: program/localization/cs_CZ/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Přidat pole \"Skrytá kopie\""
+
+#: program/localization/cs_CZ/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Přidat pole \"Odpověď\""
+
+#: program/localization/cs_CZ/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Přidat pole \"Followup-To\""
+
+#: program/localization/cs_CZ/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Odesílatel této zprávy si přeje být upozorněn na to, že jste zprávu"
+"obdrželi. Chcete přijetí zprávy potvrdit?"
+
+#: program/localization/cs_CZ/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Potvrzení o přijetí zprávy"
+
+#: program/localization/cs_CZ/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Toto je potvrzení o přijetí Vaší zprávy"
+
+#: program/localization/cs_CZ/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Poznámka: Toto potvrzení negarantuje, že zpráva byla příjemce"
+"přečtena a že porozuměl jejímu obsahu."
+
+#: program/localization/cs_CZ/labels.inc:name
+msgid "Display Name"
+msgstr "Zobrazit jméno"
+
+#: program/localization/cs_CZ/labels.inc:firstname
+msgid "First Name"
+msgstr "Jméno"
+
+#: program/localization/cs_CZ/labels.inc:surname
+msgid "Last Name"
+msgstr "Příjmení"
+
+#: program/localization/cs_CZ/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Rodné příjmení"
+
+#: program/localization/cs_CZ/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "Titul před"
+
+#: program/localization/cs_CZ/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "Titul za"
+
+#: program/localization/cs_CZ/labels.inc:nickname
+msgid "Nickname"
+msgstr "Přezdívka"
+
+#: program/localization/cs_CZ/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Pracovní pozice"
+
+#: program/localization/cs_CZ/labels.inc:department
+msgid "Department"
+msgstr "Oddělení"
+
+#: program/localization/cs_CZ/labels.inc:gender
+msgid "Gender"
+msgstr "Pohlaví"
+
+#: program/localization/cs_CZ/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Rodné příjmení"
+
+#: program/localization/cs_CZ/labels.inc:email
+msgid "Email"
+msgstr "E-mail"
+
+#: program/localization/cs_CZ/labels.inc:phone
+msgid "Phone"
+msgstr "Telefon"
+
+#: program/localization/cs_CZ/labels.inc:address
+msgid "Address"
+msgstr "Adresa"
+
+#: program/localization/cs_CZ/labels.inc:street
+msgid "Street"
+msgstr "Ulice"
+
+#: program/localization/cs_CZ/labels.inc:locality
+msgid "City"
+msgstr "Město"
+
+#: program/localization/cs_CZ/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "PSČ"
+
+#: program/localization/cs_CZ/labels.inc:region
+msgid "State/Province"
+msgstr "Kraj"
+
+#: program/localization/cs_CZ/labels.inc:country
+msgid "Country"
+msgstr "Země"
+
+#: program/localization/cs_CZ/labels.inc:birthday
+msgid "Birthday"
+msgstr "Datum narození"
+
+#: program/localization/cs_CZ/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "Výročí"
+
+#: program/localization/cs_CZ/labels.inc:website
+msgid "Website"
+msgstr "WWW"
+
+#: program/localization/cs_CZ/labels.inc:instantmessenger
+msgid "IM"
+msgstr "Komunikace (ICQ, messenger...)"
+
+#: program/localization/cs_CZ/labels.inc:notes
+msgid "Notes"
+msgstr "Poznámky"
+
+#: program/localization/cs_CZ/labels.inc:male
+msgid "male"
+msgstr "Muž"
+
+#: program/localization/cs_CZ/labels.inc:female
+msgid "female"
+msgstr "Žena"
+
+#: program/localization/cs_CZ/labels.inc:manager
+msgid "Manager"
+msgstr "Manažer"
+
+#: program/localization/cs_CZ/labels.inc:assistant
+#: program/localization/cs_CZ/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Asistent"
+
+#: program/localization/cs_CZ/labels.inc:spouse
+msgid "Spouse"
+msgstr "Manžel/ka"
+
+#: program/localization/cs_CZ/labels.inc:allfields
+msgid "All fields"
+msgstr "Všechny položky"
+
+#: program/localization/cs_CZ/labels.inc:search
+msgid "Search"
+msgstr "Hledat"
+
+#: program/localization/cs_CZ/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "Pokročilé vyhledávání"
+
+#: program/localization/cs_CZ/labels.inc:other
+#: program/localization/cs_CZ/labels.inc:typeother
+msgid "Other"
+msgstr "Ostatní"
+
+#: program/localization/cs_CZ/labels.inc:typehome
+msgid "Home"
+msgstr "Domací"
+
+#: program/localization/cs_CZ/labels.inc:typework
+msgid "Work"
+msgstr "Pracovní"
+
+#: program/localization/cs_CZ/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Mobil"
+
+#: program/localization/cs_CZ/labels.inc:typemain
+msgid "Main"
+msgstr "Osobní"
+
+#: program/localization/cs_CZ/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Domácí FAX"
+
+#: program/localization/cs_CZ/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "Pracovní FAX"
+
+#: program/localization/cs_CZ/labels.inc:typecar
+msgid "Car"
+msgstr "Automobil"
+
+#: program/localization/cs_CZ/labels.inc:typepager
+msgid "Pager"
+msgstr "Pager"
+
+#: program/localization/cs_CZ/labels.inc:typevideo
+msgid "Video"
+msgstr "Video"
+
+#: program/localization/cs_CZ/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "Domácí stránka"
+
+#: program/localization/cs_CZ/labels.inc:typeblog
+msgid "Blog"
+msgstr "Blog"
+
+#: program/localization/cs_CZ/labels.inc:typeprofile
+msgid "Profile"
+msgstr "Profil"
+
+#: program/localization/cs_CZ/labels.inc:addfield
+msgid "Add field..."
+msgstr "Přidat položku"
+
+#: program/localization/cs_CZ/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Přidat kontakt"
+
+#: program/localization/cs_CZ/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Upravit kontakt"
+
+#: program/localization/cs_CZ/labels.inc:contacts
+msgid "Contacts"
+msgstr "Kontakty"
+
+#: program/localization/cs_CZ/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Vlastnosti kontaktu"
+
+#: program/localization/cs_CZ/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Osobní informace"
+
+#: program/localization/cs_CZ/labels.inc:edit
+msgid "Edit"
+msgstr "Upravit"
+
+#: program/localization/cs_CZ/labels.inc:cancel
+msgid "Cancel"
+msgstr "Konec"
+
+#: program/localization/cs_CZ/labels.inc:save
+msgid "Save"
+msgstr "Uložit"
+
+#: program/localization/cs_CZ/labels.inc:delete
+msgid "Delete"
+msgstr "Smazat"
+
+#: program/localization/cs_CZ/labels.inc:rename
+msgid "Rename"
+msgstr "Přejmenovat"
+
+#: program/localization/cs_CZ/labels.inc:addphoto
+msgid "Add"
+msgstr "Přidat"
+
+#: program/localization/cs_CZ/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Změnit"
+
+#: program/localization/cs_CZ/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Vytvořit nový kontakt"
+
+#: program/localization/cs_CZ/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Smazat vybrané kontakty"
+
+#: program/localization/cs_CZ/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Poslat e-mail"
+
+#: program/localization/cs_CZ/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Kontakty $from až $to z celkem $count"
+
+#: program/localization/cs_CZ/labels.inc:print
+msgid "Print"
+msgstr "Tisk"
+
+#: program/localization/cs_CZ/labels.inc:export
+msgid "Export"
+msgstr "Export"
+
+#: program/localization/cs_CZ/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Exportovat kontakty ve formátu vCard"
+
+#: program/localization/cs_CZ/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Vytvořit novou skupinu kontaktů"
+
+#: program/localization/cs_CZ/labels.inc:grouprename
+msgid "Rename group"
+msgstr "Přejmenovat skupinu"
+
+#: program/localization/cs_CZ/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "Smazat skupinu"
+
+#: program/localization/cs_CZ/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Předchozí"
+
+#: program/localization/cs_CZ/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Zobrazit první zprávy"
+
+#: program/localization/cs_CZ/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Další"
+
+#: program/localization/cs_CZ/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Zobrazit poslední zprávy"
+
+#: program/localization/cs_CZ/labels.inc:group
+msgid "Group"
+msgstr "Skupina"
+
+#: program/localization/cs_CZ/labels.inc:groups
+msgid "Groups"
+msgstr "Skupiny"
+
+#: program/localization/cs_CZ/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Osobní kontakty"
+
+#: program/localization/cs_CZ/labels.inc:searchsave
+msgid "Save search"
+msgstr "Uložit hledání"
+
+#: program/localization/cs_CZ/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "Smazat hledání"
+
+#: program/localization/cs_CZ/labels.inc:import
+msgid "Import"
+msgstr "Import"
+
+#: program/localization/cs_CZ/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Importovat kontakty"
+
+#: program/localization/cs_CZ/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Importovat ze souboru"
+
+#: program/localization/cs_CZ/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "Přidat nové kontakty do seznamu kontaktů:"
+
+#: program/localization/cs_CZ/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Nahradit celý seznam kontaktů"
+
+#: program/localization/cs_CZ/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Můžete nahrát kontakty z existujícího seznamu kontaktů. Podporujeme"
+"formát vCard."
+
+#: program/localization/cs_CZ/labels.inc:done
+msgid "Done"
+msgstr "Hotovo"
+
+#: program/localization/cs_CZ/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Nastavení pro"
+
+#: program/localization/cs_CZ/labels.inc:preferences
+msgid "Preferences"
+msgstr "Vlastnosti"
+
+#: program/localization/cs_CZ/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Vlastnosti uživatele"
+
+#: program/localization/cs_CZ/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Upravit vlastnosti uživatele"
+
+#: program/localization/cs_CZ/labels.inc:identities
+msgid "Identities"
+msgstr "Profily"
+
+#: program/localization/cs_CZ/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Spravovat profily u tohoto účtu"
+
+#: program/localization/cs_CZ/labels.inc:newidentity
+msgid "New identity"
+msgstr "Nový profil"
+
+#: program/localization/cs_CZ/labels.inc:newitem
+msgid "New item"
+msgstr "Nová položka"
+
+#: program/localization/cs_CZ/labels.inc:edititem
+msgid "Edit item"
+msgstr "Upravit položku"
+
+#: program/localization/cs_CZ/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Upřednostňovat HTML zobrazení"
+
+#: program/localization/cs_CZ/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Výchozí kódování"
+
+#: program/localization/cs_CZ/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML zpráva"
+
+#: program/localization/cs_CZ/labels.inc:dateformat
+msgid "Date format"
+msgstr "Formát data"
+
+#: program/localization/cs_CZ/labels.inc:timeformat
+msgid "Time format"
+msgstr "Formát času"
+
+#: program/localization/cs_CZ/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Hezčí datum"
+
+#: program/localization/cs_CZ/labels.inc:setdefault
+msgid "Set default"
+msgstr "Nastavit výchozí"
+
+#: program/localization/cs_CZ/labels.inc:autodetect
+msgid "Auto"
+msgstr "Automaticky"
+
+#: program/localization/cs_CZ/labels.inc:language
+msgid "Language"
+msgstr "Jazyk"
+
+#: program/localization/cs_CZ/labels.inc:timezone
+msgid "Time zone"
+msgstr "Časová zóna"
+
+#: program/localization/cs_CZ/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Řádků na stránku"
+
+#: program/localization/cs_CZ/labels.inc:signature
+msgid "Signature"
+msgstr "Podpis"
+
+#: program/localization/cs_CZ/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Letní čas"
+
+#: program/localization/cs_CZ/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Vytvářet HTML zprávy"
+
+#: program/localization/cs_CZ/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "jen při odpovědi na HTML zprávy"
+
+#: program/localization/cs_CZ/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML podpis"
+
+#: program/localization/cs_CZ/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Zobrazit panel náhledu"
+
+#: program/localization/cs_CZ/labels.inc:skin
+msgid "Interface skin"
+msgstr "Vzhled"
+
+#: program/localization/cs_CZ/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Vyprázdnit koš při odhlášení"
+
+#: program/localization/cs_CZ/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Provést údržbu schránky při odhlášení"
+
+#: program/localization/cs_CZ/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Uživatelské rozhraní"
+
+#: program/localization/cs_CZ/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Nastavení serveru"
+
+#: program/localization/cs_CZ/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Zobrazení schránky"
+
+#: program/localization/cs_CZ/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Oznámení o doručení"
+
+#: program/localization/cs_CZ/labels.inc:askuser
+msgid "ask me"
+msgstr "zeptat se"
+
+#: program/localization/cs_CZ/labels.inc:autosend
+msgid "send receipt"
+msgstr "poslat potvrzení automaticky"
+
+#: program/localization/cs_CZ/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "poslat potvrzení pouze mým kontaktům, jinak se zeptat"
+
+#: program/localization/cs_CZ/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "poslat potvrzení pouze mým kontaktům, jinak ignorovat"
+
+#: program/localization/cs_CZ/labels.inc:ignore
+msgid "ignore"
+msgstr "ignorovat"
+
+#: program/localization/cs_CZ/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Při odstranění označit zprávu jako přečtenou"
+
+#: program/localization/cs_CZ/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Zprávu nemazat, pouze označit pro odstranění"
+
+#: program/localization/cs_CZ/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Nezobrazovat smazané zprávy"
+
+#: program/localization/cs_CZ/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Odstranit zprávy, pokud selže jejich přesun do koše"
+
+#: program/localization/cs_CZ/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Zobrazovat obrázky uložené mimo mail"
+
+#: program/localization/cs_CZ/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "od známých uživatelů"
+
+#: program/localization/cs_CZ/labels.inc:always
+msgid "always"
+msgstr "vždy"
+
+#: program/localization/cs_CZ/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Zobrazovat připojené obrázky pod textem"
+
+#: program/localization/cs_CZ/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Automaticky uložit rozepsané zprávy"
+
+#: program/localization/cs_CZ/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "každých $n minut"
+
+#: program/localization/cs_CZ/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Zkontrolovat nové zprávy"
+
+#: program/localization/cs_CZ/labels.inc:never
+msgid "never"
+msgstr "nikdy"
+
+#: program/localization/cs_CZ/labels.inc:immediately
+msgid "immediately"
+msgstr "ihned"
+
+#: program/localization/cs_CZ/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Zobrazování zpráv"
+
+#: program/localization/cs_CZ/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Psaní zpráv"
+
+#: program/localization/cs_CZ/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Jména příloh"
+
+#: program/localization/cs_CZ/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Podle RFC 2231 (Thunderbird)"
+
+#: program/localization/cs_CZ/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/cs_CZ/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Podle RFC 2047 (ostatní)"
+
+#: program/localization/cs_CZ/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "Použít kódování MIME pro 8-bitové znaky"
+
+#: program/localization/cs_CZ/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Pokročilá nastavení"
+
+#: program/localization/cs_CZ/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Aktivovat okno prohlížeče při příchozí zprávě"
+
+#: program/localization/cs_CZ/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Kontrolovat nové zprávy ve všech složkách"
+
+#: program/localization/cs_CZ/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Zobrazit další zprávu po smazání/přesunu zprávy"
+
+#: program/localization/cs_CZ/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Hlavní nastavení"
+
+#: program/localization/cs_CZ/labels.inc:section
+msgid "Section"
+msgstr "Sekce"
+
+#: program/localization/cs_CZ/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Údržba"
+
+#: program/localization/cs_CZ/labels.inc:newmessage
+msgid "New Message"
+msgstr "Nová zpráva"
+
+#: program/localization/cs_CZ/labels.inc:listoptions
+msgid "List Options"
+msgstr "Nastavení stránkování"
+
+#: program/localization/cs_CZ/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Nastavení podpisu"
+
+#: program/localization/cs_CZ/labels.inc:whenreplying
+msgid "When replying"
+msgstr "Při odpovídání"
+
+#: program/localization/cs_CZ/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "začít novou zprávu nad původní"
+
+#: program/localization/cs_CZ/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "začít novou zprávu pod původní"
+
+#: program/localization/cs_CZ/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "Při odpovídání odstranit ze zprávy původní podpis"
+
+#: program/localization/cs_CZ/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Automaticky přidat podpis"
+
+#: program/localization/cs_CZ/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "pouze k novým zprávám"
+
+#: program/localization/cs_CZ/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "jen k odpovědi a přeposílané zprávě"
+
+#: program/localization/cs_CZ/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "Při odpovídání nebo přeposílání zprávy vložit podpis"
+
+#: program/localization/cs_CZ/labels.inc:belowquote
+msgid "below the quote"
+msgstr "pod citaci"
+
+#: program/localization/cs_CZ/labels.inc:abovequote
+msgid "above the quote"
+msgstr "nad citaci"
+
+#: program/localization/cs_CZ/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Vložit podpis"
+
+#: program/localization/cs_CZ/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Označit zobrazené zprávy jako přečtené"
+
+#: program/localization/cs_CZ/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "po $n sekundách"
+
+#: program/localization/cs_CZ/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Vždy požadovat doručenku"
+
+#: program/localization/cs_CZ/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Vždy požádat o oznámení o stavu doručení"
+
+#: program/localization/cs_CZ/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Ukládat odpovědi ve stejné složce jako je zodpovězená zpráva"
+
+#: program/localization/cs_CZ/labels.inc:defaultaddressbook
+msgid "Add new contacts to the selected addressbook"
+msgstr "Přidávat nové kontakty do seznamu kontaktů"
+
+#: program/localization/cs_CZ/labels.inc:spellcheckbeforesend
+msgid "Check spelling before sending a message"
+msgstr "Před odesláním zkontrolovat pravopis"
+
+#: program/localization/cs_CZ/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "Nastavení pravopisu"
+
+#: program/localization/cs_CZ/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "Ignorovat slova obsahující symboly"
+
+#: program/localization/cs_CZ/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "Ignorovat slova obsahující čísla"
+
+#: program/localization/cs_CZ/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "Ignorovat slova psaná velkými písmeny"
+
+#: program/localization/cs_CZ/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "Přidat do slovníku"
+
+#: program/localization/cs_CZ/labels.inc:folder
+msgid "Folder"
+msgstr "Složka"
+
+#: program/localization/cs_CZ/labels.inc:foldername
+msgid "Folder name"
+msgstr "Jméno složky"
+
+#: program/localization/cs_CZ/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Vybráno"
+
+#: program/localization/cs_CZ/labels.inc:messagecount
+msgid "Messages"
+msgstr "Počet zpráv"
+
+#: program/localization/cs_CZ/labels.inc:create
+msgid "Create"
+msgstr "Vytvořit"
+
+#: program/localization/cs_CZ/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Vytvořit novou složku"
+
+#: program/localization/cs_CZ/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Spravovat složky"
+
+#: program/localization/cs_CZ/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Speciální složky"
+
+#: program/localization/cs_CZ/labels.inc:properties
+msgid "Properties"
+msgstr "Vlastnosti"
+
+#: program/localization/cs_CZ/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Vlastnosti složky"
+
+#: program/localization/cs_CZ/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Nadřazená složka"
+
+#: program/localization/cs_CZ/labels.inc:location
+msgid "Location"
+msgstr "Umístění"
+
+#: program/localization/cs_CZ/labels.inc:info
+msgid "Information"
+msgstr "Informace"
+
+#: program/localization/cs_CZ/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Kliknutím zjistíte velikost složky"
+
+#: program/localization/cs_CZ/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Kliknutím změníte přednastavení"
+
+#: program/localization/cs_CZ/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Typ složky"
+
+#: program/localization/cs_CZ/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "Soukromá složka"
+
+#: program/localization/cs_CZ/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "Složky ostatních uživatelů"
+
+#: program/localization/cs_CZ/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "Sdílená složka"
+
+#: program/localization/cs_CZ/labels.inc:sortby
+msgid "Sort by"
+msgstr "Seřadit podle"
+
+#: program/localization/cs_CZ/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Seřadit vzestupně"
+
+#: program/localization/cs_CZ/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Seřadit sestupně"
+
+#: program/localization/cs_CZ/labels.inc:undo
+msgid "Undo"
+msgstr "Vrátit zpět"
+
+#: program/localization/cs_CZ/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/cs_CZ/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/cs_CZ/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/cs_CZ/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/cs_CZ/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unicode"
+
+#: program/localization/cs_CZ/labels.inc:english
+msgid "English"
+msgstr "Angličtina"
+
+#: program/localization/cs_CZ/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Západní Evropa"
+
+#: program/localization/cs_CZ/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Východní Evropa"
+
+#: program/localization/cs_CZ/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Jiho-východní Evropa"
+
+#: program/localization/cs_CZ/labels.inc:baltic
+msgid "Baltic"
+msgstr "Baltština"
+
+#: program/localization/cs_CZ/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Cyrilice"
+
+#: program/localization/cs_CZ/labels.inc:arabic
+msgid "Arabic"
+msgstr "Arabština"
+
+#: program/localization/cs_CZ/labels.inc:greek
+msgid "Greek"
+msgstr "Řečtina"
+
+#: program/localization/cs_CZ/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Hebrejština"
+
+#: program/localization/cs_CZ/labels.inc:turkish
+msgid "Turkish"
+msgstr "Turečtina"
+
+#: program/localization/cs_CZ/labels.inc:nordic
+msgid "Nordic"
+msgstr "Nordština"
+
+#: program/localization/cs_CZ/labels.inc:thai
+msgid "Thai"
+msgstr "Thajština"
+
+#: program/localization/cs_CZ/labels.inc:celtic
+msgid "Celtic"
+msgstr "Keltština"
+
+#: program/localization/cs_CZ/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Vietnamština"
+
+#: program/localization/cs_CZ/labels.inc:japanese
+msgid "Japanese"
+msgstr "Japonština"
+
+#: program/localization/cs_CZ/labels.inc:korean
+msgid "Korean"
+msgstr "Korejština"
+
+#: program/localization/cs_CZ/labels.inc:chinese
+msgid "Chinese"
+msgstr "Čínština"

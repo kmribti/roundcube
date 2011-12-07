@@ -1,0 +1,1538 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/id_ID/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: id_ID\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/id_ID/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Selamat datang di $product"
+
+#: program/localization/id_ID/labels.inc:username
+msgid "Username"
+msgstr "Username"
+
+#: program/localization/id_ID/labels.inc:password
+msgid "Password"
+msgstr "Password"
+
+#: program/localization/id_ID/labels.inc:server
+msgid "Server"
+msgstr "Server"
+
+#: program/localization/id_ID/labels.inc:login
+msgid "Login"
+msgstr "Masuk"
+
+#: program/localization/id_ID/labels.inc:logout
+msgid "Logout"
+msgstr "Keluar"
+
+#: program/localization/id_ID/labels.inc:mail
+msgid "Mail"
+msgstr "E-Mail"
+
+#: program/localization/id_ID/labels.inc:settings
+msgid "Settings"
+msgstr "Pengaturan Pribadi"
+
+#: program/localization/id_ID/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Buku Alamat"
+
+#: program/localization/id_ID/labels.inc:inbox
+msgid "Inbox"
+msgstr "Kotak Masuk"
+
+#: program/localization/id_ID/labels.inc:drafts
+msgid "Drafts"
+msgstr "Daftar tunggu"
+
+#: program/localization/id_ID/labels.inc:sent
+msgid "Sent"
+msgstr "Terkirim"
+
+#: program/localization/id_ID/labels.inc:trash
+msgid "Trash"
+msgstr "Surat Terhapus"
+
+#: program/localization/id_ID/labels.inc:junk
+msgid "Junk"
+msgstr "Sampah"
+
+#: program/localization/id_ID/labels.inc:subject
+msgid "Subject"
+msgstr "Judul"
+
+#: program/localization/id_ID/labels.inc:from
+msgid "From"
+msgstr "Pengirim"
+
+#: program/localization/id_ID/labels.inc:to
+msgid "To"
+msgstr "Penerima"
+
+#: program/localization/id_ID/labels.inc:cc
+msgid "Cc"
+msgstr "Lampiran"
+
+#: program/localization/id_ID/labels.inc:bcc
+msgid "Bcc"
+msgstr "Lampiran tersembunyi"
+
+#: program/localization/id_ID/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Balas kepada"
+
+#: program/localization/id_ID/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Surat Tindak Lanjut Untuk"
+
+#: program/localization/id_ID/labels.inc:date
+msgid "Date"
+msgstr "Tanggal"
+
+#: program/localization/id_ID/labels.inc:size
+msgid "Size"
+msgstr "Ukuran"
+
+#: program/localization/id_ID/labels.inc:priority
+msgid "Priority"
+msgstr "Prioritas"
+
+#: program/localization/id_ID/labels.inc:organization
+msgid "Company"
+msgstr "Organisasi"
+
+#: program/localization/id_ID/labels.inc:readstatus
+msgid "Read status"
+msgstr "Status Terbaca"
+
+#: program/localization/id_ID/labels.inc:mailboxlist
+#: program/localization/id_ID/labels.inc:folders
+msgid "Folders"
+msgstr "Semua Folder"
+
+#: program/localization/id_ID/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Pesan ke $from sampai $to dari $count"
+
+#: program/localization/id_ID/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Untaian ke $from sampai $to dari $count"
+
+#: program/localization/id_ID/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Pesan $nr sebanyak $count"
+
+#: program/localization/id_ID/labels.inc:copy
+msgid "Copy"
+msgstr "Salin"
+
+#: program/localization/id_ID/labels.inc:move
+msgid "Move"
+msgstr "Pindahkan"
+
+#: program/localization/id_ID/labels.inc:moveto
+msgid "Move to..."
+msgstr "Pindahkan ke..."
+
+#: program/localization/id_ID/labels.inc:download
+msgid "Download"
+msgstr "Unduh"
+
+#: program/localization/id_ID/labels.inc:filename
+msgid "File name"
+msgstr "Nama berkas"
+
+#: program/localization/id_ID/labels.inc:filesize
+msgid "File size"
+msgstr "Ukuran berkas"
+
+#: program/localization/id_ID/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Tambah ke Buku Tamu"
+
+#: program/localization/id_ID/labels.inc:sun
+msgid "Sun"
+msgstr "Min"
+
+#: program/localization/id_ID/labels.inc:mon
+msgid "Mon"
+msgstr "Sen"
+
+#: program/localization/id_ID/labels.inc:tue
+msgid "Tue"
+msgstr "Sel"
+
+#: program/localization/id_ID/labels.inc:wed
+msgid "Wed"
+msgstr "Rab"
+
+#: program/localization/id_ID/labels.inc:thu
+msgid "Thu"
+msgstr "Kam"
+
+#: program/localization/id_ID/labels.inc:fri
+msgid "Fri"
+msgstr "Jum"
+
+#: program/localization/id_ID/labels.inc:sat
+msgid "Sat"
+msgstr "Sab"
+
+#: program/localization/id_ID/labels.inc:sunday
+msgid "Sunday"
+msgstr "Minggu"
+
+#: program/localization/id_ID/labels.inc:monday
+msgid "Monday"
+msgstr "Senin"
+
+#: program/localization/id_ID/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Selasa"
+
+#: program/localization/id_ID/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Rabu"
+
+#: program/localization/id_ID/labels.inc:thursday
+msgid "Thursday"
+msgstr "Kamis"
+
+#: program/localization/id_ID/labels.inc:friday
+msgid "Friday"
+msgstr "Jumat"
+
+#: program/localization/id_ID/labels.inc:saturday
+msgid "Saturday"
+msgstr "Sabtu"
+
+#: program/localization/id_ID/labels.inc:jan
+msgid "Jan"
+msgstr "Jan"
+
+#: program/localization/id_ID/labels.inc:feb
+msgid "Feb"
+msgstr "Feb"
+
+#: program/localization/id_ID/labels.inc:mar
+msgid "Mar"
+msgstr "Mar"
+
+#: program/localization/id_ID/labels.inc:apr
+msgid "Apr"
+msgstr "Apr"
+
+#: program/localization/id_ID/labels.inc:may
+#: program/localization/id_ID/labels.inc:longmay
+msgid "May"
+msgstr "Mei"
+
+#: program/localization/id_ID/labels.inc:jun
+msgid "Jun"
+msgstr "Jun"
+
+#: program/localization/id_ID/labels.inc:jul
+msgid "Jul"
+msgstr "Jul"
+
+#: program/localization/id_ID/labels.inc:aug
+msgid "Aug"
+msgstr "Ags"
+
+#: program/localization/id_ID/labels.inc:sep
+msgid "Sep"
+msgstr "Sep"
+
+#: program/localization/id_ID/labels.inc:oct
+msgid "Oct"
+msgstr "Okt"
+
+#: program/localization/id_ID/labels.inc:nov
+msgid "Nov"
+msgstr "Nov"
+
+#: program/localization/id_ID/labels.inc:dec
+msgid "Dec"
+msgstr "Des"
+
+#: program/localization/id_ID/labels.inc:longjan
+msgid "January"
+msgstr "Januari"
+
+#: program/localization/id_ID/labels.inc:longfeb
+msgid "February"
+msgstr "Februari"
+
+#: program/localization/id_ID/labels.inc:longmar
+msgid "March"
+msgstr "Maret"
+
+#: program/localization/id_ID/labels.inc:longapr
+msgid "April"
+msgstr "April"
+
+#: program/localization/id_ID/labels.inc:longjun
+msgid "June"
+msgstr "Juni"
+
+#: program/localization/id_ID/labels.inc:longjul
+msgid "July"
+msgstr "Juli"
+
+#: program/localization/id_ID/labels.inc:longaug
+msgid "August"
+msgstr "Agustus"
+
+#: program/localization/id_ID/labels.inc:longsep
+msgid "September"
+msgstr "Spetember"
+
+#: program/localization/id_ID/labels.inc:longoct
+msgid "October"
+msgstr "Oktober"
+
+#: program/localization/id_ID/labels.inc:longnov
+msgid "November"
+msgstr "November"
+
+#: program/localization/id_ID/labels.inc:longdec
+msgid "December"
+msgstr "Desember"
+
+#: program/localization/id_ID/labels.inc:today
+msgid "Today"
+msgstr "Hari ini"
+
+#: program/localization/id_ID/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Periksa pesan baru"
+
+#: program/localization/id_ID/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Buat pesan baru"
+
+#: program/localization/id_ID/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Balas pesan"
+
+#: program/localization/id_ID/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Balas ke pengirim dan yang lain"
+
+#: program/localization/id_ID/labels.inc:replyall
+msgid "Reply all"
+msgstr "Balas ke semua"
+
+#: program/localization/id_ID/labels.inc:replylist
+msgid "Reply list"
+msgstr "Balas ke milis"
+
+#: program/localization/id_ID/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Teruskan pesan"
+
+#: program/localization/id_ID/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Hapus pesan"
+
+#: program/localization/id_ID/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Pindahkan pesan ke tong sampah"
+
+#: program/localization/id_ID/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Cetak pesan ini"
+
+#: program/localization/id_ID/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Perlihatkan pesan sebelumnya"
+
+#: program/localization/id_ID/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Perlihatkan pesan pertama"
+
+#: program/localization/id_ID/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Perlihatkan pesan berikutnya"
+
+#: program/localization/id_ID/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Perlihatkan pesan terakhir"
+
+#: program/localization/id_ID/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Kembali ke daftar pesan"
+
+#: program/localization/id_ID/labels.inc:viewsource
+msgid "Show source"
+msgstr "Perlihatkan kode sumber"
+
+#: program/localization/id_ID/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Tandai Pesan"
+
+#: program/localization/id_ID/labels.inc:markread
+msgid "As read"
+msgstr "Terbaca"
+
+#: program/localization/id_ID/labels.inc:markunread
+msgid "As unread"
+msgstr "Belum Terbaca"
+
+#: program/localization/id_ID/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Sudah ditandai"
+
+#: program/localization/id_ID/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Belum ditandai"
+
+#: program/localization/id_ID/labels.inc:messageactions
+msgid "messageactions"
+msgstr "Tindakan lain..."
+
+#: program/localization/id_ID/labels.inc:select
+msgid "Select"
+msgstr "Pilih"
+
+#: program/localization/id_ID/labels.inc:all
+msgid "All"
+msgstr "Semua"
+
+#: program/localization/id_ID/labels.inc:none
+#: program/localization/id_ID/labels.inc:nonesort
+msgid "None"
+msgstr "Tidak ada"
+
+#: program/localization/id_ID/labels.inc:currpage
+msgid "Current page"
+msgstr "Halaman sekarang"
+
+#: program/localization/id_ID/labels.inc:unread
+msgid "Unread"
+msgstr "Belum terbaca"
+
+#: program/localization/id_ID/labels.inc:flagged
+msgid "Flagged"
+msgstr "Ditandai"
+
+#: program/localization/id_ID/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Belum terjawab"
+
+#: program/localization/id_ID/labels.inc:deleted
+msgid "Deleted"
+msgstr "Terhapus"
+
+#: program/localization/id_ID/labels.inc:invert
+msgid "Invert"
+msgstr "Sebaliknya"
+
+#: program/localization/id_ID/labels.inc:filter
+msgid "Filter"
+msgstr "Penyaringan"
+
+#: program/localization/id_ID/labels.inc:list
+msgid "List"
+msgstr "Daftar"
+
+#: program/localization/id_ID/labels.inc:threads
+msgid "Threads"
+msgstr "Untaian"
+
+#: program/localization/id_ID/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Bentangkan Semua"
+
+#: program/localization/id_ID/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Bentangkan yang Belum Terbaca"
+
+#: program/localization/id_ID/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Lipat Semua"
+
+#: program/localization/id_ID/labels.inc:threaded
+msgid "Threaded"
+msgstr "Teruntai"
+
+#: program/localization/id_ID/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Bentangkan pesan teruntai"
+
+#: program/localization/id_ID/labels.inc:do_expand
+msgid "all threads"
+msgstr "semua untaian"
+
+#: program/localization/id_ID/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "hanya pesan yang belum terbaca"
+
+#: program/localization/id_ID/labels.inc:fromto
+msgid "From/To"
+msgstr "Pengirim/Penerima"
+
+#: program/localization/id_ID/labels.inc:flag
+msgid "Flag"
+msgstr "Bendera"
+
+#: program/localization/id_ID/labels.inc:attachment
+msgid "Attachment"
+msgstr "Lampiran"
+
+#: program/localization/id_ID/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Tanggal kirim"
+
+#: program/localization/id_ID/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Tanggal masuk"
+
+#: program/localization/id_ID/labels.inc:asc
+msgid "ascending"
+msgstr "menaik"
+
+#: program/localization/id_ID/labels.inc:desc
+msgid "descending"
+msgstr "menurun"
+
+#: program/localization/id_ID/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Perlihatkan kolom"
+
+#: program/localization/id_ID/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Mengurutkan kolom"
+
+#: program/localization/id_ID/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Mengurutkan susunan"
+
+#: program/localization/id_ID/labels.inc:listmode
+msgid "List view mode"
+msgstr "Perlihatkan mode tinjauan"
+
+#: program/localization/id_ID/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Tindakan pada map"
+
+#: program/localization/id_ID/labels.inc:compact
+msgid "Compact"
+msgstr "Rampingkan"
+
+#: program/localization/id_ID/labels.inc:empty
+msgid "Empty"
+msgstr "Kosong"
+
+#: program/localization/id_ID/labels.inc:quota
+msgid "Disk usage"
+msgstr "Penggunaan kandar"
+
+#: program/localization/id_ID/labels.inc:unknown
+msgid "unknown"
+msgstr "Tidak dikenal"
+
+#: program/localization/id_ID/labels.inc:unlimited
+msgid "unlimited"
+msgstr "Tidak terbatas"
+
+#: program/localization/id_ID/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Pencarian cepat"
+
+#: program/localization/id_ID/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Atur ulang pencarian"
+
+#: program/localization/id_ID/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Peubah pencarian"
+
+#: program/localization/id_ID/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Seluruh pesan"
+
+#: program/localization/id_ID/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Buka dalam jendela baru"
+
+#: program/localization/id_ID/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Unduh (.eml)"
+
+#: program/localization/id_ID/labels.inc:compose
+msgid "Compose a message"
+msgstr "Tulis sebuah pesan"
+
+#: program/localization/id_ID/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Sunting sebagai pesan baru"
+
+#: program/localization/id_ID/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Simpan konsep surat  ini"
+
+#: program/localization/id_ID/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Kirim pesan sekarang"
+
+#: program/localization/id_ID/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Sisipkan sebuah berkas"
+
+#: program/localization/id_ID/labels.inc:charset
+msgid "Charset"
+msgstr "Set karakter"
+
+#: program/localization/id_ID/labels.inc:editortype
+msgid "Editor type"
+msgstr "Tipe penyunting"
+
+#: program/localization/id_ID/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Tanda terima kembali"
+
+#: program/localization/id_ID/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Pemberitahuan status terkirim"
+
+#: program/localization/id_ID/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Ubah identitas"
+
+#: program/localization/id_ID/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Pemeriksaan ejaan"
+
+#: program/localization/id_ID/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Lanjutkan menyunting"
+
+#: program/localization/id_ID/labels.inc:revertto
+msgid "Revert to"
+msgstr "Balikkan ke"
+
+#: program/localization/id_ID/labels.inc:attachments
+msgid "Attachments"
+msgstr "Sisipan"
+
+#: program/localization/id_ID/labels.inc:upload
+msgid "Upload"
+msgstr "Unggah"
+
+#: program/localization/id_ID/labels.inc:close
+msgid "Close"
+msgstr "Tutup"
+
+#: program/localization/id_ID/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Pilihan pesan..."
+
+#: program/localization/id_ID/labels.inc:low
+msgid "Low"
+msgstr "Rendah"
+
+#: program/localization/id_ID/labels.inc:lowest
+msgid "Lowest"
+msgstr "Paling Rendah"
+
+#: program/localization/id_ID/labels.inc:normal
+msgid "Normal"
+msgstr "Normal"
+
+#: program/localization/id_ID/labels.inc:high
+msgid "High"
+msgstr "Tinggi"
+
+#: program/localization/id_ID/labels.inc:highest
+msgid "Highest"
+msgstr "Paling tinggi"
+
+#: program/localization/id_ID/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(tanpa judul)"
+
+#: program/localization/id_ID/labels.inc:showimages
+msgid "Display images"
+msgstr "Tampilkan gambar"
+
+#: program/localization/id_ID/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Selalu tampilkan gambar dari $sender"
+
+#: program/localization/id_ID/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/id_ID/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Teks murni"
+
+#: program/localization/id_ID/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Simpan pesan terkirim di"
+
+#: program/localization/id_ID/labels.inc:dontsave
+msgid "don't save"
+msgstr "Jangan disimpan"
+
+#: program/localization/id_ID/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Ukuran file maksimal adalah $size"
+
+#: program/localization/id_ID/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Tambah Cc"
+
+#: program/localization/id_ID/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Tambah Bcc"
+
+#: program/localization/id_ID/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Tambah Balas Ke"
+
+#: program/localization/id_ID/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Tambahkan Tindak-Lanjut-Ke"
+
+#: program/localization/id_ID/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Pengirim pesan ini telah meminta untuk diberitahu ketika Anda membaca pesan"
+"ini. Apakah anda ingin memberitahu pengirim?"
+
+#: program/localization/id_ID/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Tanda Terima (baca)"
+
+#: program/localization/id_ID/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Ini adalah Tanda Terima untuk pesan Anda"
+
+#: program/localization/id_ID/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Catatan: Tanda Terima ini hanya mengesahkan bahwa pesan telah diperlihatkan"
+"pada komputer penerima. Tidak ada jaminan bahwa penerima telah membaca atau"
+"mengerti isi pesan."
+
+#: program/localization/id_ID/labels.inc:name
+msgid "Display Name"
+msgstr "Tampilkan nama"
+
+#: program/localization/id_ID/labels.inc:firstname
+msgid "First Name"
+msgstr "Nama depan"
+
+#: program/localization/id_ID/labels.inc:surname
+msgid "Last Name"
+msgstr "Nama belakang"
+
+#: program/localization/id_ID/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Nama tengah"
+
+#: program/localization/id_ID/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "awalan"
+
+#: program/localization/id_ID/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "sisipan"
+
+#: program/localization/id_ID/labels.inc:nickname
+msgid "Nickname"
+msgstr "nama kecil"
+
+#: program/localization/id_ID/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Jabatan"
+
+#: program/localization/id_ID/labels.inc:department
+msgid "Department"
+msgstr "Departemen"
+
+#: program/localization/id_ID/labels.inc:gender
+msgid "Gender"
+msgstr "Jenis kelamin"
+
+#: program/localization/id_ID/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Nama asli"
+
+#: program/localization/id_ID/labels.inc:email
+msgid "Email"
+msgstr "E-Mail"
+
+#: program/localization/id_ID/labels.inc:phone
+msgid "Phone"
+msgstr "Telepon"
+
+#: program/localization/id_ID/labels.inc:address
+msgid "Address"
+msgstr "Alamat"
+
+#: program/localization/id_ID/labels.inc:street
+msgid "Street"
+msgstr "Jalan"
+
+#: program/localization/id_ID/labels.inc:locality
+msgid "City"
+msgstr "Kota"
+
+#: program/localization/id_ID/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "Kode pos"
+
+#: program/localization/id_ID/labels.inc:region
+msgid "State/Province"
+msgstr "Kecamatan"
+
+#: program/localization/id_ID/labels.inc:country
+msgid "Country"
+msgstr "Negara Bagian"
+
+#: program/localization/id_ID/labels.inc:birthday
+msgid "Birthday"
+msgstr "Tanggal lahir"
+
+#: program/localization/id_ID/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "Hari jadi"
+
+#: program/localization/id_ID/labels.inc:website
+msgid "Website"
+msgstr "Laman web"
+
+#: program/localization/id_ID/labels.inc:instantmessenger
+msgid "IM"
+msgstr "IM"
+
+#: program/localization/id_ID/labels.inc:notes
+msgid "Notes"
+msgstr "Catatan"
+
+#: program/localization/id_ID/labels.inc:male
+msgid "male"
+msgstr "pria"
+
+#: program/localization/id_ID/labels.inc:female
+msgid "female"
+msgstr "wanita"
+
+#: program/localization/id_ID/labels.inc:manager
+msgid "Manager"
+msgstr "Menejer"
+
+#: program/localization/id_ID/labels.inc:assistant
+#: program/localization/id_ID/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Asisten"
+
+#: program/localization/id_ID/labels.inc:spouse
+msgid "Spouse"
+msgstr "Suami/Istri"
+
+#: program/localization/id_ID/labels.inc:typehome
+msgid "Home"
+msgstr "Rumah"
+
+#: program/localization/id_ID/labels.inc:typework
+msgid "Work"
+msgstr "Kantor"
+
+#: program/localization/id_ID/labels.inc:typeother
+msgid "Other"
+msgstr "Lainnya"
+
+#: program/localization/id_ID/labels.inc:typemobile
+msgid "Mobile"
+msgstr "HP"
+
+#: program/localization/id_ID/labels.inc:typemain
+msgid "Main"
+msgstr "Utama"
+
+#: program/localization/id_ID/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Faks Rumah"
+
+#: program/localization/id_ID/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "Faks Kantor"
+
+#: program/localization/id_ID/labels.inc:typecar
+msgid "Car"
+msgstr "Mobil"
+
+#: program/localization/id_ID/labels.inc:typepager
+msgid "Pager"
+msgstr "Pejer"
+
+#: program/localization/id_ID/labels.inc:typevideo
+msgid "Video"
+msgstr "Video"
+
+#: program/localization/id_ID/labels.inc:addfield
+msgid "Add field..."
+msgstr "Tambah kolom isian"
+
+#: program/localization/id_ID/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Tambah kontak baru"
+
+#: program/localization/id_ID/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Ubah kontak"
+
+#: program/localization/id_ID/labels.inc:contacts
+msgid "Contacts"
+msgstr "Daftar kontak"
+
+#: program/localization/id_ID/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Properti kontak"
+
+#: program/localization/id_ID/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Informasi pribadi"
+
+#: program/localization/id_ID/labels.inc:edit
+msgid "Edit"
+msgstr "Ubah"
+
+#: program/localization/id_ID/labels.inc:cancel
+msgid "Cancel"
+msgstr "Batal"
+
+#: program/localization/id_ID/labels.inc:save
+msgid "Save"
+msgstr "Simpan"
+
+#: program/localization/id_ID/labels.inc:delete
+msgid "Delete"
+msgstr "Hapus"
+
+#: program/localization/id_ID/labels.inc:rename
+msgid "Rename"
+msgstr "Ganti nama"
+
+#: program/localization/id_ID/labels.inc:addphoto
+msgid "Add"
+msgstr "Tambah"
+
+#: program/localization/id_ID/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Ganti"
+
+#: program/localization/id_ID/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Buat kartu kontak baru"
+
+#: program/localization/id_ID/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Hapus kontak terpilih"
+
+#: program/localization/id_ID/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Tulis surat kepada"
+
+#: program/localization/id_ID/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Kontak $from sampai $to dari $count"
+
+#: program/localization/id_ID/labels.inc:print
+msgid "Print"
+msgstr "Cetak"
+
+#: program/localization/id_ID/labels.inc:export
+msgid "Export"
+msgstr "Ekspor"
+
+#: program/localization/id_ID/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Ekspor kontak dalam format vCard"
+
+#: program/localization/id_ID/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Buat Grup baru"
+
+#: program/localization/id_ID/labels.inc:groupactions
+msgid "groupactions"
+msgstr "Aksi untuk grup kontak"
+
+#: program/localization/id_ID/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Perlihatkan himpunan sebelumnya"
+
+#: program/localization/id_ID/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Perlihatkan himpunan pertama"
+
+#: program/localization/id_ID/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Perlihatkan himpunan selanjutnya"
+
+#: program/localization/id_ID/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Perlihatkan himpunan terakhir"
+
+#: program/localization/id_ID/labels.inc:group
+msgid "Group"
+msgstr "Kelompok"
+
+#: program/localization/id_ID/labels.inc:groups
+msgid "Groups"
+msgstr "Kelompok"
+
+#: program/localization/id_ID/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Alamat pribadi"
+
+#: program/localization/id_ID/labels.inc:import
+msgid "Import"
+msgstr "Impor"
+
+#: program/localization/id_ID/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Impor kontak"
+
+#: program/localization/id_ID/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Impor dari berkas:"
+
+#: program/localization/id_ID/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Ganti seluruh buku alamat"
+
+#: program/localization/id_ID/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Anda bisa mengunggah kontak dari buku alamat yang sudah ada.<br/>Kami"
+"kebetulan mendukung pengimportan alamat dari format data <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>."
+
+#: program/localization/id_ID/labels.inc:done
+msgid "Done"
+msgstr "Selesai"
+
+#: program/localization/id_ID/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Pengaturan untuk"
+
+#: program/localization/id_ID/labels.inc:preferences
+msgid "Preferences"
+msgstr "Pilihan"
+
+#: program/localization/id_ID/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Pilihan pengguna"
+
+#: program/localization/id_ID/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Ubah pilihan pengguna"
+
+#: program/localization/id_ID/labels.inc:identities
+msgid "Identities"
+msgstr "Identitas"
+
+#: program/localization/id_ID/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Atur identitas untuk akun ini"
+
+#: program/localization/id_ID/labels.inc:newidentity
+msgid "New identity"
+msgstr "Identitas baru"
+
+#: program/localization/id_ID/labels.inc:newitem
+msgid "New item"
+msgstr "Item baru"
+
+#: program/localization/id_ID/labels.inc:edititem
+msgid "Edit item"
+msgstr "Ubah item"
+
+#: program/localization/id_ID/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Lebih suka HTML"
+
+#: program/localization/id_ID/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Default Character"
+
+#: program/localization/id_ID/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Pesan HTML"
+
+#: program/localization/id_ID/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Tanggal Cantik"
+
+#: program/localization/id_ID/labels.inc:setdefault
+msgid "Set default"
+msgstr "Pengaturan Awal"
+
+#: program/localization/id_ID/labels.inc:autodetect
+msgid "Auto"
+msgstr "Otomatis"
+
+#: program/localization/id_ID/labels.inc:language
+msgid "Language"
+msgstr "Bahasa"
+
+#: program/localization/id_ID/labels.inc:timezone
+msgid "Time zone"
+msgstr "Daerah Waktu"
+
+#: program/localization/id_ID/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Baris per halaman"
+
+#: program/localization/id_ID/labels.inc:signature
+msgid "Signature"
+msgstr "Tanda tangan"
+
+#: program/localization/id_ID/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Waktu Musim Panas"
+
+#: program/localization/id_ID/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Tulis pesan HTML"
+
+#: program/localization/id_ID/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "balasan untuk pesan HTML saja"
+
+#: program/localization/id_ID/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "Tandatangan HTML"
+
+#: program/localization/id_ID/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Unjuk pratinjau"
+
+#: program/localization/id_ID/labels.inc:skin
+msgid "Interface skin"
+msgstr "Tampilan antarmuka"
+
+#: program/localization/id_ID/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Bersihkan Tong Sampah saat keluar"
+
+#: program/localization/id_ID/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Mampatkan Kotak Masuk saat keluar"
+
+#: program/localization/id_ID/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Antarmuka pengguna"
+
+#: program/localization/id_ID/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Pengaturan Server"
+
+#: program/localization/id_ID/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Tampilan Kotak Surat"
+
+#: program/localization/id_ID/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Sedang dimintakan tanda terima kembali"
+
+#: program/localization/id_ID/labels.inc:askuser
+msgid "ask me"
+msgstr "tanya pengguna"
+
+#: program/localization/id_ID/labels.inc:autosend
+msgid "send receipt"
+msgstr "kirim otomatis"
+
+#: program/localization/id_ID/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "kirim tanda terima kepada kontak saya, selain itu tanyai saya"
+
+#: program/localization/id_ID/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "kirim tanda terima kepada kontak saya, selain acuhkan"
+
+#: program/localization/id_ID/labels.inc:ignore
+msgid "ignore"
+msgstr "acuhkan"
+
+#: program/localization/id_ID/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Tandai pesan sebagai terbaca saat dihapus"
+
+#: program/localization/id_ID/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Tandai pesan untuk penghapusan daripada dihapus"
+
+#: program/localization/id_ID/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Jangan tampilkan pesan terhapus"
+
+#: program/localization/id_ID/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Jika gagal memindakan ke tempat sampah, langsung hapus"
+
+#: program/localization/id_ID/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Tampilkan remote inline images"
+
+#: program/localization/id_ID/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "dari pengirim yang dikenal"
+
+#: program/localization/id_ID/labels.inc:always
+msgid "always"
+msgstr "selalu"
+
+#: program/localization/id_ID/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Tampilkan gambar terlampir dibawah pesan"
+
+#: program/localization/id_ID/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Otomatis menyimpan pesan tertunda"
+
+#: program/localization/id_ID/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "setiap $n menit"
+
+#: program/localization/id_ID/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Periksa pesan baru saat"
+
+#: program/localization/id_ID/labels.inc:never
+msgid "never"
+msgstr "tidak pernah"
+
+#: program/localization/id_ID/labels.inc:immediately
+msgid "immediately"
+msgstr "secepatnya"
+
+#: program/localization/id_ID/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Penampilan Pesan"
+
+#: program/localization/id_ID/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Pengaturan Pesan"
+
+#: program/localization/id_ID/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Nama lampiran"
+
+#: program/localization/id_ID/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Full RFC 2231 (Thunderbird)"
+
+#: program/localization/id_ID/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/id_ID/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Full RFC 2047 (other)"
+
+#: program/localization/id_ID/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "Gunakan MIME encoding untuk 8-bit karakter"
+
+#: program/localization/id_ID/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Pilihan canggih"
+
+#: program/localization/id_ID/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Pusatkan jendela broswer saat ada pesan baru"
+
+#: program/localization/id_ID/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Periksa semua map untuk pesan baru"
+
+#: program/localization/id_ID/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Setelah menghapus/memindahkan, tampilkan pesan berikutnya"
+
+#: program/localization/id_ID/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Pilihan Utama"
+
+#: program/localization/id_ID/labels.inc:section
+msgid "Section"
+msgstr "Bagian"
+
+#: program/localization/id_ID/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Perbaikan"
+
+#: program/localization/id_ID/labels.inc:newmessage
+msgid "New Message"
+msgstr "Pesan baru"
+
+#: program/localization/id_ID/labels.inc:listoptions
+msgid "List Options"
+msgstr "Daftar Pilihan"
+
+#: program/localization/id_ID/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Opsi tanda tangan"
+
+#: program/localization/id_ID/labels.inc:whenreplying
+msgid "When replying"
+msgstr "Ketika membalas"
+
+#: program/localization/id_ID/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "Tulis pesan baru diatas pesan asli"
+
+#: program/localization/id_ID/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "Tulis pesan baru dibawah pesan asli"
+
+#: program/localization/id_ID/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "ketika membalas pesan hapus tanda tangan dari pesan"
+
+#: program/localization/id_ID/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Otomatis tambahkan tanda tangan"
+
+#: program/localization/id_ID/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "Hanya untuk pesan baru"
+
+#: program/localization/id_ID/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "Hanya untuk dijawab dan diteruskan"
+
+#: program/localization/id_ID/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "ketika membalas atau meneruskan pesan tambahkan tanda tangan"
+
+#: program/localization/id_ID/labels.inc:belowquote
+msgid "below the quote"
+msgstr "Dibawah kutipan"
+
+#: program/localization/id_ID/labels.inc:abovequote
+msgid "above the quote"
+msgstr "Diatas kutipan"
+
+#: program/localization/id_ID/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Isi tanda tangan"
+
+#: program/localization/id_ID/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Tandai pesan yang sudah dilihat "
+
+#: program/localization/id_ID/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "setelah $n detik"
+
+#: program/localization/id_ID/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Selalu meminta tanda terima kembali"
+
+#: program/localization/id_ID/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Selalu meminta pemberitahuan status terkirim"
+
+#: program/localization/id_ID/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Taruh balasan di folder yang sama dengan pesan yang dibalas"
+
+#: program/localization/id_ID/labels.inc:folder
+msgid "Folder"
+msgstr "Folder"
+
+#: program/localization/id_ID/labels.inc:foldername
+msgid "Folder name"
+msgstr "Nama folder"
+
+#: program/localization/id_ID/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Subscribed"
+
+#: program/localization/id_ID/labels.inc:messagecount
+msgid "Messages"
+msgstr "Pesan-pesan"
+
+#: program/localization/id_ID/labels.inc:create
+msgid "Create"
+msgstr "Buat"
+
+#: program/localization/id_ID/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Buat folder baru"
+
+#: program/localization/id_ID/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Atur folder"
+
+#: program/localization/id_ID/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Folder Khusus"
+
+#: program/localization/id_ID/labels.inc:properties
+msgid "Properties"
+msgstr "Atribut"
+
+#: program/localization/id_ID/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Atribut folder"
+
+#: program/localization/id_ID/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Folder induk"
+
+#: program/localization/id_ID/labels.inc:location
+msgid "Location"
+msgstr "Lokasi"
+
+#: program/localization/id_ID/labels.inc:info
+msgid "Information"
+msgstr "Informasi"
+
+#: program/localization/id_ID/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Klik untuk mendapatkan ukuran folder"
+
+#: program/localization/id_ID/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Klik untuk mengubah langganan"
+
+#: program/localization/id_ID/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Jenis folder"
+
+#: program/localization/id_ID/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "Folder pribadi"
+
+#: program/localization/id_ID/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "Folder lain"
+
+#: program/localization/id_ID/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "Folder publik"
+
+#: program/localization/id_ID/labels.inc:sortby
+msgid "Sort by"
+msgstr "Urut berdasarkan"
+
+#: program/localization/id_ID/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Urut menaik"
+
+#: program/localization/id_ID/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Urut menurun"
+
+#: program/localization/id_ID/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/id_ID/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/id_ID/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/id_ID/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/id_ID/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unicode"
+
+#: program/localization/id_ID/labels.inc:english
+msgid "English"
+msgstr "Inggris"
+
+#: program/localization/id_ID/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Eropa Barat"
+
+#: program/localization/id_ID/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Eropa Timur"
+
+#: program/localization/id_ID/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Eropa Tenggara"
+
+#: program/localization/id_ID/labels.inc:baltic
+msgid "Baltic"
+msgstr "Balkan"
+
+#: program/localization/id_ID/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Rusia"
+
+#: program/localization/id_ID/labels.inc:arabic
+msgid "Arabic"
+msgstr "Arab"
+
+#: program/localization/id_ID/labels.inc:greek
+msgid "Greek"
+msgstr "Yunani"
+
+#: program/localization/id_ID/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Yahudi"
+
+#: program/localization/id_ID/labels.inc:turkish
+msgid "Turkish"
+msgstr "Turki"
+
+#: program/localization/id_ID/labels.inc:nordic
+msgid "Nordic"
+msgstr "Nordik"
+
+#: program/localization/id_ID/labels.inc:thai
+msgid "Thai"
+msgstr "Thailand"
+
+#: program/localization/id_ID/labels.inc:celtic
+msgid "Celtic"
+msgstr "Keltik"
+
+#: program/localization/id_ID/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Vietnam"
+
+#: program/localization/id_ID/labels.inc:japanese
+msgid "Japanese"
+msgstr "Jepang"
+
+#: program/localization/id_ID/labels.inc:korean
+msgid "Korean"
+msgstr "Korea"
+
+#: program/localization/id_ID/labels.inc:chinese
+msgid "Chinese"
+msgstr "Cina"

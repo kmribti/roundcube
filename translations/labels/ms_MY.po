@@ -1,0 +1,820 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ms_MY/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ms_MY\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ms_MY/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Selamat datang ke $product"
+
+#: program/localization/ms_MY/labels.inc:username
+msgid "Username"
+msgstr "Nama Pengguna"
+
+#: program/localization/ms_MY/labels.inc:password
+msgid "Password"
+msgstr "Kata Laluan"
+
+#: program/localization/ms_MY/labels.inc:server
+msgid "Server"
+msgstr "Pelayan"
+
+#: program/localization/ms_MY/labels.inc:login
+msgid "Login"
+msgstr "Log Masuk"
+
+#: program/localization/ms_MY/labels.inc:logout
+msgid "Logout"
+msgstr "Log Keluar"
+
+#: program/localization/ms_MY/labels.inc:mail
+msgid "Mail"
+msgstr "E-Mel"
+
+#: program/localization/ms_MY/labels.inc:settings
+msgid "Settings"
+msgstr "Tetapan Peribadi"
+
+#: program/localization/ms_MY/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Buku Alamat"
+
+#: program/localization/ms_MY/labels.inc:inbox
+msgid "Inbox"
+msgstr "Masuk"
+
+#: program/localization/ms_MY/labels.inc:drafts
+msgid "Drafts"
+msgstr "Draf"
+
+#: program/localization/ms_MY/labels.inc:sent
+msgid "Sent"
+msgstr "Keluar"
+
+#: program/localization/ms_MY/labels.inc:trash
+msgid "Trash"
+msgstr "Sampah"
+
+#: program/localization/ms_MY/labels.inc:junk
+msgid "Junk"
+msgstr "Remeh"
+
+#: program/localization/ms_MY/labels.inc:subject
+msgid "Subject"
+msgstr "Subjek"
+
+#: program/localization/ms_MY/labels.inc:from
+msgid "From"
+msgstr "Penghantar"
+
+#: program/localization/ms_MY/labels.inc:to
+msgid "To"
+msgstr "Penerima"
+
+#: program/localization/ms_MY/labels.inc:cc
+msgid "Cc"
+msgstr "Salinan"
+
+#: program/localization/ms_MY/labels.inc:bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#: program/localization/ms_MY/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Balas kepada"
+
+#: program/localization/ms_MY/labels.inc:date
+msgid "Date"
+msgstr "Tarikh"
+
+#: program/localization/ms_MY/labels.inc:size
+msgid "Size"
+msgstr "Saiz"
+
+#: program/localization/ms_MY/labels.inc:priority
+msgid "Priority"
+msgstr "Keutamaan"
+
+#: program/localization/ms_MY/labels.inc:organization
+msgid "Company"
+msgstr "Organisasi"
+
+#: program/localization/ms_MY/labels.inc:reply-to
+msgid "reply-to"
+msgstr "Balas kepada"
+
+#: program/localization/ms_MY/labels.inc:mailboxlist
+#: program/localization/ms_MY/labels.inc:folders
+msgid "Folders"
+msgstr "Kabinet Fail"
+
+#: program/localization/ms_MY/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Mesej $from ke $to dari $count"
+
+#: program/localization/ms_MY/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Mesej $nr dari $count"
+
+#: program/localization/ms_MY/labels.inc:moveto
+msgid "Move to..."
+msgstr "pindah ke..."
+
+#: program/localization/ms_MY/labels.inc:download
+msgid "Download"
+msgstr "muat turun"
+
+#: program/localization/ms_MY/labels.inc:filename
+msgid "File name"
+msgstr "Nama Fail"
+
+#: program/localization/ms_MY/labels.inc:filesize
+msgid "File size"
+msgstr "Saiz Fail"
+
+#: program/localization/ms_MY/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Papar HTML"
+
+#: program/localization/ms_MY/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Mesej HTML"
+
+#: program/localization/ms_MY/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Tarikh-tarikh cantik"
+
+#: program/localization/ms_MY/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Tambah ke buku alamat"
+
+#: program/localization/ms_MY/labels.inc:sun
+msgid "Sun"
+msgstr "Aha"
+
+#: program/localization/ms_MY/labels.inc:mon
+msgid "Mon"
+msgstr "Isn"
+
+#: program/localization/ms_MY/labels.inc:tue
+msgid "Tue"
+msgstr "Sel"
+
+#: program/localization/ms_MY/labels.inc:wed
+msgid "Wed"
+msgstr "Rab"
+
+#: program/localization/ms_MY/labels.inc:thu
+msgid "Thu"
+msgstr "Kha"
+
+#: program/localization/ms_MY/labels.inc:fri
+msgid "Fri"
+msgstr "Jum"
+
+#: program/localization/ms_MY/labels.inc:sat
+msgid "Sat"
+msgstr "Sab"
+
+#: program/localization/ms_MY/labels.inc:sunday
+msgid "Sunday"
+msgstr "Ahad"
+
+#: program/localization/ms_MY/labels.inc:monday
+msgid "Monday"
+msgstr "Isnin"
+
+#: program/localization/ms_MY/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Selasa"
+
+#: program/localization/ms_MY/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Rabu"
+
+#: program/localization/ms_MY/labels.inc:thursday
+msgid "Thursday"
+msgstr "Khamis"
+
+#: program/localization/ms_MY/labels.inc:friday
+msgid "Friday"
+msgstr "Jumaat"
+
+#: program/localization/ms_MY/labels.inc:saturday
+msgid "Saturday"
+msgstr "Sabtu"
+
+#: program/localization/ms_MY/labels.inc:jan
+msgid "Jan"
+msgstr "Jan"
+
+#: program/localization/ms_MY/labels.inc:feb
+msgid "Feb"
+msgstr "Feb"
+
+#: program/localization/ms_MY/labels.inc:mar
+msgid "Mar"
+msgstr "Mac"
+
+#: program/localization/ms_MY/labels.inc:apr
+msgid "Apr"
+msgstr "Apr"
+
+#: program/localization/ms_MY/labels.inc:may
+#: program/localization/ms_MY/labels.inc:longmay
+msgid "May"
+msgstr "Mei"
+
+#: program/localization/ms_MY/labels.inc:jun
+msgid "Jun"
+msgstr "Jun"
+
+#: program/localization/ms_MY/labels.inc:jul
+msgid "Jul"
+msgstr "Jul"
+
+#: program/localization/ms_MY/labels.inc:aug
+msgid "Aug"
+msgstr "Ogo"
+
+#: program/localization/ms_MY/labels.inc:sep
+msgid "Sep"
+msgstr "Sep"
+
+#: program/localization/ms_MY/labels.inc:oct
+msgid "Oct"
+msgstr "Okt"
+
+#: program/localization/ms_MY/labels.inc:nov
+msgid "Nov"
+msgstr "Nov"
+
+#: program/localization/ms_MY/labels.inc:dec
+msgid "Dec"
+msgstr "Dis"
+
+#: program/localization/ms_MY/labels.inc:longjan
+msgid "January"
+msgstr "Januari"
+
+#: program/localization/ms_MY/labels.inc:longfeb
+msgid "February"
+msgstr "Februari"
+
+#: program/localization/ms_MY/labels.inc:longmar
+msgid "March"
+msgstr "March"
+
+#: program/localization/ms_MY/labels.inc:longapr
+msgid "April"
+msgstr "April"
+
+#: program/localization/ms_MY/labels.inc:longjun
+msgid "June"
+msgstr "Jun"
+
+#: program/localization/ms_MY/labels.inc:longjul
+msgid "July"
+msgstr "Julai"
+
+#: program/localization/ms_MY/labels.inc:longaug
+msgid "August"
+msgstr "Ogos"
+
+#: program/localization/ms_MY/labels.inc:longsep
+msgid "September"
+msgstr "September"
+
+#: program/localization/ms_MY/labels.inc:longoct
+msgid "October"
+msgstr "Oktober"
+
+#: program/localization/ms_MY/labels.inc:longnov
+msgid "November"
+msgstr "November"
+
+#: program/localization/ms_MY/labels.inc:longdec
+msgid "December"
+msgstr "Disember"
+
+#: program/localization/ms_MY/labels.inc:today
+msgid "Today"
+msgstr "Hari Ini"
+
+#: program/localization/ms_MY/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Semak mesej baru"
+
+#: program/localization/ms_MY/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Cipta mesej baru"
+
+#: program/localization/ms_MY/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Balas mesej"
+
+#: program/localization/ms_MY/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Balas kepada penghantar dan semua penerima"
+
+#: program/localization/ms_MY/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Marakan mesej"
+
+#: program/localization/ms_MY/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Pindah mesej ke sampah"
+
+#: program/localization/ms_MY/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Pindah mesej ke Tong Sampah"
+
+#: program/localization/ms_MY/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Cetak mesej ini"
+
+#: program/localization/ms_MY/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Papar mesej sebelumnya"
+
+#: program/localization/ms_MY/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "Papar set mesej sebelumnya"
+
+#: program/localization/ms_MY/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Papar mesej pertama"
+
+#: program/localization/ms_MY/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "Papar set mesej pertama"
+
+#: program/localization/ms_MY/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Papat mesej seterusnya"
+
+#: program/localization/ms_MY/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "Papar set mesej seterusnya"
+
+#: program/localization/ms_MY/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Papat mesej terakhir"
+
+#: program/localization/ms_MY/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "Papar set mesej terakhir"
+
+#: program/localization/ms_MY/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Kembali ke senarai mesej"
+
+#: program/localization/ms_MY/labels.inc:viewsource
+msgid "Show source"
+msgstr "Papar sumber"
+
+#: program/localization/ms_MY/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Tanda mesej"
+
+#: program/localization/ms_MY/labels.inc:markread
+msgid "As read"
+msgstr "dibaca"
+
+#: program/localization/ms_MY/labels.inc:markunread
+msgid "As unread"
+msgstr "belum/tidak dibaca"
+
+#: program/localization/ms_MY/labels.inc:select
+msgid "Select"
+msgstr "Pilih"
+
+#: program/localization/ms_MY/labels.inc:all
+msgid "All"
+msgstr "Semua"
+
+#: program/localization/ms_MY/labels.inc:none
+msgid "None"
+msgstr "Tiada"
+
+#: program/localization/ms_MY/labels.inc:unread
+msgid "Unread"
+msgstr "Tidak dibaca"
+
+#: program/localization/ms_MY/labels.inc:compact
+msgid "Compact"
+msgstr "Padat"
+
+#: program/localization/ms_MY/labels.inc:empty
+msgid "Empty"
+msgstr "Kosong"
+
+#: program/localization/ms_MY/labels.inc:purge
+msgid "purge"
+msgstr "Singkir"
+
+#: program/localization/ms_MY/labels.inc:quota
+msgid "Disk usage"
+msgstr "Penggunaan cakera"
+
+#: program/localization/ms_MY/labels.inc:unknown
+msgid "unknown"
+msgstr "tidak dikenali"
+
+#: program/localization/ms_MY/labels.inc:unlimited
+msgid "unlimited"
+msgstr "tidak terhad"
+
+#: program/localization/ms_MY/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Carian pantas"
+
+#: program/localization/ms_MY/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Set semula carian"
+
+#: program/localization/ms_MY/labels.inc:compose
+msgid "Compose a message"
+msgstr "Karang mesej"
+
+#: program/localization/ms_MY/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Simpan draf ini"
+
+#: program/localization/ms_MY/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Hantar mesej sekarang"
+
+#: program/localization/ms_MY/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Lampir fail"
+
+#: program/localization/ms_MY/labels.inc:charset
+msgid "Charset"
+msgstr "Charset"
+
+#: program/localization/ms_MY/labels.inc:editortype
+msgid "Editor type"
+msgstr "Jenis Editor"
+
+#: program/localization/ms_MY/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Resit kembali"
+
+#: program/localization/ms_MY/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Semak ejaan"
+
+#: program/localization/ms_MY/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Sambung pengeditan"
+
+#: program/localization/ms_MY/labels.inc:revertto
+msgid "Revert to"
+msgstr "Kembali kepada"
+
+#: program/localization/ms_MY/labels.inc:attachments
+msgid "Attachments"
+msgstr "Lampiran"
+
+#: program/localization/ms_MY/labels.inc:upload
+msgid "Upload"
+msgstr "Muat naik"
+
+#: program/localization/ms_MY/labels.inc:close
+msgid "Close"
+msgstr "Tutup"
+
+#: program/localization/ms_MY/labels.inc:low
+msgid "Low"
+msgstr "Rendah"
+
+#: program/localization/ms_MY/labels.inc:lowest
+msgid "Lowest"
+msgstr "Paling Rendah"
+
+#: program/localization/ms_MY/labels.inc:normal
+msgid "Normal"
+msgstr "Normal"
+
+#: program/localization/ms_MY/labels.inc:high
+msgid "High"
+msgstr "Tinggi"
+
+#: program/localization/ms_MY/labels.inc:highest
+msgid "Highest"
+msgstr "Paling Tinggi"
+
+#: program/localization/ms_MY/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(tiada subjek)"
+
+#: program/localization/ms_MY/labels.inc:showimages
+msgid "Display images"
+msgstr "Papar imej"
+
+#: program/localization/ms_MY/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/ms_MY/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Teks kosong"
+
+#: program/localization/ms_MY/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Tambah Cc"
+
+#: program/localization/ms_MY/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Tambah Bcc"
+
+#: program/localization/ms_MY/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Tambah Reply-To"
+
+#: program/localization/ms_MY/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Pengirim mesej ini mahu diberitahu apabila anda membaca mesej ini. Adakah"
+"anda ingin memberitahu pengirim?"
+
+#: program/localization/ms_MY/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Balas Resip (dibaca)"
+
+#: program/localization/ms_MY/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Ini adalah Resip Balasan untuk mesej anda"
+
+#: program/localization/ms_MY/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Perhatian: Resip ini hanya untuk memberitahu yang mesej ini telah"
+"dipaparkan di komputer penerima. Tidak ada jaminan yang penerima telah"
+"membaca atau memahami kandungan mesej."
+
+#: program/localization/ms_MY/labels.inc:name
+msgid "Display Name"
+msgstr "Nama paparan"
+
+#: program/localization/ms_MY/labels.inc:firstname
+msgid "First Name"
+msgstr "Nama pertama"
+
+#: program/localization/ms_MY/labels.inc:surname
+msgid "Last Name"
+msgstr "Nama akhir"
+
+#: program/localization/ms_MY/labels.inc:email
+msgid "Email"
+msgstr "E-Mel"
+
+#: program/localization/ms_MY/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Tambah kontek baru"
+
+#: program/localization/ms_MY/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Ubahsuai Kontek"
+
+#: program/localization/ms_MY/labels.inc:edit
+msgid "Edit"
+msgstr "Ubahsuai"
+
+#: program/localization/ms_MY/labels.inc:cancel
+msgid "Cancel"
+msgstr "Batal"
+
+#: program/localization/ms_MY/labels.inc:save
+msgid "Save"
+msgstr "Simpan"
+
+#: program/localization/ms_MY/labels.inc:delete
+msgid "Delete"
+msgstr "Hapus"
+
+#: program/localization/ms_MY/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Cipta kad kontek baru"
+
+#: program/localization/ms_MY/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Hapus kontek yang dipilih"
+
+#: program/localization/ms_MY/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Karang mel kepada"
+
+#: program/localization/ms_MY/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Kontek $from ke $to dari $count"
+
+#: program/localization/ms_MY/labels.inc:print
+msgid "Print"
+msgstr "Cetak"
+
+#: program/localization/ms_MY/labels.inc:export
+msgid "Export"
+msgstr "Eksport"
+
+#: program/localization/ms_MY/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Papar set sebelumnya"
+
+#: program/localization/ms_MY/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Papar set pertama"
+
+#: program/localization/ms_MY/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Papar set seterusnya"
+
+#: program/localization/ms_MY/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Papar set akhir"
+
+#: program/localization/ms_MY/labels.inc:groups
+msgid "Groups"
+msgstr "Kumpulan"
+
+#: program/localization/ms_MY/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Alamat-alamat Peribadi"
+
+#: program/localization/ms_MY/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Tetapan bagi"
+
+#: program/localization/ms_MY/labels.inc:preferences
+msgid "Preferences"
+msgstr "Pilihan"
+
+#: program/localization/ms_MY/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Pilihan pengguna"
+
+#: program/localization/ms_MY/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Ubahsuai pilihan pengguna"
+
+#: program/localization/ms_MY/labels.inc:identities
+msgid "Identities"
+msgstr "Identiti"
+
+#: program/localization/ms_MY/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Urus identiti bagi akaun ini"
+
+#: program/localization/ms_MY/labels.inc:newidentity
+msgid "New identity"
+msgstr "Identiti baru"
+
+#: program/localization/ms_MY/labels.inc:newitem
+msgid "New item"
+msgstr "Butiran baru"
+
+#: program/localization/ms_MY/labels.inc:edititem
+msgid "Edit item"
+msgstr "Ubahsuai butiran"
+
+#: program/localization/ms_MY/labels.inc:setdefault
+msgid "Set default"
+msgstr "Tetap asal"
+
+#: program/localization/ms_MY/labels.inc:language
+msgid "Language"
+msgstr "Bahasa"
+
+#: program/localization/ms_MY/labels.inc:timezone
+msgid "Time zone"
+msgstr "Zon Masa"
+
+#: program/localization/ms_MY/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Baris setiap muka"
+
+#: program/localization/ms_MY/labels.inc:signature
+msgid "Signature"
+msgstr "Tandatangan"
+
+#: program/localization/ms_MY/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Simpanan siang hari"
+
+#: program/localization/ms_MY/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Karang mesej HTML"
+
+#: program/localization/ms_MY/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "Tandatangan HTML"
+
+#: program/localization/ms_MY/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Pamer ruang previu"
+
+#: program/localization/ms_MY/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Kosongkan Tong sampah ketika keluar"
+
+#: program/localization/ms_MY/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Padatkan Inbox ketika keluar"
+
+#: program/localization/ms_MY/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Antaramuka Pengguna"
+
+#: program/localization/ms_MY/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Konfigurasi Pelayan"
+
+#: program/localization/ms_MY/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Pandangan kotak Mel"
+
+#: program/localization/ms_MY/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Pemberitahuan Pengirim"
+
+#: program/localization/ms_MY/labels.inc:askuser
+msgid "ask me"
+msgstr "Tanya pengguna"
+
+#: program/localization/ms_MY/labels.inc:autosend
+msgid "send receipt"
+msgstr "Hantar automatik"
+
+#: program/localization/ms_MY/labels.inc:ignore
+msgid "ignore"
+msgstr "Biarkan"
+
+#: program/localization/ms_MY/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Tanda mesej sebagai dibaca ketika hapus"
+
+#: program/localization/ms_MY/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Tanda mesej untuk pembuangan (tidak delete terus)"
+
+#: program/localization/ms_MY/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Simpan draf dengan automatik"
+
+#: program/localization/ms_MY/labels.inc:never
+msgid "never"
+msgstr "tidak pernah"
+
+#: program/localization/ms_MY/labels.inc:folder
+msgid "Folder"
+msgstr "Kabinet Fail"
+
+#: program/localization/ms_MY/labels.inc:foldername
+msgid "Folder name"
+msgstr "Nama Kabinet Fail"
+
+#: program/localization/ms_MY/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Dilanggan"
+
+#: program/localization/ms_MY/labels.inc:messagecount
+msgid "Messages"
+msgstr "Mesej-mesej"
+
+#: program/localization/ms_MY/labels.inc:create
+msgid "Create"
+msgstr "Cipta"
+
+#: program/localization/ms_MY/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Cipta kabinet fail baru"
+
+#: program/localization/ms_MY/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Urus kabinet fail"
+
+#: program/localization/ms_MY/labels.inc:sortby
+msgid "Sort by"
+msgstr "Susun dengan"
+
+#: program/localization/ms_MY/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Susun menaik"
+
+#: program/localization/ms_MY/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Susun menurun"

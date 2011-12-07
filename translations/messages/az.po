@@ -1,0 +1,512 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/az_AZ/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: az_AZ\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/az_AZ/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Giriş uğursuz oldu"
+
+#: program/localization/az_AZ/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Sizin brauzer kukiləri qəbul etmir"
+
+#: program/localization/az_AZ/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Sizin sessiya köhnəlib"
+
+#: program/localization/az_AZ/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "IMAP serverlə bağlantı alınmadı"
+
+#: program/localization/az_AZ/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Server xətası!"
+
+#: program/localization/az_AZ/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Server xətası: $msg"
+
+#: program/localization/az_AZ/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Əməliyyatı etmək mümkün deyil. Qovluq yalnız oxunuş üçündür."
+
+#: program/localization/az_AZ/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Əməliyyatı etmək mümkün deyil. Giriş qadağandır."
+
+#: program/localization/az_AZ/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Səhv sorğu! Məlumat yaddaşda qalmadı."
+
+#: program/localization/az_AZ/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Poçt qutusunda məktub tapılmadı"
+
+#: program/localization/az_AZ/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Çıxış uğurlu oldu. Sağ olun!"
+
+#: program/localization/az_AZ/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Poçt qutusu boşdur"
+
+#: program/localization/az_AZ/messages.inc:loading
+msgid "Loading..."
+msgstr "Yüklənir..."
+
+#: program/localization/az_AZ/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Fayl yüklənir..."
+
+#: program/localization/az_AZ/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Məlumatlar yüklənir..."
+
+#: program/localization/az_AZ/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Yeni məktubları yoxla..."
+
+#: program/localization/az_AZ/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Məktub göndərilir..."
+
+#: program/localization/az_AZ/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Məktub uğurla göndərildi"
+
+#: program/localization/az_AZ/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Məktubu saxla..."
+
+#: program/localization/az_AZ/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Məktub qaralamada saxlandı"
+
+#: program/localization/az_AZ/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Yaddaşa yazıldı"
+
+#: program/localization/az_AZ/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Əlaqə ünvan kitabçasına əlavə olundu"
+
+#: program/localization/az_AZ/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Ünvan kitabçasında bu e-poçtla əlaqə mövcuddur"
+
+#: program/localization/az_AZ/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Təhlükəsizlik məqsədi ilə şəkillərin yüklənməsi bloklanıb."
+
+#: program/localization/az_AZ/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Məktub şifrələnib və göstərilə bilməz. Server inzibatçısına"
+"müraciət edin."
+
+#: program/localization/az_AZ/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Ünvanlar tapılmadı"
+
+#: program/localization/az_AZ/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Tələb olunan ünvan tapılmadı"
+
+#: program/localization/az_AZ/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Məktub göndərilmədi"
+
+#: program/localization/az_AZ/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Məktub göndərmək üçün $sec saniyə gözləmək gərəkir"
+
+#: program/localization/az_AZ/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Göndərilən məktub saxlanılan zaman xəta baş verdi"
+
+#: program/localization/az_AZ/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Saxlanma prosesi zamanı problem baş verdi"
+
+#: program/localization/az_AZ/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Məktubu (məktubları) köçürmək alnmadı"
+
+#: program/localization/az_AZ/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Məktubu (məktubları) kopyalamaq alınmadı"
+
+#: program/localization/az_AZ/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Məktubu (məktubları) silmək alınmadı"
+
+#: program/localization/az_AZ/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Məktubu (məktubları) işarələmək mümkün deyil"
+
+#: program/localization/az_AZ/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Seçilən ünvanı (ünvanları) silməyə əminsiniz?"
+
+#: program/localization/az_AZ/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Seçilən məktubu (məktubları) silməyə əminsiniz?"
+
+#: program/localization/az_AZ/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Bu qovluğu silməyə əminsiniz?"
+
+#: program/localization/az_AZ/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Bu qovluqdakı bütün məktubları silməyə əminsiniz?"
+
+#: program/localization/az_AZ/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Qovluğ silinir..."
+
+#: program/localization/az_AZ/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Qovluq köçürülür..."
+
+#: program/localization/az_AZ/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Qovluğa abunə..."
+
+#: program/localization/az_AZ/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Qovluğa abunədən çıx..."
+
+#: program/localization/az_AZ/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Bütün sətrlər doldurulmayıb"
+
+#: program/localization/az_AZ/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Lütfən, düzgün e-poçt ünvanı daxil edin"
+
+#: program/localization/az_AZ/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Lütfən, ad daxil edin"
+
+#: program/localization/az_AZ/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Lütfən, səhifənin ölçüsünü daxil edin"
+
+#: program/localization/az_AZ/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Lütfən, göndərənin elektron poçt ünvanını daxil edin"
+
+#: program/localization/az_AZ/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Lütfən, qəbul edənin ünvanını daxil edin"
+
+#: program/localization/az_AZ/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "\"Mövzu\" sahəsi boşdur. Mövzu daxil etmək istəyirsiniz?"
+
+#: program/localization/az_AZ/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Məktub boş göndərilsin?"
+
+#: program/localization/az_AZ/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Məktub göndərilmədi. Göndərilmədən imtina etmək istəyirsiniz?"
+
+#: program/localization/az_AZ/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Lütfən, axtarış üçün LDAP server seçin"
+
+#: program/localization/az_AZ/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Ünvanlar tapılmadı"
+
+#: program/localization/az_AZ/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Lütfən, ad və ya e-poçt əlavə edin"
+
+#: program/localization/az_AZ/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Əlavələr tam yüklənilməyib. Gözləyin və ya yükləməni ləğv"
+"edin."
+
+#: program/localization/az_AZ/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "Tapılan məktublar: $nr"
+
+#: program/localization/az_AZ/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Məktub tapılmadı"
+
+#: program/localization/az_AZ/messages.inc:searching
+msgid "Searching..."
+msgstr "Axtarılır..."
+
+#: program/localization/az_AZ/messages.inc:checking
+msgid "Checking..."
+msgstr "Yoxlanılır..."
+
+#: program/localization/az_AZ/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Orfoqrafik səhvlət tapılmadı"
+
+#: program/localization/az_AZ/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Qovluq uğurla silindi"
+
+#: program/localization/az_AZ/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Qovluq uğurla abunə oldu"
+
+#: program/localization/az_AZ/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Qovluq uğurla abunədən çıxdı"
+
+#: program/localization/az_AZ/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Qovluq uğurla təmizləndi"
+
+#: program/localization/az_AZ/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Qovluq uğurla sıxıldı"
+
+#: program/localization/az_AZ/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Silindi"
+
+#: program/localization/az_AZ/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Məktubun formatlaşması silinir..."
+
+#: program/localization/az_AZ/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Məktubu serverdən yükləmək alınmır"
+
+#: program/localization/az_AZ/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Fayl yüklənilmədi"
+
+#: program/localization/az_AZ/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Yüklənilən fayl maksimal ölçüdən çoxdur - $size"
+
+#: program/localization/az_AZ/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "$nr ünvan kopyalandı"
+
+#: program/localization/az_AZ/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Ünvanları kopyalamaq alınmır"
+
+#: program/localization/az_AZ/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Verilən ünvanlar mənbəyi yalnız oxunmaq üçün"
+
+#: program/localization/az_AZ/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Əlaqəni ünvanda saxlamaq mümkün deyil"
+
+#: program/localization/az_AZ/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Məktub köçürülür..."
+
+#: program/localization/az_AZ/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Məktub kopyalanır..."
+
+#: program/localization/az_AZ/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Məktub(lar) silinir..."
+
+#: program/localization/az_AZ/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Məktub(lar) işarələnir..."
+
+#: program/localization/az_AZ/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Oxunulma haqda bildiriş göndərildi"
+
+#: program/localization/az_AZ/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Oxunulma haqda bildiriş göndərilmədi"
+
+#: program/localization/az_AZ/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Siz bu kimliyi silə bilməzsiniz. Bu axırıncıdır. "
+
+#: program/localization/az_AZ/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Qovlu adı qadağan olunmuş simvollar təşkil edir"
+
+#: program/localization/az_AZ/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Yüklənilən faylı seçin"
+
+#: program/localization/az_AZ/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Seçilmiş ünvan kitabçası yaddaşa yazıla bilməz"
+
+#: program/localization/az_AZ/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Ünvanlar qrupa əlavə edildi"
+
+#: program/localization/az_AZ/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Ünvanlar qrupdan silindi"
+
+#: program/localization/az_AZ/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "İdxal gedir, lütfən gözləyin..."
+
+#: program/localization/az_AZ/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "İdxal alınmadı! Yüklənilən fayl düzgün vCard fayl deyil."
+
+#: program/localization/az_AZ/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>$inserted ünvanlar müvəffəqiyyətlə idxal edildi, mövcud $skipped"
+"buraxılıb</b>:<p><em>$names</em></p>"
+
+#: program/localization/az_AZ/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Buraxılmış $skipped mövcud daxillər</b>	"
+
+#: program/localization/az_AZ/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Əməliyyat qadağandır!"
+
+#: program/localization/az_AZ/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Seçilmiş kimlikdə e-poçt ünvanları yoxdur"
+
+#: program/localization/az_AZ/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Adi mətn redaktoruna keçid, bütün mətn formatlarının itkisinə"
+"gətirəcək. Davam edilsin?"
+
+#: program/localization/az_AZ/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Serverdə qaçıımaz xəta baş verib. Təcili öz inzibatçınız ilə"
+"əlaqə qurun. <b>Sizin məktub göndərilməyə bilər.</b>"
+
+#: program/localization/az_AZ/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP Error ($code): Serverlə bağlantı alınmadı"
+
+#: program/localization/az_AZ/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP Error ($code): İdentifikasiya xətası"
+
+#: program/localization/az_AZ/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP Error ($code): Göndərəni səlavə etmək mümkün deyil - \"$from\""
+"($msg)"
+
+#: program/localization/az_AZ/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP Error ($code): Qəbul edəni əlavə etmək mümkün deyil - \"$to\""
+"($msg)"
+
+#: program/localization/az_AZ/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP Error ($code): Qəbul edənlərin siyahısını emal etmək mümkün"
+"deyil"
+
+#: program/localization/az_AZ/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "SMTP xəta: çatdırılma haqda bildiriş dəstəyi yoxdur"
+
+#: program/localization/az_AZ/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP Error ($code): $msg"
+
+#: program/localization/az_AZ/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Səhv ünvan: $email"
+
+#: program/localization/az_AZ/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Qəbul edənlər həddindən artıq çoxdur. Lütfən, $max qədər"
+"azaldın."
+
+#: program/localization/az_AZ/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Qrupun ölçüsü imkan verilən maksimumdan artıqdır - $max"
+
+#: program/localization/az_AZ/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Daxili xəta baş verdi. Lütfən, bir daha cəhd edin"
+
+#: program/localization/az_AZ/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Kontak(lar)ı silmək alınmadı"
+
+#: program/localization/az_AZ/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Kontak(lar) uğurla silindi"
+
+#: program/localization/az_AZ/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Qrup silindi"
+
+#: program/localization/az_AZ/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Qrupun adı dəyişdirildi"
+
+#: program/localization/az_AZ/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Qrup yaradıldı"
+
+#: program/localization/az_AZ/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Məktub(lar) uğurla silindi"
+
+#: program/localization/az_AZ/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Məktub(lar) uğurla köçürüldü"
+
+#: program/localization/az_AZ/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Məktub(lar) uğurla kopyalandı"
+
+#: program/localization/az_AZ/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Məktub(lar) uğurla işarələndi"
+
+#: program/localization/az_AZ/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Avtokomplektasiya üçün $min işarə daxil edin"
+
+#: program/localization/az_AZ/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Ad boş ola bilməz"
+
+#: program/localization/az_AZ/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Ad çox uzundur"
+
+#: program/localization/az_AZ/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Qovluq yeniləndi"
+
+#: program/localization/az_AZ/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Qovluq yaradıldı"
+
+#: program/localization/az_AZ/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Şəkil formatı düzgün deyil"

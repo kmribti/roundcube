@@ -1,0 +1,985 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ko_KR/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ko_KR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ko_KR/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "$product에 오신 것을 환영합니다"
+
+#: program/localization/ko_KR/labels.inc:username
+msgid "Username"
+msgstr "사용자명"
+
+#: program/localization/ko_KR/labels.inc:password
+msgid "Password"
+msgstr "비밀번호"
+
+#: program/localization/ko_KR/labels.inc:server
+msgid "Server"
+msgstr "서버"
+
+#: program/localization/ko_KR/labels.inc:login
+msgid "Login"
+msgstr "로그인"
+
+#: program/localization/ko_KR/labels.inc:logout
+msgid "Logout"
+msgstr "로그아웃"
+
+#: program/localization/ko_KR/labels.inc:mail
+msgid "Mail"
+msgstr "이메일"
+
+#: program/localization/ko_KR/labels.inc:settings
+msgid "Settings"
+msgstr "개인 설정"
+
+#: program/localization/ko_KR/labels.inc:addressbook
+msgid "Address Book"
+msgstr "주소록"
+
+#: program/localization/ko_KR/labels.inc:inbox
+msgid "Inbox"
+msgstr "받은편지함"
+
+#: program/localization/ko_KR/labels.inc:drafts
+msgid "Drafts"
+msgstr "임시저장"
+
+#: program/localization/ko_KR/labels.inc:sent
+msgid "Sent"
+msgstr "보낸편지함"
+
+#: program/localization/ko_KR/labels.inc:trash
+msgid "Trash"
+msgstr "휴지통"
+
+#: program/localization/ko_KR/labels.inc:junk
+msgid "Junk"
+msgstr "정크메일"
+
+#: program/localization/ko_KR/labels.inc:subject
+msgid "Subject"
+msgstr "제목"
+
+#: program/localization/ko_KR/labels.inc:from
+msgid "From"
+msgstr "보내는 사람"
+
+#: program/localization/ko_KR/labels.inc:to
+msgid "To"
+msgstr "받는 사람"
+
+#: program/localization/ko_KR/labels.inc:cc
+msgid "Cc"
+msgstr "참조"
+
+#: program/localization/ko_KR/labels.inc:bcc
+msgid "Bcc"
+msgstr "숨은 참조"
+
+#: program/localization/ko_KR/labels.inc:replyto
+msgid "Reply-To"
+msgstr "회신 주소"
+
+#: program/localization/ko_KR/labels.inc:date
+msgid "Date"
+msgstr "날짜"
+
+#: program/localization/ko_KR/labels.inc:size
+msgid "Size"
+msgstr "크기"
+
+#: program/localization/ko_KR/labels.inc:priority
+msgid "Priority"
+msgstr "우선순위"
+
+#: program/localization/ko_KR/labels.inc:organization
+msgid "Company"
+msgstr "기관"
+
+#: program/localization/ko_KR/labels.inc:reply-to
+msgid "reply-to"
+msgstr "회신 주소"
+
+#: program/localization/ko_KR/labels.inc:mailboxlist
+#: program/localization/ko_KR/labels.inc:folders
+msgid "Folders"
+msgstr "폴더"
+
+#: program/localization/ko_KR/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "$count 개 중 $from 에서 $to 번 메시지"
+
+#: program/localization/ko_KR/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "$count 개 중 $nr 번 메시지"
+
+#: program/localization/ko_KR/labels.inc:moveto
+msgid "Move to..."
+msgstr "이동..."
+
+#: program/localization/ko_KR/labels.inc:download
+msgid "Download"
+msgstr "다운로드"
+
+#: program/localization/ko_KR/labels.inc:filename
+msgid "File name"
+msgstr "파일 이름"
+
+#: program/localization/ko_KR/labels.inc:filesize
+msgid "File size"
+msgstr "파일 크기"
+
+#: program/localization/ko_KR/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML 보이기"
+
+#: program/localization/ko_KR/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML 메시지"
+
+#: program/localization/ko_KR/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "날짜 형식"
+
+#: program/localization/ko_KR/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "주소록에 추가"
+
+#: program/localization/ko_KR/labels.inc:sun
+msgid "Sun"
+msgstr "일"
+
+#: program/localization/ko_KR/labels.inc:mon
+msgid "Mon"
+msgstr "월"
+
+#: program/localization/ko_KR/labels.inc:tue
+msgid "Tue"
+msgstr "화"
+
+#: program/localization/ko_KR/labels.inc:wed
+msgid "Wed"
+msgstr "수"
+
+#: program/localization/ko_KR/labels.inc:thu
+msgid "Thu"
+msgstr "목"
+
+#: program/localization/ko_KR/labels.inc:fri
+msgid "Fri"
+msgstr "금"
+
+#: program/localization/ko_KR/labels.inc:sat
+msgid "Sat"
+msgstr "토"
+
+#: program/localization/ko_KR/labels.inc:sunday
+msgid "Sunday"
+msgstr "일요일"
+
+#: program/localization/ko_KR/labels.inc:monday
+msgid "Monday"
+msgstr "월요일"
+
+#: program/localization/ko_KR/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "화요일"
+
+#: program/localization/ko_KR/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "수요일"
+
+#: program/localization/ko_KR/labels.inc:thursday
+msgid "Thursday"
+msgstr "목요일"
+
+#: program/localization/ko_KR/labels.inc:friday
+msgid "Friday"
+msgstr "금요일"
+
+#: program/localization/ko_KR/labels.inc:saturday
+msgid "Saturday"
+msgstr "토요일"
+
+#: program/localization/ko_KR/labels.inc:jan
+msgid "Jan"
+msgstr "1월"
+
+#: program/localization/ko_KR/labels.inc:feb
+msgid "Feb"
+msgstr "2월"
+
+#: program/localization/ko_KR/labels.inc:mar
+msgid "Mar"
+msgstr "3월"
+
+#: program/localization/ko_KR/labels.inc:apr
+msgid "Apr"
+msgstr "4월"
+
+#: program/localization/ko_KR/labels.inc:may
+#: program/localization/ko_KR/labels.inc:longmay
+msgid "May"
+msgstr "5월"
+
+#: program/localization/ko_KR/labels.inc:jun
+msgid "Jun"
+msgstr "6월"
+
+#: program/localization/ko_KR/labels.inc:jul
+msgid "Jul"
+msgstr "7월"
+
+#: program/localization/ko_KR/labels.inc:aug
+msgid "Aug"
+msgstr "8월"
+
+#: program/localization/ko_KR/labels.inc:sep
+msgid "Sep"
+msgstr "9월"
+
+#: program/localization/ko_KR/labels.inc:oct
+msgid "Oct"
+msgstr "10월"
+
+#: program/localization/ko_KR/labels.inc:nov
+msgid "Nov"
+msgstr "11월"
+
+#: program/localization/ko_KR/labels.inc:dec
+msgid "Dec"
+msgstr "12월"
+
+#: program/localization/ko_KR/labels.inc:longjan
+msgid "January"
+msgstr "1월"
+
+#: program/localization/ko_KR/labels.inc:longfeb
+msgid "February"
+msgstr "2월"
+
+#: program/localization/ko_KR/labels.inc:longmar
+msgid "March"
+msgstr "3월"
+
+#: program/localization/ko_KR/labels.inc:longapr
+msgid "April"
+msgstr "4월"
+
+#: program/localization/ko_KR/labels.inc:longjun
+msgid "June"
+msgstr "6월"
+
+#: program/localization/ko_KR/labels.inc:longjul
+msgid "July"
+msgstr "7월"
+
+#: program/localization/ko_KR/labels.inc:longaug
+msgid "August"
+msgstr "8월"
+
+#: program/localization/ko_KR/labels.inc:longsep
+msgid "September"
+msgstr "9월"
+
+#: program/localization/ko_KR/labels.inc:longoct
+msgid "October"
+msgstr "10월"
+
+#: program/localization/ko_KR/labels.inc:longnov
+msgid "November"
+msgstr "11월"
+
+#: program/localization/ko_KR/labels.inc:longdec
+msgid "December"
+msgstr "12월"
+
+#: program/localization/ko_KR/labels.inc:today
+msgid "Today"
+msgstr "오늘"
+
+#: program/localization/ko_KR/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "새 메일 확인"
+
+#: program/localization/ko_KR/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "새 메일 작성"
+
+#: program/localization/ko_KR/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "회신 작성"
+
+#: program/localization/ko_KR/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "보낸이와 모든 수신자에게 회신"
+
+#: program/localization/ko_KR/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "메일 전달"
+
+#: program/localization/ko_KR/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "메일 삭제"
+
+#: program/localization/ko_KR/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "메일 휴지통으로 이동"
+
+#: program/localization/ko_KR/labels.inc:printmessage
+msgid "Print this message"
+msgstr "메일 인쇄"
+
+#: program/localization/ko_KR/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "이전 메일 보기"
+
+#: program/localization/ko_KR/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "이전 메일 세트 보기"
+
+#: program/localization/ko_KR/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "처음 메일 보기"
+
+#: program/localization/ko_KR/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "처음 메일 세트 보기"
+
+#: program/localization/ko_KR/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "다음 메일 보기"
+
+#: program/localization/ko_KR/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "다음 메일 세트 보기"
+
+#: program/localization/ko_KR/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "마지막 메일 보기"
+
+#: program/localization/ko_KR/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "마지막 메일 세트 보기"
+
+#: program/localization/ko_KR/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "메일 목록으로"
+
+#: program/localization/ko_KR/labels.inc:viewsource
+msgid "Show source"
+msgstr "소스 보기"
+
+#: program/localization/ko_KR/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "메시지 표시"
+
+#: program/localization/ko_KR/labels.inc:markread
+msgid "As read"
+msgstr "읽은 것으로 표시"
+
+#: program/localization/ko_KR/labels.inc:markunread
+msgid "As unread"
+msgstr "읽지 않은 것으로 표시"
+
+#: program/localization/ko_KR/labels.inc:markflagged
+msgid "As flagged"
+msgstr "깃발 달기"
+
+#: program/localization/ko_KR/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "깃발 내리기"
+
+#: program/localization/ko_KR/labels.inc:select
+msgid "Select"
+msgstr "선택"
+
+#: program/localization/ko_KR/labels.inc:all
+msgid "All"
+msgstr "모두"
+
+#: program/localization/ko_KR/labels.inc:none
+msgid "None"
+msgstr "없음"
+
+#: program/localization/ko_KR/labels.inc:unread
+msgid "Unread"
+msgstr "읽지 않음"
+
+#: program/localization/ko_KR/labels.inc:flagged
+msgid "Flagged"
+msgstr "깃발"
+
+#: program/localization/ko_KR/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "답장하지 않음"
+
+#: program/localization/ko_KR/labels.inc:filter
+msgid "Filter"
+msgstr "필터"
+
+#: program/localization/ko_KR/labels.inc:compact
+msgid "Compact"
+msgstr "간단하게"
+
+#: program/localization/ko_KR/labels.inc:empty
+msgid "Empty"
+msgstr "비우기"
+
+#: program/localization/ko_KR/labels.inc:purge
+msgid "purge"
+msgstr "삭제"
+
+#: program/localization/ko_KR/labels.inc:quota
+msgid "Disk usage"
+msgstr "디스크 사용"
+
+#: program/localization/ko_KR/labels.inc:unknown
+msgid "unknown"
+msgstr "알수 없음"
+
+#: program/localization/ko_KR/labels.inc:unlimited
+msgid "unlimited"
+msgstr "제한 없음"
+
+#: program/localization/ko_KR/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "빨리 찾기"
+
+#: program/localization/ko_KR/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "찾기 리셋"
+
+#: program/localization/ko_KR/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "새 창에서 열기"
+
+#: program/localization/ko_KR/labels.inc:compose
+msgid "Compose a message"
+msgstr "메일 쓰기"
+
+#: program/localization/ko_KR/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "드래프트 저장"
+
+#: program/localization/ko_KR/labels.inc:sendmessage
+msgid "Send now"
+msgstr "메일 지금 보냄"
+
+#: program/localization/ko_KR/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "파일 첨부"
+
+#: program/localization/ko_KR/labels.inc:charset
+msgid "Charset"
+msgstr "문자셋"
+
+#: program/localization/ko_KR/labels.inc:editortype
+msgid "Editor type"
+msgstr "편집기 형태"
+
+#: program/localization/ko_KR/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "수신 확인"
+
+#: program/localization/ko_KR/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "스펠링 체크"
+
+#: program/localization/ko_KR/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "편집 계속"
+
+#: program/localization/ko_KR/labels.inc:revertto
+msgid "Revert to"
+msgstr "돌아감"
+
+#: program/localization/ko_KR/labels.inc:attachments
+msgid "Attachments"
+msgstr "첨부 파일"
+
+#: program/localization/ko_KR/labels.inc:upload
+msgid "Upload"
+msgstr "업로드"
+
+#: program/localization/ko_KR/labels.inc:close
+msgid "Close"
+msgstr "닫기"
+
+#: program/localization/ko_KR/labels.inc:low
+msgid "Low"
+msgstr "낮음"
+
+#: program/localization/ko_KR/labels.inc:lowest
+msgid "Lowest"
+msgstr "가장 낮음"
+
+#: program/localization/ko_KR/labels.inc:normal
+msgid "Normal"
+msgstr "보통"
+
+#: program/localization/ko_KR/labels.inc:high
+msgid "High"
+msgstr "높음"
+
+#: program/localization/ko_KR/labels.inc:highest
+msgid "Highest"
+msgstr "가장 높음"
+
+#: program/localization/ko_KR/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(제목 없음)"
+
+#: program/localization/ko_KR/labels.inc:showimages
+msgid "Display images"
+msgstr "이미지 표시"
+
+#: program/localization/ko_KR/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "$sender 에서 온 이미지 항상 보기"
+
+#: program/localization/ko_KR/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/ko_KR/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "일반 텍스트"
+
+#: program/localization/ko_KR/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "보낸 메시지를 다음에 저장"
+
+#: program/localization/ko_KR/labels.inc:dontsave
+msgid "don't save"
+msgstr "저장하지 않음"
+
+#: program/localization/ko_KR/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "최대 파일 크기는 $size 입니다"
+
+#: program/localization/ko_KR/labels.inc:addcc
+msgid "Add Cc"
+msgstr "참조 넣기"
+
+#: program/localization/ko_KR/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "숨은참조 넣기"
+
+#: program/localization/ko_KR/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "회신주소 넣기"
+
+#: program/localization/ko_KR/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "이 메시지를 보낸 분이 읽음 확인 요청을 했습니다."
+"확인할까요?"
+
+#: program/localization/ko_KR/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "읽음 확인 보내기"
+
+#: program/localization/ko_KR/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "당신의 메시지를 읽었습니다."
+
+#: program/localization/ko_KR/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "주의: 이 확인은 이 메시지가 수신자의 컴퓨터에 표시된"
+"것만을 의미합니다. 수신자가 반드시 이 메일을 읽거나"
+"이해했다는 것은 아닙니다."
+
+#: program/localization/ko_KR/labels.inc:name
+msgid "Display Name"
+msgstr "표시 이름"
+
+#: program/localization/ko_KR/labels.inc:firstname
+msgid "First Name"
+msgstr "이름"
+
+#: program/localization/ko_KR/labels.inc:surname
+msgid "Last Name"
+msgstr "성"
+
+#: program/localization/ko_KR/labels.inc:email
+msgid "Email"
+msgstr "이메일"
+
+#: program/localization/ko_KR/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "새 연락처 추가"
+
+#: program/localization/ko_KR/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "연락처 편집"
+
+#: program/localization/ko_KR/labels.inc:edit
+msgid "Edit"
+msgstr "편집"
+
+#: program/localization/ko_KR/labels.inc:cancel
+msgid "Cancel"
+msgstr "취소"
+
+#: program/localization/ko_KR/labels.inc:save
+msgid "Save"
+msgstr "저장"
+
+#: program/localization/ko_KR/labels.inc:delete
+msgid "Delete"
+msgstr "삭제"
+
+#: program/localization/ko_KR/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "새 연락처 카드 만들기"
+
+#: program/localization/ko_KR/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "선택한 연락처 삭제"
+
+#: program/localization/ko_KR/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "새 메일 작성"
+
+#: program/localization/ko_KR/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "$from 에서 $to 로의 연락처 $count 개"
+
+#: program/localization/ko_KR/labels.inc:print
+msgid "Print"
+msgstr "인쇄"
+
+#: program/localization/ko_KR/labels.inc:export
+msgid "Export"
+msgstr "내보내기"
+
+#: program/localization/ko_KR/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "연락처를 vCard 포맷으로 내보내기"
+
+#: program/localization/ko_KR/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "이전 세트 보기"
+
+#: program/localization/ko_KR/labels.inc:firstpage
+msgid "Show first page"
+msgstr "처음 세트 보기"
+
+#: program/localization/ko_KR/labels.inc:nextpage
+msgid "Show next page"
+msgstr "다음 세트 보기"
+
+#: program/localization/ko_KR/labels.inc:lastpage
+msgid "Show last page"
+msgstr "마지막 세트 보기"
+
+#: program/localization/ko_KR/labels.inc:groups
+msgid "Groups"
+msgstr "그룹"
+
+#: program/localization/ko_KR/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "개인 주소"
+
+#: program/localization/ko_KR/labels.inc:import
+msgid "Import"
+msgstr "가져오기"
+
+#: program/localization/ko_KR/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "연락처 가져오기"
+
+#: program/localization/ko_KR/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "파일에서 가져오기"
+
+#: program/localization/ko_KR/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "전체 주소록을 바꿈"
+
+#: program/localization/ko_KR/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "연락처들을 가지고 있는 주소록에서 가져올 수"
+"있습니다.<br/> 현재는 <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> 포맷에서"
+"가져오기를 지원합니다."
+
+#: program/localization/ko_KR/labels.inc:done
+msgid "Done"
+msgstr "완료"
+
+#: program/localization/ko_KR/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "설정"
+
+#: program/localization/ko_KR/labels.inc:preferences
+msgid "Preferences"
+msgstr "환경 설정"
+
+#: program/localization/ko_KR/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "사용자 환경"
+
+#: program/localization/ko_KR/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "사용자 환경 편집"
+
+#: program/localization/ko_KR/labels.inc:identities
+msgid "Identities"
+msgstr "신원"
+
+#: program/localization/ko_KR/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "이 계정의 신원 관리"
+
+#: program/localization/ko_KR/labels.inc:newidentity
+msgid "New identity"
+msgstr "새 신원"
+
+#: program/localization/ko_KR/labels.inc:newitem
+msgid "New item"
+msgstr "새 아이템"
+
+#: program/localization/ko_KR/labels.inc:edititem
+msgid "Edit item"
+msgstr "아이템 편집"
+
+#: program/localization/ko_KR/labels.inc:setdefault
+msgid "Set default"
+msgstr "기본으로 설정"
+
+#: program/localization/ko_KR/labels.inc:autodetect
+msgid "Auto"
+msgstr "자동"
+
+#: program/localization/ko_KR/labels.inc:language
+msgid "Language"
+msgstr "언어"
+
+#: program/localization/ko_KR/labels.inc:timezone
+msgid "Time zone"
+msgstr "시간대"
+
+#: program/localization/ko_KR/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "페이지당 줄 수"
+
+#: program/localization/ko_KR/labels.inc:signature
+msgid "Signature"
+msgstr "서명"
+
+#: program/localization/ko_KR/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "서머타임"
+
+#: program/localization/ko_KR/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "HTML 메일 쓰기"
+
+#: program/localization/ko_KR/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML 서명"
+
+#: program/localization/ko_KR/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "이전 구역 보기"
+
+#: program/localization/ko_KR/labels.inc:skin
+msgid "Interface skin"
+msgstr "인터페이스 스킨"
+
+#: program/localization/ko_KR/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "로그아웃할 때 휴지통 비우기"
+
+#: program/localization/ko_KR/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "로그아웃할 때 받은편지함 압축하기"
+
+#: program/localization/ko_KR/labels.inc:uisettings
+msgid "User Interface"
+msgstr "사용자 인터페이스"
+
+#: program/localization/ko_KR/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "서버 설정"
+
+#: program/localization/ko_KR/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "메일 상자 보기"
+
+#: program/localization/ko_KR/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "수신 확인"
+
+#: program/localization/ko_KR/labels.inc:askuser
+msgid "ask me"
+msgstr "사용자에게 묻기"
+
+#: program/localization/ko_KR/labels.inc:autosend
+msgid "send receipt"
+msgstr "자동으로 보내기"
+
+#: program/localization/ko_KR/labels.inc:ignore
+msgid "ignore"
+msgstr "무시"
+
+#: program/localization/ko_KR/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "삭제할 때 메시지를 읽은 것으로 표시"
+
+#: program/localization/ko_KR/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "지우는 대신 지울 메시지에 깃발 달기"
+
+#: program/localization/ko_KR/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "지운 메시지 보이지 않기"
+
+#: program/localization/ko_KR/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "원격 이미지 보이기"
+
+#: program/localization/ko_KR/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "아는 발신인에게서만"
+
+#: program/localization/ko_KR/labels.inc:always
+msgid "always"
+msgstr "항상"
+
+#: program/localization/ko_KR/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "메시지 아래에 첨부 이미지 보이기"
+
+#: program/localization/ko_KR/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "드래프트 자동 저장"
+
+#: program/localization/ko_KR/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "$n 분마다"
+
+#: program/localization/ko_KR/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "다음 간격마다 새 메시지 자동 체크"
+
+#: program/localization/ko_KR/labels.inc:never
+msgid "never"
+msgstr "하지 않음"
+
+#: program/localization/ko_KR/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "메시지 표시 중"
+
+#: program/localization/ko_KR/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "메시지 작성 중"
+
+#: program/localization/ko_KR/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "첨부 파일 이름"
+
+#: program/localization/ko_KR/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Full RFC 2231 (선더버드)"
+
+#: program/localization/ko_KR/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS 아웃룻)"
+
+#: program/localization/ko_KR/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Full RFC 2047 (다른 프로그램들)"
+
+#: program/localization/ko_KR/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "상세 설정"
+
+#: program/localization/ko_KR/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "새 메시지가 있으면 브라우저 윈도우로 포커스 이동"
+
+#: program/localization/ko_KR/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "새 메시지를 위해 모든 폴더 체크"
+
+#: program/localization/ko_KR/labels.inc:folder
+msgid "Folder"
+msgstr "폴더"
+
+#: program/localization/ko_KR/labels.inc:foldername
+msgid "Folder name"
+msgstr "폴더 이름"
+
+#: program/localization/ko_KR/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "가입됨"
+
+#: program/localization/ko_KR/labels.inc:messagecount
+msgid "Messages"
+msgstr "메시지"
+
+#: program/localization/ko_KR/labels.inc:create
+msgid "Create"
+msgstr "만들기"
+
+#: program/localization/ko_KR/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "새 폴더 만들기"
+
+#: program/localization/ko_KR/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "폴더 관리"
+
+#: program/localization/ko_KR/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "특수 폴더"
+
+#: program/localization/ko_KR/labels.inc:sortby
+msgid "Sort by"
+msgstr "정렬"
+
+#: program/localization/ko_KR/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "오름차순으로 정렬"
+
+#: program/localization/ko_KR/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "내림차순으로 정렬"
+
+#: program/localization/ko_KR/labels.inc:B
+msgid "B"
+msgstr "바이트"
+
+#: program/localization/ko_KR/labels.inc:KB
+msgid "KB"
+msgstr "킬로바이트"
+
+#: program/localization/ko_KR/labels.inc:MB
+msgid "MB"
+msgstr "메가바이트"
+
+#: program/localization/ko_KR/labels.inc:GB
+msgid "GB"
+msgstr "기가바이트"

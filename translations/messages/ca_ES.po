@@ -1,0 +1,573 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ca_ES/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ca_ES\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ca_ES/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Contrasenya incorrecta"
+
+#: program/localization/ca_ES/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "El vostre navegador no accepta cookies"
+
+#: program/localization/ca_ES/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "La vostra sessió no existeix o ha expirat"
+
+#: program/localization/ca_ES/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Error de conexió amb el servidor IMAP"
+
+#: program/localization/ca_ES/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Error del Servidor!"
+
+#: program/localization/ca_ES/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Error del Servidor: $msg"
+
+#: program/localization/ca_ES/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Error a la Base de Dades!"
+
+#: program/localization/ca_ES/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Impossible de realitzar l'operació. La carpeta és de només lectura"
+
+#: program/localization/ca_ES/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Impossible de realitzar l'operació. Permís denegat"
+
+#: program/localization/ca_ES/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Petició no vàlida! No s'ha desat les dades."
+
+#: program/localization/ca_ES/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "No s'han trobat missatges en aquesta bústia"
+
+#: program/localization/ca_ES/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Heu tancat la sessió. Fins aviat!"
+
+#: program/localization/ca_ES/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "La bústia és buida"
+
+#: program/localization/ca_ES/messages.inc:loading
+msgid "Loading..."
+msgstr "Carregant..."
+
+#: program/localization/ca_ES/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Pujant fitxer..."
+
+#: program/localization/ca_ES/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Pujant fitxer..."
+
+#: program/localization/ca_ES/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Carregant dades..."
+
+#: program/localization/ca_ES/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Cercant nous missatges..."
+
+#: program/localization/ca_ES/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Enviant missatge..."
+
+#: program/localization/ca_ES/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Missatge enviat correctament"
+
+#: program/localization/ca_ES/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Desant missatge..."
+
+#: program/localization/ca_ES/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Missatge desat a Esborranys"
+
+#: program/localization/ca_ES/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Desat correctament"
+
+#: program/localization/ca_ES/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Contacte afegit correctament a la llibreta d'adreces"
+
+#: program/localization/ca_ES/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Ja hi ha un contacte amb aquesta adreça de correu"
+
+#: program/localization/ca_ES/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Ja existeix un contacte amb el mateix nom."
+
+#: program/localization/ca_ES/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Per a protegir la vostra privacitat, les imatges remotes han estat"
+"bloquejades en aquest missatge"
+
+#: program/localization/ca_ES/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Aquest és un missatge xifrat i no pot ser mostrat. Ho sento!"
+
+#: program/localization/ca_ES/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "No hi ha contactes"
+
+#: program/localization/ca_ES/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "No s'ha trobat el contacte sol·licitat"
+
+#: program/localization/ca_ES/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Error enviant missatge"
+
+#: program/localization/ca_ES/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Si us plau, espereu $sec segon(s) abans d'enviar aquest missatge"
+
+#: program/localization/ca_ES/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Hi ha hagut un error mentre es desava el missatge enviat"
+
+#: program/localization/ca_ES/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Hi ha hagut un error mentre es desava"
+
+#: program/localization/ca_ES/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "No s'ha pogut moure el missatge"
+
+#: program/localization/ca_ES/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "No s'ha pogut copiar el(s) missatge(s)"
+
+#: program/localization/ca_ES/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "No s'ha pogut eliminar el missatge"
+
+#: program/localization/ca_ES/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "No s'ha pogut marcar el missatge."
+
+#: program/localization/ca_ES/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Esteu segurs de voler suprimir el(s) contacte(s) selecionat(s)?"
+
+#: program/localization/ca_ES/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "De veres voleu eliminar el grup seleccionat?"
+
+#: program/localization/ca_ES/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Esteu segurs de voler suprimir el(s) missatge(s) selecionat(s)?"
+
+#: program/localization/ca_ES/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Esteu segurs de voler suprimir aquesta carpeta?"
+
+#: program/localization/ca_ES/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Esteu segurs de voler suprimir tots els missatges d'aquesta carpeta?"
+
+#: program/localization/ca_ES/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Eliminant el grup..."
+
+#: program/localization/ca_ES/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Suprimint la carpeta..."
+
+#: program/localization/ca_ES/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Movent la carpeta..."
+
+#: program/localization/ca_ES/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Subscribint la carpeta..."
+
+#: program/localization/ca_ES/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Desubscribint la carpeta..."
+
+#: program/localization/ca_ES/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "El formulari no ha sigut emplenat totalment"
+
+#: program/localization/ca_ES/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Introduïu una adreça d'e-mail vàlida"
+
+#: program/localization/ca_ES/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Introduïu un nom"
+
+#: program/localization/ca_ES/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Introduïu una mida de pàgina"
+
+#: program/localization/ca_ES/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Si us plau, entreu l'adreça d'e-mail del remitent"
+
+#: program/localization/ca_ES/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Introduïu com a mínim un destinatari"
+
+#: program/localization/ca_ES/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "El camp \"Assumpte\" és buit. Voleu introduir-ne un ara?"
+
+#: program/localization/ca_ES/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Voleu enviar aquest missatge sense text?"
+
+#: program/localization/ca_ES/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "El missatge no s'ha enviat. Voleu descartar el vostre missatge?"
+
+#: program/localization/ca_ES/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Seleccioneu un servidor LDAP per a cercar"
+
+#: program/localization/ca_ES/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Introduïu un nom de contacte o una adreça e-mail"
+
+#: program/localization/ca_ES/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Encara no s'han pujat tots els adjunts. Si us plau, espereu o cancel·leu"
+"la pujada."
+
+#: program/localization/ca_ES/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr missatges trobats"
+
+#: program/localization/ca_ES/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "$nr contactes trobats"
+
+#: program/localization/ca_ES/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "No s'ha trobat cap coincidència"
+
+#: program/localization/ca_ES/messages.inc:searching
+msgid "Searching..."
+msgstr "Cercant..."
+
+#: program/localization/ca_ES/messages.inc:checking
+msgid "Checking..."
+msgstr "Comprovant..."
+
+#: program/localization/ca_ES/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "No s'han trobat errors d'ortografia"
+
+#: program/localization/ca_ES/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Carpeta eliminada correctament"
+
+#: program/localization/ca_ES/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Carpeta subscrita correctament"
+
+#: program/localization/ca_ES/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Carpeta desubscrita correctament"
+
+#: program/localization/ca_ES/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "La carpeta ha estat buidada satisfactòriament"
+
+#: program/localization/ca_ES/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "La carpeta ha estat compactada satisfactòriament"
+
+#: program/localization/ca_ES/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Eliminat correctament"
+
+#: program/localization/ca_ES/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Traient format del missatge..."
+
+#: program/localization/ca_ES/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "No s'ha pogut carregar el missatge del servidor"
+
+#: program/localization/ca_ES/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "La pujada del fitxer ha fallat"
+
+#: program/localization/ca_ES/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "El fitxer pujat excedeix la grandària màxima de $size"
+
+#: program/localization/ca_ES/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "S'han copiat $nr adreces correctament"
+
+#: program/localization/ca_ES/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "No s'ha pogut copiar cap adreça"
+
+#: program/localization/ca_ES/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Aquesta adreça és només de lectura"
+
+#: program/localization/ca_ES/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "No s'ha pogut desar l'adreça de contacte"
+
+#: program/localization/ca_ES/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Movent el missatge..."
+
+#: program/localization/ca_ES/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Copiant missatge..."
+
+#: program/localization/ca_ES/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Copiant contacte(s)..."
+
+#: program/localization/ca_ES/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Esborrant missatge(s)..."
+
+#: program/localization/ca_ES/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Marcant missatge(s)..."
+
+#: program/localization/ca_ES/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Afegint contacte(s) al grup..."
+
+#: program/localization/ca_ES/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Eliminant contacte(s) del grup"
+
+#: program/localization/ca_ES/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Confirmació de lectura enviada satisfactòriament"
+
+#: program/localization/ca_ES/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "No es pot enviar la confirmació"
+
+#: program/localization/ca_ES/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "No podeu suprimir aquesta identitat, és l'última."
+
+#: program/localization/ca_ES/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "El nom de carpeta conté un caràcter prohibit"
+
+#: program/localization/ca_ES/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Si us plau, seleccioneu un fitxer per pujar"
+
+#: program/localization/ca_ES/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "La llibreta d'adreces seleccionada no és modificable"
+
+#: program/localization/ca_ES/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "S'han afegit correctament els contactes a aquest grup"
+
+#: program/localization/ca_ES/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "S'han suprimit correctament els contactes d'aquest grup"
+
+#: program/localization/ca_ES/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "S'està important, espereu si us plau..."
+
+#: program/localization/ca_ES/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "La importació ha fallt! El fitxer pujat no és un fitxer vCard vàlid"
+
+#: program/localization/ca_ES/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>S'han importat $inserted contactes satisfactòriament, s'han descartat"
+"$skipped entrades ja existents</b>:<p><em>$names</em></p>"
+
+#: program/localization/ca_ES/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Saltades $skipped entrades existents</b>"
+
+#: program/localization/ca_ES/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Operació no permesa!"
+
+#: program/localization/ca_ES/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Falta l'adreça d'e-mail a la identitat seleccionada"
+
+#: program/localization/ca_ES/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Si canvieu a l'editor de text pla perdreu tot el format del text. Voleu"
+"continuar?"
+
+#: program/localization/ca_ES/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Hi ha hagut un error fatal de configuració. Contacteu amb el vostre"
+"administrador immediatament. <b>El vostre missatge no pot ser enviat.</b>"
+
+#: program/localization/ca_ES/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "Error SMTP ($code): La connexió al servidor ha fallat."
+
+#: program/localization/ca_ES/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "Error SMTP ($code): La identificació ha fallat."
+
+#: program/localization/ca_ES/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "Error SMTP ($code): No s'ha pogut posar \"$from\" com a remitent ($msg)"
+
+#: program/localization/ca_ES/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "Error SMTP ($code): No s'ha pogut posar \"$to\" com a destinatari ($msg)"
+
+#: program/localization/ca_ES/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "Error SMTP: No s'ha pogut analitzar la lista de destinataris"
+
+#: program/localization/ca_ES/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "Error SMTP: No es suporten les notificacions d'estat de lliuraments"
+
+#: program/localization/ca_ES/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "Error SMTP: $msg"
+
+#: program/localization/ca_ES/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Adreça d'e-mail incorrecta: $email"
+
+#: program/localization/ca_ES/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Massa destinataris. Reduïu el nombre de destinataris a $max."
+
+#: program/localization/ca_ES/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "El nombre de membres del grup excedeix el màxim de $max."
+
+#: program/localization/ca_ES/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Hi ha hagut un error intern. Si us plau torneu-ho a provar"
+
+#: program/localization/ca_ES/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "No s'ha pogut esborrar el(s) contacte(s)"
+
+#: program/localization/ca_ES/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Contacte(s) esborrat(s) satisfactòriament"
+
+#: program/localization/ca_ES/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "No s'ha pogut restaurar el(s) contacte(s) eliminat(s)."
+
+#: program/localization/ca_ES/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Contacte(s) restaurats correctament."
+
+#: program/localization/ca_ES/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Grup esborrat satisfactòriament"
+
+#: program/localization/ca_ES/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Grup renombrat satisfactòriament"
+
+#: program/localization/ca_ES/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Grup creat satisfactòriament"
+
+#: program/localization/ca_ES/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "S'ha eliminat correctament la cerca desada."
+
+#: program/localization/ca_ES/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "No s'ha pogut eliminar la cerca desada."
+
+#: program/localization/ca_ES/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "S'ha creat correctament la cerca desada."
+
+#: program/localization/ca_ES/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "No s'ha pogut crear la cerca desada."
+
+#: program/localization/ca_ES/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Missatge(s) esborrat(s) satisfactòriament"
+
+#: program/localization/ca_ES/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Missatge(s) mogut(s) satisfactòriament"
+
+#: program/localization/ca_ES/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Missatge(s) copiat(s) satisfactòriament"
+
+#: program/localization/ca_ES/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Missatge(s) marcat(s) satisfactòriament"
+
+#: program/localization/ca_ES/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Introdueix al menys $min caracters per a l'autocompleció"
+
+#: program/localization/ca_ES/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "El nom no pot estar buit"
+
+#: program/localization/ca_ES/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "El nom és massa llarg"
+
+#: program/localization/ca_ES/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "La carpeta ha estat actualitzada satisfactòriament"
+
+#: program/localization/ca_ES/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "La carpeta ha estat creada satisfactòriament"
+
+#: program/localization/ca_ES/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "No és un format d'imatge vàlid."
+
+#: program/localization/ca_ES/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "S'han detectat errors d'ortografia al misstage."
+
+#: program/localization/ca_ES/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "No ha etsat possible crear/moure la carpeta dins de la carpeta ascendent"
+"seleccionada. No hi ha permisos d'escriptura."

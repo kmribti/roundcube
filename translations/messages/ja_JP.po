@@ -1,0 +1,583 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ja_JP/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ja_JP\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ja_JP/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "ログインに失敗しました。"
+
+#: program/localization/ja_JP/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "ブラウザーで Cookie が無効に設定されています。"
+
+#: program/localization/ja_JP/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "セッションが正しくないか期限切れです。"
+
+#: program/localization/ja_JP/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "IMAP サーバーへの接続に失敗しました。"
+
+#: program/localization/ja_JP/messages.inc:servererror
+msgid "Server Error!"
+msgstr "サーバーでエラーが発生しました。"
+
+#: program/localization/ja_JP/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "サーバー エラー: $msg"
+
+#: program/localization/ja_JP/messages.inc:dberror
+msgid "Database Error!"
+msgstr "データベースのエラーです!"
+
+#: program/localization/ja_JP/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "実行に失敗しました。フォルダーは読み込み専用です。"
+
+#: program/localization/ja_JP/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "実行に失敗しました。権限がありません。"
+
+#: program/localization/ja_JP/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "不正なリクエストです。データは保存されませんでした。"
+
+#: program/localization/ja_JP/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "このフォルダーにはメールはありません。"
+
+#: program/localization/ja_JP/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "ログアウトしました。"
+
+#: program/localization/ja_JP/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "フォルダーは空です。"
+
+#: program/localization/ja_JP/messages.inc:loading
+msgid "Loading..."
+msgstr "読み込んでいます..."
+
+#: program/localization/ja_JP/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "ファイルをアップロードしています..."
+
+#: program/localization/ja_JP/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "ファイルをアップロードしています..."
+
+#: program/localization/ja_JP/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "データを読み込んでいます..."
+
+#: program/localization/ja_JP/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "メールを確認しています..."
+
+#: program/localization/ja_JP/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "メールを送信しています..."
+
+#: program/localization/ja_JP/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "メールを送信しました。"
+
+#: program/localization/ja_JP/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "メールを保存しています..."
+
+#: program/localization/ja_JP/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "メールを下書きに保存しました。"
+
+#: program/localization/ja_JP/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "保存しました。"
+
+#: program/localization/ja_JP/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "連絡先をアドレス帳に追加しました。"
+
+#: program/localization/ja_JP/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "同じメールアドレスの連絡先がすでに存在します。"
+
+#: program/localization/ja_JP/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "同じ名前の連絡先がすでに存在します。"
+
+#: program/localization/ja_JP/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "プライバシー保護のため、このメールに含まれるリモート画像をブロックしました。"
+
+#: program/localization/ja_JP/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "このメールは暗号化されているため表示できません。"
+
+#: program/localization/ja_JP/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "連絡先がありません。"
+
+#: program/localization/ja_JP/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "連絡先が見つかりません。"
+
+#: program/localization/ja_JP/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "連絡先の検索にはいくつかの単語を入力します"
+
+#: program/localization/ja_JP/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "メールの送信に失敗しました。"
+
+#: program/localization/ja_JP/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "このメールを送信するまで $sec 秒 お待ちください。"
+
+#: program/localization/ja_JP/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "送信メールの保存中にエラーが発生しました。"
+
+#: program/localization/ja_JP/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "保存中にエラーが発生しました。"
+
+#: program/localization/ja_JP/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "メールを移動できません。"
+
+#: program/localization/ja_JP/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "メールをコピーできません。"
+
+#: program/localization/ja_JP/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "メールを削除できません。"
+
+#: program/localization/ja_JP/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "メールのマークを設定できません。"
+
+#: program/localization/ja_JP/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "選択した連絡先を本当に削除しますか?"
+
+#: program/localization/ja_JP/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "このグループを本当に削除しますか?"
+
+#: program/localization/ja_JP/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "選択したメールを本当に削除しますか?"
+
+#: program/localization/ja_JP/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "このフォルダーを本当に削除しますか?"
+
+#: program/localization/ja_JP/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "このフォルダーの全メールを本当に削除しますか?"
+
+#: program/localization/ja_JP/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "連絡先を削除しています..."
+
+#: program/localization/ja_JP/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "グループを削除しています..."
+
+#: program/localization/ja_JP/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "フォルダーを削除しています..."
+
+#: program/localization/ja_JP/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "フォルダーを移動しています..."
+
+#: program/localization/ja_JP/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "フォルダーを購読しています..."
+
+#: program/localization/ja_JP/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "フォルダーの購読をやめています..."
+
+#: program/localization/ja_JP/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "フォームの全項目を入力していません。"
+
+#: program/localization/ja_JP/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "正しいメールアドレスを入力してください。"
+
+#: program/localization/ja_JP/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "名前を入力してください。"
+
+#: program/localization/ja_JP/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "ページのサイズを入力してください。"
+
+#: program/localization/ja_JP/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "差出人のメールアドレスを入力してください。"
+
+#: program/localization/ja_JP/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "宛先は少なくともひとり分は入力してください。"
+
+#: program/localization/ja_JP/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "件名が空です。今すぐ入力しますか?"
+
+#: program/localization/ja_JP/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "本文が無いメールを送信しますか?"
+
+#: program/localization/ja_JP/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "メールは送信されませんでした。破棄しますか?"
+
+#: program/localization/ja_JP/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "検索する LDAP サーバーを選択してください。"
+
+#: program/localization/ja_JP/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "連絡先の名前かメールアドレスを入力してください。"
+
+#: program/localization/ja_JP/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "アップロードが完了していません。アップロードが完了するまで待つか、キャンセルしてください。"
+
+#: program/localization/ja_JP/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr 件のメールが見つかりました。"
+
+#: program/localization/ja_JP/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "$nr 件の連絡先が見つかりました。"
+
+#: program/localization/ja_JP/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "一致するものが見つかりませんでした。"
+
+#: program/localization/ja_JP/messages.inc:searching
+msgid "Searching..."
+msgstr "検索しています..."
+
+#: program/localization/ja_JP/messages.inc:checking
+msgid "Checking..."
+msgstr "確認しています..."
+
+#: program/localization/ja_JP/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "スペル ミスは見つかりませんでした。"
+
+#: program/localization/ja_JP/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "フォルダーを削除しました。"
+
+#: program/localization/ja_JP/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "フォルダーを購読しました。"
+
+#: program/localization/ja_JP/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "フォルダーの購読をやめました。"
+
+#: program/localization/ja_JP/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "フォルダーを空にしました。"
+
+#: program/localization/ja_JP/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "フォルダーを整理しました。"
+
+#: program/localization/ja_JP/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "削除しました。"
+
+#: program/localization/ja_JP/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "メールから書式を削除しています..."
+
+#: program/localization/ja_JP/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "サーバーからメールを取得できません。"
+
+#: program/localization/ja_JP/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "ファイルのアップロードに失敗しました。"
+
+#: program/localization/ja_JP/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "アップロードするファイルのサイズが上限 ($size)"
+"を超えました。"
+
+#: program/localization/ja_JP/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "$nr 件のアドレスのコピーしました。"
+
+#: program/localization/ja_JP/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "いくつかのアドレスがコピーできません。"
+
+#: program/localization/ja_JP/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "この元アドレスは読み込み専用です。"
+
+#: program/localization/ja_JP/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "連絡先のアドレスを保存できません。"
+
+#: program/localization/ja_JP/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "メールを移動しています..."
+
+#: program/localization/ja_JP/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "メールをコピーしています..."
+
+#: program/localization/ja_JP/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "連絡先をコピーしています..."
+
+#: program/localization/ja_JP/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "メールを削除しています..."
+
+#: program/localization/ja_JP/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "メールのマークを設定しています..."
+
+#: program/localization/ja_JP/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "グループへ連絡先をコピーしています..."
+
+#: program/localization/ja_JP/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "グループから連絡先を削除しています..."
+
+#: program/localization/ja_JP/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "開封通知を送信しました。"
+
+#: program/localization/ja_JP/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "開封通知の送信ができません。"
+
+#: program/localization/ja_JP/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "削除できません。少なくともひとつの個人情報が必要です。"
+
+#: program/localization/ja_JP/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "フォルダー名に利用できない文字が含まれています。"
+
+#: program/localization/ja_JP/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "アップロードするファイルを選択してください。"
+
+#: program/localization/ja_JP/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "選択したアドレス帳に書き込めません。"
+
+#: program/localization/ja_JP/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "このグループへ連絡先を追加しました。"
+
+#: program/localization/ja_JP/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "このグループから連絡先を削除しました。"
+
+#: program/localization/ja_JP/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "インポート中です。しばらくお待ちください..."
+
+#: program/localization/ja_JP/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "インポートに失敗しました。アップロードしたファイルは不正な"
+"vCard ファイルです。"
+
+#: program/localization/ja_JP/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>$inserted 件の連絡先をインポートしました。</b>"
+
+#: program/localization/ja_JP/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>$skipped 拳の既存エントリーをスキップしました</b>"
+
+#: program/localization/ja_JP/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "許可されていない操作です。"
+
+#: program/localization/ja_JP/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "選択中の個人情報にメールアドレスが含まれていません。"
+
+#: program/localization/ja_JP/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "テキスト"
+"エディターに切り替えるとすべての書式が失われます。よろしいですか?"
+
+#: program/localization/ja_JP/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "致命的な設定エラーが発生しました。<b>メッセージは送信されませんでした。</b>システム管理者に至急連絡してください。"
+
+#: program/localization/ja_JP/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP Error ($code): サーバーへの接続に失敗しました。"
+
+#: program/localization/ja_JP/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP Error ($code): 認証に失敗しました。"
+
+#: program/localization/ja_JP/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP Error ($code): 差出人 \"$from\" を設定できません ($msg)"
+
+#: program/localization/ja_JP/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP Error ($code): 宛先 \"$to\" を追加できません ($msg)"
+
+#: program/localization/ja_JP/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP Error: 宛先の一覧を解析できません。"
+
+#: program/localization/ja_JP/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "SMTP エラー: 配送状況通知をサポートしていません。"
+
+#: program/localization/ja_JP/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP エラー: $msg"
+
+#: program/localization/ja_JP/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "メールアドレスが正しくありません: $email"
+
+#: program/localization/ja_JP/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "宛先が多すぎます。$max 件以内にしてください。"
+
+#: program/localization/ja_JP/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "グループのメンバーが多すぎます。$max"
+"件以内にしてください。"
+
+#: program/localization/ja_JP/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "内部エラーが発生しました。もう一度やり直してください。"
+
+#: program/localization/ja_JP/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "連絡先を削除できませんでした。"
+
+#: program/localization/ja_JP/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "連絡先を削除しました。"
+
+#: program/localization/ja_JP/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "削除した連絡先を復元できませんでした。"
+
+#: program/localization/ja_JP/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "連絡先を復元しました。"
+
+#: program/localization/ja_JP/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "グループを削除しました。"
+
+#: program/localization/ja_JP/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "グループ名を変更しました．"
+
+#: program/localization/ja_JP/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "グループを作成しました。"
+
+#: program/localization/ja_JP/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "保存した検索情報を削除しました。"
+
+#: program/localization/ja_JP/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "保存した検索情報を削除できません。"
+
+#: program/localization/ja_JP/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "検索情報を作成しました。"
+
+#: program/localization/ja_JP/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "検索情報を削除できませんでした。"
+
+#: program/localization/ja_JP/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "メールを削除しました。"
+
+#: program/localization/ja_JP/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "メールを移動しました。"
+
+#: program/localization/ja_JP/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "メールをコピーしました。"
+
+#: program/localization/ja_JP/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "メールのマークを設定しました。"
+
+#: program/localization/ja_JP/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "自動補完には少なくとも $min 文字入力してください。"
+
+#: program/localization/ja_JP/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "多くのエントリーが見つかりました。もっと入力してください。"
+
+#: program/localization/ja_JP/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "名前を空欄にできません。"
+
+#: program/localization/ja_JP/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "名前が長すぎます。"
+
+#: program/localization/ja_JP/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "フォルダーを更新しました。"
+
+#: program/localization/ja_JP/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "フォルダーを作成しました。"
+
+#: program/localization/ja_JP/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "画像の形式が正しくありません。"
+
+#: program/localization/ja_JP/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "メッセージにスペル エラーを見つけました。"
+
+#: program/localization/ja_JP/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "選択した親フォルダーへの作成、移動に失敗しました。アクセス権限がありません。"

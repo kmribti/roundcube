@@ -1,0 +1,462 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ta_IN/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ta_IN\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ta_IN/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "நுழைவு தோல்வியடைந்தது"
+
+#: program/localization/ta_IN/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "உங்கள் உலாவி நினைவிகளை"
+"அனுமதிப்பதில்லை"
+
+#: program/localization/ta_IN/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "உங்கள் அமர்வு செல்லாது"
+"அல்லது முடிவுற்றது"
+
+#: program/localization/ta_IN/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "IMAP சேவையகத்திற்கான இணைப்பு"
+"தோல்வியடைந்தது"
+
+#: program/localization/ta_IN/messages.inc:servererror
+msgid "Server Error!"
+msgstr "சேவையக பிழை!"
+
+#: program/localization/ta_IN/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "செல்லாத வேண்டுகோள்! எந்த"
+"தரவும் சேமிக்கப்படவில்லை."
+
+#: program/localization/ta_IN/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "இந்த தபால் பெட்டியில் எந்த"
+"தரவும் சேமிக்கப்படவில்லை"
+
+#: program/localization/ta_IN/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "நீங்கள் அமர்வை வெற்றிகரமாக"
+"முடித்தீர்கள். வணக்கம்"
+
+#: program/localization/ta_IN/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "தபால் பெட்டி காலியாக உள்ளது"
+
+#: program/localization/ta_IN/messages.inc:loading
+msgid "Loading..."
+msgstr "ஏற்றுகிறது..."
+
+#: program/localization/ta_IN/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "கோப்பை ஏற்றுகிறது..."
+
+#: program/localization/ta_IN/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "தரவை ஏற்றுகிறது..."
+
+#: program/localization/ta_IN/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "புது செய்திகளை"
+"சரிபார்க்கிறது..."
+
+#: program/localization/ta_IN/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "செய்தியை அனுப்புகிறது..."
+
+#: program/localization/ta_IN/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "செய்தி வெற்றிகரமாக"
+"அனுப்பப்பட்டது"
+
+#: program/localization/ta_IN/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "செய்தியை சேமிக்கிறது..."
+
+#: program/localization/ta_IN/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "செய்தி வரைவில்"
+"சேமிக்கப்பட்டது"
+
+#: program/localization/ta_IN/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "வெற்றிகரமாக"
+"சேமிக்கப்பட்டது"
+
+#: program/localization/ta_IN/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "தொடர்பு சேமிக்கப்பட்டது"
+
+#: program/localization/ta_IN/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "இந்த மின்னஞ்சல்"
+"முகவரியுடன் ஒரு தொடர்பு"
+"ஏற்கனவே உள்ளது"
+
+#: program/localization/ta_IN/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "உங்கள் தனிப்பட்ட தகவலை"
+"பாதுகாக்க, தொலை தூரப்"
+"படங்கள் இந்த செய்தியில்"
+"தடுக்கப்பட்டது"
+
+#: program/localization/ta_IN/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "மன்னிக்கவும்! இந்த செய்தி"
+"குறிமுறையாக்கப்பட்டது"
+"அதனால் காட்ட முடியாது."
+
+#: program/localization/ta_IN/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "எந்த தொடர்புகளும்"
+"காணப்படவில்லை"
+
+#: program/localization/ta_IN/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "நீங்கள் வேண்டிய தொடர்பு"
+"காணப்படவில்லை"
+
+#: program/localization/ta_IN/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "செய்தி அனுப்புவது"
+"தோல்வியுற்றது"
+
+#: program/localization/ta_IN/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "இந்த செய்தி அனுப்புவதற்கு"
+"முன்பு தயவு செய்து $sec"
+"வினாடி(கள்)"
+"காத்திருக்கவும்."
+
+#: program/localization/ta_IN/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "அனுப்பிய அஞ்சலை சேமிக்கும்"
+"போது பிழை ஏற்பட்டது"
+
+#: program/localization/ta_IN/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "சேமிக்கும் போது பிழை"
+"ஏற்பட்டது"
+
+#: program/localization/ta_IN/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "செய்தியை நகர்த்த"
+"முடியவில்லை"
+
+#: program/localization/ta_IN/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "செய்தியை நீக்க முடியவில்லை"
+
+#: program/localization/ta_IN/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "செய்தியை நட்சத்திரமிட"
+"முடியவில்லை"
+
+#: program/localization/ta_IN/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "நீங்கள் தேர்ந்தெடுத்த"
+"தொடர்புகளை நீக்க"
+"விரும்புகிறீர்களா ?"
+
+#: program/localization/ta_IN/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "நீங்கள் தேர்ந்தெடுத்த"
+"செய்திகளை நீக்க"
+"விரும்புகிறீர்களா ?"
+
+#: program/localization/ta_IN/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "நீங்கள் இந்த அடைவை நீக்க"
+"விரும்புகிறீர்களா ?"
+
+#: program/localization/ta_IN/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "நீங்கள் இந்த"
+"அடைவிலிருக்கும் எல்லா"
+"செய்திகளையும் நீக்க"
+"விரும்புகிறீர்களா ?"
+
+#: program/localization/ta_IN/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "அடைவை நீக்குகிறது..."
+
+#: program/localization/ta_IN/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "அடைவை நகர்த்துகிறது..."
+
+#: program/localization/ta_IN/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "விண்ணப்பத்தை முழுமையாக"
+"நிறைவு செய்யவில்லை"
+
+#: program/localization/ta_IN/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "தயவு செய்து உண்மையான"
+"மின்னஞ்சலை எழுதுங்கள்"
+
+#: program/localization/ta_IN/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "தயவு செய்து பெயரை"
+"எழுதுங்கள்"
+
+#: program/localization/ta_IN/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "தயவு செய்து தாழின் அளவை"
+"எழுதுங்கள்"
+
+#: program/localization/ta_IN/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "தயவு செய்து ஒரு"
+"அனுப்புனரின் மின்னஞ்சல்"
+"முகவரியாவது எழுதுங்கள்"
+
+#: program/localization/ta_IN/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "தயவு செய்து ஒரு"
+"பெறுனரையாவது எழுதுங்கள்"
+
+#: program/localization/ta_IN/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "தலைப்பு காலியாக உள்ளது."
+"இப்போது எழுத"
+"விரும்புகிறீர்களா?"
+
+#: program/localization/ta_IN/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "உரையில்லாமல் இந்த செய்தியை"
+"அனுப்ப வேண்டுமா?"
+
+#: program/localization/ta_IN/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "செய்தி அனுப்பப்படவில்லை."
+"உங்கள் செய்தியை நிராகரிக்க"
+"விரும்புகிறீர்களா?"
+
+#: program/localization/ta_IN/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "தயவு செய்து தேடுவதற்கு Idap"
+"சேவையகத்தை"
+"தேர்ந்தெடுங்கள்"
+
+#: program/localization/ta_IN/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "எந்த தொடர்புகளும்"
+"காணப்படவில்லை"
+
+#: program/localization/ta_IN/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "தயவு செய்து தொடர்பின்"
+"பெயரோ மின்னஞ்சல்"
+"முகவரியோ எழுதுங்கள்"
+
+#: program/localization/ta_IN/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "எல்லா இணைப்புகளும்"
+"ஏற்றப்படவில்லை. தயவு செய்து"
+"காத்திருங்கள் அல்லது"
+"ஏற்றத்தை ரத்து செய்யுங்கள்."
+
+#: program/localization/ta_IN/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr செய்திகள்"
+"கண்டுபிடிக்கப்பட்டது"
+
+#: program/localization/ta_IN/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "தேடுதல் எந்த"
+"பொருத்தத்தையும்"
+"அனுப்பவில்லை"
+
+#: program/localization/ta_IN/messages.inc:searching
+msgid "Searching..."
+msgstr "தேடுகிறது..."
+
+#: program/localization/ta_IN/messages.inc:checking
+msgid "Checking..."
+msgstr "சரி பார்க்கிறது..."
+
+#: program/localization/ta_IN/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "எழுத்து பிழைகள் இல்லை"
+
+#: program/localization/ta_IN/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "அடைவு வெற்றிகரமாக"
+"நீக்கப்பட்டது"
+
+#: program/localization/ta_IN/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "வெற்றிகரமாக நீக்கப்பட்டது"
+
+#: program/localization/ta_IN/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "வடிவத்தை நீக்குகிறது..."
+
+#: program/localization/ta_IN/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "சேவையகத்திலிருந்து"
+"செய்தியை ஏற்ற முடியவில்லை"
+
+#: program/localization/ta_IN/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "கோப்பு ஏற்றம்"
+"தோல்வியடாந்தது"
+
+#: program/localization/ta_IN/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "ஏற்றிய கோப்பு அதிகபட்ச"
+"அளவான $size-ஐ மீறியது"
+
+#: program/localization/ta_IN/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "வெற்றிகரமாக $nr முகவரிக்களை"
+"நகலெடுத்தது"
+
+#: program/localization/ta_IN/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "எந்த முகவரியையும்"
+"நகலெடுக்க முடியவில்லை"
+
+#: program/localization/ta_IN/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "இந்த முகவரியின் மூலத்தை"
+"படிக்க மட்டும்தான்"
+"முடியும்"
+
+#: program/localization/ta_IN/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "தொடர்பு முகவரியை சேமிக்க"
+"முடியவில்லை"
+
+#: program/localization/ta_IN/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "செய்தியை நகர்த்துகிறது..."
+
+#: program/localization/ta_IN/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "படித்த சீட்டு வெற்றிகரமாக"
+"அனுப்பப்பட்டது"
+
+#: program/localization/ta_IN/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "சீட்டை அனுப்ப முடியவில்லை"
+
+#: program/localization/ta_IN/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "நீங்கள் இந்த அடையாளத்தை"
+"நீக்க முடியாது இது தான்"
+"கடைசி"
+
+#: program/localization/ta_IN/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "அடைவு பெயரில் தடை"
+"செய்யப்பட்ட எழுத்துக்கள்"
+"உள்ளது"
+
+#: program/localization/ta_IN/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "தயவு செய்து ஏற்றுவதற்கு ஒரு"
+"கோப்பை தேர்ந்தெடுங்கள்"
+
+#: program/localization/ta_IN/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "நீங்கள் தேர்ந்தெடுத்த"
+"தொடர்புகளில் எழுத"
+"முடியாது"
+
+#: program/localization/ta_IN/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "ஏற்றுகிறது, தயவு செய்து"
+"காத்திருங்கள்..."
+
+#: program/localization/ta_IN/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "ஏற்றுவது தோல்வியடைந்தது!"
+"ஏற்றிய கோப்பு ஒரு"
+"செல்லுபடியாகும் vCard கோப்பு"
+"இல்லை"
+
+#: program/localization/ta_IN/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>வெற்றிகரமாக $inserted"
+"தொடர்புகள் ஏற்றப்பட்டது,"
+"ஏற்கனவே உள்ள $skipped"
+"தொடர்புகள்"
+"தவிர்க்கப்பட்டது</b>:"
+"<p><em>$names</em></p>"
+
+#: program/localization/ta_IN/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "பணி அனுமதிக்கப்படவில்லை!"
+
+#: program/localization/ta_IN/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "நீங்கள் தேர்ந்தெடுத்த"
+"அடையாளத்தில் மின்னஞ்சல்"
+"இல்லை"
+
+#: program/localization/ta_IN/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "எளிய உரை திருத்திக்கு"
+"மாறுவதன் மூலம் எல்லா உரை"
+"வடிவங்களும் தொலைந்து"
+"போகக் கூடும். தொடர"
+"விரும்புகிறீர்களா ?"
+
+#: program/localization/ta_IN/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "அமைப்பில் பெரிய பிழை"
+"ஏற்பட்டது. உங்கள்"
+"நிர்வாகியை உடனே தொடர்பு"
+"கொள்ளவும். <b>உங்கள்"
+"செய்தியை அனுப்ப முடியாது.</b>"
+
+#: program/localization/ta_IN/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP பிழை ($code): சேவையகத்தின்"
+"இணைப்பு தோல்வியடைந்தது"
+
+#: program/localization/ta_IN/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP பிழை ($code): நம்பகத்தன்மை"
+"தோல்வியடைந்தது"
+
+#: program/localization/ta_IN/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP பிழை ($code): அனுப்புனரை \"$from\" ஆக"
+"வைப்பதில் தோல்வி"
+
+#: program/localization/ta_IN/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP பிழை ($code): \"$to\" பெறுனரை"
+"சேர்பதில் தோல்வி"
+
+#: program/localization/ta_IN/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP பிழை : பெறுனர் பட்டியலை"
+"பிரிக்க முடியவில்லை"
+
+#: program/localization/ta_IN/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP பிழை: $msg"
+
+#: program/localization/ta_IN/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "தவறான மின்னஞ்சல் முகவரி: $email	"

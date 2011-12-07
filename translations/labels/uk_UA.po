@@ -1,0 +1,1660 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/uk_UA/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: uk_UA\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/uk_UA/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Ласкаво просимо до $product"
+
+#: program/localization/uk_UA/labels.inc:username
+msgid "Username"
+msgstr "Ім'я користувача"
+
+#: program/localization/uk_UA/labels.inc:password
+msgid "Password"
+msgstr "Пароль"
+
+#: program/localization/uk_UA/labels.inc:server
+msgid "Server"
+msgstr "Сервер"
+
+#: program/localization/uk_UA/labels.inc:login
+msgid "Login"
+msgstr "Увійти"
+
+#: program/localization/uk_UA/labels.inc:logout
+msgid "Logout"
+msgstr "Вийти"
+
+#: program/localization/uk_UA/labels.inc:mail
+msgid "Mail"
+msgstr "Пошта"
+
+#: program/localization/uk_UA/labels.inc:settings
+msgid "Settings"
+msgstr "Налаштування"
+
+#: program/localization/uk_UA/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Контакти"
+
+#: program/localization/uk_UA/labels.inc:inbox
+msgid "Inbox"
+msgstr "Вхідні"
+
+#: program/localization/uk_UA/labels.inc:drafts
+msgid "Drafts"
+msgstr "Чернетки"
+
+#: program/localization/uk_UA/labels.inc:sent
+msgid "Sent"
+msgstr "Надіслані"
+
+#: program/localization/uk_UA/labels.inc:trash
+msgid "Trash"
+msgstr "Кошик"
+
+#: program/localization/uk_UA/labels.inc:junk
+msgid "Junk"
+msgstr "Спам"
+
+#: program/localization/uk_UA/labels.inc:subject
+msgid "Subject"
+msgstr "Тема"
+
+#: program/localization/uk_UA/labels.inc:from
+msgid "From"
+msgstr "Відправник"
+
+#: program/localization/uk_UA/labels.inc:to
+msgid "To"
+msgstr "Кому"
+
+#: program/localization/uk_UA/labels.inc:cc
+msgid "Cc"
+msgstr "Копія"
+
+#: program/localization/uk_UA/labels.inc:bcc
+msgid "Bcc"
+msgstr "Прихована"
+
+#: program/localization/uk_UA/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Зворотня адреса"
+
+#: program/localization/uk_UA/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Followup-To"
+
+#: program/localization/uk_UA/labels.inc:date
+msgid "Date"
+msgstr "Дата"
+
+#: program/localization/uk_UA/labels.inc:size
+msgid "Size"
+msgstr "Розмір"
+
+#: program/localization/uk_UA/labels.inc:priority
+msgid "Priority"
+msgstr "Пріоритет"
+
+#: program/localization/uk_UA/labels.inc:organization
+msgid "Company"
+msgstr "Організація"
+
+#: program/localization/uk_UA/labels.inc:readstatus
+msgid "Read status"
+msgstr "Статус прочитання"
+
+#: program/localization/uk_UA/labels.inc:mailboxlist
+#: program/localization/uk_UA/labels.inc:folders
+msgid "Folders"
+msgstr "Папки"
+
+#: program/localization/uk_UA/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Повідомлення з $from по $to із $count"
+
+#: program/localization/uk_UA/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Обговорення з $from по $to із $count"
+
+#: program/localization/uk_UA/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Лист $nr із $count"
+
+#: program/localization/uk_UA/labels.inc:copy
+msgid "Copy"
+msgstr "Копіювати"
+
+#: program/localization/uk_UA/labels.inc:move
+msgid "Move"
+msgstr "Перемістити"
+
+#: program/localization/uk_UA/labels.inc:moveto
+msgid "Move to..."
+msgstr "Перемістити до..."
+
+#: program/localization/uk_UA/labels.inc:download
+msgid "Download"
+msgstr "Завантажити"
+
+#: program/localization/uk_UA/labels.inc:filename
+msgid "File name"
+msgstr "Ім'я файлу"
+
+#: program/localization/uk_UA/labels.inc:filesize
+msgid "File size"
+msgstr "Розмір файлу"
+
+#: program/localization/uk_UA/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Додати до контактів"
+
+#: program/localization/uk_UA/labels.inc:sun
+msgid "Sun"
+msgstr "Нд"
+
+#: program/localization/uk_UA/labels.inc:mon
+msgid "Mon"
+msgstr "Пн"
+
+#: program/localization/uk_UA/labels.inc:tue
+msgid "Tue"
+msgstr "Вт"
+
+#: program/localization/uk_UA/labels.inc:wed
+msgid "Wed"
+msgstr "Ср"
+
+#: program/localization/uk_UA/labels.inc:thu
+msgid "Thu"
+msgstr "Чт"
+
+#: program/localization/uk_UA/labels.inc:fri
+msgid "Fri"
+msgstr "Пт"
+
+#: program/localization/uk_UA/labels.inc:sat
+msgid "Sat"
+msgstr "Сб"
+
+#: program/localization/uk_UA/labels.inc:sunday
+msgid "Sunday"
+msgstr "Неділя"
+
+#: program/localization/uk_UA/labels.inc:monday
+msgid "Monday"
+msgstr "Понеділок"
+
+#: program/localization/uk_UA/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Вівторок"
+
+#: program/localization/uk_UA/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Середа"
+
+#: program/localization/uk_UA/labels.inc:thursday
+msgid "Thursday"
+msgstr "Четвер"
+
+#: program/localization/uk_UA/labels.inc:friday
+msgid "Friday"
+msgstr "П'ятниця"
+
+#: program/localization/uk_UA/labels.inc:saturday
+msgid "Saturday"
+msgstr "Субота"
+
+#: program/localization/uk_UA/labels.inc:jan
+msgid "Jan"
+msgstr "січ"
+
+#: program/localization/uk_UA/labels.inc:feb
+msgid "Feb"
+msgstr "лют"
+
+#: program/localization/uk_UA/labels.inc:mar
+msgid "Mar"
+msgstr "бер"
+
+#: program/localization/uk_UA/labels.inc:apr
+msgid "Apr"
+msgstr "квіт"
+
+#: program/localization/uk_UA/labels.inc:may
+#: program/localization/uk_UA/labels.inc:longmay
+msgid "May"
+msgstr "Травень"
+
+#: program/localization/uk_UA/labels.inc:jun
+msgid "Jun"
+msgstr "чер"
+
+#: program/localization/uk_UA/labels.inc:jul
+msgid "Jul"
+msgstr "лип"
+
+#: program/localization/uk_UA/labels.inc:aug
+msgid "Aug"
+msgstr "сер"
+
+#: program/localization/uk_UA/labels.inc:sep
+msgid "Sep"
+msgstr "вер"
+
+#: program/localization/uk_UA/labels.inc:oct
+msgid "Oct"
+msgstr "жов"
+
+#: program/localization/uk_UA/labels.inc:nov
+msgid "Nov"
+msgstr "лис"
+
+#: program/localization/uk_UA/labels.inc:dec
+msgid "Dec"
+msgstr "гр"
+
+#: program/localization/uk_UA/labels.inc:longjan
+msgid "January"
+msgstr "Січень"
+
+#: program/localization/uk_UA/labels.inc:longfeb
+msgid "February"
+msgstr "Лютий"
+
+#: program/localization/uk_UA/labels.inc:longmar
+msgid "March"
+msgstr "Березень"
+
+#: program/localization/uk_UA/labels.inc:longapr
+msgid "April"
+msgstr "Квітень"
+
+#: program/localization/uk_UA/labels.inc:longjun
+msgid "June"
+msgstr "Червень"
+
+#: program/localization/uk_UA/labels.inc:longjul
+msgid "July"
+msgstr "Липень"
+
+#: program/localization/uk_UA/labels.inc:longaug
+msgid "August"
+msgstr "Серпень"
+
+#: program/localization/uk_UA/labels.inc:longsep
+msgid "September"
+msgstr "Вересень"
+
+#: program/localization/uk_UA/labels.inc:longoct
+msgid "October"
+msgstr "Жовтень"
+
+#: program/localization/uk_UA/labels.inc:longnov
+msgid "November"
+msgstr "Листопад"
+
+#: program/localization/uk_UA/labels.inc:longdec
+msgid "December"
+msgstr "Грудень"
+
+#: program/localization/uk_UA/labels.inc:today
+msgid "Today"
+msgstr "Сьогодні"
+
+#: program/localization/uk_UA/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Перевірити пошту"
+
+#: program/localization/uk_UA/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Написати листа"
+
+#: program/localization/uk_UA/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Відповісти відправнику"
+
+#: program/localization/uk_UA/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Відповісти до листа або відправнику та"
+"усім отримувачам"
+
+#: program/localization/uk_UA/labels.inc:replyall
+msgid "Reply all"
+msgstr "Відповісти усім"
+
+#: program/localization/uk_UA/labels.inc:replylist
+msgid "Reply list"
+msgstr "Відповісти до листа"
+
+#: program/localization/uk_UA/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "Переслати у тілі листа"
+
+#: program/localization/uk_UA/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "Переслати як прикріплення"
+
+#: program/localization/uk_UA/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Переслати повідомлення"
+
+#: program/localization/uk_UA/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "У кошик"
+
+#: program/localization/uk_UA/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Перемістити лист у кошик"
+
+#: program/localization/uk_UA/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Друкувати"
+
+#: program/localization/uk_UA/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Показати попередній лист"
+
+#: program/localization/uk_UA/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Показати перший лист"
+
+#: program/localization/uk_UA/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Показати наступний лист"
+
+#: program/localization/uk_UA/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Показати останній лист"
+
+#: program/localization/uk_UA/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "До переліку листів"
+
+#: program/localization/uk_UA/labels.inc:viewsource
+msgid "Show source"
+msgstr "Вихідний текст"
+
+#: program/localization/uk_UA/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Позначити листи"
+
+#: program/localization/uk_UA/labels.inc:markread
+msgid "As read"
+msgstr "Позначити як прочитане"
+
+#: program/localization/uk_UA/labels.inc:markunread
+msgid "As unread"
+msgstr "Позначити як непрочитане"
+
+#: program/localization/uk_UA/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Додати зірочку"
+
+#: program/localization/uk_UA/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Зняти зірочку"
+
+#: program/localization/uk_UA/labels.inc:moreactions
+msgid "More actions..."
+msgstr "Інші дії..."
+
+#: program/localization/uk_UA/labels.inc:select
+msgid "Select"
+msgstr "Вибрати"
+
+#: program/localization/uk_UA/labels.inc:all
+msgid "All"
+msgstr "Всі"
+
+#: program/localization/uk_UA/labels.inc:none
+#: program/localization/uk_UA/labels.inc:nonesort
+msgid "None"
+msgstr "Не сортувати"
+
+#: program/localization/uk_UA/labels.inc:currpage
+msgid "Current page"
+msgstr "Поточна сторінка"
+
+#: program/localization/uk_UA/labels.inc:unread
+msgid "Unread"
+msgstr "Непрочитані"
+
+#: program/localization/uk_UA/labels.inc:flagged
+msgid "Flagged"
+msgstr "Із зірочкою"
+
+#: program/localization/uk_UA/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Без відповіді"
+
+#: program/localization/uk_UA/labels.inc:deleted
+msgid "Deleted"
+msgstr "Видалені"
+
+#: program/localization/uk_UA/labels.inc:invert
+msgid "Invert"
+msgstr "Інвертувати виділення"
+
+#: program/localization/uk_UA/labels.inc:filter
+msgid "Filter"
+msgstr "Фільтр"
+
+#: program/localization/uk_UA/labels.inc:list
+msgid "List"
+msgstr "Списком"
+
+#: program/localization/uk_UA/labels.inc:threads
+msgid "Threads"
+msgstr "Гілки"
+
+#: program/localization/uk_UA/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Розкрити всі"
+
+#: program/localization/uk_UA/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Розкрити непрочитані"
+
+#: program/localization/uk_UA/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Згорнути всі"
+
+#: program/localization/uk_UA/labels.inc:threaded
+msgid "Threaded"
+msgstr "Гілками"
+
+#: program/localization/uk_UA/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Розкривати гілки "
+
+#: program/localization/uk_UA/labels.inc:do_expand
+msgid "all threads"
+msgstr "усі гілки"
+
+#: program/localization/uk_UA/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "тільки з непрочитаними листами"
+
+#: program/localization/uk_UA/labels.inc:fromto
+msgid "From/To"
+msgstr "Відправник/Одержувач"
+
+#: program/localization/uk_UA/labels.inc:flag
+msgid "Flag"
+msgstr "Позначка"
+
+#: program/localization/uk_UA/labels.inc:attachment
+msgid "Attachment"
+msgstr "Вкладення"
+
+#: program/localization/uk_UA/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Дата відправлення"
+
+#: program/localization/uk_UA/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Дата оримання"
+
+#: program/localization/uk_UA/labels.inc:asc
+msgid "ascending"
+msgstr "за зростанням"
+
+#: program/localization/uk_UA/labels.inc:desc
+msgid "descending"
+msgstr "за спаданням"
+
+#: program/localization/uk_UA/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Атрибути для відображення"
+
+#: program/localization/uk_UA/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Сортувати за атрибутом"
+
+#: program/localization/uk_UA/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Порядок сортування"
+
+#: program/localization/uk_UA/labels.inc:listmode
+msgid "List view mode"
+msgstr "Режим перегляду"
+
+#: program/localization/uk_UA/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Операції з папкою..."
+
+#: program/localization/uk_UA/labels.inc:compact
+msgid "Compact"
+msgstr "Стиснути"
+
+#: program/localization/uk_UA/labels.inc:empty
+msgid "Empty"
+msgstr "Спорожнити"
+
+#: program/localization/uk_UA/labels.inc:quota
+msgid "Disk usage"
+msgstr "Використано"
+
+#: program/localization/uk_UA/labels.inc:unknown
+msgid "unknown"
+msgstr "невідомо"
+
+#: program/localization/uk_UA/labels.inc:unlimited
+msgid "unlimited"
+msgstr "без обмеження"
+
+#: program/localization/uk_UA/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Швидкий пошук"
+
+#: program/localization/uk_UA/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Очистити пошук"
+
+#: program/localization/uk_UA/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Де шукати"
+
+#: program/localization/uk_UA/labels.inc:msgtext
+msgid "Entire message"
+msgstr "В усьому листі"
+
+#: program/localization/uk_UA/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Відкрити в новому вікні"
+
+#: program/localization/uk_UA/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Зберегти (.eml)"
+
+#: program/localization/uk_UA/labels.inc:compose
+msgid "Compose a message"
+msgstr "Написати листа"
+
+#: program/localization/uk_UA/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Редагувати як новий"
+
+#: program/localization/uk_UA/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Зберегти чернетку"
+
+#: program/localization/uk_UA/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Надіслати зараз"
+
+#: program/localization/uk_UA/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Вкласти файл"
+
+#: program/localization/uk_UA/labels.inc:charset
+msgid "Charset"
+msgstr "Кодування"
+
+#: program/localization/uk_UA/labels.inc:editortype
+msgid "Editor type"
+msgstr "Редактор"
+
+#: program/localization/uk_UA/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Запит відповіді"
+
+#: program/localization/uk_UA/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Повідомлення про доставку"
+
+#: program/localization/uk_UA/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "$date, $sender написав:"
+
+#: program/localization/uk_UA/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "Оригінальне повідомлення"
+
+#: program/localization/uk_UA/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Змінити данні"
+
+#: program/localization/uk_UA/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Перевірити орфографію"
+
+#: program/localization/uk_UA/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Продовжити редагування"
+
+#: program/localization/uk_UA/labels.inc:revertto
+msgid "Revert to"
+msgstr "Відмінити редагування"
+
+#: program/localization/uk_UA/labels.inc:attachments
+msgid "Attachments"
+msgstr "Вкладені файли"
+
+#: program/localization/uk_UA/labels.inc:upload
+msgid "Upload"
+msgstr "Вкласти"
+
+#: program/localization/uk_UA/labels.inc:uploadprogress
+msgid "$percent ($current from $total)"
+msgstr "$percent ($current з $total)"
+
+#: program/localization/uk_UA/labels.inc:close
+msgid "Close"
+msgstr "Закрити"
+
+#: program/localization/uk_UA/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Налаштування листів"
+
+#: program/localization/uk_UA/labels.inc:low
+msgid "Low"
+msgstr "Низький"
+
+#: program/localization/uk_UA/labels.inc:lowest
+msgid "Lowest"
+msgstr "Найнижчий"
+
+#: program/localization/uk_UA/labels.inc:normal
+msgid "Normal"
+msgstr "Нормальний"
+
+#: program/localization/uk_UA/labels.inc:high
+msgid "High"
+msgstr "Високий"
+
+#: program/localization/uk_UA/labels.inc:highest
+msgid "Highest"
+msgstr "Найвищий"
+
+#: program/localization/uk_UA/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(без теми)"
+
+#: program/localization/uk_UA/labels.inc:showimages
+msgid "Display images"
+msgstr "Показувати зображення"
+
+#: program/localization/uk_UA/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Завжди показувати зображення від $sender"
+
+#: program/localization/uk_UA/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/uk_UA/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Звичайний текст"
+
+#: program/localization/uk_UA/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "зберегти надісланого листа в"
+
+#: program/localization/uk_UA/labels.inc:dontsave
+msgid "don't save"
+msgstr "не зберігати"
+
+#: program/localization/uk_UA/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Максимальний розмір файлу $size"
+
+#: program/localization/uk_UA/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Додати копію"
+
+#: program/localization/uk_UA/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Додати приховану копію"
+
+#: program/localization/uk_UA/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Додати зворотню адресу"
+
+#: program/localization/uk_UA/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Додати Followup-To"
+
+#: program/localization/uk_UA/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Відправник цього листа запитав про"
+"прочитання. Повідомити відправника?"
+
+#: program/localization/uk_UA/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Повідомлення про прочитання"
+
+#: program/localization/uk_UA/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Повідомлення про прочитання Вашого"
+"листа"
+
+#: program/localization/uk_UA/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Зауваження: Це повідомлення означає"
+"лише, що листа було відкрито одержувачем,"
+"і не гарантує того, що його було"
+"прочитано."
+
+#: program/localization/uk_UA/labels.inc:name
+msgid "Display Name"
+msgstr "Ім`я для відображення"
+
+#: program/localization/uk_UA/labels.inc:firstname
+msgid "First Name"
+msgstr "Ім`я"
+
+#: program/localization/uk_UA/labels.inc:surname
+msgid "Last Name"
+msgstr "Прізвище"
+
+#: program/localization/uk_UA/labels.inc:middlename
+msgid "Middle Name"
+msgstr "По-батькові"
+
+#: program/localization/uk_UA/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "Префікс"
+
+#: program/localization/uk_UA/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "Суфікс"
+
+#: program/localization/uk_UA/labels.inc:nickname
+msgid "Nickname"
+msgstr "Нікнейм"
+
+#: program/localization/uk_UA/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Посада"
+
+#: program/localization/uk_UA/labels.inc:department
+msgid "Department"
+msgstr "Відділ"
+
+#: program/localization/uk_UA/labels.inc:gender
+msgid "Gender"
+msgstr "Стать"
+
+#: program/localization/uk_UA/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Дівоче прізвище"
+
+#: program/localization/uk_UA/labels.inc:email
+msgid "Email"
+msgstr "Електронна адреса"
+
+#: program/localization/uk_UA/labels.inc:phone
+msgid "Phone"
+msgstr "Телефон"
+
+#: program/localization/uk_UA/labels.inc:address
+msgid "Address"
+msgstr "Адреса"
+
+#: program/localization/uk_UA/labels.inc:street
+msgid "Street"
+msgstr "Вулиця"
+
+#: program/localization/uk_UA/labels.inc:locality
+msgid "City"
+msgstr "Місто"
+
+#: program/localization/uk_UA/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "Індекс"
+
+#: program/localization/uk_UA/labels.inc:region
+msgid "State/Province"
+msgstr "Область"
+
+#: program/localization/uk_UA/labels.inc:country
+msgid "Country"
+msgstr "Страна"
+
+#: program/localization/uk_UA/labels.inc:birthday
+msgid "Birthday"
+msgstr "Дата народження"
+
+#: program/localization/uk_UA/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "Ювілей"
+
+#: program/localization/uk_UA/labels.inc:website
+msgid "Website"
+msgstr "Веб-сайт"
+
+#: program/localization/uk_UA/labels.inc:instantmessenger
+msgid "IM"
+msgstr "IM"
+
+#: program/localization/uk_UA/labels.inc:notes
+msgid "Notes"
+msgstr "Примітки"
+
+#: program/localization/uk_UA/labels.inc:male
+msgid "male"
+msgstr "чоловічий"
+
+#: program/localization/uk_UA/labels.inc:female
+msgid "female"
+msgstr "жіночий"
+
+#: program/localization/uk_UA/labels.inc:manager
+msgid "Manager"
+msgstr "Менеждер"
+
+#: program/localization/uk_UA/labels.inc:assistant
+#: program/localization/uk_UA/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Помічник"
+
+#: program/localization/uk_UA/labels.inc:spouse
+msgid "Spouse"
+msgstr "Шлюбний партнер"
+
+#: program/localization/uk_UA/labels.inc:allfields
+msgid "All fields"
+msgstr "Усі поля"
+
+#: program/localization/uk_UA/labels.inc:search
+msgid "Search"
+msgstr "Пошук"
+
+#: program/localization/uk_UA/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "Розширений пошук"
+
+#: program/localization/uk_UA/labels.inc:other
+#: program/localization/uk_UA/labels.inc:typeother
+msgid "Other"
+msgstr "Інше"
+
+#: program/localization/uk_UA/labels.inc:typehome
+msgid "Home"
+msgstr "Дім"
+
+#: program/localization/uk_UA/labels.inc:typework
+msgid "Work"
+msgstr "Робота"
+
+#: program/localization/uk_UA/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Мобільний"
+
+#: program/localization/uk_UA/labels.inc:typemain
+msgid "Main"
+msgstr "Основний"
+
+#: program/localization/uk_UA/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Домашній факс"
+
+#: program/localization/uk_UA/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "Робочий факс"
+
+#: program/localization/uk_UA/labels.inc:typecar
+msgid "Car"
+msgstr "Автомобіль"
+
+#: program/localization/uk_UA/labels.inc:typepager
+msgid "Pager"
+msgstr "Пейджер"
+
+#: program/localization/uk_UA/labels.inc:typevideo
+msgid "Video"
+msgstr "Відео"
+
+#: program/localization/uk_UA/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "Домашня сторінка"
+
+#: program/localization/uk_UA/labels.inc:typeblog
+msgid "Blog"
+msgstr "Блог"
+
+#: program/localization/uk_UA/labels.inc:typeprofile
+msgid "Profile"
+msgstr "Профіль"
+
+#: program/localization/uk_UA/labels.inc:addfield
+msgid "Add field..."
+msgstr "Додати поле..."
+
+#: program/localization/uk_UA/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Додати вибрані контакти до списку"
+"контактів"
+
+#: program/localization/uk_UA/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Редагувати контакт"
+
+#: program/localization/uk_UA/labels.inc:contacts
+msgid "Contacts"
+msgstr "Контакти"
+
+#: program/localization/uk_UA/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Властивості контакта"
+
+#: program/localization/uk_UA/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Особова інформація"
+
+#: program/localization/uk_UA/labels.inc:edit
+msgid "Edit"
+msgstr "Правка"
+
+#: program/localization/uk_UA/labels.inc:cancel
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: program/localization/uk_UA/labels.inc:save
+msgid "Save"
+msgstr "Зберегти"
+
+#: program/localization/uk_UA/labels.inc:delete
+msgid "Delete"
+msgstr "Видалити"
+
+#: program/localization/uk_UA/labels.inc:rename
+msgid "Rename"
+msgstr "Перейменувати"
+
+#: program/localization/uk_UA/labels.inc:addphoto
+msgid "Add"
+msgstr "Додати"
+
+#: program/localization/uk_UA/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Замінити"
+
+#: program/localization/uk_UA/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Створити новий контакт"
+
+#: program/localization/uk_UA/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Видалити вибрані контакти"
+
+#: program/localization/uk_UA/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Створити листа для вибранних контактів"
+
+#: program/localization/uk_UA/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Контакти  $from - $to / $count"
+
+#: program/localization/uk_UA/labels.inc:print
+msgid "Print"
+msgstr "Друкувати"
+
+#: program/localization/uk_UA/labels.inc:export
+msgid "Export"
+msgstr "Експортувати"
+
+#: program/localization/uk_UA/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Експортувати контакти у формат vCard"
+
+#: program/localization/uk_UA/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Створити нову групу контактів"
+
+#: program/localization/uk_UA/labels.inc:grouprename
+msgid "Rename group"
+msgstr "Перейменувати групу"
+
+#: program/localization/uk_UA/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "Видалити групу"
+
+#: program/localization/uk_UA/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Попередня сторінка"
+
+#: program/localization/uk_UA/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Перша сторінка"
+
+#: program/localization/uk_UA/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Наступна сторінка"
+
+#: program/localization/uk_UA/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Остання сторінка"
+
+#: program/localization/uk_UA/labels.inc:group
+msgid "Group"
+msgstr "Група"
+
+#: program/localization/uk_UA/labels.inc:groups
+msgid "Groups"
+msgstr "Групи"
+
+#: program/localization/uk_UA/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Персональні адреси"
+
+#: program/localization/uk_UA/labels.inc:searchsave
+msgid "Save search"
+msgstr "Зберегти пошук"
+
+#: program/localization/uk_UA/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "Видалити пошук"
+
+#: program/localization/uk_UA/labels.inc:import
+msgid "Import"
+msgstr "Імпорт"
+
+#: program/localization/uk_UA/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Імпортувати контакти"
+
+#: program/localization/uk_UA/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Імпортувати з файлу:"
+
+#: program/localization/uk_UA/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "Додати нові контакти до адресної книги"
+
+#: program/localization/uk_UA/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Замінити всю адресну книгу"
+
+#: program/localization/uk_UA/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Ви можете завантажити контакти з"
+"існуючої адресної книги. На даний момент"
+"підтримується імпортування контактів з"
+"формату vCard"
+
+#: program/localization/uk_UA/labels.inc:done
+msgid "Done"
+msgstr "Готово"
+
+#: program/localization/uk_UA/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Налаштування для"
+
+#: program/localization/uk_UA/labels.inc:preferences
+msgid "Preferences"
+msgstr "Параметри"
+
+#: program/localization/uk_UA/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Налаштування користувача"
+
+#: program/localization/uk_UA/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Редагувати налаштування користувача"
+
+#: program/localization/uk_UA/labels.inc:identities
+msgid "Identities"
+msgstr "Профілі"
+
+#: program/localization/uk_UA/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Керування профілями"
+
+#: program/localization/uk_UA/labels.inc:newidentity
+msgid "New identity"
+msgstr "Новий профіль"
+
+#: program/localization/uk_UA/labels.inc:newitem
+msgid "New item"
+msgstr "Новий"
+
+#: program/localization/uk_UA/labels.inc:edititem
+msgid "Edit item"
+msgstr "Редагувати"
+
+#: program/localization/uk_UA/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Показувати в HTML"
+
+#: program/localization/uk_UA/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Кодування за замовчуваннням"
+
+#: program/localization/uk_UA/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Лист у HTML"
+
+#: program/localization/uk_UA/labels.inc:dateformat
+msgid "Date format"
+msgstr "Формат дати"
+
+#: program/localization/uk_UA/labels.inc:timeformat
+msgid "Time format"
+msgstr "Формат часу"
+
+#: program/localization/uk_UA/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Дати у зручному форматі"
+
+#: program/localization/uk_UA/labels.inc:setdefault
+msgid "Set default"
+msgstr "Встановити за замовчуванням"
+
+#: program/localization/uk_UA/labels.inc:autodetect
+msgid "Auto"
+msgstr "Визначати автоматично"
+
+#: program/localization/uk_UA/labels.inc:language
+msgid "Language"
+msgstr "Мова"
+
+#: program/localization/uk_UA/labels.inc:timezone
+msgid "Time zone"
+msgstr "Часовий пояс"
+
+#: program/localization/uk_UA/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Рядків на сторінці"
+
+#: program/localization/uk_UA/labels.inc:signature
+msgid "Signature"
+msgstr "Підпис"
+
+#: program/localization/uk_UA/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Літній/зимовий час"
+
+#: program/localization/uk_UA/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Створювати листи в HTML"
+
+#: program/localization/uk_UA/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "тільки у відповідь на HTML повідомлення"
+
+#: program/localization/uk_UA/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "Підпис в HTML"
+
+#: program/localization/uk_UA/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Показати панель перегляду"
+
+#: program/localization/uk_UA/labels.inc:skin
+msgid "Interface skin"
+msgstr "Тема"
+
+#: program/localization/uk_UA/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Очищати кошик при виході"
+
+#: program/localization/uk_UA/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Стискати папку Вхідні при завершенні"
+
+#: program/localization/uk_UA/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Інтерфейс користувача"
+
+#: program/localization/uk_UA/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Налаштування сервера"
+
+#: program/localization/uk_UA/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Вид інтерфейсу"
+
+#: program/localization/uk_UA/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Повідомлення про прочитання"
+
+#: program/localization/uk_UA/labels.inc:askuser
+msgid "ask me"
+msgstr "запитати користувача"
+
+#: program/localization/uk_UA/labels.inc:autosend
+msgid "send receipt"
+msgstr "відправляти автоматично"
+
+#: program/localization/uk_UA/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "відправити повідомлення моим контактам,"
+"в іншому випадку запитати мене"
+
+#: program/localization/uk_UA/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "відправити повідомлення моим контактам,"
+"в іншому випадку ігнорувати"
+
+#: program/localization/uk_UA/labels.inc:ignore
+msgid "ignore"
+msgstr "ігнорувати"
+
+#: program/localization/uk_UA/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Позначати як прочитане при видаленні"
+
+#: program/localization/uk_UA/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Позначати для видалення замість"
+"видалення"
+
+#: program/localization/uk_UA/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Не показувати видалені листи"
+
+#: program/localization/uk_UA/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Видаляти листи при невдалому"
+"переміщенні до кошика"
+
+#: program/localization/uk_UA/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Показувати віддалені зображення"
+
+#: program/localization/uk_UA/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "від відомих відправників"
+
+#: program/localization/uk_UA/labels.inc:always
+msgid "always"
+msgstr "завжди"
+
+#: program/localization/uk_UA/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Показувати вкладені зображення внизу"
+"листа"
+
+#: program/localization/uk_UA/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Автозбереження чернетки"
+
+#: program/localization/uk_UA/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "кожні $n хвилин"
+
+#: program/localization/uk_UA/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Перевірка нових листів"
+
+#: program/localization/uk_UA/labels.inc:never
+msgid "never"
+msgstr "ніколи"
+
+#: program/localization/uk_UA/labels.inc:immediately
+msgid "immediately"
+msgstr "одразу"
+
+#: program/localization/uk_UA/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Відображення листів"
+
+#: program/localization/uk_UA/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Створення листів"
+
+#: program/localization/uk_UA/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Імена вкладень"
+
+#: program/localization/uk_UA/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Повний RFC 2231 (Thunderbird)"
+
+#: program/localization/uk_UA/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/uk_UA/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "RFC 2047 (інші поштові клієнти)"
+
+#: program/localization/uk_UA/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "Використовувати MIME кодування для"
+"8-бітних символів"
+
+#: program/localization/uk_UA/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Додаткові параметри"
+
+#: program/localization/uk_UA/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Фокусувати вікно браузера при новому"
+"листі"
+
+#: program/localization/uk_UA/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Перевіряти нові листи у всіх папках"
+
+#: program/localization/uk_UA/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Після видалення/переміщення листа"
+"відображати наступний"
+
+#: program/localization/uk_UA/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Основні налаштування"
+
+#: program/localization/uk_UA/labels.inc:section
+msgid "Section"
+msgstr "Розділ"
+
+#: program/localization/uk_UA/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Додатково"
+
+#: program/localization/uk_UA/labels.inc:newmessage
+msgid "New Message"
+msgstr "Новий лист"
+
+#: program/localization/uk_UA/labels.inc:listoptions
+msgid "List Options"
+msgstr "Список налаштувань"
+
+#: program/localization/uk_UA/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Налаштування підпису"
+
+#: program/localization/uk_UA/labels.inc:whenreplying
+msgid "When replying"
+msgstr "При відповіді"
+
+#: program/localization/uk_UA/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "починати новий лист перед цитованим"
+
+#: program/localization/uk_UA/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "починати новий лист після цитованого"
+
+#: program/localization/uk_UA/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "При відповіді видаляти первинний підпис"
+"з листа"
+
+#: program/localization/uk_UA/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Автоматично додавати підпис"
+
+#: program/localization/uk_UA/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "тільки до нових листів"
+
+#: program/localization/uk_UA/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "тільки при відповідях та пересилках"
+
+#: program/localization/uk_UA/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "При відповідях чи пересилках додавати"
+"підпис"
+
+#: program/localization/uk_UA/labels.inc:belowquote
+msgid "below the quote"
+msgstr "після цитати"
+
+#: program/localization/uk_UA/labels.inc:abovequote
+msgid "above the quote"
+msgstr "перед цитатою"
+
+#: program/localization/uk_UA/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Додати підпис"
+
+#: program/localization/uk_UA/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Позначити переглянуті листи як"
+"прочитані"
+
+#: program/localization/uk_UA/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "через $n секунд"
+
+#: program/localization/uk_UA/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Завжди вимагати повідомлення про"
+"доставку"
+
+#: program/localization/uk_UA/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Завжди вимагати повідомлення про статус"
+"доставки"
+
+#: program/localization/uk_UA/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Розмістити відповіді у тій же папці, де"
+"знаходиться оригінал"
+
+#: program/localization/uk_UA/labels.inc:defaultaddressbook
+msgid "Add new contacts to the selected addressbook"
+msgstr "Додати нові контакти до обраної адресної"
+"книги"
+
+#: program/localization/uk_UA/labels.inc:spellcheckbeforesend
+msgid "Check spelling before sending a message"
+msgstr "Перевірити орфографію перед відправкою"
+"повідомлення"
+
+#: program/localization/uk_UA/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "Налаштування перевірки орфографії"
+
+#: program/localization/uk_UA/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "Ігнорувати слова із символами"
+
+#: program/localization/uk_UA/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "Ігнорувати слова із числами"
+
+#: program/localization/uk_UA/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "Ігнорувати слова із великими буквами"
+
+#: program/localization/uk_UA/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "Додати до словника"
+
+#: program/localization/uk_UA/labels.inc:folder
+msgid "Folder"
+msgstr "Папка"
+
+#: program/localization/uk_UA/labels.inc:foldername
+msgid "Folder name"
+msgstr "Назва папки"
+
+#: program/localization/uk_UA/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Підписані"
+
+#: program/localization/uk_UA/labels.inc:messagecount
+msgid "Messages"
+msgstr "Листи"
+
+#: program/localization/uk_UA/labels.inc:create
+msgid "Create"
+msgstr "Створити"
+
+#: program/localization/uk_UA/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Створити нову папку"
+
+#: program/localization/uk_UA/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Керування папками"
+
+#: program/localization/uk_UA/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Особливі папки"
+
+#: program/localization/uk_UA/labels.inc:properties
+msgid "Properties"
+msgstr "Властивості"
+
+#: program/localization/uk_UA/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Властивості папки"
+
+#: program/localization/uk_UA/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Батьківська папка"
+
+#: program/localization/uk_UA/labels.inc:location
+msgid "Location"
+msgstr "Розташування"
+
+#: program/localization/uk_UA/labels.inc:info
+msgid "Information"
+msgstr "Інформація"
+
+#: program/localization/uk_UA/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Показати розмір папки"
+
+#: program/localization/uk_UA/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Змінити підписку"
+
+#: program/localization/uk_UA/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Тип каталогу"
+
+#: program/localization/uk_UA/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "Приватний каталог"
+
+#: program/localization/uk_UA/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "Каталог іншого користувача"
+
+#: program/localization/uk_UA/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "Публічний каталог"
+
+#: program/localization/uk_UA/labels.inc:sortby
+msgid "Sort by"
+msgstr "Відсортувати за"
+
+#: program/localization/uk_UA/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Сортувати за зростанням"
+
+#: program/localization/uk_UA/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Сортувати за спаданням"
+
+#: program/localization/uk_UA/labels.inc:undo
+msgid "Undo"
+msgstr "Відмінити"
+
+#: program/localization/uk_UA/labels.inc:B
+msgid "B"
+msgstr "б"
+
+#: program/localization/uk_UA/labels.inc:KB
+msgid "KB"
+msgstr "Кб"
+
+#: program/localization/uk_UA/labels.inc:MB
+msgid "MB"
+msgstr "Мб"
+
+#: program/localization/uk_UA/labels.inc:GB
+msgid "GB"
+msgstr "Гб"
+
+#: program/localization/uk_UA/labels.inc:unicode
+msgid "Unicode"
+msgstr "Юнікод"
+
+#: program/localization/uk_UA/labels.inc:english
+msgid "English"
+msgstr "Англійське"
+
+#: program/localization/uk_UA/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Західноєвропейське"
+
+#: program/localization/uk_UA/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Східноєвропейське"
+
+#: program/localization/uk_UA/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Південно-Західна Європа"
+
+#: program/localization/uk_UA/labels.inc:baltic
+msgid "Baltic"
+msgstr "Балтійське"
+
+#: program/localization/uk_UA/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Кирилиця"
+
+#: program/localization/uk_UA/labels.inc:arabic
+msgid "Arabic"
+msgstr "Арабське"
+
+#: program/localization/uk_UA/labels.inc:greek
+msgid "Greek"
+msgstr "Грецьке"
+
+#: program/localization/uk_UA/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Іврит"
+
+#: program/localization/uk_UA/labels.inc:turkish
+msgid "Turkish"
+msgstr "Турецьке"
+
+#: program/localization/uk_UA/labels.inc:nordic
+msgid "Nordic"
+msgstr "Скандинавське"
+
+#: program/localization/uk_UA/labels.inc:thai
+msgid "Thai"
+msgstr "Тайське"
+
+#: program/localization/uk_UA/labels.inc:celtic
+msgid "Celtic"
+msgstr "Кельтське"
+
+#: program/localization/uk_UA/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "В'єтнамське"
+
+#: program/localization/uk_UA/labels.inc:japanese
+msgid "Japanese"
+msgstr "Японське"
+
+#: program/localization/uk_UA/labels.inc:korean
+msgid "Korean"
+msgstr "Корейське"
+
+#: program/localization/uk_UA/labels.inc:chinese
+msgid "Chinese"
+msgstr "Китайське"

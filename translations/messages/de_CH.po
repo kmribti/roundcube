@@ -1,0 +1,563 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/de_CH/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: de_CH\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/de_CH/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Login fehlgeschlagen"
+
+#: program/localization/de_CH/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Ihr Browser akzeptiert keine Cookies"
+
+#: program/localization/de_CH/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Ihre Session ist ungültig oder abgelaufen"
+
+#: program/localization/de_CH/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Keine Verbindung zum IMAP Server"
+
+#: program/localization/de_CH/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Serverfehler!"
+
+#: program/localization/de_CH/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Serverfehler: $msg"
+
+#: program/localization/de_CH/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Datenbankfehler!"
+
+#: program/localization/de_CH/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Die Aktion kann nicht ausgeführt werden. Der Ordner ist schreibgeschützt."
+
+#: program/localization/de_CH/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Die Aktion kann nicht ausgeführt werden. Zugriff verweigert."
+
+#: program/localization/de_CH/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Ungültige Anfrage! Es wurden keine Daten gespeichert."
+
+#: program/localization/de_CH/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Keine Nachrichten in diesem Ordner"
+
+#: program/localization/de_CH/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Sie haben Ihre Session erfolgreich beendet. Auf Wiedersehen!"
+
+#: program/localization/de_CH/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Ordner ist leer"
+
+#: program/localization/de_CH/messages.inc:loading
+msgid "Loading..."
+msgstr "Daten werden geladen..."
+
+#: program/localization/de_CH/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Datei wird hochgeladen..."
+
+#: program/localization/de_CH/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Dateien werden hochgeladen..."
+
+#: program/localization/de_CH/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Daten werden geladen..."
+
+#: program/localization/de_CH/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Überprüfung auf neue Nachrichten..."
+
+#: program/localization/de_CH/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Nachricht wird gesendet..."
+
+#: program/localization/de_CH/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Nachricht erfolgreich gesendet"
+
+#: program/localization/de_CH/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Nachricht wird gespeichert..."
+
+#: program/localization/de_CH/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Nachricht als Entwurf gespeichert"
+
+#: program/localization/de_CH/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Erfolgreich gespeichert"
+
+#: program/localization/de_CH/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Kontakt zum Adressbuch hinzugefügt"
+
+#: program/localization/de_CH/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Es existiert bereits ein Eintrag mit dieser E-Mail-Adresse"
+
+#: program/localization/de_CH/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Ein Kontakt mit demselben Namen existiert bereits."
+
+#: program/localization/de_CH/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Um Ihre Privatsphäre zur schützen, wurden externe Bilder blockiert."
+
+#: program/localization/de_CH/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Dies ist eine verschlüsselte Nachricht und kann leider nicht angezeigt"
+"werden."
+
+#: program/localization/de_CH/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Keine Kontakte gefunden"
+
+#: program/localization/de_CH/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Die gewählte Adresse wurde nicht gefunden"
+
+#: program/localization/de_CH/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Geben Sie einen Suchbegriff ein, um Kontakte zu finden"
+
+#: program/localization/de_CH/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Versand der Nachricht fehlgeschlagen"
+
+#: program/localization/de_CH/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Bitte warten Sie $sec Sekunde(n) vor dem Senden dieser Nachricht"
+
+#: program/localization/de_CH/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Ein Fehler ist beim Speichern der gesendeten Nachricht aufgetreten"
+
+#: program/localization/de_CH/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Beim Speichern ist ein Fehler aufgetreten"
+
+#: program/localization/de_CH/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Nachricht konnte nicht verschoben werden"
+
+#: program/localization/de_CH/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Konnte Nachrichten nicht kopieren"
+
+#: program/localization/de_CH/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Nachricht konnte nicht gelöscht werden"
+
+#: program/localization/de_CH/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Nachricht konnte nicht markiert werden"
+
+#: program/localization/de_CH/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Wollen Sie die ausgewählten Kontakte wirklich löschen?"
+
+#: program/localization/de_CH/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Wollen Sie die gewählte Gruppe wirklich löschen?"
+
+#: program/localization/de_CH/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Wollen Sie die ausgewählten Nachrichten wirklich löschen?"
+
+#: program/localization/de_CH/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Wollen Sie diesen Ordner wirklich löschen?"
+
+#: program/localization/de_CH/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Wollen Sie diesen Ordner wirklich leeren?"
+
+#: program/localization/de_CH/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Gruppe wird gelöscht..."
+
+#: program/localization/de_CH/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Lösche Ordner..."
+
+#: program/localization/de_CH/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Verschiebe Ordner..."
+
+#: program/localization/de_CH/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Abonniere Ordner..."
+
+#: program/localization/de_CH/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Ordner abbstellen..."
+
+#: program/localization/de_CH/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Das Formular wurde nicht vollständig ausgefüllt"
+
+#: program/localization/de_CH/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+
+#: program/localization/de_CH/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Bitte geben Sie einen Namen ein"
+
+#: program/localization/de_CH/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Bitte geben Sie die Einträge pro Seite an"
+
+#: program/localization/de_CH/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Bitte geben Sie die E-Mail-Adresse des Senders an"
+
+#: program/localization/de_CH/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Bitte geben Sie mindestens einen Empfänger an"
+
+#: program/localization/de_CH/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Die Betreffzeile ist leer. Möchten Sie jetzt einen Betreff eingeben?"
+
+#: program/localization/de_CH/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Diese Nachricht ohne Inhalt senden?"
+
+#: program/localization/de_CH/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Ihre Nachricht wurde nicht gesendet. Wollen Sie die Nachricht verwerfen?"
+
+#: program/localization/de_CH/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Bitte wählen Sie einen LDAP-Server aus"
+
+#: program/localization/de_CH/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Es wurden keine Kontakte gefunden"
+
+#: program/localization/de_CH/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Bitte geben Sie einen Namen oder eine E-Mail-Adresse ein"
+
+#: program/localization/de_CH/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Es wurden noch nicht alle Dateien hochgeladen. Bitte warten oder Upload"
+"abbrechen."
+
+#: program/localization/de_CH/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr Nachrichten gefunden"
+
+#: program/localization/de_CH/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Die Suche lieferte keine Treffer"
+
+#: program/localization/de_CH/messages.inc:searching
+msgid "Searching..."
+msgstr "Suche..."
+
+#: program/localization/de_CH/messages.inc:checking
+msgid "Checking..."
+msgstr "Prüfe..."
+
+#: program/localization/de_CH/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Keine Rechtschreibfehler gefunden"
+
+#: program/localization/de_CH/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Ordner erfolgreich gelöscht"
+
+#: program/localization/de_CH/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Der Ordner wurde erfolgreich abonniert"
+
+#: program/localization/de_CH/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Der Ordner wurde erfolgreich abbestellt"
+
+#: program/localization/de_CH/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Der Ordner wurde erfolgreich gelöscht"
+
+#: program/localization/de_CH/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Der Ordner wurde erfolgreich gepackt"
+
+#: program/localization/de_CH/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Erfolgreich gelöscht"
+
+#: program/localization/de_CH/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Entferne Formatierungen..."
+
+#: program/localization/de_CH/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Die Nachricht konnte nicht vom Server geladen werden"
+
+#: program/localization/de_CH/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Der Dateiupload ist fehlgeschlagen"
+
+#: program/localization/de_CH/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Die Datei überschreitet die maximale Grösse von $size"
+
+#: program/localization/de_CH/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "$nr Adressen erfolgreich kopiert"
+
+#: program/localization/de_CH/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Die Adressen konnten nicht kopiert werden"
+
+#: program/localization/de_CH/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Das Adressverzeichnis kann nicht verändert werden"
+
+#: program/localization/de_CH/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Die Änderungen konnten nicht gespeichert werden"
+
+#: program/localization/de_CH/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Die E-Mail wird verschoben..."
+
+#: program/localization/de_CH/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Kopiere Nachrichten..."
+
+#: program/localization/de_CH/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Kontakte werden kopiert..."
+
+#: program/localization/de_CH/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Lösche Nachricht(en)..."
+
+#: program/localization/de_CH/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Markiere Nachricht(en)..."
+
+#: program/localization/de_CH/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Füge Kontakte der Gruppe hinzu..."
+
+#: program/localization/de_CH/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Entferne Kontakte von der Gruppe..."
+
+#: program/localization/de_CH/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Lesebestätigung erfolgreich gesendet"
+
+#: program/localization/de_CH/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Bestätigung konnte nicht gesendet werden"
+
+#: program/localization/de_CH/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Diese Identität kann nicht gelöscht werden, da dies die letzte ist."
+
+#: program/localization/de_CH/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Der Ordnername enthält ein ungültiges Zeichen"
+
+#: program/localization/de_CH/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Bitte wählen Sie eine Datei zum Importieren aus"
+
+#: program/localization/de_CH/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Das gewählte Adressbuch kann nicht verändert werden"
+
+#: program/localization/de_CH/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Kontakte wurden dieser Gruppe hinzugefügt"
+
+#: program/localization/de_CH/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Kontakte wurden aus dieser Gruppe entfernt"
+
+#: program/localization/de_CH/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Daten werden importiert, bitte warten..."
+
+#: program/localization/de_CH/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Import fehlgeschlagen! Die hochgeladene Datei ist nicht im vCard-Format."
+
+#: program/localization/de_CH/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Es wurden $inserted Adressen erfolgreich importiert</b>"
+
+#: program/localization/de_CH/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>$skipped bestehende Einträge wurden übersprungen</b>"
+
+#: program/localization/de_CH/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Operation nicht erlaubt!"
+
+#: program/localization/de_CH/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Fehlende E-Mail-Adresse in ausgewählter Identität"
+
+#: program/localization/de_CH/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Beim Wechseln in den Texteditor gehen alle Textformatierungen verloren."
+"Möchten Sie fortfahren?"
+
+#: program/localization/de_CH/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Ein gravierender Konfigurationsfehler ist aufgetreten. Kontaktieren Sie den"
+"Server-Administrator. <b>Die Nachricht wurde nicht gesendet!</b>"
+
+#: program/localization/de_CH/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP Fehler ($code): Die Verbindung ist fehlgeschlagen"
+
+#: program/localization/de_CH/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP Fehler ($code): Die Authentisierung ist fehlgeschlagen"
+
+#: program/localization/de_CH/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP Fehler ($code): Der Absender \"$from\" konnte nicht gesetzt werden"
+"($msg)"
+
+#: program/localization/de_CH/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP Fehler ($code): Der Empfänger \"$to\" konnte nicht gesetzt werden"
+"($msg)"
+
+#: program/localization/de_CH/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP Fehler: Die Empfängerliste konnte nicht verarbeitet werden"
+
+#: program/localization/de_CH/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "SMTP-Fehler: Übermittlungsbestätigungen werden nicht unterstützt"
+
+#: program/localization/de_CH/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP Fehler: $msg"
+
+#: program/localization/de_CH/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Ungültige E-Mail-Adresse: $email"
+
+#: program/localization/de_CH/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Zuviele Empfänger angegeben. Reduzieren Sie die Empfängeradressen auf"
+"$max."
+
+#: program/localization/de_CH/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Die Anzahl Adressen in dieser Gruppe überschreitet das Maximum von $max"
+
+#: program/localization/de_CH/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Ein interner Fehler ist aufgetreten. Bitte versuchen Sie den Vorgang"
+"erneut."
+
+#: program/localization/de_CH/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Fehler beim Löschen"
+
+#: program/localization/de_CH/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Kontakt(e) erfolgreich gelöscht"
+
+#: program/localization/de_CH/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Konnte die gelöschten Kontakte nicht wiederherstellen"
+
+#: program/localization/de_CH/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Kontakte erfolgreich wiederhergestellt."
+
+#: program/localization/de_CH/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Gruppe erfolgreich gelöscht"
+
+#: program/localization/de_CH/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Gruppe erlogreich umbenannt"
+
+#: program/localization/de_CH/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Gruppe erlogreich erstellt"
+
+#: program/localization/de_CH/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Nachricht(en) erfolgreich gelöscht"
+
+#: program/localization/de_CH/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Nachricht(en) erfolgreich verschoben"
+
+#: program/localization/de_CH/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Nachricht(en) erfolgreich kopiert"
+
+#: program/localization/de_CH/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Nachricht(en) erfolgreich markiert"
+
+#: program/localization/de_CH/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Geben Sie mind. $min Zeichen für die Auto-Vervollständigung ein"
+
+#: program/localization/de_CH/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Der Name darf nicht leer sein"
+
+#: program/localization/de_CH/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Der Name ist zu lang"
+
+#: program/localization/de_CH/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Der Ordner wurde erfolgreich aktualisiert"
+
+#: program/localization/de_CH/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Der Ordner wurde erfolgreich erstellt"
+
+#: program/localization/de_CH/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Ungültiges Bildformat"
+
+#: program/localization/de_CH/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "Es wurden noch Rechtschreibfehler in der Nachricht gefunden."
+
+#: program/localization/de_CH/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "Konnte den Ordner nicht erstellen/verschieben. Keine Berechtigung."

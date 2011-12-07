@@ -1,0 +1,1518 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/bs_BA/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: bs_BA\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/bs_BA/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Dobrodošli na $product"
+
+#: program/localization/bs_BA/labels.inc:username
+msgid "Username"
+msgstr "Korisničko ime"
+
+#: program/localization/bs_BA/labels.inc:password
+msgid "Password"
+msgstr "Lozinka"
+
+#: program/localization/bs_BA/labels.inc:server
+msgid "Server"
+msgstr "Server"
+
+#: program/localization/bs_BA/labels.inc:login
+msgid "Login"
+msgstr "Prijava"
+
+#: program/localization/bs_BA/labels.inc:logout
+msgid "Logout"
+msgstr "Odjava"
+
+#: program/localization/bs_BA/labels.inc:mail
+msgid "Mail"
+msgstr "Sanduče"
+
+#: program/localization/bs_BA/labels.inc:settings
+msgid "Settings"
+msgstr "Podešavanja"
+
+#: program/localization/bs_BA/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Imenik"
+
+#: program/localization/bs_BA/labels.inc:inbox
+msgid "Inbox"
+msgstr "Inbox"
+
+#: program/localization/bs_BA/labels.inc:drafts
+msgid "Drafts"
+msgstr "Drafts"
+
+#: program/localization/bs_BA/labels.inc:sent
+msgid "Sent"
+msgstr "Poslano"
+
+#: program/localization/bs_BA/labels.inc:trash
+msgid "Trash"
+msgstr "Trash"
+
+#: program/localization/bs_BA/labels.inc:junk
+msgid "Junk"
+msgstr "Junk"
+
+#: program/localization/bs_BA/labels.inc:subject
+msgid "Subject"
+msgstr "Naslov"
+
+#: program/localization/bs_BA/labels.inc:from
+msgid "From"
+msgstr "Od"
+
+#: program/localization/bs_BA/labels.inc:to
+msgid "To"
+msgstr "Za"
+
+#: program/localization/bs_BA/labels.inc:cc
+msgid "Cc"
+msgstr "Cc"
+
+#: program/localization/bs_BA/labels.inc:bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#: program/localization/bs_BA/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Odgovori"
+
+#: program/localization/bs_BA/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Uprati"
+
+#: program/localization/bs_BA/labels.inc:date
+msgid "Date"
+msgstr "Datum"
+
+#: program/localization/bs_BA/labels.inc:size
+msgid "Size"
+msgstr "Veličina"
+
+#: program/localization/bs_BA/labels.inc:priority
+msgid "Priority"
+msgstr "Prioritet"
+
+#: program/localization/bs_BA/labels.inc:organization
+msgid "Company"
+msgstr "Organizacija"
+
+#: program/localization/bs_BA/labels.inc:readstatus
+msgid "Read status"
+msgstr "Status poruke"
+
+#: program/localization/bs_BA/labels.inc:mailboxlist
+#: program/localization/bs_BA/labels.inc:folders
+msgid "Folders"
+msgstr "Fascikle"
+
+#: program/localization/bs_BA/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Poruke od $from do $to od ukupno $count"
+
+#: program/localization/bs_BA/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Teme $from do $to od $count"
+
+#: program/localization/bs_BA/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Poruka broj $nr od $count"
+
+#: program/localization/bs_BA/labels.inc:copy
+msgid "Copy"
+msgstr "Kopirati"
+
+#: program/localization/bs_BA/labels.inc:move
+msgid "Move"
+msgstr "Prebaciti"
+
+#: program/localization/bs_BA/labels.inc:moveto
+msgid "Move to..."
+msgstr "prebaci u..."
+
+#: program/localization/bs_BA/labels.inc:download
+msgid "Download"
+msgstr "preuzmi (download)"
+
+#: program/localization/bs_BA/labels.inc:filename
+msgid "File name"
+msgstr "Ime datoteke"
+
+#: program/localization/bs_BA/labels.inc:filesize
+msgid "File size"
+msgstr "Veličina datoteke"
+
+#: program/localization/bs_BA/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Dodaj u imenik"
+
+#: program/localization/bs_BA/labels.inc:sun
+msgid "Sun"
+msgstr "Ned"
+
+#: program/localization/bs_BA/labels.inc:mon
+msgid "Mon"
+msgstr "Pon"
+
+#: program/localization/bs_BA/labels.inc:tue
+msgid "Tue"
+msgstr "Uto"
+
+#: program/localization/bs_BA/labels.inc:wed
+msgid "Wed"
+msgstr "Sri"
+
+#: program/localization/bs_BA/labels.inc:thu
+msgid "Thu"
+msgstr "Čet"
+
+#: program/localization/bs_BA/labels.inc:fri
+msgid "Fri"
+msgstr "Pet"
+
+#: program/localization/bs_BA/labels.inc:sat
+msgid "Sat"
+msgstr "Sub"
+
+#: program/localization/bs_BA/labels.inc:sunday
+msgid "Sunday"
+msgstr "Nedjelja"
+
+#: program/localization/bs_BA/labels.inc:monday
+msgid "Monday"
+msgstr "Ponedjeljak"
+
+#: program/localization/bs_BA/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Utorak"
+
+#: program/localization/bs_BA/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Srijeda"
+
+#: program/localization/bs_BA/labels.inc:thursday
+msgid "Thursday"
+msgstr "Četvrtak"
+
+#: program/localization/bs_BA/labels.inc:friday
+msgid "Friday"
+msgstr "Petak"
+
+#: program/localization/bs_BA/labels.inc:saturday
+msgid "Saturday"
+msgstr "Subota"
+
+#: program/localization/bs_BA/labels.inc:jan
+msgid "Jan"
+msgstr "Jan"
+
+#: program/localization/bs_BA/labels.inc:feb
+msgid "Feb"
+msgstr "Feb"
+
+#: program/localization/bs_BA/labels.inc:mar
+msgid "Mar"
+msgstr "Mar"
+
+#: program/localization/bs_BA/labels.inc:apr
+msgid "Apr"
+msgstr "Apr"
+
+#: program/localization/bs_BA/labels.inc:may
+#: program/localization/bs_BA/labels.inc:longmay
+msgid "May"
+msgstr "Maj"
+
+#: program/localization/bs_BA/labels.inc:jun
+msgid "Jun"
+msgstr "Jun"
+
+#: program/localization/bs_BA/labels.inc:jul
+msgid "Jul"
+msgstr "Jul"
+
+#: program/localization/bs_BA/labels.inc:aug
+msgid "Aug"
+msgstr "Avg"
+
+#: program/localization/bs_BA/labels.inc:sep
+msgid "Sep"
+msgstr "Sep"
+
+#: program/localization/bs_BA/labels.inc:oct
+msgid "Oct"
+msgstr "Okt"
+
+#: program/localization/bs_BA/labels.inc:nov
+msgid "Nov"
+msgstr "Nov"
+
+#: program/localization/bs_BA/labels.inc:dec
+msgid "Dec"
+msgstr "Dec"
+
+#: program/localization/bs_BA/labels.inc:longjan
+msgid "January"
+msgstr "Januar"
+
+#: program/localization/bs_BA/labels.inc:longfeb
+msgid "February"
+msgstr "Februar"
+
+#: program/localization/bs_BA/labels.inc:longmar
+msgid "March"
+msgstr "Mart"
+
+#: program/localization/bs_BA/labels.inc:longapr
+msgid "April"
+msgstr "April"
+
+#: program/localization/bs_BA/labels.inc:longjun
+msgid "June"
+msgstr "Juni"
+
+#: program/localization/bs_BA/labels.inc:longjul
+msgid "July"
+msgstr "Juli"
+
+#: program/localization/bs_BA/labels.inc:longaug
+msgid "August"
+msgstr "Avgust"
+
+#: program/localization/bs_BA/labels.inc:longsep
+msgid "September"
+msgstr "Septembar"
+
+#: program/localization/bs_BA/labels.inc:longoct
+msgid "October"
+msgstr "Oktobar"
+
+#: program/localization/bs_BA/labels.inc:longnov
+msgid "November"
+msgstr "Novembar"
+
+#: program/localization/bs_BA/labels.inc:longdec
+msgid "December"
+msgstr "Decembar"
+
+#: program/localization/bs_BA/labels.inc:today
+msgid "Today"
+msgstr "danas"
+
+#: program/localization/bs_BA/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Provjera novih poruka"
+
+#: program/localization/bs_BA/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Nova poruka"
+
+#: program/localization/bs_BA/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Odgovori na poruku"
+
+#: program/localization/bs_BA/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Odgovori pošiljaocu i svim primaocima"
+
+#: program/localization/bs_BA/labels.inc:replyall
+msgid "Reply all"
+msgstr "Odgovori svima"
+
+#: program/localization/bs_BA/labels.inc:replylist
+msgid "Reply list"
+msgstr "Odgovori listi"
+
+#: program/localization/bs_BA/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Proslijedi poruku"
+
+#: program/localization/bs_BA/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Obriši poruku"
+
+#: program/localization/bs_BA/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Prebaci poruku u smeće"
+
+#: program/localization/bs_BA/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Odštampaj poruku"
+
+#: program/localization/bs_BA/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Prikaži prethodnu poruku"
+
+#: program/localization/bs_BA/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Prikaži prvu poruku"
+
+#: program/localization/bs_BA/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Prikaži posljednju poruku"
+
+#: program/localization/bs_BA/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Prikaži zadnju poruku"
+
+#: program/localization/bs_BA/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Povratak na listu poruka"
+
+#: program/localization/bs_BA/labels.inc:viewsource
+msgid "Show source"
+msgstr "Prikaži poruku u izvornom obliku"
+
+#: program/localization/bs_BA/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Označi poruke"
+
+#: program/localization/bs_BA/labels.inc:markread
+msgid "As read"
+msgstr "Kao pročitane"
+
+#: program/localization/bs_BA/labels.inc:markunread
+msgid "As unread"
+msgstr "Kao nepročitane"
+
+#: program/localization/bs_BA/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Kao markirane"
+
+#: program/localization/bs_BA/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Kao nemarkirane"
+
+#: program/localization/bs_BA/labels.inc:messageactions
+msgid "messageactions"
+msgstr "Više akcija"
+
+#: program/localization/bs_BA/labels.inc:select
+msgid "Select"
+msgstr "Obilježi"
+
+#: program/localization/bs_BA/labels.inc:all
+msgid "All"
+msgstr "Sve"
+
+#: program/localization/bs_BA/labels.inc:none
+#: program/localization/bs_BA/labels.inc:nonesort
+msgid "None"
+msgstr "Ništa"
+
+#: program/localization/bs_BA/labels.inc:currpage
+msgid "Current page"
+msgstr "Trenutna stranica"
+
+#: program/localization/bs_BA/labels.inc:unread
+msgid "Unread"
+msgstr "Nepročitane"
+
+#: program/localization/bs_BA/labels.inc:flagged
+msgid "Flagged"
+msgstr "Obilježeno"
+
+#: program/localization/bs_BA/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Neuzvraćeno"
+
+#: program/localization/bs_BA/labels.inc:deleted
+msgid "Deleted"
+msgstr "Obrisano"
+
+#: program/localization/bs_BA/labels.inc:invert
+msgid "Invert"
+msgstr "Izokrenuti"
+
+#: program/localization/bs_BA/labels.inc:filter
+msgid "Filter"
+msgstr "Filter"
+
+#: program/localization/bs_BA/labels.inc:list
+msgid "List"
+msgstr "Lista"
+
+#: program/localization/bs_BA/labels.inc:threads
+msgid "Threads"
+msgstr "Teme"
+
+#: program/localization/bs_BA/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Proširi sve"
+
+#: program/localization/bs_BA/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Proširi nepročitane"
+
+#: program/localization/bs_BA/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Sažmi sve"
+
+#: program/localization/bs_BA/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Proširi teme poruka"
+
+#: program/localization/bs_BA/labels.inc:do_expand
+msgid "all threads"
+msgstr "sve teme"
+
+#: program/localization/bs_BA/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "samo sa nepročitanim porukama"
+
+#: program/localization/bs_BA/labels.inc:fromto
+msgid "From/To"
+msgstr "Pošiljaoc/Primatelj"
+
+#: program/localization/bs_BA/labels.inc:flag
+msgid "Flag"
+msgstr "Oznaka"
+
+#: program/localization/bs_BA/labels.inc:attachment
+msgid "Attachment"
+msgstr "Privitak"
+
+#: program/localization/bs_BA/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Datum slanja"
+
+#: program/localization/bs_BA/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Datum primanja"
+
+#: program/localization/bs_BA/labels.inc:asc
+msgid "ascending"
+msgstr "rastući"
+
+#: program/localization/bs_BA/labels.inc:desc
+msgid "descending"
+msgstr "opadajući"
+
+#: program/localization/bs_BA/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Lista kolona"
+
+#: program/localization/bs_BA/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Sortiranje kolona"
+
+#: program/localization/bs_BA/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Redoslijed sortiranja"
+
+#: program/localization/bs_BA/labels.inc:listmode
+msgid "List view mode"
+msgstr "Način prikaza liste"
+
+#: program/localization/bs_BA/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Radnja fascikle..."
+
+#: program/localization/bs_BA/labels.inc:compact
+msgid "Compact"
+msgstr "Skraćeno"
+
+#: program/localization/bs_BA/labels.inc:empty
+msgid "Empty"
+msgstr "Izprazni"
+
+#: program/localization/bs_BA/labels.inc:quota
+msgid "Disk usage"
+msgstr "Kvota"
+
+#: program/localization/bs_BA/labels.inc:unknown
+msgid "unknown"
+msgstr "nepoznato"
+
+#: program/localization/bs_BA/labels.inc:unlimited
+msgid "unlimited"
+msgstr "beskonačna"
+
+#: program/localization/bs_BA/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Brza pretraga"
+
+#: program/localization/bs_BA/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Prikaži sve poruke"
+
+#: program/localization/bs_BA/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Modifikacija pretrage"
+
+#: program/localization/bs_BA/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Cjela poruka"
+
+#: program/localization/bs_BA/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Otvori u novom prozoru"
+
+#: program/localization/bs_BA/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Snimi (.eml)"
+
+#: program/localization/bs_BA/labels.inc:compose
+msgid "Compose a message"
+msgstr "Nova poruka"
+
+#: program/localization/bs_BA/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Uredi kao novo"
+
+#: program/localization/bs_BA/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Sačuvaj nacrt"
+
+#: program/localization/bs_BA/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Pošalji poruku"
+
+#: program/localization/bs_BA/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Priloži datoteku"
+
+#: program/localization/bs_BA/labels.inc:charset
+msgid "Charset"
+msgstr "Skup znakova"
+
+#: program/localization/bs_BA/labels.inc:editortype
+msgid "Editor type"
+msgstr "Vrsta urednika"
+
+#: program/localization/bs_BA/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Potvrda o prispijeću poruke"
+
+#: program/localization/bs_BA/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Obaviještenje o statusu isporuke"
+
+#: program/localization/bs_BA/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Uredi pseudonime"
+
+#: program/localization/bs_BA/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Provjera pravopisa"
+
+#: program/localization/bs_BA/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Povratak u režim pisanja"
+
+#: program/localization/bs_BA/labels.inc:revertto
+msgid "Revert to"
+msgstr "Vrati na"
+
+#: program/localization/bs_BA/labels.inc:attachments
+msgid "Attachments"
+msgstr "Dodatci (Attachments)"
+
+#: program/localization/bs_BA/labels.inc:upload
+msgid "Upload"
+msgstr "Dodaj"
+
+#: program/localization/bs_BA/labels.inc:close
+msgid "Close"
+msgstr "Zatvori"
+
+#: program/localization/bs_BA/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Opcije poruke..."
+
+#: program/localization/bs_BA/labels.inc:low
+msgid "Low"
+msgstr "Nizak"
+
+#: program/localization/bs_BA/labels.inc:lowest
+msgid "Lowest"
+msgstr "Najniži"
+
+#: program/localization/bs_BA/labels.inc:normal
+msgid "Normal"
+msgstr "Srednji"
+
+#: program/localization/bs_BA/labels.inc:high
+msgid "High"
+msgstr "Visok"
+
+#: program/localization/bs_BA/labels.inc:highest
+msgid "Highest"
+msgstr "Najviši"
+
+#: program/localization/bs_BA/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(bez naslova)"
+
+#: program/localization/bs_BA/labels.inc:showimages
+msgid "Display images"
+msgstr "Prikaži slike"
+
+#: program/localization/bs_BA/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Uvijek prikaži slike od $sender"
+
+#: program/localization/bs_BA/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/bs_BA/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Običan tekst"
+
+#: program/localization/bs_BA/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Spremi poslane poruke u"
+
+#: program/localization/bs_BA/labels.inc:dontsave
+msgid "don't save"
+msgstr "ne spremaj"
+
+#: program/localization/bs_BA/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Maksimalna dozvoljena velicina datoteke je $size"
+
+#: program/localization/bs_BA/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Dodaj Cc"
+
+#: program/localization/bs_BA/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Dodaj Bcc"
+
+#: program/localization/bs_BA/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Dodaj Odgovori-na"
+
+#: program/localization/bs_BA/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Dodaj Nastavak-na"
+
+#: program/localization/bs_BA/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Pošiljaoc ove poruke je tražio da bude obaviješten o njenom primitku."
+"Želite li obavijestiti pošiljaoca?"
+
+#: program/localization/bs_BA/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Vrati potvrdu (pročitano)"
+
+#: program/localization/bs_BA/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Ovo je vraćena potvrda vaše poruke"
+
+#: program/localization/bs_BA/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Napomena: Ova potvrda samo obaviještava da je poruka bila prikazana na"
+"kompjuteru primaoca. Nije garancija da je primaoc pročitao ili razumio"
+"poruku."
+
+#: program/localization/bs_BA/labels.inc:name
+msgid "Display Name"
+msgstr "Puno ime"
+
+#: program/localization/bs_BA/labels.inc:firstname
+msgid "First Name"
+msgstr "Ime"
+
+#: program/localization/bs_BA/labels.inc:surname
+msgid "Last Name"
+msgstr "Prezime"
+
+#: program/localization/bs_BA/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Srednje ime"
+
+#: program/localization/bs_BA/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "Prefiks"
+
+#: program/localization/bs_BA/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "Sufiks"
+
+#: program/localization/bs_BA/labels.inc:nickname
+msgid "Nickname"
+msgstr "Nadimak"
+
+#: program/localization/bs_BA/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Titula"
+
+#: program/localization/bs_BA/labels.inc:department
+msgid "Department"
+msgstr "Odjel"
+
+#: program/localization/bs_BA/labels.inc:gender
+msgid "Gender"
+msgstr "Rod"
+
+#: program/localization/bs_BA/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Djevojačko ime"
+
+#: program/localization/bs_BA/labels.inc:email
+msgid "Email"
+msgstr "E-Mail"
+
+#: program/localization/bs_BA/labels.inc:phone
+msgid "Phone"
+msgstr "Telefon"
+
+#: program/localization/bs_BA/labels.inc:address
+msgid "Address"
+msgstr "Adresa"
+
+#: program/localization/bs_BA/labels.inc:street
+msgid "Street"
+msgstr "Ulica"
+
+#: program/localization/bs_BA/labels.inc:locality
+msgid "City"
+msgstr "Grad"
+
+#: program/localization/bs_BA/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "Poštanski broj"
+
+#: program/localization/bs_BA/labels.inc:region
+msgid "State/Province"
+msgstr "Oblast"
+
+#: program/localization/bs_BA/labels.inc:country
+msgid "Country"
+msgstr "Zemlja"
+
+#: program/localization/bs_BA/labels.inc:birthday
+msgid "Birthday"
+msgstr "Rođendan"
+
+#: program/localization/bs_BA/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "Jubilej"
+
+#: program/localization/bs_BA/labels.inc:website
+msgid "Website"
+msgstr "Web stranica"
+
+#: program/localization/bs_BA/labels.inc:instantmessenger
+msgid "IM"
+msgstr "IM"
+
+#: program/localization/bs_BA/labels.inc:notes
+msgid "Notes"
+msgstr "bilješke"
+
+#: program/localization/bs_BA/labels.inc:male
+msgid "male"
+msgstr "Muško"
+
+#: program/localization/bs_BA/labels.inc:female
+msgid "female"
+msgstr "Žensko"
+
+#: program/localization/bs_BA/labels.inc:manager
+msgid "Manager"
+msgstr "Menadžer"
+
+#: program/localization/bs_BA/labels.inc:assistant
+#: program/localization/bs_BA/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Pomoćnik"
+
+#: program/localization/bs_BA/labels.inc:spouse
+msgid "Spouse"
+msgstr "Muž/Žena"
+
+#: program/localization/bs_BA/labels.inc:typehome
+msgid "Home"
+msgstr "Kućni broj"
+
+#: program/localization/bs_BA/labels.inc:typework
+msgid "Work"
+msgstr "Poslovni broj"
+
+#: program/localization/bs_BA/labels.inc:typeother
+msgid "Other"
+msgstr "Ostalo"
+
+#: program/localization/bs_BA/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Mobilni broj"
+
+#: program/localization/bs_BA/labels.inc:typemain
+msgid "Main"
+msgstr "Glavni broj"
+
+#: program/localization/bs_BA/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Fax kuća"
+
+#: program/localization/bs_BA/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "Fax posao"
+
+#: program/localization/bs_BA/labels.inc:typecar
+msgid "Car"
+msgstr "Auto"
+
+#: program/localization/bs_BA/labels.inc:typepager
+msgid "Pager"
+msgstr "Pejdžer"
+
+#: program/localization/bs_BA/labels.inc:typevideo
+msgid "Video"
+msgstr "Video"
+
+#: program/localization/bs_BA/labels.inc:addfield
+msgid "Add field..."
+msgstr "Dodati polje..."
+
+#: program/localization/bs_BA/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Dodaj novi kontakt"
+
+#: program/localization/bs_BA/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Izmijeni kontakt"
+
+#: program/localization/bs_BA/labels.inc:contacts
+msgid "Contacts"
+msgstr "Kontakti"
+
+#: program/localization/bs_BA/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Svojstva kontakta"
+
+#: program/localization/bs_BA/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Lični podaci"
+
+#: program/localization/bs_BA/labels.inc:edit
+msgid "Edit"
+msgstr "Izmijeni"
+
+#: program/localization/bs_BA/labels.inc:cancel
+msgid "Cancel"
+msgstr "Otkaži"
+
+#: program/localization/bs_BA/labels.inc:save
+msgid "Save"
+msgstr "Sačuvaj"
+
+#: program/localization/bs_BA/labels.inc:delete
+msgid "Delete"
+msgstr "Obriši"
+
+#: program/localization/bs_BA/labels.inc:rename
+msgid "Rename"
+msgstr "Preimenuj"
+
+#: program/localization/bs_BA/labels.inc:addphoto
+msgid "Add"
+msgstr "Dodaj"
+
+#: program/localization/bs_BA/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Izmjeni"
+
+#: program/localization/bs_BA/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Dodaj novi kontakt"
+
+#: program/localization/bs_BA/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Obriši odabrane kontakte"
+
+#: program/localization/bs_BA/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Napiši mail..."
+
+#: program/localization/bs_BA/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Kontakti od $from do $to od ukupno $count"
+
+#: program/localization/bs_BA/labels.inc:print
+msgid "Print"
+msgstr "Štampaj"
+
+#: program/localization/bs_BA/labels.inc:export
+msgid "Export"
+msgstr "Izvezi"
+
+#: program/localization/bs_BA/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Izvezi kontakte u vCard formatu"
+
+#: program/localization/bs_BA/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Kreiraj novu kontakt-grupu"
+
+#: program/localization/bs_BA/labels.inc:groupactions
+msgid "groupactions"
+msgstr "Podešavanja za kontakt-grupu"
+
+#: program/localization/bs_BA/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Prikaži predhodnu stranicu"
+
+#: program/localization/bs_BA/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Prikaži prvi skup"
+
+#: program/localization/bs_BA/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Prikaži sljedeću stranicu"
+
+#: program/localization/bs_BA/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Prikaži zadnji skup"
+
+#: program/localization/bs_BA/labels.inc:group
+msgid "Group"
+msgstr "Grupa"
+
+#: program/localization/bs_BA/labels.inc:groups
+msgid "Groups"
+msgstr "Grupe"
+
+#: program/localization/bs_BA/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Lične adrese"
+
+#: program/localization/bs_BA/labels.inc:import
+msgid "Import"
+msgstr "Uvoz"
+
+#: program/localization/bs_BA/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Uvoz kontakata"
+
+#: program/localization/bs_BA/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Uvoz iz datoteke:"
+
+#: program/localization/bs_BA/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Izmjeni čitav ovaj adresar"
+
+#: program/localization/bs_BA/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Možete prebaciti kontakte iz postojećeg adresara.<br/>Trenutno"
+"podržavamo uvozenje adresa iz <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> formata."
+
+#: program/localization/bs_BA/labels.inc:done
+msgid "Done"
+msgstr "Završeno"
+
+#: program/localization/bs_BA/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Podešavanja za"
+
+#: program/localization/bs_BA/labels.inc:preferences
+msgid "Preferences"
+msgstr "Podešavanja"
+
+#: program/localization/bs_BA/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Opšta podešavanja"
+
+#: program/localization/bs_BA/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Izmjena opštih podešavanja"
+
+#: program/localization/bs_BA/labels.inc:identities
+msgid "Identities"
+msgstr "Identiteti"
+
+#: program/localization/bs_BA/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Podesi identitete za ovaj nalog"
+
+#: program/localization/bs_BA/labels.inc:newidentity
+msgid "New identity"
+msgstr "Dodaj identitet"
+
+#: program/localization/bs_BA/labels.inc:newitem
+msgid "New item"
+msgstr "New item"
+
+#: program/localization/bs_BA/labels.inc:edititem
+msgid "Edit item"
+msgstr "Edit item"
+
+#: program/localization/bs_BA/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML format u prednosti"
+
+#: program/localization/bs_BA/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Zadani skup znakova"
+
+#: program/localization/bs_BA/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML format poruke"
+
+#: program/localization/bs_BA/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Formatiran datum"
+
+#: program/localization/bs_BA/labels.inc:setdefault
+msgid "Set default"
+msgstr "Postavi glavnim"
+
+#: program/localization/bs_BA/labels.inc:autodetect
+msgid "Auto"
+msgstr "Automatski"
+
+#: program/localization/bs_BA/labels.inc:language
+msgid "Language"
+msgstr "Jezik"
+
+#: program/localization/bs_BA/labels.inc:timezone
+msgid "Time zone"
+msgstr "Vremenska zona"
+
+#: program/localization/bs_BA/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Redova po stranici"
+
+#: program/localization/bs_BA/labels.inc:signature
+msgid "Signature"
+msgstr "Potpis"
+
+#: program/localization/bs_BA/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Ljetno pomjeranje vremena"
+
+#: program/localization/bs_BA/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Pisi HTML poruke"
+
+#: program/localization/bs_BA/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "odgovor samo na HTML poruke"
+
+#: program/localization/bs_BA/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML potpis"
+
+#: program/localization/bs_BA/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Pokaži prethodu poruku"
+
+#: program/localization/bs_BA/labels.inc:skin
+msgid "Interface skin"
+msgstr "Interfejs izgled"
+
+#: program/localization/bs_BA/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Očisti smeće pri izlazu"
+
+#: program/localization/bs_BA/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Komprimiraj Inbox pri izlazu"
+
+#: program/localization/bs_BA/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Korisnički interfejs"
+
+#: program/localization/bs_BA/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Postavke servera"
+
+#: program/localization/bs_BA/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Pregled Mailboxa"
+
+#: program/localization/bs_BA/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "obavijest pošiljatelja"
+
+#: program/localization/bs_BA/labels.inc:askuser
+msgid "ask me"
+msgstr "pitaj korisnika"
+
+#: program/localization/bs_BA/labels.inc:autosend
+msgid "send receipt"
+msgstr "Pošalji obavijest"
+
+#: program/localization/bs_BA/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "pošalji obavijest mojim kontaktima, inače me pitaj"
+
+#: program/localization/bs_BA/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "pošalji obavijest mojim kontaktima, inače ignoriši"
+
+#: program/localization/bs_BA/labels.inc:ignore
+msgid "ignore"
+msgstr "ignorisati"
+
+#: program/localization/bs_BA/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Označi poruku kao pročitanu pri brisanju"
+
+#: program/localization/bs_BA/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Označi poruku za brisanje umjesto brisanja"
+
+#: program/localization/bs_BA/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Ne prikazivaj pobrisane poruke"
+
+#: program/localization/bs_BA/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Ako poruke prebacujem u kantu, obriši ih odmah"
+
+#: program/localization/bs_BA/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "prikaži slike s interneta"
+
+#: program/localization/bs_BA/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "od poznatih pošiljatelja"
+
+#: program/localization/bs_BA/labels.inc:always
+msgid "always"
+msgstr "uvijek"
+
+#: program/localization/bs_BA/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "prikaži slike ispod poruke"
+
+#: program/localization/bs_BA/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Automatski spasi predlozak"
+
+#: program/localization/bs_BA/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "svakih $n minuta"
+
+#: program/localization/bs_BA/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "provjeri nove poruke"
+
+#: program/localization/bs_BA/labels.inc:never
+msgid "never"
+msgstr "nikada"
+
+#: program/localization/bs_BA/labels.inc:immediately
+msgid "immediately"
+msgstr "odmah"
+
+#: program/localization/bs_BA/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "prikazujem poruke"
+
+#: program/localization/bs_BA/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "komponiram poruke"
+
+#: program/localization/bs_BA/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Ime priloga"
+
+#: program/localization/bs_BA/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "napredne opcije"
+
+#: program/localization/bs_BA/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "fokusiraj browser pri novoj poruci"
+
+#: program/localization/bs_BA/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "provjeri nove poruke u svim mapama"
+
+#: program/localization/bs_BA/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "nakon brisanja/micanja poruke, prikaži slijedeću"
+
+#: program/localization/bs_BA/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "glavne opcije"
+
+#: program/localization/bs_BA/labels.inc:section
+msgid "Section"
+msgstr "sekcija"
+
+#: program/localization/bs_BA/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "održavanje"
+
+#: program/localization/bs_BA/labels.inc:newmessage
+msgid "New Message"
+msgstr "nova poruka"
+
+#: program/localization/bs_BA/labels.inc:listoptions
+msgid "List Options"
+msgstr "opcije liste"
+
+#: program/localization/bs_BA/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "opcije potpisa"
+
+#: program/localization/bs_BA/labels.inc:whenreplying
+msgid "When replying"
+msgstr "prilikom odgovora"
+
+#: program/localization/bs_BA/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "započni novu poruku iznad originala"
+
+#: program/localization/bs_BA/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "započni novu poruku ispod originala"
+
+#: program/localization/bs_BA/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "kod odgovaranja, makni originalni potpis iz poruke"
+
+#: program/localization/bs_BA/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "automatski dodaj potpis"
+
+#: program/localization/bs_BA/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "samo nova poruka"
+
+#: program/localization/bs_BA/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "samo odgovori i proslijeđivanja"
+
+#: program/localization/bs_BA/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "kod downloada ili proslijeđivanja postavi potpis"
+
+#: program/localization/bs_BA/labels.inc:belowquote
+msgid "below the quote"
+msgstr "ispod citata"
+
+#: program/localization/bs_BA/labels.inc:abovequote
+msgid "above the quote"
+msgstr "iznad citata"
+
+#: program/localization/bs_BA/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "umetni potpis"
+
+#: program/localization/bs_BA/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "obilježi pregledane poruke kao pročitane"
+
+#: program/localization/bs_BA/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "nakon $n sekundi"
+
+#: program/localization/bs_BA/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "uvijek zatraži potvrdu o primitku poruke"
+
+#: program/localization/bs_BA/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "uvijek zatraži potvrdu o slanju poruke"
+
+#: program/localization/bs_BA/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "spremi odgovore u mapu gdje se nalazi poruka"
+
+#: program/localization/bs_BA/labels.inc:folder
+msgid "Folder"
+msgstr "Fascikla"
+
+#: program/localization/bs_BA/labels.inc:foldername
+msgid "Folder name"
+msgstr "Ime fascikle"
+
+#: program/localization/bs_BA/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Pretplaćen"
+
+#: program/localization/bs_BA/labels.inc:messagecount
+msgid "Messages"
+msgstr "poruke"
+
+#: program/localization/bs_BA/labels.inc:create
+msgid "Create"
+msgstr "Napravi"
+
+#: program/localization/bs_BA/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Napravi novu fasciklu"
+
+#: program/localization/bs_BA/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Podesi fasciklu"
+
+#: program/localization/bs_BA/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "specijalna Mapa"
+
+#: program/localization/bs_BA/labels.inc:properties
+msgid "Properties"
+msgstr "svojstva"
+
+#: program/localization/bs_BA/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "svojstva mape"
+
+#: program/localization/bs_BA/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "glavna mapa"
+
+#: program/localization/bs_BA/labels.inc:location
+msgid "Location"
+msgstr "lokacija"
+
+#: program/localization/bs_BA/labels.inc:info
+msgid "Information"
+msgstr "Podatak"
+
+#: program/localization/bs_BA/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "kliknite da biste dobili veličinu mape"
+
+#: program/localization/bs_BA/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "kliknite da biste promjenili pretplatu"
+
+#: program/localization/bs_BA/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Vrsta mape"
+
+#: program/localization/bs_BA/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "privatna mapa"
+
+#: program/localization/bs_BA/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "mapa drugih korisnika"
+
+#: program/localization/bs_BA/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "javna mapa"
+
+#: program/localization/bs_BA/labels.inc:sortby
+msgid "Sort by"
+msgstr "Sortiraj po"
+
+#: program/localization/bs_BA/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Sortiraj rastućim nizom"
+
+#: program/localization/bs_BA/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Sortiraj opadajućim nizom"
+
+#: program/localization/bs_BA/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/bs_BA/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/bs_BA/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/bs_BA/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/bs_BA/labels.inc:unicode
+msgid "Unicode"
+msgstr "unicode"
+
+#: program/localization/bs_BA/labels.inc:english
+msgid "English"
+msgstr "engleski"
+
+#: program/localization/bs_BA/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "zapadnoevropski"
+
+#: program/localization/bs_BA/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "istočnoevropski"
+
+#: program/localization/bs_BA/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "jugo-istočno evropski"
+
+#: program/localization/bs_BA/labels.inc:baltic
+msgid "Baltic"
+msgstr "Baltički"
+
+#: program/localization/bs_BA/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "ćirilični"
+
+#: program/localization/bs_BA/labels.inc:arabic
+msgid "Arabic"
+msgstr "arapski"
+
+#: program/localization/bs_BA/labels.inc:greek
+msgid "Greek"
+msgstr "grčki"
+
+#: program/localization/bs_BA/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "hebrejski"
+
+#: program/localization/bs_BA/labels.inc:turkish
+msgid "Turkish"
+msgstr "turski"
+
+#: program/localization/bs_BA/labels.inc:nordic
+msgid "Nordic"
+msgstr "nordski"
+
+#: program/localization/bs_BA/labels.inc:thai
+msgid "Thai"
+msgstr "tajlandski"
+
+#: program/localization/bs_BA/labels.inc:celtic
+msgid "Celtic"
+msgstr "keltski"
+
+#: program/localization/bs_BA/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "vijetnamski"
+
+#: program/localization/bs_BA/labels.inc:japanese
+msgid "Japanese"
+msgstr "japanski"
+
+#: program/localization/bs_BA/labels.inc:korean
+msgid "Korean"
+msgstr "korejski"
+
+#: program/localization/bs_BA/labels.inc:chinese
+msgid "Chinese"
+msgstr "kineski"

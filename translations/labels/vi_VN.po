@@ -1,0 +1,585 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/vi_VN/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: vi_VN\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/vi_VN/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Xin mời sử dụng $product"
+
+#: program/localization/vi_VN/labels.inc:username
+msgid "Username"
+msgstr "Tên người dùng"
+
+#: program/localization/vi_VN/labels.inc:password
+msgid "Password"
+msgstr "Mật khẩu"
+
+#: program/localization/vi_VN/labels.inc:server
+msgid "Server"
+msgstr "Máy chủ?"
+
+#: program/localization/vi_VN/labels.inc:login
+msgid "Login"
+msgstr "Đăng nhập"
+
+#: program/localization/vi_VN/labels.inc:logout
+msgid "Logout"
+msgstr "Đăng xuất"
+
+#: program/localization/vi_VN/labels.inc:mail
+msgid "Mail"
+msgstr "E-Mail"
+
+#: program/localization/vi_VN/labels.inc:settings
+msgid "Settings"
+msgstr "Thiết lập"
+
+#: program/localization/vi_VN/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Sổ địa chỉ"
+
+#: program/localization/vi_VN/labels.inc:inbox
+msgid "Inbox"
+msgstr "Inbox"
+
+#: program/localization/vi_VN/labels.inc:drafts
+msgid "Drafts"
+msgstr "Drafts"
+
+#: program/localization/vi_VN/labels.inc:sent
+msgid "Sent"
+msgstr "Sent"
+
+#: program/localization/vi_VN/labels.inc:trash
+msgid "Trash"
+msgstr "Trash"
+
+#: program/localization/vi_VN/labels.inc:junk
+msgid "Junk"
+msgstr "Junk"
+
+#: program/localization/vi_VN/labels.inc:subject
+msgid "Subject"
+msgstr "Tiêu đề"
+
+#: program/localization/vi_VN/labels.inc:from
+msgid "From"
+msgstr "Người gửi"
+
+#: program/localization/vi_VN/labels.inc:to
+msgid "To"
+msgstr "Người nhận"
+
+#: program/localization/vi_VN/labels.inc:cc
+msgid "Cc"
+msgstr "Đồng nhận"
+
+#: program/localization/vi_VN/labels.inc:bcc
+msgid "Bcc"
+msgstr "Đồng nhận (2)"
+
+#: program/localization/vi_VN/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Trả lời vào"
+
+#: program/localization/vi_VN/labels.inc:date
+msgid "Date"
+msgstr "Ngày"
+
+#: program/localization/vi_VN/labels.inc:size
+msgid "Size"
+msgstr "D.Lượng"
+
+#: program/localization/vi_VN/labels.inc:priority
+msgid "Priority"
+msgstr "Ưu tiên"
+
+#: program/localization/vi_VN/labels.inc:organization
+msgid "Company"
+msgstr "Cơ quan"
+
+#: program/localization/vi_VN/labels.inc:reply-to
+msgid "reply-to"
+msgstr "Trả lời vào"
+
+#: program/localization/vi_VN/labels.inc:mailboxlist
+#: program/localization/vi_VN/labels.inc:folders
+msgid "Folders"
+msgstr "Thư mục"
+
+#: program/localization/vi_VN/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Thư $from - $to / $count"
+
+#: program/localization/vi_VN/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Thư $nr / $count"
+
+#: program/localization/vi_VN/labels.inc:moveto
+msgid "Move to..."
+msgstr "chuyển đến..."
+
+#: program/localization/vi_VN/labels.inc:download
+msgid "Download"
+msgstr "tải xuống"
+
+#: program/localization/vi_VN/labels.inc:filename
+msgid "File name"
+msgstr "Tên file"
+
+#: program/localization/vi_VN/labels.inc:filesize
+msgid "File size"
+msgstr "Dung lượng"
+
+#: program/localization/vi_VN/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Dùng HTML"
+
+#: program/localization/vi_VN/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Thư kiểu HTML"
+
+#: program/localization/vi_VN/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Hiển thị ngày đầy đủ"
+
+#: program/localization/vi_VN/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Thêm và sổ địa chỉ"
+
+#: program/localization/vi_VN/labels.inc:sun
+msgid "Sun"
+msgstr "CN"
+
+#: program/localization/vi_VN/labels.inc:mon
+msgid "Mon"
+msgstr "T2"
+
+#: program/localization/vi_VN/labels.inc:tue
+msgid "Tue"
+msgstr "T3"
+
+#: program/localization/vi_VN/labels.inc:wed
+msgid "Wed"
+msgstr "T4"
+
+#: program/localization/vi_VN/labels.inc:thu
+msgid "Thu"
+msgstr "T5"
+
+#: program/localization/vi_VN/labels.inc:fri
+msgid "Fri"
+msgstr "T6"
+
+#: program/localization/vi_VN/labels.inc:sat
+msgid "Sat"
+msgstr "T7"
+
+#: program/localization/vi_VN/labels.inc:sunday
+msgid "Sunday"
+msgstr "Chủ nhật"
+
+#: program/localization/vi_VN/labels.inc:monday
+msgid "Monday"
+msgstr "Thứ hai"
+
+#: program/localization/vi_VN/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Thứ ba"
+
+#: program/localization/vi_VN/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Thứ tư"
+
+#: program/localization/vi_VN/labels.inc:thursday
+msgid "Thursday"
+msgstr "Thứ năm"
+
+#: program/localization/vi_VN/labels.inc:friday
+msgid "Friday"
+msgstr "Thứ sáu"
+
+#: program/localization/vi_VN/labels.inc:saturday
+msgid "Saturday"
+msgstr "Thứ bẩy"
+
+#: program/localization/vi_VN/labels.inc:today
+msgid "Today"
+msgstr "Hôm nay"
+
+#: program/localization/vi_VN/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Kiểm tra thư mới"
+
+#: program/localization/vi_VN/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Soạn thư mới"
+
+#: program/localization/vi_VN/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Trả lời thư"
+
+#: program/localization/vi_VN/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Trả lời tất cả"
+
+#: program/localization/vi_VN/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Chuyển thư"
+
+#: program/localization/vi_VN/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Xóa thư"
+
+#: program/localization/vi_VN/labels.inc:printmessage
+msgid "Print this message"
+msgstr "In thư"
+
+#: program/localization/vi_VN/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "Hiển thị các thư trước"
+
+#: program/localization/vi_VN/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "Hiển thị các thư sau"
+
+#: program/localization/vi_VN/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Trở về danh sách thư"
+
+#: program/localization/vi_VN/labels.inc:viewsource
+msgid "Show source"
+msgstr "Hiển thị mã nguồn"
+
+#: program/localization/vi_VN/labels.inc:select
+msgid "Select"
+msgstr "Chọn"
+
+#: program/localization/vi_VN/labels.inc:all
+msgid "All"
+msgstr "Toàn bộ"
+
+#: program/localization/vi_VN/labels.inc:none
+msgid "None"
+msgstr "Bỏ chọn"
+
+#: program/localization/vi_VN/labels.inc:unread
+msgid "Unread"
+msgstr "Chưa đọc"
+
+#: program/localization/vi_VN/labels.inc:compact
+msgid "Compact"
+msgstr "Rút gọn"
+
+#: program/localization/vi_VN/labels.inc:empty
+msgid "Empty"
+msgstr "Xóa rỗng"
+
+#: program/localization/vi_VN/labels.inc:purge
+msgid "purge"
+msgstr "Tối giản"
+
+#: program/localization/vi_VN/labels.inc:quota
+msgid "Disk usage"
+msgstr "Hạn mức"
+
+#: program/localization/vi_VN/labels.inc:unknown
+msgid "unknown"
+msgstr "không rõ"
+
+#: program/localization/vi_VN/labels.inc:unlimited
+msgid "unlimited"
+msgstr "không hạn chế"
+
+#: program/localization/vi_VN/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Tìm nhanh"
+
+#: program/localization/vi_VN/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Xóa bỏ tìm kiếm"
+
+#: program/localization/vi_VN/labels.inc:compose
+msgid "Compose a message"
+msgstr "Soạn thư"
+
+#: program/localization/vi_VN/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Lưu thư đang soạn"
+
+#: program/localization/vi_VN/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Gửi thư"
+
+#: program/localization/vi_VN/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Gửi kèm"
+
+#: program/localization/vi_VN/labels.inc:charset
+msgid "Charset"
+msgstr "Bộ ký tự"
+
+#: program/localization/vi_VN/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Báo nhận"
+
+#: program/localization/vi_VN/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Kiểm tra chính tả"
+
+#: program/localization/vi_VN/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Soạn thảo"
+
+#: program/localization/vi_VN/labels.inc:revertto
+msgid "Revert to"
+msgstr "Chuyển về"
+
+#: program/localization/vi_VN/labels.inc:attachments
+msgid "Attachments"
+msgstr "Gửi kèm"
+
+#: program/localization/vi_VN/labels.inc:upload
+msgid "Upload"
+msgstr "Tải lên"
+
+#: program/localization/vi_VN/labels.inc:close
+msgid "Close"
+msgstr "Đóng"
+
+#: program/localization/vi_VN/labels.inc:low
+msgid "Low"
+msgstr "Thấp"
+
+#: program/localization/vi_VN/labels.inc:lowest
+msgid "Lowest"
+msgstr "Thấp nhất"
+
+#: program/localization/vi_VN/labels.inc:normal
+msgid "Normal"
+msgstr "Bình thường"
+
+#: program/localization/vi_VN/labels.inc:high
+msgid "High"
+msgstr "Khẩn"
+
+#: program/localization/vi_VN/labels.inc:highest
+msgid "Highest"
+msgstr "Thượng khẩn"
+
+#: program/localization/vi_VN/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(no subject)"
+
+#: program/localization/vi_VN/labels.inc:showimages
+msgid "Display images"
+msgstr "Hiển thị ảnh"
+
+#: program/localization/vi_VN/labels.inc:name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#: program/localization/vi_VN/labels.inc:firstname
+msgid "First Name"
+msgstr "Tên"
+
+#: program/localization/vi_VN/labels.inc:surname
+msgid "Last Name"
+msgstr "Họ"
+
+#: program/localization/vi_VN/labels.inc:email
+msgid "Email"
+msgstr "E-Mail"
+
+#: program/localization/vi_VN/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Thêm mới địa chỉ"
+
+#: program/localization/vi_VN/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Sửa địa chỉ cũ"
+
+#: program/localization/vi_VN/labels.inc:edit
+msgid "Edit"
+msgstr "Sửa đổi"
+
+#: program/localization/vi_VN/labels.inc:cancel
+msgid "Cancel"
+msgstr "Ngưng"
+
+#: program/localization/vi_VN/labels.inc:save
+msgid "Save"
+msgstr "Lưu"
+
+#: program/localization/vi_VN/labels.inc:delete
+msgid "Delete"
+msgstr "Xóa"
+
+#: program/localization/vi_VN/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Thêm mới địa chỉ liên hệ"
+
+#: program/localization/vi_VN/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Xóa địa chỉ được chọn"
+
+#: program/localization/vi_VN/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Soạn thư cho"
+
+#: program/localization/vi_VN/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Địa chỉ từ $from - $to / $count"
+
+#: program/localization/vi_VN/labels.inc:print
+msgid "Print"
+msgstr "In thư"
+
+#: program/localization/vi_VN/labels.inc:export
+msgid "Export"
+msgstr "Export"
+
+#: program/localization/vi_VN/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Trang trước"
+
+#: program/localization/vi_VN/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Trang tiếp"
+
+#: program/localization/vi_VN/labels.inc:ldapsearch
+msgid "ldapsearch"
+msgstr "LDAP directory search"
+
+#: program/localization/vi_VN/labels.inc:ldappublicsearchname
+msgid "ldappublicsearchname"
+msgstr "Tên địa chỉ"
+
+#: program/localization/vi_VN/labels.inc:ldappublicsearchtype
+msgid "ldappublicsearchtype"
+msgstr "Khớp toàn bộ?"
+
+#: program/localization/vi_VN/labels.inc:ldappublicserverselect
+msgid "ldappublicserverselect"
+msgstr "Chọn máy chủ"
+
+#: program/localization/vi_VN/labels.inc:ldappublicsearchfield
+msgid "ldappublicsearchfield"
+msgstr "Tìm trên"
+
+#: program/localization/vi_VN/labels.inc:ldappublicsearchform
+msgid "ldappublicsearchform"
+msgstr "Tìm địa chỉ liên hệ"
+
+#: program/localization/vi_VN/labels.inc:ldappublicsearch
+msgid "ldappublicsearch"
+msgstr "Tìm kiếm"
+
+#: program/localization/vi_VN/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Thiết lập cho"
+
+#: program/localization/vi_VN/labels.inc:preferences
+msgid "Preferences"
+msgstr "Tham số"
+
+#: program/localization/vi_VN/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Tham số người dùng"
+
+#: program/localization/vi_VN/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Sửa đổi"
+
+#: program/localization/vi_VN/labels.inc:identities
+msgid "Identities"
+msgstr "Người dùng"
+
+#: program/localization/vi_VN/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Quản trị người dùng"
+
+#: program/localization/vi_VN/labels.inc:newidentity
+msgid "New identity"
+msgstr "Người dùng mới"
+
+#: program/localization/vi_VN/labels.inc:newitem
+msgid "New item"
+msgstr "Thêm mới"
+
+#: program/localization/vi_VN/labels.inc:edititem
+msgid "Edit item"
+msgstr "Sửa đổi"
+
+#: program/localization/vi_VN/labels.inc:setdefault
+msgid "Set default"
+msgstr "Thiết lập mặc định"
+
+#: program/localization/vi_VN/labels.inc:language
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+#: program/localization/vi_VN/labels.inc:timezone
+msgid "Time zone"
+msgstr "Múi giờ"
+
+#: program/localization/vi_VN/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Số dòng trên trang"
+
+#: program/localization/vi_VN/labels.inc:signature
+msgid "Signature"
+msgstr "Chữ ký"
+
+#: program/localization/vi_VN/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Giờ mùa hè"
+
+#: program/localization/vi_VN/labels.inc:folder
+msgid "Folder"
+msgstr "Thư mục"
+
+#: program/localization/vi_VN/labels.inc:foldername
+msgid "Folder name"
+msgstr "Tên thư mục"
+
+#: program/localization/vi_VN/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Cho sử dụng"
+
+#: program/localization/vi_VN/labels.inc:create
+msgid "Create"
+msgstr "Tạo"
+
+#: program/localization/vi_VN/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Tạo thư mục mới"
+
+#: program/localization/vi_VN/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Quản trị thư mục"
+
+#: program/localization/vi_VN/labels.inc:sortby
+msgid "Sort by"
+msgstr "Sắp xếp"
+
+#: program/localization/vi_VN/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Xếp tăng dần"
+
+#: program/localization/vi_VN/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Xếp giảm dần"

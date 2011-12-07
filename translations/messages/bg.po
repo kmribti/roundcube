@@ -1,0 +1,625 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/bg_BG/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: bg_BG\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/bg_BG/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Вход неуспешен"
+
+#: program/localization/bg_BG/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Вашият браузър не приема cookies"
+
+#: program/localization/bg_BG/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Невалидна или изтекла сесия"
+
+#: program/localization/bg_BG/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Неуспешно свързване към IMAP сървъра"
+
+#: program/localization/bg_BG/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Грешка!"
+
+#: program/localization/bg_BG/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Сървърна грешка: $msg"
+
+#: program/localization/bg_BG/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Грешка с базата данни!"
+
+#: program/localization/bg_BG/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Операцията не може да бъде изпълнена."
+"Папката е с права само за четене"
+
+#: program/localization/bg_BG/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Операцията не може да бъде изпълнена."
+"Отказани права за достъп"
+
+#: program/localization/bg_BG/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Невалидна заявка! Данните не са"
+"съхранени."
+
+#: program/localization/bg_BG/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Няма съобщения"
+
+#: program/localization/bg_BG/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Довиждане!"
+
+#: program/localization/bg_BG/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Кутията е празна"
+
+#: program/localization/bg_BG/messages.inc:loading
+msgid "Loading..."
+msgstr "Зареждане..."
+
+#: program/localization/bg_BG/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Качване на файла..."
+
+#: program/localization/bg_BG/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Качване на файлове..."
+
+#: program/localization/bg_BG/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Зареждане на данни..."
+
+#: program/localization/bg_BG/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Проверка за нови писма..."
+
+#: program/localization/bg_BG/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Изпращане на писмото..."
+
+#: program/localization/bg_BG/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Писмото е изпратено успешно"
+
+#: program/localization/bg_BG/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Записване на писмото..."
+
+#: program/localization/bg_BG/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Писмото е записано в Чернови"
+
+#: program/localization/bg_BG/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Записано"
+
+#: program/localization/bg_BG/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Контакта е добавен в адресната книга"
+
+#: program/localization/bg_BG/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Контакт с този e-mail адрес вече същестува"
+
+#: program/localization/bg_BG/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Контакт със същото име вече съществува"
+
+#: program/localization/bg_BG/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "С оглед на Вашата сигурност,"
+"изображенията в това писмо са блокирани."
+
+#: program/localization/bg_BG/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Това е кодирано писмо и не може да бъде"
+"показано. Съжаляваме!"
+
+#: program/localization/bg_BG/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Няма намерени контакти"
+
+#: program/localization/bg_BG/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Исканият контакт не е намерен"
+
+#: program/localization/bg_BG/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Въведете нещо в полето за търсене за да"
+"търсите контакти"
+
+#: program/localization/bg_BG/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Изпращането неуспешно"
+
+#: program/localization/bg_BG/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Моля, изчакайте $sec секунда(и) преди да"
+"изпратите съобщението"
+
+#: program/localization/bg_BG/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Възникна грешка при записването на"
+"съобщението"
+
+#: program/localization/bg_BG/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Възникна грешка при записването"
+
+#: program/localization/bg_BG/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Писмото не може да бъде преместено"
+
+#: program/localization/bg_BG/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Съобщенията не могат да бъдат копирани"
+
+#: program/localization/bg_BG/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Писмото не може да бъде изтрито"
+
+#: program/localization/bg_BG/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Съобщението не може да бъде маркирано"
+
+#: program/localization/bg_BG/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Искате ли да изтриете маркираните"
+"контакти?"
+
+#: program/localization/bg_BG/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Искате ли да изтриете избраната група?"
+
+#: program/localization/bg_BG/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Искате ли да изтриете маркираните"
+"съобщения?"
+
+#: program/localization/bg_BG/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Искате ли да изтриете тази папка?"
+
+#: program/localization/bg_BG/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Искате ли да изтриете всички писма в тази"
+"папка?"
+
+#: program/localization/bg_BG/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Изтриване на контакт(и)..."
+
+#: program/localization/bg_BG/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Изтриване на група..."
+
+#: program/localization/bg_BG/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Изтриване на папка..."
+
+#: program/localization/bg_BG/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Преместване на папка..."
+
+#: program/localization/bg_BG/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Абониране..."
+
+#: program/localization/bg_BG/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Отписване на папка..."
+
+#: program/localization/bg_BG/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Не сте попълнили всички полета"
+
+#: program/localization/bg_BG/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Моля, въведете валиден e-mail адрес"
+
+#: program/localization/bg_BG/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Моля, въведете име"
+
+#: program/localization/bg_BG/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Въведете брой редове на страница"
+
+#: program/localization/bg_BG/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Моля въведете валиден e-mail адрес на"
+"изпращача"
+
+#: program/localization/bg_BG/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Въведете поне един получател"
+
+#: program/localization/bg_BG/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Полето \"Заглавие\" е празно. Искате ли да"
+"въведете заглавие?"
+
+#: program/localization/bg_BG/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Изпрати това писмо без текст?"
+
+#: program/localization/bg_BG/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Писмото не е изпратено. Искате ли да бъде"
+"унищожено?"
+
+#: program/localization/bg_BG/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Изберете LDAP сървър за търсене"
+
+#: program/localization/bg_BG/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Моля, въведете Име на контакта или e-mail"
+"адрес"
+
+#: program/localization/bg_BG/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Все още не са качени всички прикачени"
+"файлове. Моля изчакайте или откажете"
+"качването."
+
+#: program/localization/bg_BG/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr намерени писма"
+
+#: program/localization/bg_BG/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "$nr намерени контакти."
+
+#: program/localization/bg_BG/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Търсенето не откри съвпадения"
+
+#: program/localization/bg_BG/messages.inc:searching
+msgid "Searching..."
+msgstr "Търсене..."
+
+#: program/localization/bg_BG/messages.inc:checking
+msgid "Checking..."
+msgstr "Проверка..."
+
+#: program/localization/bg_BG/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Не са открити правописни грешки"
+
+#: program/localization/bg_BG/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Папката е изтрита"
+
+#: program/localization/bg_BG/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Абонирането успешно"
+
+#: program/localization/bg_BG/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Отписването успешно"
+
+#: program/localization/bg_BG/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Папката е изпразнена"
+
+#: program/localization/bg_BG/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Уплътняването успешно"
+
+#: program/localization/bg_BG/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Изтриването е успешно"
+
+#: program/localization/bg_BG/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Премахване форматирането на писмото..."
+
+#: program/localization/bg_BG/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Писмото не може да бъде заредено от"
+"сървъра"
+
+#: program/localization/bg_BG/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Грешка при прикачването на файла"
+
+#: program/localization/bg_BG/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Прикаченият файл надвишава лимита от $size"
+
+#: program/localization/bg_BG/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Успешно копирани $nr адреса"
+
+#: program/localization/bg_BG/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Грешка при копирането на адресите"
+
+#: program/localization/bg_BG/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Този източник на адреси е само за четене"
+
+#: program/localization/bg_BG/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Грешка при записването на адреса"
+
+#: program/localization/bg_BG/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Преместване на съобщение..."
+
+#: program/localization/bg_BG/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Копиране на съобщение(я)..."
+
+#: program/localization/bg_BG/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Копиране на контакт(и)..."
+
+#: program/localization/bg_BG/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Изтриване на съобщение(я)..."
+
+#: program/localization/bg_BG/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Маркиране на съобщение(я)..."
+
+#: program/localization/bg_BG/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Добавяне на контакт(и) в групата..."
+
+#: program/localization/bg_BG/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Премахване на контакт(и) от групата..."
+
+#: program/localization/bg_BG/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Обратната разписка е изпратена."
+
+#: program/localization/bg_BG/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Грешка при изпращането на обратна"
+"разписка."
+
+#: program/localization/bg_BG/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Не можете да изтриете тази самоличност,"
+"трябва да имате поне една."
+
+#: program/localization/bg_BG/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Името на папката съдържа непозволени"
+"символи"
+
+#: program/localization/bg_BG/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Моля изберете файл за качване"
+
+#: program/localization/bg_BG/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Избраната адресна книга не може да бъде"
+"записвана"
+
+#: program/localization/bg_BG/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Контактите бяха успешно добавени към"
+"групата"
+
+#: program/localization/bg_BG/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Контактите бяха успешно премахнати от"
+"групата"
+
+#: program/localization/bg_BG/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Внасяне, моля изчакайте..."
+
+#: program/localization/bg_BG/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Внасянето неуспешно! Каченият файл не е"
+"във валиден vCard формат."
+
+#: program/localization/bg_BG/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Успешно са внесени $inserted контакта, вече"
+"съществуващите $skipped контакта са"
+"пропуснати</b>:<p><em>$names</em></p>"
+
+#: program/localization/bg_BG/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "b>Съществуващите записи $skipped са"
+"пропуснати</b>"
+
+#: program/localization/bg_BG/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Операцията не е позволена!"
+
+#: program/localization/bg_BG/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Липсва e-mail адрес за избраната"
+"самоличност"
+
+#: program/localization/bg_BG/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Превключването на редактора в текстов"
+"режим ще доведе до загуба на"
+"форматирането на текса. Сигурни ли сте,"
+"че искате да продължите?"
+
+#: program/localization/bg_BG/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Фатална конфигурационна грешка. Моля,"
+"свържете се веднага с администратора."
+"<b>Съобщението Ви не може да бъде"
+"изпратено.</b>"
+
+#: program/localization/bg_BG/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP грешка ($code): Няма връзка със сървъра"
+
+#: program/localization/bg_BG/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP грешка ($code): Грешни потребител/парола"
+
+#: program/localization/bg_BG/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP грешка ($code): Не може да бъде изпратено"
+"писмо от \"$from\" ($msg)"
+
+#: program/localization/bg_BG/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP грешка ($code): Не може да бъде изпратено"
+"писмо до \"$to\" ($msg)"
+
+#: program/localization/bg_BG/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP грешка: Не може да бъде обработен"
+"списъка с получатели"
+
+#: program/localization/bg_BG/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP грешка: $msg"
+
+#: program/localization/bg_BG/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Невалиден e-mail адрес: $email"
+
+#: program/localization/bg_BG/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Прекалено много адреси за изпращане"
+"(максимум: $max)."
+
+#: program/localization/bg_BG/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Броя на членовете на групата е повече от"
+"максималния: $max."
+
+#: program/localization/bg_BG/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Възникна вътрешна грешка. Моля опитайте"
+"отново"
+
+#: program/localization/bg_BG/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Не мога да изтрия контакта"
+
+#: program/localization/bg_BG/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Контактът беше изтрит"
+
+#: program/localization/bg_BG/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Неуспешно възстановяване на изтрите"
+"контакт(и)."
+
+#: program/localization/bg_BG/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Контактът(-ите) са възстановени успешно"
+
+#: program/localization/bg_BG/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Групата беше  изтрита"
+
+#: program/localization/bg_BG/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Групата беше преименувана "
+
+#: program/localization/bg_BG/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Групата беше създадена"
+
+#: program/localization/bg_BG/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Запазаните търсения са изтрити успешно."
+
+#: program/localization/bg_BG/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Изтриването на запазените търсения е"
+"неуспешно."
+
+#: program/localization/bg_BG/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Запазените търсения са създадени"
+"успешно."
+
+#: program/localization/bg_BG/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Създаването на запазено търсене е"
+"неуспешно"
+
+#: program/localization/bg_BG/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Съобщението  беше  изтрито"
+
+#: program/localization/bg_BG/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Съобщението беше преместено"
+
+#: program/localization/bg_BG/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Съобщението беше копирано"
+
+#: program/localization/bg_BG/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Съобщението беше маркирано"
+
+#: program/localization/bg_BG/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Въведете минимум $min знака, за да започне"
+"автоматичното попълване"
+
+#: program/localization/bg_BG/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Намерените съвпадения са прекалено"
+"много. Моля напишете още символи."
+
+#: program/localization/bg_BG/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Полето за име не може да бъде празно"
+
+#: program/localization/bg_BG/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Името е прекалено дълго"
+
+#: program/localization/bg_BG/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Папката е обновена"
+
+#: program/localization/bg_BG/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Папката е създадена"
+
+#: program/localization/bg_BG/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Невалиден формат на изображението"
+
+#: program/localization/bg_BG/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "В съобщението са намерени правописни"
+"грешки."
+
+#: program/localization/bg_BG/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "Създаването/преместването на папка в"
+"избраната родителска папка е неуспешно."
+"Няма права за достъп."

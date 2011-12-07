@@ -1,0 +1,313 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ko_KR/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ko_KR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ko_KR/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "로그인 실패"
+
+#: program/localization/ko_KR/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "브라우저가 쿠키를 지원하지 않습니다"
+
+#: program/localization/ko_KR/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "세션이 유효하지 않거나 종료되었습니다"
+
+#: program/localization/ko_KR/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "IMAP 서버 연결 실패"
+
+#: program/localization/ko_KR/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "이 메일함에 메일이 없습니다"
+
+#: program/localization/ko_KR/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "세션을 성공적으로 종료하였습니다. 안녕히 가십시오!"
+
+#: program/localization/ko_KR/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "메일함이 비어있습니다"
+
+#: program/localization/ko_KR/messages.inc:loading
+msgid "Loading..."
+msgstr "불러오는 중..."
+
+#: program/localization/ko_KR/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "데이터 불러오는 중..."
+
+#: program/localization/ko_KR/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "새 메일 확인 중..."
+
+#: program/localization/ko_KR/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "메일 보내는 중..."
+
+#: program/localization/ko_KR/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "메일을 성공적으로 보냈습니다"
+
+#: program/localization/ko_KR/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "메일 저장 중..."
+
+#: program/localization/ko_KR/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "메일이 드래프트 폴더에 저장되었습니다"
+
+#: program/localization/ko_KR/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "성공적으로 저장"
+
+#: program/localization/ko_KR/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "연락처가 주소록에 성공적으로 추가되었습니다"
+
+#: program/localization/ko_KR/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "이 메일로 지정된 연락처가 이미 있습니다"
+
+#: program/localization/ko_KR/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "보안 유지를 위해, 이 메일의 외부 이미지를"
+"차단하였습니다"
+
+#: program/localization/ko_KR/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "이 메일은 암호화되어 볼 수 없습니다. 죄송합니다!"
+
+#: program/localization/ko_KR/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "연락처 없음"
+
+#: program/localization/ko_KR/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "요청한 연락처가 없습니다"
+
+#: program/localization/ko_KR/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "메일을 보내지 못했습니다"
+
+#: program/localization/ko_KR/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "이 메시지를 보내기 전에 $sec 초 동안 기다리십시오."
+
+#: program/localization/ko_KR/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "보낸 메시지를 저장할 때 에러가 발생했습니다."
+
+#: program/localization/ko_KR/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "저장 중 에러가 발생했습니다"
+
+#: program/localization/ko_KR/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "메일을 옮길 수 없습니다"
+
+#: program/localization/ko_KR/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "메일을 지울 수 없습니다"
+
+#: program/localization/ko_KR/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "정말 선택한 연락처들을 삭제하시겠습니까?"
+
+#: program/localization/ko_KR/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "정말 선택한 메일들을 삭제하시겠습니까?"
+
+#: program/localization/ko_KR/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "정말 이 폴더를 삭제하시겠습니까?"
+
+#: program/localization/ko_KR/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "정말 이 폴더의 모든 메일을 삭제하시겠습니까?"
+
+#: program/localization/ko_KR/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "폴더 지우는 중..."
+
+#: program/localization/ko_KR/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "폴더 옮기는 중..."
+
+#: program/localization/ko_KR/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "양식을 완전히 채우지 않았습니다"
+
+#: program/localization/ko_KR/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "유효한 이메일 주소를 넣어주십시오"
+
+#: program/localization/ko_KR/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "이름을 넣어주십시오"
+
+#: program/localization/ko_KR/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "페이지 크기를 넣어주십시오"
+
+#: program/localization/ko_KR/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "발신자 이메일 주소를 넣어주십시오"
+
+#: program/localization/ko_KR/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "적어도 한 개 이상의 수신 주소를 넣어주십시오"
+
+#: program/localization/ko_KR/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "\"제목\"이 없습니다. 제목을 넣으시겠습니까?"
+
+#: program/localization/ko_KR/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "텍스트 없이 메일을 보낼까요?"
+
+#: program/localization/ko_KR/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "메일을 보내지 않았습니다. 메일을 버리시겠습니까?"
+
+#: program/localization/ko_KR/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "검색할 LDAP 서버를 선택하세요"
+
+#: program/localization/ko_KR/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "연락처가 없습니다"
+
+#: program/localization/ko_KR/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "연락처 이름이나 메일 주소를 넣으세요"
+
+#: program/localization/ko_KR/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr개의 메일 발견"
+
+#: program/localization/ko_KR/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "검색 결과가 없습니다"
+
+#: program/localization/ko_KR/messages.inc:searching
+msgid "Searching..."
+msgstr "검색 중..."
+
+#: program/localization/ko_KR/messages.inc:checking
+msgid "Checking..."
+msgstr "체크 중..."
+
+#: program/localization/ko_KR/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "스펠링 에러가 없습니다"
+
+#: program/localization/ko_KR/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "폴더를 성공적으로 삭제하였습니다"
+
+#: program/localization/ko_KR/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "성공적으로 삭제하였습니다"
+
+#: program/localization/ko_KR/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "메일의 포맷을 지우는 중..."
+
+#: program/localization/ko_KR/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "서버에서 메일을 가져올 수 없습니다"
+
+#: program/localization/ko_KR/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "파일 업로드 실패"
+
+#: program/localization/ko_KR/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "올린 파일이 $size의 최대 크기를 초과했습니다"
+
+#: program/localization/ko_KR/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "$nr개의 주소를 성공적으로 복사했습니다"
+
+#: program/localization/ko_KR/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "주소를 복사할 수 없습니다"
+
+#: program/localization/ko_KR/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "이 주소 소스는 읽기 전용입니다"
+
+#: program/localization/ko_KR/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "연락처 주소를 저장할 수 없습니다"
+
+#: program/localization/ko_KR/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "메시지 이동 중..."
+
+#: program/localization/ko_KR/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "메일 읽음 확인을 보냈습니다"
+
+#: program/localization/ko_KR/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "읽음 확인을 보낼 수 없습니다"
+
+#: program/localization/ko_KR/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "이 정보는 마지막 남은 것이므로 지울 수 없습니다"
+
+#: program/localization/ko_KR/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "폴더 이름에 쓸 수 없는 문자가 포함되어 있습니다"
+
+#: program/localization/ko_KR/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "업로드할 파일을 선택하세요"
+
+#: program/localization/ko_KR/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "선택한 주소록은 쓸 수 없습니다"
+
+#: program/localization/ko_KR/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "가져오는 중, 기다리세요..."
+
+#: program/localization/ko_KR/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "가져오기 실패! 업로드한 파일이 유효한 vCard 파일이"
+"아닙니다."
+
+#: program/localization/ko_KR/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>$inserted 연락처를 성공적으로 가져왔고, $skipped"
+"존재하는 항목은 건너뛰었습니다.</b>:<p><em>$names</em></p>"
+
+#: program/localization/ko_KR/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "작업이 허가되지 않았습니다!"
+
+#: program/localization/ko_KR/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "선택한 신원에 이메일 주소가 없음"
+
+#: program/localization/ko_KR/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "일반 텍스트 편집기로 바꾸면 모든 서식이 사라집니다."
+"계속할까요?"

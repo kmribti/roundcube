@@ -1,0 +1,329 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/fa/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: fa\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/fa/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "ورود ناموفق بود"
+
+#: program/localization/fa/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "مرورگر شما کوکی قبول نمی کند"
+
+#: program/localization/fa/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "نشست شما معتبر نیست، یا منقضی شده است"
+
+#: program/localization/fa/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "ناموفق بود IMAPاتصال به سرور"
+
+#: program/localization/fa/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "هیچ پیغامی در صندوق نامه پیدا نشد"
+
+#: program/localization/fa/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "!شما با موفقیت نشست را پایان دادید. خدا"
+"نگه‌دار"
+
+#: program/localization/fa/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "صندوق نامه خالی است"
+
+#: program/localization/fa/messages.inc:loading
+msgid "Loading..."
+msgstr "...در حال بارگذاری"
+
+#: program/localization/fa/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "...در حال بارگذاری داده‌ها"
+
+#: program/localization/fa/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "...بررسی برای پیغام جدید"
+
+#: program/localization/fa/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "...در حال ارسال پیغام"
+
+#: program/localization/fa/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "پیغام با موفقیت فرستاده شد"
+
+#: program/localization/fa/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "...درحال ذخیره‌ی پیغام"
+
+#: program/localization/fa/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "پیغام در پیش‌نویس‌ها ذخیره شد"
+
+#: program/localization/fa/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "با موفقیت ذخیره شد"
+
+#: program/localization/fa/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "تماس با موفقیت به دفتر نشانی‌ها اضافه شد"
+
+#: program/localization/fa/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "یک تماس با این نشانی ایمیل از قبل وجود"
+"دارد"
+
+#: program/localization/fa/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "برای حفاظت از حریم شخصی شما، عکس‌های"
+"دوردست از پیغام حذف شد"
+
+#: program/localization/fa/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "!این یک پیغام رمزنگاری شده است و قابل"
+"نمایش نیست. ببخشید"
+
+#: program/localization/fa/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "هیج تماسی پیدا نشد"
+
+#: program/localization/fa/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "تماس درخواست شده پیدا نشد"
+
+#: program/localization/fa/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "ناموفق در فرستادن پیغام"
+
+#: program/localization/fa/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "دقیقه صبر کنید $sec لطفا قبل از ارسال این"
+"پیغام     "
+
+#: program/localization/fa/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "در لحظه ذخیره پیغام ارسال شده ، مشکل به"
+"وجود آمد"
+
+#: program/localization/fa/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "هنگام ذخیره‌سازی، اشکالی پیش آمد"
+
+#: program/localization/fa/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "ناتوان در انتقال پیغام"
+
+#: program/localization/fa/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "ناتوان در حذف پیغام"
+
+#: program/localization/fa/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "آیا واقعاً می‌خواهید تماس (های) انتخاب"
+"شده را حذف کنید؟"
+
+#: program/localization/fa/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "آیا واقعاً می‌خواهید پیغام (های) انتخاب"
+"شده را حذف کنید؟"
+
+#: program/localization/fa/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "آیا واقعاً می‌خواهید این پوشه را حذف"
+"کنید؟"
+
+#: program/localization/fa/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "آیا واقعاً می‌خواهید همه‌ی پیغام‌های"
+"داخل این پوشه را حذف کنید؟"
+
+#: program/localization/fa/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "...در حال حذف پوشه "
+
+#: program/localization/fa/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "...در حال انتقال پوشه "
+
+#: program/localization/fa/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "فرم کاملاً پر نشده بود"
+
+#: program/localization/fa/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "لطفاً یک نشانی ایمیل معتبر وارد کنید"
+
+#: program/localization/fa/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "لطفاً یک نام وارد کنید"
+
+#: program/localization/fa/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "لطفاً یک اندازه برای صفحه وارد کنید"
+
+#: program/localization/fa/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "لطفاً آدرس فرستنده ایمیل را وارد کنید"
+
+#: program/localization/fa/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "لطفاً حداقل یک گیرنده وارد کنید"
+
+#: program/localization/fa/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "قسمت \"موضوع\" خالی است. آیا می‌خواهید"
+"اکنون وارد کنید؟"
+
+#: program/localization/fa/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "این پیغام بدون متن ارسال شود؟"
+
+#: program/localization/fa/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "پیغام ارسال نشده است. آیا می‌خواهید"
+"پیغام را از بین ببرید؟"
+
+#: program/localization/fa/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "برای جست و جو انتخاب کنید LDAP لطفاً یک سرور"
+
+#: program/localization/fa/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "هیچ تماسی پیدا نشد"
+
+#: program/localization/fa/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "لطفا نام یک تماس و یا یک نشانی ایمیل وارد"
+"کنید"
+
+#: program/localization/fa/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "پیغام پیدا شد $nr"
+
+#: program/localization/fa/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "جست و جو هیچ نتیجه‌ای نداشت"
+
+#: program/localization/fa/messages.inc:searching
+msgid "Searching..."
+msgstr "...در حال جست و جو"
+
+#: program/localization/fa/messages.inc:checking
+msgid "Checking..."
+msgstr "...در حال بررسی"
+
+#: program/localization/fa/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "هیچ اشکال املایی پیدا نشد"
+
+#: program/localization/fa/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "پوشه با موفقیت حذف شد"
+
+#: program/localization/fa/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "حذف انجام شد"
+
+#: program/localization/fa/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "...در حال حذف قالب‌بندی‌ها از پیغام"
+
+#: program/localization/fa/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "ناتوان در بارگذاری پیغام از روی سرور"
+
+#: program/localization/fa/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "بالاگذاری پرونده ناموفق بود"
+
+#: program/localization/fa/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "بیشتر است $size اندازه‌ی پرونده‌ی"
+"بالاگذاری شده از بیشینه اندازه‌ی"
+
+#: program/localization/fa/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "نشانی با موفقیت رونوشت‌برداری شدند $nr"
+
+#: program/localization/fa/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "رونوشت‌برداری از نشانی‌ها ناموفق بود"
+
+#: program/localization/fa/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "این منبع نشانی فقط‌خواندنی است"
+
+#: program/localization/fa/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "ذخیره‌ی نشانی تماس ناموفق بود"
+
+#: program/localization/fa/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "...در حال انتقال پیغام"
+
+#: program/localization/fa/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "رسید خواندن با موفقیت ارسال شد"
+
+#: program/localization/fa/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "ناتوان در ارسال رسید"
+
+#: program/localization/fa/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr ".نمی‌توانید این هویت را حذف کنید، زیرا"
+"آخرین هویت شماست"
+
+#: program/localization/fa/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "نام پوشه شامل یک حرف غیر مجاز است"
+
+#: program/localization/fa/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "لطفاً فایل را جهت بارگذاری انتخاب کنید"
+
+#: program/localization/fa/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "در دفترچه تلفن انتخابی ، اجازه نوشتن"
+"ندارید"
+
+#: program/localization/fa/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "...در حال انتقال اطلاعات ، لطفا صبر کنید"
+
+#: program/localization/fa/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "سازگار نیست vcard انتقال اطلاعات متوقف شده"
+"، فرمت فایل بارگذاری شده با فرمت"
+
+#: program/localization/fa/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "p><em>$names</em></p> </b>: متوقف شد$skipped تماس با"
+"موفقبت انتقال یافت و  $inserted <b>"
+
+#: program/localization/fa/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "!عملیات مجاز نیست"
+
+#: program/localization/fa/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "ایمیل های گم شده در گزینه انتخاب شده"
+
+#: program/localization/fa/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "تغییر ویرایشگر متن باعث ابطال فرمت همه"
+"متن ها می شود ، آیا می خواهید با این وجود"
+"عملیات را ادامه بدهید ؟"

@@ -1,0 +1,235 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/hi_IN/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: hi_IN\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/hi_IN/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "लॉगिन नहीं हो पाया"
+
+#: program/localization/hi_IN/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "आपका ब्राऊसर कुकी स्वीकार"
+"नहीं कर रहा है"
+
+#: program/localization/hi_IN/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "सत्र समाप्त या अवैद्य"
+
+#: program/localization/hi_IN/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "आईमैप (IMAP) सर्वर से सम्पर्क"
+"नहीं हो पाया"
+
+#: program/localization/hi_IN/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "इस मेलबॉक्स में कोई मेल नहीं"
+"है"
+
+#: program/localization/hi_IN/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "सत्र समाप्त. टा टा!"
+
+#: program/localization/hi_IN/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "मेलबॉक्स खाली है"
+
+#: program/localization/hi_IN/messages.inc:loading
+msgid "Loading..."
+msgstr "लोड हो रहा है"
+
+#: program/localization/hi_IN/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "डाटा लोड हो रहा है..."
+
+#: program/localization/hi_IN/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "क्या नया मेल है?..."
+
+#: program/localization/hi_IN/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "मेल भेजा जा रहा है..."
+
+#: program/localization/hi_IN/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "मेल भेजा गया है"
+
+#: program/localization/hi_IN/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "मेल सहेजा जा रहा है..."
+
+#: program/localization/hi_IN/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "मेल ड्राफ़्ट फोल्डर में जमा"
+"हो रहा है"
+
+#: program/localization/hi_IN/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "सहेजा गया है"
+
+#: program/localization/hi_IN/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "पता खाते में पता जोडा गया है"
+
+#: program/localization/hi_IN/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "इस ई-मेल पता से एक पता पेहले"
+"से है"
+
+#: program/localization/hi_IN/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "आप के प्राईवेसी के लिये और"
+"स्पैम से बचने के लिये इस मेल"
+"में सदूर चित्र नहीं दिखाये"
+"गये हैं।"
+
+#: program/localization/hi_IN/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "माफ़ कीजिये, यह मेल कूट रूप"
+"में है, इस कारण दिखाया नहीं"
+"जा सकता।"
+
+#: program/localization/hi_IN/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "कोई पता नहीं मिला"
+
+#: program/localization/hi_IN/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "मेल नहीं भिज पाया"
+
+#: program/localization/hi_IN/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "सहेजते-सहेजते गडबड हो गया"
+
+#: program/localization/hi_IN/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "मेल खिस्का नहीं"
+
+#: program/localization/hi_IN/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "मेल मिटा नहीं"
+
+#: program/localization/hi_IN/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "चुने गये पते को सचमुच मिटाना"
+"है ?"
+
+#: program/localization/hi_IN/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "चुने गये मेल को सचमुच मिटाना"
+"है ?"
+
+#: program/localization/hi_IN/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "फ़ोल्डर को सचमुच मिटाऐं ?"
+
+#: program/localization/hi_IN/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "फ़ोल्डर में पडे सारे मेल को"
+"सचमुच मिटाना है?"
+
+#: program/localization/hi_IN/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "फ़ॉर्म पूरी तरह से भरा नहीं"
+
+#: program/localization/hi_IN/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "वैद्य मेल पता भरें"
+
+#: program/localization/hi_IN/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "नाम भरें"
+
+#: program/localization/hi_IN/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "पन्ना माप भरें"
+
+#: program/localization/hi_IN/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "कम-से-कम एक पाने वाले का पता"
+"भरें"
+
+#: program/localization/hi_IN/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "मेल का कोई विशय नहीं बताया"
+"गया है। क्या आप विशय डालना"
+"चाहते हैं ?"
+
+#: program/localization/hi_IN/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "बिना कुछ लिखे मेल भेजें?"
+
+#: program/localization/hi_IN/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "मेल भिजा नहीं. मेल रद्द करें ?"
+
+#: program/localization/hi_IN/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "खोज के लिये एक ऐलडैप सर्वर"
+"चुनें"
+
+#: program/localization/hi_IN/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "कोई पते नहीं मिले"
+
+#: program/localization/hi_IN/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "पता या पते का नाम भरें"
+
+#: program/localization/hi_IN/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr मेल मिले"
+
+#: program/localization/hi_IN/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "खोज असफ़ल"
+
+#: program/localization/hi_IN/messages.inc:searching
+msgid "Searching..."
+msgstr "खोजा रहे हैं..."
+
+#: program/localization/hi_IN/messages.inc:checking
+msgid "Checking..."
+msgstr "चाँचा चा रहा है..."
+
+#: program/localization/hi_IN/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "कोई स्पैलिंग गलती नहीं मिली"
+
+#: program/localization/hi_IN/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "फ़ोल्डर मिट गया"
+
+#: program/localization/hi_IN/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "मिट गया"
+
+#: program/localization/hi_IN/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "मेल से फ़ॉर्मैटिंग निकाला"
+"जा रहा है..."
+
+#: program/localization/hi_IN/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "सर्वर से मेल लोड नहीं हो पाया"
+
+#: program/localization/hi_IN/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "फ़ाईल अपलोड नहीं हो पाया"
+
+#: program/localization/hi_IN/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "अपलोड के लिये फ़ाईल हद $size से"
+"बड़ा है"

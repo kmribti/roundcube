@@ -1,0 +1,1327 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/sr_CS/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: sr_CS\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/sr_CS/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Добродошли на $product"
+
+#: program/localization/sr_CS/labels.inc:username
+msgid "Username"
+msgstr "Корисничко име"
+
+#: program/localization/sr_CS/labels.inc:password
+msgid "Password"
+msgstr "Лозинка"
+
+#: program/localization/sr_CS/labels.inc:server
+msgid "Server"
+msgstr "Сервер"
+
+#: program/localization/sr_CS/labels.inc:login
+msgid "Login"
+msgstr "Пријава"
+
+#: program/localization/sr_CS/labels.inc:logout
+msgid "Logout"
+msgstr "Одјава"
+
+#: program/localization/sr_CS/labels.inc:mail
+msgid "Mail"
+msgstr "Сандуче"
+
+#: program/localization/sr_CS/labels.inc:settings
+msgid "Settings"
+msgstr "Подешавања"
+
+#: program/localization/sr_CS/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Именик"
+
+#: program/localization/sr_CS/labels.inc:inbox
+msgid "Inbox"
+msgstr "Примљене"
+
+#: program/localization/sr_CS/labels.inc:drafts
+msgid "Drafts"
+msgstr "Снимљене"
+
+#: program/localization/sr_CS/labels.inc:sent
+msgid "Sent"
+msgstr "Послате"
+
+#: program/localization/sr_CS/labels.inc:trash
+msgid "Trash"
+msgstr "Канта"
+
+#: program/localization/sr_CS/labels.inc:junk
+msgid "Junk"
+msgstr "Смеће"
+
+#: program/localization/sr_CS/labels.inc:subject
+msgid "Subject"
+msgstr "Наслов"
+
+#: program/localization/sr_CS/labels.inc:from
+msgid "From"
+msgstr "Од"
+
+#: program/localization/sr_CS/labels.inc:to
+msgid "To"
+msgstr "За"
+
+#: program/localization/sr_CS/labels.inc:cc
+msgid "Cc"
+msgstr "Cc"
+
+#: program/localization/sr_CS/labels.inc:bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#: program/localization/sr_CS/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Одговори"
+
+#: program/localization/sr_CS/labels.inc:date
+msgid "Date"
+msgstr "Датум"
+
+#: program/localization/sr_CS/labels.inc:size
+msgid "Size"
+msgstr "Величина"
+
+#: program/localization/sr_CS/labels.inc:priority
+msgid "Priority"
+msgstr "Приоритет"
+
+#: program/localization/sr_CS/labels.inc:organization
+msgid "Company"
+msgstr "Организација"
+
+#: program/localization/sr_CS/labels.inc:readstatus
+msgid "Read status"
+msgstr "Статус поруке"
+
+#: program/localization/sr_CS/labels.inc:mailboxlist
+#: program/localization/sr_CS/labels.inc:folders
+msgid "Folders"
+msgstr "Фасцикле"
+
+#: program/localization/sr_CS/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Поруке $from до $to од укупно $count"
+
+#: program/localization/sr_CS/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Страница $from до $to од $count"
+
+#: program/localization/sr_CS/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Порука број $nr од $count"
+
+#: program/localization/sr_CS/labels.inc:copy
+msgid "Copy"
+msgstr "Копирај"
+
+#: program/localization/sr_CS/labels.inc:move
+msgid "Move"
+msgstr "Пребаци"
+
+#: program/localization/sr_CS/labels.inc:moveto
+msgid "Move to..."
+msgstr "Пребаци у..."
+
+#: program/localization/sr_CS/labels.inc:download
+msgid "Download"
+msgstr "Преузми (скидање)"
+
+#: program/localization/sr_CS/labels.inc:filename
+msgid "File name"
+msgstr "Име датотекеe"
+
+#: program/localization/sr_CS/labels.inc:filesize
+msgid "File size"
+msgstr "Величина датотеке"
+
+#: program/localization/sr_CS/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Додај у именик"
+
+#: program/localization/sr_CS/labels.inc:sun
+msgid "Sun"
+msgstr "Нед"
+
+#: program/localization/sr_CS/labels.inc:mon
+msgid "Mon"
+msgstr "Пон"
+
+#: program/localization/sr_CS/labels.inc:tue
+msgid "Tue"
+msgstr "Уто"
+
+#: program/localization/sr_CS/labels.inc:wed
+msgid "Wed"
+msgstr "Сре"
+
+#: program/localization/sr_CS/labels.inc:thu
+msgid "Thu"
+msgstr "Чет"
+
+#: program/localization/sr_CS/labels.inc:fri
+msgid "Fri"
+msgstr "Пет"
+
+#: program/localization/sr_CS/labels.inc:sat
+msgid "Sat"
+msgstr "Суб"
+
+#: program/localization/sr_CS/labels.inc:sunday
+msgid "Sunday"
+msgstr "Недеља"
+
+#: program/localization/sr_CS/labels.inc:monday
+msgid "Monday"
+msgstr "Понедељак"
+
+#: program/localization/sr_CS/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Уторак"
+
+#: program/localization/sr_CS/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Среда"
+
+#: program/localization/sr_CS/labels.inc:thursday
+msgid "Thursday"
+msgstr "Четвртак"
+
+#: program/localization/sr_CS/labels.inc:friday
+msgid "Friday"
+msgstr "Петак"
+
+#: program/localization/sr_CS/labels.inc:saturday
+msgid "Saturday"
+msgstr "Субота"
+
+#: program/localization/sr_CS/labels.inc:jan
+msgid "Jan"
+msgstr "Јан"
+
+#: program/localization/sr_CS/labels.inc:feb
+msgid "Feb"
+msgstr "Феб"
+
+#: program/localization/sr_CS/labels.inc:mar
+msgid "Mar"
+msgstr "Мар"
+
+#: program/localization/sr_CS/labels.inc:apr
+msgid "Apr"
+msgstr "Апр"
+
+#: program/localization/sr_CS/labels.inc:may
+#: program/localization/sr_CS/labels.inc:longmay
+msgid "May"
+msgstr "Мај"
+
+#: program/localization/sr_CS/labels.inc:jun
+msgid "Jun"
+msgstr "Јун"
+
+#: program/localization/sr_CS/labels.inc:jul
+msgid "Jul"
+msgstr "Јул"
+
+#: program/localization/sr_CS/labels.inc:aug
+msgid "Aug"
+msgstr "Авг"
+
+#: program/localization/sr_CS/labels.inc:sep
+msgid "Sep"
+msgstr "Сеп"
+
+#: program/localization/sr_CS/labels.inc:oct
+msgid "Oct"
+msgstr "Окт"
+
+#: program/localization/sr_CS/labels.inc:nov
+msgid "Nov"
+msgstr "Нов"
+
+#: program/localization/sr_CS/labels.inc:dec
+msgid "Dec"
+msgstr "Дец"
+
+#: program/localization/sr_CS/labels.inc:longjan
+msgid "January"
+msgstr "Јануар"
+
+#: program/localization/sr_CS/labels.inc:longfeb
+msgid "February"
+msgstr "Фебруар"
+
+#: program/localization/sr_CS/labels.inc:longmar
+msgid "March"
+msgstr "Март"
+
+#: program/localization/sr_CS/labels.inc:longapr
+msgid "April"
+msgstr "Април"
+
+#: program/localization/sr_CS/labels.inc:longjun
+msgid "June"
+msgstr "Јуни"
+
+#: program/localization/sr_CS/labels.inc:longjul
+msgid "July"
+msgstr "Јули"
+
+#: program/localization/sr_CS/labels.inc:longaug
+msgid "August"
+msgstr "Август"
+
+#: program/localization/sr_CS/labels.inc:longsep
+msgid "September"
+msgstr "Септембар"
+
+#: program/localization/sr_CS/labels.inc:longoct
+msgid "October"
+msgstr "Октобар"
+
+#: program/localization/sr_CS/labels.inc:longnov
+msgid "November"
+msgstr "Новембар"
+
+#: program/localization/sr_CS/labels.inc:longdec
+msgid "December"
+msgstr "Децембар"
+
+#: program/localization/sr_CS/labels.inc:today
+msgid "Today"
+msgstr "Данас"
+
+#: program/localization/sr_CS/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Провера нових порука"
+
+#: program/localization/sr_CS/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Нова порука"
+
+#: program/localization/sr_CS/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Одговори на поруку"
+
+#: program/localization/sr_CS/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Одговори пошиљаоцу и свим примаоцима"
+
+#: program/localization/sr_CS/labels.inc:replyall
+msgid "Reply all"
+msgstr "Одговори свима"
+
+#: program/localization/sr_CS/labels.inc:replylist
+msgid "Reply list"
+msgstr "Листа за одговоре"
+
+#: program/localization/sr_CS/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Проследи поруку"
+
+#: program/localization/sr_CS/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Избриши поруку"
+
+#: program/localization/sr_CS/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Пребаци поруку у канту"
+
+#: program/localization/sr_CS/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Одштампај поруку"
+
+#: program/localization/sr_CS/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Прикажи претходну поруку"
+
+#: program/localization/sr_CS/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "Прикажи претходни скуп порука"
+
+#: program/localization/sr_CS/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Прикажи прву поруку"
+
+#: program/localization/sr_CS/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "Прикажи први скуп порука"
+
+#: program/localization/sr_CS/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Прикажи следећу поруку"
+
+#: program/localization/sr_CS/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "Прикажи следећи скуп порука"
+
+#: program/localization/sr_CS/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Прикажи последњу поруку"
+
+#: program/localization/sr_CS/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "Прикажи последњи скуп порука"
+
+#: program/localization/sr_CS/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Повратак на листу порука"
+
+#: program/localization/sr_CS/labels.inc:viewsource
+msgid "Show source"
+msgstr "Прикажи поруку у изворном облику"
+
+#: program/localization/sr_CS/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Обележи поруке"
+
+#: program/localization/sr_CS/labels.inc:markread
+msgid "As read"
+msgstr "Као прочитано"
+
+#: program/localization/sr_CS/labels.inc:markunread
+msgid "As unread"
+msgstr "Као непрочитано"
+
+#: program/localization/sr_CS/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Као означено"
+
+#: program/localization/sr_CS/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Као неозначено"
+
+#: program/localization/sr_CS/labels.inc:messageactions
+msgid "messageactions"
+msgstr "Више поставки"
+
+#: program/localization/sr_CS/labels.inc:select
+msgid "Select"
+msgstr "Одабери"
+
+#: program/localization/sr_CS/labels.inc:all
+msgid "All"
+msgstr "Све"
+
+#: program/localization/sr_CS/labels.inc:none
+#: program/localization/sr_CS/labels.inc:nonesort
+msgid "None"
+msgstr "Ништа"
+
+#: program/localization/sr_CS/labels.inc:currpage
+msgid "Current page"
+msgstr "Тренутна страница"
+
+#: program/localization/sr_CS/labels.inc:unread
+msgid "Unread"
+msgstr "Непрочитане"
+
+#: program/localization/sr_CS/labels.inc:flagged
+msgid "Flagged"
+msgstr "Означено"
+
+#: program/localization/sr_CS/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Неодговорено"
+
+#: program/localization/sr_CS/labels.inc:deleted
+msgid "Deleted"
+msgstr "Обрисано"
+
+#: program/localization/sr_CS/labels.inc:invert
+msgid "Invert"
+msgstr "Уведи"
+
+#: program/localization/sr_CS/labels.inc:filter
+msgid "Filter"
+msgstr "Филтер"
+
+#: program/localization/sr_CS/labels.inc:list
+msgid "List"
+msgstr "Листа"
+
+#: program/localization/sr_CS/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Датум послато"
+
+#: program/localization/sr_CS/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Датум стигло"
+
+#: program/localization/sr_CS/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Поставке фасцикле"
+
+#: program/localization/sr_CS/labels.inc:compact
+msgid "Compact"
+msgstr "Компакција"
+
+#: program/localization/sr_CS/labels.inc:empty
+msgid "Empty"
+msgstr "Испразни"
+
+#: program/localization/sr_CS/labels.inc:quota
+msgid "Disk usage"
+msgstr "Квота"
+
+#: program/localization/sr_CS/labels.inc:unknown
+msgid "unknown"
+msgstr "непозната"
+
+#: program/localization/sr_CS/labels.inc:unlimited
+msgid "unlimited"
+msgstr "бесконачна"
+
+#: program/localization/sr_CS/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Брза претрага"
+
+#: program/localization/sr_CS/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Прикажи све поруке"
+
+#: program/localization/sr_CS/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Цела порука"
+
+#: program/localization/sr_CS/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Отвори у новом прозору"
+
+#: program/localization/sr_CS/labels.inc:compose
+msgid "Compose a message"
+msgstr "Нова порука"
+
+#: program/localization/sr_CS/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Модификуј као ново"
+
+#: program/localization/sr_CS/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Сачувај у Снимљене"
+
+#: program/localization/sr_CS/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Пошаљи поруку"
+
+#: program/localization/sr_CS/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Приложи датотеку"
+
+#: program/localization/sr_CS/labels.inc:charset
+msgid "Charset"
+msgstr "Скуп карактера"
+
+#: program/localization/sr_CS/labels.inc:editortype
+msgid "Editor type"
+msgstr "Врста едитора"
+
+#: program/localization/sr_CS/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Потврда о приспећу"
+
+#: program/localization/sr_CS/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Обавештење о статусу слања поруке"
+
+#: program/localization/sr_CS/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Модификуј псеудониме"
+
+#: program/localization/sr_CS/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Провера правописа"
+
+#: program/localization/sr_CS/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Повратак у режим писања"
+
+#: program/localization/sr_CS/labels.inc:revertto
+msgid "Revert to"
+msgstr "Врати се на"
+
+#: program/localization/sr_CS/labels.inc:attachments
+msgid "Attachments"
+msgstr "Прилози "
+
+#: program/localization/sr_CS/labels.inc:upload
+msgid "Upload"
+msgstr "Додај"
+
+#: program/localization/sr_CS/labels.inc:close
+msgid "Close"
+msgstr "Затвори"
+
+#: program/localization/sr_CS/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Опције поруке"
+
+#: program/localization/sr_CS/labels.inc:low
+msgid "Low"
+msgstr "Низак"
+
+#: program/localization/sr_CS/labels.inc:lowest
+msgid "Lowest"
+msgstr "Најнижи"
+
+#: program/localization/sr_CS/labels.inc:normal
+msgid "Normal"
+msgstr "Средњи"
+
+#: program/localization/sr_CS/labels.inc:high
+msgid "High"
+msgstr "Висок"
+
+#: program/localization/sr_CS/labels.inc:highest
+msgid "Highest"
+msgstr "Највиши"
+
+#: program/localization/sr_CS/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(без наслова)"
+
+#: program/localization/sr_CS/labels.inc:showimages
+msgid "Display images"
+msgstr "Прикажи слике"
+
+#: program/localization/sr_CS/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Увек покажи слике од $sender"
+
+#: program/localization/sr_CS/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/sr_CS/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Обичан текст"
+
+#: program/localization/sr_CS/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Послате поруке сачувај у"
+
+#: program/localization/sr_CS/labels.inc:dontsave
+msgid "don't save"
+msgstr "Не сачувај"
+
+#: program/localization/sr_CS/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Максимална величина податка је $size"
+
+#: program/localization/sr_CS/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Додај Cc"
+
+#: program/localization/sr_CS/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Додај Bcc"
+
+#: program/localization/sr_CS/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Додај Одговор-за"
+
+#: program/localization/sr_CS/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Пошиљалац ове поруке је замолио да буде"
+"обавештен када прочитате ову поруку. Да"
+"ли желите да обавестите пошиљаоца?"
+
+#: program/localization/sr_CS/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Обавештење о приспећу (прочитана порука)"
+
+#: program/localization/sr_CS/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Ово је обавештење о приспећу за вашу"
+"поруку"
+
+#: program/localization/sr_CS/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Пажња: Ово обавештење само потврђује да"
+"је порука приказана на рачунару"
+"примаоца. Не постоји гаранција да је"
+"прималац прочитао или разумео садржај"
+"поруке."
+
+#: program/localization/sr_CS/labels.inc:name
+msgid "Display Name"
+msgstr "Пуно име"
+
+#: program/localization/sr_CS/labels.inc:firstname
+msgid "First Name"
+msgstr "Име"
+
+#: program/localization/sr_CS/labels.inc:surname
+msgid "Last Name"
+msgstr "Презиме"
+
+#: program/localization/sr_CS/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Средње име"
+
+#: program/localization/sr_CS/labels.inc:nickname
+msgid "Nickname"
+msgstr "Надимак"
+
+#: program/localization/sr_CS/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Пословна титула"
+
+#: program/localization/sr_CS/labels.inc:department
+msgid "Department"
+msgstr "Оделење"
+
+#: program/localization/sr_CS/labels.inc:gender
+msgid "Gender"
+msgstr "Пол"
+
+#: program/localization/sr_CS/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Девојачко име"
+
+#: program/localization/sr_CS/labels.inc:email
+msgid "Email"
+msgstr "Имејл"
+
+#: program/localization/sr_CS/labels.inc:phone
+msgid "Phone"
+msgstr "Телефон"
+
+#: program/localization/sr_CS/labels.inc:address
+msgid "Address"
+msgstr "Адреса"
+
+#: program/localization/sr_CS/labels.inc:street
+msgid "Street"
+msgstr "Улица"
+
+#: program/localization/sr_CS/labels.inc:locality
+msgid "City"
+msgstr "Град"
+
+#: program/localization/sr_CS/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "Поштански број"
+
+#: program/localization/sr_CS/labels.inc:country
+msgid "Country"
+msgstr "Држава"
+
+#: program/localization/sr_CS/labels.inc:birthday
+msgid "Birthday"
+msgstr "Датум рођења"
+
+#: program/localization/sr_CS/labels.inc:website
+msgid "Website"
+msgstr "Вебсајт"
+
+#: program/localization/sr_CS/labels.inc:instantmessenger
+msgid "IM"
+msgstr "ИМ"
+
+#: program/localization/sr_CS/labels.inc:male
+msgid "male"
+msgstr "мушко"
+
+#: program/localization/sr_CS/labels.inc:female
+msgid "female"
+msgstr "женско"
+
+#: program/localization/sr_CS/labels.inc:manager
+msgid "Manager"
+msgstr "Менаџер"
+
+#: program/localization/sr_CS/labels.inc:assistant
+#: program/localization/sr_CS/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Асистент"
+
+#: program/localization/sr_CS/labels.inc:typehome
+msgid "Home"
+msgstr "Кућа"
+
+#: program/localization/sr_CS/labels.inc:typework
+msgid "Work"
+msgstr "Посао"
+
+#: program/localization/sr_CS/labels.inc:typeother
+msgid "Other"
+msgstr "Остало"
+
+#: program/localization/sr_CS/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Мобилни Телефон"
+
+#: program/localization/sr_CS/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Кућни факс"
+
+#: program/localization/sr_CS/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "Пословни факс"
+
+#: program/localization/sr_CS/labels.inc:typecar
+msgid "Car"
+msgstr "Ауто"
+
+#: program/localization/sr_CS/labels.inc:typepager
+msgid "Pager"
+msgstr "Пејџер"
+
+#: program/localization/sr_CS/labels.inc:typevideo
+msgid "Video"
+msgstr "Видео"
+
+#: program/localization/sr_CS/labels.inc:addfield
+msgid "Add field..."
+msgstr "Додај поље"
+
+#: program/localization/sr_CS/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Додај нови контакт"
+
+#: program/localization/sr_CS/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Измени контакт"
+
+#: program/localization/sr_CS/labels.inc:contacts
+msgid "Contacts"
+msgstr "Конакти"
+
+#: program/localization/sr_CS/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Својства контакта"
+
+#: program/localization/sr_CS/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Личне информације"
+
+#: program/localization/sr_CS/labels.inc:edit
+msgid "Edit"
+msgstr "Измени"
+
+#: program/localization/sr_CS/labels.inc:cancel
+msgid "Cancel"
+msgstr "Откажи"
+
+#: program/localization/sr_CS/labels.inc:save
+msgid "Save"
+msgstr "Сачувај"
+
+#: program/localization/sr_CS/labels.inc:delete
+msgid "Delete"
+msgstr "Обриши"
+
+#: program/localization/sr_CS/labels.inc:rename
+msgid "Rename"
+msgstr "Преименуј"
+
+#: program/localization/sr_CS/labels.inc:addphoto
+msgid "Add"
+msgstr "Додај"
+
+#: program/localization/sr_CS/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Измени"
+
+#: program/localization/sr_CS/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Додај нови контакт"
+
+#: program/localization/sr_CS/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Обриши одабране контакте"
+
+#: program/localization/sr_CS/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Напиши поруку..."
+
+#: program/localization/sr_CS/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Контакти $from до $to од укупно $count"
+
+#: program/localization/sr_CS/labels.inc:print
+msgid "Print"
+msgstr "Штампај"
+
+#: program/localization/sr_CS/labels.inc:export
+msgid "Export"
+msgstr "Извези"
+
+#: program/localization/sr_CS/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Извези конакте у vCard формату"
+
+#: program/localization/sr_CS/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Креирај нову контакт групу"
+
+#: program/localization/sr_CS/labels.inc:groupactions
+msgid "groupactions"
+msgstr "Радње за контакт групу"
+
+#: program/localization/sr_CS/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Прикажи претходну страну"
+
+#: program/localization/sr_CS/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Прикажи први скуп"
+
+#: program/localization/sr_CS/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Прикажи следећу страну"
+
+#: program/localization/sr_CS/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Прикажи последњи скуп"
+
+#: program/localization/sr_CS/labels.inc:group
+msgid "Group"
+msgstr "Група"
+
+#: program/localization/sr_CS/labels.inc:groups
+msgid "Groups"
+msgstr "Групе"
+
+#: program/localization/sr_CS/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Личне адресе"
+
+#: program/localization/sr_CS/labels.inc:import
+msgid "Import"
+msgstr "Увези"
+
+#: program/localization/sr_CS/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Увези контакте"
+
+#: program/localization/sr_CS/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Увези из датотеке:"
+
+#: program/localization/sr_CS/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Измени цели адресар"
+
+#: program/localization/sr_CS/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Можете да сачувате контакте већ"
+"постојећег адресара.<br/>We currently support importing"
+"addresses from the <a href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>"
+"data format."
+
+#: program/localization/sr_CS/labels.inc:done
+msgid "Done"
+msgstr "Готово"
+
+#: program/localization/sr_CS/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Подешавања за"
+
+#: program/localization/sr_CS/labels.inc:preferences
+msgid "Preferences"
+msgstr "Подешавања"
+
+#: program/localization/sr_CS/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Општа подешавања"
+
+#: program/localization/sr_CS/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Измена општих подешавања"
+
+#: program/localization/sr_CS/labels.inc:identities
+msgid "Identities"
+msgstr "Идентитети"
+
+#: program/localization/sr_CS/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Подеси идентитете за овај налог"
+
+#: program/localization/sr_CS/labels.inc:newidentity
+msgid "New identity"
+msgstr "Додај идентитет"
+
+#: program/localization/sr_CS/labels.inc:newitem
+msgid "New item"
+msgstr "Нова ставка"
+
+#: program/localization/sr_CS/labels.inc:edititem
+msgid "Edit item"
+msgstr "Измена ставке"
+
+#: program/localization/sr_CS/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Предност дај ХТМЛ формату"
+
+#: program/localization/sr_CS/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "ХТМЛ формат поруке"
+
+#: program/localization/sr_CS/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Форматирани датум"
+
+#: program/localization/sr_CS/labels.inc:setdefault
+msgid "Set default"
+msgstr "Подеси подразумевано"
+
+#: program/localization/sr_CS/labels.inc:autodetect
+msgid "Auto"
+msgstr "Аутоматски"
+
+#: program/localization/sr_CS/labels.inc:language
+msgid "Language"
+msgstr "Језик"
+
+#: program/localization/sr_CS/labels.inc:timezone
+msgid "Time zone"
+msgstr "Временска зона"
+
+#: program/localization/sr_CS/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Редова по страни"
+
+#: program/localization/sr_CS/labels.inc:signature
+msgid "Signature"
+msgstr "Потпис"
+
+#: program/localization/sr_CS/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Летње померање времена"
+
+#: program/localization/sr_CS/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Састави HTML поруке"
+
+#: program/localization/sr_CS/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "само при одговору на HTML поруку"
+
+#: program/localization/sr_CS/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML потпис"
+
+#: program/localization/sr_CS/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Прикажи панел за преглед"
+
+#: program/localization/sr_CS/labels.inc:skin
+msgid "Interface skin"
+msgstr "Интерфејс"
+
+#: program/localization/sr_CS/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Избриши смеће при логовању"
+
+#: program/localization/sr_CS/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Компактно сандуче при логовању"
+
+#: program/localization/sr_CS/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Кориснички интерфејс"
+
+#: program/localization/sr_CS/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Поставке сервера"
+
+#: program/localization/sr_CS/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Преглед сандучета"
+
+#: program/localization/sr_CS/labels.inc:askuser
+msgid "ask me"
+msgstr "питај ме"
+
+#: program/localization/sr_CS/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Аутоматски чувај у Снимљене"
+
+#: program/localization/sr_CS/labels.inc:never
+msgid "never"
+msgstr "никад"
+
+#: program/localization/sr_CS/labels.inc:immediately
+msgid "immediately"
+msgstr "одмах"
+
+#: program/localization/sr_CS/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "прикажи поруке"
+
+#: program/localization/sr_CS/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "састави поруке"
+
+#: program/localization/sr_CS/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "имена прилога"
+
+#: program/localization/sr_CS/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Главне поставке"
+
+#: program/localization/sr_CS/labels.inc:section
+msgid "Section"
+msgstr "Секција"
+
+#: program/localization/sr_CS/labels.inc:newmessage
+msgid "New Message"
+msgstr "Нова порука"
+
+#: program/localization/sr_CS/labels.inc:listoptions
+msgid "List Options"
+msgstr "Опције листе"
+
+#: program/localization/sr_CS/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Опције потписа"
+
+#: program/localization/sr_CS/labels.inc:whenreplying
+msgid "When replying"
+msgstr "При одговору"
+
+#: program/localization/sr_CS/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "Почни нову поруку преко оригинала"
+
+#: program/localization/sr_CS/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "Почни нову поруку испод оригинала"
+
+#: program/localization/sr_CS/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "При одговору одстрани оригинални потпис"
+"из поруке"
+
+#: program/localization/sr_CS/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Аутоматски додај потпис"
+
+#: program/localization/sr_CS/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "само нове поруке"
+
+#: program/localization/sr_CS/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "само одговори и прослеђивања"
+
+#: program/localization/sr_CS/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "При одговору или прослеђивању додај"
+"потпис"
+
+#: program/localization/sr_CS/labels.inc:belowquote
+msgid "below the quote"
+msgstr "испод квоте"
+
+#: program/localization/sr_CS/labels.inc:abovequote
+msgid "above the quote"
+msgstr "изнад квоте"
+
+#: program/localization/sr_CS/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Убаци потпис"
+
+#: program/localization/sr_CS/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Прегледану поруку означи као прочитану"
+
+#: program/localization/sr_CS/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "након $n секунди"
+
+#: program/localization/sr_CS/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Увек затражи повратну скрипту"
+
+#: program/localization/sr_CS/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Увек затражи обавештење о статусу слања"
+"поруке"
+
+#: program/localization/sr_CS/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Сачувај одговоре у фасциклу поруке на"
+"коју се одговара"
+
+#: program/localization/sr_CS/labels.inc:folder
+msgid "Folder"
+msgstr "Фасцикла"
+
+#: program/localization/sr_CS/labels.inc:foldername
+msgid "Folder name"
+msgstr "Име фасцикле"
+
+#: program/localization/sr_CS/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Потписана"
+
+#: program/localization/sr_CS/labels.inc:messagecount
+msgid "Messages"
+msgstr "Поруке"
+
+#: program/localization/sr_CS/labels.inc:create
+msgid "Create"
+msgstr "Креирај"
+
+#: program/localization/sr_CS/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Креирај нову фасциклу"
+
+#: program/localization/sr_CS/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Подеси фасциклу"
+
+#: program/localization/sr_CS/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Посебне фасцикле"
+
+#: program/localization/sr_CS/labels.inc:properties
+msgid "Properties"
+msgstr "Својства"
+
+#: program/localization/sr_CS/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Својства фасцикле"
+
+#: program/localization/sr_CS/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Главна фасцикла"
+
+#: program/localization/sr_CS/labels.inc:location
+msgid "Location"
+msgstr "Локација"
+
+#: program/localization/sr_CS/labels.inc:info
+msgid "Information"
+msgstr "Информација"
+
+#: program/localization/sr_CS/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Кликните за приказ величине фасцикле"
+
+#: program/localization/sr_CS/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Кликните да бисте променили опис"
+
+#: program/localization/sr_CS/labels.inc:sortby
+msgid "Sort by"
+msgstr "Сортирај по"
+
+#: program/localization/sr_CS/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Сортирај растуће"
+
+#: program/localization/sr_CS/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Сортирај опадајуће"
+
+#: program/localization/sr_CS/labels.inc:B
+msgid "B"
+msgstr "Б"
+
+#: program/localization/sr_CS/labels.inc:KB
+msgid "KB"
+msgstr "КБ"
+
+#: program/localization/sr_CS/labels.inc:MB
+msgid "MB"
+msgstr "МБ"
+
+#: program/localization/sr_CS/labels.inc:GB
+msgid "GB"
+msgstr "ГБ"
+
+#: program/localization/sr_CS/labels.inc:unicode
+msgid "Unicode"
+msgstr "Универзални код"
+
+#: program/localization/sr_CS/labels.inc:english
+msgid "English"
+msgstr "Енглески"
+
+#: program/localization/sr_CS/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Западна Европа"
+
+#: program/localization/sr_CS/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Источна Европа"
+
+#: program/localization/sr_CS/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Јужно-источна Европа"
+
+#: program/localization/sr_CS/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Ћирилица"
+
+#: program/localization/sr_CS/labels.inc:arabic
+msgid "Arabic"
+msgstr "Арапски"
+
+#: program/localization/sr_CS/labels.inc:greek
+msgid "Greek"
+msgstr "Грчки"
+
+#: program/localization/sr_CS/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Хебрејски"
+
+#: program/localization/sr_CS/labels.inc:turkish
+msgid "Turkish"
+msgstr "Турски"
+
+#: program/localization/sr_CS/labels.inc:nordic
+msgid "Nordic"
+msgstr "Нордички"
+
+#: program/localization/sr_CS/labels.inc:thai
+msgid "Thai"
+msgstr "Тајландски"
+
+#: program/localization/sr_CS/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Вијетнамски"
+
+#: program/localization/sr_CS/labels.inc:japanese
+msgid "Japanese"
+msgstr "Јапански"
+
+#: program/localization/sr_CS/labels.inc:korean
+msgid "Korean"
+msgstr "Кореански"
+
+#: program/localization/sr_CS/labels.inc:chinese
+msgid "Chinese"
+msgstr "Кинески"

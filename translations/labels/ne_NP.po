@@ -1,0 +1,643 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ne_NP/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ne_NP\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ne_NP/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "$product मा स्वागत छ"
+
+#: program/localization/ne_NP/labels.inc:username
+msgid "Username"
+msgstr "युसरनेम"
+
+#: program/localization/ne_NP/labels.inc:password
+msgid "Password"
+msgstr "पासवर्ड"
+
+#: program/localization/ne_NP/labels.inc:server
+msgid "Server"
+msgstr "सर्भर"
+
+#: program/localization/ne_NP/labels.inc:login
+msgid "Login"
+msgstr "लगईन"
+
+#: program/localization/ne_NP/labels.inc:logout
+msgid "Logout"
+msgstr "लगआउट"
+
+#: program/localization/ne_NP/labels.inc:mail
+msgid "Mail"
+msgstr "ई-मेल"
+
+#: program/localization/ne_NP/labels.inc:settings
+msgid "Settings"
+msgstr "व्यक्तिगत रोजाईहरु"
+
+#: program/localization/ne_NP/labels.inc:addressbook
+msgid "Address Book"
+msgstr "ठेगाना किताब"
+
+#: program/localization/ne_NP/labels.inc:inbox
+msgid "Inbox"
+msgstr "इनबक्स"
+
+#: program/localization/ne_NP/labels.inc:drafts
+msgid "Drafts"
+msgstr "ड्राफ्ट"
+
+#: program/localization/ne_NP/labels.inc:sent
+msgid "Sent"
+msgstr "पठईएका मेलहरु"
+
+#: program/localization/ne_NP/labels.inc:trash
+msgid "Trash"
+msgstr "रद्दी टोकरी"
+
+#: program/localization/ne_NP/labels.inc:junk
+msgid "Junk"
+msgstr "स्पाम"
+
+#: program/localization/ne_NP/labels.inc:subject
+msgid "Subject"
+msgstr "विषय"
+
+#: program/localization/ne_NP/labels.inc:from
+msgid "From"
+msgstr "प्रेषक"
+
+#: program/localization/ne_NP/labels.inc:to
+msgid "To"
+msgstr "प्रापक"
+
+#: program/localization/ne_NP/labels.inc:cc
+msgid "Cc"
+msgstr "कार्बन कपि"
+
+#: program/localization/ne_NP/labels.inc:bcc
+msgid "Bcc"
+msgstr "अंधो कार्बन कपि"
+
+#: program/localization/ne_NP/labels.inc:replyto
+msgid "Reply-To"
+msgstr "पुन: जवाब"
+
+#: program/localization/ne_NP/labels.inc:date
+msgid "Date"
+msgstr "तारिख"
+
+#: program/localization/ne_NP/labels.inc:size
+msgid "Size"
+msgstr "नाप"
+
+#: program/localization/ne_NP/labels.inc:priority
+msgid "Priority"
+msgstr "मेलको प्राथमिकता"
+
+#: program/localization/ne_NP/labels.inc:organization
+msgid "Company"
+msgstr "संस्था"
+
+#: program/localization/ne_NP/labels.inc:reply-to
+msgid "reply-to"
+msgstr "पुन: जवाब"
+
+#: program/localization/ne_NP/labels.inc:mailboxlist
+#: program/localization/ne_NP/labels.inc:folders
+msgid "Folders"
+msgstr "फोल्डरहरु"
+
+#: program/localization/ne_NP/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "मेलहरु $from बाट $to सम्म, $count"
+"मध्यबाट"
+
+#: program/localization/ne_NP/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "$nr नम्बर मेल, $count मध्यबाट"
+
+#: program/localization/ne_NP/labels.inc:moveto
+msgid "Move to..."
+msgstr "सार्नुहोस..."
+
+#: program/localization/ne_NP/labels.inc:download
+msgid "Download"
+msgstr "डाऊनलोड"
+
+#: program/localization/ne_NP/labels.inc:filename
+msgid "File name"
+msgstr "फाईलको नाम"
+
+#: program/localization/ne_NP/labels.inc:filesize
+msgid "File size"
+msgstr "फाईलको नाप"
+
+#: program/localization/ne_NP/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "ऐच-टी-ऐम-ऐल(HTML) देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "ऐच-टी-ऐम-ऐल (HTML) रूपका मेल"
+
+#: program/localization/ne_NP/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "सुन्दर तारिख"
+
+#: program/localization/ne_NP/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "ठेगाना पुस्तिकामा"
+"जोड्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:sun
+msgid "Sun"
+msgstr "आइत"
+
+#: program/localization/ne_NP/labels.inc:mon
+msgid "Mon"
+msgstr "सोम"
+
+#: program/localization/ne_NP/labels.inc:tue
+msgid "Tue"
+msgstr "मंगल"
+
+#: program/localization/ne_NP/labels.inc:wed
+msgid "Wed"
+msgstr "बुध"
+
+#: program/localization/ne_NP/labels.inc:thu
+msgid "Thu"
+msgstr "विहि"
+
+#: program/localization/ne_NP/labels.inc:fri
+msgid "Fri"
+msgstr "शुक"
+
+#: program/localization/ne_NP/labels.inc:sat
+msgid "Sat"
+msgstr "शनि"
+
+#: program/localization/ne_NP/labels.inc:sunday
+msgid "Sunday"
+msgstr "आइतवार"
+
+#: program/localization/ne_NP/labels.inc:monday
+msgid "Monday"
+msgstr "सोमवार"
+
+#: program/localization/ne_NP/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "मंगलवार"
+
+#: program/localization/ne_NP/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "बुधवार"
+
+#: program/localization/ne_NP/labels.inc:thursday
+msgid "Thursday"
+msgstr "विहिवार"
+
+#: program/localization/ne_NP/labels.inc:friday
+msgid "Friday"
+msgstr "शुक्रवार"
+
+#: program/localization/ne_NP/labels.inc:saturday
+msgid "Saturday"
+msgstr "शनिवार"
+
+#: program/localization/ne_NP/labels.inc:today
+msgid "Today"
+msgstr "आज"
+
+#: program/localization/ne_NP/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "नया मेल खोज्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "नया मेल लेखनुहोस"
+
+#: program/localization/ne_NP/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "मेलको जवाफ दिनुहोस"
+
+#: program/localization/ne_NP/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "प्रेषक लगायत सबैलाई जवाफ"
+"दिनुहोस"
+
+#: program/localization/ne_NP/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "मेल अगाडि पठाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "रद्दी टोकरीमा सार्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:printmessage
+msgid "Print this message"
+msgstr "मेल छाप्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "पछाडिको मेल देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "पछाडिको मेलका सेटहरु"
+"देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "पहलो मेल देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "पहलो मेलका सेटहरु"
+"देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "अगाडिको मेल देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "अगाडिको मेलका सेटहरु"
+"देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "अन्तिम मेल देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "अन्तिम मेलका सेटहरु"
+"देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "मेल सूची देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:viewsource
+msgid "Show source"
+msgstr "श्रोत देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:select
+msgid "Select"
+msgstr "चुन्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:all
+msgid "All"
+msgstr "सबै |"
+
+#: program/localization/ne_NP/labels.inc:none
+msgid "None"
+msgstr "हैन"
+
+#: program/localization/ne_NP/labels.inc:unread
+msgid "Unread"
+msgstr "नपढिएका |"
+
+#: program/localization/ne_NP/labels.inc:compact
+msgid "Compact"
+msgstr "छोटो गर्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:empty
+msgid "Empty"
+msgstr "खाली गर्ने"
+
+#: program/localization/ne_NP/labels.inc:purge
+msgid "purge"
+msgstr "नाम निशाना मेटाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:quota
+msgid "Disk usage"
+msgstr "डिस्कको उपभोग"
+
+#: program/localization/ne_NP/labels.inc:unknown
+msgid "unknown"
+msgstr "अज्ञात"
+
+#: program/localization/ne_NP/labels.inc:unlimited
+msgid "unlimited"
+msgstr "अनगिन्ति"
+
+#: program/localization/ne_NP/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "स्फुर्ति खोज"
+
+#: program/localization/ne_NP/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "पन: खोज"
+
+#: program/localization/ne_NP/labels.inc:compose
+msgid "Compose a message"
+msgstr "मेल लखन गर्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:sendmessage
+msgid "Send now"
+msgstr "तुरुन्तै मेल पठाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "ड्राफ्ट जोगाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "फाइल टाँस्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:charset
+msgid "Charset"
+msgstr "क्यारेक्टर सेट"
+
+#: program/localization/ne_NP/labels.inc:editortype
+msgid "Editor type"
+msgstr "सम्पादकको प्रकार"
+
+#: program/localization/ne_NP/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "फिर्ति रसीद"
+
+#: program/localization/ne_NP/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "हिज्जे जाँच"
+
+#: program/localization/ne_NP/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "पुन: सम्पादन गर्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:revertto
+msgid "Revert to"
+msgstr "पहिलेको स्थितीमा जानुहोस"
+
+#: program/localization/ne_NP/labels.inc:attachments
+msgid "Attachments"
+msgstr "टाँसिएका फाईलहरु"
+
+#: program/localization/ne_NP/labels.inc:upload
+msgid "Upload"
+msgstr "अपलोड"
+
+#: program/localization/ne_NP/labels.inc:close
+msgid "Close"
+msgstr "बन्द"
+
+#: program/localization/ne_NP/labels.inc:low
+msgid "Low"
+msgstr "कम"
+
+#: program/localization/ne_NP/labels.inc:lowest
+msgid "Lowest"
+msgstr "सबै भन्दा कम"
+
+#: program/localization/ne_NP/labels.inc:normal
+msgid "Normal"
+msgstr "साधारण"
+
+#: program/localization/ne_NP/labels.inc:high
+msgid "High"
+msgstr "उच्च"
+
+#: program/localization/ne_NP/labels.inc:highest
+msgid "Highest"
+msgstr "उच्चतम"
+
+#: program/localization/ne_NP/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(बिना विषयको)"
+
+#: program/localization/ne_NP/labels.inc:showimages
+msgid "Display images"
+msgstr "चित्र देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "ऐच-टी-ऐम-एल (HTML)"
+
+#: program/localization/ne_NP/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "सादा अक्षर"
+
+#: program/localization/ne_NP/labels.inc:name
+msgid "Display Name"
+msgstr "देखाउने नाम"
+
+#: program/localization/ne_NP/labels.inc:firstname
+msgid "First Name"
+msgstr "पहिलो नाम"
+
+#: program/localization/ne_NP/labels.inc:surname
+msgid "Last Name"
+msgstr "थर"
+
+#: program/localization/ne_NP/labels.inc:email
+msgid "Email"
+msgstr "ई-मेल"
+
+#: program/localization/ne_NP/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "नया सम्पर्क जोड्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "सम्पर्क सच्याउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:edit
+msgid "Edit"
+msgstr "सच्याउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:cancel
+msgid "Cancel"
+msgstr "खारेज गर्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:save
+msgid "Save"
+msgstr "जोगाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:delete
+msgid "Delete"
+msgstr "मेटाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "नया सम्पर्क कार्ड बनाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "छानिएका सम्पर्कहरु"
+"मेटाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "मेल लेखी पठाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "सम्पर्कहरु $from बाट $to सम्म, $count"
+"मध्यबाट"
+
+#: program/localization/ne_NP/labels.inc:print
+msgid "Print"
+msgstr "छाप्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:export
+msgid "Export"
+msgstr "ऐक्स्पोर्ट गर्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "पहिलेको सेट देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:firstpage
+msgid "Show first page"
+msgstr "पहिलो सेट देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:nextpage
+msgid "Show next page"
+msgstr "अर्को सेट देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:lastpage
+msgid "Show last page"
+msgstr "अन्तिम सेट देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:groups
+msgid "Groups"
+msgstr "समूहहरु"
+
+#: program/localization/ne_NP/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "व्यक्तिगत ठेगानाहरु"
+
+#: program/localization/ne_NP/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "तय"
+
+#: program/localization/ne_NP/labels.inc:preferences
+msgid "Preferences"
+msgstr "रोजाइहरु"
+
+#: program/localization/ne_NP/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "यूसरका रोजाइहरु"
+
+#: program/localization/ne_NP/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "यूसरका रोजाइहर सम्पादन"
+"गर्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:identities
+msgid "Identities"
+msgstr "पहिचानहरु"
+
+#: program/localization/ne_NP/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "यो खाताको पहिचानहरको"
+"व्यवस्था गर्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:newidentity
+msgid "New identity"
+msgstr "नया पहिचान"
+
+#: program/localization/ne_NP/labels.inc:newitem
+msgid "New item"
+msgstr "नया प्रकार"
+
+#: program/localization/ne_NP/labels.inc:edititem
+msgid "Edit item"
+msgstr "प्रकार सम्पादन गर्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:setdefault
+msgid "Set default"
+msgstr "तय गर्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:language
+msgid "Language"
+msgstr "भाषा"
+
+#: program/localization/ne_NP/labels.inc:timezone
+msgid "Time zone"
+msgstr "समय क्षेत्र"
+
+#: program/localization/ne_NP/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "हरेक पन्नामा यति"
+
+#: program/localization/ne_NP/labels.inc:signature
+msgid "Signature"
+msgstr "हस्ताक्षर"
+
+#: program/localization/ne_NP/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "प्रकाश बचाव"
+
+#: program/localization/ne_NP/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "ऐच-टी-ऐम-एल (HTML) मेल लखन"
+"गर्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "ऐच-टी-ऐम-एल (HTML) हस्ताक्षर"
+
+#: program/localization/ne_NP/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "पूर्व दृष्य देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "स्वत ड्राफ्ट जोगाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:never
+msgid "never"
+msgstr "काहिलै नहुने"
+
+#: program/localization/ne_NP/labels.inc:folder
+msgid "Folder"
+msgstr "फोल्डर"
+
+#: program/localization/ne_NP/labels.inc:foldername
+msgid "Folder name"
+msgstr "फोल्डरको नाम"
+
+#: program/localization/ne_NP/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "सबस्क्राईब गरियो"
+
+#: program/localization/ne_NP/labels.inc:create
+msgid "Create"
+msgstr "बनाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "नया फोलडर बनाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "फोलडर व्यवस्थित गर्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:sortby
+msgid "Sort by"
+msgstr "यसरी तय गर्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "पहिलो देखि अन्तिम सम्म तय"
+"गर्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "अन्तिम देखि पहिलो सम्म तय"
+"गर्नुहोस"

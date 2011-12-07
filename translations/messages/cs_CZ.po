@@ -1,0 +1,585 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/cs_CZ/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: cs_CZ\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/cs_CZ/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Přihlášení selhalo"
+
+#: program/localization/cs_CZ/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Váš prohlížeč nepodporuje cookies, které jsou pro přihlášení"
+"nezbytné"
+
+#: program/localization/cs_CZ/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Vaše přihlášení je neplatné nebo vypršelo"
+
+#: program/localization/cs_CZ/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Připojení na IMAP server selhalo"
+
+#: program/localization/cs_CZ/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Chyba serveru!"
+
+#: program/localization/cs_CZ/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Chyba serveru: $msg"
+
+#: program/localization/cs_CZ/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Chyba v databázi!"
+
+#: program/localization/cs_CZ/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Příkaz nelze provést, složka je určena jen ke čtení."
+
+#: program/localization/cs_CZ/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Příkaz nelze provést, nemáte oprávnění."
+
+#: program/localization/cs_CZ/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Nesprávný požadavek. Data nebyla uložena."
+
+#: program/localization/cs_CZ/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Ve schránce nebyla nalezena žádná zpráva"
+
+#: program/localization/cs_CZ/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Byli jste úspěšně odhlášeni. Nashledanou!"
+
+#: program/localization/cs_CZ/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Schránka je prázdná"
+
+#: program/localization/cs_CZ/messages.inc:loading
+msgid "Loading..."
+msgstr "Načítám..."
+
+#: program/localization/cs_CZ/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Nahrávám soubor..."
+
+#: program/localization/cs_CZ/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Nahrávám soubory..."
+
+#: program/localization/cs_CZ/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Načítám data..."
+
+#: program/localization/cs_CZ/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Kontroluji nové zprávy..."
+
+#: program/localization/cs_CZ/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Odesílám zprávu..."
+
+#: program/localization/cs_CZ/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Zpráva byla odeslána"
+
+#: program/localization/cs_CZ/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Ukládám zprávu..."
+
+#: program/localization/cs_CZ/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Zpráva uložena do Rozepsané"
+
+#: program/localization/cs_CZ/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Uloženo"
+
+#: program/localization/cs_CZ/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Kontakt byl úspěšně přidán do adresáře"
+
+#: program/localization/cs_CZ/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Kontakt se zadanou e-mailovou adresou již existuje"
+
+#: program/localization/cs_CZ/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Kontakt se stejným jménem již existuje"
+
+#: program/localization/cs_CZ/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Z bezpečnostních důvodů byly zablokovány obrázky ve zprávě."
+
+#: program/localization/cs_CZ/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Tato zpráva je zašifrovaná a nelze ji zobrazit."
+
+#: program/localization/cs_CZ/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Kontakty nebyly nalezeny"
+
+#: program/localization/cs_CZ/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Požadovaný kontakt nebyl nalezen."
+
+#: program/localization/cs_CZ/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Vyplňte některou z položek"
+
+#: program/localization/cs_CZ/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Odesílání zprávy selhalo"
+
+#: program/localization/cs_CZ/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Prosím počkejte $sec sekund před odesláním zprávy"
+
+#: program/localization/cs_CZ/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Nastala chyba při ukládání odeslané zprávy"
+
+#: program/localization/cs_CZ/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Vyskytla se chyba při ukládání"
+
+#: program/localization/cs_CZ/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Nemohu přesunout zprávu"
+
+#: program/localization/cs_CZ/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Nemohu zkopírovat zprávu"
+
+#: program/localization/cs_CZ/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Nemohu smazat zprávu"
+
+#: program/localization/cs_CZ/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Zprávu nelze označit"
+
+#: program/localization/cs_CZ/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Opravdu chcete smazat označené kontakty?"
+
+#: program/localization/cs_CZ/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Opravdu chcete smazat skupinu?"
+
+#: program/localization/cs_CZ/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Opravdu chcete smazat označené zprávy?"
+
+#: program/localization/cs_CZ/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Chcete opravdu smazat tento adresář?"
+
+#: program/localization/cs_CZ/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Opravdu chcete smazat všechny zprávy v této složce?"
+
+#: program/localization/cs_CZ/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Mažu kontakty..."
+
+#: program/localization/cs_CZ/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Mažu skupinu..."
+
+#: program/localization/cs_CZ/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Odstraňuji složku..."
+
+#: program/localization/cs_CZ/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Přesouvám složku..."
+
+#: program/localization/cs_CZ/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Připojuji složku..."
+
+#: program/localization/cs_CZ/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Odpojuji složku..."
+
+#: program/localization/cs_CZ/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Formulář nebyl korektně vyplněn"
+
+#: program/localization/cs_CZ/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Zadejte, prosím, platnou e-mailovou adresu"
+
+#: program/localization/cs_CZ/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Zadejte, prosím, jméno"
+
+#: program/localization/cs_CZ/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Zadejte, prosím, velikost stránky"
+
+#: program/localization/cs_CZ/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Zadejte e-mailovou adresu odesílatele"
+
+#: program/localization/cs_CZ/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Zadejte, prosím, alespoň jednoho příjemce"
+
+#: program/localization/cs_CZ/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Předmět nebyl vyplňen. Přejete si jej zadat nyní?"
+
+#: program/localization/cs_CZ/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Opravdu chtete odeslat prázdnou zprávu?"
+
+#: program/localization/cs_CZ/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Zpráva nebyla odeslána. Přejete si zprávu zahodit?"
+
+#: program/localization/cs_CZ/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Zvolte, prosím, LDAP server k hledání"
+
+#: program/localization/cs_CZ/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Zadejte, prosím, jméno nebo e-mail kontaktu"
+
+#: program/localization/cs_CZ/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Ještě nebyly nahrány všechny přílohy. Počkejte prosím nebo"
+"nahrávání zrušte."
+
+#: program/localization/cs_CZ/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "Nalezeno $nr zpráv"
+
+#: program/localization/cs_CZ/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "Nalezeno $nr kontaktů"
+
+#: program/localization/cs_CZ/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Nenalezena žádná zpráva"
+
+#: program/localization/cs_CZ/messages.inc:searching
+msgid "Searching..."
+msgstr "Vyhledávám..."
+
+#: program/localization/cs_CZ/messages.inc:checking
+msgid "Checking..."
+msgstr "Kontroluji..."
+
+#: program/localization/cs_CZ/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Nebyly nalezeny žádné chyby"
+
+#: program/localization/cs_CZ/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Složka byla úspěšně vymazána"
+
+#: program/localization/cs_CZ/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Složka byla úspěšně připojena"
+
+#: program/localization/cs_CZ/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Slažka byla úspěšně odpojena"
+
+#: program/localization/cs_CZ/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Složka byla úspěšně vyprázdněna"
+
+#: program/localization/cs_CZ/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Složka byla úspěšně zkomprimována"
+
+#: program/localization/cs_CZ/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Úspěšně smazáno"
+
+#: program/localization/cs_CZ/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Odstraňuji formátování ze zprávy..."
+
+#: program/localization/cs_CZ/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Nemohu načíst zprávu ze serveru"
+
+#: program/localization/cs_CZ/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Nahrávání souboru selhalo"
+
+#: program/localization/cs_CZ/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Soubor přesáhl maximální velikost $size"
+
+#: program/localization/cs_CZ/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Úspěšně zkopírováno $nr adres"
+
+#: program/localization/cs_CZ/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Nemohu zkopírovat žádnou adresu"
+
+#: program/localization/cs_CZ/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Tento zdroj adres je pouze pro čtení"
+
+#: program/localization/cs_CZ/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Nemohu uložit adresu kontaktu"
+
+#: program/localization/cs_CZ/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Přesouvám zprávu..."
+
+#: program/localization/cs_CZ/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Kopíruji zprávu..."
+
+#: program/localization/cs_CZ/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Kopíruji kontakty..."
+
+#: program/localization/cs_CZ/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Odstraňuji zprávu..."
+
+#: program/localization/cs_CZ/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Označuji zprávu..."
+
+#: program/localization/cs_CZ/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Přidávám kontakty do skupiny..."
+
+#: program/localization/cs_CZ/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Odstraňuji kontakty ze skupiny..."
+
+#: program/localization/cs_CZ/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Potvrzení o přřijetí zprávy odesláno"
+
+#: program/localization/cs_CZ/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Potvrzení o přijetí zprávy nebylo možné odeslat"
+
+#: program/localization/cs_CZ/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Alespoň jedna identita musí být ponechána. Identitu nelze odstranit."
+
+#: program/localization/cs_CZ/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Název složky obsahuje zakázaný znak"
+
+#: program/localization/cs_CZ/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Prosím vyberte soubor k nahrání"
+
+#: program/localization/cs_CZ/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Vybraný seznam kontaktů není zapisovatelný"
+
+#: program/localization/cs_CZ/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Kontakty byly úspěšně přidány do této skupiny"
+
+#: program/localization/cs_CZ/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Kontakty byly odstraněny z této skupiny"
+
+#: program/localization/cs_CZ/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Importuji, prosím čekejte..."
+
+#: program/localization/cs_CZ/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Během importu nastala chyba! Nahraný soubor není ve formátu vCard."
+
+#: program/localization/cs_CZ/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "Úspěšně naimportováno $inserted kontaktů, $skipped existujících"
+"záznamů přeskočeno: $names"
+
+#: program/localization/cs_CZ/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Přeskočeno $skipped existujících položek</b>"
+
+#: program/localization/cs_CZ/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Operace není povolena!"
+
+#: program/localization/cs_CZ/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Chybějící e-mailová adresa v označeném profilu"
+
+#: program/localization/cs_CZ/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Přepnutím do režimu prostého textu ztratíte veškeré formátování."
+"Chcete pokračovat?"
+
+#: program/localization/cs_CZ/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Vyskytla se vážná chyba v konfiguraci. Kontaktujte neprodleně"
+"administátora. Vaše zpráva nemohla být odeslána."
+
+#: program/localization/cs_CZ/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "Chyba SMTP ($code): Připojení k serveru selhalo"
+
+#: program/localization/cs_CZ/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "Chyba SMTP ($code): Chyba přihlášení"
+
+#: program/localization/cs_CZ/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "Chyba SMTP ($code): Nelze nastavit odesílatele \"$from\" ($msg)"
+
+#: program/localization/cs_CZ/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "Chyba SMTP ($code): Nelze přidat příjemce \"$to\" ($msg)"
+
+#: program/localization/cs_CZ/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "Chyba SMTP: Nelze zpracovat seznam příjemců"
+
+#: program/localization/cs_CZ/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "Chyba SMTP: Není podporováno oznamení o stavu doručení (DSN)"
+
+#: program/localization/cs_CZ/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "Chyba SMTP: $msg"
+
+#: program/localization/cs_CZ/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Neplatná e-mailová adresa: $email"
+
+#: program/localization/cs_CZ/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Příliš mnoho příjemců. Změňte počet příjemců na $max."
+
+#: program/localization/cs_CZ/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Počet členských skupin dosáhl maximum z $max"
+
+#: program/localization/cs_CZ/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Došlo k interní chybě. Zkuste to znovu"
+
+#: program/localization/cs_CZ/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Kontakty nelze odstranit"
+
+#: program/localization/cs_CZ/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Kontakty byly odstraněny"
+
+#: program/localization/cs_CZ/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Nelze obnovit smazané kontakty"
+
+#: program/localization/cs_CZ/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Kontakty byly obnoveny"
+
+#: program/localization/cs_CZ/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Skupina byla odstraněna"
+
+#: program/localization/cs_CZ/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Skupina byla přejmenována"
+
+#: program/localization/cs_CZ/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Skupina vytvořena"
+
+#: program/localization/cs_CZ/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Uložené hledání bylo ostraněno"
+
+#: program/localization/cs_CZ/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Nelze odstranit uložené hledání"
+
+#: program/localization/cs_CZ/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Nové hledání bylo vytvořeno"
+
+#: program/localization/cs_CZ/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Nelze vytvořit uložené hledání"
+
+#: program/localization/cs_CZ/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Zpráva odstraněna"
+
+#: program/localization/cs_CZ/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Zpráva byla přesunuta"
+
+#: program/localization/cs_CZ/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Zpráva byla zkopirována"
+
+#: program/localization/cs_CZ/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Zpráva označena"
+
+#: program/localization/cs_CZ/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Napište alespoň $min znaků pro automatické doplnění"
+
+#: program/localization/cs_CZ/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Napište více znaků. Nalezeno příliš mnoho položek"
+
+#: program/localization/cs_CZ/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Jméno musí být vyplněno"
+
+#: program/localization/cs_CZ/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Jméno je příliš dlouhé"
+
+#: program/localization/cs_CZ/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Složka byla úspěšně aktualizována"
+
+#: program/localization/cs_CZ/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Složka byla úspěšně vytvořena"
+
+#: program/localization/cs_CZ/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Formát obrázku není podporován"
+
+#: program/localization/cs_CZ/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "Ve zprávě byly zjištěny pravopisné chyby"
+
+#: program/localization/cs_CZ/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "Nelze vytvořit/přesunout složku do vybrané rodičovské složky."
+"Nemáte práva."

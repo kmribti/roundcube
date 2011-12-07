@@ -1,0 +1,1650 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/hu_HU/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: hu_HU\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/hu_HU/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Üdvözli a $product"
+
+#: program/localization/hu_HU/labels.inc:username
+msgid "Username"
+msgstr "Felhasználónév"
+
+#: program/localization/hu_HU/labels.inc:password
+msgid "Password"
+msgstr "Jelszó"
+
+#: program/localization/hu_HU/labels.inc:server
+msgid "Server"
+msgstr "Szerver"
+
+#: program/localization/hu_HU/labels.inc:login
+msgid "Login"
+msgstr "Belépés"
+
+#: program/localization/hu_HU/labels.inc:logout
+msgid "Logout"
+msgstr "Kijelentkezés"
+
+#: program/localization/hu_HU/labels.inc:mail
+msgid "Mail"
+msgstr "E-mail"
+
+#: program/localization/hu_HU/labels.inc:settings
+msgid "Settings"
+msgstr "Beállítások"
+
+#: program/localization/hu_HU/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Címjegyzék"
+
+#: program/localization/hu_HU/labels.inc:inbox
+msgid "Inbox"
+msgstr "Érkezett levelek"
+
+#: program/localization/hu_HU/labels.inc:drafts
+msgid "Drafts"
+msgstr "Piszkozatok"
+
+#: program/localization/hu_HU/labels.inc:sent
+msgid "Sent"
+msgstr "Küldött levelek"
+
+#: program/localization/hu_HU/labels.inc:trash
+msgid "Trash"
+msgstr "Törölt elemek"
+
+#: program/localization/hu_HU/labels.inc:junk
+msgid "Junk"
+msgstr "Kéretlen levelek"
+
+#: program/localization/hu_HU/labels.inc:subject
+msgid "Subject"
+msgstr "Tárgy"
+
+#: program/localization/hu_HU/labels.inc:from
+msgid "From"
+msgstr "Feladó"
+
+#: program/localization/hu_HU/labels.inc:to
+msgid "To"
+msgstr "Címzett"
+
+#: program/localization/hu_HU/labels.inc:cc
+msgid "Cc"
+msgstr "Másolat"
+
+#: program/localization/hu_HU/labels.inc:bcc
+msgid "Bcc"
+msgstr "Titkos másolat"
+
+#: program/localization/hu_HU/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Válaszcím"
+
+#: program/localization/hu_HU/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Hírcsoport válasz"
+
+#: program/localization/hu_HU/labels.inc:date
+msgid "Date"
+msgstr "Dátum"
+
+#: program/localization/hu_HU/labels.inc:size
+msgid "Size"
+msgstr "Méret"
+
+#: program/localization/hu_HU/labels.inc:priority
+msgid "Priority"
+msgstr "Sürgősség"
+
+#: program/localization/hu_HU/labels.inc:organization
+msgid "Company"
+msgstr "Szervezet"
+
+#: program/localization/hu_HU/labels.inc:readstatus
+msgid "Read status"
+msgstr "Olvasott"
+
+#: program/localization/hu_HU/labels.inc:mailboxlist
+#: program/localization/hu_HU/labels.inc:folders
+msgid "Folders"
+msgstr "Mappák"
+
+#: program/localization/hu_HU/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Üzenetek: $from - $to / $count"
+
+#: program/localization/hu_HU/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Témák ($from - $to, összesen $count)"
+
+#: program/localization/hu_HU/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "$nr / $count üzenet"
+
+#: program/localization/hu_HU/labels.inc:copy
+msgid "Copy"
+msgstr "Másolás"
+
+#: program/localization/hu_HU/labels.inc:move
+msgid "Move"
+msgstr "Áthelyezés"
+
+#: program/localization/hu_HU/labels.inc:moveto
+msgid "Move to..."
+msgstr "Áthelyezés..."
+
+#: program/localization/hu_HU/labels.inc:download
+msgid "Download"
+msgstr "letöltés"
+
+#: program/localization/hu_HU/labels.inc:filename
+msgid "File name"
+msgstr "Fájl neve"
+
+#: program/localization/hu_HU/labels.inc:filesize
+msgid "File size"
+msgstr "Fájl mérete"
+
+#: program/localization/hu_HU/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Hozzáadás a címjegyzékhez"
+
+#: program/localization/hu_HU/labels.inc:sun
+msgid "Sun"
+msgstr "Vas"
+
+#: program/localization/hu_HU/labels.inc:mon
+msgid "Mon"
+msgstr "Hét"
+
+#: program/localization/hu_HU/labels.inc:tue
+msgid "Tue"
+msgstr "Kedd"
+
+#: program/localization/hu_HU/labels.inc:wed
+msgid "Wed"
+msgstr "Szer"
+
+#: program/localization/hu_HU/labels.inc:thu
+msgid "Thu"
+msgstr "Csüt"
+
+#: program/localization/hu_HU/labels.inc:fri
+msgid "Fri"
+msgstr "Pén"
+
+#: program/localization/hu_HU/labels.inc:sat
+msgid "Sat"
+msgstr "Szom"
+
+#: program/localization/hu_HU/labels.inc:sunday
+msgid "Sunday"
+msgstr "Vasárnap"
+
+#: program/localization/hu_HU/labels.inc:monday
+msgid "Monday"
+msgstr "Hétfő"
+
+#: program/localization/hu_HU/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Kedd"
+
+#: program/localization/hu_HU/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Szerda"
+
+#: program/localization/hu_HU/labels.inc:thursday
+msgid "Thursday"
+msgstr "Csütörtök"
+
+#: program/localization/hu_HU/labels.inc:friday
+msgid "Friday"
+msgstr "Péntek"
+
+#: program/localization/hu_HU/labels.inc:saturday
+msgid "Saturday"
+msgstr "Szombat"
+
+#: program/localization/hu_HU/labels.inc:jan
+msgid "Jan"
+msgstr "Jan"
+
+#: program/localization/hu_HU/labels.inc:feb
+msgid "Feb"
+msgstr "Febr"
+
+#: program/localization/hu_HU/labels.inc:mar
+msgid "Mar"
+msgstr "Márc"
+
+#: program/localization/hu_HU/labels.inc:apr
+msgid "Apr"
+msgstr "Ápr"
+
+#: program/localization/hu_HU/labels.inc:may
+#: program/localization/hu_HU/labels.inc:longmay
+msgid "May"
+msgstr "Május"
+
+#: program/localization/hu_HU/labels.inc:jun
+msgid "Jun"
+msgstr "Jún"
+
+#: program/localization/hu_HU/labels.inc:jul
+msgid "Jul"
+msgstr "Júl"
+
+#: program/localization/hu_HU/labels.inc:aug
+msgid "Aug"
+msgstr "Aug"
+
+#: program/localization/hu_HU/labels.inc:sep
+msgid "Sep"
+msgstr "Szept"
+
+#: program/localization/hu_HU/labels.inc:oct
+msgid "Oct"
+msgstr "Okt"
+
+#: program/localization/hu_HU/labels.inc:nov
+msgid "Nov"
+msgstr "Nov"
+
+#: program/localization/hu_HU/labels.inc:dec
+msgid "Dec"
+msgstr "Dec"
+
+#: program/localization/hu_HU/labels.inc:longjan
+msgid "January"
+msgstr "Január"
+
+#: program/localization/hu_HU/labels.inc:longfeb
+msgid "February"
+msgstr "Február"
+
+#: program/localization/hu_HU/labels.inc:longmar
+msgid "March"
+msgstr "Március"
+
+#: program/localization/hu_HU/labels.inc:longapr
+msgid "April"
+msgstr "Április"
+
+#: program/localization/hu_HU/labels.inc:longjun
+msgid "June"
+msgstr "Június"
+
+#: program/localization/hu_HU/labels.inc:longjul
+msgid "July"
+msgstr "Július"
+
+#: program/localization/hu_HU/labels.inc:longaug
+msgid "August"
+msgstr "Augusztus"
+
+#: program/localization/hu_HU/labels.inc:longsep
+msgid "September"
+msgstr "Szeptember"
+
+#: program/localization/hu_HU/labels.inc:longoct
+msgid "October"
+msgstr "Október"
+
+#: program/localization/hu_HU/labels.inc:longnov
+msgid "November"
+msgstr "November"
+
+#: program/localization/hu_HU/labels.inc:longdec
+msgid "December"
+msgstr "December"
+
+#: program/localization/hu_HU/labels.inc:today
+msgid "Today"
+msgstr "Ma"
+
+#: program/localization/hu_HU/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Új üzenetek ellenőrzése"
+
+#: program/localization/hu_HU/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Új üzenet"
+
+#: program/localization/hu_HU/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Válasz"
+
+#: program/localization/hu_HU/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Válasz a listának vagy a feladónak és az összes címzettnek"
+
+#: program/localization/hu_HU/labels.inc:replyall
+msgid "Reply all"
+msgstr "Válasz mindenkinek"
+
+#: program/localization/hu_HU/labels.inc:replylist
+msgid "Reply list"
+msgstr "Válasz a listának"
+
+#: program/localization/hu_HU/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "Továbbítás beágyazva"
+
+#: program/localization/hu_HU/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "Továbbítás csatolmányként"
+
+#: program/localization/hu_HU/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Továbbítás"
+
+#: program/localization/hu_HU/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Törlés"
+
+#: program/localization/hu_HU/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Üzenet törlése"
+
+#: program/localization/hu_HU/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Nyomtatás"
+
+#: program/localization/hu_HU/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Előző levél mutatása"
+
+#: program/localization/hu_HU/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Első levél mutatása"
+
+#: program/localization/hu_HU/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Következő levél mutatása"
+
+#: program/localization/hu_HU/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Utolsó levél mutatása"
+
+#: program/localization/hu_HU/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Vissza az üzenetekhez"
+
+#: program/localization/hu_HU/labels.inc:viewsource
+msgid "Show source"
+msgstr "Forrás megtekintése"
+
+#: program/localization/hu_HU/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Üzenetek megjelölése"
+
+#: program/localization/hu_HU/labels.inc:markread
+msgid "As read"
+msgstr "Olvasottként"
+
+#: program/localization/hu_HU/labels.inc:markunread
+msgid "As unread"
+msgstr "Olvasatlanként"
+
+#: program/localization/hu_HU/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Jelöltként"
+
+#: program/localization/hu_HU/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Jelöletlenként"
+
+#: program/localization/hu_HU/labels.inc:moreactions
+msgid "More actions..."
+msgstr "További műveletek..."
+
+#: program/localization/hu_HU/labels.inc:select
+msgid "Select"
+msgstr "Kijelölés"
+
+#: program/localization/hu_HU/labels.inc:all
+msgid "All"
+msgstr "Összes"
+
+#: program/localization/hu_HU/labels.inc:none
+#: program/localization/hu_HU/labels.inc:nonesort
+msgid "None"
+msgstr "Nincs"
+
+#: program/localization/hu_HU/labels.inc:currpage
+msgid "Current page"
+msgstr "Aktuális oldal"
+
+#: program/localization/hu_HU/labels.inc:unread
+msgid "Unread"
+msgstr "Olvasatlan"
+
+#: program/localization/hu_HU/labels.inc:flagged
+msgid "Flagged"
+msgstr "Megjelölt"
+
+#: program/localization/hu_HU/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Megválaszolatlan"
+
+#: program/localization/hu_HU/labels.inc:deleted
+msgid "Deleted"
+msgstr "Törölt"
+
+#: program/localization/hu_HU/labels.inc:invert
+msgid "Invert"
+msgstr "Invertálás"
+
+#: program/localization/hu_HU/labels.inc:filter
+msgid "Filter"
+msgstr "Szűrés"
+
+#: program/localization/hu_HU/labels.inc:list
+msgid "List"
+msgstr "Lista"
+
+#: program/localization/hu_HU/labels.inc:threads
+msgid "Threads"
+msgstr "Témák"
+
+#: program/localization/hu_HU/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Összes kibontása"
+
+#: program/localization/hu_HU/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Olvasatlanok kibontása"
+
+#: program/localization/hu_HU/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Összes összecsukása"
+
+#: program/localization/hu_HU/labels.inc:threaded
+msgid "Threaded"
+msgstr "Téma nézet"
+
+#: program/localization/hu_HU/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Témák kibontása"
+
+#: program/localization/hu_HU/labels.inc:do_expand
+msgid "all threads"
+msgstr "minden téma"
+
+#: program/localization/hu_HU/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "csak ahol van olvasatlan üzenet"
+
+#: program/localization/hu_HU/labels.inc:fromto
+msgid "From/To"
+msgstr "Feladó/Címzett"
+
+#: program/localization/hu_HU/labels.inc:flag
+msgid "Flag"
+msgstr "Megjelölés"
+
+#: program/localization/hu_HU/labels.inc:attachment
+msgid "Attachment"
+msgstr "Csatolmány"
+
+#: program/localization/hu_HU/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Feladva"
+
+#: program/localization/hu_HU/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Kézbesítve"
+
+#: program/localization/hu_HU/labels.inc:asc
+msgid "ascending"
+msgstr "Emelkedő"
+
+#: program/localization/hu_HU/labels.inc:desc
+msgid "descending"
+msgstr "Csökkenő"
+
+#: program/localization/hu_HU/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Oszlopok listája"
+
+#: program/localization/hu_HU/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Rendezés oszlopa"
+
+#: program/localization/hu_HU/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Rendezés sorrendje"
+
+#: program/localization/hu_HU/labels.inc:listmode
+msgid "List view mode"
+msgstr "Megjelenítési mód"
+
+#: program/localization/hu_HU/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Mappaműveletek..."
+
+#: program/localization/hu_HU/labels.inc:compact
+msgid "Compact"
+msgstr "Tömörítés"
+
+#: program/localization/hu_HU/labels.inc:empty
+msgid "Empty"
+msgstr "Kiürítés"
+
+#: program/localization/hu_HU/labels.inc:quota
+msgid "Disk usage"
+msgstr "Helyfoglalás"
+
+#: program/localization/hu_HU/labels.inc:unknown
+msgid "unknown"
+msgstr "ismeretlen"
+
+#: program/localization/hu_HU/labels.inc:unlimited
+msgid "unlimited"
+msgstr "korlátlan"
+
+#: program/localization/hu_HU/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Gyorskeresés"
+
+#: program/localization/hu_HU/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Alapállapot"
+
+#: program/localization/hu_HU/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Keresési opciók"
+
+#: program/localization/hu_HU/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Teljes üzenet"
+
+#: program/localization/hu_HU/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Megnyitás új ablakban"
+
+#: program/localization/hu_HU/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Letöltés (.eml)"
+
+#: program/localization/hu_HU/labels.inc:compose
+msgid "Compose a message"
+msgstr "Üzenet létrehozása"
+
+#: program/localization/hu_HU/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Szerkesztés újként"
+
+#: program/localization/hu_HU/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Vázlat mentése"
+
+#: program/localization/hu_HU/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Üzenet küldése"
+
+#: program/localization/hu_HU/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Fájl csatolása"
+
+#: program/localization/hu_HU/labels.inc:charset
+msgid "Charset"
+msgstr "Karakterkészlet"
+
+#: program/localization/hu_HU/labels.inc:editortype
+msgid "Editor type"
+msgstr "Szerkesztő típusa"
+
+#: program/localization/hu_HU/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Olvasási visszaigazolás"
+
+#: program/localization/hu_HU/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Kézbesítési visszaigazolás"
+
+#: program/localization/hu_HU/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "$date időpontban $sender ezt írta:"
+
+#: program/localization/hu_HU/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "Eredeti üzenet"
+
+#: program/localization/hu_HU/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Azonosítók szerkesztése"
+
+#: program/localization/hu_HU/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Helyesírás-ellenőrzés"
+
+#: program/localization/hu_HU/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Helyesírás-ellenőrzés vége"
+
+#: program/localization/hu_HU/labels.inc:revertto
+msgid "Revert to"
+msgstr "Visszaállítás erre"
+
+#: program/localization/hu_HU/labels.inc:attachments
+msgid "Attachments"
+msgstr "Csatolmányok"
+
+#: program/localization/hu_HU/labels.inc:upload
+msgid "Upload"
+msgstr "Feltöltés"
+
+#: program/localization/hu_HU/labels.inc:uploadprogress
+msgid "$percent ($current from $total)"
+msgstr "$percent ($current / $total)"
+
+#: program/localization/hu_HU/labels.inc:close
+msgid "Close"
+msgstr "Bezárás"
+
+#: program/localization/hu_HU/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Üzenetbeállítások..."
+
+#: program/localization/hu_HU/labels.inc:low
+msgid "Low"
+msgstr "Alacsony"
+
+#: program/localization/hu_HU/labels.inc:lowest
+msgid "Lowest"
+msgstr "Legkisebb"
+
+#: program/localization/hu_HU/labels.inc:normal
+msgid "Normal"
+msgstr "Normál"
+
+#: program/localization/hu_HU/labels.inc:high
+msgid "High"
+msgstr "Magas"
+
+#: program/localization/hu_HU/labels.inc:highest
+msgid "Highest"
+msgstr "Legmagasabb"
+
+#: program/localization/hu_HU/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(nincs tárgy)"
+
+#: program/localization/hu_HU/labels.inc:showimages
+msgid "Display images"
+msgstr "Képek megjelenítése"
+
+#: program/localization/hu_HU/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Képek megjelenítése mindig, ha a feladó $sender"
+
+#: program/localization/hu_HU/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "TRANSLATE!"
+
+#: program/localization/hu_HU/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/hu_HU/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Egyszerű szöveg"
+
+#: program/localization/hu_HU/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Elküldött üzenet mentése ide"
+
+#: program/localization/hu_HU/labels.inc:dontsave
+msgid "don't save"
+msgstr "nincs mentés"
+
+#: program/localization/hu_HU/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "A maximális feltölthető fájl mérete $size"
+
+#: program/localization/hu_HU/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Cc (Másolati cím) hozzáadása"
+
+#: program/localization/hu_HU/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Bcc (titkos másolati cím) hozzáadása"
+
+#: program/localization/hu_HU/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Válaszcím hozzáadása"
+
+#: program/localization/hu_HU/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Hírcsoport válasz hozzáadása"
+
+#: program/localization/hu_HU/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Az üzenet küldője értesítést kér arról, hogy elolvasta a levelet."
+"El legyen küldve az olvasási visszaigazolás?"
+
+#: program/localization/hu_HU/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Olvasási visszaigazolás (olvasott)"
+
+#: program/localization/hu_HU/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Ez az üzenete olvasási visszaigazolása"
+
+#: program/localization/hu_HU/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Megjegyzés: Ez az olvasási visszaigazolás csak azt igazolja, hogy az"
+"üzenet megjelenítésre került a címzett számítógépén. Nincs rá"
+"garancia, hogy a címzett elolvasta volna az üzenetet illetve megértette"
+"volna annak tartalmát."
+
+#: program/localization/hu_HU/labels.inc:name
+msgid "Display Name"
+msgstr "Megjelenített név"
+
+#: program/localization/hu_HU/labels.inc:firstname
+msgid "First Name"
+msgstr "Keresztnév"
+
+#: program/localization/hu_HU/labels.inc:surname
+msgid "Last Name"
+msgstr "Vezetéknév"
+
+#: program/localization/hu_HU/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Második keresztnév"
+
+#: program/localization/hu_HU/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "Név-előtag"
+
+#: program/localization/hu_HU/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "Név-utótag"
+
+#: program/localization/hu_HU/labels.inc:nickname
+msgid "Nickname"
+msgstr "Becenév"
+
+#: program/localization/hu_HU/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Beosztás"
+
+#: program/localization/hu_HU/labels.inc:department
+msgid "Department"
+msgstr "Részleg"
+
+#: program/localization/hu_HU/labels.inc:gender
+msgid "Gender"
+msgstr "Nem"
+
+#: program/localization/hu_HU/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Leánykori név"
+
+#: program/localization/hu_HU/labels.inc:email
+msgid "Email"
+msgstr "E-mail cím"
+
+#: program/localization/hu_HU/labels.inc:phone
+msgid "Phone"
+msgstr "Telefonszám"
+
+#: program/localization/hu_HU/labels.inc:address
+msgid "Address"
+msgstr "Lakcím"
+
+#: program/localization/hu_HU/labels.inc:street
+msgid "Street"
+msgstr "Utca"
+
+#: program/localization/hu_HU/labels.inc:locality
+msgid "City"
+msgstr "Város"
+
+#: program/localization/hu_HU/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "Irányítószám"
+
+#: program/localization/hu_HU/labels.inc:region
+msgid "State/Province"
+msgstr "Régió"
+
+#: program/localization/hu_HU/labels.inc:country
+msgid "Country"
+msgstr "Ország"
+
+#: program/localization/hu_HU/labels.inc:birthday
+msgid "Birthday"
+msgstr "Születésnap"
+
+#: program/localization/hu_HU/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "Évforduló"
+
+#: program/localization/hu_HU/labels.inc:website
+msgid "Website"
+msgstr "Weboldal"
+
+#: program/localization/hu_HU/labels.inc:instantmessenger
+msgid "IM"
+msgstr "IM"
+
+#: program/localization/hu_HU/labels.inc:notes
+msgid "Notes"
+msgstr "Megjegyzések"
+
+#: program/localization/hu_HU/labels.inc:male
+msgid "male"
+msgstr "férfi"
+
+#: program/localization/hu_HU/labels.inc:female
+msgid "female"
+msgstr "nő"
+
+#: program/localization/hu_HU/labels.inc:manager
+msgid "Manager"
+msgstr "Menedzser"
+
+#: program/localization/hu_HU/labels.inc:assistant
+#: program/localization/hu_HU/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Asszisztens"
+
+#: program/localization/hu_HU/labels.inc:spouse
+msgid "Spouse"
+msgstr "Házastárs"
+
+#: program/localization/hu_HU/labels.inc:allfields
+msgid "All fields"
+msgstr "Összes mező"
+
+#: program/localization/hu_HU/labels.inc:search
+msgid "Search"
+msgstr "Keresés"
+
+#: program/localization/hu_HU/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "Részletes keresés"
+
+#: program/localization/hu_HU/labels.inc:other
+#: program/localization/hu_HU/labels.inc:typeother
+msgid "Other"
+msgstr "Egyéb"
+
+#: program/localization/hu_HU/labels.inc:typehome
+msgid "Home"
+msgstr "Otthon"
+
+#: program/localization/hu_HU/labels.inc:typework
+msgid "Work"
+msgstr "Munkahely"
+
+#: program/localization/hu_HU/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Mobil"
+
+#: program/localization/hu_HU/labels.inc:typemain
+msgid "Main"
+msgstr "Vezetékes"
+
+#: program/localization/hu_HU/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Otthoni fax"
+
+#: program/localization/hu_HU/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "Munkahelyi fax"
+
+#: program/localization/hu_HU/labels.inc:typecar
+msgid "Car"
+msgstr "Gépkocsi"
+
+#: program/localization/hu_HU/labels.inc:typepager
+msgid "Pager"
+msgstr "Személyhívó"
+
+#: program/localization/hu_HU/labels.inc:typevideo
+msgid "Video"
+msgstr "Videó"
+
+#: program/localization/hu_HU/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "Weboldal"
+
+#: program/localization/hu_HU/labels.inc:typeblog
+msgid "Blog"
+msgstr "Blog"
+
+#: program/localization/hu_HU/labels.inc:typeprofile
+msgid "Profile"
+msgstr "Profil"
+
+#: program/localization/hu_HU/labels.inc:addfield
+msgid "Add field..."
+msgstr "Új mező hozzáadása..."
+
+#: program/localization/hu_HU/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Új kapcsolat hozzáadása"
+
+#: program/localization/hu_HU/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Kapcsolat szerkesztése"
+
+#: program/localization/hu_HU/labels.inc:contacts
+msgid "Contacts"
+msgstr "Kapcsolatok"
+
+#: program/localization/hu_HU/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Kapcsolatok tulajdonságai"
+
+#: program/localization/hu_HU/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Személyes adatok"
+
+#: program/localization/hu_HU/labels.inc:edit
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: program/localization/hu_HU/labels.inc:cancel
+msgid "Cancel"
+msgstr "Mégsem"
+
+#: program/localization/hu_HU/labels.inc:save
+msgid "Save"
+msgstr "Mentés"
+
+#: program/localization/hu_HU/labels.inc:delete
+msgid "Delete"
+msgstr "Törlés"
+
+#: program/localization/hu_HU/labels.inc:rename
+msgid "Rename"
+msgstr "Átnevezés"
+
+#: program/localization/hu_HU/labels.inc:addphoto
+msgid "Add"
+msgstr "Kép hozzáadása"
+
+#: program/localization/hu_HU/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Kép cseréje"
+
+#: program/localization/hu_HU/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Új kapcsolat létrehozása"
+
+#: program/localization/hu_HU/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Kijelölt kapcsolatok törlése"
+
+#: program/localization/hu_HU/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "E-mail küldése erre a címre"
+
+#: program/localization/hu_HU/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Kapcsolatok: $from - $to / $count"
+
+#: program/localization/hu_HU/labels.inc:print
+msgid "Print"
+msgstr "Nyomtatás"
+
+#: program/localization/hu_HU/labels.inc:export
+msgid "Export"
+msgstr "Exportálás"
+
+#: program/localization/hu_HU/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Kapcsolatok exportálása vCard formátumban"
+
+#: program/localization/hu_HU/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Új csoport"
+
+#: program/localization/hu_HU/labels.inc:grouprename
+msgid "Rename group"
+msgstr "Csoport átnevezése"
+
+#: program/localization/hu_HU/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "Csoport törlése"
+
+#: program/localization/hu_HU/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Előző oldal"
+
+#: program/localization/hu_HU/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Első oldal"
+
+#: program/localization/hu_HU/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Következő oldal"
+
+#: program/localization/hu_HU/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Utolsó oldal"
+
+#: program/localization/hu_HU/labels.inc:group
+msgid "Group"
+msgstr "Csoport"
+
+#: program/localization/hu_HU/labels.inc:groups
+msgid "Groups"
+msgstr "Csoportok"
+
+#: program/localization/hu_HU/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Személyes címjegyzék"
+
+#: program/localization/hu_HU/labels.inc:searchsave
+msgid "Save search"
+msgstr "Keresés mentése"
+
+#: program/localization/hu_HU/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "Keresés törlése"
+
+#: program/localization/hu_HU/labels.inc:import
+msgid "Import"
+msgstr "Importálás"
+
+#: program/localization/hu_HU/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Kapcsolatok importálása"
+
+#: program/localization/hu_HU/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Importálás fájlból:"
+
+#: program/localization/hu_HU/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "Kapcsolatok hozzáadása a címjegyzékhez:"
+
+#: program/localization/hu_HU/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "A teljes címjegyzék cseréje"
+
+#: program/localization/hu_HU/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Feltölthet kapcsolatokat egy már létező címjegyzékből. <br/>"
+"Jelenleg a <a href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> "
+"formátumú adatok importálása támogatott."
+
+#: program/localization/hu_HU/labels.inc:done
+msgid "Done"
+msgstr "Kész"
+
+#: program/localization/hu_HU/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Beállítás"
+
+#: program/localization/hu_HU/labels.inc:preferences
+msgid "Preferences"
+msgstr "Beállítások"
+
+#: program/localization/hu_HU/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Felhasználói beállítások"
+
+#: program/localization/hu_HU/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Felhasználói beállítások szerkesztése"
+
+#: program/localization/hu_HU/labels.inc:identities
+msgid "Identities"
+msgstr "Azonosítók"
+
+#: program/localization/hu_HU/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Hozzáférés azonosítóinak kezelése"
+
+#: program/localization/hu_HU/labels.inc:newidentity
+msgid "New identity"
+msgstr "Új azonosító"
+
+#: program/localization/hu_HU/labels.inc:newitem
+msgid "New item"
+msgstr "Új elem"
+
+#: program/localization/hu_HU/labels.inc:edititem
+msgid "Edit item"
+msgstr "Elem szerkesztése"
+
+#: program/localization/hu_HU/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML megjelenítés"
+
+#: program/localization/hu_HU/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Alapértelmezett karakterkódolás"
+
+#: program/localization/hu_HU/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML üzenet"
+
+#: program/localization/hu_HU/labels.inc:dateformat
+msgid "Date format"
+msgstr "Dátumformátum"
+
+#: program/localization/hu_HU/labels.inc:timeformat
+msgid "Time format"
+msgstr "Időformátum"
+
+#: program/localization/hu_HU/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Rövid dátumok"
+
+#: program/localization/hu_HU/labels.inc:setdefault
+msgid "Set default"
+msgstr "Beállítás alapértelmezettnek"
+
+#: program/localization/hu_HU/labels.inc:autodetect
+msgid "Auto"
+msgstr "Automatikus"
+
+#: program/localization/hu_HU/labels.inc:language
+msgid "Language"
+msgstr "Nyelv"
+
+#: program/localization/hu_HU/labels.inc:timezone
+msgid "Time zone"
+msgstr "Időzóna"
+
+#: program/localization/hu_HU/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Sorok száma egy oldalon"
+
+#: program/localization/hu_HU/labels.inc:signature
+msgid "Signature"
+msgstr "Aláírás"
+
+#: program/localization/hu_HU/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Nyári időszámítás"
+
+#: program/localization/hu_HU/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "HTML üzenet írása"
+
+#: program/localization/hu_HU/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "csak HTML üzenetre válaszolva"
+
+#: program/localization/hu_HU/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML aláírás"
+
+#: program/localization/hu_HU/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Előnézeti kép"
+
+#: program/localization/hu_HU/labels.inc:skin
+msgid "Interface skin"
+msgstr "Kinézet"
+
+#: program/localization/hu_HU/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Törölt elemek mappa ürítése kilépéskor"
+
+#: program/localization/hu_HU/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Beérkezett üzenetek mappa tömörítése kilépéskor"
+
+#: program/localization/hu_HU/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Felhasználói felület"
+
+#: program/localization/hu_HU/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Szerverbeállítások"
+
+#: program/localization/hu_HU/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Postafiók nézet"
+
+#: program/localization/hu_HU/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Olvasási visszaigazolás küldése"
+
+#: program/localization/hu_HU/labels.inc:askuser
+msgid "ask me"
+msgstr "kérdezzen rá"
+
+#: program/localization/hu_HU/labels.inc:autosend
+msgid "send receipt"
+msgstr "automatikus küldés"
+
+#: program/localization/hu_HU/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "visszaigazolás küldése csak a kapcsolataimnak, egyéb esetben kérdezzen"
+"rá"
+
+#: program/localization/hu_HU/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "visszaigazolás küldése csak a kapcsolataimnak, egyéb esetben hagyja"
+"figyelmen kívül"
+
+#: program/localization/hu_HU/labels.inc:ignore
+msgid "ignore"
+msgstr "hagyja figyelmen kívül"
+
+#: program/localization/hu_HU/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Üzenet olvasottként jelölése törléskor"
+
+#: program/localization/hu_HU/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Üzenet törlendőnek jelölése törlés helyett"
+
+#: program/localization/hu_HU/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Törölt üzenetek ne legyenek megjelenítve"
+
+#: program/localization/hu_HU/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Üzenet törlése, ha nem sikerül áthelyezni a törölt elemek mappába"
+
+#: program/localization/hu_HU/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Távoli beágyazott képek mutatása"
+
+#: program/localization/hu_HU/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "csak ismert feladóktól"
+
+#: program/localization/hu_HU/labels.inc:always
+msgid "always"
+msgstr "mindig"
+
+#: program/localization/hu_HU/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Csatolt képek megjelenítése az üzenet alatt"
+
+#: program/localization/hu_HU/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Piszkozat automatikus mentése"
+
+#: program/localization/hu_HU/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "minden $n percben"
+
+#: program/localization/hu_HU/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Új üzenetek keresése"
+
+#: program/localization/hu_HU/labels.inc:never
+msgid "never"
+msgstr "soha"
+
+#: program/localization/hu_HU/labels.inc:immediately
+msgid "immediately"
+msgstr "azonnal"
+
+#: program/localization/hu_HU/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Üzenetek megjelenítése"
+
+#: program/localization/hu_HU/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Üzenetek írása"
+
+#: program/localization/hu_HU/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Csatolt állományok nevei"
+
+#: program/localization/hu_HU/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Teljes RFC 2231 ( pl. Thunderbird)"
+
+#: program/localization/hu_HU/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/hu_HU/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Full RFC 2047 (egyéb)"
+
+#: program/localization/hu_HU/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "MIME kódolás használata 8 bites karakterekhez"
+
+#: program/localization/hu_HU/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Haladó beállítások"
+
+#: program/localization/hu_HU/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Beérkező új üzenet ablakának fókuszba hozása"
+
+#: program/localization/hu_HU/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Új üzenetek ellenőrzése minden mappában"
+
+#: program/localization/hu_HU/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Levél törlése/mozgatása után jelenjen meg a következő üzenet"
+
+#: program/localization/hu_HU/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Általános beállítások"
+
+#: program/localization/hu_HU/labels.inc:section
+msgid "Section"
+msgstr "Beállítások"
+
+#: program/localization/hu_HU/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Karbantartás"
+
+#: program/localization/hu_HU/labels.inc:newmessage
+msgid "New Message"
+msgstr "Új üzenet"
+
+#: program/localization/hu_HU/labels.inc:listoptions
+msgid "List Options"
+msgstr "Listabeállítások"
+
+#: program/localization/hu_HU/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Aláírás beállításai"
+
+#: program/localization/hu_HU/labels.inc:whenreplying
+msgid "When replying"
+msgstr "Válasznál"
+
+#: program/localization/hu_HU/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "üzenet írása az eredeti felett"
+
+#: program/localization/hu_HU/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "üzenet írása az eredeti alatt"
+
+#: program/localization/hu_HU/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "Válasznál az eredeti aláírás eltávolítása"
+
+#: program/localization/hu_HU/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Aláírás automatikus hozzáadása"
+
+#: program/localization/hu_HU/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "csak új üzenetnél"
+
+#: program/localization/hu_HU/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "válasznál és továbbításnál"
+
+#: program/localization/hu_HU/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "Válasznál és továbbításnál kerüljön az aláírás"
+
+#: program/localization/hu_HU/labels.inc:belowquote
+msgid "below the quote"
+msgstr "az idézett szöveg alá"
+
+#: program/localization/hu_HU/labels.inc:abovequote
+msgid "above the quote"
+msgstr "az idézett szöveg fölé"
+
+#: program/localization/hu_HU/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Aláírás beillesztése"
+
+#: program/localization/hu_HU/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Előnézetben megjelent üzenetek megjelölése olvasottként"
+
+#: program/localization/hu_HU/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "$n másodperc elteltével"
+
+#: program/localization/hu_HU/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Olvasási visszaigazolás megkövetelése"
+
+#: program/localization/hu_HU/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Kézbesítési visszaigazolás megkövetelése"
+
+#: program/localization/hu_HU/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Válaszok azonos mappába helyezése"
+
+#: program/localization/hu_HU/labels.inc:defaultaddressbook
+msgid "Add new contacts to the selected addressbook"
+msgstr "Új kapcsolatok hozzáadása a kiválasztott címjegyzékhez"
+
+#: program/localization/hu_HU/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "TRANSLATE!"
+
+#: program/localization/hu_HU/labels.inc:spellcheckbeforesend
+msgid "Check spelling before sending a message"
+msgstr "Helyesírás-ellenőrzés az üzenet elküldése előtt"
+
+#: program/localization/hu_HU/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "Helyesírás-ellenőrzés opciók"
+
+#: program/localization/hu_HU/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "Speciális karaktereket tartalmazó szavak kihagyása"
+
+#: program/localization/hu_HU/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "Számot tartalmazó szavak kihagyása"
+
+#: program/localization/hu_HU/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "Csak nagybetűt tartalmazó szavak kihagyása"
+
+#: program/localization/hu_HU/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "Hozzáadás a szótárhoz"
+
+#: program/localization/hu_HU/labels.inc:folder
+msgid "Folder"
+msgstr "Mappa"
+
+#: program/localization/hu_HU/labels.inc:foldername
+msgid "Folder name"
+msgstr "Mappa neve"
+
+#: program/localization/hu_HU/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Feliratkozott"
+
+#: program/localization/hu_HU/labels.inc:messagecount
+msgid "Messages"
+msgstr "Üzenet"
+
+#: program/localization/hu_HU/labels.inc:create
+msgid "Create"
+msgstr "Létrehozás"
+
+#: program/localization/hu_HU/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Új mappa létrehozása"
+
+#: program/localization/hu_HU/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Mappák kezelése"
+
+#: program/localization/hu_HU/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Különleges mappák"
+
+#: program/localization/hu_HU/labels.inc:properties
+msgid "Properties"
+msgstr "Tulajdonságok"
+
+#: program/localization/hu_HU/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Mappa tulajdonságai"
+
+#: program/localization/hu_HU/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Szülőmappa"
+
+#: program/localization/hu_HU/labels.inc:location
+msgid "Location"
+msgstr "Hely"
+
+#: program/localization/hu_HU/labels.inc:info
+msgid "Information"
+msgstr "Információk"
+
+#: program/localization/hu_HU/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Mappa mérete"
+
+#: program/localization/hu_HU/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Feliratkozás megváltoztatása"
+
+#: program/localization/hu_HU/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Mappa típusa"
+
+#: program/localization/hu_HU/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "Privát mappa"
+
+#: program/localization/hu_HU/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "Más felhasználó(k) mappája"
+
+#: program/localization/hu_HU/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "Megosztott mappa"
+
+#: program/localization/hu_HU/labels.inc:sortby
+msgid "Sort by"
+msgstr "Rendezés"
+
+#: program/localization/hu_HU/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "növekvő"
+
+#: program/localization/hu_HU/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "csökkenő"
+
+#: program/localization/hu_HU/labels.inc:undo
+msgid "Undo"
+msgstr "Visszavonás"
+
+#: program/localization/hu_HU/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/hu_HU/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/hu_HU/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/hu_HU/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/hu_HU/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unicode"
+
+#: program/localization/hu_HU/labels.inc:english
+msgid "English"
+msgstr "Angol"
+
+#: program/localization/hu_HU/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Nyugat-európai"
+
+#: program/localization/hu_HU/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Kelet-európai"
+
+#: program/localization/hu_HU/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Délkelet-európai"
+
+#: program/localization/hu_HU/labels.inc:baltic
+msgid "Baltic"
+msgstr "Balti"
+
+#: program/localization/hu_HU/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Cirill"
+
+#: program/localization/hu_HU/labels.inc:arabic
+msgid "Arabic"
+msgstr "Arab"
+
+#: program/localization/hu_HU/labels.inc:greek
+msgid "Greek"
+msgstr "Görög"
+
+#: program/localization/hu_HU/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Héber"
+
+#: program/localization/hu_HU/labels.inc:turkish
+msgid "Turkish"
+msgstr "Török"
+
+#: program/localization/hu_HU/labels.inc:nordic
+msgid "Nordic"
+msgstr "Skandináv"
+
+#: program/localization/hu_HU/labels.inc:thai
+msgid "Thai"
+msgstr "Thai"
+
+#: program/localization/hu_HU/labels.inc:celtic
+msgid "Celtic"
+msgstr "Kelta"
+
+#: program/localization/hu_HU/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Vietnámi"
+
+#: program/localization/hu_HU/labels.inc:japanese
+msgid "Japanese"
+msgstr "Japán"
+
+#: program/localization/hu_HU/labels.inc:korean
+msgid "Korean"
+msgstr "Koreai"
+
+#: program/localization/hu_HU/labels.inc:chinese
+msgid "Chinese"
+msgstr "Kínai"

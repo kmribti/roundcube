@@ -1,0 +1,1631 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/ru_RU/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ru_RU\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/ru_RU/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Добро пожаловать в $product!"
+
+#: program/localization/ru_RU/labels.inc:username
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: program/localization/ru_RU/labels.inc:password
+msgid "Password"
+msgstr "Пароль"
+
+#: program/localization/ru_RU/labels.inc:server
+msgid "Server"
+msgstr "Сервер"
+
+#: program/localization/ru_RU/labels.inc:login
+msgid "Login"
+msgstr "Войти"
+
+#: program/localization/ru_RU/labels.inc:logout
+msgid "Logout"
+msgstr "Выход"
+
+#: program/localization/ru_RU/labels.inc:mail
+msgid "Mail"
+msgstr "Почта"
+
+#: program/localization/ru_RU/labels.inc:settings
+msgid "Settings"
+msgstr "Настройки"
+
+#: program/localization/ru_RU/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Контакты"
+
+#: program/localization/ru_RU/labels.inc:inbox
+msgid "Inbox"
+msgstr "Входящие"
+
+#: program/localization/ru_RU/labels.inc:drafts
+msgid "Drafts"
+msgstr "Черновики"
+
+#: program/localization/ru_RU/labels.inc:sent
+msgid "Sent"
+msgstr "Отправленные"
+
+#: program/localization/ru_RU/labels.inc:trash
+msgid "Trash"
+msgstr "Корзина"
+
+#: program/localization/ru_RU/labels.inc:junk
+msgid "Junk"
+msgstr "СПАМ"
+
+#: program/localization/ru_RU/labels.inc:subject
+msgid "Subject"
+msgstr "Тема"
+
+#: program/localization/ru_RU/labels.inc:from
+msgid "From"
+msgstr "От"
+
+#: program/localization/ru_RU/labels.inc:to
+msgid "To"
+msgstr "Кому"
+
+#: program/localization/ru_RU/labels.inc:cc
+msgid "Cc"
+msgstr "Копия"
+
+#: program/localization/ru_RU/labels.inc:bcc
+msgid "Bcc"
+msgstr "Скрытая"
+
+#: program/localization/ru_RU/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Ответить"
+
+#: program/localization/ru_RU/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Followup-To"
+
+#: program/localization/ru_RU/labels.inc:date
+msgid "Date"
+msgstr "Дата"
+
+#: program/localization/ru_RU/labels.inc:size
+msgid "Size"
+msgstr "Размер"
+
+#: program/localization/ru_RU/labels.inc:priority
+msgid "Priority"
+msgstr "Приоритет"
+
+#: program/localization/ru_RU/labels.inc:organization
+msgid "Company"
+msgstr "Организация"
+
+#: program/localization/ru_RU/labels.inc:readstatus
+msgid "Read status"
+msgstr "Статус прочтения"
+
+#: program/localization/ru_RU/labels.inc:mailboxlist
+#: program/localization/ru_RU/labels.inc:folders
+msgid "Folders"
+msgstr "Папки"
+
+#: program/localization/ru_RU/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Сообщения с $from по $to из $count"
+
+#: program/localization/ru_RU/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Обсуждения с $from по $to из $count"
+
+#: program/localization/ru_RU/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Сообщение $nr из $count"
+
+#: program/localization/ru_RU/labels.inc:copy
+msgid "Copy"
+msgstr "Копировать"
+
+#: program/localization/ru_RU/labels.inc:move
+msgid "Move"
+msgstr "Переместить"
+
+#: program/localization/ru_RU/labels.inc:moveto
+msgid "Move to..."
+msgstr "Переместить в..."
+
+#: program/localization/ru_RU/labels.inc:download
+msgid "Download"
+msgstr "Загрузить"
+
+#: program/localization/ru_RU/labels.inc:filename
+msgid "File name"
+msgstr "Имя файла"
+
+#: program/localization/ru_RU/labels.inc:filesize
+msgid "File size"
+msgstr "Размер файла"
+
+#: program/localization/ru_RU/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Добавить в контакты"
+
+#: program/localization/ru_RU/labels.inc:sun
+msgid "Sun"
+msgstr "Вс"
+
+#: program/localization/ru_RU/labels.inc:mon
+msgid "Mon"
+msgstr "Пн"
+
+#: program/localization/ru_RU/labels.inc:tue
+msgid "Tue"
+msgstr "Вт"
+
+#: program/localization/ru_RU/labels.inc:wed
+msgid "Wed"
+msgstr "Ср"
+
+#: program/localization/ru_RU/labels.inc:thu
+msgid "Thu"
+msgstr "Чт"
+
+#: program/localization/ru_RU/labels.inc:fri
+msgid "Fri"
+msgstr "Пт"
+
+#: program/localization/ru_RU/labels.inc:sat
+msgid "Sat"
+msgstr "Сб"
+
+#: program/localization/ru_RU/labels.inc:sunday
+msgid "Sunday"
+msgstr "Воскресенье"
+
+#: program/localization/ru_RU/labels.inc:monday
+msgid "Monday"
+msgstr "Понедельник"
+
+#: program/localization/ru_RU/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Вторник"
+
+#: program/localization/ru_RU/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Среда"
+
+#: program/localization/ru_RU/labels.inc:thursday
+msgid "Thursday"
+msgstr "Четверг"
+
+#: program/localization/ru_RU/labels.inc:friday
+msgid "Friday"
+msgstr "Пятница"
+
+#: program/localization/ru_RU/labels.inc:saturday
+msgid "Saturday"
+msgstr "Суббота"
+
+#: program/localization/ru_RU/labels.inc:jan
+msgid "Jan"
+msgstr "Янв"
+
+#: program/localization/ru_RU/labels.inc:feb
+msgid "Feb"
+msgstr "Фев"
+
+#: program/localization/ru_RU/labels.inc:mar
+msgid "Mar"
+msgstr "Мар"
+
+#: program/localization/ru_RU/labels.inc:apr
+msgid "Apr"
+msgstr "Апр"
+
+#: program/localization/ru_RU/labels.inc:may
+#: program/localization/ru_RU/labels.inc:longmay
+msgid "May"
+msgstr "Май"
+
+#: program/localization/ru_RU/labels.inc:jun
+msgid "Jun"
+msgstr "Июн"
+
+#: program/localization/ru_RU/labels.inc:jul
+msgid "Jul"
+msgstr "Июл"
+
+#: program/localization/ru_RU/labels.inc:aug
+msgid "Aug"
+msgstr "Авг"
+
+#: program/localization/ru_RU/labels.inc:sep
+msgid "Sep"
+msgstr "Сен"
+
+#: program/localization/ru_RU/labels.inc:oct
+msgid "Oct"
+msgstr "Окт"
+
+#: program/localization/ru_RU/labels.inc:nov
+msgid "Nov"
+msgstr "Ноя"
+
+#: program/localization/ru_RU/labels.inc:dec
+msgid "Dec"
+msgstr "Дек"
+
+#: program/localization/ru_RU/labels.inc:longjan
+msgid "January"
+msgstr "Январь"
+
+#: program/localization/ru_RU/labels.inc:longfeb
+msgid "February"
+msgstr "Февраль"
+
+#: program/localization/ru_RU/labels.inc:longmar
+msgid "March"
+msgstr "Март"
+
+#: program/localization/ru_RU/labels.inc:longapr
+msgid "April"
+msgstr "Апрель"
+
+#: program/localization/ru_RU/labels.inc:longjun
+msgid "June"
+msgstr "Июнь"
+
+#: program/localization/ru_RU/labels.inc:longjul
+msgid "July"
+msgstr "Июль"
+
+#: program/localization/ru_RU/labels.inc:longaug
+msgid "August"
+msgstr "Август"
+
+#: program/localization/ru_RU/labels.inc:longsep
+msgid "September"
+msgstr "Сентябрь"
+
+#: program/localization/ru_RU/labels.inc:longoct
+msgid "October"
+msgstr "Октябрь"
+
+#: program/localization/ru_RU/labels.inc:longnov
+msgid "November"
+msgstr "Ноябрь"
+
+#: program/localization/ru_RU/labels.inc:longdec
+msgid "December"
+msgstr "Декабрь"
+
+#: program/localization/ru_RU/labels.inc:today
+msgid "Today"
+msgstr "Сегодня"
+
+#: program/localization/ru_RU/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Доставить почту"
+
+#: program/localization/ru_RU/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Новое сообщение"
+
+#: program/localization/ru_RU/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Ответить"
+
+#: program/localization/ru_RU/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Ответить по списку или отправителю и"
+"всем получателям"
+
+#: program/localization/ru_RU/labels.inc:replyall
+msgid "Reply all"
+msgstr "Ответить всем"
+
+#: program/localization/ru_RU/labels.inc:replylist
+msgid "Reply list"
+msgstr "Ответить в список рассылки"
+
+#: program/localization/ru_RU/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "Переслать в теле письма"
+
+#: program/localization/ru_RU/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "Переслать как вложение"
+
+#: program/localization/ru_RU/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Переслать"
+
+#: program/localization/ru_RU/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "В корзину"
+
+#: program/localization/ru_RU/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Переместить сообщение в корзину"
+
+#: program/localization/ru_RU/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Печать"
+
+#: program/localization/ru_RU/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Показать предыдущее сообщение"
+
+#: program/localization/ru_RU/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Показать первое сообщение"
+
+#: program/localization/ru_RU/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Показать следующее сообщение"
+
+#: program/localization/ru_RU/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Показать последнее сообщение"
+
+#: program/localization/ru_RU/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "К списку сообщений"
+
+#: program/localization/ru_RU/labels.inc:viewsource
+msgid "Show source"
+msgstr "Исходный текст"
+
+#: program/localization/ru_RU/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Пометить сообщение"
+
+#: program/localization/ru_RU/labels.inc:markread
+msgid "As read"
+msgstr "Как прочитанное"
+
+#: program/localization/ru_RU/labels.inc:markunread
+msgid "As unread"
+msgstr "Как непрочитанное"
+
+#: program/localization/ru_RU/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Установить флаг"
+
+#: program/localization/ru_RU/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Снять флаг"
+
+#: program/localization/ru_RU/labels.inc:messageactions
+msgid "messageactions"
+msgstr "Еще действия..."
+
+#: program/localization/ru_RU/labels.inc:select
+msgid "Select"
+msgstr "Выбрать"
+
+#: program/localization/ru_RU/labels.inc:all
+msgid "All"
+msgstr "Все"
+
+#: program/localization/ru_RU/labels.inc:none
+#: program/localization/ru_RU/labels.inc:nonesort
+msgid "None"
+msgstr "Отсутствует"
+
+#: program/localization/ru_RU/labels.inc:currpage
+msgid "Current page"
+msgstr "Текущая страница"
+
+#: program/localization/ru_RU/labels.inc:unread
+msgid "Unread"
+msgstr "Непрочитанные"
+
+#: program/localization/ru_RU/labels.inc:flagged
+msgid "Flagged"
+msgstr "Помеченные"
+
+#: program/localization/ru_RU/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Неотвеченные"
+
+#: program/localization/ru_RU/labels.inc:deleted
+msgid "Deleted"
+msgstr "Удаленное"
+
+#: program/localization/ru_RU/labels.inc:invert
+msgid "Invert"
+msgstr "Инвертное"
+
+#: program/localization/ru_RU/labels.inc:filter
+msgid "Filter"
+msgstr "Фильтр"
+
+#: program/localization/ru_RU/labels.inc:list
+msgid "List"
+msgstr "Список"
+
+#: program/localization/ru_RU/labels.inc:threads
+msgid "Threads"
+msgstr "Обсуждения"
+
+#: program/localization/ru_RU/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Развернуть все"
+
+#: program/localization/ru_RU/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Развернуть непрочитанные"
+
+#: program/localization/ru_RU/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Свернуть все"
+
+#: program/localization/ru_RU/labels.inc:threaded
+msgid "Threaded"
+msgstr "Обсуждения"
+
+#: program/localization/ru_RU/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Развернуть обсуждения"
+
+#: program/localization/ru_RU/labels.inc:do_expand
+msgid "all threads"
+msgstr "все обсуждения"
+
+#: program/localization/ru_RU/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "только с непрочитанными сообщениями"
+
+#: program/localization/ru_RU/labels.inc:fromto
+msgid "From/To"
+msgstr "Отправитель/Получатель"
+
+#: program/localization/ru_RU/labels.inc:flag
+msgid "Flag"
+msgstr "Флаг"
+
+#: program/localization/ru_RU/labels.inc:attachment
+msgid "Attachment"
+msgstr "Вложение"
+
+#: program/localization/ru_RU/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Дата отправки"
+
+#: program/localization/ru_RU/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Дата получения"
+
+#: program/localization/ru_RU/labels.inc:asc
+msgid "ascending"
+msgstr "по возрастанию"
+
+#: program/localization/ru_RU/labels.inc:desc
+msgid "descending"
+msgstr "по убыванию"
+
+#: program/localization/ru_RU/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Колонки"
+
+#: program/localization/ru_RU/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Сортировать по"
+
+#: program/localization/ru_RU/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Порядок сортировки"
+
+#: program/localization/ru_RU/labels.inc:listmode
+msgid "List view mode"
+msgstr "Режим просмотра"
+
+#: program/localization/ru_RU/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Операции над папкой..."
+
+#: program/localization/ru_RU/labels.inc:compact
+msgid "Compact"
+msgstr "Сжать"
+
+#: program/localization/ru_RU/labels.inc:empty
+msgid "Empty"
+msgstr "Опустошить"
+
+#: program/localization/ru_RU/labels.inc:quota
+msgid "Disk usage"
+msgstr "Квота"
+
+#: program/localization/ru_RU/labels.inc:unknown
+msgid "unknown"
+msgstr "неизвестно"
+
+#: program/localization/ru_RU/labels.inc:unlimited
+msgid "unlimited"
+msgstr "без ограничений"
+
+#: program/localization/ru_RU/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Быстрый поиск"
+
+#: program/localization/ru_RU/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Сброс"
+
+#: program/localization/ru_RU/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Варианты поиска"
+
+#: program/localization/ru_RU/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Всё сообщение"
+
+#: program/localization/ru_RU/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Открыть в новом окне"
+
+#: program/localization/ru_RU/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Сохранить (.eml)"
+
+#: program/localization/ru_RU/labels.inc:compose
+msgid "Compose a message"
+msgstr "Написать сообщение"
+
+#: program/localization/ru_RU/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Редактировать как новое"
+
+#: program/localization/ru_RU/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Сохранить черновик"
+
+#: program/localization/ru_RU/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Отправить сейчас"
+
+#: program/localization/ru_RU/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Добавить вложение"
+
+#: program/localization/ru_RU/labels.inc:charset
+msgid "Charset"
+msgstr "Кодировка"
+
+#: program/localization/ru_RU/labels.inc:editortype
+msgid "Editor type"
+msgstr "Редактор"
+
+#: program/localization/ru_RU/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Запрос ответа"
+
+#: program/localization/ru_RU/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Уведомление о состоянии доставки"
+
+#: program/localization/ru_RU/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "$sender писал $date:"
+
+#: program/localization/ru_RU/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "Исходное сообщение"
+
+#: program/localization/ru_RU/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Изменить данные"
+
+#: program/localization/ru_RU/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Проверить орфографию"
+
+#: program/localization/ru_RU/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Продолжить редактирование"
+
+#: program/localization/ru_RU/labels.inc:revertto
+msgid "Revert to"
+msgstr "Отменить правки"
+
+#: program/localization/ru_RU/labels.inc:attachments
+msgid "Attachments"
+msgstr "Вложения"
+
+#: program/localization/ru_RU/labels.inc:upload
+msgid "Upload"
+msgstr "Загрузить"
+
+#: program/localization/ru_RU/labels.inc:uploadprogress
+msgid "$percent ($current from $total)"
+msgstr "$percent ($current из $total)"
+
+#: program/localization/ru_RU/labels.inc:close
+msgid "Close"
+msgstr "Закрыть"
+
+#: program/localization/ru_RU/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Настройки сообщений..."
+
+#: program/localization/ru_RU/labels.inc:low
+msgid "Low"
+msgstr "Низкий"
+
+#: program/localization/ru_RU/labels.inc:lowest
+msgid "Lowest"
+msgstr "Нижайш."
+
+#: program/localization/ru_RU/labels.inc:normal
+msgid "Normal"
+msgstr "Норм."
+
+#: program/localization/ru_RU/labels.inc:high
+msgid "High"
+msgstr "Высокий"
+
+#: program/localization/ru_RU/labels.inc:highest
+msgid "Highest"
+msgstr "Высоч."
+
+#: program/localization/ru_RU/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(без темы)"
+
+#: program/localization/ru_RU/labels.inc:showimages
+msgid "Display images"
+msgstr "Показать изображения"
+
+#: program/localization/ru_RU/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Всегда показывать изображенияв письмах"
+"от $sender"
+
+#: program/localization/ru_RU/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/ru_RU/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Текст"
+
+#: program/localization/ru_RU/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Сохранить в"
+
+#: program/localization/ru_RU/labels.inc:dontsave
+msgid "don't save"
+msgstr "не сохранять"
+
+#: program/localization/ru_RU/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Максимальный размер файла $size"
+
+#: program/localization/ru_RU/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Копия"
+
+#: program/localization/ru_RU/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Скрытая копия"
+
+#: program/localization/ru_RU/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Кому ответить"
+
+#: program/localization/ru_RU/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Добавить Followup-To"
+
+#: program/localization/ru_RU/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Отправитель этого сообщения запросил"
+"уведомление о прочтении. Отправить"
+"уведомление?"
+
+#: program/localization/ru_RU/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Уведомление о прочтении"
+
+#: program/localization/ru_RU/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Это уведомление о прочтении вашего"
+"сообщения"
+
+#: program/localization/ru_RU/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Это уведомление означает только, что"
+"сообщение было открыто получателем, и не"
+"гарантирует того, что оно было прочитано"
+"и (или) понято."
+
+#: program/localization/ru_RU/labels.inc:name
+msgid "Display Name"
+msgstr "Отображаемое имя"
+
+#: program/localization/ru_RU/labels.inc:firstname
+msgid "First Name"
+msgstr "Имя"
+
+#: program/localization/ru_RU/labels.inc:surname
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: program/localization/ru_RU/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Отчество"
+
+#: program/localization/ru_RU/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "Префикс"
+
+#: program/localization/ru_RU/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "Суффикс"
+
+#: program/localization/ru_RU/labels.inc:nickname
+msgid "Nickname"
+msgstr "Прозвище"
+
+#: program/localization/ru_RU/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Должность"
+
+#: program/localization/ru_RU/labels.inc:department
+msgid "Department"
+msgstr "Отдел"
+
+#: program/localization/ru_RU/labels.inc:gender
+msgid "Gender"
+msgstr "Пол"
+
+#: program/localization/ru_RU/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Девичья фамилия"
+
+#: program/localization/ru_RU/labels.inc:email
+msgid "Email"
+msgstr "E-Mail"
+
+#: program/localization/ru_RU/labels.inc:phone
+msgid "Phone"
+msgstr "Телефон"
+
+#: program/localization/ru_RU/labels.inc:address
+msgid "Address"
+msgstr "Адрес"
+
+#: program/localization/ru_RU/labels.inc:street
+msgid "Street"
+msgstr "Улица"
+
+#: program/localization/ru_RU/labels.inc:locality
+msgid "City"
+msgstr "Город"
+
+#: program/localization/ru_RU/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "Индекс"
+
+#: program/localization/ru_RU/labels.inc:region
+msgid "State/Province"
+msgstr "Область"
+
+#: program/localization/ru_RU/labels.inc:country
+msgid "Country"
+msgstr "Страна"
+
+#: program/localization/ru_RU/labels.inc:birthday
+msgid "Birthday"
+msgstr "День рождения"
+
+#: program/localization/ru_RU/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "Годовщина"
+
+#: program/localization/ru_RU/labels.inc:website
+msgid "Website"
+msgstr "Веб-сайт"
+
+#: program/localization/ru_RU/labels.inc:instantmessenger
+msgid "IM"
+msgstr "IM"
+
+#: program/localization/ru_RU/labels.inc:notes
+msgid "Notes"
+msgstr "Заметки"
+
+#: program/localization/ru_RU/labels.inc:male
+msgid "male"
+msgstr "мужской"
+
+#: program/localization/ru_RU/labels.inc:female
+msgid "female"
+msgstr "женский"
+
+#: program/localization/ru_RU/labels.inc:manager
+msgid "Manager"
+msgstr "Менеджер"
+
+#: program/localization/ru_RU/labels.inc:assistant
+#: program/localization/ru_RU/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Помощник"
+
+#: program/localization/ru_RU/labels.inc:spouse
+msgid "Spouse"
+msgstr "Супруг"
+
+#: program/localization/ru_RU/labels.inc:allfields
+msgid "All fields"
+msgstr "Все поля"
+
+#: program/localization/ru_RU/labels.inc:search
+msgid "Search"
+msgstr "Поиск"
+
+#: program/localization/ru_RU/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "Расширенный поиск"
+
+#: program/localization/ru_RU/labels.inc:other
+#: program/localization/ru_RU/labels.inc:typeother
+msgid "Other"
+msgstr "Другое"
+
+#: program/localization/ru_RU/labels.inc:typehome
+msgid "Home"
+msgstr "Дом"
+
+#: program/localization/ru_RU/labels.inc:typework
+msgid "Work"
+msgstr "Работа"
+
+#: program/localization/ru_RU/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Мобильный"
+
+#: program/localization/ru_RU/labels.inc:typemain
+msgid "Main"
+msgstr "Основной"
+
+#: program/localization/ru_RU/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Домашний факс"
+
+#: program/localization/ru_RU/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "Рабочий факс"
+
+#: program/localization/ru_RU/labels.inc:typecar
+msgid "Car"
+msgstr "Автомобиль"
+
+#: program/localization/ru_RU/labels.inc:typepager
+msgid "Pager"
+msgstr "Пэйджер"
+
+#: program/localization/ru_RU/labels.inc:typevideo
+msgid "Video"
+msgstr "Видео"
+
+#: program/localization/ru_RU/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "Домашняя страница"
+
+#: program/localization/ru_RU/labels.inc:typeblog
+msgid "Blog"
+msgstr "Блог"
+
+#: program/localization/ru_RU/labels.inc:typeprofile
+msgid "Profile"
+msgstr "Профиль"
+
+#: program/localization/ru_RU/labels.inc:addfield
+msgid "Add field..."
+msgstr "Добавить поле..."
+
+#: program/localization/ru_RU/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Добавить выбранные контакты в список"
+"контактов"
+
+#: program/localization/ru_RU/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Редактировать контакт"
+
+#: program/localization/ru_RU/labels.inc:contacts
+msgid "Contacts"
+msgstr "Контакты"
+
+#: program/localization/ru_RU/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Свойства контакта"
+
+#: program/localization/ru_RU/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Личная информация"
+
+#: program/localization/ru_RU/labels.inc:edit
+msgid "Edit"
+msgstr "Правка"
+
+#: program/localization/ru_RU/labels.inc:cancel
+msgid "Cancel"
+msgstr "Отмена"
+
+#: program/localization/ru_RU/labels.inc:save
+msgid "Save"
+msgstr "Сохранить"
+
+#: program/localization/ru_RU/labels.inc:delete
+msgid "Delete"
+msgstr "Удалить"
+
+#: program/localization/ru_RU/labels.inc:rename
+msgid "Rename"
+msgstr "Переименовать"
+
+#: program/localization/ru_RU/labels.inc:addphoto
+msgid "Add"
+msgstr "Добавить"
+
+#: program/localization/ru_RU/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Заменить"
+
+#: program/localization/ru_RU/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Создать новый контакт"
+
+#: program/localization/ru_RU/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Удалить выбранные контакты"
+
+#: program/localization/ru_RU/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Создать сообщение для выбранных"
+"контактов"
+
+#: program/localization/ru_RU/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Контакты с $from по $to из $count"
+
+#: program/localization/ru_RU/labels.inc:print
+msgid "Print"
+msgstr "Печать"
+
+#: program/localization/ru_RU/labels.inc:export
+msgid "Export"
+msgstr "Экспорт"
+
+#: program/localization/ru_RU/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Экспортировать контакты в формате vCard"
+
+#: program/localization/ru_RU/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Создать группу контактов"
+
+#: program/localization/ru_RU/labels.inc:groupactions
+msgid "groupactions"
+msgstr "Действия для групп контактов"
+
+#: program/localization/ru_RU/labels.inc:grouprename
+msgid "Rename group"
+msgstr "Переименовать группу"
+
+#: program/localization/ru_RU/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "Удалить группу"
+
+#: program/localization/ru_RU/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Показать предыдущий"
+
+#: program/localization/ru_RU/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Показать первый"
+
+#: program/localization/ru_RU/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Показать следующий"
+
+#: program/localization/ru_RU/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Показать последний"
+
+#: program/localization/ru_RU/labels.inc:group
+msgid "Group"
+msgstr "Группа"
+
+#: program/localization/ru_RU/labels.inc:groups
+msgid "Groups"
+msgstr "Группы"
+
+#: program/localization/ru_RU/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Персональные адреса"
+
+#: program/localization/ru_RU/labels.inc:import
+msgid "Import"
+msgstr "Импортировать"
+
+#: program/localization/ru_RU/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Импортировать контакты"
+
+#: program/localization/ru_RU/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Импортировать из файла:"
+
+#: program/localization/ru_RU/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "Добавить новые контакты в адресную"
+"книгу:"
+
+#: program/localization/ru_RU/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Заменить всю адресную книгу"
+
+#: program/localization/ru_RU/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Вы можете загрузить контакты из"
+"существующей адресной книги. На данный"
+"момент поддерживается загрузка в"
+"формате vCard."
+
+#: program/localization/ru_RU/labels.inc:done
+msgid "Done"
+msgstr "Завершено"
+
+#: program/localization/ru_RU/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Настройки для"
+
+#: program/localization/ru_RU/labels.inc:preferences
+msgid "Preferences"
+msgstr "Настройки"
+
+#: program/localization/ru_RU/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Настройки пользователя"
+
+#: program/localization/ru_RU/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Редактировать настройки пользователя"
+
+#: program/localization/ru_RU/labels.inc:identities
+msgid "Identities"
+msgstr "Профили"
+
+#: program/localization/ru_RU/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Управление профилями"
+
+#: program/localization/ru_RU/labels.inc:newidentity
+msgid "New identity"
+msgstr "Новый профиль"
+
+#: program/localization/ru_RU/labels.inc:newitem
+msgid "New item"
+msgstr "Новый"
+
+#: program/localization/ru_RU/labels.inc:edititem
+msgid "Edit item"
+msgstr "Правка"
+
+#: program/localization/ru_RU/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Предпочитать HTML"
+
+#: program/localization/ru_RU/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Набор символов по-умолчанию"
+
+#: program/localization/ru_RU/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Сообщение HTML"
+
+#: program/localization/ru_RU/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Красивые даты"
+
+#: program/localization/ru_RU/labels.inc:setdefault
+msgid "Set default"
+msgstr "Использовать по умолчанию"
+
+#: program/localization/ru_RU/labels.inc:autodetect
+msgid "Auto"
+msgstr "Определять автоматически"
+
+#: program/localization/ru_RU/labels.inc:language
+msgid "Language"
+msgstr "Язык"
+
+#: program/localization/ru_RU/labels.inc:timezone
+msgid "Time zone"
+msgstr "Часовой пояс"
+
+#: program/localization/ru_RU/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Строк на странице"
+
+#: program/localization/ru_RU/labels.inc:signature
+msgid "Signature"
+msgstr "Подпись"
+
+#: program/localization/ru_RU/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Летнее время"
+
+#: program/localization/ru_RU/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Создавать сообщения в HTML"
+
+#: program/localization/ru_RU/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "только в ответ на сообщение в HTML"
+
+#: program/localization/ru_RU/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "Подпись в HTML"
+
+#: program/localization/ru_RU/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Показать панель превью"
+
+#: program/localization/ru_RU/labels.inc:skin
+msgid "Interface skin"
+msgstr "Стиль оформления"
+
+#: program/localization/ru_RU/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Очищать корзину при выходе"
+
+#: program/localization/ru_RU/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Сжать Входящие при выходе"
+
+#: program/localization/ru_RU/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Пользовательский интерфейс"
+
+#: program/localization/ru_RU/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Настройки сервера"
+
+#: program/localization/ru_RU/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Вид почтового ящика"
+
+#: program/localization/ru_RU/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Уведомления о прочтении"
+
+#: program/localization/ru_RU/labels.inc:askuser
+msgid "ask me"
+msgstr "спросить перед отправкой"
+
+#: program/localization/ru_RU/labels.inc:autosend
+msgid "send receipt"
+msgstr "отправлять автоматически"
+
+#: program/localization/ru_RU/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "отправлять уведомления контактам из"
+"адресной книги, в противном случае"
+"спросить"
+
+#: program/localization/ru_RU/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "отправлять уведомления только контактам"
+"из адресной книги, остальных"
+"игнорировать"
+
+#: program/localization/ru_RU/labels.inc:ignore
+msgid "ignore"
+msgstr "игнорировать"
+
+#: program/localization/ru_RU/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Помечать как прочитанное при удалении"
+
+#: program/localization/ru_RU/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Помечать для удаления вместо удаления"
+
+#: program/localization/ru_RU/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Не показывать удаленные сообщения"
+
+#: program/localization/ru_RU/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Удалять сообщения, если не получается"
+"поместить их в корзину"
+
+#: program/localization/ru_RU/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Показывать удаленные изображения"
+
+#: program/localization/ru_RU/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "от известных отправителей"
+
+#: program/localization/ru_RU/labels.inc:always
+msgid "always"
+msgstr "всегда"
+
+#: program/localization/ru_RU/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Показывать вложенные изображения внизу"
+"сообщения"
+
+#: program/localization/ru_RU/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Автосохранение черновика"
+
+#: program/localization/ru_RU/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "каждые $n минут"
+
+#: program/localization/ru_RU/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Проверять новые сообщения"
+
+#: program/localization/ru_RU/labels.inc:never
+msgid "never"
+msgstr "никогда"
+
+#: program/localization/ru_RU/labels.inc:immediately
+msgid "immediately"
+msgstr "немедленно"
+
+#: program/localization/ru_RU/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Отображение сообщений"
+
+#: program/localization/ru_RU/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Создание сообщений"
+
+#: program/localization/ru_RU/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Имена вложений"
+
+#: program/localization/ru_RU/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "RFC 2231 (только для новейших программ)"
+
+#: program/localization/ru_RU/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231  (наибольшая совместимость)"
+
+#: program/localization/ru_RU/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "RFC 2047  (для старых программ)"
+
+#: program/localization/ru_RU/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "Использовать MIME для 8-битных символов"
+
+#: program/localization/ru_RU/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Дополнительные настройки"
+
+#: program/localization/ru_RU/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Фокусировать окно браузера при новом"
+"сообщении"
+
+#: program/localization/ru_RU/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Проверять новые сообщения во всех папках"
+
+#: program/localization/ru_RU/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Показать следующее сообщение, после"
+"удаления или перемещения данного"
+
+#: program/localization/ru_RU/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Основные настройки"
+
+#: program/localization/ru_RU/labels.inc:section
+msgid "Section"
+msgstr "Раздел"
+
+#: program/localization/ru_RU/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Обслуживание"
+
+#: program/localization/ru_RU/labels.inc:newmessage
+msgid "New Message"
+msgstr "Новое сообщение"
+
+#: program/localization/ru_RU/labels.inc:listoptions
+msgid "List Options"
+msgstr "Список настроек"
+
+#: program/localization/ru_RU/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Опции подписи"
+
+#: program/localization/ru_RU/labels.inc:whenreplying
+msgid "When replying"
+msgstr "При ответе"
+
+#: program/localization/ru_RU/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "начать новое сообщение перед цитируемым"
+
+#: program/localization/ru_RU/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "начать новое сообщение после"
+"цитируемого"
+
+#: program/localization/ru_RU/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "Удалить подпись при ответе"
+
+#: program/localization/ru_RU/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Автоматически добавлять подпись"
+
+#: program/localization/ru_RU/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "только в новых сообщениях"
+
+#: program/localization/ru_RU/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "только в ответах и пересылках"
+
+#: program/localization/ru_RU/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "Прикрепить подпись при ответе и"
+"пересылке"
+
+#: program/localization/ru_RU/labels.inc:belowquote
+msgid "below the quote"
+msgstr "после цитаты"
+
+#: program/localization/ru_RU/labels.inc:abovequote
+msgid "above the quote"
+msgstr "до цитаты"
+
+#: program/localization/ru_RU/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Вставить подпись"
+
+#: program/localization/ru_RU/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Отмечать просмотренные сообщения как"
+"прочитанные"
+
+#: program/localization/ru_RU/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "через $n секунд"
+
+#: program/localization/ru_RU/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Всегда запрашивать уведомление о"
+"доставке"
+
+#: program/localization/ru_RU/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Всегда запрашивать уведомление о"
+"состоянии доставки"
+
+#: program/localization/ru_RU/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Помещать ответы в ту же папку, где"
+"находится оригинал"
+
+#: program/localization/ru_RU/labels.inc:defaultaddressbook
+msgid "Add new contacts to the selected addressbook"
+msgstr "Добавить новые контакты в выбранную"
+"адресную книгу"
+
+#: program/localization/ru_RU/labels.inc:spellcheckbeforesend
+msgid "Check spelling before sending a message"
+msgstr "Проверять орфографию перед отправкой"
+
+#: program/localization/ru_RU/labels.inc:folder
+msgid "Folder"
+msgstr "Папка"
+
+#: program/localization/ru_RU/labels.inc:foldername
+msgid "Folder name"
+msgstr "Имя папки"
+
+#: program/localization/ru_RU/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Подписан"
+
+#: program/localization/ru_RU/labels.inc:messagecount
+msgid "Messages"
+msgstr "Сообщения"
+
+#: program/localization/ru_RU/labels.inc:create
+msgid "Create"
+msgstr "Создать"
+
+#: program/localization/ru_RU/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Создать новую папку"
+
+#: program/localization/ru_RU/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Управление папками"
+
+#: program/localization/ru_RU/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Особые папки"
+
+#: program/localization/ru_RU/labels.inc:properties
+msgid "Properties"
+msgstr "Свойства"
+
+#: program/localization/ru_RU/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Свойства папки"
+
+#: program/localization/ru_RU/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Родительская папка"
+
+#: program/localization/ru_RU/labels.inc:location
+msgid "Location"
+msgstr "Расположение"
+
+#: program/localization/ru_RU/labels.inc:info
+msgid "Information"
+msgstr "Информация"
+
+#: program/localization/ru_RU/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Показать размер папки"
+
+#: program/localization/ru_RU/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Изменить подписку"
+
+#: program/localization/ru_RU/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Тип каталога"
+
+#: program/localization/ru_RU/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "Приватный каталог"
+
+#: program/localization/ru_RU/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "Каталог другого пользователя"
+
+#: program/localization/ru_RU/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "Совместный каталог"
+
+#: program/localization/ru_RU/labels.inc:sortby
+msgid "Sort by"
+msgstr "Сортировать по"
+
+#: program/localization/ru_RU/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Возрастанию"
+
+#: program/localization/ru_RU/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Убыванию"
+
+#: program/localization/ru_RU/labels.inc:undo
+msgid "Undo"
+msgstr "Отмена"
+
+#: program/localization/ru_RU/labels.inc:B
+msgid "B"
+msgstr "Б"
+
+#: program/localization/ru_RU/labels.inc:KB
+msgid "KB"
+msgstr "КБ"
+
+#: program/localization/ru_RU/labels.inc:MB
+msgid "MB"
+msgstr "МБ"
+
+#: program/localization/ru_RU/labels.inc:GB
+msgid "GB"
+msgstr "ГБ"
+
+#: program/localization/ru_RU/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unicode"
+
+#: program/localization/ru_RU/labels.inc:english
+msgid "English"
+msgstr "Английский"
+
+#: program/localization/ru_RU/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Западноевропейский"
+
+#: program/localization/ru_RU/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Восточноевропейский"
+
+#: program/localization/ru_RU/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Юго-Восточноевропейский"
+
+#: program/localization/ru_RU/labels.inc:baltic
+msgid "Baltic"
+msgstr "Прибалтийский"
+
+#: program/localization/ru_RU/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Кириллица"
+
+#: program/localization/ru_RU/labels.inc:arabic
+msgid "Arabic"
+msgstr "Арабский"
+
+#: program/localization/ru_RU/labels.inc:greek
+msgid "Greek"
+msgstr "Греческий"
+
+#: program/localization/ru_RU/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Иврит"
+
+#: program/localization/ru_RU/labels.inc:turkish
+msgid "Turkish"
+msgstr "Турецкий"
+
+#: program/localization/ru_RU/labels.inc:nordic
+msgid "Nordic"
+msgstr "Скандинавский"
+
+#: program/localization/ru_RU/labels.inc:thai
+msgid "Thai"
+msgstr "Тайский"
+
+#: program/localization/ru_RU/labels.inc:celtic
+msgid "Celtic"
+msgstr "Кельтский"
+
+#: program/localization/ru_RU/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Вьетнамский"
+
+#: program/localization/ru_RU/labels.inc:japanese
+msgid "Japanese"
+msgstr "Японский"
+
+#: program/localization/ru_RU/labels.inc:korean
+msgid "Korean"
+msgstr "Корейский"
+
+#: program/localization/ru_RU/labels.inc:chinese
+msgid "Chinese"
+msgstr "Китайский"

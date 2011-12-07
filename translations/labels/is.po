@@ -1,0 +1,984 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/is_IS/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: is_IS\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/is_IS/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Vefpóstur"
+
+#: program/localization/is_IS/labels.inc:username
+msgid "Username"
+msgstr "Netfang"
+
+#: program/localization/is_IS/labels.inc:password
+msgid "Password"
+msgstr "Lykilorð"
+
+#: program/localization/is_IS/labels.inc:server
+msgid "Server"
+msgstr "Server"
+
+#: program/localization/is_IS/labels.inc:login
+msgid "Login"
+msgstr "Innskrá"
+
+#: program/localization/is_IS/labels.inc:logout
+msgid "Logout"
+msgstr "Útskrá"
+
+#: program/localization/is_IS/labels.inc:mail
+msgid "Mail"
+msgstr "Tölvupóstur"
+
+#: program/localization/is_IS/labels.inc:settings
+msgid "Settings"
+msgstr "Stillingar"
+
+#: program/localization/is_IS/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Netfangaskrá"
+
+#: program/localization/is_IS/labels.inc:inbox
+msgid "Inbox"
+msgstr "Innhólf"
+
+#: program/localization/is_IS/labels.inc:drafts
+msgid "Drafts"
+msgstr "Drög"
+
+#: program/localization/is_IS/labels.inc:sent
+msgid "Sent"
+msgstr "Sent"
+
+#: program/localization/is_IS/labels.inc:trash
+msgid "Trash"
+msgstr "Eyddir hlutir"
+
+#: program/localization/is_IS/labels.inc:junk
+msgid "Junk"
+msgstr "Ruslpóstur"
+
+#: program/localization/is_IS/labels.inc:subject
+msgid "Subject"
+msgstr "Efni"
+
+#: program/localization/is_IS/labels.inc:from
+msgid "From"
+msgstr "Sendandi"
+
+#: program/localization/is_IS/labels.inc:to
+msgid "To"
+msgstr "Viðtakandi"
+
+#: program/localization/is_IS/labels.inc:cc
+msgid "Cc"
+msgstr "Afrit"
+
+#: program/localization/is_IS/labels.inc:bcc
+msgid "Bcc"
+msgstr "Blint afrit"
+
+#: program/localization/is_IS/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Reply-To"
+
+#: program/localization/is_IS/labels.inc:date
+msgid "Date"
+msgstr "Dags"
+
+#: program/localization/is_IS/labels.inc:size
+msgid "Size"
+msgstr "Stærð"
+
+#: program/localization/is_IS/labels.inc:priority
+msgid "Priority"
+msgstr "Forgangur"
+
+#: program/localization/is_IS/labels.inc:organization
+msgid "Company"
+msgstr "Stofnun"
+
+#: program/localization/is_IS/labels.inc:reply-to
+msgid "reply-to"
+msgstr "Reply-To"
+
+#: program/localization/is_IS/labels.inc:mailboxlist
+#: program/localization/is_IS/labels.inc:folders
+msgid "Folders"
+msgstr "Möppur"
+
+#: program/localization/is_IS/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Skeyti $from til $to af $count"
+
+#: program/localization/is_IS/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Skeyti $nr af $count"
+
+#: program/localization/is_IS/labels.inc:moveto
+msgid "Move to..."
+msgstr "færa í..."
+
+#: program/localization/is_IS/labels.inc:download
+msgid "Download"
+msgstr "sækja"
+
+#: program/localization/is_IS/labels.inc:filename
+msgid "File name"
+msgstr "Skrárnafn"
+
+#: program/localization/is_IS/labels.inc:filesize
+msgid "File size"
+msgstr "Skrárstærð"
+
+#: program/localization/is_IS/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Vil HTML"
+
+#: program/localization/is_IS/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML skeyti"
+
+#: program/localization/is_IS/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Fallegar dagsetningar"
+
+#: program/localization/is_IS/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Bæta í netfangaskrá"
+
+#: program/localization/is_IS/labels.inc:sun
+msgid "Sun"
+msgstr "sun"
+
+#: program/localization/is_IS/labels.inc:mon
+msgid "Mon"
+msgstr "mán"
+
+#: program/localization/is_IS/labels.inc:tue
+msgid "Tue"
+msgstr "þri"
+
+#: program/localization/is_IS/labels.inc:wed
+msgid "Wed"
+msgstr "mið"
+
+#: program/localization/is_IS/labels.inc:thu
+msgid "Thu"
+msgstr "fim"
+
+#: program/localization/is_IS/labels.inc:fri
+msgid "Fri"
+msgstr "fös"
+
+#: program/localization/is_IS/labels.inc:sat
+msgid "Sat"
+msgstr "lau"
+
+#: program/localization/is_IS/labels.inc:sunday
+msgid "Sunday"
+msgstr "sunnudagur"
+
+#: program/localization/is_IS/labels.inc:monday
+msgid "Monday"
+msgstr "mánudagur"
+
+#: program/localization/is_IS/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "þriðjudagur"
+
+#: program/localization/is_IS/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "miðvikudagur"
+
+#: program/localization/is_IS/labels.inc:thursday
+msgid "Thursday"
+msgstr "fimmtudagur"
+
+#: program/localization/is_IS/labels.inc:friday
+msgid "Friday"
+msgstr "föstudagur"
+
+#: program/localization/is_IS/labels.inc:saturday
+msgid "Saturday"
+msgstr "laugardagur"
+
+#: program/localization/is_IS/labels.inc:jan
+msgid "Jan"
+msgstr "Jan"
+
+#: program/localization/is_IS/labels.inc:feb
+msgid "Feb"
+msgstr "Feb"
+
+#: program/localization/is_IS/labels.inc:mar
+msgid "Mar"
+msgstr "Mar"
+
+#: program/localization/is_IS/labels.inc:apr
+msgid "Apr"
+msgstr "Apr"
+
+#: program/localization/is_IS/labels.inc:may
+#: program/localization/is_IS/labels.inc:longmay
+msgid "May"
+msgstr "Maí"
+
+#: program/localization/is_IS/labels.inc:jun
+msgid "Jun"
+msgstr "Jún"
+
+#: program/localization/is_IS/labels.inc:jul
+msgid "Jul"
+msgstr "Júl"
+
+#: program/localization/is_IS/labels.inc:aug
+msgid "Aug"
+msgstr "Ágú"
+
+#: program/localization/is_IS/labels.inc:sep
+msgid "Sep"
+msgstr "Sep"
+
+#: program/localization/is_IS/labels.inc:oct
+msgid "Oct"
+msgstr "Okt"
+
+#: program/localization/is_IS/labels.inc:nov
+msgid "Nov"
+msgstr "Nóv"
+
+#: program/localization/is_IS/labels.inc:dec
+msgid "Dec"
+msgstr "Des"
+
+#: program/localization/is_IS/labels.inc:longjan
+msgid "January"
+msgstr "Janúar"
+
+#: program/localization/is_IS/labels.inc:longfeb
+msgid "February"
+msgstr "Febrúar"
+
+#: program/localization/is_IS/labels.inc:longmar
+msgid "March"
+msgstr "Mars"
+
+#: program/localization/is_IS/labels.inc:longapr
+msgid "April"
+msgstr "Apríl"
+
+#: program/localization/is_IS/labels.inc:longjun
+msgid "June"
+msgstr "Júní"
+
+#: program/localization/is_IS/labels.inc:longjul
+msgid "July"
+msgstr "Júlí"
+
+#: program/localization/is_IS/labels.inc:longaug
+msgid "August"
+msgstr "Ágúst"
+
+#: program/localization/is_IS/labels.inc:longsep
+msgid "September"
+msgstr "September"
+
+#: program/localization/is_IS/labels.inc:longoct
+msgid "October"
+msgstr "Október"
+
+#: program/localization/is_IS/labels.inc:longnov
+msgid "November"
+msgstr "Nóvember"
+
+#: program/localization/is_IS/labels.inc:longdec
+msgid "December"
+msgstr "Desember"
+
+#: program/localization/is_IS/labels.inc:today
+msgid "Today"
+msgstr "í dag"
+
+#: program/localization/is_IS/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Gá að nýjum skeytum"
+
+#: program/localization/is_IS/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Búa til nýtt skeyti"
+
+#: program/localization/is_IS/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Svara skeyti"
+
+#: program/localization/is_IS/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Svara sendanda og öllum viðtakendum"
+
+#: program/localization/is_IS/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Framsenda skeyti"
+
+#: program/localization/is_IS/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Eyða skeyti"
+
+#: program/localization/is_IS/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Færa skeyti í rusl"
+
+#: program/localization/is_IS/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Prenta skeyti"
+
+#: program/localization/is_IS/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Sýna fyrra skeyti"
+
+#: program/localization/is_IS/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "Sýna fyrri skammt af skeytum"
+
+#: program/localization/is_IS/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Sýna fyrsta skeyti"
+
+#: program/localization/is_IS/labels.inc:firstmessages
+msgid "firstmessages"
+msgstr "Sýna fyrsta skammtinn af skeytum"
+
+#: program/localization/is_IS/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Sýna næsta skeyti"
+
+#: program/localization/is_IS/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "Sýna næsta skammt af skeytum"
+
+#: program/localization/is_IS/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Sýna síðasta skeytið"
+
+#: program/localization/is_IS/labels.inc:lastmessages
+msgid "lastmessages"
+msgstr "Sýna síðasta skammtinn af skeytum"
+
+#: program/localization/is_IS/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Til baka í skeytalista"
+
+#: program/localization/is_IS/labels.inc:viewsource
+msgid "Show source"
+msgstr "Skoða kóða"
+
+#: program/localization/is_IS/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Merkja skeyti"
+
+#: program/localization/is_IS/labels.inc:markread
+msgid "As read"
+msgstr "Sem lesin"
+
+#: program/localization/is_IS/labels.inc:markunread
+msgid "As unread"
+msgstr "Sem ólesin"
+
+#: program/localization/is_IS/labels.inc:markflagged
+msgid "As flagged"
+msgstr "Sem flögguð"
+
+#: program/localization/is_IS/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "Sem óflögguð"
+
+#: program/localization/is_IS/labels.inc:select
+msgid "Select"
+msgstr "Velja"
+
+#: program/localization/is_IS/labels.inc:all
+msgid "All"
+msgstr "Allt"
+
+#: program/localization/is_IS/labels.inc:none
+msgid "None"
+msgstr "Ekkert"
+
+#: program/localization/is_IS/labels.inc:unread
+msgid "Unread"
+msgstr "Ólesið"
+
+#: program/localization/is_IS/labels.inc:flagged
+msgid "Flagged"
+msgstr "Flaggað"
+
+#: program/localization/is_IS/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Ósvarað"
+
+#: program/localization/is_IS/labels.inc:filter
+msgid "Filter"
+msgstr "Sía"
+
+#: program/localization/is_IS/labels.inc:compact
+msgid "Compact"
+msgstr "Pakka"
+
+#: program/localization/is_IS/labels.inc:empty
+msgid "Empty"
+msgstr "Tæma"
+
+#: program/localization/is_IS/labels.inc:purge
+msgid "purge"
+msgstr "Hreinsa"
+
+#: program/localization/is_IS/labels.inc:quota
+msgid "Disk usage"
+msgstr "Gagnamagn"
+
+#: program/localization/is_IS/labels.inc:unknown
+msgid "unknown"
+msgstr "óþekkt"
+
+#: program/localization/is_IS/labels.inc:unlimited
+msgid "unlimited"
+msgstr "ótakmarkað"
+
+#: program/localization/is_IS/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Flýtileit"
+
+#: program/localization/is_IS/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Tæma leit"
+
+#: program/localization/is_IS/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Opna í nýjum glugga"
+
+#: program/localization/is_IS/labels.inc:compose
+msgid "Compose a message"
+msgstr "Semja skeyti"
+
+#: program/localization/is_IS/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Vista drög"
+
+#: program/localization/is_IS/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Senda skeytið núna"
+
+#: program/localization/is_IS/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Hengja við"
+
+#: program/localization/is_IS/labels.inc:charset
+msgid "Charset"
+msgstr "Stafasett"
+
+#: program/localization/is_IS/labels.inc:editortype
+msgid "Editor type"
+msgstr "Gerð ritils"
+
+#: program/localization/is_IS/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Kvittun við lestur"
+
+#: program/localization/is_IS/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Villuleita"
+
+#: program/localization/is_IS/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Aftur í ritham"
+
+#: program/localization/is_IS/labels.inc:revertto
+msgid "Revert to"
+msgstr "Hverfa til"
+
+#: program/localization/is_IS/labels.inc:attachments
+msgid "Attachments"
+msgstr "Viðhengi"
+
+#: program/localization/is_IS/labels.inc:upload
+msgid "Upload"
+msgstr "Senda"
+
+#: program/localization/is_IS/labels.inc:close
+msgid "Close"
+msgstr "Loka"
+
+#: program/localization/is_IS/labels.inc:low
+msgid "Low"
+msgstr "Lágt"
+
+#: program/localization/is_IS/labels.inc:lowest
+msgid "Lowest"
+msgstr "Lægst"
+
+#: program/localization/is_IS/labels.inc:normal
+msgid "Normal"
+msgstr "Venjulegt"
+
+#: program/localization/is_IS/labels.inc:high
+msgid "High"
+msgstr "Hátt"
+
+#: program/localization/is_IS/labels.inc:highest
+msgid "Highest"
+msgstr "Hæst"
+
+#: program/localization/is_IS/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(ekkert efni)"
+
+#: program/localization/is_IS/labels.inc:showimages
+msgid "Display images"
+msgstr "Birta myndir"
+
+#: program/localization/is_IS/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Sýna alltaf myndir frá $sender"
+
+#: program/localization/is_IS/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/is_IS/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Einfaldur"
+
+#: program/localization/is_IS/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Vista send skeyti í "
+
+#: program/localization/is_IS/labels.inc:dontsave
+msgid "don't save"
+msgstr "ekki vista"
+
+#: program/localization/is_IS/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Leyfileg hámarksstærð skjals er $size"
+
+#: program/localization/is_IS/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Bæta við Cc"
+
+#: program/localization/is_IS/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Bæta við Bcc"
+
+#: program/localization/is_IS/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Bæta við Reply-To"
+
+#: program/localization/is_IS/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "Sendandi þessa skeytið hefur óskað þess að þú látir vita að þú"
+"hafir lesið þetta skeyti. Viltu láta hann vita?"
+
+#: program/localization/is_IS/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Kvittun (lesa)"
+
+#: program/localization/is_IS/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Þetta er kvittun fyrir skeytið"
+
+#: program/localization/is_IS/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "ATH: Þessi kvittun segir aðeins til um að skeytið kom upp á skjánum"
+"á viðtakanda. Það er engin sönnun um að hann hafi lesið eða skilið"
+"innihaldið."
+
+#: program/localization/is_IS/labels.inc:name
+msgid "Display Name"
+msgstr "Nafn til birtingar"
+
+#: program/localization/is_IS/labels.inc:firstname
+msgid "First Name"
+msgstr "Fornafn"
+
+#: program/localization/is_IS/labels.inc:surname
+msgid "Last Name"
+msgstr "Eftirnafn"
+
+#: program/localization/is_IS/labels.inc:email
+msgid "Email"
+msgstr "Netfang"
+
+#: program/localization/is_IS/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Bæta við nýju"
+
+#: program/localization/is_IS/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Lagfæra"
+
+#: program/localization/is_IS/labels.inc:edit
+msgid "Edit"
+msgstr "Laga"
+
+#: program/localization/is_IS/labels.inc:cancel
+msgid "Cancel"
+msgstr "Hætta við"
+
+#: program/localization/is_IS/labels.inc:save
+msgid "Save"
+msgstr "Vista"
+
+#: program/localization/is_IS/labels.inc:delete
+msgid "Delete"
+msgstr "Eyða"
+
+#: program/localization/is_IS/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Búa til nýtt nafnspjald"
+
+#: program/localization/is_IS/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Eyða völdum netföngum"
+
+#: program/localization/is_IS/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Skrifa skeyti til"
+
+#: program/localization/is_IS/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Netföng $from til $to af $count"
+
+#: program/localization/is_IS/labels.inc:print
+msgid "Print"
+msgstr "Prenta"
+
+#: program/localization/is_IS/labels.inc:export
+msgid "Export"
+msgstr "Flytja út"
+
+#: program/localization/is_IS/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Flytja út nafnspjöld á vCard formi"
+
+#: program/localization/is_IS/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Sýni fyrri skammt"
+
+#: program/localization/is_IS/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Sýna fyrsta skammt"
+
+#: program/localization/is_IS/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Sýna næsta skammt"
+
+#: program/localization/is_IS/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Sýna síðasta skammt"
+
+#: program/localization/is_IS/labels.inc:groups
+msgid "Groups"
+msgstr "Hópar"
+
+#: program/localization/is_IS/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Persónuleg heimilisföng"
+
+#: program/localization/is_IS/labels.inc:import
+msgid "Import"
+msgstr "Flytja inn"
+
+#: program/localization/is_IS/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Flytja inn nafnspjöld"
+
+#: program/localization/is_IS/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Flytja inn af skrá"
+
+#: program/localization/is_IS/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Skipta út allri netfangaskránni"
+
+#: program/localization/is_IS/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Þú getur flutt inn nafnspjöld frá núverandi netfangaskrá. <br/>Nú"
+"styðjum við innflutning á netföngum á <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> formi."
+
+#: program/localization/is_IS/labels.inc:done
+msgid "Done"
+msgstr "Afgreitt"
+
+#: program/localization/is_IS/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Stillingar fyrir"
+
+#: program/localization/is_IS/labels.inc:preferences
+msgid "Preferences"
+msgstr "Stillingar"
+
+#: program/localization/is_IS/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Notendastillingar"
+
+#: program/localization/is_IS/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Breyta notendastillingum"
+
+#: program/localization/is_IS/labels.inc:identities
+msgid "Identities"
+msgstr "Identities"
+
+#: program/localization/is_IS/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Manage identities for this account"
+
+#: program/localization/is_IS/labels.inc:newidentity
+msgid "New identity"
+msgstr "New identity"
+
+#: program/localization/is_IS/labels.inc:newitem
+msgid "New item"
+msgstr "Nýtt"
+
+#: program/localization/is_IS/labels.inc:edititem
+msgid "Edit item"
+msgstr "Laga"
+
+#: program/localization/is_IS/labels.inc:setdefault
+msgid "Set default"
+msgstr "Gera sjálfgilt"
+
+#: program/localization/is_IS/labels.inc:autodetect
+msgid "Auto"
+msgstr "Sjálfvirkt"
+
+#: program/localization/is_IS/labels.inc:language
+msgid "Language"
+msgstr "Tungumál"
+
+#: program/localization/is_IS/labels.inc:timezone
+msgid "Time zone"
+msgstr "Tímabelti"
+
+#: program/localization/is_IS/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Línur á síðu"
+
+#: program/localization/is_IS/labels.inc:signature
+msgid "Signature"
+msgstr "Undirskrift"
+
+#: program/localization/is_IS/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Sumar-/vetratími"
+
+#: program/localization/is_IS/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Skrifa HTML-skeyti"
+
+#: program/localization/is_IS/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "HTML-undirskrift"
+
+#: program/localization/is_IS/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Sýna forskoðunarglugga"
+
+#: program/localization/is_IS/labels.inc:skin
+msgid "Interface skin"
+msgstr "Sniðmát á viðmóti"
+
+#: program/localization/is_IS/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Tæma rusl við útskráningu"
+
+#: program/localization/is_IS/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Þjappa Innhólfi við útskráningu"
+
+#: program/localization/is_IS/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Notendasniðmát"
+
+#: program/localization/is_IS/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Stillingar þjóns"
+
+#: program/localization/is_IS/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Pósthólfs útlit"
+
+#: program/localization/is_IS/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Viðvaranir sendanda"
+
+#: program/localization/is_IS/labels.inc:askuser
+msgid "ask me"
+msgstr "spyrja notanda"
+
+#: program/localization/is_IS/labels.inc:autosend
+msgid "send receipt"
+msgstr "senda sjálfkrafa"
+
+#: program/localization/is_IS/labels.inc:ignore
+msgid "ignore"
+msgstr "hunsa"
+
+#: program/localization/is_IS/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Merkja skeyti sem lesið þegar því er hent"
+
+#: program/localization/is_IS/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Merkja skeyti til eyðingar í stað þess að eyða"
+
+#: program/localization/is_IS/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Ekki sýna eydd skeyti"
+
+#: program/localization/is_IS/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Sýna myndir annarsstaðar frá"
+
+#: program/localization/is_IS/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "frá þekktum sendendum"
+
+#: program/localization/is_IS/labels.inc:always
+msgid "always"
+msgstr "alltaf"
+
+#: program/localization/is_IS/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Sýna viðhangandi myndir fyrir neðan skeytið"
+
+#: program/localization/is_IS/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Vista sjálfkrafa sem drög"
+
+#: program/localization/is_IS/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "$n mínútu fresti"
+
+#: program/localization/is_IS/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Athuga ný skeyti á"
+
+#: program/localization/is_IS/labels.inc:never
+msgid "never"
+msgstr "aldrei"
+
+#: program/localization/is_IS/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Sýni skeyti"
+
+#: program/localization/is_IS/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Semja skeyti"
+
+#: program/localization/is_IS/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Nafn á viðhengjum"
+
+#: program/localization/is_IS/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "Full RFC 2231 (Thunderbird)"
+
+#: program/localization/is_IS/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/is_IS/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "Full RFC 2047 (other)"
+
+#: program/localization/is_IS/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Frekari möguleikar"
+
+#: program/localization/is_IS/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Láta glugga beinast að nýju skeyti"
+
+#: program/localization/is_IS/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Athuga ný skeyti í öllum möppum"
+
+#: program/localization/is_IS/labels.inc:folder
+msgid "Folder"
+msgstr "Mappa"
+
+#: program/localization/is_IS/labels.inc:foldername
+msgid "Folder name"
+msgstr "Nafn möppu"
+
+#: program/localization/is_IS/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Valin"
+
+#: program/localization/is_IS/labels.inc:messagecount
+msgid "Messages"
+msgstr "Skeyti"
+
+#: program/localization/is_IS/labels.inc:create
+msgid "Create"
+msgstr "Búa til"
+
+#: program/localization/is_IS/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Búa til nýja möppu"
+
+#: program/localization/is_IS/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Sýsla með möppum"
+
+#: program/localization/is_IS/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Sérstakar möppur"
+
+#: program/localization/is_IS/labels.inc:sortby
+msgid "Sort by"
+msgstr "Raða eftir"
+
+#: program/localization/is_IS/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Raða vaxandi"
+
+#: program/localization/is_IS/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Raða minnkandi"
+
+#: program/localization/is_IS/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/is_IS/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/is_IS/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/is_IS/labels.inc:GB
+msgid "GB"
+msgstr "GB"

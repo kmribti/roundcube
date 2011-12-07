@@ -1,0 +1,364 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/bn_BD/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: bn_BD\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/bn_BD/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "ঢোকা গেল না"
+
+#: program/localization/bn_BD/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "আপনার ব্রাউজার, কুকি গ্রহন"
+"করে না"
+
+#: program/localization/bn_BD/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "আপনার সেশন শেষ"
+
+#: program/localization/bn_BD/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "মেইল সারভার এর সাথে যোগাযোগ"
+"করা গেল না"
+
+#: program/localization/bn_BD/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "এই মেইলবক্সে কোনো চিঠি নাই"
+
+#: program/localization/bn_BD/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "আপনের সেশন ঠিকঠাক মতো শেষ"
+"হইছে। শুভবিদায়।"
+
+#: program/localization/bn_BD/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "মেইলবক্স খালি"
+
+#: program/localization/bn_BD/messages.inc:loading
+msgid "Loading..."
+msgstr "কম্পুটার কাজ করতেছে . ."
+
+#: program/localization/bn_BD/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "কম্পুটার তথ্য আনছে আপনার"
+"জন্য.."
+
+#: program/localization/bn_BD/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "নতুন চিঠি আসছে কিনা তা দেখা"
+"হচ্ছে"
+
+#: program/localization/bn_BD/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "চিঠি পাঠায় দেওয়া হচ্ছে"
+
+#: program/localization/bn_BD/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "চিঠি ঠিকঠাকমতো পাঠানো শেষ"
+
+#: program/localization/bn_BD/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "চিঠি জমা করে রাখা হচ্ছে"
+
+#: program/localization/bn_BD/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "চিঠি খসড়া হিসাবে জমা করে"
+"রাখা হয়েছে"
+
+#: program/localization/bn_BD/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "ঠিকঠাকমতো জমা হয়ে গিয়েছে"
+
+#: program/localization/bn_BD/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "নতুন ঠিকানা ঠিকঠাক মতো"
+"ঢোকানো হয়ে গেছে"
+
+#: program/localization/bn_BD/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "একই ই-মেইল এ আরেকটা নাম"
+"ঠিকানা তালিকায় আছে"
+
+#: program/localization/bn_BD/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "আপনার গোপনীয়তা রক্ষার জন্য"
+"আমরা ছবি গুলো সরিয়ে রেখেছি"
+
+#: program/localization/bn_BD/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "এটা একটি গোপন (encrypted) চিঠি। এটা"
+"আপনাকে দেখানো যাবে না।"
+"দু্ঃখিত।"
+
+#: program/localization/bn_BD/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "কোনো ঠিকানা পাওয়া গেলনা।"
+"দু্ঃখিত।"
+
+#: program/localization/bn_BD/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "আপনি যে ঠিকানা খুজছেন সেটা"
+"পাওয়া গেল না"
+
+#: program/localization/bn_BD/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "চিঠি পাঠানো গেলনা"
+
+#: program/localization/bn_BD/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "এই চিঠি পাঠানোর আগে, দয়া করে"
+"$sec সেকেন্ড "
+
+#: program/localization/bn_BD/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "প্রেরিত চিঠি হিসাবে জমা"
+"রাখার সময় একটা ঝামেলা হয়েছে"
+
+#: program/localization/bn_BD/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "জমা করার সময় একটা ঝামেলা"
+"হয়েছে"
+
+#: program/localization/bn_BD/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "চিঠিটা সরানো গেলো না"
+
+#: program/localization/bn_BD/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "চিঠিটা ফেলানো গেলো না"
+
+#: program/localization/bn_BD/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "আপনি কি আসলেই এই ঠিকানা(গুলো)"
+"ফেলো দিতে চান?"
+
+#: program/localization/bn_BD/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "আপনি কি আসলেই এই চিঠি(গুলো)"
+"ফেলো দিতে চান?"
+
+#: program/localization/bn_BD/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "আপনি কি আসলেই এই"
+"ফোল্ডার/মেইলবক্স ফেলো দিতে"
+"চান?"
+
+#: program/localization/bn_BD/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "আপনি কি আসলেই এই"
+"ফোল্ডার/মেইলবক্স এর সব চিঠি"
+"ফেলো দিতে চান?"
+
+#: program/localization/bn_BD/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "ফোল্ডার/মেইলবক্স ফেলে দেওয়া"
+"হচ্ছে"
+
+#: program/localization/bn_BD/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "ফোল্ডার/মেইলবক্স সরানো"
+"হচ্ছে"
+
+#: program/localization/bn_BD/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "আপনি সবগুলো জিনিষ লেখেননি"
+
+#: program/localization/bn_BD/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "একটি সঠিক ই-মেইল লিখুন"
+
+#: program/localization/bn_BD/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "দয়া করে নামটি লিখুন"
+
+#: program/localization/bn_BD/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "দয়া করে পৃষ্ঠার সাইজটি"
+"লিখুন"
+
+#: program/localization/bn_BD/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "দয়া করে ফিরতি ই-মেইলটা লিখুন"
+
+#: program/localization/bn_BD/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "দয়া করে একজন প্রাপক এর"
+"ই-মেইলটা লিখুন"
+
+#: program/localization/bn_BD/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "বিষয় হিসাবে কিছু লেখা হয়নি,"
+"আপনি কি কিছু লিখবেন এখন বিষয়"
+"হিসাবে?"
+
+#: program/localization/bn_BD/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "কোনো কিছু না লিখেই এই চিঠি"
+"পাঠিয়ে দেবেন?"
+
+#: program/localization/bn_BD/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "চিঠি পাঠানো হয়নি। চিঠিটা কি"
+"বাতিল করে দেবেন?"
+
+#: program/localization/bn_BD/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "দয়া করে একটি এল্ডাপ সারভার"
+"বেছে নিন সার্চ করার জন্যে"
+
+#: program/localization/bn_BD/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "কোনো ঠিকানা পাওয়া গেলনা।"
+"দু্ঃখিত।"
+
+#: program/localization/bn_BD/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "দয়া করে একজনের নাম অথবা"
+"ই-মেইল লিখুন"
+
+#: program/localization/bn_BD/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr টা চিঠি পাওয়া গেছে"
+
+#: program/localization/bn_BD/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "খুজে কিছু পাওয়া গেলোনা"
+
+#: program/localization/bn_BD/messages.inc:searching
+msgid "Searching..."
+msgstr "খুজছি ...."
+
+#: program/localization/bn_BD/messages.inc:checking
+msgid "Checking..."
+msgstr "দেখছি ..."
+
+#: program/localization/bn_BD/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "No spelling errors found"
+
+#: program/localization/bn_BD/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "ফোল্ডার/মেইলবক্স ঠিকঠাকমতো"
+"ফেলানো হয়ে গেছে"
+
+#: program/localization/bn_BD/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "ঠিকঠাকমতো ফেলানো হয়ে গেছে"
+
+#: program/localization/bn_BD/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "বিন্যাস (formatting) সরানো হচ্ছে .."
+
+#: program/localization/bn_BD/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "সারভার থেকে চিঠি আনা গেলোনা"
+
+#: program/localization/bn_BD/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "ফাইলটা সারভারে উঠানো গেলোনা"
+
+#: program/localization/bn_BD/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "যে ফাইলটা উঠানোর চেষ্টা"
+"করলেন সেটি সর্বোচ্চ সাইজ $size"
+"এর থেকে বেশি"
+
+#: program/localization/bn_BD/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "ঠিকঠাকমতো $nr ঠিকানা নকল করে"
+"নেওয়া গেছে"
+
+#: program/localization/bn_BD/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "কোনো ঠিকানা তোলা গেলোনা"
+
+#: program/localization/bn_BD/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "এইঠিকানাটা খালি পড়ার জন্যে"
+
+#: program/localization/bn_BD/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "ঠিকানা জমা রাখা গেলোনা"
+
+#: program/localization/bn_BD/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "চিঠি সরানো হচ্ছে.."
+
+#: program/localization/bn_BD/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "ঠিকঠাক মতো ফিরতি রশিদ"
+"পাঠানো হয়েছে"
+
+#: program/localization/bn_BD/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "রশিদ পাঠানো গেলোনা"
+
+#: program/localization/bn_BD/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "আপনি এই পরিচিতি ফেলতে"
+"পারবেন না কারন এইটায়"
+"বর্তমানে আপনার একমাত্র"
+"পরিচিতি। "
+
+#: program/localization/bn_BD/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "ফোল্ডার এর নামের মধ্যে"
+"নিষিদ্ধ অক্ষর আছে"
+
+#: program/localization/bn_BD/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "একটা ফাইল বেছে নিন তোলার"
+"জন্য"
+
+#: program/localization/bn_BD/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "বেছে নেওয়া ঠিকানার বইটিতে"
+"লেখাযায় না"
+
+#: program/localization/bn_BD/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "আমদানি করা হচ্ছে। একটু"
+"অপেক্ষা করুন..."
+
+#: program/localization/bn_BD/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "আমদানি করা গেলোনা। আপনি যে"
+"ফাইলটা তুলেছেন সেটা সঠিক vCard"
+"ফাইল নয়।"
+
+#: program/localization/bn_BD/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>ঠিকমতো $inserted ঠিকানা আমদানি"
+"করা গেছে, $skipped ঠিকানা আগের"
+"থেকেই ছিলো বলে তাদের টা যা"
+"ছিলো তাই রাখা"
+"হয়েছে</b>:<p><em>$names</em></p>"
+
+#: program/localization/bn_BD/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "এই কাজটা করার অনুমতি নাই"
+"আপনার"
+
+#: program/localization/bn_BD/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "বেছে নেওয়া যে পরিচিতিটা,"
+"তাতে ই-মেইল নেই"
+
+#: program/localization/bn_BD/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "যদি আপনি শুধু লেখার স্টাইলে"
+"যান তাহলে বর্তমানের কোনো"
+"বিন্যাস হারিয়ে যাবে"

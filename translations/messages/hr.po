@@ -1,0 +1,516 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/hr_HR/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: hr_HR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/hr_HR/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Prijava neuspješna"
+
+#: program/localization/hr_HR/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Vaš Web preglednik ne podržava kolačiće (cookies)"
+
+#: program/localization/hr_HR/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Morate se ponovno ulogirati"
+
+#: program/localization/hr_HR/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Neuspješna veza na IMAP server"
+
+#: program/localization/hr_HR/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Greška poslužitelja"
+
+#: program/localization/hr_HR/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Greška na serveru: $msg"
+
+#: program/localization/hr_HR/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Greška baze podataka!"
+
+#: program/localization/hr_HR/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Nemoguća izvedba operacije. Mapa je samo za čitanje."
+
+#: program/localization/hr_HR/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Nemoguća izvedba operacije. Dozvola odbijena."
+
+#: program/localization/hr_HR/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Nepravilan zahtijev! Podaci nisu spremljeni."
+
+#: program/localization/hr_HR/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Nema poruka u sandučiću"
+
+#: program/localization/hr_HR/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Uspješno ste se odjavili. Zbogom!"
+
+#: program/localization/hr_HR/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Sandučuć je prazan"
+
+#: program/localization/hr_HR/messages.inc:loading
+msgid "Loading..."
+msgstr "Učitavanje..."
+
+#: program/localization/hr_HR/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Prenosim datoteku..."
+
+#: program/localization/hr_HR/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Prenosim datoteke..."
+
+#: program/localization/hr_HR/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Učitavanje podataka..."
+
+#: program/localization/hr_HR/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Provjera novih poruka u tijeku..."
+
+#: program/localization/hr_HR/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Poruka se šalje..."
+
+#: program/localization/hr_HR/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Poruka je uspješno poslana"
+
+#: program/localization/hr_HR/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Poruka se sprema..."
+
+#: program/localization/hr_HR/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Poruka uspješno spremljena u 'Predlošci'"
+
+#: program/localization/hr_HR/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Spremanje uspješno obavljeno"
+
+#: program/localization/hr_HR/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Kontakt uspješno dodan u imenik"
+
+#: program/localization/hr_HR/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Kontakt sa ovom e-mail adresom već postoji u imeniku"
+
+#: program/localization/hr_HR/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Zbog zaštite privatnosti, slike sa udaljenih servera su blokirane."
+
+#: program/localization/hr_HR/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Ova poruka je zaštićena pa se ne može prikazati"
+
+#: program/localization/hr_HR/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Imenik je prazan"
+
+#: program/localization/hr_HR/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Traženi kontakt nije pronađen"
+
+#: program/localization/hr_HR/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Greška pri slanju poruke"
+
+#: program/localization/hr_HR/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Molimo sačekajte $sec sek. prije slanja ove poruke"
+
+#: program/localization/hr_HR/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Greška pri spremanju poslane poruke"
+
+#: program/localization/hr_HR/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Greška pri spremanju"
+
+#: program/localization/hr_HR/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Greška pri premještanju poruke"
+
+#: program/localization/hr_HR/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Greška pri kopiranju poruke"
+
+#: program/localization/hr_HR/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Greška pri brisanju poruke"
+
+#: program/localization/hr_HR/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Nije moguće označiti poruku"
+
+#: program/localization/hr_HR/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Želite li obrisati izabrane kontakte?"
+
+#: program/localization/hr_HR/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Sigurno želite obrisati odabrane poruke?"
+
+#: program/localization/hr_HR/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Želite li obrisati ovu mapu?"
+
+#: program/localization/hr_HR/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Želite li obrisati sve poruke u mapi?"
+
+#: program/localization/hr_HR/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Brišem mapu..."
+
+#: program/localization/hr_HR/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Premještam mapu..."
+
+#: program/localization/hr_HR/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Pretplata na mapu..."
+
+#: program/localization/hr_HR/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Poništavanje pretplate na mapu..."
+
+#: program/localization/hr_HR/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Obrazac nije u cjelosti popunjen"
+
+#: program/localization/hr_HR/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Unesite valjanu e-mail adresu"
+
+#: program/localization/hr_HR/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Unesite ime"
+
+#: program/localization/hr_HR/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Unesite veličinu stranice"
+
+#: program/localization/hr_HR/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Unesite e-mail adresu pošiljatelja"
+
+#: program/localization/hr_HR/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Unesite primatelja (ZA)"
+
+#: program/localization/hr_HR/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Polje 'Naslov' je prazno. Želite li unijeti naslov?"
+
+#: program/localization/hr_HR/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Želite li poslati poruku bez teksta?"
+
+#: program/localization/hr_HR/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Poruka nije poslana. Želite li odbaciti ovu poruku?"
+
+#: program/localization/hr_HR/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Unesite LDAP poslužitelj za pretragu"
+
+#: program/localization/hr_HR/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Nije pronađen niti jedan kontakt"
+
+#: program/localization/hr_HR/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Unesite ime ili e-mail adresu"
+
+#: program/localization/hr_HR/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Svi prilozi još nisu presnimljeni na poslužitelj. Molim pričekajte ili"
+"zaustavite prsnimavanje."
+
+#: program/localization/hr_HR/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "Broj pronađenih poruka: $nr"
+
+#: program/localization/hr_HR/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Traženi termin nije pronađen ni u jednoj poruci"
+
+#: program/localization/hr_HR/messages.inc:searching
+msgid "Searching..."
+msgstr "Pretraga u tijeku..."
+
+#: program/localization/hr_HR/messages.inc:checking
+msgid "Checking..."
+msgstr "Provjera u tijeku..."
+
+#: program/localization/hr_HR/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Nije pronađena niti jedna pravopisna greška"
+
+#: program/localization/hr_HR/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Mapa uspješno obrisana"
+
+#: program/localization/hr_HR/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Mapa uspješno pretplaćena"
+
+#: program/localization/hr_HR/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Pretplata na mapu uspješno poništena"
+
+#: program/localization/hr_HR/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Mapa uspješno ispražnjena"
+
+#: program/localization/hr_HR/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Mapa uspješno zbijena"
+
+#: program/localization/hr_HR/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Uspješno obrisano"
+
+#: program/localization/hr_HR/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Formatiranje poruke"
+
+#: program/localization/hr_HR/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Učitavanje poruke nije uspjelo"
+
+#: program/localization/hr_HR/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Prijenos datoteke nije uspio"
+
+#: program/localization/hr_HR/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Datoteka je prevelika. Maksimalna veličina je $size"
+
+#: program/localization/hr_HR/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Uspješno kopirano $n adresa"
+
+#: program/localization/hr_HR/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Nije uspjelo kopiranje adresa"
+
+#: program/localization/hr_HR/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Ovaj resurs adresa je samo za čitanje"
+
+#: program/localization/hr_HR/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Nije uspjelo spremanje adrese kontakta"
+
+#: program/localization/hr_HR/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Premještanje poruke..."
+
+#: program/localization/hr_HR/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Kopiranje poruke..."
+
+#: program/localization/hr_HR/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Brisanje poruke..."
+
+#: program/localization/hr_HR/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Označavanje poruke..."
+
+#: program/localization/hr_HR/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Uspješno poslana potvrda (pročitano)"
+
+#: program/localization/hr_HR/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Ne može poslati potvrdu"
+
+#: program/localization/hr_HR/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Ne možete izbrisati zadnji identitet."
+
+#: program/localization/hr_HR/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Naziv mape sadrži zabranjene znakove"
+
+#: program/localization/hr_HR/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Odaberite datoteku za prijenos"
+
+#: program/localization/hr_HR/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "U odabrani adresar nije moguće zapisivat..."
+
+#: program/localization/hr_HR/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Kontakti uspješno dodani ovoj grupi"
+
+#: program/localization/hr_HR/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Kontakti uspješno izbrisani iz ove grupe"
+
+#: program/localization/hr_HR/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Uvozim, molimo sačekajte..."
+
+#: program/localization/hr_HR/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Greška pri uvozu! Datoteka ne sadrži pravilan vCard format."
+
+#: program/localization/hr_HR/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Uspješno je uvezeno $inserted kontakt(a), preskočeno $skipped već"
+"postojećih</b>:<p><em>$names</em></p>"
+
+#: program/localization/hr_HR/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Preskočeno $skipped postojećih unosa</b>"
+
+#: program/localization/hr_HR/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Operacija nije dozvoljena!"
+
+#: program/localization/hr_HR/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Nije upisana e-mail adresa u odabrani identitet"
+
+#: program/localization/hr_HR/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Prebacivanje u čisti tekstualni uređivač će prouzrokovati gubljenje"
+"formatiranje teksta. Želite li nastaviti?"
+
+#: program/localization/hr_HR/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Dogodila se fatalna greška u konfiguraciji. Odmah kontaktirajte"
+"administratora. <b>Vaša poruka se nemože poslati.</b>"
+
+#: program/localization/hr_HR/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP Greška ($code): Veza na server nije uspjela"
+
+#: program/localization/hr_HR/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP Greška ($code): Autentikacija nije uspjela"
+
+#: program/localization/hr_HR/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP Greška ($code): Nije uspjelo postavljanje pošiljatelja \"$from\""
+"($msg)"
+
+#: program/localization/hr_HR/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP Greška ($code): Nije uspjelo dodavanje primatelja \"$to\" ($msg)"
+
+#: program/localization/hr_HR/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP Greška: Nije moguće pročitati listu primatelja"
+
+#: program/localization/hr_HR/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "SMTP Greška: Nema podrške za obaviještenje o statusu isporuke"
+
+#: program/localization/hr_HR/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP Greška: $msg"
+
+#: program/localization/hr_HR/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Nepravilna e-mail adresa: $email"
+
+#: program/localization/hr_HR/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Previše primatelja. Smanjite broj primatelja na $max."
+
+#: program/localization/hr_HR/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Broj članova grupe prelazi preko maximuma od $max"
+
+#: program/localization/hr_HR/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Dogodila se interna greška. Molimo Vas pokušajte ponovo."
+
+#: program/localization/hr_HR/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Kontakti ne mogu biti obrisani."
+
+#: program/localization/hr_HR/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Kontakti uspješno obrisani."
+
+#: program/localization/hr_HR/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Grupa uspješno obrisana."
+
+#: program/localization/hr_HR/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Grupa uspješno preimenovana."
+
+#: program/localization/hr_HR/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Grupa uspješno kreirana."
+
+#: program/localization/hr_HR/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Poruke uspješno obrisane."
+
+#: program/localization/hr_HR/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Poruke uspješno pomjerene."
+
+#: program/localization/hr_HR/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Poruke uspješno kopirane."
+
+#: program/localization/hr_HR/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Poruke uspješno označene."
+
+#: program/localization/hr_HR/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Unesite barem $min znakova za auto-dopunjavanje."
+
+#: program/localization/hr_HR/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Polje za ime ne može biti prazno."
+
+#: program/localization/hr_HR/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Ime predugo."
+
+#: program/localization/hr_HR/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Ažuriranje mape uspješno."
+
+#: program/localization/hr_HR/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Kreiranje mape uspješno."
+
+#: program/localization/hr_HR/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Format slike nije ispravan."

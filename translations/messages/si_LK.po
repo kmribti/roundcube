@@ -1,0 +1,285 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/si_LK/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: si_LK\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/si_LK/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "ඇතුල්වීම අසාර්ථකයි"
+
+#: program/localization/si_LK/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "ඔබේ බෞසරය කුකී බාර ගන්නේ නැත"
+
+#: program/localization/si_LK/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "ඔබේ වාරය අවලංගු හෝ කාලය"
+"ඉකුත් වී ඇත"
+
+#: program/localization/si_LK/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "IMAP සම්බන්ධතාවය අසාර්ථකයි"
+
+#: program/localization/si_LK/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "ලියුම් පෙට්ටියේ පනිවුඩ නැත"
+
+#: program/localization/si_LK/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "ඔබගේ වාරය සාර්ථකව අවසන් විය."
+"අයුබොවන්!"
+
+#: program/localization/si_LK/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "ලියුම් පෙට්ටිය හිස්"
+
+#: program/localization/si_LK/messages.inc:loading
+msgid "Loading..."
+msgstr "පූරනය..."
+
+#: program/localization/si_LK/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "දත්ත පූරනය..."
+
+#: program/localization/si_LK/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "අලුත් පනිවුඩ පරීක්ෂා කිරීම..."
+
+#: program/localization/si_LK/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "පනිවුඩය යැවීම..."
+
+#: program/localization/si_LK/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "පනිවුඩය සාර්ථකව යවන ලදී"
+
+#: program/localization/si_LK/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "පනිවුඩය තැන්පත් කීරීම..."
+
+#: program/localization/si_LK/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "පනිවුඩය කටු සටහනේ තැන්පත්"
+"විය"
+
+#: program/localization/si_LK/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "සාර්ථකව තැන්පත විය"
+
+#: program/localization/si_LK/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "ලිපිනය සාර්ථකව ලිපින පොතට"
+"එකතු කරන ලදී"
+
+#: program/localization/si_LK/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "ඉහත ලිපිනය සහිත විද්යුත්"
+"තැපැල් ලිපිනයක් ලිපින පොතේ"
+"ඇත"
+
+#: program/localization/si_LK/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "ඔබගෙ පොද්ගලිකත්වය හේතුවෙන්,"
+"දුරස්ථ රූප අවහිර කර ඇත."
+
+#: program/localization/si_LK/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "මෙම පනිවුඩය රහස් කේතනය කර"
+"ඇති බැවින් පෙන්විය නොහැක."
+"සමාවන්න!"
+
+#: program/localization/si_LK/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "ලිපින සොයා ගත නොහැක"
+
+#: program/localization/si_LK/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "ඉල්ලූ ලිපිනය සොයාගත නොහැක"
+
+#: program/localization/si_LK/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "පනිවුඩය යැවීම අසාර්ථකයි"
+
+#: program/localization/si_LK/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "පනිවුඩය තැන්පත් කීරීමේදී"
+"දොෂයක් සිදු විය"
+
+#: program/localization/si_LK/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "පනිවුඩය ගෙන යාමට නොහැක"
+
+#: program/localization/si_LK/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "පනිවුඩය මකා දැමීමට නොහැක"
+
+#: program/localization/si_LK/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "තෝරා ඇති ලිපින ඔබට මකා"
+"දැමීමට සැබවින්ම වුවමනාද?"
+
+#: program/localization/si_LK/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "තෝරා ඇත පනිවුඩ ඔබට මකා"
+"දැමීමට සැබවින්ම වුවමනාද?"
+
+#: program/localization/si_LK/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "ෆෝල්ඩරය මකා දැමීමට සැබවින්ම"
+"වුවමනාද?"
+
+#: program/localization/si_LK/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "මෙම ෆෝල්ඩරයේ ඇති සියලුම"
+"පනිවුඩ ඔබට මකා දැමීමට"
+"සැබවින්ම වුවමනාද?"
+
+#: program/localization/si_LK/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "පෝරමය සම්පූර්ණයෙන් පුරවා"
+"නොමැත"
+
+#: program/localization/si_LK/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "කරුණාකර වලංගු විද්යුත්"
+"තැපැල් ලිපිනයක් ඇතුලත්"
+"කරන්න"
+
+#: program/localization/si_LK/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "කරුණාකර නම ඇතුලත් කරන්න"
+
+#: program/localization/si_LK/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "කරුණාකර පිටුවේ ප්රමානය"
+"ඇතුලත් කරන්න"
+
+#: program/localization/si_LK/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "කරුණාකර යටත් පිරිසෙයින් එක්"
+"ලබන්නෙකු හෝ ඇතුලත් කරන්න"
+
+#: program/localization/si_LK/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "\"මාතෘකාව\" හිස්. මාතෘකාවක්"
+"අතුලත් කිරීමට ඔබ කැමතිද?"
+
+#: program/localization/si_LK/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "මෙම හිස් පනිවුඩය යවන්නද?"
+
+#: program/localization/si_LK/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "පනිවුඩය යැවීමට නොහැකි විය."
+"ඔබට එය බැහැර කිරීමට වුවමනාද?"
+
+#: program/localization/si_LK/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "සෙවුම සඳහා කරුණාකර ldap"
+"සම්බන්ධතාවයක් තෝරා ගන්න"
+
+#: program/localization/si_LK/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "ලිපින/ය සොයා ගත නොහැක"
+
+#: program/localization/si_LK/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "කරුණාකර ලිපිනයෙහි නම හෝ"
+"විද්යුත් තැපැල් ලිපිනය"
+"ඇතුලත් කරන්න"
+
+#: program/localization/si_LK/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr පනිවුඩය හමු විය"
+
+#: program/localization/si_LK/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "සෙවුමට අදාල ගැලපීමක් නොමැත"
+
+#: program/localization/si_LK/messages.inc:searching
+msgid "Searching..."
+msgstr "සොයමින් පවතී..."
+
+#: program/localization/si_LK/messages.inc:checking
+msgid "Checking..."
+msgstr "පිරික්සමින් පවතී..."
+
+#: program/localization/si_LK/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "වියාකරන දොෂ නොමැත"
+
+#: program/localization/si_LK/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "ෆෝල්ඩරය සාර්ථකව මකා දමන ලදී"
+
+#: program/localization/si_LK/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "සාර්ථකව මකා දමන ලදී"
+
+#: program/localization/si_LK/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "පනිවුඩයෙන් ආකෘතීකරණය ඉවත්"
+"කිරීම"
+
+#: program/localization/si_LK/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "පනිවුඩය පූරනය කිරීමට නොහැක"
+
+#: program/localization/si_LK/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "ගොනුව ඇතුලත් කිරීමට නොහැක"
+
+#: program/localization/si_LK/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "ඇතුලත් කල ගොනුවෙ ප්රමාණය"
+"උපරිම අගය $size ඉක්මවා ඇත"
+
+#: program/localization/si_LK/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "$nr ලිපිනය සාර්ථකව පිටපත් කරන"
+"ලදී"
+
+#: program/localization/si_LK/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "කවර ලිපිනයක්වත් හෝ පිටපත්"
+"කල නොහැක"
+
+#: program/localization/si_LK/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "මෙම ලිපින මූලාශ්රය කියවීම"
+"සඳහා පමනි"
+
+#: program/localization/si_LK/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "ලිපිනය තැන්පත් කීරීමට නොහැක"
+
+#: program/localization/si_LK/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "පනිවුඩය ගෙනයමින් පවතී..."
+
+#: program/localization/si_LK/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "කියවීම් භාර ගැනීම සාර්ථකව"
+"යවන ලදී"
+
+#: program/localization/si_LK/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "කියවීම් භාර ගැනීම යැවීමට"
+"නොහැක"
+
+#: program/localization/si_LK/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "අවසාන අනන්‍යතාවය මකා දැමිය"
+"නොහැක"

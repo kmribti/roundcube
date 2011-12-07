@@ -1,0 +1,606 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/th_TH/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: th_TH\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/th_TH/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "ยินดีต้อนรับสู่ $product"
+
+#: program/localization/th_TH/labels.inc:username
+msgid "Username"
+msgstr "บัญชีผู้ใช้"
+
+#: program/localization/th_TH/labels.inc:password
+msgid "Password"
+msgstr "รหัสผ่าน"
+
+#: program/localization/th_TH/labels.inc:server
+msgid "Server"
+msgstr "เซิร์ฟเวอร์"
+
+#: program/localization/th_TH/labels.inc:login
+msgid "Login"
+msgstr "เข้าสู่ระบบ"
+
+#: program/localization/th_TH/labels.inc:logout
+msgid "Logout"
+msgstr "ออกจากระบบ"
+
+#: program/localization/th_TH/labels.inc:mail
+msgid "Mail"
+msgstr "อีเมล์"
+
+#: program/localization/th_TH/labels.inc:settings
+msgid "Settings"
+msgstr "ปรับแต่งค่าส่วนตัว"
+
+#: program/localization/th_TH/labels.inc:addressbook
+msgid "Address Book"
+msgstr "สมุดรายชื่อ"
+
+#: program/localization/th_TH/labels.inc:inbox
+msgid "Inbox"
+msgstr "กล่องขาเข้า"
+
+#: program/localization/th_TH/labels.inc:drafts
+msgid "Drafts"
+msgstr "กล่องจดหมายร่าง"
+
+#: program/localization/th_TH/labels.inc:sent
+msgid "Sent"
+msgstr "กล่องขาออก"
+
+#: program/localization/th_TH/labels.inc:trash
+msgid "Trash"
+msgstr "ถังขยะ"
+
+#: program/localization/th_TH/labels.inc:junk
+msgid "Junk"
+msgstr "กล่องจดหมายขยะ"
+
+#: program/localization/th_TH/labels.inc:spam
+msgid "spam"
+msgstr "กล่องจดหมายขยะ"
+
+#: program/localization/th_TH/labels.inc:subject
+msgid "Subject"
+msgstr "หัวจดหมาย"
+
+#: program/localization/th_TH/labels.inc:from
+msgid "From"
+msgstr "ผู้ส่ง"
+
+#: program/localization/th_TH/labels.inc:to
+msgid "To"
+msgstr "ผู้รับ"
+
+#: program/localization/th_TH/labels.inc:cc
+msgid "Cc"
+msgstr "คัดลอก"
+
+#: program/localization/th_TH/labels.inc:bcc
+msgid "Bcc"
+msgstr "แอบสำเนาถึง"
+
+#: program/localization/th_TH/labels.inc:replyto
+msgid "Reply-To"
+msgstr "ตอบกลับ"
+
+#: program/localization/th_TH/labels.inc:date
+msgid "Date"
+msgstr "วันที่"
+
+#: program/localization/th_TH/labels.inc:size
+msgid "Size"
+msgstr "ขนาด"
+
+#: program/localization/th_TH/labels.inc:priority
+msgid "Priority"
+msgstr "ระดับความสำคัญ"
+
+#: program/localization/th_TH/labels.inc:organization
+msgid "Company"
+msgstr "องค์กร"
+
+#: program/localization/th_TH/labels.inc:reply-to
+msgid "reply-to"
+msgstr "ตอบกลับ"
+
+#: program/localization/th_TH/labels.inc:mailboxlist
+#: program/localization/th_TH/labels.inc:folders
+msgid "Folders"
+msgstr "กล่องจดหมาย"
+
+#: program/localization/th_TH/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "จดหมายจาก $from ถึง $to จำนวน $count"
+"ฉบับ"
+
+#: program/localization/th_TH/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "จดหมายฉบับที่ $nr จาก $count ฉบับ"
+
+#: program/localization/th_TH/labels.inc:moveto
+msgid "Move to..."
+msgstr "ย้ายไป..."
+
+#: program/localization/th_TH/labels.inc:download
+msgid "Download"
+msgstr "ดาวน์โหลด"
+
+#: program/localization/th_TH/labels.inc:filename
+msgid "File name"
+msgstr "ชื่อไฟล์"
+
+#: program/localization/th_TH/labels.inc:filesize
+msgid "File size"
+msgstr "ขนาดไฟล์"
+
+#: program/localization/th_TH/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "อ่านแบบ HTML"
+
+#: program/localization/th_TH/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "จดหมาย HTML"
+
+#: program/localization/th_TH/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "แสดงวันที่แบบย่อ"
+
+#: program/localization/th_TH/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "บันทึกในสมุดรายชื่อ"
+
+#: program/localization/th_TH/labels.inc:sun
+msgid "Sun"
+msgstr "อ"
+
+#: program/localization/th_TH/labels.inc:mon
+msgid "Mon"
+msgstr "จ"
+
+#: program/localization/th_TH/labels.inc:tue
+msgid "Tue"
+msgstr "อ"
+
+#: program/localization/th_TH/labels.inc:wed
+msgid "Wed"
+msgstr "พ"
+
+#: program/localization/th_TH/labels.inc:thu
+msgid "Thu"
+msgstr "พฤ"
+
+#: program/localization/th_TH/labels.inc:fri
+msgid "Fri"
+msgstr "ศ"
+
+#: program/localization/th_TH/labels.inc:sat
+msgid "Sat"
+msgstr "ส"
+
+#: program/localization/th_TH/labels.inc:sunday
+msgid "Sunday"
+msgstr "วันอาทิตย์"
+
+#: program/localization/th_TH/labels.inc:monday
+msgid "Monday"
+msgstr "วันจันทร์"
+
+#: program/localization/th_TH/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "วันอังคาร"
+
+#: program/localization/th_TH/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "วันพุธ"
+
+#: program/localization/th_TH/labels.inc:thursday
+msgid "Thursday"
+msgstr "วันพฤหัสบดี"
+
+#: program/localization/th_TH/labels.inc:friday
+msgid "Friday"
+msgstr "วันศุกร์"
+
+#: program/localization/th_TH/labels.inc:saturday
+msgid "Saturday"
+msgstr "วันเสาร์"
+
+#: program/localization/th_TH/labels.inc:today
+msgid "Today"
+msgstr "วันนี้"
+
+#: program/localization/th_TH/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "ตรวจสอบจดหมายใหม่"
+
+#: program/localization/th_TH/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "สร้างจดหมายใหม่"
+
+#: program/localization/th_TH/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "ตอบกลับจดหมาย"
+
+#: program/localization/th_TH/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "ตอบกลับถึงทุกคนในจดหมาย"
+
+#: program/localization/th_TH/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "ส่งต่อจดหมาย"
+
+#: program/localization/th_TH/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "ลบจดหมาย"
+
+#: program/localization/th_TH/labels.inc:printmessage
+msgid "Print this message"
+msgstr "พิมพ์จดหมาย"
+
+#: program/localization/th_TH/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "แสดงจดหมายฉบับที่แล้ว"
+
+#: program/localization/th_TH/labels.inc:previousmessages
+msgid "previousmessages"
+msgstr "จดหมายฉบับก่อนหน้า"
+
+#: program/localization/th_TH/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "แสดงจดหมายฉบับแรก"
+
+#: program/localization/th_TH/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "แสดงจดหมายฉบับต่อไป"
+
+#: program/localization/th_TH/labels.inc:nextmessages
+msgid "nextmessages"
+msgstr "จดหมายฉบับถัดไป"
+
+#: program/localization/th_TH/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "แสดงจดหมายฉบับล่าสุด"
+
+#: program/localization/th_TH/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "กลับไปยังรายการจดหมาย"
+
+#: program/localization/th_TH/labels.inc:viewsource
+msgid "Show source"
+msgstr "แสดง source"
+
+#: program/localization/th_TH/labels.inc:select
+msgid "Select"
+msgstr "เลือก"
+
+#: program/localization/th_TH/labels.inc:all
+msgid "All"
+msgstr "ทั้งหมด"
+
+#: program/localization/th_TH/labels.inc:none
+msgid "None"
+msgstr "ไม่เลือก"
+
+#: program/localization/th_TH/labels.inc:unread
+msgid "Unread"
+msgstr "จดหมายที่ไม่ได้อ่าน"
+
+#: program/localization/th_TH/labels.inc:compact
+msgid "Compact"
+msgstr "แบบย่อ"
+
+#: program/localization/th_TH/labels.inc:empty
+msgid "Empty"
+msgstr "ว่างเปล่า"
+
+#: program/localization/th_TH/labels.inc:purge
+msgid "purge"
+msgstr "ลบทั้งหมด"
+
+#: program/localization/th_TH/labels.inc:quota
+msgid "Disk usage"
+msgstr "พื้นที่ใช้งาน"
+
+#: program/localization/th_TH/labels.inc:unknown
+msgid "unknown"
+msgstr "ไม่ทราบ"
+
+#: program/localization/th_TH/labels.inc:unlimited
+msgid "unlimited"
+msgstr "ไม่จำกัด"
+
+#: program/localization/th_TH/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "ค้นหาแบบด่วน"
+
+#: program/localization/th_TH/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "ล้างการค้นหา"
+
+#: program/localization/th_TH/labels.inc:compose
+msgid "Compose a message"
+msgstr "เขียนจดหมายใหม่"
+
+#: program/localization/th_TH/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "บันทึกฉบับร่าง"
+
+#: program/localization/th_TH/labels.inc:sendmessage
+msgid "Send now"
+msgstr "ส่งจดหมาย"
+
+#: program/localization/th_TH/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "แนบไฟล์"
+
+#: program/localization/th_TH/labels.inc:charset
+msgid "Charset"
+msgstr "Charset"
+
+#: program/localization/th_TH/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "ตอบกลับผู้รับ"
+
+#: program/localization/th_TH/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "ตรวจสอบคำผิด"
+
+#: program/localization/th_TH/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "แก้ไขต่อ"
+
+#: program/localization/th_TH/labels.inc:revertto
+msgid "Revert to"
+msgstr "ย้นกลับไปยัง"
+
+#: program/localization/th_TH/labels.inc:attachments
+msgid "Attachments"
+msgstr "ไฟล์แนบ"
+
+#: program/localization/th_TH/labels.inc:upload
+msgid "Upload"
+msgstr "อัพโหลด"
+
+#: program/localization/th_TH/labels.inc:close
+msgid "Close"
+msgstr "ปิด"
+
+#: program/localization/th_TH/labels.inc:low
+msgid "Low"
+msgstr "ต่ำ"
+
+#: program/localization/th_TH/labels.inc:lowest
+msgid "Lowest"
+msgstr "ต่ำสุด"
+
+#: program/localization/th_TH/labels.inc:normal
+msgid "Normal"
+msgstr "ปกติ"
+
+#: program/localization/th_TH/labels.inc:high
+msgid "High"
+msgstr "สูง"
+
+#: program/localization/th_TH/labels.inc:highest
+msgid "Highest"
+msgstr "สูงสุด"
+
+#: program/localization/th_TH/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(ไม่มีหัวข้อ)"
+
+#: program/localization/th_TH/labels.inc:showimages
+msgid "Display images"
+msgstr "แสดงรูป"
+
+#: program/localization/th_TH/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/th_TH/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Plain text"
+
+#: program/localization/th_TH/labels.inc:name
+msgid "Display Name"
+msgstr "ชื่อแสดง"
+
+#: program/localization/th_TH/labels.inc:firstname
+msgid "First Name"
+msgstr "ชื่อ"
+
+#: program/localization/th_TH/labels.inc:surname
+msgid "Last Name"
+msgstr "สกุล"
+
+#: program/localization/th_TH/labels.inc:email
+msgid "Email"
+msgstr "อีเมล์"
+
+#: program/localization/th_TH/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "เพิ่มรายชื่อ"
+
+#: program/localization/th_TH/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "แก้ไขรายชื่อ"
+
+#: program/localization/th_TH/labels.inc:edit
+msgid "Edit"
+msgstr "แก้ไข"
+
+#: program/localization/th_TH/labels.inc:cancel
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#: program/localization/th_TH/labels.inc:save
+msgid "Save"
+msgstr "บันทึก"
+
+#: program/localization/th_TH/labels.inc:delete
+msgid "Delete"
+msgstr "ลบ"
+
+#: program/localization/th_TH/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "สร้างรายชื่อใหม่"
+
+#: program/localization/th_TH/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "ลบรายชื่อที่เลือก"
+
+#: program/localization/th_TH/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "เขียนจดหมายถึง"
+
+#: program/localization/th_TH/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "รายชื่อ $from ถึง $to จำนวน $count"
+
+#: program/localization/th_TH/labels.inc:print
+msgid "Print"
+msgstr "พิมพ์"
+
+#: program/localization/th_TH/labels.inc:export
+msgid "Export"
+msgstr "ส่งออก"
+
+#: program/localization/th_TH/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "หน้าที่แล้ว"
+
+#: program/localization/th_TH/labels.inc:nextpage
+msgid "Show next page"
+msgstr "หน้าถัดไป"
+
+#: program/localization/th_TH/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "ตั้งค่าสำหรับ"
+
+#: program/localization/th_TH/labels.inc:preferences
+msgid "Preferences"
+msgstr "ปรับแต่ง"
+
+#: program/localization/th_TH/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "ข้อมูลส่วนตัว"
+
+#: program/localization/th_TH/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "แก้ไขข้อมูลส่วนตัว"
+
+#: program/localization/th_TH/labels.inc:identities
+msgid "Identities"
+msgstr "ชื่อแสดงตัว"
+
+#: program/localization/th_TH/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "จัดการชื่อแสดงตัวสำหรับรายชื่อนี้"
+
+#: program/localization/th_TH/labels.inc:newidentity
+msgid "New identity"
+msgstr "ชื่อแสดงตัวใหม่"
+
+#: program/localization/th_TH/labels.inc:newitem
+msgid "New item"
+msgstr "New item"
+
+#: program/localization/th_TH/labels.inc:edititem
+msgid "Edit item"
+msgstr "Edit item"
+
+#: program/localization/th_TH/labels.inc:setdefault
+msgid "Set default"
+msgstr "ตั้งเป็นค่าใช้งาน"
+
+#: program/localization/th_TH/labels.inc:language
+msgid "Language"
+msgstr "ภาษา"
+
+#: program/localization/th_TH/labels.inc:timezone
+msgid "Time zone"
+msgstr "เขตเวลา"
+
+#: program/localization/th_TH/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "จำนวนจดหมายต่อหน้า"
+
+#: program/localization/th_TH/labels.inc:signature
+msgid "Signature"
+msgstr "ลายมือชื่อ"
+
+#: program/localization/th_TH/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Daylight savings"
+
+#: program/localization/th_TH/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "เขียนจดหมายแบบ HTML"
+
+#: program/localization/th_TH/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "ลายมือชื่อแบบ HTML"
+
+#: program/localization/th_TH/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "แสดงหน้าต่างตัวอย่างแสดงผล"
+
+#: program/localization/th_TH/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "บันทึกเป็นจดหมายร่างอัตโนมัติ"
+
+#: program/localization/th_TH/labels.inc:never
+msgid "never"
+msgstr "ไม่ใช้"
+
+#: program/localization/th_TH/labels.inc:folder
+msgid "Folder"
+msgstr "กล่องจดหมาย"
+
+#: program/localization/th_TH/labels.inc:foldername
+msgid "Folder name"
+msgstr "ชื่อกล่องจดหมาย"
+
+#: program/localization/th_TH/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "ลงชื่อ"
+
+#: program/localization/th_TH/labels.inc:create
+msgid "Create"
+msgstr "สร้าง"
+
+#: program/localization/th_TH/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "สร้างกล่องจดหมาย"
+
+#: program/localization/th_TH/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "จัดการกล่องจดหมาย"
+
+#: program/localization/th_TH/labels.inc:sortby
+msgid "Sort by"
+msgstr "เรียงตาม"
+
+#: program/localization/th_TH/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "เรียงจากหน้าไปหลัง"
+
+#: program/localization/th_TH/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "เรียงจากหลังไปหน้า"

@@ -1,0 +1,1639 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/pt_BR/labels.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: pt_BR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/pt_BR/labels.inc:welcome
+msgid "Welcome to $product"
+msgstr "Bem-vindo ao $product"
+
+#: program/localization/pt_BR/labels.inc:username
+msgid "Username"
+msgstr "Usuário"
+
+#: program/localization/pt_BR/labels.inc:password
+msgid "Password"
+msgstr "Senha"
+
+#: program/localization/pt_BR/labels.inc:server
+msgid "Server"
+msgstr "Servidor"
+
+#: program/localization/pt_BR/labels.inc:login
+msgid "Login"
+msgstr "Entrar"
+
+#: program/localization/pt_BR/labels.inc:logout
+msgid "Logout"
+msgstr "Sair"
+
+#: program/localization/pt_BR/labels.inc:mail
+msgid "Mail"
+msgstr "E-mail"
+
+#: program/localization/pt_BR/labels.inc:settings
+msgid "Settings"
+msgstr "Configurações pessoais"
+
+#: program/localization/pt_BR/labels.inc:addressbook
+msgid "Address Book"
+msgstr "Catálogo de endereços"
+
+#: program/localization/pt_BR/labels.inc:inbox
+msgid "Inbox"
+msgstr "Caixa de entrada"
+
+#: program/localization/pt_BR/labels.inc:drafts
+msgid "Drafts"
+msgstr "Rascunhos"
+
+#: program/localization/pt_BR/labels.inc:sent
+msgid "Sent"
+msgstr "Enviados"
+
+#: program/localization/pt_BR/labels.inc:trash
+msgid "Trash"
+msgstr "Lixeira"
+
+#: program/localization/pt_BR/labels.inc:junk
+msgid "Junk"
+msgstr "Spam"
+
+#: program/localization/pt_BR/labels.inc:subject
+msgid "Subject"
+msgstr "Assunto"
+
+#: program/localization/pt_BR/labels.inc:from
+msgid "From"
+msgstr "Remetente"
+
+#: program/localization/pt_BR/labels.inc:to
+msgid "To"
+msgstr "Para"
+
+#: program/localization/pt_BR/labels.inc:cc
+msgid "Cc"
+msgstr "Cópia"
+
+#: program/localization/pt_BR/labels.inc:bcc
+msgid "Bcc"
+msgstr "Cópia Oculta (Bcc)"
+
+#: program/localization/pt_BR/labels.inc:replyto
+msgid "Reply-To"
+msgstr "Responder para"
+
+#: program/localization/pt_BR/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Encaminhar para"
+
+#: program/localization/pt_BR/labels.inc:date
+msgid "Date"
+msgstr "Data"
+
+#: program/localization/pt_BR/labels.inc:size
+msgid "Size"
+msgstr "Tamanho"
+
+#: program/localization/pt_BR/labels.inc:priority
+msgid "Priority"
+msgstr "Prioridade"
+
+#: program/localization/pt_BR/labels.inc:organization
+msgid "Company"
+msgstr "Organização"
+
+#: program/localization/pt_BR/labels.inc:readstatus
+msgid "Read status"
+msgstr "Status de leitura"
+
+#: program/localization/pt_BR/labels.inc:mailboxlist
+#: program/localization/pt_BR/labels.inc:folders
+msgid "Folders"
+msgstr "Pastas"
+
+#: program/localization/pt_BR/labels.inc:messagesfromto
+msgid "Messages $from to $to of $count"
+msgstr "Mensagens $from - $to de $count"
+
+#: program/localization/pt_BR/labels.inc:threadsfromto
+msgid "Threads $from to $to of $count"
+msgstr "Tópicos $from - $to de $count"
+
+#: program/localization/pt_BR/labels.inc:messagenrof
+msgid "Message $nr of $count"
+msgstr "Mensagem $nr de $count"
+
+#: program/localization/pt_BR/labels.inc:copy
+msgid "Copy"
+msgstr "Copiar"
+
+#: program/localization/pt_BR/labels.inc:move
+msgid "Move"
+msgstr "Mover"
+
+#: program/localization/pt_BR/labels.inc:moveto
+msgid "Move to..."
+msgstr "Mover para..."
+
+#: program/localization/pt_BR/labels.inc:download
+msgid "Download"
+msgstr "Download"
+
+#: program/localization/pt_BR/labels.inc:filename
+msgid "File name"
+msgstr "Arquivo"
+
+#: program/localization/pt_BR/labels.inc:filesize
+msgid "File size"
+msgstr "Tamanho"
+
+#: program/localization/pt_BR/labels.inc:addtoaddressbook
+msgid "Add to address book"
+msgstr "Incluir no catálogo de endereços"
+
+#: program/localization/pt_BR/labels.inc:sun
+msgid "Sun"
+msgstr "Dom"
+
+#: program/localization/pt_BR/labels.inc:mon
+msgid "Mon"
+msgstr "Seg"
+
+#: program/localization/pt_BR/labels.inc:tue
+msgid "Tue"
+msgstr "Ter"
+
+#: program/localization/pt_BR/labels.inc:wed
+msgid "Wed"
+msgstr "Qua"
+
+#: program/localization/pt_BR/labels.inc:thu
+msgid "Thu"
+msgstr "Qui"
+
+#: program/localization/pt_BR/labels.inc:fri
+msgid "Fri"
+msgstr "Sex"
+
+#: program/localization/pt_BR/labels.inc:sat
+msgid "Sat"
+msgstr "Sáb"
+
+#: program/localization/pt_BR/labels.inc:sunday
+msgid "Sunday"
+msgstr "Domingo"
+
+#: program/localization/pt_BR/labels.inc:monday
+msgid "Monday"
+msgstr "Segunda-feira"
+
+#: program/localization/pt_BR/labels.inc:tuesday
+msgid "Tuesday"
+msgstr "Terça-feira"
+
+#: program/localization/pt_BR/labels.inc:wednesday
+msgid "Wednesday"
+msgstr "Quarta-feira"
+
+#: program/localization/pt_BR/labels.inc:thursday
+msgid "Thursday"
+msgstr "Quinta-feira"
+
+#: program/localization/pt_BR/labels.inc:friday
+msgid "Friday"
+msgstr "Sexta-feira"
+
+#: program/localization/pt_BR/labels.inc:saturday
+msgid "Saturday"
+msgstr "Sábado"
+
+#: program/localization/pt_BR/labels.inc:jan
+msgid "Jan"
+msgstr "Jan"
+
+#: program/localization/pt_BR/labels.inc:feb
+msgid "Feb"
+msgstr "Fev"
+
+#: program/localization/pt_BR/labels.inc:mar
+msgid "Mar"
+msgstr "Mar"
+
+#: program/localization/pt_BR/labels.inc:apr
+msgid "Apr"
+msgstr "Abr"
+
+#: program/localization/pt_BR/labels.inc:may
+#: program/localization/pt_BR/labels.inc:longmay
+msgid "May"
+msgstr "Maio"
+
+#: program/localization/pt_BR/labels.inc:jun
+msgid "Jun"
+msgstr "Jun"
+
+#: program/localization/pt_BR/labels.inc:jul
+msgid "Jul"
+msgstr "Jul"
+
+#: program/localization/pt_BR/labels.inc:aug
+msgid "Aug"
+msgstr "Ago"
+
+#: program/localization/pt_BR/labels.inc:sep
+msgid "Sep"
+msgstr "Set"
+
+#: program/localization/pt_BR/labels.inc:oct
+msgid "Oct"
+msgstr "Out"
+
+#: program/localization/pt_BR/labels.inc:nov
+msgid "Nov"
+msgstr "Nov"
+
+#: program/localization/pt_BR/labels.inc:dec
+msgid "Dec"
+msgstr "Dez"
+
+#: program/localization/pt_BR/labels.inc:longjan
+msgid "January"
+msgstr "Janeiro"
+
+#: program/localization/pt_BR/labels.inc:longfeb
+msgid "February"
+msgstr "Fevereiro"
+
+#: program/localization/pt_BR/labels.inc:longmar
+msgid "March"
+msgstr "Março"
+
+#: program/localization/pt_BR/labels.inc:longapr
+msgid "April"
+msgstr "Abril"
+
+#: program/localization/pt_BR/labels.inc:longjun
+msgid "June"
+msgstr "Junho"
+
+#: program/localization/pt_BR/labels.inc:longjul
+msgid "July"
+msgstr "Julho"
+
+#: program/localization/pt_BR/labels.inc:longaug
+msgid "August"
+msgstr "Agosto"
+
+#: program/localization/pt_BR/labels.inc:longsep
+msgid "September"
+msgstr "Setembro"
+
+#: program/localization/pt_BR/labels.inc:longoct
+msgid "October"
+msgstr "Outubro"
+
+#: program/localization/pt_BR/labels.inc:longnov
+msgid "November"
+msgstr "Novembro"
+
+#: program/localization/pt_BR/labels.inc:longdec
+msgid "December"
+msgstr "Dezembro"
+
+#: program/localization/pt_BR/labels.inc:today
+msgid "Today"
+msgstr "Hoje"
+
+#: program/localization/pt_BR/labels.inc:checkmail
+msgid "Check for new messages"
+msgstr "Verificar se há novas mensagens"
+
+#: program/localization/pt_BR/labels.inc:writenewmessage
+msgid "Create a new message"
+msgstr "Criar nova mensagem"
+
+#: program/localization/pt_BR/labels.inc:replytomessage
+msgid "Reply to sender"
+msgstr "Responder para o remetente"
+
+#: program/localization/pt_BR/labels.inc:replytoallmessage
+msgid "Reply to list or to sender and all recipients"
+msgstr "Responder para o remetente e todos destinatários"
+
+#: program/localization/pt_BR/labels.inc:replyall
+msgid "Reply all"
+msgstr "Responder a todos"
+
+#: program/localization/pt_BR/labels.inc:replylist
+msgid "Reply list"
+msgstr "Responder para a lista"
+
+#: program/localization/pt_BR/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "Encaminhar junto ao corpo da mensagem"
+
+#: program/localization/pt_BR/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "Encaminhar como anexo"
+
+#: program/localization/pt_BR/labels.inc:forwardmessage
+msgid "Forward the message"
+msgstr "Encaminhar a mensagem"
+
+#: program/localization/pt_BR/labels.inc:deletemessage
+msgid "Delete message"
+msgstr "Excluir a mensagem"
+
+#: program/localization/pt_BR/labels.inc:movemessagetotrash
+msgid "Move message to trash"
+msgstr "Mover a mensagem para a Lixeira"
+
+#: program/localization/pt_BR/labels.inc:printmessage
+msgid "Print this message"
+msgstr "Imprimir a mensagem"
+
+#: program/localization/pt_BR/labels.inc:previousmessage
+msgid "Show previous message"
+msgstr "Mensagem Anterior"
+
+#: program/localization/pt_BR/labels.inc:firstmessage
+msgid "Show first message"
+msgstr "Primeira Mensagem"
+
+#: program/localization/pt_BR/labels.inc:nextmessage
+msgid "Show next message"
+msgstr "Próxima Mensagem"
+
+#: program/localization/pt_BR/labels.inc:lastmessage
+msgid "Show last message"
+msgstr "Última Mensagem"
+
+#: program/localization/pt_BR/labels.inc:backtolist
+msgid "Back to message list"
+msgstr "Voltar para a lista de mensagens"
+
+#: program/localization/pt_BR/labels.inc:viewsource
+msgid "Show source"
+msgstr "Exibir código-fonte"
+
+#: program/localization/pt_BR/labels.inc:markmessages
+msgid "Mark messages"
+msgstr "Marcar mensagens"
+
+#: program/localization/pt_BR/labels.inc:markread
+msgid "As read"
+msgstr "como lidas"
+
+#: program/localization/pt_BR/labels.inc:markunread
+msgid "As unread"
+msgstr "como não lidas"
+
+#: program/localization/pt_BR/labels.inc:markflagged
+msgid "As flagged"
+msgstr "como sinalizadas"
+
+#: program/localization/pt_BR/labels.inc:markunflagged
+msgid "As unflagged"
+msgstr "como não sinalizadas"
+
+#: program/localization/pt_BR/labels.inc:moreactions
+msgid "More actions..."
+msgstr "Mais ações..."
+
+#: program/localization/pt_BR/labels.inc:select
+msgid "Select"
+msgstr "Selecionar"
+
+#: program/localization/pt_BR/labels.inc:all
+msgid "All"
+msgstr "Todas"
+
+#: program/localization/pt_BR/labels.inc:none
+#: program/localization/pt_BR/labels.inc:nonesort
+msgid "None"
+msgstr "Nenhuma"
+
+#: program/localization/pt_BR/labels.inc:currpage
+msgid "Current page"
+msgstr "Página atual"
+
+#: program/localization/pt_BR/labels.inc:unread
+msgid "Unread"
+msgstr "Não lidas"
+
+#: program/localization/pt_BR/labels.inc:flagged
+msgid "Flagged"
+msgstr "Sinalizada"
+
+#: program/localization/pt_BR/labels.inc:unanswered
+msgid "Unanswered"
+msgstr "Não respondida"
+
+#: program/localization/pt_BR/labels.inc:deleted
+msgid "Deleted"
+msgstr "Excluída"
+
+#: program/localization/pt_BR/labels.inc:invert
+msgid "Invert"
+msgstr "Inverter"
+
+#: program/localization/pt_BR/labels.inc:filter
+msgid "Filter"
+msgstr "Exibir"
+
+#: program/localization/pt_BR/labels.inc:list
+msgid "List"
+msgstr "Lista"
+
+#: program/localization/pt_BR/labels.inc:threads
+msgid "Threads"
+msgstr "Tópicos"
+
+#: program/localization/pt_BR/labels.inc:expand-all
+msgid "Expand All"
+msgstr "Expandir Tudo"
+
+#: program/localization/pt_BR/labels.inc:expand-unread
+msgid "Expand Unread"
+msgstr "Expandir Não Lidas"
+
+#: program/localization/pt_BR/labels.inc:collapse-all
+msgid "Collapse All"
+msgstr "Recolher Tudo"
+
+#: program/localization/pt_BR/labels.inc:threaded
+msgid "Threaded"
+msgstr "Agrupado"
+
+#: program/localization/pt_BR/labels.inc:autoexpand_threads
+msgid "Expand message threads"
+msgstr "Expandir mensagens agrupadas"
+
+#: program/localization/pt_BR/labels.inc:do_expand
+msgid "all threads"
+msgstr "todos os tópicos"
+
+#: program/localization/pt_BR/labels.inc:expand_only_unread
+msgid "only with unread messages"
+msgstr "somente com mensagem(s) não lidas"
+
+#: program/localization/pt_BR/labels.inc:fromto
+msgid "From/To"
+msgstr "Remetente/Destinatário"
+
+#: program/localization/pt_BR/labels.inc:flag
+msgid "Flag"
+msgstr "Marca"
+
+#: program/localization/pt_BR/labels.inc:attachment
+msgid "Attachment"
+msgstr "Anexo"
+
+#: program/localization/pt_BR/labels.inc:sentdate
+msgid "Sent date"
+msgstr "Data de envio"
+
+#: program/localization/pt_BR/labels.inc:arrival
+msgid "Arrival date"
+msgstr "Data de recebimento"
+
+#: program/localization/pt_BR/labels.inc:asc
+msgid "ascending"
+msgstr "crescente"
+
+#: program/localization/pt_BR/labels.inc:desc
+msgid "descending"
+msgstr "decrescente"
+
+#: program/localization/pt_BR/labels.inc:listcolumns
+msgid "List columns"
+msgstr "Lista de colunas"
+
+#: program/localization/pt_BR/labels.inc:listsorting
+msgid "Sorting column"
+msgstr "Coluna para ordenação"
+
+#: program/localization/pt_BR/labels.inc:listorder
+msgid "Sorting order"
+msgstr "Ordem da classificação"
+
+#: program/localization/pt_BR/labels.inc:listmode
+msgid "List view mode"
+msgstr "Modo da listagem"
+
+#: program/localization/pt_BR/labels.inc:folderactions
+msgid "Folder actions..."
+msgstr "Ações para as pastas..."
+
+#: program/localization/pt_BR/labels.inc:compact
+msgid "Compact"
+msgstr "Compactar"
+
+#: program/localization/pt_BR/labels.inc:empty
+msgid "Empty"
+msgstr "Esvaziar"
+
+#: program/localization/pt_BR/labels.inc:quota
+msgid "Disk usage"
+msgstr "Utilização"
+
+#: program/localization/pt_BR/labels.inc:unknown
+msgid "unknown"
+msgstr "desconhecido"
+
+#: program/localization/pt_BR/labels.inc:unlimited
+msgid "unlimited"
+msgstr "ilimitado"
+
+#: program/localization/pt_BR/labels.inc:quicksearch
+msgid "Quick search"
+msgstr "Pesquisa rápida"
+
+#: program/localization/pt_BR/labels.inc:resetsearch
+msgid "Reset search"
+msgstr "Limpar"
+
+#: program/localization/pt_BR/labels.inc:searchmod
+msgid "Search modifiers"
+msgstr "Opções da pesquisa"
+
+#: program/localization/pt_BR/labels.inc:msgtext
+msgid "Entire message"
+msgstr "Mensagem inteira"
+
+#: program/localization/pt_BR/labels.inc:openinextwin
+msgid "Open in new window"
+msgstr "Abrir em nova janela"
+
+#: program/localization/pt_BR/labels.inc:emlsave
+msgid "Download (.eml)"
+msgstr "Download (.eml)"
+
+#: program/localization/pt_BR/labels.inc:compose
+msgid "Compose a message"
+msgstr "Escrever mensagem"
+
+#: program/localization/pt_BR/labels.inc:editasnew
+msgid "Edit as new"
+msgstr "Editar como novo"
+
+#: program/localization/pt_BR/labels.inc:savemessage
+msgid "Save this draft"
+msgstr "Salvar Rascunho"
+
+#: program/localization/pt_BR/labels.inc:sendmessage
+msgid "Send now"
+msgstr "Enviar"
+
+#: program/localization/pt_BR/labels.inc:addattachment
+msgid "Attach a file"
+msgstr "Anexar um arquivo"
+
+#: program/localization/pt_BR/labels.inc:charset
+msgid "Charset"
+msgstr "Codificação"
+
+#: program/localization/pt_BR/labels.inc:editortype
+msgid "Editor type"
+msgstr "Tipo de editor"
+
+#: program/localization/pt_BR/labels.inc:returnreceipt
+msgid "Return receipt"
+msgstr "Solicitar confirmação de recebimento"
+
+#: program/localization/pt_BR/labels.inc:dsn
+msgid "Delivery status notification"
+msgstr "Recibo de entrega"
+
+#: program/localization/pt_BR/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "Em $date, $sender escreveu:"
+
+#: program/localization/pt_BR/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "Mensagem original"
+
+#: program/localization/pt_BR/labels.inc:editidents
+msgid "Edit identities"
+msgstr "Editar identidades"
+
+#: program/localization/pt_BR/labels.inc:checkspelling
+msgid "Check spelling"
+msgstr "Verificar ortografia"
+
+#: program/localization/pt_BR/labels.inc:resumeediting
+msgid "Resume editing"
+msgstr "Continuar a edição"
+
+#: program/localization/pt_BR/labels.inc:revertto
+msgid "Revert to"
+msgstr "Reverter para"
+
+#: program/localization/pt_BR/labels.inc:attachments
+msgid "Attachments"
+msgstr "Anexos"
+
+#: program/localization/pt_BR/labels.inc:upload
+msgid "Upload"
+msgstr "Enviar"
+
+#: program/localization/pt_BR/labels.inc:uploadprogress
+msgid "$percent ($current from $total)"
+msgstr "$percent ($current de $total)"
+
+#: program/localization/pt_BR/labels.inc:close
+msgid "Close"
+msgstr "Fechar"
+
+#: program/localization/pt_BR/labels.inc:messageoptions
+msgid "Message options..."
+msgstr "Opções da mensagem..."
+
+#: program/localization/pt_BR/labels.inc:low
+msgid "Low"
+msgstr "Baixa"
+
+#: program/localization/pt_BR/labels.inc:lowest
+msgid "Lowest"
+msgstr "Mais baixa"
+
+#: program/localization/pt_BR/labels.inc:normal
+msgid "Normal"
+msgstr "Normal"
+
+#: program/localization/pt_BR/labels.inc:high
+msgid "High"
+msgstr "Alta"
+
+#: program/localization/pt_BR/labels.inc:highest
+msgid "Highest"
+msgstr "Mais alta"
+
+#: program/localization/pt_BR/labels.inc:nosubject
+msgid "(no subject)"
+msgstr "(sem assunto)"
+
+#: program/localization/pt_BR/labels.inc:showimages
+msgid "Display images"
+msgstr "Exibir imagens"
+
+#: program/localization/pt_BR/labels.inc:alwaysshow
+msgid "Always show images from $sender"
+msgstr "Sempre exibir imagens de $sender"
+
+#: program/localization/pt_BR/labels.inc:htmltoggle
+msgid "HTML"
+msgstr "HTML"
+
+#: program/localization/pt_BR/labels.inc:plaintoggle
+msgid "Plain text"
+msgstr "Texto simples"
+
+#: program/localization/pt_BR/labels.inc:savesentmessagein
+msgid "Save sent message in"
+msgstr "Salvar mensagens enviadas em"
+
+#: program/localization/pt_BR/labels.inc:dontsave
+msgid "don't save"
+msgstr "não salvar"
+
+#: program/localization/pt_BR/labels.inc:maxuploadsize
+msgid "Maximum allowed file size is $size"
+msgstr "Tamanho máximo permitido do arquivo é $size"
+
+#: program/localization/pt_BR/labels.inc:addcc
+msgid "Add Cc"
+msgstr "Adicionar Cópia"
+
+#: program/localization/pt_BR/labels.inc:addbcc
+msgid "Add Bcc"
+msgstr "Adicionar Cópia Oculta"
+
+#: program/localization/pt_BR/labels.inc:addreplyto
+msgid "Add Reply-To"
+msgstr "Adicionar Responder para"
+
+#: program/localization/pt_BR/labels.inc:addfollowupto
+msgid "Add Followup-To"
+msgstr "Adicionar Encaminhar para"
+
+#: program/localization/pt_BR/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this"
+"message. Do you wish to notify the sender?"
+msgstr "O remetente desta mensagem deseja ser notificado quando você ler esta"
+"mensagem. Você permite o envio desta notificação?"
+
+#: program/localization/pt_BR/labels.inc:receiptread
+msgid "Return Receipt (read)"
+msgstr "Confirmação de Leitura (Exibida)"
+
+#: program/localization/pt_BR/labels.inc:yourmessage
+msgid "This is a Return Receipt for your message"
+msgstr "Esta é uma confirmação de leitura da sua mensagem"
+
+#: program/localization/pt_BR/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the"
+"recipient's computer. There is no guarantee that the recipient has read or"
+"understood the message contents."
+msgstr "Nota: Esta confirmação de leitura somente informa que a mensagem foi"
+"aberta no computador do destinatário. Não há garantia que o"
+"destinatário tenha lido ou compreendido o conteúdo da mensagem."
+
+#: program/localization/pt_BR/labels.inc:name
+msgid "Display Name"
+msgstr "Nome para exibição"
+
+#: program/localization/pt_BR/labels.inc:firstname
+msgid "First Name"
+msgstr "Primeiro nome"
+
+#: program/localization/pt_BR/labels.inc:surname
+msgid "Last Name"
+msgstr "Sobrenome"
+
+#: program/localization/pt_BR/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Segundo Nome"
+
+#: program/localization/pt_BR/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "Prefixo"
+
+#: program/localization/pt_BR/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "Sufixo"
+
+#: program/localization/pt_BR/labels.inc:nickname
+msgid "Nickname"
+msgstr "Apelido"
+
+#: program/localization/pt_BR/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Ocupação"
+
+#: program/localization/pt_BR/labels.inc:department
+msgid "Department"
+msgstr "Departamento"
+
+#: program/localization/pt_BR/labels.inc:gender
+msgid "Gender"
+msgstr "Sexo"
+
+#: program/localization/pt_BR/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Nome de solteira"
+
+#: program/localization/pt_BR/labels.inc:email
+msgid "Email"
+msgstr "E-Mail"
+
+#: program/localization/pt_BR/labels.inc:phone
+msgid "Phone"
+msgstr "Telefone"
+
+#: program/localization/pt_BR/labels.inc:address
+msgid "Address"
+msgstr "Endereço"
+
+#: program/localization/pt_BR/labels.inc:street
+msgid "Street"
+msgstr "Rua"
+
+#: program/localization/pt_BR/labels.inc:locality
+msgid "City"
+msgstr "Cidade"
+
+#: program/localization/pt_BR/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "CEP"
+
+#: program/localization/pt_BR/labels.inc:region
+msgid "State/Province"
+msgstr "Estado"
+
+#: program/localization/pt_BR/labels.inc:country
+msgid "Country"
+msgstr "País"
+
+#: program/localization/pt_BR/labels.inc:birthday
+msgid "Birthday"
+msgstr "Nascimento"
+
+#: program/localization/pt_BR/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "Aniversário"
+
+#: program/localization/pt_BR/labels.inc:website
+msgid "Website"
+msgstr "Website"
+
+#: program/localization/pt_BR/labels.inc:instantmessenger
+msgid "IM"
+msgstr "Mensagem instantânea (IM)"
+
+#: program/localization/pt_BR/labels.inc:notes
+msgid "Notes"
+msgstr "Anotações"
+
+#: program/localization/pt_BR/labels.inc:male
+msgid "male"
+msgstr "masculino"
+
+#: program/localization/pt_BR/labels.inc:female
+msgid "female"
+msgstr "feminino"
+
+#: program/localization/pt_BR/labels.inc:manager
+msgid "Manager"
+msgstr "Gerente"
+
+#: program/localization/pt_BR/labels.inc:assistant
+#: program/localization/pt_BR/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Assistente"
+
+#: program/localization/pt_BR/labels.inc:spouse
+msgid "Spouse"
+msgstr "Cônjuge"
+
+#: program/localization/pt_BR/labels.inc:allfields
+msgid "All fields"
+msgstr "Todos os campos"
+
+#: program/localization/pt_BR/labels.inc:search
+msgid "Search"
+msgstr "Pesquisar"
+
+#: program/localization/pt_BR/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "Pesquisa Avançada"
+
+#: program/localization/pt_BR/labels.inc:other
+#: program/localization/pt_BR/labels.inc:typeother
+msgid "Other"
+msgstr "Outro"
+
+#: program/localization/pt_BR/labels.inc:typehome
+msgid "Home"
+msgstr "Residencial"
+
+#: program/localization/pt_BR/labels.inc:typework
+msgid "Work"
+msgstr "Trabalho"
+
+#: program/localization/pt_BR/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Celular"
+
+#: program/localization/pt_BR/labels.inc:typemain
+msgid "Main"
+msgstr "Principal"
+
+#: program/localization/pt_BR/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Fax Residencial"
+
+#: program/localization/pt_BR/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "Fax do Trabalho"
+
+#: program/localization/pt_BR/labels.inc:typecar
+msgid "Car"
+msgstr "Carro"
+
+#: program/localization/pt_BR/labels.inc:typepager
+msgid "Pager"
+msgstr "Pager"
+
+#: program/localization/pt_BR/labels.inc:typevideo
+msgid "Video"
+msgstr "Video"
+
+#: program/localization/pt_BR/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "Página pessoal"
+
+#: program/localization/pt_BR/labels.inc:typeblog
+msgid "Blog"
+msgstr "Blog"
+
+#: program/localization/pt_BR/labels.inc:typeprofile
+msgid "Profile"
+msgstr "Perfil"
+
+#: program/localization/pt_BR/labels.inc:addfield
+msgid "Add field..."
+msgstr "Adicionar campo..."
+
+#: program/localization/pt_BR/labels.inc:addcontact
+msgid "Add new contact"
+msgstr "Incluir novo contato"
+
+#: program/localization/pt_BR/labels.inc:editcontact
+msgid "Edit contact"
+msgstr "Editar contato"
+
+#: program/localization/pt_BR/labels.inc:contacts
+msgid "Contacts"
+msgstr "Contatos"
+
+#: program/localization/pt_BR/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Propriedades do contato"
+
+#: program/localization/pt_BR/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Informações pessoais"
+
+#: program/localization/pt_BR/labels.inc:edit
+msgid "Edit"
+msgstr "Editar"
+
+#: program/localization/pt_BR/labels.inc:cancel
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: program/localization/pt_BR/labels.inc:save
+msgid "Save"
+msgstr "Salvar"
+
+#: program/localization/pt_BR/labels.inc:delete
+msgid "Delete"
+msgstr "Apagar"
+
+#: program/localization/pt_BR/labels.inc:rename
+msgid "Rename"
+msgstr "Renomear"
+
+#: program/localization/pt_BR/labels.inc:addphoto
+msgid "Add"
+msgstr "Adicionar"
+
+#: program/localization/pt_BR/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Alterar"
+
+#: program/localization/pt_BR/labels.inc:newcontact
+msgid "Create new contact card"
+msgstr "Criar novo contato"
+
+#: program/localization/pt_BR/labels.inc:deletecontact
+msgid "Delete selected contacts"
+msgstr "Apagar contatos selecionados"
+
+#: program/localization/pt_BR/labels.inc:composeto
+msgid "Compose mail to"
+msgstr "Enviar mensagem para"
+
+#: program/localization/pt_BR/labels.inc:contactsfromto
+msgid "Contacts $from to $to of $count"
+msgstr "Contatos $from - $to de $count"
+
+#: program/localization/pt_BR/labels.inc:print
+msgid "Print"
+msgstr "Imprimir"
+
+#: program/localization/pt_BR/labels.inc:export
+msgid "Export"
+msgstr "Exportar"
+
+#: program/localization/pt_BR/labels.inc:exportvcards
+msgid "Export contacts in vCard format"
+msgstr "Exportar os contatos em formato vCard"
+
+#: program/localization/pt_BR/labels.inc:newcontactgroup
+msgid "Create new contact group"
+msgstr "Criar novo grupo de contatos"
+
+#: program/localization/pt_BR/labels.inc:grouprename
+msgid "Rename group"
+msgstr "Renomear grupo"
+
+#: program/localization/pt_BR/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "Excluir grupo"
+
+#: program/localization/pt_BR/labels.inc:previouspage
+msgid "Show previous page"
+msgstr "Página Anterior"
+
+#: program/localization/pt_BR/labels.inc:firstpage
+msgid "Show first page"
+msgstr "Primeira Página "
+
+#: program/localization/pt_BR/labels.inc:nextpage
+msgid "Show next page"
+msgstr "Próxima Página"
+
+#: program/localization/pt_BR/labels.inc:lastpage
+msgid "Show last page"
+msgstr "Última Página"
+
+#: program/localization/pt_BR/labels.inc:group
+msgid "Group"
+msgstr "Grupo"
+
+#: program/localization/pt_BR/labels.inc:groups
+msgid "Groups"
+msgstr "Grupos"
+
+#: program/localization/pt_BR/labels.inc:personaladrbook
+msgid "Personal Addresses"
+msgstr "Endereços pessoais"
+
+#: program/localization/pt_BR/labels.inc:searchsave
+msgid "Save search"
+msgstr "Salvar pesquisa"
+
+#: program/localization/pt_BR/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "Excluir pesquisa"
+
+#: program/localization/pt_BR/labels.inc:import
+msgid "Import"
+msgstr "Importar"
+
+#: program/localization/pt_BR/labels.inc:importcontacts
+msgid "Import contacts"
+msgstr "Importar contatos"
+
+#: program/localization/pt_BR/labels.inc:importfromfile
+msgid "Import from file:"
+msgstr "Importar de arquivo:"
+
+#: program/localization/pt_BR/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "Adicionar novos contatos para o catálogo de endereços:"
+
+#: program/localization/pt_BR/labels.inc:importreplace
+msgid "Replace the entire address book"
+msgstr "Substituir o catálogo de endereços atual"
+
+#: program/localization/pt_BR/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently"
+"support importing addresses from the <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Você pode enviar contatos de um catálogo de endereços existente.<br/>Os"
+"contatos devem ser enviados no formato <a"
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>."
+
+#: program/localization/pt_BR/labels.inc:done
+msgid "Done"
+msgstr "Finalizado"
+
+#: program/localization/pt_BR/labels.inc:settingsfor
+msgid "Settings for"
+msgstr "Configurações para"
+
+#: program/localization/pt_BR/labels.inc:preferences
+msgid "Preferences"
+msgstr "Preferências"
+
+#: program/localization/pt_BR/labels.inc:userpreferences
+msgid "User preferences"
+msgstr "Preferências do usuário"
+
+#: program/localization/pt_BR/labels.inc:editpreferences
+msgid "Edit user preferences"
+msgstr "Editar preferências do usuário"
+
+#: program/localization/pt_BR/labels.inc:identities
+msgid "Identities"
+msgstr "Identidades"
+
+#: program/localization/pt_BR/labels.inc:manageidentities
+msgid "Manage identities for this account"
+msgstr "Gerenciar identidades desta conta"
+
+#: program/localization/pt_BR/labels.inc:newidentity
+msgid "New identity"
+msgstr "Nova identidade"
+
+#: program/localization/pt_BR/labels.inc:newitem
+msgid "New item"
+msgstr "Novo item"
+
+#: program/localization/pt_BR/labels.inc:edititem
+msgid "Edit item"
+msgstr "Editar item"
+
+#: program/localization/pt_BR/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Exibir formatação HTML em mensagens"
+
+#: program/localization/pt_BR/labels.inc:defaultcharset
+msgid "Default Character Set"
+msgstr "Conjunto padrão de caracteres"
+
+#: program/localization/pt_BR/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Mensagem HTML"
+
+#: program/localization/pt_BR/labels.inc:dateformat
+msgid "Date format"
+msgstr "Formato da data"
+
+#: program/localization/pt_BR/labels.inc:timeformat
+msgid "Time format"
+msgstr "Formato da hora"
+
+#: program/localization/pt_BR/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Exibir datas amigáveis"
+
+#: program/localization/pt_BR/labels.inc:setdefault
+msgid "Set default"
+msgstr "Padrão"
+
+#: program/localization/pt_BR/labels.inc:autodetect
+msgid "Auto"
+msgstr "Automático"
+
+#: program/localization/pt_BR/labels.inc:language
+msgid "Language"
+msgstr "Idioma"
+
+#: program/localization/pt_BR/labels.inc:timezone
+msgid "Time zone"
+msgstr "Fuso horário"
+
+#: program/localization/pt_BR/labels.inc:pagesize
+msgid "Rows per page"
+msgstr "Mensagens por página"
+
+#: program/localization/pt_BR/labels.inc:signature
+msgid "Signature"
+msgstr "Assinatura"
+
+#: program/localization/pt_BR/labels.inc:dstactive
+msgid "Daylight saving time"
+msgstr "Horário de verão"
+
+#: program/localization/pt_BR/labels.inc:htmleditor
+msgid "Compose HTML messages"
+msgstr "Criar mensagens formatadas em HTML"
+
+#: program/localization/pt_BR/labels.inc:htmlonreply
+msgid "on reply to HTML message only"
+msgstr "em resposta de mensagens HTML"
+
+#: program/localization/pt_BR/labels.inc:htmlsignature
+msgid "HTML signature"
+msgstr "Assinatura em HTML"
+
+#: program/localization/pt_BR/labels.inc:previewpane
+msgid "Show preview pane"
+msgstr "Exibir pré-visualização"
+
+#: program/localization/pt_BR/labels.inc:skin
+msgid "Interface skin"
+msgstr "Aparência da interface (tema)"
+
+#: program/localization/pt_BR/labels.inc:logoutclear
+msgid "Clear Trash on logout"
+msgstr "Esvaziar a Lixeira ao sair"
+
+#: program/localization/pt_BR/labels.inc:logoutcompact
+msgid "Compact Inbox on logout"
+msgstr "Compactar a Caixa de Entrada ao sair"
+
+#: program/localization/pt_BR/labels.inc:uisettings
+msgid "User Interface"
+msgstr "Interface de usuário"
+
+#: program/localization/pt_BR/labels.inc:serversettings
+msgid "Server Settings"
+msgstr "Configurações do Servidor"
+
+#: program/localization/pt_BR/labels.inc:mailboxview
+msgid "Mailbox View"
+msgstr "Exibição da Caixa de Correio"
+
+#: program/localization/pt_BR/labels.inc:mdnrequests
+msgid "On request for return receipt"
+msgstr "Envio de Confirmação de Leitura para o remetente"
+
+#: program/localization/pt_BR/labels.inc:askuser
+msgid "ask me"
+msgstr "solicite minha confirmação"
+
+#: program/localization/pt_BR/labels.inc:autosend
+msgid "send receipt"
+msgstr "envie automaticamente"
+
+#: program/localization/pt_BR/labels.inc:autosendknown
+msgid "send receipt to my contacts, otherwise ask me"
+msgstr "solicite minha confirmação, e envie automat. para os meus contatos"
+
+#: program/localization/pt_BR/labels.inc:autosendknownignore
+msgid "send receipt to my contacts, otherwise ignore"
+msgstr "ignore, e envie automaticamente para os meus contatos"
+
+#: program/localization/pt_BR/labels.inc:ignore
+msgid "ignore"
+msgstr "ignore"
+
+#: program/localization/pt_BR/labels.inc:readwhendeleted
+msgid "Mark the message as read on delete"
+msgstr "Marcar a mensagem como lida ao excluir"
+
+#: program/localization/pt_BR/labels.inc:flagfordeletion
+msgid "Flag the message for deletion instead of delete"
+msgstr "Marcar a mensagem para exclusão ao invés de excluir"
+
+#: program/localization/pt_BR/labels.inc:skipdeleted
+msgid "Do not show deleted messages"
+msgstr "Não exibir mensagens excluídas"
+
+#: program/localization/pt_BR/labels.inc:deletealways
+msgid "If moving messages to Trash fails, delete them"
+msgstr "Apagar as mensagens se movê-las para a lixeira falhar"
+
+#: program/localization/pt_BR/labels.inc:showremoteimages
+msgid "Display remote inline images"
+msgstr "Exibir imagens externas"
+
+#: program/localization/pt_BR/labels.inc:fromknownsenders
+msgid "from known senders"
+msgstr "de remetentes conhecidos"
+
+#: program/localization/pt_BR/labels.inc:always
+msgid "always"
+msgstr "sempre"
+
+#: program/localization/pt_BR/labels.inc:showinlineimages
+msgid "Display attached images below the message"
+msgstr "Exibir imagens anexadas abaixo da mensagem"
+
+#: program/localization/pt_BR/labels.inc:autosavedraft
+msgid "Automatically save draft"
+msgstr "Salvar rascunho automaticamente"
+
+#: program/localization/pt_BR/labels.inc:everynminutes
+msgid "every $n minute(s)"
+msgstr "a cada $n minuto(s)"
+
+#: program/localization/pt_BR/labels.inc:keepalive
+msgid "Check for new messages on"
+msgstr "Verificar se há novas mensagens"
+
+#: program/localization/pt_BR/labels.inc:never
+msgid "never"
+msgstr "nunca"
+
+#: program/localization/pt_BR/labels.inc:immediately
+msgid "immediately"
+msgstr "imediatamente"
+
+#: program/localization/pt_BR/labels.inc:messagesdisplaying
+msgid "Displaying Messages"
+msgstr "Exibição de mensagens"
+
+#: program/localization/pt_BR/labels.inc:messagescomposition
+msgid "Composing Messages"
+msgstr "Envio de mensagens"
+
+#: program/localization/pt_BR/labels.inc:mimeparamfolding
+msgid "Attachment names"
+msgstr "Nomes de anexos"
+
+#: program/localization/pt_BR/labels.inc:2231folding
+msgid "Full RFC 2231 (Thunderbird)"
+msgstr "RFC 2231 Integral (Thunderbird)"
+
+#: program/localization/pt_BR/labels.inc:miscfolding
+msgid "RFC 2047/2231 (MS Outlook)"
+msgstr "RFC 2047/2231 (MS Outlook)"
+
+#: program/localization/pt_BR/labels.inc:2047folding
+msgid "Full RFC 2047 (other)"
+msgstr "RFC 2047 Integral (outro)"
+
+#: program/localization/pt_BR/labels.inc:force7bit
+msgid "Use MIME encoding for 8-bit characters"
+msgstr "Usar codificação MIME para caracteres 8-bit"
+
+#: program/localization/pt_BR/labels.inc:advancedoptions
+msgid "Advanced options"
+msgstr "Opções avançadas"
+
+#: program/localization/pt_BR/labels.inc:focusonnewmessage
+msgid "Focus browser window on new message"
+msgstr "Focar janela do navegador ao receber nova mensagem"
+
+#: program/localization/pt_BR/labels.inc:checkallfolders
+msgid "Check all folders for new messages"
+msgstr "Verificar se há novas mensagens em todas as pastas"
+
+#: program/localization/pt_BR/labels.inc:displaynext
+msgid "After message delete/move display the next message"
+msgstr "Exibir a mensagem seguinte após apagar/mover uma mensagem"
+
+#: program/localization/pt_BR/labels.inc:mainoptions
+msgid "Main Options"
+msgstr "Opções Principais"
+
+#: program/localization/pt_BR/labels.inc:section
+msgid "Section"
+msgstr "Seção"
+
+#: program/localization/pt_BR/labels.inc:maintenance
+msgid "Maintenance"
+msgstr "Manutenção"
+
+#: program/localization/pt_BR/labels.inc:newmessage
+msgid "New Message"
+msgstr "Novas Mensagens"
+
+#: program/localization/pt_BR/labels.inc:listoptions
+msgid "List Options"
+msgstr "Opções de Exibição"
+
+#: program/localization/pt_BR/labels.inc:signatureoptions
+msgid "Signature Options"
+msgstr "Opções de Assinatura"
+
+#: program/localization/pt_BR/labels.inc:whenreplying
+msgid "When replying"
+msgstr "Quando responder"
+
+#: program/localization/pt_BR/labels.inc:replytopposting
+msgid "start new message above original"
+msgstr "iniciar nova mensagem acima da original"
+
+#: program/localization/pt_BR/labels.inc:replybottomposting
+msgid "start new message below original"
+msgstr "iniciar nova mensagem abaixo da original"
+
+#: program/localization/pt_BR/labels.inc:replyremovesignature
+msgid "When replying remove original signature from message"
+msgstr "Remover assinatura original da mensagem ao respondê-la"
+
+#: program/localization/pt_BR/labels.inc:autoaddsignature
+msgid "Automatically add signature"
+msgstr "Adicionar assinatura automaticamente"
+
+#: program/localization/pt_BR/labels.inc:newmessageonly
+msgid "new message only"
+msgstr "somente para novas mensagens"
+
+#: program/localization/pt_BR/labels.inc:replyandforwardonly
+msgid "replies and forwards only"
+msgstr "somente respostas e encaminhamentos"
+
+#: program/localization/pt_BR/labels.inc:replysignaturepos
+msgid "When replying or forwarding place signature"
+msgstr "Inserir assinatura ao responder ou encaminhar"
+
+#: program/localization/pt_BR/labels.inc:belowquote
+msgid "below the quote"
+msgstr "abaixo da citação"
+
+#: program/localization/pt_BR/labels.inc:abovequote
+msgid "above the quote"
+msgstr "acima da citação"
+
+#: program/localization/pt_BR/labels.inc:insertsignature
+msgid "Insert signature"
+msgstr "Inserir assinatura"
+
+#: program/localization/pt_BR/labels.inc:previewpanemarkread
+msgid "Mark previewed messages as read"
+msgstr "Marcar mensagem pré-visualizada como lida"
+
+#: program/localization/pt_BR/labels.inc:afternseconds
+msgid "after $n seconds"
+msgstr "depois de $n segundos"
+
+#: program/localization/pt_BR/labels.inc:reqmdn
+msgid "Always request a return receipt"
+msgstr "Sempre pedir confirmação de leitura"
+
+#: program/localization/pt_BR/labels.inc:reqdsn
+msgid "Always request a delivery status notification"
+msgstr "Sempre pedir confirmação de entrega"
+
+#: program/localization/pt_BR/labels.inc:replysamefolder
+msgid "Place replies in the folder of the message being replied to"
+msgstr "Guardar as respostas na mesma pasta da mensagem original"
+
+#: program/localization/pt_BR/labels.inc:defaultaddressbook
+msgid "Add new contacts to the selected addressbook"
+msgstr "Adicionar novos contatos para o catálogo de endereços:"
+
+#: program/localization/pt_BR/labels.inc:spellcheckbeforesend
+msgid "Check spelling before sending a message"
+msgstr "Verificar ortografia antes de enviar uma mensagem"
+
+#: program/localization/pt_BR/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "Opções do Verificador de Ortografia"
+
+#: program/localization/pt_BR/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "Ignorar palavras com símbolos"
+
+#: program/localization/pt_BR/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "Ignorar palavras com números"
+
+#: program/localization/pt_BR/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "Ignorar palavras em maiúsculo"
+
+#: program/localization/pt_BR/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "Adicionar ao dicionário"
+
+#: program/localization/pt_BR/labels.inc:folder
+msgid "Folder"
+msgstr "Pasta"
+
+#: program/localization/pt_BR/labels.inc:foldername
+msgid "Folder name"
+msgstr "Nome da pasta"
+
+#: program/localization/pt_BR/labels.inc:subscribed
+msgid "Subscribed"
+msgstr "Ativo"
+
+#: program/localization/pt_BR/labels.inc:messagecount
+msgid "Messages"
+msgstr "Mensagens"
+
+#: program/localization/pt_BR/labels.inc:create
+msgid "Create"
+msgstr "Criar"
+
+#: program/localization/pt_BR/labels.inc:createfolder
+msgid "Create new folder"
+msgstr "Criar nova pasta"
+
+#: program/localization/pt_BR/labels.inc:managefolders
+msgid "Manage folders"
+msgstr "Gerenciar pastas"
+
+#: program/localization/pt_BR/labels.inc:specialfolders
+msgid "Special Folders"
+msgstr "Pastas especiais"
+
+#: program/localization/pt_BR/labels.inc:properties
+msgid "Properties"
+msgstr "Propriedades"
+
+#: program/localization/pt_BR/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Opções de pasta"
+
+#: program/localization/pt_BR/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Pasta origem"
+
+#: program/localization/pt_BR/labels.inc:location
+msgid "Location"
+msgstr "Localização"
+
+#: program/localization/pt_BR/labels.inc:info
+msgid "Information"
+msgstr "Informação"
+
+#: program/localization/pt_BR/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Obter tamanho da pasta"
+
+#: program/localization/pt_BR/labels.inc:changesubscription
+msgid "Click to change subscription"
+msgstr "Clique para ativar/desativar"
+
+#: program/localization/pt_BR/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Tipo de Pasta"
+
+#: program/localization/pt_BR/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "Pasta Particular"
+
+#: program/localization/pt_BR/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "Pasta de outro Usuário"
+
+#: program/localization/pt_BR/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "Pasta Pública"
+
+#: program/localization/pt_BR/labels.inc:sortby
+msgid "Sort by"
+msgstr "Ordenado por"
+
+#: program/localization/pt_BR/labels.inc:sortasc
+msgid "Sort ascending"
+msgstr "Ascendente"
+
+#: program/localization/pt_BR/labels.inc:sortdesc
+msgid "Sort descending"
+msgstr "Descendente"
+
+#: program/localization/pt_BR/labels.inc:undo
+msgid "Undo"
+msgstr "Desfazer"
+
+#: program/localization/pt_BR/labels.inc:B
+msgid "B"
+msgstr "B"
+
+#: program/localization/pt_BR/labels.inc:KB
+msgid "KB"
+msgstr "KB"
+
+#: program/localization/pt_BR/labels.inc:MB
+msgid "MB"
+msgstr "MB"
+
+#: program/localization/pt_BR/labels.inc:GB
+msgid "GB"
+msgstr "GB"
+
+#: program/localization/pt_BR/labels.inc:unicode
+msgid "Unicode"
+msgstr "Unicode"
+
+#: program/localization/pt_BR/labels.inc:english
+msgid "English"
+msgstr "Inglês"
+
+#: program/localization/pt_BR/labels.inc:westerneuropean
+msgid "Western European"
+msgstr "Europa Ocidental"
+
+#: program/localization/pt_BR/labels.inc:easterneuropean
+msgid "Eastern European"
+msgstr "Leste Europeu"
+
+#: program/localization/pt_BR/labels.inc:southeasterneuropean
+msgid "South-Eastern European"
+msgstr "Sudeste Europeu"
+
+#: program/localization/pt_BR/labels.inc:baltic
+msgid "Baltic"
+msgstr "Báltico"
+
+#: program/localization/pt_BR/labels.inc:cyrillic
+msgid "Cyrillic"
+msgstr "Cirílico"
+
+#: program/localization/pt_BR/labels.inc:arabic
+msgid "Arabic"
+msgstr "Árabe"
+
+#: program/localization/pt_BR/labels.inc:greek
+msgid "Greek"
+msgstr "Grego"
+
+#: program/localization/pt_BR/labels.inc:hebrew
+msgid "Hebrew"
+msgstr "Hebraico"
+
+#: program/localization/pt_BR/labels.inc:turkish
+msgid "Turkish"
+msgstr "Turco"
+
+#: program/localization/pt_BR/labels.inc:nordic
+msgid "Nordic"
+msgstr "Nórdico"
+
+#: program/localization/pt_BR/labels.inc:thai
+msgid "Thai"
+msgstr "Tailandês"
+
+#: program/localization/pt_BR/labels.inc:celtic
+msgid "Celtic"
+msgstr "Celta"
+
+#: program/localization/pt_BR/labels.inc:vietnamese
+msgid "Vietnamese"
+msgstr "Vietnamita"
+
+#: program/localization/pt_BR/labels.inc:japanese
+msgid "Japanese"
+msgstr "Japonês"
+
+#: program/localization/pt_BR/labels.inc:korean
+msgid "Korean"
+msgstr "Coreano"
+
+#: program/localization/pt_BR/labels.inc:chinese
+msgid "Chinese"
+msgstr "Chinês"

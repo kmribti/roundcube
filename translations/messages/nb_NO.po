@@ -1,0 +1,392 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/nb_NO/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: nb_NO\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/nb_NO/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Pålogging mislyktes"
+
+#: program/localization/nb_NO/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Din nettleser aksepterer ikke cookies"
+
+#: program/localization/nb_NO/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Din nettlesertilkobling er ugyldig eller utløpt"
+
+#: program/localization/nb_NO/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Feil ved tilkobling til IMAP-server"
+
+#: program/localization/nb_NO/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Serverfeil!"
+
+#: program/localization/nb_NO/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Ugyldig forespørsel! Ingen data ble lagret."
+
+#: program/localization/nb_NO/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Det ble ikke funnet noen meldinger i denne mappen"
+
+#: program/localization/nb_NO/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Du er logget av webmail. Ha det bra!"
+
+#: program/localization/nb_NO/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Mappen er tom!"
+
+#: program/localization/nb_NO/messages.inc:loading
+msgid "Loading..."
+msgstr "Laster..."
+
+#: program/localization/nb_NO/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Laster opp fil..."
+
+#: program/localization/nb_NO/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Laster data..."
+
+#: program/localization/nb_NO/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Sjekker for nye meldinger..."
+
+#: program/localization/nb_NO/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Sender melding..."
+
+#: program/localization/nb_NO/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Meldingen ble sendt uten feil"
+
+#: program/localization/nb_NO/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Lagrer melding..."
+
+#: program/localization/nb_NO/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Melding er lagret som kladd"
+
+#: program/localization/nb_NO/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Lagret"
+
+#: program/localization/nb_NO/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Kontakten ble lagt til i adresseboken"
+
+#: program/localization/nb_NO/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Der finnes allerede en kontakt med denne e-postadressen"
+
+#: program/localization/nb_NO/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Av sikkerhetsgrunner er bilder lagret på eksterne servere blokkert fra"
+"denne e-postmeldingen"
+
+#: program/localization/nb_NO/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Dette er en kryptert melding som ikke kan vises. Beklager!"
+
+#: program/localization/nb_NO/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Ingen kontakter ble funnet"
+
+#: program/localization/nb_NO/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Den ønskede kontakten ble ikke funnet"
+
+#: program/localization/nb_NO/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Kunne ikke sende e-posten"
+
+#: program/localization/nb_NO/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Vennligst vent $sec sekund(er) før du sender denne meldingen"
+
+#: program/localization/nb_NO/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "En feil oppsto under lagring av sendt melding"
+
+#: program/localization/nb_NO/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Det oppstod en feil ved lagring av data"
+
+#: program/localization/nb_NO/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Kunne ikke flytte meldingen(e)"
+
+#: program/localization/nb_NO/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Kunne ikke kopiere meldingen(e)"
+
+#: program/localization/nb_NO/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Kunne ikke slette meldingen(e)"
+
+#: program/localization/nb_NO/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Kunne ikke markere meldingen(e)"
+
+#: program/localization/nb_NO/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Vil du virkelig slette valgte kontakt(er)?"
+
+#: program/localization/nb_NO/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Vil du virkelig slette de(n) valgte meldingen(e)?"
+
+#: program/localization/nb_NO/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Vil du virkelig slette denne mappen?"
+
+#: program/localization/nb_NO/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Vil du virkelig slette alle meldingene i denne mappen?"
+
+#: program/localization/nb_NO/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Sletter mappe..."
+
+#: program/localization/nb_NO/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Flytter mappe..."
+
+#: program/localization/nb_NO/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Skjemaet var ikke fullstendig fylt ut"
+
+#: program/localization/nb_NO/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Skriv inn en gyldig e-postadresse"
+
+#: program/localization/nb_NO/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Angi et navn"
+
+#: program/localization/nb_NO/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Angi sidestørrelsen"
+
+#: program/localization/nb_NO/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Vennligst angi avsenderadresse"
+
+#: program/localization/nb_NO/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Skriv inn minst én mottaker"
+
+#: program/localization/nb_NO/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Emnefeltet er tomt. Vil du skrive det inn nå?"
+
+#: program/localization/nb_NO/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Send denne meldingen uten tekst?"
+
+#: program/localization/nb_NO/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "E-posten er ikke sendt. Er du sikker på at du vil avbryte skrivingen?"
+
+#: program/localization/nb_NO/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Venligst velg hvilken LDAP-server det skal søkes i"
+
+#: program/localization/nb_NO/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Ingen kontakter funnet"
+
+#: program/localization/nb_NO/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Venligst skriv inn kontaktens navn eller e-postadresse"
+
+#: program/localization/nb_NO/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Ikke alle vedlegg er ferdig opplastet. Vennligst vent eller avbryt"
+"opplastingen."
+
+#: program/localization/nb_NO/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "$nr meldinger funnet"
+
+#: program/localization/nb_NO/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Søket ga ingen resultater"
+
+#: program/localization/nb_NO/messages.inc:searching
+msgid "Searching..."
+msgstr "Søker..."
+
+#: program/localization/nb_NO/messages.inc:checking
+msgid "Checking..."
+msgstr "Sjekker..."
+
+#: program/localization/nb_NO/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Ingen skrivefeil funnet"
+
+#: program/localization/nb_NO/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Mappe slettet"
+
+#: program/localization/nb_NO/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Slettet"
+
+#: program/localization/nb_NO/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Fjerner formatering fra meldingen..."
+
+#: program/localization/nb_NO/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Kunne ikke hente meldingen fra server"
+
+#: program/localization/nb_NO/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Feil under opplasting"
+
+#: program/localization/nb_NO/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Filen overstiger maksimum tillatt filstørrelse ($size)"
+
+#: program/localization/nb_NO/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "$nr adresser ble kopiert"
+
+#: program/localization/nb_NO/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Kunne ikke kopiere"
+
+#: program/localization/nb_NO/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Denne adressekilden er skrivebeskyttet"
+
+#: program/localization/nb_NO/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Kunne ikke lagre adressen"
+
+#: program/localization/nb_NO/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Flytter e-post..."
+
+#: program/localization/nb_NO/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Kopierer e-post..."
+
+#: program/localization/nb_NO/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Kvittering er sent"
+
+#: program/localization/nb_NO/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Kunne ikke sende kvittering"
+
+#: program/localization/nb_NO/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Du kan ikke slette denne identiteten, det er din eneste."
+
+#: program/localization/nb_NO/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Mappenavnet inneholder tegn som ikke er tillatt"
+
+#: program/localization/nb_NO/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Vennligst velg en fil for opplasting"
+
+#: program/localization/nb_NO/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Den valgte adresseboken er ikke skrivbar"
+
+#: program/localization/nb_NO/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Kontaktene ble vellykket lagt til i denne gruppen"
+
+#: program/localization/nb_NO/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Kontaktene ble vellykket fjernet fra denne gruppen"
+
+#: program/localization/nb_NO/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Importerer, vennligst vent..."
+
+#: program/localization/nb_NO/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Feil ved importering! Den opplastede filen er ikke en gyldig vCard-fil."
+
+#: program/localization/nb_NO/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Importerte $inserted kontakter, hoppet over $skipped oppføringer som"
+"allerede eksisterte</b>: <p><em>$names</em></p>"
+
+#: program/localization/nb_NO/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Handling ikke tillatt!"
+
+#: program/localization/nb_NO/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "E-postadresse mangler i valgt identitet"
+
+#: program/localization/nb_NO/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Ved å bytte for mat til ren tekst vil all tekstformatering gå tapt."
+"Ønsker du å fortsette?"
+
+#: program/localization/nb_NO/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "En uopprettelig feil oppsto. Vennligst kontakt systemansvarlig umiddelbart."
+"<b>Din melding kunne ikke sendes.</b>"
+
+#: program/localization/nb_NO/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP-feil ($code): Klarte ikke koble til server"
+
+#: program/localization/nb_NO/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP-feil ($code): Pålogging feilet"
+
+#: program/localization/nb_NO/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP-feil ($code): Kunne ikke sette avsender \"$from\" ($msg)"
+
+#: program/localization/nb_NO/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP-feil ($code): Kunne ikke legge til mottaker \"$to\" ($msg)"
+
+#: program/localization/nb_NO/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP-feil ($code): Kunne ikke lese mottakerliste"
+
+#: program/localization/nb_NO/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP-feil ($code): $msg"
+
+#: program/localization/nb_NO/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Feil e-postadresse: $email"
+
+#: program/localization/nb_NO/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "For mange mottakere. Reduser antall mottakere til $max."
+
+#: program/localization/nb_NO/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Antall gruppemedlemmer overskrider maksgrensen på $max"

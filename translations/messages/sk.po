@@ -1,0 +1,532 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/sk_SK/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: sk_SK\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/sk_SK/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Chybné prihlásenie"
+
+#: program/localization/sk_SK/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Váš internetový prehliadač nepodporuje cookies, ktoré sú potrebné"
+"pre prihlásenie"
+
+#: program/localization/sk_SK/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Vaše prihlásenie je neplatné alebo vypršala jeho platnosť"
+
+#: program/localization/sk_SK/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Nepodarilo sa spojiť s IMAP serverom"
+
+#: program/localization/sk_SK/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Chyba servera!"
+
+#: program/localization/sk_SK/messages.inc:servererrormsg
+msgid "Server Error: $msg"
+msgstr "Chyba servera: $msg"
+
+#: program/localization/sk_SK/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Databázová chyba!"
+
+#: program/localization/sk_SK/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Nemožno vykonať operáciu. Adresár je len na čítanie"
+
+#: program/localization/sk_SK/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Nemožno vykonať operáciu. Prístup odmietnutý"
+
+#: program/localization/sk_SK/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Chybný požiadavek. Žiadne údaje neboli uložené."
+
+#: program/localization/sk_SK/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Vo Vašej schránke nie je žiadna správa"
+
+#: program/localization/sk_SK/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Odhlásenie prebehlo úspešne. Dovidenia."
+
+#: program/localization/sk_SK/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Schránka je prázdna"
+
+#: program/localization/sk_SK/messages.inc:loading
+msgid "Loading..."
+msgstr "Načítava sa..."
+
+#: program/localization/sk_SK/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Nahrávám súbor..."
+
+#: program/localization/sk_SK/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "Nahrávam súbory..."
+
+#: program/localization/sk_SK/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Načítavajú sa údaje..."
+
+#: program/localization/sk_SK/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Kontrolujú sa nové správy..."
+
+#: program/localization/sk_SK/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Správa sa odosiela..."
+
+#: program/localization/sk_SK/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Správa bola úspešne odoslaná"
+
+#: program/localization/sk_SK/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Správa sa ukladá..."
+
+#: program/localization/sk_SK/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Správa bola uložená medzi Rozpísané správy"
+
+#: program/localization/sk_SK/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Úspešne uložená"
+
+#: program/localization/sk_SK/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Kontakt bol pridaný do adresára"
+
+#: program/localization/sk_SK/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Kontakt s touto e-mailovou adresou už existuje"
+
+#: program/localization/sk_SK/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Z bezpečnostných dôvodov sú v správe zablokované obrázky."
+
+#: program/localization/sk_SK/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Táto správa je zašifrovaná, a nie je možné ju zobraziť!"
+
+#: program/localization/sk_SK/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Nemáte žiadne kontakty"
+
+#: program/localization/sk_SK/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Požadovaný kontakt nebol nájdený"
+
+#: program/localization/sk_SK/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Odosielanie správy zlyhalo"
+
+#: program/localization/sk_SK/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Počkajte $sec sekúnd pred odoslaním tejto správy"
+
+#: program/localization/sk_SK/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Pri ukladaní odoslanej správy nastala chyba"
+
+#: program/localization/sk_SK/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Vyskytla sa chyba pri ukladaní"
+
+#: program/localization/sk_SK/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Správa sa nedá presunúť"
+
+#: program/localization/sk_SK/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Správa sa nedá skopírovať"
+
+#: program/localization/sk_SK/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Správa sa nedá zmazať"
+
+#: program/localization/sk_SK/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Správa sa nedá označiť"
+
+#: program/localization/sk_SK/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Ste si istý, že chcete zmazať zvolený(é) kontakt(y)?"
+
+#: program/localization/sk_SK/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Ste si istý, že chcete zmazať zvolenú(é) správu(y)?"
+
+#: program/localization/sk_SK/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Ste si istý, že chcete zmazať tento priečinok?"
+
+#: program/localization/sk_SK/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Ste si istý, že chcete zmazať všetky správy v tomto priečinku?"
+
+#: program/localization/sk_SK/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Odstraňuje sa priečinok ..."
+
+#: program/localization/sk_SK/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Prečinok sa presúva ..."
+
+#: program/localization/sk_SK/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Prihlasujem sa k adresáru..."
+
+#: program/localization/sk_SK/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Odhlasujem sa z adresára..."
+
+#: program/localization/sk_SK/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Formulár nie je kompletne vyplnený"
+
+#: program/localization/sk_SK/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Prosím, vložte platnú emailovú adresu"
+
+#: program/localization/sk_SK/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Prosím, zadajte meno"
+
+#: program/localization/sk_SK/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Prosím, zadajte veľkosť strany"
+
+#: program/localization/sk_SK/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Prosím, zadajte adresu odosielateľa"
+
+#: program/localization/sk_SK/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Prosím, vložte aspoň jedného príjemcu"
+
+#: program/localization/sk_SK/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "Predmet správy je prázdny. Chcete ho teraz zadať?"
+
+#: program/localization/sk_SK/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Chcete odoslať správu bez textu?"
+
+#: program/localization/sk_SK/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Správa nebola odoslaná, chcete ju zrušiť?"
+
+#: program/localization/sk_SK/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Prosím, zvoľte LDAP server na vyhľadávanie"
+
+#: program/localization/sk_SK/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Neboli nájdené žiadne kontakty"
+
+#: program/localization/sk_SK/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Prosím vložte meno alebo emailovú adresu"
+
+#: program/localization/sk_SK/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Ešte neboli nahrané všetky prílohy. Počkajte prosím alebo nahrávanie"
+"zrušte."
+
+#: program/localization/sk_SK/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "nájdených $nr správ"
+
+#: program/localization/sk_SK/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Hľadaný výraz nebol nájdený"
+
+#: program/localization/sk_SK/messages.inc:searching
+msgid "Searching..."
+msgstr "Vyhľadáva sa..."
+
+#: program/localization/sk_SK/messages.inc:checking
+msgid "Checking..."
+msgstr "Kontroluje sa..."
+
+#: program/localization/sk_SK/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Pri kontrole pravopisu neboli nájdené chyby"
+
+#: program/localization/sk_SK/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Priečinok bol zmazaný"
+
+#: program/localization/sk_SK/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Úspešne prihlásený k adresáru"
+
+#: program/localization/sk_SK/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Úspešne odhlásený z adresára"
+
+#: program/localization/sk_SK/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Adresár bol vyprázdnený"
+
+#: program/localization/sk_SK/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Adresár bol zhustený"
+
+#: program/localization/sk_SK/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Úspešne zmazané"
+
+#: program/localization/sk_SK/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Odstraňuje sa formátovanie správy..."
+
+#: program/localization/sk_SK/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Nedá sa načítať správa zo servera"
+
+#: program/localization/sk_SK/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Načítanie súboru nebolo úspešné"
+
+#: program/localization/sk_SK/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Načítavaný súbor prekročil maximálnu veľkosť $size"
+
+#: program/localization/sk_SK/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Úspešne sa skopírovalo $nr adries"
+
+#: program/localization/sk_SK/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Nedá sa kopírovať žiadna adresa"
+
+#: program/localization/sk_SK/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Tento zdroj adries je len na čítanie"
+
+#: program/localization/sk_SK/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Nedá sa uložiť adresa kontaktu"
+
+#: program/localization/sk_SK/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Správa sa presúva..."
+
+#: program/localization/sk_SK/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Správa sa kopíruje..."
+
+#: program/localization/sk_SK/messages.inc:deletingmessage
+msgid "Deleting message(s)..."
+msgstr "Mažem správu(y)..."
+
+#: program/localization/sk_SK/messages.inc:markingmessage
+msgid "Marking message(s)..."
+msgstr "Označujem správu(y)..."
+
+#: program/localization/sk_SK/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Potvrdenie o prijatí správy bolo odoslané"
+
+#: program/localization/sk_SK/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Potvrdenie o prijatí správy sa nedalo odoslať"
+
+#: program/localization/sk_SK/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Identita sa nedá odstrániť, je posledná a musí zostať."
+
+#: program/localization/sk_SK/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Názov priečinka obsahuje nepovolený znak"
+
+#: program/localization/sk_SK/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Zvoľte súbor, ktorý chcete načítať"
+
+#: program/localization/sk_SK/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Zvolený adresár kontaktov je iba na čítanie"
+
+#: program/localization/sk_SK/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Kontakty boli úspešne presunuty do tejto skupiny"
+
+#: program/localization/sk_SK/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Kontakty boli úspešne odstráneny z tejto skupiny"
+
+#: program/localization/sk_SK/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Prebieha import, počkajte ..."
+
+#: program/localization/sk_SK/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Import zlyhal. Načítavaný súbor nie je platným vCard súborom."
+
+#: program/localization/sk_SK/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>Úspešne sa načítalo $inserted kontaktov, preskočilo sa $skipped"
+"existujúcich záznamov</b>:<p><em>$names</em></p>"
+
+#: program/localization/sk_SK/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Preskočených $skipped existujúcich záznamov</b>"
+
+#: program/localization/sk_SK/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Operácia nie je povolená!"
+
+#: program/localization/sk_SK/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Zvolená identita neobsahuje e-mailovú adresu"
+
+#: program/localization/sk_SK/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Prepnutie na editor obyčajného textu spôsobí stratu formátovania."
+"Chcete napriek tomu pokračovať?"
+
+#: program/localization/sk_SK/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Vyskytla sa vážna chyba v konfigurácii. Kontaktujte bezodkladne"
+"administrátora. <b>Vaša správa nemohla byť odoslaná.</b>"
+
+#: program/localization/sk_SK/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "Chyba SMTP: Pripojenie na server zlyhalo"
+
+#: program/localization/sk_SK/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "Chyba SMTP: Autorizácie zlyhala"
+
+#: program/localization/sk_SK/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "Chyba SMTP: Nemožno nastaviť odosielateľa ($msg)"
+
+#: program/localization/sk_SK/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "Chyba SMTP: Nemožno pridať príjemca ($msg)"
+
+#: program/localization/sk_SK/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "Chyba SMTP: Nemožno spracovať zoznam príjemcov"
+
+#: program/localization/sk_SK/messages.inc:smtpdsnerror
+msgid "smtpdsnerror"
+msgstr "SMTP chyba: Oznámenie o doručení nie je podporované"
+
+#: program/localization/sk_SK/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "Chyba SMTP: $msg"
+
+#: program/localization/sk_SK/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Neplatná e-mailová adresa: $email"
+
+#: program/localization/sk_SK/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Príliš veľa príjemcov. Zmenšite počet príjemcov na $max."
+
+#: program/localization/sk_SK/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Počet členov skupiny dosiahol maxima z $max"
+
+#: program/localization/sk_SK/messages.inc:internalerror
+msgid "An internal error occured. Please try again."
+msgstr "Došlo k internej chybe. Skúste to znova"
+
+#: program/localization/sk_SK/messages.inc:contactdelerror
+msgid "Could not delete contact(s)."
+msgstr "Nemôžem vymazať kontakt(y)"
+
+#: program/localization/sk_SK/messages.inc:contactdeleted
+msgid "Contact(s) deleted successfully."
+msgstr "Kontakt(y) bol vymazaný"
+
+#: program/localization/sk_SK/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Nemôžem obnoviť zmazané kontakty"
+
+#: program/localization/sk_SK/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Kontakty boli úspešne obnovené"
+
+#: program/localization/sk_SK/messages.inc:groupdeleted
+msgid "Group deleted successfully."
+msgstr "Skupina bola vymazaná"
+
+#: program/localization/sk_SK/messages.inc:grouprenamed
+msgid "Group renamed successfully."
+msgstr "Skupina bola premenovaná"
+
+#: program/localization/sk_SK/messages.inc:groupcreated
+msgid "Group created successfully."
+msgstr "Skupina bola vytvorená"
+
+#: program/localization/sk_SK/messages.inc:messagedeleted
+msgid "Message(s) deleted successfully."
+msgstr "Správa(y) bola vymazaná"
+
+#: program/localization/sk_SK/messages.inc:messagemoved
+msgid "Message(s) moved successfully."
+msgstr "Správa(y) bola presunutá"
+
+#: program/localization/sk_SK/messages.inc:messagecopied
+msgid "Message(s) copied successfully."
+msgstr "Správa(y) bola skopírovaná"
+
+#: program/localization/sk_SK/messages.inc:messagemarked
+msgid "Message(s) marked successfully."
+msgstr "Správa(y) bola označená"
+
+#: program/localization/sk_SK/messages.inc:autocompletechars
+msgid "Enter at least $min characters for autocompletion."
+msgstr "Zadajte najmenej $min znamkov pre automatické dopĺňanie"
+
+#: program/localization/sk_SK/messages.inc:namecannotbeempty
+msgid "Name cannot be empty."
+msgstr "Meno nemôže byť prázdne"
+
+#: program/localization/sk_SK/messages.inc:nametoolong
+msgid "Name is too long."
+msgstr "Meno je príliš dlhé"
+
+#: program/localization/sk_SK/messages.inc:folderupdated
+msgid "Folder updated successfully."
+msgstr "Adresár bol aktualizovaný"
+
+#: program/localization/sk_SK/messages.inc:foldercreated
+msgid "Folder created successfully."
+msgstr "Adresár bol vytvorený"
+
+#: program/localization/sk_SK/messages.inc:invalidimageformat
+msgid "Not a valid image format."
+msgstr "Zlý formát obrázku"
+
+#: program/localization/sk_SK/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "V správe boli nájdené pravopisné chyby"
+
+#: program/localization/sk_SK/messages.inc:itemsdeleted
+msgid "itemsdeleted"
+msgstr "Bolo vymazaných $num položiek."

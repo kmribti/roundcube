@@ -1,0 +1,391 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: program/localization/fi_FI/messages.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcubemail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: fi_FI\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: program/localization/fi_FI/messages.inc:loginfailed
+msgid "Login failed."
+msgstr "Sisäänkirjautuminen epäonnistui"
+
+#: program/localization/fi_FI/messages.inc:cookiesdisabled
+msgid "Your browser does not accept cookies."
+msgstr "Selaimesi ei hyväksy evästeitä"
+
+#: program/localization/fi_FI/messages.inc:sessionerror
+msgid "Your session is invalid or expired."
+msgstr "Sessio ei kelpaa tai ei ole enää voimassa"
+
+#: program/localization/fi_FI/messages.inc:imaperror
+msgid "Connection to IMAP server failed."
+msgstr "Yhteys IMAP-palvelimeen epäonnistui"
+
+#: program/localization/fi_FI/messages.inc:servererror
+msgid "Server Error!"
+msgstr "Palvelin virhe!"
+
+#: program/localization/fi_FI/messages.inc:invalidrequest
+msgid "Invalid request! No data was saved."
+msgstr "Kelpaamaton pyyntö! Tietoa ei tallennettu."
+
+#: program/localization/fi_FI/messages.inc:nomessagesfound
+msgid "No messages found in this mailbox."
+msgstr "Kansiossa ei ole sähköpostiviestejä"
+
+#: program/localization/fi_FI/messages.inc:loggedout
+msgid "You have successfully terminated the session. Good bye!"
+msgstr "Sinut on kirjattu ulos järjestelmästä."
+
+#: program/localization/fi_FI/messages.inc:mailboxempty
+msgid "Mailbox is empty."
+msgstr "Kansio on tyhjä"
+
+#: program/localization/fi_FI/messages.inc:loading
+msgid "Loading..."
+msgstr "Ladataan..."
+
+#: program/localization/fi_FI/messages.inc:uploading
+msgid "Uploading file..."
+msgstr "Ladataan tiedostoa palvelimelle..."
+
+#: program/localization/fi_FI/messages.inc:loadingdata
+msgid "Loading data..."
+msgstr "Ladataan tietoja..."
+
+#: program/localization/fi_FI/messages.inc:checkingmail
+msgid "Checking for new messages..."
+msgstr "Tarkistetaan saapuneita viestejä..."
+
+#: program/localization/fi_FI/messages.inc:sendingmessage
+msgid "Sending message..."
+msgstr "Lähetetään viestiä..."
+
+#: program/localization/fi_FI/messages.inc:messagesent
+msgid "Message sent successfully."
+msgstr "Viesti lähetetty"
+
+#: program/localization/fi_FI/messages.inc:savingmessage
+msgid "Saving message..."
+msgstr "Tallennetaan viestiä..."
+
+#: program/localization/fi_FI/messages.inc:messagesaved
+msgid "Message saved to Drafts."
+msgstr "Viesti tallennettu \"Luonnokset\" -kansioon"
+
+#: program/localization/fi_FI/messages.inc:successfullysaved
+msgid "Successfully saved."
+msgstr "Tallennus onnistui"
+
+#: program/localization/fi_FI/messages.inc:addedsuccessfully
+msgid "Contact added successfully to address book."
+msgstr "Kontakti lisätty osoitekirjaan"
+
+#: program/localization/fi_FI/messages.inc:contactexists
+msgid "A contact with the same e-mail address already exists."
+msgstr "Samalla sähköpostiosoitteella on jo olemassa kontakti"
+
+#: program/localization/fi_FI/messages.inc:blockedimages
+msgid "To protect your privacy, remote images are blocked in this message."
+msgstr "Turvallisuussyistä viestin kuvia ei näytetty."
+
+#: program/localization/fi_FI/messages.inc:encryptedmessage
+msgid "This is an encrypted message and can not be displayed. Sorry!"
+msgstr "Viesti on salattu, eikä sitä voida näyttää."
+
+#: program/localization/fi_FI/messages.inc:nocontactsfound
+msgid "No contacts found."
+msgstr "Ei kontakteja"
+
+#: program/localization/fi_FI/messages.inc:contactnotfound
+msgid "The requested contact was not found."
+msgstr "Pyydettyä yhteystietoa ei löytynyt"
+
+#: program/localization/fi_FI/messages.inc:sendingfailed
+msgid "Failed to send message."
+msgstr "Viestin lähetys epäonnistui"
+
+#: program/localization/fi_FI/messages.inc:senttooquickly
+msgid "Please wait $sec sec(s). before sending this message."
+msgstr "Odota $sec sekunti(a) ennen viestin lähettämistä"
+
+#: program/localization/fi_FI/messages.inc:errorsavingsent
+msgid "An error occured while saving sent message."
+msgstr "Lähetetyn viestin tallennuksessa tapahtui virhe"
+
+#: program/localization/fi_FI/messages.inc:errorsaving
+msgid "An error occured while saving."
+msgstr "Tallennuksessa tapahtui virhe"
+
+#: program/localization/fi_FI/messages.inc:errormoving
+msgid "Could not move the message(s)."
+msgstr "Viestiä ei voitu siirtää"
+
+#: program/localization/fi_FI/messages.inc:errorcopying
+msgid "Could not copy the message(s)."
+msgstr "Viestiä ei voitu kopioida"
+
+#: program/localization/fi_FI/messages.inc:errordeleting
+msgid "Could not delete the message(s)."
+msgstr "Viestiä ei voitu poistaa"
+
+#: program/localization/fi_FI/messages.inc:errormarking
+msgid "Could not mark the message(s)."
+msgstr "Viestiä ei voitu merkiä"
+
+#: program/localization/fi_FI/messages.inc:deletecontactconfirm
+msgid "Do you really want to delete selected contact(s)?"
+msgstr "Haluatko varmasti poistaa valitut kontaktit?"
+
+#: program/localization/fi_FI/messages.inc:deletemessagesconfirm
+msgid "Do you really want to delete selected message(s)?"
+msgstr "Haluatko varmasti poistaa valitut viestit?"
+
+#: program/localization/fi_FI/messages.inc:deletefolderconfirm
+msgid "Do you really want to delete this folder?"
+msgstr "Haluatko varmasti poistaa kansion?"
+
+#: program/localization/fi_FI/messages.inc:purgefolderconfirm
+msgid "Do you really want to delete all messages in this folder?"
+msgstr "Haluatko varmasti poistaa kaikki viestit kansiosta?"
+
+#: program/localization/fi_FI/messages.inc:folderdeleting
+msgid "Deleting folder..."
+msgstr "Poistetaan kansiota..."
+
+#: program/localization/fi_FI/messages.inc:foldermoving
+msgid "Moving folder..."
+msgstr "Siirretään kansiota..."
+
+#: program/localization/fi_FI/messages.inc:formincomplete
+msgid "The form was not completely filled out."
+msgstr "Lomakkeen tiedot olivat puutteelliset"
+
+#: program/localization/fi_FI/messages.inc:noemailwarning
+msgid "Please enter a valid email address."
+msgstr "Anna sähköpostiosoite"
+
+#: program/localization/fi_FI/messages.inc:nonamewarning
+msgid "Please enter a name."
+msgstr "Anna nimi"
+
+#: program/localization/fi_FI/messages.inc:nopagesizewarning
+msgid "Please enter a page size."
+msgstr "Anna sivukoko"
+
+#: program/localization/fi_FI/messages.inc:nosenderwarning
+msgid "Please enter sender e-mail address."
+msgstr "Anna lähettäjän sähköpostiosoite"
+
+#: program/localization/fi_FI/messages.inc:norecipientwarning
+msgid "Please enter at least one recipient."
+msgstr "Anna ainakin yksi vastaanottaja"
+
+#: program/localization/fi_FI/messages.inc:nosubjectwarning
+msgid "The \"Subject\" field is empty. Would you like to enter one now?"
+msgstr "\"Otsikko\" -kenttä on tyhjä. Haluaisitko kirjoittaa viestillesi otsikon?"
+
+#: program/localization/fi_FI/messages.inc:nobodywarning
+msgid "Send this message without text?"
+msgstr "Lähetetäänkö viesti ilman tekstiä?"
+
+#: program/localization/fi_FI/messages.inc:notsentwarning
+msgid "Message has not been sent. Do you want to discard your message?"
+msgstr "Viestiä ei lähetetty. Haluatko poistaa viestin?"
+
+#: program/localization/fi_FI/messages.inc:noldapserver
+msgid "Please select an ldap server to search."
+msgstr "Valitse LDAP -palvelin"
+
+#: program/localization/fi_FI/messages.inc:nocontactsreturned
+msgid "nocontactsreturned"
+msgstr "Yhtään kontaktia ei löytynyt"
+
+#: program/localization/fi_FI/messages.inc:nosearchname
+msgid "Please enter a contact name or email address."
+msgstr "Anna kontaktin nimi tai sähköpostiosoite"
+
+#: program/localization/fi_FI/messages.inc:notuploadedwarning
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+"upload."
+msgstr "Kaikkia liitteitä ei ole vielä ladattu palvelimelle. Odota tai peruuta"
+"lataus."
+
+#: program/localization/fi_FI/messages.inc:searchsuccessful
+msgid "$nr messages found."
+msgstr "Löydetty $nr viestiä"
+
+#: program/localization/fi_FI/messages.inc:searchnomatch
+msgid "Search returned no matches."
+msgstr "Haku ei tuottanut tuloksia"
+
+#: program/localization/fi_FI/messages.inc:searching
+msgid "Searching..."
+msgstr "Etsitään..."
+
+#: program/localization/fi_FI/messages.inc:checking
+msgid "Checking..."
+msgstr "Tarkistetaan..."
+
+#: program/localization/fi_FI/messages.inc:nospellerrors
+msgid "No spelling errors found."
+msgstr "Kirjoitusvirheitä ei löytynyt"
+
+#: program/localization/fi_FI/messages.inc:folderdeleted
+msgid "Folder successfully deleted."
+msgstr "Kansio poistettu onnistuneesti"
+
+#: program/localization/fi_FI/messages.inc:deletedsuccessfully
+msgid "Successfully deleted."
+msgstr "Poistettu onnistuneesti"
+
+#: program/localization/fi_FI/messages.inc:converting
+msgid "Removing formatting..."
+msgstr "Poistetaan asettelu viestistä..."
+
+#: program/localization/fi_FI/messages.inc:messageopenerror
+msgid "Could not load message from server."
+msgstr "Virhe kopioitaessa viestiä palvelimelta"
+
+#: program/localization/fi_FI/messages.inc:fileuploaderror
+msgid "File upload failed."
+msgstr "Tiedoston lähettäminen epäonnistui"
+
+#: program/localization/fi_FI/messages.inc:filesizeerror
+msgid "The uploaded file exceeds the maximum size of $size."
+msgstr "Lähetettävä tiedosto ylittää sallitun enimmäiskoon $size"
+
+#: program/localization/fi_FI/messages.inc:copysuccess
+msgid "Successfully copied $nr addresses."
+msgstr "Kopioitu $nr osoitetta onnistuneesti"
+
+#: program/localization/fi_FI/messages.inc:copyerror
+msgid "Could not copy any addresses."
+msgstr "Yhtään osoitetta ei voitu kopioida"
+
+#: program/localization/fi_FI/messages.inc:sourceisreadonly
+msgid "This address source is read only."
+msgstr "Tämän osoitteen lähde on kirjoitussuojattu"
+
+#: program/localization/fi_FI/messages.inc:errorsavingcontact
+msgid "Could not save the contact address."
+msgstr "Yhteystietoa ei voitu tallentaa"
+
+#: program/localization/fi_FI/messages.inc:movingmessage
+msgid "Moving message(s)..."
+msgstr "Siirretään viestiä..."
+
+#: program/localization/fi_FI/messages.inc:copyingmessage
+msgid "Copying message(s)..."
+msgstr "Kopioidaan viestiä..."
+
+#: program/localization/fi_FI/messages.inc:receiptsent
+msgid "Successfully sent a read receipt."
+msgstr "Lukukuittaus lähetetty onnistuneesti"
+
+#: program/localization/fi_FI/messages.inc:errorsendingreceipt
+msgid "Could not send the receipt."
+msgstr "Lukukuittausta ei voitu lähettää"
+
+#: program/localization/fi_FI/messages.inc:nodeletelastidentity
+msgid "You cannot delete this identity, it's your last one."
+msgstr "Et voi poistaa tätä identiteettiä, koska se on ainoa jäljelläoleva"
+
+#: program/localization/fi_FI/messages.inc:forbiddencharacter
+msgid "Folder name contains a forbidden character."
+msgstr "Kansion nimessä on kiellettyjä merkkejä"
+
+#: program/localization/fi_FI/messages.inc:selectimportfile
+msgid "Please select a file to upload."
+msgstr "Valitse lähetettävä tiedosto"
+
+#: program/localization/fi_FI/messages.inc:addresswriterror
+msgid "The selected address book is not writeable."
+msgstr "Valittuun osoitekirjaan ei voi kirjoittaa"
+
+#: program/localization/fi_FI/messages.inc:contactaddedtogroup
+msgid "Successfully added the contacts to this group."
+msgstr "Kontaktit lisätty ryhmään"
+
+#: program/localization/fi_FI/messages.inc:contactremovedfromgroup
+msgid "Successfully removed contacts from this group."
+msgstr "Kontaktit poistettu ryhmästä"
+
+#: program/localization/fi_FI/messages.inc:importwait
+msgid "Importing, please wait..."
+msgstr "Tuodaan, odota..."
+
+#: program/localization/fi_FI/messages.inc:importerror
+msgid "Import failed! The uploaded file is not a valid vCard file."
+msgstr "Tuonti epäonnistui! Lähetetty tiedosto ei ole vCard -muodossa."
+
+#: program/localization/fi_FI/messages.inc:importconfirm
+msgid "<b>Successfully imported $inserted contacts</b>"
+msgstr "<b>$inserted kontaktia tuotu onnistuneesti $inserted kontaktioa, $skipped"
+"olemassaolevaa kontaktia hypättiin yli</b>:<p><em>$names</em></p>"
+
+#: program/localization/fi_FI/messages.inc:opnotpermitted
+msgid "Operation not permitted!"
+msgstr "Toiminto ei ole sallittu!"
+
+#: program/localization/fi_FI/messages.inc:nofromaddress
+msgid "Missing e-mail address in selected identity."
+msgstr "Valittu identiteetti ei sisällä sähköpostiosoitetta"
+
+#: program/localization/fi_FI/messages.inc:editorwarning
+msgid "Switching to the plain text editor will cause all text formatting to be"
+"lost. Do you wish to continue?"
+msgstr "Vaihtaminen tekstieditoriin aiheuttaa viestin muotoilun katoamisen."
+"Haluatko jatkaa?"
+
+#: program/localization/fi_FI/messages.inc:httpreceivedencrypterror
+msgid "A fatal configuration error occurred. Contact your administrator"
+"immediately. <b>Your message can not be sent.</b>"
+msgstr "Vakava virhe asetuksissa. Ota välittömästi yhteys ylläpitoon."
+"<b>Viestiäsi ei voida lähettää.</b>"
+
+#: program/localization/fi_FI/messages.inc:smtpconnerror
+msgid "SMTP Error ($code): Connection to server failed."
+msgstr "SMTP-virhe ($code): Palvelimelle yhdistäminen epäonnistui"
+
+#: program/localization/fi_FI/messages.inc:smtpautherror
+msgid "SMTP Error ($code): Authentication failed."
+msgstr "SMTP-virhe ($code): Tunnistus epäonnistui"
+
+#: program/localization/fi_FI/messages.inc:smtpfromerror
+msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
+msgstr "SMTP-virhe ($code): Lähettäjän \"$from\" asettaminen epäonnistui ($msg)"
+
+#: program/localization/fi_FI/messages.inc:smtptoerror
+msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
+msgstr "SMTP-virhe ($code): Vastaanottajan \"$to\" lisääminen epäonnistui ($msg)"
+
+#: program/localization/fi_FI/messages.inc:smtprecipientserror
+msgid "SMTP Error: Unable to parse recipients list."
+msgstr "SMTP-virhe: Ei voida jäsentää vastaanottajien listaa"
+
+#: program/localization/fi_FI/messages.inc:smtperror
+msgid "SMTP Error: $msg"
+msgstr "SMTP-virhe: $msg"
+
+#: program/localization/fi_FI/messages.inc:emailformaterror
+msgid "Invalid e-mail address: $email"
+msgstr "Väärä sähköpostiosoite: $email"
+
+#: program/localization/fi_FI/messages.inc:toomanyrecipients
+msgid "Too many recipients. Reduce the number of recipients to $max."
+msgstr "Liikaa vastaanottajia. Vähennä vastaanottajien määrä maksimiin $max."
+
+#: program/localization/fi_FI/messages.inc:maxgroupmembersreached
+msgid "The number of group members exceeds the maximum of $max."
+msgstr "Ryhmän jäsenten määrä ylittää maksimin $max"
