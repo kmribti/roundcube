@@ -43,11 +43,13 @@
 			<file name="localization/en_US.inc" role="data"></file>
 			<file name="localization/es_ES.inc" role="data"></file>
 			<file name="localization/et_EE.inc" role="data"></file>
+			<file name="localization/fr_FR.inc" role="data"></file>
 			<file name="localization/gl_ES.inc" role="data"></file>
 			<file name="localization/ja_JP.inc" role="data"></file>
 			<file name="localization/pl_PL.inc" role="data"></file>
 			<file name="localization/pt_BR.inc" role="data"></file>
 			<file name="localization/pt_PT.inc" role="data"></file>
+			<file name="localization/ro_RO.inc" role="data"></file>
 			<file name="localization/ru_RU.inc" role="data"></file>
 			<file name="localization/sv_SE.inc" role="data"></file>
 			<file name="localization/zh_TW.inc" role="data"></file>
