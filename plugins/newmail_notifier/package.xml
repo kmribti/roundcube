@@ -44,10 +44,10 @@
 			<file name="favicon.ico" role="data"></file>
 			<file name="mail.png" role="data"></file>
 			<file name="sound.wav" role="data"></file>
-
 			<file name="localization/de_CH.inc" role="data"></file>
 			<file name="localization/de_DE.inc" role="data"></file>
 			<file name="localization/en_US.inc" role="data"></file>
+			<file name="localization/ja_JP.inc" role="data"></file>
 			<file name="localization/lv_LV.inc" role="data"></file>
 			<file name="localization/pl_PL.inc" role="data"></file>
 			<file name="localization/pt_BR.inc" role="data"></file>
