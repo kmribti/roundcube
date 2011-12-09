@@ -1,0 +1,23 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/markasjunk/localization/gl_ES.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-markasjunk\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:51:56+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: gl_ES\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/markasjunk/localization/gl_ES.inc:buttontitle
+msgid "Mark as Junk"
+msgstr "Marcar como correo lixo"
+
+#: plugins/markasjunk/localization/gl_ES.inc:reportedasjunk
+msgid "Successfully reported as Junk"
+msgstr "Mensaxe marcada como correo lixo"

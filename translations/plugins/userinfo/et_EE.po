@@ -1,0 +1,31 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/userinfo/localization/et_EE.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-userinfo\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:50:25+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: et_EE\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/userinfo/localization/et_EE.inc:userinfo
+msgid "User info"
+msgstr "Kasutaja info"
+
+#: plugins/userinfo/localization/et_EE.inc:created
+msgid "Created"
+msgstr "Loodud"
+
+#: plugins/userinfo/localization/et_EE.inc:lastlogin
+msgid "Last Login"
+msgstr "Viimane logimine"
+
+#: plugins/userinfo/localization/et_EE.inc:defaultidentity
+msgid "Default Identity"
+msgstr "Vaikeidentiteet"

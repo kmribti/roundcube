@@ -1,0 +1,51 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/newmail_notifier/localization/lv_LV.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-newmail_notifier\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-09T09:43:23+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: lv_LV\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/newmail_notifier/localization/lv_LV.inc:basic
+msgid "Display browser notifications on new message"
+msgstr "Attēlot paziņojumu pie jaunas vēstules saņemšanas"
+
+#: plugins/newmail_notifier/localization/lv_LV.inc:desktop
+msgid "Display desktop notifications on new message"
+msgstr "Attēlot darbvirsmas paziņojumu pie jaunas vēstules saņemšanas"
+
+#: plugins/newmail_notifier/localization/lv_LV.inc:sound
+msgid "Play the sound on new message"
+msgstr "Atskaņot skaņas signālu pie jaunas vēstules saņemšanas"
+
+#: plugins/newmail_notifier/localization/lv_LV.inc:test
+msgid "Test"
+msgstr "Test"
+
+#: plugins/newmail_notifier/localization/lv_LV.inc:title
+msgid "New Email!"
+msgstr "Jauns E-pasts!"
+
+#: plugins/newmail_notifier/localization/lv_LV.inc:body
+msgid "You've received a new message."
+msgstr "Jūs esat saņēmis jaunu e-pastu."
+
+#: plugins/newmail_notifier/localization/lv_LV.inc:testbody
+msgid "This is a test notification."
+msgstr "Šis ir testa paziņojums."
+
+#: plugins/newmail_notifier/localization/lv_LV.inc:desktopdisabled
+msgid "Desktop notifications are disabled in your browser."
+msgstr "Darbvirsmas paziņojumi ir atslēgti Jūsu pārlūkprogrammā."
+
+#: plugins/newmail_notifier/localization/lv_LV.inc:desktopunsupported
+msgid "Your browser does not support desktop notifications."
+msgstr "Jūsu pārlūkprogramma neatbalsta darbvirsmas paziņojumus."

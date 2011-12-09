@@ -1,0 +1,31 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/userinfo/localization/ru_RU.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-userinfo\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-07T15:50:25+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: ru_RU\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/userinfo/localization/ru_RU.inc:userinfo
+msgid "User info"
+msgstr "Информация"
+
+#: plugins/userinfo/localization/ru_RU.inc:created
+msgid "Created"
+msgstr "Создан"
+
+#: plugins/userinfo/localization/ru_RU.inc:lastlogin
+msgid "Last Login"
+msgstr "Последний вход"
+
+#: plugins/userinfo/localization/ru_RU.inc:defaultidentity
+msgid "Default Identity"
+msgstr "Профиль по умолчанию"

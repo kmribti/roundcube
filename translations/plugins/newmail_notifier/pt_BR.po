@@ -1,0 +1,51 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+#: plugins/newmail_notifier/localization/pt_BR.inc
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-newmail_notifier\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2011-12-09T09:43:23+01:00\n"
+"Last-Translator: \n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"Language: pt_BR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugins/newmail_notifier/localization/pt_BR.inc:basic
+msgid "Display browser notifications on new message"
+msgstr "Exibir notificação quando uma nova mensagem chegar"
+
+#: plugins/newmail_notifier/localization/pt_BR.inc:desktop
+msgid "Display desktop notifications on new message"
+msgstr "Exibir notificação no desktop quando uma nova mensagem chegar"
+
+#: plugins/newmail_notifier/localization/pt_BR.inc:sound
+msgid "Play the sound on new message"
+msgstr "Alerta sonoro quando uma nova mensagem chegar"
+
+#: plugins/newmail_notifier/localization/pt_BR.inc:test
+msgid "Test"
+msgstr "Testar"
+
+#: plugins/newmail_notifier/localization/pt_BR.inc:title
+msgid "New Email!"
+msgstr "Novo Email!"
+
+#: plugins/newmail_notifier/localization/pt_BR.inc:body
+msgid "You've received a new message."
+msgstr "Você recebeu uma nova mensagem."
+
+#: plugins/newmail_notifier/localization/pt_BR.inc:testbody
+msgid "This is a test notification."
+msgstr "Essa é uma notificação de teste."
+
+#: plugins/newmail_notifier/localization/pt_BR.inc:desktopdisabled
+msgid "Desktop notifications are disabled in your browser."
+msgstr "As notificações no desktop estão desabilitadas no seu navegador."
+
+#: plugins/newmail_notifier/localization/pt_BR.inc:desktopunsupported
+msgid "Your browser does not support desktop notifications."
+msgstr "Seu navegador não suporta notificações no desktop"
