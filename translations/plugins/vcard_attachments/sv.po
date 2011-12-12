@@ -1,0 +1,26 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-vcard_attachments\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07 15:56+0100\n"
+"PO-Revision-Date: 2011-12-09 09:24+0000\n"
+"Last-Translator: Thomas <Unknown>\n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2011-12-12 11:13+0000\n"
+"X-Generator: Launchpad (build 14458)\n"
+"Language: sv_SE\n"
+
+#: plugins/vcard_attachments/localization/en_US.inc:addvcardmsg
+msgid "Add vCard to addressbook"
+msgstr "Lägg till vCard i adressbok"
+
+#: plugins/vcard_attachments/localization/en_US.inc:vcardsavefailed
+msgid "Unable to save vCard"
+msgstr "Kunde inte spara vCard"

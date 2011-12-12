@@ -1,0 +1,422 @@
+# Converted from Roundcube PHP localization files
+# Copyright (C) 2011 The Roundcube Dev Team
+# This file is distributed under the same license as the Roundcube package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: roundcube-plugin-managesieve\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-07 15:51+0100\n"
+"PO-Revision-Date: 2011-12-07 15:44+0000\n"
+"Last-Translator: Thomas <Unknown>\n"
+"Language-Team: Translations <hello@roundcube.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2011-12-12 11:13+0000\n"
+"X-Generator: Launchpad (build 14458)\n"
+"Language: sv_SE\n"
+
+#: plugins/managesieve/localization/en_US.inc:filters
+msgid "Filters"
+msgstr "Filter"
+
+#: plugins/managesieve/localization/en_US.inc:managefilters
+msgid "Manage incoming mail filters"
+msgstr "Administrera filter"
+
+#: plugins/managesieve/localization/en_US.inc:filtername
+msgid "Filter name"
+msgstr "Filternamn"
+
+#: plugins/managesieve/localization/en_US.inc:newfilter
+msgid "New filter"
+msgstr "Nytt filter"
+
+#: plugins/managesieve/localization/en_US.inc:filteradd
+msgid "Add filter"
+msgstr "Lägg till filter"
+
+#: plugins/managesieve/localization/en_US.inc:filterdel
+msgid "Delete filter"
+msgstr "Ta bort filter"
+
+#: plugins/managesieve/localization/en_US.inc:moveup
+msgid "Move up"
+msgstr "Flytta upp filter"
+
+#: plugins/managesieve/localization/en_US.inc:movedown
+msgid "Move down"
+msgstr "Flytta ner filter"
+
+#: plugins/managesieve/localization/en_US.inc:filterallof
+msgid "matching all of the following rules"
+msgstr "Filtrera på alla följande regler"
+
+#: plugins/managesieve/localization/en_US.inc:filteranyof
+msgid "matching any of the following rules"
+msgstr "Filtrera på någon av följande regler"
+
+#: plugins/managesieve/localization/en_US.inc:filterany
+msgid "all messages"
+msgstr "Filtrera alla meddelanden"
+
+#: plugins/managesieve/localization/en_US.inc:filtercontains
+msgid "contains"
+msgstr "innehåller"
+
+#: plugins/managesieve/localization/en_US.inc:filternotcontains
+msgid "not contains"
+msgstr "inte innehåller"
+
+#: plugins/managesieve/localization/en_US.inc:filteris
+msgid "is equal to"
+msgstr "är lika med"
+
+#: plugins/managesieve/localization/en_US.inc:filterisnot
+msgid "is not equal to"
+msgstr "är inte lika med"
+
+#: plugins/managesieve/localization/en_US.inc:filterexists
+msgid "exists"
+msgstr "finns"
+
+#: plugins/managesieve/localization/en_US.inc:filternotexists
+msgid "not exists"
+msgstr "inte finns"
+
+#: plugins/managesieve/localization/en_US.inc:filtermatches
+msgid "matches expression"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:filternotmatches
+msgid "not matches expression"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:filterregex
+msgid "matches regular expression"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:filternotregex
+msgid "not matches regular expression"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:filterunder
+msgid "under"
+msgstr "under"
+
+#: plugins/managesieve/localization/en_US.inc:filterover
+msgid "over"
+msgstr "över"
+
+#: plugins/managesieve/localization/en_US.inc:addrule
+msgid "Add rule"
+msgstr "Lägg till regel"
+
+#: plugins/managesieve/localization/en_US.inc:delrule
+msgid "Delete rule"
+msgstr "Ta bort regel"
+
+#: plugins/managesieve/localization/en_US.inc:messagemoveto
+msgid "Move message to"
+msgstr "Flytta meddelande till"
+
+#: plugins/managesieve/localization/en_US.inc:messageredirect
+msgid "Redirect message to"
+msgstr "Ändra mottagare till"
+
+#: plugins/managesieve/localization/en_US.inc:messagecopyto
+msgid "Copy message to"
+msgstr "Kopiera meddelande till"
+
+#: plugins/managesieve/localization/en_US.inc:messagesendcopy
+msgid "Send message copy to"
+msgstr "Skicka kopia av meddelande till"
+
+#: plugins/managesieve/localization/en_US.inc:messagereply
+msgid "Reply with message"
+msgstr "Besvara meddelande"
+
+#: plugins/managesieve/localization/en_US.inc:messagedelete
+msgid "Delete message"
+msgstr "Ta bort meddelande"
+
+#: plugins/managesieve/localization/en_US.inc:messagediscard
+msgid "Discard with message"
+msgstr "Avböj med felmeddelande"
+
+#: plugins/managesieve/localization/en_US.inc:messagesrules
+msgid "For incoming mail:"
+msgstr "För inkommande meddelande"
+
+#: plugins/managesieve/localization/en_US.inc:messagesactions
+msgid "...execute the following actions:"
+msgstr "Utför följande åtgärd"
+
+#: plugins/managesieve/localization/en_US.inc:add
+msgid "Add"
+msgstr "Lägg till"
+
+#: plugins/managesieve/localization/en_US.inc:del
+msgid "Delete"
+msgstr "Ta bort"
+
+#: plugins/managesieve/localization/en_US.inc:sender
+msgid "Sender"
+msgstr "Avsändare"
+
+#: plugins/managesieve/localization/en_US.inc:recipient
+msgid "Recipient"
+msgstr "Mottagare"
+
+#: plugins/managesieve/localization/en_US.inc:vacationaddresses
+msgid "Additional list of recipient e-mails (comma separated):"
+msgstr "Ytterligare mottagaradresser (avdelade med kommatecken)"
+
+#: plugins/managesieve/localization/en_US.inc:vacationdays
+msgid "How often send messages (in days):"
+msgstr "Antal dagar mellan auto-svar:"
+
+#: plugins/managesieve/localization/en_US.inc:vacationreason
+msgid "Message body (vacation reason):"
+msgstr "Meddelande i auto-svar:"
+
+#: plugins/managesieve/localization/en_US.inc:vacationsubject
+msgid "Message subject:"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:rulestop
+msgid "Stop evaluating rules"
+msgstr "Avsluta filtrering"
+
+#: plugins/managesieve/localization/en_US.inc:enable
+msgid "Enable/Disable"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:filterset
+msgid "Filters set"
+msgstr "Filtergrupp"
+
+#: plugins/managesieve/localization/en_US.inc:filtersets
+msgid "Filter sets"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:filtersetadd
+msgid "Add filters set"
+msgstr "Lägg till filtergrupp"
+
+#: plugins/managesieve/localization/en_US.inc:filtersetdel
+msgid "Delete current filters set"
+msgstr "Ta bort filtergrupp"
+
+#: plugins/managesieve/localization/en_US.inc:filtersetact
+msgid "Activate current filters set"
+msgstr "Aktivera filtergrupp"
+
+#: plugins/managesieve/localization/en_US.inc:filtersetdeact
+msgid "Deactivate current filters set"
+msgstr "Deaktivera filtergrupp"
+
+#: plugins/managesieve/localization/en_US.inc:filterdef
+msgid "Filter definition"
+msgstr "Filterdefinition"
+
+#: plugins/managesieve/localization/en_US.inc:filtersetname
+msgid "Filters set name"
+msgstr "Filtergruppsnamn"
+
+#: plugins/managesieve/localization/en_US.inc:newfilterset
+msgid "New filters set"
+msgstr "Ny filtergrupp"
+
+#: plugins/managesieve/localization/en_US.inc:active
+msgid "active"
+msgstr "aktiv"
+
+#: plugins/managesieve/localization/en_US.inc:none
+msgid "none"
+msgstr "ingen"
+
+#: plugins/managesieve/localization/en_US.inc:fromset
+msgid "from set"
+msgstr "från grupp"
+
+#: plugins/managesieve/localization/en_US.inc:fromfile
+msgid "from file"
+msgstr "från fil"
+
+#: plugins/managesieve/localization/en_US.inc:filterdisabled
+msgid "Filter disabled"
+msgstr "Filter deaktiverat"
+
+#: plugins/managesieve/localization/en_US.inc:countisgreaterthan
+msgid "count is greater than"
+msgstr "antal är större än"
+
+#: plugins/managesieve/localization/en_US.inc:countisgreaterthanequal
+msgid "count is greater than or equal to"
+msgstr "antal är större än eller lika med"
+
+#: plugins/managesieve/localization/en_US.inc:countislessthan
+msgid "count is less than"
+msgstr "antal är mindre än"
+
+#: plugins/managesieve/localization/en_US.inc:countislessthanequal
+msgid "count is less than or equal to"
+msgstr "antal är mindre än eller lika med"
+
+#: plugins/managesieve/localization/en_US.inc:countequals
+msgid "count is equal to"
+msgstr "antal är lika med"
+
+#: plugins/managesieve/localization/en_US.inc:countnotequals
+msgid "count does not equal"
+msgstr "antal är inte lika med"
+
+#: plugins/managesieve/localization/en_US.inc:valueisgreaterthan
+msgid "value is greater than"
+msgstr "värde är större än"
+
+#: plugins/managesieve/localization/en_US.inc:valueisgreaterthanequal
+msgid "value is greater than or equal to"
+msgstr "värde är större än eller lika med"
+
+#: plugins/managesieve/localization/en_US.inc:valueislessthan
+msgid "value is less than"
+msgstr "värde är mindre än"
+
+#: plugins/managesieve/localization/en_US.inc:valueislessthanequal
+msgid "value is less than or equal to"
+msgstr "värde är mindre än eller lika med"
+
+#: plugins/managesieve/localization/en_US.inc:valueequals
+msgid "value is equal to"
+msgstr "värde är lika med"
+
+#: plugins/managesieve/localization/en_US.inc:valuenotequals
+msgid "value does not equal"
+msgstr "värde är inte lika med"
+
+#: plugins/managesieve/localization/en_US.inc:setflags
+msgid "Set flags to the message"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:addflags
+msgid "Add flags to the message"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:removeflags
+msgid "Remove flags from the message"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:flagread
+msgid "Read"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:flagdeleted
+msgid "Deleted"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:flaganswered
+msgid "Answered"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:flagflagged
+msgid "Flagged"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:flagdraft
+msgid "Draft"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:filtercreate
+msgid "Create filter"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:usedata
+msgid "Use following data in the filter:"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:nextstep
+msgid "Next Step"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:...
+msgid "..."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:advancedopts
+msgid "Advanced options"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:body
+msgid "Body"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:address
+msgid "address"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:envelope
+msgid "envelope"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:modifier
+msgid "modifier:"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:text
+msgid "text"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:undecoded
+msgid "undecoded (raw)"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:contenttype
+msgid "content type"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:modtype
+msgid "type:"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:allparts
+msgid "all"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:domain
+msgid "domain"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:localpart
+msgid "local part"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:user
+msgid "user"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:detail
+msgid "detail"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:comparator
+msgid "comparator:"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:default
+msgid "default"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:octet
+msgid "strict (octet)"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:asciicasemap
+msgid "case insensitive (ascii-casemap)"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:asciinumeric
+msgid "numeric (ascii-numeric)"
+msgstr ""
