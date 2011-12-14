@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-14T10:14:09+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: fr_FR\n"
@@ -25,7 +24,7 @@ msgstr "Votre navigateur n'accepte pas les cookies"
 
 #: program/localization/fr_FR/messages.inc:sessionerror
 msgid "Your session is invalid or expired."
-msgstr "Votre session est invalide ou a expirÃ©"
+msgstr "Votre session est invalide ou a expir�"
 
 #: program/localization/fr_FR/messages.inc:imaperror
 msgid "Connection to IMAP server failed."
@@ -41,31 +40,31 @@ msgstr "Erreur du serveur: $msg"
 
 #: program/localization/fr_FR/messages.inc:dberror
 msgid "Database Error!"
-msgstr "Erreur avec la base de donnÃ©e!"
+msgstr "Erreur avec la base de donn�e!"
 
 #: program/localization/fr_FR/messages.inc:errorreadonly
 msgid "Unable to perform operation. Folder is read-only."
-msgstr "Impossible d'effectuer cette opÃ©ration. Le dossier est en lecture seule"
+msgstr "Impossible d'effectuer cette op�ration. Le dossier est en lecture seule"
 
 #: program/localization/fr_FR/messages.inc:errornoperm
 msgid "Unable to perform operation. Permission denied."
-msgstr "Impossible d'effectuer cette opÃ©ration. Permission refusÃ©e"
+msgstr "Impossible d'effectuer cette op�ration. Permission refus�e"
 
 #: program/localization/fr_FR/messages.inc:invalidrequest
 msgid "Invalid request! No data was saved."
-msgstr "RequÃªte invalide ! Aucune donnÃ©e n'a Ã©tÃ© sauvegardÃ©e."
+msgstr "Requ�te invalide ! Aucune donn�e n'a �t� sauvegard�e."
 
 #: program/localization/fr_FR/messages.inc:nomessagesfound
 msgid "No messages found in this mailbox."
-msgstr "Aucun message trouvÃ© dans cette boÃ®te aux lettres"
+msgstr "Aucun message trouv� dans cette bo�te aux lettres"
 
 #: program/localization/fr_FR/messages.inc:loggedout
 msgid "You have successfully terminated the session. Good bye!"
-msgstr "Vous venez de vous dÃ©connecter avec succÃšs. Au revoir !"
+msgstr "Vous venez de vous d�connecter avec succ�s. Au revoir !"
 
 #: program/localization/fr_FR/messages.inc:mailboxempty
 msgid "Mailbox is empty."
-msgstr "BoÃ®te aux lettres vide"
+msgstr "Bo�te aux lettres vide"
 
 #: program/localization/fr_FR/messages.inc:loading
 msgid "Loading..."
@@ -81,11 +80,11 @@ msgstr "Envoi des fichiers ..."
 
 #: program/localization/fr_FR/messages.inc:loadingdata
 msgid "Loading data..."
-msgstr "Chargement des donnÃ©es..."
+msgstr "Chargement des donn�es..."
 
 #: program/localization/fr_FR/messages.inc:checkingmail
 msgid "Checking for new messages..."
-msgstr "VÃ©rification des nouveaux messages..."
+msgstr "V�rification des nouveaux messages..."
 
 #: program/localization/fr_FR/messages.inc:sendingmessage
 msgid "Sending message..."
@@ -93,7 +92,7 @@ msgstr "Message en cours d'envoi..."
 
 #: program/localization/fr_FR/messages.inc:messagesent
 msgid "Message sent successfully."
-msgstr "Message bien envoyÃ©"
+msgstr "Message bien envoy�"
 
 #: program/localization/fr_FR/messages.inc:savingmessage
 msgid "Saving message..."
@@ -101,49 +100,48 @@ msgstr "Sauvegarde du message..."
 
 #: program/localization/fr_FR/messages.inc:messagesaved
 msgid "Message saved to Drafts."
-msgstr "Message sauvegardÃ© dans Brouillons"
+msgstr "Message sauvegard� dans Brouillons"
 
 #: program/localization/fr_FR/messages.inc:successfullysaved
 msgid "Successfully saved."
-msgstr "Sauvegarde effectuÃ©e"
+msgstr "Sauvegarde effectu�e"
 
 #: program/localization/fr_FR/messages.inc:addedsuccessfully
 msgid "Contact added successfully to address book."
-msgstr "Contact ajoutÃ© dans le carnet d'adresses"
+msgstr "Contact ajout� dans le carnet d'adresses"
 
 #: program/localization/fr_FR/messages.inc:contactexists
 msgid "A contact with the same e-mail address already exists."
-msgstr "Un contact avec ce courriel existe dÃ©jÃ "
+msgstr "Un contact avec ce courriel existe d�j�"
 
 #: program/localization/fr_FR/messages.inc:contactnameexists
 msgid "A contact with the same name already exists."
-msgstr "Un contact avec le mÃªme nom existe dÃ©jÃ ."
+msgstr "Un contact avec le m�me nom existe d�j�."
 
 #: program/localization/fr_FR/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "Afin de prÃ©server votre vie privÃ©e, les images distantes ont"
-"Ã©tÃ© bloquÃ©es dans ce message."
+msgstr "Afin de pr�server votre vie priv�e, les images distantes ont �t� bloqu�es"
+"dans ce message."
 
 #: program/localization/fr_FR/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
-msgstr "Ceci est un message cryptÃ© et il ne peut pas Ãªtre affichÃ©."
-"DÃ©solÃ© !"
+msgstr "Ceci est un message crypt� et il ne peut pas �tre affich�. D�sol� !"
 
 #: program/localization/fr_FR/messages.inc:nocontactsfound
 msgid "No contacts found."
-msgstr "Aucun contact n'a pu Ãªtre trouvÃ©"
+msgstr "Aucun contact n'a pu �tre trouv�"
 
 #: program/localization/fr_FR/messages.inc:contactnotfound
 msgid "The requested contact was not found."
-msgstr "Le contact demandÃ© n'a pas Ã©tÃ© trouvÃ©"
+msgstr "Le contact demand� n'a pas �t� trouv�"
 
 #: program/localization/fr_FR/messages.inc:contactsearchonly
 msgid "Enter some search terms to find contacts"
-msgstr "Entrez un ou plusieurs mots clÃ©s pour trouver des contacts"
+msgstr "Entrez un ou plusieurs mots cl�s pour trouver des contacts"
 
 #: program/localization/fr_FR/messages.inc:sendingfailed
 msgid "Failed to send message."
-msgstr "L'envoi du message a Ã©chouÃ©"
+msgstr "L'envoi du message a �chou�"
 
 #: program/localization/fr_FR/messages.inc:senttooquickly
 msgid "Please wait $sec sec(s). before sending this message."
@@ -151,19 +149,19 @@ msgstr "Vous devez attendre $sec sec. pour envoyer le message"
 
 #: program/localization/fr_FR/messages.inc:errorsavingsent
 msgid "An error occured while saving sent message."
-msgstr "Une erreur est survenue pendant la sauvegarde du message envoyÃ©"
+msgstr "Une erreur est survenue pendant la sauvegarde du message envoy�"
 
 #: program/localization/fr_FR/messages.inc:errorsaving
 msgid "An error occured while saving."
-msgstr "Une erreur a empÃªchÃ© la sauvegarde"
+msgstr "Une erreur a emp�ch� la sauvegarde"
 
 #: program/localization/fr_FR/messages.inc:errormoving
 msgid "Could not move the message(s)."
-msgstr "Impossible de dÃ©placer le message"
+msgstr "Impossible de d�placer le message"
 
 #: program/localization/fr_FR/messages.inc:errorcopying
 msgid "Could not copy the message(s)."
-msgstr "Le(s) message(s) n'a/ont pas pu Ãªtre copiÃ©(s)"
+msgstr "Le(s) message(s) n'a/ont pas pu �tre copi�(s)"
 
 #: program/localization/fr_FR/messages.inc:errordeleting
 msgid "Could not delete the message(s)."
@@ -175,15 +173,15 @@ msgstr "Impossible de marquer le message"
 
 #: program/localization/fr_FR/messages.inc:deletecontactconfirm
 msgid "Do you really want to delete selected contact(s)?"
-msgstr "Voulez-vous vraiment effacer le(s) contact(s) sÃ©lectionnÃ©(s) ?"
+msgstr "Voulez-vous vraiment effacer le(s) contact(s) s�lectionn�(s) ?"
 
 #: program/localization/fr_FR/messages.inc:deletegroupconfirm
 msgid "Do you really want to delete selected group?"
-msgstr "Ãtes-vous sÃ»r de vouloir supprimer le groupe sÃ©lectionnÃ© ?"
+msgstr "�tes-vous s�r de vouloir supprimer le groupe s�lectionn� ?"
 
 #: program/localization/fr_FR/messages.inc:deletemessagesconfirm
 msgid "Do you really want to delete selected message(s)?"
-msgstr "Voulez-vous vraiment supprimer le(s) message(s) sÃ©lectionnÃ©(s) ?"
+msgstr "Voulez-vous vraiment supprimer le(s) message(s) s�lectionn�(s) ?"
 
 #: program/localization/fr_FR/messages.inc:deletefolderconfirm
 msgid "Do you really want to delete this folder?"
@@ -207,7 +205,7 @@ msgstr "Suppression du dossier..."
 
 #: program/localization/fr_FR/messages.inc:foldermoving
 msgid "Moving folder..."
-msgstr "DÃ©placement du dossier..."
+msgstr "D�placement du dossier..."
 
 #: program/localization/fr_FR/messages.inc:foldersubscribing
 msgid "Subscribing folder..."
@@ -215,15 +213,15 @@ msgstr "Inscription du dossier..."
 
 #: program/localization/fr_FR/messages.inc:folderunsubscribing
 msgid "Unsubscribing folder..."
-msgstr "DÃ©sinscription du dossier..."
+msgstr "D�sinscription du dossier..."
 
 #: program/localization/fr_FR/messages.inc:formincomplete
 msgid "The form was not completely filled out."
-msgstr "Le formulaire n'a pas Ã©tÃ© entiÃšrement rempli"
+msgstr "Le formulaire n'a pas �t� enti�rement rempli"
 
 #: program/localization/fr_FR/messages.inc:noemailwarning
 msgid "Please enter a valid email address."
-msgstr "Veuillez spÃ©cifier un courriel valide"
+msgstr "Veuillez sp�cifier un courriel valide"
 
 #: program/localization/fr_FR/messages.inc:nonamewarning
 msgid "Please enter a name."
@@ -235,7 +233,7 @@ msgstr "Veuillez indiquer une taille de page"
 
 #: program/localization/fr_FR/messages.inc:nosenderwarning
 msgid "Please enter sender e-mail address."
-msgstr "Veuillez renseigner l'adresse d'expÃ©diteur"
+msgstr "Veuillez renseigner l'adresse d'exp�diteur"
 
 #: program/localization/fr_FR/messages.inc:norecipientwarning
 msgid "Please enter at least one recipient."
@@ -243,8 +241,7 @@ msgstr "Veuillez ajouter au moins un destinataire"
 
 #: program/localization/fr_FR/messages.inc:nosubjectwarning
 msgid "The \"Subject\" field is empty. Would you like to enter one now?"
-msgstr "Le champ Â« Objet Â» est vide. Souhaitez-vous le renseigner maintenant"
-"?"
+msgstr "Le champ �Objet� est vide. Souhaitez-vous le renseigner maintenant ?"
 
 #: program/localization/fr_FR/messages.inc:nobodywarning
 msgid "Send this message without text?"
@@ -252,7 +249,7 @@ msgstr "Envoyer ce message sans texte ?"
 
 #: program/localization/fr_FR/messages.inc:notsentwarning
 msgid "Message has not been sent. Do you want to discard your message?"
-msgstr "Le message n'a pas Ã©tÃ© envoyÃ©. Voulez-vous abandonner ce message ?"
+msgstr "Le message n'a pas �t� envoy�. Voulez-vous abandonner ce message ?"
 
 #: program/localization/fr_FR/messages.inc:noldapserver
 msgid "Please select an ldap server to search."
@@ -265,20 +262,20 @@ msgstr "Entrez un nom de contact ou un courriel"
 #: program/localization/fr_FR/messages.inc:notuploadedwarning
 msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
 "upload."
-msgstr "Toutes les piÃšces jointes ne sont pas encore envoyÃ©es pour le moment."
-"Merci d'attendre ou d'annuler l'envoi."
+msgstr "Toutes les pi�ces jointes ne sont pas encore envoy�es pour le moment. Merci"
+"d'attendre ou d'annuler l'envoi."
 
 #: program/localization/fr_FR/messages.inc:searchsuccessful
 msgid "$nr messages found."
-msgstr "$nr messages trouvÃ©s"
+msgstr "$nr messages trouv�s"
 
 #: program/localization/fr_FR/messages.inc:contactsearchsuccessful
 msgid "$nr contacts found."
-msgstr "$nr contact(s) trouvÃ©(s)."
+msgstr "$nr contact(s) trouv�(s)."
 
 #: program/localization/fr_FR/messages.inc:searchnomatch
 msgid "Search returned no matches."
-msgstr "La recherche ne donne aucun rÃ©sultat"
+msgstr "La recherche ne donne aucun r�sultat"
 
 #: program/localization/fr_FR/messages.inc:searching
 msgid "Searching..."
@@ -286,35 +283,35 @@ msgstr "En cours de recherche..."
 
 #: program/localization/fr_FR/messages.inc:checking
 msgid "Checking..."
-msgstr "VÃ©rification..."
+msgstr "V�rification..."
 
 #: program/localization/fr_FR/messages.inc:nospellerrors
 msgid "No spelling errors found."
-msgstr "Aucune faute trouvÃ©e"
+msgstr "Aucune faute trouv�e"
 
 #: program/localization/fr_FR/messages.inc:folderdeleted
 msgid "Folder successfully deleted."
-msgstr "Dossier effacÃ©"
+msgstr "Dossier effac�"
 
 #: program/localization/fr_FR/messages.inc:foldersubscribed
 msgid "Folder successfully subscribed."
-msgstr "Le dossier a bien Ã©tÃ© inscrit"
+msgstr "Le dossier a bien �t� inscrit"
 
 #: program/localization/fr_FR/messages.inc:folderunsubscribed
 msgid "Folder successfully unsubscribed."
-msgstr "Le dossier a bien Ã©tÃ© dÃ©sinscrit"
+msgstr "Le dossier a bien �t� d�sinscrit"
 
 #: program/localization/fr_FR/messages.inc:folderpurged
 msgid "Folder has successfully been emptied."
-msgstr "Le dossier a bien Ã©tÃ© vidÃ©"
+msgstr "Le dossier a bien �t� vid�"
 
 #: program/localization/fr_FR/messages.inc:folderexpunged
 msgid "Folder has successfully been compacted."
-msgstr "Le dossier a bien Ã©tÃ© compactÃ©"
+msgstr "Le dossier a bien �t� compact�"
 
 #: program/localization/fr_FR/messages.inc:deletedsuccessfully
 msgid "Successfully deleted."
-msgstr "SupprimÃ©(s) avec succÃšs"
+msgstr "Supprim�(s) avec succ�s"
 
 #: program/localization/fr_FR/messages.inc:converting
 msgid "Removing formatting..."
@@ -326,15 +323,15 @@ msgstr "Impossible de charger le message depuis serveur"
 
 #: program/localization/fr_FR/messages.inc:fileuploaderror
 msgid "File upload failed."
-msgstr "Transfert du fichier Ã©chouÃ©"
+msgstr "Transfert du fichier �chou�"
 
 #: program/localization/fr_FR/messages.inc:filesizeerror
 msgid "The uploaded file exceeds the maximum size of $size."
-msgstr "Le fichier transfÃ©rÃ© dÃ©passe la taille maximale de $size"
+msgstr "Le fichier transf�r� d�passe la taille maximale de $size"
 
 #: program/localization/fr_FR/messages.inc:copysuccess
 msgid "Successfully copied $nr addresses."
-msgstr "SuccÃšs de la copie des $nr adresses"
+msgstr "Succ�s de la copie des $nr adresses"
 
 #: program/localization/fr_FR/messages.inc:copyerror
 msgid "Could not copy any addresses."
@@ -350,7 +347,7 @@ msgstr "Ne peut pas enregistrer l'adresse du contact"
 
 #: program/localization/fr_FR/messages.inc:movingmessage
 msgid "Moving message(s)..."
-msgstr "DÃ©placement du message..."
+msgstr "D�placement du message..."
 
 #: program/localization/fr_FR/messages.inc:copyingmessage
 msgid "Copying message(s)..."
@@ -378,35 +375,35 @@ msgstr "Suppression des contacts du groupe ..."
 
 #: program/localization/fr_FR/messages.inc:receiptsent
 msgid "Successfully sent a read receipt."
-msgstr "L'accusÃ© de rÃ©ception a bien Ã©tÃ© envoyÃ©"
+msgstr "L'accus� de r�ception a bien �t� envoy�"
 
 #: program/localization/fr_FR/messages.inc:errorsendingreceipt
 msgid "Could not send the receipt."
-msgstr "L'accusÃ© de rÃ©ception n'a pas pu Ãªtre envoyÃ©"
+msgstr "L'accus� de r�ception n'a pas pu �tre envoy�"
 
 #: program/localization/fr_FR/messages.inc:nodeletelastidentity
 msgid "You cannot delete this identity, it's your last one."
-msgstr "Vous ne pouvez pas effacer votre seule identitÃ©."
+msgstr "Vous ne pouvez pas effacer votre seule identit�."
 
 #: program/localization/fr_FR/messages.inc:forbiddencharacter
 msgid "Folder name contains a forbidden character."
-msgstr "Le nom du dossier contient un caractÃšre interdit"
+msgstr "Le nom du dossier contient un caract�re interdit"
 
 #: program/localization/fr_FR/messages.inc:selectimportfile
 msgid "Please select a file to upload."
-msgstr "Veuillez sÃ©lectionner un fichier Ã  envoyer"
+msgstr "Veuillez s�lectionner un fichier � envoyer"
 
 #: program/localization/fr_FR/messages.inc:addresswriterror
 msgid "The selected address book is not writeable."
-msgstr "Impossible d'Ã©crire dans le carnet d'adresse sÃ©lectionnÃ©"
+msgstr "Impossible d'�crire dans le carnet d'adresse s�lectionn�"
 
 #: program/localization/fr_FR/messages.inc:contactaddedtogroup
 msgid "Successfully added the contacts to this group."
-msgstr "Les contacts ont bien Ã©tÃ© ajoutÃ©s Ã  ce groupe"
+msgstr "Les contacts ont bien �t� ajout�s � ce groupe"
 
 #: program/localization/fr_FR/messages.inc:contactremovedfromgroup
 msgid "Successfully removed contacts from this group."
-msgstr "Les contacts ont bien Ã©tÃ© supprimÃ©s de ce groupe"
+msgstr "Les contacts ont bien �t� supprim�s de ce groupe"
 
 #: program/localization/fr_FR/messages.inc:importwait
 msgid "Importing, please wait..."
@@ -414,38 +411,36 @@ msgstr "Importation, veuillez patienter..."
 
 #: program/localization/fr_FR/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "Importation Ã©chouÃ©e ! Le fichier envoyÃ© n'est pas un fichier vCard"
-"valide."
+msgstr "Importation �chou�e ! Le fichier envoy� n'est pas un fichier vCard valide."
 
 #: program/localization/fr_FR/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>$inserted contacts importÃ©s avec succÃšs, $skipped entrÃ©es"
-"existantes ignorÃ©es</b>:<p><em>$names</em></p>"
+msgstr "<b>$inserted contacts import�s avec succ�s, $skipped entr�es existantes"
+"ignor�es</b>:<p><em>$names</em></p>"
 
 #: program/localization/fr_FR/messages.inc:importconfirmskipped
 msgid "<b>Skipped $skipped existing entries</b>"
-msgstr "<b>$skipped entrÃ©e(s) dÃ©jÃ  existante(s)</b>"
+msgstr "<b>$skipped entr�e(s) d�j� existante(s)</b>"
 
 #: program/localization/fr_FR/messages.inc:opnotpermitted
 msgid "Operation not permitted!"
-msgstr "Cette opÃ©ration n'est pas permise !"
+msgstr "Cette op�ration n'est pas permise !"
 
 #: program/localization/fr_FR/messages.inc:nofromaddress
 msgid "Missing e-mail address in selected identity."
-msgstr "Il manque une adresse e-mail dans l'identitÃ© sÃ©lectionnÃ©e"
+msgstr "Il manque une adresse e-mail dans l'identit� s�lectionn�e"
 
 #: program/localization/fr_FR/messages.inc:editorwarning
 msgid "Switching to the plain text editor will cause all text formatting to be"
 "lost. Do you wish to continue?"
-msgstr "Passer Ã  l'Ã©diteur texte seul causera la perte du formatage du texte."
+msgstr "Passer � l'�diteur texte seul causera la perte du formatage du texte."
 "Voulez-vous continuer ?"
 
 #: program/localization/fr_FR/messages.inc:httpreceivedencrypterror
 msgid "A fatal configuration error occurred. Contact your administrator"
 "immediately. <b>Your message can not be sent.</b>"
 msgstr "Une erreur fatale de configuration est survenue. Veuillez contacter votre"
-"administrateur immÃ©diatement. <b>Votre message n'a pas pu Ãªtre"
-"envoyÃ©.</b>"
+"administrateur imm�diatement. <b>Votre message n'a pas pu �tre envoy�.</b>"
 
 #: program/localization/fr_FR/messages.inc:smtpconnerror
 msgid "SMTP Error ($code): Connection to server failed."
@@ -457,8 +452,7 @@ msgstr "Erreur SMTP ($code): Echec de l'authentification"
 
 #: program/localization/fr_FR/messages.inc:smtpfromerror
 msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
-msgstr "Erreur SMTP ($code): Impossible de dÃ©finir l'expÃ©diteur \"$from\""
-"($msg)"
+msgstr "Erreur SMTP ($code): Impossible de d�finir l'exp�diteur \"$from\" ($msg)"
 
 #: program/localization/fr_FR/messages.inc:smtptoerror
 msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
@@ -478,87 +472,87 @@ msgstr "Adresse email incorrecte: $email"
 
 #: program/localization/fr_FR/messages.inc:toomanyrecipients
 msgid "Too many recipients. Reduce the number of recipients to $max."
-msgstr "Trop de destinataires. RÃ©duisez leur nombre Ã  $max maximum."
+msgstr "Trop de destinataires. R�duisez leur nombre � $max maximum."
 
 #: program/localization/fr_FR/messages.inc:maxgroupmembersreached
 msgid "The number of group members exceeds the maximum of $max."
-msgstr "Le nombre de membres du groupe dÃ©passe le maximum de $max."
+msgstr "Le nombre de membres du groupe d�passe le maximum de $max."
 
 #: program/localization/fr_FR/messages.inc:internalerror
 msgid "An internal error occured. Please try again."
-msgstr "Une erreur interne est survenue. Merci de rÃ©essayer"
+msgstr "Une erreur interne est survenue. Merci de r�essayer"
 
 #: program/localization/fr_FR/messages.inc:contactdelerror
 msgid "Could not delete contact(s)."
-msgstr "Les contacts n'ont pas pu Ãªtre supprimÃ©s"
+msgstr "Les contacts n'ont pas pu �tre supprim�s"
 
 #: program/localization/fr_FR/messages.inc:contactdeleted
 msgid "Contact(s) deleted successfully."
-msgstr "Les contacts ont bien Ã©tÃ© supprimÃ©s"
+msgstr "Les contacts ont bien �t� supprim�s"
 
 #: program/localization/fr_FR/messages.inc:contactrestoreerror
 msgid "Could not restore deleted contact(s)."
-msgstr "Impossible de restaurer les contacts supprimÃ©s."
+msgstr "Impossible de restaurer les contacts supprim�s."
 
 #: program/localization/fr_FR/messages.inc:contactrestored
 msgid "Contact(s) restored successfully."
-msgstr "Les contacts ont bien Ã©tÃ© restaurÃ©s."
+msgstr "Les contacts ont bien �t� restaur�s."
 
 #: program/localization/fr_FR/messages.inc:groupdeleted
 msgid "Group deleted successfully."
-msgstr "Le groupe a bien Ã©tÃ© supprimÃ©"
+msgstr "Le groupe a bien �t� supprim�"
 
 #: program/localization/fr_FR/messages.inc:grouprenamed
 msgid "Group renamed successfully."
-msgstr "Le groupe a bien Ã©tÃ© renommÃ©"
+msgstr "Le groupe a bien �t� renomm�"
 
 #: program/localization/fr_FR/messages.inc:groupcreated
 msgid "Group created successfully."
-msgstr "Le groupe a bien Ã©tÃ© crÃ©Ã©"
+msgstr "Le groupe a bien �t� cr��"
 
 #: program/localization/fr_FR/messages.inc:savedsearchdeleted
 msgid "Saved search deleted successfully."
-msgstr "La recherche enregistrÃ©e a bien Ã©tÃ© supprimÃ©e."
+msgstr "La recherche enregistr�e a bien �t� supprim�e."
 
 #: program/localization/fr_FR/messages.inc:savedsearchdeleteerror
 msgid "Could not delete saved search."
-msgstr "Impossible de supprimer la recherche enregistrÃ©e."
+msgstr "Impossible de supprimer la recherche enregistr�e."
 
 #: program/localization/fr_FR/messages.inc:savedsearchcreated
 msgid "Saved search created successfully."
-msgstr "La recherche enregistrÃ©e a bien Ã©tÃ© crÃ©Ã©e."
+msgstr "La recherche enregistr�e a bien �t� cr�e."
 
 #: program/localization/fr_FR/messages.inc:savedsearchcreateerror
 msgid "Could not create saved search."
-msgstr "Impossible de crÃ©er la recherche enregistrÃ©e."
+msgstr "Impossible de cr�er la recherche enregistr�e."
 
 #: program/localization/fr_FR/messages.inc:messagedeleted
 msgid "Message(s) deleted successfully."
-msgstr "Les messages ont bien Ã©tÃ© supprimÃ©s"
+msgstr "Les messages ont bien �t� supprim�s"
 
 #: program/localization/fr_FR/messages.inc:messagemoved
 msgid "Message(s) moved successfully."
-msgstr "Les messages ont bien Ã©tÃ© dÃ©placÃ©s"
+msgstr "Les messages ont bien �t� d�plac�s"
 
 #: program/localization/fr_FR/messages.inc:messagecopied
 msgid "Message(s) copied successfully."
-msgstr "Les messages ont bien Ã©tÃ© copiÃ©s"
+msgstr "Les messages ont bien �t� copi�s"
 
 #: program/localization/fr_FR/messages.inc:messagemarked
 msgid "Message(s) marked successfully."
-msgstr "Les messages ont bien Ã©tÃ© marquÃ©s"
+msgstr "Les messages ont bien �t� marqu�s"
 
 #: program/localization/fr_FR/messages.inc:autocompletechars
 msgid "Enter at least $min characters for autocompletion."
-msgstr "Entrez au moins $min caractÃšres pour l'auto-complÃ©tion"
+msgstr "Entrez au moins $min caract�res pour l'auto-compl�tion"
 
 #: program/localization/fr_FR/messages.inc:autocompletemore
 msgid "More matching entries found. Please type more characters."
-msgstr "Plusieurs entrÃ©es trouvÃ©es. Tapez plus de caractÃšres."
+msgstr "Plusieurs entr�es trouv�es. Tapez plus de caract�res."
 
 #: program/localization/fr_FR/messages.inc:namecannotbeempty
 msgid "Name cannot be empty."
-msgstr "Le nom ne peut pas Ãªtre vide"
+msgstr "Le nom ne peut pas �tre vide"
 
 #: program/localization/fr_FR/messages.inc:nametoolong
 msgid "Name is too long."
@@ -566,11 +560,11 @@ msgstr "Le nom est trop long"
 
 #: program/localization/fr_FR/messages.inc:folderupdated
 msgid "Folder updated successfully."
-msgstr "Le dossier a bien Ã©tÃ© mis Ã  jour"
+msgstr "Le dossier a bien �t� mis � jour"
 
 #: program/localization/fr_FR/messages.inc:foldercreated
 msgid "Folder created successfully."
-msgstr "Le dossier a bien Ã©tÃ© crÃ©Ã©"
+msgstr "Le dossier a bien �t� cr��"
 
 #: program/localization/fr_FR/messages.inc:invalidimageformat
 msgid "Not a valid image format."
@@ -578,13 +572,13 @@ msgstr "Format d'image invalide"
 
 #: program/localization/fr_FR/messages.inc:mispellingsfound
 msgid "Spelling errors detected in the message."
-msgstr "Des fautes d'orthographe ont Ã©tÃ© dÃ©tectÃ©es dans le message."
+msgstr "Des fautes d'orthographe ont �t� d�tect�es dans le message."
 
 #: program/localization/fr_FR/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
-msgstr "Impossible de crÃ©er/dÃ©placer le dossier dans le dossier parent"
-"sÃ©lectionnÃ©. Aucun droit d'accÃšs."
+msgstr "Impossible de cr�er/d�placer le dossier dans le dossier parent s�lectionn�."
+"Aucun droit d'acc�s."
 
 #: program/localization/fr_FR/messages.inc:messagetoobig
 msgid "The message part is too big to process it."
-msgstr "Le message est trop gros pour Ãªtre traitÃ©."
+msgstr "Le message est trop gros pour �tre trait�."
