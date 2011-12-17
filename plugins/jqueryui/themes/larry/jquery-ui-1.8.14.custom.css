@@ -426,6 +426,45 @@ input.ui-button { padding: .4em 1em; }
 
 /* workarounds */
 button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra padding in Firefox */
+
+/* Roundcube button styling */
+.ui-button.ui-state-default {
+	display: inline-block;
+	margin: 0 2px;
+	padding: 1px 2px;
+	text-shadow: 0px 1px 1px #fff;
+	border: 1px solid #c6c6c6;
+	border-radius: 4px;
+	background: #f7f7f7;
+	background: -moz-linear-gradient(top, #f9f9f9 0%, #e6e6e6 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9f9f9), color-stop(100%,#e6e6e6));
+	background: -o-linear-gradient(top, #f9f9f9 0%, #e6e6e6 100%);
+	background: -ms-linear-gradient(top, #f9f9f9 0%, #e6e6e6 100%);
+	background: linear-gradient(top, #f9f9f9 0%, #e6e6e6 100%);
+	box-shadow: 0 1px 1px 0 #ccc;
+	-o-box-shadow: 0 1px 1px 0 #ccc;
+	-webkit-box-shadow: 0 1px 1px 0 #ccc;
+	-moz-box-shadow: 0 1px 1px 0 #ccc;
+	text-decoration: none;
+}
+
+.ui-button.ui-state-hover {
+	color: #525252;
+	border-color: #aaa;
+}
+
+.ui-button.ui-state-active {
+	color: #525252;
+	border-color: #aaa;
+	background: #e6e6e6;
+	background: -moz-linear-gradient(top, #e6e6e6 0%, #f9f9f9 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6e6e6), color-stop(100%,#f9f9f9));
+	background: -o-linear-gradient(top, #e6e6e6 0%, #f9f9f9 100%);
+	background: -ms-linear-gradient(top, #e6e6e6 0%, #f9f9f9 100%);
+	background: linear-gradient(top, #e6e6e6 0%, #f9f9f9 100%);
+
+}
+
 /*
  * jQuery UI Dialog 1.8.16
  *
