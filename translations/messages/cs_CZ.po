@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: cs_CZ\n"
@@ -21,7 +20,7 @@ msgstr "Přihlášení selhalo"
 
 #: program/localization/cs_CZ/messages.inc:cookiesdisabled
 msgid "Your browser does not accept cookies."
-msgstr "Váš prohlížeč nepodporuje cookies, které jsou pro přihlášení"
+msgstr "Váš prohlížeč nepodporuje cookies, které jsou pro přihlášení "
 "nezbytné"
 
 #: program/localization/cs_CZ/messages.inc:sessionerror
@@ -261,9 +260,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Zadejte, prosím, jméno nebo e-mail kontaktu"
 
 #: program/localization/cs_CZ/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Ještě nebyly nahrány všechny přílohy. Počkejte prosím nebo"
+msgstr "Ještě nebyly nahrány všechny přílohy. Počkejte prosím nebo "
 "nahrávání zrušte."
 
 #: program/localization/cs_CZ/messages.inc:searchsuccessful
@@ -416,7 +415,7 @@ msgstr "Během importu nastala chyba! Nahraný soubor není ve formátu vCard."
 
 #: program/localization/cs_CZ/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "Úspěšně naimportováno $inserted kontaktů, $skipped existujících"
+msgstr "Úspěšně naimportováno $inserted kontaktů, $skipped existujících "
 "záznamů přeskočeno: $names"
 
 #: program/localization/cs_CZ/messages.inc:importconfirmskipped
@@ -432,15 +431,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Chybějící e-mailová adresa v označeném profilu"
 
 #: program/localization/cs_CZ/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Přepnutím do režimu prostého textu ztratíte veškeré formátování."
+msgstr "Přepnutím do režimu prostého textu ztratíte veškeré formátování. "
 "Chcete pokračovat?"
 
 #: program/localization/cs_CZ/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Vyskytla se vážná chyba v konfiguraci. Kontaktujte neprodleně"
+msgstr "Vyskytla se vážná chyba v konfiguraci. Kontaktujte neprodleně "
 "administátora. Vaše zpráva nemohla být odeslána."
 
 #: program/localization/cs_CZ/messages.inc:smtpconnerror
@@ -581,5 +580,5 @@ msgstr "Ve zprávě byly zjištěny pravopisné chyby"
 
 #: program/localization/cs_CZ/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
-msgstr "Nelze vytvořit/přesunout složku do vybrané rodičovské složky."
+msgstr "Nelze vytvořit/přesunout složku do vybrané rodičovské složky. "
 "Nemáte práva."

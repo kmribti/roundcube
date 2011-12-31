@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: nb_NO\n"
@@ -699,9 +698,9 @@ msgid "Add Reply-To"
 msgstr "Legg til svar til (Reply-To)"
 
 #: program/localization/nb_NO/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Senderen av denne meldingen har bedt om å bli gjort oppmerksom på at"
+msgstr "Senderen av denne meldingen har bedt om å bli gjort oppmerksom på at "
 "denne meldingen er lest. Ønsker du å sende denne bekreftelsen?"
 
 #: program/localization/nb_NO/labels.inc:receiptread
@@ -713,11 +712,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "Dette er en kvittering for at din e-post er mottatt"
 
 #: program/localization/nb_NO/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Merknad: Denne kvitteringen bekrefter bare at e-posten ble vist hos"
-"mottakeren. Det er ingen garanti for at mottakeren har lest eller forstått"
+msgstr "Merknad: Denne kvitteringen bekrefter bare at e-posten ble vist hos "
+"mottakeren. Det er ingen garanti for at mottakeren har lest eller forstått "
 "innholdet i e-posten."
 
 #: program/localization/nb_NO/labels.inc:name
@@ -841,11 +840,11 @@ msgid "Replace the entire address book"
 msgstr "Erstatt hele adresseboken"
 
 #: program/localization/nb_NO/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Du kan laste opp kontakter fra en eksisterende adressebok.<br/>For"
-"øyeblikket støttes importering av kontakter i <a"
+msgstr "Du kan laste opp kontakter fra en eksisterende adressebok.<br/>For "
+"øyeblikket støttes importering av kontakter i <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>-formatet."
 
 #: program/localization/nb_NO/labels.inc:done
@@ -1097,7 +1096,7 @@ msgid "New Message"
 msgstr "Ny melding"
 
 #: program/localization/nb_NO/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Meldingsoversikt"
 
 #: program/localization/nb_NO/labels.inc:signatureoptions

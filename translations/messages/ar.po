@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:20:32+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:12:08+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ar_SA\n"
@@ -24,7 +24,7 @@ msgstr "المتصفح الخاص بك لا يقبل الكوكيز"
 
 #: program/localization/ar_SA/messages.inc:sessionerror
 msgid "Your session is invalid or expired."
-msgstr "انتهت صلاحية الجلسة الحالية أو أنها غير"
+msgstr "انتهت صلاحية الجلسة الحالية أو أنها غير "
 "صالحة"
 
 #: program/localization/ar_SA/messages.inc:imaperror
@@ -109,12 +109,12 @@ msgstr "تم الحفظ بنجاح"
 
 #: program/localization/ar_SA/messages.inc:addedsuccessfully
 msgid "Contact added successfully to address book."
-msgstr "تمت إضافة المراسل إلى دفتر العناوين"
+msgstr "تمت إضافة المراسل إلى دفتر العناوين "
 "بنجاح"
 
 #: program/localization/ar_SA/messages.inc:contactexists
 msgid "A contact with the same e-mail address already exists."
-msgstr "هناك مراسل له نفس هذا البريد الالكتروني"
+msgstr "هناك مراسل له نفس هذا البريد الالكتروني "
 "موجود مسبقاً"
 
 #: program/localization/ar_SA/messages.inc:contactnameexists
@@ -123,7 +123,7 @@ msgstr "هناك مُرسال له نفس الإسم موجود مسبقاً."
 
 #: program/localization/ar_SA/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "لحماية خصوصيتك، تم حجب الصور الغير مضمنة"
+msgstr "لحماية خصوصيتك، تم حجب الصور الغير مضمنة "
 "(البعيدة) في هذه الرسالة."
 
 #: program/localization/ar_SA/messages.inc:encryptedmessage
@@ -140,7 +140,7 @@ msgstr "تعذر العثور على المراسل المطلوب"
 
 #: program/localization/ar_SA/messages.inc:contactsearchonly
 msgid "Enter some search terms to find contacts"
-msgstr "اكتب بعض كلمات البحث للعثور على"
+msgstr "اكتب بعض كلمات البحث للعثور على "
 "المُراسلين"
 
 #: program/localization/ar_SA/messages.inc:sendingfailed
@@ -193,7 +193,7 @@ msgstr "هل تريد حقاً حذف هذا المجلد؟"
 
 #: program/localization/ar_SA/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
-msgstr "هل تريد حقاً حذف جميع الرسائل في هذا"
+msgstr "هل تريد حقاً حذف جميع الرسائل في هذا "
 "المجلد؟"
 
 #: program/localization/ar_SA/messages.inc:contactdeleting
@@ -238,7 +238,7 @@ msgstr "الرجاء إدخال حجم الصفحة"
 
 #: program/localization/ar_SA/messages.inc:nosenderwarning
 msgid "Please enter sender e-mail address."
-msgstr "رجاء اكتب عنوان البريد الالكتروني"
+msgstr "رجاء اكتب عنوان البريد الالكتروني "
 "للمُرسل"
 
 #: program/localization/ar_SA/messages.inc:norecipientwarning
@@ -247,7 +247,7 @@ msgstr "الرجاء إدخال اسم مستقبل واحد على الأقل"
 
 #: program/localization/ar_SA/messages.inc:nosubjectwarning
 msgid "The \"Subject\" field is empty. Would you like to enter one now?"
-msgstr "حقل \"الموضوع\" فارغ. هل تريد كتابة موضوع"
+msgstr "حقل \"الموضوع\" فارغ. هل تريد كتابة موضوع "
 "للرسالة؟"
 
 #: program/localization/ar_SA/messages.inc:nobodywarning
@@ -256,7 +256,7 @@ msgstr "إرسال هذه الرسالة دون نص؟"
 
 #: program/localization/ar_SA/messages.inc:notsentwarning
 msgid "Message has not been sent. Do you want to discard your message?"
-msgstr "لم يتم إرسال الرسالة. هل تريد تجاهل"
+msgstr "لم يتم إرسال الرسالة. هل تريد تجاهل "
 "الرسالة؟"
 
 #: program/localization/ar_SA/messages.inc:noldapserver
@@ -265,13 +265,13 @@ msgstr "الرجاء اختيار خادم ldap للبحث فيه"
 
 #: program/localization/ar_SA/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
-msgstr "الرجاء إدخال اسم مراسل أو عنوان بريد"
+msgstr "الرجاء إدخال اسم مراسل أو عنوان بريد "
 "إلكتروني"
 
 #: program/localization/ar_SA/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "لم يتم رفع جميع المرفقات بعد. رجاءً"
+msgstr "لم يتم رفع جميع المرفقات بعد. رجاءً "
 "الانتظار أو إلغاء عملية الرفع."
 
 #: program/localization/ar_SA/messages.inc:searchsuccessful
@@ -336,7 +336,7 @@ msgstr "فشل رفع الملف"
 
 #: program/localization/ar_SA/messages.inc:filesizeerror
 msgid "The uploaded file exceeds the maximum size of $size."
-msgstr "حجم الملف الذي تحاول رفعه أكبر من الحجم"
+msgstr "حجم الملف الذي تحاول رفعه أكبر من الحجم "
 "الأقصى $size"
 
 #: program/localization/ar_SA/messages.inc:copysuccess
@@ -393,7 +393,7 @@ msgstr "تعذر إرسال إيصال الاستلام"
 
 #: program/localization/ar_SA/messages.inc:nodeletelastidentity
 msgid "You cannot delete this identity, it's your last one."
-msgstr "لا يمكن حذف هذا السجل حيث أنه الوحيد"
+msgstr "لا يمكن حذف هذا السجل حيث أنه الوحيد "
 "المتبقي."
 
 #: program/localization/ar_SA/messages.inc:forbiddencharacter
@@ -410,12 +410,12 @@ msgstr "دفتر العناوين المحدد غير قابل للكتابة"
 
 #: program/localization/ar_SA/messages.inc:contactaddedtogroup
 msgid "Successfully added the contacts to this group."
-msgstr "تمت إضافة المراسلين إلى هذه المجموعة"
+msgstr "تمت إضافة المراسلين إلى هذه المجموعة "
 "بنجاح"
 
 #: program/localization/ar_SA/messages.inc:contactremovedfromgroup
 msgid "Successfully removed contacts from this group."
-msgstr "تمت إزالة المراسلين من هذه المجموعة"
+msgstr "تمت إزالة المراسلين من هذه المجموعة "
 "بنجاح"
 
 #: program/localization/ar_SA/messages.inc:importwait
@@ -424,12 +424,12 @@ msgstr "جاري الاستيراد، رجاء انتظر..."
 
 #: program/localization/ar_SA/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "فشل الاستيراد! الملف المرفوع ليس ملف vCard"
+msgstr "فشل الاستيراد! الملف المرفوع ليس ملف vCard "
 "صالح."
 
 #: program/localization/ar_SA/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>تم استيراد $inserted مراسلين بنجاح، وتجاهل"
+msgstr "<b>تم استيراد $inserted مراسلين بنجاح، وتجاهل "
 "$skipped موجودين مسبقاً</b>:<p><em>$names</em></p>"
 
 #: program/localization/ar_SA/messages.inc:importconfirmskipped
@@ -442,20 +442,20 @@ msgstr "العملية ممنوعة!"
 
 #: program/localization/ar_SA/messages.inc:nofromaddress
 msgid "Missing e-mail address in selected identity."
-msgstr "عنوان البريد الالكتروني غير محدد في"
+msgstr "عنوان البريد الالكتروني غير محدد في "
 "الهويّة المنتقاة"
 
 #: program/localization/ar_SA/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "يتسبب الانتقال إلى محرر النص البسيط"
+msgstr "يتسبب الانتقال إلى محرر النص البسيط "
 "بضياع جميع التنسيق. هل تريد الاستمرار؟"
 
 #: program/localization/ar_SA/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "حدث خطأ جسيم في التهيئة. رجاءً اتصال"
-"بمدير الخادم حالاً. <b>لا يمكن إرسال"
+msgstr "حدث خطأ جسيم في التهيئة. رجاءً اتصال "
+"بمدير الخادم حالاً. <b>لا يمكن إرسال "
 "بريدك.</b>"
 
 #: program/localization/ar_SA/messages.inc:smtpconnerror
@@ -560,12 +560,12 @@ msgstr "تم تحديد الرسائل بنجاح"
 
 #: program/localization/ar_SA/messages.inc:autocompletechars
 msgid "Enter at least $min characters for autocompletion."
-msgstr "إكتب $min أحرف على الأقل للحصول على التكملة"
+msgstr "إكتب $min أحرف على الأقل للحصول على التكملة "
 "التلقائية"
 
 #: program/localization/ar_SA/messages.inc:autocompletemore
 msgid "More matching entries found. Please type more characters."
-msgstr "هناك المزيد من النتائج المطابقة. رجاء"
+msgstr "هناك المزيد من النتائج المطابقة. رجاء "
 "اكتب كلمات بحث أكثر."
 
 #: program/localization/ar_SA/messages.inc:namecannotbeempty
@@ -594,7 +594,7 @@ msgstr "عُثر على أخطاء إملائية في الرسالة"
 
 #: program/localization/ar_SA/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
-msgstr "تعذر إنشاء/نقل المجلد إلى المجلد المحدد."
+msgstr "تعذر إنشاء/نقل المجلد إلى المجلد المحدد. "
 "ليست لديك الصلاحية."
 
 #: program/localization/ar_SA/messages.inc:messagetoobig

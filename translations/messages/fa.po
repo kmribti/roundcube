@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: fa\n"
@@ -37,7 +36,7 @@ msgstr "هیچ پیغامی در صندوق نامه پیدا نشد"
 
 #: program/localization/fa/messages.inc:loggedout
 msgid "You have successfully terminated the session. Good bye!"
-msgstr "!شما با موفقیت نشست را پایان دادید. خدا"
+msgstr "!شما با موفقیت نشست را پایان دادید. خدا "
 "نگه‌دار"
 
 #: program/localization/fa/messages.inc:mailboxempty
@@ -82,17 +81,17 @@ msgstr "تماس با موفقیت به دفتر نشانی‌ها اضافه ش
 
 #: program/localization/fa/messages.inc:contactexists
 msgid "A contact with the same e-mail address already exists."
-msgstr "یک تماس با این نشانی ایمیل از قبل وجود"
+msgstr "یک تماس با این نشانی ایمیل از قبل وجود "
 "دارد"
 
 #: program/localization/fa/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "برای حفاظت از حریم شخصی شما، عکس‌های"
+msgstr "برای حفاظت از حریم شخصی شما، عکس‌های "
 "دوردست از پیغام حذف شد"
 
 #: program/localization/fa/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
-msgstr "!این یک پیغام رمزنگاری شده است و قابل"
+msgstr "!این یک پیغام رمزنگاری شده است و قابل "
 "نمایش نیست. ببخشید"
 
 #: program/localization/fa/messages.inc:nocontactsfound
@@ -109,12 +108,12 @@ msgstr "ناموفق در فرستادن پیغام"
 
 #: program/localization/fa/messages.inc:senttooquickly
 msgid "Please wait $sec sec(s). before sending this message."
-msgstr "دقیقه صبر کنید $sec لطفا قبل از ارسال این"
+msgstr "دقیقه صبر کنید $sec لطفا قبل از ارسال این "
 "پیغام     "
 
 #: program/localization/fa/messages.inc:errorsavingsent
 msgid "An error occured while saving sent message."
-msgstr "در لحظه ذخیره پیغام ارسال شده ، مشکل به"
+msgstr "در لحظه ذخیره پیغام ارسال شده ، مشکل به "
 "وجود آمد"
 
 #: program/localization/fa/messages.inc:errorsaving
@@ -131,22 +130,22 @@ msgstr "ناتوان در حذف پیغام"
 
 #: program/localization/fa/messages.inc:deletecontactconfirm
 msgid "Do you really want to delete selected contact(s)?"
-msgstr "آیا واقعاً می‌خواهید تماس (های) انتخاب"
+msgstr "آیا واقعاً می‌خواهید تماس (های) انتخاب "
 "شده را حذف کنید؟"
 
 #: program/localization/fa/messages.inc:deletemessagesconfirm
 msgid "Do you really want to delete selected message(s)?"
-msgstr "آیا واقعاً می‌خواهید پیغام (های) انتخاب"
+msgstr "آیا واقعاً می‌خواهید پیغام (های) انتخاب "
 "شده را حذف کنید؟"
 
 #: program/localization/fa/messages.inc:deletefolderconfirm
 msgid "Do you really want to delete this folder?"
-msgstr "آیا واقعاً می‌خواهید این پوشه را حذف"
+msgstr "آیا واقعاً می‌خواهید این پوشه را حذف "
 "کنید؟"
 
 #: program/localization/fa/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
-msgstr "آیا واقعاً می‌خواهید همه‌ی پیغام‌های"
+msgstr "آیا واقعاً می‌خواهید همه‌ی پیغام‌های "
 "داخل این پوشه را حذف کنید؟"
 
 #: program/localization/fa/messages.inc:folderdeleting
@@ -183,7 +182,7 @@ msgstr "لطفاً حداقل یک گیرنده وارد کنید"
 
 #: program/localization/fa/messages.inc:nosubjectwarning
 msgid "The \"Subject\" field is empty. Would you like to enter one now?"
-msgstr "قسمت \"موضوع\" خالی است. آیا می‌خواهید"
+msgstr "قسمت \"موضوع\" خالی است. آیا می‌خواهید "
 "اکنون وارد کنید؟"
 
 #: program/localization/fa/messages.inc:nobodywarning
@@ -192,7 +191,7 @@ msgstr "این پیغام بدون متن ارسال شود؟"
 
 #: program/localization/fa/messages.inc:notsentwarning
 msgid "Message has not been sent. Do you want to discard your message?"
-msgstr "پیغام ارسال نشده است. آیا می‌خواهید"
+msgstr "پیغام ارسال نشده است. آیا می‌خواهید "
 "پیغام را از بین ببرید؟"
 
 #: program/localization/fa/messages.inc:noldapserver
@@ -205,7 +204,7 @@ msgstr "هیچ تماسی پیدا نشد"
 
 #: program/localization/fa/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
-msgstr "لطفا نام یک تماس و یا یک نشانی ایمیل وارد"
+msgstr "لطفا نام یک تماس و یا یک نشانی ایمیل وارد "
 "کنید"
 
 #: program/localization/fa/messages.inc:searchsuccessful
@@ -250,7 +249,7 @@ msgstr "بالاگذاری پرونده ناموفق بود"
 
 #: program/localization/fa/messages.inc:filesizeerror
 msgid "The uploaded file exceeds the maximum size of $size."
-msgstr "بیشتر است $size اندازه‌ی پرونده‌ی"
+msgstr "بیشتر است $size اندازه‌ی پرونده‌ی "
 "بالاگذاری شده از بیشینه اندازه‌ی"
 
 #: program/localization/fa/messages.inc:copysuccess
@@ -283,7 +282,7 @@ msgstr "ناتوان در ارسال رسید"
 
 #: program/localization/fa/messages.inc:nodeletelastidentity
 msgid "You cannot delete this identity, it's your last one."
-msgstr ".نمی‌توانید این هویت را حذف کنید، زیرا"
+msgstr ".نمی‌توانید این هویت را حذف کنید، زیرا "
 "آخرین هویت شماست"
 
 #: program/localization/fa/messages.inc:forbiddencharacter
@@ -296,7 +295,7 @@ msgstr "لطفاً فایل را جهت بارگذاری انتخاب کنید"
 
 #: program/localization/fa/messages.inc:addresswriterror
 msgid "The selected address book is not writeable."
-msgstr "در دفترچه تلفن انتخابی ، اجازه نوشتن"
+msgstr "در دفترچه تلفن انتخابی ، اجازه نوشتن "
 "ندارید"
 
 #: program/localization/fa/messages.inc:importwait
@@ -305,12 +304,12 @@ msgstr "...در حال انتقال اطلاعات ، لطفا صبر کنید"
 
 #: program/localization/fa/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "سازگار نیست vcard انتقال اطلاعات متوقف شده"
+msgstr "سازگار نیست vcard انتقال اطلاعات متوقف شده "
 "، فرمت فایل بارگذاری شده با فرمت"
 
 #: program/localization/fa/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "p><em>$names</em></p> </b>: متوقف شد$skipped تماس با"
+msgstr "p><em>$names</em></p> </b>: متوقف شد$skipped تماس با "
 "موفقبت انتقال یافت و  $inserted <b>"
 
 #: program/localization/fa/messages.inc:opnotpermitted
@@ -322,8 +321,8 @@ msgid "Missing e-mail address in selected identity."
 msgstr "ایمیل های گم شده در گزینه انتخاب شده"
 
 #: program/localization/fa/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "تغییر ویرایشگر متن باعث ابطال فرمت همه"
-"متن ها می شود ، آیا می خواهید با این وجود"
+msgstr "تغییر ویرایشگر متن باعث ابطال فرمت همه "
+"متن ها می شود ، آیا می خواهید با این وجود "
 "عملیات را ادامه بدهید ؟"

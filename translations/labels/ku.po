@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ku\n"
@@ -453,9 +452,9 @@ msgid "Add Reply-To"
 msgstr "Bibersivîne têxê"
 
 #: program/localization/ku/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Şandyara/ê vê peyamê xwest dema ku te peyam vekir, jê re hişyarî"
+msgstr "Şandyara/ê vê peyamê xwest dema ku te peyam vekir, jê re hişyarî "
 "here. Dixwazî jê re hişyarî here?"
 
 #: program/localization/ku/labels.inc:receiptread
@@ -467,10 +466,10 @@ msgid "This is a Return Receipt for your message"
 msgstr "Ev rapora vegerîna peyama te ye"
 
 #: program/localization/ku/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Nîşe: Ev dide zanîn ka peyama te şand hat xwendin an na. Naveroka"
+msgstr "Nîşe: Ev dide zanîn ka peyama te şand hat xwendin an na. Naveroka "
 "peyamê bi mîgogerî nayê zanîn."
 
 #: program/localization/ku/labels.inc:name

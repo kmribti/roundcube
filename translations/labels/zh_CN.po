@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: zh_CN\n"
@@ -727,7 +726,7 @@ msgid "Add Followup-To"
 msgstr "添加投递组"
 
 #: program/localization/zh_CN/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
 msgstr "发件人要求在您阅读这封邮件时发送通知。您是否希望通知发件人？"
 
@@ -740,8 +739,8 @@ msgid "This is a Return Receipt for your message"
 msgstr "这是您的邮件回执"
 
 #: program/localization/zh_CN/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
 msgstr "注意：回执只表示邮件在收件人的电脑上被打开过，不表示收件人已经阅读或已理解邮件的内容。"
 
@@ -1072,10 +1071,10 @@ msgid "Replace the entire address book"
 msgstr "替换整个地址簿"
 
 #: program/localization/zh_CN/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "你可以从已有的地址簿导入联系人。目前支持从 vCard"
+msgstr "你可以从已有的地址簿导入联系人。目前支持从 vCard "
 "数据格式导入地址簿。"
 
 #: program/localization/zh_CN/labels.inc:done
@@ -1339,7 +1338,7 @@ msgid "New Message"
 msgstr "新邮件"
 
 #: program/localization/zh_CN/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "列表选项"
 
 #: program/localization/zh_CN/labels.inc:signatureoptions

@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: lt_LT\n"
@@ -735,9 +734,9 @@ msgid "Add Followup-To"
 msgstr "Pridėti Followup-To"
 
 #: program/localization/lt_LT/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Šio laiško siuntėjas paprašė patvirtinti, kad jūs jį perskaitėte."
+msgstr "Šio laiško siuntėjas paprašė patvirtinti, kad jūs jį perskaitėte. "
 "Ar išsiųsti tai patvirtinančią pažymą?"
 
 #: program/localization/lt_LT/labels.inc:receiptread
@@ -749,11 +748,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "Tai – pažyma, patvirtinanti, jog buvo perskaitytas Jūsų laiškas"
 
 #: program/localization/lt_LT/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Pastaba: šia pažyma patvirtinamas tik faktas, jog laiškas buvo parodytas"
-"gavėjui. Ja negarantuojama, jog gavėjas perskaitė ir suprato laiško"
+msgstr "Pastaba: šia pažyma patvirtinamas tik faktas, jog laiškas buvo parodytas "
+"gavėjui. Ja negarantuojama, jog gavėjas perskaitė ir suprato laiško "
 "turinį."
 
 #: program/localization/lt_LT/labels.inc:name
@@ -1087,11 +1086,11 @@ msgid "Replace the entire address book"
 msgstr "Perrašyti visą adresų knygą"
 
 #: program/localization/lt_LT/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Jūs galite įkelti adresatus iš egzistuojančios adresų"
-"knygos.<br/>Šiuo metu galima importuoti adresus iš <a"
+msgstr "Jūs galite įkelti adresatus iš egzistuojančios adresų "
+"knygos.<br/>Šiuo metu galima importuoti adresus iš <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> tipo failų."
 
 #: program/localization/lt_LT/labels.inc:done
@@ -1244,12 +1243,12 @@ msgstr "visuomet siųsti patvirtinimą automatiškai"
 
 #: program/localization/lt_LT/labels.inc:autosendknown
 msgid "send receipt to my contacts, otherwise ask me"
-msgstr "automatiškai siųsti patvirtinimą adresų knygoje esantiems adresatams,"
+msgstr "automatiškai siųsti patvirtinimą adresų knygoje esantiems adresatams, "
 "kitu atveju klausti"
 
 #: program/localization/lt_LT/labels.inc:autosendknownignore
 msgid "send receipt to my contacts, otherwise ignore"
-msgstr "automatiškai siųsti patvirtinimą adresų knygoje esantiems adresatams,"
+msgstr "automatiškai siųsti patvirtinimą adresų knygoje esantiems adresatams, "
 "kitu atveju nesiųsti"
 
 #: program/localization/lt_LT/labels.inc:ignore
@@ -1369,7 +1368,7 @@ msgid "New Message"
 msgstr "Naujas laiškas"
 
 #: program/localization/lt_LT/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Rodyti nustatymus"
 
 #: program/localization/lt_LT/labels.inc:signatureoptions

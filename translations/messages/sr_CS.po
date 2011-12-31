@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: sr_CS\n"
@@ -21,7 +20,7 @@ msgstr "Неуспешно пријављивање"
 
 #: program/localization/sr_CS/messages.inc:cookiesdisabled
 msgid "Your browser does not accept cookies."
-msgstr "Ваш интернет прегледач не подржава"
+msgstr "Ваш интернет прегледач не подржава "
 "колачиће"
 
 #: program/localization/sr_CS/messages.inc:sessionerror
@@ -46,7 +45,7 @@ msgstr "Операција неуспела. Фасицкло је "
 
 #: program/localization/sr_CS/messages.inc:errornoperm
 msgid "Unable to perform operation. Permission denied."
-msgstr "Извршење операције није могуће. Одбијен"
+msgstr "Извршење операције није могуће. Одбијен "
 "захтев за дозволу.."
 
 #: program/localization/sr_CS/messages.inc:invalidrequest
@@ -107,17 +106,17 @@ msgstr "Контакт успешно додат у именик"
 
 #: program/localization/sr_CS/messages.inc:contactexists
 msgid "A contact with the same e-mail address already exists."
-msgstr "Контакт са овом е-мејл адресом већ"
+msgstr "Контакт са овом е-мејл адресом већ "
 "постоји у именику"
 
 #: program/localization/sr_CS/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "Због заштите приватности, слике са"
+msgstr "Због заштите приватности, слике са "
 "удаљених сервера су блокиране"
 
 #: program/localization/sr_CS/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
-msgstr "Ова порука је шифрована, па се не може"
+msgstr "Ова порука је шифрована, па се не може "
 "приказати"
 
 #: program/localization/sr_CS/messages.inc:nocontactsfound
@@ -134,12 +133,12 @@ msgstr "Грешка при слању поруке"
 
 #: program/localization/sr_CS/messages.inc:senttooquickly
 msgid "Please wait $sec sec(s). before sending this message."
-msgstr "Молимо Вас да сачекате $sec секунд(и) пре"
+msgstr "Молимо Вас да сачекате $sec секунд(и) пре "
 "него пошаљете ову поруку"
 
 #: program/localization/sr_CS/messages.inc:errorsavingsent
 msgid "An error occured while saving sent message."
-msgstr "Приликом похрањивања послате поруке"
+msgstr "Приликом похрањивања послате поруке "
 "десила се грешка"
 
 #: program/localization/sr_CS/messages.inc:errorsaving
@@ -164,22 +163,22 @@ msgstr "Маркирање поруке неуспешно"
 
 #: program/localization/sr_CS/messages.inc:deletecontactconfirm
 msgid "Do you really want to delete selected contact(s)?"
-msgstr "Да ли стварно желите да обришете"
+msgstr "Да ли стварно желите да обришете "
 "изабране контакте?"
 
 #: program/localization/sr_CS/messages.inc:deletemessagesconfirm
 msgid "Do you really want to delete selected message(s)?"
-msgstr "Да ли стварно желите да обришете"
+msgstr "Да ли стварно желите да обришете "
 "изабране поруке?"
 
 #: program/localization/sr_CS/messages.inc:deletefolderconfirm
 msgid "Do you really want to delete this folder?"
-msgstr "Да ли заиста желите да обришете изабрану"
+msgstr "Да ли заиста желите да обришете изабрану "
 "фасциклу?"
 
 #: program/localization/sr_CS/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
-msgstr "Да ли заиста желите да обришете све"
+msgstr "Да ли заиста желите да обришете све "
 "поруке у фасцикли?"
 
 #: program/localization/sr_CS/messages.inc:folderdeleting
@@ -224,17 +223,17 @@ msgstr "Унесите примаоца/примаоце (За)"
 
 #: program/localization/sr_CS/messages.inc:nosubjectwarning
 msgid "The \"Subject\" field is empty. Would you like to enter one now?"
-msgstr "Поље 'Наслов' је празно. Желите ли да"
+msgstr "Поље 'Наслов' је празно. Желите ли да "
 "унесете наслов?"
 
 #: program/localization/sr_CS/messages.inc:nobodywarning
 msgid "Send this message without text?"
-msgstr "Да ли желите да пошаљете поруку без"
+msgstr "Да ли желите да пошаљете поруку без "
 "текста?"
 
 #: program/localization/sr_CS/messages.inc:notsentwarning
 msgid "Message has not been sent. Do you want to discard your message?"
-msgstr "Порука није послата. Да ли желите да"
+msgstr "Порука није послата. Да ли желите да "
 "одбаците ову поруку?"
 
 #: program/localization/sr_CS/messages.inc:noldapserver
@@ -250,9 +249,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Унесите име или е-мејл адресу"
 
 #: program/localization/sr_CS/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Нису сви прилози отпремљени. Молимо"
+msgstr "Нису сви прилози отпремљени. Молимо "
 "сачекајте или откажите отпремање."
 
 #: program/localization/sr_CS/messages.inc:searchsuccessful
@@ -261,7 +260,7 @@ msgstr "Број пронађених порука: $nr"
 
 #: program/localization/sr_CS/messages.inc:searchnomatch
 msgid "Search returned no matches."
-msgstr "Тражена фраза није пронађена ни у једној"
+msgstr "Тражена фраза није пронађена ни у једној "
 "поруци"
 
 #: program/localization/sr_CS/messages.inc:searching
@@ -274,7 +273,7 @@ msgstr "Провера у току..."
 
 #: program/localization/sr_CS/messages.inc:nospellerrors
 msgid "No spelling errors found."
-msgstr "Није пронађена ниједна правописна"
+msgstr "Није пронађена ниједна правописна "
 "грешка"
 
 #: program/localization/sr_CS/messages.inc:folderdeleted
@@ -315,7 +314,7 @@ msgstr "Слање датотеке неуспешно"
 
 #: program/localization/sr_CS/messages.inc:filesizeerror
 msgid "The uploaded file exceeds the maximum size of $size."
-msgstr "Послата датотека не може да прекорачи"
+msgstr "Послата датотека не може да прекорачи "
 "величину од $size"
 
 #: program/localization/sr_CS/messages.inc:copysuccess
@@ -360,7 +359,7 @@ msgstr "Неуспело слање обавештења о приспећу"
 
 #: program/localization/sr_CS/messages.inc:nodeletelastidentity
 msgid "You cannot delete this identity, it's your last one."
-msgstr "Не можете обрисати овај идентитет, он Вам"
+msgstr "Не можете обрисати овај идентитет, он Вам "
 "је последњи."
 
 #: program/localization/sr_CS/messages.inc:forbiddencharacter
@@ -369,12 +368,12 @@ msgstr "Име фасцикле садржи недозвољено слово"
 
 #: program/localization/sr_CS/messages.inc:selectimportfile
 msgid "Please select a file to upload."
-msgstr "Молимо Вас да изаберете датотеку за"
+msgstr "Молимо Вас да изаберете датотеку за "
 "отпремање"
 
 #: program/localization/sr_CS/messages.inc:addresswriterror
 msgid "The selected address book is not writeable."
-msgstr "У изабраном адресару нису дозвољене"
+msgstr "У изабраном адресару нису дозвољене "
 "промене "
 
 #: program/localization/sr_CS/messages.inc:contactaddedtogroup
@@ -391,7 +390,7 @@ msgstr "Увоз података, молимо сачекајте..."
 
 #: program/localization/sr_CS/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "Увоз неуспео! Отпремљена датотека није"
+msgstr "Увоз неуспео! Отпремљена датотека није "
 "валидан vCard формат."
 
 #: program/localization/sr_CS/messages.inc:importconfirm
@@ -408,27 +407,27 @@ msgstr "Операција није дозвољена!"
 
 #: program/localization/sr_CS/messages.inc:nofromaddress
 msgid "Missing e-mail address in selected identity."
-msgstr "Недостаје имејл адреса у изабраном"
+msgstr "Недостаје имејл адреса у изабраном "
 "налогу"
 
 #: program/localization/sr_CS/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Пребацивање на обичан текст едитор ће"
-"изазвати губитак целог форматирања. Да"
+msgstr "Пребацивање на обичан текст едитор ће "
+"изазвати губитак целог форматирања. Да "
 "ли желите да наставите?"
 
 #: program/localization/sr_CS/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Фатална грешка у конфигурацији."
-"Контактирајте одмах Вашег"
-"администратора. <b>Ваша порука не може"
+msgstr "Фатална грешка у конфигурацији. "
+"Контактирајте одмах Вашег "
+"администратора. <b>Ваша порука не може "
 "бити послата.</b>"
 
 #: program/localization/sr_CS/messages.inc:smtpconnerror
 msgid "SMTP Error ($code): Connection to server failed."
-msgstr "SMTP Error ($code): Конекција на сервер није"
+msgstr "SMTP Error ($code): Конекција на сервер није "
 "успела"
 
 #: program/localization/sr_CS/messages.inc:smtpautherror
@@ -437,22 +436,22 @@ msgstr "SMTP Error ($code): Аутентификација неуспешна"
 
 #: program/localization/sr_CS/messages.inc:smtpfromerror
 msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
-msgstr "SMTP Error ($code): Неуспешно додавање пошиљаоца"
+msgstr "SMTP Error ($code): Неуспешно додавање пошиљаоца "
 "\"$from\" ($msg)"
 
 #: program/localization/sr_CS/messages.inc:smtptoerror
 msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
-msgstr "SMTP Error ($code): Неуспешно додавање примаоца"
+msgstr "SMTP Error ($code): Неуспешно додавање примаоца "
 "\"$to\" ($msg)"
 
 #: program/localization/sr_CS/messages.inc:smtprecipientserror
 msgid "SMTP Error: Unable to parse recipients list."
-msgstr "SMTP Error ($code): Није могуће расчланити листу"
+msgstr "SMTP Error ($code): Није могуће расчланити листу "
 "прималаца"
 
 #: program/localization/sr_CS/messages.inc:smtpdsnerror
 msgid "smtpdsnerror"
-msgstr "SMTP Error ($code): Нема подршке за обавештења о"
+msgstr "SMTP Error ($code): Нема подршке за обавештења о "
 "статусу испоруке"
 
 #: program/localization/sr_CS/messages.inc:smtperror
@@ -465,7 +464,7 @@ msgstr "Имејл адреса није валидна: $email"
 
 #: program/localization/sr_CS/messages.inc:toomanyrecipients
 msgid "Too many recipients. Reduce the number of recipients to $max."
-msgstr "Превише прималаца. Смањите број"
+msgstr "Превише прималаца. Смањите број "
 "прималаца на $max."
 
 #: program/localization/sr_CS/messages.inc:maxgroupmembersreached
@@ -474,7 +473,7 @@ msgstr "Број чланова гупе прелази максимум од $m
 
 #: program/localization/sr_CS/messages.inc:internalerror
 msgid "An internal error occured. Please try again."
-msgstr "Десила се интерна грешка. Молимо"
+msgstr "Десила се интерна грешка. Молимо "
 "покушајте поново"
 
 #: program/localization/sr_CS/messages.inc:contactdelerror
@@ -515,7 +514,7 @@ msgstr "Поруке успешно означене"
 
 #: program/localization/sr_CS/messages.inc:autocompletechars
 msgid "Enter at least $min characters for autocompletion."
-msgstr "За аутоматско комплетирање унесите"
+msgstr "За аутоматско комплетирање унесите "
 "најмање $min карактера"
 
 #: program/localization/sr_CS/messages.inc:namecannotbeempty

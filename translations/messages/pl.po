@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: pl_PL\n"
@@ -232,9 +231,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Podaj nazwę kontaktu lub jego adres e-mail."
 
 #: program/localization/pl_PL/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Nie wszystkie załączniki zostały pobrane. Poczekaj lub anuluj"
+msgstr "Nie wszystkie załączniki zostały pobrane. Poczekaj lub anuluj "
 "pobieranie."
 
 #: program/localization/pl_PL/messages.inc:searchsuccessful
@@ -355,7 +354,7 @@ msgstr "Błąd! Pobrany plik nie jest poprawnym plikiem vCard."
 
 #: program/localization/pl_PL/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>Pomyślnie dodano $inserted kontaktów, pominięto $skipped"
+msgstr "<b>Pomyślnie dodano $inserted kontaktów, pominięto $skipped "
 "istniejących wpisów</b>:<p><em>$names</em></p>."
 
 #: program/localization/pl_PL/messages.inc:opnotpermitted
@@ -367,15 +366,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Brak adresu e-mail w wybranej tożsamości."
 
 #: program/localization/pl_PL/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Zmiana edytora spowoduje utratę formatowania tekstu. Czy jesteś pewien,"
+msgstr "Zmiana edytora spowoduje utratę formatowania tekstu. Czy jesteś pewien, "
 "że chcesz to zrobić?"
 
 #: program/localization/pl_PL/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Wystąpił błąd krytyczny. Skontaktuj się z administratorem. <b>Nie"
+msgstr "Wystąpił błąd krytyczny. Skontaktuj się z administratorem. <b>Nie "
 "można wysłać wiadomości.</b>"
 
 #: program/localization/pl_PL/messages.inc:smtpconnerror

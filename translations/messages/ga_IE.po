@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ga_IE\n"
@@ -29,7 +28,7 @@ msgstr "Tá an seisiúin neamhbhailí nó as feidhm"
 
 #: program/localization/ga_IE/messages.inc:imaperror
 msgid "Connection to IMAP server failed."
-msgstr "Theip an iarraidh chun nasc go dtí an freastalaí Prótacal Rochtana"
+msgstr "Theip an iarraidh chun nasc go dtí an freastalaí Prótacal Rochtana "
 "Teachtaireachtaí Idirlín (IMAP)"
 
 #: program/localization/ga_IE/messages.inc:nomessagesfound
@@ -86,12 +85,12 @@ msgstr "Tá duine i do Leabhair Seoltaí agus tá an seoladh ríomhphost seo aig
 
 #: program/localization/ga_IE/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "Chun do príobháide a cosain, choiscinn na híomhánna san teachtaireacht"
+msgstr "Chun do príobháide a cosain, choiscinn na híomhánna san teachtaireacht "
 "seo "
 
 #: program/localization/ga_IE/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
-msgstr "Tá an teachtaireacht seo i criptiúchán, Níl an cumas agam chun é a"
+msgstr "Tá an teachtaireacht seo i criptiúchán, Níl an cumas agam chun é a "
 "tionscail"
 
 #: program/localization/ga_IE/messages.inc:nocontactsfound
@@ -160,12 +159,12 @@ msgstr "Níl aon ábhair ar an teachtaireacht, ba mhaith tú déarfaidh mé ába
 
 #: program/localization/ga_IE/messages.inc:nobodywarning
 msgid "Send this message without text?"
-msgstr "Níl aon teacs san teachtaireacht, ba mhaith tú déarfaidh mé"
+msgstr "Níl aon teacs san teachtaireacht, ba mhaith tú déarfaidh mé "
 "teachtaireacht ar bith?"
 
 #: program/localization/ga_IE/messages.inc:notsentwarning
 msgid "Message has not been sent. Do you want to discard your message?"
-msgstr "Theip an iarraidh chun an teachtaireacht a seo. ba mhaith tú scrios do"
+msgstr "Theip an iarraidh chun an teachtaireacht a seo. ba mhaith tú scrios do "
 "teachtaireacht?"
 
 #: program/localization/ga_IE/messages.inc:noldapserver

@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: he_IL\n"
@@ -45,7 +44,7 @@ msgstr "! שגיאה במסד הנתונים"
 
 #: program/localization/he_IL/messages.inc:errorreadonly
 msgid "Unable to perform operation. Folder is read-only."
-msgstr "לא ניתן לבצע הפעולה כי התיק ניתן לקריאה"
+msgstr "לא ניתן לבצע הפעולה כי התיק ניתן לקריאה "
 "בלבד"
 
 #: program/localization/he_IL/messages.inc:errornoperm
@@ -122,7 +121,7 @@ msgstr "קיים כבר איש קשר בעל אותו שם"
 
 #: program/localization/he_IL/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "תמונות משרת אחר נחסמו כדי לשמור על"
+msgstr "תמונות משרת אחר נחסמו כדי לשמור על "
 "הפרטיות"
 
 #: program/localization/he_IL/messages.inc:encryptedmessage
@@ -151,7 +150,7 @@ msgstr "נא להמתין $sec שניות לפני מסירת הודעה זו"
 
 #: program/localization/he_IL/messages.inc:errorsavingsent
 msgid "An error occured while saving sent message."
-msgstr "נגרמה שגיאה במהלך שמירת ההודעה בתיק"
+msgstr "נגרמה שגיאה במהלך שמירת ההודעה בתיק "
 "הודעות יוצאות"
 
 #: program/localization/he_IL/messages.inc:errorsaving
@@ -244,7 +243,7 @@ msgstr "נא להוסיף לפחות נמען אחד"
 
 #: program/localization/he_IL/messages.inc:nosubjectwarning
 msgid "The \"Subject\" field is empty. Would you like to enter one now?"
-msgstr "שורת הנושא ריקה. האם ברצונך להוסיף נושא"
+msgstr "שורת הנושא ריקה. האם ברצונך להוסיף נושא "
 "כעת?"
 
 #: program/localization/he_IL/messages.inc:nobodywarning
@@ -264,9 +263,9 @@ msgid "Please enter a contact name or email address."
 msgstr "נא להוסיף איש קשר או כתובת דוא\"ל"
 
 #: program/localization/he_IL/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "עדיין לא הועלו כל הקבצים. נא לחכות או לבטל"
+msgstr "עדיין לא הועלו כל הקבצים. נא לחכות או לבטל "
 "הפעולה."
 
 #: program/localization/he_IL/messages.inc:searchsuccessful
@@ -331,7 +330,7 @@ msgstr "העלאת הקובץ נכשלה"
 
 #: program/localization/he_IL/messages.inc:filesizeerror
 msgid "The uploaded file exceeds the maximum size of $size."
-msgstr "הקובץ לטעינה גדול מהגודל המקסימלי שהוא"
+msgstr "הקובץ לטעינה גדול מהגודל המקסימלי שהוא "
 "$size"
 
 #: program/localization/he_IL/messages.inc:copysuccess
@@ -420,7 +419,7 @@ msgstr "חוקי vCard הייבוא נכשל כי הקובץ אינו בפורמ
 
 #: program/localization/he_IL/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>יובאו $inserted אנשי קשר, $skipped היו קיימים"
+msgstr "<b>יובאו $inserted אנשי קשר, $skipped היו קיימים "
 "</b>:<p><em>$names</em></p>"
 
 #: program/localization/he_IL/messages.inc:importconfirmskipped
@@ -436,15 +435,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "לזהות שנבחרה חסרה כתובת דואר"
 
 #: program/localization/he_IL/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "המעבר לעורך רגיל יגרום לאיבוד את העריכה"
+msgstr "המעבר לעורך רגיל יגרום לאיבוד את העריכה "
 "הקיימת. האם להמשיך?"
 
 #: program/localization/he_IL/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "ארעה שגיאת תצורה חמורה. נא להודיע מייד"
+msgstr "ארעה שגיאת תצורה חמורה. נא להודיע מייד "
 "למנהל/ת המערכת. <B> הודעתך לא תשלח <B> "
 
 #: program/localization/he_IL/messages.inc:smtpconnerror
@@ -549,12 +548,12 @@ msgstr "ההודעה סומנה בהצלחה"
 
 #: program/localization/he_IL/messages.inc:autocompletechars
 msgid "Enter at least $min characters for autocompletion."
-msgstr "יש להקיש לפחות $min תווים להשלמה אוטומטית"
+msgstr "יש להקיש לפחות $min תווים להשלמה אוטומטית "
 "של המחרוזת"
 
 #: program/localization/he_IL/messages.inc:autocompletemore
 msgid "More matching entries found. Please type more characters."
-msgstr "נמצאו רשומות נוספות. נא להקיש תווים"
+msgstr "נמצאו רשומות נוספות. נא להקיש תווים "
 "נוספים."
 
 #: program/localization/he_IL/messages.inc:namecannotbeempty
@@ -583,10 +582,10 @@ msgstr "התגלו שגיאות כתיב בהודעה"
 
 #: program/localization/he_IL/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
-msgstr "לא ניתן ליצור/להעביר תיקיה לתוך תיקית האב"
+msgstr "לא ניתן ליצור/להעביר תיקיה לתוך תיקית האב "
 "שנבחרה. אין הרשאה לגישה."
 
 #: program/localization/he_IL/messages.inc:messagetoobig
 msgid "The message part is too big to process it."
-msgstr "ההודעה גדולה מעבר ליכולת העיבוד של"
+msgstr "ההודעה גדולה מעבר ליכולת העיבוד של "
 "התוכנה"

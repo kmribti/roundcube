@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: eo\n"
@@ -558,9 +557,9 @@ msgid "Add Reply-To"
 msgstr "Aldonu Respondu-Al"
 
 #: program/localization/eo/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "La sendinto de ĉi tiu mesaĝo petis sciigon de kiam vi legas ĝin. Ĉu"
+msgstr "La sendinto de ĉi tiu mesaĝo petis sciigon de kiam vi legas ĝin. Ĉu "
 "volas sciigi la sendinton?"
 
 #: program/localization/eo/labels.inc:receiptread
@@ -572,11 +571,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "Jen estas legokonfirmo de via mesaĝo"
 
 #: program/localization/eo/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Notu: Ĉi tiu konfirmo nur asertas ke la mesaĝo estis malfermita je la"
-"komputilo de la ricevinto. Ne estas garantio ke la ricevinto legis aŭ"
+msgstr "Notu: Ĉi tiu konfirmo nur asertas ke la mesaĝo estis malfermita je la "
+"komputilo de la ricevinto. Ne estas garantio ke la ricevinto legis aŭ "
 "komprenis la enhavon."
 
 #: program/localization/eo/labels.inc:name

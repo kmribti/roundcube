@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: es_ES\n"
@@ -731,9 +730,9 @@ msgid "Add Followup-To"
 msgstr "Añadir Seguir a"
 
 #: program/localization/es_ES/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "El emisor de este mensaje desea ser notificado cuando usted lo lea."
+msgstr "El emisor de este mensaje desea ser notificado cuando usted lo lea. "
 "¿Quiere enviar esta notificación?"
 
 #: program/localization/es_ES/labels.inc:receiptread
@@ -745,11 +744,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "Esto es un acuse de recibo de su mensaje"
 
 #: program/localization/es_ES/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Nota: Esta notificación sólo significa que su mensaje fue abierto en el"
-"ordenador del destinatario. Eso no garantiza que el destinatario haya"
+msgstr "Nota: Esta notificación sólo significa que su mensaje fue abierto en el "
+"ordenador del destinatario. Eso no garantiza que el destinatario haya "
 "leído o entendido el contenido del mensaje."
 
 #: program/localization/es_ES/labels.inc:name
@@ -1083,11 +1082,11 @@ msgid "Replace the entire address book"
 msgstr "Reemplazar toda la lista de contactos"
 
 #: program/localization/es_ES/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Puede importar contactos desde una lista existente.<br/>Actualmente sólo"
-"soportamos el formato <a"
+msgstr "Puede importar contactos desde una lista existente.<br/>Actualmente sólo "
+"soportamos el formato <a "
 "href=\"http://es.wikipedia.org/wiki/VCard\">vCard</a>."
 
 #: program/localization/es_ES/labels.inc:done
@@ -1340,7 +1339,7 @@ msgstr "Comprobar en todas las bandejas si hay mensajes nuevos"
 
 #: program/localization/es_ES/labels.inc:displaynext
 msgid "After message delete/move display the next message"
-msgstr "Después de borrar/mover, mostrar el siguiente mensaje después de"
+msgstr "Después de borrar/mover, mostrar el siguiente mensaje después de "
 "borrar/mover un mensaje"
 
 #: program/localization/es_ES/labels.inc:mainoptions
@@ -1360,7 +1359,7 @@ msgid "New Message"
 msgstr "Nuevo mensaje"
 
 #: program/localization/es_ES/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Opciones de listado"
 
 #: program/localization/es_ES/labels.inc:signatureoptions

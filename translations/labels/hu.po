@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: hu_HU\n"
@@ -735,9 +734,9 @@ msgid "Add Followup-To"
 msgstr "Hírcsoport válasz hozzáadása"
 
 #: program/localization/hu_HU/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Az üzenet küldője értesítést kér arról, hogy elolvasta a levelet."
+msgstr "Az üzenet küldője értesítést kér arról, hogy elolvasta a levelet. "
 "El legyen küldve az olvasási visszaigazolás?"
 
 #: program/localization/hu_HU/labels.inc:receiptread
@@ -749,12 +748,12 @@ msgid "This is a Return Receipt for your message"
 msgstr "Ez az üzenete olvasási visszaigazolása"
 
 #: program/localization/hu_HU/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Megjegyzés: Ez az olvasási visszaigazolás csak azt igazolja, hogy az"
-"üzenet megjelenítésre került a címzett számítógépén. Nincs rá"
-"garancia, hogy a címzett elolvasta volna az üzenetet illetve megértette"
+msgstr "Megjegyzés: Ez az olvasási visszaigazolás csak azt igazolja, hogy az "
+"üzenet megjelenítésre került a címzett számítógépén. Nincs rá "
+"garancia, hogy a címzett elolvasta volna az üzenetet illetve megértette "
 "volna annak tartalmát."
 
 #: program/localization/hu_HU/labels.inc:name
@@ -1088,11 +1087,11 @@ msgid "Replace the entire address book"
 msgstr "A teljes címjegyzék cseréje"
 
 #: program/localization/hu_HU/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Feltölthet kapcsolatokat egy már létező címjegyzékből. <br/>"
-"Jelenleg a <a href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> "
+msgstr "Feltölthet kapcsolatokat egy már létező címjegyzékből. <br/> "
+"Jelenleg a <a href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>  "
 "formátumú adatok importálása támogatott."
 
 #: program/localization/hu_HU/labels.inc:done
@@ -1241,12 +1240,12 @@ msgstr "automatikus küldés"
 
 #: program/localization/hu_HU/labels.inc:autosendknown
 msgid "send receipt to my contacts, otherwise ask me"
-msgstr "visszaigazolás küldése csak a kapcsolataimnak, egyéb esetben kérdezzen"
+msgstr "visszaigazolás küldése csak a kapcsolataimnak, egyéb esetben kérdezzen "
 "rá"
 
 #: program/localization/hu_HU/labels.inc:autosendknownignore
 msgid "send receipt to my contacts, otherwise ignore"
-msgstr "visszaigazolás küldése csak a kapcsolataimnak, egyéb esetben hagyja"
+msgstr "visszaigazolás küldése csak a kapcsolataimnak, egyéb esetben hagyja "
 "figyelmen kívül"
 
 #: program/localization/hu_HU/labels.inc:ignore
@@ -1366,7 +1365,7 @@ msgid "New Message"
 msgstr "Új üzenet"
 
 #: program/localization/hu_HU/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Listabeállítások"
 
 #: program/localization/hu_HU/labels.inc:signatureoptions

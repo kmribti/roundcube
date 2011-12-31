@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: de_CH\n"
@@ -125,7 +124,7 @@ msgstr "Um Ihre Privatsphäre zur schützen, wurden externe Bilder blockiert."
 
 #: program/localization/de_CH/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
-msgstr "Dies ist eine verschlüsselte Nachricht und kann leider nicht angezeigt"
+msgstr "Dies ist eine verschlüsselte Nachricht und kann leider nicht angezeigt "
 "werden."
 
 #: program/localization/de_CH/messages.inc:nocontactsfound
@@ -261,9 +260,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Bitte geben Sie einen Namen oder eine E-Mail-Adresse ein"
 
 #: program/localization/de_CH/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Es wurden noch nicht alle Dateien hochgeladen. Bitte warten oder Upload"
+msgstr "Es wurden noch nicht alle Dateien hochgeladen. Bitte warten oder Upload "
 "abbrechen."
 
 #: program/localization/de_CH/messages.inc:searchsuccessful
@@ -427,15 +426,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Fehlende E-Mail-Adresse in ausgewählter Identität"
 
 #: program/localization/de_CH/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Beim Wechseln in den Texteditor gehen alle Textformatierungen verloren."
+msgstr "Beim Wechseln in den Texteditor gehen alle Textformatierungen verloren. "
 "Möchten Sie fortfahren?"
 
 #: program/localization/de_CH/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Ein gravierender Konfigurationsfehler ist aufgetreten. Kontaktieren Sie den"
+msgstr "Ein gravierender Konfigurationsfehler ist aufgetreten. Kontaktieren Sie den "
 "Server-Administrator. <b>Die Nachricht wurde nicht gesendet!</b>"
 
 #: program/localization/de_CH/messages.inc:smtpconnerror
@@ -448,12 +447,12 @@ msgstr "SMTP Fehler ($code): Die Authentisierung ist fehlgeschlagen"
 
 #: program/localization/de_CH/messages.inc:smtpfromerror
 msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
-msgstr "SMTP Fehler ($code): Der Absender \"$from\" konnte nicht gesetzt werden"
+msgstr "SMTP Fehler ($code): Der Absender \"$from\" konnte nicht gesetzt werden "
 "($msg)"
 
 #: program/localization/de_CH/messages.inc:smtptoerror
 msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
-msgstr "SMTP Fehler ($code): Der Empfänger \"$to\" konnte nicht gesetzt werden"
+msgstr "SMTP Fehler ($code): Der Empfänger \"$to\" konnte nicht gesetzt werden "
 "($msg)"
 
 #: program/localization/de_CH/messages.inc:smtprecipientserror
@@ -474,7 +473,7 @@ msgstr "Ungültige E-Mail-Adresse: $email"
 
 #: program/localization/de_CH/messages.inc:toomanyrecipients
 msgid "Too many recipients. Reduce the number of recipients to $max."
-msgstr "Zuviele Empfänger angegeben. Reduzieren Sie die Empfängeradressen auf"
+msgstr "Zuviele Empfänger angegeben. Reduzieren Sie die Empfängeradressen auf "
 "$max."
 
 #: program/localization/de_CH/messages.inc:maxgroupmembersreached
@@ -483,7 +482,7 @@ msgstr "Die Anzahl Adressen in dieser Gruppe überschreitet das Maximum von $max
 
 #: program/localization/de_CH/messages.inc:internalerror
 msgid "An internal error occured. Please try again."
-msgstr "Ein interner Fehler ist aufgetreten. Bitte versuchen Sie den Vorgang"
+msgstr "Ein interner Fehler ist aufgetreten. Bitte versuchen Sie den Vorgang "
 "erneut."
 
 #: program/localization/de_CH/messages.inc:contactdelerror

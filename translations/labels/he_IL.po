@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: he_IL\n"
@@ -735,9 +734,9 @@ msgid "Add Followup-To"
 msgstr "הוספת כתובת להעברת הודעה"
 
 #: program/localization/he_IL/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "השולח ביקש לדעת אם ההודעה נקראה. האם"
+msgstr "השולח ביקש לדעת אם ההודעה נקראה. האם "
 "להודיע לשולח?"
 
 #: program/localization/he_IL/labels.inc:receiptread
@@ -749,10 +748,10 @@ msgid "This is a Return Receipt for your message"
 msgstr "אישור קבלה להודעתך"
 
 #: program/localization/he_IL/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "הערה: האישור אינו מבטיח שהנמען קרא או"
+msgstr "הערה: האישור אינו מבטיח שהנמען קרא או "
 "הבין את תוכן ההודעה."
 
 #: program/localization/he_IL/labels.inc:name
@@ -1086,11 +1085,11 @@ msgid "Replace the entire address book"
 msgstr "החלפת כל פנקס הכתובות"
 
 #: program/localization/he_IL/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "<a href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>  ניתן לייבא"
-"אנשי קשר מפנקס כתובות קיים.  אנו תומכים"
+msgstr "<a href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>  ניתן לייבא "
+"אנשי קשר מפנקס כתובות קיים.  אנו תומכים "
 "בפורמט"
 
 #: program/localization/he_IL/labels.inc:done
@@ -1247,7 +1246,7 @@ msgstr "משלוח אישור קבלה רק לאנשי הקשר שלי "
 
 #: program/localization/he_IL/labels.inc:autosendknownignore
 msgid "send receipt to my contacts, otherwise ignore"
-msgstr "משלוח אישור קבלה לאנשי הקשר שלי בלבד"
+msgstr "משלוח אישור קבלה לאנשי הקשר שלי בלבד "
 "ולהתעלם מאחרים"
 
 #: program/localization/he_IL/labels.inc:ignore
@@ -1268,7 +1267,7 @@ msgstr "הסתרת הודעות שנמחקו"
 
 #: program/localization/he_IL/labels.inc:deletealways
 msgid "If moving messages to Trash fails, delete them"
-msgstr "אם העברה לתיקית מחיקה נכשלת יש למחוק"
+msgstr "אם העברה לתיקית מחיקה נכשלת יש למחוק "
 "לתמיד"
 
 #: program/localization/he_IL/labels.inc:showremoteimages
@@ -1368,7 +1367,7 @@ msgid "New Message"
 msgstr "הודעה חדשה"
 
 #: program/localization/he_IL/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "אפשרויות רשימה"
 
 #: program/localization/he_IL/labels.inc:signatureoptions
@@ -1445,7 +1444,7 @@ msgstr "הוספת אנשי קשר לספר הכתובות שנבחר"
 
 #: program/localization/he_IL/labels.inc:autocompletesingle
 msgid "Skip alternative email addresses in autocompletion"
-msgstr "לדלג על כתובת דואר חילופית בעת שימוש"
+msgstr "לדלג על כתובת דואר חילופית בעת שימוש "
 "בהשלמה אוטומטית של הקלדה"
 
 #: program/localization/he_IL/labels.inc:spellcheckbeforesend

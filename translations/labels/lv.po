@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: lv_LV\n"
@@ -727,9 +726,9 @@ msgid "Add Followup-To"
 msgstr "Pievienot Followup-To"
 
 #: program/localization/lv_LV/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Šīs vēstules sūtītājs vēlas redzēt vēstules saņemšanas"
+msgstr "Šīs vēstules sūtītājs vēlas redzēt vēstules saņemšanas "
 "apstiprinājumu. Vai jūs vēlaties nosūtīt apstiprinājumu?"
 
 #: program/localization/lv_LV/labels.inc:receiptread
@@ -741,11 +740,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "Šīs ir jūsu vēstules saņemšanas apstiprinājums"
 
 #: program/localization/lv_LV/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Piezīme: Šīs apsiprinājums nozīmē tikai to, ka vēstule tika"
-"parādīta uz saņēmāja datora. Tas nenozīmē, ka saņēmējs ir"
+msgstr "Piezīme: Šīs apsiprinājums nozīmē tikai to, ka vēstule tika "
+"parādīta uz saņēmāja datora. Tas nenozīmē, ka saņēmējs ir "
 "izlasījis vai izpratis vēstules saturu."
 
 #: program/localization/lv_LV/labels.inc:name
@@ -1067,11 +1066,11 @@ msgid "Replace the entire address book"
 msgstr "Aizvietot visu adrešu grāmatu"
 
 #: program/localization/lv_LV/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Jūst varat augšupielādēt kontaktus no citas adrešu"
-"grāmatas.<br/>Pašlaik ir atbalstīts adrešu imports no <a"
+msgstr "Jūst varat augšupielādēt kontaktus no citas adrešu "
+"grāmatas.<br/>Pašlaik ir atbalstīts adrešu imports no <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> datu formāta."
 
 #: program/localization/lv_LV/labels.inc:done
@@ -1335,7 +1334,7 @@ msgid "New Message"
 msgstr "Vēstuļu pienākšana"
 
 #: program/localization/lv_LV/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Saraksta iestatījumi"
 
 #: program/localization/lv_LV/labels.inc:signatureoptions
@@ -1400,12 +1399,12 @@ msgstr "Vienmēr pieprasīt atskati par vēstules izlasīšanu"
 
 #: program/localization/lv_LV/labels.inc:reqdsn
 msgid "Always request a delivery status notification"
-msgstr "Vienmēr pieprasīt atskati par vēstules piegādāšanu saņēmēja"
+msgstr "Vienmēr pieprasīt atskati par vēstules piegādāšanu saņēmēja "
 "serverim"
 
 #: program/localization/lv_LV/labels.inc:replysamefolder
 msgid "Place replies in the folder of the message being replied to"
-msgstr "Glabāt atbildes tajā pašā mapē, kurā ir vēstule, uz kuru tika"
+msgstr "Glabāt atbildes tajā pašā mapē, kurā ir vēstule, uz kuru tika "
 "atbildēts"
 
 #: program/localization/lv_LV/labels.inc:defaultaddressbook

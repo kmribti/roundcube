@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: az_AZ\n"
@@ -711,9 +710,9 @@ msgid "Add Followup-To"
 msgstr "\"İzlə\" əlavə et"
 
 #: program/localization/az_AZ/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Məktubu göndərən onu oxuduğunuz haqda sorğu almaq istəyir."
+msgstr "Məktubu göndərən onu oxuduğunuz haqda sorğu almaq istəyir. "
 "Göndərilsin?"
 
 #: program/localization/az_AZ/labels.inc:receiptread
@@ -725,10 +724,10 @@ msgid "This is a Return Receipt for your message"
 msgstr "Bu məktubunuzun oxunulduğu haqda sorğudur"
 
 #: program/localization/az_AZ/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Bu sorğu yalnız qəbul edilən tərəfindən məktubun açıldığına"
+msgstr "Bu sorğu yalnız qəbul edilən tərəfindən məktubun açıldığına "
 "göstərir. Onun oxunulduğuna zəmanət vermir."
 
 #: program/localization/az_AZ/labels.inc:name
@@ -1021,12 +1020,12 @@ msgid "Replace the entire address book"
 msgstr "Ünvan kitabçasını dəyiş"
 
 #: program/localization/az_AZ/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Siz ünvanları mövcud ünvan kitabçasından yükləyə bilərsiniz."
-"Hal-hazırda ünvanların idxalını <a"
-"href=\"http://az.wikipedia.org/wiki/vCard\">vCard</a> formatında"
+msgstr "Siz ünvanları mövcud ünvan kitabçasından yükləyə bilərsiniz. "
+"Hal-hazırda ünvanların idxalını <a "
+"href=\"http://az.wikipedia.org/wiki/vCard\">vCard</a> formatında "
 "dəstəkləyirik."
 
 #: program/localization/az_AZ/labels.inc:done
@@ -1290,7 +1289,7 @@ msgid "New Message"
 msgstr "Yeni məktub"
 
 #: program/localization/az_AZ/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Nizamlamaların siyahısı"
 
 #: program/localization/az_AZ/labels.inc:signatureoptions

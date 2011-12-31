@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ps\n"
@@ -118,7 +117,7 @@ msgstr "پوښۍ"
 
 #: program/localization/ps/labels.inc:messagesfromto
 msgid "Messages $from to $to of $count"
-msgstr "له ټاکلي استوزو څخه ټاکلي شمېرل شوو"
+msgstr "له ټاکلي استوزو څخه ټاکلي شمېرل شوو "
 "استوزو ته "
 
 #: program/localization/ps/labels.inc:messagenrof
@@ -324,7 +323,7 @@ msgstr "استوونکي ته ځواب ورکړئ"
 
 #: program/localization/ps/labels.inc:replytoallmessage
 msgid "Reply to list or to sender and all recipients"
-msgstr "استوونکي او ټولو ترلاسه کوونکو ته ځواب"
+msgstr "استوونکي او ټولو ترلاسه کوونکو ته ځواب "
 "لېږل "
 
 #: program/localization/ps/labels.inc:forwardmessage
@@ -584,10 +583,10 @@ msgid "Add Reply-To"
 msgstr "ته ورزيات کړه "
 
 #: program/localization/ps/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "ددې استوزي استوونکی پوښتي چېد استوزي"
-"لوستلو سره سم تاسې خبر کړي،.    غواړئ چې"
+msgstr "ددې استوزي استوونکی پوښتي چېد استوزي "
+"لوستلو سره سم تاسې خبر کړي،.    غواړئ چې "
 "استوونکی خبرشي؟ "
 
 #: program/localization/ps/labels.inc:receiptread
@@ -599,13 +598,13 @@ msgid "This is a Return Receipt for your message"
 msgstr " دا رسليک راګرځېدل ستاسې استوزي لپاره دی "
 
 #: program/localization/ps/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "يادونه: دا رسليک تاسې ته يوازې ددې خبرتيا"
-"درکوي چې کله استوزی د ترلاسه کوونکي په"
-"کمپيوټر کې څرګند شي،  ددې هيڅ ډاډګيرنه"
-"نشته چې ترلاسه کوونکي د  استوزي متن لوستی"
+msgstr "يادونه: دا رسليک تاسې ته يوازې ددې خبرتيا "
+"درکوي چې کله استوزی د ترلاسه کوونکي په "
+"کمپيوټر کې څرګند شي،  ددې هيڅ ډاډګيرنه "
+"نشته چې ترلاسه کوونکي د  استوزي متن لوستی "
 "او يا پرې پوه شوی دی"
 
 #: program/localization/ps/labels.inc:name
@@ -662,7 +661,7 @@ msgstr "  ته ليک وليکه "
 
 #: program/localization/ps/labels.inc:contactsfromto
 msgid "Contacts $from to $to of $count"
-msgstr "له دومره اړيکلورو څخه دومره شمېرل شوي"
+msgstr "له دومره اړيکلورو څخه دومره شمېرل شوي "
 "Contacts $from to $to of $count"
 
 #: program/localization/ps/labels.inc:print
@@ -718,12 +717,12 @@ msgid "Replace the entire address book"
 msgstr "ټول ادرس کتاب بدل کړئ"
 
 #: program/localization/ps/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "تاسې کولی شئ‌چې يو اړيکلوری له شته پتې"
-"کتاب څخه پورته کړئ<br/>موږ همدا اوس له  <a"
-"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>پتې رانقلوو ."
+msgstr "تاسې کولی شئ‌چې يو اړيکلوری له شته پتې "
+"کتاب څخه پورته کړئ<br/>موږ همدا اوس له  <a "
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>پتې رانقلوو . "
 "د فايلونو بڼې"
 
 #: program/localization/ps/labels.inc:done
@@ -848,7 +847,7 @@ msgstr "لرې کړه"
 
 #: program/localization/ps/labels.inc:readwhendeleted
 msgid "Mark the message as read on delete"
-msgstr "په ړنګ شوو کې استوزي د لوستل شوي  په توګه"
+msgstr "په ړنګ شوو کې استوزي د لوستل شوي  په توګه "
 "په نښه کړه"
 
 #: program/localization/ps/labels.inc:flagfordeletion
@@ -873,7 +872,7 @@ msgstr "تل"
 
 #: program/localization/ps/labels.inc:showinlineimages
 msgid "Display attached images below the message"
-msgstr "نښلول شوي انځورونه تر استوزې لاندې ښکاره"
+msgstr "نښلول شوي انځورونه تر استوزې لاندې ښکاره "
 "کړه"
 
 #: program/localization/ps/labels.inc:autosavedraft

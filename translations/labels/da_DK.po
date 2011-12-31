@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: da_DK\n"
@@ -739,9 +738,9 @@ msgid "Add Followup-To"
 msgstr "Tilføj følg-op adresse"
 
 #: program/localization/da_DK/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Afsenderen af denne besked har bedt om at modtage en bekræftelse når du"
+msgstr "Afsenderen af denne besked har bedt om at modtage en bekræftelse når du "
 "læser beskeden. Vil du sende kvittering for læsning?"
 
 #: program/localization/da_DK/labels.inc:receiptread
@@ -753,11 +752,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "Dette er en kvittering for at din besked er blevet vist"
 
 #: program/localization/da_DK/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Bemærk: Denne kvittering bekræfter udelukkende at beskeden blev vist på"
-"modtagerens computer. Der er ingen garanti for at modtageren har læst"
+msgstr "Bemærk: Denne kvittering bekræfter udelukkende at beskeden blev vist på "
+"modtagerens computer. Der er ingen garanti for at modtageren har læst "
 "eller forstået beskedens indhold."
 
 #: program/localization/da_DK/labels.inc:name
@@ -1091,10 +1090,10 @@ msgid "Replace the entire address book"
 msgstr "Overskriv hele adressebogen"
 
 #: program/localization/da_DK/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Du kan uploade kontakter fra en eksisterende adressebog.Vi understøtter i"
+msgstr "Du kan uploade kontakter fra en eksisterende adressebog.Vi understøtter i "
 "øjeblikket import af adresser i vCard formatet."
 
 #: program/localization/da_DK/labels.inc:done
@@ -1370,7 +1369,7 @@ msgid "New Message"
 msgstr "Ny besked"
 
 #: program/localization/da_DK/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Liste-indstillinger"
 
 #: program/localization/da_DK/labels.inc:signatureoptions

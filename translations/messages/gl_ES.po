@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: gl_ES\n"
@@ -260,9 +259,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Por favor, introduza un nome ou un enderezo de correo electrónico."
 
 #: program/localization/gl_ES/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Aínda non se cargaron tódolos ficheiros. Por favor, agarde ou cancele a"
+msgstr "Aínda non se cargaron tódolos ficheiros. Por favor, agarde ou cancele a "
 "carga."
 
 #: program/localization/gl_ES/messages.inc:searchsuccessful
@@ -411,12 +410,12 @@ msgstr "A importar. Por favor, agarde..."
 
 #: program/localization/gl_ES/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "Produciuse un erro na importación. O ficheiro que cargou non é un vCard"
+msgstr "Produciuse un erro na importación. O ficheiro que cargou non é un vCard "
 "correcto."
 
 #: program/localization/gl_ES/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>Importáronse correctamente $inserted contactos. Ignoráronse $skipped"
+msgstr "<b>Importáronse correctamente $inserted contactos. Ignoráronse $skipped "
 "contactos que xa existían</b>:<p><em>$names</em></p>"
 
 #: program/localization/gl_ES/messages.inc:importconfirmskipped
@@ -432,15 +431,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Falta o enderezo de correo electrónico na identidade que escolleu."
 
 #: program/localization/gl_ES/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Se troca neste intre ao editor de texto plano, vai perder todo o formato do"
+msgstr "Se troca neste intre ao editor de texto plano, vai perder todo o formato do "
 "texto. Quere continuar?"
 
 #: program/localization/gl_ES/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Produciuse un erro fatal de configuración. Contacte ao administrador"
+msgstr "Produciuse un erro fatal de configuración. Contacte ao administrador "
 "inmediatamente. <b>Non se enviou a súa mensaxe.</b>"
 
 #: program/localization/gl_ES/messages.inc:smtpconnerror
@@ -477,7 +476,7 @@ msgstr "O enderezo de correo electrónico é incorrecto: $email."
 
 #: program/localization/gl_ES/messages.inc:toomanyrecipients
 msgid "Too many recipients. Reduce the number of recipients to $max."
-msgstr "Especificou destinatarios de máis. Por favor, redúzaos a un máximo de"
+msgstr "Especificou destinatarios de máis. Por favor, redúzaos a un máximo de "
 "$max."
 
 #: program/localization/gl_ES/messages.inc:maxgroupmembersreached
@@ -554,7 +553,7 @@ msgstr "Introduza polo menos $min caracteres para autocompletar."
 
 #: program/localization/gl_ES/messages.inc:autocompletemore
 msgid "More matching entries found. Please type more characters."
-msgstr "Atopáronse máis entradas concidintes. Por favor, introduza máis"
+msgstr "Atopáronse máis entradas concidintes. Por favor, introduza máis "
 "caracteres."
 
 #: program/localization/gl_ES/messages.inc:namecannotbeempty
@@ -583,5 +582,5 @@ msgstr "Atopáronse erros ortográficos na mensaxe."
 
 #: program/localization/gl_ES/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
-msgstr "Non foi posible crear/mover o cartafol no cartafol padre escollido porque"
+msgstr "Non foi posible crear/mover o cartafol no cartafol padre escollido porque "
 "non ten permisos."

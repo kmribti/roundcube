@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:20:32+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:12:08+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ar_SA\n"
@@ -734,9 +734,9 @@ msgid "Add Followup-To"
 msgstr "إضافة Mail-Followup-To"
 
 #: program/localization/ar_SA/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "طلب المرسل إعلامه عند قراءتك لرسالته. هل"
+msgstr "طلب المرسل إعلامه عند قراءتك لرسالته. هل "
 "تود إعلام المرسل؟"
 
 #: program/localization/ar_SA/labels.inc:receiptread
@@ -748,12 +748,12 @@ msgid "This is a Return Receipt for your message"
 msgstr "هذا إيصال بقراءة رسالتك"
 
 #: program/localization/ar_SA/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "ملاحظة: يُعلمك هذا الإيصال بأن رسالتك قد"
-"ظهرت على جهاز المستقبِل. ليست هناك أية"
-"ضمانات أن المستقبل قد قرأ أو فهم محتويات"
+msgstr "ملاحظة: يُعلمك هذا الإيصال بأن رسالتك قد "
+"ظهرت على جهاز المستقبِل. ليست هناك أية "
+"ضمانات أن المستقبل قد قرأ أو فهم محتويات "
 "الرسالة."
 
 #: program/localization/ar_SA/labels.inc:name
@@ -1087,11 +1087,11 @@ msgid "Replace the entire address book"
 msgstr "استبدل دفتر العناوين بأكمله"
 
 #: program/localization/ar_SA/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "يمكنك رفع قائمة المراسلين من دفتر عناوين"
-"موجود.<br/>ندعم حالياً استيراد العناوين من"
+msgstr "يمكنك رفع قائمة المراسلين من دفتر عناوين "
+"موجود.<br/>ندعم حالياً استيراد العناوين من "
 "نسق بيانات <a href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>."
 
 #: program/localization/ar_SA/labels.inc:done
@@ -1244,12 +1244,12 @@ msgstr "أرسلها تلقائياً"
 
 #: program/localization/ar_SA/labels.inc:autosendknown
 msgid "send receipt to my contacts, otherwise ask me"
-msgstr "أرسل إشعار استلام إلى جهات اتصالي، وإلا"
+msgstr "أرسل إشعار استلام إلى جهات اتصالي، وإلا "
 "اسألني"
 
 #: program/localization/ar_SA/labels.inc:autosendknownignore
 msgid "send receipt to my contacts, otherwise ignore"
-msgstr "أرسل إشعار استلام إلى جهات اتصالي، وإلا"
+msgstr "أرسل إشعار استلام إلى جهات اتصالي، وإلا "
 "تجاهل الأمر"
 
 #: program/localization/ar_SA/labels.inc:ignore
@@ -1262,7 +1262,7 @@ msgstr "تحديد الرسالة كمقروءة عند حذفها"
 
 #: program/localization/ar_SA/labels.inc:flagfordeletion
 msgid "Flag the message for deletion instead of delete"
-msgstr "وضع علامة على الرسالة لحذفها بدلاً من"
+msgstr "وضع علامة على الرسالة لحذفها بدلاً من "
 "حذفها"
 
 #: program/localization/ar_SA/labels.inc:skipdeleted
@@ -1271,7 +1271,7 @@ msgstr "لا تظهر الرسائل المحذوفة"
 
 #: program/localization/ar_SA/labels.inc:deletealways
 msgid "If moving messages to Trash fails, delete them"
-msgstr "حذف الرسائل مباشرة، إن تعذر نقلها إلى"
+msgstr "حذف الرسائل مباشرة، إن تعذر نقلها إلى "
 "المهملات"
 
 #: program/localization/ar_SA/labels.inc:showremoteimages
@@ -1336,7 +1336,7 @@ msgstr "RFC 2047 بأكملها (غيرها)"
 
 #: program/localization/ar_SA/labels.inc:force7bit
 msgid "Use MIME encoding for 8-bit characters"
-msgstr "استخدام ترميز MIME للحروف ذات الثمانية"
+msgstr "استخدام ترميز MIME للحروف ذات الثمانية "
 "بتّات"
 
 #: program/localization/ar_SA/labels.inc:advancedoptions
@@ -1345,17 +1345,17 @@ msgstr "خيارات متقدّمة"
 
 #: program/localization/ar_SA/labels.inc:focusonnewmessage
 msgid "Focus browser window on new message"
-msgstr "التركيز على نافذة المتصفح عند وجود رسالة"
+msgstr "التركيز على نافذة المتصفح عند وجود رسالة "
 "جديدة"
 
 #: program/localization/ar_SA/labels.inc:checkallfolders
 msgid "Check all folders for new messages"
-msgstr "التحقق من وجود رسائل جديدة في جميع"
+msgstr "التحقق من وجود رسائل جديدة في جميع "
 "المجلدات"
 
 #: program/localization/ar_SA/labels.inc:displaynext
 msgid "After message delete/move display the next message"
-msgstr "إظهار الرسالة التالية بعد حذف/نقل"
+msgstr "إظهار الرسالة التالية بعد حذف/نقل "
 "الرسالة الحالية"
 
 #: program/localization/ar_SA/labels.inc:mainoptions
@@ -1375,7 +1375,7 @@ msgid "New Message"
 msgstr "رسالة جديدة"
 
 #: program/localization/ar_SA/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "خيارات السرد"
 
 #: program/localization/ar_SA/labels.inc:signatureoptions
@@ -1444,17 +1444,17 @@ msgstr "طلب تنويه لحالة التوصيل دائماً"
 
 #: program/localization/ar_SA/labels.inc:replysamefolder
 msgid "Place replies in the folder of the message being replied to"
-msgstr "وضع الردود في المجلد الذي يحوي الرسالة"
+msgstr "وضع الردود في المجلد الذي يحوي الرسالة "
 "المردود عليها"
 
 #: program/localization/ar_SA/labels.inc:defaultaddressbook
 msgid "Add new contacts to the selected addressbook"
-msgstr "أضف المراسلين الجديد إلى دفتر العناوين"
+msgstr "أضف المراسلين الجديد إلى دفتر العناوين "
 "المحدد"
 
 #: program/localization/ar_SA/labels.inc:autocompletesingle
 msgid "Skip alternative email addresses in autocompletion"
-msgstr "تجاهل عنوان البريد الإلكتروني البديل في"
+msgstr "تجاهل عنوان البريد الإلكتروني البديل في "
 "التكملة التلقائية"
 
 #: program/localization/ar_SA/labels.inc:spellcheckbeforesend

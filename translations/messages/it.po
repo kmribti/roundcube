@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: it_IT\n"
@@ -121,7 +120,7 @@ msgstr "Esiste già un contatto con questo nome"
 
 #: program/localization/it_IT/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "Per proteggere la tua privacy, le immagini remote di questo messaggio sono"
+msgstr "Per proteggere la tua privacy, le immagini remote di questo messaggio sono "
 "state bloccate."
 
 #: program/localization/it_IT/messages.inc:encryptedmessage
@@ -261,9 +260,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Per favore, immetti un nome o un indirizzo e-mail"
 
 #: program/localization/it_IT/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Non tutti gli allegati sono stati ancora caricati. Prego attendere, oppure"
+msgstr "Non tutti gli allegati sono stati ancora caricati. Prego attendere, oppure "
 "cancellare il caricamento."
 
 #: program/localization/it_IT/messages.inc:searchsuccessful
@@ -431,15 +430,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Indirizzo e-mail mancante nell'identità selezionata"
 
 #: program/localization/it_IT/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Passare all'editor testuale farà perdere tutte le informazioni di"
+msgstr "Passare all'editor testuale farà perdere tutte le informazioni di "
 "formattazione. Sicuro di voler continuare?"
 
 #: program/localization/it_IT/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Fatale errore di configurazione. Per favore contatta l'amministratore"
+msgstr "Fatale errore di configurazione. Per favore contatta l'amministratore "
 "immediatamente. Il tuo messaggio non può essere inviato."
 
 #: program/localization/it_IT/messages.inc:smtpconnerror

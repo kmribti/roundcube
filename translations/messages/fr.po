@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-14T13:13:30+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: fr_FR\n"
@@ -120,7 +120,7 @@ msgstr "Un contact avec le même nom existe déjà."
 
 #: program/localization/fr_FR/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "Afin de préserver votre vie privée, les images distantes ont été"
+msgstr "Afin de préserver votre vie privée, les images distantes ont été "
 "bloquées dans ce message."
 
 #: program/localization/fr_FR/messages.inc:encryptedmessage
@@ -260,9 +260,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Entrez un nom de contact ou un courriel"
 
 #: program/localization/fr_FR/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Toutes les pièces jointes ne sont pas encore envoyées pour le moment."
+msgstr "Toutes les pièces jointes ne sont pas encore envoyées pour le moment. "
 "Merci d'attendre ou d'annuler l'envoi."
 
 #: program/localization/fr_FR/messages.inc:searchsuccessful
@@ -411,12 +411,12 @@ msgstr "Importation, veuillez patienter..."
 
 #: program/localization/fr_FR/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "Importation échouée ! Le fichier envoyé n'est pas un fichier vCard"
+msgstr "Importation échouée ! Le fichier envoyé n'est pas un fichier vCard "
 "valide."
 
 #: program/localization/fr_FR/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>$inserted contacts importés avec succès, $skipped entrées existantes"
+msgstr "<b>$inserted contacts importés avec succès, $skipped entrées existantes "
 "ignorées</b>:<p><em>$names</em></p>"
 
 #: program/localization/fr_FR/messages.inc:importconfirmskipped
@@ -432,16 +432,16 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Il manque une adresse e-mail dans l'identité sélectionnée"
 
 #: program/localization/fr_FR/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Passer à l'éditeur texte seul causera la perte du formatage du texte."
+msgstr "Passer à l'éditeur texte seul causera la perte du formatage du texte. "
 "Voulez-vous continuer ?"
 
 #: program/localization/fr_FR/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Une erreur fatale de configuration est survenue. Veuillez contacter votre"
-"administrateur immédiatement. <b>Votre message n'a pas pu être"
+msgstr "Une erreur fatale de configuration est survenue. Veuillez contacter votre "
+"administrateur immédiatement. <b>Votre message n'a pas pu être "
 "envoyé.</b>"
 
 #: program/localization/fr_FR/messages.inc:smtpconnerror
@@ -578,7 +578,7 @@ msgstr "Des fautes d'orthographe ont été détectées dans le message."
 
 #: program/localization/fr_FR/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
-msgstr "Impossible de créer/déplacer le dossier dans le dossier parent"
+msgstr "Impossible de créer/déplacer le dossier dans le dossier parent "
 "sélectionné. Aucun droit d'accès."
 
 #: program/localization/fr_FR/messages.inc:messagetoobig

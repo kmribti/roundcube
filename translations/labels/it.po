@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: it_IT\n"
@@ -735,9 +734,9 @@ msgid "Add Followup-To"
 msgstr "Aggiungi Followup-To"
 
 #: program/localization/it_IT/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Il mittente ha richiesto di ricevere una notifica dell'avvenuta lettura del"
+msgstr "Il mittente ha richiesto di ricevere una notifica dell'avvenuta lettura del "
 "messaggio. Si desidera inviare tale notifica?"
 
 #: program/localization/it_IT/labels.inc:receiptread
@@ -749,11 +748,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "Questa è la ricevuta di ritorno del messaggio inviato"
 
 #: program/localization/it_IT/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Nota: questa Ricevuta di ritorno attesta solamente che il messaggio è"
-"stato visualizzato nel computer del destinatario. Non c'è pertanto alcuna"
+msgstr "Nota: questa Ricevuta di ritorno attesta solamente che il messaggio è "
+"stato visualizzato nel computer del destinatario. Non c'è pertanto alcuna "
 "garanzia che il destinatario abbia letto o compreso il suo contenuto."
 
 #: program/localization/it_IT/labels.inc:name
@@ -1087,10 +1086,10 @@ msgid "Replace the entire address book"
 msgstr "Sostituisci l'intera rubrica"
 
 #: program/localization/it_IT/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Puoi caricare i contatti da una rubrica esistente. Al momento è supportata"
+msgstr "Puoi caricare i contatti da una rubrica esistente. Al momento è supportata "
 "l'importazione dei contatti dal formato vCard."
 
 #: program/localization/it_IT/labels.inc:done
@@ -1366,7 +1365,7 @@ msgid "New Message"
 msgstr "Nuovo Messaggio"
 
 #: program/localization/it_IT/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Mostra Opzioni"
 
 #: program/localization/it_IT/labels.inc:signatureoptions

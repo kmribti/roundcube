@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:20:28+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ja_JP\n"
@@ -734,7 +734,7 @@ msgid "Add Followup-To"
 msgstr "Followup-To 追加"
 
 #: program/localization/ja_JP/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
 msgstr "メールの差出人は開封確認の送付を求めています。開封確認のメールを送付しますか?"
 
@@ -747,10 +747,10 @@ msgid "This is a Return Receipt for your message"
 msgstr "これはあなたが送信したメールに対する開封確認です。"
 
 #: program/localization/ja_JP/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "注意:"
+msgstr "注意: "
 "この開封確認はメールが受信者に表示されたことの通知です。受信者がメールを読んだこと、内容を理解したことを保証するものではありません。"
 
 #: program/localization/ja_JP/labels.inc:name
@@ -1084,11 +1084,11 @@ msgid "Replace the entire address book"
 msgstr "現在のアドレス帳と置き換える"
 
 #: program/localization/ja_JP/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "既存のアドレス帳の連絡先をアップロードできます。現在、<a"
-"href=\"http://ja.wikipedia.org/wiki/VCard\">vCard</a>"
+msgstr "既存のアドレス帳の連絡先をアップロードできます。現在、<a "
+"href=\"http://ja.wikipedia.org/wiki/VCard\">vCard</a> "
 "形式からのインポートに対応しています。"
 
 #: program/localization/ja_JP/labels.inc:done
@@ -1364,7 +1364,7 @@ msgid "New Message"
 msgstr "新着メール設定"
 
 #: program/localization/ja_JP/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "一覧設定"
 
 #: program/localization/ja_JP/labels.inc:signatureoptions

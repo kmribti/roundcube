@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:20:28+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ja_JP\n"
@@ -259,7 +259,7 @@ msgid "Please enter a contact name or email address."
 msgstr "連絡先の名前かメールアドレスを入力してください。"
 
 #: program/localization/ja_JP/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
 msgstr "アップロードが完了していません。アップロードが完了するまで待つか、キャンセルしてください。"
 
@@ -325,7 +325,7 @@ msgstr "ファイルのアップロードに失敗しました。"
 
 #: program/localization/ja_JP/messages.inc:filesizeerror
 msgid "The uploaded file exceeds the maximum size of $size."
-msgstr "アップロードするファイルのサイズが上限 ($size)"
+msgstr "アップロードするファイルのサイズが上限 ($size) "
 "を超えました。"
 
 #: program/localization/ja_JP/messages.inc:copysuccess
@@ -410,7 +410,7 @@ msgstr "インポート中です。しばらくお待ちください..."
 
 #: program/localization/ja_JP/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "インポートに失敗しました。アップロードしたファイルは不正な"
+msgstr "インポートに失敗しました。アップロードしたファイルは不正な "
 "vCard ファイルです。"
 
 #: program/localization/ja_JP/messages.inc:importconfirm
@@ -430,13 +430,13 @@ msgid "Missing e-mail address in selected identity."
 msgstr "選択中の個人情報にメールアドレスが含まれていません。"
 
 #: program/localization/ja_JP/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "テキスト"
+msgstr "テキスト "
 "エディターに切り替えるとすべての書式が失われます。よろしいですか?"
 
 #: program/localization/ja_JP/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
 msgstr "致命的な設定エラーが発生しました。<b>メッセージは送信されませんでした。</b>システム管理者に至急連絡してください。"
 
@@ -474,7 +474,7 @@ msgstr "宛先が多すぎます。$max 件以内にしてください。"
 
 #: program/localization/ja_JP/messages.inc:maxgroupmembersreached
 msgid "The number of group members exceeds the maximum of $max."
-msgstr "グループのメンバーが多すぎます。$max"
+msgstr "グループのメンバーが多すぎます。$max "
 "件以内にしてください。"
 
 #: program/localization/ja_JP/messages.inc:internalerror

@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: id_ID\n"
@@ -117,7 +116,7 @@ msgstr "Kontak dengan alamat e-mail ini sudah ada"
 
 #: program/localization/id_ID/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "Untuk melindungi privasi Anda, gambar-gambar diluar server diblok pada"
+msgstr "Untuk melindungi privasi Anda, gambar-gambar diluar server diblok pada "
 "pesan ini."
 
 #: program/localization/id_ID/messages.inc:encryptedmessage
@@ -245,7 +244,7 @@ msgid "Please enter a contact name or email address."
 msgstr "Tolong masukkan nama kontak atau alamat email"
 
 #: program/localization/id_ID/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
 msgstr "Proses upload belum selesai. Silahkan tunggu atau batalkan proses upload"
 
@@ -383,7 +382,7 @@ msgstr "Gagal mengimpor! Berkas terunggah bukan berkas vCard yang valid"
 
 #: program/localization/id_ID/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>Berhasil mengimpor $inserted kontak, $skipped entri"
+msgstr "<b>Berhasil mengimpor $inserted kontak, $skipped entri "
 "dilewati</b>:<p><em>$names</em></p>"
 
 #: program/localization/id_ID/messages.inc:importconfirmskipped
@@ -399,15 +398,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "kekurangan alamat e-mail pada identitas terpilih"
 
 #: program/localization/id_ID/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Beralih pada editor teks murni akan mengakibatkan semua pemformatan teks"
+msgstr "Beralih pada editor teks murni akan mengakibatkan semua pemformatan teks "
 "hilang. Lanjutkan?"
 
 #: program/localization/id_ID/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Terjadi sebuah kesalahan pengaturan. Segera hubungi administrator Anda. <b>"
+msgstr "Terjadi sebuah kesalahan pengaturan. Segera hubungi administrator Anda. <b> "
 "Pesan Anda tidak bisa terkirim.</b>"
 
 #: program/localization/id_ID/messages.inc:smtpconnerror

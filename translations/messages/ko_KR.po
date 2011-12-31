@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ko_KR\n"
@@ -85,7 +84,7 @@ msgstr "이 메일로 지정된 연락처가 이미 있습니다"
 
 #: program/localization/ko_KR/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "보안 유지를 위해, 이 메일의 외부 이미지를"
+msgstr "보안 유지를 위해, 이 메일의 외부 이미지를 "
 "차단하였습니다"
 
 #: program/localization/ko_KR/messages.inc:encryptedmessage
@@ -290,12 +289,12 @@ msgstr "가져오는 중, 기다리세요..."
 
 #: program/localization/ko_KR/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "가져오기 실패! 업로드한 파일이 유효한 vCard 파일이"
+msgstr "가져오기 실패! 업로드한 파일이 유효한 vCard 파일이 "
 "아닙니다."
 
 #: program/localization/ko_KR/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>$inserted 연락처를 성공적으로 가져왔고, $skipped"
+msgstr "<b>$inserted 연락처를 성공적으로 가져왔고, $skipped "
 "존재하는 항목은 건너뛰었습니다.</b>:<p><em>$names</em></p>"
 
 #: program/localization/ko_KR/messages.inc:opnotpermitted
@@ -307,7 +306,7 @@ msgid "Missing e-mail address in selected identity."
 msgstr "선택한 신원에 이메일 주소가 없음"
 
 #: program/localization/ko_KR/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "일반 텍스트 편집기로 바꾸면 모든 서식이 사라집니다."
+msgstr "일반 텍스트 편집기로 바꾸면 모든 서식이 사라집니다. "
 "계속할까요?"

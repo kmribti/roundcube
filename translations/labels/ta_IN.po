@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ta_IN\n"
@@ -122,7 +121,7 @@ msgstr "அடைவுகள்"
 
 #: program/localization/ta_IN/labels.inc:messagesfromto
 msgid "Messages $from to $to of $count"
-msgstr "செய்திகள் $countல் $from லிருந்து $to"
+msgstr "செய்திகள் $countல் $from லிருந்து $to "
 "வரை"
 
 #: program/localization/ta_IN/labels.inc:messagenrof
@@ -159,7 +158,7 @@ msgstr "நல்ல தேதி"
 
 #: program/localization/ta_IN/labels.inc:addtoaddressbook
 msgid "Add to address book"
-msgstr "தொடர்புகளுக்கு"
+msgstr "தொடர்புகளுக்கு "
 "சேர்க்கவும்"
 
 #: program/localization/ta_IN/labels.inc:sun
@@ -329,7 +328,7 @@ msgstr "அனுப்புனருக்கு பதிலளி"
 
 #: program/localization/ta_IN/labels.inc:replytoallmessage
 msgid "Reply to list or to sender and all recipients"
-msgstr "அனுப்புனர் மற்றும் எல்லா"
+msgstr "அனுப்புனர் மற்றும் எல்லா "
 "பெறுனர்களுக்கும் பதிலளி"
 
 #: program/localization/ta_IN/labels.inc:forwardmessage
@@ -342,7 +341,7 @@ msgstr "செய்தியை நீக்கு"
 
 #: program/localization/ta_IN/labels.inc:movemessagetotrash
 msgid "Move message to trash"
-msgstr "செய்தியை குப்பைக்கு"
+msgstr "செய்தியை குப்பைக்கு "
 "நகர்த்து"
 
 #: program/localization/ta_IN/labels.inc:printmessage
@@ -355,7 +354,7 @@ msgstr "முந்திய செய்தியை காட்டவும�
 
 #: program/localization/ta_IN/labels.inc:previousmessages
 msgid "previousmessages"
-msgstr "முந்திய செய்திகள் குழுவை"
+msgstr "முந்திய செய்திகள் குழுவை "
 "காட்டவும்"
 
 #: program/localization/ta_IN/labels.inc:firstmessage
@@ -364,7 +363,7 @@ msgstr "முதல் செய்தியை காட்டவும்"
 
 #: program/localization/ta_IN/labels.inc:firstmessages
 msgid "firstmessages"
-msgstr "முதல் செய்திகள் குழுவை"
+msgstr "முதல் செய்திகள் குழுவை "
 "காட்டவும்"
 
 #: program/localization/ta_IN/labels.inc:nextmessage
@@ -373,7 +372,7 @@ msgstr "அடுத்த செய்தியை காட்டு"
 
 #: program/localization/ta_IN/labels.inc:nextmessages
 msgid "nextmessages"
-msgstr "அடுத்த செய்திகள் குழுவை"
+msgstr "அடுத்த செய்திகள் குழுவை "
 "காட்டு"
 
 #: program/localization/ta_IN/labels.inc:lastmessage
@@ -382,12 +381,12 @@ msgstr "கடைசி செய்தியை காட்டு"
 
 #: program/localization/ta_IN/labels.inc:lastmessages
 msgid "lastmessages"
-msgstr "கடைசி செய்திகள் குழுவை"
+msgstr "கடைசி செய்திகள் குழுவை "
 "காட்டு"
 
 #: program/localization/ta_IN/labels.inc:backtolist
 msgid "Back to message list"
-msgstr "செய்தி பட்டியலுக்கு"
+msgstr "செய்தி பட்டியலுக்கு "
 "செல்லவும்"
 
 #: program/localization/ta_IN/labels.inc:viewsource
@@ -408,12 +407,12 @@ msgstr "படிக்காததாக குறியிடு"
 
 #: program/localization/ta_IN/labels.inc:markflagged
 msgid "As flagged"
-msgstr "நட்சத்திரமிட்டதாக"
+msgstr "நட்சத்திரமிட்டதாக "
 "குறியிடு"
 
 #: program/localization/ta_IN/labels.inc:markunflagged
 msgid "As unflagged"
-msgstr "நட்சத்திரமிடாததாக"
+msgstr "நட்சத்திரமிடாததாக "
 "குறியிடு"
 
 #: program/localization/ta_IN/labels.inc:messageactions
@@ -546,7 +545,7 @@ msgstr "திருத்துவதை தொடரவும்"
 
 #: program/localization/ta_IN/labels.inc:revertto
 msgid "Revert to"
-msgstr "முந்திய நிலைக்கு"
+msgstr "முந்திய நிலைக்கு "
 "திரும்பவும்"
 
 #: program/localization/ta_IN/labels.inc:attachments
@@ -591,7 +590,7 @@ msgstr "படங்களை காட்டு"
 
 #: program/localization/ta_IN/labels.inc:alwaysshow
 msgid "Always show images from $sender"
-msgstr "$-னிடமிருந்து வரும் படங்களை"
+msgstr "$-னிடமிருந்து வரும் படங்களை "
 "காட்டு"
 
 #: program/localization/ta_IN/labels.inc:htmltoggle
@@ -604,7 +603,7 @@ msgstr "எளிய உரை"
 
 #: program/localization/ta_IN/labels.inc:savesentmessagein
 msgid "Save sent message in"
-msgstr "அனுப்பிய அஞ்சலை இங்கு"
+msgstr "அனுப்பிய அஞ்சலை இங்கு "
 "சேமிக்கவும்"
 
 #: program/localization/ta_IN/labels.inc:dontsave
@@ -613,7 +612,7 @@ msgstr "சேமிக்காதே"
 
 #: program/localization/ta_IN/labels.inc:maxuploadsize
 msgid "Maximum allowed file size is $size"
-msgstr "அனுமதிக்கப்படும் அதிகபட்ச"
+msgstr "அனுமதிக்கப்படும் அதிகபட்ச "
 "கோப்பு அளவு $"
 
 #: program/localization/ta_IN/labels.inc:addcc
@@ -626,16 +625,16 @@ msgstr "மறை நகல் சேர்"
 
 #: program/localization/ta_IN/labels.inc:addreplyto
 msgid "Add Reply-To"
-msgstr "பதிலளிக்க வேண்டியவர்களை"
+msgstr "பதிலளிக்க வேண்டியவர்களை "
 "சேர்"
 
 #: program/localization/ta_IN/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "இந்த செய்தியின் அனுப்புனர்"
-"இதை படித்தவுடன்"
-"அறிவிக்கும்படி கேட்டார்."
-"அறிவிக்க"
+msgstr "இந்த செய்தியின் அனுப்புனர் "
+"இதை படித்தவுடன் "
+"அறிவிக்கும்படி கேட்டார். "
+"அறிவிக்க "
 "விரும்புகிறீர்களா ?"
 
 #: program/localization/ta_IN/labels.inc:receiptread
@@ -644,17 +643,17 @@ msgstr "திரும்பு சீட்டு (படி)"
 
 #: program/localization/ta_IN/labels.inc:yourmessage
 msgid "This is a Return Receipt for your message"
-msgstr "இது உங்கள் செய்தியின்"
+msgstr "இது உங்கள் செய்தியின் "
 "திரும்பு சீட்டு"
 
 #: program/localization/ta_IN/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "குறிப்பு: இந்த ஒப்புகை"
-"பெறுனரிடம் செய்தியை"
-"காட்டியதற்காக வருகிறது."
-"அவர் அதை படித்ததற்கு எந்த"
+msgstr "குறிப்பு: இந்த ஒப்புகை "
+"பெறுனரிடம் செய்தியை "
+"காட்டியதற்காக வருகிறது. "
+"அவர் அதை படித்ததற்கு எந்த "
 "உத்திரவாதமும் இல்லை"
 
 #: program/localization/ta_IN/labels.inc:name
@@ -699,12 +698,12 @@ msgstr "நீக்கு"
 
 #: program/localization/ta_IN/labels.inc:newcontact
 msgid "Create new contact card"
-msgstr "புது தொடர்பு அட்டையை"
+msgstr "புது தொடர்பு அட்டையை "
 "உருவாக்கு"
 
 #: program/localization/ta_IN/labels.inc:deletecontact
 msgid "Delete selected contacts"
-msgstr "தேர்ந்தெடுத்த தொடர்புகளை"
+msgstr "தேர்ந்தெடுத்த தொடர்புகளை "
 "நீக்கு"
 
 #: program/localization/ta_IN/labels.inc:composeto
@@ -713,7 +712,7 @@ msgstr "இவர்-கு அஞ்சல் எழுது"
 
 #: program/localization/ta_IN/labels.inc:contactsfromto
 msgid "Contacts $from to $to of $count"
-msgstr "தொடர்புகள் $countல் $from"
+msgstr "தொடர்புகள் $countல் $from "
 "லிருந்து $to வரை"
 
 #: program/localization/ta_IN/labels.inc:print
@@ -726,7 +725,7 @@ msgstr "ஏற்றுமதி"
 
 #: program/localization/ta_IN/labels.inc:exportvcards
 msgid "Export contacts in vCard format"
-msgstr "தொடர்புகளை vCard வடிவத்தில்"
+msgstr "தொடர்புகளை vCard வடிவத்தில் "
 "ஏற்றுமதி செய்யவும்"
 
 #: program/localization/ta_IN/labels.inc:previouspage
@@ -759,29 +758,29 @@ msgstr "இறக்குமதி"
 
 #: program/localization/ta_IN/labels.inc:importcontacts
 msgid "Import contacts"
-msgstr "தொடர்புகளை இறக்குமதி"
+msgstr "தொடர்புகளை இறக்குமதி "
 "செய்யவும்"
 
 #: program/localization/ta_IN/labels.inc:importfromfile
 msgid "Import from file:"
-msgstr "இந்த கோப்பிலிருந்து"
+msgstr "இந்த கோப்பிலிருந்து "
 "இறக்குமதி செய்யவும்:"
 
 #: program/localization/ta_IN/labels.inc:importreplace
 msgid "Replace the entire address book"
-msgstr "எல்லா தொடர்புகளையும்"
+msgstr "எல்லா தொடர்புகளையும் "
 "மாற்றி அமை"
 
 #: program/localization/ta_IN/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "நீங்கள் ஏற்கனவே உள்ள"
-"தொடர்புகளை"
-"ஏற்றலாம்.<br/>நாங்கள்"
-"முகவரியை <a"
-"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> தரவு"
-"வடிவத்தில் ஏற்றுவதை"
+msgstr "நீங்கள் ஏற்கனவே உள்ள "
+"தொடர்புகளை "
+"ஏற்றலாம்.<br/>நாங்கள் "
+"முகவரியை <a "
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> தரவு "
+"வடிவத்தில் ஏற்றுவதை "
 "ஆதரிக்கிறோம்"
 
 #: program/localization/ta_IN/labels.inc:done
@@ -802,7 +801,7 @@ msgstr "பயனர் விருப்பங்கள்"
 
 #: program/localization/ta_IN/labels.inc:editpreferences
 msgid "Edit user preferences"
-msgstr "பயனர் விருப்பங்களை"
+msgstr "பயனர் விருப்பங்களை "
 "திருத்து"
 
 #: program/localization/ta_IN/labels.inc:identities
@@ -811,8 +810,8 @@ msgstr "அடையாளங்கள்"
 
 #: program/localization/ta_IN/labels.inc:manageidentities
 msgid "Manage identities for this account"
-msgstr "இந்த கணக்கிற்கான"
-"அடையாளங்களை"
+msgstr "இந்த கணக்கிற்கான "
+"அடையாளங்களை "
 "நிற்வாகிக்கவும்"
 
 #: program/localization/ta_IN/labels.inc:newidentity
@@ -873,12 +872,12 @@ msgstr "முகப்பு தோற்றம்"
 
 #: program/localization/ta_IN/labels.inc:logoutclear
 msgid "Clear Trash on logout"
-msgstr "வெளியேறும் போது குப்பையை"
+msgstr "வெளியேறும் போது குப்பையை "
 "காலி செய்"
 
 #: program/localization/ta_IN/labels.inc:logoutcompact
 msgid "Compact Inbox on logout"
-msgstr "வெளியேறும் போது இன்பாக்ஸை"
+msgstr "வெளியேறும் போது இன்பாக்ஸை "
 "குறுக்கவும்"
 
 #: program/localization/ta_IN/labels.inc:uisettings
@@ -911,12 +910,12 @@ msgstr "தவிர்"
 
 #: program/localization/ta_IN/labels.inc:readwhendeleted
 msgid "Mark the message as read on delete"
-msgstr "செய்தியை நீக்கும் போது"
+msgstr "செய்தியை நீக்கும் போது "
 "படித்ததாக குறி"
 
 #: program/localization/ta_IN/labels.inc:flagfordeletion
 msgid "Flag the message for deletion instead of delete"
-msgstr "நீக்குவதற்கு பதிலாக"
+msgstr "நீக்குவதற்கு பதிலாக "
 "நீக்குவதாக நட்சத்திரமிடு"
 
 #: program/localization/ta_IN/labels.inc:skipdeleted
@@ -925,12 +924,12 @@ msgstr "நீக்கிய செய்திகளை காட்டாத�
 
 #: program/localization/ta_IN/labels.inc:showremoteimages
 msgid "Display remote inline images"
-msgstr "தொலை தூர துணை படங்களை"
+msgstr "தொலை தூர துணை படங்களை "
 "காட்டு"
 
 #: program/localization/ta_IN/labels.inc:fromknownsenders
 msgid "from known senders"
-msgstr "தெரிந்த"
+msgstr "தெரிந்த "
 "அனுப்புனரிடமிருந்து"
 
 #: program/localization/ta_IN/labels.inc:always
@@ -939,8 +938,8 @@ msgstr "எப்போதும்"
 
 #: program/localization/ta_IN/labels.inc:showinlineimages
 msgid "Display attached images below the message"
-msgstr "இணைத்த படங்களை"
-"செய்திகளுக்கு கீழே"
+msgstr "இணைத்த படங்களை "
+"செய்திகளுக்கு கீழே "
 "காட்டவும்"
 
 #: program/localization/ta_IN/labels.inc:autosavedraft
@@ -949,12 +948,12 @@ msgstr "தானாக வரைவுகளை சேமி"
 
 #: program/localization/ta_IN/labels.inc:everynminutes
 msgid "every $n minute(s)"
-msgstr "ஒவ்வொரு $n"
+msgstr "ஒவ்வொரு $n "
 "நிமிடங்களுக்கும்"
 
 #: program/localization/ta_IN/labels.inc:keepalive
 msgid "Check for new messages on"
-msgstr "புது செய்திக்கு இங்கு சரி"
+msgstr "புது செய்திக்கு இங்கு சரி "
 "பார்"
 
 #: program/localization/ta_IN/labels.inc:never
@@ -991,17 +990,17 @@ msgstr "மேம்பட்ட விருப்பங்கள்"
 
 #: program/localization/ta_IN/labels.inc:focusonnewmessage
 msgid "Focus browser window on new message"
-msgstr "உலாவி சாளரத்தை புது"
+msgstr "உலாவி சாளரத்தை புது "
 "செய்திக்காக கவனி"
 
 #: program/localization/ta_IN/labels.inc:checkallfolders
 msgid "Check all folders for new messages"
-msgstr "புது செய்திகளுக்காக எல்லா"
+msgstr "புது செய்திகளுக்காக எல்லா "
 "அடைவுகளையும் சரிபார்"
 
 #: program/localization/ta_IN/labels.inc:displaynext
 msgid "After message delete/move display the next message"
-msgstr "செய்தியை நீக்கு/நகர் பிறகு"
+msgstr "செய்தியை நீக்கு/நகர் பிறகு "
 "அடுத்த செய்தியை காட்டு"
 
 #: program/localization/ta_IN/labels.inc:mainoptions
@@ -1021,7 +1020,7 @@ msgid "New Message"
 msgstr "புது செய்தி"
 
 #: program/localization/ta_IN/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "விருப்பங்களை பட்டியலிடு"
 
 #: program/localization/ta_IN/labels.inc:signatureoptions
@@ -1034,19 +1033,19 @@ msgstr "பதிலளிக்கும் போது"
 
 #: program/localization/ta_IN/labels.inc:replytopposting
 msgid "start new message above original"
-msgstr "புது செய்தியை அசலின் மேல்"
+msgstr "புது செய்தியை அசலின் மேல் "
 "துவக்கு"
 
 #: program/localization/ta_IN/labels.inc:replybottomposting
 msgid "start new message below original"
-msgstr "புது செய்தியை அசலின் கீழ்"
+msgstr "புது செய்தியை அசலின் கீழ் "
 "துவக்கு"
 
 #: program/localization/ta_IN/labels.inc:replyremovesignature
 msgid "When replying remove original signature from message"
-msgstr "பதிலளிக்கும் போது அசல்"
-"கையெழுத்தை"
-"செய்தியிலிருந்து"
+msgstr "பதிலளிக்கும் போது அசல் "
+"கையெழுத்தை "
+"செய்தியிலிருந்து "
 "நீக்கவும்"
 
 #: program/localization/ta_IN/labels.inc:autoaddsignature
@@ -1059,13 +1058,13 @@ msgstr "புது செய்தி மட்டும்"
 
 #: program/localization/ta_IN/labels.inc:replyandforwardonly
 msgid "replies and forwards only"
-msgstr "பதிலளிப்பு முன்அனுப்பு"
+msgstr "பதிலளிப்பு முன்அனுப்பு "
 "மட்டும்"
 
 #: program/localization/ta_IN/labels.inc:replysignaturepos
 msgid "When replying or forwarding place signature"
-msgstr "பதிலளிக்கும் போதும்"
-"முன்அனுப்பும் போதும்"
+msgstr "பதிலளிக்கும் போதும் "
+"முன்அனுப்பும் போதும் "
 "கையோப்பமிடு"
 
 #: program/localization/ta_IN/labels.inc:belowquote

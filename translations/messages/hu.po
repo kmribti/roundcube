@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: hu_HU\n"
@@ -260,9 +259,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Adja meg a kapcsolat nevét vagy e-mail címét"
 
 #: program/localization/hu_HU/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Még nem került feltöltésre minden csatolmány. Kérem várjon vagy"
+msgstr "Még nem került feltöltésre minden csatolmány. Kérem várjon vagy "
 "állítsa le a feltöltést!"
 
 #: program/localization/hu_HU/messages.inc:searchsuccessful
@@ -411,12 +410,12 @@ msgstr "Importálás folyamatban, kérem várjon..."
 
 #: program/localization/hu_HU/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "Az importálás sikertelen! A feltöltött állomány nem egy érvényes"
+msgstr "Az importálás sikertelen! A feltöltött állomány nem egy érvényes "
 "vCard fájl."
 
 #: program/localization/hu_HU/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>Sikeresen importálásra került $inserted kapcsolat, kihagyva $skipped"
+msgstr "<b>Sikeresen importálásra került $inserted kapcsolat, kihagyva $skipped "
 "már létező bejegyzés</b>:<p><em>$names</em></p>"
 
 #: program/localization/hu_HU/messages.inc:importconfirmskipped
@@ -432,15 +431,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "A kiválasztott feladónál hiányzik az e-mail cím!"
 
 #: program/localization/hu_HU/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Az egyszerű szöveges formátumra való váltás az összes formázás"
+msgstr "Az egyszerű szöveges formátumra való váltás az összes formázás "
 "elvesztésével jár. Biztosan folytatja?"
 
 #: program/localization/hu_HU/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Végzetes konfigurációs hiba történt, azonnal lépjen kapcsolatba az"
+msgstr "Végzetes konfigurációs hiba történt, azonnal lépjen kapcsolatba az "
 "üzemeltetővel. <b>Az üzenet nem küldhető el.</b>"
 
 #: program/localization/hu_HU/messages.inc:smtpconnerror
@@ -457,7 +456,7 @@ msgstr "SMTP hiba ($code): Nem sikerült a feladó beállítása: \"$from\" ($ms
 
 #: program/localization/hu_HU/messages.inc:smtptoerror
 msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
-msgstr "SMTP hiba ($code): Nem sikerült a következő címzett hozzáadása: \"$to\""
+msgstr "SMTP hiba ($code): Nem sikerült a következő címzett hozzáadása: \"$to\" "
 "($msg)"
 
 #: program/localization/hu_HU/messages.inc:smtprecipientserror
@@ -578,5 +577,5 @@ msgstr "Az üzenetben helyesírási hibák találhatók"
 
 #: program/localization/hu_HU/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
-msgstr "Nem sikerült a mappa létrehozása/mozgatása a kijelölt mappába. Nincs"
+msgstr "Nem sikerült a mappa létrehozása/mozgatása a kijelölt mappába. Nincs "
 "jogosultsága a művelethez!"

@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: eu_ES\n"
@@ -566,9 +565,9 @@ msgid "Add Reply-To"
 msgstr "Gehitu erantzun-honi"
 
 #: program/localization/eu_ES/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Mezu honen bidaltzaileak mezua irakurtzen duzunean jakinaraztea eskatu du."
+msgstr "Mezu honen bidaltzaileak mezua irakurtzen duzunean jakinaraztea eskatu du. "
 "Bidaltzailea ohartu nahi duzu?"
 
 #: program/localization/eu_ES/labels.inc:receiptread
@@ -580,11 +579,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "Hau zure mezuaren Itzulketa Agiria da"
 
 #: program/localization/eu_ES/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Oharra: Agiri honek hartzailearen ordenagailuan mezua ikusi dala adierazten"
-"du besterik gabe. Honek ez du esan nahi hartzaileak mezua irakurri edo/eta"
+msgstr "Oharra: Agiri honek hartzailearen ordenagailuan mezua ikusi dala adierazten "
+"du besterik gabe. Honek ez du esan nahi hartzaileak mezua irakurri edo/eta "
 "ulertu duenik:"
 
 #: program/localization/eu_ES/labels.inc:name

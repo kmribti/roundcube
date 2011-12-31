@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: et_EE\n"
@@ -121,7 +120,7 @@ msgstr "Sinu privaatsuse kaitsmiseks on selles kirjas välised pildid blokeeritu
 
 #: program/localization/et_EE/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
-msgstr "See on krüpteeritud kiri ja kahjuks pole seda võimalik näidata."
+msgstr "See on krüpteeritud kiri ja kahjuks pole seda võimalik näidata. "
 "Andestust!"
 
 #: program/localization/et_EE/messages.inc:nocontactsfound
@@ -245,9 +244,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Palun sisesta kontakti nimi või e-posti aadress"
 
 #: program/localization/et_EE/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Kõiki manuseid ei ole veel üles laaditud. Palun oota või tühista"
+msgstr "Kõiki manuseid ei ole veel üles laaditud. Palun oota või tühista "
 "üleslaadimine."
 
 #: program/localization/et_EE/messages.inc:searchsuccessful
@@ -384,7 +383,7 @@ msgstr "Import nurjus! Üleslaaditud fail ei ole vCard formaadis."
 
 #: program/localization/et_EE/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>Edukalt imporditud $inserted kontakti, $skipped olemasolevat sissekannet"
+msgstr "<b>Edukalt imporditud $inserted kontakti, $skipped olemasolevat sissekannet "
 "vahele jäetud</b>:<p><em>$names</em></p>"
 
 #: program/localization/et_EE/messages.inc:importconfirmskipped
@@ -400,15 +399,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Valitud identiteedil puudub e-posti aadress"
 
 #: program/localization/et_EE/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Klaarteksti redaktorile lülitamine kaotab kogu teksti vorminduse. Soovid"
+msgstr "Klaarteksti redaktorile lülitamine kaotab kogu teksti vorminduse. Soovid "
 "jätkata?"
 
 #: program/localization/et_EE/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Viga seadistustes. Võta kohe oma süsteemiadministraatoriga ühendust."
+msgstr "Viga seadistustes. Võta kohe oma süsteemiadministraatoriga ühendust. "
 "<b>Sinu kirja polnud võimalik ära saata.</b>"
 
 #: program/localization/et_EE/messages.inc:smtpconnerror

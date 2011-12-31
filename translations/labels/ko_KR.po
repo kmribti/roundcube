@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ko_KR\n"
@@ -586,9 +585,9 @@ msgid "Add Reply-To"
 msgstr "회신주소 넣기"
 
 #: program/localization/ko_KR/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "이 메시지를 보낸 분이 읽음 확인 요청을 했습니다."
+msgstr "이 메시지를 보낸 분이 읽음 확인 요청을 했습니다. "
 "확인할까요?"
 
 #: program/localization/ko_KR/labels.inc:receiptread
@@ -600,11 +599,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "당신의 메시지를 읽었습니다."
 
 #: program/localization/ko_KR/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "주의: 이 확인은 이 메시지가 수신자의 컴퓨터에 표시된"
-"것만을 의미합니다. 수신자가 반드시 이 메일을 읽거나"
+msgstr "주의: 이 확인은 이 메시지가 수신자의 컴퓨터에 표시된 "
+"것만을 의미합니다. 수신자가 반드시 이 메일을 읽거나 "
 "이해했다는 것은 아닙니다."
 
 #: program/localization/ko_KR/labels.inc:name
@@ -716,12 +715,12 @@ msgid "Replace the entire address book"
 msgstr "전체 주소록을 바꿈"
 
 #: program/localization/ko_KR/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "연락처들을 가지고 있는 주소록에서 가져올 수"
-"있습니다.<br/> 현재는 <a"
-"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> 포맷에서"
+msgstr "연락처들을 가지고 있는 주소록에서 가져올 수 "
+"있습니다.<br/> 현재는 <a "
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> 포맷에서 "
 "가져오기를 지원합니다."
 
 #: program/localization/ko_KR/labels.inc:done

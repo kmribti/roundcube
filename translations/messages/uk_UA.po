@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: uk_UA\n"
@@ -45,12 +44,12 @@ msgstr "Помилка бази даних!"
 
 #: program/localization/uk_UA/messages.inc:errorreadonly
 msgid "Unable to perform operation. Folder is read-only."
-msgstr "Неможливо виконати операцію. Папка"
+msgstr "Неможливо виконати операцію. Папка "
 "доступна тільки для читання."
 
 #: program/localization/uk_UA/messages.inc:errornoperm
 msgid "Unable to perform operation. Permission denied."
-msgstr "Неможливо виконати операцію. Доступ"
+msgstr "Неможливо виконати операцію. Доступ "
 "заборонено"
 
 #: program/localization/uk_UA/messages.inc:invalidrequest
@@ -111,12 +110,12 @@ msgstr "Збережено"
 
 #: program/localization/uk_UA/messages.inc:addedsuccessfully
 msgid "Contact added successfully to address book."
-msgstr "Контакт успішно доданий до списку"
+msgstr "Контакт успішно доданий до списку "
 "контактів"
 
 #: program/localization/uk_UA/messages.inc:contactexists
 msgid "A contact with the same e-mail address already exists."
-msgstr "Контакт з такою електронною адресою вже"
+msgstr "Контакт з такою електронною адресою вже "
 "існує"
 
 #: program/localization/uk_UA/messages.inc:contactnameexists
@@ -125,12 +124,12 @@ msgstr "Контакт з таким самим іменем вже існує."
 
 #: program/localization/uk_UA/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "З метою безпеки зображення з зовнішніх"
+msgstr "З метою безпеки зображення з зовнішніх "
 "джерел заблоковано у цьому листі."
 
 #: program/localization/uk_UA/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
-msgstr "Лист зашифровано і не може бути"
+msgstr "Лист зашифровано і не може бути "
 "відображено."
 
 #: program/localization/uk_UA/messages.inc:nocontactsfound
@@ -143,7 +142,7 @@ msgstr "Запитаний контакт не знайдений"
 
 #: program/localization/uk_UA/messages.inc:contactsearchonly
 msgid "Enter some search terms to find contacts"
-msgstr "Введіть деякі критерії пошуку, щоб"
+msgstr "Введіть деякі критерії пошуку, щоб "
 "знайти контакти"
 
 #: program/localization/uk_UA/messages.inc:sendingfailed
@@ -152,12 +151,12 @@ msgstr "Не вдалося відправити листа"
 
 #: program/localization/uk_UA/messages.inc:senttooquickly
 msgid "Please wait $sec sec(s). before sending this message."
-msgstr "Будь ласка, зачекайте $sec секунд для"
+msgstr "Будь ласка, зачекайте $sec секунд для "
 "відправки листа"
 
 #: program/localization/uk_UA/messages.inc:errorsavingsent
 msgid "An error occured while saving sent message."
-msgstr "Помилка при збереженні відправленого"
+msgstr "Помилка при збереженні відправленого "
 "листа"
 
 #: program/localization/uk_UA/messages.inc:errorsaving
@@ -182,7 +181,7 @@ msgstr "Не вдалося позначити листи"
 
 #: program/localization/uk_UA/messages.inc:deletecontactconfirm
 msgid "Do you really want to delete selected contact(s)?"
-msgstr "Ви дійсно бажаєте видалити вибрані"
+msgstr "Ви дійсно бажаєте видалити вибрані "
 "контакти?"
 
 #: program/localization/uk_UA/messages.inc:deletegroupconfirm
@@ -191,7 +190,7 @@ msgstr "Ви дійсно хочете видалити обрану групу?
 
 #: program/localization/uk_UA/messages.inc:deletemessagesconfirm
 msgid "Do you really want to delete selected message(s)?"
-msgstr "Ви дійсно бажаєте видалити вибрані"
+msgstr "Ви дійсно бажаєте видалити вибрані "
 "листи?"
 
 #: program/localization/uk_UA/messages.inc:deletefolderconfirm
@@ -200,7 +199,7 @@ msgstr "Ви дійсно бажаєте видалити цю папку?"
 
 #: program/localization/uk_UA/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
-msgstr "Ви дійсно бажаєте видалити всі листи у"
+msgstr "Ви дійсно бажаєте видалити всі листи у "
 "цій папці?"
 
 #: program/localization/uk_UA/messages.inc:contactdeleting
@@ -233,7 +232,7 @@ msgstr "Заповнено не всі поля"
 
 #: program/localization/uk_UA/messages.inc:noemailwarning
 msgid "Please enter a valid email address."
-msgstr "Будь ласка, введіть коректну адресу"
+msgstr "Будь ласка, введіть коректну адресу "
 "електронної пошти"
 
 #: program/localization/uk_UA/messages.inc:nonamewarning
@@ -246,17 +245,17 @@ msgstr "Будь ласка, введіть розмір сторінки"
 
 #: program/localization/uk_UA/messages.inc:nosenderwarning
 msgid "Please enter sender e-mail address."
-msgstr "Будь ласка, введіть адресу електронної"
+msgstr "Будь ласка, введіть адресу електронної "
 "пошти відправника"
 
 #: program/localization/uk_UA/messages.inc:norecipientwarning
 msgid "Please enter at least one recipient."
-msgstr "Будь ласка, вкажіть принаймні одного"
+msgstr "Будь ласка, вкажіть принаймні одного "
 "отримувача"
 
 #: program/localization/uk_UA/messages.inc:nosubjectwarning
 msgid "The \"Subject\" field is empty. Would you like to enter one now?"
-msgstr "Не вказано тему листа. Бажаєте вказати її"
+msgstr "Не вказано тему листа. Бажаєте вказати її "
 "зараз?"
 
 #: program/localization/uk_UA/messages.inc:nobodywarning
@@ -265,7 +264,7 @@ msgstr "Відправити листа без тексту?"
 
 #: program/localization/uk_UA/messages.inc:notsentwarning
 msgid "Message has not been sent. Do you want to discard your message?"
-msgstr "Лист не було відправлено. Ви бажаєте"
+msgstr "Лист не було відправлено. Ви бажаєте "
 "відхилити відправку?"
 
 #: program/localization/uk_UA/messages.inc:noldapserver
@@ -274,14 +273,14 @@ msgstr "Будь ласка, виберіть LDAP сервер для пошу�
 
 #: program/localization/uk_UA/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
-msgstr "Будь ласка, введіть ім`я чи електронну"
+msgstr "Будь ласка, введіть ім`я чи електронну "
 "адресу"
 
 #: program/localization/uk_UA/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Деякі вкладення не було завантажено."
-"Будь ласка, почекайте або відмініть"
+msgstr "Деякі вкладення не було завантажено. "
+"Будь ласка, почекайте або відмініть "
 "завантаження."
 
 #: program/localization/uk_UA/messages.inc:searchsuccessful
@@ -338,7 +337,7 @@ msgstr "Видалення форматування..."
 
 #: program/localization/uk_UA/messages.inc:messageopenerror
 msgid "Could not load message from server."
-msgstr "Не вдалося завантажити повідомлення з"
+msgstr "Не вдалося завантажити повідомлення з "
 "сервера"
 
 #: program/localization/uk_UA/messages.inc:fileuploaderror
@@ -347,7 +346,7 @@ msgstr "Не вдалося вкласти файл"
 
 #: program/localization/uk_UA/messages.inc:filesizeerror
 msgid "The uploaded file exceeds the maximum size of $size."
-msgstr "Розмір вибраного файлу перевищує"
+msgstr "Розмір вибраного файлу перевищує "
 "максимально дозволений ($size)"
 
 #: program/localization/uk_UA/messages.inc:copysuccess
@@ -360,7 +359,7 @@ msgstr "Не вдалося скопіювати жодну адресу"
 
 #: program/localization/uk_UA/messages.inc:sourceisreadonly
 msgid "This address source is read only."
-msgstr "Дане джерело адрес доступне лише для"
+msgstr "Дане джерело адрес доступне лише для "
 "читання"
 
 #: program/localization/uk_UA/messages.inc:errorsavingcontact
@@ -401,12 +400,12 @@ msgstr "Повідомлення про прочитання відправле�
 
 #: program/localization/uk_UA/messages.inc:errorsendingreceipt
 msgid "Could not send the receipt."
-msgstr "Не вдалося відправити повідомлення про"
+msgstr "Не вдалося відправити повідомлення про "
 "прочитання"
 
 #: program/localization/uk_UA/messages.inc:nodeletelastidentity
 msgid "You cannot delete this identity, it's your last one."
-msgstr "Ви не можете видалити цей профіль, він у"
+msgstr "Ви не можете видалити цей профіль, він у "
 "Вас останній."
 
 #: program/localization/uk_UA/messages.inc:forbiddencharacter
@@ -419,7 +418,7 @@ msgstr "Виберіть файл для завантаження"
 
 #: program/localization/uk_UA/messages.inc:addresswriterror
 msgid "The selected address book is not writeable."
-msgstr "Обрана адресна книга недоступна для"
+msgstr "Обрана адресна книга недоступна для "
 "запису"
 
 #: program/localization/uk_UA/messages.inc:contactaddedtogroup
@@ -436,12 +435,12 @@ msgstr "Імпортування, будь ласка, зачекайте..."
 
 #: program/localization/uk_UA/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "Імпорт завершився невдало! Завантажений"
+msgstr "Імпорт завершився невдало! Завантажений "
 "файл не є правильним файлом vCard"
 
 #: program/localization/uk_UA/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>Успішно імпортовано $inserted контактів,"
+msgstr "<b>Успішно імпортовано $inserted контактів, "
 "пропущено $skipped існуючих</b>:<p><em>$names</em></p>"
 
 #: program/localization/uk_UA/messages.inc:importconfirmskipped
@@ -454,51 +453,51 @@ msgstr "Дія заборонена!"
 
 #: program/localization/uk_UA/messages.inc:nofromaddress
 msgid "Missing e-mail address in selected identity."
-msgstr "В обраному профілі не вистачає адреси"
+msgstr "В обраному профілі не вистачає адреси "
 "електронної пошти"
 
 #: program/localization/uk_UA/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Перемикання в режим звичайного тексту"
-"спричинить втрату всього форматування."
+msgstr "Перемикання в режим звичайного тексту "
+"спричинить втрату всього форматування. "
 "Продовжити?"
 
 #: program/localization/uk_UA/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Помилка конфігурації. Негайно"
-"зверніться до адміністратора. <b>Ваше"
+msgstr "Помилка конфігурації. Негайно "
+"зверніться до адміністратора. <b>Ваше "
 "повідомлення не буде відправлено.</b>"
 
 #: program/localization/uk_UA/messages.inc:smtpconnerror
 msgid "SMTP Error ($code): Connection to server failed."
-msgstr "Помилка SMTP-сервера ($code): Не вдалося"
+msgstr "Помилка SMTP-сервера ($code): Не вдалося "
 "з'єднатися з сервером"
 
 #: program/localization/uk_UA/messages.inc:smtpautherror
 msgid "SMTP Error ($code): Authentication failed."
-msgstr "Помилка SMTP-сервера ($code): Невдала спроба"
+msgstr "Помилка SMTP-сервера ($code): Невдала спроба "
 "автентифікації"
 
 #: program/localization/uk_UA/messages.inc:smtpfromerror
 msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
-msgstr "Помилка SMTP-сервера ($code): Не вдалося"
+msgstr "Помилка SMTP-сервера ($code): Не вдалося "
 "вказати відправника \"$from\" ($msg)"
 
 #: program/localization/uk_UA/messages.inc:smtptoerror
 msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
-msgstr "Помилка SMTP-сервера ($code): Не вдалося"
+msgstr "Помилка SMTP-сервера ($code): Не вдалося "
 "додати отримувача \"$to\" ($msg)"
 
 #: program/localization/uk_UA/messages.inc:smtprecipientserror
 msgid "SMTP Error: Unable to parse recipients list."
-msgstr "Помилка SMTP: Не вдалося обробити список"
+msgstr "Помилка SMTP: Не вдалося обробити список "
 "отримувачів"
 
 #: program/localization/uk_UA/messages.inc:smtpdsnerror
 msgid "smtpdsnerror"
-msgstr "Помилка SMTP: Не підтримуються"
+msgstr "Помилка SMTP: Не підтримуються "
 "повідомлення про статус доставки"
 
 #: program/localization/uk_UA/messages.inc:smtperror
@@ -511,17 +510,17 @@ msgstr "Невірна електронна адреса: $email"
 
 #: program/localization/uk_UA/messages.inc:toomanyrecipients
 msgid "Too many recipients. Reduce the number of recipients to $max."
-msgstr "Занадто багато отримувачів. Зменшіть їх"
+msgstr "Занадто багато отримувачів. Зменшіть їх "
 "число до $max."
 
 #: program/localization/uk_UA/messages.inc:maxgroupmembersreached
 msgid "The number of group members exceeds the maximum of $max."
-msgstr "Число адрес у групі перевищило максимум"
+msgstr "Число адрес у групі перевищило максимум "
 "у $max."
 
 #: program/localization/uk_UA/messages.inc:internalerror
 msgid "An internal error occured. Please try again."
-msgstr "Виникла внутрішня помилка. Будь ласка,"
+msgstr "Виникла внутрішня помилка. Будь ласка, "
 "спробуйте ще раз"
 
 #: program/localization/uk_UA/messages.inc:contactdelerror
@@ -534,7 +533,7 @@ msgstr "Контакт(и) видалено успішно"
 
 #: program/localization/uk_UA/messages.inc:contactrestoreerror
 msgid "Could not restore deleted contact(s)."
-msgstr "Неможливо відновити видалений(і)"
+msgstr "Неможливо відновити видалений(і) "
 "контакт(и)."
 
 #: program/localization/uk_UA/messages.inc:contactrestored
@@ -587,12 +586,12 @@ msgstr "Лист(и) помічено успішно"
 
 #: program/localization/uk_UA/messages.inc:autocompletechars
 msgid "Enter at least $min characters for autocompletion."
-msgstr "Введіть щонайменьше $min символів для"
+msgstr "Введіть щонайменьше $min символів для "
 "автозаповнення"
 
 #: program/localization/uk_UA/messages.inc:autocompletemore
 msgid "More matching entries found. Please type more characters."
-msgstr "Знайдено багато відповідних записів."
+msgstr "Знайдено багато відповідних записів. "
 "Будь ласка введіть більше символів."
 
 #: program/localization/uk_UA/messages.inc:namecannotbeempty
@@ -617,11 +616,11 @@ msgstr "Невірний формат зображення"
 
 #: program/localization/uk_UA/messages.inc:mispellingsfound
 msgid "Spelling errors detected in the message."
-msgstr "Знайдено орфографічні помилки у"
+msgstr "Знайдено орфографічні помилки у "
 "повідомленні."
 
 #: program/localization/uk_UA/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
-msgstr "Неможливо створити/перемістити папку до"
-"обраної батьківської папки. Нема прав"
+msgstr "Неможливо створити/перемістити папку до "
+"обраної батьківської папки. Нема прав "
 "доступу."

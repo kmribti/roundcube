@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: si_LK\n"
@@ -258,7 +257,7 @@ msgstr "කලින් පනිවුඩය පෙන්නන්න"
 
 #: program/localization/si_LK/labels.inc:previousmessages
 msgid "previousmessages"
-msgstr "කලින් පනිවුඩ කට්ටලය"
+msgstr "කලින් පනිවුඩ කට්ටලය "
 "පෙන්නන්න"
 
 #: program/localization/si_LK/labels.inc:firstmessage
@@ -267,7 +266,7 @@ msgstr "පළමුවන පනිවුඩය පෙන්නන්න"
 
 #: program/localization/si_LK/labels.inc:firstmessages
 msgid "firstmessages"
-msgstr "පළමුවන පනිවුඩ කට්ටලය"
+msgstr "පළමුවන පනිවුඩ කට්ටලය "
 "පෙන්නන්න"
 
 #: program/localization/si_LK/labels.inc:nextmessage
@@ -284,7 +283,7 @@ msgstr "අවසාන පනිවුඩය පෙන්නන්න"
 
 #: program/localization/si_LK/labels.inc:lastmessages
 msgid "lastmessages"
-msgstr "අවසාන පනිවුඩ කට්ටලය"
+msgstr "අවසාන පනිවුඩ කට්ටලය "
 "පෙන්නන්න"
 
 #: program/localization/si_LK/labels.inc:backtolist
@@ -456,10 +455,10 @@ msgid "Add Reply-To"
 msgstr "'පිළිතුරු සඳහා' එක් කරන්න"
 
 #: program/localization/si_LK/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "මෙම පණිවුඩය එවන්නා ඔබ එය"
-"කියවු බව අසයි. එය දැන්වීමට ඔබ"
+msgstr "මෙම පණිවුඩය එවන්නා ඔබ එය "
+"කියවු බව අසයි. එය දැන්වීමට ඔබ "
 "කැමතිද?"
 
 #: program/localization/si_LK/labels.inc:receiptread
@@ -468,17 +467,17 @@ msgstr "ලැබීම් ලදුපත (කියවීම)"
 
 #: program/localization/si_LK/labels.inc:yourmessage
 msgid "This is a Return Receipt for your message"
-msgstr "මෙය ඔබගේ පණිවුඩයේ ලැබීම්"
+msgstr "මෙය ඔබගේ පණිවුඩයේ ලැබීම් "
 "ලදුපතයි"
 
 #: program/localization/si_LK/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "සටහන: ලැබීම් ලදුපත මගින් මෙම"
-"පණිවුඩය කියවූ බව හෝ තේරුම්"
-"ගත් බව ගම්‍ය නොවේ. පණිවුඩය"
-"ලබන්නාට පෙන්නුම් කල බවටට"
+msgstr "සටහන: ලැබීම් ලදුපත මගින් මෙම "
+"පණිවුඩය කියවූ බව හෝ තේරුම් "
+"ගත් බව ගම්‍ය නොවේ. පණිවුඩය "
+"ලබන්නාට පෙන්නුම් කල බවටට "
 "සාක්ෂියක් පමණි"
 
 #: program/localization/si_LK/labels.inc:name
@@ -591,7 +590,7 @@ msgstr "අනන්නයතාව"
 
 #: program/localization/si_LK/labels.inc:manageidentities
 msgid "Manage identities for this account"
-msgstr "මෙම ගිණුමෙ අනන්නයතාව"
+msgstr "මෙම ගිණුමෙ අනන්නයතාව "
 "හැසිරවීම"
 
 #: program/localization/si_LK/labels.inc:newidentity
@@ -644,7 +643,7 @@ msgstr "පූර්වදර්ශන කොටස පෙන්නන්න"
 
 #: program/localization/si_LK/labels.inc:autosavedraft
 msgid "Automatically save draft"
-msgstr "ස්වයංක්රීයව කටු සටහනේ"
+msgstr "ස්වයංක්රීයව කටු සටහනේ "
 "තැන්පත් කරන්න"
 
 #: program/localization/si_LK/labels.inc:never

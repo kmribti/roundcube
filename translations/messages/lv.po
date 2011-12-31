@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: lv_LV\n"
@@ -121,7 +120,7 @@ msgstr "Kontakts ar šādu vārdu jau eksistē."
 
 #: program/localization/lv_LV/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "Drošības nolūkos attēli, kas tiek ielādēti no cita servera, šajā"
+msgstr "Drošības nolūkos attēli, kas tiek ielādēti no cita servera, šajā "
 "vēstulē ir bloķēti"
 
 #: program/localization/lv_LV/messages.inc:encryptedmessage
@@ -242,7 +241,7 @@ msgstr "Sūtīt vēstuli bez satura teksta?"
 
 #: program/localization/lv_LV/messages.inc:notsentwarning
 msgid "Message has not been sent. Do you want to discard your message?"
-msgstr "Vēstule netika nosūtīta. Vai tiešām vēlaties atcelt vēstules"
+msgstr "Vēstule netika nosūtīta. Vai tiešām vēlaties atcelt vēstules "
 "rakstīsanu?"
 
 #: program/localization/lv_LV/messages.inc:noldapserver
@@ -258,9 +257,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Lūdzu ievadiet kontaktpersonas vārdu vai e-pasta adresi"
 
 #: program/localization/lv_LV/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Visi pielikumi vēl nav augšupielādēti. Lūdzu uzgaidiet vai atceļiet"
+msgstr "Visi pielikumi vēl nav augšupielādēti. Lūdzu uzgaidiet vai atceļiet "
 "augšupielādi!"
 
 #: program/localization/lv_LV/messages.inc:searchsuccessful
@@ -409,7 +408,7 @@ msgstr "Imports neizdevās! Augšupielādētais fails nav korekts vCard fails"
 
 #: program/localization/lv_LV/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>Veiksmīgi ieimportēti $inserted kontakti, netika importēti $skipped"
+msgstr "<b>Veiksmīgi ieimportēti $inserted kontakti, netika importēti $skipped "
 "esoši ieraksti</b>:<p><em>$names</em></p>"
 
 #: program/localization/lv_LV/messages.inc:importconfirmskipped
@@ -425,15 +424,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Izvēlētajai identitātei nav norādīta e-pasta adrese"
 
 #: program/localization/lv_LV/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Pārslēdzoties uz vienkāršotu teksta redaktoru, tiks pazaudēts esošais"
+msgstr "Pārslēdzoties uz vienkāršotu teksta redaktoru, tiks pazaudēts esošais "
 "teksta formatējums. Vai vēlaties turpināt?"
 
 #: program/localization/lv_LV/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Kļūme. Lūdzu sazinieties ar administratoru. <b>Nav iespējams nosūtīt"
+msgstr "Kļūme. Lūdzu sazinieties ar administratoru. <b>Nav iespējams nosūtīt "
 "vēstuli.</b>"
 
 #: program/localization/lv_LV/messages.inc:smtpconnerror
@@ -554,5 +553,5 @@ msgstr "Vēstulē atrastas pareizrakstības kļūdas."
 
 #: program/localization/lv_LV/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
-msgstr "Neizdevās izveidot/pārvietot mapi uz atzīmēto virsmapi. Nav piekļuves"
+msgstr "Neizdevās izveidot/pārvietot mapi uz atzīmēto virsmapi. Nav piekļuves "
 "tiesību."

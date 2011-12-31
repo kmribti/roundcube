@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: zh_TW\n"
@@ -711,7 +710,7 @@ msgid "Add Followup-To"
 msgstr "新增 信件跟隨至"
 
 #: program/localization/zh_TW/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
 msgstr "此郵件的寄件者希望在你閱讀此郵件時受到通知。你想要通知寄件者嗎？"
 
@@ -724,8 +723,8 @@ msgid "This is a Return Receipt for your message"
 msgstr "這是你郵件的郵件回條"
 
 #: program/localization/zh_TW/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
 msgstr "注意：此回條只能確認收件者的電腦顯示了郵件，並不能保證收件者已閱讀或了解郵件的內容。"
 
@@ -1019,11 +1018,11 @@ msgid "Replace the entire address book"
 msgstr "以匯入的資料取代已存在的重複資料"
 
 #: program/localization/zh_TW/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "你可以由已存在的通訊錄上傳資料，<br/>目前系統僅支援匯入"
-"<a href=\"http://zh.wikipedia.org/wiki/VCard\" target=\"_blank\">vCard</a>"
+msgstr "你可以由已存在的通訊錄上傳資料，<br/>目前系統僅支援匯入 "
+"<a href=\"http://zh.wikipedia.org/wiki/VCard\" target=\"_blank\">vCard</a> "
 "格式的資料。"
 
 #: program/localization/zh_TW/labels.inc:done
@@ -1287,7 +1286,7 @@ msgid "New Message"
 msgstr "新郵件"
 
 #: program/localization/zh_TW/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "排列選項"
 
 #: program/localization/zh_TW/labels.inc:signatureoptions

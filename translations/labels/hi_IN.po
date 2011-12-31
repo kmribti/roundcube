@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: hi_IN\n"
@@ -554,7 +553,7 @@ msgstr "पहचान"
 
 #: program/localization/hi_IN/labels.inc:manageidentities
 msgid "Manage identities for this account"
-msgstr "इस खाते के पहचान व्यवस्थित"
+msgstr "इस खाते के पहचान व्यवस्थित "
 "करें"
 
 #: program/localization/hi_IN/labels.inc:newidentity

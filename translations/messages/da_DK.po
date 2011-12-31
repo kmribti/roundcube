@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: da_DK\n"
@@ -121,7 +120,7 @@ msgstr "En kontakt med samme navn eksisterer allerede."
 
 #: program/localization/da_DK/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "For at beskytte dit privatliv er billeder fra internetservere blokeret i"
+msgstr "For at beskytte dit privatliv er billeder fra internetservere blokeret i "
 "denne besked."
 
 #: program/localization/da_DK/messages.inc:encryptedmessage
@@ -265,9 +264,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Indtast venligst en kontakts navn eller e-mail adresse"
 
 #: program/localization/da_DK/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Ikke alle vedhæftede filer er blevet uploadet endnu. Vent venligst eller"
+msgstr "Ikke alle vedhæftede filer er blevet uploadet endnu. Vent venligst eller "
 "afbryd upload."
 
 #: program/localization/da_DK/messages.inc:searchsuccessful
@@ -416,7 +415,7 @@ msgstr "Fejl i importen! Den uploadede fil er ikke en gyldig vCard fil."
 
 #: program/localization/da_DK/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>Importerede $inserted kontakter, sprang over $skipped allerede"
+msgstr "<b>Importerede $inserted kontakter, sprang over $skipped allerede "
 "eksisterende kontakter</b>:<p><em>$names</em></p>"
 
 #: program/localization/da_DK/messages.inc:importconfirmskipped
@@ -432,15 +431,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Der mangler en email-adresse i den valgte identitet"
 
 #: program/localization/da_DK/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Al formatering af teksten forsvinder, hvis der skiftes til ren tekst. Vil"
+msgstr "Al formatering af teksten forsvinder, hvis der skiftes til ren tekst. Vil "
 "du fortsætte?"
 
 #: program/localization/da_DK/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Der er opstået en fatal konfigurationsfejl. Kontakt venligst din"
+msgstr "Der er opstået en fatal konfigurationsfejl. Kontakt venligst din "
 "system-administrator med det samme.<b>Din besked kunne ikke afsendes.</b>"
 
 #: program/localization/da_DK/messages.inc:smtpconnerror

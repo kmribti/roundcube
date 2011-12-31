@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ro_RO\n"
@@ -216,9 +215,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Vă rugăm să introduceţi un nume de contact sau adresă de e-mail"
 
 #: program/localization/ro_RO/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Nu toate fişierele au fost ataşate. Vă rugăm să aşteptaţi sau să"
+msgstr "Nu toate fişierele au fost ataşate. Vă rugăm să aşteptaţi sau să "
 "anulaţi încărcarea acestora."
 
 #: program/localization/ro_RO/messages.inc:searchsuccessful
@@ -331,7 +330,7 @@ msgstr "Importul a eşuat! Fişierul încărcat nu este un fişier vCard valid."
 
 #: program/localization/ro_RO/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "Contactele $inserted au fost importate cu succes, $skipped intrări au fost"
+msgstr "Contactele $inserted au fost importate cu succes, $skipped intrări au fost "
 "ignorate deoarece ele există deja:$names"
 
 #: program/localization/ro_RO/messages.inc:opnotpermitted
@@ -343,16 +342,16 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Nu există o adresă de e-mail în identitatea selectată"
 
 #: program/localization/ro_RO/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Trecerea în mod text a editorului va cauza pierderea formatării textului."
+msgstr "Trecerea în mod text a editorului va cauza pierderea formatării textului. "
 "Doriţi să continuaţi?"
 
 #: program/localization/ro_RO/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Vă rugăm să luaţi legătura cu administratorul serverului de mail,"
-"deoarece există o eroare în configuraţia acestuia. Mesajul d-voastră nu"
+msgstr "Vă rugăm să luaţi legătura cu administratorul serverului de mail, "
+"deoarece există o eroare în configuraţia acestuia. Mesajul d-voastră nu "
 "a fost trimis."
 
 #: program/localization/ro_RO/messages.inc:smtpconnerror

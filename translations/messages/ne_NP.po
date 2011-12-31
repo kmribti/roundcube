@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ne_NP\n"
@@ -21,7 +20,7 @@ msgstr "लागईन हुन पाएन"
 
 #: program/localization/ne_NP/messages.inc:cookiesdisabled
 msgid "Your browser does not accept cookies."
-msgstr "तपाईको ब्राऊसरले कुकी"
+msgstr "तपाईको ब्राऊसरले कुकी "
 "स्वीकार गारिरहेको छैन"
 
 #: program/localization/ne_NP/messages.inc:sessionerror
@@ -70,7 +69,7 @@ msgstr "मेल जोगाईदै छ..."
 
 #: program/localization/ne_NP/messages.inc:messagesaved
 msgid "Message saved to Drafts."
-msgstr "मेल ड्राफ्ट फोल्डरमा"
+msgstr "मेल ड्राफ्ट फोल्डरमा "
 "जोगाईयो"
 
 #: program/localization/ne_NP/messages.inc:successfullysaved
@@ -79,8 +78,8 @@ msgstr "सफल्तापूर्वक जोगाईयो"
 
 #: program/localization/ne_NP/messages.inc:addedsuccessfully
 msgid "Contact added successfully to address book."
-msgstr "सम्पर्क पुस्तिकामा"
-"सफल्तापूर्वक सम्पर्क"
+msgstr "सम्पर्क पुस्तिकामा "
+"सफल्तापूर्वक सम्पर्क "
 "प्रविष्ट गारियो"
 
 #: program/localization/ne_NP/messages.inc:contactexists
@@ -89,15 +88,15 @@ msgstr "यो ई-मेल पहिलै लिईसकिएको छ"
 
 #: program/localization/ne_NP/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "तपाईको प्राईवेसी को लागि"
-"तथा अन्य स्पामबाट"
-"बच्नकोलागि यो मेलमा"
+msgstr "तपाईको प्राईवेसी को लागि "
+"तथा अन्य स्पामबाट "
+"बच्नकोलागि यो मेलमा "
 "चित्रहुरु देखाईएका छैनन्।"
 
 #: program/localization/ne_NP/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
-msgstr "माफ गर्नुहोसे, यो मेल"
-"ईन्क्रिफ्ट गरिएको रूपमा छ,"
+msgstr "माफ गर्नुहोसे, यो मेल "
+"ईन्क्रिफ्ट गरिएको रूपमा छ, "
 "त्यसैले देखाउन सकिदैन!"
 
 #: program/localization/ne_NP/messages.inc:nocontactsfound
@@ -106,7 +105,7 @@ msgstr "कुनै सम्पर्क भेटिएन"
 
 #: program/localization/ne_NP/messages.inc:contactnotfound
 msgid "The requested contact was not found."
-msgstr "अनुरोध गारिएको सम्पर्क"
+msgstr "अनुरोध गारिएको सम्पर्क "
 "भेटिएन"
 
 #: program/localization/ne_NP/messages.inc:sendingfailed
@@ -127,24 +126,24 @@ msgstr "मेल मेटाउन सकिएन"
 
 #: program/localization/ne_NP/messages.inc:deletecontactconfirm
 msgid "Do you really want to delete selected contact(s)?"
-msgstr "तापाईले छान्नुभएको"
-"सम्पर्कहरु, साँचै मेट्न"
+msgstr "तापाईले छान्नुभएको "
+"सम्पर्कहरु, साँचै मेट्न "
 "चहानुहुन्छ?"
 
 #: program/localization/ne_NP/messages.inc:deletemessagesconfirm
 msgid "Do you really want to delete selected message(s)?"
-msgstr "तापाईले छान्नु भएको मेलहरु,"
+msgstr "तापाईले छान्नु भएको मेलहरु, "
 "साँचै मेट्न चहानुहुन्छ?"
 
 #: program/localization/ne_NP/messages.inc:deletefolderconfirm
 msgid "Do you really want to delete this folder?"
-msgstr "तापाईले साँचै यो फोल्डर"
+msgstr "तापाईले साँचै यो फोल्डर "
 "मेट्न चहानु हुन्छ?"
 
 #: program/localization/ne_NP/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
-msgstr "तापाईले साँचै यो फोल्डरमा"
-"भएका सबै मेलहरु मेट्न"
+msgstr "तापाईले साँचै यो फोल्डरमा "
+"भएका सबै मेलहरु मेट्न "
 "चहानुहुन्छ?"
 
 #: program/localization/ne_NP/messages.inc:formincomplete
@@ -165,13 +164,13 @@ msgstr "कृपया पन्नाको नाप भर्नुहोस
 
 #: program/localization/ne_NP/messages.inc:norecipientwarning
 msgid "Please enter at least one recipient."
-msgstr "कृपया कम-से-कम एउटा प्रापकको"
+msgstr "कृपया कम-से-कम एउटा प्रापकको "
 "विवरण भर्नुहोस"
 
 #: program/localization/ne_NP/messages.inc:nosubjectwarning
 msgid "The \"Subject\" field is empty. Would you like to enter one now?"
-msgstr "मेलको कुनै विषय तोकिएको"
-"छैनै। केहि तोक्न चहानुहुन्छ"
+msgstr "मेलको कुनै विषय तोकिएको "
+"छैनै। केहि तोक्न चहानुहुन्छ "
 "?"
 
 #: program/localization/ne_NP/messages.inc:nobodywarning
@@ -180,12 +179,12 @@ msgstr "बिना केहि लेखि पठाउने?"
 
 #: program/localization/ne_NP/messages.inc:notsentwarning
 msgid "Message has not been sent. Do you want to discard your message?"
-msgstr "मेल पठएको छैन.. मेल रद्द गर्न"
+msgstr "मेल पठएको छैन.. मेल रद्द गर्न "
 "चहानुहुन्छ?"
 
 #: program/localization/ne_NP/messages.inc:noldapserver
 msgid "Please select an ldap server to search."
-msgstr "कृपया खोजको निम्ति एउटा"
+msgstr "कृपया खोजको निम्ति एउटा "
 "ऐलडाप सर्वर छान्नहोस"
 
 #: program/localization/ne_NP/messages.inc:nocontactsreturned
@@ -194,7 +193,7 @@ msgstr "कुनै सम्पर्क फेला परेनन्"
 
 #: program/localization/ne_NP/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
-msgstr "कृपया सम्पर्कको नाम या ई-मेल"
+msgstr "कृपया सम्पर्कको नाम या ई-मेल "
 "भर्नुहोस"
 
 #: program/localization/ne_NP/messages.inc:searchsuccessful
@@ -239,25 +238,25 @@ msgstr "फाईल अपलोड हुन असफल"
 
 #: program/localization/ne_NP/messages.inc:filesizeerror
 msgid "The uploaded file exceeds the maximum size of $size."
-msgstr "अपलोड गरिएको फाईल हद $size"
+msgstr "अपलोड गरिएको फाईल हद $size "
 "भन्दा ठूलो छ"
 
 #: program/localization/ne_NP/messages.inc:copysuccess
 msgid "Successfully copied $nr addresses."
-msgstr "सफल्तापूर्वक $nr ठेगानाहरु"
+msgstr "सफल्तापूर्वक $nr ठेगानाहरु "
 "उतारियो"
 
 #: program/localization/ne_NP/messages.inc:copyerror
 msgid "Could not copy any addresses."
-msgstr "कुनै पनि ठेगानाहरु उतार्न"
+msgstr "कुनै पनि ठेगानाहरु उतार्न "
 "सकिएन"
 
 #: program/localization/ne_NP/messages.inc:sourceisreadonly
 msgid "This address source is read only."
-msgstr "यो ठेगाना को श्रोत पढ्नको"
+msgstr "यो ठेगाना को श्रोत पढ्नको "
 "लागि मात्र उपलब्ध छ"
 
 #: program/localization/ne_NP/messages.inc:errorsavingcontact
 msgid "Could not save the contact address."
-msgstr "स्मपर्कको ठेगाना जोगाउन"
+msgstr "स्मपर्कको ठेगाना जोगाउन "
 "सकिएन"

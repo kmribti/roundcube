@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: gl_ES\n"
@@ -735,9 +734,9 @@ msgid "Add Followup-To"
 msgstr "Engadir respostar a todos (Followup-To)"
 
 #: program/localization/gl_ES/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "O remitente desta mensaxe pediu ser notificado cando vostede a lea. Quere"
+msgstr "O remitente desta mensaxe pediu ser notificado cando vostede a lea. Quere "
 "notificar ao remitente?"
 
 #: program/localization/gl_ES/labels.inc:receiptread
@@ -749,11 +748,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "Esta é unha notificación da entrega da súa mensaxe"
 
 #: program/localization/gl_ES/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Nota: Esta notificación só confirma que a mensaxe se abriu no computador"
-"do destinatario. Non asegura que o destinatario a lera ou entendera o seu"
+msgstr "Nota: Esta notificación só confirma que a mensaxe se abriu no computador "
+"do destinatario. Non asegura que o destinatario a lera ou entendera o seu "
 "contido."
 
 #: program/localization/gl_ES/labels.inc:name
@@ -1087,11 +1086,11 @@ msgid "Replace the entire address book"
 msgstr "Substituír completamente o caderno de enderezos"
 
 #: program/localization/gl_ES/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Pode cargar contactos desde un caderno de enderezos xa existente.<br/>Polo"
-"de agora pódense importar enderezos usando o formato <a"
+msgstr "Pode cargar contactos desde un caderno de enderezos xa existente.<br/>Polo "
+"de agora pódense importar enderezos usando o formato <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>  "
 
 #: program/localization/gl_ES/labels.inc:done
@@ -1367,7 +1366,7 @@ msgid "New Message"
 msgstr "Mensaxes novas"
 
 #: program/localization/gl_ES/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Opcións de lista"
 
 #: program/localization/gl_ES/labels.inc:signatureoptions

@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: nl_BE\n"
@@ -109,7 +108,7 @@ msgstr "Er bestaat reeds een contactpersoon met dit e-mailadres..."
 
 #: program/localization/nl_BE/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "Om uw privacy te beschermen worden de afbeeldingen in dit bericht niet"
+msgstr "Om uw privacy te beschermen worden de afbeeldingen in dit bericht niet "
 "getoond..."
 
 #: program/localization/nl_BE/messages.inc:encryptedmessage
@@ -229,7 +228,7 @@ msgid "Please enter a contact name or email address."
 msgstr "Geen een contacpersoon of e-mailadres op..."
 
 #: program/localization/nl_BE/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
 msgstr "Nog niet alle bijlagen zijn geüpload. Wacht even of annuleer de upload."
 
@@ -355,7 +354,7 @@ msgstr "Importeren mislukt! Het verstuurde bestand is geen geldig vCard bestand.
 
 #: program/localization/nl_BE/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>Er zijn $inserted contactpersonen succesvol geïmporteerd, en $skipped"
+msgstr "<b>Er zijn $inserted contactpersonen succesvol geïmporteerd, en $skipped "
 "bestaande overgeslagen</b>:<p><em>$names</em></p>"
 
 #: program/localization/nl_BE/messages.inc:opnotpermitted
@@ -367,15 +366,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Er is geen e-mailadres in de geselecteerde identiteit"
 
 #: program/localization/nl_BE/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Door het overschakelen naar de platte tekst editor gaat alle opmaak"
+msgstr "Door het overschakelen naar de platte tekst editor gaat alle opmaak "
 "verloren. Weet je zeker dat je verder wil gaan?"
 
 #: program/localization/nl_BE/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Er is een fatale fout opgetreden. Neem direct contact op met uw"
+msgstr "Er is een fatale fout opgetreden. Neem direct contact op met uw "
 "systeembeheerder. <b>Uw bericht kon niet worden verzonden.</b>"
 
 #: program/localization/nl_BE/messages.inc:smtpconnerror

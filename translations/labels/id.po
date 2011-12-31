@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: id_ID\n"
@@ -711,9 +710,9 @@ msgid "Add Followup-To"
 msgstr "Tambahkan Tindak-Lanjut-Ke"
 
 #: program/localization/id_ID/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Pengirim pesan ini telah meminta untuk diberitahu ketika Anda membaca pesan"
+msgstr "Pengirim pesan ini telah meminta untuk diberitahu ketika Anda membaca pesan "
 "ini. Apakah anda ingin memberitahu pengirim?"
 
 #: program/localization/id_ID/labels.inc:receiptread
@@ -725,11 +724,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "Ini adalah Tanda Terima untuk pesan Anda"
 
 #: program/localization/id_ID/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Catatan: Tanda Terima ini hanya mengesahkan bahwa pesan telah diperlihatkan"
-"pada komputer penerima. Tidak ada jaminan bahwa penerima telah membaca atau"
+msgstr "Catatan: Tanda Terima ini hanya mengesahkan bahwa pesan telah diperlihatkan "
+"pada komputer penerima. Tidak ada jaminan bahwa penerima telah membaca atau "
 "mengerti isi pesan."
 
 #: program/localization/id_ID/labels.inc:name
@@ -1022,11 +1021,11 @@ msgid "Replace the entire address book"
 msgstr "Ganti seluruh buku alamat"
 
 #: program/localization/id_ID/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Anda bisa mengunggah kontak dari buku alamat yang sudah ada.<br/>Kami"
-"kebetulan mendukung pengimportan alamat dari format data <a"
+msgstr "Anda bisa mengunggah kontak dari buku alamat yang sudah ada.<br/>Kami "
+"kebetulan mendukung pengimportan alamat dari format data <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>."
 
 #: program/localization/id_ID/labels.inc:done
@@ -1290,7 +1289,7 @@ msgid "New Message"
 msgstr "Pesan baru"
 
 #: program/localization/id_ID/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Daftar Pilihan"
 
 #: program/localization/id_ID/labels.inc:signatureoptions

@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: nl_BE\n"
@@ -731,7 +730,7 @@ msgid "Add Followup-To"
 msgstr "Followup aan toevoegen"
 
 #: program/localization/nl_BE/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
 msgstr "De afzender heeft een ontvangstbevestiging gevraagd. Wilt u deze versturen?"
 
@@ -744,11 +743,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "Dir is een onvangstbevestiging voor uw bericht"
 
 #: program/localization/nl_BE/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Opmerking: deze ontvangstbevestiging houdt enkel in dat het bericht was"
-"weergegeven bij de ontvanger. Er is geen garantie dat de ontvanger het"
+msgstr "Opmerking: deze ontvangstbevestiging houdt enkel in dat het bericht was "
+"weergegeven bij de ontvanger. Er is geen garantie dat de ontvanger het "
 "bericht daadwerkelijk heeft gelezen en/of begrepen."
 
 #: program/localization/nl_BE/labels.inc:name
@@ -884,11 +883,11 @@ msgid "Replace the entire address book"
 msgstr "Vervang het complete adresboek"
 
 #: program/localization/nl_BE/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "U kunt hier contactpersonen importeren vanuit een bestaand adresboek.<br"
-"/>Op dit moment ondersteunen wij het <a"
+msgstr "U kunt hier contactpersonen importeren vanuit een bestaand adresboek.<br "
+"/>Op dit moment ondersteunen wij het <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> bestandsformaat."
 
 #: program/localization/nl_BE/labels.inc:done
@@ -1152,7 +1151,7 @@ msgid "New Message"
 msgstr "Nieuw bericht"
 
 #: program/localization/nl_BE/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Lijstopties"
 
 #: program/localization/nl_BE/labels.inc:signatureoptions

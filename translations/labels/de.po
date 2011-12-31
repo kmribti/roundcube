@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: de_DE\n"
@@ -731,9 +730,9 @@ msgid "Add Followup-To"
 msgstr "Followup-To hinzufügen"
 
 #: program/localization/de_DE/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Der Sender dieser Nachricht möchte gerne eine Lesebestätigung. Wollen Sie"
+msgstr "Der Sender dieser Nachricht möchte gerne eine Lesebestätigung. Wollen Sie "
 "dieses bestätigen?"
 
 #: program/localization/de_DE/labels.inc:receiptread
@@ -745,10 +744,10 @@ msgid "This is a Return Receipt for your message"
 msgstr "Dies ist eine Empfangsbestätigung für Ihre Nachricht"
 
 #: program/localization/de_DE/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Hinweis: Der Empfänger hat den Empfang der Nachricht bestätigt. Dies ist"
+msgstr "Hinweis: Der Empfänger hat den Empfang der Nachricht bestätigt. Dies ist "
 "keine Garantie, dass die Nachricht gelesen und verstanden wurde."
 
 #: program/localization/de_DE/labels.inc:name
@@ -1082,10 +1081,10 @@ msgid "Replace the entire address book"
 msgstr "Bestehendes Adressbuch komplett ersetzen"
 
 #: program/localization/de_DE/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Sie können Kontakte aus einem bestehenden Adressbuch hochladen. Zur Zeit"
+msgstr "Sie können Kontakte aus einem bestehenden Adressbuch hochladen. Zur Zeit "
 "können Adressbücher im vCard-Format importiert werden."
 
 #: program/localization/de_DE/labels.inc:done
@@ -1357,7 +1356,7 @@ msgid "New Message"
 msgstr "Neue Nachrichten"
 
 #: program/localization/de_DE/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Listendarstellung"
 
 #: program/localization/de_DE/labels.inc:signatureoptions

@@ -2,1682 +2,1637 @@
 # Copyright (C) 2011 The Roundcube Dev Team
 # This file is distributed under the same license as the Roundcube package.
 #
+#: program/localization/sv_SE/labels.inc
 msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07 15:20+0100\n"
-"PO-Revision-Date: 2011-12-10 11:34+0000\n"
-"Last-Translator: Jonas Nasholm <Unknown>\n"
+"PO-Revision-Date: 2011-12-31T16:12:09+01:00\n"
+"Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"MIME-Version: 1.0\n"
+"Language: sv_SE\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-12-12 11:13+0000\n"
-"X-Generator: Launchpad (build 14458)\n"
-"Language: sv_SE\n"
 
-#: program/localization/en_US/labels.inc:welcome
+#: program/localization/sv_SE/labels.inc:welcome
 msgid "Welcome to $product"
 msgstr "Välkommen till $product"
 
-#: program/localization/en_US/labels.inc:username
+#: program/localization/sv_SE/labels.inc:username
 msgid "Username"
 msgstr "Användarnamn"
 
-#: program/localization/en_US/labels.inc:password
+#: program/localization/sv_SE/labels.inc:password
 msgid "Password"
 msgstr "Lösenord"
 
-#: program/localization/en_US/labels.inc:server
+#: program/localization/sv_SE/labels.inc:server
 msgid "Server"
 msgstr "Server"
 
-#: program/localization/en_US/labels.inc:login
+#: program/localization/sv_SE/labels.inc:login
 msgid "Login"
 msgstr "Logga in"
 
-#: program/localization/en_US/labels.inc:logout
+#: program/localization/sv_SE/labels.inc:logout
 msgid "Logout"
 msgstr "Logga ut"
 
-#: program/localization/en_US/labels.inc:mail
+#: program/localization/sv_SE/labels.inc:mail
 msgid "Mail"
 msgstr "Meddelanden"
 
-#: program/localization/en_US/labels.inc:settings
+#: program/localization/sv_SE/labels.inc:settings
 msgid "Settings"
 msgstr "Inställningar"
 
-#: program/localization/en_US/labels.inc:addressbook
+#: program/localization/sv_SE/labels.inc:addressbook
 msgid "Address Book"
 msgstr "Adressbok"
 
-#: program/localization/en_US/labels.inc:inbox
+#: program/localization/sv_SE/labels.inc:inbox
 msgid "Inbox"
 msgstr "Inkorg"
 
-#: program/localization/en_US/labels.inc:drafts
+#: program/localization/sv_SE/labels.inc:drafts
 msgid "Drafts"
 msgstr "Utkast"
 
-#: program/localization/en_US/labels.inc:sent
+#: program/localization/sv_SE/labels.inc:sent
 msgid "Sent"
 msgstr "Skickat"
 
-#: program/localization/en_US/labels.inc:trash
+#: program/localization/sv_SE/labels.inc:trash
 msgid "Trash"
 msgstr "Papperskorg"
 
-#: program/localization/en_US/labels.inc:junk
+#: program/localization/sv_SE/labels.inc:junk
 msgid "Junk"
 msgstr "Skräp"
 
-#: program/localization/en_US/labels.inc:subject
+#: program/localization/sv_SE/labels.inc:subject
 msgid "Subject"
 msgstr "Ämne"
 
-#: program/localization/en_US/labels.inc:from
+#: program/localization/sv_SE/labels.inc:from
 msgid "From"
 msgstr "Avsändare"
 
-#: program/localization/en_US/labels.inc:to
+#: program/localization/sv_SE/labels.inc:to
 msgid "To"
 msgstr "Mottagare"
 
-#: program/localization/en_US/labels.inc:cc
+#: program/localization/sv_SE/labels.inc:cc
 msgid "Cc"
 msgstr "Kopia"
 
-#: program/localization/en_US/labels.inc:bcc
+#: program/localization/sv_SE/labels.inc:bcc
 msgid "Bcc"
 msgstr "Dold kopia"
 
-#: program/localization/en_US/labels.inc:replyto
+#: program/localization/sv_SE/labels.inc:replyto
 msgid "Reply-To"
 msgstr "Svar till"
 
-#: program/localization/en_US/labels.inc:followupto
+#: program/localization/sv_SE/labels.inc:followupto
 msgid "Followup-To"
 msgstr "Uppföljning till"
 
-#: program/localization/en_US/labels.inc:date
+#: program/localization/sv_SE/labels.inc:date
 msgid "Date"
 msgstr "Datum"
 
-#: program/localization/en_US/labels.inc:size
+#: program/localization/sv_SE/labels.inc:size
 msgid "Size"
 msgstr "Storlek"
 
-#: program/localization/en_US/labels.inc:priority
+#: program/localization/sv_SE/labels.inc:priority
 msgid "Priority"
 msgstr "Prioritet"
 
-#: program/localization/en_US/labels.inc:organization
+#: program/localization/sv_SE/labels.inc:organization
 msgid "Company"
 msgstr "Organisation"
 
-#: program/localization/en_US/labels.inc:readstatus
+#: program/localization/sv_SE/labels.inc:readstatus
 msgid "Read status"
 msgstr "Lässtatus"
 
-#: program/localization/en_US/labels.inc:mailboxlist
-#: program/localization/en_US/labels.inc:folders
+#: program/localization/sv_SE/labels.inc:mailboxlist
+#: program/localization/sv_SE/labels.inc:folders
 msgid "Folders"
 msgstr "Kataloger"
 
-#: program/localization/en_US/labels.inc:messagesfromto
+#: program/localization/sv_SE/labels.inc:messagesfromto
 msgid "Messages $from to $to of $count"
 msgstr "Meddelande $from till $to av $count"
 
-#: program/localization/en_US/labels.inc:threadsfromto
+#: program/localization/sv_SE/labels.inc:threadsfromto
 msgid "Threads $from to $to of $count"
 msgstr "Tråd $from till $to av $count"
 
-#: program/localization/en_US/labels.inc:messagenrof
+#: program/localization/sv_SE/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "Meddelande $nr av $count"
 
-#: program/localization/en_US/labels.inc:copy
+#: program/localization/sv_SE/labels.inc:copy
 msgid "Copy"
 msgstr "Kopiera"
 
-#: program/localization/en_US/labels.inc:move
+#: program/localization/sv_SE/labels.inc:move
 msgid "Move"
 msgstr "Flytta"
 
-#: program/localization/en_US/labels.inc:moveto
+#: program/localization/sv_SE/labels.inc:moveto
 msgid "Move to..."
 msgstr "Flytta till:"
 
-#: program/localization/en_US/labels.inc:download
+#: program/localization/sv_SE/labels.inc:download
 msgid "Download"
 msgstr "Ladda ner"
 
-#: program/localization/en_US/labels.inc:filename
+#: program/localization/sv_SE/labels.inc:filename
 msgid "File name"
 msgstr "Filnamn"
 
-#: program/localization/en_US/labels.inc:filesize
+#: program/localization/sv_SE/labels.inc:filesize
 msgid "File size"
 msgstr "Filstorlek"
 
-#: program/localization/en_US/labels.inc:addtoaddressbook
+#: program/localization/sv_SE/labels.inc:addtoaddressbook
 msgid "Add to address book"
 msgstr "Lägg till i adressbok"
 
-#: program/localization/en_US/labels.inc:sun
+#: program/localization/sv_SE/labels.inc:sun
 msgid "Sun"
 msgstr "Sön"
 
-#: program/localization/en_US/labels.inc:mon
+#: program/localization/sv_SE/labels.inc:mon
 msgid "Mon"
 msgstr "Mån"
 
-#: program/localization/en_US/labels.inc:tue
+#: program/localization/sv_SE/labels.inc:tue
 msgid "Tue"
 msgstr "Tis"
 
-#: program/localization/en_US/labels.inc:wed
+#: program/localization/sv_SE/labels.inc:wed
 msgid "Wed"
 msgstr "Ons"
 
-#: program/localization/en_US/labels.inc:thu
+#: program/localization/sv_SE/labels.inc:thu
 msgid "Thu"
 msgstr "Tor"
 
-#: program/localization/en_US/labels.inc:fri
+#: program/localization/sv_SE/labels.inc:fri
 msgid "Fri"
 msgstr "Fre"
 
-#: program/localization/en_US/labels.inc:sat
+#: program/localization/sv_SE/labels.inc:sat
 msgid "Sat"
 msgstr "Lör"
 
-#: program/localization/en_US/labels.inc:sunday
+#: program/localization/sv_SE/labels.inc:sunday
 msgid "Sunday"
 msgstr "Söndag"
 
-#: program/localization/en_US/labels.inc:monday
+#: program/localization/sv_SE/labels.inc:monday
 msgid "Monday"
 msgstr "Måndag"
 
-#: program/localization/en_US/labels.inc:tuesday
+#: program/localization/sv_SE/labels.inc:tuesday
 msgid "Tuesday"
 msgstr "Tisdag"
 
-#: program/localization/en_US/labels.inc:wednesday
+#: program/localization/sv_SE/labels.inc:wednesday
 msgid "Wednesday"
 msgstr "Onsdag"
 
-#: program/localization/en_US/labels.inc:thursday
+#: program/localization/sv_SE/labels.inc:thursday
 msgid "Thursday"
 msgstr "Torsdag"
 
-#: program/localization/en_US/labels.inc:friday
+#: program/localization/sv_SE/labels.inc:friday
 msgid "Friday"
 msgstr "Fredag"
 
-#: program/localization/en_US/labels.inc:saturday
+#: program/localization/sv_SE/labels.inc:saturday
 msgid "Saturday"
 msgstr "Lördag"
 
-#: program/localization/en_US/labels.inc:jan
+#: program/localization/sv_SE/labels.inc:jan
 msgid "Jan"
 msgstr "Jan"
 
-#: program/localization/en_US/labels.inc:feb
+#: program/localization/sv_SE/labels.inc:feb
 msgid "Feb"
 msgstr "Feb"
 
-#: program/localization/en_US/labels.inc:mar
+#: program/localization/sv_SE/labels.inc:mar
 msgid "Mar"
 msgstr "Mar"
 
-#: program/localization/en_US/labels.inc:apr
+#: program/localization/sv_SE/labels.inc:apr
 msgid "Apr"
 msgstr "Apr"
 
-#: program/localization/en_US/labels.inc:may
-#: program/localization/en_US/labels.inc:longmay
+#: program/localization/sv_SE/labels.inc:may
+#: program/localization/sv_SE/labels.inc:longmay
 msgid "May"
 msgstr "Maj"
 
-#: program/localization/en_US/labels.inc:jun
+#: program/localization/sv_SE/labels.inc:jun
 msgid "Jun"
 msgstr "Jun"
 
-#: program/localization/en_US/labels.inc:jul
+#: program/localization/sv_SE/labels.inc:jul
 msgid "Jul"
 msgstr "Jul"
 
-#: program/localization/en_US/labels.inc:aug
+#: program/localization/sv_SE/labels.inc:aug
 msgid "Aug"
 msgstr "Aug"
 
-#: program/localization/en_US/labels.inc:sep
+#: program/localization/sv_SE/labels.inc:sep
 msgid "Sep"
 msgstr "Sep"
 
-#: program/localization/en_US/labels.inc:oct
+#: program/localization/sv_SE/labels.inc:oct
 msgid "Oct"
 msgstr "Okt"
 
-#: program/localization/en_US/labels.inc:nov
+#: program/localization/sv_SE/labels.inc:nov
 msgid "Nov"
 msgstr "Nov"
 
-#: program/localization/en_US/labels.inc:dec
+#: program/localization/sv_SE/labels.inc:dec
 msgid "Dec"
 msgstr "Dec"
 
-#: program/localization/en_US/labels.inc:longjan
+#: program/localization/sv_SE/labels.inc:longjan
 msgid "January"
 msgstr "Januari"
 
-#: program/localization/en_US/labels.inc:longfeb
+#: program/localization/sv_SE/labels.inc:longfeb
 msgid "February"
 msgstr "Februari"
 
-#: program/localization/en_US/labels.inc:longmar
+#: program/localization/sv_SE/labels.inc:longmar
 msgid "March"
 msgstr "Mars"
 
-#: program/localization/en_US/labels.inc:longapr
+#: program/localization/sv_SE/labels.inc:longapr
 msgid "April"
 msgstr "April"
 
-#: program/localization/en_US/labels.inc:longjun
+#: program/localization/sv_SE/labels.inc:longjun
 msgid "June"
 msgstr "Juni"
 
-#: program/localization/en_US/labels.inc:longjul
+#: program/localization/sv_SE/labels.inc:longjul
 msgid "July"
 msgstr "Juli"
 
-#: program/localization/en_US/labels.inc:longaug
+#: program/localization/sv_SE/labels.inc:longaug
 msgid "August"
 msgstr "Augusti"
 
-#: program/localization/en_US/labels.inc:longsep
+#: program/localization/sv_SE/labels.inc:longsep
 msgid "September"
 msgstr "September"
 
-#: program/localization/en_US/labels.inc:longoct
+#: program/localization/sv_SE/labels.inc:longoct
 msgid "October"
 msgstr "Oktober"
 
-#: program/localization/en_US/labels.inc:longnov
+#: program/localization/sv_SE/labels.inc:longnov
 msgid "November"
 msgstr "November"
 
-#: program/localization/en_US/labels.inc:longdec
+#: program/localization/sv_SE/labels.inc:longdec
 msgid "December"
 msgstr "December"
 
-#: program/localization/en_US/labels.inc:today
+#: program/localization/sv_SE/labels.inc:today
 msgid "Today"
 msgstr "Idag"
 
-#: program/localization/en_US/labels.inc:checkmail
+#: program/localization/sv_SE/labels.inc:checkmail
 msgid "Check for new messages"
 msgstr "Hämta nya meddelanden"
 
-#: program/localization/en_US/labels.inc:writenewmessage
+#: program/localization/sv_SE/labels.inc:writenewmessage
 msgid "Create a new message"
 msgstr "Nytt meddelande"
 
-#: program/localization/en_US/labels.inc:replytomessage
+#: program/localization/sv_SE/labels.inc:replytomessage
 msgid "Reply to sender"
 msgstr "Svara avsändaren"
 
-#: program/localization/en_US/labels.inc:replytoallmessage
+#: program/localization/sv_SE/labels.inc:replytoallmessage
 msgid "Reply to list or to sender and all recipients"
 msgstr "Svara avsändaren och alla mottagare"
 
-#: program/localization/en_US/labels.inc:replyall
+#: program/localization/sv_SE/labels.inc:replyall
 msgid "Reply all"
 msgstr "Svara alla"
 
-#: program/localization/en_US/labels.inc:replylist
+#: program/localization/sv_SE/labels.inc:replylist
 msgid "Reply list"
 msgstr "Svara lista"
 
-#: program/localization/en_US/labels.inc:forwardinline
+#: program/localization/sv_SE/labels.inc:forwardinline
 msgid "Forward inline"
 msgstr "Vidarebefordra infogat"
 
-#: program/localization/en_US/labels.inc:forwardattachment
+#: program/localization/sv_SE/labels.inc:forwardattachment
 msgid "Forward as attachment"
 msgstr "Vidarebefordra som bilaga"
 
-#: program/localization/en_US/labels.inc:forwardmessage
+#: program/localization/sv_SE/labels.inc:forwardmessage
 msgid "Forward the message"
 msgstr "Vidarebefordra meddelande"
 
-#: program/localization/en_US/labels.inc:deletemessage
+#: program/localization/sv_SE/labels.inc:deletemessage
 msgid "Delete message"
 msgstr "Ta bort meddelande"
 
-#: program/localization/en_US/labels.inc:movemessagetotrash
+#: program/localization/sv_SE/labels.inc:movemessagetotrash
 msgid "Move message to trash"
 msgstr "Flytta meddelande till papperskorgen"
 
-#: program/localization/en_US/labels.inc:printmessage
+#: program/localization/sv_SE/labels.inc:printmessage
 msgid "Print this message"
 msgstr "Skriv ut"
 
-#: program/localization/en_US/labels.inc:previousmessage
+#: program/localization/sv_SE/labels.inc:previousmessage
 msgid "Show previous message"
 msgstr "Visa föregående meddelande"
 
-#: program/localization/en_US/labels.inc:firstmessage
+#: program/localization/sv_SE/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Visa första meddelandet"
 
-#: program/localization/en_US/labels.inc:nextmessage
+#: program/localization/sv_SE/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Visa nästa meddelande"
 
-#: program/localization/en_US/labels.inc:lastmessage
+#: program/localization/sv_SE/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Visa sista meddelandet"
 
-#: program/localization/en_US/labels.inc:backtolist
+#: program/localization/sv_SE/labels.inc:backtolist
 msgid "Back to message list"
 msgstr "Tillbaka till meddelandelistan"
 
-#: program/localization/en_US/labels.inc:viewsource
+#: program/localization/sv_SE/labels.inc:viewsource
 msgid "Show source"
 msgstr "Visa källkod"
 
-#: program/localization/en_US/labels.inc:markmessages
+#: program/localization/sv_SE/labels.inc:markmessages
 msgid "Mark messages"
 msgstr "Märk meddelande"
 
-#: program/localization/en_US/labels.inc:markread
+#: program/localization/sv_SE/labels.inc:markread
 msgid "As read"
 msgstr "Läst"
 
-#: program/localization/en_US/labels.inc:markunread
+#: program/localization/sv_SE/labels.inc:markunread
 msgid "As unread"
 msgstr "Oläst"
 
-#: program/localization/en_US/labels.inc:markflagged
+#: program/localization/sv_SE/labels.inc:markflagged
 msgid "As flagged"
 msgstr "Flaggat"
 
-#: program/localization/en_US/labels.inc:markunflagged
+#: program/localization/sv_SE/labels.inc:markunflagged
 msgid "As unflagged"
 msgstr "Oflaggat"
 
-#: program/localization/en_US/labels.inc:moreactions
+#: program/localization/sv_SE/labels.inc:moreactions
 msgid "More actions..."
 msgstr "Ytterligare hantering..."
 
-#: program/localization/en_US/labels.inc:select
+#: program/localization/sv_SE/labels.inc:select
 msgid "Select"
 msgstr "Välj"
 
-#: program/localization/en_US/labels.inc:all
+#: program/localization/sv_SE/labels.inc:all
 msgid "All"
 msgstr "Alla"
 
-#: program/localization/en_US/labels.inc:none
-#: program/localization/en_US/labels.inc:nonesort
+#: program/localization/sv_SE/labels.inc:none
+#: program/localization/sv_SE/labels.inc:nonesort
 msgid "None"
 msgstr "Ingen"
 
-#: program/localization/en_US/labels.inc:currpage
+#: program/localization/sv_SE/labels.inc:currpage
 msgid "Current page"
 msgstr "Sida"
 
-#: program/localization/en_US/labels.inc:unread
+#: program/localization/sv_SE/labels.inc:unread
 msgid "Unread"
 msgstr "Olästa"
 
-#: program/localization/en_US/labels.inc:flagged
+#: program/localization/sv_SE/labels.inc:flagged
 msgid "Flagged"
 msgstr "Flaggade"
 
-#: program/localization/en_US/labels.inc:unanswered
+#: program/localization/sv_SE/labels.inc:unanswered
 msgid "Unanswered"
 msgstr "Obesvarade"
 
-#: program/localization/en_US/labels.inc:deleted
+#: program/localization/sv_SE/labels.inc:deleted
 msgid "Deleted"
 msgstr "Borttagna"
 
-#: program/localization/en_US/labels.inc:invert
+#: program/localization/sv_SE/labels.inc:invert
 msgid "Invert"
 msgstr "Invertera"
 
-#: program/localization/en_US/labels.inc:filter
+#: program/localization/sv_SE/labels.inc:filter
 msgid "Filter"
 msgstr "Filter"
 
-#: program/localization/en_US/labels.inc:list
+#: program/localization/sv_SE/labels.inc:list
 msgid "List"
 msgstr "Lista"
 
-#: program/localization/en_US/labels.inc:threads
+#: program/localization/sv_SE/labels.inc:threads
 msgid "Threads"
 msgstr "Trådar"
 
-#: program/localization/en_US/labels.inc:expand-all
+#: program/localization/sv_SE/labels.inc:expand-all
 msgid "Expand All"
 msgstr "Visa alla"
 
-#: program/localization/en_US/labels.inc:expand-unread
+#: program/localization/sv_SE/labels.inc:expand-unread
 msgid "Expand Unread"
 msgstr "Visa olästa"
 
-#: program/localization/en_US/labels.inc:collapse-all
+#: program/localization/sv_SE/labels.inc:collapse-all
 msgid "Collapse All"
 msgstr "Dölj alla"
 
-#: program/localization/en_US/labels.inc:threaded
+#: program/localization/sv_SE/labels.inc:threaded
 msgid "Threaded"
 msgstr "Trådat"
 
-#: program/localization/en_US/labels.inc:autoexpand_threads
+#: program/localization/sv_SE/labels.inc:autoexpand_threads
 msgid "Expand message threads"
 msgstr "Visa trådade meddelanden"
 
-#: program/localization/en_US/labels.inc:do_expand
+#: program/localization/sv_SE/labels.inc:do_expand
 msgid "all threads"
 msgstr "Alla trådar"
 
-#: program/localization/en_US/labels.inc:expand_only_unread
+#: program/localization/sv_SE/labels.inc:expand_only_unread
 msgid "only with unread messages"
 msgstr "Trådar med olästa meddelanden"
 
-#: program/localization/en_US/labels.inc:fromto
+#: program/localization/sv_SE/labels.inc:fromto
 msgid "From/To"
 msgstr "Avsändare/Mottagare"
 
-#: program/localization/en_US/labels.inc:flag
+#: program/localization/sv_SE/labels.inc:flag
 msgid "Flag"
 msgstr "Flagga"
 
-#: program/localization/en_US/labels.inc:attachment
+#: program/localization/sv_SE/labels.inc:attachment
 msgid "Attachment"
 msgstr "Bilaga"
 
-#: program/localization/en_US/labels.inc:sentdate
+#: program/localization/sv_SE/labels.inc:sentdate
 msgid "Sent date"
 msgstr "Datum skickat"
 
-#: program/localization/en_US/labels.inc:arrival
+#: program/localization/sv_SE/labels.inc:arrival
 msgid "Arrival date"
 msgstr "Datum mottaget"
 
-#: program/localization/en_US/labels.inc:asc
+#: program/localization/sv_SE/labels.inc:asc
 msgid "ascending"
 msgstr "Stigande"
 
-#: program/localization/en_US/labels.inc:desc
+#: program/localization/sv_SE/labels.inc:desc
 msgid "descending"
 msgstr "Fallande"
 
-#: program/localization/en_US/labels.inc:listcolumns
+#: program/localization/sv_SE/labels.inc:listcolumns
 msgid "List columns"
 msgstr "Kolumner"
 
-#: program/localization/en_US/labels.inc:listsorting
+#: program/localization/sv_SE/labels.inc:listsorting
 msgid "Sorting column"
 msgstr "Sortering"
 
-#: program/localization/en_US/labels.inc:listorder
+#: program/localization/sv_SE/labels.inc:listorder
 msgid "Sorting order"
 msgstr "Ordning"
 
-#: program/localization/en_US/labels.inc:listmode
+#: program/localization/sv_SE/labels.inc:listmode
 msgid "List view mode"
 msgstr "Visningsläge"
 
-#: program/localization/en_US/labels.inc:folderactions
+#: program/localization/sv_SE/labels.inc:folderactions
 msgid "Folder actions..."
 msgstr "Hantera kataloger"
 
-#: program/localization/en_US/labels.inc:compact
+#: program/localization/sv_SE/labels.inc:compact
 msgid "Compact"
 msgstr "Packa"
 
-#: program/localization/en_US/labels.inc:empty
+#: program/localization/sv_SE/labels.inc:empty
 msgid "Empty"
 msgstr "Töm"
 
-#: program/localization/en_US/labels.inc:quota
+#: program/localization/sv_SE/labels.inc:quota
 msgid "Disk usage"
 msgstr "Diskutrymme"
 
-#: program/localization/en_US/labels.inc:unknown
+#: program/localization/sv_SE/labels.inc:unknown
 msgid "unknown"
 msgstr "okänt"
 
-#: program/localization/en_US/labels.inc:unlimited
+#: program/localization/sv_SE/labels.inc:unlimited
 msgid "unlimited"
 msgstr "obegränsat"
 
-#: program/localization/en_US/labels.inc:quicksearch
+#: program/localization/sv_SE/labels.inc:quicksearch
 msgid "Quick search"
 msgstr "Snabbsök"
 
-#: program/localization/en_US/labels.inc:resetsearch
+#: program/localization/sv_SE/labels.inc:resetsearch
 msgid "Reset search"
 msgstr "Återställ sökning"
 
-#: program/localization/en_US/labels.inc:searchmod
+#: program/localization/sv_SE/labels.inc:searchmod
 msgid "Search modifiers"
 msgstr "Sökalternativ"
 
-#: program/localization/en_US/labels.inc:msgtext
+#: program/localization/sv_SE/labels.inc:msgtext
 msgid "Entire message"
 msgstr "Hela meddelandet"
 
-#: program/localization/en_US/labels.inc:openinextwin
+#: program/localization/sv_SE/labels.inc:openinextwin
 msgid "Open in new window"
 msgstr "Öppna i nytt fönster"
 
-#: program/localization/en_US/labels.inc:emlsave
+#: program/localization/sv_SE/labels.inc:emlsave
 msgid "Download (.eml)"
 msgstr "Spara (.eml)"
 
-#: program/localization/en_US/labels.inc:compose
+#: program/localization/sv_SE/labels.inc:compose
 msgid "Compose a message"
 msgstr "Nytt meddelande"
 
-#: program/localization/en_US/labels.inc:editasnew
+#: program/localization/sv_SE/labels.inc:editasnew
 msgid "Edit as new"
 msgstr "Redigera som nytt"
 
-#: program/localization/en_US/labels.inc:savemessage
+#: program/localization/sv_SE/labels.inc:savemessage
 msgid "Save this draft"
 msgstr "Spara utkast"
 
-#: program/localization/en_US/labels.inc:sendmessage
+#: program/localization/sv_SE/labels.inc:sendmessage
 msgid "Send now"
 msgstr "Skicka meddelande"
 
-#: program/localization/en_US/labels.inc:addattachment
+#: program/localization/sv_SE/labels.inc:addattachment
 msgid "Attach a file"
 msgstr "Bifoga fil"
 
-#: program/localization/en_US/labels.inc:charset
+#: program/localization/sv_SE/labels.inc:charset
 msgid "Charset"
 msgstr "Teckenkodning"
 
-#: program/localization/en_US/labels.inc:editortype
+#: program/localization/sv_SE/labels.inc:editortype
 msgid "Editor type"
 msgstr "Textredigerare"
 
-#: program/localization/en_US/labels.inc:returnreceipt
+#: program/localization/sv_SE/labels.inc:returnreceipt
 msgid "Return receipt"
 msgstr "Mottagarkvitto"
 
-#: program/localization/en_US/labels.inc:dsn
+#: program/localization/sv_SE/labels.inc:dsn
 msgid "Delivery status notification"
 msgstr "Leveransstatusmeddelande"
 
-#: program/localization/en_US/labels.inc:mailreplyintro
+#: program/localization/sv_SE/labels.inc:mailreplyintro
 msgid "On $date, $sender wrote:"
 msgstr "$date skrev $sender:"
 
-#: program/localization/en_US/labels.inc:originalmessage
+#: program/localization/sv_SE/labels.inc:originalmessage
 msgid "Original Message"
 msgstr "Ursprungligt meddelande"
 
-#: program/localization/en_US/labels.inc:editidents
+#: program/localization/sv_SE/labels.inc:editidents
 msgid "Edit identities"
 msgstr "Ändra identiteter"
 
-#: program/localization/en_US/labels.inc:checkspelling
+#: program/localization/sv_SE/labels.inc:checkspelling
 msgid "Check spelling"
 msgstr "Kontrollera stavning"
 
-#: program/localization/en_US/labels.inc:resumeediting
+#: program/localization/sv_SE/labels.inc:resumeediting
 msgid "Resume editing"
 msgstr "Återuppta redigering"
 
-#: program/localization/en_US/labels.inc:revertto
+#: program/localization/sv_SE/labels.inc:revertto
 msgid "Revert to"
 msgstr "Återgå till"
 
-#: program/localization/en_US/labels.inc:attachments
+#: program/localization/sv_SE/labels.inc:attachments
 msgid "Attachments"
 msgstr "Bilagor"
 
-#: program/localization/en_US/labels.inc:upload
+#: program/localization/sv_SE/labels.inc:upload
 msgid "Upload"
 msgstr "Bifoga"
 
-#: program/localization/en_US/labels.inc:uploadprogress
+#: program/localization/sv_SE/labels.inc:uploadprogress
 msgid "$percent ($current from $total)"
 msgstr "$percent ($current av $total)"
 
-#: program/localization/en_US/labels.inc:close
+#: program/localization/sv_SE/labels.inc:close
 msgid "Close"
 msgstr "Stäng"
 
-#: program/localization/en_US/labels.inc:messageoptions
+#: program/localization/sv_SE/labels.inc:messageoptions
 msgid "Message options..."
 msgstr "Meddelandealternativ"
 
-#: program/localization/en_US/labels.inc:low
+#: program/localization/sv_SE/labels.inc:low
 msgid "Low"
 msgstr "Låg"
 
-#: program/localization/en_US/labels.inc:lowest
+#: program/localization/sv_SE/labels.inc:lowest
 msgid "Lowest"
 msgstr "Lägst"
 
-#: program/localization/en_US/labels.inc:normal
+#: program/localization/sv_SE/labels.inc:normal
 msgid "Normal"
 msgstr "Normal"
 
-#: program/localization/en_US/labels.inc:high
+#: program/localization/sv_SE/labels.inc:high
 msgid "High"
 msgstr "Hög"
 
-#: program/localization/en_US/labels.inc:highest
+#: program/localization/sv_SE/labels.inc:highest
 msgid "Highest"
 msgstr "Högst"
 
-#: program/localization/en_US/labels.inc:nosubject
+#: program/localization/sv_SE/labels.inc:nosubject
 msgid "(no subject)"
 msgstr "(inget ämne)"
 
-#: program/localization/en_US/labels.inc:showimages
+#: program/localization/sv_SE/labels.inc:showimages
 msgid "Display images"
 msgstr "Visa bilder"
 
-#: program/localization/en_US/labels.inc:alwaysshow
+#: program/localization/sv_SE/labels.inc:alwaysshow
 msgid "Always show images from $sender"
 msgstr "Visa alltid bilder från $sender"
 
-#: program/localization/en_US/labels.inc:isdraft
-msgid "This is a draft message."
-msgstr "Detta meddelande är ett utkast."
-
-#: program/localization/en_US/labels.inc:htmltoggle
+#: program/localization/sv_SE/labels.inc:htmltoggle
 msgid "HTML"
 msgstr "HTML"
 
-#: program/localization/en_US/labels.inc:plaintoggle
+#: program/localization/sv_SE/labels.inc:plaintoggle
 msgid "Plain text"
 msgstr "Text"
 
-#: program/localization/en_US/labels.inc:savesentmessagein
+#: program/localization/sv_SE/labels.inc:savesentmessagein
 msgid "Save sent message in"
 msgstr "Spara kopia i"
 
-#: program/localization/en_US/labels.inc:dontsave
+#: program/localization/sv_SE/labels.inc:dontsave
 msgid "don't save"
 msgstr "Spara inte"
 
-#: program/localization/en_US/labels.inc:maxuploadsize
+#: program/localization/sv_SE/labels.inc:maxuploadsize
 msgid "Maximum allowed file size is $size"
 msgstr "Tillåten filstorlek är $size"
 
-#: program/localization/en_US/labels.inc:addcc
+#: program/localization/sv_SE/labels.inc:addcc
 msgid "Add Cc"
 msgstr "Kopia"
 
-#: program/localization/en_US/labels.inc:addbcc
+#: program/localization/sv_SE/labels.inc:addbcc
 msgid "Add Bcc"
 msgstr "Dold kopia"
 
-#: program/localization/en_US/labels.inc:addreplyto
+#: program/localization/sv_SE/labels.inc:addreplyto
 msgid "Add Reply-To"
 msgstr "Svar till"
 
-#: program/localization/en_US/labels.inc:addfollowupto
+#: program/localization/sv_SE/labels.inc:addfollowupto
 msgid "Add Followup-To"
 msgstr "Uppföljning till"
 
-#: program/localization/en_US/labels.inc:mdnrequest
-msgid ""
-"The sender of this message has asked to be notified when you read "
-"thismessage. Do you wish to notify the sender?"
-msgstr ""
-"Avsändaren har begärt mottagarkvitto för det här meddelandet. Vill duskicka "
-"ett mottagarkvitto?"
+#: program/localization/sv_SE/labels.inc:mdnrequest
+msgid "The sender of this message has asked to be notified when you read this "
+"message. Do you wish to notify the sender?"
+msgstr "Avsändaren har begärt mottagarkvitto för det här meddelandet. Vill du "
+"skicka ett mottagarkvitto?"
 
-#: program/localization/en_US/labels.inc:receiptread
+#: program/localization/sv_SE/labels.inc:receiptread
 msgid "Return Receipt (read)"
 msgstr "Mottagarkvitto (läst)"
 
-#: program/localization/en_US/labels.inc:yourmessage
+#: program/localization/sv_SE/labels.inc:yourmessage
 msgid "This is a Return Receipt for your message"
 msgstr "Det här är ett mottagarkvitto för ditt meddelande"
 
-#: program/localization/en_US/labels.inc:receiptnote
-msgid ""
-"Note: This receipt only acknowledges that the message was displayed on "
-"therecipient's computer. There is no guarantee that the recipient has read "
-"orunderstood the message contents."
-msgstr ""
-"Notera: Mottagarkvittot innebär bara att meddelandet visats påmottagarens "
-"dator. Därmed finns ingen garanti att mottagaren har läst ochförstått "
-"meddelandet."
+#: program/localization/sv_SE/labels.inc:receiptnote
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
+"understood the message contents."
+msgstr "Notera: Mottagarkvittot innebär bara att meddelandet visats på "
+"mottagarens dator. Därmed finns ingen garanti att mottagaren har läst och "
+"förstått meddelandet."
 
-#: program/localization/en_US/labels.inc:name
+#: program/localization/sv_SE/labels.inc:name
 msgid "Display Name"
 msgstr "Namn"
 
-#: program/localization/en_US/labels.inc:firstname
+#: program/localization/sv_SE/labels.inc:firstname
 msgid "First Name"
 msgstr "Förnamn"
 
-#: program/localization/en_US/labels.inc:surname
+#: program/localization/sv_SE/labels.inc:surname
 msgid "Last Name"
 msgstr "Efternamn"
 
-#: program/localization/en_US/labels.inc:middlename
+#: program/localization/sv_SE/labels.inc:middlename
 msgid "Middle Name"
 msgstr "Mellannamn"
 
-#: program/localization/en_US/labels.inc:nameprefix
+#: program/localization/sv_SE/labels.inc:nameprefix
 msgid "Prefix"
 msgstr "Prefix"
 
-#: program/localization/en_US/labels.inc:namesuffix
+#: program/localization/sv_SE/labels.inc:namesuffix
 msgid "Suffix"
 msgstr "Suffix"
 
-#: program/localization/en_US/labels.inc:nickname
+#: program/localization/sv_SE/labels.inc:nickname
 msgid "Nickname"
 msgstr "Smeknamn"
 
-#: program/localization/en_US/labels.inc:jobtitle
+#: program/localization/sv_SE/labels.inc:jobtitle
 msgid "Job Title"
 msgstr "Titel"
 
-#: program/localization/en_US/labels.inc:department
+#: program/localization/sv_SE/labels.inc:department
 msgid "Department"
 msgstr "Avdelning"
 
-#: program/localization/en_US/labels.inc:gender
+#: program/localization/sv_SE/labels.inc:gender
 msgid "Gender"
 msgstr "Kön"
 
-#: program/localization/en_US/labels.inc:maidenname
+#: program/localization/sv_SE/labels.inc:maidenname
 msgid "Maiden Name"
 msgstr "Flicknamn"
 
-#: program/localization/en_US/labels.inc:email
+#: program/localization/sv_SE/labels.inc:email
 msgid "Email"
 msgstr "E-post"
 
-#: program/localization/en_US/labels.inc:phone
+#: program/localization/sv_SE/labels.inc:phone
 msgid "Phone"
 msgstr "Telefon"
 
-#: program/localization/en_US/labels.inc:address
+#: program/localization/sv_SE/labels.inc:address
 msgid "Address"
 msgstr "Adress"
 
-#: program/localization/en_US/labels.inc:street
+#: program/localization/sv_SE/labels.inc:street
 msgid "Street"
 msgstr "Gata"
 
-#: program/localization/en_US/labels.inc:locality
+#: program/localization/sv_SE/labels.inc:locality
 msgid "City"
 msgstr "Ort"
 
-#: program/localization/en_US/labels.inc:zipcode
+#: program/localization/sv_SE/labels.inc:zipcode
 msgid "ZIP Code"
 msgstr "Postnummer"
 
-#: program/localization/en_US/labels.inc:region
+#: program/localization/sv_SE/labels.inc:region
 msgid "State/Province"
 msgstr "Region"
 
-#: program/localization/en_US/labels.inc:country
+#: program/localization/sv_SE/labels.inc:country
 msgid "Country"
 msgstr "Land"
 
-#: program/localization/en_US/labels.inc:birthday
+#: program/localization/sv_SE/labels.inc:birthday
 msgid "Birthday"
 msgstr "Födelsedag"
 
-#: program/localization/en_US/labels.inc:anniversary
+#: program/localization/sv_SE/labels.inc:anniversary
 msgid "Anniversary"
 msgstr "Årsdag"
 
-#: program/localization/en_US/labels.inc:website
+#: program/localization/sv_SE/labels.inc:website
 msgid "Website"
 msgstr "Webbplats"
 
-#: program/localization/en_US/labels.inc:instantmessenger
+#: program/localization/sv_SE/labels.inc:instantmessenger
 msgid "IM"
 msgstr "IM"
 
-#: program/localization/en_US/labels.inc:notes
+#: program/localization/sv_SE/labels.inc:notes
 msgid "Notes"
 msgstr "Anteckningar"
 
-#: program/localization/en_US/labels.inc:male
+#: program/localization/sv_SE/labels.inc:male
 msgid "male"
 msgstr "Man"
 
-#: program/localization/en_US/labels.inc:female
+#: program/localization/sv_SE/labels.inc:female
 msgid "female"
 msgstr "Kvinna"
 
-#: program/localization/en_US/labels.inc:manager
+#: program/localization/sv_SE/labels.inc:manager
 msgid "Manager"
 msgstr "Chef"
 
-#: program/localization/en_US/labels.inc:assistant
-#: program/localization/en_US/labels.inc:typeassistant
+#: program/localization/sv_SE/labels.inc:assistant
+#: program/localization/sv_SE/labels.inc:typeassistant
 msgid "Assistant"
 msgstr "Assistent"
 
-#: program/localization/en_US/labels.inc:spouse
+#: program/localization/sv_SE/labels.inc:spouse
 msgid "Spouse"
 msgstr "Make/Maka"
 
-#: program/localization/en_US/labels.inc:allfields
+#: program/localization/sv_SE/labels.inc:allfields
 msgid "All fields"
 msgstr "Alla fält"
 
-#: program/localization/en_US/labels.inc:search
+#: program/localization/sv_SE/labels.inc:search
 msgid "Search"
 msgstr "Sök"
 
-#: program/localization/en_US/labels.inc:advsearch
+#: program/localization/sv_SE/labels.inc:advsearch
 msgid "Advanced Search"
 msgstr "Sök avancerat"
 
-#: program/localization/en_US/labels.inc:other
-#: program/localization/en_US/labels.inc:typeother
+#: program/localization/sv_SE/labels.inc:other
+#: program/localization/sv_SE/labels.inc:typeother
 msgid "Other"
 msgstr "Annat"
 
-#: program/localization/en_US/labels.inc:typehome
+#: program/localization/sv_SE/labels.inc:typehome
 msgid "Home"
 msgstr "Hem"
 
-#: program/localization/en_US/labels.inc:typework
+#: program/localization/sv_SE/labels.inc:typework
 msgid "Work"
 msgstr "Arbete"
 
-#: program/localization/en_US/labels.inc:typemobile
+#: program/localization/sv_SE/labels.inc:typemobile
 msgid "Mobile"
 msgstr "Mobil"
 
-#: program/localization/en_US/labels.inc:typemain
+#: program/localization/sv_SE/labels.inc:typemain
 msgid "Main"
 msgstr "Huvudsakligt"
 
-#: program/localization/en_US/labels.inc:typehomefax
+#: program/localization/sv_SE/labels.inc:typehomefax
 msgid "Home Fax"
 msgstr "Fax hem"
 
-#: program/localization/en_US/labels.inc:typeworkfax
+#: program/localization/sv_SE/labels.inc:typeworkfax
 msgid "Work Fax"
 msgstr "Fax arbete"
 
-#: program/localization/en_US/labels.inc:typecar
+#: program/localization/sv_SE/labels.inc:typecar
 msgid "Car"
 msgstr "Bil"
 
-#: program/localization/en_US/labels.inc:typepager
+#: program/localization/sv_SE/labels.inc:typepager
 msgid "Pager"
 msgstr "Personsökare"
 
-#: program/localization/en_US/labels.inc:typevideo
+#: program/localization/sv_SE/labels.inc:typevideo
 msgid "Video"
 msgstr "Video"
 
-#: program/localization/en_US/labels.inc:typehomepage
+#: program/localization/sv_SE/labels.inc:typehomepage
 msgid "Home Page"
 msgstr "Webbsida"
 
-#: program/localization/en_US/labels.inc:typeblog
+#: program/localization/sv_SE/labels.inc:typeblog
 msgid "Blog"
 msgstr "Blog"
 
-#: program/localization/en_US/labels.inc:typeprofile
+#: program/localization/sv_SE/labels.inc:typeprofile
 msgid "Profile"
 msgstr "Profil"
 
-#: program/localization/en_US/labels.inc:addfield
+#: program/localization/sv_SE/labels.inc:addfield
 msgid "Add field..."
 msgstr "Lägg till fält..."
 
-#: program/localization/en_US/labels.inc:addcontact
+#: program/localization/sv_SE/labels.inc:addcontact
 msgid "Add new contact"
 msgstr "Lägg till ny kontakt"
 
-#: program/localization/en_US/labels.inc:editcontact
+#: program/localization/sv_SE/labels.inc:editcontact
 msgid "Edit contact"
 msgstr "Ändra kontakt"
 
-#: program/localization/en_US/labels.inc:contacts
+#: program/localization/sv_SE/labels.inc:contacts
 msgid "Contacts"
 msgstr "Kontakter"
 
-#: program/localization/en_US/labels.inc:contactproperties
+#: program/localization/sv_SE/labels.inc:contactproperties
 msgid "Contact properties"
 msgstr "Kontaktegenskaper"
 
-#: program/localization/en_US/labels.inc:personalinfo
+#: program/localization/sv_SE/labels.inc:personalinfo
 msgid "Personal information"
 msgstr "Personlig information"
 
-#: program/localization/en_US/labels.inc:edit
+#: program/localization/sv_SE/labels.inc:edit
 msgid "Edit"
 msgstr "Redigera"
 
-#: program/localization/en_US/labels.inc:cancel
+#: program/localization/sv_SE/labels.inc:cancel
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: program/localization/en_US/labels.inc:save
+#: program/localization/sv_SE/labels.inc:save
 msgid "Save"
 msgstr "Spara"
 
-#: program/localization/en_US/labels.inc:delete
+#: program/localization/sv_SE/labels.inc:delete
 msgid "Delete"
 msgstr "Ta bort"
 
-#: program/localization/en_US/labels.inc:rename
+#: program/localization/sv_SE/labels.inc:rename
 msgid "Rename"
 msgstr "Ändra namn"
 
-#: program/localization/en_US/labels.inc:addphoto
+#: program/localization/sv_SE/labels.inc:addphoto
 msgid "Add"
 msgstr "Lägg till"
 
-#: program/localization/en_US/labels.inc:replacephoto
+#: program/localization/sv_SE/labels.inc:replacephoto
 msgid "Replace"
 msgstr "Ersätt"
 
-#: program/localization/en_US/labels.inc:newcontact
+#: program/localization/sv_SE/labels.inc:newcontact
 msgid "Create new contact card"
 msgstr "Ny kontakt"
 
-#: program/localization/en_US/labels.inc:deletecontact
+#: program/localization/sv_SE/labels.inc:deletecontact
 msgid "Delete selected contacts"
 msgstr "Ta bort vald kontakt"
 
-#: program/localization/en_US/labels.inc:composeto
+#: program/localization/sv_SE/labels.inc:composeto
 msgid "Compose mail to"
 msgstr "Nytt meddelande till vald kontakt"
 
-#: program/localization/en_US/labels.inc:contactsfromto
+#: program/localization/sv_SE/labels.inc:contactsfromto
 msgid "Contacts $from to $to of $count"
 msgstr "Kontakt $from till $to av $count"
 
-#: program/localization/en_US/labels.inc:print
+#: program/localization/sv_SE/labels.inc:print
 msgid "Print"
 msgstr "Skriv ut"
 
-#: program/localization/en_US/labels.inc:export
+#: program/localization/sv_SE/labels.inc:export
 msgid "Export"
 msgstr "Exportera"
 
-#: program/localization/en_US/labels.inc:exportvcards
+#: program/localization/sv_SE/labels.inc:exportvcards
 msgid "Export contacts in vCard format"
 msgstr "Exportera kontakter"
 
-#: program/localization/en_US/labels.inc:newcontactgroup
+#: program/localization/sv_SE/labels.inc:newcontactgroup
 msgid "Create new contact group"
 msgstr "Ny kontaktgrupp"
 
-#: program/localization/en_US/labels.inc:grouprename
+#: program/localization/sv_SE/labels.inc:grouprename
 msgid "Rename group"
 msgstr "Ändra gruppnamn"
 
-#: program/localization/en_US/labels.inc:groupdelete
+#: program/localization/sv_SE/labels.inc:groupdelete
 msgid "Delete group"
 msgstr "Ta bort grupp"
 
-#: program/localization/en_US/labels.inc:previouspage
+#: program/localization/sv_SE/labels.inc:previouspage
 msgid "Show previous page"
 msgstr "Visa föregående sida"
 
-#: program/localization/en_US/labels.inc:firstpage
+#: program/localization/sv_SE/labels.inc:firstpage
 msgid "Show first page"
 msgstr "Visa första sidan"
 
-#: program/localization/en_US/labels.inc:nextpage
+#: program/localization/sv_SE/labels.inc:nextpage
 msgid "Show next page"
 msgstr "Visa nästa sida"
 
-#: program/localization/en_US/labels.inc:lastpage
+#: program/localization/sv_SE/labels.inc:lastpage
 msgid "Show last page"
 msgstr "Visa sista sidan"
 
-#: program/localization/en_US/labels.inc:group
+#: program/localization/sv_SE/labels.inc:group
 msgid "Group"
 msgstr "Grupp"
 
-#: program/localization/en_US/labels.inc:groups
+#: program/localization/sv_SE/labels.inc:groups
 msgid "Groups"
 msgstr "Kontaktgrupper"
 
-#: program/localization/en_US/labels.inc:personaladrbook
+#: program/localization/sv_SE/labels.inc:personaladrbook
 msgid "Personal Addresses"
 msgstr "Personliga adresser"
 
-#: program/localization/en_US/labels.inc:searchsave
+#: program/localization/sv_SE/labels.inc:searchsave
 msgid "Save search"
 msgstr "Lägg till sökning"
 
-#: program/localization/en_US/labels.inc:searchdelete
+#: program/localization/sv_SE/labels.inc:searchdelete
 msgid "Delete search"
 msgstr "Ta bort sökning"
 
-#: program/localization/en_US/labels.inc:import
+#: program/localization/sv_SE/labels.inc:import
 msgid "Import"
 msgstr "Importera"
 
-#: program/localization/en_US/labels.inc:importcontacts
+#: program/localization/sv_SE/labels.inc:importcontacts
 msgid "Import contacts"
 msgstr "Importera kontakter"
 
-#: program/localization/en_US/labels.inc:importfromfile
+#: program/localization/sv_SE/labels.inc:importfromfile
 msgid "Import from file:"
 msgstr "Importera från fil:"
 
-#: program/localization/en_US/labels.inc:importtarget
+#: program/localization/sv_SE/labels.inc:importtarget
 msgid "Add new contacts to address book:"
 msgstr "Lägg till nya kontakter till adressbok:"
 
-#: program/localization/en_US/labels.inc:importreplace
+#: program/localization/sv_SE/labels.inc:importreplace
 msgid "Replace the entire address book"
 msgstr "Ersätt samtliga kontakter i adressboken"
 
-#: program/localization/en_US/labels.inc:importtext
-msgid ""
-"You can upload contacts from an existing address book.<br/>We "
-"currentlysupport importing addresses from the "
-"<ahref=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr ""
-"Kontakter kan importeras från en befintlig adressbok.<br/>För "
-"närvarandestöds import av adresser i "
-"<ahref=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>-format."
+#: program/localization/sv_SE/labels.inc:importtext
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
+msgstr "Kontakter kan importeras från en befintlig adressbok.<br/>För närvarande "
+"stöds import av adresser i <a "
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>-format."
 
-#: program/localization/en_US/labels.inc:done
+#: program/localization/sv_SE/labels.inc:done
 msgid "Done"
 msgstr "Klart"
 
-#: program/localization/en_US/labels.inc:settingsfor
+#: program/localization/sv_SE/labels.inc:settingsfor
 msgid "Settings for"
 msgstr "Inställningar för"
 
-#: program/localization/en_US/labels.inc:about
-msgid "About"
-msgstr "Om"
-
-#: program/localization/en_US/labels.inc:preferences
+#: program/localization/sv_SE/labels.inc:preferences
 msgid "Preferences"
 msgstr "Inställningar"
 
-#: program/localization/en_US/labels.inc:userpreferences
+#: program/localization/sv_SE/labels.inc:userpreferences
 msgid "User preferences"
 msgstr "Användarinställningar"
 
-#: program/localization/en_US/labels.inc:editpreferences
+#: program/localization/sv_SE/labels.inc:editpreferences
 msgid "Edit user preferences"
 msgstr "Ändra användarinställningar"
 
-#: program/localization/en_US/labels.inc:identities
+#: program/localization/sv_SE/labels.inc:identities
 msgid "Identities"
 msgstr "Identiteter"
 
-#: program/localization/en_US/labels.inc:manageidentities
+#: program/localization/sv_SE/labels.inc:manageidentities
 msgid "Manage identities for this account"
 msgstr "Hantera identiteter"
 
-#: program/localization/en_US/labels.inc:newidentity
+#: program/localization/sv_SE/labels.inc:newidentity
 msgid "New identity"
 msgstr "Ny identitet"
 
-#: program/localization/en_US/labels.inc:newitem
+#: program/localization/sv_SE/labels.inc:newitem
 msgid "New item"
 msgstr "Ny information"
 
-#: program/localization/en_US/labels.inc:edititem
+#: program/localization/sv_SE/labels.inc:edititem
 msgid "Edit item"
 msgstr "Ändra information"
 
-#: program/localization/en_US/labels.inc:preferhtml
+#: program/localization/sv_SE/labels.inc:preferhtml
 msgid "Display HTML"
 msgstr "Visa meddelanden i HTML-format"
 
-#: program/localization/en_US/labels.inc:defaultcharset
+#: program/localization/sv_SE/labels.inc:defaultcharset
 msgid "Default Character Set"
 msgstr "Förvald teckenkodning"
 
-#: program/localization/en_US/labels.inc:htmlmessage
+#: program/localization/sv_SE/labels.inc:htmlmessage
 msgid "HTML Message"
 msgstr "HTML-meddelande"
 
-#: program/localization/en_US/labels.inc:dateformat
+#: program/localization/sv_SE/labels.inc:dateformat
 msgid "Date format"
 msgstr "Datumformat"
 
-#: program/localization/en_US/labels.inc:timeformat
+#: program/localization/sv_SE/labels.inc:timeformat
 msgid "Time format"
 msgstr "Tidformat"
 
-#: program/localization/en_US/labels.inc:prettydate
+#: program/localization/sv_SE/labels.inc:prettydate
 msgid "Pretty dates"
 msgstr "Fina datum"
 
-#: program/localization/en_US/labels.inc:setdefault
+#: program/localization/sv_SE/labels.inc:setdefault
 msgid "Set default"
 msgstr "Sätt som standard"
 
-#: program/localization/en_US/labels.inc:autodetect
+#: program/localization/sv_SE/labels.inc:autodetect
 msgid "Auto"
 msgstr "Automatiskt"
 
-#: program/localization/en_US/labels.inc:language
+#: program/localization/sv_SE/labels.inc:language
 msgid "Language"
 msgstr "Språk"
 
-#: program/localization/en_US/labels.inc:timezone
+#: program/localization/sv_SE/labels.inc:timezone
 msgid "Time zone"
 msgstr "Tidszon"
 
-#: program/localization/en_US/labels.inc:pagesize
+#: program/localization/sv_SE/labels.inc:pagesize
 msgid "Rows per page"
 msgstr "Rader per sida"
 
-#: program/localization/en_US/labels.inc:signature
+#: program/localization/sv_SE/labels.inc:signature
 msgid "Signature"
 msgstr "Signatur"
 
-#: program/localization/en_US/labels.inc:dstactive
+#: program/localization/sv_SE/labels.inc:dstactive
 msgid "Daylight saving time"
 msgstr "Sommartid"
 
-#: program/localization/en_US/labels.inc:htmleditor
+#: program/localization/sv_SE/labels.inc:htmleditor
 msgid "Compose HTML messages"
 msgstr "Skriv meddelanden i HTML-format"
 
-#: program/localization/en_US/labels.inc:htmlonreply
+#: program/localization/sv_SE/labels.inc:htmlonreply
 msgid "on reply to HTML message only"
 msgstr "Endast vid svar på meddelande i HTML-format"
 
-#: program/localization/en_US/labels.inc:htmlsignature
+#: program/localization/sv_SE/labels.inc:htmlsignature
 msgid "HTML signature"
 msgstr "HTML-signatur"
 
-#: program/localization/en_US/labels.inc:previewpane
+#: program/localization/sv_SE/labels.inc:previewpane
 msgid "Show preview pane"
 msgstr "Visa meddelandefältet"
 
-#: program/localization/en_US/labels.inc:skin
+#: program/localization/sv_SE/labels.inc:skin
 msgid "Interface skin"
 msgstr "Stilmall för användargränssnitt"
 
-#: program/localization/en_US/labels.inc:logoutclear
+#: program/localization/sv_SE/labels.inc:logoutclear
 msgid "Clear Trash on logout"
 msgstr "Töm papperskorgen vid utloggning"
 
-#: program/localization/en_US/labels.inc:logoutcompact
+#: program/localization/sv_SE/labels.inc:logoutcompact
 msgid "Compact Inbox on logout"
 msgstr "Packa inkorgen vid utloggning"
 
-#: program/localization/en_US/labels.inc:uisettings
+#: program/localization/sv_SE/labels.inc:uisettings
 msgid "User Interface"
 msgstr "Användargränssnitt"
 
-#: program/localization/en_US/labels.inc:serversettings
+#: program/localization/sv_SE/labels.inc:serversettings
 msgid "Server Settings"
 msgstr "Serverinställningar"
 
-#: program/localization/en_US/labels.inc:mailboxview
+#: program/localization/sv_SE/labels.inc:mailboxview
 msgid "Mailbox View"
 msgstr "Hantering av meddelanden"
 
-#: program/localization/en_US/labels.inc:mdnrequests
+#: program/localization/sv_SE/labels.inc:mdnrequests
 msgid "On request for return receipt"
 msgstr "Skicka mottagarkvitton"
 
-#: program/localization/en_US/labels.inc:askuser
+#: program/localization/sv_SE/labels.inc:askuser
 msgid "ask me"
 msgstr "Fråga"
 
-#: program/localization/en_US/labels.inc:autosend
+#: program/localization/sv_SE/labels.inc:autosend
 msgid "send receipt"
 msgstr "Automatiskt"
 
-#: program/localization/en_US/labels.inc:autosendknown
+#: program/localization/sv_SE/labels.inc:autosendknown
 msgid "send receipt to my contacts, otherwise ask me"
 msgstr "Skicka kvitto till mina kontakter, fråga för övriga"
 
-#: program/localization/en_US/labels.inc:autosendknownignore
+#: program/localization/sv_SE/labels.inc:autosendknownignore
 msgid "send receipt to my contacts, otherwise ignore"
 msgstr "Skicka kvitto till mina kontakter, ignorera övriga"
 
-#: program/localization/en_US/labels.inc:ignore
+#: program/localization/sv_SE/labels.inc:ignore
 msgid "ignore"
 msgstr "Ignorera"
 
-#: program/localization/en_US/labels.inc:readwhendeleted
+#: program/localization/sv_SE/labels.inc:readwhendeleted
 msgid "Mark the message as read on delete"
 msgstr "Märk meddelande som läst vid borttagning"
 
-#: program/localization/en_US/labels.inc:flagfordeletion
+#: program/localization/sv_SE/labels.inc:flagfordeletion
 msgid "Flag the message for deletion instead of delete"
 msgstr "Flagga meddelande för borttagning istället för att ta bort direkt"
 
-#: program/localization/en_US/labels.inc:skipdeleted
+#: program/localization/sv_SE/labels.inc:skipdeleted
 msgid "Do not show deleted messages"
 msgstr "Visa inte borttagna meddelanden"
 
-#: program/localization/en_US/labels.inc:deletealways
+#: program/localization/sv_SE/labels.inc:deletealways
 msgid "If moving messages to Trash fails, delete them"
 msgstr "Ta bort meddelande om flyttning till Papperskorg misslyckas"
 
-#: program/localization/en_US/labels.inc:showremoteimages
+#: program/localization/sv_SE/labels.inc:showremoteimages
 msgid "Display remote inline images"
 msgstr "Visa externt länkade bilder i meddelande"
 
-#: program/localization/en_US/labels.inc:fromknownsenders
+#: program/localization/sv_SE/labels.inc:fromknownsenders
 msgid "from known senders"
 msgstr "Från kända avsändare"
 
-#: program/localization/en_US/labels.inc:always
+#: program/localization/sv_SE/labels.inc:always
 msgid "always"
 msgstr "Alltid"
 
-#: program/localization/en_US/labels.inc:showinlineimages
+#: program/localization/sv_SE/labels.inc:showinlineimages
 msgid "Display attached images below the message"
 msgstr "Visa bifogade bilder efter meddelande"
 
-#: program/localization/en_US/labels.inc:autosavedraft
+#: program/localization/sv_SE/labels.inc:autosavedraft
 msgid "Automatically save draft"
 msgstr "Spara utkast med automatiskt intervall"
 
-#: program/localization/en_US/labels.inc:everynminutes
+#: program/localization/sv_SE/labels.inc:everynminutes
 msgid "every $n minute(s)"
 msgstr "$n min"
 
-#: program/localization/en_US/labels.inc:keepalive
+#: program/localization/sv_SE/labels.inc:keepalive
 msgid "Check for new messages on"
 msgstr "Hämta nya meddelanden med automatiskt intervall"
 
-#: program/localization/en_US/labels.inc:never
+#: program/localization/sv_SE/labels.inc:never
 msgid "never"
 msgstr "Aldrig"
 
-#: program/localization/en_US/labels.inc:immediately
+#: program/localization/sv_SE/labels.inc:immediately
 msgid "immediately"
 msgstr "Direkt"
 
-#: program/localization/en_US/labels.inc:messagesdisplaying
+#: program/localization/sv_SE/labels.inc:messagesdisplaying
 msgid "Displaying Messages"
 msgstr "Visning av meddelanden"
 
-#: program/localization/en_US/labels.inc:messagescomposition
+#: program/localization/sv_SE/labels.inc:messagescomposition
 msgid "Composing Messages"
 msgstr "Redigering av meddelanden"
 
-#: program/localization/en_US/labels.inc:mimeparamfolding
+#: program/localization/sv_SE/labels.inc:mimeparamfolding
 msgid "Attachment names"
 msgstr "Kodning av namn på bifogade filer"
 
-#: program/localization/en_US/labels.inc:2231folding
+#: program/localization/sv_SE/labels.inc:2231folding
 msgid "Full RFC 2231 (Thunderbird)"
 msgstr "Full RFC 2231 (Thunderbird)"
 
-#: program/localization/en_US/labels.inc:miscfolding
+#: program/localization/sv_SE/labels.inc:miscfolding
 msgid "RFC 2047/2231 (MS Outlook)"
 msgstr "RFC 2047/2231 (Outlook)"
 
-#: program/localization/en_US/labels.inc:2047folding
+#: program/localization/sv_SE/labels.inc:2047folding
 msgid "Full RFC 2047 (other)"
 msgstr "Full RFC 2047 (övriga)"
 
-#: program/localization/en_US/labels.inc:force7bit
+#: program/localization/sv_SE/labels.inc:force7bit
 msgid "Use MIME encoding for 8-bit characters"
 msgstr "Använd MIME-kodning för tecken med 8-bitar"
 
-#: program/localization/en_US/labels.inc:advancedoptions
+#: program/localization/sv_SE/labels.inc:advancedoptions
 msgid "Advanced options"
 msgstr "Avancerade inställningar"
 
-#: program/localization/en_US/labels.inc:focusonnewmessage
+#: program/localization/sv_SE/labels.inc:focusonnewmessage
 msgid "Focus browser window on new message"
 msgstr "Fokusera webbläsarens fönster vid nytt meddelande"
 
-#: program/localization/en_US/labels.inc:checkallfolders
+#: program/localization/sv_SE/labels.inc:checkallfolders
 msgid "Check all folders for new messages"
 msgstr "Genomsök samtliga kataloger efter nya meddelanden"
 
-#: program/localization/en_US/labels.inc:displaynext
+#: program/localization/sv_SE/labels.inc:displaynext
 msgid "After message delete/move display the next message"
 msgstr "Visa nästa meddelande efter borttagning/flyttning av meddelande"
 
-#: program/localization/en_US/labels.inc:defaultfont
-msgid "Default font of HTML message"
-msgstr "Standardtypsnitt i HTML-meddelande"
-
-#: program/localization/en_US/labels.inc:mainoptions
+#: program/localization/sv_SE/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Huvudalternativ"
 
-#: program/localization/en_US/labels.inc:section
+#: program/localization/sv_SE/labels.inc:section
 msgid "Section"
 msgstr "Avdelning"
 
-#: program/localization/en_US/labels.inc:maintenance
+#: program/localization/sv_SE/labels.inc:maintenance
 msgid "Maintenance"
 msgstr "Underhåll"
 
-#: program/localization/en_US/labels.inc:newmessage
+#: program/localization/sv_SE/labels.inc:newmessage
 msgid "New Message"
 msgstr "Nytt meddelande"
 
-#: program/localization/en_US/labels.inc:listoptions
-msgid "List Options"
+#: program/localization/sv_SE/labels.inc:listoptions
+msgid "listoptions"
 msgstr "Listalternativ"
 
-#: program/localization/en_US/labels.inc:signatureoptions
+#: program/localization/sv_SE/labels.inc:signatureoptions
 msgid "Signature Options"
 msgstr "Signaturalternativ"
 
-#: program/localization/en_US/labels.inc:whenreplying
+#: program/localization/sv_SE/labels.inc:whenreplying
 msgid "When replying"
 msgstr "Vid svar"
 
-#: program/localization/en_US/labels.inc:replytopposting
+#: program/localization/sv_SE/labels.inc:replytopposting
 msgid "start new message above original"
 msgstr "Ovanför befintligt meddelande"
 
-#: program/localization/en_US/labels.inc:replybottomposting
+#: program/localization/sv_SE/labels.inc:replybottomposting
 msgid "start new message below original"
 msgstr "Nedanför befintligt meddelande"
 
-#: program/localization/en_US/labels.inc:replyremovesignature
+#: program/localization/sv_SE/labels.inc:replyremovesignature
 msgid "When replying remove original signature from message"
 msgstr "Ta bort befintlig signatur från meddelandet vid svar"
 
-#: program/localization/en_US/labels.inc:autoaddsignature
+#: program/localization/sv_SE/labels.inc:autoaddsignature
 msgid "Automatically add signature"
 msgstr "Infoga signatur automatiskt"
 
-#: program/localization/en_US/labels.inc:newmessageonly
+#: program/localization/sv_SE/labels.inc:newmessageonly
 msgid "new message only"
 msgstr "Vid nytt meddelande"
 
-#: program/localization/en_US/labels.inc:replyandforwardonly
+#: program/localization/sv_SE/labels.inc:replyandforwardonly
 msgid "replies and forwards only"
 msgstr "Vid svar och vidarebefordran"
 
-#: program/localization/en_US/labels.inc:replysignaturepos
+#: program/localization/sv_SE/labels.inc:replysignaturepos
 msgid "When replying or forwarding place signature"
 msgstr "Vid svar eller vidarebefordran infoga signatur"
 
-#: program/localization/en_US/labels.inc:belowquote
+#: program/localization/sv_SE/labels.inc:belowquote
 msgid "below the quote"
 msgstr "Nedanför befintligt meddelande"
 
-#: program/localization/en_US/labels.inc:abovequote
+#: program/localization/sv_SE/labels.inc:abovequote
 msgid "above the quote"
 msgstr "Ovanför befintligt meddelande"
 
-#: program/localization/en_US/labels.inc:insertsignature
+#: program/localization/sv_SE/labels.inc:insertsignature
 msgid "Insert signature"
 msgstr "Infoga signatur"
 
-#: program/localization/en_US/labels.inc:previewpanemarkread
+#: program/localization/sv_SE/labels.inc:previewpanemarkread
 msgid "Mark previewed messages as read"
 msgstr "Märk meddelande som läst vid visning"
 
-#: program/localization/en_US/labels.inc:afternseconds
+#: program/localization/sv_SE/labels.inc:afternseconds
 msgid "after $n seconds"
 msgstr "Efter $n sekunder"
 
-#: program/localization/en_US/labels.inc:reqmdn
+#: program/localization/sv_SE/labels.inc:reqmdn
 msgid "Always request a return receipt"
 msgstr "Begär alltid mottagarkvitto"
 
-#: program/localization/en_US/labels.inc:reqdsn
+#: program/localization/sv_SE/labels.inc:reqdsn
 msgid "Always request a delivery status notification"
 msgstr "Begär alltid leveransstatusmeddelande"
 
-#: program/localization/en_US/labels.inc:replysamefolder
+#: program/localization/sv_SE/labels.inc:replysamefolder
 msgid "Place replies in the folder of the message being replied to"
 msgstr "Placera svar i samma katalog som besvarat meddelande"
 
-#: program/localization/en_US/labels.inc:defaultaddressbook
+#: program/localization/sv_SE/labels.inc:defaultaddressbook
 msgid "Add new contacts to the selected addressbook"
 msgstr "Lägg till nya kontakter i vald adressbok"
 
-#: program/localization/en_US/labels.inc:autocompletesingle
-msgid "Skip alternative email addresses in autocompletion"
-msgstr "Hoppa över alternativa adresser vid automatisk komplettering"
-
-#: program/localization/en_US/labels.inc:spellcheckbeforesend
+#: program/localization/sv_SE/labels.inc:spellcheckbeforesend
 msgid "Check spelling before sending a message"
 msgstr "Kontrollera stavning innan meddelanden skickas"
 
-#: program/localization/en_US/labels.inc:spellcheckoptions
+#: program/localization/sv_SE/labels.inc:spellcheckoptions
 msgid "Spellcheck Options"
 msgstr "Rättstavningsalternativ"
 
-#: program/localization/en_US/labels.inc:spellcheckignoresyms
+#: program/localization/sv_SE/labels.inc:spellcheckignoresyms
 msgid "Ignore words with symbols"
 msgstr "Ignorera ord med symboler"
 
-#: program/localization/en_US/labels.inc:spellcheckignorenums
+#: program/localization/sv_SE/labels.inc:spellcheckignorenums
 msgid "Ignore words with numbers"
 msgstr "Ignorera ord med siffror"
 
-#: program/localization/en_US/labels.inc:spellcheckignorecaps
+#: program/localization/sv_SE/labels.inc:spellcheckignorecaps
 msgid "Ignore words with all letters capitalized"
 msgstr "Ignorera ord med enbart stora bokstäver"
 
-#: program/localization/en_US/labels.inc:addtodict
+#: program/localization/sv_SE/labels.inc:addtodict
 msgid "Add to dictionary"
 msgstr "Lägg till i ordlista"
 
-#: program/localization/en_US/labels.inc:folder
+#: program/localization/sv_SE/labels.inc:folder
 msgid "Folder"
 msgstr "Katalog"
 
-#: program/localization/en_US/labels.inc:foldername
+#: program/localization/sv_SE/labels.inc:foldername
 msgid "Folder name"
 msgstr "Katalognamn"
 
-#: program/localization/en_US/labels.inc:subscribed
+#: program/localization/sv_SE/labels.inc:subscribed
 msgid "Subscribed"
 msgstr "Prenumererad"
 
-#: program/localization/en_US/labels.inc:messagecount
+#: program/localization/sv_SE/labels.inc:messagecount
 msgid "Messages"
 msgstr "Meddelanden"
 
-#: program/localization/en_US/labels.inc:create
+#: program/localization/sv_SE/labels.inc:create
 msgid "Create"
 msgstr "Skapa"
 
-#: program/localization/en_US/labels.inc:createfolder
+#: program/localization/sv_SE/labels.inc:createfolder
 msgid "Create new folder"
 msgstr "Ny katalog"
 
-#: program/localization/en_US/labels.inc:managefolders
+#: program/localization/sv_SE/labels.inc:managefolders
 msgid "Manage folders"
 msgstr "Hantera kataloger"
 
-#: program/localization/en_US/labels.inc:specialfolders
+#: program/localization/sv_SE/labels.inc:specialfolders
 msgid "Special Folders"
 msgstr "Speciella kataloger"
 
-#: program/localization/en_US/labels.inc:properties
+#: program/localization/sv_SE/labels.inc:properties
 msgid "Properties"
 msgstr "Egenskaper"
 
-#: program/localization/en_US/labels.inc:folderproperties
+#: program/localization/sv_SE/labels.inc:folderproperties
 msgid "Folder properties"
 msgstr "Katalogegenskaper"
 
-#: program/localization/en_US/labels.inc:parentfolder
+#: program/localization/sv_SE/labels.inc:parentfolder
 msgid "Parent folder"
 msgstr "Överliggande katalog"
 
-#: program/localization/en_US/labels.inc:location
+#: program/localization/sv_SE/labels.inc:location
 msgid "Location"
 msgstr "Plats"
 
-#: program/localization/en_US/labels.inc:info
+#: program/localization/sv_SE/labels.inc:info
 msgid "Information"
 msgstr "Information"
 
-#: program/localization/en_US/labels.inc:getfoldersize
+#: program/localization/sv_SE/labels.inc:getfoldersize
 msgid "Click to get folder size"
 msgstr "Klicka för katalogstorlek"
 
-#: program/localization/en_US/labels.inc:changesubscription
+#: program/localization/sv_SE/labels.inc:changesubscription
 msgid "Click to change subscription"
 msgstr "Klicka för att ändra prenumeration"
 
-#: program/localization/en_US/labels.inc:foldertype
+#: program/localization/sv_SE/labels.inc:foldertype
 msgid "Folder Type"
 msgstr "Katalogtyp"
 
-#: program/localization/en_US/labels.inc:personalfolder
+#: program/localization/sv_SE/labels.inc:personalfolder
 msgid "Private Folder"
 msgstr "Privat katalog"
 
-#: program/localization/en_US/labels.inc:otherfolder
+#: program/localization/sv_SE/labels.inc:otherfolder
 msgid "Other User's Folder"
 msgstr "Annan användares katalog"
 
-#: program/localization/en_US/labels.inc:sharedfolder
+#: program/localization/sv_SE/labels.inc:sharedfolder
 msgid "Public Folder"
 msgstr "Publik katalog"
 
-#: program/localization/en_US/labels.inc:sortby
+#: program/localization/sv_SE/labels.inc:sortby
 msgid "Sort by"
 msgstr "Sortera på"
 
-#: program/localization/en_US/labels.inc:sortasc
+#: program/localization/sv_SE/labels.inc:sortasc
 msgid "Sort ascending"
 msgstr "Sortera stigande"
 
-#: program/localization/en_US/labels.inc:sortdesc
+#: program/localization/sv_SE/labels.inc:sortdesc
 msgid "Sort descending"
 msgstr "Sortera fallande"
 
-#: program/localization/en_US/labels.inc:undo
+#: program/localization/sv_SE/labels.inc:undo
 msgid "Undo"
 msgstr "Ångra"
 
-#: program/localization/en_US/labels.inc:plugin
-msgid "Plugin"
-msgstr "Plugin"
-
-#: program/localization/en_US/labels.inc:version
-msgid "Version"
-msgstr "Version"
-
-#: program/localization/en_US/labels.inc:source
-msgid "Source"
-msgstr "Källkod"
-
-#: program/localization/en_US/labels.inc:license
-msgid "License"
-msgstr "Licens"
-
-#: program/localization/en_US/labels.inc:support
-msgid "Get support"
-msgstr "Få hjälp"
-
-#: program/localization/en_US/labels.inc:B
+#: program/localization/sv_SE/labels.inc:B
 msgid "B"
 msgstr "B"
 
-#: program/localization/en_US/labels.inc:KB
+#: program/localization/sv_SE/labels.inc:KB
 msgid "KB"
 msgstr "KB"
 
-#: program/localization/en_US/labels.inc:MB
+#: program/localization/sv_SE/labels.inc:MB
 msgid "MB"
 msgstr "MB"
 
-#: program/localization/en_US/labels.inc:GB
+#: program/localization/sv_SE/labels.inc:GB
 msgid "GB"
 msgstr "GB"
 
-#: program/localization/en_US/labels.inc:unicode
+#: program/localization/sv_SE/labels.inc:unicode
 msgid "Unicode"
 msgstr "Unicode"
 
-#: program/localization/en_US/labels.inc:english
+#: program/localization/sv_SE/labels.inc:english
 msgid "English"
 msgstr "Engelsk"
 
-#: program/localization/en_US/labels.inc:westerneuropean
+#: program/localization/sv_SE/labels.inc:westerneuropean
 msgid "Western European"
 msgstr "Västeuropeisk"
 
-#: program/localization/en_US/labels.inc:easterneuropean
+#: program/localization/sv_SE/labels.inc:easterneuropean
 msgid "Eastern European"
 msgstr "Östeuropeisk"
 
-#: program/localization/en_US/labels.inc:southeasterneuropean
+#: program/localization/sv_SE/labels.inc:southeasterneuropean
 msgid "South-Eastern European"
 msgstr "Sydösteuropeisk"
 
-#: program/localization/en_US/labels.inc:baltic
+#: program/localization/sv_SE/labels.inc:baltic
 msgid "Baltic"
 msgstr "Baltisk"
 
-#: program/localization/en_US/labels.inc:cyrillic
+#: program/localization/sv_SE/labels.inc:cyrillic
 msgid "Cyrillic"
 msgstr "Kyrillisk"
 
-#: program/localization/en_US/labels.inc:arabic
+#: program/localization/sv_SE/labels.inc:arabic
 msgid "Arabic"
 msgstr "Arabisk"
 
-#: program/localization/en_US/labels.inc:greek
+#: program/localization/sv_SE/labels.inc:greek
 msgid "Greek"
 msgstr "Grekisk"
 
-#: program/localization/en_US/labels.inc:hebrew
+#: program/localization/sv_SE/labels.inc:hebrew
 msgid "Hebrew"
 msgstr "Hebreisk"
 
-#: program/localization/en_US/labels.inc:turkish
+#: program/localization/sv_SE/labels.inc:turkish
 msgid "Turkish"
 msgstr "Turkisk"
 
-#: program/localization/en_US/labels.inc:nordic
+#: program/localization/sv_SE/labels.inc:nordic
 msgid "Nordic"
 msgstr "Skandinavisk"
 
-#: program/localization/en_US/labels.inc:thai
+#: program/localization/sv_SE/labels.inc:thai
 msgid "Thai"
 msgstr "Thailändsk"
 
-#: program/localization/en_US/labels.inc:celtic
+#: program/localization/sv_SE/labels.inc:celtic
 msgid "Celtic"
 msgstr "Keltisk"
 
-#: program/localization/en_US/labels.inc:vietnamese
+#: program/localization/sv_SE/labels.inc:vietnamese
 msgid "Vietnamese"
 msgstr "Vietnamesisk"
 
-#: program/localization/en_US/labels.inc:japanese
+#: program/localization/sv_SE/labels.inc:japanese
 msgid "Japanese"
 msgstr "Japansk"
 
-#: program/localization/en_US/labels.inc:korean
+#: program/localization/sv_SE/labels.inc:korean
 msgid "Korean"
 msgstr "Koreansk"
 
-#: program/localization/en_US/labels.inc:chinese
+#: program/localization/sv_SE/labels.inc:chinese
 msgid "Chinese"
 msgstr "Kinesisk"

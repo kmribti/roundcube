@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: mk_MK\n"
@@ -599,7 +598,7 @@ msgstr "не зачувувај"
 
 #: program/localization/mk_MK/labels.inc:maxuploadsize
 msgid "Maximum allowed file size is $size"
-msgstr "Максималната дозволена големина за"
+msgstr "Максималната дозволена големина за "
 "податотеката е $size"
 
 #: program/localization/mk_MK/labels.inc:addcc
@@ -615,10 +614,10 @@ msgid "Add Reply-To"
 msgstr "Додај Одговори-на"
 
 #: program/localization/mk_MK/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Праќачот на оваа порака сака да биде"
-"известен кога ќе го прочитате писмото."
+msgstr "Праќачот на оваа порака сака да биде "
+"известен кога ќе го прочитате писмото. "
 "Дали сакате да го известите?"
 
 #: program/localization/mk_MK/labels.inc:receiptread
@@ -630,12 +629,12 @@ msgid "This is a Return Receipt for your message"
 msgstr "Ова е известување за вашата порака"
 
 #: program/localization/mk_MK/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Напомена: Ова известување само потврдува"
-"дека писмото кое сте го пратиле е"
-"отворено. Не е гаранција дека примачот го"
+msgstr "Напомена: Ова известување само потврдува "
+"дека писмото кое сте го пратиле е "
+"отворено. Не е гаранција дека примачот го "
 "прочитал или разбрал истото."
 
 #: program/localization/mk_MK/labels.inc:name
@@ -747,12 +746,12 @@ msgid "Replace the entire address book"
 msgstr "Замени го целиот именик"
 
 #: program/localization/mk_MK/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Можете да приложите контакти од веќе"
-"постоечки именик.<br/>Во моментот"
-"поддржуваме увоз на адреси од <a"
+msgstr "Можете да приложите контакти од веќе "
+"постоечки именик.<br/>Во моментот "
+"поддржуваме увоз на адреси од <a "
 "href=\"http://mk.wikipedia.org/wiki/VCard\">vCard</a> форматот."
 
 #: program/localization/mk_MK/labels.inc:done
@@ -781,7 +780,7 @@ msgstr "Идентитети"
 
 #: program/localization/mk_MK/labels.inc:manageidentities
 msgid "Manage identities for this account"
-msgstr "Организирај ги идентитетите за овој"
+msgstr "Организирај ги идентитетите за овој "
 "корисник"
 
 #: program/localization/mk_MK/labels.inc:newidentity
@@ -878,12 +877,12 @@ msgstr "игнорирај"
 
 #: program/localization/mk_MK/labels.inc:readwhendeleted
 msgid "Mark the message as read on delete"
-msgstr "Обележи го писмото како прочитано при"
+msgstr "Обележи го писмото како прочитано при "
 "бришење"
 
 #: program/localization/mk_MK/labels.inc:flagfordeletion
 msgid "Flag the message for deletion instead of delete"
-msgstr "Обележи го писмото за бришење наместо да"
+msgstr "Обележи го писмото за бришење наместо да "
 "го избришеш"
 
 #: program/localization/mk_MK/labels.inc:skipdeleted
@@ -952,7 +951,7 @@ msgstr "Напредни можности"
 
 #: program/localization/mk_MK/labels.inc:focusonnewmessage
 msgid "Focus browser window on new message"
-msgstr "Фокусирај го прозорецот на"
+msgstr "Фокусирај го прозорецот на "
 "прелистувачот на новото писмо"
 
 #: program/localization/mk_MK/labels.inc:checkallfolders
@@ -961,7 +960,7 @@ msgstr "Провери ги сите папки за нови писма"
 
 #: program/localization/mk_MK/labels.inc:displaynext
 msgid "After message delete/move display the next message"
-msgstr "По бришење/преместување на писмото"
+msgstr "По бришење/преместување на писмото "
 "прикажи го следното писмо"
 
 #: program/localization/mk_MK/labels.inc:mainoptions
@@ -981,7 +980,7 @@ msgid "New Message"
 msgstr "Ново писмо"
 
 #: program/localization/mk_MK/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Можности за листата"
 
 #: program/localization/mk_MK/labels.inc:signatureoptions
@@ -1002,7 +1001,7 @@ msgstr "новото писмо започни го под оригиналот"
 
 #: program/localization/mk_MK/labels.inc:replyremovesignature
 msgid "When replying remove original signature from message"
-msgstr "При одговарање отстрани го изворниот"
+msgstr "При одговарање отстрани го изворниот "
 "потпис од писмото"
 
 #: program/localization/mk_MK/labels.inc:autoaddsignature
@@ -1019,7 +1018,7 @@ msgstr "само одгорови и препраќања"
 
 #: program/localization/mk_MK/labels.inc:replysignaturepos
 msgid "When replying or forwarding place signature"
-msgstr "При одговарање или препраќање стави"
+msgstr "При одговарање или препраќање стави "
 "потпис"
 
 #: program/localization/mk_MK/labels.inc:belowquote

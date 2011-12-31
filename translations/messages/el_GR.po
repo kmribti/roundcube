@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: el_GR\n"
@@ -21,7 +20,7 @@ msgstr "Είσοδος απέτυχε"
 
 #: program/localization/el_GR/messages.inc:cookiesdisabled
 msgid "Your browser does not accept cookies."
-msgstr "Ο περιηγητής σας (browser) δεν αποδέχεται"
+msgstr "Ο περιηγητής σας (browser) δεν αποδέχεται "
 "cookies"
 
 #: program/localization/el_GR/messages.inc:sessionerror
@@ -38,7 +37,7 @@ msgstr "Σφάλμα του εξυπηρετητή!"
 
 #: program/localization/el_GR/messages.inc:invalidrequest
 msgid "Invalid request! No data was saved."
-msgstr "Λανθασμένο αίτημα! Δεν αποθηκεύτηκαν"
+msgstr "Λανθασμένο αίτημα! Δεν αποθηκεύτηκαν "
 "δεδομένα."
 
 #: program/localization/el_GR/messages.inc:nomessagesfound
@@ -47,7 +46,7 @@ msgstr "Δε βρέθηκαν μηνύματα σε αυτή τη θυρίδα"
 
 #: program/localization/el_GR/messages.inc:loggedout
 msgid "You have successfully terminated the session. Good bye!"
-msgstr "Έχετε τερματίσει επιτυχώς τη συνεδρία."
+msgstr "Έχετε τερματίσει επιτυχώς τη συνεδρία. "
 "Αντίο!"
 
 #: program/localization/el_GR/messages.inc:mailboxempty
@@ -96,18 +95,18 @@ msgstr "Η επαφή προστέθηκε επιτυχώς στις Επαφέ�
 
 #: program/localization/el_GR/messages.inc:contactexists
 msgid "A contact with the same e-mail address already exists."
-msgstr "Υπάρχει ήδη επαφή με αυτή τη διεύθυνση"
+msgstr "Υπάρχει ήδη επαφή με αυτή τη διεύθυνση "
 "e-mail"
 
 #: program/localization/el_GR/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "Για να προστατευτεί το απόρρητο σας, οι"
-"απομακρυσμένες εικόνες έχουν"
+msgstr "Για να προστατευτεί το απόρρητο σας, οι "
+"απομακρυσμένες εικόνες έχουν "
 "απενεργοποιηθεί σε αυτό το μήνυμα."
 
 #: program/localization/el_GR/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
-msgstr "Αυτό το μήνυμα είναι κρυπτογραφημένο και"
+msgstr "Αυτό το μήνυμα είναι κρυπτογραφημένο και "
 "δε μπορεί να προβληθεί. Συγνώμη!"
 
 #: program/localization/el_GR/messages.inc:nocontactsfound
@@ -124,17 +123,17 @@ msgstr "Αποστολή μηνύματος απέτυχε"
 
 #: program/localization/el_GR/messages.inc:senttooquickly
 msgid "Please wait $sec sec(s). before sending this message."
-msgstr "Παρακαλώ περιμένετε $sec δευτερόλεπτα,"
+msgstr "Παρακαλώ περιμένετε $sec δευτερόλεπτα, "
 "πριν στείλετε το μήνυμα"
 
 #: program/localization/el_GR/messages.inc:errorsavingsent
 msgid "An error occured while saving sent message."
-msgstr "Παρουσιάστηκε σφάλμα, κατά την"
+msgstr "Παρουσιάστηκε σφάλμα, κατά την "
 "αποθήκευση του απεσταλμένου μηνύματος"
 
 #: program/localization/el_GR/messages.inc:errorsaving
 msgid "An error occured while saving."
-msgstr "Παρουσιάστηκε σφάλμα κατά την"
+msgstr "Παρουσιάστηκε σφάλμα κατά την "
 "αποθήκευση"
 
 #: program/localization/el_GR/messages.inc:errormoving
@@ -151,22 +150,22 @@ msgstr "Δεν έγινε επισήμανση στο μύνημα"
 
 #: program/localization/el_GR/messages.inc:deletecontactconfirm
 msgid "Do you really want to delete selected contact(s)?"
-msgstr "Θέλετε να διαγράψετε τη συγκεκριμένη"
+msgstr "Θέλετε να διαγράψετε τη συγκεκριμένη "
 "επαφή/ές;"
 
 #: program/localization/el_GR/messages.inc:deletemessagesconfirm
 msgid "Do you really want to delete selected message(s)?"
-msgstr "Θέλετε να διαγράψετε το συγκεκριμένο"
+msgstr "Θέλετε να διαγράψετε το συγκεκριμένο "
 "μήνυμα/τα;"
 
 #: program/localization/el_GR/messages.inc:deletefolderconfirm
 msgid "Do you really want to delete this folder?"
-msgstr "Θέλετε να διαγράψετε το συγκεκριμένο"
+msgstr "Θέλετε να διαγράψετε το συγκεκριμένο "
 "φάκελο;"
 
 #: program/localization/el_GR/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
-msgstr "Θέλετε να διαγράψετε όλα τα μηνύματα στο"
+msgstr "Θέλετε να διαγράψετε όλα τα μηνύματα στο "
 "συγκεκριμένο φάκελο;"
 
 #: program/localization/el_GR/messages.inc:folderdeleting
@@ -195,17 +194,17 @@ msgstr "Παρακαλώ εισάγετε μέγεθος σελίδας"
 
 #: program/localization/el_GR/messages.inc:nosenderwarning
 msgid "Please enter sender e-mail address."
-msgstr "Παρακαλώ εισάγετε την email διεύθυνση"
+msgstr "Παρακαλώ εισάγετε την email διεύθυνση "
 "αποστολέα"
 
 #: program/localization/el_GR/messages.inc:norecipientwarning
 msgid "Please enter at least one recipient."
-msgstr "Παρακαλώ εισάγεται τουλάχιστον έναν"
+msgstr "Παρακαλώ εισάγεται τουλάχιστον έναν "
 "παραλήπτη"
 
 #: program/localization/el_GR/messages.inc:nosubjectwarning
 msgid "The \"Subject\" field is empty. Would you like to enter one now?"
-msgstr "Το πεδίο \"Θέμα\" είναι άδειο. Θέλετε να"
+msgstr "Το πεδίο \"Θέμα\" είναι άδειο. Θέλετε να "
 "εισάγεται ένα τώρα;"
 
 #: program/localization/el_GR/messages.inc:nobodywarning
@@ -214,12 +213,12 @@ msgstr "Αποστολή μηνύματος χωρίς κείμενο;"
 
 #: program/localization/el_GR/messages.inc:notsentwarning
 msgid "Message has not been sent. Do you want to discard your message?"
-msgstr "Το μήνυμα δεν έχει σταλεί. Θέλετε να το"
+msgstr "Το μήνυμα δεν έχει σταλεί. Θέλετε να το "
 "απορρίψετε;"
 
 #: program/localization/el_GR/messages.inc:noldapserver
 msgid "Please select an ldap server to search."
-msgstr "Παρακαλώ επιλέξτε έναν LDAP διακομιστή για"
+msgstr "Παρακαλώ επιλέξτε έναν LDAP διακομιστή για "
 "αναζήτηση"
 
 #: program/localization/el_GR/messages.inc:nocontactsreturned
@@ -228,14 +227,14 @@ msgstr "Δε βρέθηκαν επαφές"
 
 #: program/localization/el_GR/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
-msgstr "Παρακαλώ εισάγεται όνομα επαφής ή"
+msgstr "Παρακαλώ εισάγεται όνομα επαφής ή "
 "διεύθυνση email"
 
 #: program/localization/el_GR/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Δεν έχουν φορτωθεί όλα τα συνημμένα."
-"Παρακαλώ περιμένετε ή ακυρώστε το"
+msgstr "Δεν έχουν φορτωθεί όλα τα συνημμένα. "
+"Παρακαλώ περιμένετε ή ακυρώστε το "
 "ανέβασμα."
 
 #: program/localization/el_GR/messages.inc:searchsuccessful
@@ -272,7 +271,7 @@ msgstr "Μετακίνηση διαμορφώσεων κειμένου..."
 
 #: program/localization/el_GR/messages.inc:messageopenerror
 msgid "Could not load message from server."
-msgstr "Η φόρτωση μηνυμάτων από τον διακομιστή"
+msgstr "Η φόρτωση μηνυμάτων από τον διακομιστή "
 "απέτυχε"
 
 #: program/localization/el_GR/messages.inc:fileuploaderror
@@ -281,7 +280,7 @@ msgstr "Ανέβασμα αρχείου απέτυχε"
 
 #: program/localization/el_GR/messages.inc:filesizeerror
 msgid "The uploaded file exceeds the maximum size of $size."
-msgstr "Το ανεβασμένο αρχείο ξεπερνάει το"
+msgstr "Το ανεβασμένο αρχείο ξεπερνάει το "
 "μέγιστο μέγεθος των $size"
 
 #: program/localization/el_GR/messages.inc:copysuccess
@@ -314,12 +313,12 @@ msgstr "Αποστολή αναφοράς απέτυχε"
 
 #: program/localization/el_GR/messages.inc:nodeletelastidentity
 msgid "You cannot delete this identity, it's your last one."
-msgstr "Δε μπορείτε να διαγράψετε αυτήν την"
+msgstr "Δε μπορείτε να διαγράψετε αυτήν την "
 "ταυτότητα, είναι η τελευταία."
 
 #: program/localization/el_GR/messages.inc:forbiddencharacter
 msgid "Folder name contains a forbidden character."
-msgstr "Η ονομασία φακέλου περιέχει μη επιτρεπτό"
+msgstr "Η ονομασία φακέλου περιέχει μη επιτρεπτό "
 "χαρακτήρα"
 
 #: program/localization/el_GR/messages.inc:selectimportfile
@@ -328,7 +327,7 @@ msgstr "Επιλέξτε αρχείο για ανέβασμα"
 
 #: program/localization/el_GR/messages.inc:addresswriterror
 msgid "The selected address book is not writeable."
-msgstr "Η επιλεγμένη ατζέντα διευθύνσεων δεν"
+msgstr "Η επιλεγμένη ατζέντα διευθύνσεων δεν "
 "είνα εγγράψιμη"
 
 #: program/localization/el_GR/messages.inc:importwait
@@ -337,7 +336,7 @@ msgstr "Εισαγωγή, παρακαλώ περιμένετε..."
 
 #: program/localization/el_GR/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "Η εισαγωγή απέτυχε! Το αρχείο δεν είναι"
+msgstr "Η εισαγωγή απέτυχε! Το αρχείο δεν είναι "
 "έγκυρο vcard αρχείο."
 
 #: program/localization/el_GR/messages.inc:opnotpermitted
@@ -346,19 +345,19 @@ msgstr "Η λειτουργία δεν επιτρέπεται!"
 
 #: program/localization/el_GR/messages.inc:nofromaddress
 msgid "Missing e-mail address in selected identity."
-msgstr "Στην επιλεγμένη ταυτότητα, λείπει η email"
+msgstr "Στην επιλεγμένη ταυτότητα, λείπει η email "
 "διεύθυνση"
 
 #: program/localization/el_GR/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Ούπς! Ανεπανόθωτο σφάλμα. Επικοινωνήστε"
-"με το διαχειριστή του εξυπηρετητή. <b>Το"
+msgstr "Ούπς! Ανεπανόθωτο σφάλμα. Επικοινωνήστε "
+"με το διαχειριστή του εξυπηρετητή. <b>Το "
 "μηνυμά σας δεν στάλθηκε.</b>"
 
 #: program/localization/el_GR/messages.inc:smtpconnerror
 msgid "SMTP Error ($code): Connection to server failed."
-msgstr "Σφάλμα SMTP ($code): Απέτυχε η σύνδεση με τον"
+msgstr "Σφάλμα SMTP ($code): Απέτυχε η σύνδεση με τον "
 "εξυπηρετητή"
 
 #: program/localization/el_GR/messages.inc:smtpautherror
@@ -367,17 +366,17 @@ msgstr "Σφάλμα SMTP ($code): Σφάλμα ταυτοποίησης"
 
 #: program/localization/el_GR/messages.inc:smtpfromerror
 msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
-msgstr "Σφάλμα SMTP ($code): Αποτυχία ορισμού"
+msgstr "Σφάλμα SMTP ($code): Αποτυχία ορισμού "
 "αποστολέα \"$from\" ($msg)"
 
 #: program/localization/el_GR/messages.inc:smtptoerror
 msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
-msgstr "Σφάλμα SMTP ($code): Αποτυχία προσθήκης"
+msgstr "Σφάλμα SMTP ($code): Αποτυχία προσθήκης "
 "παραλήπτη \"$to\" ($msg)"
 
 #: program/localization/el_GR/messages.inc:smtprecipientserror
 msgid "SMTP Error: Unable to parse recipients list."
-msgstr "Σφάλμα SMTP: Αδύνατο να προσπελαστεί η"
+msgstr "Σφάλμα SMTP: Αδύνατο να προσπελαστεί η "
 "λίστα παραληπτών"
 
 #: program/localization/el_GR/messages.inc:smtperror

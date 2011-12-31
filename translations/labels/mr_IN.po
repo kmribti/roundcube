@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: mr_IN\n"
@@ -21,7 +20,7 @@ msgstr "$product वरती स्वागत आहे"
 
 #: program/localization/mr_IN/labels.inc:username
 msgid "Username"
-msgstr "वापरकर्त्याचे नाव(तुमचे"
+msgstr "वापरकर्त्याचे नाव(तुमचे "
 "इमेल) "
 
 #: program/localization/mr_IN/labels.inc:password
@@ -328,8 +327,8 @@ msgstr "पाठवणार्‍याला उत्तर द्या"
 
 #: program/localization/mr_IN/labels.inc:replytoallmessage
 msgid "Reply to list or to sender and all recipients"
-msgstr "पाठवणार्‍याला आणि प्रत"
-"केलेल्या सर्वांना संदेश"
+msgstr "पाठवणार्‍याला आणि प्रत "
+"केलेल्या सर्वांना संदेश "
 "पाठवा"
 
 #: program/localization/mr_IN/labels.inc:forwardmessage
@@ -386,7 +385,7 @@ msgstr "संदेशांच्या यादीकडे परत चल
 
 #: program/localization/mr_IN/labels.inc:viewsource
 msgid "Show source"
-msgstr "मूळ संदेशाचा प्रोग्राम कोड"
+msgstr "मूळ संदेशाचा प्रोग्राम कोड "
 "दाखवा"
 
 #: program/localization/mr_IN/labels.inc:markmessages
@@ -488,7 +487,7 @@ msgstr "सर्व धागे"
 
 #: program/localization/mr_IN/labels.inc:expand_only_unread
 msgid "only with unread messages"
-msgstr "फक्‍त न वाचलेल्‍या"
+msgstr "फक्‍त न वाचलेल्‍या "
 "संदेशांबददल "
 
 #: program/localization/mr_IN/labels.inc:fromto
@@ -669,7 +668,7 @@ msgstr "चित्र दाखवा"
 
 #: program/localization/mr_IN/labels.inc:alwaysshow
 msgid "Always show images from $sender"
-msgstr "$sender कडून आलेल्या संदेशातील"
+msgstr "$sender कडून आलेल्या संदेशातील "
 "चित्रे नेहमी दाखवा"
 
 #: program/localization/mr_IN/labels.inc:htmltoggle
@@ -682,7 +681,7 @@ msgstr "साधे लिखाण"
 
 #: program/localization/mr_IN/labels.inc:savesentmessagein
 msgid "Save sent message in"
-msgstr "पाठवलेला संदेश या फोल्डरमधे"
+msgstr "पाठवलेला संदेश या फोल्डरमधे "
 "ठेवा"
 
 #: program/localization/mr_IN/labels.inc:dontsave
@@ -691,7 +690,7 @@ msgstr "संदेश साठवू नका"
 
 #: program/localization/mr_IN/labels.inc:maxuploadsize
 msgid "Maximum allowed file size is $size"
-msgstr "जास्‍तीत जास्‍त फाइलचा आकार"
+msgstr "जास्‍तीत जास्‍त फाइलचा आकार "
 "$size असू शकतो"
 
 #: program/localization/mr_IN/labels.inc:addcc
@@ -707,11 +706,11 @@ msgid "Add Reply-To"
 msgstr "आणखी लोकांना संदेश पाठवा"
 
 #: program/localization/mr_IN/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "हा संदेश पाठवणार्‍याने हा"
-"संदेश तुम्ही वाचल्यावर"
-"कळवावयाला सांगितले आहे."
+msgstr "हा संदेश पाठवणार्‍याने हा "
+"संदेश तुम्ही वाचल्यावर "
+"कळवावयाला सांगितले आहे. "
 "तुम्हाला असे कळवणे चालेल ना?"
 
 #: program/localization/mr_IN/labels.inc:receiptread
@@ -720,20 +719,20 @@ msgstr "पोच पावती (संदेश वाचला)"
 
 #: program/localization/mr_IN/labels.inc:yourmessage
 msgid "This is a Return Receipt for your message"
-msgstr "ही तुमच्या संदेशाची पोच"
+msgstr "ही तुमच्या संदेशाची पोच "
 "पावती आहे. "
 
 #: program/localization/mr_IN/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "सूचना: ही पोच पावती तुम्ही"
-"ज्यांना  संदेश पाठवला"
-"त्यांच्या संगणकावर दिसला"
-"एवढेच सांगते. तुम्ही"
-"ज्यांना हा संदेश पाठवला,"
-"त्यांनी तो वाचला, आणि"
-"त्यांना तो नक्की समजला हे"
+msgstr "सूचना: ही पोच पावती तुम्ही "
+"ज्यांना  संदेश पाठवला "
+"त्यांच्या संगणकावर दिसला "
+"एवढेच सांगते. तुम्ही "
+"ज्यांना हा संदेश पाठवला, "
+"त्यांनी तो वाचला, आणि "
+"त्यांना तो नक्की समजला हे "
 "मात्र सांगत नाही. "
 
 #: program/localization/mr_IN/labels.inc:name
@@ -778,12 +777,12 @@ msgstr "काढून टाका"
 
 #: program/localization/mr_IN/labels.inc:newcontact
 msgid "Create new contact card"
-msgstr "नोंदवहीत नवीन संपर्क"
+msgstr "नोंदवहीत नवीन संपर्क "
 "लिहिण्यासाठी"
 
 #: program/localization/mr_IN/labels.inc:deletecontact
 msgid "Delete selected contacts"
-msgstr "खूण केलेले सर्व संपर्काचे"
+msgstr "खूण केलेले सर्व संपर्काचे "
 "पत्ते काढून टाका"
 
 #: program/localization/mr_IN/labels.inc:composeto
@@ -804,7 +803,7 @@ msgstr "निर्यात करा"
 
 #: program/localization/mr_IN/labels.inc:exportvcards
 msgid "Export contacts in vCard format"
-msgstr "व्ही कार्ड स्वरुपात पत्ते"
+msgstr "व्ही कार्ड स्वरुपात पत्ते "
 "निर्यात करा"
 
 #: program/localization/mr_IN/labels.inc:newcontactgroup
@@ -813,7 +812,7 @@ msgstr "नवीन पत्‍त्‍यांचा गट बनवा"
 
 #: program/localization/mr_IN/labels.inc:groupactions
 msgid "groupactions"
-msgstr "पत्‍त्‍यांच्‍या गटाबददल"
+msgstr "पत्‍त्‍यांच्‍या गटाबददल "
 "क्रिया..."
 
 #: program/localization/mr_IN/labels.inc:previouspage
@@ -861,14 +860,14 @@ msgid "Replace the entire address book"
 msgstr "संपूर्ण पत्ता नोंदवही बदला"
 
 #: program/localization/mr_IN/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "तुम्ही तुमच्याकडील पत्ता"
-"नोंदवहीतील पत्ते तुम्ही"
-"येथे घेऊ शकता.<br/>सध्या आम्ही"
-"या <a href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>"
-"प्रकारच्या वेगवेगळ्या"
+msgstr "तुम्ही तुमच्याकडील पत्ता "
+"नोंदवहीतील पत्ते तुम्ही "
+"येथे घेऊ शकता.<br/>सध्या आम्ही "
+"या <a href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> "
+"प्रकारच्या वेगवेगळ्या "
 "नोंदवहीतील पत्ते घेऊ शकतो. "
 
 #: program/localization/mr_IN/labels.inc:done
@@ -897,7 +896,7 @@ msgstr "ओळख"
 
 #: program/localization/mr_IN/labels.inc:manageidentities
 msgid "Manage identities for this account"
-msgstr "या खात्यासाठी ओळखींचे"
+msgstr "या खात्यासाठी ओळखींचे "
 "नियोजन करा"
 
 #: program/localization/mr_IN/labels.inc:newidentity
@@ -942,7 +941,7 @@ msgstr "भाषा"
 
 #: program/localization/mr_IN/labels.inc:timezone
 msgid "Time zone"
-msgstr "वेळ "
+msgstr "वेळ  "
 "क्षेत्र"
 
 #: program/localization/mr_IN/labels.inc:pagesize
@@ -967,7 +966,7 @@ msgstr "एच टी एम एल सही"
 
 #: program/localization/mr_IN/labels.inc:previewpane
 msgid "Show preview pane"
-msgstr "प्रक्रियापूर्व तावदान"
+msgstr "प्रक्रियापूर्व तावदान "
 "दाखवा"
 
 #: program/localization/mr_IN/labels.inc:skin
@@ -976,13 +975,13 @@ msgstr "दृष्य गोष्टी"
 
 #: program/localization/mr_IN/labels.inc:logoutclear
 msgid "Clear Trash on logout"
-msgstr "खात्यातून बाहेर पडतांना"
+msgstr "खात्यातून बाहेर पडतांना "
 "कचरा पेटी साफ करा"
 
 #: program/localization/mr_IN/labels.inc:logoutcompact
 msgid "Compact Inbox on logout"
-msgstr "खात्यातून बाहेर पडतांना"
-"आलेल्या संदेशांना छोटे आणि"
+msgstr "खात्यातून बाहेर पडतांना "
+"आलेल्या संदेशांना छोटे आणि "
 "व्यवस्थित करा"
 
 #: program/localization/mr_IN/labels.inc:uisettings
@@ -1015,23 +1014,23 @@ msgstr "दुर्लक्ष करा"
 
 #: program/localization/mr_IN/labels.inc:readwhendeleted
 msgid "Mark the message as read on delete"
-msgstr "काढून टाकल्यावर संदेश वाचला"
+msgstr "काढून टाकल्यावर संदेश वाचला "
 "असे दाखवा"
 
 #: program/localization/mr_IN/labels.inc:flagfordeletion
 msgid "Flag the message for deletion instead of delete"
-msgstr "संदेश काढून टाकण्या ऎवजी"
-"संदेश काढून टाकण्यासाठी आहे"
+msgstr "संदेश काढून टाकण्या ऎवजी "
+"संदेश काढून टाकण्यासाठी आहे "
 "अशी खूण करा"
 
 #: program/localization/mr_IN/labels.inc:skipdeleted
 msgid "Do not show deleted messages"
-msgstr "काढून टाकलेले संदेश दाखवू"
+msgstr "काढून टाकलेले संदेश दाखवू "
 "नका"
 
 #: program/localization/mr_IN/labels.inc:deletealways
 msgid "If moving messages to Trash fails, delete them"
-msgstr "जर संदेश कचरापेटीत गेले"
+msgstr "जर संदेश कचरापेटीत गेले "
 "नाहीत तर काढून टाका"
 
 #: program/localization/mr_IN/labels.inc:showremoteimages
@@ -1040,7 +1039,7 @@ msgstr "संदेशातील चित्रे दाखवा"
 
 #: program/localization/mr_IN/labels.inc:fromknownsenders
 msgid "from known senders"
-msgstr "माहितीतील पाठवणार्‍याकडून"
+msgstr "माहितीतील पाठवणार्‍याकडून "
 "संदेश"
 
 #: program/localization/mr_IN/labels.inc:always
@@ -1049,7 +1048,7 @@ msgstr "नेहमी"
 
 #: program/localization/mr_IN/labels.inc:showinlineimages
 msgid "Display attached images below the message"
-msgstr "सोबत जोडलेली चित्रे"
+msgstr "सोबत जोडलेली चित्रे "
 "संदेशाच्या खाली दाखवा"
 
 #: program/localization/mr_IN/labels.inc:autosavedraft
@@ -1062,7 +1061,7 @@ msgstr "प्रत्येक $n मिनिटांनी"
 
 #: program/localization/mr_IN/labels.inc:keepalive
 msgid "Check for new messages on"
-msgstr "वर नवे संदेश आले आहेत का ते"
+msgstr "वर नवे संदेश आले आहेत का ते "
 "पहा"
 
 #: program/localization/mr_IN/labels.inc:never
@@ -1083,7 +1082,7 @@ msgstr "संदेश तयार करा"
 
 #: program/localization/mr_IN/labels.inc:mimeparamfolding
 msgid "Attachment names"
-msgstr "सोबत दिलेल्या फाईल्सची नावे"
+msgstr "सोबत दिलेल्या फाईल्सची नावे "
 ""
 
 #: program/localization/mr_IN/labels.inc:2231folding
@@ -1092,7 +1091,7 @@ msgstr "संपूर्ण आर एफ सी 2231(थंडरबर्ड
 
 #: program/localization/mr_IN/labels.inc:miscfolding
 msgid "RFC 2047/2231 (MS Outlook)"
-msgstr "आर एफ सी  2047/2231 (मायक्रोसॉफ़्ट"
+msgstr "आर एफ सी  2047/2231 (मायक्रोसॉफ़्ट "
 "आऊटलूक)"
 
 #: program/localization/mr_IN/labels.inc:2047folding
@@ -1101,7 +1100,7 @@ msgstr "संपूर्ण आर एफ सी 2047(ईतर)"
 
 #: program/localization/mr_IN/labels.inc:force7bit
 msgid "Use MIME encoding for 8-bit characters"
-msgstr "8 अक्षरी एमआयएमई"
+msgstr "8 अक्षरी एमआयएमई "
 "संक्षिप्‍तरूप वापरा"
 
 #: program/localization/mr_IN/labels.inc:advancedoptions
@@ -1110,18 +1109,18 @@ msgstr "अधिक पर्याय"
 
 #: program/localization/mr_IN/labels.inc:focusonnewmessage
 msgid "Focus browser window on new message"
-msgstr "ब्राऊझर खिडकी नवीन संदेशावर"
+msgstr "ब्राऊझर खिडकी नवीन संदेशावर "
 "केंद्रित करा"
 
 #: program/localization/mr_IN/labels.inc:checkallfolders
 msgid "Check all folders for new messages"
-msgstr "सर्व फोल्डरमधे नवीन संदेश"
+msgstr "सर्व फोल्डरमधे नवीन संदेश "
 "शोधा"
 
 #: program/localization/mr_IN/labels.inc:displaynext
 msgid "After message delete/move display the next message"
-msgstr "संदेश काढल्‍यानंतर किंवा"
-"हलवल्‍यानंतर पुढचा संदेश"
+msgstr "संदेश काढल्‍यानंतर किंवा "
+"हलवल्‍यानंतर पुढचा संदेश "
 "दाखवा"
 
 #: program/localization/mr_IN/labels.inc:mainoptions
@@ -1141,7 +1140,7 @@ msgid "New Message"
 msgstr "नवीन संदेश"
 
 #: program/localization/mr_IN/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "पर्याय सूची"
 
 #: program/localization/mr_IN/labels.inc:signatureoptions
@@ -1154,17 +1153,17 @@ msgstr "उत्‍तर देताना"
 
 #: program/localization/mr_IN/labels.inc:replytopposting
 msgid "start new message above original"
-msgstr "नवीन संदेश मुळ संदेशाच्‍या"
+msgstr "नवीन संदेश मुळ संदेशाच्‍या "
 "वर चालू करा"
 
 #: program/localization/mr_IN/labels.inc:replybottomposting
 msgid "start new message below original"
-msgstr "नवीन संदेश मुळ संदेशाच्‍या"
+msgstr "नवीन संदेश मुळ संदेशाच्‍या "
 "खाली चालू करा"
 
 #: program/localization/mr_IN/labels.inc:replyremovesignature
 msgid "When replying remove original signature from message"
-msgstr "उत्‍तर देताना मुळ सही"
+msgstr "उत्‍तर देताना मुळ सही "
 "संदेशातून काढून टाका"
 
 #: program/localization/mr_IN/labels.inc:autoaddsignature
@@ -1177,12 +1176,12 @@ msgstr "फक्‍त नवीन संदेश"
 
 #: program/localization/mr_IN/labels.inc:replyandforwardonly
 msgid "replies and forwards only"
-msgstr "फक्‍त उत्‍तरे आ‍णी पुढे"
+msgstr "फक्‍त उत्‍तरे आ‍णी पुढे "
 "पाठवलेले संदेश"
 
 #: program/localization/mr_IN/labels.inc:replysignaturepos
 msgid "When replying or forwarding place signature"
-msgstr "उत्‍तर देताना किंवा पुढे"
+msgstr "उत्‍तर देताना किंवा पुढे "
 "पाठवताना सही करा"
 
 #: program/localization/mr_IN/labels.inc:belowquote
@@ -1199,7 +1198,7 @@ msgstr "सही मध्‍ये टाका"
 
 #: program/localization/mr_IN/labels.inc:previewpanemarkread
 msgid "Mark previewed messages as read"
-msgstr "प्रदर्शित संदेश पाहीले अशी"
+msgstr "प्रदर्शित संदेश पाहीले अशी "
 "खुण करा "
 
 #: program/localization/mr_IN/labels.inc:afternseconds

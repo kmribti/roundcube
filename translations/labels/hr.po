@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: hr_HR\n"
@@ -719,9 +718,9 @@ msgid "Add Followup-To"
 msgstr "Dodaj Nastavak-na"
 
 #: program/localization/hr_HR/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Pošiljaoc ove poruke je tražio da bude obaviješten o njenom primitku."
+msgstr "Pošiljaoc ove poruke je tražio da bude obaviješten o njenom primitku. "
 "Želite li obavijestiti pošiljaoca?"
 
 #: program/localization/hr_HR/labels.inc:receiptread
@@ -733,11 +732,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "Ovo je vraćena potvrda vaše poruke"
 
 #: program/localization/hr_HR/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Info: Ova poruka samo potvrđuje da se poruka prikazala na računalu"
-"primaoca. Nema garancije da je primaoc pročitao ili razumio sadržaj"
+msgstr "Info: Ova poruka samo potvrđuje da se poruka prikazala na računalu "
+"primaoca. Nema garancije da je primaoc pročitao ili razumio sadržaj "
 "poruke."
 
 #: program/localization/hr_HR/labels.inc:name
@@ -1030,11 +1029,11 @@ msgid "Replace the entire address book"
 msgstr "Prepiši cijeli adresar"
 
 #: program/localization/hr_HR/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Možete prebaciti kontakte iz postojećeg adresara.<br/>Trenutno"
-"podržavamo uvozenje adresa iz <a"
+msgstr "Možete prebaciti kontakte iz postojećeg adresara.<br/>Trenutno "
+"podržavamo uvozenje adresa iz <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> formata."
 
 #: program/localization/hr_HR/labels.inc:done
@@ -1298,7 +1297,7 @@ msgid "New Message"
 msgstr "Nova poruka"
 
 #: program/localization/hr_HR/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Postavke liste"
 
 #: program/localization/hr_HR/labels.inc:signatureoptions

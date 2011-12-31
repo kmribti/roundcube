@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: tr_TR\n"
@@ -731,9 +730,9 @@ msgid "Add Followup-To"
 msgstr "Takip adresi ekle"
 
 #: program/localization/tr_TR/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Bu postayı gönderen kişi, postayı okuduğunuza dair alındı onayı"
+msgstr "Bu postayı gönderen kişi, postayı okuduğunuza dair alındı onayı "
 "istedi. Alındı onayını göndermek ister misiniz ?"
 
 #: program/localization/tr_TR/labels.inc:receiptread
@@ -745,11 +744,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "Bu, postanız için alındı onayıdır"
 
 #: program/localization/tr_TR/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Not: Bu alındı onayı sadece postanızın alıcının bilgisayarında"
-"gösterildiğini belirtir. Alıcının posta içeriğini okuduğunu veya"
+msgstr "Not: Bu alındı onayı sadece postanızın alıcının bilgisayarında "
+"gösterildiğini belirtir. Alıcının posta içeriğini okuduğunu veya "
 "anladığını garantilemez."
 
 #: program/localization/tr_TR/labels.inc:name
@@ -1079,11 +1078,11 @@ msgid "Replace the entire address book"
 msgstr "Tüm adres defterinin yerine geçsin"
 
 #: program/localization/tr_TR/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Mevcut bir adres defterindeki kişileri yükleyebilirsiniz.<br/><a"
-"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> dosyalarından"
+msgstr "Mevcut bir adres defterindeki kişileri yükleyebilirsiniz.<br/><a "
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> dosyalarından "
 "adresleri içe aktarmayı destekliyoruz."
 
 #: program/localization/tr_TR/labels.inc:done
@@ -1347,7 +1346,7 @@ msgid "New Message"
 msgstr "Yeni Posta"
 
 #: program/localization/tr_TR/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Liste Seçenekleri"
 
 #: program/localization/tr_TR/labels.inc:signatureoptions

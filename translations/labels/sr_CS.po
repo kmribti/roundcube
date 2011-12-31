@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: sr_CS\n"
@@ -643,10 +642,10 @@ msgid "Add Reply-To"
 msgstr "Додај Одговор-за"
 
 #: program/localization/sr_CS/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Пошиљалац ове поруке је замолио да буде"
-"обавештен када прочитате ову поруку. Да"
+msgstr "Пошиљалац ове поруке је замолио да буде "
+"обавештен када прочитате ову поруку. Да "
 "ли желите да обавестите пошиљаоца?"
 
 #: program/localization/sr_CS/labels.inc:receiptread
@@ -655,17 +654,17 @@ msgstr "Обавештење о приспећу (прочитана порук�
 
 #: program/localization/sr_CS/labels.inc:yourmessage
 msgid "This is a Return Receipt for your message"
-msgstr "Ово је обавештење о приспећу за вашу"
+msgstr "Ово је обавештење о приспећу за вашу "
 "поруку"
 
 #: program/localization/sr_CS/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Пажња: Ово обавештење само потврђује да"
-"је порука приказана на рачунару"
-"примаоца. Не постоји гаранција да је"
-"прималац прочитао или разумео садржај"
+msgstr "Пажња: Ово обавештење само потврђује да "
+"је порука приказана на рачунару "
+"примаоца. Не постоји гаранција да је "
+"прималац прочитао или разумео садржај "
 "поруке."
 
 #: program/localization/sr_CS/labels.inc:name
@@ -930,12 +929,12 @@ msgid "Replace the entire address book"
 msgstr "Измени цели адресар"
 
 #: program/localization/sr_CS/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Можете да сачувате контакте већ"
-"постојећег адресара.<br/>We currently support importing"
-"addresses from the <a href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>"
+msgstr "Можете да сачувате контакте већ "
+"постојећег адресара.<br/>We currently support importing "
+"addresses from the <a href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> "
 "data format."
 
 #: program/localization/sr_CS/labels.inc:done
@@ -1099,7 +1098,7 @@ msgid "New Message"
 msgstr "Нова порука"
 
 #: program/localization/sr_CS/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Опције листе"
 
 #: program/localization/sr_CS/labels.inc:signatureoptions
@@ -1120,7 +1119,7 @@ msgstr "Почни нову поруку испод оригинала"
 
 #: program/localization/sr_CS/labels.inc:replyremovesignature
 msgid "When replying remove original signature from message"
-msgstr "При одговору одстрани оригинални потпис"
+msgstr "При одговору одстрани оригинални потпис "
 "из поруке"
 
 #: program/localization/sr_CS/labels.inc:autoaddsignature
@@ -1137,7 +1136,7 @@ msgstr "само одговори и прослеђивања"
 
 #: program/localization/sr_CS/labels.inc:replysignaturepos
 msgid "When replying or forwarding place signature"
-msgstr "При одговору или прослеђивању додај"
+msgstr "При одговору или прослеђивању додај "
 "потпис"
 
 #: program/localization/sr_CS/labels.inc:belowquote
@@ -1166,12 +1165,12 @@ msgstr "Увек затражи повратну скрипту"
 
 #: program/localization/sr_CS/labels.inc:reqdsn
 msgid "Always request a delivery status notification"
-msgstr "Увек затражи обавештење о статусу слања"
+msgstr "Увек затражи обавештење о статусу слања "
 "поруке"
 
 #: program/localization/sr_CS/labels.inc:replysamefolder
 msgid "Place replies in the folder of the message being replied to"
-msgstr "Сачувај одговоре у фасциклу поруке на"
+msgstr "Сачувај одговоре у фасциклу поруке на "
 "коју се одговара"
 
 #: program/localization/sr_CS/labels.inc:folder

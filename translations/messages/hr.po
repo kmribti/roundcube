@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: hr_HR\n"
@@ -244,9 +243,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Unesite ime ili e-mail adresu"
 
 #: program/localization/hr_HR/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Svi prilozi još nisu presnimljeni na poslužitelj. Molim pričekajte ili"
+msgstr "Svi prilozi još nisu presnimljeni na poslužitelj. Molim pričekajte ili "
 "zaustavite prsnimavanje."
 
 #: program/localization/hr_HR/messages.inc:searchsuccessful
@@ -383,7 +382,7 @@ msgstr "Greška pri uvozu! Datoteka ne sadrži pravilan vCard format."
 
 #: program/localization/hr_HR/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>Uspješno je uvezeno $inserted kontakt(a), preskočeno $skipped već"
+msgstr "<b>Uspješno je uvezeno $inserted kontakt(a), preskočeno $skipped već "
 "postojećih</b>:<p><em>$names</em></p>"
 
 #: program/localization/hr_HR/messages.inc:importconfirmskipped
@@ -399,15 +398,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Nije upisana e-mail adresa u odabrani identitet"
 
 #: program/localization/hr_HR/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Prebacivanje u čisti tekstualni uređivač će prouzrokovati gubljenje"
+msgstr "Prebacivanje u čisti tekstualni uređivač će prouzrokovati gubljenje "
 "formatiranje teksta. Želite li nastaviti?"
 
 #: program/localization/hr_HR/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Dogodila se fatalna greška u konfiguraciji. Odmah kontaktirajte"
+msgstr "Dogodila se fatalna greška u konfiguraciji. Odmah kontaktirajte "
 "administratora. <b>Vaša poruka se nemože poslati.</b>"
 
 #: program/localization/hr_HR/messages.inc:smtpconnerror
@@ -420,7 +419,7 @@ msgstr "SMTP Greška ($code): Autentikacija nije uspjela"
 
 #: program/localization/hr_HR/messages.inc:smtpfromerror
 msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
-msgstr "SMTP Greška ($code): Nije uspjelo postavljanje pošiljatelja \"$from\""
+msgstr "SMTP Greška ($code): Nije uspjelo postavljanje pošiljatelja \"$from\" "
 "($msg)"
 
 #: program/localization/hr_HR/messages.inc:smtptoerror

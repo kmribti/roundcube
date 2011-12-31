@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: bg_BG\n"
@@ -735,10 +734,10 @@ msgid "Add Followup-To"
 msgstr "Добавяне на препращане към"
 
 #: program/localization/bg_BG/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Подателят на писмото е пожелал да бъде"
-"уведомен, че сте го прочели. Желаете ли да"
+msgstr "Подателят на писмото е пожелал да бъде "
+"уведомен, че сте го прочели. Желаете ли да "
 "изпратите обратна разписка?"
 
 #: program/localization/bg_BG/labels.inc:receiptread
@@ -750,13 +749,13 @@ msgid "This is a Return Receipt for your message"
 msgstr "Това е обратна разписка за писмото Ви"
 
 #: program/localization/bg_BG/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Забележка: Тази разписка потвърждава"
-"само, че писмото е било показано на"
-"компютъра на получателят. Няма никаква"
-"гаранция, че получателят е прочел и/или"
+msgstr "Забележка: Тази разписка потвърждава "
+"само, че писмото е било показано на "
+"компютъра на получателят. Няма никаква "
+"гаранция, че получателят е прочел и/или "
 "разбрал съдържанието на писмото."
 
 #: program/localization/bg_BG/labels.inc:name
@@ -1090,12 +1089,12 @@ msgid "Replace the entire address book"
 msgstr "Замени цялата книга с адреси"
 
 #: program/localization/bg_BG/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Можете да внесете контакти от"
-"съществуваща книга с адреси. В момента"
-"поддържане внасянето на адреси от vCard"
+msgstr "Можете да внесете контакти от "
+"съществуваща книга с адреси. В момента "
+"поддържане внасянето на адреси от vCard "
 "формат за данни."
 
 #: program/localization/bg_BG/labels.inc:done
@@ -1244,12 +1243,12 @@ msgstr "Изпрати автоматично"
 
 #: program/localization/bg_BG/labels.inc:autosendknown
 msgid "send receipt to my contacts, otherwise ask me"
-msgstr "да се изпрати обратна разписка на моите"
+msgstr "да се изпрати обратна разписка на моите "
 "контакти и да се при външни контакти"
 
 #: program/localization/bg_BG/labels.inc:autosendknownignore
 msgid "send receipt to my contacts, otherwise ignore"
-msgstr "да се изпрати обратна разписка на моите"
+msgstr "да се изпрати обратна разписка на моите "
 "контакти, а на външни не"
 
 #: program/localization/bg_BG/labels.inc:ignore
@@ -1270,7 +1269,7 @@ msgstr "Не показвай изтритите съобщения"
 
 #: program/localization/bg_BG/labels.inc:deletealways
 msgid "If moving messages to Trash fails, delete them"
-msgstr "При неуспешно преместване на съобщение в"
+msgstr "При неуспешно преместване на съобщение в "
 "Кошчето, да се изтрие"
 
 #: program/localization/bg_BG/labels.inc:showremoteimages
@@ -1287,7 +1286,7 @@ msgstr "Винаги"
 
 #: program/localization/bg_BG/labels.inc:showinlineimages
 msgid "Display attached images below the message"
-msgstr "Покажи прикачените изображения след"
+msgstr "Покажи прикачените изображения след "
 "съобщението"
 
 #: program/localization/bg_BG/labels.inc:autosavedraft
@@ -1336,7 +1335,7 @@ msgstr "Според RFC 2047 (други)"
 
 #: program/localization/bg_BG/labels.inc:force7bit
 msgid "Use MIME encoding for 8-bit characters"
-msgstr "Използване на MIME кодиране за 8-битови"
+msgstr "Използване на MIME кодиране за 8-битови "
 "символи"
 
 #: program/localization/bg_BG/labels.inc:advancedoptions
@@ -1353,7 +1352,7 @@ msgstr "Провери всички папки за нови писма"
 
 #: program/localization/bg_BG/labels.inc:displaynext
 msgid "After message delete/move display the next message"
-msgstr "След изтриване / премини към следващото"
+msgstr "След изтриване / премини към следващото "
 "писмо"
 
 #: program/localization/bg_BG/labels.inc:mainoptions
@@ -1373,7 +1372,7 @@ msgid "New Message"
 msgstr "Ново съобщение"
 
 #: program/localization/bg_BG/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Покажи списък с настройки"
 
 #: program/localization/bg_BG/labels.inc:signatureoptions
@@ -1386,17 +1385,17 @@ msgstr "При отговор"
 
 #: program/localization/bg_BG/labels.inc:replytopposting
 msgid "start new message above original"
-msgstr "започване на ново съобщение преди"
+msgstr "започване на ново съобщение преди "
 "получения текст"
 
 #: program/localization/bg_BG/labels.inc:replybottomposting
 msgid "start new message below original"
-msgstr "започване на ново съобщение след"
+msgstr "започване на ново съобщение след "
 "получения текст"
 
 #: program/localization/bg_BG/labels.inc:replyremovesignature
 msgid "When replying remove original signature from message"
-msgstr "Премахване на предишния подпис от"
+msgstr "Премахване на предишния подпис от "
 "съобщението при отговор"
 
 #: program/localization/bg_BG/labels.inc:autoaddsignature
@@ -1413,7 +1412,7 @@ msgstr "само на отговори и препратени"
 
 #: program/localization/bg_BG/labels.inc:replysignaturepos
 msgid "When replying or forwarding place signature"
-msgstr "Поставяне на подпис при отговор или"
+msgstr "Поставяне на подпис при отговор или "
 "препращане"
 
 #: program/localization/bg_BG/labels.inc:belowquote
@@ -1430,7 +1429,7 @@ msgstr "Вмъкване на подпис"
 
 #: program/localization/bg_BG/labels.inc:previewpanemarkread
 msgid "Mark previewed messages as read"
-msgstr "Маркиране на прегледаните съобщения"
+msgstr "Маркиране на прегледаните съобщения "
 "като прочетени"
 
 #: program/localization/bg_BG/labels.inc:afternseconds
@@ -1443,27 +1442,27 @@ msgstr "Винаги връщай обратна разписка"
 
 #: program/localization/bg_BG/labels.inc:reqdsn
 msgid "Always request a delivery status notification"
-msgstr "Винаги изисквай отговор при доставка на"
+msgstr "Винаги изисквай отговор при доставка на "
 "съобщение"
 
 #: program/localization/bg_BG/labels.inc:replysamefolder
 msgid "Place replies in the folder of the message being replied to"
-msgstr "Постави отговора в папката на"
+msgstr "Постави отговора в папката на "
 "съобщението, на което се отговаря"
 
 #: program/localization/bg_BG/labels.inc:defaultaddressbook
 msgid "Add new contacts to the selected addressbook"
-msgstr "Добави нови контакти в избраната книга с"
+msgstr "Добави нови контакти в избраната книга с "
 "адреси"
 
 #: program/localization/bg_BG/labels.inc:autocompletesingle
 msgid "Skip alternative email addresses in autocompletion"
-msgstr "Пропусни алтернативните email адреси при"
+msgstr "Пропусни алтернативните email адреси при "
 "автоматично попълване"
 
 #: program/localization/bg_BG/labels.inc:spellcheckbeforesend
 msgid "Check spelling before sending a message"
-msgstr "Провери за правописни грешки преди"
+msgstr "Провери за правописни грешки преди "
 "изпращане на съобщението"
 
 #: program/localization/bg_BG/labels.inc:spellcheckoptions
@@ -1480,7 +1479,7 @@ msgstr "Игнорирай думи съдържащи числа"
 
 #: program/localization/bg_BG/labels.inc:spellcheckignorecaps
 msgid "Ignore words with all letters capitalized"
-msgstr "Игнорирай думи съдържащи единствено"
+msgstr "Игнорирай думи съдържащи единствено "
 "главни букви"
 
 #: program/localization/bg_BG/labels.inc:addtodict

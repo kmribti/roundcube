@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: mr_IN\n"
@@ -21,20 +20,20 @@ msgstr "प्रवेश करता आला नाही"
 
 #: program/localization/mr_IN/messages.inc:cookiesdisabled
 msgid "Your browser does not accept cookies."
-msgstr "तुमचा ब्राऊझर कुकीज घेऊ शकत"
+msgstr "तुमचा ब्राऊझर कुकीज घेऊ शकत "
 "नाही"
 
 #: program/localization/mr_IN/messages.inc:sessionerror
 msgid "Your session is invalid or expired."
-msgstr "तुम्ही प्रवेश केल्यानंतर"
-"बराच वेळ काही न करता गेला"
-"म्हणून तुमचा कालावधी संपला"
-"किंवा तुमच्या कालावधीच्या"
+msgstr "तुम्ही प्रवेश केल्यानंतर "
+"बराच वेळ काही न करता गेला "
+"म्हणून तुमचा कालावधी संपला "
+"किंवा तुमच्या कालावधीच्या "
 "नोंदेत काही चूक झाली आहे."
 
 #: program/localization/mr_IN/messages.inc:imaperror
 msgid "Connection to IMAP server failed."
-msgstr "आयमॅप सर्व्हरशी संपर्क होवू"
+msgstr "आयमॅप सर्व्हरशी संपर्क होवू "
 "शकला नाही."
 
 #: program/localization/mr_IN/messages.inc:servererror
@@ -43,17 +42,17 @@ msgstr "सर्व्‍हरची चूक!"
 
 #: program/localization/mr_IN/messages.inc:invalidrequest
 msgid "Invalid request! No data was saved."
-msgstr "अवैध विनंती! माहिती"
+msgstr "अवैध विनंती! माहिती "
 "साठवलेली नाही."
 
 #: program/localization/mr_IN/messages.inc:nomessagesfound
 msgid "No messages found in this mailbox."
-msgstr "या खात्यामधे कोणताही संदेश"
+msgstr "या खात्यामधे कोणताही संदेश "
 "आलेला नाही"
 
 #: program/localization/mr_IN/messages.inc:loggedout
 msgid "You have successfully terminated the session. Good bye!"
-msgstr "तुम्ही यशस्वीरित्या खाते"
+msgstr "तुम्ही यशस्वीरित्या खाते "
 "बंद केले आहे . राम राम !"
 
 #: program/localization/mr_IN/messages.inc:mailboxempty
@@ -74,7 +73,7 @@ msgstr "माहिती आणत आहे "
 
 #: program/localization/mr_IN/messages.inc:checkingmail
 msgid "Checking for new messages..."
-msgstr "नवीन संदेश आले आहेत का हे"
+msgstr "नवीन संदेश आले आहेत का हे "
 "पहात आहे"
 
 #: program/localization/mr_IN/messages.inc:sendingmessage
@@ -83,7 +82,7 @@ msgstr "संदेश पाठवत आहे"
 
 #: program/localization/mr_IN/messages.inc:messagesent
 msgid "Message sent successfully."
-msgstr "संदेश यशस्वीरित्या"
+msgstr "संदेश यशस्वीरित्या "
 "पाठवण्यात आला आहे"
 
 #: program/localization/mr_IN/messages.inc:savingmessage
@@ -92,7 +91,7 @@ msgstr "संदेश जतन करुन ठेवत आहे"
 
 #: program/localization/mr_IN/messages.inc:messagesaved
 msgid "Message saved to Drafts."
-msgstr "संदेश मसुदा फोल्डरमधे ठेवत"
+msgstr "संदेश मसुदा फोल्डरमधे ठेवत "
 "आहे"
 
 #: program/localization/mr_IN/messages.inc:successfullysaved
@@ -101,25 +100,25 @@ msgstr "यशस्वीरित्या ठेवला"
 
 #: program/localization/mr_IN/messages.inc:addedsuccessfully
 msgid "Contact added successfully to address book."
-msgstr "नवीन नाव पत्तां नोंदवहीत"
+msgstr "नवीन नाव पत्तां नोंदवहीत "
 "व्यवस्थित ठेवला"
 
 #: program/localization/mr_IN/messages.inc:contactexists
 msgid "A contact with the same e-mail address already exists."
-msgstr "हा इमेल पत्ता नोंदवहीत आधिच"
+msgstr "हा इमेल पत्ता नोंदवहीत आधिच "
 "आहे. "
 
 #: program/localization/mr_IN/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "तुमची गोपनीयता पाळण्यासाठी"
-"या संदेशातील दुसर्‍या"
-"सर्व्हरवरील चित्रे दिसणे"
+msgstr "तुमची गोपनीयता पाळण्यासाठी "
+"या संदेशातील दुसर्‍या "
+"सर्व्हरवरील चित्रे दिसणे "
 "थांबवले आहे."
 
 #: program/localization/mr_IN/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
-msgstr "हा गुप्त व सांकेतिक संदेश"
-"आहे. तो तुम्हाला असा दाखवता"
+msgstr "हा गुप्त व सांकेतिक संदेश "
+"आहे. तो तुम्हाला असा दाखवता "
 "येणार नाही. "
 
 #: program/localization/mr_IN/messages.inc:nocontactsfound
@@ -128,7 +127,7 @@ msgstr "कोणताच पत्ता नोंदवहीत नाही
 
 #: program/localization/mr_IN/messages.inc:contactnotfound
 msgid "The requested contact was not found."
-msgstr "या नावाचा कोणताच पत्ता"
+msgstr "या नावाचा कोणताच पत्ता "
 "नोंदवहीत नाही."
 
 #: program/localization/mr_IN/messages.inc:sendingfailed
@@ -137,17 +136,17 @@ msgstr "संदेश पाठवता आला नाही."
 
 #: program/localization/mr_IN/messages.inc:senttooquickly
 msgid "Please wait $sec sec(s). before sending this message."
-msgstr "कृपया हा संदेश"
+msgstr "कृपया हा संदेश "
 "पाठवण्यापूर्वी $sec थांबा "
 
 #: program/localization/mr_IN/messages.inc:errorsavingsent
 msgid "An error occured while saving sent message."
-msgstr "पाठवलेला संदेश ठेवून"
+msgstr "पाठवलेला संदेश ठेवून "
 "देतांना काहीतरी चूक झाली. "
 
 #: program/localization/mr_IN/messages.inc:errorsaving
 msgid "An error occured while saving."
-msgstr "संदेश ठेवून देतांना काहीतरी"
+msgstr "संदेश ठेवून देतांना काहीतरी "
 "चूक झाली. "
 
 #: program/localization/mr_IN/messages.inc:errormoving
@@ -156,7 +155,7 @@ msgstr "संदेश तेथे ठेवता आला नाही."
 
 #: program/localization/mr_IN/messages.inc:errorcopying
 msgid "Could not copy the message(s)."
-msgstr "संदेशांची नक्‍कल करता आली"
+msgstr "संदेशांची नक्‍कल करता आली "
 "नाही"
 
 #: program/localization/mr_IN/messages.inc:errordeleting
@@ -169,25 +168,25 @@ msgstr "संदेशांवर खूण करता आली नाह�
 
 #: program/localization/mr_IN/messages.inc:deletecontactconfirm
 msgid "Do you really want to delete selected contact(s)?"
-msgstr "खूण केलेले सर्व पत्ते"
-"खरोखरच तुम्हाला काढून"
+msgstr "खूण केलेले सर्व पत्ते "
+"खरोखरच तुम्हाला काढून "
 "टाकायचे आहेत का?"
 
 #: program/localization/mr_IN/messages.inc:deletemessagesconfirm
 msgid "Do you really want to delete selected message(s)?"
-msgstr "खूण केलेले सर्व संदेश"
-"खरोखरच तुम्हाला काढून"
+msgstr "खूण केलेले सर्व संदेश "
+"खरोखरच तुम्हाला काढून "
 "टाकायचे आहेत का?"
 
 #: program/localization/mr_IN/messages.inc:deletefolderconfirm
 msgid "Do you really want to delete this folder?"
-msgstr "हा फोल्डर खरोखरच तुम्हाला"
+msgstr "हा फोल्डर खरोखरच तुम्हाला "
 "काढून टाकायचा आहेत का?"
 
 #: program/localization/mr_IN/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
-msgstr "या फोल्डरमधिल सर्व संदेश"
-"खरोखरच तुम्हाला काढून"
+msgstr "या फोल्डरमधिल सर्व संदेश "
+"खरोखरच तुम्हाला काढून "
 "टाकायचे आहेत का?"
 
 #: program/localization/mr_IN/messages.inc:folderdeleting
@@ -204,7 +203,7 @@ msgstr "फॉर्म पूर्णपणे भरलेला  नाह�
 
 #: program/localization/mr_IN/messages.inc:noemailwarning
 msgid "Please enter a valid email address."
-msgstr "योग्य, बरोबर, आणि वैध इमेल"
+msgstr "योग्य, बरोबर, आणि वैध इमेल "
 "पत्ता द्या. "
 
 #: program/localization/mr_IN/messages.inc:nonamewarning
@@ -217,54 +216,54 @@ msgstr "पानाचा आकार द्या"
 
 #: program/localization/mr_IN/messages.inc:nosenderwarning
 msgid "Please enter sender e-mail address."
-msgstr "पाठवणार्‍याचा इमेल पत्ता"
+msgstr "पाठवणार्‍याचा इमेल पत्ता "
 "द्या"
 
 #: program/localization/mr_IN/messages.inc:norecipientwarning
 msgid "Please enter at least one recipient."
-msgstr "किमान एकतरी पत्ता द्या"
-"ज्यांना तुम्हाला संदेश"
+msgstr "किमान एकतरी पत्ता द्या "
+"ज्यांना तुम्हाला संदेश "
 "पाठवावयाचा आहे. "
 
 #: program/localization/mr_IN/messages.inc:nosubjectwarning
 msgid "The \"Subject\" field is empty. Would you like to enter one now?"
-msgstr "विषय दिलेला नाही. तुम्हाला"
+msgstr "विषय दिलेला नाही. तुम्हाला "
 "विषय द्यायचा आहे का?"
 
 #: program/localization/mr_IN/messages.inc:nobodywarning
 msgid "Send this message without text?"
-msgstr "संदेशामधे कोणताही मजकूर"
-"नाही. तुम्हाला तसाच संदेश"
+msgstr "संदेशामधे कोणताही मजकूर "
+"नाही. तुम्हाला तसाच संदेश "
 "पाठवावयाचा आहे का?"
 
 #: program/localization/mr_IN/messages.inc:notsentwarning
 msgid "Message has not been sent. Do you want to discard your message?"
-msgstr "संदेश पाठवला गेला नाही."
-"तुम्हाला हा संदेश रद्द"
+msgstr "संदेश पाठवला गेला नाही. "
+"तुम्हाला हा संदेश रद्द "
 "करायचा आहे का?"
 
 #: program/localization/mr_IN/messages.inc:noldapserver
 msgid "Please select an ldap server to search."
-msgstr "शोधण्यासाठी ldap सर्व्हर"
+msgstr "शोधण्यासाठी ldap सर्व्हर "
 "निवडा"
 
 #: program/localization/mr_IN/messages.inc:nocontactsreturned
 msgid "nocontactsreturned"
-msgstr "कोणताही पत्ता नोंदवहीत"
+msgstr "कोणताही पत्ता नोंदवहीत "
 "नाही. "
 
 #: program/localization/mr_IN/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
-msgstr "कृपया ज्यांना तुम्हाला"
-"संदेश पाठवावयाचा आहे"
-"त्यांचे नाव किंवा इमेल"
+msgstr "कृपया ज्यांना तुम्हाला "
+"संदेश पाठवावयाचा आहे "
+"त्यांचे नाव किंवा इमेल "
 "पत्ता द्या. "
 
 #: program/localization/mr_IN/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "सर्व फाईल अजून चढवल्‍या"
-"गेलेल्‍या नाहीत. कृपया वाट"
+msgstr "सर्व फाईल अजून चढवल्‍या "
+"गेलेल्‍या नाहीत. कृपया वाट "
 "पहा किंवा मागे फिरा"
 
 #: program/localization/mr_IN/messages.inc:searchsuccessful
@@ -273,7 +272,7 @@ msgstr "$nr संदेष मिळाले."
 
 #: program/localization/mr_IN/messages.inc:searchnomatch
 msgid "Search returned no matches."
-msgstr "शोध घेतल्यानंतर एकही संदेश"
+msgstr "शोध घेतल्यानंतर एकही संदेश "
 "मिळाला नाही "
 
 #: program/localization/mr_IN/messages.inc:searching
@@ -286,27 +285,27 @@ msgstr "तपासत आहे....."
 
 #: program/localization/mr_IN/messages.inc:nospellerrors
 msgid "No spelling errors found."
-msgstr "शुध्दलेखनाची चूक सापडली"
+msgstr "शुध्दलेखनाची चूक सापडली "
 "नाही"
 
 #: program/localization/mr_IN/messages.inc:folderdeleted
 msgid "Folder successfully deleted."
-msgstr "फोल्डर यशस्वी रित्या काढून"
+msgstr "फोल्डर यशस्वी रित्या काढून "
 "टाकण्यात आला आहे. "
 
 #: program/localization/mr_IN/messages.inc:deletedsuccessfully
 msgid "Successfully deleted."
-msgstr "यशस्वी रित्या काढून"
+msgstr "यशस्वी रित्या काढून "
 "टाकण्यात आला आहे. "
 
 #: program/localization/mr_IN/messages.inc:converting
 msgid "Removing formatting..."
-msgstr "दृष्य स्वरुप काढून टाकण्यात"
+msgstr "दृष्य स्वरुप काढून टाकण्यात "
 "येत आहे. "
 
 #: program/localization/mr_IN/messages.inc:messageopenerror
 msgid "Could not load message from server."
-msgstr "सर्व्हरवरुन संदेश आणता आला"
+msgstr "सर्व्हरवरुन संदेश आणता आला "
 "नाही. "
 
 #: program/localization/mr_IN/messages.inc:fileuploaderror
@@ -315,18 +314,18 @@ msgstr "फाईल चढवता आली नाही "
 
 #: program/localization/mr_IN/messages.inc:filesizeerror
 msgid "The uploaded file exceeds the maximum size of $size."
-msgstr "तुम्ही चढवलेली फाईल"
-"क्षमतेपेक्षा जास्त मोठी"
+msgstr "तुम्ही चढवलेली फाईल "
+"क्षमतेपेक्षा जास्त मोठी "
 "आहे. "
 
 #: program/localization/mr_IN/messages.inc:copysuccess
 msgid "Successfully copied $nr addresses."
-msgstr "$nr पत्त्यांची यशस्वीरित्या"
+msgstr "$nr पत्त्यांची यशस्वीरित्या "
 "प्रत केली."
 
 #: program/localization/mr_IN/messages.inc:copyerror
 msgid "Could not copy any addresses."
-msgstr "कोणत्याही पत्त्याची प्रत"
+msgstr "कोणत्याही पत्त्याची प्रत "
 "बनवता आली नाही."
 
 #: program/localization/mr_IN/messages.inc:sourceisreadonly
@@ -335,7 +334,7 @@ msgstr "पत्ता फक्त वाचण्यासाठी आहे
 
 #: program/localization/mr_IN/messages.inc:errorsavingcontact
 msgid "Could not save the contact address."
-msgstr "पत्ता नोंदवहीत ठेवता आला"
+msgstr "पत्ता नोंदवहीत ठेवता आला "
 "नाही. "
 
 #: program/localization/mr_IN/messages.inc:movingmessage
@@ -348,7 +347,7 @@ msgstr "संदेशाची नक्‍कल करत आहे..."
 
 #: program/localization/mr_IN/messages.inc:receiptsent
 msgid "Successfully sent a read receipt."
-msgstr "पोचपावती यशस्वीरित्या"
+msgstr "पोचपावती यशस्वीरित्या "
 "पाठवण्यात आली आहे. "
 
 #: program/localization/mr_IN/messages.inc:errorsendingreceipt
@@ -357,13 +356,13 @@ msgstr "पोचपावती पाठवता आली नाही."
 
 #: program/localization/mr_IN/messages.inc:nodeletelastidentity
 msgid "You cannot delete this identity, it's your last one."
-msgstr "तुम्ही हे खाते काढून टाकू"
-"शकत नाही कारण हे तुमचे"
+msgstr "तुम्ही हे खाते काढून टाकू "
+"शकत नाही कारण हे तुमचे "
 "शेवटचे खाते आहे."
 
 #: program/localization/mr_IN/messages.inc:forbiddencharacter
 msgid "Folder name contains a forbidden character."
-msgstr "फोल्डरच्या नावात न चालणारी"
+msgstr "फोल्डरच्या नावात न चालणारी "
 "अक्षरे किंवा खूणा आहेत."
 
 #: program/localization/mr_IN/messages.inc:selectimportfile
@@ -372,17 +371,17 @@ msgstr "चढवण्यासाठी फाईल निवडा"
 
 #: program/localization/mr_IN/messages.inc:addresswriterror
 msgid "The selected address book is not writeable."
-msgstr "निवडलेल्या पत्ता नोंदवहीत"
+msgstr "निवडलेल्या पत्ता नोंदवहीत "
 "नोंद करता येत नाही."
 
 #: program/localization/mr_IN/messages.inc:contactaddedtogroup
 msgid "Successfully added the contacts to this group."
-msgstr "पत्‍ते यशस्‍वीरित्‍या हया"
+msgstr "पत्‍ते यशस्‍वीरित्‍या हया "
 "गटात वाढवण्‍यात आले."
 
 #: program/localization/mr_IN/messages.inc:contactremovedfromgroup
 msgid "Successfully removed contacts from this group."
-msgstr "पत्‍ते यशस्‍वीरित्‍या हया"
+msgstr "पत्‍ते यशस्‍वीरित्‍या हया "
 "गटातून काढून टाकले."
 
 #: program/localization/mr_IN/messages.inc:importwait
@@ -391,46 +390,46 @@ msgstr "आयात करत आहे, कृपया वाट पहा...
 
 #: program/localization/mr_IN/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "आयात झाली नाही. आयात करत"
-"असलेली फाईल व्हीकार्ड"
+msgstr "आयात झाली नाही. आयात करत "
+"असलेली फाईल व्हीकार्ड "
 "प्रकाराची नाही"
 
 #: program/localization/mr_IN/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>$inserted पत्ते यशस्वीरित्या"
-"आयात केल, $skipped आधिच असलेल्या"
-"नोंदी केल्या"
+msgstr "<b>$inserted पत्ते यशस्वीरित्या "
+"आयात केल, $skipped आधिच असलेल्या "
+"नोंदी केल्या "
 "नाहीत</b>:<p><em>$names</em></p>"
 
 #: program/localization/mr_IN/messages.inc:opnotpermitted
 msgid "Operation not permitted!"
-msgstr "ही क्रिया करण्यास परवानगी"
+msgstr "ही क्रिया करण्यास परवानगी "
 "नाही. "
 
 #: program/localization/mr_IN/messages.inc:nofromaddress
 msgid "Missing e-mail address in selected identity."
-msgstr "निवडलेल्या खात्यात इमेल"
+msgstr "निवडलेल्या खात्यात इमेल "
 "पत्ता दिलेला नाही."
 
 #: program/localization/mr_IN/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "टेक्स्ट संपादन निवडल्यास"
-"संदेशाचे दृष्य स्वरुप बदलून"
-"जाईल. तुम्हाला असेच करायचे"
+msgstr "टेक्स्ट संपादन निवडल्यास "
+"संदेशाचे दृष्य स्वरुप बदलून "
+"जाईल. तुम्हाला असेच करायचे "
 "आहे ना?"
 
 #: program/localization/mr_IN/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "हानीकारक चूक झाली."
-"व्‍यवस्‍थापकाशी तात्‍काळ"
-"संपर्क साधा. <b> तुमचा संदेश"
+msgstr "हानीकारक चूक झाली. "
+"व्‍यवस्‍थापकाशी तात्‍काळ "
+"संपर्क साधा. <b> तुमचा संदेश "
 "पाठवला नाही </b>    "
 
 #: program/localization/mr_IN/messages.inc:smtpconnerror
 msgid "SMTP Error ($code): Connection to server failed."
-msgstr "SMTP चूक ($code): सर्व्‍हरशी संपर्क"
+msgstr "SMTP चूक ($code): सर्व्‍हरशी संपर्क "
 "साधता येत नाही"
 
 #: program/localization/mr_IN/messages.inc:smtpautherror
@@ -439,17 +438,17 @@ msgstr "SMTP चूक ($code): ओळख पटवता येत नाही
 
 #: program/localization/mr_IN/messages.inc:smtpfromerror
 msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
-msgstr "SMTP चूक ($code): \"$from\" पाठवणार्‍याचे"
+msgstr "SMTP चूक ($code): \"$from\" पाठवणार्‍याचे "
 "नाव टाकता आले नाही"
 
 #: program/localization/mr_IN/messages.inc:smtptoerror
 msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
-msgstr "SMTP चूक ($code): प्राप्‍तकर्ता \"$to\""
+msgstr "SMTP चूक ($code): प्राप्‍तकर्ता \"$to\" "
 "टाकता आला नाही"
 
 #: program/localization/mr_IN/messages.inc:smtprecipientserror
 msgid "SMTP Error: Unable to parse recipients list."
-msgstr "SMTP चूक : प्राप्‍तकर्त्‍यांची"
+msgstr "SMTP चूक : प्राप्‍तकर्त्‍यांची "
 "यादी चालू करता आली नाही"
 
 #: program/localization/mr_IN/messages.inc:smtperror
@@ -462,16 +461,16 @@ msgstr "अवैध ईमेल पत्‍ता : $email"
 
 #: program/localization/mr_IN/messages.inc:toomanyrecipients
 msgid "Too many recipients. Reduce the number of recipients to $max."
-msgstr "खूप जास्‍त प्राप्‍तकर्ते."
-"प्राप्‍तकर्त्‍यांची"
+msgstr "खूप जास्‍त प्राप्‍तकर्ते. "
+"प्राप्‍तकर्त्‍यांची "
 "संख्‍या $max पर्यंत कमी करा"
 
 #: program/localization/mr_IN/messages.inc:maxgroupmembersreached
 msgid "The number of group members exceeds the maximum of $max."
-msgstr "गट सभासद संख्‍या $max पेक्षा"
+msgstr "गट सभासद संख्‍या $max पेक्षा "
 "जास्‍त झाली आहे"
 
 #: program/localization/mr_IN/messages.inc:internalerror
 msgid "An internal error occured. Please try again."
-msgstr "अंतर्गत चूक झाली. कृपया परत"
+msgstr "अंतर्गत चूक झाली. कृपया परत "
 "प्रयत्‍न करा."

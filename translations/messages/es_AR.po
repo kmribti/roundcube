@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: es_AR\n"
@@ -97,7 +96,7 @@ msgstr "Ya existe un contacto con esta dirección de correo"
 
 #: program/localization/es_AR/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "Para proteger su privacidad, las imágenes externas han sido bloqueadas en"
+msgstr "Para proteger su privacidad, las imágenes externas han sido bloqueadas en "
 "este mensaje"
 
 #: program/localization/es_AR/messages.inc:encryptedmessage
@@ -217,9 +216,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Por favor, introduzca un nombre o la dirección de e-mail"
 
 #: program/localization/es_AR/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Todavia no se subieron todos los archivos adjuntos. Por favor aguarde o"
+msgstr "Todavia no se subieron todos los archivos adjuntos. Por favor aguarde o "
 "cancele la subida."
 
 #: program/localization/es_AR/messages.inc:searchsuccessful
@@ -328,12 +327,12 @@ msgstr "Importando, aguarde por favor..."
 
 #: program/localization/es_AR/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "Falló la importación! El archivo seleccionado parece no ser un archivo"
+msgstr "Falló la importación! El archivo seleccionado parece no ser un archivo "
 "del tipo vCard válido."
 
 #: program/localization/es_AR/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>Se importaron $inserted contactos correctamente. $skipped ya existentes"
+msgstr "<b>Se importaron $inserted contactos correctamente. $skipped ya existentes "
 "fueron ignorados</b>:<p><em>$names</em></p>"
 
 #: program/localization/es_AR/messages.inc:opnotpermitted
@@ -345,15 +344,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "El contacto seleccionado no tiene dirección de e-mail"
 
 #: program/localization/es_AR/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Si cambia a texto plano se perderán todas las opciones de formato. ¿Desea"
+msgstr "Si cambia a texto plano se perderán todas las opciones de formato. ¿Desea "
 "continuar?"
 
 #: program/localization/es_AR/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Ha ocurrido un error fatal de configuración. Contacte inmediatamente a su"
+msgstr "Ha ocurrido un error fatal de configuración. Contacte inmediatamente a su "
 "administrador. <b>Su mensaje no ha sido enviado.</b>"
 
 #: program/localization/es_AR/messages.inc:smtpconnerror

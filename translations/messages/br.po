@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: br\n"
@@ -85,7 +84,7 @@ msgstr "Bout a ra un darempred gant memes postel elektronek"
 
 #: program/localization/br/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "Evit gwarantiñ hoc'h buhez prevez, stanket eo bet skeudennoù pell er"
+msgstr "Evit gwarantiñ hoc'h buhez prevez, stanket eo bet skeudennoù pell er "
 "c'hemennad-se."
 
 #: program/localization/br/messages.inc:encryptedmessage
@@ -154,7 +153,7 @@ msgstr "Ouzhpennit ur resever da nebeutañ mar plij ganeoc'h"
 
 #: program/localization/br/messages.inc:nosubjectwarning
 msgid "The \"Subject\" field is empty. Would you like to enter one now?"
-msgstr "Dileun eo ar maezienn « Sujed » . C'hoant hoc'h eus da leuniañ anezhiñ"
+msgstr "Dileun eo ar maezienn « Sujed » . C'hoant hoc'h eus da leuniañ anezhiñ "
 "diouzhtu ?"
 
 #: program/localization/br/messages.inc:nobodywarning
@@ -163,7 +162,7 @@ msgstr "Kas ar c'hemennad hep testenn ?"
 
 #: program/localization/br/messages.inc:notsentwarning
 msgid "Message has not been sent. Do you want to discard your message?"
-msgstr "N'eo ket bet kaset ar c'hemennad. C'hoant hoc'h eus dilezel ar"
+msgstr "N'eo ket bet kaset ar c'hemennad. C'hoant hoc'h eus dilezel ar "
 "c'hemennad-se ?"
 
 #: program/localization/br/messages.inc:noldapserver

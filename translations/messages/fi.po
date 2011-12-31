@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: fi_FI\n"
@@ -216,9 +215,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Anna kontaktin nimi tai sähköpostiosoite"
 
 #: program/localization/fi_FI/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Kaikkia liitteitä ei ole vielä ladattu palvelimelle. Odota tai peruuta"
+msgstr "Kaikkia liitteitä ei ole vielä ladattu palvelimelle. Odota tai peruuta "
 "lataus."
 
 #: program/localization/fi_FI/messages.inc:searchsuccessful
@@ -331,7 +330,7 @@ msgstr "Tuonti epäonnistui! Lähetetty tiedosto ei ole vCard -muodossa."
 
 #: program/localization/fi_FI/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>$inserted kontaktia tuotu onnistuneesti $inserted kontaktioa, $skipped"
+msgstr "<b>$inserted kontaktia tuotu onnistuneesti $inserted kontaktioa, $skipped "
 "olemassaolevaa kontaktia hypättiin yli</b>:<p><em>$names</em></p>"
 
 #: program/localization/fi_FI/messages.inc:opnotpermitted
@@ -343,15 +342,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Valittu identiteetti ei sisällä sähköpostiosoitetta"
 
 #: program/localization/fi_FI/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Vaihtaminen tekstieditoriin aiheuttaa viestin muotoilun katoamisen."
+msgstr "Vaihtaminen tekstieditoriin aiheuttaa viestin muotoilun katoamisen. "
 "Haluatko jatkaa?"
 
 #: program/localization/fi_FI/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Vakava virhe asetuksissa. Ota välittömästi yhteys ylläpitoon."
+msgstr "Vakava virhe asetuksissa. Ota välittömästi yhteys ylläpitoon. "
 "<b>Viestiäsi ei voida lähettää.</b>"
 
 #: program/localization/fi_FI/messages.inc:smtpconnerror

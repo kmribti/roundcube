@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: bn_BD\n"
@@ -122,7 +121,7 @@ msgstr "ফোল্ডার/মেইলবক্স"
 
 #: program/localization/bn_BD/labels.inc:messagesfromto
 msgid "Messages $from to $to of $count"
-msgstr "$count মেইলের মধ্যে, $from হতে $to"
+msgstr "$count মেইলের মধ্যে, $from হতে $to "
 "দেখানো হচ্ছে "
 
 #: program/localization/bn_BD/labels.inc:messagenrof
@@ -316,7 +315,7 @@ msgstr "আজকে"
 
 #: program/localization/bn_BD/labels.inc:checkmail
 msgid "Check for new messages"
-msgstr "দেখুন নতুন কোনো মেইল/চিঠি"
+msgstr "দেখুন নতুন কোনো মেইল/চিঠি "
 "এলো কিনা "
 
 #: program/localization/bn_BD/labels.inc:writenewmessage
@@ -325,12 +324,12 @@ msgstr "নতুন মেইল/চিঠি লিখুন"
 
 #: program/localization/bn_BD/labels.inc:replytomessage
 msgid "Reply to sender"
-msgstr "শুধু প্রেরকের কাছে উত্তর"
+msgstr "শুধু প্রেরকের কাছে উত্তর "
 "পাঠান"
 
 #: program/localization/bn_BD/labels.inc:replytoallmessage
 msgid "Reply to list or to sender and all recipients"
-msgstr "প্রেরক ও এই চিঠির অন্যান্য"
+msgstr "প্রেরক ও এই চিঠির অন্যান্য "
 "প্রাপকদের কাছে উত্তর পাঠান"
 
 #: program/localization/bn_BD/labels.inc:forwardmessage
@@ -379,7 +378,7 @@ msgstr "শেষ মেইল/চিঠিটি দেখুন"
 
 #: program/localization/bn_BD/labels.inc:lastmessages
 msgid "lastmessages"
-msgstr "শেষের দিকের মেইল/চিঠিগুলি"
+msgstr "শেষের দিকের মেইল/চিঠিগুলি "
 "দেখুন"
 
 #: program/localization/bn_BD/labels.inc:backtolist
@@ -488,7 +487,7 @@ msgstr "এখুনি মেইল / চিঠিটি পাঠান"
 
 #: program/localization/bn_BD/labels.inc:addattachment
 msgid "Attach a file"
-msgstr "একটা ফাইল জুড়ে দিন চিঠির"
+msgstr "একটা ফাইল জুড়ে দিন চিঠির "
 "সাথে"
 
 #: program/localization/bn_BD/labels.inc:charset
@@ -557,7 +556,7 @@ msgstr "ছবি দেখান"
 
 #: program/localization/bn_BD/labels.inc:alwaysshow
 msgid "Always show images from $sender"
-msgstr "সবসময় $sender এর কাছে থেকে পাওয়া"
+msgstr "সবসময় $sender এর কাছে থেকে পাওয়া "
 "ছবিগুলো দেখানো হোক"
 
 #: program/localization/bn_BD/labels.inc:htmltoggle
@@ -586,7 +585,7 @@ msgstr "অনুলিপির ঠিকানা ঢুকান"
 
 #: program/localization/bn_BD/labels.inc:addbcc
 msgid "Add Bcc"
-msgstr "নাজানিয়ে অনুলিপির ঠিকানা"
+msgstr "নাজানিয়ে অনুলিপির ঠিকানা "
 "ঢুকান"
 
 #: program/localization/bn_BD/labels.inc:addreplyto
@@ -594,32 +593,32 @@ msgid "Add Reply-To"
 msgstr "উত্তর পাঠানোর ঠিকানা ঢুকান"
 
 #: program/localization/bn_BD/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "প্রাপক আপনার কাছে"
-"মেইল/চিঠিটা যে পেয়েছেন তার"
-"ফিরতি রসিদ চেয়েছেন। আপনি কি"
+msgstr "প্রাপক আপনার কাছে "
+"মেইল/চিঠিটা যে পেয়েছেন তার "
+"ফিরতি রসিদ চেয়েছেন। আপনি কি "
 "ফিরতি রসিদ টা পাঠাবেন?"
 
 #: program/localization/bn_BD/labels.inc:receiptread
 msgid "Return Receipt (read)"
-msgstr "মেইল/চিঠি যে পেয়েছেন তার"
+msgstr "মেইল/চিঠি যে পেয়েছেন তার "
 "ফিরতি রসিদ"
 
 #: program/localization/bn_BD/labels.inc:yourmessage
 msgid "This is a Return Receipt for your message"
-msgstr "নিচে রয়েছে আপনার চিঠিটা যে"
+msgstr "নিচে রয়েছে আপনার চিঠিটা যে "
 "প্রাপক পেয়েছেন তার রসিদ"
 
 #: program/localization/bn_BD/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "এই রসিদ খালি এতটুকু প্রমান"
-"করে যে প্রাপক চিঠিটি"
-"পেয়েছেন। কিন্তু তিনি ঠিকমতো"
-"পড়তে পেরেছেন কিনা অথবা তিনি"
-"পড়ে বুঝতে পেরেছেন কিনা তার"
+msgstr "এই রসিদ খালি এতটুকু প্রমান "
+"করে যে প্রাপক চিঠিটি "
+"পেয়েছেন। কিন্তু তিনি ঠিকমতো "
+"পড়তে পেরেছেন কিনা অথবা তিনি "
+"পড়ে বুঝতে পেরেছেন কিনা তার "
 "কোনো প্রমান নেই।"
 
 #: program/localization/bn_BD/labels.inc:name
@@ -664,12 +663,12 @@ msgstr "ফেলে দিন"
 
 #: program/localization/bn_BD/labels.inc:newcontact
 msgid "Create new contact card"
-msgstr "একটা নতুন ঠিকানার কার্ড"
+msgstr "একটা নতুন ঠিকানার কার্ড "
 "বানান"
 
 #: program/localization/bn_BD/labels.inc:deletecontact
 msgid "Delete selected contacts"
-msgstr "বেছে নেওয়া ঠিকানা গুলো ফেলে"
+msgstr "বেছে নেওয়া ঠিকানা গুলো ফেলে "
 "দিন"
 
 #: program/localization/bn_BD/labels.inc:composeto
@@ -726,22 +725,22 @@ msgstr "ঠিকানা আমদানি করুন"
 
 #: program/localization/bn_BD/labels.inc:importfromfile
 msgid "Import from file:"
-msgstr "ফাইলের থেকে ঠিকানা আমদানি"
+msgstr "ফাইলের থেকে ঠিকানা আমদানি "
 "করুন"
 
 #: program/localization/bn_BD/labels.inc:importreplace
 msgid "Replace the entire address book"
-msgstr "পুরো ঠিকানার বইটি খালি করে"
+msgstr "পুরো ঠিকানার বইটি খালি করে "
 "নতুন ঠিকানা গুলো ভরুন"
 
 #: program/localization/bn_BD/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "আপনি অন্য কোনো ঠিকানার বই"
-"(address book) আমাদের এখানে তুলতে"
-"পারেন। <br/>আমরা বর্তমানে <a"
-"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> আকারে"
+msgstr "আপনি অন্য কোনো ঠিকানার বই "
+"(address book) আমাদের এখানে তুলতে "
+"পারেন। <br/>আমরা বর্তমানে <a "
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> আকারে "
 "খালি ঠিকানা তুলতে পারি।"
 
 #: program/localization/bn_BD/labels.inc:done
@@ -770,7 +769,7 @@ msgstr "পরিচিতি"
 
 #: program/localization/bn_BD/labels.inc:manageidentities
 msgid "Manage identities for this account"
-msgstr "এই অ্যাকউন্টের \"পরচিতি\""
+msgstr "এই অ্যাকউন্টের \"পরচিতি\" "
 "বদলান"
 
 #: program/localization/bn_BD/labels.inc:newidentity
@@ -831,12 +830,12 @@ msgstr "মেইলবক্স এর পুরোটার চেহারা
 
 #: program/localization/bn_BD/labels.inc:logoutclear
 msgid "Clear Trash on logout"
-msgstr "বেরহবার সময় ডাস্টবিন"
+msgstr "বেরহবার সময় ডাস্টবিন "
 "অটোমেটিক খালি হবে"
 
 #: program/localization/bn_BD/labels.inc:logoutcompact
 msgid "Compact Inbox on logout"
-msgstr "বেরহবার সময় প্রধান বাক্স"
+msgstr "বেরহবার সময় প্রধান বাক্স "
 "অটোমেটিক টাইট হবে"
 
 #: program/localization/bn_BD/labels.inc:uisettings
@@ -853,17 +852,17 @@ msgstr "মেইলবক্স দেখার কায়দা"
 
 #: program/localization/bn_BD/labels.inc:mdnrequests
 msgid "On request for return receipt"
-msgstr "প্রেরক নোটিশ পাঠালে কি করা"
+msgstr "প্রেরক নোটিশ পাঠালে কি করা "
 "হবে?"
 
 #: program/localization/bn_BD/labels.inc:askuser
 msgid "ask me"
-msgstr "আমি গ্রাহক, আমাকে জিজ্ঞাসা"
+msgstr "আমি গ্রাহক, আমাকে জিজ্ঞাসা "
 "করুন"
 
 #: program/localization/bn_BD/labels.inc:autosend
 msgid "send receipt"
-msgstr "কম্পুটার নিজেনিজি ফিরতি"
+msgstr "কম্পুটার নিজেনিজি ফিরতি "
 "নোটিশ পাঠায় দেবে"
 
 #: program/localization/bn_BD/labels.inc:ignore
@@ -872,24 +871,24 @@ msgstr "পাত্তা দেওয়া হবেনা"
 
 #: program/localization/bn_BD/labels.inc:readwhendeleted
 msgid "Mark the message as read on delete"
-msgstr "ফেলে দেবার সময় মেইল/চিঠি পড়া"
-"হয়ে গেছে হিসাবে ধরে নেওয়া"
+msgstr "ফেলে দেবার সময় মেইল/চিঠি পড়া "
+"হয়ে গেছে হিসাবে ধরে নেওয়া "
 "হবে"
 
 #: program/localization/bn_BD/labels.inc:flagfordeletion
 msgid "Flag the message for deletion instead of delete"
-msgstr "একেবারেই ফেলে না দিয়ে"
-"মেইল/চিঠি গুলোকে দাগিয়ে"
+msgstr "একেবারেই ফেলে না দিয়ে "
+"মেইল/চিঠি গুলোকে দাগিয়ে "
 "রাখুন ফেলে দেবার জন্যে"
 
 #: program/localization/bn_BD/labels.inc:skipdeleted
 msgid "Do not show deleted messages"
-msgstr "ফেলে দেওয়া মেইল/চিঠি"
+msgstr "ফেলে দেওয়া মেইল/চিঠি "
 "দেখানোর দরকার নেই"
 
 #: program/localization/bn_BD/labels.inc:showremoteimages
 msgid "Display remote inline images"
-msgstr "মেইলে অন্য ওয়েবসাইট থেকে"
+msgstr "মেইলে অন্য ওয়েবসাইট থেকে "
 "আসা ছবি থাকলে তা দেখা যাবে"
 
 #: program/localization/bn_BD/labels.inc:fromknownsenders
@@ -902,7 +901,7 @@ msgstr "সবসময়"
 
 #: program/localization/bn_BD/labels.inc:showinlineimages
 msgid "Display attached images below the message"
-msgstr "মেইলের সাথে জোড়া লাগানো ছবি,"
+msgstr "মেইলের সাথে জোড়া লাগানো ছবি, "
 "মেইলের নিচে দেখা যাবে"
 
 #: program/localization/bn_BD/labels.inc:autosavedraft
@@ -915,7 +914,7 @@ msgstr "প্রতি $n মিনিটে"
 
 #: program/localization/bn_BD/labels.inc:keepalive
 msgid "Check for new messages on"
-msgstr "নতুন মেইল/চিঠি এসেছে কিনা তা"
+msgstr "নতুন মেইল/চিঠি এসেছে কিনা তা "
 "দেখা হবে,"
 
 #: program/localization/bn_BD/labels.inc:never
@@ -952,12 +951,12 @@ msgstr "জটিল বিষয়"
 
 #: program/localization/bn_BD/labels.inc:focusonnewmessage
 msgid "Focus browser window on new message"
-msgstr "নতুন মেইল এলেই তা হাইলাইট"
+msgstr "নতুন মেইল এলেই তা হাইলাইট "
 "হয়ে যাবে"
 
 #: program/localization/bn_BD/labels.inc:checkallfolders
 msgid "Check all folders for new messages"
-msgstr "সবগুলো মেইলবক্সে নতুন চিঠি"
+msgstr "সবগুলো মেইলবক্সে নতুন চিঠি "
 "খোজা হবে"
 
 #: program/localization/bn_BD/labels.inc:folder
@@ -982,12 +981,12 @@ msgstr "প্রস্তুত করুন"
 
 #: program/localization/bn_BD/labels.inc:createfolder
 msgid "Create new folder"
-msgstr "নতুন ফোল্ডার / মেইলবক্স"
+msgstr "নতুন ফোল্ডার / মেইলবক্স "
 "প্রস্তুত করুন"
 
 #: program/localization/bn_BD/labels.inc:managefolders
 msgid "Manage folders"
-msgstr "ফোল্ডার/মেইলবক্স গুলো কে"
+msgstr "ফোল্ডার/মেইলবক্স গুলো কে "
 "গুছান"
 
 #: program/localization/bn_BD/labels.inc:specialfolders

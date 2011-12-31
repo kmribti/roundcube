@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ru_RU\n"
@@ -45,17 +44,17 @@ msgstr "Ошибка базы данных!"
 
 #: program/localization/ru_RU/messages.inc:errorreadonly
 msgid "Unable to perform operation. Folder is read-only."
-msgstr "Невозможно выполнить операцию. Папка"
+msgstr "Невозможно выполнить операцию. Папка "
 "доступна только для чтения"
 
 #: program/localization/ru_RU/messages.inc:errornoperm
 msgid "Unable to perform operation. Permission denied."
-msgstr "Невозможно выполнить операцию. Доступ"
+msgstr "Невозможно выполнить операцию. Доступ "
 "запрещён"
 
 #: program/localization/ru_RU/messages.inc:invalidrequest
 msgid "Invalid request! No data was saved."
-msgstr "Неверный запрос! Информация не"
+msgstr "Неверный запрос! Информация не "
 "сохранена."
 
 #: program/localization/ru_RU/messages.inc:nomessagesfound
@@ -116,7 +115,7 @@ msgstr "Контакт добавлен в список контактов"
 
 #: program/localization/ru_RU/messages.inc:contactexists
 msgid "A contact with the same e-mail address already exists."
-msgstr "Контакт с этим адресом e-mail уже"
+msgstr "Контакт с этим адресом e-mail уже "
 "существует"
 
 #: program/localization/ru_RU/messages.inc:contactnameexists
@@ -125,13 +124,13 @@ msgstr "Контакт с таким именем уже существует."
 
 #: program/localization/ru_RU/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "В целях безопасности загрузка"
+msgstr "В целях безопасности загрузка "
 "изображений заблокирована."
 
 #: program/localization/ru_RU/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
-msgstr "Сообщение зашифровано и не может быть"
-"показано. Обратитесь к администратору"
+msgstr "Сообщение зашифровано и не может быть "
+"показано. Обратитесь к администратору "
 "сервера."
 
 #: program/localization/ru_RU/messages.inc:nocontactsfound
@@ -148,12 +147,12 @@ msgstr "Не удалось отправить сообщение"
 
 #: program/localization/ru_RU/messages.inc:senttooquickly
 msgid "Please wait $sec sec(s). before sending this message."
-msgstr "Вы должны подождать $sec сек. для отправки"
+msgstr "Вы должны подождать $sec сек. для отправки "
 "сообщения"
 
 #: program/localization/ru_RU/messages.inc:errorsavingsent
 msgid "An error occured while saving sent message."
-msgstr "Произошла ошибка при сохранении"
+msgstr "Произошла ошибка при сохранении "
 "отправленного сообщения"
 
 #: program/localization/ru_RU/messages.inc:errorsaving
@@ -178,7 +177,7 @@ msgstr "Невозможно пометить сообщение"
 
 #: program/localization/ru_RU/messages.inc:deletecontactconfirm
 msgid "Do you really want to delete selected contact(s)?"
-msgstr "Вы действительно хотите удалить"
+msgstr "Вы действительно хотите удалить "
 "выделенные контакты?"
 
 #: program/localization/ru_RU/messages.inc:deletegroupconfirm
@@ -187,17 +186,17 @@ msgstr "Вы действительно хотите удалить группу
 
 #: program/localization/ru_RU/messages.inc:deletemessagesconfirm
 msgid "Do you really want to delete selected message(s)?"
-msgstr "Вы действительно хотите удалить"
+msgstr "Вы действительно хотите удалить "
 "выбранные сообщения?"
 
 #: program/localization/ru_RU/messages.inc:deletefolderconfirm
 msgid "Do you really want to delete this folder?"
-msgstr "Вы действительно хотите удалить эту"
+msgstr "Вы действительно хотите удалить эту "
 "папку?"
 
 #: program/localization/ru_RU/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
-msgstr "Вы действительно хотите удалить все"
+msgstr "Вы действительно хотите удалить все "
 "сообщения в этой папке?"
 
 #: program/localization/ru_RU/messages.inc:groupdeleting
@@ -226,7 +225,7 @@ msgstr "Заполнены не все поля"
 
 #: program/localization/ru_RU/messages.inc:noemailwarning
 msgid "Please enter a valid email address."
-msgstr "Пожалуйста, введите корректный адрес"
+msgstr "Пожалуйста, введите корректный адрес "
 "электронной почты"
 
 #: program/localization/ru_RU/messages.inc:nonamewarning
@@ -239,7 +238,7 @@ msgstr "Пожалуйста, введите размер страницы"
 
 #: program/localization/ru_RU/messages.inc:nosenderwarning
 msgid "Please enter sender e-mail address."
-msgstr "Пожалуйста, введите адрес электронной"
+msgstr "Пожалуйста, введите адрес электронной "
 "почты отправителя"
 
 #: program/localization/ru_RU/messages.inc:norecipientwarning
@@ -248,7 +247,7 @@ msgstr "Пожалуйста, введите имя получателя"
 
 #: program/localization/ru_RU/messages.inc:nosubjectwarning
 msgid "The \"Subject\" field is empty. Would you like to enter one now?"
-msgstr "Поле Тема не заполнено. Хотите заполнить"
+msgstr "Поле Тема не заполнено. Хотите заполнить "
 "его сейчас?"
 
 #: program/localization/ru_RU/messages.inc:nobodywarning
@@ -257,12 +256,12 @@ msgstr "Отправить сообщение без текста?"
 
 #: program/localization/ru_RU/messages.inc:notsentwarning
 msgid "Message has not been sent. Do you want to discard your message?"
-msgstr "Сообщение не было отправлено. Вы хотите"
+msgstr "Сообщение не было отправлено. Вы хотите "
 "отказаться от отправки?"
 
 #: program/localization/ru_RU/messages.inc:noldapserver
 msgid "Please select an ldap server to search."
-msgstr "Пожалуйста, выберите LDAP сервер для"
+msgstr "Пожалуйста, выберите LDAP сервер для "
 "поиска"
 
 #: program/localization/ru_RU/messages.inc:nocontactsreturned
@@ -274,9 +273,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Пожалуйста, введите имя или адрес E-Mail"
 
 #: program/localization/ru_RU/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Вложения загружены не полностью."
+msgstr "Вложения загружены не полностью. "
 "Подождите или отмените загрузку."
 
 #: program/localization/ru_RU/messages.inc:searchsuccessful
@@ -329,7 +328,7 @@ msgstr "Удаление форматирования сообщения..."
 
 #: program/localization/ru_RU/messages.inc:messageopenerror
 msgid "Could not load message from server."
-msgstr "Невозможно загрузить сообщение с"
+msgstr "Невозможно загрузить сообщение с "
 "сервера"
 
 #: program/localization/ru_RU/messages.inc:fileuploaderror
@@ -338,7 +337,7 @@ msgstr "Невозможно загрузить файл"
 
 #: program/localization/ru_RU/messages.inc:filesizeerror
 msgid "The uploaded file exceeds the maximum size of $size."
-msgstr "Загруженный файл больше максимального"
+msgstr "Загруженный файл больше максимального "
 "размера в $size"
 
 #: program/localization/ru_RU/messages.inc:copysuccess
@@ -351,7 +350,7 @@ msgstr "Невозможно скопировать адреса"
 
 #: program/localization/ru_RU/messages.inc:sourceisreadonly
 msgid "This address source is read only."
-msgstr "Данный источник адресов только для"
+msgstr "Данный источник адресов только для "
 "чтения"
 
 #: program/localization/ru_RU/messages.inc:errorsavingcontact
@@ -396,7 +395,7 @@ msgstr "Уведомление о прочтении не отправлено"
 
 #: program/localization/ru_RU/messages.inc:nodeletelastidentity
 msgid "You cannot delete this identity, it's your last one."
-msgstr "Вы не можете удалить этот профиль, он у"
+msgstr "Вы не можете удалить этот профиль, он у "
 "вас последний"
 
 #: program/localization/ru_RU/messages.inc:forbiddencharacter
@@ -409,7 +408,7 @@ msgstr "Выберите файл для загрузки"
 
 #: program/localization/ru_RU/messages.inc:addresswriterror
 msgid "The selected address book is not writeable."
-msgstr "Выбранная адресная книга недоступна для"
+msgstr "Выбранная адресная книга недоступна для "
 "записи"
 
 #: program/localization/ru_RU/messages.inc:contactaddedtogroup
@@ -426,18 +425,18 @@ msgstr "Импортирование, пожалуйста, подождите..
 
 #: program/localization/ru_RU/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "Импорт завершился неудачно! Загруженный"
+msgstr "Импорт завершился неудачно! Загруженный "
 "файл не является правильным файлом vCard."
 
 #: program/localization/ru_RU/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>Успешно импортировано $inserted"
-"контакт(ов), пропущено $skipped"
+msgstr "<b>Успешно импортировано $inserted "
+"контакт(ов), пропущено $skipped "
 "существующих</b>:<p><em>$names</em></p>"
 
 #: program/localization/ru_RU/messages.inc:importconfirmskipped
 msgid "<b>Skipped $skipped existing entries</b>"
-msgstr "<b>Пропущенные $skipped существующие"
+msgstr "<b>Пропущенные $skipped существующие "
 "записи</b>"
 
 #: program/localization/ru_RU/messages.inc:opnotpermitted
@@ -446,27 +445,27 @@ msgstr "Действие запрещено!"
 
 #: program/localization/ru_RU/messages.inc:nofromaddress
 msgid "Missing e-mail address in selected identity."
-msgstr "В выбранном профиле не хватает адреса"
+msgstr "В выбранном профиле не хватает адреса "
 "электронной почты"
 
 #: program/localization/ru_RU/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "При переключении в редактор простого"
-"текста все форматирование будет"
+msgstr "При переключении в редактор простого "
+"текста все форматирование будет "
 "потеряно. Продолжить?"
 
 #: program/localization/ru_RU/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "На сервере возникла неизбежная ошибка."
-"Срочно свяжитесь с Вашим"
-"администратором. <b>Ваше сообщение может"
+msgstr "На сервере возникла неизбежная ошибка. "
+"Срочно свяжитесь с Вашим "
+"администратором. <b>Ваше сообщение может "
 "быть не отправлено.</b>"
 
 #: program/localization/ru_RU/messages.inc:smtpconnerror
 msgid "SMTP Error ($code): Connection to server failed."
-msgstr "SMTP Error ($code): Соединение с сервером"
+msgstr "SMTP Error ($code): Соединение с сервером "
 "сброшено"
 
 #: program/localization/ru_RU/messages.inc:smtpautherror
@@ -475,22 +474,22 @@ msgstr "SMTP Error ($code): Ошибка авторизации"
 
 #: program/localization/ru_RU/messages.inc:smtpfromerror
 msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
-msgstr "SMTP Error ($code): Невозможно установить"
+msgstr "SMTP Error ($code): Невозможно установить "
 "отправителя \"$from\" ($msg)"
 
 #: program/localization/ru_RU/messages.inc:smtptoerror
 msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
-msgstr "SMTP Error ($code): Невозможно добавить"
+msgstr "SMTP Error ($code): Невозможно добавить "
 "получателя \"$to\" ($msg)"
 
 #: program/localization/ru_RU/messages.inc:smtprecipientserror
 msgid "SMTP Error: Unable to parse recipients list."
-msgstr "SMTP Error: Невозможно обработать список"
+msgstr "SMTP Error: Невозможно обработать список "
 "получателей"
 
 #: program/localization/ru_RU/messages.inc:smtpdsnerror
 msgid "smtpdsnerror"
-msgstr "SMTP Error: Уведомления о состоянии доставки"
+msgstr "SMTP Error: Уведомления о состоянии доставки "
 "не поддерживаются"
 
 #: program/localization/ru_RU/messages.inc:smtperror
@@ -503,17 +502,17 @@ msgstr "Неверный адрес: $email"
 
 #: program/localization/ru_RU/messages.inc:toomanyrecipients
 msgid "Too many recipients. Reduce the number of recipients to $max."
-msgstr "Слишком много получателей, уменьшите их"
+msgstr "Слишком много получателей, уменьшите их "
 "количество до $max."
 
 #: program/localization/ru_RU/messages.inc:maxgroupmembersreached
 msgid "The number of group members exceeds the maximum of $max."
-msgstr "Размер группы больше максимально"
+msgstr "Размер группы больше максимально "
 "разрешенного - $max"
 
 #: program/localization/ru_RU/messages.inc:internalerror
 msgid "An internal error occured. Please try again."
-msgstr "Произошла внутренняя ошибка. Попробуйте"
+msgstr "Произошла внутренняя ошибка. Попробуйте "
 "ещё раз"
 
 #: program/localization/ru_RU/messages.inc:contactdelerror
@@ -526,7 +525,7 @@ msgstr "Контакт(ы) успешно удален(ы)"
 
 #: program/localization/ru_RU/messages.inc:contactrestoreerror
 msgid "Could not restore deleted contact(s)."
-msgstr "Не удалось восстановить удалённый(е)"
+msgstr "Не удалось восстановить удалённый(е) "
 "контакт(ы)."
 
 #: program/localization/ru_RU/messages.inc:contactrestored
@@ -563,7 +562,7 @@ msgstr "Сообщения успешно выделены"
 
 #: program/localization/ru_RU/messages.inc:autocompletechars
 msgid "Enter at least $min characters for autocompletion."
-msgstr "Введите, как минимум, $min символов для"
+msgstr "Введите, как минимум, $min символов для "
 "автодополнения"
 
 #: program/localization/ru_RU/messages.inc:namecannotbeempty
@@ -588,11 +587,11 @@ msgstr "Неверный формат изображения"
 
 #: program/localization/ru_RU/messages.inc:mispellingsfound
 msgid "Spelling errors detected in the message."
-msgstr "В сообщении обнаружены орфографические"
+msgstr "В сообщении обнаружены орфографические "
 "ошибки"
 
 #: program/localization/ru_RU/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
-msgstr "Не удается создать/переместить папку в"
-"выбранную родительскую папку. Нет прав"
+msgstr "Не удается создать/переместить папку в "
+"выбранную родительскую папку. Нет прав "
 "доступа."

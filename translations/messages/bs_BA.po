@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: bs_BA\n"
@@ -236,9 +235,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Unesite ime ili email adresu"
 
 #: program/localization/bs_BA/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Svi prilozi još nisu presnimljeni na poslužitelj. Molim pričekajte ili"
+msgstr "Svi prilozi još nisu presnimljeni na poslužitelj. Molim pričekajte ili "
 "zaustavite presnimavanje."
 
 #: program/localization/bs_BA/messages.inc:searchsuccessful
@@ -375,7 +374,7 @@ msgstr "Greška pri uvozu! Datoteka ne sadrži pravilan vCard format."
 
 #: program/localization/bs_BA/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>Uspješno je uvezeno $inserted kontakt(a), preskočeno $skipped već"
+msgstr "<b>Uspješno je uvezeno $inserted kontakt(a), preskočeno $skipped već "
 "postojećih</b>:<p><em>$names</em></p>"
 
 #: program/localization/bs_BA/messages.inc:importconfirmskipped
@@ -391,15 +390,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Nije upisana email adresa u odabrani pseudonim"
 
 #: program/localization/bs_BA/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Prebacivanje u čisti tekstualni uređivač će prouzrokovati gubljenje"
+msgstr "Prebacivanje u čisti tekstualni uređivač će prouzrokovati gubljenje "
 "formata teksta. Želite li nastaviti?"
 
 #: program/localization/bs_BA/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Dogodila se fatalna greška u konfiguraciji. Odmah kontaktirajte"
+msgstr "Dogodila se fatalna greška u konfiguraciji. Odmah kontaktirajte "
 "administratora. <b>Vaša poruka ne može biti poslata.</b>"
 
 #: program/localization/bs_BA/messages.inc:smtpconnerror

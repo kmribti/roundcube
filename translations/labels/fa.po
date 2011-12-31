@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: fa\n"
@@ -551,7 +550,7 @@ msgstr "نمایش عکس‌ها"
 
 #: program/localization/fa/labels.inc:alwaysshow
 msgid "Always show images from $sender"
-msgstr "را نمایش بده $sender همیشه عکسهای دریافتی از "
+msgstr "را نمایش بده $sender همیشه عکسهای دریافتی از  "
 ""
 
 #: program/localization/fa/labels.inc:htmltoggle
@@ -587,10 +586,10 @@ msgid "Add Reply-To"
 msgstr "افزودن پاسخ-به"
 
 #: program/localization/fa/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "فرستندهٔ این پیغام خواسته است که وقتی شما"
-"این پیغام را می‌خوانید، آگاه شود. آیا"
+msgstr "فرستندهٔ این پیغام خواسته است که وقتی شما "
+"این پیغام را می‌خوانید، آگاه شود. آیا "
 "مایلید فرستنده را آگاه کنید؟"
 
 #: program/localization/fa/labels.inc:receiptread
@@ -602,12 +601,12 @@ msgid "This is a Return Receipt for your message"
 msgstr "این یک رسید دریافت برای پیغام شماست"
 
 #: program/localization/fa/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "تذکر: این رسید فقط تصدیق می‌کند که پیغام،"
-"روی رایانهٔ گیرنده نمایش داده شده است."
-"هیچ تضمینی نیست که گیرنده، محتوای پیغام"
+msgstr "تذکر: این رسید فقط تصدیق می‌کند که پیغام، "
+"روی رایانهٔ گیرنده نمایش داده شده است. "
+"هیچ تضمینی نیست که گیرنده، محتوای پیغام "
 "را خوانده یا فهمیده باشد."
 
 #: program/localization/fa/labels.inc:name
@@ -719,13 +718,13 @@ msgid "Replace the entire address book"
 msgstr "جایگزینی دفترچه آدرس کامل"
 
 #: program/localization/fa/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "شما میتوانید اطلاعات تماس ها را به دفترچه"
-"تلفن موجود منتقل کنید. <br/>  ما در حال حاضر"
-"امکان انتقال آدرسها را با فرمت <a"
-"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> برای شما"
+msgstr "شما میتوانید اطلاعات تماس ها را به دفترچه "
+"تلفن موجود منتقل کنید. <br/>  ما در حال حاضر "
+"امکان انتقال آدرسها را با فرمت <a "
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> برای شما "
 "فراهم نموده ایم."
 
 #: program/localization/fa/labels.inc:done
@@ -850,12 +849,12 @@ msgstr "نادیده گیری"
 
 #: program/localization/fa/labels.inc:readwhendeleted
 msgid "Mark the message as read on delete"
-msgstr "در هنگام پاک کردن، پیغام را به عنوان"
+msgstr "در هنگام پاک کردن، پیغام را به عنوان "
 "خوانده شده علامت بزن"
 
 #: program/localization/fa/labels.inc:flagfordeletion
 msgid "Flag the message for deletion instead of delete"
-msgstr "پیغام را بجای پاک کردن، برای پاک شدن"
+msgstr "پیغام را بجای پاک کردن، برای پاک شدن "
 "آماده کن "
 
 #: program/localization/fa/labels.inc:skipdeleted
@@ -928,7 +927,7 @@ msgstr "مشخص نمودن پیغام جدید"
 
 #: program/localization/fa/labels.inc:checkallfolders
 msgid "Check all folders for new messages"
-msgstr "همه پوشه ها رو برای مشاهده پیغام های جدید"
+msgstr "همه پوشه ها رو برای مشاهده پیغام های جدید "
 "بگردید"
 
 #: program/localization/fa/labels.inc:folder

@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: \n"
@@ -93,7 +92,7 @@ msgstr "Yá hai un contuaut con es direición de corréu"
 
 #: program/localization/ast/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "Pa protexer la to privacidá, torgáronse les imáxenes esternes n'esti"
+msgstr "Pa protexer la to privacidá, torgáronse les imáxenes esternes n'esti "
 "mensaxe"
 
 #: program/localization/ast/messages.inc:encryptedmessage
@@ -302,12 +301,12 @@ msgstr "Importando, dame un minutín..."
 
 #: program/localization/ast/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "Nun fui a importar. El ficheru qu'escoyiste nun ye un ficheru vCard"
+msgstr "Nun fui a importar. El ficheru qu'escoyiste nun ye un ficheru vCard "
 "válidu."
 
 #: program/localization/ast/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>Importaronse correchamente $inserted contautos, saltáronse $skipped"
+msgstr "<b>Importaronse correchamente $inserted contautos, saltáronse $skipped "
 "entrase que yá esistíen</b>:<p><em>$names</em></p>"
 
 #: program/localization/ast/messages.inc:opnotpermitted
@@ -319,15 +318,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Perdiose la direición de corréu de la identidá qu'escoyisti"
 
 #: program/localization/ast/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Si pases a editor en modu testu vas perder tol estilu aplicáu al mensaxe."
+msgstr "Si pases a editor en modu testu vas perder tol estilu aplicáu al mensaxe. "
 "¿Tas seguru de que quies facelo?"
 
 #: program/localization/ast/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Hai un fallu garrafal de configuración. Contauta col alministrador de"
+msgstr "Hai un fallu garrafal de configuración. Contauta col alministrador de "
 "secute. <b>Nun se pude unviar el mesaxe</b>"
 
 #: program/localization/ast/messages.inc:smtpconnerror

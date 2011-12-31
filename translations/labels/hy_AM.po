@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: hy_AM\n"
@@ -571,7 +570,7 @@ msgstr "Չ՛գրանցել"
 
 #: program/localization/hy_AM/labels.inc:maxuploadsize
 msgid "Maximum allowed file size is $size"
-msgstr "Առավելագույն թույլատրելի ֆայլի չափը $size"
+msgstr "Առավելագույն թույլատրելի ֆայլի չափը $size "
 "է"
 
 #: program/localization/hy_AM/labels.inc:addcc
@@ -587,10 +586,10 @@ msgid "Add Reply-To"
 msgstr "Ավելացնել Reply-To"
 
 #: program/localization/hy_AM/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Նամակի հեղինակը խնդրել է նամակը"
-"կարդալուն պես տեղեկացնել իրեն։"
+msgstr "Նամակի հեղինակը խնդրել է նամակը "
+"կարդալուն պես տեղեկացնել իրեն։ "
 "Ցանկանում էք Տեղեկացնե՞լ։"
 
 #: program/localization/hy_AM/labels.inc:receiptread
@@ -602,13 +601,13 @@ msgid "This is a Return Receipt for your message"
 msgstr "Սա Ձեր նամակի ընթերցման ծանուցագիրն է"
 
 #: program/localization/hy_AM/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Նշում՝ Այս ծանուցագիրը ընդամենը"
-"տեղեկացնում է, որ նամակը ցուցադրվել է"
-"հասցեատիրոջ համակարչով։ Չկա որևիցե"
-"երաշխիք, որ հասցեատերը իսկապես կարդացել"
+msgstr "Նշում՝ Այս ծանուցագիրը ընդամենը "
+"տեղեկացնում է, որ նամակը ցուցադրվել է "
+"հասցեատիրոջ համակարչով։ Չկա որևիցե "
+"երաշխիք, որ հասցեատերը իսկապես կարդացել "
 "է նամակը։"
 
 #: program/localization/hy_AM/labels.inc:name
@@ -720,12 +719,12 @@ msgid "Replace the entire address book"
 msgstr "Փոխել ողջ հասցեագիրքը"
 
 #: program/localization/hy_AM/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Դուք կարող եք ներկրել նոր հասցեներ առկա"
-"հասցեագրքից։ Համակարգը ընդունում է"
-"հասցեների ներկրումը <a"
+msgstr "Դուք կարող եք ներկրել նոր հասցեներ առկա "
+"հասցեագրքից։ Համակարգը ընդունում է "
+"հասցեների ներկրումը <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> չափաձևով։"
 
 #: program/localization/hy_AM/labels.inc:done
@@ -854,7 +853,7 @@ msgstr "Ջնջելուց նշել նամակը որպես կարդացած"
 
 #: program/localization/hy_AM/labels.inc:flagfordeletion
 msgid "Flag the message for deletion instead of delete"
-msgstr "Ջնջելու փոխարեն նշել որպես ենթակա ջնջման"
+msgstr "Ջնջելու փոխարեն նշել որպես ենթակա ջնջման "
 ""
 
 #: program/localization/hy_AM/labels.inc:skipdeleted
@@ -875,7 +874,7 @@ msgstr "միշտ"
 
 #: program/localization/hy_AM/labels.inc:showinlineimages
 msgid "Display attached images below the message"
-msgstr "Ցուցադրել կցված պատկերները"
+msgstr "Ցուցադրել կցված պատկերները "
 "հաղորդագրության տակ"
 
 #: program/localization/hy_AM/labels.inc:autosavedraft
@@ -928,7 +927,7 @@ msgstr "Առաջ բերել պատուհանը նոր նամակ ստանալի�
 
 #: program/localization/hy_AM/labels.inc:checkallfolders
 msgid "Check all folders for new messages"
-msgstr "Ստուգել բոլոր դարակները նոր նամակների"
+msgstr "Ստուգել բոլոր դարակները նոր նամակների "
 "համար"
 
 #: program/localization/hy_AM/labels.inc:folder

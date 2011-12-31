@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: uk_UA\n"
@@ -331,7 +330,7 @@ msgstr "Відповісти відправнику"
 
 #: program/localization/uk_UA/labels.inc:replytoallmessage
 msgid "Reply to list or to sender and all recipients"
-msgstr "Відповісти до листа або відправнику та"
+msgstr "Відповісти до листа або відправнику та "
 "усім отримувачам"
 
 #: program/localization/uk_UA/labels.inc:replyall
@@ -732,9 +731,9 @@ msgid "Add Followup-To"
 msgstr "Додати Followup-To"
 
 #: program/localization/uk_UA/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Відправник цього листа запитав про"
+msgstr "Відправник цього листа запитав про "
 "прочитання. Повідомити відправника?"
 
 #: program/localization/uk_UA/labels.inc:receiptread
@@ -743,16 +742,16 @@ msgstr "Повідомлення про прочитання"
 
 #: program/localization/uk_UA/labels.inc:yourmessage
 msgid "This is a Return Receipt for your message"
-msgstr "Повідомлення про прочитання Вашого"
+msgstr "Повідомлення про прочитання Вашого "
 "листа"
 
 #: program/localization/uk_UA/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Зауваження: Це повідомлення означає"
-"лише, що листа було відкрито одержувачем,"
-"і не гарантує того, що його було"
+msgstr "Зауваження: Це повідомлення означає "
+"лише, що листа було відкрито одержувачем, "
+"і не гарантує того, що його було "
 "прочитано."
 
 #: program/localization/uk_UA/labels.inc:name
@@ -943,7 +942,7 @@ msgstr "Додати поле..."
 
 #: program/localization/uk_UA/labels.inc:addcontact
 msgid "Add new contact"
-msgstr "Додати вибрані контакти до списку"
+msgstr "Додати вибрані контакти до списку "
 "контактів"
 
 #: program/localization/uk_UA/labels.inc:editcontact
@@ -1087,12 +1086,12 @@ msgid "Replace the entire address book"
 msgstr "Замінити всю адресну книгу"
 
 #: program/localization/uk_UA/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Ви можете завантажити контакти з"
-"існуючої адресної книги. На даний момент"
-"підтримується імпортування контактів з"
+msgstr "Ви можете завантажити контакти з "
+"існуючої адресної книги. На даний момент "
+"підтримується імпортування контактів з "
 "формату vCard"
 
 #: program/localization/uk_UA/labels.inc:done
@@ -1241,12 +1240,12 @@ msgstr "відправляти автоматично"
 
 #: program/localization/uk_UA/labels.inc:autosendknown
 msgid "send receipt to my contacts, otherwise ask me"
-msgstr "відправити повідомлення моим контактам,"
+msgstr "відправити повідомлення моим контактам, "
 "в іншому випадку запитати мене"
 
 #: program/localization/uk_UA/labels.inc:autosendknownignore
 msgid "send receipt to my contacts, otherwise ignore"
-msgstr "відправити повідомлення моим контактам,"
+msgstr "відправити повідомлення моим контактам, "
 "в іншому випадку ігнорувати"
 
 #: program/localization/uk_UA/labels.inc:ignore
@@ -1259,7 +1258,7 @@ msgstr "Позначати як прочитане при видаленні"
 
 #: program/localization/uk_UA/labels.inc:flagfordeletion
 msgid "Flag the message for deletion instead of delete"
-msgstr "Позначати для видалення замість"
+msgstr "Позначати для видалення замість "
 "видалення"
 
 #: program/localization/uk_UA/labels.inc:skipdeleted
@@ -1268,7 +1267,7 @@ msgstr "Не показувати видалені листи"
 
 #: program/localization/uk_UA/labels.inc:deletealways
 msgid "If moving messages to Trash fails, delete them"
-msgstr "Видаляти листи при невдалому"
+msgstr "Видаляти листи при невдалому "
 "переміщенні до кошика"
 
 #: program/localization/uk_UA/labels.inc:showremoteimages
@@ -1285,7 +1284,7 @@ msgstr "завжди"
 
 #: program/localization/uk_UA/labels.inc:showinlineimages
 msgid "Display attached images below the message"
-msgstr "Показувати вкладені зображення внизу"
+msgstr "Показувати вкладені зображення внизу "
 "листа"
 
 #: program/localization/uk_UA/labels.inc:autosavedraft
@@ -1334,7 +1333,7 @@ msgstr "RFC 2047 (інші поштові клієнти)"
 
 #: program/localization/uk_UA/labels.inc:force7bit
 msgid "Use MIME encoding for 8-bit characters"
-msgstr "Використовувати MIME кодування для"
+msgstr "Використовувати MIME кодування для "
 "8-бітних символів"
 
 #: program/localization/uk_UA/labels.inc:advancedoptions
@@ -1343,7 +1342,7 @@ msgstr "Додаткові параметри"
 
 #: program/localization/uk_UA/labels.inc:focusonnewmessage
 msgid "Focus browser window on new message"
-msgstr "Фокусувати вікно браузера при новому"
+msgstr "Фокусувати вікно браузера при новому "
 "листі"
 
 #: program/localization/uk_UA/labels.inc:checkallfolders
@@ -1352,7 +1351,7 @@ msgstr "Перевіряти нові листи у всіх папках"
 
 #: program/localization/uk_UA/labels.inc:displaynext
 msgid "After message delete/move display the next message"
-msgstr "Після видалення/переміщення листа"
+msgstr "Після видалення/переміщення листа "
 "відображати наступний"
 
 #: program/localization/uk_UA/labels.inc:mainoptions
@@ -1372,7 +1371,7 @@ msgid "New Message"
 msgstr "Новий лист"
 
 #: program/localization/uk_UA/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Список налаштувань"
 
 #: program/localization/uk_UA/labels.inc:signatureoptions
@@ -1393,7 +1392,7 @@ msgstr "починати новий лист після цитованого"
 
 #: program/localization/uk_UA/labels.inc:replyremovesignature
 msgid "When replying remove original signature from message"
-msgstr "При відповіді видаляти первинний підпис"
+msgstr "При відповіді видаляти первинний підпис "
 "з листа"
 
 #: program/localization/uk_UA/labels.inc:autoaddsignature
@@ -1410,7 +1409,7 @@ msgstr "тільки при відповідях та пересилках"
 
 #: program/localization/uk_UA/labels.inc:replysignaturepos
 msgid "When replying or forwarding place signature"
-msgstr "При відповідях чи пересилках додавати"
+msgstr "При відповідях чи пересилках додавати "
 "підпис"
 
 #: program/localization/uk_UA/labels.inc:belowquote
@@ -1427,7 +1426,7 @@ msgstr "Додати підпис"
 
 #: program/localization/uk_UA/labels.inc:previewpanemarkread
 msgid "Mark previewed messages as read"
-msgstr "Позначити переглянуті листи як"
+msgstr "Позначити переглянуті листи як "
 "прочитані"
 
 #: program/localization/uk_UA/labels.inc:afternseconds
@@ -1436,27 +1435,27 @@ msgstr "через $n секунд"
 
 #: program/localization/uk_UA/labels.inc:reqmdn
 msgid "Always request a return receipt"
-msgstr "Завжди вимагати повідомлення про"
+msgstr "Завжди вимагати повідомлення про "
 "доставку"
 
 #: program/localization/uk_UA/labels.inc:reqdsn
 msgid "Always request a delivery status notification"
-msgstr "Завжди вимагати повідомлення про статус"
+msgstr "Завжди вимагати повідомлення про статус "
 "доставки"
 
 #: program/localization/uk_UA/labels.inc:replysamefolder
 msgid "Place replies in the folder of the message being replied to"
-msgstr "Розмістити відповіді у тій же папці, де"
+msgstr "Розмістити відповіді у тій же папці, де "
 "знаходиться оригінал"
 
 #: program/localization/uk_UA/labels.inc:defaultaddressbook
 msgid "Add new contacts to the selected addressbook"
-msgstr "Додати нові контакти до обраної адресної"
+msgstr "Додати нові контакти до обраної адресної "
 "книги"
 
 #: program/localization/uk_UA/labels.inc:spellcheckbeforesend
 msgid "Check spelling before sending a message"
-msgstr "Перевірити орфографію перед відправкою"
+msgstr "Перевірити орфографію перед відправкою "
 "повідомлення"
 
 #: program/localization/uk_UA/labels.inc:spellcheckoptions

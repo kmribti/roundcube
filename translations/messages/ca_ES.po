@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ca_ES\n"
@@ -121,7 +120,7 @@ msgstr "Ja existeix un contacte amb el mateix nom."
 
 #: program/localization/ca_ES/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "Per a protegir la vostra privacitat, les imatges remotes han estat"
+msgstr "Per a protegir la vostra privacitat, les imatges remotes han estat "
 "bloquejades en aquest missatge"
 
 #: program/localization/ca_ES/messages.inc:encryptedmessage
@@ -253,9 +252,9 @@ msgid "Please enter a contact name or email address."
 msgstr "Introduïu un nom de contacte o una adreça e-mail"
 
 #: program/localization/ca_ES/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "Encara no s'han pujat tots els adjunts. Si us plau, espereu o cancel·leu"
+msgstr "Encara no s'han pujat tots els adjunts. Si us plau, espereu o cancel·leu "
 "la pujada."
 
 #: program/localization/ca_ES/messages.inc:searchsuccessful
@@ -408,7 +407,7 @@ msgstr "La importació ha fallt! El fitxer pujat no és un fitxer vCard vàlid"
 
 #: program/localization/ca_ES/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>S'han importat $inserted contactes satisfactòriament, s'han descartat"
+msgstr "<b>S'han importat $inserted contactes satisfactòriament, s'han descartat "
 "$skipped entrades ja existents</b>:<p><em>$names</em></p>"
 
 #: program/localization/ca_ES/messages.inc:importconfirmskipped
@@ -424,15 +423,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Falta l'adreça d'e-mail a la identitat seleccionada"
 
 #: program/localization/ca_ES/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Si canvieu a l'editor de text pla perdreu tot el format del text. Voleu"
+msgstr "Si canvieu a l'editor de text pla perdreu tot el format del text. Voleu "
 "continuar?"
 
 #: program/localization/ca_ES/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Hi ha hagut un error fatal de configuració. Contacteu amb el vostre"
+msgstr "Hi ha hagut un error fatal de configuració. Contacteu amb el vostre "
 "administrador immediatament. <b>El vostre missatge no pot ser enviat.</b>"
 
 #: program/localization/ca_ES/messages.inc:smtpconnerror
@@ -569,5 +568,5 @@ msgstr "S'han detectat errors d'ortografia al misstage."
 
 #: program/localization/ca_ES/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
-msgstr "No ha etsat possible crear/moure la carpeta dins de la carpeta ascendent"
+msgstr "No ha etsat possible crear/moure la carpeta dins de la carpeta ascendent "
 "seleccionada. No hi ha permisos d'escriptura."

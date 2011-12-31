@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: nl_NL\n"
@@ -735,9 +734,9 @@ msgid "Add Followup-To"
 msgstr "Mail-Followup-Aan toevoegen"
 
 #: program/localization/nl_NL/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "De afzender van dit bericht heeft gevraagd een melding te ontvangen wanneer"
+msgstr "De afzender van dit bericht heeft gevraagd een melding te ontvangen wanneer "
 "u dit bericht heeft gelezen. Wilt u deze melding verzenden?"
 
 #: program/localization/nl_NL/labels.inc:receiptread
@@ -749,11 +748,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "Dit is een ontvangstbevestiging voor uw bericht"
 
 #: program/localization/nl_NL/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Let op: Dit bevestigt alleen dat uw bericht bij de geadresseerde is"
-"weergegeven. Er is geen garantie dat de geadresseerde het bericht"
+msgstr "Let op: Dit bevestigt alleen dat uw bericht bij de geadresseerde is "
+"weergegeven. Er is geen garantie dat de geadresseerde het bericht "
 "daadwerkelijk heeft gelezen of de inhoud ervan heeft begrepen."
 
 #: program/localization/nl_NL/labels.inc:name
@@ -1087,11 +1086,11 @@ msgid "Replace the entire address book"
 msgstr "Vervang het complete adresboek"
 
 #: program/localization/nl_NL/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "U kunt hier contactpersonen importeren vanuit een bestaand adresboek.<br"
-"/>Op dit moment ondersteunen wij het <a"
+msgstr "U kunt hier contactpersonen importeren vanuit een bestaand adresboek.<br "
+"/>Op dit moment ondersteunen wij het <a "
 "href=\"http://nl.wikipedia.org/wiki/VCard\">vCard</a> bestandsformaat."
 
 #: program/localization/nl_NL/labels.inc:done
@@ -1240,12 +1239,12 @@ msgstr "stuur automatisch"
 
 #: program/localization/nl_NL/labels.inc:autosendknown
 msgid "send receipt to my contacts, otherwise ask me"
-msgstr "stuur ontvangstbevestiging alleen naar mijn contactpersonen, voor anderen"
+msgstr "stuur ontvangstbevestiging alleen naar mijn contactpersonen, voor anderen "
 "aan mij vragen"
 
 #: program/localization/nl_NL/labels.inc:autosendknownignore
 msgid "send receipt to my contacts, otherwise ignore"
-msgstr "stuur ontvangstbevestiging alleen naar mijn contactpersonen,  voor anderen"
+msgstr "stuur ontvangstbevestiging alleen naar mijn contactpersonen,  voor anderen "
 "negeren"
 
 #: program/localization/nl_NL/labels.inc:ignore
@@ -1365,7 +1364,7 @@ msgid "New Message"
 msgstr "Nieuw bericht"
 
 #: program/localization/nl_NL/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Lijstopties"
 
 #: program/localization/nl_NL/labels.inc:signatureoptions

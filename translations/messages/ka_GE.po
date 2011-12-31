@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ka_GE\n"
@@ -21,17 +20,17 @@ msgstr "შესვლა შეუძლებელია"
 
 #: program/localization/ka_GE/messages.inc:cookiesdisabled
 msgid "Your browser does not accept cookies."
-msgstr "თქვენი ბროუზერი კუკიებს არ"
+msgstr "თქვენი ბროუზერი კუკიებს არ "
 "პასუხობს"
 
 #: program/localization/ka_GE/messages.inc:sessionerror
 msgid "Your session is invalid or expired."
-msgstr "თქვენი სესია არის მცდარი ან"
+msgstr "თქვენი სესია არის მცდარი ან "
 "ვადაგასული"
 
 #: program/localization/ka_GE/messages.inc:imaperror
 msgid "Connection to IMAP server failed."
-msgstr "IMAP სერვერთან დაკავშირება"
+msgstr "IMAP სერვერთან დაკავშირება "
 "შეუძლებელია"
 
 #: program/localization/ka_GE/messages.inc:servererror
@@ -48,14 +47,14 @@ msgstr "მონაცემთა ბაზის შეცდომა!"
 
 #: program/localization/ka_GE/messages.inc:errornoperm
 msgid "Unable to perform operation. Permission denied."
-msgstr "მოქმედების შესრულება"
-"შეუძლებალია. წვდომა"
+msgstr "მოქმედების შესრულება "
+"შეუძლებალია. წვდომა "
 "აკრძალულია."
 
 #: program/localization/ka_GE/messages.inc:invalidrequest
 msgid "Invalid request! No data was saved."
-msgstr "არასწორი მოთხოვნა!"
-"მონაცემების შენახვა არ"
+msgstr "არასწორი მოთხოვნა! "
+"მონაცემების შენახვა არ "
 "მოხერხდა."
 
 #: program/localization/ka_GE/messages.inc:nomessagesfound
@@ -64,7 +63,7 @@ msgstr "არ არის ახალი შეტყობინება"
 
 #: program/localization/ka_GE/messages.inc:loggedout
 msgid "You have successfully terminated the session. Good bye!"
-msgstr "წარმატებით დაიხურა თქვენი"
+msgstr "წარმატებით დაიხურა თქვენი "
 "სესია"
 
 #: program/localization/ka_GE/messages.inc:mailboxempty
@@ -97,7 +96,7 @@ msgstr "შეტყობინების გაგზავნა"
 
 #: program/localization/ka_GE/messages.inc:messagesent
 msgid "Message sent successfully."
-msgstr "შეტყობინება გაიგზავნა"
+msgstr "შეტყობინება გაიგზავნა "
 "წარმატებით"
 
 #: program/localization/ka_GE/messages.inc:savingmessage
@@ -106,7 +105,7 @@ msgstr "შეტყობინების შენახვა..."
 
 #: program/localization/ka_GE/messages.inc:messagesaved
 msgid "Message saved to Drafts."
-msgstr "შეტყობინების დროებით"
+msgstr "შეტყობინების დროებით "
 "შენახვა"
 
 #: program/localization/ka_GE/messages.inc:successfullysaved
@@ -115,24 +114,24 @@ msgstr "წარმატებით შეინახა"
 
 #: program/localization/ka_GE/messages.inc:addedsuccessfully
 msgid "Contact added successfully to address book."
-msgstr "კონტაქტი წარმატებით"
+msgstr "კონტაქტი წარმატებით "
 "დაემატა მისამართებში"
 
 #: program/localization/ka_GE/messages.inc:contactexists
 msgid "A contact with the same e-mail address already exists."
-msgstr "კონტაქტი ამ მისამართზე უკვე"
+msgstr "კონტაქტი ამ მისამართზე უკვე "
 "არსებობს"
 
 #: program/localization/ka_GE/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "უსაფრთხოების მიზნით"
-"სურათების ჩვენება"
+msgstr "უსაფრთხოების მიზნით "
+"სურათების ჩვენება "
 "შეზღუდულია"
 
 #: program/localization/ka_GE/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
-msgstr "შეტყობინება დაშიფრულია და"
-"სამწუხაროდ ჩვენება"
+msgstr "შეტყობინება დაშიფრულია და "
+"სამწუხაროდ ჩვენება "
 "შეუძლებელია"
 
 #: program/localization/ka_GE/messages.inc:nocontactsfound
@@ -141,7 +140,7 @@ msgstr "კონტაქტი ვერ მოიძებნა"
 
 #: program/localization/ka_GE/messages.inc:contactnotfound
 msgid "The requested contact was not found."
-msgstr "მოთხოვნილი კონტაქტი ვერ"
+msgstr "მოთხოვნილი კონტაქტი ვერ "
 "მოიძებნა"
 
 #: program/localization/ka_GE/messages.inc:sendingfailed
@@ -150,13 +149,13 @@ msgstr "შეტყობინება ვერ გაიგზავნა"
 
 #: program/localization/ka_GE/messages.inc:senttooquickly
 msgid "Please wait $sec sec(s). before sending this message."
-msgstr "გთხოვთ მოიცადოთ $sec წამი."
-"სანამ იგზავნება"
+msgstr "გთხოვთ მოიცადოთ $sec წამი. "
+"სანამ იგზავნება "
 "შეტყობინება"
 
 #: program/localization/ka_GE/messages.inc:errorsavingsent
 msgid "An error occured while saving sent message."
-msgstr "შეცდომა სანამ ინახება"
+msgstr "შეცდომა სანამ ინახება "
 "გაგზავნილი შეტყობინება"
 
 #: program/localization/ka_GE/messages.inc:errorsaving
@@ -165,38 +164,38 @@ msgstr "შენახვის დროს მოხდა შეცდომ
 
 #: program/localization/ka_GE/messages.inc:errormoving
 msgid "Could not move the message(s)."
-msgstr "შეტყობინების გადატანა"
+msgstr "შეტყობინების გადატანა "
 "შეუძლებელია"
 
 #: program/localization/ka_GE/messages.inc:errordeleting
 msgid "Could not delete the message(s)."
-msgstr "შეტყობინების წაშლა"
+msgstr "შეტყობინების წაშლა "
 "შეუძლებელია"
 
 #: program/localization/ka_GE/messages.inc:errormarking
 msgid "Could not mark the message(s)."
-msgstr "შეტყობინების მონიშვნა"
+msgstr "შეტყობინების მონიშვნა "
 "შეუძლებელია"
 
 #: program/localization/ka_GE/messages.inc:deletecontactconfirm
 msgid "Do you really want to delete selected contact(s)?"
-msgstr "ნამდვილად გსურთ მონიშნული"
+msgstr "ნამდვილად გსურთ მონიშნული "
 "კონტაქტების წაშლა?"
 
 #: program/localization/ka_GE/messages.inc:deletemessagesconfirm
 msgid "Do you really want to delete selected message(s)?"
-msgstr "ნამდვილად გსურთ მონიშნული"
+msgstr "ნამდვილად გსურთ მონიშნული "
 "შეტყობინებების წაშლა?"
 
 #: program/localization/ka_GE/messages.inc:deletefolderconfirm
 msgid "Do you really want to delete this folder?"
-msgstr "ნამდვილად გსურთ ამ"
+msgstr "ნამდვილად გსურთ ამ "
 "საქაღალდის წაშლა?"
 
 #: program/localization/ka_GE/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
-msgstr "ნამდვილად გსურთ ყველა"
-"შეტყობინების წაშლა"
+msgstr "ნამდვილად გსურთ ყველა "
+"შეტყობინების წაშლა "
 "აღნიშნულ საქაღალდეში?"
 
 #: program/localization/ka_GE/messages.inc:groupdeleting
@@ -213,12 +212,12 @@ msgstr "საქაღალდის გადატანა..."
 
 #: program/localization/ka_GE/messages.inc:formincomplete
 msgid "The form was not completely filled out."
-msgstr "ყველა ველი არ არის"
+msgstr "ყველა ველი არ არის "
 "შევსებული"
 
 #: program/localization/ka_GE/messages.inc:noemailwarning
 msgid "Please enter a valid email address."
-msgstr "მიუთითეთ სწორი ელ–ფოსტის"
+msgstr "მიუთითეთ სწორი ელ–ფოსტის "
 "მისამართი"
 
 #: program/localization/ka_GE/messages.inc:nonamewarning
@@ -231,7 +230,7 @@ msgstr "მიუთითეთ ფურცლის ზომა"
 
 #: program/localization/ka_GE/messages.inc:nosenderwarning
 msgid "Please enter sender e-mail address."
-msgstr "გთხოვთ შეიტანოთ მგზავნელის"
+msgstr "გთხოვთ შეიტანოთ მგზავნელის "
 "ელ–ფოსტის მისამართი"
 
 #: program/localization/ka_GE/messages.inc:norecipientwarning
@@ -240,35 +239,35 @@ msgstr "მიუთითეთ მიმღები"
 
 #: program/localization/ka_GE/messages.inc:nosubjectwarning
 msgid "The \"Subject\" field is empty. Would you like to enter one now?"
-msgstr "გსურთ თუ არა შეტყობინების"
+msgstr "გსურთ თუ არა შეტყობინების "
 "გაგზავნა უსათაუროდ?"
 
 #: program/localization/ka_GE/messages.inc:nobodywarning
 msgid "Send this message without text?"
-msgstr "გსურთ თუ არა შეტყობინების"
+msgstr "გსურთ თუ არა შეტყობინების "
 "გაგზავნა უტექსტოდ?"
 
 #: program/localization/ka_GE/messages.inc:notsentwarning
 msgid "Message has not been sent. Do you want to discard your message?"
-msgstr "შეტყობინება ვერ იქნა"
-"გაგზავნილი. გსურთ თუ არა"
+msgstr "შეტყობინება ვერ იქნა "
+"გაგზავნილი. გსურთ თუ არა "
 "გზავნილის გაუქმება?"
 
 #: program/localization/ka_GE/messages.inc:noldapserver
 msgid "Please select an ldap server to search."
-msgstr "მიუთითეთ LDAP სერვერი"
+msgstr "მიუთითეთ LDAP სერვერი "
 "ძიებისთვის"
 
 #: program/localization/ka_GE/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
-msgstr "მიუთითეთ სახელი ან"
+msgstr "მიუთითეთ სახელი ან "
 "ელ–ფოსტის მისამართი"
 
 #: program/localization/ka_GE/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
-msgstr "ჯერ არ ატვირთულა ყველა"
-"მიმაგრებული ფაილი. დაელოდეთ"
+msgstr "ჯერ არ ატვირთულა ყველა "
+"მიმაგრებული ფაილი. დაელოდეთ "
 "ან გააუქმეთ ატვირთვა."
 
 #: program/localization/ka_GE/messages.inc:searchsuccessful
@@ -293,12 +292,12 @@ msgstr "შემოწმება..."
 
 #: program/localization/ka_GE/messages.inc:nospellerrors
 msgid "No spelling errors found."
-msgstr "ორთოგრაფიული შეცდომა არ"
+msgstr "ორთოგრაფიული შეცდომა არ "
 "არის"
 
 #: program/localization/ka_GE/messages.inc:folderdeleted
 msgid "Folder successfully deleted."
-msgstr "საქაღალდე წარმატებით"
+msgstr "საქაღალდე წარმატებით "
 "წაიშალა"
 
 #: program/localization/ka_GE/messages.inc:deletedsuccessfully
@@ -307,12 +306,12 @@ msgstr "წარმატებით წაიშალა"
 
 #: program/localization/ka_GE/messages.inc:converting
 msgid "Removing formatting..."
-msgstr "შეტყობინების ფორმატირების"
+msgstr "შეტყობინების ფორმატირების "
 "გაუქმება..."
 
 #: program/localization/ka_GE/messages.inc:messageopenerror
 msgid "Could not load message from server."
-msgstr "შეტყობინება ვერ ჩაიტვირთა"
+msgstr "შეტყობინება ვერ ჩაიტვირთა "
 "სერვერიდან"
 
 #: program/localization/ka_GE/messages.inc:fileuploaderror
@@ -321,29 +320,29 @@ msgstr "ფაილი ვერ აიტვირთა"
 
 #: program/localization/ka_GE/messages.inc:filesizeerror
 msgid "The uploaded file exceeds the maximum size of $size."
-msgstr "ატვირთული ფაილის ზომა მეტია"
-"დასაშვებ ფაილის მაქსიმალურ"
+msgstr "ატვირთული ფაილის ზომა მეტია "
+"დასაშვებ ფაილის მაქსიმალურ "
 "ზომაზე ($size)"
 
 #: program/localization/ka_GE/messages.inc:copysuccess
 msgid "Successfully copied $nr addresses."
-msgstr "წარმატებით დაკოპირდა $nr"
+msgstr "წარმატებით დაკოპირდა $nr "
 "მისამართი"
 
 #: program/localization/ka_GE/messages.inc:copyerror
 msgid "Could not copy any addresses."
-msgstr "ვერცერთი მისამართი ვერ"
+msgstr "ვერცერთი მისამართი ვერ "
 "დაკოპირდა"
 
 #: program/localization/ka_GE/messages.inc:sourceisreadonly
 msgid "This address source is read only."
-msgstr "აღნიშნული მისამართის"
-"მხოლოდ წაკითხვაა"
+msgstr "აღნიშნული მისამართის "
+"მხოლოდ წაკითხვაა "
 "შესაძლებელი"
 
 #: program/localization/ka_GE/messages.inc:errorsavingcontact
 msgid "Could not save the contact address."
-msgstr "საკონტაქტო მისამართის"
+msgstr "საკონტაქტო მისამართის "
 "შენახვა შეუძლებელია"
 
 #: program/localization/ka_GE/messages.inc:movingmessage
@@ -360,40 +359,40 @@ msgstr "არ გაიგზავნა"
 
 #: program/localization/ka_GE/messages.inc:nodeletelastidentity
 msgid "You cannot delete this identity, it's your last one."
-msgstr "წაშლა შეუძლებელია, ის"
+msgstr "წაშლა შეუძლებელია, ის "
 "თქვენთვის ერთადერთია"
 
 #: program/localization/ka_GE/messages.inc:forbiddencharacter
 msgid "Folder name contains a forbidden character."
-msgstr "საქაღალდის სახელი შეიცავს"
+msgstr "საქაღალდის სახელი შეიცავს "
 "აკრძალულ სიმბოლოებს"
 
 #: program/localization/ka_GE/messages.inc:selectimportfile
 msgid "Please select a file to upload."
-msgstr "გთხოვთ მონიშნოთ ფაილი"
+msgstr "გთხოვთ მონიშნოთ ფაილი "
 "ასატვირთად"
 
 #: program/localization/ka_GE/messages.inc:addresswriterror
 msgid "The selected address book is not writeable."
-msgstr "მონიშნულ მისამართებში"
+msgstr "მონიშნულ მისამართებში "
 "ჩაწერა შეუძლებელია"
 
 #: program/localization/ka_GE/messages.inc:importwait
 msgid "Importing, please wait..."
-msgstr "გთხოვთ მოიცადოთ,"
+msgstr "გთხოვთ მოიცადოთ, "
 "მიმდინარეობს შემოტანა"
 
 #: program/localization/ka_GE/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "შემოტანა გაუქმდა! ატვირთული"
-"ფაილის ფორმატი არ ემთხვევა"
+msgstr "შემოტანა გაუქმდა! ატვირთული "
+"ფაილის ფორმატი არ ემთხვევა "
 "დასაშვებ vCard ფორმატს"
 
 #: program/localization/ka_GE/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>წარმატებით დასრულდა $inserted"
-"კონტაქტების შემოტანა, $skipped"
-"არსებულის"
+msgstr "<b>წარმატებით დასრულდა $inserted "
+"კონტაქტების შემოტანა, $skipped "
+"არსებულის "
 "გამოტოვება</b>:<p><em>$names</em></p>"
 
 #: program/localization/ka_GE/messages.inc:opnotpermitted
@@ -402,50 +401,50 @@ msgstr "ოპერაცია შეზღუდულია"
 
 #: program/localization/ka_GE/messages.inc:nofromaddress
 msgid "Missing e-mail address in selected identity."
-msgstr "ელ–ფოსტის მისამართი"
+msgstr "ელ–ფოსტის მისამართი "
 "გამოტოვებულია"
 
 #: program/localization/ka_GE/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "რედაქტორის გადართვა"
-"ტექსტურ რეჟიმში გამოიწვევს"
-"არსებული ტექსტის ფორმატის"
-"დაკარგვას. გსურთ"
+msgstr "რედაქტორის გადართვა "
+"ტექსტურ რეჟიმში გამოიწვევს "
+"არსებული ტექსტის ფორმატის "
+"დაკარგვას. გსურთ "
 "გაგრძელება?"
 
 #: program/localization/ka_GE/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "სერვერზე მოხდა შეცდომა."
-"დაუყონებლივ დაუკავშირდით"
-"ადმინისტრატორს. <b>თქვენი"
-"შეტყობინება შესაძლოა ვერ"
+msgstr "სერვერზე მოხდა შეცდომა. "
+"დაუყონებლივ დაუკავშირდით "
+"ადმინისტრატორს. <b>თქვენი "
+"შეტყობინება შესაძლოა ვერ "
 "გაიგზავნა.</b>"
 
 #: program/localization/ka_GE/messages.inc:smtpconnerror
 msgid "SMTP Error ($code): Connection to server failed."
-msgstr "SMTP Error ($code): სერვერთან"
+msgstr "SMTP Error ($code): სერვერთან "
 "დაკავშირება ვერ მოხერხდა"
 
 #: program/localization/ka_GE/messages.inc:smtpautherror
 msgid "SMTP Error ($code): Authentication failed."
-msgstr "SMTP Error ($code): ავტორიზაციის"
+msgstr "SMTP Error ($code): ავტორიზაციის "
 "შეცდომა"
 
 #: program/localization/ka_GE/messages.inc:smtpfromerror
 msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
-msgstr "SMTP Error ($code): ვერ მიეთითა"
+msgstr "SMTP Error ($code): ვერ მიეთითა "
 "გამგზავნი \"$from\" ($msg)"
 
 #: program/localization/ka_GE/messages.inc:smtptoerror
 msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
-msgstr "SMTP Error ($code): ვერ დაემატა მიმღები"
+msgstr "SMTP Error ($code): ვერ დაემატა მიმღები "
 "\"$to\" ($msg)"
 
 #: program/localization/ka_GE/messages.inc:smtprecipientserror
 msgid "SMTP Error: Unable to parse recipients list."
-msgstr "SMTP Error: მიმღებთა ჩამონათვალის"
+msgstr "SMTP Error: მიმღებთა ჩამონათვალის "
 "დამუშავება ვერ მოხერხდა"
 
 #: program/localization/ka_GE/messages.inc:smtperror
@@ -454,17 +453,17 @@ msgstr "SMTP Error: $msg"
 
 #: program/localization/ka_GE/messages.inc:emailformaterror
 msgid "Invalid e-mail address: $email"
-msgstr "ელ-ფოსტის მისამართი"
+msgstr "ელ-ფოსტის მისამართი "
 "არასწორია $email"
 
 #: program/localization/ka_GE/messages.inc:contactdeleted
 msgid "Contact(s) deleted successfully."
-msgstr "კონტაქტ(ებ)ი წარმატებით"
+msgstr "კონტაქტ(ებ)ი წარმატებით "
 "წაიშალა."
 
 #: program/localization/ka_GE/messages.inc:contactrestored
 msgid "Contact(s) restored successfully."
-msgstr "კონრაქტ(ებ)ი წარმატებით"
+msgstr "კონრაქტ(ებ)ი წარმატებით "
 "აღდგა,"
 
 #: program/localization/ka_GE/messages.inc:groupdeleted
@@ -477,22 +476,22 @@ msgstr "ჯგუფი წარმატებით შეიქმნა."
 
 #: program/localization/ka_GE/messages.inc:messagedeleted
 msgid "Message(s) deleted successfully."
-msgstr "შეტყობინებები წარმატებით"
+msgstr "შეტყობინებები წარმატებით "
 "წაიშალა."
 
 #: program/localization/ka_GE/messages.inc:messagemoved
 msgid "Message(s) moved successfully."
-msgstr "შეტყობინებები გადატანილია"
+msgstr "შეტყობინებები გადატანილია "
 "წარმატებით."
 
 #: program/localization/ka_GE/messages.inc:messagemarked
 msgid "Message(s) marked successfully."
-msgstr "შეტყობინებები წარმატებით"
+msgstr "შეტყობინებები წარმატებით "
 "მოინიშნა."
 
 #: program/localization/ka_GE/messages.inc:namecannotbeempty
 msgid "Name cannot be empty."
-msgstr "სახელი არ შეიძლება იყოს"
+msgstr "სახელი არ შეიძლება იყოს "
 "ცარიელი."
 
 #: program/localization/ka_GE/messages.inc:nametoolong
@@ -509,5 +508,5 @@ msgstr "დასტა წარმატებით შეიქმნა."
 
 #: program/localization/ka_GE/messages.inc:invalidimageformat
 msgid "Not a valid image format."
-msgstr "გამოსახულების ფორმატი"
+msgstr "გამოსახულების ფორმატი "
 "არასწორია."

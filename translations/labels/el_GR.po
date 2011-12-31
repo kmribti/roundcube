@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: el_GR\n"
@@ -327,7 +326,7 @@ msgstr "Απάντηση"
 
 #: program/localization/el_GR/labels.inc:replytoallmessage
 msgid "Reply to list or to sender and all recipients"
-msgstr "Απάντηση στον αποστολέα και όλους τους"
+msgstr "Απάντηση στον αποστολέα και όλους τους "
 "παραλήπτες"
 
 #: program/localization/el_GR/labels.inc:forwardmessage
@@ -591,11 +590,11 @@ msgid "Add Reply-To"
 msgstr "Προσθήκη Απάντηση-Σε"
 
 #: program/localization/el_GR/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Ο αποστολέας του μηνύματος έχει ζητήσει"
-"να ενημερωθεί όταν διαβάσετε αυτό το"
-"μήνυμα. Επιθυμείτε να ενημερώστε τον"
+msgstr "Ο αποστολέας του μηνύματος έχει ζητήσει "
+"να ενημερωθεί όταν διαβάσετε αυτό το "
+"μήνυμα. Επιθυμείτε να ενημερώστε τον "
 "αποστολέα;"
 
 #: program/localization/el_GR/labels.inc:receiptread
@@ -607,14 +606,14 @@ msgid "This is a Return Receipt for your message"
 msgstr "Αυτό είναι μια Αναφορά για το μήνυμά σας"
 
 #: program/localization/el_GR/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Σημείωση: Αυτή η αναφορά επιβεβαιώνει"
-"μόνο ότι το μήνυμα εμφανίστηκε μόνο στον"
-"υπολογιστή του παραλήπτη. Δεν"
-"επιβεβαιώνει ότι ο παραλήπτης έχει"
-"διαβάσει ή έχει κατανοήσει το"
+msgstr "Σημείωση: Αυτή η αναφορά επιβεβαιώνει "
+"μόνο ότι το μήνυμα εμφανίστηκε μόνο στον "
+"υπολογιστή του παραλήπτη. Δεν "
+"επιβεβαιώνει ότι ο παραλήπτης έχει "
+"διαβάσει ή έχει κατανοήσει το "
 "περιεχόμενο του μηνύματος."
 
 #: program/localization/el_GR/labels.inc:name
@@ -747,7 +746,7 @@ msgstr "Ταυτότητες"
 
 #: program/localization/el_GR/labels.inc:manageidentities
 msgid "Manage identities for this account"
-msgstr "Διαχείριση ταυτοτήτων για το λογαριασμό"
+msgstr "Διαχείριση ταυτοτήτων για το λογαριασμό "
 "αυτό"
 
 #: program/localization/el_GR/labels.inc:newidentity
@@ -836,7 +835,7 @@ msgstr "πάντα"
 
 #: program/localization/el_GR/labels.inc:showinlineimages
 msgid "Display attached images below the message"
-msgstr "Προβολή συνημμένων φωτογραφιών, κάτω από"
+msgstr "Προβολή συνημμένων φωτογραφιών, κάτω από "
 "το μήνυμα"
 
 #: program/localization/el_GR/labels.inc:autosavedraft

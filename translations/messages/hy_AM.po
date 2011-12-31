@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: hy_AM\n"
@@ -37,7 +36,7 @@ msgstr "Այս փոստարկղում նամակներ չկան"
 
 #: program/localization/hy_AM/messages.inc:loggedout
 msgid "You have successfully terminated the session. Good bye!"
-msgstr "Դուք բարեհաջող ավարտեցիք աշխատանքը։"
+msgstr "Դուք բարեհաջող ավարտեցիք աշխատանքը։ "
 "Ցտեսություն…"
 
 #: program/localization/hy_AM/messages.inc:mailboxempty
@@ -86,7 +85,7 @@ msgstr "Այս հասցեով անձը արդեն գրանցված է"
 
 #: program/localization/hy_AM/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "Ձեր անվտանգության համար, այս նամակի"
+msgstr "Ձեր անվտանգության համար, այս նամակի "
 "արտաքին նկարներն բեռնված չեն"
 
 #: program/localization/hy_AM/messages.inc:encryptedmessage
@@ -107,7 +106,7 @@ msgstr "Նամակի ուղարկումը ձախողվեց"
 
 #: program/localization/hy_AM/messages.inc:senttooquickly
 msgid "Please wait $sec sec(s). before sending this message."
-msgstr "Խնդրում ենք սպասել $sec վարկյան մինչ այս"
+msgstr "Խնդրում ենք սպասել $sec վարկյան մինչ այս "
 "նամակն ուղարկելը"
 
 #: program/localization/hy_AM/messages.inc:errorsavingsent
@@ -140,7 +139,7 @@ msgstr "Ուզու՞մ էք ջնջել այս դարակը"
 
 #: program/localization/hy_AM/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
-msgstr "Ուզու՞մ էք ջնջել այս դարակի բոլոր"
+msgstr "Ուզու՞մ էք ջնջել այս դարակի բոլոր "
 "նամակները"
 
 #: program/localization/hy_AM/messages.inc:folderdeleting
@@ -177,7 +176,7 @@ msgstr "Մուտքագրեք նվազագույնը մեկ հասցեատեր"
 
 #: program/localization/hy_AM/messages.inc:nosubjectwarning
 msgid "The \"Subject\" field is empty. Would you like to enter one now?"
-msgstr "Վերնագիր բացակայում է, ցանկանո՞ւմ եք"
+msgstr "Վերնագիր բացակայում է, ցանկանո՞ւմ եք "
 "լրացնել"
 
 #: program/localization/hy_AM/messages.inc:nobodywarning
@@ -266,7 +265,7 @@ msgstr "Նամակը տեղափոխվում է…"
 
 #: program/localization/hy_AM/messages.inc:receiptsent
 msgid "Successfully sent a read receipt."
-msgstr "Նամակի ընթերցման ծանուցագիրն ուղարկված"
+msgstr "Նամակի ընթերցման ծանուցագիրն ուղարկված "
 "է"
 
 #: program/localization/hy_AM/messages.inc:errorsendingreceipt
@@ -279,7 +278,7 @@ msgstr "Անհնար է ջնջել վերջին տարբերակը"
 
 #: program/localization/hy_AM/messages.inc:forbiddencharacter
 msgid "Folder name contains a forbidden character."
-msgstr "Դարակի անունը պարունակում է"
+msgstr "Դարակի անունը պարունակում է "
 "անթույլատրելի նշան"
 
 #: program/localization/hy_AM/messages.inc:selectimportfile
@@ -296,12 +295,12 @@ msgstr "Ներկրումն ընթացքի մեջ է..."
 
 #: program/localization/hy_AM/messages.inc:importerror
 msgid "Import failed! The uploaded file is not a valid vCard file."
-msgstr "Ներկրումը խափանվեց։ Ներկրված ֆայլը vCard"
+msgstr "Ներկրումը խափանվեց։ Ներկրված ֆայլը vCard "
 "չափաձևի չէ։"
 
 #: program/localization/hy_AM/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "$inserted նոր ներկրված հասցեներ, $skipped արդեն"
+msgstr "$inserted նոր ներկրված հասցեներ, $skipped արդեն "
 "առկա հասցեներ՝ <p><em>$names</em></p>"
 
 #: program/localization/hy_AM/messages.inc:opnotpermitted
@@ -313,7 +312,7 @@ msgid "Missing e-mail address in selected identity."
 msgstr "Նշված անձը հասցե չունի։"
 
 #: program/localization/hy_AM/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Դեպի պարզ տեքստի խմբագրիչ անցման դեպքում"
+msgstr "Դեպի պարզ տեքստի խմբագրիչ անցման դեպքում "
 "կկորի տեքստի ձևավորումը։ Շարունակե՞լ։"

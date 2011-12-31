@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: et_EE\n"
@@ -719,9 +718,9 @@ msgid "Add Followup-To"
 msgstr "Lisa Followup-To"
 
 #: program/localization/et_EE/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Selle kirja saatja soovib saada kinnitust kirja lugemise kohta. Kas soovid"
+msgstr "Selle kirja saatja soovib saada kinnitust kirja lugemise kohta. Kas soovid "
 "kinnituse saata?"
 
 #: program/localization/et_EE/labels.inc:receiptread
@@ -733,11 +732,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "See on sinu saadetud kirja kättesaamiskinnitus"
 
 #: program/localization/et_EE/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Märkus: Kättesaamiskinnituse saamine tähendab ainult seda, et saaja on"
-"kirja avanud. Pole mingit garantiid, et ta kirja tegelikult luges ja selle"
+msgstr "Märkus: Kättesaamiskinnituse saamine tähendab ainult seda, et saaja on "
+"kirja avanud. Pole mingit garantiid, et ta kirja tegelikult luges ja selle "
 "sisust aru sai."
 
 #: program/localization/et_EE/labels.inc:name
@@ -1047,10 +1046,10 @@ msgid "Replace the entire address book"
 msgstr "Asenda kogu aadressiraamat"
 
 #: program/localization/et_EE/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Sa saad üle kanda kontakte olemasolevast aadressiraamatust. Praegu on"
+msgstr "Sa saad üle kanda kontakte olemasolevast aadressiraamatust. Praegu on "
 "toetatud <a href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> formaat."
 
 #: program/localization/et_EE/labels.inc:done
@@ -1314,7 +1313,7 @@ msgid "New Message"
 msgstr "Uus kiri"
 
 #: program/localization/et_EE/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Nimekirja valikud"
 
 #: program/localization/et_EE/labels.inc:signatureoptions

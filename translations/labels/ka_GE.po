@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ka_GE\n"
@@ -303,7 +302,7 @@ msgstr "დღეს"
 
 #: program/localization/ka_GE/labels.inc:checkmail
 msgid "Check for new messages"
-msgstr "შემოწმება ახალ"
+msgstr "შემოწმება ახალ "
 "შეტყობინებაზე"
 
 #: program/localization/ka_GE/labels.inc:writenewmessage
@@ -328,7 +327,7 @@ msgstr "წაშლა"
 
 #: program/localization/ka_GE/labels.inc:movemessagetotrash
 msgid "Move message to trash"
-msgstr "შეტყობინების წაშლილებში"
+msgstr "შეტყობინების წაშლილებში "
 "გადატანა"
 
 #: program/localization/ka_GE/labels.inc:printmessage
@@ -597,7 +596,7 @@ msgstr "გამოსახულების ჩვენება"
 
 #: program/localization/ka_GE/labels.inc:alwaysshow
 msgid "Always show images from $sender"
-msgstr "ყოველთვის გამოაჩინე"
+msgstr "ყოველთვის გამოაჩინე "
 "სურათები $sender –გან"
 
 #: program/localization/ka_GE/labels.inc:htmltoggle
@@ -618,7 +617,7 @@ msgstr "არ შეინახო"
 
 #: program/localization/ka_GE/labels.inc:maxuploadsize
 msgid "Maximum allowed file size is $size"
-msgstr "მაქსიმალური დაშვებული"
+msgstr "მაქსიმალური დაშვებული "
 "ფაილის ზომა $size"
 
 #: program/localization/ka_GE/labels.inc:addcc
@@ -634,10 +633,10 @@ msgid "Add Reply-To"
 msgstr "დაამატე გამომგზავნი"
 
 #: program/localization/ka_GE/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "გამომგზავნს სურს შეიტყოს"
-"წერილის მიღება. გსურთ"
+msgstr "გამომგზავნს სურს შეიტყოს "
+"წერილის მიღება. გსურთ "
 "შეატყობინოთ გამომგზავნს?"
 
 #: program/localization/ka_GE/labels.inc:receiptread
@@ -646,17 +645,17 @@ msgstr "გზავნილის დაბრუნება"
 
 #: program/localization/ka_GE/labels.inc:yourmessage
 msgid "This is a Return Receipt for your message"
-msgstr "ეს არის მიღების დასტური"
+msgstr "ეს არის მიღების დასტური "
 "თქვენს შეტყობინებაზე"
 
 #: program/localization/ka_GE/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "განმარტება: ეს ნიშნავს რომ"
-"ადრესატმა მიიღო"
-"შეტყობინება. მაგრამ, არ"
-"ნიშნავს რომ წაიკითხა ან"
+msgstr "განმარტება: ეს ნიშნავს რომ "
+"ადრესატმა მიიღო "
+"შეტყობინება. მაგრამ, არ "
+"ნიშნავს რომ წაიკითხა ან "
 "გაიგო ტექსტი"
 
 #: program/localization/ka_GE/labels.inc:name
@@ -850,7 +849,7 @@ msgstr "მონიშნელი კონტაქტის წაშლა"
 
 #: program/localization/ka_GE/labels.inc:composeto
 msgid "Compose mail to"
-msgstr "ფოსტის გაგზავნა შერჩეულ"
+msgstr "ფოსტის გაგზავნა შერჩეულ "
 "ადრესატებთან"
 
 #: program/localization/ka_GE/labels.inc:contactsfromto
@@ -867,12 +866,12 @@ msgstr "ექსპორტი"
 
 #: program/localization/ka_GE/labels.inc:exportvcards
 msgid "Export contacts in vCard format"
-msgstr "კონტაქტების ექსპორტი vCard"
+msgstr "კონტაქტების ექსპორტი vCard "
 "ფორმატში"
 
 #: program/localization/ka_GE/labels.inc:newcontactgroup
 msgid "Create new contact group"
-msgstr "ახალი საკონტაქტო ჯგუფის"
+msgstr "ახალი საკონტაქტო ჯგუფის "
 "შექმნა"
 
 #: program/localization/ka_GE/labels.inc:grouprename
@@ -933,19 +932,19 @@ msgstr "შემოტანა ფაილიდან:"
 
 #: program/localization/ka_GE/labels.inc:importreplace
 msgid "Replace the entire address book"
-msgstr "ჩაანაცვლეთ არსებული"
+msgstr "ჩაანაცვლეთ არსებული "
 "მისამართები"
 
 #: program/localization/ka_GE/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "თქვენ შეგიძლიათ ატვირთოთ"
-"კონტაქტები აღნიშნული"
-"მისამართიდან. <br/> ჩვენ"
-"შეგვიძლია მივიღოთ"
-"მისამართები <a"
-"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>"
+msgstr "თქვენ შეგიძლიათ ატვირთოთ "
+"კონტაქტები აღნიშნული "
+"მისამართიდან. <br/> ჩვენ "
+"შეგვიძლია მივიღოთ "
+"მისამართები <a "
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> "
 "მონაცემთა ფორმატში."
 
 #: program/localization/ka_GE/labels.inc:done
@@ -966,7 +965,7 @@ msgstr "მომხმარებლის პარამეტრები"
 
 #: program/localization/ka_GE/labels.inc:editpreferences
 msgid "Edit user preferences"
-msgstr "მომხმარებლის პარამეტრების"
+msgstr "მომხმარებლის პარამეტრების "
 "რედაქტირება"
 
 #: program/localization/ka_GE/labels.inc:identities
@@ -995,7 +994,7 @@ msgstr "როგორც HTML"
 
 #: program/localization/ka_GE/labels.inc:defaultcharset
 msgid "Default Character Set"
-msgstr "ნაგულისხმები სიმბოლოთა"
+msgstr "ნაგულისხმები სიმბოლოთა "
 "ნაკრები"
 
 #: program/localization/ka_GE/labels.inc:htmlmessage
@@ -1060,12 +1059,12 @@ msgstr "ინტერფეისი"
 
 #: program/localization/ka_GE/labels.inc:logoutclear
 msgid "Clear Trash on logout"
-msgstr "წაშლილების გასუფთავება"
+msgstr "წაშლილების გასუფთავება "
 "გამოსვლისას"
 
 #: program/localization/ka_GE/labels.inc:logoutcompact
 msgid "Compact Inbox on logout"
-msgstr "მიღებულების შეკუმშვა"
+msgstr "მიღებულების შეკუმშვა "
 "გამოსვლისას"
 
 #: program/localization/ka_GE/labels.inc:uisettings
@@ -1098,22 +1097,22 @@ msgstr "იგნორირება"
 
 #: program/localization/ka_GE/labels.inc:readwhendeleted
 msgid "Mark the message as read on delete"
-msgstr "მონიშნე გზავნილი"
+msgstr "მონიშნე გზავნილი "
 "წაკითხულად წაშლის დროს"
 
 #: program/localization/ka_GE/labels.inc:flagfordeletion
 msgid "Flag the message for deletion instead of delete"
-msgstr "აღნიშნეთ გზავნილები როგორც"
+msgstr "აღნიშნეთ გზავნილები როგორც "
 "წასაშლელი წაშლის ნაცვლად"
 
 #: program/localization/ka_GE/labels.inc:skipdeleted
 msgid "Do not show deleted messages"
-msgstr "არ გამოაჩინო წაშლილი"
+msgstr "არ გამოაჩინო წაშლილი "
 "გზავნილები"
 
 #: program/localization/ka_GE/labels.inc:showremoteimages
 msgid "Display remote inline images"
-msgstr "გამოაჩინე მოშორებული"
+msgstr "გამოაჩინე მოშორებული "
 "სურათები"
 
 #: program/localization/ka_GE/labels.inc:fromknownsenders
@@ -1126,7 +1125,7 @@ msgstr "ყოველთვის"
 
 #: program/localization/ka_GE/labels.inc:showinlineimages
 msgid "Display attached images below the message"
-msgstr "ატვირთული სურათები"
+msgstr "ატვირთული სურათები "
 "გამოაჩინე გზავნილის ქვემოთ"
 
 #: program/localization/ka_GE/labels.inc:autosavedraft
@@ -1139,7 +1138,7 @@ msgstr "ყოველ $n წუთში"
 
 #: program/localization/ka_GE/labels.inc:keepalive
 msgid "Check for new messages on"
-msgstr "შეამოწმე ახალ"
+msgstr "შეამოწმე ახალ "
 "შეტყობინებაზე"
 
 #: program/localization/ka_GE/labels.inc:never
@@ -1176,7 +1175,7 @@ msgstr "Full RFC 2047 (other)"
 
 #: program/localization/ka_GE/labels.inc:force7bit
 msgid "Use MIME encoding for 8-bit characters"
-msgstr "MIME კოდირების გამოყენება 8"
+msgstr "MIME კოდირების გამოყენება 8 "
 "ბიტიანი სიმბოლოებისთვის"
 
 #: program/localization/ka_GE/labels.inc:advancedoptions
@@ -1185,18 +1184,18 @@ msgstr "დამატებითი პარამეტრები"
 
 #: program/localization/ka_GE/labels.inc:focusonnewmessage
 msgid "Focus browser window on new message"
-msgstr "ფოკუსირება ახალ"
+msgstr "ფოკუსირება ახალ "
 "შეტყობინებებზე"
 
 #: program/localization/ka_GE/labels.inc:checkallfolders
 msgid "Check all folders for new messages"
-msgstr "შეამოწმე ყველა საქაღალდე"
+msgstr "შეამოწმე ყველა საქაღალდე "
 "ახალ შეტყობინებაზე"
 
 #: program/localization/ka_GE/labels.inc:displaynext
 msgid "After message delete/move display the next message"
-msgstr "შეტყობინების წაშლის ან"
-"გადატანის შემდეგ გამოჩნდეს"
+msgstr "შეტყობინების წაშლის ან "
+"გადატანის შემდეგ გამოჩნდეს "
 "შემდეგი შეტყობინება"
 
 #: program/localization/ka_GE/labels.inc:mainoptions
@@ -1216,7 +1215,7 @@ msgid "New Message"
 msgstr "ახალი შეტყობინება"
 
 #: program/localization/ka_GE/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "პარამეტრების ჩამონათვალი"
 
 #: program/localization/ka_GE/labels.inc:signatureoptions
@@ -1229,22 +1228,22 @@ msgstr "პასუხის შემთხვევაში"
 
 #: program/localization/ka_GE/labels.inc:replytopposting
 msgid "start new message above original"
-msgstr "დაიწყოს ახალი შეტყობინება"
+msgstr "დაიწყოს ახალი შეტყობინება "
 "ორიგინალის ზემოთ"
 
 #: program/localization/ka_GE/labels.inc:replybottomposting
 msgid "start new message below original"
-msgstr "დაიწყოს ახალი შეტყობინება"
+msgstr "დაიწყოს ახალი შეტყობინება "
 "ორიგინალის ქვემოთ"
 
 #: program/localization/ka_GE/labels.inc:replyremovesignature
 msgid "When replying remove original signature from message"
-msgstr "წაიშალოს ხელმოწერა პასუხის"
+msgstr "წაიშალოს ხელმოწერა პასუხის "
 "შემთხვევაში"
 
 #: program/localization/ka_GE/labels.inc:autoaddsignature
 msgid "Automatically add signature"
-msgstr "ავტომატურად დაემატოს"
+msgstr "ავტომატურად დაემატოს "
 "ხელმოწერა"
 
 #: program/localization/ka_GE/labels.inc:newmessageonly
@@ -1253,13 +1252,13 @@ msgstr "მხოლოდ ახალი შეტყობინება"
 
 #: program/localization/ka_GE/labels.inc:replyandforwardonly
 msgid "replies and forwards only"
-msgstr "მხოლოდ გადაგზავნის და"
+msgstr "მხოლოდ გადაგზავნის და "
 "პასუხის შემთხვევაში"
 
 #: program/localization/ka_GE/labels.inc:replysignaturepos
 msgid "When replying or forwarding place signature"
-msgstr "მხოლოდ პასუხის ან"
-"გადაგზავნის შემთხვევაში"
+msgstr "მხოლოდ პასუხის ან "
+"გადაგზავნის შემთხვევაში "
 "გაყვეს ხელმოწერა"
 
 #: program/localization/ka_GE/labels.inc:belowquote

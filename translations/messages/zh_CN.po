@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: zh_CN\n"
@@ -256,7 +255,7 @@ msgid "Please enter a contact name or email address."
 msgstr "请输入一个联系人姓名或电子邮件地址"
 
 #: program/localization/zh_CN/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
 msgstr "附件还没有全部上传，请等待或者取消上传。"
 
@@ -406,7 +405,7 @@ msgstr "导入失败！所上传的文件不是有效的 vCard 文件。"
 
 #: program/localization/zh_CN/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>成功导入 $inserted 联系人，$skipped"
+msgstr "<b>成功导入 $inserted 联系人，$skipped "
 "乎略已存在的联系人</b>:<p><em>$names</em></p>"
 
 #: program/localization/zh_CN/messages.inc:importconfirmskipped
@@ -422,12 +421,12 @@ msgid "Missing e-mail address in selected identity."
 msgstr "选种的身份中没有邮件地址"
 
 #: program/localization/zh_CN/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
 msgstr "切换到纯文本编辑器将导致邮件正文中的所有文本格式失效，您确定要这样做吗？"
 
 #: program/localization/zh_CN/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
 msgstr "发送一个致命的配置错误，请立即联系管理员。<b>您的邮件无法发送.</b>"
 

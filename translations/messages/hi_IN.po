@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: hi_IN\n"
@@ -21,7 +20,7 @@ msgstr "लॉगिन नहीं हो पाया"
 
 #: program/localization/hi_IN/messages.inc:cookiesdisabled
 msgid "Your browser does not accept cookies."
-msgstr "आपका ब्राऊसर कुकी स्वीकार"
+msgstr "आपका ब्राऊसर कुकी स्वीकार "
 "नहीं कर रहा है"
 
 #: program/localization/hi_IN/messages.inc:sessionerror
@@ -30,12 +29,12 @@ msgstr "सत्र समाप्त या अवैद्य"
 
 #: program/localization/hi_IN/messages.inc:imaperror
 msgid "Connection to IMAP server failed."
-msgstr "आईमैप (IMAP) सर्वर से सम्पर्क"
+msgstr "आईमैप (IMAP) सर्वर से सम्पर्क "
 "नहीं हो पाया"
 
 #: program/localization/hi_IN/messages.inc:nomessagesfound
 msgid "No messages found in this mailbox."
-msgstr "इस मेलबॉक्स में कोई मेल नहीं"
+msgstr "इस मेलबॉक्स में कोई मेल नहीं "
 "है"
 
 #: program/localization/hi_IN/messages.inc:loggedout
@@ -72,7 +71,7 @@ msgstr "मेल सहेजा जा रहा है..."
 
 #: program/localization/hi_IN/messages.inc:messagesaved
 msgid "Message saved to Drafts."
-msgstr "मेल ड्राफ़्ट फोल्डर में जमा"
+msgstr "मेल ड्राफ़्ट फोल्डर में जमा "
 "हो रहा है"
 
 #: program/localization/hi_IN/messages.inc:successfullysaved
@@ -85,20 +84,20 @@ msgstr "पता खाते में पता जोडा गया है
 
 #: program/localization/hi_IN/messages.inc:contactexists
 msgid "A contact with the same e-mail address already exists."
-msgstr "इस ई-मेल पता से एक पता पेहले"
+msgstr "इस ई-मेल पता से एक पता पेहले "
 "से है"
 
 #: program/localization/hi_IN/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "आप के प्राईवेसी के लिये और"
-"स्पैम से बचने के लिये इस मेल"
-"में सदूर चित्र नहीं दिखाये"
+msgstr "आप के प्राईवेसी के लिये और "
+"स्पैम से बचने के लिये इस मेल "
+"में सदूर चित्र नहीं दिखाये "
 "गये हैं।"
 
 #: program/localization/hi_IN/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
-msgstr "माफ़ कीजिये, यह मेल कूट रूप"
-"में है, इस कारण दिखाया नहीं"
+msgstr "माफ़ कीजिये, यह मेल कूट रूप "
+"में है, इस कारण दिखाया नहीं "
 "जा सकता।"
 
 #: program/localization/hi_IN/messages.inc:nocontactsfound
@@ -123,12 +122,12 @@ msgstr "मेल मिटा नहीं"
 
 #: program/localization/hi_IN/messages.inc:deletecontactconfirm
 msgid "Do you really want to delete selected contact(s)?"
-msgstr "चुने गये पते को सचमुच मिटाना"
+msgstr "चुने गये पते को सचमुच मिटाना "
 "है ?"
 
 #: program/localization/hi_IN/messages.inc:deletemessagesconfirm
 msgid "Do you really want to delete selected message(s)?"
-msgstr "चुने गये मेल को सचमुच मिटाना"
+msgstr "चुने गये मेल को सचमुच मिटाना "
 "है ?"
 
 #: program/localization/hi_IN/messages.inc:deletefolderconfirm
@@ -137,7 +136,7 @@ msgstr "फ़ोल्डर को सचमुच मिटाऐं ?"
 
 #: program/localization/hi_IN/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
-msgstr "फ़ोल्डर में पडे सारे मेल को"
+msgstr "फ़ोल्डर में पडे सारे मेल को "
 "सचमुच मिटाना है?"
 
 #: program/localization/hi_IN/messages.inc:formincomplete
@@ -158,13 +157,13 @@ msgstr "पन्ना माप भरें"
 
 #: program/localization/hi_IN/messages.inc:norecipientwarning
 msgid "Please enter at least one recipient."
-msgstr "कम-से-कम एक पाने वाले का पता"
+msgstr "कम-से-कम एक पाने वाले का पता "
 "भरें"
 
 #: program/localization/hi_IN/messages.inc:nosubjectwarning
 msgid "The \"Subject\" field is empty. Would you like to enter one now?"
-msgstr "मेल का कोई विशय नहीं बताया"
-"गया है। क्या आप विशय डालना"
+msgstr "मेल का कोई विशय नहीं बताया "
+"गया है। क्या आप विशय डालना "
 "चाहते हैं ?"
 
 #: program/localization/hi_IN/messages.inc:nobodywarning
@@ -177,7 +176,7 @@ msgstr "मेल भिजा नहीं. मेल रद्द करें
 
 #: program/localization/hi_IN/messages.inc:noldapserver
 msgid "Please select an ldap server to search."
-msgstr "खोज के लिये एक ऐलडैप सर्वर"
+msgstr "खोज के लिये एक ऐलडैप सर्वर "
 "चुनें"
 
 #: program/localization/hi_IN/messages.inc:nocontactsreturned
@@ -218,7 +217,7 @@ msgstr "मिट गया"
 
 #: program/localization/hi_IN/messages.inc:converting
 msgid "Removing formatting..."
-msgstr "मेल से फ़ॉर्मैटिंग निकाला"
+msgstr "मेल से फ़ॉर्मैटिंग निकाला "
 "जा रहा है..."
 
 #: program/localization/hi_IN/messages.inc:messageopenerror
@@ -231,5 +230,5 @@ msgstr "फ़ाईल अपलोड नहीं हो पाया"
 
 #: program/localization/hi_IN/messages.inc:filesizeerror
 msgid "The uploaded file exceeds the maximum size of $size."
-msgstr "अपलोड के लिये फ़ाईल हद $size से"
+msgstr "अपलोड के लिये फ़ाईल हद $size से "
 "बड़ा है"

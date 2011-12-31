@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:16+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:16+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: eo\n"
@@ -85,7 +84,7 @@ msgstr "Kontakto kun ĉi tiu adreso jam ekzistas"
 
 #: program/localization/eo/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "Por protekti vian privatecon, foraj bildoj estas blokitaj en ĉi tiu"
+msgstr "Por protekti vian privatecon, foraj bildoj estas blokitaj en ĉi tiu "
 "mesaĝo."
 
 #: program/localization/eo/messages.inc:encryptedmessage

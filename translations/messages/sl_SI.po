@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: sl_SI\n"
@@ -260,7 +259,7 @@ msgid "Please enter a contact name or email address."
 msgstr "Vnesite ime ali elektronski naslov stika"
 
 #: program/localization/sl_SI/messages.inc:notuploadedwarning
-msgid "Not all attachments have been uploaded yet. Please wait or cancel the"
+msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
 "upload."
 msgstr "Priponke se še nalagajo na strežnik. Počakajte ali prekinite prenos."
 
@@ -414,7 +413,7 @@ msgstr "Uvažanje je spodletelo. Naložena datoteka ni veljavna vCard datoteka."
 
 #: program/localization/sl_SI/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
-msgstr "<b>Uspešno uvoženi $inserted stiki, $skipped stikov že obstaja v"
+msgstr "<b>Uspešno uvoženi $inserted stiki, $skipped stikov že obstaja v "
 "imeniku</b>:<p><em>$names</em></p>"
 
 #: program/localization/sl_SI/messages.inc:importconfirmskipped
@@ -430,15 +429,15 @@ msgid "Missing e-mail address in selected identity."
 msgstr "V izbrani identiteti manjka elektronski naslov."
 
 #: program/localization/sl_SI/messages.inc:editorwarning
-msgid "Switching to the plain text editor will cause all text formatting to be"
+msgid "Switching to the plain text editor will cause all text formatting to be "
 "lost. Do you wish to continue?"
-msgstr "Preklop v splošen urejevalnik onemogoča uporabo izbranih nastavitev"
+msgstr "Preklop v splošen urejevalnik onemogoča uporabo izbranih nastavitev "
 "oblikovanja. Želite nadaljevati?"
 
 #: program/localization/sl_SI/messages.inc:httpreceivedencrypterror
-msgid "A fatal configuration error occurred. Contact your administrator"
+msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
-msgstr "Prišlo je do večje napake v konfiguraciji.Obrnite se na skrbnika sistema."
+msgstr "Prišlo je do večje napake v konfiguraciji.Obrnite se na skrbnika sistema. "
 " <b>Sporočila ni bilo mogoče poslati.</b>"
 
 #: program/localization/sl_SI/messages.inc:smtpconnerror
@@ -451,12 +450,12 @@ msgstr "Napaka pri pošiljanju($code): Avtentikacija je spodletela"
 
 #: program/localization/sl_SI/messages.inc:smtpfromerror
 msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
-msgstr "Napaka pri pošiljanju ($code): Neveljaven elektronski naslov pošiljatelja"
+msgstr "Napaka pri pošiljanju ($code): Neveljaven elektronski naslov pošiljatelja "
 "\"$from\" ($msg)"
 
 #: program/localization/sl_SI/messages.inc:smtptoerror
 msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
-msgstr "Napaka pri pošiljanju ($code): Neveljaven elektronski naslov prejemnika"
+msgstr "Napaka pri pošiljanju ($code): Neveljaven elektronski naslov prejemnika "
 "\"$to\" ($msg)"
 
 #: program/localization/sl_SI/messages.inc:smtprecipientserror

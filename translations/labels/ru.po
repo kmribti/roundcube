@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ru_RU\n"
@@ -331,7 +330,7 @@ msgstr "Ответить"
 
 #: program/localization/ru_RU/labels.inc:replytoallmessage
 msgid "Reply to list or to sender and all recipients"
-msgstr "Ответить по списку или отправителю и"
+msgstr "Ответить по списку или отправителю и "
 "всем получателям"
 
 #: program/localization/ru_RU/labels.inc:replyall
@@ -693,7 +692,7 @@ msgstr "Показать изображения"
 
 #: program/localization/ru_RU/labels.inc:alwaysshow
 msgid "Always show images from $sender"
-msgstr "Всегда показывать изображенияв письмах"
+msgstr "Всегда показывать изображенияв письмах "
 "от $sender"
 
 #: program/localization/ru_RU/labels.inc:htmltoggle
@@ -733,10 +732,10 @@ msgid "Add Followup-To"
 msgstr "Добавить Followup-To"
 
 #: program/localization/ru_RU/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Отправитель этого сообщения запросил"
-"уведомление о прочтении. Отправить"
+msgstr "Отправитель этого сообщения запросил "
+"уведомление о прочтении. Отправить "
 "уведомление?"
 
 #: program/localization/ru_RU/labels.inc:receiptread
@@ -745,16 +744,16 @@ msgstr "Уведомление о прочтении"
 
 #: program/localization/ru_RU/labels.inc:yourmessage
 msgid "This is a Return Receipt for your message"
-msgstr "Это уведомление о прочтении вашего"
+msgstr "Это уведомление о прочтении вашего "
 "сообщения"
 
 #: program/localization/ru_RU/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Это уведомление означает только, что"
-"сообщение было открыто получателем, и не"
-"гарантирует того, что оно было прочитано"
+msgstr "Это уведомление означает только, что "
+"сообщение было открыто получателем, и не "
+"гарантирует того, что оно было прочитано "
 "и (или) понято."
 
 #: program/localization/ru_RU/labels.inc:name
@@ -945,7 +944,7 @@ msgstr "Добавить поле..."
 
 #: program/localization/ru_RU/labels.inc:addcontact
 msgid "Add new contact"
-msgstr "Добавить выбранные контакты в список"
+msgstr "Добавить выбранные контакты в список "
 "контактов"
 
 #: program/localization/ru_RU/labels.inc:editcontact
@@ -1002,7 +1001,7 @@ msgstr "Удалить выбранные контакты"
 
 #: program/localization/ru_RU/labels.inc:composeto
 msgid "Compose mail to"
-msgstr "Создать сообщение для выбранных"
+msgstr "Создать сообщение для выбранных "
 "контактов"
 
 #: program/localization/ru_RU/labels.inc:contactsfromto
@@ -1079,7 +1078,7 @@ msgstr "Импортировать из файла:"
 
 #: program/localization/ru_RU/labels.inc:importtarget
 msgid "Add new contacts to address book:"
-msgstr "Добавить новые контакты в адресную"
+msgstr "Добавить новые контакты в адресную "
 "книгу:"
 
 #: program/localization/ru_RU/labels.inc:importreplace
@@ -1087,12 +1086,12 @@ msgid "Replace the entire address book"
 msgstr "Заменить всю адресную книгу"
 
 #: program/localization/ru_RU/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Вы можете загрузить контакты из"
-"существующей адресной книги. На данный"
-"момент поддерживается загрузка в"
+msgstr "Вы можете загрузить контакты из "
+"существующей адресной книги. На данный "
+"момент поддерживается загрузка в "
 "формате vCard."
 
 #: program/localization/ru_RU/labels.inc:done
@@ -1233,14 +1232,14 @@ msgstr "отправлять автоматически"
 
 #: program/localization/ru_RU/labels.inc:autosendknown
 msgid "send receipt to my contacts, otherwise ask me"
-msgstr "отправлять уведомления контактам из"
-"адресной книги, в противном случае"
+msgstr "отправлять уведомления контактам из "
+"адресной книги, в противном случае "
 "спросить"
 
 #: program/localization/ru_RU/labels.inc:autosendknownignore
 msgid "send receipt to my contacts, otherwise ignore"
-msgstr "отправлять уведомления только контактам"
-"из адресной книги, остальных"
+msgstr "отправлять уведомления только контактам "
+"из адресной книги, остальных "
 "игнорировать"
 
 #: program/localization/ru_RU/labels.inc:ignore
@@ -1261,7 +1260,7 @@ msgstr "Не показывать удаленные сообщения"
 
 #: program/localization/ru_RU/labels.inc:deletealways
 msgid "If moving messages to Trash fails, delete them"
-msgstr "Удалять сообщения, если не получается"
+msgstr "Удалять сообщения, если не получается "
 "поместить их в корзину"
 
 #: program/localization/ru_RU/labels.inc:showremoteimages
@@ -1278,7 +1277,7 @@ msgstr "всегда"
 
 #: program/localization/ru_RU/labels.inc:showinlineimages
 msgid "Display attached images below the message"
-msgstr "Показывать вложенные изображения внизу"
+msgstr "Показывать вложенные изображения внизу "
 "сообщения"
 
 #: program/localization/ru_RU/labels.inc:autosavedraft
@@ -1335,7 +1334,7 @@ msgstr "Дополнительные настройки"
 
 #: program/localization/ru_RU/labels.inc:focusonnewmessage
 msgid "Focus browser window on new message"
-msgstr "Фокусировать окно браузера при новом"
+msgstr "Фокусировать окно браузера при новом "
 "сообщении"
 
 #: program/localization/ru_RU/labels.inc:checkallfolders
@@ -1344,7 +1343,7 @@ msgstr "Проверять новые сообщения во всех папк�
 
 #: program/localization/ru_RU/labels.inc:displaynext
 msgid "After message delete/move display the next message"
-msgstr "Показать следующее сообщение, после"
+msgstr "Показать следующее сообщение, после "
 "удаления или перемещения данного"
 
 #: program/localization/ru_RU/labels.inc:mainoptions
@@ -1364,7 +1363,7 @@ msgid "New Message"
 msgstr "Новое сообщение"
 
 #: program/localization/ru_RU/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Список настроек"
 
 #: program/localization/ru_RU/labels.inc:signatureoptions
@@ -1381,7 +1380,7 @@ msgstr "начать новое сообщение перед цитируемы
 
 #: program/localization/ru_RU/labels.inc:replybottomposting
 msgid "start new message below original"
-msgstr "начать новое сообщение после"
+msgstr "начать новое сообщение после "
 "цитируемого"
 
 #: program/localization/ru_RU/labels.inc:replyremovesignature
@@ -1402,7 +1401,7 @@ msgstr "только в ответах и пересылках"
 
 #: program/localization/ru_RU/labels.inc:replysignaturepos
 msgid "When replying or forwarding place signature"
-msgstr "Прикрепить подпись при ответе и"
+msgstr "Прикрепить подпись при ответе и "
 "пересылке"
 
 #: program/localization/ru_RU/labels.inc:belowquote
@@ -1419,7 +1418,7 @@ msgstr "Вставить подпись"
 
 #: program/localization/ru_RU/labels.inc:previewpanemarkread
 msgid "Mark previewed messages as read"
-msgstr "Отмечать просмотренные сообщения как"
+msgstr "Отмечать просмотренные сообщения как "
 "прочитанные"
 
 #: program/localization/ru_RU/labels.inc:afternseconds
@@ -1428,22 +1427,22 @@ msgstr "через $n секунд"
 
 #: program/localization/ru_RU/labels.inc:reqmdn
 msgid "Always request a return receipt"
-msgstr "Всегда запрашивать уведомление о"
+msgstr "Всегда запрашивать уведомление о "
 "доставке"
 
 #: program/localization/ru_RU/labels.inc:reqdsn
 msgid "Always request a delivery status notification"
-msgstr "Всегда запрашивать уведомление о"
+msgstr "Всегда запрашивать уведомление о "
 "состоянии доставки"
 
 #: program/localization/ru_RU/labels.inc:replysamefolder
 msgid "Place replies in the folder of the message being replied to"
-msgstr "Помещать ответы в ту же папку, где"
+msgstr "Помещать ответы в ту же папку, где "
 "находится оригинал"
 
 #: program/localization/ru_RU/labels.inc:defaultaddressbook
 msgid "Add new contacts to the selected addressbook"
-msgstr "Добавить новые контакты в выбранную"
+msgstr "Добавить новые контакты в выбранную "
 "адресную книгу"
 
 #: program/localization/ru_RU/labels.inc:spellcheckbeforesend

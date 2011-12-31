@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:17+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:17+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ro_RO\n"
@@ -699,9 +698,9 @@ msgid "Add Reply-To"
 msgstr "Adaugă Raspunde-La"
 
 #: program/localization/ro_RO/labels.inc:mdnrequest
-msgid "The sender of this message has asked to be notified when you read this"
+msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
-msgstr "Expeditorul acestui mesaj a solicitat să fie notificat la cititrea"
+msgstr "Expeditorul acestui mesaj a solicitat să fie notificat la cititrea "
 "mesajului. Doriţi să notificaţi expeditorul?"
 
 #: program/localization/ro_RO/labels.inc:receiptread
@@ -713,11 +712,11 @@ msgid "This is a Return Receipt for your message"
 msgstr "Aceasta este o confirmare de primire a mesajului dumneavoastră."
 
 #: program/localization/ro_RO/labels.inc:receiptnote
-msgid "Note: This receipt only acknowledges that the message was displayed on the"
-"recipient's computer. There is no guarantee that the recipient has read or"
+msgid "Note: This receipt only acknowledges that the message was displayed on the "
+"recipient's computer. There is no guarantee that the recipient has read or "
 "understood the message contents."
-msgstr "Notă: Această confirmare doar vă informează că mesajul a fost afişat"
-"pe calculatorul destinatarului. Nu există nici o garanţie că"
+msgstr "Notă: Această confirmare doar vă informează că mesajul a fost afişat "
+"pe calculatorul destinatarului. Nu există nici o garanţie că "
 "destinatarul a citit sau a inţeles conţinutul mesajului."
 
 #: program/localization/ro_RO/labels.inc:name
@@ -841,10 +840,10 @@ msgid "Replace the entire address book"
 msgstr "Înlocuieşte întreaga agendă"
 
 #: program/localization/ro_RO/labels.inc:importtext
-msgid "You can upload contacts from an existing address book.<br/>We currently"
-"support importing addresses from the <a"
+msgid "You can upload contacts from an existing address book.<br/>We currently "
+"support importing addresses from the <a "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
-msgstr "Puteţi încărca contacte dintr-o agendă existentă. Se pot importa"
+msgstr "Puteţi încărca contacte dintr-o agendă existentă. Se pot importa "
 "adresele în format vCard."
 
 #: program/localization/ro_RO/labels.inc:done
@@ -1077,7 +1076,7 @@ msgstr "Verifică toate dosarele pentru mesaje noi"
 
 #: program/localization/ro_RO/labels.inc:displaynext
 msgid "After message delete/move display the next message"
-msgstr "După ştergerea sau mutarea unui mesaj afişează-l pe următorul din"
+msgstr "După ştergerea sau mutarea unui mesaj afişează-l pe următorul din "
 "listă"
 
 #: program/localization/ro_RO/labels.inc:mainoptions
@@ -1097,7 +1096,7 @@ msgid "New Message"
 msgstr "Mesaj nou"
 
 #: program/localization/ro_RO/labels.inc:listoptions
-msgid "List Options"
+msgid "listoptions"
 msgstr "Opţiuni listă"
 
 #: program/localization/ro_RO/labels.inc:signatureoptions

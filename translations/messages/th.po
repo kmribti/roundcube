@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T10:09:18+01:00\n"
-"PO-Revision-Date: 2011-12-07T10:09:18+01:00\n"
+"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: th_TH\n"
@@ -21,8 +20,8 @@ msgstr "ไม่สามารถเข้าสู่ระบบได้"
 
 #: program/localization/th_TH/messages.inc:cookiesdisabled
 msgid "Your browser does not accept cookies."
-msgstr "Browser"
-"ของคุณไม่ได้เปิดการใช้งาน"
+msgstr "Browser "
+"ของคุณไม่ได้เปิดการใช้งาน "
 "Cookie ไว้"
 
 #: program/localization/th_TH/messages.inc:sessionerror
@@ -87,7 +86,7 @@ msgstr "อีเมล์นี้มีอยู่แล้ว"
 
 #: program/localization/th_TH/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "เพื่อปกป้องความส่วนตัว"
+msgstr "เพื่อปกป้องความส่วนตัว "
 "รูปจากภายนอกในจดหมายนี้จะถูกปิดบังไว้"
 
 #: program/localization/th_TH/messages.inc:encryptedmessage
@@ -152,12 +151,12 @@ msgstr "โปรดใส่จำนวนหน้า"
 
 #: program/localization/th_TH/messages.inc:norecipientwarning
 msgid "Please enter at least one recipient."
-msgstr "โปรดใส่ผู้รับอย่างน้อย 1"
+msgstr "โปรดใส่ผู้รับอย่างน้อย 1 "
 "ชื่อ"
 
 #: program/localization/th_TH/messages.inc:nosubjectwarning
 msgid "The \"Subject\" field is empty. Would you like to enter one now?"
-msgstr "หัวจดหมายว่างเปล่า"
+msgstr "หัวจดหมายว่างเปล่า "
 "คุณต้องการใส่หัวจดหมายเดี๋ยวนี้หรือไม่?"
 
 #: program/localization/th_TH/messages.inc:nobodywarning
@@ -166,7 +165,7 @@ msgstr "คุณต้องการส่งจดหมายโดยไม
 
 #: program/localization/th_TH/messages.inc:notsentwarning
 msgid "Message has not been sent. Do you want to discard your message?"
-msgstr "จดหมายยังไม่ถูกส่ง"
+msgstr "จดหมายยังไม่ถูกส่ง "
 "คุณต้องการยกเลิกหรือไม่?"
 
 #: program/localization/th_TH/messages.inc:noldapserver
@@ -215,7 +214,7 @@ msgstr "นำเอาหารจัดรูปแบบในจดหมา
 
 #: program/localization/th_TH/messages.inc:messageopenerror
 msgid "Could not load message from server."
-msgstr "ไม่สามารถอ่านจดหมายจาก Server"
+msgstr "ไม่สามารถอ่านจดหมายจาก Server "
 "ได้"
 
 #: program/localization/th_TH/messages.inc:fileuploaderror
@@ -228,7 +227,7 @@ msgstr "ไฟล์มีขนาดใหญ่เกิน $size"
 
 #: program/localization/th_TH/messages.inc:copysuccess
 msgid "Successfully copied $nr addresses."
-msgstr "คัดลอกจดหมายจำนวน $nr"
+msgstr "คัดลอกจดหมายจำนวน $nr "
 "ฉบับเรียบร้อย"
 
 #: program/localization/th_TH/messages.inc:copyerror
