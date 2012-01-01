@@ -24,9 +24,9 @@ class jqueryui extends rcube_plugin
     $this->include_script("js/jquery-ui-$version.custom.min.js");
 
     // include UI stylesheet
-    $skin = $rcmail->config->get('skin', 'default');
+    $skin   = $rcmail->config->get('skin', 'default');
     $ui_map = $rcmail->config->get('jquery_ui_skin_map', array());
-    $ui_theme = $ui_map[$skin] ? $ui_map[$skin] : 'default';
+    $ui_theme = $ui_map[$skin] ? $ui_map[$skin] : $skin;
 
     if (file_exists($this->home . "/themes/$ui_theme/jquery-ui-$version.custom.css")) {
       $this->include_stylesheet("themes/$ui_theme/jquery-ui-$version.custom.css");
@@ -36,7 +36,7 @@ class jqueryui extends rcube_plugin
     }
 
     // jquery UI localization
-    $jquery_ui_i18n = $rcmail->config->get('jquery_ui_i18n', array());
+    $jquery_ui_i18n = $rcmail->config->get('jquery_ui_i18n', array('datepicker'));
     if (count($jquery_ui_i18n) > 0) {
       $lang_l = str_replace('_', '-', substr($_SESSION['language'], 0, 5));
       $lang_s = substr($_SESSION['language'], 0, 2);
