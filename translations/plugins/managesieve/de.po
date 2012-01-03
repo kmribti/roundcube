@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:20:06+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: de_DE\n"
@@ -417,3 +417,91 @@ msgstr "Groß-/Kleinschreibung ignorieren"
 #: plugins/managesieve/localization/de_DE.inc:asciinumeric
 msgid "numeric (ascii-numeric)"
 msgstr "numerisch (ascii-numeric)"
+
+#: plugins/managesieve/localization/de_DE.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Unbekannter Serverfehler"
+
+#: plugins/managesieve/localization/de_DE.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Kann keine Verbindung mit Managesieve-Server herstellen"
+
+#: plugins/managesieve/localization/de_DE.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Fehler beim Löschen des Filters. Serverfehler"
+
+#: plugins/managesieve/localization/de_DE.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Filter erfolgreich gelöscht"
+
+#: plugins/managesieve/localization/de_DE.inc:filtersaved
+msgid "filtersaved"
+msgstr "Filter erfolgreich gespeichert"
+
+#: plugins/managesieve/localization/de_DE.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Fehler beim Speichern des Filters. Serverfehler"
+
+#: plugins/managesieve/localization/de_DE.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Möchten Sie den ausgewählten Filter wirklich löschen?"
+
+#: plugins/managesieve/localization/de_DE.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Sind Sie sicher, dass Sie die ausgewählte Regel löschen möchten?"
+
+#: plugins/managesieve/localization/de_DE.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Sind Sie sicher, dass Sie die ausgewählte Aktion löschen möchten?"
+
+#: plugins/managesieve/localization/de_DE.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Unzulässige Zeichen im Eingabefeld"
+
+#: plugins/managesieve/localization/de_DE.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Eingabefeld darf nicht leer sein"
+
+#: plugins/managesieve/localization/de_DE.inc:setactivateerror
+msgid "setactivateerror"
+msgstr "Kann ausgewählten Filtersatz nicht aktivieren. Serverfehler"
+
+#: plugins/managesieve/localization/de_DE.inc:setdeactivateerror
+msgid "setdeactivateerror"
+msgstr "Kann ausgewählten Filtersatz nicht deaktivieren. Serverfehler"
+
+#: plugins/managesieve/localization/de_DE.inc:setdeleteerror
+msgid "setdeleteerror"
+msgstr "Kann ausgewählten Filtersatz nicht löschen. Serverfehler"
+
+#: plugins/managesieve/localization/de_DE.inc:setactivated
+msgid "setactivated"
+msgstr "Filtersatz wurde erfolgreich aktiviert"
+
+#: plugins/managesieve/localization/de_DE.inc:setdeactivated
+msgid "setdeactivated"
+msgstr "Filtersatz wurde erfolgreich deaktiviert"
+
+#: plugins/managesieve/localization/de_DE.inc:setdeleted
+msgid "setdeleted"
+msgstr "Filtersatz wurde erfolgreich gelöscht"
+
+#: plugins/managesieve/localization/de_DE.inc:setdeleteconfirm
+msgid "setdeleteconfirm"
+msgstr "Sind Sie sicher, dass Sie den ausgewählten Filtersatz löschen möchten?"
+
+#: plugins/managesieve/localization/de_DE.inc:setcreateerror
+msgid "setcreateerror"
+msgstr "Kann Filtersatz nicht erstellen. Serverfehler"
+
+#: plugins/managesieve/localization/de_DE.inc:setcreated
+msgid "setcreated"
+msgstr "Filtersatz wurde erfolgreich erstellt"
+
+#: plugins/managesieve/localization/de_DE.inc:emptyname
+msgid "emptyname"
+msgstr "Kann Filtersatz nicht erstellen. Kein Name vergeben"
+
+#: plugins/managesieve/localization/de_DE.inc:nametoolong
+msgid "nametoolong"
+msgstr "Kann Filtersatz nicht erstellen. Name zu lang"
