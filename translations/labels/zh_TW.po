@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: zh_TW\n"
@@ -340,6 +340,14 @@ msgstr "全部回覆"
 msgid "Reply list"
 msgstr "清單回覆"
 
+#: program/localization/zh_TW/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "轉寄"
+
+#: program/localization/zh_TW/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "以附件方式轉寄"
+
 #: program/localization/zh_TW/labels.inc:forwardmessage
 msgid "Forward the message"
 msgstr "轉寄"
@@ -400,9 +408,9 @@ msgstr "標上旗標"
 msgid "As unflagged"
 msgstr "移除旗標"
 
-#: program/localization/zh_TW/labels.inc:messageactions
-msgid "messageactions"
-msgstr "更多動作…"
+#: program/localization/zh_TW/labels.inc:moreactions
+msgid "More actions..."
+msgstr "資料夾動做..."
 
 #: program/localization/zh_TW/labels.inc:select
 msgid "Select"
@@ -574,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "下載（.eml）"
 
 #: program/localization/zh_TW/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "撰寫新郵件"
 
 #: program/localization/zh_TW/labels.inc:editasnew
@@ -582,11 +590,11 @@ msgid "Edit as new"
 msgstr "已新郵件編輯"
 
 #: program/localization/zh_TW/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "儲存成草稿"
 
 #: program/localization/zh_TW/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "立即寄出"
 
 #: program/localization/zh_TW/labels.inc:addattachment
@@ -608,6 +616,14 @@ msgstr "要求讀取回條"
 #: program/localization/zh_TW/labels.inc:dsn
 msgid "Delivery status notification"
 msgstr "傳送狀態通知"
+
+#: program/localization/zh_TW/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "$sender 於 $data 寫到:"
+
+#: program/localization/zh_TW/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "郵件顯示設定"
 
 #: program/localization/zh_TW/labels.inc:editidents
 msgid "Edit identities"
@@ -672,6 +688,10 @@ msgstr "顯示圖片"
 #: program/localization/zh_TW/labels.inc:alwaysshow
 msgid "Always show images from $sender"
 msgstr "永遠顯示來自 $sender 的圖片"
+
+#: program/localization/zh_TW/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "這是一封草稿"
 
 #: program/localization/zh_TW/labels.inc:htmltoggle
 msgid "HTML"
@@ -845,6 +865,23 @@ msgstr "助理"
 msgid "Spouse"
 msgstr "配偶"
 
+#: program/localization/zh_TW/labels.inc:allfields
+msgid "All fields"
+msgstr "所有欄位"
+
+#: program/localization/zh_TW/labels.inc:search
+msgid "Search"
+msgstr "搜尋"
+
+#: program/localization/zh_TW/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "進階搜尋"
+
+#: program/localization/zh_TW/labels.inc:other
+#: program/localization/zh_TW/labels.inc:typeother
+msgid "Other"
+msgstr "其他"
+
 #: program/localization/zh_TW/labels.inc:typehome
 msgid "Home"
 msgstr "住家"
@@ -852,10 +889,6 @@ msgstr "住家"
 #: program/localization/zh_TW/labels.inc:typework
 msgid "Work"
 msgstr "工作"
-
-#: program/localization/zh_TW/labels.inc:typeother
-msgid "Other"
-msgstr "其他"
 
 #: program/localization/zh_TW/labels.inc:typemobile
 msgid "Mobile"
@@ -884,6 +917,18 @@ msgstr "傳呼機"
 #: program/localization/zh_TW/labels.inc:typevideo
 msgid "Video"
 msgstr "影片"
+
+#: program/localization/zh_TW/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "首頁"
+
+#: program/localization/zh_TW/labels.inc:typeblog
+msgid "Blog"
+msgstr "部落格"
+
+#: program/localization/zh_TW/labels.inc:typeprofile
+msgid "Profile"
+msgstr "設定檔"
 
 #: program/localization/zh_TW/labels.inc:addfield
 msgid "Add field..."
@@ -969,9 +1014,13 @@ msgstr "匯出通訊錄為 vCard 格式"
 msgid "Create new contact group"
 msgstr "新增聯絡人群組"
 
-#: program/localization/zh_TW/labels.inc:groupactions
-msgid "groupactions"
-msgstr "聯絡人群組的動作"
+#: program/localization/zh_TW/labels.inc:grouprename
+msgid "Rename group"
+msgstr "重新命名群組"
+
+#: program/localization/zh_TW/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "刪除群組"
 
 #: program/localization/zh_TW/labels.inc:previouspage
 msgid "Show previous page"
@@ -1001,6 +1050,14 @@ msgstr "群組"
 msgid "Personal Addresses"
 msgstr "個人住址"
 
+#: program/localization/zh_TW/labels.inc:searchsave
+msgid "Save search"
+msgstr "儲存搜尋結果"
+
+#: program/localization/zh_TW/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "刪除搜尋結果"
+
 #: program/localization/zh_TW/labels.inc:import
 msgid "Import"
 msgstr "匯入通訊錄"
@@ -1012,6 +1069,10 @@ msgstr "由檔案匯入通訊錄"
 #: program/localization/zh_TW/labels.inc:importfromfile
 msgid "Import from file:"
 msgstr "選擇你要匯入的檔案:"
+
+#: program/localization/zh_TW/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "新增連絡人至通訊錄:"
 
 #: program/localization/zh_TW/labels.inc:importreplace
 msgid "Replace the entire address book"
@@ -1032,6 +1093,10 @@ msgstr "完成"
 #: program/localization/zh_TW/labels.inc:settingsfor
 msgid "Settings for"
 msgstr "設定"
+
+#: program/localization/zh_TW/labels.inc:about
+msgid "About"
+msgstr "關於"
 
 #: program/localization/zh_TW/labels.inc:preferences
 msgid "Preferences"
@@ -1076,6 +1141,14 @@ msgstr "預設編碼"
 #: program/localization/zh_TW/labels.inc:htmlmessage
 msgid "HTML Message"
 msgstr "HTML 郵件"
+
+#: program/localization/zh_TW/labels.inc:dateformat
+msgid "Date format"
+msgstr "日期格式"
+
+#: program/localization/zh_TW/labels.inc:timeformat
+msgid "Time format"
+msgstr "時間格式"
 
 #: program/localization/zh_TW/labels.inc:prettydate
 msgid "Pretty dates"
@@ -1269,6 +1342,10 @@ msgstr "檢查所有資料夾中的新郵件"
 msgid "After message delete/move display the next message"
 msgstr "郵件刪除／移動時顯示下一個郵件"
 
+#: program/localization/zh_TW/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "HTML格式預設字型"
+
 #: program/localization/zh_TW/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "主要選項"
@@ -1284,10 +1361,6 @@ msgstr "管理"
 #: program/localization/zh_TW/labels.inc:newmessage
 msgid "New Message"
 msgstr "新郵件"
-
-#: program/localization/zh_TW/labels.inc:listoptions
-msgid "listoptions"
-msgstr "排列選項"
 
 #: program/localization/zh_TW/labels.inc:signatureoptions
 msgid "Signature Options"
@@ -1356,6 +1429,18 @@ msgstr "總是要求傳送狀態通知"
 #: program/localization/zh_TW/labels.inc:replysamefolder
 msgid "Place replies in the folder of the message being replied to"
 msgstr "將回覆與回覆信件放置於相同資料夾"
+
+#: program/localization/zh_TW/labels.inc:defaultaddressbook
+msgid "Add new contacts to the selected addressbook"
+msgstr "新增連絡人至指定通訊錄"
+
+#: program/localization/zh_TW/labels.inc:spellcheckbeforesend
+msgid "Check spelling before sending a message"
+msgstr "寄送前執行拼字檢查"
+
+#: program/localization/zh_TW/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "拼字檢查選項"
 
 #: program/localization/zh_TW/labels.inc:folder
 msgid "Folder"
@@ -1444,6 +1529,30 @@ msgstr "遞增排序"
 #: program/localization/zh_TW/labels.inc:sortdesc
 msgid "Sort descending"
 msgstr "遞減排序"
+
+#: program/localization/zh_TW/labels.inc:undo
+msgid "Undo"
+msgstr "復原"
+
+#: program/localization/zh_TW/labels.inc:plugin
+msgid "Plugin"
+msgstr "擴充套件"
+
+#: program/localization/zh_TW/labels.inc:version
+msgid "Version"
+msgstr "版本"
+
+#: program/localization/zh_TW/labels.inc:source
+msgid "Source"
+msgstr "來源"
+
+#: program/localization/zh_TW/labels.inc:license
+msgid "License"
+msgstr "授權許可"
+
+#: program/localization/zh_TW/labels.inc:support
+msgid "Get support"
+msgstr "取得支援"
 
 #: program/localization/zh_TW/labels.inc:B
 msgid "B"

@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: gl_ES\n"
+"Language: gl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -582,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Gardar (.eml)"
 
 #: program/localization/gl_ES/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Redactar unha mensaxe"
 
 #: program/localization/gl_ES/labels.inc:editasnew
@@ -590,11 +590,11 @@ msgid "Edit as new"
 msgstr "Editar como nova"
 
 #: program/localization/gl_ES/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Gardar a mensaxe como borrador"
 
 #: program/localization/gl_ES/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Enviar a mensaxe agora"
 
 #: program/localization/gl_ES/labels.inc:addattachment
@@ -1091,7 +1091,7 @@ msgid "You can upload contacts from an existing address book.<br/>We currently "
 "href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> data format."
 msgstr "Pode cargar contactos desde un caderno de enderezos xa existente.<br/>Polo "
 "de agora pódense importar enderezos usando o formato <a "
-"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>  "
+"href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a>"
 
 #: program/localization/gl_ES/labels.inc:done
 msgid "Done"
@@ -1365,10 +1365,6 @@ msgstr "Mantemento"
 msgid "New Message"
 msgstr "Mensaxes novas"
 
-#: program/localization/gl_ES/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Opcións de lista"
-
 #: program/localization/gl_ES/labels.inc:signatureoptions
 msgid "Signature Options"
 msgstr "Opcións da firma"
@@ -1403,7 +1399,7 @@ msgstr "só nas respostas e reenvíos"
 
 #: program/localization/gl_ES/labels.inc:replysignaturepos
 msgid "When replying or forwarding place signature"
-msgstr "Ao respostar ou reenviar colocar a firma "
+msgstr "Ao respostar ou reenviar colocar a firma"
 
 #: program/localization/gl_ES/labels.inc:belowquote
 msgid "below the quote"

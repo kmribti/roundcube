@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: et_EE\n"
+"Language: et\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -114,6 +114,10 @@ msgstr "Kontakt lisati edukalt aadressiraamatusse"
 msgid "A contact with the same e-mail address already exists."
 msgstr "Sellise e-posti aadressiga kontakt on juba olemas"
 
+#: program/localization/et_EE/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Sama nimega kontakt on juba olemas."
+
 #: program/localization/et_EE/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
 msgstr "Sinu privaatsuse kaitsmiseks on selles kirjas välised pildid blokeeritud."
@@ -130,6 +134,10 @@ msgstr "Ei leitud ühtegi kontakti"
 #: program/localization/et_EE/messages.inc:contactnotfound
 msgid "The requested contact was not found."
 msgstr "Otsitud kontakti ei leitud"
+
+#: program/localization/et_EE/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Sisesta otsingusõna kontaktide leidmiseks"
 
 #: program/localization/et_EE/messages.inc:sendingfailed
 msgid "Failed to send message."
@@ -167,6 +175,10 @@ msgstr "Kirja märkimine nurjus"
 msgid "Do you really want to delete selected contact(s)?"
 msgstr "Soovid valitud kontaktid kustutada?"
 
+#: program/localization/et_EE/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Soovid valitud grupi kustutada?"
+
 #: program/localization/et_EE/messages.inc:deletemessagesconfirm
 msgid "Do you really want to delete selected message(s)?"
 msgstr "Soovid valitud kirja(d) kustutada?"
@@ -178,6 +190,14 @@ msgstr "Soovid selle kataloogi kindlasti kustutada?"
 #: program/localization/et_EE/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
 msgstr "Soovid sellest kaustast kõik kirjad kustutada?"
+
+#: program/localization/et_EE/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Kontakti(de) kustutamine…"
+
+#: program/localization/et_EE/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Grupi kustutamine…"
 
 #: program/localization/et_EE/messages.inc:folderdeleting
 msgid "Deleting folder..."
@@ -235,10 +255,6 @@ msgstr "Kirja saatmine nurjus. Soovid selle ära visata?"
 msgid "Please select an ldap server to search."
 msgstr "Palun vali otsinguks LDAPi server"
 
-#: program/localization/et_EE/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Ühtegi kontakti ei leitud"
-
 #: program/localization/et_EE/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "Palun sisesta kontakti nimi või e-posti aadress"
@@ -252,6 +268,10 @@ msgstr "Kõiki manuseid ei ole veel üles laaditud. Palun oota või tühista "
 #: program/localization/et_EE/messages.inc:searchsuccessful
 msgid "$nr messages found."
 msgstr "Leiti $nr kirja"
+
+#: program/localization/et_EE/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "Leiti $nr kontakti."
 
 #: program/localization/et_EE/messages.inc:searchnomatch
 msgid "Search returned no matches."
@@ -315,7 +335,7 @@ msgstr "$nr aadressi edukalt kopeeritud"
 
 #: program/localization/et_EE/messages.inc:copyerror
 msgid "Could not copy any addresses."
-msgstr "Ühegi aadressi kopeerimine ei õnnestunud "
+msgstr "Ühegi aadressi kopeerimine ei õnnestunud"
 
 #: program/localization/et_EE/messages.inc:sourceisreadonly
 msgid "This address source is read only."
@@ -333,6 +353,10 @@ msgstr "Liigutan kirja..."
 msgid "Copying message(s)..."
 msgstr "Kopeerin kirja..."
 
+#: program/localization/et_EE/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Kontakti(de) kopeerimine…"
+
 #: program/localization/et_EE/messages.inc:deletingmessage
 msgid "Deleting message(s)..."
 msgstr "Kustutan kirja..."
@@ -340,6 +364,14 @@ msgstr "Kustutan kirja..."
 #: program/localization/et_EE/messages.inc:markingmessage
 msgid "Marking message(s)..."
 msgstr "Märgin kirja..."
+
+#: program/localization/et_EE/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Kontakti(de) gruppi lisamine…"
+
+#: program/localization/et_EE/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Kontakti(de) grupist eemaldamine…"
 
 #: program/localization/et_EE/messages.inc:receiptsent
 msgid "Successfully sent a read receipt."
@@ -430,10 +462,6 @@ msgstr "SMTP tõrge ($code): \"$to\" saajaks määramine nurjus ($msg)"
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "SMTP tõrge: saajate nimekirja parsimine nurjus"
 
-#: program/localization/et_EE/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "SMTP tõrge: puudub kohalejõudmise teavituse toetus"
-
 #: program/localization/et_EE/messages.inc:smtperror
 msgid "SMTP Error: $msg"
 msgstr "SMTP tõrge: $msg"
@@ -462,6 +490,14 @@ msgstr "Kontaktide kustutamine nurjus"
 msgid "Contact(s) deleted successfully."
 msgstr "Kontaktide kustutamine õnnestus"
 
+#: program/localization/et_EE/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Kustutatud kontakti(de) taastamine nurjus."
+
+#: program/localization/et_EE/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Kontakt(id) edukalt taastatud."
+
 #: program/localization/et_EE/messages.inc:groupdeleted
 msgid "Group deleted successfully."
 msgstr "Grupi kustutamine õnnestus"
@@ -473,6 +509,22 @@ msgstr "Grupi ümbernimetamine õnnestus"
 #: program/localization/et_EE/messages.inc:groupcreated
 msgid "Group created successfully."
 msgstr "Grupi loomine õnnestus"
+
+#: program/localization/et_EE/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Salvestatud otsing edukalt kustutatud."
+
+#: program/localization/et_EE/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Salvestatud otsingu kustutamine nurjus."
+
+#: program/localization/et_EE/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Salvestatud otsing edukalt loodud."
+
+#: program/localization/et_EE/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Salvestatud otsingu loomine nurjus."
 
 #: program/localization/et_EE/messages.inc:messagedeleted
 msgid "Message(s) deleted successfully."
@@ -493,6 +545,10 @@ msgstr "Kiri edukalt märgitud"
 #: program/localization/et_EE/messages.inc:autocompletechars
 msgid "Enter at least $min characters for autocompletion."
 msgstr "Sisesta vähemalt $min märki autom. lõpetuseks"
+
+#: program/localization/et_EE/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Otsingule on liiga palju vasteid. Palun sisesta veel mõni märk."
 
 #: program/localization/et_EE/messages.inc:namecannotbeempty
 msgid "Name cannot be empty."
@@ -517,3 +573,11 @@ msgstr "Pole õige pildi formaat"
 #: program/localization/et_EE/messages.inc:mispellingsfound
 msgid "Spelling errors detected in the message."
 msgstr "Kiri sisaldab õigekirjavigu"
+
+#: program/localization/et_EE/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "Kasuta loomine/liigutamine valitud kausta nurjus. Pole õigusi."
+
+#: program/localization/et_EE/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "Kiri on töötlemiseks liiga suur."

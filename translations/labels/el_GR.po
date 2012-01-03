@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: el_GR\n"
+"Language: el\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -110,10 +110,6 @@ msgstr "Πρoτεραιότητα"
 msgid "Company"
 msgstr "Οργανισμός"
 
-#: program/localization/el_GR/labels.inc:reply-to
-msgid "reply-to"
-msgstr "Απάντηση σε"
-
 #: program/localization/el_GR/labels.inc:mailboxlist
 #: program/localization/el_GR/labels.inc:folders
 msgid "Folders"
@@ -126,6 +122,10 @@ msgstr "Μηνύματα $from από $to έως $count"
 #: program/localization/el_GR/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "Μήνυμα $nr από $count"
+
+#: program/localization/el_GR/labels.inc:copy
+msgid "Copy"
+msgstr "Αντίγραφο"
 
 #: program/localization/el_GR/labels.inc:moveto
 msgid "Move to..."
@@ -142,18 +142,6 @@ msgstr "Όνομα αρχείου"
 #: program/localization/el_GR/labels.inc:filesize
 msgid "File size"
 msgstr "Μέγεθος αρχείου"
-
-#: program/localization/el_GR/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "Προτίμηση HTML"
-
-#: program/localization/el_GR/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "Μήνυμα HTML"
-
-#: program/localization/el_GR/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "Όμορφη ημ/νία"
 
 #: program/localization/el_GR/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -349,33 +337,17 @@ msgstr "Εκτύπωση"
 msgid "Show previous message"
 msgstr "Εμφάνιση προηγούμενου μηνύματος"
 
-#: program/localization/el_GR/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Εμφάνιση προηγούμενης ομάδας μηνυμάτων"
-
 #: program/localization/el_GR/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Εμφάνιση πρώτου μηνύματος"
-
-#: program/localization/el_GR/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "Εμφάνιση πρώτης ομάδας μηνυμάτων"
 
 #: program/localization/el_GR/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Εμφάνιση επόμενου μηνύματος"
 
-#: program/localization/el_GR/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Εμφάνιση επόμενης ομάδας μηνυμάτων"
-
 #: program/localization/el_GR/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Εμφάνιση τελευταίου μηνύματος"
-
-#: program/localization/el_GR/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "Εμφάνιση τελευταίας ομάδας μηνυμάτων"
 
 #: program/localization/el_GR/labels.inc:backtolist
 msgid "Back to message list"
@@ -405,10 +377,6 @@ msgstr "Με σήμανση"
 msgid "As unflagged"
 msgstr "Χωρίς σήμανση"
 
-#: program/localization/el_GR/labels.inc:messageactions
-msgid "messageactions"
-msgstr "Περισσότερες ενέργειες..."
-
 #: program/localization/el_GR/labels.inc:select
 msgid "Select"
 msgstr "Επιλογή"
@@ -418,6 +386,7 @@ msgid "All"
 msgstr "Όλα"
 
 #: program/localization/el_GR/labels.inc:none
+#: program/localization/el_GR/labels.inc:nonesort
 msgid "None"
 msgstr "Κανένα"
 
@@ -449,10 +418,6 @@ msgstr "Συμπίεση"
 msgid "Empty"
 msgstr "Άδειασμα"
 
-#: program/localization/el_GR/labels.inc:purge
-msgid "purge"
-msgstr "Καθάρισμα"
-
 #: program/localization/el_GR/labels.inc:quota
 msgid "Disk usage"
 msgstr "Χρήση δίσκου"
@@ -482,15 +447,15 @@ msgid "Open in new window"
 msgstr "Άνοιγμα σε νέο παράθυρο"
 
 #: program/localization/el_GR/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Συγγραφή μηνύματος"
 
 #: program/localization/el_GR/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Αποθήκευση ως πρόχειρου"
 
 #: program/localization/el_GR/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Αποστολή μηνύματος τώρα"
 
 #: program/localization/el_GR/labels.inc:addattachment
@@ -760,6 +725,18 @@ msgstr "Νέο αντικείμενο"
 #: program/localization/el_GR/labels.inc:edititem
 msgid "Edit item"
 msgstr "Επεξεργασία αντικειμένου"
+
+#: program/localization/el_GR/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Προτίμηση HTML"
+
+#: program/localization/el_GR/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Μήνυμα HTML"
+
+#: program/localization/el_GR/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Όμορφη ημ/νία"
 
 #: program/localization/el_GR/labels.inc:setdefault
 msgid "Set default"

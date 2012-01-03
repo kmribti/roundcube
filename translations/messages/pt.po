@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: pt_PT\n"
@@ -16,7 +16,7 @@ msgstr ""
 
 #: program/localization/pt_PT/messages.inc:loginfailed
 msgid "Login failed."
-msgstr "O utilizador ou palavra-passe que introduziu está incorrecto."
+msgstr "O utilizador ou palavra-passe que introduziu não correspondem."
 
 #: program/localization/pt_PT/messages.inc:cookiesdisabled
 msgid "Your browser does not accept cookies."
@@ -24,7 +24,7 @@ msgstr "O seu navegador não suporta cookies"
 
 #: program/localization/pt_PT/messages.inc:sessionerror
 msgid "Your session is invalid or expired."
-msgstr "A sua sessão é inválida ou expirou"
+msgstr "A sua sessão é inválida ou expirou."
 
 #: program/localization/pt_PT/messages.inc:imaperror
 msgid "Connection to IMAP server failed."
@@ -56,11 +56,11 @@ msgstr "Pedido inválido! Não foi guardada nenhuma informação."
 
 #: program/localization/pt_PT/messages.inc:nomessagesfound
 msgid "No messages found in this mailbox."
-msgstr "Nenhuma mensagem encontrada na caixa de entrada"
+msgstr "Não existem mensagens nesta pasta."
 
 #: program/localization/pt_PT/messages.inc:loggedout
 msgid "You have successfully terminated the session. Good bye!"
-msgstr "A sua sessão foi terminada com sucesso. Até breve!"
+msgstr "A sua sessão foi encerrada com sucesso. Até breve!"
 
 #: program/localization/pt_PT/messages.inc:mailboxempty
 msgid "Mailbox is empty."
@@ -76,15 +76,15 @@ msgstr "A enviar ficheiro..."
 
 #: program/localization/pt_PT/messages.inc:uploadingmany
 msgid "Uploading files..."
-msgstr "A carregar ficheiros..."
+msgstr "A enviar ficheiros..."
 
 #: program/localization/pt_PT/messages.inc:loadingdata
 msgid "Loading data..."
-msgstr "A carregar informações..."
+msgstr "A carregar dados..."
 
 #: program/localization/pt_PT/messages.inc:checkingmail
 msgid "Checking for new messages..."
-msgstr "A verificar novas mensagens..."
+msgstr "A verificar existência de novas mensagens..."
 
 #: program/localization/pt_PT/messages.inc:sendingmessage
 msgid "Sending message..."
@@ -112,7 +112,7 @@ msgstr "Contacto adicionado com sucesso"
 
 #: program/localization/pt_PT/messages.inc:contactexists
 msgid "A contact with the same e-mail address already exists."
-msgstr "Já existe um contacto com esse e-mail"
+msgstr "Já existe um contacto com este e-mail"
 
 #: program/localization/pt_PT/messages.inc:contactnameexists
 msgid "A contact with the same name already exists."
@@ -124,7 +124,7 @@ msgstr "Para proteger a sua privacidade, as imagens desta mensagem foram bloquea
 
 #: program/localization/pt_PT/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
-msgstr "Esta mensagem está encriptada e não pode ser exibida. Desculpe."
+msgstr "Esta mensagem está encriptada e não pode ser apresentada. Desculpe!"
 
 #: program/localization/pt_PT/messages.inc:nocontactsfound
 msgid "No contacts found."
@@ -144,7 +144,7 @@ msgstr "Falha no envio da mensagem"
 
 #: program/localization/pt_PT/messages.inc:senttooquickly
 msgid "Please wait $sec sec(s). before sending this message."
-msgstr "Por favor espere $sec seg(s). antes de enviar esta mensagem"
+msgstr "Por favor espere $sec seg(s) antes de enviar esta mensagem"
 
 #: program/localization/pt_PT/messages.inc:errorsavingsent
 msgid "An error occured while saving sent message."
@@ -164,7 +164,7 @@ msgstr "Não foi possível copiar a mensagem"
 
 #: program/localization/pt_PT/messages.inc:errordeleting
 msgid "Could not delete the message(s)."
-msgstr "Não foi possível apagar a mensagem"
+msgstr "Não foi possível eliminar a mensagem"
 
 #: program/localization/pt_PT/messages.inc:errormarking
 msgid "Could not mark the message(s)."
@@ -172,7 +172,7 @@ msgstr "Não foi possível marcar a mensagem."
 
 #: program/localization/pt_PT/messages.inc:deletecontactconfirm
 msgid "Do you really want to delete selected contact(s)?"
-msgstr "Deseja realmente eliminar o(s) contacto(s) selecionado(s)?"
+msgstr "Deseja realmente eliminar o(s) contacto(s) seleccionado(s)?"
 
 #: program/localization/pt_PT/messages.inc:deletegroupconfirm
 msgid "Do you really want to delete selected group?"
@@ -180,7 +180,7 @@ msgstr "Tem a certeza que pretende eliminar o grupo seleccionado?"
 
 #: program/localization/pt_PT/messages.inc:deletemessagesconfirm
 msgid "Do you really want to delete selected message(s)?"
-msgstr "Deseja realmente eliminar a(s) mensagem(ns) selecionada(s)?"
+msgstr "Deseja realmente eliminar a(s) mensagem(ns) seleccionada(s)?"
 
 #: program/localization/pt_PT/messages.inc:deletefolderconfirm
 msgid "Do you really want to delete this folder?"
@@ -220,23 +220,23 @@ msgstr "Os campos não foram completamente preenchidos"
 
 #: program/localization/pt_PT/messages.inc:noemailwarning
 msgid "Please enter a valid email address."
-msgstr "Por favor escreva um endereço de e-mail válido"
+msgstr "Por favor, introduza um endereço de e-mail válido."
 
 #: program/localization/pt_PT/messages.inc:nonamewarning
 msgid "Please enter a name."
-msgstr "Por favor escreva o nome"
+msgstr "Por favor, escreva um nome."
 
 #: program/localization/pt_PT/messages.inc:nopagesizewarning
 msgid "Please enter a page size."
-msgstr "Por favor escreva o tamanho da página"
+msgstr "Por favor, escreva o tamanho da página"
 
 #: program/localization/pt_PT/messages.inc:nosenderwarning
 msgid "Please enter sender e-mail address."
-msgstr "Por favor insira o endereço de e-mail do remetente"
+msgstr "Por favor, introsuza o endereço de e-mail do remetente"
 
 #: program/localization/pt_PT/messages.inc:norecipientwarning
 msgid "Please enter at least one recipient."
-msgstr "Por favor escreva pelo menos um destinatário"
+msgstr "Por favor, insira pelo menos um destinatário"
 
 #: program/localization/pt_PT/messages.inc:nosubjectwarning
 msgid "The \"Subject\" field is empty. Would you like to enter one now?"
@@ -252,11 +252,11 @@ msgstr "A mensagem não foi enviada, deseja apagá-la?"
 
 #: program/localization/pt_PT/messages.inc:noldapserver
 msgid "Please select an ldap server to search."
-msgstr "Seleccione um servidor LDAP para a pesquisa"
+msgstr "Seleccione um servidor LDAP para efectuar a pesquisa"
 
 #: program/localization/pt_PT/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
-msgstr "Por favor, escreva o nome do contacto ou endereço de e-mail"
+msgstr "Por favor, insira o nome do contacto ou endereço de e-mail"
 
 #: program/localization/pt_PT/messages.inc:notuploadedwarning
 msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
@@ -318,7 +318,7 @@ msgstr "A remover a formatação..."
 
 #: program/localization/pt_PT/messages.inc:messageopenerror
 msgid "Could not load message from server."
-msgstr "Não foi possível carregar a mensagem"
+msgstr "Não foi possível carregar a mensagem."
 
 #: program/localization/pt_PT/messages.inc:fileuploaderror
 msgid "File upload failed."
@@ -326,7 +326,7 @@ msgstr "Falha ao carregar o ficheiro"
 
 #: program/localization/pt_PT/messages.inc:filesizeerror
 msgid "The uploaded file exceeds the maximum size of $size."
-msgstr "O ficheiro excede o tamanho máximo permitido - $size"
+msgstr "O ficheiro excede o tamanho máximo permitido de $size"
 
 #: program/localization/pt_PT/messages.inc:copysuccess
 msgid "Successfully copied $nr addresses."
@@ -346,11 +346,11 @@ msgstr "Não foi possível guardar o endereço deste contacto"
 
 #: program/localization/pt_PT/messages.inc:movingmessage
 msgid "Moving message(s)..."
-msgstr "A mover mensagem..."
+msgstr "A mover mensagem(ns)..."
 
 #: program/localization/pt_PT/messages.inc:copyingmessage
 msgid "Copying message(s)..."
-msgstr "A copiar mensagem..."
+msgstr "A copiar mensagem(ns)..."
 
 #: program/localization/pt_PT/messages.inc:copyingcontact
 msgid "Copying contact(s)..."
@@ -358,11 +358,11 @@ msgstr "A copiar contacto(s)..."
 
 #: program/localization/pt_PT/messages.inc:deletingmessage
 msgid "Deleting message(s)..."
-msgstr "A eliminar mensagens..."
+msgstr "A eliminar mensagem(ns)..."
 
 #: program/localization/pt_PT/messages.inc:markingmessage
 msgid "Marking message(s)..."
-msgstr "A marcar mensagens..."
+msgstr "A marcar mensagem(ns)..."
 
 #: program/localization/pt_PT/messages.inc:addingmember
 msgid "Adding contact(s) to the group..."
@@ -374,7 +374,7 @@ msgstr "A remover contacto(s) do grupo..."
 
 #: program/localization/pt_PT/messages.inc:receiptsent
 msgid "Successfully sent a read receipt."
-msgstr "Recibo de leitura enviadocom sucesso"
+msgstr "Recibo de leitura enviado com sucesso"
 
 #: program/localization/pt_PT/messages.inc:errorsendingreceipt
 msgid "Could not send the receipt."
@@ -382,7 +382,7 @@ msgstr "Não foi possível enviar o recibo"
 
 #: program/localization/pt_PT/messages.inc:nodeletelastidentity
 msgid "You cannot delete this identity, it's your last one."
-msgstr "Esta é a última identidade, não é possível eliminá-la."
+msgstr "Esta é a sua última identidade, não é possível eliminá-la."
 
 #: program/localization/pt_PT/messages.inc:forbiddencharacter
 msgid "Folder name contains a forbidden character."
@@ -390,19 +390,19 @@ msgstr "O nome da pasta contém um caractere inválido"
 
 #: program/localization/pt_PT/messages.inc:selectimportfile
 msgid "Please select a file to upload."
-msgstr "Por favor seleccione um ficheiro para carregar"
+msgstr "Por favor, seleccione um ficheiro para enviar."
 
 #: program/localization/pt_PT/messages.inc:addresswriterror
 msgid "The selected address book is not writeable."
-msgstr "Não é possível escrever no livro de endereços seleccionado"
+msgstr "Não é possível escrever no livro de endereços seleccionado."
 
 #: program/localization/pt_PT/messages.inc:contactaddedtogroup
 msgid "Successfully added the contacts to this group."
-msgstr "Contacto adicionado com sucesso a este grupo"
+msgstr "Contacto adicionado com sucesso a este grupo."
 
 #: program/localization/pt_PT/messages.inc:contactremovedfromgroup
 msgid "Successfully removed contacts from this group."
-msgstr "Contacto removido com sucesso deste grupo"
+msgstr "Contacto removido com sucesso deste grupo."
 
 #: program/localization/pt_PT/messages.inc:importwait
 msgid "Importing, please wait..."
@@ -416,7 +416,7 @@ msgstr "A importação falhou! O ficheiro submetido não é um ficheiro vCard "
 #: program/localization/pt_PT/messages.inc:importconfirm
 msgid "<b>Successfully imported $inserted contacts</b>"
 msgstr "<b>$inserted contactos importados com sucesso, $skipped contactos já "
-"existentes ignorados</b>:<p><em>$names</em></p>"
+"existentes foram ignorados</b>:<p><em>$names</em></p>"
 
 #: program/localization/pt_PT/messages.inc:importconfirmskipped
 msgid "<b>Skipped $skipped existing entries</b>"
@@ -444,23 +444,23 @@ msgstr "Ocorreu um erro fatal de configuração. Contacte o seu Administrador "
 
 #: program/localization/pt_PT/messages.inc:smtpconnerror
 msgid "SMTP Error ($code): Connection to server failed."
-msgstr "Erro SMTP ($code): A ligação ao servidor falhou"
+msgstr "Erro SMTP ($code): A ligação ao servidor falhou."
 
 #: program/localization/pt_PT/messages.inc:smtpautherror
 msgid "SMTP Error ($code): Authentication failed."
-msgstr "Erro SMTP ($code): A autenticação falhou"
+msgstr "Erro SMTP ($code): A autenticação falhou."
 
 #: program/localization/pt_PT/messages.inc:smtpfromerror
 msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
-msgstr "Erro SMTP ($code): Falha ao definir o remetente \"$from\" ($msg)"
+msgstr "Erro SMTP ($code): Falha ao definir o remetente \"$from\" ($msg)."
 
 #: program/localization/pt_PT/messages.inc:smtptoerror
 msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
-msgstr "Erro SMTP ($code): Falha ao adicionar o destinatário: \"$to\" ($msg)"
+msgstr "Erro SMTP ($code): Falha ao adicionar o destinatário: \"$to\" ($msg)."
 
 #: program/localization/pt_PT/messages.inc:smtprecipientserror
 msgid "SMTP Error: Unable to parse recipients list."
-msgstr "Erro SMTP: Impossível analisar a lista de destinatários"
+msgstr "Erro SMTP: Impossível analisar a lista de destinatários."
 
 #: program/localization/pt_PT/messages.inc:smtperror
 msgid "SMTP Error: $msg"
@@ -481,15 +481,15 @@ msgstr "O número de membros do grupo ultrapassa o máximo permitido de $max."
 
 #: program/localization/pt_PT/messages.inc:internalerror
 msgid "An internal error occured. Please try again."
-msgstr "Ocorreu um erro interno. Por favor, tente de novamente."
+msgstr "Ocorreu um erro interno. Por favor, tente novamente."
 
 #: program/localization/pt_PT/messages.inc:contactdelerror
 msgid "Could not delete contact(s)."
-msgstr "Não foi possível eliminar os contactos"
+msgstr "Não foi possível eliminar o(s) contacto(s)."
 
 #: program/localization/pt_PT/messages.inc:contactdeleted
 msgid "Contact(s) deleted successfully."
-msgstr "Contactos eliminados com sucesso"
+msgstr "Contacto(s) eliminado(s) com sucesso."
 
 #: program/localization/pt_PT/messages.inc:contactrestoreerror
 msgid "Could not restore deleted contact(s)."
@@ -501,19 +501,19 @@ msgstr "Contacto(s) restaurado(s) com sucesso."
 
 #: program/localization/pt_PT/messages.inc:groupdeleted
 msgid "Group deleted successfully."
-msgstr "Grupo eliminado com sucesso"
+msgstr "Grupo eliminado com sucesso."
 
 #: program/localization/pt_PT/messages.inc:grouprenamed
 msgid "Group renamed successfully."
-msgstr "Grupo renomeado com sucesso"
+msgstr "Grupo renomeado com sucesso."
 
 #: program/localization/pt_PT/messages.inc:groupcreated
 msgid "Group created successfully."
-msgstr "Grupo criado com sucesso"
+msgstr "Grupo criado com sucesso."
 
 #: program/localization/pt_PT/messages.inc:savedsearchdeleted
 msgid "Saved search deleted successfully."
-msgstr "Pesquisa guardada eliminada com sucesso."
+msgstr "A pesquisa guardada foi eliminada com sucesso."
 
 #: program/localization/pt_PT/messages.inc:savedsearchdeleteerror
 msgid "Could not delete saved search."
@@ -529,56 +529,56 @@ msgstr "Não foi possível criar a pesquisa guardada."
 
 #: program/localization/pt_PT/messages.inc:messagedeleted
 msgid "Message(s) deleted successfully."
-msgstr "Mensagens eliminadas com sucesso"
+msgstr "Mensagem(ns) eliminada(s) com sucesso."
 
 #: program/localization/pt_PT/messages.inc:messagemoved
 msgid "Message(s) moved successfully."
-msgstr "Mensagens movidas com sucesso"
+msgstr "Mensagem(ns) movida(s) com sucesso."
 
 #: program/localization/pt_PT/messages.inc:messagecopied
 msgid "Message(s) copied successfully."
-msgstr "Mensagens copiadas com sucesso"
+msgstr "Mensagem(ns) copiada(s) com sucesso."
 
 #: program/localization/pt_PT/messages.inc:messagemarked
 msgid "Message(s) marked successfully."
-msgstr "Mensagens marcadas com sucesso"
+msgstr "Mensage(m)ns marcada(s) com sucesso."
 
 #: program/localization/pt_PT/messages.inc:autocompletechars
 msgid "Enter at least $min characters for autocompletion."
-msgstr "Indique pelo menos $min caracteres para auto completar"
+msgstr "Indique pelo menos $min caracteres para o auto preenchimento."
 
 #: program/localization/pt_PT/messages.inc:autocompletemore
 msgid "More matching entries found. Please type more characters."
-msgstr "Muitos registros encontrados. Por favor, insira mais caracteres."
+msgstr "Demasiados registos encontrados. Por favor, insira mais caracteres."
 
 #: program/localization/pt_PT/messages.inc:namecannotbeempty
 msgid "Name cannot be empty."
-msgstr "O nome não pode estar em branco"
+msgstr "O nome não pode estar em branco."
 
 #: program/localization/pt_PT/messages.inc:nametoolong
 msgid "Name is too long."
-msgstr "O nome é demasiado longo"
+msgstr "O nome é demasiado longo."
 
 #: program/localization/pt_PT/messages.inc:folderupdated
 msgid "Folder updated successfully."
-msgstr "Actualização da pasta concluída com sucesso"
+msgstr "Actualização da pasta concluída com sucesso."
 
 #: program/localization/pt_PT/messages.inc:foldercreated
 msgid "Folder created successfully."
-msgstr "Pasta criada com sucesso"
+msgstr "Pasta criada com sucesso."
 
 #: program/localization/pt_PT/messages.inc:invalidimageformat
 msgid "Not a valid image format."
-msgstr "Formato de imagem não suportado"
+msgstr "O formato da imagem não é suportado."
 
 #: program/localization/pt_PT/messages.inc:mispellingsfound
 msgid "Spelling errors detected in the message."
-msgstr "Foram detectados erros de ortografia nesta mensagem"
+msgstr "Foram detectados erros de ortografia nesta mensagem."
 
 #: program/localization/pt_PT/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
-msgstr "Não é possível criar/mover esta pasta para a pasta seleccionada. Acesso "
-"negado."
+msgstr "Não é possível criar/mover esta pasta para a pasta seleccionada. O "
+"acesso foi negado."
 
 #: program/localization/pt_PT/messages.inc:messagetoobig
 msgid "The message part is too big to process it."

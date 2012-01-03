@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: da_DK\n"
+"Language: da\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -255,10 +255,6 @@ msgstr "Beskeden er ikke blevet sendt. Vil du kassere din besked?"
 msgid "Please select an ldap server to search."
 msgstr "Vælg venligst hvilken LDAP-server der skal søges i"
 
-#: program/localization/da_DK/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Ingen kontakter blev fundet"
-
 #: program/localization/da_DK/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "Indtast venligst en kontakts navn eller e-mail adresse"
@@ -272,6 +268,10 @@ msgstr "Ikke alle vedhæftede filer er blevet uploadet endnu. Vent venligst elle
 #: program/localization/da_DK/messages.inc:searchsuccessful
 msgid "$nr messages found."
 msgstr "Fandt $nr beskeder"
+
+#: program/localization/da_DK/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "$nr afsendere fundet"
 
 #: program/localization/da_DK/messages.inc:searchnomatch
 msgid "Search returned no matches."
@@ -580,4 +580,4 @@ msgstr "Kan ikke oprette/flytte mappe ind i valgt mappe. Ingen adgangsrettighede
 
 #: program/localization/da_DK/messages.inc:messagetoobig
 msgid "The message part is too big to process it."
-msgstr "Besked delen er for stor til at behandle."
+msgstr "Denne del af beskeden er for stor til at blive behandlet."

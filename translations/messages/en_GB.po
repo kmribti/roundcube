@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: en_GB\n"
@@ -134,6 +134,10 @@ msgstr "No contacts found."
 msgid "The requested contact was not found."
 msgstr "The requested contact was not found."
 
+#: program/localization/en_GB/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Enter some search terms to find contacts"
+
 #: program/localization/en_GB/messages.inc:sendingfailed
 msgid "Failed to send message."
 msgstr "Failed to send message."
@@ -185,6 +189,10 @@ msgstr "Do you really want to delete this folder?"
 #: program/localization/en_GB/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
 msgstr "Do you really want to delete all messages in this folder?"
+
+#: program/localization/en_GB/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Deleting contact(s)..."
 
 #: program/localization/en_GB/messages.inc:groupdeleting
 msgid "Deleting group..."
@@ -246,10 +254,6 @@ msgstr "Your message has not been sent. Do you want to discard it?"
 msgid "Please select an ldap server to search."
 msgstr "Please select an LDAP server to search."
 
-#: program/localization/en_GB/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "No contacts were found."
-
 #: program/localization/en_GB/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "Please enter a contact name or email address."
@@ -263,6 +267,10 @@ msgstr "Not all attachments have been uploaded yet. Please wait or cancel the "
 #: program/localization/en_GB/messages.inc:searchsuccessful
 msgid "$nr messages found."
 msgstr "$nr messages found."
+
+#: program/localization/en_GB/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "$nr contacts found."
 
 #: program/localization/en_GB/messages.inc:searchnomatch
 msgid "Search returned no matches."
@@ -452,10 +460,6 @@ msgstr "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "SMTP Error: Unable to parse recipients list."
 
-#: program/localization/en_GB/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "SMTP Error: Server does not support Delivery Status Notifications."
-
 #: program/localization/en_GB/messages.inc:smtperror
 msgid "SMTP Error: $msg"
 msgstr "SMTP Error: $msg"
@@ -504,6 +508,22 @@ msgstr "Group renamed successfully."
 msgid "Group created successfully."
 msgstr "Group created successfully."
 
+#: program/localization/en_GB/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Saved search deleted successfully."
+
+#: program/localization/en_GB/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Could not delete saved search."
+
+#: program/localization/en_GB/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Saved search created successfully."
+
+#: program/localization/en_GB/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Could not create saved search."
+
 #: program/localization/en_GB/messages.inc:messagedeleted
 msgid "Message(s) deleted successfully."
 msgstr "Message(s) deleted successfully."
@@ -523,6 +543,10 @@ msgstr "Message(s) marked successfully."
 #: program/localization/en_GB/messages.inc:autocompletechars
 msgid "Enter at least $min characters for autocompletion."
 msgstr "Enter at least $min characters for autocompletion."
+
+#: program/localization/en_GB/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "More matching entries found. Please type more characters."
 
 #: program/localization/en_GB/messages.inc:namecannotbeempty
 msgid "Name cannot be empty."
@@ -551,3 +575,7 @@ msgstr "Spelling errors detected in the message."
 #: program/localization/en_GB/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
 msgstr "Unable to create/move folder into selected parent folder. No access rights."
+
+#: program/localization/en_GB/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "The message part is too big to process it."

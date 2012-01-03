@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: ga_IE\n"
+"Language: ga\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -86,7 +86,7 @@ msgstr "Tá duine i do Leabhair Seoltaí agus tá an seoladh ríomhphost seo aig
 #: program/localization/ga_IE/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
 msgstr "Chun do príobháide a cosain, choiscinn na híomhánna san teachtaireacht "
-"seo "
+"seo"
 
 #: program/localization/ga_IE/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
@@ -170,10 +170,6 @@ msgstr "Theip an iarraidh chun an teachtaireacht a seo. ba mhaith tú scrios do 
 #: program/localization/ga_IE/messages.inc:noldapserver
 msgid "Please select an ldap server to search."
 msgstr "Abair liom eolaire LDAP chun é a cuardaigh"
-
-#: program/localization/ga_IE/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Ní bhfuair mé aon duine as an ceist seo"
 
 #: program/localization/ga_IE/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."

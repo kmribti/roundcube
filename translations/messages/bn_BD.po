@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: bn_BD\n"
@@ -118,7 +118,7 @@ msgstr "চিঠি পাঠানো গেলনা"
 #: program/localization/bn_BD/messages.inc:senttooquickly
 msgid "Please wait $sec sec(s). before sending this message."
 msgstr "এই চিঠি পাঠানোর আগে, দয়া করে "
-"$sec সেকেন্ড "
+"$sec সেকেন্ড"
 
 #: program/localization/bn_BD/messages.inc:errorsavingsent
 msgid "An error occured while saving sent message."
@@ -217,11 +217,6 @@ msgid "Please select an ldap server to search."
 msgstr "দয়া করে একটি এল্ডাপ সারভার "
 "বেছে নিন সার্চ করার জন্যে"
 
-#: program/localization/bn_BD/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "কোনো ঠিকানা পাওয়া গেলনা। "
-"দু্ঃখিত।"
-
 #: program/localization/bn_BD/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "দয়া করে একজনের নাম অথবা "
@@ -309,7 +304,7 @@ msgid "You cannot delete this identity, it's your last one."
 msgstr "আপনি এই পরিচিতি ফেলতে "
 "পারবেন না কারন এইটায় "
 "বর্তমানে আপনার একমাত্র "
-"পরিচিতি। "
+"পরিচিতি।"
 
 #: program/localization/bn_BD/messages.inc:forbiddencharacter
 msgid "Folder name contains a forbidden character."

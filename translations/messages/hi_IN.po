@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: hi_IN\n"
+"Language: hi\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -178,10 +178,6 @@ msgstr "मेल भिजा नहीं. मेल रद्द करें
 msgid "Please select an ldap server to search."
 msgstr "खोज के लिये एक ऐलडैप सर्वर "
 "चुनें"
-
-#: program/localization/hi_IN/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "कोई पते नहीं मिले"
 
 #: program/localization/hi_IN/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."

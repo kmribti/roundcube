@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: ca_ES\n"
+"Language: ca\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -582,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Descarrega (.eml)"
 
 #: program/localization/ca_ES/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Escriu un missatge"
 
 #: program/localization/ca_ES/labels.inc:editasnew
@@ -590,11 +590,11 @@ msgid "Edit as new"
 msgstr "Edita com a nou"
 
 #: program/localization/ca_ES/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Desa aquest esborrany"
 
 #: program/localization/ca_ES/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Envia ara el missatge"
 
 #: program/localization/ca_ES/labels.inc:addattachment
@@ -692,6 +692,10 @@ msgstr "Mostra imatges"
 #: program/localization/ca_ES/labels.inc:alwaysshow
 msgid "Always show images from $sender"
 msgstr "Sempre mostra imatges de $sender"
+
+#: program/localization/ca_ES/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "Aquest és un missatge esborrany."
 
 #: program/localization/ca_ES/labels.inc:htmltoggle
 msgid "HTML"
@@ -1097,6 +1101,10 @@ msgstr "Fet"
 msgid "Settings for"
 msgstr "Configuració per a"
 
+#: program/localization/ca_ES/labels.inc:about
+msgid "About"
+msgstr "Quant a"
+
 #: program/localization/ca_ES/labels.inc:preferences
 msgid "Preferences"
 msgstr "Preferències"
@@ -1140,6 +1148,14 @@ msgstr "Joc de caracters per defecte"
 #: program/localization/ca_ES/labels.inc:htmlmessage
 msgid "HTML Message"
 msgstr "Missatge HTML"
+
+#: program/localization/ca_ES/labels.inc:dateformat
+msgid "Date format"
+msgstr "Format de la data"
+
+#: program/localization/ca_ES/labels.inc:timeformat
+msgid "Time format"
+msgstr "Format horari"
 
 #: program/localization/ca_ES/labels.inc:prettydate
 msgid "Pretty dates"
@@ -1333,6 +1349,10 @@ msgstr "Comprova totes les carpetes per missatges nous"
 msgid "After message delete/move display the next message"
 msgstr "Mostra el següent missatge després de esborrar-ne o moure'n un"
 
+#: program/localization/ca_ES/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "Font per defecte al missatge HTML"
+
 #: program/localization/ca_ES/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Opcions principals"
@@ -1348,10 +1368,6 @@ msgstr "Manteniment"
 #: program/localization/ca_ES/labels.inc:newmessage
 msgid "New Message"
 msgstr "Missatge nou"
-
-#: program/localization/ca_ES/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Opcions de llista"
 
 #: program/localization/ca_ES/labels.inc:signatureoptions
 msgid "Signature Options"
@@ -1424,6 +1440,10 @@ msgstr "Col·locar respostes a la carpeta del missatge que es respon"
 #: program/localization/ca_ES/labels.inc:defaultaddressbook
 msgid "Add new contacts to the selected addressbook"
 msgstr "Afegeix contactes nous a la llibreta d'adreces seleccionada"
+
+#: program/localization/ca_ES/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "Salta l'adreça de correu alternativa a l'autocompleció"
 
 #: program/localization/ca_ES/labels.inc:spellcheckbeforesend
 msgid "Check spelling before sending a message"
@@ -1540,6 +1560,26 @@ msgstr "Ordena descendentment"
 #: program/localization/ca_ES/labels.inc:undo
 msgid "Undo"
 msgstr "Desfés"
+
+#: program/localization/ca_ES/labels.inc:plugin
+msgid "Plugin"
+msgstr "Connector"
+
+#: program/localization/ca_ES/labels.inc:version
+msgid "Version"
+msgstr "Versió"
+
+#: program/localization/ca_ES/labels.inc:source
+msgid "Source"
+msgstr "Font"
+
+#: program/localization/ca_ES/labels.inc:license
+msgid "License"
+msgstr "Llicència"
+
+#: program/localization/ca_ES/labels.inc:support
+msgid "Get support"
+msgstr "Obtenir ajuda"
 
 #: program/localization/ca_ES/labels.inc:B
 msgid "B"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:03:31+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: az_AZ\n"
@@ -400,10 +400,6 @@ msgstr "Qeyd et"
 msgid "As unflagged"
 msgstr "Qeydi çıxar"
 
-#: program/localization/az_AZ/labels.inc:messageactions
-msgid "messageactions"
-msgstr "Əlavə işlər..."
-
 #: program/localization/az_AZ/labels.inc:select
 msgid "Select"
 msgstr "Seçin"
@@ -574,7 +570,7 @@ msgid "Download (.eml)"
 msgstr "Saxla (.eml)"
 
 #: program/localization/az_AZ/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Məktub yaz"
 
 #: program/localization/az_AZ/labels.inc:editasnew
@@ -582,11 +578,11 @@ msgid "Edit as new"
 msgstr "Yeni kimi redaktə et"
 
 #: program/localization/az_AZ/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Qaralama saxla"
 
 #: program/localization/az_AZ/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "İndi göndər"
 
 #: program/localization/az_AZ/labels.inc:addattachment
@@ -847,6 +843,11 @@ msgstr "Köməkçi"
 msgid "Spouse"
 msgstr "Ər-arvad"
 
+#: program/localization/az_AZ/labels.inc:other
+#: program/localization/az_AZ/labels.inc:typeother
+msgid "Other"
+msgstr "Başqa"
+
 #: program/localization/az_AZ/labels.inc:typehome
 msgid "Home"
 msgstr "Ev"
@@ -854,10 +855,6 @@ msgstr "Ev"
 #: program/localization/az_AZ/labels.inc:typework
 msgid "Work"
 msgstr "İş"
-
-#: program/localization/az_AZ/labels.inc:typeother
-msgid "Other"
-msgstr "Başqa"
 
 #: program/localization/az_AZ/labels.inc:typemobile
 msgid "Mobile"
@@ -971,10 +968,6 @@ msgstr "Ünvanları vCards formatında ixrac et"
 msgid "Create new contact group"
 msgstr "Ünvanlar qrupunu yarat"
 
-#: program/localization/az_AZ/labels.inc:groupactions
-msgid "groupactions"
-msgstr "Ünvanlar qrupu üçün işlər"
-
 #: program/localization/az_AZ/labels.inc:previouspage
 msgid "Show previous page"
 msgstr "Əvvəlkini göstər"
@@ -1009,7 +1002,7 @@ msgstr "İdxal"
 
 #: program/localization/az_AZ/labels.inc:importcontacts
 msgid "Import contacts"
-msgstr "Ünvanların idxalı "
+msgstr "Ünvanların idxalı"
 
 #: program/localization/az_AZ/labels.inc:importfromfile
 msgid "Import from file:"
@@ -1287,10 +1280,6 @@ msgstr "Xidmət"
 #: program/localization/az_AZ/labels.inc:newmessage
 msgid "New Message"
 msgstr "Yeni məktub"
-
-#: program/localization/az_AZ/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Nizamlamaların siyahısı"
 
 #: program/localization/az_AZ/labels.inc:signatureoptions
 msgid "Signature Options"

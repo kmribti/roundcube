@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: fa\n"
@@ -109,7 +109,7 @@ msgstr "ناموفق در فرستادن پیغام"
 #: program/localization/fa/messages.inc:senttooquickly
 msgid "Please wait $sec sec(s). before sending this message."
 msgstr "دقیقه صبر کنید $sec لطفا قبل از ارسال این "
-"پیغام     "
+"پیغام"
 
 #: program/localization/fa/messages.inc:errorsavingsent
 msgid "An error occured while saving sent message."
@@ -150,11 +150,11 @@ msgstr "آیا واقعاً می‌خواهید همه‌ی پیغام‌های 
 
 #: program/localization/fa/messages.inc:folderdeleting
 msgid "Deleting folder..."
-msgstr "...در حال حذف پوشه "
+msgstr "...در حال حذف پوشه"
 
 #: program/localization/fa/messages.inc:foldermoving
 msgid "Moving folder..."
-msgstr "...در حال انتقال پوشه "
+msgstr "...در حال انتقال پوشه"
 
 #: program/localization/fa/messages.inc:formincomplete
 msgid "The form was not completely filled out."
@@ -197,10 +197,6 @@ msgstr "پیغام ارسال نشده است. آیا می‌خواهید "
 #: program/localization/fa/messages.inc:noldapserver
 msgid "Please select an ldap server to search."
 msgstr "برای جست و جو انتخاب کنید LDAP لطفاً یک سرور"
-
-#: program/localization/fa/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "هیچ تماسی پیدا نشد"
 
 #: program/localization/fa/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."

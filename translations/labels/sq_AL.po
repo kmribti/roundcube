@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: sq_AL\n"
+"Language: sq\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -110,10 +110,6 @@ msgstr "Përparësia"
 msgid "Company"
 msgstr "Organizata"
 
-#: program/localization/sq_AL/labels.inc:reply-to
-msgid "reply-to"
-msgstr "Reply-To"
-
 #: program/localization/sq_AL/labels.inc:mailboxlist
 #: program/localization/sq_AL/labels.inc:folders
 msgid "Folders"
@@ -126,6 +122,10 @@ msgstr "Mesazhet $from në $to nga $count"
 #: program/localization/sq_AL/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "Mesazhi $nr nga $count"
+
+#: program/localization/sq_AL/labels.inc:copy
+msgid "Copy"
+msgstr "Kopje"
 
 #: program/localization/sq_AL/labels.inc:moveto
 msgid "Move to..."
@@ -142,18 +142,6 @@ msgstr "Emër skedari"
 #: program/localization/sq_AL/labels.inc:filesize
 msgid "File size"
 msgstr "Madhësi skedari"
-
-#: program/localization/sq_AL/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "Shfaq HTML"
-
-#: program/localization/sq_AL/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "Mesazh HTML"
-
-#: program/localization/sq_AL/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "Data të këndshme"
 
 #: program/localization/sq_AL/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -255,33 +243,17 @@ msgstr "Shtype këtë mesazh"
 msgid "Show previous message"
 msgstr "Shfaq mesazhin e mëparshëm"
 
-#: program/localization/sq_AL/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Shfaq grupin e mëparshëm të mesazheve"
-
 #: program/localization/sq_AL/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Shfaq mesazhin e parë"
-
-#: program/localization/sq_AL/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "Shfaq grupin e parë të mesazheve"
 
 #: program/localization/sq_AL/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Shfaq mesazhin pasardhës"
 
-#: program/localization/sq_AL/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Shfaq grupin tjetër të mesazheve"
-
 #: program/localization/sq_AL/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Shfaq mesazhin e fundit"
-
-#: program/localization/sq_AL/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "Shfaq grupin e fundit të mesazheve"
 
 #: program/localization/sq_AL/labels.inc:backtolist
 msgid "Back to message list"
@@ -312,6 +284,7 @@ msgid "All"
 msgstr "Të gjitha"
 
 #: program/localization/sq_AL/labels.inc:none
+#: program/localization/sq_AL/labels.inc:nonesort
 msgid "None"
 msgstr "Asnjë"
 
@@ -326,10 +299,6 @@ msgstr "Zvogëlo"
 #: program/localization/sq_AL/labels.inc:empty
 msgid "Empty"
 msgstr "Boshatis"
-
-#: program/localization/sq_AL/labels.inc:purge
-msgid "purge"
-msgstr "Pastro"
 
 #: program/localization/sq_AL/labels.inc:quota
 msgid "Disk usage"
@@ -352,15 +321,15 @@ msgid "Reset search"
 msgstr "Pastro kërkimin"
 
 #: program/localization/sq_AL/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Shkruaj një mesazh"
 
 #: program/localization/sq_AL/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Ruaje si draft"
 
 #: program/localization/sq_AL/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Dërgoje mesazhin tani"
 
 #: program/localization/sq_AL/labels.inc:addattachment
@@ -596,6 +565,18 @@ msgstr "Element i ri"
 #: program/localization/sq_AL/labels.inc:edititem
 msgid "Edit item"
 msgstr "Ndrysho element"
+
+#: program/localization/sq_AL/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Shfaq HTML"
+
+#: program/localization/sq_AL/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Mesazh HTML"
+
+#: program/localization/sq_AL/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Data të këndshme"
 
 #: program/localization/sq_AL/labels.inc:setdefault
 msgid "Set default"

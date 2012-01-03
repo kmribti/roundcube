@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ru_RU\n"
@@ -409,9 +409,9 @@ msgstr "Установить флаг"
 msgid "As unflagged"
 msgstr "Снять флаг"
 
-#: program/localization/ru_RU/labels.inc:messageactions
-msgid "messageactions"
-msgstr "Еще действия..."
+#: program/localization/ru_RU/labels.inc:moreactions
+msgid "More actions..."
+msgstr "Дополнительные действия..."
 
 #: program/localization/ru_RU/labels.inc:select
 msgid "Select"
@@ -583,7 +583,7 @@ msgid "Download (.eml)"
 msgstr "Сохранить (.eml)"
 
 #: program/localization/ru_RU/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Написать сообщение"
 
 #: program/localization/ru_RU/labels.inc:editasnew
@@ -591,11 +591,11 @@ msgid "Edit as new"
 msgstr "Редактировать как новое"
 
 #: program/localization/ru_RU/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Сохранить черновик"
 
 #: program/localization/ru_RU/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Отправить сейчас"
 
 #: program/localization/ru_RU/labels.inc:addattachment
@@ -694,6 +694,10 @@ msgstr "Показать изображения"
 msgid "Always show images from $sender"
 msgstr "Всегда показывать изображенияв письмах "
 "от $sender"
+
+#: program/localization/ru_RU/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "Это черновик."
 
 #: program/localization/ru_RU/labels.inc:htmltoggle
 msgid "HTML"
@@ -1024,10 +1028,6 @@ msgstr "Экспортировать контакты в формате vCard"
 msgid "Create new contact group"
 msgstr "Создать группу контактов"
 
-#: program/localization/ru_RU/labels.inc:groupactions
-msgid "groupactions"
-msgstr "Действия для групп контактов"
-
 #: program/localization/ru_RU/labels.inc:grouprename
 msgid "Rename group"
 msgstr "Переименовать группу"
@@ -1063,6 +1063,14 @@ msgstr "Группы"
 #: program/localization/ru_RU/labels.inc:personaladrbook
 msgid "Personal Addresses"
 msgstr "Персональные адреса"
+
+#: program/localization/ru_RU/labels.inc:searchsave
+msgid "Save search"
+msgstr "Сохранить запрос"
+
+#: program/localization/ru_RU/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "Удалить запрос"
 
 #: program/localization/ru_RU/labels.inc:import
 msgid "Import"
@@ -1101,6 +1109,10 @@ msgstr "Завершено"
 #: program/localization/ru_RU/labels.inc:settingsfor
 msgid "Settings for"
 msgstr "Настройки для"
+
+#: program/localization/ru_RU/labels.inc:about
+msgid "About"
+msgstr "О программе"
 
 #: program/localization/ru_RU/labels.inc:preferences
 msgid "Preferences"
@@ -1145,6 +1157,14 @@ msgstr "Набор символов по-умолчанию"
 #: program/localization/ru_RU/labels.inc:htmlmessage
 msgid "HTML Message"
 msgstr "Сообщение HTML"
+
+#: program/localization/ru_RU/labels.inc:dateformat
+msgid "Date format"
+msgstr "Формат даты"
+
+#: program/localization/ru_RU/labels.inc:timeformat
+msgid "Time format"
+msgstr "Формат времени"
 
 #: program/localization/ru_RU/labels.inc:prettydate
 msgid "Pretty dates"
@@ -1346,6 +1366,10 @@ msgid "After message delete/move display the next message"
 msgstr "Показать следующее сообщение, после "
 "удаления или перемещения данного"
 
+#: program/localization/ru_RU/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "Шрифт по умолчанию HTML сообщения"
+
 #: program/localization/ru_RU/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Основные настройки"
@@ -1361,10 +1385,6 @@ msgstr "Обслуживание"
 #: program/localization/ru_RU/labels.inc:newmessage
 msgid "New Message"
 msgstr "Новое сообщение"
-
-#: program/localization/ru_RU/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Список настроек"
 
 #: program/localization/ru_RU/labels.inc:signatureoptions
 msgid "Signature Options"
@@ -1445,9 +1465,34 @@ msgid "Add new contacts to the selected addressbook"
 msgstr "Добавить новые контакты в выбранную "
 "адресную книгу"
 
+#: program/localization/ru_RU/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "Пропускать дополнительные адреса в "
+"автозавершении"
+
 #: program/localization/ru_RU/labels.inc:spellcheckbeforesend
 msgid "Check spelling before sending a message"
 msgstr "Проверять орфографию перед отправкой"
+
+#: program/localization/ru_RU/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "Параметры проверки орфографии"
+
+#: program/localization/ru_RU/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "Пропускать слова с символами"
+
+#: program/localization/ru_RU/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "Пропускать слова с цифрами"
+
+#: program/localization/ru_RU/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "Пропускать слова из прописных букв"
+
+#: program/localization/ru_RU/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "Добавить в словарь"
 
 #: program/localization/ru_RU/labels.inc:folder
 msgid "Folder"
@@ -1540,6 +1585,26 @@ msgstr "Убыванию"
 #: program/localization/ru_RU/labels.inc:undo
 msgid "Undo"
 msgstr "Отмена"
+
+#: program/localization/ru_RU/labels.inc:plugin
+msgid "Plugin"
+msgstr "Модуль"
+
+#: program/localization/ru_RU/labels.inc:version
+msgid "Version"
+msgstr "Версия"
+
+#: program/localization/ru_RU/labels.inc:source
+msgid "Source"
+msgstr "Источник"
+
+#: program/localization/ru_RU/labels.inc:license
+msgid "License"
+msgstr "Лицензия"
+
+#: program/localization/ru_RU/labels.inc:support
+msgid "Get support"
+msgstr "Поддержка"
 
 #: program/localization/ru_RU/labels.inc:B
 msgid "B"

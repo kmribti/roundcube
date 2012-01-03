@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: bn_BD\n"
@@ -110,10 +110,6 @@ msgstr "গুরুত্ব"
 msgid "Company"
 msgstr "কোম্পানি"
 
-#: program/localization/bn_BD/labels.inc:reply-to
-msgid "reply-to"
-msgstr "প্রতি উত্তর"
-
 #: program/localization/bn_BD/labels.inc:mailboxlist
 #: program/localization/bn_BD/labels.inc:folders
 msgid "Folders"
@@ -122,11 +118,15 @@ msgstr "ফোল্ডার/মেইলবক্স"
 #: program/localization/bn_BD/labels.inc:messagesfromto
 msgid "Messages $from to $to of $count"
 msgstr "$count মেইলের মধ্যে, $from হতে $to "
-"দেখানো হচ্ছে "
+"দেখানো হচ্ছে"
 
 #: program/localization/bn_BD/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "$nr #মেইল/চিঠি , $count এর মধ্যে"
+
+#: program/localization/bn_BD/labels.inc:copy
+msgid "Copy"
+msgstr "অনুলিপির ঠিকানা"
 
 #: program/localization/bn_BD/labels.inc:moveto
 msgid "Move to..."
@@ -143,18 +143,6 @@ msgstr "ফাইলের নাম"
 #: program/localization/bn_BD/labels.inc:filesize
 msgid "File size"
 msgstr "ফাইলের সাইজ"
-
-#: program/localization/bn_BD/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "HTML এ দেখি"
-
-#: program/localization/bn_BD/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "HTML মেইল/চিঠি"
-
-#: program/localization/bn_BD/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "তারিখ ভালো করে দেখা যাবে"
 
 #: program/localization/bn_BD/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -316,7 +304,7 @@ msgstr "আজকে"
 #: program/localization/bn_BD/labels.inc:checkmail
 msgid "Check for new messages"
 msgstr "দেখুন নতুন কোনো মেইল/চিঠি "
-"এলো কিনা "
+"এলো কিনা"
 
 #: program/localization/bn_BD/labels.inc:writenewmessage
 msgid "Create a new message"
@@ -334,7 +322,7 @@ msgstr "প্রেরক ও এই চিঠির অন্যান্য "
 
 #: program/localization/bn_BD/labels.inc:forwardmessage
 msgid "Forward the message"
-msgstr "মেইল/চিঠি এগিয়ে দিন "
+msgstr "মেইল/চিঠি এগিয়ে দিন"
 
 #: program/localization/bn_BD/labels.inc:deletemessage
 msgid "Delete message"
@@ -352,34 +340,17 @@ msgstr "মেইল/চিঠি প্রিন্ট করুন"
 msgid "Show previous message"
 msgstr "আগের মেইল/চিঠিটি দেখুন"
 
-#: program/localization/bn_BD/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "আগের মেইল/চিঠি গুলো দেখুন"
-
 #: program/localization/bn_BD/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "প্রথম মেইল/চিঠিটি দেখুন"
-
-#: program/localization/bn_BD/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "প্রথম মেইল/চিঠি গুলো দেখুন"
 
 #: program/localization/bn_BD/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "পরের মেইল/চিঠিটি দেখুন"
 
-#: program/localization/bn_BD/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "পরের মেইল/চিঠিগুলি দেখুন"
-
 #: program/localization/bn_BD/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "শেষ মেইল/চিঠিটি দেখুন"
-
-#: program/localization/bn_BD/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "শেষের দিকের মেইল/চিঠিগুলি "
-"দেখুন"
 
 #: program/localization/bn_BD/labels.inc:backtolist
 msgid "Back to message list"
@@ -418,6 +389,7 @@ msgid "All"
 msgstr "সবগুলো"
 
 #: program/localization/bn_BD/labels.inc:none
+#: program/localization/bn_BD/labels.inc:nonesort
 msgid "None"
 msgstr "কোনোটাই না"
 
@@ -445,10 +417,6 @@ msgstr "টাইটকরুন"
 msgid "Empty"
 msgstr "খালিকরুন"
 
-#: program/localization/bn_BD/labels.inc:purge
-msgid "purge"
-msgstr "Purge"
-
 #: program/localization/bn_BD/labels.inc:quota
 msgid "Disk usage"
 msgstr "ডিস্ক এ খালি যায়গা"
@@ -474,15 +442,15 @@ msgid "Open in new window"
 msgstr "নতুন উইন্ডো তে দেখুন"
 
 #: program/localization/bn_BD/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "নতুন মেইল/চিঠি লিখুন"
 
 #: program/localization/bn_BD/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "খসড়া হিসাবে জমা করে রাখুন"
 
 #: program/localization/bn_BD/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "এখুনি মেইল / চিঠিটি পাঠান"
 
 #: program/localization/bn_BD/labels.inc:addattachment
@@ -783,6 +751,18 @@ msgstr "নতুন জিনিষ"
 #: program/localization/bn_BD/labels.inc:edititem
 msgid "Edit item"
 msgstr "জিনিষ বদলান"
+
+#: program/localization/bn_BD/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML এ দেখি"
+
+#: program/localization/bn_BD/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML মেইল/চিঠি"
+
+#: program/localization/bn_BD/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "তারিখ ভালো করে দেখা যাবে"
 
 #: program/localization/bn_BD/labels.inc:setdefault
 msgid "Set default"

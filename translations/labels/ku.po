@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ku\n"
@@ -110,10 +110,6 @@ msgstr "Girîngî"
 msgid "Company"
 msgstr "Sazî"
 
-#: program/localization/ku/labels.inc:reply-to
-msgid "reply-to"
-msgstr "Navnîşanên Standyar"
-
 #: program/localization/ku/labels.inc:mailboxlist
 #: program/localization/ku/labels.inc:folders
 msgid "Folders"
@@ -126,6 +122,10 @@ msgstr "Peyam $count ên di navbera $from - $to"
 #: program/localization/ku/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "$nr a peyama $count"
+
+#: program/localization/ku/labels.inc:copy
+msgid "Copy"
+msgstr "Kopiya Karbon"
 
 #: program/localization/ku/labels.inc:moveto
 msgid "Move to..."
@@ -142,18 +142,6 @@ msgstr "Navê pelê"
 #: program/localization/ku/labels.inc:filesize
 msgid "File size"
 msgstr "Mezinahiya pelê"
-
-#: program/localization/ku/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "Wekî HTML nîşan bide"
-
-#: program/localization/ku/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "Peyama HTML"
-
-#: program/localization/ku/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "Kurtenivîsa Dîrokê"
 
 #: program/localization/ku/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -255,33 +243,17 @@ msgstr "Vê peyamê çap bike"
 msgid "Show previous message"
 msgstr "Peyama berê nîşan bide"
 
-#: program/localization/ku/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Peyamên berê nîşan bide"
-
 #: program/localization/ku/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Peyama yekemîn nîşan bide"
-
-#: program/localization/ku/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "Peyamên yekemîn nîşan bide"
 
 #: program/localization/ku/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Peyama di rêzê de nîşan bide"
 
-#: program/localization/ku/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Peyamên di rêzê de nîşan bide"
-
 #: program/localization/ku/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Peyama dawî nîşan bide"
-
-#: program/localization/ku/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "Peyamên dawî nîşan bide"
 
 #: program/localization/ku/labels.inc:backtolist
 msgid "Back to message list"
@@ -312,6 +284,7 @@ msgid "All"
 msgstr "Hemû"
 
 #: program/localization/ku/labels.inc:none
+#: program/localization/ku/labels.inc:nonesort
 msgid "None"
 msgstr "Ne yek jî"
 
@@ -326,10 +299,6 @@ msgstr "Kompakt"
 #: program/localization/ku/labels.inc:empty
 msgid "Empty"
 msgstr "Vala Bike"
-
-#: program/localization/ku/labels.inc:purge
-msgid "purge"
-msgstr "Jê bibe"
 
 #: program/localization/ku/labels.inc:quota
 msgid "Disk usage"
@@ -352,15 +321,15 @@ msgid "Reset search"
 msgstr "Lêgerînê reset bike"
 
 #: program/localization/ku/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Peyamekê biafirîne"
 
 #: program/localization/ku/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Hilîne"
 
 #: program/localization/ku/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Peyamê niha bişîne"
 
 #: program/localization/ku/labels.inc:addattachment
@@ -595,6 +564,18 @@ msgstr "Parçeya nû"
 #: program/localization/ku/labels.inc:edititem
 msgid "Edit item"
 msgstr "Parçeyê serast bike"
+
+#: program/localization/ku/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Wekî HTML nîşan bide"
+
+#: program/localization/ku/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Peyama HTML"
+
+#: program/localization/ku/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Kurtenivîsa Dîrokê"
 
 #: program/localization/ku/labels.inc:setdefault
 msgid "Set default"

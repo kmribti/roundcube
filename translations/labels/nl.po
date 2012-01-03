@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: nl_NL\n"
@@ -40,7 +40,7 @@ msgstr "Uitloggen"
 
 #: program/localization/nl_NL/labels.inc:mail
 msgid "Mail"
-msgstr "E-Mail"
+msgstr "E-mail"
 
 #: program/localization/nl_NL/labels.inc:settings
 msgid "Settings"
@@ -531,7 +531,7 @@ msgstr "Sorteervolgorde"
 
 #: program/localization/nl_NL/labels.inc:listmode
 msgid "List view mode"
-msgstr "Lijstweergave mode"
+msgstr "Weergavemodus"
 
 #: program/localization/nl_NL/labels.inc:folderactions
 msgid "Folder actions..."
@@ -582,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Opslaan (.eml)"
 
 #: program/localization/nl_NL/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Nieuw bericht aanmaken"
 
 #: program/localization/nl_NL/labels.inc:editasnew
@@ -590,11 +590,11 @@ msgid "Edit as new"
 msgstr "Als nieuw bewerken"
 
 #: program/localization/nl_NL/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Bewaar als concept"
 
 #: program/localization/nl_NL/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Verstuur het bericht nu"
 
 #: program/localization/nl_NL/labels.inc:addattachment
@@ -615,7 +615,7 @@ msgstr "Ontvangstbevestiging"
 
 #: program/localization/nl_NL/labels.inc:dsn
 msgid "Delivery status notification"
-msgstr "Afleverings status notificatie (DSN)"
+msgstr "Afleveringsbericht (DSN)"
 
 #: program/localization/nl_NL/labels.inc:mailreplyintro
 msgid "On $date, $sender wrote:"
@@ -643,7 +643,7 @@ msgstr "Wijzig terug in"
 
 #: program/localization/nl_NL/labels.inc:attachments
 msgid "Attachments"
-msgstr "Bijlages"
+msgstr "Bijlagen"
 
 #: program/localization/nl_NL/labels.inc:upload
 msgid "Upload"
@@ -801,7 +801,7 @@ msgstr "Meisjesnaam"
 
 #: program/localization/nl_NL/labels.inc:email
 msgid "Email"
-msgstr "E-Mail"
+msgstr "E-mail"
 
 #: program/localization/nl_NL/labels.inc:phone
 msgid "Phone"
@@ -1055,7 +1055,7 @@ msgstr "Groepen"
 
 #: program/localization/nl_NL/labels.inc:personaladrbook
 msgid "Personal Addresses"
-msgstr "Persoonlijk Adresboek"
+msgstr "Persoonlijk adresboek"
 
 #: program/localization/nl_NL/labels.inc:searchsave
 msgid "Save search"
@@ -1101,6 +1101,10 @@ msgstr "Klaar"
 msgid "Settings for"
 msgstr "Instellingen voor"
 
+#: program/localization/nl_NL/labels.inc:about
+msgid "About"
+msgstr "Over"
+
 #: program/localization/nl_NL/labels.inc:preferences
 msgid "Preferences"
 msgstr "Instellingen"
@@ -1143,15 +1147,15 @@ msgstr "Standaard karakterset"
 
 #: program/localization/nl_NL/labels.inc:htmlmessage
 msgid "HTML Message"
-msgstr "HTML-Bericht"
+msgstr "HTML-bericht"
 
 #: program/localization/nl_NL/labels.inc:dateformat
 msgid "Date format"
-msgstr "Datum formaat"
+msgstr "Datumnotatie"
 
 #: program/localization/nl_NL/labels.inc:timeformat
 msgid "Time format"
-msgstr "Tijd formaat"
+msgstr "Tijdweergave"
 
 #: program/localization/nl_NL/labels.inc:prettydate
 msgid "Pretty dates"
@@ -1187,15 +1191,15 @@ msgstr "Zomertijd"
 
 #: program/localization/nl_NL/labels.inc:htmleditor
 msgid "Compose HTML messages"
-msgstr "Maak HTML berichten aan"
+msgstr "Stel berichten op in HTML-opmaak"
 
 #: program/localization/nl_NL/labels.inc:htmlonreply
 msgid "on reply to HTML message only"
-msgstr "alleen bij het beantwoorden van HTML berichten"
+msgstr "alleen bij beantwoorden van HTML-berichten"
 
 #: program/localization/nl_NL/labels.inc:htmlsignature
 msgid "HTML signature"
-msgstr "HTML onderschrift"
+msgstr "HTML-ondertekening"
 
 #: program/localization/nl_NL/labels.inc:previewpane
 msgid "Show preview pane"
@@ -1203,7 +1207,7 @@ msgstr "Toon voorbeeldvenster"
 
 #: program/localization/nl_NL/labels.inc:skin
 msgid "Interface skin"
-msgstr "Opmaakprofiel"
+msgstr "Interfacestijl"
 
 #: program/localization/nl_NL/labels.inc:logoutclear
 msgid "Clear Trash on logout"
@@ -1257,7 +1261,7 @@ msgstr "Bericht na verwijderen als gelezen markeren"
 
 #: program/localization/nl_NL/labels.inc:flagfordeletion
 msgid "Flag the message for deletion instead of delete"
-msgstr "Bericht niet verwijderen maar als verwijderd markeren "
+msgstr "Bericht niet verwijderen maar als verwijderd markeren"
 
 #: program/localization/nl_NL/labels.inc:skipdeleted
 msgid "Do not show deleted messages"
@@ -1305,7 +1309,7 @@ msgstr "onmiddellijk"
 
 #: program/localization/nl_NL/labels.inc:messagesdisplaying
 msgid "Displaying Messages"
-msgstr "Berichten weergave"
+msgstr "Berichtenweergave"
 
 #: program/localization/nl_NL/labels.inc:messagescomposition
 msgid "Composing Messages"
@@ -1329,7 +1333,7 @@ msgstr "Volledig RFC 2047 (andere)"
 
 #: program/localization/nl_NL/labels.inc:force7bit
 msgid "Use MIME encoding for 8-bit characters"
-msgstr "Gebruik MIME codering voor 8-bit karakters"
+msgstr "Gebruik MIME-codering voor 8-bit karakters"
 
 #: program/localization/nl_NL/labels.inc:advancedoptions
 msgid "Advanced options"
@@ -1347,6 +1351,10 @@ msgstr "Controleer alle mappen op nieuwe berichten"
 msgid "After message delete/move display the next message"
 msgstr "Na verplaatsen/verwijderen het volgende bericht tonen"
 
+#: program/localization/nl_NL/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "Standaardlettertype voor HTML-berichten"
+
 #: program/localization/nl_NL/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Hoofdopties"
@@ -1363,17 +1371,13 @@ msgstr "Onderhoud"
 msgid "New Message"
 msgstr "Nieuw bericht"
 
-#: program/localization/nl_NL/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Lijstopties"
-
 #: program/localization/nl_NL/labels.inc:signatureoptions
 msgid "Signature Options"
 msgstr "Instellingen voor ondertekening"
 
 #: program/localization/nl_NL/labels.inc:whenreplying
 msgid "When replying"
-msgstr "bij antwoorden"
+msgstr "Bij antwoorden"
 
 #: program/localization/nl_NL/labels.inc:replytopposting
 msgid "start new message above original"
@@ -1385,7 +1389,7 @@ msgstr "begin bericht onder het origineel"
 
 #: program/localization/nl_NL/labels.inc:replyremovesignature
 msgid "When replying remove original signature from message"
-msgstr "Verwijder ondertekening uit het origneel bij het antwoorden"
+msgstr "Verwijder oorspronkelijke ondertekening van bericht bij beantwoorden"
 
 #: program/localization/nl_NL/labels.inc:autoaddsignature
 msgid "Automatically add signature"
@@ -1417,7 +1421,7 @@ msgstr "Ondertekening invoegen"
 
 #: program/localization/nl_NL/labels.inc:previewpanemarkread
 msgid "Mark previewed messages as read"
-msgstr "Markeer voorbeeld bericht als gelezen"
+msgstr "Markeer voorbeeldberichten als gelezen"
 
 #: program/localization/nl_NL/labels.inc:afternseconds
 msgid "after $n seconds"
@@ -1429,11 +1433,11 @@ msgstr "Vraag altijd een ontvangstbevestiging"
 
 #: program/localization/nl_NL/labels.inc:reqdsn
 msgid "Always request a delivery status notification"
-msgstr "Vraag altijd een afleverings status notificatie (DSN)"
+msgstr "Vraag altijd om een afleveringsbericht"
 
 #: program/localization/nl_NL/labels.inc:replysamefolder
 msgid "Place replies in the folder of the message being replied to"
-msgstr "Plaats antwoorden in de folder van het beantwoorde bericht"
+msgstr "Bewaar reacties in de map van het beantwoorde bericht"
 
 #: program/localization/nl_NL/labels.inc:defaultaddressbook
 msgid "Add new contacts to the selected addressbook"
@@ -1441,11 +1445,11 @@ msgstr "Voeg nieuw contactpersoon toe aan geselecteerd adresboek"
 
 #: program/localization/nl_NL/labels.inc:autocompletesingle
 msgid "Skip alternative email addresses in autocompletion"
-msgstr "Sla alternatieve E-mail adressen over bij automatisch aanvullen"
+msgstr "Sla alternatieve e-mailadressen over bij automatisch aanvullen"
 
 #: program/localization/nl_NL/labels.inc:spellcheckbeforesend
 msgid "Check spelling before sending a message"
-msgstr "Controleer slepping voordat het bericht wordt verzonden"
+msgstr "Controleer spelling voor het versturen van een bericht"
 
 #: program/localization/nl_NL/labels.inc:spellcheckoptions
 msgid "Spellcheck Options"
@@ -1509,7 +1513,7 @@ msgstr "Map eigenschappen"
 
 #: program/localization/nl_NL/labels.inc:parentfolder
 msgid "Parent folder"
-msgstr "Hoofd folder"
+msgstr "Bovenliggende map"
 
 #: program/localization/nl_NL/labels.inc:location
 msgid "Location"
@@ -1521,7 +1525,7 @@ msgstr "Informatie"
 
 #: program/localization/nl_NL/labels.inc:getfoldersize
 msgid "Click to get folder size"
-msgstr "Klik hier voor de map grootte"
+msgstr "Klik om de omvang van de map te berekenen"
 
 #: program/localization/nl_NL/labels.inc:changesubscription
 msgid "Click to change subscription"
@@ -1529,7 +1533,7 @@ msgstr "Klik voor het wijzigen van de inschrijving"
 
 #: program/localization/nl_NL/labels.inc:foldertype
 msgid "Folder Type"
-msgstr "Mapgrootte"
+msgstr "Maptype"
 
 #: program/localization/nl_NL/labels.inc:personalfolder
 msgid "Private Folder"
@@ -1559,6 +1563,26 @@ msgstr "Sorteer aflopend"
 msgid "Undo"
 msgstr "Ongedaan maken"
 
+#: program/localization/nl_NL/labels.inc:plugin
+msgid "Plugin"
+msgstr "Invoegtoepassing"
+
+#: program/localization/nl_NL/labels.inc:version
+msgid "Version"
+msgstr "Versie"
+
+#: program/localization/nl_NL/labels.inc:source
+msgid "Source"
+msgstr "Broncode"
+
+#: program/localization/nl_NL/labels.inc:license
+msgid "License"
+msgstr "Licentie"
+
+#: program/localization/nl_NL/labels.inc:support
+msgid "Get support"
+msgstr "Ondersteuning verkrijgen"
+
 #: program/localization/nl_NL/labels.inc:B
 msgid "B"
 msgstr "B"
@@ -1585,11 +1609,11 @@ msgstr "Engels"
 
 #: program/localization/nl_NL/labels.inc:westerneuropean
 msgid "Western European"
-msgstr "West-Europeaans"
+msgstr "West-Europees"
 
 #: program/localization/nl_NL/labels.inc:easterneuropean
 msgid "Eastern European"
-msgstr "Oost-Europeaans"
+msgstr "Oost-Europees"
 
 #: program/localization/nl_NL/labels.inc:southeasterneuropean
 msgid "South-Eastern European"

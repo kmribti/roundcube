@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: id_ID\n"
@@ -340,6 +340,14 @@ msgstr "Balas ke semua"
 msgid "Reply list"
 msgstr "Balas ke milis"
 
+#: program/localization/id_ID/labels.inc:forwardinline
+msgid "Forward inline"
+msgstr "Teruskan bersama surat"
+
+#: program/localization/id_ID/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "Teruskan sebagai sisipan"
+
 #: program/localization/id_ID/labels.inc:forwardmessage
 msgid "Forward the message"
 msgstr "Teruskan pesan"
@@ -400,9 +408,9 @@ msgstr "Sudah ditandai"
 msgid "As unflagged"
 msgstr "Belum ditandai"
 
-#: program/localization/id_ID/labels.inc:messageactions
-msgid "messageactions"
-msgstr "Tindakan lain..."
+#: program/localization/id_ID/labels.inc:moreactions
+msgid "More actions..."
+msgstr "Tindakan lain.."
 
 #: program/localization/id_ID/labels.inc:select
 msgid "Select"
@@ -574,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Unduh (.eml)"
 
 #: program/localization/id_ID/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Tulis sebuah pesan"
 
 #: program/localization/id_ID/labels.inc:editasnew
@@ -582,11 +590,11 @@ msgid "Edit as new"
 msgstr "Sunting sebagai pesan baru"
 
 #: program/localization/id_ID/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Simpan konsep surat  ini"
 
 #: program/localization/id_ID/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Kirim pesan sekarang"
 
 #: program/localization/id_ID/labels.inc:addattachment
@@ -608,6 +616,14 @@ msgstr "Tanda terima kembali"
 #: program/localization/id_ID/labels.inc:dsn
 msgid "Delivery status notification"
 msgstr "Pemberitahuan status terkirim"
+
+#: program/localization/id_ID/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "Pada $date, $sender menulis:"
+
+#: program/localization/id_ID/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "Pesan Sebenarnya"
 
 #: program/localization/id_ID/labels.inc:editidents
 msgid "Edit identities"
@@ -632,6 +648,10 @@ msgstr "Sisipan"
 #: program/localization/id_ID/labels.inc:upload
 msgid "Upload"
 msgstr "Unggah"
+
+#: program/localization/id_ID/labels.inc:uploadprogress
+msgid "$percent ($current from $total)"
+msgstr "$percent ($current dari $total)"
 
 #: program/localization/id_ID/labels.inc:close
 msgid "Close"
@@ -672,6 +692,10 @@ msgstr "Tampilkan gambar"
 #: program/localization/id_ID/labels.inc:alwaysshow
 msgid "Always show images from $sender"
 msgstr "Selalu tampilkan gambar dari $sender"
+
+#: program/localization/id_ID/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "Ini adalah konsep surat."
 
 #: program/localization/id_ID/labels.inc:htmltoggle
 msgid "HTML"
@@ -848,6 +872,23 @@ msgstr "Asisten"
 msgid "Spouse"
 msgstr "Suami/Istri"
 
+#: program/localization/id_ID/labels.inc:allfields
+msgid "All fields"
+msgstr "Semua isian"
+
+#: program/localization/id_ID/labels.inc:search
+msgid "Search"
+msgstr "Cari"
+
+#: program/localization/id_ID/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "Pencarian Lebih Lanjut"
+
+#: program/localization/id_ID/labels.inc:other
+#: program/localization/id_ID/labels.inc:typeother
+msgid "Other"
+msgstr "Lainnya"
+
 #: program/localization/id_ID/labels.inc:typehome
 msgid "Home"
 msgstr "Rumah"
@@ -855,10 +896,6 @@ msgstr "Rumah"
 #: program/localization/id_ID/labels.inc:typework
 msgid "Work"
 msgstr "Kantor"
-
-#: program/localization/id_ID/labels.inc:typeother
-msgid "Other"
-msgstr "Lainnya"
 
 #: program/localization/id_ID/labels.inc:typemobile
 msgid "Mobile"
@@ -887,6 +924,18 @@ msgstr "Pejer"
 #: program/localization/id_ID/labels.inc:typevideo
 msgid "Video"
 msgstr "Video"
+
+#: program/localization/id_ID/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "Laman Web"
+
+#: program/localization/id_ID/labels.inc:typeblog
+msgid "Blog"
+msgstr "Blog"
+
+#: program/localization/id_ID/labels.inc:typeprofile
+msgid "Profile"
+msgstr "Profil"
 
 #: program/localization/id_ID/labels.inc:addfield
 msgid "Add field..."
@@ -972,9 +1021,13 @@ msgstr "Ekspor kontak dalam format vCard"
 msgid "Create new contact group"
 msgstr "Buat Grup baru"
 
-#: program/localization/id_ID/labels.inc:groupactions
-msgid "groupactions"
-msgstr "Aksi untuk grup kontak"
+#: program/localization/id_ID/labels.inc:grouprename
+msgid "Rename group"
+msgstr "Ganti nama grup"
+
+#: program/localization/id_ID/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "Hapus grup"
 
 #: program/localization/id_ID/labels.inc:previouspage
 msgid "Show previous page"
@@ -1004,6 +1057,14 @@ msgstr "Kelompok"
 msgid "Personal Addresses"
 msgstr "Alamat pribadi"
 
+#: program/localization/id_ID/labels.inc:searchsave
+msgid "Save search"
+msgstr "Simpan pencarian"
+
+#: program/localization/id_ID/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "Hapus pencarian"
+
 #: program/localization/id_ID/labels.inc:import
 msgid "Import"
 msgstr "Impor"
@@ -1015,6 +1076,10 @@ msgstr "Impor kontak"
 #: program/localization/id_ID/labels.inc:importfromfile
 msgid "Import from file:"
 msgstr "Impor dari berkas:"
+
+#: program/localization/id_ID/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "Tambahkan kontak baru ke buku alamat:"
 
 #: program/localization/id_ID/labels.inc:importreplace
 msgid "Replace the entire address book"
@@ -1035,6 +1100,10 @@ msgstr "Selesai"
 #: program/localization/id_ID/labels.inc:settingsfor
 msgid "Settings for"
 msgstr "Pengaturan untuk"
+
+#: program/localization/id_ID/labels.inc:about
+msgid "About"
+msgstr "Informasi program"
 
 #: program/localization/id_ID/labels.inc:preferences
 msgid "Preferences"
@@ -1079,6 +1148,14 @@ msgstr "Default Character"
 #: program/localization/id_ID/labels.inc:htmlmessage
 msgid "HTML Message"
 msgstr "Pesan HTML"
+
+#: program/localization/id_ID/labels.inc:dateformat
+msgid "Date format"
+msgstr "Format tanggal"
+
+#: program/localization/id_ID/labels.inc:timeformat
+msgid "Time format"
+msgstr "Format waktu"
 
 #: program/localization/id_ID/labels.inc:prettydate
 msgid "Pretty dates"
@@ -1272,6 +1349,10 @@ msgstr "Periksa semua map untuk pesan baru"
 msgid "After message delete/move display the next message"
 msgstr "Setelah menghapus/memindahkan, tampilkan pesan berikutnya"
 
+#: program/localization/id_ID/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "Huruf standar untuk pesan HTML"
+
 #: program/localization/id_ID/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Pilihan Utama"
@@ -1287,10 +1368,6 @@ msgstr "Perbaikan"
 #: program/localization/id_ID/labels.inc:newmessage
 msgid "New Message"
 msgstr "Pesan baru"
-
-#: program/localization/id_ID/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Daftar Pilihan"
 
 #: program/localization/id_ID/labels.inc:signatureoptions
 msgid "Signature Options"
@@ -1342,7 +1419,7 @@ msgstr "Isi tanda tangan"
 
 #: program/localization/id_ID/labels.inc:previewpanemarkread
 msgid "Mark previewed messages as read"
-msgstr "Tandai pesan yang sudah dilihat "
+msgstr "Tandai pesan yang sudah dilihat"
 
 #: program/localization/id_ID/labels.inc:afternseconds
 msgid "after $n seconds"
@@ -1359,6 +1436,38 @@ msgstr "Selalu meminta pemberitahuan status terkirim"
 #: program/localization/id_ID/labels.inc:replysamefolder
 msgid "Place replies in the folder of the message being replied to"
 msgstr "Taruh balasan di folder yang sama dengan pesan yang dibalas"
+
+#: program/localization/id_ID/labels.inc:defaultaddressbook
+msgid "Add new contacts to the selected addressbook"
+msgstr "Tambahkan kontak baru ke buku alamat terpilih"
+
+#: program/localization/id_ID/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "Lewatkan alamat email alternatif pada pelengkapan otomatis"
+
+#: program/localization/id_ID/labels.inc:spellcheckbeforesend
+msgid "Check spelling before sending a message"
+msgstr "Periksa ejaan sebelum mengirimkan pesan"
+
+#: program/localization/id_ID/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "Pilihan Ejaan"
+
+#: program/localization/id_ID/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "Abaikan kata-kata yang bersimbol"
+
+#: program/localization/id_ID/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "Abaikan kata-kata yang bernomor"
+
+#: program/localization/id_ID/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "Abaikan kata-kata dengan huruf besar semua"
+
+#: program/localization/id_ID/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "Tambahkan ke kamus"
 
 #: program/localization/id_ID/labels.inc:folder
 msgid "Folder"
@@ -1447,6 +1556,30 @@ msgstr "Urut menaik"
 #: program/localization/id_ID/labels.inc:sortdesc
 msgid "Sort descending"
 msgstr "Urut menurun"
+
+#: program/localization/id_ID/labels.inc:undo
+msgid "Undo"
+msgstr "Batalkan"
+
+#: program/localization/id_ID/labels.inc:plugin
+msgid "Plugin"
+msgstr "Pengaya"
+
+#: program/localization/id_ID/labels.inc:version
+msgid "Version"
+msgstr "Versi"
+
+#: program/localization/id_ID/labels.inc:source
+msgid "Source"
+msgstr "Sumber"
+
+#: program/localization/id_ID/labels.inc:license
+msgid "License"
+msgstr "Lisensi"
+
+#: program/localization/id_ID/labels.inc:support
+msgid "Get support"
+msgstr "Dukungan"
 
 #: program/localization/id_ID/labels.inc:B
 msgid "B"

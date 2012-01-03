@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: cs_CZ\n"
+"Language: cz\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -44,7 +44,7 @@ msgstr "E-mail"
 
 #: program/localization/cs_CZ/labels.inc:settings
 msgid "Settings"
-msgstr "Osobní nastavení"
+msgstr "Nastavení"
 
 #: program/localization/cs_CZ/labels.inc:addressbook
 msgid "Address Book"
@@ -68,7 +68,7 @@ msgstr "Koš"
 
 #: program/localization/cs_CZ/labels.inc:junk
 msgid "Junk"
-msgstr "Nevyžádaná pošta"
+msgstr "Spam"
 
 #: program/localization/cs_CZ/labels.inc:subject
 msgid "Subject"
@@ -93,6 +93,10 @@ msgstr "Skrytá kopie"
 #: program/localization/cs_CZ/labels.inc:replyto
 msgid "Reply-To"
 msgstr "Odpověď na"
+
+#: program/localization/cs_CZ/labels.inc:followupto
+msgid "Followup-To"
+msgstr "Následuje-po"
 
 #: program/localization/cs_CZ/labels.inc:date
 msgid "Date"
@@ -578,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Stáhnout (.eml)"
 
 #: program/localization/cs_CZ/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Napsat zprávu"
 
 #: program/localization/cs_CZ/labels.inc:editasnew
@@ -586,11 +590,11 @@ msgid "Edit as new"
 msgstr "Upravit jako novou"
 
 #: program/localization/cs_CZ/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Uložit do rozepsaných"
 
 #: program/localization/cs_CZ/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Odeslat zprávu nyní"
 
 #: program/localization/cs_CZ/labels.inc:addattachment
@@ -689,6 +693,10 @@ msgstr "Zobrazit obrázky"
 msgid "Always show images from $sender"
 msgstr "Vždy ukazovat obrázky od $sender"
 
+#: program/localization/cs_CZ/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "Toto je šablona zprávy."
+
 #: program/localization/cs_CZ/labels.inc:htmltoggle
 msgid "HTML"
 msgstr "HTML"
@@ -711,19 +719,19 @@ msgstr "Maximální povolená velikost souboru je $size"
 
 #: program/localization/cs_CZ/labels.inc:addcc
 msgid "Add Cc"
-msgstr "Přidat pole \"Kopie\""
+msgstr "Přidat pole \"Kopie"
 
 #: program/localization/cs_CZ/labels.inc:addbcc
 msgid "Add Bcc"
-msgstr "Přidat pole \"Skrytá kopie\""
+msgstr "Přidat pole \"Skrytá kopie"
 
 #: program/localization/cs_CZ/labels.inc:addreplyto
 msgid "Add Reply-To"
-msgstr "Přidat pole \"Odpověď\""
+msgstr "Přidat pole \"Odpověď"
 
 #: program/localization/cs_CZ/labels.inc:addfollowupto
 msgid "Add Followup-To"
-msgstr "Přidat pole \"Followup-To\""
+msgstr "Přidat pole \"Followup-To"
 
 #: program/localization/cs_CZ/labels.inc:mdnrequest
 msgid "The sender of this message has asked to be notified when you read this "
@@ -1091,6 +1099,10 @@ msgstr "Hotovo"
 msgid "Settings for"
 msgstr "Nastavení pro"
 
+#: program/localization/cs_CZ/labels.inc:about
+msgid "About"
+msgstr "O programu"
+
 #: program/localization/cs_CZ/labels.inc:preferences
 msgid "Preferences"
 msgstr "Vlastnosti"
@@ -1351,10 +1363,6 @@ msgstr "Údržba"
 msgid "New Message"
 msgstr "Nová zpráva"
 
-#: program/localization/cs_CZ/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Nastavení stránkování"
-
 #: program/localization/cs_CZ/labels.inc:signatureoptions
 msgid "Signature Options"
 msgstr "Nastavení podpisu"
@@ -1426,6 +1434,10 @@ msgstr "Ukládat odpovědi ve stejné složce jako je zodpovězená zpráva"
 #: program/localization/cs_CZ/labels.inc:defaultaddressbook
 msgid "Add new contacts to the selected addressbook"
 msgstr "Přidávat nové kontakty do seznamu kontaktů"
+
+#: program/localization/cs_CZ/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "Při doplňování adres přeskočit alternativní email."
 
 #: program/localization/cs_CZ/labels.inc:spellcheckbeforesend
 msgid "Check spelling before sending a message"
@@ -1542,6 +1554,26 @@ msgstr "Seřadit sestupně"
 #: program/localization/cs_CZ/labels.inc:undo
 msgid "Undo"
 msgstr "Vrátit zpět"
+
+#: program/localization/cs_CZ/labels.inc:plugin
+msgid "Plugin"
+msgstr "Zásuvný modul"
+
+#: program/localization/cs_CZ/labels.inc:version
+msgid "Version"
+msgstr "Verze"
+
+#: program/localization/cs_CZ/labels.inc:source
+msgid "Source"
+msgstr "Zdroj"
+
+#: program/localization/cs_CZ/labels.inc:license
+msgid "License"
+msgstr "Licence"
+
+#: program/localization/cs_CZ/labels.inc:support
+msgid "Get support"
+msgstr "Podpora"
 
 #: program/localization/cs_CZ/labels.inc:B
 msgid "B"

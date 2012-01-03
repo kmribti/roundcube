@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: nn_NO\n"
@@ -206,10 +206,6 @@ msgstr "Meldinga er ikkje sendt. Vil du kasta ho?"
 #: program/localization/nn_NO/messages.inc:noldapserver
 msgid "Please select an ldap server to search."
 msgstr "Vel LDAP-tenar å søkja i"
-
-#: program/localization/nn_NO/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Fann ingen kontaktar"
 
 #: program/localization/nn_NO/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."

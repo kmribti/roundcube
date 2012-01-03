@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: si_LK\n"
+"Language: si\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -110,10 +110,6 @@ msgstr "ප්රමුඛතාව"
 msgid "Company"
 msgstr "සංවිධානය"
 
-#: program/localization/si_LK/labels.inc:reply-to
-msgid "reply-to"
-msgstr "පිළිතුරු සඳහා"
-
 #: program/localization/si_LK/labels.inc:mailboxlist
 #: program/localization/si_LK/labels.inc:folders
 msgid "Folders"
@@ -125,7 +121,11 @@ msgstr "$from ගෙන් $to පනිවුඩ $count"
 
 #: program/localization/si_LK/labels.inc:messagenrof
 msgid "Message $nr of $count"
-msgstr "පනිවුඩය $count න් $nr "
+msgstr "පනිවුඩය $count න් $nr"
+
+#: program/localization/si_LK/labels.inc:copy
+msgid "Copy"
+msgstr "පිටපත් කිරීම්"
 
 #: program/localization/si_LK/labels.inc:moveto
 msgid "Move to..."
@@ -142,18 +142,6 @@ msgstr "ගොනුවේ නම"
 #: program/localization/si_LK/labels.inc:filesize
 msgid "File size"
 msgstr "ගොනුවේ ප්රමාණය"
-
-#: program/localization/si_LK/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "HTML විදහා පෙන්වීම"
-
-#: program/localization/si_LK/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "HTML පනිවුඩය"
-
-#: program/localization/si_LK/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "සුරුබුහුටි දින"
 
 #: program/localization/si_LK/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -255,36 +243,17 @@ msgstr "පනිවුඩය මුද්රනය කරන්න"
 msgid "Show previous message"
 msgstr "කලින් පනිවුඩය පෙන්නන්න"
 
-#: program/localization/si_LK/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "කලින් පනිවුඩ කට්ටලය "
-"පෙන්නන්න"
-
 #: program/localization/si_LK/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "පළමුවන පනිවුඩය පෙන්නන්න"
-
-#: program/localization/si_LK/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "පළමුවන පනිවුඩ කට්ටලය "
-"පෙන්නන්න"
 
 #: program/localization/si_LK/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "මීළඟ පනිවුඩය පෙන්නන්න"
 
-#: program/localization/si_LK/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "මීළඟ පනිවුඩ කට්ටලය පෙන්නන්න"
-
 #: program/localization/si_LK/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "අවසාන පනිවුඩය පෙන්නන්න"
-
-#: program/localization/si_LK/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "අවසාන පනිවුඩ කට්ටලය "
-"පෙන්නන්න"
 
 #: program/localization/si_LK/labels.inc:backtolist
 msgid "Back to message list"
@@ -315,6 +284,7 @@ msgid "All"
 msgstr "සියලු"
 
 #: program/localization/si_LK/labels.inc:none
+#: program/localization/si_LK/labels.inc:nonesort
 msgid "None"
 msgstr "තෝරානොගත්"
 
@@ -329,10 +299,6 @@ msgstr "සංයුක්ත"
 #: program/localization/si_LK/labels.inc:empty
 msgid "Empty"
 msgstr "රික්ත"
-
-#: program/localization/si_LK/labels.inc:purge
-msgid "purge"
-msgstr "විරේචන"
 
 #: program/localization/si_LK/labels.inc:quota
 msgid "Disk usage"
@@ -355,15 +321,15 @@ msgid "Reset search"
 msgstr "සෙවුම යලි පිහිටවීම"
 
 #: program/localization/si_LK/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "පනිවුඩයක් සෑදීම"
 
 #: program/localization/si_LK/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "කටු සටහනේ තැන්පත කරන්න"
 
 #: program/localization/si_LK/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "පනිවුඩය දැන් යවන්න"
 
 #: program/localization/si_LK/labels.inc:addattachment
@@ -604,6 +570,18 @@ msgstr "අඵත් අයිතම"
 #: program/localization/si_LK/labels.inc:edititem
 msgid "Edit item"
 msgstr "අයිතම වෙනස් කිරීම්"
+
+#: program/localization/si_LK/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML විදහා පෙන්වීම"
+
+#: program/localization/si_LK/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML පනිවුඩය"
+
+#: program/localization/si_LK/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "සුරුබුහුටි දින"
 
 #: program/localization/si_LK/labels.inc:setdefault
 msgid "Set default"

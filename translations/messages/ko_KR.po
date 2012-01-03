@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: ko_KR\n"
+"Language: ko\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -186,10 +186,6 @@ msgstr "메일을 보내지 않았습니다. 메일을 버리시겠습니까?"
 #: program/localization/ko_KR/messages.inc:noldapserver
 msgid "Please select an ldap server to search."
 msgstr "검색할 LDAP 서버를 선택하세요"
-
-#: program/localization/ko_KR/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "연락처가 없습니다"
 
 #: program/localization/ko_KR/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ta_IN\n"
@@ -110,10 +110,6 @@ msgstr "முக்கியத்துவம்"
 msgid "Company"
 msgstr "நிறுவனம்"
 
-#: program/localization/ta_IN/labels.inc:reply-to
-msgid "reply-to"
-msgstr "பதிலளி"
-
 #: program/localization/ta_IN/labels.inc:mailboxlist
 #: program/localization/ta_IN/labels.inc:folders
 msgid "Folders"
@@ -127,6 +123,10 @@ msgstr "செய்திகள் $countல் $from லிருந்து 
 #: program/localization/ta_IN/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "$countல் $nr வது செய்தி"
+
+#: program/localization/ta_IN/labels.inc:copy
+msgid "Copy"
+msgstr "நகல்"
 
 #: program/localization/ta_IN/labels.inc:moveto
 msgid "Move to..."
@@ -143,18 +143,6 @@ msgstr "கோப்பு பெயர்"
 #: program/localization/ta_IN/labels.inc:filesize
 msgid "File size"
 msgstr "கோப்பு அளவு"
-
-#: program/localization/ta_IN/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "HTML காட்டு"
-
-#: program/localization/ta_IN/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "HTML செய்தி"
-
-#: program/localization/ta_IN/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "நல்ல தேதி"
 
 #: program/localization/ta_IN/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -352,37 +340,17 @@ msgstr "செய்தியை அச்சிடவும்"
 msgid "Show previous message"
 msgstr "முந்திய செய்தியை காட்டவும்"
 
-#: program/localization/ta_IN/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "முந்திய செய்திகள் குழுவை "
-"காட்டவும்"
-
 #: program/localization/ta_IN/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "முதல் செய்தியை காட்டவும்"
-
-#: program/localization/ta_IN/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "முதல் செய்திகள் குழுவை "
-"காட்டவும்"
 
 #: program/localization/ta_IN/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "அடுத்த செய்தியை காட்டு"
 
-#: program/localization/ta_IN/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "அடுத்த செய்திகள் குழுவை "
-"காட்டு"
-
 #: program/localization/ta_IN/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "கடைசி செய்தியை காட்டு"
-
-#: program/localization/ta_IN/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "கடைசி செய்திகள் குழுவை "
-"காட்டு"
 
 #: program/localization/ta_IN/labels.inc:backtolist
 msgid "Back to message list"
@@ -415,10 +383,6 @@ msgid "As unflagged"
 msgstr "நட்சத்திரமிடாததாக "
 "குறியிடு"
 
-#: program/localization/ta_IN/labels.inc:messageactions
-msgid "messageactions"
-msgstr "மேலும் செயல்கள்"
-
 #: program/localization/ta_IN/labels.inc:select
 msgid "Select"
 msgstr "தேர்ந்தெடு"
@@ -428,6 +392,7 @@ msgid "All"
 msgstr "எல்லாம்"
 
 #: program/localization/ta_IN/labels.inc:none
+#: program/localization/ta_IN/labels.inc:nonesort
 msgid "None"
 msgstr "எதுவுமில்லை"
 
@@ -462,10 +427,6 @@ msgstr "குறுகிய"
 #: program/localization/ta_IN/labels.inc:empty
 msgid "Empty"
 msgstr "காலி"
-
-#: program/localization/ta_IN/labels.inc:purge
-msgid "purge"
-msgstr "நீக்கு"
 
 #: program/localization/ta_IN/labels.inc:quota
 msgid "Disk usage"
@@ -504,7 +465,7 @@ msgid "Download (.eml)"
 msgstr "பதிவிறக்கு (.eml)"
 
 #: program/localization/ta_IN/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "அஞ்சல் எழுது"
 
 #: program/localization/ta_IN/labels.inc:editasnew
@@ -512,11 +473,11 @@ msgid "Edit as new"
 msgstr "புதியதாக திருத்து"
 
 #: program/localization/ta_IN/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "இந்த வரைவை சேமி"
 
 #: program/localization/ta_IN/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "இப்போது அனுப்பு"
 
 #: program/localization/ta_IN/labels.inc:addattachment
@@ -826,6 +787,18 @@ msgstr "புது உருப்படி"
 msgid "Edit item"
 msgstr "உருப்படியை திருத்து"
 
+#: program/localization/ta_IN/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML காட்டு"
+
+#: program/localization/ta_IN/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML செய்தி"
+
+#: program/localization/ta_IN/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "நல்ல தேதி"
+
 #: program/localization/ta_IN/labels.inc:setdefault
 msgid "Set default"
 msgstr "இயல்பை அமை"
@@ -1018,10 +991,6 @@ msgstr "பராமரிப்பு"
 #: program/localization/ta_IN/labels.inc:newmessage
 msgid "New Message"
 msgstr "புது செய்தி"
-
-#: program/localization/ta_IN/labels.inc:listoptions
-msgid "listoptions"
-msgstr "விருப்பங்களை பட்டியலிடு"
 
 #: program/localization/ta_IN/labels.inc:signatureoptions
 msgid "Signature Options"

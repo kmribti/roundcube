@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: bs_BA\n"
+"Language: bs\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -400,10 +400,6 @@ msgstr "Kao markirane"
 msgid "As unflagged"
 msgstr "Kao nemarkirane"
 
-#: program/localization/bs_BA/labels.inc:messageactions
-msgid "messageactions"
-msgstr "Više akcija"
-
 #: program/localization/bs_BA/labels.inc:select
 msgid "Select"
 msgstr "Obilježi"
@@ -570,7 +566,7 @@ msgid "Download (.eml)"
 msgstr "Snimi (.eml)"
 
 #: program/localization/bs_BA/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Nova poruka"
 
 #: program/localization/bs_BA/labels.inc:editasnew
@@ -578,11 +574,11 @@ msgid "Edit as new"
 msgstr "Uredi kao novo"
 
 #: program/localization/bs_BA/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Sačuvaj nacrt"
 
 #: program/localization/bs_BA/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Pošalji poruku"
 
 #: program/localization/bs_BA/labels.inc:addattachment
@@ -844,6 +840,11 @@ msgstr "Pomoćnik"
 msgid "Spouse"
 msgstr "Muž/Žena"
 
+#: program/localization/bs_BA/labels.inc:other
+#: program/localization/bs_BA/labels.inc:typeother
+msgid "Other"
+msgstr "Ostalo"
+
 #: program/localization/bs_BA/labels.inc:typehome
 msgid "Home"
 msgstr "Kućni broj"
@@ -851,10 +852,6 @@ msgstr "Kućni broj"
 #: program/localization/bs_BA/labels.inc:typework
 msgid "Work"
 msgstr "Poslovni broj"
-
-#: program/localization/bs_BA/labels.inc:typeother
-msgid "Other"
-msgstr "Ostalo"
 
 #: program/localization/bs_BA/labels.inc:typemobile
 msgid "Mobile"
@@ -967,10 +964,6 @@ msgstr "Izvezi kontakte u vCard formatu"
 #: program/localization/bs_BA/labels.inc:newcontactgroup
 msgid "Create new contact group"
 msgstr "Kreiraj novu kontakt-grupu"
-
-#: program/localization/bs_BA/labels.inc:groupactions
-msgid "groupactions"
-msgstr "Podešavanja za kontakt-grupu"
 
 #: program/localization/bs_BA/labels.inc:previouspage
 msgid "Show previous page"
@@ -1267,10 +1260,6 @@ msgstr "održavanje"
 #: program/localization/bs_BA/labels.inc:newmessage
 msgid "New Message"
 msgstr "nova poruka"
-
-#: program/localization/bs_BA/labels.inc:listoptions
-msgid "listoptions"
-msgstr "opcije liste"
 
 #: program/localization/bs_BA/labels.inc:signatureoptions
 msgid "Signature Options"

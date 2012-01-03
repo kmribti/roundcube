@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: pt_BR\n"
@@ -76,7 +76,7 @@ msgstr "Assunto"
 
 #: program/localization/pt_BR/labels.inc:from
 msgid "From"
-msgstr "Remetente"
+msgstr "De"
 
 #: program/localization/pt_BR/labels.inc:to
 msgid "To"
@@ -149,11 +149,11 @@ msgstr "Mover para..."
 
 #: program/localization/pt_BR/labels.inc:download
 msgid "Download"
-msgstr "Download"
+msgstr "Baixar"
 
 #: program/localization/pt_BR/labels.inc:filename
 msgid "File name"
-msgstr "Arquivo"
+msgstr "Nome do arquivo"
 
 #: program/localization/pt_BR/labels.inc:filesize
 msgid "File size"
@@ -169,27 +169,27 @@ msgstr "Dom"
 
 #: program/localization/pt_BR/labels.inc:mon
 msgid "Mon"
-msgstr "Seg"
+msgstr "Seg."
 
 #: program/localization/pt_BR/labels.inc:tue
 msgid "Tue"
-msgstr "Ter"
+msgstr "Ter."
 
 #: program/localization/pt_BR/labels.inc:wed
 msgid "Wed"
-msgstr "Qua"
+msgstr "Qua."
 
 #: program/localization/pt_BR/labels.inc:thu
 msgid "Thu"
-msgstr "Qui"
+msgstr "Qui."
 
 #: program/localization/pt_BR/labels.inc:fri
 msgid "Fri"
-msgstr "Sex"
+msgstr "Sex."
 
 #: program/localization/pt_BR/labels.inc:sat
 msgid "Sat"
-msgstr "Sáb"
+msgstr "Sáb."
 
 #: program/localization/pt_BR/labels.inc:sunday
 msgid "Sunday"
@@ -221,52 +221,52 @@ msgstr "Sábado"
 
 #: program/localization/pt_BR/labels.inc:jan
 msgid "Jan"
-msgstr "Jan"
+msgstr "Jan."
 
 #: program/localization/pt_BR/labels.inc:feb
 msgid "Feb"
-msgstr "Fev"
+msgstr "Fev."
 
 #: program/localization/pt_BR/labels.inc:mar
 msgid "Mar"
-msgstr "Mar"
+msgstr "Mar."
 
 #: program/localization/pt_BR/labels.inc:apr
 msgid "Apr"
-msgstr "Abr"
+msgstr "Abr."
 
 #: program/localization/pt_BR/labels.inc:may
 #: program/localization/pt_BR/labels.inc:longmay
 msgid "May"
-msgstr "Maio"
+msgstr "Mai."
 
 #: program/localization/pt_BR/labels.inc:jun
 msgid "Jun"
-msgstr "Jun"
+msgstr "Jun."
 
 #: program/localization/pt_BR/labels.inc:jul
 msgid "Jul"
-msgstr "Jul"
+msgstr "Jul."
 
 #: program/localization/pt_BR/labels.inc:aug
 msgid "Aug"
-msgstr "Ago"
+msgstr "Ago."
 
 #: program/localization/pt_BR/labels.inc:sep
 msgid "Sep"
-msgstr "Set"
+msgstr "Set."
 
 #: program/localization/pt_BR/labels.inc:oct
 msgid "Oct"
-msgstr "Out"
+msgstr "Out."
 
 #: program/localization/pt_BR/labels.inc:nov
 msgid "Nov"
-msgstr "Nov"
+msgstr "Nov."
 
 #: program/localization/pt_BR/labels.inc:dec
 msgid "Dec"
-msgstr "Dez"
+msgstr "Dez."
 
 #: program/localization/pt_BR/labels.inc:longjan
 msgid "January"
@@ -402,11 +402,11 @@ msgstr "como não lidas"
 
 #: program/localization/pt_BR/labels.inc:markflagged
 msgid "As flagged"
-msgstr "como sinalizadas"
+msgstr "Como marcadas"
 
 #: program/localization/pt_BR/labels.inc:markunflagged
 msgid "As unflagged"
-msgstr "como não sinalizadas"
+msgstr "Como não marcadas"
 
 #: program/localization/pt_BR/labels.inc:moreactions
 msgid "More actions..."
@@ -435,7 +435,7 @@ msgstr "Não lidas"
 
 #: program/localization/pt_BR/labels.inc:flagged
 msgid "Flagged"
-msgstr "Sinalizada"
+msgstr "Marcada"
 
 #: program/localization/pt_BR/labels.inc:unanswered
 msgid "Unanswered"
@@ -451,7 +451,7 @@ msgstr "Inverter"
 
 #: program/localization/pt_BR/labels.inc:filter
 msgid "Filter"
-msgstr "Exibir"
+msgstr "Filtrar"
 
 #: program/localization/pt_BR/labels.inc:list
 msgid "List"
@@ -491,11 +491,11 @@ msgstr "somente com mensagem(s) não lidas"
 
 #: program/localization/pt_BR/labels.inc:fromto
 msgid "From/To"
-msgstr "Remetente/Destinatário"
+msgstr "De/Para"
 
 #: program/localization/pt_BR/labels.inc:flag
 msgid "Flag"
-msgstr "Marca"
+msgstr "Marcador"
 
 #: program/localization/pt_BR/labels.inc:attachment
 msgid "Attachment"
@@ -531,7 +531,7 @@ msgstr "Ordem da classificação"
 
 #: program/localization/pt_BR/labels.inc:listmode
 msgid "List view mode"
-msgstr "Modo da listagem"
+msgstr "Visualização em lista"
 
 #: program/localization/pt_BR/labels.inc:folderactions
 msgid "Folder actions..."
@@ -547,7 +547,7 @@ msgstr "Esvaziar"
 
 #: program/localization/pt_BR/labels.inc:quota
 msgid "Disk usage"
-msgstr "Utilização"
+msgstr "Uso de disco"
 
 #: program/localization/pt_BR/labels.inc:unknown
 msgid "unknown"
@@ -579,10 +579,10 @@ msgstr "Abrir em nova janela"
 
 #: program/localization/pt_BR/labels.inc:emlsave
 msgid "Download (.eml)"
-msgstr "Download (.eml)"
+msgstr "Baixar (em .eml)"
 
 #: program/localization/pt_BR/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Escrever mensagem"
 
 #: program/localization/pt_BR/labels.inc:editasnew
@@ -590,12 +590,12 @@ msgid "Edit as new"
 msgstr "Editar como novo"
 
 #: program/localization/pt_BR/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Salvar Rascunho"
 
 #: program/localization/pt_BR/labels.inc:sendmessage
-msgid "Send now"
-msgstr "Enviar"
+msgid "Send message"
+msgstr "Enviar agora"
 
 #: program/localization/pt_BR/labels.inc:addattachment
 msgid "Attach a file"
@@ -611,7 +611,7 @@ msgstr "Tipo de editor"
 
 #: program/localization/pt_BR/labels.inc:returnreceipt
 msgid "Return receipt"
-msgstr "Solicitar confirmação de recebimento"
+msgstr "Confirmação de recebimento"
 
 #: program/localization/pt_BR/labels.inc:dsn
 msgid "Delivery status notification"
@@ -693,6 +693,10 @@ msgstr "Exibir imagens"
 msgid "Always show images from $sender"
 msgstr "Sempre exibir imagens de $sender"
 
+#: program/localization/pt_BR/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "Esta mensagem é um rascunho"
+
 #: program/localization/pt_BR/labels.inc:htmltoggle
 msgid "HTML"
 msgstr "HTML"
@@ -737,7 +741,7 @@ msgstr "O remetente desta mensagem deseja ser notificado quando você ler esta "
 
 #: program/localization/pt_BR/labels.inc:receiptread
 msgid "Return Receipt (read)"
-msgstr "Confirmação de Leitura (Exibida)"
+msgstr "Confirmação de Leitura (exibida)"
 
 #: program/localization/pt_BR/labels.inc:yourmessage
 msgid "This is a Return Receipt for your message"
@@ -753,11 +757,11 @@ msgstr "Nota: Esta confirmação de leitura somente informa que a mensagem foi "
 
 #: program/localization/pt_BR/labels.inc:name
 msgid "Display Name"
-msgstr "Nome para exibição"
+msgstr "Nome de exibição"
 
 #: program/localization/pt_BR/labels.inc:firstname
 msgid "First Name"
-msgstr "Primeiro nome"
+msgstr "Primeiro Nome"
 
 #: program/localization/pt_BR/labels.inc:surname
 msgid "Last Name"
@@ -829,7 +833,7 @@ msgstr "País"
 
 #: program/localization/pt_BR/labels.inc:birthday
 msgid "Birthday"
-msgstr "Nascimento"
+msgstr "Data de nascimento"
 
 #: program/localization/pt_BR/labels.inc:anniversary
 msgid "Anniversary"
@@ -837,7 +841,7 @@ msgstr "Aniversário"
 
 #: program/localization/pt_BR/labels.inc:website
 msgid "Website"
-msgstr "Website"
+msgstr "Página da Web"
 
 #: program/localization/pt_BR/labels.inc:instantmessenger
 msgid "IM"
@@ -939,7 +943,7 @@ msgstr "Adicionar campo..."
 
 #: program/localization/pt_BR/labels.inc:addcontact
 msgid "Add new contact"
-msgstr "Incluir novo contato"
+msgstr "Adicionar novo contato"
 
 #: program/localization/pt_BR/labels.inc:editcontact
 msgid "Edit contact"
@@ -971,7 +975,7 @@ msgstr "Salvar"
 
 #: program/localization/pt_BR/labels.inc:delete
 msgid "Delete"
-msgstr "Apagar"
+msgstr "Excluir"
 
 #: program/localization/pt_BR/labels.inc:rename
 msgid "Rename"
@@ -983,7 +987,7 @@ msgstr "Adicionar"
 
 #: program/localization/pt_BR/labels.inc:replacephoto
 msgid "Replace"
-msgstr "Alterar"
+msgstr "Substituir"
 
 #: program/localization/pt_BR/labels.inc:newcontact
 msgid "Create new contact card"
@@ -991,11 +995,11 @@ msgstr "Criar novo contato"
 
 #: program/localization/pt_BR/labels.inc:deletecontact
 msgid "Delete selected contacts"
-msgstr "Apagar contatos selecionados"
+msgstr "Exclui os contatos selecionados"
 
 #: program/localization/pt_BR/labels.inc:composeto
 msgid "Compose mail to"
-msgstr "Enviar mensagem para"
+msgstr "Compor mensagem para"
 
 #: program/localization/pt_BR/labels.inc:contactsfromto
 msgid "Contacts $from to $to of $count"
@@ -1031,7 +1035,7 @@ msgstr "Página Anterior"
 
 #: program/localization/pt_BR/labels.inc:firstpage
 msgid "Show first page"
-msgstr "Primeira Página "
+msgstr "Primeira Página"
 
 #: program/localization/pt_BR/labels.inc:nextpage
 msgid "Show next page"
@@ -1071,7 +1075,7 @@ msgstr "Importar contatos"
 
 #: program/localization/pt_BR/labels.inc:importfromfile
 msgid "Import from file:"
-msgstr "Importar de arquivo:"
+msgstr "Importar do arquivo:"
 
 #: program/localization/pt_BR/labels.inc:importtarget
 msgid "Add new contacts to address book:"
@@ -1091,11 +1095,15 @@ msgstr "Você pode enviar contatos de um catálogo de endereços existente.<br/>
 
 #: program/localization/pt_BR/labels.inc:done
 msgid "Done"
-msgstr "Finalizado"
+msgstr "Concluído"
 
 #: program/localization/pt_BR/labels.inc:settingsfor
 msgid "Settings for"
 msgstr "Configurações para"
+
+#: program/localization/pt_BR/labels.inc:about
+msgid "About"
+msgstr "Sobre"
 
 #: program/localization/pt_BR/labels.inc:preferences
 msgid "Preferences"
@@ -1131,7 +1139,7 @@ msgstr "Editar item"
 
 #: program/localization/pt_BR/labels.inc:preferhtml
 msgid "Display HTML"
-msgstr "Exibir formatação HTML em mensagens"
+msgstr "Exibir em HTML"
 
 #: program/localization/pt_BR/labels.inc:defaultcharset
 msgid "Default Character Set"
@@ -1155,7 +1163,7 @@ msgstr "Exibir datas amigáveis"
 
 #: program/localization/pt_BR/labels.inc:setdefault
 msgid "Set default"
-msgstr "Padrão"
+msgstr "Definir como padrão"
 
 #: program/localization/pt_BR/labels.inc:autodetect
 msgid "Auto"
@@ -1183,11 +1191,11 @@ msgstr "Horário de verão"
 
 #: program/localization/pt_BR/labels.inc:htmleditor
 msgid "Compose HTML messages"
-msgstr "Criar mensagens formatadas em HTML"
+msgstr "Criar mensagens em HTML"
 
 #: program/localization/pt_BR/labels.inc:htmlonreply
 msgid "on reply to HTML message only"
-msgstr "em resposta de mensagens HTML"
+msgstr "em resposta à mensagem em HTML somente"
 
 #: program/localization/pt_BR/labels.inc:htmlsignature
 msgid "HTML signature"
@@ -1231,19 +1239,19 @@ msgstr "solicite minha confirmação"
 
 #: program/localization/pt_BR/labels.inc:autosend
 msgid "send receipt"
-msgstr "envie automaticamente"
+msgstr "enviar confirmação"
 
 #: program/localization/pt_BR/labels.inc:autosendknown
 msgid "send receipt to my contacts, otherwise ask me"
-msgstr "solicite minha confirmação, e envie automat. para os meus contatos"
+msgstr "enviar confirmação para os meus contatos, caso contrário, pergunte-me"
 
 #: program/localization/pt_BR/labels.inc:autosendknownignore
 msgid "send receipt to my contacts, otherwise ignore"
-msgstr "ignore, e envie automaticamente para os meus contatos"
+msgstr "enviar confirmação para os meus contatos, caso contrário, ignore"
 
 #: program/localization/pt_BR/labels.inc:ignore
 msgid "ignore"
-msgstr "ignore"
+msgstr "ignorar"
 
 #: program/localization/pt_BR/labels.inc:readwhendeleted
 msgid "Mark the message as read on delete"
@@ -1259,7 +1267,7 @@ msgstr "Não exibir mensagens excluídas"
 
 #: program/localization/pt_BR/labels.inc:deletealways
 msgid "If moving messages to Trash fails, delete them"
-msgstr "Apagar as mensagens se movê-las para a lixeira falhar"
+msgstr "Excluir as mensagens se movê-las para a lixeira falhar"
 
 #: program/localization/pt_BR/labels.inc:showremoteimages
 msgid "Display remote inline images"
@@ -1303,7 +1311,7 @@ msgstr "Exibição de mensagens"
 
 #: program/localization/pt_BR/labels.inc:messagescomposition
 msgid "Composing Messages"
-msgstr "Envio de mensagens"
+msgstr "Redigir mensagens"
 
 #: program/localization/pt_BR/labels.inc:mimeparamfolding
 msgid "Attachment names"
@@ -1339,7 +1347,11 @@ msgstr "Verificar se há novas mensagens em todas as pastas"
 
 #: program/localization/pt_BR/labels.inc:displaynext
 msgid "After message delete/move display the next message"
-msgstr "Exibir a mensagem seguinte após apagar/mover uma mensagem"
+msgstr "Exibir a mensagem seguinte após excluir/mover uma mensagem"
+
+#: program/localization/pt_BR/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "Fonte padrão para mensagens HTML"
 
 #: program/localization/pt_BR/labels.inc:mainoptions
 msgid "Main Options"
@@ -1355,11 +1367,7 @@ msgstr "Manutenção"
 
 #: program/localization/pt_BR/labels.inc:newmessage
 msgid "New Message"
-msgstr "Novas Mensagens"
-
-#: program/localization/pt_BR/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Opções de Exibição"
+msgstr "Nova mensagem"
 
 #: program/localization/pt_BR/labels.inc:signatureoptions
 msgid "Signature Options"
@@ -1427,11 +1435,15 @@ msgstr "Sempre pedir confirmação de entrega"
 
 #: program/localization/pt_BR/labels.inc:replysamefolder
 msgid "Place replies in the folder of the message being replied to"
-msgstr "Guardar as respostas na mesma pasta da mensagem original"
+msgstr "Colocar as respostas na mesma pasta da mensagem original"
 
 #: program/localization/pt_BR/labels.inc:defaultaddressbook
 msgid "Add new contacts to the selected addressbook"
-msgstr "Adicionar novos contatos para o catálogo de endereços:"
+msgstr "Adicionar novos contatos para o catálogo de endereços selecionado"
+
+#: program/localization/pt_BR/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "Ignorar endereços alternativos no autocompletar"
 
 #: program/localization/pt_BR/labels.inc:spellcheckbeforesend
 msgid "Check spelling before sending a message"
@@ -1439,7 +1451,7 @@ msgstr "Verificar ortografia antes de enviar uma mensagem"
 
 #: program/localization/pt_BR/labels.inc:spellcheckoptions
 msgid "Spellcheck Options"
-msgstr "Opções do Verificador de Ortografia"
+msgstr "Opções do Verificador Ortográfico"
 
 #: program/localization/pt_BR/labels.inc:spellcheckignoresyms
 msgid "Ignore words with symbols"
@@ -1451,7 +1463,7 @@ msgstr "Ignorar palavras com números"
 
 #: program/localization/pt_BR/labels.inc:spellcheckignorecaps
 msgid "Ignore words with all letters capitalized"
-msgstr "Ignorar palavras em maiúsculo"
+msgstr "Ignorar palavras toda em maiúsculo"
 
 #: program/localization/pt_BR/labels.inc:addtodict
 msgid "Add to dictionary"
@@ -1467,7 +1479,7 @@ msgstr "Nome da pasta"
 
 #: program/localization/pt_BR/labels.inc:subscribed
 msgid "Subscribed"
-msgstr "Ativo"
+msgstr "Inscrito"
 
 #: program/localization/pt_BR/labels.inc:messagecount
 msgid "Messages"
@@ -1495,11 +1507,11 @@ msgstr "Propriedades"
 
 #: program/localization/pt_BR/labels.inc:folderproperties
 msgid "Folder properties"
-msgstr "Opções de pasta"
+msgstr "Propriedades da pasta"
 
 #: program/localization/pt_BR/labels.inc:parentfolder
 msgid "Parent folder"
-msgstr "Pasta origem"
+msgstr "Pasta Pai"
 
 #: program/localization/pt_BR/labels.inc:location
 msgid "Location"
@@ -1511,7 +1523,7 @@ msgstr "Informação"
 
 #: program/localization/pt_BR/labels.inc:getfoldersize
 msgid "Click to get folder size"
-msgstr "Obter tamanho da pasta"
+msgstr "Clique para obter tamanho da pasta"
 
 #: program/localization/pt_BR/labels.inc:changesubscription
 msgid "Click to change subscription"
@@ -1535,7 +1547,7 @@ msgstr "Pasta Pública"
 
 #: program/localization/pt_BR/labels.inc:sortby
 msgid "Sort by"
-msgstr "Ordenado por"
+msgstr "Ordenar por"
 
 #: program/localization/pt_BR/labels.inc:sortasc
 msgid "Sort ascending"
@@ -1548,6 +1560,26 @@ msgstr "Descendente"
 #: program/localization/pt_BR/labels.inc:undo
 msgid "Undo"
 msgstr "Desfazer"
+
+#: program/localization/pt_BR/labels.inc:plugin
+msgid "Plugin"
+msgstr "Plugin"
+
+#: program/localization/pt_BR/labels.inc:version
+msgid "Version"
+msgstr "Versão"
+
+#: program/localization/pt_BR/labels.inc:source
+msgid "Source"
+msgstr "Fonte"
+
+#: program/localization/pt_BR/labels.inc:license
+msgid "License"
+msgstr "Licença"
+
+#: program/localization/pt_BR/labels.inc:support
+msgid "Get support"
+msgstr "Buscar suporte"
 
 #: program/localization/pt_BR/labels.inc:B
 msgid "B"
@@ -1575,7 +1607,7 @@ msgstr "Inglês"
 
 #: program/localization/pt_BR/labels.inc:westerneuropean
 msgid "Western European"
-msgstr "Europa Ocidental"
+msgstr "Oeste Europeu"
 
 #: program/localization/pt_BR/labels.inc:easterneuropean
 msgid "Eastern European"

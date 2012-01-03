@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:03:31+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: bg_BG\n"
@@ -541,7 +541,7 @@ msgstr "Групата беше  изтрита"
 
 #: program/localization/bg_BG/messages.inc:grouprenamed
 msgid "Group renamed successfully."
-msgstr "Групата беше преименувана "
+msgstr "Групата беше преименувана"
 
 #: program/localization/bg_BG/messages.inc:groupcreated
 msgid "Group created successfully."

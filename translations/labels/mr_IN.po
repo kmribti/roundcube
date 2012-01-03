@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: mr_IN\n"
+"Language: mr\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -21,7 +21,7 @@ msgstr "$product वरती स्वागत आहे"
 #: program/localization/mr_IN/labels.inc:username
 msgid "Username"
 msgstr "वापरकर्त्याचे नाव(तुमचे "
-"इमेल) "
+"इमेल)"
 
 #: program/localization/mr_IN/labels.inc:password
 msgid "Password"
@@ -93,7 +93,7 @@ msgstr "गुप्त प्रत"
 
 #: program/localization/mr_IN/labels.inc:replyto
 msgid "Reply-To"
-msgstr "उत्तर द्या "
+msgstr "उत्तर द्या"
 
 #: program/localization/mr_IN/labels.inc:date
 msgid "Date"
@@ -110,10 +110,6 @@ msgstr "प्राधान्य"
 #: program/localization/mr_IN/labels.inc:organization
 msgid "Company"
 msgstr "संस्था"
-
-#: program/localization/mr_IN/labels.inc:reply-to
-msgid "reply-to"
-msgstr "उत्तर द्या "
 
 #: program/localization/mr_IN/labels.inc:mailboxlist
 #: program/localization/mr_IN/labels.inc:folders
@@ -134,7 +130,7 @@ msgstr "Message $nr of $count"
 
 #: program/localization/mr_IN/labels.inc:copy
 msgid "Copy"
-msgstr "नक्‍कल "
+msgstr "नक्‍कल"
 
 #: program/localization/mr_IN/labels.inc:move
 msgid "Move"
@@ -158,7 +154,7 @@ msgstr "फाईलचा आकार"
 
 #: program/localization/mr_IN/labels.inc:addtoaddressbook
 msgid "Add to address book"
-msgstr "पत्ता नोंदवहीत नोंदवा "
+msgstr "पत्ता नोंदवहीत नोंदवा"
 
 #: program/localization/mr_IN/labels.inc:sun
 msgid "Sun"
@@ -351,33 +347,17 @@ msgstr "हा संदेश छापा"
 msgid "Show previous message"
 msgstr "आधिचा संदेश दाखवा"
 
-#: program/localization/mr_IN/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "आधिच्या संदेशांचा गट दाखवा"
-
 #: program/localization/mr_IN/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "पहिला संदेश दाखवा"
-
-#: program/localization/mr_IN/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "पहिला संदेशांचा संच दाखवा"
 
 #: program/localization/mr_IN/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "नंतरचा संदेश दाखवा"
 
-#: program/localization/mr_IN/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "नंतरचा संदेशांचा संच दाखवा"
-
 #: program/localization/mr_IN/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "शेवटचा संदेश दाखवा"
-
-#: program/localization/mr_IN/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "शेवटचा संदेशांचा संच दाखवा"
 
 #: program/localization/mr_IN/labels.inc:backtolist
 msgid "Back to message list"
@@ -407,10 +387,6 @@ msgstr "खूण लावलेला म्हणून खूण करा"
 #: program/localization/mr_IN/labels.inc:markunflagged
 msgid "As unflagged"
 msgstr "खूण काढलेला म्हणून खूण करा"
-
-#: program/localization/mr_IN/labels.inc:messageactions
-msgid "messageactions"
-msgstr "जास्‍त क्रिया..."
 
 #: program/localization/mr_IN/labels.inc:select
 msgid "Select"
@@ -488,7 +464,7 @@ msgstr "सर्व धागे"
 #: program/localization/mr_IN/labels.inc:expand_only_unread
 msgid "only with unread messages"
 msgstr "फक्‍त न वाचलेल्‍या "
-"संदेशांबददल "
+"संदेशांबददल"
 
 #: program/localization/mr_IN/labels.inc:fromto
 msgid "From/To"
@@ -542,10 +518,6 @@ msgstr "छोटा"
 msgid "Empty"
 msgstr "रिकामा"
 
-#: program/localization/mr_IN/labels.inc:purge
-msgid "purge"
-msgstr "काढून टाका"
-
 #: program/localization/mr_IN/labels.inc:quota
 msgid "Disk usage"
 msgstr "डिस्कचा वापर"
@@ -564,7 +536,7 @@ msgstr "चटकन शोध"
 
 #: program/localization/mr_IN/labels.inc:resetsearch
 msgid "Reset search"
-msgstr "परत शोध "
+msgstr "परत शोध"
 
 #: program/localization/mr_IN/labels.inc:searchmod
 msgid "Search modifiers"
@@ -583,7 +555,7 @@ msgid "Download (.eml)"
 msgstr "इएमएल स्‍वरूपात उतरवून घ्या"
 
 #: program/localization/mr_IN/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "नवीन संदेश तयार करा"
 
 #: program/localization/mr_IN/labels.inc:editasnew
@@ -591,11 +563,11 @@ msgid "Edit as new"
 msgstr "नवीन आहे असा संपादित करा"
 
 #: program/localization/mr_IN/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "हा मसूदा साठवून ठेवा"
 
 #: program/localization/mr_IN/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "आत्ता पाठवा"
 
 #: program/localization/mr_IN/labels.inc:addattachment
@@ -720,7 +692,7 @@ msgstr "पोच पावती (संदेश वाचला)"
 #: program/localization/mr_IN/labels.inc:yourmessage
 msgid "This is a Return Receipt for your message"
 msgstr "ही तुमच्या संदेशाची पोच "
-"पावती आहे. "
+"पावती आहे."
 
 #: program/localization/mr_IN/labels.inc:receiptnote
 msgid "Note: This receipt only acknowledges that the message was displayed on the "
@@ -733,7 +705,7 @@ msgstr "सूचना: ही पोच पावती तुम्ही "
 "ज्यांना हा संदेश पाठवला, "
 "त्यांनी तो वाचला, आणि "
 "त्यांना तो नक्की समजला हे "
-"मात्र सांगत नाही. "
+"मात्र सांगत नाही."
 
 #: program/localization/mr_IN/labels.inc:name
 msgid "Display Name"
@@ -810,11 +782,6 @@ msgstr "व्ही कार्ड स्वरुपात पत्ते "
 msgid "Create new contact group"
 msgstr "नवीन पत्‍त्‍यांचा गट बनवा"
 
-#: program/localization/mr_IN/labels.inc:groupactions
-msgid "groupactions"
-msgstr "पत्‍त्‍यांच्‍या गटाबददल "
-"क्रिया..."
-
 #: program/localization/mr_IN/labels.inc:previouspage
 msgid "Show previous page"
 msgstr "आधिचा संच दाखवा"
@@ -868,7 +835,7 @@ msgstr "तुम्ही तुमच्याकडील पत्ता "
 "येथे घेऊ शकता.<br/>सध्या आम्ही "
 "या <a href=\"http://en.wikipedia.org/wiki/VCard\">vCard</a> "
 "प्रकारच्या वेगवेगळ्या "
-"नोंदवहीतील पत्ते घेऊ शकतो. "
+"नोंदवहीतील पत्ते घेऊ शकतो."
 
 #: program/localization/mr_IN/labels.inc:done
 msgid "Done"
@@ -941,8 +908,7 @@ msgstr "भाषा"
 
 #: program/localization/mr_IN/labels.inc:timezone
 msgid "Time zone"
-msgstr "वेळ  "
-"क्षेत्र"
+msgstr "वेळ  क्षेत्र"
 
 #: program/localization/mr_IN/labels.inc:pagesize
 msgid "Rows per page"
@@ -1082,8 +1048,7 @@ msgstr "संदेश तयार करा"
 
 #: program/localization/mr_IN/labels.inc:mimeparamfolding
 msgid "Attachment names"
-msgstr "सोबत दिलेल्या फाईल्सची नावे "
-""
+msgstr "सोबत दिलेल्या फाईल्सची नावे"
 
 #: program/localization/mr_IN/labels.inc:2231folding
 msgid "Full RFC 2231 (Thunderbird)"
@@ -1138,10 +1103,6 @@ msgstr "देखभाल"
 #: program/localization/mr_IN/labels.inc:newmessage
 msgid "New Message"
 msgstr "नवीन संदेश"
-
-#: program/localization/mr_IN/labels.inc:listoptions
-msgid "listoptions"
-msgstr "पर्याय सूची"
 
 #: program/localization/mr_IN/labels.inc:signatureoptions
 msgid "Signature Options"
@@ -1199,7 +1160,7 @@ msgstr "सही मध्‍ये टाका"
 #: program/localization/mr_IN/labels.inc:previewpanemarkread
 msgid "Mark previewed messages as read"
 msgstr "प्रदर्शित संदेश पाहीले अशी "
-"खुण करा "
+"खुण करा"
 
 #: program/localization/mr_IN/labels.inc:afternseconds
 msgid "after $n seconds"

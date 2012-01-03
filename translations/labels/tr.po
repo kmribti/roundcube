@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: tr_TR\n"
@@ -24,7 +24,7 @@ msgstr "Kullanıcı Adı"
 
 #: program/localization/tr_TR/labels.inc:password
 msgid "Password"
-msgstr "Şifre"
+msgstr "Parola"
 
 #: program/localization/tr_TR/labels.inc:server
 msgid "Server"
@@ -408,9 +408,9 @@ msgstr "işaretli olarak"
 msgid "As unflagged"
 msgstr "işaretsiz olarak"
 
-#: program/localization/tr_TR/labels.inc:messageactions
-msgid "messageactions"
-msgstr "Diğer eylemler..."
+#: program/localization/tr_TR/labels.inc:moreactions
+msgid "More actions..."
+msgstr "Daha fazla eylem..."
 
 #: program/localization/tr_TR/labels.inc:select
 msgid "Select"
@@ -582,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "İndir (.eml)"
 
 #: program/localization/tr_TR/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Yeni posta oluştur"
 
 #: program/localization/tr_TR/labels.inc:editasnew
@@ -590,11 +590,11 @@ msgid "Edit as new"
 msgstr "Postayı yeni olarak düzenle"
 
 #: program/localization/tr_TR/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Taslak olarak kaydet"
 
 #: program/localization/tr_TR/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Postayı gönder"
 
 #: program/localization/tr_TR/labels.inc:addattachment
@@ -692,6 +692,10 @@ msgstr "Resimleri göster"
 #: program/localization/tr_TR/labels.inc:alwaysshow
 msgid "Always show images from $sender"
 msgstr "$sender tarafından gönderilen resimleri her zaman göster"
+
+#: program/localization/tr_TR/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "Bu posta taslaktır."
 
 #: program/localization/tr_TR/labels.inc:htmltoggle
 msgid "HTML"
@@ -1017,10 +1021,6 @@ msgstr "vCard olarak dışa aktar"
 msgid "Create new contact group"
 msgstr "Yeni kişi grubu oluştur"
 
-#: program/localization/tr_TR/labels.inc:groupactions
-msgid "groupactions"
-msgstr "Kişi grupları için eylemler..."
-
 #: program/localization/tr_TR/labels.inc:grouprename
 msgid "Rename group"
 msgstr "Grubu yeniden adlandır"
@@ -1057,6 +1057,14 @@ msgstr "Gruplar"
 msgid "Personal Addresses"
 msgstr "Adresler"
 
+#: program/localization/tr_TR/labels.inc:searchsave
+msgid "Save search"
+msgstr "Aramayı kaydet"
+
+#: program/localization/tr_TR/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "Aramayı sil"
+
 #: program/localization/tr_TR/labels.inc:import
 msgid "Import"
 msgstr "İçe aktar"
@@ -1092,6 +1100,10 @@ msgstr "Tamam"
 #: program/localization/tr_TR/labels.inc:settingsfor
 msgid "Settings for"
 msgstr "Ayarlar"
+
+#: program/localization/tr_TR/labels.inc:about
+msgid "About"
+msgstr "Hakkında"
 
 #: program/localization/tr_TR/labels.inc:preferences
 msgid "Preferences"
@@ -1136,6 +1148,14 @@ msgstr "Varsayılan Karakter Kümesi"
 #: program/localization/tr_TR/labels.inc:htmlmessage
 msgid "HTML Message"
 msgstr "HTML Posta"
+
+#: program/localization/tr_TR/labels.inc:dateformat
+msgid "Date format"
+msgstr "Tarih biçimi"
+
+#: program/localization/tr_TR/labels.inc:timeformat
+msgid "Time format"
+msgstr "Zaman biçimi"
 
 #: program/localization/tr_TR/labels.inc:prettydate
 msgid "Pretty dates"
@@ -1329,6 +1349,10 @@ msgstr "Tüm klasörlerdeki yeni postaları denetle"
 msgid "After message delete/move display the next message"
 msgstr "Posta silindikten/taşındıktan sonra sıradaki postayı göster"
 
+#: program/localization/tr_TR/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "HTML postalar için varsayılan yazı tipi"
+
 #: program/localization/tr_TR/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Ana Seçenekler"
@@ -1344,10 +1368,6 @@ msgstr "Bakım"
 #: program/localization/tr_TR/labels.inc:newmessage
 msgid "New Message"
 msgstr "Yeni Posta"
-
-#: program/localization/tr_TR/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Liste Seçenekleri"
 
 #: program/localization/tr_TR/labels.inc:signatureoptions
 msgid "Signature Options"
@@ -1421,9 +1441,33 @@ msgstr "Yanıtları, yanıtlanan postanın bulunduğu klasöre kaydet"
 msgid "Add new contacts to the selected addressbook"
 msgstr "Yeni kişileri seçili adres defterine ekle"
 
+#: program/localization/tr_TR/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "Otomatik tamamlamalarda alternatif e-posta adreslerini atla"
+
 #: program/localization/tr_TR/labels.inc:spellcheckbeforesend
 msgid "Check spelling before sending a message"
 msgstr "Posta göndermeden önce yazım denetimi yap"
+
+#: program/localization/tr_TR/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "Yazım denetimi seçenekleri"
+
+#: program/localization/tr_TR/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "İçinde sembol geçen kelimleri göz ardı et"
+
+#: program/localization/tr_TR/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "İçinde rakam geçen kelimleri göz ardı et"
+
+#: program/localization/tr_TR/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "Tümü büyük harf olan kelimleri göz ardı et"
+
+#: program/localization/tr_TR/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "Sözlüğe ekle"
 
 #: program/localization/tr_TR/labels.inc:folder
 msgid "Folder"
@@ -1517,6 +1561,26 @@ msgstr "Azalarak"
 msgid "Undo"
 msgstr "Geri al"
 
+#: program/localization/tr_TR/labels.inc:plugin
+msgid "Plugin"
+msgstr "Eklenti"
+
+#: program/localization/tr_TR/labels.inc:version
+msgid "Version"
+msgstr "Sürüm"
+
+#: program/localization/tr_TR/labels.inc:source
+msgid "Source"
+msgstr "Kaynak"
+
+#: program/localization/tr_TR/labels.inc:license
+msgid "License"
+msgstr "Lisans"
+
+#: program/localization/tr_TR/labels.inc:support
+msgid "Get support"
+msgstr "Destek al"
+
 #: program/localization/tr_TR/labels.inc:B
 msgid "B"
 msgstr "B"
@@ -1539,7 +1603,7 @@ msgstr "Unicode"
 
 #: program/localization/tr_TR/labels.inc:english
 msgid "English"
-msgstr "İngilizce "
+msgstr "İngilizce"
 
 #: program/localization/tr_TR/labels.inc:westerneuropean
 msgid "Western European"

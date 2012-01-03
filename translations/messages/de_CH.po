@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: de_CH\n"
@@ -191,6 +191,10 @@ msgstr "Wollen Sie diesen Ordner wirklich löschen?"
 msgid "Do you really want to delete all messages in this folder?"
 msgstr "Wollen Sie diesen Ordner wirklich leeren?"
 
+#: program/localization/de_CH/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Lösche Kontakt(e)..."
+
 #: program/localization/de_CH/messages.inc:groupdeleting
 msgid "Deleting group..."
 msgstr "Gruppe wird gelöscht..."
@@ -251,10 +255,6 @@ msgstr "Ihre Nachricht wurde nicht gesendet. Wollen Sie die Nachricht verwerfen?
 msgid "Please select an ldap server to search."
 msgstr "Bitte wählen Sie einen LDAP-Server aus"
 
-#: program/localization/de_CH/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Es wurden keine Kontakte gefunden"
-
 #: program/localization/de_CH/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "Bitte geben Sie einen Namen oder eine E-Mail-Adresse ein"
@@ -268,6 +268,10 @@ msgstr "Es wurden noch nicht alle Dateien hochgeladen. Bitte warten oder Upload 
 #: program/localization/de_CH/messages.inc:searchsuccessful
 msgid "$nr messages found."
 msgstr "$nr Nachrichten gefunden"
+
+#: program/localization/de_CH/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "$nr Kontakte gefunden"
 
 #: program/localization/de_CH/messages.inc:searchnomatch
 msgid "Search returned no matches."
@@ -459,10 +463,6 @@ msgstr "SMTP Fehler ($code): Der Empfänger \"$to\" konnte nicht gesetzt werden 
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "SMTP Fehler: Die Empfängerliste konnte nicht verarbeitet werden"
 
-#: program/localization/de_CH/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "SMTP-Fehler: Übermittlungsbestätigungen werden nicht unterstützt"
-
 #: program/localization/de_CH/messages.inc:smtperror
 msgid "SMTP Error: $msg"
 msgstr "SMTP Fehler: $msg"
@@ -513,6 +513,22 @@ msgstr "Gruppe erlogreich umbenannt"
 msgid "Group created successfully."
 msgstr "Gruppe erlogreich erstellt"
 
+#: program/localization/de_CH/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Suche erfolgreich gelöscht"
+
+#: program/localization/de_CH/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Suche konnte nicht gelöscht werden"
+
+#: program/localization/de_CH/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Suche erfolgreich gespeichert"
+
+#: program/localization/de_CH/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Suche konnte nicht gespeichert werden"
+
 #: program/localization/de_CH/messages.inc:messagedeleted
 msgid "Message(s) deleted successfully."
 msgstr "Nachricht(en) erfolgreich gelöscht"
@@ -532,6 +548,10 @@ msgstr "Nachricht(en) erfolgreich markiert"
 #: program/localization/de_CH/messages.inc:autocompletechars
 msgid "Enter at least $min characters for autocompletion."
 msgstr "Geben Sie mind. $min Zeichen für die Auto-Vervollständigung ein"
+
+#: program/localization/de_CH/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Mehrere Treffer. Bitte geben Sie mehr Buchstaben ein"
 
 #: program/localization/de_CH/messages.inc:namecannotbeempty
 msgid "Name cannot be empty."
@@ -560,3 +580,7 @@ msgstr "Es wurden noch Rechtschreibfehler in der Nachricht gefunden."
 #: program/localization/de_CH/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
 msgstr "Konnte den Ordner nicht erstellen/verschieben. Keine Berechtigung."
+
+#: program/localization/de_CH/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "Die Nachricht ist zu gross, um verarbeitet zu werden"

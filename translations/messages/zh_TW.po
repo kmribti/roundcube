@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: zh_TW\n"
@@ -37,6 +37,10 @@ msgstr "伺服器錯誤！"
 #: program/localization/zh_TW/messages.inc:servererrormsg
 msgid "Server Error: $msg"
 msgstr "伺服器錯誤：$msg"
+
+#: program/localization/zh_TW/messages.inc:dberror
+msgid "Database Error!"
+msgstr "資料庫錯誤!"
 
 #: program/localization/zh_TW/messages.inc:errorreadonly
 msgid "Unable to perform operation. Folder is read-only."
@@ -69,6 +73,10 @@ msgstr "載入中..."
 #: program/localization/zh_TW/messages.inc:uploading
 msgid "Uploading file..."
 msgstr "上傳檔案中…"
+
+#: program/localization/zh_TW/messages.inc:uploadingmany
+msgid "Uploading files..."
+msgstr "檔案上載中..."
 
 #: program/localization/zh_TW/messages.inc:loadingdata
 msgid "Loading data..."
@@ -106,6 +114,10 @@ msgstr "聯絡人已經成功地新增至通訊錄"
 msgid "A contact with the same e-mail address already exists."
 msgstr "此聯絡人的電子郵件位址已存在"
 
+#: program/localization/zh_TW/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "已存在相同名稱的連絡人"
+
 #: program/localization/zh_TW/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
 msgstr "為了保護你的隱私，此郵件中的遠端圖片已經被阻擋。"
@@ -121,6 +133,10 @@ msgstr "沒有找到任何聯絡人"
 #: program/localization/zh_TW/messages.inc:contactnotfound
 msgid "The requested contact was not found."
 msgstr "找不到要求的聯絡人"
+
+#: program/localization/zh_TW/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "輸入關鍵字找尋連絡人"
 
 #: program/localization/zh_TW/messages.inc:sendingfailed
 msgid "Failed to send message."
@@ -158,6 +174,10 @@ msgstr "無法標上旗標"
 msgid "Do you really want to delete selected contact(s)?"
 msgstr "你確定要刪除已選擇的聯絡人？"
 
+#: program/localization/zh_TW/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "您確定要刪除選擇的群組嗎?"
+
 #: program/localization/zh_TW/messages.inc:deletemessagesconfirm
 msgid "Do you really want to delete selected message(s)?"
 msgstr "你確定要刪除已選擇的郵件？"
@@ -169,6 +189,14 @@ msgstr "你確定要刪除這個資料夾嗎？"
 #: program/localization/zh_TW/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
 msgstr "你確定要刪除這個資料夾裡面所有的郵件嗎？"
+
+#: program/localization/zh_TW/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "刪除連絡人..."
+
+#: program/localization/zh_TW/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "刪除存組..."
 
 #: program/localization/zh_TW/messages.inc:folderdeleting
 msgid "Deleting folder..."
@@ -226,10 +254,6 @@ msgstr "郵件尚未寄出。你確定要離開並且捨棄此郵件？"
 msgid "Please select an ldap server to search."
 msgstr "請選擇一個 LDAP 伺服器進行搜尋"
 
-#: program/localization/zh_TW/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "沒有找到任何聯絡人"
-
 #: program/localization/zh_TW/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "請輸入一個聯絡人姓名或電子郵件位址"
@@ -242,6 +266,10 @@ msgstr "尚有附加檔案未上傳完畢，請等待或取消上傳"
 #: program/localization/zh_TW/messages.inc:searchsuccessful
 msgid "$nr messages found."
 msgstr "共找到 $nr 封郵件"
+
+#: program/localization/zh_TW/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "找到連絡人 $nr"
 
 #: program/localization/zh_TW/messages.inc:searchnomatch
 msgid "Search returned no matches."
@@ -323,6 +351,10 @@ msgstr "移動郵件中..."
 msgid "Copying message(s)..."
 msgstr "複製訊息..."
 
+#: program/localization/zh_TW/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "複製群組..."
+
 #: program/localization/zh_TW/messages.inc:deletingmessage
 msgid "Deleting message(s)..."
 msgstr "刪除訊息..."
@@ -330,6 +362,14 @@ msgstr "刪除訊息..."
 #: program/localization/zh_TW/messages.inc:markingmessage
 msgid "Marking message(s)..."
 msgstr "標示訊息..."
+
+#: program/localization/zh_TW/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "新增連絡人至群組"
+
+#: program/localization/zh_TW/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "從群組刪除連絡人"
 
 #: program/localization/zh_TW/messages.inc:receiptsent
 msgid "Successfully sent a read receipt."
@@ -418,10 +458,6 @@ msgstr "SMTP 錯誤（$code）：無法加收件者「$to」（$msg）"
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "SMTP 錯誤：無法分析收件者"
 
-#: program/localization/zh_TW/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "SMTP 錯誤：不支援傳送狀態通知"
-
 #: program/localization/zh_TW/messages.inc:smtperror
 msgid "SMTP Error: $msg"
 msgstr "SMTP 錯誤：$msg"
@@ -450,6 +486,14 @@ msgstr "無法刪除聯絡人"
 msgid "Contact(s) deleted successfully."
 msgstr "聯絡人成功刪除"
 
+#: program/localization/zh_TW/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "無法復原刪除的連絡人"
+
+#: program/localization/zh_TW/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "連絡人復原完成"
+
 #: program/localization/zh_TW/messages.inc:groupdeleted
 msgid "Group deleted successfully."
 msgstr "群組成功刪除"
@@ -461,6 +505,22 @@ msgstr "群組重新命名成功"
 #: program/localization/zh_TW/messages.inc:groupcreated
 msgid "Group created successfully."
 msgstr "群組建立成功"
+
+#: program/localization/zh_TW/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "搜尋結果刪除完成"
+
+#: program/localization/zh_TW/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "無法刪除搜尋結果"
+
+#: program/localization/zh_TW/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "搜尋結果建立完成"
+
+#: program/localization/zh_TW/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "無法建立搜尋結果"
 
 #: program/localization/zh_TW/messages.inc:messagedeleted
 msgid "Message(s) deleted successfully."
@@ -482,6 +542,10 @@ msgstr "訊息成功標示"
 msgid "Enter at least $min characters for autocompletion."
 msgstr "輸入至少 $min 字元才能自動完成自動完成"
 
+#: program/localization/zh_TW/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "過多相符資訊，請輸入更多文字"
+
 #: program/localization/zh_TW/messages.inc:namecannotbeempty
 msgid "Name cannot be empty."
 msgstr "名稱不可空白"
@@ -501,3 +565,7 @@ msgstr "資料夾成功建立"
 #: program/localization/zh_TW/messages.inc:invalidimageformat
 msgid "Not a valid image format."
 msgstr "圖片格式錯誤"
+
+#: program/localization/zh_TW/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "無法建立/移動資料夾至指定的上層目錄 (No access rights)"

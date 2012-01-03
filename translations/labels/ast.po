@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: \n"
@@ -110,10 +110,6 @@ msgstr "Prioridá"
 msgid "Company"
 msgstr "Organización"
 
-#: program/localization/ast/labels.inc:reply-to
-msgid "reply-to"
-msgstr "Contestar a"
-
 #: program/localization/ast/labels.inc:mailboxlist
 #: program/localization/ast/labels.inc:folders
 msgid "Folders"
@@ -126,6 +122,10 @@ msgstr "Mensaxes del $from a $to de $count"
 #: program/localization/ast/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "Mensaxe $nr de $count"
+
+#: program/localization/ast/labels.inc:copy
+msgid "Copy"
+msgstr "Copia"
 
 #: program/localization/ast/labels.inc:moveto
 msgid "Move to..."
@@ -142,18 +142,6 @@ msgstr "Nome del Ficheru"
 #: program/localization/ast/labels.inc:filesize
 msgid "File size"
 msgstr "Tamañu del ficheru"
-
-#: program/localization/ast/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "Amosar HTML"
-
-#: program/localization/ast/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "Mensaxe HTML"
-
-#: program/localization/ast/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "Fecha prestosa"
 
 #: program/localization/ast/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -348,33 +336,17 @@ msgstr "Imprentar esti mensaxe"
 msgid "Show previous message"
 msgstr "Amosar el mensaxe anterior"
 
-#: program/localization/ast/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Amosar grupu de mensaxes anterior"
-
 #: program/localization/ast/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Amosar primer mensaxe"
-
-#: program/localization/ast/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "Amosar primer grupu de mensaxes"
 
 #: program/localization/ast/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Amosar el mensaxe siguiente"
 
-#: program/localization/ast/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Amosar grupu de mensaxes que siguientes"
-
 #: program/localization/ast/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Amosar l'últimu mensaxe"
-
-#: program/localization/ast/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "Amosar l'últimu grupu de mensaxes"
 
 #: program/localization/ast/labels.inc:backtolist
 msgid "Back to message list"
@@ -404,10 +376,6 @@ msgstr "Como marcáu"
 msgid "As unflagged"
 msgstr "Como non marcáu"
 
-#: program/localization/ast/labels.inc:messageactions
-msgid "messageactions"
-msgstr "Más aiciones..."
-
 #: program/localization/ast/labels.inc:select
 msgid "Select"
 msgstr "Escueye"
@@ -417,6 +385,7 @@ msgid "All"
 msgstr "Toos"
 
 #: program/localization/ast/labels.inc:none
+#: program/localization/ast/labels.inc:nonesort
 msgid "None"
 msgstr "Nengún"
 
@@ -451,10 +420,6 @@ msgstr "Compautar"
 #: program/localization/ast/labels.inc:empty
 msgid "Empty"
 msgstr "Vaciar"
-
-#: program/localization/ast/labels.inc:purge
-msgid "purge"
-msgstr "Desaniciar"
 
 #: program/localization/ast/labels.inc:quota
 msgid "Disk usage"
@@ -493,7 +458,7 @@ msgid "Download (.eml)"
 msgstr "Baxar (.eml)"
 
 #: program/localization/ast/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Escribir un mensaxe"
 
 #: program/localization/ast/labels.inc:editasnew
@@ -501,11 +466,11 @@ msgid "Edit as new"
 msgstr "Editar como nuevu"
 
 #: program/localization/ast/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Guardar como borrador"
 
 #: program/localization/ast/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Unviar el mensaxe yá"
 
 #: program/localization/ast/labels.inc:addattachment
@@ -790,6 +755,18 @@ msgstr "Nuevu"
 msgid "Edit item"
 msgstr "Editar"
 
+#: program/localization/ast/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Amosar HTML"
+
+#: program/localization/ast/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Mensaxe HTML"
+
+#: program/localization/ast/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Fecha prestosa"
+
 #: program/localization/ast/labels.inc:setdefault
 msgid "Set default"
 msgstr "Escoyer opción preferída"
@@ -969,10 +946,6 @@ msgstr "Mantenimientu"
 #: program/localization/ast/labels.inc:newmessage
 msgid "New Message"
 msgstr "Mensax nuevu"
-
-#: program/localization/ast/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Allistar opciones"
 
 #: program/localization/ast/labels.inc:folder
 msgid "Folder"

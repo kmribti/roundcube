@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: fr_FR\n"
@@ -32,7 +32,7 @@ msgstr "Serveur"
 
 #: program/localization/fr_FR/labels.inc:login
 msgid "Login"
-msgstr "Authentification"
+msgstr "Connexion"
 
 #: program/localization/fr_FR/labels.inc:logout
 msgid "Logout"
@@ -582,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Télécharger (.eml)"
 
 #: program/localization/fr_FR/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Composer un nouveau message"
 
 #: program/localization/fr_FR/labels.inc:editasnew
@@ -590,11 +590,11 @@ msgid "Edit as new"
 msgstr "Éditer en tant que nouveau message"
 
 #: program/localization/fr_FR/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Enregistrer ce brouillon"
 
 #: program/localization/fr_FR/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Envoyer le message maintenant"
 
 #: program/localization/fr_FR/labels.inc:addattachment
@@ -1348,6 +1348,10 @@ msgstr "Vérifier tous les dossiers pour les nouveaux messages"
 msgid "After message delete/move display the next message"
 msgstr "Après suppression/déplacement du message, afficher le message suivant"
 
+#: program/localization/fr_FR/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "Police par défaut des messages en HTML"
+
 #: program/localization/fr_FR/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Options principales"
@@ -1363,10 +1367,6 @@ msgstr "Maintenance"
 #: program/localization/fr_FR/labels.inc:newmessage
 msgid "New Message"
 msgstr "Nouveau Message"
-
-#: program/localization/fr_FR/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Lister les options"
 
 #: program/localization/fr_FR/labels.inc:signatureoptions
 msgid "Signature Options"

@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: vi_VN\n"
+"Language: vi\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -158,10 +158,6 @@ msgstr "Thư chưa được gửi. Bỏ qua thư đang soạn?"
 #: program/localization/vi_VN/messages.inc:noldapserver
 msgid "Please select an ldap server to search."
 msgstr "Chọn máy chủ ldap server để tìm"
-
-#: program/localization/vi_VN/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Không tìm thấy địa chỉ"
 
 #: program/localization/vi_VN/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."

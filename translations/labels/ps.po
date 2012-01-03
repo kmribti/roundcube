@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ps\n"
@@ -16,7 +16,7 @@ msgstr ""
 
 #: program/localization/ps/labels.inc:welcome
 msgid "Welcome to $product"
-msgstr "$product ته ښه راغلاست "
+msgstr "$product ته ښه راغلاست"
 
 #: program/localization/ps/labels.inc:username
 msgid "Username"
@@ -72,7 +72,7 @@ msgstr "جنک"
 
 #: program/localization/ps/labels.inc:subject
 msgid "Subject"
-msgstr " مضمون"
+msgstr "مضمون"
 
 #: program/localization/ps/labels.inc:from
 msgid "From"
@@ -100,7 +100,7 @@ msgstr "نېټه"
 
 #: program/localization/ps/labels.inc:size
 msgid "Size"
-msgstr "کچه "
+msgstr "کچه"
 
 #: program/localization/ps/labels.inc:priority
 msgid "Priority"
@@ -118,11 +118,15 @@ msgstr "پوښۍ"
 #: program/localization/ps/labels.inc:messagesfromto
 msgid "Messages $from to $to of $count"
 msgstr "له ټاکلي استوزو څخه ټاکلي شمېرل شوو "
-"استوزو ته "
+"استوزو ته"
 
 #: program/localization/ps/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "له $nr ځخه استوزو $count استوزو ته"
+
+#: program/localization/ps/labels.inc:copy
+msgid "Copy"
+msgstr "لمېسل"
 
 #: program/localization/ps/labels.inc:moveto
 msgid "Move to..."
@@ -134,23 +138,11 @@ msgstr "ښکته کول"
 
 #: program/localization/ps/labels.inc:filename
 msgid "File name"
-msgstr " فايل نوم"
+msgstr "فايل نوم"
 
 #: program/localization/ps/labels.inc:filesize
 msgid "File size"
 msgstr "فايل کچه"
-
-#: program/localization/ps/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "ايچ ټي ام ايل ښوون"
-
-#: program/localization/ps/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "ايچ ټي ام ايل استوزه"
-
-#: program/localization/ps/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr " په زړه پورې نېټې"
 
 #: program/localization/ps/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -158,7 +150,7 @@ msgstr "د پتو کتاب ته يې ورزيات کړئ"
 
 #: program/localization/ps/labels.inc:sun
 msgid "Sun"
-msgstr "يوه نۍ "
+msgstr "يوه نۍ"
 
 #: program/localization/ps/labels.inc:mon
 msgid "Mon"
@@ -307,7 +299,7 @@ msgstr "ډسمبر"
 
 #: program/localization/ps/labels.inc:today
 msgid "Today"
-msgstr "نن "
+msgstr "نن"
 
 #: program/localization/ps/labels.inc:checkmail
 msgid "Check for new messages"
@@ -315,7 +307,7 @@ msgstr "نوي استوزي وګوره"
 
 #: program/localization/ps/labels.inc:writenewmessage
 msgid "Create a new message"
-msgstr "نوي استوزي جوړول "
+msgstr "نوي استوزي جوړول"
 
 #: program/localization/ps/labels.inc:replytomessage
 msgid "Reply to sender"
@@ -324,15 +316,15 @@ msgstr "استوونکي ته ځواب ورکړئ"
 #: program/localization/ps/labels.inc:replytoallmessage
 msgid "Reply to list or to sender and all recipients"
 msgstr "استوونکي او ټولو ترلاسه کوونکو ته ځواب "
-"لېږل "
+"لېږل"
 
 #: program/localization/ps/labels.inc:forwardmessage
 msgid "Forward the message"
-msgstr "استوزه بل ته استول "
+msgstr "استوزه بل ته استول"
 
 #: program/localization/ps/labels.inc:deletemessage
 msgid "Delete message"
-msgstr "استوزه ړنګول "
+msgstr "استوزه ړنګول"
 
 #: program/localization/ps/labels.inc:movemessagetotrash
 msgid "Move message to trash"
@@ -340,59 +332,43 @@ msgstr "استوزه کثافت داني ته واستوه"
 
 #: program/localization/ps/labels.inc:printmessage
 msgid "Print this message"
-msgstr "دا استوزه چاپ کړه "
+msgstr "دا استوزه چاپ کړه"
 
 #: program/localization/ps/labels.inc:previousmessage
 msgid "Show previous message"
-msgstr "پخوانۍ استوزه وښيه "
-
-#: program/localization/ps/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "د استوزو پخوانی غونډ وښيه "
+msgstr "پخوانۍ استوزه وښيه"
 
 #: program/localization/ps/labels.inc:firstmessage
 msgid "Show first message"
-msgstr "لومړی استوزه وښيه "
-
-#: program/localization/ps/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "د استوزو لومړی غونډ وښيه "
+msgstr "لومړی استوزه وښيه"
 
 #: program/localization/ps/labels.inc:nextmessage
 msgid "Show next message"
-msgstr "ورپسې استوزه وښيه  "
-
-#: program/localization/ps/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "د استوزو ورپسې غونډ وښيه "
+msgstr "ورپسې استوزه وښيه"
 
 #: program/localization/ps/labels.inc:lastmessage
 msgid "Show last message"
-msgstr "پای /آخري استوزه وښيه "
-
-#: program/localization/ps/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "داستوزو پای غونډ وښيه "
+msgstr "پای /آخري استوزه وښيه"
 
 #: program/localization/ps/labels.inc:backtolist
 msgid "Back to message list"
-msgstr "بيرته د استوزو لست ته "
+msgstr "بيرته د استوزو لست ته"
 
 #: program/localization/ps/labels.inc:viewsource
 msgid "Show source"
-msgstr "سرچينه وښيه "
+msgstr "سرچينه وښيه"
 
 #: program/localization/ps/labels.inc:markmessages
 msgid "Mark messages"
-msgstr "استوزي په نښه کړئ "
+msgstr "استوزي په نښه کړئ"
 
 #: program/localization/ps/labels.inc:markread
 msgid "As read"
-msgstr "لوستل شوي په توګه "
+msgstr "لوستل شوي په توګه"
 
 #: program/localization/ps/labels.inc:markunread
 msgid "As unread"
-msgstr "د نالوستل شوي په توګه "
+msgstr "د نالوستل شوي په توګه"
 
 #: program/localization/ps/labels.inc:markflagged
 msgid "As flagged"
@@ -404,19 +380,20 @@ msgstr "د کارونې په توګه"
 
 #: program/localization/ps/labels.inc:select
 msgid "Select"
-msgstr "ټاکل "
+msgstr "ټاکل"
 
 #: program/localization/ps/labels.inc:all
 msgid "All"
-msgstr "ټول "
+msgstr "ټول"
 
 #: program/localization/ps/labels.inc:none
+#: program/localization/ps/labels.inc:nonesort
 msgid "None"
-msgstr "هېڅ "
+msgstr "هېڅ"
 
 #: program/localization/ps/labels.inc:unread
 msgid "Unread"
-msgstr "نالوستي "
+msgstr "نالوستي"
 
 #: program/localization/ps/labels.inc:flagged
 msgid "Flagged"
@@ -432,55 +409,51 @@ msgstr "چڼول"
 
 #: program/localization/ps/labels.inc:compact
 msgid "Compact"
-msgstr "کېښکلی "
+msgstr "کېښکلی"
 
 #: program/localization/ps/labels.inc:empty
 msgid "Empty"
-msgstr "تش "
-
-#: program/localization/ps/labels.inc:purge
-msgid "purge"
-msgstr "لرول "
+msgstr "تش"
 
 #: program/localization/ps/labels.inc:quota
 msgid "Disk usage"
-msgstr "ټيکلي لارښود "
+msgstr "ټيکلي لارښود"
 
 #: program/localization/ps/labels.inc:unknown
 msgid "unknown"
-msgstr "نامعلوم "
+msgstr "نامعلوم"
 
 #: program/localization/ps/labels.inc:unlimited
 msgid "unlimited"
-msgstr "بي کچه "
+msgstr "بي کچه"
 
 #: program/localization/ps/labels.inc:quicksearch
 msgid "Quick search"
-msgstr "ژر پلټنه "
+msgstr "ژر پلټنه"
 
 #: program/localization/ps/labels.inc:resetsearch
 msgid "Reset search"
-msgstr "د پلټنې بياسمون "
+msgstr "د پلټنې بياسمون"
 
 #: program/localization/ps/labels.inc:openinextwin
 msgid "Open in new window"
 msgstr "په نوي کړکۍ کې پرانيزه"
 
 #: program/localization/ps/labels.inc:compose
-msgid "Compose a message"
-msgstr "استوزه وليکه "
+msgid "Compose"
+msgstr "استوزه وليکه"
 
 #: program/localization/ps/labels.inc:savemessage
-msgid "Save this draft"
-msgstr "دا ګارليک خوندي کړه "
+msgid "Save as draft"
+msgstr "دا ګارليک خوندي کړه"
 
 #: program/localization/ps/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "اوس يې واستوه"
 
 #: program/localization/ps/labels.inc:addattachment
 msgid "Attach a file"
-msgstr "يو فايل ونښلوه "
+msgstr "يو فايل ونښلوه"
 
 #: program/localization/ps/labels.inc:charset
 msgid "Charset"
@@ -488,55 +461,55 @@ msgstr "چيرست"
 
 #: program/localization/ps/labels.inc:editortype
 msgid "Editor type"
-msgstr "د ټايب سمونګر "
+msgstr "د ټايب سمونګر"
 
 #: program/localization/ps/labels.inc:returnreceipt
 msgid "Return receipt"
-msgstr "د رسليک راګرځېدل "
+msgstr "د رسليک راګرځېدل"
 
 #: program/localization/ps/labels.inc:checkspelling
 msgid "Check spelling"
-msgstr "ليکدود کتنه "
+msgstr "ليکدود کتنه"
 
 #: program/localization/ps/labels.inc:resumeediting
 msgid "Resume editing"
-msgstr "کارمخينې سمونه "
+msgstr "کارمخينې سمونه"
 
 #: program/localization/ps/labels.inc:revertto
 msgid "Revert to"
-msgstr "ته بېرته اړول "
+msgstr "ته بېرته اړول"
 
 #: program/localization/ps/labels.inc:attachments
 msgid "Attachments"
-msgstr "نښلني "
+msgstr "نښلني"
 
 #: program/localization/ps/labels.inc:upload
 msgid "Upload"
-msgstr "پورته کول "
+msgstr "پورته کول"
 
 #: program/localization/ps/labels.inc:close
 msgid "Close"
-msgstr "بندول "
+msgstr "بندول"
 
 #: program/localization/ps/labels.inc:low
 msgid "Low"
-msgstr "ټيټ "
+msgstr "ټيټ"
 
 #: program/localization/ps/labels.inc:lowest
 msgid "Lowest"
-msgstr "خورا ټيټ "
+msgstr "خورا ټيټ"
 
 #: program/localization/ps/labels.inc:normal
 msgid "Normal"
-msgstr "نورمال "
+msgstr "نورمال"
 
 #: program/localization/ps/labels.inc:high
 msgid "High"
-msgstr "لوړ "
+msgstr "لوړ"
 
 #: program/localization/ps/labels.inc:highest
 msgid "Highest"
-msgstr "خورا لوړ "
+msgstr "خورا لوړ"
 
 #: program/localization/ps/labels.inc:nosubject
 msgid "(no subject)"
@@ -544,7 +517,7 @@ msgstr "هېڅ موضوع"
 
 #: program/localization/ps/labels.inc:showimages
 msgid "Display images"
-msgstr "انځورونه وښيه "
+msgstr "انځورونه وښيه"
 
 #: program/localization/ps/labels.inc:alwaysshow
 msgid "Always show images from $sender"
@@ -556,7 +529,7 @@ msgstr "ايچ ټی ايمل ال"
 
 #: program/localization/ps/labels.inc:plaintoggle
 msgid "Plain text"
-msgstr "ساده متن "
+msgstr "ساده متن"
 
 #: program/localization/ps/labels.inc:savesentmessagein
 msgid "Save sent message in"
@@ -572,30 +545,30 @@ msgstr "لږترلږه د اجازه شوي فايل کچه $وي"
 
 #: program/localization/ps/labels.inc:addcc
 msgid "Add Cc"
-msgstr "څرګندليک "
+msgstr "څرګندليک"
 
 #: program/localization/ps/labels.inc:addbcc
 msgid "Add Bcc"
-msgstr "پټليک "
+msgstr "پټليک"
 
 #: program/localization/ps/labels.inc:addreplyto
 msgid "Add Reply-To"
-msgstr "ته ورزيات کړه "
+msgstr "ته ورزيات کړه"
 
 #: program/localization/ps/labels.inc:mdnrequest
 msgid "The sender of this message has asked to be notified when you read this "
 "message. Do you wish to notify the sender?"
 msgstr "ددې استوزي استوونکی پوښتي چېد استوزي "
 "لوستلو سره سم تاسې خبر کړي،.    غواړئ چې "
-"استوونکی خبرشي؟ "
+"استوونکی خبرشي؟"
 
 #: program/localization/ps/labels.inc:receiptread
 msgid "Return Receipt (read)"
-msgstr "رسليک راګرځېدل (لوستل "
+msgstr "رسليک راګرځېدل (لوستل"
 
 #: program/localization/ps/labels.inc:yourmessage
 msgid "This is a Return Receipt for your message"
-msgstr " دا رسليک راګرځېدل ستاسې استوزي لپاره دی "
+msgstr "دا رسليک راګرځېدل ستاسې استوزي لپاره دی"
 
 #: program/localization/ps/labels.inc:receiptnote
 msgid "Note: This receipt only acknowledges that the message was displayed on the "
@@ -613,11 +586,11 @@ msgstr "نوم ښوونه"
 
 #: program/localization/ps/labels.inc:firstname
 msgid "First Name"
-msgstr "نوم  "
+msgstr "نوم"
 
 #: program/localization/ps/labels.inc:surname
 msgid "Last Name"
-msgstr "کورنی نوم "
+msgstr "کورنی نوم"
 
 #: program/localization/ps/labels.inc:email
 msgid "Email"
@@ -625,39 +598,39 @@ msgstr "برېښناليک"
 
 #: program/localization/ps/labels.inc:addcontact
 msgid "Add new contact"
-msgstr "نوی اړيکلوری ورزيات کړه "
+msgstr "نوی اړيکلوری ورزيات کړه"
 
 #: program/localization/ps/labels.inc:editcontact
 msgid "Edit contact"
-msgstr "اړيکلوري سمون "
+msgstr "اړيکلوري سمون"
 
 #: program/localization/ps/labels.inc:edit
 msgid "Edit"
-msgstr " سمون "
+msgstr "سمون"
 
 #: program/localization/ps/labels.inc:cancel
 msgid "Cancel"
-msgstr "لري کول "
+msgstr "لري کول"
 
 #: program/localization/ps/labels.inc:save
 msgid "Save"
-msgstr "ساتل "
+msgstr "ساتل"
 
 #: program/localization/ps/labels.inc:delete
 msgid "Delete"
-msgstr "ړنګول "
+msgstr "ړنګول"
 
 #: program/localization/ps/labels.inc:newcontact
 msgid "Create new contact card"
-msgstr " نوي اړيکلوري کارټ جوړ کړه   "
+msgstr "نوي اړيکلوري کارټ جوړ کړه"
 
 #: program/localization/ps/labels.inc:deletecontact
 msgid "Delete selected contacts"
-msgstr "ټاکل شوي اړيکلوري ړنګ کړه "
+msgstr "ټاکل شوي اړيکلوري ړنګ کړه"
 
 #: program/localization/ps/labels.inc:composeto
 msgid "Compose mail to"
-msgstr "  ته ليک وليکه "
+msgstr "ته ليک وليکه"
 
 #: program/localization/ps/labels.inc:contactsfromto
 msgid "Contacts $from to $to of $count"
@@ -666,11 +639,11 @@ msgstr "له دومره اړيکلورو څخه دومره شمېرل شوي "
 
 #: program/localization/ps/labels.inc:print
 msgid "Print"
-msgstr "چاپ "
+msgstr "چاپ"
 
 #: program/localization/ps/labels.inc:export
 msgid "Export"
-msgstr "بهرول "
+msgstr "بهرول"
 
 #: program/localization/ps/labels.inc:exportvcards
 msgid "Export contacts in vCard format"
@@ -678,27 +651,27 @@ msgstr "اړيکلوري د ويکارډ په بڼه واستوئ"
 
 #: program/localization/ps/labels.inc:previouspage
 msgid "Show previous page"
-msgstr "پخوانی غونډ وښيه  "
+msgstr "پخوانی غونډ وښيه"
 
 #: program/localization/ps/labels.inc:firstpage
 msgid "Show first page"
-msgstr "لومړی غونډ وښيه  "
+msgstr "لومړی غونډ وښيه"
 
 #: program/localization/ps/labels.inc:nextpage
 msgid "Show next page"
-msgstr "ورپسې غونډ وښيه "
+msgstr "ورپسې غونډ وښيه"
 
 #: program/localization/ps/labels.inc:lastpage
 msgid "Show last page"
-msgstr " پای غونډ وښيه "
+msgstr "پای غونډ وښيه"
 
 #: program/localization/ps/labels.inc:groups
 msgid "Groups"
-msgstr "ډلې "
+msgstr "ډلې"
 
 #: program/localization/ps/labels.inc:personaladrbook
 msgid "Personal Addresses"
-msgstr "ځاني پتې "
+msgstr "ځاني پتې"
 
 #: program/localization/ps/labels.inc:import
 msgid "Import"
@@ -731,43 +704,55 @@ msgstr "ترسره شو"
 
 #: program/localization/ps/labels.inc:settingsfor
 msgid "Settings for"
-msgstr "لپاره برابرونې "
+msgstr "لپاره برابرونې"
 
 #: program/localization/ps/labels.inc:preferences
 msgid "Preferences"
-msgstr "غورونې "
+msgstr "غورونې"
 
 #: program/localization/ps/labels.inc:userpreferences
 msgid "User preferences"
-msgstr "کارن غورونې "
+msgstr "کارن غورونې"
 
 #: program/localization/ps/labels.inc:editpreferences
 msgid "Edit user preferences"
-msgstr "د کارن غورونو سمون "
+msgstr "د کارن غورونو سمون"
 
 #: program/localization/ps/labels.inc:identities
 msgid "Identities"
-msgstr "پېژندنې "
+msgstr "پېژندنې"
 
 #: program/localization/ps/labels.inc:manageidentities
 msgid "Manage identities for this account"
-msgstr "ددې حساب پېژندنو برابرول "
+msgstr "ددې حساب پېژندنو برابرول"
 
 #: program/localization/ps/labels.inc:newidentity
 msgid "New identity"
-msgstr "نوي پېژندنه "
+msgstr "نوي پېژندنه"
 
 #: program/localization/ps/labels.inc:newitem
 msgid "New item"
-msgstr "نوی توک "
+msgstr "نوی توک"
 
 #: program/localization/ps/labels.inc:edititem
 msgid "Edit item"
-msgstr "توک سمون "
+msgstr "توک سمون"
+
+#: program/localization/ps/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "ايچ ټي ام ايل ښوون"
+
+#: program/localization/ps/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "ايچ ټي ام ايل استوزه"
+
+#: program/localization/ps/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "په زړه پورې نېټې"
 
 #: program/localization/ps/labels.inc:setdefault
 msgid "Set default"
-msgstr "تلوالي برابرول "
+msgstr "تلوالي برابرول"
 
 #: program/localization/ps/labels.inc:autodetect
 msgid "Auto"
@@ -775,19 +760,19 @@ msgstr "په خپلواکه توګه"
 
 #: program/localization/ps/labels.inc:language
 msgid "Language"
-msgstr "ژبه "
+msgstr "ژبه"
 
 #: program/localization/ps/labels.inc:timezone
 msgid "Time zone"
-msgstr "سيميز وخت "
+msgstr "سيميز وخت"
 
 #: program/localization/ps/labels.inc:pagesize
 msgid "Rows per page"
-msgstr "په هر مخ پرتې کښې "
+msgstr "په هر مخ پرتې کښې"
 
 #: program/localization/ps/labels.inc:signature
 msgid "Signature"
-msgstr "لاسليک "
+msgstr "لاسليک"
 
 #: program/localization/ps/labels.inc:dstactive
 msgid "Daylight saving time"
@@ -795,15 +780,15 @@ msgstr "ورځنيو کارونو لنډيز ساتل"
 
 #: program/localization/ps/labels.inc:htmleditor
 msgid "Compose HTML messages"
-msgstr "ايچ ټي‌ام ايل استوزي وليکه "
+msgstr "ايچ ټي‌ام ايل استوزي وليکه"
 
 #: program/localization/ps/labels.inc:htmlsignature
 msgid "HTML signature"
-msgstr "ايچ ټي ام ايل لاسليک "
+msgstr "ايچ ټي ام ايل لاسليک"
 
 #: program/localization/ps/labels.inc:previewpane
 msgid "Show preview pane"
-msgstr " پخوانی چوکاټ وښييه "
+msgstr "پخوانی چوکاټ وښييه"
 
 #: program/localization/ps/labels.inc:skin
 msgid "Interface skin"
@@ -877,15 +862,11 @@ msgstr "نښلول شوي انځورونه تر استوزې لاندې ښکار
 
 #: program/localization/ps/labels.inc:autosavedraft
 msgid "Automatically save draft"
-msgstr "بارليک په خپل سري توګه  خوندي‌کړه "
+msgstr "بارليک په خپل سري توګه  خوندي‌کړه"
 
 #: program/localization/ps/labels.inc:everynminutes
 msgid "every $n minute(s)"
-msgstr "هر ه ګڼه په دقيقو کې  "
-
-#: program/localization/ps/labels.inc:keepaliveevery
-msgid "keepaliveevery"
-msgstr "هر دقيقې $n"
+msgstr "هر ه ګڼه په دقيقو کې"
 
 #: program/localization/ps/labels.inc:keepalive
 msgid "Check for new messages on"
@@ -893,7 +874,7 @@ msgstr "نوي استوزي وګوره په"
 
 #: program/localization/ps/labels.inc:never
 msgid "never"
-msgstr "هېڅ "
+msgstr "هېڅ"
 
 #: program/localization/ps/labels.inc:messagesdisplaying
 msgid "Displaying Messages"
@@ -933,31 +914,31 @@ msgstr "په ټولو پوښيو کې نوي استوزي وګورئ"
 
 #: program/localization/ps/labels.inc:folder
 msgid "Folder"
-msgstr "پوښۍ "
+msgstr "پوښۍ"
 
 #: program/localization/ps/labels.inc:foldername
 msgid "Folder name"
-msgstr "پوښۍ نوم "
+msgstr "پوښۍ نوم"
 
 #: program/localization/ps/labels.inc:subscribed
 msgid "Subscribed"
-msgstr "ګډ شو "
+msgstr "ګډ شو"
 
 #: program/localization/ps/labels.inc:messagecount
 msgid "Messages"
-msgstr "استوزي "
+msgstr "استوزي"
 
 #: program/localization/ps/labels.inc:create
 msgid "Create"
-msgstr "جوړول، رامنځ ته کول "
+msgstr "جوړول، رامنځ ته کول"
 
 #: program/localization/ps/labels.inc:createfolder
 msgid "Create new folder"
-msgstr "نوې پوښۍ جوړ کړه "
+msgstr "نوې پوښۍ جوړ کړه"
 
 #: program/localization/ps/labels.inc:managefolders
 msgid "Manage folders"
-msgstr "پوښيو څارل "
+msgstr "پوښيو څارل"
 
 #: program/localization/ps/labels.inc:specialfolders
 msgid "Special Folders"
@@ -965,11 +946,11 @@ msgstr "ځانګړي پوښۍۍ"
 
 #: program/localization/ps/labels.inc:sortby
 msgid "Sort by"
-msgstr " اڼل  "
+msgstr "اڼل"
 
 #: program/localization/ps/labels.inc:sortasc
 msgid "Sort ascending"
-msgstr "له پورته نه ښکته خوا ته برابرول "
+msgstr "له پورته نه ښکته خوا ته برابرول"
 
 #: program/localization/ps/labels.inc:sortdesc
 msgid "Sort descending"

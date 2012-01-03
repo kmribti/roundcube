@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: nl_NL\n"
@@ -28,19 +28,19 @@ msgstr "Uw sessie is verlopen of ongeldig."
 
 #: program/localization/nl_NL/messages.inc:imaperror
 msgid "Connection to IMAP server failed."
-msgstr "Connectie met IMAP server mislukt."
+msgstr "Verbinding met IMAP-server mislukt."
 
 #: program/localization/nl_NL/messages.inc:servererror
 msgid "Server Error!"
-msgstr "Server Fout!"
+msgstr "Serverfout!"
 
 #: program/localization/nl_NL/messages.inc:servererrormsg
 msgid "Server Error: $msg"
-msgstr "Server Fout: $msg"
+msgstr "Serverfout: $msg"
 
 #: program/localization/nl_NL/messages.inc:dberror
 msgid "Database Error!"
-msgstr "Database Fout!"
+msgstr "Databasefout!"
 
 #: program/localization/nl_NL/messages.inc:errorreadonly
 msgid "Unable to perform operation. Folder is read-only."
@@ -80,7 +80,7 @@ msgstr "Bestanden worden geüpload..."
 
 #: program/localization/nl_NL/messages.inc:loadingdata
 msgid "Loading data..."
-msgstr "Laden van data..."
+msgstr "Gegevens worden geladen..."
 
 #: program/localization/nl_NL/messages.inc:checkingmail
 msgid "Checking for new messages..."
@@ -88,7 +88,7 @@ msgstr "Controleren op nieuwe berichten..."
 
 #: program/localization/nl_NL/messages.inc:sendingmessage
 msgid "Sending message..."
-msgstr "Bezig met bericht versturen..."
+msgstr "Bericht versturen..."
 
 #: program/localization/nl_NL/messages.inc:messagesent
 msgid "Message sent successfully."
@@ -96,11 +96,11 @@ msgstr "Bericht succesvol verstuurd."
 
 #: program/localization/nl_NL/messages.inc:savingmessage
 msgid "Saving message..."
-msgstr "Bezig met bericht opslaan..."
+msgstr "Bericht wordt opgeslagen..."
 
 #: program/localization/nl_NL/messages.inc:messagesaved
 msgid "Message saved to Drafts."
-msgstr "Bericht bewaard als concept."
+msgstr "Bericht opgeslagen in Concepten."
 
 #: program/localization/nl_NL/messages.inc:successfullysaved
 msgid "Successfully saved."
@@ -120,8 +120,8 @@ msgstr "Er bestaat al een contactpersoon met deze naam."
 
 #: program/localization/nl_NL/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
-msgstr "Uit privacyoverwegingen zijn niet bijgevoegde afbeeldingen geblokkeerd in "
-"dit bericht."
+msgstr "Om uw privacy te beschermen zijn externe afbeeldingen geblokkeerd in dit "
+"bericht."
 
 #: program/localization/nl_NL/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
@@ -137,7 +137,7 @@ msgstr "Contactpersoon niet gevonden."
 
 #: program/localization/nl_NL/messages.inc:contactsearchonly
 msgid "Enter some search terms to find contacts"
-msgstr "Voer enkele zoektermen in om contactpersonen te zoeken."
+msgstr "Voer enkele zoektermen in om contactpersonen te zoeken"
 
 #: program/localization/nl_NL/messages.inc:sendingfailed
 msgid "Failed to send message."
@@ -145,7 +145,7 @@ msgstr "Verzenden van bericht is mislukt."
 
 #: program/localization/nl_NL/messages.inc:senttooquickly
 msgid "Please wait $sec sec(s). before sending this message."
-msgstr "Je moet $sec seconden wachten om het bericht te versturen."
+msgstr "U moet $sec seconde(n) wachten om het bericht te versturen."
 
 #: program/localization/nl_NL/messages.inc:errorsavingsent
 msgid "An error occured while saving sent message."
@@ -157,23 +157,23 @@ msgstr "Er is een fout opgetreden tijdens het opslaan."
 
 #: program/localization/nl_NL/messages.inc:errormoving
 msgid "Could not move the message(s)."
-msgstr "Kan het bericht niet verplaatsen."
+msgstr "Kan bericht(en) niet verplaatsen."
 
 #: program/localization/nl_NL/messages.inc:errorcopying
 msgid "Could not copy the message(s)."
-msgstr "Kan de bericht(en) niet kopiëren."
+msgstr "Kan bericht(en) niet kopiëren."
 
 #: program/localization/nl_NL/messages.inc:errordeleting
 msgid "Could not delete the message(s)."
-msgstr "Kan het bericht niet verwijderen."
+msgstr "Kan bericht(en) niet verwijderen."
 
 #: program/localization/nl_NL/messages.inc:errormarking
 msgid "Could not mark the message(s)."
-msgstr "Kon bericht niet markeren."
+msgstr "Kan bericht(en) niet markeren."
 
 #: program/localization/nl_NL/messages.inc:deletecontactconfirm
 msgid "Do you really want to delete selected contact(s)?"
-msgstr "Weet u zeker dat u de geselecteerde contactperso(o)n/en wilt verwijderen?"
+msgstr "Weet u zeker dat u de geselecteerde contact(en) wilt verwijderen?"
 
 #: program/localization/nl_NL/messages.inc:deletegroupconfirm
 msgid "Do you really want to delete selected group?"
@@ -193,7 +193,7 @@ msgstr "Weet u zeker dat u alle berichten in deze map wilt verwijderen?"
 
 #: program/localization/nl_NL/messages.inc:contactdeleting
 msgid "Deleting contact(s)..."
-msgstr "Bezig met verwijderen één of meer contactpersonen..."
+msgstr "Bezig met verwijderen van contact(en)..."
 
 #: program/localization/nl_NL/messages.inc:groupdeleting
 msgid "Deleting group..."
@@ -253,11 +253,11 @@ msgstr "Bericht is niet verstuurd. Weet u zeker dat u het niet wilt bewaren?"
 
 #: program/localization/nl_NL/messages.inc:noldapserver
 msgid "Please select an ldap server to search."
-msgstr "Geef een LDAP adresboek server op om te doorzoeken."
+msgstr "Selecteer een LDAP-server om te zoeken."
 
 #: program/localization/nl_NL/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
-msgstr "Geef de naam of e-mail op van de contactpersoon."
+msgstr "Vul de naam of e-mailadres in van een contactpersoon."
 
 #: program/localization/nl_NL/messages.inc:notuploadedwarning
 msgid "Not all attachments have been uploaded yet. Please wait or cancel the "
@@ -310,7 +310,7 @@ msgstr "Folder succesvol geleegd."
 
 #: program/localization/nl_NL/messages.inc:deletedsuccessfully
 msgid "Successfully deleted."
-msgstr "Successvol verwijderd."
+msgstr "Met succes verwijderd."
 
 #: program/localization/nl_NL/messages.inc:converting
 msgid "Removing formatting..."
@@ -346,23 +346,23 @@ msgstr "Kan het ontvanger-adres niet opslaan."
 
 #: program/localization/nl_NL/messages.inc:movingmessage
 msgid "Moving message(s)..."
-msgstr "Bericht verplaatsen..."
+msgstr "Bericht(en) verplaatsen..."
 
 #: program/localization/nl_NL/messages.inc:copyingmessage
 msgid "Copying message(s)..."
-msgstr "Kopiëren bericht..."
+msgstr "Bericht(en) kopiëren..."
 
 #: program/localization/nl_NL/messages.inc:copyingcontact
 msgid "Copying contact(s)..."
-msgstr "Kopiëren contactpersonen..."
+msgstr "Contact(en) kopiëren..."
 
 #: program/localization/nl_NL/messages.inc:deletingmessage
 msgid "Deleting message(s)..."
-msgstr "Verwijderen bericht(en)..."
+msgstr "Bericht(en) verwijderen..."
 
 #: program/localization/nl_NL/messages.inc:markingmessage
 msgid "Marking message(s)..."
-msgstr "Markeren bericht(en)..."
+msgstr "Bericht(en) markeren..."
 
 #: program/localization/nl_NL/messages.inc:addingmember
 msgid "Adding contact(s) to the group..."
@@ -576,3 +576,7 @@ msgstr "Spelfouten gedetecteerd in bericht"
 #: program/localization/nl_NL/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
 msgstr "U heeft niet voldoende rechten een map te maken / verplaatsen in deze map."
+
+#: program/localization/nl_NL/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "Het bericht is te groot om te verwerken."

@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: eu_ES\n"
+"Language: eu\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -110,10 +110,6 @@ msgstr "Lehentasuna"
 msgid "Company"
 msgstr "Erakundea"
 
-#: program/localization/eu_ES/labels.inc:reply-to
-msgid "reply-to"
-msgstr "Erantzun-Honi"
-
 #: program/localization/eu_ES/labels.inc:mailboxlist
 #: program/localization/eu_ES/labels.inc:folders
 msgid "Folders"
@@ -126,6 +122,10 @@ msgstr "$from -tik $to -ra $count mezuetatik"
 #: program/localization/eu_ES/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "$nr mezua $count -tik"
+
+#: program/localization/eu_ES/labels.inc:copy
+msgid "Copy"
+msgstr "Kopia"
 
 #: program/localization/eu_ES/labels.inc:moveto
 msgid "Move to..."
@@ -142,18 +142,6 @@ msgstr "Fitxategi Izena"
 #: program/localization/eu_ES/labels.inc:filesize
 msgid "File size"
 msgstr "Fitxategi Tamaina"
-
-#: program/localization/eu_ES/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "HTML nahiago"
-
-#: program/localization/eu_ES/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "HTML Mezua"
-
-#: program/localization/eu_ES/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "Data politak"
 
 #: program/localization/eu_ES/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -348,33 +336,17 @@ msgstr "Mezu hau inprimatu"
 msgid "Show previous message"
 msgstr "Aurreko mezua ikusi"
 
-#: program/localization/eu_ES/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Aurreko mezuak ikusi"
-
 #: program/localization/eu_ES/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Lehenengo mezua ikusi"
-
-#: program/localization/eu_ES/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "Lehenengo mezu sorta ikusi"
 
 #: program/localization/eu_ES/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Hurrengo mezua ikusi"
 
-#: program/localization/eu_ES/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Hurrengo mezu sorta ikusi"
-
 #: program/localization/eu_ES/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Azken mezua ikusi"
-
-#: program/localization/eu_ES/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "Azken mezu sorta ikusi"
 
 #: program/localization/eu_ES/labels.inc:backtolist
 msgid "Back to message list"
@@ -413,6 +385,7 @@ msgid "All"
 msgstr "Denak"
 
 #: program/localization/eu_ES/labels.inc:none
+#: program/localization/eu_ES/labels.inc:nonesort
 msgid "None"
 msgstr "Batez"
 
@@ -427,10 +400,6 @@ msgstr "Trinkotu"
 #: program/localization/eu_ES/labels.inc:empty
 msgid "Empty"
 msgstr "Hustu"
-
-#: program/localization/eu_ES/labels.inc:purge
-msgid "purge"
-msgstr "Garbitu"
 
 #: program/localization/eu_ES/labels.inc:quota
 msgid "Disk usage"
@@ -453,15 +422,15 @@ msgid "Reset search"
 msgstr "Bilaketa berrabiarazi"
 
 #: program/localization/eu_ES/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Mezu bat sortu"
 
 #: program/localization/eu_ES/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Zirriborro hau gorde"
 
 #: program/localization/eu_ES/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Mezua orain bidali"
 
 #: program/localization/eu_ES/labels.inc:addattachment
@@ -636,7 +605,7 @@ msgstr "Aukeraturiko txartelak ezabatu"
 
 #: program/localization/eu_ES/labels.inc:composeto
 msgid "Compose mail to"
-msgstr "Bidali mezua honi: "
+msgstr "Bidali mezua honi:"
 
 #: program/localization/eu_ES/labels.inc:contactsfromto
 msgid "Contacts $from to $to of $count"
@@ -709,6 +678,18 @@ msgstr "Elementu berria"
 #: program/localization/eu_ES/labels.inc:edititem
 msgid "Edit item"
 msgstr "Elementua Editatu"
+
+#: program/localization/eu_ES/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML nahiago"
+
+#: program/localization/eu_ES/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML Mezua"
+
+#: program/localization/eu_ES/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Data politak"
 
 #: program/localization/eu_ES/labels.inc:setdefault
 msgid "Set default"

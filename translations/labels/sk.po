@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: sk_SK\n"
@@ -129,7 +129,7 @@ msgstr "Správy od $from do $to z $count"
 
 #: program/localization/sk_SK/labels.inc:threadsfromto
 msgid "Threads $from to $to of $count"
-msgstr "Konverzácie od $from do $to z $count "
+msgstr "Konverzácie od $from do $to z $count"
 
 #: program/localization/sk_SK/labels.inc:messagenrof
 msgid "Message $nr of $count"
@@ -408,8 +408,8 @@ msgstr "Ako označené"
 msgid "As unflagged"
 msgstr "Ako neoznačené"
 
-#: program/localization/sk_SK/labels.inc:messageactions
-msgid "messageactions"
+#: program/localization/sk_SK/labels.inc:moreactions
+msgid "More actions..."
 msgstr "Ďalšie akcie..."
 
 #: program/localization/sk_SK/labels.inc:select
@@ -582,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Stiahnuť"
 
 #: program/localization/sk_SK/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Vytvoriť správu"
 
 #: program/localization/sk_SK/labels.inc:editasnew
@@ -590,11 +590,11 @@ msgid "Edit as new"
 msgstr "Upraviť ako novú"
 
 #: program/localization/sk_SK/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Uložiť do rozpísaných"
 
 #: program/localization/sk_SK/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Odoslať správu"
 
 #: program/localization/sk_SK/labels.inc:addattachment
@@ -616,6 +616,14 @@ msgstr "Potvrdenie o doručení"
 #: program/localization/sk_SK/labels.inc:dsn
 msgid "Delivery status notification"
 msgstr "Doručenie oznámenia o stave"
+
+#: program/localization/sk_SK/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "$date odosielateľ napísal:"
+
+#: program/localization/sk_SK/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "Pôvodná správa"
 
 #: program/localization/sk_SK/labels.inc:editidents
 msgid "Edit identities"
@@ -684,6 +692,10 @@ msgstr "Ukázať obrázky"
 #: program/localization/sk_SK/labels.inc:alwaysshow
 msgid "Always show images from $sender"
 msgstr "Vždy zobraziť obrázky od $sender"
+
+#: program/localization/sk_SK/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "Toto je rozpísaná správa"
 
 #: program/localization/sk_SK/labels.inc:htmltoggle
 msgid "HTML"
@@ -916,6 +928,14 @@ msgstr "Video"
 msgid "Home Page"
 msgstr "Domovská stránka"
 
+#: program/localization/sk_SK/labels.inc:typeblog
+msgid "Blog"
+msgstr "Blog"
+
+#: program/localization/sk_SK/labels.inc:typeprofile
+msgid "Profile"
+msgstr "Profil"
+
 #: program/localization/sk_SK/labels.inc:addfield
 msgid "Add field..."
 msgstr "Pridať položku..."
@@ -1000,10 +1020,6 @@ msgstr "Exportovať kontakty vo formáte vCard"
 msgid "Create new contact group"
 msgstr "Vytvoriť novú skupinu kontaktov"
 
-#: program/localization/sk_SK/labels.inc:groupactions
-msgid "groupactions"
-msgstr "Akcie pre skupiny kontaktov"
-
 #: program/localization/sk_SK/labels.inc:grouprename
 msgid "Rename group"
 msgstr "Premenovať skupinu"
@@ -1040,6 +1056,14 @@ msgstr "Skupiny"
 msgid "Personal Addresses"
 msgstr "Osobné adresy"
 
+#: program/localization/sk_SK/labels.inc:searchsave
+msgid "Save search"
+msgstr "Uložiť vyhľadávanie"
+
+#: program/localization/sk_SK/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "Zmazať vyhľadávanie"
+
 #: program/localization/sk_SK/labels.inc:import
 msgid "Import"
 msgstr "Import"
@@ -1074,6 +1098,10 @@ msgstr "Hotovo"
 #: program/localization/sk_SK/labels.inc:settingsfor
 msgid "Settings for"
 msgstr "Nastavenia pre"
+
+#: program/localization/sk_SK/labels.inc:about
+msgid "About"
+msgstr "O programe"
 
 #: program/localization/sk_SK/labels.inc:preferences
 msgid "Preferences"
@@ -1118,6 +1146,14 @@ msgstr "Predvolené kódovanie"
 #: program/localization/sk_SK/labels.inc:htmlmessage
 msgid "HTML Message"
 msgstr "HTML správa"
+
+#: program/localization/sk_SK/labels.inc:dateformat
+msgid "Date format"
+msgstr "Formát dátumu"
+
+#: program/localization/sk_SK/labels.inc:timeformat
+msgid "Time format"
+msgstr "Formát času"
 
 #: program/localization/sk_SK/labels.inc:prettydate
 msgid "Pretty dates"
@@ -1217,7 +1253,7 @@ msgstr "ignorovať"
 
 #: program/localization/sk_SK/labels.inc:readwhendeleted
 msgid "Mark the message as read on delete"
-msgstr "Označiť správu "
+msgstr "Označiť správu"
 
 #: program/localization/sk_SK/labels.inc:flagfordeletion
 msgid "Flag the message for deletion instead of delete"
@@ -1311,6 +1347,10 @@ msgstr "Kontrolovať nové správy vo všetkých zložkách"
 msgid "After message delete/move display the next message"
 msgstr "Zobraziť ďalšiu správu po zmazanie / prenosu správy"
 
+#: program/localization/sk_SK/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "Prednastavený font HTML správ"
+
 #: program/localization/sk_SK/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Hlavné nastavenia"
@@ -1326,10 +1366,6 @@ msgstr "Údržba"
 #: program/localization/sk_SK/labels.inc:newmessage
 msgid "New Message"
 msgstr "Nová správa"
-
-#: program/localization/sk_SK/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Nastavenia stránkovanie"
 
 #: program/localization/sk_SK/labels.inc:signatureoptions
 msgid "Signature Options"
@@ -1404,9 +1440,33 @@ msgstr "Umietniť odpoveď do adresára, kde je umiestnená správa, na ktorú s
 msgid "Add new contacts to the selected addressbook"
 msgstr "Pridať nové kontakty do zvoleného adresára"
 
+#: program/localization/sk_SK/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "Vynechať alternatívnu emailovú adresu pri automatickom dopĺňaní"
+
 #: program/localization/sk_SK/labels.inc:spellcheckbeforesend
 msgid "Check spelling before sending a message"
 msgstr "Skontrolovať pravopis pred odoslaním správy"
+
+#: program/localization/sk_SK/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "Voľby kontroly pravopisu"
+
+#: program/localization/sk_SK/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "Ignorovať slová so symbolmi"
+
+#: program/localization/sk_SK/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "Ignorovať slová s číslami"
+
+#: program/localization/sk_SK/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "Ignorovať slová písané veľkými písmenami"
+
+#: program/localization/sk_SK/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "Pridať do slovníka"
 
 #: program/localization/sk_SK/labels.inc:folder
 msgid "Folder"
@@ -1499,6 +1559,26 @@ msgstr "Triediť zostupne"
 #: program/localization/sk_SK/labels.inc:undo
 msgid "Undo"
 msgstr "Vrátiť"
+
+#: program/localization/sk_SK/labels.inc:plugin
+msgid "Plugin"
+msgstr "Zásuvný modul"
+
+#: program/localization/sk_SK/labels.inc:version
+msgid "Version"
+msgstr "Verzia"
+
+#: program/localization/sk_SK/labels.inc:source
+msgid "Source"
+msgstr "Zdroj"
+
+#: program/localization/sk_SK/labels.inc:license
+msgid "License"
+msgstr "Licencia"
+
+#: program/localization/sk_SK/labels.inc:support
+msgid "Get support"
+msgstr "Získať podporu"
 
 #: program/localization/sk_SK/labels.inc:B
 msgid "B"

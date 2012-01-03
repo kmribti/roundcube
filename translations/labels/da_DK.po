@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: da_DK\n"
+"Language: da\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -412,10 +412,6 @@ msgstr "Som umarkeret"
 msgid "More actions..."
 msgstr "Flere funktioner..."
 
-#: program/localization/da_DK/labels.inc:messageactions
-msgid "messageactions"
-msgstr "Flere funktioner..."
-
 #: program/localization/da_DK/labels.inc:select
 msgid "Select"
 msgstr "Vælg"
@@ -586,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Download (.eml)"
 
 #: program/localization/da_DK/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Forfat en besked"
 
 #: program/localization/da_DK/labels.inc:editasnew
@@ -594,11 +590,11 @@ msgid "Edit as new"
 msgstr "Redigér som ny"
 
 #: program/localization/da_DK/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Gem denne kladde"
 
 #: program/localization/da_DK/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Send beskeden nu"
 
 #: program/localization/da_DK/labels.inc:addattachment
@@ -1025,9 +1021,9 @@ msgstr "Eksportér kontakter i vCard format"
 msgid "Create new contact group"
 msgstr "Opret ny kontaktgruppe"
 
-#: program/localization/da_DK/labels.inc:groupactions
-msgid "groupactions"
-msgstr "Funktioner for kontaktgrupper..."
+#: program/localization/da_DK/labels.inc:grouprename
+msgid "Rename group"
+msgstr "Omdøb gruppe"
 
 #: program/localization/da_DK/labels.inc:groupdelete
 msgid "Delete group"
@@ -1352,6 +1348,10 @@ msgstr "Tjek alle mapper for nye beskeder"
 msgid "After message delete/move display the next message"
 msgstr "Efter slet/flyt besked, vis næste besked"
 
+#: program/localization/da_DK/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "Standard font ved HTML besked"
+
 #: program/localization/da_DK/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Generelle indstillinger"
@@ -1367,10 +1367,6 @@ msgstr "Vedligeholdelse"
 #: program/localization/da_DK/labels.inc:newmessage
 msgid "New Message"
 msgstr "Ny besked"
-
-#: program/localization/da_DK/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Liste-indstillinger"
 
 #: program/localization/da_DK/labels.inc:signatureoptions
 msgid "Signature Options"

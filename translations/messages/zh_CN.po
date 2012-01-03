@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: zh_CN\n"
@@ -38,9 +38,9 @@ msgstr "服务器错误！"
 msgid "Server Error: $msg"
 msgstr "服务器错误: $msg"
 
-#: program/localization/zh_CN/messages.inc:databaserror
-msgid "databaserror"
-msgstr "数据库错误!"
+#: program/localization/zh_CN/messages.inc:dberror
+msgid "Database Error!"
+msgstr "数据库错误！"
 
 #: program/localization/zh_CN/messages.inc:errorreadonly
 msgid "Unable to perform operation. Folder is read-only."
@@ -134,6 +134,10 @@ msgstr "未找到联系人"
 msgid "The requested contact was not found."
 msgstr "未找到指定的联系人"
 
+#: program/localization/zh_CN/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "请输入联系人的搜索条件"
+
 #: program/localization/zh_CN/messages.inc:sendingfailed
 msgid "Failed to send message."
 msgstr "发送失败"
@@ -185,6 +189,10 @@ msgstr "确定要删除已选中的邮件夹？"
 #: program/localization/zh_CN/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
 msgstr "是否确认要删除当前邮件夹中的所有邮件？"
+
+#: program/localization/zh_CN/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "正在删除联系人"
 
 #: program/localization/zh_CN/messages.inc:groupdeleting
 msgid "Deleting group..."
@@ -246,10 +254,6 @@ msgstr "邮件未发送。您确定要离开并废弃当前邮件吗？"
 msgid "Please select an ldap server to search."
 msgstr "请选择一个LDAP服务器进行查找"
 
-#: program/localization/zh_CN/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "未找到联系人"
-
 #: program/localization/zh_CN/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "请输入一个联系人姓名或电子邮件地址"
@@ -262,6 +266,10 @@ msgstr "附件还没有全部上传，请等待或者取消上传。"
 #: program/localization/zh_CN/messages.inc:searchsuccessful
 msgid "$nr messages found."
 msgstr "共找到 $nr 封邮件"
+
+#: program/localization/zh_CN/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "$nr 找到联系人"
 
 #: program/localization/zh_CN/messages.inc:searchnomatch
 msgid "Search returned no matches."
@@ -450,10 +458,6 @@ msgstr "SMTP 错误 ($code): 添加收件人失败 \"$to\" ($msg)"
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "SMTP 错误: 无法解析收件人列表"
 
-#: program/localization/zh_CN/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "SMTP 错误: 不支持邮件送达通知"
-
 #: program/localization/zh_CN/messages.inc:smtperror
 msgid "SMTP Error: $msg"
 msgstr "SMTP 错误: $msg"
@@ -502,6 +506,22 @@ msgstr "组改名成功"
 msgid "Group created successfully."
 msgstr "成功创建组"
 
+#: program/localization/zh_CN/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "成功删除保存的搜索"
+
+#: program/localization/zh_CN/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "无法删除保存的搜索"
+
+#: program/localization/zh_CN/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "成功建立保存的搜索"
+
+#: program/localization/zh_CN/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "无法创建保存的搜索"
+
 #: program/localization/zh_CN/messages.inc:messagedeleted
 msgid "Message(s) deleted successfully."
 msgstr "删除邮件成功"
@@ -521,6 +541,10 @@ msgstr "标记邮件成功"
 #: program/localization/zh_CN/messages.inc:autocompletechars
 msgid "Enter at least $min characters for autocompletion."
 msgstr "至少需要输入 $min 个字符"
+
+#: program/localization/zh_CN/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "找到太多的结果。请输入更多字符。"
 
 #: program/localization/zh_CN/messages.inc:namecannotbeempty
 msgid "Name cannot be empty."
@@ -549,3 +573,7 @@ msgstr "检查到拼写错误."
 #: program/localization/zh_CN/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
 msgstr "无法创建和转移到所选的目录,权限不足."
+
+#: program/localization/zh_CN/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "对邮件信息太大的部份进行处理"

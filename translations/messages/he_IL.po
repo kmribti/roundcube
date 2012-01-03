@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: he_IL\n"
+"Language: he\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -444,7 +444,7 @@ msgstr "המעבר לעורך רגיל יגרום לאיבוד את העריכה
 msgid "A fatal configuration error occurred. Contact your administrator "
 "immediately. <b>Your message can not be sent.</b>"
 msgstr "ארעה שגיאת תצורה חמורה. נא להודיע מייד "
-"למנהל/ת המערכת. <B> הודעתך לא תשלח <B> "
+"למנהל/ת המערכת. <B> הודעתך לא תשלח <B>"
 
 #: program/localization/he_IL/messages.inc:smtpconnerror
 msgid "SMTP Error ($code): Connection to server failed."
@@ -456,11 +456,11 @@ msgstr "SMTP ($code): ההזדהות נכשלה"
 
 #: program/localization/he_IL/messages.inc:smtpfromerror
 msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
-msgstr " ($msg) SMTP ($code): \"$from\" לא נרשמה כתובת השולח"
+msgstr "($msg) SMTP ($code): \"$from\" לא נרשמה כתובת השולח"
 
 #: program/localization/he_IL/messages.inc:smtptoerror
 msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
-msgstr " ($msg) SMTP ($code): \"$to\" לא נרשמה כתובת המקבל"
+msgstr "($msg) SMTP ($code): \"$to\" לא נרשמה כתובת המקבל"
 
 #: program/localization/he_IL/messages.inc:smtprecipientserror
 msgid "SMTP Error: Unable to parse recipients list."

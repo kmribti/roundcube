@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: is_IS\n"
@@ -110,10 +110,6 @@ msgstr "Forgangur"
 msgid "Company"
 msgstr "Stofnun"
 
-#: program/localization/is_IS/labels.inc:reply-to
-msgid "reply-to"
-msgstr "Reply-To"
-
 #: program/localization/is_IS/labels.inc:mailboxlist
 #: program/localization/is_IS/labels.inc:folders
 msgid "Folders"
@@ -126,6 +122,10 @@ msgstr "Skeyti $from til $to af $count"
 #: program/localization/is_IS/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "Skeyti $nr af $count"
+
+#: program/localization/is_IS/labels.inc:copy
+msgid "Copy"
+msgstr "Afrit"
 
 #: program/localization/is_IS/labels.inc:moveto
 msgid "Move to..."
@@ -142,18 +142,6 @@ msgstr "Skrárnafn"
 #: program/localization/is_IS/labels.inc:filesize
 msgid "File size"
 msgstr "Skrárstærð"
-
-#: program/localization/is_IS/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "Vil HTML"
-
-#: program/localization/is_IS/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "HTML skeyti"
-
-#: program/localization/is_IS/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "Fallegar dagsetningar"
 
 #: program/localization/is_IS/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -348,33 +336,17 @@ msgstr "Prenta skeyti"
 msgid "Show previous message"
 msgstr "Sýna fyrra skeyti"
 
-#: program/localization/is_IS/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Sýna fyrri skammt af skeytum"
-
 #: program/localization/is_IS/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Sýna fyrsta skeyti"
-
-#: program/localization/is_IS/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "Sýna fyrsta skammtinn af skeytum"
 
 #: program/localization/is_IS/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Sýna næsta skeyti"
 
-#: program/localization/is_IS/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Sýna næsta skammt af skeytum"
-
 #: program/localization/is_IS/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Sýna síðasta skeytið"
-
-#: program/localization/is_IS/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "Sýna síðasta skammtinn af skeytum"
 
 #: program/localization/is_IS/labels.inc:backtolist
 msgid "Back to message list"
@@ -413,6 +385,7 @@ msgid "All"
 msgstr "Allt"
 
 #: program/localization/is_IS/labels.inc:none
+#: program/localization/is_IS/labels.inc:nonesort
 msgid "None"
 msgstr "Ekkert"
 
@@ -440,10 +413,6 @@ msgstr "Pakka"
 msgid "Empty"
 msgstr "Tæma"
 
-#: program/localization/is_IS/labels.inc:purge
-msgid "purge"
-msgstr "Hreinsa"
-
 #: program/localization/is_IS/labels.inc:quota
 msgid "Disk usage"
 msgstr "Gagnamagn"
@@ -469,15 +438,15 @@ msgid "Open in new window"
 msgstr "Opna í nýjum glugga"
 
 #: program/localization/is_IS/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Semja skeyti"
 
 #: program/localization/is_IS/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Vista drög"
 
 #: program/localization/is_IS/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Senda skeytið núna"
 
 #: program/localization/is_IS/labels.inc:addattachment
@@ -562,7 +531,7 @@ msgstr "Einfaldur"
 
 #: program/localization/is_IS/labels.inc:savesentmessagein
 msgid "Save sent message in"
-msgstr "Vista send skeyti í "
+msgstr "Vista send skeyti í"
 
 #: program/localization/is_IS/labels.inc:dontsave
 msgid "don't save"
@@ -761,6 +730,18 @@ msgstr "Nýtt"
 #: program/localization/is_IS/labels.inc:edititem
 msgid "Edit item"
 msgstr "Laga"
+
+#: program/localization/is_IS/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Vil HTML"
+
+#: program/localization/is_IS/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML skeyti"
+
+#: program/localization/is_IS/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Fallegar dagsetningar"
 
 #: program/localization/is_IS/labels.inc:setdefault
 msgid "Set default"

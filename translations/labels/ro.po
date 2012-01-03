@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ro_RO\n"
@@ -109,10 +109,6 @@ msgstr "Prioritate"
 #: program/localization/ro_RO/labels.inc:organization
 msgid "Company"
 msgstr "Organizaţie"
-
-#: program/localization/ro_RO/labels.inc:reply-to
-msgid "reply-to"
-msgstr "Răspunde la"
 
 #: program/localization/ro_RO/labels.inc:mailboxlist
 #: program/localization/ro_RO/labels.inc:folders
@@ -348,33 +344,17 @@ msgstr "Listează mesajul"
 msgid "Show previous message"
 msgstr "Afişează mesajul anterior"
 
-#: program/localization/ro_RO/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Afişează setul anterior de mesaje"
-
 #: program/localization/ro_RO/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Afişează primul mesaj"
-
-#: program/localization/ro_RO/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "Afişează primul set de mesaje"
 
 #: program/localization/ro_RO/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Afişează următorul mesaj"
 
-#: program/localization/ro_RO/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Afişează setul următor de mesaje"
-
 #: program/localization/ro_RO/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Afişează ultimul mesaj"
-
-#: program/localization/ro_RO/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "Afişează ultimul set de mesaje"
 
 #: program/localization/ro_RO/labels.inc:backtolist
 msgid "Back to message list"
@@ -403,10 +383,6 @@ msgstr "Ca marcat"
 #: program/localization/ro_RO/labels.inc:markunflagged
 msgid "As unflagged"
 msgstr "Ca nemarcat"
-
-#: program/localization/ro_RO/labels.inc:messageactions
-msgid "messageactions"
-msgstr "Mai multe acţiuni..."
 
 #: program/localization/ro_RO/labels.inc:select
 msgid "Select"
@@ -537,10 +513,6 @@ msgstr "Compactează"
 msgid "Empty"
 msgstr "Goleşte"
 
-#: program/localization/ro_RO/labels.inc:purge
-msgid "purge"
-msgstr "Curăţă"
-
 #: program/localization/ro_RO/labels.inc:quota
 msgid "Disk usage"
 msgstr "Spaţiu folosit"
@@ -578,7 +550,7 @@ msgid "Download (.eml)"
 msgstr "Salvează în format .eml"
 
 #: program/localization/ro_RO/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Scrie un mesaj"
 
 #: program/localization/ro_RO/labels.inc:editasnew
@@ -586,11 +558,11 @@ msgid "Edit as new"
 msgstr "Editează ca nou"
 
 #: program/localization/ro_RO/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Salvează această ciornă"
 
 #: program/localization/ro_RO/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Trimite mesaj"
 
 #: program/localization/ro_RO/labels.inc:addattachment
@@ -687,7 +659,7 @@ msgstr "Mărimea maximă admisă a fişierului este $size"
 
 #: program/localization/ro_RO/labels.inc:addcc
 msgid "Add Cc"
-msgstr "Adaugă Cc "
+msgstr "Adaugă Cc"
 
 #: program/localization/ro_RO/labels.inc:addbcc
 msgid "Add Bcc"
@@ -790,10 +762,6 @@ msgstr "Exportă contactele în format vCard"
 #: program/localization/ro_RO/labels.inc:newcontactgroup
 msgid "Create new contact group"
 msgstr "Creează un nou grup de contacte"
-
-#: program/localization/ro_RO/labels.inc:groupactions
-msgid "groupactions"
-msgstr "Acţiuni pentru grupurile de contacte ..."
 
 #: program/localization/ro_RO/labels.inc:previouspage
 msgid "Show previous page"
@@ -1094,10 +1062,6 @@ msgstr "Mentenanţă"
 #: program/localization/ro_RO/labels.inc:newmessage
 msgid "New Message"
 msgstr "Mesaj nou"
-
-#: program/localization/ro_RO/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Opţiuni listă"
 
 #: program/localization/ro_RO/labels.inc:signatureoptions
 msgid "Signature Options"

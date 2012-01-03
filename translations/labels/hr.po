@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:03:31+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: hr_HR\n"
@@ -408,10 +408,6 @@ msgstr "Kao označenu"
 msgid "As unflagged"
 msgstr "Kao neoznačenu"
 
-#: program/localization/hr_HR/labels.inc:messageactions
-msgid "messageactions"
-msgstr "Više akcija"
-
 #: program/localization/hr_HR/labels.inc:select
 msgid "Select"
 msgstr "Označi"
@@ -543,7 +539,7 @@ msgstr "Kompresiranje"
 
 #: program/localization/hr_HR/labels.inc:empty
 msgid "Empty"
-msgstr "Isprazni "
+msgstr "Isprazni"
 
 #: program/localization/hr_HR/labels.inc:quota
 msgid "Disk usage"
@@ -582,7 +578,7 @@ msgid "Download (.eml)"
 msgstr "Download (.eml)"
 
 #: program/localization/hr_HR/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Nova poruka"
 
 #: program/localization/hr_HR/labels.inc:editasnew
@@ -590,11 +586,11 @@ msgid "Edit as new"
 msgstr "Uredi kao novo"
 
 #: program/localization/hr_HR/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Spremi u 'Predlošci'"
 
 #: program/localization/hr_HR/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Pošalji poruku"
 
 #: program/localization/hr_HR/labels.inc:addattachment
@@ -856,6 +852,11 @@ msgstr "Asistent"
 msgid "Spouse"
 msgstr "Suprug/a"
 
+#: program/localization/hr_HR/labels.inc:other
+#: program/localization/hr_HR/labels.inc:typeother
+msgid "Other"
+msgstr "Ostalo"
+
 #: program/localization/hr_HR/labels.inc:typehome
 msgid "Home"
 msgstr "Kućni broj"
@@ -863,10 +864,6 @@ msgstr "Kućni broj"
 #: program/localization/hr_HR/labels.inc:typework
 msgid "Work"
 msgstr "Poslovni broj"
-
-#: program/localization/hr_HR/labels.inc:typeother
-msgid "Other"
-msgstr "Ostalo"
 
 #: program/localization/hr_HR/labels.inc:typemobile
 msgid "Mobile"
@@ -979,10 +976,6 @@ msgstr "Izvezi kontakte u vCard formatu"
 #: program/localization/hr_HR/labels.inc:newcontactgroup
 msgid "Create new contact group"
 msgstr "Napravi novu kontaktnu grupu"
-
-#: program/localization/hr_HR/labels.inc:groupactions
-msgid "groupactions"
-msgstr "Akcije kontaktne grupe"
 
 #: program/localization/hr_HR/labels.inc:previouspage
 msgid "Show previous page"
@@ -1295,10 +1288,6 @@ msgstr "Održavanje"
 #: program/localization/hr_HR/labels.inc:newmessage
 msgid "New Message"
 msgstr "Nova poruka"
-
-#: program/localization/hr_HR/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Postavke liste"
 
 #: program/localization/hr_HR/labels.inc:signatureoptions
 msgid "Signature Options"

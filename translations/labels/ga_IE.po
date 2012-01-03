@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: ga_IE\n"
+"Language: ga\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -110,10 +110,6 @@ msgstr "Tosaíocht"
 msgid "Company"
 msgstr "Eagraíocht"
 
-#: program/localization/ga_IE/labels.inc:reply-to
-msgid "reply-to"
-msgstr "Freagair go"
-
 #: program/localization/ga_IE/labels.inc:mailboxlist
 #: program/localization/ga_IE/labels.inc:folders
 msgid "Folders"
@@ -126,6 +122,14 @@ msgstr "Teachtaireachta as $from go $to as $count"
 #: program/localization/ga_IE/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "Teachtaireacht $nr as $count"
+
+#: program/localization/ga_IE/labels.inc:copy
+msgid "Copy"
+msgstr "Cóipeáil"
+
+#: program/localization/ga_IE/labels.inc:move
+msgid "Move"
+msgstr "Bog"
 
 #: program/localization/ga_IE/labels.inc:moveto
 msgid "Move to..."
@@ -142,18 +146,6 @@ msgstr "Comhad"
 #: program/localization/ga_IE/labels.inc:filesize
 msgid "File size"
 msgstr "Toirt"
-
-#: program/localization/ga_IE/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "Taispeáin an HTML"
-
-#: program/localization/ga_IE/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "Teachtaireacht HTML"
-
-#: program/localization/ga_IE/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "Dátaí Dheas"
 
 #: program/localization/ga_IE/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -215,6 +207,91 @@ msgstr "Aoine"
 msgid "Saturday"
 msgstr "An Satharn"
 
+#: program/localization/ga_IE/labels.inc:jan
+msgid "Jan"
+msgstr "Ean"
+
+#: program/localization/ga_IE/labels.inc:feb
+msgid "Feb"
+msgstr "Fea"
+
+#: program/localization/ga_IE/labels.inc:mar
+msgid "Mar"
+msgstr "Már"
+
+#: program/localization/ga_IE/labels.inc:apr
+msgid "Apr"
+msgstr "Aib"
+
+#: program/localization/ga_IE/labels.inc:may
+#: program/localization/ga_IE/labels.inc:longmay
+msgid "May"
+msgstr "Bea"
+
+#: program/localization/ga_IE/labels.inc:jun
+msgid "Jun"
+msgstr "Mei"
+
+#: program/localization/ga_IE/labels.inc:jul
+msgid "Jul"
+msgstr "Iúi"
+
+#: program/localization/ga_IE/labels.inc:aug
+msgid "Aug"
+msgstr "Lún"
+
+#: program/localization/ga_IE/labels.inc:nov
+msgid "Nov"
+msgstr "Sam"
+
+#: program/localization/ga_IE/labels.inc:dec
+msgid "Dec"
+msgstr "Nol"
+
+#: program/localization/ga_IE/labels.inc:longjan
+msgid "January"
+msgstr "Eanáir"
+
+#: program/localization/ga_IE/labels.inc:longfeb
+msgid "February"
+msgstr "Feabhra"
+
+#: program/localization/ga_IE/labels.inc:longmar
+msgid "March"
+msgstr "Márta"
+
+#: program/localization/ga_IE/labels.inc:longapr
+msgid "April"
+msgstr "Aibreán"
+
+#: program/localization/ga_IE/labels.inc:longjun
+msgid "June"
+msgstr "Meitheamh"
+
+#: program/localization/ga_IE/labels.inc:longjul
+msgid "July"
+msgstr "Iúil"
+
+#: program/localization/ga_IE/labels.inc:longaug
+msgid "August"
+msgstr "Lúnasa"
+
+#: program/localization/ga_IE/labels.inc:longsep
+msgid "September"
+msgstr "Meán Fómhair"
+
+#: program/localization/ga_IE/labels.inc:longoct
+msgid "October"
+msgstr "Deireadh Fómhair"
+
+#: program/localization/ga_IE/labels.inc:longnov
+msgid "November"
+msgstr "Samhain"
+
+#: program/localization/ga_IE/labels.inc:longdec
+msgid "December"
+msgstr "Nollag"
+
 #: program/localization/ga_IE/labels.inc:today
 msgid "Today"
 msgstr "Inniu"
@@ -235,6 +312,10 @@ msgstr "Scríobh freagra chun an seolaí"
 msgid "Reply to list or to sender and all recipients"
 msgstr "Scríobh freagra chun an seolaí agus na faighteoir"
 
+#: program/localization/ga_IE/labels.inc:replyall
+msgid "Reply all"
+msgstr "Freagra gach"
+
 #: program/localization/ga_IE/labels.inc:forwardmessage
 msgid "Forward the message"
 msgstr "Seol ar aghaidh an teachtaireacht"
@@ -251,33 +332,17 @@ msgstr "Priontáil an teachtaireacht seo"
 msgid "Show previous message"
 msgstr "Taispeáin an teachtaireacht roimhe seo"
 
-#: program/localization/ga_IE/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Taispeáin an foireann roimhe seo"
-
 #: program/localization/ga_IE/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Taispeáin an cead teachtaireacht"
-
-#: program/localization/ga_IE/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "Taispeáin an cead foireann"
 
 #: program/localization/ga_IE/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Taispeáin an teachtaireacht ina dhiaidh sin"
 
-#: program/localization/ga_IE/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Taispeáin an foireann ina dhiaidh sin"
-
 #: program/localization/ga_IE/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Taispeáin an teachtaireacht deireanach"
-
-#: program/localization/ga_IE/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "Taispeáin an foireann deireanach"
 
 #: program/localization/ga_IE/labels.inc:backtolist
 msgid "Back to message list"
@@ -296,6 +361,7 @@ msgid "All"
 msgstr "An uile"
 
 #: program/localization/ga_IE/labels.inc:none
+#: program/localization/ga_IE/labels.inc:nonesort
 msgid "None"
 msgstr "Aon cheann"
 
@@ -310,10 +376,6 @@ msgstr "Comhbhrúigh"
 #: program/localization/ga_IE/labels.inc:empty
 msgid "Empty"
 msgstr "Folmhaigh"
-
-#: program/localization/ga_IE/labels.inc:purge
-msgid "purge"
-msgstr "Purgaigh"
 
 #: program/localization/ga_IE/labels.inc:quota
 msgid "Disk usage"
@@ -336,16 +398,16 @@ msgid "Reset search"
 msgstr "Athshocraigh an cuardach"
 
 #: program/localization/ga_IE/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Scríobh teachtaireacht"
 
-#: program/localization/ga_IE/labels.inc:sendmessage
-msgid "Send now"
-msgstr "Seol mo teachtaireacht láithreach bonn"
-
 #: program/localization/ga_IE/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Sábháil an dréachta seo"
+
+#: program/localization/ga_IE/labels.inc:sendmessage
+msgid "Send message"
+msgstr "Seol mo teachtaireacht láithreach bonn"
 
 #: program/localization/ga_IE/labels.inc:addattachment
 msgid "Attach a file"
@@ -546,6 +608,18 @@ msgstr "Mír nua"
 #: program/localization/ga_IE/labels.inc:edititem
 msgid "Edit item"
 msgstr "Athraigh mhír"
+
+#: program/localization/ga_IE/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Taispeáin an HTML"
+
+#: program/localization/ga_IE/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Teachtaireacht HTML"
+
+#: program/localization/ga_IE/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Dátaí Dheas"
 
 #: program/localization/ga_IE/labels.inc:setdefault
 msgid "Set default"

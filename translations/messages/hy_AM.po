@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: hy_AM\n"
+"Language: am\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -190,10 +190,6 @@ msgstr "Նամակն ուղարկված չէ։ Ջնջե՞լ Ձեր նամակը"
 #: program/localization/hy_AM/messages.inc:noldapserver
 msgid "Please select an ldap server to search."
 msgstr "Ընտրեք ldap սերվեր որոնման համար"
-
-#: program/localization/hy_AM/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Հասցեներ չեն գտնվել"
 
 #: program/localization/hy_AM/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."

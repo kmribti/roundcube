@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:12:09+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:52:15+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: sv_SE\n"
+"Language: sv\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -451,19 +451,15 @@ msgstr "SMTP-fel ($code): Inloggningen misslyckades"
 
 #: program/localization/sv_SE/messages.inc:smtpfromerror
 msgid "SMTP Error ($code): Failed to set sender \"$from\" ($msg)."
-msgstr "SMTP-fel ($code): Kan inte sätta avsändaradress till \"$from\""
+msgstr "SMTP-fel ($code): Kan inte sätta avsändaradress till \"$from"
 
 #: program/localization/sv_SE/messages.inc:smtptoerror
 msgid "SMTP Error ($code): Failed to add recipient \"$to\" ($msg)."
-msgstr "SMTP-fel ($code): Kan inte lägga till mottagaradress \"$to\""
+msgstr "SMTP-fel ($code): Kan inte lägga till mottagaradress \"$to"
 
 #: program/localization/sv_SE/messages.inc:smtprecipientserror
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "SMTP-fel: Felaktigt formaterad lista med mottagaradresser"
-
-#: program/localization/sv_SE/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "SMTP-fel: Inget stöd för leveransstatusmeddelande"
 
 #: program/localization/sv_SE/messages.inc:smtperror
 msgid "SMTP Error: $msg"
@@ -580,3 +576,7 @@ msgstr "Stavfel hittades i meddelandet"
 #: program/localization/sv_SE/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
 msgstr "Katalogen kunde inte skapas eller flyttas. Åtkomsträttighet saknas."
+
+#: program/localization/sv_SE/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "Denna del av meddelandet är alltför stor för att hantera."

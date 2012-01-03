@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:12:09+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:52:15+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: sv_SE\n"
+"Language: sv\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -582,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Spara (.eml)"
 
 #: program/localization/sv_SE/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Nytt meddelande"
 
 #: program/localization/sv_SE/labels.inc:editasnew
@@ -590,11 +590,11 @@ msgid "Edit as new"
 msgstr "Redigera som nytt"
 
 #: program/localization/sv_SE/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Spara utkast"
 
 #: program/localization/sv_SE/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Skicka meddelande"
 
 #: program/localization/sv_SE/labels.inc:addattachment
@@ -692,6 +692,10 @@ msgstr "Visa bilder"
 #: program/localization/sv_SE/labels.inc:alwaysshow
 msgid "Always show images from $sender"
 msgstr "Visa alltid bilder från $sender"
+
+#: program/localization/sv_SE/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "Detta meddelande är ett utkast."
 
 #: program/localization/sv_SE/labels.inc:htmltoggle
 msgid "HTML"
@@ -1097,6 +1101,10 @@ msgstr "Klart"
 msgid "Settings for"
 msgstr "Inställningar för"
 
+#: program/localization/sv_SE/labels.inc:about
+msgid "About"
+msgstr "Om"
+
 #: program/localization/sv_SE/labels.inc:preferences
 msgid "Preferences"
 msgstr "Inställningar"
@@ -1341,6 +1349,10 @@ msgstr "Genomsök samtliga kataloger efter nya meddelanden"
 msgid "After message delete/move display the next message"
 msgstr "Visa nästa meddelande efter borttagning/flyttning av meddelande"
 
+#: program/localization/sv_SE/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "Standardtypsnitt i HTML-meddelande"
+
 #: program/localization/sv_SE/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Huvudalternativ"
@@ -1357,17 +1369,13 @@ msgstr "Underhåll"
 msgid "New Message"
 msgstr "Nytt meddelande"
 
-#: program/localization/sv_SE/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Listalternativ"
-
 #: program/localization/sv_SE/labels.inc:signatureoptions
 msgid "Signature Options"
 msgstr "Signaturalternativ"
 
 #: program/localization/sv_SE/labels.inc:whenreplying
 msgid "When replying"
-msgstr "Vid svar"
+msgstr "Vid svar fortsätt skriv"
 
 #: program/localization/sv_SE/labels.inc:replytopposting
 msgid "start new message above original"
@@ -1432,6 +1440,10 @@ msgstr "Placera svar i samma katalog som besvarat meddelande"
 #: program/localization/sv_SE/labels.inc:defaultaddressbook
 msgid "Add new contacts to the selected addressbook"
 msgstr "Lägg till nya kontakter i vald adressbok"
+
+#: program/localization/sv_SE/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "Hoppa över alternativa adresser vid automatisk komplettering"
 
 #: program/localization/sv_SE/labels.inc:spellcheckbeforesend
 msgid "Check spelling before sending a message"
@@ -1511,7 +1523,7 @@ msgstr "Information"
 
 #: program/localization/sv_SE/labels.inc:getfoldersize
 msgid "Click to get folder size"
-msgstr "Klicka för katalogstorlek"
+msgstr "Beräkna katalogstorlek"
 
 #: program/localization/sv_SE/labels.inc:changesubscription
 msgid "Click to change subscription"
@@ -1548,6 +1560,26 @@ msgstr "Sortera fallande"
 #: program/localization/sv_SE/labels.inc:undo
 msgid "Undo"
 msgstr "Ångra"
+
+#: program/localization/sv_SE/labels.inc:plugin
+msgid "Plugin"
+msgstr "Plugin"
+
+#: program/localization/sv_SE/labels.inc:version
+msgid "Version"
+msgstr "Version"
+
+#: program/localization/sv_SE/labels.inc:source
+msgid "Source"
+msgstr "Källkod"
+
+#: program/localization/sv_SE/labels.inc:license
+msgid "License"
+msgstr "Licens"
+
+#: program/localization/sv_SE/labels.inc:support
+msgid "Get support"
+msgstr "Få hjälp"
 
 #: program/localization/sv_SE/labels.inc:B
 msgid "B"

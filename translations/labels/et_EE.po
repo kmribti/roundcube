@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: et_EE\n"
+"Language: et\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -408,9 +408,9 @@ msgstr "Lisa lipik"
 msgid "As unflagged"
 msgstr "Eemalda lipik"
 
-#: program/localization/et_EE/labels.inc:messageactions
-msgid "messageactions"
-msgstr "Veel tegevusi..."
+#: program/localization/et_EE/labels.inc:moreactions
+msgid "More actions..."
+msgstr "Muud toimingud..."
 
 #: program/localization/et_EE/labels.inc:select
 msgid "Select"
@@ -582,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Salvesta (.eml)"
 
 #: program/localization/et_EE/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Koosta kiri"
 
 #: program/localization/et_EE/labels.inc:editasnew
@@ -590,11 +590,11 @@ msgid "Edit as new"
 msgstr "Kasuta uue kirja põhjana"
 
 #: program/localization/et_EE/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Salvesta mustand"
 
 #: program/localization/et_EE/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Saada kiri kohe"
 
 #: program/localization/et_EE/labels.inc:addattachment
@@ -616,6 +616,14 @@ msgstr "Kättesaamiskinnitus"
 #: program/localization/et_EE/labels.inc:dsn
 msgid "Delivery status notification"
 msgstr "Kohalejõudmise teavitus"
+
+#: program/localization/et_EE/labels.inc:mailreplyintro
+msgid "On $date, $sender wrote:"
+msgstr "$date kirjutas $sender:"
+
+#: program/localization/et_EE/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "Esialgne kiri"
 
 #: program/localization/et_EE/labels.inc:editidents
 msgid "Edit identities"
@@ -640,6 +648,10 @@ msgstr "Manused"
 #: program/localization/et_EE/labels.inc:upload
 msgid "Upload"
 msgstr "Kinnita manus"
+
+#: program/localization/et_EE/labels.inc:uploadprogress
+msgid "$percent ($current from $total)"
+msgstr "$percent ($current, kokku $total)"
 
 #: program/localization/et_EE/labels.inc:close
 msgid "Close"
@@ -680,6 +692,10 @@ msgstr "Näita pilte"
 #: program/localization/et_EE/labels.inc:alwaysshow
 msgid "Always show images from $sender"
 msgstr "Näita alati $sender saadetud pilte"
+
+#: program/localization/et_EE/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "See on mustand."
 
 #: program/localization/et_EE/labels.inc:htmltoggle
 msgid "HTML"
@@ -913,6 +929,14 @@ msgstr "Video"
 msgid "Home Page"
 msgstr "Veebileht"
 
+#: program/localization/et_EE/labels.inc:typeblog
+msgid "Blog"
+msgstr "Ajaveeb"
+
+#: program/localization/et_EE/labels.inc:typeprofile
+msgid "Profile"
+msgstr "Profiil"
+
 #: program/localization/et_EE/labels.inc:addfield
 msgid "Add field..."
 msgstr "Lisa väli..."
@@ -997,9 +1021,13 @@ msgstr "Ekspordi kontaktid vCardi formaadis"
 msgid "Create new contact group"
 msgstr "Loo uus kontaktigrupp"
 
-#: program/localization/et_EE/labels.inc:groupactions
-msgid "groupactions"
-msgstr "Kontaktigrupi tegevused..."
+#: program/localization/et_EE/labels.inc:grouprename
+msgid "Rename group"
+msgstr "Nimeta grupp ümber"
+
+#: program/localization/et_EE/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "Kustuta grupp"
 
 #: program/localization/et_EE/labels.inc:previouspage
 msgid "Show previous page"
@@ -1029,6 +1057,14 @@ msgstr "Grupid"
 msgid "Personal Addresses"
 msgstr "Isiklikud aadressid"
 
+#: program/localization/et_EE/labels.inc:searchsave
+msgid "Save search"
+msgstr "Salvesta otsing"
+
+#: program/localization/et_EE/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "Kustuta otsing"
+
 #: program/localization/et_EE/labels.inc:import
 msgid "Import"
 msgstr "Impordi"
@@ -1040,6 +1076,10 @@ msgstr "Impordi kontakte"
 #: program/localization/et_EE/labels.inc:importfromfile
 msgid "Import from file:"
 msgstr "Impordi failist:"
+
+#: program/localization/et_EE/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "Lisa uued kontaktid aadressiraamatusse:"
 
 #: program/localization/et_EE/labels.inc:importreplace
 msgid "Replace the entire address book"
@@ -1059,6 +1099,10 @@ msgstr "Valmis"
 #: program/localization/et_EE/labels.inc:settingsfor
 msgid "Settings for"
 msgstr "Kasutajaeelistused kontole"
+
+#: program/localization/et_EE/labels.inc:about
+msgid "About"
+msgstr "Programmist lähemalt"
 
 #: program/localization/et_EE/labels.inc:preferences
 msgid "Preferences"
@@ -1104,6 +1148,14 @@ msgstr "Vaikimisi märgistik"
 msgid "HTML Message"
 msgstr "HTML kirjad"
 
+#: program/localization/et_EE/labels.inc:dateformat
+msgid "Date format"
+msgstr "Kuupäeva vorming"
+
+#: program/localization/et_EE/labels.inc:timeformat
+msgid "Time format"
+msgstr "Aja vorming"
+
 #: program/localization/et_EE/labels.inc:prettydate
 msgid "Pretty dates"
 msgstr "Kenad kuupäevad"
@@ -1142,7 +1194,7 @@ msgstr "Kasuta HTML redaktorit"
 
 #: program/localization/et_EE/labels.inc:htmlonreply
 msgid "on reply to HTML message only"
-msgstr "vaid HTML kirja vastamisel"
+msgstr "vaid HTML-vormingus kirjale vastamisel"
 
 #: program/localization/et_EE/labels.inc:htmlsignature
 msgid "HTML signature"
@@ -1178,7 +1230,7 @@ msgstr "Postkasti vaade"
 
 #: program/localization/et_EE/labels.inc:mdnrequests
 msgid "On request for return receipt"
-msgstr "Kättesaamis kinnitus"
+msgstr "Kättesaamiskinnitus"
 
 #: program/localization/et_EE/labels.inc:askuser
 msgid "ask me"
@@ -1194,7 +1246,7 @@ msgstr "saada automaatselt minu kontaktidele, teised küsi üle"
 
 #: program/localization/et_EE/labels.inc:autosendknownignore
 msgid "send receipt to my contacts, otherwise ignore"
-msgstr "saada automaatselt minu kontaktidele, teised ignoreeri"
+msgstr "saada automaatselt minu kontaktidele, teisi ignoreeri"
 
 #: program/localization/et_EE/labels.inc:ignore
 msgid "ignore"
@@ -1214,7 +1266,7 @@ msgstr "Ära näita kustutatud kirju"
 
 #: program/localization/et_EE/labels.inc:deletealways
 msgid "If moving messages to Trash fails, delete them"
-msgstr "Kui kirja prügikasti liigutamine nurjub siis kustuta need"
+msgstr "Kui kirjade prügikasti liigutamine nurjub, siis kustuta need"
 
 #: program/localization/et_EE/labels.inc:showremoteimages
 msgid "Display remote inline images"
@@ -1258,7 +1310,7 @@ msgstr "Kirjade näitamine"
 
 #: program/localization/et_EE/labels.inc:messagescomposition
 msgid "Composing Messages"
-msgstr "Kirja koostamine "
+msgstr "Kirja koostamine"
 
 #: program/localization/et_EE/labels.inc:mimeparamfolding
 msgid "Attachment names"
@@ -1296,6 +1348,10 @@ msgstr "Kontrolli uusi kirju kõigist kaustadest"
 msgid "After message delete/move display the next message"
 msgstr "Pärast kirja kustutamist/liigutamist näita järgmist kirja"
 
+#: program/localization/et_EE/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "HTML kirjade vaikefont"
+
 #: program/localization/et_EE/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Peamised valikud"
@@ -1311,10 +1367,6 @@ msgstr "Hooldus"
 #: program/localization/et_EE/labels.inc:newmessage
 msgid "New Message"
 msgstr "Uus kiri"
-
-#: program/localization/et_EE/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Nimekirja valikud"
 
 #: program/localization/et_EE/labels.inc:signatureoptions
 msgid "Signature Options"
@@ -1374,11 +1426,11 @@ msgstr "$n sekundi pärast"
 
 #: program/localization/et_EE/labels.inc:reqmdn
 msgid "Always request a return receipt"
-msgstr "Alati nõua kättesaamise kinnitust"
+msgstr "Nõua alati kättesaamiskinnitust"
 
 #: program/localization/et_EE/labels.inc:reqdsn
 msgid "Always request a delivery status notification"
-msgstr "Alati nõua kohalejõudmise teavitust"
+msgstr "Nõua alati kohalejõudmisteavitust"
 
 #: program/localization/et_EE/labels.inc:replysamefolder
 msgid "Place replies in the folder of the message being replied to"
@@ -1388,9 +1440,33 @@ msgstr "Paiguta vastused samasse kausta, millele vastatakse"
 msgid "Add new contacts to the selected addressbook"
 msgstr "Lisa kontaktid valitud aadressiraamatusse"
 
+#: program/localization/et_EE/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "Automaatlõpetuses jäta alternatiivne e-posti aadress vahele"
+
 #: program/localization/et_EE/labels.inc:spellcheckbeforesend
 msgid "Check spelling before sending a message"
 msgstr "Kontrolli õigekirja enne saatmist"
+
+#: program/localization/et_EE/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "Õigekirjakontrolli valikud"
+
+#: program/localization/et_EE/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "Ignoreeri sõnu, milles on sümbolid"
+
+#: program/localization/et_EE/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "Ignoreeri sõnu, milles on numbreid"
+
+#: program/localization/et_EE/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "Ignoreeri suurte tähtedega kirjutatud sõnu"
+
+#: program/localization/et_EE/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "Lisa sõnastikku"
 
 #: program/localization/et_EE/labels.inc:folder
 msgid "Folder"
@@ -1479,6 +1555,30 @@ msgstr "Järjesta kasvavalt"
 #: program/localization/et_EE/labels.inc:sortdesc
 msgid "Sort descending"
 msgstr "Järjesta kahanevalt"
+
+#: program/localization/et_EE/labels.inc:undo
+msgid "Undo"
+msgstr "Võta tagasi"
+
+#: program/localization/et_EE/labels.inc:plugin
+msgid "Plugin"
+msgstr "Plugin"
+
+#: program/localization/et_EE/labels.inc:version
+msgid "Version"
+msgstr "Versioon"
+
+#: program/localization/et_EE/labels.inc:source
+msgid "Source"
+msgstr "Allikas"
+
+#: program/localization/et_EE/labels.inc:license
+msgid "License"
+msgstr "Litsents"
+
+#: program/localization/et_EE/labels.inc:support
+msgid "Get support"
+msgstr "Küsi abi"
 
 #: program/localization/et_EE/labels.inc:B
 msgid "B"

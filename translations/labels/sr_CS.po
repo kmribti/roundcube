@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: sr_CS\n"
+"Language: sr\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -356,33 +356,17 @@ msgstr "Одштампај поруку"
 msgid "Show previous message"
 msgstr "Прикажи претходну поруку"
 
-#: program/localization/sr_CS/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Прикажи претходни скуп порука"
-
 #: program/localization/sr_CS/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Прикажи прву поруку"
-
-#: program/localization/sr_CS/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "Прикажи први скуп порука"
 
 #: program/localization/sr_CS/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Прикажи следећу поруку"
 
-#: program/localization/sr_CS/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Прикажи следећи скуп порука"
-
 #: program/localization/sr_CS/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Прикажи последњу поруку"
-
-#: program/localization/sr_CS/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "Прикажи последњи скуп порука"
 
 #: program/localization/sr_CS/labels.inc:backtolist
 msgid "Back to message list"
@@ -411,10 +395,6 @@ msgstr "Као означено"
 #: program/localization/sr_CS/labels.inc:markunflagged
 msgid "As unflagged"
 msgstr "Као неозначено"
-
-#: program/localization/sr_CS/labels.inc:messageactions
-msgid "messageactions"
-msgstr "Више поставки"
 
 #: program/localization/sr_CS/labels.inc:select
 msgid "Select"
@@ -510,7 +490,7 @@ msgid "Open in new window"
 msgstr "Отвори у новом прозору"
 
 #: program/localization/sr_CS/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Нова порука"
 
 #: program/localization/sr_CS/labels.inc:editasnew
@@ -518,11 +498,11 @@ msgid "Edit as new"
 msgstr "Модификуј као ново"
 
 #: program/localization/sr_CS/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Сачувај у Снимљене"
 
 #: program/localization/sr_CS/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Пошаљи поруку"
 
 #: program/localization/sr_CS/labels.inc:addattachment
@@ -563,7 +543,7 @@ msgstr "Врати се на"
 
 #: program/localization/sr_CS/labels.inc:attachments
 msgid "Attachments"
-msgstr "Прилози "
+msgstr "Прилози"
 
 #: program/localization/sr_CS/labels.inc:upload
 msgid "Upload"
@@ -760,6 +740,11 @@ msgstr "Менаџер"
 msgid "Assistant"
 msgstr "Асистент"
 
+#: program/localization/sr_CS/labels.inc:other
+#: program/localization/sr_CS/labels.inc:typeother
+msgid "Other"
+msgstr "Остало"
+
 #: program/localization/sr_CS/labels.inc:typehome
 msgid "Home"
 msgstr "Кућа"
@@ -767,10 +752,6 @@ msgstr "Кућа"
 #: program/localization/sr_CS/labels.inc:typework
 msgid "Work"
 msgstr "Посао"
-
-#: program/localization/sr_CS/labels.inc:typeother
-msgid "Other"
-msgstr "Остало"
 
 #: program/localization/sr_CS/labels.inc:typemobile
 msgid "Mobile"
@@ -879,10 +860,6 @@ msgstr "Извези конакте у vCard формату"
 #: program/localization/sr_CS/labels.inc:newcontactgroup
 msgid "Create new contact group"
 msgstr "Креирај нову контакт групу"
-
-#: program/localization/sr_CS/labels.inc:groupactions
-msgid "groupactions"
-msgstr "Радње за контакт групу"
 
 #: program/localization/sr_CS/labels.inc:previouspage
 msgid "Show previous page"
@@ -1096,10 +1073,6 @@ msgstr "Секција"
 #: program/localization/sr_CS/labels.inc:newmessage
 msgid "New Message"
 msgstr "Нова порука"
-
-#: program/localization/sr_CS/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Опције листе"
 
 #: program/localization/sr_CS/labels.inc:signatureoptions
 msgid "Signature Options"

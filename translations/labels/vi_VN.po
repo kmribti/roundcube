@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: vi_VN\n"
+"Language: vi\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -110,10 +110,6 @@ msgstr "Ưu tiên"
 msgid "Company"
 msgstr "Cơ quan"
 
-#: program/localization/vi_VN/labels.inc:reply-to
-msgid "reply-to"
-msgstr "Trả lời vào"
-
 #: program/localization/vi_VN/labels.inc:mailboxlist
 #: program/localization/vi_VN/labels.inc:folders
 msgid "Folders"
@@ -126,6 +122,10 @@ msgstr "Thư $from - $to / $count"
 #: program/localization/vi_VN/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "Thư $nr / $count"
+
+#: program/localization/vi_VN/labels.inc:copy
+msgid "Copy"
+msgstr "Đồng nhận"
 
 #: program/localization/vi_VN/labels.inc:moveto
 msgid "Move to..."
@@ -142,18 +142,6 @@ msgstr "Tên file"
 #: program/localization/vi_VN/labels.inc:filesize
 msgid "File size"
 msgstr "Dung lượng"
-
-#: program/localization/vi_VN/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "Dùng HTML"
-
-#: program/localization/vi_VN/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "Thư kiểu HTML"
-
-#: program/localization/vi_VN/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "Hiển thị ngày đầy đủ"
 
 #: program/localization/vi_VN/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -247,14 +235,6 @@ msgstr "Xóa thư"
 msgid "Print this message"
 msgstr "In thư"
 
-#: program/localization/vi_VN/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Hiển thị các thư trước"
-
-#: program/localization/vi_VN/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Hiển thị các thư sau"
-
 #: program/localization/vi_VN/labels.inc:backtolist
 msgid "Back to message list"
 msgstr "Trở về danh sách thư"
@@ -272,6 +252,7 @@ msgid "All"
 msgstr "Toàn bộ"
 
 #: program/localization/vi_VN/labels.inc:none
+#: program/localization/vi_VN/labels.inc:nonesort
 msgid "None"
 msgstr "Bỏ chọn"
 
@@ -286,10 +267,6 @@ msgstr "Rút gọn"
 #: program/localization/vi_VN/labels.inc:empty
 msgid "Empty"
 msgstr "Xóa rỗng"
-
-#: program/localization/vi_VN/labels.inc:purge
-msgid "purge"
-msgstr "Tối giản"
 
 #: program/localization/vi_VN/labels.inc:quota
 msgid "Disk usage"
@@ -312,15 +289,15 @@ msgid "Reset search"
 msgstr "Xóa bỏ tìm kiếm"
 
 #: program/localization/vi_VN/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Soạn thư"
 
 #: program/localization/vi_VN/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Lưu thư đang soạn"
 
 #: program/localization/vi_VN/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Gửi thư"
 
 #: program/localization/vi_VN/labels.inc:addattachment
@@ -459,34 +436,6 @@ msgstr "Trang trước"
 msgid "Show next page"
 msgstr "Trang tiếp"
 
-#: program/localization/vi_VN/labels.inc:ldapsearch
-msgid "ldapsearch"
-msgstr "LDAP directory search"
-
-#: program/localization/vi_VN/labels.inc:ldappublicsearchname
-msgid "ldappublicsearchname"
-msgstr "Tên địa chỉ"
-
-#: program/localization/vi_VN/labels.inc:ldappublicsearchtype
-msgid "ldappublicsearchtype"
-msgstr "Khớp toàn bộ?"
-
-#: program/localization/vi_VN/labels.inc:ldappublicserverselect
-msgid "ldappublicserverselect"
-msgstr "Chọn máy chủ"
-
-#: program/localization/vi_VN/labels.inc:ldappublicsearchfield
-msgid "ldappublicsearchfield"
-msgstr "Tìm trên"
-
-#: program/localization/vi_VN/labels.inc:ldappublicsearchform
-msgid "ldappublicsearchform"
-msgstr "Tìm địa chỉ liên hệ"
-
-#: program/localization/vi_VN/labels.inc:ldappublicsearch
-msgid "ldappublicsearch"
-msgstr "Tìm kiếm"
-
 #: program/localization/vi_VN/labels.inc:settingsfor
 msgid "Settings for"
 msgstr "Thiết lập cho"
@@ -522,6 +471,18 @@ msgstr "Thêm mới"
 #: program/localization/vi_VN/labels.inc:edititem
 msgid "Edit item"
 msgstr "Sửa đổi"
+
+#: program/localization/vi_VN/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Dùng HTML"
+
+#: program/localization/vi_VN/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Thư kiểu HTML"
+
+#: program/localization/vi_VN/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Hiển thị ngày đầy đủ"
 
 #: program/localization/vi_VN/labels.inc:setdefault
 msgid "Set default"

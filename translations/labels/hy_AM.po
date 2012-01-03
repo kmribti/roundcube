@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: hy_AM\n"
+"Language: am\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -110,10 +110,6 @@ msgstr "Առավելություն"
 msgid "Company"
 msgstr "Կազմակերպություն"
 
-#: program/localization/hy_AM/labels.inc:reply-to
-msgid "reply-to"
-msgstr "Reply-To"
-
 #: program/localization/hy_AM/labels.inc:mailboxlist
 #: program/localization/hy_AM/labels.inc:folders
 msgid "Folders"
@@ -126,6 +122,10 @@ msgstr "Նամակներ $from–ից $to–ը եղած $count–ից"
 #: program/localization/hy_AM/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "Նամակ $nr եղած $count–ից"
+
+#: program/localization/hy_AM/labels.inc:copy
+msgid "Copy"
+msgstr "Cc"
 
 #: program/localization/hy_AM/labels.inc:moveto
 msgid "Move to..."
@@ -142,18 +142,6 @@ msgstr "Ֆայլի անուն"
 #: program/localization/hy_AM/labels.inc:filesize
 msgid "File size"
 msgstr "Ֆայլի չափ"
-
-#: program/localization/hy_AM/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "Գերադասել HTML"
-
-#: program/localization/hy_AM/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "HTML նամակ"
-
-#: program/localization/hy_AM/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "Պարզ ամսաթվեր"
 
 #: program/localization/hy_AM/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -348,33 +336,17 @@ msgstr "Տպել"
 msgid "Show previous message"
 msgstr "Ցուցադրել նախորդ նամակը"
 
-#: program/localization/hy_AM/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Ցուցադրել նախորդ նամակները"
-
 #: program/localization/hy_AM/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Ցուցադրել առաջին նամակը"
-
-#: program/localization/hy_AM/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "Ցուցադրել առաջին էջը"
 
 #: program/localization/hy_AM/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Ցուցադրել հաջորդ նամակը"
 
-#: program/localization/hy_AM/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Ցուցադրել հաջորդ նամակները"
-
 #: program/localization/hy_AM/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Ցուցադրել վերջին նամակը"
-
-#: program/localization/hy_AM/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "Ցուցադրել վերջին էջը"
 
 #: program/localization/hy_AM/labels.inc:backtolist
 msgid "Back to message list"
@@ -413,6 +385,7 @@ msgid "All"
 msgstr "Բոլորը"
 
 #: program/localization/hy_AM/labels.inc:none
+#: program/localization/hy_AM/labels.inc:nonesort
 msgid "None"
 msgstr "Չնշել"
 
@@ -440,10 +413,6 @@ msgstr "Սեղմել"
 msgid "Empty"
 msgstr "Դատարկել"
 
-#: program/localization/hy_AM/labels.inc:purge
-msgid "purge"
-msgstr "Մաքրել"
-
 #: program/localization/hy_AM/labels.inc:quota
 msgid "Disk usage"
 msgstr "Դիսկային տարածք"
@@ -469,15 +438,15 @@ msgid "Open in new window"
 msgstr "Բացել նոր պատուհանում"
 
 #: program/localization/hy_AM/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Գրել նամակ"
 
 #: program/localization/hy_AM/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Հիշել որպես սևագիր"
 
 #: program/localization/hy_AM/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Ուղարկել"
 
 #: program/localization/hy_AM/labels.inc:addattachment
@@ -767,6 +736,18 @@ msgstr "Նոր իր"
 msgid "Edit item"
 msgstr "Խմբագրել իրը"
 
+#: program/localization/hy_AM/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Գերադասել HTML"
+
+#: program/localization/hy_AM/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML նամակ"
+
+#: program/localization/hy_AM/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Պարզ ամսաթվեր"
+
 #: program/localization/hy_AM/labels.inc:setdefault
 msgid "Set default"
 msgstr "Հիմնական"
@@ -853,8 +834,7 @@ msgstr "Ջնջելուց նշել նամակը որպես կարդացած"
 
 #: program/localization/hy_AM/labels.inc:flagfordeletion
 msgid "Flag the message for deletion instead of delete"
-msgstr "Ջնջելու փոխարեն նշել որպես ենթակա ջնջման "
-""
+msgstr "Ջնջելու փոխարեն նշել որպես ենթակա ջնջման"
 
 #: program/localization/hy_AM/labels.inc:skipdeleted
 msgid "Do not show deleted messages"

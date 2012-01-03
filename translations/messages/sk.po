@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: sk_SK\n"
@@ -115,6 +115,10 @@ msgstr "Kontakt bol pridaný do adresára"
 msgid "A contact with the same e-mail address already exists."
 msgstr "Kontakt s touto e-mailovou adresou už existuje"
 
+#: program/localization/sk_SK/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Kontakt s rovnakým menom už existuje."
+
 #: program/localization/sk_SK/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
 msgstr "Z bezpečnostných dôvodov sú v správe zablokované obrázky."
@@ -130,6 +134,10 @@ msgstr "Nemáte žiadne kontakty"
 #: program/localization/sk_SK/messages.inc:contactnotfound
 msgid "The requested contact was not found."
 msgstr "Požadovaný kontakt nebol nájdený"
+
+#: program/localization/sk_SK/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Zadaj nejaký vyhľadávací výraz pre hľadanie kontaktov."
 
 #: program/localization/sk_SK/messages.inc:sendingfailed
 msgid "Failed to send message."
@@ -167,6 +175,10 @@ msgstr "Správa sa nedá označiť"
 msgid "Do you really want to delete selected contact(s)?"
 msgstr "Ste si istý, že chcete zmazať zvolený(é) kontakt(y)?"
 
+#: program/localization/sk_SK/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Skutočne chceš zmazať vybranú skupinu?"
+
 #: program/localization/sk_SK/messages.inc:deletemessagesconfirm
 msgid "Do you really want to delete selected message(s)?"
 msgstr "Ste si istý, že chcete zmazať zvolenú(é) správu(y)?"
@@ -178,6 +190,14 @@ msgstr "Ste si istý, že chcete zmazať tento priečinok?"
 #: program/localization/sk_SK/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
 msgstr "Ste si istý, že chcete zmazať všetky správy v tomto priečinku?"
+
+#: program/localization/sk_SK/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Mažem kontakt(y)..."
+
+#: program/localization/sk_SK/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Mažem skupinu..."
 
 #: program/localization/sk_SK/messages.inc:folderdeleting
 msgid "Deleting folder..."
@@ -235,10 +255,6 @@ msgstr "Správa nebola odoslaná, chcete ju zrušiť?"
 msgid "Please select an ldap server to search."
 msgstr "Prosím, zvoľte LDAP server na vyhľadávanie"
 
-#: program/localization/sk_SK/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Neboli nájdené žiadne kontakty"
-
 #: program/localization/sk_SK/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "Prosím vložte meno alebo emailovú adresu"
@@ -252,6 +268,10 @@ msgstr "Ešte neboli nahrané všetky prílohy. Počkajte prosím alebo nahráva
 #: program/localization/sk_SK/messages.inc:searchsuccessful
 msgid "$nr messages found."
 msgstr "nájdených $nr správ"
+
+#: program/localization/sk_SK/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "Bolo nájdených $nr kontaktov."
 
 #: program/localization/sk_SK/messages.inc:searchnomatch
 msgid "Search returned no matches."
@@ -333,6 +353,10 @@ msgstr "Správa sa presúva..."
 msgid "Copying message(s)..."
 msgstr "Správa sa kopíruje..."
 
+#: program/localization/sk_SK/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Kopírujem kontakt(y)"
+
 #: program/localization/sk_SK/messages.inc:deletingmessage
 msgid "Deleting message(s)..."
 msgstr "Mažem správu(y)..."
@@ -340,6 +364,14 @@ msgstr "Mažem správu(y)..."
 #: program/localization/sk_SK/messages.inc:markingmessage
 msgid "Marking message(s)..."
 msgstr "Označujem správu(y)..."
+
+#: program/localization/sk_SK/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Pridávam kontakt(y) do skupiny..."
+
+#: program/localization/sk_SK/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Odoberám kontakt(y) zo skupiny"
 
 #: program/localization/sk_SK/messages.inc:receiptsent
 msgid "Successfully sent a read receipt."
@@ -430,10 +462,6 @@ msgstr "Chyba SMTP: Nemožno pridať príjemca ($msg)"
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "Chyba SMTP: Nemožno spracovať zoznam príjemcov"
 
-#: program/localization/sk_SK/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "SMTP chyba: Oznámenie o doručení nie je podporované"
-
 #: program/localization/sk_SK/messages.inc:smtperror
 msgid "SMTP Error: $msg"
 msgstr "Chyba SMTP: $msg"
@@ -482,6 +510,22 @@ msgstr "Skupina bola premenovaná"
 msgid "Group created successfully."
 msgstr "Skupina bola vytvorená"
 
+#: program/localization/sk_SK/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Uložené vyhľadávanie bolo vymazané."
+
+#: program/localization/sk_SK/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Nemôžem zmazať uložené vyhľadávanie."
+
+#: program/localization/sk_SK/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Uložené vyhľadávanie bolo vytvorené."
+
+#: program/localization/sk_SK/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Nemôžem vytvoriť uložené vyhľadávanie"
+
 #: program/localization/sk_SK/messages.inc:messagedeleted
 msgid "Message(s) deleted successfully."
 msgstr "Správa(y) bola vymazaná"
@@ -501,6 +545,10 @@ msgstr "Správa(y) bola označená"
 #: program/localization/sk_SK/messages.inc:autocompletechars
 msgid "Enter at least $min characters for autocompletion."
 msgstr "Zadajte najmenej $min znamkov pre automatické dopĺňanie"
+
+#: program/localization/sk_SK/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Bolo nájdených viac záznamov. Napíšte prosím viac znakov."
 
 #: program/localization/sk_SK/messages.inc:namecannotbeempty
 msgid "Name cannot be empty."
@@ -526,6 +574,11 @@ msgstr "Zlý formát obrázku"
 msgid "Spelling errors detected in the message."
 msgstr "V správe boli nájdené pravopisné chyby"
 
-#: program/localization/sk_SK/messages.inc:itemsdeleted
-msgid "itemsdeleted"
-msgstr "Bolo vymazaných $num položiek."
+#: program/localization/sk_SK/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "Nemôžem vytvoriť/presunúť adresár do zvoleného nadradeného "
+"adresára. Nemáte oprávnenia na zmenu."
+
+#: program/localization/sk_SK/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "Časť správy je príliš veľká na spracovanie."

@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: ms_MY\n"
+"Language: ms\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -44,7 +44,7 @@ msgstr "E-Mel"
 
 #: program/localization/ms_MY/labels.inc:settings
 msgid "Settings"
-msgstr "Tetapan Peribadi"
+msgstr "Tetapan"
 
 #: program/localization/ms_MY/labels.inc:addressbook
 msgid "Address Book"
@@ -110,10 +110,6 @@ msgstr "Keutamaan"
 msgid "Company"
 msgstr "Organisasi"
 
-#: program/localization/ms_MY/labels.inc:reply-to
-msgid "reply-to"
-msgstr "Balas kepada"
-
 #: program/localization/ms_MY/labels.inc:mailboxlist
 #: program/localization/ms_MY/labels.inc:folders
 msgid "Folders"
@@ -127,13 +123,21 @@ msgstr "Mesej $from ke $to dari $count"
 msgid "Message $nr of $count"
 msgstr "Mesej $nr dari $count"
 
+#: program/localization/ms_MY/labels.inc:copy
+msgid "Copy"
+msgstr "Salin"
+
+#: program/localization/ms_MY/labels.inc:move
+msgid "Move"
+msgstr "Alih"
+
 #: program/localization/ms_MY/labels.inc:moveto
 msgid "Move to..."
-msgstr "pindah ke..."
+msgstr "Alih ke..."
 
 #: program/localization/ms_MY/labels.inc:download
 msgid "Download"
-msgstr "muat turun"
+msgstr "Muat Turun"
 
 #: program/localization/ms_MY/labels.inc:filename
 msgid "File name"
@@ -142,18 +146,6 @@ msgstr "Nama Fail"
 #: program/localization/ms_MY/labels.inc:filesize
 msgid "File size"
 msgstr "Saiz Fail"
-
-#: program/localization/ms_MY/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "Papar HTML"
-
-#: program/localization/ms_MY/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "Mesej HTML"
-
-#: program/localization/ms_MY/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "Tarikh-tarikh cantik"
 
 #: program/localization/ms_MY/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -348,33 +340,17 @@ msgstr "Cetak mesej ini"
 msgid "Show previous message"
 msgstr "Papar mesej sebelumnya"
 
-#: program/localization/ms_MY/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Papar set mesej sebelumnya"
-
 #: program/localization/ms_MY/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Papar mesej pertama"
-
-#: program/localization/ms_MY/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "Papar set mesej pertama"
 
 #: program/localization/ms_MY/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Papat mesej seterusnya"
 
-#: program/localization/ms_MY/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Papar set mesej seterusnya"
-
 #: program/localization/ms_MY/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Papat mesej terakhir"
-
-#: program/localization/ms_MY/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "Papar set mesej terakhir"
 
 #: program/localization/ms_MY/labels.inc:backtolist
 msgid "Back to message list"
@@ -405,6 +381,7 @@ msgid "All"
 msgstr "Semua"
 
 #: program/localization/ms_MY/labels.inc:none
+#: program/localization/ms_MY/labels.inc:nonesort
 msgid "None"
 msgstr "Tiada"
 
@@ -420,17 +397,13 @@ msgstr "Padat"
 msgid "Empty"
 msgstr "Kosong"
 
-#: program/localization/ms_MY/labels.inc:purge
-msgid "purge"
-msgstr "Singkir"
-
 #: program/localization/ms_MY/labels.inc:quota
 msgid "Disk usage"
 msgstr "Penggunaan cakera"
 
 #: program/localization/ms_MY/labels.inc:unknown
 msgid "unknown"
-msgstr "tidak dikenali"
+msgstr "tidak diketahui"
 
 #: program/localization/ms_MY/labels.inc:unlimited
 msgid "unlimited"
@@ -445,15 +418,15 @@ msgid "Reset search"
 msgstr "Set semula carian"
 
 #: program/localization/ms_MY/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Karang mesej"
 
 #: program/localization/ms_MY/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Simpan draf ini"
 
 #: program/localization/ms_MY/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Hantar mesej sekarang"
 
 #: program/localization/ms_MY/labels.inc:addattachment
@@ -592,7 +565,7 @@ msgstr "Ubahsuai Kontek"
 
 #: program/localization/ms_MY/labels.inc:edit
 msgid "Edit"
-msgstr "Ubahsuai"
+msgstr "Sunting"
 
 #: program/localization/ms_MY/labels.inc:cancel
 msgid "Cancel"
@@ -604,7 +577,7 @@ msgstr "Simpan"
 
 #: program/localization/ms_MY/labels.inc:delete
 msgid "Delete"
-msgstr "Hapus"
+msgstr "Padam"
 
 #: program/localization/ms_MY/labels.inc:newcontact
 msgid "Create new contact card"
@@ -660,15 +633,15 @@ msgstr "Tetapan bagi"
 
 #: program/localization/ms_MY/labels.inc:preferences
 msgid "Preferences"
-msgstr "Pilihan"
+msgstr "Keutamaan"
 
 #: program/localization/ms_MY/labels.inc:userpreferences
 msgid "User preferences"
-msgstr "Pilihan pengguna"
+msgstr "Keutamaan pengguna"
 
 #: program/localization/ms_MY/labels.inc:editpreferences
 msgid "Edit user preferences"
-msgstr "Ubahsuai pilihan pengguna"
+msgstr "Sunting keutamaan pengguna"
 
 #: program/localization/ms_MY/labels.inc:identities
 msgid "Identities"
@@ -689,6 +662,18 @@ msgstr "Butiran baru"
 #: program/localization/ms_MY/labels.inc:edititem
 msgid "Edit item"
 msgstr "Ubahsuai butiran"
+
+#: program/localization/ms_MY/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Papar HTML"
+
+#: program/localization/ms_MY/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "Mesej HTML"
+
+#: program/localization/ms_MY/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Tarikh-tarikh cantik"
 
 #: program/localization/ms_MY/labels.inc:setdefault
 msgid "Set default"

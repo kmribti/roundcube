@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: mk_MK\n"
@@ -110,10 +110,6 @@ msgstr "Приоритет"
 msgid "Company"
 msgstr "Организација"
 
-#: program/localization/mk_MK/labels.inc:reply-to
-msgid "reply-to"
-msgstr "Препрати на"
-
 #: program/localization/mk_MK/labels.inc:mailboxlist
 #: program/localization/mk_MK/labels.inc:folders
 msgid "Folders"
@@ -126,6 +122,10 @@ msgstr "Писма од $from до $to од $count"
 #: program/localization/mk_MK/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "Писмо $nr од $count"
+
+#: program/localization/mk_MK/labels.inc:copy
+msgid "Copy"
+msgstr "Копирај"
 
 #: program/localization/mk_MK/labels.inc:moveto
 msgid "Move to..."
@@ -142,18 +142,6 @@ msgstr "Име на податотеката"
 #: program/localization/mk_MK/labels.inc:filesize
 msgid "File size"
 msgstr "Големина на податотеката"
-
-#: program/localization/mk_MK/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "Прикажи во HTML"
-
-#: program/localization/mk_MK/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "HTML писмо"
-
-#: program/localization/mk_MK/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "Убави датуми"
 
 #: program/localization/mk_MK/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -348,33 +336,17 @@ msgstr "Испечати писмо"
 msgid "Show previous message"
 msgstr "Прикажи го претходното писмо"
 
-#: program/localization/mk_MK/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Прикажи ги претходните писма"
-
 #: program/localization/mk_MK/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Прикажи го првото писмо"
-
-#: program/localization/mk_MK/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "Прикажи ги првите писма"
 
 #: program/localization/mk_MK/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Прикажи го следното писмо"
 
-#: program/localization/mk_MK/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Прикажи ги следните писма"
-
 #: program/localization/mk_MK/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Прикажи го последното писмо"
-
-#: program/localization/mk_MK/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "Прикажи ги последните писма"
 
 #: program/localization/mk_MK/labels.inc:backtolist
 msgid "Back to message list"
@@ -404,10 +376,6 @@ msgstr "Како обележано"
 msgid "As unflagged"
 msgstr "Како необележано"
 
-#: program/localization/mk_MK/labels.inc:messageactions
-msgid "messageactions"
-msgstr "Повеќе дејства..."
-
 #: program/localization/mk_MK/labels.inc:select
 msgid "Select"
 msgstr "Одбери"
@@ -417,6 +385,7 @@ msgid "All"
 msgstr "Сите"
 
 #: program/localization/mk_MK/labels.inc:none
+#: program/localization/mk_MK/labels.inc:nonesort
 msgid "None"
 msgstr "Ниедно"
 
@@ -451,10 +420,6 @@ msgstr "Компактно"
 #: program/localization/mk_MK/labels.inc:empty
 msgid "Empty"
 msgstr "Испразни"
-
-#: program/localization/mk_MK/labels.inc:purge
-msgid "purge"
-msgstr "Исчисти"
 
 #: program/localization/mk_MK/labels.inc:quota
 msgid "Disk usage"
@@ -493,7 +458,7 @@ msgid "Download (.eml)"
 msgstr "Преземи (.eml)"
 
 #: program/localization/mk_MK/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Пиши ново писмо"
 
 #: program/localization/mk_MK/labels.inc:editasnew
@@ -501,11 +466,11 @@ msgid "Edit as new"
 msgstr "Уреди како ново"
 
 #: program/localization/mk_MK/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Зачувај го писмото во Непратени"
 
 #: program/localization/mk_MK/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Испрати сега"
 
 #: program/localization/mk_MK/labels.inc:addattachment
@@ -522,7 +487,7 @@ msgstr "Тип на уредник"
 
 #: program/localization/mk_MK/labels.inc:returnreceipt
 msgid "Return receipt"
-msgstr "Врати "
+msgstr "Врати"
 
 #: program/localization/mk_MK/labels.inc:checkspelling
 msgid "Check spelling"
@@ -764,15 +729,15 @@ msgstr "Нагодувања за"
 
 #: program/localization/mk_MK/labels.inc:preferences
 msgid "Preferences"
-msgstr "Нагодувања "
+msgstr "Нагодувања"
 
 #: program/localization/mk_MK/labels.inc:userpreferences
 msgid "User preferences"
-msgstr "Кориснички нагодувања "
+msgstr "Кориснички нагодувања"
 
 #: program/localization/mk_MK/labels.inc:editpreferences
 msgid "Edit user preferences"
-msgstr "Промени кориснички нагодувања "
+msgstr "Промени кориснички нагодувања"
 
 #: program/localization/mk_MK/labels.inc:identities
 msgid "Identities"
@@ -794,6 +759,18 @@ msgstr "Нов објект"
 #: program/localization/mk_MK/labels.inc:edititem
 msgid "Edit item"
 msgstr "Промени објект"
+
+#: program/localization/mk_MK/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Прикажи во HTML"
+
+#: program/localization/mk_MK/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML писмо"
+
+#: program/localization/mk_MK/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Убави датуми"
 
 #: program/localization/mk_MK/labels.inc:setdefault
 msgid "Set default"
@@ -978,10 +955,6 @@ msgstr "Одржување"
 #: program/localization/mk_MK/labels.inc:newmessage
 msgid "New Message"
 msgstr "Ново писмо"
-
-#: program/localization/mk_MK/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Можности за листата"
 
 #: program/localization/mk_MK/labels.inc:signatureoptions
 msgid "Signature Options"

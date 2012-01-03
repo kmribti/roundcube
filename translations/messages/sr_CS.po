@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: sr_CS\n"
+"Language: sr\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -41,7 +41,7 @@ msgstr "Грешка на серверу: $msg"
 
 #: program/localization/sr_CS/messages.inc:errorreadonly
 msgid "Unable to perform operation. Folder is read-only."
-msgstr "Операција неуспела. Фасицкло је "
+msgstr "Операција неуспела. Фасицкло је"
 
 #: program/localization/sr_CS/messages.inc:errornoperm
 msgid "Unable to perform operation. Permission denied."
@@ -240,10 +240,6 @@ msgstr "Порука није послата. Да ли желите да "
 msgid "Please select an ldap server to search."
 msgstr "Унесите LDAP сервер за претрагу"
 
-#: program/localization/sr_CS/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Није пронађен ниједан контакт"
-
 #: program/localization/sr_CS/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "Унесите име или е-мејл адресу"
@@ -374,7 +370,7 @@ msgstr "Молимо Вас да изаберете датотеку за "
 #: program/localization/sr_CS/messages.inc:addresswriterror
 msgid "The selected address book is not writeable."
 msgstr "У изабраном адресару нису дозвољене "
-"промене "
+"промене"
 
 #: program/localization/sr_CS/messages.inc:contactaddedtogroup
 msgid "Successfully added the contacts to this group."
@@ -448,11 +444,6 @@ msgstr "SMTP Error ($code): Неуспешно додавање примаоца
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "SMTP Error ($code): Није могуће расчланити листу "
 "прималаца"
-
-#: program/localization/sr_CS/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "SMTP Error ($code): Нема подршке за обавештења о "
-"статусу испоруке"
 
 #: program/localization/sr_CS/messages.inc:smtperror
 msgid "SMTP Error: $msg"

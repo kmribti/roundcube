@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: de_DE\n"
@@ -149,7 +149,7 @@ msgstr "Verschieben nach..."
 
 #: program/localization/de_DE/labels.inc:download
 msgid "Download"
-msgstr "Download"
+msgstr "Herunterladen"
 
 #: program/localization/de_DE/labels.inc:filename
 msgid "File name"
@@ -330,7 +330,7 @@ msgstr "Antwort verfassen"
 
 #: program/localization/de_DE/labels.inc:replytoallmessage
 msgid "Reply to list or to sender and all recipients"
-msgstr "Antwort an Absender und alle Empfänger verfassen"
+msgstr "Antwort an Mailingliste oder an Absender und alle Empfänger verfassen"
 
 #: program/localization/de_DE/labels.inc:replyall
 msgid "Reply all"
@@ -410,11 +410,11 @@ msgstr "Stern entfernen"
 
 #: program/localization/de_DE/labels.inc:moreactions
 msgid "More actions..."
-msgstr "Mehr ..."
+msgstr "Mehr..."
 
 #: program/localization/de_DE/labels.inc:select
 msgid "Select"
-msgstr "Auswählen"
+msgstr "Auswahl"
 
 #: program/localization/de_DE/labels.inc:all
 msgid "All"
@@ -582,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Lokal speichern (.eml)"
 
 #: program/localization/de_DE/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Neue Nachricht verfassen"
 
 #: program/localization/de_DE/labels.inc:editasnew
@@ -590,11 +590,11 @@ msgid "Edit as new"
 msgstr "Als neue Nachricht öffnen"
 
 #: program/localization/de_DE/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Nachricht speichern"
 
 #: program/localization/de_DE/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Nachricht jetzt senden"
 
 #: program/localization/de_DE/labels.inc:addattachment
@@ -692,6 +692,10 @@ msgstr "Bilder anzeigen"
 #: program/localization/de_DE/labels.inc:alwaysshow
 msgid "Always show images from $sender"
 msgstr "Bilder von $sender immer zeigen"
+
+#: program/localization/de_DE/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "Dies ist ein Entwurf"
 
 #: program/localization/de_DE/labels.inc:htmltoggle
 msgid "HTML"
@@ -1014,7 +1018,7 @@ msgstr "Kontakte im vCard-Format exportieren"
 
 #: program/localization/de_DE/labels.inc:newcontactgroup
 msgid "Create new contact group"
-msgstr "Neue Kontaktgruppen erstellen"
+msgstr "Neue Kontaktgruppe erstellen"
 
 #: program/localization/de_DE/labels.inc:grouprename
 msgid "Rename group"
@@ -1094,6 +1098,10 @@ msgstr "Fertig"
 #: program/localization/de_DE/labels.inc:settingsfor
 msgid "Settings for"
 msgstr "Einstellungen für"
+
+#: program/localization/de_DE/labels.inc:about
+msgid "About"
+msgstr "Über"
 
 #: program/localization/de_DE/labels.inc:preferences
 msgid "Preferences"
@@ -1309,7 +1317,7 @@ msgstr "Namen der Dateianhänge"
 
 #: program/localization/de_DE/labels.inc:2231folding
 msgid "Full RFC 2231 (Thunderbird)"
-msgstr "Vollständig RFC 2231 kompatibel (Thunderbird)"
+msgstr "vollständig RFC 2231 kompatibel (Thunderbird)"
 
 #: program/localization/de_DE/labels.inc:miscfolding
 msgid "RFC 2047/2231 (MS Outlook)"
@@ -1317,7 +1325,7 @@ msgstr "RFC 2047/2231 kompatibel (Microsoft Outlook)"
 
 #: program/localization/de_DE/labels.inc:2047folding
 msgid "Full RFC 2047 (other)"
-msgstr "Vollständig RFC 2047 kompatibel (andere)"
+msgstr "vollständig RFC 2047 kompatibel (andere)"
 
 #: program/localization/de_DE/labels.inc:force7bit
 msgid "Use MIME encoding for 8-bit characters"
@@ -1339,6 +1347,10 @@ msgstr "Alle Ordner auf neue Nachrichten prüfen"
 msgid "After message delete/move display the next message"
 msgstr "Zeige nächste Nachricht nach verschieben/löschen"
 
+#: program/localization/de_DE/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "Standard Schrift von HTML Nachrichten"
+
 #: program/localization/de_DE/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Allgemein"
@@ -1353,11 +1365,7 @@ msgstr "Wartung"
 
 #: program/localization/de_DE/labels.inc:newmessage
 msgid "New Message"
-msgstr "Neue Nachrichten"
-
-#: program/localization/de_DE/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Listendarstellung"
+msgstr "Neue Nachricht"
 
 #: program/localization/de_DE/labels.inc:signatureoptions
 msgid "Signature Options"
@@ -1430,6 +1438,11 @@ msgstr "Antworten im selben Ordner wie Original speichern"
 #: program/localization/de_DE/labels.inc:defaultaddressbook
 msgid "Add new contacts to the selected addressbook"
 msgstr "Neue Kontakte zum ausgewählten Adressbuch hinzufügen"
+
+#: program/localization/de_DE/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "Alternative E-Mailadressen bei der Auto-Vervollständigung nicht "
+"berücksichtigen"
 
 #: program/localization/de_DE/labels.inc:spellcheckbeforesend
 msgid "Check spelling before sending a message"
@@ -1546,6 +1559,26 @@ msgstr "Absteigend sortieren"
 #: program/localization/de_DE/labels.inc:undo
 msgid "Undo"
 msgstr "Rückgängig machen"
+
+#: program/localization/de_DE/labels.inc:plugin
+msgid "Plugin"
+msgstr "Erweiterung"
+
+#: program/localization/de_DE/labels.inc:version
+msgid "Version"
+msgstr "Version"
+
+#: program/localization/de_DE/labels.inc:source
+msgid "Source"
+msgstr "Quellcode"
+
+#: program/localization/de_DE/labels.inc:license
+msgid "License"
+msgstr "Lizenz"
+
+#: program/localization/de_DE/labels.inc:support
+msgid "Get support"
+msgstr "Support"
 
 #: program/localization/de_DE/labels.inc:B
 msgid "B"

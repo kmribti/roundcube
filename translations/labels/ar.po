@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:12:08+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:52:15+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: ar_SA\n"
+"Language: ar\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -582,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "تنزيل (.eml)"
 
 #: program/localization/ar_SA/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "إنشاء رسالة"
 
 #: program/localization/ar_SA/labels.inc:editasnew
@@ -590,11 +590,11 @@ msgid "Edit as new"
 msgstr "تعديل كجديد"
 
 #: program/localization/ar_SA/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "حفظ هذه المسودة"
 
 #: program/localization/ar_SA/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "إرسال الرسالة الآن"
 
 #: program/localization/ar_SA/labels.inc:addattachment
@@ -1373,10 +1373,6 @@ msgstr "الصيانة"
 #: program/localization/ar_SA/labels.inc:newmessage
 msgid "New Message"
 msgstr "رسالة جديدة"
-
-#: program/localization/ar_SA/labels.inc:listoptions
-msgid "listoptions"
-msgstr "خيارات السرد"
 
 #: program/localization/ar_SA/labels.inc:signatureoptions
 msgid "Signature Options"

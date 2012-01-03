@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: cy_GB\n"
+"Language: cy\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -393,7 +393,7 @@ msgstr "Dewiswch ffeil i'w lwytho fyny"
 
 #: program/localization/cy_GB/messages.inc:addresswriterror
 msgid "The selected address book is not writeable."
-msgstr "Nid yw'n bosib ysgrifennu i'r llyfr cyfeiriadau "
+msgstr "Nid yw'n bosib ysgrifennu i'r llyfr cyfeiriadau"
 
 #: program/localization/cy_GB/messages.inc:contactaddedtogroup
 msgid "Successfully added the contacts to this group."

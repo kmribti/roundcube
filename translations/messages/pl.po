@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:03:32+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: pl_PL\n"
@@ -37,6 +37,18 @@ msgstr "Błąd serwera!"
 #: program/localization/pl_PL/messages.inc:servererrormsg
 msgid "Server Error: $msg"
 msgstr "Błąd serwera: $msg"
+
+#: program/localization/pl_PL/messages.inc:dberror
+msgid "Database Error!"
+msgstr "Błąd bazy danych!"
+
+#: program/localization/pl_PL/messages.inc:errorreadonly
+msgid "Unable to perform operation. Folder is read-only."
+msgstr "Nie można wykonać operacji. Folder tylko do odczytu."
+
+#: program/localization/pl_PL/messages.inc:errornoperm
+msgid "Unable to perform operation. Permission denied."
+msgstr "Nie można wykonać operacji. Brak uprawnień."
 
 #: program/localization/pl_PL/messages.inc:invalidrequest
 msgid "Invalid request! No data was saved."
@@ -102,6 +114,10 @@ msgstr "Kontakt został dodany."
 msgid "A contact with the same e-mail address already exists."
 msgstr "Kontakt o podanym adresie e-mail już istnieje!"
 
+#: program/localization/pl_PL/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Kontakt z podaną nazwą już istnieje!"
+
 #: program/localization/pl_PL/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
 msgstr "Ze względów bezpieczeństwa zewnętrzne obrazki zostały zablokowane."
@@ -117,6 +133,10 @@ msgstr "Nie znaleziono kontaktu!"
 #: program/localization/pl_PL/messages.inc:contactnotfound
 msgid "The requested contact was not found."
 msgstr "Szukany kontakt nie został odnaleziony."
+
+#: program/localization/pl_PL/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Użyj wyszukiwarki aby wyświetlić kontakty."
 
 #: program/localization/pl_PL/messages.inc:sendingfailed
 msgid "Failed to send message."
@@ -170,6 +190,10 @@ msgstr "Czy na pewno chcesz usunąć wybrany folder?"
 msgid "Do you really want to delete all messages in this folder?"
 msgstr "Czy na pewno chcesz usunąć wszystkie wiadomości w tym folderze?"
 
+#: program/localization/pl_PL/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Usuwanie kontaktów..."
+
 #: program/localization/pl_PL/messages.inc:groupdeleting
 msgid "Deleting group..."
 msgstr "Usuwanie grupy..."
@@ -181,6 +205,14 @@ msgstr "Usuwanie folderu..."
 #: program/localization/pl_PL/messages.inc:foldermoving
 msgid "Moving folder..."
 msgstr "Przenoszenie folderu..."
+
+#: program/localization/pl_PL/messages.inc:foldersubscribing
+msgid "Subscribing folder..."
+msgstr "Subskrybowanie folderu..."
+
+#: program/localization/pl_PL/messages.inc:folderunsubscribing
+msgid "Unsubscribing folder..."
+msgstr "Odsubskrybowanie folderu..."
 
 #: program/localization/pl_PL/messages.inc:formincomplete
 msgid "The form was not completely filled out."
@@ -222,10 +254,6 @@ msgstr "Wiadomość nie została wysłana. Czy chcesz usunąć tę wiadomość?"
 msgid "Please select an ldap server to search."
 msgstr "Wybierz serwer LDAP!"
 
-#: program/localization/pl_PL/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Nie znaleziono kontaktów!"
-
 #: program/localization/pl_PL/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "Podaj nazwę kontaktu lub jego adres e-mail."
@@ -239,6 +267,10 @@ msgstr "Nie wszystkie załączniki zostały pobrane. Poczekaj lub anuluj "
 #: program/localization/pl_PL/messages.inc:searchsuccessful
 msgid "$nr messages found."
 msgstr "Liczba znalezionych wiadomości: $nr."
+
+#: program/localization/pl_PL/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "Znaleziono $nr kontaktów."
 
 #: program/localization/pl_PL/messages.inc:searchnomatch
 msgid "Search returned no matches."
@@ -259,6 +291,22 @@ msgstr "Nie znaleziono błędów w pisowni."
 #: program/localization/pl_PL/messages.inc:folderdeleted
 msgid "Folder successfully deleted."
 msgstr "Folder został pomyślnie usunięty."
+
+#: program/localization/pl_PL/messages.inc:foldersubscribed
+msgid "Folder successfully subscribed."
+msgstr "Folder został pomyślnie zasubskrybowany."
+
+#: program/localization/pl_PL/messages.inc:folderunsubscribed
+msgid "Folder successfully unsubscribed."
+msgstr "Folder został pomyślnie odsubskrybowany."
+
+#: program/localization/pl_PL/messages.inc:folderpurged
+msgid "Folder has successfully been emptied."
+msgstr "Folder został pomyślnie opróżniony."
+
+#: program/localization/pl_PL/messages.inc:folderexpunged
+msgid "Folder has successfully been compacted."
+msgstr "Folder został pomyślnie uporządkowany."
 
 #: program/localization/pl_PL/messages.inc:deletedsuccessfully
 msgid "Successfully deleted."
@@ -304,6 +352,10 @@ msgstr "Przenoszenie wiadomości..."
 msgid "Copying message(s)..."
 msgstr "Kopiowanie wiadomości..."
 
+#: program/localization/pl_PL/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Kopiowanie kontaktów..."
+
 #: program/localization/pl_PL/messages.inc:deletingmessage
 msgid "Deleting message(s)..."
 msgstr "Usuwanie wiadomości..."
@@ -311,6 +363,14 @@ msgstr "Usuwanie wiadomości..."
 #: program/localization/pl_PL/messages.inc:markingmessage
 msgid "Marking message(s)..."
 msgstr "Oznaczanie wiadomości..."
+
+#: program/localization/pl_PL/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Dodawanie kontaktów do grupy..."
+
+#: program/localization/pl_PL/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Usuwanie kontaktów z grupy..."
 
 #: program/localization/pl_PL/messages.inc:receiptsent
 msgid "Successfully sent a read receipt."
@@ -356,6 +416,10 @@ msgstr "Błąd! Pobrany plik nie jest poprawnym plikiem vCard."
 msgid "<b>Successfully imported $inserted contacts</b>"
 msgstr "<b>Pomyślnie dodano $inserted kontaktów, pominięto $skipped "
 "istniejących wpisów</b>:<p><em>$names</em></p>."
+
+#: program/localization/pl_PL/messages.inc:importconfirmskipped
+msgid "<b>Skipped $skipped existing entries</b>"
+msgstr "<b>Pominięto $skipped istniejących wpisów.</b>"
 
 #: program/localization/pl_PL/messages.inc:opnotpermitted
 msgid "Operation not permitted!"
@@ -425,6 +489,14 @@ msgstr "Usuwanie kontaktów nie powiodło się."
 msgid "Contact(s) deleted successfully."
 msgstr "Kontakt(y) został(y) usunięte."
 
+#: program/localization/pl_PL/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Przywracanie kontaktów nie powiodło się."
+
+#: program/localization/pl_PL/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Kontakt(y) zostały przywrócone."
+
 #: program/localization/pl_PL/messages.inc:groupdeleted
 msgid "Group deleted successfully."
 msgstr "Grupa została usunięta."
@@ -436,6 +508,22 @@ msgstr "Nazwa grupy została zmieniona."
 #: program/localization/pl_PL/messages.inc:groupcreated
 msgid "Group created successfully."
 msgstr "Grupa została utworzona."
+
+#: program/localization/pl_PL/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Wyszukiwanie usunięto pomyślnie."
+
+#: program/localization/pl_PL/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Nie można usunąć wyszukiwania."
+
+#: program/localization/pl_PL/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Wyszukiwanie zapisano pomyślnie."
+
+#: program/localization/pl_PL/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Nie można zapisać wyszukiwania."
 
 #: program/localization/pl_PL/messages.inc:messagedeleted
 msgid "Message(s) deleted successfully."
@@ -457,29 +545,9 @@ msgstr "Wiadomości zostały oznaczone."
 msgid "Enter at least $min characters for autocompletion."
 msgstr "Wprowadź co najmniej $min znak(ów) aby skorzystać z autouzupełniania."
 
-#: program/localization/pl_PL/messages.inc:foldersubscribing
-msgid "Subscribing folder..."
-msgstr "Subskrybowanie folderu..."
-
-#: program/localization/pl_PL/messages.inc:folderunsubscribing
-msgid "Unsubscribing folder..."
-msgstr "Odsubskrybowanie folderu..."
-
-#: program/localization/pl_PL/messages.inc:foldersubscribed
-msgid "Folder successfully subscribed."
-msgstr "Folder został pomyślnie zasubskrybowany."
-
-#: program/localization/pl_PL/messages.inc:folderunsubscribed
-msgid "Folder successfully unsubscribed."
-msgstr "Folder został pomyślnie odsubskrybowany."
-
-#: program/localization/pl_PL/messages.inc:folderpurged
-msgid "Folder has successfully been emptied."
-msgstr "Folder został pomyślnie opróżniony."
-
-#: program/localization/pl_PL/messages.inc:folderexpunged
-msgid "Folder has successfully been compacted."
-msgstr "Folder został pomyślnie uporządkowany."
+#: program/localization/pl_PL/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Znaleziono więcej pasujących wpisów. Wprowadź więcej znaków."
 
 #: program/localization/pl_PL/messages.inc:namecannotbeempty
 msgid "Name cannot be empty."
@@ -497,18 +565,6 @@ msgstr "Folder został pomyślnie zaktualizowany."
 msgid "Folder created successfully."
 msgstr "Folder został pomyślnie utworzony."
 
-#: program/localization/pl_PL/messages.inc:errorreadonly
-msgid "Unable to perform operation. Folder is read-only."
-msgstr "Nie można wykonać operacji. Folder tylko do odczytu."
-
-#: program/localization/pl_PL/messages.inc:errornoperm
-msgid "Unable to perform operation. Permission denied."
-msgstr "Nie można wykonać operacji. Brak uprawnień."
-
-#: program/localization/pl_PL/messages.inc:importconfirmskipped
-msgid "<b>Skipped $skipped existing entries</b>"
-msgstr "<b>Pominięto $skipped istniejących wpisów.</b>"
-
 #: program/localization/pl_PL/messages.inc:invalidimageformat
 msgid "Not a valid image format."
 msgstr "Niepoprawny format obrazka."
@@ -517,69 +573,9 @@ msgstr "Niepoprawny format obrazka."
 msgid "Spelling errors detected in the message."
 msgstr "Wykryto błędy pisowni w tej wiadomości."
 
-#: program/localization/pl_PL/messages.inc:contactrestoreerror
-msgid "Could not restore deleted contact(s)."
-msgstr "Przywracanie kontaktów nie powiodło się."
-
-#: program/localization/pl_PL/messages.inc:contactrestored
-msgid "Contact(s) restored successfully."
-msgstr "Kontakt(y) zostały przywrócone."
-
-#: program/localization/pl_PL/messages.inc:dberror
-msgid "Database Error!"
-msgstr "Błąd bazy danych!"
-
-#: program/localization/pl_PL/messages.inc:contactnameexists
-msgid "A contact with the same name already exists."
-msgstr "Kontakt z podaną nazwą już istnieje!"
-
-#: program/localization/pl_PL/messages.inc:copyingcontact
-msgid "Copying contact(s)..."
-msgstr "Kopiowanie kontaktów..."
-
-#: program/localization/pl_PL/messages.inc:addingmember
-msgid "Adding contact(s) to the group..."
-msgstr "Dodawanie kontaktów do grupy..."
-
-#: program/localization/pl_PL/messages.inc:removingmember
-msgid "Removing contact(s) from the group..."
-msgstr "Usuwanie kontaktów z grupy..."
-
 #: program/localization/pl_PL/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
 msgstr "Nie można utworzyć/przenieść folderu w wybrane miejsce. Brak upranień."
-
-#: program/localization/pl_PL/messages.inc:contactsearchsuccessful
-msgid "$nr contacts found."
-msgstr "Znaleziono $nr kontaktów."
-
-#: program/localization/pl_PL/messages.inc:savedsearchdeleted
-msgid "Saved search deleted successfully."
-msgstr "Wyszukiwanie usunięto pomyślnie."
-
-#: program/localization/pl_PL/messages.inc:savedsearchdeleteerror
-msgid "Could not delete saved search."
-msgstr "Nie można usunąć wyszukiwania."
-
-#: program/localization/pl_PL/messages.inc:savedsearchcreated
-msgid "Saved search created successfully."
-msgstr "Wyszukiwanie zapisano pomyślnie."
-
-#: program/localization/pl_PL/messages.inc:savedsearchcreateerror
-msgid "Could not create saved search."
-msgstr "Nie można zapisać wyszukiwania."
-
-#: program/localization/pl_PL/messages.inc:contactsearchonly
-msgid "Enter some search terms to find contacts"
-msgstr "Użyj wyszukiwarki aby wyświetlić kontakty."
-
-#: program/localization/pl_PL/messages.inc:contactdeleting
-msgid "Deleting contact(s)..."
-msgstr "Usuwanie kontaktów..."
-
-#: program/localization/pl_PL/messages.inc:autocompletemore
-msgid "More matching entries found. Please type more characters."
-msgstr "Znaleziono więcej pasujących wpisów. Wprowadź więcej znaków."
 
 #: program/localization/pl_PL/messages.inc:messagetoobig
 msgid "The message part is too big to process it."

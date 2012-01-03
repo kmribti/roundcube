@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: lt_LT\n"
@@ -582,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Parsisiųsti (.eml)"
 
 #: program/localization/lt_LT/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Rašyti naują laišką"
 
 #: program/localization/lt_LT/labels.inc:editasnew
@@ -590,11 +590,11 @@ msgid "Edit as new"
 msgstr "Redaguoti kaip naują"
 
 #: program/localization/lt_LT/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Išsaugoti šį juodraštį"
 
 #: program/localization/lt_LT/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Išsiųsti laiską"
 
 #: program/localization/lt_LT/labels.inc:addattachment
@@ -1351,6 +1351,10 @@ msgstr "Naujų laiškų ieškoti visuose aplankuose"
 msgid "After message delete/move display the next message"
 msgstr "Rodyti pranešimą pašalinus/perkėlus laišką"
 
+#: program/localization/lt_LT/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "Numatytasis HTML laiškų šriftas"
+
 #: program/localization/lt_LT/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Pagrindiniai nustatymai"
@@ -1366,10 +1370,6 @@ msgstr "Priežiūra"
 #: program/localization/lt_LT/labels.inc:newmessage
 msgid "New Message"
 msgstr "Naujas laiškas"
-
-#: program/localization/lt_LT/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Rodyti nustatymus"
 
 #: program/localization/lt_LT/labels.inc:signatureoptions
 msgid "Signature Options"

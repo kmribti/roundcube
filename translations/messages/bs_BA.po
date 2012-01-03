@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: bs_BA\n"
+"Language: bs\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -226,10 +226,6 @@ msgstr "Poruka nije poslata. Želite li odbaciti ovu poruku?"
 msgid "Please select an ldap server to search."
 msgstr "Unesite LDAP poslužitelj za pretragu"
 
-#: program/localization/bs_BA/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Nije pronađen niti jedan kontakt"
-
 #: program/localization/bs_BA/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "Unesite ime ili email adresu"
@@ -290,7 +286,7 @@ msgstr "Formatiranje poruke"
 
 #: program/localization/bs_BA/messages.inc:messageopenerror
 msgid "Could not load message from server."
-msgstr "Nije moguće "
+msgstr "Nije moguće"
 
 #: program/localization/bs_BA/messages.inc:fileuploaderror
 msgid "File upload failed."
@@ -420,10 +416,6 @@ msgstr "SMTP Greška ($code): Nije uspjelo dodavanje primaoca \"$to\" ($msg)"
 #: program/localization/bs_BA/messages.inc:smtprecipientserror
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "SMTP Greška: Nije moguće pročitati listu primaoca"
-
-#: program/localization/bs_BA/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "SMTP Greška: Nema podrške za obaviještenje o statusu isporuke"
 
 #: program/localization/bs_BA/messages.inc:smtperror
 msgid "SMTP Error: $msg"

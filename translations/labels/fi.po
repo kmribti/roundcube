@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: fi_FI\n"
@@ -109,10 +109,6 @@ msgstr "Tärkeys"
 #: program/localization/fi_FI/labels.inc:organization
 msgid "Company"
 msgstr "Organisaatio"
-
-#: program/localization/fi_FI/labels.inc:reply-to
-msgid "reply-to"
-msgstr "Vastaus osoitteeseen"
 
 #: program/localization/fi_FI/labels.inc:mailboxlist
 #: program/localization/fi_FI/labels.inc:folders
@@ -234,7 +230,7 @@ msgstr "Huhti"
 #: program/localization/fi_FI/labels.inc:may
 #: program/localization/fi_FI/labels.inc:longmay
 msgid "May"
-msgstr "Toukokuu"
+msgstr "Touko"
 
 #: program/localization/fi_FI/labels.inc:jun
 msgid "Jun"
@@ -328,6 +324,14 @@ msgstr "Vastaa viestiin"
 msgid "Reply to list or to sender and all recipients"
 msgstr "Vastaa kaikille"
 
+#: program/localization/fi_FI/labels.inc:replyall
+msgid "Reply all"
+msgstr "Vastaa kaikille"
+
+#: program/localization/fi_FI/labels.inc:forwardattachment
+msgid "Forward as attachment"
+msgstr "Välitä viesti liitteenä"
+
 #: program/localization/fi_FI/labels.inc:forwardmessage
 msgid "Forward the message"
 msgstr "Välitä viesti"
@@ -348,33 +352,17 @@ msgstr "Tulosta viesti"
 msgid "Show previous message"
 msgstr "Näytä edellinen viesti"
 
-#: program/localization/fi_FI/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Näytä edelliset viestit"
-
 #: program/localization/fi_FI/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Näytä ensimmäinen viesti"
-
-#: program/localization/fi_FI/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "Näytä ensimmäinen viestiluettelo"
 
 #: program/localization/fi_FI/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Näytä edellinen viesti"
 
-#: program/localization/fi_FI/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Näytä seuraavat viestit"
-
 #: program/localization/fi_FI/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Näytä viimeinen viesti"
-
-#: program/localization/fi_FI/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "Näytä viimeinen viestiluettelo"
 
 #: program/localization/fi_FI/labels.inc:backtolist
 msgid "Back to message list"
@@ -404,8 +392,8 @@ msgstr "korostetuiksi"
 msgid "As unflagged"
 msgstr "ei-korostetuiksi"
 
-#: program/localization/fi_FI/labels.inc:messageactions
-msgid "messageactions"
+#: program/localization/fi_FI/labels.inc:moreactions
+msgid "More actions..."
 msgstr "Lisää toimintoja..."
 
 #: program/localization/fi_FI/labels.inc:select
@@ -525,10 +513,6 @@ msgstr "Tiivistä"
 msgid "Empty"
 msgstr "Tyhjennä"
 
-#: program/localization/fi_FI/labels.inc:purge
-msgid "purge"
-msgstr "Puhdista"
-
 #: program/localization/fi_FI/labels.inc:quota
 msgid "Disk usage"
 msgstr "Levytila"
@@ -551,7 +535,7 @@ msgstr "Nollaa haku"
 
 #: program/localization/fi_FI/labels.inc:searchmod
 msgid "Search modifiers"
-msgstr "Haku kriteerit"
+msgstr "Hakukriteerit"
 
 #: program/localization/fi_FI/labels.inc:msgtext
 msgid "Entire message"
@@ -566,7 +550,7 @@ msgid "Download (.eml)"
 msgstr "Tallenna (.eml)"
 
 #: program/localization/fi_FI/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Viestin kirjoitus"
 
 #: program/localization/fi_FI/labels.inc:editasnew
@@ -574,11 +558,11 @@ msgid "Edit as new"
 msgstr "Muokkaa uutena"
 
 #: program/localization/fi_FI/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Tallenna tämä luonnos"
 
 #: program/localization/fi_FI/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Lähetä viesti"
 
 #: program/localization/fi_FI/labels.inc:addattachment
@@ -596,6 +580,10 @@ msgstr "Editorin tyyppi"
 #: program/localization/fi_FI/labels.inc:returnreceipt
 msgid "Return receipt"
 msgstr "Perillesaapumisilmoitus"
+
+#: program/localization/fi_FI/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "Alkuperäinen viesti"
 
 #: program/localization/fi_FI/labels.inc:checkspelling
 msgid "Check spelling"
@@ -652,6 +640,10 @@ msgstr "Näytä kuvat"
 #: program/localization/fi_FI/labels.inc:alwaysshow
 msgid "Always show images from $sender"
 msgstr "Näytä aina lähettäjältä $sender saapuneet kuvat"
+
+#: program/localization/fi_FI/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "Tämä on luonnosviesti."
 
 #: program/localization/fi_FI/labels.inc:htmltoggle
 msgid "HTML"
@@ -719,17 +711,186 @@ msgstr "Etunimi"
 msgid "Last Name"
 msgstr "Sukunimi"
 
+#: program/localization/fi_FI/labels.inc:middlename
+msgid "Middle Name"
+msgstr "Toinen nimi"
+
+#: program/localization/fi_FI/labels.inc:nameprefix
+msgid "Prefix"
+msgstr "Etuliite"
+
+#: program/localization/fi_FI/labels.inc:namesuffix
+msgid "Suffix"
+msgstr "Jälkiliite"
+
+#: program/localization/fi_FI/labels.inc:nickname
+msgid "Nickname"
+msgstr "Lempinimi"
+
+#: program/localization/fi_FI/labels.inc:jobtitle
+msgid "Job Title"
+msgstr "Titteli"
+
+#: program/localization/fi_FI/labels.inc:department
+msgid "Department"
+msgstr "Osasto"
+
+#: program/localization/fi_FI/labels.inc:gender
+msgid "Gender"
+msgstr "Sukupuoli"
+
+#: program/localization/fi_FI/labels.inc:maidenname
+msgid "Maiden Name"
+msgstr "Tyttönimi"
+
 #: program/localization/fi_FI/labels.inc:email
 msgid "Email"
-msgstr "E-Mail"
+msgstr "Sähköposti"
+
+#: program/localization/fi_FI/labels.inc:phone
+msgid "Phone"
+msgstr "Puhelin"
+
+#: program/localization/fi_FI/labels.inc:address
+msgid "Address"
+msgstr "Osoite"
+
+#: program/localization/fi_FI/labels.inc:street
+msgid "Street"
+msgstr "Katu"
+
+#: program/localization/fi_FI/labels.inc:locality
+msgid "City"
+msgstr "Kaupunki"
+
+#: program/localization/fi_FI/labels.inc:zipcode
+msgid "ZIP Code"
+msgstr "Postinumero"
+
+#: program/localization/fi_FI/labels.inc:region
+msgid "State/Province"
+msgstr "Osavaltio tai lääni"
+
+#: program/localization/fi_FI/labels.inc:country
+msgid "Country"
+msgstr "Maa"
+
+#: program/localization/fi_FI/labels.inc:birthday
+msgid "Birthday"
+msgstr "Syntymäpäivä"
+
+#: program/localization/fi_FI/labels.inc:anniversary
+msgid "Anniversary"
+msgstr "Vuosipäivä"
+
+#: program/localization/fi_FI/labels.inc:website
+msgid "Website"
+msgstr "Verkkosivu"
+
+#: program/localization/fi_FI/labels.inc:instantmessenger
+msgid "IM"
+msgstr "Pikaviestin"
+
+#: program/localization/fi_FI/labels.inc:notes
+msgid "Notes"
+msgstr "Muistiinpanot"
+
+#: program/localization/fi_FI/labels.inc:male
+msgid "male"
+msgstr "mies"
+
+#: program/localization/fi_FI/labels.inc:female
+msgid "female"
+msgstr "nainen"
+
+#: program/localization/fi_FI/labels.inc:manager
+msgid "Manager"
+msgstr "Päällikkö"
+
+#: program/localization/fi_FI/labels.inc:assistant
+#: program/localization/fi_FI/labels.inc:typeassistant
+msgid "Assistant"
+msgstr "Avustaja"
+
+#: program/localization/fi_FI/labels.inc:spouse
+msgid "Spouse"
+msgstr "Puoliso"
+
+#: program/localization/fi_FI/labels.inc:allfields
+msgid "All fields"
+msgstr "Kaikki kentät"
+
+#: program/localization/fi_FI/labels.inc:search
+msgid "Search"
+msgstr "Haku"
+
+#: program/localization/fi_FI/labels.inc:advsearch
+msgid "Advanced Search"
+msgstr "Tarkennettu haku"
+
+#: program/localization/fi_FI/labels.inc:typehome
+msgid "Home"
+msgstr "Koti"
+
+#: program/localization/fi_FI/labels.inc:typework
+msgid "Work"
+msgstr "Työ"
+
+#: program/localization/fi_FI/labels.inc:typemobile
+msgid "Mobile"
+msgstr "Matkapuhelin"
+
+#: program/localization/fi_FI/labels.inc:typehomefax
+msgid "Home Fax"
+msgstr "Kotifaksi"
+
+#: program/localization/fi_FI/labels.inc:typeworkfax
+msgid "Work Fax"
+msgstr "Työfaksi"
+
+#: program/localization/fi_FI/labels.inc:typecar
+msgid "Car"
+msgstr "Auto"
+
+#: program/localization/fi_FI/labels.inc:typepager
+msgid "Pager"
+msgstr "Hakulaite"
+
+#: program/localization/fi_FI/labels.inc:typehomepage
+msgid "Home Page"
+msgstr "Kotisivu"
+
+#: program/localization/fi_FI/labels.inc:typeblog
+msgid "Blog"
+msgstr "Blogi"
+
+#: program/localization/fi_FI/labels.inc:typeprofile
+msgid "Profile"
+msgstr "Profiili"
+
+#: program/localization/fi_FI/labels.inc:addfield
+msgid "Add field..."
+msgstr "Lisää kenttä..."
 
 #: program/localization/fi_FI/labels.inc:addcontact
 msgid "Add new contact"
-msgstr "Lisää valittu kontakti osoitekirjaan"
+msgstr "Lisää uusi yhteystieto"
 
 #: program/localization/fi_FI/labels.inc:editcontact
 msgid "Edit contact"
-msgstr "Muokkaa kontaktia"
+msgstr "Muokkaa yhteystietoa"
+
+#: program/localization/fi_FI/labels.inc:contacts
+msgid "Contacts"
+msgstr "Yhteystiedot"
+
+#: program/localization/fi_FI/labels.inc:contactproperties
+msgid "Contact properties"
+msgstr "Yhteystiedon ominaisuudet"
+
+#: program/localization/fi_FI/labels.inc:personalinfo
+msgid "Personal information"
+msgstr "Henkilökohtaiset tiedot"
 
 #: program/localization/fi_FI/labels.inc:edit
 msgid "Edit"
@@ -747,21 +908,33 @@ msgstr "Tallenna"
 msgid "Delete"
 msgstr "Poista"
 
+#: program/localization/fi_FI/labels.inc:rename
+msgid "Rename"
+msgstr "Nimeä uudelleen"
+
+#: program/localization/fi_FI/labels.inc:addphoto
+msgid "Add"
+msgstr "Lisää"
+
+#: program/localization/fi_FI/labels.inc:replacephoto
+msgid "Replace"
+msgstr "Korvaa"
+
 #: program/localization/fi_FI/labels.inc:newcontact
 msgid "Create new contact card"
-msgstr "Luo uusi kontakti"
+msgstr "Luo uusi yhteystieto"
 
 #: program/localization/fi_FI/labels.inc:deletecontact
 msgid "Delete selected contacts"
-msgstr "Poista valitut kontaktit"
+msgstr "Poista valitut yhteystiedot"
 
 #: program/localization/fi_FI/labels.inc:composeto
 msgid "Compose mail to"
-msgstr "Kirjoita viesti kontaktille"
+msgstr "Kirjoita viesti yhteystiedolle"
 
 #: program/localization/fi_FI/labels.inc:contactsfromto
 msgid "Contacts $from to $to of $count"
-msgstr "Kontaktit $from-$to/$count"
+msgstr "Yhteystiedot $from-$to/$count"
 
 #: program/localization/fi_FI/labels.inc:print
 msgid "Print"
@@ -773,15 +946,19 @@ msgstr "Vie (export)"
 
 #: program/localization/fi_FI/labels.inc:exportvcards
 msgid "Export contacts in vCard format"
-msgstr "Vie kontaktit vCard-muodossa"
+msgstr "Vie yhteystiedot vCard-muodossa"
 
 #: program/localization/fi_FI/labels.inc:newcontactgroup
 msgid "Create new contact group"
-msgstr "Luo uusi kontaktiryhmä"
+msgstr "Luo uusi yhteystietoryhmä"
 
-#: program/localization/fi_FI/labels.inc:groupactions
-msgid "groupactions"
-msgstr "Kontaktiryhmän toiminnot..."
+#: program/localization/fi_FI/labels.inc:grouprename
+msgid "Rename group"
+msgstr "Nimeä ryhmä uudelleen"
+
+#: program/localization/fi_FI/labels.inc:groupdelete
+msgid "Delete group"
+msgstr "Poista ryhmä"
 
 #: program/localization/fi_FI/labels.inc:previouspage
 msgid "Show previous page"
@@ -811,6 +988,14 @@ msgstr "Ryhmät"
 msgid "Personal Addresses"
 msgstr "Henkilökohtaiset osoitteet"
 
+#: program/localization/fi_FI/labels.inc:searchsave
+msgid "Save search"
+msgstr "Tallenna haku"
+
+#: program/localization/fi_FI/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "Poista haku"
+
 #: program/localization/fi_FI/labels.inc:import
 msgid "Import"
 msgstr "Tuo"
@@ -822,6 +1007,10 @@ msgstr "Tuo yhteystiedot"
 #: program/localization/fi_FI/labels.inc:importfromfile
 msgid "Import from file:"
 msgstr "Tuo tiedostosta:"
+
+#: program/localization/fi_FI/labels.inc:importtarget
+msgid "Add new contacts to address book:"
+msgstr "Lisää uudet yhteystiedot osoitekirjaan:"
 
 #: program/localization/fi_FI/labels.inc:importreplace
 msgid "Replace the entire address book"
@@ -841,6 +1030,10 @@ msgstr "Valmis"
 #: program/localization/fi_FI/labels.inc:settingsfor
 msgid "Settings for"
 msgstr "Asetukset"
+
+#: program/localization/fi_FI/labels.inc:about
+msgid "About"
+msgstr "Tietoja"
 
 #: program/localization/fi_FI/labels.inc:preferences
 msgid "Preferences"
@@ -885,6 +1078,14 @@ msgstr "Oletusmerkistökoodaus"
 #: program/localization/fi_FI/labels.inc:htmlmessage
 msgid "HTML Message"
 msgstr "HTML-viesti"
+
+#: program/localization/fi_FI/labels.inc:dateformat
+msgid "Date format"
+msgstr "Päiväyksen muoto"
+
+#: program/localization/fi_FI/labels.inc:timeformat
+msgid "Time format"
+msgstr "Ajan muoto"
 
 #: program/localization/fi_FI/labels.inc:prettydate
 msgid "Pretty dates"
@@ -936,11 +1137,11 @@ msgstr "Käyttöliittymän teema"
 
 #: program/localization/fi_FI/labels.inc:logoutclear
 msgid "Clear Trash on logout"
-msgstr "Tyhjennä roskakori ulos kirjautuessa"
+msgstr "Tyhjennä roskakori kirjautuessa ulos"
 
 #: program/localization/fi_FI/labels.inc:logoutcompact
 msgid "Compact Inbox on logout"
-msgstr "Tiivistä kansiot ulos kirjautuessa"
+msgstr "Tiivistä kansiot kirjautuessa ulos"
 
 #: program/localization/fi_FI/labels.inc:uisettings
 msgid "User Interface"
@@ -976,7 +1177,7 @@ msgstr "Merkitse poistettavat viestit luetuiksi"
 
 #: program/localization/fi_FI/labels.inc:flagfordeletion
 msgid "Flag the message for deletion instead of delete"
-msgstr "Poistamisen sijaan, merkitse viestit poistettavaksi"
+msgstr "Poistamisen sijaan merkitse viestit poistettavaksi"
 
 #: program/localization/fi_FI/labels.inc:skipdeleted
 msgid "Do not show deleted messages"
@@ -1036,15 +1237,15 @@ msgstr "Liitetiedostojen nimet"
 
 #: program/localization/fi_FI/labels.inc:2231folding
 msgid "Full RFC 2231 (Thunderbird)"
-msgstr "Täysin RFC 2231 mukainen (Thunderbird)"
+msgstr "Täysin RFC 2231:n mukainen (Thunderbird)"
 
 #: program/localization/fi_FI/labels.inc:miscfolding
 msgid "RFC 2047/2231 (MS Outlook)"
-msgstr "RFC 2047/2231 mukainen (MS Outlook)"
+msgstr "RFC 2047/2231:n mukainen (MS Outlook)"
 
 #: program/localization/fi_FI/labels.inc:2047folding
 msgid "Full RFC 2047 (other)"
-msgstr "Täysin RFC 2047 mukainen (muut)"
+msgstr "Täysin RFC 2047:n mukainen (muut)"
 
 #: program/localization/fi_FI/labels.inc:force7bit
 msgid "Use MIME encoding for 8-bit characters"
@@ -1066,6 +1267,10 @@ msgstr "Tarkista kaikki kansiot uusien viestien varalta"
 msgid "After message delete/move display the next message"
 msgstr "Viestin siirron tai poiston jälkeen, näytä seuraava viesti"
 
+#: program/localization/fi_FI/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "HTML-viestin oletuskirjasin"
+
 #: program/localization/fi_FI/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Pääasetukset"
@@ -1081,10 +1286,6 @@ msgstr "Huolto"
 #: program/localization/fi_FI/labels.inc:newmessage
 msgid "New Message"
 msgstr "Uusi viesti"
-
-#: program/localization/fi_FI/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Lista-asetukset"
 
 #: program/localization/fi_FI/labels.inc:signatureoptions
 msgid "Signature Options"
@@ -1142,6 +1343,14 @@ msgstr "Merkitse esikatsellut viestit luetuiksi"
 msgid "after $n seconds"
 msgstr "$n sekunnin jälkeen"
 
+#: program/localization/fi_FI/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "Oikuluvun asetukset"
+
+#: program/localization/fi_FI/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "Lisää sanakirjaan"
+
 #: program/localization/fi_FI/labels.inc:folder
 msgid "Folder"
 msgstr "Kansio"
@@ -1174,6 +1383,46 @@ msgstr "Kansioiden hallinta"
 msgid "Special Folders"
 msgstr "Erikoiskansiot"
 
+#: program/localization/fi_FI/labels.inc:properties
+msgid "Properties"
+msgstr "Ominaisuudet"
+
+#: program/localization/fi_FI/labels.inc:folderproperties
+msgid "Folder properties"
+msgstr "Kansion ominaisuudet"
+
+#: program/localization/fi_FI/labels.inc:parentfolder
+msgid "Parent folder"
+msgstr "Yläkansio"
+
+#: program/localization/fi_FI/labels.inc:location
+msgid "Location"
+msgstr "Sijanti"
+
+#: program/localization/fi_FI/labels.inc:info
+msgid "Information"
+msgstr "Tietoja"
+
+#: program/localization/fi_FI/labels.inc:getfoldersize
+msgid "Click to get folder size"
+msgstr "Napsauta saadaksesi kansion koon"
+
+#: program/localization/fi_FI/labels.inc:foldertype
+msgid "Folder Type"
+msgstr "Kansion tyyppi"
+
+#: program/localization/fi_FI/labels.inc:personalfolder
+msgid "Private Folder"
+msgstr "Yksityinen kansio"
+
+#: program/localization/fi_FI/labels.inc:otherfolder
+msgid "Other User's Folder"
+msgstr "Toisen käyttäjän kansio"
+
+#: program/localization/fi_FI/labels.inc:sharedfolder
+msgid "Public Folder"
+msgstr "Julkinen kansio"
+
 #: program/localization/fi_FI/labels.inc:sortby
 msgid "Sort by"
 msgstr "Järjestä"
@@ -1185,6 +1434,30 @@ msgstr "Järjestä nousevasti (a-ö)"
 #: program/localization/fi_FI/labels.inc:sortdesc
 msgid "Sort descending"
 msgstr "Järjestä laskevasti (ö-a)"
+
+#: program/localization/fi_FI/labels.inc:undo
+msgid "Undo"
+msgstr "Kumoa"
+
+#: program/localization/fi_FI/labels.inc:plugin
+msgid "Plugin"
+msgstr "Liitännäinen"
+
+#: program/localization/fi_FI/labels.inc:version
+msgid "Version"
+msgstr "Versio"
+
+#: program/localization/fi_FI/labels.inc:source
+msgid "Source"
+msgstr "Lähde"
+
+#: program/localization/fi_FI/labels.inc:license
+msgid "License"
+msgstr "Lisenssi"
+
+#: program/localization/fi_FI/labels.inc:support
+msgid "Get support"
+msgstr "Hanki tukea"
 
 #: program/localization/fi_FI/labels.inc:B
 msgid "B"

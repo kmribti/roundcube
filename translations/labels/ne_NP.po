@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ne_NP\n"
@@ -110,10 +110,6 @@ msgstr "मेलको प्राथमिकता"
 msgid "Company"
 msgstr "संस्था"
 
-#: program/localization/ne_NP/labels.inc:reply-to
-msgid "reply-to"
-msgstr "पुन: जवाब"
-
 #: program/localization/ne_NP/labels.inc:mailboxlist
 #: program/localization/ne_NP/labels.inc:folders
 msgid "Folders"
@@ -127,6 +123,10 @@ msgstr "मेलहरु $from बाट $to सम्म, $count "
 #: program/localization/ne_NP/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "$nr नम्बर मेल, $count मध्यबाट"
+
+#: program/localization/ne_NP/labels.inc:copy
+msgid "Copy"
+msgstr "कार्बन कपि"
 
 #: program/localization/ne_NP/labels.inc:moveto
 msgid "Move to..."
@@ -143,18 +143,6 @@ msgstr "फाईलको नाम"
 #: program/localization/ne_NP/labels.inc:filesize
 msgid "File size"
 msgstr "फाईलको नाप"
-
-#: program/localization/ne_NP/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "ऐच-टी-ऐम-ऐल(HTML) देखाउनुहोस"
-
-#: program/localization/ne_NP/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "ऐच-टी-ऐम-ऐल (HTML) रूपका मेल"
-
-#: program/localization/ne_NP/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "सुन्दर तारिख"
 
 #: program/localization/ne_NP/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -254,37 +242,17 @@ msgstr "मेल छाप्नुहोस"
 msgid "Show previous message"
 msgstr "पछाडिको मेल देखाउनुहोस"
 
-#: program/localization/ne_NP/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "पछाडिको मेलका सेटहरु "
-"देखाउनुहोस"
-
 #: program/localization/ne_NP/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "पहलो मेल देखाउनुहोस"
-
-#: program/localization/ne_NP/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "पहलो मेलका सेटहरु "
-"देखाउनुहोस"
 
 #: program/localization/ne_NP/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "अगाडिको मेल देखाउनुहोस"
 
-#: program/localization/ne_NP/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "अगाडिको मेलका सेटहरु "
-"देखाउनुहोस"
-
 #: program/localization/ne_NP/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "अन्तिम मेल देखाउनुहोस"
-
-#: program/localization/ne_NP/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "अन्तिम मेलका सेटहरु "
-"देखाउनुहोस"
 
 #: program/localization/ne_NP/labels.inc:backtolist
 msgid "Back to message list"
@@ -303,6 +271,7 @@ msgid "All"
 msgstr "सबै |"
 
 #: program/localization/ne_NP/labels.inc:none
+#: program/localization/ne_NP/labels.inc:nonesort
 msgid "None"
 msgstr "हैन"
 
@@ -317,10 +286,6 @@ msgstr "छोटो गर्नुहोस"
 #: program/localization/ne_NP/labels.inc:empty
 msgid "Empty"
 msgstr "खाली गर्ने"
-
-#: program/localization/ne_NP/labels.inc:purge
-msgid "purge"
-msgstr "नाम निशाना मेटाउनुहोस"
 
 #: program/localization/ne_NP/labels.inc:quota
 msgid "Disk usage"
@@ -343,16 +308,16 @@ msgid "Reset search"
 msgstr "पन: खोज"
 
 #: program/localization/ne_NP/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "मेल लखन गर्नुहोस"
 
-#: program/localization/ne_NP/labels.inc:sendmessage
-msgid "Send now"
-msgstr "तुरुन्तै मेल पठाउनुहोस"
-
 #: program/localization/ne_NP/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "ड्राफ्ट जोगाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:sendmessage
+msgid "Send message"
+msgstr "तुरुन्तै मेल पठाउनुहोस"
 
 #: program/localization/ne_NP/labels.inc:addattachment
 msgid "Attach a file"
@@ -557,6 +522,18 @@ msgstr "नया प्रकार"
 #: program/localization/ne_NP/labels.inc:edititem
 msgid "Edit item"
 msgstr "प्रकार सम्पादन गर्नुहोस"
+
+#: program/localization/ne_NP/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "ऐच-टी-ऐम-ऐल(HTML) देखाउनुहोस"
+
+#: program/localization/ne_NP/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "ऐच-टी-ऐम-ऐल (HTML) रूपका मेल"
+
+#: program/localization/ne_NP/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "सुन्दर तारिख"
 
 #: program/localization/ne_NP/labels.inc:setdefault
 msgid "Set default"

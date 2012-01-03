@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: gl_ES\n"
+"Language: gl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -100,7 +100,7 @@ msgstr "Gardando mensaxe..."
 
 #: program/localization/gl_ES/messages.inc:messagesaved
 msgid "Message saved to Drafts."
-msgstr "A mensaxe gardouse en \"Borradores\""
+msgstr "A mensaxe gardouse en \"Borradores"
 
 #: program/localization/gl_ES/messages.inc:successfullysaved
 msgid "Successfully saved."
@@ -462,10 +462,6 @@ msgstr "Erro SMTP ($code): Non foi posible engadir o destinatario \"$to\" ($msg)
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "Erro SMTP: Non se pode analizar a lista de destinatarios."
 
-#: program/localization/gl_ES/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "Erro SMTP: Non hai soporte para notificacións do estado de envío (DSN)."
-
 #: program/localization/gl_ES/messages.inc:smtperror
 msgid "SMTP Error: $msg"
 msgstr "Erro SMTP: $msg"
@@ -517,7 +513,7 @@ msgstr "Creouse correctamente o grupo."
 
 #: program/localization/gl_ES/messages.inc:savedsearchdeleted
 msgid "Saved search deleted successfully."
-msgstr "Borrouse correctamente a procura gardada. "
+msgstr "Borrouse correctamente a procura gardada."
 
 #: program/localization/gl_ES/messages.inc:savedsearchdeleteerror
 msgid "Could not delete saved search."

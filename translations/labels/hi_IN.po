@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: hi_IN\n"
+"Language: hi\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -110,10 +110,6 @@ msgstr "मेल की महत्वपूर्णता"
 msgid "Company"
 msgstr "संस्था"
 
-#: program/localization/hi_IN/labels.inc:reply-to
-msgid "reply-to"
-msgstr "जवाब यहाँ"
-
 #: program/localization/hi_IN/labels.inc:mailboxlist
 #: program/localization/hi_IN/labels.inc:folders
 msgid "Folders"
@@ -126,6 +122,10 @@ msgstr "$from से ले कर $to, $count मेल में से"
 #: program/localization/hi_IN/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "$nr नम्बर मेल, $count में से"
+
+#: program/localization/hi_IN/labels.inc:copy
+msgid "Copy"
+msgstr "कार्बन"
 
 #: program/localization/hi_IN/labels.inc:moveto
 msgid "Move to..."
@@ -142,18 +142,6 @@ msgstr "फ़ाईल नाम"
 #: program/localization/hi_IN/labels.inc:filesize
 msgid "File size"
 msgstr "फ़ाईल माप"
-
-#: program/localization/hi_IN/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "ऐच-टी-ऐम-ऐल(HTML) दिखाऐं"
-
-#: program/localization/hi_IN/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "ऐच-टी-ऐम-ऐल (HTML) रूप मेल करें"
-
-#: program/localization/hi_IN/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "सुनदर तारीखें"
 
 #: program/localization/hi_IN/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -251,33 +239,17 @@ msgstr "मेल छापें"
 msgid "Show previous message"
 msgstr "पीछे के मेल दिखाऐं"
 
-#: program/localization/hi_IN/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "पीछे के मेल का बन्डल दिखाऐं"
-
 #: program/localization/hi_IN/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "पहला मेल दिखाऐं"
-
-#: program/localization/hi_IN/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "पहला मेल का बन्डल दिखाऐं"
 
 #: program/localization/hi_IN/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "अगला मेल दिखाऐं"
 
-#: program/localization/hi_IN/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "अगले मेल का बन्डल दिखाऐं"
-
 #: program/localization/hi_IN/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "आखीरी मेल दिखाऐं"
-
-#: program/localization/hi_IN/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "आखिरी मेल का बन्डल दिखाऐं"
 
 #: program/localization/hi_IN/labels.inc:backtolist
 msgid "Back to message list"
@@ -296,6 +268,7 @@ msgid "All"
 msgstr "सभी"
 
 #: program/localization/hi_IN/labels.inc:none
+#: program/localization/hi_IN/labels.inc:nonesort
 msgid "None"
 msgstr "कोई नहीं"
 
@@ -310,10 +283,6 @@ msgstr "छोटा करें"
 #: program/localization/hi_IN/labels.inc:empty
 msgid "Empty"
 msgstr "मेल रद्दी में डालें"
-
-#: program/localization/hi_IN/labels.inc:purge
-msgid "purge"
-msgstr "मिटाऐं"
 
 #: program/localization/hi_IN/labels.inc:quota
 msgid "Disk usage"
@@ -336,16 +305,16 @@ msgid "Reset search"
 msgstr "खोज खाली करें"
 
 #: program/localization/hi_IN/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "मेल लिखें"
 
-#: program/localization/hi_IN/labels.inc:sendmessage
-msgid "Send now"
-msgstr "मेल भेजें"
-
 #: program/localization/hi_IN/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "ड्राफ़ट सहेजें"
+
+#: program/localization/hi_IN/labels.inc:sendmessage
+msgid "Send message"
+msgstr "मेल भेजें"
 
 #: program/localization/hi_IN/labels.inc:addattachment
 msgid "Attach a file"
@@ -503,34 +472,6 @@ msgstr "अगला बन्डल दिखाऐं"
 msgid "Show last page"
 msgstr "आखिरी बन्डल दिखाऐं"
 
-#: program/localization/hi_IN/labels.inc:ldapsearch
-msgid "ldapsearch"
-msgstr "ऐलडैप (LDAP) डाईरेक्टरी खोजें"
-
-#: program/localization/hi_IN/labels.inc:ldappublicsearchname
-msgid "ldappublicsearchname"
-msgstr "पता का नाम"
-
-#: program/localization/hi_IN/labels.inc:ldappublicsearchtype
-msgid "ldappublicsearchtype"
-msgstr "सख़त मैच?"
-
-#: program/localization/hi_IN/labels.inc:ldappublicserverselect
-msgid "ldappublicserverselect"
-msgstr "सर्वर चुनें"
-
-#: program/localization/hi_IN/labels.inc:ldappublicsearchfield
-msgid "ldappublicsearchfield"
-msgstr "यहाँ खोजें"
-
-#: program/localization/hi_IN/labels.inc:ldappublicsearchform
-msgid "ldappublicsearchform"
-msgstr "पता के लिये खोजें"
-
-#: program/localization/hi_IN/labels.inc:ldappublicsearch
-msgid "ldappublicsearch"
-msgstr "खोज"
-
 #: program/localization/hi_IN/labels.inc:settingsfor
 msgid "Settings for"
 msgstr "इनके विन्यास:"
@@ -567,6 +508,18 @@ msgstr "नया चीज़"
 #: program/localization/hi_IN/labels.inc:edititem
 msgid "Edit item"
 msgstr "चीज़ सम्पादें"
+
+#: program/localization/hi_IN/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "ऐच-टी-ऐम-ऐल(HTML) दिखाऐं"
+
+#: program/localization/hi_IN/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "ऐच-टी-ऐम-ऐल (HTML) रूप मेल करें"
+
+#: program/localization/hi_IN/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "सुनदर तारीखें"
 
 #: program/localization/hi_IN/labels.inc:setdefault
 msgid "Set default"

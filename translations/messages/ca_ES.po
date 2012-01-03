@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: ca_ES\n"
+"Language: ca\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: program/localization/ca_ES/messages.inc:loginfailed
 msgid "Login failed."
-msgstr "Contrasenya incorrecta"
+msgstr "L'accés ha fallat."
 
 #: program/localization/ca_ES/messages.inc:cookiesdisabled
 msgid "Your browser does not accept cookies."
@@ -76,7 +76,7 @@ msgstr "Pujant fitxer..."
 
 #: program/localization/ca_ES/messages.inc:uploadingmany
 msgid "Uploading files..."
-msgstr "Pujant fitxer..."
+msgstr "Pujant fitxers..."
 
 #: program/localization/ca_ES/messages.inc:loadingdata
 msgid "Loading data..."
@@ -135,6 +135,10 @@ msgstr "No hi ha contactes"
 msgid "The requested contact was not found."
 msgstr "No s'ha trobat el contacte sol·licitat"
 
+#: program/localization/ca_ES/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Introdueix termes de cerca per a trobar contactes"
+
 #: program/localization/ca_ES/messages.inc:sendingfailed
 msgid "Failed to send message."
 msgstr "Error enviant missatge"
@@ -186,6 +190,10 @@ msgstr "Esteu segurs de voler suprimir aquesta carpeta?"
 #: program/localization/ca_ES/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
 msgstr "Esteu segurs de voler suprimir tots els missatges d'aquesta carpeta?"
+
+#: program/localization/ca_ES/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Esborrant contacte(s)..."
 
 #: program/localization/ca_ES/messages.inc:groupdeleting
 msgid "Deleting group..."
@@ -454,10 +462,6 @@ msgstr "Error SMTP ($code): No s'ha pogut posar \"$to\" com a destinatari ($msg)
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "Error SMTP: No s'ha pogut analitzar la lista de destinataris"
 
-#: program/localization/ca_ES/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "Error SMTP: No es suporten les notificacions d'estat de lliuraments"
-
 #: program/localization/ca_ES/messages.inc:smtperror
 msgid "SMTP Error: $msg"
 msgstr "Error SMTP: $msg"
@@ -542,6 +546,11 @@ msgstr "Missatge(s) marcat(s) satisfactòriament"
 msgid "Enter at least $min characters for autocompletion."
 msgstr "Introdueix al menys $min caracters per a l'autocompleció"
 
+#: program/localization/ca_ES/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "S¡han trobat més entrades coincidents. Si us plau, introdueix més "
+"caràcters."
+
 #: program/localization/ca_ES/messages.inc:namecannotbeempty
 msgid "Name cannot be empty."
 msgstr "El nom no pot estar buit"
@@ -570,3 +579,7 @@ msgstr "S'han detectat errors d'ortografia al misstage."
 msgid "Unable to create/move folder into selected parent folder. No access rights."
 msgstr "No ha etsat possible crear/moure la carpeta dins de la carpeta ascendent "
 "seleccionada. No hi ha permisos d'escriptura."
+
+#: program/localization/ca_ES/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "La part del missatge és massa gran per a processar-la."

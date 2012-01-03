@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-31T16:17:34+01:00\n"
+"POT-Creation-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: en_US\n"
@@ -377,6 +377,10 @@ msgstr ""
 
 #: program/localization/en_US/messages.inc:errorsendingreceipt
 msgid "Could not send the receipt."
+msgstr ""
+
+#: program/localization/en_US/messages.inc:deleteidentityconfirm
+msgid "Do you really want to delete this identity?"
 msgstr ""
 
 #: program/localization/en_US/messages.inc:nodeletelastidentity

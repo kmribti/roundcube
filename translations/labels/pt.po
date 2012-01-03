@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: pt_PT\n"
@@ -44,7 +44,7 @@ msgstr "Lista de mensagens"
 
 #: program/localization/pt_PT/labels.inc:settings
 msgid "Settings"
-msgstr "Configurações pessoais"
+msgstr "Definições pessoais"
 
 #: program/localization/pt_PT/labels.inc:addressbook
 msgid "Address Book"
@@ -318,7 +318,7 @@ msgstr "Hoje"
 
 #: program/localization/pt_PT/labels.inc:checkmail
 msgid "Check for new messages"
-msgstr "Verificar novas mensagens"
+msgstr "Verificar existência de novas mensagens"
 
 #: program/localization/pt_PT/labels.inc:writenewmessage
 msgid "Create a new message"
@@ -394,11 +394,11 @@ msgstr "Marcar mensagens"
 
 #: program/localization/pt_PT/labels.inc:markread
 msgid "As read"
-msgstr "Como lidas"
+msgstr "Como lida(s)"
 
 #: program/localization/pt_PT/labels.inc:markunread
 msgid "As unread"
-msgstr "Como não lidas"
+msgstr "Como não lida(s)"
 
 #: program/localization/pt_PT/labels.inc:markflagged
 msgid "As flagged"
@@ -582,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Guardar como (.eml)"
 
 #: program/localization/pt_PT/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Escrever mensagem"
 
 #: program/localization/pt_PT/labels.inc:editasnew
@@ -590,11 +590,11 @@ msgid "Edit as new"
 msgstr "Editar como novo"
 
 #: program/localization/pt_PT/labels.inc:savemessage
-msgid "Save this draft"
-msgstr "Guardar rascunho"
+msgid "Save as draft"
+msgstr "Guardar como rascunho"
 
 #: program/localization/pt_PT/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Enviar"
 
 #: program/localization/pt_PT/labels.inc:addattachment
@@ -667,7 +667,7 @@ msgstr "Baixa"
 
 #: program/localization/pt_PT/labels.inc:lowest
 msgid "Lowest"
-msgstr "Mais baixa"
+msgstr "Muito baixa"
 
 #: program/localization/pt_PT/labels.inc:normal
 msgid "Normal"
@@ -679,7 +679,7 @@ msgstr "Alta"
 
 #: program/localization/pt_PT/labels.inc:highest
 msgid "Highest"
-msgstr "Mais alta"
+msgstr "Muito alta"
 
 #: program/localization/pt_PT/labels.inc:nosubject
 msgid "(no subject)"
@@ -731,7 +731,7 @@ msgstr "Adicionar Responder para"
 
 #: program/localization/pt_PT/labels.inc:addfollowupto
 msgid "Add Followup-To"
-msgstr "Adicionar Reencaminhar-Para"
+msgstr "Adicionar Reencaminhar para"
 
 #: program/localization/pt_PT/labels.inc:mdnrequest
 msgid "The sender of this message has asked to be notified when you read this "
@@ -954,7 +954,7 @@ msgstr "Contactos"
 
 #: program/localization/pt_PT/labels.inc:contactproperties
 msgid "Contact properties"
-msgstr "Propriedades dos contactos"
+msgstr "Dados do contacto"
 
 #: program/localization/pt_PT/labels.inc:personalinfo
 msgid "Personal information"
@@ -1137,7 +1137,7 @@ msgstr "Editar item"
 
 #: program/localization/pt_PT/labels.inc:preferhtml
 msgid "Display HTML"
-msgstr "Exibir mensagens em HTML"
+msgstr "Mostrar mensagens em HTML"
 
 #: program/localization/pt_PT/labels.inc:defaultcharset
 msgid "Default Character Set"
@@ -1293,7 +1293,7 @@ msgstr "a cada $n minuto(s)"
 
 #: program/localization/pt_PT/labels.inc:keepalive
 msgid "Check for new messages on"
-msgstr "Verificar novas mensagens em"
+msgstr "Verificar existência de novas mensagens"
 
 #: program/localization/pt_PT/labels.inc:never
 msgid "never"
@@ -1309,7 +1309,7 @@ msgstr "Visualização de mensagens"
 
 #: program/localization/pt_PT/labels.inc:messagescomposition
 msgid "Composing Messages"
-msgstr "Composição de mensagens "
+msgstr "Composição de mensagens"
 
 #: program/localization/pt_PT/labels.inc:mimeparamfolding
 msgid "Attachment names"
@@ -1341,11 +1341,15 @@ msgstr "Activar a janela do navegador na nova mensagem"
 
 #: program/localization/pt_PT/labels.inc:checkallfolders
 msgid "Check all folders for new messages"
-msgstr "Verificar todas as pastas para novas mensagens"
+msgstr "Verificar por novas mensagens em todas as pastas"
 
 #: program/localization/pt_PT/labels.inc:displaynext
 msgid "After message delete/move display the next message"
 msgstr "Depois de mover/eliminar uma mensagem, mostrar a próxima mensagem"
+
+#: program/localization/pt_PT/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "Tipo de letra padrão para mensagens HTML"
 
 #: program/localization/pt_PT/labels.inc:mainoptions
 msgid "Main Options"
@@ -1362,10 +1366,6 @@ msgstr "Manutenção"
 #: program/localization/pt_PT/labels.inc:newmessage
 msgid "New Message"
 msgstr "Nova Mensagem"
-
-#: program/localization/pt_PT/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Listar opções"
 
 #: program/localization/pt_PT/labels.inc:signatureoptions
 msgid "Signature Options"
@@ -1393,11 +1393,11 @@ msgstr "Adicionar assinatura automaticamente"
 
 #: program/localization/pt_PT/labels.inc:newmessageonly
 msgid "new message only"
-msgstr "nova mensagem apenas"
+msgstr "apenas em novas mensagens"
 
 #: program/localization/pt_PT/labels.inc:replyandforwardonly
 msgid "replies and forwards only"
-msgstr "respostas e reenvios apenas"
+msgstr "apenas em respostas e reenvios"
 
 #: program/localization/pt_PT/labels.inc:replysignaturepos
 msgid "When replying or forwarding place signature"
@@ -1417,7 +1417,7 @@ msgstr "Inserir assinatura"
 
 #: program/localization/pt_PT/labels.inc:previewpanemarkread
 msgid "Mark previewed messages as read"
-msgstr "Marcar mensagem pré-visualizada como lida"
+msgstr "Marcar mensagem como lida"
 
 #: program/localization/pt_PT/labels.inc:afternseconds
 msgid "after $n seconds"
@@ -1433,7 +1433,7 @@ msgstr "Pedir sempre um recibo de entrega"
 
 #: program/localization/pt_PT/labels.inc:replysamefolder
 msgid "Place replies in the folder of the message being replied to"
-msgstr "Guardar as respostas na mesma pasta da mensagem original"
+msgstr "Guardar respostas na mesma pasta da mensagem original"
 
 #: program/localization/pt_PT/labels.inc:defaultaddressbook
 msgid "Add new contacts to the selected addressbook"

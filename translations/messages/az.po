@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:03:31+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: az_AZ\n"
@@ -227,10 +227,6 @@ msgstr "Məktub göndərilmədi. Göndərilmədən imtina etmək istəyirsiniz?"
 msgid "Please select an ldap server to search."
 msgstr "Lütfən, axtarış üçün LDAP server seçin"
 
-#: program/localization/az_AZ/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Ünvanlar tapılmadı"
-
 #: program/localization/az_AZ/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "Lütfən, ad və ya e-poçt əlavə edin"
@@ -343,7 +339,7 @@ msgstr "Oxunulma haqda bildiriş göndərilmədi"
 
 #: program/localization/az_AZ/messages.inc:nodeletelastidentity
 msgid "You cannot delete this identity, it's your last one."
-msgstr "Siz bu kimliyi silə bilməzsiniz. Bu axırıncıdır. "
+msgstr "Siz bu kimliyi silə bilməzsiniz. Bu axırıncıdır."
 
 #: program/localization/az_AZ/messages.inc:forbiddencharacter
 msgid "Folder name contains a forbidden character."
@@ -380,7 +376,7 @@ msgstr "<b>$inserted ünvanlar müvəffəqiyyətlə idxal edildi, mövcud $skipp
 
 #: program/localization/az_AZ/messages.inc:importconfirmskipped
 msgid "<b>Skipped $skipped existing entries</b>"
-msgstr "<b>Buraxılmış $skipped mövcud daxillər</b>	"
+msgstr "<b>Buraxılmış $skipped mövcud daxillər</b>"
 
 #: program/localization/az_AZ/messages.inc:opnotpermitted
 msgid "Operation not permitted!"
@@ -424,10 +420,6 @@ msgstr "SMTP Error ($code): Qəbul edəni əlavə etmək mümkün deyil - \"$to\
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "SMTP Error ($code): Qəbul edənlərin siyahısını emal etmək mümkün "
 "deyil"
-
-#: program/localization/az_AZ/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "SMTP xəta: çatdırılma haqda bildiriş dəstəyi yoxdur"
 
 #: program/localization/az_AZ/messages.inc:smtperror
 msgid "SMTP Error: $msg"

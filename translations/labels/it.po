@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: it_IT\n"
@@ -582,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Scarica (.eml)"
 
 #: program/localization/it_IT/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Scrivi un messaggio"
 
 #: program/localization/it_IT/labels.inc:editasnew
@@ -590,11 +590,11 @@ msgid "Edit as new"
 msgstr "Modifica come nuovo"
 
 #: program/localization/it_IT/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Salva come bozza"
 
 #: program/localization/it_IT/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Invia il messaggio adesso"
 
 #: program/localization/it_IT/labels.inc:addattachment
@@ -627,7 +627,7 @@ msgstr "Messaggio originale"
 
 #: program/localization/it_IT/labels.inc:editidents
 msgid "Edit identities"
-msgstr "Modifica indentità"
+msgstr "Modifica identità"
 
 #: program/localization/it_IT/labels.inc:checkspelling
 msgid "Check spelling"
@@ -1098,7 +1098,7 @@ msgstr "Fatto"
 
 #: program/localization/it_IT/labels.inc:settingsfor
 msgid "Settings for"
-msgstr "Impostazioni per "
+msgstr "Impostazioni per"
 
 #: program/localization/it_IT/labels.inc:about
 msgid "About"
@@ -1348,6 +1348,10 @@ msgstr "Controlla tutte le cartelle per la presenza di nuovi messaggi"
 msgid "After message delete/move display the next message"
 msgstr "Dopo aver cancellato/spostato il messaggio mostra quello successivo"
 
+#: program/localization/it_IT/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "font standard per messaggi in HTML"
+
 #: program/localization/it_IT/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Opzioni principali"
@@ -1363,10 +1367,6 @@ msgstr "Manutenzione"
 #: program/localization/it_IT/labels.inc:newmessage
 msgid "New Message"
 msgstr "Nuovo Messaggio"
-
-#: program/localization/it_IT/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Mostra Opzioni"
 
 #: program/localization/it_IT/labels.inc:signatureoptions
 msgid "Signature Options"
@@ -1390,7 +1390,7 @@ msgstr "Quando rispondi, rimuovi la firma dal messaggio originale"
 
 #: program/localization/it_IT/labels.inc:autoaddsignature
 msgid "Automatically add signature"
-msgstr "Aggiungi automaticamente la firma "
+msgstr "Aggiungi automaticamente la firma"
 
 #: program/localization/it_IT/labels.inc:newmessageonly
 msgid "new message only"

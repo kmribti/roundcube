@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: tr_TR\n"
@@ -44,7 +44,7 @@ msgstr "Veritabanı Hatası!"
 
 #: program/localization/tr_TR/messages.inc:errorreadonly
 msgid "Unable to perform operation. Folder is read-only."
-msgstr "İşlem gerçekleştirilemedi. Klasör sadece okunabilir"
+msgstr "İşlem gerçekleştirilemedi. Dizin salt okunabilir"
 
 #: program/localization/tr_TR/messages.inc:errornoperm
 msgid "Unable to perform operation. Permission denied."
@@ -134,6 +134,10 @@ msgstr "Kişi bulunamadı"
 msgid "The requested contact was not found."
 msgstr "İstenen kişi bulunamadı"
 
+#: program/localization/tr_TR/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Kişi aramak için arama terimleri giriniz"
+
 #: program/localization/tr_TR/messages.inc:sendingfailed
 msgid "Failed to send message."
 msgstr "Posta gönderilemedi"
@@ -185,6 +189,10 @@ msgstr "Bu klasörü silmek istediğinizden emin misiniz?"
 #: program/localization/tr_TR/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
 msgstr "Bu klasördeki tüm postaları silmek istediğinizden emin misiniz?"
+
+#: program/localization/tr_TR/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Kişi(er) siliniyor..."
 
 #: program/localization/tr_TR/messages.inc:groupdeleting
 msgid "Deleting group..."
@@ -246,10 +254,6 @@ msgstr "Posta gönderilmedi. Postanızı iptal etmek istiyor musunuz?"
 msgid "Please select an ldap server to search."
 msgstr "Lütfen arama için bir LDAP sunucu seçin"
 
-#: program/localization/tr_TR/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Kişi bulunamadı"
-
 #: program/localization/tr_TR/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "Lütfen bir kişi ismi veya e-posta adresi girin"
@@ -263,6 +267,10 @@ msgstr "Henüz tüm ekli dosyalar yüklenmedi. Lütfen bekleyin ya da yüklemeyi
 #: program/localization/tr_TR/messages.inc:searchsuccessful
 msgid "$nr messages found."
 msgstr "$nr posta bulundu"
+
+#: program/localization/tr_TR/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "$nr kişi bulundu"
 
 #: program/localization/tr_TR/messages.inc:searchnomatch
 msgid "Search returned no matches."
@@ -453,10 +461,6 @@ msgstr "SMTP Hatası ($code): \"$to\" alıcısı eklenemedi ($msg)"
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "SMTP Hatası: Posta alıcılarının listesi ayrıştırılamadı"
 
-#: program/localization/tr_TR/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "SMTP hatası: Teslimat durumu bildirileri desteklenmiyor"
-
 #: program/localization/tr_TR/messages.inc:smtperror
 msgid "SMTP Error: $msg"
 msgstr "SMTP Hatası: $msg"
@@ -505,6 +509,22 @@ msgstr "Grup ismi değiştirildi"
 msgid "Group created successfully."
 msgstr "Grup oluşturuldu"
 
+#: program/localization/tr_TR/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Kayıtlı arama silindi."
+
+#: program/localization/tr_TR/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Kayıtlı arama silinemedi."
+
+#: program/localization/tr_TR/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Kayıtlı arama oluşturuldu."
+
+#: program/localization/tr_TR/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Kayıtlı arama oluşturulamadı."
+
 #: program/localization/tr_TR/messages.inc:messagedeleted
 msgid "Message(s) deleted successfully."
 msgstr "Posta(lar) silindi"
@@ -524,6 +544,10 @@ msgstr "Posta(lar) işaretlendi"
 #: program/localization/tr_TR/messages.inc:autocompletechars
 msgid "Enter at least $min characters for autocompletion."
 msgstr "otomatik tamamlama için en az $min karakter girin"
+
+#: program/localization/tr_TR/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Fazla sayıda eşleşen öğe bulundu. Lütfen daha fazla karakter yazın."
 
 #: program/localization/tr_TR/messages.inc:namecannotbeempty
 msgid "Name cannot be empty."
@@ -552,3 +576,7 @@ msgstr "Postada yazım hataları tespit edildi."
 #: program/localization/tr_TR/messages.inc:parentnotwritable
 msgid "Unable to create/move folder into selected parent folder. No access rights."
 msgstr "Klasör, seçilen üst klasöre taşınamıyor. Erişim izni yok."
+
+#: program/localization/tr_TR/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "Bu ileti parçası işlenemeyecek kadar büyük."

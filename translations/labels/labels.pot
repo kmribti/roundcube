@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-31T16:17:34+01:00\n"
+"POT-Creation-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: en_US\n"
@@ -133,6 +133,10 @@ msgstr ""
 
 #: program/localization/en_US/labels.inc:messagenrof
 msgid "Message $nr of $count"
+msgstr ""
+
+#: program/localization/en_US/labels.inc:fromtoshort
+msgid "$from – $to of $count"
 msgstr ""
 
 #: program/localization/en_US/labels.inc:copy
@@ -316,12 +320,24 @@ msgstr ""
 msgid "Today"
 msgstr ""
 
+#: program/localization/en_US/labels.inc:refresh
+msgid "Refresh"
+msgstr ""
+
 #: program/localization/en_US/labels.inc:checkmail
 msgid "Check for new messages"
 msgstr ""
 
+#: program/localization/en_US/labels.inc:compose
+msgid "Compose"
+msgstr ""
+
 #: program/localization/en_US/labels.inc:writenewmessage
 msgid "Create a new message"
+msgstr ""
+
+#: program/localization/en_US/labels.inc:reply
+msgid "Reply"
 msgstr ""
 
 #: program/localization/en_US/labels.inc:replytomessage
@@ -338,6 +354,10 @@ msgstr ""
 
 #: program/localization/en_US/labels.inc:replylist
 msgid "Reply list"
+msgstr ""
+
+#: program/localization/en_US/labels.inc:forward
+msgid "Forward"
 msgstr ""
 
 #: program/localization/en_US/labels.inc:forwardinline
@@ -388,6 +408,10 @@ msgstr ""
 msgid "Show source"
 msgstr ""
 
+#: program/localization/en_US/labels.inc:mark
+msgid "Mark"
+msgstr ""
+
 #: program/localization/en_US/labels.inc:markmessages
 msgid "Mark messages"
 msgstr ""
@@ -410,6 +434,18 @@ msgstr ""
 
 #: program/localization/en_US/labels.inc:moreactions
 msgid "More actions..."
+msgstr ""
+
+#: program/localization/en_US/labels.inc:more
+msgid "More"
+msgstr ""
+
+#: program/localization/en_US/labels.inc:back
+msgid "Back"
+msgstr ""
+
+#: program/localization/en_US/labels.inc:options
+msgid "Options"
 msgstr ""
 
 #: program/localization/en_US/labels.inc:select
@@ -581,20 +617,16 @@ msgstr ""
 msgid "Download (.eml)"
 msgstr ""
 
-#: program/localization/en_US/labels.inc:compose
-msgid "Compose a message"
-msgstr ""
-
 #: program/localization/en_US/labels.inc:editasnew
 msgid "Edit as new"
 msgstr ""
 
 #: program/localization/en_US/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr ""
 
 #: program/localization/en_US/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr ""
 
 #: program/localization/en_US/labels.inc:addattachment
@@ -629,6 +661,10 @@ msgstr ""
 msgid "Edit identities"
 msgstr ""
 
+#: program/localization/en_US/labels.inc:spellcheck
+msgid "Spell"
+msgstr ""
+
 #: program/localization/en_US/labels.inc:checkspelling
 msgid "Check spelling"
 msgstr ""
@@ -639,6 +675,10 @@ msgstr ""
 
 #: program/localization/en_US/labels.inc:revertto
 msgid "Revert to"
+msgstr ""
+
+#: program/localization/en_US/labels.inc:attach
+msgid "Attach"
 msgstr ""
 
 #: program/localization/en_US/labels.inc:attachments
@@ -879,6 +919,10 @@ msgstr ""
 
 #: program/localization/en_US/labels.inc:advsearch
 msgid "Advanced Search"
+msgstr ""
+
+#: program/localization/en_US/labels.inc:advanced
+msgid "Advanced"
 msgstr ""
 
 #: program/localization/en_US/labels.inc:other

@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: uk_UA\n"
+"Language: uk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -495,11 +495,6 @@ msgid "SMTP Error: Unable to parse recipients list."
 msgstr "Помилка SMTP: Не вдалося обробити список "
 "отримувачів"
 
-#: program/localization/uk_UA/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "Помилка SMTP: Не підтримуються "
-"повідомлення про статус доставки"
-
 #: program/localization/uk_UA/messages.inc:smtperror
 msgid "SMTP Error: $msg"
 msgstr "Помилка SMTP: $msg"
@@ -566,7 +561,7 @@ msgstr "Збережений пошук вдало створено."
 
 #: program/localization/uk_UA/messages.inc:savedsearchcreateerror
 msgid "Could not create saved search."
-msgstr "Не вдалось створити збережений пошук. "
+msgstr "Не вдалось створити збережений пошук."
 
 #: program/localization/uk_UA/messages.inc:messagedeleted
 msgid "Message(s) deleted successfully."
@@ -624,3 +619,8 @@ msgid "Unable to create/move folder into selected parent folder. No access right
 msgstr "Неможливо створити/перемістити папку до "
 "обраної батьківської папки. Нема прав "
 "доступу."
+
+#: program/localization/uk_UA/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "Частина повідомлення занадто велика для "
+"опрацювання."

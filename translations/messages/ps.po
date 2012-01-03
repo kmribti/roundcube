@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ps\n"
@@ -16,20 +16,20 @@ msgstr ""
 
 #: program/localization/ps/messages.inc:loginfailed
 msgid "Login failed."
-msgstr "ننوتنه په بري سره ترسره نه شوه "
+msgstr "ننوتنه په بري سره ترسره نه شوه"
 
 #: program/localization/ps/messages.inc:cookiesdisabled
 msgid "Your browser does not accept cookies."
-msgstr "ستاسو لټوني ککوړي ونه منل "
+msgstr "ستاسو لټوني ککوړي ونه منل"
 
 #: program/localization/ps/messages.inc:sessionerror
 msgid "Your session is invalid or expired."
-msgstr " ستاسې ناسته ناباوري يا له مينځه تللې ده"
+msgstr "ستاسې ناسته ناباوري يا له مينځه تللې ده"
 
 #: program/localization/ps/messages.inc:imaperror
 msgid "Connection to IMAP server failed."
 msgstr "له ای ميپ سرور سره پيوستون په بري سره "
-"ترسره نه شو "
+"ترسره نه شو"
 
 #: program/localization/ps/messages.inc:nomessagesfound
 msgid "No messages found in this mailbox."
@@ -88,7 +88,7 @@ msgstr "يو اړيکلوری له دې برېښناليک پتې سره شتو�
 #: program/localization/ps/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
 msgstr "ستاسو د پټتيآ خوندي کېدو لپاره ، له لري "
-"انځورنه په دې استوزي‌کې بند کړئ "
+"انځورنه په دې استوزي‌کې بند کړئ"
 
 #: program/localization/ps/messages.inc:encryptedmessage
 msgid "This is an encrypted message and can not be displayed. Sorry!"
@@ -132,8 +132,8 @@ msgstr "استوزه ړنګه نه شوه"
 
 #: program/localization/ps/messages.inc:deletecontactconfirm
 msgid "Do you really want to delete selected contact(s)?"
-msgstr " په رښتيا سره غواړئ چې ټاکل شوی اړيکلوری "
-"ړنګ کړئ؟ "
+msgstr "په رښتيا سره غواړئ چې ټاکل شوی اړيکلوری "
+"ړنګ کړئ؟"
 
 #: program/localization/ps/messages.inc:deletemessagesconfirm
 msgid "Do you really want to delete selected message(s)?"
@@ -203,10 +203,6 @@ msgid "Please select an ldap server to search."
 msgstr "مهرباني وکړئ يو ال ډپ سرور د پلټلو لپاره "
 "وټاکئ"
 
-#: program/localization/ps/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "هېڅ يو اړيکلوری يې ونه موند"
-
 #: program/localization/ps/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "مهرباني وکړئ  د يو اړيکلوري‌نوم يا "
@@ -271,7 +267,7 @@ msgstr "ددې پتې يوازې سرچينه لوستل کېږي"
 
 #: program/localization/ps/messages.inc:errorsavingcontact
 msgid "Could not save the contact address."
-msgstr " د پتې اړيکلوری يې خوندي‌نه شو کړای "
+msgstr "د پتې اړيکلوری يې خوندي‌نه شو کړای"
 
 #: program/localization/ps/messages.inc:movingmessage
 msgid "Moving message(s)..."

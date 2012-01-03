@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: cy_GB\n"
+"Language: cy\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -547,7 +547,7 @@ msgstr "Gwagio"
 
 #: program/localization/cy_GB/labels.inc:quota
 msgid "Disk usage"
-msgstr "Defnydd "
+msgstr "Defnydd"
 
 #: program/localization/cy_GB/labels.inc:unknown
 msgid "unknown"
@@ -582,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Llwytho lawr (.eml)"
 
 #: program/localization/cy_GB/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Ysgrifennu neges"
 
 #: program/localization/cy_GB/labels.inc:editasnew
@@ -590,11 +590,11 @@ msgid "Edit as new"
 msgstr "Golygu fel neges newydd"
 
 #: program/localization/cy_GB/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Cadw'r drafft hwn"
 
 #: program/localization/cy_GB/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Danfon nawr"
 
 #: program/localization/cy_GB/labels.inc:addattachment
@@ -1349,6 +1349,10 @@ msgstr "Chwilio pob ffolder am negeseuon newydd"
 msgid "After message delete/move display the next message"
 msgstr "Ar ôl dileu/symud neges dangos y neges nesaf"
 
+#: program/localization/cy_GB/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "Ffont arferol ar gyfer negeseuon HTML"
+
 #: program/localization/cy_GB/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Prif Ddewisiadau"
@@ -1364,10 +1368,6 @@ msgstr "Gwaith cynnal a chadw"
 #: program/localization/cy_GB/labels.inc:newmessage
 msgid "New Message"
 msgstr "Neges Newydd"
-
-#: program/localization/cy_GB/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Rhestru Dewisiadau"
 
 #: program/localization/cy_GB/labels.inc:signatureoptions
 msgid "Signature Options"

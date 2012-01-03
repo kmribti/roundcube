@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: fa\n"
@@ -110,10 +110,6 @@ msgstr "اولویت"
 msgid "Company"
 msgstr "سازمان‌دهی"
 
-#: program/localization/fa/labels.inc:reply-to
-msgid "reply-to"
-msgstr "پاسخ-به"
-
 #: program/localization/fa/labels.inc:mailboxlist
 #: program/localization/fa/labels.inc:folders
 msgid "Folders"
@@ -126,6 +122,10 @@ msgstr "تا $count از $to تا $from پیغام‌های"
 #: program/localization/fa/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "تا $count پیغام  از $nr"
+
+#: program/localization/fa/labels.inc:copy
+msgid "Copy"
+msgstr "رونوشت"
 
 #: program/localization/fa/labels.inc:moveto
 msgid "Move to..."
@@ -142,18 +142,6 @@ msgstr "نام پرونده"
 #: program/localization/fa/labels.inc:filesize
 msgid "File size"
 msgstr "اندازه‌ی پرونده"
-
-#: program/localization/fa/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "HTML نمایش"
-
-#: program/localization/fa/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "HTML پیغام"
-
-#: program/localization/fa/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "تاریخ‌های زیبا"
 
 #: program/localization/fa/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -348,33 +336,17 @@ msgstr "چاپ این پیغام"
 msgid "Show previous message"
 msgstr "نمایش پیغام قبلی"
 
-#: program/localization/fa/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "نمایش دسته‌ی قبلی  پیغام‌ها"
-
 #: program/localization/fa/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "نمایش اولین  پیغام"
-
-#: program/localization/fa/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "نمایش اولین دسته‌ی پیغام‌ها"
 
 #: program/localization/fa/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "نمایش پیغام بعدی"
 
-#: program/localization/fa/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "نمایش دسته‌ی بعدی  پیغام‌ها"
-
 #: program/localization/fa/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "نمایش آخرین پیغام"
-
-#: program/localization/fa/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "نمایش آخرین دسته‌ی  پیغام‌ها"
 
 #: program/localization/fa/labels.inc:backtolist
 msgid "Back to message list"
@@ -413,6 +385,7 @@ msgid "All"
 msgstr "همه"
 
 #: program/localization/fa/labels.inc:none
+#: program/localization/fa/labels.inc:nonesort
 msgid "None"
 msgstr "هیچ"
 
@@ -440,10 +413,6 @@ msgstr "فشرده"
 msgid "Empty"
 msgstr "خالی"
 
-#: program/localization/fa/labels.inc:purge
-msgid "purge"
-msgstr "خرد کردن"
-
 #: program/localization/fa/labels.inc:quota
 msgid "Disk usage"
 msgstr "فضای استفاده شده"
@@ -469,15 +438,15 @@ msgid "Open in new window"
 msgstr "نمایش در صفحه جدید"
 
 #: program/localization/fa/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "نوشتن پیغام"
 
 #: program/localization/fa/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "ذخیره‌ی این پیش‌نویس"
 
 #: program/localization/fa/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "ارسال پیغام"
 
 #: program/localization/fa/labels.inc:addattachment
@@ -550,8 +519,7 @@ msgstr "نمایش عکس‌ها"
 
 #: program/localization/fa/labels.inc:alwaysshow
 msgid "Always show images from $sender"
-msgstr "را نمایش بده $sender همیشه عکسهای دریافتی از  "
-""
+msgstr "را نمایش بده $sender همیشه عکسهای دریافتی از"
 
 #: program/localization/fa/labels.inc:htmltoggle
 msgid "HTML"
@@ -571,7 +539,7 @@ msgstr "ذخیره نکن"
 
 #: program/localization/fa/labels.inc:maxuploadsize
 msgid "Maximum allowed file size is $size"
-msgstr "مجاز می باشد $size حجم فایل حداکثر تا میزان  "
+msgstr "مجاز می باشد $size حجم فایل حداکثر تا میزان"
 
 #: program/localization/fa/labels.inc:addcc
 msgid "Add Cc"
@@ -663,7 +631,7 @@ msgstr "نوشتن نامه به"
 
 #: program/localization/fa/labels.inc:contactsfromto
 msgid "Contacts $from to $to of $count"
-msgstr " تا $count از $to تا $from  تماس‌های"
+msgstr "تا $count از $to تا $from  تماس‌های"
 
 #: program/localization/fa/labels.inc:print
 msgid "Print"
@@ -703,7 +671,7 @@ msgstr "نشانی‌های شخصی"
 
 #: program/localization/fa/labels.inc:import
 msgid "Import"
-msgstr "وارد کردن "
+msgstr "وارد کردن"
 
 #: program/localization/fa/labels.inc:importcontacts
 msgid "Import contacts"
@@ -711,7 +679,7 @@ msgstr "وارد کردن تماسها"
 
 #: program/localization/fa/labels.inc:importfromfile
 msgid "Import from file:"
-msgstr ":ورود اطلاعات از فایل "
+msgstr ":ورود اطلاعات از فایل"
 
 #: program/localization/fa/labels.inc:importreplace
 msgid "Replace the entire address book"
@@ -766,6 +734,18 @@ msgstr "مورد جدید"
 #: program/localization/fa/labels.inc:edititem
 msgid "Edit item"
 msgstr "ویرایش مورد"
+
+#: program/localization/fa/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "HTML نمایش"
+
+#: program/localization/fa/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML پیغام"
+
+#: program/localization/fa/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "تاریخ‌های زیبا"
 
 #: program/localization/fa/labels.inc:setdefault
 msgid "Set default"
@@ -855,7 +835,7 @@ msgstr "در هنگام پاک کردن، پیغام را به عنوان "
 #: program/localization/fa/labels.inc:flagfordeletion
 msgid "Flag the message for deletion instead of delete"
 msgstr "پیغام را بجای پاک کردن، برای پاک شدن "
-"آماده کن "
+"آماده کن"
 
 #: program/localization/fa/labels.inc:skipdeleted
 msgid "Do not show deleted messages"

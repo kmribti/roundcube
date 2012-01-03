@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: de_CH\n"
@@ -408,9 +408,9 @@ msgstr "Stern hinzufügen"
 msgid "As unflagged"
 msgstr "Stern entfernen"
 
-#: program/localization/de_CH/labels.inc:messageactions
-msgid "messageactions"
-msgstr "Weitere Aktionen..."
+#: program/localization/de_CH/labels.inc:moreactions
+msgid "More actions..."
+msgstr "Mehr ..."
 
 #: program/localization/de_CH/labels.inc:select
 msgid "Select"
@@ -582,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Herunterladen (.eml)"
 
 #: program/localization/de_CH/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Neue Nachricht verfassen"
 
 #: program/localization/de_CH/labels.inc:editasnew
@@ -590,11 +590,11 @@ msgid "Edit as new"
 msgstr "Als neue Nachricht öffnen"
 
 #: program/localization/de_CH/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Nachricht speichern"
 
 #: program/localization/de_CH/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Nachricht jetzt senden"
 
 #: program/localization/de_CH/labels.inc:addattachment
@@ -620,6 +620,10 @@ msgstr "Übermittlungsbestätigung (DSN)"
 #: program/localization/de_CH/labels.inc:mailreplyintro
 msgid "On $date, $sender wrote:"
 msgstr "Am $date, schrieb $sender:"
+
+#: program/localization/de_CH/labels.inc:originalmessage
+msgid "Original Message"
+msgstr "Originalnachricht"
 
 #: program/localization/de_CH/labels.inc:editidents
 msgid "Edit identities"
@@ -688,6 +692,10 @@ msgstr "Bilder anzeigen"
 #: program/localization/de_CH/labels.inc:alwaysshow
 msgid "Always show images from $sender"
 msgstr "Bilder von $sender immer zeigen"
+
+#: program/localization/de_CH/labels.inc:isdraft
+msgid "This is a draft message."
+msgstr "Dies ist ein Entwurf"
 
 #: program/localization/de_CH/labels.inc:htmltoggle
 msgid "HTML"
@@ -920,6 +928,14 @@ msgstr "Video"
 msgid "Home Page"
 msgstr "Homepage"
 
+#: program/localization/de_CH/labels.inc:typeblog
+msgid "Blog"
+msgstr "Blog"
+
+#: program/localization/de_CH/labels.inc:typeprofile
+msgid "Profile"
+msgstr "Profil"
+
 #: program/localization/de_CH/labels.inc:addfield
 msgid "Add field..."
 msgstr "Feld hinzufügen..."
@@ -1004,10 +1020,6 @@ msgstr "Kontakte im vCard-Format exportieren"
 msgid "Create new contact group"
 msgstr "Neue Adressgruppe erstellen"
 
-#: program/localization/de_CH/labels.inc:groupactions
-msgid "groupactions"
-msgstr "Aktionen für Kontaktgruppen..."
-
 #: program/localization/de_CH/labels.inc:grouprename
 msgid "Rename group"
 msgstr "Gruppe umbenennen"
@@ -1043,6 +1055,14 @@ msgstr "Gruppen"
 #: program/localization/de_CH/labels.inc:personaladrbook
 msgid "Personal Addresses"
 msgstr "Persönliches Adressbuch"
+
+#: program/localization/de_CH/labels.inc:searchsave
+msgid "Save search"
+msgstr "Suche speichern"
+
+#: program/localization/de_CH/labels.inc:searchdelete
+msgid "Delete search"
+msgstr "Suche löschen"
 
 #: program/localization/de_CH/labels.inc:import
 msgid "Import"
@@ -1329,6 +1349,10 @@ msgstr "Alle Ordner auf neue Nachrichten prüfen"
 msgid "After message delete/move display the next message"
 msgstr "Zeige nächste Nachricht nach verschieben/löschen"
 
+#: program/localization/de_CH/labels.inc:defaultfont
+msgid "Default font of HTML message"
+msgstr "Standardschrift in HTML-Nachrichten"
+
 #: program/localization/de_CH/labels.inc:mainoptions
 msgid "Main Options"
 msgstr "Allgemein"
@@ -1344,10 +1368,6 @@ msgstr "Wartung"
 #: program/localization/de_CH/labels.inc:newmessage
 msgid "New Message"
 msgstr "Neue Nachrichten"
-
-#: program/localization/de_CH/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Listendarstellung"
 
 #: program/localization/de_CH/labels.inc:signatureoptions
 msgid "Signature Options"
@@ -1421,9 +1441,33 @@ msgstr "Antworten im selben Ordner wie Original speichern"
 msgid "Add new contacts to the selected addressbook"
 msgstr "Neue Kontakte speichern in"
 
+#: program/localization/de_CH/labels.inc:autocompletesingle
+msgid "Skip alternative email addresses in autocompletion"
+msgstr "Keine alternativen E-Mail-Adressen in Autovervollständigung"
+
 #: program/localization/de_CH/labels.inc:spellcheckbeforesend
 msgid "Check spelling before sending a message"
 msgstr "Rechtscheibung vor dem Senden prüfen"
+
+#: program/localization/de_CH/labels.inc:spellcheckoptions
+msgid "Spellcheck Options"
+msgstr "Rechtschreibprüfungsoptionen"
+
+#: program/localization/de_CH/labels.inc:spellcheckignoresyms
+msgid "Ignore words with symbols"
+msgstr "Wörter mit Symbolen überspringen"
+
+#: program/localization/de_CH/labels.inc:spellcheckignorenums
+msgid "Ignore words with numbers"
+msgstr "Wörter mit Ziffern überspringen"
+
+#: program/localization/de_CH/labels.inc:spellcheckignorecaps
+msgid "Ignore words with all letters capitalized"
+msgstr "Wörter überspringen, die nur aus Grossbuchstaben bestehen"
+
+#: program/localization/de_CH/labels.inc:addtodict
+msgid "Add to dictionary"
+msgstr "Zum Wörterbuch hinzufügen"
 
 #: program/localization/de_CH/labels.inc:folder
 msgid "Folder"

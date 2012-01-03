@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: id_ID\n"
@@ -114,6 +114,10 @@ msgstr "Kontak berhasil ditambahkan ke buku alamat"
 msgid "A contact with the same e-mail address already exists."
 msgstr "Kontak dengan alamat e-mail ini sudah ada"
 
+#: program/localization/id_ID/messages.inc:contactnameexists
+msgid "A contact with the same name already exists."
+msgstr "Kontak dengan nama yang sama sudah ada"
+
 #: program/localization/id_ID/messages.inc:blockedimages
 msgid "To protect your privacy, remote images are blocked in this message."
 msgstr "Untuk melindungi privasi Anda, gambar-gambar diluar server diblok pada "
@@ -130,6 +134,10 @@ msgstr "Kontak tidak ditemukan"
 #: program/localization/id_ID/messages.inc:contactnotfound
 msgid "The requested contact was not found."
 msgstr "Kontak yang diminta tidak ditemukan"
+
+#: program/localization/id_ID/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Masukkan jenis pencarian untuk mencari kontak"
 
 #: program/localization/id_ID/messages.inc:sendingfailed
 msgid "Failed to send message."
@@ -167,6 +175,10 @@ msgstr "Tidak dapat menandai pesan"
 msgid "Do you really want to delete selected contact(s)?"
 msgstr "Apakah anda yakin untuk menghapus kontak terpilih?"
 
+#: program/localization/id_ID/messages.inc:deletegroupconfirm
+msgid "Do you really want to delete selected group?"
+msgstr "Yakinkah Anda ingin menhapus grup terpilih?"
+
 #: program/localization/id_ID/messages.inc:deletemessagesconfirm
 msgid "Do you really want to delete selected message(s)?"
 msgstr "Yakin menghapus pesan terpilih?"
@@ -178,6 +190,14 @@ msgstr "Apakah anda benar-benar ingin menghapus map ini?"
 #: program/localization/id_ID/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
 msgstr "Yakin menghapus semua pesan pada map ini?"
+
+#: program/localization/id_ID/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Menghapus kontak..."
+
+#: program/localization/id_ID/messages.inc:groupdeleting
+msgid "Deleting group..."
+msgstr "Menghapus grup..."
 
 #: program/localization/id_ID/messages.inc:folderdeleting
 msgid "Deleting folder..."
@@ -235,10 +255,6 @@ msgstr "Pesan belum terkirim. Buang pesan Anda?"
 msgid "Please select an ldap server to search."
 msgstr "Tolong pilih server LDAP untuk pencarian"
 
-#: program/localization/id_ID/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Kontak kosong"
-
 #: program/localization/id_ID/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "Tolong masukkan nama kontak atau alamat email"
@@ -251,6 +267,10 @@ msgstr "Proses upload belum selesai. Silahkan tunggu atau batalkan proses upload
 #: program/localization/id_ID/messages.inc:searchsuccessful
 msgid "$nr messages found."
 msgstr "$nr pesan ditemukan"
+
+#: program/localization/id_ID/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "Ditemukan $nr  kontak"
 
 #: program/localization/id_ID/messages.inc:searchnomatch
 msgid "Search returned no matches."
@@ -332,6 +352,10 @@ msgstr "Memindahkan pesan..."
 msgid "Copying message(s)..."
 msgstr "Menyalin pesan..."
 
+#: program/localization/id_ID/messages.inc:copyingcontact
+msgid "Copying contact(s)..."
+msgstr "Menyalin kontak..."
+
 #: program/localization/id_ID/messages.inc:deletingmessage
 msgid "Deleting message(s)..."
 msgstr "Menghapus pesan..."
@@ -339,6 +363,14 @@ msgstr "Menghapus pesan..."
 #: program/localization/id_ID/messages.inc:markingmessage
 msgid "Marking message(s)..."
 msgstr "Menandai Pesan..."
+
+#: program/localization/id_ID/messages.inc:addingmember
+msgid "Adding contact(s) to the group..."
+msgstr "Menambahkan kontak ke grup..."
+
+#: program/localization/id_ID/messages.inc:removingmember
+msgid "Removing contact(s) from the group..."
+msgstr "Menyingkirkan kontak dari grup..."
 
 #: program/localization/id_ID/messages.inc:receiptsent
 msgid "Successfully sent a read receipt."
@@ -429,10 +461,6 @@ msgstr "SMTP Error ($code): Gagal menambah penerima \"$to\" ($msg)"
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "SMTP Error ($code): Tidak dapat menguraikan daftar penerima"
 
-#: program/localization/id_ID/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "SMTP Error: Tidak ada dukungan untuk pemberitahuan status terkirim"
-
 #: program/localization/id_ID/messages.inc:smtperror
 msgid "SMTP Error: $msg"
 msgstr "SMTP Error : $msg"
@@ -461,6 +489,14 @@ msgstr "Kontak tidak bisa dihapus"
 msgid "Contact(s) deleted successfully."
 msgstr "Kontak berhasil dihapus"
 
+#: program/localization/id_ID/messages.inc:contactrestoreerror
+msgid "Could not restore deleted contact(s)."
+msgstr "Tidak bisa mengembalikan kontak yang terhapus."
+
+#: program/localization/id_ID/messages.inc:contactrestored
+msgid "Contact(s) restored successfully."
+msgstr "Kontak berhasil dikembalikan."
+
 #: program/localization/id_ID/messages.inc:groupdeleted
 msgid "Group deleted successfully."
 msgstr "Grup berhasil dihapus"
@@ -472,6 +508,22 @@ msgstr "Grup berhasil dinamai kembali"
 #: program/localization/id_ID/messages.inc:groupcreated
 msgid "Group created successfully."
 msgstr "Grub berhasil dibuat"
+
+#: program/localization/id_ID/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Pencarian tersimpan berhasil dihapus."
+
+#: program/localization/id_ID/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Tidak bisa menghapus pencarian tersimpan."
+
+#: program/localization/id_ID/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Pencarian tersimpan berhasil dibuat."
+
+#: program/localization/id_ID/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Tidak bisa membuat pencarian tersimpan."
 
 #: program/localization/id_ID/messages.inc:messagedeleted
 msgid "Message(s) deleted successfully."
@@ -493,6 +545,10 @@ msgstr "Pesan berhasil ditandai"
 msgid "Enter at least $min characters for autocompletion."
 msgstr "Masukkan setidaknya $min karakter untuk swaparipurna"
 
+#: program/localization/id_ID/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Ada banyak entri yang ditemukan. Tolong ketikkan lebih banyak karakter."
+
 #: program/localization/id_ID/messages.inc:namecannotbeempty
 msgid "Name cannot be empty."
 msgstr "Nama tidak boleh kosong"
@@ -512,3 +568,15 @@ msgstr "Folder berhasil dibuat"
 #: program/localization/id_ID/messages.inc:invalidimageformat
 msgid "Not a valid image format."
 msgstr "Bukan format gambar yang valid"
+
+#: program/localization/id_ID/messages.inc:mispellingsfound
+msgid "Spelling errors detected in the message."
+msgstr "Terdapat kesalahan ejaan pada pesan."
+
+#: program/localization/id_ID/messages.inc:parentnotwritable
+msgid "Unable to create/move folder into selected parent folder. No access rights."
+msgstr "Tidak bisa membuat/memindahkan map ke map induk. Tidak memiliki hak akses."
+
+#: program/localization/id_ID/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "Pesan terlalu besar untuk diproses."

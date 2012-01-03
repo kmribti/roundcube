@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: is_IS\n"
@@ -149,10 +149,6 @@ msgstr "Skeytið hefur ekki verið send. Viltu henda skeytinu?"
 #: program/localization/is_IS/messages.inc:noldapserver
 msgid "Please select an ldap server to search."
 msgstr "Please select an ldap server to search"
-
-#: program/localization/is_IS/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Engin netföng fundust"
 
 #: program/localization/is_IS/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."

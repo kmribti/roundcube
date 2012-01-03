@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: lv_LV\n"
@@ -38,8 +38,8 @@ msgstr "Servera kļūme."
 msgid "Server Error: $msg"
 msgstr "Servera kļūda: $msg"
 
-#: program/localization/lv_LV/messages.inc:databaserror
-msgid "databaserror"
+#: program/localization/lv_LV/messages.inc:dberror
+msgid "Database Error!"
 msgstr "Datubāzes kļūda!"
 
 #: program/localization/lv_LV/messages.inc:errorreadonly
@@ -135,6 +135,10 @@ msgstr "Ieraksti netika atrasti"
 msgid "The requested contact was not found."
 msgstr "Prasītais kontakts nav atrasts"
 
+#: program/localization/lv_LV/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Ievadiet meklēšanas kritērijus, lai atrastu kontaktus"
+
 #: program/localization/lv_LV/messages.inc:sendingfailed
 msgid "Failed to send message."
 msgstr "Vēstule netika nosūtīta"
@@ -186,6 +190,10 @@ msgstr "Vai tiešām vēlaties dzēst šo mapi?"
 #: program/localization/lv_LV/messages.inc:purgefolderconfirm
 msgid "Do you really want to delete all messages in this folder?"
 msgstr "Vai tiešām vēlaties dzēst visas vēstules, kas atrodas šajā mapē?"
+
+#: program/localization/lv_LV/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Kontakts(-i) tiek dzēsti..."
 
 #: program/localization/lv_LV/messages.inc:groupdeleting
 msgid "Deleting group..."
@@ -248,10 +256,6 @@ msgstr "Vēstule netika nosūtīta. Vai tiešām vēlaties atcelt vēstules "
 msgid "Please select an ldap server to search."
 msgstr "Lūdzu izvēlaties LDAP serveri"
 
-#: program/localization/lv_LV/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Neviena kontaktpersona netika atrasta"
-
 #: program/localization/lv_LV/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "Lūdzu ievadiet kontaktpersonas vārdu vai e-pasta adresi"
@@ -265,6 +269,10 @@ msgstr "Visi pielikumi vēl nav augšupielādēti. Lūdzu uzgaidiet vai atceļie
 #: program/localization/lv_LV/messages.inc:searchsuccessful
 msgid "$nr messages found."
 msgstr "Atrastas $nr vēstules"
+
+#: program/localization/lv_LV/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "Atrasti $nr kontakti."
 
 #: program/localization/lv_LV/messages.inc:searchnomatch
 msgid "Search returned no matches."
@@ -455,10 +463,6 @@ msgstr "SMTP kļūme ($code): Neizdevās pievienot saņēmēju \"$to\" ($msg)"
 msgid "SMTP Error: Unable to parse recipients list."
 msgstr "SMTP kļūme: Nav iespējams parsēt saņēmēju sarakstu"
 
-#: program/localization/lv_LV/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "SMTP kļūme: Piegādes statusa paziņojumi netiek uzturēti."
-
 #: program/localization/lv_LV/messages.inc:smtperror
 msgid "SMTP Error: $msg"
 msgstr "SMTP kļūme: $msg"
@@ -507,6 +511,22 @@ msgstr "Grupa veiksmīgi pārdēvēta."
 msgid "Group created successfully."
 msgstr "Grupa veiksmīgi izveidota."
 
+#: program/localization/lv_LV/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Saglabātais meklēšanas pieprasījums veiksmīgi dzēsts."
+
+#: program/localization/lv_LV/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Neizdevās nodzēst saglabāto meklēšanas pieprasījumu."
+
+#: program/localization/lv_LV/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Saglabātais meklēšanas pieprasījums veiksmīgi saglabāts."
+
+#: program/localization/lv_LV/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Neizdevās saglabāt meklēšanas pieprasījumu."
+
 #: program/localization/lv_LV/messages.inc:messagedeleted
 msgid "Message(s) deleted successfully."
 msgstr "Vēstule(s) veiksmīgi izdzēsta(s)."
@@ -526,6 +546,10 @@ msgstr "Vēstule(s) veiksmīgi iezīmēta(s)."
 #: program/localization/lv_LV/messages.inc:autocompletechars
 msgid "Enter at least $min characters for autocompletion."
 msgstr "Ievadiet vismaz $min burtus, lai meklētu automātiski."
+
+#: program/localization/lv_LV/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Atrasti vairāki ieraksti. Papildiniet meklēšanas kritēriju."
 
 #: program/localization/lv_LV/messages.inc:namecannotbeempty
 msgid "Name cannot be empty."
@@ -555,3 +579,7 @@ msgstr "Vēstulē atrastas pareizrakstības kļūdas."
 msgid "Unable to create/move folder into selected parent folder. No access rights."
 msgstr "Neizdevās izveidot/pārvietot mapi uz atzīmēto virsmapi. Nav piekļuves "
 "tiesību."
+
+#: program/localization/lv_LV/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "Vēstule ir pārāk liela, lai to varētu apstrādāt."

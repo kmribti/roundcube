@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: eo\n"
@@ -110,10 +110,6 @@ msgstr "Prioritato"
 msgid "Company"
 msgstr "Organizo"
 
-#: program/localization/eo/labels.inc:reply-to
-msgid "reply-to"
-msgstr "Respondu-Al"
-
 #: program/localization/eo/labels.inc:mailboxlist
 #: program/localization/eo/labels.inc:folders
 msgid "Folders"
@@ -126,6 +122,10 @@ msgstr "Mesaĝoj ekde $from ĝis $to de $count"
 #: program/localization/eo/labels.inc:messagenrof
 msgid "Message $nr of $count"
 msgstr "Mesaĝo $nr-a de $count"
+
+#: program/localization/eo/labels.inc:copy
+msgid "Copy"
+msgstr "Kopio"
 
 #: program/localization/eo/labels.inc:moveto
 msgid "Move to..."
@@ -142,18 +142,6 @@ msgstr "Dosiernomo"
 #: program/localization/eo/labels.inc:filesize
 msgid "File size"
 msgstr "Dosiergrando"
-
-#: program/localization/eo/labels.inc:preferhtml
-msgid "Display HTML"
-msgstr "Montru HTML"
-
-#: program/localization/eo/labels.inc:htmlmessage
-msgid "HTML Message"
-msgstr "HTML Mesaĝo"
-
-#: program/localization/eo/labels.inc:prettydate
-msgid "Pretty dates"
-msgstr "Agrablaj Datoj"
 
 #: program/localization/eo/labels.inc:addtoaddressbook
 msgid "Add to address book"
@@ -348,33 +336,17 @@ msgstr "Printu ĉi tiun mesaĝon"
 msgid "Show previous message"
 msgstr "Montru antaŭan mesaĝon"
 
-#: program/localization/eo/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Montru antaŭan aron de mesaĝoj"
-
 #: program/localization/eo/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Montru unuan mesaĝon"
-
-#: program/localization/eo/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "Montru unuan aron de mesaĝoj"
 
 #: program/localization/eo/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Montru sekvan mesaĝon"
 
-#: program/localization/eo/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Montru sekvan aron de mesaĝoj"
-
 #: program/localization/eo/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Montru lastan mesaĝon"
-
-#: program/localization/eo/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "Montru lastan aron de mesaĝoj"
 
 #: program/localization/eo/labels.inc:backtolist
 msgid "Back to message list"
@@ -413,6 +385,7 @@ msgid "All"
 msgstr "Ĉion"
 
 #: program/localization/eo/labels.inc:none
+#: program/localization/eo/labels.inc:nonesort
 msgid "None"
 msgstr "Nenion"
 
@@ -427,10 +400,6 @@ msgstr "Kompakta"
 #: program/localization/eo/labels.inc:empty
 msgid "Empty"
 msgstr "Malplena"
-
-#: program/localization/eo/labels.inc:purge
-msgid "purge"
-msgstr "Senrubigu"
 
 #: program/localization/eo/labels.inc:quota
 msgid "Disk usage"
@@ -453,15 +422,15 @@ msgid "Reset search"
 msgstr "Vakigu serĉon"
 
 #: program/localization/eo/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Verku mesaĝon"
 
 #: program/localization/eo/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Savu ĉi tiun malneton"
 
 #: program/localization/eo/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Sendu mesaĝon"
 
 #: program/localization/eo/labels.inc:addattachment
@@ -701,6 +670,18 @@ msgstr "Nova ero"
 #: program/localization/eo/labels.inc:edititem
 msgid "Edit item"
 msgstr "Redaktu eron"
+
+#: program/localization/eo/labels.inc:preferhtml
+msgid "Display HTML"
+msgstr "Montru HTML"
+
+#: program/localization/eo/labels.inc:htmlmessage
+msgid "HTML Message"
+msgstr "HTML Mesaĝo"
+
+#: program/localization/eo/labels.inc:prettydate
+msgid "Pretty dates"
+msgstr "Agrablaj Datoj"
 
 #: program/localization/eo/labels.inc:setdefault
 msgid "Set default"

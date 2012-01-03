@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:03:31+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: bg_BG\n"
@@ -582,7 +582,7 @@ msgid "Download (.eml)"
 msgstr "Изтегли като .eml"
 
 #: program/localization/bg_BG/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Ново писмо"
 
 #: program/localization/bg_BG/labels.inc:editasnew
@@ -590,11 +590,11 @@ msgid "Edit as new"
 msgstr "Редактирай като ново"
 
 #: program/localization/bg_BG/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Запиши в Чернови"
 
 #: program/localization/bg_BG/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Изпрати писмото"
 
 #: program/localization/bg_BG/labels.inc:addattachment
@@ -691,7 +691,7 @@ msgstr "Показвай изображения"
 
 #: program/localization/bg_BG/labels.inc:alwaysshow
 msgid "Always show images from $sender"
-msgstr "Винаги показвай изображения от $ "
+msgstr "Винаги показвай изображения от $"
 
 #: program/localization/bg_BG/labels.inc:isdraft
 msgid "This is a draft message."
@@ -1370,10 +1370,6 @@ msgstr "Поддръжка"
 #: program/localization/bg_BG/labels.inc:newmessage
 msgid "New Message"
 msgstr "Ново съобщение"
-
-#: program/localization/bg_BG/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Покажи списък с настройки"
 
 #: program/localization/bg_BG/labels.inc:signatureoptions
 msgid "Signature Options"

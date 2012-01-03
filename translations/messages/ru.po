@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ru_RU\n"
@@ -141,6 +141,10 @@ msgstr "Контакты не найдены"
 msgid "The requested contact was not found."
 msgstr "Требуемый контакт не найден"
 
+#: program/localization/ru_RU/messages.inc:contactsearchonly
+msgid "Enter some search terms to find contacts"
+msgstr "Введите условия для поиска контактов"
+
 #: program/localization/ru_RU/messages.inc:sendingfailed
 msgid "Failed to send message."
 msgstr "Не удалось отправить сообщение"
@@ -198,6 +202,10 @@ msgstr "Вы действительно хотите удалить эту "
 msgid "Do you really want to delete all messages in this folder?"
 msgstr "Вы действительно хотите удалить все "
 "сообщения в этой папке?"
+
+#: program/localization/ru_RU/messages.inc:contactdeleting
+msgid "Deleting contact(s)..."
+msgstr "Удаление контакта(ов)..."
 
 #: program/localization/ru_RU/messages.inc:groupdeleting
 msgid "Deleting group..."
@@ -264,10 +272,6 @@ msgid "Please select an ldap server to search."
 msgstr "Пожалуйста, выберите LDAP сервер для "
 "поиска"
 
-#: program/localization/ru_RU/messages.inc:nocontactsreturned
-msgid "nocontactsreturned"
-msgstr "Контакты не найдены"
-
 #: program/localization/ru_RU/messages.inc:nosearchname
 msgid "Please enter a contact name or email address."
 msgstr "Пожалуйста, введите имя или адрес E-Mail"
@@ -281,6 +285,10 @@ msgstr "Вложения загружены не полностью. "
 #: program/localization/ru_RU/messages.inc:searchsuccessful
 msgid "$nr messages found."
 msgstr "Найденных сообщений - $nr"
+
+#: program/localization/ru_RU/messages.inc:contactsearchsuccessful
+msgid "$nr contacts found."
+msgstr "$nr контактов найдено."
 
 #: program/localization/ru_RU/messages.inc:searchnomatch
 msgid "Search returned no matches."
@@ -487,11 +495,6 @@ msgid "SMTP Error: Unable to parse recipients list."
 msgstr "SMTP Error: Невозможно обработать список "
 "получателей"
 
-#: program/localization/ru_RU/messages.inc:smtpdsnerror
-msgid "smtpdsnerror"
-msgstr "SMTP Error: Уведомления о состоянии доставки "
-"не поддерживаются"
-
 #: program/localization/ru_RU/messages.inc:smtperror
 msgid "SMTP Error: $msg"
 msgstr "SMTP Error ($code): $msg"
@@ -534,7 +537,7 @@ msgstr "Контакт(ы) успешно восстановлены."
 
 #: program/localization/ru_RU/messages.inc:groupdeleted
 msgid "Group deleted successfully."
-msgstr "Группа успешно удалена "
+msgstr "Группа успешно удалена"
 
 #: program/localization/ru_RU/messages.inc:grouprenamed
 msgid "Group renamed successfully."
@@ -543,6 +546,22 @@ msgstr "Группа успешно переименована"
 #: program/localization/ru_RU/messages.inc:groupcreated
 msgid "Group created successfully."
 msgstr "Группа успешно создана"
+
+#: program/localization/ru_RU/messages.inc:savedsearchdeleted
+msgid "Saved search deleted successfully."
+msgstr "Сохранённый запрос успешно удалён."
+
+#: program/localization/ru_RU/messages.inc:savedsearchdeleteerror
+msgid "Could not delete saved search."
+msgstr "Не удалось удалить сохранённый запрос."
+
+#: program/localization/ru_RU/messages.inc:savedsearchcreated
+msgid "Saved search created successfully."
+msgstr "Сохранённый запрос успешно создан."
+
+#: program/localization/ru_RU/messages.inc:savedsearchcreateerror
+msgid "Could not create saved search."
+msgstr "Не удалось создать сохранённый запрос."
 
 #: program/localization/ru_RU/messages.inc:messagedeleted
 msgid "Message(s) deleted successfully."
@@ -564,6 +583,11 @@ msgstr "Сообщения успешно выделены"
 msgid "Enter at least $min characters for autocompletion."
 msgstr "Введите, как минимум, $min символов для "
 "автодополнения"
+
+#: program/localization/ru_RU/messages.inc:autocompletemore
+msgid "More matching entries found. Please type more characters."
+msgstr "Поиск возвратил слишком много "
+"результатов. Пожалуйста, уточните."
 
 #: program/localization/ru_RU/messages.inc:namecannotbeempty
 msgid "Name cannot be empty."
@@ -595,3 +619,8 @@ msgid "Unable to create/move folder into selected parent folder. No access right
 msgstr "Не удается создать/переместить папку в "
 "выбранную родительскую папку. Нет прав "
 "доступа."
+
+#: program/localization/ru_RU/messages.inc:messagetoobig
+msgid "The message part is too big to process it."
+msgstr "Часть сообщения слишком велика для "
+"обработки."

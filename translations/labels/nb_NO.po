@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:03+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: nb_NO\n"
@@ -109,10 +109,6 @@ msgstr "Prioritet"
 #: program/localization/nb_NO/labels.inc:organization
 msgid "Company"
 msgstr "Organisasjon"
-
-#: program/localization/nb_NO/labels.inc:reply-to
-msgid "reply-to"
-msgstr "Svar til"
 
 #: program/localization/nb_NO/labels.inc:mailboxlist
 #: program/localization/nb_NO/labels.inc:folders
@@ -348,33 +344,17 @@ msgstr "Skriv ut denne e-posten"
 msgid "Show previous message"
 msgstr "Vis forrige melding"
 
-#: program/localization/nb_NO/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Vis forrige side"
-
 #: program/localization/nb_NO/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Vis første melding"
-
-#: program/localization/nb_NO/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "Vis første side med meldinger"
 
 #: program/localization/nb_NO/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Vis neste melding"
 
-#: program/localization/nb_NO/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Vis neste side"
-
 #: program/localization/nb_NO/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Vis siste melding"
-
-#: program/localization/nb_NO/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "Vis siste side med meldinger"
 
 #: program/localization/nb_NO/labels.inc:backtolist
 msgid "Back to message list"
@@ -403,10 +383,6 @@ msgstr "som flagget"
 #: program/localization/nb_NO/labels.inc:markunflagged
 msgid "As unflagged"
 msgstr "som uflagget"
-
-#: program/localization/nb_NO/labels.inc:messageactions
-msgid "messageactions"
-msgstr "Flere valg..."
 
 #: program/localization/nb_NO/labels.inc:select
 msgid "Select"
@@ -537,10 +513,6 @@ msgstr "Rydd opp"
 msgid "Empty"
 msgstr "Tøm"
 
-#: program/localization/nb_NO/labels.inc:purge
-msgid "purge"
-msgstr "Tøm"
-
 #: program/localization/nb_NO/labels.inc:quota
 msgid "Disk usage"
 msgstr "Plassforbruk"
@@ -578,7 +550,7 @@ msgid "Download (.eml)"
 msgstr "Last ned (.eml)"
 
 #: program/localization/nb_NO/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Skriv ny e-post"
 
 #: program/localization/nb_NO/labels.inc:editasnew
@@ -586,11 +558,11 @@ msgid "Edit as new"
 msgstr "Rediger som ny"
 
 #: program/localization/nb_NO/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Lagre kladd"
 
 #: program/localization/nb_NO/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Send e-posten"
 
 #: program/localization/nb_NO/labels.inc:addattachment
@@ -790,10 +762,6 @@ msgstr "Eksporter kontakter i vCard-format"
 #: program/localization/nb_NO/labels.inc:newcontactgroup
 msgid "Create new contact group"
 msgstr "Opprett ny kontaktgruppe"
-
-#: program/localization/nb_NO/labels.inc:groupactions
-msgid "groupactions"
-msgstr "Handlinger for kontaktgrupper..."
 
 #: program/localization/nb_NO/labels.inc:previouspage
 msgid "Show previous page"
@@ -1094,10 +1062,6 @@ msgstr "Vedlikehold"
 #: program/localization/nb_NO/labels.inc:newmessage
 msgid "New Message"
 msgstr "Ny melding"
-
-#: program/localization/nb_NO/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Meldingsoversikt"
 
 #: program/localization/nb_NO/labels.inc:signatureoptions
 msgid "Signature Options"

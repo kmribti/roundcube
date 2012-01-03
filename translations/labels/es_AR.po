@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcubemail\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-31T16:17:34+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:09:02+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: es_AR\n"
@@ -109,10 +109,6 @@ msgstr "Prioridad"
 #: program/localization/es_AR/labels.inc:organization
 msgid "Company"
 msgstr "Organización"
-
-#: program/localization/es_AR/labels.inc:reply-to
-msgid "reply-to"
-msgstr "Responder a"
 
 #: program/localization/es_AR/labels.inc:mailboxlist
 #: program/localization/es_AR/labels.inc:folders
@@ -344,33 +340,17 @@ msgstr "Imprimir este mensaje"
 msgid "Show previous message"
 msgstr "Mostrar mensaje anterior"
 
-#: program/localization/es_AR/labels.inc:previousmessages
-msgid "previousmessages"
-msgstr "Mostrar grupo anterior de mensajes"
-
 #: program/localization/es_AR/labels.inc:firstmessage
 msgid "Show first message"
 msgstr "Mostrar primer mensaje"
-
-#: program/localization/es_AR/labels.inc:firstmessages
-msgid "firstmessages"
-msgstr "Mostrar primer grupo de mensajes"
 
 #: program/localization/es_AR/labels.inc:nextmessage
 msgid "Show next message"
 msgstr "Mostrar siguente mensaje"
 
-#: program/localization/es_AR/labels.inc:nextmessages
-msgid "nextmessages"
-msgstr "Mostrar siguente grupo de mensajes"
-
 #: program/localization/es_AR/labels.inc:lastmessage
 msgid "Show last message"
 msgstr "Mostrar último mensaje"
-
-#: program/localization/es_AR/labels.inc:lastmessages
-msgid "lastmessages"
-msgstr "Mostrar último grupo de mensajes"
 
 #: program/localization/es_AR/labels.inc:backtolist
 msgid "Back to message list"
@@ -399,10 +379,6 @@ msgstr "Como marcado"
 #: program/localization/es_AR/labels.inc:markunflagged
 msgid "As unflagged"
 msgstr "Como no marcado"
-
-#: program/localization/es_AR/labels.inc:messageactions
-msgid "messageactions"
-msgstr "Más acciones..."
 
 #: program/localization/es_AR/labels.inc:select
 msgid "Select"
@@ -489,10 +465,6 @@ msgstr "Compactar"
 msgid "Empty"
 msgstr "Vaciar"
 
-#: program/localization/es_AR/labels.inc:purge
-msgid "purge"
-msgstr "Eliminar"
-
 #: program/localization/es_AR/labels.inc:quota
 msgid "Disk usage"
 msgstr "Uso de disco"
@@ -530,7 +502,7 @@ msgid "Download (.eml)"
 msgstr "Guardar (.eml)"
 
 #: program/localization/es_AR/labels.inc:compose
-msgid "Compose a message"
+msgid "Compose"
 msgstr "Escribir un mensaje"
 
 #: program/localization/es_AR/labels.inc:editasnew
@@ -538,11 +510,11 @@ msgid "Edit as new"
 msgstr "Editar como nuevo"
 
 #: program/localization/es_AR/labels.inc:savemessage
-msgid "Save this draft"
+msgid "Save as draft"
 msgstr "Guardar como borrador"
 
 #: program/localization/es_AR/labels.inc:sendmessage
-msgid "Send now"
+msgid "Send message"
 msgstr "Enviar ahora el mensaje"
 
 #: program/localization/es_AR/labels.inc:addattachment
@@ -742,10 +714,6 @@ msgstr "Exportar contactos en format vCard"
 #: program/localization/es_AR/labels.inc:newcontactgroup
 msgid "Create new contact group"
 msgstr "Crear Nuevo Grupo de Contacto"
-
-#: program/localization/es_AR/labels.inc:groupactions
-msgid "groupactions"
-msgstr "Acción para Grupos de Contacto"
 
 #: program/localization/es_AR/labels.inc:previouspage
 msgid "Show previous page"
@@ -1046,10 +1014,6 @@ msgstr "Mantenimiento"
 #: program/localization/es_AR/labels.inc:newmessage
 msgid "New Message"
 msgstr "Nuevo Mensaje"
-
-#: program/localization/es_AR/labels.inc:listoptions
-msgid "listoptions"
-msgstr "Opciones de Listado"
 
 #: program/localization/es_AR/labels.inc:signatureoptions
 msgid "Signature Options"
