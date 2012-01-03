@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: cs_CZ\n"
+"Language: cz\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -157,3 +157,47 @@ msgstr "Zpráva (Důvod nepřítomnosti):"
 #: plugins/managesieve/localization/cs_CZ.inc:rulestop
 msgid "Stop evaluating rules"
 msgstr "Zastavit pravidla"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Neznámá chyba serveru"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Nebylo možné se připojit k sieve serveru"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Nebylo možné smazat filtr. Server nahlásil chybu"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Filtr byl smazán"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Opravdu chcete smazat vybraný filtr?"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filtersaved
+msgid "filtersaved"
+msgstr "Filtr byl uložen"
+
+#: plugins/managesieve/localization/cs_CZ.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Nebylo možné uložit filtr. Server nahlásil chybu."
+
+#: plugins/managesieve/localization/cs_CZ.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Jste si jisti, že chcete smazat vybrané pravidlo?"
+
+#: plugins/managesieve/localization/cs_CZ.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Jste si jisti, že chcete smazat vybranou akci?"
+
+#: plugins/managesieve/localization/cs_CZ.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Zakázané znaky v poli"
+
+#: plugins/managesieve/localization/cs_CZ.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Pole nemůže být prázdné"

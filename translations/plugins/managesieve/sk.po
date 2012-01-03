@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: sk_SK\n"
@@ -213,3 +213,91 @@ msgstr "zo súboru"
 #: plugins/managesieve/localization/sk_SK.inc:filterdisabled
 msgid "Filter disabled"
 msgstr "Filter zakázaný"
+
+#: plugins/managesieve/localization/sk_SK.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Neznáma chyba serveru"
+
+#: plugins/managesieve/localization/sk_SK.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Nepodarilo sa pripojiť k managesieve serveru"
+
+#: plugins/managesieve/localization/sk_SK.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Nepodarilo sa zmazať filter, server ohlásil chybu"
+
+#: plugins/managesieve/localization/sk_SK.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Filter bol zmazaný"
+
+#: plugins/managesieve/localization/sk_SK.inc:filtersaved
+msgid "filtersaved"
+msgstr "Filter bol uložený"
+
+#: plugins/managesieve/localization/sk_SK.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Nepodarilo sa uložiť filter, server ohlásil chybu"
+
+#: plugins/managesieve/localization/sk_SK.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Naozaj si prajete zmazať tento filter?"
+
+#: plugins/managesieve/localization/sk_SK.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Naozaj si prajete zamzať toto pravidlo?"
+
+#: plugins/managesieve/localization/sk_SK.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Naozaj si prajete zmazať túto akciu?"
+
+#: plugins/managesieve/localization/sk_SK.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Pole obsahuje nepovolené znaky"
+
+#: plugins/managesieve/localization/sk_SK.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Pole nemôže byť prázdne"
+
+#: plugins/managesieve/localization/sk_SK.inc:setactivateerror
+msgid "setactivateerror"
+msgstr "Nepodarilo sa aktivovať zvolenú sadu filtrov, server ohlásil chybu"
+
+#: plugins/managesieve/localization/sk_SK.inc:setdeactivateerror
+msgid "setdeactivateerror"
+msgstr "Nepodarilo sa deaktivovať zvolenú sadu filtrov, server ohlásil chybu"
+
+#: plugins/managesieve/localization/sk_SK.inc:setdeleteerror
+msgid "setdeleteerror"
+msgstr "Nepodarilo sa zmazať zvolenú sadu filtrov, server ohlásil chybu"
+
+#: plugins/managesieve/localization/sk_SK.inc:setactivated
+msgid "setactivated"
+msgstr "Sada filtrov bola aktivovaná"
+
+#: plugins/managesieve/localization/sk_SK.inc:setdeactivated
+msgid "setdeactivated"
+msgstr "Sada filtrov bola deaktivovaná"
+
+#: plugins/managesieve/localization/sk_SK.inc:setdeleted
+msgid "setdeleted"
+msgstr "Sada filtrov bola zmazaná"
+
+#: plugins/managesieve/localization/sk_SK.inc:setdeleteconfirm
+msgid "setdeleteconfirm"
+msgstr "Naozaj si prajete zmazať túto sadu filtrov?"
+
+#: plugins/managesieve/localization/sk_SK.inc:setcreateerror
+msgid "setcreateerror"
+msgstr "Nepodarilo sa vytvoriť sadu filtrov, server ohlásil chybu"
+
+#: plugins/managesieve/localization/sk_SK.inc:setcreated
+msgid "setcreated"
+msgstr "Sada filtrov bola vytvorená"
+
+#: plugins/managesieve/localization/sk_SK.inc:emptyname
+msgid "emptyname"
+msgstr "Názov sady filtrov nemôže byť prázdny"
+
+#: plugins/managesieve/localization/sk_SK.inc:nametoolong
+msgid "nametoolong"
+msgstr "Názov sady filtrov je príliš dlhý"

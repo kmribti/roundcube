@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: pt_BR\n"
@@ -157,3 +157,47 @@ msgstr "Corpo da mensagem (motivo de férias):"
 #: plugins/managesieve/localization/pt_BR.inc:rulestop
 msgid "Stop evaluating rules"
 msgstr "Parar de avaliar regras"
+
+#: plugins/managesieve/localization/pt_BR.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Erro desconhecido de servidor"
+
+#: plugins/managesieve/localization/pt_BR.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Não foi possível conectar ao servidor managesieve"
+
+#: plugins/managesieve/localization/pt_BR.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Não foi possível excluir filtro. Occorreu um erro de servidor"
+
+#: plugins/managesieve/localization/pt_BR.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Filtro excluído com sucesso"
+
+#: plugins/managesieve/localization/pt_BR.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Deseja realmente excluir o filtro selecionado?"
+
+#: plugins/managesieve/localization/pt_BR.inc:filtersaved
+msgid "filtersaved"
+msgstr "Filtro gravado com sucesso"
+
+#: plugins/managesieve/localization/pt_BR.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Não foi possível gravar filtro. Occoreu um erro de servidor."
+
+#: plugins/managesieve/localization/pt_BR.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Deseja realmente excluir a regra selecionada?"
+
+#: plugins/managesieve/localization/pt_BR.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Deseja realmente excluir a ação selecionada?"
+
+#: plugins/managesieve/localization/pt_BR.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Caracteres não permitidos no campo"
+
+#: plugins/managesieve/localization/pt_BR.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Campo não pode ficar em branco"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: nb_NO\n"
@@ -157,3 +157,47 @@ msgstr "Innhold (begrunnelse for fravær)"
 #: plugins/managesieve/localization/nb_NO.inc:rulestop
 msgid "Stop evaluating rules"
 msgstr "Stopp evaluering av regler"
+
+#: plugins/managesieve/localization/nb_NO.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Ukjent problem med tjener"
+
+#: plugins/managesieve/localization/nb_NO.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Kunne ikke koble til MANAGESIEVE-tjener"
+
+#: plugins/managesieve/localization/nb_NO.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Kunne ikke slette filter. Det dukket opp en feil på tjeneren."
+
+#: plugins/managesieve/localization/nb_NO.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Filteret er blitt slettet"
+
+#: plugins/managesieve/localization/nb_NO.inc:filterconfirmdelete
+msgid "filterconfirmdelete"
+msgstr "Er du sikker på at du vil slette følgende filter?"
+
+#: plugins/managesieve/localization/nb_NO.inc:filtersaved
+msgid "filtersaved"
+msgstr "Filter er blitt lagret"
+
+#: plugins/managesieve/localization/nb_NO.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Kunne ikke lagre filteret. Det dukket opp en feil på tjeneren."
+
+#: plugins/managesieve/localization/nb_NO.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Er du sikker på at du vil slette valgte regel?"
+
+#: plugins/managesieve/localization/nb_NO.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Er du sikker på at du vil slette valgte hendelse?"
+
+#: plugins/managesieve/localization/nb_NO.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Ugyldige tegn i felt"
+
+#: plugins/managesieve/localization/nb_NO.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Feltet kan ikke stå tomt"

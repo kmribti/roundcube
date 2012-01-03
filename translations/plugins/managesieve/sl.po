@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: sl_SI\n"
+"Language: sl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -157,3 +157,47 @@ msgstr "Vsebina sporočila (vzrok za odsotnost):"
 #: plugins/managesieve/localization/sl_SI.inc:rulestop
 msgid "Stop evaluating rules"
 msgstr "Prekini z izvajanjem pravil"
+
+#: plugins/managesieve/localization/sl_SI.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Prišlo je do neznane napake."
+
+#: plugins/managesieve/localization/sl_SI.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Povezave s strežnikom (managesieve) ni bilo mogoče vzpostaviti"
+
+#: plugins/managesieve/localization/sl_SI.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Pravila ni bilo mogoče izbrisati. Prišlo je do napake."
+
+#: plugins/managesieve/localization/sl_SI.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Pravilo je bilo uspešno izbrisano."
+
+#: plugins/managesieve/localization/sl_SI.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Ste prepričani, da želite izbrisati izbrano pravilo?"
+
+#: plugins/managesieve/localization/sl_SI.inc:filtersaved
+msgid "filtersaved"
+msgstr "Pravilo je bilo uspešno shranjeno"
+
+#: plugins/managesieve/localization/sl_SI.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Pravilo ni bilo shranjeno. Prišlo je do napake."
+
+#: plugins/managesieve/localization/sl_SI.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Ste prepričani, da želite izbrisati izbrano pravilo?"
+
+#: plugins/managesieve/localization/sl_SI.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Ste prepričani, da želite izbrisati izbrano dejanje?"
+
+#: plugins/managesieve/localization/sl_SI.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "V polju so neveljavni znaki"
+
+#: plugins/managesieve/localization/sl_SI.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Polje ne sme biti prazno"

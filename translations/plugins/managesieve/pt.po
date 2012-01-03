@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: pt_PT\n"
@@ -509,3 +509,244 @@ msgstr "Tempo"
 #: plugins/managesieve/localization/pt_PT.inc:weekday
 msgid "weekday"
 msgstr "dia da semana"
+
+#: plugins/managesieve/localization/pt_PT.inc:nosieverules
+msgid "nosieverules"
+msgstr "Nenhum filtro encontrado."
+
+#: plugins/managesieve/localization/pt_PT.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Tem a certeza que pretende eliminar este filtro?"
+
+#: plugins/managesieve/localization/pt_PT.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Tem a certeza que pretende eliminar esta regra?"
+
+#: plugins/managesieve/localization/pt_PT.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Tem a certeza que pretende eliminar esta acção?"
+
+#: plugins/managesieve/localization/pt_PT.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Erro de servidor desconhecido"
+
+#: plugins/managesieve/localization/pt_PT.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Não é possível ligar ao servidor Sieve"
+
+#: plugins/managesieve/localization/pt_PT.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Não foi possível eliminar o filtro. Erro no servidor"
+
+#: plugins/managesieve/localization/pt_PT.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Filtro eliminado com sucesso"
+
+#: plugins/managesieve/localization/pt_PT.inc:filtersaved
+msgid "filtersaved"
+msgstr "Filtro guardado com sucesso"
+
+#: plugins/managesieve/localization/pt_PT.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Não foi possível guardar o filtro. Erro no servidor"
+
+#: plugins/managesieve/localization/pt_PT.inc:vacdaysexp
+msgid "vacdaysexp"
+msgstr "O período é o número de dias durante o qual a mensagem não será "
+"reenviado para o mesmo remetente, não importa quantas vezes ele entre "
+"contacto consigo.<br/><br/>Por exemplo: Se o João lhe enviar e-mails na "
+"segunda-feira e o período está definido para 7 dias, o João irá receber "
+"uma mensagem de Fora do Escritório na segunda-feira, mas não irá receber "
+"mais nenhuma até à segunda-feira seguinte, não importa quantos e-mails "
+"ele lhe envie durante a semana."
+
+#: plugins/managesieve/localization/pt_PT.inc:vachandleexp
+msgid "vachandleexp"
+msgstr "Um identificador pode ser usado para ligar as diferentes mensagens de Fora "
+"do Escritório em conjunto, uma vez que uma mensagem foi enviada outra "
+"mensagem com o mesmo identificador será reenviado no mesmo período."
+
+#: plugins/managesieve/localization/pt_PT.inc:vactoexp
+msgid "vactoexp"
+msgstr "Lista de endereços de destinatários adicionais que estão incluídos na "
+"resposta automática. Se um destinatário de e-mail não é o seu endereço "
+"principal e não está nesta lista, nenhuma mensagem será enviada."
+
+#: plugins/managesieve/localization/pt_PT.inc:vactoexp_adv
+msgid "vactoexp_adv"
+msgstr "Separar múltiplos endereços com virgula (,). Exemplo: "
+"test1@example.com,test2@example.com,test3@example.com"
+
+#: plugins/managesieve/localization/pt_PT.inc:vactoexp_err
+msgid "vactoexp_err"
+msgstr "Erro: Múltiplos endereços devem ser separados por virgula (,)."
+
+#: plugins/managesieve/localization/pt_PT.inc:norulename
+msgid "norulename"
+msgstr "Por favor, indique um nome para este filtro"
+
+#: plugins/managesieve/localization/pt_PT.inc:ruleexists
+msgid "ruleexists"
+msgstr "Já existe um filtro com este nome. Por favor, indique outro"
+
+#: plugins/managesieve/localization/pt_PT.inc:noheader
+msgid "noheader"
+msgstr "Por favor, indique o nome do cabeçalho para testar"
+
+#: plugins/managesieve/localization/pt_PT.inc:headerbadchars
+msgid "headerbadchars"
+msgstr "Erro: O cabeçalho contém caracteres proibidos"
+
+#: plugins/managesieve/localization/pt_PT.inc:noheadervalue
+msgid "noheadervalue"
+msgstr "Por favor indique um valor para testar o cabeçalho contra"
+
+#: plugins/managesieve/localization/pt_PT.inc:sizewrongformat
+msgid "sizewrongformat"
+msgstr "Erro: O tamanho da mensagem deve ser numérico"
+
+#: plugins/managesieve/localization/pt_PT.inc:noredirect
+msgid "noredirect"
+msgstr "Indique um endereço de e-mail para redirecionar as mensagens"
+
+#: plugins/managesieve/localization/pt_PT.inc:redirectaddresserror
+msgid "redirectaddresserror"
+msgstr "Erro: O endereço de e-mail parece ser inválido"
+
+#: plugins/managesieve/localization/pt_PT.inc:noreject
+msgid "noreject"
+msgstr "Indique uma mensagem para enviar juntamente com o e-mail rejeitado"
+
+#: plugins/managesieve/localization/pt_PT.inc:vacnodays
+msgid "vacnodays"
+msgstr "Por favor insira um número de dias para o período em que a mensagem não "
+"será reenviado para a mesma pessoa"
+
+#: plugins/managesieve/localization/pt_PT.inc:vacdayswrongformat
+msgid "vacdayswrongformat"
+msgstr "Erro: O período deve ser um número maior ou igual a 1"
+
+#: plugins/managesieve/localization/pt_PT.inc:vacnomsg
+msgid "vacnomsg"
+msgstr "Insira o texto para a sua mensagem"
+
+#: plugins/managesieve/localization/pt_PT.inc:notifynomethod
+msgid "notifynomethod"
+msgstr "Por favor, indique um método pelo qual a notificação deve ser enviada"
+
+#: plugins/managesieve/localization/pt_PT.inc:notifynomsg
+msgid "notifynomsg"
+msgstr "Insira o texto para a sua mensagem"
+
+#: plugins/managesieve/localization/pt_PT.inc:sieveruleexp
+msgid "sieveruleexp"
+msgstr "Por favor, defina uma ou mais regras sobre as quais cada mensagem será "
+"testada. Os filtros são executados na ordem em que aparecem à esquerda do "
+"ecrã, se for encontrada uma correspondência mais nenhum filtro será "
+"testado."
+
+#: plugins/managesieve/localization/pt_PT.inc:sieveruleexp_stop
+msgid "sieveruleexp_stop"
+msgstr "Por favor, defina uma ou mais regras sobre as quais cada mensagem será "
+"testada. Os filtros são executados na ordem em que aparecem à esquerda do "
+"ecrã até uma acção de 'Stop' ser encontrada."
+
+#: plugins/managesieve/localization/pt_PT.inc:sieveactexp
+msgid "sieveactexp"
+msgstr "Por favor, seleccione uma das opções abaixo. Essas acções serão "
+"realizadas para qualquer mensagem correspondente à(s) regra(s) acima."
+
+#: plugins/managesieve/localization/pt_PT.inc:sieveheadershlp
+msgid "sieveheadershlp"
+msgstr "Abaixo estão alguns exemplos de outros cabeçalhos que podem ser testados "
+"pelos filtros. Selecione um cabeçalho para adicioná-lo à regra, ou "
+"introduza um personalizado na caixa acima."
+
+#: plugins/managesieve/localization/pt_PT.inc:movingfilter
+msgid "movingfilter"
+msgstr "A mover filtro..."
+
+#: plugins/managesieve/localization/pt_PT.inc:noexistingfilters
+msgid "noexistingfilters"
+msgstr "Não foi detectado nenhum filtro existente!"
+
+#: plugins/managesieve/localization/pt_PT.inc:importdefault
+msgid "importdefault"
+msgstr "<b>Usar filtros predefinidos:</b> Há um conjunto de filtros predefinidos "
+"disponíveis. Gostaria de usar esses filtros?"
+
+#: plugins/managesieve/localization/pt_PT.inc:importother
+msgid "importother"
+msgstr "<b>Importação de filtros:</b>Foi encontrado outro conjunto de filtros de "
+"%s. Gostaria de importar esses filtros para o seu conjunto actual?"
+
+#: plugins/managesieve/localization/pt_PT.inc:switchtoadveditor
+msgid "switchtoadveditor"
+msgstr "Mudando para o editor avançado permite editar o ficheiro Sieve "
+"directamente. Quaisquer alterações aqui efectuadas podem ser ilegíveis "
+"no editor normal e podem ser perdidas quando os filtros são guardados "
+"usando o editor normal. Deseja continuar?"
+
+#: plugins/managesieve/localization/pt_PT.inc:filterimported
+msgid "filterimported"
+msgstr "Filtro importado com sucesso"
+
+#: plugins/managesieve/localization/pt_PT.inc:filterimporterror
+msgid "filterimporterror"
+msgstr "Não foi possível importar o filtro. Ocorreu um erro no servidor."
+
+#: plugins/managesieve/localization/pt_PT.inc:notifyinvalidmethod
+msgid "notifyinvalidmethod"
+msgstr "O método parece não estar escrito num formato válido, ele deve ser um "
+"URL. Por exemplo: \"mailto: alert@example.com»."
+
+#: plugins/managesieve/localization/pt_PT.inc:nobodycontentpart
+msgid "nobodycontentpart"
+msgstr "Por favor, indique uma parte de conteúdo para testar"
+
+#: plugins/managesieve/localization/pt_PT.inc:badoperator
+msgid "badoperator"
+msgstr "O operador seleccionado não pode ser usado nesta regra"
+
+#: plugins/managesieve/localization/pt_PT.inc:filteractionerror
+msgid "filteractionerror"
+msgstr "A acção solicitada não é suportada pelo servidor"
+
+#: plugins/managesieve/localization/pt_PT.inc:filtermissingerror
+msgid "filtermissingerror"
+msgstr "Não foi possível encontrar a regra solicitada"
+
+#: plugins/managesieve/localization/pt_PT.inc:contentpartexp
+msgid "contentpartexp"
+msgstr "O tipo de MIME ou parte específica da mensagem que deve ser testado. Por "
+"exemplo: `text/html`, `audio/mp3` or `image`."
+
+#: plugins/managesieve/localization/pt_PT.inc:delrulesetconf
+msgid "delrulesetconf"
+msgstr "Tem certeza que quer eliminar este conjunto de regras?"
+
+#: plugins/managesieve/localization/pt_PT.inc:rulesetexists
+msgid "rulesetexists"
+msgstr "Um conjunto de regras com este nome já existe. Por favor, indique outro "
+"nome"
+
+#: plugins/managesieve/localization/pt_PT.inc:copyexisting
+msgid "copyexisting"
+msgstr "<b>Copiar conjunto de regras existente:</b>Gostaria de copiar os filtros de "
+"um conjunto de de regras existente para o seu conjunto actual?"
+
+#: plugins/managesieve/localization/pt_PT.inc:filtercopied
+msgid "filtercopied"
+msgstr "Filtro copiado com sucesso"
+
+#: plugins/managesieve/localization/pt_PT.inc:nosieverulesets
+msgid "nosieverulesets"
+msgstr "Nenhum conjunto de regras encontrado."
+
+#: plugins/managesieve/localization/pt_PT.inc:baddateformat
+msgid "baddateformat"
+msgstr "Erro: Indique a data no formato AAAA-MM-DD"
+
+#: plugins/managesieve/localization/pt_PT.inc:badtimeformat
+msgid "badtimeformat"
+msgstr "Erro: Indique a hora no formato HH:MM:SS"

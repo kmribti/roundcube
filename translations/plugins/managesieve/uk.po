@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: uk_UA\n"
+"Language: uk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -144,7 +144,7 @@ msgstr "Отримувач"
 
 #: plugins/managesieve/localization/uk_UA.inc:vacationaddresses
 msgid "Additional list of recipient e-mails (comma separated):"
-msgstr "Додатковий список адрес отримувачів"
+msgstr "Додатковий список адрес отримувачів "
 "(розділених комою)"
 
 #: plugins/managesieve/localization/uk_UA.inc:vacationdays
@@ -210,3 +210,93 @@ msgstr "з файлу"
 #: plugins/managesieve/localization/uk_UA.inc:filterdisabled
 msgid "Filter disabled"
 msgstr "Фільтр вимкнено"
+
+#: plugins/managesieve/localization/uk_UA.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Невідома помилка сервера"
+
+#: plugins/managesieve/localization/uk_UA.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Неможливо з'єднатися з сервером"
+
+#: plugins/managesieve/localization/uk_UA.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Неможливо видалити фільтр. Помилка "
+"сервера"
+
+#: plugins/managesieve/localization/uk_UA.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Фільтр успішно видалено"
+
+#: plugins/managesieve/localization/uk_UA.inc:filtersaved
+msgid "filtersaved"
+msgstr "Фільтр успішно збережено"
+
+#: plugins/managesieve/localization/uk_UA.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Неможливо зберегти фільтр. Помилка "
+"сервера"
+
+#: plugins/managesieve/localization/uk_UA.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Ви дійсно хочете видалити обраний "
+"фільтр?"
+
+#: plugins/managesieve/localization/uk_UA.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Ви дійсно хочете видалити обране "
+"правило?"
+
+#: plugins/managesieve/localization/uk_UA.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Ви дійсно хочете видалити обрану дію?"
+
+#: plugins/managesieve/localization/uk_UA.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Введено заборонений символ"
+
+#: plugins/managesieve/localization/uk_UA.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Поле не може бути пустим"
+
+#: plugins/managesieve/localization/uk_UA.inc:setactivateerror
+msgid "setactivateerror"
+msgstr "Неможливо активувати обраний набір. "
+"Помилка сервера"
+
+#: plugins/managesieve/localization/uk_UA.inc:setdeleteerror
+msgid "setdeleteerror"
+msgstr "Неможливо видалити обраний набір. "
+"Помилка сервера"
+
+#: plugins/managesieve/localization/uk_UA.inc:setactivated
+msgid "setactivated"
+msgstr "Набір фільтрів активовано успішно"
+
+#: plugins/managesieve/localization/uk_UA.inc:setdeleted
+msgid "setdeleted"
+msgstr "Набір фільтрів видалено успішно"
+
+#: plugins/managesieve/localization/uk_UA.inc:setdeleteconfirm
+msgid "setdeleteconfirm"
+msgstr "Ви впевнені, що хочете видалити обраний "
+"набір?"
+
+#: plugins/managesieve/localization/uk_UA.inc:setcreateerror
+msgid "setcreateerror"
+msgstr "Не вдалося створити набір. Помилка "
+"сервера"
+
+#: plugins/managesieve/localization/uk_UA.inc:setcreated
+msgid "setcreated"
+msgstr "Набір фільтрів створено успішно"
+
+#: plugins/managesieve/localization/uk_UA.inc:emptyname
+msgid "emptyname"
+msgstr "Не вдалося створити набір. Введіть назву "
+"набору"
+
+#: plugins/managesieve/localization/uk_UA.inc:nametoolong
+msgid "nametoolong"
+msgstr "Не вдалося створити набір. Занадто довга "
+"назва"

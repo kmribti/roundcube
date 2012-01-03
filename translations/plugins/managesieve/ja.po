@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: ja_JP\n"
+"Language: ja\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -221,3 +221,97 @@ msgstr "ファイルから"
 #: plugins/managesieve/localization/ja_JP.inc:filterdisabled
 msgid "Filter disabled"
 msgstr "フィルターを無効にしました。"
+
+#: plugins/managesieve/localization/ja_JP.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "不明なサーバーのエラーです"
+
+#: plugins/managesieve/localization/ja_JP.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "managesieve サーバーに接続できません。"
+
+#: plugins/managesieve/localization/ja_JP.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "フィルターを削除できませんでした。サーバーでエラーが発生しました。"
+
+#: plugins/managesieve/localization/ja_JP.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "フィルターの削除に成功しました。"
+
+#: plugins/managesieve/localization/ja_JP.inc:filtersaved
+msgid "filtersaved"
+msgstr "フィルターの保存に成功しました。"
+
+#: plugins/managesieve/localization/ja_JP.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "フィルターの保存に失敗しました。サーバーでエラーが発生しました。"
+
+#: plugins/managesieve/localization/ja_JP.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "本当に選択したフィルターを削除しますか?"
+
+#: plugins/managesieve/localization/ja_JP.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "本当に選択したルールを削除しますか?"
+
+#: plugins/managesieve/localization/ja_JP.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "本当に選択した操作を削除しますか?"
+
+#: plugins/managesieve/localization/ja_JP.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "項目に禁止文字があります。"
+
+#: plugins/managesieve/localization/ja_JP.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "空にできませんでした"
+
+#: plugins/managesieve/localization/ja_JP.inc:setactivateerror
+msgid "setactivateerror"
+msgstr "選択したフィルター "
+"セットの有効化に失敗しました。サーバーでエラーが発生しました。"
+
+#: plugins/managesieve/localization/ja_JP.inc:setdeactivateerror
+msgid "setdeactivateerror"
+msgstr "選択したフィルター "
+"セットの無効化に失敗しました。サーバーでエラーが発生しました。"
+
+#: plugins/managesieve/localization/ja_JP.inc:setdeleteerror
+msgid "setdeleteerror"
+msgstr "選択したフィルター "
+"セットの削除に失敗しました。サーバーでエラーが発生しました。"
+
+#: plugins/managesieve/localization/ja_JP.inc:setactivated
+msgid "setactivated"
+msgstr "フィルターセットの有効化に成功しました。"
+
+#: plugins/managesieve/localization/ja_JP.inc:setdeactivated
+msgid "setdeactivated"
+msgstr "フィルターセットの無効化に成功しました。"
+
+#: plugins/managesieve/localization/ja_JP.inc:setdeleted
+msgid "setdeleted"
+msgstr "フィルターセットの削除に成功しました。"
+
+#: plugins/managesieve/localization/ja_JP.inc:setdeleteconfirm
+msgid "setdeleteconfirm"
+msgstr "本当に選択したフィルター セットを削除しますか?"
+
+#: plugins/managesieve/localization/ja_JP.inc:setcreateerror
+msgid "setcreateerror"
+msgstr "フィルター "
+"セットの作成に失敗しました。サーバーでエラーが発生しました。"
+
+#: plugins/managesieve/localization/ja_JP.inc:setcreated
+msgid "setcreated"
+msgstr "フィルター セットの作成に成功しました。"
+
+#: plugins/managesieve/localization/ja_JP.inc:emptyname
+msgid "emptyname"
+msgstr "フィルター "
+"セットの作成に失敗しました。名前が空です。"
+
+#: plugins/managesieve/localization/ja_JP.inc:nametoolong
+msgid "nametoolong"
+msgstr "フィルター "
+"セットの作成に失敗しました。名前が長すぎます。"

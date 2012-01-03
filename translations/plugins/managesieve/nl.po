@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: nl_NL\n"
@@ -141,3 +141,47 @@ msgstr "Afzender"
 #: plugins/managesieve/localization/nl_NL.inc:recipient
 msgid "Recipient"
 msgstr "Ontvanger"
+
+#: plugins/managesieve/localization/nl_NL.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Onbekende fout"
+
+#: plugins/managesieve/localization/nl_NL.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Kan geen verbinding maken met de managesieve server"
+
+#: plugins/managesieve/localization/nl_NL.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Kan filter niet verwijderen. Er is een fout opgetreden"
+
+#: plugins/managesieve/localization/nl_NL.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Filter succesvol verwijderd"
+
+#: plugins/managesieve/localization/nl_NL.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Weet je zeker dat je het geselecteerde filter wilt verwijderen?"
+
+#: plugins/managesieve/localization/nl_NL.inc:filtersaved
+msgid "filtersaved"
+msgstr "Filter succesvol opgeslagen"
+
+#: plugins/managesieve/localization/nl_NL.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Kan filter niet opslaan. Er is een fout opgetreden."
+
+#: plugins/managesieve/localization/nl_NL.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Weet je zeker dat je de geselecteerde regel wilt verwijderen?"
+
+#: plugins/managesieve/localization/nl_NL.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Weet je zeker dat je de geselecteerde actie wilt verwijderen?"
+
+#: plugins/managesieve/localization/nl_NL.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Verboden karakters in het veld"
+
+#: plugins/managesieve/localization/nl_NL.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Veld mag niet leeg zijn"

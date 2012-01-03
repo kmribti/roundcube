@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: el_GR\n"
+"Language: el\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -48,12 +48,12 @@ msgstr "Μετακίνηση κάτω"
 
 #: plugins/managesieve/localization/el_GR.inc:filterallof
 msgid "matching all of the following rules"
-msgstr "ταιριάζουν με όλους τους παρακάτω"
+msgstr "ταιριάζουν με όλους τους παρακάτω "
 "κανόνες"
 
 #: plugins/managesieve/localization/el_GR.inc:filteranyof
 msgid "matching any of the following rules"
-msgstr "ταιριάζουν με οποιονδήποτε από τους"
+msgstr "ταιριάζουν με οποιονδήποτε από τους "
 "παρακάτω κανόνες"
 
 #: plugins/managesieve/localization/el_GR.inc:filterany
@@ -146,12 +146,12 @@ msgstr "Παραλήπτης"
 
 #: plugins/managesieve/localization/el_GR.inc:vacationaddresses
 msgid "Additional list of recipient e-mails (comma separated):"
-msgstr "Πρόσθετη λίστα email παραληπτών"
+msgstr "Πρόσθετη λίστα email παραληπτών "
 "(διαχωρισμένη με κόμματα):"
 
 #: plugins/managesieve/localization/el_GR.inc:vacationdays
 msgid "How often send messages (in days):"
-msgstr "Συχνότητα αποστολής μηνυμάτων (σε"
+msgstr "Συχνότητα αποστολής μηνυμάτων (σε "
 "ημέρες):"
 
 #: plugins/managesieve/localization/el_GR.inc:vacationreason
@@ -161,3 +161,52 @@ msgstr "Σώμα μηνύματος (λόγος απουσίας):"
 #: plugins/managesieve/localization/el_GR.inc:rulestop
 msgid "Stop evaluating rules"
 msgstr "Παύση επαλήθευσης κανόνων"
+
+#: plugins/managesieve/localization/el_GR.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Άγνωστο σφάλμα διακομιστή"
+
+#: plugins/managesieve/localization/el_GR.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Αδυναμία σύνδεσης στον διακομιστή managesieve"
+
+#: plugins/managesieve/localization/el_GR.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Αδυναμία διαγραφής φίλτρου. Προέκυψε "
+"σφάλμα στον διακομιστή"
+
+#: plugins/managesieve/localization/el_GR.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Το φίλτρο διαγράφηκε επιτυχώς"
+
+#: plugins/managesieve/localization/el_GR.inc:filterconfirmdelete
+msgid "filterconfirmdelete"
+msgstr "Θέλετε όντως να διαγράψετε το επιλεγμένο "
+"φίλτρο;"
+
+#: plugins/managesieve/localization/el_GR.inc:filtersaved
+msgid "filtersaved"
+msgstr "Το φίλτρο αποθηκεύτηκε επιτυχώς"
+
+#: plugins/managesieve/localization/el_GR.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Αδυναμία αποθήκευσης φίλτρου. Προέκυψε "
+"σφάλμα στον διακομιστή"
+
+#: plugins/managesieve/localization/el_GR.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Θέλετε όντως να διαγράψετε τον "
+"επιλεγμένο κανόνα;"
+
+#: plugins/managesieve/localization/el_GR.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Θέλετε όντως να διαγράψετε την "
+"επιλεγμένη ενέργεια;"
+
+#: plugins/managesieve/localization/el_GR.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Μη επιτρεπτοί χαρακτήρες στο πεδίο"
+
+#: plugins/managesieve/localization/el_GR.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Το πεδίο δεν μπορεί να είναι κενό"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: lv_LV\n"
@@ -156,7 +156,7 @@ msgstr "Ievadiet savu(s) e-pastu(s) caur komatu:"
 
 #: plugins/managesieve/localization/lv_LV.inc:vacationdays
 msgid "How often send messages (in days):"
-msgstr "Cik dienu laikā vienam un tam pašam sūtītājam neatbildēt atkārtoti"
+msgstr "Cik dienu laikā vienam un tam pašam sūtītājam neatbildēt atkārtoti "
 "(piem., 7):"
 
 #: plugins/managesieve/localization/lv_LV.inc:vacationreason
@@ -270,3 +270,91 @@ msgstr "vērtība ir vienāda ar"
 #: plugins/managesieve/localization/lv_LV.inc:valuenotequals
 msgid "value does not equal"
 msgstr "vērtība nav vienāda ar"
+
+#: plugins/managesieve/localization/lv_LV.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Nezināma servera kļūda"
+
+#: plugins/managesieve/localization/lv_LV.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Neizdevās pieslēgties ManageSieve serverim"
+
+#: plugins/managesieve/localization/lv_LV.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Neizdevās dzēst filtru. Servera iekšējā kļūda"
+
+#: plugins/managesieve/localization/lv_LV.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Filtrs veiksmīgi izdzēsts"
+
+#: plugins/managesieve/localization/lv_LV.inc:filtersaved
+msgid "filtersaved"
+msgstr "Filtrs veiksmīgi saglabāts"
+
+#: plugins/managesieve/localization/lv_LV.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Neizdevās saglabāt filtru. Servera iekšējā kļūda"
+
+#: plugins/managesieve/localization/lv_LV.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Vai tiešām vēlaties dzēst atzīmēto filtru?"
+
+#: plugins/managesieve/localization/lv_LV.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Vai tiešām vēlaties dzēst atzīmēto nosacījumu?"
+
+#: plugins/managesieve/localization/lv_LV.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Vai tiešām vēlaties dzēst atzīmēto darbību?"
+
+#: plugins/managesieve/localization/lv_LV.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Lauks satur aizliegtus simbolus"
+
+#: plugins/managesieve/localization/lv_LV.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Lauks nedrīkst būt tukšs"
+
+#: plugins/managesieve/localization/lv_LV.inc:setactivateerror
+msgid "setactivateerror"
+msgstr "Neizdevās aktivizēt atzīmēto filtru kopu. Servera iekšējā kļūda"
+
+#: plugins/managesieve/localization/lv_LV.inc:setdeactivateerror
+msgid "setdeactivateerror"
+msgstr "Neizdevās deaktivizēt atzīmēto filtru kopu. Servera iekšējā kļūda"
+
+#: plugins/managesieve/localization/lv_LV.inc:setdeleteerror
+msgid "setdeleteerror"
+msgstr "Neizdevās izdzēst atzīmēto filtru kopu. Servera iekšējā kļūda"
+
+#: plugins/managesieve/localization/lv_LV.inc:setactivated
+msgid "setactivated"
+msgstr "Filtru kopa veiksmīgi aktivizēta"
+
+#: plugins/managesieve/localization/lv_LV.inc:setdeactivated
+msgid "setdeactivated"
+msgstr "Filtru kopa veiksmīgi deaktivizēta"
+
+#: plugins/managesieve/localization/lv_LV.inc:setdeleted
+msgid "setdeleted"
+msgstr "Filtru kopa veiksmīgi izdzēsta"
+
+#: plugins/managesieve/localization/lv_LV.inc:setdeleteconfirm
+msgid "setdeleteconfirm"
+msgstr "Vai tiešām vēlaties dzēst atzīmēto filtru kopu?"
+
+#: plugins/managesieve/localization/lv_LV.inc:setcreateerror
+msgid "setcreateerror"
+msgstr "Neizdevās izveidot filtru kopu. Servera iekšējā kļūda"
+
+#: plugins/managesieve/localization/lv_LV.inc:setcreated
+msgid "setcreated"
+msgstr "Filtru kopa veiksmīgi izveidota"
+
+#: plugins/managesieve/localization/lv_LV.inc:emptyname
+msgid "emptyname"
+msgstr "Neizdevās izveidot filtru kopu. Nav ievadīts kopas nosaukums"
+
+#: plugins/managesieve/localization/lv_LV.inc:nametoolong
+msgid "nametoolong"
+msgstr "Neizdevās izveidot filtru kopu. Pārāk garš kopas nosaukums"

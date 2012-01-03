@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: gl_ES\n"
+"Language: gl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -152,7 +152,7 @@ msgstr "Destinatario"
 
 #: plugins/managesieve/localization/gl_ES.inc:vacationaddresses
 msgid "Additional list of recipient e-mails (comma separated):"
-msgstr "Lista de enderezos de correo de destinatarios adicionais (separados por"
+msgstr "Lista de enderezos de correo de destinatarios adicionais (separados por "
 "comas):"
 
 #: plugins/managesieve/localization/gl_ES.inc:vacationdays
@@ -222,3 +222,94 @@ msgstr "de arquivo"
 #: plugins/managesieve/localization/gl_ES.inc:filterdisabled
 msgid "Filter disabled"
 msgstr "Filtro desactivado"
+
+#: plugins/managesieve/localization/gl_ES.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Erro descoñecido servidor"
+
+#: plugins/managesieve/localization/gl_ES.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Imposible conectar co servidor managesieve"
+
+#: plugins/managesieve/localization/gl_ES.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Imposible eliminar filtro. Ocurriu un erro no servidor"
+
+#: plugins/managesieve/localization/gl_ES.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Filtro borrado con éxito"
+
+#: plugins/managesieve/localization/gl_ES.inc:filtersaved
+msgid "filtersaved"
+msgstr "Filtro gardado con éxito"
+
+#: plugins/managesieve/localization/gl_ES.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Imposible gardar o filtro. Ocurriu un erro no servidor"
+
+#: plugins/managesieve/localization/gl_ES.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Realmente desexa eliminar o filtro seleccionado?"
+
+#: plugins/managesieve/localization/gl_ES.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Está seguro de que desexa eliminar a regra seleccionada?"
+
+#: plugins/managesieve/localization/gl_ES.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Está seguro de que desexa eliminar a acción seleccionada?"
+
+#: plugins/managesieve/localization/gl_ES.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Caracteres non permitidos no campo"
+
+#: plugins/managesieve/localization/gl_ES.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "O campo non pode estar baleiro"
+
+#: plugins/managesieve/localization/gl_ES.inc:setactivateerror
+msgid "setactivateerror"
+msgstr "Imposible activar o conxunto de filtros seleccionado. Ocurriu un erro no "
+"servidor"
+
+#: plugins/managesieve/localization/gl_ES.inc:setdeactivateerror
+msgid "setdeactivateerror"
+msgstr "Imposible desactivar o conxunto de filtros seleccionado. Ocurriu un error "
+"no servidor"
+
+#: plugins/managesieve/localization/gl_ES.inc:setdeleteerror
+msgid "setdeleteerror"
+msgstr "Imposible eliminar o conxunto de filtros seleccionado. Ocurriu un error no "
+"servidor"
+
+#: plugins/managesieve/localization/gl_ES.inc:setactivated
+msgid "setactivated"
+msgstr "O conxunto de filtros activouse con éxito"
+
+#: plugins/managesieve/localization/gl_ES.inc:setdeactivated
+msgid "setdeactivated"
+msgstr "O conxunto de filtros desactivouse con éxito"
+
+#: plugins/managesieve/localization/gl_ES.inc:setdeleted
+msgid "setdeleted"
+msgstr "O Conxunto de filtros borrouse con éxito"
+
+#: plugins/managesieve/localization/gl_ES.inc:setdeleteconfirm
+msgid "setdeleteconfirm"
+msgstr "Está seguro de que desexa eliminar o conxunto de filtros seleccionado?"
+
+#: plugins/managesieve/localization/gl_ES.inc:setcreateerror
+msgid "setcreateerror"
+msgstr "Imposible crear o conxunto de filtros. Ocurriu un error no servidor"
+
+#: plugins/managesieve/localization/gl_ES.inc:setcreated
+msgid "setcreated"
+msgstr "Conxunto de filtros creado con éxito"
+
+#: plugins/managesieve/localization/gl_ES.inc:emptyname
+msgid "emptyname"
+msgstr "Imposible crear o conxunto de filtros. Sen nome"
+
+#: plugins/managesieve/localization/gl_ES.inc:nametoolong
+msgid "nametoolong"
+msgstr "Imposible crear o conxunto de filtros. O nome é longo de máis"

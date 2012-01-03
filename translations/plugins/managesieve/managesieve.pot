@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-07T15:51:35+01:00\n"
+"POT-Creation-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: en_US\n"
@@ -416,4 +416,128 @@ msgstr ""
 
 #: plugins/managesieve/localization/en_US.inc:asciinumeric
 msgid "numeric (ascii-numeric)"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:filterunknownerror
+msgid "Unknown server error."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:filterconnerror
+msgid "Unable to connect to server."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:filterdeleteerror
+msgid "Unable to delete filter. Server error occured."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:filterdeleted
+msgid "Filter deleted successfully."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:filtersaved
+msgid "Filter saved successfully."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:filtersaveerror
+msgid "Unable to save filter. Server error occured."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:filterdeleteconfirm
+msgid "Do you really want to delete selected filter?"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:ruledeleteconfirm
+msgid "Are you sure, you want to delete selected rule?"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:actiondeleteconfirm
+msgid "Are you sure, you want to delete selected action?"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:forbiddenchars
+msgid "Forbidden characters in field."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:cannotbeempty
+msgid "Field cannot be empty."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:ruleexist
+msgid "Filter with specified name already exists."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:setactivateerror
+msgid "Unable to activate selected filters set. Server error occured."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:setdeactivateerror
+msgid "Unable to deactivate selected filters set. Server error occured."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:setdeleteerror
+msgid "Unable to delete selected filters set. Server error occured."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:setactivated
+msgid "Filters set activated successfully."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:setdeactivated
+msgid "Filters set deactivated successfully."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:setdeleted
+msgid "Filters set deleted successfully."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:setdeleteconfirm
+msgid "Are you sure, you want to delete selected filters set?"
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:setcreateerror
+msgid "Unable to create filters set. Server error occured."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:setcreated
+msgid "Filters set created successfully."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:activateerror
+msgid "Unable to enable selected filter(s). Server error occured."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:deactivateerror
+msgid "Unable to disable selected filter(s). Server error occured."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:activated
+msgid "Filter(s) disabled successfully."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:deactivated
+msgid "Filter(s) enabled successfully."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:moved
+msgid "Filter moved successfully."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:moveerror
+msgid "Unable to move selected filter. Server error occured."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:nametoolong
+msgid "Name too long."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:namereserved
+msgid "Reserved name."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:setexist
+msgid "Set already exists."
+msgstr ""
+
+#: plugins/managesieve/localization/en_US.inc:nodata
+msgid "At least one position must be selected!"
 msgstr ""

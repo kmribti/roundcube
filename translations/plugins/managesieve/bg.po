@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: bg_BG\n"
+"Language: bg\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -141,3 +141,53 @@ msgstr "Подател"
 #: plugins/managesieve/localization/bg_BG.inc:recipient
 msgid "Recipient"
 msgstr "Получател"
+
+#: plugins/managesieve/localization/bg_BG.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Неизвестна грешка на сървъра"
+
+#: plugins/managesieve/localization/bg_BG.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Невъзможност за свързване с managesieve "
+"сървъра "
+
+#: plugins/managesieve/localization/bg_BG.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Невъзможност за изтриване на филтър. "
+"Сървър грешка"
+
+#: plugins/managesieve/localization/bg_BG.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Филтърът е изтрит успешно"
+
+#: plugins/managesieve/localization/bg_BG.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Наистина ли искате да изтриете избрания "
+"филтър?"
+
+#: plugins/managesieve/localization/bg_BG.inc:filtersaved
+msgid "filtersaved"
+msgstr "Филтърът е записан успешно"
+
+#: plugins/managesieve/localization/bg_BG.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Филтърът не може да бъде записан. Сървър "
+"грешка."
+
+#: plugins/managesieve/localization/bg_BG.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Сигурни ли сте, че искате да изтриете "
+"избраното правило?"
+
+#: plugins/managesieve/localization/bg_BG.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Сигурни ли сте, че искате да изтриете "
+"избраното действие?"
+
+#: plugins/managesieve/localization/bg_BG.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Забранени символи в полето"
+
+#: plugins/managesieve/localization/bg_BG.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Полето не може да бъде празно"

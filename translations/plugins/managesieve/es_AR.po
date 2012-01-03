@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: es_AR\n"
@@ -152,7 +152,7 @@ msgstr "Destinatario"
 
 #: plugins/managesieve/localization/es_AR.inc:vacationaddresses
 msgid "Additional list of recipient e-mails (comma separated):"
-msgstr "Lista de direcciones de correo de destinatarios adicionales (separados por"
+msgstr "Lista de direcciones de correo de destinatarios adicionales (separados por "
 "comas):"
 
 #: plugins/managesieve/localization/es_AR.inc:vacationdays
@@ -222,3 +222,93 @@ msgstr "desde archivo"
 #: plugins/managesieve/localization/es_AR.inc:filterdisabled
 msgid "Filter disabled"
 msgstr "Filtro deshabilitado"
+
+#: plugins/managesieve/localization/es_AR.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Error desconocido de servidor"
+
+#: plugins/managesieve/localization/es_AR.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Imposible conectar con el servidor managesieve"
+
+#: plugins/managesieve/localization/es_AR.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Imposible borrar filtro. Ha ocurrido un error en el servidor"
+
+#: plugins/managesieve/localization/es_AR.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Filtro borrado satisfactoriamente"
+
+#: plugins/managesieve/localization/es_AR.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "¿Realmente desea borrar el filtro seleccionado?"
+
+#: plugins/managesieve/localization/es_AR.inc:filtersaved
+msgid "filtersaved"
+msgstr "Filtro guardado satisfactoriamente"
+
+#: plugins/managesieve/localization/es_AR.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Imposible guardar ell filtro. Ha ocurrido un error en el servidor"
+
+#: plugins/managesieve/localization/es_AR.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "¿Está seguro de que desea borrar la regla seleccionada?"
+
+#: plugins/managesieve/localization/es_AR.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "¿Está seguro de que desea borrar la acción seleccionada?"
+
+#: plugins/managesieve/localization/es_AR.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Caracteres prohibidos en el campo"
+
+#: plugins/managesieve/localization/es_AR.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "El campo no puede estar vacío"
+
+#: plugins/managesieve/localization/es_AR.inc:setactivateerror
+msgid "setactivateerror"
+msgstr "Imposible activar el conjunto de filtros. Error en el servidor."
+
+#: plugins/managesieve/localization/es_AR.inc:setdeactivateerror
+msgid "setdeactivateerror"
+msgstr "Imposible desactivar el conjunto de filtros. Error en el servidor."
+
+#: plugins/managesieve/localization/es_AR.inc:setdeleteerror
+msgid "setdeleteerror"
+msgstr "Imposible eliminar el conjunto de filtros. Error en el servidor."
+
+#: plugins/managesieve/localization/es_AR.inc:setactivated
+msgid "setactivated"
+msgstr "Conjunto de filtros activados correctamente"
+
+#: plugins/managesieve/localization/es_AR.inc:setdeactivated
+msgid "setdeactivated"
+msgstr "Conjunto de filtros desactivados correctamente"
+
+#: plugins/managesieve/localization/es_AR.inc:setdeleted
+msgid "setdeleted"
+msgstr "Conjunto de filtros eliminados correctamente"
+
+#: plugins/managesieve/localization/es_AR.inc:setdeleteconfirm
+msgid "setdeleteconfirm"
+msgstr "¿Esta seguro, que quiere eliminar el conjunto de filtros seleccionado?"
+
+#: plugins/managesieve/localization/es_AR.inc:setcreateerror
+msgid "setcreateerror"
+msgstr "Imposible crear el conjunto de filtros. Error en el servidor."
+
+#: plugins/managesieve/localization/es_AR.inc:setcreated
+msgid "setcreated"
+msgstr "Conjunto de filtros creados correctamente"
+
+#: plugins/managesieve/localization/es_AR.inc:emptyname
+msgid "emptyname"
+msgstr "Imposible crear el conjunto de filtros. Nombre del conjunto de filtros "
+"vacio"
+
+#: plugins/managesieve/localization/es_AR.inc:nametoolong
+msgid "nametoolong"
+msgstr "Imposible crear el conjunto de filtros. Nombre del conjunto de filtros muy "
+"largo"

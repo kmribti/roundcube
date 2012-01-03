@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: zh_CN\n"
@@ -141,3 +141,47 @@ msgstr "发件人"
 #: plugins/managesieve/localization/zh_CN.inc:recipient
 msgid "Recipient"
 msgstr "收件人"
+
+#: plugins/managesieve/localization/zh_CN.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "未知的服务器错误"
+
+#: plugins/managesieve/localization/zh_CN.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "无法连接到 managesieve 服务器"
+
+#: plugins/managesieve/localization/zh_CN.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "无法删除过滤器。服务器错误"
+
+#: plugins/managesieve/localization/zh_CN.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "过滤器已成功删除"
+
+#: plugins/managesieve/localization/zh_CN.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "您确定要删除所选择的过滤器吗？"
+
+#: plugins/managesieve/localization/zh_CN.inc:filtersaved
+msgid "filtersaved"
+msgstr "过滤器已成功保存。"
+
+#: plugins/managesieve/localization/zh_CN.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "无法保存过滤器。服务器错误"
+
+#: plugins/managesieve/localization/zh_CN.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "您确定要删除所选择的规则吗？"
+
+#: plugins/managesieve/localization/zh_CN.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "您确定要删除所选择的动作吗？"
+
+#: plugins/managesieve/localization/zh_CN.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "内容中包含禁用的字符"
+
+#: plugins/managesieve/localization/zh_CN.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "内容不能为空"

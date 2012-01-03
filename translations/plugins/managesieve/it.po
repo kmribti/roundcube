@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: it_IT\n"
@@ -213,3 +213,91 @@ msgstr "dal file"
 #: plugins/managesieve/localization/it_IT.inc:filterdisabled
 msgid "Filter disabled"
 msgstr "Filtro disabilitato"
+
+#: plugins/managesieve/localization/it_IT.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Errore sconosciuto del server"
+
+#: plugins/managesieve/localization/it_IT.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Collegamento al server managesieve fallito"
+
+#: plugins/managesieve/localization/it_IT.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Eliminazione del filtro fallita. Si è verificato un errore nel server"
+
+#: plugins/managesieve/localization/it_IT.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Filtro eliminato con successo"
+
+#: plugins/managesieve/localization/it_IT.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Vuoi veramente eliminare il filtro selezionato?"
+
+#: plugins/managesieve/localization/it_IT.inc:filtersaved
+msgid "filtersaved"
+msgstr "Filtro salvato con successo"
+
+#: plugins/managesieve/localization/it_IT.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Salvataggio del filtro fallito. Si è verificato un errore nel server"
+
+#: plugins/managesieve/localization/it_IT.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Sei sicuro di voler eliminare la regola selezionata?"
+
+#: plugins/managesieve/localization/it_IT.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Sei sicuro di voler eliminare l'azione selezionata?"
+
+#: plugins/managesieve/localization/it_IT.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Caratteri non consentiti nel campo"
+
+#: plugins/managesieve/localization/it_IT.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Il campo non può essere vuoto"
+
+#: plugins/managesieve/localization/it_IT.inc:setactivateerror
+msgid "setactivateerror"
+msgstr "Impossibile attivare il filtro. Errore del server"
+
+#: plugins/managesieve/localization/it_IT.inc:setdeactivateerror
+msgid "setdeactivateerror"
+msgstr "Impossibile disattivare il filtro. Errore del server"
+
+#: plugins/managesieve/localization/it_IT.inc:setdeleteerror
+msgid "setdeleteerror"
+msgstr "Impossibile cancellare il filtro. Errore del server"
+
+#: plugins/managesieve/localization/it_IT.inc:setactivated
+msgid "setactivated"
+msgstr "Filtro attivato"
+
+#: plugins/managesieve/localization/it_IT.inc:setdeactivated
+msgid "setdeactivated"
+msgstr "Filtro disattivato"
+
+#: plugins/managesieve/localization/it_IT.inc:setdeleted
+msgid "setdeleted"
+msgstr "Filtro cancellato"
+
+#: plugins/managesieve/localization/it_IT.inc:setdeleteconfirm
+msgid "setdeleteconfirm"
+msgstr "Sei sicuro di voler cancellare il gruppo di filtri"
+
+#: plugins/managesieve/localization/it_IT.inc:setcreateerror
+msgid "setcreateerror"
+msgstr "Impossibile creare il gruppo. Errore del server"
+
+#: plugins/managesieve/localization/it_IT.inc:setcreated
+msgid "setcreated"
+msgstr "Gruppo di filtri creato"
+
+#: plugins/managesieve/localization/it_IT.inc:emptyname
+msgid "emptyname"
+msgstr "Impossibile creare il gruppo: Inserire un nome"
+
+#: plugins/managesieve/localization/it_IT.inc:nametoolong
+msgid "nametoolong"
+msgstr "Impossibile creare il gruppo: Nome troppo lungo"

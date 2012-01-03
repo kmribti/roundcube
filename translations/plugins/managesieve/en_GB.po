@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: en_GB\n"
@@ -157,3 +157,47 @@ msgstr "Message body (vacation reason):"
 #: plugins/managesieve/localization/en_GB.inc:rulestop
 msgid "Stop evaluating rules"
 msgstr "Stop evaluating rules"
+
+#: plugins/managesieve/localization/en_GB.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Unknown server error"
+
+#: plugins/managesieve/localization/en_GB.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Unable to connect to managesieve server"
+
+#: plugins/managesieve/localization/en_GB.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Unable to delete filter. Server error occured"
+
+#: plugins/managesieve/localization/en_GB.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Filter deleted successfully"
+
+#: plugins/managesieve/localization/en_GB.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Do you really want to delete selected filter?"
+
+#: plugins/managesieve/localization/en_GB.inc:filtersaved
+msgid "filtersaved"
+msgstr "Filter saved successfully"
+
+#: plugins/managesieve/localization/en_GB.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Unable to save filter. Server error occured."
+
+#: plugins/managesieve/localization/en_GB.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Are you sure, you want to delete selected rule?"
+
+#: plugins/managesieve/localization/en_GB.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Are you sure, you want to delete selected action?"
+
+#: plugins/managesieve/localization/en_GB.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Forbidden characters in field"
+
+#: plugins/managesieve/localization/en_GB.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Field cannot be empty"

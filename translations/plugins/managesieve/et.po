@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
-"Language: et_EE\n"
+"Language: et\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -157,3 +157,47 @@ msgstr "Kirja sisu (puhkuse põhjus):"
 #: plugins/managesieve/localization/et_EE.inc:rulestop
 msgid "Stop evaluating rules"
 msgstr "Peata reeglite otsimine"
+
+#: plugins/managesieve/localization/et_EE.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Tundmatu serveri tõrge"
+
+#: plugins/managesieve/localization/et_EE.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Managesieve serveriga ühendumine nurjus"
+
+#: plugins/managesieve/localization/et_EE.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Filtri kustutamine nurjus. Ilmnes serveri tõrge."
+
+#: plugins/managesieve/localization/et_EE.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Filter edukalt kustutatud"
+
+#: plugins/managesieve/localization/et_EE.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Soovid valitud filtri kustutada?"
+
+#: plugins/managesieve/localization/et_EE.inc:filtersaved
+msgid "filtersaved"
+msgstr "Filter edukalt salvestatud"
+
+#: plugins/managesieve/localization/et_EE.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Filtri salvestamine nurjus. Ilmnes serveri tõrge."
+
+#: plugins/managesieve/localization/et_EE.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Soovid valitud reegli kustutada?"
+
+#: plugins/managesieve/localization/et_EE.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Soovid valitud tegevuse kustutada?"
+
+#: plugins/managesieve/localization/et_EE.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Väljal on lubamatu märk"
+
+#: plugins/managesieve/localization/et_EE.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Väli ei või tühi olla"

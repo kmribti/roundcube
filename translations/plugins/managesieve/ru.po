@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:36+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ru_RU\n"
@@ -52,7 +52,7 @@ msgstr "соответствует всем указанным правилам"
 
 #: plugins/managesieve/localization/ru_RU.inc:filteranyof
 msgid "matching any of the following rules"
-msgstr "соответствует любому из указанных"
+msgstr "соответствует любому из указанных "
 "правил"
 
 #: plugins/managesieve/localization/ru_RU.inc:filterany
@@ -153,7 +153,7 @@ msgstr "Получатель"
 
 #: plugins/managesieve/localization/ru_RU.inc:vacationaddresses
 msgid "Additional list of recipient e-mails (comma separated):"
-msgstr "Список дополнительных адресов"
+msgstr "Список дополнительных адресов "
 "получателя (разделённых запятыми):"
 
 #: plugins/managesieve/localization/ru_RU.inc:vacationdays
@@ -303,3 +303,103 @@ msgstr "Помечено"
 #: plugins/managesieve/localization/ru_RU.inc:flagdraft
 msgid "Draft"
 msgstr "Черновик"
+
+#: plugins/managesieve/localization/ru_RU.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Неизвестная ошибка сервера"
+
+#: plugins/managesieve/localization/ru_RU.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Невозможно подсоединится к серверу "
+"фильтров"
+
+#: plugins/managesieve/localization/ru_RU.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Невозможно удалить фильтр. Ошибка "
+"сервера"
+
+#: plugins/managesieve/localization/ru_RU.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Фильтр успешно удалён"
+
+#: plugins/managesieve/localization/ru_RU.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Вы действительно хотите удалить фильтр?"
+
+#: plugins/managesieve/localization/ru_RU.inc:filtersaved
+msgid "filtersaved"
+msgstr "Фильтр успешно сохранён"
+
+#: plugins/managesieve/localization/ru_RU.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Невозможно сохранить фильтр. Ошибка "
+"сервера"
+
+#: plugins/managesieve/localization/ru_RU.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Вы уверенны, что хотите удалить это "
+"правило?"
+
+#: plugins/managesieve/localization/ru_RU.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Вы уверенны, что хотите удалить это "
+"действие?"
+
+#: plugins/managesieve/localization/ru_RU.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Недопустимые символы в поле"
+
+#: plugins/managesieve/localization/ru_RU.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Поле не может быть пустым"
+
+#: plugins/managesieve/localization/ru_RU.inc:setactivateerror
+msgid "setactivateerror"
+msgstr "Невозможно включить выбранный набор "
+"фильтров. Ошибка сервера"
+
+#: plugins/managesieve/localization/ru_RU.inc:setdeactivateerror
+msgid "setdeactivateerror"
+msgstr "Невозможно отключить выбранный набор "
+"фильтров. Ошибка сервера"
+
+#: plugins/managesieve/localization/ru_RU.inc:setdeleteerror
+msgid "setdeleteerror"
+msgstr "Невозможно удалить выбранный набор "
+"фильтров. Ошибка сервера"
+
+#: plugins/managesieve/localization/ru_RU.inc:setactivated
+msgid "setactivated"
+msgstr "Набор фильтров успешно включён"
+
+#: plugins/managesieve/localization/ru_RU.inc:setdeactivated
+msgid "setdeactivated"
+msgstr "Набор фильтров успешно отключён"
+
+#: plugins/managesieve/localization/ru_RU.inc:setdeleted
+msgid "setdeleted"
+msgstr "Набор фильтров успешно удалён"
+
+#: plugins/managesieve/localization/ru_RU.inc:setdeleteconfirm
+msgid "setdeleteconfirm"
+msgstr "Вы уверены в том, что хотите удалить "
+"выбранный набор фильтров?"
+
+#: plugins/managesieve/localization/ru_RU.inc:setcreateerror
+msgid "setcreateerror"
+msgstr "Невозможно создать набор фильтров. "
+"Ошибка сервера"
+
+#: plugins/managesieve/localization/ru_RU.inc:setcreated
+msgid "setcreated"
+msgstr "Набор фильтров успешно создан"
+
+#: plugins/managesieve/localization/ru_RU.inc:emptyname
+msgid "emptyname"
+msgstr "Невозможно создать набор фильтров. "
+"Название не задано"
+
+#: plugins/managesieve/localization/ru_RU.inc:nametoolong
+msgid "nametoolong"
+msgstr "Невозможно создать набор фильтров. "
+"Название слишком длинное"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: fr_FR\n"
@@ -197,3 +197,47 @@ msgstr "Favori"
 #: plugins/managesieve/localization/fr_FR.inc:flagdraft
 msgid "Draft"
 msgstr "Brouillon"
+
+#: plugins/managesieve/localization/fr_FR.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Erreur du serveur inconnue"
+
+#: plugins/managesieve/localization/fr_FR.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Connexion au serveur Managesieve impossible"
+
+#: plugins/managesieve/localization/fr_FR.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Suppression du filtre impossible. Le serveur à produit une erreur"
+
+#: plugins/managesieve/localization/fr_FR.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Le filtre a bien été supprimé"
+
+#: plugins/managesieve/localization/fr_FR.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Voulez-vous vraiment supprimer le filtre sélectionné?"
+
+#: plugins/managesieve/localization/fr_FR.inc:filtersaved
+msgid "filtersaved"
+msgstr "Le filtre a bien été enregistré"
+
+#: plugins/managesieve/localization/fr_FR.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Enregistrement du filtre impossibe. Le serveur à produit une erreur"
+
+#: plugins/managesieve/localization/fr_FR.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Voulez-vous vraiment supprimer la règle sélectionnée?"
+
+#: plugins/managesieve/localization/fr_FR.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Voulez-vous vraiment supprimer l'action sélectionnée?"
+
+#: plugins/managesieve/localization/fr_FR.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Caractères interdits dans le champ"
+
+#: plugins/managesieve/localization/fr_FR.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Le champ ne peut pas être vide"

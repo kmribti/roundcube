@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2011-12-07T15:51:35+01:00\n"
+"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: fi_FI\n"
@@ -209,3 +209,47 @@ msgstr "tiedostosta"
 #: plugins/managesieve/localization/fi_FI.inc:filterdisabled
 msgid "Filter disabled"
 msgstr "Suodatin on poistettu käytöstä"
+
+#: plugins/managesieve/localization/fi_FI.inc:filterunknownerror
+msgid "filterunknownerror"
+msgstr "Tuntematon palvelin virhe"
+
+#: plugins/managesieve/localization/fi_FI.inc:filterconnerror
+msgid "filterconnerror"
+msgstr "Yhdistäminen palvelimeen epäonnistui"
+
+#: plugins/managesieve/localization/fi_FI.inc:filterdeleteerror
+msgid "filterdeleteerror"
+msgstr "Suodattimen poistaminen epäonnistui. Palvelin virhe"
+
+#: plugins/managesieve/localization/fi_FI.inc:filterdeleted
+msgid "filterdeleted"
+msgstr "Suodatin poistettu"
+
+#: plugins/managesieve/localization/fi_FI.inc:filterdeleteconfirm
+msgid "filterdeleteconfirm"
+msgstr "Haluatko varmasti poistaa valitut suodattimet?"
+
+#: plugins/managesieve/localization/fi_FI.inc:filtersaved
+msgid "filtersaved"
+msgstr "Suodatin tallennettu"
+
+#: plugins/managesieve/localization/fi_FI.inc:filtersaveerror
+msgid "filtersaveerror"
+msgstr "Suodattimen tallennus epäonnistui. Palvelin virhe"
+
+#: plugins/managesieve/localization/fi_FI.inc:ruledeleteconfirm
+msgid "ruledeleteconfirm"
+msgstr "Haluatko poistaa valitut säännöt?"
+
+#: plugins/managesieve/localization/fi_FI.inc:actiondeleteconfirm
+msgid "actiondeleteconfirm"
+msgstr "Haluatko poistaa valitut tapahtumat?"
+
+#: plugins/managesieve/localization/fi_FI.inc:forbiddenchars
+msgid "forbiddenchars"
+msgstr "Sisältää kiellettyjä kirjaimia"
+
+#: plugins/managesieve/localization/fi_FI.inc:cannotbeempty
+msgid "cannotbeempty"
+msgstr "Kenttä ei voi olla tyhjä"
