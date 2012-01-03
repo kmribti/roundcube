@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:22:21+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: bg\n"
@@ -143,51 +143,51 @@ msgid "Recipient"
 msgstr "Получател"
 
 #: plugins/managesieve/localization/bg_BG.inc:filterunknownerror
-msgid "filterunknownerror"
+msgid "Unknown server error."
 msgstr "Неизвестна грешка на сървъра"
 
 #: plugins/managesieve/localization/bg_BG.inc:filterconnerror
-msgid "filterconnerror"
+msgid "Unable to connect to server."
 msgstr "Невъзможност за свързване с managesieve "
 "сървъра "
 
 #: plugins/managesieve/localization/bg_BG.inc:filterdeleteerror
-msgid "filterdeleteerror"
+msgid "Unable to delete filter. Server error occured."
 msgstr "Невъзможност за изтриване на филтър. "
 "Сървър грешка"
 
 #: plugins/managesieve/localization/bg_BG.inc:filterdeleted
-msgid "filterdeleted"
+msgid "Filter deleted successfully."
 msgstr "Филтърът е изтрит успешно"
 
 #: plugins/managesieve/localization/bg_BG.inc:filterdeleteconfirm
-msgid "filterdeleteconfirm"
+msgid "Do you really want to delete selected filter?"
 msgstr "Наистина ли искате да изтриете избрания "
 "филтър?"
 
 #: plugins/managesieve/localization/bg_BG.inc:filtersaved
-msgid "filtersaved"
+msgid "Filter saved successfully."
 msgstr "Филтърът е записан успешно"
 
 #: plugins/managesieve/localization/bg_BG.inc:filtersaveerror
-msgid "filtersaveerror"
+msgid "Unable to save filter. Server error occured."
 msgstr "Филтърът не може да бъде записан. Сървър "
 "грешка."
 
 #: plugins/managesieve/localization/bg_BG.inc:ruledeleteconfirm
-msgid "ruledeleteconfirm"
+msgid "Are you sure, you want to delete selected rule?"
 msgstr "Сигурни ли сте, че искате да изтриете "
 "избраното правило?"
 
 #: plugins/managesieve/localization/bg_BG.inc:actiondeleteconfirm
-msgid "actiondeleteconfirm"
+msgid "Are you sure, you want to delete selected action?"
 msgstr "Сигурни ли сте, че искате да изтриете "
 "избраното действие?"
 
 #: plugins/managesieve/localization/bg_BG.inc:forbiddenchars
-msgid "forbiddenchars"
+msgid "Forbidden characters in field."
 msgstr "Забранени символи в полето"
 
 #: plugins/managesieve/localization/bg_BG.inc:cannotbeempty
-msgid "cannotbeempty"
+msgid "Field cannot be empty."
 msgstr "Полето не може да бъде празно"

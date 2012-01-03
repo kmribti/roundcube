@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:22:21+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: lv_LV\n"
@@ -272,83 +272,83 @@ msgid "value does not equal"
 msgstr "vērtība nav vienāda ar"
 
 #: plugins/managesieve/localization/lv_LV.inc:filterunknownerror
-msgid "filterunknownerror"
+msgid "Unknown server error."
 msgstr "Nezināma servera kļūda"
 
 #: plugins/managesieve/localization/lv_LV.inc:filterconnerror
-msgid "filterconnerror"
+msgid "Unable to connect to server."
 msgstr "Neizdevās pieslēgties ManageSieve serverim"
 
 #: plugins/managesieve/localization/lv_LV.inc:filterdeleteerror
-msgid "filterdeleteerror"
+msgid "Unable to delete filter. Server error occured."
 msgstr "Neizdevās dzēst filtru. Servera iekšējā kļūda"
 
 #: plugins/managesieve/localization/lv_LV.inc:filterdeleted
-msgid "filterdeleted"
+msgid "Filter deleted successfully."
 msgstr "Filtrs veiksmīgi izdzēsts"
 
 #: plugins/managesieve/localization/lv_LV.inc:filtersaved
-msgid "filtersaved"
+msgid "Filter saved successfully."
 msgstr "Filtrs veiksmīgi saglabāts"
 
 #: plugins/managesieve/localization/lv_LV.inc:filtersaveerror
-msgid "filtersaveerror"
+msgid "Unable to save filter. Server error occured."
 msgstr "Neizdevās saglabāt filtru. Servera iekšējā kļūda"
 
 #: plugins/managesieve/localization/lv_LV.inc:filterdeleteconfirm
-msgid "filterdeleteconfirm"
+msgid "Do you really want to delete selected filter?"
 msgstr "Vai tiešām vēlaties dzēst atzīmēto filtru?"
 
 #: plugins/managesieve/localization/lv_LV.inc:ruledeleteconfirm
-msgid "ruledeleteconfirm"
+msgid "Are you sure, you want to delete selected rule?"
 msgstr "Vai tiešām vēlaties dzēst atzīmēto nosacījumu?"
 
 #: plugins/managesieve/localization/lv_LV.inc:actiondeleteconfirm
-msgid "actiondeleteconfirm"
+msgid "Are you sure, you want to delete selected action?"
 msgstr "Vai tiešām vēlaties dzēst atzīmēto darbību?"
 
 #: plugins/managesieve/localization/lv_LV.inc:forbiddenchars
-msgid "forbiddenchars"
+msgid "Forbidden characters in field."
 msgstr "Lauks satur aizliegtus simbolus"
 
 #: plugins/managesieve/localization/lv_LV.inc:cannotbeempty
-msgid "cannotbeempty"
+msgid "Field cannot be empty."
 msgstr "Lauks nedrīkst būt tukšs"
 
 #: plugins/managesieve/localization/lv_LV.inc:setactivateerror
-msgid "setactivateerror"
+msgid "Unable to activate selected filters set. Server error occured."
 msgstr "Neizdevās aktivizēt atzīmēto filtru kopu. Servera iekšējā kļūda"
 
 #: plugins/managesieve/localization/lv_LV.inc:setdeactivateerror
-msgid "setdeactivateerror"
+msgid "Unable to deactivate selected filters set. Server error occured."
 msgstr "Neizdevās deaktivizēt atzīmēto filtru kopu. Servera iekšējā kļūda"
 
 #: plugins/managesieve/localization/lv_LV.inc:setdeleteerror
-msgid "setdeleteerror"
+msgid "Unable to delete selected filters set. Server error occured."
 msgstr "Neizdevās izdzēst atzīmēto filtru kopu. Servera iekšējā kļūda"
 
 #: plugins/managesieve/localization/lv_LV.inc:setactivated
-msgid "setactivated"
+msgid "Filters set activated successfully."
 msgstr "Filtru kopa veiksmīgi aktivizēta"
 
 #: plugins/managesieve/localization/lv_LV.inc:setdeactivated
-msgid "setdeactivated"
+msgid "Filters set deactivated successfully."
 msgstr "Filtru kopa veiksmīgi deaktivizēta"
 
 #: plugins/managesieve/localization/lv_LV.inc:setdeleted
-msgid "setdeleted"
+msgid "Filters set deleted successfully."
 msgstr "Filtru kopa veiksmīgi izdzēsta"
 
 #: plugins/managesieve/localization/lv_LV.inc:setdeleteconfirm
-msgid "setdeleteconfirm"
+msgid "Are you sure, you want to delete selected filters set?"
 msgstr "Vai tiešām vēlaties dzēst atzīmēto filtru kopu?"
 
 #: plugins/managesieve/localization/lv_LV.inc:setcreateerror
-msgid "setcreateerror"
+msgid "Unable to create filters set. Server error occured."
 msgstr "Neizdevās izveidot filtru kopu. Servera iekšējā kļūda"
 
 #: plugins/managesieve/localization/lv_LV.inc:setcreated
-msgid "setcreated"
+msgid "Filters set created successfully."
 msgstr "Filtru kopa veiksmīgi izveidota"
 
 #: plugins/managesieve/localization/lv_LV.inc:emptyname
@@ -356,5 +356,5 @@ msgid "emptyname"
 msgstr "Neizdevās izveidot filtru kopu. Nav ievadīts kopas nosaukums"
 
 #: plugins/managesieve/localization/lv_LV.inc:nametoolong
-msgid "nametoolong"
+msgid "Name too long."
 msgstr "Neizdevās izveidot filtru kopu. Pārāk garš kopas nosaukums"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:22:21+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: el\n"
@@ -163,20 +163,20 @@ msgid "Stop evaluating rules"
 msgstr "Παύση επαλήθευσης κανόνων"
 
 #: plugins/managesieve/localization/el_GR.inc:filterunknownerror
-msgid "filterunknownerror"
+msgid "Unknown server error."
 msgstr "Άγνωστο σφάλμα διακομιστή"
 
 #: plugins/managesieve/localization/el_GR.inc:filterconnerror
-msgid "filterconnerror"
+msgid "Unable to connect to server."
 msgstr "Αδυναμία σύνδεσης στον διακομιστή managesieve"
 
 #: plugins/managesieve/localization/el_GR.inc:filterdeleteerror
-msgid "filterdeleteerror"
+msgid "Unable to delete filter. Server error occured."
 msgstr "Αδυναμία διαγραφής φίλτρου. Προέκυψε "
 "σφάλμα στον διακομιστή"
 
 #: plugins/managesieve/localization/el_GR.inc:filterdeleted
-msgid "filterdeleted"
+msgid "Filter deleted successfully."
 msgstr "Το φίλτρο διαγράφηκε επιτυχώς"
 
 #: plugins/managesieve/localization/el_GR.inc:filterconfirmdelete
@@ -185,28 +185,28 @@ msgstr "Θέλετε όντως να διαγράψετε το επιλεγμέ�
 "φίλτρο;"
 
 #: plugins/managesieve/localization/el_GR.inc:filtersaved
-msgid "filtersaved"
+msgid "Filter saved successfully."
 msgstr "Το φίλτρο αποθηκεύτηκε επιτυχώς"
 
 #: plugins/managesieve/localization/el_GR.inc:filtersaveerror
-msgid "filtersaveerror"
+msgid "Unable to save filter. Server error occured."
 msgstr "Αδυναμία αποθήκευσης φίλτρου. Προέκυψε "
 "σφάλμα στον διακομιστή"
 
 #: plugins/managesieve/localization/el_GR.inc:ruledeleteconfirm
-msgid "ruledeleteconfirm"
+msgid "Are you sure, you want to delete selected rule?"
 msgstr "Θέλετε όντως να διαγράψετε τον "
 "επιλεγμένο κανόνα;"
 
 #: plugins/managesieve/localization/el_GR.inc:actiondeleteconfirm
-msgid "actiondeleteconfirm"
+msgid "Are you sure, you want to delete selected action?"
 msgstr "Θέλετε όντως να διαγράψετε την "
 "επιλεγμένη ενέργεια;"
 
 #: plugins/managesieve/localization/el_GR.inc:forbiddenchars
-msgid "forbiddenchars"
+msgid "Forbidden characters in field."
 msgstr "Μη επιτρεπτοί χαρακτήρες στο πεδίο"
 
 #: plugins/managesieve/localization/el_GR.inc:cannotbeempty
-msgid "cannotbeempty"
+msgid "Field cannot be empty."
 msgstr "Το πεδίο δεν μπορεί να είναι κενό"

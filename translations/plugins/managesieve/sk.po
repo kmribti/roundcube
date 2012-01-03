@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:22:22+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: sk_SK\n"
@@ -215,83 +215,83 @@ msgid "Filter disabled"
 msgstr "Filter zakázaný"
 
 #: plugins/managesieve/localization/sk_SK.inc:filterunknownerror
-msgid "filterunknownerror"
+msgid "Unknown server error."
 msgstr "Neznáma chyba serveru"
 
 #: plugins/managesieve/localization/sk_SK.inc:filterconnerror
-msgid "filterconnerror"
+msgid "Unable to connect to server."
 msgstr "Nepodarilo sa pripojiť k managesieve serveru"
 
 #: plugins/managesieve/localization/sk_SK.inc:filterdeleteerror
-msgid "filterdeleteerror"
+msgid "Unable to delete filter. Server error occured."
 msgstr "Nepodarilo sa zmazať filter, server ohlásil chybu"
 
 #: plugins/managesieve/localization/sk_SK.inc:filterdeleted
-msgid "filterdeleted"
+msgid "Filter deleted successfully."
 msgstr "Filter bol zmazaný"
 
 #: plugins/managesieve/localization/sk_SK.inc:filtersaved
-msgid "filtersaved"
+msgid "Filter saved successfully."
 msgstr "Filter bol uložený"
 
 #: plugins/managesieve/localization/sk_SK.inc:filtersaveerror
-msgid "filtersaveerror"
+msgid "Unable to save filter. Server error occured."
 msgstr "Nepodarilo sa uložiť filter, server ohlásil chybu"
 
 #: plugins/managesieve/localization/sk_SK.inc:filterdeleteconfirm
-msgid "filterdeleteconfirm"
+msgid "Do you really want to delete selected filter?"
 msgstr "Naozaj si prajete zmazať tento filter?"
 
 #: plugins/managesieve/localization/sk_SK.inc:ruledeleteconfirm
-msgid "ruledeleteconfirm"
+msgid "Are you sure, you want to delete selected rule?"
 msgstr "Naozaj si prajete zamzať toto pravidlo?"
 
 #: plugins/managesieve/localization/sk_SK.inc:actiondeleteconfirm
-msgid "actiondeleteconfirm"
+msgid "Are you sure, you want to delete selected action?"
 msgstr "Naozaj si prajete zmazať túto akciu?"
 
 #: plugins/managesieve/localization/sk_SK.inc:forbiddenchars
-msgid "forbiddenchars"
+msgid "Forbidden characters in field."
 msgstr "Pole obsahuje nepovolené znaky"
 
 #: plugins/managesieve/localization/sk_SK.inc:cannotbeempty
-msgid "cannotbeempty"
+msgid "Field cannot be empty."
 msgstr "Pole nemôže byť prázdne"
 
 #: plugins/managesieve/localization/sk_SK.inc:setactivateerror
-msgid "setactivateerror"
+msgid "Unable to activate selected filters set. Server error occured."
 msgstr "Nepodarilo sa aktivovať zvolenú sadu filtrov, server ohlásil chybu"
 
 #: plugins/managesieve/localization/sk_SK.inc:setdeactivateerror
-msgid "setdeactivateerror"
+msgid "Unable to deactivate selected filters set. Server error occured."
 msgstr "Nepodarilo sa deaktivovať zvolenú sadu filtrov, server ohlásil chybu"
 
 #: plugins/managesieve/localization/sk_SK.inc:setdeleteerror
-msgid "setdeleteerror"
+msgid "Unable to delete selected filters set. Server error occured."
 msgstr "Nepodarilo sa zmazať zvolenú sadu filtrov, server ohlásil chybu"
 
 #: plugins/managesieve/localization/sk_SK.inc:setactivated
-msgid "setactivated"
+msgid "Filters set activated successfully."
 msgstr "Sada filtrov bola aktivovaná"
 
 #: plugins/managesieve/localization/sk_SK.inc:setdeactivated
-msgid "setdeactivated"
+msgid "Filters set deactivated successfully."
 msgstr "Sada filtrov bola deaktivovaná"
 
 #: plugins/managesieve/localization/sk_SK.inc:setdeleted
-msgid "setdeleted"
+msgid "Filters set deleted successfully."
 msgstr "Sada filtrov bola zmazaná"
 
 #: plugins/managesieve/localization/sk_SK.inc:setdeleteconfirm
-msgid "setdeleteconfirm"
+msgid "Are you sure, you want to delete selected filters set?"
 msgstr "Naozaj si prajete zmazať túto sadu filtrov?"
 
 #: plugins/managesieve/localization/sk_SK.inc:setcreateerror
-msgid "setcreateerror"
+msgid "Unable to create filters set. Server error occured."
 msgstr "Nepodarilo sa vytvoriť sadu filtrov, server ohlásil chybu"
 
 #: plugins/managesieve/localization/sk_SK.inc:setcreated
-msgid "setcreated"
+msgid "Filters set created successfully."
 msgstr "Sada filtrov bola vytvorená"
 
 #: plugins/managesieve/localization/sk_SK.inc:emptyname
@@ -299,5 +299,5 @@ msgid "emptyname"
 msgstr "Názov sady filtrov nemôže byť prázdny"
 
 #: plugins/managesieve/localization/sk_SK.inc:nametoolong
-msgid "nametoolong"
+msgid "Name too long."
 msgstr "Názov sady filtrov je príliš dlhý"

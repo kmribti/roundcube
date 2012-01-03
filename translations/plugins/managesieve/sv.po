@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:22:22+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: sv\n"
@@ -271,83 +271,83 @@ msgid "value does not equal"
 msgstr "värde är inte lika med"
 
 #: plugins/managesieve/localization/sv_SE.inc:filterunknownerror
-msgid "filterunknownerror"
+msgid "Unknown server error."
 msgstr "Okänt serverfel"
 
 #: plugins/managesieve/localization/sv_SE.inc:filterconnerror
-msgid "filterconnerror"
+msgid "Unable to connect to server."
 msgstr "Anslutning till serverns filtertjänst misslyckades"
 
 #: plugins/managesieve/localization/sv_SE.inc:filterdeleteerror
-msgid "filterdeleteerror"
+msgid "Unable to delete filter. Server error occured."
 msgstr "Filtret kunde inte tas bort på grund av serverfel"
 
 #: plugins/managesieve/localization/sv_SE.inc:filterdeleted
-msgid "filterdeleted"
+msgid "Filter deleted successfully."
 msgstr "Filtret är borttaget"
 
 #: plugins/managesieve/localization/sv_SE.inc:filtersaved
-msgid "filtersaved"
+msgid "Filter saved successfully."
 msgstr "Filtret har sparats"
 
 #: plugins/managesieve/localization/sv_SE.inc:filtersaveerror
-msgid "filtersaveerror"
+msgid "Unable to save filter. Server error occured."
 msgstr "Filtret kunde inte sparas på grund av serverfel"
 
 #: plugins/managesieve/localization/sv_SE.inc:filterdeleteconfirm
-msgid "filterdeleteconfirm"
+msgid "Do you really want to delete selected filter?"
 msgstr "Vill du ta bort det markerade filtret?"
 
 #: plugins/managesieve/localization/sv_SE.inc:ruledeleteconfirm
-msgid "ruledeleteconfirm"
+msgid "Are you sure, you want to delete selected rule?"
 msgstr "Vill du ta bort filterregeln?"
 
 #: plugins/managesieve/localization/sv_SE.inc:actiondeleteconfirm
-msgid "actiondeleteconfirm"
+msgid "Are you sure, you want to delete selected action?"
 msgstr "Vill du ta bort filteråtgärden?"
 
 #: plugins/managesieve/localization/sv_SE.inc:forbiddenchars
-msgid "forbiddenchars"
+msgid "Forbidden characters in field."
 msgstr "Otillåtet tecken i fältet"
 
 #: plugins/managesieve/localization/sv_SE.inc:cannotbeempty
-msgid "cannotbeempty"
+msgid "Field cannot be empty."
 msgstr "Fältet kan inte lämnas tomt"
 
 #: plugins/managesieve/localization/sv_SE.inc:setactivateerror
-msgid "setactivateerror"
+msgid "Unable to activate selected filters set. Server error occured."
 msgstr "Filtergruppen kunde inte aktiveras på grund av serverfel"
 
 #: plugins/managesieve/localization/sv_SE.inc:setdeactivateerror
-msgid "setdeactivateerror"
+msgid "Unable to deactivate selected filters set. Server error occured."
 msgstr "Filtergruppen kunde inte deaktiveras på grund av serverfel"
 
 #: plugins/managesieve/localization/sv_SE.inc:setdeleteerror
-msgid "setdeleteerror"
+msgid "Unable to delete selected filters set. Server error occured."
 msgstr "Filtergruppen kunde inte tas bort på grund av serverfel"
 
 #: plugins/managesieve/localization/sv_SE.inc:setactivated
-msgid "setactivated"
+msgid "Filters set activated successfully."
 msgstr "Filtergruppen är aktiverad"
 
 #: plugins/managesieve/localization/sv_SE.inc:setdeactivated
-msgid "setdeactivated"
+msgid "Filters set deactivated successfully."
 msgstr "Filtergruppen är deaktiverad"
 
 #: plugins/managesieve/localization/sv_SE.inc:setdeleted
-msgid "setdeleted"
+msgid "Filters set deleted successfully."
 msgstr "Filtergruppen är borttagen"
 
 #: plugins/managesieve/localization/sv_SE.inc:setdeleteconfirm
-msgid "setdeleteconfirm"
+msgid "Are you sure, you want to delete selected filters set?"
 msgstr "Vill du ta bort filtergruppen?"
 
 #: plugins/managesieve/localization/sv_SE.inc:setcreateerror
-msgid "setcreateerror"
+msgid "Unable to create filters set. Server error occured."
 msgstr "Filtergruppen kunde inte läggas till på grund av serverfel"
 
 #: plugins/managesieve/localization/sv_SE.inc:setcreated
-msgid "setcreated"
+msgid "Filters set created successfully."
 msgstr "Filtergruppen har lagts till"
 
 #: plugins/managesieve/localization/sv_SE.inc:emptyname
@@ -355,5 +355,5 @@ msgid "emptyname"
 msgstr "Filtergruppen kan inte läggas till utan namn"
 
 #: plugins/managesieve/localization/sv_SE.inc:nametoolong
-msgid "nametoolong"
+msgid "Name too long."
 msgstr "Filtergruppen kan inte läggas till med för långt namn"

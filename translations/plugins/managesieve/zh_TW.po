@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:22:22+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: zh_TW\n"
@@ -215,19 +215,19 @@ msgid "Filter disabled"
 msgstr "篩選器已停用"
 
 #: plugins/managesieve/localization/zh_TW.inc:filterunknownerror
-msgid "filterunknownerror"
+msgid "Unknown server error."
 msgstr "未知的伺服器錯誤"
 
 #: plugins/managesieve/localization/zh_TW.inc:filterconnerror
-msgid "filterconnerror"
+msgid "Unable to connect to server."
 msgstr "無法與伺服器連線"
 
 #: plugins/managesieve/localization/zh_TW.inc:filterdeleteerror
-msgid "filterdeleteerror"
+msgid "Unable to delete filter. Server error occured."
 msgstr "無法刪除篩選器。發生伺服器錯誤"
 
 #: plugins/managesieve/localization/zh_TW.inc:filterdeleted
-msgid "filterdeleted"
+msgid "Filter deleted successfully."
 msgstr "成功刪除篩選器"
 
 #: plugins/managesieve/localization/zh_TW.inc:filterconfirmdelete
@@ -235,63 +235,63 @@ msgid "filterconfirmdelete"
 msgstr "您確定要刪除選擇的篩選器嗎？"
 
 #: plugins/managesieve/localization/zh_TW.inc:filtersaved
-msgid "filtersaved"
+msgid "Filter saved successfully."
 msgstr "成功儲存篩選器。"
 
 #: plugins/managesieve/localization/zh_TW.inc:filtersaveerror
-msgid "filtersaveerror"
+msgid "Unable to save filter. Server error occured."
 msgstr "無法儲存篩選器。發生伺服器錯誤"
 
 #: plugins/managesieve/localization/zh_TW.inc:ruledeleteconfirm
-msgid "ruledeleteconfirm"
+msgid "Are you sure, you want to delete selected rule?"
 msgstr "您確定要刪除選的規則嗎？"
 
 #: plugins/managesieve/localization/zh_TW.inc:actiondeleteconfirm
-msgid "actiondeleteconfirm"
+msgid "Are you sure, you want to delete selected action?"
 msgstr "您確定要刪除選擇的動作嗎？"
 
 #: plugins/managesieve/localization/zh_TW.inc:forbiddenchars
-msgid "forbiddenchars"
+msgid "Forbidden characters in field."
 msgstr "內容包含禁用字元"
 
 #: plugins/managesieve/localization/zh_TW.inc:cannotbeempty
-msgid "cannotbeempty"
+msgid "Field cannot be empty."
 msgstr "內容不能為空白"
 
 #: plugins/managesieve/localization/zh_TW.inc:setactivateerror
-msgid "setactivateerror"
+msgid "Unable to activate selected filters set. Server error occured."
 msgstr "無法啟用選擇的篩選器集合。 伺服器發生錯誤"
 
 #: plugins/managesieve/localization/zh_TW.inc:setdeactivateerror
-msgid "setdeactivateerror"
+msgid "Unable to deactivate selected filters set. Server error occured."
 msgstr "無法停用選擇的篩選器集合。 伺服器發生錯誤"
 
 #: plugins/managesieve/localization/zh_TW.inc:setdeleteerror
-msgid "setdeleteerror"
+msgid "Unable to delete selected filters set. Server error occured."
 msgstr "無法刪除選擇的篩選器集合。 伺服器發生錯誤"
 
 #: plugins/managesieve/localization/zh_TW.inc:setactivated
-msgid "setactivated"
+msgid "Filters set activated successfully."
 msgstr "篩選器集合成功啟用"
 
 #: plugins/managesieve/localization/zh_TW.inc:setdeactivated
-msgid "setdeactivated"
+msgid "Filters set deactivated successfully."
 msgstr "篩選器集合成功停用"
 
 #: plugins/managesieve/localization/zh_TW.inc:setdeleted
-msgid "setdeleted"
+msgid "Filters set deleted successfully."
 msgstr "篩選器集合成功刪除"
 
 #: plugins/managesieve/localization/zh_TW.inc:setdeleteconfirm
-msgid "setdeleteconfirm"
+msgid "Are you sure, you want to delete selected filters set?"
 msgstr "你確定要刪除選擇的篩選器集合嗎？"
 
 #: plugins/managesieve/localization/zh_TW.inc:setcreateerror
-msgid "setcreateerror"
+msgid "Unable to create filters set. Server error occured."
 msgstr "無法建立篩選器集合。 伺服器發生錯誤"
 
 #: plugins/managesieve/localization/zh_TW.inc:setcreated
-msgid "setcreated"
+msgid "Filters set created successfully."
 msgstr "篩選器集合成功建立"
 
 #: plugins/managesieve/localization/zh_TW.inc:emptyname
@@ -299,5 +299,5 @@ msgid "emptyname"
 msgstr "無法建立篩選器集合。 集合名稱空白"
 
 #: plugins/managesieve/localization/zh_TW.inc:nametoolong
-msgid "nametoolong"
+msgid "Name too long."
 msgstr "無法建立篩選器集合。 名稱太長"

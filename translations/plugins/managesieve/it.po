@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:22:21+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: it_IT\n"
@@ -215,83 +215,83 @@ msgid "Filter disabled"
 msgstr "Filtro disabilitato"
 
 #: plugins/managesieve/localization/it_IT.inc:filterunknownerror
-msgid "filterunknownerror"
+msgid "Unknown server error."
 msgstr "Errore sconosciuto del server"
 
 #: plugins/managesieve/localization/it_IT.inc:filterconnerror
-msgid "filterconnerror"
+msgid "Unable to connect to server."
 msgstr "Collegamento al server managesieve fallito"
 
 #: plugins/managesieve/localization/it_IT.inc:filterdeleteerror
-msgid "filterdeleteerror"
+msgid "Unable to delete filter. Server error occured."
 msgstr "Eliminazione del filtro fallita. Si è verificato un errore nel server"
 
 #: plugins/managesieve/localization/it_IT.inc:filterdeleted
-msgid "filterdeleted"
+msgid "Filter deleted successfully."
 msgstr "Filtro eliminato con successo"
 
 #: plugins/managesieve/localization/it_IT.inc:filterdeleteconfirm
-msgid "filterdeleteconfirm"
+msgid "Do you really want to delete selected filter?"
 msgstr "Vuoi veramente eliminare il filtro selezionato?"
 
 #: plugins/managesieve/localization/it_IT.inc:filtersaved
-msgid "filtersaved"
+msgid "Filter saved successfully."
 msgstr "Filtro salvato con successo"
 
 #: plugins/managesieve/localization/it_IT.inc:filtersaveerror
-msgid "filtersaveerror"
+msgid "Unable to save filter. Server error occured."
 msgstr "Salvataggio del filtro fallito. Si è verificato un errore nel server"
 
 #: plugins/managesieve/localization/it_IT.inc:ruledeleteconfirm
-msgid "ruledeleteconfirm"
+msgid "Are you sure, you want to delete selected rule?"
 msgstr "Sei sicuro di voler eliminare la regola selezionata?"
 
 #: plugins/managesieve/localization/it_IT.inc:actiondeleteconfirm
-msgid "actiondeleteconfirm"
+msgid "Are you sure, you want to delete selected action?"
 msgstr "Sei sicuro di voler eliminare l'azione selezionata?"
 
 #: plugins/managesieve/localization/it_IT.inc:forbiddenchars
-msgid "forbiddenchars"
+msgid "Forbidden characters in field."
 msgstr "Caratteri non consentiti nel campo"
 
 #: plugins/managesieve/localization/it_IT.inc:cannotbeempty
-msgid "cannotbeempty"
+msgid "Field cannot be empty."
 msgstr "Il campo non può essere vuoto"
 
 #: plugins/managesieve/localization/it_IT.inc:setactivateerror
-msgid "setactivateerror"
+msgid "Unable to activate selected filters set. Server error occured."
 msgstr "Impossibile attivare il filtro. Errore del server"
 
 #: plugins/managesieve/localization/it_IT.inc:setdeactivateerror
-msgid "setdeactivateerror"
+msgid "Unable to deactivate selected filters set. Server error occured."
 msgstr "Impossibile disattivare il filtro. Errore del server"
 
 #: plugins/managesieve/localization/it_IT.inc:setdeleteerror
-msgid "setdeleteerror"
+msgid "Unable to delete selected filters set. Server error occured."
 msgstr "Impossibile cancellare il filtro. Errore del server"
 
 #: plugins/managesieve/localization/it_IT.inc:setactivated
-msgid "setactivated"
+msgid "Filters set activated successfully."
 msgstr "Filtro attivato"
 
 #: plugins/managesieve/localization/it_IT.inc:setdeactivated
-msgid "setdeactivated"
+msgid "Filters set deactivated successfully."
 msgstr "Filtro disattivato"
 
 #: plugins/managesieve/localization/it_IT.inc:setdeleted
-msgid "setdeleted"
+msgid "Filters set deleted successfully."
 msgstr "Filtro cancellato"
 
 #: plugins/managesieve/localization/it_IT.inc:setdeleteconfirm
-msgid "setdeleteconfirm"
+msgid "Are you sure, you want to delete selected filters set?"
 msgstr "Sei sicuro di voler cancellare il gruppo di filtri"
 
 #: plugins/managesieve/localization/it_IT.inc:setcreateerror
-msgid "setcreateerror"
+msgid "Unable to create filters set. Server error occured."
 msgstr "Impossibile creare il gruppo. Errore del server"
 
 #: plugins/managesieve/localization/it_IT.inc:setcreated
-msgid "setcreated"
+msgid "Filters set created successfully."
 msgstr "Gruppo di filtri creato"
 
 #: plugins/managesieve/localization/it_IT.inc:emptyname
@@ -299,5 +299,5 @@ msgid "emptyname"
 msgstr "Impossibile creare il gruppo: Inserire un nome"
 
 #: plugins/managesieve/localization/it_IT.inc:nametoolong
-msgid "nametoolong"
+msgid "Name too long."
 msgstr "Impossibile creare il gruppo: Nome troppo lungo"

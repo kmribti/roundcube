@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:22:21+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ja\n"
@@ -223,87 +223,87 @@ msgid "Filter disabled"
 msgstr "フィルターを無効にしました。"
 
 #: plugins/managesieve/localization/ja_JP.inc:filterunknownerror
-msgid "filterunknownerror"
+msgid "Unknown server error."
 msgstr "不明なサーバーのエラーです"
 
 #: plugins/managesieve/localization/ja_JP.inc:filterconnerror
-msgid "filterconnerror"
+msgid "Unable to connect to server."
 msgstr "managesieve サーバーに接続できません。"
 
 #: plugins/managesieve/localization/ja_JP.inc:filterdeleteerror
-msgid "filterdeleteerror"
+msgid "Unable to delete filter. Server error occured."
 msgstr "フィルターを削除できませんでした。サーバーでエラーが発生しました。"
 
 #: plugins/managesieve/localization/ja_JP.inc:filterdeleted
-msgid "filterdeleted"
+msgid "Filter deleted successfully."
 msgstr "フィルターの削除に成功しました。"
 
 #: plugins/managesieve/localization/ja_JP.inc:filtersaved
-msgid "filtersaved"
+msgid "Filter saved successfully."
 msgstr "フィルターの保存に成功しました。"
 
 #: plugins/managesieve/localization/ja_JP.inc:filtersaveerror
-msgid "filtersaveerror"
+msgid "Unable to save filter. Server error occured."
 msgstr "フィルターの保存に失敗しました。サーバーでエラーが発生しました。"
 
 #: plugins/managesieve/localization/ja_JP.inc:filterdeleteconfirm
-msgid "filterdeleteconfirm"
+msgid "Do you really want to delete selected filter?"
 msgstr "本当に選択したフィルターを削除しますか?"
 
 #: plugins/managesieve/localization/ja_JP.inc:ruledeleteconfirm
-msgid "ruledeleteconfirm"
+msgid "Are you sure, you want to delete selected rule?"
 msgstr "本当に選択したルールを削除しますか?"
 
 #: plugins/managesieve/localization/ja_JP.inc:actiondeleteconfirm
-msgid "actiondeleteconfirm"
+msgid "Are you sure, you want to delete selected action?"
 msgstr "本当に選択した操作を削除しますか?"
 
 #: plugins/managesieve/localization/ja_JP.inc:forbiddenchars
-msgid "forbiddenchars"
+msgid "Forbidden characters in field."
 msgstr "項目に禁止文字があります。"
 
 #: plugins/managesieve/localization/ja_JP.inc:cannotbeempty
-msgid "cannotbeempty"
+msgid "Field cannot be empty."
 msgstr "空にできませんでした"
 
 #: plugins/managesieve/localization/ja_JP.inc:setactivateerror
-msgid "setactivateerror"
+msgid "Unable to activate selected filters set. Server error occured."
 msgstr "選択したフィルター "
 "セットの有効化に失敗しました。サーバーでエラーが発生しました。"
 
 #: plugins/managesieve/localization/ja_JP.inc:setdeactivateerror
-msgid "setdeactivateerror"
+msgid "Unable to deactivate selected filters set. Server error occured."
 msgstr "選択したフィルター "
 "セットの無効化に失敗しました。サーバーでエラーが発生しました。"
 
 #: plugins/managesieve/localization/ja_JP.inc:setdeleteerror
-msgid "setdeleteerror"
+msgid "Unable to delete selected filters set. Server error occured."
 msgstr "選択したフィルター "
 "セットの削除に失敗しました。サーバーでエラーが発生しました。"
 
 #: plugins/managesieve/localization/ja_JP.inc:setactivated
-msgid "setactivated"
+msgid "Filters set activated successfully."
 msgstr "フィルターセットの有効化に成功しました。"
 
 #: plugins/managesieve/localization/ja_JP.inc:setdeactivated
-msgid "setdeactivated"
+msgid "Filters set deactivated successfully."
 msgstr "フィルターセットの無効化に成功しました。"
 
 #: plugins/managesieve/localization/ja_JP.inc:setdeleted
-msgid "setdeleted"
+msgid "Filters set deleted successfully."
 msgstr "フィルターセットの削除に成功しました。"
 
 #: plugins/managesieve/localization/ja_JP.inc:setdeleteconfirm
-msgid "setdeleteconfirm"
+msgid "Are you sure, you want to delete selected filters set?"
 msgstr "本当に選択したフィルター セットを削除しますか?"
 
 #: plugins/managesieve/localization/ja_JP.inc:setcreateerror
-msgid "setcreateerror"
+msgid "Unable to create filters set. Server error occured."
 msgstr "フィルター "
 "セットの作成に失敗しました。サーバーでエラーが発生しました。"
 
 #: plugins/managesieve/localization/ja_JP.inc:setcreated
-msgid "setcreated"
+msgid "Filters set created successfully."
 msgstr "フィルター セットの作成に成功しました。"
 
 #: plugins/managesieve/localization/ja_JP.inc:emptyname
@@ -312,6 +312,6 @@ msgstr "フィルター "
 "セットの作成に失敗しました。名前が空です。"
 
 #: plugins/managesieve/localization/ja_JP.inc:nametoolong
-msgid "nametoolong"
+msgid "Name too long."
 msgstr "フィルター "
 "セットの作成に失敗しました。名前が長すぎます。"

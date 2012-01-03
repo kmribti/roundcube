@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:22:21+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: nl_NL\n"
@@ -143,45 +143,45 @@ msgid "Recipient"
 msgstr "Ontvanger"
 
 #: plugins/managesieve/localization/nl_NL.inc:filterunknownerror
-msgid "filterunknownerror"
+msgid "Unknown server error."
 msgstr "Onbekende fout"
 
 #: plugins/managesieve/localization/nl_NL.inc:filterconnerror
-msgid "filterconnerror"
+msgid "Unable to connect to server."
 msgstr "Kan geen verbinding maken met de managesieve server"
 
 #: plugins/managesieve/localization/nl_NL.inc:filterdeleteerror
-msgid "filterdeleteerror"
+msgid "Unable to delete filter. Server error occured."
 msgstr "Kan filter niet verwijderen. Er is een fout opgetreden"
 
 #: plugins/managesieve/localization/nl_NL.inc:filterdeleted
-msgid "filterdeleted"
+msgid "Filter deleted successfully."
 msgstr "Filter succesvol verwijderd"
 
 #: plugins/managesieve/localization/nl_NL.inc:filterdeleteconfirm
-msgid "filterdeleteconfirm"
+msgid "Do you really want to delete selected filter?"
 msgstr "Weet je zeker dat je het geselecteerde filter wilt verwijderen?"
 
 #: plugins/managesieve/localization/nl_NL.inc:filtersaved
-msgid "filtersaved"
+msgid "Filter saved successfully."
 msgstr "Filter succesvol opgeslagen"
 
 #: plugins/managesieve/localization/nl_NL.inc:filtersaveerror
-msgid "filtersaveerror"
+msgid "Unable to save filter. Server error occured."
 msgstr "Kan filter niet opslaan. Er is een fout opgetreden."
 
 #: plugins/managesieve/localization/nl_NL.inc:ruledeleteconfirm
-msgid "ruledeleteconfirm"
+msgid "Are you sure, you want to delete selected rule?"
 msgstr "Weet je zeker dat je de geselecteerde regel wilt verwijderen?"
 
 #: plugins/managesieve/localization/nl_NL.inc:actiondeleteconfirm
-msgid "actiondeleteconfirm"
+msgid "Are you sure, you want to delete selected action?"
 msgstr "Weet je zeker dat je de geselecteerde actie wilt verwijderen?"
 
 #: plugins/managesieve/localization/nl_NL.inc:forbiddenchars
-msgid "forbiddenchars"
+msgid "Forbidden characters in field."
 msgstr "Verboden karakters in het veld"
 
 #: plugins/managesieve/localization/nl_NL.inc:cannotbeempty
-msgid "cannotbeempty"
+msgid "Field cannot be empty."
 msgstr "Veld mag niet leeg zijn"

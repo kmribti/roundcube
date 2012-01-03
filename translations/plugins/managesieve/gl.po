@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:22:21+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: gl\n"
@@ -224,86 +224,86 @@ msgid "Filter disabled"
 msgstr "Filtro desactivado"
 
 #: plugins/managesieve/localization/gl_ES.inc:filterunknownerror
-msgid "filterunknownerror"
+msgid "Unknown server error."
 msgstr "Erro descoñecido servidor"
 
 #: plugins/managesieve/localization/gl_ES.inc:filterconnerror
-msgid "filterconnerror"
+msgid "Unable to connect to server."
 msgstr "Imposible conectar co servidor managesieve"
 
 #: plugins/managesieve/localization/gl_ES.inc:filterdeleteerror
-msgid "filterdeleteerror"
+msgid "Unable to delete filter. Server error occured."
 msgstr "Imposible eliminar filtro. Ocurriu un erro no servidor"
 
 #: plugins/managesieve/localization/gl_ES.inc:filterdeleted
-msgid "filterdeleted"
+msgid "Filter deleted successfully."
 msgstr "Filtro borrado con éxito"
 
 #: plugins/managesieve/localization/gl_ES.inc:filtersaved
-msgid "filtersaved"
+msgid "Filter saved successfully."
 msgstr "Filtro gardado con éxito"
 
 #: plugins/managesieve/localization/gl_ES.inc:filtersaveerror
-msgid "filtersaveerror"
+msgid "Unable to save filter. Server error occured."
 msgstr "Imposible gardar o filtro. Ocurriu un erro no servidor"
 
 #: plugins/managesieve/localization/gl_ES.inc:filterdeleteconfirm
-msgid "filterdeleteconfirm"
+msgid "Do you really want to delete selected filter?"
 msgstr "Realmente desexa eliminar o filtro seleccionado?"
 
 #: plugins/managesieve/localization/gl_ES.inc:ruledeleteconfirm
-msgid "ruledeleteconfirm"
+msgid "Are you sure, you want to delete selected rule?"
 msgstr "Está seguro de que desexa eliminar a regra seleccionada?"
 
 #: plugins/managesieve/localization/gl_ES.inc:actiondeleteconfirm
-msgid "actiondeleteconfirm"
+msgid "Are you sure, you want to delete selected action?"
 msgstr "Está seguro de que desexa eliminar a acción seleccionada?"
 
 #: plugins/managesieve/localization/gl_ES.inc:forbiddenchars
-msgid "forbiddenchars"
+msgid "Forbidden characters in field."
 msgstr "Caracteres non permitidos no campo"
 
 #: plugins/managesieve/localization/gl_ES.inc:cannotbeempty
-msgid "cannotbeempty"
+msgid "Field cannot be empty."
 msgstr "O campo non pode estar baleiro"
 
 #: plugins/managesieve/localization/gl_ES.inc:setactivateerror
-msgid "setactivateerror"
+msgid "Unable to activate selected filters set. Server error occured."
 msgstr "Imposible activar o conxunto de filtros seleccionado. Ocurriu un erro no "
 "servidor"
 
 #: plugins/managesieve/localization/gl_ES.inc:setdeactivateerror
-msgid "setdeactivateerror"
+msgid "Unable to deactivate selected filters set. Server error occured."
 msgstr "Imposible desactivar o conxunto de filtros seleccionado. Ocurriu un error "
 "no servidor"
 
 #: plugins/managesieve/localization/gl_ES.inc:setdeleteerror
-msgid "setdeleteerror"
+msgid "Unable to delete selected filters set. Server error occured."
 msgstr "Imposible eliminar o conxunto de filtros seleccionado. Ocurriu un error no "
 "servidor"
 
 #: plugins/managesieve/localization/gl_ES.inc:setactivated
-msgid "setactivated"
+msgid "Filters set activated successfully."
 msgstr "O conxunto de filtros activouse con éxito"
 
 #: plugins/managesieve/localization/gl_ES.inc:setdeactivated
-msgid "setdeactivated"
+msgid "Filters set deactivated successfully."
 msgstr "O conxunto de filtros desactivouse con éxito"
 
 #: plugins/managesieve/localization/gl_ES.inc:setdeleted
-msgid "setdeleted"
+msgid "Filters set deleted successfully."
 msgstr "O Conxunto de filtros borrouse con éxito"
 
 #: plugins/managesieve/localization/gl_ES.inc:setdeleteconfirm
-msgid "setdeleteconfirm"
+msgid "Are you sure, you want to delete selected filters set?"
 msgstr "Está seguro de que desexa eliminar o conxunto de filtros seleccionado?"
 
 #: plugins/managesieve/localization/gl_ES.inc:setcreateerror
-msgid "setcreateerror"
+msgid "Unable to create filters set. Server error occured."
 msgstr "Imposible crear o conxunto de filtros. Ocurriu un error no servidor"
 
 #: plugins/managesieve/localization/gl_ES.inc:setcreated
-msgid "setcreated"
+msgid "Filters set created successfully."
 msgstr "Conxunto de filtros creado con éxito"
 
 #: plugins/managesieve/localization/gl_ES.inc:emptyname
@@ -311,5 +311,5 @@ msgid "emptyname"
 msgstr "Imposible crear o conxunto de filtros. Sen nome"
 
 #: plugins/managesieve/localization/gl_ES.inc:nametoolong
-msgid "nametoolong"
+msgid "Name too long."
 msgstr "Imposible crear o conxunto de filtros. O nome é longo de máis"

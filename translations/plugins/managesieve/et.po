@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:22:21+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: et\n"
@@ -159,45 +159,45 @@ msgid "Stop evaluating rules"
 msgstr "Peata reeglite otsimine"
 
 #: plugins/managesieve/localization/et_EE.inc:filterunknownerror
-msgid "filterunknownerror"
+msgid "Unknown server error."
 msgstr "Tundmatu serveri tõrge"
 
 #: plugins/managesieve/localization/et_EE.inc:filterconnerror
-msgid "filterconnerror"
+msgid "Unable to connect to server."
 msgstr "Managesieve serveriga ühendumine nurjus"
 
 #: plugins/managesieve/localization/et_EE.inc:filterdeleteerror
-msgid "filterdeleteerror"
+msgid "Unable to delete filter. Server error occured."
 msgstr "Filtri kustutamine nurjus. Ilmnes serveri tõrge."
 
 #: plugins/managesieve/localization/et_EE.inc:filterdeleted
-msgid "filterdeleted"
+msgid "Filter deleted successfully."
 msgstr "Filter edukalt kustutatud"
 
 #: plugins/managesieve/localization/et_EE.inc:filterdeleteconfirm
-msgid "filterdeleteconfirm"
+msgid "Do you really want to delete selected filter?"
 msgstr "Soovid valitud filtri kustutada?"
 
 #: plugins/managesieve/localization/et_EE.inc:filtersaved
-msgid "filtersaved"
+msgid "Filter saved successfully."
 msgstr "Filter edukalt salvestatud"
 
 #: plugins/managesieve/localization/et_EE.inc:filtersaveerror
-msgid "filtersaveerror"
+msgid "Unable to save filter. Server error occured."
 msgstr "Filtri salvestamine nurjus. Ilmnes serveri tõrge."
 
 #: plugins/managesieve/localization/et_EE.inc:ruledeleteconfirm
-msgid "ruledeleteconfirm"
+msgid "Are you sure, you want to delete selected rule?"
 msgstr "Soovid valitud reegli kustutada?"
 
 #: plugins/managesieve/localization/et_EE.inc:actiondeleteconfirm
-msgid "actiondeleteconfirm"
+msgid "Are you sure, you want to delete selected action?"
 msgstr "Soovid valitud tegevuse kustutada?"
 
 #: plugins/managesieve/localization/et_EE.inc:forbiddenchars
-msgid "forbiddenchars"
+msgid "Forbidden characters in field."
 msgstr "Väljal on lubamatu märk"
 
 #: plugins/managesieve/localization/et_EE.inc:cannotbeempty
-msgid "cannotbeempty"
+msgid "Field cannot be empty."
 msgstr "Väli ei või tühi olla"

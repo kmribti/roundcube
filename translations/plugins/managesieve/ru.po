@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:22:22+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: ru_RU\n"
@@ -305,93 +305,93 @@ msgid "Draft"
 msgstr "Черновик"
 
 #: plugins/managesieve/localization/ru_RU.inc:filterunknownerror
-msgid "filterunknownerror"
+msgid "Unknown server error."
 msgstr "Неизвестная ошибка сервера"
 
 #: plugins/managesieve/localization/ru_RU.inc:filterconnerror
-msgid "filterconnerror"
+msgid "Unable to connect to server."
 msgstr "Невозможно подсоединится к серверу "
 "фильтров"
 
 #: plugins/managesieve/localization/ru_RU.inc:filterdeleteerror
-msgid "filterdeleteerror"
+msgid "Unable to delete filter. Server error occured."
 msgstr "Невозможно удалить фильтр. Ошибка "
 "сервера"
 
 #: plugins/managesieve/localization/ru_RU.inc:filterdeleted
-msgid "filterdeleted"
+msgid "Filter deleted successfully."
 msgstr "Фильтр успешно удалён"
 
 #: plugins/managesieve/localization/ru_RU.inc:filterdeleteconfirm
-msgid "filterdeleteconfirm"
+msgid "Do you really want to delete selected filter?"
 msgstr "Вы действительно хотите удалить фильтр?"
 
 #: plugins/managesieve/localization/ru_RU.inc:filtersaved
-msgid "filtersaved"
+msgid "Filter saved successfully."
 msgstr "Фильтр успешно сохранён"
 
 #: plugins/managesieve/localization/ru_RU.inc:filtersaveerror
-msgid "filtersaveerror"
+msgid "Unable to save filter. Server error occured."
 msgstr "Невозможно сохранить фильтр. Ошибка "
 "сервера"
 
 #: plugins/managesieve/localization/ru_RU.inc:ruledeleteconfirm
-msgid "ruledeleteconfirm"
+msgid "Are you sure, you want to delete selected rule?"
 msgstr "Вы уверенны, что хотите удалить это "
 "правило?"
 
 #: plugins/managesieve/localization/ru_RU.inc:actiondeleteconfirm
-msgid "actiondeleteconfirm"
+msgid "Are you sure, you want to delete selected action?"
 msgstr "Вы уверенны, что хотите удалить это "
 "действие?"
 
 #: plugins/managesieve/localization/ru_RU.inc:forbiddenchars
-msgid "forbiddenchars"
+msgid "Forbidden characters in field."
 msgstr "Недопустимые символы в поле"
 
 #: plugins/managesieve/localization/ru_RU.inc:cannotbeempty
-msgid "cannotbeempty"
+msgid "Field cannot be empty."
 msgstr "Поле не может быть пустым"
 
 #: plugins/managesieve/localization/ru_RU.inc:setactivateerror
-msgid "setactivateerror"
+msgid "Unable to activate selected filters set. Server error occured."
 msgstr "Невозможно включить выбранный набор "
 "фильтров. Ошибка сервера"
 
 #: plugins/managesieve/localization/ru_RU.inc:setdeactivateerror
-msgid "setdeactivateerror"
+msgid "Unable to deactivate selected filters set. Server error occured."
 msgstr "Невозможно отключить выбранный набор "
 "фильтров. Ошибка сервера"
 
 #: plugins/managesieve/localization/ru_RU.inc:setdeleteerror
-msgid "setdeleteerror"
+msgid "Unable to delete selected filters set. Server error occured."
 msgstr "Невозможно удалить выбранный набор "
 "фильтров. Ошибка сервера"
 
 #: plugins/managesieve/localization/ru_RU.inc:setactivated
-msgid "setactivated"
+msgid "Filters set activated successfully."
 msgstr "Набор фильтров успешно включён"
 
 #: plugins/managesieve/localization/ru_RU.inc:setdeactivated
-msgid "setdeactivated"
+msgid "Filters set deactivated successfully."
 msgstr "Набор фильтров успешно отключён"
 
 #: plugins/managesieve/localization/ru_RU.inc:setdeleted
-msgid "setdeleted"
+msgid "Filters set deleted successfully."
 msgstr "Набор фильтров успешно удалён"
 
 #: plugins/managesieve/localization/ru_RU.inc:setdeleteconfirm
-msgid "setdeleteconfirm"
+msgid "Are you sure, you want to delete selected filters set?"
 msgstr "Вы уверены в том, что хотите удалить "
 "выбранный набор фильтров?"
 
 #: plugins/managesieve/localization/ru_RU.inc:setcreateerror
-msgid "setcreateerror"
+msgid "Unable to create filters set. Server error occured."
 msgstr "Невозможно создать набор фильтров. "
 "Ошибка сервера"
 
 #: plugins/managesieve/localization/ru_RU.inc:setcreated
-msgid "setcreated"
+msgid "Filters set created successfully."
 msgstr "Набор фильтров успешно создан"
 
 #: plugins/managesieve/localization/ru_RU.inc:emptyname
@@ -400,6 +400,6 @@ msgstr "Невозможно создать набор фильтров. "
 "Название не задано"
 
 #: plugins/managesieve/localization/ru_RU.inc:nametoolong
-msgid "nametoolong"
+msgid "Name too long."
 msgstr "Невозможно создать набор фильтров. "
 "Название слишком длинное"

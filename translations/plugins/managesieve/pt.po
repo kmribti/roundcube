@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:22:21+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: pt_PT\n"
@@ -515,39 +515,39 @@ msgid "nosieverules"
 msgstr "Nenhum filtro encontrado."
 
 #: plugins/managesieve/localization/pt_PT.inc:filterdeleteconfirm
-msgid "filterdeleteconfirm"
+msgid "Do you really want to delete selected filter?"
 msgstr "Tem a certeza que pretende eliminar este filtro?"
 
 #: plugins/managesieve/localization/pt_PT.inc:ruledeleteconfirm
-msgid "ruledeleteconfirm"
+msgid "Are you sure, you want to delete selected rule?"
 msgstr "Tem a certeza que pretende eliminar esta regra?"
 
 #: plugins/managesieve/localization/pt_PT.inc:actiondeleteconfirm
-msgid "actiondeleteconfirm"
+msgid "Are you sure, you want to delete selected action?"
 msgstr "Tem a certeza que pretende eliminar esta acção?"
 
 #: plugins/managesieve/localization/pt_PT.inc:filterunknownerror
-msgid "filterunknownerror"
+msgid "Unknown server error."
 msgstr "Erro de servidor desconhecido"
 
 #: plugins/managesieve/localization/pt_PT.inc:filterconnerror
-msgid "filterconnerror"
+msgid "Unable to connect to server."
 msgstr "Não é possível ligar ao servidor Sieve"
 
 #: plugins/managesieve/localization/pt_PT.inc:filterdeleteerror
-msgid "filterdeleteerror"
+msgid "Unable to delete filter. Server error occured."
 msgstr "Não foi possível eliminar o filtro. Erro no servidor"
 
 #: plugins/managesieve/localization/pt_PT.inc:filterdeleted
-msgid "filterdeleted"
+msgid "Filter deleted successfully."
 msgstr "Filtro eliminado com sucesso"
 
 #: plugins/managesieve/localization/pt_PT.inc:filtersaved
-msgid "filtersaved"
+msgid "Filter saved successfully."
 msgstr "Filtro guardado com sucesso"
 
 #: plugins/managesieve/localization/pt_PT.inc:filtersaveerror
-msgid "filtersaveerror"
+msgid "Unable to save filter. Server error occured."
 msgstr "Não foi possível guardar o filtro. Erro no servidor"
 
 #: plugins/managesieve/localization/pt_PT.inc:vacdaysexp

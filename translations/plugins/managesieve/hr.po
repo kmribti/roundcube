@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:22:21+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: hr\n"
@@ -323,83 +323,83 @@ msgid "Draft"
 msgstr "Predložak"
 
 #: plugins/managesieve/localization/hr_HR.inc:filterunknownerror
-msgid "filterunknownerror"
+msgid "Unknown server error."
 msgstr "Nepoznata greška na poslužitelju"
 
 #: plugins/managesieve/localization/hr_HR.inc:filterconnerror
-msgid "filterconnerror"
+msgid "Unable to connect to server."
 msgstr "Nemoguće spajanje na poslužitelj (managesieve)"
 
 #: plugins/managesieve/localization/hr_HR.inc:filterdeleteerror
-msgid "filterdeleteerror"
+msgid "Unable to delete filter. Server error occured."
 msgstr "Nemoguće brisanje filtera. Greška na poslužitelju"
 
 #: plugins/managesieve/localization/hr_HR.inc:filterdeleted
-msgid "filterdeleted"
+msgid "Filter deleted successfully."
 msgstr "Filter je uspješno obrisan"
 
 #: plugins/managesieve/localization/hr_HR.inc:filtersaved
-msgid "filtersaved"
+msgid "Filter saved successfully."
 msgstr "Filter je uspješno spremljen"
 
 #: plugins/managesieve/localization/hr_HR.inc:filtersaveerror
-msgid "filtersaveerror"
+msgid "Unable to save filter. Server error occured."
 msgstr "Nemoguće spremiti filter. Greška na poslužitelju"
 
 #: plugins/managesieve/localization/hr_HR.inc:filterdeleteconfirm
-msgid "filterdeleteconfirm"
+msgid "Do you really want to delete selected filter?"
 msgstr "Sigurno želite obrisati odabrani filter?"
 
 #: plugins/managesieve/localization/hr_HR.inc:ruledeleteconfirm
-msgid "ruledeleteconfirm"
+msgid "Are you sure, you want to delete selected rule?"
 msgstr "Jeste li sigurni da želite obrisati odabrana pravila?"
 
 #: plugins/managesieve/localization/hr_HR.inc:actiondeleteconfirm
-msgid "actiondeleteconfirm"
+msgid "Are you sure, you want to delete selected action?"
 msgstr "Jeste li sigurni da želite obrisati odabrane akcije?"
 
 #: plugins/managesieve/localization/hr_HR.inc:forbiddenchars
-msgid "forbiddenchars"
+msgid "Forbidden characters in field."
 msgstr "Nedozvoljeni znakovi u polju"
 
 #: plugins/managesieve/localization/hr_HR.inc:cannotbeempty
-msgid "cannotbeempty"
+msgid "Field cannot be empty."
 msgstr "Polje nesmije biti prazno"
 
 #: plugins/managesieve/localization/hr_HR.inc:setactivateerror
-msgid "setactivateerror"
+msgid "Unable to activate selected filters set. Server error occured."
 msgstr "Nemoguće aktivirati odabranu grupu filtera. Greška na poslužitelju"
 
 #: plugins/managesieve/localization/hr_HR.inc:setdeactivateerror
-msgid "setdeactivateerror"
+msgid "Unable to deactivate selected filters set. Server error occured."
 msgstr "Nemoguće deaktivirati odabranu grupu filtera. Greška na poslužitelju"
 
 #: plugins/managesieve/localization/hr_HR.inc:setdeleteerror
-msgid "setdeleteerror"
+msgid "Unable to delete selected filters set. Server error occured."
 msgstr "Nemoguće obrisati odabranu grupu filtera. Greška na poslužitelju"
 
 #: plugins/managesieve/localization/hr_HR.inc:setactivated
-msgid "setactivated"
+msgid "Filters set activated successfully."
 msgstr "Grupa filtera je uspješno aktivirana"
 
 #: plugins/managesieve/localization/hr_HR.inc:setdeactivated
-msgid "setdeactivated"
+msgid "Filters set deactivated successfully."
 msgstr "Grupa filtera je uspješno deaktivirana"
 
 #: plugins/managesieve/localization/hr_HR.inc:setdeleted
-msgid "setdeleted"
+msgid "Filters set deleted successfully."
 msgstr "Grupa filtera je uspješno obrisana"
 
 #: plugins/managesieve/localization/hr_HR.inc:setdeleteconfirm
-msgid "setdeleteconfirm"
+msgid "Are you sure, you want to delete selected filters set?"
 msgstr "Jeste li sigurni da želite obrisati odabranu grupu filtera?"
 
 #: plugins/managesieve/localization/hr_HR.inc:setcreateerror
-msgid "setcreateerror"
+msgid "Unable to create filters set. Server error occured."
 msgstr "Nemoguće stvoriti grupu filtera. Greška na poslužitelju"
 
 #: plugins/managesieve/localization/hr_HR.inc:setcreated
-msgid "setcreated"
+msgid "Filters set created successfully."
 msgstr "Grupa filtera je uspješno stvorena"
 
 #: plugins/managesieve/localization/hr_HR.inc:emptyname
@@ -407,5 +407,5 @@ msgid "emptyname"
 msgstr "Nemoguće napraviti grupu filtera. Naziv je prazan"
 
 #: plugins/managesieve/localization/hr_HR.inc:nametoolong
-msgid "nametoolong"
+msgid "Name too long."
 msgstr "Nemoguće napraviti grupu filtera. Naziv je predugačak"

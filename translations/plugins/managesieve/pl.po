@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T18:30:38+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:22:21+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: pl\n"
@@ -411,125 +411,125 @@ msgid "numeric (ascii-numeric)"
 msgstr "numeryczny (ascii-numeric)"
 
 #: plugins/managesieve/localization/pl_PL.inc:filterunknownerror
-msgid "filterunknownerror"
+msgid "Unknown server error."
 msgstr "Nieznany błąd serwera."
 
 #: plugins/managesieve/localization/pl_PL.inc:filterconnerror
-msgid "filterconnerror"
+msgid "Unable to connect to server."
 msgstr "Nie można nawiązać połączenia z serwerem."
 
 #: plugins/managesieve/localization/pl_PL.inc:filterdeleteerror
-msgid "filterdeleteerror"
+msgid "Unable to delete filter. Server error occured."
 msgstr "Nie można usunąć filtra. Błąd serwera."
 
 #: plugins/managesieve/localization/pl_PL.inc:filterdeleted
-msgid "filterdeleted"
+msgid "Filter deleted successfully."
 msgstr "Filtr został usunięty pomyślnie."
 
 #: plugins/managesieve/localization/pl_PL.inc:filterdeleteconfirm
-msgid "filterdeleteconfirm"
+msgid "Do you really want to delete selected filter?"
 msgstr "Czy na pewno chcesz usunąć wybrany filtr?"
 
 #: plugins/managesieve/localization/pl_PL.inc:filtersaved
-msgid "filtersaved"
+msgid "Filter saved successfully."
 msgstr "Filtr został zapisany pomyślnie."
 
 #: plugins/managesieve/localization/pl_PL.inc:filtersaveerror
-msgid "filtersaveerror"
+msgid "Unable to save filter. Server error occured."
 msgstr "Nie można zapisać filtra. Wystąpił błąd serwera."
 
 #: plugins/managesieve/localization/pl_PL.inc:ruledeleteconfirm
-msgid "ruledeleteconfirm"
+msgid "Are you sure, you want to delete selected rule?"
 msgstr "Czy na pewno chcesz usunąć wybraną regułę?"
 
 #: plugins/managesieve/localization/pl_PL.inc:actiondeleteconfirm
-msgid "actiondeleteconfirm"
+msgid "Are you sure, you want to delete selected action?"
 msgstr "Czy na pewno usunąć wybraną akcję?"
 
 #: plugins/managesieve/localization/pl_PL.inc:forbiddenchars
-msgid "forbiddenchars"
+msgid "Forbidden characters in field."
 msgstr "Pole zawiera niedozwolone znaki."
 
 #: plugins/managesieve/localization/pl_PL.inc:cannotbeempty
-msgid "cannotbeempty"
+msgid "Field cannot be empty."
 msgstr "Pole nie może być puste."
 
 #: plugins/managesieve/localization/pl_PL.inc:setactivateerror
-msgid "setactivateerror"
+msgid "Unable to activate selected filters set. Server error occured."
 msgstr "Nie można aktywować wybranego zbioru filtrów. Błąd serwera."
 
 #: plugins/managesieve/localization/pl_PL.inc:setdeactivateerror
-msgid "setdeactivateerror"
+msgid "Unable to deactivate selected filters set. Server error occured."
 msgstr "Nie można deaktywować wybranego zbioru filtrów. Błąd serwera."
 
 #: plugins/managesieve/localization/pl_PL.inc:setdeleteerror
-msgid "setdeleteerror"
+msgid "Unable to delete selected filters set. Server error occured."
 msgstr "Nie można usunąć wybranego zbioru filtrów. Błąd serwera."
 
 #: plugins/managesieve/localization/pl_PL.inc:setactivated
-msgid "setactivated"
+msgid "Filters set activated successfully."
 msgstr "Zbiór filtrów został aktywowany pomyślnie."
 
 #: plugins/managesieve/localization/pl_PL.inc:setdeactivated
-msgid "setdeactivated"
+msgid "Filters set deactivated successfully."
 msgstr "Zbiór filtrów został deaktywowany pomyślnie."
 
 #: plugins/managesieve/localization/pl_PL.inc:setdeleted
-msgid "setdeleted"
+msgid "Filters set deleted successfully."
 msgstr "Zbiór filtrów został usunięty pomyślnie."
 
 #: plugins/managesieve/localization/pl_PL.inc:setdeleteconfirm
-msgid "setdeleteconfirm"
+msgid "Are you sure, you want to delete selected filters set?"
 msgstr "Czy na pewno chcesz usunąć wybrany zbiór filtrów?"
 
 #: plugins/managesieve/localization/pl_PL.inc:setcreateerror
-msgid "setcreateerror"
+msgid "Unable to create filters set. Server error occured."
 msgstr "Nie można utworzyć zbioru filtrów. Błąd serwera."
 
 #: plugins/managesieve/localization/pl_PL.inc:setcreated
-msgid "setcreated"
+msgid "Filters set created successfully."
 msgstr "Zbiór filtrów został utworzony pomyślnie."
 
 #: plugins/managesieve/localization/pl_PL.inc:nodata
-msgid "nodata"
+msgid "At least one position must be selected!"
 msgstr "Należy wybrać co najmniej jedną pozycję!"
 
 #: plugins/managesieve/localization/pl_PL.inc:ruleexist
-msgid "ruleexist"
+msgid "Filter with specified name already exists."
 msgstr "Filtr o podanej nazwie już istnieje."
 
 #: plugins/managesieve/localization/pl_PL.inc:activateerror
-msgid "activateerror"
+msgid "Unable to enable selected filter(s). Server error occured."
 msgstr "Nie można włączyć wybranych filtrów. Błąd serwera."
 
 #: plugins/managesieve/localization/pl_PL.inc:deactivateerror
-msgid "deactivateerror"
+msgid "Unable to disable selected filter(s). Server error occured."
 msgstr "Nie można wyłączyć wybranych filtrów. Błąd serwera."
 
 #: plugins/managesieve/localization/pl_PL.inc:activated
-msgid "activated"
+msgid "Filter(s) disabled successfully."
 msgstr "Filtr(y) wyłączono pomyślnie."
 
 #: plugins/managesieve/localization/pl_PL.inc:deactivated
-msgid "deactivated"
+msgid "Filter(s) enabled successfully."
 msgstr "Filtr(y) włączono pomyślnie."
 
 #: plugins/managesieve/localization/pl_PL.inc:moved
-msgid "moved"
+msgid "Filter moved successfully."
 msgstr "Filter został przeniesiony pomyślnie."
 
 #: plugins/managesieve/localization/pl_PL.inc:moveerror
-msgid "moveerror"
+msgid "Unable to move selected filter. Server error occured."
 msgstr "Nie można przenieść wybranego filtra. Błąd serwera."
 
 #: plugins/managesieve/localization/pl_PL.inc:nametoolong
-msgid "nametoolong"
+msgid "Name too long."
 msgstr "Zbyt długa nazwa."
 
 #: plugins/managesieve/localization/pl_PL.inc:namereserved
-msgid "namereserved"
+msgid "Reserved name."
 msgstr "Nazwa zarezerwowana."
 
 #: plugins/managesieve/localization/pl_PL.inc:setexist
-msgid "setexist"
+msgid "Set already exists."
 msgstr "Zbiór już istnieje."

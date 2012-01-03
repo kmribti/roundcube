@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: roundcube-plugin-managesieve\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2012-01-03T19:20:06+01:00\n"
+"PO-Revision-Date: 2012-01-03T19:22:21+01:00\n"
 "Last-Translator: \n"
 "Language-Team: Translations <hello@roundcube.net>\n"
 "Language: de_CH\n"
@@ -419,45 +419,45 @@ msgid "numeric (ascii-numeric)"
 msgstr "numerisch (ascii-numeric)"
 
 #: plugins/managesieve/localization/de_CH.inc:filterunknownerror
-msgid "filterunknownerror"
+msgid "Unknown server error."
 msgstr "Unbekannter Serverfehler"
 
 #: plugins/managesieve/localization/de_CH.inc:filterconnerror
-msgid "filterconnerror"
+msgid "Unable to connect to server."
 msgstr "Kann nicht zum Sieve-Server verbinden"
 
 #: plugins/managesieve/localization/de_CH.inc:filterdeleteerror
-msgid "filterdeleteerror"
+msgid "Unable to delete filter. Server error occured."
 msgstr "Fehler beim des löschen  Filters. Serverfehler"
 
 #: plugins/managesieve/localization/de_CH.inc:filterdeleted
-msgid "filterdeleted"
+msgid "Filter deleted successfully."
 msgstr "Filter erfolgreich gelöscht"
 
 #: plugins/managesieve/localization/de_CH.inc:filterdeleteconfirm
-msgid "filterdeleteconfirm"
+msgid "Do you really want to delete selected filter?"
 msgstr "Möchten Sie den Filter löschen ?"
 
 #: plugins/managesieve/localization/de_CH.inc:filtersaved
-msgid "filtersaved"
+msgid "Filter saved successfully."
 msgstr "Filter gespeichert"
 
 #: plugins/managesieve/localization/de_CH.inc:filtersaveerror
-msgid "filtersaveerror"
+msgid "Unable to save filter. Server error occured."
 msgstr "Serverfehler, konnte den Filter nicht speichern."
 
 #: plugins/managesieve/localization/de_CH.inc:ruledeleteconfirm
-msgid "ruledeleteconfirm"
+msgid "Are you sure, you want to delete selected rule?"
 msgstr "Sicher, dass Sie die Regel löschen wollen?"
 
 #: plugins/managesieve/localization/de_CH.inc:actiondeleteconfirm
-msgid "actiondeleteconfirm"
+msgid "Are you sure, you want to delete selected action?"
 msgstr "Sicher, dass Sie die ausgewaehlte Aktion löschen wollen?"
 
 #: plugins/managesieve/localization/de_CH.inc:forbiddenchars
-msgid "forbiddenchars"
+msgid "Forbidden characters in field."
 msgstr "Unerlaubte Zeichen im Feld"
 
 #: plugins/managesieve/localization/de_CH.inc:cannotbeempty
-msgid "cannotbeempty"
+msgid "Field cannot be empty."
 msgstr "Feld darf nicht leer sein"
