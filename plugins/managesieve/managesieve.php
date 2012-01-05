@@ -148,13 +148,13 @@ class managesieve extends rcube_plugin
         $ret     = array();
 
         if ($headers->subject)
-            $ret[] = array('Subject', $this->rc->imap->decode_header($headers->subject));
+            $ret[] = array('Subject', rcube_mime::decode_header($headers->subject));
 
         // @TODO: List-Id, others?
         foreach (array('From', 'To') as $h) {
             $hl = strtolower($h);
             if ($headers->$hl) {
-                $list = $this->rc->imap->decode_address_list($headers->$hl);
+                $list = rcube_mime::decode_address_list($headers->$hl);
                 foreach ($list as $item) {
                     if ($item['mailto']) {
                         $ret[] = array($h, $item['mailto']);
