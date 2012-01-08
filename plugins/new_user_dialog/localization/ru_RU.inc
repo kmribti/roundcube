@@ -16,5 +16,5 @@
 
 $labels = array();
 $labels['identitydialogtitle'] = 'Пожалуйста, укажите Ваше имя.';
-$labels['identitydialoghint'] = 'Данное сообщение отображается толькопри первом входе.';
+$labels['identitydialoghint'] = 'Данное сообщение отображается только при первом входе.';
 
