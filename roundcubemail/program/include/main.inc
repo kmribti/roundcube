@@ -1193,13 +1193,13 @@ function rcmail_mailbox_list($attrib)
     $attrib['folder_name'] = '*';
 
   // get mailbox list
-  $mbox_name = $RCMAIL->imap->get_mailbox_name();
+  $mbox_name = $RCMAIL->storage->get_folder();
 
   // build the folders tree
   if (empty($a_mailboxes)) {
     // get mailbox list
-    $a_folders = $RCMAIL->imap->list_mailboxes('', $attrib['folder_name'], $attrib['folder_filter']);
-    $delimiter = $RCMAIL->imap->get_hierarchy_delimiter();
+    $a_folders = $RCMAIL->storage->list_folders_subscribed('', $attrib['folder_name'], $attrib['folder_filter']);
+    $delimiter = $RCMAIL->storage->get_hierarchy_delimiter();
     $a_mailboxes = array();
 
     foreach ($a_folders as $folder)
@@ -1250,11 +1250,11 @@ function rcmail_mailbox_select($p = array())
     $p['folder_name'] = '*';
 
   if ($p['unsubscribed'])
-    $list = $RCMAIL->imap->list_unsubscribed('', $p['folder_name'], $p['folder_filter'], $p['folder_rights']);
+    $list = $RCMAIL->storage->list_folders('', $p['folder_name'], $p['folder_filter'], $p['folder_rights']);
   else
-    $list = $RCMAIL->imap->list_mailboxes('', $p['folder_name'], $p['folder_filter'], $p['folder_rights']);
+    $list = $RCMAIL->storage->list_folders_subscribed('', $p['folder_name'], $p['folder_filter'], $p['folder_rights']);
 
-  $delimiter = $RCMAIL->imap->get_hierarchy_delimiter();
+  $delimiter = $RCMAIL->storage->get_hierarchy_delimiter();
 
   foreach ($list as $folder) {
     if (empty($p['exceptions']) || !in_array($folder, $p['exceptions']))
@@ -1285,7 +1285,7 @@ function rcmail_build_folder_tree(&$arrFolders, $folder, $delm='/', $path='')
   $prefix = '';
   if (!$path) {
     $n_folder = $folder;
-    $folder = $RCMAIL->imap->mod_mailbox($folder);
+    $folder = $RCMAIL->storage->mod_folder($folder);
 
     if ($n_folder != $folder) {
       $prefix = substr($n_folder, 0, -strlen($folder));
@@ -1340,7 +1340,7 @@ function rcmail_render_folder_tree_html(&$arrFolders, &$mbox_name, &$jslist, $at
 
   $maxlength = intval($attrib['maxlength']);
   $realnames = (bool)$attrib['realnames'];
-  $msgcounts = $RCMAIL->imap->get_cache('messagecount');
+  $msgcounts = $RCMAIL->storage->get_cache('messagecount');
 
   $out = '';
   foreach ($arrFolders as $key => $folder) {
@@ -1432,7 +1432,7 @@ function rcmail_render_folder_tree_select(&$arrFolders, &$mbox_name, $maxlength,
     }
 
     // skip folders in which it isn't possible to create subfolders
-    if (!empty($opts['skip_noinferiors']) && ($attrs = $RCMAIL->imap->mailbox_attributes($folder['id']))
+    if (!empty($opts['skip_noinferiors']) && ($attrs = $RCMAIL->storage->folder_attributes($folder['id']))
         && in_array('\\Noinferiors', $attrs)
     ) {
       continue;
@@ -1501,8 +1501,8 @@ function rcmail_localize_folderpath($path)
     global $RCMAIL;
 
     $protect_folders = $RCMAIL->config->get('protect_default_folders');
-    $default_folders = (array) $RCMAIL->config->get('default_imap_folders');
-    $delimiter       = $RCMAIL->imap->get_hierarchy_delimiter();
+    $default_folders = (array) $RCMAIL->config->get('default_folders');
+    $delimiter       = $RCMAIL->storage->get_hierarchy_delimiter();
     $path            = explode($delimiter, $path);
     $result          = array();
 
@@ -1545,7 +1545,7 @@ function rcmail_quota_content($attrib=NULL)
 {
   global $RCMAIL;
 
-  $quota = $RCMAIL->imap->get_quota();
+  $quota = $RCMAIL->storage->get_quota();
   $quota = $RCMAIL->plugins->exec_hook('quota', $quota);
 
   $quota_result = (array) $quota;
@@ -1591,16 +1591,16 @@ function rcmail_display_server_error($fallback=null, $fallback_args=null)
 {
     global $RCMAIL;
 
-    $err_code = $RCMAIL->imap->get_error_code();
-    $res_code = $RCMAIL->imap->get_response_code();
+    $err_code = $RCMAIL->storage->get_error_code();
+    $res_code = $RCMAIL->storage->get_response_code();
 
-    if ($res_code == rcube_imap::NOPERM) {
+    if ($res_code == rcube_storage::NOPERM) {
         $RCMAIL->output->show_message('errornoperm', 'error');
     }
-    else if ($res_code == rcube_imap::READONLY) {
+    else if ($res_code == rcube_storage::READONLY) {
         $RCMAIL->output->show_message('errorreadonly', 'error');
     }
-    else if ($err_code && ($err_str = $RCMAIL->imap->get_error_str())) {
+    else if ($err_code && ($err_str = $RCMAIL->storage->get_error_str())) {
         // try to detect access rights problem and display appropriate message
         if (stripos($err_str, 'Permission denied') !== false)
             $RCMAIL->output->show_message('errornoperm', 'error');
@@ -1966,7 +1966,7 @@ function rcube_parse_host($name, $host='')
   // %d - domain name without first part, e.g. %n=mail.domain.tld, %d=domain.tld
   $d = preg_replace('/^[^\.]+\./', '', $n);
   // %h - IMAP host
-  $h = $_SESSION['imap_host'] ? $_SESSION['imap_host'] : $host;
+  $h = $_SESSION['storage_host'] ? $_SESSION['storage_host'] : $host;
   // %z - IMAP domain without first part, e.g. %h=imap.domain.tld, %z=domain.tld
   $z = preg_replace('/^[^\.]+\./', '', $h);
   // %s - domain name after the '@' from e-mail address provided at login screen. Returns FALSE if an invalid email is provided
