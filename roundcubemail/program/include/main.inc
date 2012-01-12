@@ -1594,7 +1594,10 @@ function rcmail_display_server_error($fallback=null, $fallback_args=null)
     $err_code = $RCMAIL->storage->get_error_code();
     $res_code = $RCMAIL->storage->get_response_code();
 
-    if ($res_code == rcube_storage::NOPERM) {
+    if ($err_code < 0) {
+        $RCMAIL->output->show_message('storageerror', 'error');
+    }
+    else if ($res_code == rcube_storage::NOPERM) {
         $RCMAIL->output->show_message('errornoperm', 'error');
     }
     else if ($res_code == rcube_storage::READONLY) {

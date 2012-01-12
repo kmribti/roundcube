@@ -888,6 +888,10 @@ class rcube_imap_cache
             return;
         }
 
+        if (!$this->imap->check_connection()) {
+            return;
+        }
+
         // NOTE: make sure the mailbox isn't selected, before
         // enabling QRESYNC and invoking SELECT
         if ($this->imap->conn->selected !== null) {

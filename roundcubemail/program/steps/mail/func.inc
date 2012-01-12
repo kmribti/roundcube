@@ -28,22 +28,8 @@ $SEARCH_MODS_DEFAULT = array(
     $DRAFTS_MBOX => array('subject'=>1, 'to'=>1)
 );
 
-// actions that do not require imap connection here
-$NOSTORAGE_ACTIONS = array('addcontact', 'autocomplete', 'upload', 'display-attachment', 'remove-attachment', 'get');
-
-// always instantiate imap object (but not yet connect to server)
+// always instantiate storage object (but not connect to server yet)
 $RCMAIL->storage_init();
-
-// log in to imap server
-if (!in_array($RCMAIL->action, $NOSTORAGE_ACTIONS) && !$RCMAIL->storage_connect()) {
-  $RCMAIL->kill_session();
-
-  if ($OUTPUT->ajax_call)
-    $OUTPUT->redirect(array(), 2000);
-
-  $OUTPUT->set_env('task', 'login');
-  $OUTPUT->send('login');
-}
 
 // set imap properties and session vars
 if (strlen(trim($mbox = get_input_value('_mbox', RCUBE_INPUT_GPC, true))))

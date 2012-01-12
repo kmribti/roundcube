@@ -465,7 +465,7 @@ abstract class rcube_storage
      */
     public function get_body($uid, $part = 1)
     {
-        $headers = $this->get_headers($uid);
+        $headers = $this->get_message_headers($uid);
         return rcube_charset_convert($this->get_message_part($uid, $part, null),
             $headers->charset ? $headers->charset : $this->default_charset);
     }
@@ -486,6 +486,7 @@ abstract class rcube_storage
      * Returns the message headers as string
      *
      * @param int $uid  Message UID
+     *
      * @return string Message headers string
      */
     abstract function get_raw_headers($uid);
@@ -493,8 +494,6 @@ abstract class rcube_storage
 
     /**
      * Sends the whole message source to stdout
-     *
-     * @param int $uid Message UID
      */
     abstract function print_raw_body($uid);
 

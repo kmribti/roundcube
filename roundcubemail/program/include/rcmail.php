@@ -604,7 +604,7 @@ class rcmail
     }
 
     $driver = $this->config->get('storage_driver', 'imap');
-    $driver_class = "rcube_$driver";
+    $driver_class = "rcube_{$driver}";
 
     if (!class_exists($driver_class)) {
       raise_error(array(
@@ -618,7 +618,7 @@ class rcmail
     $this->storage = new $driver_class;
 
     // enable caching of mail data
-    $storage_cache  = $this->config->get("$driver_cache");
+    $storage_cache  = $this->config->get("{$driver}_cache");
     $messages_cache = $this->config->get('messages_cache');
     // for backward compatybility
     if ($storage_cache === null && $messages_cache === null && $this->config->get('enable_caching')) {
@@ -640,16 +640,24 @@ class rcmail
 
     // set class options
     $options = array(
-      'auth_type'   => $this->config->get("$driver_auth_type", 'check'),
-      'auth_cid'    => $this->config->get("$driver_auth_cid"),
-      'auth_pw'     => $this->config->get("$driver_auth_pw"),
-      'debug'       => (bool) $this->config->get("$driver_debug", 0),
-      'force_caps'  => (bool) $this->config->get("$driver_force_caps"),
-      'timeout'     => (int) $this->config->get("$driver_timeout", 0),
+      'auth_type'   => $this->config->get("{$driver}_auth_type", 'check'),
+      'auth_cid'    => $this->config->get("{$driver}_auth_cid"),
+      'auth_pw'     => $this->config->get("{$driver}_auth_pw"),
+      'debug'       => (bool) $this->config->get("{$driver}_debug"),
+      'force_caps'  => (bool) $this->config->get("{$driver}_force_caps"),
+      'timeout'     => (int) $this->config->get("{$driver}_timeout"),
       'skip_deleted' => (bool) $this->config->get('skip_deleted'),
     );
 
-    $hook = $this->plugins->exec_hook("$driver_init", $options);
+    if (!empty($_SESSION['storage_host'])) {
+      $options['host']     = $_SESSION['storage_host'];
+      $options['user']     = $_SESSION['username'];
+      $options['port']     = $_SESSION['storage_port'];
+      $options['ssl']      = $_SESSION['storage_ssl'];
+      $options['password'] = $this->decrypt($_SESSION['password']);
+    }
+
+    $hook = $this->plugins->exec_hook("{$driver}_init", $options);
 
     $this->storage->set_options($options);
     $this->set_storage_prop();
@@ -674,7 +682,7 @@ class rcmail
 
       if (!$storage->connect($host, $user, $pass, $port, $ssl)) {
         if ($this->output)
-          $this->output->show_message($storage->get_error_code() == -1 ? 'imaperror' : 'sessionerror', 'error');
+          $this->output->show_message($storage->get_error_code() == -1 ? 'storageerror' : 'sessionerror', 'error');
       }
       else {
         $this->set_storage_prop();

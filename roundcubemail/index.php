@@ -130,7 +130,7 @@ if ($RCMAIL->task == 'login' && $RCMAIL->action == 'login') {
   else {
     $error_code = is_object($RCMAIL->storage) ? $RCMAIL->storage->get_error_code() : 1;
 
-    $OUTPUT->show_message($error_code < -1 ? 'imaperror' : (!$auth['valid'] ? 'invalidrequest' : 'loginfailed'), 'warning');
+    $OUTPUT->show_message($error_code < -1 ? 'storageerror' : (!$auth['valid'] ? 'invalidrequest' : 'loginfailed'), 'warning');
     $RCMAIL->plugins->exec_hook('login_failed', array(
       'code' => $error_code, 'host' => $auth['host'], 'user' => $auth['user']));
     $RCMAIL->kill_session();
