@@ -1245,16 +1245,18 @@ function rcmail_mailbox_select($p = array())
 
   $p += array('maxlength' => 100, 'realnames' => false);
   $a_mailboxes = array();
+  $storage = $RCMAIL->get_storage();
 
-  if (empty($p['folder_name']))
+  if (empty($p['folder_name'])) {
     $p['folder_name'] = '*';
+  }
 
   if ($p['unsubscribed'])
-    $list = $RCMAIL->storage->list_folders('', $p['folder_name'], $p['folder_filter'], $p['folder_rights']);
+    $list = $storage->list_folders('', $p['folder_name'], $p['folder_filter'], $p['folder_rights']);
   else
-    $list = $RCMAIL->storage->list_folders_subscribed('', $p['folder_name'], $p['folder_filter'], $p['folder_rights']);
+    $list = $storage->list_folders_subscribed('', $p['folder_name'], $p['folder_filter'], $p['folder_rights']);
 
-  $delimiter = $RCMAIL->storage->get_hierarchy_delimiter();
+  $delimiter = $storage->get_hierarchy_delimiter();
 
   foreach ($list as $folder) {
     if (empty($p['exceptions']) || !in_array($folder, $p['exceptions']))

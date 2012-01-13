@@ -647,6 +647,7 @@ class rcmail
       'force_caps'  => (bool) $this->config->get("{$driver}_force_caps"),
       'timeout'     => (int) $this->config->get("{$driver}_timeout"),
       'skip_deleted' => (bool) $this->config->get('skip_deleted'),
+      'driver'      => $driver,
     );
 
     if (!empty($_SESSION['storage_host'])) {
@@ -657,7 +658,7 @@ class rcmail
       $options['password'] = $this->decrypt($_SESSION['password']);
     }
 
-    $hook = $this->plugins->exec_hook("{$driver}_init", $options);
+    $hook = $this->plugins->exec_hook("storage_init", $options);
 
     $this->storage->set_options($options);
     $this->set_storage_prop();
