@@ -353,7 +353,7 @@ class rcube_imap extends rcube_storage
 
 
     /**
-     * Returns the IMAP server's capability
+     * Returns the IMAP server's capability.
      *
      * @param   string  $cap Capability name
      *
@@ -361,12 +361,18 @@ class rcube_imap extends rcube_storage
      */
     public function get_capability($cap)
     {
-        if (!$this->check_connection()) {
-            return false;
+        $cap      = strtoupper($cap);
+        $sess_key = "STORAGE_$cap";
+
+        if (!isset($_SESSION[$sess_key])) {
+            if (!$this->check_connection()) {
+                return false;
+            }
+
+            $_SESSION[$sess_key] = $this->conn->getCapability($cap);
         }
 
-        // @TODO: cache capabilities or store in session (?)
-        return $this->conn->getCapability(strtoupper($cap));
+        return $_SESSION[$sess_key];
     }
 
 
