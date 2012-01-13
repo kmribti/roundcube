@@ -135,7 +135,7 @@ class rcube_imap_cache
             // We've got a valid index
             else if ($sort_field == 'ANY' || $this->icache[$mailbox]['index']['sort_field'] == $sort_field) {
                 $result = $this->icache[$mailbox]['index']['object'];
-                if ($result->getParameters('ORDER') != $sort_order) {
+                if ($result->get_parameters('ORDER') != $sort_order) {
                     $result->revert();
                 }
                 return $result;
@@ -178,7 +178,7 @@ class rcube_imap_cache
             if ($is_valid) {
                 $data = $index['object'];
                 // revert the order if needed
-                if ($data->getParameters('ORDER') != $sort_order) {
+                if ($data->get_parameters('ORDER') != $sort_order) {
                     $data->revert();
                 }
             }
@@ -757,14 +757,14 @@ class rcube_imap_cache
 
         // Folder is empty but cache isn't
         if (empty($mbox_data['EXISTS'])) {
-            if (!$object->isEmpty()) {
+            if (!$object->is_empty()) {
                 $this->clear($mailbox);
                 $exists = false;
                 return false;
             }
         }
         // Folder is not empty but cache is
-        else if ($object->isEmpty()) {
+        else if ($object->is_empty()) {
             unset($this->icache[$mailbox][$is_thread ? 'thread' : 'index']);
             return false;
         }
@@ -796,7 +796,7 @@ class rcube_imap_cache
         // @TODO: find better validity check for threaded index
         if ($is_thread) {
             // check messages number...
-            if (!$this->skip_deleted && $mbox_data['EXISTS'] != $object->countMessages()) {
+            if (!$this->skip_deleted && $mbox_data['EXISTS'] != $object->count_messages()) {
                 return false;
             }
             return true;
@@ -830,7 +830,7 @@ class rcube_imap_cache
                 $ids = $this->imap->search_once($mailbox, 'ALL UNDELETED NOT UID '.
                     rcube_imap_generic::compressMessageSet($object->get()));
 
-                if (!$ids->isEmpty()) {
+                if (!$ids->is_empty()) {
                     return false;
                 }
             }
@@ -1008,7 +1008,7 @@ class rcube_imap_cache
         }
 
         $sort_field = $index['sort_field'];
-        $sort_order = $index['object']->getParameters('ORDER');
+        $sort_order = $index['object']->get_parameters('ORDER');
         $exists     = true;
 
         // Validate index

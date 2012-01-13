@@ -545,7 +545,7 @@ class rcube_imap extends rcube_storage
         // count search set
         if ($this->search_string && $folder == $this->folder && ($mode == 'ALL' || $mode == 'THREADS') && !$force) {
             if ($mode == 'ALL') {
-                return $this->search_set->countMessages();
+                return $this->search_set->count_messages();
             }
             else {
                 return $this->search_set->count();
@@ -568,7 +568,7 @@ class rcube_imap extends rcube_storage
             $count = $res->count();
 
             if ($status) {
-                $msg_count = $res->countMessages();
+                $msg_count = $res->count_messages();
                 $this->set_folder_stats($folder, 'cnt', $msg_count);
                 $this->set_folder_stats($folder, 'maxuid', $msg_count ? $this->id2uid($msg_count, $folder) : 0);
             }
@@ -691,7 +691,7 @@ class rcube_imap extends rcube_storage
         // get UIDs of all messages in the folder, sorted
         $index = $this->index($folder, $this->sort_field, $this->sort_order);
 
-        if ($index->isEmpty()) {
+        if ($index->is_empty()) {
             return array();
         }
 
@@ -819,7 +819,7 @@ class rcube_imap extends rcube_storage
     {
         $parents = array();
 
-        list ($msg_depth, $msg_children) = $threads->getThreadData();
+        list ($msg_depth, $msg_children) = $threads->get_thread_data();
 
         foreach ($headers as $uid => $header) {
             $depth = $msg_depth[$uid];
@@ -849,7 +849,7 @@ class rcube_imap extends rcube_storage
      */
     protected function list_search_messages($folder, $page, $slice=0)
     {
-        if (!strlen($folder) || empty($this->search_set) || $this->search_set->isEmpty()) {
+        if (!strlen($folder) || empty($this->search_set) || $this->search_set->is_empty()) {
             return array();
         }
 
@@ -868,7 +868,7 @@ class rcube_imap extends rcube_storage
         $to    = $from + $this->page_size;
 
         // return empty array if no messages found
-        if ($index->isEmpty()) {
+        if ($index->is_empty()) {
             return array();
         }
 
@@ -886,14 +886,14 @@ class rcube_imap extends rcube_storage
                 $index = clone $this->search_set;
 
                 // return empty array if no messages found
-                if ($index->isEmpty()) {
+                if ($index->is_empty()) {
                     return array();
                 }
             }
         }
 
         if ($got_index) {
-            if ($this->sort_order != $index->getParameters('ORDER')) {
+            if ($this->sort_order != $index->get_parameters('ORDER')) {
                 $index->revert();
             }
 
@@ -976,7 +976,7 @@ class rcube_imap extends rcube_storage
     {
         // update search_set if previous data was fetched with disabled threading
         if (!$this->search_threads) {
-            if ($this->search_set->isEmpty()) {
+            if ($this->search_set->is_empty()) {
                 return array();
             }
             $this->search('', $this->search_string, $this->search_charset, $this->sort_field);
@@ -1150,7 +1150,7 @@ class rcube_imap extends rcube_storage
                     $this->sort_field, $this->options['skip_deleted'], true, true);
             }
 
-            if ($this->sort_order != $index->getParameters('ORDER')) {
+            if ($this->sort_order != $index->get_parameters('ORDER')) {
                 $index->revert();
             }
 
@@ -1190,7 +1190,7 @@ class rcube_imap extends rcube_storage
         // use message index sort as default sorting
         else if (!$sort_field) {
             if ($this->options['skip_deleted'] && !empty($this->icache['undeleted_idx'])
-                && $this->icache['undeleted_idx']->getParameters('MAILBOX') == $folder
+                && $this->icache['undeleted_idx']->get_parameters('MAILBOX') == $folder
             ) {
                 $index = $this->icache['undeleted_idx'];
             }
@@ -1212,13 +1212,13 @@ class rcube_imap extends rcube_storage
                     $this->options['skip_deleted'] ? 'UNDELETED' : '', true);
             }
 
-            if (empty($index) || $index->isError()) {
+            if (empty($index) || $index->is_error()) {
                 $index = $this->conn->index($folder, "1:*", $sort_field,
                     $this->options['skip_deleted'], false, true);
             }
         }
 
-        if ($sort_order != $index->getParameters('ORDER')) {
+        if ($sort_order != $index->get_parameters('ORDER')) {
             $index->revert();
         }
 
@@ -1264,7 +1264,7 @@ class rcube_imap extends rcube_storage
      */
     protected function sort_threads($threads)
     {
-        if ($threads->isEmpty()) {
+        if ($threads->is_empty()) {
             return;
         }
 
@@ -1275,12 +1275,12 @@ class rcube_imap extends rcube_storage
         if ($this->sort_field && ($this->sort_field != 'date' || $this->get_capability('THREAD') != 'REFS')) {
             $index = $this->index_direct($this->folder, $this->sort_field, $this->sort_order, false);
 
-            if (!$index->isEmpty()) {
+            if (!$index->is_empty()) {
                 $threads->sort($index);
             }
         }
         else {
-            if ($this->sort_order != $threads->getParameters('ORDER')) {
+            if ($this->sort_order != $threads->get_parameters('ORDER')) {
                 $threads->revert();
             }
         }
@@ -1375,7 +1375,7 @@ class rcube_imap extends rcube_storage
 
             // Error, try with US-ASCII (RFC5256: SORT/THREAD must support US-ASCII and UTF-8,
             // but I've seen that Courier doesn't support UTF-8)
-            if ($threads->isError() && $charset && $charset != 'US-ASCII') {
+            if ($threads->is_error() && $charset && $charset != 'US-ASCII') {
                 $threads = $this->conn->thread($folder, $this->threading,
                     $this->convert_criteria($criteria, $charset), true, 'US-ASCII');
             }
@@ -1389,12 +1389,12 @@ class rcube_imap extends rcube_storage
 
             // Error, try with US-ASCII (RFC5256: SORT/THREAD must support US-ASCII and UTF-8,
             // but I've seen Courier with disabled UTF-8 support)
-            if ($messages->isError() && $charset && $charset != 'US-ASCII') {
+            if ($messages->is_error() && $charset && $charset != 'US-ASCII') {
                 $messages = $this->conn->sort($folder, $sort_field,
                     $this->convert_criteria($criteria, $charset), true, 'US-ASCII');
             }
 
-            if (!$messages->isError()) {
+            if (!$messages->is_error()) {
                 $this->search_sorted = true;
                 return $messages;
             }
@@ -1404,7 +1404,7 @@ class rcube_imap extends rcube_storage
             ($charset ? "CHARSET $charset " : '') . $criteria, true);
 
         // Error, try with US-ASCII (some servers may support only US-ASCII)
-        if ($messages->isError() && $charset && $charset != 'US-ASCII') {
+        if ($messages->is_error() && $charset && $charset != 'US-ASCII') {
             $messages = $this->conn->search($folder,
                 $this->convert_criteria($criteria, $charset), true);
         }
@@ -3096,7 +3096,7 @@ class rcube_imap extends rcube_storage
 
         // add (E)SEARCH result for ALL UNDELETED query
         if (!empty($this->icache['undeleted_idx'])
-            && $this->icache['undeleted_idx']->getParameters('MAILBOX') == $folder
+            && $this->icache['undeleted_idx']->get_parameters('MAILBOX') == $folder
         ) {
             $data['UNDELETED'] = $this->icache['undeleted_idx'];
         }
