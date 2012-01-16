@@ -684,7 +684,10 @@ class rcmail
       $options['password'] = $this->decrypt($_SESSION['password']);
     }
 
-    $hook = $this->plugins->exec_hook("storage_init", $options);
+    $options = $this->plugins->exec_hook("storage_init", $options);
+
+    // for backward compat. (deprecated, to be removed)
+    $options = $this->plugins->exec_hook("imap_init", $options);
 
     $this->storage->set_options($options);
     $this->set_storage_prop();
