@@ -99,6 +99,19 @@ class rcube_imap extends rcube_storage
 
 
     /**
+     * Magic getter for backward compat.
+     *
+     * @deprecated.
+     */
+    public function __get($name)
+    {
+        if (isset($this->{$name})) {
+            return $this->{$name};
+        }
+    }
+
+
+    /**
      * Connect to an IMAP server
      *
      * @param  string   $host    Host to connect
