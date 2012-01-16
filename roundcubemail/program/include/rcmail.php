@@ -594,6 +594,29 @@ class rcmail
 
 
   /**
+   * Connect to the IMAP server with stored session data.
+   *
+   * @return bool True on success, False on error
+   * @deprecated
+   */
+  public function imap_connect()
+  {
+    return $this->storage_connect();
+  }
+
+
+  /**
+   * Initialize IMAP object.
+   *
+   * @deprecated
+   */
+  public function imap_init()
+  {
+    $this->storage_init();
+  }
+
+
+  /**
    * Initialize storage object
    */
   public function storage_init()
@@ -616,6 +639,9 @@ class rcmail
 
     // Initialize storage object
     $this->storage = new $driver_class;
+
+    // for backward compat. (deprecated, will be removed)
+    $this->imap = $this->storage;
 
     // enable caching of mail data
     $storage_cache  = $this->config->get("{$driver}_cache");
