@@ -77,59 +77,14 @@ if (extension_loaded('mbstring')) {
     @mb_regex_encoding(RCMAIL_CHARSET);
 }
 
-/**
- * Use PHP5 autoload for dynamic class loading
- * 
- * @todo Make Zend, PEAR etc play with this
- * @todo Make our classes conform to a more straight forward CS.
- */
-function rcube_autoload($classname)
-{
-    $filename = preg_replace(
-        array(
-            '/MDB2_(.+)/',
-            '/Mail_(.+)/',
-            '/Net_(.+)/',
-            '/Auth_(.+)/',
-            '/^html_.+/',
-            '/^utf8$/',
-        ),
-        array(
-            'MDB2/\\1',
-            'Mail/\\1',
-            'Net/\\1',
-            'Auth/\\1',
-            'html',
-            'utf8.class',
-        ),
-        $classname
-    );
+// include global functions
+require_once INSTALL_PATH . 'program/include/rcube_shared.inc';
 
-    if ($fp = @fopen("$filename.php", 'r', true)) {
-        fclose($fp);
-        include_once("$filename.php");
-        return true;
-    }
-
-    return false;
-}
-
+// Register autoloader
 spl_autoload_register('rcube_autoload');
-
-/**
- * Local callback function for PEAR errors
- */
-function rcube_pear_error($err)
-{
-    error_log(sprintf("%s (%s): %s",
-        $err->getMessage(),
-        $err->getCode(),
-        $err->getUserinfo()), 0);
-}
 
 // set PEAR error handling (will also load the PEAR main class)
 PEAR::setErrorHandling(PEAR_ERROR_CALLBACK, 'rcube_pear_error');
 
-// include global functions
+// backward compatybility (to be removed)
 require_once INSTALL_PATH . 'program/include/main.inc';
-require_once INSTALL_PATH . 'program/include/rcube_shared.inc';

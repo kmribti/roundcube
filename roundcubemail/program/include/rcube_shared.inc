@@ -28,48 +28,6 @@
 
 
 /**
- * Send HTTP headers to prevent caching this page
- */
-function send_nocacheing_headers()
-{
-  global $OUTPUT;
-
-  if (headers_sent())
-    return;
-
-  header("Expires: ".gmdate("D, d M Y H:i:s")." GMT");
-  header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
-  // Request browser to disable DNS prefetching (CVE-2010-0464)
-  header("X-DNS-Prefetch-Control: off");
-
-  // We need to set the following headers to make downloads work using IE in HTTPS mode.
-  if ($OUTPUT->browser->ie && rcube_https_check()) {
-    header('Pragma: private');
-    header("Cache-Control: private, must-revalidate");
-  } else {
-    header("Cache-Control: private, no-cache, must-revalidate, post-check=0, pre-check=0");
-    header("Pragma: no-cache");
-  }
-}
-
-
-/**
- * Send header with expire date 30 days in future
- *
- * @param int Expiration time in seconds
- */
-function send_future_expire_header($offset=2600000)
-{
-  if (headers_sent())
-    return;
-
-  header("Expires: ".gmdate("D, d M Y H:i:s", mktime()+$offset)." GMT");
-  header("Cache-Control: max-age=$offset");
-  header("Pragma: ");
-}
-
-
-/**
  * Similar function as in_array() but case-insensitive
  *
  * @param mixed Needle value
@@ -137,36 +95,11 @@ function parse_bytes($str)
   return floatval($bytes);
 }
 
-/**
- * Create a human readable string for a number of bytes
- *
- * @param int Number of bytes
- * @return string Byte string
- */
-function show_bytes($bytes)
-{
-  if ($bytes >= 1073741824)
-  {
-    $gb = $bytes/1073741824;
-    $str = sprintf($gb>=10 ? "%d " : "%.1f ", $gb) . rcube_label('GB');
-  }
-  else if ($bytes >= 1048576)
-  {
-    $mb = $bytes/1048576;
-    $str = sprintf($mb>=10 ? "%d " : "%.1f ", $mb) . rcube_label('MB');
-  }
-  else if ($bytes >= 1024)
-    $str = sprintf("%d ",  round($bytes/1024)) . rcube_label('KB');
-  else
-    $str = sprintf('%d ', $bytes) . rcube_label('B');
-
-  return $str;
-}
 
 /**
  * Wrapper function for wordwrap
  */
-function rc_wordwrap($string, $width=75, $break="\n", $cut=false)
+function rcube_wordwrap($string, $width=75, $break="\n", $cut=false)
 {
   $para = explode($break, $string);
   $string = '';
@@ -214,6 +147,7 @@ function rc_wordwrap($string, $width=75, $break="\n", $cut=false)
   return $string;
 }
 
+
 /**
  * Read a specific HTTP request header
  *
@@ -221,7 +155,7 @@ function rc_wordwrap($string, $width=75, $break="\n", $cut=false)
  * @param  string $name Header name
  * @return mixed  Header value or null if not available
  */
-function rc_request_header($name)
+function rcube_request_header($name)
 {
   if (function_exists('getallheaders'))
   {
@@ -345,76 +279,6 @@ function abbreviate_string($str, $maxlength, $place_holder='...', $ending=false)
 
 
 /**
- * A method to guess the mime_type of an attachment.
- *
- * @param string $path      Path to the file.
- * @param string $name      File name (with suffix)
- * @param string $failover  Mime type supplied for failover.
- * @param string $is_stream Set to True if $path contains file body
- *
- * @return string
- * @author Till Klampaeckel <till@php.net>
- * @see    http://de2.php.net/manual/en/ref.fileinfo.php
- * @see    http://de2.php.net/mime_content_type
- */
-function rc_mime_content_type($path, $name, $failover = 'application/octet-stream', $is_stream=false)
-{
-    $mime_type = null;
-    $mime_magic = rcmail::get_instance()->config->get('mime_magic');
-    $mime_ext = @include(RCMAIL_CONFIG_DIR . '/mimetypes.php');
-    $suffix = $name ? substr($name, strrpos($name, '.')+1) : '*';
-
-    // use file name suffix with hard-coded mime-type map
-    if (is_array($mime_ext)) {
-        $mime_type = $mime_ext[$suffix];
-    }
-    // try fileinfo extension if available
-    if (!$mime_type && function_exists('finfo_open')) {
-        if ($finfo = finfo_open(FILEINFO_MIME, $mime_magic)) {
-            if ($is_stream)
-                $mime_type = finfo_buffer($finfo, $path);
-            else
-                $mime_type = finfo_file($finfo, $path);
-            finfo_close($finfo);
-        }
-    }
-    // try PHP's mime_content_type
-    if (!$mime_type && !$is_stream && function_exists('mime_content_type')) {
-      $mime_type = @mime_content_type($path);
-    }
-    // fall back to user-submitted string
-    if (!$mime_type) {
-        $mime_type = $failover;
-    }
-    else {
-        // Sometimes (PHP-5.3?) content-type contains charset definition,
-        // Remove it (#1487122) also "charset=binary" is useless
-        $mime_type = array_shift(preg_split('/[; ]/', $mime_type));
-    }
-
-    return $mime_type;
-}
-
-
-/**
- * Detect image type of the given binary data by checking magic numbers
- *
- * @param string  Binary file content
- * @return string Detected mime-type or jpeg as fallback
- */
-function rc_image_content_type($data)
-{
-    $type = 'jpeg';
-    if      (preg_match('/^\x89\x50\x4E\x47/', $data)) $type = 'png';
-    else if (preg_match('/^\x47\x49\x46\x38/', $data)) $type = 'gif';
-    else if (preg_match('/^\x00\x00\x01\x00/', $data)) $type = 'ico';
-//  else if (preg_match('/^\xFF\xD8\xFF\xE0/', $data)) $type = 'jpeg';
-
-    return 'image/' . $type;
-}
-
-
-/**
  * Explode quoted string
  * 
  * @param string Delimiter expression string for preg_match()
@@ -461,9 +325,98 @@ function array_keys_recursive($array)
 
 
 /**
+ * Remove all non-ascii and non-word chars except ., -, _
+ */
+function asciiwords($str, $css_id = false, $replace_with = '')
+{
+    $allowed = 'a-z0-9\_\-' . (!$css_id ? '\.' : '');
+    return preg_replace("/[^$allowed]/i", $replace_with, $str);
+}
+
+
+/**
+ * Remove single and double quotes from given string
+ *
+ * @param string Input value
+ *
+ * @return string Dequoted string
+ */
+function strip_quotes($str)
+{
+    return str_replace(array("'", '"'), '', $str);
+}
+
+
+/**
+ * Remove new lines characters from given string
+ *
+ * @param string Input value
+ *
+ * @return string Stripped string
+ */
+function strip_newlines($str)
+{
+    return preg_replace('/[\r\n]/', '', $str);
+}
+
+
+/**
+ * Improved equivalent to strtotime()
+ *
+ * @param string Date string
+ *
+ * @return int Unix timestamp
+ */
+function rcube_strtotime($date)
+{
+    // check for MS Outlook vCard date format YYYYMMDD
+    if (preg_match('/^([12][90]\d\d)([01]\d)(\d\d)$/', trim($date), $matches)) {
+        return mktime(0,0,0, intval($matches[2]), intval($matches[3]), intval($matches[1]));
+    }
+    else if (is_numeric($date)) {
+        return $date;
+    }
+
+    // support non-standard "GMTXXXX" literal
+    $date = preg_replace('/GMT\s*([+-][0-9]+)/', '\\1', $date);
+
+    // if date parsing fails, we have a date in non-rfc format.
+    // remove token from the end and try again
+    while ((($ts = @strtotime($date)) === false) || ($ts < 0)) {
+        $d = explode(' ', $date);
+        array_pop($d);
+        if (!$d) {
+            break;
+        }
+        $date = implode(' ', $d);
+    }
+
+    return $ts;
+}
+
+
+/**
+ * Compose a valid representation of name and e-mail address
+ *
+ * @param string E-mail address
+ * @param string Person name
+ *
+ * @return string Formatted string
+ */
+function format_email_recipient($email, $name='')
+{
+    if ($name && $name != $email) {
+        // Special chars as defined by RFC 822 need to in quoted string (or escaped).
+        return sprintf('%s <%s>', preg_match('/[\(\)\<\>\\\.\[\]@,;:"]/', $name) ? '"'.addcslashes($name, '"').'"' : $name, trim($email));
+    }
+
+    return trim($email);
+}
+
+
+/**
  * mbstring replacement functions
  */
-
 if (!extension_loaded('mbstring'))
 {
     function mb_strlen($str)
@@ -545,3 +498,89 @@ if (!function_exists('idn_to_ascii'))
     }
 }
 
+
+/*
+ * Idn_to_ascii wrapper.
+ * Intl/Idn modules version of this function doesn't work with e-mail address
+ */
+function rcube_idn_to_ascii($str)
+{
+    return rcube_idn_convert($str, true);
+}
+
+/*
+ * Idn_to_ascii wrapper.
+ * Intl/Idn modules version of this function doesn't work with e-mail address
+ */
+function rcube_idn_to_utf8($str)
+{
+    return rcube_idn_convert($str, false);
+}
+
+function rcube_idn_convert($input, $is_utf=false)
+{
+    if ($at = strpos($input, '@')) {
+        $user   = substr($input, 0, $at);
+        $domain = substr($input, $at+1);
+    }
+    else {
+        $domain = $input;
+    }
+
+    $domain = $is_utf ? idn_to_ascii($domain) : idn_to_utf8($domain);
+
+    if ($domain === false) {
+        return '';
+    }
+
+    return $at ? $user . '@' . $domain : $domain;
+}
+
+
+/**
+ * Use PHP5 autoload for dynamic class loading
+ *
+ * @todo Make Zend, PEAR etc play with this
+ * @todo Make our classes conform to a more straight forward CS.
+ */
+function rcube_autoload($classname)
+{
+    $filename = preg_replace(
+        array(
+            '/MDB2_(.+)/',
+            '/Mail_(.+)/',
+            '/Net_(.+)/',
+            '/Auth_(.+)/',
+            '/^html_.+/',
+            '/^utf8$/',
+        ),
+        array(
+            'MDB2/\\1',
+            'Mail/\\1',
+            'Net/\\1',
+            'Auth/\\1',
+            'html',
+            'utf8.class',
+        ),
+        $classname
+    );
+
+    if ($fp = @fopen("$filename.php", 'r', true)) {
+        fclose($fp);
+        include_once("$filename.php");
+        return true;
+    }
+
+    return false;
+}
+
+/**
+ * Local callback function for PEAR errors
+ */
+function rcube_pear_error($err)
+{
+    error_log(sprintf("%s (%s): %s",
+        $err->getMessage(),
+        $err->getCode(),
+        $err->getUserinfo()), 0);
+}

@@ -303,6 +303,29 @@ class html
         }
         return count($attrib_arr) ? ' '.implode(' ', $attrib_arr) : '';
     }
+
+    /**
+     * Convert a HTML attribute string attributes to an associative array (name => value)
+     *
+     * @param string Input string
+     * @return array Key-value pairs of parsed attributes
+     */
+    public static function parse_attrib_string($str)
+    {
+        $attrib = array();
+        $regexp = '/\s*([-_a-z]+)=(["\'])??(?(2)([^\2]*)\2|(\S+?))/Ui';
+
+        preg_match_all($regexp, stripslashes($str), $regs, PREG_SET_ORDER);
+
+        // convert attributes to an associative array (name => value)
+        if ($regs) {
+            foreach ($regs as $attr) {
+                $attrib[strtolower($attr[1])] = html_entity_decode($attr[3] . $attr[4]);
+            }
+        }
+
+        return $attrib;
+    }
 }
 
 /**
@@ -803,4 +826,3 @@ class html_table extends html
     }
 
 }
-

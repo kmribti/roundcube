@@ -804,4 +804,49 @@ class rcube_mdb2
         }
     }
 
-}  // end class rcube_db
+
+    /**
+     * Return correct name for a specific database table
+     *
+     * @param string $table Table name
+     *
+     * @return string Translated table name
+     */
+    public function table_name($table)
+    {
+        $rcmail = rcmail::get_instance();
+
+        // return table name if configured
+        $config_key = 'db_table_'.$table;
+
+        if ($name = $rcmail->config->get($config_key)) {
+            return $name;
+        }
+
+        return $table;
+    }
+
+
+    /**
+     * Return correct name for a specific database sequence
+     * (used for Postgres only)
+     *
+     * @param string $sequence Secuence name
+     *
+     * @return string Translated sequence name
+     */
+    public function sequence_name($sequence)
+    {
+        $rcmail = rcmail::get_instance();
+
+        // return sequence name if configured
+        $config_key = 'db_sequence_'.$sequence;
+
+        if ($name = $rcmail->config->get($config_key)) {
+            return $name;
+        }
+
+        return $sequence;
+    }
+
+}

@@ -52,7 +52,7 @@ function get_opt($aliases=array())
 			continue;
 
 		$args[$key] = preg_replace(array('/^["\']/', '/["\']$/'), '', $value);
-		
+
 		if ($alias = $aliases[$key])
 			$args[$alias] = $args[$key];
 	}

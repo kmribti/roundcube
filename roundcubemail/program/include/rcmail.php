@@ -755,9 +755,9 @@ class rcmail
     // use database for storing session data
     $this->session = new rcube_session($this->get_dbh(), $this->config);
 
-    $this->session->register_gc_handler('rcmail_temp_gc');
+    $this->session->register_gc_handler(array($this, 'temp_gc'));
     if ($this->config->get('enable_caching'))
-      $this->session->register_gc_handler('rcmail_cache_gc');
+      $this->session->register_gc_handler(array($this, 'cache_gc'));
 
     // start PHP session (if not in CLI mode)
     if ($_SERVER['REMOTE_ADDR'])
@@ -1752,5 +1752,563 @@ class rcmail
     $user->save_prefs($prefs);
     $this->set_storage_prop();
   }
+
+
+    /**
+     * Overwrite action variable
+     *
+     * @param string New action value
+     */
+    public function overwrite_action($action)
+    {
+        $this->action = $action;
+        $this->output->set_env('action', $action);
+    }
+
+
+    /**
+     * Send the given message using the configured method.
+     *
+     * @param object $message    Reference to Mail_MIME object
+     * @param string $from       Sender address string
+     * @param array  $mailto     Array of recipient address strings
+     * @param array  $smtp_error SMTP error array (reference)
+     * @param string $body_file  Location of file with saved message body (reference),
+     *                           used when delay_file_io is enabled
+     * @param array  $smtp_opts  SMTP options (e.g. DSN request)
+     *
+     * @return boolean Send status.
+     */
+    public function deliver_message(&$message, $from, $mailto, &$smtp_error, &$body_file = null, $smtp_opts = null)
+    {
+        $headers = $message->headers();
+
+        // send thru SMTP server using custom SMTP library
+        if ($this->config->get('smtp_server')) {
+            // generate list of recipients
+            $a_recipients = array($mailto);
+
+            if (strlen($headers['Cc']))
+                $a_recipients[] = $headers['Cc'];
+            if (strlen($headers['Bcc']))
+                $a_recipients[] = $headers['Bcc'];
+
+            // clean Bcc from header for recipients
+            $send_headers = $headers;
+            unset($send_headers['Bcc']);
+            // here too, it because txtHeaders() below use $message->_headers not only $send_headers
+            unset($message->_headers['Bcc']);
+
+            $smtp_headers = $message->txtHeaders($send_headers, true);
+
+            if ($message->getParam('delay_file_io')) {
+                // use common temp dir
+                $temp_dir = $this->config->get('temp_dir');
+                $body_file = tempnam($temp_dir, 'rcmMsg');
+                if (PEAR::isError($mime_result = $message->saveMessageBody($body_file))) {
+                    raise_error(array('code' => 650, 'type' => 'php',
+                        'file' => __FILE__, 'line' => __LINE__,
+                        'message' => "Could not create message: ".$mime_result->getMessage()),
+                        TRUE, FALSE);
+                    return false;
+                }
+                $msg_body = fopen($body_file, 'r');
+            }
+            else {
+                $msg_body = $message->get();
+            }
+
+            // send message
+            if (!is_object($this->smtp)) {
+                $this->smtp_init(true);
+            }
+
+            $sent = $this->smtp->send_mail($from, $a_recipients, $smtp_headers, $msg_body, $smtp_opts);
+            $smtp_response = $this->smtp->get_response();
+            $smtp_error = $this->smtp->get_error();
+
+            // log error
+            if (!$sent) {
+                raise_error(array('code' => 800, 'type' => 'smtp',
+                    'line' => __LINE__, 'file' => __FILE__,
+                    'message' => "SMTP error: ".join("\n", $smtp_response)), TRUE, FALSE);
+            }
+        }
+        // send mail using PHP's mail() function
+        else {
+            // unset some headers because they will be added by the mail() function
+            $headers_enc = $message->headers($headers);
+            $headers_php = $message->_headers;
+            unset($headers_php['To'], $headers_php['Subject']);
+
+            // reset stored headers and overwrite
+            $message->_headers = array();
+            $header_str = $message->txtHeaders($headers_php);
+
+            // #1485779
+            if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+                if (preg_match_all('/<([^@]+@[^>]+)>/', $headers_enc['To'], $m)) {
+                    $headers_enc['To'] = implode(', ', $m[1]);
+                }
+            }
+
+            $msg_body = $message->get();
+
+            if (PEAR::isError($msg_body)) {
+                raise_error(array('code' => 650, 'type' => 'php',
+                    'file' => __FILE__, 'line' => __LINE__,
+                    'message' => "Could not create message: ".$msg_body->getMessage()),
+                    TRUE, FALSE);
+            }
+            else {
+                $delim   = $this->config->header_delimiter();
+                $to      = $headers_enc['To'];
+                $subject = $headers_enc['Subject'];
+                $header_str = rtrim($header_str);
+
+                if ($delim != "\r\n") {
+                    $header_str = str_replace("\r\n", $delim, $header_str);
+                    $msg_body   = str_replace("\r\n", $delim, $msg_body);
+                    $to         = str_replace("\r\n", $delim, $to);
+                    $subject    = str_replace("\r\n", $delim, $subject);
+                }
+
+                if (ini_get('safe_mode'))
+                    $sent = mail($to, $subject, $msg_body, $header_str);
+                else
+                    $sent = mail($to, $subject, $msg_body, $header_str, "-f$from");
+            }
+        }
+
+        if ($sent) {
+            $this->plugins->exec_hook('message_sent', array('headers' => $headers, 'body' => $msg_body));
+
+            // remove MDN headers after sending
+            unset($headers['Return-Receipt-To'], $headers['Disposition-Notification-To']);
+
+            // get all recipients
+            if ($headers['Cc'])
+                $mailto .= $headers['Cc'];
+            if ($headers['Bcc'])
+                $mailto .= $headers['Bcc'];
+            if (preg_match_all('/<([^@]+@[^>]+)>/', $mailto, $m))
+                $mailto = implode(', ', array_unique($m[1]));
+
+            if ($this->config->get('smtp_log')) {
+                write_log('sendmail', sprintf("User %s [%s]; Message for %s; %s",
+                    $this->user->get_username(),
+                    $_SERVER['REMOTE_ADDR'],
+                    $mailto,
+                    !empty($smtp_response) ? join('; ', $smtp_response) : ''));
+            }
+        }
+
+        if (is_resource($msg_body)) {
+            fclose($msg_body);
+        }
+
+        $message->_headers = array();
+        $message->headers($headers);
+
+        return $sent;
+    }
+
+
+    /**
+     * Unique Message-ID generator.
+     *
+     * @return string Message-ID
+     */
+    public function gen_message_id()
+    {
+        $local_part  = md5(uniqid('rcmail'.mt_rand(),true));
+        $domain_part = $this->user->get_username('domain');
+
+        // Try to find FQDN, some spamfilters doesn't like 'localhost' (#1486924)
+        if (!preg_match('/\.[a-z]+$/i', $domain_part)) {
+            foreach (array($_SERVER['HTTP_HOST'], $_SERVER['SERVER_NAME']) as $host) {
+                $host = preg_replace('/:[0-9]+$/', '', $host);
+                if ($host && preg_match('/\.[a-z]+$/i', $host)) {
+                    $domain_part = $host;
+                }
+            }
+        }
+
+        return sprintf('<%s@%s>', $local_part, $domain_part);
+    }
+
+
+    /**
+     * Returns RFC2822 formatted current date in user's timezone
+     *
+     * @return string Date
+     */
+    public function user_date()
+    {
+        // get user's timezone
+        try {
+            $tz   = new DateTimeZone($this->config->get('timezone'));
+            $date = new DateTime('now', $tz);
+        }
+        catch (Exception $e) {
+            $date = new DateTime();
+        }
+
+        return $date->format('r');
+    }
+
+
+    /**
+     * Replaces hostname variables.
+     *
+     * @param string $name Hostname
+     * @param string $host Optional IMAP hostname
+     *
+     * @return string Hostname
+     */
+    public static function parse_host($name, $host = '')
+    {
+        // %n - host
+        $n = preg_replace('/:\d+$/', '', $_SERVER['SERVER_NAME']);
+        // %d - domain name without first part, e.g. %n=mail.domain.tld, %d=domain.tld
+        $d = preg_replace('/^[^\.]+\./', '', $n);
+        // %h - IMAP host
+        $h = $_SESSION['storage_host'] ? $_SESSION['storage_host'] : $host;
+        // %z - IMAP domain without first part, e.g. %h=imap.domain.tld, %z=domain.tld
+        $z = preg_replace('/^[^\.]+\./', '', $h);
+        // %s - domain name after the '@' from e-mail address provided at login screen. Returns FALSE if an invalid email is provided
+        if (strpos($name, '%s') !== false) {
+            $user_email = rcube_idn_convert(get_input_value('_user', RCUBE_INPUT_POST), true);
+            $matches    = preg_match('/(.*)@([a-z0-9\.\-\[\]\:]+)/i', $user_email, $s);
+            if ($matches < 1 || filter_var($s[1]."@".$s[2], FILTER_VALIDATE_EMAIL) === false) {
+                return false;
+            }
+        }
+
+        $name = str_replace(array('%n', '%d', '%h', '%z', '%s'), array($n, $d, $h, $z, $s[2]), $name);
+        return $name;
+    }
+
+
+    /**
+     * E-mail address validation.
+     *
+     * @param string $email Email address
+     * @param boolean $dns_check True to check dns
+     *
+     * @return boolean True on success, False if address is invalid
+     */
+    public function check_email($email, $dns_check=true)
+    {
+        // Check for invalid characters
+        if (preg_match('/[\x00-\x1F\x7F-\xFF]/', $email)) {
+            return false;
+        }
+
+        // Check for length limit specified by RFC 5321 (#1486453)
+        if (strlen($email) > 254) {
+            return false;
+        }
+
+        $email_array = explode('@', $email);
+
+        // Check that there's one @ symbol
+        if (count($email_array) < 2) {
+            return false;
+        }
+
+        $domain_part = array_pop($email_array);
+        $local_part  = implode('@', $email_array);
+
+        // from PEAR::Validate
+        $regexp = '&^(?:
+	        ("\s*(?:[^"\f\n\r\t\v\b\s]+\s*)+")| 			 	            #1 quoted name
+	        ([-\w!\#\$%\&\'*+~/^`|{}=]+(?:\.[-\w!\#\$%\&\'*+~/^`|{}=]+)*)) 	#2 OR dot-atom (RFC5322)
+	        $&xi';
+
+        if (!preg_match($regexp, $local_part)) {
+            return false;
+        }
+
+        // Check domain part
+        if (preg_match('/^\[*(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])){3}\]*$/', $domain_part)) {
+            return true; // IP address
+        }
+        else {
+            // If not an IP address
+            $domain_array = explode('.', $domain_part);
+            // Not enough parts to be a valid domain
+            if (sizeof($domain_array) < 2) {
+                return false;
+            }
+
+            foreach ($domain_array as $part) {
+                if (!preg_match('/^(([A-Za-z0-9][A-Za-z0-9-]{0,61}[A-Za-z0-9])|([A-Za-z0-9]))$/', $part)) {
+                    return false;
+                }
+            }
+
+            if (!$dns_check || !$this->config->get('email_dns_check')) {
+                return true;
+            }
+
+            if (strtoupper(substr(PHP_OS, 0, 3)) == 'WIN' && version_compare(PHP_VERSION, '5.3.0', '<')) {
+                $lookup = array();
+                @exec("nslookup -type=MX " . escapeshellarg($domain_part) . " 2>&1", $lookup);
+                foreach ($lookup as $line) {
+                    if (strpos($line, 'MX preference')) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            // find MX record(s)
+            if (getmxrr($domain_part, $mx_records)) {
+                return true;
+            }
+
+            // find any DNS record
+            if (checkdnsrr($domain_part, 'ANY')) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    /**
+     * Print or write debug messages
+     *
+     * @param mixed Debug message or data
+     */
+    public static function console()
+    {
+        $args = func_get_args();
+
+        if (class_exists('rcmail', false)) {
+            $rcmail = rcmail::get_instance();
+            if (is_object($rcmail->plugins)) {
+                $plugin = $rcmail->plugins->exec_hook('console', array('args' => $args));
+                if ($plugin['abort']) {
+                    return;
+                }
+               $args = $plugin['args'];
+            }
+        }
+
+        $msg = array();
+        foreach ($args as $arg) {
+            $msg[] = !is_string($arg) ? var_export($arg, true) : $arg;
+        }
+
+        write_log('console', join(";\n", $msg));
+    }
+
+
+    /**
+     * Append a line to a logfile in the logs directory.
+     * Date will be added automatically to the line.
+     *
+     * @param $name name of log file
+     * @param line Line to append
+     */
+    public static function write_log($name, $line)
+    {
+        global $RCMAIL;
+
+        if (!is_string($line)) {
+            $line = var_export($line, true);
+        }
+
+        $date_format = $RCMAIL ? $RCMAIL->config->get('log_date_format') : null;
+        $log_driver  = $RCMAIL ? $RCMAIL->config->get('log_driver') : null;
+
+        if (empty($date_format)) {
+            $date_format = 'd-M-Y H:i:s O';
+        }
+
+        $date = date($date_format);
+
+        // trigger logging hook
+        if (is_object($RCMAIL) && is_object($RCMAIL->plugins)) {
+            $log  = $RCMAIL->plugins->exec_hook('write_log', array('name' => $name, 'date' => $date, 'line' => $line));
+            $name = $log['name'];
+            $line = $log['line'];
+            $date = $log['date'];
+            if ($log['abort'])
+                return true;
+        }
+
+        if ($log_driver == 'syslog') {
+            $prio = $name == 'errors' ? LOG_ERR : LOG_INFO;
+            syslog($prio, $line);
+            return true;
+        }
+
+        // log_driver == 'file' is assumed here
+
+        $line = sprintf("[%s]: %s\n", $date, $line);
+        $log_dir  = $RCMAIL ? $RCMAIL->config->get('log_dir') : null;
+
+        if (empty($log_dir)) {
+            $log_dir = INSTALL_PATH . 'logs';
+        }
+
+        // try to open specific log file for writing
+        $logfile = $log_dir.'/'.$name;
+
+        if ($fp = @fopen($logfile, 'a')) {
+            fwrite($fp, $line);
+            fflush($fp);
+            fclose($fp);
+            return true;
+        }
+
+        trigger_error("Error writing to log file $logfile; Please check permissions", E_USER_WARNING);
+        return false;
+    }
+
+
+    /**
+     * Write login data (name, ID, IP address) to the 'userlogins' log file.
+     */
+    public function log_login()
+    {
+        if (!$this->config->get('log_logins') || !$this->user) {
+            return;
+        }
+
+        $this->write_log('userlogins',
+            sprintf('Successful login for %s (ID: %d) from %s in session %s',
+                $this->user->get_username(),
+                $this->user->ID, $this->remote_ip(), session_id()));
+    }
+
+
+    /**
+     * Returns remote IP address and forwarded addresses if found
+     *
+     * @return string Remote IP address(es)
+     */
+    public static function remote_ip()
+    {
+        $address = $_SERVER['REMOTE_ADDR'];
+
+        // append the NGINX X-Real-IP header, if set
+        if (!empty($_SERVER['HTTP_X_REAL_IP'])) {
+            $remote_ip[] = 'X-Real-IP: ' . $_SERVER['HTTP_X_REAL_IP'];
+        }
+        // append the X-Forwarded-For header, if set
+        if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $remote_ip[] = 'X-Forwarded-For: ' . $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
+
+        if (!empty($remote_ip)) {
+            $address .= '(' . implode(',', $remote_ip) . ')';
+        }
+
+        return $address;
+    }
+
+
+    /**
+     * Check whether the HTTP referer matches the current request
+     *
+     * @return boolean True if referer is the same host+path, false if not
+     */
+    public static function check_referer()
+    {
+        $uri = parse_url($_SERVER['REQUEST_URI']);
+        $referer = parse_url(rcube_request_header('Referer'));
+        return $referer['host'] == rcube_request_header('Host') && $referer['path'] == $uri['path'];
+    }
+
+
+    /**
+     * Returns current time (with microseconds).
+     *
+     * @return float Current time in seconds since the Unix
+     */
+    public static function timer()
+    {
+        return microtime(true);
+    }
+
+
+    /**
+     * Logs time difference according to provided timer
+     *
+     * @param float  $timer  Timer (self::timer() result)
+     * @param string $label  Log line prefix
+     * @param string $dest   Log file name
+     *
+     * @see self::timer()
+     */
+    public static function print_timer($timer, $label = 'Timer', $dest = 'console')
+    {
+        static $print_count = 0;
+
+        $print_count++;
+        $now = rcube_timer();
+        $diff = $now-$timer;
+
+        if (empty($label)) {
+            $label = 'Timer '.$print_count;
+        }
+
+        self::write_log($dest, sprintf("%s: %0.4f sec", $label, $diff));
+    }
+
+
+    /**
+     * Garbage collector function for temp files.
+     * Remove temp files older than two days
+     */
+    public function temp_gc()
+    {
+        $tmp = unslashify($this->config->get('temp_dir'));
+        $expire = mktime() - 172800;  // expire in 48 hours
+
+        if ($dir = opendir($tmp)) {
+            while (($fname = readdir($dir)) !== false) {
+                if ($fname{0} == '.') {
+                    continue;
+                }
+
+                if (filemtime($tmp.'/'.$fname) < $expire) {
+                    @unlink($tmp.'/'.$fname);
+                }
+            }
+
+            closedir($dir);
+        }
+    }
+
+
+    /**
+     * Garbage collector for cache entries.
+     * Remove all expired message cache records
+     */
+    public function cache_gc()
+    {
+        $db = $this->get_dbh();
+
+        // get target timestamp
+        $ts = get_offset_time($this->config->get('message_cache_lifetime', '30d'), -1);
+
+        $db->query("DELETE FROM ".get_table_name('cache_messages')
+            ." WHERE changed < " . $db->fromunixtime($ts));
+
+        $db->query("DELETE FROM ".get_table_name('cache_index')
+            ." WHERE changed < " . $db->fromunixtime($ts));
+
+        $db->query("DELETE FROM ".get_table_name('cache_thread')
+            ." WHERE changed < " . $db->fromunixtime($ts));
+
+        $db->query("DELETE FROM ".get_table_name('cache')
+            ." WHERE created < " . $db->fromunixtime($ts));
+    }
 
 }

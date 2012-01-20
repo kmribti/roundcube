@@ -68,7 +68,7 @@ function raise_error($p)
 /**
  * Local callback function for PEAR errors
  */
-function rcube_pear_error($err)
+function __pear_error($err)
 {
     raise_error(array(
         'code' => $err->getCode(),
@@ -77,4 +77,4 @@ function rcube_pear_error($err)
 }
 
 // set PEAR error handling (will also load the PEAR main class)
-PEAR::setErrorHandling(PEAR_ERROR_CALLBACK, 'rcube_pear_error');
+PEAR::setErrorHandling(PEAR_ERROR_CALLBACK, '__pear_error');

@@ -319,8 +319,9 @@ class rcube_session
    */
   public function gc()
   {
-    foreach ($this->gc_handlers as $fct)
+    foreach ($this->gc_handlers as $fct) {
       call_user_func($fct);
+    }
   }
 
 
@@ -329,10 +330,15 @@ class rcube_session
    *
    * @param mixed Callback function
    */
-  public function register_gc_handler($func_name)
+  public function register_gc_handler($func)
   {
-    if ($func_name && !in_array($func_name, $this->gc_handlers))
-      $this->gc_handlers[] = $func_name;
+    foreach ($this->gc_handlers as $handler) {
+      if ($handler == $func) {
+        return;
+      }
+    }
+
+    $this->gc_handlers[] = $func;
   }
 
 
