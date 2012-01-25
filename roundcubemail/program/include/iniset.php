@@ -50,11 +50,6 @@ if (!defined('RCMAIL_CONFIG_DIR')) {
     define('RCMAIL_CONFIG_DIR', INSTALL_PATH . 'config');
 }
 
-// make sure path_separator is defined
-if (!defined('PATH_SEPARATOR')) {
-    define('PATH_SEPARATOR', (strtoupper(substr(PHP_OS, 0, 3)) == 'WIN') ? ';' : ':');
-}
-
 // RC include folders MUST be included FIRST to avoid other
 // possible not compatible libraries (i.e PEAR) to be included
 // instead the ones provided by RC

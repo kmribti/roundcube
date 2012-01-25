@@ -2,14 +2,14 @@
 
 /*
  +-----------------------------------------------------------------------+
- | rcube_shared.inc                                                      |
+ | program/include/rcube_shared.inc                                      |
  |                                                                       |
  | This file is part of the Roundcube PHP suite                          |
- | Copyright (C) 2005-2007, The Roundcube Dev Team                       |
+ | Copyright (C) 2005-2012, The Roundcube Dev Team                       |
  | Licensed under the GNU GPL                                            |
  |                                                                       |
  | CONTENTS:                                                             |
- |   Shared functions and classes used in PHP projects                   |
+ |   Shared functions used by Roundcube Framework                        |
  |                                                                       |
  +-----------------------------------------------------------------------+
  | Author: Thomas Bruederli <roundcube@gmail.com>                        |
@@ -30,145 +30,162 @@
 /**
  * Similar function as in_array() but case-insensitive
  *
- * @param mixed Needle value
- * @param array Array to search in
+ * @param string $needle    Needle value
+ * @param array  $heystack  Array to search in
+ *
  * @return boolean True if found, False if not
  */
 function in_array_nocase($needle, $haystack)
 {
-  $needle = mb_strtolower($needle);
-  foreach ($haystack as $value)
-    if ($needle===mb_strtolower($value))
-      return true;
+    $needle = mb_strtolower($needle);
+    foreach ($haystack as $value) {
+        if ($needle === mb_strtolower($value)) {
+            return true;
+        }
+    }
 
-  return false;
+    return false;
 }
 
 
 /**
- * Find out if the string content means TRUE or FALSE
+ * Find out if the string content means true or false
  *
- * @param string Input value
- * @return boolean Imagine what!
+ * @param string $str  Input value
+ *
+ * @return boolean Boolean value
  */
 function get_boolean($str)
 {
-  $str = strtolower($str);
-  if (in_array($str, array('false', '0', 'no', 'off', 'nein', ''), TRUE))
-    return FALSE;
-  else
-    return TRUE;
+    $str = strtolower($str);
+
+    return !in_array($str, array('false', '0', 'no', 'off', 'nein', ''), true);
 }
 
 
 /**
- * Parse a human readable string for a number of bytes
+ * Parse a human readable string for a number of bytes.
  *
- * @param string Input string
+ * @param string $str  Input string
+ *
  * @return float Number of bytes
  */
 function parse_bytes($str)
 {
-  if (is_numeric($str))
-    return floatval($str);
-
-  if (preg_match('/([0-9\.]+)\s*([a-z]*)/i', $str, $regs))
-  {
-    $bytes = floatval($regs[1]);
-    switch (strtolower($regs[2]))
-    {
-      case 'g':
-      case 'gb':
-        $bytes *= 1073741824;
-        break;
-      case 'm':
-      case 'mb':
-        $bytes *= 1048576;
-        break;
-      case 'k':
-      case 'kb':
-        $bytes *= 1024;
-        break;
+    if (is_numeric($str)) {
+        return floatval($str);
     }
-  }
 
-  return floatval($bytes);
+    if (preg_match('/([0-9\.]+)\s*([a-z]*)/i', $str, $regs)) {
+        $bytes = floatval($regs[1]);
+        switch (strtolower($regs[2])) {
+        case 'g':
+        case 'gb':
+            $bytes *= 1073741824;
+            break;
+        case 'm':
+        case 'mb':
+            $bytes *= 1048576;
+            break;
+        case 'k':
+        case 'kb':
+            $bytes *= 1024;
+            break;
+        }
+    }
+
+    return floatval($bytes);
 }
 
 
 /**
  * Wrapper function for wordwrap
+ *
+ * @param string $string  Text to wrap
+ * @param int    $width   Line width
+ * @param string $break   Line separator
+ * @param bool   $cut     Enable to cut word
+ *
+ * @return string Text
  */
 function rcube_wordwrap($string, $width=75, $break="\n", $cut=false)
 {
-  $para = explode($break, $string);
-  $string = '';
-  while (count($para)) {
-    $line = array_shift($para);
-    if ($line[0] == '>') {
-      $string .= $line.$break;
-      continue;
-    }
-    $list = explode(' ', $line);
-    $len = 0;
-    while (count($list)) {
-      $line = array_shift($list);
-      $l = mb_strlen($line);
-      $newlen = $len + $l + ($len ? 1 : 0);
-
-      if ($newlen <= $width) {
-        $string .= ($len ? ' ' : '').$line;
-        $len += (1 + $l);
-      } else {
-        if ($l > $width) {
-          if ($cut) {
-            $start = 0;
-            while ($l) {
-              $str = mb_substr($line, $start, $width);
-              $strlen = mb_strlen($str);
-              $string .= ($len ? $break : '').$str;
-              $start += $strlen;
-              $l -= $strlen;
-              $len = $strlen;
-            }
-          } else {
-                $string .= ($len ? $break : '').$line;
-            if (count($list)) $string .= $break;
-            $len = 0;
-          }
-        } else {
-          $string .= $break.$line;
-          $len = $l;
+    $para = explode($break, $string);
+    $string = '';
+    while (count($para)) {
+        $line = array_shift($para);
+        if ($line[0] == '>') {
+            $string .= $line.$break;
+            continue;
         }
-      }
+
+        $list = explode(' ', $line);
+        $len = 0;
+        while (count($list)) {
+            $line   = array_shift($list);
+            $l      = mb_strlen($line);
+            $newlen = $len + $l + ($len ? 1 : 0);
+
+            if ($newlen <= $width) {
+                $string .= ($len ? ' ' : '').$line;
+                $len += (1 + $l);
+            }
+            else {
+                if ($l > $width) {
+                    if ($cut) {
+                        $start = 0;
+                        while ($l) {
+                            $str = mb_substr($line, $start, $width);
+                            $strlen = mb_strlen($str);
+                            $string .= ($len ? $break : '').$str;
+                            $start += $strlen;
+                            $l -= $strlen;
+                            $len = $strlen;
+                        }
+                    }
+                    else {
+                        $string .= ($len ? $break : '').$line;
+                        if (count($list)) {
+                            $string .= $break;
+                        }
+                        $len = 0;
+                    }
+                }
+                else {
+                    $string .= $break.$line;
+                    $len = $l;
+                }
+            }
+        }
+
+        if (count($para)) {
+            $string .= $break;
+        }
     }
-    if (count($para)) $string .= $break;
-  }
-  return $string;
+
+    return $string;
 }
 
 
 /**
- * Read a specific HTTP request header
+ * Read a specific HTTP request header.
  *
- * @access static
  * @param  string $name Header name
+ *
  * @return mixed  Header value or null if not available
  */
 function rcube_request_header($name)
 {
-  if (function_exists('getallheaders'))
-  {
-    $hdrs = array_change_key_case(getallheaders(), CASE_UPPER);
-    $key  = strtoupper($name);
-  }
-  else
-  {
-    $key  = 'HTTP_' . strtoupper(strtr($name, '-', '_'));
-    $hdrs = array_change_key_case($_SERVER, CASE_UPPER);
-  }
+    if (function_exists('getallheaders')) {
+        $hdrs = array_change_key_case(getallheaders(), CASE_UPPER);
+        $key  = strtoupper($name);
+    }
+    else {
+        $key  = 'HTTP_' . strtoupper(strtr($name, '-', '_'));
+        $hdrs = array_change_key_case($_SERVER, CASE_UPPER);
+    }
 
-  return $hdrs[$key];
+    return $hdrs[$key];
 }
 
 
@@ -194,133 +211,144 @@ function unslashify($str)
  * Delete all files within a folder
  *
  * @param string Path to directory
+ *
  * @return boolean True on success, False if directory was not found
  */
 function clear_directory($dir_path)
 {
-  $dir = @opendir($dir_path);
-  if(!$dir) return FALSE;
+    $dir = @opendir($dir_path);
+    if (!$dir) {
+        return false;
+    }
 
-  while ($file = readdir($dir))
-    if (strlen($file)>2)
-      unlink("$dir_path/$file");
+    while ($file = readdir($dir)) {
+        if (strlen($file) > 2) {
+            unlink("$dir_path/$file");
+        }
+    }
 
-  closedir($dir);
-  return TRUE;
+    closedir($dir);
+
+    return true;
 }
 
 
 /**
- * Create a unix timestamp with a specified offset from now
+ * Create a unix timestamp with a specified offset from now.
  *
- * @param string String representation of the offset (e.g. 20min, 5h, 2days)
- * @param int Factor to multiply with the offset
+ * @param string $offset_str  String representation of the offset (e.g. 20min, 5h, 2days)
+ * @param int    $factor      Factor to multiply with the offset
+ *
  * @return int Unix timestamp
  */
 function get_offset_time($offset_str, $factor=1)
 {
-  if (preg_match('/^([0-9]+)\s*([smhdw])/i', $offset_str, $regs))
-  {
-    $amount = (int)$regs[1];
-    $unit = strtolower($regs[2]);
-  }
-  else
-  {
-    $amount = (int)$offset_str;
-    $unit = 's';
-  }
+    if (preg_match('/^([0-9]+)\s*([smhdw])/i', $offset_str, $regs)) {
+        $amount = (int)$regs[1];
+        $unit   = strtolower($regs[2]);
+    }
+    else {
+        $amount = (int)$offset_str;
+        $unit   = 's';
+    }
 
-  $ts = mktime();
-  switch ($unit)
-  {
+    $ts = mktime();
+    switch ($unit) {
     case 'w':
-      $amount *= 7;
+        $amount *= 7;
     case 'd':
-      $amount *= 24;
+        $amount *= 24;
     case 'h':
-      $amount *= 60;
+        $amount *= 60;
     case 'm':
-      $amount *= 60;
+        $amount *= 60;
     case 's':
-      $ts += $amount * $factor;
-  }
+        $ts += $amount * $factor;
+    }
 
-  return $ts;
+    return $ts;
 }
 
 
 /**
- * Truncate string if it is longer than the allowed length
- * Replace the middle or the ending part of a string with a placeholder
+ * Truncate string if it is longer than the allowed length.
+ * Replace the middle or the ending part of a string with a placeholder.
  *
- * @param string Input string
- * @param int    Max. length
- * @param string Replace removed chars with this
- * @param bool   Set to True if string should be truncated from the end
+ * @param string $str         Input string
+ * @param int    $maxlength   Max. length
+ * @param string $placeholder Replace removed chars with this
+ * @param bool   $ending      Set to True if string should be truncated from the end
+ *
  * @return string Abbreviated string
  */
-function abbreviate_string($str, $maxlength, $place_holder='...', $ending=false)
+function abbreviate_string($str, $maxlength, $placeholder='...', $ending=false)
 {
-  $length = mb_strlen($str);
+    $length = mb_strlen($str);
 
-  if ($length > $maxlength)
-  {
-    if ($ending)
-      return mb_substr($str, 0, $maxlength) . $place_holder;
+    if ($length > $maxlength) {
+        if ($ending) {
+            return mb_substr($str, 0, $maxlength) . $placeholder;
+        }
 
-    $place_holder_length = mb_strlen($place_holder);
-    $first_part_length = floor(($maxlength - $place_holder_length)/2);
-    $second_starting_location = $length - $maxlength + $first_part_length + $place_holder_length;
-    $str = mb_substr($str, 0, $first_part_length) . $place_holder . mb_substr($str, $second_starting_location);
-  }
+        $placeholder_length = mb_strlen($placeholder);
+        $first_part_length  = floor(($maxlength - $placeholder_length)/2);
+        $second_starting_location = $length - $maxlength + $first_part_length + $placeholder_length;
 
-  return $str;
+        $str = mb_substr($str, 0, $first_part_length) . $placeholder . mb_substr($str, $second_starting_location);
+    }
+
+    return $str;
 }
 
 
 /**
  * Explode quoted string
- * 
+ *
  * @param string Delimiter expression string for preg_match()
  * @param string Input string
  */
 function rcube_explode_quoted_string($delimiter, $string)
 {
-  $result = array();
-  $strlen = strlen($string);
+    $result = array();
+    $strlen = strlen($string);
 
-  for ($q=$p=$i=0; $i < $strlen; $i++) {
-    if ($string[$i] == "\"" && $string[$i-1] != "\\") {
-      $q = $q ? false : true;
-    } 
-    else if (!$q && preg_match("/$delimiter/", $string[$i])) {
-      $result[] = substr($string, $p, $i - $p);
-      $p = $i + 1;
+    for ($q=$p=$i=0; $i < $strlen; $i++) {
+        if ($string[$i] == "\"" && $string[$i-1] != "\\") {
+            $q = $q ? false : true;
+        }
+        else if (!$q && preg_match("/$delimiter/", $string[$i])) {
+            $result[] = substr($string, $p, $i - $p);
+            $p = $i + 1;
+        }
     }
-  }
 
-  $result[] = substr($string, $p);
-  return $result;
+    $result[] = substr($string, $p);
+
+    return $result;
 }
 
 
 /**
- * Get all keys from array (recursive)
- * 
- * @param array Input array
- * @return array
+ * Get all keys from array (recursive).
+ *
+ * @param array $array  Input array
+ *
+ * @return array List of array keys
  */
 function array_keys_recursive($array)
 {
-  $keys = array();
+    $keys = array();
 
-  if (!empty($array))
-    foreach ($array as $key => $child) {
-      $keys[] = $key;
-      foreach (array_keys_recursive($child) as $val)
-        $keys[] = $val;
+    if (!empty($array)) {
+        foreach ($array as $key => $child) {
+            $keys[] = $key;
+            foreach (array_keys_recursive($child) as $val) {
+                $keys[] = $val;
+            }
+        }
     }
-  return $keys;
+
+    return $keys;
 }
 
 
@@ -350,7 +378,7 @@ function strip_quotes($str)
 /**
  * Remove new lines characters from given string
  *
- * @param string Input value
+ * @param string $str  Input value
  *
  * @return string Stripped string
  */
@@ -363,7 +391,7 @@ function strip_newlines($str)
 /**
  * Improved equivalent to strtotime()
  *
- * @param string Date string
+ * @param string $date  Date string
  *
  * @return int Unix timestamp
  */
@@ -398,19 +426,25 @@ function rcube_strtotime($date)
 /**
  * Compose a valid representation of name and e-mail address
  *
- * @param string E-mail address
- * @param string Person name
+ * @param string $email  E-mail address
+ * @param string $name   Person name
  *
  * @return string Formatted string
  */
-function format_email_recipient($email, $name='')
+function format_email_recipient($email, $name = '')
 {
+    $email = trim($email);
+
     if ($name && $name != $email) {
         // Special chars as defined by RFC 822 need to in quoted string (or escaped).
-        return sprintf('%s <%s>', preg_match('/[\(\)\<\>\\\.\[\]@,;:"]/', $name) ? '"'.addcslashes($name, '"').'"' : $name, trim($email));
+        if (preg_match('/[\(\)\<\>\\\.\[\]@,;:"]/', $name)) {
+            $name = '"'.addcslashes($name, '"').'"';
+        }
+
+        return "$name <$email>";
     }
 
-    return trim($email);
+    return $email;
 }
 
 
@@ -421,7 +455,7 @@ if (!extension_loaded('mbstring'))
 {
     function mb_strlen($str)
     {
-	return strlen($str);
+        return strlen($str);
     }
 
     function mb_strtolower($str)
