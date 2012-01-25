@@ -298,7 +298,7 @@ class rcube_imap_cache
         // Fetch messages from cache
         $sql_result = $this->db->query(
             "SELECT uid, data, flags"
-            ." FROM ".get_table_name('cache_messages')
+            ." FROM ".$this->db->table_name('cache_messages')
             ." WHERE user_id = ?"
                 ." AND mailbox = ?"
                 ." AND uid IN (".$this->db->array2list($msgs, 'integer').")",
@@ -358,7 +358,7 @@ class rcube_imap_cache
 
         $sql_result = $this->db->query(
             "SELECT flags, data"
-            ." FROM ".get_table_name('cache_messages')
+            ." FROM ".$this->db->table_name('cache_messages')
             ." WHERE user_id = ?"
                 ." AND mailbox = ?"
                 ." AND uid = ?",
@@ -426,7 +426,7 @@ class rcube_imap_cache
         // here will work as select, assume row exist if affected_rows=0)
         if (!$force) {
             $res = $this->db->query(
-                "UPDATE ".get_table_name('cache_messages')
+                "UPDATE ".$this->db->table_name('cache_messages')
                 ." SET flags = ?, data = ?, changed = ".$this->db->now()
                 ." WHERE user_id = ?"
                     ." AND mailbox = ?"
@@ -440,7 +440,7 @@ class rcube_imap_cache
 
         // insert new record
         $this->db->query(
-            "INSERT INTO ".get_table_name('cache_messages')
+            "INSERT INTO ".$this->db->table_name('cache_messages')
             ." (user_id, mailbox, uid, flags, changed, data)"
             ." VALUES (?, ?, ?, ?, ".$this->db->now().", ?)",
             $this->userid, $mailbox, (int) $message->uid, $flags, $msg);
@@ -475,7 +475,7 @@ class rcube_imap_cache
         }
 
         $this->db->query(
-            "UPDATE ".get_table_name('cache_messages')
+            "UPDATE ".$this->db->table_name('cache_messages')
             ." SET changed = ".$this->db->now()
             .", flags = flags ".($enabled ? "+ $idx" : "- $idx")
             ." WHERE user_id = ?"
@@ -496,7 +496,7 @@ class rcube_imap_cache
     {
         if (!strlen($mailbox)) {
             $this->db->query(
-                "DELETE FROM ".get_table_name('cache_messages')
+                "DELETE FROM ".$this->db->table_name('cache_messages')
                 ." WHERE user_id = ?",
                 $this->userid);
         }
@@ -509,7 +509,7 @@ class rcube_imap_cache
             }
 
             $this->db->query(
-                "DELETE FROM ".get_table_name('cache_messages')
+                "DELETE FROM ".$this->db->table_name('cache_messages')
                 ." WHERE user_id = ?"
                     ." AND mailbox = ".$this->db->quote($mailbox)
                     .($uids !== null ? " AND uid IN (".$this->db->array2list((array)$uids, 'integer').")" : ""),
@@ -532,14 +532,14 @@ class rcube_imap_cache
         // otherwise use 'valid' flag to not loose HIGHESTMODSEQ value
         if ($remove) {
             $this->db->query(
-                "DELETE FROM ".get_table_name('cache_index')
+                "DELETE FROM ".$this->db->table_name('cache_index')
                 ." WHERE user_id = ".intval($this->userid)
                     .(strlen($mailbox) ? " AND mailbox = ".$this->db->quote($mailbox) : "")
             );
         }
         else {
             $this->db->query(
-                "UPDATE ".get_table_name('cache_index')
+                "UPDATE ".$this->db->table_name('cache_index')
                 ." SET valid = 0"
                 ." WHERE user_id = ".intval($this->userid)
                     .(strlen($mailbox) ? " AND mailbox = ".$this->db->quote($mailbox) : "")
@@ -565,7 +565,7 @@ class rcube_imap_cache
     function remove_thread($mailbox = null)
     {
         $this->db->query(
-            "DELETE FROM ".get_table_name('cache_thread')
+            "DELETE FROM ".$this->db->table_name('cache_thread')
             ." WHERE user_id = ".intval($this->userid)
                 .(strlen($mailbox) ? " AND mailbox = ".$this->db->quote($mailbox) : "")
         );
@@ -603,7 +603,7 @@ class rcube_imap_cache
         // Get index from DB
         $sql_result = $this->db->query(
             "SELECT data, valid"
-            ." FROM ".get_table_name('cache_index')
+            ." FROM ".$this->db->table_name('cache_index')
             ." WHERE user_id = ?"
                 ." AND mailbox = ?",
             $this->userid, $mailbox);
@@ -640,7 +640,7 @@ class rcube_imap_cache
         // Get thread from DB
         $sql_result = $this->db->query(
             "SELECT data"
-            ." FROM ".get_table_name('cache_thread')
+            ." FROM ".$this->db->table_name('cache_thread')
             ." WHERE user_id = ?"
                 ." AND mailbox = ?",
             $this->userid, $mailbox);
@@ -684,7 +684,7 @@ class rcube_imap_cache
 
         if ($exists) {
             $sql_result = $this->db->query(
-                "UPDATE ".get_table_name('cache_index')
+                "UPDATE ".$this->db->table_name('cache_index')
                 ." SET data = ?, valid = 1, changed = ".$this->db->now()
                 ." WHERE user_id = ?"
                     ." AND mailbox = ?",
@@ -692,7 +692,7 @@ class rcube_imap_cache
         }
         else {
             $sql_result = $this->db->query(
-                "INSERT INTO ".get_table_name('cache_index')
+                "INSERT INTO ".$this->db->table_name('cache_index')
                 ." (user_id, mailbox, data, valid, changed)"
                 ." VALUES (?, ?, ?, 1, ".$this->db->now().")",
                 $this->userid, $mailbox, $data);
@@ -715,7 +715,7 @@ class rcube_imap_cache
 
         if ($exists) {
             $sql_result = $this->db->query(
-                "UPDATE ".get_table_name('cache_thread')
+                "UPDATE ".$this->db->table_name('cache_thread')
                 ." SET data = ?, changed = ".$this->db->now()
                 ." WHERE user_id = ?"
                     ." AND mailbox = ?",
@@ -723,7 +723,7 @@ class rcube_imap_cache
         }
         else {
             $sql_result = $this->db->query(
-                "INSERT INTO ".get_table_name('cache_thread')
+                "INSERT INTO ".$this->db->table_name('cache_thread')
                 ." (user_id, mailbox, data, changed)"
                 ." VALUES (?, ?, ?, ".$this->db->now().")",
                 $this->userid, $mailbox, $data);
@@ -931,7 +931,7 @@ class rcube_imap_cache
         $uids = array();
         $sql_result = $this->db->query(
             "SELECT uid"
-            ." FROM ".get_table_name('cache_messages')
+            ." FROM ".$this->db->table_name('cache_messages')
             ." WHERE user_id = ?"
                 ." AND mailbox = ?",
             $this->userid, $mailbox);
@@ -978,7 +978,7 @@ class rcube_imap_cache
                 }
 
                 $this->db->query(
-                    "UPDATE ".get_table_name('cache_messages')
+                    "UPDATE ".$this->db->table_name('cache_messages')
                     ." SET flags = ?, changed = ".$this->db->now()
                     ." WHERE user_id = ?"
                         ." AND mailbox = ?"

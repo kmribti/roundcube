@@ -295,10 +295,10 @@ class html
                 }
             }
             else if ($key=='value') {
-                $attrib_arr[] = $key . '="' . Q($value, 'strict', false) . '"';
+                $attrib_arr[] = $key . '="' . rcube_ui::Q($value, 'strict', false) . '"';
             }
             else {
-                $attrib_arr[] = $key . '="' . Q($value) . '"';
+                $attrib_arr[] = $key . '="' . rcube_ui::Q($value) . '"';
             }
         }
         return count($attrib_arr) ? ' '.implode(' ', $attrib_arr) : '';
@@ -540,7 +540,7 @@ class html_textarea extends html
         }
 
         if (!empty($value) && !preg_match('/mce_editor/', $this->attrib['class'])) {
-            $value = Q($value, 'strict', false);
+            $value = rcube_ui::Q($value, 'strict', false);
         }
 
         return self::tag($this->tagname, $this->attrib, $value,
@@ -614,7 +614,7 @@ class html_select extends html
                 'selected' => (in_array($option['value'], $select, true) ||
                   in_array($option['text'], $select, true)) ? 1 : null);
 
-            $this->content .= self::tag('option', $attr, Q($option['text']));
+            $this->content .= self::tag('option', $attr, rcube_ui::Q($option['text']));
         }
         return parent::show();
     }

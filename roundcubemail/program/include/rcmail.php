@@ -182,8 +182,8 @@ class rcmail
     $this->session_configure();
 
     // set task and action properties
-    $this->set_task(get_input_value('_task', RCUBE_INPUT_GPC));
-    $this->action = asciiwords(get_input_value('_action', RCUBE_INPUT_GPC));
+    $this->set_task(rcube_ui::get_input_value('_task', rcube_ui::INPUT_GPC));
+    $this->action = asciiwords(rcube_ui::get_input_value('_action', rcube_ui::INPUT_GPC));
 
     // reset some session parameters when changing task
     if ($this->task != 'utils') {
@@ -335,7 +335,7 @@ class rcmail
 
       $this->memcache = new Memcache;
       $this->mc_available = 0;
-      
+
       // add alll configured hosts to pool
       $pconnect = $this->config->get('memcache_pconnect', true);
       foreach ($this->config->get('memcache_hosts', array()) as $host) {
@@ -343,7 +343,7 @@ class rcmail
         if (!$port) $port = 11211;
         $this->mc_available += intval($this->memcache->addServer($host, $port, $pconnect, 1, 1, 15, false, array($this, 'memcache_failure')));
       }
-      
+
       // test connection and failover (will result in $this->mc_available == 0 on complete failure)
       $this->memcache->increment('__CONNECTIONTEST__', 1);  // NOP if key doesn't exist
 
@@ -353,14 +353,15 @@ class rcmail
 
     return $this->memcache;
   }
-  
+
+
   /**
    * Callback for memcache failure
    */
   public function memcache_failure($host, $port)
   {
     static $seen = array();
-    
+
     // only report once
     if (!$seen["$host:$port"]++) {
       $this->mc_available--;
@@ -476,7 +477,7 @@ class rcmail
         $this->address_books['0'] = new rcube_contacts($this->db, $this->user->ID);
       $list['0'] = array(
         'id'       => '0',
-        'name'     => rcube_label('personaladrbook'),
+        'name'     => $this->gettext('personaladrbook'),
         'groups'   => $this->address_books['0']->groups,
         'readonly' => $this->address_books['0']->readonly,
         'autocomplete' => in_array('sql', $autocomplete),
@@ -746,7 +747,7 @@ class rcmail
       ini_set('session.gc_maxlifetime', $lifetime * 2);
     }
 
-    ini_set('session.cookie_secure', rcube_https_check());
+    ini_set('session.cookie_secure', rcube_ui::https_check());
     ini_set('session.name', $sess_name ? $sess_name : 'roundcube_sessid');
     ini_set('session.use_cookies', 1);
     ini_set('session.use_only_cookies', 1);
@@ -828,7 +829,7 @@ class rcmail
       if (!$allowed)
         return false;
       }
-    else if (!empty($config['default_host']) && $host != rcube_parse_host($config['default_host']))
+    else if (!empty($config['default_host']) && $host != self::parse_host($config['default_host']))
       return false;
 
     // parse $host URL
@@ -852,9 +853,9 @@ class rcmail
     // Check if we need to add domain
     if (!empty($config['username_domain']) && strpos($username, '@') === false) {
       if (is_array($config['username_domain']) && isset($config['username_domain'][$host]))
-        $username .= '@'.rcube_parse_host($config['username_domain'][$host], $host);
+        $username .= '@'.self::parse_host($config['username_domain'][$host], $host);
       else if (is_string($config['username_domain']))
-        $username .= '@'.rcube_parse_host($config['username_domain'], $host);
+        $username .= '@'.self::parse_host($config['username_domain'], $host);
     }
 
     // Convert username to lowercase. If storage backend
@@ -1002,7 +1003,7 @@ class rcmail
     $host = null;
 
     if (is_array($default_host)) {
-      $post_host = get_input_value('_host', RCUBE_INPUT_POST);
+      $post_host = rcube_ui::get_input_value('_host', rcube_ui::INPUT_POST);
 
       // direct match in default_host array
       if ($default_host[$post_host] || in_array($post_host, array_values($default_host))) {
@@ -1010,7 +1011,7 @@ class rcmail
       }
 
       // try to select host by mail domain
-      list($user, $domain) = explode('@', get_input_value('_user', RCUBE_INPUT_POST));
+      list($user, $domain) = explode('@', rcube_ui::get_input_value('_user', rcube_ui::INPUT_POST));
       if (!empty($domain)) {
         foreach ($default_host as $storage_host => $mail_domains) {
           if (is_array($mail_domains) && in_array($domain, $mail_domains)) {
@@ -1026,10 +1027,10 @@ class rcmail
       }
     }
     else if (empty($default_host)) {
-      $host = get_input_value('_host', RCUBE_INPUT_POST);
+      $host = rcube_ui::get_input_value('_host', rcube_ui::INPUT_POST);
     }
     else
-      $host = rcube_parse_host($default_host);
+      $host = self::parse_host($default_host);
 
     return $host;
   }
@@ -1273,15 +1274,15 @@ class rcmail
     // write performance stats to logs/console
     if ($this->config->get('devel_mode')) {
       if (function_exists('memory_get_usage'))
-        $mem = show_bytes(memory_get_usage());
+        $mem = rcube_ui::show_bytes(memory_get_usage());
       if (function_exists('memory_get_peak_usage'))
-        $mem .= '/'.show_bytes(memory_get_peak_usage());
+        $mem .= '/'.rcube_ui::show_bytes(memory_get_peak_usage());
 
       $log = $this->task . ($this->action ? '/'.$this->action : '') . ($mem ? " [$mem]" : '');
       if (defined('RCMAIL_START'))
-        rcube_print_time(RCMAIL_START, $log);
+        self::print_timer(RCMAIL_START, $log);
       else
-        console($log);
+        self::console($log);
     }
   }
 
@@ -1319,9 +1320,9 @@ class rcmail
    * @param int Request method
    * @return boolean True if request token is valid false if not
    */
-  public function check_request($mode = RCUBE_INPUT_POST)
+  public function check_request($mode = rcube_ui::INPUT_POST)
   {
-    $token = get_input_value('_token', $mode);
+    $token = rcube_ui::get_input_value('_token', $mode);
     $sess_id = $_COOKIE[ini_get('session.name')];
     return !empty($sess_id) && $token == $this->get_request_token();
   }
@@ -1622,7 +1623,7 @@ class rcmail
     $cookie = session_get_cookie_params();
 
     setcookie($name, $value, $exp, $cookie['path'], $cookie['domain'],
-      rcube_https_check(), true);
+      rcube_ui::https_check(), true);
   }
 
   /**
@@ -1895,7 +1896,7 @@ class rcmail
                 $mailto = implode(', ', array_unique($m[1]));
 
             if ($this->config->get('smtp_log')) {
-                write_log('sendmail', sprintf("User %s [%s]; Message for %s; %s",
+                self::write_log('sendmail', sprintf("User %s [%s]; Message for %s; %s",
                     $this->user->get_username(),
                     $_SERVER['REMOTE_ADDR'],
                     $mailto,
@@ -1978,7 +1979,8 @@ class rcmail
         $z = preg_replace('/^[^\.]+\./', '', $h);
         // %s - domain name after the '@' from e-mail address provided at login screen. Returns FALSE if an invalid email is provided
         if (strpos($name, '%s') !== false) {
-            $user_email = rcube_idn_convert(get_input_value('_user', RCUBE_INPUT_POST), true);
+            $user_email = rcube_ui::get_input_value('_user', rcube_ui::INPUT_POST);
+            $user_email = rcube_idn_convert($user_email, true);
             $matches    = preg_match('/(.*)@([a-z0-9\.\-\[\]\:]+)/i', $user_email, $s);
             if ($matches < 1 || filter_var($s[1]."@".$s[2], FILTER_VALIDATE_EMAIL) === false) {
                 return false;
@@ -2103,7 +2105,7 @@ class rcmail
             $msg[] = !is_string($arg) ? var_export($arg, true) : $arg;
         }
 
-        write_log('console', join(";\n", $msg));
+        self::write_log('console', join(";\n", $msg));
     }
 
 
@@ -2180,10 +2182,10 @@ class rcmail
             return;
         }
 
-        $this->write_log('userlogins',
+        self::write_log('userlogins',
             sprintf('Successful login for %s (ID: %d) from %s in session %s',
                 $this->user->get_username(),
-                $this->user->ID, $this->remote_ip(), session_id()));
+                $this->user->ID, self::remote_ip(), session_id()));
     }
 
 
@@ -2251,8 +2253,8 @@ class rcmail
         static $print_count = 0;
 
         $print_count++;
-        $now = rcube_timer();
-        $diff = $now-$timer;
+        $now  = self::timer();
+        $diff = $now - $timer;
 
         if (empty($label)) {
             $label = 'Timer '.$print_count;
@@ -2298,16 +2300,16 @@ class rcmail
         // get target timestamp
         $ts = get_offset_time($this->config->get('message_cache_lifetime', '30d'), -1);
 
-        $db->query("DELETE FROM ".get_table_name('cache_messages')
+        $db->query("DELETE FROM " . $db->table_name('cache_messages')
             ." WHERE changed < " . $db->fromunixtime($ts));
 
-        $db->query("DELETE FROM ".get_table_name('cache_index')
+        $db->query("DELETE FROM " . $db->table_name('cache_index')
             ." WHERE changed < " . $db->fromunixtime($ts));
 
-        $db->query("DELETE FROM ".get_table_name('cache_thread')
+        $db->query("DELETE FROM " . $db->table_name('cache_thread')
             ." WHERE changed < " . $db->fromunixtime($ts));
 
-        $db->query("DELETE FROM ".get_table_name('cache')
+        $db->query("DELETE FROM " . $db->table_name('cache')
             ." WHERE created < " . $db->fromunixtime($ts));
     }
 

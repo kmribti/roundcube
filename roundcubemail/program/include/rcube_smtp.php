@@ -71,7 +71,7 @@ class rcube_smtp
       'smtp_auth_callbacks' => array(),
     ));
 
-    $smtp_host = rcube_parse_host($CONFIG['smtp_server']);
+    $smtp_host = rcmail::parse_host($CONFIG['smtp_server']);
     // when called from Installer it's possible to have empty $smtp_host here
     if (!$smtp_host) $smtp_host = 'localhost';
     $smtp_port = is_numeric($CONFIG['smtp_port']) ? $CONFIG['smtp_port'] : 25;
@@ -335,7 +335,7 @@ class rcube_smtp
    */
   public function debug_handler(&$smtp, $message)
   {
-    write_log('smtp', preg_replace('/\r\n$/', '', $message));
+    rcmail::write_log('smtp', preg_replace('/\r\n$/', '', $message));
   }
 
 

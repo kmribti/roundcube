@@ -150,7 +150,7 @@ class rcube_mime
                 // Append everything that is before the text to be decoded
                 if ($start != $pos) {
                     $substr = substr($input, $start, $pos-$start);
-                    $out   .= rcube_charset_convert($substr, $default_charset);
+                    $out   .= rcube_charset::convert($substr, $default_charset);
                     $start  = $pos;
                 }
                 $start += $length;
@@ -191,13 +191,13 @@ class rcube_mime
                     $text = quoted_printable_decode($text);
                 }
 
-                $out .= rcube_charset_convert($text, $charset);
+                $out .= rcube_charset::convert($text, $charset);
                 $tmp = array();
             }
 
             // add the last part of the input string
             if ($start != strlen($input)) {
-                $out .= rcube_charset_convert(substr($input, $start), $default_charset);
+                $out .= rcube_charset::convert(substr($input, $start), $default_charset);
             }
 
             // return the results
@@ -205,7 +205,7 @@ class rcube_mime
         }
 
         // no encoding information, use fallback
-        return rcube_charset_convert($input, $default_charset);
+        return rcube_charset::convert($input, $default_charset);
     }
 
 
@@ -466,10 +466,10 @@ class rcube_mime
                     $prefix = $regs[0];
                     $level = strlen($prefix);
                     $line  = rtrim(substr($line, $level));
-                    $line  = $prefix . rc_wordwrap($line, $length - $level - 2, " \r\n$prefix ");
+                    $line  = $prefix . self::wordwrap($line, $length - $level - 2, " \r\n$prefix ");
                 }
                 else if ($line) {
-                    $line = rc_wordwrap(rtrim($line), $length - 2, " \r\n");
+                    $line = self::wordwrap(rtrim($line), $length - 2, " \r\n");
                     // space-stuffing
                     $line = preg_replace('/(^|\r\n)(From| |>)/', '\\1 \\2', $line);
                 }
@@ -479,6 +479,76 @@ class rcube_mime
         }
 
         return implode("\r\n", $text);
+    }
+
+
+    /**
+     * Improved wordwrap function.
+     *
+     * @param string $string  Text to wrap
+     * @param int    $width   Line width
+     * @param string $break   Line separator
+     * @param bool   $cut     Enable to cut word
+     *
+     * @return string Text
+     */
+    public static function wordwrap($string, $width=75, $break="\n", $cut=false)
+    {
+        $para   = explode($break, $string);
+        $string = '';
+
+        while (count($para)) {
+            $line = array_shift($para);
+            if ($line[0] == '>') {
+                $string .= $line.$break;
+                continue;
+            }
+
+            $list = explode(' ', $line);
+            $len = 0;
+            while (count($list)) {
+                $line   = array_shift($list);
+                $l      = mb_strlen($line);
+                $newlen = $len + $l + ($len ? 1 : 0);
+
+                if ($newlen <= $width) {
+                    $string .= ($len ? ' ' : '').$line;
+                    $len += (1 + $l);
+                }
+                else {
+                    if ($l > $width) {
+                        if ($cut) {
+                            $start = 0;
+                            while ($l) {
+                                $str = mb_substr($line, $start, $width);
+                                $strlen = mb_strlen($str);
+                                $string .= ($len ? $break : '').$str;
+                                $start += $strlen;
+                                $l -= $strlen;
+                                $len = $strlen;
+                            }
+                        }
+                        else {
+                            $string .= ($len ? $break : '').$line;
+                            if (count($list)) {
+                                $string .= $break;
+                            }
+                            $len = 0;
+                        }
+                    }
+                    else {
+                        $string .= $break.$line;
+                        $len = $l;
+                    }
+                }
+            }
+
+            if (count($para)) {
+                $string .= $break;
+            }
+        }
+
+        return $string;
     }
 
 }

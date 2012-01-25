@@ -466,7 +466,7 @@ abstract class rcube_storage
     public function get_body($uid, $part = 1)
     {
         $headers = $this->get_message_headers($uid);
-        return rcube_charset_convert($this->get_message_part($uid, $part, null),
+        return rcube_charset::convert($this->get_message_part($uid, $part, null),
             $headers->charset ? $headers->charset : $this->default_charset);
     }
 

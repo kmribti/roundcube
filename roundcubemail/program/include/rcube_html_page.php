@@ -180,7 +180,7 @@ class rcube_html_page
         }
 
         // replace specialchars in content
-        $page_title  = Q($this->title, 'show', FALSE);
+        $page_title  = rcube_ui::Q($this->title, 'show', FALSE);
         $page_header = '';
         $page_footer = '';
 
@@ -287,7 +287,7 @@ class rcube_html_page
         $hook = rcmail::get_instance()->plugins->exec_hook("send_page", array('content' => $output));
         if (!$hook['abort']) {
             if ($this->charset != RCMAIL_CHARSET) {
-                echo rcube_charset_convert($hook['content'], RCMAIL_CHARSET, $this->charset);
+                echo rcube_charset::convert($hook['content'], RCMAIL_CHARSET, $this->charset);
             }
             else {
                 echo $hook['content'];

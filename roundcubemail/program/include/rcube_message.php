@@ -93,7 +93,7 @@ class rcube_message
         $this->opt = array(
             'safe' => $this->is_safe,
             'prefer_html' => $this->app->config->get('prefer_html'),
-            'get_url' => rcmail_url('get', array(
+            'get_url' => rcube_ui::url('get', array(
                 '_mbox' => $this->storage->get_folder(), '_uid' => $uid))
         );
 
@@ -359,7 +359,7 @@ class rcube_message
                 $c->type            = 'content';
                 $c->ctype_primary   = 'text';
                 $c->ctype_secondary = 'plain';
-                $c->body            = rcube_label('htmlmessage');
+                $c->body            = $this->app->gettext('htmlmessage');
 
                 $this->parts[] = $c;
             }
@@ -367,7 +367,7 @@ class rcube_message
             // add html part as attachment
             if ($html_part !== null && $structure->parts[$html_part] !== $print_part) {
                 $html_part = &$structure->parts[$html_part];
-                $html_part->filename = rcube_label('htmlmessage');
+                $html_part->filename = $this->app->gettext('htmlmessage');
                 $html_part->mimetype = 'text/html';
 
                 $this->attachments[] = $html_part;
@@ -379,7 +379,7 @@ class rcube_message
             $p->type            = 'content';
             $p->ctype_primary   = 'text';
             $p->ctype_secondary = 'plain';
-            $p->body            = rcube_label('encryptedmessage');
+            $p->body            = $this->app->gettext('encryptedmessage');
             $p->size            = strlen($p->body);
 
             $this->parts[] = $p;

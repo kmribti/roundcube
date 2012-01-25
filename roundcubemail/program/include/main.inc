@@ -333,7 +333,7 @@ function show_bytes($bytes)
 
 function rc_wordwrap($string, $width=75, $break="\n", $cut=false)
 {
-    return rcube_wordwrap($string, $width, $break, $cut);
+    return rcube_mime::wordwrap($string, $width, $break, $cut);
 }
 
 function rc_request_header($name)

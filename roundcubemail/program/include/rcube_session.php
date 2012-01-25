@@ -126,7 +126,7 @@ class rcube_session
   public function db_read($key)
   {
     $sql_result = $this->db->query(
-      "SELECT vars, ip, changed FROM ".get_table_name('session')
+      "SELECT vars, ip, changed FROM ".$this->db->table_name('session')
       ." WHERE sess_id = ?", $key);
 
     if ($sql_result && ($sql_arr = $this->db->fetch_assoc($sql_result))) {
@@ -174,18 +174,18 @@ class rcube_session
       if ($newvars !== $oldvars) {
         $this->db->query(
           sprintf("UPDATE %s SET vars=?, changed=%s WHERE sess_id=?",
-            get_table_name('session'), $now),
+            $this->db->table_name('session'), $now),
           base64_encode($newvars), $key);
       }
       else if ($ts - $this->changed > $this->lifetime / 2) {
-        $this->db->query("UPDATE ".get_table_name('session')." SET changed=$now WHERE sess_id=?", $key);
+        $this->db->query("UPDATE ".$this->db->table_name('session')." SET changed=$now WHERE sess_id=?", $key);
       }
     }
     else {
       $this->db->query(
         sprintf("INSERT INTO %s (sess_id, vars, ip, created, changed) ".
           "VALUES (?, ?, ?, %s, %s)",
-          get_table_name('session'), $now, $now),
+          $this->db->table_name('session'), $now, $now),
         $key, base64_encode($vars), (string)$this->ip);
     }
 
@@ -225,7 +225,7 @@ class rcube_session
   public function db_destroy($key)
   {
     $this->db->query(
-      sprintf("DELETE FROM %s WHERE sess_id = ?", get_table_name('session')),
+      sprintf("DELETE FROM %s WHERE sess_id = ?", $this->db->table_name('session')),
       $key);
 
     return true;
@@ -243,7 +243,7 @@ class rcube_session
     // just delete all expired sessions
     $this->db->query(
       sprintf("DELETE FROM %s WHERE changed < %s",
-        get_table_name('session'), $this->db->fromunixtime(time() - $maxlifetime)));
+        $this->db->table_name('session'), $this->db->fromunixtime(time() - $maxlifetime)));
 
     $this->gc();
 
@@ -621,14 +621,14 @@ class rcube_session
     $auth_string = "$this->key,$this->secret,$timeslot";
     return "S" . (function_exists('sha1') ? sha1($auth_string) : md5($auth_string));
   }
-  
+
   /**
    * 
    */
   function log($line)
   {
     if ($this->logging)
-      write_log('session', $line);
+      rcmail::write_log('session', $line);
   }
 
 }

@@ -149,7 +149,7 @@ class rcube_contacts extends rcube_addressbook
         $sql_filter = $search ? " AND " . $this->db->ilike('name', '%'.$search.'%') : '';
 
         $sql_result = $this->db->query(
-            "SELECT * FROM ".get_table_name($this->db_groups).
+            "SELECT * FROM ".$this->db->table_name($this->db_groups).
             " WHERE del<>1".
             " AND user_id=?".
             $sql_filter.
@@ -174,7 +174,7 @@ class rcube_contacts extends rcube_addressbook
     function get_group($group_id)
     {
         $sql_result = $this->db->query(
-            "SELECT * FROM ".get_table_name($this->db_groups).
+            "SELECT * FROM ".$this->db->table_name($this->db_groups).
             " WHERE del<>1".
             " AND contactgroup_id=?".
             " AND user_id=?",
@@ -210,11 +210,11 @@ class rcube_contacts extends rcube_addressbook
         $length = $subset != 0 ? abs($subset) : $this->page_size;
 
         if ($this->group_id)
-            $join = " LEFT JOIN ".get_table_name($this->db_groupmembers)." AS m".
+            $join = " LEFT JOIN ".$this->db->table_name($this->db_groupmembers)." AS m".
                 " ON (m.contact_id = c.".$this->primary_key.")";
 
         $sql_result = $this->db->limitquery(
-            "SELECT * FROM ".get_table_name($this->db_name)." AS c" .
+            "SELECT * FROM ".$this->db->table_name($this->db_name)." AS c" .
             $join .
             " WHERE c.del<>1" .
                 " AND c.user_id=?" .
@@ -480,13 +480,13 @@ class rcube_contacts extends rcube_addressbook
     private function _count()
     {
         if ($this->group_id)
-            $join = " LEFT JOIN ".get_table_name($this->db_groupmembers)." AS m".
+            $join = " LEFT JOIN ".$this->db->table_name($this->db_groupmembers)." AS m".
                 " ON (m.contact_id=c.".$this->primary_key.")";
 
         // count contacts for this user
         $sql_result = $this->db->query(
             "SELECT COUNT(c.contact_id) AS rows".
-            " FROM ".get_table_name($this->db_name)." AS c".
+            " FROM ".$this->db->table_name($this->db_name)." AS c".
                 $join.
             " WHERE c.del<>1".
             " AND c.user_id=?".
@@ -528,7 +528,7 @@ class rcube_contacts extends rcube_addressbook
             return $assoc ? $first : $this->result;
 
         $this->db->query(
-            "SELECT * FROM ".get_table_name($this->db_name).
+            "SELECT * FROM ".$this->db->table_name($this->db_name).
             " WHERE contact_id=?".
                 " AND user_id=?".
                 " AND del<>1",
@@ -560,8 +560,8 @@ class rcube_contacts extends rcube_addressbook
           return $results;
 
       $sql_result = $this->db->query(
-        "SELECT cgm.contactgroup_id, cg.name FROM " . get_table_name($this->db_groupmembers) . " AS cgm" .
-        " LEFT JOIN " . get_table_name($this->db_groups) . " AS cg ON (cgm.contactgroup_id = cg.contactgroup_id AND cg.del<>1)" .
+        "SELECT cgm.contactgroup_id, cg.name FROM " . $this->db->table_name($this->db_groupmembers) . " AS cgm" .
+        " LEFT JOIN " . $this->db->table_name($this->db_groups) . " AS cg ON (cgm.contactgroup_id = cg.contactgroup_id AND cg.del<>1)" .
         " WHERE cgm.contact_id=?",
         $id
       );
@@ -630,7 +630,7 @@ class rcube_contacts extends rcube_addressbook
 
         if (!$existing->count && !empty($a_insert_cols)) {
             $this->db->query(
-                "INSERT INTO ".get_table_name($this->db_name).
+                "INSERT INTO ".$this->db->table_name($this->db_name).
                 " (user_id, changed, del, ".join(', ', $a_insert_cols).")".
                 " VALUES (".intval($this->user_id).", ".$this->db->now().", 0, ".join(', ', $a_insert_values).")"
             );
@@ -668,7 +668,7 @@ class rcube_contacts extends rcube_addressbook
 
         if (!empty($write_sql)) {
             $this->db->query(
-                "UPDATE ".get_table_name($this->db_name).
+                "UPDATE ".$this->db->table_name($this->db_name).
                 " SET changed=".$this->db->now().", ".join(', ', $write_sql).
                 " WHERE contact_id=?".
                     " AND user_id=?".
@@ -764,7 +764,7 @@ class rcube_contacts extends rcube_addressbook
 
         // flag record as deleted (always)
         $this->db->query(
-            "UPDATE ".get_table_name($this->db_name).
+            "UPDATE ".$this->db->table_name($this->db_name).
             " SET del=1, changed=".$this->db->now().
             " WHERE user_id=?".
                 " AND contact_id IN ($ids)",
@@ -791,7 +791,7 @@ class rcube_contacts extends rcube_addressbook
 
         // clear deleted flag
         $this->db->query(
-            "UPDATE ".get_table_name($this->db_name).
+            "UPDATE ".$this->db->table_name($this->db_name).
             " SET del=0, changed=".$this->db->now().
             " WHERE user_id=?".
                 " AND contact_id IN ($ids)",
@@ -811,7 +811,7 @@ class rcube_contacts extends rcube_addressbook
     {
         $this->cache = null;
 
-        $this->db->query("UPDATE ".get_table_name($this->db_name).
+        $this->db->query("UPDATE ".$this->db->table_name($this->db_name).
             " SET del=1, changed=".$this->db->now().
             " WHERE user_id = ?", $this->user_id);
 
@@ -833,7 +833,7 @@ class rcube_contacts extends rcube_addressbook
         $name = $this->unique_groupname($name);
 
         $this->db->query(
-            "INSERT INTO ".get_table_name($this->db_groups).
+            "INSERT INTO ".$this->db->table_name($this->db_groups).
             " (user_id, changed, name)".
             " VALUES (".intval($this->user_id).", ".$this->db->now().", ".$this->db->quote($name).")"
         );
@@ -855,7 +855,7 @@ class rcube_contacts extends rcube_addressbook
     {
         // flag group record as deleted
         $sql_result = $this->db->query(
-            "UPDATE ".get_table_name($this->db_groups).
+            "UPDATE ".$this->db->table_name($this->db_groups).
             " SET del=1, changed=".$this->db->now().
             " WHERE contactgroup_id=?".
             " AND user_id=?",
@@ -881,7 +881,7 @@ class rcube_contacts extends rcube_addressbook
         $name = $this->unique_groupname($newname);
 
         $sql_result = $this->db->query(
-            "UPDATE ".get_table_name($this->db_groups).
+            "UPDATE ".$this->db->table_name($this->db_groups).
             " SET name=?, changed=".$this->db->now().
             " WHERE contactgroup_id=?".
             " AND user_id=?",
@@ -909,7 +909,7 @@ class rcube_contacts extends rcube_addressbook
 
         // get existing assignments ...
         $sql_result = $this->db->query(
-            "SELECT contact_id FROM ".get_table_name($this->db_groupmembers).
+            "SELECT contact_id FROM ".$this->db->table_name($this->db_groupmembers).
             " WHERE contactgroup_id=?".
                 " AND contact_id IN (".$this->db->array2list($ids, 'integer').")",
             $group_id
@@ -922,7 +922,7 @@ class rcube_contacts extends rcube_addressbook
 
         foreach ($ids as $contact_id) {
             $this->db->query(
-                "INSERT INTO ".get_table_name($this->db_groupmembers).
+                "INSERT INTO ".$this->db->table_name($this->db_groupmembers).
                 " (contactgroup_id, contact_id, created)".
                 " VALUES (?, ?, ".$this->db->now().")",
                 $group_id,
@@ -952,7 +952,7 @@ class rcube_contacts extends rcube_addressbook
         $ids = $this->db->array2list($ids, 'integer');
 
         $sql_result = $this->db->query(
-            "DELETE FROM ".get_table_name($this->db_groupmembers).
+            "DELETE FROM ".$this->db->table_name($this->db_groupmembers).
             " WHERE contactgroup_id=?".
                 " AND contact_id IN ($ids)",
             $group_id
@@ -975,7 +975,7 @@ class rcube_contacts extends rcube_addressbook
 
         do {
             $sql_result = $this->db->query(
-                "SELECT 1 FROM ".get_table_name($this->db_groups).
+                "SELECT 1 FROM ".$this->db->table_name($this->db_groups).
                 " WHERE del<>1".
                     " AND user_id=?".
                     " AND name=?",

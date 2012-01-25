@@ -172,27 +172,27 @@ class rcube_ui
 
     /**
      * Quote a given string.
-     * Shortcut function for rep_specialchars_output
+     * Shortcut function for self::rep_specialchars_output()
      *
      * @return string HTML-quoted string
      * @see self::rep_specialchars_output()
      */
     public static function Q($str, $mode = 'strict', $newlines = true)
     {
-        return rep_specialchars_output($str, 'html', $mode, $newlines);
+        return self::rep_specialchars_output($str, 'html', $mode, $newlines);
     }
 
 
     /**
      * Quote a given string for javascript output.
-     * Shortcut function for rep_specialchars_output
+     * Shortcut function for self::rep_specialchars_output()
      *
      * @return string JS-quoted string
      * @see self::rep_specialchars_output()
      */
     public static function JQ($str)
     {
-        return rep_specialchars_output($str, 'js');
+        return self::rep_specialchars_output($str, 'js');
     }
 
 
@@ -233,11 +233,11 @@ class rcube_ui
             }
         }
 
-        return parse_input_value($value, $allow_html, $charset);
+        return self::parse_input_value($value, $allow_html, $charset);
     }
 
     /**
-     * Parse/validate input value. See get_input_value()
+     * Parse/validate input value. See self::get_input_value()
      * Performs stripslashes() and charset conversion if necessary
      *
      * @param  string   Input value
@@ -350,7 +350,7 @@ class rcube_ui
         // add table header
         if (!$attrib['noheader']) {
             foreach ($a_show_cols as $col) {
-                $table->add_header($col, Q(self::label($col)));
+                $table->add_header($col, self::Q(self::label($col)));
             }
         }
 
@@ -361,7 +361,7 @@ class rcube_ui
 
                 // format each col
                 foreach ($a_show_cols as $col) {
-                    $table->add($col, Q($sql_arr[$col]));
+                    $table->add($col, self::Q($sql_arr[$col]));
                 }
             }
         }
@@ -374,7 +374,7 @@ class rcube_ui
 
                 // format each col
                 foreach ($a_show_cols as $col) {
-                    $table->add($col, Q(is_array($row_data[$col]) ? $row_data[$col][0] : $row_data[$col]));
+                    $table->add($col, self::Q(is_array($row_data[$col]) ? $row_data[$col][0] : $row_data[$col]));
                 }
             }
         }
@@ -452,7 +452,7 @@ class rcube_ui
         $replacements = new rcube_string_replacer;
 
         // ignore the whole block if evil styles are detected
-        $source   = rcmail_xss_entity_decode($source);
+        $source   = self::xss_entity_decode($source);
         $stripped = preg_replace('/[^a-z\(:;]/i', '', $source);
         $evilexpr = 'expression|behavior|javascript:|import[^a]' . (!$allow_remote ? '|url\(' : '');
         if (preg_match("/$evilexpr/i", $stripped)) {
@@ -504,31 +504,6 @@ class rcube_ui
         $styles = $replacements->resolve($styles);
 
         return $styles;
-    }
-
-
-    /**
-     * Convert a HTML attribute string attributes to an associative array (name => value)
-     *
-     * @param string $str Input string
-     *
-     * @return array Key-value pairs of parsed attributes
-     */
-    public static function parse_attrib_string($str)
-    {
-        $attrib = array();
-        $regexp = '/\s*([-_a-z]+)=(["\'])??(?(2)([^\2]*)\2|(\S+?))/Ui';
-
-        preg_match_all($regexp, stripslashes($str), $regs, PREG_SET_ORDER);
-
-        // convert attributes to an associative array (name => value)
-        if ($regs) {
-            foreach ($regs as $attr) {
-                $attrib[strtolower($attr[1])] = html_entity_decode($attr[3] . $attr[4]);
-            }
-        }
-
-        return $attrib;
     }
 
 
@@ -1051,7 +1026,7 @@ class rcube_ui
 
         $quota = self::quota_content($attrib);
 
-        $OUTPUT->add_script('rcmail.set_quota('.json_serialize($quota).');', 'docready');
+        $OUTPUT->add_script('rcmail.set_quota('.self::json_serialize($quota).');', 'docready');
 
         return html::span($attrib, '');
     }
@@ -1143,7 +1118,7 @@ class rcube_ui
      *
      * @return string CSS classes separated by space
      */
-    public static function filetype2classname($mimetype, $filename)
+    public static function file2class($mimetype, $filename)
     {
         list($primary, $secondary) = explode('/', $mimetype);
 
@@ -1299,7 +1274,7 @@ class rcube_ui
                 $_SERVER['REQUEST_METHOD'],
                 $_SERVER['REQUEST_URI'] . $post_query);
 
-            if (!write_log('errors', $log_entry)) {
+            if (!rcmail::write_log('errors', $log_entry)) {
                 // send error to PHPs error handler if write_log didn't succeed
                 trigger_error($arg_arr['message']);
             }
@@ -1538,7 +1513,7 @@ class rcube_ui
     {
         $out = html_entity_decode(html_entity_decode($content));
         $out = preg_replace_callback('/\\\([0-9a-f]{4})/i',
-            array(self, 'rcmail_xss_entity_decode_callback'), $out);
+            array(self, 'xss_entity_decode_callback'), $out);
         $out = preg_replace('#/\*.*\*/#Ums', '', $out);
 
         return $out;
@@ -1546,11 +1521,11 @@ class rcube_ui
 
 
     /**
-     * preg_replace_callback callback for rcmail_xss_entity_decode_callback
+     * preg_replace_callback callback for xss_entity_decode
      *
-     * @param array matches result from preg_replace_callback
+     * @param array $matches Result from preg_replace_callback
      *
-     * @return string decoded entity
+     * @return string Decoded entity
      */
     public static function xss_entity_decode_callback($matches)
     {

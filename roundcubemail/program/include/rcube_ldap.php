@@ -173,7 +173,7 @@ class rcube_ldap extends rcube_addressbook
 
         foreach ($this->prop['hosts'] as $host)
         {
-            $host     = idn_to_ascii(rcube_parse_host($host));
+            $host     = idn_to_ascii(rcmail::parse_host($host));
             $hostname = $host.($this->prop['port'] ? ':'.$this->prop['port'] : '');
 
             $this->_debug("C: Connect [$hostname]");
@@ -1408,8 +1408,9 @@ class rcube_ldap extends rcube_addressbook
      */
     private function _debug($str)
     {
-        if ($this->debug)
-            write_log('ldap', $str);
+        if ($this->debug) {
+            rcmail::write_log('ldap', $str);
+        }
     }
 
 

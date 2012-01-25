@@ -182,7 +182,7 @@ class rcube_imap extends rcube_storage
         else if ($this->conn->error) {
             if ($pass && $user) {
                 $message = sprintf("Login failed for %s from %s. %s",
-                    $user, rcmail_remote_ip(), $this->conn->error);
+                    $user, rcmail::rcmail_remote_ip(), $this->conn->error);
 
                 raise_error(array('code' => 403, 'type' => 'imap',
                     'file' => __FILE__, 'line' => __LINE__,
@@ -1451,7 +1451,7 @@ class rcube_imap extends rcube_storage
             foreach ($matches[1] as $m) {
                 $string_offset = $m[1] + strlen($m[0]) + 4; // {}\r\n
                 $string = substr($str, $string_offset - 1, $m[0]);
-                $string = rcube_charset_convert($string, $charset, $dest_charset);
+                $string = rcube_charset::convert($string, $charset, $dest_charset);
                 if ($string === false) {
                     continue;
                 }
@@ -1943,7 +1943,7 @@ class rcube_imap extends rcube_storage
                 $charset = $this->struct_charset;
             }
             else {
-                $charset = rc_detect_encoding($filename_mime, $this->default_charset);
+                $charset = rcube_charset::detect($filename_mime, $this->default_charset);
             }
 
             $part->filename = rcube_mime::decode_mime_string($filename_mime, $charset);
@@ -1955,7 +1955,7 @@ class rcube_imap extends rcube_storage
                 $filename_encoded = $fmatches[2];
             }
 
-            $part->filename = rcube_charset_convert(urldecode($filename_encoded), $filename_charset);
+            $part->filename = rcube_charset::convert(urldecode($filename_encoded), $filename_charset);
         }
     }
 
@@ -2034,7 +2034,7 @@ class rcube_imap extends rcube_storage
                         $o_part->charset = $this->default_charset;
                     }
                 }
-                $body = rcube_charset_convert($body, $o_part->charset);
+                $body = rcube_charset::convert($body, $o_part->charset);
             }
         }
 
@@ -3669,7 +3669,7 @@ class rcube_imap extends rcube_storage
                 $a_defaults[$p] = $folder;
             }
             else {
-                $folders[$folder] = rcube_charset_convert($folder, 'UTF7-IMAP');
+                $folders[$folder] = rcube_charset::convert($folder, 'UTF7-IMAP');
             }
         }
 
@@ -3829,7 +3829,7 @@ class rcube_imap extends rcube_storage
      */
     public function debug_handler(&$imap, $message)
     {
-        write_log('imap', $message);
+        rcmail::write_log('imap', $message);
     }
 
 }  // end class rcube_imap

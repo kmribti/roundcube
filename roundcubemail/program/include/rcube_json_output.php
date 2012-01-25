@@ -34,13 +34,27 @@ class rcube_json_output
      * @var rcube_config
      */
     private $config;
+
+    /**
+     * Browser object
+     *
+     * @var rcube_browser
+     */
+    public $browser;
+
+    /**
+     * Framework object
+     *
+     * @var rcmail
+     */
+    private $app;
+
     private $charset = RCMAIL_CHARSET;
     private $texts = array();
     private $commands = array();
     private $callbacks = array();
     private $message = null;
 
-    public $browser;
     public $env = array();
     public $type = 'js';
     public $ajax_call = true;
@@ -49,9 +63,10 @@ class rcube_json_output
     /**
      * Constructor
      */
-    public function __construct($task=null)
+    public function __construct($task = null)
     {
-        $this->config  = rcmail::get_instance()->config;
+        $this->app     = rcmail::get_instance();
+        $this->config  = $this->app->config;
         $this->browser = new rcube_browser();
     }
 
@@ -156,7 +171,7 @@ class rcube_json_output
             $args = $args[0];
 
         foreach ($args as $name) {
-            $this->texts[$name] = rcube_label($name);
+            $this->texts[$name] = $this->app->gettext($name);
         }
     }
 
@@ -174,10 +189,10 @@ class rcube_json_output
     public function show_message($message, $type='notice', $vars=null, $override=true, $timeout=0)
     {
         if ($override || !$this->message) {
-            if (rcube_label_exists($message)) {
+            if ($this->app->text_exists($message)) {
                 if (!empty($vars))
                     $vars = array_map('Q', $vars);
-                $msgtext = rcube_label(array('name' => $message, 'vars' => $vars));
+                $msgtext = $this->app->gettext(array('name' => $message, 'vars' => $vars));
             }
             else
                 $msgtext = $message;
@@ -238,7 +253,7 @@ class rcube_json_output
 
         if (!$s_header_sent) {
             $s_header_sent = true;
-            send_nocacheing_headers();
+            rcube_ui::send_nocacheing_headers();
             header('Content-Type: text/plain; charset=' . $this->get_charset());
         }
 
@@ -248,7 +263,7 @@ class rcube_json_output
         $rcmail = rcmail::get_instance();
         $response['action'] = $rcmail->action;
 
-        if ($unlock = get_input_value('_unlock', RCUBE_INPUT_GPC)) {
+        if ($unlock = rcube_ui::get_input_value('_unlock', rcube_ui::INPUT_GPC)) {
             $response['unlock'] = $unlock;
         }
 
@@ -264,7 +279,7 @@ class rcube_json_output
         if (!empty($this->callbacks))
             $response['callbacks'] = $this->callbacks;
 
-        echo json_serialize($response);
+        echo rcube_ui::json_serialize($response);
     }
 
 
@@ -280,7 +295,7 @@ class rcube_json_output
         foreach ($this->commands as $i => $args) {
             $method = array_shift($args);
             foreach ($args as $i => $arg) {
-                $args[$i] = json_serialize($arg);
+                $args[$i] = rcube_ui::json_serialize($arg);
             }
 
             $out .= sprintf(

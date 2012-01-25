@@ -194,7 +194,7 @@ class rcube_cache
     {
         if ($this->type == 'db' && $this->db) {
             $this->db->query(
-                "DELETE FROM ".get_table_name('cache').
+                "DELETE FROM ".$this->db->table_name('cache').
                 " WHERE user_id = ?".
                 " AND cache_key LIKE ?".
                 " AND " . $this->db->unixtimestamp('created')." < ?",
@@ -271,7 +271,7 @@ class rcube_cache
         else {
             $sql_result = $this->db->limitquery(
                 "SELECT cache_id, data, cache_key".
-                " FROM ".get_table_name('cache').
+                " FROM ".$this->db->table_name('cache').
                 " WHERE user_id = ?".
                 " AND cache_key = ?".
                 // for better performance we allow more records for one key
@@ -327,7 +327,7 @@ class rcube_cache
         // Remove NULL rows (here we don't need to check if the record exist)
         if ($data == 'N;') {
             $this->db->query(
-                "DELETE FROM ".get_table_name('cache').
+                "DELETE FROM ".$this->db->table_name('cache').
                 " WHERE user_id = ?".
                 " AND cache_key = ?",
                 $this->userid, $key);
@@ -338,7 +338,7 @@ class rcube_cache
         // update existing cache record
         if ($key_exists) {
             $result = $this->db->query(
-                "UPDATE ".get_table_name('cache').
+                "UPDATE ".$this->db->table_name('cache').
                 " SET created = ". $this->db->now().", data = ?".
                 " WHERE user_id = ?".
                 " AND cache_key = ?",
@@ -349,7 +349,7 @@ class rcube_cache
             // for better performance we allow more records for one key
             // so, no need to check if record exist (see rcube_cache::read_record())
             $result = $this->db->query(
-                "INSERT INTO ".get_table_name('cache').
+                "INSERT INTO ".$this->db->table_name('cache').
                 " (created, user_id, cache_key, data)".
                 " VALUES (".$this->db->now().", ?, ?, ?)",
                 $this->userid, $key, $data);
@@ -413,7 +413,7 @@ class rcube_cache
         }
 
         $this->db->query(
-            "DELETE FROM ".get_table_name('cache').
+            "DELETE FROM ".$this->db->table_name('cache').
             " WHERE user_id = ?" . $where,
             $this->userid);
     }

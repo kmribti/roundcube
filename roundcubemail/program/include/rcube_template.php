@@ -132,7 +132,7 @@ class rcube_template extends rcube_html_page
             $title = $this->pagetitle;
         }
         else if ($this->env['task'] == 'login') {
-            $title = rcube_label(array('name' => 'welcome', 'vars' => array('product' => $this->config['product_name'])));
+            $title = $this->app->gettext(array('name' => 'welcome', 'vars' => array('product' => $this->config['product_name'])));
         }
         else {
             $title = ucfirst($this->env['task']);
@@ -235,7 +235,7 @@ class rcube_template extends rcube_html_page
           $args = $args[0];
 
         foreach ($args as $name) {
-            $this->js_labels[$name] = rcube_label($name);
+            $this->js_labels[$name] = $this->app->gettext($name);
         }
     }
 
@@ -252,10 +252,10 @@ class rcube_template extends rcube_html_page
     public function show_message($message, $type='notice', $vars=null, $override=true, $timeout=0)
     {
         if ($override || !$this->message) {
-            if (rcube_label_exists($message)) {
+            if ($this->app->text_exists($message)) {
                 if (!empty($vars))
                     $vars = array_map('Q', $vars);
-                $msgtext = rcube_label(array('name' => $message, 'vars' => $vars));
+                $msgtext = $this->app->gettext(array('name' => $message, 'vars' => $vars));
             }
             else
                 $msgtext = $message;
@@ -478,7 +478,7 @@ class rcube_template extends rcube_html_page
     {
         $out = '';
         if (!$this->framed && !empty($this->js_env)) {
-            $out .= JS_OBJECT_NAME . '.set_env('.json_serialize($this->js_env).");\n";
+            $out .= JS_OBJECT_NAME . '.set_env('.rcube_ui::json_serialize($this->js_env).");\n";
         }
         if (!empty($this->js_labels)) {
             $this->command('add_label', $this->js_labels);
@@ -486,7 +486,7 @@ class rcube_template extends rcube_html_page
         foreach ($this->js_commands as $i => $args) {
             $method = array_shift($args);
             foreach ($args as $i => $arg) {
-                $args[$i] = json_serialize($arg);
+                $args[$i] = rcube_ui::json_serialize($arg);
             }
             $parent = $this->framed || preg_match('/^parent\./', $method);
             $out .= sprintf(
@@ -523,8 +523,8 @@ class rcube_template extends rcube_html_page
      */
     private function parse_with_globals($input)
     {
-        $GLOBALS['__version'] = Q(RCMAIL_VERSION);
-        $GLOBALS['__comm_path'] = Q($this->app->comm_path);
+        $GLOBALS['__version'] = rcube_ui::Q(RCMAIL_VERSION);
+        $GLOBALS['__comm_path'] = rcube_ui::Q($this->app->comm_path);
         return preg_replace_callback('/\$(__[a-z0-9_\-]+)/',
 	    array($this, 'globals_callback'), $input);
     }
@@ -563,7 +563,7 @@ class rcube_template extends rcube_html_page
             if (preg_match('/^(else|endif)$/i', $matches[1])) {
                 return $matches[0] . $this->parse_conditions($matches[3]);
             }
-            $attrib = parse_attrib_string($matches[2]);
+            $attrib = html::parse_attrib_string($matches[2]);
             if (isset($attrib['condition'])) {
                 $condmet = $this->check_condition($attrib['condition']);
                 $submatches = preg_split('/<roundcube:(elseif|else|endif)\s+([^>]+)>\n?/is', $matches[3], 2, PREG_SPLIT_DELIM_CAPTURE);
@@ -607,8 +607,8 @@ class rcube_template extends rcube_html_page
      */
     private function alter_form_tag($matches)
     {
-        $out = $matches[0];
-        $attrib  = parse_attrib_string($matches[1]);
+        $out    = $matches[0];
+        $attrib = html::parse_attrib_string($matches[1]);
 
         if (strtolower($attrib['method']) == 'post') {
             $hidden = new html_hiddenfield(array('name' => '_token', 'value' => $this->app->get_request_token()));
@@ -641,7 +641,7 @@ class rcube_template extends rcube_html_page
                 "\$_SESSION['\\1']",
                 "\$this->app->config->get('\\1',get_boolean('\\3'))",
                 "\$this->env['\\1']",
-                "get_input_value('\\1', RCUBE_INPUT_GPC)",
+                "rcube_ui::get_input_value('\\1', rcube_ui::INPUT_GPC)",
                 "\$_COOKIE['\\1']",
                 "\$this->browser->{'\\1'}",
                 $this->template_name,
@@ -675,7 +675,7 @@ class rcube_template extends rcube_html_page
     private function xml_command($matches)
     {
         $command = strtolower($matches[1]);
-        $attrib  = parse_attrib_string($matches[2]);
+        $attrib  = html::parse_attrib_string($matches[2]);
 
         // empty output if required condition is not met
         if (!empty($attrib['condition']) && !$this->check_condition($attrib['condition'])) {
@@ -696,8 +696,8 @@ class rcube_template extends rcube_html_page
                 if ($attrib['name'] || $attrib['command']) {
                     $vars = $attrib + array('product' => $this->config['product_name']);
                     unset($vars['name'], $vars['command']);
-                    $label = rcube_label($attrib + array('vars' => $vars));
-                    return !$attrib['noshow'] ? (get_boolean((string)$attrib['html']) ? $label : Q($label)) : '';
+                    $label = $this->app->gettext($attrib + array('vars' => $vars));
+                    return !$attrib['noshow'] ? (get_boolean((string)$attrib['html']) ? $label : rcube_ui::Q($label)) : '';
                 }
                 break;
 
@@ -759,7 +759,7 @@ class rcube_template extends rcube_html_page
                 }
                 else if ($object == 'productname') {
                     $name = !empty($this->config['product_name']) ? $this->config['product_name'] : 'Roundcube Webmail';
-                    $content = Q($name);
+                    $content = rcube_ui::Q($name);
                 }
                 else if ($object == 'version') {
                     $ver = (string)RCMAIL_VERSION;
@@ -767,10 +767,10 @@ class rcube_template extends rcube_html_page
                         if (preg_match('/Revision:\s(\d+)/', @shell_exec('svn info'), $regs))
                           $ver .= ' [SVN r'.$regs[1].']';
                     }
-                    $content = Q($ver);
+                    $content = rcube_ui::Q($ver);
                 }
                 else if ($object == 'steptitle') {
-                  $content = Q($this->get_pagetitle());
+                  $content = rcube_ui::Q($this->get_pagetitle());
                 }
                 else if ($object == 'pagetitle') {
                     if (!empty($this->config['devel_mode']) && !empty($_SESSION['username']))
@@ -780,7 +780,7 @@ class rcube_template extends rcube_html_page
                     else
                       $title = '';
                     $title .= $this->get_pagetitle();
-                    $content = Q($title);
+                    $content = rcube_ui::Q($title);
                 }
 
                 // exec plugin hooks for this template object
@@ -790,7 +790,7 @@ class rcube_template extends rcube_html_page
             // return code for a specified eval expression
             case 'exp':
                 $value = $this->parse_expression($attrib['expression']);
-                return eval("return Q($value);");
+                return eval("return rcube_ui::Q($value);");
 
             // return variable
             case 'var':
@@ -809,7 +809,7 @@ class rcube_template extends rcube_html_page
                         }
                         break;
                     case 'request':
-                        $value = get_input_value($name, RCUBE_INPUT_GPC);
+                        $value = rcube_ui::get_input_value($name, rcube_ui::INPUT_GPC);
                         break;
                     case 'session':
                         $value = $_SESSION[$name];
@@ -826,7 +826,7 @@ class rcube_template extends rcube_html_page
                     $value = implode(', ', $value);
                 }
 
-                return Q($value);
+                return rcube_ui::Q($value);
                 break;
         }
         return '';
@@ -889,13 +889,13 @@ class rcube_template extends rcube_html_page
         }
         // get localized text for labels and titles
         if ($attrib['title']) {
-            $attrib['title'] = Q(rcube_label($attrib['title'], $attrib['domain']));
+            $attrib['title'] = rcube_ui::Q($this->app->gettext($attrib['title'], $attrib['domain']));
         }
         if ($attrib['label']) {
-            $attrib['label'] = Q(rcube_label($attrib['label'], $attrib['domain']));
+            $attrib['label'] = rcube_ui::Q($this->app->gettext($attrib['label'], $attrib['domain']));
         }
         if ($attrib['alt']) {
-            $attrib['alt'] = Q(rcube_label($attrib['alt'], $attrib['domain']));
+            $attrib['alt'] = rcube_ui::Q($this->app->gettext($attrib['alt'], $attrib['domain']));
         }
 
         // set title to alt attribute for IE browsers
@@ -923,14 +923,14 @@ class rcube_template extends rcube_html_page
 
             // make valid href to specific buttons
             if (in_array($attrib['command'], rcmail::$main_tasks)) {
-                $attrib['href'] = rcmail_url(null, null, $attrib['command']);
+                $attrib['href'] = rcube_ui::url(null, null, $attrib['command']);
                 $attrib['onclick'] = sprintf("%s.switch_task('%s');return false", JS_OBJECT_NAME, $attrib['command']);
             }
             else if ($attrib['task'] && in_array($attrib['task'], rcmail::$main_tasks)) {
-                $attrib['href'] = rcmail_url($attrib['command'], null, $attrib['task']);
+                $attrib['href'] = rcube_ui::url($attrib['command'], null, $attrib['task']);
             }
             else if (in_array($attrib['command'], $a_static_commands)) {
-                $attrib['href'] = rcmail_url($attrib['command']);
+                $attrib['href'] = rcube_ui::url($attrib['command']);
             }
             else if ($attrib['command'] == 'permaurl' && !empty($this->env['permaurl'])) {
               $attrib['href'] = $this->env['permaurl'];
@@ -1104,7 +1104,7 @@ class rcube_template extends rcube_html_page
         $_SESSION['temp'] = true;
 
         // save original url
-        $url = get_input_value('_url', RCUBE_INPUT_POST);
+        $url = rcube_ui::get_input_value('_url', rcube_ui::INPUT_POST);
         if (empty($url) && !preg_match('/_(task|action)=logout/', $_SERVER['QUERY_STRING']))
             $url = $_SERVER['QUERY_STRING'];
 
@@ -1153,16 +1153,16 @@ class rcube_template extends rcube_html_page
         // create HTML table with two cols
         $table = new html_table(array('cols' => 2));
 
-        $table->add('title', html::label('rcmloginuser', Q(rcube_label('username'))));
-        $table->add('input', $input_user->show(get_input_value('_user', RCUBE_INPUT_GPC)));
+        $table->add('title', html::label('rcmloginuser', rcube_ui::Q($this->app->gettext('username'))));
+        $table->add('input', $input_user->show(rcube_ui::get_input_value('_user', rcube_ui::INPUT_GPC)));
 
-        $table->add('title', html::label('rcmloginpwd', Q(rcube_label('password'))));
+        $table->add('title', html::label('rcmloginpwd', rcube_ui::Q($this->app->gettext('password'))));
         $table->add('input', $input_pass->show());
 
         // add host selection row
         if (is_object($input_host) && !$hide_host) {
-            $table->add('title', html::label('rcmloginhost', Q(rcube_label('server'))));
-            $table->add('input', $input_host->show(get_input_value('_host', RCUBE_INPUT_GPC)));
+            $table->add('title', html::label('rcmloginhost', rcube_ui::Q($this->app->gettext('server'))));
+            $table->add('input', $input_host->show(rcube_ui::get_input_value('_host', rcube_ui::INPUT_GPC)));
         }
 
         $out  = $input_task->show();
@@ -1200,7 +1200,7 @@ class rcube_template extends rcube_html_page
         if (empty($images) || $this->app->task == 'logout')
             return;
 
-        $this->add_script('var images = ' . json_serialize($images) .';
+        $this->add_script('var images = ' . rcube_ui::json_serialize($images) .';
             for (var i=0; i<images.length; i++) {
                 img = new Image();
                 img.src = images[i];
@@ -1281,39 +1281,39 @@ class rcube_template extends rcube_html_page
         }
 
         $charsets = array(
-            'UTF-8'        => 'UTF-8 ('.rcube_label('unicode').')',
-            'US-ASCII'     => 'ASCII ('.rcube_label('english').')',
-            'ISO-8859-1'   => 'ISO-8859-1 ('.rcube_label('westerneuropean').')',
-            'ISO-8859-2'   => 'ISO-8859-2 ('.rcube_label('easterneuropean').')',
-            'ISO-8859-4'   => 'ISO-8859-4 ('.rcube_label('baltic').')',
-            'ISO-8859-5'   => 'ISO-8859-5 ('.rcube_label('cyrillic').')',
-            'ISO-8859-6'   => 'ISO-8859-6 ('.rcube_label('arabic').')',
-            'ISO-8859-7'   => 'ISO-8859-7 ('.rcube_label('greek').')',
-            'ISO-8859-8'   => 'ISO-8859-8 ('.rcube_label('hebrew').')',
-            'ISO-8859-9'   => 'ISO-8859-9 ('.rcube_label('turkish').')',
-            'ISO-8859-10'   => 'ISO-8859-10 ('.rcube_label('nordic').')',
-            'ISO-8859-11'   => 'ISO-8859-11 ('.rcube_label('thai').')',
-            'ISO-8859-13'   => 'ISO-8859-13 ('.rcube_label('baltic').')',
-            'ISO-8859-14'   => 'ISO-8859-14 ('.rcube_label('celtic').')',
-            'ISO-8859-15'   => 'ISO-8859-15 ('.rcube_label('westerneuropean').')',
-            'ISO-8859-16'   => 'ISO-8859-16 ('.rcube_label('southeasterneuropean').')',
-            'WINDOWS-1250' => 'Windows-1250 ('.rcube_label('easterneuropean').')',
-            'WINDOWS-1251' => 'Windows-1251 ('.rcube_label('cyrillic').')',
-            'WINDOWS-1252' => 'Windows-1252 ('.rcube_label('westerneuropean').')',
-            'WINDOWS-1253' => 'Windows-1253 ('.rcube_label('greek').')',
-            'WINDOWS-1254' => 'Windows-1254 ('.rcube_label('turkish').')',
-            'WINDOWS-1255' => 'Windows-1255 ('.rcube_label('hebrew').')',
-            'WINDOWS-1256' => 'Windows-1256 ('.rcube_label('arabic').')',
-            'WINDOWS-1257' => 'Windows-1257 ('.rcube_label('baltic').')',
-            'WINDOWS-1258' => 'Windows-1258 ('.rcube_label('vietnamese').')',
-            'ISO-2022-JP'  => 'ISO-2022-JP ('.rcube_label('japanese').')',
-            'ISO-2022-KR'  => 'ISO-2022-KR ('.rcube_label('korean').')',
-            'ISO-2022-CN'  => 'ISO-2022-CN ('.rcube_label('chinese').')',
-            'EUC-JP'       => 'EUC-JP ('.rcube_label('japanese').')',
-            'EUC-KR'       => 'EUC-KR ('.rcube_label('korean').')',
-            'EUC-CN'       => 'EUC-CN ('.rcube_label('chinese').')',
-            'BIG5'         => 'BIG5 ('.rcube_label('chinese').')',
-            'GB2312'       => 'GB2312 ('.rcube_label('chinese').')',
+            'UTF-8'        => 'UTF-8 ('.$this->app->gettext('unicode').')',
+            'US-ASCII'     => 'ASCII ('.$this->app->gettext('english').')',
+            'ISO-8859-1'   => 'ISO-8859-1 ('.$this->app->gettext('westerneuropean').')',
+            'ISO-8859-2'   => 'ISO-8859-2 ('.$this->app->gettext('easterneuropean').')',
+            'ISO-8859-4'   => 'ISO-8859-4 ('.$this->app->gettext('baltic').')',
+            'ISO-8859-5'   => 'ISO-8859-5 ('.$this->app->gettext('cyrillic').')',
+            'ISO-8859-6'   => 'ISO-8859-6 ('.$this->app->gettext('arabic').')',
+            'ISO-8859-7'   => 'ISO-8859-7 ('.$this->app->gettext('greek').')',
+            'ISO-8859-8'   => 'ISO-8859-8 ('.$this->app->gettext('hebrew').')',
+            'ISO-8859-9'   => 'ISO-8859-9 ('.$this->app->gettext('turkish').')',
+            'ISO-8859-10'   => 'ISO-8859-10 ('.$this->app->gettext('nordic').')',
+            'ISO-8859-11'   => 'ISO-8859-11 ('.$this->app->gettext('thai').')',
+            'ISO-8859-13'   => 'ISO-8859-13 ('.$this->app->gettext('baltic').')',
+            'ISO-8859-14'   => 'ISO-8859-14 ('.$this->app->gettext('celtic').')',
+            'ISO-8859-15'   => 'ISO-8859-15 ('.$this->app->gettext('westerneuropean').')',
+            'ISO-8859-16'   => 'ISO-8859-16 ('.$this->app->gettext('southeasterneuropean').')',
+            'WINDOWS-1250' => 'Windows-1250 ('.$this->app->gettext('easterneuropean').')',
+            'WINDOWS-1251' => 'Windows-1251 ('.$this->app->gettext('cyrillic').')',
+            'WINDOWS-1252' => 'Windows-1252 ('.$this->app->gettext('westerneuropean').')',
+            'WINDOWS-1253' => 'Windows-1253 ('.$this->app->gettext('greek').')',
+            'WINDOWS-1254' => 'Windows-1254 ('.$this->app->gettext('turkish').')',
+            'WINDOWS-1255' => 'Windows-1255 ('.$this->app->gettext('hebrew').')',
+            'WINDOWS-1256' => 'Windows-1256 ('.$this->app->gettext('arabic').')',
+            'WINDOWS-1257' => 'Windows-1257 ('.$this->app->gettext('baltic').')',
+            'WINDOWS-1258' => 'Windows-1258 ('.$this->app->gettext('vietnamese').')',
+            'ISO-2022-JP'  => 'ISO-2022-JP ('.$this->app->gettext('japanese').')',
+            'ISO-2022-KR'  => 'ISO-2022-KR ('.$this->app->gettext('korean').')',
+            'ISO-2022-CN'  => 'ISO-2022-CN ('.$this->app->gettext('chinese').')',
+            'EUC-JP'       => 'EUC-JP ('.$this->app->gettext('japanese').')',
+            'EUC-KR'       => 'EUC-KR ('.$this->app->gettext('korean').')',
+            'EUC-CN'       => 'EUC-CN ('.$this->app->gettext('chinese').')',
+            'BIG5'         => 'BIG5 ('.$this->app->gettext('chinese').')',
+            'GB2312'       => 'GB2312 ('.$this->app->gettext('chinese').')',
         );
 
         if (!empty($_POST['_charset']))

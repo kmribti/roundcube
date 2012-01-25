@@ -358,10 +358,10 @@ class rcube_mdb2
         if ($table) {
             if ($this->db_provider == 'pgsql')
                 // find sequence name
-                $table = get_sequence_name($table);
+                $table = $this->sequence_name($table);
             else
                 // resolve table name
-                $table = get_table_name($table);
+                $table = $this->table_name($table);
         }
 
         $id = $this->db_handle->lastInsertID($table);
@@ -800,7 +800,7 @@ class rcube_mdb2
         if ($scope != 'prepare') {
             $debug_output = sprintf('%s(%d): %s;',
                 $scope, $db->db_index, rtrim($message, ';'));
-            write_log('sql', $debug_output);
+            rcmail::write_log('sql', $debug_output);
         }
     }
 
