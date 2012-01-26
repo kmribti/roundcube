@@ -58,10 +58,6 @@ class rcube_mail_header
     public $flags = array();
 }
 
-// For backward compatibility with cached messages (#1486602)
-class iilBasicHeader extends rcube_mail_header
-{
-}
 
 /**
  * PHP based wrapper class to connect to an IMAP server
