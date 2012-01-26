@@ -340,3 +340,13 @@ function rc_request_header($name)
 {
     return rcube_request_header($name);
 }
+
+function rc_mime_content_type($path, $name, $failover = 'application/octet-stream', $is_stream=false)
+{
+    return rcube_mime::file_content_type($path, $name, $failover, $is_stream);
+}
+
+function rc_image_content_type($data)
+{
+    return rcube_mime::image_content_type($data);
+}
