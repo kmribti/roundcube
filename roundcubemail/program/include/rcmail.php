@@ -422,7 +422,7 @@ class rcmail
       $contacts = new rcube_ldap($ldap_config[$id], $this->config->get('ldap_debug'), $this->config->mail_domain($_SESSION['storage_host']));
     }
     else if ($id === '0') {
-      $contacts = new rcube_contacts($this->db, $this->user->ID);
+      $contacts = new rcube_contacts($this->db, $this->get_user_id());
     }
     else {
       $plugin = $this->plugins->exec_hook('addressbook_get', array('id' => $id, 'writeable' => $writeable));
@@ -474,7 +474,7 @@ class rcmail
     // We are using the DB address book
     if ($abook_type != 'ldap') {
       if (!isset($this->address_books['0']))
-        $this->address_books['0'] = new rcube_contacts($this->db, $this->user->ID);
+        $this->address_books['0'] = new rcube_contacts($this->db, $this->get_user_id());
       $list['0'] = array(
         'id'       => '0',
         'name'     => $this->gettext('personaladrbook'),
@@ -1309,7 +1309,7 @@ class rcmail
   {
     $sess_id = $_COOKIE[ini_get('session.name')];
     if (!$sess_id) $sess_id = session_id();
-    $plugin = $this->plugins->exec_hook('request_token', array('value' => md5('RT' . $this->user->ID . $this->config->get('des_key') . $sess_id)));
+    $plugin = $this->plugins->exec_hook('request_token', array('value' => md5('RT' . $this->get_user_id() . $this->config->get('des_key') . $sess_id)));
     return $plugin['value'];
   }
 
@@ -2270,14 +2270,20 @@ class rcmail
      */
     public function log_login()
     {
-        if (!$this->config->get('log_logins') || !$this->user) {
+        if (!$this->config->get('log_logins')) {
+            return;
+        }
+
+        $user_name = $this->get_user_name();
+        $user_id   = $this->get_user_id();
+
+        if (!$user_id) {
             return;
         }
 
         self::write_log('userlogins',
             sprintf('Successful login for %s (ID: %d) from %s in session %s',
-                $this->user->get_username(),
-                $this->user->ID, self::remote_ip(), session_id()));
+                $user_name, $user_id, self::remote_ip(), session_id()));
     }
 
 
