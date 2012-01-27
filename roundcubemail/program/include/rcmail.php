@@ -2405,4 +2405,29 @@ class rcmail
             ." WHERE created < " . $db->fromunixtime($ts));
     }
 
+
+    /**
+     * Getter for logged user ID.
+     *
+     * @return mixed User identifier
+     */
+    public function get_user_id()
+    {
+        if (is_object($this->user)) {
+            return $this->user->ID;
+        }
+    }
+
+
+    /**
+     * Getter for logged user name.
+     *
+     * @return string User name
+     */
+    public function get_user_name()
+    {
+        if (is_object($this->user)) {
+            return $this->user->get_username();
+        }
+    }
 }

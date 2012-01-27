@@ -3605,7 +3605,7 @@ class rcube_imap extends rcube_storage
             $rcmail = rcmail::get_instance();
             if ($dbh = $rcmail->get_dbh()) {
                 $this->mcache = new rcube_imap_cache(
-                    $dbh, $this, $rcmail->user->ID, $this->options['skip_deleted']);
+                    $dbh, $this, $rcmail->get_user_id(), $this->options['skip_deleted']);
             }
         }
 

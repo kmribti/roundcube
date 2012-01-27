@@ -92,7 +92,7 @@ class rcube_imap_cache
     {
         $this->db           = $db;
         $this->imap         = $imap;
-        $this->userid       = (int)$userid;
+        $this->userid       = $userid;
         $this->skip_deleted = $skip_deleted;
     }
 
@@ -511,9 +511,9 @@ class rcube_imap_cache
             $this->db->query(
                 "DELETE FROM ".$this->db->table_name('cache_messages')
                 ." WHERE user_id = ?"
-                    ." AND mailbox = ".$this->db->quote($mailbox)
+                    ." AND mailbox = ?"
                     .($uids !== null ? " AND uid IN (".$this->db->array2list((array)$uids, 'integer').")" : ""),
-                $this->userid);
+                $this->userid, $mailbox);
         }
 
     }
@@ -533,16 +533,18 @@ class rcube_imap_cache
         if ($remove) {
             $this->db->query(
                 "DELETE FROM ".$this->db->table_name('cache_index')
-                ." WHERE user_id = ".intval($this->userid)
-                    .(strlen($mailbox) ? " AND mailbox = ".$this->db->quote($mailbox) : "")
+                ." WHERE user_id = ?"
+                    .(strlen($mailbox) ? " AND mailbox = ".$this->db->quote($mailbox) : ""),
+                $this->userid
             );
         }
         else {
             $this->db->query(
                 "UPDATE ".$this->db->table_name('cache_index')
                 ." SET valid = 0"
-                ." WHERE user_id = ".intval($this->userid)
-                    .(strlen($mailbox) ? " AND mailbox = ".$this->db->quote($mailbox) : "")
+                ." WHERE user_id = ?"
+                    .(strlen($mailbox) ? " AND mailbox = ".$this->db->quote($mailbox) : ""),
+                $this->userid
             );
         }
 
@@ -566,8 +568,9 @@ class rcube_imap_cache
     {
         $this->db->query(
             "DELETE FROM ".$this->db->table_name('cache_thread')
-            ." WHERE user_id = ".intval($this->userid)
-                .(strlen($mailbox) ? " AND mailbox = ".$this->db->quote($mailbox) : "")
+            ." WHERE user_id = ?"
+                .(strlen($mailbox) ? " AND mailbox = ".$this->db->quote($mailbox) : ""),
+            $this->userid
         );
 
         if (strlen($mailbox)) {

@@ -532,7 +532,7 @@ class rcube_spellchecker
     private function update_dict()
     {
         if (strcasecmp($this->options['dictionary'], 'shared') != 0) {
-            $userid = (int) $this->rc->user->ID;
+            $userid = $this->rc->get_user_id();
         }
 
         $plugin = $this->rc->plugins->exec_hook('spell_dictionary_save', array(
@@ -547,7 +547,7 @@ class rcube_spellchecker
                 $this->rc->db->query(
                     "UPDATE ".$this->rc->db->table_name('dictionary')
                     ." SET data = ?"
-                    ." WHERE user_id " . ($plugin['userid'] ? "= ".$plugin['userid'] : "IS NULL")
+                    ." WHERE user_id " . ($plugin['userid'] ? "= ".$this->rc->db->quote($plugin['userid']) : "IS NULL")
                         ." AND " . $this->rc->db->quoteIdentifier('language') . " = ?",
                     implode(' ', $plugin['dictionary']), $plugin['language']);
             }
@@ -555,7 +555,7 @@ class rcube_spellchecker
             else {
                 $this->rc->db->query(
                     "DELETE FROM " . $this->rc->db->table_name('dictionary')
-                    ." WHERE user_id " . ($plugin['userid'] ? "= ".$plugin['userid'] : "IS NULL")
+                    ." WHERE user_id " . ($plugin['userid'] ? "= ".$this->rc->db->quote($plugin['userid']) : "IS NULL")
                         ." AND " . $this->rc->db->quoteIdentifier('language') . " = ?",
                     $plugin['language']);
             }
@@ -579,7 +579,7 @@ class rcube_spellchecker
         }
 
         if (strcasecmp($this->options['dictionary'], 'shared') != 0) {
-            $userid = (int) $this->rc->user->ID;
+            $userid = $this->rc->get_user_id();
         }
 
         $plugin = $this->rc->plugins->exec_hook('spell_dictionary_get', array(
@@ -589,7 +589,7 @@ class rcube_spellchecker
             $dict = array();
             $this->rc->db->query(
                 "SELECT data FROM ".$this->rc->db->table_name('dictionary')
-                ." WHERE user_id ". ($plugin['userid'] ? "= ".$plugin['userid'] : "IS NULL")
+                ." WHERE user_id ". ($plugin['userid'] ? "= ".$this->rc->db->quote($plugin['userid']) : "IS NULL")
                     ." AND " . $this->rc->db->quoteIdentifier('language') . " = ?",
                 $plugin['language']);
 

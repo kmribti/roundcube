@@ -63,12 +63,11 @@ class rcube_ldap extends rcube_addressbook
     /**
     * Object constructor
     *
-    * @param array 	LDAP connection properties
-    * @param boolean 	Enables debug mode
-    * @param string 	Current user mail domain name
-    * @param integer User-ID
+    * @param array 	 $p            LDAP connection properties
+    * @param boolean $debug        Enables debug mode
+    * @param string  $mail_domain  Current user mail domain name
     */
-    function __construct($p, $debug=false, $mail_domain=NULL)
+    function __construct($p, $debug = false, $mail_domain = null)
     {
         $this->prop = $p;
 
@@ -154,7 +153,7 @@ class rcube_ldap extends rcube_addressbook
     */
     private function _connect()
     {
-        global $RCMAIL;
+        $RCMAIL = rcmail::get_instance();
 
         if (!function_exists('ldap_connect'))
             rcmail::raise_error(array('code' => 100, 'type' => 'ldap',
@@ -226,7 +225,7 @@ class rcube_ldap extends rcube_addressbook
             }
 
             // Get the pieces needed for variable replacement.
-            if ($fu = $RCMAIL->user->get_username())
+            if ($fu = $RCMAIL->get_user_name())
                 list($u, $d) = explode('@', $fu);
             else
                 $d = $this->mail_domain;
