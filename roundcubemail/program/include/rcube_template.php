@@ -310,7 +310,7 @@ class rcube_template extends rcube_html_page
         if ($templ != 'iframe') {
             // prevent from endless loops
             if ($exit != 'recur' && $this->app->plugins->is_processing('render_page')) {
-                raise_error(array('code' => 505, 'type' => 'php',
+                rcmail::raise_error(array('code' => 505, 'type' => 'php',
                   'file' => __FILE__, 'line' => __LINE__,
                   'message' => 'Recursion alert: ignoring output->send()'), true, false);
                 return;
@@ -403,7 +403,7 @@ class rcube_template extends rcube_html_page
         if (!is_readable($path) && $this->deprecated_templates[$realname]) {
             $path = "$skin_path/templates/".$this->deprecated_templates[$realname].".html";
             if (is_readable($path))
-                raise_error(array('code' => 502, 'type' => 'php',
+                rcmail::raise_error(array('code' => 502, 'type' => 'php',
                     'file' => __FILE__, 'line' => __LINE__,
                     'message' => "Using deprecated template '".$this->deprecated_templates[$realname]
                         ."' in ".$this->config['skin_path']."/templates. Please rename to '".$realname."'"),
@@ -412,7 +412,7 @@ class rcube_template extends rcube_html_page
 
         // read template file
         if (($templ = @file_get_contents($path)) === false) {
-            raise_error(array(
+            rcmail::raise_error(array(
                 'code' => 501,
                 'type' => 'php',
                 'line' => __LINE__,
@@ -576,7 +576,7 @@ class rcube_template extends rcube_html_page
                 }
                 return $matches[0] . $this->parse_conditions($result);
             }
-            raise_error(array(
+            rcmail::raise_error(array(
                 'code' => 500,
                 'type' => 'php',
                 'line' => __LINE__,

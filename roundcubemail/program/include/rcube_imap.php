@@ -129,7 +129,7 @@ class rcube_imap extends rcube_storage
             $this->options['ssl_mode'] = $use_ssl == 'imaps' ? 'ssl' : $use_ssl;
         }
         else if ($use_ssl) {
-            raise_error(array('code' => 403, 'type' => 'imap',
+            rcmail::raise_error(array('code' => 403, 'type' => 'imap',
                 'file' => __FILE__, 'line' => __LINE__,
                 'message' => "OpenSSL not available"), true, false);
             $port = 143;
@@ -184,7 +184,7 @@ class rcube_imap extends rcube_storage
                 $message = sprintf("Login failed for %s from %s. %s",
                     $user, rcmail::remote_ip(), $this->conn->error);
 
-                raise_error(array('code' => 403, 'type' => 'imap',
+                rcmail::raise_error(array('code' => 403, 'type' => 'imap',
                     'file' => __FILE__, 'line' => __LINE__,
                     'message' => $message), true, false);
             }

@@ -102,7 +102,7 @@ class rcube_mdb2
             $this->db_error = true;
             $this->db_error_msg = $dbh->getMessage();
 
-            raise_error(array('code' => 500, 'type' => 'db',
+            rcmail::raise_error(array('code' => 500, 'type' => 'db',
                 'line' => __LINE__, 'file' => __FILE__,
                 'message' => $dbh->getUserInfo()), true, false);
         }
@@ -296,7 +296,7 @@ class rcube_mdb2
                 $this->db_error = true;
                 $this->db_error_msg = $q->userinfo;
 
-                raise_error(array('code' => 500, 'type' => 'db',
+                rcmail::raise_error(array('code' => 500, 'type' => 'db',
                     'line' => __LINE__, 'file' => __FILE__,
                     'message' => $this->db_error_msg), true, false);
 
@@ -737,7 +737,7 @@ class rcube_mdb2
         if (PEAR::isError($res)) {
             $this->db_error = true;
             $this->db_error_msg = $res->getMessage();
-            raise_error(array('code' => 500, 'type' => 'db',
+            rcmail::raise_error(array('code' => 500, 'type' => 'db',
                 'line' => __LINE__, 'file' => __FILE__,
                 'message' => $res->getMessage() . " Query: " 
                 . substr(preg_replace('/[\r\n]+\s*/', ' ', $res->userinfo), 0, 512)),
@@ -791,7 +791,7 @@ class rcube_mdb2
 
         if (strlen($data)) {
             if (!sqlite_exec($dbh->connection, $data, $error) || MDB2::isError($dbh)) {
-                raise_error(array('code' => 500, 'type' => 'db',
+                rcmail::raise_error(array('code' => 500, 'type' => 'db',
                     'line' => __LINE__, 'file' => __FILE__,
                     'message' => $error), true, false);
             }

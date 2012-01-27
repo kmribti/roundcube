@@ -276,7 +276,7 @@ class rcube_config
     {
         // Bomb out if the requested key does not exist
         if (!array_key_exists($key, $this->prop)) {
-            raise_error(array(
+            rcmail::raise_error(array(
                 'code' => 500, 'type' => 'php',
                 'file' => __FILE__, 'line' => __LINE__,
                 'message' => "Request for unconfigured crypto key \"$key\""
@@ -287,7 +287,7 @@ class rcube_config
 
         // Bomb out if the configured key is not exactly 24 bytes long
         if (strlen($key) != 24) {
-            raise_error(array(
+            rcmail::raise_error(array(
                 'code' => 500, 'type' => 'php',
 	            'file' => __FILE__, 'line' => __LINE__,
                 'message' => "Configured crypto key '$key' is not exactly 24 bytes long"
@@ -311,7 +311,7 @@ class rcube_config
             if ($delim == "\n" || $delim == "\r\n")
                 return $delim;
             else
-                raise_error(array(
+                rcmail::raise_error(array(
                     'code' => 500, 'type' => 'php',
 	                'file' => __FILE__, 'line' => __LINE__,
                     'message' => "Invalid mail_header_delimiter setting"

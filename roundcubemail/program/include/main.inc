@@ -287,18 +287,14 @@ function rcube_print_time($timer, $label='Timer', $dest='console')
     rcmail::print_timer($timer, $label, $dest);
 }
 
-
-// may be defined in Installer
-if (!function_exists('raise_error')) {
 function raise_error($arg=array(), $log=false, $terminate=false)
 {
-    rcube_ui::raise_error($arg, $log, $terminate);
-}
+    rcmail::raise_error($arg, $log, $terminate);
 }
 
 function rcube_log_bug($arg_arr)
 {
-    rcube_ui::log_bug($arg_arr);
+    rcmail::log_bug($arg_arr);
 }
 
 function rcube_upload_progress()

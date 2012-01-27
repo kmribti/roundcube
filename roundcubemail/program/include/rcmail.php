@@ -365,7 +365,7 @@ class rcmail
     // only report once
     if (!$seen["$host:$port"]++) {
       $this->mc_available--;
-      raise_error(array('code' => 604, 'type' => 'db',
+      self::raise_error(array('code' => 604, 'type' => 'db',
         'line' => __LINE__, 'file' => __FILE__,
         'message' => "Memcache failure on host $host:$port"),
         true, false);
@@ -443,7 +443,7 @@ class rcmail
     }
 
     if (!$contacts) {
-      raise_error(array(
+      self::raise_error(array(
         'code' => 700, 'type' => 'php',
         'file' => __FILE__, 'line' => __LINE__,
         'message' => "Addressbook source ($id) not found!"),
@@ -631,7 +631,7 @@ class rcmail
     $driver_class = "rcube_{$driver}";
 
     if (!class_exists($driver_class)) {
-      raise_error(array(
+      self::raise_error(array(
         'code' => 700, 'type' => 'php',
         'file' => __FILE__, 'line' => __LINE__,
         'message' => "Storage driver class ($driver) not found!"),
@@ -916,7 +916,7 @@ class rcmail
         $user = $created;
       }
       else {
-        raise_error(array(
+        self::raise_error(array(
           'code' => 620, 'type' => 'php',
           'file' => __FILE__, 'line' => __LINE__,
           'message' => "Failed to create a user record. Maybe aborted by a plugin?"
@@ -924,7 +924,7 @@ class rcmail
       }
     }
     else {
-      raise_error(array(
+      self::raise_error(array(
         'code' => 621, 'type' => 'php',
         'file' => __FILE__, 'line' => __LINE__,
         'message' => "Access denied for new user $username. 'auto_create_user' is disabled"
@@ -1388,7 +1388,7 @@ class rcmail
         $cipher = $iv . des($this->config->get_crypto_key($key), $clear, 1, 1, $iv);
       }
       else {
-        raise_error(array(
+        self::raise_error(array(
           'code' => 500, 'type' => 'php',
           'file' => __FILE__, 'line' => __LINE__,
           'message' => "Could not perform encryption; make sure Mcrypt is installed or lib/des.inc is available"
@@ -1441,7 +1441,7 @@ class rcmail
         $clear = des($this->config->get_crypto_key($key), $cipher, 0, 1, $iv);
       }
       else {
-        raise_error(array(
+        self::raise_error(array(
           'code' => 500, 'type' => 'php',
           'file' => __FILE__, 'line' => __LINE__,
           'message' => "Could not perform decryption; make sure Mcrypt is installed or lib/des.inc is available"
@@ -1807,7 +1807,7 @@ class rcmail
                 $temp_dir = $this->config->get('temp_dir');
                 $body_file = tempnam($temp_dir, 'rcmMsg');
                 if (PEAR::isError($mime_result = $message->saveMessageBody($body_file))) {
-                    raise_error(array('code' => 650, 'type' => 'php',
+                    self::raise_error(array('code' => 650, 'type' => 'php',
                         'file' => __FILE__, 'line' => __LINE__,
                         'message' => "Could not create message: ".$mime_result->getMessage()),
                         TRUE, FALSE);
@@ -1830,7 +1830,7 @@ class rcmail
 
             // log error
             if (!$sent) {
-                raise_error(array('code' => 800, 'type' => 'smtp',
+                self::raise_error(array('code' => 800, 'type' => 'smtp',
                     'line' => __LINE__, 'file' => __FILE__,
                     'message' => "SMTP error: ".join("\n", $smtp_response)), TRUE, FALSE);
             }
@@ -1856,7 +1856,7 @@ class rcmail
             $msg_body = $message->get();
 
             if (PEAR::isError($msg_body)) {
-                raise_error(array('code' => 650, 'type' => 'php',
+                self::raise_error(array('code' => 650, 'type' => 'php',
                     'file' => __FILE__, 'line' => __LINE__,
                     'message' => "Could not create message: ".$msg_body->getMessage()),
                     TRUE, FALSE);
@@ -2170,6 +2170,98 @@ class rcmail
 
         trigger_error("Error writing to log file $logfile; Please check permissions", E_USER_WARNING);
         return false;
+    }
+
+
+    /**
+     * Throw system error (and show error page).
+     *
+     * @param array Named parameters
+     *      - code:    Error code (required)
+     *      - type:    Error type [php|db|imap|javascript] (required)
+     *      - message: Error message
+     *      - file:    File where error occured
+     *      - line:    Line where error occured
+     * @param boolean True to log the error
+     * @param boolean Terminate script execution
+     */
+    public static function raise_error($arg = array(), $log = false, $terminate = false)
+    {
+        // installer
+        if (class_exists('rcube_install', false)) {
+            $rci = rcube_install::get_instance();
+            $rci->raise_error($arg);
+            return;
+        }
+
+        if ($log && $arg['type'] && $arg['message']) {
+            self::log_bug($arg);
+        }
+
+        // display error page and terminate script
+        if ($terminate) {
+            rcube_ui::raise_error($arg['code'], $arg['message']);
+        }
+    }
+
+
+    /**
+     * Report error according to configured debug_level
+     *
+     * @param array Named parameters
+     * @see self::raise_error()
+     */
+    public static function log_bug($arg_arr)
+    {
+        $rcmail  = rcmail::get_instance();
+        $program = strtoupper($arg_arr['type']);
+        $level   = $rcmail->config->get('debug_level');
+
+        // disable errors for ajax requests, write to log instead (#1487831)
+        if (($level & 4) && !empty($_REQUEST['_remote'])) {
+            $level = ($level ^ 4) | 1;
+        }
+
+        // write error to local log file
+        if ($level & 1) {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $post_query = '?_task='.urlencode($_POST['_task']).'&_action='.urlencode($_POST['_action']);
+            }
+            else {
+                $post_query = '';
+            }
+
+            $log_entry = sprintf("%s Error: %s%s (%s %s)",
+                $program,
+                $arg_arr['message'],
+                $arg_arr['file'] ? sprintf(' in %s on line %d', $arg_arr['file'], $arg_arr['line']) : '',
+                $_SERVER['REQUEST_METHOD'],
+                $_SERVER['REQUEST_URI'] . $post_query);
+
+            if (!self::write_log('errors', $log_entry)) {
+                // send error to PHPs error handler if write_log didn't succeed
+                trigger_error($arg_arr['message']);
+            }
+        }
+
+        // report the bug to the global bug reporting system
+        if ($level & 2) {
+            // TODO: Send error via HTTP
+        }
+
+        // show error if debug_mode is on
+        if ($level & 4) {
+            print "<b>$program Error";
+
+            if (!empty($arg_arr['file']) && !empty($arg_arr['line'])) {
+                print " in $arg_arr[file] ($arg_arr[line])";
+            }
+
+            print ':</b>&nbsp;';
+            print nl2br($arg_arr['message']);
+            print '<br />';
+            flush();
+        }
     }
 
 

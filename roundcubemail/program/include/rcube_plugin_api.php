@@ -130,7 +130,7 @@ class rcube_plugin_api
 
       // trigger fatal error if still not loaded
       if (!$loaded) {
-        raise_error(array('code' => 520, 'type' => 'php',
+        rcmail::raise_error(array('code' => 520, 'type' => 'php',
           'file' => __FILE__, 'line' => __LINE__,
           'message' => "Requried plugin $plugin_name was not loaded"), true, true);
       }
@@ -186,13 +186,13 @@ class rcube_plugin_api
         }
       }
       else {
-        raise_error(array('code' => 520, 'type' => 'php',
+        rcmail::raise_error(array('code' => 520, 'type' => 'php',
           'file' => __FILE__, 'line' => __LINE__,
           'message' => "No plugin class $plugin_name found in $fn"), true, false);
       }
     }
     else {
-      raise_error(array('code' => 520, 'type' => 'php',
+      rcmail::raise_error(array('code' => 520, 'type' => 'php',
         'file' => __FILE__, 'line' => __LINE__,
         'message' => "Failed to load plugin file $fn"), true, false);
     }
@@ -211,7 +211,7 @@ class rcube_plugin_api
   {
     if (is_callable($callback)) {
       if (isset($this->deprecated_hooks[$hook])) {
-        raise_error(array('code' => 522, 'type' => 'php',
+        rcmail::raise_error(array('code' => 522, 'type' => 'php',
           'file' => __FILE__, 'line' => __LINE__,
           'message' => "Deprecated hook name. ".$hook.' -> '.$this->deprecated_hooks[$hook]), true, false);
         $hook = $this->deprecated_hooks[$hook];
@@ -219,7 +219,7 @@ class rcube_plugin_api
       $this->handlers[$hook][] = $callback;
     }
     else
-      raise_error(array('code' => 521, 'type' => 'php',
+      rcmail::raise_error(array('code' => 521, 'type' => 'php',
         'file' => __FILE__, 'line' => __LINE__,
         'message' => "Invalid callback function for $hook"), true, false);
   }
@@ -277,7 +277,7 @@ class rcube_plugin_api
       $this->actionmap[$action] = $owner;
     }
     else {
-      raise_error(array('code' => 523, 'type' => 'php',
+      rcmail::raise_error(array('code' => 523, 'type' => 'php',
         'file' => __FILE__, 'line' => __LINE__,
         'message' => "Cannot register action $action; already taken by another plugin"), true, false);
     }
@@ -296,7 +296,7 @@ class rcube_plugin_api
       call_user_func($this->actions[$action]);
     }
     else {
-      raise_error(array('code' => 524, 'type' => 'php',
+      rcmail::raise_error(array('code' => 524, 'type' => 'php',
         'file' => __FILE__, 'line' => __LINE__,
         'message' => "No handler found for action $action"), true, true);
     }
@@ -322,7 +322,7 @@ class rcube_plugin_api
       $this->objectsmap[$name] = $owner;
     }
     else {
-      raise_error(array('code' => 525, 'type' => 'php',
+      rcmail::raise_error(array('code' => 525, 'type' => 'php',
         'file' => __FILE__, 'line' => __LINE__,
         'message' => "Cannot register template handler $name; already taken by another plugin"), true, false);
     }
@@ -338,12 +338,12 @@ class rcube_plugin_api
   public function register_task($task, $owner)
   {
     if ($task != asciiwords($task)) {
-      raise_error(array('code' => 526, 'type' => 'php',
+      rcmail::raise_error(array('code' => 526, 'type' => 'php',
         'file' => __FILE__, 'line' => __LINE__,
         'message' => "Invalid task name: $task. Only characters [a-z0-9_.-] are allowed"), true, false);
     }
     else if (in_array($task, rcmail::$main_tasks)) {
-      raise_error(array('code' => 526, 'type' => 'php',
+      rcmail::raise_error(array('code' => 526, 'type' => 'php',
         'file' => __FILE__, 'line' => __LINE__,
         'message' => "Cannot register taks $task; already taken by another plugin or the application itself"), true, false);
     }

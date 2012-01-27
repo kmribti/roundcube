@@ -75,7 +75,7 @@ class rcube_session
           array($this, 'gc'));
       }
       else {
-        raise_error(array('code' => 604, 'type' => 'db',
+        rcmail::raise_error(array('code' => 604, 'type' => 'db',
           'line' => __LINE__, 'file' => __FILE__,
           'message' => "Failed to connect to memcached. Please check configuration"),
           true, true);

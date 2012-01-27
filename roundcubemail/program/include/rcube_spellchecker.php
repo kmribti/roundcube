@@ -58,7 +58,7 @@ class rcube_spellchecker
         $this->lang   = $lang ? $lang : 'en';
 
         if ($this->engine == 'pspell' && !extension_loaded('pspell')) {
-            raise_error(array(
+            rcmail::raise_error(array(
                 'code' => 500, 'type' => 'php',
                 'file' => __FILE__, 'line' => __LINE__,
                 'message' => "Pspell extension not available"), true, true);

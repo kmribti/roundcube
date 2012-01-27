@@ -55,22 +55,12 @@ function __autoload($classname)
     include_once $filename. '.php';
 }
 
-
-/**
- * Fake internal error handler to catch errors
- */
-function raise_error($p)
-{
-    $rci = rcube_install::get_instance();
-    $rci->raise_error($p);
-}
-
 /**
  * Local callback function for PEAR errors
  */
 function __pear_error($err)
 {
-    raise_error(array(
+    rcmail::raise_error(array(
         'code' => $err->getCode(),
         'message' => $err->getMessage(),
     ));
