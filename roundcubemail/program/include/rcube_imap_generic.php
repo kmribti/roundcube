@@ -1534,8 +1534,6 @@ class rcube_imap_generic
      */
     function sort($mailbox, $field, $add='', $return_uid=false, $encoding = 'US-ASCII')
     {
-        require_once dirname(__FILE__) . '/rcube_result_index.php';
-
         $field = strtoupper($field);
         if ($field == 'INTERNALDATE') {
             $field = 'ARRIVAL';
@@ -1579,8 +1577,6 @@ class rcube_imap_generic
      */
     function thread($mailbox, $algorithm='REFERENCES', $criteria='', $return_uid=false, $encoding='US-ASCII')
     {
-        require_once dirname(__FILE__) . '/rcube_result_thread.php';
-
         $old_sel = $this->selected;
 
         if (!$this->select($mailbox)) {
@@ -1619,8 +1615,6 @@ class rcube_imap_generic
      */
     function search($mailbox, $criteria, $return_uid=false, $items=array())
     {
-        require_once dirname(__FILE__) . '/rcube_result_index.php';
-
         $old_sel = $this->selected;
 
         if (!$this->select($mailbox)) {
@@ -1680,8 +1674,6 @@ class rcube_imap_generic
     function index($mailbox, $message_set, $index_field='', $skip_deleted=true,
         $uidfetch=false, $return_uid=false)
     {
-        require_once dirname(__FILE__) . '/rcube_result_index.php';
-
         $msg_index = $this->fetchHeaderIndex($mailbox, $message_set,
             $index_field, $skip_deleted, $uidfetch, $return_uid);
 
