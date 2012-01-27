@@ -225,7 +225,7 @@ function rcmail_js_message_list($a_headers, $insert_top=FALSE, $a_show_cols=null
   // Make sure there are no duplicated columns (#1486999)
   $a_show_cols = array_unique($a_show_cols);
 
-  // Plugins may set header's list_cols/list_flags and other rcube_mail_header variables
+  // Plugins may set header's list_cols/list_flags and other rcube_message_header variables
   // and list columns
   $plugin = $RCMAIL->plugins->exec_hook('messages_list',
     array('messages' => $a_headers, 'cols' => $a_show_cols));

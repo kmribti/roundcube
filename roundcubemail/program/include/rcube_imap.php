@@ -1043,7 +1043,7 @@ class rcube_imap extends rcube_storage
 
         if ($sort) {
             // use this class for message sorting
-            $sorter = new rcube_header_sorter();
+            $sorter = new rcube_message_header_sorter();
             $sorter->set_index($msgs);
             $sorter->sort_headers($a_msg_headers);
         }
@@ -1493,7 +1493,7 @@ class rcube_imap extends rcube_storage
      * @param string  $folder   Folder to read from
      * @param bool    $force    True to skip cache
      *
-     * @return rcube_mail_header Message headers
+     * @return rcube_message_header Message headers
      */
     public function get_message_headers($uid, $folder = null, $force = false)
     {
@@ -1524,7 +1524,7 @@ class rcube_imap extends rcube_storage
      * @param int     $uid      Message UID to fetch
      * @param string  $folder   Folder to read from
      *
-     * @return object rcube_mail_header Message data
+     * @return object rcube_message_header Message data
      */
     public function get_message($uid, $folder = null)
     {

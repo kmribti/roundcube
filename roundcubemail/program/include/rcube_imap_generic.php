@@ -26,37 +26,8 @@
 
 */
 
-/**
- * Struct representing an e-mail message header
- *
- * @package Mail
- * @author  Aleksander Machniak <alec@alec.pl>
- */
-class rcube_mail_header
-{
-    public $id;
-    public $uid;
-    public $subject;
-    public $from;
-    public $to;
-    public $cc;
-    public $replyto;
-    public $in_reply_to;
-    public $date;
-    public $messageID;
-    public $size;
-    public $encoding;
-    public $charset;
-    public $ctype;
-    public $timestamp;
-    public $bodystructure;
-    public $internaldate;
-    public $references;
-    public $priority;
-    public $mdn_to;
-    public $others = array();
-    public $flags = array();
-}
+// for backward copat.
+class rcube_mail_header extends rcube_message_header { }
 
 
 /**
@@ -2010,7 +1981,7 @@ class rcube_imap_generic
      * @param string $mod_seq     Modification sequence for CHANGEDSINCE (RFC4551) query
      * @param bool   $vanished    Enables VANISHED parameter (RFC5162) for CHANGEDSINCE query
      *
-     * @return array List of rcube_mail_header elements, False on error
+     * @return array List of rcube_message_header elements, False on error
      * @since 0.6
      */
     function fetch($mailbox, $message_set, $is_uid = false, $query_items = array(),
@@ -2050,7 +2021,7 @@ class rcube_imap_generic
             if (preg_match('/^\* ([0-9]+) FETCH/', $line, $m)) {
                 $id = intval($m[1]);
 
-                $result[$id]            = new rcube_mail_header;
+                $result[$id]            = new rcube_message_header;
                 $result[$id]->id        = $id;
                 $result[$id]->subject   = '';
                 $result[$id]->messageID = 'mid:' . $id;

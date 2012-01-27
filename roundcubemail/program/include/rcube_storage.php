@@ -423,7 +423,7 @@ abstract class rcube_storage
      * @param int     $uid     Message UID to fetch
      * @param string  $folder  Folder to read from
      *
-     * @return object rcube_mail_header Message data
+     * @return object rcube_message_header Message data
      */
     abstract function get_message($uid, $folder = null);
 
@@ -435,7 +435,7 @@ abstract class rcube_storage
      * @param string  $folder   Folder to read from
      * @param bool    $force    True to skip cache
      *
-     * @return rcube_mail_header Message headers
+     * @return rcube_message_header Message headers
      */
     abstract function get_message_headers($uid, $folder = null, $force = false);
 
@@ -968,55 +968,4 @@ abstract class rcube_storage
      */
     abstract function get_cache($key);
 
-}  // end class rcube_storage
-
-
-/**
- * Class for sorting an array of rcube_mail_header objects in a predetermined order.
- *
- * @package Mail
- * @author Eric Stadtherr
- */
-class rcube_header_sorter
-{
-    private $uids = array();
-
-
-    /**
-     * Set the predetermined sort order.
-     *
-     * @param array $index  Numerically indexed array of IMAP UIDs
-     */
-    function set_index($index)
-    {
-        $index = array_flip($index);
-
-        $this->uids = $index;
-    }
-
-    /**
-     * Sort the array of header objects
-     *
-     * @param array $headers Array of rcube_mail_header objects indexed by UID
-     */
-    function sort_headers(&$headers)
-    {
-        uksort($headers, array($this, "compare_uids"));
-    }
-
-    /**
-     * Sort method called by uksort()
-     *
-     * @param int $a Array key (UID)
-     * @param int $b Array key (UID)
-     */
-    function compare_uids($a, $b)
-    {
-        // then find each sequence number in my ordered list
-        $posa = isset($this->uids[$a]) ? intval($this->uids[$a]) : -1;
-        $posb = isset($this->uids[$b]) ? intval($this->uids[$b]) : -1;
-
-        // return the relative position as the comparison value
-        return $posa - $posb;
-    }
 }

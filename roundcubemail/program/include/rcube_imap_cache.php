@@ -287,7 +287,7 @@ class rcube_imap_cache
      * @param string $mailbox  Folder name
      * @param array  $msgs     Message UIDs
      *
-     * @return array The list of messages (rcube_mail_header) indexed by UID
+     * @return array The list of messages (rcube_message_header) indexed by UID
      */
     function get_messages($mailbox, $msgs = array())
     {
@@ -345,7 +345,7 @@ class rcube_imap_cache
      *                         from IMAP server
      * @param bool   $no_cache Enables internal cache usage
      *
-     * @return rcube_mail_header Message data
+     * @return rcube_message_header Message data
      */
     function get_message($mailbox, $uid, $update = true, $cache = true)
     {
@@ -400,9 +400,9 @@ class rcube_imap_cache
     /**
      * Saves the message in cache.
      *
-     * @param string            $mailbox  Folder name
-     * @param rcube_mail_header $message  Message data
-     * @param bool              $force    Skips message in-cache existance check
+     * @param string               $mailbox  Folder name
+     * @param rcube_message_header $message  Message data
+     * @param bool                 $force    Skips message in-cache existance check
      */
     function add_message($mailbox, $message, $force = false)
     {
@@ -1036,7 +1036,7 @@ class rcube_imap_cache
      *
      * @param array $sql_arr Message row data
      *
-     * @return rcube_mail_header Message object
+     * @return rcube_message_header Message object
      */
     private function build_message($sql_arr)
     {
