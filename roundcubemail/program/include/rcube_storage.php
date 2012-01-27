@@ -972,39 +972,6 @@ abstract class rcube_storage
 
 
 /**
- * Class representing a message part
- *
- * @package Mail
- */
-class rcube_message_part
-{
-    var $mime_id = '';
-    var $ctype_primary = 'text';
-    var $ctype_secondary = 'plain';
-    var $mimetype = 'text/plain';
-    var $disposition = '';
-    var $filename = '';
-    var $encoding = '8bit';
-    var $charset = '';
-    var $size = 0;
-    var $headers = array();
-    var $d_parameters = array();
-    var $ctype_parameters = array();
-
-    function __clone()
-    {
-        if (isset($this->parts)) {
-            foreach ($this->parts as $idx => $part) {
-                if (is_object($part)) {
-                    $this->parts[$idx] = clone $part;
-                }
-            }
-        }
-    }
-}
-
-
-/**
  * Class for sorting an array of rcube_mail_header objects in a predetermined order.
  *
  * @package Mail
