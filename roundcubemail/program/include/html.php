@@ -274,7 +274,7 @@ class html
         $attrib_arr = array();
         foreach ($attrib as $key => $value) {
             // skip size if not numeric
-            if (($key=='size' && !is_numeric($value))) {
+            if ($key == 'size' && !is_numeric($value)) {
                 continue;
             }
 
@@ -294,13 +294,11 @@ class html
                     $attrib_arr[] = $key . '="' . $key . '"';
                 }
             }
-            else if ($key=='value') {
-                $attrib_arr[] = $key . '="' . rcube_ui::Q($value, 'strict', false) . '"';
-            }
             else {
-                $attrib_arr[] = $key . '="' . rcube_ui::Q($value) . '"';
+                $attrib_arr[] = $key . '="' . self::quote($value) . '"';
             }
         }
+
         return count($attrib_arr) ? ' '.implode(' ', $attrib_arr) : '';
     }
 
@@ -326,7 +324,26 @@ class html
 
         return $attrib;
     }
+
+    /**
+     * Replacing specials characters in html attribute value
+     *
+     * @param  string  $str  Input string
+     *
+     * @return string  The quoted string
+     */
+    public static function quote($str)
+    {
+        $str = htmlspecialchars($str, ENT_COMPAT, RCMAIL_CHARSET);
+
+        // avoid douple quotation of &
+        // @TODO: get rid of it?
+        $str = preg_replace('/&amp;([A-Za-z]{2,6}|#[0-9]{2,4});/', '&\\1;', $str);
+
+        return $str;
+    }
 }
+
 
 /**
  * Class to create an HTML input field
@@ -338,8 +355,8 @@ class html_inputfield extends html
     protected $tagname = 'input';
     protected $type = 'text';
     protected $allowed = array('type','name','value','size','tabindex',
-	'autocomplete','checked','onchange','onclick','disabled','readonly',
-	'spellcheck','results','maxlength','src','multiple');
+        'autocomplete','checked','onchange','onclick','disabled','readonly',
+        'spellcheck','results','maxlength','src','multiple');
 
     /**
      * Object constructor
@@ -540,11 +557,11 @@ class html_textarea extends html
         }
 
         if (!empty($value) && !preg_match('/mce_editor/', $this->attrib['class'])) {
-            $value = rcube_ui::Q($value, 'strict', false);
+            $value = self::quote($value);
         }
 
         return self::tag($this->tagname, $this->attrib, $value,
-	    array_merge(self::$common_attrib, $this->allowed));
+	        array_merge(self::$common_attrib, $this->allowed));
     }
 }
 
@@ -573,7 +590,7 @@ class html_select extends html
     protected $options = array();
     protected $allowed = array('name','size','tabindex','autocomplete',
 	'multiple','onchange','disabled','rel');
-    
+
     /**
      * Add a new option to this drop-down
      *
@@ -614,8 +631,9 @@ class html_select extends html
                 'selected' => (in_array($option['value'], $select, true) ||
                   in_array($option['text'], $select, true)) ? 1 : null);
 
-            $this->content .= self::tag('option', $attr, rcube_ui::Q($option['text']));
+            $this->content .= self::tag('option', $attr, self::quote($option['text']));
         }
+
         return parent::show();
     }
 }
