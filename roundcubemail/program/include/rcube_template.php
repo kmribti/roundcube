@@ -523,10 +523,11 @@ class rcube_template extends rcube_html_page
      */
     private function parse_with_globals($input)
     {
-        $GLOBALS['__version'] = rcube_ui::Q(RCMAIL_VERSION);
-        $GLOBALS['__comm_path'] = rcube_ui::Q($this->app->comm_path);
+        $GLOBALS['__version'] = html::quote(RCMAIL_VERSION);
+        $GLOBALS['__comm_path'] = html::quote($this->app->comm_path);
+
         return preg_replace_callback('/\$(__[a-z0-9_\-]+)/',
-	    array($this, 'globals_callback'), $input);
+            array($this, 'globals_callback'), $input);
     }
 
     /**
@@ -697,7 +698,7 @@ class rcube_template extends rcube_html_page
                     $vars = $attrib + array('product' => $this->config['product_name']);
                     unset($vars['name'], $vars['command']);
                     $label = $this->app->gettext($attrib + array('vars' => $vars));
-                    return !$attrib['noshow'] ? (get_boolean((string)$attrib['html']) ? $label : rcube_ui::Q($label)) : '';
+                    return !$attrib['noshow'] ? (get_boolean((string)$attrib['html']) ? $label : html::quote($label)) : '';
                 }
                 break;
 
@@ -705,7 +706,7 @@ class rcube_template extends rcube_html_page
             case 'include':
                 if (!$this->plugin_skin_path || !is_file($path = realpath($this->plugin_skin_path . $attrib['file'])))
                     $path = realpath(($attrib['skin_path'] ? $attrib['skin_path'] : $this->config['skin_path']).$attrib['file']);
-                
+
                 if (is_readable($path)) {
                     if ($this->config['skin_include_php']) {
                         $incl = $this->include_php($path);
@@ -759,7 +760,7 @@ class rcube_template extends rcube_html_page
                 }
                 else if ($object == 'productname') {
                     $name = !empty($this->config['product_name']) ? $this->config['product_name'] : 'Roundcube Webmail';
-                    $content = rcube_ui::Q($name);
+                    $content = html::quote($name);
                 }
                 else if ($object == 'version') {
                     $ver = (string)RCMAIL_VERSION;
@@ -767,10 +768,10 @@ class rcube_template extends rcube_html_page
                         if (preg_match('/Revision:\s(\d+)/', @shell_exec('svn info'), $regs))
                           $ver .= ' [SVN r'.$regs[1].']';
                     }
-                    $content = rcube_ui::Q($ver);
+                    $content = html::quote($ver);
                 }
                 else if ($object == 'steptitle') {
-                  $content = rcube_ui::Q($this->get_pagetitle());
+                  $content = html::quote($this->get_pagetitle());
                 }
                 else if ($object == 'pagetitle') {
                     if (!empty($this->config['devel_mode']) && !empty($_SESSION['username']))
@@ -780,7 +781,7 @@ class rcube_template extends rcube_html_page
                     else
                       $title = '';
                     $title .= $this->get_pagetitle();
-                    $content = rcube_ui::Q($title);
+                    $content = html::quote($title);
                 }
 
                 // exec plugin hooks for this template object
@@ -790,7 +791,7 @@ class rcube_template extends rcube_html_page
             // return code for a specified eval expression
             case 'exp':
                 $value = $this->parse_expression($attrib['expression']);
-                return eval("return rcube_ui::Q($value);");
+                return eval("return html::quote($value);");
 
             // return variable
             case 'var':
@@ -826,7 +827,7 @@ class rcube_template extends rcube_html_page
                     $value = implode(', ', $value);
                 }
 
-                return rcube_ui::Q($value);
+                return html::quote($value);
                 break;
         }
         return '';
@@ -889,13 +890,13 @@ class rcube_template extends rcube_html_page
         }
         // get localized text for labels and titles
         if ($attrib['title']) {
-            $attrib['title'] = rcube_ui::Q($this->app->gettext($attrib['title'], $attrib['domain']));
+            $attrib['title'] = html::quote($this->app->gettext($attrib['title'], $attrib['domain']));
         }
         if ($attrib['label']) {
-            $attrib['label'] = rcube_ui::Q($this->app->gettext($attrib['label'], $attrib['domain']));
+            $attrib['label'] = html::quote($this->app->gettext($attrib['label'], $attrib['domain']));
         }
         if ($attrib['alt']) {
-            $attrib['alt'] = rcube_ui::Q($this->app->gettext($attrib['alt'], $attrib['domain']));
+            $attrib['alt'] = html::quote($this->app->gettext($attrib['alt'], $attrib['domain']));
         }
 
         // set title to alt attribute for IE browsers
@@ -923,14 +924,14 @@ class rcube_template extends rcube_html_page
 
             // make valid href to specific buttons
             if (in_array($attrib['command'], rcmail::$main_tasks)) {
-                $attrib['href'] = rcube_ui::url(null, null, $attrib['command']);
+                $attrib['href']    = $this->app->url(array('task' => $attrib['command']));
                 $attrib['onclick'] = sprintf("%s.switch_task('%s');return false", JS_OBJECT_NAME, $attrib['command']);
             }
             else if ($attrib['task'] && in_array($attrib['task'], rcmail::$main_tasks)) {
-                $attrib['href'] = rcube_ui::url($attrib['command'], null, $attrib['task']);
+                $attrib['href'] = $this->app->url(array('action' => $attrib['command'], 'task' => $attrib['task']));
             }
             else if (in_array($attrib['command'], $a_static_commands)) {
-                $attrib['href'] = rcube_ui::url($attrib['command']);
+                $attrib['href'] = $this->app->url(array('action' => $attrib['command']));
             }
             else if ($attrib['command'] == 'permaurl' && !empty($this->env['permaurl'])) {
               $attrib['href'] = $this->env['permaurl'];
@@ -1153,15 +1154,15 @@ class rcube_template extends rcube_html_page
         // create HTML table with two cols
         $table = new html_table(array('cols' => 2));
 
-        $table->add('title', html::label('rcmloginuser', rcube_ui::Q($this->app->gettext('username'))));
+        $table->add('title', html::label('rcmloginuser', html::quote($this->app->gettext('username'))));
         $table->add('input', $input_user->show(rcube_ui::get_input_value('_user', rcube_ui::INPUT_GPC)));
 
-        $table->add('title', html::label('rcmloginpwd', rcube_ui::Q($this->app->gettext('password'))));
+        $table->add('title', html::label('rcmloginpwd', html::quote($this->app->gettext('password'))));
         $table->add('input', $input_pass->show());
 
         // add host selection row
         if (is_object($input_host) && !$hide_host) {
-            $table->add('title', html::label('rcmloginhost', rcube_ui::Q($this->app->gettext('server'))));
+            $table->add('title', html::label('rcmloginhost', html::quote($this->app->gettext('server'))));
             $table->add('input', $input_host->show(rcube_ui::get_input_value('_host', rcube_ui::INPUT_GPC)));
         }
 

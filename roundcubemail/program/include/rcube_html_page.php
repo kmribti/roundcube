@@ -180,7 +180,7 @@ class rcube_html_page
         }
 
         // replace specialchars in content
-        $page_title  = rcube_ui::Q($this->title, 'show', FALSE);
+        $page_title  = html::quote($this->title);
         $page_header = '';
         $page_footer = '';
 

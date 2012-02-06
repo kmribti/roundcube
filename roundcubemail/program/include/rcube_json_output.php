@@ -190,8 +190,9 @@ class rcube_json_output
     {
         if ($override || !$this->message) {
             if ($this->app->text_exists($message)) {
-                if (!empty($vars))
-                    $vars = array_map('Q', $vars);
+                if (!empty($vars)) {
+                    $vars = array_map(array('rcube_ui', 'Q'), $vars);
+                }
                 $msgtext = $this->app->gettext(array('name' => $message, 'vars' => $vars));
             }
             else
