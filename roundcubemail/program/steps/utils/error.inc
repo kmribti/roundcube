@@ -95,7 +95,7 @@ else {
 $HTTP_ERR_CODE = $ERROR_CODE && $ERROR_CODE < 600 ? $ERROR_CODE : 500;
 
 // Ajax request
-if ($rcmail->output && ($rcmail->output instanceof rcube_json_output)) {
+if ($rcmail->output && $rcmail->output->type == 'js') {
   header("HTTP/1.0 $HTTP_ERR_CODE $__error_title");
   die;
 }

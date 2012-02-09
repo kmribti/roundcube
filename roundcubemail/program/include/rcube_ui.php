@@ -1026,7 +1026,7 @@ class rcube_ui
 
         $quota = self::quota_content($attrib);
 
-        $OUTPUT->add_script('rcmail.set_quota('.self::json_serialize($quota).');', 'docready');
+        $OUTPUT->add_script('rcmail.set_quota('.rcube_output::json_serialize($quota).');', 'docready');
 
         return html::span($attrib, '');
     }
@@ -1360,34 +1360,6 @@ class rcube_ui
 
 
     /**
-     * Send HTTP headers to prevent caching this page
-     */
-    public static function send_nocacheing_headers()
-    {
-        global $OUTPUT;
-
-        if (headers_sent()) {
-            return;
-        }
-
-        header("Expires: ".gmdate("D, d M Y H:i:s")." GMT");
-        header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
-        // Request browser to disable DNS prefetching (CVE-2010-0464)
-        header("X-DNS-Prefetch-Control: off");
-
-        // We need to set the following headers to make downloads work using IE in HTTPS mode.
-        if ($OUTPUT->browser->ie && self::https_check()) {
-            header('Pragma: private');
-            header("Cache-Control: private, must-revalidate");
-        }
-        else {
-            header("Cache-Control: private, no-cache, must-revalidate, post-check=0, pre-check=0");
-            header("Pragma: no-cache");
-        }
-    }
-
-
-    /**
      * Create a human readable string for a number of bytes
      *
      * @param int Number of bytes
@@ -1412,23 +1384,6 @@ class rcube_ui
         }
 
         return $str;
-    }
-
-
-    /**
-     * Convert a variable into a javascript object notation
-     *
-     * @param mixed Input value
-     *
-     * @return string Serialized JSON string
-     */
-    public static function json_serialize($input)
-    {
-        $input = rcube_charset::clean($input);
-
-        // sometimes even using rcube_charset::clean() the input contains invalid UTF-8 sequences
-        // that's why we have @ here
-        return @json_encode($input);
     }
 
 

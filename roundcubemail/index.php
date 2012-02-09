@@ -34,7 +34,7 @@ require_once 'program/include/iniset.php';
 $RCMAIL = rcmail::get_instance();
 
 // Make the whole PHP output non-cacheable (#1487797)
-rcube_ui::send_nocacheing_headers();
+$RCMAIL->output->nocacheing_headers();
 
 // turn on output buffering
 ob_start();
@@ -63,7 +63,7 @@ if ($RCMAIL->action == 'error' && !empty($_GET['_code'])) {
 // check if https is required (for login) and redirect if necessary
 if (empty($_SESSION['user_id']) && ($force_https = $RCMAIL->config->get('force_https', false))) {
   $https_port = is_bool($force_https) ? 443 : $force_https;
-  if (!rcube__ui::https_check($https_port)) {
+  if (!rcube_ui::https_check($https_port)) {
     $host  = preg_replace('/:[0-9]+$/', '', $_SERVER['HTTP_HOST']);
     $host .= ($https_port != 443 ? ':' . $https_port : '');
     header('Location: https://' . $host . $_SERVER['REQUEST_URI']);

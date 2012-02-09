@@ -89,7 +89,7 @@ function rc_utf8_clean($input)
 
 function json_serialize($input)
 {
-    return rcube_ui::json_serialize($input);
+    return rcube_output::json_serialize($input);
 }
 
 function rep_specialchars_output($str, $enctype='', $mode='', $newlines=TRUE)
@@ -319,7 +319,7 @@ function rcube_fontdefs($font = null)
 
 function send_nocacheing_headers()
 {
-    rcube_ui::send_nocacheing_headers();
+    return rcmail::get_instance()->output->nocacheing_headers();
 }
 
 function show_bytes($bytes)

@@ -93,9 +93,9 @@ class rcmail
   public $storage;
 
   /**
-   * Instance of rcube_template class.
+   * Instance of rcube_output class.
    *
-   * @var rcube_template
+   * @var rcube_output
    */
   public $output;
 
@@ -520,13 +520,13 @@ class rcmail
    * environment vars according to the current session and configuration
    *
    * @param boolean True if this request is loaded in a (i)frame
-   * @return rcube_template Reference to HTML output object
+   * @return rcube_output_html Reference to HTML output object
    */
   public function load_gui($framed = false)
   {
     // init output page
-    if (!($this->output instanceof rcube_template))
-      $this->output = new rcube_template($this->task, $framed);
+    if (!($this->output instanceof rcube_output_html))
+      $this->output = new rcube_output_html($this->task, $framed);
 
     // set keep-alive/check-recent interval
     if ($this->session && ($keep_alive = $this->session->get_keep_alive())) {
@@ -553,12 +553,12 @@ class rcmail
   /**
    * Create an output object for JSON responses
    *
-   * @return rcube_json_output Reference to JSON output object
+   * @return rcube_output_json Reference to JSON output object
    */
   public function json_init()
   {
-    if (!($this->output instanceof rcube_json_output))
-      $this->output = new rcube_json_output($this->task);
+    if (!($this->output instanceof rcube_output_json))
+      $this->output = new rcube_output_json($this->task);
 
     return $this->output;
   }
