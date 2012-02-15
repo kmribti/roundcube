@@ -741,6 +741,38 @@ class rcmail extends rcube
 
 
   /**
+   * Function to be executed in script shutdown
+   */
+  public function shutdown()
+  {
+    parent::shutdown();
+
+    foreach ($this->address_books as $book) {
+      if (is_object($book) && is_a($book, 'rcube_addressbook'))
+        $book->close();
+    }
+
+    // before closing the database connection, write session data
+    if ($_SERVER['REMOTE_ADDR'] && is_object($this->session)) {
+      session_write_close();
+    }
+
+    // write performance stats to logs/console
+    if ($this->config->get('devel_mode')) {
+      if (function_exists('memory_get_usage'))
+        $mem = rcube_ui::show_bytes(memory_get_usage());
+      if (function_exists('memory_get_peak_usage'))
+        $mem .= '/'.rcube_ui::show_bytes(memory_get_peak_usage());
+
+      $log = $this->task . ($this->action ? '/'.$this->action : '') . ($mem ? " [$mem]" : '');
+      if (defined('RCMAIL_START'))
+        self::print_timer(RCMAIL_START, $log);
+      else
+        self::console($log);
+    }
+  }
+
+  /**
    * Helper method to set a cookie with the current path and host settings
    *
    * @param string Cookie name
