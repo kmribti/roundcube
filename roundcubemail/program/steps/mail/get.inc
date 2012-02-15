@@ -134,7 +134,7 @@ else if (strlen($pid = get_input_value('_part', RCUBE_INPUT_GET))) {
         $out = rcmail_print_body($part, array('safe' => $MESSAGE->is_safe, 'inline_html' => false));
       }
 
-      $OUTPUT = new rcube_html_page();
+      $OUTPUT = new rcube_output_html();
       $OUTPUT->write($out);
     }
     else {

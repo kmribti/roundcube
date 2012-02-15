@@ -59,7 +59,7 @@ class rcube_output_html extends rcube_output
      *
      * @todo   Replace $this->config with the real rcube_config object
      */
-    public function __construct($task, $framed = false)
+    public function __construct($task = null, $framed = false)
     {
         parent::__construct();
 
