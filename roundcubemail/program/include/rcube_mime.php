@@ -58,7 +58,7 @@ class rcube_mime
      *
      * @return array  Indexed list of addresses
      */
-    static function decode_address_list($input, $max = null, $decode = true, $fallback = null)
+    public static function decode_address_list($input, $max = null, $decode = true, $fallback = null)
     {
         $a   = self::parse_address_list($input, $decode, $fallback);
         $out = array();
