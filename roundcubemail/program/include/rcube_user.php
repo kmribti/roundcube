@@ -504,7 +504,7 @@ class rcube_user
             }
         }
         else {
-            rcmail::raise_error(array(
+            rcube::raise_error(array(
                 'code' => 500,
                 'type' => 'php',
                 'line' => __LINE__,

@@ -184,6 +184,20 @@ class rcube_output_json extends rcube_output
 
 
     /**
+     * Show error page and terminate script execution
+     *
+     * @param int    $code     Error code
+     * @param string $message  Error message
+     */
+    public function raise_error($code, $message)
+    {
+        $this->show_message("Application Error ($code): $message", 'error');
+        $this->remote_response();
+        exit;
+    }
+
+
+    /**
      * Send an AJAX response with executable JS code
      *
      * @param  string  $add Additional JS code

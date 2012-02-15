@@ -75,7 +75,7 @@ class rcube_message
     function __construct($uid)
     {
         $this->uid  = $uid;
-        $this->app  = rcmail::get_instance();
+        $this->app  = rcube::get_instance();
         $this->storage = $this->app->get_storage();
         $this->storage->set_options(array('all_headers' => true));
 

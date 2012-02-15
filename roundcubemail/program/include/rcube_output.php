@@ -216,6 +216,20 @@ abstract class rcube_output
 
 
     /**
+     * Show error page and terminate script execution
+     *
+     * @param int    $code     Error code
+     * @param string $message  Error message
+     */
+    public function raise_error($code, $message)
+    {
+        // STUB: to be overloaded by specific output classes
+        fputs(STDERR, "Error $code: $message\n");
+        exit(-1);
+    }
+
+
+    /**
      * Convert a variable into a javascript object notation
      *
      * @param mixed Input value

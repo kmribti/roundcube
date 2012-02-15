@@ -43,7 +43,7 @@ class rcube_mime
             self::$default_charset = $default_charset;
         }
         else {
-            self::$default_charset = rcmail::get_instance()->config->get('default_charset', RCMAIL_CHARSET);
+            self::$default_charset = rcube::get_instance()->config->get('default_charset', RCMAIL_CHARSET);
         }
     }
 
@@ -568,7 +568,7 @@ class rcube_mime
     public static function file_content_type($path, $name, $failover = 'application/octet-stream', $is_stream = false)
     {
         $mime_type = null;
-        $mime_magic = rcmail::get_instance()->config->get('mime_magic');
+        $mime_magic = rcube::get_instance()->config->get('mime_magic');
         $mime_ext = @include RCMAIL_CONFIG_DIR . '/mimetypes.php';
 
         // use file name suffix with hard-coded mime-type map

@@ -63,7 +63,7 @@ class rcube_cache
      */
     function __construct($type, $userid, $prefix='', $ttl=0, $packed=true)
     {
-        $rcmail = rcmail::get_instance();
+        $rcmail = rcube::get_instance();
         $type   = strtolower($type);
 
         if ($type == 'memcache') {

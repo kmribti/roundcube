@@ -49,7 +49,7 @@ class rcube_smtp
    */
   public function connect($host=null, $port=null, $user=null, $pass=null)
   {
-    $RCMAIL = rcmail::get_instance();
+    $RCMAIL = rcube::get_instance();
 
     // disconnect/destroy $this->conn
     $this->disconnect();

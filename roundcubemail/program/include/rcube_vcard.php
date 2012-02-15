@@ -777,7 +777,7 @@ class rcube_vcard
         )*\z/xs', substr($string, 0, 2048)))
       return 'UTF-8';
 
-    return rcmail::get_instance()->config->get('default_charset', 'ISO-8859-1'); # fallback to Latin-1
+    return rcube::get_instance()->config->get('default_charset', 'ISO-8859-1'); # fallback to Latin-1
   }
 
 }

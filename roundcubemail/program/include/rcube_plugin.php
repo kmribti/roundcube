@@ -107,9 +107,9 @@ abstract class rcube_plugin
   public function load_config($fname = 'config.inc.php')
   {
     $fpath = $this->home.'/'.$fname;
-    $rcmail = rcmail::get_instance();
+    $rcmail = rcube::get_instance();
     if (is_file($fpath) && !$rcmail->config->load_from_file($fpath)) {
-      rcmail::raise_error(array(
+      rcube::raise_error(array(
         'code' => 527, 'type' => 'php',
         'file' => __FILE__, 'line' => __LINE__,
         'message' => "Failed to load config from $fpath"), true, false);
@@ -163,7 +163,7 @@ abstract class rcube_plugin
       foreach ($texts as $key => $value)
         $add[$domain.'.'.$key] = $value;
 
-      $rcmail = rcmail::get_instance();
+      $rcmail = rcube::get_instance();
       $rcmail->load_language($lang, $add);
       
       // add labels to client
@@ -183,7 +183,7 @@ abstract class rcube_plugin
    */
   public function gettext($p)
   {
-    return rcmail::get_instance()->gettext($p, $this->ID);
+    return rcube::get_instance()->gettext($p, $this->ID);
   }
 
   /**
@@ -296,9 +296,10 @@ abstract class rcube_plugin
    */
   public function local_skin_path()
   {
-      $skin_path = 'skins/'.$this->api->config->get('skin');
-      if (!is_dir(realpath(slashify($this->home) . $skin_path)))
-        $skin_path = 'skins/default';
+    $rcmail = rcube::get_instance();
+    $skin_path = 'skins/' . $rcmail->config->get('skin');
+    if (!is_dir(realpath(slashify($this->home) . $skin_path)))
+      $skin_path = 'skins/default';
     return $skin_path;
   }
 

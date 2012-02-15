@@ -102,7 +102,7 @@ class rcube_mdb2
             $this->db_error = true;
             $this->db_error_msg = $dbh->getMessage();
 
-            rcmail::raise_error(array('code' => 500, 'type' => 'db',
+            rcube::raise_error(array('code' => 500, 'type' => 'db',
                 'line' => __LINE__, 'file' => __FILE__,
                 'message' => $dbh->getUserInfo()), true, false);
         }
@@ -296,7 +296,7 @@ class rcube_mdb2
                 $this->db_error = true;
                 $this->db_error_msg = $q->userinfo;
 
-                rcmail::raise_error(array('code' => 500, 'type' => 'db',
+                rcube::raise_error(array('code' => 500, 'type' => 'db',
                     'line' => __LINE__, 'file' => __FILE__,
                     'message' => $this->db_error_msg), true, false);
 
@@ -737,7 +737,7 @@ class rcube_mdb2
         if (PEAR::isError($res)) {
             $this->db_error = true;
             $this->db_error_msg = $res->getMessage();
-            rcmail::raise_error(array('code' => 500, 'type' => 'db',
+            rcube::raise_error(array('code' => 500, 'type' => 'db',
                 'line' => __LINE__, 'file' => __FILE__,
                 'message' => $res->getMessage() . " Query: " 
                 . substr(preg_replace('/[\r\n]+\s*/', ' ', $res->userinfo), 0, 512)),
@@ -791,7 +791,7 @@ class rcube_mdb2
 
         if (strlen($data)) {
             if (!sqlite_exec($dbh->connection, $data, $error) || MDB2::isError($dbh)) {
-                rcmail::raise_error(array('code' => 500, 'type' => 'db',
+                rcube::raise_error(array('code' => 500, 'type' => 'db',
                     'line' => __LINE__, 'file' => __FILE__,
                     'message' => $error), true, false);
             }
@@ -835,7 +835,7 @@ class rcube_mdb2
      */
     public function table_name($table)
     {
-        $rcmail = rcmail::get_instance();
+        $rcmail = rcube::get_instance();
 
         // return table name if configured
         $config_key = 'db_table_'.$table;
@@ -858,7 +858,7 @@ class rcube_mdb2
      */
     public function sequence_name($sequence)
     {
-        $rcmail = rcmail::get_instance();
+        $rcmail = rcube::get_instance();
 
         // return sequence name if configured
         $config_key = 'db_sequence_'.$sequence;

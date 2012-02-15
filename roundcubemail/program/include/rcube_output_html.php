@@ -285,7 +285,7 @@ class rcube_output_html extends rcube_output
         if ($templ != 'iframe') {
             // prevent from endless loops
             if ($exit != 'recur' && $this->app->plugins->is_processing('render_page')) {
-                rcmail::raise_error(array('code' => 505, 'type' => 'php',
+                rcube::raise_error(array('code' => 505, 'type' => 'php',
                   'file' => __FILE__, 'line' => __LINE__,
                   'message' => 'Recursion alert: ignoring output->send()'), true, false);
                 return;
@@ -378,7 +378,7 @@ class rcube_output_html extends rcube_output
         if (!is_readable($path) && $this->deprecated_templates[$realname]) {
             $path = "$skin_path/templates/".$this->deprecated_templates[$realname].".html";
             if (is_readable($path))
-                rcmail::raise_error(array('code' => 502, 'type' => 'php',
+                rcube::raise_error(array('code' => 502, 'type' => 'php',
                     'file' => __FILE__, 'line' => __LINE__,
                     'message' => "Using deprecated template '".$this->deprecated_templates[$realname]
                         ."' in $skin_path/templates. Please rename to '".$realname."'"),
@@ -387,7 +387,7 @@ class rcube_output_html extends rcube_output
 
         // read template file
         if (($templ = @file_get_contents($path)) === false) {
-            rcmail::raise_error(array(
+            rcube::raise_error(array(
                 'code' => 501,
                 'type' => 'php',
                 'line' => __LINE__,
@@ -492,6 +492,24 @@ class rcube_output_html extends rcube_output
     }
 
 
+    /**
+     * Show error page and terminate script execution
+     *
+     * @param int    $code     Error code
+     * @param string $message  Error message
+     */
+    public function raise_error($code, $message)
+    {
+        global $__page_content, $ERROR_CODE, $ERROR_MESSAGE;
+
+        $ERROR_CODE    = $code;
+        $ERROR_MESSAGE = $message;
+
+        include INSTALL_PATH . 'program/steps/utils/error.inc';
+        exit;
+    }
+
+
     /*****  Template parsing methods  *****/
 
     /**
@@ -557,7 +575,7 @@ class rcube_output_html extends rcube_output
                 }
                 return $matches[0] . $this->parse_conditions($result);
             }
-            rcmail::raise_error(array(
+            rcube::raise_error(array(
                 'code' => 500,
                 'type' => 'php',
                 'line' => __LINE__,

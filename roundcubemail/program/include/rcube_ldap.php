@@ -156,7 +156,7 @@ class rcube_ldap extends rcube_addressbook
         $RCMAIL = rcmail::get_instance();
 
         if (!function_exists('ldap_connect'))
-            rcmail::raise_error(array('code' => 100, 'type' => 'ldap',
+            rcube::raise_error(array('code' => 100, 'type' => 'ldap',
                 'file' => __FILE__, 'line' => __LINE__,
                 'message' => "No ldap support in this installation of PHP"),
                 true, true);
@@ -202,7 +202,7 @@ class rcube_ldap extends rcube_addressbook
         }
 
         if (!is_resource($this->conn)) {
-            rcmail::raise_error(array('code' => 100, 'type' => 'ldap',
+            rcube::raise_error(array('code' => 100, 'type' => 'ldap',
                 'file' => __FILE__, 'line' => __LINE__,
                 'message' => "Could not connect to any LDAP server, last tried $hostname"), true);
 
@@ -264,7 +264,7 @@ class rcube_ldap extends rcube_addressbook
                     if (!empty($this->prop['search_dn_default']))
                         $replaces['%dn'] = $this->prop['search_dn_default'];
                     else {
-                        rcmail::raise_error(array(
+                        rcube::raise_error(array(
                             'code' => 100, 'type' => 'ldap',
                             'file' => __FILE__, 'line' => __LINE__,
                             'message' => "DN not found using LDAP search."), true);
@@ -318,7 +318,7 @@ class rcube_ldap extends rcube_addressbook
         }
 
         if (!function_exists('ldap_sasl_bind')) {
-            rcmail::raise_error(array('code' => 100, 'type' => 'ldap',
+            rcube::raise_error(array('code' => 100, 'type' => 'ldap',
                 'file' => __FILE__, 'line' => __LINE__,
                 'message' => "Unable to bind: ldap_sasl_bind() not exists"),
                 true, true);
@@ -344,7 +344,7 @@ class rcube_ldap extends rcube_addressbook
 
         $this->_debug("S: ".ldap_error($this->conn));
 
-        rcmail::raise_error(array(
+        rcube::raise_error(array(
             'code' => ldap_errno($this->conn), 'type' => 'ldap',
             'file' => __FILE__, 'line' => __LINE__,
             'message' => "Bind failed for authcid=$authc ".ldap_error($this->conn)),
@@ -377,7 +377,7 @@ class rcube_ldap extends rcube_addressbook
 
         $this->_debug("S: ".ldap_error($this->conn));
 
-        rcmail::raise_error(array(
+        rcube::raise_error(array(
             'code' => ldap_errno($this->conn), 'type' => 'ldap',
             'file' => __FILE__, 'line' => __LINE__,
             'message' => "Bind failed for dn=$dn: ".ldap_error($this->conn)),

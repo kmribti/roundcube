@@ -38,29 +38,29 @@ class rcube_ui
 
     /**
      * Get localized text in the desired language
-     * It's a global wrapper for rcmail::gettext()
+     * It's a global wrapper for rcube::gettext()
      *
      * @param mixed  $p      Named parameters array or label name
      * @param string $domain Domain to search in (e.g. plugin name)
      *
      * @return string Localized text
-     * @see rcmail::gettext()
+     * @see rcube::gettext()
      */
     public static function label($p, $domain = null)
     {
-        return rcmail::get_instance()->gettext($p, $domain);
+        return rcube::get_instance()->gettext($p, $domain);
     }
 
 
     /**
-     * Global wrapper of rcmail::text_exists()
+     * Global wrapper of rcube::text_exists()
      * to check whether a text label is defined
      *
-     * @see rcmail::text_exists()
+     * @see rcube::text_exists()
      */
     public static function label_exists($name, $domain = null, &$ref_domain = null)
     {
-        return rcmail::get_instance()->text_exists($name, $domain, $ref_domain);
+        return rcube::get_instance()->text_exists($name, $domain, $ref_domain);
     }
 
 
@@ -75,8 +75,7 @@ class rcube_ui
      */
     public static function url($action, $p = array(), $task = null)
     {
-        $app = rcmail::get_instance();
-        return $app->url((array)$p + array('_action' => $action, 'task' => $task));
+        return rcube::get_instance()->url((array)$p + array('_action' => $action, 'task' => $task));
     }
 
 
@@ -1212,24 +1211,6 @@ class rcube_ui
         }
 
         return preg_replace($search, $replace, $html);
-    }
-
-
-    /**
-     * Show error page and terminate script execution
-     *
-     * @param int    $code     Error code
-     * @param string $message  Error message
-     */
-    public static function raise_error($code, $message)
-    {
-        global $__page_content, $ERROR_CODE, $ERROR_MESSAGE;
-
-        $ERROR_CODE    = $code;
-        $ERROR_MESSAGE = $message;
-
-        include INSTALL_PATH . 'program/steps/utils/error.inc';
-        exit;
     }
 
 

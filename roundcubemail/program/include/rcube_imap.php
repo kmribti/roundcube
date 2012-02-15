@@ -129,7 +129,7 @@ class rcube_imap extends rcube_storage
             $this->options['ssl_mode'] = $use_ssl == 'imaps' ? 'ssl' : $use_ssl;
         }
         else if ($use_ssl) {
-            rcmail::raise_error(array('code' => 403, 'type' => 'imap',
+            rcube::raise_error(array('code' => 403, 'type' => 'imap',
                 'file' => __FILE__, 'line' => __LINE__,
                 'message' => "OpenSSL not available"), true, false);
             $port = 143;
@@ -151,7 +151,7 @@ class rcube_imap extends rcube_storage
 
         $attempt = 0;
         do {
-            $data = rcmail::get_instance()->plugins->exec_hook('imap_connect',
+            $data = rcube::get_instance()->plugins->exec_hook('imap_connect',
                 array_merge($this->options, array('host' => $host, 'user' => $user,
                     'attempt' => ++$attempt)));
 
@@ -184,7 +184,7 @@ class rcube_imap extends rcube_storage
                 $message = sprintf("Login failed for %s from %s. %s",
                     $user, rcmail::remote_ip(), $this->conn->error);
 
-                rcmail::raise_error(array('code' => 403, 'type' => 'imap',
+                rcube::raise_error(array('code' => 403, 'type' => 'imap',
                     'file' => __FILE__, 'line' => __LINE__,
                     'message' => $message), true, false);
             }
@@ -452,7 +452,7 @@ class rcube_imap extends rcube_storage
             return;
         }
 
-        $config = rcmail::get_instance()->config;
+        $config = rcube::get_instance()->config;
         $imap_personal  = $config->get('imap_ns_personal');
         $imap_other     = $config->get('imap_ns_other');
         $imap_shared    = $config->get('imap_ns_shared');
@@ -2222,7 +2222,7 @@ class rcube_imap extends rcube_storage
             }
         }
 
-        $config = rcmail::get_instance()->config;
+        $config = rcube::get_instance()->config;
         $to_trash = $to_mbox == $config->get('trash_mbox');
 
         // flag messages as read before moving them
@@ -2505,7 +2505,7 @@ class rcube_imap extends rcube_storage
         $a_defaults = $a_out = array();
 
         // Give plugins a chance to provide a list of folders
-        $data = rcmail::get_instance()->plugins->exec_hook('folders_list',
+        $data = rcube::get_instance()->plugins->exec_hook('folders_list',
             array('root' => $root, 'name' => $name, 'filter' => $filter, 'mode' => 'LSUB'));
 
         if (isset($data['folders'])) {
@@ -2516,7 +2516,7 @@ class rcube_imap extends rcube_storage
         }
         else {
             // Server supports LIST-EXTENDED, we can use selection options
-            $config = rcmail::get_instance()->config;
+            $config = rcube::get_instance()->config;
             // #1486225: Some dovecot versions returns wrong result using LIST-EXTENDED
             if (!$config->get('imap_force_lsub') && $this->get_capability('LIST-EXTENDED')) {
                 // This will also set folder options, LSUB doesn't do that
@@ -2591,7 +2591,7 @@ class rcube_imap extends rcube_storage
         }
 
         // Give plugins a chance to provide a list of folders
-        $data = rcmail::get_instance()->plugins->exec_hook('folders_list',
+        $data = rcube::get_instance()->plugins->exec_hook('folders_list',
             array('root' => $root, 'name' => $name, 'filter' => $filter, 'mode' => 'LIST'));
 
         if (isset($data['folders'])) {
@@ -3523,7 +3523,7 @@ class rcube_imap extends rcube_storage
     protected function get_cache_engine()
     {
         if ($this->caching && !$this->cache) {
-            $rcmail = rcmail::get_instance();
+            $rcmail = rcube::get_instance();
             $this->cache = $rcmail->get_cache('IMAP', $this->caching);
         }
 
@@ -3602,7 +3602,7 @@ class rcube_imap extends rcube_storage
     protected function get_mcache_engine()
     {
         if ($this->messages_caching && !$this->mcache) {
-            $rcmail = rcmail::get_instance();
+            $rcmail = rcube::get_instance();
             if ($dbh = $rcmail->get_dbh()) {
                 $this->mcache = new rcube_imap_cache(
                     $dbh, $this, $rcmail->get_user_id(), $this->options['skip_deleted']);
