@@ -994,10 +994,20 @@ function rcmail_message_body($attrib)
     foreach ($MESSAGE->parts as $i => $part) {
       if ($part->type == 'headers')
         $out .= rcmail_message_headers(sizeof($header_attrib) ? $header_attrib : NULL, $part->headers);
-      else if ($part->type == 'content' && $part->size) {
+      else if ($part->type == 'content') {
+        // unsapported
+        if ($part->realtype) {
+          if ($part->realtype == 'multipart/encrypted') {
+            $out .= html::span('part-notice', rcube_label('encryptedmessage'));
+          }
+          continue;
+        }
+        else if (!$part->size) {
+          continue;
+        }
         // Check if we have enough memory to handle the message in it
         // #1487424: we need up to 10x more memory than the body
-        if (!rcmail_mem_check($part->size * 10)) {
+        else if (!rcmail_mem_check($part->size * 10)) {
           $out .= html::span('part-notice', rcube_label('messagetoobig'). ' '
             . html::a('?_task=mail&_action=get&_download=1&_uid='.$MESSAGE->uid.'&_part='.$part->mime_id
               .'&_mbox='. urlencode($RCMAIL->storage->get_folder()), rcube_label('download')));
@@ -1408,9 +1418,14 @@ function rcmail_message_part_controls($attrib)
   $part = $MESSAGE->mime_parts[$part];
   $table = new html_table(array('cols' => 3));
 
-  if (!empty($part->filename)) {
+  $filename = $part->filename;
+  if (empty($filename) && $attach_prop->mimetype == 'text/html') {
+    $filename = rcube_label('htmlmessage');
+  }
+
+  if (!empty($filename)) {
     $table->add('title', Q(rcube_label('filename')));
-    $table->add('header', Q($part->filename));
+    $table->add('header', Q($filename));
     $table->add('download-link', html::a(array('href' => './?'.str_replace('_frame=', '_download=', $_SERVER['QUERY_STRING'])), Q(rcube_label('download'))));
   }
 

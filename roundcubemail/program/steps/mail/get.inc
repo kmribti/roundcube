@@ -66,8 +66,15 @@ if (!empty($_GET['_uid'])) {
 
 // show part page
 if (!empty($_GET['_frame'])) {
-  if (($part_id = get_input_value('_part', RCUBE_INPUT_GPC)) && ($part = $MESSAGE->mime_parts[$part_id]) && $part->filename)
-    $OUTPUT->set_pagetitle($part->filename);
+  if (($part_id = get_input_value('_part', RCUBE_INPUT_GPC)) && ($part = $MESSAGE->mime_parts[$part_id])) {
+    $filename = $part->filename;
+    if (empty($filename) && $part->mimetype == 'text/html') {
+      $filename = rcube_label('htmlmessage');
+    }
+    if (!empty($filename)) {
+      $OUTPUT->set_pagetitle($filename);
+    }
+  }
 
   $OUTPUT->send('messagepart');
   exit;
@@ -134,8 +141,18 @@ else if (strlen($pid = get_input_value('_part', RCUBE_INPUT_GET))) {
       // don't kill the connection if download takes more than 30 sec.
       @set_time_limit(0);
 
+      if ($part->filename) {
+        $filename = $part->filename;
+      }
+      else if ($part->mimetype == 'text/html') {
+        $filename = rcube_label('htmlmessage');
+      }
+      else {
+        $filename = ($MESSAGE->subject ? $MESSAGE->subject : 'roundcube');
+      }
+
       $ext      = '.' . ($mimetype == 'text/plain' ? 'txt' : $ctype_secondary);
-      $filename = $part->filename ? $part->filename : ($MESSAGE->subject ? $MESSAGE->subject : 'roundcube') . $ext;
+      $filename .= $ext;
       $filename = preg_replace('[\r\n]', '', $filename);
 
       if ($browser->ie && $browser->ver < 7)

@@ -361,7 +361,8 @@ class rcube_message
                 $c->type            = 'content';
                 $c->ctype_primary   = 'text';
                 $c->ctype_secondary = 'plain';
-                $c->body            = $this->app->gettext('htmlmessage');
+                $c->mimetype        = 'text/plain';
+                $c->realtype        = 'text/html';
 
                 $this->parts[] = $c;
             }
@@ -369,7 +370,6 @@ class rcube_message
             // add html part as attachment
             if ($html_part !== null && $structure->parts[$html_part] !== $print_part) {
                 $html_part = &$structure->parts[$html_part];
-                $html_part->filename = $this->app->gettext('htmlmessage');
                 $html_part->mimetype = 'text/html';
 
                 $this->attachments[] = $html_part;
@@ -381,8 +381,8 @@ class rcube_message
             $p->type            = 'content';
             $p->ctype_primary   = 'text';
             $p->ctype_secondary = 'plain';
-            $p->body            = $this->app->gettext('encryptedmessage');
-            $p->size            = strlen($p->body);
+            $p->mimetype        = 'text/plain';
+            $p->realtype        = 'multipart/encrypted';
 
             $this->parts[] = $p;
         }
